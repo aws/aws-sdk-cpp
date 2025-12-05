@@ -110,15 +110,15 @@ class InboundCrossClusterSearchConnection {
   ///@}
  private:
   DomainInformation m_sourceDomainInfo;
-  bool m_sourceDomainInfoHasBeenSet = false;
 
   DomainInformation m_destinationDomainInfo;
-  bool m_destinationDomainInfoHasBeenSet = false;
 
   Aws::String m_crossClusterSearchConnectionId;
-  bool m_crossClusterSearchConnectionIdHasBeenSet = false;
 
   InboundCrossClusterSearchConnectionStatus m_connectionStatus;
+  bool m_sourceDomainInfoHasBeenSet = false;
+  bool m_destinationDomainInfoHasBeenSet = false;
+  bool m_crossClusterSearchConnectionIdHasBeenSet = false;
   bool m_connectionStatusHasBeenSet = false;
 };
 

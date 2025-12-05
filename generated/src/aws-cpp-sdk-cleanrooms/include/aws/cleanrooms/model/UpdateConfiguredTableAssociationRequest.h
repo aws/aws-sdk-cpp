@@ -104,15 +104,15 @@ class UpdateConfiguredTableAssociationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_configuredTableAssociationIdentifier;
-  bool m_configuredTableAssociationIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_configuredTableAssociationIdentifierHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

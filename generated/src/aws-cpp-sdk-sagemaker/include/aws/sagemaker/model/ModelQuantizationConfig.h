@@ -78,9 +78,9 @@ class ModelQuantizationConfig {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_overrideEnvironment;
+  bool m_imageHasBeenSet = false;
   bool m_overrideEnvironmentHasBeenSet = false;
 };
 

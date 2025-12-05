@@ -132,18 +132,18 @@ class Registry {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_registryArn;
-  bool m_registryArnHasBeenSet = false;
 
   Aws::String m_registryUri;
-  bool m_registryUriHasBeenSet = false;
 
   bool m_verified{false};
-  bool m_verifiedHasBeenSet = false;
 
   Aws::Vector<RegistryAlias> m_aliases;
+  bool m_registryIdHasBeenSet = false;
+  bool m_registryArnHasBeenSet = false;
+  bool m_registryUriHasBeenSet = false;
+  bool m_verifiedHasBeenSet = false;
   bool m_aliasesHasBeenSet = false;
 };
 

@@ -136,18 +136,18 @@ class CreateArchiveRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_archiveName;
-  bool m_archiveNameHasBeenSet = false;
 
   ArchiveRetention m_retention;
-  bool m_retentionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_archiveNameHasBeenSet = false;
+  bool m_retentionHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

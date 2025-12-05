@@ -213,30 +213,30 @@ class AwsBackupBackupPlanRuleDetails {
   ///@}
  private:
   Aws::String m_targetBackupVault;
-  bool m_targetBackupVaultHasBeenSet = false;
 
   long long m_startWindowMinutes{0};
-  bool m_startWindowMinutesHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   bool m_enableContinuousBackup{false};
-  bool m_enableContinuousBackupHasBeenSet = false;
 
   long long m_completionWindowMinutes{0};
-  bool m_completionWindowMinutesHasBeenSet = false;
 
   Aws::Vector<AwsBackupBackupPlanRuleCopyActionsDetails> m_copyActions;
-  bool m_copyActionsHasBeenSet = false;
 
   AwsBackupBackupPlanLifecycleDetails m_lifecycle;
+  bool m_targetBackupVaultHasBeenSet = false;
+  bool m_startWindowMinutesHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_enableContinuousBackupHasBeenSet = false;
+  bool m_completionWindowMinutesHasBeenSet = false;
+  bool m_copyActionsHasBeenSet = false;
   bool m_lifecycleHasBeenSet = false;
 };
 

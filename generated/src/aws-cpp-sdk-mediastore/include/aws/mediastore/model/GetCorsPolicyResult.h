@@ -67,9 +67,9 @@ class GetCorsPolicyResult {
   ///@}
  private:
   Aws::Vector<CorsRule> m_corsPolicy;
-  bool m_corsPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_corsPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

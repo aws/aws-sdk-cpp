@@ -107,15 +107,15 @@ class DisassociatePrincipalFromPortfolioRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   Aws::String m_principalARN;
-  bool m_principalARNHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_portfolioIdHasBeenSet = false;
+  bool m_principalARNHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
 };
 

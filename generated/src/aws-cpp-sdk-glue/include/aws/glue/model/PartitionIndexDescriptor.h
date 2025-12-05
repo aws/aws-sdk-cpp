@@ -125,15 +125,15 @@ class PartitionIndexDescriptor {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keys;
-  bool m_keysHasBeenSet = false;
 
   PartitionIndexStatus m_indexStatus{PartitionIndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   Aws::Vector<BackfillError> m_backfillErrors;
+  bool m_indexNameHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
   bool m_backfillErrorsHasBeenSet = false;
 };
 

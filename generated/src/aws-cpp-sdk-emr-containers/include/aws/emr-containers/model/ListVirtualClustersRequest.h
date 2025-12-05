@@ -184,27 +184,27 @@ class ListVirtualClustersRequest : public EMRContainersRequest {
   ///@}
  private:
   Aws::String m_containerProviderId;
-  bool m_containerProviderIdHasBeenSet = false;
 
   ContainerProviderType m_containerProviderType{ContainerProviderType::NOT_SET};
-  bool m_containerProviderTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   Aws::Vector<VirtualClusterState> m_states;
-  bool m_statesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_eksAccessEntryIntegrated{false};
+  bool m_containerProviderIdHasBeenSet = false;
+  bool m_containerProviderTypeHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_eksAccessEntryIntegratedHasBeenSet = false;
 };
 

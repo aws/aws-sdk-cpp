@@ -97,12 +97,12 @@ class DeleteEnvironmentRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   DeletionProtectionCheck m_deletionProtectionCheck{DeletionProtectionCheck::NOT_SET};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
   bool m_deletionProtectionCheckHasBeenSet = false;
 };
 

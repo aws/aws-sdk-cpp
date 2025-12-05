@@ -189,27 +189,27 @@ class ReplicationConfigurationDescription {
   ///@}
  private:
   Aws::String m_sourceFileSystemId;
-  bool m_sourceFileSystemIdHasBeenSet = false;
 
   Aws::String m_sourceFileSystemRegion;
-  bool m_sourceFileSystemRegionHasBeenSet = false;
 
   Aws::String m_sourceFileSystemArn;
-  bool m_sourceFileSystemArnHasBeenSet = false;
 
   Aws::String m_originalSourceFileSystemArn;
-  bool m_originalSourceFileSystemArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Destination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::String m_sourceFileSystemOwnerId;
-  bool m_sourceFileSystemOwnerIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceFileSystemIdHasBeenSet = false;
+  bool m_sourceFileSystemRegionHasBeenSet = false;
+  bool m_sourceFileSystemArnHasBeenSet = false;
+  bool m_originalSourceFileSystemArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_sourceFileSystemOwnerIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

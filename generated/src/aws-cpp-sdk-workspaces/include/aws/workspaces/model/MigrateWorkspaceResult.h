@@ -78,12 +78,12 @@ class MigrateWorkspaceResult {
   ///@}
  private:
   Aws::String m_sourceWorkspaceId;
-  bool m_sourceWorkspaceIdHasBeenSet = false;
 
   Aws::String m_targetWorkspaceId;
-  bool m_targetWorkspaceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceWorkspaceIdHasBeenSet = false;
+  bool m_targetWorkspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

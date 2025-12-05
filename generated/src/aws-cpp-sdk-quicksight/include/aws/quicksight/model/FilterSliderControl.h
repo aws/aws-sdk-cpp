@@ -174,27 +174,27 @@ class FilterSliderControl {
   ///@}
  private:
   Aws::String m_filterControlId;
-  bool m_filterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceFilterId;
-  bool m_sourceFilterIdHasBeenSet = false;
 
   SliderControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   SheetControlSliderType m_type{SheetControlSliderType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_maximumValue{0.0};
-  bool m_maximumValueHasBeenSet = false;
 
   double m_minimumValue{0.0};
-  bool m_minimumValueHasBeenSet = false;
 
   double m_stepSize{0.0};
+  bool m_filterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceFilterIdHasBeenSet = false;
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_maximumValueHasBeenSet = false;
+  bool m_minimumValueHasBeenSet = false;
   bool m_stepSizeHasBeenSet = false;
 };
 

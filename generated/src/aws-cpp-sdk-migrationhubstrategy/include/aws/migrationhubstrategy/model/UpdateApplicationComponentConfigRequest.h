@@ -167,24 +167,24 @@ class UpdateApplicationComponentConfigRequest : public MigrationHubStrategyRecom
   ///@}
  private:
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   Aws::String m_applicationComponentId;
-  bool m_applicationComponentIdHasBeenSet = false;
 
   bool m_configureOnly{false};
-  bool m_configureOnlyHasBeenSet = false;
 
   InclusionStatus m_inclusionStatus{InclusionStatus::NOT_SET};
-  bool m_inclusionStatusHasBeenSet = false;
 
   Aws::String m_secretsManagerKey;
-  bool m_secretsManagerKeyHasBeenSet = false;
 
   Aws::Vector<SourceCode> m_sourceCodeList;
-  bool m_sourceCodeListHasBeenSet = false;
 
   StrategyOption m_strategyOption;
+  bool m_appTypeHasBeenSet = false;
+  bool m_applicationComponentIdHasBeenSet = false;
+  bool m_configureOnlyHasBeenSet = false;
+  bool m_inclusionStatusHasBeenSet = false;
+  bool m_secretsManagerKeyHasBeenSet = false;
+  bool m_sourceCodeListHasBeenSet = false;
   bool m_strategyOptionHasBeenSet = false;
 };
 

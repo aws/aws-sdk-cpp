@@ -94,12 +94,12 @@ class UpdateQAppSessionRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Vector<CardValue> m_values;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

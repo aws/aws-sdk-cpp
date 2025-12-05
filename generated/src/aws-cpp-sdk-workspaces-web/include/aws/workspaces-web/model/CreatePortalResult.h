@@ -77,12 +77,12 @@ class CreatePortalResult {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_portalEndpoint;
-  bool m_portalEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalArnHasBeenSet = false;
+  bool m_portalEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

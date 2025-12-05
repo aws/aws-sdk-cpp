@@ -68,9 +68,9 @@ class IdentityPoolShortDescription {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityPoolName;
+  bool m_identityPoolIdHasBeenSet = false;
   bool m_identityPoolNameHasBeenSet = false;
 };
 

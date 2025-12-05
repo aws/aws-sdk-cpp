@@ -320,42 +320,42 @@ class ModifyVpcEndpointServiceConfigurationRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_privateDnsName;
-  bool m_privateDnsNameHasBeenSet = false;
 
   bool m_removePrivateDnsName{false};
-  bool m_removePrivateDnsNameHasBeenSet = false;
 
   bool m_acceptanceRequired{false};
-  bool m_acceptanceRequiredHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addNetworkLoadBalancerArns;
-  bool m_addNetworkLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeNetworkLoadBalancerArns;
-  bool m_removeNetworkLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addGatewayLoadBalancerArns;
-  bool m_addGatewayLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeGatewayLoadBalancerArns;
-  bool m_removeGatewayLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSupportedIpAddressTypes;
-  bool m_addSupportedIpAddressTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSupportedIpAddressTypes;
-  bool m_removeSupportedIpAddressTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSupportedRegions;
-  bool m_addSupportedRegionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSupportedRegions;
+  bool m_dryRunHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_privateDnsNameHasBeenSet = false;
+  bool m_removePrivateDnsNameHasBeenSet = false;
+  bool m_acceptanceRequiredHasBeenSet = false;
+  bool m_addNetworkLoadBalancerArnsHasBeenSet = false;
+  bool m_removeNetworkLoadBalancerArnsHasBeenSet = false;
+  bool m_addGatewayLoadBalancerArnsHasBeenSet = false;
+  bool m_removeGatewayLoadBalancerArnsHasBeenSet = false;
+  bool m_addSupportedIpAddressTypesHasBeenSet = false;
+  bool m_removeSupportedIpAddressTypesHasBeenSet = false;
+  bool m_addSupportedRegionsHasBeenSet = false;
   bool m_removeSupportedRegionsHasBeenSet = false;
 };
 

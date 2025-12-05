@@ -284,42 +284,42 @@ class CreateSubnetRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
-  bool m_ipv6CidrBlockHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_ipv6Native{false};
-  bool m_ipv6NativeHasBeenSet = false;
 
   Aws::String m_ipv4IpamPoolId;
-  bool m_ipv4IpamPoolIdHasBeenSet = false;
 
   int m_ipv4NetmaskLength{0};
-  bool m_ipv4NetmaskLengthHasBeenSet = false;
 
   Aws::String m_ipv6IpamPoolId;
-  bool m_ipv6IpamPoolIdHasBeenSet = false;
 
   int m_ipv6NetmaskLength{0};
-  bool m_ipv6NetmaskLengthHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_ipv6CidrBlockHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_ipv6NativeHasBeenSet = false;
+  bool m_ipv4IpamPoolIdHasBeenSet = false;
+  bool m_ipv4NetmaskLengthHasBeenSet = false;
+  bool m_ipv6IpamPoolIdHasBeenSet = false;
+  bool m_ipv6NetmaskLengthHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

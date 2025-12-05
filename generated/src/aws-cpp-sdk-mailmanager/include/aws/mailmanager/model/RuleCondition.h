@@ -146,21 +146,21 @@ class RuleCondition {
   ///@}
  private:
   RuleBooleanExpression m_booleanExpression;
-  bool m_booleanExpressionHasBeenSet = false;
 
   RuleStringExpression m_stringExpression;
-  bool m_stringExpressionHasBeenSet = false;
 
   RuleNumberExpression m_numberExpression;
-  bool m_numberExpressionHasBeenSet = false;
 
   RuleIpExpression m_ipExpression;
-  bool m_ipExpressionHasBeenSet = false;
 
   RuleVerdictExpression m_verdictExpression;
-  bool m_verdictExpressionHasBeenSet = false;
 
   RuleDmarcExpression m_dmarcExpression;
+  bool m_booleanExpressionHasBeenSet = false;
+  bool m_stringExpressionHasBeenSet = false;
+  bool m_numberExpressionHasBeenSet = false;
+  bool m_ipExpressionHasBeenSet = false;
+  bool m_verdictExpressionHasBeenSet = false;
   bool m_dmarcExpressionHasBeenSet = false;
 };
 

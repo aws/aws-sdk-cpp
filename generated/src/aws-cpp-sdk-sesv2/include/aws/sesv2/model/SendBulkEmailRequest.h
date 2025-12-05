@@ -293,36 +293,36 @@ class SendBulkEmailRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Aws::String m_fromEmailAddressIdentityArn;
-  bool m_fromEmailAddressIdentityArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replyToAddresses;
-  bool m_replyToAddressesHasBeenSet = false;
 
   Aws::String m_feedbackForwardingEmailAddress;
-  bool m_feedbackForwardingEmailAddressHasBeenSet = false;
 
   Aws::String m_feedbackForwardingEmailAddressIdentityArn;
-  bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_defaultEmailTags;
-  bool m_defaultEmailTagsHasBeenSet = false;
 
   BulkEmailContent m_defaultContent;
-  bool m_defaultContentHasBeenSet = false;
 
   Aws::Vector<BulkEmailEntry> m_bulkEmailEntries;
-  bool m_bulkEmailEntriesHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_tenantName;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_fromEmailAddressIdentityArnHasBeenSet = false;
+  bool m_replyToAddressesHasBeenSet = false;
+  bool m_feedbackForwardingEmailAddressHasBeenSet = false;
+  bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = false;
+  bool m_defaultEmailTagsHasBeenSet = false;
+  bool m_defaultContentHasBeenSet = false;
+  bool m_bulkEmailEntriesHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
   bool m_tenantNameHasBeenSet = false;
 };
 

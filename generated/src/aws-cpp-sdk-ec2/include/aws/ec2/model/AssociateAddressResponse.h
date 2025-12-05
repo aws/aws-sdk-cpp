@@ -61,9 +61,9 @@ class AssociateAddressResponse {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_associationIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

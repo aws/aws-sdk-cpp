@@ -66,9 +66,9 @@ class ListenerPropertyRequest {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   ListenerPropertyType m_type{ListenerPropertyType::NOT_SET};
+  bool m_portHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

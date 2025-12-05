@@ -87,12 +87,12 @@ class DescribeTrafficMirrorSessionsResponse {
   ///@}
  private:
   Aws::Vector<TrafficMirrorSession> m_trafficMirrorSessions;
-  bool m_trafficMirrorSessionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficMirrorSessionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

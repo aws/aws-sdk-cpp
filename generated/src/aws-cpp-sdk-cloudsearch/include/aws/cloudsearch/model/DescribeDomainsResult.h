@@ -72,9 +72,9 @@ class DescribeDomainsResult {
   ///@}
  private:
   Aws::Vector<DomainStatus> m_domainStatusList;
-  bool m_domainStatusListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_domainStatusListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class GetResourcePoliciesResponseEntry {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_policyHash;
-  bool m_policyHashHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_policyIdHasBeenSet = false;
+  bool m_policyHashHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

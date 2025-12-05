@@ -86,12 +86,12 @@ class GetCatalogsResult {
   ///@}
  private:
   Aws::Vector<Catalog> m_catalogList;
-  bool m_catalogListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

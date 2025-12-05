@@ -287,45 +287,45 @@ class EnvironmentSummary {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsAccountRegion;
-  bool m_awsAccountRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_environmentConfigurationId;
-  bool m_environmentConfigurationIdHasBeenSet = false;
 
   Aws::String m_environmentProfileId;
-  bool m_environmentProfileIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsAccountRegionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_environmentConfigurationIdHasBeenSet = false;
+  bool m_environmentProfileIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class GetStageSessionRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_stageArn;
-  bool m_stageArnHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_stageArnHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

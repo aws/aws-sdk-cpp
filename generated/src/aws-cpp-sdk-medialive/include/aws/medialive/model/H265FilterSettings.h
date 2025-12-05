@@ -65,9 +65,9 @@ class H265FilterSettings {
   ///@}
  private:
   TemporalFilterSettings m_temporalFilterSettings;
-  bool m_temporalFilterSettingsHasBeenSet = false;
 
   BandwidthReductionFilterSettings m_bandwidthReductionFilterSettings;
+  bool m_temporalFilterSettingsHasBeenSet = false;
   bool m_bandwidthReductionFilterSettingsHasBeenSet = false;
 };
 

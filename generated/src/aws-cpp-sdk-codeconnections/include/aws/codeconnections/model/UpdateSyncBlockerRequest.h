@@ -102,15 +102,15 @@ class UpdateSyncBlockerRequest : public CodeConnectionsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
-  bool m_syncTypeHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_resolvedReason;
+  bool m_idHasBeenSet = false;
+  bool m_syncTypeHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_resolvedReasonHasBeenSet = false;
 };
 

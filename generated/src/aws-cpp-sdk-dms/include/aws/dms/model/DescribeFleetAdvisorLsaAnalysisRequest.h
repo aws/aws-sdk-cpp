@@ -68,9 +68,9 @@ class DescribeFleetAdvisorLsaAnalysisRequest : public DatabaseMigrationServiceRe
   ///@}
  private:
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

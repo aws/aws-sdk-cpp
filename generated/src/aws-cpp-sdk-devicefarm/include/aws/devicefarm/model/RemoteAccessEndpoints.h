@@ -71,9 +71,9 @@ class RemoteAccessEndpoints {
   ///@}
  private:
   Aws::String m_remoteDriverEndpoint;
-  bool m_remoteDriverEndpointHasBeenSet = false;
 
   Aws::String m_interactiveEndpoint;
+  bool m_remoteDriverEndpointHasBeenSet = false;
   bool m_interactiveEndpointHasBeenSet = false;
 };
 

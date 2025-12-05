@@ -348,54 +348,54 @@ class ServiceSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdByAccountId;
-  bool m_createdByAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ServiceEndpointType m_endpointType{ServiceEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   ErrorResponse m_error;
-  bool m_errorHasBeenSet = false;
 
   LambdaEndpointSummary m_lambdaEndpoint;
-  bool m_lambdaEndpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   ServiceState m_state{ServiceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UrlEndpointSummary m_urlEndpoint;
-  bool m_urlEndpointHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByAccountIdHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_lambdaEndpointHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_urlEndpointHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

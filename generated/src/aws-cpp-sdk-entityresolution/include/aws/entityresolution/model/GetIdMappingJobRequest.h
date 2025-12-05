@@ -65,9 +65,9 @@ class GetIdMappingJobRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_workflowNameHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

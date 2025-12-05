@@ -214,33 +214,33 @@ class SnapshotDetail {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   double m_diskImageSize{0.0};
-  bool m_diskImageSizeHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   UserBucketDetails m_userBucket;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_diskImageSizeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_userBucketHasBeenSet = false;
 };
 

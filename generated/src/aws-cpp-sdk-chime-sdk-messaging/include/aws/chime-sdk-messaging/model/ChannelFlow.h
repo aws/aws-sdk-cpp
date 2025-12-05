@@ -131,18 +131,18 @@ class ChannelFlow {
   ///@}
  private:
   Aws::String m_channelFlowArn;
-  bool m_channelFlowArnHasBeenSet = false;
 
   Aws::Vector<Processor> m_processors;
-  bool m_processorsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_channelFlowArnHasBeenSet = false;
+  bool m_processorsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

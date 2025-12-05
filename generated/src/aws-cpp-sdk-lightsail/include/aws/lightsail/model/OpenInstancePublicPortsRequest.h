@@ -68,9 +68,9 @@ class OpenInstancePublicPortsRequest : public LightsailRequest {
   ///@}
  private:
   PortInfo m_portInfo;
-  bool m_portInfoHasBeenSet = false;
 
   Aws::String m_instanceName;
+  bool m_portInfoHasBeenSet = false;
   bool m_instanceNameHasBeenSet = false;
 };
 

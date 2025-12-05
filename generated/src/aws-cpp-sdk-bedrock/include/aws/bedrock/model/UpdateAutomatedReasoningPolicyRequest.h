@@ -104,15 +104,15 @@ class UpdateAutomatedReasoningPolicyRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   AutomatedReasoningPolicyDefinition m_policyDefinition;
-  bool m_policyDefinitionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_policyArnHasBeenSet = false;
+  bool m_policyDefinitionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

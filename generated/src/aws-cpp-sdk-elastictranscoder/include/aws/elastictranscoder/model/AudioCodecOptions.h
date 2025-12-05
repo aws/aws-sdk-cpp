@@ -127,15 +127,15 @@ class AudioCodecOptions {
   ///@}
  private:
   Aws::String m_profile;
-  bool m_profileHasBeenSet = false;
 
   Aws::String m_bitDepth;
-  bool m_bitDepthHasBeenSet = false;
 
   Aws::String m_bitOrder;
-  bool m_bitOrderHasBeenSet = false;
 
   Aws::String m_signed;
+  bool m_profileHasBeenSet = false;
+  bool m_bitDepthHasBeenSet = false;
+  bool m_bitOrderHasBeenSet = false;
   bool m_signedHasBeenSet = false;
 };
 

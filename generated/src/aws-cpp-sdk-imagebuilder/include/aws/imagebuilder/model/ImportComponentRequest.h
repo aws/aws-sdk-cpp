@@ -274,39 +274,39 @@ class ImportComponentRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_changeDescription;
-  bool m_changeDescriptionHasBeenSet = false;
 
   ComponentType m_type{ComponentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ComponentFormat m_format{ComponentFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_changeDescriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

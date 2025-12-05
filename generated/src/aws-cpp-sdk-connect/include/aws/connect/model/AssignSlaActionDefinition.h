@@ -67,9 +67,9 @@ class AssignSlaActionDefinition {
   ///@}
  private:
   SlaAssignmentType m_slaAssignmentType{SlaAssignmentType::NOT_SET};
-  bool m_slaAssignmentTypeHasBeenSet = false;
 
   CaseSlaConfiguration m_caseSlaConfiguration;
+  bool m_slaAssignmentTypeHasBeenSet = false;
   bool m_caseSlaConfigurationHasBeenSet = false;
 };
 

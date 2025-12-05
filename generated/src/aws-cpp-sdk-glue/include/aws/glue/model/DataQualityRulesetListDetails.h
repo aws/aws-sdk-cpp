@@ -160,24 +160,24 @@ class DataQualityRulesetListDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   DataQualityTargetTable m_targetTable;
-  bool m_targetTableHasBeenSet = false;
 
   Aws::String m_recommendationRunId;
-  bool m_recommendationRunIdHasBeenSet = false;
 
   int m_ruleCount{0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_targetTableHasBeenSet = false;
+  bool m_recommendationRunIdHasBeenSet = false;
   bool m_ruleCountHasBeenSet = false;
 };
 

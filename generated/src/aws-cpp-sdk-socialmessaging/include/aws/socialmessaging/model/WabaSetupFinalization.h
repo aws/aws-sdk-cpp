@@ -103,12 +103,12 @@ class WabaSetupFinalization {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<WhatsAppBusinessAccountEventDestination> m_eventDestinations;
-  bool m_eventDestinationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_eventDestinationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

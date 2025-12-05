@@ -125,18 +125,18 @@ class TestIdentityProviderRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Protocol m_serverProtocol{Protocol::NOT_SET};
-  bool m_serverProtocolHasBeenSet = false;
 
   Aws::String m_sourceIp;
-  bool m_sourceIpHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_userPassword;
+  bool m_serverIdHasBeenSet = false;
+  bool m_serverProtocolHasBeenSet = false;
+  bool m_sourceIpHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_userPasswordHasBeenSet = false;
 };
 

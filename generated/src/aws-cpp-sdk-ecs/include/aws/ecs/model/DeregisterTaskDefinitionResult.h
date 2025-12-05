@@ -60,9 +60,9 @@ class DeregisterTaskDefinitionResult {
   ///@}
  private:
   TaskDefinition m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

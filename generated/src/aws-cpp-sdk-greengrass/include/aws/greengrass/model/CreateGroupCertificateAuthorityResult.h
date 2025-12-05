@@ -60,9 +60,9 @@ class CreateGroupCertificateAuthorityResult {
   ///@}
  private:
   Aws::String m_groupCertificateAuthorityArn;
-  bool m_groupCertificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupCertificateAuthorityArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

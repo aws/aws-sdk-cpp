@@ -149,18 +149,18 @@ class ClusterSecurityGroup {
   ///@}
  private:
   Aws::String m_clusterSecurityGroupName;
-  bool m_clusterSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
-  bool m_eC2SecurityGroupsHasBeenSet = false;
 
   Aws::Vector<IPRange> m_iPRanges;
-  bool m_iPRangesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clusterSecurityGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eC2SecurityGroupsHasBeenSet = false;
+  bool m_iPRangesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

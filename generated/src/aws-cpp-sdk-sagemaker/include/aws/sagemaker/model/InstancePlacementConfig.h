@@ -78,9 +78,9 @@ class InstancePlacementConfig {
   ///@}
  private:
   bool m_enableMultipleJobs{false};
-  bool m_enableMultipleJobsHasBeenSet = false;
 
   Aws::Vector<PlacementSpecification> m_placementSpecifications;
+  bool m_enableMultipleJobsHasBeenSet = false;
   bool m_placementSpecificationsHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListKxDataviewsResult {
   ///@}
  private:
   Aws::Vector<KxDataviewListEntry> m_kxDataviews;
-  bool m_kxDataviewsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kxDataviewsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

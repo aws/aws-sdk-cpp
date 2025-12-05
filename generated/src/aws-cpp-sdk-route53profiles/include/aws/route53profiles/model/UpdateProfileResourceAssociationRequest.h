@@ -86,12 +86,12 @@ class UpdateProfileResourceAssociationRequest : public Route53ProfilesRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_profileResourceAssociationId;
-  bool m_profileResourceAssociationIdHasBeenSet = false;
 
   Aws::String m_resourceProperties;
+  bool m_nameHasBeenSet = false;
+  bool m_profileResourceAssociationIdHasBeenSet = false;
   bool m_resourcePropertiesHasBeenSet = false;
 };
 

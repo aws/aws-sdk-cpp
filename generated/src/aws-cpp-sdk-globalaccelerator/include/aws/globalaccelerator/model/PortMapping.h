@@ -152,21 +152,21 @@ class PortMapping {
   ///@}
  private:
   int m_acceleratorPort{0};
-  bool m_acceleratorPortHasBeenSet = false;
 
   Aws::String m_endpointGroupArn;
-  bool m_endpointGroupArnHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   SocketAddress m_destinationSocketAddress;
-  bool m_destinationSocketAddressHasBeenSet = false;
 
   Aws::Vector<CustomRoutingProtocol> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   CustomRoutingDestinationTrafficState m_destinationTrafficState{CustomRoutingDestinationTrafficState::NOT_SET};
+  bool m_acceleratorPortHasBeenSet = false;
+  bool m_endpointGroupArnHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_destinationSocketAddressHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
   bool m_destinationTrafficStateHasBeenSet = false;
 };
 

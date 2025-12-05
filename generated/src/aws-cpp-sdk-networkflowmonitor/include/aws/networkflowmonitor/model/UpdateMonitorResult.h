@@ -210,30 +210,30 @@ class UpdateMonitorResult {
   ///@}
  private:
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   MonitorStatus m_monitorStatus{MonitorStatus::NOT_SET};
-  bool m_monitorStatusHasBeenSet = false;
 
   Aws::Vector<MonitorLocalResource> m_localResources;
-  bool m_localResourcesHasBeenSet = false;
 
   Aws::Vector<MonitorRemoteResource> m_remoteResources;
-  bool m_remoteResourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitorArnHasBeenSet = false;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_monitorStatusHasBeenSet = false;
+  bool m_localResourcesHasBeenSet = false;
+  bool m_remoteResourcesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

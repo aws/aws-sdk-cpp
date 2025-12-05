@@ -100,15 +100,15 @@ class ConfusionMatrix {
   ///@}
  private:
   long long m_numTruePositives{0};
-  bool m_numTruePositivesHasBeenSet = false;
 
   long long m_numFalsePositives{0};
-  bool m_numFalsePositivesHasBeenSet = false;
 
   long long m_numTrueNegatives{0};
-  bool m_numTrueNegativesHasBeenSet = false;
 
   long long m_numFalseNegatives{0};
+  bool m_numTruePositivesHasBeenSet = false;
+  bool m_numFalsePositivesHasBeenSet = false;
+  bool m_numTrueNegativesHasBeenSet = false;
   bool m_numFalseNegativesHasBeenSet = false;
 };
 

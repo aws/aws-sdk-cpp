@@ -63,9 +63,9 @@ class DeleteLicenseServerEndpointResult {
   ///@}
  private:
   LicenseServerEndpoint m_licenseServerEndpoint;
-  bool m_licenseServerEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseServerEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

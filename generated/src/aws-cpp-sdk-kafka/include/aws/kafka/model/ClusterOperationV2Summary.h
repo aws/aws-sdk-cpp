@@ -167,24 +167,24 @@ class ClusterOperationV2Summary {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   ClusterType m_clusterType{ClusterType::NOT_SET};
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_operationArn;
-  bool m_operationArnHasBeenSet = false;
 
   Aws::String m_operationState;
-  bool m_operationStateHasBeenSet = false;
 
   Aws::String m_operationType;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_operationArnHasBeenSet = false;
+  bool m_operationStateHasBeenSet = false;
   bool m_operationTypeHasBeenSet = false;
 };
 

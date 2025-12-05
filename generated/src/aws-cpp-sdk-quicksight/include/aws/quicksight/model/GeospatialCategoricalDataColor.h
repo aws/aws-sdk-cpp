@@ -69,9 +69,9 @@ class GeospatialCategoricalDataColor {
   ///@}
  private:
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   Aws::String m_dataValue;
+  bool m_colorHasBeenSet = false;
   bool m_dataValueHasBeenSet = false;
 };
 

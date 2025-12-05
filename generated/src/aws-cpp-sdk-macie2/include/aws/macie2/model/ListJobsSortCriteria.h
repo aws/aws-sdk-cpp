@@ -68,9 +68,9 @@ class ListJobsSortCriteria {
   ///@}
  private:
   ListJobsSortAttributeName m_attributeName{ListJobsSortAttributeName::NOT_SET};
-  bool m_attributeNameHasBeenSet = false;
 
   OrderBy m_orderBy{OrderBy::NOT_SET};
+  bool m_attributeNameHasBeenSet = false;
   bool m_orderByHasBeenSet = false;
 };
 

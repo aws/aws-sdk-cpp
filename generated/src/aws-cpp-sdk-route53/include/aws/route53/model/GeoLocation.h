@@ -104,12 +104,12 @@ class GeoLocation {
   ///@}
  private:
   Aws::String m_continentCode;
-  bool m_continentCodeHasBeenSet = false;
 
   Aws::String m_countryCode;
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_subdivisionCode;
+  bool m_continentCodeHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
   bool m_subdivisionCodeHasBeenSet = false;
 };
 

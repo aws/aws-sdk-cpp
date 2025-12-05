@@ -90,12 +90,12 @@ class ListImageRecipesResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<ImageRecipeSummary> m_imageRecipeSummaryList;
-  bool m_imageRecipeSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imageRecipeSummaryListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

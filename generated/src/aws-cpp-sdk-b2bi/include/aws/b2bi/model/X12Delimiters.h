@@ -91,12 +91,12 @@ class X12Delimiters {
   ///@}
  private:
   Aws::String m_componentSeparator;
-  bool m_componentSeparatorHasBeenSet = false;
 
   Aws::String m_dataElementSeparator;
-  bool m_dataElementSeparatorHasBeenSet = false;
 
   Aws::String m_segmentTerminator;
+  bool m_componentSeparatorHasBeenSet = false;
+  bool m_dataElementSeparatorHasBeenSet = false;
   bool m_segmentTerminatorHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateSubnetResponse {
   ///@}
  private:
   Subnet m_subnet;
-  bool m_subnetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_subnetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

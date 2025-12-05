@@ -117,15 +117,15 @@ class CreateCustomMetadataRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customMetadata;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
   bool m_customMetadataHasBeenSet = false;
 };
 

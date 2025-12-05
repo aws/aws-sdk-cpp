@@ -173,21 +173,21 @@ class CreateProvisionedModelThroughputRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   int m_modelUnits{0};
-  bool m_modelUnitsHasBeenSet = false;
 
   Aws::String m_provisionedModelName;
-  bool m_provisionedModelNameHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   CommitmentDuration m_commitmentDuration{CommitmentDuration::NOT_SET};
-  bool m_commitmentDurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_modelUnitsHasBeenSet = false;
+  bool m_provisionedModelNameHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_commitmentDurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

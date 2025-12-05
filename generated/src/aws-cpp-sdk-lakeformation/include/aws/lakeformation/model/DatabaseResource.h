@@ -69,9 +69,9 @@ class DatabaseResource {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_catalogIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

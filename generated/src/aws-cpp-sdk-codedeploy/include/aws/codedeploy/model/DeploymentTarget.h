@@ -126,18 +126,18 @@ class DeploymentTarget {
   ///@}
  private:
   DeploymentTargetType m_deploymentTargetType{DeploymentTargetType::NOT_SET};
-  bool m_deploymentTargetTypeHasBeenSet = false;
 
   InstanceTarget m_instanceTarget;
-  bool m_instanceTargetHasBeenSet = false;
 
   LambdaTarget m_lambdaTarget;
-  bool m_lambdaTargetHasBeenSet = false;
 
   ECSTarget m_ecsTarget;
-  bool m_ecsTargetHasBeenSet = false;
 
   CloudFormationTarget m_cloudFormationTarget;
+  bool m_deploymentTargetTypeHasBeenSet = false;
+  bool m_instanceTargetHasBeenSet = false;
+  bool m_lambdaTargetHasBeenSet = false;
+  bool m_ecsTargetHasBeenSet = false;
   bool m_cloudFormationTargetHasBeenSet = false;
 };
 

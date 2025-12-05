@@ -87,12 +87,12 @@ class GenerateMappingRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_inputFileContent;
-  bool m_inputFileContentHasBeenSet = false;
 
   Aws::String m_outputFileContent;
-  bool m_outputFileContentHasBeenSet = false;
 
   MappingType m_mappingType{MappingType::NOT_SET};
+  bool m_inputFileContentHasBeenSet = false;
+  bool m_outputFileContentHasBeenSet = false;
   bool m_mappingTypeHasBeenSet = false;
 };
 

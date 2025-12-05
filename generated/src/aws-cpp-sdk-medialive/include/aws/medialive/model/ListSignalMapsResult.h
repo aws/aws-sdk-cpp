@@ -87,12 +87,12 @@ class ListSignalMapsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SignalMapSummary> m_signalMaps;
-  bool m_signalMapsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_signalMapsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

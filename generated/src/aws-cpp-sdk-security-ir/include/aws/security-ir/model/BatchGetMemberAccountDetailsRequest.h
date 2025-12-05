@@ -78,9 +78,9 @@ class BatchGetMemberAccountDetailsRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_membershipIdHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

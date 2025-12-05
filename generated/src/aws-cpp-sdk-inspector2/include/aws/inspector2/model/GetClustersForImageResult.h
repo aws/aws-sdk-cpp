@@ -86,12 +86,12 @@ class GetClustersForImageResult {
   ///@}
  private:
   Aws::Vector<ClusterInformation> m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

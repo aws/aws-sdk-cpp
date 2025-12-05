@@ -92,12 +92,12 @@ class DeploymentIoTJobConfiguration {
   ///@}
  private:
   IoTJobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
   IoTJobAbortConfig m_abortConfig;
-  bool m_abortConfigHasBeenSet = false;
 
   IoTJobTimeoutConfig m_timeoutConfig;
+  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_abortConfigHasBeenSet = false;
   bool m_timeoutConfigHasBeenSet = false;
 };
 

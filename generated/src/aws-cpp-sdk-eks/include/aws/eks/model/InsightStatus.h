@@ -67,9 +67,9 @@ class InsightStatus {
   ///@}
  private:
   InsightStatusValue m_status{InsightStatusValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

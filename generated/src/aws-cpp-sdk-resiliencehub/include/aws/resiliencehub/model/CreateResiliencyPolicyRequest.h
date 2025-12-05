@@ -174,24 +174,24 @@ class CreateResiliencyPolicyRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DataLocationConstraint m_dataLocationConstraint{DataLocationConstraint::NOT_SET};
-  bool m_dataLocationConstraintHasBeenSet = false;
 
   Aws::Map<DisruptionType, FailurePolicy> m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_policyDescription;
-  bool m_policyDescriptionHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResiliencyPolicyTier m_tier{ResiliencyPolicyTier::NOT_SET};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dataLocationConstraintHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_policyDescriptionHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_tierHasBeenSet = false;
 };
 

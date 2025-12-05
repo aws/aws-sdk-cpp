@@ -68,9 +68,9 @@ class SamlAuthentication {
   ///@}
  private:
   SamlConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   SamlConfigurationStatus m_status{SamlConfigurationStatus::NOT_SET};
+  bool m_configurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

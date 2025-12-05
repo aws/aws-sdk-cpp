@@ -305,42 +305,42 @@ class ChannelMessageSummary {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   ChannelMessageType m_type{ChannelMessageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastEditedTimestamp{};
-  bool m_lastEditedTimestampHasBeenSet = false;
 
   Identity m_sender;
-  bool m_senderHasBeenSet = false;
 
   bool m_redacted{false};
-  bool m_redactedHasBeenSet = false;
 
   ChannelMessageStatusStructure m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-  bool m_messageAttributesHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Vector<Target> m_target;
+  bool m_messageIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_lastEditedTimestampHasBeenSet = false;
+  bool m_senderHasBeenSet = false;
+  bool m_redactedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageAttributesHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

@@ -271,30 +271,30 @@ class SendEmailRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Message m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replyToAddresses;
-  bool m_replyToAddressesHasBeenSet = false;
 
   Aws::String m_returnPath;
-  bool m_returnPathHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_returnPathArn;
-  bool m_returnPathArnHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_configurationSetName;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_replyToAddressesHasBeenSet = false;
+  bool m_returnPathHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_returnPathArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
 };
 

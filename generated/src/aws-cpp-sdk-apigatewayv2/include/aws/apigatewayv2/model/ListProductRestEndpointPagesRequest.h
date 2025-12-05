@@ -107,15 +107,15 @@ class ListProductRestEndpointPagesRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_maxResults;
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccountId;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_portalProductIdHasBeenSet = false;
   bool m_resourceOwnerAccountIdHasBeenSet = false;
 };
 

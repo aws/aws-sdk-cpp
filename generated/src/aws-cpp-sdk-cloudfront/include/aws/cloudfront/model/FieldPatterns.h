@@ -74,9 +74,9 @@ class FieldPatterns {
   ///@}
  private:
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_items;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

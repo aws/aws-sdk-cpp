@@ -110,15 +110,15 @@ class AggFunction {
   ///@}
  private:
   AggType m_aggregation{AggType::NOT_SET};
-  bool m_aggregationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_aggregationFunctionParameters;
-  bool m_aggregationFunctionParametersHasBeenSet = false;
 
   TopicTimeGranularity m_period{TopicTimeGranularity::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_periodField;
+  bool m_aggregationHasBeenSet = false;
+  bool m_aggregationFunctionParametersHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
   bool m_periodFieldHasBeenSet = false;
 };
 

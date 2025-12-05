@@ -153,24 +153,24 @@ class ProfileSummary {
   ///@}
  private:
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_profileVersion;
-  bool m_profileVersionHasBeenSet = false;
 
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileDescription;
-  bool m_profileDescriptionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_profileArnHasBeenSet = false;
+  bool m_profileVersionHasBeenSet = false;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileDescriptionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

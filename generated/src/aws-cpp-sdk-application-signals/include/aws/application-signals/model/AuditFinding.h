@@ -167,21 +167,21 @@ class AuditFinding {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::Vector<AuditorResult> m_auditorResults;
-  bool m_auditorResultsHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   MetricGraph m_metricGraph;
-  bool m_metricGraphHasBeenSet = false;
 
   DependencyGraph m_dependencyGraph;
-  bool m_dependencyGraphHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_auditorResultsHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_metricGraphHasBeenSet = false;
+  bool m_dependencyGraphHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

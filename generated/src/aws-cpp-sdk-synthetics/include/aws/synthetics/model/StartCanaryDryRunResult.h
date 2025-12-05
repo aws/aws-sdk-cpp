@@ -60,9 +60,9 @@ class StartCanaryDryRunResult {
   ///@}
  private:
   DryRunConfigOutput m_dryRunConfig;
-  bool m_dryRunConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dryRunConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

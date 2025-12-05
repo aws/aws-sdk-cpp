@@ -119,15 +119,15 @@ class StorageConnector {
   ///@}
  private:
   StorageConnectorType m_connectorType{StorageConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domains;
-  bool m_domainsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainsRequireAdminConsent;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_domainsHasBeenSet = false;
   bool m_domainsRequireAdminConsentHasBeenSet = false;
 };
 

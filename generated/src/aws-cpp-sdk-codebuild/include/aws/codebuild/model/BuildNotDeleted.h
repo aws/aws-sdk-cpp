@@ -70,9 +70,9 @@ class BuildNotDeleted {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_statusCode;
+  bool m_idHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
 };
 

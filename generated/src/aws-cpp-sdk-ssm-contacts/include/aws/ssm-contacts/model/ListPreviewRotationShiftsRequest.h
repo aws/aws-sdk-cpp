@@ -215,30 +215,30 @@ class ListPreviewRotationShiftsRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_rotationStartTime{};
-  bool m_rotationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_members;
-  bool m_membersHasBeenSet = false;
 
   Aws::String m_timeZoneId;
-  bool m_timeZoneIdHasBeenSet = false;
 
   RecurrenceSettings m_recurrence;
-  bool m_recurrenceHasBeenSet = false;
 
   Aws::Vector<PreviewOverride> m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_rotationStartTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_membersHasBeenSet = false;
+  bool m_timeZoneIdHasBeenSet = false;
+  bool m_recurrenceHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class GetSolFunctionPackageMetadata {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   FunctionArtifactMeta m_vnfd;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_vnfdHasBeenSet = false;
 };
 

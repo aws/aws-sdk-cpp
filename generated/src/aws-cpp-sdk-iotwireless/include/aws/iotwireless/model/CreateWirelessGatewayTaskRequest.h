@@ -65,9 +65,9 @@ class CreateWirelessGatewayTaskRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_wirelessGatewayTaskDefinitionId;
+  bool m_idHasBeenSet = false;
   bool m_wirelessGatewayTaskDefinitionIdHasBeenSet = false;
 };
 

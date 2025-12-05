@@ -110,15 +110,15 @@ class EC2AssociateRouteTableAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionTarget m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   ActionTarget m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   ActionTarget m_gatewayId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
   bool m_gatewayIdHasBeenSet = false;
 };
 

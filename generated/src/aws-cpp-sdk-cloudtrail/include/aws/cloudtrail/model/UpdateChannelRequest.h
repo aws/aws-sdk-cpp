@@ -94,12 +94,12 @@ class UpdateChannelRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_channel;
-  bool m_channelHasBeenSet = false;
 
   Aws::Vector<Destination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_channelHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

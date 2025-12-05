@@ -189,27 +189,27 @@ class AlarmModelVersionSummary {
   ///@}
  private:
   Aws::String m_alarmModelName;
-  bool m_alarmModelNameHasBeenSet = false;
 
   Aws::String m_alarmModelArn;
-  bool m_alarmModelArnHasBeenSet = false;
 
   Aws::String m_alarmModelVersion;
-  bool m_alarmModelVersionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   AlarmModelVersionStatus m_status{AlarmModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_alarmModelNameHasBeenSet = false;
+  bool m_alarmModelArnHasBeenSet = false;
+  bool m_alarmModelVersionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

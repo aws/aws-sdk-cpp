@@ -105,15 +105,15 @@ class AwsEc2VolumeAttachment {
   ///@}
  private:
   Aws::String m_attachTime;
-  bool m_attachTimeHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_attachTimeHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

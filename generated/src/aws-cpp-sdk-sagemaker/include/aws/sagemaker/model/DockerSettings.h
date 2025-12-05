@@ -92,12 +92,12 @@ class DockerSettings {
   ///@}
  private:
   FeatureStatus m_enableDockerAccess{FeatureStatus::NOT_SET};
-  bool m_enableDockerAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcOnlyTrustedAccounts;
-  bool m_vpcOnlyTrustedAccountsHasBeenSet = false;
 
   FeatureStatus m_rootlessDocker{FeatureStatus::NOT_SET};
+  bool m_enableDockerAccessHasBeenSet = false;
+  bool m_vpcOnlyTrustedAccountsHasBeenSet = false;
   bool m_rootlessDockerHasBeenSet = false;
 };
 

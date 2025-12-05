@@ -729,102 +729,102 @@ class Build {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_buildNumber{0};
-  bool m_buildNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_currentPhase;
-  bool m_currentPhaseHasBeenSet = false;
 
   StatusType m_buildStatus{StatusType::NOT_SET};
-  bool m_buildStatusHasBeenSet = false;
 
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   Aws::String m_resolvedSourceVersion;
-  bool m_resolvedSourceVersionHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::Vector<BuildPhase> m_phases;
-  bool m_phasesHasBeenSet = false;
 
   ProjectSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<ProjectSource> m_secondarySources;
-  bool m_secondarySourcesHasBeenSet = false;
 
   Aws::Vector<ProjectSourceVersion> m_secondarySourceVersions;
-  bool m_secondarySourceVersionsHasBeenSet = false;
 
   BuildArtifacts m_artifacts;
-  bool m_artifactsHasBeenSet = false;
 
   Aws::Vector<BuildArtifacts> m_secondaryArtifacts;
-  bool m_secondaryArtifactsHasBeenSet = false;
 
   ProjectCache m_cache;
-  bool m_cacheHasBeenSet = false;
 
   ProjectEnvironment m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   LogsLocation m_logs;
-  bool m_logsHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
-  bool m_timeoutInMinutesHasBeenSet = false;
 
   int m_queuedTimeoutInMinutes{0};
-  bool m_queuedTimeoutInMinutesHasBeenSet = false;
 
   bool m_buildComplete{false};
-  bool m_buildCompleteHasBeenSet = false;
 
   Aws::String m_initiator;
-  bool m_initiatorHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   NetworkInterface m_networkInterface;
-  bool m_networkInterfaceHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Vector<ExportedEnvironmentVariable> m_exportedEnvironmentVariables;
-  bool m_exportedEnvironmentVariablesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reportArns;
-  bool m_reportArnsHasBeenSet = false;
 
   Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
-  bool m_fileSystemLocationsHasBeenSet = false;
 
   DebugSession m_debugSession;
-  bool m_debugSessionHasBeenSet = false;
 
   Aws::String m_buildBatchArn;
-  bool m_buildBatchArnHasBeenSet = false;
 
   AutoRetryConfig m_autoRetryConfig;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_buildNumberHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_currentPhaseHasBeenSet = false;
+  bool m_buildStatusHasBeenSet = false;
+  bool m_sourceVersionHasBeenSet = false;
+  bool m_resolvedSourceVersionHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_phasesHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_secondarySourcesHasBeenSet = false;
+  bool m_secondarySourceVersionsHasBeenSet = false;
+  bool m_artifactsHasBeenSet = false;
+  bool m_secondaryArtifactsHasBeenSet = false;
+  bool m_cacheHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_logsHasBeenSet = false;
+  bool m_timeoutInMinutesHasBeenSet = false;
+  bool m_queuedTimeoutInMinutesHasBeenSet = false;
+  bool m_buildCompleteHasBeenSet = false;
+  bool m_initiatorHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_networkInterfaceHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_exportedEnvironmentVariablesHasBeenSet = false;
+  bool m_reportArnsHasBeenSet = false;
+  bool m_fileSystemLocationsHasBeenSet = false;
+  bool m_debugSessionHasBeenSet = false;
+  bool m_buildBatchArnHasBeenSet = false;
   bool m_autoRetryConfigHasBeenSet = false;
 };
 

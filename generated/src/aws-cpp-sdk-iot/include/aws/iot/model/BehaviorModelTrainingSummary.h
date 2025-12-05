@@ -138,21 +138,21 @@ class BehaviorModelTrainingSummary {
   ///@}
  private:
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_behaviorName;
-  bool m_behaviorNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataCollectionStartDate{};
-  bool m_trainingDataCollectionStartDateHasBeenSet = false;
 
   ModelStatus m_modelStatus{ModelStatus::NOT_SET};
-  bool m_modelStatusHasBeenSet = false;
 
   double m_datapointsCollectionPercentage{0.0};
-  bool m_datapointsCollectionPercentageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModelRefreshDate{};
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_behaviorNameHasBeenSet = false;
+  bool m_trainingDataCollectionStartDateHasBeenSet = false;
+  bool m_modelStatusHasBeenSet = false;
+  bool m_datapointsCollectionPercentageHasBeenSet = false;
   bool m_lastModelRefreshDateHasBeenSet = false;
 };
 

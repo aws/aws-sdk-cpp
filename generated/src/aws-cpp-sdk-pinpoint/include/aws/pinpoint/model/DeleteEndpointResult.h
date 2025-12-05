@@ -58,9 +58,9 @@ class DeleteEndpointResult {
   ///@}
  private:
   EndpointResponse m_endpointResponse;
-  bool m_endpointResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

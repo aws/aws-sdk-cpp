@@ -68,9 +68,9 @@ class UsageTopAccountResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Total m_total;
+  bool m_accountIdHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

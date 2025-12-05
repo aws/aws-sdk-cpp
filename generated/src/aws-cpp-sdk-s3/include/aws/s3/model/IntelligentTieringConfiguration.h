@@ -119,15 +119,15 @@ class IntelligentTieringConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   IntelligentTieringFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   IntelligentTieringStatus m_status{IntelligentTieringStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tiering> m_tierings;
+  bool m_idHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tieringsHasBeenSet = false;
 };
 

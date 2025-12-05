@@ -145,18 +145,18 @@ class AutomatedAbrSettings {
   ///@}
  private:
   int m_maxAbrBitrate{0};
-  bool m_maxAbrBitrateHasBeenSet = false;
 
   double m_maxQualityLevel{0.0};
-  bool m_maxQualityLevelHasBeenSet = false;
 
   int m_maxRenditions{0};
-  bool m_maxRenditionsHasBeenSet = false;
 
   int m_minAbrBitrate{0};
-  bool m_minAbrBitrateHasBeenSet = false;
 
   Aws::Vector<AutomatedAbrRule> m_rules;
+  bool m_maxAbrBitrateHasBeenSet = false;
+  bool m_maxQualityLevelHasBeenSet = false;
+  bool m_maxRenditionsHasBeenSet = false;
+  bool m_minAbrBitrateHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class PutRecordBatchRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   Aws::Vector<Record> m_records;
+  bool m_deliveryStreamNameHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
 };
 

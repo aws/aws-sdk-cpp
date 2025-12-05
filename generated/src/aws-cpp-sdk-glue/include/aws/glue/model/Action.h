@@ -166,21 +166,21 @@ class Action {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_arguments;
-  bool m_argumentsHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   NotificationProperty m_notificationProperty;
-  bool m_notificationPropertyHasBeenSet = false;
 
   Aws::String m_crawlerName;
+  bool m_jobNameHasBeenSet = false;
+  bool m_argumentsHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_notificationPropertyHasBeenSet = false;
   bool m_crawlerNameHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class ScanSbomResult {
   ///@}
  private:
   Aws::Utils::Document m_sbom;
-  bool m_sbomHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sbomHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class FunctionMetadata {
   ///@}
  private:
   Aws::String m_functionARN;
-  bool m_functionARNHasBeenSet = false;
 
   FunctionStage m_stage{FunctionStage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_functionARNHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

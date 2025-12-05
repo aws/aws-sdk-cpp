@@ -229,33 +229,33 @@ class Api {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerContact;
-  bool m_ownerContactHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dns;
-  bool m_dnsHasBeenSet = false;
 
   Aws::String m_apiArn;
-  bool m_apiArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   bool m_xrayEnabled{false};
-  bool m_xrayEnabledHasBeenSet = false;
 
   Aws::String m_wafWebAclArn;
-  bool m_wafWebAclArnHasBeenSet = false;
 
   EventConfig m_eventConfig;
+  bool m_apiIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerContactHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dnsHasBeenSet = false;
+  bool m_apiArnHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_xrayEnabledHasBeenSet = false;
+  bool m_wafWebAclArnHasBeenSet = false;
   bool m_eventConfigHasBeenSet = false;
 };
 

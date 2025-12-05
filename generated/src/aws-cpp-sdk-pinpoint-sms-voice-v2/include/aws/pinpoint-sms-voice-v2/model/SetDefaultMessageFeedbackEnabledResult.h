@@ -92,15 +92,15 @@ class SetDefaultMessageFeedbackEnabledResult {
   ///@}
  private:
   Aws::String m_configurationSetArn;
-  bool m_configurationSetArnHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   bool m_messageFeedbackEnabled{false};
-  bool m_messageFeedbackEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationSetArnHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_messageFeedbackEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

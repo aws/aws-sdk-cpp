@@ -128,18 +128,18 @@ class ListResolverQueryLogConfigsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   int m_totalFilteredCount{0};
-  bool m_totalFilteredCountHasBeenSet = false;
 
   Aws::Vector<ResolverQueryLogConfig> m_resolverQueryLogConfigs;
-  bool m_resolverQueryLogConfigsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
+  bool m_totalFilteredCountHasBeenSet = false;
+  bool m_resolverQueryLogConfigsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

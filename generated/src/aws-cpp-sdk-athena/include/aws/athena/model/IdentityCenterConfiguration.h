@@ -67,9 +67,9 @@ class IdentityCenterConfiguration {
   ///@}
  private:
   bool m_enableIdentityCenter{false};
-  bool m_enableIdentityCenterHasBeenSet = false;
 
   Aws::String m_identityCenterInstanceArn;
+  bool m_enableIdentityCenterHasBeenSet = false;
   bool m_identityCenterInstanceArnHasBeenSet = false;
 };
 

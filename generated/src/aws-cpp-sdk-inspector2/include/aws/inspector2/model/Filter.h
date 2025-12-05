@@ -221,33 +221,33 @@ class Filter {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FilterCriteria m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   FilterAction m_action{FilterAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_criteriaHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

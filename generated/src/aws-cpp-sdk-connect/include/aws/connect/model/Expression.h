@@ -116,15 +116,15 @@ class Expression {
   ///@}
  private:
   AttributeCondition m_attributeCondition;
-  bool m_attributeConditionHasBeenSet = false;
 
   Aws::Vector<Expression> m_andExpression;
-  bool m_andExpressionHasBeenSet = false;
 
   Aws::Vector<Expression> m_orExpression;
-  bool m_orExpressionHasBeenSet = false;
 
   AttributeCondition m_notAttributeCondition;
+  bool m_attributeConditionHasBeenSet = false;
+  bool m_andExpressionHasBeenSet = false;
+  bool m_orExpressionHasBeenSet = false;
   bool m_notAttributeConditionHasBeenSet = false;
 };
 

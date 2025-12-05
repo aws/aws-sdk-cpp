@@ -149,21 +149,21 @@ class DeployActionExecutionTarget {
   ///@}
  private:
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_targetType;
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<DeployTargetEvent> m_events;
+  bool m_targetIdHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

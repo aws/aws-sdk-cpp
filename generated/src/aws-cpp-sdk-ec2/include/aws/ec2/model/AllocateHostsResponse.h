@@ -73,9 +73,9 @@ class AllocateHostsResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_hostIds;
-  bool m_hostIdsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_hostIdsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

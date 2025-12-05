@@ -66,9 +66,9 @@ class VerifyOTPMessageRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   VerifyOTPMessageRequestParameters m_verifyOTPMessageRequestParameters;
+  bool m_applicationIdHasBeenSet = false;
   bool m_verifyOTPMessageRequestParametersHasBeenSet = false;
 };
 

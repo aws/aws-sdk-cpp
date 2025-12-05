@@ -71,9 +71,9 @@ class GetRelationalDatabaseParametersRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_relationalDatabaseNameHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

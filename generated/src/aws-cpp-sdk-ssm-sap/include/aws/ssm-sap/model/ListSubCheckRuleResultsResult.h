@@ -86,12 +86,12 @@ class ListSubCheckRuleResultsResult {
   ///@}
  private:
   Aws::Vector<RuleResult> m_ruleResults;
-  bool m_ruleResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

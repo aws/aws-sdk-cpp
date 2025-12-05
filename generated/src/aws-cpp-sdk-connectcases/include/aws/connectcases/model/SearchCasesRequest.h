@@ -172,24 +172,24 @@ class SearchCasesRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_searchTerm;
-  bool m_searchTermHasBeenSet = false;
 
   CaseFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<Sort> m_sorts;
-  bool m_sortsHasBeenSet = false;
 
   Aws::Vector<FieldIdentifier> m_fields;
+  bool m_domainIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_searchTermHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_sortsHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

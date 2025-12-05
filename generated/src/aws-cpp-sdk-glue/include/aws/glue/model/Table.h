@@ -516,78 +516,78 @@ class Table {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessTime{};
-  bool m_lastAccessTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAnalyzedTime{};
-  bool m_lastAnalyzedTimeHasBeenSet = false;
 
   int m_retention{0};
-  bool m_retentionHasBeenSet = false;
 
   StorageDescriptor m_storageDescriptor;
-  bool m_storageDescriptorHasBeenSet = false;
 
   Aws::Vector<Column> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::String m_viewOriginalText;
-  bool m_viewOriginalTextHasBeenSet = false;
 
   Aws::String m_viewExpandedText;
-  bool m_viewExpandedTextHasBeenSet = false;
 
   Aws::String m_tableType;
-  bool m_tableTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   bool m_isRegisteredWithLakeFormation{false};
-  bool m_isRegisteredWithLakeFormationHasBeenSet = false;
 
   TableIdentifier m_targetTable;
-  bool m_targetTableHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   FederatedTable m_federatedTable;
-  bool m_federatedTableHasBeenSet = false;
 
   ViewDefinition m_viewDefinition;
-  bool m_viewDefinitionHasBeenSet = false;
 
   bool m_isMultiDialectView{false};
-  bool m_isMultiDialectViewHasBeenSet = false;
 
   bool m_isMaterializedView{false};
-  bool m_isMaterializedViewHasBeenSet = false;
 
   std::shared_ptr<TableStatus> m_status;
+  bool m_nameHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_lastAccessTimeHasBeenSet = false;
+  bool m_lastAnalyzedTimeHasBeenSet = false;
+  bool m_retentionHasBeenSet = false;
+  bool m_storageDescriptorHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
+  bool m_viewOriginalTextHasBeenSet = false;
+  bool m_viewExpandedTextHasBeenSet = false;
+  bool m_tableTypeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_isRegisteredWithLakeFormationHasBeenSet = false;
+  bool m_targetTableHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_federatedTableHasBeenSet = false;
+  bool m_viewDefinitionHasBeenSet = false;
+  bool m_isMultiDialectViewHasBeenSet = false;
+  bool m_isMaterializedViewHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

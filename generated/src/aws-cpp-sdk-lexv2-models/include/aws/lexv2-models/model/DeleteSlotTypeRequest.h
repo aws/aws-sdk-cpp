@@ -130,18 +130,18 @@ class DeleteSlotTypeRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_slotTypeId;
-  bool m_slotTypeIdHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   bool m_skipResourceInUseCheck{false};
+  bool m_slotTypeIdHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
   bool m_skipResourceInUseCheckHasBeenSet = false;
 };
 

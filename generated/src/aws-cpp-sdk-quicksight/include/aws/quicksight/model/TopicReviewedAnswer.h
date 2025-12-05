@@ -162,24 +162,24 @@ class TopicReviewedAnswer {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_answerId;
-  bool m_answerIdHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_question;
-  bool m_questionHasBeenSet = false;
 
   TopicIR m_mir;
-  bool m_mirHasBeenSet = false;
 
   TopicVisual m_primaryVisual;
-  bool m_primaryVisualHasBeenSet = false;
 
   TopicTemplate m_template;
+  bool m_arnHasBeenSet = false;
+  bool m_answerIdHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_questionHasBeenSet = false;
+  bool m_mirHasBeenSet = false;
+  bool m_primaryVisualHasBeenSet = false;
   bool m_templateHasBeenSet = false;
 };
 

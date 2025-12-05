@@ -71,9 +71,9 @@ class RegistryId {
   ///@}
  private:
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_registryArn;
+  bool m_registryNameHasBeenSet = false;
   bool m_registryArnHasBeenSet = false;
 };
 

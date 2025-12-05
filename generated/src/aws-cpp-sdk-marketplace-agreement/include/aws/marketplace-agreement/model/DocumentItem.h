@@ -102,12 +102,12 @@ class DocumentItem {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_typeHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

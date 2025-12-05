@@ -70,9 +70,9 @@ class DeregisterAccountAssociationRequest : public IoTManagedIntegrationsRequest
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   Aws::String m_accountAssociationId;
+  bool m_managedThingIdHasBeenSet = false;
   bool m_accountAssociationIdHasBeenSet = false;
 };
 

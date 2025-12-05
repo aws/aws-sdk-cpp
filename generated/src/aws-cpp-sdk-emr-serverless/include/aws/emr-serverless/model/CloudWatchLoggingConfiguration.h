@@ -141,18 +141,18 @@ class CloudWatchLoggingConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logStreamNamePrefix;
-  bool m_logStreamNamePrefixHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_logTypes;
+  bool m_enabledHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_logStreamNamePrefixHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
   bool m_logTypesHasBeenSet = false;
 };
 

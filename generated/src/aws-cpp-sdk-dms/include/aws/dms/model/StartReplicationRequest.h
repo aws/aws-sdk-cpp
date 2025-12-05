@@ -185,21 +185,21 @@ class StartReplicationRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationConfigArn;
-  bool m_replicationConfigArnHasBeenSet = false;
 
   Aws::String m_startReplicationType;
-  bool m_startReplicationTypeHasBeenSet = false;
 
   Aws::String m_premigrationAssessmentSettings;
-  bool m_premigrationAssessmentSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_cdcStartTime{};
-  bool m_cdcStartTimeHasBeenSet = false;
 
   Aws::String m_cdcStartPosition;
-  bool m_cdcStartPositionHasBeenSet = false;
 
   Aws::String m_cdcStopPosition;
+  bool m_replicationConfigArnHasBeenSet = false;
+  bool m_startReplicationTypeHasBeenSet = false;
+  bool m_premigrationAssessmentSettingsHasBeenSet = false;
+  bool m_cdcStartTimeHasBeenSet = false;
+  bool m_cdcStartPositionHasBeenSet = false;
   bool m_cdcStopPositionHasBeenSet = false;
 };
 

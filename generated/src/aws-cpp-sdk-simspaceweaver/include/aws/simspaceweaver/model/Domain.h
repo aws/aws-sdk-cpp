@@ -80,9 +80,9 @@ class Domain {
   ///@}
  private:
   LifecycleManagementStrategy m_lifecycle{LifecycleManagementStrategy::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_lifecycleHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -196,27 +196,27 @@ class LeadInteraction {
   ///@}
  private:
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_usecase;
-  bool m_usecaseHasBeenSet = false;
 
   Aws::Utils::DateTime m_interactionDate{};
-  bool m_interactionDateHasBeenSet = false;
 
   Aws::String m_customerAction;
-  bool m_customerActionHasBeenSet = false;
 
   Aws::String m_businessProblem;
-  bool m_businessProblemHasBeenSet = false;
 
   LeadContact m_contact;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
+  bool m_usecaseHasBeenSet = false;
+  bool m_interactionDateHasBeenSet = false;
+  bool m_customerActionHasBeenSet = false;
+  bool m_businessProblemHasBeenSet = false;
   bool m_contactHasBeenSet = false;
 };
 

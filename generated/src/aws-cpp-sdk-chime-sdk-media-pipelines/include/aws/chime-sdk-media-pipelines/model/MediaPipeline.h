@@ -127,18 +127,18 @@ class MediaPipeline {
   ///@}
  private:
   MediaCapturePipeline m_mediaCapturePipeline;
-  bool m_mediaCapturePipelineHasBeenSet = false;
 
   MediaLiveConnectorPipeline m_mediaLiveConnectorPipeline;
-  bool m_mediaLiveConnectorPipelineHasBeenSet = false;
 
   MediaConcatenationPipeline m_mediaConcatenationPipeline;
-  bool m_mediaConcatenationPipelineHasBeenSet = false;
 
   MediaInsightsPipeline m_mediaInsightsPipeline;
-  bool m_mediaInsightsPipelineHasBeenSet = false;
 
   MediaStreamPipeline m_mediaStreamPipeline;
+  bool m_mediaCapturePipelineHasBeenSet = false;
+  bool m_mediaLiveConnectorPipelineHasBeenSet = false;
+  bool m_mediaConcatenationPipelineHasBeenSet = false;
+  bool m_mediaInsightsPipelineHasBeenSet = false;
   bool m_mediaStreamPipelineHasBeenSet = false;
 };
 

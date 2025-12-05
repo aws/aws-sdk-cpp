@@ -134,18 +134,18 @@ class MemoryRecordUpdateInput {
   ///@}
  private:
   Aws::String m_memoryRecordId;
-  bool m_memoryRecordIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   MemoryContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
 
   Aws::String m_memoryStrategyId;
+  bool m_memoryRecordIdHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_namespacesHasBeenSet = false;
   bool m_memoryStrategyIdHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class ModifyVerifiedAccessGroupRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessGroupId;
-  bool m_verifiedAccessGroupIdHasBeenSet = false;
 
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
+  bool m_verifiedAccessGroupIdHasBeenSet = false;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class ConfigureHealthCheckRequest : public ElasticLoadBalancingRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   HealthCheck m_healthCheck;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_healthCheckHasBeenSet = false;
 };
 

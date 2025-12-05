@@ -75,12 +75,12 @@ class CancelQuantumTaskResult {
   ///@}
  private:
   Aws::String m_quantumTaskArn;
-  bool m_quantumTaskArnHasBeenSet = false;
 
   CancellationStatus m_cancellationStatus{CancellationStatus::NOT_SET};
-  bool m_cancellationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quantumTaskArnHasBeenSet = false;
+  bool m_cancellationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

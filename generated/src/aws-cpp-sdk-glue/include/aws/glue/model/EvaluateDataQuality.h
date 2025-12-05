@@ -150,21 +150,21 @@ class EvaluateDataQuality {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::String m_ruleset;
-  bool m_rulesetHasBeenSet = false;
 
   DQTransformOutput m_output{DQTransformOutput::NOT_SET};
-  bool m_outputHasBeenSet = false;
 
   DQResultsPublishingOptions m_publishingOptions;
-  bool m_publishingOptionsHasBeenSet = false;
 
   DQStopJobOnFailureOptions m_stopJobOnFailureOptions;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_rulesetHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_publishingOptionsHasBeenSet = false;
   bool m_stopJobOnFailureOptionsHasBeenSet = false;
 };
 

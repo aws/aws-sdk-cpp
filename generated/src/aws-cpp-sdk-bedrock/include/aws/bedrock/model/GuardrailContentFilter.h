@@ -239,30 +239,30 @@ class GuardrailContentFilter {
   ///@}
  private:
   GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailFilterStrength m_inputStrength{GuardrailFilterStrength::NOT_SET};
-  bool m_inputStrengthHasBeenSet = false;
 
   GuardrailFilterStrength m_outputStrength{GuardrailFilterStrength::NOT_SET};
-  bool m_outputStrengthHasBeenSet = false;
 
   Aws::Vector<GuardrailModality> m_inputModalities;
-  bool m_inputModalitiesHasBeenSet = false;
 
   Aws::Vector<GuardrailModality> m_outputModalities;
-  bool m_outputModalitiesHasBeenSet = false;
 
   GuardrailContentFilterAction m_inputAction{GuardrailContentFilterAction::NOT_SET};
-  bool m_inputActionHasBeenSet = false;
 
   GuardrailContentFilterAction m_outputAction{GuardrailContentFilterAction::NOT_SET};
-  bool m_outputActionHasBeenSet = false;
 
   bool m_inputEnabled{false};
-  bool m_inputEnabledHasBeenSet = false;
 
   bool m_outputEnabled{false};
+  bool m_typeHasBeenSet = false;
+  bool m_inputStrengthHasBeenSet = false;
+  bool m_outputStrengthHasBeenSet = false;
+  bool m_inputModalitiesHasBeenSet = false;
+  bool m_outputModalitiesHasBeenSet = false;
+  bool m_inputActionHasBeenSet = false;
+  bool m_outputActionHasBeenSet = false;
+  bool m_inputEnabledHasBeenSet = false;
   bool m_outputEnabledHasBeenSet = false;
 };
 

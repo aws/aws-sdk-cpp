@@ -107,12 +107,12 @@ class MessageAttributeValue {
   ///@}
  private:
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_binaryValue{};
+  bool m_dataTypeHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
   bool m_binaryValueHasBeenSet = false;
 };
 

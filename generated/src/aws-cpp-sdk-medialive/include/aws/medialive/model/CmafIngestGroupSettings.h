@@ -367,54 +367,54 @@ class CmafIngestGroupSettings {
   ///@}
  private:
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   CmafNielsenId3Behavior m_nielsenId3Behavior{CmafNielsenId3Behavior::NOT_SET};
-  bool m_nielsenId3BehaviorHasBeenSet = false;
 
   Scte35Type m_scte35Type{Scte35Type::NOT_SET};
-  bool m_scte35TypeHasBeenSet = false;
 
   int m_segmentLength{0};
-  bool m_segmentLengthHasBeenSet = false;
 
   CmafIngestSegmentLengthUnits m_segmentLengthUnits{CmafIngestSegmentLengthUnits::NOT_SET};
-  bool m_segmentLengthUnitsHasBeenSet = false;
 
   int m_sendDelayMs{0};
-  bool m_sendDelayMsHasBeenSet = false;
 
   CmafKLVBehavior m_klvBehavior{CmafKLVBehavior::NOT_SET};
-  bool m_klvBehaviorHasBeenSet = false;
 
   Aws::String m_klvNameModifier;
-  bool m_klvNameModifierHasBeenSet = false;
 
   Aws::String m_nielsenId3NameModifier;
-  bool m_nielsenId3NameModifierHasBeenSet = false;
 
   Aws::String m_scte35NameModifier;
-  bool m_scte35NameModifierHasBeenSet = false;
 
   CmafId3Behavior m_id3Behavior{CmafId3Behavior::NOT_SET};
-  bool m_id3BehaviorHasBeenSet = false;
 
   Aws::String m_id3NameModifier;
-  bool m_id3NameModifierHasBeenSet = false;
 
   Aws::Vector<CmafIngestCaptionLanguageMapping> m_captionLanguageMappings;
-  bool m_captionLanguageMappingsHasBeenSet = false;
 
   CmafTimedMetadataId3Frame m_timedMetadataId3Frame{CmafTimedMetadataId3Frame::NOT_SET};
-  bool m_timedMetadataId3FrameHasBeenSet = false;
 
   int m_timedMetadataId3Period{0};
-  bool m_timedMetadataId3PeriodHasBeenSet = false;
 
   CmafTimedMetadataPassthrough m_timedMetadataPassthrough{CmafTimedMetadataPassthrough::NOT_SET};
-  bool m_timedMetadataPassthroughHasBeenSet = false;
 
   Aws::Vector<AdditionalDestinations> m_additionalDestinations;
+  bool m_destinationHasBeenSet = false;
+  bool m_nielsenId3BehaviorHasBeenSet = false;
+  bool m_scte35TypeHasBeenSet = false;
+  bool m_segmentLengthHasBeenSet = false;
+  bool m_segmentLengthUnitsHasBeenSet = false;
+  bool m_sendDelayMsHasBeenSet = false;
+  bool m_klvBehaviorHasBeenSet = false;
+  bool m_klvNameModifierHasBeenSet = false;
+  bool m_nielsenId3NameModifierHasBeenSet = false;
+  bool m_scte35NameModifierHasBeenSet = false;
+  bool m_id3BehaviorHasBeenSet = false;
+  bool m_id3NameModifierHasBeenSet = false;
+  bool m_captionLanguageMappingsHasBeenSet = false;
+  bool m_timedMetadataId3FrameHasBeenSet = false;
+  bool m_timedMetadataId3PeriodHasBeenSet = false;
+  bool m_timedMetadataPassthroughHasBeenSet = false;
   bool m_additionalDestinationsHasBeenSet = false;
 };
 

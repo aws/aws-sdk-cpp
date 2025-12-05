@@ -233,30 +233,30 @@ class CreateTenantDatabaseRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_tenantDBName;
-  bool m_tenantDBNameHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_characterSetName;
-  bool m_characterSetNameHasBeenSet = false;
 
   Aws::String m_ncharCharacterSetName;
-  bool m_ncharCharacterSetNameHasBeenSet = false;
 
   bool m_manageMasterUserPassword{false};
-  bool m_manageMasterUserPasswordHasBeenSet = false;
 
   Aws::String m_masterUserSecretKmsKeyId;
-  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_tenantDBNameHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_characterSetNameHasBeenSet = false;
+  bool m_ncharCharacterSetNameHasBeenSet = false;
+  bool m_manageMasterUserPasswordHasBeenSet = false;
+  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

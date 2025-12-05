@@ -89,12 +89,12 @@ class ListTemplateGroupAccessControlEntriesResult {
   ///@}
  private:
   Aws::Vector<AccessControlEntrySummary> m_accessControlEntries;
-  bool m_accessControlEntriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessControlEntriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

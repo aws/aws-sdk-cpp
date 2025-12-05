@@ -85,12 +85,12 @@ class AwsCodeBuildProjectLogsConfigS3LogsDetails {
   ///@}
  private:
   bool m_encryptionDisabled{false};
-  bool m_encryptionDisabledHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_encryptionDisabledHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

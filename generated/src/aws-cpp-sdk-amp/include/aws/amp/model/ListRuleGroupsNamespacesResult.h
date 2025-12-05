@@ -93,12 +93,12 @@ class ListRuleGroupsNamespacesResult {
   ///@}
  private:
   Aws::Vector<RuleGroupsNamespaceSummary> m_ruleGroupsNamespaces;
-  bool m_ruleGroupsNamespacesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleGroupsNamespacesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

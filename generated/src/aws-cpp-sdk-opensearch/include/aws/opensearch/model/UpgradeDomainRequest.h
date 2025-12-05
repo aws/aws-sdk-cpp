@@ -115,15 +115,15 @@ class UpgradeDomainRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_targetVersion;
-  bool m_targetVersionHasBeenSet = false;
 
   bool m_performCheckOnly{false};
-  bool m_performCheckOnlyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_advancedOptions;
+  bool m_domainNameHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
+  bool m_performCheckOnlyHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
 };
 

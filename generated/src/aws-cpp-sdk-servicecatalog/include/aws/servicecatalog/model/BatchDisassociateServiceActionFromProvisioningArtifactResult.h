@@ -74,9 +74,9 @@ class BatchDisassociateServiceActionFromProvisioningArtifactResult {
   ///@}
  private:
   Aws::Vector<FailedServiceActionAssociation> m_failedServiceActionAssociations;
-  bool m_failedServiceActionAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedServiceActionAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

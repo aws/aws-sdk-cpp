@@ -177,27 +177,27 @@ class CoveredResource {
   ///@}
  private:
   CoverageResourceType m_resourceType{CoverageResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ScanType m_scanType{ScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   ScanStatus m_scanStatus;
-  bool m_scanStatusHasBeenSet = false;
 
   ResourceScanMetadata m_resourceMetadata;
-  bool m_resourceMetadataHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastScannedAt{};
-  bool m_lastScannedAtHasBeenSet = false;
 
   ScanMode m_scanMode{ScanMode::NOT_SET};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
+  bool m_scanStatusHasBeenSet = false;
+  bool m_resourceMetadataHasBeenSet = false;
+  bool m_lastScannedAtHasBeenSet = false;
   bool m_scanModeHasBeenSet = false;
 };
 

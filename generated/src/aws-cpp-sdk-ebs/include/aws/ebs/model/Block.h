@@ -67,9 +67,9 @@ class Block {
   ///@}
  private:
   int m_blockIndex{0};
-  bool m_blockIndexHasBeenSet = false;
 
   Aws::String m_blockToken;
+  bool m_blockIndexHasBeenSet = false;
   bool m_blockTokenHasBeenSet = false;
 };
 

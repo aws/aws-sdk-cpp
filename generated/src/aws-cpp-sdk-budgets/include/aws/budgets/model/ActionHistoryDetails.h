@@ -67,9 +67,9 @@ class ActionHistoryDetails {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Action m_action;
+  bool m_messageHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

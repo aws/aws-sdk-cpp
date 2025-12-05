@@ -89,12 +89,12 @@ class GetEnrollmentStatusesForOrganizationResult {
   ///@}
  private:
   Aws::Vector<AccountEnrollmentStatus> m_accountEnrollmentStatuses;
-  bool m_accountEnrollmentStatusesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountEnrollmentStatusesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

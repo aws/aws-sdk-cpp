@@ -60,9 +60,9 @@ class DescribeAlarmResult {
   ///@}
  private:
   Alarm m_alarm;
-  bool m_alarmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alarmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

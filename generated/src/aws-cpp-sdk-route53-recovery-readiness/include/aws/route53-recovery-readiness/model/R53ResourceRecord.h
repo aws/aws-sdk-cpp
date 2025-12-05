@@ -69,9 +69,9 @@ class R53ResourceRecord {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_recordSetId;
+  bool m_domainNameHasBeenSet = false;
   bool m_recordSetIdHasBeenSet = false;
 };
 

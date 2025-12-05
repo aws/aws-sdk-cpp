@@ -67,9 +67,9 @@ class SubmissionMutation {
   ///@}
  private:
   Aws::String m_submissionId;
-  bool m_submissionIdHasBeenSet = false;
 
   SubmissionMutationKind m_mutationType{SubmissionMutationKind::NOT_SET};
+  bool m_submissionIdHasBeenSet = false;
   bool m_mutationTypeHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class Asset {
   ///@}
  private:
   Aws::String m_assetArn;
-  bool m_assetArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestAssetDiscoveryTime{};
+  bool m_assetArnHasBeenSet = false;
   bool m_latestAssetDiscoveryTimeHasBeenSet = false;
 };
 

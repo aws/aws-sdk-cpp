@@ -83,12 +83,12 @@ class PutVerificationStateOnViolationRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_violationId;
-  bool m_violationIdHasBeenSet = false;
 
   VerificationState m_verificationState{VerificationState::NOT_SET};
-  bool m_verificationStateHasBeenSet = false;
 
   Aws::String m_verificationStateDescription;
+  bool m_violationIdHasBeenSet = false;
+  bool m_verificationStateHasBeenSet = false;
   bool m_verificationStateDescriptionHasBeenSet = false;
 };
 

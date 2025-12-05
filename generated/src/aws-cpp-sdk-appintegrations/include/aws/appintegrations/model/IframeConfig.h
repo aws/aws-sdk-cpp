@@ -81,9 +81,9 @@ class IframeConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allow;
-  bool m_allowHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sandbox;
+  bool m_allowHasBeenSet = false;
   bool m_sandboxHasBeenSet = false;
 };
 

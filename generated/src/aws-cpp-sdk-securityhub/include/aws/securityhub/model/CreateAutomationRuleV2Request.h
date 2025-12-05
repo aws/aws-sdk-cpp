@@ -187,27 +187,27 @@ class CreateAutomationRuleV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   RuleStatusV2 m_ruleStatus{RuleStatusV2::NOT_SET};
-  bool m_ruleStatusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   double m_ruleOrder{0.0};
-  bool m_ruleOrderHasBeenSet = false;
 
   Criteria m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   Aws::Vector<AutomationRulesActionV2> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleStatusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleOrderHasBeenSet = false;
+  bool m_criteriaHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

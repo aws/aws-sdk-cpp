@@ -135,18 +135,18 @@ class CreateEngagementContextRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_engagementIdentifier;
-  bool m_engagementIdentifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   EngagementContextType m_type{EngagementContextType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   EngagementContextPayload m_payload;
+  bool m_catalogHasBeenSet = false;
+  bool m_engagementIdentifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_typeHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

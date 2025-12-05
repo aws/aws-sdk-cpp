@@ -148,21 +148,21 @@ class GetAccountResult {
   ///@}
  private:
   SendQuota m_sendQuota;
-  bool m_sendQuotaHasBeenSet = false;
 
   bool m_sendingEnabled{false};
-  bool m_sendingEnabledHasBeenSet = false;
 
   bool m_dedicatedIpAutoWarmupEnabled{false};
-  bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
 
   Aws::String m_enforcementStatus;
-  bool m_enforcementStatusHasBeenSet = false;
 
   bool m_productionAccessEnabled{false};
-  bool m_productionAccessEnabledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sendQuotaHasBeenSet = false;
+  bool m_sendingEnabledHasBeenSet = false;
+  bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
+  bool m_enforcementStatusHasBeenSet = false;
+  bool m_productionAccessEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

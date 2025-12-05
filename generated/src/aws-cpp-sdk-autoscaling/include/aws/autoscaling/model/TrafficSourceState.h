@@ -108,12 +108,12 @@ class TrafficSourceState {
   ///@}
  private:
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_stateHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

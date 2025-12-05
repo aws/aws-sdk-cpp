@@ -88,12 +88,12 @@ class ListTemplatesResult {
   ///@}
  private:
   Aws::Vector<TemplateMetadata> m_templatesMetadata;
-  bool m_templatesMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_templatesMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

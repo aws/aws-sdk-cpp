@@ -153,21 +153,21 @@ class BucketLevel {
   ///@}
  private:
   ActivityMetrics m_activityMetrics;
-  bool m_activityMetricsHasBeenSet = false;
 
   PrefixLevel m_prefixLevel;
-  bool m_prefixLevelHasBeenSet = false;
 
   AdvancedCostOptimizationMetrics m_advancedCostOptimizationMetrics;
-  bool m_advancedCostOptimizationMetricsHasBeenSet = false;
 
   AdvancedDataProtectionMetrics m_advancedDataProtectionMetrics;
-  bool m_advancedDataProtectionMetricsHasBeenSet = false;
 
   DetailedStatusCodesMetrics m_detailedStatusCodesMetrics;
-  bool m_detailedStatusCodesMetricsHasBeenSet = false;
 
   AdvancedPerformanceMetrics m_advancedPerformanceMetrics;
+  bool m_activityMetricsHasBeenSet = false;
+  bool m_prefixLevelHasBeenSet = false;
+  bool m_advancedCostOptimizationMetricsHasBeenSet = false;
+  bool m_advancedDataProtectionMetricsHasBeenSet = false;
+  bool m_detailedStatusCodesMetricsHasBeenSet = false;
   bool m_advancedPerformanceMetricsHasBeenSet = false;
 };
 

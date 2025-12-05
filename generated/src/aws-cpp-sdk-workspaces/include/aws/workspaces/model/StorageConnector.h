@@ -65,9 +65,9 @@ class StorageConnector {
   ///@}
  private:
   StorageConnectorTypeEnum m_connectorType{StorageConnectorTypeEnum::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   StorageConnectorStatusEnum m_status{StorageConnectorStatusEnum::NOT_SET};
+  bool m_connectorTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

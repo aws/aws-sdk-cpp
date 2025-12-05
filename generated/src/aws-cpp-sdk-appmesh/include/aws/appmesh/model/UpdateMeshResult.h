@@ -63,9 +63,9 @@ class UpdateMeshResult {
   ///@}
  private:
   MeshData m_mesh;
-  bool m_meshHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_meshHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

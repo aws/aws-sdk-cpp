@@ -92,9 +92,9 @@ class ManagedInstancesNetworkConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
+  bool m_subnetsHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
 };
 

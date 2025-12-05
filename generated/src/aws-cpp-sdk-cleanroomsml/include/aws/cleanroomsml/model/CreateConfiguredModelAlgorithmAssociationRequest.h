@@ -166,21 +166,21 @@ class CreateConfiguredModelAlgorithmAssociationRequest : public CleanRoomsMLRequ
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmArn;
-  bool m_configuredModelAlgorithmArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PrivacyConfiguration m_privacyConfiguration;
-  bool m_privacyConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_configuredModelAlgorithmArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_privacyConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

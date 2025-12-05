@@ -92,12 +92,12 @@ class DeleteAppVersionAppComponentRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_id;
+  bool m_appArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_idHasBeenSet = false;
 };
 

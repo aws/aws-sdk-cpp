@@ -198,30 +198,30 @@ class AssociatedContactSummary {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationTimestamp{};
-  bool m_initiationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_disconnectTimestamp{};
-  bool m_disconnectTimestampHasBeenSet = false;
 
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   Aws::String m_previousContactId;
-  bool m_previousContactIdHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   ContactInitiationMethod m_initiationMethod{ContactInitiationMethod::NOT_SET};
-  bool m_initiationMethodHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
+  bool m_contactIdHasBeenSet = false;
+  bool m_contactArnHasBeenSet = false;
+  bool m_initiationTimestampHasBeenSet = false;
+  bool m_disconnectTimestampHasBeenSet = false;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_previousContactIdHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_initiationMethodHasBeenSet = false;
   bool m_channelHasBeenSet = false;
 };
 

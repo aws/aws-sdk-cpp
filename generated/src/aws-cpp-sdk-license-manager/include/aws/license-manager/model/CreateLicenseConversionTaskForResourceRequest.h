@@ -93,12 +93,12 @@ class CreateLicenseConversionTaskForResourceRequest : public LicenseManagerReque
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   LicenseConversionContext m_sourceLicenseContext;
-  bool m_sourceLicenseContextHasBeenSet = false;
 
   LicenseConversionContext m_destinationLicenseContext;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_sourceLicenseContextHasBeenSet = false;
   bool m_destinationLicenseContextHasBeenSet = false;
 };
 

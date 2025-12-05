@@ -66,9 +66,9 @@ class UpdateScheduledQueryRequest : public TimestreamQueryRequest {
   ///@}
  private:
   Aws::String m_scheduledQueryArn;
-  bool m_scheduledQueryArnHasBeenSet = false;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
+  bool m_scheduledQueryArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DescribeActivationsFilter {
   ///@}
  private:
   DescribeActivationsFilterKeys m_filterKey{DescribeActivationsFilterKeys::NOT_SET};
-  bool m_filterKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterValues;
+  bool m_filterKeyHasBeenSet = false;
   bool m_filterValuesHasBeenSet = false;
 };
 

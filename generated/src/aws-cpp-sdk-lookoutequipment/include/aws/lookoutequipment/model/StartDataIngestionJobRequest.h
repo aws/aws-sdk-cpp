@@ -108,15 +108,15 @@ class StartDataIngestionJobRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   IngestionInputConfiguration m_ingestionInputConfiguration;
-  bool m_ingestionInputConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_datasetNameHasBeenSet = false;
+  bool m_ingestionInputConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

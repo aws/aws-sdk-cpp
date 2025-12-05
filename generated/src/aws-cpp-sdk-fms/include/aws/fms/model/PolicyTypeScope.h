@@ -76,9 +76,9 @@ class PolicyTypeScope {
   ///@}
  private:
   Aws::Vector<SecurityServiceType> m_policyTypes;
-  bool m_policyTypesHasBeenSet = false;
 
   bool m_allPolicyTypesEnabled{false};
+  bool m_policyTypesHasBeenSet = false;
   bool m_allPolicyTypesEnabledHasBeenSet = false;
 };
 

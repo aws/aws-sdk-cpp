@@ -69,9 +69,9 @@ class GetRotationOverrideRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_rotationId;
-  bool m_rotationIdHasBeenSet = false;
 
   Aws::String m_rotationOverrideId;
+  bool m_rotationIdHasBeenSet = false;
   bool m_rotationOverrideIdHasBeenSet = false;
 };
 

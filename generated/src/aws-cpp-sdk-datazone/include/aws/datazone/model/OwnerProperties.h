@@ -69,9 +69,9 @@ class OwnerProperties {
   ///@}
  private:
   OwnerGroupProperties m_group;
-  bool m_groupHasBeenSet = false;
 
   OwnerUserProperties m_user;
+  bool m_groupHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

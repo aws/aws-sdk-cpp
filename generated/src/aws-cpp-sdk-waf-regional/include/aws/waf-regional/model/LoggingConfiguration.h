@@ -112,12 +112,12 @@ class LoggingConfiguration {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logDestinationConfigs;
-  bool m_logDestinationConfigsHasBeenSet = false;
 
   Aws::Vector<FieldToMatch> m_redactedFields;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_logDestinationConfigsHasBeenSet = false;
   bool m_redactedFieldsHasBeenSet = false;
 };
 

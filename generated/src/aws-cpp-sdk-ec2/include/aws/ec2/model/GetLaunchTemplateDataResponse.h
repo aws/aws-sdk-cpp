@@ -60,9 +60,9 @@ class GetLaunchTemplateDataResponse {
   ///@}
  private:
   ResponseLaunchTemplateData m_launchTemplateData;
-  bool m_launchTemplateDataHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_launchTemplateDataHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

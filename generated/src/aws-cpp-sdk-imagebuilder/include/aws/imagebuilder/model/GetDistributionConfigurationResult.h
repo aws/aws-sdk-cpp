@@ -63,9 +63,9 @@ class GetDistributionConfigurationResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   DistributionConfiguration m_distributionConfiguration;
+  bool m_requestIdHasBeenSet = false;
   bool m_distributionConfigurationHasBeenSet = false;
 };
 

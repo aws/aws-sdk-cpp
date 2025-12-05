@@ -169,24 +169,24 @@ class ExportTask {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_exportTaskId;
-  bool m_exportTaskIdHasBeenSet = false;
 
   ExportToS3Task m_exportToS3Task;
-  bool m_exportToS3TaskHasBeenSet = false;
 
   InstanceExportDetails m_instanceExportDetails;
-  bool m_instanceExportDetailsHasBeenSet = false;
 
   ExportTaskState m_state{ExportTaskState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_descriptionHasBeenSet = false;
+  bool m_exportTaskIdHasBeenSet = false;
+  bool m_exportToS3TaskHasBeenSet = false;
+  bool m_instanceExportDetailsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

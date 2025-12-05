@@ -145,21 +145,21 @@ class LogDeliveryConfiguration {
   ///@}
  private:
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   DestinationType m_destinationType{DestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   DestinationDetails m_destinationDetails;
-  bool m_destinationDetailsHasBeenSet = false;
 
   LogFormat m_logFormat{LogFormat::NOT_SET};
-  bool m_logFormatHasBeenSet = false;
 
   LogDeliveryConfigurationStatus m_status{LogDeliveryConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_logTypeHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_destinationDetailsHasBeenSet = false;
+  bool m_logFormatHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class VPC {
   ///@}
  private:
   VPCRegion m_vPCRegion{VPCRegion::NOT_SET};
-  bool m_vPCRegionHasBeenSet = false;
 
   Aws::String m_vPCId;
+  bool m_vPCRegionHasBeenSet = false;
   bool m_vPCIdHasBeenSet = false;
 };
 

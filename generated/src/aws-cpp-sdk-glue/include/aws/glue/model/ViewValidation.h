@@ -144,21 +144,21 @@ class ViewValidation {
   ///@}
  private:
   ViewDialect m_dialect{ViewDialect::NOT_SET};
-  bool m_dialectHasBeenSet = false;
 
   Aws::String m_dialectVersion;
-  bool m_dialectVersionHasBeenSet = false;
 
   Aws::String m_viewValidationText;
-  bool m_viewValidationTextHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   ResourceState m_state{ResourceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ErrorDetail m_error;
+  bool m_dialectHasBeenSet = false;
+  bool m_dialectVersionHasBeenSet = false;
+  bool m_viewValidationTextHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

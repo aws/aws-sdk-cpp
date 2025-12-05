@@ -70,9 +70,9 @@ class S3PropertiesPatch {
   ///@}
  private:
   Aws::String m_s3AccessGrantLocationId;
-  bool m_s3AccessGrantLocationIdHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_s3AccessGrantLocationIdHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

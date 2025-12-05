@@ -86,12 +86,12 @@ class ListComponentTypesFilter {
   ///@}
  private:
   Aws::String m_extendsFrom;
-  bool m_extendsFromHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   bool m_isAbstract{false};
+  bool m_extendsFromHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_isAbstractHasBeenSet = false;
 };
 

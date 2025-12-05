@@ -87,12 +87,12 @@ class GetJobRunRequest : public EMRServerlessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_jobRunId;
-  bool m_jobRunIdHasBeenSet = false;
 
   int m_attempt{0};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_jobRunIdHasBeenSet = false;
   bool m_attemptHasBeenSet = false;
 };
 

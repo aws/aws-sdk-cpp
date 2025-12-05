@@ -60,9 +60,9 @@ class DescribeAliasResult {
   ///@}
  private:
   Alias m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aliasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

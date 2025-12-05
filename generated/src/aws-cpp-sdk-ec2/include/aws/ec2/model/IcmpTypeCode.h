@@ -63,9 +63,9 @@ class IcmpTypeCode {
   ///@}
  private:
   int m_code{0};
-  bool m_codeHasBeenSet = false;
 
   int m_type{0};
+  bool m_codeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

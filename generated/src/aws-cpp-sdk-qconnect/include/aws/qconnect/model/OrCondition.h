@@ -77,9 +77,9 @@ class OrCondition {
   ///@}
  private:
   Aws::Vector<TagCondition> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   TagCondition m_tagCondition;
+  bool m_andConditionsHasBeenSet = false;
   bool m_tagConditionHasBeenSet = false;
 };
 

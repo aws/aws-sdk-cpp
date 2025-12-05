@@ -79,9 +79,9 @@ class EnvironmentDeploymentDetails {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<EnvironmentError>> m_environmentFailureReasons;
-  bool m_environmentFailureReasonsHasBeenSet = false;
 
   OverallDeploymentStatus m_overallDeploymentStatus{OverallDeploymentStatus::NOT_SET};
+  bool m_environmentFailureReasonsHasBeenSet = false;
   bool m_overallDeploymentStatusHasBeenSet = false;
 };
 

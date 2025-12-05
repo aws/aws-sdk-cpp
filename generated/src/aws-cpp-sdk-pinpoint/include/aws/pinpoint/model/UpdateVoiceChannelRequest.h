@@ -65,9 +65,9 @@ class UpdateVoiceChannelRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   VoiceChannelRequest m_voiceChannelRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_voiceChannelRequestHasBeenSet = false;
 };
 

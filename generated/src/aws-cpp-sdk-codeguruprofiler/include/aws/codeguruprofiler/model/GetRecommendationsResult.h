@@ -153,21 +153,21 @@ class GetRecommendationsResult {
   ///@}
  private:
   Aws::Vector<Anomaly> m_anomalies;
-  bool m_anomaliesHasBeenSet = false;
 
   Aws::Utils::DateTime m_profileEndTime{};
-  bool m_profileEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_profileStartTime{};
-  bool m_profileStartTimeHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::Vector<Recommendation> m_recommendations;
-  bool m_recommendationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anomaliesHasBeenSet = false;
+  bool m_profileEndTimeHasBeenSet = false;
+  bool m_profileStartTimeHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
+  bool m_recommendationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

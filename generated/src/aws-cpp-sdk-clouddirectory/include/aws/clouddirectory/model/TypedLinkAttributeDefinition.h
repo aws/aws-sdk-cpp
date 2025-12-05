@@ -145,21 +145,21 @@ class TypedLinkAttributeDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FacetAttributeType m_type{FacetAttributeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TypedAttributeValue m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   bool m_isImmutable{false};
-  bool m_isImmutableHasBeenSet = false;
 
   Aws::Map<Aws::String, Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   RequiredAttributeBehavior m_requiredBehavior{RequiredAttributeBehavior::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_isImmutableHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_requiredBehaviorHasBeenSet = false;
 };
 

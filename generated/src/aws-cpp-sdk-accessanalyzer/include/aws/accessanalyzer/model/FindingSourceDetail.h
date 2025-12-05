@@ -71,9 +71,9 @@ class FindingSourceDetail {
   ///@}
  private:
   Aws::String m_accessPointArn;
-  bool m_accessPointArnHasBeenSet = false;
 
   Aws::String m_accessPointAccount;
+  bool m_accessPointArnHasBeenSet = false;
   bool m_accessPointAccountHasBeenSet = false;
 };
 

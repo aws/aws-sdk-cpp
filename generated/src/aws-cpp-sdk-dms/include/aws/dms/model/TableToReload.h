@@ -69,9 +69,9 @@ class TableToReload {
   ///@}
  private:
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_tableName;
+  bool m_schemaNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
 };
 

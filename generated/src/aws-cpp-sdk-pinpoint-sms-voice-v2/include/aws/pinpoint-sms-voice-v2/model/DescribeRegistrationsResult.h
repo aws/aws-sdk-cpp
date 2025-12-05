@@ -85,12 +85,12 @@ class DescribeRegistrationsResult {
   ///@}
  private:
   Aws::Vector<RegistrationInformation> m_registrations;
-  bool m_registrationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

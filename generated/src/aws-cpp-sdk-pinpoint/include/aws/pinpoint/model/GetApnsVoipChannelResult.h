@@ -58,9 +58,9 @@ class GetApnsVoipChannelResult {
   ///@}
  private:
   APNSVoipChannelResponse m_aPNSVoipChannelResponse;
-  bool m_aPNSVoipChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aPNSVoipChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

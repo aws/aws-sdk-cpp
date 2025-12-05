@@ -110,18 +110,18 @@ class LibraryTemplateBodyInputs {
   ///@}
  private:
   bool m_addContactNumber{false};
-  bool m_addContactNumberHasBeenSet = false;
 
   bool m_addLearnMoreLink{false};
-  bool m_addLearnMoreLinkHasBeenSet = false;
 
   bool m_addSecurityRecommendation{false};
-  bool m_addSecurityRecommendationHasBeenSet = false;
 
   bool m_addTrackPackageLink{false};
-  bool m_addTrackPackageLinkHasBeenSet = false;
 
   int m_codeExpirationMinutes{0};
+  bool m_addContactNumberHasBeenSet = false;
+  bool m_addLearnMoreLinkHasBeenSet = false;
+  bool m_addSecurityRecommendationHasBeenSet = false;
+  bool m_addTrackPackageLinkHasBeenSet = false;
   bool m_codeExpirationMinutesHasBeenSet = false;
 };
 

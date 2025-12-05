@@ -60,9 +60,9 @@ class GetVectorBucketResult {
   ///@}
  private:
   VectorBucket m_vectorBucket;
-  bool m_vectorBucketHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vectorBucketHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

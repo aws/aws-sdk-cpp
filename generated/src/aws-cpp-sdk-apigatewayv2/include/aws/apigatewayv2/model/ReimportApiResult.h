@@ -362,57 +362,57 @@ class ReimportApiResult {
   ///@}
  private:
   Aws::String m_apiEndpoint;
-  bool m_apiEndpointHasBeenSet = false;
 
   bool m_apiGatewayManaged{false};
-  bool m_apiGatewayManagedHasBeenSet = false;
 
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_apiKeySelectionExpression;
-  bool m_apiKeySelectionExpressionHasBeenSet = false;
 
   Cors m_corsConfiguration;
-  bool m_corsConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_disableSchemaValidation{false};
-  bool m_disableSchemaValidationHasBeenSet = false;
 
   bool m_disableExecuteApiEndpoint{false};
-  bool m_disableExecuteApiEndpointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_importInfo;
-  bool m_importInfoHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProtocolType m_protocolType{ProtocolType::NOT_SET};
-  bool m_protocolTypeHasBeenSet = false;
 
   Aws::String m_routeSelectionExpression;
-  bool m_routeSelectionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiEndpointHasBeenSet = false;
+  bool m_apiGatewayManagedHasBeenSet = false;
+  bool m_apiIdHasBeenSet = false;
+  bool m_apiKeySelectionExpressionHasBeenSet = false;
+  bool m_corsConfigurationHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_disableSchemaValidationHasBeenSet = false;
+  bool m_disableExecuteApiEndpointHasBeenSet = false;
+  bool m_importInfoHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
+  bool m_routeSelectionExpressionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

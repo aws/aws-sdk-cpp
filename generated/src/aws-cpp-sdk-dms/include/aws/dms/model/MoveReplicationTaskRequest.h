@@ -70,9 +70,9 @@ class MoveReplicationTaskRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   Aws::String m_targetReplicationInstanceArn;
+  bool m_replicationTaskArnHasBeenSet = false;
   bool m_targetReplicationInstanceArnHasBeenSet = false;
 };
 

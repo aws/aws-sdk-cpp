@@ -160,24 +160,24 @@ class UpdateResourceRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   BookingOptions m_bookingOptions;
-  bool m_bookingOptionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ResourceType m_type{ResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   bool m_hiddenFromGlobalAddressList{false};
+  bool m_organizationIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_bookingOptionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 };
 

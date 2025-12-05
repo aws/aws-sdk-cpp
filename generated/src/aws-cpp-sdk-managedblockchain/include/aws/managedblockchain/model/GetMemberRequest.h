@@ -65,9 +65,9 @@ class GetMemberRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_memberId;
+  bool m_networkIdHasBeenSet = false;
   bool m_memberIdHasBeenSet = false;
 };
 

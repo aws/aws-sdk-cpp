@@ -97,12 +97,12 @@ class GetMediaResult {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_payload{};
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class UserSearchFilter {
   ///@}
  private:
   ControlPlaneTagFilter m_tagFilter;
-  bool m_tagFilterHasBeenSet = false;
 
   ControlPlaneUserAttributeFilter m_userAttributeFilter;
+  bool m_tagFilterHasBeenSet = false;
   bool m_userAttributeFilterHasBeenSet = false;
 };
 

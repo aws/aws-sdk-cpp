@@ -135,21 +135,21 @@ class ParentSavingsPlanOffering {
   ///@}
  private:
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   SavingsPlanPaymentOption m_paymentOption{SavingsPlanPaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   SavingsPlanType m_planType{SavingsPlanType::NOT_SET};
-  bool m_planTypeHasBeenSet = false;
 
   long long m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   CurrencyCode m_currency{CurrencyCode::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   Aws::String m_planDescription;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_planTypeHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
   bool m_planDescriptionHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class StartUploadJobRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_domainNameHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

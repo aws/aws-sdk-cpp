@@ -130,15 +130,15 @@ class CreateAccessGrantsLocationRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_locationScope;
-  bool m_locationScopeHasBeenSet = false;
 
   Aws::String m_iAMRoleArn;
-  bool m_iAMRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_locationScopeHasBeenSet = false;
+  bool m_iAMRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

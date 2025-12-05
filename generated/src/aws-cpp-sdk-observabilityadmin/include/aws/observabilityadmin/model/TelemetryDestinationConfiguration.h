@@ -186,27 +186,27 @@ class TelemetryDestinationConfiguration {
   ///@}
  private:
   DestinationType m_destinationType{DestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   Aws::String m_destinationPattern;
-  bool m_destinationPatternHasBeenSet = false;
 
   int m_retentionInDays{0};
-  bool m_retentionInDaysHasBeenSet = false;
 
   VPCFlowLogParameters m_vPCFlowLogParameters;
-  bool m_vPCFlowLogParametersHasBeenSet = false;
 
   CloudtrailParameters m_cloudtrailParameters;
-  bool m_cloudtrailParametersHasBeenSet = false;
 
   ELBLoadBalancerLoggingParameters m_eLBLoadBalancerLoggingParameters;
-  bool m_eLBLoadBalancerLoggingParametersHasBeenSet = false;
 
   WAFLoggingParameters m_wAFLoggingParameters;
-  bool m_wAFLoggingParametersHasBeenSet = false;
 
   LogDeliveryParameters m_logDeliveryParameters;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_destinationPatternHasBeenSet = false;
+  bool m_retentionInDaysHasBeenSet = false;
+  bool m_vPCFlowLogParametersHasBeenSet = false;
+  bool m_cloudtrailParametersHasBeenSet = false;
+  bool m_eLBLoadBalancerLoggingParametersHasBeenSet = false;
+  bool m_wAFLoggingParametersHasBeenSet = false;
   bool m_logDeliveryParametersHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class JsonTokenTypeConfiguration {
   ///@}
  private:
   Aws::String m_userNameAttributeField;
-  bool m_userNameAttributeFieldHasBeenSet = false;
 
   Aws::String m_groupAttributeField;
+  bool m_userNameAttributeFieldHasBeenSet = false;
   bool m_groupAttributeFieldHasBeenSet = false;
 };
 

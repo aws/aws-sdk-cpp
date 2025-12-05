@@ -274,33 +274,33 @@ class CreateResolverEndpointRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   ResolverEndpointDirection m_direction{ResolverEndpointDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   Aws::Vector<IpAddressRequest> m_ipAddresses;
-  bool m_ipAddressesHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_preferredInstanceType;
-  bool m_preferredInstanceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResolverEndpointType m_resolverEndpointType{ResolverEndpointType::NOT_SET};
-  bool m_resolverEndpointTypeHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
+  bool m_ipAddressesHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_preferredInstanceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_resolverEndpointTypeHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
 };
 

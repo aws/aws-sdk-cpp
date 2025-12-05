@@ -71,9 +71,9 @@ class LogFieldsListItem {
   ///@}
  private:
   Aws::String m_logFieldName;
-  bool m_logFieldNameHasBeenSet = false;
 
   std::shared_ptr<LogFieldType> m_logFieldType;
+  bool m_logFieldNameHasBeenSet = false;
   bool m_logFieldTypeHasBeenSet = false;
 };
 

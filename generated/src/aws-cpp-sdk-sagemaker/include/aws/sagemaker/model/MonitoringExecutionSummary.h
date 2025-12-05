@@ -212,33 +212,33 @@ class MonitoringExecutionSummary {
   ///@}
  private:
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledTime{};
-  bool m_scheduledTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   ExecutionStatus m_monitoringExecutionStatus{ExecutionStatus::NOT_SET};
-  bool m_monitoringExecutionStatusHasBeenSet = false;
 
   Aws::String m_processingJobArn;
-  bool m_processingJobArnHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_monitoringJobDefinitionName;
-  bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
   MonitoringType m_monitoringType{MonitoringType::NOT_SET};
+  bool m_monitoringScheduleNameHasBeenSet = false;
+  bool m_scheduledTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_monitoringExecutionStatusHasBeenSet = false;
+  bool m_processingJobArnHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_monitoringJobDefinitionNameHasBeenSet = false;
   bool m_monitoringTypeHasBeenSet = false;
 };
 

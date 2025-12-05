@@ -86,12 +86,12 @@ class CustomImage {
   ///@}
  private:
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   int m_imageVersionNumber{0};
-  bool m_imageVersionNumberHasBeenSet = false;
 
   Aws::String m_appImageConfigName;
+  bool m_imageNameHasBeenSet = false;
+  bool m_imageVersionNumberHasBeenSet = false;
   bool m_appImageConfigNameHasBeenSet = false;
 };
 

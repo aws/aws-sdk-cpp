@@ -142,21 +142,21 @@ class Destination {
   ///@}
  private:
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_accessPolicy;
-  bool m_accessPolicyHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   long long m_creationTime{0};
+  bool m_destinationNameHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_accessPolicyHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

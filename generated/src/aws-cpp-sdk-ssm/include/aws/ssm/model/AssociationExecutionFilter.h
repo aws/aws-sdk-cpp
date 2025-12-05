@@ -84,12 +84,12 @@ class AssociationExecutionFilter {
   ///@}
  private:
   AssociationExecutionFilterKey m_key{AssociationExecutionFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   AssociationFilterOperatorType m_type{AssociationFilterOperatorType::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

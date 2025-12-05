@@ -161,21 +161,21 @@ class ListMetricsRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::Vector<Condition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::Vector<Field> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Sort> m_sorts;
+  bool m_conditionsHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sortsHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class FastLaunchLaunchTemplateSpecificationRequest {
   ///@}
  private:
   Aws::String m_launchTemplateId;
-  bool m_launchTemplateIdHasBeenSet = false;
 
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_launchTemplateIdHasBeenSet = false;
+  bool m_launchTemplateNameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

@@ -180,24 +180,24 @@ class NetworkAcl {
   ///@}
  private:
   Aws::Vector<NetworkAclAssociation> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::Vector<NetworkAclEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   Aws::String m_networkAclId;
-  bool m_networkAclIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_ownerId;
+  bool m_associationsHasBeenSet = false;
+  bool m_entriesHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
+  bool m_networkAclIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
 };
 

@@ -136,18 +136,18 @@ class ClientVpcConnection {
   ///@}
  private:
   Aws::String m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   VpcConnectionState m_state{VpcConnectionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_vpcConnectionArn;
-  bool m_vpcConnectionArnHasBeenSet = false;
 
   Aws::String m_owner;
+  bool m_authenticationHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_vpcConnectionArnHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

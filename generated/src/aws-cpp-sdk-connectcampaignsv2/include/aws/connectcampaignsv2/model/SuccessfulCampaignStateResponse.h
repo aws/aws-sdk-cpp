@@ -63,9 +63,9 @@ class SuccessfulCampaignStateResponse {
   ///@}
  private:
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   CampaignState m_state{CampaignState::NOT_SET};
+  bool m_campaignIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

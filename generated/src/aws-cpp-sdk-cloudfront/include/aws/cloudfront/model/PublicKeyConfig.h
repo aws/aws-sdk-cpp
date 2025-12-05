@@ -116,15 +116,15 @@ class PublicKeyConfig {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_encodedKey;
-  bool m_encodedKeyHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_encodedKeyHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class Spacing {
   ///@}
  private:
   Aws::String m_top;
-  bool m_topHasBeenSet = false;
 
   Aws::String m_bottom;
-  bool m_bottomHasBeenSet = false;
 
   Aws::String m_left;
-  bool m_leftHasBeenSet = false;
 
   Aws::String m_right;
+  bool m_topHasBeenSet = false;
+  bool m_bottomHasBeenSet = false;
+  bool m_leftHasBeenSet = false;
   bool m_rightHasBeenSet = false;
 };
 

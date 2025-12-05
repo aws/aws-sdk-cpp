@@ -92,12 +92,12 @@ class SendEventRequest : public IvschatRequest {
   ///@}
  private:
   Aws::String m_roomIdentifier;
-  bool m_roomIdentifierHasBeenSet = false;
 
   Aws::String m_eventName;
-  bool m_eventNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_roomIdentifierHasBeenSet = false;
+  bool m_eventNameHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

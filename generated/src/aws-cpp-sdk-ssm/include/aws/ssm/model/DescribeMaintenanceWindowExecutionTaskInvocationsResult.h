@@ -91,12 +91,12 @@ class DescribeMaintenanceWindowExecutionTaskInvocationsResult {
   ///@}
  private:
   Aws::Vector<MaintenanceWindowExecutionTaskInvocationIdentity> m_windowExecutionTaskInvocationIdentities;
-  bool m_windowExecutionTaskInvocationIdentitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowExecutionTaskInvocationIdentitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

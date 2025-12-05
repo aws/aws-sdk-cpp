@@ -91,12 +91,12 @@ class BatchDeleteDocumentRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_documentIdList;
-  bool m_documentIdListHasBeenSet = false;
 
   DataSourceSyncJobMetricTarget m_dataSourceSyncJobMetricTarget;
+  bool m_indexIdHasBeenSet = false;
+  bool m_documentIdListHasBeenSet = false;
   bool m_dataSourceSyncJobMetricTargetHasBeenSet = false;
 };
 

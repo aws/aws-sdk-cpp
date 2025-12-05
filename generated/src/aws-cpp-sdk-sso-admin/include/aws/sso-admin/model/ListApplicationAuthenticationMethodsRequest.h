@@ -72,9 +72,9 @@ class ListApplicationAuthenticationMethodsRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

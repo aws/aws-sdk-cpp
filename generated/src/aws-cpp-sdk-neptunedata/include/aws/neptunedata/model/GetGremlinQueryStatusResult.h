@@ -94,15 +94,15 @@ class GetGremlinQueryStatusResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   QueryEvalStats m_queryEvalStats;
-  bool m_queryEvalStatsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_queryEvalStatsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

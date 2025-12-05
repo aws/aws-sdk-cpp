@@ -170,21 +170,21 @@ class CreateImageUsageReportRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<ImageUsageResourceTypeRequest> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_imageIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

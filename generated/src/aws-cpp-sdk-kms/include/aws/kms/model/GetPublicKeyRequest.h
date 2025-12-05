@@ -91,9 +91,9 @@ class GetPublicKeyRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTokens;
+  bool m_keyIdHasBeenSet = false;
   bool m_grantTokensHasBeenSet = false;
 };
 

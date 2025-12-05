@@ -111,15 +111,15 @@ class DomainValidationRecord {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ResourceRecord m_resourceRecord;
-  bool m_resourceRecordHasBeenSet = false;
 
   DnsRecordCreationState m_dnsRecordCreationState;
-  bool m_dnsRecordCreationStateHasBeenSet = false;
 
   CertificateDomainValidationStatus m_validationStatus{CertificateDomainValidationStatus::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
+  bool m_resourceRecordHasBeenSet = false;
+  bool m_dnsRecordCreationStateHasBeenSet = false;
   bool m_validationStatusHasBeenSet = false;
 };
 

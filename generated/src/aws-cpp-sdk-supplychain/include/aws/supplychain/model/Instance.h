@@ -234,36 +234,36 @@ class Instance {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   InstanceState m_state{InstanceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_webAppDnsDomain;
-  bool m_webAppDnsDomainHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_instanceDescription;
-  bool m_instanceDescriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   double m_versionNumber{0.0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_webAppDnsDomainHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_instanceDescriptionHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

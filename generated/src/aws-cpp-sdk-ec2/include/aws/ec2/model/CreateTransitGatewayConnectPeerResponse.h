@@ -60,9 +60,9 @@ class CreateTransitGatewayConnectPeerResponse {
   ///@}
  private:
   TransitGatewayConnectPeer m_transitGatewayConnectPeer;
-  bool m_transitGatewayConnectPeerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayConnectPeerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

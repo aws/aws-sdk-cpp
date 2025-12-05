@@ -314,48 +314,48 @@ class RoutePedestrianTravelStep {
   ///@}
  private:
   RouteContinueStepDetails m_continueStepDetails;
-  bool m_continueStepDetailsHasBeenSet = false;
 
   RouteRoad m_currentRoad;
-  bool m_currentRoadHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<LocalizedString> m_exitNumber;
-  bool m_exitNumberHasBeenSet = false;
 
   int m_geometryOffset{0};
-  bool m_geometryOffsetHasBeenSet = false;
 
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   RouteKeepStepDetails m_keepStepDetails;
-  bool m_keepStepDetailsHasBeenSet = false;
 
   RouteRoad m_nextRoad;
-  bool m_nextRoadHasBeenSet = false;
 
   RouteRoundaboutEnterStepDetails m_roundaboutEnterStepDetails;
-  bool m_roundaboutEnterStepDetailsHasBeenSet = false;
 
   RouteRoundaboutExitStepDetails m_roundaboutExitStepDetails;
-  bool m_roundaboutExitStepDetailsHasBeenSet = false;
 
   RouteRoundaboutPassStepDetails m_roundaboutPassStepDetails;
-  bool m_roundaboutPassStepDetailsHasBeenSet = false;
 
   RouteSignpost m_signpost;
-  bool m_signpostHasBeenSet = false;
 
   RouteTurnStepDetails m_turnStepDetails;
-  bool m_turnStepDetailsHasBeenSet = false;
 
   RoutePedestrianTravelStepType m_type{RoutePedestrianTravelStepType::NOT_SET};
+  bool m_continueStepDetailsHasBeenSet = false;
+  bool m_currentRoadHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_exitNumberHasBeenSet = false;
+  bool m_geometryOffsetHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
+  bool m_keepStepDetailsHasBeenSet = false;
+  bool m_nextRoadHasBeenSet = false;
+  bool m_roundaboutEnterStepDetailsHasBeenSet = false;
+  bool m_roundaboutExitStepDetailsHasBeenSet = false;
+  bool m_roundaboutPassStepDetailsHasBeenSet = false;
+  bool m_signpostHasBeenSet = false;
+  bool m_turnStepDetailsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

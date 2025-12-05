@@ -107,15 +107,15 @@ class JobEntity {
   ///@}
  private:
   JobDetailsEntity m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   JobAttachmentDetailsEntity m_jobAttachmentDetails;
-  bool m_jobAttachmentDetailsHasBeenSet = false;
 
   StepDetailsEntity m_stepDetails;
-  bool m_stepDetailsHasBeenSet = false;
 
   EnvironmentDetailsEntity m_environmentDetails;
+  bool m_jobDetailsHasBeenSet = false;
+  bool m_jobAttachmentDetailsHasBeenSet = false;
+  bool m_stepDetailsHasBeenSet = false;
   bool m_environmentDetailsHasBeenSet = false;
 };
 

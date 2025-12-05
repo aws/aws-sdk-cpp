@@ -70,9 +70,9 @@ class GetActivityTaskRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_activityArn;
-  bool m_activityArnHasBeenSet = false;
 
   Aws::String m_workerName;
+  bool m_activityArnHasBeenSet = false;
   bool m_workerNameHasBeenSet = false;
 };
 

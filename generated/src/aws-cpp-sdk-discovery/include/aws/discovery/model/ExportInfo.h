@@ -183,27 +183,27 @@ class ExportInfo {
   ///@}
  private:
   Aws::String m_exportId;
-  bool m_exportIdHasBeenSet = false;
 
   ExportStatus m_exportStatus{ExportStatus::NOT_SET};
-  bool m_exportStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_configurationsDownloadUrl;
-  bool m_configurationsDownloadUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_exportRequestTime{};
-  bool m_exportRequestTimeHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedStartTime{};
-  bool m_requestedStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedEndTime{};
+  bool m_exportIdHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_configurationsDownloadUrlHasBeenSet = false;
+  bool m_exportRequestTimeHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_requestedStartTimeHasBeenSet = false;
   bool m_requestedEndTimeHasBeenSet = false;
 };
 

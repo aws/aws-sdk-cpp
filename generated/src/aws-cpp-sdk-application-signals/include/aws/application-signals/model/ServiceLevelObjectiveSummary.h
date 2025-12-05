@@ -202,27 +202,27 @@ class ServiceLevelObjectiveSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   DependencyConfig m_dependencyConfig;
-  bool m_dependencyConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   MetricSourceType m_metricSourceType{MetricSourceType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_dependencyConfigHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
   bool m_metricSourceTypeHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class CreateClusterResult {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Vector<JobListEntry> m_jobListEntries;
-  bool m_jobListEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_jobListEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

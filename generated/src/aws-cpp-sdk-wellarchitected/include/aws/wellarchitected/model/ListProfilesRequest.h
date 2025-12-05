@@ -100,15 +100,15 @@ class ListProfilesRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_profileNamePrefix;
-  bool m_profileNamePrefixHasBeenSet = false;
 
   ProfileOwnerType m_profileOwnerType{ProfileOwnerType::NOT_SET};
-  bool m_profileOwnerTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_profileNamePrefixHasBeenSet = false;
+  bool m_profileOwnerTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

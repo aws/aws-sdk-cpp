@@ -70,9 +70,9 @@ class RedshiftCredentials {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   UsernamePassword m_usernamePassword;
+  bool m_secretArnHasBeenSet = false;
   bool m_usernamePasswordHasBeenSet = false;
 };
 

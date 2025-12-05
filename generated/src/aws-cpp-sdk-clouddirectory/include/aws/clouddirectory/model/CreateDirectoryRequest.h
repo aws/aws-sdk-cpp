@@ -69,9 +69,9 @@ class CreateDirectoryRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_schemaArn;
+  bool m_nameHasBeenSet = false;
   bool m_schemaArnHasBeenSet = false;
 };
 

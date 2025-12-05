@@ -197,27 +197,27 @@ class ConnectionTypeBrief {
   ///@}
  private:
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Capabilities m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::String m_logoUrl;
-  bool m_logoUrlHasBeenSet = false;
 
   Aws::Vector<ConnectionTypeVariant> m_connectionTypeVariants;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_vendorHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_logoUrlHasBeenSet = false;
   bool m_connectionTypeVariantsHasBeenSet = false;
 };
 

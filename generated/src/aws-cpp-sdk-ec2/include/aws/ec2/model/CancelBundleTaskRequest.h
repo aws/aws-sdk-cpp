@@ -73,9 +73,9 @@ class CancelBundleTaskRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_bundleIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

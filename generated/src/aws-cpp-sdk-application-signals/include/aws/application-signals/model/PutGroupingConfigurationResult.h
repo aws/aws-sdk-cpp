@@ -62,9 +62,9 @@ class PutGroupingConfigurationResult {
   ///@}
  private:
   GroupingConfiguration m_groupingConfiguration;
-  bool m_groupingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

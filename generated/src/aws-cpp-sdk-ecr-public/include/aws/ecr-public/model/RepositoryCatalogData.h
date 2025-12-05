@@ -179,24 +179,24 @@ class RepositoryCatalogData {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_architectures;
-  bool m_architecturesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operatingSystems;
-  bool m_operatingSystemsHasBeenSet = false;
 
   Aws::String m_logoUrl;
-  bool m_logoUrlHasBeenSet = false;
 
   Aws::String m_aboutText;
-  bool m_aboutTextHasBeenSet = false;
 
   Aws::String m_usageText;
-  bool m_usageTextHasBeenSet = false;
 
   bool m_marketplaceCertified{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_architecturesHasBeenSet = false;
+  bool m_operatingSystemsHasBeenSet = false;
+  bool m_logoUrlHasBeenSet = false;
+  bool m_aboutTextHasBeenSet = false;
+  bool m_usageTextHasBeenSet = false;
   bool m_marketplaceCertifiedHasBeenSet = false;
 };
 

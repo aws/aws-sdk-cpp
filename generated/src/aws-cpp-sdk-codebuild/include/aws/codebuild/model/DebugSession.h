@@ -71,9 +71,9 @@ class DebugSession {
   ///@}
  private:
   bool m_sessionEnabled{false};
-  bool m_sessionEnabledHasBeenSet = false;
 
   Aws::String m_sessionTarget;
+  bool m_sessionEnabledHasBeenSet = false;
   bool m_sessionTargetHasBeenSet = false;
 };
 

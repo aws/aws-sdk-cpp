@@ -397,54 +397,54 @@ an input in a customer network.
   ///@}
  private:
   Aws::Vector<InputDestinationRequest> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<InputDeviceSettings> m_inputDevices;
-  bool m_inputDevicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputSecurityGroups;
-  bool m_inputSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<MediaConnectFlowRequest> m_mediaConnectFlows;
-  bool m_mediaConnectFlowsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<InputSourceRequest> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   InputType m_type{InputType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   InputVpcRequest m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   SrtSettingsRequest m_srtSettings;
-  bool m_srtSettingsHasBeenSet = false;
 
   InputNetworkLocation m_inputNetworkLocation{InputNetworkLocation::NOT_SET};
-  bool m_inputNetworkLocationHasBeenSet = false;
 
   MulticastSettingsCreateRequest m_multicastSettings;
-  bool m_multicastSettingsHasBeenSet = false;
 
   Smpte2110ReceiverGroupSettings m_smpte2110ReceiverGroupSettings;
-  bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sdiSources;
-  bool m_sdiSourcesHasBeenSet = false;
 
   RouterSettings m_routerSettings;
+  bool m_destinationsHasBeenSet = false;
+  bool m_inputDevicesHasBeenSet = false;
+  bool m_inputSecurityGroupsHasBeenSet = false;
+  bool m_mediaConnectFlowsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
+  bool m_roleArnHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
+  bool m_srtSettingsHasBeenSet = false;
+  bool m_inputNetworkLocationHasBeenSet = false;
+  bool m_multicastSettingsHasBeenSet = false;
+  bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
+  bool m_sdiSourcesHasBeenSet = false;
   bool m_routerSettingsHasBeenSet = false;
 };
 

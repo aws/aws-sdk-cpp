@@ -128,18 +128,18 @@ class CreateAnycastIpList2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_ipCount{0};
-  bool m_ipCountHasBeenSet = false;
 
   Tags m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<IpamCidrConfig> m_ipamCidrConfigs;
+  bool m_nameHasBeenSet = false;
+  bool m_ipCountHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_ipamCidrConfigsHasBeenSet = false;
 };
 

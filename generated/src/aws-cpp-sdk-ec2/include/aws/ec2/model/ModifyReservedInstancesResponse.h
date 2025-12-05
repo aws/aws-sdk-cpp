@@ -65,9 +65,9 @@ class ModifyReservedInstancesResponse {
   ///@}
  private:
   Aws::String m_reservedInstancesModificationId;
-  bool m_reservedInstancesModificationIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservedInstancesModificationIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

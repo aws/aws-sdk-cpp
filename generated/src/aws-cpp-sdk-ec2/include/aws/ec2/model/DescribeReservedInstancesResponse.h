@@ -73,9 +73,9 @@ class DescribeReservedInstancesResponse {
   ///@}
  private:
   Aws::Vector<ReservedInstances> m_reservedInstances;
-  bool m_reservedInstancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservedInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

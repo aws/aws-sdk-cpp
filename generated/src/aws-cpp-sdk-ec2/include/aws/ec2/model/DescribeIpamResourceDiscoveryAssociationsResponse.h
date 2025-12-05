@@ -89,12 +89,12 @@ class DescribeIpamResourceDiscoveryAssociationsResponse {
   ///@}
  private:
   Aws::Vector<IpamResourceDiscoveryAssociation> m_ipamResourceDiscoveryAssociations;
-  bool m_ipamResourceDiscoveryAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamResourceDiscoveryAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

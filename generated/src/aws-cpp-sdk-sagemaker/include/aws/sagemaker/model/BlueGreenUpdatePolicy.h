@@ -93,12 +93,12 @@ class BlueGreenUpdatePolicy {
   ///@}
  private:
   TrafficRoutingConfig m_trafficRoutingConfiguration;
-  bool m_trafficRoutingConfigurationHasBeenSet = false;
 
   int m_terminationWaitInSeconds{0};
-  bool m_terminationWaitInSecondsHasBeenSet = false;
 
   int m_maximumExecutionTimeoutInSeconds{0};
+  bool m_trafficRoutingConfigurationHasBeenSet = false;
+  bool m_terminationWaitInSecondsHasBeenSet = false;
   bool m_maximumExecutionTimeoutInSecondsHasBeenSet = false;
 };
 

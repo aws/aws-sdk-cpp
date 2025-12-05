@@ -137,21 +137,21 @@ class RenameTableRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_newNamespaceName;
-  bool m_newNamespaceNameHasBeenSet = false;
 
   Aws::String m_newName;
-  bool m_newNameHasBeenSet = false;
 
   Aws::String m_versionToken;
+  bool m_tableBucketARNHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_newNamespaceNameHasBeenSet = false;
+  bool m_newNameHasBeenSet = false;
   bool m_versionTokenHasBeenSet = false;
 };
 

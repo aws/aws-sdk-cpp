@@ -250,36 +250,36 @@ class SendConnectorEventRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   ConnectorEventOperation m_operation{ConnectorEventOperation::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_operationVersion;
-  bool m_operationVersionHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_deviceDiscoveryId;
-  bool m_deviceDiscoveryIdHasBeenSet = false;
 
   Aws::String m_connectorDeviceId;
-  bool m_connectorDeviceIdHasBeenSet = false;
 
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::Vector<Device> m_devices;
-  bool m_devicesHasBeenSet = false;
 
   MatterEndpoint m_matterEndpoint;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_operationVersionHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_deviceDiscoveryIdHasBeenSet = false;
+  bool m_connectorDeviceIdHasBeenSet = false;
+  bool m_traceIdHasBeenSet = false;
+  bool m_devicesHasBeenSet = false;
   bool m_matterEndpointHasBeenSet = false;
 };
 

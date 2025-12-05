@@ -60,9 +60,9 @@ class DescribeEffectivePolicyResult {
   ///@}
  private:
   EffectivePolicy m_effectivePolicy;
-  bool m_effectivePolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_effectivePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

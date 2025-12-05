@@ -105,15 +105,15 @@ class MessageOutput {
   ///@}
  private:
   MessageData m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Participant m_participant{Participant::NOT_SET};
-  bool m_participantHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_valueHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_participantHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

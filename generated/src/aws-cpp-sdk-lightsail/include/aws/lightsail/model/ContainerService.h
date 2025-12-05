@@ -437,60 +437,60 @@ class ContainerService {
   ///@}
  private:
   Aws::String m_containerServiceName;
-  bool m_containerServiceNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ContainerServicePowerName m_power{ContainerServicePowerName::NOT_SET};
-  bool m_powerHasBeenSet = false;
 
   Aws::String m_powerId;
-  bool m_powerIdHasBeenSet = false;
 
   ContainerServiceState m_state{ContainerServiceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ContainerServiceStateDetail m_stateDetail;
-  bool m_stateDetailHasBeenSet = false;
 
   int m_scale{0};
-  bool m_scaleHasBeenSet = false;
 
   ContainerServiceDeployment m_currentDeployment;
-  bool m_currentDeploymentHasBeenSet = false;
 
   ContainerServiceDeployment m_nextDeployment;
-  bool m_nextDeploymentHasBeenSet = false;
 
   bool m_isDisabled{false};
-  bool m_isDisabledHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   Aws::String m_privateDomainName;
-  bool m_privateDomainNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_publicDomainNames;
-  bool m_publicDomainNamesHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   PrivateRegistryAccess m_privateRegistryAccess;
+  bool m_containerServiceNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_powerHasBeenSet = false;
+  bool m_powerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateDetailHasBeenSet = false;
+  bool m_scaleHasBeenSet = false;
+  bool m_currentDeploymentHasBeenSet = false;
+  bool m_nextDeploymentHasBeenSet = false;
+  bool m_isDisabledHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
+  bool m_privateDomainNameHasBeenSet = false;
+  bool m_publicDomainNamesHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
   bool m_privateRegistryAccessHasBeenSet = false;
 };
 

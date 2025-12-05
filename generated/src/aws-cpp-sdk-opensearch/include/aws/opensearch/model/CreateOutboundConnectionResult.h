@@ -172,27 +172,27 @@ class CreateOutboundConnectionResult {
   ///@}
  private:
   DomainInformationContainer m_localDomainInfo;
-  bool m_localDomainInfoHasBeenSet = false;
 
   DomainInformationContainer m_remoteDomainInfo;
-  bool m_remoteDomainInfoHasBeenSet = false;
 
   Aws::String m_connectionAlias;
-  bool m_connectionAliasHasBeenSet = false;
 
   OutboundConnectionStatus m_connectionStatus;
-  bool m_connectionStatusHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
-  bool m_connectionModeHasBeenSet = false;
 
   ConnectionProperties m_connectionProperties;
-  bool m_connectionPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_localDomainInfoHasBeenSet = false;
+  bool m_remoteDomainInfoHasBeenSet = false;
+  bool m_connectionAliasHasBeenSet = false;
+  bool m_connectionStatusHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
+  bool m_connectionPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

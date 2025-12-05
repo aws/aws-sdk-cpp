@@ -88,12 +88,12 @@ class DisableFastLaunchRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_imageIdHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class UpdateWorkerScheduleRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::Map<Aws::String, UpdatedSessionActionInfo> m_updatedSessionActions;
+  bool m_farmIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
   bool m_updatedSessionActionsHasBeenSet = false;
 };
 

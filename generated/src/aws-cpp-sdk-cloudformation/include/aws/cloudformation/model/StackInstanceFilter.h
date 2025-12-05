@@ -69,9 +69,9 @@ class StackInstanceFilter {
   ///@}
  private:
   StackInstanceFilterName m_name{StackInstanceFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeInventoryDeletionsResult {
   ///@}
  private:
   Aws::Vector<InventoryDeletionStatusItem> m_inventoryDeletions;
-  bool m_inventoryDeletionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inventoryDeletionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

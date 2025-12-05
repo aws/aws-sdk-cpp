@@ -69,9 +69,9 @@ class QueryCompileError {
   ///@}
  private:
   QueryCompileErrorLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_locationHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

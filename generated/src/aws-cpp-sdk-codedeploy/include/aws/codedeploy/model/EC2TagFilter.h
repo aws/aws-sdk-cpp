@@ -87,12 +87,12 @@ class EC2TagFilter {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   EC2TagFilterType m_type{EC2TagFilterType::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

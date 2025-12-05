@@ -86,12 +86,12 @@ class AbpV1_0_x {
   ///@}
  private:
   Aws::String m_devAddr;
-  bool m_devAddrHasBeenSet = false;
 
   SessionKeysAbpV1_0_x m_sessionKeys;
-  bool m_sessionKeysHasBeenSet = false;
 
   int m_fCntStart{0};
+  bool m_devAddrHasBeenSet = false;
+  bool m_sessionKeysHasBeenSet = false;
   bool m_fCntStartHasBeenSet = false;
 };
 

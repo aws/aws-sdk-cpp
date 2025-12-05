@@ -76,9 +76,9 @@ class OpenSearchWorkspace {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   OpenSearchResourceStatus m_status;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

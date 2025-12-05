@@ -127,18 +127,18 @@ class VerifiedAccessLogOptions {
   ///@}
  private:
   VerifiedAccessLogS3DestinationOptions m_s3;
-  bool m_s3HasBeenSet = false;
 
   VerifiedAccessLogCloudWatchLogsDestinationOptions m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   VerifiedAccessLogKinesisDataFirehoseDestinationOptions m_kinesisDataFirehose;
-  bool m_kinesisDataFirehoseHasBeenSet = false;
 
   Aws::String m_logVersion;
-  bool m_logVersionHasBeenSet = false;
 
   bool m_includeTrustContext{false};
+  bool m_s3HasBeenSet = false;
+  bool m_cloudWatchLogsHasBeenSet = false;
+  bool m_kinesisDataFirehoseHasBeenSet = false;
+  bool m_logVersionHasBeenSet = false;
   bool m_includeTrustContextHasBeenSet = false;
 };
 

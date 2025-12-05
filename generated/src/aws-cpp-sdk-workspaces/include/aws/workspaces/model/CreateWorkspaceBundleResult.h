@@ -58,9 +58,9 @@ class CreateWorkspaceBundleResult {
   ///@}
  private:
   WorkspaceBundle m_workspaceBundle;
-  bool m_workspaceBundleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceBundleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

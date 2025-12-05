@@ -409,48 +409,48 @@ class Block {
   ///@}
  private:
   BlockType m_blockType{BlockType::NOT_SET};
-  bool m_blockTypeHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   TextType m_textType{TextType::NOT_SET};
-  bool m_textTypeHasBeenSet = false;
 
   int m_rowIndex{0};
-  bool m_rowIndexHasBeenSet = false;
 
   int m_columnIndex{0};
-  bool m_columnIndexHasBeenSet = false;
 
   int m_rowSpan{0};
-  bool m_rowSpanHasBeenSet = false;
 
   int m_columnSpan{0};
-  bool m_columnSpanHasBeenSet = false;
 
   Geometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Relationship> m_relationships;
-  bool m_relationshipsHasBeenSet = false;
 
   Aws::Vector<EntityType> m_entityTypes;
-  bool m_entityTypesHasBeenSet = false;
 
   SelectionStatus m_selectionStatus{SelectionStatus::NOT_SET};
-  bool m_selectionStatusHasBeenSet = false;
 
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   Query m_query;
+  bool m_blockTypeHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_textTypeHasBeenSet = false;
+  bool m_rowIndexHasBeenSet = false;
+  bool m_columnIndexHasBeenSet = false;
+  bool m_rowSpanHasBeenSet = false;
+  bool m_columnSpanHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_relationshipsHasBeenSet = false;
+  bool m_entityTypesHasBeenSet = false;
+  bool m_selectionStatusHasBeenSet = false;
+  bool m_pageHasBeenSet = false;
   bool m_queryHasBeenSet = false;
 };
 

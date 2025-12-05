@@ -89,12 +89,12 @@ class PhoneNumberAssociation {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   PhoneNumberAssociationName m_name{PhoneNumberAssociationName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_associatedTimestamp{};
+  bool m_valueHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_associatedTimestampHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class ApplicationDPUSizes {
   ///@}
  private:
   Aws::String m_applicationRuntimeId;
-  bool m_applicationRuntimeIdHasBeenSet = false;
 
   Aws::Vector<int> m_supportedDPUSizes;
+  bool m_applicationRuntimeIdHasBeenSet = false;
   bool m_supportedDPUSizesHasBeenSet = false;
 };
 

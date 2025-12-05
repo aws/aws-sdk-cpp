@@ -65,9 +65,9 @@ class RistRouterInputConfiguration {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   long long m_recoveryLatencyMilliseconds{0};
+  bool m_portHasBeenSet = false;
   bool m_recoveryLatencyMillisecondsHasBeenSet = false;
 };
 

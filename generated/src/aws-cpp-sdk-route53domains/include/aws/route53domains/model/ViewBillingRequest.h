@@ -118,15 +118,15 @@ class ViewBillingRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_start{};
-  bool m_startHasBeenSet = false;
 
   Aws::Utils::DateTime m_end{};
-  bool m_endHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

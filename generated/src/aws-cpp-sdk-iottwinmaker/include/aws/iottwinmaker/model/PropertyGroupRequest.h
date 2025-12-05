@@ -74,9 +74,9 @@ class PropertyGroupRequest {
   ///@}
  private:
   GroupType m_groupType{GroupType::NOT_SET};
-  bool m_groupTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_propertyNames;
+  bool m_groupTypeHasBeenSet = false;
   bool m_propertyNamesHasBeenSet = false;
 };
 

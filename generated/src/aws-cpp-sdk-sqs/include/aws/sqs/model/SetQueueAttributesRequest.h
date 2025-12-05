@@ -213,9 +213,9 @@ class SetQueueAttributesRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Map<QueueAttributeName, Aws::String> m_attributes;
+  bool m_queueUrlHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

@@ -205,30 +205,30 @@ class Parameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ParameterType m_type{ParameterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_selector;
-  bool m_selectorHasBeenSet = false;
 
   Aws::String m_sourceResult;
-  bool m_sourceResultHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_dataType;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_selectorHasBeenSet = false;
+  bool m_sourceResultHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
   bool m_dataTypeHasBeenSet = false;
 };
 

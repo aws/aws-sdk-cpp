@@ -291,39 +291,39 @@ class DatabaseSourceDescription {
   ///@}
  private:
   DatabaseType m_type{DatabaseType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   SSLMode m_sSLMode{SSLMode::NOT_SET};
-  bool m_sSLModeHasBeenSet = false;
 
   DatabaseList m_databases;
-  bool m_databasesHasBeenSet = false;
 
   DatabaseTableList m_tables;
-  bool m_tablesHasBeenSet = false;
 
   DatabaseColumnList m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_surrogateKeys;
-  bool m_surrogateKeysHasBeenSet = false;
 
   Aws::String m_snapshotWatermarkTable;
-  bool m_snapshotWatermarkTableHasBeenSet = false;
 
   Aws::Vector<DatabaseSnapshotInfo> m_snapshotInfo;
-  bool m_snapshotInfoHasBeenSet = false;
 
   DatabaseSourceAuthenticationConfiguration m_databaseSourceAuthenticationConfiguration;
-  bool m_databaseSourceAuthenticationConfigurationHasBeenSet = false;
 
   DatabaseSourceVPCConfiguration m_databaseSourceVPCConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_sSLModeHasBeenSet = false;
+  bool m_databasesHasBeenSet = false;
+  bool m_tablesHasBeenSet = false;
+  bool m_columnsHasBeenSet = false;
+  bool m_surrogateKeysHasBeenSet = false;
+  bool m_snapshotWatermarkTableHasBeenSet = false;
+  bool m_snapshotInfoHasBeenSet = false;
+  bool m_databaseSourceAuthenticationConfigurationHasBeenSet = false;
   bool m_databaseSourceVPCConfigurationHasBeenSet = false;
 };
 

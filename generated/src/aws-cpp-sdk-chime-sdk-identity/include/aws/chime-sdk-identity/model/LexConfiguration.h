@@ -130,18 +130,18 @@ class LexConfiguration {
   ///@}
  private:
   RespondsTo m_respondsTo{RespondsTo::NOT_SET};
-  bool m_respondsToHasBeenSet = false;
 
   InvokedBy m_invokedBy;
-  bool m_invokedByHasBeenSet = false;
 
   Aws::String m_lexBotAliasArn;
-  bool m_lexBotAliasArnHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_welcomeIntent;
+  bool m_respondsToHasBeenSet = false;
+  bool m_invokedByHasBeenSet = false;
+  bool m_lexBotAliasArnHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
   bool m_welcomeIntentHasBeenSet = false;
 };
 

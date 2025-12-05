@@ -85,12 +85,12 @@ class ListFaqsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<FaqSummary> m_faqSummaryItems;
-  bool m_faqSummaryItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_faqSummaryItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

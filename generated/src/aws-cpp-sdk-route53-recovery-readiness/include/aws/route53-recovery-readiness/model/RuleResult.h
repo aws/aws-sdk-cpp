@@ -114,15 +114,15 @@ class RuleResult {
   ///@}
  private:
   Aws::Utils::DateTime m_lastCheckedTimestamp{};
-  bool m_lastCheckedTimestampHasBeenSet = false;
 
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Readiness m_readiness{Readiness::NOT_SET};
-  bool m_readinessHasBeenSet = false;
 
   Aws::String m_ruleId;
+  bool m_lastCheckedTimestampHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_readinessHasBeenSet = false;
   bool m_ruleIdHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class DatastoreSummary {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   DatastoreStatus m_datastoreStatus{DatastoreStatus::NOT_SET};
-  bool m_datastoreStatusHasBeenSet = false;
 
   Aws::String m_datastoreArn;
-  bool m_datastoreArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_datastoreStatusHasBeenSet = false;
+  bool m_datastoreArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

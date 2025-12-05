@@ -85,12 +85,12 @@ class GetDevicePositionHistoryResult {
   ///@}
  private:
   Aws::Vector<DevicePosition> m_devicePositions;
-  bool m_devicePositionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devicePositionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

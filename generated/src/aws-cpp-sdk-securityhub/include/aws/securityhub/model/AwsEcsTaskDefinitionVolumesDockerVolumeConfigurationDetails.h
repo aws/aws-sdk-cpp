@@ -137,18 +137,18 @@ class AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails {
   ///@}
  private:
   bool m_autoprovision{false};
-  bool m_autoprovisionHasBeenSet = false;
 
   Aws::String m_driver;
-  bool m_driverHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_driverOpts;
-  bool m_driverOptsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::String m_scope;
+  bool m_autoprovisionHasBeenSet = false;
+  bool m_driverHasBeenSet = false;
+  bool m_driverOptsHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

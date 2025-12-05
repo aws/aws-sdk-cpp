@@ -118,18 +118,18 @@ class DescribeDetectorResult {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::Vector<DetectorVersionSummary> m_detectorVersionSummaries;
-  bool m_detectorVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

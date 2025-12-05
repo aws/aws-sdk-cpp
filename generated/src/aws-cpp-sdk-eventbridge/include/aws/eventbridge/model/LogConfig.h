@@ -77,9 +77,9 @@ class LogConfig {
   ///@}
  private:
   IncludeDetail m_includeDetail{IncludeDetail::NOT_SET};
-  bool m_includeDetailHasBeenSet = false;
 
   Level m_level{Level::NOT_SET};
+  bool m_includeDetailHasBeenSet = false;
   bool m_levelHasBeenSet = false;
 };
 

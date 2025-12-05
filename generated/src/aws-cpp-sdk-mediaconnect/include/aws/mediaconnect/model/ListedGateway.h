@@ -86,12 +86,12 @@ class ListedGateway {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   GatewayState m_gatewayState{GatewayState::NOT_SET};
-  bool m_gatewayStateHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_gatewayStateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

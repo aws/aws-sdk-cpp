@@ -77,12 +77,12 @@ class CreateChannelModeratorResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Identity m_channelModerator;
-  bool m_channelModeratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_channelModeratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

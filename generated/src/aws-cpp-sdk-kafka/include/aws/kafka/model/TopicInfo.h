@@ -129,18 +129,18 @@ class TopicInfo {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   int m_replicationFactor{0};
-  bool m_replicationFactorHasBeenSet = false;
 
   int m_partitionCount{0};
-  bool m_partitionCountHasBeenSet = false;
 
   int m_outOfSyncReplicaCount{0};
+  bool m_topicArnHasBeenSet = false;
+  bool m_topicNameHasBeenSet = false;
+  bool m_replicationFactorHasBeenSet = false;
+  bool m_partitionCountHasBeenSet = false;
   bool m_outOfSyncReplicaCountHasBeenSet = false;
 };
 

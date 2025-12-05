@@ -112,15 +112,15 @@ class TaxExemptionDetails {
   ///@}
  private:
   bool m_heritageObtainedDetails{false};
-  bool m_heritageObtainedDetailsHasBeenSet = false;
 
   Aws::String m_heritageObtainedParentEntity;
-  bool m_heritageObtainedParentEntityHasBeenSet = false;
 
   Aws::String m_heritageObtainedReason;
-  bool m_heritageObtainedReasonHasBeenSet = false;
 
   Aws::Vector<TaxExemption> m_taxExemptions;
+  bool m_heritageObtainedDetailsHasBeenSet = false;
+  bool m_heritageObtainedParentEntityHasBeenSet = false;
+  bool m_heritageObtainedReasonHasBeenSet = false;
   bool m_taxExemptionsHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DialogAction {
   ///@}
  private:
   DialogActionType m_type{DialogActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_slotToElicit;
-  bool m_slotToElicitHasBeenSet = false;
 
   bool m_suppressNextMessage{false};
+  bool m_typeHasBeenSet = false;
+  bool m_slotToElicitHasBeenSet = false;
   bool m_suppressNextMessageHasBeenSet = false;
 };
 

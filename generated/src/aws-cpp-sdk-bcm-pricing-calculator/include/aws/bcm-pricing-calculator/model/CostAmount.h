@@ -65,9 +65,9 @@ class CostAmount {
   ///@}
  private:
   double m_amount{0.0};
-  bool m_amountHasBeenSet = false;
 
   CurrencyCode m_currency{CurrencyCode::NOT_SET};
+  bool m_amountHasBeenSet = false;
   bool m_currencyHasBeenSet = false;
 };
 

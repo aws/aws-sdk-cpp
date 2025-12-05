@@ -65,9 +65,9 @@ class DeleteLimitRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_limitId;
+  bool m_farmIdHasBeenSet = false;
   bool m_limitIdHasBeenSet = false;
 };
 

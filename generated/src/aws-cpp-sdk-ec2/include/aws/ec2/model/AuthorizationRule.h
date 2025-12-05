@@ -144,21 +144,21 @@ class AuthorizationRule {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   bool m_accessAll{false};
-  bool m_accessAllHasBeenSet = false;
 
   Aws::String m_destinationCidr;
-  bool m_destinationCidrHasBeenSet = false;
 
   ClientVpnAuthorizationRuleStatus m_status;
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_accessAllHasBeenSet = false;
+  bool m_destinationCidrHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

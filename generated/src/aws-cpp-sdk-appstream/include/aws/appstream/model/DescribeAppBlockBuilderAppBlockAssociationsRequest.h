@@ -102,15 +102,15 @@ class DescribeAppBlockBuilderAppBlockAssociationsRequest : public AppStreamReque
   ///@}
  private:
   Aws::String m_appBlockArn;
-  bool m_appBlockArnHasBeenSet = false;
 
   Aws::String m_appBlockBuilderName;
-  bool m_appBlockBuilderNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_appBlockArnHasBeenSet = false;
+  bool m_appBlockBuilderNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

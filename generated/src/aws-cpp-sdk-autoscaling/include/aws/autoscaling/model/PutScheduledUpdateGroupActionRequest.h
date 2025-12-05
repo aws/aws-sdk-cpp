@@ -230,33 +230,33 @@ class PutScheduledUpdateGroupActionRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_scheduledActionName;
-  bool m_scheduledActionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_time{};
-  bool m_timeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_recurrence;
-  bool m_recurrenceHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   int m_maxSize{0};
-  bool m_maxSizeHasBeenSet = false;
 
   int m_desiredCapacity{0};
-  bool m_desiredCapacityHasBeenSet = false;
 
   Aws::String m_timeZone;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_scheduledActionNameHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_recurrenceHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
+  bool m_desiredCapacityHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class ActionSummary {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_actionDefinitionId;
-  bool m_actionDefinitionIdHasBeenSet = false;
 
   TargetResource m_targetResource;
-  bool m_targetResourceHasBeenSet = false;
 
   ResolveTo m_resolveTo;
+  bool m_actionIdHasBeenSet = false;
+  bool m_actionDefinitionIdHasBeenSet = false;
+  bool m_targetResourceHasBeenSet = false;
   bool m_resolveToHasBeenSet = false;
 };
 

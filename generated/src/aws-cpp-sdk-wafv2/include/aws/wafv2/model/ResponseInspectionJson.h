@@ -116,12 +116,12 @@ class ResponseInspectionJson {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_successValues;
-  bool m_successValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureValues;
+  bool m_identifierHasBeenSet = false;
+  bool m_successValuesHasBeenSet = false;
   bool m_failureValuesHasBeenSet = false;
 };
 

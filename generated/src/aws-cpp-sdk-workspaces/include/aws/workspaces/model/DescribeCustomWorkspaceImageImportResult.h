@@ -190,30 +190,30 @@ class DescribeCustomWorkspaceImageImportResult {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_infrastructureConfigurationArn;
-  bool m_infrastructureConfigurationArnHasBeenSet = false;
 
   CustomWorkspaceImageImportState m_state{CustomWorkspaceImageImportState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   ImageSourceIdentifier m_imageSource;
-  bool m_imageSourceHasBeenSet = false;
 
   Aws::String m_imageBuilderInstanceId;
-  bool m_imageBuilderInstanceIdHasBeenSet = false;
 
   Aws::Vector<CustomWorkspaceImageImportErrorDetails> m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageIdHasBeenSet = false;
+  bool m_infrastructureConfigurationArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_imageSourceHasBeenSet = false;
+  bool m_imageBuilderInstanceIdHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -760,102 +760,102 @@ class UserPoolType {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UserPoolPolicyType m_policies;
-  bool m_policiesHasBeenSet = false;
 
   DeletionProtectionType m_deletionProtection{DeletionProtectionType::NOT_SET};
-  bool m_deletionProtectionHasBeenSet = false;
 
   LambdaConfigType m_lambdaConfig;
-  bool m_lambdaConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Vector<SchemaAttributeType> m_schemaAttributes;
-  bool m_schemaAttributesHasBeenSet = false;
 
   Aws::Vector<VerifiedAttributeType> m_autoVerifiedAttributes;
-  bool m_autoVerifiedAttributesHasBeenSet = false;
 
   Aws::Vector<AliasAttributeType> m_aliasAttributes;
-  bool m_aliasAttributesHasBeenSet = false;
 
   Aws::Vector<UsernameAttributeType> m_usernameAttributes;
-  bool m_usernameAttributesHasBeenSet = false;
 
   Aws::String m_smsVerificationMessage;
-  bool m_smsVerificationMessageHasBeenSet = false;
 
   Aws::String m_emailVerificationMessage;
-  bool m_emailVerificationMessageHasBeenSet = false;
 
   Aws::String m_emailVerificationSubject;
-  bool m_emailVerificationSubjectHasBeenSet = false;
 
   VerificationMessageTemplateType m_verificationMessageTemplate;
-  bool m_verificationMessageTemplateHasBeenSet = false;
 
   Aws::String m_smsAuthenticationMessage;
-  bool m_smsAuthenticationMessageHasBeenSet = false;
 
   UserAttributeUpdateSettingsType m_userAttributeUpdateSettings;
-  bool m_userAttributeUpdateSettingsHasBeenSet = false;
 
   UserPoolMfaType m_mfaConfiguration{UserPoolMfaType::NOT_SET};
-  bool m_mfaConfigurationHasBeenSet = false;
 
   DeviceConfigurationType m_deviceConfiguration;
-  bool m_deviceConfigurationHasBeenSet = false;
 
   int m_estimatedNumberOfUsers{0};
-  bool m_estimatedNumberOfUsersHasBeenSet = false;
 
   EmailConfigurationType m_emailConfiguration;
-  bool m_emailConfigurationHasBeenSet = false;
 
   SmsConfigurationType m_smsConfiguration;
-  bool m_smsConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userPoolTags;
-  bool m_userPoolTagsHasBeenSet = false;
 
   Aws::String m_smsConfigurationFailure;
-  bool m_smsConfigurationFailureHasBeenSet = false;
 
   Aws::String m_emailConfigurationFailure;
-  bool m_emailConfigurationFailureHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_customDomain;
-  bool m_customDomainHasBeenSet = false;
 
   AdminCreateUserConfigType m_adminCreateUserConfig;
-  bool m_adminCreateUserConfigHasBeenSet = false;
 
   UserPoolAddOnsType m_userPoolAddOns;
-  bool m_userPoolAddOnsHasBeenSet = false;
 
   UsernameConfigurationType m_usernameConfiguration;
-  bool m_usernameConfigurationHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AccountRecoverySettingType m_accountRecoverySetting;
-  bool m_accountRecoverySettingHasBeenSet = false;
 
   UserPoolTierType m_userPoolTier{UserPoolTierType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_lambdaConfigHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_schemaAttributesHasBeenSet = false;
+  bool m_autoVerifiedAttributesHasBeenSet = false;
+  bool m_aliasAttributesHasBeenSet = false;
+  bool m_usernameAttributesHasBeenSet = false;
+  bool m_smsVerificationMessageHasBeenSet = false;
+  bool m_emailVerificationMessageHasBeenSet = false;
+  bool m_emailVerificationSubjectHasBeenSet = false;
+  bool m_verificationMessageTemplateHasBeenSet = false;
+  bool m_smsAuthenticationMessageHasBeenSet = false;
+  bool m_userAttributeUpdateSettingsHasBeenSet = false;
+  bool m_mfaConfigurationHasBeenSet = false;
+  bool m_deviceConfigurationHasBeenSet = false;
+  bool m_estimatedNumberOfUsersHasBeenSet = false;
+  bool m_emailConfigurationHasBeenSet = false;
+  bool m_smsConfigurationHasBeenSet = false;
+  bool m_userPoolTagsHasBeenSet = false;
+  bool m_smsConfigurationFailureHasBeenSet = false;
+  bool m_emailConfigurationFailureHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_customDomainHasBeenSet = false;
+  bool m_adminCreateUserConfigHasBeenSet = false;
+  bool m_userPoolAddOnsHasBeenSet = false;
+  bool m_usernameConfigurationHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_accountRecoverySettingHasBeenSet = false;
   bool m_userPoolTierHasBeenSet = false;
 };
 

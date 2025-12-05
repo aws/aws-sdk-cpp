@@ -122,18 +122,18 @@ class ListAggregateDiscoveredResourcesRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   ResourceFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_configurationAggregatorNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

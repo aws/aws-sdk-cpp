@@ -86,12 +86,12 @@ class ListInsightsRequest : public DevOpsGuruRequest {
   ///@}
  private:
   ListInsightsStatusFilter m_statusFilter;
-  bool m_statusFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_statusFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

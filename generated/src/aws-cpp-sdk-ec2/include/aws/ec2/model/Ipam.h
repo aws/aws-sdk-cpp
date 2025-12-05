@@ -393,57 +393,57 @@ class Ipam {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ipamId;
-  bool m_ipamIdHasBeenSet = false;
 
   Aws::String m_ipamArn;
-  bool m_ipamArnHasBeenSet = false;
 
   Aws::String m_ipamRegion;
-  bool m_ipamRegionHasBeenSet = false;
 
   Aws::String m_publicDefaultScopeId;
-  bool m_publicDefaultScopeIdHasBeenSet = false;
 
   Aws::String m_privateDefaultScopeId;
-  bool m_privateDefaultScopeIdHasBeenSet = false;
 
   int m_scopeCount{0};
-  bool m_scopeCountHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IpamOperatingRegion> m_operatingRegions;
-  bool m_operatingRegionsHasBeenSet = false;
 
   IpamState m_state{IpamState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_defaultResourceDiscoveryId;
-  bool m_defaultResourceDiscoveryIdHasBeenSet = false;
 
   Aws::String m_defaultResourceDiscoveryAssociationId;
-  bool m_defaultResourceDiscoveryAssociationIdHasBeenSet = false;
 
   int m_resourceDiscoveryAssociationCount{0};
-  bool m_resourceDiscoveryAssociationCountHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   IpamTier m_tier{IpamTier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   bool m_enablePrivateGua{false};
-  bool m_enablePrivateGuaHasBeenSet = false;
 
   IpamMeteredAccount m_meteredAccount{IpamMeteredAccount::NOT_SET};
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ipamIdHasBeenSet = false;
+  bool m_ipamArnHasBeenSet = false;
+  bool m_ipamRegionHasBeenSet = false;
+  bool m_publicDefaultScopeIdHasBeenSet = false;
+  bool m_privateDefaultScopeIdHasBeenSet = false;
+  bool m_scopeCountHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_operatingRegionsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_defaultResourceDiscoveryIdHasBeenSet = false;
+  bool m_defaultResourceDiscoveryAssociationIdHasBeenSet = false;
+  bool m_resourceDiscoveryAssociationCountHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_enablePrivateGuaHasBeenSet = false;
   bool m_meteredAccountHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class TestConnectionRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   TestConnectionInput m_testConnectionInput;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
   bool m_testConnectionInputHasBeenSet = false;
 };
 

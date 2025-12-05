@@ -116,15 +116,15 @@ class AssociateOriginationIdentityRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_poolIdHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -78,9 +78,9 @@ class DescribeEventDetailsRequest : public HealthRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eventArns;
-  bool m_eventArnsHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_eventArnsHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

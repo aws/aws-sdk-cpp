@@ -85,12 +85,12 @@ class ListLensesResult {
   ///@}
  private:
   Aws::Vector<LensSummary> m_lensSummaries;
-  bool m_lensSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lensSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

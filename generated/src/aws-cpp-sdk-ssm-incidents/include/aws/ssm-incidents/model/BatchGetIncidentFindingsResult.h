@@ -91,12 +91,12 @@ class BatchGetIncidentFindingsResult {
   ///@}
  private:
   Aws::Vector<BatchGetIncidentFindingsError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<Finding> m_findings;
-  bool m_findingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_findingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -118,15 +118,15 @@ class CampaignInAppMessage {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Vector<InAppMessageContent> m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customConfig;
-  bool m_customConfigHasBeenSet = false;
 
   Layout m_layout{Layout::NOT_SET};
+  bool m_bodyHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_customConfigHasBeenSet = false;
   bool m_layoutHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class RecurringCharge {
   ///@}
  private:
   double m_recurringChargeAmount{0.0};
-  bool m_recurringChargeAmountHasBeenSet = false;
 
   Aws::String m_recurringChargeFrequency;
+  bool m_recurringChargeAmountHasBeenSet = false;
   bool m_recurringChargeFrequencyHasBeenSet = false;
 };
 

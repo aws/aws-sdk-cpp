@@ -119,15 +119,15 @@ class DescribeApplicationVersionsRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versionLabels;
-  bool m_versionLabelsHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_versionLabelsHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

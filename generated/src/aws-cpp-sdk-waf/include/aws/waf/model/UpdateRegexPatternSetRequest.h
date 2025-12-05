@@ -96,12 +96,12 @@ class UpdateRegexPatternSetRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_regexPatternSetId;
-  bool m_regexPatternSetIdHasBeenSet = false;
 
   Aws::Vector<RegexPatternSetUpdate> m_updates;
-  bool m_updatesHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_regexPatternSetIdHasBeenSet = false;
+  bool m_updatesHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

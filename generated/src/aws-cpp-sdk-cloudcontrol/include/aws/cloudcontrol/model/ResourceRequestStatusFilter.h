@@ -88,9 +88,9 @@ class ResourceRequestStatusFilter {
   ///@}
  private:
   Aws::Vector<Operation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::Vector<OperationStatus> m_operationStatuses;
+  bool m_operationsHasBeenSet = false;
   bool m_operationStatusesHasBeenSet = false;
 };
 

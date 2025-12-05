@@ -62,9 +62,9 @@ class StaticImageDeactivateScheduleActionSettings {
   ///@}
  private:
   int m_fadeOut{0};
-  bool m_fadeOutHasBeenSet = false;
 
   int m_layer{0};
+  bool m_fadeOutHasBeenSet = false;
   bool m_layerHasBeenSet = false;
 };
 

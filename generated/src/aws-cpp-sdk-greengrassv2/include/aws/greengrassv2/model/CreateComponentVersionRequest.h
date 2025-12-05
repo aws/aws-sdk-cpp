@@ -124,15 +124,15 @@ class CreateComponentVersionRequest : public GreengrassV2Request {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_inlineRecipe{};
-  bool m_inlineRecipeHasBeenSet = false;
 
   LambdaFunctionRecipeSource m_lambdaFunction;
-  bool m_lambdaFunctionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_inlineRecipeHasBeenSet = false;
+  bool m_lambdaFunctionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

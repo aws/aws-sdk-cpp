@@ -525,84 +525,84 @@ class UpdateProfileRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_additionalInformation;
-  bool m_additionalInformationHasBeenSet = false;
 
   Aws::String m_accountNumber;
-  bool m_accountNumberHasBeenSet = false;
 
   PartyType m_partyType{PartyType::NOT_SET};
-  bool m_partyTypeHasBeenSet = false;
 
   Aws::String m_businessName;
-  bool m_businessNameHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_middleName;
-  bool m_middleNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   Aws::String m_birthDate;
-  bool m_birthDateHasBeenSet = false;
 
   Gender m_gender{Gender::NOT_SET};
-  bool m_genderHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_mobilePhoneNumber;
-  bool m_mobilePhoneNumberHasBeenSet = false;
 
   Aws::String m_homePhoneNumber;
-  bool m_homePhoneNumberHasBeenSet = false;
 
   Aws::String m_businessPhoneNumber;
-  bool m_businessPhoneNumberHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_personalEmailAddress;
-  bool m_personalEmailAddressHasBeenSet = false;
 
   Aws::String m_businessEmailAddress;
-  bool m_businessEmailAddressHasBeenSet = false;
 
   UpdateAddress m_address;
-  bool m_addressHasBeenSet = false;
 
   UpdateAddress m_shippingAddress;
-  bool m_shippingAddressHasBeenSet = false;
 
   UpdateAddress m_mailingAddress;
-  bool m_mailingAddressHasBeenSet = false;
 
   UpdateAddress m_billingAddress;
-  bool m_billingAddressHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_partyTypeString;
-  bool m_partyTypeStringHasBeenSet = false;
 
   Aws::String m_genderString;
-  bool m_genderStringHasBeenSet = false;
 
   ProfileType m_profileType{ProfileType::NOT_SET};
-  bool m_profileTypeHasBeenSet = false;
 
   EngagementPreferences m_engagementPreferences;
+  bool m_domainNameHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_additionalInformationHasBeenSet = false;
+  bool m_accountNumberHasBeenSet = false;
+  bool m_partyTypeHasBeenSet = false;
+  bool m_businessNameHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_middleNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_birthDateHasBeenSet = false;
+  bool m_genderHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_mobilePhoneNumberHasBeenSet = false;
+  bool m_homePhoneNumberHasBeenSet = false;
+  bool m_businessPhoneNumberHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_personalEmailAddressHasBeenSet = false;
+  bool m_businessEmailAddressHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_shippingAddressHasBeenSet = false;
+  bool m_mailingAddressHasBeenSet = false;
+  bool m_billingAddressHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_partyTypeStringHasBeenSet = false;
+  bool m_genderStringHasBeenSet = false;
+  bool m_profileTypeHasBeenSet = false;
   bool m_engagementPreferencesHasBeenSet = false;
 };
 

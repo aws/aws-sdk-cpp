@@ -69,9 +69,9 @@ class TimestampRange {
   ///@}
  private:
   Aws::Utils::DateTime m_beginDate{};
-  bool m_beginDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
+  bool m_beginDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
 };
 

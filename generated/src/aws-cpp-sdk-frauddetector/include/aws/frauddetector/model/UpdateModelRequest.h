@@ -84,12 +84,12 @@ class UpdateModelRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

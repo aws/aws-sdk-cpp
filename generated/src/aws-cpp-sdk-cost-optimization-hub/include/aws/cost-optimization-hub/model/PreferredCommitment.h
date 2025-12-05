@@ -70,9 +70,9 @@ class PreferredCommitment {
   ///@}
  private:
   Term m_term{Term::NOT_SET};
-  bool m_termHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
+  bool m_termHasBeenSet = false;
   bool m_paymentOptionHasBeenSet = false;
 };
 

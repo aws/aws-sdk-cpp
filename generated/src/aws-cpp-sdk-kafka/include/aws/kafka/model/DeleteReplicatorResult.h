@@ -75,12 +75,12 @@ class DeleteReplicatorResult {
   ///@}
  private:
   Aws::String m_replicatorArn;
-  bool m_replicatorArnHasBeenSet = false;
 
   ReplicatorState m_replicatorState{ReplicatorState::NOT_SET};
-  bool m_replicatorStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicatorArnHasBeenSet = false;
+  bool m_replicatorStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

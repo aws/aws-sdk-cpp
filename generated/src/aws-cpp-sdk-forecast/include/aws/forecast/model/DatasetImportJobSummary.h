@@ -196,27 +196,27 @@ class DatasetImportJobSummary {
   ///@}
  private:
   Aws::String m_datasetImportJobArn;
-  bool m_datasetImportJobArnHasBeenSet = false;
 
   Aws::String m_datasetImportJobName;
-  bool m_datasetImportJobNameHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   ImportMode m_importMode{ImportMode::NOT_SET};
+  bool m_datasetImportJobArnHasBeenSet = false;
+  bool m_datasetImportJobNameHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_importModeHasBeenSet = false;
 };
 

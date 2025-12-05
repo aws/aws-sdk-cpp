@@ -156,21 +156,21 @@ class MultiRegionEndpoint {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_endpointNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class GdgDetailAttributes {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_rollDisposition;
+  bool m_limitHasBeenSet = false;
   bool m_rollDispositionHasBeenSet = false;
 };
 

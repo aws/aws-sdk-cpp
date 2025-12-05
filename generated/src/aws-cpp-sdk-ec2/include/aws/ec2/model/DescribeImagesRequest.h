@@ -314,30 +314,30 @@ class DescribeImagesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_executableUsers;
-  bool m_executableUsersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageIds;
-  bool m_imageIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_owners;
-  bool m_ownersHasBeenSet = false;
 
   bool m_includeDeprecated{false};
-  bool m_includeDeprecatedHasBeenSet = false;
 
   bool m_includeDisabled{false};
-  bool m_includeDisabledHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_executableUsersHasBeenSet = false;
+  bool m_imageIdsHasBeenSet = false;
+  bool m_ownersHasBeenSet = false;
+  bool m_includeDeprecatedHasBeenSet = false;
+  bool m_includeDisabledHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

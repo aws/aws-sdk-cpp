@@ -125,18 +125,18 @@ class MetricComparisonComputation {
   ///@}
  private:
   Aws::String m_computationId;
-  bool m_computationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DimensionField m_time;
-  bool m_timeHasBeenSet = false;
 
   MeasureField m_fromValue;
-  bool m_fromValueHasBeenSet = false;
 
   MeasureField m_targetValue;
+  bool m_computationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_fromValueHasBeenSet = false;
   bool m_targetValueHasBeenSet = false;
 };
 

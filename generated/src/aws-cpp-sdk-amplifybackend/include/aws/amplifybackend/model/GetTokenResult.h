@@ -110,18 +110,18 @@ class GetTokenResult {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_challengeCode;
-  bool m_challengeCodeHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_ttl;
-  bool m_ttlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appIdHasBeenSet = false;
+  bool m_challengeCodeHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_ttlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class AssociateDataProtectionSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_dataProtectionSettingsArn;
+  bool m_portalArnHasBeenSet = false;
   bool m_dataProtectionSettingsArnHasBeenSet = false;
 };
 

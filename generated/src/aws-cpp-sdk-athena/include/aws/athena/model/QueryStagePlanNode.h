@@ -120,15 +120,15 @@ class QueryStagePlanNode {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<QueryStagePlanNode> m_children;
-  bool m_childrenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_remoteSources;
+  bool m_nameHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_childrenHasBeenSet = false;
   bool m_remoteSourcesHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class RegistrationVersionFilter {
   ///@}
  private:
   RegistrationVersionFilterName m_name{RegistrationVersionFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

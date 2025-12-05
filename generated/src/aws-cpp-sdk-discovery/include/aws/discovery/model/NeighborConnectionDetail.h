@@ -118,18 +118,18 @@ class NeighborConnectionDetail {
   ///@}
  private:
   Aws::String m_sourceServerId;
-  bool m_sourceServerIdHasBeenSet = false;
 
   Aws::String m_destinationServerId;
-  bool m_destinationServerIdHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Aws::String m_transportProtocol;
-  bool m_transportProtocolHasBeenSet = false;
 
   long long m_connectionsCount{0};
+  bool m_sourceServerIdHasBeenSet = false;
+  bool m_destinationServerIdHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_transportProtocolHasBeenSet = false;
   bool m_connectionsCountHasBeenSet = false;
 };
 

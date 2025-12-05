@@ -76,12 +76,12 @@ class InitiateLayerUploadResult {
   ///@}
  private:
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   long long m_partSize{0};
-  bool m_partSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_partSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

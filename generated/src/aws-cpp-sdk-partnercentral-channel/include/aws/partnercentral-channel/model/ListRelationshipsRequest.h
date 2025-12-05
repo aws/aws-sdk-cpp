@@ -199,27 +199,27 @@ class ListRelationshipsRequest : public PartnerCentralChannelRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedAccountIds;
-  bool m_associatedAccountIdsHasBeenSet = false;
 
   Aws::Vector<AssociationType> m_associationTypes;
-  bool m_associationTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_displayNames;
-  bool m_displayNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_programManagementAccountIdentifiers;
-  bool m_programManagementAccountIdentifiersHasBeenSet = false;
 
   ListRelationshipsSortBase m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_associatedAccountIdsHasBeenSet = false;
+  bool m_associationTypesHasBeenSet = false;
+  bool m_displayNamesHasBeenSet = false;
+  bool m_programManagementAccountIdentifiersHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class DescribeClusterVersionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ClusterVersionInformation> m_clusterVersions;
-  bool m_clusterVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_clusterVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

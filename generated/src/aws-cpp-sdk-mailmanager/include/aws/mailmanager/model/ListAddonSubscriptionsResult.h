@@ -86,12 +86,12 @@ class ListAddonSubscriptionsResult {
   ///@}
  private:
   Aws::Vector<AddonSubscription> m_addonSubscriptions;
-  bool m_addonSubscriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonSubscriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

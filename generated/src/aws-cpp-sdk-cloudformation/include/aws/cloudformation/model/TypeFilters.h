@@ -99,12 +99,12 @@ class TypeFilters {
   ///@}
  private:
   Category m_category{Category::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_publisherId;
-  bool m_publisherIdHasBeenSet = false;
 
   Aws::String m_typeNamePrefix;
+  bool m_categoryHasBeenSet = false;
+  bool m_publisherIdHasBeenSet = false;
   bool m_typeNamePrefixHasBeenSet = false;
 };
 

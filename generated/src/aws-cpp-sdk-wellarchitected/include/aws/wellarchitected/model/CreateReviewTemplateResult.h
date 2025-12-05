@@ -59,9 +59,9 @@ class CreateReviewTemplateResult {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

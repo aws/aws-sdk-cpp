@@ -74,9 +74,9 @@ class ManagedQueryResultsConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   ManagedQueryResultsEncryptionConfiguration m_encryptionConfiguration;
+  bool m_enabledHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

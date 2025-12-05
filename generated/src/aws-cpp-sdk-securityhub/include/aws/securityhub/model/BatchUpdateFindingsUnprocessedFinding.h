@@ -111,12 +111,12 @@ class BatchUpdateFindingsUnprocessedFinding {
   ///@}
  private:
   AwsSecurityFindingIdentifier m_findingIdentifier;
-  bool m_findingIdentifierHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_findingIdentifierHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

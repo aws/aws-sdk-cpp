@@ -119,12 +119,12 @@ class SalesforceMetadata {
   ///@}
  private:
   Aws::Vector<Aws::String> m_oAuthScopes;
-  bool m_oAuthScopesHasBeenSet = false;
 
   Aws::Vector<SalesforceDataTransferApi> m_dataTransferApis;
-  bool m_dataTransferApisHasBeenSet = false;
 
   Aws::Vector<OAuth2GrantType> m_oauth2GrantTypesSupported;
+  bool m_oAuthScopesHasBeenSet = false;
+  bool m_dataTransferApisHasBeenSet = false;
   bool m_oauth2GrantTypesSupportedHasBeenSet = false;
 };
 

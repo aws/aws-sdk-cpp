@@ -88,12 +88,12 @@ class TriggerCondition {
   ///@}
  private:
   MessageBasedTrigger m_messageBasedTrigger;
-  bool m_messageBasedTriggerHasBeenSet = false;
 
   TokenBasedTrigger m_tokenBasedTrigger;
-  bool m_tokenBasedTriggerHasBeenSet = false;
 
   TimeBasedTrigger m_timeBasedTrigger;
+  bool m_messageBasedTriggerHasBeenSet = false;
+  bool m_tokenBasedTriggerHasBeenSet = false;
   bool m_timeBasedTriggerHasBeenSet = false;
 };
 

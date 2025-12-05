@@ -113,15 +113,15 @@ class CustomSql {
   ///@}
  private:
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sqlQuery;
-  bool m_sqlQueryHasBeenSet = false;
 
   Aws::Vector<InputColumn> m_columns;
+  bool m_dataSourceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sqlQueryHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
 };
 

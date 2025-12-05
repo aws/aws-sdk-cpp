@@ -274,42 +274,42 @@ class AIAgentSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_assistantArn;
-  bool m_assistantArnHasBeenSet = false;
 
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   AIAgentType m_type{AIAgentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_aiAgentArn;
-  bool m_aiAgentArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTime{};
-  bool m_modifiedTimeHasBeenSet = false;
 
   VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-  bool m_visibilityStatusHasBeenSet = false;
 
   AIAgentConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Origin m_origin{Origin::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_assistantArnHasBeenSet = false;
+  bool m_aiAgentIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_aiAgentArnHasBeenSet = false;
+  bool m_modifiedTimeHasBeenSet = false;
+  bool m_visibilityStatusHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

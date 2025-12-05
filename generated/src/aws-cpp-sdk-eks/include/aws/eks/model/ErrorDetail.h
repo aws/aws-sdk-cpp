@@ -105,12 +105,12 @@ class ErrorDetail {
   ///@}
  private:
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_resourceIdsHasBeenSet = false;
 };
 

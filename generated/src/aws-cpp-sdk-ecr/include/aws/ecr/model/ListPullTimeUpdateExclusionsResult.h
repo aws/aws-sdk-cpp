@@ -89,12 +89,12 @@ class ListPullTimeUpdateExclusionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_pullTimeUpdateExclusions;
-  bool m_pullTimeUpdateExclusionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pullTimeUpdateExclusionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

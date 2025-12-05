@@ -108,12 +108,12 @@ class Filter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<ShareStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ShareResourceType> m_type;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

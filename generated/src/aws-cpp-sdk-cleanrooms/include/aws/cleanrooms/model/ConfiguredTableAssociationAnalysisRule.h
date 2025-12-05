@@ -164,24 +164,24 @@ class ConfiguredTableAssociationAnalysisRule {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_configuredTableAssociationId;
-  bool m_configuredTableAssociationIdHasBeenSet = false;
 
   Aws::String m_configuredTableAssociationArn;
-  bool m_configuredTableAssociationArnHasBeenSet = false;
 
   ConfiguredTableAssociationAnalysisRulePolicy m_policy;
-  bool m_policyHasBeenSet = false;
 
   ConfiguredTableAssociationAnalysisRuleType m_type{ConfiguredTableAssociationAnalysisRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_configuredTableAssociationIdHasBeenSet = false;
+  bool m_configuredTableAssociationArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class DeregisterTargetFromMaintenanceWindowResult {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::String m_windowTargetId;
-  bool m_windowTargetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowIdHasBeenSet = false;
+  bool m_windowTargetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

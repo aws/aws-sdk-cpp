@@ -61,9 +61,9 @@ class GetInstanceSnapshotResult {
   ///@}
  private:
   InstanceSnapshot m_instanceSnapshot;
-  bool m_instanceSnapshotHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceSnapshotHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

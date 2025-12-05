@@ -86,9 +86,9 @@ class NotificationRecipientType {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_userTags;
-  bool m_userTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
+  bool m_userTagsHasBeenSet = false;
   bool m_userIdsHasBeenSet = false;
 };
 

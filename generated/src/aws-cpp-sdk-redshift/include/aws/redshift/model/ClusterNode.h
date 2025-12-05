@@ -88,12 +88,12 @@ class ClusterNode {
   ///@}
  private:
   Aws::String m_nodeRole;
-  bool m_nodeRoleHasBeenSet = false;
 
   Aws::String m_privateIPAddress;
-  bool m_privateIPAddressHasBeenSet = false;
 
   Aws::String m_publicIPAddress;
+  bool m_nodeRoleHasBeenSet = false;
+  bool m_privateIPAddressHasBeenSet = false;
   bool m_publicIPAddressHasBeenSet = false;
 };
 

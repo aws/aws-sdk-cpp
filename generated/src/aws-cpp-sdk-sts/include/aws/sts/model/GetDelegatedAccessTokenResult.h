@@ -96,15 +96,15 @@ class GetDelegatedAccessTokenResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   int m_packedPolicySize{0};
-  bool m_packedPolicySizeHasBeenSet = false;
 
   Aws::String m_assumedPrincipal;
-  bool m_assumedPrincipalHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_credentialsHasBeenSet = false;
+  bool m_packedPolicySizeHasBeenSet = false;
+  bool m_assumedPrincipalHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class CreateCompilationJobResult {
   ///@}
  private:
   Aws::String m_compilationJobArn;
-  bool m_compilationJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compilationJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

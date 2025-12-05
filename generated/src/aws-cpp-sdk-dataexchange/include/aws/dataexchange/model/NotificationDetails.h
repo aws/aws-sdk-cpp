@@ -88,12 +88,12 @@ class NotificationDetails {
   ///@}
  private:
   DataUpdateRequestDetails m_dataUpdate;
-  bool m_dataUpdateHasBeenSet = false;
 
   DeprecationRequestDetails m_deprecation;
-  bool m_deprecationHasBeenSet = false;
 
   SchemaChangeRequestDetails m_schemaChange;
+  bool m_dataUpdateHasBeenSet = false;
+  bool m_deprecationHasBeenSet = false;
   bool m_schemaChangeHasBeenSet = false;
 };
 

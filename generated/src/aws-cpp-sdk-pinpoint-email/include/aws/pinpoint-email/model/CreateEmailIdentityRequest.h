@@ -78,9 +78,9 @@ class CreateEmailIdentityRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_emailIdentityHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class PaletteCanvas {
   ///@}
  private:
   Aws::String m_containerBackground;
-  bool m_containerBackgroundHasBeenSet = false;
 
   Aws::String m_pageBackground;
-  bool m_pageBackgroundHasBeenSet = false;
 
   Aws::String m_activeBackground;
+  bool m_containerBackgroundHasBeenSet = false;
+  bool m_pageBackgroundHasBeenSet = false;
   bool m_activeBackgroundHasBeenSet = false;
 };
 

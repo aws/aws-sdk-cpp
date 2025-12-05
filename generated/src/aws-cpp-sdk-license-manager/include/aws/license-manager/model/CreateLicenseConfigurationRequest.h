@@ -241,33 +241,33 @@ class CreateLicenseConfigurationRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LicenseCountingType m_licenseCountingType{LicenseCountingType::NOT_SET};
-  bool m_licenseCountingTypeHasBeenSet = false;
 
   long long m_licenseCount{0};
-  bool m_licenseCountHasBeenSet = false;
 
   bool m_licenseCountHardLimit{false};
-  bool m_licenseCountHardLimitHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_licenseRules;
-  bool m_licenseRulesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_disassociateWhenNotFound{false};
-  bool m_disassociateWhenNotFoundHasBeenSet = false;
 
   Aws::Vector<ProductInformation> m_productInformationList;
-  bool m_productInformationListHasBeenSet = false;
 
   long long m_licenseExpiry{0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_licenseCountingTypeHasBeenSet = false;
+  bool m_licenseCountHasBeenSet = false;
+  bool m_licenseCountHardLimitHasBeenSet = false;
+  bool m_licenseRulesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_disassociateWhenNotFoundHasBeenSet = false;
+  bool m_productInformationListHasBeenSet = false;
   bool m_licenseExpiryHasBeenSet = false;
 };
 

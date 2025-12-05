@@ -75,9 +75,9 @@ class RuleGroupSourceStatefulRulesOptionsDetails {
   ///@}
  private:
   Aws::String m_keyword;
-  bool m_keywordHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_settings;
+  bool m_keywordHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

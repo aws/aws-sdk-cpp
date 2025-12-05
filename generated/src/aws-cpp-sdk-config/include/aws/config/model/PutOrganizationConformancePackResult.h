@@ -60,9 +60,9 @@ class PutOrganizationConformancePackResult {
   ///@}
  private:
   Aws::String m_organizationConformancePackArn;
-  bool m_organizationConformancePackArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationConformancePackArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -134,21 +134,21 @@ class ListCisScansRequest : public Inspector2Request {
   ///@}
  private:
   ListCisScansFilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   ListCisScansDetailLevel m_detailLevel{ListCisScansDetailLevel::NOT_SET};
-  bool m_detailLevelHasBeenSet = false;
 
   ListCisScansSortBy m_sortBy{ListCisScansSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_detailLevelHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

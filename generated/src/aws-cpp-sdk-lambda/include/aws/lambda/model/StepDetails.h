@@ -107,15 +107,15 @@ class StepDetails {
   ///@}
  private:
   int m_attempt{0};
-  bool m_attemptHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextAttemptTimestamp{};
-  bool m_nextAttemptTimestampHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   ErrorObject m_error;
+  bool m_attemptHasBeenSet = false;
+  bool m_nextAttemptTimestampHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

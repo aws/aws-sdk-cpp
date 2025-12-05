@@ -86,12 +86,12 @@ class DeviceInfo {
   ///@}
  private:
   Aws::String m_platformName;
-  bool m_platformNameHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_operatingSystem;
+  bool m_platformNameHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
   bool m_operatingSystemHasBeenSet = false;
 };
 

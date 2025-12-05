@@ -83,12 +83,12 @@ class GetWorkflowRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   bool m_includeGraph{false};
+  bool m_nameHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
   bool m_includeGraphHasBeenSet = false;
 };
 

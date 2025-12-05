@@ -141,18 +141,18 @@ class CreateVpcBlockPublicAccessExclusionRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   InternetGatewayExclusionMode m_internetGatewayExclusionMode{InternetGatewayExclusionMode::NOT_SET};
-  bool m_internetGatewayExclusionModeHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_internetGatewayExclusionModeHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

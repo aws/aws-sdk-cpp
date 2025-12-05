@@ -77,9 +77,9 @@ class ContextKeySelector {
   ///@}
  private:
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_equals;
+  bool m_typeHasBeenSet = false;
   bool m_equalsHasBeenSet = false;
 };
 

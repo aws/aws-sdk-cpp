@@ -66,9 +66,9 @@ class GetSolNetworkPackageContentRequest : public TnbRequest {
   ///@}
  private:
   PackageContentType m_accept{PackageContentType::NOT_SET};
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_nsdInfoId;
+  bool m_acceptHasBeenSet = false;
   bool m_nsdInfoIdHasBeenSet = false;
 };
 

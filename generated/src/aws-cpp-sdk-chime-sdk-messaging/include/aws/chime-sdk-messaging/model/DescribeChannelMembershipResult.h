@@ -61,9 +61,9 @@ class DescribeChannelMembershipResult {
   ///@}
  private:
   ChannelMembership m_channelMembership;
-  bool m_channelMembershipHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelMembershipHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

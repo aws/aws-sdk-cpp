@@ -258,39 +258,39 @@ class ActionConnector {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_actionConnectorId;
-  bool m_actionConnectorIdHasBeenSet = false;
 
   ActionConnectorType m_type{ActionConnectorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ActionConnectorError m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ReadAuthConfig m_authenticationConfig;
-  bool m_authenticationConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledActions;
-  bool m_enabledActionsHasBeenSet = false;
 
   Aws::String m_vpcConnectionArn;
+  bool m_arnHasBeenSet = false;
+  bool m_actionConnectorIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_authenticationConfigHasBeenSet = false;
+  bool m_enabledActionsHasBeenSet = false;
   bool m_vpcConnectionArnHasBeenSet = false;
 };
 

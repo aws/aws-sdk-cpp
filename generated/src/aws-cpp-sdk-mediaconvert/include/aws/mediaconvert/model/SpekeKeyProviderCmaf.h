@@ -170,21 +170,21 @@ class SpekeKeyProviderCmaf {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dashSignaledSystemIds;
-  bool m_dashSignaledSystemIdsHasBeenSet = false;
 
   EncryptionContractConfiguration m_encryptionContractConfiguration;
-  bool m_encryptionContractConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hlsSignaledSystemIds;
-  bool m_hlsSignaledSystemIdsHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_dashSignaledSystemIdsHasBeenSet = false;
+  bool m_encryptionContractConfigurationHasBeenSet = false;
+  bool m_hlsSignaledSystemIdsHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

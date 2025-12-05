@@ -103,12 +103,12 @@ class InputSessionStateSpecification {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-  bool m_sessionAttributesHasBeenSet = false;
 
   Aws::Vector<ActiveContext> m_activeContexts;
-  bool m_activeContextsHasBeenSet = false;
 
   RuntimeHints m_runtimeHints;
+  bool m_sessionAttributesHasBeenSet = false;
+  bool m_activeContextsHasBeenSet = false;
   bool m_runtimeHintsHasBeenSet = false;
 };
 

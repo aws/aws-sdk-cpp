@@ -71,9 +71,9 @@ class RebootDBInstanceRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   bool m_forceFailover{false};
+  bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_forceFailoverHasBeenSet = false;
 };
 

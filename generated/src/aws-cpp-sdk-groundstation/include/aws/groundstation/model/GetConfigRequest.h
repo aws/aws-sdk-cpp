@@ -67,9 +67,9 @@ class GetConfigRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_configId;
-  bool m_configIdHasBeenSet = false;
 
   ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
+  bool m_configIdHasBeenSet = false;
   bool m_configTypeHasBeenSet = false;
 };
 

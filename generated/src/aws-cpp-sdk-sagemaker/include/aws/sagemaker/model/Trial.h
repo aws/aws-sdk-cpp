@@ -267,39 +267,39 @@ class Trial {
   ///@}
  private:
   Aws::String m_trialName;
-  bool m_trialNameHasBeenSet = false;
 
   Aws::String m_trialArn;
-  bool m_trialArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_experimentName;
-  bool m_experimentNameHasBeenSet = false;
 
   TrialSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   MetadataProperties m_metadataProperties;
-  bool m_metadataPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<TrialComponentSimpleSummary> m_trialComponentSummaries;
+  bool m_trialNameHasBeenSet = false;
+  bool m_trialArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_experimentNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_metadataPropertiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_trialComponentSummariesHasBeenSet = false;
 };
 

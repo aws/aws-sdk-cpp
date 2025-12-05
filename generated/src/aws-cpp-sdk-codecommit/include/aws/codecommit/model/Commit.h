@@ -175,24 +175,24 @@ class Commit {
   ///@}
  private:
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_treeId;
-  bool m_treeIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parents;
-  bool m_parentsHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   UserInfo m_author;
-  bool m_authorHasBeenSet = false;
 
   UserInfo m_committer;
-  bool m_committerHasBeenSet = false;
 
   Aws::String m_additionalData;
+  bool m_commitIdHasBeenSet = false;
+  bool m_treeIdHasBeenSet = false;
+  bool m_parentsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_authorHasBeenSet = false;
+  bool m_committerHasBeenSet = false;
   bool m_additionalDataHasBeenSet = false;
 };
 

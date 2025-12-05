@@ -69,9 +69,9 @@ class RouteVehicleNoticeDetail {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   RouteViolatedConstraints m_violatedConstraints;
+  bool m_titleHasBeenSet = false;
   bool m_violatedConstraintsHasBeenSet = false;
 };
 

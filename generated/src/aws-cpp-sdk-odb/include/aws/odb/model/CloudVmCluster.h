@@ -803,126 +803,126 @@ class CloudVmCluster {
   ///@}
  private:
   Aws::String m_cloudVmClusterId;
-  bool m_cloudVmClusterIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_cloudVmClusterArn;
-  bool m_cloudVmClusterArnHasBeenSet = false;
 
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   int m_cpuCoreCount{0};
-  bool m_cpuCoreCountHasBeenSet = false;
 
   DataCollectionOptions m_dataCollectionOptions;
-  bool m_dataCollectionOptionsHasBeenSet = false;
 
   double m_dataStorageSizeInTBs{0.0};
-  bool m_dataStorageSizeInTBsHasBeenSet = false;
 
   int m_dbNodeStorageSizeInGBs{0};
-  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbServers;
-  bool m_dbServersHasBeenSet = false;
 
   DiskRedundancy m_diskRedundancy{DiskRedundancy::NOT_SET};
-  bool m_diskRedundancyHasBeenSet = false;
 
   Aws::String m_giVersion;
-  bool m_giVersionHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   ExadataIormConfig m_iormConfigCache;
-  bool m_iormConfigCacheHasBeenSet = false;
 
   bool m_isLocalBackupEnabled{false};
-  bool m_isLocalBackupEnabledHasBeenSet = false;
 
   bool m_isSparseDiskgroupEnabled{false};
-  bool m_isSparseDiskgroupEnabledHasBeenSet = false;
 
   Aws::String m_lastUpdateHistoryEntryId;
-  bool m_lastUpdateHistoryEntryIdHasBeenSet = false;
 
   LicenseModel m_licenseModel{LicenseModel::NOT_SET};
-  bool m_licenseModelHasBeenSet = false;
 
   int m_listenerPort{0};
-  bool m_listenerPortHasBeenSet = false;
 
   int m_memorySizeInGBs{0};
-  bool m_memorySizeInGBsHasBeenSet = false;
 
   int m_nodeCount{0};
-  bool m_nodeCountHasBeenSet = false;
 
   Aws::String m_ocid;
-  bool m_ocidHasBeenSet = false;
 
   Aws::String m_ociResourceAnchorName;
-  bool m_ociResourceAnchorNameHasBeenSet = false;
 
   Aws::String m_ociUrl;
-  bool m_ociUrlHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_scanDnsName;
-  bool m_scanDnsNameHasBeenSet = false;
 
   Aws::String m_scanDnsRecordId;
-  bool m_scanDnsRecordIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scanIpIds;
-  bool m_scanIpIdsHasBeenSet = false;
 
   Aws::String m_shape;
-  bool m_shapeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sshPublicKeys;
-  bool m_sshPublicKeysHasBeenSet = false;
 
   int m_storageSizeInGBs{0};
-  bool m_storageSizeInGBsHasBeenSet = false;
 
   Aws::String m_systemVersion;
-  bool m_systemVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vipIds;
-  bool m_vipIdsHasBeenSet = false;
 
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
 
   double m_percentProgress{0.0};
-  bool m_percentProgressHasBeenSet = false;
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
-  bool m_computeModelHasBeenSet = false;
 
   Aws::Vector<IamRole> m_iamRoles;
+  bool m_cloudVmClusterIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_cloudVmClusterArnHasBeenSet = false;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_cpuCoreCountHasBeenSet = false;
+  bool m_dataCollectionOptionsHasBeenSet = false;
+  bool m_dataStorageSizeInTBsHasBeenSet = false;
+  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_dbServersHasBeenSet = false;
+  bool m_diskRedundancyHasBeenSet = false;
+  bool m_giVersionHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_iormConfigCacheHasBeenSet = false;
+  bool m_isLocalBackupEnabledHasBeenSet = false;
+  bool m_isSparseDiskgroupEnabledHasBeenSet = false;
+  bool m_lastUpdateHistoryEntryIdHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_listenerPortHasBeenSet = false;
+  bool m_memorySizeInGBsHasBeenSet = false;
+  bool m_nodeCountHasBeenSet = false;
+  bool m_ocidHasBeenSet = false;
+  bool m_ociResourceAnchorNameHasBeenSet = false;
+  bool m_ociUrlHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_scanDnsNameHasBeenSet = false;
+  bool m_scanDnsRecordIdHasBeenSet = false;
+  bool m_scanIpIdsHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
+  bool m_sshPublicKeysHasBeenSet = false;
+  bool m_storageSizeInGBsHasBeenSet = false;
+  bool m_systemVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
+  bool m_vipIdsHasBeenSet = false;
+  bool m_odbNetworkIdHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_computeModelHasBeenSet = false;
   bool m_iamRolesHasBeenSet = false;
 };
 

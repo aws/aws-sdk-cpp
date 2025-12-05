@@ -97,15 +97,15 @@ class PutDefaultEncryptionConfigurationResult {
   ///@}
  private:
   ConfigurationStatus m_configurationStatus;
-  bool m_configurationStatusHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationStatusHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

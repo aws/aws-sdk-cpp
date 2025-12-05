@@ -71,9 +71,9 @@ class StartDataCollectionByAgentIdsResult {
   ///@}
  private:
   Aws::Vector<AgentConfigurationStatus> m_agentsConfigurationStatus;
-  bool m_agentsConfigurationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentsConfigurationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

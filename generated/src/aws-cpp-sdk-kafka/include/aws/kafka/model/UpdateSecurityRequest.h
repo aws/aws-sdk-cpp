@@ -116,15 +116,15 @@ class UpdateSecurityRequest : public KafkaRequest {
   ///@}
  private:
   ClientAuthentication m_clientAuthentication;
-  bool m_clientAuthenticationHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   EncryptionInfo m_encryptionInfo;
+  bool m_clientAuthenticationHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
   bool m_encryptionInfoHasBeenSet = false;
 };
 

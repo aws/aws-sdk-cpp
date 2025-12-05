@@ -110,15 +110,15 @@ class DestinationConfiguration {
   ///@}
  private:
   Aws::String m_destinationIp;
-  bool m_destinationIpHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Interface m_interface;
-  bool m_interfaceHasBeenSet = false;
 
   Aws::String m_outboundIp;
+  bool m_destinationIpHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_interfaceHasBeenSet = false;
   bool m_outboundIpHasBeenSet = false;
 };
 

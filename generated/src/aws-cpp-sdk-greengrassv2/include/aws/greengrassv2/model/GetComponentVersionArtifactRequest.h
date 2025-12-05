@@ -121,15 +121,15 @@ class GetComponentVersionArtifactRequest : public GreengrassV2Request {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_artifactName;
-  bool m_artifactNameHasBeenSet = false;
 
   S3EndpointType m_s3EndpointType{S3EndpointType::NOT_SET};
-  bool m_s3EndpointTypeHasBeenSet = false;
 
   IotEndpointType m_iotEndpointType{IotEndpointType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_artifactNameHasBeenSet = false;
+  bool m_s3EndpointTypeHasBeenSet = false;
   bool m_iotEndpointTypeHasBeenSet = false;
 };
 

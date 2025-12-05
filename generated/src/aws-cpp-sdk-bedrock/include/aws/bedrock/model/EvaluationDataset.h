@@ -77,9 +77,9 @@ class EvaluationDataset {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EvaluationDatasetLocation m_datasetLocation;
+  bool m_nameHasBeenSet = false;
   bool m_datasetLocationHasBeenSet = false;
 };
 

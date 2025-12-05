@@ -292,45 +292,45 @@ class AnalysisRouteTableRoute {
   ///@}
  private:
   Aws::String m_destinationCidr;
-  bool m_destinationCidrHasBeenSet = false;
 
   Aws::String m_destinationPrefixListId;
-  bool m_destinationPrefixListIdHasBeenSet = false;
 
   Aws::String m_egressOnlyInternetGatewayId;
-  bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_origin;
-  bool m_originHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
-  bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_carrierGatewayId;
-  bool m_carrierGatewayIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
-  bool m_coreNetworkArnHasBeenSet = false;
 
   Aws::String m_localGatewayId;
+  bool m_destinationCidrHasBeenSet = false;
+  bool m_destinationPrefixListIdHasBeenSet = false;
+  bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_vpcPeeringConnectionIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_carrierGatewayIdHasBeenSet = false;
+  bool m_coreNetworkArnHasBeenSet = false;
   bool m_localGatewayIdHasBeenSet = false;
 };
 

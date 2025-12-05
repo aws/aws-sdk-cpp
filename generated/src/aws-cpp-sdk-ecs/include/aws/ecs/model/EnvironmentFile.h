@@ -90,9 +90,9 @@ class EnvironmentFile {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   EnvironmentFileType m_type{EnvironmentFileType::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

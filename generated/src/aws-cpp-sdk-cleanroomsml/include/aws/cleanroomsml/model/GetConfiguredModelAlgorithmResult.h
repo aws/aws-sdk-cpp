@@ -243,36 +243,36 @@ class GetConfiguredModelAlgorithmResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmArn;
-  bool m_configuredModelAlgorithmArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ContainerConfig m_trainingContainerConfig;
-  bool m_trainingContainerConfigHasBeenSet = false;
 
   InferenceContainerConfig m_inferenceContainerConfig;
-  bool m_inferenceContainerConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_configuredModelAlgorithmArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_trainingContainerConfigHasBeenSet = false;
+  bool m_inferenceContainerConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

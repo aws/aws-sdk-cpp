@@ -61,9 +61,9 @@ class GetResolverConfigResult {
   ///@}
  private:
   ResolverConfig m_resolverConfig;
-  bool m_resolverConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

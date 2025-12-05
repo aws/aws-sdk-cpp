@@ -89,12 +89,12 @@ class CodeContentUpdate {
   ///@}
  private:
   Aws::String m_textContentUpdate;
-  bool m_textContentUpdateHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_zipFileContentUpdate{};
-  bool m_zipFileContentUpdateHasBeenSet = false;
 
   S3ContentLocationUpdate m_s3ContentLocationUpdate;
+  bool m_textContentUpdateHasBeenSet = false;
+  bool m_zipFileContentUpdateHasBeenSet = false;
   bool m_s3ContentLocationUpdateHasBeenSet = false;
 };
 

@@ -233,36 +233,36 @@ class ListAssociationsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_destinationType;
-  bool m_destinationTypeHasBeenSet = false;
 
   AssociationEdgeType m_associationType{AssociationEdgeType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   SortAssociationsBy m_sortBy{SortAssociationsBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_sourceArnHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

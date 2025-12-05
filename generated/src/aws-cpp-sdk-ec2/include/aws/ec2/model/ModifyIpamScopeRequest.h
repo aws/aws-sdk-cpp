@@ -130,18 +130,18 @@ class ModifyIpamScopeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamScopeId;
-  bool m_ipamScopeIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ExternalAuthorityConfiguration m_externalAuthorityConfiguration;
-  bool m_externalAuthorityConfigurationHasBeenSet = false;
 
   bool m_removeExternalAuthorityConfiguration{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamScopeIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_externalAuthorityConfigurationHasBeenSet = false;
   bool m_removeExternalAuthorityConfigurationHasBeenSet = false;
 };
 

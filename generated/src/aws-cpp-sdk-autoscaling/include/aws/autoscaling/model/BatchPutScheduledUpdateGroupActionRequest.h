@@ -79,9 +79,9 @@ class BatchPutScheduledUpdateGroupActionRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<ScheduledUpdateGroupActionRequest> m_scheduledUpdateGroupActions;
+  bool m_autoScalingGroupNameHasBeenSet = false;
   bool m_scheduledUpdateGroupActionsHasBeenSet = false;
 };
 

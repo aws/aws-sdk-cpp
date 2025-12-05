@@ -85,12 +85,12 @@ class GetAgreementTermsResult {
   ///@}
  private:
   Aws::Vector<AcceptedTerm> m_acceptedTerms;
-  bool m_acceptedTermsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_acceptedTermsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

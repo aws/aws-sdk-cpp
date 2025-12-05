@@ -150,21 +150,21 @@ class ListToMap {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_valueKey;
-  bool m_valueKeyHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   bool m_flatten{false};
-  bool m_flattenHasBeenSet = false;
 
   FlattenedElement m_flattenedElement{FlattenedElement::NOT_SET};
+  bool m_sourceHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_valueKeyHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_flattenHasBeenSet = false;
   bool m_flattenedElementHasBeenSet = false;
 };
 

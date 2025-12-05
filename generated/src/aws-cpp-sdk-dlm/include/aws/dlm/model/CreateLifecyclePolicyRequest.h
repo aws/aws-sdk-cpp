@@ -289,39 +289,39 @@ class CreateLifecyclePolicyRequest : public DLMRequest {
   ///@}
  private:
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SettablePolicyStateValues m_state{SettablePolicyStateValues::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   PolicyDetails m_policyDetails;
-  bool m_policyDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DefaultPolicyTypeValues m_defaultPolicy{DefaultPolicyTypeValues::NOT_SET};
-  bool m_defaultPolicyHasBeenSet = false;
 
   int m_createInterval{0};
-  bool m_createIntervalHasBeenSet = false;
 
   int m_retainInterval{0};
-  bool m_retainIntervalHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   bool m_extendDeletion{false};
-  bool m_extendDeletionHasBeenSet = false;
 
   Aws::Vector<CrossRegionCopyTarget> m_crossRegionCopyTargets;
-  bool m_crossRegionCopyTargetsHasBeenSet = false;
 
   Exclusions m_exclusions;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_policyDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_defaultPolicyHasBeenSet = false;
+  bool m_createIntervalHasBeenSet = false;
+  bool m_retainIntervalHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_extendDeletionHasBeenSet = false;
+  bool m_crossRegionCopyTargetsHasBeenSet = false;
   bool m_exclusionsHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class CreateSegmentEstimateRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   SegmentGroupStructure m_segmentQuery;
-  bool m_segmentQueryHasBeenSet = false;
 
   Aws::String m_segmentSqlQuery;
+  bool m_domainNameHasBeenSet = false;
+  bool m_segmentQueryHasBeenSet = false;
   bool m_segmentSqlQueryHasBeenSet = false;
 };
 

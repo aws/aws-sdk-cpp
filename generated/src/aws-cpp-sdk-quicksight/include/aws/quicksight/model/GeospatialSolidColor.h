@@ -67,9 +67,9 @@ class GeospatialSolidColor {
   ///@}
  private:
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   GeospatialColorState m_state{GeospatialColorState::NOT_SET};
+  bool m_colorHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class DeleteDeploymentGroupResult {
   ///@}
  private:
   Aws::Vector<AutoScalingGroup> m_hooksNotCleanedUp;
-  bool m_hooksNotCleanedUpHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hooksNotCleanedUpHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

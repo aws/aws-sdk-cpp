@@ -165,18 +165,18 @@ class ImageCriterion {
   ///@}
  private:
   Aws::Vector<Aws::String> m_imageProviders;
-  bool m_imageProvidersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_marketplaceProductCodes;
-  bool m_marketplaceProductCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageNames;
-  bool m_imageNamesHasBeenSet = false;
 
   DeprecationTimeCondition m_deprecationTimeCondition;
-  bool m_deprecationTimeConditionHasBeenSet = false;
 
   CreationDateCondition m_creationDateCondition;
+  bool m_imageProvidersHasBeenSet = false;
+  bool m_marketplaceProductCodesHasBeenSet = false;
+  bool m_imageNamesHasBeenSet = false;
+  bool m_deprecationTimeConditionHasBeenSet = false;
   bool m_creationDateConditionHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class RelativeAggregationDuration {
   ///@}
  private:
   TimeDimension m_timeDimension{TimeDimension::NOT_SET};
-  bool m_timeDimensionHasBeenSet = false;
 
   int m_timeValue{0};
+  bool m_timeDimensionHasBeenSet = false;
   bool m_timeValueHasBeenSet = false;
 };
 

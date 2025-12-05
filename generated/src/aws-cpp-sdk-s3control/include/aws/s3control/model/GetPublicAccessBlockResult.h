@@ -80,12 +80,12 @@ class GetPublicAccessBlockResult {
   ///@}
  private:
   PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
-  bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_publicAccessBlockConfigurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

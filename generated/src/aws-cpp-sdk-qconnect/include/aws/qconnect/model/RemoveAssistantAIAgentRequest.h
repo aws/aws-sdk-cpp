@@ -89,12 +89,12 @@ class RemoveAssistantAIAgentRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
-  bool m_aiAgentTypeHasBeenSet = false;
 
   Aws::String m_orchestratorUseCase;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiAgentTypeHasBeenSet = false;
   bool m_orchestratorUseCaseHasBeenSet = false;
 };
 

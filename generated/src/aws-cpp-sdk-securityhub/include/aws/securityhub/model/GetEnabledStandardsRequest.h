@@ -93,12 +93,12 @@ class GetEnabledStandardsRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_standardsSubscriptionArns;
-  bool m_standardsSubscriptionArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_standardsSubscriptionArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

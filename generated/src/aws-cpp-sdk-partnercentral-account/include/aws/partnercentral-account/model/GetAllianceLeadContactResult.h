@@ -113,18 +113,18 @@ class GetAllianceLeadContactResult {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AllianceLeadContact m_allianceLeadContact;
-  bool m_allianceLeadContactHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_allianceLeadContactHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

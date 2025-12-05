@@ -67,9 +67,9 @@ class DescribeEntityAggregatesResult {
   ///@}
  private:
   Aws::Vector<EntityAggregate> m_entityAggregates;
-  bool m_entityAggregatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityAggregatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

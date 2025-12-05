@@ -122,18 +122,18 @@ class SdkConfigurationProperty {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_friendlyName;
-  bool m_friendlyNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_nameHasBeenSet = false;
+  bool m_friendlyNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

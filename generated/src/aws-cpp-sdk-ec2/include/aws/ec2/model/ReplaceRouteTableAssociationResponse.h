@@ -78,12 +78,12 @@ class ReplaceRouteTableAssociationResponse {
   ///@}
  private:
   Aws::String m_newAssociationId;
-  bool m_newAssociationIdHasBeenSet = false;
 
   RouteTableAssociationState m_associationState;
-  bool m_associationStateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_newAssociationIdHasBeenSet = false;
+  bool m_associationStateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

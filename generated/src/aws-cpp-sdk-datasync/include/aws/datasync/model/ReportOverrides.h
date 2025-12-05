@@ -113,15 +113,15 @@ class ReportOverrides {
   ///@}
  private:
   ReportOverride m_transferred;
-  bool m_transferredHasBeenSet = false;
 
   ReportOverride m_verified;
-  bool m_verifiedHasBeenSet = false;
 
   ReportOverride m_deleted;
-  bool m_deletedHasBeenSet = false;
 
   ReportOverride m_skipped;
+  bool m_transferredHasBeenSet = false;
+  bool m_verifiedHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
   bool m_skippedHasBeenSet = false;
 };
 

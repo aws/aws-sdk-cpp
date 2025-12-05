@@ -113,15 +113,15 @@ class ListThingPrincipalsV2Request : public IoTRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   ThingPrincipalType m_thingPrincipalType{ThingPrincipalType::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
   bool m_thingPrincipalTypeHasBeenSet = false;
 };
 

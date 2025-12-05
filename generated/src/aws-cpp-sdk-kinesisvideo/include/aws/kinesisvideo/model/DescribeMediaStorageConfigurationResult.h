@@ -62,9 +62,9 @@ class DescribeMediaStorageConfigurationResult {
   ///@}
  private:
   MediaStorageConfiguration m_mediaStorageConfiguration;
-  bool m_mediaStorageConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaStorageConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

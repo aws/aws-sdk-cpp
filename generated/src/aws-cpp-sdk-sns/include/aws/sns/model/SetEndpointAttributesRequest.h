@@ -90,9 +90,9 @@ class SetEndpointAttributesRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_endpointArnHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

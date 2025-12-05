@@ -315,45 +315,45 @@ class ProvisionedProductDetail {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ProvisionedProductStatus m_status{ProvisionedProductStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   Aws::String m_lastRecordId;
-  bool m_lastRecordIdHasBeenSet = false;
 
   Aws::String m_lastProvisioningRecordId;
-  bool m_lastProvisioningRecordIdHasBeenSet = false;
 
   Aws::String m_lastSuccessfulProvisioningRecordId;
-  bool m_lastSuccessfulProvisioningRecordIdHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::String m_launchRoleArn;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
+  bool m_lastRecordIdHasBeenSet = false;
+  bool m_lastProvisioningRecordIdHasBeenSet = false;
+  bool m_lastSuccessfulProvisioningRecordIdHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
   bool m_launchRoleArnHasBeenSet = false;
 };
 

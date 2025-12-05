@@ -84,12 +84,12 @@ class MonitoringConfigurationDescription {
   ///@}
  private:
   ConfigurationType m_configurationType{ConfigurationType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   MetricsLevel m_metricsLevel{MetricsLevel::NOT_SET};
-  bool m_metricsLevelHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
+  bool m_configurationTypeHasBeenSet = false;
+  bool m_metricsLevelHasBeenSet = false;
   bool m_logLevelHasBeenSet = false;
 };
 

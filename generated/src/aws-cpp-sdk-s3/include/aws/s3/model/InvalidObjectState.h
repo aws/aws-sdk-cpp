@@ -71,9 +71,9 @@ class InvalidObjectState {
   ///@}
  private:
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   IntelligentTieringAccessTier m_accessTier{IntelligentTieringAccessTier::NOT_SET};
+  bool m_storageClassHasBeenSet = false;
   bool m_accessTierHasBeenSet = false;
 };
 

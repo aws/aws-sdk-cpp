@@ -114,15 +114,15 @@ class AddCommunicationToCaseRequest : public SupportRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_communicationBody;
-  bool m_communicationBodyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ccEmailAddresses;
-  bool m_ccEmailAddressesHasBeenSet = false;
 
   Aws::String m_attachmentSetId;
+  bool m_caseIdHasBeenSet = false;
+  bool m_communicationBodyHasBeenSet = false;
+  bool m_ccEmailAddressesHasBeenSet = false;
   bool m_attachmentSetIdHasBeenSet = false;
 };
 

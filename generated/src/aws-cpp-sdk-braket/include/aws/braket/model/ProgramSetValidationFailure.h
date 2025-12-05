@@ -91,12 +91,12 @@ class ProgramSetValidationFailure {
   ///@}
  private:
   long long m_programIndex{0};
-  bool m_programIndexHasBeenSet = false;
 
   long long m_inputsIndex{0};
-  bool m_inputsIndexHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_errors;
+  bool m_programIndexHasBeenSet = false;
+  bool m_inputsIndexHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
 };
 

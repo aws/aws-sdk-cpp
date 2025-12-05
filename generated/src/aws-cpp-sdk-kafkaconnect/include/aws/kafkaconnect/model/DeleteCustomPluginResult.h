@@ -76,12 +76,12 @@ class DeleteCustomPluginResult {
   ///@}
  private:
   Aws::String m_customPluginArn;
-  bool m_customPluginArnHasBeenSet = false;
 
   CustomPluginState m_customPluginState{CustomPluginState::NOT_SET};
-  bool m_customPluginStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customPluginArnHasBeenSet = false;
+  bool m_customPluginStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

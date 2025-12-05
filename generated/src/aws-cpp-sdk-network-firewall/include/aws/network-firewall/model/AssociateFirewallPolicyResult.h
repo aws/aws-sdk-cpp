@@ -122,18 +122,18 @@ class AssociateFirewallPolicyResult {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_firewallPolicyArn;
-  bool m_firewallPolicyArnHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallNameHasBeenSet = false;
+  bool m_firewallPolicyArnHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

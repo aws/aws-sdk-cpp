@@ -120,15 +120,15 @@ class TrackedActionLastAccessed {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_lastAccessedEntity;
-  bool m_lastAccessedEntityHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessedTime{};
-  bool m_lastAccessedTimeHasBeenSet = false;
 
   Aws::String m_lastAccessedRegion;
+  bool m_actionNameHasBeenSet = false;
+  bool m_lastAccessedEntityHasBeenSet = false;
+  bool m_lastAccessedTimeHasBeenSet = false;
   bool m_lastAccessedRegionHasBeenSet = false;
 };
 

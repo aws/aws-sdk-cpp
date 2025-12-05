@@ -176,24 +176,24 @@ class CreateEksAnywhereSubscriptionRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EksAnywhereSubscriptionTerm m_term;
-  bool m_termHasBeenSet = false;
 
   int m_licenseQuantity{0};
-  bool m_licenseQuantityHasBeenSet = false;
 
   EksAnywhereSubscriptionLicenseType m_licenseType{EksAnywhereSubscriptionLicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   bool m_autoRenew{false};
-  bool m_autoRenewHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_termHasBeenSet = false;
+  bool m_licenseQuantityHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_autoRenewHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

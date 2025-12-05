@@ -257,36 +257,36 @@ class ExportTableToPointInTimeRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_exportTime{};
-  bool m_exportTimeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3BucketOwner;
-  bool m_s3BucketOwnerHasBeenSet = false;
 
   Aws::String m_s3Prefix;
-  bool m_s3PrefixHasBeenSet = false;
 
   S3SseAlgorithm m_s3SseAlgorithm{S3SseAlgorithm::NOT_SET};
-  bool m_s3SseAlgorithmHasBeenSet = false;
 
   Aws::String m_s3SseKmsKeyId;
-  bool m_s3SseKmsKeyIdHasBeenSet = false;
 
   ExportFormat m_exportFormat{ExportFormat::NOT_SET};
-  bool m_exportFormatHasBeenSet = false;
 
   ExportType m_exportType{ExportType::NOT_SET};
-  bool m_exportTypeHasBeenSet = false;
 
   IncrementalExportSpecification m_incrementalExportSpecification;
+  bool m_tableArnHasBeenSet = false;
+  bool m_exportTimeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
+  bool m_s3PrefixHasBeenSet = false;
+  bool m_s3SseAlgorithmHasBeenSet = false;
+  bool m_s3SseKmsKeyIdHasBeenSet = false;
+  bool m_exportFormatHasBeenSet = false;
+  bool m_exportTypeHasBeenSet = false;
   bool m_incrementalExportSpecificationHasBeenSet = false;
 };
 

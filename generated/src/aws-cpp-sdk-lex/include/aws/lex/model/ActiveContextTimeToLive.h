@@ -66,9 +66,9 @@ class ActiveContextTimeToLive {
   ///@}
  private:
   int m_timeToLiveInSeconds{0};
-  bool m_timeToLiveInSecondsHasBeenSet = false;
 
   int m_turnsToLive{0};
+  bool m_timeToLiveInSecondsHasBeenSet = false;
   bool m_turnsToLiveHasBeenSet = false;
 };
 

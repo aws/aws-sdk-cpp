@@ -71,9 +71,9 @@ class IngressVpcConfiguration {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
+  bool m_vpcIdHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
 };
 

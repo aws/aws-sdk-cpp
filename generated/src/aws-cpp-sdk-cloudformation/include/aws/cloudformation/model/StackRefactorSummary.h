@@ -144,21 +144,21 @@ class StackRefactorSummary {
   ///@}
  private:
   Aws::String m_stackRefactorId;
-  bool m_stackRefactorIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StackRefactorExecutionStatus m_executionStatus{StackRefactorExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   Aws::String m_executionStatusReason;
-  bool m_executionStatusReasonHasBeenSet = false;
 
   StackRefactorStatus m_status{StackRefactorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_stackRefactorIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_executionStatusReasonHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

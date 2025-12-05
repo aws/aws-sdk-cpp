@@ -107,15 +107,15 @@ class AdditionalAuthenticationProvider {
   ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   OpenIDConnectConfig m_openIDConnectConfig;
-  bool m_openIDConnectConfigHasBeenSet = false;
 
   CognitoUserPoolConfig m_userPoolConfig;
-  bool m_userPoolConfigHasBeenSet = false;
 
   LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_openIDConnectConfigHasBeenSet = false;
+  bool m_userPoolConfigHasBeenSet = false;
   bool m_lambdaAuthorizerConfigHasBeenSet = false;
 };
 

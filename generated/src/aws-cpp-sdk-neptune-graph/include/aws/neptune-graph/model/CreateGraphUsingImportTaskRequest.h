@@ -354,51 +354,51 @@ class CreateGraphUsingImportTaskRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphName;
-  bool m_graphNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_publicConnectivity{false};
-  bool m_publicConnectivityHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   VectorSearchConfiguration m_vectorSearchConfiguration;
-  bool m_vectorSearchConfigurationHasBeenSet = false;
 
   int m_replicaCount{0};
-  bool m_replicaCountHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   ImportOptions m_importOptions;
-  bool m_importOptionsHasBeenSet = false;
 
   int m_maxProvisionedMemory{0};
-  bool m_maxProvisionedMemoryHasBeenSet = false;
 
   int m_minProvisionedMemory{0};
-  bool m_minProvisionedMemoryHasBeenSet = false;
 
   bool m_failOnError{false};
-  bool m_failOnErrorHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   ParquetType m_parquetType{ParquetType::NOT_SET};
-  bool m_parquetTypeHasBeenSet = false;
 
   BlankNodeHandling m_blankNodeHandling{BlankNodeHandling::NOT_SET};
-  bool m_blankNodeHandlingHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_graphNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_publicConnectivityHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_vectorSearchConfigurationHasBeenSet = false;
+  bool m_replicaCountHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_importOptionsHasBeenSet = false;
+  bool m_maxProvisionedMemoryHasBeenSet = false;
+  bool m_minProvisionedMemoryHasBeenSet = false;
+  bool m_failOnErrorHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_parquetTypeHasBeenSet = false;
+  bool m_blankNodeHandlingHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class UpdateGatewayRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_gatewayName;
+  bool m_gatewayIdHasBeenSet = false;
   bool m_gatewayNameHasBeenSet = false;
 };
 

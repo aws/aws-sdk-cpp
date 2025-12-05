@@ -283,30 +283,30 @@ class EksContainer {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_imagePullPolicy;
-  bool m_imagePullPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_args;
-  bool m_argsHasBeenSet = false;
 
   Aws::Vector<EksContainerEnvironmentVariable> m_env;
-  bool m_envHasBeenSet = false;
 
   EksContainerResourceRequirements m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Vector<EksContainerVolumeMount> m_volumeMounts;
-  bool m_volumeMountsHasBeenSet = false;
 
   EksContainerSecurityContext m_securityContext;
+  bool m_nameHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_imagePullPolicyHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_argsHasBeenSet = false;
+  bool m_envHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_volumeMountsHasBeenSet = false;
   bool m_securityContextHasBeenSet = false;
 };
 

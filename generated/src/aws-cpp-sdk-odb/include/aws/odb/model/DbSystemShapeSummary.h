@@ -445,75 +445,75 @@ class DbSystemShapeSummary {
   ///@}
  private:
   int m_availableCoreCount{0};
-  bool m_availableCoreCountHasBeenSet = false;
 
   int m_availableCoreCountPerNode{0};
-  bool m_availableCoreCountPerNodeHasBeenSet = false;
 
   int m_availableDataStorageInTBs{0};
-  bool m_availableDataStorageInTBsHasBeenSet = false;
 
   int m_availableDataStoragePerServerInTBs{0};
-  bool m_availableDataStoragePerServerInTBsHasBeenSet = false;
 
   int m_availableDbNodePerNodeInGBs{0};
-  bool m_availableDbNodePerNodeInGBsHasBeenSet = false;
 
   int m_availableDbNodeStorageInGBs{0};
-  bool m_availableDbNodeStorageInGBsHasBeenSet = false;
 
   int m_availableMemoryInGBs{0};
-  bool m_availableMemoryInGBsHasBeenSet = false;
 
   int m_availableMemoryPerNodeInGBs{0};
-  bool m_availableMemoryPerNodeInGBsHasBeenSet = false;
 
   int m_coreCountIncrement{0};
-  bool m_coreCountIncrementHasBeenSet = false;
 
   int m_maxStorageCount{0};
-  bool m_maxStorageCountHasBeenSet = false;
 
   int m_maximumNodeCount{0};
-  bool m_maximumNodeCountHasBeenSet = false;
 
   int m_minCoreCountPerNode{0};
-  bool m_minCoreCountPerNodeHasBeenSet = false;
 
   int m_minDataStorageInTBs{0};
-  bool m_minDataStorageInTBsHasBeenSet = false;
 
   int m_minDbNodeStoragePerNodeInGBs{0};
-  bool m_minDbNodeStoragePerNodeInGBsHasBeenSet = false;
 
   int m_minMemoryPerNodeInGBs{0};
-  bool m_minMemoryPerNodeInGBsHasBeenSet = false;
 
   int m_minStorageCount{0};
-  bool m_minStorageCountHasBeenSet = false;
 
   int m_minimumCoreCount{0};
-  bool m_minimumCoreCountHasBeenSet = false;
 
   int m_minimumNodeCount{0};
-  bool m_minimumNodeCountHasBeenSet = false;
 
   int m_runtimeMinimumCoreCount{0};
-  bool m_runtimeMinimumCoreCountHasBeenSet = false;
 
   Aws::String m_shapeFamily;
-  bool m_shapeFamilyHasBeenSet = false;
 
   ShapeType m_shapeType{ShapeType::NOT_SET};
-  bool m_shapeTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
-  bool m_computeModelHasBeenSet = false;
 
   bool m_areServerTypesSupported{false};
+  bool m_availableCoreCountHasBeenSet = false;
+  bool m_availableCoreCountPerNodeHasBeenSet = false;
+  bool m_availableDataStorageInTBsHasBeenSet = false;
+  bool m_availableDataStoragePerServerInTBsHasBeenSet = false;
+  bool m_availableDbNodePerNodeInGBsHasBeenSet = false;
+  bool m_availableDbNodeStorageInGBsHasBeenSet = false;
+  bool m_availableMemoryInGBsHasBeenSet = false;
+  bool m_availableMemoryPerNodeInGBsHasBeenSet = false;
+  bool m_coreCountIncrementHasBeenSet = false;
+  bool m_maxStorageCountHasBeenSet = false;
+  bool m_maximumNodeCountHasBeenSet = false;
+  bool m_minCoreCountPerNodeHasBeenSet = false;
+  bool m_minDataStorageInTBsHasBeenSet = false;
+  bool m_minDbNodeStoragePerNodeInGBsHasBeenSet = false;
+  bool m_minMemoryPerNodeInGBsHasBeenSet = false;
+  bool m_minStorageCountHasBeenSet = false;
+  bool m_minimumCoreCountHasBeenSet = false;
+  bool m_minimumNodeCountHasBeenSet = false;
+  bool m_runtimeMinimumCoreCountHasBeenSet = false;
+  bool m_shapeFamilyHasBeenSet = false;
+  bool m_shapeTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_computeModelHasBeenSet = false;
   bool m_areServerTypesSupportedHasBeenSet = false;
 };
 

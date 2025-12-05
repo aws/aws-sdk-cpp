@@ -349,45 +349,45 @@ class StartEmailContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   EmailAddressInfo m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Aws::String m_destinationEmailAddress;
-  bool m_destinationEmailAddressHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Reference> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InboundEmailContent m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   InboundAdditionalRecipients m_additionalRecipients;
-  bool m_additionalRecipientsHasBeenSet = false;
 
   Aws::Vector<EmailAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_destinationEmailAddressHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_emailMessageHasBeenSet = false;
+  bool m_additionalRecipientsHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

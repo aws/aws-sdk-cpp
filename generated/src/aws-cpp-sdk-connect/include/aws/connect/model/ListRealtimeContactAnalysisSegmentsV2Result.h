@@ -121,18 +121,18 @@ class ListRealtimeContactAnalysisSegmentsV2Result {
   ///@}
  private:
   RealTimeContactAnalysisSupportedChannel m_channel{RealTimeContactAnalysisSupportedChannel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   RealTimeContactAnalysisStatus m_status{RealTimeContactAnalysisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<RealtimeContactAnalysisSegment> m_segments;
-  bool m_segmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_segmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

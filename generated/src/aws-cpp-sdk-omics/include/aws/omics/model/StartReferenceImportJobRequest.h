@@ -110,15 +110,15 @@ class StartReferenceImportJobRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_referenceStoreId;
-  bool m_referenceStoreIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<StartReferenceImportJobSourceItem> m_sources;
+  bool m_referenceStoreIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

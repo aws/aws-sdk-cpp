@@ -132,18 +132,18 @@ class RealtimeLogConfigs {
   ///@}
  private:
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::Vector<RealtimeLogConfig> m_items;
-  bool m_itemsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_nextMarker;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
 };
 

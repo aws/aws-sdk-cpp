@@ -121,18 +121,18 @@ class ExportEarthObservationJobRequest : public SageMakerGeospatialRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   bool m_exportSourceImages{false};
-  bool m_exportSourceImagesHasBeenSet = false;
 
   OutputConfigInput m_outputConfig;
+  bool m_arnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_exportSourceImagesHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
 };
 

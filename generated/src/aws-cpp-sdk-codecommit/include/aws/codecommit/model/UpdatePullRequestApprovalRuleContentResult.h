@@ -61,9 +61,9 @@ class UpdatePullRequestApprovalRuleContentResult {
   ///@}
  private:
   ApprovalRule m_approvalRule;
-  bool m_approvalRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_approvalRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

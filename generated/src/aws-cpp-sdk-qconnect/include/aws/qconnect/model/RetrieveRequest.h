@@ -85,12 +85,12 @@ class RetrieveRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   RetrievalConfiguration m_retrievalConfiguration;
-  bool m_retrievalConfigurationHasBeenSet = false;
 
   Aws::String m_retrievalQuery;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_retrievalConfigurationHasBeenSet = false;
   bool m_retrievalQueryHasBeenSet = false;
 };
 

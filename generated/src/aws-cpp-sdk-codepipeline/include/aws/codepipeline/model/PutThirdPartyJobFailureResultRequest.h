@@ -92,12 +92,12 @@ class PutThirdPartyJobFailureResultRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   FailureDetails m_failureDetails;
+  bool m_jobIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_failureDetailsHasBeenSet = false;
 };
 

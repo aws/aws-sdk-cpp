@@ -73,9 +73,9 @@ class AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
   ///@}
  private:
   Aws::Vector<int> m_items;
-  bool m_itemsHasBeenSet = false;
 
   int m_quantity{0};
+  bool m_itemsHasBeenSet = false;
   bool m_quantityHasBeenSet = false;
 };
 

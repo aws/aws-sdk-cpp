@@ -144,24 +144,24 @@ class CreateDynamicThingGroupResult {
   ///@}
  private:
   Aws::String m_thingGroupName;
-  bool m_thingGroupNameHasBeenSet = false;
 
   Aws::String m_thingGroupArn;
-  bool m_thingGroupArnHasBeenSet = false;
 
   Aws::String m_thingGroupId;
-  bool m_thingGroupIdHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_queryVersion;
-  bool m_queryVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thingGroupNameHasBeenSet = false;
+  bool m_thingGroupArnHasBeenSet = false;
+  bool m_thingGroupIdHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_queryVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

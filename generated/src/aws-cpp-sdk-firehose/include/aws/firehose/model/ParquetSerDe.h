@@ -143,21 +143,21 @@ class ParquetSerDe {
   ///@}
  private:
   int m_blockSizeBytes{0};
-  bool m_blockSizeBytesHasBeenSet = false;
 
   int m_pageSizeBytes{0};
-  bool m_pageSizeBytesHasBeenSet = false;
 
   ParquetCompression m_compression{ParquetCompression::NOT_SET};
-  bool m_compressionHasBeenSet = false;
 
   bool m_enableDictionaryCompression{false};
-  bool m_enableDictionaryCompressionHasBeenSet = false;
 
   int m_maxPaddingBytes{0};
-  bool m_maxPaddingBytesHasBeenSet = false;
 
   ParquetWriterVersion m_writerVersion{ParquetWriterVersion::NOT_SET};
+  bool m_blockSizeBytesHasBeenSet = false;
+  bool m_pageSizeBytesHasBeenSet = false;
+  bool m_compressionHasBeenSet = false;
+  bool m_enableDictionaryCompressionHasBeenSet = false;
+  bool m_maxPaddingBytesHasBeenSet = false;
   bool m_writerVersionHasBeenSet = false;
 };
 

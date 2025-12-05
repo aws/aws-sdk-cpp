@@ -60,9 +60,9 @@ class DescribeWatchlistResult {
   ///@}
  private:
   Watchlist m_watchlist;
-  bool m_watchlistHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_watchlistHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

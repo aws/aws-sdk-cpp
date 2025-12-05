@@ -66,9 +66,9 @@ class SearchAllRelatedItemsSort {
   ///@}
  private:
   SearchAllRelatedItemsSortProperty m_sortProperty{SearchAllRelatedItemsSortProperty::NOT_SET};
-  bool m_sortPropertyHasBeenSet = false;
 
   Order m_sortOrder{Order::NOT_SET};
+  bool m_sortPropertyHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

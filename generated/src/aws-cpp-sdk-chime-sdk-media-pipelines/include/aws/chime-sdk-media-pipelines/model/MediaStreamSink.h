@@ -102,15 +102,15 @@ class MediaStreamSink {
   ///@}
  private:
   Aws::String m_sinkArn;
-  bool m_sinkArnHasBeenSet = false;
 
   MediaStreamPipelineSinkType m_sinkType{MediaStreamPipelineSinkType::NOT_SET};
-  bool m_sinkTypeHasBeenSet = false;
 
   int m_reservedStreamCapacity{0};
-  bool m_reservedStreamCapacityHasBeenSet = false;
 
   MediaStreamType m_mediaStreamType{MediaStreamType::NOT_SET};
+  bool m_sinkArnHasBeenSet = false;
+  bool m_sinkTypeHasBeenSet = false;
+  bool m_reservedStreamCapacityHasBeenSet = false;
   bool m_mediaStreamTypeHasBeenSet = false;
 };
 

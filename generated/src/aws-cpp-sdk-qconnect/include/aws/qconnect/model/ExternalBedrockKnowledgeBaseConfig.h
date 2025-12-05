@@ -70,9 +70,9 @@ class ExternalBedrockKnowledgeBaseConfig {
   ///@}
  private:
   Aws::String m_bedrockKnowledgeBaseArn;
-  bool m_bedrockKnowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_accessRoleArn;
+  bool m_bedrockKnowledgeBaseArnHasBeenSet = false;
   bool m_accessRoleArnHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class MemberGroup {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
+  bool m_groupIdHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
 };
 

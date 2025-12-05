@@ -93,12 +93,12 @@ class DescribeAssessmentTemplatesResult {
   ///@}
  private:
   Aws::Vector<AssessmentTemplate> m_assessmentTemplates;
-  bool m_assessmentTemplatesHasBeenSet = false;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentTemplatesHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

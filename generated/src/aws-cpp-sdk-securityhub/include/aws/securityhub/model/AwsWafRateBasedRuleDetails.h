@@ -154,21 +154,21 @@ class AwsWafRateBasedRuleDetails {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_rateKey;
-  bool m_rateKeyHasBeenSet = false;
 
   long long m_rateLimit{0};
-  bool m_rateLimitHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::Vector<AwsWafRateBasedRuleMatchPredicate> m_matchPredicates;
+  bool m_metricNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_rateKeyHasBeenSet = false;
+  bool m_rateLimitHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
   bool m_matchPredicatesHasBeenSet = false;
 };
 

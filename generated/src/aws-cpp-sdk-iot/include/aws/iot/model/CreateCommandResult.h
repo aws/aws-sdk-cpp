@@ -78,12 +78,12 @@ class CreateCommandResult {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_commandArn;
-  bool m_commandArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandIdHasBeenSet = false;
+  bool m_commandArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

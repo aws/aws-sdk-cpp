@@ -182,27 +182,27 @@ class ImportSummary {
   ///@}
  private:
   Aws::String m_importArn;
-  bool m_importArnHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   S3BucketSource m_s3BucketSource;
-  bool m_s3BucketSourceHasBeenSet = false;
 
   Aws::String m_cloudWatchLogGroupArn;
-  bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
   InputFormat m_inputFormat{InputFormat::NOT_SET};
-  bool m_inputFormatHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_importArnHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
+  bool m_tableArnHasBeenSet = false;
+  bool m_s3BucketSourceHasBeenSet = false;
+  bool m_cloudWatchLogGroupArnHasBeenSet = false;
+  bool m_inputFormatHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

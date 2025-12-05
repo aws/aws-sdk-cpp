@@ -137,21 +137,21 @@ class EdgeDeploymentStatus {
   ///@}
  private:
   StageStatus m_stageStatus{StageStatus::NOT_SET};
-  bool m_stageStatusHasBeenSet = false;
 
   int m_edgeDeploymentSuccessInStage{0};
-  bool m_edgeDeploymentSuccessInStageHasBeenSet = false;
 
   int m_edgeDeploymentPendingInStage{0};
-  bool m_edgeDeploymentPendingInStageHasBeenSet = false;
 
   int m_edgeDeploymentFailedInStage{0};
-  bool m_edgeDeploymentFailedInStageHasBeenSet = false;
 
   Aws::String m_edgeDeploymentStatusMessage;
-  bool m_edgeDeploymentStatusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_edgeDeploymentStageStartTime{};
+  bool m_stageStatusHasBeenSet = false;
+  bool m_edgeDeploymentSuccessInStageHasBeenSet = false;
+  bool m_edgeDeploymentPendingInStageHasBeenSet = false;
+  bool m_edgeDeploymentFailedInStageHasBeenSet = false;
+  bool m_edgeDeploymentStatusMessageHasBeenSet = false;
   bool m_edgeDeploymentStageStartTimeHasBeenSet = false;
 };
 

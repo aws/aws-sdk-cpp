@@ -86,12 +86,12 @@ class GetAssociatedIpv6PoolCidrsResponse {
   ///@}
  private:
   Aws::Vector<Ipv6CidrAssociation> m_ipv6CidrAssociations;
-  bool m_ipv6CidrAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipv6CidrAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

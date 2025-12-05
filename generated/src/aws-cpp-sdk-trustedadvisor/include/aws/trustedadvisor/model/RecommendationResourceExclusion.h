@@ -68,9 +68,9 @@ class RecommendationResourceExclusion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_isExcluded{false};
+  bool m_arnHasBeenSet = false;
   bool m_isExcludedHasBeenSet = false;
 };
 

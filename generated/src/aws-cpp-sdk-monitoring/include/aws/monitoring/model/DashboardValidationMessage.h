@@ -70,9 +70,9 @@ class DashboardValidationMessage {
   ///@}
  private:
   Aws::String m_dataPath;
-  bool m_dataPathHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_dataPathHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

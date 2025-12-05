@@ -62,9 +62,9 @@ class CreateMacSystemIntegrityProtectionModificationTaskResponse {
   ///@}
  private:
   MacModificationTask m_macModificationTask;
-  bool m_macModificationTaskHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_macModificationTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

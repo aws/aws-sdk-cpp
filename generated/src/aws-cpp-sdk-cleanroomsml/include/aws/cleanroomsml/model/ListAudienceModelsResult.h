@@ -84,12 +84,12 @@ class ListAudienceModelsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AudienceModelSummary> m_audienceModels;
-  bool m_audienceModelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_audienceModelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ShipmentInformation {
   ///@}
  private:
   Aws::String m_shipmentTrackingNumber;
-  bool m_shipmentTrackingNumberHasBeenSet = false;
 
   ShipmentCarrier m_shipmentCarrier{ShipmentCarrier::NOT_SET};
+  bool m_shipmentTrackingNumberHasBeenSet = false;
   bool m_shipmentCarrierHasBeenSet = false;
 };
 

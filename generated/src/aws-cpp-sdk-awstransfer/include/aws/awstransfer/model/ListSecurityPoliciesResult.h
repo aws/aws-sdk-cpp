@@ -86,12 +86,12 @@ class ListSecurityPoliciesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityPolicyNames;
-  bool m_securityPolicyNamesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_securityPolicyNamesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class ListEndpointsByPlatformApplicationRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_platformApplicationArn;
-  bool m_platformApplicationArnHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_platformApplicationArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetBucketTaggingResult {
   ///@}
  private:
   Aws::Vector<Tag> m_tagSet;
-  bool m_tagSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

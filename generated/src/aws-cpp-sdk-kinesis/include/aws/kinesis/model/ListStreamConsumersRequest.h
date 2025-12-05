@@ -136,15 +136,15 @@ class ListStreamConsumersRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_streamCreationTimestamp{};
+  bool m_streamARNHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_streamCreationTimestampHasBeenSet = false;
 };
 

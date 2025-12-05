@@ -116,15 +116,15 @@ class RouterInputThumbnailDetails {
   ///@}
  private:
   Aws::Vector<RouterInputMessage> m_thumbnailMessages;
-  bool m_thumbnailMessagesHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_thumbnail{};
-  bool m_thumbnailHasBeenSet = false;
 
   Aws::String m_timecode;
-  bool m_timecodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_thumbnailMessagesHasBeenSet = false;
+  bool m_thumbnailHasBeenSet = false;
+  bool m_timecodeHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

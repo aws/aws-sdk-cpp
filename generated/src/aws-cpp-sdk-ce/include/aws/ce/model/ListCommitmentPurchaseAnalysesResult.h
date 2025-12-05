@@ -85,12 +85,12 @@ class ListCommitmentPurchaseAnalysesResult {
   ///@}
  private:
   Aws::Vector<AnalysisSummary> m_analysisSummaryList;
-  bool m_analysisSummaryListHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisSummaryListHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class WorkflowExecutionTimedOutEventAttributes {
   ///@}
  private:
   WorkflowExecutionTimeoutType m_timeoutType{WorkflowExecutionTimeoutType::NOT_SET};
-  bool m_timeoutTypeHasBeenSet = false;
 
   ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
+  bool m_timeoutTypeHasBeenSet = false;
   bool m_childPolicyHasBeenSet = false;
 };
 

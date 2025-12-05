@@ -142,21 +142,21 @@ class QueryInfo {
   ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
-  bool m_queryLanguageHasBeenSet = false;
 
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   QueryStatus m_status{QueryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   long long m_createTime{0};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_logGroupName;
+  bool m_queryLanguageHasBeenSet = false;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_logGroupNameHasBeenSet = false;
 };
 

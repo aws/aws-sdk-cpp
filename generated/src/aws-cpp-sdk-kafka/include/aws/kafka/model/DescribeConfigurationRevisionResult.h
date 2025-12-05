@@ -143,21 +143,21 @@ class DescribeConfigurationRevisionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_serverProperties{};
-  bool m_serverPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_serverPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

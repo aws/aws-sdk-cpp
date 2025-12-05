@@ -88,12 +88,12 @@ class DescribeEngineVersionsResult {
   ///@}
  private:
   Aws::Vector<EngineVersion> m_engineVersions;
-  bool m_engineVersionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_engineVersionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

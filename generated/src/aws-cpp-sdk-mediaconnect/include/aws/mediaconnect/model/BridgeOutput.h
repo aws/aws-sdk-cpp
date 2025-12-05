@@ -69,9 +69,9 @@ class BridgeOutput {
   ///@}
  private:
   BridgeFlowOutput m_flowOutput;
-  bool m_flowOutputHasBeenSet = false;
 
   BridgeNetworkOutput m_networkOutput;
+  bool m_flowOutputHasBeenSet = false;
   bool m_networkOutputHasBeenSet = false;
 };
 

@@ -180,27 +180,27 @@ class Image {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   ImageStatus m_imageStatus{ImageStatus::NOT_SET};
-  bool m_imageStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
+  bool m_imageNameHasBeenSet = false;
+  bool m_imageStatusHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

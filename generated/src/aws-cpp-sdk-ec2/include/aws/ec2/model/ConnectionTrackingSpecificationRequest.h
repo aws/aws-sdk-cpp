@@ -90,12 +90,12 @@ class ConnectionTrackingSpecificationRequest {
   ///@}
  private:
   int m_tcpEstablishedTimeout{0};
-  bool m_tcpEstablishedTimeoutHasBeenSet = false;
 
   int m_udpStreamTimeout{0};
-  bool m_udpStreamTimeoutHasBeenSet = false;
 
   int m_udpTimeout{0};
+  bool m_tcpEstablishedTimeoutHasBeenSet = false;
+  bool m_udpStreamTimeoutHasBeenSet = false;
   bool m_udpTimeoutHasBeenSet = false;
 };
 

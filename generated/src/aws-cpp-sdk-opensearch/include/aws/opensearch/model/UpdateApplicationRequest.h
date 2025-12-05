@@ -98,12 +98,12 @@ class UpdateApplicationRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<DataSource> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::Vector<AppConfig> m_appConfigs;
+  bool m_idHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
   bool m_appConfigsHasBeenSet = false;
 };
 

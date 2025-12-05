@@ -83,12 +83,12 @@ class BudgetParameter {
   ///@}
  private:
   AccessBudgetType m_type{AccessBudgetType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_budget{0};
-  bool m_budgetHasBeenSet = false;
 
   AutoRefreshMode m_autoRefresh{AutoRefreshMode::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_budgetHasBeenSet = false;
   bool m_autoRefreshHasBeenSet = false;
 };
 

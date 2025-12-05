@@ -97,12 +97,12 @@ class ComponentCandidate {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentVersion;
-  bool m_componentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_versionRequirements;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentVersionHasBeenSet = false;
   bool m_versionRequirementsHasBeenSet = false;
 };
 

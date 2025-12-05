@@ -66,9 +66,9 @@ class CalculateRouteCarModeOptions {
   ///@}
  private:
   bool m_avoidFerries{false};
-  bool m_avoidFerriesHasBeenSet = false;
 
   bool m_avoidTolls{false};
+  bool m_avoidFerriesHasBeenSet = false;
   bool m_avoidTollsHasBeenSet = false;
 };
 

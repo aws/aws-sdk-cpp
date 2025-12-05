@@ -149,21 +149,21 @@ class AnalysisReportSummary {
   ///@}
  private:
   Aws::String m_analysisReportId;
-  bool m_analysisReportIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   AnalysisStatus m_status{AnalysisStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_analysisReportIdHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

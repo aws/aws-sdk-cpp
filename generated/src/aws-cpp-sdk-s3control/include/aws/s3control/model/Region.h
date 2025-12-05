@@ -70,9 +70,9 @@ class Region {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_bucketAccountId;
+  bool m_bucketHasBeenSet = false;
   bool m_bucketAccountIdHasBeenSet = false;
 };
 

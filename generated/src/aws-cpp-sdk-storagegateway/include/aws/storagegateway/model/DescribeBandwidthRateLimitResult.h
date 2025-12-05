@@ -95,15 +95,15 @@ class DescribeBandwidthRateLimitResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   long long m_averageUploadRateLimitInBitsPerSec{0};
-  bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
 
   long long m_averageDownloadRateLimitInBitsPerSec{0};
-  bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
+  bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class SecurityControlCustomParameter {
   ///@}
  private:
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterConfiguration> m_parameters;
+  bool m_securityControlIdHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

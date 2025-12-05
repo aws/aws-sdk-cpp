@@ -127,18 +127,18 @@ class FeaturedResultsSetSummary {
   ///@}
  private:
   Aws::String m_featuredResultsSetId;
-  bool m_featuredResultsSetIdHasBeenSet = false;
 
   Aws::String m_featuredResultsSetName;
-  bool m_featuredResultsSetNameHasBeenSet = false;
 
   FeaturedResultsSetStatus m_status{FeaturedResultsSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   long long m_lastUpdatedTimestamp{0};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   long long m_creationTimestamp{0};
+  bool m_featuredResultsSetIdHasBeenSet = false;
+  bool m_featuredResultsSetNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_creationTimestampHasBeenSet = false;
 };
 

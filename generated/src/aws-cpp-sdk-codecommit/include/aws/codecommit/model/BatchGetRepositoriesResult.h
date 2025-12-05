@@ -122,15 +122,15 @@ class BatchGetRepositoriesResult {
   ///@}
  private:
   Aws::Vector<RepositoryMetadata> m_repositories;
-  bool m_repositoriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_repositoriesNotFound;
-  bool m_repositoriesNotFoundHasBeenSet = false;
 
   Aws::Vector<BatchGetRepositoriesError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoriesHasBeenSet = false;
+  bool m_repositoriesNotFoundHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

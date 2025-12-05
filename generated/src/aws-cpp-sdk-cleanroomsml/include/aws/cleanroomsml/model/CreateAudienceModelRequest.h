@@ -183,24 +183,24 @@ class CreateAudienceModelRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_trainingDataStartTime{};
-  bool m_trainingDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataEndTime{};
-  bool m_trainingDataEndTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_trainingDatasetArn;
-  bool m_trainingDatasetArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_trainingDataStartTimeHasBeenSet = false;
+  bool m_trainingDataEndTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_trainingDatasetArnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

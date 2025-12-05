@@ -73,9 +73,9 @@ class CreatedAt {
   ///@}
  private:
   Aws::Utils::DateTime m_before{};
-  bool m_beforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_after{};
+  bool m_beforeHasBeenSet = false;
   bool m_afterHasBeenSet = false;
 };
 

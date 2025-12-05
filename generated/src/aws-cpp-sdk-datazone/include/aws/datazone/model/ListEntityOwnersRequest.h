@@ -130,18 +130,18 @@ class ListEntityOwnersRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   DataZoneEntityType m_entityType{DataZoneEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

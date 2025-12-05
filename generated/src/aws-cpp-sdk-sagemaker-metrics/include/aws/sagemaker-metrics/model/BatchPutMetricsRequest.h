@@ -74,9 +74,9 @@ class BatchPutMetricsRequest : public SageMakerMetricsRequest {
   ///@}
  private:
   Aws::String m_trialComponentName;
-  bool m_trialComponentNameHasBeenSet = false;
 
   Aws::Vector<RawMetricData> m_metricData;
+  bool m_trialComponentNameHasBeenSet = false;
   bool m_metricDataHasBeenSet = false;
 };
 

@@ -209,33 +209,33 @@ class CisScan {
   ///@}
  private:
   Aws::String m_scanArn;
-  bool m_scanArnHasBeenSet = false;
 
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   CisScanStatus m_status{CisScanStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_scanDate{};
-  bool m_scanDateHasBeenSet = false;
 
   int m_failedChecks{0};
-  bool m_failedChecksHasBeenSet = false;
 
   int m_totalChecks{0};
-  bool m_totalChecksHasBeenSet = false;
 
   CisTargets m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_scheduledBy;
-  bool m_scheduledByHasBeenSet = false;
 
   CisSecurityLevel m_securityLevel{CisSecurityLevel::NOT_SET};
+  bool m_scanArnHasBeenSet = false;
+  bool m_scanConfigurationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_scanNameHasBeenSet = false;
+  bool m_scanDateHasBeenSet = false;
+  bool m_failedChecksHasBeenSet = false;
+  bool m_totalChecksHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_scheduledByHasBeenSet = false;
   bool m_securityLevelHasBeenSet = false;
 };
 

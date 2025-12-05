@@ -106,15 +106,15 @@ class ApiGatewayToolOverride {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   RestApiMethod m_method{RestApiMethod::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_methodHasBeenSet = false;
 };
 

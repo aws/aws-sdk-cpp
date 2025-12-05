@@ -193,30 +193,30 @@ class UpdateUserRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::String m_surname;
-  bool m_surnameHasBeenSet = false;
 
   UserType m_type{UserType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   StorageRuleType m_storageRule;
-  bool m_storageRuleHasBeenSet = false;
 
   Aws::String m_timeZoneId;
-  bool m_timeZoneIdHasBeenSet = false;
 
   LocaleType m_locale{LocaleType::NOT_SET};
-  bool m_localeHasBeenSet = false;
 
   BooleanEnumType m_grantPoweruserPrivileges{BooleanEnumType::NOT_SET};
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_surnameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_storageRuleHasBeenSet = false;
+  bool m_timeZoneIdHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
   bool m_grantPoweruserPrivilegesHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListTransformersResult {
   ///@}
  private:
   Aws::Vector<TransformerSummary> m_transformers;
-  bool m_transformersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

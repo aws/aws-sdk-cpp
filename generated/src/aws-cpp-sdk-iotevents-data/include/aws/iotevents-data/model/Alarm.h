@@ -160,24 +160,24 @@ class Alarm {
   ///@}
  private:
   Aws::String m_alarmModelName;
-  bool m_alarmModelNameHasBeenSet = false;
 
   Aws::String m_alarmModelVersion;
-  bool m_alarmModelVersionHasBeenSet = false;
 
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   AlarmState m_alarmState;
-  bool m_alarmStateHasBeenSet = false;
 
   int m_severity{0};
-  bool m_severityHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
+  bool m_alarmModelNameHasBeenSet = false;
+  bool m_alarmModelVersionHasBeenSet = false;
+  bool m_keyValueHasBeenSet = false;
+  bool m_alarmStateHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
 };
 

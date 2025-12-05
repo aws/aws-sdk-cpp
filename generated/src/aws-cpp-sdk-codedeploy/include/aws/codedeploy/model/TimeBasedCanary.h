@@ -66,9 +66,9 @@ class TimeBasedCanary {
   ///@}
  private:
   int m_canaryPercentage{0};
-  bool m_canaryPercentageHasBeenSet = false;
 
   int m_canaryInterval{0};
+  bool m_canaryPercentageHasBeenSet = false;
   bool m_canaryIntervalHasBeenSet = false;
 };
 

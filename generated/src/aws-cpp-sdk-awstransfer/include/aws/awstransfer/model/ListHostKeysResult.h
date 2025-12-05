@@ -102,15 +102,15 @@ class ListHostKeysResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::Vector<ListedHostKey> m_hostKeys;
-  bool m_hostKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_hostKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

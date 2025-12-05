@@ -67,9 +67,9 @@ class ExportDataSource {
   ///@}
  private:
   MetricsDataSource m_metricsDataSource;
-  bool m_metricsDataSourceHasBeenSet = false;
 
   MessageInsightsDataSource m_messageInsightsDataSource;
+  bool m_metricsDataSourceHasBeenSet = false;
   bool m_messageInsightsDataSourceHasBeenSet = false;
 };
 

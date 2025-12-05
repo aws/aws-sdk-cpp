@@ -167,24 +167,24 @@ class Node {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   double m_duration{0.0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

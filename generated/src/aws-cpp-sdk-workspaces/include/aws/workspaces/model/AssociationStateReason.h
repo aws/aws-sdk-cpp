@@ -68,9 +68,9 @@ class AssociationStateReason {
   ///@}
  private:
   AssociationErrorCode m_errorCode{AssociationErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

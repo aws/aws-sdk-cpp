@@ -66,9 +66,9 @@ class WarmThroughputObject {
   ///@}
  private:
   int m_targetMiBps{0};
-  bool m_targetMiBpsHasBeenSet = false;
 
   int m_currentMiBps{0};
+  bool m_targetMiBpsHasBeenSet = false;
   bool m_currentMiBpsHasBeenSet = false;
 };
 

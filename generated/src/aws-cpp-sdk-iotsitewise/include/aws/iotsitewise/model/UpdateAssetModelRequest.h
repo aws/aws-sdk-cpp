@@ -294,36 +294,36 @@ class UpdateAssetModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_assetModelExternalId;
-  bool m_assetModelExternalIdHasBeenSet = false;
 
   Aws::String m_assetModelName;
-  bool m_assetModelNameHasBeenSet = false;
 
   Aws::String m_assetModelDescription;
-  bool m_assetModelDescriptionHasBeenSet = false;
 
   Aws::Vector<AssetModelProperty> m_assetModelProperties;
-  bool m_assetModelPropertiesHasBeenSet = false;
 
   Aws::Vector<AssetModelHierarchy> m_assetModelHierarchies;
-  bool m_assetModelHierarchiesHasBeenSet = false;
 
   Aws::Vector<AssetModelCompositeModel> m_assetModelCompositeModels;
-  bool m_assetModelCompositeModelsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   Aws::String m_ifNoneMatch;
-  bool m_ifNoneMatchHasBeenSet = false;
 
   AssetModelVersionType m_matchForVersionType{AssetModelVersionType::NOT_SET};
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_assetModelExternalIdHasBeenSet = false;
+  bool m_assetModelNameHasBeenSet = false;
+  bool m_assetModelDescriptionHasBeenSet = false;
+  bool m_assetModelPropertiesHasBeenSet = false;
+  bool m_assetModelHierarchiesHasBeenSet = false;
+  bool m_assetModelCompositeModelsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_ifNoneMatchHasBeenSet = false;
   bool m_matchForVersionTypeHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class GetInsightSummariesResult {
   ///@}
  private:
   Aws::Vector<InsightSummary> m_insightSummaries;
-  bool m_insightSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

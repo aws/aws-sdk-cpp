@@ -121,18 +121,18 @@ class DateArrayOptions {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_sourceFields;
-  bool m_sourceFieldsHasBeenSet = false;
 
   bool m_facetEnabled{false};
-  bool m_facetEnabledHasBeenSet = false;
 
   bool m_searchEnabled{false};
-  bool m_searchEnabledHasBeenSet = false;
 
   bool m_returnEnabled{false};
+  bool m_defaultValueHasBeenSet = false;
+  bool m_sourceFieldsHasBeenSet = false;
+  bool m_facetEnabledHasBeenSet = false;
+  bool m_searchEnabledHasBeenSet = false;
   bool m_returnEnabledHasBeenSet = false;
 };
 

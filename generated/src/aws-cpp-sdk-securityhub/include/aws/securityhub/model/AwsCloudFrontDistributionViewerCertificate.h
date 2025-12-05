@@ -167,24 +167,24 @@ class AwsCloudFrontDistributionViewerCertificate {
   ///@}
  private:
   Aws::String m_acmCertificateArn;
-  bool m_acmCertificateArnHasBeenSet = false;
 
   Aws::String m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   Aws::String m_certificateSource;
-  bool m_certificateSourceHasBeenSet = false;
 
   bool m_cloudFrontDefaultCertificate{false};
-  bool m_cloudFrontDefaultCertificateHasBeenSet = false;
 
   Aws::String m_iamCertificateId;
-  bool m_iamCertificateIdHasBeenSet = false;
 
   Aws::String m_minimumProtocolVersion;
-  bool m_minimumProtocolVersionHasBeenSet = false;
 
   Aws::String m_sslSupportMethod;
+  bool m_acmCertificateArnHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
+  bool m_certificateSourceHasBeenSet = false;
+  bool m_cloudFrontDefaultCertificateHasBeenSet = false;
+  bool m_iamCertificateIdHasBeenSet = false;
+  bool m_minimumProtocolVersionHasBeenSet = false;
   bool m_sslSupportMethodHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class GetPackageVersionHistoryResult {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   Aws::Vector<PackageVersionHistory> m_packageVersionHistoryList;
-  bool m_packageVersionHistoryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageIDHasBeenSet = false;
+  bool m_packageVersionHistoryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

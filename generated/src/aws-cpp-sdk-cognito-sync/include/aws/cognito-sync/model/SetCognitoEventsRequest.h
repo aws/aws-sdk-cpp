@@ -75,9 +75,9 @@ class SetCognitoEventsRequest : public CognitoSyncRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_events;
+  bool m_identityPoolIdHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

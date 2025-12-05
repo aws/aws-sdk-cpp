@@ -164,21 +164,21 @@ class TopicIR {
   ///@}
  private:
   Aws::Vector<TopicIRMetric> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Vector<TopicIRGroupBy> m_groupByList;
-  bool m_groupByListHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<TopicIRFilterOption>> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   TopicSortClause m_sort;
-  bool m_sortHasBeenSet = false;
 
   TopicIRContributionAnalysis m_contributionAnalysis;
-  bool m_contributionAnalysisHasBeenSet = false;
 
   VisualOptions m_visual;
+  bool m_metricsHasBeenSet = false;
+  bool m_groupByListHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_contributionAnalysisHasBeenSet = false;
   bool m_visualHasBeenSet = false;
 };
 

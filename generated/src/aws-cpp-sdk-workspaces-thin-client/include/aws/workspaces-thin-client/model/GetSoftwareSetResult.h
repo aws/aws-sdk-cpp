@@ -60,9 +60,9 @@ class GetSoftwareSetResult {
   ///@}
  private:
   SoftwareSet m_softwareSet;
-  bool m_softwareSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_softwareSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

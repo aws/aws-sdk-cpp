@@ -74,9 +74,9 @@ class ResponseHeadersPolicyContentSecurityPolicy {
   ///@}
  private:
   bool m_override{false};
-  bool m_overrideHasBeenSet = false;
 
   Aws::String m_contentSecurityPolicy;
+  bool m_overrideHasBeenSet = false;
   bool m_contentSecurityPolicyHasBeenSet = false;
 };
 

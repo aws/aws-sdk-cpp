@@ -115,15 +115,15 @@ class UpdateThingGroupsForThingRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_thingGroupsToAdd;
-  bool m_thingGroupsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_thingGroupsToRemove;
-  bool m_thingGroupsToRemoveHasBeenSet = false;
 
   bool m_overrideDynamicGroups{false};
+  bool m_thingNameHasBeenSet = false;
+  bool m_thingGroupsToAddHasBeenSet = false;
+  bool m_thingGroupsToRemoveHasBeenSet = false;
   bool m_overrideDynamicGroupsHasBeenSet = false;
 };
 

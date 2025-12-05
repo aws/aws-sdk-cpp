@@ -65,9 +65,9 @@ class RDSDatabaseCredentials {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
+  bool m_usernameHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
 };
 

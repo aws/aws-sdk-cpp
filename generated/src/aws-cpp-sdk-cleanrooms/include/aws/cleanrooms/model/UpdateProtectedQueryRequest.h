@@ -83,12 +83,12 @@ class UpdateProtectedQueryRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_protectedQueryIdentifier;
-  bool m_protectedQueryIdentifierHasBeenSet = false;
 
   TargetProtectedQueryStatus m_targetStatus{TargetProtectedQueryStatus::NOT_SET};
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_protectedQueryIdentifierHasBeenSet = false;
   bool m_targetStatusHasBeenSet = false;
 };
 

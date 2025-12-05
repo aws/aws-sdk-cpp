@@ -87,12 +87,12 @@ class ListCodeSecurityIntegrationsResult {
   ///@}
  private:
   Aws::Vector<CodeSecurityIntegrationSummary> m_integrations;
-  bool m_integrationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class Monitor {
   ///@}
  private:
   Aws::String m_alarmArn;
-  bool m_alarmArnHasBeenSet = false;
 
   Aws::String m_alarmRoleArn;
+  bool m_alarmArnHasBeenSet = false;
   bool m_alarmRoleArnHasBeenSet = false;
 };
 

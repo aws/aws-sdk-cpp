@@ -106,12 +106,12 @@ class InstanceRequirementsWithMetadataRequest {
   ///@}
  private:
   Aws::Vector<ArchitectureType> m_architectureTypes;
-  bool m_architectureTypesHasBeenSet = false;
 
   Aws::Vector<VirtualizationType> m_virtualizationTypes;
-  bool m_virtualizationTypesHasBeenSet = false;
 
   InstanceRequirementsRequest m_instanceRequirements;
+  bool m_architectureTypesHasBeenSet = false;
+  bool m_virtualizationTypesHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
 };
 

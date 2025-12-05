@@ -117,18 +117,18 @@ class StartResourceGroupingRecommendationTaskResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_groupingId;
-  bool m_groupingIdHasBeenSet = false;
 
   ResourcesGroupingRecGenStatusType m_status{ResourcesGroupingRecGenStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_groupingIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

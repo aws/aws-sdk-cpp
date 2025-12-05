@@ -65,9 +65,9 @@ class GetTemplateStepGroupRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_templateIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

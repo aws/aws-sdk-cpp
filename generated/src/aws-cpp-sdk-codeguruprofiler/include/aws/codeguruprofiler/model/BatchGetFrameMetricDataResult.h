@@ -187,24 +187,24 @@ class BatchGetFrameMetricDataResult {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<TimestampStructure> m_endTimes;
-  bool m_endTimesHasBeenSet = false;
 
   Aws::Vector<FrameMetricDatum> m_frameMetricData;
-  bool m_frameMetricDataHasBeenSet = false;
 
   AggregationPeriod m_resolution{AggregationPeriod::NOT_SET};
-  bool m_resolutionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<TimestampStructure>> m_unprocessedEndTimes;
-  bool m_unprocessedEndTimesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endTimeHasBeenSet = false;
+  bool m_endTimesHasBeenSet = false;
+  bool m_frameMetricDataHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_unprocessedEndTimesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

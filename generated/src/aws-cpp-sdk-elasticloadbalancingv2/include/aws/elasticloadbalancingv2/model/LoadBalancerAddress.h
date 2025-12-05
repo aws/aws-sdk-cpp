@@ -110,15 +110,15 @@ class LoadBalancerAddress {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_privateIPv4Address;
-  bool m_privateIPv4AddressHasBeenSet = false;
 
   Aws::String m_iPv6Address;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_privateIPv4AddressHasBeenSet = false;
   bool m_iPv6AddressHasBeenSet = false;
 };
 

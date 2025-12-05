@@ -101,15 +101,15 @@ class DataSetNumericRangeFilterCondition {
   ///@}
  private:
   DataSetNumericFilterValue m_rangeMinimum;
-  bool m_rangeMinimumHasBeenSet = false;
 
   DataSetNumericFilterValue m_rangeMaximum;
-  bool m_rangeMaximumHasBeenSet = false;
 
   bool m_includeMinimum{false};
-  bool m_includeMinimumHasBeenSet = false;
 
   bool m_includeMaximum{false};
+  bool m_rangeMinimumHasBeenSet = false;
+  bool m_rangeMaximumHasBeenSet = false;
+  bool m_includeMinimumHasBeenSet = false;
   bool m_includeMaximumHasBeenSet = false;
 };
 

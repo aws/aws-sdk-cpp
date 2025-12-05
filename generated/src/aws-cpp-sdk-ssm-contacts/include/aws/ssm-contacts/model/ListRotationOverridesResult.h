@@ -85,12 +85,12 @@ class ListRotationOverridesResult {
   ///@}
  private:
   Aws::Vector<RotationOverride> m_rotationOverrides;
-  bool m_rotationOverridesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rotationOverridesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

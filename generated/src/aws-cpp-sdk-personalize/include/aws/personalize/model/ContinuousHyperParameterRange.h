@@ -83,12 +83,12 @@ class ContinuousHyperParameterRange {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_minValue{0.0};
-  bool m_minValueHasBeenSet = false;
 
   double m_maxValue{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
   bool m_maxValueHasBeenSet = false;
 };
 

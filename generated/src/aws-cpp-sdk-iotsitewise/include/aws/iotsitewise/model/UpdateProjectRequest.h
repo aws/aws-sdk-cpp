@@ -104,15 +104,15 @@ class UpdateProjectRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_projectIdHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

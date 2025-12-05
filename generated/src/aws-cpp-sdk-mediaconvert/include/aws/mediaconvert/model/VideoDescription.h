@@ -383,54 +383,54 @@ class VideoDescription {
   ///@}
  private:
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
-  bool m_afdSignalingHasBeenSet = false;
 
   AntiAlias m_antiAlias{AntiAlias::NOT_SET};
-  bool m_antiAliasHasBeenSet = false;
 
   ChromaPositionMode m_chromaPositionMode{ChromaPositionMode::NOT_SET};
-  bool m_chromaPositionModeHasBeenSet = false;
 
   VideoCodecSettings m_codecSettings;
-  bool m_codecSettingsHasBeenSet = false;
 
   ColorMetadata m_colorMetadata{ColorMetadata::NOT_SET};
-  bool m_colorMetadataHasBeenSet = false;
 
   Rectangle m_crop;
-  bool m_cropHasBeenSet = false;
 
   DropFrameTimecode m_dropFrameTimecode{DropFrameTimecode::NOT_SET};
-  bool m_dropFrameTimecodeHasBeenSet = false;
 
   int m_fixedAfd{0};
-  bool m_fixedAfdHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   Rectangle m_position;
-  bool m_positionHasBeenSet = false;
 
   RespondToAfd m_respondToAfd{RespondToAfd::NOT_SET};
-  bool m_respondToAfdHasBeenSet = false;
 
   ScalingBehavior m_scalingBehavior{ScalingBehavior::NOT_SET};
-  bool m_scalingBehaviorHasBeenSet = false;
 
   int m_sharpness{0};
-  bool m_sharpnessHasBeenSet = false;
 
   VideoTimecodeInsertion m_timecodeInsertion{VideoTimecodeInsertion::NOT_SET};
-  bool m_timecodeInsertionHasBeenSet = false;
 
   TimecodeTrack m_timecodeTrack{TimecodeTrack::NOT_SET};
-  bool m_timecodeTrackHasBeenSet = false;
 
   VideoPreprocessor m_videoPreprocessors;
-  bool m_videoPreprocessorsHasBeenSet = false;
 
   int m_width{0};
+  bool m_afdSignalingHasBeenSet = false;
+  bool m_antiAliasHasBeenSet = false;
+  bool m_chromaPositionModeHasBeenSet = false;
+  bool m_codecSettingsHasBeenSet = false;
+  bool m_colorMetadataHasBeenSet = false;
+  bool m_cropHasBeenSet = false;
+  bool m_dropFrameTimecodeHasBeenSet = false;
+  bool m_fixedAfdHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_respondToAfdHasBeenSet = false;
+  bool m_scalingBehaviorHasBeenSet = false;
+  bool m_sharpnessHasBeenSet = false;
+  bool m_timecodeInsertionHasBeenSet = false;
+  bool m_timecodeTrackHasBeenSet = false;
+  bool m_videoPreprocessorsHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class OriginRequestPolicyHeadersConfig {
   ///@}
  private:
   OriginRequestPolicyHeaderBehavior m_headerBehavior{OriginRequestPolicyHeaderBehavior::NOT_SET};
-  bool m_headerBehaviorHasBeenSet = false;
 
   Headers m_headers;
+  bool m_headerBehaviorHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

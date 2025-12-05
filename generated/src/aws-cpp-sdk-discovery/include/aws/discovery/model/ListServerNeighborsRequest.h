@@ -130,18 +130,18 @@ class ListServerNeighborsRequest : public ApplicationDiscoveryServiceRequest {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   bool m_portInformationNeeded{false};
-  bool m_portInformationNeededHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_neighborConfigurationIds;
-  bool m_neighborConfigurationIdsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_configurationIdHasBeenSet = false;
+  bool m_portInformationNeededHasBeenSet = false;
+  bool m_neighborConfigurationIdsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

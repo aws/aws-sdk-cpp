@@ -321,51 +321,51 @@ class DescribeDataSourceResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataSourceType m_type{DataSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DataSourceConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataSourceStatus m_status{DataSourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
-  bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

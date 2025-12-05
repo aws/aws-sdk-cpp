@@ -94,12 +94,12 @@ class CreateS3TableIntegrationRequest : public ObservabilityAdminRequest {
   ///@}
  private:
   Encryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_encryptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

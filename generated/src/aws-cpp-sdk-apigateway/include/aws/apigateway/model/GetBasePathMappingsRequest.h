@@ -110,15 +110,15 @@ class GetBasePathMappingsRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_domainNameId;
-  bool m_domainNameIdHasBeenSet = false;
 
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_limit{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainNameIdHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

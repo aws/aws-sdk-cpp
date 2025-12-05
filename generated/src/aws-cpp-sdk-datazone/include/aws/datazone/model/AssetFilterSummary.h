@@ -219,33 +219,33 @@ class AssetFilterSummary {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_effectiveColumnNames;
-  bool m_effectiveColumnNamesHasBeenSet = false;
 
   Aws::String m_effectiveRowFilter;
-  bool m_effectiveRowFilterHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FilterStatus m_status{FilterStatus::NOT_SET};
+  bool m_assetIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_effectiveColumnNamesHasBeenSet = false;
+  bool m_effectiveRowFilterHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

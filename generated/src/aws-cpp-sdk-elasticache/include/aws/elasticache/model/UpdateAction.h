@@ -359,54 +359,54 @@ class UpdateAction {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_serviceUpdateName;
-  bool m_serviceUpdateNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_serviceUpdateReleaseDate{};
-  bool m_serviceUpdateReleaseDateHasBeenSet = false;
 
   ServiceUpdateSeverity m_serviceUpdateSeverity{ServiceUpdateSeverity::NOT_SET};
-  bool m_serviceUpdateSeverityHasBeenSet = false;
 
   ServiceUpdateStatus m_serviceUpdateStatus{ServiceUpdateStatus::NOT_SET};
-  bool m_serviceUpdateStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_serviceUpdateRecommendedApplyByDate{};
-  bool m_serviceUpdateRecommendedApplyByDateHasBeenSet = false;
 
   ServiceUpdateType m_serviceUpdateType{ServiceUpdateType::NOT_SET};
-  bool m_serviceUpdateTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateActionAvailableDate{};
-  bool m_updateActionAvailableDateHasBeenSet = false;
 
   UpdateActionStatus m_updateActionStatus{UpdateActionStatus::NOT_SET};
-  bool m_updateActionStatusHasBeenSet = false;
 
   Aws::String m_nodesUpdated;
-  bool m_nodesUpdatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateActionStatusModifiedDate{};
-  bool m_updateActionStatusModifiedDateHasBeenSet = false;
 
   SlaMet m_slaMet{SlaMet::NOT_SET};
-  bool m_slaMetHasBeenSet = false;
 
   Aws::Vector<NodeGroupUpdateStatus> m_nodeGroupUpdateStatus;
-  bool m_nodeGroupUpdateStatusHasBeenSet = false;
 
   Aws::Vector<CacheNodeUpdateStatus> m_cacheNodeUpdateStatus;
-  bool m_cacheNodeUpdateStatusHasBeenSet = false;
 
   Aws::String m_estimatedUpdateTime;
-  bool m_estimatedUpdateTimeHasBeenSet = false;
 
   Aws::String m_engine;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_serviceUpdateNameHasBeenSet = false;
+  bool m_serviceUpdateReleaseDateHasBeenSet = false;
+  bool m_serviceUpdateSeverityHasBeenSet = false;
+  bool m_serviceUpdateStatusHasBeenSet = false;
+  bool m_serviceUpdateRecommendedApplyByDateHasBeenSet = false;
+  bool m_serviceUpdateTypeHasBeenSet = false;
+  bool m_updateActionAvailableDateHasBeenSet = false;
+  bool m_updateActionStatusHasBeenSet = false;
+  bool m_nodesUpdatedHasBeenSet = false;
+  bool m_updateActionStatusModifiedDateHasBeenSet = false;
+  bool m_slaMetHasBeenSet = false;
+  bool m_nodeGroupUpdateStatusHasBeenSet = false;
+  bool m_cacheNodeUpdateStatusHasBeenSet = false;
+  bool m_estimatedUpdateTimeHasBeenSet = false;
   bool m_engineHasBeenSet = false;
 };
 

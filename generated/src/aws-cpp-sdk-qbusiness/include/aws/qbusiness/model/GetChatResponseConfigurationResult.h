@@ -152,24 +152,24 @@ class GetChatResponseConfigurationResult {
   ///@}
  private:
   Aws::String m_chatResponseConfigurationId;
-  bool m_chatResponseConfigurationIdHasBeenSet = false;
 
   Aws::String m_chatResponseConfigurationArn;
-  bool m_chatResponseConfigurationArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ChatResponseConfigurationDetail m_inUseConfiguration;
-  bool m_inUseConfigurationHasBeenSet = false;
 
   ChatResponseConfigurationDetail m_lastUpdateConfiguration;
-  bool m_lastUpdateConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_chatResponseConfigurationIdHasBeenSet = false;
+  bool m_chatResponseConfigurationArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_inUseConfigurationHasBeenSet = false;
+  bool m_lastUpdateConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

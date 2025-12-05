@@ -83,12 +83,12 @@ class UpdateStandardsControlRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_standardsControlArn;
-  bool m_standardsControlArnHasBeenSet = false;
 
   ControlStatus m_controlStatus{ControlStatus::NOT_SET};
-  bool m_controlStatusHasBeenSet = false;
 
   Aws::String m_disabledReason;
+  bool m_standardsControlArnHasBeenSet = false;
+  bool m_controlStatusHasBeenSet = false;
   bool m_disabledReasonHasBeenSet = false;
 };
 

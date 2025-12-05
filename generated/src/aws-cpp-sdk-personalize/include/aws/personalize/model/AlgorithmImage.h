@@ -68,9 +68,9 @@ class AlgorithmImage {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_dockerURI;
+  bool m_nameHasBeenSet = false;
   bool m_dockerURIHasBeenSet = false;
 };
 

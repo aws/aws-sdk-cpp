@@ -151,24 +151,24 @@ class Statement {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   StatementState m_state{StatementState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   StatementOutput m_output;
-  bool m_outputHasBeenSet = false;
 
   double m_progress{0.0};
-  bool m_progressHasBeenSet = false;
 
   long long m_startedOn{0};
-  bool m_startedOnHasBeenSet = false;
 
   long long m_completedOn{0};
+  bool m_idHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
   bool m_completedOnHasBeenSet = false;
 };
 

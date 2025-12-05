@@ -99,12 +99,12 @@ class VpcEndpoint {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_networkInterfacesHasBeenSet = false;
 };
 

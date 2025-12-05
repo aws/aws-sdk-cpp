@@ -79,9 +79,9 @@ class PassthroughSettings {
   ///@}
  private:
   FrameControl m_frameControl{FrameControl::NOT_SET};
-  bool m_frameControlHasBeenSet = false;
 
   VideoSelectorMode m_videoSelectorMode{VideoSelectorMode::NOT_SET};
+  bool m_frameControlHasBeenSet = false;
   bool m_videoSelectorModeHasBeenSet = false;
 };
 

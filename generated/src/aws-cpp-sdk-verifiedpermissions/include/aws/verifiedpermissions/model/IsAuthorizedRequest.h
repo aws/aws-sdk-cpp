@@ -154,21 +154,21 @@ class IsAuthorizedRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   EntityIdentifier m_principal;
-  bool m_principalHasBeenSet = false;
 
   ActionIdentifier m_action;
-  bool m_actionHasBeenSet = false;
 
   EntityIdentifier m_resource;
-  bool m_resourceHasBeenSet = false;
 
   ContextDefinition m_context;
-  bool m_contextHasBeenSet = false;
 
   EntitiesDefinition m_entities;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_entitiesHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class GroupingResource {
   ///@}
  private:
   LogicalResourceId m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   PhysicalResourceId m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceAppComponentIds;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_sourceAppComponentIdsHasBeenSet = false;
 };
 

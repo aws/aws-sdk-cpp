@@ -123,18 +123,18 @@ class RegistrationDeniedReasonInformation {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_shortDescription;
-  bool m_shortDescriptionHasBeenSet = false;
 
   Aws::String m_longDescription;
-  bool m_longDescriptionHasBeenSet = false;
 
   Aws::String m_documentationTitle;
-  bool m_documentationTitleHasBeenSet = false;
 
   Aws::String m_documentationLink;
+  bool m_reasonHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
+  bool m_documentationTitleHasBeenSet = false;
   bool m_documentationLinkHasBeenSet = false;
 };
 

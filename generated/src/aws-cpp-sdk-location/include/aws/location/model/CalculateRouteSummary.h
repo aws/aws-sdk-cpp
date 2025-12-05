@@ -144,18 +144,18 @@ class CalculateRouteSummary {
   ///@}
  private:
   Aws::Vector<double> m_routeBBox;
-  bool m_routeBBoxHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   double m_distance{0.0};
-  bool m_distanceHasBeenSet = false;
 
   double m_durationSeconds{0.0};
-  bool m_durationSecondsHasBeenSet = false;
 
   DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
+  bool m_routeBBoxHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
   bool m_distanceUnitHasBeenSet = false;
 };
 

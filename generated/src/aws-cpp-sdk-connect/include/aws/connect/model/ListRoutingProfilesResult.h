@@ -85,12 +85,12 @@ class ListRoutingProfilesResult {
   ///@}
  private:
   Aws::Vector<RoutingProfileSummary> m_routingProfileSummaryList;
-  bool m_routingProfileSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routingProfileSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

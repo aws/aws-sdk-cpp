@@ -96,12 +96,12 @@ class UnprocessedPreparedStatementName {
   ///@}
  private:
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_statementNameHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

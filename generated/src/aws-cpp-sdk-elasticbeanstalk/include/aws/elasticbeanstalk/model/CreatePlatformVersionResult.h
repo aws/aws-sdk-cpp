@@ -78,12 +78,12 @@ class CreatePlatformVersionResult {
   ///@}
  private:
   PlatformSummary m_platformSummary;
-  bool m_platformSummaryHasBeenSet = false;
 
   Builder m_builder;
-  bool m_builderHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_platformSummaryHasBeenSet = false;
+  bool m_builderHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

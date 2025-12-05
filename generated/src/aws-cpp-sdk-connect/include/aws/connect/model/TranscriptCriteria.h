@@ -94,12 +94,12 @@ class TranscriptCriteria {
   ///@}
  private:
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_searchText;
-  bool m_searchTextHasBeenSet = false;
 
   SearchContactsMatchType m_matchType{SearchContactsMatchType::NOT_SET};
+  bool m_participantRoleHasBeenSet = false;
+  bool m_searchTextHasBeenSet = false;
   bool m_matchTypeHasBeenSet = false;
 };
 

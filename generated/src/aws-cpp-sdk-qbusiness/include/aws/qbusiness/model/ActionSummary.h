@@ -109,15 +109,15 @@ class ActionSummary {
   ///@}
  private:
   Aws::String m_actionIdentifier;
-  bool m_actionIdentifierHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_instructionExample;
-  bool m_instructionExampleHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_actionIdentifierHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_instructionExampleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

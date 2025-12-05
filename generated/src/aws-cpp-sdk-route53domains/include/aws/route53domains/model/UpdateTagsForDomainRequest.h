@@ -80,9 +80,9 @@ class UpdateTagsForDomainRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagsToUpdate;
+  bool m_domainNameHasBeenSet = false;
   bool m_tagsToUpdateHasBeenSet = false;
 };
 

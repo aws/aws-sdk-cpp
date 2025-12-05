@@ -65,9 +65,9 @@ class GetEventStreamRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_eventStreamName;
+  bool m_domainNameHasBeenSet = false;
   bool m_eventStreamNameHasBeenSet = false;
 };
 

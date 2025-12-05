@@ -109,12 +109,12 @@ class FairsharePolicy {
   ///@}
  private:
   int m_shareDecaySeconds{0};
-  bool m_shareDecaySecondsHasBeenSet = false;
 
   int m_computeReservation{0};
-  bool m_computeReservationHasBeenSet = false;
 
   Aws::Vector<ShareAttributes> m_shareDistribution;
+  bool m_shareDecaySecondsHasBeenSet = false;
+  bool m_computeReservationHasBeenSet = false;
   bool m_shareDistributionHasBeenSet = false;
 };
 

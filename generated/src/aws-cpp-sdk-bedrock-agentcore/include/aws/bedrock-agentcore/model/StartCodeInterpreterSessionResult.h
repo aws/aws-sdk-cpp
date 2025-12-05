@@ -95,15 +95,15 @@ class StartCodeInterpreterSessionResult {
   ///@}
  private:
   Aws::String m_codeInterpreterIdentifier;
-  bool m_codeInterpreterIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeInterpreterIdentifierHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

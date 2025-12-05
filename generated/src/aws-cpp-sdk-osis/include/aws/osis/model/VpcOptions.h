@@ -119,15 +119,15 @@ class VpcOptions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   VpcAttachmentOptions m_vpcAttachmentOptions;
-  bool m_vpcAttachmentOptionsHasBeenSet = false;
 
   VpcEndpointManagement m_vpcEndpointManagement{VpcEndpointManagement::NOT_SET};
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_vpcAttachmentOptionsHasBeenSet = false;
   bool m_vpcEndpointManagementHasBeenSet = false;
 };
 

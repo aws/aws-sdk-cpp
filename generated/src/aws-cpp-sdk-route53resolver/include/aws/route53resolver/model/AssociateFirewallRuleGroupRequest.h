@@ -179,24 +179,24 @@ class AssociateFirewallRuleGroupRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_creatorRequestIdHasBeenSet = true;
 
   Aws::String m_firewallRuleGroupId;
-  bool m_firewallRuleGroupIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   MutationProtectionStatus m_mutationProtection{MutationProtectionStatus::NOT_SET};
-  bool m_mutationProtectionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_creatorRequestIdHasBeenSet = true;
+  bool m_firewallRuleGroupIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_mutationProtectionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

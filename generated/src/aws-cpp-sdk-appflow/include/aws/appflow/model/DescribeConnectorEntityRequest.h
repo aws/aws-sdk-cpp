@@ -102,15 +102,15 @@ class DescribeConnectorEntityRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorEntityName;
-  bool m_connectorEntityNameHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   Aws::String m_apiVersion;
+  bool m_connectorEntityNameHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_connectorProfileNameHasBeenSet = false;
   bool m_apiVersionHasBeenSet = false;
 };
 

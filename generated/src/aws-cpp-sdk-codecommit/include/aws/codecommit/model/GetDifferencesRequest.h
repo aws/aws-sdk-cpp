@@ -167,24 +167,24 @@ class GetDifferencesRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_beforeCommitSpecifier;
-  bool m_beforeCommitSpecifierHasBeenSet = false;
 
   Aws::String m_afterCommitSpecifier;
-  bool m_afterCommitSpecifierHasBeenSet = false;
 
   Aws::String m_beforePath;
-  bool m_beforePathHasBeenSet = false;
 
   Aws::String m_afterPath;
-  bool m_afterPathHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_beforeCommitSpecifierHasBeenSet = false;
+  bool m_afterCommitSpecifierHasBeenSet = false;
+  bool m_beforePathHasBeenSet = false;
+  bool m_afterPathHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

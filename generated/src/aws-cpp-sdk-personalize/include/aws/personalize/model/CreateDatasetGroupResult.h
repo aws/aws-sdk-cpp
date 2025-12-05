@@ -75,12 +75,12 @@ class CreateDatasetGroupResult {
   ///@}
  private:
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

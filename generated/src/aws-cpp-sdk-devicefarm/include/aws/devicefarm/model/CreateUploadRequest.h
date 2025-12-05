@@ -133,15 +133,15 @@ class CreateUploadRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UploadType m_type{UploadType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_contentType;
+  bool m_projectArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

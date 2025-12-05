@@ -67,9 +67,9 @@ class HandlerConfig {
   ///@}
  private:
   HandlerBehavior m_behavior{HandlerBehavior::NOT_SET};
-  bool m_behaviorHasBeenSet = false;
 
   Integration m_integration;
+  bool m_behaviorHasBeenSet = false;
   bool m_integrationHasBeenSet = false;
 };
 

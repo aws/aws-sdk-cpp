@@ -173,24 +173,24 @@ class ProxyRuleGroup {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupArn;
-  bool m_proxyRuleGroupArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTime{};
-  bool m_deleteTimeHasBeenSet = false;
 
   ProxyRulesByRequestPhase m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_proxyRuleGroupNameHasBeenSet = false;
+  bool m_proxyRuleGroupArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_deleteTimeHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

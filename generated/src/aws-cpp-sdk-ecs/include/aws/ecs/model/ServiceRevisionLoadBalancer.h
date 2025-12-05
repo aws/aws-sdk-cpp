@@ -73,9 +73,9 @@ class ServiceRevisionLoadBalancer {
   ///@}
  private:
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   Aws::String m_productionListenerRule;
+  bool m_targetGroupArnHasBeenSet = false;
   bool m_productionListenerRuleHasBeenSet = false;
 };
 

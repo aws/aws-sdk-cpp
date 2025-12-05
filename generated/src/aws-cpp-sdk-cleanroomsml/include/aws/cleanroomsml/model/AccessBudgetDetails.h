@@ -138,21 +138,21 @@ class AccessBudgetDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_remainingBudget{0};
-  bool m_remainingBudgetHasBeenSet = false;
 
   int m_budget{0};
-  bool m_budgetHasBeenSet = false;
 
   AccessBudgetType m_budgetType{AccessBudgetType::NOT_SET};
-  bool m_budgetTypeHasBeenSet = false;
 
   AutoRefreshMode m_autoRefresh{AutoRefreshMode::NOT_SET};
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_remainingBudgetHasBeenSet = false;
+  bool m_budgetHasBeenSet = false;
+  bool m_budgetTypeHasBeenSet = false;
   bool m_autoRefreshHasBeenSet = false;
 };
 

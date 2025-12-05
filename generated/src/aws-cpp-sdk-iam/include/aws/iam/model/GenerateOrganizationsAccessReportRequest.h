@@ -78,9 +78,9 @@ class GenerateOrganizationsAccessReportRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_entityPath;
-  bool m_entityPathHasBeenSet = false;
 
   Aws::String m_organizationsPolicyId;
+  bool m_entityPathHasBeenSet = false;
   bool m_organizationsPolicyIdHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class ParameterDetail {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   bool m_required{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
 };
 

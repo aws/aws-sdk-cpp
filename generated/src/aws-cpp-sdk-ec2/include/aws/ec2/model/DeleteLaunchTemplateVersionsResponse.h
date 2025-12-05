@@ -98,12 +98,12 @@ class DeleteLaunchTemplateVersionsResponse {
   ///@}
  private:
   Aws::Vector<DeleteLaunchTemplateVersionsResponseSuccessItem> m_successfullyDeletedLaunchTemplateVersions;
-  bool m_successfullyDeletedLaunchTemplateVersionsHasBeenSet = false;
 
   Aws::Vector<DeleteLaunchTemplateVersionsResponseErrorItem> m_unsuccessfullyDeletedLaunchTemplateVersions;
-  bool m_unsuccessfullyDeletedLaunchTemplateVersionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfullyDeletedLaunchTemplateVersionsHasBeenSet = false;
+  bool m_unsuccessfullyDeletedLaunchTemplateVersionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

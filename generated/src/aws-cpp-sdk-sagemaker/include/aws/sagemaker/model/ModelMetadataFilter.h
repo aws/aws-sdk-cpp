@@ -69,9 +69,9 @@ class ModelMetadataFilter {
   ///@}
  private:
   ModelMetadataFilterType m_name{ModelMetadataFilterType::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

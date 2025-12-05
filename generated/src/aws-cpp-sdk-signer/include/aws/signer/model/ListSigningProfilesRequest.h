@@ -133,18 +133,18 @@ class ListSigningProfilesRequest : public SignerRequest {
   ///@}
  private:
   bool m_includeCanceled{false};
-  bool m_includeCanceledHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_platformId;
-  bool m_platformIdHasBeenSet = false;
 
   Aws::Vector<SigningProfileStatus> m_statuses;
+  bool m_includeCanceledHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_platformIdHasBeenSet = false;
   bool m_statusesHasBeenSet = false;
 };
 

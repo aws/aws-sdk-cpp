@@ -248,36 +248,36 @@ class CreateResponderGatewayRequest : public RTBFabricRequest {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   TrustStoreConfiguration m_trustStoreConfiguration;
-  bool m_trustStoreConfigurationHasBeenSet = false;
 
   ManagedEndpointConfiguration m_managedEndpointConfiguration;
-  bool m_managedEndpointConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_trustStoreConfigurationHasBeenSet = false;
+  bool m_managedEndpointConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

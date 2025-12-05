@@ -87,12 +87,12 @@ class ListPreparedStatementsResult {
   ///@}
  private:
   Aws::Vector<PreparedStatementSummary> m_preparedStatements;
-  bool m_preparedStatementsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_preparedStatementsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

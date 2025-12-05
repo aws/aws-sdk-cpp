@@ -80,12 +80,12 @@ class AttachNetworkInterfaceResponse {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   int m_networkCardIndex{0};
-  bool m_networkCardIndexHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_networkCardIndexHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

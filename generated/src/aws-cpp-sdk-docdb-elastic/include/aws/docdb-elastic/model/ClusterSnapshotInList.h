@@ -122,18 +122,18 @@ class ClusterSnapshotInList {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_snapshotCreationTime;
-  bool m_snapshotCreationTimeHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
+  bool m_clusterArnHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_snapshotCreationTimeHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

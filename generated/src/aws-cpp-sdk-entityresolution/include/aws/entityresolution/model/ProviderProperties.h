@@ -91,12 +91,12 @@ class ProviderProperties {
   ///@}
  private:
   Aws::String m_providerServiceArn;
-  bool m_providerServiceArnHasBeenSet = false;
 
   Aws::Utils::Document m_providerConfiguration;
-  bool m_providerConfigurationHasBeenSet = false;
 
   IntermediateSourceConfiguration m_intermediateSourceConfiguration;
+  bool m_providerServiceArnHasBeenSet = false;
+  bool m_providerConfigurationHasBeenSet = false;
   bool m_intermediateSourceConfigurationHasBeenSet = false;
 };
 

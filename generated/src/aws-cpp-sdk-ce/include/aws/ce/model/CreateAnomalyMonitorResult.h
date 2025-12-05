@@ -60,9 +60,9 @@ class CreateAnomalyMonitorResult {
   ///@}
  private:
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

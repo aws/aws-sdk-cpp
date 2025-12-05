@@ -58,9 +58,9 @@ class DeleteInAppTemplateResult {
   ///@}
  private:
   MessageBody m_messageBody;
-  bool m_messageBodyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageBodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

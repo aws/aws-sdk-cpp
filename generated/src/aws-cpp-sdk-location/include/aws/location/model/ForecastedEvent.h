@@ -171,24 +171,24 @@ class ForecastedEvent {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_geofenceId;
-  bool m_geofenceIdHasBeenSet = false;
 
   bool m_isDeviceInGeofence{false};
-  bool m_isDeviceInGeofenceHasBeenSet = false;
 
   double m_nearestDistance{0.0};
-  bool m_nearestDistanceHasBeenSet = false;
 
   ForecastedGeofenceEventType m_eventType{ForecastedGeofenceEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_forecastedBreachTime{};
-  bool m_forecastedBreachTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_geofenceProperties;
+  bool m_eventIdHasBeenSet = false;
+  bool m_geofenceIdHasBeenSet = false;
+  bool m_isDeviceInGeofenceHasBeenSet = false;
+  bool m_nearestDistanceHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_forecastedBreachTimeHasBeenSet = false;
   bool m_geofencePropertiesHasBeenSet = false;
 };
 

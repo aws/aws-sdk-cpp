@@ -70,9 +70,9 @@ class MagneticStoreWriteProperties {
   ///@}
  private:
   bool m_enableMagneticStoreWrites{false};
-  bool m_enableMagneticStoreWritesHasBeenSet = false;
 
   MagneticStoreRejectedDataLocation m_magneticStoreRejectedDataLocation;
+  bool m_enableMagneticStoreWritesHasBeenSet = false;
   bool m_magneticStoreRejectedDataLocationHasBeenSet = false;
 };
 

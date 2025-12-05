@@ -86,12 +86,12 @@ class FileValidationMessage {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_titleHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

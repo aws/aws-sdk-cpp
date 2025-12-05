@@ -106,15 +106,15 @@ class CreateClassifierRequest : public GlueRequest {
   ///@}
  private:
   CreateGrokClassifierRequest m_grokClassifier;
-  bool m_grokClassifierHasBeenSet = false;
 
   CreateXMLClassifierRequest m_xMLClassifier;
-  bool m_xMLClassifierHasBeenSet = false;
 
   CreateJsonClassifierRequest m_jsonClassifier;
-  bool m_jsonClassifierHasBeenSet = false;
 
   CreateCsvClassifierRequest m_csvClassifier;
+  bool m_grokClassifierHasBeenSet = false;
+  bool m_xMLClassifierHasBeenSet = false;
+  bool m_jsonClassifierHasBeenSet = false;
   bool m_csvClassifierHasBeenSet = false;
 };
 

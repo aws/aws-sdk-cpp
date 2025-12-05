@@ -91,12 +91,12 @@ class QuestionMetric {
   ///@}
  private:
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Risk m_risk{Risk::NOT_SET};
-  bool m_riskHasBeenSet = false;
 
   Aws::Vector<BestPractice> m_bestPractices;
+  bool m_questionIdHasBeenSet = false;
+  bool m_riskHasBeenSet = false;
   bool m_bestPracticesHasBeenSet = false;
 };
 

@@ -178,27 +178,27 @@ class ProcessingJobSummary {
   ///@}
  private:
   Aws::String m_processingJobName;
-  bool m_processingJobNameHasBeenSet = false;
 
   Aws::String m_processingJobArn;
-  bool m_processingJobArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_processingEndTime{};
-  bool m_processingEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   ProcessingJobStatus m_processingJobStatus{ProcessingJobStatus::NOT_SET};
-  bool m_processingJobStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_exitMessage;
+  bool m_processingJobNameHasBeenSet = false;
+  bool m_processingJobArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_processingEndTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_processingJobStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_exitMessageHasBeenSet = false;
 };
 

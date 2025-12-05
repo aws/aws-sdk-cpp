@@ -179,24 +179,24 @@ class ListMetricsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<DimensionFilter> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   RecentlyActive m_recentlyActive{RecentlyActive::NOT_SET};
-  bool m_recentlyActiveHasBeenSet = false;
 
   bool m_includeLinkedAccounts{false};
-  bool m_includeLinkedAccountsHasBeenSet = false;
 
   Aws::String m_owningAccount;
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recentlyActiveHasBeenSet = false;
+  bool m_includeLinkedAccountsHasBeenSet = false;
   bool m_owningAccountHasBeenSet = false;
 };
 

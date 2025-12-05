@@ -70,9 +70,9 @@ class LayoutConfiguration {
   ///@}
  private:
   GridConfiguration m_grid;
-  bool m_gridHasBeenSet = false;
 
   PipConfiguration m_pip;
+  bool m_gridHasBeenSet = false;
   bool m_pipHasBeenSet = false;
 };
 

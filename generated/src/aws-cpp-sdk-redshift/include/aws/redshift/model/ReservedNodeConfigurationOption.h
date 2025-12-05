@@ -85,12 +85,12 @@ class ReservedNodeConfigurationOption {
   ///@}
  private:
   ReservedNode m_sourceReservedNode;
-  bool m_sourceReservedNodeHasBeenSet = false;
 
   int m_targetReservedNodeCount{0};
-  bool m_targetReservedNodeCountHasBeenSet = false;
 
   ReservedNodeOffering m_targetReservedNodeOffering;
+  bool m_sourceReservedNodeHasBeenSet = false;
+  bool m_targetReservedNodeCountHasBeenSet = false;
   bool m_targetReservedNodeOfferingHasBeenSet = false;
 };
 

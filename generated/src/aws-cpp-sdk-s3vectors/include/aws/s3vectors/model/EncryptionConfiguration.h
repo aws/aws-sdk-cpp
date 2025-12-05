@@ -81,9 +81,9 @@ class EncryptionConfiguration {
   ///@}
  private:
   SseType m_sseType{SseType::NOT_SET};
-  bool m_sseTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_sseTypeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

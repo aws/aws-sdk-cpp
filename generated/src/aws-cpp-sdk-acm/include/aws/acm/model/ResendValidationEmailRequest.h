@@ -103,12 +103,12 @@ class ResendValidationEmailRequest : public ACMRequest {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_validationDomain;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
   bool m_validationDomainHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class DescribeReportPlanResult {
   ///@}
  private:
   ReportPlan m_reportPlan;
-  bool m_reportPlanHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportPlanHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

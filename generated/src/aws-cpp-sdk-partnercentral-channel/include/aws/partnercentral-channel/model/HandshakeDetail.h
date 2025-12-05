@@ -95,12 +95,12 @@ class HandshakeDetail {
   ///@}
  private:
   StartServicePeriodHandshakeDetail m_startServicePeriodHandshakeDetail;
-  bool m_startServicePeriodHandshakeDetailHasBeenSet = false;
 
   RevokeServicePeriodHandshakeDetail m_revokeServicePeriodHandshakeDetail;
-  bool m_revokeServicePeriodHandshakeDetailHasBeenSet = false;
 
   ProgramManagementAccountHandshakeDetail m_programManagementAccountHandshakeDetail;
+  bool m_startServicePeriodHandshakeDetailHasBeenSet = false;
+  bool m_revokeServicePeriodHandshakeDetailHasBeenSet = false;
   bool m_programManagementAccountHandshakeDetailHasBeenSet = false;
 };
 

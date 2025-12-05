@@ -179,27 +179,27 @@ class ClusterEventSummary {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   ClusterEventResourceType m_resourceType{ClusterEventResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_eventIdHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_instanceGroupNameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

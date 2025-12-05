@@ -173,24 +173,24 @@ class ActionReviewEvent {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_userMessageId;
-  bool m_userMessageIdHasBeenSet = false;
 
   Aws::String m_systemMessageId;
-  bool m_systemMessageIdHasBeenSet = false;
 
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   PluginType m_pluginType{PluginType::NOT_SET};
-  bool m_pluginTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, ActionReviewPayloadField> m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_payloadFieldNameSeparator;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_userMessageIdHasBeenSet = false;
+  bool m_systemMessageIdHasBeenSet = false;
+  bool m_pluginIdHasBeenSet = false;
+  bool m_pluginTypeHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_payloadFieldNameSeparatorHasBeenSet = false;
 };
 

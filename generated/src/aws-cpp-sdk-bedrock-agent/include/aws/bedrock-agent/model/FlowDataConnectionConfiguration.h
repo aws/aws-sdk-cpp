@@ -70,9 +70,9 @@ class FlowDataConnectionConfiguration {
   ///@}
  private:
   Aws::String m_sourceOutput;
-  bool m_sourceOutputHasBeenSet = false;
 
   Aws::String m_targetInput;
+  bool m_sourceOutputHasBeenSet = false;
   bool m_targetInputHasBeenSet = false;
 };
 

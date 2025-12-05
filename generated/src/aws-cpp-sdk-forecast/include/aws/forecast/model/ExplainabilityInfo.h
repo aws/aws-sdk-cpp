@@ -74,9 +74,9 @@ class ExplainabilityInfo {
   ///@}
  private:
   Aws::String m_explainabilityArn;
-  bool m_explainabilityArnHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_explainabilityArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

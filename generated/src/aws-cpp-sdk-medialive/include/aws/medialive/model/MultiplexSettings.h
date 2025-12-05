@@ -93,15 +93,15 @@ class MultiplexSettings {
   ///@}
  private:
   int m_maximumVideoBufferDelayMilliseconds{0};
-  bool m_maximumVideoBufferDelayMillisecondsHasBeenSet = false;
 
   int m_transportStreamBitrate{0};
-  bool m_transportStreamBitrateHasBeenSet = false;
 
   int m_transportStreamId{0};
-  bool m_transportStreamIdHasBeenSet = false;
 
   int m_transportStreamReservedBitrate{0};
+  bool m_maximumVideoBufferDelayMillisecondsHasBeenSet = false;
+  bool m_transportStreamBitrateHasBeenSet = false;
+  bool m_transportStreamIdHasBeenSet = false;
   bool m_transportStreamReservedBitrateHasBeenSet = false;
 };
 

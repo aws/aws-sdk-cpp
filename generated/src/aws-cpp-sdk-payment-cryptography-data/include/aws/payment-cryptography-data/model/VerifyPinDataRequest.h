@@ -199,30 +199,30 @@ class VerifyPinDataRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_verificationKeyIdentifier;
-  bool m_verificationKeyIdentifierHasBeenSet = false;
 
   Aws::String m_encryptionKeyIdentifier;
-  bool m_encryptionKeyIdentifierHasBeenSet = false;
 
   PinVerificationAttributes m_verificationAttributes;
-  bool m_verificationAttributesHasBeenSet = false;
 
   Aws::String m_encryptedPinBlock;
-  bool m_encryptedPinBlockHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   PinBlockFormatForPinData m_pinBlockFormat{PinBlockFormatForPinData::NOT_SET};
-  bool m_pinBlockFormatHasBeenSet = false;
 
   int m_pinDataLength{0};
-  bool m_pinDataLengthHasBeenSet = false;
 
   DukptAttributes m_dukptAttributes;
-  bool m_dukptAttributesHasBeenSet = false;
 
   WrappedKey m_encryptionWrappedKey;
+  bool m_verificationKeyIdentifierHasBeenSet = false;
+  bool m_encryptionKeyIdentifierHasBeenSet = false;
+  bool m_verificationAttributesHasBeenSet = false;
+  bool m_encryptedPinBlockHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_pinBlockFormatHasBeenSet = false;
+  bool m_pinDataLengthHasBeenSet = false;
+  bool m_dukptAttributesHasBeenSet = false;
   bool m_encryptionWrappedKeyHasBeenSet = false;
 };
 

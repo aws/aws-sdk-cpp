@@ -66,9 +66,9 @@ class StopApplicationRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   bool m_forceStop{false};
+  bool m_applicationIdHasBeenSet = false;
   bool m_forceStopHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class PutSnapshotBlockRequest : public StreamingEBSRequest {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   int m_blockIndex{0};
-  bool m_blockIndexHasBeenSet = false;
 
   int m_dataLength{0};
-  bool m_dataLengthHasBeenSet = false;
 
   int m_progress{0};
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_blockIndexHasBeenSet = false;
+  bool m_dataLengthHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
   bool m_checksumAlgorithmHasBeenSet = false;
 };
 

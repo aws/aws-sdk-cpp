@@ -373,54 +373,54 @@ GOP_TIMECODE: Include timecode
   ///@}
  private:
   Mpeg2AdaptiveQuantization m_adaptiveQuantization{Mpeg2AdaptiveQuantization::NOT_SET};
-  bool m_adaptiveQuantizationHasBeenSet = false;
 
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
-  bool m_afdSignalingHasBeenSet = false;
 
   Mpeg2ColorMetadata m_colorMetadata{Mpeg2ColorMetadata::NOT_SET};
-  bool m_colorMetadataHasBeenSet = false;
 
   Mpeg2ColorSpace m_colorSpace{Mpeg2ColorSpace::NOT_SET};
-  bool m_colorSpaceHasBeenSet = false;
 
   Mpeg2DisplayRatio m_displayAspectRatio{Mpeg2DisplayRatio::NOT_SET};
-  bool m_displayAspectRatioHasBeenSet = false;
 
   Mpeg2FilterSettings m_filterSettings;
-  bool m_filterSettingsHasBeenSet = false;
 
   FixedAfd m_fixedAfd{FixedAfd::NOT_SET};
-  bool m_fixedAfdHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   int m_gopClosedCadence{0};
-  bool m_gopClosedCadenceHasBeenSet = false;
 
   int m_gopNumBFrames{0};
-  bool m_gopNumBFramesHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   Mpeg2GopSizeUnits m_gopSizeUnits{Mpeg2GopSizeUnits::NOT_SET};
-  bool m_gopSizeUnitsHasBeenSet = false;
 
   Mpeg2ScanType m_scanType{Mpeg2ScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   Mpeg2SubGopLength m_subgopLength{Mpeg2SubGopLength::NOT_SET};
-  bool m_subgopLengthHasBeenSet = false;
 
   Mpeg2TimecodeInsertionBehavior m_timecodeInsertion{Mpeg2TimecodeInsertionBehavior::NOT_SET};
-  bool m_timecodeInsertionHasBeenSet = false;
 
   TimecodeBurninSettings m_timecodeBurninSettings;
+  bool m_adaptiveQuantizationHasBeenSet = false;
+  bool m_afdSignalingHasBeenSet = false;
+  bool m_colorMetadataHasBeenSet = false;
+  bool m_colorSpaceHasBeenSet = false;
+  bool m_displayAspectRatioHasBeenSet = false;
+  bool m_filterSettingsHasBeenSet = false;
+  bool m_fixedAfdHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopClosedCadenceHasBeenSet = false;
+  bool m_gopNumBFramesHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_gopSizeUnitsHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
+  bool m_subgopLengthHasBeenSet = false;
+  bool m_timecodeInsertionHasBeenSet = false;
   bool m_timecodeBurninSettingsHasBeenSet = false;
 };
 

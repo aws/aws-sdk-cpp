@@ -70,9 +70,9 @@ class UpdateJobShipmentStateRequest : public SnowballRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   ShipmentState m_shipmentState{ShipmentState::NOT_SET};
+  bool m_jobIdHasBeenSet = false;
   bool m_shipmentStateHasBeenSet = false;
 };
 

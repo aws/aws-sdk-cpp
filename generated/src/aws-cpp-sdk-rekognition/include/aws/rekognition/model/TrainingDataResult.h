@@ -90,12 +90,12 @@ class TrainingDataResult {
   ///@}
  private:
   TrainingData m_input;
-  bool m_inputHasBeenSet = false;
 
   TrainingData m_output;
-  bool m_outputHasBeenSet = false;
 
   ValidationData m_validation;
+  bool m_inputHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

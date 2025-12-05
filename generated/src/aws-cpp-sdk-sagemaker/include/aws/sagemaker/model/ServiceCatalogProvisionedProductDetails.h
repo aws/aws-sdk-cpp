@@ -86,9 +86,9 @@ class ServiceCatalogProvisionedProductDetails {
   ///@}
  private:
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::String m_provisionedProductStatusMessage;
+  bool m_provisionedProductIdHasBeenSet = false;
   bool m_provisionedProductStatusMessageHasBeenSet = false;
 };
 

@@ -122,15 +122,15 @@ class ClusterOperationV2Provisioned {
   ///@}
  private:
   Aws::Vector<ClusterOperationStep> m_operationSteps;
-  bool m_operationStepsHasBeenSet = false;
 
   MutableClusterInfo m_sourceClusterInfo;
-  bool m_sourceClusterInfoHasBeenSet = false;
 
   MutableClusterInfo m_targetClusterInfo;
-  bool m_targetClusterInfoHasBeenSet = false;
 
   VpcConnectionInfo m_vpcConnectionInfo;
+  bool m_operationStepsHasBeenSet = false;
+  bool m_sourceClusterInfoHasBeenSet = false;
+  bool m_targetClusterInfoHasBeenSet = false;
   bool m_vpcConnectionInfoHasBeenSet = false;
 };
 

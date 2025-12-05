@@ -159,24 +159,24 @@ class DelegationMetadata {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_assessmentName;
-  bool m_assessmentNameHasBeenSet = false;
 
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   DelegationStatus m_status{DelegationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_controlSetName;
+  bool m_idHasBeenSet = false;
+  bool m_assessmentNameHasBeenSet = false;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_controlSetNameHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class DescribeVolumesResult {
   ///@}
  private:
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_volumesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

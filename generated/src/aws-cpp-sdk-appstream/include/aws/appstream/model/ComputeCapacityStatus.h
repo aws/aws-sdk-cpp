@@ -168,27 +168,27 @@ class ComputeCapacityStatus {
   ///@}
  private:
   int m_desired{0};
-  bool m_desiredHasBeenSet = false;
 
   int m_running{0};
-  bool m_runningHasBeenSet = false;
 
   int m_inUse{0};
-  bool m_inUseHasBeenSet = false;
 
   int m_available{0};
-  bool m_availableHasBeenSet = false;
 
   int m_desiredUserSessions{0};
-  bool m_desiredUserSessionsHasBeenSet = false;
 
   int m_availableUserSessions{0};
-  bool m_availableUserSessionsHasBeenSet = false;
 
   int m_activeUserSessions{0};
-  bool m_activeUserSessionsHasBeenSet = false;
 
   int m_actualUserSessions{0};
+  bool m_desiredHasBeenSet = false;
+  bool m_runningHasBeenSet = false;
+  bool m_inUseHasBeenSet = false;
+  bool m_availableHasBeenSet = false;
+  bool m_desiredUserSessionsHasBeenSet = false;
+  bool m_availableUserSessionsHasBeenSet = false;
+  bool m_activeUserSessionsHasBeenSet = false;
   bool m_actualUserSessionsHasBeenSet = false;
 };
 

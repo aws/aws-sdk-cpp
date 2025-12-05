@@ -155,3 +155,14 @@
 
 #end
 #end##if($shape.members.size() > 0)
+#foreach($member in $shape.members.entrySet())
+#if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))
+#set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
+#set($isRequired = $useRequiredField && $member.value.required)
+#if(($isRequired || $member.value.idempotencyToken) && !$isStreamingMember && !$member.value.shape.isEventStream())
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true;
+#else
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
+#end
+#end
+#end##if($shape.members.size() > 0)

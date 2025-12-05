@@ -118,18 +118,18 @@ class VideoSourceDetails {
   ///@}
  private:
   Aws::String m_mediaId;
-  bool m_mediaIdHasBeenSet = false;
 
   Aws::String m_mediaMimeType;
-  bool m_mediaMimeTypeHasBeenSet = false;
 
   long long m_startTimeMilliseconds{0};
-  bool m_startTimeMillisecondsHasBeenSet = false;
 
   long long m_endTimeMilliseconds{0};
-  bool m_endTimeMillisecondsHasBeenSet = false;
 
   VideoExtractionType m_videoExtractionType{VideoExtractionType::NOT_SET};
+  bool m_mediaIdHasBeenSet = false;
+  bool m_mediaMimeTypeHasBeenSet = false;
+  bool m_startTimeMillisecondsHasBeenSet = false;
+  bool m_endTimeMillisecondsHasBeenSet = false;
   bool m_videoExtractionTypeHasBeenSet = false;
 };
 

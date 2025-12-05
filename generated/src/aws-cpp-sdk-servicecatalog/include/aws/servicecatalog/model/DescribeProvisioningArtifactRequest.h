@@ -155,24 +155,24 @@ class DescribeProvisioningArtifactRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactName;
-  bool m_provisioningArtifactNameHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   bool m_verbose{false};
-  bool m_verboseHasBeenSet = false;
 
   bool m_includeProvisioningArtifactParameters{false};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactNameHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_verboseHasBeenSet = false;
   bool m_includeProvisioningArtifactParametersHasBeenSet = false;
 };
 

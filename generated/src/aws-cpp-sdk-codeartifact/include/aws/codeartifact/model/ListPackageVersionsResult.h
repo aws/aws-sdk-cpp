@@ -165,24 +165,24 @@ class ListPackageVersionsResult {
   ///@}
  private:
   Aws::String m_defaultDisplayVersion;
-  bool m_defaultDisplayVersionHasBeenSet = false;
 
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::Vector<PackageVersionSummary> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_defaultDisplayVersionHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

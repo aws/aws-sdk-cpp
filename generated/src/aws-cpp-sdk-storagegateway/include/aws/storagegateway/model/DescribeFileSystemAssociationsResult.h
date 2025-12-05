@@ -69,9 +69,9 @@ class DescribeFileSystemAssociationsResult {
   ///@}
  private:
   Aws::Vector<FileSystemAssociationInfo> m_fileSystemAssociationInfoList;
-  bool m_fileSystemAssociationInfoListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileSystemAssociationInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

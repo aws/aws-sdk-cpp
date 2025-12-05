@@ -93,12 +93,12 @@ class CaseRuleDetails {
   ///@}
  private:
   RequiredCaseRule m_required;
-  bool m_requiredHasBeenSet = false;
 
   FieldOptionsCaseRule m_fieldOptions;
-  bool m_fieldOptionsHasBeenSet = false;
 
   HiddenCaseRule m_hidden;
+  bool m_requiredHasBeenSet = false;
+  bool m_fieldOptionsHasBeenSet = false;
   bool m_hiddenHasBeenSet = false;
 };
 

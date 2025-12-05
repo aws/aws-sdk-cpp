@@ -116,15 +116,15 @@ class Resource {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_detailUrl;
-  bool m_detailUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_detailUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

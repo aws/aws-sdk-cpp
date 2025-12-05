@@ -126,18 +126,18 @@ class ListSchedulesRequest : public SchedulerRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_namePrefix;
-  bool m_namePrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ScheduleState m_state{ScheduleState::NOT_SET};
+  bool m_groupNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_namePrefixHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

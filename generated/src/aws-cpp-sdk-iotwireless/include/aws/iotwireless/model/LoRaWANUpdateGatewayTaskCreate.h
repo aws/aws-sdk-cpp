@@ -103,15 +103,15 @@ class LoRaWANUpdateGatewayTaskCreate {
   ///@}
  private:
   Aws::String m_updateSignature;
-  bool m_updateSignatureHasBeenSet = false;
 
   long long m_sigKeyCrc{0};
-  bool m_sigKeyCrcHasBeenSet = false;
 
   LoRaWANGatewayVersion m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   LoRaWANGatewayVersion m_updateVersion;
+  bool m_updateSignatureHasBeenSet = false;
+  bool m_sigKeyCrcHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
   bool m_updateVersionHasBeenSet = false;
 };
 

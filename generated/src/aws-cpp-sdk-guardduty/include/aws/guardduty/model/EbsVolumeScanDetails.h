@@ -167,24 +167,24 @@ class EbsVolumeScanDetails {
   ///@}
  private:
   Aws::String m_scanId;
-  bool m_scanIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_scanStartedAt{};
-  bool m_scanStartedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_scanCompletedAt{};
-  bool m_scanCompletedAtHasBeenSet = false;
 
   Aws::String m_triggerFindingId;
-  bool m_triggerFindingIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   ScanDetections m_scanDetections;
-  bool m_scanDetectionsHasBeenSet = false;
 
   ScanType m_scanType{ScanType::NOT_SET};
+  bool m_scanIdHasBeenSet = false;
+  bool m_scanStartedAtHasBeenSet = false;
+  bool m_scanCompletedAtHasBeenSet = false;
+  bool m_triggerFindingIdHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_scanDetectionsHasBeenSet = false;
   bool m_scanTypeHasBeenSet = false;
 };
 

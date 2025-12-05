@@ -259,36 +259,36 @@ class Evaluation {
   ///@}
  private:
   Aws::String m_evaluationId;
-  bool m_evaluationIdHasBeenSet = false;
 
   Aws::String m_evaluationArn;
-  bool m_evaluationArnHasBeenSet = false;
 
   EvaluationMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Map<Aws::String, EvaluationAnswerOutput> m_answers;
-  bool m_answersHasBeenSet = false;
 
   Aws::Map<Aws::String, EvaluationNote> m_notes;
-  bool m_notesHasBeenSet = false;
 
   EvaluationStatus m_status{EvaluationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, EvaluationScore> m_scores;
-  bool m_scoresHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_evaluationArnHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_answersHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_scoresHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

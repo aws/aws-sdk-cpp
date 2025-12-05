@@ -69,9 +69,9 @@ class RevokeServicePeriodPayload {
   ///@}
  private:
   Aws::String m_programManagementAccountIdentifier;
-  bool m_programManagementAccountIdentifierHasBeenSet = false;
 
   Aws::String m_note;
+  bool m_programManagementAccountIdentifierHasBeenSet = false;
   bool m_noteHasBeenSet = false;
 };
 

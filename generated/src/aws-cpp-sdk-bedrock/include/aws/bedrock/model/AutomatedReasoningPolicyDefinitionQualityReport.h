@@ -210,27 +210,27 @@ class AutomatedReasoningPolicyDefinitionQualityReport {
   ///@}
  private:
   int m_typeCount{0};
-  bool m_typeCountHasBeenSet = false;
 
   int m_variableCount{0};
-  bool m_variableCountHasBeenSet = false;
 
   int m_ruleCount{0};
-  bool m_ruleCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_unusedTypes;
-  bool m_unusedTypesHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyDefinitionTypeValuePair> m_unusedTypeValues;
-  bool m_unusedTypeValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_unusedVariables;
-  bool m_unusedVariablesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_conflictingRules;
-  bool m_conflictingRulesHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyDisjointRuleSet> m_disjointRuleSets;
+  bool m_typeCountHasBeenSet = false;
+  bool m_variableCountHasBeenSet = false;
+  bool m_ruleCountHasBeenSet = false;
+  bool m_unusedTypesHasBeenSet = false;
+  bool m_unusedTypeValuesHasBeenSet = false;
+  bool m_unusedVariablesHasBeenSet = false;
+  bool m_conflictingRulesHasBeenSet = false;
   bool m_disjointRuleSetsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class BatchRevokePermissionsResult {
   ///@}
  private:
   Aws::Vector<BatchPermissionsFailureEntry> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

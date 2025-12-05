@@ -73,9 +73,9 @@ class DataSetReference {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Source m_source;
+  bool m_datasetArnHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

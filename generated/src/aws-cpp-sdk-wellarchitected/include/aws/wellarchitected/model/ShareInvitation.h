@@ -153,24 +153,24 @@ class ShareInvitation {
   ///@}
  private:
   Aws::String m_shareInvitationId;
-  bool m_shareInvitationIdHasBeenSet = false;
 
   ShareResourceType m_shareResourceType{ShareResourceType::NOT_SET};
-  bool m_shareResourceTypeHasBeenSet = false;
 
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_templateArn;
+  bool m_shareInvitationIdHasBeenSet = false;
+  bool m_shareResourceTypeHasBeenSet = false;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_profileArnHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
 };
 

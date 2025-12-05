@@ -90,12 +90,12 @@ class BatchAddRoleResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_addedAccessorIds;
-  bool m_addedAccessorIdsHasBeenSet = false;
 
   Aws::Vector<BatchError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addedAccessorIdsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

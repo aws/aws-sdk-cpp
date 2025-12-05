@@ -69,9 +69,9 @@ class FieldValue {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   FieldValueUnion m_value;
+  bool m_idHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

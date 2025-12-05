@@ -122,18 +122,18 @@ class ListSecretVersionIdsResult {
   ///@}
  private:
   Aws::Vector<SecretVersionsListEntry> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

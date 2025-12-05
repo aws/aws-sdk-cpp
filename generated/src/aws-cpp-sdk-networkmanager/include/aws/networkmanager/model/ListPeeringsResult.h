@@ -85,12 +85,12 @@ class ListPeeringsResult {
   ///@}
  private:
   Aws::Vector<Peering> m_peerings;
-  bool m_peeringsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_peeringsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class AttributeDefinition {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   ScalarAttributeType m_attributeType{ScalarAttributeType::NOT_SET};
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeTypeHasBeenSet = false;
 };
 

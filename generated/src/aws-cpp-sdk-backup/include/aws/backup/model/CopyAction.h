@@ -69,9 +69,9 @@ class CopyAction {
   ///@}
  private:
   Lifecycle m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_destinationBackupVaultArn;
+  bool m_lifecycleHasBeenSet = false;
   bool m_destinationBackupVaultArnHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class TieringConfigurationInputForCreate {
   ///@}
  private:
   Aws::String m_tieringConfigurationName;
-  bool m_tieringConfigurationNameHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::Vector<ResourceSelection> m_resourceSelection;
+  bool m_tieringConfigurationNameHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
   bool m_resourceSelectionHasBeenSet = false;
 };
 

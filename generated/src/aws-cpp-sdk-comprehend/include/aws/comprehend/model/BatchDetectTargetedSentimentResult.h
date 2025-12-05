@@ -94,12 +94,12 @@ class BatchDetectTargetedSentimentResult {
   ///@}
  private:
   Aws::Vector<BatchDetectTargetedSentimentItemResult> m_resultList;
-  bool m_resultListHasBeenSet = false;
 
   Aws::Vector<BatchItemError> m_errorList;
-  bool m_errorListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultListHasBeenSet = false;
+  bool m_errorListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

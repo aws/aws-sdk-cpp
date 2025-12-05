@@ -75,9 +75,9 @@ class FilterGroup {
   ///@}
  private:
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<FilterDimension> m_dimensions;
+  bool m_typeHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

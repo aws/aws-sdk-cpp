@@ -70,9 +70,9 @@ class EndpointDisplayContent {
   ///@}
  private:
   None m_none;
-  bool m_noneHasBeenSet = false;
 
   DisplayContentOverrides m_overrides;
+  bool m_noneHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

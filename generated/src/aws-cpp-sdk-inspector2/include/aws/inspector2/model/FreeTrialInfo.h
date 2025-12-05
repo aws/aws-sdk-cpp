@@ -105,15 +105,15 @@ class FreeTrialInfo {
   ///@}
  private:
   FreeTrialType m_type{FreeTrialType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_start{};
-  bool m_startHasBeenSet = false;
 
   Aws::Utils::DateTime m_end{};
-  bool m_endHasBeenSet = false;
 
   FreeTrialStatus m_status{FreeTrialStatus::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

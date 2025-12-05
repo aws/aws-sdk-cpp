@@ -110,15 +110,15 @@ class UpdateSdiSourceRequest : public MediaLiveRequest {
   ///@}
  private:
   SdiSourceMode m_mode{SdiSourceMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sdiSourceId;
-  bool m_sdiSourceIdHasBeenSet = false;
 
   SdiSourceType m_type{SdiSourceType::NOT_SET};
+  bool m_modeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sdiSourceIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

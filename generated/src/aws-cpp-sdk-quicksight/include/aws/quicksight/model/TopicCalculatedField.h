@@ -373,54 +373,54 @@ class TopicCalculatedField {
   ///@}
  private:
   Aws::String m_calculatedFieldName;
-  bool m_calculatedFieldNameHasBeenSet = false;
 
   Aws::String m_calculatedFieldDescription;
-  bool m_calculatedFieldDescriptionHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_calculatedFieldSynonyms;
-  bool m_calculatedFieldSynonymsHasBeenSet = false;
 
   bool m_isIncludedInTopic{false};
-  bool m_isIncludedInTopicHasBeenSet = false;
 
   bool m_disableIndexing{false};
-  bool m_disableIndexingHasBeenSet = false;
 
   ColumnDataRole m_columnDataRole{ColumnDataRole::NOT_SET};
-  bool m_columnDataRoleHasBeenSet = false;
 
   TopicTimeGranularity m_timeGranularity{TopicTimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   DefaultFormatting m_defaultFormatting;
-  bool m_defaultFormattingHasBeenSet = false;
 
   DefaultAggregation m_aggregation{DefaultAggregation::NOT_SET};
-  bool m_aggregationHasBeenSet = false;
 
   ComparativeOrder m_comparativeOrder;
-  bool m_comparativeOrderHasBeenSet = false;
 
   SemanticType m_semanticType;
-  bool m_semanticTypeHasBeenSet = false;
 
   Aws::Vector<AuthorSpecifiedAggregation> m_allowedAggregations;
-  bool m_allowedAggregationsHasBeenSet = false;
 
   Aws::Vector<AuthorSpecifiedAggregation> m_notAllowedAggregations;
-  bool m_notAllowedAggregationsHasBeenSet = false;
 
   bool m_neverAggregateInFilter{false};
-  bool m_neverAggregateInFilterHasBeenSet = false;
 
   Aws::Vector<CellValueSynonym> m_cellValueSynonyms;
-  bool m_cellValueSynonymsHasBeenSet = false;
 
   bool m_nonAdditive{false};
+  bool m_calculatedFieldNameHasBeenSet = false;
+  bool m_calculatedFieldDescriptionHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
+  bool m_calculatedFieldSynonymsHasBeenSet = false;
+  bool m_isIncludedInTopicHasBeenSet = false;
+  bool m_disableIndexingHasBeenSet = false;
+  bool m_columnDataRoleHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_defaultFormattingHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
+  bool m_comparativeOrderHasBeenSet = false;
+  bool m_semanticTypeHasBeenSet = false;
+  bool m_allowedAggregationsHasBeenSet = false;
+  bool m_notAllowedAggregationsHasBeenSet = false;
+  bool m_neverAggregateInFilterHasBeenSet = false;
+  bool m_cellValueSynonymsHasBeenSet = false;
   bool m_nonAdditiveHasBeenSet = false;
 };
 

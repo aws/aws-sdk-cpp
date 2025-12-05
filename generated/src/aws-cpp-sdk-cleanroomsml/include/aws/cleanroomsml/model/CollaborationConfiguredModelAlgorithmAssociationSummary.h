@@ -203,30 +203,30 @@ class CollaborationConfiguredModelAlgorithmAssociationSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmArn;
-  bool m_configuredModelAlgorithmArnHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_configuredModelAlgorithmArnHasBeenSet = false;
   bool m_creatorAccountIdHasBeenSet = false;
 };
 

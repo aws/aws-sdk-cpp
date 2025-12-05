@@ -94,12 +94,12 @@ class DisassociateMemberFromGroupRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_memberId;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
   bool m_memberIdHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class WorkspaceConfigurationDescription {
   ///@}
  private:
   WorkspaceConfigurationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<LimitsPerLabelSet> m_limitsPerLabelSet;
-  bool m_limitsPerLabelSetHasBeenSet = false;
 
   int m_retentionPeriodInDays{0};
+  bool m_statusHasBeenSet = false;
+  bool m_limitsPerLabelSetHasBeenSet = false;
   bool m_retentionPeriodInDaysHasBeenSet = false;
 };
 

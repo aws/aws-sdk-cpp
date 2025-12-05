@@ -264,45 +264,45 @@ class DescribeFleetMetricResult {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   AggregationType m_aggregationType;
-  bool m_aggregationTypeHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_aggregationField;
-  bool m_aggregationFieldHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_queryVersion;
-  bool m_queryVersionHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   FleetMetricUnit m_unit{FleetMetricUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_metricArn;
-  bool m_metricArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricNameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_aggregationTypeHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_aggregationFieldHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_queryVersionHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_metricArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

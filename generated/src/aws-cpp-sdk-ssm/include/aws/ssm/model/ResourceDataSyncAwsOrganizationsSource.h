@@ -83,9 +83,9 @@ class ResourceDataSyncAwsOrganizationsSource {
   ///@}
  private:
   Aws::String m_organizationSourceType;
-  bool m_organizationSourceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceDataSyncOrganizationalUnit> m_organizationalUnits;
+  bool m_organizationSourceTypeHasBeenSet = false;
   bool m_organizationalUnitsHasBeenSet = false;
 };
 

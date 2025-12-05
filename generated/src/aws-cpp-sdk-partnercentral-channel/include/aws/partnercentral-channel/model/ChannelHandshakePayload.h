@@ -70,9 +70,9 @@ class ChannelHandshakePayload {
   ///@}
  private:
   StartServicePeriodPayload m_startServicePeriodPayload;
-  bool m_startServicePeriodPayloadHasBeenSet = false;
 
   RevokeServicePeriodPayload m_revokeServicePeriodPayload;
+  bool m_startServicePeriodPayloadHasBeenSet = false;
   bool m_revokeServicePeriodPayloadHasBeenSet = false;
 };
 

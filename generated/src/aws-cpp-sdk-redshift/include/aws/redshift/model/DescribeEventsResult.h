@@ -95,12 +95,12 @@ class DescribeEventsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Event> m_events;
-  bool m_eventsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

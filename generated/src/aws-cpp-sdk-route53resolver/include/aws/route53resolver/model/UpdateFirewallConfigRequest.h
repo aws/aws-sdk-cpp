@@ -74,9 +74,9 @@ class UpdateFirewallConfigRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   FirewallFailOpenStatus m_firewallFailOpen{FirewallFailOpenStatus::NOT_SET};
+  bool m_resourceIdHasBeenSet = false;
   bool m_firewallFailOpenHasBeenSet = false;
 };
 

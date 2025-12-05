@@ -61,9 +61,9 @@ class GetCallAnalyticsJobResult {
   ///@}
  private:
   CallAnalyticsJob m_callAnalyticsJob;
-  bool m_callAnalyticsJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_callAnalyticsJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

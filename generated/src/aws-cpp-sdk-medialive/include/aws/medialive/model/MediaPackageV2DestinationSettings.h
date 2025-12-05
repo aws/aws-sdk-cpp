@@ -127,15 +127,15 @@ When you consider all the renditions, follow these guidelines. You
   ///@}
  private:
   Aws::String m_audioGroupId;
-  bool m_audioGroupIdHasBeenSet = false;
 
   Aws::String m_audioRenditionSets;
-  bool m_audioRenditionSetsHasBeenSet = false;
 
   HlsAutoSelect m_hlsAutoSelect{HlsAutoSelect::NOT_SET};
-  bool m_hlsAutoSelectHasBeenSet = false;
 
   HlsDefault m_hlsDefault{HlsDefault::NOT_SET};
+  bool m_audioGroupIdHasBeenSet = false;
+  bool m_audioRenditionSetsHasBeenSet = false;
+  bool m_hlsAutoSelectHasBeenSet = false;
   bool m_hlsDefaultHasBeenSet = false;
 };
 

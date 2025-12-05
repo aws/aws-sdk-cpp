@@ -97,12 +97,12 @@ class AutomatedReasoningPolicyBuildLogEntry {
   ///@}
  private:
   AutomatedReasoningPolicyAnnotation m_annotation;
-  bool m_annotationHasBeenSet = false;
 
   AutomatedReasoningPolicyAnnotationStatus m_status{AutomatedReasoningPolicyAnnotationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyBuildStep> m_buildSteps;
+  bool m_annotationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_buildStepsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetCollaborationAnalysisTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_analysisTemplateArn;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_analysisTemplateArnHasBeenSet = false;
 };
 

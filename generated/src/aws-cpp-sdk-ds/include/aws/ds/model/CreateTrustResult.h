@@ -64,9 +64,9 @@ class CreateTrustResult {
   ///@}
  private:
   Aws::String m_trustId;
-  bool m_trustIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

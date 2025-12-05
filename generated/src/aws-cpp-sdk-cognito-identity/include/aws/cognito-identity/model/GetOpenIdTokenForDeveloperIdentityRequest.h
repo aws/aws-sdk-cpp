@@ -153,18 +153,18 @@ class GetOpenIdTokenForDeveloperIdentityRequest : public CognitoIdentityRequest 
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_logins;
-  bool m_loginsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_principalTags;
-  bool m_principalTagsHasBeenSet = false;
 
   long long m_tokenDuration{0};
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_identityIdHasBeenSet = false;
+  bool m_loginsHasBeenSet = false;
+  bool m_principalTagsHasBeenSet = false;
   bool m_tokenDurationHasBeenSet = false;
 };
 

@@ -144,15 +144,15 @@ class PartnerAppConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_adminUsers;
-  bool m_adminUsersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_arguments;
-  bool m_argumentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_assignedGroupPatterns;
-  bool m_assignedGroupPatternsHasBeenSet = false;
 
   Aws::Vector<RoleGroupAssignment> m_roleGroupAssignments;
+  bool m_adminUsersHasBeenSet = false;
+  bool m_argumentsHasBeenSet = false;
+  bool m_assignedGroupPatternsHasBeenSet = false;
   bool m_roleGroupAssignmentsHasBeenSet = false;
 };
 

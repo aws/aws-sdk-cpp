@@ -67,9 +67,9 @@ class RerankingConfiguration {
   ///@}
  private:
   BedrockRerankingConfiguration m_bedrockRerankingConfiguration;
-  bool m_bedrockRerankingConfigurationHasBeenSet = false;
 
   RerankingConfigurationType m_type{RerankingConfigurationType::NOT_SET};
+  bool m_bedrockRerankingConfigurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

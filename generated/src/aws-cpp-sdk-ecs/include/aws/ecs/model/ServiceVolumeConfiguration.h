@@ -76,9 +76,9 @@ class ServiceVolumeConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ServiceManagedEBSVolumeConfiguration m_managedEBSVolume;
+  bool m_nameHasBeenSet = false;
   bool m_managedEBSVolumeHasBeenSet = false;
 };
 

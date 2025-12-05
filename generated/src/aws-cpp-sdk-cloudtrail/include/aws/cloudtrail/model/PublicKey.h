@@ -107,15 +107,15 @@ class PublicKey {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_value{};
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::DateTime m_validityStartTime{};
-  bool m_validityStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_validityEndTime{};
-  bool m_validityEndTimeHasBeenSet = false;
 
   Aws::String m_fingerprint;
+  bool m_valueHasBeenSet = false;
+  bool m_validityStartTimeHasBeenSet = false;
+  bool m_validityEndTimeHasBeenSet = false;
   bool m_fingerprintHasBeenSet = false;
 };
 

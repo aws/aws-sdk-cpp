@@ -74,9 +74,9 @@ class DescribeAnalysisSchemesResult {
   ///@}
  private:
   Aws::Vector<AnalysisSchemeStatus> m_analysisSchemes;
-  bool m_analysisSchemesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_analysisSchemesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

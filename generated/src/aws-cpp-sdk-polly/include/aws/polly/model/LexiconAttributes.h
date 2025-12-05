@@ -142,21 +142,21 @@ class LexiconAttributes {
   ///@}
  private:
   Aws::String m_alphabet;
-  bool m_alphabetHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_lexiconArn;
-  bool m_lexiconArnHasBeenSet = false;
 
   int m_lexemesCount{0};
-  bool m_lexemesCountHasBeenSet = false;
 
   int m_size{0};
+  bool m_alphabetHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_lexiconArnHasBeenSet = false;
+  bool m_lexemesCountHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

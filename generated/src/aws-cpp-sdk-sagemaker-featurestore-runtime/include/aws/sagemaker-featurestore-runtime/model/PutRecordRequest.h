@@ -127,15 +127,15 @@ class PutRecordRequest : public SageMakerFeatureStoreRuntimeRequest {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::Vector<FeatureValue> m_record;
-  bool m_recordHasBeenSet = false;
 
   Aws::Vector<TargetStore> m_targetStores;
-  bool m_targetStoresHasBeenSet = false;
 
   TtlDuration m_ttlDuration;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordHasBeenSet = false;
+  bool m_targetStoresHasBeenSet = false;
   bool m_ttlDurationHasBeenSet = false;
 };
 

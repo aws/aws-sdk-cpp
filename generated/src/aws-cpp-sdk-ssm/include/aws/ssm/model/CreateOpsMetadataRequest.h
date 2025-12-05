@@ -107,12 +107,12 @@ class CreateOpsMetadataRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, MetadataValue> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

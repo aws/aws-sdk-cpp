@@ -113,15 +113,15 @@ class CreateLocalGatewayRouteTableRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_localGatewayId;
-  bool m_localGatewayIdHasBeenSet = false;
 
   LocalGatewayRouteTableMode m_mode{LocalGatewayRouteTableMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayIdHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

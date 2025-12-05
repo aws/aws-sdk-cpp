@@ -64,9 +64,9 @@ class ModelClientConfig {
   ///@}
  private:
   int m_invocationsTimeoutInSeconds{0};
-  bool m_invocationsTimeoutInSecondsHasBeenSet = false;
 
   int m_invocationsMaxRetries{0};
+  bool m_invocationsTimeoutInSecondsHasBeenSet = false;
   bool m_invocationsMaxRetriesHasBeenSet = false;
 };
 

@@ -90,9 +90,9 @@ class NetworkConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
 };
 

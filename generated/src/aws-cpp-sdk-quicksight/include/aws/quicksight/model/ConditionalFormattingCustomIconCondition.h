@@ -107,15 +107,15 @@ class ConditionalFormattingCustomIconCondition {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   ConditionalFormattingCustomIconOptions m_iconOptions;
-  bool m_iconOptionsHasBeenSet = false;
 
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   ConditionalFormattingIconDisplayConfiguration m_displayConfiguration;
+  bool m_expressionHasBeenSet = false;
+  bool m_iconOptionsHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
   bool m_displayConfigurationHasBeenSet = false;
 };
 

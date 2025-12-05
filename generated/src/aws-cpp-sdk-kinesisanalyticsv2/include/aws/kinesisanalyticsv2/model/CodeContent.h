@@ -91,12 +91,12 @@ class CodeContent {
   ///@}
  private:
   Aws::String m_textContent;
-  bool m_textContentHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_zipFileContent{};
-  bool m_zipFileContentHasBeenSet = false;
 
   S3ContentLocation m_s3ContentLocation;
+  bool m_textContentHasBeenSet = false;
+  bool m_zipFileContentHasBeenSet = false;
   bool m_s3ContentLocationHasBeenSet = false;
 };
 

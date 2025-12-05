@@ -86,12 +86,12 @@ class ListFlowAliasesResult {
   ///@}
  private:
   Aws::Vector<FlowAliasSummary> m_flowAliasSummaries;
-  bool m_flowAliasSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowAliasSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

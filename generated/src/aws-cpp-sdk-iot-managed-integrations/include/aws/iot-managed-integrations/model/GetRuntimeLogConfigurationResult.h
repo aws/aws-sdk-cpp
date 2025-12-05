@@ -78,12 +78,12 @@ class GetRuntimeLogConfigurationResult {
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   RuntimeLogConfigurations m_runtimeLogConfigurations;
-  bool m_runtimeLogConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedThingIdHasBeenSet = false;
+  bool m_runtimeLogConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

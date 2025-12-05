@@ -228,33 +228,33 @@ class Action {
   ///@}
  private:
   Aws::String m_actionType;
-  bool m_actionTypeHasBeenSet = false;
 
   AwsApiCallAction m_awsApiCallAction;
-  bool m_awsApiCallActionHasBeenSet = false;
 
   DnsRequestAction m_dnsRequestAction;
-  bool m_dnsRequestActionHasBeenSet = false;
 
   NetworkConnectionAction m_networkConnectionAction;
-  bool m_networkConnectionActionHasBeenSet = false;
 
   PortProbeAction m_portProbeAction;
-  bool m_portProbeActionHasBeenSet = false;
 
   KubernetesApiCallAction m_kubernetesApiCallAction;
-  bool m_kubernetesApiCallActionHasBeenSet = false;
 
   RdsLoginAttemptAction m_rdsLoginAttemptAction;
-  bool m_rdsLoginAttemptActionHasBeenSet = false;
 
   KubernetesPermissionCheckedDetails m_kubernetesPermissionCheckedDetails;
-  bool m_kubernetesPermissionCheckedDetailsHasBeenSet = false;
 
   KubernetesRoleBindingDetails m_kubernetesRoleBindingDetails;
-  bool m_kubernetesRoleBindingDetailsHasBeenSet = false;
 
   KubernetesRoleDetails m_kubernetesRoleDetails;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_awsApiCallActionHasBeenSet = false;
+  bool m_dnsRequestActionHasBeenSet = false;
+  bool m_networkConnectionActionHasBeenSet = false;
+  bool m_portProbeActionHasBeenSet = false;
+  bool m_kubernetesApiCallActionHasBeenSet = false;
+  bool m_rdsLoginAttemptActionHasBeenSet = false;
+  bool m_kubernetesPermissionCheckedDetailsHasBeenSet = false;
+  bool m_kubernetesRoleBindingDetailsHasBeenSet = false;
   bool m_kubernetesRoleDetailsHasBeenSet = false;
 };
 

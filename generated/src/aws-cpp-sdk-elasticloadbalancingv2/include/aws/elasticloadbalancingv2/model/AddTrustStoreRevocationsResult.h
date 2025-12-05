@@ -68,9 +68,9 @@ class AddTrustStoreRevocationsResult {
   ///@}
  private:
   Aws::Vector<TrustStoreRevocation> m_trustStoreRevocations;
-  bool m_trustStoreRevocationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trustStoreRevocationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

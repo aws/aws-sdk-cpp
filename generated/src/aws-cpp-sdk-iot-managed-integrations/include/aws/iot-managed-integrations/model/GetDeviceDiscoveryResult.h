@@ -179,30 +179,30 @@ class GetDeviceDiscoveryResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
-  bool m_discoveryTypeHasBeenSet = false;
 
   DeviceDiscoveryStatus m_status{DeviceDiscoveryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::String m_controllerId;
-  bool m_controllerIdHasBeenSet = false;
 
   Aws::String m_accountAssociationId;
-  bool m_accountAssociationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedAt{};
-  bool m_finishedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_discoveryTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_controllerIdHasBeenSet = false;
+  bool m_accountAssociationIdHasBeenSet = false;
+  bool m_finishedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

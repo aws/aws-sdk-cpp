@@ -65,9 +65,9 @@ class DeleteDataflowEndpointGroupResult {
   ///@}
  private:
   Aws::String m_dataflowEndpointGroupId;
-  bool m_dataflowEndpointGroupIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataflowEndpointGroupIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class AlarmStateInformation {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ExternalAlarmState m_state{ExternalAlarmState::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

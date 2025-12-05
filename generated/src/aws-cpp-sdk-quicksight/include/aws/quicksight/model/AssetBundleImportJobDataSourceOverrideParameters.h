@@ -140,21 +140,21 @@ class AssetBundleImportJobDataSourceOverrideParameters {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataSourceParameters m_dataSourceParameters;
-  bool m_dataSourceParametersHasBeenSet = false;
 
   VpcConnectionProperties m_vpcConnectionProperties;
-  bool m_vpcConnectionPropertiesHasBeenSet = false;
 
   SslProperties m_sslProperties;
-  bool m_sslPropertiesHasBeenSet = false;
 
   AssetBundleImportJobDataSourceCredentials m_credentials;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dataSourceParametersHasBeenSet = false;
+  bool m_vpcConnectionPropertiesHasBeenSet = false;
+  bool m_sslPropertiesHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
 };
 

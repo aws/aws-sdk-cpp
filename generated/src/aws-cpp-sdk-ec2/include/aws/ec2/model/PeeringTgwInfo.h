@@ -107,15 +107,15 @@ class PeeringTgwInfo {
   ///@}
  private:
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeSpeakerResult {
   ///@}
  private:
   Speaker m_speaker;
-  bool m_speakerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_speakerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

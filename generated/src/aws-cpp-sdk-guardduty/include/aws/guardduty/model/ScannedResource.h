@@ -122,18 +122,18 @@ class ScannedResource {
   ///@}
  private:
   Aws::String m_scannedResourceArn;
-  bool m_scannedResourceArnHasBeenSet = false;
 
   MalwareProtectionResourceType m_scannedResourceType{MalwareProtectionResourceType::NOT_SET};
-  bool m_scannedResourceTypeHasBeenSet = false;
 
   MalwareProtectionScanStatus m_scannedResourceStatus{MalwareProtectionScanStatus::NOT_SET};
-  bool m_scannedResourceStatusHasBeenSet = false;
 
   ScanStatusReason m_scanStatusReason{ScanStatusReason::NOT_SET};
-  bool m_scanStatusReasonHasBeenSet = false;
 
   ScannedResourceDetails m_resourceDetails;
+  bool m_scannedResourceArnHasBeenSet = false;
+  bool m_scannedResourceTypeHasBeenSet = false;
+  bool m_scannedResourceStatusHasBeenSet = false;
+  bool m_scanStatusReasonHasBeenSet = false;
   bool m_resourceDetailsHasBeenSet = false;
 };
 

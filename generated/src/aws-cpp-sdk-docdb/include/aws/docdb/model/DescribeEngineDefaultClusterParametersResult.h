@@ -59,9 +59,9 @@ class DescribeEngineDefaultClusterParametersResult {
   ///@}
  private:
   EngineDefaults m_engineDefaults;
-  bool m_engineDefaultsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_engineDefaultsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

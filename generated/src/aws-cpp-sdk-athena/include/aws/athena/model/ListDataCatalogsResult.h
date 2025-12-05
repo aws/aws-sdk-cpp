@@ -86,12 +86,12 @@ class ListDataCatalogsResult {
   ///@}
  private:
   Aws::Vector<DataCatalogSummary> m_dataCatalogsSummary;
-  bool m_dataCatalogsSummaryHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataCatalogsSummaryHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

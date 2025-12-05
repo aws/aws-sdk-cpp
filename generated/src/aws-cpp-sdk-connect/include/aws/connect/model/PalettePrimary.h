@@ -87,12 +87,12 @@ class PalettePrimary {
   ///@}
  private:
   Aws::String m_default;
-  bool m_defaultHasBeenSet = false;
 
   Aws::String m_active;
-  bool m_activeHasBeenSet = false;
 
   Aws::String m_contrastText;
+  bool m_defaultHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
   bool m_contrastTextHasBeenSet = false;
 };
 

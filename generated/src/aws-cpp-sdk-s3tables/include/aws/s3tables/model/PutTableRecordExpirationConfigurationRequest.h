@@ -73,9 +73,9 @@ class PutTableRecordExpirationConfigurationRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   TableRecordExpirationConfigurationValue m_value;
+  bool m_tableArnHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

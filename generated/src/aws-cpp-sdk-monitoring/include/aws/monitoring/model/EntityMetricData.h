@@ -80,9 +80,9 @@ class EntityMetricData {
   ///@}
  private:
   Entity m_entity;
-  bool m_entityHasBeenSet = false;
 
   Aws::Vector<MetricDatum> m_metricData;
+  bool m_entityHasBeenSet = false;
   bool m_metricDataHasBeenSet = false;
 };
 

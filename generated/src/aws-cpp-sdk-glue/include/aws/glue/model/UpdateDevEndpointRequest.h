@@ -210,27 +210,27 @@ class UpdateDevEndpointRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addPublicKeys;
-  bool m_addPublicKeysHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deletePublicKeys;
-  bool m_deletePublicKeysHasBeenSet = false;
 
   DevEndpointCustomLibraries m_customLibraries;
-  bool m_customLibrariesHasBeenSet = false;
 
   bool m_updateEtlLibraries{false};
-  bool m_updateEtlLibrariesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deleteArguments;
-  bool m_deleteArgumentsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_addArguments;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_addPublicKeysHasBeenSet = false;
+  bool m_deletePublicKeysHasBeenSet = false;
+  bool m_customLibrariesHasBeenSet = false;
+  bool m_updateEtlLibrariesHasBeenSet = false;
+  bool m_deleteArgumentsHasBeenSet = false;
   bool m_addArgumentsHasBeenSet = false;
 };
 

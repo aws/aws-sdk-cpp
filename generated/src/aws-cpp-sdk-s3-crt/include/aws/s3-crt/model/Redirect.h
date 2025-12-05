@@ -141,18 +141,18 @@ class Redirect {
   ///@}
  private:
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::String m_httpRedirectCode;
-  bool m_httpRedirectCodeHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_replaceKeyPrefixWith;
-  bool m_replaceKeyPrefixWithHasBeenSet = false;
 
   Aws::String m_replaceKeyWith;
+  bool m_hostNameHasBeenSet = false;
+  bool m_httpRedirectCodeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_replaceKeyPrefixWithHasBeenSet = false;
   bool m_replaceKeyWithHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ErrorInfo {
   ///@}
  private:
   Aws::String m_cause;
-  bool m_causeHasBeenSet = false;
 
   Aws::String m_details;
+  bool m_causeHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

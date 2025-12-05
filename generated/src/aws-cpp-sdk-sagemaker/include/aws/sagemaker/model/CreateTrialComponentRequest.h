@@ -249,33 +249,33 @@ class CreateTrialComponentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trialComponentName;
-  bool m_trialComponentNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   TrialComponentStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, TrialComponentParameterValue> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Map<Aws::String, TrialComponentArtifact> m_inputArtifacts;
-  bool m_inputArtifactsHasBeenSet = false;
 
   Aws::Map<Aws::String, TrialComponentArtifact> m_outputArtifacts;
-  bool m_outputArtifactsHasBeenSet = false;
 
   MetadataProperties m_metadataProperties;
-  bool m_metadataPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trialComponentNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_inputArtifactsHasBeenSet = false;
+  bool m_outputArtifactsHasBeenSet = false;
+  bool m_metadataPropertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

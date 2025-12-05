@@ -165,24 +165,24 @@ class CollaborationChangeRequestSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   ChangeRequestStatus m_status{ChangeRequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_isAutoApproved{false};
-  bool m_isAutoApprovedHasBeenSet = false;
 
   Aws::Vector<Change> m_changes;
+  bool m_idHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_isAutoApprovedHasBeenSet = false;
   bool m_changesHasBeenSet = false;
 };
 

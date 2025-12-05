@@ -79,9 +79,9 @@ class VolumeStatusDetails {
   ///@}
  private:
   VolumeStatusName m_name{VolumeStatusName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

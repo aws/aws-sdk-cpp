@@ -116,15 +116,15 @@ class Group {
   ///@}
  private:
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Vector<SourceSegment> m_sourceSegments;
-  bool m_sourceSegmentsHasBeenSet = false;
 
   IncludeOptions m_sourceType{IncludeOptions::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   IncludeOptions m_type{IncludeOptions::NOT_SET};
+  bool m_dimensionsHasBeenSet = false;
+  bool m_sourceSegmentsHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

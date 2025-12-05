@@ -60,9 +60,9 @@ class CreateKnowledgeBaseResult {
   ///@}
  private:
   KnowledgeBase m_knowledgeBase;
-  bool m_knowledgeBaseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_knowledgeBaseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

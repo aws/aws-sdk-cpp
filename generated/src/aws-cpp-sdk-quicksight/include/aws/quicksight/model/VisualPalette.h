@@ -77,9 +77,9 @@ class VisualPalette {
   ///@}
  private:
   Aws::String m_chartColor;
-  bool m_chartColorHasBeenSet = false;
 
   Aws::Vector<DataPathColor> m_colorMap;
+  bool m_chartColorHasBeenSet = false;
   bool m_colorMapHasBeenSet = false;
 };
 

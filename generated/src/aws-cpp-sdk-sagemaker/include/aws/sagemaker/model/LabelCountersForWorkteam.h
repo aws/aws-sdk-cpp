@@ -79,12 +79,12 @@ class LabelCountersForWorkteam {
   ///@}
  private:
   int m_humanLabeled{0};
-  bool m_humanLabeledHasBeenSet = false;
 
   int m_pendingHuman{0};
-  bool m_pendingHumanHasBeenSet = false;
 
   int m_total{0};
+  bool m_humanLabeledHasBeenSet = false;
+  bool m_pendingHumanHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

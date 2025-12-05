@@ -131,18 +131,18 @@ class StartFlowExecutionRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_flowAliasIdentifier;
-  bool m_flowAliasIdentifierHasBeenSet = false;
 
   Aws::String m_flowExecutionName;
-  bool m_flowExecutionNameHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::Vector<FlowInput> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   ModelPerformanceConfiguration m_modelPerformanceConfiguration;
+  bool m_flowAliasIdentifierHasBeenSet = false;
+  bool m_flowExecutionNameHasBeenSet = false;
+  bool m_flowIdentifierHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
   bool m_modelPerformanceConfigurationHasBeenSet = false;
 };
 

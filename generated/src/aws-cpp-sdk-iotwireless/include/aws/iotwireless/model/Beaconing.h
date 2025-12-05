@@ -72,9 +72,9 @@ class Beaconing {
   ///@}
  private:
   int m_dataRate{0};
-  bool m_dataRateHasBeenSet = false;
 
   Aws::Vector<int> m_frequencies;
+  bool m_dataRateHasBeenSet = false;
   bool m_frequenciesHasBeenSet = false;
 };
 

@@ -99,15 +99,15 @@ class InstanceEventWindowTimeRange {
   ///@}
  private:
   WeekDay m_startWeekDay{WeekDay::NOT_SET};
-  bool m_startWeekDayHasBeenSet = false;
 
   int m_startHour{0};
-  bool m_startHourHasBeenSet = false;
 
   WeekDay m_endWeekDay{WeekDay::NOT_SET};
-  bool m_endWeekDayHasBeenSet = false;
 
   int m_endHour{0};
+  bool m_startWeekDayHasBeenSet = false;
+  bool m_startHourHasBeenSet = false;
+  bool m_endWeekDayHasBeenSet = false;
   bool m_endHourHasBeenSet = false;
 };
 

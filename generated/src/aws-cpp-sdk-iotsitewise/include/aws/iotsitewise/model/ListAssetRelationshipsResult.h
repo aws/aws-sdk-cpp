@@ -85,12 +85,12 @@ class ListAssetRelationshipsResult {
   ///@}
  private:
   Aws::Vector<AssetRelationshipSummary> m_assetRelationshipSummaries;
-  bool m_assetRelationshipSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetRelationshipSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

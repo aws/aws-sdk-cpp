@@ -75,9 +75,9 @@ class CapacityUnitsConfiguration {
   ///@}
  private:
   int m_storageCapacityUnits{0};
-  bool m_storageCapacityUnitsHasBeenSet = false;
 
   int m_queryCapacityUnits{0};
+  bool m_storageCapacityUnitsHasBeenSet = false;
   bool m_queryCapacityUnitsHasBeenSet = false;
 };
 

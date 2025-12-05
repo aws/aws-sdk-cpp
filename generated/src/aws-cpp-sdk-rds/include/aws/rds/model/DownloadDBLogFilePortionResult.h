@@ -100,15 +100,15 @@ class DownloadDBLogFilePortionResult {
   ///@}
  private:
   Aws::String m_logFileData;
-  bool m_logFileDataHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_additionalDataPending{false};
-  bool m_additionalDataPendingHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_logFileDataHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_additionalDataPendingHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

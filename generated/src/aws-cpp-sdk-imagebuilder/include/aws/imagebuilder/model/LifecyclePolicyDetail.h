@@ -90,12 +90,12 @@ class LifecyclePolicyDetail {
   ///@}
  private:
   LifecyclePolicyDetailAction m_action;
-  bool m_actionHasBeenSet = false;
 
   LifecyclePolicyDetailFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   LifecyclePolicyDetailExclusionRules m_exclusionRules;
+  bool m_actionHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_exclusionRulesHasBeenSet = false;
 };
 

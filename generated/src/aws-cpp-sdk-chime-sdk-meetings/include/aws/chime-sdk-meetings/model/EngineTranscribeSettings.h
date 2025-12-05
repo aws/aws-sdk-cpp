@@ -397,51 +397,51 @@ class EngineTranscribeSettings {
   ///@}
  private:
   TranscribeLanguageCode m_languageCode{TranscribeLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   TranscribeVocabularyFilterMethod m_vocabularyFilterMethod{TranscribeVocabularyFilterMethod::NOT_SET};
-  bool m_vocabularyFilterMethodHasBeenSet = false;
 
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   TranscribeRegion m_region{TranscribeRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   bool m_enablePartialResultsStabilization{false};
-  bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
   TranscribePartialResultsStability m_partialResultsStability{TranscribePartialResultsStability::NOT_SET};
-  bool m_partialResultsStabilityHasBeenSet = false;
 
   TranscribeContentIdentificationType m_contentIdentificationType{TranscribeContentIdentificationType::NOT_SET};
-  bool m_contentIdentificationTypeHasBeenSet = false;
 
   TranscribeContentRedactionType m_contentRedactionType{TranscribeContentRedactionType::NOT_SET};
-  bool m_contentRedactionTypeHasBeenSet = false;
 
   Aws::String m_piiEntityTypes;
-  bool m_piiEntityTypesHasBeenSet = false;
 
   Aws::String m_languageModelName;
-  bool m_languageModelNameHasBeenSet = false;
 
   bool m_identifyLanguage{false};
-  bool m_identifyLanguageHasBeenSet = false;
 
   Aws::String m_languageOptions;
-  bool m_languageOptionsHasBeenSet = false;
 
   TranscribeLanguageCode m_preferredLanguage{TranscribeLanguageCode::NOT_SET};
-  bool m_preferredLanguageHasBeenSet = false;
 
   Aws::String m_vocabularyNames;
-  bool m_vocabularyNamesHasBeenSet = false;
 
   Aws::String m_vocabularyFilterNames;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_vocabularyFilterMethodHasBeenSet = false;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_enablePartialResultsStabilizationHasBeenSet = false;
+  bool m_partialResultsStabilityHasBeenSet = false;
+  bool m_contentIdentificationTypeHasBeenSet = false;
+  bool m_contentRedactionTypeHasBeenSet = false;
+  bool m_piiEntityTypesHasBeenSet = false;
+  bool m_languageModelNameHasBeenSet = false;
+  bool m_identifyLanguageHasBeenSet = false;
+  bool m_languageOptionsHasBeenSet = false;
+  bool m_preferredLanguageHasBeenSet = false;
+  bool m_vocabularyNamesHasBeenSet = false;
   bool m_vocabularyFilterNamesHasBeenSet = false;
 };
 

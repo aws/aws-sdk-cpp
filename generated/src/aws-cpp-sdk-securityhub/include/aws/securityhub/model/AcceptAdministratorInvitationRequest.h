@@ -67,9 +67,9 @@ class AcceptAdministratorInvitationRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_administratorId;
-  bool m_administratorIdHasBeenSet = false;
 
   Aws::String m_invitationId;
+  bool m_administratorIdHasBeenSet = false;
   bool m_invitationIdHasBeenSet = false;
 };
 

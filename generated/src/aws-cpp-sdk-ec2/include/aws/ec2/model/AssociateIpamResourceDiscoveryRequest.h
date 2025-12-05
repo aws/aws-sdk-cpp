@@ -133,18 +133,18 @@ class AssociateIpamResourceDiscoveryRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamId;
-  bool m_ipamIdHasBeenSet = false;
 
   Aws::String m_ipamResourceDiscoveryId;
-  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamIdHasBeenSet = false;
+  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

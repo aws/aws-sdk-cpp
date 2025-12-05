@@ -87,12 +87,12 @@ class CustomLogSourceAttributes {
   ///@}
  private:
   Aws::String m_crawlerArn;
-  bool m_crawlerArnHasBeenSet = false;
 
   Aws::String m_databaseArn;
-  bool m_databaseArnHasBeenSet = false;
 
   Aws::String m_tableArn;
+  bool m_crawlerArnHasBeenSet = false;
+  bool m_databaseArnHasBeenSet = false;
   bool m_tableArnHasBeenSet = false;
 };
 

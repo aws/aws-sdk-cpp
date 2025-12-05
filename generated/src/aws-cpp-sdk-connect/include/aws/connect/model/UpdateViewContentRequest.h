@@ -108,15 +108,15 @@ class UpdateViewContentRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_viewId;
-  bool m_viewIdHasBeenSet = false;
 
   ViewStatus m_status{ViewStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ViewInputContent m_content;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_viewIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

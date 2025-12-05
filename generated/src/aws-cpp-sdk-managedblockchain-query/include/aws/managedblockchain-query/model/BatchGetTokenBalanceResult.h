@@ -94,12 +94,12 @@ class BatchGetTokenBalanceResult {
   ///@}
  private:
   Aws::Vector<BatchGetTokenBalanceOutputItem> m_tokenBalances;
-  bool m_tokenBalancesHasBeenSet = false;
 
   Aws::Vector<BatchGetTokenBalanceErrorItem> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenBalancesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

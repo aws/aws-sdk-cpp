@@ -60,9 +60,9 @@ class StopBgpFailoverTestResult {
   ///@}
  private:
   VirtualInterfaceTestHistory m_virtualInterfaceTest;
-  bool m_virtualInterfaceTestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualInterfaceTestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

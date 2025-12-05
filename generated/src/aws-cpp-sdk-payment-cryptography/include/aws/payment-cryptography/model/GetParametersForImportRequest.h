@@ -72,9 +72,9 @@ class GetParametersForImportRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   KeyMaterialType m_keyMaterialType{KeyMaterialType::NOT_SET};
-  bool m_keyMaterialTypeHasBeenSet = false;
 
   KeyAlgorithm m_wrappingKeyAlgorithm{KeyAlgorithm::NOT_SET};
+  bool m_keyMaterialTypeHasBeenSet = false;
   bool m_wrappingKeyAlgorithmHasBeenSet = false;
 };
 

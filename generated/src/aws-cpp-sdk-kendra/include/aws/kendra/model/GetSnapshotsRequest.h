@@ -135,18 +135,18 @@ class GetSnapshotsRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Interval m_interval{Interval::NOT_SET};
-  bool m_intervalHasBeenSet = false;
 
   MetricType m_metricType{MetricType::NOT_SET};
-  bool m_metricTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_indexIdHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_metricTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -194,30 +194,30 @@ class ExternalModel {
   ///@}
  private:
   Aws::String m_modelEndpoint;
-  bool m_modelEndpointHasBeenSet = false;
 
   ModelSource m_modelSource{ModelSource::NOT_SET};
-  bool m_modelSourceHasBeenSet = false;
 
   Aws::String m_invokeModelEndpointRoleArn;
-  bool m_invokeModelEndpointRoleArnHasBeenSet = false;
 
   ModelInputConfiguration m_inputConfiguration;
-  bool m_inputConfigurationHasBeenSet = false;
 
   ModelOutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   ModelEndpointStatus m_modelEndpointStatus{ModelEndpointStatus::NOT_SET};
-  bool m_modelEndpointStatusHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_modelEndpointHasBeenSet = false;
+  bool m_modelSourceHasBeenSet = false;
+  bool m_invokeModelEndpointRoleArnHasBeenSet = false;
+  bool m_inputConfigurationHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
+  bool m_modelEndpointStatusHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

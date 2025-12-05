@@ -155,24 +155,24 @@ class GetMergeConflictsResult {
   ///@}
  private:
   bool m_mergeable{false};
-  bool m_mergeableHasBeenSet = false;
 
   Aws::String m_destinationCommitId;
-  bool m_destinationCommitIdHasBeenSet = false;
 
   Aws::String m_sourceCommitId;
-  bool m_sourceCommitIdHasBeenSet = false;
 
   Aws::String m_baseCommitId;
-  bool m_baseCommitIdHasBeenSet = false;
 
   Aws::Vector<ConflictMetadata> m_conflictMetadataList;
-  bool m_conflictMetadataListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mergeableHasBeenSet = false;
+  bool m_destinationCommitIdHasBeenSet = false;
+  bool m_sourceCommitIdHasBeenSet = false;
+  bool m_baseCommitIdHasBeenSet = false;
+  bool m_conflictMetadataListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

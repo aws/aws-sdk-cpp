@@ -113,15 +113,15 @@ class GetEBSVolumeRecommendationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VolumeRecommendation> m_volumeRecommendations;
-  bool m_volumeRecommendationsHasBeenSet = false;
 
   Aws::Vector<GetRecommendationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_volumeRecommendationsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

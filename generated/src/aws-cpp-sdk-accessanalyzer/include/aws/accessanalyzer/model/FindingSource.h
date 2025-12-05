@@ -70,9 +70,9 @@ class FindingSource {
   ///@}
  private:
   FindingSourceType m_type{FindingSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FindingSourceDetail m_detail;
+  bool m_typeHasBeenSet = false;
   bool m_detailHasBeenSet = false;
 };
 

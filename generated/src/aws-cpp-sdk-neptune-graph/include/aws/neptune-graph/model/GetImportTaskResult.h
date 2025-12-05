@@ -254,39 +254,39 @@ class GetImportTaskResult {
   ///@}
  private:
   Aws::String m_graphId;
-  bool m_graphIdHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   ParquetType m_parquetType{ParquetType::NOT_SET};
-  bool m_parquetTypeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ImportTaskStatus m_status{ImportTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ImportOptions m_importOptions;
-  bool m_importOptionsHasBeenSet = false;
 
   ImportTaskDetails m_importTaskDetails;
-  bool m_importTaskDetailsHasBeenSet = false;
 
   int m_attemptNumber{0};
-  bool m_attemptNumberHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_graphIdHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_parquetTypeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_importOptionsHasBeenSet = false;
+  bool m_importTaskDetailsHasBeenSet = false;
+  bool m_attemptNumberHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

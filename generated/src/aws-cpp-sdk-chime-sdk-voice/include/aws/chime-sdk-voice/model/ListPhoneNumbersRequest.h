@@ -138,21 +138,21 @@ class ListPhoneNumbersRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   PhoneNumberProductType m_productType{PhoneNumberProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   PhoneNumberAssociationName m_filterName{PhoneNumberAssociationName::NOT_SET};
-  bool m_filterNameHasBeenSet = false;
 
   Aws::String m_filterValue;
-  bool m_filterValueHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_statusHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
+  bool m_filterNameHasBeenSet = false;
+  bool m_filterValueHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

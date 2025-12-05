@@ -73,9 +73,9 @@ class PollForThirdPartyJobsResult {
   ///@}
  private:
   Aws::Vector<ThirdPartyJob> m_jobs;
-  bool m_jobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -267,42 +267,42 @@ class UpdateWorkflowResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_adsApplicationConfigurationId;
-  bool m_adsApplicationConfigurationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, StepInput> m_workflowInputs;
-  bool m_workflowInputsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stepTargets;
-  bool m_stepTargetsHasBeenSet = false;
 
   MigrationWorkflowStatusEnum m_status{MigrationWorkflowStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_adsApplicationConfigurationIdHasBeenSet = false;
+  bool m_workflowInputsHasBeenSet = false;
+  bool m_stepTargetsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class GetChannelMembershipPreferencesRequest : public ChimeSDKMessagingRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_memberArn;
-  bool m_memberArnHasBeenSet = false;
 
   Aws::String m_chimeBearer;
+  bool m_channelArnHasBeenSet = false;
+  bool m_memberArnHasBeenSet = false;
   bool m_chimeBearerHasBeenSet = false;
 };
 

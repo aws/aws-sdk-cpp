@@ -75,9 +75,9 @@ class AppflowIntegration {
   ///@}
  private:
   FlowDefinition m_flowDefinition;
-  bool m_flowDefinitionHasBeenSet = false;
 
   Aws::Vector<Batch> m_batches;
+  bool m_flowDefinitionHasBeenSet = false;
   bool m_batchesHasBeenSet = false;
 };
 

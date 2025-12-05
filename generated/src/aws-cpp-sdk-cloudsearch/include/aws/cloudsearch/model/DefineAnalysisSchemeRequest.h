@@ -71,9 +71,9 @@ class DefineAnalysisSchemeRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   AnalysisScheme m_analysisScheme;
+  bool m_domainNameHasBeenSet = false;
   bool m_analysisSchemeHasBeenSet = false;
 };
 

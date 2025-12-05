@@ -179,24 +179,24 @@ class CreateRunCacheRequest : public OmicsRequest {
   ///@}
  private:
   CacheBehavior m_cacheBehavior{CacheBehavior::NOT_SET};
-  bool m_cacheBehaviorHasBeenSet = false;
 
   Aws::String m_cacheS3Location;
-  bool m_cacheS3LocationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_cacheBucketOwnerId;
+  bool m_cacheBehaviorHasBeenSet = false;
+  bool m_cacheS3LocationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_cacheBucketOwnerIdHasBeenSet = false;
 };
 

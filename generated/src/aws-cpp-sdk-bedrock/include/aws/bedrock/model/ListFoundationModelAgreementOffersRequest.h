@@ -69,9 +69,9 @@ class ListFoundationModelAgreementOffersRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   OfferType m_offerType{OfferType::NOT_SET};
+  bool m_modelIdHasBeenSet = false;
   bool m_offerTypeHasBeenSet = false;
 };
 

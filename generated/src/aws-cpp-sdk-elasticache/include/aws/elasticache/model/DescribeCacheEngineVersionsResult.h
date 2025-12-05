@@ -92,12 +92,12 @@ class DescribeCacheEngineVersionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<CacheEngineVersion> m_cacheEngineVersions;
-  bool m_cacheEngineVersionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_cacheEngineVersionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

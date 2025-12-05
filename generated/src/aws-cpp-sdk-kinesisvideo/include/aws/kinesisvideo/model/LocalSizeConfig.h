@@ -70,9 +70,9 @@ class LocalSizeConfig {
   ///@}
  private:
   int m_maxLocalMediaSizeInMB{0};
-  bool m_maxLocalMediaSizeInMBHasBeenSet = false;
 
   StrategyOnFullSize m_strategyOnFullSize{StrategyOnFullSize::NOT_SET};
+  bool m_maxLocalMediaSizeInMBHasBeenSet = false;
   bool m_strategyOnFullSizeHasBeenSet = false;
 };
 

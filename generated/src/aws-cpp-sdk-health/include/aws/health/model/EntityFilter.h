@@ -186,21 +186,21 @@ class EntityFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eventArns;
-  bool m_eventArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityArns;
-  bool m_entityArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entityValues;
-  bool m_entityValuesHasBeenSet = false;
 
   Aws::Vector<DateTimeRange> m_lastUpdatedTimes;
-  bool m_lastUpdatedTimesHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<EntityStatusCode> m_statusCodes;
+  bool m_eventArnsHasBeenSet = false;
+  bool m_entityArnsHasBeenSet = false;
+  bool m_entityValuesHasBeenSet = false;
+  bool m_lastUpdatedTimesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_statusCodesHasBeenSet = false;
 };
 

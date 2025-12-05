@@ -106,15 +106,15 @@ class SymbolicLink {
   ///@}
  private:
   Aws::String m_blobId;
-  bool m_blobIdHasBeenSet = false;
 
   Aws::String m_absolutePath;
-  bool m_absolutePathHasBeenSet = false;
 
   Aws::String m_relativePath;
-  bool m_relativePathHasBeenSet = false;
 
   FileModeTypeEnum m_fileMode{FileModeTypeEnum::NOT_SET};
+  bool m_blobIdHasBeenSet = false;
+  bool m_absolutePathHasBeenSet = false;
+  bool m_relativePathHasBeenSet = false;
   bool m_fileModeHasBeenSet = false;
 };
 

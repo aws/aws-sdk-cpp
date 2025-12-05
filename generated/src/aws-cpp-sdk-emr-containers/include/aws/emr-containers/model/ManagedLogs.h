@@ -68,9 +68,9 @@ class ManagedLogs {
   ///@}
  private:
   AllowAWSToRetainLogs m_allowAWSToRetainLogs{AllowAWSToRetainLogs::NOT_SET};
-  bool m_allowAWSToRetainLogsHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
+  bool m_allowAWSToRetainLogsHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
 };
 

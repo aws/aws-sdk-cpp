@@ -119,15 +119,15 @@ class CreateStackRefactorRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_enableStackCreation{false};
-  bool m_enableStackCreationHasBeenSet = false;
 
   Aws::Vector<ResourceMapping> m_resourceMappings;
-  bool m_resourceMappingsHasBeenSet = false;
 
   Aws::Vector<StackDefinition> m_stackDefinitions;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enableStackCreationHasBeenSet = false;
+  bool m_resourceMappingsHasBeenSet = false;
   bool m_stackDefinitionsHasBeenSet = false;
 };
 

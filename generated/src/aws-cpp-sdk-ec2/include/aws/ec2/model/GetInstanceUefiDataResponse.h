@@ -77,12 +77,12 @@ class GetInstanceUefiDataResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_uefiData;
-  bool m_uefiDataHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_uefiDataHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

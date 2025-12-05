@@ -94,15 +94,15 @@ class CreateChannelResult {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

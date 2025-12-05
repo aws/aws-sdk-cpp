@@ -401,60 +401,60 @@ class KafkaStreamingSourceOptions {
   ///@}
  private:
   Aws::String m_bootstrapServers;
-  bool m_bootstrapServersHasBeenSet = false;
 
   Aws::String m_securityProtocol;
-  bool m_securityProtocolHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   Aws::String m_assign;
-  bool m_assignHasBeenSet = false;
 
   Aws::String m_subscribePattern;
-  bool m_subscribePatternHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   Aws::String m_startingOffsets;
-  bool m_startingOffsetsHasBeenSet = false;
 
   Aws::String m_endingOffsets;
-  bool m_endingOffsetsHasBeenSet = false;
 
   long long m_pollTimeoutMs{0};
-  bool m_pollTimeoutMsHasBeenSet = false;
 
   int m_numRetries{0};
-  bool m_numRetriesHasBeenSet = false;
 
   long long m_retryIntervalMs{0};
-  bool m_retryIntervalMsHasBeenSet = false;
 
   long long m_maxOffsetsPerTrigger{0};
-  bool m_maxOffsetsPerTriggerHasBeenSet = false;
 
   int m_minPartitions{0};
-  bool m_minPartitionsHasBeenSet = false;
 
   bool m_includeHeaders{false};
-  bool m_includeHeadersHasBeenSet = false;
 
   Aws::String m_addRecordTimestamp;
-  bool m_addRecordTimestampHasBeenSet = false;
 
   Aws::String m_emitConsumerLagMetrics;
-  bool m_emitConsumerLagMetricsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startingTimestamp{};
+  bool m_bootstrapServersHasBeenSet = false;
+  bool m_securityProtocolHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_topicNameHasBeenSet = false;
+  bool m_assignHasBeenSet = false;
+  bool m_subscribePatternHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_startingOffsetsHasBeenSet = false;
+  bool m_endingOffsetsHasBeenSet = false;
+  bool m_pollTimeoutMsHasBeenSet = false;
+  bool m_numRetriesHasBeenSet = false;
+  bool m_retryIntervalMsHasBeenSet = false;
+  bool m_maxOffsetsPerTriggerHasBeenSet = false;
+  bool m_minPartitionsHasBeenSet = false;
+  bool m_includeHeadersHasBeenSet = false;
+  bool m_addRecordTimestampHasBeenSet = false;
+  bool m_emitConsumerLagMetricsHasBeenSet = false;
   bool m_startingTimestampHasBeenSet = false;
 };
 

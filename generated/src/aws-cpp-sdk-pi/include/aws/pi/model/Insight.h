@@ -269,36 +269,36 @@ class Insight {
   ///@}
  private:
   Aws::String m_insightId;
-  bool m_insightIdHasBeenSet = false;
 
   Aws::String m_insightType;
-  bool m_insightTypeHasBeenSet = false;
 
   ContextType m_context{ContextType::NOT_SET};
-  bool m_contextHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Aws::Vector<Insight> m_supportingInsights;
-  bool m_supportingInsightsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Recommendation> m_recommendations;
-  bool m_recommendationsHasBeenSet = false;
 
   Aws::Vector<Data> m_insightData;
-  bool m_insightDataHasBeenSet = false;
 
   Aws::Vector<Data> m_baselineData;
+  bool m_insightIdHasBeenSet = false;
+  bool m_insightTypeHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_supportingInsightsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_recommendationsHasBeenSet = false;
+  bool m_insightDataHasBeenSet = false;
   bool m_baselineDataHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class PercentOrAbsoluteLong {
   ///@}
  private:
   Aws::String m_percent;
-  bool m_percentHasBeenSet = false;
 
   long long m_absolute{0};
+  bool m_percentHasBeenSet = false;
   bool m_absoluteHasBeenSet = false;
 };
 

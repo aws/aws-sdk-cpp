@@ -67,9 +67,9 @@ class DatasetStatus {
   ///@}
  private:
   DatasetState m_state{DatasetState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ErrorDetails m_error;
+  bool m_stateHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

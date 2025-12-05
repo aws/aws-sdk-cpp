@@ -74,9 +74,9 @@ class GetSendStatisticsResult {
   ///@}
  private:
   Aws::Vector<SendDataPoint> m_sendDataPoints;
-  bool m_sendDataPointsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_sendDataPointsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

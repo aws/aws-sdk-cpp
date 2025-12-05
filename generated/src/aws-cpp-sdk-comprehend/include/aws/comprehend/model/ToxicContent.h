@@ -69,9 +69,9 @@ class ToxicContent {
   ///@}
  private:
   ToxicContentType m_name{ToxicContentType::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_nameHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

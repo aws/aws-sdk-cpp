@@ -86,12 +86,12 @@ class S3Location {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   Aws::String m_fileKey;
-  bool m_fileKeyHasBeenSet = false;
 
   Aws::String m_objectVersion;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_fileKeyHasBeenSet = false;
   bool m_objectVersionHasBeenSet = false;
 };
 

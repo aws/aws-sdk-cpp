@@ -68,9 +68,9 @@ class DescribeAllManagedProductsResult {
   ///@}
  private:
   Aws::Vector<ManagedProductDescriptor> m_managedProducts;
-  bool m_managedProductsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedProductsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

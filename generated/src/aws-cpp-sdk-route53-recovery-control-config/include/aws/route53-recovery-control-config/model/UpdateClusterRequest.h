@@ -69,9 +69,9 @@ class UpdateClusterRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_clusterArnHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

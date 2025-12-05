@@ -69,9 +69,9 @@ class DefaultRelativeDateTimeControlOptions {
   ///@}
  private:
   RelativeDateTimeControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   CommitMode m_commitMode{CommitMode::NOT_SET};
+  bool m_displayOptionsHasBeenSet = false;
   bool m_commitModeHasBeenSet = false;
 };
 

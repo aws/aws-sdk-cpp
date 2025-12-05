@@ -158,24 +158,24 @@ class TaskScheduledEventDetails {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   long long m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   long long m_heartbeatInSeconds{0};
-  bool m_heartbeatInSecondsHasBeenSet = false;
 
   TaskCredentials m_taskCredentials;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_timeoutInSecondsHasBeenSet = false;
+  bool m_heartbeatInSecondsHasBeenSet = false;
   bool m_taskCredentialsHasBeenSet = false;
 };
 

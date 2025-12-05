@@ -106,12 +106,12 @@ class S3EncryptionSettings {
   ///@}
  private:
   S3ServerSideEncryptionType m_encryptionType{S3ServerSideEncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsEncryptionContext;
-  bool m_kmsEncryptionContextHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kmsEncryptionContextHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

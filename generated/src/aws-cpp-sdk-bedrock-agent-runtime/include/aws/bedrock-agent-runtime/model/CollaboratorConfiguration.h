@@ -105,15 +105,15 @@ class CollaboratorConfiguration {
   ///@}
  private:
   Aws::String m_agentAliasArn;
-  bool m_agentAliasArnHasBeenSet = false;
 
   Aws::String m_collaboratorInstruction;
-  bool m_collaboratorInstructionHasBeenSet = false;
 
   Aws::String m_collaboratorName;
-  bool m_collaboratorNameHasBeenSet = false;
 
   RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
+  bool m_agentAliasArnHasBeenSet = false;
+  bool m_collaboratorInstructionHasBeenSet = false;
+  bool m_collaboratorNameHasBeenSet = false;
   bool m_relayConversationHistoryHasBeenSet = false;
 };
 

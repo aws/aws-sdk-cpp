@@ -85,12 +85,12 @@ class GetMarketplaceResourceRequest : public ImagebuilderRequest {
   ///@}
  private:
   MarketplaceResourceType m_resourceType{MarketplaceResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceLocation;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourceLocationHasBeenSet = false;
 };
 

@@ -128,15 +128,15 @@ class TimecodeConfig {
   ///@}
  private:
   Aws::String m_anchor;
-  bool m_anchorHasBeenSet = false;
 
   TimecodeSource m_source{TimecodeSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_start;
-  bool m_startHasBeenSet = false;
 
   Aws::String m_timestampOffset;
+  bool m_anchorHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_startHasBeenSet = false;
   bool m_timestampOffsetHasBeenSet = false;
 };
 

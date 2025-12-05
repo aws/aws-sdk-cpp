@@ -89,12 +89,12 @@ class ExportKeyRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   ExportKeyMaterial m_keyMaterial;
-  bool m_keyMaterialHasBeenSet = false;
 
   Aws::String m_exportKeyIdentifier;
-  bool m_exportKeyIdentifierHasBeenSet = false;
 
   ExportAttributes m_exportAttributes;
+  bool m_keyMaterialHasBeenSet = false;
+  bool m_exportKeyIdentifierHasBeenSet = false;
   bool m_exportAttributesHasBeenSet = false;
 };
 

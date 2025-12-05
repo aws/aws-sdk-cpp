@@ -61,9 +61,9 @@ class QueryCompileErrorLocation {
   ///@}
  private:
   int m_startCharOffset{0};
-  bool m_startCharOffsetHasBeenSet = false;
 
   int m_endCharOffset{0};
+  bool m_startCharOffsetHasBeenSet = false;
   bool m_endCharOffsetHasBeenSet = false;
 };
 

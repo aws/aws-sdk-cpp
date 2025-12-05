@@ -114,15 +114,15 @@ class UpdateIntegrationRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_httpMethod;
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

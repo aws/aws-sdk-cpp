@@ -122,18 +122,18 @@ class ScheduledQueryDestination {
   ///@}
  private:
   ScheduledQueryDestinationType m_destinationType{ScheduledQueryDestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   Aws::String m_destinationIdentifier;
-  bool m_destinationIdentifierHasBeenSet = false;
 
   ActionStatus m_status{ActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_processedIdentifier;
-  bool m_processedIdentifierHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_destinationIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_processedIdentifierHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

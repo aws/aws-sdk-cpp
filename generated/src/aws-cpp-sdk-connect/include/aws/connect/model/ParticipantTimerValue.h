@@ -69,9 +69,9 @@ class ParticipantTimerValue {
   ///@}
  private:
   ParticipantTimerAction m_participantTimerAction{ParticipantTimerAction::NOT_SET};
-  bool m_participantTimerActionHasBeenSet = false;
 
   int m_participantTimerDurationInMinutes{0};
+  bool m_participantTimerActionHasBeenSet = false;
   bool m_participantTimerDurationInMinutesHasBeenSet = false;
 };
 

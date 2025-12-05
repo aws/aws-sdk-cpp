@@ -64,9 +64,9 @@ class WarningGroup {
   ///@}
  private:
   int m_code{0};
-  bool m_codeHasBeenSet = false;
 
   int m_count{0};
+  bool m_codeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

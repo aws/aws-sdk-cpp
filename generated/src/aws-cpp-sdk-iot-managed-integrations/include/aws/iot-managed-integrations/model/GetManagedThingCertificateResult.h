@@ -77,12 +77,12 @@ class GetManagedThingCertificateResult {
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedThingIdHasBeenSet = false;
+  bool m_certificatePemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

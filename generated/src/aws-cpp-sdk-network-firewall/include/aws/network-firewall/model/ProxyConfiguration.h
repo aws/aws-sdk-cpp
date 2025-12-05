@@ -199,27 +199,27 @@ class ProxyConfiguration {
   ///@}
  private:
   Aws::String m_proxyConfigurationName;
-  bool m_proxyConfigurationNameHasBeenSet = false;
 
   Aws::String m_proxyConfigurationArn;
-  bool m_proxyConfigurationArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTime{};
-  bool m_deleteTimeHasBeenSet = false;
 
   Aws::Vector<ProxyConfigRuleGroup> m_ruleGroups;
-  bool m_ruleGroupsHasBeenSet = false;
 
   ProxyConfigDefaultRulePhaseActionsRequest m_defaultRulePhaseActions;
-  bool m_defaultRulePhaseActionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_proxyConfigurationNameHasBeenSet = false;
+  bool m_proxyConfigurationArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_deleteTimeHasBeenSet = false;
+  bool m_ruleGroupsHasBeenSet = false;
+  bool m_defaultRulePhaseActionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

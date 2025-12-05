@@ -74,9 +74,9 @@ class SignalFetchConfig {
   ///@}
  private:
   TimeBasedSignalFetchConfig m_timeBased;
-  bool m_timeBasedHasBeenSet = false;
 
   ConditionBasedSignalFetchConfig m_conditionBased;
+  bool m_timeBasedHasBeenSet = false;
   bool m_conditionBasedHasBeenSet = false;
 };
 

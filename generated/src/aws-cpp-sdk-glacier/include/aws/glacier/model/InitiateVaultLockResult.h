@@ -65,9 +65,9 @@ class InitiateVaultLockResult {
   ///@}
  private:
   Aws::String m_lockId;
-  bool m_lockIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lockIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

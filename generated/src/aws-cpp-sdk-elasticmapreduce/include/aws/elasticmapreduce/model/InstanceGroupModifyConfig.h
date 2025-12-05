@@ -154,21 +154,21 @@ class InstanceGroupModifyConfig {
   ///@}
  private:
   Aws::String m_instanceGroupId;
-  bool m_instanceGroupIdHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eC2InstanceIdsToTerminate;
-  bool m_eC2InstanceIdsToTerminateHasBeenSet = false;
 
   ShrinkPolicy m_shrinkPolicy;
-  bool m_shrinkPolicyHasBeenSet = false;
 
   ReconfigurationType m_reconfigurationType{ReconfigurationType::NOT_SET};
-  bool m_reconfigurationTypeHasBeenSet = false;
 
   Aws::Vector<Configuration> m_configurations;
+  bool m_instanceGroupIdHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_eC2InstanceIdsToTerminateHasBeenSet = false;
+  bool m_shrinkPolicyHasBeenSet = false;
+  bool m_reconfigurationTypeHasBeenSet = false;
   bool m_configurationsHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class RedshiftProvisionedConfiguration {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   RedshiftProvisionedAuthConfiguration m_authConfiguration;
+  bool m_clusterIdentifierHasBeenSet = false;
   bool m_authConfigurationHasBeenSet = false;
 };
 

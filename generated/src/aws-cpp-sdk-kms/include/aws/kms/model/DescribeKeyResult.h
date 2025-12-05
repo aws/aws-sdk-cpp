@@ -60,9 +60,9 @@ class DescribeKeyResult {
   ///@}
  private:
   KeyMetadata m_keyMetadata;
-  bool m_keyMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

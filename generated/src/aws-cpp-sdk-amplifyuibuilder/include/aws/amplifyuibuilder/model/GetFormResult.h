@@ -60,9 +60,9 @@ class GetFormResult {
   ///@}
  private:
   Form m_form;
-  bool m_formHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_formHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

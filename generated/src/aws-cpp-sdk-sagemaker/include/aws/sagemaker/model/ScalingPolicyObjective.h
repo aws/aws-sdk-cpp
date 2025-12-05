@@ -62,9 +62,9 @@ class ScalingPolicyObjective {
   ///@}
  private:
   int m_minInvocationsPerMinute{0};
-  bool m_minInvocationsPerMinuteHasBeenSet = false;
 
   int m_maxInvocationsPerMinute{0};
+  bool m_minInvocationsPerMinuteHasBeenSet = false;
   bool m_maxInvocationsPerMinuteHasBeenSet = false;
 };
 

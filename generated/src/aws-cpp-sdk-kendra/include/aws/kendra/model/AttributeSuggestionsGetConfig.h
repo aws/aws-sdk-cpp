@@ -127,15 +127,15 @@ class AttributeSuggestionsGetConfig {
   ///@}
  private:
   Aws::Vector<Aws::String> m_suggestionAttributes;
-  bool m_suggestionAttributesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalResponseAttributes;
-  bool m_additionalResponseAttributesHasBeenSet = false;
 
   AttributeFilter m_attributeFilter;
-  bool m_attributeFilterHasBeenSet = false;
 
   UserContext m_userContext;
+  bool m_suggestionAttributesHasBeenSet = false;
+  bool m_additionalResponseAttributesHasBeenSet = false;
+  bool m_attributeFilterHasBeenSet = false;
   bool m_userContextHasBeenSet = false;
 };
 

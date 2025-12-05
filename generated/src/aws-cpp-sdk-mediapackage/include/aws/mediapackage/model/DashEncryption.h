@@ -65,9 +65,9 @@ class DashEncryption {
   ///@}
  private:
   int m_keyRotationIntervalSeconds{0};
-  bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
+  bool m_keyRotationIntervalSecondsHasBeenSet = false;
   bool m_spekeKeyProviderHasBeenSet = false;
 };
 

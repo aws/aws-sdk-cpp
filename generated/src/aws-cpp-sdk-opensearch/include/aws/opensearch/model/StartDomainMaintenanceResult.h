@@ -65,9 +65,9 @@ class StartDomainMaintenanceResult {
   ///@}
  private:
   Aws::String m_maintenanceId;
-  bool m_maintenanceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_maintenanceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

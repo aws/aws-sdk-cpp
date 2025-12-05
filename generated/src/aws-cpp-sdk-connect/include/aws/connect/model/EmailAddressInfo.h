@@ -69,9 +69,9 @@ class EmailAddressInfo {
   ///@}
  private:
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_emailAddressHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

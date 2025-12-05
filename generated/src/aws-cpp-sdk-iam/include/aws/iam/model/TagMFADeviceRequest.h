@@ -83,9 +83,9 @@ class TagMFADeviceRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serialNumberHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

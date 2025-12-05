@@ -139,21 +139,21 @@ class Record {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   long long m_syncCount{0};
-  bool m_syncCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_deviceLastModifiedDate{};
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_syncCountHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
   bool m_deviceLastModifiedDateHasBeenSet = false;
 };
 

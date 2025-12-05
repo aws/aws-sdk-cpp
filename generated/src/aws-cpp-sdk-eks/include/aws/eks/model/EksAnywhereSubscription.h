@@ -295,42 +295,42 @@ class EksAnywhereSubscription {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveDate{};
-  bool m_effectiveDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   int m_licenseQuantity{0};
-  bool m_licenseQuantityHasBeenSet = false;
 
   EksAnywhereSubscriptionLicenseType m_licenseType{EksAnywhereSubscriptionLicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   EksAnywhereSubscriptionTerm m_term;
-  bool m_termHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_autoRenew{false};
-  bool m_autoRenewHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_licenseArns;
-  bool m_licenseArnsHasBeenSet = false;
 
   Aws::Vector<License> m_licenses;
-  bool m_licensesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_effectiveDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_licenseQuantityHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_termHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_autoRenewHasBeenSet = false;
+  bool m_licenseArnsHasBeenSet = false;
+  bool m_licensesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class PutProtocolsListResult {
   ///@}
  private:
   ProtocolsListData m_protocolsList;
-  bool m_protocolsListHasBeenSet = false;
 
   Aws::String m_protocolsListArn;
-  bool m_protocolsListArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protocolsListHasBeenSet = false;
+  bool m_protocolsListArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -171,24 +171,24 @@ class ElasticGpus {
   ///@}
  private:
   Aws::String m_elasticGpuId;
-  bool m_elasticGpuIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_elasticGpuType;
-  bool m_elasticGpuTypeHasBeenSet = false;
 
   ElasticGpuHealth m_elasticGpuHealth;
-  bool m_elasticGpuHealthHasBeenSet = false;
 
   ElasticGpuState m_elasticGpuState{ElasticGpuState::NOT_SET};
-  bool m_elasticGpuStateHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_elasticGpuIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_elasticGpuTypeHasBeenSet = false;
+  bool m_elasticGpuHealthHasBeenSet = false;
+  bool m_elasticGpuStateHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

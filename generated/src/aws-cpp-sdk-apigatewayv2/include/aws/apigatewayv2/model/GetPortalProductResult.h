@@ -171,27 +171,27 @@ class GetPortalProductResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   DisplayOrder m_displayOrder;
-  bool m_displayOrderHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_portalProductArn;
-  bool m_portalProductArnHasBeenSet = false;
 
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_displayOrderHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_portalProductArnHasBeenSet = false;
+  bool m_portalProductIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

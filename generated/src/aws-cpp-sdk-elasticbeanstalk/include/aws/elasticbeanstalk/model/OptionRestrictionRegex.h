@@ -73,9 +73,9 @@ class OptionRestrictionRegex {
   ///@}
  private:
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   Aws::String m_label;
+  bool m_patternHasBeenSet = false;
   bool m_labelHasBeenSet = false;
 };
 

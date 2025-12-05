@@ -245,30 +245,30 @@ class CreateCapacityReservationFleetRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_allocationStrategy;
-  bool m_allocationStrategyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<ReservationFleetInstanceSpecification> m_instanceTypeSpecifications;
-  bool m_instanceTypeSpecificationsHasBeenSet = false;
 
   FleetCapacityReservationTenancy m_tenancy{FleetCapacityReservationTenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   int m_totalTargetCapacity{0};
-  bool m_totalTargetCapacityHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   FleetInstanceMatchCriteria m_instanceMatchCriteria{FleetInstanceMatchCriteria::NOT_SET};
-  bool m_instanceMatchCriteriaHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_allocationStrategyHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_instanceTypeSpecificationsHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_totalTargetCapacityHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_instanceMatchCriteriaHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

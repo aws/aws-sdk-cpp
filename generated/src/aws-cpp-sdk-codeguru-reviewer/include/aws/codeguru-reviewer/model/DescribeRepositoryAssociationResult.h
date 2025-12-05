@@ -92,12 +92,12 @@ class DescribeRepositoryAssociationResult {
   ///@}
  private:
   RepositoryAssociation m_repositoryAssociation;
-  bool m_repositoryAssociationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryAssociationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

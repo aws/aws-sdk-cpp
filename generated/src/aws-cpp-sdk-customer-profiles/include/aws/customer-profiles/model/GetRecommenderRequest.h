@@ -86,12 +86,12 @@ class GetRecommenderRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_recommenderName;
-  bool m_recommenderNameHasBeenSet = false;
 
   int m_trainingMetricsCount{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_recommenderNameHasBeenSet = false;
   bool m_trainingMetricsCountHasBeenSet = false;
 };
 

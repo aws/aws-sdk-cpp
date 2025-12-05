@@ -293,36 +293,36 @@ class EcsTaskProperties {
   ///@}
  private:
   Aws::Vector<TaskContainerProperties> m_containers;
-  bool m_containersHasBeenSet = false;
 
   EphemeralStorage m_ephemeralStorage;
-  bool m_ephemeralStorageHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_ipcMode;
-  bool m_ipcModeHasBeenSet = false;
 
   Aws::String m_taskRoleArn;
-  bool m_taskRoleArnHasBeenSet = false;
 
   Aws::String m_pidMode;
-  bool m_pidModeHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   RuntimePlatform m_runtimePlatform;
-  bool m_runtimePlatformHasBeenSet = false;
 
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   bool m_enableExecuteCommand{false};
+  bool m_containersHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_ipcModeHasBeenSet = false;
+  bool m_taskRoleArnHasBeenSet = false;
+  bool m_pidModeHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_runtimePlatformHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
   bool m_enableExecuteCommandHasBeenSet = false;
 };
 

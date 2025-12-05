@@ -77,9 +77,9 @@ class InvokedBy {
   ///@}
  private:
   StandardMessages m_standardMessages{StandardMessages::NOT_SET};
-  bool m_standardMessagesHasBeenSet = false;
 
   TargetedMessages m_targetedMessages{TargetedMessages::NOT_SET};
+  bool m_standardMessagesHasBeenSet = false;
   bool m_targetedMessagesHasBeenSet = false;
 };
 

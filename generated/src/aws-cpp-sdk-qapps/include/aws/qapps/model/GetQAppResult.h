@@ -270,45 +270,45 @@ class GetQAppResult {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_initialPrompt;
-  bool m_initialPromptHasBeenSet = false;
 
   int m_appVersion{0};
-  bool m_appVersionHasBeenSet = false;
 
   AppStatus m_status{AppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Vector<AppRequiredCapability> m_requiredCapabilities;
-  bool m_requiredCapabilitiesHasBeenSet = false;
 
   AppDefinition m_appDefinition;
-  bool m_appDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appIdHasBeenSet = false;
+  bool m_appArnHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_initialPromptHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_requiredCapabilitiesHasBeenSet = false;
+  bool m_appDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

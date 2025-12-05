@@ -111,18 +111,18 @@ class FindingMetricsValuePerSeverity {
   ///@}
  private:
   double m_info{0.0};
-  bool m_infoHasBeenSet = false;
 
   double m_low{0.0};
-  bool m_lowHasBeenSet = false;
 
   double m_medium{0.0};
-  bool m_mediumHasBeenSet = false;
 
   double m_high{0.0};
-  bool m_highHasBeenSet = false;
 
   double m_critical{0.0};
+  bool m_infoHasBeenSet = false;
+  bool m_lowHasBeenSet = false;
+  bool m_mediumHasBeenSet = false;
+  bool m_highHasBeenSet = false;
   bool m_criticalHasBeenSet = false;
 };
 

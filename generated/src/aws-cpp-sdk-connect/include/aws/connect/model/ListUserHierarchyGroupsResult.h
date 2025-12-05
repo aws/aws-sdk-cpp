@@ -85,12 +85,12 @@ class ListUserHierarchyGroupsResult {
   ///@}
  private:
   Aws::Vector<HierarchyGroupSummary> m_userHierarchyGroupSummaryList;
-  bool m_userHierarchyGroupSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userHierarchyGroupSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

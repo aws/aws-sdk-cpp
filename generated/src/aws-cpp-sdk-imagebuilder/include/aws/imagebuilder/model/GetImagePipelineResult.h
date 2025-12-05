@@ -62,9 +62,9 @@ class GetImagePipelineResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ImagePipeline m_imagePipeline;
+  bool m_requestIdHasBeenSet = false;
   bool m_imagePipelineHasBeenSet = false;
 };
 

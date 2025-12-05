@@ -71,9 +71,9 @@ class ManagedEndpointConfiguration {
   ///@}
  private:
   AutoScalingGroupsConfiguration m_autoScalingGroups;
-  bool m_autoScalingGroupsHasBeenSet = false;
 
   EksEndpointsConfiguration m_eksEndpoints;
+  bool m_autoScalingGroupsHasBeenSet = false;
   bool m_eksEndpointsHasBeenSet = false;
 };
 

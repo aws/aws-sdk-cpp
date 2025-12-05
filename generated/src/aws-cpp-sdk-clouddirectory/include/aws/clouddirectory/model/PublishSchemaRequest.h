@@ -108,15 +108,15 @@ class PublishSchemaRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_developmentSchemaArn;
-  bool m_developmentSchemaArnHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_minorVersion;
-  bool m_minorVersionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_developmentSchemaArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_minorVersionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ProjectDataDelivery {
   ///@}
  private:
   CloudWatchLogsDestination m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   S3Destination m_s3Destination;
+  bool m_cloudWatchLogsHasBeenSet = false;
   bool m_s3DestinationHasBeenSet = false;
 };
 

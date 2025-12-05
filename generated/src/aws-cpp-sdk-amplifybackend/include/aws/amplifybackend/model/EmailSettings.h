@@ -69,9 +69,9 @@ class EmailSettings {
   ///@}
  private:
   Aws::String m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   Aws::String m_emailSubject;
+  bool m_emailMessageHasBeenSet = false;
   bool m_emailSubjectHasBeenSet = false;
 };
 

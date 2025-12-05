@@ -100,15 +100,15 @@ class UpdateRecommendationLifecycleRequest : public TrustedAdvisorRequest {
   ///@}
  private:
   UpdateRecommendationLifecycleStage m_lifecycleStage{UpdateRecommendationLifecycleStage::NOT_SET};
-  bool m_lifecycleStageHasBeenSet = false;
 
   Aws::String m_recommendationIdentifier;
-  bool m_recommendationIdentifierHasBeenSet = false;
 
   Aws::String m_updateReason;
-  bool m_updateReasonHasBeenSet = false;
 
   UpdateRecommendationLifecycleStageReasonCode m_updateReasonCode{UpdateRecommendationLifecycleStageReasonCode::NOT_SET};
+  bool m_lifecycleStageHasBeenSet = false;
+  bool m_recommendationIdentifierHasBeenSet = false;
+  bool m_updateReasonHasBeenSet = false;
   bool m_updateReasonCodeHasBeenSet = false;
 };
 

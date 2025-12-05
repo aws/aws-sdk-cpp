@@ -76,9 +76,9 @@ class Grok {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_match;
+  bool m_sourceHasBeenSet = false;
   bool m_matchHasBeenSet = false;
 };
 

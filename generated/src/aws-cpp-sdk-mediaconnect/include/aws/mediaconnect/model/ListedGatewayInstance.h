@@ -104,15 +104,15 @@ class ListedGatewayInstance {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_gatewayInstanceArn;
-  bool m_gatewayInstanceArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   InstanceState m_instanceState{InstanceState::NOT_SET};
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_gatewayInstanceArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_instanceStateHasBeenSet = false;
 };
 

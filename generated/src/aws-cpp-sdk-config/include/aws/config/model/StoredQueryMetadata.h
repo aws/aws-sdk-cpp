@@ -105,15 +105,15 @@ class StoredQueryMetadata {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_queryArn;
-  bool m_queryArnHasBeenSet = false;
 
   Aws::String m_queryName;
-  bool m_queryNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryArnHasBeenSet = false;
+  bool m_queryNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class UpdateServiceRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;
 };
 

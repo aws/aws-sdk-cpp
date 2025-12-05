@@ -553,78 +553,78 @@ class Visual {
   ///@}
  private:
   TableVisual m_tableVisual;
-  bool m_tableVisualHasBeenSet = false;
 
   PivotTableVisual m_pivotTableVisual;
-  bool m_pivotTableVisualHasBeenSet = false;
 
   BarChartVisual m_barChartVisual;
-  bool m_barChartVisualHasBeenSet = false;
 
   KPIVisual m_kPIVisual;
-  bool m_kPIVisualHasBeenSet = false;
 
   PieChartVisual m_pieChartVisual;
-  bool m_pieChartVisualHasBeenSet = false;
 
   GaugeChartVisual m_gaugeChartVisual;
-  bool m_gaugeChartVisualHasBeenSet = false;
 
   LineChartVisual m_lineChartVisual;
-  bool m_lineChartVisualHasBeenSet = false;
 
   HeatMapVisual m_heatMapVisual;
-  bool m_heatMapVisualHasBeenSet = false;
 
   TreeMapVisual m_treeMapVisual;
-  bool m_treeMapVisualHasBeenSet = false;
 
   GeospatialMapVisual m_geospatialMapVisual;
-  bool m_geospatialMapVisualHasBeenSet = false;
 
   FilledMapVisual m_filledMapVisual;
-  bool m_filledMapVisualHasBeenSet = false;
 
   LayerMapVisual m_layerMapVisual;
-  bool m_layerMapVisualHasBeenSet = false;
 
   FunnelChartVisual m_funnelChartVisual;
-  bool m_funnelChartVisualHasBeenSet = false;
 
   ScatterPlotVisual m_scatterPlotVisual;
-  bool m_scatterPlotVisualHasBeenSet = false;
 
   ComboChartVisual m_comboChartVisual;
-  bool m_comboChartVisualHasBeenSet = false;
 
   BoxPlotVisual m_boxPlotVisual;
-  bool m_boxPlotVisualHasBeenSet = false;
 
   WaterfallVisual m_waterfallVisual;
-  bool m_waterfallVisualHasBeenSet = false;
 
   HistogramVisual m_histogramVisual;
-  bool m_histogramVisualHasBeenSet = false;
 
   WordCloudVisual m_wordCloudVisual;
-  bool m_wordCloudVisualHasBeenSet = false;
 
   InsightVisual m_insightVisual;
-  bool m_insightVisualHasBeenSet = false;
 
   SankeyDiagramVisual m_sankeyDiagramVisual;
-  bool m_sankeyDiagramVisualHasBeenSet = false;
 
   CustomContentVisual m_customContentVisual;
-  bool m_customContentVisualHasBeenSet = false;
 
   EmptyVisual m_emptyVisual;
-  bool m_emptyVisualHasBeenSet = false;
 
   RadarChartVisual m_radarChartVisual;
-  bool m_radarChartVisualHasBeenSet = false;
 
   PluginVisual m_pluginVisual;
+  bool m_tableVisualHasBeenSet = false;
+  bool m_pivotTableVisualHasBeenSet = false;
+  bool m_barChartVisualHasBeenSet = false;
+  bool m_kPIVisualHasBeenSet = false;
+  bool m_pieChartVisualHasBeenSet = false;
+  bool m_gaugeChartVisualHasBeenSet = false;
+  bool m_lineChartVisualHasBeenSet = false;
+  bool m_heatMapVisualHasBeenSet = false;
+  bool m_treeMapVisualHasBeenSet = false;
+  bool m_geospatialMapVisualHasBeenSet = false;
+  bool m_filledMapVisualHasBeenSet = false;
+  bool m_layerMapVisualHasBeenSet = false;
+  bool m_funnelChartVisualHasBeenSet = false;
+  bool m_scatterPlotVisualHasBeenSet = false;
+  bool m_comboChartVisualHasBeenSet = false;
+  bool m_boxPlotVisualHasBeenSet = false;
+  bool m_waterfallVisualHasBeenSet = false;
+  bool m_histogramVisualHasBeenSet = false;
+  bool m_wordCloudVisualHasBeenSet = false;
+  bool m_insightVisualHasBeenSet = false;
+  bool m_sankeyDiagramVisualHasBeenSet = false;
+  bool m_customContentVisualHasBeenSet = false;
+  bool m_emptyVisualHasBeenSet = false;
+  bool m_radarChartVisualHasBeenSet = false;
   bool m_pluginVisualHasBeenSet = false;
 };
 

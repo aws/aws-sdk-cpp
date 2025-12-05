@@ -76,9 +76,9 @@ class PartitionError {
   ///@}
  private:
   Aws::Vector<Aws::String> m_partitionValues;
-  bool m_partitionValuesHasBeenSet = false;
 
   ErrorDetail m_errorDetail;
+  bool m_partitionValuesHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

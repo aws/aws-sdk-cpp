@@ -127,21 +127,21 @@ class GetWirelessGatewayTaskResult {
   ///@}
  private:
   Aws::String m_wirelessGatewayId;
-  bool m_wirelessGatewayIdHasBeenSet = false;
 
   Aws::String m_wirelessGatewayTaskDefinitionId;
-  bool m_wirelessGatewayTaskDefinitionIdHasBeenSet = false;
 
   Aws::String m_lastUplinkReceivedAt;
-  bool m_lastUplinkReceivedAtHasBeenSet = false;
 
   Aws::String m_taskCreatedAt;
-  bool m_taskCreatedAtHasBeenSet = false;
 
   WirelessGatewayTaskStatus m_status{WirelessGatewayTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_wirelessGatewayIdHasBeenSet = false;
+  bool m_wirelessGatewayTaskDefinitionIdHasBeenSet = false;
+  bool m_lastUplinkReceivedAtHasBeenSet = false;
+  bool m_taskCreatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

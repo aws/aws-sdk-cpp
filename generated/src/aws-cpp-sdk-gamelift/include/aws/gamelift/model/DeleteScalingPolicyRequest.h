@@ -69,9 +69,9 @@ class DeleteScalingPolicyRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_fleetId;
+  bool m_nameHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
 };
 

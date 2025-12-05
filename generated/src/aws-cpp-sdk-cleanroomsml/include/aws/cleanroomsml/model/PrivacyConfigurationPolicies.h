@@ -89,12 +89,12 @@ class PrivacyConfigurationPolicies {
   ///@}
  private:
   TrainedModelsConfigurationPolicy m_trainedModels;
-  bool m_trainedModelsHasBeenSet = false;
 
   TrainedModelExportsConfigurationPolicy m_trainedModelExports;
-  bool m_trainedModelExportsHasBeenSet = false;
 
   TrainedModelInferenceJobsConfigurationPolicy m_trainedModelInferenceJobs;
+  bool m_trainedModelsHasBeenSet = false;
+  bool m_trainedModelExportsHasBeenSet = false;
   bool m_trainedModelInferenceJobsHasBeenSet = false;
 };
 

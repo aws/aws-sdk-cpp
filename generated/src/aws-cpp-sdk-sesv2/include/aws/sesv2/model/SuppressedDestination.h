@@ -109,15 +109,15 @@ class SuppressedDestination {
   ///@}
  private:
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   SuppressionListReason m_reason{SuppressionListReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   SuppressedDestinationAttributes m_attributes;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

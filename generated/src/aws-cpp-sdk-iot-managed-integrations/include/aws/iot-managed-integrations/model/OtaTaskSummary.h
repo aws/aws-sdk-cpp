@@ -142,21 +142,21 @@ class OtaTaskSummary {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_taskConfigurationId;
-  bool m_taskConfigurationIdHasBeenSet = false;
 
   OtaStatus m_status{OtaStatus::NOT_SET};
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_taskConfigurationIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

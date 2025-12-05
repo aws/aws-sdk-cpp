@@ -73,9 +73,9 @@ class UpdateSharedVpcConfigurationRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_enableFsxRouteTableUpdatesFromParticipantAccounts;
-  bool m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

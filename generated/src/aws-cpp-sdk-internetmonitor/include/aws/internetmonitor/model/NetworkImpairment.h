@@ -100,12 +100,12 @@ class NetworkImpairment {
   ///@}
  private:
   Aws::Vector<Network> m_networks;
-  bool m_networksHasBeenSet = false;
 
   Aws::Vector<Network> m_asPath;
-  bool m_asPathHasBeenSet = false;
 
   TriangulationEventType m_networkEventType{TriangulationEventType::NOT_SET};
+  bool m_networksHasBeenSet = false;
+  bool m_asPathHasBeenSet = false;
   bool m_networkEventTypeHasBeenSet = false;
 };
 

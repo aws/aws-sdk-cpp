@@ -81,9 +81,9 @@ class WebACLSummary {
   ///@}
  private:
   Aws::String m_webACLId;
-  bool m_webACLIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_webACLIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

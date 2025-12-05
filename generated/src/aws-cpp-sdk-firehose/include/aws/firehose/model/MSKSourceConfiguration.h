@@ -111,15 +111,15 @@ class MSKSourceConfiguration {
   ///@}
  private:
   Aws::String m_mSKClusterARN;
-  bool m_mSKClusterARNHasBeenSet = false;
 
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   AuthenticationConfiguration m_authenticationConfiguration;
-  bool m_authenticationConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_readFromTimestamp{};
+  bool m_mSKClusterARNHasBeenSet = false;
+  bool m_topicNameHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
   bool m_readFromTimestampHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class GetSpotPlacementScoresResponse {
   ///@}
  private:
   Aws::Vector<SpotPlacementScore> m_spotPlacementScores;
-  bool m_spotPlacementScoresHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_spotPlacementScoresHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

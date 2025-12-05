@@ -88,9 +88,9 @@ class GroupingConfiguration {
   ///@}
  private:
   Aws::String m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_criteriaHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -136,18 +136,18 @@ class AssociatePermissionRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<PermissionCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   Aws::String m_principal;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_statementIdHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

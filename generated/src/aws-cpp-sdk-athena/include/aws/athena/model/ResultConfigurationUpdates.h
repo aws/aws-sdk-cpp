@@ -224,27 +224,27 @@ class ResultConfigurationUpdates {
   ///@}
  private:
   Aws::String m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   bool m_removeOutputLocation{false};
-  bool m_removeOutputLocationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   bool m_removeEncryptionConfiguration{false};
-  bool m_removeEncryptionConfigurationHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   bool m_removeExpectedBucketOwner{false};
-  bool m_removeExpectedBucketOwnerHasBeenSet = false;
 
   AclConfiguration m_aclConfiguration;
-  bool m_aclConfigurationHasBeenSet = false;
 
   bool m_removeAclConfiguration{false};
+  bool m_outputLocationHasBeenSet = false;
+  bool m_removeOutputLocationHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_removeEncryptionConfigurationHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_removeExpectedBucketOwnerHasBeenSet = false;
+  bool m_aclConfigurationHasBeenSet = false;
   bool m_removeAclConfigurationHasBeenSet = false;
 };
 

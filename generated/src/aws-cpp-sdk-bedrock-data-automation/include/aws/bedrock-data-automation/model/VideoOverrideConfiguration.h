@@ -65,9 +65,9 @@ class VideoOverrideConfiguration {
   ///@}
  private:
   ModalityProcessingConfiguration m_modalityProcessing;
-  bool m_modalityProcessingHasBeenSet = false;
 
   SensitiveDataConfiguration m_sensitiveDataConfiguration;
+  bool m_modalityProcessingHasBeenSet = false;
   bool m_sensitiveDataConfigurationHasBeenSet = false;
 };
 

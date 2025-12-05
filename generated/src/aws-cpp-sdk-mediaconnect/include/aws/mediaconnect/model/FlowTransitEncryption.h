@@ -69,9 +69,9 @@ class FlowTransitEncryption {
   ///@}
  private:
   FlowTransitEncryptionKeyType m_encryptionKeyType{FlowTransitEncryptionKeyType::NOT_SET};
-  bool m_encryptionKeyTypeHasBeenSet = false;
 
   FlowTransitEncryptionKeyConfiguration m_encryptionKeyConfiguration;
+  bool m_encryptionKeyTypeHasBeenSet = false;
   bool m_encryptionKeyConfigurationHasBeenSet = false;
 };
 

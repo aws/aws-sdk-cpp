@@ -183,27 +183,27 @@ class CisTargetResourceAggregation {
   ///@}
  private:
   Aws::String m_scanArn;
-  bool m_scanArnHasBeenSet = false;
 
   Aws::String m_targetResourceId;
-  bool m_targetResourceIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_targetResourceTags;
-  bool m_targetResourceTagsHasBeenSet = false;
 
   StatusCounts m_statusCounts;
-  bool m_statusCountsHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   CisTargetStatus m_targetStatus{CisTargetStatus::NOT_SET};
-  bool m_targetStatusHasBeenSet = false;
 
   CisTargetStatusReason m_targetStatusReason{CisTargetStatusReason::NOT_SET};
+  bool m_scanArnHasBeenSet = false;
+  bool m_targetResourceIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_targetResourceTagsHasBeenSet = false;
+  bool m_statusCountsHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_targetStatusHasBeenSet = false;
   bool m_targetStatusReasonHasBeenSet = false;
 };
 

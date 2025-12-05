@@ -85,12 +85,12 @@ class ListBillingGroupCostReportsResult {
   ///@}
  private:
   Aws::Vector<BillingGroupCostReportElement> m_billingGroupCostReports;
-  bool m_billingGroupCostReportsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingGroupCostReportsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

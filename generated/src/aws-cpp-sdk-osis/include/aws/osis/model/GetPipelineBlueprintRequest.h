@@ -70,9 +70,9 @@ class GetPipelineBlueprintRequest : public OSISRequest {
   ///@}
  private:
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_blueprintNameHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

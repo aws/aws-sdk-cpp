@@ -408,63 +408,63 @@ class DbServerSummary {
   ///@}
  private:
   Aws::String m_dbServerId;
-  bool m_dbServerIdHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   int m_cpuCoreCount{0};
-  bool m_cpuCoreCountHasBeenSet = false;
 
   int m_dbNodeStorageSizeInGBs{0};
-  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
 
   DbServerPatchingDetails m_dbServerPatchingDetails;
-  bool m_dbServerPatchingDetailsHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_exadataInfrastructureId;
-  bool m_exadataInfrastructureIdHasBeenSet = false;
 
   Aws::String m_ocid;
-  bool m_ocidHasBeenSet = false;
 
   Aws::String m_ociResourceAnchorName;
-  bool m_ociResourceAnchorNameHasBeenSet = false;
 
   int m_maxCpuCount{0};
-  bool m_maxCpuCountHasBeenSet = false;
 
   int m_maxDbNodeStorageInGBs{0};
-  bool m_maxDbNodeStorageInGBsHasBeenSet = false;
 
   int m_maxMemoryInGBs{0};
-  bool m_maxMemoryInGBsHasBeenSet = false;
 
   int m_memorySizeInGBs{0};
-  bool m_memorySizeInGBsHasBeenSet = false;
 
   Aws::String m_shape;
-  bool m_shapeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vmClusterIds;
-  bool m_vmClusterIdsHasBeenSet = false;
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
-  bool m_computeModelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autonomousVmClusterIds;
-  bool m_autonomousVmClusterIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autonomousVirtualMachineIds;
+  bool m_dbServerIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_cpuCoreCountHasBeenSet = false;
+  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_dbServerPatchingDetailsHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_exadataInfrastructureIdHasBeenSet = false;
+  bool m_ocidHasBeenSet = false;
+  bool m_ociResourceAnchorNameHasBeenSet = false;
+  bool m_maxCpuCountHasBeenSet = false;
+  bool m_maxDbNodeStorageInGBsHasBeenSet = false;
+  bool m_maxMemoryInGBsHasBeenSet = false;
+  bool m_memorySizeInGBsHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_vmClusterIdsHasBeenSet = false;
+  bool m_computeModelHasBeenSet = false;
+  bool m_autonomousVmClusterIdsHasBeenSet = false;
   bool m_autonomousVirtualMachineIdsHasBeenSet = false;
 };
 

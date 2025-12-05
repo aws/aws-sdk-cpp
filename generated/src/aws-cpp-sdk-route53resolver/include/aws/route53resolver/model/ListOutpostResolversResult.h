@@ -88,12 +88,12 @@ class ListOutpostResolversResult {
   ///@}
  private:
   Aws::Vector<OutpostResolver> m_outpostResolvers;
-  bool m_outpostResolversHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outpostResolversHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

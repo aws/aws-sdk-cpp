@@ -119,18 +119,18 @@ class SelfservicePermissions {
   ///@}
  private:
   ReconnectEnum m_restartWorkspace{ReconnectEnum::NOT_SET};
-  bool m_restartWorkspaceHasBeenSet = false;
 
   ReconnectEnum m_increaseVolumeSize{ReconnectEnum::NOT_SET};
-  bool m_increaseVolumeSizeHasBeenSet = false;
 
   ReconnectEnum m_changeComputeType{ReconnectEnum::NOT_SET};
-  bool m_changeComputeTypeHasBeenSet = false;
 
   ReconnectEnum m_switchRunningMode{ReconnectEnum::NOT_SET};
-  bool m_switchRunningModeHasBeenSet = false;
 
   ReconnectEnum m_rebuildWorkspace{ReconnectEnum::NOT_SET};
+  bool m_restartWorkspaceHasBeenSet = false;
+  bool m_increaseVolumeSizeHasBeenSet = false;
+  bool m_changeComputeTypeHasBeenSet = false;
+  bool m_switchRunningModeHasBeenSet = false;
   bool m_rebuildWorkspaceHasBeenSet = false;
 };
 

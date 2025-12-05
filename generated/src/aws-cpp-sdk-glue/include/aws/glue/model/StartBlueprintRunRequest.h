@@ -85,12 +85,12 @@ class StartBlueprintRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Aws::String m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_blueprintNameHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

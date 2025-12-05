@@ -70,9 +70,9 @@ class WaypointOptimizationTravelModeOptions {
   ///@}
  private:
   WaypointOptimizationPedestrianOptions m_pedestrian;
-  bool m_pedestrianHasBeenSet = false;
 
   WaypointOptimizationTruckOptions m_truck;
+  bool m_pedestrianHasBeenSet = false;
   bool m_truckHasBeenSet = false;
 };
 

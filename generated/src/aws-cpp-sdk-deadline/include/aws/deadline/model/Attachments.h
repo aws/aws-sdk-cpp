@@ -74,9 +74,9 @@ class Attachments {
   ///@}
  private:
   Aws::Vector<ManifestProperties> m_manifests;
-  bool m_manifestsHasBeenSet = false;
 
   JobAttachmentsFileSystem m_fileSystem{JobAttachmentsFileSystem::NOT_SET};
+  bool m_manifestsHasBeenSet = false;
   bool m_fileSystemHasBeenSet = false;
 };
 

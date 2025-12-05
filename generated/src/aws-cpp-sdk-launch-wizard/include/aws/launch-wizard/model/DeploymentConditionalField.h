@@ -88,12 +88,12 @@ class DeploymentConditionalField {
   ///@}
  private:
   Aws::String m_comparator;
-  bool m_comparatorHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_comparatorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -116,12 +116,12 @@ class TransitGatewayAttachmentSyncState {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   TransitGatewayAttachmentStatus m_transitGatewayAttachmentStatus{TransitGatewayAttachmentStatus::NOT_SET};
-  bool m_transitGatewayAttachmentStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentStatusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

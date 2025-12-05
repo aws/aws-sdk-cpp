@@ -156,21 +156,21 @@ class AuthenticationConfigurationInput {
   ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   OAuth2PropertiesInput m_oAuth2Properties;
-  bool m_oAuth2PropertiesHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   BasicAuthenticationCredentials m_basicAuthenticationCredentials;
-  bool m_basicAuthenticationCredentialsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customAuthenticationCredentials;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_oAuth2PropertiesHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_basicAuthenticationCredentialsHasBeenSet = false;
   bool m_customAuthenticationCredentialsHasBeenSet = false;
 };
 

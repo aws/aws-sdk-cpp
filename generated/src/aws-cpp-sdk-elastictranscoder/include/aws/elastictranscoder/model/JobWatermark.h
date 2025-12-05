@@ -99,12 +99,12 @@ class JobWatermark {
   ///@}
  private:
   Aws::String m_presetWatermarkId;
-  bool m_presetWatermarkIdHasBeenSet = false;
 
   Aws::String m_inputKey;
-  bool m_inputKeyHasBeenSet = false;
 
   Encryption m_encryption;
+  bool m_presetWatermarkIdHasBeenSet = false;
+  bool m_inputKeyHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

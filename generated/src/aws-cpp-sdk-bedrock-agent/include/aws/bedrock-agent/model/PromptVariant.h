@@ -194,27 +194,27 @@ class PromptVariant {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PromptTemplateType m_templateType{PromptTemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   PromptTemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   PromptInferenceConfiguration m_inferenceConfiguration;
-  bool m_inferenceConfigurationHasBeenSet = false;
 
   Aws::Vector<PromptMetadataEntry> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Utils::Document m_additionalModelRequestFields;
-  bool m_additionalModelRequestFieldsHasBeenSet = false;
 
   PromptGenAiResource m_genAiResource;
+  bool m_nameHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_inferenceConfigurationHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
   bool m_genAiResourceHasBeenSet = false;
 };
 

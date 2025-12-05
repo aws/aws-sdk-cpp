@@ -171,21 +171,21 @@ class UpdateContainerServiceRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   ContainerServicePowerName m_power{ContainerServicePowerName::NOT_SET};
-  bool m_powerHasBeenSet = false;
 
   int m_scale{0};
-  bool m_scaleHasBeenSet = false;
 
   bool m_isDisabled{false};
-  bool m_isDisabledHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_publicDomainNames;
-  bool m_publicDomainNamesHasBeenSet = false;
 
   PrivateRegistryAccessRequest m_privateRegistryAccess;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_powerHasBeenSet = false;
+  bool m_scaleHasBeenSet = false;
+  bool m_isDisabledHasBeenSet = false;
+  bool m_publicDomainNamesHasBeenSet = false;
   bool m_privateRegistryAccessHasBeenSet = false;
 };
 

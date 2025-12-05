@@ -169,24 +169,24 @@ class TransitGatewayConnect {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_transportTransitGatewayAttachmentId;
-  bool m_transportTransitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   TransitGatewayAttachmentState m_state{TransitGatewayAttachmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   TransitGatewayConnectOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_transportTransitGatewayAttachmentIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

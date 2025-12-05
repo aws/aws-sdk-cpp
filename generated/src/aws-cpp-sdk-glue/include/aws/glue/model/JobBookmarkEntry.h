@@ -153,24 +153,24 @@ class JobBookmarkEntry {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   int m_run{0};
-  bool m_runHasBeenSet = false;
 
   int m_attempt{0};
-  bool m_attemptHasBeenSet = false;
 
   Aws::String m_previousRunId;
-  bool m_previousRunIdHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_jobBookmark;
+  bool m_jobNameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_runHasBeenSet = false;
+  bool m_attemptHasBeenSet = false;
+  bool m_previousRunIdHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
   bool m_jobBookmarkHasBeenSet = false;
 };
 

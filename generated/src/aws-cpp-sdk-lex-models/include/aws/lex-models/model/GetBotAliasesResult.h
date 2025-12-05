@@ -88,12 +88,12 @@ class GetBotAliasesResult {
   ///@}
  private:
   Aws::Vector<BotAliasMetadata> m_botAliases;
-  bool m_botAliasesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botAliasesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

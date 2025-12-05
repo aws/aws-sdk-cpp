@@ -105,15 +105,15 @@ class InAppMessageButton {
   ///@}
  private:
   OverrideButtonConfiguration m_android;
-  bool m_androidHasBeenSet = false;
 
   DefaultButtonConfiguration m_defaultConfig;
-  bool m_defaultConfigHasBeenSet = false;
 
   OverrideButtonConfiguration m_iOS;
-  bool m_iOSHasBeenSet = false;
 
   OverrideButtonConfiguration m_web;
+  bool m_androidHasBeenSet = false;
+  bool m_defaultConfigHasBeenSet = false;
+  bool m_iOSHasBeenSet = false;
   bool m_webHasBeenSet = false;
 };
 

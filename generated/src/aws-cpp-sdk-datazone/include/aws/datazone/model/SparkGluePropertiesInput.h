@@ -175,27 +175,27 @@ class SparkGluePropertiesInput {
   ///@}
  private:
   SparkGlueArgs m_additionalArgs;
-  bool m_additionalArgsHasBeenSet = false;
 
   Aws::String m_glueConnectionName;
-  bool m_glueConnectionNameHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   int m_idleTimeout{0};
-  bool m_idleTimeoutHasBeenSet = false;
 
   Aws::String m_javaVirtualEnv;
-  bool m_javaVirtualEnvHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   Aws::String m_pythonVirtualEnv;
-  bool m_pythonVirtualEnvHasBeenSet = false;
 
   Aws::String m_workerType;
+  bool m_additionalArgsHasBeenSet = false;
+  bool m_glueConnectionNameHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_idleTimeoutHasBeenSet = false;
+  bool m_javaVirtualEnvHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_pythonVirtualEnvHasBeenSet = false;
   bool m_workerTypeHasBeenSet = false;
 };
 

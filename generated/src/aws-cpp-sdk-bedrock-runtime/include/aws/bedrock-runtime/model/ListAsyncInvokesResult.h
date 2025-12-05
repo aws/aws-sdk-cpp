@@ -85,12 +85,12 @@ class ListAsyncInvokesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AsyncInvokeSummary> m_asyncInvokeSummaries;
-  bool m_asyncInvokeSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_asyncInvokeSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

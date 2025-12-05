@@ -89,12 +89,12 @@ class ListIngestionsResult {
   ///@}
  private:
   Aws::Vector<IngestionSummary> m_ingestions;
-  bool m_ingestionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

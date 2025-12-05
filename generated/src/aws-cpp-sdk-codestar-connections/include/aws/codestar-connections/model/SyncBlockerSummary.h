@@ -94,12 +94,12 @@ class SyncBlockerSummary {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_parentResourceName;
-  bool m_parentResourceNameHasBeenSet = false;
 
   Aws::Vector<SyncBlocker> m_latestBlockers;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_parentResourceNameHasBeenSet = false;
   bool m_latestBlockersHasBeenSet = false;
 };
 

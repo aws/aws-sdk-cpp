@@ -59,9 +59,9 @@ class GetRepositoryEndpointResult {
   ///@}
  private:
   Aws::String m_repositoryEndpoint;
-  bool m_repositoryEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

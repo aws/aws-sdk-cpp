@@ -111,15 +111,15 @@ class GetFindingsRequest : public CodeGuruSecurityRequest {
   ///@}
  private:
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
+  bool m_scanNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

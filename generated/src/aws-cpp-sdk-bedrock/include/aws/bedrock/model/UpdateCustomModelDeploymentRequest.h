@@ -67,9 +67,9 @@ class UpdateCustomModelDeploymentRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_customModelDeploymentIdentifier;
+  bool m_modelArnHasBeenSet = false;
   bool m_customModelDeploymentIdentifierHasBeenSet = false;
 };
 

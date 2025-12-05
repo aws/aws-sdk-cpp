@@ -232,36 +232,36 @@ class GetContentModerationResult {
   ///@}
  private:
   VideoJobStatus m_jobStatus{VideoJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   VideoMetadata m_videoMetadata;
-  bool m_videoMetadataHasBeenSet = false;
 
   Aws::Vector<ContentModerationDetection> m_moderationLabels;
-  bool m_moderationLabelsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_moderationModelVersion;
-  bool m_moderationModelVersionHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Video m_video;
-  bool m_videoHasBeenSet = false;
 
   Aws::String m_jobTag;
-  bool m_jobTagHasBeenSet = false;
 
   GetContentModerationRequestMetadata m_getRequestMetadata;
-  bool m_getRequestMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_videoMetadataHasBeenSet = false;
+  bool m_moderationLabelsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_moderationModelVersionHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_jobTagHasBeenSet = false;
+  bool m_getRequestMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

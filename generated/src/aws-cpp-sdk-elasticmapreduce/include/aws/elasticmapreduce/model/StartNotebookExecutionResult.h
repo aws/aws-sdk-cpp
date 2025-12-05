@@ -59,9 +59,9 @@ class StartNotebookExecutionResult {
   ///@}
  private:
   Aws::String m_notebookExecutionId;
-  bool m_notebookExecutionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookExecutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

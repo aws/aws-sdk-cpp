@@ -65,9 +65,9 @@ class UpdateGeofenceCollectionRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_collectionNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

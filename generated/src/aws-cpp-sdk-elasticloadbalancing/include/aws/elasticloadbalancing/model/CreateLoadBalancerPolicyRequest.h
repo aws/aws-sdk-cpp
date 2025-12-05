@@ -119,15 +119,15 @@ class CreateLoadBalancerPolicyRequest : public ElasticLoadBalancingRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyTypeName;
-  bool m_policyTypeNameHasBeenSet = false;
 
   Aws::Vector<PolicyAttribute> m_policyAttributes;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyTypeNameHasBeenSet = false;
   bool m_policyAttributesHasBeenSet = false;
 };
 

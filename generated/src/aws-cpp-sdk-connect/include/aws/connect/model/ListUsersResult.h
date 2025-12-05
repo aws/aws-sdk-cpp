@@ -85,12 +85,12 @@ class ListUsersResult {
   ///@}
  private:
   Aws::Vector<UserSummary> m_userSummaryList;
-  bool m_userSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

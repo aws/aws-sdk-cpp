@@ -110,15 +110,15 @@ class GCMChannelRequest {
   ///@}
  private:
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::String m_defaultAuthenticationMethod;
-  bool m_defaultAuthenticationMethodHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_serviceJson;
+  bool m_apiKeyHasBeenSet = false;
+  bool m_defaultAuthenticationMethodHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_serviceJsonHasBeenSet = false;
 };
 

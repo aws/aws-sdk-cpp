@@ -98,15 +98,15 @@ class ListOpenCypherQueriesResult {
   ///@}
  private:
   int m_acceptedQueryCount{0};
-  bool m_acceptedQueryCountHasBeenSet = false;
 
   int m_runningQueryCount{0};
-  bool m_runningQueryCountHasBeenSet = false;
 
   Aws::Vector<GremlinQueryStatus> m_queries;
-  bool m_queriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_acceptedQueryCountHasBeenSet = false;
+  bool m_runningQueryCountHasBeenSet = false;
+  bool m_queriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

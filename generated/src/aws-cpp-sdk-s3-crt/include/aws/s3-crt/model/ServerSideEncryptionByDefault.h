@@ -116,9 +116,9 @@ class ServerSideEncryptionByDefault {
   ///@}
  private:
   ServerSideEncryption m_sSEAlgorithm{ServerSideEncryption::NOT_SET};
-  bool m_sSEAlgorithmHasBeenSet = false;
 
   Aws::String m_kMSMasterKeyID;
+  bool m_sSEAlgorithmHasBeenSet = false;
   bool m_kMSMasterKeyIDHasBeenSet = false;
 };
 

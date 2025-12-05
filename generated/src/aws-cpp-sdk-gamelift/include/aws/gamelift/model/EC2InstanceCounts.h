@@ -149,24 +149,24 @@ class EC2InstanceCounts {
   ///@}
  private:
   int m_dESIRED{0};
-  bool m_dESIREDHasBeenSet = false;
 
   int m_mINIMUM{0};
-  bool m_mINIMUMHasBeenSet = false;
 
   int m_mAXIMUM{0};
-  bool m_mAXIMUMHasBeenSet = false;
 
   int m_pENDING{0};
-  bool m_pENDINGHasBeenSet = false;
 
   int m_aCTIVE{0};
-  bool m_aCTIVEHasBeenSet = false;
 
   int m_iDLE{0};
-  bool m_iDLEHasBeenSet = false;
 
   int m_tERMINATING{0};
+  bool m_dESIREDHasBeenSet = false;
+  bool m_mINIMUMHasBeenSet = false;
+  bool m_mAXIMUMHasBeenSet = false;
+  bool m_pENDINGHasBeenSet = false;
+  bool m_aCTIVEHasBeenSet = false;
+  bool m_iDLEHasBeenSet = false;
   bool m_tERMINATINGHasBeenSet = false;
 };
 

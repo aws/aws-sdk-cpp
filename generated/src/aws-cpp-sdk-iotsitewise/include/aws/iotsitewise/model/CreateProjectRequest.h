@@ -132,18 +132,18 @@ class CreateProjectRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_portalIdHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

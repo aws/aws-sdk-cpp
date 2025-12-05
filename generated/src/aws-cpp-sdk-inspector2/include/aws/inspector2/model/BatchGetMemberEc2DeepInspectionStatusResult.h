@@ -94,12 +94,12 @@ class BatchGetMemberEc2DeepInspectionStatusResult {
   ///@}
  private:
   Aws::Vector<MemberAccountEc2DeepInspectionStatusState> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<FailedMemberAccountEc2DeepInspectionStatusState> m_failedAccountIds;
-  bool m_failedAccountIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_failedAccountIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

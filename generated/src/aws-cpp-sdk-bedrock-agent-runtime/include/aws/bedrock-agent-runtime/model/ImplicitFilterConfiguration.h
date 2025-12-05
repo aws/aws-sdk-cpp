@@ -77,9 +77,9 @@ class ImplicitFilterConfiguration {
   ///@}
  private:
   Aws::Vector<MetadataAttributeSchema> m_metadataAttributes;
-  bool m_metadataAttributesHasBeenSet = false;
 
   Aws::String m_modelArn;
+  bool m_metadataAttributesHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
 };
 

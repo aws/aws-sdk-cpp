@@ -113,18 +113,18 @@ class ListLensReviewsResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   int m_milestoneNumber{0};
-  bool m_milestoneNumberHasBeenSet = false;
 
   Aws::Vector<LensReviewSummary> m_lensReviewSummaries;
-  bool m_lensReviewSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_milestoneNumberHasBeenSet = false;
+  bool m_lensReviewSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

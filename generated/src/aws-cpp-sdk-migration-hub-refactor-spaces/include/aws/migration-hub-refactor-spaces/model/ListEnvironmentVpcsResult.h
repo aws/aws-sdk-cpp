@@ -85,12 +85,12 @@ class ListEnvironmentVpcsResult {
   ///@}
  private:
   Aws::Vector<EnvironmentVpc> m_environmentVpcList;
-  bool m_environmentVpcListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentVpcListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

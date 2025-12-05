@@ -162,24 +162,24 @@ class RouteTableAssociation {
   ///@}
  private:
   bool m_main{false};
-  bool m_mainHasBeenSet = false;
 
   Aws::String m_routeTableAssociationId;
-  bool m_routeTableAssociationIdHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_publicIpv4Pool;
-  bool m_publicIpv4PoolHasBeenSet = false;
 
   RouteTableAssociationState m_associationState;
+  bool m_mainHasBeenSet = false;
+  bool m_routeTableAssociationIdHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_publicIpv4PoolHasBeenSet = false;
   bool m_associationStateHasBeenSet = false;
 };
 

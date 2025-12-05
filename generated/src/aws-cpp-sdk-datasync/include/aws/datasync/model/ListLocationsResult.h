@@ -90,12 +90,12 @@ class ListLocationsResult {
   ///@}
  private:
   Aws::Vector<LocationListEntry> m_locations;
-  bool m_locationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

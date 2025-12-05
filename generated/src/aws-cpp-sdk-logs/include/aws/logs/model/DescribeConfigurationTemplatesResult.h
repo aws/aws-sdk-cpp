@@ -84,12 +84,12 @@ class DescribeConfigurationTemplatesResult {
   ///@}
  private:
   Aws::Vector<ConfigurationTemplate> m_configurationTemplates;
-  bool m_configurationTemplatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationTemplatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

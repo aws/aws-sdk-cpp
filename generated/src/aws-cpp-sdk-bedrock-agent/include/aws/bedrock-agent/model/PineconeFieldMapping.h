@@ -71,9 +71,9 @@ class PineconeFieldMapping {
   ///@}
  private:
   Aws::String m_textField;
-  bool m_textFieldHasBeenSet = false;
 
   Aws::String m_metadataField;
+  bool m_textFieldHasBeenSet = false;
   bool m_metadataFieldHasBeenSet = false;
 };
 

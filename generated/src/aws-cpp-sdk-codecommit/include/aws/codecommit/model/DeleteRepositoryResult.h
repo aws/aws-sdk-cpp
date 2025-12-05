@@ -65,9 +65,9 @@ class DeleteRepositoryResult {
   ///@}
  private:
   Aws::String m_repositoryId;
-  bool m_repositoryIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

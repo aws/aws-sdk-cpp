@@ -61,9 +61,9 @@ class DescribeProblemObservationsResult {
   ///@}
  private:
   RelatedObservations m_relatedObservations;
-  bool m_relatedObservationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relatedObservationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

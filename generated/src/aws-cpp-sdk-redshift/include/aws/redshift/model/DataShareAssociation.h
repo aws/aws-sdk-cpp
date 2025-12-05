@@ -161,24 +161,24 @@ class DataShareAssociation {
   ///@}
  private:
   Aws::String m_consumerIdentifier;
-  bool m_consumerIdentifierHasBeenSet = false;
 
   DataShareStatus m_status{DataShareStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_consumerRegion;
-  bool m_consumerRegionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_statusChangeDate{};
-  bool m_statusChangeDateHasBeenSet = false;
 
   bool m_producerAllowedWrites{false};
-  bool m_producerAllowedWritesHasBeenSet = false;
 
   bool m_consumerAcceptedWrites{false};
+  bool m_consumerIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_consumerRegionHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_statusChangeDateHasBeenSet = false;
+  bool m_producerAllowedWritesHasBeenSet = false;
   bool m_consumerAcceptedWritesHasBeenSet = false;
 };
 

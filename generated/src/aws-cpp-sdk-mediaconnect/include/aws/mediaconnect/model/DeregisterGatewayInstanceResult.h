@@ -75,12 +75,12 @@ class DeregisterGatewayInstanceResult {
   ///@}
  private:
   Aws::String m_gatewayInstanceArn;
-  bool m_gatewayInstanceArnHasBeenSet = false;
 
   InstanceState m_instanceState{InstanceState::NOT_SET};
-  bool m_instanceStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayInstanceArnHasBeenSet = false;
+  bool m_instanceStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

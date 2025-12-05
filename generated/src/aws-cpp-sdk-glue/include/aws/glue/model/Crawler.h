@@ -415,63 +415,63 @@ class Crawler {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   CrawlerTargets m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_classifiers;
-  bool m_classifiersHasBeenSet = false;
 
   RecrawlPolicy m_recrawlPolicy;
-  bool m_recrawlPolicyHasBeenSet = false;
 
   SchemaChangePolicy m_schemaChangePolicy;
-  bool m_schemaChangePolicyHasBeenSet = false;
 
   LineageConfiguration m_lineageConfiguration;
-  bool m_lineageConfigurationHasBeenSet = false;
 
   CrawlerState m_state{CrawlerState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_tablePrefix;
-  bool m_tablePrefixHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   long long m_crawlElapsedTime{0};
-  bool m_crawlElapsedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   LastCrawlInfo m_lastCrawl;
-  bool m_lastCrawlHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_crawlerSecurityConfiguration;
-  bool m_crawlerSecurityConfigurationHasBeenSet = false;
 
   LakeFormationConfiguration m_lakeFormationConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_classifiersHasBeenSet = false;
+  bool m_recrawlPolicyHasBeenSet = false;
+  bool m_schemaChangePolicyHasBeenSet = false;
+  bool m_lineageConfigurationHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tablePrefixHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_crawlElapsedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_lastCrawlHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_crawlerSecurityConfigurationHasBeenSet = false;
   bool m_lakeFormationConfigurationHasBeenSet = false;
 };
 

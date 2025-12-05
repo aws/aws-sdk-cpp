@@ -90,12 +90,12 @@ class ListFleetMembersResult {
   ///@}
  private:
   Aws::Vector<FleetMember> m_members;
-  bool m_membersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

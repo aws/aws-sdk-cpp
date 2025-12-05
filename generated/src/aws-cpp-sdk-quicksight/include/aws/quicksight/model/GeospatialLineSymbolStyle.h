@@ -69,9 +69,9 @@ class GeospatialLineSymbolStyle {
   ///@}
  private:
   GeospatialColor m_fillColor;
-  bool m_fillColorHasBeenSet = false;
 
   GeospatialLineWidth m_lineWidth;
+  bool m_fillColorHasBeenSet = false;
   bool m_lineWidthHasBeenSet = false;
 };
 

@@ -130,18 +130,18 @@ class GetAppMonitorDataRequest : public CloudWatchRUMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TimeRange m_timeRange;
-  bool m_timeRangeHasBeenSet = false;
 
   Aws::Vector<QueryFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_nameHasBeenSet = false;
+  bool m_timeRangeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

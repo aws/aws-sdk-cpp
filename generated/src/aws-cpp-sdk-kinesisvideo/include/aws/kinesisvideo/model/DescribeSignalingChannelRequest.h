@@ -65,9 +65,9 @@ class DescribeSignalingChannelRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_channelARN;
+  bool m_channelNameHasBeenSet = false;
   bool m_channelARNHasBeenSet = false;
 };
 

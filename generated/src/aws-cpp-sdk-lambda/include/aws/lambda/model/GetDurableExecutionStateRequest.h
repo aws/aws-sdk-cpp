@@ -110,15 +110,15 @@ class GetDurableExecutionStateRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_durableExecutionArn;
-  bool m_durableExecutionArnHasBeenSet = false;
 
   Aws::String m_checkpointToken;
-  bool m_checkpointTokenHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_durableExecutionArnHasBeenSet = false;
+  bool m_checkpointTokenHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

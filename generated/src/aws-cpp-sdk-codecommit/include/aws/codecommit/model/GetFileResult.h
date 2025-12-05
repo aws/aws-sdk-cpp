@@ -149,24 +149,24 @@ class GetFileResult {
   ///@}
  private:
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_blobId;
-  bool m_blobIdHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   FileModeTypeEnum m_fileMode{FileModeTypeEnum::NOT_SET};
-  bool m_fileModeHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_fileContent{};
-  bool m_fileContentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commitIdHasBeenSet = false;
+  bool m_blobIdHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_fileModeHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
+  bool m_fileContentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

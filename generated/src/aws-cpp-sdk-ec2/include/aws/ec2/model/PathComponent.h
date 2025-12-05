@@ -415,63 +415,63 @@ class PathComponent {
   ///@}
  private:
   int m_sequenceNumber{0};
-  bool m_sequenceNumberHasBeenSet = false;
 
   AnalysisAclRule m_aclRule;
-  bool m_aclRuleHasBeenSet = false;
 
   AnalysisComponent m_attachedTo;
-  bool m_attachedToHasBeenSet = false;
 
   AnalysisComponent m_component;
-  bool m_componentHasBeenSet = false;
 
   AnalysisComponent m_destinationVpc;
-  bool m_destinationVpcHasBeenSet = false;
 
   AnalysisPacketHeader m_outboundHeader;
-  bool m_outboundHeaderHasBeenSet = false;
 
   AnalysisPacketHeader m_inboundHeader;
-  bool m_inboundHeaderHasBeenSet = false;
 
   AnalysisRouteTableRoute m_routeTableRoute;
-  bool m_routeTableRouteHasBeenSet = false;
 
   AnalysisSecurityGroupRule m_securityGroupRule;
-  bool m_securityGroupRuleHasBeenSet = false;
 
   AnalysisComponent m_sourceVpc;
-  bool m_sourceVpcHasBeenSet = false;
 
   AnalysisComponent m_subnet;
-  bool m_subnetHasBeenSet = false;
 
   AnalysisComponent m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   Aws::Vector<AdditionalDetail> m_additionalDetails;
-  bool m_additionalDetailsHasBeenSet = false;
 
   AnalysisComponent m_transitGateway;
-  bool m_transitGatewayHasBeenSet = false;
 
   TransitGatewayRouteTableRoute m_transitGatewayRouteTableRoute;
-  bool m_transitGatewayRouteTableRouteHasBeenSet = false;
 
   Aws::Vector<Explanation> m_explanations;
-  bool m_explanationsHasBeenSet = false;
 
   AnalysisComponent m_elasticLoadBalancerListener;
-  bool m_elasticLoadBalancerListenerHasBeenSet = false;
 
   FirewallStatelessRule m_firewallStatelessRule;
-  bool m_firewallStatelessRuleHasBeenSet = false;
 
   FirewallStatefulRule m_firewallStatefulRule;
-  bool m_firewallStatefulRuleHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_sequenceNumberHasBeenSet = false;
+  bool m_aclRuleHasBeenSet = false;
+  bool m_attachedToHasBeenSet = false;
+  bool m_componentHasBeenSet = false;
+  bool m_destinationVpcHasBeenSet = false;
+  bool m_outboundHeaderHasBeenSet = false;
+  bool m_inboundHeaderHasBeenSet = false;
+  bool m_routeTableRouteHasBeenSet = false;
+  bool m_securityGroupRuleHasBeenSet = false;
+  bool m_sourceVpcHasBeenSet = false;
+  bool m_subnetHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
+  bool m_additionalDetailsHasBeenSet = false;
+  bool m_transitGatewayHasBeenSet = false;
+  bool m_transitGatewayRouteTableRouteHasBeenSet = false;
+  bool m_explanationsHasBeenSet = false;
+  bool m_elasticLoadBalancerListenerHasBeenSet = false;
+  bool m_firewallStatelessRuleHasBeenSet = false;
+  bool m_firewallStatefulRuleHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

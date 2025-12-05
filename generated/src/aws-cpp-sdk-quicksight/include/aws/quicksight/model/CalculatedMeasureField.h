@@ -69,9 +69,9 @@ class CalculatedMeasureField {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_fieldIdHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

@@ -192,27 +192,27 @@ class KnowledgeBaseFlowNodeConfiguration {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   GuardrailConfiguration m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   int m_numberOfResults{0};
-  bool m_numberOfResultsHasBeenSet = false;
 
   KnowledgeBasePromptTemplate m_promptTemplate;
-  bool m_promptTemplateHasBeenSet = false;
 
   PromptInferenceConfiguration m_inferenceConfiguration;
-  bool m_inferenceConfigurationHasBeenSet = false;
 
   VectorSearchRerankingConfiguration m_rerankingConfiguration;
-  bool m_rerankingConfigurationHasBeenSet = false;
 
   KnowledgeBaseOrchestrationConfiguration m_orchestrationConfiguration;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_numberOfResultsHasBeenSet = false;
+  bool m_promptTemplateHasBeenSet = false;
+  bool m_inferenceConfigurationHasBeenSet = false;
+  bool m_rerankingConfigurationHasBeenSet = false;
   bool m_orchestrationConfigurationHasBeenSet = false;
 };
 

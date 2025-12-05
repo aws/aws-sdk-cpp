@@ -121,15 +121,15 @@ class ListInstancesRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceNameFilter;
-  bool m_instanceNameFilterHasBeenSet = false;
 
   Aws::Vector<InstanceState> m_instanceStateFilter;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_instanceNameFilterHasBeenSet = false;
   bool m_instanceStateFilterHasBeenSet = false;
 };
 

@@ -157,24 +157,24 @@ class UpgradeDomainResult {
   ///@}
  private:
   Aws::String m_upgradeId;
-  bool m_upgradeIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_targetVersion;
-  bool m_targetVersionHasBeenSet = false;
 
   bool m_performCheckOnly{false};
-  bool m_performCheckOnlyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_advancedOptions;
-  bool m_advancedOptionsHasBeenSet = false;
 
   ChangeProgressDetails m_changeProgressDetails;
-  bool m_changeProgressDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_upgradeIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
+  bool m_performCheckOnlyHasBeenSet = false;
+  bool m_advancedOptionsHasBeenSet = false;
+  bool m_changeProgressDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

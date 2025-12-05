@@ -65,9 +65,9 @@ class SnowflakeBufferingHints {
   ///@}
  private:
   int m_sizeInMBs{0};
-  bool m_sizeInMBsHasBeenSet = false;
 
   int m_intervalInSeconds{0};
+  bool m_sizeInMBsHasBeenSet = false;
   bool m_intervalInSecondsHasBeenSet = false;
 };
 

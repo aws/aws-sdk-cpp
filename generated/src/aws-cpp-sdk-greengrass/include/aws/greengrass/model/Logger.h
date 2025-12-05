@@ -120,18 +120,18 @@ class Logger {
   ///@}
  private:
   LoggerComponent m_component{LoggerComponent::NOT_SET};
-  bool m_componentHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LoggerLevel m_level{LoggerLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   int m_space{0};
-  bool m_spaceHasBeenSet = false;
 
   LoggerType m_type{LoggerType::NOT_SET};
+  bool m_componentHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_spaceHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

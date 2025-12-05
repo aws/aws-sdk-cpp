@@ -92,12 +92,12 @@ class ManualEvidence {
   ///@}
  private:
   Aws::String m_s3ResourcePath;
-  bool m_s3ResourcePathHasBeenSet = false;
 
   Aws::String m_textResponse;
-  bool m_textResponseHasBeenSet = false;
 
   Aws::String m_evidenceFileName;
+  bool m_s3ResourcePathHasBeenSet = false;
+  bool m_textResponseHasBeenSet = false;
   bool m_evidenceFileNameHasBeenSet = false;
 };
 

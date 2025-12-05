@@ -126,18 +126,18 @@ class SmallMultiplesOptions {
   ///@}
  private:
   long long m_maxVisibleRows{0};
-  bool m_maxVisibleRowsHasBeenSet = false;
 
   long long m_maxVisibleColumns{0};
-  bool m_maxVisibleColumnsHasBeenSet = false;
 
   PanelConfiguration m_panelConfiguration;
-  bool m_panelConfigurationHasBeenSet = false;
 
   SmallMultiplesAxisProperties m_xAxis;
-  bool m_xAxisHasBeenSet = false;
 
   SmallMultiplesAxisProperties m_yAxis;
+  bool m_maxVisibleRowsHasBeenSet = false;
+  bool m_maxVisibleColumnsHasBeenSet = false;
+  bool m_panelConfigurationHasBeenSet = false;
+  bool m_xAxisHasBeenSet = false;
   bool m_yAxisHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class DescribePipelinesResult {
   ///@}
  private:
   Aws::Vector<PipelineDescription> m_pipelineDescriptionList;
-  bool m_pipelineDescriptionListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineDescriptionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

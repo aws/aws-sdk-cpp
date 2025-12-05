@@ -141,18 +141,18 @@ class DescribeWorkspaceDirectoriesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_directoryIds;
-  bool m_directoryIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_workspaceDirectoryNames;
-  bool m_workspaceDirectoryNamesHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DescribeWorkspaceDirectoriesFilter> m_filters;
+  bool m_directoryIdsHasBeenSet = false;
+  bool m_workspaceDirectoryNamesHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

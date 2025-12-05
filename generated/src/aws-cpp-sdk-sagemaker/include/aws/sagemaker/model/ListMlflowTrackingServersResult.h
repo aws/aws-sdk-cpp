@@ -85,12 +85,12 @@ class ListMlflowTrackingServersResult {
   ///@}
  private:
   Aws::Vector<TrackingServerSummary> m_trackingServerSummaries;
-  bool m_trackingServerSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trackingServerSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

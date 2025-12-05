@@ -60,9 +60,9 @@ class CreateDataRepositoryTaskResult {
   ///@}
  private:
   DataRepositoryTask m_dataRepositoryTask;
-  bool m_dataRepositoryTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataRepositoryTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

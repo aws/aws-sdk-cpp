@@ -69,9 +69,9 @@ class AggregationPartitionBy {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
   bool m_timeGranularityHasBeenSet = false;
 };
 

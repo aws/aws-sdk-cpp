@@ -71,9 +71,9 @@ class GetCanaryRequest : public SyntheticsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_dryRunId;
+  bool m_nameHasBeenSet = false;
   bool m_dryRunIdHasBeenSet = false;
 };
 

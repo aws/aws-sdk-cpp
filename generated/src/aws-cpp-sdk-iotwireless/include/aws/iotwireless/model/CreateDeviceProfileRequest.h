@@ -141,18 +141,18 @@ class CreateDeviceProfileRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LoRaWANDeviceProfile m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   SidewalkCreateDeviceProfile m_sidewalk;
+  bool m_nameHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_sidewalkHasBeenSet = false;
 };
 

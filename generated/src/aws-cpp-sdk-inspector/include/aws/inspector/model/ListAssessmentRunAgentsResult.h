@@ -87,12 +87,12 @@ class ListAssessmentRunAgentsResult {
   ///@}
  private:
   Aws::Vector<AssessmentRunAgent> m_assessmentRunAgents;
-  bool m_assessmentRunAgentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentRunAgentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

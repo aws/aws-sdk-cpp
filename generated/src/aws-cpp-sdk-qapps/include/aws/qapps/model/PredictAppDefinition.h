@@ -88,12 +88,12 @@ class PredictAppDefinition {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AppDefinitionInput m_appDefinition;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_appDefinitionHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class EntityRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_entityId;
+  bool m_catalogHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
 };
 

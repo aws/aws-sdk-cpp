@@ -68,9 +68,9 @@ class GetKnowledgeBaseDocumentsResult {
   ///@}
  private:
   Aws::Vector<KnowledgeBaseDocumentDetail> m_documentDetails;
-  bool m_documentDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

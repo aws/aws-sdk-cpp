@@ -180,27 +180,27 @@ class GetJobOutputResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_contentRange;
-  bool m_contentRangeHasBeenSet = false;
 
   Aws::String m_acceptRanges;
-  bool m_acceptRangesHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_archiveDescription;
-  bool m_archiveDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_contentRangeHasBeenSet = false;
+  bool m_acceptRangesHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_archiveDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

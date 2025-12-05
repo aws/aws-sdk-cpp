@@ -184,21 +184,21 @@ class Volume {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   HostVolumeProperties m_host;
-  bool m_hostHasBeenSet = false;
 
   DockerVolumeConfiguration m_dockerVolumeConfiguration;
-  bool m_dockerVolumeConfigurationHasBeenSet = false;
 
   EFSVolumeConfiguration m_efsVolumeConfiguration;
-  bool m_efsVolumeConfigurationHasBeenSet = false;
 
   FSxWindowsFileServerVolumeConfiguration m_fsxWindowsFileServerVolumeConfiguration;
-  bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = false;
 
   bool m_configuredAtLaunch{false};
+  bool m_nameHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
+  bool m_dockerVolumeConfigurationHasBeenSet = false;
+  bool m_efsVolumeConfigurationHasBeenSet = false;
+  bool m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = false;
   bool m_configuredAtLaunchHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class GetBucketOwnershipControlsResult {
   ///@}
  private:
   OwnershipControls m_ownershipControls;
-  bool m_ownershipControlsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ownershipControlsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

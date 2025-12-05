@@ -297,39 +297,39 @@ class CreatePortalRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_portalName;
-  bool m_portalNameHasBeenSet = false;
 
   Aws::String m_portalDescription;
-  bool m_portalDescriptionHasBeenSet = false;
 
   Aws::String m_portalContactEmail;
-  bool m_portalContactEmailHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ImageFile m_portalLogoImageFile;
-  bool m_portalLogoImageFileHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AuthMode m_portalAuthMode{AuthMode::NOT_SET};
-  bool m_portalAuthModeHasBeenSet = false;
 
   Aws::String m_notificationSenderEmail;
-  bool m_notificationSenderEmailHasBeenSet = false;
 
   Alarms m_alarms;
-  bool m_alarmsHasBeenSet = false;
 
   PortalType m_portalType{PortalType::NOT_SET};
-  bool m_portalTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, PortalTypeEntry> m_portalTypeConfiguration;
+  bool m_portalNameHasBeenSet = false;
+  bool m_portalDescriptionHasBeenSet = false;
+  bool m_portalContactEmailHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_portalLogoImageFileHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_portalAuthModeHasBeenSet = false;
+  bool m_notificationSenderEmailHasBeenSet = false;
+  bool m_alarmsHasBeenSet = false;
+  bool m_portalTypeHasBeenSet = false;
   bool m_portalTypeConfigurationHasBeenSet = false;
 };
 

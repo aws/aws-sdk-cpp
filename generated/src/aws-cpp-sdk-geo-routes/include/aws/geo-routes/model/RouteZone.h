@@ -67,9 +67,9 @@ class RouteZone {
   ///@}
  private:
   RouteZoneCategory m_category{RouteZoneCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_categoryHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

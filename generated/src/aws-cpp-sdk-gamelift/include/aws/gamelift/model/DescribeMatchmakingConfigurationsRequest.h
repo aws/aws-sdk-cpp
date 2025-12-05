@@ -116,15 +116,15 @@ class DescribeMatchmakingConfigurationsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_namesHasBeenSet = false;
+  bool m_ruleSetNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

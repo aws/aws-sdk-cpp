@@ -97,12 +97,12 @@ class UpdateDocumentationVersionRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_documentationVersion;
-  bool m_documentationVersionHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_documentationVersionHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

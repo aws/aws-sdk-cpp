@@ -67,9 +67,9 @@ class GetAssistantAssociationRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantAssociationId;
-  bool m_assistantAssociationIdHasBeenSet = false;
 
   Aws::String m_assistantId;
+  bool m_assistantAssociationIdHasBeenSet = false;
   bool m_assistantIdHasBeenSet = false;
 };
 

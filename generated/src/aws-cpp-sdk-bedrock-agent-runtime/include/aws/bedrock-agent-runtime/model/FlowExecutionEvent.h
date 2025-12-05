@@ -216,30 +216,30 @@ class FlowExecutionEvent {
   ///@}
  private:
   ConditionResultEvent m_conditionResultEvent;
-  bool m_conditionResultEventHasBeenSet = false;
 
   FlowFailureEvent m_flowFailureEvent;
-  bool m_flowFailureEventHasBeenSet = false;
 
   FlowExecutionInputEvent m_flowInputEvent;
-  bool m_flowInputEventHasBeenSet = false;
 
   FlowExecutionOutputEvent m_flowOutputEvent;
-  bool m_flowOutputEventHasBeenSet = false;
 
   NodeActionEvent m_nodeActionEvent;
-  bool m_nodeActionEventHasBeenSet = false;
 
   NodeDependencyEvent m_nodeDependencyEvent;
-  bool m_nodeDependencyEventHasBeenSet = false;
 
   NodeFailureEvent m_nodeFailureEvent;
-  bool m_nodeFailureEventHasBeenSet = false;
 
   NodeInputEvent m_nodeInputEvent;
-  bool m_nodeInputEventHasBeenSet = false;
 
   NodeOutputEvent m_nodeOutputEvent;
+  bool m_conditionResultEventHasBeenSet = false;
+  bool m_flowFailureEventHasBeenSet = false;
+  bool m_flowInputEventHasBeenSet = false;
+  bool m_flowOutputEventHasBeenSet = false;
+  bool m_nodeActionEventHasBeenSet = false;
+  bool m_nodeDependencyEventHasBeenSet = false;
+  bool m_nodeFailureEventHasBeenSet = false;
+  bool m_nodeInputEventHasBeenSet = false;
   bool m_nodeOutputEventHasBeenSet = false;
 };
 

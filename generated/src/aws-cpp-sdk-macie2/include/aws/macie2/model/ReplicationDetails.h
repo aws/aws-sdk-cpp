@@ -98,12 +98,12 @@ class ReplicationDetails {
   ///@}
  private:
   bool m_replicated{false};
-  bool m_replicatedHasBeenSet = false;
 
   bool m_replicatedExternally{false};
-  bool m_replicatedExternallyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationAccounts;
+  bool m_replicatedHasBeenSet = false;
+  bool m_replicatedExternallyHasBeenSet = false;
   bool m_replicationAccountsHasBeenSet = false;
 };
 

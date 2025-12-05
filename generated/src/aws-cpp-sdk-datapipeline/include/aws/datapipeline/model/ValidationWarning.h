@@ -77,9 +77,9 @@ class ValidationWarning {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_warnings;
+  bool m_idHasBeenSet = false;
   bool m_warningsHasBeenSet = false;
 };
 

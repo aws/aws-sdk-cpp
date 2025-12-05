@@ -180,21 +180,21 @@ class EnabledControlFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_controlIdentifiers;
-  bool m_controlIdentifiersHasBeenSet = false;
 
   Aws::Vector<EnablementStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   Aws::Vector<DriftStatus> m_driftStatuses;
-  bool m_driftStatusesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parentIdentifiers;
-  bool m_parentIdentifiersHasBeenSet = false;
 
   Aws::Vector<DriftStatus> m_inheritanceDriftStatuses;
-  bool m_inheritanceDriftStatusesHasBeenSet = false;
 
   Aws::Vector<DriftStatus> m_resourceDriftStatuses;
+  bool m_controlIdentifiersHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
+  bool m_driftStatusesHasBeenSet = false;
+  bool m_parentIdentifiersHasBeenSet = false;
+  bool m_inheritanceDriftStatusesHasBeenSet = false;
   bool m_resourceDriftStatusesHasBeenSet = false;
 };
 

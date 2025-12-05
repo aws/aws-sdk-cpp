@@ -105,15 +105,15 @@ class ListResolverRuleAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<ResolverRuleAssociation> m_resolverRuleAssociations;
-  bool m_resolverRuleAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_resolverRuleAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

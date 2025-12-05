@@ -221,30 +221,30 @@ class CreateExplainabilityRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_explainabilityName;
-  bool m_explainabilityNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   ExplainabilityConfig m_explainabilityConfig;
-  bool m_explainabilityConfigHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Schema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   bool m_enableVisualization{false};
-  bool m_enableVisualizationHasBeenSet = false;
 
   Aws::String m_startDateTime;
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::String m_endDateTime;
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_explainabilityNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_explainabilityConfigHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_enableVisualizationHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

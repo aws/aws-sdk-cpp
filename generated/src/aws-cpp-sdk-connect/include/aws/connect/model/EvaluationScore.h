@@ -95,15 +95,15 @@ class EvaluationScore {
   ///@}
  private:
   double m_percentage{0.0};
-  bool m_percentageHasBeenSet = false;
 
   bool m_notApplicable{false};
-  bool m_notApplicableHasBeenSet = false;
 
   bool m_automaticFail{false};
-  bool m_automaticFailHasBeenSet = false;
 
   double m_appliedWeight{0.0};
+  bool m_percentageHasBeenSet = false;
+  bool m_notApplicableHasBeenSet = false;
+  bool m_automaticFailHasBeenSet = false;
   bool m_appliedWeightHasBeenSet = false;
 };
 

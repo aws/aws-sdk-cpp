@@ -68,9 +68,9 @@ class SuccessfulPackageVersionInfo {
   ///@}
  private:
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
+  bool m_revisionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

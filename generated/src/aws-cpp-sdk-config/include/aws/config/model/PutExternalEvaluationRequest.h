@@ -69,9 +69,9 @@ class PutExternalEvaluationRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   ExternalEvaluation m_externalEvaluation;
+  bool m_configRuleNameHasBeenSet = false;
   bool m_externalEvaluationHasBeenSet = false;
 };
 

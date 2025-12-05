@@ -191,24 +191,24 @@ class SchemaAttributeType {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AttributeDataType m_attributeDataType{AttributeDataType::NOT_SET};
-  bool m_attributeDataTypeHasBeenSet = false;
 
   bool m_developerOnlyAttribute{false};
-  bool m_developerOnlyAttributeHasBeenSet = false;
 
   bool m_mutable{false};
-  bool m_mutableHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   NumberAttributeConstraintsType m_numberAttributeConstraints;
-  bool m_numberAttributeConstraintsHasBeenSet = false;
 
   StringAttributeConstraintsType m_stringAttributeConstraints;
+  bool m_nameHasBeenSet = false;
+  bool m_attributeDataTypeHasBeenSet = false;
+  bool m_developerOnlyAttributeHasBeenSet = false;
+  bool m_mutableHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
+  bool m_numberAttributeConstraintsHasBeenSet = false;
   bool m_stringAttributeConstraintsHasBeenSet = false;
 };
 

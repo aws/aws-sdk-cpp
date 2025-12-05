@@ -86,12 +86,12 @@ class ServerCertificateSummary {
   ///@}
  private:
   Aws::String m_serverCertificateArn;
-  bool m_serverCertificateArnHasBeenSet = false;
 
   ServerCertificateStatus m_serverCertificateStatus{ServerCertificateStatus::NOT_SET};
-  bool m_serverCertificateStatusHasBeenSet = false;
 
   Aws::String m_serverCertificateStatusDetail;
+  bool m_serverCertificateArnHasBeenSet = false;
+  bool m_serverCertificateStatusHasBeenSet = false;
   bool m_serverCertificateStatusDetailHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class GetReservationCoverageResult {
   ///@}
  private:
   Aws::Vector<CoverageByTime> m_coveragesByTime;
-  bool m_coveragesByTimeHasBeenSet = false;
 
   Coverage m_total;
-  bool m_totalHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coveragesByTimeHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

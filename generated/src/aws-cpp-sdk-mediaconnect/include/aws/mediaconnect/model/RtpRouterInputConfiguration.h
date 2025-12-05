@@ -68,9 +68,9 @@ class RtpRouterInputConfiguration {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   ForwardErrorCorrectionState m_forwardErrorCorrection{ForwardErrorCorrectionState::NOT_SET};
+  bool m_portHasBeenSet = false;
   bool m_forwardErrorCorrectionHasBeenSet = false;
 };
 

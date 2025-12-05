@@ -371,51 +371,51 @@ class DescribeReservedInstancesOfferingsRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   bool m_includeMarketplace{false};
-  bool m_includeMarketplaceHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   long long m_maxDuration{0};
-  bool m_maxDurationHasBeenSet = false;
 
   int m_maxInstanceCount{0};
-  bool m_maxInstanceCountHasBeenSet = false;
 
   long long m_minDuration{0};
-  bool m_minDurationHasBeenSet = false;
 
   OfferingClassType m_offeringClass{OfferingClassType::NOT_SET};
-  bool m_offeringClassHasBeenSet = false;
 
   RIProductDescription m_productDescription{RIProductDescription::NOT_SET};
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reservedInstancesOfferingIds;
-  bool m_reservedInstancesOfferingIdsHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Tenancy m_instanceTenancy{Tenancy::NOT_SET};
-  bool m_instanceTenancyHasBeenSet = false;
 
   OfferingTypeValues m_offeringType{OfferingTypeValues::NOT_SET};
-  bool m_offeringTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_includeMarketplaceHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_maxDurationHasBeenSet = false;
+  bool m_maxInstanceCountHasBeenSet = false;
+  bool m_minDurationHasBeenSet = false;
+  bool m_offeringClassHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_reservedInstancesOfferingIdsHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_instanceTenancyHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

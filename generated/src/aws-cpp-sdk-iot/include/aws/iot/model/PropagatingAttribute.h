@@ -89,12 +89,12 @@ class PropagatingAttribute {
   ///@}
  private:
   Aws::String m_userPropertyKey;
-  bool m_userPropertyKeyHasBeenSet = false;
 
   Aws::String m_thingAttribute;
-  bool m_thingAttributeHasBeenSet = false;
 
   Aws::String m_connectionAttribute;
+  bool m_userPropertyKeyHasBeenSet = false;
+  bool m_thingAttributeHasBeenSet = false;
   bool m_connectionAttributeHasBeenSet = false;
 };
 

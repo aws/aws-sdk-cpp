@@ -92,12 +92,12 @@ class TrustedAdvisorCheckRefreshStatus {
   ///@}
  private:
   Aws::String m_checkId;
-  bool m_checkIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   long long m_millisUntilNextRefreshable{0};
+  bool m_checkIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_millisUntilNextRefreshableHasBeenSet = false;
 };
 

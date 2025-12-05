@@ -255,36 +255,36 @@ class RestoreTableToPointInTimeRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_sourceTableArn;
-  bool m_sourceTableArnHasBeenSet = false;
 
   Aws::String m_sourceTableName;
-  bool m_sourceTableNameHasBeenSet = false;
 
   Aws::String m_targetTableName;
-  bool m_targetTableNameHasBeenSet = false;
 
   bool m_useLatestRestorableTime{false};
-  bool m_useLatestRestorableTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreDateTime{};
-  bool m_restoreDateTimeHasBeenSet = false;
 
   BillingMode m_billingModeOverride{BillingMode::NOT_SET};
-  bool m_billingModeOverrideHasBeenSet = false;
 
   Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexOverride;
-  bool m_globalSecondaryIndexOverrideHasBeenSet = false;
 
   Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexOverride;
-  bool m_localSecondaryIndexOverrideHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughputOverride;
-  bool m_provisionedThroughputOverrideHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughputOverride;
-  bool m_onDemandThroughputOverrideHasBeenSet = false;
 
   SSESpecification m_sSESpecificationOverride;
+  bool m_sourceTableArnHasBeenSet = false;
+  bool m_sourceTableNameHasBeenSet = false;
+  bool m_targetTableNameHasBeenSet = false;
+  bool m_useLatestRestorableTimeHasBeenSet = false;
+  bool m_restoreDateTimeHasBeenSet = false;
+  bool m_billingModeOverrideHasBeenSet = false;
+  bool m_globalSecondaryIndexOverrideHasBeenSet = false;
+  bool m_localSecondaryIndexOverrideHasBeenSet = false;
+  bool m_provisionedThroughputOverrideHasBeenSet = false;
+  bool m_onDemandThroughputOverrideHasBeenSet = false;
   bool m_sSESpecificationOverrideHasBeenSet = false;
 };
 

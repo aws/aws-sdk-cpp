@@ -182,24 +182,24 @@ class PutComplianceItemsRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_complianceType;
-  bool m_complianceTypeHasBeenSet = false;
 
   ComplianceExecutionSummary m_executionSummary;
-  bool m_executionSummaryHasBeenSet = false;
 
   Aws::Vector<ComplianceItemEntry> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_itemContentHash;
-  bool m_itemContentHashHasBeenSet = false;
 
   ComplianceUploadType m_uploadType{ComplianceUploadType::NOT_SET};
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_executionSummaryHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_itemContentHashHasBeenSet = false;
   bool m_uploadTypeHasBeenSet = false;
 };
 

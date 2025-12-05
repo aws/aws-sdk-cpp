@@ -93,12 +93,12 @@ class TemplateLinkedPolicyDefinition {
   ///@}
  private:
   Aws::String m_policyTemplateId;
-  bool m_policyTemplateIdHasBeenSet = false;
 
   EntityIdentifier m_principal;
-  bool m_principalHasBeenSet = false;
 
   EntityIdentifier m_resource;
+  bool m_policyTemplateIdHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

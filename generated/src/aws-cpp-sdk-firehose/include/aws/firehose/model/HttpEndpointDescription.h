@@ -69,9 +69,9 @@ class HttpEndpointDescription {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_urlHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

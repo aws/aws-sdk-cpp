@@ -195,27 +195,27 @@ class NotebookExecutionSummary {
   ///@}
  private:
   Aws::String m_notebookExecutionId;
-  bool m_notebookExecutionIdHasBeenSet = false;
 
   Aws::String m_editorId;
-  bool m_editorIdHasBeenSet = false;
 
   Aws::String m_notebookExecutionName;
-  bool m_notebookExecutionNameHasBeenSet = false;
 
   NotebookExecutionStatus m_status{NotebookExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   NotebookS3LocationForOutput m_notebookS3Location;
-  bool m_notebookS3LocationHasBeenSet = false;
 
   Aws::String m_executionEngineId;
+  bool m_notebookExecutionIdHasBeenSet = false;
+  bool m_editorIdHasBeenSet = false;
+  bool m_notebookExecutionNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_notebookS3LocationHasBeenSet = false;
   bool m_executionEngineIdHasBeenSet = false;
 };
 

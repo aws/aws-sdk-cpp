@@ -65,9 +65,9 @@ class UpdateDeviceMetadataRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_deviceId;
+  bool m_descriptionHasBeenSet = false;
   bool m_deviceIdHasBeenSet = false;
 };
 

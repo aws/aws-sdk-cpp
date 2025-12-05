@@ -178,24 +178,25 @@ class InvokeFlowRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   bool m_enableTrace{false};
-  bool m_enableTraceHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
-  bool m_flowAliasIdentifierHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::Vector<FlowInput> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   ModelPerformanceConfiguration m_modelPerformanceConfiguration;
-  bool m_modelPerformanceConfigurationHasBeenSet = false;
   InvokeFlowHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_enableTraceHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_flowAliasIdentifierHasBeenSet = false;
+  bool m_flowIdentifierHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_modelPerformanceConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

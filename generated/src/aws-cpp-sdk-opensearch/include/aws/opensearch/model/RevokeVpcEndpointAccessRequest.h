@@ -82,12 +82,12 @@ class RevokeVpcEndpointAccessRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   AWSServicePrincipal m_service{AWSServicePrincipal::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
+  bool m_accountHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
 };
 

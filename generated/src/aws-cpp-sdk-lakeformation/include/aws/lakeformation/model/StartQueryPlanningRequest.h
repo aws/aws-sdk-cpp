@@ -66,9 +66,9 @@ class StartQueryPlanningRequest : public LakeFormationRequest {
   ///@}
  private:
   QueryPlanningContext m_queryPlanningContext;
-  bool m_queryPlanningContextHasBeenSet = false;
 
   Aws::String m_queryString;
+  bool m_queryPlanningContextHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class ListPipelinesResult {
   ///@}
  private:
   Aws::Vector<Pipeline> m_pipelines;
-  bool m_pipelinesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelinesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

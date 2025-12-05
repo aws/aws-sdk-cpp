@@ -129,18 +129,18 @@ class GetCanaryRunsRequest : public SyntheticsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_dryRunId;
-  bool m_dryRunIdHasBeenSet = false;
 
   RunType m_runType{RunType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_dryRunIdHasBeenSet = false;
   bool m_runTypeHasBeenSet = false;
 };
 

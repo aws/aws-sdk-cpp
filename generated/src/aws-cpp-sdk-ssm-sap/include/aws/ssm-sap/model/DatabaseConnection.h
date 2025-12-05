@@ -85,12 +85,12 @@ class DatabaseConnection {
   ///@}
  private:
   DatabaseConnectionMethod m_databaseConnectionMethod{DatabaseConnectionMethod::NOT_SET};
-  bool m_databaseConnectionMethodHasBeenSet = false;
 
   Aws::String m_databaseArn;
-  bool m_databaseArnHasBeenSet = false;
 
   Aws::String m_connectionIp;
+  bool m_databaseConnectionMethodHasBeenSet = false;
+  bool m_databaseArnHasBeenSet = false;
   bool m_connectionIpHasBeenSet = false;
 };
 

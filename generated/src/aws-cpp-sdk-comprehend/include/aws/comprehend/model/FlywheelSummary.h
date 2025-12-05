@@ -193,30 +193,30 @@ class FlywheelSummary {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_activeModelArn;
-  bool m_activeModelArnHasBeenSet = false;
 
   Aws::String m_dataLakeS3Uri;
-  bool m_dataLakeS3UriHasBeenSet = false;
 
   FlywheelStatus m_status{FlywheelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ModelType m_modelType{ModelType::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_latestFlywheelIteration;
+  bool m_flywheelArnHasBeenSet = false;
+  bool m_activeModelArnHasBeenSet = false;
+  bool m_dataLakeS3UriHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_latestFlywheelIterationHasBeenSet = false;
 };
 

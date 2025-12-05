@@ -95,12 +95,12 @@ class ModifyIpPoolsRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   IpamPools m_ipamPools;
-  bool m_ipamPoolsHasBeenSet = false;
 
   Aws::Vector<RemoveIpamPoolEnum> m_removeIpamPools;
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_ipamPoolsHasBeenSet = false;
   bool m_removeIpamPoolsHasBeenSet = false;
 };
 

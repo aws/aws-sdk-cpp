@@ -67,9 +67,9 @@ class UsageQuantityResult {
   ///@}
  private:
   double m_amount{0.0};
-  bool m_amountHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_amountHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

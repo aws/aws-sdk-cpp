@@ -90,9 +90,9 @@ class DBClusterSnapshotAttribute {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeValues;
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeValuesHasBeenSet = false;
 };
 

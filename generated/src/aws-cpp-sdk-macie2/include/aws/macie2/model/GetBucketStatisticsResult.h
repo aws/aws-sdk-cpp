@@ -304,48 +304,48 @@ class GetBucketStatisticsResult {
   ///@}
  private:
   long long m_bucketCount{0};
-  bool m_bucketCountHasBeenSet = false;
 
   BucketCountByEffectivePermission m_bucketCountByEffectivePermission;
-  bool m_bucketCountByEffectivePermissionHasBeenSet = false;
 
   BucketCountByEncryptionType m_bucketCountByEncryptionType;
-  bool m_bucketCountByEncryptionTypeHasBeenSet = false;
 
   BucketCountPolicyAllowsUnencryptedObjectUploads m_bucketCountByObjectEncryptionRequirement;
-  bool m_bucketCountByObjectEncryptionRequirementHasBeenSet = false;
 
   BucketCountBySharedAccessType m_bucketCountBySharedAccessType;
-  bool m_bucketCountBySharedAccessTypeHasBeenSet = false;
 
   BucketStatisticsBySensitivity m_bucketStatisticsBySensitivity;
-  bool m_bucketStatisticsBySensitivityHasBeenSet = false;
 
   long long m_classifiableObjectCount{0};
-  bool m_classifiableObjectCountHasBeenSet = false;
 
   long long m_classifiableSizeInBytes{0};
-  bool m_classifiableSizeInBytesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   long long m_objectCount{0};
-  bool m_objectCountHasBeenSet = false;
 
   long long m_sizeInBytes{0};
-  bool m_sizeInBytesHasBeenSet = false;
 
   long long m_sizeInBytesCompressed{0};
-  bool m_sizeInBytesCompressedHasBeenSet = false;
 
   ObjectLevelStatistics m_unclassifiableObjectCount;
-  bool m_unclassifiableObjectCountHasBeenSet = false;
 
   ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
-  bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketCountHasBeenSet = false;
+  bool m_bucketCountByEffectivePermissionHasBeenSet = false;
+  bool m_bucketCountByEncryptionTypeHasBeenSet = false;
+  bool m_bucketCountByObjectEncryptionRequirementHasBeenSet = false;
+  bool m_bucketCountBySharedAccessTypeHasBeenSet = false;
+  bool m_bucketStatisticsBySensitivityHasBeenSet = false;
+  bool m_classifiableObjectCountHasBeenSet = false;
+  bool m_classifiableSizeInBytesHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_objectCountHasBeenSet = false;
+  bool m_sizeInBytesHasBeenSet = false;
+  bool m_sizeInBytesCompressedHasBeenSet = false;
+  bool m_unclassifiableObjectCountHasBeenSet = false;
+  bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

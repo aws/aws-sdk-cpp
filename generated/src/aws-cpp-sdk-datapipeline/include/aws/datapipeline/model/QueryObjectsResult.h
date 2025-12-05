@@ -106,15 +106,15 @@ class QueryObjectsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_hasMoreResults{false};
-  bool m_hasMoreResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_hasMoreResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

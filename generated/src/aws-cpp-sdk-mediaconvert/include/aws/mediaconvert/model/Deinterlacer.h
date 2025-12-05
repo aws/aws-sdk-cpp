@@ -100,12 +100,12 @@ class Deinterlacer {
   ///@}
  private:
   DeinterlaceAlgorithm m_algorithm{DeinterlaceAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   DeinterlacerControl m_control{DeinterlacerControl::NOT_SET};
-  bool m_controlHasBeenSet = false;
 
   DeinterlacerMode m_mode{DeinterlacerMode::NOT_SET};
+  bool m_algorithmHasBeenSet = false;
+  bool m_controlHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

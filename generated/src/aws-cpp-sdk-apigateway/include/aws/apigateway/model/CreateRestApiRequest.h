@@ -293,42 +293,42 @@ class CreateRestApiRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_cloneFrom;
-  bool m_cloneFromHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_binaryMediaTypes;
-  bool m_binaryMediaTypesHasBeenSet = false;
 
   int m_minimumCompressionSize{0};
-  bool m_minimumCompressionSizeHasBeenSet = false;
 
   ApiKeySourceType m_apiKeySource{ApiKeySourceType::NOT_SET};
-  bool m_apiKeySourceHasBeenSet = false;
 
   EndpointConfiguration m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_disableExecuteApiEndpoint{false};
-  bool m_disableExecuteApiEndpointHasBeenSet = false;
 
   SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
-  bool m_securityPolicyHasBeenSet = false;
 
   EndpointAccessMode m_endpointAccessMode{EndpointAccessMode::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_cloneFromHasBeenSet = false;
+  bool m_binaryMediaTypesHasBeenSet = false;
+  bool m_minimumCompressionSizeHasBeenSet = false;
+  bool m_apiKeySourceHasBeenSet = false;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_disableExecuteApiEndpointHasBeenSet = false;
+  bool m_securityPolicyHasBeenSet = false;
   bool m_endpointAccessModeHasBeenSet = false;
 };
 

@@ -113,18 +113,18 @@ class RegisterNotificationHubResult {
   ///@}
  private:
   Aws::String m_notificationHubRegion;
-  bool m_notificationHubRegionHasBeenSet = false;
 
   NotificationHubStatusSummary m_statusSummary;
-  bool m_statusSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastActivationTime{};
-  bool m_lastActivationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationHubRegionHasBeenSet = false;
+  bool m_statusSummaryHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastActivationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

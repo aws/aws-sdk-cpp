@@ -73,9 +73,9 @@ class ExtendedDataServices {
   ///@}
  private:
   CopyProtectionAction m_copyProtectionAction{CopyProtectionAction::NOT_SET};
-  bool m_copyProtectionActionHasBeenSet = false;
 
   VchipAction m_vchipAction{VchipAction::NOT_SET};
+  bool m_copyProtectionActionHasBeenSet = false;
   bool m_vchipActionHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class UpdateUserIdentityInfoRequest : public ConnectRequest {
   ///@}
  private:
   UserIdentityInfo m_identityInfo;
-  bool m_identityInfoHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_identityInfoHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

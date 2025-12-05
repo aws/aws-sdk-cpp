@@ -143,18 +143,18 @@ class ReplicaAutoScalingDescription {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::Vector<ReplicaGlobalSecondaryIndexAutoScalingDescription> m_globalSecondaryIndexes;
-  bool m_globalSecondaryIndexesHasBeenSet = false;
 
   AutoScalingSettingsDescription m_replicaProvisionedReadCapacityAutoScalingSettings;
-  bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
 
   AutoScalingSettingsDescription m_replicaProvisionedWriteCapacityAutoScalingSettings;
-  bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
 
   ReplicaStatus m_replicaStatus{ReplicaStatus::NOT_SET};
+  bool m_regionNameHasBeenSet = false;
+  bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet = false;
+  bool m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet = false;
   bool m_replicaStatusHasBeenSet = false;
 };
 

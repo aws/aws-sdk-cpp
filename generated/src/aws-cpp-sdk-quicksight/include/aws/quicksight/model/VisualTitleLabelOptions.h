@@ -68,9 +68,9 @@ class VisualTitleLabelOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   ShortFormatText m_formatText;
+  bool m_visibilityHasBeenSet = false;
   bool m_formatTextHasBeenSet = false;
 };
 

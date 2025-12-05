@@ -78,9 +78,9 @@ class RuntimeEnvironment {
   ///@}
  private:
   RuntimeEnvironmentType m_type{RuntimeEnvironmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_typeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

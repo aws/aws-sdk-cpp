@@ -121,18 +121,18 @@ class GetInventorySchemaRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_aggregator{false};
-  bool m_aggregatorHasBeenSet = false;
 
   bool m_subType{false};
+  bool m_typeNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_aggregatorHasBeenSet = false;
   bool m_subTypeHasBeenSet = false;
 };
 

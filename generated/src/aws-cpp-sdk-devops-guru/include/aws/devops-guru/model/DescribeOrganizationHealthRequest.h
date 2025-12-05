@@ -78,9 +78,9 @@ class DescribeOrganizationHealthRequest : public DevOpsGuruRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitIds;
+  bool m_accountIdsHasBeenSet = false;
   bool m_organizationalUnitIdsHasBeenSet = false;
 };
 

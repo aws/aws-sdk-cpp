@@ -330,48 +330,48 @@ class ExtendedS3DestinationConfiguration {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_bucketARN;
-  bool m_bucketARNHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_errorOutputPrefix;
-  bool m_errorOutputPrefixHasBeenSet = false;
 
   BufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   CompressionFormat m_compressionFormat{CompressionFormat::NOT_SET};
-  bool m_compressionFormatHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   S3BackupMode m_s3BackupMode{S3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationConfiguration m_s3BackupConfiguration;
-  bool m_s3BackupConfigurationHasBeenSet = false;
 
   DataFormatConversionConfiguration m_dataFormatConversionConfiguration;
-  bool m_dataFormatConversionConfigurationHasBeenSet = false;
 
   DynamicPartitioningConfiguration m_dynamicPartitioningConfiguration;
-  bool m_dynamicPartitioningConfigurationHasBeenSet = false;
 
   Aws::String m_fileExtension;
-  bool m_fileExtensionHasBeenSet = false;
 
   Aws::String m_customTimeZone;
+  bool m_roleARNHasBeenSet = false;
+  bool m_bucketARNHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_errorOutputPrefixHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_compressionFormatHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3BackupConfigurationHasBeenSet = false;
+  bool m_dataFormatConversionConfigurationHasBeenSet = false;
+  bool m_dynamicPartitioningConfigurationHasBeenSet = false;
+  bool m_fileExtensionHasBeenSet = false;
   bool m_customTimeZoneHasBeenSet = false;
 };
 

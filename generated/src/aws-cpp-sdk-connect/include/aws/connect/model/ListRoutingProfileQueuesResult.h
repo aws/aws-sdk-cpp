@@ -122,18 +122,18 @@ class ListRoutingProfileQueuesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RoutingProfileQueueConfigSummary> m_routingProfileQueueConfigSummaryList;
-  bool m_routingProfileQueueConfigSummaryListHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
-  bool m_lastModifiedRegionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_routingProfileQueueConfigSummaryListHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

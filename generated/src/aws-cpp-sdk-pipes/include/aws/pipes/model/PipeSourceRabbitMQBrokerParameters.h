@@ -120,18 +120,18 @@ class PipeSourceRabbitMQBrokerParameters {
   ///@}
  private:
   MQBrokerAccessCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_queueName;
-  bool m_queueNameHasBeenSet = false;
 
   Aws::String m_virtualHost;
-  bool m_virtualHostHasBeenSet = false;
 
   int m_batchSize{0};
-  bool m_batchSizeHasBeenSet = false;
 
   int m_maximumBatchingWindowInSeconds{0};
+  bool m_credentialsHasBeenSet = false;
+  bool m_queueNameHasBeenSet = false;
+  bool m_virtualHostHasBeenSet = false;
+  bool m_batchSizeHasBeenSet = false;
   bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 };
 

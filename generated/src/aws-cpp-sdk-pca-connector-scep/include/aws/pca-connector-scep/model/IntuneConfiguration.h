@@ -78,9 +78,9 @@ class IntuneConfiguration {
   ///@}
  private:
   Aws::String m_azureApplicationId;
-  bool m_azureApplicationIdHasBeenSet = false;
 
   Aws::String m_domain;
+  bool m_azureApplicationIdHasBeenSet = false;
   bool m_domainHasBeenSet = false;
 };
 

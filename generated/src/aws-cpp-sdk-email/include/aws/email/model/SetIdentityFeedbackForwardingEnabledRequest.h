@@ -81,9 +81,9 @@ class SetIdentityFeedbackForwardingEnabledRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   bool m_forwardingEnabled{false};
+  bool m_identityHasBeenSet = false;
   bool m_forwardingEnabledHasBeenSet = false;
 };
 

@@ -151,21 +151,21 @@ class RDSMetadata {
   ///@}
  private:
   RDSDatabase m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_databaseUserName;
-  bool m_databaseUserNameHasBeenSet = false;
 
   Aws::String m_selectSqlQuery;
-  bool m_selectSqlQueryHasBeenSet = false;
 
   Aws::String m_resourceRole;
-  bool m_resourceRoleHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   Aws::String m_dataPipelineId;
+  bool m_databaseHasBeenSet = false;
+  bool m_databaseUserNameHasBeenSet = false;
+  bool m_selectSqlQueryHasBeenSet = false;
+  bool m_resourceRoleHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
   bool m_dataPipelineIdHasBeenSet = false;
 };
 

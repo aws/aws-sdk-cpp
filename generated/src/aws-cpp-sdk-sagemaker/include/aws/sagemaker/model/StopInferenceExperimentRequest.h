@@ -145,18 +145,18 @@ class StopInferenceExperimentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, ModelVariantAction> m_modelVariantActions;
-  bool m_modelVariantActionsHasBeenSet = false;
 
   Aws::Vector<ModelVariantConfig> m_desiredModelVariants;
-  bool m_desiredModelVariantsHasBeenSet = false;
 
   InferenceExperimentStopDesiredState m_desiredState{InferenceExperimentStopDesiredState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_nameHasBeenSet = false;
+  bool m_modelVariantActionsHasBeenSet = false;
+  bool m_desiredModelVariantsHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -107,9 +107,9 @@ class CommandFilter {
   ///@}
  private:
   CommandFilterKey m_key{CommandFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

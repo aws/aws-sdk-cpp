@@ -84,9 +84,9 @@ class RegexMatchSetSummary {
   ///@}
  private:
   Aws::String m_regexMatchSetId;
-  bool m_regexMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_regexMatchSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

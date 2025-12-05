@@ -121,12 +121,12 @@ class AnalysisResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_identifiedRuleIds;
-  bool m_identifiedRuleIdsHasBeenSet = false;
 
   IdentifiedType m_identifiedType{IdentifiedType::NOT_SET};
-  bool m_identifiedTypeHasBeenSet = false;
 
   Aws::String m_analysisDetail;
+  bool m_identifiedRuleIdsHasBeenSet = false;
+  bool m_identifiedTypeHasBeenSet = false;
   bool m_analysisDetailHasBeenSet = false;
 };
 

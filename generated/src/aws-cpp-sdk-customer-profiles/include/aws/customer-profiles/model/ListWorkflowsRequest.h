@@ -158,24 +158,24 @@ class ListWorkflowsRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   WorkflowType m_workflowType{WorkflowType::NOT_SET};
-  bool m_workflowTypeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryStartDate{};
-  bool m_queryStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryEndDate{};
-  bool m_queryEndDateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_queryStartDateHasBeenSet = false;
+  bool m_queryEndDateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

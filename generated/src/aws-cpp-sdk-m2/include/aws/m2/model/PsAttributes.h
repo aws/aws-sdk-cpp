@@ -68,9 +68,9 @@ class PsAttributes {
   ///@}
  private:
   Aws::String m_encoding;
-  bool m_encodingHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_encodingHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

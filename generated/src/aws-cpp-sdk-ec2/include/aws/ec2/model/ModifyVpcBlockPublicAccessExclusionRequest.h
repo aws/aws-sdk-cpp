@@ -92,12 +92,12 @@ class ModifyVpcBlockPublicAccessExclusionRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_exclusionId;
-  bool m_exclusionIdHasBeenSet = false;
 
   InternetGatewayExclusionMode m_internetGatewayExclusionMode{InternetGatewayExclusionMode::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
+  bool m_exclusionIdHasBeenSet = false;
   bool m_internetGatewayExclusionModeHasBeenSet = false;
 };
 

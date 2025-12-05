@@ -406,63 +406,63 @@ class DescribeAutoPredictorResult {
   ///@}
  private:
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   Aws::String m_predictorName;
-  bool m_predictorNameHasBeenSet = false;
 
   int m_forecastHorizon{0};
-  bool m_forecastHorizonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastTypes;
-  bool m_forecastTypesHasBeenSet = false;
 
   Aws::String m_forecastFrequency;
-  bool m_forecastFrequencyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastDimensions;
-  bool m_forecastDimensionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_datasetImportJobArns;
-  bool m_datasetImportJobArnsHasBeenSet = false;
 
   DataConfig m_dataConfig;
-  bool m_dataConfigHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   ReferencePredictorSummary m_referencePredictorSummary;
-  bool m_referencePredictorSummaryHasBeenSet = false;
 
   long long m_estimatedTimeRemainingInMinutes{0};
-  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
-  bool m_optimizationMetricHasBeenSet = false;
 
   ExplainabilityInfo m_explainabilityInfo;
-  bool m_explainabilityInfoHasBeenSet = false;
 
   MonitorInfo m_monitorInfo;
-  bool m_monitorInfoHasBeenSet = false;
 
   TimeAlignmentBoundary m_timeAlignmentBoundary;
-  bool m_timeAlignmentBoundaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictorArnHasBeenSet = false;
+  bool m_predictorNameHasBeenSet = false;
+  bool m_forecastHorizonHasBeenSet = false;
+  bool m_forecastTypesHasBeenSet = false;
+  bool m_forecastFrequencyHasBeenSet = false;
+  bool m_forecastDimensionsHasBeenSet = false;
+  bool m_datasetImportJobArnsHasBeenSet = false;
+  bool m_dataConfigHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
+  bool m_referencePredictorSummaryHasBeenSet = false;
+  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_optimizationMetricHasBeenSet = false;
+  bool m_explainabilityInfoHasBeenSet = false;
+  bool m_monitorInfoHasBeenSet = false;
+  bool m_timeAlignmentBoundaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class RegisterCertificateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   Aws::String m_caCertificatePem;
-  bool m_caCertificatePemHasBeenSet = false;
 
   CertificateStatus m_status{CertificateStatus::NOT_SET};
+  bool m_certificatePemHasBeenSet = false;
+  bool m_caCertificatePemHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

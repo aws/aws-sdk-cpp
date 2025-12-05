@@ -607,90 +607,90 @@ class App {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_computeRoleArn;
-  bool m_computeRoleArnHasBeenSet = false;
 
   Aws::String m_iamServiceRoleArn;
-  bool m_iamServiceRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   Aws::String m_defaultDomain;
-  bool m_defaultDomainHasBeenSet = false;
 
   bool m_enableBranchAutoBuild{false};
-  bool m_enableBranchAutoBuildHasBeenSet = false;
 
   bool m_enableBranchAutoDeletion{false};
-  bool m_enableBranchAutoDeletionHasBeenSet = false;
 
   bool m_enableBasicAuth{false};
-  bool m_enableBasicAuthHasBeenSet = false;
 
   Aws::String m_basicAuthCredentials;
-  bool m_basicAuthCredentialsHasBeenSet = false;
 
   Aws::Vector<CustomRule> m_customRules;
-  bool m_customRulesHasBeenSet = false;
 
   ProductionBranch m_productionBranch;
-  bool m_productionBranchHasBeenSet = false;
 
   Aws::String m_buildSpec;
-  bool m_buildSpecHasBeenSet = false;
 
   Aws::String m_customHeaders;
-  bool m_customHeadersHasBeenSet = false;
 
   bool m_enableAutoBranchCreation{false};
-  bool m_enableAutoBranchCreationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autoBranchCreationPatterns;
-  bool m_autoBranchCreationPatternsHasBeenSet = false;
 
   AutoBranchCreationConfig m_autoBranchCreationConfig;
-  bool m_autoBranchCreationConfigHasBeenSet = false;
 
   RepositoryCloneMethod m_repositoryCloneMethod{RepositoryCloneMethod::NOT_SET};
-  bool m_repositoryCloneMethodHasBeenSet = false;
 
   CacheConfig m_cacheConfig;
-  bool m_cacheConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_webhookCreateTime{};
-  bool m_webhookCreateTimeHasBeenSet = false;
 
   WafConfiguration m_wafConfiguration;
-  bool m_wafConfigurationHasBeenSet = false;
 
   JobConfig m_jobConfig;
+  bool m_appIdHasBeenSet = false;
+  bool m_appArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_computeRoleArnHasBeenSet = false;
+  bool m_iamServiceRoleArnHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
+  bool m_defaultDomainHasBeenSet = false;
+  bool m_enableBranchAutoBuildHasBeenSet = false;
+  bool m_enableBranchAutoDeletionHasBeenSet = false;
+  bool m_enableBasicAuthHasBeenSet = false;
+  bool m_basicAuthCredentialsHasBeenSet = false;
+  bool m_customRulesHasBeenSet = false;
+  bool m_productionBranchHasBeenSet = false;
+  bool m_buildSpecHasBeenSet = false;
+  bool m_customHeadersHasBeenSet = false;
+  bool m_enableAutoBranchCreationHasBeenSet = false;
+  bool m_autoBranchCreationPatternsHasBeenSet = false;
+  bool m_autoBranchCreationConfigHasBeenSet = false;
+  bool m_repositoryCloneMethodHasBeenSet = false;
+  bool m_cacheConfigHasBeenSet = false;
+  bool m_webhookCreateTimeHasBeenSet = false;
+  bool m_wafConfigurationHasBeenSet = false;
   bool m_jobConfigHasBeenSet = false;
 };
 

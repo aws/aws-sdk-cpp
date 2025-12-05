@@ -64,9 +64,9 @@ class DescribeAppInstanceUserEndpointResult {
   ///@}
  private:
   AppInstanceUserEndpoint m_appInstanceUserEndpoint;
-  bool m_appInstanceUserEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceUserEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

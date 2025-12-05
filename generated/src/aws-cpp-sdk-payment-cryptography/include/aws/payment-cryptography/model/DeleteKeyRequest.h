@@ -65,9 +65,9 @@ class DeleteKeyRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   int m_deleteKeyInDays{0};
+  bool m_keyIdentifierHasBeenSet = false;
   bool m_deleteKeyInDaysHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class CreateMediaLiveConnectorPipelineRequest : public ChimeSDKMediaPipelinesReq
   ///@}
  private:
   Aws::Vector<LiveConnectorSourceConfiguration> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Vector<LiveConnectorSinkConfiguration> m_sinks;
-  bool m_sinksHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourcesHasBeenSet = false;
+  bool m_sinksHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

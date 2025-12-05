@@ -70,9 +70,9 @@ class TableVersion {
   ///@}
  private:
   Table m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_tableHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

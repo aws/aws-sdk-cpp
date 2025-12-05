@@ -345,54 +345,54 @@ class CreateCloudAutonomousVmClusterRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   double m_autonomousDataStorageSizeInTBs{0.0};
-  bool m_autonomousDataStorageSizeInTBsHasBeenSet = false;
 
   int m_cpuCoreCountPerNode{0};
-  bool m_cpuCoreCountPerNodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbServers;
-  bool m_dbServersHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isMtlsEnabledVmCluster{false};
-  bool m_isMtlsEnabledVmClusterHasBeenSet = false;
 
   LicenseModel m_licenseModel{LicenseModel::NOT_SET};
-  bool m_licenseModelHasBeenSet = false;
 
   MaintenanceWindow m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   int m_memoryPerOracleComputeUnitInGBs{0};
-  bool m_memoryPerOracleComputeUnitInGBsHasBeenSet = false;
 
   int m_scanListenerPortNonTls{0};
-  bool m_scanListenerPortNonTlsHasBeenSet = false;
 
   int m_scanListenerPortTls{0};
-  bool m_scanListenerPortTlsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   int m_totalContainerDatabases{0};
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_odbNetworkIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_autonomousDataStorageSizeInTBsHasBeenSet = false;
+  bool m_cpuCoreCountPerNodeHasBeenSet = false;
+  bool m_dbServersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_isMtlsEnabledVmClusterHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_memoryPerOracleComputeUnitInGBsHasBeenSet = false;
+  bool m_scanListenerPortNonTlsHasBeenSet = false;
+  bool m_scanListenerPortTlsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
   bool m_totalContainerDatabasesHasBeenSet = false;
 };
 

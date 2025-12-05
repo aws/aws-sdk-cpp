@@ -69,9 +69,9 @@ class WaitStartedDetails {
   ///@}
  private:
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledEndTimestamp{};
+  bool m_durationHasBeenSet = false;
   bool m_scheduledEndTimestampHasBeenSet = false;
 };
 

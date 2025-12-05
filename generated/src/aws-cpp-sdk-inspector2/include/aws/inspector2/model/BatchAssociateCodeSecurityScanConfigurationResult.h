@@ -95,12 +95,12 @@ class BatchAssociateCodeSecurityScanConfigurationResult {
   ///@}
  private:
   Aws::Vector<FailedAssociationResult> m_failedAssociations;
-  bool m_failedAssociationsHasBeenSet = false;
 
   Aws::Vector<SuccessfulAssociationResult> m_successfulAssociations;
-  bool m_successfulAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedAssociationsHasBeenSet = false;
+  bool m_successfulAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

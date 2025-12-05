@@ -72,9 +72,9 @@ class AccessDescription {
   ///@}
  private:
   AccessMethod m_accessMethod;
-  bool m_accessMethodHasBeenSet = false;
 
   GeneralName m_accessLocation;
+  bool m_accessMethodHasBeenSet = false;
   bool m_accessLocationHasBeenSet = false;
 };
 

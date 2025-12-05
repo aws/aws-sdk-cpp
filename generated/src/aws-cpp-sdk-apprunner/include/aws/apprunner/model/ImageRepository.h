@@ -90,12 +90,12 @@ class ImageRepository {
   ///@}
  private:
   Aws::String m_imageIdentifier;
-  bool m_imageIdentifierHasBeenSet = false;
 
   ImageConfiguration m_imageConfiguration;
-  bool m_imageConfigurationHasBeenSet = false;
 
   ImageRepositoryType m_imageRepositoryType{ImageRepositoryType::NOT_SET};
+  bool m_imageIdentifierHasBeenSet = false;
+  bool m_imageConfigurationHasBeenSet = false;
   bool m_imageRepositoryTypeHasBeenSet = false;
 };
 

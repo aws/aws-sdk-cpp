@@ -69,9 +69,9 @@ class GetWebACLResult {
   ///@}
  private:
   WebACL m_webACL;
-  bool m_webACLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webACLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

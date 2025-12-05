@@ -392,57 +392,57 @@ class GetDashManifestConfiguration {
   ///@}
  private:
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   FilterConfiguration m_filterConfiguration;
-  bool m_filterConfigurationHasBeenSet = false;
 
   int m_minUpdatePeriodSeconds{0};
-  bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
   int m_minBufferTimeSeconds{0};
-  bool m_minBufferTimeSecondsHasBeenSet = false;
 
   int m_suggestedPresentationDelaySeconds{0};
-  bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
 
   DashSegmentTemplateFormat m_segmentTemplateFormat{DashSegmentTemplateFormat::NOT_SET};
-  bool m_segmentTemplateFormatHasBeenSet = false;
 
   Aws::Vector<DashPeriodTrigger> m_periodTriggers;
-  bool m_periodTriggersHasBeenSet = false;
 
   ScteDash m_scteDash;
-  bool m_scteDashHasBeenSet = false;
 
   DashDrmSignaling m_drmSignaling{DashDrmSignaling::NOT_SET};
-  bool m_drmSignalingHasBeenSet = false;
 
   DashUtcTiming m_utcTiming;
-  bool m_utcTimingHasBeenSet = false;
 
   Aws::Vector<DashProfile> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   Aws::Vector<DashBaseUrl> m_baseUrls;
-  bool m_baseUrlsHasBeenSet = false;
 
   DashProgramInformation m_programInformation;
-  bool m_programInformationHasBeenSet = false;
 
   DashDvbSettings m_dvbSettings;
-  bool m_dvbSettingsHasBeenSet = false;
 
   DashCompactness m_compactness{DashCompactness::NOT_SET};
-  bool m_compactnessHasBeenSet = false;
 
   DashSubtitleConfiguration m_subtitleConfiguration;
+  bool m_manifestNameHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_manifestWindowSecondsHasBeenSet = false;
+  bool m_filterConfigurationHasBeenSet = false;
+  bool m_minUpdatePeriodSecondsHasBeenSet = false;
+  bool m_minBufferTimeSecondsHasBeenSet = false;
+  bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
+  bool m_segmentTemplateFormatHasBeenSet = false;
+  bool m_periodTriggersHasBeenSet = false;
+  bool m_scteDashHasBeenSet = false;
+  bool m_drmSignalingHasBeenSet = false;
+  bool m_utcTimingHasBeenSet = false;
+  bool m_profilesHasBeenSet = false;
+  bool m_baseUrlsHasBeenSet = false;
+  bool m_programInformationHasBeenSet = false;
+  bool m_dvbSettingsHasBeenSet = false;
+  bool m_compactnessHasBeenSet = false;
   bool m_subtitleConfigurationHasBeenSet = false;
 };
 

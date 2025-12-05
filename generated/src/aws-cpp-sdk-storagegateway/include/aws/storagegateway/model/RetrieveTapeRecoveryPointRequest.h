@@ -69,9 +69,9 @@ class RetrieveTapeRecoveryPointRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_tapeARN;
-  bool m_tapeARNHasBeenSet = false;
 
   Aws::String m_gatewayARN;
+  bool m_tapeARNHasBeenSet = false;
   bool m_gatewayARNHasBeenSet = false;
 };
 

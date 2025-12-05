@@ -69,9 +69,9 @@ class AttachmentStateChange {
   ///@}
  private:
   Aws::String m_attachmentArn;
-  bool m_attachmentArnHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_attachmentArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

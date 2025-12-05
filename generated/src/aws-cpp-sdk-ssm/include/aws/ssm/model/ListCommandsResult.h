@@ -85,12 +85,12 @@ class ListCommandsResult {
   ///@}
  private:
   Aws::Vector<Command> m_commands;
-  bool m_commandsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

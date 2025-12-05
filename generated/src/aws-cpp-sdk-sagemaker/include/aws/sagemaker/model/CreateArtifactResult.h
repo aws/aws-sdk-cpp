@@ -59,9 +59,9 @@ class CreateArtifactResult {
   ///@}
  private:
   Aws::String m_artifactArn;
-  bool m_artifactArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_artifactArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

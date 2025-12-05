@@ -128,18 +128,18 @@ class JobDetails {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   JobError m_jobError;
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
   bool m_jobErrorHasBeenSet = false;
 };
 

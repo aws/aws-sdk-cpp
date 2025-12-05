@@ -108,15 +108,15 @@ class SvmEndpoints {
   ///@}
  private:
   SvmEndpoint m_iscsi;
-  bool m_iscsiHasBeenSet = false;
 
   SvmEndpoint m_management;
-  bool m_managementHasBeenSet = false;
 
   SvmEndpoint m_nfs;
-  bool m_nfsHasBeenSet = false;
 
   SvmEndpoint m_smb;
+  bool m_iscsiHasBeenSet = false;
+  bool m_managementHasBeenSet = false;
+  bool m_nfsHasBeenSet = false;
   bool m_smbHasBeenSet = false;
 };
 

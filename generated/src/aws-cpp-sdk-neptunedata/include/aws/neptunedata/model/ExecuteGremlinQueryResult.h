@@ -97,15 +97,15 @@ class ExecuteGremlinQueryResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   GremlinQueryStatusAttributes m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::Document m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::Utils::Document m_meta;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_metaHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class CreateContactListRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_contactListName;
-  bool m_contactListNameHasBeenSet = false;
 
   Aws::Vector<Topic> m_topics;
-  bool m_topicsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_contactListNameHasBeenSet = false;
+  bool m_topicsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

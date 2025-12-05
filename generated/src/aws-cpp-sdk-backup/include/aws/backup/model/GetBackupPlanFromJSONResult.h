@@ -61,9 +61,9 @@ class GetBackupPlanFromJSONResult {
   ///@}
  private:
   BackupPlan m_backupPlan;
-  bool m_backupPlanHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupPlanHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

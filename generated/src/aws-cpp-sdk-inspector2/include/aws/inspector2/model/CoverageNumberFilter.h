@@ -61,9 +61,9 @@ class CoverageNumberFilter {
   ///@}
  private:
   long long m_upperInclusive{0};
-  bool m_upperInclusiveHasBeenSet = false;
 
   long long m_lowerInclusive{0};
+  bool m_upperInclusiveHasBeenSet = false;
   bool m_lowerInclusiveHasBeenSet = false;
 };
 

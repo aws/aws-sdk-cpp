@@ -98,15 +98,15 @@ class Usage {
   ///@}
  private:
   UsageType m_type{UsageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_total{0.0};
-  bool m_totalHasBeenSet = false;
 
   double m_estimatedMonthlyCost{0.0};
-  bool m_estimatedMonthlyCostHasBeenSet = false;
 
   Currency m_currency{Currency::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_totalHasBeenSet = false;
+  bool m_estimatedMonthlyCostHasBeenSet = false;
   bool m_currencyHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ModifyVpcEndpointServicePayerResponsibilityRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   PayerResponsibility m_payerResponsibility{PayerResponsibility::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
   bool m_payerResponsibilityHasBeenSet = false;
 };
 

@@ -208,24 +208,24 @@ class StackSetOperationPreferences {
   ///@}
  private:
   RegionConcurrencyType m_regionConcurrencyType{RegionConcurrencyType::NOT_SET};
-  bool m_regionConcurrencyTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regionOrder;
-  bool m_regionOrderHasBeenSet = false;
 
   int m_failureToleranceCount{0};
-  bool m_failureToleranceCountHasBeenSet = false;
 
   int m_failureTolerancePercentage{0};
-  bool m_failureTolerancePercentageHasBeenSet = false;
 
   int m_maxConcurrentCount{0};
-  bool m_maxConcurrentCountHasBeenSet = false;
 
   int m_maxConcurrentPercentage{0};
-  bool m_maxConcurrentPercentageHasBeenSet = false;
 
   ConcurrencyMode m_concurrencyMode{ConcurrencyMode::NOT_SET};
+  bool m_regionConcurrencyTypeHasBeenSet = false;
+  bool m_regionOrderHasBeenSet = false;
+  bool m_failureToleranceCountHasBeenSet = false;
+  bool m_failureTolerancePercentageHasBeenSet = false;
+  bool m_maxConcurrentCountHasBeenSet = false;
+  bool m_maxConcurrentPercentageHasBeenSet = false;
   bool m_concurrencyModeHasBeenSet = false;
 };
 

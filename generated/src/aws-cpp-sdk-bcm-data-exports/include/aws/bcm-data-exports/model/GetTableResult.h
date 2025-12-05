@@ -128,18 +128,18 @@ class GetTableResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Column> m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tableProperties;
-  bool m_tablePropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_tablePropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

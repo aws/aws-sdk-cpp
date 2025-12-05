@@ -86,12 +86,12 @@ class DataPrepListAggregationFunction {
   ///@}
  private:
   Aws::String m_inputColumnName;
-  bool m_inputColumnNameHasBeenSet = false;
 
   Aws::String m_separator;
-  bool m_separatorHasBeenSet = false;
 
   bool m_distinct{false};
+  bool m_inputColumnNameHasBeenSet = false;
+  bool m_separatorHasBeenSet = false;
   bool m_distinctHasBeenSet = false;
 };
 

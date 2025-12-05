@@ -116,15 +116,15 @@ class GlobalClusterMember {
   ///@}
  private:
   Aws::String m_dBClusterArn;
-  bool m_dBClusterArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readers;
-  bool m_readersHasBeenSet = false;
 
   bool m_isWriter{false};
-  bool m_isWriterHasBeenSet = false;
 
   GlobalClusterMemberSynchronizationStatus m_synchronizationStatus{GlobalClusterMemberSynchronizationStatus::NOT_SET};
+  bool m_dBClusterArnHasBeenSet = false;
+  bool m_readersHasBeenSet = false;
+  bool m_isWriterHasBeenSet = false;
   bool m_synchronizationStatusHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class EngagementPreferences {
   ///@}
  private:
   Aws::Vector<ContactPreference> m_phone;
-  bool m_phoneHasBeenSet = false;
 
   Aws::Vector<ContactPreference> m_email;
+  bool m_phoneHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

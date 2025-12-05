@@ -86,12 +86,12 @@ class GetCostComparisonDriversResult {
   ///@}
  private:
   Aws::Vector<CostComparisonDriver> m_costComparisonDrivers;
-  bool m_costComparisonDriversHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costComparisonDriversHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

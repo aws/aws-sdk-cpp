@@ -204,27 +204,27 @@ class PutIntegrationResponseRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_httpMethod;
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_selectionPattern;
-  bool m_selectionPatternHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-  bool m_responseTemplatesHasBeenSet = false;
 
   ContentHandlingStrategy m_contentHandling{ContentHandlingStrategy::NOT_SET};
+  bool m_restApiIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_selectionPatternHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_responseTemplatesHasBeenSet = false;
   bool m_contentHandlingHasBeenSet = false;
 };
 

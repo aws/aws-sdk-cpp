@@ -76,9 +76,9 @@ class OpsEntityItem {
   ///@}
  private:
   Aws::String m_captureTime;
-  bool m_captureTimeHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
+  bool m_captureTimeHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

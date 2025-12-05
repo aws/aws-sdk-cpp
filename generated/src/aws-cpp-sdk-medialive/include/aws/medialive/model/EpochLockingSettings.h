@@ -75,9 +75,9 @@ class EpochLockingSettings {
   ///@}
  private:
   Aws::String m_customEpoch;
-  bool m_customEpochHasBeenSet = false;
 
   Aws::String m_jamSyncTime;
+  bool m_customEpochHasBeenSet = false;
   bool m_jamSyncTimeHasBeenSet = false;
 };
 

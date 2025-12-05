@@ -64,9 +64,9 @@ class StartActiveApprovalTeamDeletionRequest : public MPARequest {
   ///@}
  private:
   int m_pendingWindowDays{0};
-  bool m_pendingWindowDaysHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_pendingWindowDaysHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

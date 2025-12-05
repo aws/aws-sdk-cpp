@@ -239,39 +239,39 @@ class NetworkProfile {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   NetworkProfileType m_type{NetworkProfileType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   long long m_uplinkBandwidthBits{0};
-  bool m_uplinkBandwidthBitsHasBeenSet = false;
 
   long long m_downlinkBandwidthBits{0};
-  bool m_downlinkBandwidthBitsHasBeenSet = false;
 
   long long m_uplinkDelayMs{0};
-  bool m_uplinkDelayMsHasBeenSet = false;
 
   long long m_downlinkDelayMs{0};
-  bool m_downlinkDelayMsHasBeenSet = false;
 
   long long m_uplinkJitterMs{0};
-  bool m_uplinkJitterMsHasBeenSet = false;
 
   long long m_downlinkJitterMs{0};
-  bool m_downlinkJitterMsHasBeenSet = false;
 
   int m_uplinkLossPercent{0};
-  bool m_uplinkLossPercentHasBeenSet = false;
 
   int m_downlinkLossPercent{0};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_uplinkBandwidthBitsHasBeenSet = false;
+  bool m_downlinkBandwidthBitsHasBeenSet = false;
+  bool m_uplinkDelayMsHasBeenSet = false;
+  bool m_downlinkDelayMsHasBeenSet = false;
+  bool m_uplinkJitterMsHasBeenSet = false;
+  bool m_downlinkJitterMsHasBeenSet = false;
+  bool m_uplinkLossPercentHasBeenSet = false;
   bool m_downlinkLossPercentHasBeenSet = false;
 };
 

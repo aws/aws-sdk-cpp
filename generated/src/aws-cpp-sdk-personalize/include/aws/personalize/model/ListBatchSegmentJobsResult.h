@@ -85,12 +85,12 @@ class ListBatchSegmentJobsResult {
   ///@}
  private:
   Aws::Vector<BatchSegmentJobSummary> m_batchSegmentJobs;
-  bool m_batchSegmentJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchSegmentJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

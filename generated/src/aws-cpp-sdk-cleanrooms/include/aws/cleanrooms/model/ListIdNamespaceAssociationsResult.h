@@ -87,12 +87,12 @@ class ListIdNamespaceAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<IdNamespaceAssociationSummary> m_idNamespaceAssociationSummaries;
-  bool m_idNamespaceAssociationSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_idNamespaceAssociationSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class UpdateProtectedJobRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_protectedJobIdentifier;
-  bool m_protectedJobIdentifierHasBeenSet = false;
 
   TargetProtectedJobStatus m_targetStatus{TargetProtectedJobStatus::NOT_SET};
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_protectedJobIdentifierHasBeenSet = false;
   bool m_targetStatusHasBeenSet = false;
 };
 

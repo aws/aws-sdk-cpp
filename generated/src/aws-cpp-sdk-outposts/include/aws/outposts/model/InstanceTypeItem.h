@@ -64,9 +64,9 @@ class InstanceTypeItem {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_vCPUs{0};
+  bool m_instanceTypeHasBeenSet = false;
   bool m_vCPUsHasBeenSet = false;
 };
 

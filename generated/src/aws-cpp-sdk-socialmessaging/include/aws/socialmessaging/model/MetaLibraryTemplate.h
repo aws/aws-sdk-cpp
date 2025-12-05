@@ -150,21 +150,21 @@ class MetaLibraryTemplate {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_libraryTemplateName;
-  bool m_libraryTemplateNameHasBeenSet = false;
 
   Aws::String m_templateCategory;
-  bool m_templateCategoryHasBeenSet = false;
 
   Aws::String m_templateLanguage;
-  bool m_templateLanguageHasBeenSet = false;
 
   Aws::Vector<LibraryTemplateButtonInput> m_libraryTemplateButtonInputs;
-  bool m_libraryTemplateButtonInputsHasBeenSet = false;
 
   LibraryTemplateBodyInputs m_libraryTemplateBodyInputs;
+  bool m_templateNameHasBeenSet = false;
+  bool m_libraryTemplateNameHasBeenSet = false;
+  bool m_templateCategoryHasBeenSet = false;
+  bool m_templateLanguageHasBeenSet = false;
+  bool m_libraryTemplateButtonInputsHasBeenSet = false;
   bool m_libraryTemplateBodyInputsHasBeenSet = false;
 };
 

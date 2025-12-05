@@ -106,15 +106,15 @@ class CreateFleetAdvisorCollectorRequest : public DatabaseMigrationServiceReques
   ///@}
  private:
   Aws::String m_collectorName;
-  bool m_collectorNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_s3BucketName;
+  bool m_collectorNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
   bool m_s3BucketNameHasBeenSet = false;
 };
 

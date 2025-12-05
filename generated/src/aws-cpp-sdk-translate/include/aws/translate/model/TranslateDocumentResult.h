@@ -137,21 +137,21 @@ class TranslateDocumentResult {
   ///@}
  private:
   TranslatedDocument m_translatedDocument;
-  bool m_translatedDocumentHasBeenSet = false;
 
   Aws::String m_sourceLanguageCode;
-  bool m_sourceLanguageCodeHasBeenSet = false;
 
   Aws::String m_targetLanguageCode;
-  bool m_targetLanguageCodeHasBeenSet = false;
 
   Aws::Vector<AppliedTerminology> m_appliedTerminologies;
-  bool m_appliedTerminologiesHasBeenSet = false;
 
   TranslationSettings m_appliedSettings;
-  bool m_appliedSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_translatedDocumentHasBeenSet = false;
+  bool m_sourceLanguageCodeHasBeenSet = false;
+  bool m_targetLanguageCodeHasBeenSet = false;
+  bool m_appliedTerminologiesHasBeenSet = false;
+  bool m_appliedSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

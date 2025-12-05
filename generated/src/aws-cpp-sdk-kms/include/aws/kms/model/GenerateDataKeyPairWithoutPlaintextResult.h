@@ -133,21 +133,21 @@ class GenerateDataKeyPairWithoutPlaintextResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_privateKeyCiphertextBlob{};
-  bool m_privateKeyCiphertextBlobHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_publicKey{};
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   DataKeyPairSpec m_keyPairSpec{DataKeyPairSpec::NOT_SET};
-  bool m_keyPairSpecHasBeenSet = false;
 
   Aws::String m_keyMaterialId;
-  bool m_keyMaterialIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_privateKeyCiphertextBlobHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_keyPairSpecHasBeenSet = false;
+  bool m_keyMaterialIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

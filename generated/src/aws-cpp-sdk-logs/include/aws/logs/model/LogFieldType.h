@@ -96,12 +96,12 @@ class LogFieldType {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   std::shared_ptr<LogFieldType> m_element;
-  bool m_elementHasBeenSet = false;
 
   Aws::Vector<LogFieldsListItem> m_fields;
+  bool m_typeHasBeenSet = false;
+  bool m_elementHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

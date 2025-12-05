@@ -280,27 +280,27 @@ class CrlConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_expirationInDays{0};
-  bool m_expirationInDaysHasBeenSet = false;
 
   Aws::String m_customCname;
-  bool m_customCnameHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   S3ObjectAcl m_s3ObjectAcl{S3ObjectAcl::NOT_SET};
-  bool m_s3ObjectAclHasBeenSet = false;
 
   CrlDistributionPointExtensionConfiguration m_crlDistributionPointExtensionConfiguration;
-  bool m_crlDistributionPointExtensionConfigurationHasBeenSet = false;
 
   CrlType m_crlType{CrlType::NOT_SET};
-  bool m_crlTypeHasBeenSet = false;
 
   Aws::String m_customPath;
+  bool m_enabledHasBeenSet = false;
+  bool m_expirationInDaysHasBeenSet = false;
+  bool m_customCnameHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3ObjectAclHasBeenSet = false;
+  bool m_crlDistributionPointExtensionConfigurationHasBeenSet = false;
+  bool m_crlTypeHasBeenSet = false;
   bool m_customPathHasBeenSet = false;
 };
 

@@ -167,21 +167,21 @@ class ListEntitiesForPolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   EntityType m_entityFilter{EntityType::NOT_SET};
-  bool m_entityFilterHasBeenSet = false;
 
   Aws::String m_pathPrefix;
-  bool m_pathPrefixHasBeenSet = false;
 
   PolicyUsageType m_policyUsageFilter{PolicyUsageType::NOT_SET};
-  bool m_policyUsageFilterHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_policyArnHasBeenSet = false;
+  bool m_entityFilterHasBeenSet = false;
+  bool m_pathPrefixHasBeenSet = false;
+  bool m_policyUsageFilterHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

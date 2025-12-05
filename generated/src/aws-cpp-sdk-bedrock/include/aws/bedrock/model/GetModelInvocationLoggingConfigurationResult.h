@@ -61,9 +61,9 @@ class GetModelInvocationLoggingConfigurationResult {
   ///@}
  private:
   LoggingConfig m_loggingConfig;
-  bool m_loggingConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loggingConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

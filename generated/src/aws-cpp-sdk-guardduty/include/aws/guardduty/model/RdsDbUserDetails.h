@@ -124,18 +124,18 @@ class RdsDbUserDetails {
   ///@}
  private:
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_application;
-  bool m_applicationHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_ssl;
-  bool m_sslHasBeenSet = false;
 
   Aws::String m_authMethod;
+  bool m_userHasBeenSet = false;
+  bool m_applicationHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_sslHasBeenSet = false;
   bool m_authMethodHasBeenSet = false;
 };
 

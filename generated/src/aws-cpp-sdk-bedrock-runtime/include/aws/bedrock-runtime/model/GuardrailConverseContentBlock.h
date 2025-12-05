@@ -73,9 +73,9 @@ class GuardrailConverseContentBlock {
   ///@}
  private:
   GuardrailConverseTextBlock m_text;
-  bool m_textHasBeenSet = false;
 
   GuardrailConverseImageBlock m_image;
+  bool m_textHasBeenSet = false;
   bool m_imageHasBeenSet = false;
 };
 

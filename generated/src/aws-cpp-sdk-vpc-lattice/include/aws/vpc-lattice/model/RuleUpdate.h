@@ -105,15 +105,15 @@ class RuleUpdate {
   ///@}
  private:
   Aws::String m_ruleIdentifier;
-  bool m_ruleIdentifierHasBeenSet = false;
 
   RuleMatch m_match;
-  bool m_matchHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   RuleAction m_action;
+  bool m_ruleIdentifierHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

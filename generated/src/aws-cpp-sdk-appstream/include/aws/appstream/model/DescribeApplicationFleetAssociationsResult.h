@@ -86,12 +86,12 @@ class DescribeApplicationFleetAssociationsResult {
   ///@}
  private:
   Aws::Vector<ApplicationFleetAssociation> m_applicationFleetAssociations;
-  bool m_applicationFleetAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationFleetAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

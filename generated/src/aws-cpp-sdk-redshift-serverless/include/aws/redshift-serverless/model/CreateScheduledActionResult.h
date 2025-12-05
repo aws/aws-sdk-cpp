@@ -61,9 +61,9 @@ class CreateScheduledActionResult {
   ///@}
  private:
   ScheduledActionResponse m_scheduledAction;
-  bool m_scheduledActionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledActionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

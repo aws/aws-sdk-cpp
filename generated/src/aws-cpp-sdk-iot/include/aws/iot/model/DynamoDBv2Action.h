@@ -75,9 +75,9 @@ class DynamoDBv2Action {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   PutItemInput m_putItem;
+  bool m_roleArnHasBeenSet = false;
   bool m_putItemHasBeenSet = false;
 };
 

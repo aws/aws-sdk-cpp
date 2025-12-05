@@ -231,36 +231,36 @@ class Span {
   ///@}
  private:
   Aws::String m_spanId;
-  bool m_spanIdHasBeenSet = false;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_parentSpanId;
-  bool m_parentSpanIdHasBeenSet = false;
 
   Aws::String m_spanName;
-  bool m_spanNameHasBeenSet = false;
 
   SpanType m_spanType{SpanType::NOT_SET};
-  bool m_spanTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   SpanStatus m_status{SpanStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   SpanAttributes m_attributes;
+  bool m_spanIdHasBeenSet = false;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_parentSpanIdHasBeenSet = false;
+  bool m_spanNameHasBeenSet = false;
+  bool m_spanTypeHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

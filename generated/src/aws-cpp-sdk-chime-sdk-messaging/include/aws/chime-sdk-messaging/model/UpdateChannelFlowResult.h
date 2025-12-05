@@ -59,9 +59,9 @@ class UpdateChannelFlowResult {
   ///@}
  private:
   Aws::String m_channelFlowArn;
-  bool m_channelFlowArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelFlowArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

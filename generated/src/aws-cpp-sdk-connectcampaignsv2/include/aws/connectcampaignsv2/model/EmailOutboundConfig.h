@@ -80,12 +80,12 @@ class EmailOutboundConfig {
   ///@}
  private:
   Aws::String m_connectSourceEmailAddress;
-  bool m_connectSourceEmailAddressHasBeenSet = false;
 
   Aws::String m_sourceEmailAddressDisplayName;
-  bool m_sourceEmailAddressDisplayNameHasBeenSet = false;
 
   Aws::String m_wisdomTemplateArn;
+  bool m_connectSourceEmailAddressHasBeenSet = false;
+  bool m_sourceEmailAddressDisplayNameHasBeenSet = false;
   bool m_wisdomTemplateArnHasBeenSet = false;
 };
 

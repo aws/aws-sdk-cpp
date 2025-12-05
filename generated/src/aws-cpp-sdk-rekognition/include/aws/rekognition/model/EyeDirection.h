@@ -78,12 +78,12 @@ class EyeDirection {
   ///@}
  private:
   double m_yaw{0.0};
-  bool m_yawHasBeenSet = false;
 
   double m_pitch{0.0};
-  bool m_pitchHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_yawHasBeenSet = false;
+  bool m_pitchHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

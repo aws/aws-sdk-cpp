@@ -70,9 +70,9 @@ class InferenceComponentDeploymentConfig {
   ///@}
  private:
   InferenceComponentRollingUpdatePolicy m_rollingUpdatePolicy;
-  bool m_rollingUpdatePolicyHasBeenSet = false;
 
   AutoRollbackConfig m_autoRollbackConfiguration;
+  bool m_rollingUpdatePolicyHasBeenSet = false;
   bool m_autoRollbackConfigurationHasBeenSet = false;
 };
 

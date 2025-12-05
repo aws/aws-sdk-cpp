@@ -123,18 +123,18 @@ class HierarchyPathReference {
   ///@}
  private:
   HierarchyGroupSummaryReference m_levelOne;
-  bool m_levelOneHasBeenSet = false;
 
   HierarchyGroupSummaryReference m_levelTwo;
-  bool m_levelTwoHasBeenSet = false;
 
   HierarchyGroupSummaryReference m_levelThree;
-  bool m_levelThreeHasBeenSet = false;
 
   HierarchyGroupSummaryReference m_levelFour;
-  bool m_levelFourHasBeenSet = false;
 
   HierarchyGroupSummaryReference m_levelFive;
+  bool m_levelOneHasBeenSet = false;
+  bool m_levelTwoHasBeenSet = false;
+  bool m_levelThreeHasBeenSet = false;
+  bool m_levelFourHasBeenSet = false;
   bool m_levelFiveHasBeenSet = false;
 };
 

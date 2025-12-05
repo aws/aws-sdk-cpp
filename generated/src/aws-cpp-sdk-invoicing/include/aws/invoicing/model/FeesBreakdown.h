@@ -76,9 +76,9 @@ class FeesBreakdown {
   ///@}
  private:
   Aws::Vector<FeesBreakdownAmount> m_breakdown;
-  bool m_breakdownHasBeenSet = false;
 
   Aws::String m_totalAmount;
+  bool m_breakdownHasBeenSet = false;
   bool m_totalAmountHasBeenSet = false;
 };
 

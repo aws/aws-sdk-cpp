@@ -156,21 +156,21 @@ class UpdateMaintenanceStartTimeRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   int m_hourOfDay{0};
-  bool m_hourOfDayHasBeenSet = false;
 
   int m_minuteOfHour{0};
-  bool m_minuteOfHourHasBeenSet = false;
 
   int m_dayOfWeek{0};
-  bool m_dayOfWeekHasBeenSet = false;
 
   int m_dayOfMonth{0};
-  bool m_dayOfMonthHasBeenSet = false;
 
   SoftwareUpdatePreferences m_softwareUpdatePreferences;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_hourOfDayHasBeenSet = false;
+  bool m_minuteOfHourHasBeenSet = false;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_dayOfMonthHasBeenSet = false;
   bool m_softwareUpdatePreferencesHasBeenSet = false;
 };
 

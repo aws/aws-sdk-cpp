@@ -60,9 +60,9 @@ class AssociateTransitGatewayRouteTableResponse {
   ///@}
  private:
   TransitGatewayAssociation m_association;
-  bool m_associationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_associationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

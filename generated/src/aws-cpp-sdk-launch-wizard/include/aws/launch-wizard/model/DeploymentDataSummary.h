@@ -140,21 +140,21 @@ class DeploymentDataSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_patternName;
-  bool m_patternNameHasBeenSet = false;
 
   DeploymentStatus m_status{DeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_workloadName;
+  bool m_createdAtHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_patternNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
 };
 

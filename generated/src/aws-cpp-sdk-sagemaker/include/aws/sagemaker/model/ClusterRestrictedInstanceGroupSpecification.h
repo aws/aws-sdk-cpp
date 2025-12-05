@@ -254,36 +254,36 @@ class ClusterRestrictedInstanceGroupSpecification {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   int m_threadsPerCore{0};
-  bool m_threadsPerCoreHasBeenSet = false;
 
   Aws::Vector<ClusterInstanceStorageConfig> m_instanceStorageConfigs;
-  bool m_instanceStorageConfigsHasBeenSet = false;
 
   Aws::Vector<DeepHealthCheckType> m_onStartDeepHealthChecks;
-  bool m_onStartDeepHealthChecksHasBeenSet = false;
 
   Aws::String m_trainingPlanArn;
-  bool m_trainingPlanArnHasBeenSet = false;
 
   VpcConfig m_overrideVpcConfig;
-  bool m_overrideVpcConfigHasBeenSet = false;
 
   ScheduledUpdateConfig m_scheduledUpdateConfig;
-  bool m_scheduledUpdateConfigHasBeenSet = false;
 
   EnvironmentConfig m_environmentConfig;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceGroupNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_threadsPerCoreHasBeenSet = false;
+  bool m_instanceStorageConfigsHasBeenSet = false;
+  bool m_onStartDeepHealthChecksHasBeenSet = false;
+  bool m_trainingPlanArnHasBeenSet = false;
+  bool m_overrideVpcConfigHasBeenSet = false;
+  bool m_scheduledUpdateConfigHasBeenSet = false;
   bool m_environmentConfigHasBeenSet = false;
 };
 

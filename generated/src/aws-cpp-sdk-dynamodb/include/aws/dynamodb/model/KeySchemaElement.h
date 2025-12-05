@@ -84,9 +84,9 @@ class KeySchemaElement {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   KeyType m_keyType{KeyType::NOT_SET};
+  bool m_attributeNameHasBeenSet = false;
   bool m_keyTypeHasBeenSet = false;
 };
 

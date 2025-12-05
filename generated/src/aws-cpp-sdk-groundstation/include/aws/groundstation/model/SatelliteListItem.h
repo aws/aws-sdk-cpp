@@ -129,18 +129,18 @@ class SatelliteListItem {
   ///@}
  private:
   Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
 
   Aws::String m_satelliteArn;
-  bool m_satelliteArnHasBeenSet = false;
 
   int m_noradSatelliteID{0};
-  bool m_noradSatelliteIDHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groundStations;
-  bool m_groundStationsHasBeenSet = false;
 
   EphemerisMetaData m_currentEphemeris;
+  bool m_satelliteIdHasBeenSet = false;
+  bool m_satelliteArnHasBeenSet = false;
+  bool m_noradSatelliteIDHasBeenSet = false;
+  bool m_groundStationsHasBeenSet = false;
   bool m_currentEphemerisHasBeenSet = false;
 };
 

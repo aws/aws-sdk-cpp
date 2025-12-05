@@ -151,24 +151,24 @@ class TestStateResult {
   ///@}
  private:
   Aws::String m_output;
-  bool m_outputHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_cause;
-  bool m_causeHasBeenSet = false;
 
   InspectionData m_inspectionData;
-  bool m_inspectionDataHasBeenSet = false;
 
   Aws::String m_nextState;
-  bool m_nextStateHasBeenSet = false;
 
   TestExecutionStatus m_status{TestExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outputHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
+  bool m_inspectionDataHasBeenSet = false;
+  bool m_nextStateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

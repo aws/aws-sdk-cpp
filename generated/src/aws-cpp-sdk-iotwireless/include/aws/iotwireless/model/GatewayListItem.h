@@ -69,9 +69,9 @@ class GatewayListItem {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   int m_downlinkFrequency{0};
+  bool m_gatewayIdHasBeenSet = false;
   bool m_downlinkFrequencyHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class RateBasedStatementManagedKeysIPSet {
   ///@}
  private:
   IPAddressVersion m_iPAddressVersion{IPAddressVersion::NOT_SET};
-  bool m_iPAddressVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addresses;
+  bool m_iPAddressVersionHasBeenSet = false;
   bool m_addressesHasBeenSet = false;
 };
 

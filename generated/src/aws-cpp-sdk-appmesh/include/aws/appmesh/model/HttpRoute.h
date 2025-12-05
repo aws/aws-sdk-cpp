@@ -108,15 +108,15 @@ class HttpRoute {
   ///@}
  private:
   HttpRouteAction m_action;
-  bool m_actionHasBeenSet = false;
 
   HttpRouteMatch m_match;
-  bool m_matchHasBeenSet = false;
 
   HttpRetryPolicy m_retryPolicy;
-  bool m_retryPolicyHasBeenSet = false;
 
   HttpTimeout m_timeout;
+  bool m_actionHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
+  bool m_retryPolicyHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
 };
 

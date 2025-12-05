@@ -191,27 +191,27 @@ class GuardrailTopic {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_examples;
-  bool m_examplesHasBeenSet = false;
 
   GuardrailTopicType m_type{GuardrailTopicType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailTopicAction m_inputAction{GuardrailTopicAction::NOT_SET};
-  bool m_inputActionHasBeenSet = false;
 
   GuardrailTopicAction m_outputAction{GuardrailTopicAction::NOT_SET};
-  bool m_outputActionHasBeenSet = false;
 
   bool m_inputEnabled{false};
-  bool m_inputEnabledHasBeenSet = false;
 
   bool m_outputEnabled{false};
+  bool m_nameHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_examplesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_inputActionHasBeenSet = false;
+  bool m_outputActionHasBeenSet = false;
+  bool m_inputEnabledHasBeenSet = false;
   bool m_outputEnabledHasBeenSet = false;
 };
 

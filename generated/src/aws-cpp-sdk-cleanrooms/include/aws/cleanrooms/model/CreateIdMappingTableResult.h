@@ -60,9 +60,9 @@ class CreateIdMappingTableResult {
   ///@}
  private:
   IdMappingTable m_idMappingTable;
-  bool m_idMappingTableHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idMappingTableHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

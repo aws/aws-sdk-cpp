@@ -68,9 +68,9 @@ class DataSetReference {
   ///@}
  private:
   Aws::String m_dataSetPlaceholder;
-  bool m_dataSetPlaceholderHasBeenSet = false;
 
   Aws::String m_dataSetArn;
+  bool m_dataSetPlaceholderHasBeenSet = false;
   bool m_dataSetArnHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class RetryCriteria {
   ///@}
  private:
   RetryableFailureType m_failureType{RetryableFailureType::NOT_SET};
-  bool m_failureTypeHasBeenSet = false;
 
   int m_numberOfRetries{0};
+  bool m_failureTypeHasBeenSet = false;
   bool m_numberOfRetriesHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class NeptuneImportOptions {
   ///@}
  private:
   Aws::String m_s3ExportPath;
-  bool m_s3ExportPathHasBeenSet = false;
 
   Aws::String m_s3ExportKmsKeyId;
-  bool m_s3ExportKmsKeyIdHasBeenSet = false;
 
   bool m_preserveDefaultVertexLabels{false};
-  bool m_preserveDefaultVertexLabelsHasBeenSet = false;
 
   bool m_preserveEdgeIds{false};
+  bool m_s3ExportPathHasBeenSet = false;
+  bool m_s3ExportKmsKeyIdHasBeenSet = false;
+  bool m_preserveDefaultVertexLabelsHasBeenSet = false;
   bool m_preserveEdgeIdsHasBeenSet = false;
 };
 

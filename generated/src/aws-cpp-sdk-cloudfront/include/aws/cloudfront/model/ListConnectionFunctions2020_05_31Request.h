@@ -84,12 +84,12 @@ class ListConnectionFunctions2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   FunctionStage m_stage{FunctionStage::NOT_SET};
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

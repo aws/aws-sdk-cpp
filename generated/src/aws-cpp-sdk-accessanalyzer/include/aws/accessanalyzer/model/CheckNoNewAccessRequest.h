@@ -88,12 +88,12 @@ class CheckNoNewAccessRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_newPolicyDocument;
-  bool m_newPolicyDocumentHasBeenSet = false;
 
   Aws::String m_existingPolicyDocument;
-  bool m_existingPolicyDocumentHasBeenSet = false;
 
   AccessCheckPolicyType m_policyType{AccessCheckPolicyType::NOT_SET};
+  bool m_newPolicyDocumentHasBeenSet = false;
+  bool m_existingPolicyDocumentHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

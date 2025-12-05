@@ -258,21 +258,21 @@ class DescribeScalingActivitiesRequest : public ApplicationAutoScalingRequest {
   ///@}
  private:
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includeNotScaledActivities{false};
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_includeNotScaledActivitiesHasBeenSet = false;
 };
 

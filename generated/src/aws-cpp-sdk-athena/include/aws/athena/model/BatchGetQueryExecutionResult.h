@@ -91,12 +91,12 @@ class BatchGetQueryExecutionResult {
   ///@}
  private:
   Aws::Vector<QueryExecution> m_queryExecutions;
-  bool m_queryExecutionsHasBeenSet = false;
 
   Aws::Vector<UnprocessedQueryExecutionId> m_unprocessedQueryExecutionIds;
-  bool m_unprocessedQueryExecutionIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryExecutionsHasBeenSet = false;
+  bool m_unprocessedQueryExecutionIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

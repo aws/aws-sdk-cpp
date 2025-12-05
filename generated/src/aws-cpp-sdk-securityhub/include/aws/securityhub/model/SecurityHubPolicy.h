@@ -103,12 +103,12 @@ class SecurityHubPolicy {
   ///@}
  private:
   bool m_serviceEnabled{false};
-  bool m_serviceEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledStandardIdentifiers;
-  bool m_enabledStandardIdentifiersHasBeenSet = false;
 
   SecurityControlsConfiguration m_securityControlsConfiguration;
+  bool m_serviceEnabledHasBeenSet = false;
+  bool m_enabledStandardIdentifiersHasBeenSet = false;
   bool m_securityControlsConfigurationHasBeenSet = false;
 };
 

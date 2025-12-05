@@ -62,9 +62,9 @@ class Range {
   ///@}
  private:
   double m_minProficiencyLevel{0.0};
-  bool m_minProficiencyLevelHasBeenSet = false;
 
   double m_maxProficiencyLevel{0.0};
+  bool m_minProficiencyLevelHasBeenSet = false;
   bool m_maxProficiencyLevelHasBeenSet = false;
 };
 

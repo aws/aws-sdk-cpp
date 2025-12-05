@@ -77,9 +77,9 @@ class DeleteImportedKeyMaterialRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_keyMaterialId;
+  bool m_keyIdHasBeenSet = false;
   bool m_keyMaterialIdHasBeenSet = false;
 };
 

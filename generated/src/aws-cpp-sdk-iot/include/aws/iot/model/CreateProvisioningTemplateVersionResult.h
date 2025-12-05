@@ -107,18 +107,18 @@ class CreateProvisioningTemplateVersionResult {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   int m_versionId{0};
-  bool m_versionIdHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
-  bool m_isDefaultVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_isDefaultVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

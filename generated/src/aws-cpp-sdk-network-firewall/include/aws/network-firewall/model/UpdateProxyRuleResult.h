@@ -111,15 +111,15 @@ class UpdateProxyRuleResult {
   ///@}
  private:
   ProxyRule m_proxyRule;
-  bool m_proxyRuleHasBeenSet = false;
 
   Aws::Vector<ProxyRuleCondition> m_removedConditions;
-  bool m_removedConditionsHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyRuleHasBeenSet = false;
+  bool m_removedConditionsHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -258,42 +258,42 @@ class GetFindingV2Result {
   ///@}
  private:
   Aws::Utils::DateTime m_analyzedAt{};
-  bool m_analyzedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccount;
-  bool m_resourceOwnerAccountHasBeenSet = false;
 
   FindingStatus m_status{FindingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<FindingDetails> m_findingDetails;
-  bool m_findingDetailsHasBeenSet = false;
 
   FindingType m_findingType{FindingType::NOT_SET};
-  bool m_findingTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analyzedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceOwnerAccountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_findingDetailsHasBeenSet = false;
+  bool m_findingTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

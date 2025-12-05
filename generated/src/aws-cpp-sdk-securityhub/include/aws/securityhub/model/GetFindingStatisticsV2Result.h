@@ -68,9 +68,9 @@ class GetFindingStatisticsV2Result {
   ///@}
  private:
   Aws::Vector<GroupByResult> m_groupByResults;
-  bool m_groupByResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupByResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

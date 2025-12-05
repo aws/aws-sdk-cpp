@@ -80,9 +80,9 @@ class IndexAttachment {
   ///@}
  private:
   Aws::Vector<AttributeKeyAndValue> m_indexedAttributes;
-  bool m_indexedAttributesHasBeenSet = false;
 
   Aws::String m_objectIdentifier;
+  bool m_indexedAttributesHasBeenSet = false;
   bool m_objectIdentifierHasBeenSet = false;
 };
 

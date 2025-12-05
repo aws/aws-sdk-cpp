@@ -109,12 +109,12 @@ class AnalysisRuleIdMappingTable {
   ///@}
  private:
   Aws::Vector<Aws::String> m_joinColumns;
-  bool m_joinColumnsHasBeenSet = false;
 
   Aws::Vector<QueryConstraint> m_queryConstraints;
-  bool m_queryConstraintsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dimensionColumns;
+  bool m_joinColumnsHasBeenSet = false;
+  bool m_queryConstraintsHasBeenSet = false;
   bool m_dimensionColumnsHasBeenSet = false;
 };
 

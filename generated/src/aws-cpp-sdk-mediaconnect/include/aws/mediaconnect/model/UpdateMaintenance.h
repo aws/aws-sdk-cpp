@@ -87,12 +87,12 @@ class UpdateMaintenance {
   ///@}
  private:
   MaintenanceDay m_maintenanceDay{MaintenanceDay::NOT_SET};
-  bool m_maintenanceDayHasBeenSet = false;
 
   Aws::String m_maintenanceScheduledDate;
-  bool m_maintenanceScheduledDateHasBeenSet = false;
 
   Aws::String m_maintenanceStartHour;
+  bool m_maintenanceDayHasBeenSet = false;
+  bool m_maintenanceScheduledDateHasBeenSet = false;
   bool m_maintenanceStartHourHasBeenSet = false;
 };
 

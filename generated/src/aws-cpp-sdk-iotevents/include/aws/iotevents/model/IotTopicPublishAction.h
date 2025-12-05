@@ -74,9 +74,9 @@ class IotTopicPublishAction {
   ///@}
  private:
   Aws::String m_mqttTopic;
-  bool m_mqttTopicHasBeenSet = false;
 
   Payload m_payload;
+  bool m_mqttTopicHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

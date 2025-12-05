@@ -184,24 +184,24 @@ class KeyPairInfo {
   ///@}
  private:
   Aws::String m_keyPairId;
-  bool m_keyPairIdHasBeenSet = false;
 
   KeyType m_keyType{KeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_keyFingerprint;
+  bool m_keyPairIdHasBeenSet = false;
+  bool m_keyTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
   bool m_keyFingerprintHasBeenSet = false;
 };
 

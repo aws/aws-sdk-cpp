@@ -73,9 +73,9 @@ class AssistantAssociationInputData {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   ExternalBedrockKnowledgeBaseConfig m_externalBedrockKnowledgeBaseConfig;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_externalBedrockKnowledgeBaseConfigHasBeenSet = false;
 };
 

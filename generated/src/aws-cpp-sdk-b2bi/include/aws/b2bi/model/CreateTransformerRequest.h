@@ -176,24 +176,24 @@ class CreateTransformerRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   InputConversion m_inputConversion;
-  bool m_inputConversionHasBeenSet = false;
 
   Mapping m_mapping;
-  bool m_mappingHasBeenSet = false;
 
   OutputConversion m_outputConversion;
-  bool m_outputConversionHasBeenSet = false;
 
   SampleDocuments m_sampleDocuments;
+  bool m_nameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_inputConversionHasBeenSet = false;
+  bool m_mappingHasBeenSet = false;
+  bool m_outputConversionHasBeenSet = false;
   bool m_sampleDocumentsHasBeenSet = false;
 };
 

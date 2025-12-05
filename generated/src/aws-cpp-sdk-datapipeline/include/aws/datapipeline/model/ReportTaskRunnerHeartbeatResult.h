@@ -63,9 +63,9 @@ class ReportTaskRunnerHeartbeatResult {
   ///@}
  private:
   bool m_terminate{false};
-  bool m_terminateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_terminateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

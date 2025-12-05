@@ -112,15 +112,15 @@ class EdgeDeployment {
   ///@}
  private:
   Aws::String m_deploymentName;
-  bool m_deploymentNameHasBeenSet = false;
 
   DeploymentType m_type{DeploymentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FailureHandlingPolicy m_failureHandlingPolicy{FailureHandlingPolicy::NOT_SET};
-  bool m_failureHandlingPolicyHasBeenSet = false;
 
   Aws::Vector<Definition> m_definitions;
+  bool m_deploymentNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_failureHandlingPolicyHasBeenSet = false;
   bool m_definitionsHasBeenSet = false;
 };
 

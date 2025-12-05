@@ -68,9 +68,9 @@ class ApplicationEncryptionConfigurationDescription {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   KeyType m_keyType{KeyType::NOT_SET};
+  bool m_keyIdHasBeenSet = false;
   bool m_keyTypeHasBeenSet = false;
 };
 

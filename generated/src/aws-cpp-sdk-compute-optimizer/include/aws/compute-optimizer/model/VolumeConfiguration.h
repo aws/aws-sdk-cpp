@@ -152,24 +152,24 @@ class VolumeConfiguration {
   ///@}
  private:
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   int m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   int m_volumeBaselineIOPS{0};
-  bool m_volumeBaselineIOPSHasBeenSet = false;
 
   int m_volumeBurstIOPS{0};
-  bool m_volumeBurstIOPSHasBeenSet = false;
 
   int m_volumeBaselineThroughput{0};
-  bool m_volumeBaselineThroughputHasBeenSet = false;
 
   int m_volumeBurstThroughput{0};
-  bool m_volumeBurstThroughputHasBeenSet = false;
 
   bool m_rootVolume{false};
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_volumeBaselineIOPSHasBeenSet = false;
+  bool m_volumeBurstIOPSHasBeenSet = false;
+  bool m_volumeBaselineThroughputHasBeenSet = false;
+  bool m_volumeBurstThroughputHasBeenSet = false;
   bool m_rootVolumeHasBeenSet = false;
 };
 

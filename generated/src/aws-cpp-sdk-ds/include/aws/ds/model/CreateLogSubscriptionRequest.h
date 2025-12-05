@@ -69,9 +69,9 @@ class CreateLogSubscriptionRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_logGroupName;
+  bool m_directoryIdHasBeenSet = false;
   bool m_logGroupNameHasBeenSet = false;
 };
 

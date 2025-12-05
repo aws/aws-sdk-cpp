@@ -92,12 +92,12 @@ class ResetImageAttributeRequest : public EC2Request {
   ///@}
  private:
   ResetImageAttributeName m_attribute{ResetImageAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_attributeHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

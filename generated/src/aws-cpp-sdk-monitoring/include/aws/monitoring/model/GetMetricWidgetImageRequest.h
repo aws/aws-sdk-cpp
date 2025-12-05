@@ -95,9 +95,9 @@ class GetMetricWidgetImageRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_metricWidget;
-  bool m_metricWidgetHasBeenSet = false;
 
   Aws::String m_outputFormat;
+  bool m_metricWidgetHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class AssumeRoleForPodIdentityRequest : public EKSAuthRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_token;
+  bool m_clusterNameHasBeenSet = false;
   bool m_tokenHasBeenSet = false;
 };
 

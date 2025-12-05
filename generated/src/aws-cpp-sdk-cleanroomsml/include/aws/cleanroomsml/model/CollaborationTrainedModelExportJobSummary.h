@@ -251,39 +251,39 @@ class CollaborationTrainedModelExportJobSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TrainedModelExportOutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   TrainedModelExportJobStatus m_status{TrainedModelExportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_trainedModelVersionIdentifier;
-  bool m_trainedModelVersionIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_trainedModelVersionIdentifierHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_collaborationIdentifierHasBeenSet = false;
 };
 

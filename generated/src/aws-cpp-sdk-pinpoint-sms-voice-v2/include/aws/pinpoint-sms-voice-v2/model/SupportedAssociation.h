@@ -122,15 +122,15 @@ class SupportedAssociation {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   RegistrationAssociationBehavior m_associationBehavior{RegistrationAssociationBehavior::NOT_SET};
-  bool m_associationBehaviorHasBeenSet = false;
 
   RegistrationDisassociationBehavior m_disassociationBehavior{RegistrationDisassociationBehavior::NOT_SET};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_associationBehaviorHasBeenSet = false;
   bool m_disassociationBehaviorHasBeenSet = false;
 };
 

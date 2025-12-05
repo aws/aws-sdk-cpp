@@ -98,12 +98,12 @@ class ResourceTagMapping {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ComplianceDetails m_complianceDetails;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_complianceDetailsHasBeenSet = false;
 };
 

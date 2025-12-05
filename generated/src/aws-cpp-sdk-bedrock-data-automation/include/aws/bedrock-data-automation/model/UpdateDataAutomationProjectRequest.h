@@ -149,24 +149,24 @@ class UpdateDataAutomationProjectRequest : public BedrockDataAutomationRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
-  bool m_projectStageHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   StandardOutputConfiguration m_standardOutputConfiguration;
-  bool m_standardOutputConfigurationHasBeenSet = false;
 
   CustomOutputConfiguration m_customOutputConfiguration;
-  bool m_customOutputConfigurationHasBeenSet = false;
 
   OverrideConfiguration m_overrideConfiguration;
-  bool m_overrideConfigurationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_projectArnHasBeenSet = false;
+  bool m_projectStageHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_standardOutputConfigurationHasBeenSet = false;
+  bool m_customOutputConfigurationHasBeenSet = false;
+  bool m_overrideConfigurationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

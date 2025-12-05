@@ -243,33 +243,33 @@ class CreateImportedImageRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sourceAmiId;
-  bool m_sourceAmiIdHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   RuntimeValidationConfig m_runtimeValidationConfig;
-  bool m_runtimeValidationConfigHasBeenSet = false;
 
   AgentSoftwareVersion m_agentSoftwareVersion{AgentSoftwareVersion::NOT_SET};
-  bool m_agentSoftwareVersionHasBeenSet = false;
 
   Aws::Vector<ApplicationConfig> m_appCatalogConfig;
-  bool m_appCatalogConfigHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_nameHasBeenSet = false;
+  bool m_sourceAmiIdHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_runtimeValidationConfigHasBeenSet = false;
+  bool m_agentSoftwareVersionHasBeenSet = false;
+  bool m_appCatalogConfigHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class MetricsByTime {
   ///@}
  private:
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   double m_savings{0.0};
-  bool m_savingsHasBeenSet = false;
 
   double m_spend{0.0};
-  bool m_spendHasBeenSet = false;
 
   Aws::String m_timestamp;
+  bool m_scoreHasBeenSet = false;
+  bool m_savingsHasBeenSet = false;
+  bool m_spendHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

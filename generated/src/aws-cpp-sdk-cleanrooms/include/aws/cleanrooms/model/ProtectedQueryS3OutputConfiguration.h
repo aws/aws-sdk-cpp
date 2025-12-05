@@ -104,15 +104,15 @@ class ProtectedQueryS3OutputConfiguration {
   ///@}
  private:
   ResultFormat m_resultFormat{ResultFormat::NOT_SET};
-  bool m_resultFormatHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_keyPrefix;
-  bool m_keyPrefixHasBeenSet = false;
 
   bool m_singleFileOutput{false};
+  bool m_resultFormatHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyPrefixHasBeenSet = false;
   bool m_singleFileOutputHasBeenSet = false;
 };
 

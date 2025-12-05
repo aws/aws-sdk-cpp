@@ -114,15 +114,15 @@ class UpdateCapabilityRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_capabilityId;
-  bool m_capabilityIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CapabilityConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<S3Location> m_instructionsDocuments;
+  bool m_capabilityIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_instructionsDocumentsHasBeenSet = false;
 };
 

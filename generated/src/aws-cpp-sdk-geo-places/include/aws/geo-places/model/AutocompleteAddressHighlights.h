@@ -368,45 +368,45 @@ class AutocompleteAddressHighlights {
   ///@}
  private:
   Aws::Vector<Highlight> m_label;
-  bool m_labelHasBeenSet = false;
 
   CountryHighlights m_country;
-  bool m_countryHasBeenSet = false;
 
   RegionHighlights m_region;
-  bool m_regionHasBeenSet = false;
 
   SubRegionHighlights m_subRegion;
-  bool m_subRegionHasBeenSet = false;
 
   Aws::Vector<Highlight> m_locality;
-  bool m_localityHasBeenSet = false;
 
   Aws::Vector<Highlight> m_district;
-  bool m_districtHasBeenSet = false;
 
   Aws::Vector<Highlight> m_subDistrict;
-  bool m_subDistrictHasBeenSet = false;
 
   Aws::Vector<Highlight> m_street;
-  bool m_streetHasBeenSet = false;
 
   Aws::Vector<Highlight> m_block;
-  bool m_blockHasBeenSet = false;
 
   Aws::Vector<Highlight> m_subBlock;
-  bool m_subBlockHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Highlight>> m_intersection;
-  bool m_intersectionHasBeenSet = false;
 
   Aws::Vector<Highlight> m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::Vector<Highlight> m_addressNumber;
-  bool m_addressNumberHasBeenSet = false;
 
   Aws::Vector<Highlight> m_building;
+  bool m_labelHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_subRegionHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_districtHasBeenSet = false;
+  bool m_subDistrictHasBeenSet = false;
+  bool m_streetHasBeenSet = false;
+  bool m_blockHasBeenSet = false;
+  bool m_subBlockHasBeenSet = false;
+  bool m_intersectionHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_addressNumberHasBeenSet = false;
   bool m_buildingHasBeenSet = false;
 };
 

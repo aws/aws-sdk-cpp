@@ -107,15 +107,15 @@ class ListStorageLensConfigurationEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_storageLensArn;
-  bool m_storageLensArnHasBeenSet = false;
 
   Aws::String m_homeRegion;
-  bool m_homeRegionHasBeenSet = false;
 
   bool m_isEnabled{false};
+  bool m_idHasBeenSet = false;
+  bool m_storageLensArnHasBeenSet = false;
+  bool m_homeRegionHasBeenSet = false;
   bool m_isEnabledHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class DeleteAnalysisSchemeResult {
   ///@}
  private:
   AnalysisSchemeStatus m_analysisScheme;
-  bool m_analysisSchemeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_analysisSchemeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

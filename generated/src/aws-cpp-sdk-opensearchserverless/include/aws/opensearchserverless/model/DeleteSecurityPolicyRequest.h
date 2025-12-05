@@ -85,12 +85,12 @@ class DeleteSecurityPolicyRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   SecurityPolicyType m_type{SecurityPolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

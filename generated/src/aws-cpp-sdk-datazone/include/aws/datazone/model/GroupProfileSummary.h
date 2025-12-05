@@ -103,15 +103,15 @@ class GroupProfileSummary {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   GroupProfileStatus m_status{GroupProfileStatus::NOT_SET};
+  bool m_domainIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

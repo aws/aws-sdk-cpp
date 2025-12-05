@@ -72,9 +72,9 @@ class SentimentResponse {
   ///@}
  private:
   SentimentType m_sentiment{SentimentType::NOT_SET};
-  bool m_sentimentHasBeenSet = false;
 
   SentimentScore m_sentimentScore;
+  bool m_sentimentHasBeenSet = false;
   bool m_sentimentScoreHasBeenSet = false;
 };
 

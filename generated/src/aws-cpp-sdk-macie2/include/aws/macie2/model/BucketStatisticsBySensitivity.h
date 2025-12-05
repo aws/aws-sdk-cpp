@@ -112,15 +112,15 @@ class BucketStatisticsBySensitivity {
   ///@}
  private:
   SensitivityAggregations m_classificationError;
-  bool m_classificationErrorHasBeenSet = false;
 
   SensitivityAggregations m_notClassified;
-  bool m_notClassifiedHasBeenSet = false;
 
   SensitivityAggregations m_notSensitive;
-  bool m_notSensitiveHasBeenSet = false;
 
   SensitivityAggregations m_sensitive;
+  bool m_classificationErrorHasBeenSet = false;
+  bool m_notClassifiedHasBeenSet = false;
+  bool m_notSensitiveHasBeenSet = false;
   bool m_sensitiveHasBeenSet = false;
 };
 

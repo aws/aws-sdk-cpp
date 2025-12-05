@@ -61,9 +61,9 @@ class DeviceStats {
   ///@}
  private:
   long long m_connectedDeviceCount{0};
-  bool m_connectedDeviceCountHasBeenSet = false;
 
   long long m_registeredDeviceCount{0};
+  bool m_connectedDeviceCountHasBeenSet = false;
   bool m_registeredDeviceCountHasBeenSet = false;
 };
 

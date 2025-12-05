@@ -125,18 +125,18 @@ class UpdateAccountResult {
   ///@}
  private:
   Aws::String m_cloudwatchRoleArn;
-  bool m_cloudwatchRoleArnHasBeenSet = false;
 
   ThrottleSettings m_throttleSettings;
-  bool m_throttleSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::String m_apiKeyVersion;
-  bool m_apiKeyVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudwatchRoleArnHasBeenSet = false;
+  bool m_throttleSettingsHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
+  bool m_apiKeyVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

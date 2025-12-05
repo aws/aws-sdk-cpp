@@ -282,42 +282,42 @@ class GetPropertyValueHistoryRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentPath;
-  bool m_componentPathHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedProperties;
-  bool m_selectedPropertiesHasBeenSet = false;
 
   Aws::Vector<PropertyFilter> m_propertyFilters;
-  bool m_propertyFiltersHasBeenSet = false;
 
   InterpolationParameters m_interpolation;
-  bool m_interpolationHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   OrderByTime m_orderByTime{OrderByTime::NOT_SET};
-  bool m_orderByTimeHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_endTime;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentPathHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
+  bool m_selectedPropertiesHasBeenSet = false;
+  bool m_propertyFiltersHasBeenSet = false;
+  bool m_interpolationHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_orderByTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

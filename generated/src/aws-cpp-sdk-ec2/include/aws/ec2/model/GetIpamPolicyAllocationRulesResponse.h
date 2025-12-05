@@ -88,12 +88,12 @@ class GetIpamPolicyAllocationRulesResponse {
   ///@}
  private:
   Aws::Vector<IpamPolicyDocument> m_ipamPolicyDocuments;
-  bool m_ipamPolicyDocumentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPolicyDocumentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

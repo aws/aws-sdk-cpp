@@ -89,12 +89,12 @@ class AutomatedReasoningPolicyTypeValueAnnotation {
   ///@}
  private:
   AutomatedReasoningPolicyAddTypeValue m_addTypeValue;
-  bool m_addTypeValueHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateTypeValue m_updateTypeValue;
-  bool m_updateTypeValueHasBeenSet = false;
 
   AutomatedReasoningPolicyDeleteTypeValue m_deleteTypeValue;
+  bool m_addTypeValueHasBeenSet = false;
+  bool m_updateTypeValueHasBeenSet = false;
   bool m_deleteTypeValueHasBeenSet = false;
 };
 

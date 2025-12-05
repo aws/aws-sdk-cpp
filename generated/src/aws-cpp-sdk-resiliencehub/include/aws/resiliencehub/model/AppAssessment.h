@@ -407,60 +407,60 @@ class AppAssessment {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::String m_assessmentArn;
-  bool m_assessmentArnHasBeenSet = false;
 
   Aws::String m_assessmentName;
-  bool m_assessmentNameHasBeenSet = false;
 
   AssessmentStatus m_assessmentStatus{AssessmentStatus::NOT_SET};
-  bool m_assessmentStatusHasBeenSet = false;
 
   Aws::Map<DisruptionType, DisruptionCompliance> m_compliance;
-  bool m_complianceHasBeenSet = false;
 
   ComplianceStatus m_complianceStatus{ComplianceStatus::NOT_SET};
-  bool m_complianceStatusHasBeenSet = false;
 
   Cost m_cost;
-  bool m_costHasBeenSet = false;
 
   DriftStatus m_driftStatus{DriftStatus::NOT_SET};
-  bool m_driftStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   AssessmentInvoker m_invoker{AssessmentInvoker::NOT_SET};
-  bool m_invokerHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ResiliencyPolicy m_policy;
-  bool m_policyHasBeenSet = false;
 
   ResiliencyScore m_resiliencyScore;
-  bool m_resiliencyScoreHasBeenSet = false;
 
   ResourceErrorsDetails m_resourceErrorsDetails;
-  bool m_resourceErrorsDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   AssessmentSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_versionName;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_assessmentArnHasBeenSet = false;
+  bool m_assessmentNameHasBeenSet = false;
+  bool m_assessmentStatusHasBeenSet = false;
+  bool m_complianceHasBeenSet = false;
+  bool m_complianceStatusHasBeenSet = false;
+  bool m_costHasBeenSet = false;
+  bool m_driftStatusHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_invokerHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_resiliencyScoreHasBeenSet = false;
+  bool m_resourceErrorsDetailsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class EncryptionConfiguration {
   ///@}
  private:
   Aws::Vector<S3Encryption> m_s3Encryption;
-  bool m_s3EncryptionHasBeenSet = false;
 
   CloudWatchEncryption m_cloudWatchEncryption;
-  bool m_cloudWatchEncryptionHasBeenSet = false;
 
   JobBookmarksEncryption m_jobBookmarksEncryption;
-  bool m_jobBookmarksEncryptionHasBeenSet = false;
 
   DataQualityEncryption m_dataQualityEncryption;
+  bool m_s3EncryptionHasBeenSet = false;
+  bool m_cloudWatchEncryptionHasBeenSet = false;
+  bool m_jobBookmarksEncryptionHasBeenSet = false;
   bool m_dataQualityEncryptionHasBeenSet = false;
 };
 

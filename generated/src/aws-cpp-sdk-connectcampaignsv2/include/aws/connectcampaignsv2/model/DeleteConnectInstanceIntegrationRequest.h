@@ -66,9 +66,9 @@ class DeleteConnectInstanceIntegrationRequest : public ConnectCampaignsV2Request
   ///@}
  private:
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   IntegrationIdentifier m_integrationIdentifier;
+  bool m_connectInstanceIdHasBeenSet = false;
   bool m_integrationIdentifierHasBeenSet = false;
 };
 

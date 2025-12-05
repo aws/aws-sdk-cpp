@@ -72,9 +72,9 @@ class BatchSuspendUserRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIdList;
+  bool m_accountIdHasBeenSet = false;
   bool m_userIdListHasBeenSet = false;
 };
 

@@ -110,9 +110,9 @@ class SqlInjectionMatchTuple {
   ///@}
  private:
   FieldToMatch m_fieldToMatch;
-  bool m_fieldToMatchHasBeenSet = false;
 
   TextTransformation m_textTransformation{TextTransformation::NOT_SET};
+  bool m_fieldToMatchHasBeenSet = false;
   bool m_textTransformationHasBeenSet = false;
 };
 

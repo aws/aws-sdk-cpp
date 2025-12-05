@@ -165,24 +165,24 @@ class ManagedNotificationChildEventOverview {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_managedNotificationConfigurationArn;
-  bool m_managedNotificationConfigurationArnHasBeenSet = false;
 
   Aws::String m_relatedAccount;
-  bool m_relatedAccountHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ManagedNotificationChildEventSummary m_childEvent;
-  bool m_childEventHasBeenSet = false;
 
   Aws::String m_aggregateManagedNotificationEventArn;
-  bool m_aggregateManagedNotificationEventArnHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
+  bool m_arnHasBeenSet = false;
+  bool m_managedNotificationConfigurationArnHasBeenSet = false;
+  bool m_relatedAccountHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_childEventHasBeenSet = false;
+  bool m_aggregateManagedNotificationEventArnHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
 };
 

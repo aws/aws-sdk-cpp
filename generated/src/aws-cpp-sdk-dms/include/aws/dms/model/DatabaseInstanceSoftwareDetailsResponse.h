@@ -162,24 +162,24 @@ class DatabaseInstanceSoftwareDetailsResponse {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_engineEdition;
-  bool m_engineEditionHasBeenSet = false;
 
   Aws::String m_servicePack;
-  bool m_servicePackHasBeenSet = false;
 
   Aws::String m_supportLevel;
-  bool m_supportLevelHasBeenSet = false;
 
   int m_osArchitecture{0};
-  bool m_osArchitectureHasBeenSet = false;
 
   Aws::String m_tooltip;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_engineEditionHasBeenSet = false;
+  bool m_servicePackHasBeenSet = false;
+  bool m_supportLevelHasBeenSet = false;
+  bool m_osArchitectureHasBeenSet = false;
   bool m_tooltipHasBeenSet = false;
 };
 

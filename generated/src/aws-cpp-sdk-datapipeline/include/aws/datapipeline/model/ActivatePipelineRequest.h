@@ -98,12 +98,12 @@ class ActivatePipelineRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::Vector<ParameterValue> m_parameterValues;
-  bool m_parameterValuesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
+  bool m_pipelineIdHasBeenSet = false;
+  bool m_parameterValuesHasBeenSet = false;
   bool m_startTimestampHasBeenSet = false;
 };
 

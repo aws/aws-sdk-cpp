@@ -74,9 +74,9 @@ class WrappedKey {
   ///@}
  private:
   WrappedKeyMaterial m_wrappedKeyMaterial;
-  bool m_wrappedKeyMaterialHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
+  bool m_wrappedKeyMaterialHasBeenSet = false;
   bool m_keyCheckValueAlgorithmHasBeenSet = false;
 };
 

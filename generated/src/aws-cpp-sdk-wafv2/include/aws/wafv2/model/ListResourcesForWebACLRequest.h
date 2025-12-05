@@ -73,9 +73,9 @@ class ListResourcesForWebACLRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_webACLArn;
-  bool m_webACLArnHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_webACLArnHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

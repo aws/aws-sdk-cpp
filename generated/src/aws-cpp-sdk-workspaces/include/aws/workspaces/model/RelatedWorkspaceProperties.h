@@ -104,15 +104,15 @@ class RelatedWorkspaceProperties {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   WorkspaceState m_state{WorkspaceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   StandbyWorkspaceRelationshipType m_type{StandbyWorkspaceRelationshipType::NOT_SET};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

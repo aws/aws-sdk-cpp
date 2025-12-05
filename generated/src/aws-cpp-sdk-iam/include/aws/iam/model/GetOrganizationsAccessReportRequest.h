@@ -116,15 +116,15 @@ class GetOrganizationsAccessReportRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   SortKeyType m_sortKey{SortKeyType::NOT_SET};
+  bool m_jobIdHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_sortKeyHasBeenSet = false;
 };
 

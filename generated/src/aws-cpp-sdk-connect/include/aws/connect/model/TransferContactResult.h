@@ -76,12 +76,12 @@ class TransferContactResult {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactIdHasBeenSet = false;
+  bool m_contactArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

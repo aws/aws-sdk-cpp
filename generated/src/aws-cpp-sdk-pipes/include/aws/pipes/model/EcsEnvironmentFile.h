@@ -86,9 +86,9 @@ class EcsEnvironmentFile {
   ///@}
  private:
   EcsEnvironmentFileType m_type{EcsEnvironmentFileType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

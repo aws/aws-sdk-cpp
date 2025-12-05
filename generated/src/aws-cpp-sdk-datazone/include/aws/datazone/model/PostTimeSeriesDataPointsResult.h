@@ -118,18 +118,18 @@ class PostTimeSeriesDataPointsResult {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::Vector<TimeSeriesDataPointFormOutput> m_forms;
-  bool m_formsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_formsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

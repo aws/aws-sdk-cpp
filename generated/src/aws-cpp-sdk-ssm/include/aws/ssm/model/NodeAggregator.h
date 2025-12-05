@@ -110,15 +110,15 @@ class NodeAggregator {
   ///@}
  private:
   NodeAggregatorType m_aggregatorType{NodeAggregatorType::NOT_SET};
-  bool m_aggregatorTypeHasBeenSet = false;
 
   NodeTypeName m_typeName{NodeTypeName::NOT_SET};
-  bool m_typeNameHasBeenSet = false;
 
   NodeAttributeName m_attributeName{NodeAttributeName::NOT_SET};
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Vector<NodeAggregator> m_aggregators;
+  bool m_aggregatorTypeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_aggregatorsHasBeenSet = false;
 };
 

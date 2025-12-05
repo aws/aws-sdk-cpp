@@ -67,9 +67,9 @@ class IngressPathSummary {
   ///@}
  private:
   AccessType m_accessType{AccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   Aws::String m_endpoint;
+  bool m_accessTypeHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class UpdateDiscovererRequest : public SchemasRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_discovererId;
-  bool m_discovererIdHasBeenSet = false;
 
   bool m_crossAccount{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_discovererIdHasBeenSet = false;
   bool m_crossAccountHasBeenSet = false;
 };
 

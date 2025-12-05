@@ -59,9 +59,9 @@ class StartResourceEvaluationResult {
   ///@}
  private:
   Aws::String m_resourceEvaluationId;
-  bool m_resourceEvaluationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceEvaluationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

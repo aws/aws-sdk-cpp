@@ -120,18 +120,18 @@ class AttachmentContent {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::String m_hash;
-  bool m_hashHasBeenSet = false;
 
   AttachmentHashType m_hashType{AttachmentHashType::NOT_SET};
-  bool m_hashTypeHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_nameHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_hashHasBeenSet = false;
+  bool m_hashTypeHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

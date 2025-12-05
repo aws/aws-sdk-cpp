@@ -60,9 +60,9 @@ class DescribeBatchInferenceJobResult {
   ///@}
  private:
   BatchInferenceJob m_batchInferenceJob;
-  bool m_batchInferenceJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchInferenceJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

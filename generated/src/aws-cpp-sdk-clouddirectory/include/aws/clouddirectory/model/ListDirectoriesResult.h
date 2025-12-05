@@ -85,12 +85,12 @@ class ListDirectoriesResult {
   ///@}
  private:
   Aws::Vector<Directory> m_directories;
-  bool m_directoriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

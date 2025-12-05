@@ -68,9 +68,9 @@ class NavbarStyle {
   ///@}
  private:
   Palette m_globalNavbar;
-  bool m_globalNavbarHasBeenSet = false;
 
   Palette m_contextualNavbar;
+  bool m_globalNavbarHasBeenSet = false;
   bool m_contextualNavbarHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class UpdateTemplateRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateDescription;
-  bool m_templateDescriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_idHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_templateDescriptionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

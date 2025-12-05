@@ -76,12 +76,12 @@ class UpdateRegistryResult {
   ///@}
  private:
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_registryArn;
-  bool m_registryArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryNameHasBeenSet = false;
+  bool m_registryArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

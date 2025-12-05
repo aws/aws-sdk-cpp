@@ -65,9 +65,9 @@ class DescribeVirtualNodeResult {
   ///@}
  private:
   VirtualNodeData m_virtualNode;
-  bool m_virtualNodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualNodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -371,57 +371,57 @@ class DBClusterSnapshot {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::String m_dBClusterSnapshotIdentifier;
-  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotCreateTime{};
-  bool m_snapshotCreateTimeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_clusterCreateTime{};
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   int m_percentProgress{0};
-  bool m_percentProgressHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dBClusterSnapshotArn;
-  bool m_dBClusterSnapshotArnHasBeenSet = false;
 
   Aws::String m_sourceDBClusterSnapshotArn;
-  bool m_sourceDBClusterSnapshotArnHasBeenSet = false;
 
   Aws::String m_storageType;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_snapshotCreateTimeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dBClusterSnapshotArnHasBeenSet = false;
+  bool m_sourceDBClusterSnapshotArnHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
 };
 

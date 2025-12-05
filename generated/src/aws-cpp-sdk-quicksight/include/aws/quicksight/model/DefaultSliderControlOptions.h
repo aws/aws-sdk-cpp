@@ -119,18 +119,18 @@ class DefaultSliderControlOptions {
   ///@}
  private:
   SliderControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   SheetControlSliderType m_type{SheetControlSliderType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_maximumValue{0.0};
-  bool m_maximumValueHasBeenSet = false;
 
   double m_minimumValue{0.0};
-  bool m_minimumValueHasBeenSet = false;
 
   double m_stepSize{0.0};
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_maximumValueHasBeenSet = false;
+  bool m_minimumValueHasBeenSet = false;
   bool m_stepSizeHasBeenSet = false;
 };
 

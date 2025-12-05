@@ -87,12 +87,12 @@ class ModifyClusterRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_hsmType;
-  bool m_hsmTypeHasBeenSet = false;
 
   BackupRetentionPolicy m_backupRetentionPolicy;
-  bool m_backupRetentionPolicyHasBeenSet = false;
 
   Aws::String m_clusterId;
+  bool m_hsmTypeHasBeenSet = false;
+  bool m_backupRetentionPolicyHasBeenSet = false;
   bool m_clusterIdHasBeenSet = false;
 };
 

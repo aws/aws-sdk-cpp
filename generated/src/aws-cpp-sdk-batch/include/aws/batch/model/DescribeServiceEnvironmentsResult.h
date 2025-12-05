@@ -88,12 +88,12 @@ class DescribeServiceEnvironmentsResult {
   ///@}
  private:
   Aws::Vector<ServiceEnvironmentDetail> m_serviceEnvironments;
-  bool m_serviceEnvironmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceEnvironmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -154,21 +154,21 @@ class CreateInstanceRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_instanceDescription;
-  bool m_instanceDescriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_webAppDnsDomain;
-  bool m_webAppDnsDomainHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceNameHasBeenSet = false;
+  bool m_instanceDescriptionHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_webAppDnsDomainHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

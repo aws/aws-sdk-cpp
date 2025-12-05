@@ -67,9 +67,9 @@ class Cvss3 {
   ///@}
  private:
   double m_baseScore{0.0};
-  bool m_baseScoreHasBeenSet = false;
 
   Aws::String m_scoringVector;
+  bool m_baseScoreHasBeenSet = false;
   bool m_scoringVectorHasBeenSet = false;
 };
 

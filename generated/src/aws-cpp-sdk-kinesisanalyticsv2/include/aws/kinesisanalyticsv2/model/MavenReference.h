@@ -87,12 +87,12 @@ class MavenReference {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_artifactId;
-  bool m_artifactIdHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_groupIdHasBeenSet = false;
+  bool m_artifactIdHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

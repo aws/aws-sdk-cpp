@@ -145,24 +145,24 @@ class CreateServiceNetworkServiceAssociationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ServiceNetworkServiceAssociationStatus m_status{ServiceNetworkServiceAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   DnsEntry m_dnsEntry;
-  bool m_dnsEntryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_dnsEntryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

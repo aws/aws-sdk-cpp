@@ -65,9 +65,9 @@ class TransitioningImageTotalCount {
   ///@}
  private:
   LifecyclePolicyTargetStorageClass m_targetStorageClass{LifecyclePolicyTargetStorageClass::NOT_SET};
-  bool m_targetStorageClassHasBeenSet = false;
 
   int m_imageTotalCount{0};
+  bool m_targetStorageClassHasBeenSet = false;
   bool m_imageTotalCountHasBeenSet = false;
 };
 

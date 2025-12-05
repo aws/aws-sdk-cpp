@@ -459,72 +459,72 @@ class RouterOutput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RouterOutputState m_state{RouterOutputState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   RouterOutputType m_outputType{RouterOutputType::NOT_SET};
-  bool m_outputTypeHasBeenSet = false;
 
   RouterOutputConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   RouterOutputRoutedState m_routedState{RouterOutputRoutedState::NOT_SET};
-  bool m_routedStateHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   long long m_maximumBitrate{0};
-  bool m_maximumBitrateHasBeenSet = false;
 
   RoutingScope m_routingScope{RoutingScope::NOT_SET};
-  bool m_routingScopeHasBeenSet = false;
 
   RouterOutputTier m_tier{RouterOutputTier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<RouterOutputMessage> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   RouterOutputStreamDetails m_streamDetails;
-  bool m_streamDetailsHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_routedInputArn;
-  bool m_routedInputArnHasBeenSet = false;
 
   MaintenanceType m_maintenanceType{MaintenanceType::NOT_SET};
-  bool m_maintenanceTypeHasBeenSet = false;
 
   MaintenanceConfiguration m_maintenanceConfiguration;
-  bool m_maintenanceConfigurationHasBeenSet = false;
 
   MaintenanceScheduleType m_maintenanceScheduleType{MaintenanceScheduleType::NOT_SET};
-  bool m_maintenanceScheduleTypeHasBeenSet = false;
 
   MaintenanceSchedule m_maintenanceSchedule;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_outputTypeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_routedStateHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_routingScopeHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_streamDetailsHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_routedInputArnHasBeenSet = false;
+  bool m_maintenanceTypeHasBeenSet = false;
+  bool m_maintenanceConfigurationHasBeenSet = false;
+  bool m_maintenanceScheduleTypeHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
 };
 

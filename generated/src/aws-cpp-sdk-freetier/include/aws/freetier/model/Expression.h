@@ -145,15 +145,15 @@ class Expression {
   ///@}
  private:
   Aws::Vector<Expression> m_or;
-  bool m_orHasBeenSet = false;
 
   Aws::Vector<Expression> m_and;
-  bool m_andHasBeenSet = false;
 
   std::shared_ptr<Expression> m_not;
-  bool m_notHasBeenSet = false;
 
   DimensionValues m_dimensions;
+  bool m_orHasBeenSet = false;
+  bool m_andHasBeenSet = false;
+  bool m_notHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

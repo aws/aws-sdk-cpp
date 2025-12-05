@@ -370,54 +370,54 @@ class TopicColumn {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_columnFriendlyName;
-  bool m_columnFriendlyNameHasBeenSet = false;
 
   Aws::String m_columnDescription;
-  bool m_columnDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columnSynonyms;
-  bool m_columnSynonymsHasBeenSet = false;
 
   ColumnDataRole m_columnDataRole{ColumnDataRole::NOT_SET};
-  bool m_columnDataRoleHasBeenSet = false;
 
   DefaultAggregation m_aggregation{DefaultAggregation::NOT_SET};
-  bool m_aggregationHasBeenSet = false;
 
   bool m_isIncludedInTopic{false};
-  bool m_isIncludedInTopicHasBeenSet = false;
 
   bool m_disableIndexing{false};
-  bool m_disableIndexingHasBeenSet = false;
 
   ComparativeOrder m_comparativeOrder;
-  bool m_comparativeOrderHasBeenSet = false;
 
   SemanticType m_semanticType;
-  bool m_semanticTypeHasBeenSet = false;
 
   TopicTimeGranularity m_timeGranularity{TopicTimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   Aws::Vector<AuthorSpecifiedAggregation> m_allowedAggregations;
-  bool m_allowedAggregationsHasBeenSet = false;
 
   Aws::Vector<AuthorSpecifiedAggregation> m_notAllowedAggregations;
-  bool m_notAllowedAggregationsHasBeenSet = false;
 
   DefaultFormatting m_defaultFormatting;
-  bool m_defaultFormattingHasBeenSet = false;
 
   bool m_neverAggregateInFilter{false};
-  bool m_neverAggregateInFilterHasBeenSet = false;
 
   Aws::Vector<CellValueSynonym> m_cellValueSynonyms;
-  bool m_cellValueSynonymsHasBeenSet = false;
 
   bool m_nonAdditive{false};
+  bool m_columnNameHasBeenSet = false;
+  bool m_columnFriendlyNameHasBeenSet = false;
+  bool m_columnDescriptionHasBeenSet = false;
+  bool m_columnSynonymsHasBeenSet = false;
+  bool m_columnDataRoleHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
+  bool m_isIncludedInTopicHasBeenSet = false;
+  bool m_disableIndexingHasBeenSet = false;
+  bool m_comparativeOrderHasBeenSet = false;
+  bool m_semanticTypeHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_allowedAggregationsHasBeenSet = false;
+  bool m_notAllowedAggregationsHasBeenSet = false;
+  bool m_defaultFormattingHasBeenSet = false;
+  bool m_neverAggregateInFilterHasBeenSet = false;
+  bool m_cellValueSynonymsHasBeenSet = false;
   bool m_nonAdditiveHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class CancelStepsInfo {
   ///@}
  private:
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   CancelStepsRequestStatus m_status{CancelStepsRequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_stepIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

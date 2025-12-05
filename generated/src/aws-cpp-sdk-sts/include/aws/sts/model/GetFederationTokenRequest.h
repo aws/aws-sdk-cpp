@@ -231,18 +231,18 @@ class GetFederationTokenRequest : public STSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::Vector<PolicyDescriptorType> m_policyArns;
-  bool m_policyArnsHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_policyArnsHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

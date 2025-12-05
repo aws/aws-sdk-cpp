@@ -74,9 +74,9 @@ class Limit {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_max;
+  bool m_nameHasBeenSet = false;
   bool m_maxHasBeenSet = false;
 };
 

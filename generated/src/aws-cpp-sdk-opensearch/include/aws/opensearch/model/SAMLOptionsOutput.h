@@ -120,18 +120,18 @@ class SAMLOptionsOutput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   SAMLIdp m_idp;
-  bool m_idpHasBeenSet = false;
 
   Aws::String m_subjectKey;
-  bool m_subjectKeyHasBeenSet = false;
 
   Aws::String m_rolesKey;
-  bool m_rolesKeyHasBeenSet = false;
 
   int m_sessionTimeoutMinutes{0};
+  bool m_enabledHasBeenSet = false;
+  bool m_idpHasBeenSet = false;
+  bool m_subjectKeyHasBeenSet = false;
+  bool m_rolesKeyHasBeenSet = false;
   bool m_sessionTimeoutMinutesHasBeenSet = false;
 };
 

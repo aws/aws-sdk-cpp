@@ -226,33 +226,33 @@ class CreatePipelineRequest : public OSISRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   int m_minUnits{0};
-  bool m_minUnitsHasBeenSet = false;
 
   int m_maxUnits{0};
-  bool m_maxUnitsHasBeenSet = false;
 
   Aws::String m_pipelineConfigurationBody;
-  bool m_pipelineConfigurationBodyHasBeenSet = false;
 
   LogPublishingOptions m_logPublishingOptions;
-  bool m_logPublishingOptionsHasBeenSet = false;
 
   VpcOptions m_vpcOptions;
-  bool m_vpcOptionsHasBeenSet = false;
 
   BufferOptions m_bufferOptions;
-  bool m_bufferOptionsHasBeenSet = false;
 
   EncryptionAtRestOptions m_encryptionAtRestOptions;
-  bool m_encryptionAtRestOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_pipelineRoleArn;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_minUnitsHasBeenSet = false;
+  bool m_maxUnitsHasBeenSet = false;
+  bool m_pipelineConfigurationBodyHasBeenSet = false;
+  bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_vpcOptionsHasBeenSet = false;
+  bool m_bufferOptionsHasBeenSet = false;
+  bool m_encryptionAtRestOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_pipelineRoleArnHasBeenSet = false;
 };
 

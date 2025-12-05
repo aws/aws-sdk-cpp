@@ -146,21 +146,21 @@ class DatabaseConfiguration {
   ///@}
  private:
   DatabaseEngineType m_databaseEngineType{DatabaseEngineType::NOT_SET};
-  bool m_databaseEngineTypeHasBeenSet = false;
 
   ConnectionConfiguration m_connectionConfiguration;
-  bool m_connectionConfigurationHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   ColumnConfiguration m_columnConfiguration;
-  bool m_columnConfigurationHasBeenSet = false;
 
   AclConfiguration m_aclConfiguration;
-  bool m_aclConfigurationHasBeenSet = false;
 
   SqlConfiguration m_sqlConfiguration;
+  bool m_databaseEngineTypeHasBeenSet = false;
+  bool m_connectionConfigurationHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_columnConfigurationHasBeenSet = false;
+  bool m_aclConfigurationHasBeenSet = false;
   bool m_sqlConfigurationHasBeenSet = false;
 };
 

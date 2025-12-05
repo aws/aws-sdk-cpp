@@ -95,12 +95,12 @@ class UserAccessLoggingSettings {
   ///@}
  private:
   Aws::String m_userAccessLoggingSettingsArn;
-  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedPortalArns;
-  bool m_associatedPortalArnsHasBeenSet = false;
 
   Aws::String m_kinesisStreamArn;
+  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
+  bool m_associatedPortalArnsHasBeenSet = false;
   bool m_kinesisStreamArnHasBeenSet = false;
 };
 

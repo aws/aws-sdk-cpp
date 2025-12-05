@@ -89,12 +89,12 @@ class MetricDataError {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   QueryErrorCode m_code{QueryErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_idHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

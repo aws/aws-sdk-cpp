@@ -129,18 +129,18 @@ class TermsDescriptionType {
   ///@}
  private:
   Aws::String m_termsId;
-  bool m_termsIdHasBeenSet = false;
 
   Aws::String m_termsName;
-  bool m_termsNameHasBeenSet = false;
 
   TermsEnforcementType m_enforcement{TermsEnforcementType::NOT_SET};
-  bool m_enforcementHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_termsIdHasBeenSet = false;
+  bool m_termsNameHasBeenSet = false;
+  bool m_enforcementHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

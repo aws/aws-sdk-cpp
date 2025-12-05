@@ -65,9 +65,9 @@ class Sample {
   ///@}
  private:
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   SampleType m_type{SampleType::NOT_SET};
+  bool m_sizeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

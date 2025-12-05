@@ -178,27 +178,27 @@ class AwsIamAccessKeyDetails {
   ///@}
  private:
   AwsIamAccessKeyStatus m_status{AwsIamAccessKeyStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_principalType;
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_principalName;
-  bool m_principalNameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   AwsIamAccessKeySessionContext m_sessionContext;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_principalTypeHasBeenSet = false;
+  bool m_principalNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_accessKeyIdHasBeenSet = false;
   bool m_sessionContextHasBeenSet = false;
 };
 

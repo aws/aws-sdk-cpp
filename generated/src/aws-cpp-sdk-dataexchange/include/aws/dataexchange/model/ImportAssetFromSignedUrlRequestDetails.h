@@ -108,15 +108,15 @@ class ImportAssetFromSignedUrlRequestDetails {
   ///@}
  private:
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_md5Hash;
-  bool m_md5HashHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_assetNameHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_md5HashHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

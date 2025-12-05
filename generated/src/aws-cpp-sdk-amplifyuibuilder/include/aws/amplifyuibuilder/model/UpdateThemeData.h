@@ -118,15 +118,15 @@ class UpdateThemeData {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ThemeValues> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<ThemeValues> m_overrides;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

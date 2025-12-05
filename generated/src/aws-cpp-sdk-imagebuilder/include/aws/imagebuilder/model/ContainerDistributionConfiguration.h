@@ -95,12 +95,12 @@ class ContainerDistributionConfiguration {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerTags;
-  bool m_containerTagsHasBeenSet = false;
 
   TargetContainerRepository m_targetRepository;
+  bool m_descriptionHasBeenSet = false;
+  bool m_containerTagsHasBeenSet = false;
   bool m_targetRepositoryHasBeenSet = false;
 };
 

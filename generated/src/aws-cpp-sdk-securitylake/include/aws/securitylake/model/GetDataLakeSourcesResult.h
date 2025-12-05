@@ -108,15 +108,15 @@ class GetDataLakeSourcesResult {
   ///@}
  private:
   Aws::String m_dataLakeArn;
-  bool m_dataLakeArnHasBeenSet = false;
 
   Aws::Vector<DataLakeSource> m_dataLakeSources;
-  bool m_dataLakeSourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataLakeArnHasBeenSet = false;
+  bool m_dataLakeSourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

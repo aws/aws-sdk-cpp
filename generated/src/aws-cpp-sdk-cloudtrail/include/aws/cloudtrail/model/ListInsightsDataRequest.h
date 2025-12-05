@@ -174,24 +174,24 @@ class ListInsightsDataRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_insightSource;
-  bool m_insightSourceHasBeenSet = false;
 
   ListInsightsDataType m_dataType{ListInsightsDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::Map<ListInsightsDataDimensionKey, Aws::String> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_insightSourceHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

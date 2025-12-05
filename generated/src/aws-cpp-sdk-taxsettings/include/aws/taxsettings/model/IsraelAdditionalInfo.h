@@ -70,9 +70,9 @@ class IsraelAdditionalInfo {
   ///@}
  private:
   IsraelCustomerType m_customerType{IsraelCustomerType::NOT_SET};
-  bool m_customerTypeHasBeenSet = false;
 
   IsraelDealerType m_dealerType{IsraelDealerType::NOT_SET};
+  bool m_customerTypeHasBeenSet = false;
   bool m_dealerTypeHasBeenSet = false;
 };
 

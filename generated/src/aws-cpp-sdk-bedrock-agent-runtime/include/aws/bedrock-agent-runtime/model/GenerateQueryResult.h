@@ -68,9 +68,9 @@ class GenerateQueryResult {
   ///@}
  private:
   Aws::Vector<GeneratedQuery> m_queries;
-  bool m_queriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

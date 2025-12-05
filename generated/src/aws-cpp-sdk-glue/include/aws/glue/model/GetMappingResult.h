@@ -67,9 +67,9 @@ class GetMappingResult {
   ///@}
  private:
   Aws::Vector<MappingEntry> m_mapping;
-  bool m_mappingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mappingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

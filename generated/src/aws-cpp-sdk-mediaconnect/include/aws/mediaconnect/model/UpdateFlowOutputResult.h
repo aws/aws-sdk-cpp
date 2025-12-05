@@ -77,12 +77,12 @@ class UpdateFlowOutputResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Output m_output;
-  bool m_outputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

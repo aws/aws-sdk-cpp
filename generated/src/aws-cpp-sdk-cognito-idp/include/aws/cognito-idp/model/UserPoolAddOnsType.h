@@ -79,9 +79,9 @@ class UserPoolAddOnsType {
   ///@}
  private:
   AdvancedSecurityModeType m_advancedSecurityMode{AdvancedSecurityModeType::NOT_SET};
-  bool m_advancedSecurityModeHasBeenSet = false;
 
   AdvancedSecurityAdditionalFlowsType m_advancedSecurityAdditionalFlows;
+  bool m_advancedSecurityModeHasBeenSet = false;
   bool m_advancedSecurityAdditionalFlowsHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class ListAssociatedAccessPoliciesResult {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AssociatedAccessPolicy> m_associatedAccessPolicies;
-  bool m_associatedAccessPoliciesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_associatedAccessPoliciesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

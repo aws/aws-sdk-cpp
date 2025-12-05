@@ -85,12 +85,12 @@ class ListResourcesForTagOptionResult {
   ///@}
  private:
   Aws::Vector<ResourceDetail> m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceDetailsHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

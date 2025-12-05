@@ -183,30 +183,30 @@ class CreateRegistrationAssociationResult {
   ///@}
  private:
   Aws::String m_registrationArn;
-  bool m_registrationArnHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_registrationType;
-  bool m_registrationTypeHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationArnHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_registrationTypeHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

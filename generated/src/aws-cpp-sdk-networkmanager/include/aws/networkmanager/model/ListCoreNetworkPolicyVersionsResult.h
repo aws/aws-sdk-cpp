@@ -85,12 +85,12 @@ class ListCoreNetworkPolicyVersionsResult {
   ///@}
  private:
   Aws::Vector<CoreNetworkPolicyVersion> m_coreNetworkPolicyVersions;
-  bool m_coreNetworkPolicyVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreNetworkPolicyVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

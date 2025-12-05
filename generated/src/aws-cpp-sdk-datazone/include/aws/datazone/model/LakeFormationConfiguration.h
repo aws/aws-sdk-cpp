@@ -81,9 +81,9 @@ class LakeFormationConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_locationRegistrationExcludeS3Locations;
-  bool m_locationRegistrationExcludeS3LocationsHasBeenSet = false;
 
   Aws::String m_locationRegistrationRole;
+  bool m_locationRegistrationExcludeS3LocationsHasBeenSet = false;
   bool m_locationRegistrationRoleHasBeenSet = false;
 };
 

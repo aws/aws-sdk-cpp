@@ -76,9 +76,9 @@ class Warning {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Vector<int> m_pages;
+  bool m_errorCodeHasBeenSet = false;
   bool m_pagesHasBeenSet = false;
 };
 

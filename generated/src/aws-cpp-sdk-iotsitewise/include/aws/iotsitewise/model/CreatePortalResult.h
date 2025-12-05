@@ -137,21 +137,21 @@ class CreatePortalResult {
   ///@}
  private:
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_portalStartUrl;
-  bool m_portalStartUrlHasBeenSet = false;
 
   PortalStatus m_portalStatus;
-  bool m_portalStatusHasBeenSet = false;
 
   Aws::String m_ssoApplicationId;
-  bool m_ssoApplicationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalIdHasBeenSet = false;
+  bool m_portalArnHasBeenSet = false;
+  bool m_portalStartUrlHasBeenSet = false;
+  bool m_portalStatusHasBeenSet = false;
+  bool m_ssoApplicationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

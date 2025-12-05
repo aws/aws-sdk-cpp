@@ -81,12 +81,12 @@ class CpuOptionsRequest {
   ///@}
  private:
   AmdSevSnpEnum m_amdSevSnp{AmdSevSnpEnum::NOT_SET};
-  bool m_amdSevSnpHasBeenSet = false;
 
   int m_coreCount{0};
-  bool m_coreCountHasBeenSet = false;
 
   int m_threadsPerCore{0};
+  bool m_amdSevSnpHasBeenSet = false;
+  bool m_coreCountHasBeenSet = false;
   bool m_threadsPerCoreHasBeenSet = false;
 };
 

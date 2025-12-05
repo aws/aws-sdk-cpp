@@ -68,9 +68,9 @@ class Attribute {
   ///@}
  private:
   InstanceAttributeType m_attributeType{InstanceAttributeType::NOT_SET};
-  bool m_attributeTypeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_attributeTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

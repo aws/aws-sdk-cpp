@@ -88,12 +88,12 @@ class InlineContent {
   ///@}
  private:
   InlineContentType m_type{InlineContentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ByteContentDoc m_byteContent;
-  bool m_byteContentHasBeenSet = false;
 
   TextContentDoc m_textContent;
+  bool m_typeHasBeenSet = false;
+  bool m_byteContentHasBeenSet = false;
   bool m_textContentHasBeenSet = false;
 };
 

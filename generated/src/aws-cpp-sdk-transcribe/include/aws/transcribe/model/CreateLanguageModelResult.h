@@ -129,21 +129,21 @@ class CreateLanguageModelResult {
   ///@}
  private:
   CLMLanguageCode m_languageCode{CLMLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   BaseModelName m_baseModelName{BaseModelName::NOT_SET};
-  bool m_baseModelNameHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   ModelStatus m_modelStatus{ModelStatus::NOT_SET};
-  bool m_modelStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_baseModelNameHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_modelStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

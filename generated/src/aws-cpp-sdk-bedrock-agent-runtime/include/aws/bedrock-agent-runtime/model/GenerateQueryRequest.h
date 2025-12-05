@@ -68,9 +68,9 @@ class GenerateQueryRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   QueryGenerationInput m_queryGenerationInput;
-  bool m_queryGenerationInputHasBeenSet = false;
 
   TransformationConfiguration m_transformationConfiguration;
+  bool m_queryGenerationInputHasBeenSet = false;
   bool m_transformationConfigurationHasBeenSet = false;
 };
 

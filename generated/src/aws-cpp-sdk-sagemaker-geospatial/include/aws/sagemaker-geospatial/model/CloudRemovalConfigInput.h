@@ -93,12 +93,12 @@ class CloudRemovalConfigInput {
   ///@}
  private:
   AlgorithmNameCloudRemoval m_algorithmName{AlgorithmNameCloudRemoval::NOT_SET};
-  bool m_algorithmNameHasBeenSet = false;
 
   Aws::String m_interpolationValue;
-  bool m_interpolationValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetBands;
+  bool m_algorithmNameHasBeenSet = false;
+  bool m_interpolationValueHasBeenSet = false;
   bool m_targetBandsHasBeenSet = false;
 };
 

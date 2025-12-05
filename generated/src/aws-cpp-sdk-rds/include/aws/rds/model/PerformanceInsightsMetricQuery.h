@@ -95,9 +95,9 @@ class PerformanceInsightsMetricQuery {
   ///@}
  private:
   PerformanceInsightsMetricDimensionGroup m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::String m_metric;
+  bool m_groupByHasBeenSet = false;
   bool m_metricHasBeenSet = false;
 };
 

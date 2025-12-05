@@ -450,66 +450,66 @@ class LineChartConfiguration {
   ///@}
  private:
   LineChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   LineChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   Aws::Vector<ForecastConfiguration> m_forecastConfigurations;
-  bool m_forecastConfigurationsHasBeenSet = false;
 
   LineChartType m_type{LineChartType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   SmallMultiplesOptions m_smallMultiplesOptions;
-  bool m_smallMultiplesOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_xAxisDisplayOptions;
-  bool m_xAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_xAxisLabelOptions;
-  bool m_xAxisLabelOptionsHasBeenSet = false;
 
   LineSeriesAxisDisplayOptions m_primaryYAxisDisplayOptions;
-  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_primaryYAxisLabelOptions;
-  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
 
   LineSeriesAxisDisplayOptions m_secondaryYAxisDisplayOptions;
-  bool m_secondaryYAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_secondaryYAxisLabelOptions;
-  bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
 
   SingleAxisOptions m_singleAxisOptions;
-  bool m_singleAxisOptionsHasBeenSet = false;
 
   LineChartDefaultSeriesSettings m_defaultSeriesSettings;
-  bool m_defaultSeriesSettingsHasBeenSet = false;
 
   Aws::Vector<SeriesItem> m_series;
-  bool m_seriesHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   Aws::Vector<ReferenceLine> m_referenceLines;
-  bool m_referenceLinesHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   Aws::Vector<ContributionAnalysisDefault> m_contributionAnalysisDefaults;
-  bool m_contributionAnalysisDefaultsHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_forecastConfigurationsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_smallMultiplesOptionsHasBeenSet = false;
+  bool m_xAxisDisplayOptionsHasBeenSet = false;
+  bool m_xAxisLabelOptionsHasBeenSet = false;
+  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_secondaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_singleAxisOptionsHasBeenSet = false;
+  bool m_defaultSeriesSettingsHasBeenSet = false;
+  bool m_seriesHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_referenceLinesHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_contributionAnalysisDefaultsHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

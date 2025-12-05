@@ -70,9 +70,9 @@ class CustomerVoiceActivity {
   ///@}
  private:
   Aws::Utils::DateTime m_greetingStartTimestamp{};
-  bool m_greetingStartTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_greetingEndTimestamp{};
+  bool m_greetingStartTimestampHasBeenSet = false;
   bool m_greetingEndTimestampHasBeenSet = false;
 };
 

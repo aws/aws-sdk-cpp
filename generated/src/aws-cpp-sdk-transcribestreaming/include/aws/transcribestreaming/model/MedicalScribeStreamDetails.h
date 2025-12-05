@@ -338,51 +338,51 @@ class MedicalScribeStreamDetails {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_streamCreatedAt{};
-  bool m_streamCreatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_streamEndedAt{};
-  bool m_streamEndedAtHasBeenSet = false;
 
   MedicalScribeLanguageCode m_languageCode{MedicalScribeLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_mediaSampleRateHertz{0};
-  bool m_mediaSampleRateHertzHasBeenSet = false;
 
   MedicalScribeMediaEncoding m_mediaEncoding{MedicalScribeMediaEncoding::NOT_SET};
-  bool m_mediaEncodingHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   MedicalScribeVocabularyFilterMethod m_vocabularyFilterMethod{MedicalScribeVocabularyFilterMethod::NOT_SET};
-  bool m_vocabularyFilterMethodHasBeenSet = false;
 
   Aws::String m_resourceAccessRoleArn;
-  bool m_resourceAccessRoleArnHasBeenSet = false;
 
   Aws::Vector<MedicalScribeChannelDefinition> m_channelDefinitions;
-  bool m_channelDefinitionsHasBeenSet = false;
 
   MedicalScribeEncryptionSettings m_encryptionSettings;
-  bool m_encryptionSettingsHasBeenSet = false;
 
   MedicalScribeStreamStatus m_streamStatus{MedicalScribeStreamStatus::NOT_SET};
-  bool m_streamStatusHasBeenSet = false;
 
   MedicalScribePostStreamAnalyticsSettings m_postStreamAnalyticsSettings;
-  bool m_postStreamAnalyticsSettingsHasBeenSet = false;
 
   MedicalScribePostStreamAnalyticsResult m_postStreamAnalyticsResult;
-  bool m_postStreamAnalyticsResultHasBeenSet = false;
 
   bool m_medicalScribeContextProvided{false};
+  bool m_sessionIdHasBeenSet = false;
+  bool m_streamCreatedAtHasBeenSet = false;
+  bool m_streamEndedAtHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_mediaSampleRateHertzHasBeenSet = false;
+  bool m_mediaEncodingHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_vocabularyFilterMethodHasBeenSet = false;
+  bool m_resourceAccessRoleArnHasBeenSet = false;
+  bool m_channelDefinitionsHasBeenSet = false;
+  bool m_encryptionSettingsHasBeenSet = false;
+  bool m_streamStatusHasBeenSet = false;
+  bool m_postStreamAnalyticsSettingsHasBeenSet = false;
+  bool m_postStreamAnalyticsResultHasBeenSet = false;
   bool m_medicalScribeContextProvidedHasBeenSet = false;
 };
 

@@ -160,21 +160,21 @@ class UpdateGeneratedTemplateRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_generatedTemplateName;
-  bool m_generatedTemplateNameHasBeenSet = false;
 
   Aws::String m_newGeneratedTemplateName;
-  bool m_newGeneratedTemplateNameHasBeenSet = false;
 
   Aws::Vector<ResourceDefinition> m_addResources;
-  bool m_addResourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeResources;
-  bool m_removeResourcesHasBeenSet = false;
 
   bool m_refreshAllResources{false};
-  bool m_refreshAllResourcesHasBeenSet = false;
 
   TemplateConfiguration m_templateConfiguration;
+  bool m_generatedTemplateNameHasBeenSet = false;
+  bool m_newGeneratedTemplateNameHasBeenSet = false;
+  bool m_addResourcesHasBeenSet = false;
+  bool m_removeResourcesHasBeenSet = false;
+  bool m_refreshAllResourcesHasBeenSet = false;
   bool m_templateConfigurationHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ the
   ///@}
  private:
   Aws::String m_checkDigitString;
-  bool m_checkDigitStringHasBeenSet = false;
 
   double m_sid{0.0};
-  bool m_sidHasBeenSet = false;
 
   NielsenWatermarkTimezones m_timezone{NielsenWatermarkTimezones::NOT_SET};
+  bool m_checkDigitStringHasBeenSet = false;
+  bool m_sidHasBeenSet = false;
   bool m_timezoneHasBeenSet = false;
 };
 

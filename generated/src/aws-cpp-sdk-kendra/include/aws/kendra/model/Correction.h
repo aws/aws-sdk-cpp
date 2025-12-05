@@ -102,15 +102,15 @@ class Correction {
   ///@}
  private:
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   Aws::String m_term;
-  bool m_termHasBeenSet = false;
 
   Aws::String m_correctedTerm;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
+  bool m_termHasBeenSet = false;
   bool m_correctedTermHasBeenSet = false;
 };
 

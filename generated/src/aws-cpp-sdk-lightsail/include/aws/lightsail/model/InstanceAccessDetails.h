@@ -261,36 +261,36 @@ class InstanceAccessDetails {
   ///@}
  private:
   Aws::String m_certKey;
-  bool m_certKeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   PasswordData m_passwordData;
-  bool m_passwordDataHasBeenSet = false;
 
   Aws::String m_privateKey;
-  bool m_privateKeyHasBeenSet = false;
 
   InstanceAccessProtocol m_protocol{InstanceAccessProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Vector<HostKeyAttributes> m_hostKeys;
+  bool m_certKeyHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_passwordDataHasBeenSet = false;
+  bool m_privateKeyHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_hostKeysHasBeenSet = false;
 };
 

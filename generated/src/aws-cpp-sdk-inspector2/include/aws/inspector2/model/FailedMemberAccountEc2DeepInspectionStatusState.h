@@ -90,12 +90,12 @@ class FailedMemberAccountEc2DeepInspectionStatusState {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Status m_ec2ScanStatus{Status::NOT_SET};
-  bool m_ec2ScanStatusHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_accountIdHasBeenSet = false;
+  bool m_ec2ScanStatusHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

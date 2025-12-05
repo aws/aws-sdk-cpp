@@ -134,18 +134,18 @@ class CreateRouteServerPeerRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_routeServerEndpointId;
-  bool m_routeServerEndpointIdHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   RouteServerBgpOptionsRequest m_bgpOptions;
-  bool m_bgpOptionsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_routeServerEndpointIdHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_bgpOptionsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

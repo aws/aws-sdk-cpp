@@ -181,30 +181,30 @@ class CreateProductRestEndpointPageResult {
   ///@}
  private:
   EndpointDisplayContentResponse m_displayContent;
-  bool m_displayContentHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_productRestEndpointPageArn;
-  bool m_productRestEndpointPageArnHasBeenSet = false;
 
   Aws::String m_productRestEndpointPageId;
-  bool m_productRestEndpointPageIdHasBeenSet = false;
 
   RestEndpointIdentifier m_restEndpointIdentifier;
-  bool m_restEndpointIdentifierHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusException m_statusException;
-  bool m_statusExceptionHasBeenSet = false;
 
   TryItState m_tryItState{TryItState::NOT_SET};
-  bool m_tryItStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_displayContentHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_productRestEndpointPageArnHasBeenSet = false;
+  bool m_productRestEndpointPageIdHasBeenSet = false;
+  bool m_restEndpointIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusExceptionHasBeenSet = false;
+  bool m_tryItStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

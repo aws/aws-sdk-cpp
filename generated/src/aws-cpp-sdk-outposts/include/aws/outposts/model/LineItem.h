@@ -182,27 +182,27 @@ class LineItem {
   ///@}
  private:
   Aws::String m_catalogItemId;
-  bool m_catalogItemIdHasBeenSet = false;
 
   Aws::String m_lineItemId;
-  bool m_lineItemIdHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   LineItemStatus m_status{LineItemStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ShipmentInformation m_shipmentInformation;
-  bool m_shipmentInformationHasBeenSet = false;
 
   Aws::Vector<LineItemAssetInformation> m_assetInformationList;
-  bool m_assetInformationListHasBeenSet = false;
 
   Aws::String m_previousLineItemId;
-  bool m_previousLineItemIdHasBeenSet = false;
 
   Aws::String m_previousOrderId;
+  bool m_catalogItemIdHasBeenSet = false;
+  bool m_lineItemIdHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_shipmentInformationHasBeenSet = false;
+  bool m_assetInformationListHasBeenSet = false;
+  bool m_previousLineItemIdHasBeenSet = false;
   bool m_previousOrderIdHasBeenSet = false;
 };
 

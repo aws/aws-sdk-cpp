@@ -60,9 +60,9 @@ class GetLoadBalancerResult {
   ///@}
  private:
   LoadBalancer m_loadBalancer;
-  bool m_loadBalancerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loadBalancerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

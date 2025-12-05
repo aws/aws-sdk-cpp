@@ -104,15 +104,15 @@ class RepositoryAggregationResponse {
   ///@}
  private:
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
-  bool m_severityCountsHasBeenSet = false;
 
   long long m_affectedImages{0};
+  bool m_repositoryHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_severityCountsHasBeenSet = false;
   bool m_affectedImagesHasBeenSet = false;
 };
 

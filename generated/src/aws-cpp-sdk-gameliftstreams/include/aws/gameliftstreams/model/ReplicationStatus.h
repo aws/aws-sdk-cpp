@@ -73,9 +73,9 @@ class ReplicationStatus {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   ReplicationStatusType m_status{ReplicationStatusType::NOT_SET};
+  bool m_locationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

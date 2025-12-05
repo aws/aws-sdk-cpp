@@ -137,18 +137,18 @@ class AttackProperty {
   ///@}
  private:
   AttackLayer m_attackLayer{AttackLayer::NOT_SET};
-  bool m_attackLayerHasBeenSet = false;
 
   AttackPropertyIdentifier m_attackPropertyIdentifier{AttackPropertyIdentifier::NOT_SET};
-  bool m_attackPropertyIdentifierHasBeenSet = false;
 
   Aws::Vector<Contributor> m_topContributors;
-  bool m_topContributorsHasBeenSet = false;
 
   Unit m_unit{Unit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   long long m_total{0};
+  bool m_attackLayerHasBeenSet = false;
+  bool m_attackPropertyIdentifierHasBeenSet = false;
+  bool m_topContributorsHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

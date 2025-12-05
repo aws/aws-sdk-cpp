@@ -105,15 +105,15 @@ class ListSensorStatisticsRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_ingestionJobId;
-  bool m_ingestionJobIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_ingestionJobIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

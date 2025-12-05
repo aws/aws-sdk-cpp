@@ -139,21 +139,21 @@ class AutoTuneStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDate{};
-  bool m_updateDateHasBeenSet = false;
 
   int m_updateVersion{0};
-  bool m_updateVersionHasBeenSet = false;
 
   AutoTuneState m_state{AutoTuneState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   bool m_pendingDeletion{false};
+  bool m_creationDateHasBeenSet = false;
+  bool m_updateDateHasBeenSet = false;
+  bool m_updateVersionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_pendingDeletionHasBeenSet = false;
 };
 

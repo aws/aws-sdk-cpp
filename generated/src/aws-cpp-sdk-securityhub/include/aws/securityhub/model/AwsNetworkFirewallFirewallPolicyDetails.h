@@ -124,18 +124,18 @@ class AwsNetworkFirewallFirewallPolicyDetails {
   ///@}
  private:
   FirewallPolicyDetails m_firewallPolicy;
-  bool m_firewallPolicyHasBeenSet = false;
 
   Aws::String m_firewallPolicyArn;
-  bool m_firewallPolicyArnHasBeenSet = false;
 
   Aws::String m_firewallPolicyId;
-  bool m_firewallPolicyIdHasBeenSet = false;
 
   Aws::String m_firewallPolicyName;
-  bool m_firewallPolicyNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_firewallPolicyHasBeenSet = false;
+  bool m_firewallPolicyArnHasBeenSet = false;
+  bool m_firewallPolicyIdHasBeenSet = false;
+  bool m_firewallPolicyNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

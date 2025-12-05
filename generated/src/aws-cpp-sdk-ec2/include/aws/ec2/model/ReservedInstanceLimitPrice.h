@@ -69,9 +69,9 @@ class ReservedInstanceLimitPrice {
   ///@}
  private:
   double m_amount{0.0};
-  bool m_amountHasBeenSet = false;
 
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
+  bool m_amountHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;
 };
 

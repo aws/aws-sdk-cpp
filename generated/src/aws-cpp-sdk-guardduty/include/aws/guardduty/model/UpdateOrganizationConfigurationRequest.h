@@ -113,12 +113,12 @@ class UpdateOrganizationConfigurationRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::Vector<OrganizationFeatureConfiguration> m_features;
-  bool m_featuresHasBeenSet = false;
 
   AutoEnableMembers m_autoEnableOrganizationMembers{AutoEnableMembers::NOT_SET};
+  bool m_detectorIdHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
   bool m_autoEnableOrganizationMembersHasBeenSet = false;
 };
 

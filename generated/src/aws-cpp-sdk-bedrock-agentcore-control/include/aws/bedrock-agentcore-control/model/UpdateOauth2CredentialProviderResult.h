@@ -185,30 +185,30 @@ class UpdateOauth2CredentialProviderResult {
   ///@}
  private:
   Secret m_clientSecretArn;
-  bool m_clientSecretArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CredentialProviderVendorType m_credentialProviderVendor{CredentialProviderVendorType::NOT_SET};
-  bool m_credentialProviderVendorHasBeenSet = false;
 
   Aws::String m_credentialProviderArn;
-  bool m_credentialProviderArnHasBeenSet = false;
 
   Aws::String m_callbackUrl;
-  bool m_callbackUrlHasBeenSet = false;
 
   Oauth2ProviderConfigOutput m_oauth2ProviderConfigOutput;
-  bool m_oauth2ProviderConfigOutputHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientSecretArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_credentialProviderVendorHasBeenSet = false;
+  bool m_credentialProviderArnHasBeenSet = false;
+  bool m_callbackUrlHasBeenSet = false;
+  bool m_oauth2ProviderConfigOutputHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

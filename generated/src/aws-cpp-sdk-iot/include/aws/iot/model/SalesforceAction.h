@@ -73,9 +73,9 @@ class SalesforceAction {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_tokenHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

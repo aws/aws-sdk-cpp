@@ -76,9 +76,9 @@ class PostProcessingTrace {
   ///@}
  private:
   ModelInvocationInput m_modelInvocationInput;
-  bool m_modelInvocationInputHasBeenSet = false;
 
   PostProcessingModelInvocationOutput m_modelInvocationOutput;
+  bool m_modelInvocationInputHasBeenSet = false;
   bool m_modelInvocationOutputHasBeenSet = false;
 };
 

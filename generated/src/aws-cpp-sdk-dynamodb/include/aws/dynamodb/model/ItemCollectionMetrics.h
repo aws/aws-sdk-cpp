@@ -92,9 +92,9 @@ class ItemCollectionMetrics {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeValue> m_itemCollectionKey;
-  bool m_itemCollectionKeyHasBeenSet = false;
 
   Aws::Vector<double> m_sizeEstimateRangeGB;
+  bool m_itemCollectionKeyHasBeenSet = false;
   bool m_sizeEstimateRangeGBHasBeenSet = false;
 };
 

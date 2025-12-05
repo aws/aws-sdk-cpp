@@ -108,15 +108,15 @@ class Invalidation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   InvalidationBatch m_invalidationBatch;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_invalidationBatchHasBeenSet = false;
 };
 

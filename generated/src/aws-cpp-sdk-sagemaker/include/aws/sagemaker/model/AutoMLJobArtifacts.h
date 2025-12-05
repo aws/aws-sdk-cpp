@@ -69,9 +69,9 @@ class AutoMLJobArtifacts {
   ///@}
  private:
   Aws::String m_candidateDefinitionNotebookLocation;
-  bool m_candidateDefinitionNotebookLocationHasBeenSet = false;
 
   Aws::String m_dataExplorationNotebookLocation;
+  bool m_candidateDefinitionNotebookLocationHasBeenSet = false;
   bool m_dataExplorationNotebookLocationHasBeenSet = false;
 };
 

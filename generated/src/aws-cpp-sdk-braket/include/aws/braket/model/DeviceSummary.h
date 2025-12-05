@@ -120,18 +120,18 @@ class DeviceSummary {
   ///@}
  private:
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   DeviceType m_deviceType{DeviceType::NOT_SET};
-  bool m_deviceTypeHasBeenSet = false;
 
   DeviceStatus m_deviceStatus{DeviceStatus::NOT_SET};
+  bool m_deviceArnHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_deviceTypeHasBeenSet = false;
   bool m_deviceStatusHasBeenSet = false;
 };
 

@@ -188,27 +188,27 @@ class ComponentSummary {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Aws::String m_definedIn;
-  bool m_definedInHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentPropertyGroupResponse> m_propertyGroups;
-  bool m_propertyGroupsHasBeenSet = false;
 
   Status m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   Aws::String m_componentPath;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
+  bool m_definedInHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_propertyGroupsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_syncSourceHasBeenSet = false;
   bool m_componentPathHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class DeployedVersionSummary {
   ///@}
  private:
   int m_applicationVersion{0};
-  bool m_applicationVersionHasBeenSet = false;
 
   DeploymentLifecycle m_status{DeploymentLifecycle::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_applicationVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

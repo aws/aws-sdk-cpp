@@ -75,9 +75,9 @@ class UpdateDatasetGroupRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_datasetArns;
+  bool m_datasetGroupArnHasBeenSet = false;
   bool m_datasetArnsHasBeenSet = false;
 };
 

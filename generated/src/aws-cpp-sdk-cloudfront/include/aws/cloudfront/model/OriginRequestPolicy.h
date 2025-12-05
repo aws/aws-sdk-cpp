@@ -101,12 +101,12 @@ class OriginRequestPolicy {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   OriginRequestPolicyConfig m_originRequestPolicyConfig;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_originRequestPolicyConfigHasBeenSet = false;
 };
 

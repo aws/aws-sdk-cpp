@@ -87,12 +87,12 @@ class ListChannelsModeratedByAppInstanceUserResult {
   ///@}
  private:
   Aws::Vector<ChannelModeratedByAppInstanceUserSummary> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

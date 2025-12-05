@@ -92,12 +92,12 @@ class BatchDeleteEvaluationJobResult {
   ///@}
  private:
   Aws::Vector<BatchDeleteEvaluationJobError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<BatchDeleteEvaluationJobItem> m_evaluationJobs;
-  bool m_evaluationJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_evaluationJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

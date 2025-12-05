@@ -59,9 +59,9 @@ class StopServiceDeploymentResult {
   ///@}
  private:
   Aws::String m_serviceDeploymentArn;
-  bool m_serviceDeploymentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceDeploymentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

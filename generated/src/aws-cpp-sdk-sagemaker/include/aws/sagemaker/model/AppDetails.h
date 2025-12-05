@@ -174,27 +174,27 @@ class AppDetails {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   Aws::String m_appName;
-  bool m_appNameHasBeenSet = false;
 
   AppStatus m_status{AppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ResourceSpec m_resourceSpec;
+  bool m_domainIdHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_appTypeHasBeenSet = false;
+  bool m_appNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_resourceSpecHasBeenSet = false;
 };
 

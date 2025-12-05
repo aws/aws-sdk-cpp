@@ -84,12 +84,12 @@ class GetSegmentVersionRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_segmentId;
-  bool m_segmentIdHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_segmentIdHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

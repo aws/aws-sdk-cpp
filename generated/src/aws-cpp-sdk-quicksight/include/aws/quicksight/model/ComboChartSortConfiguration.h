@@ -120,15 +120,15 @@ class ComboChartSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_categorySort;
-  bool m_categorySortHasBeenSet = false;
 
   ItemsLimitConfiguration m_categoryItemsLimit;
-  bool m_categoryItemsLimitHasBeenSet = false;
 
   Aws::Vector<FieldSortOptions> m_colorSort;
-  bool m_colorSortHasBeenSet = false;
 
   ItemsLimitConfiguration m_colorItemsLimit;
+  bool m_categorySortHasBeenSet = false;
+  bool m_categoryItemsLimitHasBeenSet = false;
+  bool m_colorSortHasBeenSet = false;
   bool m_colorItemsLimitHasBeenSet = false;
 };
 

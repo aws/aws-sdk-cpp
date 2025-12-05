@@ -141,21 +141,21 @@ class GetCostCategoriesResult {
   ///@}
  private:
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_costCategoryNames;
-  bool m_costCategoryNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_costCategoryValues;
-  bool m_costCategoryValuesHasBeenSet = false;
 
   int m_returnSize{0};
-  bool m_returnSizeHasBeenSet = false;
 
   int m_totalSize{0};
-  bool m_totalSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_costCategoryNamesHasBeenSet = false;
+  bool m_costCategoryValuesHasBeenSet = false;
+  bool m_returnSizeHasBeenSet = false;
+  bool m_totalSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

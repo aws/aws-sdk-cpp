@@ -184,27 +184,27 @@ class AwsKmsKeyDetails {
   ///@}
  private:
   Aws::String m_aWSAccountId;
-  bool m_aWSAccountIdHasBeenSet = false;
 
   double m_creationDate{0.0};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_keyManager;
-  bool m_keyManagerHasBeenSet = false;
 
   Aws::String m_keyState;
-  bool m_keyStateHasBeenSet = false;
 
   Aws::String m_origin;
-  bool m_originHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_keyRotationStatus{false};
+  bool m_aWSAccountIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_keyManagerHasBeenSet = false;
+  bool m_keyStateHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_keyRotationStatusHasBeenSet = false;
 };
 

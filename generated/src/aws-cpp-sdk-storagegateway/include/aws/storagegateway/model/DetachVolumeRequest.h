@@ -72,9 +72,9 @@ class DetachVolumeRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   bool m_forceDetach{false};
+  bool m_volumeARNHasBeenSet = false;
   bool m_forceDetachHasBeenSet = false;
 };
 

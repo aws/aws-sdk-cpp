@@ -60,9 +60,9 @@ class CreateNetworkInsightsPathResponse {
   ///@}
  private:
   NetworkInsightsPath m_networkInsightsPath;
-  bool m_networkInsightsPathHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsPathHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

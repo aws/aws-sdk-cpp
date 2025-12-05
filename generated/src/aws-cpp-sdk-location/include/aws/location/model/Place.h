@@ -380,54 +380,54 @@ class Place {
   ///@}
  private:
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   PlaceGeometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::String m_addressNumber;
-  bool m_addressNumberHasBeenSet = false;
 
   Aws::String m_street;
-  bool m_streetHasBeenSet = false;
 
   Aws::String m_neighborhood;
-  bool m_neighborhoodHasBeenSet = false;
 
   Aws::String m_municipality;
-  bool m_municipalityHasBeenSet = false;
 
   Aws::String m_subRegion;
-  bool m_subRegionHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   bool m_interpolated{false};
-  bool m_interpolatedHasBeenSet = false;
 
   TimeZone m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   Aws::String m_unitType;
-  bool m_unitTypeHasBeenSet = false;
 
   Aws::String m_unitNumber;
-  bool m_unitNumberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supplementalCategories;
-  bool m_supplementalCategoriesHasBeenSet = false;
 
   Aws::String m_subMunicipality;
+  bool m_labelHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
+  bool m_addressNumberHasBeenSet = false;
+  bool m_streetHasBeenSet = false;
+  bool m_neighborhoodHasBeenSet = false;
+  bool m_municipalityHasBeenSet = false;
+  bool m_subRegionHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_interpolatedHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
+  bool m_unitTypeHasBeenSet = false;
+  bool m_unitNumberHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_supplementalCategoriesHasBeenSet = false;
   bool m_subMunicipalityHasBeenSet = false;
 };
 

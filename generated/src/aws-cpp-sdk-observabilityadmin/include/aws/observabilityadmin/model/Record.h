@@ -69,9 +69,9 @@ class Record {
   ///@}
  private:
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   RecordFormat m_type{RecordFormat::NOT_SET};
+  bool m_dataHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

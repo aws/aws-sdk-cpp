@@ -84,12 +84,12 @@ class ListArtifactsResult {
   ///@}
  private:
   Aws::Vector<ArtifactSummary> m_artifactSummaries;
-  bool m_artifactSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_artifactSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

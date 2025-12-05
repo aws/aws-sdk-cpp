@@ -60,9 +60,9 @@ class DescribeConnectorResult {
   ///@}
  private:
   ConnectorConfiguration m_connectorConfiguration;
-  bool m_connectorConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

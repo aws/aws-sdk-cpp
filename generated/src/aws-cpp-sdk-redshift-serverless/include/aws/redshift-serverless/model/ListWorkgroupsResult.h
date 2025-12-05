@@ -86,12 +86,12 @@ class ListWorkgroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Workgroup> m_workgroups;
-  bool m_workgroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workgroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

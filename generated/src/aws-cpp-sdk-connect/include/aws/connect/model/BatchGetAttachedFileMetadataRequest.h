@@ -100,12 +100,12 @@ class BatchGetAttachedFileMetadataRequest : public ConnectRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fileIds;
-  bool m_fileIdsHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_associatedResourceArn;
+  bool m_fileIdsHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_associatedResourceArnHasBeenSet = false;
 };
 

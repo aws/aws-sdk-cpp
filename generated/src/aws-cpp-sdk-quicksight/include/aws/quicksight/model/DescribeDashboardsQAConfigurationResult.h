@@ -74,12 +74,12 @@ class DescribeDashboardsQAConfigurationResult {
   ///@}
  private:
   DashboardsQAStatus m_dashboardsQAStatus{DashboardsQAStatus::NOT_SET};
-  bool m_dashboardsQAStatusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_dashboardsQAStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

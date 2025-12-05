@@ -203,18 +203,18 @@ class Service {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_attributeMaps;
-  bool m_attributeMapsHasBeenSet = false;
 
   Aws::Vector<ServiceGroup> m_serviceGroups;
-  bool m_serviceGroupsHasBeenSet = false;
 
   Aws::Vector<MetricReference> m_metricReferences;
-  bool m_metricReferencesHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_logGroupReferences;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_attributeMapsHasBeenSet = false;
+  bool m_serviceGroupsHasBeenSet = false;
+  bool m_metricReferencesHasBeenSet = false;
   bool m_logGroupReferencesHasBeenSet = false;
 };
 

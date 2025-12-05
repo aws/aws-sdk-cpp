@@ -92,12 +92,12 @@ class DescribeEnvironmentsResult {
   ///@}
  private:
   Aws::Vector<EnvironmentDescription> m_environments;
-  bool m_environmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_environmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

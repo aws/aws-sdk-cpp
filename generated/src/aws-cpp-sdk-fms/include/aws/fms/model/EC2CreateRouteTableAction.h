@@ -70,9 +70,9 @@ class EC2CreateRouteTableAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionTarget m_vpcId;
+  bool m_descriptionHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

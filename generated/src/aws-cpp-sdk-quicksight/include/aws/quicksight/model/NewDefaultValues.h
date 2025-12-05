@@ -129,15 +129,15 @@ class NewDefaultValues {
   ///@}
  private:
   Aws::Vector<Aws::String> m_stringStaticValues;
-  bool m_stringStaticValuesHasBeenSet = false;
 
   Aws::Vector<double> m_decimalStaticValues;
-  bool m_decimalStaticValuesHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_dateTimeStaticValues;
-  bool m_dateTimeStaticValuesHasBeenSet = false;
 
   Aws::Vector<long long> m_integerStaticValues;
+  bool m_stringStaticValuesHasBeenSet = false;
+  bool m_decimalStaticValuesHasBeenSet = false;
+  bool m_dateTimeStaticValuesHasBeenSet = false;
   bool m_integerStaticValuesHasBeenSet = false;
 };
 

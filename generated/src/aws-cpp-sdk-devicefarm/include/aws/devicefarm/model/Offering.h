@@ -129,18 +129,18 @@ class Offering {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OfferingType m_type{OfferingType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DevicePlatform m_platform{DevicePlatform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<RecurringCharge> m_recurringCharges;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
   bool m_recurringChargesHasBeenSet = false;
 };
 

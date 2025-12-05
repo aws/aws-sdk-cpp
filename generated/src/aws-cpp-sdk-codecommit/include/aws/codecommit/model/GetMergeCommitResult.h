@@ -114,18 +114,18 @@ class GetMergeCommitResult {
   ///@}
  private:
   Aws::String m_sourceCommitId;
-  bool m_sourceCommitIdHasBeenSet = false;
 
   Aws::String m_destinationCommitId;
-  bool m_destinationCommitIdHasBeenSet = false;
 
   Aws::String m_baseCommitId;
-  bool m_baseCommitIdHasBeenSet = false;
 
   Aws::String m_mergedCommitId;
-  bool m_mergedCommitIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceCommitIdHasBeenSet = false;
+  bool m_destinationCommitIdHasBeenSet = false;
+  bool m_baseCommitIdHasBeenSet = false;
+  bool m_mergedCommitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

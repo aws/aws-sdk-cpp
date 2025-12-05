@@ -91,12 +91,12 @@ class ListMonitorsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MonitorSummary> m_monitors;
-  bool m_monitorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_monitorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

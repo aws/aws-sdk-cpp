@@ -94,12 +94,12 @@ class OpenSearchCollection {
   ///@}
  private:
   Aws::String m_collectionEndpoint;
-  bool m_collectionEndpointHasBeenSet = false;
 
   Aws::String m_collectionArn;
-  bool m_collectionArnHasBeenSet = false;
 
   OpenSearchResourceStatus m_status;
+  bool m_collectionEndpointHasBeenSet = false;
+  bool m_collectionArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

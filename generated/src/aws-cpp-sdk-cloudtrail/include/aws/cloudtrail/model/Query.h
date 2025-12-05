@@ -89,12 +89,12 @@ class Query {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   QueryStatus m_queryStatus{QueryStatus::NOT_SET};
-  bool m_queryStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryStatusHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

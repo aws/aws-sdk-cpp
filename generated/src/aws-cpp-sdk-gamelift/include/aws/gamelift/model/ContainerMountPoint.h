@@ -95,12 +95,12 @@ class ContainerMountPoint {
   ///@}
  private:
   Aws::String m_instancePath;
-  bool m_instancePathHasBeenSet = false;
 
   Aws::String m_containerPath;
-  bool m_containerPathHasBeenSet = false;
 
   ContainerMountPointAccessLevel m_accessLevel{ContainerMountPointAccessLevel::NOT_SET};
+  bool m_instancePathHasBeenSet = false;
+  bool m_containerPathHasBeenSet = false;
   bool m_accessLevelHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class BandMathConfigInput {
   ///@}
  private:
   CustomIndicesInput m_customIndices;
-  bool m_customIndicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_predefinedIndices;
+  bool m_customIndicesHasBeenSet = false;
   bool m_predefinedIndicesHasBeenSet = false;
 };
 

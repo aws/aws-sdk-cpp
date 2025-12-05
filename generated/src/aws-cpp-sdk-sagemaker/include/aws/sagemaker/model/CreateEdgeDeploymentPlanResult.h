@@ -59,9 +59,9 @@ class CreateEdgeDeploymentPlanResult {
   ///@}
  private:
   Aws::String m_edgeDeploymentPlanArn;
-  bool m_edgeDeploymentPlanArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_edgeDeploymentPlanArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

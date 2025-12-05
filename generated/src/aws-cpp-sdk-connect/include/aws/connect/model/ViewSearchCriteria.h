@@ -133,18 +133,18 @@ class ViewSearchCriteria {
   ///@}
  private:
   Aws::Vector<ViewSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<ViewSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   ViewType m_viewTypeCondition{ViewType::NOT_SET};
-  bool m_viewTypeConditionHasBeenSet = false;
 
   ViewStatus m_viewStatusCondition{ViewStatus::NOT_SET};
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
+  bool m_stringConditionHasBeenSet = false;
+  bool m_viewTypeConditionHasBeenSet = false;
   bool m_viewStatusConditionHasBeenSet = false;
 };
 

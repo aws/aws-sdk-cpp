@@ -69,9 +69,9 @@ class AccountDetail {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_accountIdHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

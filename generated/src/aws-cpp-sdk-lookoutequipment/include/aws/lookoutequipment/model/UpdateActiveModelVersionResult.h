@@ -147,24 +147,24 @@ class UpdateActiveModelVersionResult {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   long long m_currentActiveVersion{0};
-  bool m_currentActiveVersionHasBeenSet = false;
 
   long long m_previousActiveVersion{0};
-  bool m_previousActiveVersionHasBeenSet = false;
 
   Aws::String m_currentActiveVersionArn;
-  bool m_currentActiveVersionArnHasBeenSet = false;
 
   Aws::String m_previousActiveVersionArn;
-  bool m_previousActiveVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_currentActiveVersionHasBeenSet = false;
+  bool m_previousActiveVersionHasBeenSet = false;
+  bool m_currentActiveVersionArnHasBeenSet = false;
+  bool m_previousActiveVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

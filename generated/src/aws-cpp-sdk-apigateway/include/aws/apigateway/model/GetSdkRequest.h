@@ -127,15 +127,15 @@ class GetSdkRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_sdkType;
-  bool m_sdkTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_sdkTypeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

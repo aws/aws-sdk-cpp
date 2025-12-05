@@ -109,12 +109,12 @@ class ListConsumableResourcesRequest : public BatchRequest {
   ///@}
  private:
   Aws::Vector<KeyValuesPair> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

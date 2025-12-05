@@ -143,21 +143,21 @@ class AsyncOperation {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   AsyncOperationName m_operation{AsyncOperationName::NOT_SET};
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_requestTokenARN;
-  bool m_requestTokenARNHasBeenSet = false;
 
   AsyncRequestParameters m_requestParameters;
-  bool m_requestParametersHasBeenSet = false;
 
   Aws::String m_requestStatus;
-  bool m_requestStatusHasBeenSet = false;
 
   AsyncResponseDetails m_responseDetails;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_requestTokenARNHasBeenSet = false;
+  bool m_requestParametersHasBeenSet = false;
+  bool m_requestStatusHasBeenSet = false;
   bool m_responseDetailsHasBeenSet = false;
 };
 

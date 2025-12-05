@@ -119,15 +119,15 @@ class ControlPlaneUserAttributeFilter {
   ///@}
  private:
   Aws::Vector<AttributeAndCondition> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   AttributeAndCondition m_andCondition;
-  bool m_andConditionHasBeenSet = false;
 
   TagCondition m_tagCondition;
-  bool m_tagConditionHasBeenSet = false;
 
   HierarchyGroupCondition m_hierarchyGroupCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionHasBeenSet = false;
+  bool m_tagConditionHasBeenSet = false;
   bool m_hierarchyGroupConditionHasBeenSet = false;
 };
 

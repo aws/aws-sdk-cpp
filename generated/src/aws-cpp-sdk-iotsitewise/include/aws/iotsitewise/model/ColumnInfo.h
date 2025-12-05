@@ -70,9 +70,9 @@ class ColumnInfo {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ColumnType m_type;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

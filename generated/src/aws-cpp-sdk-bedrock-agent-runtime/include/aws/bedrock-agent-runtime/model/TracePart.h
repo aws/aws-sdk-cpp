@@ -197,27 +197,27 @@ class TracePart {
   ///@}
  private:
   Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::Vector<Caller> m_callerChain;
-  bool m_callerChainHasBeenSet = false;
 
   Aws::String m_collaboratorName;
-  bool m_collaboratorNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Trace m_trace;
+  bool m_agentAliasIdHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_callerChainHasBeenSet = false;
+  bool m_collaboratorNameHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_traceHasBeenSet = false;
 };
 

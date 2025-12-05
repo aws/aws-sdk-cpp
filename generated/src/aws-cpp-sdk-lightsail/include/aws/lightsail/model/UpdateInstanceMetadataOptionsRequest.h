@@ -134,18 +134,18 @@ class UpdateInstanceMetadataOptionsRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   HttpTokens m_httpTokens{HttpTokens::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   HttpEndpoint m_httpEndpoint{HttpEndpoint::NOT_SET};
-  bool m_httpEndpointHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   HttpProtocolIpv6 m_httpProtocolIpv6{HttpProtocolIpv6::NOT_SET};
+  bool m_instanceNameHasBeenSet = false;
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
   bool m_httpProtocolIpv6HasBeenSet = false;
 };
 

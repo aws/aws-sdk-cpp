@@ -85,12 +85,12 @@ class AwsElasticsearchDomainLogPublishingOptions {
   ///@}
  private:
   AwsElasticsearchDomainLogPublishingOptionsLogConfig m_indexSlowLogs;
-  bool m_indexSlowLogsHasBeenSet = false;
 
   AwsElasticsearchDomainLogPublishingOptionsLogConfig m_searchSlowLogs;
-  bool m_searchSlowLogsHasBeenSet = false;
 
   AwsElasticsearchDomainLogPublishingOptionsLogConfig m_auditLogs;
+  bool m_indexSlowLogsHasBeenSet = false;
+  bool m_searchSlowLogsHasBeenSet = false;
   bool m_auditLogsHasBeenSet = false;
 };
 

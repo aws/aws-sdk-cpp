@@ -59,9 +59,9 @@ class CreateLabelResult {
   ///@}
  private:
   Aws::String m_labelId;
-  bool m_labelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

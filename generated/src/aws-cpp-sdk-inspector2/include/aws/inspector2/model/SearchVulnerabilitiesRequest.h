@@ -69,9 +69,9 @@ class SearchVulnerabilitiesRequest : public Inspector2Request {
   ///@}
  private:
   SearchVulnerabilitiesFilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterCriteriaHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

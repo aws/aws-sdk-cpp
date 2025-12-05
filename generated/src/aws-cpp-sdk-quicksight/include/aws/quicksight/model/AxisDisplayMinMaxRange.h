@@ -62,9 +62,9 @@ class AxisDisplayMinMaxRange {
   ///@}
  private:
   double m_minimum{0.0};
-  bool m_minimumHasBeenSet = false;
 
   double m_maximum{0.0};
+  bool m_minimumHasBeenSet = false;
   bool m_maximumHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class RefreshTokenRequestBody {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_clientId;
+  bool m_tokenHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
 };
 

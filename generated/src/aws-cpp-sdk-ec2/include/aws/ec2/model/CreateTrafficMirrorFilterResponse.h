@@ -81,12 +81,12 @@ class CreateTrafficMirrorFilterResponse {
   ///@}
  private:
   TrafficMirrorFilter m_trafficMirrorFilter;
-  bool m_trafficMirrorFilterHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficMirrorFilterHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

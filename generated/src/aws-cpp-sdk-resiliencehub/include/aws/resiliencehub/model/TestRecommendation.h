@@ -278,42 +278,42 @@ class TestRecommendation {
   ///@}
  private:
   Aws::String m_appComponentId;
-  bool m_appComponentIdHasBeenSet = false;
 
   Aws::String m_appComponentName;
-  bool m_appComponentNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependsOnAlarms;
-  bool m_dependsOnAlarmsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_intent;
-  bool m_intentHasBeenSet = false;
 
   Aws::Vector<RecommendationItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_prerequisite;
-  bool m_prerequisiteHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   RecommendationStatus m_recommendationStatus{RecommendationStatus::NOT_SET};
-  bool m_recommendationStatusHasBeenSet = false;
 
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   TestRisk m_risk{TestRisk::NOT_SET};
-  bool m_riskHasBeenSet = false;
 
   TestType m_type{TestType::NOT_SET};
+  bool m_appComponentIdHasBeenSet = false;
+  bool m_appComponentNameHasBeenSet = false;
+  bool m_dependsOnAlarmsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_intentHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_prerequisiteHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_recommendationStatusHasBeenSet = false;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_riskHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class DescribeDirectoryDataAccessResult {
   ///@}
  private:
   DataAccessStatus m_dataAccessStatus{DataAccessStatus::NOT_SET};
-  bool m_dataAccessStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataAccessStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

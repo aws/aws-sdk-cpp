@@ -147,15 +147,15 @@ class DescribeAddressesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_publicIps;
-  bool m_publicIpsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allocationIds;
+  bool m_publicIpsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_allocationIdsHasBeenSet = false;
 };
 

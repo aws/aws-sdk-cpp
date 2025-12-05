@@ -173,24 +173,24 @@ class TokenData {
   ///@}
  private:
   Aws::String m_tokenId;
-  bool m_tokenIdHasBeenSet = false;
 
   Aws::String m_tokenType;
-  bool m_tokenTypeHasBeenSet = false;
 
   Aws::String m_licenseArn;
-  bool m_licenseArnHasBeenSet = false;
 
   Aws::String m_expirationTime;
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenProperties;
-  bool m_tokenPropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_roleArns;
-  bool m_roleArnsHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_tokenIdHasBeenSet = false;
+  bool m_tokenTypeHasBeenSet = false;
+  bool m_licenseArnHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_tokenPropertiesHasBeenSet = false;
+  bool m_roleArnsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

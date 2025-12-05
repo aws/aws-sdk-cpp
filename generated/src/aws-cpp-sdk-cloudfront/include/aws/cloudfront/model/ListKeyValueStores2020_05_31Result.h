@@ -60,9 +60,9 @@ class ListKeyValueStores2020_05_31Result {
   ///@}
  private:
   KeyValueStoreList m_keyValueStoreList;
-  bool m_keyValueStoreListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyValueStoreListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

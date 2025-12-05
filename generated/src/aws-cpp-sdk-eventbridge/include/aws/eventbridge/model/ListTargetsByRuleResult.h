@@ -89,12 +89,12 @@ class ListTargetsByRuleResult {
   ///@}
  private:
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

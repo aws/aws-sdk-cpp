@@ -86,12 +86,12 @@ class EndpointDisplayContentResponse {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_operationName;
+  bool m_bodyHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
   bool m_operationNameHasBeenSet = false;
 };
 

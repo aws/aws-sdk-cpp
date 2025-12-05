@@ -140,21 +140,21 @@ class GroupIdentifier {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupArn;
-  bool m_groupArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_criticality{0};
-  bool m_criticalityHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

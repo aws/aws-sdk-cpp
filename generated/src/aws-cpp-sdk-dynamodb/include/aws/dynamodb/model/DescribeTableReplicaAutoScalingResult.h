@@ -60,9 +60,9 @@ class DescribeTableReplicaAutoScalingResult {
   ///@}
  private:
   TableAutoScalingDescription m_tableAutoScalingDescription;
-  bool m_tableAutoScalingDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableAutoScalingDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -562,78 +562,78 @@ class CalculateRoutesRequest : public GeoRoutesRequest {
   ///@}
  private:
   RouteAllowOptions m_allow;
-  bool m_allowHasBeenSet = false;
 
   Aws::String m_arrivalTime;
-  bool m_arrivalTimeHasBeenSet = false;
 
   RouteAvoidanceOptions m_avoid;
-  bool m_avoidHasBeenSet = false;
 
   bool m_departNow{false};
-  bool m_departNowHasBeenSet = false;
 
   Aws::String m_departureTime;
-  bool m_departureTimeHasBeenSet = false;
 
   Aws::Vector<double> m_destination;
-  bool m_destinationHasBeenSet = false;
 
   RouteDestinationOptions m_destinationOptions;
-  bool m_destinationOptionsHasBeenSet = false;
 
   RouteDriverOptions m_driver;
-  bool m_driverHasBeenSet = false;
 
   RouteExclusionOptions m_exclude;
-  bool m_excludeHasBeenSet = false;
 
   MeasurementSystem m_instructionsMeasurementSystem{MeasurementSystem::NOT_SET};
-  bool m_instructionsMeasurementSystemHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_languages;
-  bool m_languagesHasBeenSet = false;
 
   Aws::Vector<RouteLegAdditionalFeature> m_legAdditionalFeatures;
-  bool m_legAdditionalFeaturesHasBeenSet = false;
 
   GeometryFormat m_legGeometryFormat{GeometryFormat::NOT_SET};
-  bool m_legGeometryFormatHasBeenSet = false;
 
   int m_maxAlternatives{0};
-  bool m_maxAlternativesHasBeenSet = false;
 
   RoutingObjective m_optimizeRoutingFor{RoutingObjective::NOT_SET};
-  bool m_optimizeRoutingForHasBeenSet = false;
 
   Aws::Vector<double> m_origin;
-  bool m_originHasBeenSet = false;
 
   RouteOriginOptions m_originOptions;
-  bool m_originOptionsHasBeenSet = false;
 
   Aws::Vector<RouteSpanAdditionalFeature> m_spanAdditionalFeatures;
-  bool m_spanAdditionalFeaturesHasBeenSet = false;
 
   RouteTollOptions m_tolls;
-  bool m_tollsHasBeenSet = false;
 
   RouteTrafficOptions m_traffic;
-  bool m_trafficHasBeenSet = false;
 
   RouteTravelMode m_travelMode{RouteTravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   RouteTravelModeOptions m_travelModeOptions;
-  bool m_travelModeOptionsHasBeenSet = false;
 
   RouteTravelStepType m_travelStepType{RouteTravelStepType::NOT_SET};
-  bool m_travelStepTypeHasBeenSet = false;
 
   Aws::Vector<RouteWaypoint> m_waypoints;
+  bool m_allowHasBeenSet = false;
+  bool m_arrivalTimeHasBeenSet = false;
+  bool m_avoidHasBeenSet = false;
+  bool m_departNowHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationOptionsHasBeenSet = false;
+  bool m_driverHasBeenSet = false;
+  bool m_excludeHasBeenSet = false;
+  bool m_instructionsMeasurementSystemHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_languagesHasBeenSet = false;
+  bool m_legAdditionalFeaturesHasBeenSet = false;
+  bool m_legGeometryFormatHasBeenSet = false;
+  bool m_maxAlternativesHasBeenSet = false;
+  bool m_optimizeRoutingForHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_originOptionsHasBeenSet = false;
+  bool m_spanAdditionalFeaturesHasBeenSet = false;
+  bool m_tollsHasBeenSet = false;
+  bool m_trafficHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
+  bool m_travelModeOptionsHasBeenSet = false;
+  bool m_travelStepTypeHasBeenSet = false;
   bool m_waypointsHasBeenSet = false;
 };
 

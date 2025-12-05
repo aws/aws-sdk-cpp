@@ -136,21 +136,21 @@ class DescribeLabelGroupResult {
   ///@}
  private:
   Aws::String m_labelGroupName;
-  bool m_labelGroupNameHasBeenSet = false;
 
   Aws::String m_labelGroupArn;
-  bool m_labelGroupArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_faultCodes;
-  bool m_faultCodesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelGroupNameHasBeenSet = false;
+  bool m_labelGroupArnHasBeenSet = false;
+  bool m_faultCodesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

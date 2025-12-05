@@ -66,9 +66,9 @@ class GetGroupProfileRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_groupIdentifier;
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_groupIdentifierHasBeenSet = false;
 };
 

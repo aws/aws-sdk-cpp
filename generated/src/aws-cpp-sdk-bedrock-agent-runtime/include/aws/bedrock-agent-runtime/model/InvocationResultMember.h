@@ -76,9 +76,9 @@ class InvocationResultMember {
   ///@}
  private:
   ApiResult m_apiResult;
-  bool m_apiResultHasBeenSet = false;
 
   FunctionResult m_functionResult;
+  bool m_apiResultHasBeenSet = false;
   bool m_functionResultHasBeenSet = false;
 };
 

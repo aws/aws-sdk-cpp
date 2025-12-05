@@ -68,9 +68,9 @@ class Job {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_deviceIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

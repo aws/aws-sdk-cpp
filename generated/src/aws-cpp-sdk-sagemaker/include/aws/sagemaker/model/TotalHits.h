@@ -75,9 +75,9 @@ class TotalHits {
   ///@}
  private:
   long long m_value{0};
-  bool m_valueHasBeenSet = false;
 
   Relation m_relation{Relation::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_relationHasBeenSet = false;
 };
 

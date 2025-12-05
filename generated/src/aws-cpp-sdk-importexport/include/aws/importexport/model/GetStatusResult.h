@@ -294,54 +294,54 @@ class GetStatusResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_locationCode;
-  bool m_locationCodeHasBeenSet = false;
 
   Aws::String m_locationMessage;
-  bool m_locationMessageHasBeenSet = false;
 
   Aws::String m_progressCode;
-  bool m_progressCodeHasBeenSet = false;
 
   Aws::String m_progressMessage;
-  bool m_progressMessageHasBeenSet = false;
 
   Aws::String m_carrier;
-  bool m_carrierHasBeenSet = false;
 
   Aws::String m_trackingNumber;
-  bool m_trackingNumberHasBeenSet = false;
 
   Aws::String m_logBucket;
-  bool m_logBucketHasBeenSet = false;
 
   Aws::String m_logKey;
-  bool m_logKeyHasBeenSet = false;
 
   int m_errorCount{0};
-  bool m_errorCountHasBeenSet = false;
 
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   Aws::String m_signatureFileContents;
-  bool m_signatureFileContentsHasBeenSet = false;
 
   Aws::String m_currentManifest;
-  bool m_currentManifestHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Vector<Artifact> m_artifactList;
-  bool m_artifactListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_locationCodeHasBeenSet = false;
+  bool m_locationMessageHasBeenSet = false;
+  bool m_progressCodeHasBeenSet = false;
+  bool m_progressMessageHasBeenSet = false;
+  bool m_carrierHasBeenSet = false;
+  bool m_trackingNumberHasBeenSet = false;
+  bool m_logBucketHasBeenSet = false;
+  bool m_logKeyHasBeenSet = false;
+  bool m_errorCountHasBeenSet = false;
+  bool m_signatureHasBeenSet = false;
+  bool m_signatureFileContentsHasBeenSet = false;
+  bool m_currentManifestHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_artifactListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -328,57 +328,57 @@ class UpdateLaunchConfigurationTemplateResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
 
   BootMode m_bootMode{BootMode::NOT_SET};
-  bool m_bootModeHasBeenSet = false;
 
   bool m_copyPrivateIp{false};
-  bool m_copyPrivateIpHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::String m_ec2LaunchTemplateID;
-  bool m_ec2LaunchTemplateIDHasBeenSet = false;
 
   bool m_enableMapAutoTagging{false};
-  bool m_enableMapAutoTaggingHasBeenSet = false;
 
   LaunchTemplateDiskConf m_largeVolumeConf;
-  bool m_largeVolumeConfHasBeenSet = false;
 
   Aws::String m_launchConfigurationTemplateID;
-  bool m_launchConfigurationTemplateIDHasBeenSet = false;
 
   LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
-  bool m_launchDispositionHasBeenSet = false;
 
   Licensing m_licensing;
-  bool m_licensingHasBeenSet = false;
 
   Aws::String m_mapAutoTaggingMpeID;
-  bool m_mapAutoTaggingMpeIDHasBeenSet = false;
 
   PostLaunchActions m_postLaunchActions;
-  bool m_postLaunchActionsHasBeenSet = false;
 
   LaunchTemplateDiskConf m_smallVolumeConf;
-  bool m_smallVolumeConfHasBeenSet = false;
 
   long long m_smallVolumeMaxSize{0};
-  bool m_smallVolumeMaxSizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
-  bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_associatePublicIpAddressHasBeenSet = false;
+  bool m_bootModeHasBeenSet = false;
+  bool m_copyPrivateIpHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_ec2LaunchTemplateIDHasBeenSet = false;
+  bool m_enableMapAutoTaggingHasBeenSet = false;
+  bool m_largeVolumeConfHasBeenSet = false;
+  bool m_launchConfigurationTemplateIDHasBeenSet = false;
+  bool m_launchDispositionHasBeenSet = false;
+  bool m_licensingHasBeenSet = false;
+  bool m_mapAutoTaggingMpeIDHasBeenSet = false;
+  bool m_postLaunchActionsHasBeenSet = false;
+  bool m_smallVolumeConfHasBeenSet = false;
+  bool m_smallVolumeMaxSizeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

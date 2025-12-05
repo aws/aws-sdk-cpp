@@ -99,15 +99,15 @@ class RouterInputConfiguration {
   ///@}
  private:
   StandardRouterInputConfiguration m_standard;
-  bool m_standardHasBeenSet = false;
 
   FailoverRouterInputConfiguration m_failover;
-  bool m_failoverHasBeenSet = false;
 
   MergeRouterInputConfiguration m_merge;
-  bool m_mergeHasBeenSet = false;
 
   MediaConnectFlowRouterInputConfiguration m_mediaConnectFlow;
+  bool m_standardHasBeenSet = false;
+  bool m_failoverHasBeenSet = false;
+  bool m_mergeHasBeenSet = false;
   bool m_mediaConnectFlowHasBeenSet = false;
 };
 

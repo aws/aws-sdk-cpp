@@ -81,9 +81,9 @@ class RegistryScanningRule {
   ///@}
  private:
   ScanFrequency m_scanFrequency{ScanFrequency::NOT_SET};
-  bool m_scanFrequencyHasBeenSet = false;
 
   Aws::Vector<ScanningRepositoryFilter> m_repositoryFilters;
+  bool m_scanFrequencyHasBeenSet = false;
   bool m_repositoryFiltersHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class CreatePredictorBacktestExportJobResult {
   ///@}
  private:
   Aws::String m_predictorBacktestExportJobArn;
-  bool m_predictorBacktestExportJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictorBacktestExportJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

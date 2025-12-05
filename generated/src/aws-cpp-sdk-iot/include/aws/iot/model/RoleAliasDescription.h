@@ -157,24 +157,24 @@ class RoleAliasDescription {
   ///@}
  private:
   Aws::String m_roleAlias;
-  bool m_roleAliasHasBeenSet = false;
 
   Aws::String m_roleAliasArn;
-  bool m_roleAliasArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   int m_credentialDurationSeconds{0};
-  bool m_credentialDurationSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_roleAliasHasBeenSet = false;
+  bool m_roleAliasArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_credentialDurationSecondsHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

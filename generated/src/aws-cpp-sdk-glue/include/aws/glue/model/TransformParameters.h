@@ -71,9 +71,9 @@ class TransformParameters {
   ///@}
  private:
   TransformType m_transformType{TransformType::NOT_SET};
-  bool m_transformTypeHasBeenSet = false;
 
   FindMatchesParameters m_findMatchesParameters;
+  bool m_transformTypeHasBeenSet = false;
   bool m_findMatchesParametersHasBeenSet = false;
 };
 

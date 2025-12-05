@@ -76,12 +76,12 @@ class UpdateEmailAddressMetadataResult {
   ///@}
  private:
   Aws::String m_emailAddressId;
-  bool m_emailAddressIdHasBeenSet = false;
 
   Aws::String m_emailAddressArn;
-  bool m_emailAddressArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emailAddressIdHasBeenSet = false;
+  bool m_emailAddressArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

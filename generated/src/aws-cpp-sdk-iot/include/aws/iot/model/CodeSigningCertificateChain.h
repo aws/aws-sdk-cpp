@@ -70,9 +70,9 @@ class CodeSigningCertificateChain {
   ///@}
  private:
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_inlineDocument;
+  bool m_certificateNameHasBeenSet = false;
   bool m_inlineDocumentHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class ListAppVersionResourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PhysicalResource> m_physicalResources;
-  bool m_physicalResourcesHasBeenSet = false;
 
   Aws::String m_resolutionId;
-  bool m_resolutionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_physicalResourcesHasBeenSet = false;
+  bool m_resolutionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

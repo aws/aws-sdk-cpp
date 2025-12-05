@@ -86,9 +86,9 @@ class SizeConstraintSetSummary {
   ///@}
  private:
   Aws::String m_sizeConstraintSetId;
-  bool m_sizeConstraintSetIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_sizeConstraintSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

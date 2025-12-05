@@ -70,9 +70,9 @@ class ClusteringKey {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SortOrder m_orderBy{SortOrder::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_orderByHasBeenSet = false;
 };
 

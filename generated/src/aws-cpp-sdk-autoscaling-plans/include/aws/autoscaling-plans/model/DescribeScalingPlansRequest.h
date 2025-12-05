@@ -136,18 +136,18 @@ class DescribeScalingPlansRequest : public AutoScalingPlansRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_scalingPlanNames;
-  bool m_scalingPlanNamesHasBeenSet = false;
 
   long long m_scalingPlanVersion{0};
-  bool m_scalingPlanVersionHasBeenSet = false;
 
   Aws::Vector<ApplicationSource> m_applicationSources;
-  bool m_applicationSourcesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_scalingPlanNamesHasBeenSet = false;
+  bool m_scalingPlanVersionHasBeenSet = false;
+  bool m_applicationSourcesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class UpdateTaskSetRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_taskSet;
-  bool m_taskSetHasBeenSet = false;
 
   Scale m_scale;
+  bool m_clusterHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_taskSetHasBeenSet = false;
   bool m_scaleHasBeenSet = false;
 };
 

@@ -268,39 +268,39 @@ class Insight {
   ///@}
  private:
   Aws::String m_insightId;
-  bool m_insightIdHasBeenSet = false;
 
   Aws::String m_groupARN;
-  bool m_groupARNHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   ServiceId m_rootCauseServiceId;
-  bool m_rootCauseServiceIdHasBeenSet = false;
 
   Aws::Vector<InsightCategory> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   InsightState m_state{InsightState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_summary;
-  bool m_summaryHasBeenSet = false;
 
   RequestImpactStatistics m_clientRequestImpactStatistics;
-  bool m_clientRequestImpactStatisticsHasBeenSet = false;
 
   RequestImpactStatistics m_rootCauseServiceRequestImpactStatistics;
-  bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet = false;
 
   Aws::Vector<AnomalousService> m_topAnomalousServices;
+  bool m_insightIdHasBeenSet = false;
+  bool m_groupARNHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_rootCauseServiceIdHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_clientRequestImpactStatisticsHasBeenSet = false;
+  bool m_rootCauseServiceRequestImpactStatisticsHasBeenSet = false;
   bool m_topAnomalousServicesHasBeenSet = false;
 };
 

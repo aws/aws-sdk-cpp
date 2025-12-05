@@ -187,30 +187,30 @@ class GetSuiteDefinitionResult {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteDefinitionArn;
-  bool m_suiteDefinitionArnHasBeenSet = false;
 
   Aws::String m_suiteDefinitionVersion;
-  bool m_suiteDefinitionVersionHasBeenSet = false;
 
   Aws::String m_latestVersion;
-  bool m_latestVersionHasBeenSet = false;
 
   SuiteDefinitionConfiguration m_suiteDefinitionConfiguration;
-  bool m_suiteDefinitionConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suiteDefinitionIdHasBeenSet = false;
+  bool m_suiteDefinitionArnHasBeenSet = false;
+  bool m_suiteDefinitionVersionHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
+  bool m_suiteDefinitionConfigurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

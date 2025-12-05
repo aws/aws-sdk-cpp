@@ -69,9 +69,9 @@ class OriginRequestPolicySummary {
   ///@}
  private:
   OriginRequestPolicyType m_type{OriginRequestPolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   OriginRequestPolicy m_originRequestPolicy;
+  bool m_typeHasBeenSet = false;
   bool m_originRequestPolicyHasBeenSet = false;
 };
 

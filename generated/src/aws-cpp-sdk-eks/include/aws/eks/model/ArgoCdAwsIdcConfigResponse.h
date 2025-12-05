@@ -91,12 +91,12 @@ class ArgoCdAwsIdcConfigResponse {
   ///@}
  private:
   Aws::String m_idcInstanceArn;
-  bool m_idcInstanceArnHasBeenSet = false;
 
   Aws::String m_idcRegion;
-  bool m_idcRegionHasBeenSet = false;
 
   Aws::String m_idcManagedApplicationArn;
+  bool m_idcInstanceArnHasBeenSet = false;
+  bool m_idcRegionHasBeenSet = false;
   bool m_idcManagedApplicationArnHasBeenSet = false;
 };
 

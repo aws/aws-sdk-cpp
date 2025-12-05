@@ -144,21 +144,21 @@ class ListReviewPolicyResultsForHITRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   Aws::Vector<ReviewPolicyLevel> m_policyLevels;
-  bool m_policyLevelsHasBeenSet = false;
 
   bool m_retrieveActions{false};
-  bool m_retrieveActionsHasBeenSet = false;
 
   bool m_retrieveResults{false};
-  bool m_retrieveResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_hITIdHasBeenSet = false;
+  bool m_policyLevelsHasBeenSet = false;
+  bool m_retrieveActionsHasBeenSet = false;
+  bool m_retrieveResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

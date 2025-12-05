@@ -179,24 +179,24 @@ class CreateDataIntegrationAssociationRequest : public AppIntegrationsServiceReq
   ///@}
  private:
   Aws::String m_dataIntegrationIdentifier;
-  bool m_dataIntegrationIdentifierHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_objectConfiguration;
-  bool m_objectConfigurationHasBeenSet = false;
 
   Aws::String m_destinationURI;
-  bool m_destinationURIHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientAssociationMetadata;
-  bool m_clientAssociationMetadataHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ExecutionConfiguration m_executionConfiguration;
+  bool m_dataIntegrationIdentifierHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_objectConfigurationHasBeenSet = false;
+  bool m_destinationURIHasBeenSet = false;
+  bool m_clientAssociationMetadataHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_executionConfigurationHasBeenSet = false;
 };
 

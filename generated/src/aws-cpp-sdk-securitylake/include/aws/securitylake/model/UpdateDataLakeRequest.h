@@ -76,9 +76,9 @@ class UpdateDataLakeRequest : public SecurityLakeRequest {
   ///@}
  private:
   Aws::Vector<DataLakeConfiguration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::String m_metaStoreManagerRoleArn;
+  bool m_configurationsHasBeenSet = false;
   bool m_metaStoreManagerRoleArnHasBeenSet = false;
 };
 

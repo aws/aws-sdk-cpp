@@ -84,12 +84,12 @@ class DeleteEventRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   bool m_deleteAuditHistory{false};
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
   bool m_deleteAuditHistoryHasBeenSet = false;
 };
 

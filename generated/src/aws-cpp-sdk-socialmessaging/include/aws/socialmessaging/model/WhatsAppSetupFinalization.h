@@ -120,15 +120,15 @@ class WhatsAppSetupFinalization {
   ///@}
  private:
   Aws::String m_associateInProgressToken;
-  bool m_associateInProgressTokenHasBeenSet = false;
 
   Aws::Vector<WabaPhoneNumberSetupFinalization> m_phoneNumbers;
-  bool m_phoneNumbersHasBeenSet = false;
 
   Aws::String m_phoneNumberParent;
-  bool m_phoneNumberParentHasBeenSet = false;
 
   WabaSetupFinalization m_waba;
+  bool m_associateInProgressTokenHasBeenSet = false;
+  bool m_phoneNumbersHasBeenSet = false;
+  bool m_phoneNumberParentHasBeenSet = false;
   bool m_wabaHasBeenSet = false;
 };
 

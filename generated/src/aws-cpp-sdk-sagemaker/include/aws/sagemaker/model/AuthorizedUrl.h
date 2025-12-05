@@ -71,9 +71,9 @@ class AuthorizedUrl {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_localPath;
+  bool m_urlHasBeenSet = false;
   bool m_localPathHasBeenSet = false;
 };
 

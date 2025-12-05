@@ -384,60 +384,60 @@ class SavingsPlan {
   ///@}
  private:
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   Aws::String m_savingsPlanId;
-  bool m_savingsPlanIdHasBeenSet = false;
 
   Aws::String m_savingsPlanArn;
-  bool m_savingsPlanArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_start;
-  bool m_startHasBeenSet = false;
 
   Aws::String m_end;
-  bool m_endHasBeenSet = false;
 
   SavingsPlanState m_state{SavingsPlanState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_ec2InstanceFamily;
-  bool m_ec2InstanceFamilyHasBeenSet = false;
 
   SavingsPlanType m_savingsPlanType{SavingsPlanType::NOT_SET};
-  bool m_savingsPlanTypeHasBeenSet = false;
 
   SavingsPlanPaymentOption m_paymentOption{SavingsPlanPaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::Vector<SavingsPlanProductType> m_productTypes;
-  bool m_productTypesHasBeenSet = false;
 
   CurrencyCode m_currency{CurrencyCode::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   Aws::String m_commitment;
-  bool m_commitmentHasBeenSet = false;
 
   Aws::String m_upfrontPaymentAmount;
-  bool m_upfrontPaymentAmountHasBeenSet = false;
 
   Aws::String m_recurringPaymentAmount;
-  bool m_recurringPaymentAmountHasBeenSet = false;
 
   long long m_termDurationInSeconds{0};
-  bool m_termDurationInSecondsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_returnableUntil;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_savingsPlanIdHasBeenSet = false;
+  bool m_savingsPlanArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_ec2InstanceFamilyHasBeenSet = false;
+  bool m_savingsPlanTypeHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_productTypesHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
+  bool m_commitmentHasBeenSet = false;
+  bool m_upfrontPaymentAmountHasBeenSet = false;
+  bool m_recurringPaymentAmountHasBeenSet = false;
+  bool m_termDurationInSecondsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_returnableUntilHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class AggregatedUtterancesFilter {
   ///@}
  private:
   AggregatedUtterancesFilterName m_name{AggregatedUtterancesFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   AggregatedUtterancesFilterOperator m_operator{AggregatedUtterancesFilterOperator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

@@ -134,18 +134,18 @@ class ListGrantsRequest : public KMSRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_grantId;
-  bool m_grantIdHasBeenSet = false;
 
   Aws::String m_granteePrincipal;
+  bool m_limitHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_grantIdHasBeenSet = false;
   bool m_granteePrincipalHasBeenSet = false;
 };
 

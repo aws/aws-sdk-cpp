@@ -90,9 +90,9 @@ class IntervalDetails {
   ///@}
  private:
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   IntervalPeriod m_intervalPeriod{IntervalPeriod::NOT_SET};
+  bool m_timeZoneHasBeenSet = false;
   bool m_intervalPeriodHasBeenSet = false;
 };
 

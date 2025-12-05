@@ -428,63 +428,63 @@ class Alarm {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   MonitoredResourceInfo m_monitoredResourceInfo;
-  bool m_monitoredResourceInfoHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
 
   TreatMissingData m_treatMissingData{TreatMissingData::NOT_SET};
-  bool m_treatMissingDataHasBeenSet = false;
 
   MetricStatistic m_statistic{MetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   MetricName m_metricName{MetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   AlarmState m_state{AlarmState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   MetricUnit m_unit{MetricUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   Aws::Vector<ContactProtocol> m_contactProtocols;
-  bool m_contactProtocolsHasBeenSet = false;
 
   Aws::Vector<AlarmState> m_notificationTriggers;
-  bool m_notificationTriggersHasBeenSet = false;
 
   bool m_notificationEnabled{false};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_monitoredResourceInfoHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_treatMissingDataHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_contactProtocolsHasBeenSet = false;
+  bool m_notificationTriggersHasBeenSet = false;
   bool m_notificationEnabledHasBeenSet = false;
 };
 

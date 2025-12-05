@@ -205,27 +205,27 @@ class CreateMLInputChannelRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_configuredModelAlgorithmAssociations;
-  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
 
   InputChannel m_inputChannel;
-  bool m_inputChannelHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_retentionInDays{0};
-  bool m_retentionInDaysHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
+  bool m_inputChannelHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_retentionInDaysHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

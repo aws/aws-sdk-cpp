@@ -110,15 +110,15 @@ class GetAggregateConformancePackComplianceSummaryResult {
   ///@}
  private:
   Aws::Vector<AggregateConformancePackComplianceSummary> m_aggregateConformancePackComplianceSummaries;
-  bool m_aggregateConformancePackComplianceSummariesHasBeenSet = false;
 
   Aws::String m_groupByKey;
-  bool m_groupByKeyHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregateConformancePackComplianceSummariesHasBeenSet = false;
+  bool m_groupByKeyHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

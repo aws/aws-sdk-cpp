@@ -67,9 +67,9 @@ class CreateWhatsAppMessageTemplateFromLibraryRequest : public SocialMessagingRe
   ///@}
  private:
   MetaLibraryTemplate m_metaLibraryTemplate;
-  bool m_metaLibraryTemplateHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_metaLibraryTemplateHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

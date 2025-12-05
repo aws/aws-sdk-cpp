@@ -155,21 +155,21 @@ class Predicate {
   ///@}
  private:
   Aws::Vector<Predicate> m_or;
-  bool m_orHasBeenSet = false;
 
   Aws::Vector<Predicate> m_and;
-  bool m_andHasBeenSet = false;
 
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Aws::String m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_operand;
-  bool m_operandHasBeenSet = false;
 
   Aws::String m_operandType;
+  bool m_orHasBeenSet = false;
+  bool m_andHasBeenSet = false;
+  bool m_fieldHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_operandHasBeenSet = false;
   bool m_operandTypeHasBeenSet = false;
 };
 

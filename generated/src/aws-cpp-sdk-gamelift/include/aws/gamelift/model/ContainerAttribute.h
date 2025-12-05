@@ -72,9 +72,9 @@ class ContainerAttribute {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::String m_containerRuntimeId;
+  bool m_containerNameHasBeenSet = false;
   bool m_containerRuntimeIdHasBeenSet = false;
 };
 

@@ -241,33 +241,33 @@ class CreateSessionRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TagFilter m_tagFilter;
-  bool m_tagFilterHasBeenSet = false;
 
   Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
-  bool m_aiAgentConfigurationHasBeenSet = false;
 
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
-  bool m_orchestratorConfigurationListHasBeenSet = false;
 
   bool m_removeOrchestratorConfigurationList{false};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tagFilterHasBeenSet = false;
+  bool m_aiAgentConfigurationHasBeenSet = false;
+  bool m_contactArnHasBeenSet = false;
+  bool m_orchestratorConfigurationListHasBeenSet = false;
   bool m_removeOrchestratorConfigurationListHasBeenSet = false;
 };
 

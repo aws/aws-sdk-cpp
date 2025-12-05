@@ -132,18 +132,18 @@ class SessionKeyDerivation {
   ///@}
  private:
   SessionKeyEmvCommon m_emvCommon;
-  bool m_emvCommonHasBeenSet = false;
 
   SessionKeyMastercard m_mastercard;
-  bool m_mastercardHasBeenSet = false;
 
   SessionKeyEmv2000 m_emv2000;
-  bool m_emv2000HasBeenSet = false;
 
   SessionKeyAmex m_amex;
-  bool m_amexHasBeenSet = false;
 
   SessionKeyVisa m_visa;
+  bool m_emvCommonHasBeenSet = false;
+  bool m_mastercardHasBeenSet = false;
+  bool m_emv2000HasBeenSet = false;
+  bool m_amexHasBeenSet = false;
   bool m_visaHasBeenSet = false;
 };
 

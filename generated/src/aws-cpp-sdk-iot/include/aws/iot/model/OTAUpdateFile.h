@@ -150,21 +150,21 @@ class OTAUpdateFile {
   ///@}
  private:
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   int m_fileType{0};
-  bool m_fileTypeHasBeenSet = false;
 
   Aws::String m_fileVersion;
-  bool m_fileVersionHasBeenSet = false;
 
   FileLocation m_fileLocation;
-  bool m_fileLocationHasBeenSet = false;
 
   CodeSigning m_codeSigning;
-  bool m_codeSigningHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_fileNameHasBeenSet = false;
+  bool m_fileTypeHasBeenSet = false;
+  bool m_fileVersionHasBeenSet = false;
+  bool m_fileLocationHasBeenSet = false;
+  bool m_codeSigningHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

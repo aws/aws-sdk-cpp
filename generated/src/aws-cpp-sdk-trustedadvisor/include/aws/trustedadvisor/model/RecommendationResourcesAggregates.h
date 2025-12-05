@@ -80,12 +80,12 @@ class RecommendationResourcesAggregates {
   ///@}
  private:
   long long m_errorCount{0};
-  bool m_errorCountHasBeenSet = false;
 
   long long m_okCount{0};
-  bool m_okCountHasBeenSet = false;
 
   long long m_warningCount{0};
+  bool m_errorCountHasBeenSet = false;
+  bool m_okCountHasBeenSet = false;
   bool m_warningCountHasBeenSet = false;
 };
 

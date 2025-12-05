@@ -331,39 +331,39 @@ class StartJobRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   bool m_jobRunQueuingEnabled{false};
-  bool m_jobRunQueuingEnabledHasBeenSet = false;
 
   Aws::String m_jobRunId;
-  bool m_jobRunIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_arguments;
-  bool m_argumentsHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   NotificationProperty m_notificationProperty;
-  bool m_notificationPropertyHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   ExecutionClass m_executionClass{ExecutionClass::NOT_SET};
-  bool m_executionClassHasBeenSet = false;
 
   Aws::String m_executionRoleSessionPolicy;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobRunQueuingEnabledHasBeenSet = false;
+  bool m_jobRunIdHasBeenSet = false;
+  bool m_argumentsHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_notificationPropertyHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_executionClassHasBeenSet = false;
   bool m_executionRoleSessionPolicyHasBeenSet = false;
 };
 

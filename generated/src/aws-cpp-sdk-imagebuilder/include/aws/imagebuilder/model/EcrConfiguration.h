@@ -83,9 +83,9 @@ class EcrConfiguration {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerTags;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_containerTagsHasBeenSet = false;
 };
 

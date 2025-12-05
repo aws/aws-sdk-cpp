@@ -86,12 +86,12 @@ class AsyncInvokeS3OutputDataConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_bucketOwner;
+  bool m_s3UriHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_bucketOwnerHasBeenSet = false;
 };
 

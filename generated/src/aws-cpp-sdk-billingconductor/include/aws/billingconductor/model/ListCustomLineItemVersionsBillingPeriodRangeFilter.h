@@ -71,9 +71,9 @@ class ListCustomLineItemVersionsBillingPeriodRangeFilter {
   ///@}
  private:
   Aws::String m_startBillingPeriod;
-  bool m_startBillingPeriodHasBeenSet = false;
 
   Aws::String m_endBillingPeriod;
+  bool m_startBillingPeriodHasBeenSet = false;
   bool m_endBillingPeriodHasBeenSet = false;
 };
 

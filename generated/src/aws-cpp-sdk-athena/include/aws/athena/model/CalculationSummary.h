@@ -87,12 +87,12 @@ class CalculationSummary {
   ///@}
  private:
   Aws::String m_calculationExecutionId;
-  bool m_calculationExecutionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CalculationStatus m_status;
+  bool m_calculationExecutionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

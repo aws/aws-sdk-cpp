@@ -66,9 +66,9 @@ class RelationalDatabaseEndpoint {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_address;
+  bool m_portHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

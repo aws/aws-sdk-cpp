@@ -654,105 +654,105 @@ class InfluxDBv2Parameters {
   ///@}
  private:
   bool m_fluxLogEnabled{false};
-  bool m_fluxLogEnabledHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   bool m_noTasks{false};
-  bool m_noTasksHasBeenSet = false;
 
   int m_queryConcurrency{0};
-  bool m_queryConcurrencyHasBeenSet = false;
 
   int m_queryQueueSize{0};
-  bool m_queryQueueSizeHasBeenSet = false;
 
   TracingType m_tracingType{TracingType::NOT_SET};
-  bool m_tracingTypeHasBeenSet = false;
 
   bool m_metricsDisabled{false};
-  bool m_metricsDisabledHasBeenSet = false;
 
   Duration m_httpIdleTimeout;
-  bool m_httpIdleTimeoutHasBeenSet = false;
 
   Duration m_httpReadHeaderTimeout;
-  bool m_httpReadHeaderTimeoutHasBeenSet = false;
 
   Duration m_httpReadTimeout;
-  bool m_httpReadTimeoutHasBeenSet = false;
 
   Duration m_httpWriteTimeout;
-  bool m_httpWriteTimeoutHasBeenSet = false;
 
   long long m_influxqlMaxSelectBuckets{0};
-  bool m_influxqlMaxSelectBucketsHasBeenSet = false;
 
   long long m_influxqlMaxSelectPoint{0};
-  bool m_influxqlMaxSelectPointHasBeenSet = false;
 
   long long m_influxqlMaxSelectSeries{0};
-  bool m_influxqlMaxSelectSeriesHasBeenSet = false;
 
   bool m_pprofDisabled{false};
-  bool m_pprofDisabledHasBeenSet = false;
 
   long long m_queryInitialMemoryBytes{0};
-  bool m_queryInitialMemoryBytesHasBeenSet = false;
 
   long long m_queryMaxMemoryBytes{0};
-  bool m_queryMaxMemoryBytesHasBeenSet = false;
 
   long long m_queryMemoryBytes{0};
-  bool m_queryMemoryBytesHasBeenSet = false;
 
   int m_sessionLength{0};
-  bool m_sessionLengthHasBeenSet = false;
 
   bool m_sessionRenewDisabled{false};
-  bool m_sessionRenewDisabledHasBeenSet = false;
 
   long long m_storageCacheMaxMemorySize{0};
-  bool m_storageCacheMaxMemorySizeHasBeenSet = false;
 
   long long m_storageCacheSnapshotMemorySize{0};
-  bool m_storageCacheSnapshotMemorySizeHasBeenSet = false;
 
   Duration m_storageCacheSnapshotWriteColdDuration;
-  bool m_storageCacheSnapshotWriteColdDurationHasBeenSet = false;
 
   Duration m_storageCompactFullWriteColdDuration;
-  bool m_storageCompactFullWriteColdDurationHasBeenSet = false;
 
   long long m_storageCompactThroughputBurst{0};
-  bool m_storageCompactThroughputBurstHasBeenSet = false;
 
   int m_storageMaxConcurrentCompactions{0};
-  bool m_storageMaxConcurrentCompactionsHasBeenSet = false;
 
   long long m_storageMaxIndexLogFileSize{0};
-  bool m_storageMaxIndexLogFileSizeHasBeenSet = false;
 
   bool m_storageNoValidateFieldSize{false};
-  bool m_storageNoValidateFieldSizeHasBeenSet = false;
 
   Duration m_storageRetentionCheckInterval;
-  bool m_storageRetentionCheckIntervalHasBeenSet = false;
 
   int m_storageSeriesFileMaxConcurrentSnapshotCompactions{0};
-  bool m_storageSeriesFileMaxConcurrentSnapshotCompactionsHasBeenSet = false;
 
   long long m_storageSeriesIdSetCacheSize{0};
-  bool m_storageSeriesIdSetCacheSizeHasBeenSet = false;
 
   int m_storageWalMaxConcurrentWrites{0};
-  bool m_storageWalMaxConcurrentWritesHasBeenSet = false;
 
   Duration m_storageWalMaxWriteDelay;
-  bool m_storageWalMaxWriteDelayHasBeenSet = false;
 
   bool m_uiDisabled{false};
+  bool m_fluxLogEnabledHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
+  bool m_noTasksHasBeenSet = false;
+  bool m_queryConcurrencyHasBeenSet = false;
+  bool m_queryQueueSizeHasBeenSet = false;
+  bool m_tracingTypeHasBeenSet = false;
+  bool m_metricsDisabledHasBeenSet = false;
+  bool m_httpIdleTimeoutHasBeenSet = false;
+  bool m_httpReadHeaderTimeoutHasBeenSet = false;
+  bool m_httpReadTimeoutHasBeenSet = false;
+  bool m_httpWriteTimeoutHasBeenSet = false;
+  bool m_influxqlMaxSelectBucketsHasBeenSet = false;
+  bool m_influxqlMaxSelectPointHasBeenSet = false;
+  bool m_influxqlMaxSelectSeriesHasBeenSet = false;
+  bool m_pprofDisabledHasBeenSet = false;
+  bool m_queryInitialMemoryBytesHasBeenSet = false;
+  bool m_queryMaxMemoryBytesHasBeenSet = false;
+  bool m_queryMemoryBytesHasBeenSet = false;
+  bool m_sessionLengthHasBeenSet = false;
+  bool m_sessionRenewDisabledHasBeenSet = false;
+  bool m_storageCacheMaxMemorySizeHasBeenSet = false;
+  bool m_storageCacheSnapshotMemorySizeHasBeenSet = false;
+  bool m_storageCacheSnapshotWriteColdDurationHasBeenSet = false;
+  bool m_storageCompactFullWriteColdDurationHasBeenSet = false;
+  bool m_storageCompactThroughputBurstHasBeenSet = false;
+  bool m_storageMaxConcurrentCompactionsHasBeenSet = false;
+  bool m_storageMaxIndexLogFileSizeHasBeenSet = false;
+  bool m_storageNoValidateFieldSizeHasBeenSet = false;
+  bool m_storageRetentionCheckIntervalHasBeenSet = false;
+  bool m_storageSeriesFileMaxConcurrentSnapshotCompactionsHasBeenSet = false;
+  bool m_storageSeriesIdSetCacheSizeHasBeenSet = false;
+  bool m_storageWalMaxConcurrentWritesHasBeenSet = false;
+  bool m_storageWalMaxWriteDelayHasBeenSet = false;
   bool m_uiDisabledHasBeenSet = false;
 };
 

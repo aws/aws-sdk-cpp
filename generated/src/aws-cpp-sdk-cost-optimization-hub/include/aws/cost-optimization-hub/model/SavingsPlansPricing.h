@@ -94,15 +94,15 @@ class SavingsPlansPricing {
   ///@}
  private:
   double m_monthlySavingsPlansEligibleCost{0.0};
-  bool m_monthlySavingsPlansEligibleCostHasBeenSet = false;
 
   double m_estimatedMonthlyCommitment{0.0};
-  bool m_estimatedMonthlyCommitmentHasBeenSet = false;
 
   double m_savingsPercentage{0.0};
-  bool m_savingsPercentageHasBeenSet = false;
 
   double m_estimatedOnDemandCost{0.0};
+  bool m_monthlySavingsPlansEligibleCostHasBeenSet = false;
+  bool m_estimatedMonthlyCommitmentHasBeenSet = false;
+  bool m_savingsPercentageHasBeenSet = false;
   bool m_estimatedOnDemandCostHasBeenSet = false;
 };
 

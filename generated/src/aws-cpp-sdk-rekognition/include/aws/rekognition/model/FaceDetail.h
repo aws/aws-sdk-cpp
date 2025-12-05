@@ -402,54 +402,54 @@ class FaceDetail {
   ///@}
  private:
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   AgeRange m_ageRange;
-  bool m_ageRangeHasBeenSet = false;
 
   Smile m_smile;
-  bool m_smileHasBeenSet = false;
 
   Eyeglasses m_eyeglasses;
-  bool m_eyeglassesHasBeenSet = false;
 
   Sunglasses m_sunglasses;
-  bool m_sunglassesHasBeenSet = false;
 
   Gender m_gender;
-  bool m_genderHasBeenSet = false;
 
   Beard m_beard;
-  bool m_beardHasBeenSet = false;
 
   Mustache m_mustache;
-  bool m_mustacheHasBeenSet = false;
 
   EyeOpen m_eyesOpen;
-  bool m_eyesOpenHasBeenSet = false;
 
   MouthOpen m_mouthOpen;
-  bool m_mouthOpenHasBeenSet = false;
 
   Aws::Vector<Emotion> m_emotions;
-  bool m_emotionsHasBeenSet = false;
 
   Aws::Vector<Landmark> m_landmarks;
-  bool m_landmarksHasBeenSet = false;
 
   Pose m_pose;
-  bool m_poseHasBeenSet = false;
 
   ImageQuality m_quality;
-  bool m_qualityHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   FaceOccluded m_faceOccluded;
-  bool m_faceOccludedHasBeenSet = false;
 
   EyeDirection m_eyeDirection;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_ageRangeHasBeenSet = false;
+  bool m_smileHasBeenSet = false;
+  bool m_eyeglassesHasBeenSet = false;
+  bool m_sunglassesHasBeenSet = false;
+  bool m_genderHasBeenSet = false;
+  bool m_beardHasBeenSet = false;
+  bool m_mustacheHasBeenSet = false;
+  bool m_eyesOpenHasBeenSet = false;
+  bool m_mouthOpenHasBeenSet = false;
+  bool m_emotionsHasBeenSet = false;
+  bool m_landmarksHasBeenSet = false;
+  bool m_poseHasBeenSet = false;
+  bool m_qualityHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_faceOccludedHasBeenSet = false;
   bool m_eyeDirectionHasBeenSet = false;
 };
 

@@ -453,54 +453,54 @@ class Fleet {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   FleetStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_baseCapacity{0};
-  bool m_baseCapacityHasBeenSet = false;
 
   EnvironmentType m_environmentType{EnvironmentType::NOT_SET};
-  bool m_environmentTypeHasBeenSet = false;
 
   ComputeType m_computeType{ComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   ComputeConfiguration m_computeConfiguration;
-  bool m_computeConfigurationHasBeenSet = false;
 
   ScalingConfigurationOutput m_scalingConfiguration;
-  bool m_scalingConfigurationHasBeenSet = false;
 
   FleetOverflowBehavior m_overflowBehavior{FleetOverflowBehavior::NOT_SET};
-  bool m_overflowBehaviorHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   ProxyConfiguration m_proxyConfiguration;
-  bool m_proxyConfigurationHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_fleetServiceRole;
-  bool m_fleetServiceRoleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_baseCapacityHasBeenSet = false;
+  bool m_environmentTypeHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
+  bool m_scalingConfigurationHasBeenSet = false;
+  bool m_overflowBehaviorHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_fleetServiceRoleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

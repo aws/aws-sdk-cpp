@@ -152,18 +152,18 @@ class CreatePolicyStoreRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ValidationSettings m_validationSettings;
-  bool m_validationSettingsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_validationSettingsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

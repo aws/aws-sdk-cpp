@@ -91,12 +91,12 @@ class FixedResponseActionConfig {
   ///@}
  private:
   Aws::String m_messageBody;
-  bool m_messageBodyHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_contentType;
+  bool m_messageBodyHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

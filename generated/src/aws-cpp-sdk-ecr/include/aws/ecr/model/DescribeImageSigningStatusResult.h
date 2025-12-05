@@ -120,18 +120,18 @@ class DescribeImageSigningStatusResult {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   ImageIdentifier m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::Vector<ImageSigningStatus> m_signingStatuses;
-  bool m_signingStatusesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_registryIdHasBeenSet = false;
+  bool m_signingStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

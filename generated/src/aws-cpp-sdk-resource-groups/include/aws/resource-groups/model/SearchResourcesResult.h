@@ -118,15 +118,15 @@ class SearchResourcesResult {
   ///@}
  private:
   Aws::Vector<ResourceIdentifier> m_resourceIdentifiers;
-  bool m_resourceIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<QueryError> m_queryErrors;
-  bool m_queryErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdentifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_queryErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

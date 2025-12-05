@@ -118,15 +118,15 @@ class WorkflowConfiguration {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::Vector<WorkflowParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_parallelGroup;
-  bool m_parallelGroupHasBeenSet = false;
 
   OnWorkflowFailure m_onFailure{OnWorkflowFailure::NOT_SET};
+  bool m_workflowArnHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_parallelGroupHasBeenSet = false;
   bool m_onFailureHasBeenSet = false;
 };
 

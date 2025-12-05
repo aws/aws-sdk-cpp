@@ -142,21 +142,21 @@ class GetPipelineStateResult {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   int m_pipelineVersion{0};
-  bool m_pipelineVersionHasBeenSet = false;
 
   Aws::Vector<StageState> m_stageStates;
-  bool m_stageStatesHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updated{};
-  bool m_updatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineVersionHasBeenSet = false;
+  bool m_stageStatesHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_updatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class ListActivityTypesResult {
   ///@}
  private:
   Aws::Vector<ActivityTypeInfo> m_typeInfos;
-  bool m_typeInfosHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeInfosHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

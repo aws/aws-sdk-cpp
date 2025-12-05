@@ -67,9 +67,9 @@ class GetProbeRequest : public NetworkMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::String m_probeId;
+  bool m_monitorNameHasBeenSet = false;
   bool m_probeIdHasBeenSet = false;
 };
 

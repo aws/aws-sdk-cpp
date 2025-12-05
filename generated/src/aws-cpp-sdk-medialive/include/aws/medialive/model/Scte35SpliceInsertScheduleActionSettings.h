@@ -66,9 +66,9 @@ class Scte35SpliceInsertScheduleActionSettings {
   ///@}
  private:
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   long long m_spliceEventId{0};
+  bool m_durationHasBeenSet = false;
   bool m_spliceEventIdHasBeenSet = false;
 };
 

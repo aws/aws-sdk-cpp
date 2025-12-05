@@ -78,9 +78,9 @@ class OpenSearchDataSource {
   ///@}
  private:
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   OpenSearchResourceStatus m_status;
+  bool m_dataSourceNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

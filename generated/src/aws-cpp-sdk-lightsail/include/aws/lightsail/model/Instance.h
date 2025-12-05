@@ -464,69 +464,69 @@ class Instance {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_blueprintId;
-  bool m_blueprintIdHasBeenSet = false;
 
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::Vector<AddOn> m_addOns;
-  bool m_addOnsHasBeenSet = false;
 
   bool m_isStaticIp{false};
-  bool m_isStaticIpHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::String m_publicIpAddress;
-  bool m_publicIpAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   InstanceHardware m_hardware;
-  bool m_hardwareHasBeenSet = false;
 
   InstanceNetworking m_networking;
-  bool m_networkingHasBeenSet = false;
 
   InstanceState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_sshKeyName;
-  bool m_sshKeyNameHasBeenSet = false;
 
   InstanceMetadataOptions m_metadataOptions;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_blueprintIdHasBeenSet = false;
+  bool m_blueprintNameHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_addOnsHasBeenSet = false;
+  bool m_isStaticIpHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_publicIpAddressHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_hardwareHasBeenSet = false;
+  bool m_networkingHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_sshKeyNameHasBeenSet = false;
   bool m_metadataOptionsHasBeenSet = false;
 };
 

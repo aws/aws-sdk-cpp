@@ -121,18 +121,18 @@ class ChannelAssociatedWithFlowSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   ChannelMode m_mode{ChannelMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   ChannelPrivacy m_privacy{ChannelPrivacy::NOT_SET};
-  bool m_privacyHasBeenSet = false;
 
   Aws::String m_metadata;
+  bool m_nameHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_privacyHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

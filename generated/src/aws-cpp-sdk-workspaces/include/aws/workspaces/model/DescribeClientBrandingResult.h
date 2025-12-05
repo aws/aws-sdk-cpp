@@ -146,24 +146,24 @@ class DescribeClientBrandingResult {
   ///@}
  private:
   DefaultClientBrandingAttributes m_deviceTypeWindows;
-  bool m_deviceTypeWindowsHasBeenSet = false;
 
   DefaultClientBrandingAttributes m_deviceTypeOsx;
-  bool m_deviceTypeOsxHasBeenSet = false;
 
   DefaultClientBrandingAttributes m_deviceTypeAndroid;
-  bool m_deviceTypeAndroidHasBeenSet = false;
 
   IosClientBrandingAttributes m_deviceTypeIos;
-  bool m_deviceTypeIosHasBeenSet = false;
 
   DefaultClientBrandingAttributes m_deviceTypeLinux;
-  bool m_deviceTypeLinuxHasBeenSet = false;
 
   DefaultClientBrandingAttributes m_deviceTypeWeb;
-  bool m_deviceTypeWebHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceTypeWindowsHasBeenSet = false;
+  bool m_deviceTypeOsxHasBeenSet = false;
+  bool m_deviceTypeAndroidHasBeenSet = false;
+  bool m_deviceTypeIosHasBeenSet = false;
+  bool m_deviceTypeLinuxHasBeenSet = false;
+  bool m_deviceTypeWebHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

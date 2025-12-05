@@ -120,18 +120,18 @@ class AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
   ///@}
  private:
   Aws::String m_customEndpointCertificateArn;
-  bool m_customEndpointCertificateArnHasBeenSet = false;
 
   bool m_customEndpointEnabled{false};
-  bool m_customEndpointEnabledHasBeenSet = false;
 
   bool m_enforceHTTPS{false};
-  bool m_enforceHTTPSHasBeenSet = false;
 
   Aws::String m_customEndpoint;
-  bool m_customEndpointHasBeenSet = false;
 
   Aws::String m_tLSSecurityPolicy;
+  bool m_customEndpointCertificateArnHasBeenSet = false;
+  bool m_customEndpointEnabledHasBeenSet = false;
+  bool m_enforceHTTPSHasBeenSet = false;
+  bool m_customEndpointHasBeenSet = false;
   bool m_tLSSecurityPolicyHasBeenSet = false;
 };
 

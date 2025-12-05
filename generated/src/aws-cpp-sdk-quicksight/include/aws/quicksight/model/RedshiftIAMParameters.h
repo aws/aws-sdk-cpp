@@ -129,15 +129,15 @@ class RedshiftIAMParameters {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_databaseUser;
-  bool m_databaseUserHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_databaseGroups;
-  bool m_databaseGroupsHasBeenSet = false;
 
   bool m_autoCreateDatabaseUser{false};
+  bool m_roleArnHasBeenSet = false;
+  bool m_databaseUserHasBeenSet = false;
+  bool m_databaseGroupsHasBeenSet = false;
   bool m_autoCreateDatabaseUserHasBeenSet = false;
 };
 

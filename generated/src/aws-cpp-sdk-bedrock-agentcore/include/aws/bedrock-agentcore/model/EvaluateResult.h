@@ -70,9 +70,9 @@ class EvaluateResult {
   ///@}
  private:
   Aws::Vector<EvaluationResultContent> m_evaluationResults;
-  bool m_evaluationResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

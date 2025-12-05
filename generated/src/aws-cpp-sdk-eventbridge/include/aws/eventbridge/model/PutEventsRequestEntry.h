@@ -200,24 +200,24 @@ class PutEventsRequestEntry {
   ///@}
  private:
   Aws::Utils::DateTime m_time{};
-  bool m_timeHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_detailType;
-  bool m_detailTypeHasBeenSet = false;
 
   Aws::String m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::String m_eventBusName;
-  bool m_eventBusNameHasBeenSet = false;
 
   Aws::String m_traceHeader;
+  bool m_timeHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_detailTypeHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_eventBusNameHasBeenSet = false;
   bool m_traceHeaderHasBeenSet = false;
 };
 

@@ -99,15 +99,15 @@ class DescribeApplicationAssignmentResult {
   ///@}
  private:
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_principalTypeHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

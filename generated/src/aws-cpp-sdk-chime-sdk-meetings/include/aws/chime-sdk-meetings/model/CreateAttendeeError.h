@@ -92,12 +92,12 @@ class CreateAttendeeError {
   ///@}
  private:
   Aws::String m_externalUserId;
-  bool m_externalUserIdHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_externalUserIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

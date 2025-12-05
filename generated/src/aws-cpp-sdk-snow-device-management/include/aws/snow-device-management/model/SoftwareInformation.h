@@ -87,12 +87,12 @@ class SoftwareInformation {
   ///@}
  private:
   Aws::String m_installState;
-  bool m_installStateHasBeenSet = false;
 
   Aws::String m_installedVersion;
-  bool m_installedVersionHasBeenSet = false;
 
   Aws::String m_installingVersion;
+  bool m_installStateHasBeenSet = false;
+  bool m_installedVersionHasBeenSet = false;
   bool m_installingVersionHasBeenSet = false;
 };
 

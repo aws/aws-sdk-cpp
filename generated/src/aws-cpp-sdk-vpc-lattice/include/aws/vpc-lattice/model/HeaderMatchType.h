@@ -86,12 +86,12 @@ class HeaderMatchType {
   ///@}
  private:
   Aws::String m_exact;
-  bool m_exactHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_contains;
+  bool m_exactHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_containsHasBeenSet = false;
 };
 

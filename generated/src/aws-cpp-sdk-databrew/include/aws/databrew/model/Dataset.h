@@ -281,42 +281,42 @@ class Dataset {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InputFormat m_format{InputFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   FormatOptions m_formatOptions;
-  bool m_formatOptionsHasBeenSet = false;
 
   Input m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Source m_source{Source::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   PathOptions m_pathOptions;
-  bool m_pathOptionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_accountIdHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_formatOptionsHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_pathOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

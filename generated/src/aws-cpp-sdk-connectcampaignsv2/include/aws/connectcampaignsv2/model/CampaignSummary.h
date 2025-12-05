@@ -167,27 +167,27 @@ class CampaignSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   Aws::Vector<ChannelSubtype> m_channelSubtypes;
-  bool m_channelSubtypesHasBeenSet = false;
 
   ExternalCampaignType m_type{ExternalCampaignType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_connectCampaignFlowArn;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_connectInstanceIdHasBeenSet = false;
+  bool m_channelSubtypesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
   bool m_connectCampaignFlowArnHasBeenSet = false;
 };
 

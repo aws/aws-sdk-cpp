@@ -68,9 +68,9 @@ class OrderBy {
   ///@}
  private:
   Order m_order{Order::NOT_SET};
-  bool m_orderHasBeenSet = false;
 
   Aws::String m_propertyName;
+  bool m_orderHasBeenSet = false;
   bool m_propertyNameHasBeenSet = false;
 };
 

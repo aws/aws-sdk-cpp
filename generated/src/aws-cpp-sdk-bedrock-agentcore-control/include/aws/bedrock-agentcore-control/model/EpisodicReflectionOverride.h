@@ -97,12 +97,12 @@ class EpisodicReflectionOverride {
   ///@}
  private:
   Aws::String m_appendToPrompt;
-  bool m_appendToPromptHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
+  bool m_appendToPromptHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
   bool m_namespacesHasBeenSet = false;
 };
 

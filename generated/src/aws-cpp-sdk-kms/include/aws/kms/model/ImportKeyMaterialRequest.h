@@ -240,27 +240,27 @@ class ImportKeyMaterialRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_importToken{};
-  bool m_importTokenHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_encryptedKeyMaterial{};
-  bool m_encryptedKeyMaterialHasBeenSet = false;
 
   Aws::Utils::DateTime m_validTo{};
-  bool m_validToHasBeenSet = false;
 
   ExpirationModelType m_expirationModel{ExpirationModelType::NOT_SET};
-  bool m_expirationModelHasBeenSet = false;
 
   ImportType m_importType{ImportType::NOT_SET};
-  bool m_importTypeHasBeenSet = false;
 
   Aws::String m_keyMaterialDescription;
-  bool m_keyMaterialDescriptionHasBeenSet = false;
 
   Aws::String m_keyMaterialId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_importTokenHasBeenSet = false;
+  bool m_encryptedKeyMaterialHasBeenSet = false;
+  bool m_validToHasBeenSet = false;
+  bool m_expirationModelHasBeenSet = false;
+  bool m_importTypeHasBeenSet = false;
+  bool m_keyMaterialDescriptionHasBeenSet = false;
   bool m_keyMaterialIdHasBeenSet = false;
 };
 

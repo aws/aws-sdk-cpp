@@ -68,9 +68,9 @@ class SuccessfulKeyRegistrationEntry {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   int m_statusCode{0};
+  bool m_keyArnHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
 };
 

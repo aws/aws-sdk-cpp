@@ -85,12 +85,12 @@ class SqsAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   bool m_useBase64{false};
+  bool m_roleArnHasBeenSet = false;
+  bool m_queueUrlHasBeenSet = false;
   bool m_useBase64HasBeenSet = false;
 };
 

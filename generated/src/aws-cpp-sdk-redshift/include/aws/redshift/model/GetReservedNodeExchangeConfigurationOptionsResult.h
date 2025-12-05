@@ -93,12 +93,12 @@ class GetReservedNodeExchangeConfigurationOptionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReservedNodeConfigurationOption> m_reservedNodeConfigurationOptionList;
-  bool m_reservedNodeConfigurationOptionListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_reservedNodeConfigurationOptionListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -256,36 +256,36 @@ class PremigrationAssessmentStatus {
   ///@}
  private:
   Aws::String m_premigrationAssessmentRunArn;
-  bool m_premigrationAssessmentRunArnHasBeenSet = false;
 
   bool m_failOnAssessmentFailure{false};
-  bool m_failOnAssessmentFailureHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_premigrationAssessmentRunCreationDate{};
-  bool m_premigrationAssessmentRunCreationDateHasBeenSet = false;
 
   ReplicationTaskAssessmentRunProgress m_assessmentProgress;
-  bool m_assessmentProgressHasBeenSet = false;
 
   Aws::String m_lastFailureMessage;
-  bool m_lastFailureMessageHasBeenSet = false;
 
   Aws::String m_resultLocationBucket;
-  bool m_resultLocationBucketHasBeenSet = false;
 
   Aws::String m_resultLocationFolder;
-  bool m_resultLocationFolderHasBeenSet = false;
 
   Aws::String m_resultEncryptionMode;
-  bool m_resultEncryptionModeHasBeenSet = false;
 
   Aws::String m_resultKmsKeyArn;
-  bool m_resultKmsKeyArnHasBeenSet = false;
 
   ReplicationTaskAssessmentRunResultStatistic m_resultStatistic;
+  bool m_premigrationAssessmentRunArnHasBeenSet = false;
+  bool m_failOnAssessmentFailureHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_premigrationAssessmentRunCreationDateHasBeenSet = false;
+  bool m_assessmentProgressHasBeenSet = false;
+  bool m_lastFailureMessageHasBeenSet = false;
+  bool m_resultLocationBucketHasBeenSet = false;
+  bool m_resultLocationFolderHasBeenSet = false;
+  bool m_resultEncryptionModeHasBeenSet = false;
+  bool m_resultKmsKeyArnHasBeenSet = false;
   bool m_resultStatisticHasBeenSet = false;
 };
 

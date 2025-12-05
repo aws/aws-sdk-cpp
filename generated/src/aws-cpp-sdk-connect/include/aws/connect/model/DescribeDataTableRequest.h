@@ -67,9 +67,9 @@ class DescribeDataTableRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataTableId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_dataTableIdHasBeenSet = false;
 };
 

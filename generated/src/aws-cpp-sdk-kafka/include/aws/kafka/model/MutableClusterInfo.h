@@ -335,45 +335,45 @@ class MutableClusterInfo {
   ///@}
  private:
   Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
-  bool m_brokerEBSVolumeInfoHasBeenSet = false;
 
   ConfigurationInfo m_configurationInfo;
-  bool m_configurationInfoHasBeenSet = false;
 
   int m_numberOfBrokerNodes{0};
-  bool m_numberOfBrokerNodesHasBeenSet = false;
 
   EnhancedMonitoring m_enhancedMonitoring{EnhancedMonitoring::NOT_SET};
-  bool m_enhancedMonitoringHasBeenSet = false;
 
   OpenMonitoring m_openMonitoring;
-  bool m_openMonitoringHasBeenSet = false;
 
   Aws::String m_kafkaVersion;
-  bool m_kafkaVersionHasBeenSet = false;
 
   LoggingInfo m_loggingInfo;
-  bool m_loggingInfoHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   ClientAuthentication m_clientAuthentication;
-  bool m_clientAuthenticationHasBeenSet = false;
 
   EncryptionInfo m_encryptionInfo;
-  bool m_encryptionInfoHasBeenSet = false;
 
   ConnectivityInfo m_connectivityInfo;
-  bool m_connectivityInfoHasBeenSet = false;
 
   StorageMode m_storageMode{StorageMode::NOT_SET};
-  bool m_storageModeHasBeenSet = false;
 
   BrokerCountUpdateInfo m_brokerCountUpdateInfo;
-  bool m_brokerCountUpdateInfoHasBeenSet = false;
 
   Rebalancing m_rebalancing;
+  bool m_brokerEBSVolumeInfoHasBeenSet = false;
+  bool m_configurationInfoHasBeenSet = false;
+  bool m_numberOfBrokerNodesHasBeenSet = false;
+  bool m_enhancedMonitoringHasBeenSet = false;
+  bool m_openMonitoringHasBeenSet = false;
+  bool m_kafkaVersionHasBeenSet = false;
+  bool m_loggingInfoHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_clientAuthenticationHasBeenSet = false;
+  bool m_encryptionInfoHasBeenSet = false;
+  bool m_connectivityInfoHasBeenSet = false;
+  bool m_storageModeHasBeenSet = false;
+  bool m_brokerCountUpdateInfoHasBeenSet = false;
   bool m_rebalancingHasBeenSet = false;
 };
 

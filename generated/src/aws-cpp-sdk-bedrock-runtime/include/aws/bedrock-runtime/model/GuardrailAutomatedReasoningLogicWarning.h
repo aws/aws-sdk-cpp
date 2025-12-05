@@ -103,12 +103,12 @@ class GuardrailAutomatedReasoningLogicWarning {
   ///@}
  private:
   GuardrailAutomatedReasoningLogicWarningType m_type{GuardrailAutomatedReasoningLogicWarningType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningStatement> m_premises;
-  bool m_premisesHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningStatement> m_claims;
+  bool m_typeHasBeenSet = false;
+  bool m_premisesHasBeenSet = false;
   bool m_claimsHasBeenSet = false;
 };
 

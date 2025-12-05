@@ -131,18 +131,18 @@ class ExpectedCustomerSpend {
   ///@}
  private:
   Aws::String m_amount;
-  bool m_amountHasBeenSet = false;
 
   ExpectedCustomerSpendCurrencyCodeEnum m_currencyCode{ExpectedCustomerSpendCurrencyCodeEnum::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   PaymentFrequency m_frequency{PaymentFrequency::NOT_SET};
-  bool m_frequencyHasBeenSet = false;
 
   Aws::String m_targetCompany;
-  bool m_targetCompanyHasBeenSet = false;
 
   Aws::String m_estimationUrl;
+  bool m_amountHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_frequencyHasBeenSet = false;
+  bool m_targetCompanyHasBeenSet = false;
   bool m_estimationUrlHasBeenSet = false;
 };
 

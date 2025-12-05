@@ -105,15 +105,15 @@ class TaskSubmitFailedEventDetails {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_cause;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_causeHasBeenSet = false;
 };
 

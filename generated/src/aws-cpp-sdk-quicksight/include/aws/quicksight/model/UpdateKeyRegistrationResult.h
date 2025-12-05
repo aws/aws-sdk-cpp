@@ -92,12 +92,12 @@ class UpdateKeyRegistrationResult {
   ///@}
  private:
   Aws::Vector<FailedKeyRegistrationEntry> m_failedKeyRegistration;
-  bool m_failedKeyRegistrationHasBeenSet = false;
 
   Aws::Vector<SuccessfulKeyRegistrationEntry> m_successfulKeyRegistration;
-  bool m_successfulKeyRegistrationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedKeyRegistrationHasBeenSet = false;
+  bool m_successfulKeyRegistrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

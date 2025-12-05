@@ -181,27 +181,27 @@ class CreateWorkflowResult {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   WorkflowStatus m_workflowStatus{WorkflowStatus::NOT_SET};
-  bool m_workflowStatusHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   bool m_isLatestVersion{false};
-  bool m_isLatestVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_workflowStatusHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_isLatestVersionHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

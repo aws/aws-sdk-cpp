@@ -71,9 +71,9 @@ class Destination {
   ///@}
  private:
   S3Bucket m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   FirehoseStream m_firehoseStream;
+  bool m_s3BucketHasBeenSet = false;
   bool m_firehoseStreamHasBeenSet = false;
 };
 

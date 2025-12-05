@@ -164,21 +164,21 @@ class ExecuteStatementResult {
   ///@}
  private:
   Aws::Vector<Aws::Vector<Field>> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::Vector<ColumnMetadata> m_columnMetadata;
-  bool m_columnMetadataHasBeenSet = false;
 
   long long m_numberOfRecordsUpdated{0};
-  bool m_numberOfRecordsUpdatedHasBeenSet = false;
 
   Aws::Vector<Field> m_generatedFields;
-  bool m_generatedFieldsHasBeenSet = false;
 
   Aws::String m_formattedRecords;
-  bool m_formattedRecordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_columnMetadataHasBeenSet = false;
+  bool m_numberOfRecordsUpdatedHasBeenSet = false;
+  bool m_generatedFieldsHasBeenSet = false;
+  bool m_formattedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

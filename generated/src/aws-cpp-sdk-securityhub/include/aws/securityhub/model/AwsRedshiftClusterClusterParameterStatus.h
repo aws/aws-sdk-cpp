@@ -93,12 +93,12 @@ class AwsRedshiftClusterClusterParameterStatus {
   ///@}
  private:
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   Aws::String m_parameterApplyStatus;
-  bool m_parameterApplyStatusHasBeenSet = false;
 
   Aws::String m_parameterApplyErrorDescription;
+  bool m_parameterNameHasBeenSet = false;
+  bool m_parameterApplyStatusHasBeenSet = false;
   bool m_parameterApplyErrorDescriptionHasBeenSet = false;
 };
 

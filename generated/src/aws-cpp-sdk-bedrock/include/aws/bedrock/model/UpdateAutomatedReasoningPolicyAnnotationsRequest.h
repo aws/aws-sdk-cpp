@@ -113,15 +113,15 @@ class UpdateAutomatedReasoningPolicyAnnotationsRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyAnnotation> m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   Aws::String m_lastUpdatedAnnotationSetHash;
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
   bool m_lastUpdatedAnnotationSetHashHasBeenSet = false;
 };
 

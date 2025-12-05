@@ -94,12 +94,12 @@ class OidcJwtUpdateConfiguration {
   ///@}
  private:
   Aws::String m_claimAttributePath;
-  bool m_claimAttributePathHasBeenSet = false;
 
   Aws::String m_identityStoreAttributePath;
-  bool m_identityStoreAttributePathHasBeenSet = false;
 
   JwksRetrievalOption m_jwksRetrievalOption{JwksRetrievalOption::NOT_SET};
+  bool m_claimAttributePathHasBeenSet = false;
+  bool m_identityStoreAttributePathHasBeenSet = false;
   bool m_jwksRetrievalOptionHasBeenSet = false;
 };
 

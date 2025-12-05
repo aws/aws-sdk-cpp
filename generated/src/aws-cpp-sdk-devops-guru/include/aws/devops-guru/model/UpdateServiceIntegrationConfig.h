@@ -90,12 +90,12 @@ class UpdateServiceIntegrationConfig {
   ///@}
  private:
   OpsCenterIntegrationConfig m_opsCenter;
-  bool m_opsCenterHasBeenSet = false;
 
   LogsAnomalyDetectionIntegrationConfig m_logsAnomalyDetection;
-  bool m_logsAnomalyDetectionHasBeenSet = false;
 
   KMSServerSideEncryptionIntegrationConfig m_kMSServerSideEncryption;
+  bool m_opsCenterHasBeenSet = false;
+  bool m_logsAnomalyDetectionHasBeenSet = false;
   bool m_kMSServerSideEncryptionHasBeenSet = false;
 };
 

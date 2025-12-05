@@ -232,36 +232,36 @@ class SubStatementData {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   StatementStatusString m_status{StatementStatusString::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   long long m_resultRows{0};
-  bool m_resultRowsHasBeenSet = false;
 
   long long m_resultSize{0};
-  bool m_resultSizeHasBeenSet = false;
 
   long long m_redshiftQueryId{0};
-  bool m_redshiftQueryIdHasBeenSet = false;
 
   bool m_hasResultSet{false};
+  bool m_idHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_resultRowsHasBeenSet = false;
+  bool m_resultSizeHasBeenSet = false;
+  bool m_redshiftQueryIdHasBeenSet = false;
   bool m_hasResultSetHasBeenSet = false;
 };
 

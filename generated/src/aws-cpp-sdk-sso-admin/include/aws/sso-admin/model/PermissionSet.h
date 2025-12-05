@@ -146,21 +146,21 @@ class PermissionSet {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_permissionSetArn;
-  bool m_permissionSetArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_sessionDuration;
-  bool m_sessionDurationHasBeenSet = false;
 
   Aws::String m_relayState;
+  bool m_nameHasBeenSet = false;
+  bool m_permissionSetArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_sessionDurationHasBeenSet = false;
   bool m_relayStateHasBeenSet = false;
 };
 

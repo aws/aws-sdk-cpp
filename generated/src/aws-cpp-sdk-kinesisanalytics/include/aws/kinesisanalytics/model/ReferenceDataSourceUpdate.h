@@ -115,15 +115,15 @@ class ReferenceDataSourceUpdate {
   ///@}
  private:
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::String m_tableNameUpdate;
-  bool m_tableNameUpdateHasBeenSet = false;
 
   S3ReferenceDataSourceUpdate m_s3ReferenceDataSourceUpdate;
-  bool m_s3ReferenceDataSourceUpdateHasBeenSet = false;
 
   SourceSchema m_referenceSchemaUpdate;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_tableNameUpdateHasBeenSet = false;
+  bool m_s3ReferenceDataSourceUpdateHasBeenSet = false;
   bool m_referenceSchemaUpdateHasBeenSet = false;
 };
 

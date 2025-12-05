@@ -397,51 +397,51 @@ class RestoreDBClusterFromSnapshotRequest : public DocDBRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_networkType;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
+  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

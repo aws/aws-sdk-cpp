@@ -69,9 +69,9 @@ class Volume {
   ///@}
  private:
   Aws::String m_volumeName;
-  bool m_volumeNameHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
+  bool m_volumeNameHasBeenSet = false;
   bool m_volumeTypeHasBeenSet = false;
 };
 

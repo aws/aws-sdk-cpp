@@ -89,12 +89,12 @@ class AxisLabelOptions {
   ///@}
  private:
   FontConfiguration m_fontConfiguration;
-  bool m_fontConfigurationHasBeenSet = false;
 
   Aws::String m_customLabel;
-  bool m_customLabelHasBeenSet = false;
 
   AxisLabelReferenceOptions m_applyTo;
+  bool m_fontConfigurationHasBeenSet = false;
+  bool m_customLabelHasBeenSet = false;
   bool m_applyToHasBeenSet = false;
 };
 

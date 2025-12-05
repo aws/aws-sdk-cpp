@@ -119,15 +119,15 @@ class PolicyTargetSummary {
   ///@}
  private:
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TargetType m_type{TargetType::NOT_SET};
+  bool m_targetIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

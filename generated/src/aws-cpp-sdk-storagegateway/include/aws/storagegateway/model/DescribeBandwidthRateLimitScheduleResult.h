@@ -84,12 +84,12 @@ class DescribeBandwidthRateLimitScheduleResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
-  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

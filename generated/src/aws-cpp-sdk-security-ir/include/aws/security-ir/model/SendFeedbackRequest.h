@@ -100,15 +100,15 @@ class SendFeedbackRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_resultId;
-  bool m_resultIdHasBeenSet = false;
 
   UsefulnessRating m_usefulness{UsefulnessRating::NOT_SET};
-  bool m_usefulnessHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_caseIdHasBeenSet = false;
+  bool m_resultIdHasBeenSet = false;
+  bool m_usefulnessHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

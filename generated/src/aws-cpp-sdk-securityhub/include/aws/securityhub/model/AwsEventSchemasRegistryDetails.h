@@ -89,12 +89,12 @@ class AwsEventSchemasRegistryDetails {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_registryArn;
-  bool m_registryArnHasBeenSet = false;
 
   Aws::String m_registryName;
+  bool m_descriptionHasBeenSet = false;
+  bool m_registryArnHasBeenSet = false;
   bool m_registryNameHasBeenSet = false;
 };
 

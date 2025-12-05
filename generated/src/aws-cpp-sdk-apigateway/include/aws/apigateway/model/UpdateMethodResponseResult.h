@@ -129,15 +129,15 @@ class UpdateMethodResponseResult {
   ///@}
  private:
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, bool> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseModels;
-  bool m_responseModelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_responseModelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

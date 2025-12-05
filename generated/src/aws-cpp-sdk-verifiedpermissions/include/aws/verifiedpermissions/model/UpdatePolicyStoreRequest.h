@@ -107,15 +107,15 @@ class UpdatePolicyStoreRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   ValidationSettings m_validationSettings;
-  bool m_validationSettingsHasBeenSet = false;
 
   DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_validationSettingsHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -224,33 +224,33 @@ class PipelineActivity {
   ///@}
  private:
   ChannelActivity m_channel;
-  bool m_channelHasBeenSet = false;
 
   LambdaActivity m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   DatastoreActivity m_datastore;
-  bool m_datastoreHasBeenSet = false;
 
   AddAttributesActivity m_addAttributes;
-  bool m_addAttributesHasBeenSet = false;
 
   RemoveAttributesActivity m_removeAttributes;
-  bool m_removeAttributesHasBeenSet = false;
 
   SelectAttributesActivity m_selectAttributes;
-  bool m_selectAttributesHasBeenSet = false;
 
   FilterActivity m_filter;
-  bool m_filterHasBeenSet = false;
 
   MathActivity m_math;
-  bool m_mathHasBeenSet = false;
 
   DeviceRegistryEnrichActivity m_deviceRegistryEnrich;
-  bool m_deviceRegistryEnrichHasBeenSet = false;
 
   DeviceShadowEnrichActivity m_deviceShadowEnrich;
+  bool m_channelHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_datastoreHasBeenSet = false;
+  bool m_addAttributesHasBeenSet = false;
+  bool m_removeAttributesHasBeenSet = false;
+  bool m_selectAttributesHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_mathHasBeenSet = false;
+  bool m_deviceRegistryEnrichHasBeenSet = false;
   bool m_deviceShadowEnrichHasBeenSet = false;
 };
 

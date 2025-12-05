@@ -154,21 +154,21 @@ class Update {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   UpdateStatus m_status{UpdateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   UpdateType m_type{UpdateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<UpdateParam> m_params;
-  bool m_paramsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errors;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_paramsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateModelPackageResult {
   ///@}
  private:
   Aws::String m_modelPackageArn;
-  bool m_modelPackageArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelPackageArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

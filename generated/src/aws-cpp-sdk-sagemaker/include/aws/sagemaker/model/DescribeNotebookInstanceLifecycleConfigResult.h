@@ -163,24 +163,24 @@ class DescribeNotebookInstanceLifecycleConfigResult {
   ///@}
  private:
   Aws::String m_notebookInstanceLifecycleConfigArn;
-  bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
 
   Aws::String m_notebookInstanceLifecycleConfigName;
-  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
   Aws::Vector<NotebookInstanceLifecycleHook> m_onCreate;
-  bool m_onCreateHasBeenSet = false;
 
   Aws::Vector<NotebookInstanceLifecycleHook> m_onStart;
-  bool m_onStartHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
+  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
+  bool m_onCreateHasBeenSet = false;
+  bool m_onStartHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

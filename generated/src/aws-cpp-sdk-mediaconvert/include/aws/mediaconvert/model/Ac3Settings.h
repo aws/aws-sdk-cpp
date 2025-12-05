@@ -230,33 +230,33 @@ class Ac3Settings {
   ///@}
  private:
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   Ac3BitstreamMode m_bitstreamMode{Ac3BitstreamMode::NOT_SET};
-  bool m_bitstreamModeHasBeenSet = false;
 
   Ac3CodingMode m_codingMode{Ac3CodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   int m_dialnorm{0};
-  bool m_dialnormHasBeenSet = false;
 
   Ac3DynamicRangeCompressionLine m_dynamicRangeCompressionLine{Ac3DynamicRangeCompressionLine::NOT_SET};
-  bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
   Ac3DynamicRangeCompressionProfile m_dynamicRangeCompressionProfile{Ac3DynamicRangeCompressionProfile::NOT_SET};
-  bool m_dynamicRangeCompressionProfileHasBeenSet = false;
 
   Ac3DynamicRangeCompressionRf m_dynamicRangeCompressionRf{Ac3DynamicRangeCompressionRf::NOT_SET};
-  bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
   Ac3LfeFilter m_lfeFilter{Ac3LfeFilter::NOT_SET};
-  bool m_lfeFilterHasBeenSet = false;
 
   Ac3MetadataControl m_metadataControl{Ac3MetadataControl::NOT_SET};
-  bool m_metadataControlHasBeenSet = false;
 
   int m_sampleRate{0};
+  bool m_bitrateHasBeenSet = false;
+  bool m_bitstreamModeHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
+  bool m_dialnormHasBeenSet = false;
+  bool m_dynamicRangeCompressionLineHasBeenSet = false;
+  bool m_dynamicRangeCompressionProfileHasBeenSet = false;
+  bool m_dynamicRangeCompressionRfHasBeenSet = false;
+  bool m_lfeFilterHasBeenSet = false;
+  bool m_metadataControlHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class Card {
   ///@}
  private:
   TextInputCard m_textInput;
-  bool m_textInputHasBeenSet = false;
 
   QQueryCard m_qQuery;
-  bool m_qQueryHasBeenSet = false;
 
   QPluginCard m_qPlugin;
-  bool m_qPluginHasBeenSet = false;
 
   FileUploadCard m_fileUpload;
-  bool m_fileUploadHasBeenSet = false;
 
   FormInputCard m_formInput;
+  bool m_textInputHasBeenSet = false;
+  bool m_qQueryHasBeenSet = false;
+  bool m_qPluginHasBeenSet = false;
+  bool m_fileUploadHasBeenSet = false;
   bool m_formInputHasBeenSet = false;
 };
 

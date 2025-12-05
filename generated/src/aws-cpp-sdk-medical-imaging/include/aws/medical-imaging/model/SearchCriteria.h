@@ -76,9 +76,9 @@ class SearchCriteria {
   ///@}
  private:
   Aws::Vector<SearchFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Sort m_sort;
+  bool m_filtersHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

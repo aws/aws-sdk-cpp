@@ -66,9 +66,9 @@ class Ec2ScanModeState {
   ///@}
  private:
   Ec2ScanMode m_scanMode{Ec2ScanMode::NOT_SET};
-  bool m_scanModeHasBeenSet = false;
 
   Ec2ScanModeStatus m_scanModeStatus{Ec2ScanModeStatus::NOT_SET};
+  bool m_scanModeHasBeenSet = false;
   bool m_scanModeStatusHasBeenSet = false;
 };
 

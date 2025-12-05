@@ -104,15 +104,15 @@ class Thumbnail {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   ThumbnailType m_thumbnailType{ThumbnailType::NOT_SET};
-  bool m_thumbnailTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeStamp{};
+  bool m_bodyHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_thumbnailTypeHasBeenSet = false;
   bool m_timeStampHasBeenSet = false;
 };
 

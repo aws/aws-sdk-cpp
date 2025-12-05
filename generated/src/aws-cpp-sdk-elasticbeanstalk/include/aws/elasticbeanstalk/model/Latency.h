@@ -169,27 +169,27 @@ class Latency {
   ///@}
  private:
   double m_p999{0.0};
-  bool m_p999HasBeenSet = false;
 
   double m_p99{0.0};
-  bool m_p99HasBeenSet = false;
 
   double m_p95{0.0};
-  bool m_p95HasBeenSet = false;
 
   double m_p90{0.0};
-  bool m_p90HasBeenSet = false;
 
   double m_p85{0.0};
-  bool m_p85HasBeenSet = false;
 
   double m_p75{0.0};
-  bool m_p75HasBeenSet = false;
 
   double m_p50{0.0};
-  bool m_p50HasBeenSet = false;
 
   double m_p10{0.0};
+  bool m_p999HasBeenSet = false;
+  bool m_p99HasBeenSet = false;
+  bool m_p95HasBeenSet = false;
+  bool m_p90HasBeenSet = false;
+  bool m_p85HasBeenSet = false;
+  bool m_p75HasBeenSet = false;
+  bool m_p50HasBeenSet = false;
   bool m_p10HasBeenSet = false;
 };
 

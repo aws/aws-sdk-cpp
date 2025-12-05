@@ -138,18 +138,18 @@ class Action {
   ///@}
  private:
   Aws::String m_actionType;
-  bool m_actionTypeHasBeenSet = false;
 
   NetworkConnectionAction m_networkConnectionAction;
-  bool m_networkConnectionActionHasBeenSet = false;
 
   AwsApiCallAction m_awsApiCallAction;
-  bool m_awsApiCallActionHasBeenSet = false;
 
   DnsRequestAction m_dnsRequestAction;
-  bool m_dnsRequestActionHasBeenSet = false;
 
   PortProbeAction m_portProbeAction;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_networkConnectionActionHasBeenSet = false;
+  bool m_awsApiCallActionHasBeenSet = false;
+  bool m_dnsRequestActionHasBeenSet = false;
   bool m_portProbeActionHasBeenSet = false;
 };
 

@@ -215,36 +215,36 @@ class ObdSignal {
   ///@}
  private:
   int m_pidResponseLength{0};
-  bool m_pidResponseLengthHasBeenSet = false;
 
   int m_serviceMode{0};
-  bool m_serviceModeHasBeenSet = false;
 
   int m_pid{0};
-  bool m_pidHasBeenSet = false;
 
   double m_scaling{0.0};
-  bool m_scalingHasBeenSet = false;
 
   double m_offset{0.0};
-  bool m_offsetHasBeenSet = false;
 
   int m_startByte{0};
-  bool m_startByteHasBeenSet = false;
 
   int m_byteLength{0};
-  bool m_byteLengthHasBeenSet = false;
 
   int m_bitRightShift{0};
-  bool m_bitRightShiftHasBeenSet = false;
 
   int m_bitMaskLength{0};
-  bool m_bitMaskLengthHasBeenSet = false;
 
   bool m_isSigned{false};
-  bool m_isSignedHasBeenSet = false;
 
   SignalValueType m_signalValueType{SignalValueType::NOT_SET};
+  bool m_pidResponseLengthHasBeenSet = false;
+  bool m_serviceModeHasBeenSet = false;
+  bool m_pidHasBeenSet = false;
+  bool m_scalingHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
+  bool m_startByteHasBeenSet = false;
+  bool m_byteLengthHasBeenSet = false;
+  bool m_bitRightShiftHasBeenSet = false;
+  bool m_bitMaskLengthHasBeenSet = false;
+  bool m_isSignedHasBeenSet = false;
   bool m_signalValueTypeHasBeenSet = false;
 };
 

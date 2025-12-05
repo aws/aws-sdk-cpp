@@ -116,15 +116,15 @@ class PutEventsRequest : public PersonalizeEventsRequest {
   ///@}
  private:
   Aws::String m_trackingId;
-  bool m_trackingIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Vector<Event> m_eventList;
+  bool m_trackingIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_eventListHasBeenSet = false;
 };
 

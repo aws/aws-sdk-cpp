@@ -89,12 +89,12 @@ class DescribeDBClusterParameterGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBClusterParameterGroup> m_dBClusterParameterGroups;
-  bool m_dBClusterParameterGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBClusterParameterGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

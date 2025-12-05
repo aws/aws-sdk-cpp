@@ -98,12 +98,12 @@ class SlotValueOverride {
   ///@}
  private:
   SlotShape m_shape{SlotShape::NOT_SET};
-  bool m_shapeHasBeenSet = false;
 
   SlotValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<SlotValueOverride> m_values;
+  bool m_shapeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

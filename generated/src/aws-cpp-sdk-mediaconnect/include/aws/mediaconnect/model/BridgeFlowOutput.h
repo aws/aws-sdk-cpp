@@ -87,12 +87,12 @@ class BridgeFlowOutput {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_flowSourceArn;
-  bool m_flowSourceArnHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_flowArnHasBeenSet = false;
+  bool m_flowSourceArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

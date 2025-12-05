@@ -67,9 +67,9 @@ class GetBlueprintRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_blueprintNameHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

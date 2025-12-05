@@ -71,9 +71,9 @@ class AcceleratorPartitionConfig {
   ///@}
  private:
   MIGProfileType m_type{MIGProfileType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_count{0};
+  bool m_typeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

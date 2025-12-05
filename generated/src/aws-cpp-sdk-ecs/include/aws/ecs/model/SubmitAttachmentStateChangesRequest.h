@@ -76,9 +76,9 @@ class SubmitAttachmentStateChangesRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<AttachmentStateChange> m_attachments;
+  bool m_clusterHasBeenSet = false;
   bool m_attachmentsHasBeenSet = false;
 };
 

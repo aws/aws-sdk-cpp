@@ -126,15 +126,15 @@ class UpdatePushTemplateRequest : public PinpointRequest {
   ///@}
  private:
   bool m_createNewVersion{false};
-  bool m_createNewVersionHasBeenSet = false;
 
   PushNotificationTemplateRequest m_pushNotificationTemplateRequest;
-  bool m_pushNotificationTemplateRequestHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_createNewVersionHasBeenSet = false;
+  bool m_pushNotificationTemplateRequestHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

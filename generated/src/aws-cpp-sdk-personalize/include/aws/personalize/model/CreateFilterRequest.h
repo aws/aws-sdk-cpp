@@ -117,15 +117,15 @@ class CreateFilterRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::String m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

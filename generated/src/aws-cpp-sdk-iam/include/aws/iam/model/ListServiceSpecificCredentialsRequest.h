@@ -134,18 +134,18 @@ class ListServiceSpecificCredentialsRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   bool m_allUsers{false};
-  bool m_allUsersHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_userNameHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_allUsersHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

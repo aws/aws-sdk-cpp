@@ -96,12 +96,12 @@ class GetDevicePoolCompatibilityResult {
   ///@}
  private:
   Aws::Vector<DevicePoolCompatibilityResult> m_compatibleDevices;
-  bool m_compatibleDevicesHasBeenSet = false;
 
   Aws::Vector<DevicePoolCompatibilityResult> m_incompatibleDevices;
-  bool m_incompatibleDevicesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compatibleDevicesHasBeenSet = false;
+  bool m_incompatibleDevicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

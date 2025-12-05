@@ -79,9 +79,9 @@ class RequiredCaseRule {
   ///@}
  private:
   bool m_defaultValue{false};
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Vector<BooleanCondition> m_conditions;
+  bool m_defaultValueHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

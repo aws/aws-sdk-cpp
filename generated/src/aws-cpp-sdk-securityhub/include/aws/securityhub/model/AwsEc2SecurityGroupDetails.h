@@ -154,21 +154,21 @@ class AwsEc2SecurityGroupDetails {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<AwsEc2SecurityGroupIpPermission> m_ipPermissions;
-  bool m_ipPermissionsHasBeenSet = false;
 
   Aws::Vector<AwsEc2SecurityGroupIpPermission> m_ipPermissionsEgress;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_ipPermissionsHasBeenSet = false;
   bool m_ipPermissionsEgressHasBeenSet = false;
 };
 

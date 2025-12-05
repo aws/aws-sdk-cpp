@@ -66,9 +66,9 @@ class LifecyclePolicyRuleAction {
   ///@}
  private:
   ImageActionType m_type{ImageActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   LifecyclePolicyTargetStorageClass m_targetStorageClass{LifecyclePolicyTargetStorageClass::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_targetStorageClassHasBeenSet = false;
 };
 

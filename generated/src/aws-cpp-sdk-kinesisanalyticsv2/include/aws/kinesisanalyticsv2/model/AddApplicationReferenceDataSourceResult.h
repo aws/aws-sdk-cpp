@@ -104,15 +104,15 @@ class AddApplicationReferenceDataSourceResult {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::Vector<ReferenceDataSourceDescription> m_referenceDataSourceDescriptions;
-  bool m_referenceDataSourceDescriptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_referenceDataSourceDescriptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

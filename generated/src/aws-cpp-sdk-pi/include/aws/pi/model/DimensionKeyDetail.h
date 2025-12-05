@@ -100,12 +100,12 @@ class DimensionKeyDetail {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_dimension;
-  bool m_dimensionHasBeenSet = false;
 
   DetailStatus m_status{DetailStatus::NOT_SET};
+  bool m_valueHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

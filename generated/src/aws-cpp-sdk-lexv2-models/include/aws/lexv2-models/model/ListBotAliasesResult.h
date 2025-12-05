@@ -109,15 +109,15 @@ class ListBotAliasesResult {
   ///@}
  private:
   Aws::Vector<BotAliasSummary> m_botAliasSummaries;
-  bool m_botAliasSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botAliasSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

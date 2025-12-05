@@ -174,27 +174,27 @@ class PhysicalEndpoint {
   ///@}
  private:
   AwsLocation m_awsLocation;
-  bool m_awsLocationHasBeenSet = false;
 
   bool m_enableTrustedIdentityPropagation{false};
-  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
 
   GlueConnection m_glueConnection;
-  bool m_glueConnectionHasBeenSet = false;
 
   Aws::String m_glueConnectionName;
-  bool m_glueConnectionNameHasBeenSet = false;
 
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_stage;
+  bool m_awsLocationHasBeenSet = false;
+  bool m_enableTrustedIdentityPropagationHasBeenSet = false;
+  bool m_glueConnectionHasBeenSet = false;
+  bool m_glueConnectionNameHasBeenSet = false;
+  bool m_hostHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

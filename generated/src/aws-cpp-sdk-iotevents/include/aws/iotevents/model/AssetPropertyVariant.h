@@ -133,15 +133,15 @@ class AssetPropertyVariant {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::String m_integerValue;
-  bool m_integerValueHasBeenSet = false;
 
   Aws::String m_doubleValue;
-  bool m_doubleValueHasBeenSet = false;
 
   Aws::String m_booleanValue;
+  bool m_stringValueHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
   bool m_booleanValueHasBeenSet = false;
 };
 

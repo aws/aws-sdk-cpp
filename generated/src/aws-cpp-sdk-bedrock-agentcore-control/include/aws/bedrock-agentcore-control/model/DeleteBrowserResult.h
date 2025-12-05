@@ -93,15 +93,15 @@ class DeleteBrowserResult {
   ///@}
  private:
   Aws::String m_browserId;
-  bool m_browserIdHasBeenSet = false;
 
   BrowserStatus m_status{BrowserStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_browserIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

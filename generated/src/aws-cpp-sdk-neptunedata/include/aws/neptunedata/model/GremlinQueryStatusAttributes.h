@@ -85,12 +85,12 @@ class GremlinQueryStatusAttributes {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_code{0};
-  bool m_codeHasBeenSet = false;
 
   Aws::Utils::Document m_attributes;
+  bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

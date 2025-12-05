@@ -104,15 +104,15 @@ class DomainObjectTypeField {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   ContentType m_contentType{ContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   FeatureType m_featureType{FeatureType::NOT_SET};
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_featureTypeHasBeenSet = false;
 };
 

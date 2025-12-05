@@ -75,9 +75,9 @@ class UpdateBandwidthRateLimitScheduleRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
+  bool m_gatewayARNHasBeenSet = false;
   bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class EvaluationResultQualifier {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
+  bool m_configRuleNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_evaluationModeHasBeenSet = false;
 };
 

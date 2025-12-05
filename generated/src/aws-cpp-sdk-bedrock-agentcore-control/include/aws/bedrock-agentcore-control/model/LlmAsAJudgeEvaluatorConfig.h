@@ -93,12 +93,12 @@ class LlmAsAJudgeEvaluatorConfig {
   ///@}
  private:
   Aws::String m_instructions;
-  bool m_instructionsHasBeenSet = false;
 
   RatingScale m_ratingScale;
-  bool m_ratingScaleHasBeenSet = false;
 
   EvaluatorModelConfig m_modelConfig;
+  bool m_instructionsHasBeenSet = false;
+  bool m_ratingScaleHasBeenSet = false;
   bool m_modelConfigHasBeenSet = false;
 };
 

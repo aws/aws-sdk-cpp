@@ -95,15 +95,15 @@ class SendMessageResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_absoluteTime;
-  bool m_absoluteTimeHasBeenSet = false;
 
   MessageProcessingMetadata m_messageMetadata;
-  bool m_messageMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_absoluteTimeHasBeenSet = false;
+  bool m_messageMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

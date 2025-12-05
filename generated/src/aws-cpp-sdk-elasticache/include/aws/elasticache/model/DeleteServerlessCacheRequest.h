@@ -71,9 +71,9 @@ class DeleteServerlessCacheRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_serverlessCacheName;
-  bool m_serverlessCacheNameHasBeenSet = false;
 
   Aws::String m_finalSnapshotName;
+  bool m_serverlessCacheNameHasBeenSet = false;
   bool m_finalSnapshotNameHasBeenSet = false;
 };
 

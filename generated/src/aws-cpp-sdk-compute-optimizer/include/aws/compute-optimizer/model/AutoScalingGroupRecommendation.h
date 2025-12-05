@@ -324,42 +324,42 @@ class AutoScalingGroupRecommendation {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_autoScalingGroupArn;
-  bool m_autoScalingGroupArnHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Finding m_finding{Finding::NOT_SET};
-  bool m_findingHasBeenSet = false;
 
   Aws::Vector<UtilizationMetric> m_utilizationMetrics;
-  bool m_utilizationMetricsHasBeenSet = false;
 
   double m_lookBackPeriodInDays{0.0};
-  bool m_lookBackPeriodInDaysHasBeenSet = false;
 
   AutoScalingGroupConfiguration m_currentConfiguration;
-  bool m_currentConfigurationHasBeenSet = false;
 
   GpuInfo m_currentInstanceGpuInfo;
-  bool m_currentInstanceGpuInfoHasBeenSet = false;
 
   Aws::Vector<AutoScalingGroupRecommendationOption> m_recommendationOptions;
-  bool m_recommendationOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
-  bool m_currentPerformanceRiskHasBeenSet = false;
 
   EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
-  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
 
   Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
+  bool m_accountIdHasBeenSet = false;
+  bool m_autoScalingGroupArnHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_findingHasBeenSet = false;
+  bool m_utilizationMetricsHasBeenSet = false;
+  bool m_lookBackPeriodInDaysHasBeenSet = false;
+  bool m_currentConfigurationHasBeenSet = false;
+  bool m_currentInstanceGpuInfoHasBeenSet = false;
+  bool m_recommendationOptionsHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
+  bool m_currentPerformanceRiskHasBeenSet = false;
+  bool m_effectiveRecommendationPreferencesHasBeenSet = false;
   bool m_inferredWorkloadTypesHasBeenSet = false;
 };
 

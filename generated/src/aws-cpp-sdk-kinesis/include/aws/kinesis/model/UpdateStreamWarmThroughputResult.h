@@ -94,15 +94,15 @@ class UpdateStreamWarmThroughputResult {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   WarmThroughputObject m_warmThroughput;
-  bool m_warmThroughputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamARNHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
+  bool m_warmThroughputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

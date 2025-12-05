@@ -69,9 +69,9 @@ class PutEmailIdentityConfigurationSetAttributesRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   Aws::String m_configurationSetName;
+  bool m_emailIdentityHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class GetMappingRequest : public GlueRequest {
   ///@}
  private:
   CatalogEntry m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<CatalogEntry> m_sinks;
-  bool m_sinksHasBeenSet = false;
 
   Location m_location;
+  bool m_sourceHasBeenSet = false;
+  bool m_sinksHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class GetRepositorySyncStatusRequest : public CodeConnectionsRequest {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_repositoryLinkId;
-  bool m_repositoryLinkIdHasBeenSet = false;
 
   SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
+  bool m_branchHasBeenSet = false;
+  bool m_repositoryLinkIdHasBeenSet = false;
   bool m_syncTypeHasBeenSet = false;
 };
 

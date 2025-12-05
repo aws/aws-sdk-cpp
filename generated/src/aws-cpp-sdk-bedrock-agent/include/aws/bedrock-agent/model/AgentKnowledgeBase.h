@@ -166,24 +166,24 @@ class AgentKnowledgeBase {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   KnowledgeBaseState m_knowledgeBaseState{KnowledgeBaseState::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_knowledgeBaseStateHasBeenSet = false;
 };
 

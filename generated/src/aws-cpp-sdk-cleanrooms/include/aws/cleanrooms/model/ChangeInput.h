@@ -69,9 +69,9 @@ class ChangeInput {
   ///@}
  private:
   ChangeSpecificationType m_specificationType{ChangeSpecificationType::NOT_SET};
-  bool m_specificationTypeHasBeenSet = false;
 
   ChangeSpecification m_specification;
+  bool m_specificationTypeHasBeenSet = false;
   bool m_specificationHasBeenSet = false;
 };
 

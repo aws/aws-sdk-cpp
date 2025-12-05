@@ -144,18 +144,18 @@ class KxDataviewActiveVersion {
   ///@}
  private:
   Aws::String m_changesetId;
-  bool m_changesetIdHasBeenSet = false;
 
   Aws::Vector<KxDataviewSegmentConfiguration> m_segmentConfigurations;
-  bool m_segmentConfigurationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attachedClusters;
-  bool m_attachedClustersHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_changesetIdHasBeenSet = false;
+  bool m_segmentConfigurationsHasBeenSet = false;
+  bool m_attachedClustersHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

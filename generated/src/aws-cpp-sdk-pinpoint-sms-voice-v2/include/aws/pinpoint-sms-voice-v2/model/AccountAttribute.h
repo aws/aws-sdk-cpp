@@ -68,9 +68,9 @@ class AccountAttribute {
   ///@}
  private:
   AccountAttributeName m_name{AccountAttributeName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

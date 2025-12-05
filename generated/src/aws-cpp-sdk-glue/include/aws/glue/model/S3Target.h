@@ -154,21 +154,21 @@ class S3Target {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusions;
-  bool m_exclusionsHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   int m_sampleSize{0};
-  bool m_sampleSizeHasBeenSet = false;
 
   Aws::String m_eventQueueArn;
-  bool m_eventQueueArnHasBeenSet = false;
 
   Aws::String m_dlqEventQueueArn;
+  bool m_pathHasBeenSet = false;
+  bool m_exclusionsHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_sampleSizeHasBeenSet = false;
+  bool m_eventQueueArnHasBeenSet = false;
   bool m_dlqEventQueueArnHasBeenSet = false;
 };
 

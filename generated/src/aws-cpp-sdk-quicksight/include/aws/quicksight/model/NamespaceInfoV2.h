@@ -175,27 +175,27 @@ class NamespaceInfoV2 {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_capacityRegion;
-  bool m_capacityRegionHasBeenSet = false;
 
   NamespaceStatus m_creationStatus{NamespaceStatus::NOT_SET};
-  bool m_creationStatusHasBeenSet = false;
 
   IdentityStore m_identityStore{IdentityStore::NOT_SET};
-  bool m_identityStoreHasBeenSet = false;
 
   NamespaceError m_namespaceError;
-  bool m_namespaceErrorHasBeenSet = false;
 
   Aws::String m_iamIdentityCenterApplicationArn;
-  bool m_iamIdentityCenterApplicationArnHasBeenSet = false;
 
   Aws::String m_iamIdentityCenterInstanceArn;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_capacityRegionHasBeenSet = false;
+  bool m_creationStatusHasBeenSet = false;
+  bool m_identityStoreHasBeenSet = false;
+  bool m_namespaceErrorHasBeenSet = false;
+  bool m_iamIdentityCenterApplicationArnHasBeenSet = false;
   bool m_iamIdentityCenterInstanceArnHasBeenSet = false;
 };
 

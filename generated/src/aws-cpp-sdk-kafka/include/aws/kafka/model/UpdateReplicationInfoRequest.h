@@ -143,21 +143,21 @@ class UpdateReplicationInfoRequest : public KafkaRequest {
   ///@}
  private:
   ConsumerGroupReplicationUpdate m_consumerGroupReplication;
-  bool m_consumerGroupReplicationHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_replicatorArn;
-  bool m_replicatorArnHasBeenSet = false;
 
   Aws::String m_sourceKafkaClusterArn;
-  bool m_sourceKafkaClusterArnHasBeenSet = false;
 
   Aws::String m_targetKafkaClusterArn;
-  bool m_targetKafkaClusterArnHasBeenSet = false;
 
   TopicReplicationUpdate m_topicReplication;
+  bool m_consumerGroupReplicationHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_replicatorArnHasBeenSet = false;
+  bool m_sourceKafkaClusterArnHasBeenSet = false;
+  bool m_targetKafkaClusterArnHasBeenSet = false;
   bool m_topicReplicationHasBeenSet = false;
 };
 

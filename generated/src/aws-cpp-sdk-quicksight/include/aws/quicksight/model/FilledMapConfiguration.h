@@ -165,24 +165,24 @@ class FilledMapConfiguration {
   ///@}
  private:
   FilledMapFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   FilledMapSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   GeospatialWindowOptions m_windowOptions;
-  bool m_windowOptionsHasBeenSet = false;
 
   GeospatialMapStyleOptions m_mapStyleOptions;
-  bool m_mapStyleOptionsHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_windowOptionsHasBeenSet = false;
+  bool m_mapStyleOptionsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

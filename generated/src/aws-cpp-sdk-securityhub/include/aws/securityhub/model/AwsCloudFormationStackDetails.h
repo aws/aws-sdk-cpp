@@ -323,48 +323,48 @@ class AwsCloudFormationStackDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_disableRollback{false};
-  bool m_disableRollbackHasBeenSet = false;
 
   AwsCloudFormationStackDriftInformationDetails m_driftInformation;
-  bool m_driftInformationHasBeenSet = false;
 
   bool m_enableTerminationProtection{false};
-  bool m_enableTerminationProtectionHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationArns;
-  bool m_notificationArnsHasBeenSet = false;
 
   Aws::Vector<AwsCloudFormationStackOutputsDetails> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_stackStatus;
-  bool m_stackStatusHasBeenSet = false;
 
   Aws::String m_stackStatusReason;
-  bool m_stackStatusReasonHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_disableRollbackHasBeenSet = false;
+  bool m_driftInformationHasBeenSet = false;
+  bool m_enableTerminationProtectionHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_notificationArnsHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_stackStatusHasBeenSet = false;
+  bool m_stackStatusReasonHasBeenSet = false;
   bool m_timeoutInMinutesHasBeenSet = false;
 };
 

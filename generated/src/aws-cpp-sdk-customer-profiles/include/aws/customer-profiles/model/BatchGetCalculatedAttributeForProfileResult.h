@@ -113,15 +113,15 @@ class BatchGetCalculatedAttributeForProfileResult {
   ///@}
  private:
   Aws::Vector<BatchGetCalculatedAttributeForProfileError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<CalculatedAttributeValue> m_calculatedAttributeValues;
-  bool m_calculatedAttributeValuesHasBeenSet = false;
 
   ConditionOverrides m_conditionOverrides;
-  bool m_conditionOverridesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_calculatedAttributeValuesHasBeenSet = false;
+  bool m_conditionOverridesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

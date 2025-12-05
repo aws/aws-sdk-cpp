@@ -204,30 +204,30 @@ class RegistrationVersionStatusHistory {
   ///@}
  private:
   Aws::Utils::DateTime m_draftTimestamp{};
-  bool m_draftTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedTimestamp{};
-  bool m_submittedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_reviewingTimestamp{};
-  bool m_reviewingTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_requiresAuthenticationTimestamp{};
-  bool m_requiresAuthenticationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_approvedTimestamp{};
-  bool m_approvedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_discardedTimestamp{};
-  bool m_discardedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_deniedTimestamp{};
-  bool m_deniedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedTimestamp{};
-  bool m_revokedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_archivedTimestamp{};
+  bool m_draftTimestampHasBeenSet = false;
+  bool m_submittedTimestampHasBeenSet = false;
+  bool m_reviewingTimestampHasBeenSet = false;
+  bool m_requiresAuthenticationTimestampHasBeenSet = false;
+  bool m_approvedTimestampHasBeenSet = false;
+  bool m_discardedTimestampHasBeenSet = false;
+  bool m_deniedTimestampHasBeenSet = false;
+  bool m_revokedTimestampHasBeenSet = false;
   bool m_archivedTimestampHasBeenSet = false;
 };
 

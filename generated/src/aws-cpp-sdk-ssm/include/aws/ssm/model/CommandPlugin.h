@@ -301,39 +301,39 @@ class CommandPlugin {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CommandPluginStatus m_status{CommandPluginStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   int m_responseCode{0};
-  bool m_responseCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_responseStartDateTime{};
-  bool m_responseStartDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_responseFinishDateTime{};
-  bool m_responseFinishDateTimeHasBeenSet = false;
 
   Aws::String m_output;
-  bool m_outputHasBeenSet = false;
 
   Aws::String m_standardOutputUrl;
-  bool m_standardOutputUrlHasBeenSet = false;
 
   Aws::String m_standardErrorUrl;
-  bool m_standardErrorUrlHasBeenSet = false;
 
   Aws::String m_outputS3Region;
-  bool m_outputS3RegionHasBeenSet = false;
 
   Aws::String m_outputS3BucketName;
-  bool m_outputS3BucketNameHasBeenSet = false;
 
   Aws::String m_outputS3KeyPrefix;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_responseCodeHasBeenSet = false;
+  bool m_responseStartDateTimeHasBeenSet = false;
+  bool m_responseFinishDateTimeHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_standardOutputUrlHasBeenSet = false;
+  bool m_standardErrorUrlHasBeenSet = false;
+  bool m_outputS3RegionHasBeenSet = false;
+  bool m_outputS3BucketNameHasBeenSet = false;
   bool m_outputS3KeyPrefixHasBeenSet = false;
 };
 

@@ -154,21 +154,21 @@ class FilterConfiguration {
   ///@}
  private:
   Aws::String m_manifestFilter;
-  bool m_manifestFilterHasBeenSet = false;
 
   Aws::String m_drmSettings;
-  bool m_drmSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_start{};
-  bool m_startHasBeenSet = false;
 
   Aws::Utils::DateTime m_end{};
-  bool m_endHasBeenSet = false;
 
   int m_timeDelaySeconds{0};
-  bool m_timeDelaySecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_clipStartTime{};
+  bool m_manifestFilterHasBeenSet = false;
+  bool m_drmSettingsHasBeenSet = false;
+  bool m_startHasBeenSet = false;
+  bool m_endHasBeenSet = false;
+  bool m_timeDelaySecondsHasBeenSet = false;
   bool m_clipStartTimeHasBeenSet = false;
 };
 

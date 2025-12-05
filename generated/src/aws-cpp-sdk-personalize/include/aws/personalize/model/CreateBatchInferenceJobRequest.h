@@ -254,36 +254,36 @@ class CreateBatchInferenceJobRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   Aws::String m_filterArn;
-  bool m_filterArnHasBeenSet = false;
 
   int m_numResults{0};
-  bool m_numResultsHasBeenSet = false;
 
   BatchInferenceJobInput m_jobInput;
-  bool m_jobInputHasBeenSet = false;
 
   BatchInferenceJobOutput m_jobOutput;
-  bool m_jobOutputHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   BatchInferenceJobConfig m_batchInferenceJobConfig;
-  bool m_batchInferenceJobConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   BatchInferenceJobMode m_batchInferenceJobMode{BatchInferenceJobMode::NOT_SET};
-  bool m_batchInferenceJobModeHasBeenSet = false;
 
   ThemeGenerationConfig m_themeGenerationConfig;
+  bool m_jobNameHasBeenSet = false;
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_filterArnHasBeenSet = false;
+  bool m_numResultsHasBeenSet = false;
+  bool m_jobInputHasBeenSet = false;
+  bool m_jobOutputHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_batchInferenceJobConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_batchInferenceJobModeHasBeenSet = false;
   bool m_themeGenerationConfigHasBeenSet = false;
 };
 

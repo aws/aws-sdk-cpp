@@ -163,27 +163,27 @@ class GetReportDefinitionResult {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   Aws::String m_reportDescription;
-  bool m_reportDescriptionHasBeenSet = false;
 
   ReportFrequency m_reportFrequency{ReportFrequency::NOT_SET};
-  bool m_reportFrequencyHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   S3Location m_destinationS3Location;
-  bool m_destinationS3LocationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportIdHasBeenSet = false;
+  bool m_reportDescriptionHasBeenSet = false;
+  bool m_reportFrequencyHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_destinationS3LocationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

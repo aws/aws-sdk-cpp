@@ -103,15 +103,15 @@ class EntitlementUsage {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_consumedValue;
-  bool m_consumedValueHasBeenSet = false;
 
   Aws::String m_maxCount;
-  bool m_maxCountHasBeenSet = false;
 
   EntitlementDataUnit m_unit{EntitlementDataUnit::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_consumedValueHasBeenSet = false;
+  bool m_maxCountHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

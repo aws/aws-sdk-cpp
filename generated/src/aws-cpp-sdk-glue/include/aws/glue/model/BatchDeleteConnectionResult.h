@@ -93,12 +93,12 @@ class BatchDeleteConnectionResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_succeeded;
-  bool m_succeededHasBeenSet = false;
 
   Aws::Map<Aws::String, ErrorDetail> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_succeededHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

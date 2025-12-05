@@ -78,9 +78,9 @@ class ReviewPolicy {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::Vector<PolicyParameter> m_parameters;
+  bool m_policyNameHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class PutNotificationSettingsRequest : public RolesAnywhereRequest {
   ///@}
  private:
   Aws::Vector<NotificationSetting> m_notificationSettings;
-  bool m_notificationSettingsHasBeenSet = false;
 
   Aws::String m_trustAnchorId;
+  bool m_notificationSettingsHasBeenSet = false;
   bool m_trustAnchorIdHasBeenSet = false;
 };
 

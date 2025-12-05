@@ -75,9 +75,9 @@ class DisassociateResourceTypesRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configurationRecorderArn;
-  bool m_configurationRecorderArnHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
+  bool m_configurationRecorderArnHasBeenSet = false;
   bool m_resourceTypesHasBeenSet = false;
 };
 

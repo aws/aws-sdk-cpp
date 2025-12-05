@@ -87,12 +87,12 @@ class DescribeAggregationAuthorizationsResult {
   ///@}
  private:
   Aws::Vector<AggregationAuthorization> m_aggregationAuthorizations;
-  bool m_aggregationAuthorizationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregationAuthorizationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

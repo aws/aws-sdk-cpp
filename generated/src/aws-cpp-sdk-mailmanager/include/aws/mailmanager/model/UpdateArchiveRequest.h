@@ -90,12 +90,12 @@ class UpdateArchiveRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_archiveId;
-  bool m_archiveIdHasBeenSet = false;
 
   Aws::String m_archiveName;
-  bool m_archiveNameHasBeenSet = false;
 
   ArchiveRetention m_retention;
+  bool m_archiveIdHasBeenSet = false;
+  bool m_archiveNameHasBeenSet = false;
   bool m_retentionHasBeenSet = false;
 };
 

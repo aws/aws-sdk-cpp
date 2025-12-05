@@ -69,9 +69,9 @@ class JobExecutionSummaryForThing {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobExecutionSummary m_jobExecutionSummary;
+  bool m_jobIdHasBeenSet = false;
   bool m_jobExecutionSummaryHasBeenSet = false;
 };
 

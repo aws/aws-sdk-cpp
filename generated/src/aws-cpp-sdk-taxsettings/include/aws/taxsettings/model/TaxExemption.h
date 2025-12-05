@@ -141,21 +141,21 @@ class TaxExemption {
   ///@}
  private:
   Authority m_authority;
-  bool m_authorityHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveDate{};
-  bool m_effectiveDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   EntityExemptionAccountStatus m_status{EntityExemptionAccountStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_systemEffectiveDate{};
-  bool m_systemEffectiveDateHasBeenSet = false;
 
   TaxExemptionType m_taxExemptionType;
+  bool m_authorityHasBeenSet = false;
+  bool m_effectiveDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_systemEffectiveDateHasBeenSet = false;
   bool m_taxExemptionTypeHasBeenSet = false;
 };
 

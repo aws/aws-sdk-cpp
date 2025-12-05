@@ -118,12 +118,12 @@ class SqlInjectionMatchSet {
   ///@}
  private:
   Aws::String m_sqlInjectionMatchSetId;
-  bool m_sqlInjectionMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SqlInjectionMatchTuple> m_sqlInjectionMatchTuples;
+  bool m_sqlInjectionMatchSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_sqlInjectionMatchTuplesHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListMultiplexProgramsResult {
   ///@}
  private:
   Aws::Vector<MultiplexProgramSummary> m_multiplexPrograms;
-  bool m_multiplexProgramsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_multiplexProgramsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

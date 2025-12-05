@@ -79,9 +79,9 @@ class GetAccessGrantsInstanceForPrefixRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_s3Prefix;
+  bool m_accountIdHasBeenSet = false;
   bool m_s3PrefixHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class VectorEnrichmentJobErrorDetails {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   VectorEnrichmentJobErrorType m_errorType{VectorEnrichmentJobErrorType::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CancelServiceSoftwareUpdateResult {
   ///@}
  private:
   ServiceSoftwareOptions m_serviceSoftwareOptions;
-  bool m_serviceSoftwareOptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceSoftwareOptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

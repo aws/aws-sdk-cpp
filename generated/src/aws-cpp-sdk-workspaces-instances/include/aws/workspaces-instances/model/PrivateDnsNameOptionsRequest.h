@@ -81,12 +81,12 @@ class PrivateDnsNameOptionsRequest {
   ///@}
  private:
   HostnameTypeEnum m_hostnameType{HostnameTypeEnum::NOT_SET};
-  bool m_hostnameTypeHasBeenSet = false;
 
   bool m_enableResourceNameDnsARecord{false};
-  bool m_enableResourceNameDnsARecordHasBeenSet = false;
 
   bool m_enableResourceNameDnsAAAARecord{false};
+  bool m_hostnameTypeHasBeenSet = false;
+  bool m_enableResourceNameDnsARecordHasBeenSet = false;
   bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
 };
 

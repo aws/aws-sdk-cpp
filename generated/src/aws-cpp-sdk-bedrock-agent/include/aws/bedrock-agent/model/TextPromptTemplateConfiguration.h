@@ -97,12 +97,12 @@ class TextPromptTemplateConfiguration {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   CachePointBlock m_cachePoint;
-  bool m_cachePointHasBeenSet = false;
 
   Aws::Vector<PromptInputVariable> m_inputVariables;
+  bool m_textHasBeenSet = false;
+  bool m_cachePointHasBeenSet = false;
   bool m_inputVariablesHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class ExecutionError {
   ///@}
  private:
   ExecutionErrorType m_type{ExecutionErrorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

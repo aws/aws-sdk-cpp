@@ -126,18 +126,18 @@ class UpdateVolumeRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   UpdateOntapVolumeConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UpdateOpenZFSVolumeConfiguration m_openZFSConfiguration;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_openZFSConfigurationHasBeenSet = false;
 };
 

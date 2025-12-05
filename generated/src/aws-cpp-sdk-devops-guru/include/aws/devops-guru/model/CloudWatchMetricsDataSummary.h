@@ -76,9 +76,9 @@ class CloudWatchMetricsDataSummary {
   ///@}
  private:
   Aws::Vector<TimestampMetricValuePair> m_timestampMetricValuePairList;
-  bool m_timestampMetricValuePairListHasBeenSet = false;
 
   CloudWatchMetricDataStatusCode m_statusCode{CloudWatchMetricDataStatusCode::NOT_SET};
+  bool m_timestampMetricValuePairListHasBeenSet = false;
   bool m_statusCodeHasBeenSet = false;
 };
 

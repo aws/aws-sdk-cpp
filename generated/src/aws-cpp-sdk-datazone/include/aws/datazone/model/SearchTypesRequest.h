@@ -206,30 +206,30 @@ class SearchTypesRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   FilterClause m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_managed{false};
-  bool m_managedHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SearchInItem> m_searchIn;
-  bool m_searchInHasBeenSet = false;
 
   TypesSearchScope m_searchScope{TypesSearchScope::NOT_SET};
-  bool m_searchScopeHasBeenSet = false;
 
   Aws::String m_searchText;
-  bool m_searchTextHasBeenSet = false;
 
   SearchSort m_sort;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_managedHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_searchInHasBeenSet = false;
+  bool m_searchScopeHasBeenSet = false;
+  bool m_searchTextHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

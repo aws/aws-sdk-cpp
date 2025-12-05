@@ -237,36 +237,36 @@ class ProtectedJob {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   ProtectedJobParameters m_jobParameters;
-  bool m_jobParametersHasBeenSet = false;
 
   ProtectedJobStatus m_status{ProtectedJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ProtectedJobResultConfigurationOutput m_resultConfiguration;
-  bool m_resultConfigurationHasBeenSet = false;
 
   ProtectedJobStatistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   ProtectedJobResult m_result;
-  bool m_resultHasBeenSet = false;
 
   ProtectedJobError m_error;
-  bool m_errorHasBeenSet = false;
 
   ProtectedJobComputeConfiguration m_computeConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_jobParametersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resultConfigurationHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
 };
 

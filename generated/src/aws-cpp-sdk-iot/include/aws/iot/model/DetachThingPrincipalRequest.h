@@ -73,9 +73,9 @@ class DetachThingPrincipalRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_principal;
+  bool m_thingNameHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListPricesResult {
   ///@}
  private:
   Aws::Vector<DomainPrice> m_prices;
-  bool m_pricesHasBeenSet = false;
 
   Aws::String m_nextPageMarker;
-  bool m_nextPageMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pricesHasBeenSet = false;
+  bool m_nextPageMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

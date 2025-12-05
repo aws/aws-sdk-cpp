@@ -90,12 +90,12 @@ class PutAttributeMappingRequest : public RolesAnywhereRequest {
   ///@}
  private:
   CertificateField m_certificateField{CertificateField::NOT_SET};
-  bool m_certificateFieldHasBeenSet = false;
 
   Aws::Vector<MappingRule> m_mappingRules;
-  bool m_mappingRulesHasBeenSet = false;
 
   Aws::String m_profileId;
+  bool m_certificateFieldHasBeenSet = false;
+  bool m_mappingRulesHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
 };
 

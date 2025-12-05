@@ -70,9 +70,9 @@ class RistRouterOutputConfiguration {
   ///@}
  private:
   Aws::String m_destinationAddress;
-  bool m_destinationAddressHasBeenSet = false;
 
   int m_destinationPort{0};
+  bool m_destinationAddressHasBeenSet = false;
   bool m_destinationPortHasBeenSet = false;
 };
 

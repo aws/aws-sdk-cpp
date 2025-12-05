@@ -216,30 +216,30 @@ class CreateMediaCapturePipelineRequest : public ChimeSDKMediaPipelinesRequest {
   ///@}
  private:
   MediaPipelineSourceType m_sourceType{MediaPipelineSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   MediaPipelineSinkType m_sinkType{MediaPipelineSinkType::NOT_SET};
-  bool m_sinkTypeHasBeenSet = false;
 
   Aws::String m_sinkArn;
-  bool m_sinkArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   ChimeSdkMeetingConfiguration m_chimeSdkMeetingConfiguration;
-  bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
 
   SseAwsKeyManagementParams m_sseAwsKeyManagementParams;
-  bool m_sseAwsKeyManagementParamsHasBeenSet = false;
 
   Aws::String m_sinkIamRoleArn;
-  bool m_sinkIamRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_sinkTypeHasBeenSet = false;
+  bool m_sinkArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_chimeSdkMeetingConfigurationHasBeenSet = false;
+  bool m_sseAwsKeyManagementParamsHasBeenSet = false;
+  bool m_sinkIamRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

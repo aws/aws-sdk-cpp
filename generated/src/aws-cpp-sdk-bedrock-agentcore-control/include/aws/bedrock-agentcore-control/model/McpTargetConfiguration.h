@@ -131,18 +131,18 @@ class McpTargetConfiguration {
   ///@}
  private:
   ApiSchemaConfiguration m_openApiSchema;
-  bool m_openApiSchemaHasBeenSet = false;
 
   ApiSchemaConfiguration m_smithyModel;
-  bool m_smithyModelHasBeenSet = false;
 
   McpLambdaTargetConfiguration m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   McpServerTargetConfiguration m_mcpServer;
-  bool m_mcpServerHasBeenSet = false;
 
   ApiGatewayTargetConfiguration m_apiGateway;
+  bool m_openApiSchemaHasBeenSet = false;
+  bool m_smithyModelHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_mcpServerHasBeenSet = false;
   bool m_apiGatewayHasBeenSet = false;
 };
 

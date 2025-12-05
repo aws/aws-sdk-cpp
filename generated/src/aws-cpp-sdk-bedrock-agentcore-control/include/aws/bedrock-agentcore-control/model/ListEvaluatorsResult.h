@@ -86,12 +86,12 @@ class ListEvaluatorsResult {
   ///@}
  private:
   Aws::Vector<EvaluatorSummary> m_evaluators;
-  bool m_evaluatorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluatorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

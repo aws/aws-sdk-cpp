@@ -67,9 +67,9 @@ class UpdateSMBLocalGroupsRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   SMBLocalGroups m_sMBLocalGroups;
+  bool m_gatewayARNHasBeenSet = false;
   bool m_sMBLocalGroupsHasBeenSet = false;
 };
 

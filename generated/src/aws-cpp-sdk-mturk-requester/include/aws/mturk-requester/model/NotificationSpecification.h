@@ -120,15 +120,15 @@ class NotificationSpecification {
   ///@}
  private:
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   NotificationTransport m_transport{NotificationTransport::NOT_SET};
-  bool m_transportHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<EventType> m_eventTypes;
+  bool m_destinationHasBeenSet = false;
+  bool m_transportHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_eventTypesHasBeenSet = false;
 };
 

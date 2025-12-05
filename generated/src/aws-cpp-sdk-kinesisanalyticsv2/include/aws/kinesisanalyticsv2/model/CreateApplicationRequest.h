@@ -199,27 +199,27 @@ class CreateApplicationRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_applicationDescription;
-  bool m_applicationDescriptionHasBeenSet = false;
 
   RuntimeEnvironment m_runtimeEnvironment{RuntimeEnvironment::NOT_SET};
-  bool m_runtimeEnvironmentHasBeenSet = false;
 
   Aws::String m_serviceExecutionRole;
-  bool m_serviceExecutionRoleHasBeenSet = false;
 
   ApplicationConfiguration m_applicationConfiguration;
-  bool m_applicationConfigurationHasBeenSet = false;
 
   Aws::Vector<CloudWatchLoggingOption> m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ApplicationMode m_applicationMode{ApplicationMode::NOT_SET};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_applicationDescriptionHasBeenSet = false;
+  bool m_runtimeEnvironmentHasBeenSet = false;
+  bool m_serviceExecutionRoleHasBeenSet = false;
+  bool m_applicationConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_applicationModeHasBeenSet = false;
 };
 

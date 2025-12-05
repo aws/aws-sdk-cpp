@@ -69,9 +69,9 @@ class LoopControllerFlowNodeConfiguration {
   ///@}
  private:
   FlowCondition m_continueCondition;
-  bool m_continueConditionHasBeenSet = false;
 
   int m_maxIterations{0};
+  bool m_continueConditionHasBeenSet = false;
   bool m_maxIterationsHasBeenSet = false;
 };
 

@@ -188,27 +188,27 @@ class CreateRouteRequest : public MigrationHubRefactorSpacesRequest {
   ///@}
  private:
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DefaultRouteInput m_defaultRoute;
-  bool m_defaultRouteHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   RouteType m_routeType{RouteType::NOT_SET};
-  bool m_routeTypeHasBeenSet = false;
 
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UriPathRouteInput m_uriPathRoute;
+  bool m_applicationIdentifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_defaultRouteHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_routeTypeHasBeenSet = false;
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_uriPathRouteHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class SearchPlaceIndexForPositionSummary {
   ///@}
  private:
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_language;
+  bool m_positionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
   bool m_languageHasBeenSet = false;
 };
 

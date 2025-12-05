@@ -98,12 +98,12 @@ class ServerProcess {
   ///@}
  private:
   Aws::String m_launchPath;
-  bool m_launchPathHasBeenSet = false;
 
   Aws::String m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   int m_concurrentExecutions{0};
+  bool m_launchPathHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_concurrentExecutionsHasBeenSet = false;
 };
 

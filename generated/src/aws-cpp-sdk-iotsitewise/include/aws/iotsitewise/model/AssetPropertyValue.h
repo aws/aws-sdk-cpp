@@ -86,12 +86,12 @@ class AssetPropertyValue {
   ///@}
  private:
   Variant m_value;
-  bool m_valueHasBeenSet = false;
 
   TimeInNanos m_timestamp;
-  bool m_timestampHasBeenSet = false;
 
   Quality m_quality{Quality::NOT_SET};
+  bool m_valueHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_qualityHasBeenSet = false;
 };
 

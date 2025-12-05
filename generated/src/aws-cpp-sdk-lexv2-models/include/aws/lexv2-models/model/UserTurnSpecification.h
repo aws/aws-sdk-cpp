@@ -70,9 +70,9 @@ class UserTurnSpecification {
   ///@}
  private:
   UserTurnInputSpecification m_input;
-  bool m_inputHasBeenSet = false;
 
   UserTurnOutputSpecification m_expected;
+  bool m_inputHasBeenSet = false;
   bool m_expectedHasBeenSet = false;
 };
 

@@ -168,21 +168,21 @@ class GetOpenIDConnectProviderResult {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientIDList;
-  bool m_clientIDListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_thumbprintList;
-  bool m_thumbprintListHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_urlHasBeenSet = false;
+  bool m_clientIDListHasBeenSet = false;
+  bool m_thumbprintListHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

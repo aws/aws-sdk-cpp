@@ -67,9 +67,9 @@ class ProxyRuleGroupPriorityResult {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   int m_priority{0};
+  bool m_proxyRuleGroupNameHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

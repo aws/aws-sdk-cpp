@@ -276,39 +276,39 @@ class AutoMLCandidate {
   ///@}
  private:
   Aws::String m_candidateName;
-  bool m_candidateNameHasBeenSet = false;
 
   FinalAutoMLJobObjectiveMetric m_finalAutoMLJobObjectiveMetric;
-  bool m_finalAutoMLJobObjectiveMetricHasBeenSet = false;
 
   ObjectiveStatus m_objectiveStatus{ObjectiveStatus::NOT_SET};
-  bool m_objectiveStatusHasBeenSet = false;
 
   Aws::Vector<AutoMLCandidateStep> m_candidateSteps;
-  bool m_candidateStepsHasBeenSet = false;
 
   CandidateStatus m_candidateStatus{CandidateStatus::NOT_SET};
-  bool m_candidateStatusHasBeenSet = false;
 
   Aws::Vector<AutoMLContainerDefinition> m_inferenceContainers;
-  bool m_inferenceContainersHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   CandidateProperties m_candidateProperties;
-  bool m_candidatePropertiesHasBeenSet = false;
 
   Aws::Map<AutoMLProcessingUnit, Aws::Vector<AutoMLContainerDefinition>> m_inferenceContainerDefinitions;
+  bool m_candidateNameHasBeenSet = false;
+  bool m_finalAutoMLJobObjectiveMetricHasBeenSet = false;
+  bool m_objectiveStatusHasBeenSet = false;
+  bool m_candidateStepsHasBeenSet = false;
+  bool m_candidateStatusHasBeenSet = false;
+  bool m_inferenceContainersHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_candidatePropertiesHasBeenSet = false;
   bool m_inferenceContainerDefinitionsHasBeenSet = false;
 };
 

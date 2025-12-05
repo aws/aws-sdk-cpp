@@ -83,12 +83,12 @@ class CreateApplicationPresignedUrlRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   UrlType m_urlType{UrlType::NOT_SET};
-  bool m_urlTypeHasBeenSet = false;
 
   long long m_sessionExpirationDurationInSeconds{0};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_urlTypeHasBeenSet = false;
   bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
 };
 

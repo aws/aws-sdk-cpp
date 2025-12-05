@@ -210,30 +210,30 @@ class MessageConfiguration {
   ///@}
  private:
   Message m_aDMMessage;
-  bool m_aDMMessageHasBeenSet = false;
 
   Message m_aPNSMessage;
-  bool m_aPNSMessageHasBeenSet = false;
 
   Message m_baiduMessage;
-  bool m_baiduMessageHasBeenSet = false;
 
   CampaignCustomMessage m_customMessage;
-  bool m_customMessageHasBeenSet = false;
 
   Message m_defaultMessage;
-  bool m_defaultMessageHasBeenSet = false;
 
   CampaignEmailMessage m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   Message m_gCMMessage;
-  bool m_gCMMessageHasBeenSet = false;
 
   CampaignSmsMessage m_sMSMessage;
-  bool m_sMSMessageHasBeenSet = false;
 
   CampaignInAppMessage m_inAppMessage;
+  bool m_aDMMessageHasBeenSet = false;
+  bool m_aPNSMessageHasBeenSet = false;
+  bool m_baiduMessageHasBeenSet = false;
+  bool m_customMessageHasBeenSet = false;
+  bool m_defaultMessageHasBeenSet = false;
+  bool m_emailMessageHasBeenSet = false;
+  bool m_gCMMessageHasBeenSet = false;
+  bool m_sMSMessageHasBeenSet = false;
   bool m_inAppMessageHasBeenSet = false;
 };
 

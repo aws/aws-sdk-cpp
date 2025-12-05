@@ -71,9 +71,9 @@ class WorkflowExecutionCompletedEventAttributes {
   ///@}
  private:
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_resultHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

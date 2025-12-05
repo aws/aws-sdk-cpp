@@ -225,36 +225,36 @@ class ElasticsearchClusterConfig {
   ///@}
  private:
   ESPartitionInstanceType m_instanceType{ESPartitionInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   bool m_dedicatedMasterEnabled{false};
-  bool m_dedicatedMasterEnabledHasBeenSet = false;
 
   bool m_zoneAwarenessEnabled{false};
-  bool m_zoneAwarenessEnabledHasBeenSet = false;
 
   ZoneAwarenessConfig m_zoneAwarenessConfig;
-  bool m_zoneAwarenessConfigHasBeenSet = false;
 
   ESPartitionInstanceType m_dedicatedMasterType{ESPartitionInstanceType::NOT_SET};
-  bool m_dedicatedMasterTypeHasBeenSet = false;
 
   int m_dedicatedMasterCount{0};
-  bool m_dedicatedMasterCountHasBeenSet = false;
 
   bool m_warmEnabled{false};
-  bool m_warmEnabledHasBeenSet = false;
 
   ESWarmPartitionInstanceType m_warmType{ESWarmPartitionInstanceType::NOT_SET};
-  bool m_warmTypeHasBeenSet = false;
 
   int m_warmCount{0};
-  bool m_warmCountHasBeenSet = false;
 
   ColdStorageOptions m_coldStorageOptions;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_dedicatedMasterEnabledHasBeenSet = false;
+  bool m_zoneAwarenessEnabledHasBeenSet = false;
+  bool m_zoneAwarenessConfigHasBeenSet = false;
+  bool m_dedicatedMasterTypeHasBeenSet = false;
+  bool m_dedicatedMasterCountHasBeenSet = false;
+  bool m_warmEnabledHasBeenSet = false;
+  bool m_warmTypeHasBeenSet = false;
+  bool m_warmCountHasBeenSet = false;
   bool m_coldStorageOptionsHasBeenSet = false;
 };
 

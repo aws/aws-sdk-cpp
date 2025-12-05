@@ -237,39 +237,39 @@ class StartVectorEnrichmentJobResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   VectorEnrichmentJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   VectorEnrichmentJobConfig m_jobConfig;
-  bool m_jobConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   VectorEnrichmentJobStatus m_status{VectorEnrichmentJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VectorEnrichmentJobType m_type{VectorEnrichmentJobType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_jobConfigHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

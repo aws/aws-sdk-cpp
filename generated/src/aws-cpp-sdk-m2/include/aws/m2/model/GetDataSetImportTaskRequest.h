@@ -66,9 +66,9 @@ class GetDataSetImportTaskRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

@@ -230,36 +230,36 @@ class ApplicationInfo {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
   Aws::String m_opsItemSNSTopicArn;
-  bool m_opsItemSNSTopicArnHasBeenSet = false;
 
   Aws::String m_sNSNotificationArn;
-  bool m_sNSNotificationArnHasBeenSet = false;
 
   bool m_opsCenterEnabled{false};
-  bool m_opsCenterEnabledHasBeenSet = false;
 
   bool m_cWEMonitorEnabled{false};
-  bool m_cWEMonitorEnabledHasBeenSet = false;
 
   Aws::String m_remarks;
-  bool m_remarksHasBeenSet = false;
 
   bool m_autoConfigEnabled{false};
-  bool m_autoConfigEnabledHasBeenSet = false;
 
   DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
-  bool m_discoveryTypeHasBeenSet = false;
 
   bool m_attachMissingPermission{false};
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_opsItemSNSTopicArnHasBeenSet = false;
+  bool m_sNSNotificationArnHasBeenSet = false;
+  bool m_opsCenterEnabledHasBeenSet = false;
+  bool m_cWEMonitorEnabledHasBeenSet = false;
+  bool m_remarksHasBeenSet = false;
+  bool m_autoConfigEnabledHasBeenSet = false;
+  bool m_discoveryTypeHasBeenSet = false;
   bool m_attachMissingPermissionHasBeenSet = false;
 };
 

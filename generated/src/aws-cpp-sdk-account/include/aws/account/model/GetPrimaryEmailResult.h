@@ -60,9 +60,9 @@ class GetPrimaryEmailResult {
   ///@}
  private:
   Aws::String m_primaryEmail;
-  bool m_primaryEmailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_primaryEmailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

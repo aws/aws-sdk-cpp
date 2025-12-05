@@ -92,12 +92,12 @@ class DeploymentPolicies {
   ///@}
  private:
   DeploymentFailureHandlingPolicy m_failureHandlingPolicy{DeploymentFailureHandlingPolicy::NOT_SET};
-  bool m_failureHandlingPolicyHasBeenSet = false;
 
   DeploymentComponentUpdatePolicy m_componentUpdatePolicy;
-  bool m_componentUpdatePolicyHasBeenSet = false;
 
   DeploymentConfigurationValidationPolicy m_configurationValidationPolicy;
+  bool m_failureHandlingPolicyHasBeenSet = false;
+  bool m_componentUpdatePolicyHasBeenSet = false;
   bool m_configurationValidationPolicyHasBeenSet = false;
 };
 

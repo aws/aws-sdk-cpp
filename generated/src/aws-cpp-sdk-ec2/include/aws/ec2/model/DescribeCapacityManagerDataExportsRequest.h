@@ -140,18 +140,18 @@ class DescribeCapacityManagerDataExportsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_capacityManagerDataExportIds;
-  bool m_capacityManagerDataExportIdsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_capacityManagerDataExportIdsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

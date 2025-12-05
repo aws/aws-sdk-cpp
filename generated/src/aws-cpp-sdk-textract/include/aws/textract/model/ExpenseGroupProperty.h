@@ -77,9 +77,9 @@ class ExpenseGroupProperty {
   ///@}
  private:
   Aws::Vector<Aws::String> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_typesHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

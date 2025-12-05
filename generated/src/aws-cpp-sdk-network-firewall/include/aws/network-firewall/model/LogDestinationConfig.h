@@ -122,12 +122,12 @@ class LogDestinationConfig {
   ///@}
  private:
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
-  bool m_logDestinationTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_logDestination;
+  bool m_logTypeHasBeenSet = false;
+  bool m_logDestinationTypeHasBeenSet = false;
   bool m_logDestinationHasBeenSet = false;
 };
 

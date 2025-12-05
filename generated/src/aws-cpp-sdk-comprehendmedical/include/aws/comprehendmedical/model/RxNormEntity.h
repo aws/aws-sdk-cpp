@@ -239,33 +239,33 @@ class RxNormEntity {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   RxNormEntityCategory m_category{RxNormEntityCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   RxNormEntityType m_type{RxNormEntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   Aws::Vector<RxNormAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<RxNormTrait> m_traits;
-  bool m_traitsHasBeenSet = false;
 
   Aws::Vector<RxNormConcept> m_rxNormConcepts;
+  bool m_idHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_traitsHasBeenSet = false;
   bool m_rxNormConceptsHasBeenSet = false;
 };
 

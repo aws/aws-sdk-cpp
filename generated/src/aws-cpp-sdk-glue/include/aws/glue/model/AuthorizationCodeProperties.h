@@ -75,9 +75,9 @@ class AuthorizationCodeProperties {
   ///@}
  private:
   Aws::String m_authorizationCode;
-  bool m_authorizationCodeHasBeenSet = false;
 
   Aws::String m_redirectUri;
+  bool m_authorizationCodeHasBeenSet = false;
   bool m_redirectUriHasBeenSet = false;
 };
 

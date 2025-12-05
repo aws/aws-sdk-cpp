@@ -91,12 +91,12 @@ class DeleteTagsRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tagKeys;
-  bool m_tagKeysHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TaggableResourceType m_resourceType{TaggableResourceType::NOT_SET};
+  bool m_tagKeysHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

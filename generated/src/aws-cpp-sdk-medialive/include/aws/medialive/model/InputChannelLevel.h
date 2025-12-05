@@ -62,9 +62,9 @@ class InputChannelLevel {
   ///@}
  private:
   int m_gain{0};
-  bool m_gainHasBeenSet = false;
 
   int m_inputChannel{0};
+  bool m_gainHasBeenSet = false;
   bool m_inputChannelHasBeenSet = false;
 };
 

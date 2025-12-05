@@ -68,9 +68,9 @@ class AwsS3BucketLoggingConfiguration {
   ///@}
  private:
   Aws::String m_destinationBucketName;
-  bool m_destinationBucketNameHasBeenSet = false;
 
   Aws::String m_logFilePrefix;
+  bool m_destinationBucketNameHasBeenSet = false;
   bool m_logFilePrefixHasBeenSet = false;
 };
 

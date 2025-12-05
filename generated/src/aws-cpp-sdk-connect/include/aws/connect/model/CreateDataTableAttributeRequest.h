@@ -168,24 +168,24 @@ class CreateDataTableAttributeRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_dataTableId;
-  bool m_dataTableIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataTableAttributeValueType m_valueType{DataTableAttributeValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_primary{false};
-  bool m_primaryHasBeenSet = false;
 
   Validation m_validation;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_dataTableIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_primaryHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

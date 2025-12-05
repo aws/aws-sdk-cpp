@@ -83,12 +83,12 @@ class AttachVolumeResult {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   Aws::String m_targetARN;
-  bool m_targetARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_targetARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

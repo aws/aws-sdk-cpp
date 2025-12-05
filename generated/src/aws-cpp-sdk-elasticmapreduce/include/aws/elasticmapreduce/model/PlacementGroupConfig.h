@@ -72,9 +72,9 @@ class PlacementGroupConfig {
   ///@}
  private:
   InstanceRoleType m_instanceRole{InstanceRoleType::NOT_SET};
-  bool m_instanceRoleHasBeenSet = false;
 
   PlacementGroupStrategy m_placementStrategy{PlacementGroupStrategy::NOT_SET};
+  bool m_instanceRoleHasBeenSet = false;
   bool m_placementStrategyHasBeenSet = false;
 };
 

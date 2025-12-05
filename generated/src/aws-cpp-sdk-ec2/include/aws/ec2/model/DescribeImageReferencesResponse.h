@@ -86,12 +86,12 @@ class DescribeImageReferencesResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ImageReference> m_imageReferences;
-  bool m_imageReferencesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_imageReferencesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

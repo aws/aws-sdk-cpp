@@ -98,12 +98,12 @@ class RequestEnvironmentInfoRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   EnvironmentInfoType m_infoType{EnvironmentInfoType::NOT_SET};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
   bool m_infoTypeHasBeenSet = false;
 };
 

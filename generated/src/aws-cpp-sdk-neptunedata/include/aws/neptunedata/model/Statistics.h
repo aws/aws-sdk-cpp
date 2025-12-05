@@ -150,21 +150,21 @@ class Statistics {
   ///@}
  private:
   bool m_autoCompute{false};
-  bool m_autoComputeHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   Aws::String m_statisticsId;
-  bool m_statisticsIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   Aws::String m_note;
-  bool m_noteHasBeenSet = false;
 
   StatisticsSummary m_signatureInfo;
+  bool m_autoComputeHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_statisticsIdHasBeenSet = false;
+  bool m_dateHasBeenSet = false;
+  bool m_noteHasBeenSet = false;
   bool m_signatureInfoHasBeenSet = false;
 };
 

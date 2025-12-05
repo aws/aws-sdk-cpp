@@ -83,12 +83,12 @@ class InternalServerException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_amznErrorType;
-  bool m_amznErrorTypeHasBeenSet = false;
 
   int m_retryAfterSeconds{0};
+  bool m_messageHasBeenSet = false;
+  bool m_amznErrorTypeHasBeenSet = false;
   bool m_retryAfterSecondsHasBeenSet = false;
 };
 

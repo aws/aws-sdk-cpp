@@ -172,24 +172,24 @@ class UserIdentity {
   ///@}
  private:
   AssumedRole m_assumedRole;
-  bool m_assumedRoleHasBeenSet = false;
 
   AwsAccount m_awsAccount;
-  bool m_awsAccountHasBeenSet = false;
 
   AwsService m_awsService;
-  bool m_awsServiceHasBeenSet = false;
 
   FederatedUser m_federatedUser;
-  bool m_federatedUserHasBeenSet = false;
 
   IamUser m_iamUser;
-  bool m_iamUserHasBeenSet = false;
 
   UserIdentityRoot m_root;
-  bool m_rootHasBeenSet = false;
 
   UserIdentityType m_type{UserIdentityType::NOT_SET};
+  bool m_assumedRoleHasBeenSet = false;
+  bool m_awsAccountHasBeenSet = false;
+  bool m_awsServiceHasBeenSet = false;
+  bool m_federatedUserHasBeenSet = false;
+  bool m_iamUserHasBeenSet = false;
+  bool m_rootHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DetectorAdditionalConfigurationResult {
   ///@}
  private:
   FeatureAdditionalConfiguration m_name{FeatureAdditionalConfiguration::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

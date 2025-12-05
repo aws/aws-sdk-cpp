@@ -296,48 +296,48 @@ class GetSigningProfileResult {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileVersion;
-  bool m_profileVersionHasBeenSet = false;
 
   Aws::String m_profileVersionArn;
-  bool m_profileVersionArnHasBeenSet = false;
 
   SigningProfileRevocationRecord m_revocationRecord;
-  bool m_revocationRecordHasBeenSet = false;
 
   SigningMaterial m_signingMaterial;
-  bool m_signingMaterialHasBeenSet = false;
 
   Aws::String m_platformId;
-  bool m_platformIdHasBeenSet = false;
 
   Aws::String m_platformDisplayName;
-  bool m_platformDisplayNameHasBeenSet = false;
 
   SignatureValidityPeriod m_signatureValidityPeriod;
-  bool m_signatureValidityPeriodHasBeenSet = false;
 
   SigningPlatformOverrides m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_signingParameters;
-  bool m_signingParametersHasBeenSet = false;
 
   SigningProfileStatus m_status{SigningProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileVersionHasBeenSet = false;
+  bool m_profileVersionArnHasBeenSet = false;
+  bool m_revocationRecordHasBeenSet = false;
+  bool m_signingMaterialHasBeenSet = false;
+  bool m_platformIdHasBeenSet = false;
+  bool m_platformDisplayNameHasBeenSet = false;
+  bool m_signatureValidityPeriodHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
+  bool m_signingParametersHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

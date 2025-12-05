@@ -126,18 +126,18 @@ class GetMapTileRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   Aws::String m_z;
-  bool m_zHasBeenSet = false;
 
   Aws::String m_x;
-  bool m_xHasBeenSet = false;
 
   Aws::String m_y;
-  bool m_yHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_mapNameHasBeenSet = false;
+  bool m_zHasBeenSet = false;
+  bool m_xHasBeenSet = false;
+  bool m_yHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

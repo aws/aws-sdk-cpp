@@ -61,9 +61,9 @@ class DescribeCustomRoutingListenerResult {
   ///@}
  private:
   CustomRoutingListener m_listener;
-  bool m_listenerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_listenerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

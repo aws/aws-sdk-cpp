@@ -107,15 +107,15 @@ class DocumentMetadataConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DocumentAttributeValueType m_type{DocumentAttributeValueType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Relevance m_relevance;
-  bool m_relevanceHasBeenSet = false;
 
   Search m_search;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_relevanceHasBeenSet = false;
   bool m_searchHasBeenSet = false;
 };
 

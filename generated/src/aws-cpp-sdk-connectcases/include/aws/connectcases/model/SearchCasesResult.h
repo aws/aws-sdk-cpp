@@ -87,12 +87,12 @@ class SearchCasesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SearchCasesResponseItem> m_cases;
-  bool m_casesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_casesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

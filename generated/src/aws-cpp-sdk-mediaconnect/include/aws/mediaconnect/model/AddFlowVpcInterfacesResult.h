@@ -84,12 +84,12 @@ class AddFlowVpcInterfacesResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::Vector<VpcInterface> m_vpcInterfaces;
-  bool m_vpcInterfacesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_vpcInterfacesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

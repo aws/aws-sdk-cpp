@@ -89,9 +89,9 @@ class NotificationFilterConfig {
   ///@}
  private:
   Aws::Vector<InsightSeverity> m_severities;
-  bool m_severitiesHasBeenSet = false;
 
   Aws::Vector<NotificationMessageType> m_messageTypes;
+  bool m_severitiesHasBeenSet = false;
   bool m_messageTypesHasBeenSet = false;
 };
 

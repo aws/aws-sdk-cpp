@@ -106,12 +106,12 @@ class AwsBackupBackupPlanBackupPlanDetails {
   ///@}
  private:
   Aws::String m_backupPlanName;
-  bool m_backupPlanNameHasBeenSet = false;
 
   Aws::Vector<AwsBackupBackupPlanAdvancedBackupSettingsDetails> m_advancedBackupSettings;
-  bool m_advancedBackupSettingsHasBeenSet = false;
 
   Aws::Vector<AwsBackupBackupPlanRuleDetails> m_backupPlanRule;
+  bool m_backupPlanNameHasBeenSet = false;
+  bool m_advancedBackupSettingsHasBeenSet = false;
   bool m_backupPlanRuleHasBeenSet = false;
 };
 

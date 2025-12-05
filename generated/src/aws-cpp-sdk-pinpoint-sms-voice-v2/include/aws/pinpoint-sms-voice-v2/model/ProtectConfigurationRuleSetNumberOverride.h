@@ -127,18 +127,18 @@ class ProtectConfigurationRuleSetNumberOverride {
   ///@}
  private:
   Aws::String m_destinationPhoneNumber;
-  bool m_destinationPhoneNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   ProtectConfigurationRuleOverrideAction m_action{ProtectConfigurationRuleOverrideAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTimestamp{};
+  bool m_destinationPhoneNumberHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
   bool m_expirationTimestampHasBeenSet = false;
 };
 

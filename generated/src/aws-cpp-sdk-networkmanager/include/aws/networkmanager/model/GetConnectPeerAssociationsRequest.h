@@ -111,15 +111,15 @@ class GetConnectPeerAssociationsRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectPeerIds;
-  bool m_connectPeerIdsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_connectPeerIdsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

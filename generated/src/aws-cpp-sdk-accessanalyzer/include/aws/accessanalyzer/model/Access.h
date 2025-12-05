@@ -86,9 +86,9 @@ class Access {
   ///@}
  private:
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
+  bool m_actionsHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

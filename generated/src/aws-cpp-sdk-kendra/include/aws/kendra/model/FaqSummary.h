@@ -163,24 +163,24 @@ class FaqSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FaqStatus m_status{FaqStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   FaqFileFormat m_fileFormat{FaqFileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   Aws::String m_languageCode;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

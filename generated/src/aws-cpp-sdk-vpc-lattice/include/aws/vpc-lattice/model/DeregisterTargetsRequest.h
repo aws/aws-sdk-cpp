@@ -73,9 +73,9 @@ class DeregisterTargetsRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_targetGroupIdentifier;
-  bool m_targetGroupIdentifierHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
+  bool m_targetGroupIdentifierHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
 };
 

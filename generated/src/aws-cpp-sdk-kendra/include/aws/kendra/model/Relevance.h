@@ -150,18 +150,18 @@ class Relevance {
   ///@}
  private:
   bool m_freshness{false};
-  bool m_freshnessHasBeenSet = false;
 
   int m_importance{0};
-  bool m_importanceHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   Order m_rankOrder{Order::NOT_SET};
-  bool m_rankOrderHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_valueImportanceMap;
+  bool m_freshnessHasBeenSet = false;
+  bool m_importanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_rankOrderHasBeenSet = false;
   bool m_valueImportanceMapHasBeenSet = false;
 };
 

@@ -99,15 +99,15 @@ class UpdateDashboardLinksResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_linkEntities;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_dashboardArnHasBeenSet = false;
   bool m_linkEntitiesHasBeenSet = false;
 };
 

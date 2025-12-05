@@ -84,12 +84,12 @@ class UpdateEksAnywhereSubscriptionRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   bool m_autoRenew{false};
-  bool m_autoRenewHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_idHasBeenSet = false;
+  bool m_autoRenewHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

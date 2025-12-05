@@ -120,18 +120,18 @@ class GetCurrentMetricDataResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CurrentMetricResult> m_metricResults;
-  bool m_metricResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataSnapshotTime{};
-  bool m_dataSnapshotTimeHasBeenSet = false;
 
   long long m_approximateTotalCount{0};
-  bool m_approximateTotalCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_metricResultsHasBeenSet = false;
+  bool m_dataSnapshotTimeHasBeenSet = false;
+  bool m_approximateTotalCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

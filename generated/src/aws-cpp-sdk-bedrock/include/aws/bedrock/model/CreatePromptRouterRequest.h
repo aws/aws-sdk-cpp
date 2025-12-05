@@ -179,24 +179,24 @@ class CreatePromptRouterRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_promptRouterName;
-  bool m_promptRouterNameHasBeenSet = false;
 
   Aws::Vector<PromptRouterTargetModel> m_models;
-  bool m_modelsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RoutingCriteria m_routingCriteria;
-  bool m_routingCriteriaHasBeenSet = false;
 
   PromptRouterTargetModel m_fallbackModel;
-  bool m_fallbackModelHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_promptRouterNameHasBeenSet = false;
+  bool m_modelsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingCriteriaHasBeenSet = false;
+  bool m_fallbackModelHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

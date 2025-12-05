@@ -299,48 +299,48 @@ class Answer {
   ///@}
  private:
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_questionTitle;
-  bool m_questionTitleHasBeenSet = false;
 
   Aws::String m_questionDescription;
-  bool m_questionDescriptionHasBeenSet = false;
 
   Aws::String m_improvementPlanUrl;
-  bool m_improvementPlanUrlHasBeenSet = false;
 
   Aws::String m_helpfulResourceUrl;
-  bool m_helpfulResourceUrlHasBeenSet = false;
 
   Aws::String m_helpfulResourceDisplayText;
-  bool m_helpfulResourceDisplayTextHasBeenSet = false;
 
   Aws::Vector<Choice> m_choices;
-  bool m_choicesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedChoices;
-  bool m_selectedChoicesHasBeenSet = false;
 
   Aws::Vector<ChoiceAnswer> m_choiceAnswers;
-  bool m_choiceAnswersHasBeenSet = false;
 
   bool m_isApplicable{false};
-  bool m_isApplicableHasBeenSet = false;
 
   Risk m_risk{Risk::NOT_SET};
-  bool m_riskHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   AnswerReason m_reason{AnswerReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   JiraConfiguration m_jiraConfiguration;
+  bool m_questionIdHasBeenSet = false;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_questionTitleHasBeenSet = false;
+  bool m_questionDescriptionHasBeenSet = false;
+  bool m_improvementPlanUrlHasBeenSet = false;
+  bool m_helpfulResourceUrlHasBeenSet = false;
+  bool m_helpfulResourceDisplayTextHasBeenSet = false;
+  bool m_choicesHasBeenSet = false;
+  bool m_selectedChoicesHasBeenSet = false;
+  bool m_choiceAnswersHasBeenSet = false;
+  bool m_isApplicableHasBeenSet = false;
+  bool m_riskHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_jiraConfigurationHasBeenSet = false;
 };
 

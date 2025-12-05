@@ -260,39 +260,39 @@ class CreateIntegrationResult {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   ZeroETLIntegrationStatus m_status{ZeroETLIntegrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<IntegrationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_integrationNameHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListGroundStationsRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_satelliteId;
-  bool m_satelliteIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_satelliteIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

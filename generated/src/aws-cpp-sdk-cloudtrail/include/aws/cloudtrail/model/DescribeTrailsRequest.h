@@ -92,9 +92,9 @@ class DescribeTrailsRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_trailNameList;
-  bool m_trailNameListHasBeenSet = false;
 
   bool m_includeShadowTrails{false};
+  bool m_trailNameListHasBeenSet = false;
   bool m_includeShadowTrailsHasBeenSet = false;
 };
 

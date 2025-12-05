@@ -362,51 +362,51 @@ class DescribeEndpointResult {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   Aws::Vector<ProductionVariantSummary> m_productionVariants;
-  bool m_productionVariantsHasBeenSet = false;
 
   DataCaptureConfigSummary m_dataCaptureConfig;
-  bool m_dataCaptureConfigHasBeenSet = false;
 
   EndpointStatus m_endpointStatus{EndpointStatus::NOT_SET};
-  bool m_endpointStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   DeploymentConfig m_lastDeploymentConfig;
-  bool m_lastDeploymentConfigHasBeenSet = false;
 
   AsyncInferenceConfig m_asyncInferenceConfig;
-  bool m_asyncInferenceConfigHasBeenSet = false;
 
   PendingDeploymentSummary m_pendingDeploymentSummary;
-  bool m_pendingDeploymentSummaryHasBeenSet = false;
 
   ExplainerConfig m_explainerConfig;
-  bool m_explainerConfigHasBeenSet = false;
 
   Aws::Vector<ProductionVariantSummary> m_shadowProductionVariants;
-  bool m_shadowProductionVariantsHasBeenSet = false;
 
   MetricsConfig m_metricsConfig;
-  bool m_metricsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_productionVariantsHasBeenSet = false;
+  bool m_dataCaptureConfigHasBeenSet = false;
+  bool m_endpointStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastDeploymentConfigHasBeenSet = false;
+  bool m_asyncInferenceConfigHasBeenSet = false;
+  bool m_pendingDeploymentSummaryHasBeenSet = false;
+  bool m_explainerConfigHasBeenSet = false;
+  bool m_shadowProductionVariantsHasBeenSet = false;
+  bool m_metricsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

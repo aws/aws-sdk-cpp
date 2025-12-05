@@ -65,9 +65,9 @@ class UpdateVirtualServiceResult {
   ///@}
  private:
   VirtualServiceData m_virtualService;
-  bool m_virtualServiceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualServiceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

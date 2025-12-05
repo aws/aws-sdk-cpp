@@ -194,30 +194,30 @@ class RedshiftPropertiesOutput {
   ///@}
  private:
   RedshiftCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   bool m_isProvisionedSecret{false};
-  bool m_isProvisionedSecretHasBeenSet = false;
 
   Aws::String m_jdbcIamUrl;
-  bool m_jdbcIamUrlHasBeenSet = false;
 
   Aws::String m_jdbcUrl;
-  bool m_jdbcUrlHasBeenSet = false;
 
   RedshiftLineageSyncConfigurationOutput m_lineageSync;
-  bool m_lineageSyncHasBeenSet = false;
 
   Aws::String m_redshiftTempDir;
-  bool m_redshiftTempDirHasBeenSet = false;
 
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RedshiftStorageProperties m_storage;
+  bool m_credentialsHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_isProvisionedSecretHasBeenSet = false;
+  bool m_jdbcIamUrlHasBeenSet = false;
+  bool m_jdbcUrlHasBeenSet = false;
+  bool m_lineageSyncHasBeenSet = false;
+  bool m_redshiftTempDirHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_storageHasBeenSet = false;
 };
 

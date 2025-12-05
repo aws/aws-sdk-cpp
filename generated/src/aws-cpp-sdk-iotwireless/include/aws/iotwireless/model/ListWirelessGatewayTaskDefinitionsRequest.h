@@ -88,12 +88,12 @@ class ListWirelessGatewayTaskDefinitionsRequest : public IoTWirelessRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   WirelessGatewayTaskDefinitionType m_taskDefinitionType{WirelessGatewayTaskDefinitionType::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_taskDefinitionTypeHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class CreateInstanceSnapshotRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_instanceSnapshotName;
-  bool m_instanceSnapshotNameHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_instanceSnapshotNameHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

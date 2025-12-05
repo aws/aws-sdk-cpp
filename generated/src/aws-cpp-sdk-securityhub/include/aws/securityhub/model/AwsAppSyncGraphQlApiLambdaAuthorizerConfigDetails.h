@@ -89,12 +89,12 @@ class AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails {
   ///@}
  private:
   int m_authorizerResultTtlInSeconds{0};
-  bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
   Aws::String m_authorizerUri;
-  bool m_authorizerUriHasBeenSet = false;
 
   Aws::String m_identityValidationExpression;
+  bool m_authorizerResultTtlInSecondsHasBeenSet = false;
+  bool m_authorizerUriHasBeenSet = false;
   bool m_identityValidationExpressionHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class TagQueueRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_queueUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

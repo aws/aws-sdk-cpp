@@ -82,9 +82,9 @@ class UntagMFADeviceRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_serialNumberHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

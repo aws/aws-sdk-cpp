@@ -89,12 +89,12 @@ class PurchaseOfferingRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_offeringArn;
-  bool m_offeringArnHasBeenSet = false;
 
   Aws::String m_reservationName;
-  bool m_reservationNameHasBeenSet = false;
 
   Aws::String m_start;
+  bool m_offeringArnHasBeenSet = false;
+  bool m_reservationNameHasBeenSet = false;
   bool m_startHasBeenSet = false;
 };
 

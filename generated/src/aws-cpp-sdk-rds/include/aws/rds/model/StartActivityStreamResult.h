@@ -143,24 +143,24 @@ class StartActivityStreamResult {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_kinesisStreamName;
-  bool m_kinesisStreamNameHasBeenSet = false;
 
   ActivityStreamStatus m_status{ActivityStreamStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ActivityStreamMode m_mode{ActivityStreamMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   bool m_engineNativeAuditFieldsIncluded{false};
-  bool m_engineNativeAuditFieldsIncludedHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_kinesisStreamNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_engineNativeAuditFieldsIncludedHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

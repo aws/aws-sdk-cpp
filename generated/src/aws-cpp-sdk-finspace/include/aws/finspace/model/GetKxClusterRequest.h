@@ -65,9 +65,9 @@ class GetKxClusterRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_clusterName;
+  bool m_environmentIdHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
 };
 

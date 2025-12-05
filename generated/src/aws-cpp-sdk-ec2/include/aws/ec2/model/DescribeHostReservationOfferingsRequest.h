@@ -158,21 +158,21 @@ class DescribeHostReservationOfferingsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Filter> m_filter;
-  bool m_filterHasBeenSet = false;
 
   int m_maxDuration{0};
-  bool m_maxDurationHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   int m_minDuration{0};
-  bool m_minDurationHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_offeringId;
+  bool m_filterHasBeenSet = false;
+  bool m_maxDurationHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_minDurationHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_offeringIdHasBeenSet = false;
 };
 

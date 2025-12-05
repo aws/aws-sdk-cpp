@@ -65,9 +65,9 @@ class DeleteImportJobRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_importJobId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_importJobIdHasBeenSet = false;
 };
 

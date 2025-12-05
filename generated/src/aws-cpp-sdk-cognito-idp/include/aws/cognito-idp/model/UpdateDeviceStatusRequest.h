@@ -92,12 +92,12 @@ class UpdateDeviceStatusRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_deviceKey;
-  bool m_deviceKeyHasBeenSet = false;
 
   DeviceRememberedStatusType m_deviceRememberedStatus{DeviceRememberedStatusType::NOT_SET};
+  bool m_accessTokenHasBeenSet = false;
+  bool m_deviceKeyHasBeenSet = false;
   bool m_deviceRememberedStatusHasBeenSet = false;
 };
 

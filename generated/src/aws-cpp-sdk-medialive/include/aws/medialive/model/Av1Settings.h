@@ -470,69 +470,69 @@ Enter a minimum bitrate if you
   ///@}
  private:
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
-  bool m_afdSignalingHasBeenSet = false;
 
   int m_bufSize{0};
-  bool m_bufSizeHasBeenSet = false;
 
   Av1ColorSpaceSettings m_colorSpaceSettings;
-  bool m_colorSpaceSettingsHasBeenSet = false;
 
   FixedAfd m_fixedAfd{FixedAfd::NOT_SET};
-  bool m_fixedAfdHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   Av1GopSizeUnits m_gopSizeUnits{Av1GopSizeUnits::NOT_SET};
-  bool m_gopSizeUnitsHasBeenSet = false;
 
   Av1Level m_level{Av1Level::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   Av1LookAheadRateControl m_lookAheadRateControl{Av1LookAheadRateControl::NOT_SET};
-  bool m_lookAheadRateControlHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_minIInterval{0};
-  bool m_minIIntervalHasBeenSet = false;
 
   int m_parDenominator{0};
-  bool m_parDenominatorHasBeenSet = false;
 
   int m_parNumerator{0};
-  bool m_parNumeratorHasBeenSet = false;
 
   int m_qvbrQualityLevel{0};
-  bool m_qvbrQualityLevelHasBeenSet = false;
 
   Av1SceneChangeDetect m_sceneChangeDetect{Av1SceneChangeDetect::NOT_SET};
-  bool m_sceneChangeDetectHasBeenSet = false;
 
   TimecodeBurninSettings m_timecodeBurninSettings;
-  bool m_timecodeBurninSettingsHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   Av1RateControlMode m_rateControlMode{Av1RateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   int m_minBitrate{0};
-  bool m_minBitrateHasBeenSet = false;
 
   Av1SpatialAq m_spatialAq{Av1SpatialAq::NOT_SET};
-  bool m_spatialAqHasBeenSet = false;
 
   Av1TemporalAq m_temporalAq{Av1TemporalAq::NOT_SET};
+  bool m_afdSignalingHasBeenSet = false;
+  bool m_bufSizeHasBeenSet = false;
+  bool m_colorSpaceSettingsHasBeenSet = false;
+  bool m_fixedAfdHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_gopSizeUnitsHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_lookAheadRateControlHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_minIIntervalHasBeenSet = false;
+  bool m_parDenominatorHasBeenSet = false;
+  bool m_parNumeratorHasBeenSet = false;
+  bool m_qvbrQualityLevelHasBeenSet = false;
+  bool m_sceneChangeDetectHasBeenSet = false;
+  bool m_timecodeBurninSettingsHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_minBitrateHasBeenSet = false;
+  bool m_spatialAqHasBeenSet = false;
   bool m_temporalAqHasBeenSet = false;
 };
 

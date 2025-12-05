@@ -68,9 +68,9 @@ class ModifyStreamingPropertiesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   StreamingProperties m_streamingProperties;
+  bool m_resourceIdHasBeenSet = false;
   bool m_streamingPropertiesHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class ListDomainNamesResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_domainNames;
-  bool m_domainNamesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_domainNamesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

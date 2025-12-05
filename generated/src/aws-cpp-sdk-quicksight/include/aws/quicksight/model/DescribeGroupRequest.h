@@ -85,12 +85,12 @@ class DescribeGroupRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_groupNameHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

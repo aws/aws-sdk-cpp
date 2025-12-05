@@ -107,15 +107,15 @@ class InferRxNormResult {
   ///@}
  private:
   Aws::Vector<RxNormEntity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
+  bool m_paginationTokenHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

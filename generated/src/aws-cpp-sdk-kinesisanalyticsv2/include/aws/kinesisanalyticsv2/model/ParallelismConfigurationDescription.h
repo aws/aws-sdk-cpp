@@ -134,18 +134,18 @@ class ParallelismConfigurationDescription {
   ///@}
  private:
   ConfigurationType m_configurationType{ConfigurationType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   int m_parallelism{0};
-  bool m_parallelismHasBeenSet = false;
 
   int m_parallelismPerKPU{0};
-  bool m_parallelismPerKPUHasBeenSet = false;
 
   int m_currentParallelism{0};
-  bool m_currentParallelismHasBeenSet = false;
 
   bool m_autoScalingEnabled{false};
+  bool m_configurationTypeHasBeenSet = false;
+  bool m_parallelismHasBeenSet = false;
+  bool m_parallelismPerKPUHasBeenSet = false;
+  bool m_currentParallelismHasBeenSet = false;
   bool m_autoScalingEnabledHasBeenSet = false;
 };
 

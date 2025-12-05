@@ -106,15 +106,15 @@ class SessionLoggerSummary {
   ///@}
  private:
   Aws::String m_sessionLoggerArn;
-  bool m_sessionLoggerArnHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_sessionLoggerArnHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

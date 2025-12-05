@@ -68,9 +68,9 @@ class Language {
   ///@}
  private:
   Aws::String m_languageName;
-  bool m_languageNameHasBeenSet = false;
 
   Aws::String m_languageCode;
+  bool m_languageNameHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

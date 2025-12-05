@@ -88,12 +88,12 @@ class Shard {
   ///@}
  private:
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   SequenceNumberRange m_sequenceNumberRange;
-  bool m_sequenceNumberRangeHasBeenSet = false;
 
   Aws::String m_parentShardId;
+  bool m_shardIdHasBeenSet = false;
+  bool m_sequenceNumberRangeHasBeenSet = false;
   bool m_parentShardIdHasBeenSet = false;
 };
 

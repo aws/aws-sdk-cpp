@@ -185,27 +185,27 @@ class PollForDecisionTaskResult {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   long long m_startedEventId{0};
-  bool m_startedEventIdHasBeenSet = false;
 
   WorkflowExecution m_workflowExecution;
-  bool m_workflowExecutionHasBeenSet = false;
 
   WorkflowType m_workflowType;
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::Vector<HistoryEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   long long m_previousStartedEventId{0};
-  bool m_previousStartedEventIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskTokenHasBeenSet = false;
+  bool m_startedEventIdHasBeenSet = false;
+  bool m_workflowExecutionHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_previousStartedEventIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ApplicationCodeConfigurationDescription {
   ///@}
  private:
   CodeContentType m_codeContentType{CodeContentType::NOT_SET};
-  bool m_codeContentTypeHasBeenSet = false;
 
   CodeContentDescription m_codeContentDescription;
+  bool m_codeContentTypeHasBeenSet = false;
   bool m_codeContentDescriptionHasBeenSet = false;
 };
 

@@ -330,48 +330,48 @@ class StartMLDataProcessingJobRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_previousDataProcessingJobId;
-  bool m_previousDataProcessingJobIdHasBeenSet = false;
 
   Aws::String m_inputDataS3Location;
-  bool m_inputDataS3LocationHasBeenSet = false;
 
   Aws::String m_processedDataS3Location;
-  bool m_processedDataS3LocationHasBeenSet = false;
 
   Aws::String m_sagemakerIamRoleArn;
-  bool m_sagemakerIamRoleArnHasBeenSet = false;
 
   Aws::String m_neptuneIamRoleArn;
-  bool m_neptuneIamRoleArnHasBeenSet = false;
 
   Aws::String m_processingInstanceType;
-  bool m_processingInstanceTypeHasBeenSet = false;
 
   int m_processingInstanceVolumeSizeInGB{0};
-  bool m_processingInstanceVolumeSizeInGBHasBeenSet = false;
 
   int m_processingTimeOutInSeconds{0};
-  bool m_processingTimeOutInSecondsHasBeenSet = false;
 
   Aws::String m_modelType;
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_configFileName;
-  bool m_configFileNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_volumeEncryptionKMSKey;
-  bool m_volumeEncryptionKMSKeyHasBeenSet = false;
 
   Aws::String m_s3OutputEncryptionKMSKey;
+  bool m_idHasBeenSet = false;
+  bool m_previousDataProcessingJobIdHasBeenSet = false;
+  bool m_inputDataS3LocationHasBeenSet = false;
+  bool m_processedDataS3LocationHasBeenSet = false;
+  bool m_sagemakerIamRoleArnHasBeenSet = false;
+  bool m_neptuneIamRoleArnHasBeenSet = false;
+  bool m_processingInstanceTypeHasBeenSet = false;
+  bool m_processingInstanceVolumeSizeInGBHasBeenSet = false;
+  bool m_processingTimeOutInSecondsHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_configFileNameHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_volumeEncryptionKMSKeyHasBeenSet = false;
   bool m_s3OutputEncryptionKMSKeyHasBeenSet = false;
 };
 

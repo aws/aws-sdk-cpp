@@ -91,12 +91,12 @@ class ListAccountLinksRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::Vector<AccountLinkStatusEnum> m_linkStatusFilter;
-  bool m_linkStatusFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_linkStatusFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class GetQuantumTaskRequest : public BraketRequest {
   ///@}
  private:
   Aws::String m_quantumTaskArn;
-  bool m_quantumTaskArnHasBeenSet = false;
 
   Aws::Vector<QuantumTaskAdditionalAttributeName> m_additionalAttributeNames;
+  bool m_quantumTaskArnHasBeenSet = false;
   bool m_additionalAttributeNamesHasBeenSet = false;
 };
 

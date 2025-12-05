@@ -147,18 +147,18 @@ class DescribeJobDefinitionsRequest : public BatchRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_jobDefinitions;
-  bool m_jobDefinitionsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_jobDefinitionName;
-  bool m_jobDefinitionNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_jobDefinitionsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_jobDefinitionNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class SceneError {
   ///@}
  private:
   SceneErrorCode m_code{SceneErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

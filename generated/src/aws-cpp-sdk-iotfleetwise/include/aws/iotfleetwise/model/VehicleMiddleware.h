@@ -69,9 +69,9 @@ class VehicleMiddleware {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   VehicleMiddlewareProtocol m_protocolName{VehicleMiddlewareProtocol::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_protocolNameHasBeenSet = false;
 };
 

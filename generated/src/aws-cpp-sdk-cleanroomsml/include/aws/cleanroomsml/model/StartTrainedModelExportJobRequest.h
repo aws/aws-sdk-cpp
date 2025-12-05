@@ -142,21 +142,21 @@ class StartTrainedModelExportJobRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_trainedModelVersionIdentifier;
-  bool m_trainedModelVersionIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   TrainedModelExportOutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_nameHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_trainedModelVersionIdentifierHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

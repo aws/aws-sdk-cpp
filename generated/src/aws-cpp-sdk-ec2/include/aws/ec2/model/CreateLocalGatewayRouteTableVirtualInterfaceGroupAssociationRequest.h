@@ -119,15 +119,15 @@ class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationRequest : publ
   ///@}
  private:
   Aws::String m_localGatewayRouteTableId;
-  bool m_localGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_localGatewayVirtualInterfaceGroupId;
-  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayRouteTableIdHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class CreateMetadataTransferJobRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_metadataTransferJobId;
-  bool m_metadataTransferJobIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<SourceConfiguration> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   DestinationConfiguration m_destination;
+  bool m_metadataTransferJobIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

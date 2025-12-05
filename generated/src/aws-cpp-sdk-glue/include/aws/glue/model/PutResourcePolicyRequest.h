@@ -131,18 +131,18 @@ class PutResourcePolicyRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_policyInJson;
-  bool m_policyInJsonHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_policyHashCondition;
-  bool m_policyHashConditionHasBeenSet = false;
 
   ExistCondition m_policyExistsCondition{ExistCondition::NOT_SET};
-  bool m_policyExistsConditionHasBeenSet = false;
 
   EnableHybridValues m_enableHybrid{EnableHybridValues::NOT_SET};
+  bool m_policyInJsonHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_policyHashConditionHasBeenSet = false;
+  bool m_policyExistsConditionHasBeenSet = false;
   bool m_enableHybridHasBeenSet = false;
 };
 

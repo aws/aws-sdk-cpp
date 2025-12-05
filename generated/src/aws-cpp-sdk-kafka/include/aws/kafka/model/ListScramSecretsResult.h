@@ -88,12 +88,12 @@ class ListScramSecretsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_secretArnList;
-  bool m_secretArnListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_secretArnListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

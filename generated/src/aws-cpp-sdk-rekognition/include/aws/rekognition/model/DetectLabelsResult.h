@@ -130,18 +130,18 @@ class DetectLabelsResult {
   ///@}
  private:
   Aws::Vector<Label> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
-  bool m_orientationCorrectionHasBeenSet = false;
 
   Aws::String m_labelModelVersion;
-  bool m_labelModelVersionHasBeenSet = false;
 
   DetectLabelsImageProperties m_imageProperties;
-  bool m_imagePropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelsHasBeenSet = false;
+  bool m_orientationCorrectionHasBeenSet = false;
+  bool m_labelModelVersionHasBeenSet = false;
+  bool m_imagePropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class ValidationException {
   ///@}
  private:
   ValidationExceptionErrorCode m_errorCode{ValidationExceptionErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Vector<ValidationExceptionField> m_fieldList;
-  bool m_fieldListHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_fieldListHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

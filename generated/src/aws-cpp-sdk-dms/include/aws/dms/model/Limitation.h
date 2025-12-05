@@ -156,21 +156,21 @@ class Limitation {
   ///@}
  private:
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_impact;
-  bool m_impactHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_databaseIdHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_impactHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

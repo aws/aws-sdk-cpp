@@ -429,66 +429,66 @@ class Recommendation {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsServices;
-  bool m_awsServicesHasBeenSet = false;
 
   Aws::String m_checkArn;
-  bool m_checkArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   RecommendationLifecycleStage m_lifecycleStage{RecommendationLifecycleStage::NOT_SET};
-  bool m_lifecycleStageHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RecommendationPillarSpecificAggregates m_pillarSpecificAggregates;
-  bool m_pillarSpecificAggregatesHasBeenSet = false;
 
   Aws::Vector<RecommendationPillar> m_pillars;
-  bool m_pillarsHasBeenSet = false;
 
   Aws::Utils::DateTime m_resolvedAt{};
-  bool m_resolvedAtHasBeenSet = false;
 
   RecommendationResourcesAggregates m_resourcesAggregates;
-  bool m_resourcesAggregatesHasBeenSet = false;
 
   RecommendationSource m_source{RecommendationSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   RecommendationStatus m_status{RecommendationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RecommendationType m_type{RecommendationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_updateReason;
-  bool m_updateReasonHasBeenSet = false;
 
   UpdateRecommendationLifecycleStageReasonCode m_updateReasonCode{UpdateRecommendationLifecycleStageReasonCode::NOT_SET};
-  bool m_updateReasonCodeHasBeenSet = false;
 
   Aws::String m_updatedOnBehalfOf;
-  bool m_updatedOnBehalfOfHasBeenSet = false;
 
   Aws::String m_updatedOnBehalfOfJobTitle;
+  bool m_arnHasBeenSet = false;
+  bool m_awsServicesHasBeenSet = false;
+  bool m_checkArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_lifecycleStageHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pillarSpecificAggregatesHasBeenSet = false;
+  bool m_pillarsHasBeenSet = false;
+  bool m_resolvedAtHasBeenSet = false;
+  bool m_resourcesAggregatesHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_updateReasonHasBeenSet = false;
+  bool m_updateReasonCodeHasBeenSet = false;
+  bool m_updatedOnBehalfOfHasBeenSet = false;
   bool m_updatedOnBehalfOfJobTitleHasBeenSet = false;
 };
 

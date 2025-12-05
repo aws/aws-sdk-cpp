@@ -94,12 +94,12 @@ class ListQueryLoggingConfigsResult {
   ///@}
  private:
   Aws::Vector<QueryLoggingConfig> m_queryLoggingConfigs;
-  bool m_queryLoggingConfigsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryLoggingConfigsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

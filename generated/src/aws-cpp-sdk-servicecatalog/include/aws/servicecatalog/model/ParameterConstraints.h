@@ -180,24 +180,24 @@ class ParameterConstraints {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_allowedPattern;
-  bool m_allowedPatternHasBeenSet = false;
 
   Aws::String m_constraintDescription;
-  bool m_constraintDescriptionHasBeenSet = false;
 
   Aws::String m_maxLength;
-  bool m_maxLengthHasBeenSet = false;
 
   Aws::String m_minLength;
-  bool m_minLengthHasBeenSet = false;
 
   Aws::String m_maxValue;
-  bool m_maxValueHasBeenSet = false;
 
   Aws::String m_minValue;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_allowedPatternHasBeenSet = false;
+  bool m_constraintDescriptionHasBeenSet = false;
+  bool m_maxLengthHasBeenSet = false;
+  bool m_minLengthHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
   bool m_minValueHasBeenSet = false;
 };
 

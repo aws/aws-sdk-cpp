@@ -134,21 +134,21 @@ class DeleteFileSystemResult {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   FileSystemLifecycle m_lifecycle{FileSystemLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   DeleteFileSystemWindowsResponse m_windowsResponse;
-  bool m_windowsResponseHasBeenSet = false;
 
   DeleteFileSystemLustreResponse m_lustreResponse;
-  bool m_lustreResponseHasBeenSet = false;
 
   DeleteFileSystemOpenZFSResponse m_openZFSResponse;
-  bool m_openZFSResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_windowsResponseHasBeenSet = false;
+  bool m_lustreResponseHasBeenSet = false;
+  bool m_openZFSResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

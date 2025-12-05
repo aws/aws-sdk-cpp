@@ -82,12 +82,12 @@ class DiskInfo {
   ///@}
  private:
   long long m_sizeInGB{0};
-  bool m_sizeInGBHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   DiskType m_type{DiskType::NOT_SET};
+  bool m_sizeInGBHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

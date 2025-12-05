@@ -75,9 +75,9 @@ class RuleSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleAction m_action;
+  bool m_nameHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

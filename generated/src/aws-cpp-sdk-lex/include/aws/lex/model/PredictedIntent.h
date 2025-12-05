@@ -98,12 +98,12 @@ class PredictedIntent {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   IntentConfidence m_nluIntentConfidence;
-  bool m_nluIntentConfidenceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_slots;
+  bool m_intentNameHasBeenSet = false;
+  bool m_nluIntentConfidenceHasBeenSet = false;
   bool m_slotsHasBeenSet = false;
 };
 

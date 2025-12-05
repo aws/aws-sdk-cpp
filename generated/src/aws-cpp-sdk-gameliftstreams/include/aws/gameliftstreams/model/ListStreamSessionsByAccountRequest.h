@@ -110,15 +110,15 @@ class ListStreamSessionsByAccountRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ExportFilesStatus m_exportFilesStatus{ExportFilesStatus::NOT_SET};
-  bool m_exportFilesStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_statusHasBeenSet = false;
+  bool m_exportFilesStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

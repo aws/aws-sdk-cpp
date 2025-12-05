@@ -112,18 +112,18 @@ class DescribeRouterConfigurationResult {
   ///@}
  private:
   Aws::String m_customerRouterConfig;
-  bool m_customerRouterConfigHasBeenSet = false;
 
   RouterType m_router;
-  bool m_routerHasBeenSet = false;
 
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_virtualInterfaceName;
-  bool m_virtualInterfaceNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customerRouterConfigHasBeenSet = false;
+  bool m_routerHasBeenSet = false;
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_virtualInterfaceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

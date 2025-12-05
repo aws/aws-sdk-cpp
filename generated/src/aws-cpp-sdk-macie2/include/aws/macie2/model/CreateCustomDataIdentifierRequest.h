@@ -253,30 +253,30 @@ class CreateCustomDataIdentifierRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ignoreWords;
-  bool m_ignoreWordsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   int m_maximumMatchDistance{0};
-  bool m_maximumMatchDistanceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_regex;
-  bool m_regexHasBeenSet = false;
 
   Aws::Vector<SeverityLevel> m_severityLevels;
-  bool m_severityLevelsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ignoreWordsHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
+  bool m_maximumMatchDistanceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_regexHasBeenSet = false;
+  bool m_severityLevelsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

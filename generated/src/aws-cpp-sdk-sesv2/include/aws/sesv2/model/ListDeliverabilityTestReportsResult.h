@@ -95,12 +95,12 @@ class ListDeliverabilityTestReportsResult {
   ///@}
  private:
   Aws::Vector<DeliverabilityTestReport> m_deliverabilityTestReports;
-  bool m_deliverabilityTestReportsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliverabilityTestReportsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

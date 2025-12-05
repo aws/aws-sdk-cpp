@@ -143,21 +143,21 @@ class Qualification {
   ///@}
  private:
   Aws::String m_qualificationTypeId;
-  bool m_qualificationTypeIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_grantTime{};
-  bool m_grantTimeHasBeenSet = false;
 
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   Locale m_localeValue;
-  bool m_localeValueHasBeenSet = false;
 
   QualificationStatus m_status{QualificationStatus::NOT_SET};
+  bool m_qualificationTypeIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_grantTimeHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
+  bool m_localeValueHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

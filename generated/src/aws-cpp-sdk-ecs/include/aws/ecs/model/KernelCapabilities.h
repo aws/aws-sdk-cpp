@@ -127,9 +127,9 @@ class KernelCapabilities {
   ///@}
  private:
   Aws::Vector<Aws::String> m_add;
-  bool m_addHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_drop;
+  bool m_addHasBeenSet = false;
   bool m_dropHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class PatchBaselineIdentity {
   ///@}
  private:
   Aws::String m_baselineId;
-  bool m_baselineIdHasBeenSet = false;
 
   Aws::String m_baselineName;
-  bool m_baselineNameHasBeenSet = false;
 
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   Aws::String m_baselineDescription;
-  bool m_baselineDescriptionHasBeenSet = false;
 
   bool m_defaultBaseline{false};
+  bool m_baselineIdHasBeenSet = false;
+  bool m_baselineNameHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_baselineDescriptionHasBeenSet = false;
   bool m_defaultBaselineHasBeenSet = false;
 };
 

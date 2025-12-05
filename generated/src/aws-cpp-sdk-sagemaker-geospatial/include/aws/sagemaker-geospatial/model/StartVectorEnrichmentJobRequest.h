@@ -166,24 +166,24 @@ class StartVectorEnrichmentJobRequest : public SageMakerGeospatialRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   VectorEnrichmentJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   VectorEnrichmentJobConfig m_jobConfig;
-  bool m_jobConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_jobConfigHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

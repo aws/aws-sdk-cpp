@@ -72,9 +72,9 @@ class SwitchoverBlueGreenDeploymentRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_blueGreenDeploymentIdentifier;
-  bool m_blueGreenDeploymentIdentifierHasBeenSet = false;
 
   int m_switchoverTimeout{0};
+  bool m_blueGreenDeploymentIdentifierHasBeenSet = false;
   bool m_switchoverTimeoutHasBeenSet = false;
 };
 

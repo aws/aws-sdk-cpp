@@ -91,12 +91,12 @@ class DeleteArchiveRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   Aws::String m_archiveId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
   bool m_archiveIdHasBeenSet = false;
 };
 

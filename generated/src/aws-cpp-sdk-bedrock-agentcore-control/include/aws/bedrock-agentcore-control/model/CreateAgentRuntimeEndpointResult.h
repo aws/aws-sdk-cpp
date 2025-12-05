@@ -162,27 +162,27 @@ class CreateAgentRuntimeEndpointResult {
   ///@}
  private:
   Aws::String m_targetVersion;
-  bool m_targetVersionHasBeenSet = false;
 
   Aws::String m_agentRuntimeEndpointArn;
-  bool m_agentRuntimeEndpointArnHasBeenSet = false;
 
   Aws::String m_agentRuntimeArn;
-  bool m_agentRuntimeArnHasBeenSet = false;
 
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   AgentRuntimeEndpointStatus m_status{AgentRuntimeEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetVersionHasBeenSet = false;
+  bool m_agentRuntimeEndpointArnHasBeenSet = false;
+  bool m_agentRuntimeArnHasBeenSet = false;
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

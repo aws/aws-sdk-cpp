@@ -84,12 +84,12 @@ class RouteMatrixEntry {
   ///@}
  private:
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   RouteMatrixErrorCode m_error{RouteMatrixErrorCode::NOT_SET};
+  bool m_distanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

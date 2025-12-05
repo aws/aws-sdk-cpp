@@ -88,9 +88,9 @@ class SeedUrlConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_seedUrls;
-  bool m_seedUrlsHasBeenSet = false;
 
   WebCrawlerMode m_webCrawlerMode{WebCrawlerMode::NOT_SET};
+  bool m_seedUrlsHasBeenSet = false;
   bool m_webCrawlerModeHasBeenSet = false;
 };
 

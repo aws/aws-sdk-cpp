@@ -76,9 +76,9 @@ class BatchCreateCategoryRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<BatchCreateCategoryInputCategory> m_categories;
+  bool m_instanceIdHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
 };
 

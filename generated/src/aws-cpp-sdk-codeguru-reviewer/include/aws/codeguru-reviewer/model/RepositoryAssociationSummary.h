@@ -212,27 +212,27 @@ class RepositoryAssociationSummary {
   ///@}
  private:
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimeStamp{};
-  bool m_lastUpdatedTimeStampHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   RepositoryAssociationState m_state{RepositoryAssociationState::NOT_SET};
+  bool m_associationArnHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_lastUpdatedTimeStampHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class CreateRoomRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_accountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

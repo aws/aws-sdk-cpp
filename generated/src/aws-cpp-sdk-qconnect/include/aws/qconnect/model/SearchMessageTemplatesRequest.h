@@ -107,15 +107,15 @@ class SearchMessageTemplatesRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   MessageTemplateSearchExpression m_searchExpression;
-  bool m_searchExpressionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_searchExpressionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

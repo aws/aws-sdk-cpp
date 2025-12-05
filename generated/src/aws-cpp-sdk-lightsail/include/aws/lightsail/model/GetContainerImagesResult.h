@@ -68,9 +68,9 @@ class GetContainerImagesResult {
   ///@}
  private:
   Aws::Vector<ContainerImage> m_containerImages;
-  bool m_containerImagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerImagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ListDashboardsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_dashboardNamePrefix;
-  bool m_dashboardNamePrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_dashboardNamePrefixHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

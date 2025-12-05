@@ -64,9 +64,9 @@ class CreatePartnerInputResult {
   ///@}
  private:
   Input m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

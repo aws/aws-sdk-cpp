@@ -89,12 +89,12 @@ class ListVocabularyFiltersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VocabularyFilterInfo> m_vocabularyFilters;
-  bool m_vocabularyFiltersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_vocabularyFiltersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

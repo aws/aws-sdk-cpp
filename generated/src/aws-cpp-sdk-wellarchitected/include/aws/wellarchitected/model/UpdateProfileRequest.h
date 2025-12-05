@@ -91,12 +91,12 @@ class UpdateProfileRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_profileDescription;
-  bool m_profileDescriptionHasBeenSet = false;
 
   Aws::Vector<ProfileQuestionUpdate> m_profileQuestions;
+  bool m_profileArnHasBeenSet = false;
+  bool m_profileDescriptionHasBeenSet = false;
   bool m_profileQuestionsHasBeenSet = false;
 };
 

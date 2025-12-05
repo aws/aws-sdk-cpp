@@ -66,9 +66,9 @@ class MediaInsightsConfiguration {
   ///@}
  private:
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::String m_configurationArn;
+  bool m_disabledHasBeenSet = false;
   bool m_configurationArnHasBeenSet = false;
 };
 

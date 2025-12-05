@@ -116,15 +116,15 @@ class PutRumMetricsDestinationRequest : public CloudWatchRUMRequest {
   ///@}
  private:
   Aws::String m_appMonitorName;
-  bool m_appMonitorNameHasBeenSet = false;
 
   MetricDestination m_destination{MetricDestination::NOT_SET};
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
+  bool m_appMonitorNameHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
 };
 

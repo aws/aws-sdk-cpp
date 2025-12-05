@@ -85,12 +85,12 @@ class DataflowDetail {
   ///@}
  private:
   Source m_source;
-  bool m_sourceHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

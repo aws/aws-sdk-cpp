@@ -173,21 +173,21 @@ class ListExecutionsRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   ExecutionStatus m_statusFilter{ExecutionStatus::NOT_SET};
-  bool m_statusFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_mapRunArn;
-  bool m_mapRunArnHasBeenSet = false;
 
   ExecutionRedriveFilter m_redriveFilter{ExecutionRedriveFilter::NOT_SET};
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_statusFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_mapRunArnHasBeenSet = false;
   bool m_redriveFilterHasBeenSet = false;
 };
 

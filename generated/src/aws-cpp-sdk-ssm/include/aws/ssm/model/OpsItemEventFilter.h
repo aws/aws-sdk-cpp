@@ -95,12 +95,12 @@ class OpsItemEventFilter {
   ///@}
  private:
   OpsItemEventFilterKey m_key{OpsItemEventFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   OpsItemEventFilterOperator m_operator{OpsItemEventFilterOperator::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

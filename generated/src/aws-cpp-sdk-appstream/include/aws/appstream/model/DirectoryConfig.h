@@ -144,18 +144,18 @@ class DirectoryConfig {
   ///@}
  private:
   Aws::String m_directoryName;
-  bool m_directoryNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitDistinguishedNames;
-  bool m_organizationalUnitDistinguishedNamesHasBeenSet = false;
 
   ServiceAccountCredentials m_serviceAccountCredentials;
-  bool m_serviceAccountCredentialsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   CertificateBasedAuthProperties m_certificateBasedAuthProperties;
+  bool m_directoryNameHasBeenSet = false;
+  bool m_organizationalUnitDistinguishedNamesHasBeenSet = false;
+  bool m_serviceAccountCredentialsHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_certificateBasedAuthPropertiesHasBeenSet = false;
 };
 

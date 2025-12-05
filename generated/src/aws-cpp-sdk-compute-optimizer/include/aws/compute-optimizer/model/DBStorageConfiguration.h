@@ -116,18 +116,18 @@ class DBStorageConfiguration {
   ///@}
  private:
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_maxAllocatedStorage{0};
-  bool m_maxAllocatedStorageHasBeenSet = false;
 
   int m_storageThroughput{0};
+  bool m_storageTypeHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_maxAllocatedStorageHasBeenSet = false;
   bool m_storageThroughputHasBeenSet = false;
 };
 

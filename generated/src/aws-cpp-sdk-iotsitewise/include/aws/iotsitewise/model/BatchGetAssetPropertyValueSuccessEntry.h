@@ -69,9 +69,9 @@ class BatchGetAssetPropertyValueSuccessEntry {
   ///@}
  private:
   Aws::String m_entryId;
-  bool m_entryIdHasBeenSet = false;
 
   AssetPropertyValue m_assetPropertyValue;
+  bool m_entryIdHasBeenSet = false;
   bool m_assetPropertyValueHasBeenSet = false;
 };
 

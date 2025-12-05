@@ -140,21 +140,21 @@ class TransitGatewayPrefixListReference {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_prefixListOwnerId;
-  bool m_prefixListOwnerIdHasBeenSet = false;
 
   TransitGatewayPrefixListReferenceState m_state{TransitGatewayPrefixListReferenceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   bool m_blackhole{false};
-  bool m_blackholeHasBeenSet = false;
 
   TransitGatewayPrefixListAttachment m_transitGatewayAttachment;
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_prefixListOwnerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_blackholeHasBeenSet = false;
   bool m_transitGatewayAttachmentHasBeenSet = false;
 };
 

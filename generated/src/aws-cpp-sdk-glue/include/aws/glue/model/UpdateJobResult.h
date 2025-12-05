@@ -59,9 +59,9 @@ class UpdateJobResult {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

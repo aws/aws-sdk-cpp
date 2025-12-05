@@ -72,9 +72,9 @@ class ProviderConfiguration {
   ///@}
  private:
   JiraCloudProviderConfiguration m_jiraCloud;
-  bool m_jiraCloudHasBeenSet = false;
 
   ServiceNowProviderConfiguration m_serviceNow;
+  bool m_jiraCloudHasBeenSet = false;
   bool m_serviceNowHasBeenSet = false;
 };
 

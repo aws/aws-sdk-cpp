@@ -168,24 +168,24 @@ class ParseKeyValue {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_fieldDelimiter;
-  bool m_fieldDelimiterHasBeenSet = false;
 
   Aws::String m_keyValueDelimiter;
-  bool m_keyValueDelimiterHasBeenSet = false;
 
   Aws::String m_keyPrefix;
-  bool m_keyPrefixHasBeenSet = false;
 
   Aws::String m_nonMatchValue;
-  bool m_nonMatchValueHasBeenSet = false;
 
   bool m_overwriteIfExists{false};
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_fieldDelimiterHasBeenSet = false;
+  bool m_keyValueDelimiterHasBeenSet = false;
+  bool m_keyPrefixHasBeenSet = false;
+  bool m_nonMatchValueHasBeenSet = false;
   bool m_overwriteIfExistsHasBeenSet = false;
 };
 

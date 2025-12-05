@@ -69,9 +69,9 @@ class DescribeJobRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   bool m_beforeSubstitution{false};
+  bool m_jobIdHasBeenSet = false;
   bool m_beforeSubstitutionHasBeenSet = false;
 };
 

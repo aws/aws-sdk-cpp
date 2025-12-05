@@ -89,12 +89,12 @@ class AccountTakeoverActionsType {
   ///@}
  private:
   AccountTakeoverActionType m_lowAction;
-  bool m_lowActionHasBeenSet = false;
 
   AccountTakeoverActionType m_mediumAction;
-  bool m_mediumActionHasBeenSet = false;
 
   AccountTakeoverActionType m_highAction;
+  bool m_lowActionHasBeenSet = false;
+  bool m_mediumActionHasBeenSet = false;
   bool m_highActionHasBeenSet = false;
 };
 

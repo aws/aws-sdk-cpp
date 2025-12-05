@@ -66,9 +66,9 @@ class GetUploadResult {
   ///@}
  private:
   Upload m_upload;
-  bool m_uploadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_uploadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

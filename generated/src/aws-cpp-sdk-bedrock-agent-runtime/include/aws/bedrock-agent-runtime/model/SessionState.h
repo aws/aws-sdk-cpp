@@ -231,24 +231,24 @@ class SessionState {
   ///@}
  private:
   ConversationHistory m_conversationHistory;
-  bool m_conversationHistoryHasBeenSet = false;
 
   Aws::Vector<InputFile> m_files;
-  bool m_filesHasBeenSet = false;
 
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::Vector<KnowledgeBaseConfiguration> m_knowledgeBaseConfigurations;
-  bool m_knowledgeBaseConfigurationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_promptSessionAttributes;
-  bool m_promptSessionAttributesHasBeenSet = false;
 
   Aws::Vector<InvocationResultMember> m_returnControlInvocationResults;
-  bool m_returnControlInvocationResultsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
+  bool m_conversationHistoryHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_invocationIdHasBeenSet = false;
+  bool m_knowledgeBaseConfigurationsHasBeenSet = false;
+  bool m_promptSessionAttributesHasBeenSet = false;
+  bool m_returnControlInvocationResultsHasBeenSet = false;
   bool m_sessionAttributesHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class BatchGrantPermissionsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::Vector<BatchPermissionsRequestEntry> m_entries;
+  bool m_catalogIdHasBeenSet = false;
   bool m_entriesHasBeenSet = false;
 };
 

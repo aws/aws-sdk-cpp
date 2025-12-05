@@ -91,12 +91,12 @@ class GenerateMatchIdResult {
   ///@}
  private:
   Aws::Vector<MatchGroup> m_matchGroups;
-  bool m_matchGroupsHasBeenSet = false;
 
   Aws::Vector<FailedRecord> m_failedRecords;
-  bool m_failedRecordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_matchGroupsHasBeenSet = false;
+  bool m_failedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

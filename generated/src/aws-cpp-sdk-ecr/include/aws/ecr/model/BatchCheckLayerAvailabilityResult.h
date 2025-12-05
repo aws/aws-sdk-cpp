@@ -92,12 +92,12 @@ class BatchCheckLayerAvailabilityResult {
   ///@}
  private:
   Aws::Vector<Layer> m_layers;
-  bool m_layersHasBeenSet = false;
 
   Aws::Vector<LayerFailure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_layersHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

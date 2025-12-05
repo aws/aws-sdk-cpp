@@ -61,9 +61,9 @@ class DisableCrlResult {
   ///@}
  private:
   CrlDetail m_crl;
-  bool m_crlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -134,18 +134,18 @@ class PolicyGrantingServiceAccess {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   PolicyOwnerEntityType m_entityType{PolicyOwnerEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_entityName;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
   bool m_entityNameHasBeenSet = false;
 };
 

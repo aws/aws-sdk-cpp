@@ -74,9 +74,9 @@ class Filter {
   ///@}
  private:
   Aws::String m_attributePath;
-  bool m_attributePathHasBeenSet = false;
 
   Aws::String m_attributeValue;
+  bool m_attributePathHasBeenSet = false;
   bool m_attributeValueHasBeenSet = false;
 };
 

@@ -232,36 +232,36 @@ class PropertyDefinitionResponse {
   ///@}
  private:
   DataType m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   bool m_isTimeSeries{false};
-  bool m_isTimeSeriesHasBeenSet = false;
 
   bool m_isRequiredInEntity{false};
-  bool m_isRequiredInEntityHasBeenSet = false;
 
   bool m_isExternalId{false};
-  bool m_isExternalIdHasBeenSet = false;
 
   bool m_isStoredExternally{false};
-  bool m_isStoredExternallyHasBeenSet = false;
 
   bool m_isImported{false};
-  bool m_isImportedHasBeenSet = false;
 
   bool m_isFinal{false};
-  bool m_isFinalHasBeenSet = false;
 
   bool m_isInherited{false};
-  bool m_isInheritedHasBeenSet = false;
 
   DataValue m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_isTimeSeriesHasBeenSet = false;
+  bool m_isRequiredInEntityHasBeenSet = false;
+  bool m_isExternalIdHasBeenSet = false;
+  bool m_isStoredExternallyHasBeenSet = false;
+  bool m_isImportedHasBeenSet = false;
+  bool m_isFinalHasBeenSet = false;
+  bool m_isInheritedHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class NetworkConfig {
   ///@}
  private:
   bool m_enableInterContainerTrafficEncryption{false};
-  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
   bool m_enableNetworkIsolation{false};
-  bool m_enableNetworkIsolationHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
+  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
+  bool m_enableNetworkIsolationHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

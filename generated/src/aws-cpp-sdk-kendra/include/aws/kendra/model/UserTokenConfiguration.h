@@ -73,9 +73,9 @@ class UserTokenConfiguration {
   ///@}
  private:
   JwtTokenTypeConfiguration m_jwtTokenTypeConfiguration;
-  bool m_jwtTokenTypeConfigurationHasBeenSet = false;
 
   JsonTokenTypeConfiguration m_jsonTokenTypeConfiguration;
+  bool m_jwtTokenTypeConfigurationHasBeenSet = false;
   bool m_jsonTokenTypeConfigurationHasBeenSet = false;
 };
 

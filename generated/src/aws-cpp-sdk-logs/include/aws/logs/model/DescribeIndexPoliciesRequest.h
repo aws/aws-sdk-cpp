@@ -73,9 +73,9 @@ class DescribeIndexPoliciesRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
-  bool m_logGroupIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_logGroupIdentifiersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

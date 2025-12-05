@@ -92,12 +92,12 @@ class PutConfigurationSetDeliveryOptionsRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
-  bool m_tlsPolicyHasBeenSet = false;
 
   Aws::String m_sendingPoolName;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_tlsPolicyHasBeenSet = false;
   bool m_sendingPoolNameHasBeenSet = false;
 };
 

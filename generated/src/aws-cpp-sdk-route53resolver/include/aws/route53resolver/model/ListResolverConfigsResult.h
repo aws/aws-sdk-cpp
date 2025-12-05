@@ -92,12 +92,12 @@ class ListResolverConfigsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ResolverConfig> m_resolverConfigs;
-  bool m_resolverConfigsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resolverConfigsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

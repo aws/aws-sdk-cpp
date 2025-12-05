@@ -63,9 +63,9 @@ class DescribeICD10CMInferenceJobResult {
   ///@}
  private:
   ComprehendMedicalAsyncJobProperties m_comprehendMedicalAsyncJobProperties;
-  bool m_comprehendMedicalAsyncJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_comprehendMedicalAsyncJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

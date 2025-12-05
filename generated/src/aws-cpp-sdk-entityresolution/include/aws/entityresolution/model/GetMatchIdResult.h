@@ -76,12 +76,12 @@ class GetMatchIdResult {
   ///@}
  private:
   Aws::String m_matchId;
-  bool m_matchIdHasBeenSet = false;
 
   Aws::String m_matchRule;
-  bool m_matchRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_matchIdHasBeenSet = false;
+  bool m_matchRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

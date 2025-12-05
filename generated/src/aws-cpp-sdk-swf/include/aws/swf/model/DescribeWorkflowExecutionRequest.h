@@ -68,9 +68,9 @@ class DescribeWorkflowExecutionRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   WorkflowExecution m_execution;
+  bool m_domainHasBeenSet = false;
   bool m_executionHasBeenSet = false;
 };
 

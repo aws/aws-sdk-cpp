@@ -86,12 +86,12 @@ class ListImportedModelsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ImportedModelSummary> m_modelSummaries;
-  bool m_modelSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_modelSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class KeyUsage {
   ///@}
  private:
   bool m_critical{false};
-  bool m_criticalHasBeenSet = false;
 
   KeyUsageFlags m_usageFlags;
+  bool m_criticalHasBeenSet = false;
   bool m_usageFlagsHasBeenSet = false;
 };
 

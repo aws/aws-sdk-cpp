@@ -96,12 +96,12 @@ class GroupFilters {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<FilterExpression> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   FilterLogicalOperator m_logicalOperator{FilterLogicalOperator::NOT_SET};
+  bool m_groupNameHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_logicalOperatorHasBeenSet = false;
 };
 

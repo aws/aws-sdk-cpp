@@ -132,18 +132,18 @@ class GetWorkflowVersionRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<WorkflowExport> m_export;
-  bool m_exportHasBeenSet = false;
 
   Aws::String m_workflowOwnerId;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_exportHasBeenSet = false;
   bool m_workflowOwnerIdHasBeenSet = false;
 };
 

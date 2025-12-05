@@ -221,27 +221,27 @@ class CreateDataRepositoryTaskRequest : public FSxRequest {
   ///@}
  private:
   DataRepositoryTaskType m_type{DataRepositoryTaskType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_paths;
-  bool m_pathsHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   CompletionReport m_report;
-  bool m_reportHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   long long m_capacityToRelease{0};
-  bool m_capacityToReleaseHasBeenSet = false;
 
   ReleaseConfiguration m_releaseConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_pathsHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_reportHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_capacityToReleaseHasBeenSet = false;
   bool m_releaseConfigurationHasBeenSet = false;
 };
 

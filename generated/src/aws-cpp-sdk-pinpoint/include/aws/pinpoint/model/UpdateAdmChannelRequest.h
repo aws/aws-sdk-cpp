@@ -65,9 +65,9 @@ class UpdateAdmChannelRequest : public PinpointRequest {
   ///@}
  private:
   ADMChannelRequest m_aDMChannelRequest;
-  bool m_aDMChannelRequestHasBeenSet = false;
 
   Aws::String m_applicationId;
+  bool m_aDMChannelRequestHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
 };
 

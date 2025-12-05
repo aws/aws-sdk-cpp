@@ -70,9 +70,9 @@ class UplinkEchoConfig {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_antennaUplinkConfigArn;
+  bool m_enabledHasBeenSet = false;
   bool m_antennaUplinkConfigArnHasBeenSet = false;
 };
 

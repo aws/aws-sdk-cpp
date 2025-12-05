@@ -95,12 +95,12 @@ class ListXssMatchSetsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<XssMatchSetSummary> m_xssMatchSets;
-  bool m_xssMatchSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_xssMatchSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

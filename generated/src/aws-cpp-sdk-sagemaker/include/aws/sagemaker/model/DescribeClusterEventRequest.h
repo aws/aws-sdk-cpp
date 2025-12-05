@@ -69,9 +69,9 @@ class DescribeClusterEventRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_clusterName;
+  bool m_eventIdHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
 };
 

@@ -192,27 +192,27 @@ class CardVerificationAttributes {
   ///@}
  private:
   AmexCardSecurityCodeVersion1 m_amexCardSecurityCodeVersion1;
-  bool m_amexCardSecurityCodeVersion1HasBeenSet = false;
 
   AmexCardSecurityCodeVersion2 m_amexCardSecurityCodeVersion2;
-  bool m_amexCardSecurityCodeVersion2HasBeenSet = false;
 
   CardVerificationValue1 m_cardVerificationValue1;
-  bool m_cardVerificationValue1HasBeenSet = false;
 
   CardVerificationValue2 m_cardVerificationValue2;
-  bool m_cardVerificationValue2HasBeenSet = false;
 
   CardHolderVerificationValue m_cardHolderVerificationValue;
-  bool m_cardHolderVerificationValueHasBeenSet = false;
 
   DynamicCardVerificationCode m_dynamicCardVerificationCode;
-  bool m_dynamicCardVerificationCodeHasBeenSet = false;
 
   DynamicCardVerificationValue m_dynamicCardVerificationValue;
-  bool m_dynamicCardVerificationValueHasBeenSet = false;
 
   DiscoverDynamicCardVerificationCode m_discoverDynamicCardVerificationCode;
+  bool m_amexCardSecurityCodeVersion1HasBeenSet = false;
+  bool m_amexCardSecurityCodeVersion2HasBeenSet = false;
+  bool m_cardVerificationValue1HasBeenSet = false;
+  bool m_cardVerificationValue2HasBeenSet = false;
+  bool m_cardHolderVerificationValueHasBeenSet = false;
+  bool m_dynamicCardVerificationCodeHasBeenSet = false;
+  bool m_dynamicCardVerificationValueHasBeenSet = false;
   bool m_discoverDynamicCardVerificationCodeHasBeenSet = false;
 };
 

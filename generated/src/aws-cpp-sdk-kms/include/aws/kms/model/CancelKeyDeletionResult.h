@@ -61,9 +61,9 @@ class CancelKeyDeletionResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

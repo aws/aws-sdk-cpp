@@ -488,69 +488,69 @@ class DescribeClassificationJobResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowListIds;
-  bool m_allowListIdsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customDataIdentifierIds;
-  bool m_customDataIdentifierIdsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_initialRun{false};
-  bool m_initialRunHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   LastRunErrorStatus m_lastRunErrorStatus;
-  bool m_lastRunErrorStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRunTime{};
-  bool m_lastRunTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedDataIdentifierIds;
-  bool m_managedDataIdentifierIdsHasBeenSet = false;
 
   ManagedDataIdentifierSelector m_managedDataIdentifierSelector{ManagedDataIdentifierSelector::NOT_SET};
-  bool m_managedDataIdentifierSelectorHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3JobDefinition m_s3JobDefinition;
-  bool m_s3JobDefinitionHasBeenSet = false;
 
   int m_samplingPercentage{0};
-  bool m_samplingPercentageHasBeenSet = false;
 
   JobScheduleFrequency m_scheduleFrequency;
-  bool m_scheduleFrequencyHasBeenSet = false;
 
   Statistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UserPausedDetails m_userPausedDetails;
-  bool m_userPausedDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_allowListIdsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_createdAtHasBeenSet = false;
+  bool m_customDataIdentifierIdsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_initialRunHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_lastRunErrorStatusHasBeenSet = false;
+  bool m_lastRunTimeHasBeenSet = false;
+  bool m_managedDataIdentifierIdsHasBeenSet = false;
+  bool m_managedDataIdentifierSelectorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_s3JobDefinitionHasBeenSet = false;
+  bool m_samplingPercentageHasBeenSet = false;
+  bool m_scheduleFrequencyHasBeenSet = false;
+  bool m_statisticsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_userPausedDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

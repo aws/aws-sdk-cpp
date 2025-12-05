@@ -76,9 +76,9 @@ class FileAccessLog {
   ///@}
  private:
   LoggingFormat m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_path;
+  bool m_formatHasBeenSet = false;
   bool m_pathHasBeenSet = false;
 };
 

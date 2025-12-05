@@ -178,30 +178,30 @@ class CreateServiceResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   ServiceStatus m_status{ServiceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   DnsEntry m_dnsEntry;
-  bool m_dnsEntryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_dnsEntryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

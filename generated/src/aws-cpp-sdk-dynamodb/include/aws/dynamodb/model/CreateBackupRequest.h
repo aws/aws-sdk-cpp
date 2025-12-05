@@ -73,9 +73,9 @@ class CreateBackupRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_backupName;
+  bool m_tableNameHasBeenSet = false;
   bool m_backupNameHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class MediaStorageConfiguration {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   MediaStorageConfigurationStatus m_status{MediaStorageConfigurationStatus::NOT_SET};
+  bool m_streamARNHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

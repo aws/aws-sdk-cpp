@@ -151,21 +151,21 @@ class PodIdentityAssociationSummary {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_serviceAccount;
-  bool m_serviceAccountHasBeenSet = false;
 
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_ownerArn;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_serviceAccountHasBeenSet = false;
+  bool m_associationArnHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
   bool m_ownerArnHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ModelBiasJobInput {
   ///@}
  private:
   EndpointInput m_endpointInput;
-  bool m_endpointInputHasBeenSet = false;
 
   BatchTransformInput m_batchTransformInput;
-  bool m_batchTransformInputHasBeenSet = false;
 
   MonitoringGroundTruthS3Input m_groundTruthS3Input;
+  bool m_endpointInputHasBeenSet = false;
+  bool m_batchTransformInputHasBeenSet = false;
   bool m_groundTruthS3InputHasBeenSet = false;
 };
 

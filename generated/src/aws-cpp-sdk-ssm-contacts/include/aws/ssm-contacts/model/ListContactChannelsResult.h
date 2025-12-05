@@ -84,12 +84,12 @@ class ListContactChannelsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ContactChannel> m_contactChannels;
-  bool m_contactChannelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_contactChannelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class ClientAuthentication {
   ///@}
  private:
   Sasl m_sasl;
-  bool m_saslHasBeenSet = false;
 
   Tls m_tls;
-  bool m_tlsHasBeenSet = false;
 
   Unauthenticated m_unauthenticated;
+  bool m_saslHasBeenSet = false;
+  bool m_tlsHasBeenSet = false;
   bool m_unauthenticatedHasBeenSet = false;
 };
 

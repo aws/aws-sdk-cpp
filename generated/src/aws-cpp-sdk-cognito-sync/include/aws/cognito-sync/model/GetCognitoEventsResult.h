@@ -71,9 +71,9 @@ class GetCognitoEventsResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

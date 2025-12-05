@@ -249,36 +249,36 @@ class CreateMessageTemplateRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   MessageTemplateContentProvider m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
-  bool m_channelSubtypeHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   MessageTemplateSourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   MessageTemplateAttributes m_defaultAttributes;
-  bool m_defaultAttributesHasBeenSet = false;
 
   GroupingConfiguration m_groupingConfiguration;
-  bool m_groupingConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_channelSubtypeHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
+  bool m_defaultAttributesHasBeenSet = false;
+  bool m_groupingConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

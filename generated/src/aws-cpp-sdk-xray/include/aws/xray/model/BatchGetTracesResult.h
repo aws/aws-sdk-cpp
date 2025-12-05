@@ -107,15 +107,15 @@ class BatchGetTracesResult {
   ///@}
  private:
   Aws::Vector<Trace> m_traces;
-  bool m_tracesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_unprocessedTraceIds;
-  bool m_unprocessedTraceIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tracesHasBeenSet = false;
+  bool m_unprocessedTraceIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

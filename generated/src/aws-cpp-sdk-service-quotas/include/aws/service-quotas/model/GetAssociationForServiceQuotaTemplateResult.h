@@ -64,9 +64,9 @@ class GetAssociationForServiceQuotaTemplateResult {
   ///@}
  private:
   ServiceQuotaTemplateAssociationStatus m_serviceQuotaTemplateAssociationStatus{ServiceQuotaTemplateAssociationStatus::NOT_SET};
-  bool m_serviceQuotaTemplateAssociationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceQuotaTemplateAssociationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

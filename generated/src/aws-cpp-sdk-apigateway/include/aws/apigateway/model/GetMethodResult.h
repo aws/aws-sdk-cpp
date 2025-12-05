@@ -294,39 +294,39 @@ class GetMethodResult {
   ///@}
  private:
   Aws::String m_httpMethod;
-  bool m_httpMethodHasBeenSet = false;
 
   Aws::String m_authorizationType;
-  bool m_authorizationTypeHasBeenSet = false;
 
   Aws::String m_authorizerId;
-  bool m_authorizerIdHasBeenSet = false;
 
   bool m_apiKeyRequired{false};
-  bool m_apiKeyRequiredHasBeenSet = false;
 
   Aws::String m_requestValidatorId;
-  bool m_requestValidatorIdHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, bool> m_requestParameters;
-  bool m_requestParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestModels;
-  bool m_requestModelsHasBeenSet = false;
 
   Aws::Map<Aws::String, MethodResponse> m_methodResponses;
-  bool m_methodResponsesHasBeenSet = false;
 
   Integration m_methodIntegration;
-  bool m_methodIntegrationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizationScopes;
-  bool m_authorizationScopesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_authorizationTypeHasBeenSet = false;
+  bool m_authorizerIdHasBeenSet = false;
+  bool m_apiKeyRequiredHasBeenSet = false;
+  bool m_requestValidatorIdHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_requestParametersHasBeenSet = false;
+  bool m_requestModelsHasBeenSet = false;
+  bool m_methodResponsesHasBeenSet = false;
+  bool m_methodIntegrationHasBeenSet = false;
+  bool m_authorizationScopesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

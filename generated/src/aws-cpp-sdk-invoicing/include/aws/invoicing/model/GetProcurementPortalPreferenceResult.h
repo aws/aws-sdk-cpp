@@ -61,9 +61,9 @@ class GetProcurementPortalPreferenceResult {
   ///@}
  private:
   ProcurementPortalPreference m_procurementPortalPreference;
-  bool m_procurementPortalPreferenceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_procurementPortalPreferenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

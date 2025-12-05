@@ -296,42 +296,42 @@ class CreateJobTemplateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobTemplateId;
-  bool m_jobTemplateIdHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_documentSource;
-  bool m_documentSourceHasBeenSet = false;
 
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PresignedUrlConfig m_presignedUrlConfig;
-  bool m_presignedUrlConfigHasBeenSet = false;
 
   JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
   AbortConfig m_abortConfig;
-  bool m_abortConfigHasBeenSet = false;
 
   TimeoutConfig m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-  bool m_jobExecutionsRetryConfigHasBeenSet = false;
 
   Aws::Vector<MaintenanceWindow> m_maintenanceWindows;
-  bool m_maintenanceWindowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationPackageVersions;
+  bool m_jobTemplateIdHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_documentSourceHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_presignedUrlConfigHasBeenSet = false;
+  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_abortConfigHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_jobExecutionsRetryConfigHasBeenSet = false;
+  bool m_maintenanceWindowsHasBeenSet = false;
   bool m_destinationPackageVersionsHasBeenSet = false;
 };
 

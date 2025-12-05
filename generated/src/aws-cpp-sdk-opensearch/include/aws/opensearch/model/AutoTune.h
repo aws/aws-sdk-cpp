@@ -69,9 +69,9 @@ class AutoTune {
   ///@}
  private:
   AutoTuneType m_autoTuneType{AutoTuneType::NOT_SET};
-  bool m_autoTuneTypeHasBeenSet = false;
 
   AutoTuneDetails m_autoTuneDetails;
+  bool m_autoTuneTypeHasBeenSet = false;
   bool m_autoTuneDetailsHasBeenSet = false;
 };
 

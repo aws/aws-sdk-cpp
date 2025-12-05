@@ -78,9 +78,9 @@ class AlarmConfiguration {
   ///@}
  private:
   bool m_ignorePollAlarmFailure{false};
-  bool m_ignorePollAlarmFailureHasBeenSet = false;
 
   Aws::Vector<Alarm> m_alarms;
+  bool m_ignorePollAlarmFailureHasBeenSet = false;
   bool m_alarmsHasBeenSet = false;
 };
 

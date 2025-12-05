@@ -87,12 +87,12 @@ class ListDomainConflicts2020_05_31Result {
   ///@}
  private:
   Aws::Vector<DomainConflict> m_domainConflicts;
-  bool m_domainConflictsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainConflictsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class CredentialSummary {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_failed{false};
-  bool m_failedHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::Utils::DateTime m_seenAt{};
-  bool m_seenAtHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_x509CertificateData;
+  bool m_enabledHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_seenAtHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
   bool m_x509CertificateDataHasBeenSet = false;
 };
 

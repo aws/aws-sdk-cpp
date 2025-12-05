@@ -85,12 +85,12 @@ class ListReadSetUploadPartsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ReadSetUploadPartListItem> m_parts;
-  bool m_partsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_partsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

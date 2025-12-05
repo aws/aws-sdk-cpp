@@ -73,9 +73,9 @@ class BatchDisassociateClientDeviceFromCoreDeviceRequest : public GreengrassV2Re
   ///@}
  private:
   Aws::Vector<DisassociateClientDeviceFromCoreDeviceEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_coreDeviceThingName;
+  bool m_entriesHasBeenSet = false;
   bool m_coreDeviceThingNameHasBeenSet = false;
 };
 

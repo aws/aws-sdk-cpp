@@ -87,12 +87,12 @@ class DeleteLoadBalancerTlsCertificateRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   bool m_force{false};
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

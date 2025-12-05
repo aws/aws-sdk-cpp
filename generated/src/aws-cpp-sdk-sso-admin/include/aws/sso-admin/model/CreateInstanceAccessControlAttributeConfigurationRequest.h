@@ -80,9 +80,9 @@ class CreateInstanceAccessControlAttributeConfigurationRequest : public SSOAdmin
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   InstanceAccessControlAttributeConfiguration m_instanceAccessControlAttributeConfiguration;
+  bool m_instanceArnHasBeenSet = false;
   bool m_instanceAccessControlAttributeConfigurationHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class UpdateMitigationActionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MitigationActionParams m_actionParams;
+  bool m_actionNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_actionParamsHasBeenSet = false;
 };
 

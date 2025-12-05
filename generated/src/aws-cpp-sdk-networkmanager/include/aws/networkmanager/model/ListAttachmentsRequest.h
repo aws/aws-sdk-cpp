@@ -138,21 +138,21 @@ class ListAttachmentsRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   AttachmentType m_attachmentType{AttachmentType::NOT_SET};
-  bool m_attachmentTypeHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   AttachmentState m_state{AttachmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_attachmentTypeHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

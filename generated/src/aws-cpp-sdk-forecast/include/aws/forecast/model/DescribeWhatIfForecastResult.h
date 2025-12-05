@@ -264,39 +264,39 @@ class DescribeWhatIfForecastResult {
   ///@}
  private:
   Aws::String m_whatIfForecastName;
-  bool m_whatIfForecastNameHasBeenSet = false;
 
   Aws::String m_whatIfForecastArn;
-  bool m_whatIfForecastArnHasBeenSet = false;
 
   Aws::String m_whatIfAnalysisArn;
-  bool m_whatIfAnalysisArnHasBeenSet = false;
 
   long long m_estimatedTimeRemainingInMinutes{0};
-  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::Vector<TimeSeriesTransformation> m_timeSeriesTransformations;
-  bool m_timeSeriesTransformationsHasBeenSet = false;
 
   TimeSeriesReplacementsDataSource m_timeSeriesReplacementsDataSource;
-  bool m_timeSeriesReplacementsDataSourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastTypes;
-  bool m_forecastTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_whatIfForecastNameHasBeenSet = false;
+  bool m_whatIfForecastArnHasBeenSet = false;
+  bool m_whatIfAnalysisArnHasBeenSet = false;
+  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_timeSeriesTransformationsHasBeenSet = false;
+  bool m_timeSeriesReplacementsDataSourceHasBeenSet = false;
+  bool m_forecastTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

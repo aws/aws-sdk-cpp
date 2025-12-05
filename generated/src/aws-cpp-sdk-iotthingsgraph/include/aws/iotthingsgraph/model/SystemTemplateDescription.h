@@ -87,12 +87,12 @@ class SystemTemplateDescription {
   ///@}
  private:
   SystemTemplateSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   DefinitionDocument m_definition;
-  bool m_definitionHasBeenSet = false;
 
   long long m_validatedNamespaceVersion{0};
+  bool m_summaryHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
   bool m_validatedNamespaceVersionHasBeenSet = false;
 };
 

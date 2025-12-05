@@ -103,15 +103,15 @@ class Metadata {
   ///@}
  private:
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_mimeType;
+  bool m_eTagHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_mimeTypeHasBeenSet = false;
 };
 

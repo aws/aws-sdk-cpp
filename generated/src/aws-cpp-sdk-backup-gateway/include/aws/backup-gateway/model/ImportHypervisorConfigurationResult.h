@@ -60,9 +60,9 @@ class ImportHypervisorConfigurationResult {
   ///@}
  private:
   Aws::String m_hypervisorArn;
-  bool m_hypervisorArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hypervisorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

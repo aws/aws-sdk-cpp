@@ -94,12 +94,12 @@ class RouteVehicleNotice {
   ///@}
  private:
   RouteVehicleNoticeCode m_code{RouteVehicleNoticeCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::Vector<RouteVehicleNoticeDetail> m_details;
-  bool m_detailsHasBeenSet = false;
 
   RouteNoticeImpact m_impact{RouteNoticeImpact::NOT_SET};
+  bool m_codeHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_impactHasBeenSet = false;
 };
 

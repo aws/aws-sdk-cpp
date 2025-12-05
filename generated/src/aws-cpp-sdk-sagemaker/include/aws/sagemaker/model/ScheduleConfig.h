@@ -125,12 +125,12 @@ class ScheduleConfig {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_dataAnalysisStartTime;
-  bool m_dataAnalysisStartTimeHasBeenSet = false;
 
   Aws::String m_dataAnalysisEndTime;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_dataAnalysisStartTimeHasBeenSet = false;
   bool m_dataAnalysisEndTimeHasBeenSet = false;
 };
 

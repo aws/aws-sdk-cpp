@@ -70,9 +70,9 @@ class ColumnTag {
   ///@}
  private:
   GeoSpatialDataRole m_columnGeographicRole{GeoSpatialDataRole::NOT_SET};
-  bool m_columnGeographicRoleHasBeenSet = false;
 
   ColumnDescription m_columnDescription;
+  bool m_columnGeographicRoleHasBeenSet = false;
   bool m_columnDescriptionHasBeenSet = false;
 };
 

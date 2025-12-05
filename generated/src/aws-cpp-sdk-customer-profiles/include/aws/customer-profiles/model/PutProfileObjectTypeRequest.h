@@ -274,39 +274,39 @@ class PutProfileObjectTypeRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   int m_expirationDays{0};
-  bool m_expirationDaysHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   bool m_allowProfileCreation{false};
-  bool m_allowProfileCreationHasBeenSet = false;
 
   Aws::String m_sourceLastUpdatedTimestampFormat;
-  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
 
   int m_maxProfileObjectCount{0};
-  bool m_maxProfileObjectCountHasBeenSet = false;
 
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_expirationDaysHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_allowProfileCreationHasBeenSet = false;
+  bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
+  bool m_maxProfileObjectCountHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class FilterByAsset {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_assetExternalId;
-  bool m_assetExternalIdHasBeenSet = false;
 
   bool m_includeOffspring{false};
-  bool m_includeOffspringHasBeenSet = false;
 
   bool m_includeAssetModel{false};
+  bool m_assetIdHasBeenSet = false;
+  bool m_assetExternalIdHasBeenSet = false;
+  bool m_includeOffspringHasBeenSet = false;
   bool m_includeAssetModelHasBeenSet = false;
 };
 

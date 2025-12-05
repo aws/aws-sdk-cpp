@@ -65,9 +65,9 @@ class PutInboundDmarcSettingsRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   bool m_enforced{false};
+  bool m_organizationIdHasBeenSet = false;
   bool m_enforcedHasBeenSet = false;
 };
 

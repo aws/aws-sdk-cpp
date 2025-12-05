@@ -159,24 +159,24 @@ class SchemaExtensionInfo {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_schemaExtensionId;
-  bool m_schemaExtensionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SchemaExtensionStatus m_schemaExtensionStatus{SchemaExtensionStatus::NOT_SET};
-  bool m_schemaExtensionStatusHasBeenSet = false;
 
   Aws::String m_schemaExtensionStatusReason;
-  bool m_schemaExtensionStatusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDateTime{};
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_schemaExtensionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_schemaExtensionStatusHasBeenSet = false;
+  bool m_schemaExtensionStatusReasonHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
   bool m_endDateTimeHasBeenSet = false;
 };
 

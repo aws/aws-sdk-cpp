@@ -69,9 +69,9 @@ class SemanticConsolidationOverride {
   ///@}
  private:
   Aws::String m_appendToPrompt;
-  bool m_appendToPromptHasBeenSet = false;
 
   Aws::String m_modelId;
+  bool m_appendToPromptHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
 };
 

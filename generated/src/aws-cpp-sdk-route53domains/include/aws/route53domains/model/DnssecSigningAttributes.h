@@ -90,12 +90,12 @@ class DnssecSigningAttributes {
   ///@}
  private:
   int m_algorithm{0};
-  bool m_algorithmHasBeenSet = false;
 
   int m_flags{0};
-  bool m_flagsHasBeenSet = false;
 
   Aws::String m_publicKey;
+  bool m_algorithmHasBeenSet = false;
+  bool m_flagsHasBeenSet = false;
   bool m_publicKeyHasBeenSet = false;
 };
 

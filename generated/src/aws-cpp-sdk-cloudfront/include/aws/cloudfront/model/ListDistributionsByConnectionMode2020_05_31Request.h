@@ -87,12 +87,12 @@ class ListDistributionsByConnectionMode2020_05_31Request : public CloudFrontRequ
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_connectionModeHasBeenSet = false;
 };
 

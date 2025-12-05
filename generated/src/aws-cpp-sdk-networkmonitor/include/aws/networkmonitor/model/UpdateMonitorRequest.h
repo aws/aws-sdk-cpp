@@ -64,9 +64,9 @@ class UpdateMonitorRequest : public NetworkMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   long long m_aggregationPeriod{0};
+  bool m_monitorNameHasBeenSet = false;
   bool m_aggregationPeriodHasBeenSet = false;
 };
 

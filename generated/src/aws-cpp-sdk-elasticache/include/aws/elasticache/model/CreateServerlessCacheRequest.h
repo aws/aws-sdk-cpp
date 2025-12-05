@@ -314,42 +314,42 @@ class CreateServerlessCacheRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_serverlessCacheName;
-  bool m_serverlessCacheNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
-  bool m_majorEngineVersionHasBeenSet = false;
 
   CacheUsageLimits m_cacheUsageLimits;
-  bool m_cacheUsageLimitsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snapshotArnsToRestore;
-  bool m_snapshotArnsToRestoreHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_userGroupId;
-  bool m_userGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_dailySnapshotTime;
+  bool m_serverlessCacheNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_majorEngineVersionHasBeenSet = false;
+  bool m_cacheUsageLimitsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_snapshotArnsToRestoreHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_userGroupIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
   bool m_dailySnapshotTimeHasBeenSet = false;
 };
 

@@ -249,33 +249,33 @@ class CreateScheduledQueryRequest : public TimestreamQueryRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   ScheduleConfiguration m_scheduleConfiguration;
-  bool m_scheduleConfigurationHasBeenSet = false;
 
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   TargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_scheduledQueryExecutionRoleArn;
-  bool m_scheduledQueryExecutionRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ErrorReportConfiguration m_errorReportConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_scheduleConfigurationHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_scheduledQueryExecutionRoleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_errorReportConfigurationHasBeenSet = false;
 };
 

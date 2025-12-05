@@ -162,21 +162,21 @@ class CreateApplicationRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<DataSource> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   IamIdentityCenterOptionsInput m_iamIdentityCenterOptions;
-  bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
   Aws::Vector<AppConfig> m_appConfigs;
-  bool m_appConfigsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_iamIdentityCenterOptionsHasBeenSet = false;
+  bool m_appConfigsHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class CodegenGenericDataModel {
   ///@}
  private:
   Aws::Map<Aws::String, CodegenGenericDataField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   bool m_isJoinTable{false};
-  bool m_isJoinTableHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_primaryKeys;
+  bool m_fieldsHasBeenSet = false;
+  bool m_isJoinTableHasBeenSet = false;
   bool m_primaryKeysHasBeenSet = false;
 };
 

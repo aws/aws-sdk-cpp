@@ -61,9 +61,9 @@ class UpdateRuleGroupResult {
   ///@}
  private:
   Aws::String m_nextLockToken;
-  bool m_nextLockTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextLockTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

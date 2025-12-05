@@ -113,15 +113,15 @@ class PipelineSummary {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::Vector<ReprocessingSummary> m_reprocessingSummaries;
-  bool m_reprocessingSummariesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_reprocessingSummariesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
 };
 

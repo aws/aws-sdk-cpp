@@ -96,12 +96,12 @@ class ReferenceDataSource {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   S3ReferenceDataSource m_s3ReferenceDataSource;
-  bool m_s3ReferenceDataSourceHasBeenSet = false;
 
   SourceSchema m_referenceSchema;
+  bool m_tableNameHasBeenSet = false;
+  bool m_s3ReferenceDataSourceHasBeenSet = false;
   bool m_referenceSchemaHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class StartMeetingTranscriptionRequest : public ChimeSDKMeetingsRequest {
   ///@}
  private:
   Aws::String m_meetingId;
-  bool m_meetingIdHasBeenSet = false;
 
   TranscriptionConfiguration m_transcriptionConfiguration;
+  bool m_meetingIdHasBeenSet = false;
   bool m_transcriptionConfigurationHasBeenSet = false;
 };
 

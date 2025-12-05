@@ -69,9 +69,9 @@ class UpdateRoutingControlRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   Aws::String m_routingControlArn;
-  bool m_routingControlArnHasBeenSet = false;
 
   Aws::String m_routingControlName;
+  bool m_routingControlArnHasBeenSet = false;
   bool m_routingControlNameHasBeenSet = false;
 };
 

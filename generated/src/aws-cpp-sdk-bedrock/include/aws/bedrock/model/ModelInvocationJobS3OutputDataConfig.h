@@ -89,12 +89,12 @@ class ModelInvocationJobS3OutputDataConfig {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_s3EncryptionKeyId;
-  bool m_s3EncryptionKeyIdHasBeenSet = false;
 
   Aws::String m_s3BucketOwner;
+  bool m_s3UriHasBeenSet = false;
+  bool m_s3EncryptionKeyIdHasBeenSet = false;
   bool m_s3BucketOwnerHasBeenSet = false;
 };
 

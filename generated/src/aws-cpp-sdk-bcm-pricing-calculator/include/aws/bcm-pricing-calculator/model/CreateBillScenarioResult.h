@@ -197,33 +197,33 @@ class CreateBillScenarioResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   BillInterval m_billInterval;
-  bool m_billIntervalHasBeenSet = false;
 
   BillScenarioStatus m_status{BillScenarioStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
-  bool m_groupSharingPreferenceHasBeenSet = false;
 
   Aws::String m_costCategoryGroupSharingPreferenceArn;
-  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_billIntervalHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_groupSharingPreferenceHasBeenSet = false;
+  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

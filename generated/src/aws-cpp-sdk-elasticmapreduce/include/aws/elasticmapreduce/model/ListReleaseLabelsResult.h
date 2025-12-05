@@ -84,12 +84,12 @@ class ListReleaseLabelsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_releaseLabels;
-  bool m_releaseLabelsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_releaseLabelsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

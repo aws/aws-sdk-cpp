@@ -210,33 +210,33 @@ class InstanceInfo {
   ///@}
  private:
   Aws::String m_agentType;
-  bool m_agentTypeHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_computerName;
-  bool m_computerNameHasBeenSet = false;
 
   Aws::String m_instanceStatus;
-  bool m_instanceStatusHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   ManagedStatus m_managedStatus{ManagedStatus::NOT_SET};
-  bool m_managedStatusHasBeenSet = false;
 
   PlatformType m_platformType{PlatformType::NOT_SET};
-  bool m_platformTypeHasBeenSet = false;
 
   Aws::String m_platformName;
-  bool m_platformNameHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+  bool m_agentTypeHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_computerNameHasBeenSet = false;
+  bool m_instanceStatusHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_managedStatusHasBeenSet = false;
+  bool m_platformTypeHasBeenSet = false;
+  bool m_platformNameHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

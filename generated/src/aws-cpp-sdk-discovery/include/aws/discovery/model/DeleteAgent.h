@@ -71,9 +71,9 @@ class DeleteAgent {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   bool m_force{false};
+  bool m_agentIdHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

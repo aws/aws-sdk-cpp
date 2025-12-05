@@ -62,9 +62,9 @@ class UpdateWorkspaceAuthenticationResult {
   ///@}
  private:
   AuthenticationDescription m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

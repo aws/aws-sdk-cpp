@@ -76,9 +76,9 @@ class CostAndUsageComparison {
   ///@}
  private:
   Expression m_costAndUsageSelector;
-  bool m_costAndUsageSelectorHasBeenSet = false;
 
   Aws::Map<Aws::String, ComparisonMetricValue> m_metrics;
+  bool m_costAndUsageSelectorHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

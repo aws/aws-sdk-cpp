@@ -60,9 +60,9 @@ class DescribeStudioResult {
   ///@}
  private:
   Studio m_studio;
-  bool m_studioHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_studioHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

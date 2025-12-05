@@ -210,33 +210,33 @@ class SuiteRunInformation {
   ///@}
  private:
   Aws::String m_suiteDefinitionId;
-  bool m_suiteDefinitionIdHasBeenSet = false;
 
   Aws::String m_suiteDefinitionVersion;
-  bool m_suiteDefinitionVersionHasBeenSet = false;
 
   Aws::String m_suiteDefinitionName;
-  bool m_suiteDefinitionNameHasBeenSet = false;
 
   Aws::String m_suiteRunId;
-  bool m_suiteRunIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endAt{};
-  bool m_endAtHasBeenSet = false;
 
   SuiteRunStatus m_status{SuiteRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_passed{0};
-  bool m_passedHasBeenSet = false;
 
   int m_failed{0};
+  bool m_suiteDefinitionIdHasBeenSet = false;
+  bool m_suiteDefinitionVersionHasBeenSet = false;
+  bool m_suiteDefinitionNameHasBeenSet = false;
+  bool m_suiteRunIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_passedHasBeenSet = false;
   bool m_failedHasBeenSet = false;
 };
 

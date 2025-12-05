@@ -156,18 +156,18 @@ class CisScanResultDetailsFilterCriteria {
   ///@}
  private:
   Aws::Vector<CisFindingStatusFilter> m_findingStatusFilters;
-  bool m_findingStatusFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_checkIdFilters;
-  bool m_checkIdFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_titleFilters;
-  bool m_titleFiltersHasBeenSet = false;
 
   Aws::Vector<CisSecurityLevelFilter> m_securityLevelFilters;
-  bool m_securityLevelFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_findingArnFilters;
+  bool m_findingStatusFiltersHasBeenSet = false;
+  bool m_checkIdFiltersHasBeenSet = false;
+  bool m_titleFiltersHasBeenSet = false;
+  bool m_securityLevelFiltersHasBeenSet = false;
   bool m_findingArnFiltersHasBeenSet = false;
 };
 

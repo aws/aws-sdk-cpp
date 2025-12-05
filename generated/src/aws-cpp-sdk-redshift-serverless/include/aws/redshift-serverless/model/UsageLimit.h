@@ -159,24 +159,24 @@ class UsageLimit {
   ///@}
  private:
   long long m_amount{0};
-  bool m_amountHasBeenSet = false;
 
   UsageLimitBreachAction m_breachAction{UsageLimitBreachAction::NOT_SET};
-  bool m_breachActionHasBeenSet = false;
 
   UsageLimitPeriod m_period{UsageLimitPeriod::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_usageLimitArn;
-  bool m_usageLimitArnHasBeenSet = false;
 
   Aws::String m_usageLimitId;
-  bool m_usageLimitIdHasBeenSet = false;
 
   UsageLimitUsageType m_usageType{UsageLimitUsageType::NOT_SET};
+  bool m_amountHasBeenSet = false;
+  bool m_breachActionHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_usageLimitArnHasBeenSet = false;
+  bool m_usageLimitIdHasBeenSet = false;
   bool m_usageTypeHasBeenSet = false;
 };
 

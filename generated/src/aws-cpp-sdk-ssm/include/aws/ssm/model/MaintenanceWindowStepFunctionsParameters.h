@@ -86,9 +86,9 @@ class MaintenanceWindowStepFunctionsParameters {
   ///@}
  private:
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_inputHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

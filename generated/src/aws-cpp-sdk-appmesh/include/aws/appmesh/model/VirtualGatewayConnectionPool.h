@@ -92,12 +92,12 @@ class VirtualGatewayConnectionPool {
   ///@}
  private:
   VirtualGatewayGrpcConnectionPool m_grpc;
-  bool m_grpcHasBeenSet = false;
 
   VirtualGatewayHttpConnectionPool m_http;
-  bool m_httpHasBeenSet = false;
 
   VirtualGatewayHttp2ConnectionPool m_http2;
+  bool m_grpcHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
   bool m_http2HasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateAIAgentResult {
   ///@}
  private:
   AIAgentData m_aiAgent;
-  bool m_aiAgentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiAgentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class UpdateDomainConfigResult {
   ///@}
  private:
   DomainConfig m_domainConfig;
-  bool m_domainConfigHasBeenSet = false;
 
   DryRunResults m_dryRunResults;
-  bool m_dryRunResultsHasBeenSet = false;
 
   DryRunProgressStatus m_dryRunProgressStatus;
-  bool m_dryRunProgressStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainConfigHasBeenSet = false;
+  bool m_dryRunResultsHasBeenSet = false;
+  bool m_dryRunProgressStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

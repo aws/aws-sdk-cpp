@@ -101,12 +101,12 @@ class EventParameters {
   ///@}
  private:
   EventTypeValues m_eventType{EventTypeValues::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snapshotOwner;
-  bool m_snapshotOwnerHasBeenSet = false;
 
   Aws::String m_descriptionRegex;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_snapshotOwnerHasBeenSet = false;
   bool m_descriptionRegexHasBeenSet = false;
 };
 

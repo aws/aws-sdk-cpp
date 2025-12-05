@@ -91,12 +91,12 @@ class Condition {
   ///@}
  private:
   Aws::Utils::DateTime m_after{};
-  bool m_afterHasBeenSet = false;
 
   Aws::Utils::DateTime m_before{};
-  bool m_beforeHasBeenSet = false;
 
   AttributeValueList m_equals;
+  bool m_afterHasBeenSet = false;
+  bool m_beforeHasBeenSet = false;
   bool m_equalsHasBeenSet = false;
 };
 

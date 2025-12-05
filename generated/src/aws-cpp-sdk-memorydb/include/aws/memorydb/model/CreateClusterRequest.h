@@ -539,81 +539,81 @@ class CreateClusterRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_multiRegionClusterName;
-  bool m_multiRegionClusterNameHasBeenSet = false;
 
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_numShards{0};
-  bool m_numShardsHasBeenSet = false;
 
   int m_numReplicasPerShard{0};
-  bool m_numReplicasPerShardHasBeenSet = false;
 
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   bool m_tLSEnabled{false};
-  bool m_tLSEnabledHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snapshotArns;
-  bool m_snapshotArnsHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   Aws::String m_aCLName;
-  bool m_aCLNameHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   bool m_dataTiering{false};
-  bool m_dataTieringHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_multiRegionClusterNameHasBeenSet = false;
+  bool m_parameterGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_numShardsHasBeenSet = false;
+  bool m_numReplicasPerShardHasBeenSet = false;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_tLSEnabledHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_snapshotArnsHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_aCLNameHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_dataTieringHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_ipDiscoveryHasBeenSet = false;
 };
 

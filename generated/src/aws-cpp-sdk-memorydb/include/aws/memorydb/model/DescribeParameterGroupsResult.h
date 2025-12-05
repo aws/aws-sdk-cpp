@@ -89,12 +89,12 @@ class DescribeParameterGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ParameterGroup> m_parameterGroups;
-  bool m_parameterGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_parameterGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

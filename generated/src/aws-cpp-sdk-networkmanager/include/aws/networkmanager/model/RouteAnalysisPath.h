@@ -76,9 +76,9 @@ class RouteAnalysisPath {
   ///@}
  private:
   RouteAnalysisCompletion m_completionStatus;
-  bool m_completionStatusHasBeenSet = false;
 
   Aws::Vector<PathComponent> m_path;
+  bool m_completionStatusHasBeenSet = false;
   bool m_pathHasBeenSet = false;
 };
 

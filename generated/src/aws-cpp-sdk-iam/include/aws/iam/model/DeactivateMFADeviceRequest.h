@@ -82,9 +82,9 @@ class DeactivateMFADeviceRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_serialNumber;
+  bool m_userNameHasBeenSet = false;
   bool m_serialNumberHasBeenSet = false;
 };
 

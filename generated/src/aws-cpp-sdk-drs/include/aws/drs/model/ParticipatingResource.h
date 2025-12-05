@@ -68,9 +68,9 @@ class ParticipatingResource {
   ///@}
  private:
   LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
-  bool m_launchStatusHasBeenSet = false;
 
   ParticipatingResourceID m_participatingResourceID;
+  bool m_launchStatusHasBeenSet = false;
   bool m_participatingResourceIDHasBeenSet = false;
 };
 

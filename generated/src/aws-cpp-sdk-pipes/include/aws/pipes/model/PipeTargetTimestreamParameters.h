@@ -217,27 +217,27 @@ class PipeTargetTimestreamParameters {
   ///@}
  private:
   Aws::String m_timeValue;
-  bool m_timeValueHasBeenSet = false;
 
   EpochTimeUnit m_epochTimeUnit{EpochTimeUnit::NOT_SET};
-  bool m_epochTimeUnitHasBeenSet = false;
 
   TimeFieldType m_timeFieldType{TimeFieldType::NOT_SET};
-  bool m_timeFieldTypeHasBeenSet = false;
 
   Aws::String m_timestampFormat;
-  bool m_timestampFormatHasBeenSet = false;
 
   Aws::String m_versionValue;
-  bool m_versionValueHasBeenSet = false;
 
   Aws::Vector<DimensionMapping> m_dimensionMappings;
-  bool m_dimensionMappingsHasBeenSet = false;
 
   Aws::Vector<SingleMeasureMapping> m_singleMeasureMappings;
-  bool m_singleMeasureMappingsHasBeenSet = false;
 
   Aws::Vector<MultiMeasureMapping> m_multiMeasureMappings;
+  bool m_timeValueHasBeenSet = false;
+  bool m_epochTimeUnitHasBeenSet = false;
+  bool m_timeFieldTypeHasBeenSet = false;
+  bool m_timestampFormatHasBeenSet = false;
+  bool m_versionValueHasBeenSet = false;
+  bool m_dimensionMappingsHasBeenSet = false;
+  bool m_singleMeasureMappingsHasBeenSet = false;
   bool m_multiMeasureMappingsHasBeenSet = false;
 };
 

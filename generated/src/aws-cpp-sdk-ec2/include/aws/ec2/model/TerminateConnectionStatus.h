@@ -90,12 +90,12 @@ class TerminateConnectionStatus {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   ClientVpnConnectionStatus m_previousStatus;
-  bool m_previousStatusHasBeenSet = false;
 
   ClientVpnConnectionStatus m_currentStatus;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_previousStatusHasBeenSet = false;
   bool m_currentStatusHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ResourceCount {
   ///@}
  private:
   long long m_totalResources{0};
-  bool m_totalResourcesHasBeenSet = false;
 
   bool m_complete{false};
+  bool m_totalResourcesHasBeenSet = false;
   bool m_completeHasBeenSet = false;
 };
 

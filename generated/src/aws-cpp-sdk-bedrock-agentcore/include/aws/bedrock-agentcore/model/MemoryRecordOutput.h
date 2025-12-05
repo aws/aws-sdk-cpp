@@ -122,18 +122,18 @@ class MemoryRecordOutput {
   ///@}
  private:
   Aws::String m_memoryRecordId;
-  bool m_memoryRecordIdHasBeenSet = false;
 
   MemoryRecordStatus m_status{MemoryRecordStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestIdentifier;
-  bool m_requestIdentifierHasBeenSet = false;
 
   int m_errorCode{0};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_memoryRecordIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdentifierHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

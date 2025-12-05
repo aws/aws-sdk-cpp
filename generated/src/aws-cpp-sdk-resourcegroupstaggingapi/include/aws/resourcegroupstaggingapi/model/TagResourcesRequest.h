@@ -87,9 +87,9 @@ class TagResourcesRequest : public ResourceGroupsTaggingAPIRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceARNList;
-  bool m_resourceARNListHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_resourceARNListHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

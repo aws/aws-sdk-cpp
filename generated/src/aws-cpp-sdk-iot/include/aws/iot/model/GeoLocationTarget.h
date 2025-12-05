@@ -72,9 +72,9 @@ class GeoLocationTarget {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TargetFieldOrder m_order{TargetFieldOrder::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

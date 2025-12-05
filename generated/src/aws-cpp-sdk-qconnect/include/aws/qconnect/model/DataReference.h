@@ -86,12 +86,12 @@ class DataReference {
   ///@}
  private:
   ContentReference m_contentReference;
-  bool m_contentReferenceHasBeenSet = false;
 
   GenerativeReference m_generativeReference;
-  bool m_generativeReferenceHasBeenSet = false;
 
   SuggestedMessageReference m_suggestedMessageReference;
+  bool m_contentReferenceHasBeenSet = false;
+  bool m_generativeReferenceHasBeenSet = false;
   bool m_suggestedMessageReferenceHasBeenSet = false;
 };
 

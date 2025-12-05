@@ -82,12 +82,12 @@ class ListInputRoutingsRequest : public IoTEventsRequest {
   ///@}
  private:
   InputIdentifier m_inputIdentifier;
-  bool m_inputIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_inputIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

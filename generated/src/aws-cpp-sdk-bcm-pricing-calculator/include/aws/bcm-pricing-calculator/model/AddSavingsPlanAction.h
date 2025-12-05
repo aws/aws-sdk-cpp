@@ -71,9 +71,9 @@ class AddSavingsPlanAction {
   ///@}
  private:
   Aws::String m_savingsPlanOfferingId;
-  bool m_savingsPlanOfferingIdHasBeenSet = false;
 
   double m_commitment{0.0};
+  bool m_savingsPlanOfferingIdHasBeenSet = false;
   bool m_commitmentHasBeenSet = false;
 };
 

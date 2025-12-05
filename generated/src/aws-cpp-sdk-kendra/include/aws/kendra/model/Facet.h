@@ -108,12 +108,12 @@ class Facet {
   ///@}
  private:
   Aws::String m_documentAttributeKey;
-  bool m_documentAttributeKeyHasBeenSet = false;
 
   Aws::Vector<Facet> m_facets;
-  bool m_facetsHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_documentAttributeKeyHasBeenSet = false;
+  bool m_facetsHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

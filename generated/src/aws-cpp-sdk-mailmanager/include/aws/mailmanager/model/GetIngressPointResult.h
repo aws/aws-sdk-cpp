@@ -250,42 +250,42 @@ class GetIngressPointResult {
   ///@}
  private:
   Aws::String m_ingressPointId;
-  bool m_ingressPointIdHasBeenSet = false;
 
   Aws::String m_ingressPointName;
-  bool m_ingressPointNameHasBeenSet = false;
 
   Aws::String m_ingressPointArn;
-  bool m_ingressPointArnHasBeenSet = false;
 
   IngressPointStatus m_status{IngressPointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   IngressPointType m_type{IngressPointType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_aRecord;
-  bool m_aRecordHasBeenSet = false;
 
   Aws::String m_ruleSetId;
-  bool m_ruleSetIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   IngressPointAuthConfiguration m_ingressPointAuthConfiguration;
-  bool m_ingressPointAuthConfigurationHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingressPointIdHasBeenSet = false;
+  bool m_ingressPointNameHasBeenSet = false;
+  bool m_ingressPointArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_aRecordHasBeenSet = false;
+  bool m_ruleSetIdHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
+  bool m_ingressPointAuthConfigurationHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListEntityOwnersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<OwnerPropertiesOutput> m_owners;
-  bool m_ownersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ownersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

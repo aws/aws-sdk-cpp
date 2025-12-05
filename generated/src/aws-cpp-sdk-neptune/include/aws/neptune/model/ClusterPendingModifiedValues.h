@@ -187,27 +187,27 @@ class ClusterPendingModifiedValues {
   ///@}
  private:
   PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
-  bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   bool m_iAMDatabaseAuthenticationEnabled{false};
-  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   int m_iops{0};
+  bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
 };
 

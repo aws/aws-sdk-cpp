@@ -94,12 +94,12 @@ class SageMakerRunConfigurationOutput {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_trackingAssets;
+  bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_trackingAssetsHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CopyImageResult {
   ///@}
  private:
   Aws::String m_destinationImageName;
-  bool m_destinationImageNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationImageNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

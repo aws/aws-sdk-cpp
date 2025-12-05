@@ -108,15 +108,15 @@ class CreateComponentRequest : public AmplifyUIBuilderRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   CreateComponentData m_componentToCreate;
+  bool m_appIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_componentToCreateHasBeenSet = false;
 };
 

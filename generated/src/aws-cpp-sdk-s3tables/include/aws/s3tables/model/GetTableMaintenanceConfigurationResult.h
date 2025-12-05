@@ -85,12 +85,12 @@ class GetTableMaintenanceConfigurationResult {
   ///@}
  private:
   Aws::String m_tableARN;
-  bool m_tableARNHasBeenSet = false;
 
   Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue> m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableARNHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

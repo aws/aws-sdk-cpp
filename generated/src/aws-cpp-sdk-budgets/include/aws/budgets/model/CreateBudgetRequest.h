@@ -127,15 +127,15 @@ class CreateBudgetRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Budget m_budget;
-  bool m_budgetHasBeenSet = false;
 
   Aws::Vector<NotificationWithSubscribers> m_notificationsWithSubscribers;
-  bool m_notificationsWithSubscribersHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetHasBeenSet = false;
+  bool m_notificationsWithSubscribersHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class RemoveFlowOutputResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_outputArn;
-  bool m_outputArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_outputArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

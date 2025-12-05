@@ -86,12 +86,12 @@ class AssetBundleImportJobDataSetOverrideParameters {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataSetRefreshProperties m_dataSetRefreshProperties;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_dataSetRefreshPropertiesHasBeenSet = false;
 };
 

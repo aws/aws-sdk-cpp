@@ -232,36 +232,36 @@ class SoftwarePackage {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_epoch;
-  bool m_epochHasBeenSet = false;
 
   Aws::String m_release;
-  bool m_releaseHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_packageManager;
-  bool m_packageManagerHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   Aws::String m_fixedInVersion;
-  bool m_fixedInVersionHasBeenSet = false;
 
   Aws::String m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   Aws::String m_sourceLayerHash;
-  bool m_sourceLayerHashHasBeenSet = false;
 
   Aws::String m_sourceLayerArn;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_epochHasBeenSet = false;
+  bool m_releaseHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_packageManagerHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_fixedInVersionHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
+  bool m_sourceLayerHashHasBeenSet = false;
   bool m_sourceLayerArnHasBeenSet = false;
 };
 

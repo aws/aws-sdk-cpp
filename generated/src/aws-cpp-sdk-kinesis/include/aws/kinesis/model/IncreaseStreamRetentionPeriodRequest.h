@@ -93,12 +93,12 @@ class IncreaseStreamRetentionPeriodRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   int m_retentionPeriodHours{0};
-  bool m_retentionPeriodHoursHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_retentionPeriodHoursHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

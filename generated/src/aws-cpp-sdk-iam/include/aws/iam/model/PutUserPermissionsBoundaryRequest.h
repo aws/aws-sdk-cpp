@@ -79,9 +79,9 @@ class PutUserPermissionsBoundaryRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_permissionsBoundary;
+  bool m_userNameHasBeenSet = false;
   bool m_permissionsBoundaryHasBeenSet = false;
 };
 

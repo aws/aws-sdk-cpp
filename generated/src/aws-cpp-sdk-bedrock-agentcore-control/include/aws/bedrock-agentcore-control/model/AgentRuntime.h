@@ -159,24 +159,24 @@ class AgentRuntime {
   ///@}
  private:
   Aws::String m_agentRuntimeArn;
-  bool m_agentRuntimeArnHasBeenSet = false;
 
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_agentRuntimeVersion;
-  bool m_agentRuntimeVersionHasBeenSet = false;
 
   Aws::String m_agentRuntimeName;
-  bool m_agentRuntimeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
+  bool m_agentRuntimeArnHasBeenSet = false;
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_agentRuntimeVersionHasBeenSet = false;
+  bool m_agentRuntimeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

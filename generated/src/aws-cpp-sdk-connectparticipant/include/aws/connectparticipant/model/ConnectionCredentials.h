@@ -69,9 +69,9 @@ class ConnectionCredentials {
   ///@}
  private:
   Aws::String m_connectionToken;
-  bool m_connectionTokenHasBeenSet = false;
 
   Aws::String m_expiry;
+  bool m_connectionTokenHasBeenSet = false;
   bool m_expiryHasBeenSet = false;
 };
 

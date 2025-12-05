@@ -69,9 +69,9 @@ class Record {
   ///@}
  private:
   Aws::String m_jsonPath;
-  bool m_jsonPathHasBeenSet = false;
 
   long long m_recordIndex{0};
+  bool m_jsonPathHasBeenSet = false;
   bool m_recordIndexHasBeenSet = false;
 };
 

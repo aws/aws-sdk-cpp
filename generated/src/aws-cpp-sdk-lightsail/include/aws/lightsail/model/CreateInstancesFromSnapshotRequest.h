@@ -340,42 +340,42 @@ class CreateInstancesFromSnapshotRequest : public LightsailRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceNames;
-  bool m_instanceNamesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<DiskMap>> m_attachedDiskMapping;
-  bool m_attachedDiskMappingHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_instanceSnapshotName;
-  bool m_instanceSnapshotNameHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_userData;
-  bool m_userDataHasBeenSet = false;
 
   Aws::String m_keyPairName;
-  bool m_keyPairNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AddOnRequest> m_addOns;
-  bool m_addOnsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_sourceInstanceName;
-  bool m_sourceInstanceNameHasBeenSet = false;
 
   Aws::String m_restoreDate;
-  bool m_restoreDateHasBeenSet = false;
 
   bool m_useLatestRestorableAutoSnapshot{false};
+  bool m_instanceNamesHasBeenSet = false;
+  bool m_attachedDiskMappingHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_instanceSnapshotNameHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
+  bool m_keyPairNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_addOnsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_sourceInstanceNameHasBeenSet = false;
+  bool m_restoreDateHasBeenSet = false;
   bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class GetResourceLFTagsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   bool m_showAssignedLFTags{false};
+  bool m_catalogIdHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_showAssignedLFTagsHasBeenSet = false;
 };
 

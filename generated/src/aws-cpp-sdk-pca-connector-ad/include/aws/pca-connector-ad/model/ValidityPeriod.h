@@ -72,9 +72,9 @@ class ValidityPeriod {
   ///@}
  private:
   long long m_period{0};
-  bool m_periodHasBeenSet = false;
 
   ValidityPeriodType m_periodType{ValidityPeriodType::NOT_SET};
+  bool m_periodHasBeenSet = false;
   bool m_periodTypeHasBeenSet = false;
 };
 

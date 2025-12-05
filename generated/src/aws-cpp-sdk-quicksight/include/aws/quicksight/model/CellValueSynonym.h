@@ -76,9 +76,9 @@ class CellValueSynonym {
   ///@}
  private:
   Aws::String m_cellValue;
-  bool m_cellValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_synonyms;
+  bool m_cellValueHasBeenSet = false;
   bool m_synonymsHasBeenSet = false;
 };
 

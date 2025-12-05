@@ -62,9 +62,9 @@ class IntegerRange {
   ///@}
  private:
   int m_minimum{0};
-  bool m_minimumHasBeenSet = false;
 
   int m_maximum{0};
+  bool m_minimumHasBeenSet = false;
   bool m_maximumHasBeenSet = false;
 };
 

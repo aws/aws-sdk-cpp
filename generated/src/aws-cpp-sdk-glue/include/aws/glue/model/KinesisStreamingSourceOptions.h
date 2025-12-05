@@ -453,69 +453,69 @@ class KinesisStreamingSourceOptions {
   ///@}
  private:
   Aws::String m_endpointUrl;
-  bool m_endpointUrlHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   StartingPosition m_startingPosition{StartingPosition::NOT_SET};
-  bool m_startingPositionHasBeenSet = false;
 
   long long m_maxFetchTimeInMs{0};
-  bool m_maxFetchTimeInMsHasBeenSet = false;
 
   long long m_maxFetchRecordsPerShard{0};
-  bool m_maxFetchRecordsPerShardHasBeenSet = false;
 
   long long m_maxRecordPerRead{0};
-  bool m_maxRecordPerReadHasBeenSet = false;
 
   bool m_addIdleTimeBetweenReads{false};
-  bool m_addIdleTimeBetweenReadsHasBeenSet = false;
 
   long long m_idleTimeBetweenReadsInMs{0};
-  bool m_idleTimeBetweenReadsInMsHasBeenSet = false;
 
   long long m_describeShardInterval{0};
-  bool m_describeShardIntervalHasBeenSet = false;
 
   int m_numRetries{0};
-  bool m_numRetriesHasBeenSet = false;
 
   long long m_retryIntervalMs{0};
-  bool m_retryIntervalMsHasBeenSet = false;
 
   long long m_maxRetryIntervalMs{0};
-  bool m_maxRetryIntervalMsHasBeenSet = false;
 
   bool m_avoidEmptyBatches{false};
-  bool m_avoidEmptyBatchesHasBeenSet = false;
 
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_roleSessionName;
-  bool m_roleSessionNameHasBeenSet = false;
 
   Aws::String m_addRecordTimestamp;
-  bool m_addRecordTimestampHasBeenSet = false;
 
   Aws::String m_emitConsumerLagMetrics;
-  bool m_emitConsumerLagMetricsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startingTimestamp{};
-  bool m_startingTimestampHasBeenSet = false;
 
   Aws::String m_fanoutConsumerARN;
+  bool m_endpointUrlHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_startingPositionHasBeenSet = false;
+  bool m_maxFetchTimeInMsHasBeenSet = false;
+  bool m_maxFetchRecordsPerShardHasBeenSet = false;
+  bool m_maxRecordPerReadHasBeenSet = false;
+  bool m_addIdleTimeBetweenReadsHasBeenSet = false;
+  bool m_idleTimeBetweenReadsInMsHasBeenSet = false;
+  bool m_describeShardIntervalHasBeenSet = false;
+  bool m_numRetriesHasBeenSet = false;
+  bool m_retryIntervalMsHasBeenSet = false;
+  bool m_maxRetryIntervalMsHasBeenSet = false;
+  bool m_avoidEmptyBatchesHasBeenSet = false;
+  bool m_streamArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_roleSessionNameHasBeenSet = false;
+  bool m_addRecordTimestampHasBeenSet = false;
+  bool m_emitConsumerLagMetricsHasBeenSet = false;
+  bool m_startingTimestampHasBeenSet = false;
   bool m_fanoutConsumerARNHasBeenSet = false;
 };
 

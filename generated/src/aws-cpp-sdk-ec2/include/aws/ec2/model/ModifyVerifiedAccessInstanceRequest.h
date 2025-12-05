@@ -128,18 +128,18 @@ class ModifyVerifiedAccessInstanceRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_cidrEndpointsCustomSubDomain;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_cidrEndpointsCustomSubDomainHasBeenSet = false;
 };
 

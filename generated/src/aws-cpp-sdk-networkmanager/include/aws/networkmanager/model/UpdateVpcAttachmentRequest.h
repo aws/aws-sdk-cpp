@@ -115,15 +115,15 @@ class UpdateVpcAttachmentRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSubnetArns;
-  bool m_addSubnetArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSubnetArns;
-  bool m_removeSubnetArnsHasBeenSet = false;
 
   VpcOptions m_options;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_addSubnetArnsHasBeenSet = false;
+  bool m_removeSubnetArnsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

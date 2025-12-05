@@ -66,9 +66,9 @@ class DeleteScalingPlanRequest : public AutoScalingPlansRequest {
   ///@}
  private:
   Aws::String m_scalingPlanName;
-  bool m_scalingPlanNameHasBeenSet = false;
 
   long long m_scalingPlanVersion{0};
+  bool m_scalingPlanNameHasBeenSet = false;
   bool m_scalingPlanVersionHasBeenSet = false;
 };
 

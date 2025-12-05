@@ -132,18 +132,18 @@ class SetupHistory {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   SetupRequest m_request;
-  bool m_requestHasBeenSet = false;
 
   SetupHistoryResource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<SetupExecutionDetails> m_executionDetails;
-  bool m_executionDetailsHasBeenSet = false;
 
   SetupStatus m_status{SetupStatus::NOT_SET};
+  bool m_operationIdHasBeenSet = false;
+  bool m_requestHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_executionDetailsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class FormOutput {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_formName;
-  bool m_formNameHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeRevision;
+  bool m_contentHasBeenSet = false;
+  bool m_formNameHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
 };
 

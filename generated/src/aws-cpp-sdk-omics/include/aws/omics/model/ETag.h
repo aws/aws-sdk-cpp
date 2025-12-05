@@ -86,12 +86,12 @@ class ETag {
   ///@}
  private:
   ETagAlgorithm m_algorithm{ETagAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   Aws::String m_source1;
-  bool m_source1HasBeenSet = false;
 
   Aws::String m_source2;
+  bool m_algorithmHasBeenSet = false;
+  bool m_source1HasBeenSet = false;
   bool m_source2HasBeenSet = false;
 };
 

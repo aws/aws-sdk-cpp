@@ -110,15 +110,15 @@ class Hits {
   ///@}
  private:
   long long m_found{0};
-  bool m_foundHasBeenSet = false;
 
   long long m_start{0};
-  bool m_startHasBeenSet = false;
 
   Aws::String m_cursor;
-  bool m_cursorHasBeenSet = false;
 
   Aws::Vector<Hit> m_hit;
+  bool m_foundHasBeenSet = false;
+  bool m_startHasBeenSet = false;
+  bool m_cursorHasBeenSet = false;
   bool m_hitHasBeenSet = false;
 };
 

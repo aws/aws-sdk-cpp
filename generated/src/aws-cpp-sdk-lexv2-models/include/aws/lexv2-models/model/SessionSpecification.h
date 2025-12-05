@@ -284,42 +284,42 @@ class SessionSpecification {
   ///@}
  private:
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_channel;
-  bool m_channelHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_conversationStartTime{};
-  bool m_conversationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_conversationEndTime{};
-  bool m_conversationEndTimeHasBeenSet = false;
 
   long long m_conversationDurationSeconds{0};
-  bool m_conversationDurationSecondsHasBeenSet = false;
 
   ConversationEndState m_conversationEndState{ConversationEndState::NOT_SET};
-  bool m_conversationEndStateHasBeenSet = false;
 
   AnalyticsModality m_mode{AnalyticsModality::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   long long m_numberOfTurns{0};
-  bool m_numberOfTurnsHasBeenSet = false;
 
   Aws::Vector<InvokedIntentSample> m_invokedIntentSamples;
-  bool m_invokedIntentSamplesHasBeenSet = false;
 
   Aws::String m_originatingRequestId;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_conversationStartTimeHasBeenSet = false;
+  bool m_conversationEndTimeHasBeenSet = false;
+  bool m_conversationDurationSecondsHasBeenSet = false;
+  bool m_conversationEndStateHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_numberOfTurnsHasBeenSet = false;
+  bool m_invokedIntentSamplesHasBeenSet = false;
   bool m_originatingRequestIdHasBeenSet = false;
 };
 

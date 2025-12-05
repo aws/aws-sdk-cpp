@@ -90,12 +90,12 @@ class AccountState {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   State m_state;
-  bool m_stateHasBeenSet = false;
 
   ResourceState m_resourceState;
+  bool m_accountIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_resourceStateHasBeenSet = false;
 };
 

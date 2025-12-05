@@ -87,12 +87,12 @@ class ListOnlineEvaluationConfigsResult {
   ///@}
  private:
   Aws::Vector<OnlineEvaluationConfigSummary> m_onlineEvaluationConfigs;
-  bool m_onlineEvaluationConfigsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_onlineEvaluationConfigsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

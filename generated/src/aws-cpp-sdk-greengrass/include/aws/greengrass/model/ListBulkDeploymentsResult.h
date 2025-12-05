@@ -85,12 +85,12 @@ class ListBulkDeploymentsResult {
   ///@}
  private:
   Aws::Vector<BulkDeployment> m_bulkDeployments;
-  bool m_bulkDeploymentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bulkDeploymentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListSolFunctionPackagesResult {
   ///@}
  private:
   Aws::Vector<ListSolFunctionPackageInfo> m_functionPackages;
-  bool m_functionPackagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionPackagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

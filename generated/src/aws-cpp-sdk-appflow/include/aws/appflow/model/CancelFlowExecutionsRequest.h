@@ -74,9 +74,9 @@ class CancelFlowExecutionsRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_executionIds;
+  bool m_flowNameHasBeenSet = false;
   bool m_executionIdsHasBeenSet = false;
 };
 

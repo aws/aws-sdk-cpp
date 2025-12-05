@@ -138,21 +138,21 @@ class AccountJiraConfigurationOutput {
   ///@}
  private:
   IntegrationStatus m_integrationStatus{IntegrationStatus::NOT_SET};
-  bool m_integrationStatusHasBeenSet = false;
 
   AccountJiraIssueManagementStatus m_issueManagementStatus{AccountJiraIssueManagementStatus::NOT_SET};
-  bool m_issueManagementStatusHasBeenSet = false;
 
   IssueManagementType m_issueManagementType{IssueManagementType::NOT_SET};
-  bool m_issueManagementTypeHasBeenSet = false;
 
   Aws::String m_subdomain;
-  bool m_subdomainHasBeenSet = false;
 
   Aws::String m_jiraProjectKey;
-  bool m_jiraProjectKeyHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_integrationStatusHasBeenSet = false;
+  bool m_issueManagementStatusHasBeenSet = false;
+  bool m_issueManagementTypeHasBeenSet = false;
+  bool m_subdomainHasBeenSet = false;
+  bool m_jiraProjectKeyHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

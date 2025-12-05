@@ -93,12 +93,12 @@ class ListReputationEntitiesResult {
   ///@}
  private:
   Aws::Vector<ReputationEntity> m_reputationEntities;
-  bool m_reputationEntitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reputationEntitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

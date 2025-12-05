@@ -190,27 +190,27 @@ class DescribeLakeFormationIdentityCenterConfigurationResult {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   ExternalFilteringConfiguration m_externalFiltering;
-  bool m_externalFilteringHasBeenSet = false;
 
   Aws::Vector<DataLakePrincipal> m_shareRecipients;
-  bool m_shareRecipientsHasBeenSet = false;
 
   Aws::Vector<ServiceIntegrationUnion> m_serviceIntegrations;
-  bool m_serviceIntegrationsHasBeenSet = false;
 
   Aws::String m_resourceShare;
-  bool m_resourceShareHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_externalFilteringHasBeenSet = false;
+  bool m_shareRecipientsHasBeenSet = false;
+  bool m_serviceIntegrationsHasBeenSet = false;
+  bool m_resourceShareHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

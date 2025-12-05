@@ -264,15 +264,15 @@ class ExpectedAttributeValue {
   ///@}
  private:
   AttributeValue m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_exists{false};
-  bool m_existsHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::Vector<AttributeValue> m_attributeValueList;
+  bool m_valueHasBeenSet = false;
+  bool m_existsHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
   bool m_attributeValueListHasBeenSet = false;
 };
 

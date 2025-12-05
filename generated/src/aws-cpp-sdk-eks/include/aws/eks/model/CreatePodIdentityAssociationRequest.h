@@ -228,27 +228,27 @@ class CreatePodIdentityAssociationRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_serviceAccount;
-  bool m_serviceAccountHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_disableSessionTags{false};
-  bool m_disableSessionTagsHasBeenSet = false;
 
   Aws::String m_targetRoleArn;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_serviceAccountHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_disableSessionTagsHasBeenSet = false;
   bool m_targetRoleArnHasBeenSet = false;
 };
 

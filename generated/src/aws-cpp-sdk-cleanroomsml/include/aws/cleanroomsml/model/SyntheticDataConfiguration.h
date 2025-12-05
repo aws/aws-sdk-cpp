@@ -76,9 +76,9 @@ class SyntheticDataConfiguration {
   ///@}
  private:
   MLSyntheticDataParameters m_syntheticDataParameters;
-  bool m_syntheticDataParametersHasBeenSet = false;
 
   SyntheticDataEvaluationScores m_syntheticDataEvaluationScores;
+  bool m_syntheticDataParametersHasBeenSet = false;
   bool m_syntheticDataEvaluationScoresHasBeenSet = false;
 };
 

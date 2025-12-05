@@ -103,15 +103,15 @@ class GetIceServerConfigRequest : public KinesisVideoSignalingChannelsRequest {
   ///@}
  private:
   Aws::String m_channelARN;
-  bool m_channelARNHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Service m_service{Service::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_channelARNHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

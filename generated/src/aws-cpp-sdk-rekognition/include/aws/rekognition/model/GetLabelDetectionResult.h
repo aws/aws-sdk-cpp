@@ -233,36 +233,36 @@ class GetLabelDetectionResult {
   ///@}
  private:
   VideoJobStatus m_jobStatus{VideoJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   VideoMetadata m_videoMetadata;
-  bool m_videoMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LabelDetection> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::String m_labelModelVersion;
-  bool m_labelModelVersionHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Video m_video;
-  bool m_videoHasBeenSet = false;
 
   Aws::String m_jobTag;
-  bool m_jobTagHasBeenSet = false;
 
   GetLabelDetectionRequestMetadata m_getRequestMetadata;
-  bool m_getRequestMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_videoMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_labelModelVersionHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_jobTagHasBeenSet = false;
+  bool m_getRequestMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

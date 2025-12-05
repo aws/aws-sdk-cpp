@@ -148,24 +148,24 @@ class CreateSoftwareUpdateJobRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_s3UrlSignerRole;
-  bool m_s3UrlSignerRoleHasBeenSet = false;
 
   SoftwareToUpdate m_softwareToUpdate{SoftwareToUpdate::NOT_SET};
-  bool m_softwareToUpdateHasBeenSet = false;
 
   UpdateAgentLogLevel m_updateAgentLogLevel{UpdateAgentLogLevel::NOT_SET};
-  bool m_updateAgentLogLevelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_updateTargets;
-  bool m_updateTargetsHasBeenSet = false;
 
   UpdateTargetsArchitecture m_updateTargetsArchitecture{UpdateTargetsArchitecture::NOT_SET};
-  bool m_updateTargetsArchitectureHasBeenSet = false;
 
   UpdateTargetsOperatingSystem m_updateTargetsOperatingSystem{UpdateTargetsOperatingSystem::NOT_SET};
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_s3UrlSignerRoleHasBeenSet = false;
+  bool m_softwareToUpdateHasBeenSet = false;
+  bool m_updateAgentLogLevelHasBeenSet = false;
+  bool m_updateTargetsHasBeenSet = false;
+  bool m_updateTargetsArchitectureHasBeenSet = false;
   bool m_updateTargetsOperatingSystemHasBeenSet = false;
 };
 

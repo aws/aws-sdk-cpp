@@ -63,9 +63,9 @@ class AnomalyScore {
   ///@}
  private:
   double m_maxScore{0.0};
-  bool m_maxScoreHasBeenSet = false;
 
   double m_currentScore{0.0};
+  bool m_maxScoreHasBeenSet = false;
   bool m_currentScoreHasBeenSet = false;
 };
 

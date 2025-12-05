@@ -87,12 +87,12 @@ class SMSChannelRequest {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_shortCode;
+  bool m_enabledHasBeenSet = false;
+  bool m_senderIdHasBeenSet = false;
   bool m_shortCodeHasBeenSet = false;
 };
 

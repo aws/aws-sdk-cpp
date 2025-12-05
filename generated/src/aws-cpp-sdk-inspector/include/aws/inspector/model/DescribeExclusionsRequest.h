@@ -74,9 +74,9 @@ class DescribeExclusionsRequest : public InspectorRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_exclusionArns;
-  bool m_exclusionArnsHasBeenSet = false;
 
   Locale m_locale{Locale::NOT_SET};
+  bool m_exclusionArnsHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

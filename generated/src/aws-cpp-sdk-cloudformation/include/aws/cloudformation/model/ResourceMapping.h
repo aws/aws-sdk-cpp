@@ -73,9 +73,9 @@ class ResourceMapping {
   ///@}
  private:
   ResourceLocation m_source;
-  bool m_sourceHasBeenSet = false;
 
   ResourceLocation m_destination;
+  bool m_sourceHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

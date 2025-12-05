@@ -71,9 +71,9 @@ class ReplicaAutoScalingSpecification {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   AutoScalingSpecification m_autoScalingSpecification;
+  bool m_regionHasBeenSet = false;
   bool m_autoScalingSpecificationHasBeenSet = false;
 };
 

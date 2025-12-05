@@ -575,84 +575,84 @@ class ElasticsearchDomainStatus {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   bool m_created{false};
-  bool m_createdHasBeenSet = false;
 
   bool m_deleted{false};
-  bool m_deletedHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   bool m_processing{false};
-  bool m_processingHasBeenSet = false;
 
   bool m_upgradeProcessing{false};
-  bool m_upgradeProcessingHasBeenSet = false;
 
   Aws::String m_elasticsearchVersion;
-  bool m_elasticsearchVersionHasBeenSet = false;
 
   ElasticsearchClusterConfig m_elasticsearchClusterConfig;
-  bool m_elasticsearchClusterConfigHasBeenSet = false;
 
   EBSOptions m_eBSOptions;
-  bool m_eBSOptionsHasBeenSet = false;
 
   Aws::String m_accessPolicies;
-  bool m_accessPoliciesHasBeenSet = false;
 
   SnapshotOptions m_snapshotOptions;
-  bool m_snapshotOptionsHasBeenSet = false;
 
   VPCDerivedInfo m_vPCOptions;
-  bool m_vPCOptionsHasBeenSet = false;
 
   CognitoOptions m_cognitoOptions;
-  bool m_cognitoOptionsHasBeenSet = false;
 
   EncryptionAtRestOptions m_encryptionAtRestOptions;
-  bool m_encryptionAtRestOptionsHasBeenSet = false;
 
   NodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
-  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_advancedOptions;
-  bool m_advancedOptionsHasBeenSet = false;
 
   Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
-  bool m_logPublishingOptionsHasBeenSet = false;
 
   ServiceSoftwareOptions m_serviceSoftwareOptions;
-  bool m_serviceSoftwareOptionsHasBeenSet = false;
 
   DomainEndpointOptions m_domainEndpointOptions;
-  bool m_domainEndpointOptionsHasBeenSet = false;
 
   AdvancedSecurityOptions m_advancedSecurityOptions;
-  bool m_advancedSecurityOptionsHasBeenSet = false;
 
   AutoTuneOptionsOutput m_autoTuneOptions;
-  bool m_autoTuneOptionsHasBeenSet = false;
 
   ChangeProgressDetails m_changeProgressDetails;
-  bool m_changeProgressDetailsHasBeenSet = false;
 
   DomainProcessingStatusType m_domainProcessingStatus{DomainProcessingStatusType::NOT_SET};
-  bool m_domainProcessingStatusHasBeenSet = false;
 
   Aws::Vector<ModifyingProperties> m_modifyingProperties;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_processingHasBeenSet = false;
+  bool m_upgradeProcessingHasBeenSet = false;
+  bool m_elasticsearchVersionHasBeenSet = false;
+  bool m_elasticsearchClusterConfigHasBeenSet = false;
+  bool m_eBSOptionsHasBeenSet = false;
+  bool m_accessPoliciesHasBeenSet = false;
+  bool m_snapshotOptionsHasBeenSet = false;
+  bool m_vPCOptionsHasBeenSet = false;
+  bool m_cognitoOptionsHasBeenSet = false;
+  bool m_encryptionAtRestOptionsHasBeenSet = false;
+  bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
+  bool m_advancedOptionsHasBeenSet = false;
+  bool m_logPublishingOptionsHasBeenSet = false;
+  bool m_serviceSoftwareOptionsHasBeenSet = false;
+  bool m_domainEndpointOptionsHasBeenSet = false;
+  bool m_advancedSecurityOptionsHasBeenSet = false;
+  bool m_autoTuneOptionsHasBeenSet = false;
+  bool m_changeProgressDetailsHasBeenSet = false;
+  bool m_domainProcessingStatusHasBeenSet = false;
   bool m_modifyingPropertiesHasBeenSet = false;
 };
 

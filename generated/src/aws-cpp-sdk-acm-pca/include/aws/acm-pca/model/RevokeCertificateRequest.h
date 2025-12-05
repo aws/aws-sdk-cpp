@@ -97,12 +97,12 @@ class RevokeCertificateRequest : public ACMPCARequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_certificateSerial;
-  bool m_certificateSerialHasBeenSet = false;
 
   RevocationReason m_revocationReason{RevocationReason::NOT_SET};
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_certificateSerialHasBeenSet = false;
   bool m_revocationReasonHasBeenSet = false;
 };
 

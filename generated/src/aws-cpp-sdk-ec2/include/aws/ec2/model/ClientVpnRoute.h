@@ -165,24 +165,24 @@ class ClientVpnRoute {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_destinationCidr;
-  bool m_destinationCidrHasBeenSet = false;
 
   Aws::String m_targetSubnet;
-  bool m_targetSubnetHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_origin;
-  bool m_originHasBeenSet = false;
 
   ClientVpnRouteStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_destinationCidrHasBeenSet = false;
+  bool m_targetSubnetHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

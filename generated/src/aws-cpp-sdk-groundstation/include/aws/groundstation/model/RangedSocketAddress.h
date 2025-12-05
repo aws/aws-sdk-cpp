@@ -69,9 +69,9 @@ class RangedSocketAddress {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IntegerRange m_portRange;
+  bool m_nameHasBeenSet = false;
   bool m_portRangeHasBeenSet = false;
 };
 

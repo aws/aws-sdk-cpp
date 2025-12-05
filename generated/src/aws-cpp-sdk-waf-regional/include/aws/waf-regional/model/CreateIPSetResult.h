@@ -80,12 +80,12 @@ class CreateIPSetResult {
   ///@}
  private:
   IPSet m_iPSet;
-  bool m_iPSetHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_iPSetHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

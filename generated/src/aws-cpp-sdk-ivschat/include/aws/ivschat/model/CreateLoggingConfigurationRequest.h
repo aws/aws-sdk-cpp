@@ -100,12 +100,12 @@ class CreateLoggingConfigurationRequest : public IvschatRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

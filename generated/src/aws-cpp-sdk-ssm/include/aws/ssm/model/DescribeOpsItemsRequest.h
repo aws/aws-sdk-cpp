@@ -110,12 +110,12 @@ class DescribeOpsItemsRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<OpsItemFilter> m_opsItemFilters;
-  bool m_opsItemFiltersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_opsItemFiltersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

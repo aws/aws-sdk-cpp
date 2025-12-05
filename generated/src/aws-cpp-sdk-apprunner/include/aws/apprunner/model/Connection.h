@@ -123,18 +123,18 @@ class Connection {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_connectionNameHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

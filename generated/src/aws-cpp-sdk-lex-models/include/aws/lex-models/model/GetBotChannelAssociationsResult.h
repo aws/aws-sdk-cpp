@@ -89,12 +89,12 @@ class GetBotChannelAssociationsResult {
   ///@}
  private:
   Aws::Vector<BotChannelAssociation> m_botChannelAssociations;
-  bool m_botChannelAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botChannelAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

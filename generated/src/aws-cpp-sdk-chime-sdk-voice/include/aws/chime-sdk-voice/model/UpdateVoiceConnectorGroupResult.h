@@ -60,9 +60,9 @@ class UpdateVoiceConnectorGroupResult {
   ///@}
  private:
   VoiceConnectorGroup m_voiceConnectorGroup;
-  bool m_voiceConnectorGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceConnectorGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

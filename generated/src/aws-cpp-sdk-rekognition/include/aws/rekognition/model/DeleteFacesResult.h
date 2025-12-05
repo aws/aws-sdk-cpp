@@ -90,12 +90,12 @@ class DeleteFacesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deletedFaces;
-  bool m_deletedFacesHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulFaceDeletion> m_unsuccessfulFaceDeletions;
-  bool m_unsuccessfulFaceDeletionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletedFacesHasBeenSet = false;
+  bool m_unsuccessfulFaceDeletionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

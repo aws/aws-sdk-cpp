@@ -126,15 +126,15 @@ class S3DestinationConfiguration {
   ///@}
  private:
   Aws::String m_storageConfigurationArn;
-  bool m_storageConfigurationArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_encoderConfigurationArns;
-  bool m_encoderConfigurationArnsHasBeenSet = false;
 
   RecordingConfiguration m_recordingConfiguration;
-  bool m_recordingConfigurationHasBeenSet = false;
 
   Aws::Vector<CompositionThumbnailConfiguration> m_thumbnailConfigurations;
+  bool m_storageConfigurationArnHasBeenSet = false;
+  bool m_encoderConfigurationArnsHasBeenSet = false;
+  bool m_recordingConfigurationHasBeenSet = false;
   bool m_thumbnailConfigurationsHasBeenSet = false;
 };
 

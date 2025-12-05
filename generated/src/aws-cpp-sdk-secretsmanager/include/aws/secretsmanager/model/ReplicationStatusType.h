@@ -127,18 +127,18 @@ class ReplicationStatusType {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessedDate{};
+  bool m_regionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_lastAccessedDateHasBeenSet = false;
 };
 

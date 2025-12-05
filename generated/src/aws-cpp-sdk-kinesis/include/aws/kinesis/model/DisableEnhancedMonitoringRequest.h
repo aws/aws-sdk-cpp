@@ -113,12 +113,12 @@ class DisableEnhancedMonitoringRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::Vector<MetricsName> m_shardLevelMetrics;
-  bool m_shardLevelMetricsHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_shardLevelMetricsHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

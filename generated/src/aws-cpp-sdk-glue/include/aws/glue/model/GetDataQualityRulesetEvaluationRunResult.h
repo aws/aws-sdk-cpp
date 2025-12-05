@@ -319,51 +319,51 @@ class GetDataQualityRulesetEvaluationRunResult {
   ///@}
  private:
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   DataQualityEvaluationRunAdditionalRunOptions m_additionalRunOptions;
-  bool m_additionalRunOptionsHasBeenSet = false;
 
   TaskStatusType m_status{TaskStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorString;
-  bool m_errorStringHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   int m_executionTime{0};
-  bool m_executionTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rulesetNames;
-  bool m_rulesetNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resultIds;
-  bool m_resultIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, DataSource> m_additionalDataSources;
-  bool m_additionalDataSourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runIdHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_additionalRunOptionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorStringHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_executionTimeHasBeenSet = false;
+  bool m_rulesetNamesHasBeenSet = false;
+  bool m_resultIdsHasBeenSet = false;
+  bool m_additionalDataSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

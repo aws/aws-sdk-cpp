@@ -134,18 +134,18 @@ class ContactFlowModuleSearchCriteria {
   ///@}
  private:
   Aws::Vector<ContactFlowModuleSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<ContactFlowModuleSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   ContactFlowModuleState m_stateCondition{ContactFlowModuleState::NOT_SET};
-  bool m_stateConditionHasBeenSet = false;
 
   ContactFlowModuleStatus m_statusCondition{ContactFlowModuleStatus::NOT_SET};
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
+  bool m_stringConditionHasBeenSet = false;
+  bool m_stateConditionHasBeenSet = false;
   bool m_statusConditionHasBeenSet = false;
 };
 

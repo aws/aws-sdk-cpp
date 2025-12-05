@@ -186,27 +186,27 @@ class CalculateIsolinesResult {
   ///@}
  private:
   Aws::String m_arrivalTime;
-  bool m_arrivalTimeHasBeenSet = false;
 
   Aws::String m_departureTime;
-  bool m_departureTimeHasBeenSet = false;
 
   GeometryFormat m_isolineGeometryFormat{GeometryFormat::NOT_SET};
-  bool m_isolineGeometryFormatHasBeenSet = false;
 
   Aws::Vector<Isoline> m_isolines;
-  bool m_isolinesHasBeenSet = false;
 
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   Aws::Vector<double> m_snappedDestination;
-  bool m_snappedDestinationHasBeenSet = false;
 
   Aws::Vector<double> m_snappedOrigin;
-  bool m_snappedOriginHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arrivalTimeHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_isolineGeometryFormatHasBeenSet = false;
+  bool m_isolinesHasBeenSet = false;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_snappedDestinationHasBeenSet = false;
+  bool m_snappedOriginHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

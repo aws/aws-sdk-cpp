@@ -83,12 +83,12 @@ class MaxCountRule {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_maxCount{0};
-  bool m_maxCountHasBeenSet = false;
 
   bool m_deleteSourceFromS3{false};
+  bool m_enabledHasBeenSet = false;
+  bool m_maxCountHasBeenSet = false;
   bool m_deleteSourceFromS3HasBeenSet = false;
 };
 

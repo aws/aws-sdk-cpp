@@ -168,24 +168,24 @@ class CreateListenerRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ListenerProtocol m_protocol{ListenerProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   RuleAction m_defaultAction;
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

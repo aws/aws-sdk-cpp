@@ -73,9 +73,9 @@ class HttpDataSourceConfig {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   AuthorizationConfig m_authorizationConfig;
+  bool m_endpointHasBeenSet = false;
   bool m_authorizationConfigHasBeenSet = false;
 };
 

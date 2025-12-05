@@ -118,18 +118,18 @@ class UpdateRecoveryPointIndexSettingsResult {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   IndexStatus m_indexStatus{IndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   Index m_index{Index::NOT_SET};
-  bool m_indexHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
+  bool m_indexHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

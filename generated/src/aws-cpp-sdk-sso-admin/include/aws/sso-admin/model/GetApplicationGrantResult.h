@@ -60,9 +60,9 @@ class GetApplicationGrantResult {
   ///@}
  private:
   Grant m_grant;
-  bool m_grantHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_grantHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

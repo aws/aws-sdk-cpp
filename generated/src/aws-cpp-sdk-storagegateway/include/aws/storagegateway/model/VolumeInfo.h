@@ -167,24 +167,24 @@ class VolumeInfo {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   long long m_volumeSizeInBytes{0};
-  bool m_volumeSizeInBytesHasBeenSet = false;
 
   Aws::String m_volumeAttachmentStatus;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_volumeSizeInBytesHasBeenSet = false;
   bool m_volumeAttachmentStatusHasBeenSet = false;
 };
 

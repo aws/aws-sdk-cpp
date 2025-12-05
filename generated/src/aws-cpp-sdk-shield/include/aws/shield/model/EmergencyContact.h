@@ -88,12 +88,12 @@ class EmergencyContact {
   ///@}
  private:
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_contactNotes;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
   bool m_contactNotesHasBeenSet = false;
 };
 

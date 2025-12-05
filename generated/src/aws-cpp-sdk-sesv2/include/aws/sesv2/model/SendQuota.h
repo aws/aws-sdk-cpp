@@ -84,12 +84,12 @@ class SendQuota {
   ///@}
  private:
   double m_max24HourSend{0.0};
-  bool m_max24HourSendHasBeenSet = false;
 
   double m_maxSendRate{0.0};
-  bool m_maxSendRateHasBeenSet = false;
 
   double m_sentLast24Hours{0.0};
+  bool m_max24HourSendHasBeenSet = false;
+  bool m_maxSendRateHasBeenSet = false;
   bool m_sentLast24HoursHasBeenSet = false;
 };
 

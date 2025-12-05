@@ -106,15 +106,15 @@ class DescribeObjectsResult {
   ///@}
  private:
   Aws::Vector<PipelineObject> m_pipelineObjects;
-  bool m_pipelineObjectsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_hasMoreResults{false};
-  bool m_hasMoreResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineObjectsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_hasMoreResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

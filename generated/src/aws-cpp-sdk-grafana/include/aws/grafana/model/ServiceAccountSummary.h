@@ -106,15 +106,15 @@ class ServiceAccountSummary {
   ///@}
  private:
   Role m_grafanaRole{Role::NOT_SET};
-  bool m_grafanaRoleHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_isDisabled;
-  bool m_isDisabledHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_grafanaRoleHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_isDisabledHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

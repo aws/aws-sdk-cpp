@@ -93,12 +93,12 @@ class DescribeRulesPackagesResult {
   ///@}
  private:
   Aws::Vector<RulesPackage> m_rulesPackages;
-  bool m_rulesPackagesHasBeenSet = false;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rulesPackagesHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

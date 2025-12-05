@@ -431,57 +431,57 @@ class HyperParameterTrainingJobDefinition {
   ///@}
  private:
   Aws::String m_definitionName;
-  bool m_definitionNameHasBeenSet = false;
 
   HyperParameterTuningJobObjective m_tuningObjective;
-  bool m_tuningObjectiveHasBeenSet = false;
 
   ParameterRanges m_hyperParameterRanges;
-  bool m_hyperParameterRangesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_staticHyperParameters;
-  bool m_staticHyperParametersHasBeenSet = false;
 
   HyperParameterAlgorithmSpecification m_algorithmSpecification;
-  bool m_algorithmSpecificationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Channel> m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   HyperParameterTuningResourceConfig m_hyperParameterTuningResourceConfig;
-  bool m_hyperParameterTuningResourceConfigHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   bool m_enableNetworkIsolation{false};
-  bool m_enableNetworkIsolationHasBeenSet = false;
 
   bool m_enableInterContainerTrafficEncryption{false};
-  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
   bool m_enableManagedSpotTraining{false};
-  bool m_enableManagedSpotTrainingHasBeenSet = false;
 
   CheckpointConfig m_checkpointConfig;
-  bool m_checkpointConfigHasBeenSet = false;
 
   RetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
+  bool m_definitionNameHasBeenSet = false;
+  bool m_tuningObjectiveHasBeenSet = false;
+  bool m_hyperParameterRangesHasBeenSet = false;
+  bool m_staticHyperParametersHasBeenSet = false;
+  bool m_algorithmSpecificationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
+  bool m_hyperParameterTuningResourceConfigHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_enableNetworkIsolationHasBeenSet = false;
+  bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
+  bool m_enableManagedSpotTrainingHasBeenSet = false;
+  bool m_checkpointConfigHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
 };
 

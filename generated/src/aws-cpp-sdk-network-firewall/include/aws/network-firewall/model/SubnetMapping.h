@@ -72,9 +72,9 @@ class SubnetMapping {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   IPAddressType m_iPAddressType{IPAddressType::NOT_SET};
+  bool m_subnetIdHasBeenSet = false;
   bool m_iPAddressTypeHasBeenSet = false;
 };
 

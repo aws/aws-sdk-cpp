@@ -203,30 +203,30 @@ class CreateMultiRegionClusterRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_multiRegionClusterNameSuffix;
-  bool m_multiRegionClusterNameSuffixHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_multiRegionParameterGroupName;
-  bool m_multiRegionParameterGroupNameHasBeenSet = false;
 
   int m_numShards{0};
-  bool m_numShardsHasBeenSet = false;
 
   bool m_tLSEnabled{false};
-  bool m_tLSEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_multiRegionClusterNameSuffixHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_multiRegionParameterGroupNameHasBeenSet = false;
+  bool m_numShardsHasBeenSet = false;
+  bool m_tLSEnabledHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

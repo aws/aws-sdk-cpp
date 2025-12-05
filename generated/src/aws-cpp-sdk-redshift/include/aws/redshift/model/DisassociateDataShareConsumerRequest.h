@@ -108,15 +108,15 @@ class DisassociateDataShareConsumerRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_dataShareArn;
-  bool m_dataShareArnHasBeenSet = false;
 
   bool m_disassociateEntireAccount{false};
-  bool m_disassociateEntireAccountHasBeenSet = false;
 
   Aws::String m_consumerArn;
-  bool m_consumerArnHasBeenSet = false;
 
   Aws::String m_consumerRegion;
+  bool m_dataShareArnHasBeenSet = false;
+  bool m_disassociateEntireAccountHasBeenSet = false;
+  bool m_consumerArnHasBeenSet = false;
   bool m_consumerRegionHasBeenSet = false;
 };
 

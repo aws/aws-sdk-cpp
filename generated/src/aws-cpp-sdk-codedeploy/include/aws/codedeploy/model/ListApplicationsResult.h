@@ -91,12 +91,12 @@ class ListApplicationsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

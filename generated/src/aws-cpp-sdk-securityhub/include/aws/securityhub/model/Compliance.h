@@ -188,21 +188,21 @@ class Compliance {
   ///@}
  private:
   ComplianceStatus m_status{ComplianceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_relatedRequirements;
-  bool m_relatedRequirementsHasBeenSet = false;
 
   Aws::Vector<StatusReason> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::Vector<AssociatedStandard> m_associatedStandards;
-  bool m_associatedStandardsHasBeenSet = false;
 
   Aws::Vector<SecurityControlParameter> m_securityControlParameters;
+  bool m_statusHasBeenSet = false;
+  bool m_relatedRequirementsHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_associatedStandardsHasBeenSet = false;
   bool m_securityControlParametersHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class PutImagePolicyRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_imageArnHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

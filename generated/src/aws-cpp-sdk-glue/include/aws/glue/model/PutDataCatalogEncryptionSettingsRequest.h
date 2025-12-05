@@ -69,9 +69,9 @@ class PutDataCatalogEncryptionSettingsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   DataCatalogEncryptionSettings m_dataCatalogEncryptionSettings;
+  bool m_catalogIdHasBeenSet = false;
   bool m_dataCatalogEncryptionSettingsHasBeenSet = false;
 };
 

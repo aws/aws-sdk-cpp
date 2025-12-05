@@ -190,30 +190,30 @@ class JobProcessDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_processingTargets;
-  bool m_processingTargetsHasBeenSet = false;
 
   int m_numberOfCanceledThings{0};
-  bool m_numberOfCanceledThingsHasBeenSet = false;
 
   int m_numberOfSucceededThings{0};
-  bool m_numberOfSucceededThingsHasBeenSet = false;
 
   int m_numberOfFailedThings{0};
-  bool m_numberOfFailedThingsHasBeenSet = false;
 
   int m_numberOfRejectedThings{0};
-  bool m_numberOfRejectedThingsHasBeenSet = false;
 
   int m_numberOfQueuedThings{0};
-  bool m_numberOfQueuedThingsHasBeenSet = false;
 
   int m_numberOfInProgressThings{0};
-  bool m_numberOfInProgressThingsHasBeenSet = false;
 
   int m_numberOfRemovedThings{0};
-  bool m_numberOfRemovedThingsHasBeenSet = false;
 
   int m_numberOfTimedOutThings{0};
+  bool m_processingTargetsHasBeenSet = false;
+  bool m_numberOfCanceledThingsHasBeenSet = false;
+  bool m_numberOfSucceededThingsHasBeenSet = false;
+  bool m_numberOfFailedThingsHasBeenSet = false;
+  bool m_numberOfRejectedThingsHasBeenSet = false;
+  bool m_numberOfQueuedThingsHasBeenSet = false;
+  bool m_numberOfInProgressThingsHasBeenSet = false;
+  bool m_numberOfRemovedThingsHasBeenSet = false;
   bool m_numberOfTimedOutThingsHasBeenSet = false;
 };
 

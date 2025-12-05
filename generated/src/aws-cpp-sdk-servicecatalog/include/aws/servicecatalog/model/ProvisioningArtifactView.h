@@ -71,9 +71,9 @@ class ProvisioningArtifactView {
   ///@}
  private:
   ProductViewSummary m_productViewSummary;
-  bool m_productViewSummaryHasBeenSet = false;
 
   ProvisioningArtifact m_provisioningArtifact;
+  bool m_productViewSummaryHasBeenSet = false;
   bool m_provisioningArtifactHasBeenSet = false;
 };
 

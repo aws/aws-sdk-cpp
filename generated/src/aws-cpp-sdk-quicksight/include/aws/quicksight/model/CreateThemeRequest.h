@@ -198,27 +198,27 @@ class CreateThemeRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_themeId;
-  bool m_themeIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_baseThemeId;
-  bool m_baseThemeIdHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   ThemeConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_themeIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_baseThemeIdHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class GeoMosaicConfigInput {
   ///@}
  private:
   AlgorithmNameGeoMosaic m_algorithmName{AlgorithmNameGeoMosaic::NOT_SET};
-  bool m_algorithmNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetBands;
+  bool m_algorithmNameHasBeenSet = false;
   bool m_targetBandsHasBeenSet = false;
 };
 

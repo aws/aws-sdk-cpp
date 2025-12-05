@@ -69,9 +69,9 @@ class MemberFabricAttributes {
   ///@}
  private:
   Aws::String m_adminUsername;
-  bool m_adminUsernameHasBeenSet = false;
 
   Aws::String m_caEndpoint;
+  bool m_adminUsernameHasBeenSet = false;
   bool m_caEndpointHasBeenSet = false;
 };
 

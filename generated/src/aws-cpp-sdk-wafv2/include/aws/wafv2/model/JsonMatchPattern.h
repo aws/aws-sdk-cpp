@@ -87,9 +87,9 @@ class JsonMatchPattern {
   ///@}
  private:
   All m_all;
-  bool m_allHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includedPaths;
+  bool m_allHasBeenSet = false;
   bool m_includedPathsHasBeenSet = false;
 };
 

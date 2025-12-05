@@ -137,18 +137,18 @@ class NotificationEventSummary {
   ///@}
  private:
   SchemaVersion m_schemaVersion{SchemaVersion::NOT_SET};
-  bool m_schemaVersionHasBeenSet = false;
 
   SourceEventMetadataSummary m_sourceEventMetadata;
-  bool m_sourceEventMetadataHasBeenSet = false;
 
   MessageComponentsSummary m_messageComponents;
-  bool m_messageComponentsHasBeenSet = false;
 
   EventStatus m_eventStatus{EventStatus::NOT_SET};
-  bool m_eventStatusHasBeenSet = false;
 
   NotificationType m_notificationType{NotificationType::NOT_SET};
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_sourceEventMetadataHasBeenSet = false;
+  bool m_messageComponentsHasBeenSet = false;
+  bool m_eventStatusHasBeenSet = false;
   bool m_notificationTypeHasBeenSet = false;
 };
 

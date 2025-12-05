@@ -245,36 +245,36 @@ class ReviewTemplate {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lenses;
-  bool m_lensesHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Map<Question, int> m_questionCounts;
-  bool m_questionCountsHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ReviewTemplateUpdateStatus m_updateStatus{ReviewTemplateUpdateStatus::NOT_SET};
-  bool m_updateStatusHasBeenSet = false;
 
   Aws::String m_shareInvitationId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lensesHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_questionCountsHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
   bool m_shareInvitationIdHasBeenSet = false;
 };
 

@@ -216,33 +216,33 @@ class FreeTierUsage {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   double m_actualUsageAmount{0.0};
-  bool m_actualUsageAmountHasBeenSet = false;
 
   double m_forecastedUsageAmount{0.0};
-  bool m_forecastedUsageAmountHasBeenSet = false;
 
   double m_limit{0.0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_freeTierType;
+  bool m_serviceHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_actualUsageAmountHasBeenSet = false;
+  bool m_forecastedUsageAmountHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_freeTierTypeHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateLicenseManagerReportGeneratorResult {
   ///@}
  private:
   Aws::String m_licenseManagerReportGeneratorArn;
-  bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class SecurityConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimeStamp{};
-  bool m_createdTimeStampHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_createdTimeStampHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

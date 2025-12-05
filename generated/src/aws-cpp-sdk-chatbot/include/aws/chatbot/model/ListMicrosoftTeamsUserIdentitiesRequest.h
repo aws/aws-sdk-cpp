@@ -87,12 +87,12 @@ class ListMicrosoftTeamsUserIdentitiesRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_chatConfigurationArn;
-  bool m_chatConfigurationArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_chatConfigurationArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

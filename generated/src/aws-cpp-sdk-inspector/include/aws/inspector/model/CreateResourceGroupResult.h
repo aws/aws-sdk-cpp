@@ -59,9 +59,9 @@ class CreateResourceGroupResult {
   ///@}
  private:
   Aws::String m_resourceGroupArn;
-  bool m_resourceGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

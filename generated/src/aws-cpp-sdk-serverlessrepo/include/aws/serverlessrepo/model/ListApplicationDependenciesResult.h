@@ -86,12 +86,12 @@ class ListApplicationDependenciesResult {
   ///@}
  private:
   Aws::Vector<ApplicationDependencySummary> m_dependencies;
-  bool m_dependenciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dependenciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

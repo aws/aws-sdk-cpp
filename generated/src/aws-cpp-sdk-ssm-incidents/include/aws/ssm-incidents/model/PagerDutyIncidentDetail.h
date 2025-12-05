@@ -89,12 +89,12 @@ class PagerDutyIncidentDetail {
   ///@}
  private:
   bool m_autoResolve{false};
-  bool m_autoResolveHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_secretId;
+  bool m_autoResolveHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_secretIdHasBeenSet = false;
 };
 

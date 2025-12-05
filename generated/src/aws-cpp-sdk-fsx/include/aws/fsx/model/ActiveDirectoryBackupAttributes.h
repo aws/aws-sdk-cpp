@@ -87,12 +87,12 @@ class ActiveDirectoryBackupAttributes {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_activeDirectoryId;
-  bool m_activeDirectoryIdHasBeenSet = false;
 
   Aws::String m_resourceARN;
+  bool m_domainNameHasBeenSet = false;
+  bool m_activeDirectoryIdHasBeenSet = false;
   bool m_resourceARNHasBeenSet = false;
 };
 

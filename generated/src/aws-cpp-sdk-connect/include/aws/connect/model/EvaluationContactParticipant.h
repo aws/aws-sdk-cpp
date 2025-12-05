@@ -68,9 +68,9 @@ class EvaluationContactParticipant {
   ///@}
  private:
   ContactParticipantRole m_contactParticipantRole{ContactParticipantRole::NOT_SET};
-  bool m_contactParticipantRoleHasBeenSet = false;
 
   Aws::String m_contactParticipantId;
+  bool m_contactParticipantRoleHasBeenSet = false;
   bool m_contactParticipantIdHasBeenSet = false;
 };
 

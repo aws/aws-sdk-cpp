@@ -98,12 +98,12 @@ class CreateMultiRegionAccessPointRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   CreateMultiRegionAccessPointInput m_details;
+  bool m_accountIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_detailsHasBeenSet = false;
 };
 

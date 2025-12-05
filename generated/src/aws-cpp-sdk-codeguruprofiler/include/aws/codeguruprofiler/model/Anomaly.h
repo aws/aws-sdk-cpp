@@ -100,12 +100,12 @@ class Anomaly {
   ///@}
  private:
   Aws::Vector<AnomalyInstance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Metric m_metric;
-  bool m_metricHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_instancesHasBeenSet = false;
+  bool m_metricHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

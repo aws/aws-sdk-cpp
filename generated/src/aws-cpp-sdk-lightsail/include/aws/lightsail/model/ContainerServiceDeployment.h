@@ -142,18 +142,18 @@ class ContainerServiceDeployment {
   ///@}
  private:
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   ContainerServiceDeploymentState m_state{ContainerServiceDeploymentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Container> m_containers;
-  bool m_containersHasBeenSet = false;
 
   ContainerServiceEndpoint m_publicEndpoint;
-  bool m_publicEndpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_versionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_publicEndpointHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

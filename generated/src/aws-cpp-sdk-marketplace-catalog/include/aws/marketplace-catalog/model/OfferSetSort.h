@@ -65,9 +65,9 @@ class OfferSetSort {
   ///@}
  private:
   OfferSetSortBy m_sortBy{OfferSetSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

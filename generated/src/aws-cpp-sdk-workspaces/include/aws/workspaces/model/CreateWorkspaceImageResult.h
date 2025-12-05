@@ -182,30 +182,30 @@ class CreateWorkspaceImageResult {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OperatingSystem m_operatingSystem;
-  bool m_operatingSystemHasBeenSet = false;
 
   WorkspaceImageState m_state{WorkspaceImageState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   WorkspaceImageRequiredTenancy m_requiredTenancy{WorkspaceImageRequiredTenancy::NOT_SET};
-  bool m_requiredTenancyHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_requiredTenancyHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

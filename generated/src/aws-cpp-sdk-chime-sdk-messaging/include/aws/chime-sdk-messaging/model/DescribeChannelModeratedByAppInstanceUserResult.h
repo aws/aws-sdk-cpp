@@ -62,9 +62,9 @@ class DescribeChannelModeratedByAppInstanceUserResult {
   ///@}
  private:
   ChannelModeratedByAppInstanceUserSummary m_channel;
-  bool m_channelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

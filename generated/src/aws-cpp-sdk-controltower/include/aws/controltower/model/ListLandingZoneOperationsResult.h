@@ -85,12 +85,12 @@ class ListLandingZoneOperationsResult {
   ///@}
  private:
   Aws::Vector<LandingZoneOperationSummary> m_landingZoneOperations;
-  bool m_landingZoneOperationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_landingZoneOperationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class GetAccountSummaryResult {
   ///@}
  private:
   Aws::Map<SummaryKeyType, int> m_summaryMap;
-  bool m_summaryMapHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_summaryMapHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

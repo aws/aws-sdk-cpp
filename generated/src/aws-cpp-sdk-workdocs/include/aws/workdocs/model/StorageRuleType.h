@@ -64,9 +64,9 @@ class StorageRuleType {
   ///@}
  private:
   long long m_storageAllocatedInBytes{0};
-  bool m_storageAllocatedInBytesHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
+  bool m_storageAllocatedInBytesHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
 };
 

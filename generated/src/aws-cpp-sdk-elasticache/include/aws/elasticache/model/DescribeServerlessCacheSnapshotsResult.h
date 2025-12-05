@@ -90,12 +90,12 @@ class DescribeServerlessCacheSnapshotsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ServerlessCacheSnapshot> m_serverlessCacheSnapshots;
-  bool m_serverlessCacheSnapshotsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serverlessCacheSnapshotsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

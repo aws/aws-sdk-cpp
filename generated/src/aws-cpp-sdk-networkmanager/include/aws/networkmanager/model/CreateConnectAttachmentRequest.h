@@ -166,24 +166,24 @@ class CreateConnectAttachmentRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   Aws::String m_transportAttachmentId;
-  bool m_transportAttachmentIdHasBeenSet = false;
 
   Aws::String m_routingPolicyLabel;
-  bool m_routingPolicyLabelHasBeenSet = false;
 
   ConnectAttachmentOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_transportAttachmentIdHasBeenSet = false;
+  bool m_routingPolicyLabelHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

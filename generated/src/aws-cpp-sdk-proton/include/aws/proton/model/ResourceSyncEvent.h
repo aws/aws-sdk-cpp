@@ -105,15 +105,15 @@ class ResourceSyncEvent {
   ///@}
  private:
   Aws::String m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_time{};
-  bool m_timeHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_eventHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

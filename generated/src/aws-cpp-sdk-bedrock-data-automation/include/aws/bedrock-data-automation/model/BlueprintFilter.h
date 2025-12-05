@@ -79,12 +79,12 @@ class BlueprintFilter {
   ///@}
  private:
   Aws::String m_blueprintArn;
-  bool m_blueprintArnHasBeenSet = false;
 
   Aws::String m_blueprintVersion;
-  bool m_blueprintVersionHasBeenSet = false;
 
   BlueprintStage m_blueprintStage{BlueprintStage::NOT_SET};
+  bool m_blueprintArnHasBeenSet = false;
+  bool m_blueprintVersionHasBeenSet = false;
   bool m_blueprintStageHasBeenSet = false;
 };
 

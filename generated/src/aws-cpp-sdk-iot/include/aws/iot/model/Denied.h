@@ -71,9 +71,9 @@ class Denied {
   ///@}
  private:
   ImplicitDeny m_implicitDeny;
-  bool m_implicitDenyHasBeenSet = false;
 
   ExplicitDeny m_explicitDeny;
+  bool m_implicitDenyHasBeenSet = false;
   bool m_explicitDenyHasBeenSet = false;
 };
 

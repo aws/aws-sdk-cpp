@@ -551,75 +551,75 @@ class CreateModelPackageRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelPackageName;
-  bool m_modelPackageNameHasBeenSet = false;
 
   Aws::String m_modelPackageGroupName;
-  bool m_modelPackageGroupNameHasBeenSet = false;
 
   Aws::String m_modelPackageDescription;
-  bool m_modelPackageDescriptionHasBeenSet = false;
 
   ModelPackageRegistrationType m_modelPackageRegistrationType{ModelPackageRegistrationType::NOT_SET};
-  bool m_modelPackageRegistrationTypeHasBeenSet = false;
 
   InferenceSpecification m_inferenceSpecification;
-  bool m_inferenceSpecificationHasBeenSet = false;
 
   ModelPackageValidationSpecification m_validationSpecification;
-  bool m_validationSpecificationHasBeenSet = false;
 
   SourceAlgorithmSpecification m_sourceAlgorithmSpecification;
-  bool m_sourceAlgorithmSpecificationHasBeenSet = false;
 
   bool m_certifyForMarketplace{false};
-  bool m_certifyForMarketplaceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
-  bool m_modelApprovalStatusHasBeenSet = false;
 
   MetadataProperties m_metadataProperties;
-  bool m_metadataPropertiesHasBeenSet = false;
 
   ModelMetrics m_modelMetrics;
-  bool m_modelMetricsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_samplePayloadUrl;
-  bool m_samplePayloadUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-  bool m_customerMetadataPropertiesHasBeenSet = false;
 
   DriftCheckBaselines m_driftCheckBaselines;
-  bool m_driftCheckBaselinesHasBeenSet = false;
 
   Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
-  bool m_additionalInferenceSpecificationsHasBeenSet = false;
 
   SkipModelValidation m_skipModelValidation{SkipModelValidation::NOT_SET};
-  bool m_skipModelValidationHasBeenSet = false;
 
   Aws::String m_sourceUri;
-  bool m_sourceUriHasBeenSet = false;
 
   ModelPackageSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   ModelPackageModelCard m_modelCard;
-  bool m_modelCardHasBeenSet = false;
 
   ModelLifeCycle m_modelLifeCycle;
+  bool m_modelPackageNameHasBeenSet = false;
+  bool m_modelPackageGroupNameHasBeenSet = false;
+  bool m_modelPackageDescriptionHasBeenSet = false;
+  bool m_modelPackageRegistrationTypeHasBeenSet = false;
+  bool m_inferenceSpecificationHasBeenSet = false;
+  bool m_validationSpecificationHasBeenSet = false;
+  bool m_sourceAlgorithmSpecificationHasBeenSet = false;
+  bool m_certifyForMarketplaceHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_modelApprovalStatusHasBeenSet = false;
+  bool m_metadataPropertiesHasBeenSet = false;
+  bool m_modelMetricsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_samplePayloadUrlHasBeenSet = false;
+  bool m_customerMetadataPropertiesHasBeenSet = false;
+  bool m_driftCheckBaselinesHasBeenSet = false;
+  bool m_additionalInferenceSpecificationsHasBeenSet = false;
+  bool m_skipModelValidationHasBeenSet = false;
+  bool m_sourceUriHasBeenSet = false;
+  bool m_securityConfigHasBeenSet = false;
+  bool m_modelCardHasBeenSet = false;
   bool m_modelLifeCycleHasBeenSet = false;
 };
 

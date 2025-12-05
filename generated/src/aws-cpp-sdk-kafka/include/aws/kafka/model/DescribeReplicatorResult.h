@@ -287,45 +287,45 @@ class DescribeReplicatorResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   bool m_isReplicatorReference{false};
-  bool m_isReplicatorReferenceHasBeenSet = false;
 
   Aws::Vector<KafkaClusterDescription> m_kafkaClusters;
-  bool m_kafkaClustersHasBeenSet = false;
 
   Aws::Vector<ReplicationInfoDescription> m_replicationInfoList;
-  bool m_replicationInfoListHasBeenSet = false;
 
   Aws::String m_replicatorArn;
-  bool m_replicatorArnHasBeenSet = false;
 
   Aws::String m_replicatorDescription;
-  bool m_replicatorDescriptionHasBeenSet = false;
 
   Aws::String m_replicatorName;
-  bool m_replicatorNameHasBeenSet = false;
 
   Aws::String m_replicatorResourceArn;
-  bool m_replicatorResourceArnHasBeenSet = false;
 
   ReplicatorState m_replicatorState{ReplicatorState::NOT_SET};
-  bool m_replicatorStateHasBeenSet = false;
 
   Aws::String m_serviceExecutionRoleArn;
-  bool m_serviceExecutionRoleArnHasBeenSet = false;
 
   ReplicationStateInfo m_stateInfo;
-  bool m_stateInfoHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_isReplicatorReferenceHasBeenSet = false;
+  bool m_kafkaClustersHasBeenSet = false;
+  bool m_replicationInfoListHasBeenSet = false;
+  bool m_replicatorArnHasBeenSet = false;
+  bool m_replicatorDescriptionHasBeenSet = false;
+  bool m_replicatorNameHasBeenSet = false;
+  bool m_replicatorResourceArnHasBeenSet = false;
+  bool m_replicatorStateHasBeenSet = false;
+  bool m_serviceExecutionRoleArnHasBeenSet = false;
+  bool m_stateInfoHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

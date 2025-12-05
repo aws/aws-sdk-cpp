@@ -84,9 +84,9 @@ class RootDirectory {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   CreationInfo m_creationInfo;
+  bool m_pathHasBeenSet = false;
   bool m_creationInfoHasBeenSet = false;
 };
 

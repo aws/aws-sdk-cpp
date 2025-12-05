@@ -89,12 +89,12 @@ class EncryptionSetting {
   ///@}
  private:
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_botLocaleExportPassword;
-  bool m_botLocaleExportPasswordHasBeenSet = false;
 
   Aws::String m_associatedTranscriptsPassword;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_botLocaleExportPasswordHasBeenSet = false;
   bool m_associatedTranscriptsPasswordHasBeenSet = false;
 };
 

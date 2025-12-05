@@ -244,39 +244,39 @@ class WirelessDeviceStatistics {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   WirelessDeviceType m_type{WirelessDeviceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_lastUplinkReceivedAt;
-  bool m_lastUplinkReceivedAtHasBeenSet = false;
 
   LoRaWANListDevice m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   SidewalkListDevice m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   FuotaDeviceStatus m_fuotaDeviceStatus{FuotaDeviceStatus::NOT_SET};
-  bool m_fuotaDeviceStatusHasBeenSet = false;
 
   Aws::String m_multicastDeviceStatus;
-  bool m_multicastDeviceStatusHasBeenSet = false;
 
   int m_mcGroupId{0};
-  bool m_mcGroupIdHasBeenSet = false;
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_lastUplinkReceivedAtHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_sidewalkHasBeenSet = false;
+  bool m_fuotaDeviceStatusHasBeenSet = false;
+  bool m_multicastDeviceStatusHasBeenSet = false;
+  bool m_mcGroupIdHasBeenSet = false;
   bool m_positioningHasBeenSet = false;
 };
 

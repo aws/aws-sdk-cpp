@@ -60,9 +60,9 @@ class GetIncidentRecordResult {
   ///@}
  private:
   IncidentRecord m_incidentRecord;
-  bool m_incidentRecordHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_incidentRecordHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

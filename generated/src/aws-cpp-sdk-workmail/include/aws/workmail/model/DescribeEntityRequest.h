@@ -67,9 +67,9 @@ class DescribeEntityRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_organizationIdHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

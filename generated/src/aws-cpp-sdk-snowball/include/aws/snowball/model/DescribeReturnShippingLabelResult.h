@@ -94,15 +94,15 @@ class DescribeReturnShippingLabelResult {
   ///@}
  private:
   ShippingLabelStatus m_status{ShippingLabelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_returnShippingLabelURI;
-  bool m_returnShippingLabelURIHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_returnShippingLabelURIHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -174,21 +174,21 @@ class AccessDetail {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_serviceNamespace;
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_entityPath;
-  bool m_entityPathHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAuthenticatedTime{};
-  bool m_lastAuthenticatedTimeHasBeenSet = false;
 
   int m_totalAuthenticatedEntities{0};
+  bool m_serviceNameHasBeenSet = false;
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_entityPathHasBeenSet = false;
+  bool m_lastAuthenticatedTimeHasBeenSet = false;
   bool m_totalAuthenticatedEntitiesHasBeenSet = false;
 };
 

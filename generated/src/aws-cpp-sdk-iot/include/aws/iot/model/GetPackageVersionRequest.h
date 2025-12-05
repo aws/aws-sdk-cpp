@@ -65,9 +65,9 @@ class GetPackageVersionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_versionName;
+  bool m_packageNameHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
 };
 

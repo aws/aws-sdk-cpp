@@ -58,9 +58,9 @@ class CreateRedshiftIdcApplicationResult {
   ///@}
  private:
   RedshiftIdcApplication m_redshiftIdcApplication;
-  bool m_redshiftIdcApplicationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_redshiftIdcApplicationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

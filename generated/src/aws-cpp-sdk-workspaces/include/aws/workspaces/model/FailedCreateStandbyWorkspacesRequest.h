@@ -90,12 +90,12 @@ class FailedCreateStandbyWorkspacesRequest {
   ///@}
  private:
   StandbyWorkspace m_standbyWorkspaceRequest;
-  bool m_standbyWorkspaceRequestHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_standbyWorkspaceRequestHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

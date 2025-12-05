@@ -68,9 +68,9 @@ class UsernamePassword {
   ///@}
  private:
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_passwordHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

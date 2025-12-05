@@ -110,15 +110,15 @@ class CustomizationConfiguration {
   ///@}
  private:
   Aws::String m_customCSSUrl;
-  bool m_customCSSUrlHasBeenSet = false;
 
   Aws::String m_logoUrl;
-  bool m_logoUrlHasBeenSet = false;
 
   Aws::String m_fontUrl;
-  bool m_fontUrlHasBeenSet = false;
 
   Aws::String m_faviconUrl;
+  bool m_customCSSUrlHasBeenSet = false;
+  bool m_logoUrlHasBeenSet = false;
+  bool m_fontUrlHasBeenSet = false;
   bool m_faviconUrlHasBeenSet = false;
 };
 

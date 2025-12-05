@@ -109,15 +109,15 @@ class DescribeAffectedEntitiesRequest : public HealthRequest {
   ///@}
  private:
   EntityFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filterHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

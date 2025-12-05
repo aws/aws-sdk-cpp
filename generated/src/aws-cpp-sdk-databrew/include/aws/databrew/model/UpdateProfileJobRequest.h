@@ -259,39 +259,39 @@ class UpdateProfileJobRequest : public GlueDataBrewRequest {
   ///@}
  private:
   ProfileConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   EncryptionMode m_encryptionMode{EncryptionMode::NOT_SET};
-  bool m_encryptionModeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LogSubscription m_logSubscription{LogSubscription::NOT_SET};
-  bool m_logSubscriptionHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_maxRetries{0};
-  bool m_maxRetriesHasBeenSet = false;
 
   S3Location m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::Vector<ValidationConfiguration> m_validationConfigurations;
-  bool m_validationConfigurationsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   JobSample m_jobSample;
+  bool m_configurationHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_encryptionModeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_logSubscriptionHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_maxRetriesHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_validationConfigurationsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
   bool m_jobSampleHasBeenSet = false;
 };
 

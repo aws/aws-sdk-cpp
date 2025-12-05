@@ -233,36 +233,36 @@ class GetUploadJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   UploadJobStatus m_status{UploadJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusReason m_statusReason{StatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, ObjectTypeField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_uniqueKey;
-  bool m_uniqueKeyHasBeenSet = false;
 
   ResultsSummary m_resultsSummary;
-  bool m_resultsSummaryHasBeenSet = false;
 
   int m_dataExpiry{0};
-  bool m_dataExpiryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_uniqueKeyHasBeenSet = false;
+  bool m_resultsSummaryHasBeenSet = false;
+  bool m_dataExpiryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

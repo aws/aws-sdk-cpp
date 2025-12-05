@@ -108,12 +108,12 @@ class AssessmentRiskRecommendation {
   ///@}
  private:
   Aws::Vector<Aws::String> m_appComponents;
-  bool m_appComponentsHasBeenSet = false;
 
   Aws::String m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   Aws::String m_risk;
+  bool m_appComponentsHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
   bool m_riskHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class Ec2LaunchTemplate {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ec2InstanceUids;
-  bool m_ec2InstanceUidsHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_ec2InstanceUidsHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

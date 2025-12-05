@@ -176,24 +176,24 @@ class ViolationDetail {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_memberAccount;
-  bool m_memberAccountHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceViolation> m_resourceViolations;
-  bool m_resourceViolationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::String m_resourceDescription;
+  bool m_policyIdHasBeenSet = false;
+  bool m_memberAccountHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceViolationsHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
   bool m_resourceDescriptionHasBeenSet = false;
 };
 

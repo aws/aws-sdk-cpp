@@ -149,21 +149,21 @@ class AwsRdsDbSubnetGroup {
   ///@}
  private:
   Aws::String m_dbSubnetGroupName;
-  bool m_dbSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_dbSubnetGroupDescription;
-  bool m_dbSubnetGroupDescriptionHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetGroupStatus;
-  bool m_subnetGroupStatusHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbSubnetGroupSubnet> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::String m_dbSubnetGroupArn;
+  bool m_dbSubnetGroupNameHasBeenSet = false;
+  bool m_dbSubnetGroupDescriptionHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetGroupStatusHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
   bool m_dbSubnetGroupArnHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class DeleteResourcePolicyRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_revisionId;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_revisionIdHasBeenSet = false;
 };
 

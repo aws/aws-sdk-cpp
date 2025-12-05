@@ -83,12 +83,12 @@ class ChoiceAnswerSummary {
   ///@}
  private:
   Aws::String m_choiceId;
-  bool m_choiceIdHasBeenSet = false;
 
   ChoiceStatus m_status{ChoiceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ChoiceReason m_reason{ChoiceReason::NOT_SET};
+  bool m_choiceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

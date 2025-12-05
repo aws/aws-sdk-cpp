@@ -266,39 +266,39 @@ class ListScanJobsRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_byAccountId;
-  bool m_byAccountIdHasBeenSet = false;
 
   Aws::String m_byBackupVaultName;
-  bool m_byBackupVaultNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCompleteAfter{};
-  bool m_byCompleteAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCompleteBefore{};
-  bool m_byCompleteBeforeHasBeenSet = false;
 
   MalwareScanner m_byMalwareScanner{MalwareScanner::NOT_SET};
-  bool m_byMalwareScannerHasBeenSet = false;
 
   Aws::String m_byRecoveryPointArn;
-  bool m_byRecoveryPointArnHasBeenSet = false;
 
   Aws::String m_byResourceArn;
-  bool m_byResourceArnHasBeenSet = false;
 
   ScanResourceType m_byResourceType{ScanResourceType::NOT_SET};
-  bool m_byResourceTypeHasBeenSet = false;
 
   ScanResultStatus m_byScanResultStatus{ScanResultStatus::NOT_SET};
-  bool m_byScanResultStatusHasBeenSet = false;
 
   ScanState m_byState{ScanState::NOT_SET};
-  bool m_byStateHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_byAccountIdHasBeenSet = false;
+  bool m_byBackupVaultNameHasBeenSet = false;
+  bool m_byCompleteAfterHasBeenSet = false;
+  bool m_byCompleteBeforeHasBeenSet = false;
+  bool m_byMalwareScannerHasBeenSet = false;
+  bool m_byRecoveryPointArnHasBeenSet = false;
+  bool m_byResourceArnHasBeenSet = false;
+  bool m_byResourceTypeHasBeenSet = false;
+  bool m_byScanResultStatusHasBeenSet = false;
+  bool m_byStateHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

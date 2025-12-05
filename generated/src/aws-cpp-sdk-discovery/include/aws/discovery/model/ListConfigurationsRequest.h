@@ -147,18 +147,18 @@ class ListConfigurationsRequest : public ApplicationDiscoveryServiceRequest {
   ///@}
  private:
   ConfigurationItemType m_configurationType{ConfigurationItemType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<OrderByElement> m_orderBy;
+  bool m_configurationTypeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_orderByHasBeenSet = false;
 };
 

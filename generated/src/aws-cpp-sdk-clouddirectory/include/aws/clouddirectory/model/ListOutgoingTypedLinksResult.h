@@ -84,12 +84,12 @@ class ListOutgoingTypedLinksResult {
   ///@}
  private:
   Aws::Vector<TypedLinkSpecifier> m_typedLinkSpecifiers;
-  bool m_typedLinkSpecifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typedLinkSpecifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

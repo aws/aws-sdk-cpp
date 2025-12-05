@@ -104,15 +104,15 @@ class RegionalCluster {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_aRN;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_aRNHasBeenSet = false;
 };
 

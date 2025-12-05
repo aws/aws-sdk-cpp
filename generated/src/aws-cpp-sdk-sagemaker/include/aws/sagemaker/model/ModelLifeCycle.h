@@ -87,12 +87,12 @@ class ModelLifeCycle {
   ///@}
  private:
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_stageStatus;
-  bool m_stageStatusHasBeenSet = false;
 
   Aws::String m_stageDescription;
+  bool m_stageHasBeenSet = false;
+  bool m_stageStatusHasBeenSet = false;
   bool m_stageDescriptionHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class FilterRule {
   ///@}
  private:
   FilterRuleName m_name{FilterRuleName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

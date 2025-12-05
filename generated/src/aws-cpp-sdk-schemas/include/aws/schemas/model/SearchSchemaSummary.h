@@ -107,15 +107,15 @@ class SearchSchemaSummary {
   ///@}
  private:
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::Vector<SearchSchemaVersionSummary> m_schemaVersions;
+  bool m_registryNameHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
   bool m_schemaVersionsHasBeenSet = false;
 };
 

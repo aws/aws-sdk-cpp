@@ -240,36 +240,36 @@ class DescribeSecurityProfileResult {
   ///@}
  private:
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_securityProfileArn;
-  bool m_securityProfileArnHasBeenSet = false;
 
   Aws::String m_securityProfileDescription;
-  bool m_securityProfileDescriptionHasBeenSet = false;
 
   Aws::Vector<Behavior> m_behaviors;
-  bool m_behaviorsHasBeenSet = false;
 
   Aws::Map<AlertTargetType, AlertTarget> m_alertTargets;
-  bool m_alertTargetsHasBeenSet = false;
 
   Aws::Vector<MetricToRetain> m_additionalMetricsToRetainV2;
-  bool m_additionalMetricsToRetainV2HasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   MetricsExportConfig m_metricsExportConfig;
-  bool m_metricsExportConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityProfileNameHasBeenSet = false;
+  bool m_securityProfileArnHasBeenSet = false;
+  bool m_securityProfileDescriptionHasBeenSet = false;
+  bool m_behaviorsHasBeenSet = false;
+  bool m_alertTargetsHasBeenSet = false;
+  bool m_additionalMetricsToRetainV2HasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_metricsExportConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

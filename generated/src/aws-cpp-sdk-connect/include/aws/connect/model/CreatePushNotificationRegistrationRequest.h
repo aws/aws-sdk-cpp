@@ -144,21 +144,21 @@ class CreatePushNotificationRegistrationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_pinpointAppArn;
-  bool m_pinpointAppArnHasBeenSet = false;
 
   Aws::String m_deviceToken;
-  bool m_deviceTokenHasBeenSet = false;
 
   DeviceType m_deviceType{DeviceType::NOT_SET};
-  bool m_deviceTypeHasBeenSet = false;
 
   ContactConfiguration m_contactConfiguration;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_pinpointAppArnHasBeenSet = false;
+  bool m_deviceTokenHasBeenSet = false;
+  bool m_deviceTypeHasBeenSet = false;
   bool m_contactConfigurationHasBeenSet = false;
 };
 

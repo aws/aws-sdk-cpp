@@ -173,27 +173,27 @@ class ServiceNetworkSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   long long m_numberOfAssociatedVPCs{0};
-  bool m_numberOfAssociatedVPCsHasBeenSet = false;
 
   long long m_numberOfAssociatedServices{0};
-  bool m_numberOfAssociatedServicesHasBeenSet = false;
 
   long long m_numberOfAssociatedResourceConfigurations{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_numberOfAssociatedVPCsHasBeenSet = false;
+  bool m_numberOfAssociatedServicesHasBeenSet = false;
   bool m_numberOfAssociatedResourceConfigurationsHasBeenSet = false;
 };
 

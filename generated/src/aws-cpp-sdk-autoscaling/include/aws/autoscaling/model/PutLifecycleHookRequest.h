@@ -198,27 +198,27 @@ class PutLifecycleHookRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_lifecycleHookName;
-  bool m_lifecycleHookNameHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_lifecycleTransition;
-  bool m_lifecycleTransitionHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_notificationTargetARN;
-  bool m_notificationTargetARNHasBeenSet = false;
 
   Aws::String m_notificationMetadata;
-  bool m_notificationMetadataHasBeenSet = false;
 
   int m_heartbeatTimeout{0};
-  bool m_heartbeatTimeoutHasBeenSet = false;
 
   Aws::String m_defaultResult;
+  bool m_lifecycleHookNameHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_lifecycleTransitionHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_notificationTargetARNHasBeenSet = false;
+  bool m_notificationMetadataHasBeenSet = false;
+  bool m_heartbeatTimeoutHasBeenSet = false;
   bool m_defaultResultHasBeenSet = false;
 };
 

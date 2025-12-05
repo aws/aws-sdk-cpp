@@ -420,54 +420,54 @@ class CreateNotebookInstanceRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_notebookInstanceName;
-  bool m_notebookInstanceNameHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   IPAddressType m_ipAddressType{IPAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_lifecycleConfigName;
-  bool m_lifecycleConfigNameHasBeenSet = false;
 
   DirectInternetAccess m_directInternetAccess{DirectInternetAccess::NOT_SET};
-  bool m_directInternetAccessHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   Aws::Vector<NotebookInstanceAcceleratorType> m_acceleratorTypes;
-  bool m_acceleratorTypesHasBeenSet = false;
 
   Aws::String m_defaultCodeRepository;
-  bool m_defaultCodeRepositoryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalCodeRepositories;
-  bool m_additionalCodeRepositoriesHasBeenSet = false;
 
   RootAccess m_rootAccess{RootAccess::NOT_SET};
-  bool m_rootAccessHasBeenSet = false;
 
   Aws::String m_platformIdentifier;
-  bool m_platformIdentifierHasBeenSet = false;
 
   InstanceMetadataServiceConfiguration m_instanceMetadataServiceConfiguration;
+  bool m_notebookInstanceNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lifecycleConfigNameHasBeenSet = false;
+  bool m_directInternetAccessHasBeenSet = false;
+  bool m_volumeSizeInGBHasBeenSet = false;
+  bool m_acceleratorTypesHasBeenSet = false;
+  bool m_defaultCodeRepositoryHasBeenSet = false;
+  bool m_additionalCodeRepositoriesHasBeenSet = false;
+  bool m_rootAccessHasBeenSet = false;
+  bool m_platformIdentifierHasBeenSet = false;
   bool m_instanceMetadataServiceConfigurationHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class SubnetConfiguration {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_ipv4;
-  bool m_ipv4HasBeenSet = false;
 
   Aws::String m_ipv6;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_ipv4HasBeenSet = false;
   bool m_ipv6HasBeenSet = false;
 };
 

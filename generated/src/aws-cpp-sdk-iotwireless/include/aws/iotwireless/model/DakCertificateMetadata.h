@@ -120,18 +120,18 @@ class DakCertificateMetadata {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   int m_maxAllowedSignature{0};
-  bool m_maxAllowedSignatureHasBeenSet = false;
 
   bool m_factorySupport{false};
-  bool m_factorySupportHasBeenSet = false;
 
   Aws::String m_apId;
-  bool m_apIdHasBeenSet = false;
 
   Aws::String m_deviceTypeId;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_maxAllowedSignatureHasBeenSet = false;
+  bool m_factorySupportHasBeenSet = false;
+  bool m_apIdHasBeenSet = false;
   bool m_deviceTypeIdHasBeenSet = false;
 };
 

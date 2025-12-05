@@ -185,27 +185,27 @@ class StartExportTaskRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ExportFormat m_format{ExportFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   ParquetType m_parquetType{ParquetType::NOT_SET};
-  bool m_parquetTypeHasBeenSet = false;
 
   ExportFilter m_exportFilter;
-  bool m_exportFilterHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_graphIdentifierHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_parquetTypeHasBeenSet = false;
+  bool m_exportFilterHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

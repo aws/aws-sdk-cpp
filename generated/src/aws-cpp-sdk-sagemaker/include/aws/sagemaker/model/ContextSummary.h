@@ -143,21 +143,21 @@ class ContextSummary {
   ///@}
  private:
   Aws::String m_contextArn;
-  bool m_contextArnHasBeenSet = false;
 
   Aws::String m_contextName;
-  bool m_contextNameHasBeenSet = false;
 
   ContextSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_contextType;
-  bool m_contextTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_contextArnHasBeenSet = false;
+  bool m_contextNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_contextTypeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

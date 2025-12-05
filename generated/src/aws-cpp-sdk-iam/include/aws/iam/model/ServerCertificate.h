@@ -122,15 +122,15 @@ class ServerCertificate {
   ///@}
  private:
   ServerCertificateMetadata m_serverCertificateMetadata;
-  bool m_serverCertificateMetadataHasBeenSet = false;
 
   Aws::String m_certificateBody;
-  bool m_certificateBodyHasBeenSet = false;
 
   Aws::String m_certificateChain;
-  bool m_certificateChainHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_serverCertificateMetadataHasBeenSet = false;
+  bool m_certificateBodyHasBeenSet = false;
+  bool m_certificateChainHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

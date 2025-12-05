@@ -112,18 +112,18 @@ class DescribeCertificateAuthorityAuditReportResult {
   ///@}
  private:
   AuditReportStatus m_auditReportStatus{AuditReportStatus::NOT_SET};
-  bool m_auditReportStatusHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3Key;
-  bool m_s3KeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_auditReportStatusHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

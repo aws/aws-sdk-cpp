@@ -70,9 +70,9 @@ class StopAssessmentRunRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentRunArn;
-  bool m_assessmentRunArnHasBeenSet = false;
 
   StopAction m_stopAction{StopAction::NOT_SET};
+  bool m_assessmentRunArnHasBeenSet = false;
   bool m_stopActionHasBeenSet = false;
 };
 

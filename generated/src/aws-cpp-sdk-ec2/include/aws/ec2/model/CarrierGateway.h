@@ -131,18 +131,18 @@ class CarrierGateway {
   ///@}
  private:
   Aws::String m_carrierGatewayId;
-  bool m_carrierGatewayIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   CarrierGatewayState m_state{CarrierGatewayState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_carrierGatewayIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

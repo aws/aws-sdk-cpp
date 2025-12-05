@@ -206,27 +206,27 @@ class UpdateVehicleRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   Aws::String m_modelManifestArn;
-  bool m_modelManifestArnHasBeenSet = false;
 
   Aws::String m_decoderManifestArn;
-  bool m_decoderManifestArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   UpdateMode m_attributeUpdateMode{UpdateMode::NOT_SET};
-  bool m_attributeUpdateModeHasBeenSet = false;
 
   Aws::Vector<StateTemplateAssociation> m_stateTemplatesToAdd;
-  bool m_stateTemplatesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stateTemplatesToRemove;
-  bool m_stateTemplatesToRemoveHasBeenSet = false;
 
   Aws::Vector<StateTemplateAssociation> m_stateTemplatesToUpdate;
+  bool m_vehicleNameHasBeenSet = false;
+  bool m_modelManifestArnHasBeenSet = false;
+  bool m_decoderManifestArnHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_attributeUpdateModeHasBeenSet = false;
+  bool m_stateTemplatesToAddHasBeenSet = false;
+  bool m_stateTemplatesToRemoveHasBeenSet = false;
   bool m_stateTemplatesToUpdateHasBeenSet = false;
 };
 

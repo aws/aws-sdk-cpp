@@ -139,18 +139,18 @@ class UpdateSnaplockConfiguration {
   ///@}
  private:
   bool m_auditLogVolume{false};
-  bool m_auditLogVolumeHasBeenSet = false;
 
   AutocommitPeriod m_autocommitPeriod;
-  bool m_autocommitPeriodHasBeenSet = false;
 
   PrivilegedDelete m_privilegedDelete{PrivilegedDelete::NOT_SET};
-  bool m_privilegedDeleteHasBeenSet = false;
 
   SnaplockRetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   bool m_volumeAppendModeEnabled{false};
+  bool m_auditLogVolumeHasBeenSet = false;
+  bool m_autocommitPeriodHasBeenSet = false;
+  bool m_privilegedDeleteHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_volumeAppendModeEnabledHasBeenSet = false;
 };
 

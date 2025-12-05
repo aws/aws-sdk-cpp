@@ -68,9 +68,9 @@ class ContactMetricResult {
   ///@}
  private:
   ContactMetricName m_name{ContactMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   ContactMetricValue m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

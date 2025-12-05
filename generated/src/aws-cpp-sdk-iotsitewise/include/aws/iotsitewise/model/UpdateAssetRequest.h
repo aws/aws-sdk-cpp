@@ -130,18 +130,18 @@ class UpdateAssetRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_assetExternalId;
-  bool m_assetExternalIdHasBeenSet = false;
 
   Aws::String m_assetName;
-  bool m_assetNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_assetDescription;
+  bool m_assetIdHasBeenSet = false;
+  bool m_assetExternalIdHasBeenSet = false;
+  bool m_assetNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_assetDescriptionHasBeenSet = false;
 };
 

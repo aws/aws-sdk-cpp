@@ -69,9 +69,9 @@ class SetDefaultMessageTypeRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_messageTypeHasBeenSet = false;
 };
 

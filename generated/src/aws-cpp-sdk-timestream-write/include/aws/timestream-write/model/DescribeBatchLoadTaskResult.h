@@ -60,9 +60,9 @@ class DescribeBatchLoadTaskResult {
   ///@}
  private:
   BatchLoadTaskDescription m_batchLoadTaskDescription;
-  bool m_batchLoadTaskDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchLoadTaskDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

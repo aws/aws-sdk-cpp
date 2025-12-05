@@ -77,9 +77,9 @@ class TraceUser {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::Vector<ServiceId> m_serviceIds;
+  bool m_userNameHasBeenSet = false;
   bool m_serviceIdsHasBeenSet = false;
 };
 

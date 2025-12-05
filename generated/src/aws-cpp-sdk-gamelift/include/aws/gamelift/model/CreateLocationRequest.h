@@ -80,9 +80,9 @@ class CreateLocationRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_locationName;
-  bool m_locationNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_locationNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

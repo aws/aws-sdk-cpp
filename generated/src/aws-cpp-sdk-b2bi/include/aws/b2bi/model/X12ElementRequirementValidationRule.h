@@ -77,9 +77,9 @@ class X12ElementRequirementValidationRule {
   ///@}
  private:
   Aws::String m_elementPosition;
-  bool m_elementPositionHasBeenSet = false;
 
   ElementRequirement m_requirement{ElementRequirement::NOT_SET};
+  bool m_elementPositionHasBeenSet = false;
   bool m_requirementHasBeenSet = false;
 };
 

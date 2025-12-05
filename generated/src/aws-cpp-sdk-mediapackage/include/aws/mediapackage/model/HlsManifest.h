@@ -246,33 +246,33 @@ it will
   ///@}
  private:
   AdMarkers m_adMarkers{AdMarkers::NOT_SET};
-  bool m_adMarkersHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   bool m_includeIframeOnlyStream{false};
-  bool m_includeIframeOnlyStreamHasBeenSet = false;
 
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   PlaylistType m_playlistType{PlaylistType::NOT_SET};
-  bool m_playlistTypeHasBeenSet = false;
 
   int m_playlistWindowSeconds{0};
-  bool m_playlistWindowSecondsHasBeenSet = false;
 
   int m_programDateTimeIntervalSeconds{0};
-  bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Vector<__AdTriggersElement> m_adTriggers;
-  bool m_adTriggersHasBeenSet = false;
 
   AdsOnDeliveryRestrictions m_adsOnDeliveryRestrictions{AdsOnDeliveryRestrictions::NOT_SET};
+  bool m_adMarkersHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_includeIframeOnlyStreamHasBeenSet = false;
+  bool m_manifestNameHasBeenSet = false;
+  bool m_playlistTypeHasBeenSet = false;
+  bool m_playlistWindowSecondsHasBeenSet = false;
+  bool m_programDateTimeIntervalSecondsHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_adTriggersHasBeenSet = false;
   bool m_adsOnDeliveryRestrictionsHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class PutFileEntry {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   FileModeTypeEnum m_fileMode{FileModeTypeEnum::NOT_SET};
-  bool m_fileModeHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_fileContent{};
-  bool m_fileContentHasBeenSet = false;
 
   SourceFileSpecifier m_sourceFile;
+  bool m_filePathHasBeenSet = false;
+  bool m_fileModeHasBeenSet = false;
+  bool m_fileContentHasBeenSet = false;
   bool m_sourceFileHasBeenSet = false;
 };
 

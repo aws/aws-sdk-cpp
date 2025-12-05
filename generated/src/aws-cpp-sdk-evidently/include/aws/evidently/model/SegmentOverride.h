@@ -97,12 +97,12 @@ class SegmentOverride {
   ///@}
  private:
   long long m_evaluationOrder{0};
-  bool m_evaluationOrderHasBeenSet = false;
 
   Aws::String m_segment;
-  bool m_segmentHasBeenSet = false;
 
   Aws::Map<Aws::String, long long> m_weights;
+  bool m_evaluationOrderHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
   bool m_weightsHasBeenSet = false;
 };
 

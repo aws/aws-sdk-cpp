@@ -85,12 +85,12 @@ class ListDbSystemShapesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DbSystemShapeSummary> m_dbSystemShapes;
-  bool m_dbSystemShapesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_dbSystemShapesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

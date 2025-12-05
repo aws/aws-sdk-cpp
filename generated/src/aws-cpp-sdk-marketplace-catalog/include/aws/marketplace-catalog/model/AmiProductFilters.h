@@ -109,15 +109,15 @@ class AmiProductFilters {
   ///@}
  private:
   AmiProductEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   AmiProductLastModifiedDateFilter m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   AmiProductTitleFilter m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   AmiProductVisibilityFilter m_visibility;
+  bool m_entityIdHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_productTitleHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

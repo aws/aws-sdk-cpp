@@ -85,12 +85,12 @@ class CreateProxyConfigurationResult {
   ///@}
  private:
   ProxyConfiguration m_proxyConfiguration;
-  bool m_proxyConfigurationHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyConfigurationHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

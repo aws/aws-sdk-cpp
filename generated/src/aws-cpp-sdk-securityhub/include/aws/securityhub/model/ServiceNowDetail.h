@@ -87,12 +87,12 @@ class ServiceNowDetail {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   ConnectorAuthStatus m_authStatus{ConnectorAuthStatus::NOT_SET};
+  bool m_instanceNameHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
   bool m_authStatusHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class FileFormatConfiguration {
   ///@}
  private:
   JsonConfiguration m_jsonConfiguration;
-  bool m_jsonConfigurationHasBeenSet = false;
 
   ParquetConfiguration m_parquetConfiguration;
+  bool m_jsonConfigurationHasBeenSet = false;
   bool m_parquetConfigurationHasBeenSet = false;
 };
 

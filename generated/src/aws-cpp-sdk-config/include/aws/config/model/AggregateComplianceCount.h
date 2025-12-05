@@ -70,9 +70,9 @@ class AggregateComplianceCount {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   ComplianceSummary m_complianceSummary;
+  bool m_groupNameHasBeenSet = false;
   bool m_complianceSummaryHasBeenSet = false;
 };
 

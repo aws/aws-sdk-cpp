@@ -84,12 +84,12 @@ class DescribeCACertificateResult {
   ///@}
  private:
   CACertificateDescription m_certificateDescription;
-  bool m_certificateDescriptionHasBeenSet = false;
 
   RegistrationConfig m_registrationConfig;
-  bool m_registrationConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateDescriptionHasBeenSet = false;
+  bool m_registrationConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

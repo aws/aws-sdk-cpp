@@ -80,12 +80,12 @@ class Stairs {
   ///@}
  private:
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   int m_numberOfSteps{0};
-  bool m_numberOfStepsHasBeenSet = false;
 
   int m_usersPerStep{0};
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_numberOfStepsHasBeenSet = false;
   bool m_usersPerStepHasBeenSet = false;
 };
 

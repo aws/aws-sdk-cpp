@@ -161,24 +161,24 @@ class CertificateSubjectType {
   ///@}
  private:
   Aws::String m_commonName;
-  bool m_commonNameHasBeenSet = false;
 
   Aws::String m_organizationUnit;
-  bool m_organizationUnitHasBeenSet = false;
 
   Aws::String m_organization;
-  bool m_organizationHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_stateOrProvince;
-  bool m_stateOrProvinceHasBeenSet = false;
 
   Aws::String m_emailAddress;
+  bool m_commonNameHasBeenSet = false;
+  bool m_organizationUnitHasBeenSet = false;
+  bool m_organizationHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_stateOrProvinceHasBeenSet = false;
   bool m_emailAddressHasBeenSet = false;
 };
 

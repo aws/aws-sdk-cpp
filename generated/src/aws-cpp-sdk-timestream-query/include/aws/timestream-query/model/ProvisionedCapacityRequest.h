@@ -69,9 +69,9 @@ class ProvisionedCapacityRequest {
   ///@}
  private:
   int m_targetQueryTCU{0};
-  bool m_targetQueryTCUHasBeenSet = false;
 
   AccountSettingsNotificationConfiguration m_notificationConfiguration;
+  bool m_targetQueryTCUHasBeenSet = false;
   bool m_notificationConfigurationHasBeenSet = false;
 };
 

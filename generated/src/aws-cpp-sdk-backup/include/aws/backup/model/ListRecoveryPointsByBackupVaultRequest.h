@@ -240,33 +240,33 @@ class ListRecoveryPointsByBackupVaultRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_backupVaultAccountId;
-  bool m_backupVaultAccountIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_byResourceArn;
-  bool m_byResourceArnHasBeenSet = false;
 
   Aws::String m_byResourceType;
-  bool m_byResourceTypeHasBeenSet = false;
 
   Aws::String m_byBackupPlanId;
-  bool m_byBackupPlanIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreatedBefore{};
-  bool m_byCreatedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreatedAfter{};
-  bool m_byCreatedAfterHasBeenSet = false;
 
   Aws::String m_byParentRecoveryPointArn;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultAccountIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_byResourceArnHasBeenSet = false;
+  bool m_byResourceTypeHasBeenSet = false;
+  bool m_byBackupPlanIdHasBeenSet = false;
+  bool m_byCreatedBeforeHasBeenSet = false;
+  bool m_byCreatedAfterHasBeenSet = false;
   bool m_byParentRecoveryPointArnHasBeenSet = false;
 };
 

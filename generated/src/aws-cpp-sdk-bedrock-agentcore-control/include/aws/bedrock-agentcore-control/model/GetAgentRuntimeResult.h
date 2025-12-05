@@ -361,60 +361,60 @@ class GetAgentRuntimeResult {
   ///@}
  private:
   Aws::String m_agentRuntimeArn;
-  bool m_agentRuntimeArnHasBeenSet = false;
 
   Aws::String m_agentRuntimeName;
-  bool m_agentRuntimeNameHasBeenSet = false;
 
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_agentRuntimeVersion;
-  bool m_agentRuntimeVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   LifecycleConfiguration m_lifecycleConfiguration;
-  bool m_lifecycleConfigurationHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkloadIdentityDetails m_workloadIdentityDetails;
-  bool m_workloadIdentityDetailsHasBeenSet = false;
 
   AgentRuntimeArtifact m_agentRuntimeArtifact;
-  bool m_agentRuntimeArtifactHasBeenSet = false;
 
   ProtocolConfiguration m_protocolConfiguration;
-  bool m_protocolConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   AuthorizerConfiguration m_authorizerConfiguration;
-  bool m_authorizerConfigurationHasBeenSet = false;
 
   RequestHeaderConfiguration m_requestHeaderConfiguration;
-  bool m_requestHeaderConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentRuntimeArnHasBeenSet = false;
+  bool m_agentRuntimeNameHasBeenSet = false;
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_agentRuntimeVersionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_workloadIdentityDetailsHasBeenSet = false;
+  bool m_agentRuntimeArtifactHasBeenSet = false;
+  bool m_protocolConfigurationHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
+  bool m_authorizerConfigurationHasBeenSet = false;
+  bool m_requestHeaderConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

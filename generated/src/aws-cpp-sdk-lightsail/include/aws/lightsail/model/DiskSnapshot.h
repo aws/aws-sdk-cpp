@@ -316,48 +316,48 @@ class DiskSnapshot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_sizeInGb{0};
-  bool m_sizeInGbHasBeenSet = false;
 
   DiskSnapshotState m_state{DiskSnapshotState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_fromDiskName;
-  bool m_fromDiskNameHasBeenSet = false;
 
   Aws::String m_fromDiskArn;
-  bool m_fromDiskArnHasBeenSet = false;
 
   Aws::String m_fromInstanceName;
-  bool m_fromInstanceNameHasBeenSet = false;
 
   Aws::String m_fromInstanceArn;
-  bool m_fromInstanceArnHasBeenSet = false;
 
   bool m_isFromAutoSnapshot{false};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_sizeInGbHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_fromDiskNameHasBeenSet = false;
+  bool m_fromDiskArnHasBeenSet = false;
+  bool m_fromInstanceNameHasBeenSet = false;
+  bool m_fromInstanceArnHasBeenSet = false;
   bool m_isFromAutoSnapshotHasBeenSet = false;
 };
 

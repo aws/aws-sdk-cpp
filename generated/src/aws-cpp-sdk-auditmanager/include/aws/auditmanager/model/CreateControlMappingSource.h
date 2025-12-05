@@ -167,24 +167,24 @@ class CreateControlMappingSource {
   ///@}
  private:
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_sourceDescription;
-  bool m_sourceDescriptionHasBeenSet = false;
 
   SourceSetUpOption m_sourceSetUpOption{SourceSetUpOption::NOT_SET};
-  bool m_sourceSetUpOptionHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   SourceKeyword m_sourceKeyword;
-  bool m_sourceKeywordHasBeenSet = false;
 
   SourceFrequency m_sourceFrequency{SourceFrequency::NOT_SET};
-  bool m_sourceFrequencyHasBeenSet = false;
 
   Aws::String m_troubleshootingText;
+  bool m_sourceNameHasBeenSet = false;
+  bool m_sourceDescriptionHasBeenSet = false;
+  bool m_sourceSetUpOptionHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceKeywordHasBeenSet = false;
+  bool m_sourceFrequencyHasBeenSet = false;
   bool m_troubleshootingTextHasBeenSet = false;
 };
 

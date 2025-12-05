@@ -61,9 +61,9 @@ class GetJobUnlockCodeResult {
   ///@}
  private:
   Aws::String m_unlockCode;
-  bool m_unlockCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unlockCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

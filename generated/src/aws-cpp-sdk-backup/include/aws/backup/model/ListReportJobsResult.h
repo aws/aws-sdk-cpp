@@ -85,12 +85,12 @@ class ListReportJobsResult {
   ///@}
  private:
   Aws::Vector<ReportJob> m_reportJobs;
-  bool m_reportJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

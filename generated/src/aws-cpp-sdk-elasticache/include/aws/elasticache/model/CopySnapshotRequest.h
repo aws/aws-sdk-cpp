@@ -146,18 +146,18 @@ class CopySnapshotRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_sourceSnapshotName;
-  bool m_sourceSnapshotNameHasBeenSet = false;
 
   Aws::String m_targetSnapshotName;
-  bool m_targetSnapshotNameHasBeenSet = false;
 
   Aws::String m_targetBucket;
-  bool m_targetBucketHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourceSnapshotNameHasBeenSet = false;
+  bool m_targetSnapshotNameHasBeenSet = false;
+  bool m_targetBucketHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -172,21 +172,21 @@ class TrafficMirrorFilter {
   ///@}
  private:
   Aws::String m_trafficMirrorFilterId;
-  bool m_trafficMirrorFilterIdHasBeenSet = false;
 
   Aws::Vector<TrafficMirrorFilterRule> m_ingressFilterRules;
-  bool m_ingressFilterRulesHasBeenSet = false;
 
   Aws::Vector<TrafficMirrorFilterRule> m_egressFilterRules;
-  bool m_egressFilterRulesHasBeenSet = false;
 
   Aws::Vector<TrafficMirrorNetworkService> m_networkServices;
-  bool m_networkServicesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trafficMirrorFilterIdHasBeenSet = false;
+  bool m_ingressFilterRulesHasBeenSet = false;
+  bool m_egressFilterRulesHasBeenSet = false;
+  bool m_networkServicesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -86,9 +86,9 @@ class ItemFilters {
   ///@}
  private:
   Aws::Vector<S3ItemFilter> m_s3ItemFilters;
-  bool m_s3ItemFiltersHasBeenSet = false;
 
   Aws::Vector<EBSItemFilter> m_eBSItemFilters;
+  bool m_s3ItemFiltersHasBeenSet = false;
   bool m_eBSItemFiltersHasBeenSet = false;
 };
 

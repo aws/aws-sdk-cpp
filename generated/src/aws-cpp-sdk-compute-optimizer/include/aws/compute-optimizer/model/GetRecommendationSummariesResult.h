@@ -87,12 +87,12 @@ class GetRecommendationSummariesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecommendationSummary> m_recommendationSummaries;
-  bool m_recommendationSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendationSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetRecoveryPointResult {
   ///@}
  private:
   RecoveryPoint m_recoveryPoint;
-  bool m_recoveryPointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recoveryPointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

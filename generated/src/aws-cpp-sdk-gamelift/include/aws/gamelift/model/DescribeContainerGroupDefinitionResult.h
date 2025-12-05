@@ -61,9 +61,9 @@ class DescribeContainerGroupDefinitionResult {
   ///@}
  private:
   ContainerGroupDefinition m_containerGroupDefinition;
-  bool m_containerGroupDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerGroupDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

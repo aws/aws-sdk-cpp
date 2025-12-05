@@ -67,9 +67,9 @@ class GenerateMobileSdkReleaseUrlRequest : public WAFV2Request {
   ///@}
  private:
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_releaseVersion;
+  bool m_platformHasBeenSet = false;
   bool m_releaseVersionHasBeenSet = false;
 };
 

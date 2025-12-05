@@ -89,9 +89,9 @@ class StorageTypeLimit {
   ///@}
  private:
   Aws::String m_limitName;
-  bool m_limitNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_limitValues;
+  bool m_limitNameHasBeenSet = false;
   bool m_limitValuesHasBeenSet = false;
 };
 

@@ -112,18 +112,18 @@ class UpdateCustomDomainAssociationResult {
   ///@}
  private:
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_customDomainCertificateExpiryTime{};
-  bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
-  bool m_workgroupNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customDomainCertificateArnHasBeenSet = false;
+  bool m_customDomainCertificateExpiryTimeHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_workgroupNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

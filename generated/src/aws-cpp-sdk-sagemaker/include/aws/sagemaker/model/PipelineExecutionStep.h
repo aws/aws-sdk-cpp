@@ -235,36 +235,36 @@ class PipelineExecutionStep {
   ///@}
  private:
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   Aws::String m_stepDisplayName;
-  bool m_stepDisplayNameHasBeenSet = false;
 
   Aws::String m_stepDescription;
-  bool m_stepDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   StepStatus m_stepStatus{StepStatus::NOT_SET};
-  bool m_stepStatusHasBeenSet = false;
 
   CacheHitResult m_cacheHitResult;
-  bool m_cacheHitResultHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   PipelineExecutionStepMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   int m_attemptCount{0};
-  bool m_attemptCountHasBeenSet = false;
 
   SelectiveExecutionResult m_selectiveExecutionResult;
+  bool m_stepNameHasBeenSet = false;
+  bool m_stepDisplayNameHasBeenSet = false;
+  bool m_stepDescriptionHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_stepStatusHasBeenSet = false;
+  bool m_cacheHitResultHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_attemptCountHasBeenSet = false;
   bool m_selectiveExecutionResultHasBeenSet = false;
 };
 

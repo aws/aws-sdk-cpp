@@ -88,12 +88,12 @@ class ListPermissionSetProvisioningStatusResult {
   ///@}
  private:
   Aws::Vector<PermissionSetProvisioningStatusMetadata> m_permissionSetsProvisioningStatus;
-  bool m_permissionSetsProvisioningStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_permissionSetsProvisioningStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

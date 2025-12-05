@@ -162,24 +162,24 @@ class TransitGatewayRouteTableRoute {
   ///@}
  private:
   Aws::String m_destinationCidr;
-  bool m_destinationCidrHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_routeOrigin;
-  bool m_routeOriginHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_destinationCidrHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_routeOriginHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

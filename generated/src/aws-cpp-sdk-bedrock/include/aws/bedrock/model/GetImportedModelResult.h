@@ -214,36 +214,36 @@ class GetImportedModelResult {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   ModelDataSource m_modelDataSource;
-  bool m_modelDataSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_modelArchitecture;
-  bool m_modelArchitectureHasBeenSet = false;
 
   Aws::String m_modelKmsKeyArn;
-  bool m_modelKmsKeyArnHasBeenSet = false;
 
   bool m_instructSupported{false};
-  bool m_instructSupportedHasBeenSet = false;
 
   CustomModelUnits m_customModelUnits;
-  bool m_customModelUnitsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_modelDataSourceHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modelArchitectureHasBeenSet = false;
+  bool m_modelKmsKeyArnHasBeenSet = false;
+  bool m_instructSupportedHasBeenSet = false;
+  bool m_customModelUnitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

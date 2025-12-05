@@ -69,9 +69,9 @@ class AuditEventResultEntry {
   ///@}
  private:
   Aws::String m_eventID;
-  bool m_eventIDHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_eventIDHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class EbsStatusSummary {
   ///@}
  private:
   Aws::Vector<EbsStatusDetails> m_details;
-  bool m_detailsHasBeenSet = false;
 
   SummaryStatus m_status{SummaryStatus::NOT_SET};
+  bool m_detailsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

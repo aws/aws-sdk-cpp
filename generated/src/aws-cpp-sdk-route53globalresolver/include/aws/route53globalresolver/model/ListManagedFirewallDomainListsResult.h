@@ -88,12 +88,12 @@ class ListManagedFirewallDomainListsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ManagedFirewallDomainListsItem> m_managedFirewallDomainLists;
-  bool m_managedFirewallDomainListsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_managedFirewallDomainListsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

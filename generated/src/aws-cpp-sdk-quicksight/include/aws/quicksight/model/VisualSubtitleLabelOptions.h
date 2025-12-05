@@ -68,9 +68,9 @@ class VisualSubtitleLabelOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   LongFormatText m_formatText;
+  bool m_visibilityHasBeenSet = false;
   bool m_formatTextHasBeenSet = false;
 };
 

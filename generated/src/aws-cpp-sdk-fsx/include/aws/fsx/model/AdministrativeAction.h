@@ -245,36 +245,36 @@ class AdministrativeAction {
   ///@}
  private:
   AdministrativeActionType m_administrativeActionType{AdministrativeActionType::NOT_SET};
-  bool m_administrativeActionTypeHasBeenSet = false;
 
   int m_progressPercent{0};
-  bool m_progressPercentHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTime{};
-  bool m_requestTimeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   std::shared_ptr<FileSystem> m_targetFileSystemValues;
-  bool m_targetFileSystemValuesHasBeenSet = false;
 
   AdministrativeActionFailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   std::shared_ptr<Volume> m_targetVolumeValues;
-  bool m_targetVolumeValuesHasBeenSet = false;
 
   std::shared_ptr<Snapshot> m_targetSnapshotValues;
-  bool m_targetSnapshotValuesHasBeenSet = false;
 
   long long m_totalTransferBytes{0};
-  bool m_totalTransferBytesHasBeenSet = false;
 
   long long m_remainingTransferBytes{0};
-  bool m_remainingTransferBytesHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_administrativeActionTypeHasBeenSet = false;
+  bool m_progressPercentHasBeenSet = false;
+  bool m_requestTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetFileSystemValuesHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_targetVolumeValuesHasBeenSet = false;
+  bool m_targetSnapshotValuesHasBeenSet = false;
+  bool m_totalTransferBytesHasBeenSet = false;
+  bool m_remainingTransferBytesHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -240,33 +240,33 @@ class ImageVersion {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ImageType m_type{ImageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_osVersion;
-  bool m_osVersionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   BuildType m_buildType{BuildType::NOT_SET};
-  bool m_buildTypeHasBeenSet = false;
 
   ImageSource m_imageSource{ImageSource::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_buildTypeHasBeenSet = false;
   bool m_imageSourceHasBeenSet = false;
 };
 

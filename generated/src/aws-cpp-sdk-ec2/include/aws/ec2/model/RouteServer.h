@@ -205,27 +205,27 @@ class RouteServer {
   ///@}
  private:
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   RouteServerState m_state{RouteServerState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   RouteServerPersistRoutesState m_persistRoutesState{RouteServerPersistRoutesState::NOT_SET};
-  bool m_persistRoutesStateHasBeenSet = false;
 
   long long m_persistRoutesDuration{0};
-  bool m_persistRoutesDurationHasBeenSet = false;
 
   bool m_snsNotificationsEnabled{false};
-  bool m_snsNotificationsEnabledHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
+  bool m_routeServerIdHasBeenSet = false;
+  bool m_amazonSideAsnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_persistRoutesStateHasBeenSet = false;
+  bool m_persistRoutesDurationHasBeenSet = false;
+  bool m_snsNotificationsEnabledHasBeenSet = false;
   bool m_snsTopicArnHasBeenSet = false;
 };
 

@@ -334,48 +334,48 @@ class RoutePedestrianSpan {
   ///@}
  private:
   long long m_bestCaseDuration{0};
-  bool m_bestCaseDurationHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   RouteSpanDynamicSpeedDetails m_dynamicSpeed;
-  bool m_dynamicSpeedHasBeenSet = false;
 
   int m_functionalClassification{0};
-  bool m_functionalClassificationHasBeenSet = false;
 
   int m_geometryOffset{0};
-  bool m_geometryOffsetHasBeenSet = false;
 
   Aws::Vector<int> m_incidents;
-  bool m_incidentsHasBeenSet = false;
 
   Aws::Vector<LocalizedString> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::Vector<RouteSpanPedestrianAccessAttribute> m_pedestrianAccess;
-  bool m_pedestrianAccessHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<RouteSpanRoadAttribute> m_roadAttributes;
-  bool m_roadAttributesHasBeenSet = false;
 
   Aws::Vector<RouteNumber> m_routeNumbers;
-  bool m_routeNumbersHasBeenSet = false;
 
   RouteSpanSpeedLimitDetails m_speedLimit;
-  bool m_speedLimitHasBeenSet = false;
 
   long long m_typicalDuration{0};
+  bool m_bestCaseDurationHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_dynamicSpeedHasBeenSet = false;
+  bool m_functionalClassificationHasBeenSet = false;
+  bool m_geometryOffsetHasBeenSet = false;
+  bool m_incidentsHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_pedestrianAccessHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_roadAttributesHasBeenSet = false;
+  bool m_routeNumbersHasBeenSet = false;
+  bool m_speedLimitHasBeenSet = false;
   bool m_typicalDurationHasBeenSet = false;
 };
 

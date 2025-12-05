@@ -63,9 +63,9 @@ class FailedCampaignStateResponse {
   ///@}
  private:
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   GetCampaignStateBatchFailureCode m_failureCode{GetCampaignStateBatchFailureCode::NOT_SET};
+  bool m_campaignIdHasBeenSet = false;
   bool m_failureCodeHasBeenSet = false;
 };
 

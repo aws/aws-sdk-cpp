@@ -155,18 +155,18 @@ class ControlOperationFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_controlIdentifiers;
-  bool m_controlIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetIdentifiers;
-  bool m_targetIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enabledControlIdentifiers;
-  bool m_enabledControlIdentifiersHasBeenSet = false;
 
   Aws::Vector<ControlOperationStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   Aws::Vector<ControlOperationType> m_controlOperationTypes;
+  bool m_controlIdentifiersHasBeenSet = false;
+  bool m_targetIdentifiersHasBeenSet = false;
+  bool m_enabledControlIdentifiersHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
   bool m_controlOperationTypesHasBeenSet = false;
 };
 

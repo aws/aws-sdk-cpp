@@ -104,9 +104,9 @@ class ContainerDependency {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   ContainerCondition m_condition{ContainerCondition::NOT_SET};
+  bool m_containerNameHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

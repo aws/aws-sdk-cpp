@@ -168,24 +168,24 @@ class CreateComputeQuotaRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   ComputeQuotaConfig m_computeQuotaConfig;
-  bool m_computeQuotaConfigHasBeenSet = false;
 
   ComputeQuotaTarget m_computeQuotaTarget;
-  bool m_computeQuotaTargetHasBeenSet = false;
 
   ActivationState m_activationState{ActivationState::NOT_SET};
-  bool m_activationStateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_computeQuotaConfigHasBeenSet = false;
+  bool m_computeQuotaTargetHasBeenSet = false;
+  bool m_activationStateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

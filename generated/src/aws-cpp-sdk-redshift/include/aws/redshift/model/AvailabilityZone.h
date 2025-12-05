@@ -78,9 +78,9 @@ class AvailabilityZone {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SupportedPlatform> m_supportedPlatforms;
+  bool m_nameHasBeenSet = false;
   bool m_supportedPlatformsHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class GetResolverQueryLogConfigPolicyResult {
   ///@}
  private:
   Aws::String m_resolverQueryLogConfigPolicy;
-  bool m_resolverQueryLogConfigPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverQueryLogConfigPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

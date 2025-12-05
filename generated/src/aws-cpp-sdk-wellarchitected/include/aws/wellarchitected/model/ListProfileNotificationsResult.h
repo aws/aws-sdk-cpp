@@ -82,12 +82,12 @@ class ListProfileNotificationsResult {
   ///@}
  private:
   Aws::Vector<ProfileNotificationSummary> m_notificationSummaries;
-  bool m_notificationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

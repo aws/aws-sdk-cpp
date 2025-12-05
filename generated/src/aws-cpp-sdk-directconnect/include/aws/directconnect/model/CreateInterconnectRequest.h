@@ -164,24 +164,24 @@ class CreateInterconnectRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_interconnectName;
-  bool m_interconnectNameHasBeenSet = false;
 
   Aws::String m_bandwidth;
-  bool m_bandwidthHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_lagId;
-  bool m_lagIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   bool m_requestMACSec{false};
+  bool m_interconnectNameHasBeenSet = false;
+  bool m_bandwidthHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_lagIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
   bool m_requestMACSecHasBeenSet = false;
 };
 

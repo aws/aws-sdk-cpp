@@ -85,12 +85,12 @@ class ListGameServerGroupsResult {
   ///@}
  private:
   Aws::Vector<GameServerGroup> m_gameServerGroups;
-  bool m_gameServerGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameServerGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

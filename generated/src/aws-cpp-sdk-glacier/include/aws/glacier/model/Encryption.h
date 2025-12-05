@@ -90,12 +90,12 @@ class Encryption {
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   Aws::String m_kMSContext;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
   bool m_kMSContextHasBeenSet = false;
 };
 

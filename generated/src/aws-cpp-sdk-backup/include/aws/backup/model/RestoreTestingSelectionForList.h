@@ -151,21 +151,21 @@ class RestoreTestingSelectionForList {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_protectedResourceType;
-  bool m_protectedResourceTypeHasBeenSet = false;
 
   Aws::String m_restoreTestingPlanName;
-  bool m_restoreTestingPlanNameHasBeenSet = false;
 
   Aws::String m_restoreTestingSelectionName;
-  bool m_restoreTestingSelectionNameHasBeenSet = false;
 
   int m_validationWindowHours{0};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_protectedResourceTypeHasBeenSet = false;
+  bool m_restoreTestingPlanNameHasBeenSet = false;
+  bool m_restoreTestingSelectionNameHasBeenSet = false;
   bool m_validationWindowHoursHasBeenSet = false;
 };
 

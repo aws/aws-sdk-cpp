@@ -70,9 +70,9 @@ class RuleDetail {
   ///@}
  private:
   GlossaryTermEnforcementDetail m_glossaryTermEnforcementDetail;
-  bool m_glossaryTermEnforcementDetailHasBeenSet = false;
 
   MetadataFormEnforcementDetail m_metadataFormEnforcementDetail;
+  bool m_glossaryTermEnforcementDetailHasBeenSet = false;
   bool m_metadataFormEnforcementDetailHasBeenSet = false;
 };
 

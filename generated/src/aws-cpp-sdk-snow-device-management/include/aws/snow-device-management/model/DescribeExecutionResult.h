@@ -144,24 +144,24 @@ class DescribeExecutionResult {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_managedDeviceId;
-  bool m_managedDeviceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   ExecutionState m_state{ExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionIdHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_managedDeviceIdHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

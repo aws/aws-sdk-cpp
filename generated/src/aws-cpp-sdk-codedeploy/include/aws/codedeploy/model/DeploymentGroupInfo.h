@@ -518,72 +518,72 @@ class DeploymentGroupInfo {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_deploymentGroupId;
-  bool m_deploymentGroupIdHasBeenSet = false;
 
   Aws::String m_deploymentGroupName;
-  bool m_deploymentGroupNameHasBeenSet = false;
 
   Aws::String m_deploymentConfigName;
-  bool m_deploymentConfigNameHasBeenSet = false;
 
   Aws::Vector<EC2TagFilter> m_ec2TagFilters;
-  bool m_ec2TagFiltersHasBeenSet = false;
 
   Aws::Vector<TagFilter> m_onPremisesInstanceTagFilters;
-  bool m_onPremisesInstanceTagFiltersHasBeenSet = false;
 
   Aws::Vector<AutoScalingGroup> m_autoScalingGroups;
-  bool m_autoScalingGroupsHasBeenSet = false;
 
   Aws::String m_serviceRoleArn;
-  bool m_serviceRoleArnHasBeenSet = false;
 
   RevisionLocation m_targetRevision;
-  bool m_targetRevisionHasBeenSet = false;
 
   Aws::Vector<TriggerConfig> m_triggerConfigurations;
-  bool m_triggerConfigurationsHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
-  bool m_alarmConfigurationHasBeenSet = false;
 
   AutoRollbackConfiguration m_autoRollbackConfiguration;
-  bool m_autoRollbackConfigurationHasBeenSet = false;
 
   DeploymentStyle m_deploymentStyle;
-  bool m_deploymentStyleHasBeenSet = false;
 
   OutdatedInstancesStrategy m_outdatedInstancesStrategy{OutdatedInstancesStrategy::NOT_SET};
-  bool m_outdatedInstancesStrategyHasBeenSet = false;
 
   BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
-  bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
 
   LoadBalancerInfo m_loadBalancerInfo;
-  bool m_loadBalancerInfoHasBeenSet = false;
 
   LastDeploymentInfo m_lastSuccessfulDeployment;
-  bool m_lastSuccessfulDeploymentHasBeenSet = false;
 
   LastDeploymentInfo m_lastAttemptedDeployment;
-  bool m_lastAttemptedDeploymentHasBeenSet = false;
 
   EC2TagSet m_ec2TagSet;
-  bool m_ec2TagSetHasBeenSet = false;
 
   OnPremisesTagSet m_onPremisesTagSet;
-  bool m_onPremisesTagSetHasBeenSet = false;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
-  bool m_computePlatformHasBeenSet = false;
 
   Aws::Vector<ECSService> m_ecsServices;
-  bool m_ecsServicesHasBeenSet = false;
 
   bool m_terminationHookEnabled{false};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_deploymentGroupIdHasBeenSet = false;
+  bool m_deploymentGroupNameHasBeenSet = false;
+  bool m_deploymentConfigNameHasBeenSet = false;
+  bool m_ec2TagFiltersHasBeenSet = false;
+  bool m_onPremisesInstanceTagFiltersHasBeenSet = false;
+  bool m_autoScalingGroupsHasBeenSet = false;
+  bool m_serviceRoleArnHasBeenSet = false;
+  bool m_targetRevisionHasBeenSet = false;
+  bool m_triggerConfigurationsHasBeenSet = false;
+  bool m_alarmConfigurationHasBeenSet = false;
+  bool m_autoRollbackConfigurationHasBeenSet = false;
+  bool m_deploymentStyleHasBeenSet = false;
+  bool m_outdatedInstancesStrategyHasBeenSet = false;
+  bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
+  bool m_loadBalancerInfoHasBeenSet = false;
+  bool m_lastSuccessfulDeploymentHasBeenSet = false;
+  bool m_lastAttemptedDeploymentHasBeenSet = false;
+  bool m_ec2TagSetHasBeenSet = false;
+  bool m_onPremisesTagSetHasBeenSet = false;
+  bool m_computePlatformHasBeenSet = false;
+  bool m_ecsServicesHasBeenSet = false;
   bool m_terminationHookEnabledHasBeenSet = false;
 };
 

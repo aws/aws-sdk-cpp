@@ -66,9 +66,9 @@ class AIPromptVersionSummary {
   ///@}
  private:
   AIPromptSummary m_aiPromptSummary;
-  bool m_aiPromptSummaryHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_aiPromptSummaryHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

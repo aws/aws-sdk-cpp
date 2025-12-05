@@ -72,9 +72,9 @@ class VirtualGatewayTlsValidationContext {
   ///@}
  private:
   SubjectAlternativeNames m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   VirtualGatewayTlsValidationContextTrust m_trust;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
   bool m_trustHasBeenSet = false;
 };
 

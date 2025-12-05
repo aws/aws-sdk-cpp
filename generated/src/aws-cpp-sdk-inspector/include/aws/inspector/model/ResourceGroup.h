@@ -99,12 +99,12 @@ class ResourceGroup {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<ResourceGroupTag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

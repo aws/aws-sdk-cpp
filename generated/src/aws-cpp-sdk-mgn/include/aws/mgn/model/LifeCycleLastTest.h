@@ -88,12 +88,12 @@ class LifeCycleLastTest {
   ///@}
  private:
   LifeCycleLastTestFinalized m_finalized;
-  bool m_finalizedHasBeenSet = false;
 
   LifeCycleLastTestInitiated m_initiated;
-  bool m_initiatedHasBeenSet = false;
 
   LifeCycleLastTestReverted m_reverted;
+  bool m_finalizedHasBeenSet = false;
+  bool m_initiatedHasBeenSet = false;
   bool m_revertedHasBeenSet = false;
 };
 

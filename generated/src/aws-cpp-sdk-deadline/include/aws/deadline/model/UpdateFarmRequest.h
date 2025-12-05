@@ -89,12 +89,12 @@ class UpdateFarmRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_farmIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

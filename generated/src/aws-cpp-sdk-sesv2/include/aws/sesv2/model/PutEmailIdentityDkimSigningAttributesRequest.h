@@ -96,12 +96,12 @@ class PutEmailIdentityDkimSigningAttributesRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   DkimSigningAttributesOrigin m_signingAttributesOrigin{DkimSigningAttributesOrigin::NOT_SET};
-  bool m_signingAttributesOriginHasBeenSet = false;
 
   DkimSigningAttributes m_signingAttributes;
+  bool m_emailIdentityHasBeenSet = false;
+  bool m_signingAttributesOriginHasBeenSet = false;
   bool m_signingAttributesHasBeenSet = false;
 };
 

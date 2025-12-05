@@ -141,18 +141,18 @@ class UpdateSnapshotScheduleRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   int m_startAt{0};
-  bool m_startAtHasBeenSet = false;
 
   int m_recurrenceInHours{0};
-  bool m_recurrenceInHoursHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_startAtHasBeenSet = false;
+  bool m_recurrenceInHoursHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

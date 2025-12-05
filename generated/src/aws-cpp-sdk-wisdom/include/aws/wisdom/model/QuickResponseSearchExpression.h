@@ -103,12 +103,12 @@ class QuickResponseSearchExpression {
   ///@}
  private:
   Aws::Vector<QuickResponseFilterField> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   QuickResponseOrderField m_orderOnField;
-  bool m_orderOnFieldHasBeenSet = false;
 
   Aws::Vector<QuickResponseQueryField> m_queries;
+  bool m_filtersHasBeenSet = false;
+  bool m_orderOnFieldHasBeenSet = false;
   bool m_queriesHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class PipelineMetadata {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updated{};
-  bool m_updatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_pollingDisabledAt{};
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_updatedHasBeenSet = false;
   bool m_pollingDisabledAtHasBeenSet = false;
 };
 

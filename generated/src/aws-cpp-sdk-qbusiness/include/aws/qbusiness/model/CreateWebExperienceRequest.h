@@ -284,39 +284,39 @@ class CreateWebExperienceRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_subtitle;
-  bool m_subtitleHasBeenSet = false;
 
   Aws::String m_welcomeMessage;
-  bool m_welcomeMessageHasBeenSet = false;
 
   WebExperienceSamplePromptsControlMode m_samplePromptsControlMode{WebExperienceSamplePromptsControlMode::NOT_SET};
-  bool m_samplePromptsControlModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_origins;
-  bool m_originsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   IdentityProviderConfiguration m_identityProviderConfiguration;
-  bool m_identityProviderConfigurationHasBeenSet = false;
 
   BrowserExtensionConfiguration m_browserExtensionConfiguration;
-  bool m_browserExtensionConfigurationHasBeenSet = false;
 
   CustomizationConfiguration m_customizationConfiguration;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_subtitleHasBeenSet = false;
+  bool m_welcomeMessageHasBeenSet = false;
+  bool m_samplePromptsControlModeHasBeenSet = false;
+  bool m_originsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_identityProviderConfigurationHasBeenSet = false;
+  bool m_browserExtensionConfigurationHasBeenSet = false;
   bool m_customizationConfigurationHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class RestartAppServerRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_environmentName;
+  bool m_environmentIdHasBeenSet = false;
   bool m_environmentNameHasBeenSet = false;
 };
 

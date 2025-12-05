@@ -97,12 +97,12 @@ class FleetStatus {
   ///@}
  private:
   FleetStatusCode m_statusCode{FleetStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   FleetContextCode m_context{FleetContextCode::NOT_SET};
-  bool m_contextHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

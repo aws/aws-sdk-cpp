@@ -92,15 +92,15 @@ class UpdateDashboardPublishedVersionResult {
   ///@}
  private:
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_dashboardArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

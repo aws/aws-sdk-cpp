@@ -107,15 +107,15 @@ class AwsRedshiftClusterClusterSnapshotCopyStatus {
   ///@}
  private:
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   int m_retentionPeriod{0};
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_snapshotCopyGrantName;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_snapshotCopyGrantNameHasBeenSet = false;
 };
 

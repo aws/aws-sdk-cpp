@@ -125,18 +125,18 @@ class EcrRescanDurationState {
   ///@}
  private:
   EcrRescanDuration m_rescanDuration{EcrRescanDuration::NOT_SET};
-  bool m_rescanDurationHasBeenSet = false;
 
   EcrRescanDurationStatus m_status{EcrRescanDurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   EcrPullDateRescanDuration m_pullDateRescanDuration{EcrPullDateRescanDuration::NOT_SET};
-  bool m_pullDateRescanDurationHasBeenSet = false;
 
   EcrPullDateRescanMode m_pullDateRescanMode{EcrPullDateRescanMode::NOT_SET};
+  bool m_rescanDurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_pullDateRescanDurationHasBeenSet = false;
   bool m_pullDateRescanModeHasBeenSet = false;
 };
 

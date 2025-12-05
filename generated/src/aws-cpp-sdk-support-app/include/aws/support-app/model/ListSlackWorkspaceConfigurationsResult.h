@@ -86,12 +86,12 @@ class ListSlackWorkspaceConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SlackWorkspaceConfiguration> m_slackWorkspaceConfigurations;
-  bool m_slackWorkspaceConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_slackWorkspaceConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

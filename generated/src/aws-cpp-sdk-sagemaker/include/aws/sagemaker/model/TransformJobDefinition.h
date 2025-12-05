@@ -172,24 +172,24 @@ class TransformJobDefinition {
   ///@}
  private:
   int m_maxConcurrentTransforms{0};
-  bool m_maxConcurrentTransformsHasBeenSet = false;
 
   int m_maxPayloadInMB{0};
-  bool m_maxPayloadInMBHasBeenSet = false;
 
   BatchStrategy m_batchStrategy{BatchStrategy::NOT_SET};
-  bool m_batchStrategyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   TransformInput m_transformInput;
-  bool m_transformInputHasBeenSet = false;
 
   TransformOutput m_transformOutput;
-  bool m_transformOutputHasBeenSet = false;
 
   TransformResources m_transformResources;
+  bool m_maxConcurrentTransformsHasBeenSet = false;
+  bool m_maxPayloadInMBHasBeenSet = false;
+  bool m_batchStrategyHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_transformInputHasBeenSet = false;
+  bool m_transformOutputHasBeenSet = false;
   bool m_transformResourcesHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class AttachTypedLinkRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   ObjectReference m_sourceObjectReference;
-  bool m_sourceObjectReferenceHasBeenSet = false;
 
   ObjectReference m_targetObjectReference;
-  bool m_targetObjectReferenceHasBeenSet = false;
 
   TypedLinkSchemaAndFacetName m_typedLinkFacet;
-  bool m_typedLinkFacetHasBeenSet = false;
 
   Aws::Vector<AttributeNameAndValue> m_attributes;
+  bool m_directoryArnHasBeenSet = false;
+  bool m_sourceObjectReferenceHasBeenSet = false;
+  bool m_targetObjectReferenceHasBeenSet = false;
+  bool m_typedLinkFacetHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

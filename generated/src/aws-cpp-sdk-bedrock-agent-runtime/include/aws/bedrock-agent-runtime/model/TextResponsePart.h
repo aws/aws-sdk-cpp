@@ -77,9 +77,9 @@ class TextResponsePart {
   ///@}
  private:
   Span m_span;
-  bool m_spanHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_spanHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

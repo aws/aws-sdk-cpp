@@ -69,9 +69,9 @@ class AwsIdentity {
   ///@}
  private:
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_principal;
+  bool m_externalIdHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

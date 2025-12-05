@@ -106,15 +106,15 @@ class AssociatedAlarm {
   ///@}
  private:
   Aws::String m_crossAccountRole;
-  bool m_crossAccountRoleHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   AlarmType m_alarmType{AlarmType::NOT_SET};
+  bool m_crossAccountRoleHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_alarmTypeHasBeenSet = false;
 };
 

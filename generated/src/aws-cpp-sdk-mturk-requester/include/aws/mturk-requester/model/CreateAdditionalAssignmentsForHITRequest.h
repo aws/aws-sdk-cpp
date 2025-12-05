@@ -88,12 +88,12 @@ class CreateAdditionalAssignmentsForHITRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   int m_numberOfAdditionalAssignments{0};
-  bool m_numberOfAdditionalAssignmentsHasBeenSet = false;
 
   Aws::String m_uniqueRequestToken;
+  bool m_hITIdHasBeenSet = false;
+  bool m_numberOfAdditionalAssignmentsHasBeenSet = false;
   bool m_uniqueRequestTokenHasBeenSet = false;
 };
 

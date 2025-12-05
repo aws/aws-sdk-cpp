@@ -92,9 +92,9 @@ class DeliveryStreamEncryptionConfigurationInput {
   ///@}
  private:
   Aws::String m_keyARN;
-  bool m_keyARNHasBeenSet = false;
 
   KeyType m_keyType{KeyType::NOT_SET};
+  bool m_keyARNHasBeenSet = false;
   bool m_keyTypeHasBeenSet = false;
 };
 

@@ -147,21 +147,21 @@ class StartCodeInterpreterSessionRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_traceId;
-  bool m_traceIdHasBeenSet = false;
 
   Aws::String m_traceParent;
-  bool m_traceParentHasBeenSet = false;
 
   Aws::String m_codeInterpreterIdentifier;
-  bool m_codeInterpreterIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_sessionTimeoutSeconds{0};
-  bool m_sessionTimeoutSecondsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_traceIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_codeInterpreterIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sessionTimeoutSecondsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

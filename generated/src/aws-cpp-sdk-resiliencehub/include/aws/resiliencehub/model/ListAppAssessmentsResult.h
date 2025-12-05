@@ -86,12 +86,12 @@ class ListAppAssessmentsResult {
   ///@}
  private:
   Aws::Vector<AppAssessmentSummary> m_assessmentSummaries;
-  bool m_assessmentSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class CreateMediaLiveConnectorPipelineResult {
   ///@}
  private:
   MediaLiveConnectorPipeline m_mediaLiveConnectorPipeline;
-  bool m_mediaLiveConnectorPipelineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaLiveConnectorPipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

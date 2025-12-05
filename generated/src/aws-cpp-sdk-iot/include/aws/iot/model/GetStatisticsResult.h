@@ -61,9 +61,9 @@ class GetStatisticsResult {
   ///@}
  private:
   Statistics m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

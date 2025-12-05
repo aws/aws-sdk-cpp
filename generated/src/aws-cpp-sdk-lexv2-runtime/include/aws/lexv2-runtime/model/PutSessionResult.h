@@ -149,24 +149,24 @@ class PutSessionResult {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_sessionState;
-  bool m_sessionStateHasBeenSet = false;
 
   Aws::String m_requestAttributes;
-  bool m_requestAttributesHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_audioStream{};
-  bool m_audioStreamHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_sessionStateHasBeenSet = false;
+  bool m_requestAttributesHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_audioStreamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

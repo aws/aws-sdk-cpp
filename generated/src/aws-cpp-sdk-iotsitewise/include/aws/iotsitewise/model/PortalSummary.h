@@ -204,30 +204,30 @@ class PortalSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_startUrl;
-  bool m_startUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
-  bool m_lastUpdateDateHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   PortalStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   PortalType m_portalType{PortalType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_startUrlHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastUpdateDateHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_portalTypeHasBeenSet = false;
 };
 

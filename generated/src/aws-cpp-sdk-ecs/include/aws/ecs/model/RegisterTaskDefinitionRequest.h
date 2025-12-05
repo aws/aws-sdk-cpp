@@ -552,57 +552,57 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_taskRoleArn;
-  bool m_taskRoleArnHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   NetworkMode m_networkMode{NetworkMode::NOT_SET};
-  bool m_networkModeHasBeenSet = false;
 
   Aws::Vector<ContainerDefinition> m_containerDefinitions;
-  bool m_containerDefinitionsHasBeenSet = false;
 
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::Vector<TaskDefinitionPlacementConstraint> m_placementConstraints;
-  bool m_placementConstraintsHasBeenSet = false;
 
   Aws::Vector<Compatibility> m_requiresCompatibilities;
-  bool m_requiresCompatibilitiesHasBeenSet = false;
 
   Aws::String m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PidMode m_pidMode{PidMode::NOT_SET};
-  bool m_pidModeHasBeenSet = false;
 
   IpcMode m_ipcMode{IpcMode::NOT_SET};
-  bool m_ipcModeHasBeenSet = false;
 
   ProxyConfiguration m_proxyConfiguration;
-  bool m_proxyConfigurationHasBeenSet = false;
 
   Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
-  bool m_inferenceAcceleratorsHasBeenSet = false;
 
   EphemeralStorage m_ephemeralStorage;
-  bool m_ephemeralStorageHasBeenSet = false;
 
   RuntimePlatform m_runtimePlatform;
-  bool m_runtimePlatformHasBeenSet = false;
 
   bool m_enableFaultInjection{false};
+  bool m_familyHasBeenSet = false;
+  bool m_taskRoleArnHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_networkModeHasBeenSet = false;
+  bool m_containerDefinitionsHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
+  bool m_placementConstraintsHasBeenSet = false;
+  bool m_requiresCompatibilitiesHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_pidModeHasBeenSet = false;
+  bool m_ipcModeHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
+  bool m_inferenceAcceleratorsHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
+  bool m_runtimePlatformHasBeenSet = false;
   bool m_enableFaultInjectionHasBeenSet = false;
 };
 

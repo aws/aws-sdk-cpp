@@ -86,12 +86,12 @@ class RedshiftLineageSyncConfigurationOutput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_lineageJobId;
-  bool m_lineageJobIdHasBeenSet = false;
 
   LineageSyncSchedule m_schedule;
+  bool m_enabledHasBeenSet = false;
+  bool m_lineageJobIdHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

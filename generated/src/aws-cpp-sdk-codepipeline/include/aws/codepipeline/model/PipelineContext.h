@@ -129,18 +129,18 @@ class PipelineContext {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   StageContext m_stage;
-  bool m_stageHasBeenSet = false;
 
   ActionContext m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   Aws::String m_pipelineExecutionId;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_pipelineArnHasBeenSet = false;
   bool m_pipelineExecutionIdHasBeenSet = false;
 };
 

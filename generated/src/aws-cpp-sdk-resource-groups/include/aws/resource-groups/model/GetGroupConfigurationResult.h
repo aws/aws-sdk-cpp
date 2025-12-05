@@ -63,9 +63,9 @@ class GetGroupConfigurationResult {
   ///@}
  private:
   GroupConfiguration m_groupConfiguration;
-  bool m_groupConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

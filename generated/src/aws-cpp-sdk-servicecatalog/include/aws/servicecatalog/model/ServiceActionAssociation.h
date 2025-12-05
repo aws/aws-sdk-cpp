@@ -89,12 +89,12 @@ class ServiceActionAssociation {
   ///@}
  private:
   Aws::String m_serviceActionId;
-  bool m_serviceActionIdHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
+  bool m_serviceActionIdHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
   bool m_provisioningArtifactIdHasBeenSet = false;
 };
 

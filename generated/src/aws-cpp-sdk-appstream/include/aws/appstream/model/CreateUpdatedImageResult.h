@@ -73,12 +73,12 @@ class CreateUpdatedImageResult {
   ///@}
  private:
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   bool m_canUpdateImage{false};
-  bool m_canUpdateImageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageHasBeenSet = false;
+  bool m_canUpdateImageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

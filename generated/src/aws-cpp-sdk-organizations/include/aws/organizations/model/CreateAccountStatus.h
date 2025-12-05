@@ -219,27 +219,27 @@ class CreateAccountStatus {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   CreateAccountState m_state{CreateAccountState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedTimestamp{};
-  bool m_requestedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedTimestamp{};
-  bool m_completedTimestampHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_govCloudAccountId;
-  bool m_govCloudAccountIdHasBeenSet = false;
 
   CreateAccountFailureReason m_failureReason{CreateAccountFailureReason::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_requestedTimestampHasBeenSet = false;
+  bool m_completedTimestampHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_govCloudAccountIdHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

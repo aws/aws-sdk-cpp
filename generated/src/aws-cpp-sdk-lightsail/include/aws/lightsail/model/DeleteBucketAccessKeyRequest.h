@@ -69,9 +69,9 @@ class DeleteBucketAccessKeyRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_accessKeyId;
+  bool m_bucketNameHasBeenSet = false;
   bool m_accessKeyIdHasBeenSet = false;
 };
 

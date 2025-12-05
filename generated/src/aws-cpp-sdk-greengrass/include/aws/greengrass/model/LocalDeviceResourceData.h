@@ -70,9 +70,9 @@ class LocalDeviceResourceData {
   ///@}
  private:
   GroupOwnerSetting m_groupOwnerSetting;
-  bool m_groupOwnerSettingHasBeenSet = false;
 
   Aws::String m_sourcePath;
+  bool m_groupOwnerSettingHasBeenSet = false;
   bool m_sourcePathHasBeenSet = false;
 };
 

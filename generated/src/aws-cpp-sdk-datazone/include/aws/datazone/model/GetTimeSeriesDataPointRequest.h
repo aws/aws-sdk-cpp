@@ -125,18 +125,18 @@ class GetTimeSeriesDataPointRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_entityIdentifier;
-  bool m_entityIdentifierHasBeenSet = false;
 
   TimeSeriesEntityType m_entityType{TimeSeriesEntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_formName;
-  bool m_formNameHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_formNameHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

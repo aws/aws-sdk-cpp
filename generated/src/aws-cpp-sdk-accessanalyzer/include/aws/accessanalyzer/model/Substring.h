@@ -62,9 +62,9 @@ class Substring {
   ///@}
  private:
   int m_start{0};
-  bool m_startHasBeenSet = false;
 
   int m_length{0};
+  bool m_startHasBeenSet = false;
   bool m_lengthHasBeenSet = false;
 };
 

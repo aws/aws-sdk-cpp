@@ -61,9 +61,9 @@ class AssociateWirelessDeviceWithMulticastGroupRequest : public IoTWirelessReque
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_wirelessDeviceId;
+  bool m_idHasBeenSet = false;
   bool m_wirelessDeviceIdHasBeenSet = false;
 };
 

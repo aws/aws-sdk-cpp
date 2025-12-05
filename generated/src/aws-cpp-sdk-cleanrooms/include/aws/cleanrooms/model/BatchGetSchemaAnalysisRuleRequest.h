@@ -74,9 +74,9 @@ class BatchGetSchemaAnalysisRuleRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::Vector<SchemaAnalysisRuleRequest> m_schemaAnalysisRuleRequests;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_schemaAnalysisRuleRequestsHasBeenSet = false;
 };
 

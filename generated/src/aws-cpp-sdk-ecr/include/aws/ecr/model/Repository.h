@@ -213,30 +213,30 @@ class Repository {
   ///@}
  private:
   Aws::String m_repositoryArn;
-  bool m_repositoryArnHasBeenSet = false;
 
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_repositoryUri;
-  bool m_repositoryUriHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
-  bool m_imageTagMutabilityHasBeenSet = false;
 
   Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
-  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_repositoryArnHasBeenSet = false;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_repositoryUriHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_imageTagMutabilityHasBeenSet = false;
+  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
+  bool m_imageScanningConfigurationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

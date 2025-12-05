@@ -77,9 +77,9 @@ class CachingConfig {
   ///@}
  private:
   long long m_ttl{0};
-  bool m_ttlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cachingKeys;
+  bool m_ttlHasBeenSet = false;
   bool m_cachingKeysHasBeenSet = false;
 };
 

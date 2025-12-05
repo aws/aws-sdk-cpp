@@ -183,24 +183,24 @@ class CreateTransitGatewayConnectPeerRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAddress;
-  bool m_transitGatewayAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   TransitGatewayConnectRequestBgpOptions m_bgpOptions;
-  bool m_bgpOptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insideCidrBlocks;
-  bool m_insideCidrBlocksHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_transitGatewayAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_bgpOptionsHasBeenSet = false;
+  bool m_insideCidrBlocksHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

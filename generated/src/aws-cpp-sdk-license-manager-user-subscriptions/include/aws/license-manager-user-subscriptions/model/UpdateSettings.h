@@ -103,12 +103,12 @@ class UpdateSettings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_addSubnets;
-  bool m_addSubnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSubnets;
-  bool m_removeSubnetsHasBeenSet = false;
 
   Aws::String m_securityGroupId;
+  bool m_addSubnetsHasBeenSet = false;
+  bool m_removeSubnetsHasBeenSet = false;
   bool m_securityGroupIdHasBeenSet = false;
 };
 

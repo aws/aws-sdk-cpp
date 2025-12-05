@@ -90,12 +90,12 @@ class FirewallMetadata {
   ///@}
  private:
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
+  bool m_firewallNameHasBeenSet = false;
+  bool m_firewallArnHasBeenSet = false;
   bool m_transitGatewayAttachmentIdHasBeenSet = false;
 };
 

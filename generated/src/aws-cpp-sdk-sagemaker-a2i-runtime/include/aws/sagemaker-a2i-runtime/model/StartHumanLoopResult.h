@@ -59,9 +59,9 @@ class StartHumanLoopResult {
   ///@}
  private:
   Aws::String m_humanLoopArn;
-  bool m_humanLoopArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_humanLoopArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

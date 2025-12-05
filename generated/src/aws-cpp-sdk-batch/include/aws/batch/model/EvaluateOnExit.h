@@ -120,15 +120,15 @@ class EvaluateOnExit {
   ///@}
  private:
   Aws::String m_onStatusReason;
-  bool m_onStatusReasonHasBeenSet = false;
 
   Aws::String m_onReason;
-  bool m_onReasonHasBeenSet = false;
 
   Aws::String m_onExitCode;
-  bool m_onExitCodeHasBeenSet = false;
 
   RetryAction m_action{RetryAction::NOT_SET};
+  bool m_onStatusReasonHasBeenSet = false;
+  bool m_onReasonHasBeenSet = false;
+  bool m_onExitCodeHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

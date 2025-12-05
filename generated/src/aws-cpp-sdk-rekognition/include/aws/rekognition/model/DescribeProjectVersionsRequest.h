@@ -118,15 +118,15 @@ class DescribeProjectVersionsRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versionNames;
-  bool m_versionNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_projectArnHasBeenSet = false;
+  bool m_versionNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class PartnerDomain {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_registeredAt{};
+  bool m_domainNameHasBeenSet = false;
   bool m_registeredAtHasBeenSet = false;
 };
 

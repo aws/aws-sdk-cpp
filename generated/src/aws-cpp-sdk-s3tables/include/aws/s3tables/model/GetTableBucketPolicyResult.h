@@ -59,9 +59,9 @@ class GetTableBucketPolicyResult {
   ///@}
  private:
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourcePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class StartContactStreamingResult {
   ///@}
  private:
   Aws::String m_streamingId;
-  bool m_streamingIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamingIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

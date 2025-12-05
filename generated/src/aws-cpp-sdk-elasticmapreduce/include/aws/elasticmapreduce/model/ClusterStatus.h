@@ -115,15 +115,15 @@ class ClusterStatus {
   ///@}
  private:
   ClusterState m_state{ClusterState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ClusterStateChangeReason m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   ClusterTimeline m_timeline;
-  bool m_timelineHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errorDetails;
+  bool m_stateHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
+  bool m_timelineHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

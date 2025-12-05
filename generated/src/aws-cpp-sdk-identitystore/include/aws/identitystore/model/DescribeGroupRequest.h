@@ -71,9 +71,9 @@ class DescribeGroupRequest : public IdentityStoreRequest {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_groupId;
+  bool m_identityStoreIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
 };
 

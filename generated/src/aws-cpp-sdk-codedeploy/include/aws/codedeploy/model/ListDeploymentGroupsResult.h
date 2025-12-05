@@ -108,15 +108,15 @@ class ListDeploymentGroupsResult {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deploymentGroups;
-  bool m_deploymentGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_deploymentGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

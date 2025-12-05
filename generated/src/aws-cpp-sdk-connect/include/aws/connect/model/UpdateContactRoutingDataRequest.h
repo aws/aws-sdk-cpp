@@ -124,18 +124,18 @@ class UpdateContactRoutingDataRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   int m_queueTimeAdjustmentSeconds{0};
-  bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
 
   long long m_queuePriority{0};
-  bool m_queuePriorityHasBeenSet = false;
 
   RoutingCriteriaInput m_routingCriteria;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_queueTimeAdjustmentSecondsHasBeenSet = false;
+  bool m_queuePriorityHasBeenSet = false;
   bool m_routingCriteriaHasBeenSet = false;
 };
 

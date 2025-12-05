@@ -87,12 +87,12 @@ class ListPromptsResult {
   ///@}
  private:
   Aws::Vector<PromptSummary> m_promptSummaries;
-  bool m_promptSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_promptSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

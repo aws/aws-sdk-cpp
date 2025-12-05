@@ -68,9 +68,9 @@ class ActiveTimeRange {
   ///@}
  private:
   Aws::Utils::DateTime m_activeAfterInclusive{};
-  bool m_activeAfterInclusiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_activeBeforeInclusive{};
+  bool m_activeAfterInclusiveHasBeenSet = false;
   bool m_activeBeforeInclusiveHasBeenSet = false;
 };
 

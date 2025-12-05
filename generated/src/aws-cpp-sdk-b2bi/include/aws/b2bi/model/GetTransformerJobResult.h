@@ -104,15 +104,15 @@ class GetTransformerJobResult {
   ///@}
  private:
   TransformerJobStatus m_status{TransformerJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<S3Location> m_outputFiles;
-  bool m_outputFilesHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_outputFilesHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

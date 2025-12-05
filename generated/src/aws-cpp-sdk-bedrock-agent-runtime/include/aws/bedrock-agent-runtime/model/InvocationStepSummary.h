@@ -110,15 +110,15 @@ class InvocationStepSummary {
   ///@}
  private:
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::String m_invocationStepId;
-  bool m_invocationStepIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationStepTime{};
-  bool m_invocationStepTimeHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_invocationIdHasBeenSet = false;
+  bool m_invocationStepIdHasBeenSet = false;
+  bool m_invocationStepTimeHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteApprovalRuleTemplateResult {
   ///@}
  private:
   Aws::String m_approvalRuleTemplateId;
-  bool m_approvalRuleTemplateIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_approvalRuleTemplateIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

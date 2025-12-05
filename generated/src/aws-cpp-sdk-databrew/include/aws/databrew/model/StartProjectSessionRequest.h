@@ -64,9 +64,9 @@ class StartProjectSessionRequest : public GlueDataBrewRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_assumeControl{false};
+  bool m_nameHasBeenSet = false;
   bool m_assumeControlHasBeenSet = false;
 };
 

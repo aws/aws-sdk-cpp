@@ -105,15 +105,15 @@ class ListWorkflowRunsRequest : public MWAAServerlessRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_workflowVersion;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workflowArnHasBeenSet = false;
   bool m_workflowVersionHasBeenSet = false;
 };
 

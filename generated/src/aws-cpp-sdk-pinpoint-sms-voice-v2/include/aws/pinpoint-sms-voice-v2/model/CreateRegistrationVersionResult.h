@@ -139,21 +139,21 @@ class CreateRegistrationVersionResult {
   ///@}
  private:
   Aws::String m_registrationArn;
-  bool m_registrationArnHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   RegistrationVersionStatus m_registrationVersionStatus{RegistrationVersionStatus::NOT_SET};
-  bool m_registrationVersionStatusHasBeenSet = false;
 
   RegistrationVersionStatusHistory m_registrationVersionStatusHistory;
-  bool m_registrationVersionStatusHistoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationArnHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_registrationVersionStatusHasBeenSet = false;
+  bool m_registrationVersionStatusHistoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

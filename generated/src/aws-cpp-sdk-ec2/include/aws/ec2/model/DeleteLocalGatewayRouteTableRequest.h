@@ -70,9 +70,9 @@ class DeleteLocalGatewayRouteTableRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_localGatewayRouteTableId;
-  bool m_localGatewayRouteTableIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayRouteTableIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

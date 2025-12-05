@@ -90,12 +90,12 @@ class ListEntitlementsResult {
   ///@}
  private:
   Aws::Vector<ListedEntitlement> m_entitlements;
-  bool m_entitlementsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitlementsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

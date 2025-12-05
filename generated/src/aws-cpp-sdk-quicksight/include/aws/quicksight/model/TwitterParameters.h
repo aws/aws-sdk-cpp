@@ -66,9 +66,9 @@ class TwitterParameters {
   ///@}
  private:
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   int m_maxRows{0};
+  bool m_queryHasBeenSet = false;
   bool m_maxRowsHasBeenSet = false;
 };
 

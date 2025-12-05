@@ -90,12 +90,12 @@ class MonitorDataSource {
   ///@}
  private:
   Aws::String m_datasetImportJobArn;
-  bool m_datasetImportJobArnHasBeenSet = false;
 
   Aws::String m_forecastArn;
-  bool m_forecastArnHasBeenSet = false;
 
   Aws::String m_predictorArn;
+  bool m_datasetImportJobArnHasBeenSet = false;
+  bool m_forecastArnHasBeenSet = false;
   bool m_predictorArnHasBeenSet = false;
 };
 

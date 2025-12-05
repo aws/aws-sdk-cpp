@@ -59,9 +59,9 @@ class DeleteGatewayResult {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

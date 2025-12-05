@@ -103,12 +103,12 @@ class DescribeStackResourcesRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
+  bool m_stackNameHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
   bool m_physicalResourceIdHasBeenSet = false;
 };
 

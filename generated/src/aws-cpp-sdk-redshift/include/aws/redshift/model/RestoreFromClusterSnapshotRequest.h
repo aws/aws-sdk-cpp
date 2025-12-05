@@ -840,120 +840,120 @@ class RestoreFromClusterSnapshotRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_snapshotClusterIdentifier;
-  bool m_snapshotClusterIdentifierHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   bool m_allowVersionUpgrade{false};
-  bool m_allowVersionUpgradeHasBeenSet = false;
 
   Aws::String m_clusterSubnetGroupName;
-  bool m_clusterSubnetGroupNameHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_hsmClientCertificateIdentifier;
-  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
   Aws::String m_hsmConfigurationIdentifier;
-  bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
   Aws::String m_elasticIp;
-  bool m_elasticIpHasBeenSet = false;
 
   Aws::String m_clusterParameterGroupName;
-  bool m_clusterParameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clusterSecurityGroups;
-  bool m_clusterSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   int m_automatedSnapshotRetentionPeriod{0};
-  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::String m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_iamRoles;
-  bool m_iamRolesHasBeenSet = false;
 
   Aws::String m_maintenanceTrackName;
-  bool m_maintenanceTrackNameHasBeenSet = false;
 
   Aws::String m_snapshotScheduleIdentifier;
-  bool m_snapshotScheduleIdentifierHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   bool m_availabilityZoneRelocation{false};
-  bool m_availabilityZoneRelocationHasBeenSet = false;
 
   AquaConfigurationStatus m_aquaConfigurationStatus{AquaConfigurationStatus::NOT_SET};
-  bool m_aquaConfigurationStatusHasBeenSet = false;
 
   Aws::String m_defaultIamRoleArn;
-  bool m_defaultIamRoleArnHasBeenSet = false;
 
   Aws::String m_reservedNodeId;
-  bool m_reservedNodeIdHasBeenSet = false;
 
   Aws::String m_targetReservedNodeOfferingId;
-  bool m_targetReservedNodeOfferingIdHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   bool m_manageMasterPassword{false};
-  bool m_manageMasterPasswordHasBeenSet = false;
 
   Aws::String m_masterPasswordSecretKmsKeyId;
-  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_ipAddressType;
-  bool m_ipAddressTypeHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_catalogName;
-  bool m_catalogNameHasBeenSet = false;
 
   Aws::String m_redshiftIdcApplicationArn;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_snapshotClusterIdentifierHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_allowVersionUpgradeHasBeenSet = false;
+  bool m_clusterSubnetGroupNameHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
+  bool m_hsmConfigurationIdentifierHasBeenSet = false;
+  bool m_elasticIpHasBeenSet = false;
+  bool m_clusterParameterGroupNameHasBeenSet = false;
+  bool m_clusterSecurityGroupsHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_iamRolesHasBeenSet = false;
+  bool m_maintenanceTrackNameHasBeenSet = false;
+  bool m_snapshotScheduleIdentifierHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_availabilityZoneRelocationHasBeenSet = false;
+  bool m_aquaConfigurationStatusHasBeenSet = false;
+  bool m_defaultIamRoleArnHasBeenSet = false;
+  bool m_reservedNodeIdHasBeenSet = false;
+  bool m_targetReservedNodeOfferingIdHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_manageMasterPasswordHasBeenSet = false;
+  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_catalogNameHasBeenSet = false;
   bool m_redshiftIdcApplicationArnHasBeenSet = false;
 };
 

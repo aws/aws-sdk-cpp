@@ -69,9 +69,9 @@ class LongCondition {
   ///@}
  private:
   long long m_value{0};
-  bool m_valueHasBeenSet = false;
 
   LongConditionOperator m_operator{LongConditionOperator::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

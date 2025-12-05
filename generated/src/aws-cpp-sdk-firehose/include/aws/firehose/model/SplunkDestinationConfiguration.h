@@ -247,36 +247,36 @@ class SplunkDestinationConfiguration {
   ///@}
  private:
   Aws::String m_hECEndpoint;
-  bool m_hECEndpointHasBeenSet = false;
 
   HECEndpointType m_hECEndpointType{HECEndpointType::NOT_SET};
-  bool m_hECEndpointTypeHasBeenSet = false;
 
   Aws::String m_hECToken;
-  bool m_hECTokenHasBeenSet = false;
 
   int m_hECAcknowledgmentTimeoutInSeconds{0};
-  bool m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = false;
 
   SplunkRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   SplunkS3BackupMode m_s3BackupMode{SplunkS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationConfiguration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   SplunkBufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   SecretsManagerConfiguration m_secretsManagerConfiguration;
+  bool m_hECEndpointHasBeenSet = false;
+  bool m_hECEndpointTypeHasBeenSet = false;
+  bool m_hECTokenHasBeenSet = false;
+  bool m_hECAcknowledgmentTimeoutInSecondsHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
   bool m_secretsManagerConfigurationHasBeenSet = false;
 };
 

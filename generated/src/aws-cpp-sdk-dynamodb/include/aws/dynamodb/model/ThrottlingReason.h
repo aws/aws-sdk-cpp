@@ -98,9 +98,9 @@ class ThrottlingReason {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_reasonHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

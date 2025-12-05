@@ -88,12 +88,12 @@ class GetQueryResultsWorkloadInsightsTopContributorsResult {
   ///@}
  private:
   Aws::Vector<WorkloadInsightsTopContributorsRow> m_topContributors;
-  bool m_topContributorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topContributorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

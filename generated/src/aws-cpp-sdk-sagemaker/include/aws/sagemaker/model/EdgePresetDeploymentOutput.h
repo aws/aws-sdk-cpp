@@ -104,15 +104,15 @@ class EdgePresetDeploymentOutput {
   ///@}
  private:
   EdgePresetDeploymentType m_type{EdgePresetDeploymentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_artifact;
-  bool m_artifactHasBeenSet = false;
 
   EdgePresetDeploymentStatus m_status{EdgePresetDeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_typeHasBeenSet = false;
+  bool m_artifactHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

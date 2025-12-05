@@ -120,15 +120,15 @@ class CreateLandingZoneRequest : public ControlTowerRequest {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<RemediationType> m_remediationTypes;
-  bool m_remediationTypesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::Document m_manifest;
+  bool m_versionHasBeenSet = false;
+  bool m_remediationTypesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_manifestHasBeenSet = false;
 };
 

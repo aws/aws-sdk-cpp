@@ -125,15 +125,15 @@ class AwsVPCSecurityGroupViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::String m_violationTargetDescription;
-  bool m_violationTargetDescriptionHasBeenSet = false;
 
   Aws::Vector<PartialMatch> m_partialMatches;
-  bool m_partialMatchesHasBeenSet = false;
 
   Aws::Vector<SecurityGroupRemediationAction> m_possibleSecurityGroupRemediationActions;
+  bool m_violationTargetHasBeenSet = false;
+  bool m_violationTargetDescriptionHasBeenSet = false;
+  bool m_partialMatchesHasBeenSet = false;
   bool m_possibleSecurityGroupRemediationActionsHasBeenSet = false;
 };
 

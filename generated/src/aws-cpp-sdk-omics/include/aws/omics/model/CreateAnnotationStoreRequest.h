@@ -183,27 +183,27 @@ class CreateAnnotationStoreRequest : public OmicsRequest {
   ///@}
  private:
   ReferenceItem m_reference;
-  bool m_referenceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   SseConfig m_sseConfig;
-  bool m_sseConfigHasBeenSet = false;
 
   StoreFormat m_storeFormat{StoreFormat::NOT_SET};
-  bool m_storeFormatHasBeenSet = false;
 
   StoreOptions m_storeOptions;
+  bool m_referenceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_sseConfigHasBeenSet = false;
+  bool m_storeFormatHasBeenSet = false;
   bool m_storeOptionsHasBeenSet = false;
 };
 

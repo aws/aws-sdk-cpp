@@ -230,36 +230,36 @@ class FlywheelIterationProperties {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_flywheelIterationId;
-  bool m_flywheelIterationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   FlywheelIterationStatus m_status{FlywheelIterationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_evaluatedModelArn;
-  bool m_evaluatedModelArnHasBeenSet = false;
 
   FlywheelModelEvaluationMetrics m_evaluatedModelMetrics;
-  bool m_evaluatedModelMetricsHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   FlywheelModelEvaluationMetrics m_trainedModelMetrics;
-  bool m_trainedModelMetricsHasBeenSet = false;
 
   Aws::String m_evaluationManifestS3Prefix;
+  bool m_flywheelArnHasBeenSet = false;
+  bool m_flywheelIterationIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_evaluatedModelArnHasBeenSet = false;
+  bool m_evaluatedModelMetricsHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_trainedModelMetricsHasBeenSet = false;
   bool m_evaluationManifestS3PrefixHasBeenSet = false;
 };
 

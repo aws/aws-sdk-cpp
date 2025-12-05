@@ -90,12 +90,12 @@ class ModifyAvailabilityZoneGroupRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   ModifyAvailabilityZoneOptInStatus m_optInStatus{ModifyAvailabilityZoneOptInStatus::NOT_SET};
-  bool m_optInStatusHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_groupNameHasBeenSet = false;
+  bool m_optInStatusHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

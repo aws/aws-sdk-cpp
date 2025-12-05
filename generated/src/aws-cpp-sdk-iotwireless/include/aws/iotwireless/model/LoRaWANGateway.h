@@ -170,24 +170,24 @@ class LoRaWANGateway {
   ///@}
  private:
   Aws::String m_gatewayEui;
-  bool m_gatewayEuiHasBeenSet = false;
 
   Aws::String m_rfRegion;
-  bool m_rfRegionHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_joinEuiFilters;
-  bool m_joinEuiFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_netIdFilters;
-  bool m_netIdFiltersHasBeenSet = false;
 
   Aws::Vector<int> m_subBands;
-  bool m_subBandsHasBeenSet = false;
 
   Beaconing m_beaconing;
-  bool m_beaconingHasBeenSet = false;
 
   double m_maxEirp{0.0};
+  bool m_gatewayEuiHasBeenSet = false;
+  bool m_rfRegionHasBeenSet = false;
+  bool m_joinEuiFiltersHasBeenSet = false;
+  bool m_netIdFiltersHasBeenSet = false;
+  bool m_subBandsHasBeenSet = false;
+  bool m_beaconingHasBeenSet = false;
   bool m_maxEirpHasBeenSet = false;
 };
 

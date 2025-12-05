@@ -73,9 +73,9 @@ class EncryptionConfiguration {
   ///@}
  private:
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_cmkArn;
+  bool m_encryptedHasBeenSet = false;
   bool m_cmkArnHasBeenSet = false;
 };
 

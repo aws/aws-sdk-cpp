@@ -623,81 +623,81 @@ class FleetAttributes {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   FleetType m_fleetType{FleetType::NOT_SET};
-  bool m_fleetTypeHasBeenSet = false;
 
   EC2InstanceType m_instanceType{EC2InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_terminationTime{};
-  bool m_terminationTimeHasBeenSet = false;
 
   FleetStatus m_status{FleetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_buildId;
-  bool m_buildIdHasBeenSet = false;
 
   Aws::String m_buildArn;
-  bool m_buildArnHasBeenSet = false;
 
   Aws::String m_scriptId;
-  bool m_scriptIdHasBeenSet = false;
 
   Aws::String m_scriptArn;
-  bool m_scriptArnHasBeenSet = false;
 
   Aws::String m_serverLaunchPath;
-  bool m_serverLaunchPathHasBeenSet = false;
 
   Aws::String m_serverLaunchParameters;
-  bool m_serverLaunchParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logPaths;
-  bool m_logPathsHasBeenSet = false;
 
   ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
-  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   ResourceCreationLimitPolicy m_resourceCreationLimitPolicy;
-  bool m_resourceCreationLimitPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricGroups;
-  bool m_metricGroupsHasBeenSet = false;
 
   Aws::Vector<FleetAction> m_stoppedActions;
-  bool m_stoppedActionsHasBeenSet = false;
 
   Aws::String m_instanceRoleArn;
-  bool m_instanceRoleArnHasBeenSet = false;
 
   CertificateConfiguration m_certificateConfiguration;
-  bool m_certificateConfigurationHasBeenSet = false;
 
   ComputeType m_computeType{ComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   AnywhereConfiguration m_anywhereConfiguration;
-  bool m_anywhereConfigurationHasBeenSet = false;
 
   InstanceRoleCredentialsProvider m_instanceRoleCredentialsProvider{InstanceRoleCredentialsProvider::NOT_SET};
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_fleetTypeHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_terminationTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_buildIdHasBeenSet = false;
+  bool m_buildArnHasBeenSet = false;
+  bool m_scriptIdHasBeenSet = false;
+  bool m_scriptArnHasBeenSet = false;
+  bool m_serverLaunchPathHasBeenSet = false;
+  bool m_serverLaunchParametersHasBeenSet = false;
+  bool m_logPathsHasBeenSet = false;
+  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_resourceCreationLimitPolicyHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
+  bool m_stoppedActionsHasBeenSet = false;
+  bool m_instanceRoleArnHasBeenSet = false;
+  bool m_certificateConfigurationHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_anywhereConfigurationHasBeenSet = false;
   bool m_instanceRoleCredentialsProviderHasBeenSet = false;
 };
 

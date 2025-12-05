@@ -60,9 +60,9 @@ class ListCachePolicies2020_05_31Result {
   ///@}
  private:
   CachePolicyList m_cachePolicyList;
-  bool m_cachePolicyListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cachePolicyListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

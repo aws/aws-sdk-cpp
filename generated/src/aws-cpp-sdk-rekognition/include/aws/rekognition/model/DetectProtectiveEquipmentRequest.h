@@ -70,9 +70,9 @@ class DetectProtectiveEquipmentRequest : public RekognitionRequest {
   ///@}
  private:
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   ProtectiveEquipmentSummarizationAttributes m_summarizationAttributes;
+  bool m_imageHasBeenSet = false;
   bool m_summarizationAttributesHasBeenSet = false;
 };
 

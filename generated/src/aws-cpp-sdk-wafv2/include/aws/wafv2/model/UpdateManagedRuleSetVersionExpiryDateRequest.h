@@ -159,21 +159,21 @@ class UpdateManagedRuleSetVersionExpiryDateRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_lockToken;
-  bool m_lockTokenHasBeenSet = false;
 
   Aws::String m_versionToExpire;
-  bool m_versionToExpireHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTimestamp{};
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lockTokenHasBeenSet = false;
+  bool m_versionToExpireHasBeenSet = false;
   bool m_expiryTimestampHasBeenSet = false;
 };
 

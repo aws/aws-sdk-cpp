@@ -71,9 +71,9 @@ class LocalTimeZoneConfig {
   ///@}
  private:
   Aws::String m_defaultTimeZone;
-  bool m_defaultTimeZoneHasBeenSet = false;
 
   Aws::Vector<LocalTimeZoneDetectionType> m_localTimeZoneDetection;
+  bool m_defaultTimeZoneHasBeenSet = false;
   bool m_localTimeZoneDetectionHasBeenSet = false;
 };
 

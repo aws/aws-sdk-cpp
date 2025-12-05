@@ -93,12 +93,12 @@ class ListImportJobsRequest : public SESV2Request {
   ///@}
  private:
   ImportDestinationType m_importDestinationType{ImportDestinationType::NOT_SET};
-  bool m_importDestinationTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_importDestinationTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

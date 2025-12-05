@@ -94,12 +94,12 @@ class ColumnDefinition {
   ///@}
  private:
   ColumnDataType m_dataType{ColumnDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_columnDescription;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_columnNameHasBeenSet = false;
   bool m_columnDescriptionHasBeenSet = false;
 };
 

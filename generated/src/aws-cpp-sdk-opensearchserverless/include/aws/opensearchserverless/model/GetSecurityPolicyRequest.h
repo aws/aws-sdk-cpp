@@ -66,9 +66,9 @@ class GetSecurityPolicyRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   SecurityPolicyType m_type{SecurityPolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_typeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

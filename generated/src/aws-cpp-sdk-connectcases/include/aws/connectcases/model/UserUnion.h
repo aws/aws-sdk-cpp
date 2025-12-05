@@ -69,9 +69,9 @@ class UserUnion {
   ///@}
  private:
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   Aws::String m_customEntity;
+  bool m_userArnHasBeenSet = false;
   bool m_customEntityHasBeenSet = false;
 };
 

@@ -141,18 +141,18 @@ class ComputeAttributes {
   ///@}
  private:
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   ComputeAssetState m_state{ComputeAssetState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceFamilies;
-  bool m_instanceFamiliesHasBeenSet = false;
 
   Aws::Vector<AssetInstanceTypeCapacity> m_instanceTypeCapacities;
-  bool m_instanceTypeCapacitiesHasBeenSet = false;
 
   int m_maxVcpus{0};
+  bool m_hostIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_instanceFamiliesHasBeenSet = false;
+  bool m_instanceTypeCapacitiesHasBeenSet = false;
   bool m_maxVcpusHasBeenSet = false;
 };
 

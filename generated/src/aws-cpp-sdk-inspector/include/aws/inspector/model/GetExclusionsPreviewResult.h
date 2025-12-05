@@ -103,15 +103,15 @@ class GetExclusionsPreviewResult {
   ///@}
  private:
   PreviewStatus m_previewStatus{PreviewStatus::NOT_SET};
-  bool m_previewStatusHasBeenSet = false;
 
   Aws::Vector<ExclusionPreview> m_exclusionPreviews;
-  bool m_exclusionPreviewsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_previewStatusHasBeenSet = false;
+  bool m_exclusionPreviewsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

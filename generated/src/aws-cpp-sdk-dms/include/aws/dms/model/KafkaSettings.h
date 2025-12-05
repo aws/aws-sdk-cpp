@@ -441,66 +441,66 @@ class KafkaSettings {
   ///@}
  private:
   Aws::String m_broker;
-  bool m_brokerHasBeenSet = false;
 
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   MessageFormatValue m_messageFormat{MessageFormatValue::NOT_SET};
-  bool m_messageFormatHasBeenSet = false;
 
   bool m_includeTransactionDetails{false};
-  bool m_includeTransactionDetailsHasBeenSet = false;
 
   bool m_includePartitionValue{false};
-  bool m_includePartitionValueHasBeenSet = false;
 
   bool m_partitionIncludeSchemaTable{false};
-  bool m_partitionIncludeSchemaTableHasBeenSet = false;
 
   bool m_includeTableAlterOperations{false};
-  bool m_includeTableAlterOperationsHasBeenSet = false;
 
   bool m_includeControlDetails{false};
-  bool m_includeControlDetailsHasBeenSet = false;
 
   int m_messageMaxBytes{0};
-  bool m_messageMaxBytesHasBeenSet = false;
 
   bool m_includeNullAndEmpty{false};
-  bool m_includeNullAndEmptyHasBeenSet = false;
 
   KafkaSecurityProtocol m_securityProtocol{KafkaSecurityProtocol::NOT_SET};
-  bool m_securityProtocolHasBeenSet = false;
 
   Aws::String m_sslClientCertificateArn;
-  bool m_sslClientCertificateArnHasBeenSet = false;
 
   Aws::String m_sslClientKeyArn;
-  bool m_sslClientKeyArnHasBeenSet = false;
 
   Aws::String m_sslClientKeyPassword;
-  bool m_sslClientKeyPasswordHasBeenSet = false;
 
   Aws::String m_sslCaCertificateArn;
-  bool m_sslCaCertificateArnHasBeenSet = false;
 
   Aws::String m_saslUsername;
-  bool m_saslUsernameHasBeenSet = false;
 
   Aws::String m_saslPassword;
-  bool m_saslPasswordHasBeenSet = false;
 
   bool m_noHexPrefix{false};
-  bool m_noHexPrefixHasBeenSet = false;
 
   KafkaSaslMechanism m_saslMechanism{KafkaSaslMechanism::NOT_SET};
-  bool m_saslMechanismHasBeenSet = false;
 
   KafkaSslEndpointIdentificationAlgorithm m_sslEndpointIdentificationAlgorithm{KafkaSslEndpointIdentificationAlgorithm::NOT_SET};
-  bool m_sslEndpointIdentificationAlgorithmHasBeenSet = false;
 
   bool m_useLargeIntegerValue{false};
+  bool m_brokerHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
+  bool m_messageFormatHasBeenSet = false;
+  bool m_includeTransactionDetailsHasBeenSet = false;
+  bool m_includePartitionValueHasBeenSet = false;
+  bool m_partitionIncludeSchemaTableHasBeenSet = false;
+  bool m_includeTableAlterOperationsHasBeenSet = false;
+  bool m_includeControlDetailsHasBeenSet = false;
+  bool m_messageMaxBytesHasBeenSet = false;
+  bool m_includeNullAndEmptyHasBeenSet = false;
+  bool m_securityProtocolHasBeenSet = false;
+  bool m_sslClientCertificateArnHasBeenSet = false;
+  bool m_sslClientKeyArnHasBeenSet = false;
+  bool m_sslClientKeyPasswordHasBeenSet = false;
+  bool m_sslCaCertificateArnHasBeenSet = false;
+  bool m_saslUsernameHasBeenSet = false;
+  bool m_saslPasswordHasBeenSet = false;
+  bool m_noHexPrefixHasBeenSet = false;
+  bool m_saslMechanismHasBeenSet = false;
+  bool m_sslEndpointIdentificationAlgorithmHasBeenSet = false;
   bool m_useLargeIntegerValueHasBeenSet = false;
 };
 

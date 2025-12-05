@@ -69,9 +69,9 @@ class MetadataKeyValuePair {
   ///@}
  private:
   Aws::String m_metadataKey;
-  bool m_metadataKeyHasBeenSet = false;
 
   Aws::String m_metadataValue;
+  bool m_metadataKeyHasBeenSet = false;
   bool m_metadataValueHasBeenSet = false;
 };
 

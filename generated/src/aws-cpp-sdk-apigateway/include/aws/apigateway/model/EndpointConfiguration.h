@@ -109,12 +109,12 @@ class EndpointConfiguration {
   ///@}
  private:
   Aws::Vector<EndpointType> m_types;
-  bool m_typesHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcEndpointIds;
+  bool m_typesHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_vpcEndpointIdsHasBeenSet = false;
 };
 

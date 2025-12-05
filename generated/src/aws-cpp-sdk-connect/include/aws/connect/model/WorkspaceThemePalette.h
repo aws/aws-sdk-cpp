@@ -108,15 +108,15 @@ class WorkspaceThemePalette {
   ///@}
  private:
   PaletteHeader m_header;
-  bool m_headerHasBeenSet = false;
 
   PaletteNavigation m_navigation;
-  bool m_navigationHasBeenSet = false;
 
   PaletteCanvas m_canvas;
-  bool m_canvasHasBeenSet = false;
 
   PalettePrimary m_primary;
+  bool m_headerHasBeenSet = false;
+  bool m_navigationHasBeenSet = false;
+  bool m_canvasHasBeenSet = false;
   bool m_primaryHasBeenSet = false;
 };
 

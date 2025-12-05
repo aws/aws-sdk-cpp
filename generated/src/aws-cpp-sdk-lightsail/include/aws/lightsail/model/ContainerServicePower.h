@@ -135,21 +135,21 @@ class ContainerServicePower {
   ///@}
  private:
   Aws::String m_powerId;
-  bool m_powerIdHasBeenSet = false;
 
   double m_price{0.0};
-  bool m_priceHasBeenSet = false;
 
   double m_cpuCount{0.0};
-  bool m_cpuCountHasBeenSet = false;
 
   double m_ramSizeInGb{0.0};
-  bool m_ramSizeInGbHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_isActive{false};
+  bool m_powerIdHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
+  bool m_cpuCountHasBeenSet = false;
+  bool m_ramSizeInGbHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_isActiveHasBeenSet = false;
 };
 

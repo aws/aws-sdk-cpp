@@ -88,12 +88,12 @@ class ApplicationSettingsJourneyLimits {
   ///@}
  private:
   int m_dailyCap{0};
-  bool m_dailyCapHasBeenSet = false;
 
   JourneyTimeframeCap m_timeframeCap;
-  bool m_timeframeCapHasBeenSet = false;
 
   int m_totalCap{0};
+  bool m_dailyCapHasBeenSet = false;
+  bool m_timeframeCapHasBeenSet = false;
   bool m_totalCapHasBeenSet = false;
 };
 

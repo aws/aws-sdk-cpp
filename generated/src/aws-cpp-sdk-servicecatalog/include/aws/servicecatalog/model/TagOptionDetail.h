@@ -121,18 +121,18 @@ class TagOptionDetail {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_owner;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

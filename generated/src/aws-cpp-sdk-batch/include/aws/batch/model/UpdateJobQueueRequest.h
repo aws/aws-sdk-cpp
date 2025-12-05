@@ -209,24 +209,24 @@ class UpdateJobQueueRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_jobQueue;
-  bool m_jobQueueHasBeenSet = false;
 
   JQState m_state{JQState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_schedulingPolicyArn;
-  bool m_schedulingPolicyArnHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
-  bool m_computeEnvironmentOrderHasBeenSet = false;
 
   Aws::Vector<ServiceEnvironmentOrder> m_serviceEnvironmentOrder;
-  bool m_serviceEnvironmentOrderHasBeenSet = false;
 
   Aws::Vector<JobStateTimeLimitAction> m_jobStateTimeLimitActions;
+  bool m_jobQueueHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_schedulingPolicyArnHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_computeEnvironmentOrderHasBeenSet = false;
+  bool m_serviceEnvironmentOrderHasBeenSet = false;
   bool m_jobStateTimeLimitActionsHasBeenSet = false;
 };
 

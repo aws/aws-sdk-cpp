@@ -89,12 +89,12 @@ class LogicalTableSource {
   ///@}
  private:
   JoinInstruction m_joinInstruction;
-  bool m_joinInstructionHasBeenSet = false;
 
   Aws::String m_physicalTableId;
-  bool m_physicalTableIdHasBeenSet = false;
 
   Aws::String m_dataSetArn;
+  bool m_joinInstructionHasBeenSet = false;
+  bool m_physicalTableIdHasBeenSet = false;
   bool m_dataSetArnHasBeenSet = false;
 };
 

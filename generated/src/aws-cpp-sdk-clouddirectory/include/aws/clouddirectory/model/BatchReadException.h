@@ -68,9 +68,9 @@ class BatchReadException {
   ///@}
  private:
   BatchReadExceptionType m_type{BatchReadExceptionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

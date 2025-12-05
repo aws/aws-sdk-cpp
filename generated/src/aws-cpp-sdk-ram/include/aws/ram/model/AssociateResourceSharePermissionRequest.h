@@ -149,18 +149,18 @@ class AssociateResourceSharePermissionRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_permissionArn;
-  bool m_permissionArnHasBeenSet = false;
 
   bool m_replace{false};
-  bool m_replaceHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   int m_permissionVersion{0};
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_permissionArnHasBeenSet = false;
+  bool m_replaceHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_permissionVersionHasBeenSet = false;
 };
 

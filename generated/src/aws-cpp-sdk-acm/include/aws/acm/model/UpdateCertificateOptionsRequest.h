@@ -74,9 +74,9 @@ class UpdateCertificateOptionsRequest : public ACMRequest {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   CertificateOptions m_options;
+  bool m_certificateArnHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

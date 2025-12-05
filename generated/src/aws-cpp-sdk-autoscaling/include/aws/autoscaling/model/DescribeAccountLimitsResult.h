@@ -104,18 +104,18 @@ class DescribeAccountLimitsResult {
   ///@}
  private:
   int m_maxNumberOfAutoScalingGroups{0};
-  bool m_maxNumberOfAutoScalingGroupsHasBeenSet = false;
 
   int m_maxNumberOfLaunchConfigurations{0};
-  bool m_maxNumberOfLaunchConfigurationsHasBeenSet = false;
 
   int m_numberOfAutoScalingGroups{0};
-  bool m_numberOfAutoScalingGroupsHasBeenSet = false;
 
   int m_numberOfLaunchConfigurations{0};
-  bool m_numberOfLaunchConfigurationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_maxNumberOfAutoScalingGroupsHasBeenSet = false;
+  bool m_maxNumberOfLaunchConfigurationsHasBeenSet = false;
+  bool m_numberOfAutoScalingGroupsHasBeenSet = false;
+  bool m_numberOfLaunchConfigurationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -274,42 +274,42 @@ class Bundle {
   ///@}
  private:
   double m_price{0.0};
-  bool m_priceHasBeenSet = false;
 
   int m_cpuCount{0};
-  bool m_cpuCountHasBeenSet = false;
 
   int m_diskSizeInGb{0};
-  bool m_diskSizeInGbHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_power{0};
-  bool m_powerHasBeenSet = false;
 
   double m_ramSizeInGb{0.0};
-  bool m_ramSizeInGbHasBeenSet = false;
 
   int m_transferPerMonthInGb{0};
-  bool m_transferPerMonthInGbHasBeenSet = false;
 
   Aws::Vector<InstancePlatform> m_supportedPlatforms;
-  bool m_supportedPlatformsHasBeenSet = false;
 
   Aws::Vector<AppCategory> m_supportedAppCategories;
-  bool m_supportedAppCategoriesHasBeenSet = false;
 
   int m_publicIpv4AddressCount{0};
+  bool m_priceHasBeenSet = false;
+  bool m_cpuCountHasBeenSet = false;
+  bool m_diskSizeInGbHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_isActiveHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_powerHasBeenSet = false;
+  bool m_ramSizeInGbHasBeenSet = false;
+  bool m_transferPerMonthInGbHasBeenSet = false;
+  bool m_supportedPlatformsHasBeenSet = false;
+  bool m_supportedAppCategoriesHasBeenSet = false;
   bool m_publicIpv4AddressCountHasBeenSet = false;
 };
 

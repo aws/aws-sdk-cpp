@@ -70,9 +70,9 @@ class EvaluationTranscriptPointOfInterest {
   ///@}
  private:
   EvaluationSuggestedAnswerTranscriptMillisecondOffsets m_millisecondOffsets;
-  bool m_millisecondOffsetsHasBeenSet = false;
 
   Aws::String m_transcriptSegment;
+  bool m_millisecondOffsetsHasBeenSet = false;
   bool m_transcriptSegmentHasBeenSet = false;
 };
 

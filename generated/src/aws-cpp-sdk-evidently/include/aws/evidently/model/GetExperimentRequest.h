@@ -65,9 +65,9 @@ class GetExperimentRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_experiment;
-  bool m_experimentHasBeenSet = false;
 
   Aws::String m_project;
+  bool m_experimentHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

@@ -302,45 +302,45 @@ class DashboardPublishOptions {
   ///@}
  private:
   AdHocFilteringOption m_adHocFilteringOption;
-  bool m_adHocFilteringOptionHasBeenSet = false;
 
   ExportToCSVOption m_exportToCSVOption;
-  bool m_exportToCSVOptionHasBeenSet = false;
 
   SheetControlsOption m_sheetControlsOption;
-  bool m_sheetControlsOptionHasBeenSet = false;
 
   SheetLayoutElementMaximizationOption m_sheetLayoutElementMaximizationOption;
-  bool m_sheetLayoutElementMaximizationOptionHasBeenSet = false;
 
   VisualMenuOption m_visualMenuOption;
-  bool m_visualMenuOptionHasBeenSet = false;
 
   VisualAxisSortOption m_visualAxisSortOption;
-  bool m_visualAxisSortOptionHasBeenSet = false;
 
   ExportWithHiddenFieldsOption m_exportWithHiddenFieldsOption;
-  bool m_exportWithHiddenFieldsOptionHasBeenSet = false;
 
   DataPointDrillUpDownOption m_dataPointDrillUpDownOption;
-  bool m_dataPointDrillUpDownOptionHasBeenSet = false;
 
   DataPointMenuLabelOption m_dataPointMenuLabelOption;
-  bool m_dataPointMenuLabelOptionHasBeenSet = false;
 
   DataPointTooltipOption m_dataPointTooltipOption;
-  bool m_dataPointTooltipOptionHasBeenSet = false;
 
   DataQAEnabledOption m_dataQAEnabledOption;
-  bool m_dataQAEnabledOptionHasBeenSet = false;
 
   QuickSuiteActionsOption m_quickSuiteActionsOption;
-  bool m_quickSuiteActionsOptionHasBeenSet = false;
 
   ExecutiveSummaryOption m_executiveSummaryOption;
-  bool m_executiveSummaryOptionHasBeenSet = false;
 
   DataStoriesSharingOption m_dataStoriesSharingOption;
+  bool m_adHocFilteringOptionHasBeenSet = false;
+  bool m_exportToCSVOptionHasBeenSet = false;
+  bool m_sheetControlsOptionHasBeenSet = false;
+  bool m_sheetLayoutElementMaximizationOptionHasBeenSet = false;
+  bool m_visualMenuOptionHasBeenSet = false;
+  bool m_visualAxisSortOptionHasBeenSet = false;
+  bool m_exportWithHiddenFieldsOptionHasBeenSet = false;
+  bool m_dataPointDrillUpDownOptionHasBeenSet = false;
+  bool m_dataPointMenuLabelOptionHasBeenSet = false;
+  bool m_dataPointTooltipOptionHasBeenSet = false;
+  bool m_dataQAEnabledOptionHasBeenSet = false;
+  bool m_quickSuiteActionsOptionHasBeenSet = false;
+  bool m_executiveSummaryOptionHasBeenSet = false;
   bool m_dataStoriesSharingOptionHasBeenSet = false;
 };
 

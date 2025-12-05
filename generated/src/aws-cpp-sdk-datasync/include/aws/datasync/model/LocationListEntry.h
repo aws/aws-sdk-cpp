@@ -86,9 +86,9 @@ class LocationListEntry {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
+  bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
 };
 

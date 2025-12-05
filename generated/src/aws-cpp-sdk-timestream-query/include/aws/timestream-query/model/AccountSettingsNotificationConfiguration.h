@@ -70,9 +70,9 @@ class AccountSettingsNotificationConfiguration {
   ///@}
  private:
   SnsConfiguration m_snsConfiguration;
-  bool m_snsConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_snsConfigurationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

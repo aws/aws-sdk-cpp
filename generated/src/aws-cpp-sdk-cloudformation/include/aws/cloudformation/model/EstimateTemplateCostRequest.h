@@ -108,12 +108,12 @@ class EstimateTemplateCostRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateURL;
-  bool m_templateURLHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_templateURLHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

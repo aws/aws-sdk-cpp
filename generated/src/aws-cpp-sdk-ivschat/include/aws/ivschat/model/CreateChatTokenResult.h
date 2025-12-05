@@ -97,15 +97,15 @@ class CreateChatTokenResult {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_tokenExpirationTime{};
-  bool m_tokenExpirationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_sessionExpirationTime{};
-  bool m_sessionExpirationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenHasBeenSet = false;
+  bool m_tokenExpirationTimeHasBeenSet = false;
+  bool m_sessionExpirationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

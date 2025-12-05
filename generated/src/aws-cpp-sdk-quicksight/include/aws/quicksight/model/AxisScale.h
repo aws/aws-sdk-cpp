@@ -71,9 +71,9 @@ class AxisScale {
   ///@}
  private:
   AxisLinearScale m_linear;
-  bool m_linearHasBeenSet = false;
 
   AxisLogarithmicScale m_logarithmic;
+  bool m_linearHasBeenSet = false;
   bool m_logarithmicHasBeenSet = false;
 };
 

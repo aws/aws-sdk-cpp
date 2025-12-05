@@ -73,9 +73,9 @@ class InsightRuleContributorDatapoint {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   double m_approximateValue{0.0};
+  bool m_timestampHasBeenSet = false;
   bool m_approximateValueHasBeenSet = false;
 };
 

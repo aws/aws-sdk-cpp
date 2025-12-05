@@ -165,27 +165,27 @@ class AthenaDatasetDefinition {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_outputS3Uri;
-  bool m_outputS3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   AthenaResultFormat m_outputFormat{AthenaResultFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   AthenaResultCompressionType m_outputCompression{AthenaResultCompressionType::NOT_SET};
+  bool m_catalogHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_workGroupHasBeenSet = false;
+  bool m_outputS3UriHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
   bool m_outputCompressionHasBeenSet = false;
 };
 

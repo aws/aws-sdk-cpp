@@ -128,15 +128,15 @@ class Severity {
   ///@}
  private:
   double m_product{0.0};
-  bool m_productHasBeenSet = false;
 
   SeverityLabel m_label{SeverityLabel::NOT_SET};
-  bool m_labelHasBeenSet = false;
 
   int m_normalized{0};
-  bool m_normalizedHasBeenSet = false;
 
   Aws::String m_original;
+  bool m_productHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_normalizedHasBeenSet = false;
   bool m_originalHasBeenSet = false;
 };
 

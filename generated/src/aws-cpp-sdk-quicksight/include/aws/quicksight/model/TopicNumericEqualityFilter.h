@@ -74,9 +74,9 @@ class TopicNumericEqualityFilter {
   ///@}
  private:
   TopicSingularFilterConstant m_constant;
-  bool m_constantHasBeenSet = false;
 
   NamedFilterAggType m_aggregation{NamedFilterAggType::NOT_SET};
+  bool m_constantHasBeenSet = false;
   bool m_aggregationHasBeenSet = false;
 };
 

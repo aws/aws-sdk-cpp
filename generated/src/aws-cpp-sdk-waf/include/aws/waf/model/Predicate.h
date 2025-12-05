@@ -111,12 +111,12 @@ class Predicate {
   ///@}
  private:
   bool m_negated{false};
-  bool m_negatedHasBeenSet = false;
 
   PredicateType m_type{PredicateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_dataId;
+  bool m_negatedHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_dataIdHasBeenSet = false;
 };
 

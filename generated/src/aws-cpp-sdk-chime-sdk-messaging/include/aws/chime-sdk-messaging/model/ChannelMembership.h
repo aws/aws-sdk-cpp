@@ -159,24 +159,24 @@ class ChannelMembership {
   ///@}
  private:
   Identity m_invitedBy;
-  bool m_invitedByHasBeenSet = false;
 
   ChannelMembershipType m_type{ChannelMembershipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Identity m_member;
-  bool m_memberHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_subChannelId;
+  bool m_invitedByHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_subChannelIdHasBeenSet = false;
 };
 

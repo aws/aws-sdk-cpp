@@ -159,24 +159,24 @@ class MonitoringAlertSummary {
   ///@}
  private:
   Aws::String m_monitoringAlertName;
-  bool m_monitoringAlertNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   MonitoringAlertStatus m_alertStatus{MonitoringAlertStatus::NOT_SET};
-  bool m_alertStatusHasBeenSet = false;
 
   int m_datapointsToAlert{0};
-  bool m_datapointsToAlertHasBeenSet = false;
 
   int m_evaluationPeriod{0};
-  bool m_evaluationPeriodHasBeenSet = false;
 
   MonitoringAlertActions m_actions;
+  bool m_monitoringAlertNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_alertStatusHasBeenSet = false;
+  bool m_datapointsToAlertHasBeenSet = false;
+  bool m_evaluationPeriodHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

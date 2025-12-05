@@ -85,12 +85,12 @@ class ListObjectParentPathsResult {
   ///@}
  private:
   Aws::Vector<PathToObjectIdentifiers> m_pathToObjectIdentifiersList;
-  bool m_pathToObjectIdentifiersListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pathToObjectIdentifiersListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

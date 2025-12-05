@@ -110,18 +110,18 @@ class UpdateBrowserStreamResult {
   ///@}
  private:
   Aws::String m_browserIdentifier;
-  bool m_browserIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   BrowserSessionStream m_streams;
-  bool m_streamsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_browserIdentifierHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_streamsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

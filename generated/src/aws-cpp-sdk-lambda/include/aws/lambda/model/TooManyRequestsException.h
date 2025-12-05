@@ -99,15 +99,15 @@ class TooManyRequestsException {
   ///@}
  private:
   Aws::String m_retryAfterSeconds;
-  bool m_retryAfterSecondsHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ThrottleReason m_reason{ThrottleReason::NOT_SET};
+  bool m_retryAfterSecondsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

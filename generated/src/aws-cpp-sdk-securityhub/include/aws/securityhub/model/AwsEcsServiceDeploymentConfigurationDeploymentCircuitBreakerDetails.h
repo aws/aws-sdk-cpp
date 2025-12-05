@@ -64,9 +64,9 @@ class AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
   ///@}
  private:
   bool m_enable{false};
-  bool m_enableHasBeenSet = false;
 
   bool m_rollback{false};
+  bool m_enableHasBeenSet = false;
   bool m_rollbackHasBeenSet = false;
 };
 

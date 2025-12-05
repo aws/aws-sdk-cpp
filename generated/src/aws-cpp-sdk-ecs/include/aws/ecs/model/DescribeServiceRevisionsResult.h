@@ -91,12 +91,12 @@ class DescribeServiceRevisionsResult {
   ///@}
  private:
   Aws::Vector<ServiceRevision> m_serviceRevisions;
-  bool m_serviceRevisionsHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceRevisionsHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

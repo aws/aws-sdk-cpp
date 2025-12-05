@@ -81,9 +81,9 @@ class Customer {
   ///@}
  private:
   Account m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::Vector<Contact> m_contacts;
+  bool m_accountHasBeenSet = false;
   bool m_contactsHasBeenSet = false;
 };
 

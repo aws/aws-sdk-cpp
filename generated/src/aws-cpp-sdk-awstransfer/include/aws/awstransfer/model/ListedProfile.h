@@ -111,15 +111,15 @@ class ListedProfile {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_as2Id;
-  bool m_as2IdHasBeenSet = false;
 
   ProfileType m_profileType{ProfileType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_as2IdHasBeenSet = false;
   bool m_profileTypeHasBeenSet = false;
 };
 

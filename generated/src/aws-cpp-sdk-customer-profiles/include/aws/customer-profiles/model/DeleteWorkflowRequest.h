@@ -65,9 +65,9 @@ class DeleteWorkflowRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_workflowId;
+  bool m_domainNameHasBeenSet = false;
   bool m_workflowIdHasBeenSet = false;
 };
 

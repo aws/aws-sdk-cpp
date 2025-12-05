@@ -121,18 +121,18 @@ class UserSummary {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   Aws::String m_sID;
-  bool m_sIDHasBeenSet = false;
 
   Aws::String m_surname;
+  bool m_enabledHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
+  bool m_sIDHasBeenSet = false;
   bool m_surnameHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class RecommendationDetailHourlyMetrics {
   ///@}
  private:
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_estimatedOnDemandCost;
-  bool m_estimatedOnDemandCostHasBeenSet = false;
 
   Aws::String m_currentCoverage;
-  bool m_currentCoverageHasBeenSet = false;
 
   Aws::String m_estimatedCoverage;
-  bool m_estimatedCoverageHasBeenSet = false;
 
   Aws::String m_estimatedNewCommitmentUtilization;
+  bool m_startTimeHasBeenSet = false;
+  bool m_estimatedOnDemandCostHasBeenSet = false;
+  bool m_currentCoverageHasBeenSet = false;
+  bool m_estimatedCoverageHasBeenSet = false;
   bool m_estimatedNewCommitmentUtilizationHasBeenSet = false;
 };
 

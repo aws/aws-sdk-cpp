@@ -69,9 +69,9 @@ class AssociateDelegationSignerToDomainRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   DnssecSigningAttributes m_signingAttributes;
+  bool m_domainNameHasBeenSet = false;
   bool m_signingAttributesHasBeenSet = false;
 };
 

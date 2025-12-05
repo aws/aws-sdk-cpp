@@ -85,12 +85,12 @@ class ListDeploymentTargetsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_targetIds;
-  bool m_targetIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

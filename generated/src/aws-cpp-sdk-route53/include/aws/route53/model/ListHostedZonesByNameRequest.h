@@ -112,12 +112,12 @@ class ListHostedZonesByNameRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_dNSNameHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

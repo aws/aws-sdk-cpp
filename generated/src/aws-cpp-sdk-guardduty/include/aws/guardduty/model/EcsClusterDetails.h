@@ -181,27 +181,27 @@ class EcsClusterDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_activeServicesCount{0};
-  bool m_activeServicesCountHasBeenSet = false;
 
   int m_registeredContainerInstancesCount{0};
-  bool m_registeredContainerInstancesCountHasBeenSet = false;
 
   int m_runningTasksCount{0};
-  bool m_runningTasksCountHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EcsTaskDetails m_taskDetails;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_activeServicesCountHasBeenSet = false;
+  bool m_registeredContainerInstancesCountHasBeenSet = false;
+  bool m_runningTasksCountHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_taskDetailsHasBeenSet = false;
 };
 

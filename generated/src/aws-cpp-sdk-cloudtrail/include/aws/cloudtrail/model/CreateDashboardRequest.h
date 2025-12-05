@@ -143,18 +143,18 @@ class CreateDashboardRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RefreshSchedule m_refreshSchedule;
-  bool m_refreshScheduleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagsList;
-  bool m_tagsListHasBeenSet = false;
 
   bool m_terminationProtectionEnabled{false};
-  bool m_terminationProtectionEnabledHasBeenSet = false;
 
   Aws::Vector<RequestWidget> m_widgets;
+  bool m_nameHasBeenSet = false;
+  bool m_refreshScheduleHasBeenSet = false;
+  bool m_tagsListHasBeenSet = false;
+  bool m_terminationProtectionEnabledHasBeenSet = false;
   bool m_widgetsHasBeenSet = false;
 };
 

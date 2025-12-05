@@ -97,12 +97,12 @@ class AutomatedReasoningPolicyDefinitionType {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyDefinitionTypeValue> m_values;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

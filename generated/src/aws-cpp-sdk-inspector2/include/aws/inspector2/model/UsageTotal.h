@@ -76,9 +76,9 @@ class UsageTotal {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Usage> m_usage;
+  bool m_accountIdHasBeenSet = false;
   bool m_usageHasBeenSet = false;
 };
 

@@ -240,36 +240,36 @@ class CreateDomainResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_defaultExpirationDays{0};
-  bool m_defaultExpirationDaysHasBeenSet = false;
 
   Aws::String m_defaultEncryptionKey;
-  bool m_defaultEncryptionKeyHasBeenSet = false;
 
   Aws::String m_deadLetterQueueUrl;
-  bool m_deadLetterQueueUrlHasBeenSet = false;
 
   MatchingResponse m_matching;
-  bool m_matchingHasBeenSet = false;
 
   RuleBasedMatchingResponse m_ruleBasedMatching;
-  bool m_ruleBasedMatchingHasBeenSet = false;
 
   DataStoreResponse m_dataStore;
-  bool m_dataStoreHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_defaultExpirationDaysHasBeenSet = false;
+  bool m_defaultEncryptionKeyHasBeenSet = false;
+  bool m_deadLetterQueueUrlHasBeenSet = false;
+  bool m_matchingHasBeenSet = false;
+  bool m_ruleBasedMatchingHasBeenSet = false;
+  bool m_dataStoreHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

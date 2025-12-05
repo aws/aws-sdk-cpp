@@ -91,12 +91,12 @@ class DescribeEventDetailsResult {
   ///@}
  private:
   Aws::Vector<EventDetails> m_successfulSet;
-  bool m_successfulSetHasBeenSet = false;
 
   Aws::Vector<EventDetailsErrorItem> m_failedSet;
-  bool m_failedSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulSetHasBeenSet = false;
+  bool m_failedSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

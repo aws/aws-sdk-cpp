@@ -72,9 +72,9 @@ class FailedEntity {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_entityIdHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

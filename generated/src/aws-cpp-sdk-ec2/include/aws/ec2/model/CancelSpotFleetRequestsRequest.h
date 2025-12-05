@@ -101,12 +101,12 @@ class CancelSpotFleetRequestsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_spotFleetRequestIds;
-  bool m_spotFleetRequestIdsHasBeenSet = false;
 
   bool m_terminateInstances{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_spotFleetRequestIdsHasBeenSet = false;
   bool m_terminateInstancesHasBeenSet = false;
 };
 

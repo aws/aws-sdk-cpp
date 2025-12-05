@@ -116,18 +116,18 @@ class CreateLogicallyAirGappedBackupVaultResult {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   VaultState m_vaultState{VaultState::NOT_SET};
-  bool m_vaultStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_vaultStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

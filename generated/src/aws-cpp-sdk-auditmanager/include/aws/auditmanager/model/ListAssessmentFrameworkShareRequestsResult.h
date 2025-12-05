@@ -88,12 +88,12 @@ class ListAssessmentFrameworkShareRequestsResult {
   ///@}
  private:
   Aws::Vector<AssessmentFrameworkShareRequest> m_assessmentFrameworkShareRequests;
-  bool m_assessmentFrameworkShareRequestsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentFrameworkShareRequestsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

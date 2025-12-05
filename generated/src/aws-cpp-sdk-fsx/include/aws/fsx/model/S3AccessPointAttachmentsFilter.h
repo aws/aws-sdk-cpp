@@ -75,9 +75,9 @@ class S3AccessPointAttachmentsFilter {
   ///@}
  private:
   S3AccessPointAttachmentsFilterName m_name{S3AccessPointAttachmentsFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

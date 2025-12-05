@@ -77,9 +77,9 @@ class ResourcesFilters {
   ///@}
  private:
   Aws::Vector<ResourcesCompositeFilter> m_compositeFilters;
-  bool m_compositeFiltersHasBeenSet = false;
 
   AllowedOperators m_compositeOperator{AllowedOperators::NOT_SET};
+  bool m_compositeFiltersHasBeenSet = false;
   bool m_compositeOperatorHasBeenSet = false;
 };
 

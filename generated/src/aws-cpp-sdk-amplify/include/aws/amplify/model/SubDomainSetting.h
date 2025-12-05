@@ -68,9 +68,9 @@ class SubDomainSetting {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_branchName;
+  bool m_prefixHasBeenSet = false;
   bool m_branchNameHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class DiskInfo {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_sizeInGb{0};
-  bool m_sizeInGbHasBeenSet = false;
 
   bool m_isSystemDisk{false};
+  bool m_nameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_sizeInGbHasBeenSet = false;
   bool m_isSystemDiskHasBeenSet = false;
 };
 

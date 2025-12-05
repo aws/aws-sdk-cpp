@@ -130,15 +130,15 @@ class ListJobsByConsumableResourceRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_consumableResource;
-  bool m_consumableResourceHasBeenSet = false;
 
   Aws::Vector<KeyValuesPair> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_consumableResourceHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeProxyResult {
   ///@}
  private:
   DescribeProxyResource m_proxy;
-  bool m_proxyHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class AggregationFunction {
   ///@}
  private:
   NumericalAggregationFunction m_numericalAggregationFunction;
-  bool m_numericalAggregationFunctionHasBeenSet = false;
 
   CategoricalAggregationFunction m_categoricalAggregationFunction{CategoricalAggregationFunction::NOT_SET};
-  bool m_categoricalAggregationFunctionHasBeenSet = false;
 
   DateAggregationFunction m_dateAggregationFunction{DateAggregationFunction::NOT_SET};
-  bool m_dateAggregationFunctionHasBeenSet = false;
 
   AttributeAggregationFunction m_attributeAggregationFunction;
+  bool m_numericalAggregationFunctionHasBeenSet = false;
+  bool m_categoricalAggregationFunctionHasBeenSet = false;
+  bool m_dateAggregationFunctionHasBeenSet = false;
   bool m_attributeAggregationFunctionHasBeenSet = false;
 };
 

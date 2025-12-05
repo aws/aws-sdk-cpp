@@ -85,9 +85,9 @@ class ReviewReport {
   ///@}
  private:
   Aws::Vector<ReviewResultDetail> m_reviewResults;
-  bool m_reviewResultsHasBeenSet = false;
 
   Aws::Vector<ReviewActionDetail> m_reviewActions;
+  bool m_reviewResultsHasBeenSet = false;
   bool m_reviewActionsHasBeenSet = false;
 };
 

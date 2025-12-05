@@ -78,9 +78,9 @@ class SegmentGroupList {
   ///@}
  private:
   Aws::Vector<SegmentGroup> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Include m_include{Include::NOT_SET};
+  bool m_groupsHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

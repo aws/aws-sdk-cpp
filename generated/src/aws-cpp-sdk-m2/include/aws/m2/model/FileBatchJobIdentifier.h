@@ -69,9 +69,9 @@ class FileBatchJobIdentifier {
   ///@}
  private:
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_folderPath;
+  bool m_fileNameHasBeenSet = false;
   bool m_folderPathHasBeenSet = false;
 };
 

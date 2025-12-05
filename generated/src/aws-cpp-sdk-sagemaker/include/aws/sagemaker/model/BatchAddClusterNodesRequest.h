@@ -100,12 +100,12 @@ class BatchAddClusterNodesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<AddClusterNodeSpecification> m_nodesToAdd;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_nodesToAddHasBeenSet = false;
 };
 

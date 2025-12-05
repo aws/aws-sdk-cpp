@@ -72,9 +72,9 @@ class AssociateAlias2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_targetDistributionId;
-  bool m_targetDistributionIdHasBeenSet = false;
 
   Aws::String m_alias;
+  bool m_targetDistributionIdHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

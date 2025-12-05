@@ -177,27 +177,27 @@ class ReactiveInsight {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InsightSeverity m_severity{InsightSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   InsightStatus m_status{InsightStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InsightTimeRange m_insightTimeRange;
-  bool m_insightTimeRangeHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   Aws::String m_ssmOpsItemId;
-  bool m_ssmOpsItemIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_insightTimeRangeHasBeenSet = false;
+  bool m_resourceCollectionHasBeenSet = false;
+  bool m_ssmOpsItemIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

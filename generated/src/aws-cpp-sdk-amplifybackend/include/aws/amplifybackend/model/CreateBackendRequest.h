@@ -123,18 +123,18 @@ class CreateBackendRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_appName;
-  bool m_appNameHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
-  bool m_backendEnvironmentNameHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_appIdHasBeenSet = false;
+  bool m_appNameHasBeenSet = false;
+  bool m_backendEnvironmentNameHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

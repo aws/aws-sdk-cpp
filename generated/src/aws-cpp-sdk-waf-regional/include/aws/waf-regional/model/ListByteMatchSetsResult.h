@@ -89,12 +89,12 @@ class ListByteMatchSetsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<ByteMatchSetSummary> m_byteMatchSets;
-  bool m_byteMatchSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_byteMatchSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

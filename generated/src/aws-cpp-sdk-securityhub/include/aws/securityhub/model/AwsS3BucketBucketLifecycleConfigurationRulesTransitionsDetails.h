@@ -95,12 +95,12 @@ class AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails {
   ///@}
  private:
   Aws::String m_date;
-  bool m_dateHasBeenSet = false;
 
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   Aws::String m_storageClass;
+  bool m_dateHasBeenSet = false;
+  bool m_daysHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;
 };
 

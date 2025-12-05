@@ -110,15 +110,15 @@ class BatchJobIdentifier {
   ///@}
  private:
   FileBatchJobIdentifier m_fileBatchJobIdentifier;
-  bool m_fileBatchJobIdentifierHasBeenSet = false;
 
   RestartBatchJobIdentifier m_restartBatchJobIdentifier;
-  bool m_restartBatchJobIdentifierHasBeenSet = false;
 
   S3BatchJobIdentifier m_s3BatchJobIdentifier;
-  bool m_s3BatchJobIdentifierHasBeenSet = false;
 
   ScriptBatchJobIdentifier m_scriptBatchJobIdentifier;
+  bool m_fileBatchJobIdentifierHasBeenSet = false;
+  bool m_restartBatchJobIdentifierHasBeenSet = false;
+  bool m_s3BatchJobIdentifierHasBeenSet = false;
   bool m_scriptBatchJobIdentifierHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListDeviceResourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ResourceSummary> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class TaskTemplateField {
   ///@}
  private:
   TaskTemplateFieldIdentifier m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TaskTemplateFieldType m_type{TaskTemplateFieldType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_singleSelectOptions;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_singleSelectOptionsHasBeenSet = false;
 };
 

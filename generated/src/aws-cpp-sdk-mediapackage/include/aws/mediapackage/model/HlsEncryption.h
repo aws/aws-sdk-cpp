@@ -119,18 +119,18 @@ When not specified
   ///@}
  private:
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   EncryptionMethod m_encryptionMethod{EncryptionMethod::NOT_SET};
-  bool m_encryptionMethodHasBeenSet = false;
 
   int m_keyRotationIntervalSeconds{0};
-  bool m_keyRotationIntervalSecondsHasBeenSet = false;
 
   bool m_repeatExtXKey{false};
-  bool m_repeatExtXKeyHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
+  bool m_constantInitializationVectorHasBeenSet = false;
+  bool m_encryptionMethodHasBeenSet = false;
+  bool m_keyRotationIntervalSecondsHasBeenSet = false;
+  bool m_repeatExtXKeyHasBeenSet = false;
   bool m_spekeKeyProviderHasBeenSet = false;
 };
 

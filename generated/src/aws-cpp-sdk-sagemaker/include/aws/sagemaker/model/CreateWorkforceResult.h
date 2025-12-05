@@ -59,9 +59,9 @@ class CreateWorkforceResult {
   ///@}
  private:
   Aws::String m_workforceArn;
-  bool m_workforceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workforceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class StartFlowRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_flowNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

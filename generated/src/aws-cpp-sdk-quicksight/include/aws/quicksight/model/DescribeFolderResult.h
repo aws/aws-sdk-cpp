@@ -75,12 +75,12 @@ class DescribeFolderResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Folder m_folder;
-  bool m_folderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_folderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -164,24 +164,24 @@ class InvokeEndpointResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_invokedProductionVariant;
-  bool m_invokedProductionVariantHasBeenSet = false;
 
   Aws::String m_customAttributes;
-  bool m_customAttributesHasBeenSet = false;
 
   Aws::String m_newSessionId;
-  bool m_newSessionIdHasBeenSet = false;
 
   Aws::String m_closedSessionId;
-  bool m_closedSessionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_invokedProductionVariantHasBeenSet = false;
+  bool m_customAttributesHasBeenSet = false;
+  bool m_newSessionIdHasBeenSet = false;
+  bool m_closedSessionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

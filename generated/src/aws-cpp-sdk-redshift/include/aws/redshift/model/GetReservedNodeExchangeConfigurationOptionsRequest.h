@@ -132,18 +132,18 @@ class GetReservedNodeExchangeConfigurationOptionsRequest : public RedshiftReques
   ///@}
  private:
   ReservedNodeExchangeActionType m_actionType{ReservedNodeExchangeActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

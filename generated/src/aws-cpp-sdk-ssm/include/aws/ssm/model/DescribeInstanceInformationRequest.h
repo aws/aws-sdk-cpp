@@ -128,15 +128,15 @@ class DescribeInstanceInformationRequest : public SSMRequest {
   ///@}
  private:
   Aws::Vector<InstanceInformationFilter> m_instanceInformationFilterList;
-  bool m_instanceInformationFilterListHasBeenSet = false;
 
   Aws::Vector<InstanceInformationStringFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_instanceInformationFilterListHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -111,12 +111,12 @@ class ParameterRanges {
   ///@}
  private:
   Aws::Vector<CategoricalParameterRange> m_categoricalParameterRanges;
-  bool m_categoricalParameterRangesHasBeenSet = false;
 
   Aws::Vector<ContinuousParameterRange> m_continuousParameterRanges;
-  bool m_continuousParameterRangesHasBeenSet = false;
 
   Aws::Vector<IntegerParameterRange> m_integerParameterRanges;
+  bool m_categoricalParameterRangesHasBeenSet = false;
+  bool m_continuousParameterRangesHasBeenSet = false;
   bool m_integerParameterRangesHasBeenSet = false;
 };
 

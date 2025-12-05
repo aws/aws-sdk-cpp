@@ -115,18 +115,18 @@ class ListReviewTemplateAnswersResult {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::Vector<ReviewTemplateAnswerSummary> m_answerSummaries;
-  bool m_answerSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateArnHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_answerSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -152,21 +152,21 @@ class DescribePlayerSessionsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameSessionId;
-  bool m_gameSessionIdHasBeenSet = false;
 
   Aws::String m_playerId;
-  bool m_playerIdHasBeenSet = false;
 
   Aws::String m_playerSessionId;
-  bool m_playerSessionIdHasBeenSet = false;
 
   Aws::String m_playerSessionStatusFilter;
-  bool m_playerSessionStatusFilterHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_gameSessionIdHasBeenSet = false;
+  bool m_playerIdHasBeenSet = false;
+  bool m_playerSessionIdHasBeenSet = false;
+  bool m_playerSessionStatusFilterHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

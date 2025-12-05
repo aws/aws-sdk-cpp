@@ -184,30 +184,30 @@ class GetConnectorDestinationResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_cloudConnectorId;
-  bool m_cloudConnectorIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   AuthConfig m_authConfig;
-  bool m_authConfigHasBeenSet = false;
 
   SecretsManager m_secretsManager;
-  bool m_secretsManagerHasBeenSet = false;
 
   Aws::String m_oAuthCompleteRedirectUrl;
-  bool m_oAuthCompleteRedirectUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_cloudConnectorIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_authConfigHasBeenSet = false;
+  bool m_secretsManagerHasBeenSet = false;
+  bool m_oAuthCompleteRedirectUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

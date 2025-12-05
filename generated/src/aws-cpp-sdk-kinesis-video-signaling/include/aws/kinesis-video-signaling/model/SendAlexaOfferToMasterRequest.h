@@ -84,12 +84,12 @@ class SendAlexaOfferToMasterRequest : public KinesisVideoSignalingChannelsReques
   ///@}
  private:
   Aws::String m_channelARN;
-  bool m_channelARNHasBeenSet = false;
 
   Aws::String m_senderClientId;
-  bool m_senderClientIdHasBeenSet = false;
 
   Aws::String m_messagePayload;
+  bool m_channelARNHasBeenSet = false;
+  bool m_senderClientIdHasBeenSet = false;
   bool m_messagePayloadHasBeenSet = false;
 };
 

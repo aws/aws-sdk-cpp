@@ -315,48 +315,48 @@ class DescribeDomainConfigurationResult {
   ///@}
  private:
   Aws::String m_domainConfigurationName;
-  bool m_domainConfigurationNameHasBeenSet = false;
 
   Aws::String m_domainConfigurationArn;
-  bool m_domainConfigurationArnHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<ServerCertificateSummary> m_serverCertificates;
-  bool m_serverCertificatesHasBeenSet = false;
 
   AuthorizerConfig m_authorizerConfig;
-  bool m_authorizerConfigHasBeenSet = false;
 
   DomainConfigurationStatus m_domainConfigurationStatus{DomainConfigurationStatus::NOT_SET};
-  bool m_domainConfigurationStatusHasBeenSet = false;
 
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   DomainType m_domainType{DomainType::NOT_SET};
-  bool m_domainTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChangeDate{};
-  bool m_lastStatusChangeDateHasBeenSet = false;
 
   TlsConfig m_tlsConfig;
-  bool m_tlsConfigHasBeenSet = false;
 
   ServerCertificateConfig m_serverCertificateConfig;
-  bool m_serverCertificateConfigHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   ApplicationProtocol m_applicationProtocol{ApplicationProtocol::NOT_SET};
-  bool m_applicationProtocolHasBeenSet = false;
 
   ClientCertificateConfig m_clientCertificateConfig;
-  bool m_clientCertificateConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainConfigurationNameHasBeenSet = false;
+  bool m_domainConfigurationArnHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_serverCertificatesHasBeenSet = false;
+  bool m_authorizerConfigHasBeenSet = false;
+  bool m_domainConfigurationStatusHasBeenSet = false;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_domainTypeHasBeenSet = false;
+  bool m_lastStatusChangeDateHasBeenSet = false;
+  bool m_tlsConfigHasBeenSet = false;
+  bool m_serverCertificateConfigHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_applicationProtocolHasBeenSet = false;
+  bool m_clientCertificateConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

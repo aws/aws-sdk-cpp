@@ -85,9 +85,9 @@ class GuardrailAutomatedReasoningTranslationAmbiguousFinding {
   ///@}
  private:
   Aws::Vector<GuardrailAutomatedReasoningTranslationOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<GuardrailAutomatedReasoningScenario> m_differenceScenarios;
+  bool m_optionsHasBeenSet = false;
   bool m_differenceScenariosHasBeenSet = false;
 };
 

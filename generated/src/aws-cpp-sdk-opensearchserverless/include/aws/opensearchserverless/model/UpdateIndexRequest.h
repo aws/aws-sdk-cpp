@@ -87,12 +87,12 @@ class UpdateIndexRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Utils::Document m_indexSchema;
+  bool m_idHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
   bool m_indexSchemaHasBeenSet = false;
 };
 

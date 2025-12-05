@@ -131,18 +131,18 @@ class DocumentParameter {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_regex;
-  bool m_regexHasBeenSet = false;
 
   Aws::String m_example;
-  bool m_exampleHasBeenSet = false;
 
   bool m_optional{false};
+  bool m_keyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_regexHasBeenSet = false;
+  bool m_exampleHasBeenSet = false;
   bool m_optionalHasBeenSet = false;
 };
 

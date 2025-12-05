@@ -91,12 +91,12 @@ class BatchUpdateRuleRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::String m_listenerIdentifier;
-  bool m_listenerIdentifierHasBeenSet = false;
 
   Aws::Vector<RuleUpdate> m_rules;
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_listenerIdentifierHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

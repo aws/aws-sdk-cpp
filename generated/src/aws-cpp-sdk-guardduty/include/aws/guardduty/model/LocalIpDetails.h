@@ -69,9 +69,9 @@ class LocalIpDetails {
   ///@}
  private:
   Aws::String m_ipAddressV4;
-  bool m_ipAddressV4HasBeenSet = false;
 
   Aws::String m_ipAddressV6;
+  bool m_ipAddressV4HasBeenSet = false;
   bool m_ipAddressV6HasBeenSet = false;
 };
 

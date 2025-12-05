@@ -76,9 +76,9 @@ class WAFFeatureNotIncludedInPricingPlanException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<DisallowedFeature> m_disallowedFeatures;
+  bool m_messageHasBeenSet = false;
   bool m_disallowedFeaturesHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class BlockReference {
   ///@}
  private:
   Aws::String m_blockId;
-  bool m_blockIdHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   Aws::Vector<ChildBlock> m_childBlocks;
+  bool m_blockIdHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
   bool m_childBlocksHasBeenSet = false;
 };
 

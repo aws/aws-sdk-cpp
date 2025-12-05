@@ -68,9 +68,9 @@ class GetLoadBalancerTlsCertificatesResult {
   ///@}
  private:
   Aws::Vector<LoadBalancerTlsCertificate> m_tlsCertificates;
-  bool m_tlsCertificatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tlsCertificatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class CacheParameterGroupStatus {
   ///@}
  private:
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_parameterApplyStatus;
-  bool m_parameterApplyStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheNodeIdsToReboot;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_parameterApplyStatusHasBeenSet = false;
   bool m_cacheNodeIdsToRebootHasBeenSet = false;
 };
 

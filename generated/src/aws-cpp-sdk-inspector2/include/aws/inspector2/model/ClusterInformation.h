@@ -76,9 +76,9 @@ class ClusterInformation {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Vector<ClusterDetails> m_clusterDetails;
+  bool m_clusterArnHasBeenSet = false;
   bool m_clusterDetailsHasBeenSet = false;
 };
 

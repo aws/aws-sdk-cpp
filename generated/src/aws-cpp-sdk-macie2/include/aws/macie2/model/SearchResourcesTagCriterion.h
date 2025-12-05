@@ -78,9 +78,9 @@ class SearchResourcesTagCriterion {
   ///@}
  private:
   SearchResourcesComparator m_comparator{SearchResourcesComparator::NOT_SET};
-  bool m_comparatorHasBeenSet = false;
 
   Aws::Vector<SearchResourcesTagCriterionPair> m_tagValues;
+  bool m_comparatorHasBeenSet = false;
   bool m_tagValuesHasBeenSet = false;
 };
 

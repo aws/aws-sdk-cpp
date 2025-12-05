@@ -95,12 +95,12 @@ class NetworkFirewallMissingExpectedRoutesViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::Vector<ExpectedRoute> m_expectedRoutes;
-  bool m_expectedRoutesHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_violationTargetHasBeenSet = false;
+  bool m_expectedRoutesHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

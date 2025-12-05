@@ -83,9 +83,9 @@ class DeleteSnapshotReturnCode {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   SnapshotReturnCodes m_returnCode{SnapshotReturnCodes::NOT_SET};
+  bool m_snapshotIdHasBeenSet = false;
   bool m_returnCodeHasBeenSet = false;
 };
 

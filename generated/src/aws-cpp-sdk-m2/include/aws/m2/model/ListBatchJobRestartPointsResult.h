@@ -69,9 +69,9 @@ class ListBatchJobRestartPointsResult {
   ///@}
  private:
   Aws::Vector<JobStep> m_batchJobSteps;
-  bool m_batchJobStepsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchJobStepsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class LayoutSummary {
   ///@}
  private:
   Aws::String m_layoutId;
-  bool m_layoutIdHasBeenSet = false;
 
   Aws::String m_layoutArn;
-  bool m_layoutArnHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_layoutIdHasBeenSet = false;
+  bool m_layoutArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

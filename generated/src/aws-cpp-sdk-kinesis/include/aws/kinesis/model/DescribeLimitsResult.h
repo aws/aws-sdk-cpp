@@ -102,18 +102,18 @@ class DescribeLimitsResult {
   ///@}
  private:
   int m_shardLimit{0};
-  bool m_shardLimitHasBeenSet = false;
 
   int m_openShardCount{0};
-  bool m_openShardCountHasBeenSet = false;
 
   int m_onDemandStreamCount{0};
-  bool m_onDemandStreamCountHasBeenSet = false;
 
   int m_onDemandStreamCountLimit{0};
-  bool m_onDemandStreamCountLimitHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shardLimitHasBeenSet = false;
+  bool m_openShardCountHasBeenSet = false;
+  bool m_onDemandStreamCountHasBeenSet = false;
+  bool m_onDemandStreamCountLimitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

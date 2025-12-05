@@ -86,12 +86,12 @@ class LaunchTemplateConfiguration {
   ///@}
  private:
   Aws::String m_launchTemplateId;
-  bool m_launchTemplateIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   bool m_setDefaultVersion{false};
+  bool m_launchTemplateIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_setDefaultVersionHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class ExportClientVpnClientConfigurationResponse {
   ///@}
  private:
   Aws::String m_clientConfiguration;
-  bool m_clientConfigurationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

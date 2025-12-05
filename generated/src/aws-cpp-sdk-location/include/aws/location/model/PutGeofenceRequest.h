@@ -119,15 +119,15 @@ class PutGeofenceRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_geofenceId;
-  bool m_geofenceIdHasBeenSet = false;
 
   GeofenceGeometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_geofenceProperties;
+  bool m_collectionNameHasBeenSet = false;
+  bool m_geofenceIdHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
   bool m_geofencePropertiesHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class KernelGatewayImageConfig {
   ///@}
  private:
   Aws::Vector<KernelSpec> m_kernelSpecs;
-  bool m_kernelSpecsHasBeenSet = false;
 
   FileSystemConfig m_fileSystemConfig;
+  bool m_kernelSpecsHasBeenSet = false;
   bool m_fileSystemConfigHasBeenSet = false;
 };
 

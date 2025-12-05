@@ -86,12 +86,12 @@ class ListAccessTokensResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AccessTokenItem> m_accessTokens;
-  bool m_accessTokensHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_accessTokensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

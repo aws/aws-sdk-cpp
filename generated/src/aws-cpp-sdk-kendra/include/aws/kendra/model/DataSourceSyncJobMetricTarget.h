@@ -74,9 +74,9 @@ class DataSourceSyncJobMetricTarget {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_dataSourceSyncJobId;
+  bool m_dataSourceIdHasBeenSet = false;
   bool m_dataSourceSyncJobIdHasBeenSet = false;
 };
 

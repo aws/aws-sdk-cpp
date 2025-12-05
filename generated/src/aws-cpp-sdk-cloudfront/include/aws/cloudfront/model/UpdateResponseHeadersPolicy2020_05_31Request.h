@@ -88,12 +88,12 @@ class UpdateResponseHeadersPolicy2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   ResponseHeadersPolicyConfig m_responseHeadersPolicyConfig;
-  bool m_responseHeadersPolicyConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_responseHeadersPolicyConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

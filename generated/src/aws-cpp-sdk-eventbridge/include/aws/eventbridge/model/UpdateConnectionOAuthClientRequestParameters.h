@@ -70,9 +70,9 @@ class UpdateConnectionOAuthClientRequestParameters {
   ///@}
  private:
   Aws::String m_clientID;
-  bool m_clientIDHasBeenSet = false;
 
   Aws::String m_clientSecret;
+  bool m_clientIDHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
 };
 

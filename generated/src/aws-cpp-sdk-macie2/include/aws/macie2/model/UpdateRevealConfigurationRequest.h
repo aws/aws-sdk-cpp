@@ -67,9 +67,9 @@ class UpdateRevealConfigurationRequest : public Macie2Request {
   ///@}
  private:
   RevealConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   UpdateRetrievalConfiguration m_retrievalConfiguration;
+  bool m_configurationHasBeenSet = false;
   bool m_retrievalConfigurationHasBeenSet = false;
 };
 

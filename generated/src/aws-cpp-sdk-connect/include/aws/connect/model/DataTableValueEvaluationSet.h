@@ -82,9 +82,9 @@ class DataTableValueEvaluationSet {
   ///@}
  private:
   Aws::Vector<PrimaryValue> m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
+  bool m_primaryValuesHasBeenSet = false;
   bool m_attributeNamesHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class DifferentialPrivacyPrivacyBudget {
   ///@}
  private:
   Aws::Vector<DifferentialPrivacyPrivacyBudgetAggregation> m_aggregations;
-  bool m_aggregationsHasBeenSet = false;
 
   int m_epsilon{0};
+  bool m_aggregationsHasBeenSet = false;
   bool m_epsilonHasBeenSet = false;
 };
 

@@ -281,42 +281,42 @@ class GetAwsOpportunitySummaryResult {
   ///@}
  private:
   Aws::String m_relatedOpportunityId;
-  bool m_relatedOpportunityIdHasBeenSet = false;
 
   OpportunityOrigin m_origin{OpportunityOrigin::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   SalesInvolvementType m_involvementType{SalesInvolvementType::NOT_SET};
-  bool m_involvementTypeHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   AwsOpportunityLifeCycle m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
   Aws::Vector<AwsTeamMember> m_opportunityTeam;
-  bool m_opportunityTeamHasBeenSet = false;
 
   AwsOpportunityInsights m_insights;
-  bool m_insightsHasBeenSet = false;
 
   InvolvementTypeChangeReason m_involvementTypeChangeReason{InvolvementTypeChangeReason::NOT_SET};
-  bool m_involvementTypeChangeReasonHasBeenSet = false;
 
   AwsOpportunityRelatedEntities m_relatedEntityIds;
-  bool m_relatedEntityIdsHasBeenSet = false;
 
   AwsOpportunityCustomer m_customer;
-  bool m_customerHasBeenSet = false;
 
   AwsOpportunityProject m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relatedOpportunityIdHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_involvementTypeHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_opportunityTeamHasBeenSet = false;
+  bool m_insightsHasBeenSet = false;
+  bool m_involvementTypeChangeReasonHasBeenSet = false;
+  bool m_relatedEntityIdsHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

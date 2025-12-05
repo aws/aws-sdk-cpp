@@ -68,9 +68,9 @@ class AmazonQSettings {
   ///@}
  private:
   FeatureStatus m_status{FeatureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_qProfileArn;
+  bool m_statusHasBeenSet = false;
   bool m_qProfileArnHasBeenSet = false;
 };
 

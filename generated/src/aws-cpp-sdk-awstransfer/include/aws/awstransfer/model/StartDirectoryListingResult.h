@@ -78,12 +78,12 @@ class StartDirectoryListingResult {
   ///@}
  private:
   Aws::String m_listingId;
-  bool m_listingIdHasBeenSet = false;
 
   Aws::String m_outputFileName;
-  bool m_outputFileNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_listingIdHasBeenSet = false;
+  bool m_outputFileNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

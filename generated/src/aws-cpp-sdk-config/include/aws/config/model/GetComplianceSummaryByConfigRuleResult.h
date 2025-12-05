@@ -67,9 +67,9 @@ class GetComplianceSummaryByConfigRuleResult {
   ///@}
  private:
   ComplianceSummary m_complianceSummary;
-  bool m_complianceSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_complianceSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

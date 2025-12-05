@@ -87,12 +87,12 @@ class StartProjectVersionRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_projectVersionArn;
-  bool m_projectVersionArnHasBeenSet = false;
 
   int m_minInferenceUnits{0};
-  bool m_minInferenceUnitsHasBeenSet = false;
 
   int m_maxInferenceUnits{0};
+  bool m_projectVersionArnHasBeenSet = false;
+  bool m_minInferenceUnitsHasBeenSet = false;
   bool m_maxInferenceUnitsHasBeenSet = false;
 };
 

@@ -268,39 +268,39 @@ class ToolConfiguration {
   ///@}
  private:
   Aws::String m_toolName;
-  bool m_toolNameHasBeenSet = false;
 
   ToolType m_toolType{ToolType::NOT_SET};
-  bool m_toolTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_toolId;
-  bool m_toolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ToolInstruction m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   Aws::Vector<ToolOverrideInputValue> m_overrideInputValues;
-  bool m_overrideInputValuesHasBeenSet = false;
 
   Aws::Vector<ToolOutputFilter> m_outputFilters;
-  bool m_outputFiltersHasBeenSet = false;
 
   Aws::Utils::Document m_inputSchema;
-  bool m_inputSchemaHasBeenSet = false;
 
   Aws::Utils::Document m_outputSchema;
-  bool m_outputSchemaHasBeenSet = false;
 
   Annotation m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   UserInteractionConfiguration m_userInteractionConfiguration;
+  bool m_toolNameHasBeenSet = false;
+  bool m_toolTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_toolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
+  bool m_overrideInputValuesHasBeenSet = false;
+  bool m_outputFiltersHasBeenSet = false;
+  bool m_inputSchemaHasBeenSet = false;
+  bool m_outputSchemaHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
   bool m_userInteractionConfigurationHasBeenSet = false;
 };
 

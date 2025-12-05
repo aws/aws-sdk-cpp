@@ -103,15 +103,15 @@ class AwsRdsDbClusterMember {
   ///@}
  private:
   bool m_isClusterWriter{false};
-  bool m_isClusterWriterHasBeenSet = false;
 
   int m_promotionTier{0};
-  bool m_promotionTierHasBeenSet = false;
 
   Aws::String m_dbInstanceIdentifier;
-  bool m_dbInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dbClusterParameterGroupStatus;
+  bool m_isClusterWriterHasBeenSet = false;
+  bool m_promotionTierHasBeenSet = false;
+  bool m_dbInstanceIdentifierHasBeenSet = false;
   bool m_dbClusterParameterGroupStatusHasBeenSet = false;
 };
 

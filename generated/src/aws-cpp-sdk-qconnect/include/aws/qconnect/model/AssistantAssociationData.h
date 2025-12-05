@@ -165,24 +165,24 @@ class AssistantAssociationData {
   ///@}
  private:
   Aws::String m_assistantAssociationId;
-  bool m_assistantAssociationIdHasBeenSet = false;
 
   Aws::String m_assistantAssociationArn;
-  bool m_assistantAssociationArnHasBeenSet = false;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_assistantArn;
-  bool m_assistantArnHasBeenSet = false;
 
   AssociationType m_associationType{AssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   AssistantAssociationOutputData m_associationData;
-  bool m_associationDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_assistantAssociationIdHasBeenSet = false;
+  bool m_assistantAssociationArnHasBeenSet = false;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_assistantArnHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_associationDataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

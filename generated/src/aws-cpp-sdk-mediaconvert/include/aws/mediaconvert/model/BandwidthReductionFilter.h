@@ -81,9 +81,9 @@ class BandwidthReductionFilter {
   ///@}
  private:
   BandwidthReductionFilterSharpening m_sharpening{BandwidthReductionFilterSharpening::NOT_SET};
-  bool m_sharpeningHasBeenSet = false;
 
   BandwidthReductionFilterStrength m_strength{BandwidthReductionFilterStrength::NOT_SET};
+  bool m_sharpeningHasBeenSet = false;
   bool m_strengthHasBeenSet = false;
 };
 

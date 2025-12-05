@@ -384,54 +384,54 @@ class ComputeNodeGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   ComputeNodeGroupStatus m_status{ComputeNodeGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   PurchaseOption m_purchaseOption{PurchaseOption::NOT_SET};
-  bool m_purchaseOptionHasBeenSet = false;
 
   CustomLaunchTemplate m_customLaunchTemplate;
-  bool m_customLaunchTemplateHasBeenSet = false;
 
   Aws::String m_iamInstanceProfileArn;
-  bool m_iamInstanceProfileArnHasBeenSet = false;
 
   ScalingConfiguration m_scalingConfiguration;
-  bool m_scalingConfigurationHasBeenSet = false;
 
   Aws::Vector<InstanceConfig> m_instanceConfigs;
-  bool m_instanceConfigsHasBeenSet = false;
 
   SpotOptions m_spotOptions;
-  bool m_spotOptionsHasBeenSet = false;
 
   ComputeNodeGroupSlurmConfiguration m_slurmConfiguration;
-  bool m_slurmConfigurationHasBeenSet = false;
 
   Aws::Vector<ErrorInfo> m_errorInfo;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_amiIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_purchaseOptionHasBeenSet = false;
+  bool m_customLaunchTemplateHasBeenSet = false;
+  bool m_iamInstanceProfileArnHasBeenSet = false;
+  bool m_scalingConfigurationHasBeenSet = false;
+  bool m_instanceConfigsHasBeenSet = false;
+  bool m_spotOptionsHasBeenSet = false;
+  bool m_slurmConfigurationHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

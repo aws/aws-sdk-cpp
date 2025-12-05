@@ -84,12 +84,12 @@ class AuthorizeSecurityGroupIngressResponse {
   ///@}
  private:
   bool m_return{false};
-  bool m_returnHasBeenSet = false;
 
   Aws::Vector<SecurityGroupRule> m_securityGroupRules;
-  bool m_securityGroupRulesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
+  bool m_securityGroupRulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

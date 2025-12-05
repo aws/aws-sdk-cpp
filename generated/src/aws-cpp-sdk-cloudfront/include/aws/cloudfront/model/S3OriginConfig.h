@@ -96,9 +96,9 @@ class S3OriginConfig {
   ///@}
  private:
   Aws::String m_originAccessIdentity;
-  bool m_originAccessIdentityHasBeenSet = false;
 
   int m_originReadTimeout{0};
+  bool m_originAccessIdentityHasBeenSet = false;
   bool m_originReadTimeoutHasBeenSet = false;
 };
 

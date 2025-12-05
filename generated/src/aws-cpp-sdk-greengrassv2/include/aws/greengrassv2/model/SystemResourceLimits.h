@@ -72,9 +72,9 @@ class SystemResourceLimits {
   ///@}
  private:
   long long m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   double m_cpus{0.0};
+  bool m_memoryHasBeenSet = false;
   bool m_cpusHasBeenSet = false;
 };
 

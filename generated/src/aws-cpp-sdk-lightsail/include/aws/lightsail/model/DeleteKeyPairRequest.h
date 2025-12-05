@@ -69,9 +69,9 @@ class DeleteKeyPairRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_keyPairName;
-  bool m_keyPairNameHasBeenSet = false;
 
   Aws::String m_expectedFingerprint;
+  bool m_keyPairNameHasBeenSet = false;
   bool m_expectedFingerprintHasBeenSet = false;
 };
 

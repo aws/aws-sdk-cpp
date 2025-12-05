@@ -70,9 +70,9 @@ class TargetContainerRepository {
   ///@}
  private:
   ContainerRepositoryService m_service{ContainerRepositoryService::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_repositoryName;
+  bool m_serviceHasBeenSet = false;
   bool m_repositoryNameHasBeenSet = false;
 };
 

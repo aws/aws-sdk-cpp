@@ -112,15 +112,15 @@ class FulfillmentDetails {
   ///@}
  private:
   DisbursementDetails m_disbursementDetails;
-  bool m_disbursementDetailsHasBeenSet = false;
 
   ConsumableDetails m_consumableDetails;
-  bool m_consumableDetailsHasBeenSet = false;
 
   CreditDetails m_creditDetails;
-  bool m_creditDetailsHasBeenSet = false;
 
   AccessDetails m_accessDetails;
+  bool m_disbursementDetailsHasBeenSet = false;
+  bool m_consumableDetailsHasBeenSet = false;
+  bool m_creditDetailsHasBeenSet = false;
   bool m_accessDetailsHasBeenSet = false;
 };
 

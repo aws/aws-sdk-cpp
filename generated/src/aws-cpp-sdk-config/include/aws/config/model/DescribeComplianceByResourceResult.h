@@ -92,12 +92,12 @@ class DescribeComplianceByResourceResult {
   ///@}
  private:
   Aws::Vector<ComplianceByResource> m_complianceByResources;
-  bool m_complianceByResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_complianceByResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetVoiceConnectorTerminationHealthResult {
   ///@}
  private:
   TerminationHealth m_terminationHealth;
-  bool m_terminationHealthHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_terminationHealthHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

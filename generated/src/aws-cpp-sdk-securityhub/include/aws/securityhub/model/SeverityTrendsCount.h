@@ -166,27 +166,27 @@ class SeverityTrendsCount {
   ///@}
  private:
   long long m_unknown{0};
-  bool m_unknownHasBeenSet = false;
 
   long long m_informational{0};
-  bool m_informationalHasBeenSet = false;
 
   long long m_low{0};
-  bool m_lowHasBeenSet = false;
 
   long long m_medium{0};
-  bool m_mediumHasBeenSet = false;
 
   long long m_high{0};
-  bool m_highHasBeenSet = false;
 
   long long m_critical{0};
-  bool m_criticalHasBeenSet = false;
 
   long long m_fatal{0};
-  bool m_fatalHasBeenSet = false;
 
   long long m_other{0};
+  bool m_unknownHasBeenSet = false;
+  bool m_informationalHasBeenSet = false;
+  bool m_lowHasBeenSet = false;
+  bool m_mediumHasBeenSet = false;
+  bool m_highHasBeenSet = false;
+  bool m_criticalHasBeenSet = false;
+  bool m_fatalHasBeenSet = false;
   bool m_otherHasBeenSet = false;
 };
 

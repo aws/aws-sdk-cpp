@@ -172,21 +172,21 @@ class Input {
   ///@}
  private:
   Aws::String m_namePrefix;
-  bool m_namePrefixHasBeenSet = false;
 
   InputProcessingConfiguration m_inputProcessingConfiguration;
-  bool m_inputProcessingConfigurationHasBeenSet = false;
 
   KinesisStreamsInput m_kinesisStreamsInput;
-  bool m_kinesisStreamsInputHasBeenSet = false;
 
   KinesisFirehoseInput m_kinesisFirehoseInput;
-  bool m_kinesisFirehoseInputHasBeenSet = false;
 
   InputParallelism m_inputParallelism;
-  bool m_inputParallelismHasBeenSet = false;
 
   SourceSchema m_inputSchema;
+  bool m_namePrefixHasBeenSet = false;
+  bool m_inputProcessingConfigurationHasBeenSet = false;
+  bool m_kinesisStreamsInputHasBeenSet = false;
+  bool m_kinesisFirehoseInputHasBeenSet = false;
+  bool m_inputParallelismHasBeenSet = false;
   bool m_inputSchemaHasBeenSet = false;
 };
 

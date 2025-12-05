@@ -66,9 +66,9 @@ class DescribeIdentityPoolUsageResult {
   ///@}
  private:
   IdentityPoolUsage m_identityPoolUsage;
-  bool m_identityPoolUsageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityPoolUsageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

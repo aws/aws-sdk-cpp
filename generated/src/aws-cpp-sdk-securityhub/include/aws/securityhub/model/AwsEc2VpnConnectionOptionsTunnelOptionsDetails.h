@@ -362,51 +362,51 @@ class AwsEc2VpnConnectionOptionsTunnelOptionsDetails {
   ///@}
  private:
   int m_dpdTimeoutSeconds{0};
-  bool m_dpdTimeoutSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ikeVersions;
-  bool m_ikeVersionsHasBeenSet = false;
 
   Aws::String m_outsideIpAddress;
-  bool m_outsideIpAddressHasBeenSet = false;
 
   Aws::Vector<int> m_phase1DhGroupNumbers;
-  bool m_phase1DhGroupNumbersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_phase1EncryptionAlgorithms;
-  bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_phase1IntegrityAlgorithms;
-  bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
 
   int m_phase1LifetimeSeconds{0};
-  bool m_phase1LifetimeSecondsHasBeenSet = false;
 
   Aws::Vector<int> m_phase2DhGroupNumbers;
-  bool m_phase2DhGroupNumbersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_phase2EncryptionAlgorithms;
-  bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_phase2IntegrityAlgorithms;
-  bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
 
   int m_phase2LifetimeSeconds{0};
-  bool m_phase2LifetimeSecondsHasBeenSet = false;
 
   Aws::String m_preSharedKey;
-  bool m_preSharedKeyHasBeenSet = false;
 
   int m_rekeyFuzzPercentage{0};
-  bool m_rekeyFuzzPercentageHasBeenSet = false;
 
   int m_rekeyMarginTimeSeconds{0};
-  bool m_rekeyMarginTimeSecondsHasBeenSet = false;
 
   int m_replayWindowSize{0};
-  bool m_replayWindowSizeHasBeenSet = false;
 
   Aws::String m_tunnelInsideCidr;
+  bool m_dpdTimeoutSecondsHasBeenSet = false;
+  bool m_ikeVersionsHasBeenSet = false;
+  bool m_outsideIpAddressHasBeenSet = false;
+  bool m_phase1DhGroupNumbersHasBeenSet = false;
+  bool m_phase1EncryptionAlgorithmsHasBeenSet = false;
+  bool m_phase1IntegrityAlgorithmsHasBeenSet = false;
+  bool m_phase1LifetimeSecondsHasBeenSet = false;
+  bool m_phase2DhGroupNumbersHasBeenSet = false;
+  bool m_phase2EncryptionAlgorithmsHasBeenSet = false;
+  bool m_phase2IntegrityAlgorithmsHasBeenSet = false;
+  bool m_phase2LifetimeSecondsHasBeenSet = false;
+  bool m_preSharedKeyHasBeenSet = false;
+  bool m_rekeyFuzzPercentageHasBeenSet = false;
+  bool m_rekeyMarginTimeSecondsHasBeenSet = false;
+  bool m_replayWindowSizeHasBeenSet = false;
   bool m_tunnelInsideCidrHasBeenSet = false;
 };
 

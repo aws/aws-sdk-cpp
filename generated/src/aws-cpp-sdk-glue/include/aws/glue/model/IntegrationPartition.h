@@ -111,12 +111,12 @@ class IntegrationPartition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_functionSpec;
-  bool m_functionSpecHasBeenSet = false;
 
   Aws::String m_conversionSpec;
+  bool m_fieldNameHasBeenSet = false;
+  bool m_functionSpecHasBeenSet = false;
   bool m_conversionSpecHasBeenSet = false;
 };
 

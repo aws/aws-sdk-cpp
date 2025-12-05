@@ -85,12 +85,12 @@ class ListIngestConfigurationsResult {
   ///@}
  private:
   Aws::Vector<IngestConfigurationSummary> m_ingestConfigurations;
-  bool m_ingestConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

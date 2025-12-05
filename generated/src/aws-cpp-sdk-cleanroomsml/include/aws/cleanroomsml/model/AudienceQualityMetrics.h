@@ -79,9 +79,9 @@ class AudienceQualityMetrics {
   ///@}
  private:
   Aws::Vector<RelevanceMetric> m_relevanceMetrics;
-  bool m_relevanceMetricsHasBeenSet = false;
 
   double m_recallMetric{0.0};
+  bool m_relevanceMetricsHasBeenSet = false;
   bool m_recallMetricHasBeenSet = false;
 };
 

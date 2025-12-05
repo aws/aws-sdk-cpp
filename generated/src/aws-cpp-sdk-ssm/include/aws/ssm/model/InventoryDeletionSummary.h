@@ -90,12 +90,12 @@ class InventoryDeletionSummary {
   ///@}
  private:
   int m_totalCount{0};
-  bool m_totalCountHasBeenSet = false;
 
   int m_remainingCount{0};
-  bool m_remainingCountHasBeenSet = false;
 
   Aws::Vector<InventoryDeletionSummaryItem> m_summaryItems;
+  bool m_totalCountHasBeenSet = false;
+  bool m_remainingCountHasBeenSet = false;
   bool m_summaryItemsHasBeenSet = false;
 };
 

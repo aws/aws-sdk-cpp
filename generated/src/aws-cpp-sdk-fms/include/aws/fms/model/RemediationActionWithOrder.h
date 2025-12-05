@@ -67,9 +67,9 @@ class RemediationActionWithOrder {
   ///@}
  private:
   RemediationAction m_remediationAction;
-  bool m_remediationActionHasBeenSet = false;
 
   int m_order{0};
+  bool m_remediationActionHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

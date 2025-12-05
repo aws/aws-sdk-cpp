@@ -65,9 +65,9 @@ class UpdateFunctionDefinitionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_functionDefinitionId;
-  bool m_functionDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_functionDefinitionIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

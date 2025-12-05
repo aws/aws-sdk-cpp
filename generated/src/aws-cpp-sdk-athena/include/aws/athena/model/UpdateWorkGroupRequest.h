@@ -103,15 +103,15 @@ class UpdateWorkGroupRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkGroupConfigurationUpdates m_configurationUpdates;
-  bool m_configurationUpdatesHasBeenSet = false;
 
   WorkGroupState m_state{WorkGroupState::NOT_SET};
+  bool m_workGroupHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configurationUpdatesHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

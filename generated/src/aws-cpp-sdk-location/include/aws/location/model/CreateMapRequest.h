@@ -123,15 +123,15 @@ class CreateMapRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   MapConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_mapNameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

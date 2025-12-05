@@ -218,27 +218,27 @@ class ScalingPlanResource {
   ///@}
  private:
   Aws::String m_scalingPlanName;
-  bool m_scalingPlanNameHasBeenSet = false;
 
   long long m_scalingPlanVersion{0};
-  bool m_scalingPlanVersionHasBeenSet = false;
 
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   Aws::Vector<ScalingPolicy> m_scalingPolicies;
-  bool m_scalingPoliciesHasBeenSet = false;
 
   ScalingStatusCode m_scalingStatusCode{ScalingStatusCode::NOT_SET};
-  bool m_scalingStatusCodeHasBeenSet = false;
 
   Aws::String m_scalingStatusMessage;
+  bool m_scalingPlanNameHasBeenSet = false;
+  bool m_scalingPlanVersionHasBeenSet = false;
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_scalingPoliciesHasBeenSet = false;
+  bool m_scalingStatusCodeHasBeenSet = false;
   bool m_scalingStatusMessageHasBeenSet = false;
 };
 

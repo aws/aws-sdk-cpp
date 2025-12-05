@@ -118,15 +118,15 @@ class PropertyDifference {
   ///@}
  private:
   Aws::String m_propertyPath;
-  bool m_propertyPathHasBeenSet = false;
 
   Aws::String m_expectedValue;
-  bool m_expectedValueHasBeenSet = false;
 
   Aws::String m_actualValue;
-  bool m_actualValueHasBeenSet = false;
 
   DifferenceType m_differenceType{DifferenceType::NOT_SET};
+  bool m_propertyPathHasBeenSet = false;
+  bool m_expectedValueHasBeenSet = false;
+  bool m_actualValueHasBeenSet = false;
   bool m_differenceTypeHasBeenSet = false;
 };
 

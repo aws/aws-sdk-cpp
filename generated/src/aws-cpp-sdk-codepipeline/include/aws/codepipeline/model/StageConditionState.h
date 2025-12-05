@@ -76,9 +76,9 @@ class StageConditionState {
   ///@}
  private:
   StageConditionsExecution m_latestExecution;
-  bool m_latestExecutionHasBeenSet = false;
 
   Aws::Vector<ConditionState> m_conditionStates;
+  bool m_latestExecutionHasBeenSet = false;
   bool m_conditionStatesHasBeenSet = false;
 };
 

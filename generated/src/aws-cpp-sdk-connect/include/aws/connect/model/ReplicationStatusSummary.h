@@ -94,12 +94,12 @@ class ReplicationStatusSummary {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   InstanceReplicationStatus m_replicationStatus{InstanceReplicationStatus::NOT_SET};
-  bool m_replicationStatusHasBeenSet = false;
 
   Aws::String m_replicationStatusReason;
+  bool m_regionHasBeenSet = false;
+  bool m_replicationStatusHasBeenSet = false;
   bool m_replicationStatusReasonHasBeenSet = false;
 };
 

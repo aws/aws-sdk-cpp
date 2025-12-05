@@ -76,9 +76,9 @@ class TrainedModelExportsConfigurationPolicy {
   ///@}
  private:
   TrainedModelExportsMaxSize m_maxSize;
-  bool m_maxSizeHasBeenSet = false;
 
   Aws::Vector<TrainedModelExportFileType> m_filesToExport;
+  bool m_maxSizeHasBeenSet = false;
   bool m_filesToExportHasBeenSet = false;
 };
 

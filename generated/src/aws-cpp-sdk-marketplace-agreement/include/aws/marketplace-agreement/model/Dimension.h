@@ -72,9 +72,9 @@ class Dimension {
   ///@}
  private:
   Aws::String m_dimensionKey;
-  bool m_dimensionKeyHasBeenSet = false;
 
   int m_dimensionValue{0};
+  bool m_dimensionKeyHasBeenSet = false;
   bool m_dimensionValueHasBeenSet = false;
 };
 

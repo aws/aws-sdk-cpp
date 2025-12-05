@@ -120,15 +120,15 @@ class CreateStreamSessionConnectionRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_streamSessionIdentifier;
-  bool m_streamSessionIdentifierHasBeenSet = false;
 
   Aws::String m_signalRequest;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_identifierHasBeenSet = false;
+  bool m_streamSessionIdentifierHasBeenSet = false;
   bool m_signalRequestHasBeenSet = false;
 };
 

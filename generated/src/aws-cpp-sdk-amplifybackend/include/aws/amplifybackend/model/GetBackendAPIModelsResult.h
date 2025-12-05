@@ -93,15 +93,15 @@ class GetBackendAPIModelsResult {
   ///@}
  private:
   Aws::String m_models;
-  bool m_modelsHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_modelIntrospectionSchema;
-  bool m_modelIntrospectionSchemaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_modelIntrospectionSchemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

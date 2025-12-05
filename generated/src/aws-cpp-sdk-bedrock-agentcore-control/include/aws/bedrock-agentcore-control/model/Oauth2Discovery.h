@@ -70,9 +70,9 @@ class Oauth2Discovery {
   ///@}
  private:
   Aws::String m_discoveryUrl;
-  bool m_discoveryUrlHasBeenSet = false;
 
   Oauth2AuthorizationServerMetadata m_authorizationServerMetadata;
+  bool m_discoveryUrlHasBeenSet = false;
   bool m_authorizationServerMetadataHasBeenSet = false;
 };
 

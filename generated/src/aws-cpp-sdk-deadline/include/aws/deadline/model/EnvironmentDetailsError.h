@@ -103,15 +103,15 @@ class EnvironmentDetailsError {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   JobEntityErrorCode m_code{JobEntityErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_jobIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

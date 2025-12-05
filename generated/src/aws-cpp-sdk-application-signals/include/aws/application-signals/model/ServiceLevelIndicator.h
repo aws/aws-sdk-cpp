@@ -86,12 +86,12 @@ class ServiceLevelIndicator {
   ///@}
  private:
   ServiceLevelIndicatorMetric m_sliMetric;
-  bool m_sliMetricHasBeenSet = false;
 
   double m_metricThreshold{0.0};
-  bool m_metricThresholdHasBeenSet = false;
 
   ServiceLevelIndicatorComparisonOperator m_comparisonOperator{ServiceLevelIndicatorComparisonOperator::NOT_SET};
+  bool m_sliMetricHasBeenSet = false;
+  bool m_metricThresholdHasBeenSet = false;
   bool m_comparisonOperatorHasBeenSet = false;
 };
 

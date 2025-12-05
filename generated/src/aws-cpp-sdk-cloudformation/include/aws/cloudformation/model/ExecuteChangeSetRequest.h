@@ -144,18 +144,18 @@ class ExecuteChangeSetRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   bool m_disableRollback{false};
-  bool m_disableRollbackHasBeenSet = false;
 
   bool m_retainExceptOnCreate{false};
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_disableRollbackHasBeenSet = false;
   bool m_retainExceptOnCreateHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class DeleteAIGuardrailVersionRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiGuardrailId;
-  bool m_aiGuardrailIdHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiGuardrailIdHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

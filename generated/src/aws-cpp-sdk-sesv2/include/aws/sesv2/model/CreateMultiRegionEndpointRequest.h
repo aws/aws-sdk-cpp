@@ -98,12 +98,12 @@ class CreateMultiRegionEndpointRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Details m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

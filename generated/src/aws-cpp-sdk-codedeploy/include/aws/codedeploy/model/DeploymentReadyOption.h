@@ -75,9 +75,9 @@ class DeploymentReadyOption {
   ///@}
  private:
   DeploymentReadyAction m_actionOnTimeout{DeploymentReadyAction::NOT_SET};
-  bool m_actionOnTimeoutHasBeenSet = false;
 
   int m_waitTimeInMinutes{0};
+  bool m_actionOnTimeoutHasBeenSet = false;
   bool m_waitTimeInMinutesHasBeenSet = false;
 };
 

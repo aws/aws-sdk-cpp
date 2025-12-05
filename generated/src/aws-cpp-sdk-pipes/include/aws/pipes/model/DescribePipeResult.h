@@ -368,60 +368,60 @@ class DescribePipeResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RequestedPipeStateDescribeResponse m_desiredState{RequestedPipeStateDescribeResponse::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   PipeState m_currentState{PipeState::NOT_SET};
-  bool m_currentStateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   PipeSourceParameters m_sourceParameters;
-  bool m_sourceParametersHasBeenSet = false;
 
   Aws::String m_enrichment;
-  bool m_enrichmentHasBeenSet = false;
 
   PipeEnrichmentParameters m_enrichmentParameters;
-  bool m_enrichmentParametersHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   PipeTargetParameters m_targetParameters;
-  bool m_targetParametersHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   PipeLogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_currentStateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceParametersHasBeenSet = false;
+  bool m_enrichmentHasBeenSet = false;
+  bool m_enrichmentParametersHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_targetParametersHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

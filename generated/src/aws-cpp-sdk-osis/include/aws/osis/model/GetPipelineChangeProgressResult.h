@@ -67,9 +67,9 @@ class GetPipelineChangeProgressResult {
   ///@}
  private:
   Aws::Vector<ChangeProgressStatus> m_changeProgressStatuses;
-  bool m_changeProgressStatusesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeProgressStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AssetBundleImportJobAnalysisOverrideParameters {
   ///@}
  private:
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_analysisIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

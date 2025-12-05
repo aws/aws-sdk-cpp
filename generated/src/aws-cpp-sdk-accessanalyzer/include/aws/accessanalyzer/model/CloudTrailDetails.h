@@ -119,15 +119,15 @@ class CloudTrailDetails {
   ///@}
  private:
   Aws::Vector<Trail> m_trails;
-  bool m_trailsHasBeenSet = false;
 
   Aws::String m_accessRole;
-  bool m_accessRoleHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_trailsHasBeenSet = false;
+  bool m_accessRoleHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

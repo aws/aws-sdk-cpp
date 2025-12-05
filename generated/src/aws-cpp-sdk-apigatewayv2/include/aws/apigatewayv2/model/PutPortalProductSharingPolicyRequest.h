@@ -68,9 +68,9 @@ class PutPortalProductSharingPolicyRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_portalProductId;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_portalProductIdHasBeenSet = false;
 };
 

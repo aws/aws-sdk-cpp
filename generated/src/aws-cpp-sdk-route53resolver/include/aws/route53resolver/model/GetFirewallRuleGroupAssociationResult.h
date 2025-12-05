@@ -61,9 +61,9 @@ class GetFirewallRuleGroupAssociationResult {
   ///@}
  private:
   FirewallRuleGroupAssociation m_firewallRuleGroupAssociation;
-  bool m_firewallRuleGroupAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallRuleGroupAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

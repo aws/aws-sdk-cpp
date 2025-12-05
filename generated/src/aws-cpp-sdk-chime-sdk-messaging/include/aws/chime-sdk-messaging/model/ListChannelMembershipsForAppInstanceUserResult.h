@@ -87,12 +87,12 @@ class ListChannelMembershipsForAppInstanceUserResult {
   ///@}
  private:
   Aws::Vector<ChannelMembershipForAppInstanceUserSummary> m_channelMemberships;
-  bool m_channelMembershipsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelMembershipsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

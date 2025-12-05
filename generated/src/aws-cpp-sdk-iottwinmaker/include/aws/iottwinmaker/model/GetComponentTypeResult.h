@@ -372,57 +372,57 @@ class GetComponentTypeResult {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   bool m_isSingleton{false};
-  bool m_isSingletonHasBeenSet = false;
 
   Aws::String m_componentTypeId;
-  bool m_componentTypeIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, PropertyDefinitionResponse> m_propertyDefinitions;
-  bool m_propertyDefinitionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_extendsFrom;
-  bool m_extendsFromHasBeenSet = false;
 
   Aws::Map<Aws::String, FunctionResponse> m_functions;
-  bool m_functionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_isAbstract{false};
-  bool m_isAbstractHasBeenSet = false;
 
   bool m_isSchemaInitialized{false};
-  bool m_isSchemaInitializedHasBeenSet = false;
 
   Status m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, PropertyGroupResponse> m_propertyGroups;
-  bool m_propertyGroupsHasBeenSet = false;
 
   Aws::String m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   Aws::String m_componentTypeName;
-  bool m_componentTypeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, CompositeComponentTypeResponse> m_compositeComponentTypes;
-  bool m_compositeComponentTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_isSingletonHasBeenSet = false;
+  bool m_componentTypeIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_propertyDefinitionsHasBeenSet = false;
+  bool m_extendsFromHasBeenSet = false;
+  bool m_functionsHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_isAbstractHasBeenSet = false;
+  bool m_isSchemaInitializedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_propertyGroupsHasBeenSet = false;
+  bool m_syncSourceHasBeenSet = false;
+  bool m_componentTypeNameHasBeenSet = false;
+  bool m_compositeComponentTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

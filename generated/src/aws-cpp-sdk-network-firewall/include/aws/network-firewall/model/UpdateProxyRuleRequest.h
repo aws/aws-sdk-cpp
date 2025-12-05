@@ -206,27 +206,27 @@ class UpdateProxyRuleRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupArn;
-  bool m_proxyRuleGroupArnHasBeenSet = false;
 
   Aws::String m_proxyRuleName;
-  bool m_proxyRuleNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProxyRulePhaseAction m_action{ProxyRulePhaseAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<ProxyRuleCondition> m_addConditions;
-  bool m_addConditionsHasBeenSet = false;
 
   Aws::Vector<ProxyRuleCondition> m_removeConditions;
-  bool m_removeConditionsHasBeenSet = false;
 
   Aws::String m_updateToken;
+  bool m_proxyRuleGroupNameHasBeenSet = false;
+  bool m_proxyRuleGroupArnHasBeenSet = false;
+  bool m_proxyRuleNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_addConditionsHasBeenSet = false;
+  bool m_removeConditionsHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
 };
 

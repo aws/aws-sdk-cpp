@@ -68,9 +68,9 @@ class UpdateExportRequest : public BCMDataExportsRequest {
   ///@}
  private:
   Export m_export;
-  bool m_exportHasBeenSet = false;
 
   Aws::String m_exportArn;
+  bool m_exportHasBeenSet = false;
   bool m_exportArnHasBeenSet = false;
 };
 

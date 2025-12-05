@@ -69,9 +69,9 @@ class PlacementSpecification {
   ///@}
  private:
   Aws::String m_ultraServerId;
-  bool m_ultraServerIdHasBeenSet = false;
 
   int m_instanceCount{0};
+  bool m_ultraServerIdHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
 };
 

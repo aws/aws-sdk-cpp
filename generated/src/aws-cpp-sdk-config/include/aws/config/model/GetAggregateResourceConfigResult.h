@@ -60,9 +60,9 @@ class GetAggregateResourceConfigResult {
   ///@}
  private:
   ConfigurationItem m_configurationItem;
-  bool m_configurationItemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationItemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class PutProjectPolicyResult {
   ///@}
  private:
   Aws::String m_policyRevisionId;
-  bool m_policyRevisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyRevisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

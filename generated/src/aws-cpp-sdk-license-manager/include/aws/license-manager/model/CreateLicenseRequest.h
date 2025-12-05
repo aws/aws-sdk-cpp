@@ -279,39 +279,39 @@ class CreateLicenseRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_licenseName;
-  bool m_licenseNameHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   Aws::String m_productSKU;
-  bool m_productSKUHasBeenSet = false;
 
   Issuer m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_homeRegion;
-  bool m_homeRegionHasBeenSet = false;
 
   DatetimeRange m_validity;
-  bool m_validityHasBeenSet = false;
 
   Aws::Vector<Entitlement> m_entitlements;
-  bool m_entitlementsHasBeenSet = false;
 
   Aws::String m_beneficiary;
-  bool m_beneficiaryHasBeenSet = false;
 
   ConsumptionConfiguration m_consumptionConfiguration;
-  bool m_consumptionConfigurationHasBeenSet = false;
 
   Aws::Vector<Metadata> m_licenseMetadata;
-  bool m_licenseMetadataHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_licenseNameHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_productSKUHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_homeRegionHasBeenSet = false;
+  bool m_validityHasBeenSet = false;
+  bool m_entitlementsHasBeenSet = false;
+  bool m_beneficiaryHasBeenSet = false;
+  bool m_consumptionConfigurationHasBeenSet = false;
+  bool m_licenseMetadataHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

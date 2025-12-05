@@ -86,12 +86,12 @@ class ConversationLogsDataSourceFilterBy {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ConversationLogsInputModeFilter m_inputMode{ConversationLogsInputModeFilter::NOT_SET};
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_inputModeHasBeenSet = false;
 };
 

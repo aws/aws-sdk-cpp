@@ -81,9 +81,9 @@ class InventoryGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<InventoryFilter> m_filters;
+  bool m_nameHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

@@ -287,39 +287,39 @@ class RepositoryAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   RepositoryAssociationState m_state{RepositoryAssociationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimeStamp{};
-  bool m_lastUpdatedTimeStampHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimeStamp{};
-  bool m_createdTimeStampHasBeenSet = false;
 
   KMSKeyDetails m_kMSKeyDetails;
-  bool m_kMSKeyDetailsHasBeenSet = false;
 
   S3RepositoryDetails m_s3RepositoryDetails;
+  bool m_associationIdHasBeenSet = false;
+  bool m_associationArnHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_lastUpdatedTimeStampHasBeenSet = false;
+  bool m_createdTimeStampHasBeenSet = false;
+  bool m_kMSKeyDetailsHasBeenSet = false;
   bool m_s3RepositoryDetailsHasBeenSet = false;
 };
 

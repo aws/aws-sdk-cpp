@@ -258,30 +258,30 @@ class CreateFileSystemRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_creationToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_creationTokenHasBeenSet = true;
 
   PerformanceMode m_performanceMode{PerformanceMode::NOT_SET};
-  bool m_performanceModeHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
-  bool m_throughputModeHasBeenSet = false;
 
   double m_provisionedThroughputInMibps{0.0};
-  bool m_provisionedThroughputInMibpsHasBeenSet = false;
 
   Aws::String m_availabilityZoneName;
-  bool m_availabilityZoneNameHasBeenSet = false;
 
   bool m_backup{false};
-  bool m_backupHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_creationTokenHasBeenSet = true;
+  bool m_performanceModeHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_throughputModeHasBeenSet = false;
+  bool m_provisionedThroughputInMibpsHasBeenSet = false;
+  bool m_availabilityZoneNameHasBeenSet = false;
+  bool m_backupHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

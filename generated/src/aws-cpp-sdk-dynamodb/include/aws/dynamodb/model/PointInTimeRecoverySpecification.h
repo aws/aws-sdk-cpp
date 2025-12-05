@@ -66,9 +66,9 @@ class PointInTimeRecoverySpecification {
   ///@}
  private:
   bool m_pointInTimeRecoveryEnabled{false};
-  bool m_pointInTimeRecoveryEnabledHasBeenSet = false;
 
   int m_recoveryPeriodInDays{0};
+  bool m_pointInTimeRecoveryEnabledHasBeenSet = false;
   bool m_recoveryPeriodInDaysHasBeenSet = false;
 };
 

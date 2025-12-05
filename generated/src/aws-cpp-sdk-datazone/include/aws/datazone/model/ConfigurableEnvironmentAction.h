@@ -95,12 +95,12 @@ class ConfigurableEnvironmentAction {
   ///@}
  private:
   ConfigurableActionTypeAuthorization m_auth{ConfigurableActionTypeAuthorization::NOT_SET};
-  bool m_authHasBeenSet = false;
 
   Aws::Vector<ConfigurableActionParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_authHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

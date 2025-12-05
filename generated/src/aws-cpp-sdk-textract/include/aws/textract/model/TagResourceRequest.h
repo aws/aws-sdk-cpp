@@ -74,9 +74,9 @@ class TagResourceRequest : public TextractRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

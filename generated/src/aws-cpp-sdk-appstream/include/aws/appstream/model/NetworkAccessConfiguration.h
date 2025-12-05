@@ -98,12 +98,12 @@ class NetworkAccessConfiguration {
   ///@}
  private:
   Aws::String m_eniPrivateIpAddress;
-  bool m_eniPrivateIpAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eniIpv6Addresses;
-  bool m_eniIpv6AddressesHasBeenSet = false;
 
   Aws::String m_eniId;
+  bool m_eniPrivateIpAddressHasBeenSet = false;
+  bool m_eniIpv6AddressesHasBeenSet = false;
   bool m_eniIdHasBeenSet = false;
 };
 

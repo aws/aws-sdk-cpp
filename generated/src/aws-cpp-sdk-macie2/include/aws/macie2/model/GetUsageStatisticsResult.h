@@ -105,15 +105,15 @@ class GetUsageStatisticsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<UsageRecord> m_records;
-  bool m_recordsHasBeenSet = false;
 
   TimeRange m_timeRange{TimeRange::NOT_SET};
-  bool m_timeRangeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recordsHasBeenSet = false;
+  bool m_timeRangeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

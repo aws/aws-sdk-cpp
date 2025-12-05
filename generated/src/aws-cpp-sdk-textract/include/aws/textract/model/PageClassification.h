@@ -85,9 +85,9 @@ class PageClassification {
   ///@}
  private:
   Aws::Vector<Prediction> m_pageType;
-  bool m_pageTypeHasBeenSet = false;
 
   Aws::Vector<Prediction> m_pageNumber;
+  bool m_pageTypeHasBeenSet = false;
   bool m_pageNumberHasBeenSet = false;
 };
 

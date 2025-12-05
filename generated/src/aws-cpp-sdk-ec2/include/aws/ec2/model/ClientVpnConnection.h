@@ -319,48 +319,48 @@ class ClientVpnConnection {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_timestamp;
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_connectionEstablishedTime;
-  bool m_connectionEstablishedTimeHasBeenSet = false;
 
   Aws::String m_ingressBytes;
-  bool m_ingressBytesHasBeenSet = false;
 
   Aws::String m_egressBytes;
-  bool m_egressBytesHasBeenSet = false;
 
   Aws::String m_ingressPackets;
-  bool m_ingressPacketsHasBeenSet = false;
 
   Aws::String m_egressPackets;
-  bool m_egressPacketsHasBeenSet = false;
 
   Aws::String m_clientIp;
-  bool m_clientIpHasBeenSet = false;
 
   Aws::String m_clientIpv6Address;
-  bool m_clientIpv6AddressHasBeenSet = false;
 
   Aws::String m_commonName;
-  bool m_commonNameHasBeenSet = false;
 
   ClientVpnConnectionStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_connectionEndTime;
-  bool m_connectionEndTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_postureComplianceStatuses;
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_connectionEstablishedTimeHasBeenSet = false;
+  bool m_ingressBytesHasBeenSet = false;
+  bool m_egressBytesHasBeenSet = false;
+  bool m_ingressPacketsHasBeenSet = false;
+  bool m_egressPacketsHasBeenSet = false;
+  bool m_clientIpHasBeenSet = false;
+  bool m_clientIpv6AddressHasBeenSet = false;
+  bool m_commonNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_connectionEndTimeHasBeenSet = false;
   bool m_postureComplianceStatusesHasBeenSet = false;
 };
 

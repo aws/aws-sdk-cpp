@@ -259,39 +259,39 @@ class LabelingJobSummary {
   ///@}
  private:
   Aws::String m_labelingJobName;
-  bool m_labelingJobNameHasBeenSet = false;
 
   Aws::String m_labelingJobArn;
-  bool m_labelingJobArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   LabelingJobStatus m_labelingJobStatus{LabelingJobStatus::NOT_SET};
-  bool m_labelingJobStatusHasBeenSet = false;
 
   LabelCounters m_labelCounters;
-  bool m_labelCountersHasBeenSet = false;
 
   Aws::String m_workteamArn;
-  bool m_workteamArnHasBeenSet = false;
 
   Aws::String m_preHumanTaskLambdaArn;
-  bool m_preHumanTaskLambdaArnHasBeenSet = false;
 
   Aws::String m_annotationConsolidationLambdaArn;
-  bool m_annotationConsolidationLambdaArnHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   LabelingJobOutput m_labelingJobOutput;
-  bool m_labelingJobOutputHasBeenSet = false;
 
   LabelingJobInputConfig m_inputConfig;
+  bool m_labelingJobNameHasBeenSet = false;
+  bool m_labelingJobArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_labelingJobStatusHasBeenSet = false;
+  bool m_labelCountersHasBeenSet = false;
+  bool m_workteamArnHasBeenSet = false;
+  bool m_preHumanTaskLambdaArnHasBeenSet = false;
+  bool m_annotationConsolidationLambdaArnHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_labelingJobOutputHasBeenSet = false;
   bool m_inputConfigHasBeenSet = false;
 };
 

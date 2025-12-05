@@ -126,18 +126,18 @@ class LoggingConfiguration {
   ///@}
  private:
   ModuleLoggingConfiguration m_dagProcessingLogs;
-  bool m_dagProcessingLogsHasBeenSet = false;
 
   ModuleLoggingConfiguration m_schedulerLogs;
-  bool m_schedulerLogsHasBeenSet = false;
 
   ModuleLoggingConfiguration m_webserverLogs;
-  bool m_webserverLogsHasBeenSet = false;
 
   ModuleLoggingConfiguration m_workerLogs;
-  bool m_workerLogsHasBeenSet = false;
 
   ModuleLoggingConfiguration m_taskLogs;
+  bool m_dagProcessingLogsHasBeenSet = false;
+  bool m_schedulerLogsHasBeenSet = false;
+  bool m_webserverLogsHasBeenSet = false;
+  bool m_workerLogsHasBeenSet = false;
   bool m_taskLogsHasBeenSet = false;
 };
 

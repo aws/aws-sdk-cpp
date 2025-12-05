@@ -78,12 +78,12 @@ class GetAccountSettingsResult {
   ///@}
  private:
   AccountLimit m_accountLimit;
-  bool m_accountLimitHasBeenSet = false;
 
   AccountUsage m_accountUsage;
-  bool m_accountUsageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountLimitHasBeenSet = false;
+  bool m_accountUsageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

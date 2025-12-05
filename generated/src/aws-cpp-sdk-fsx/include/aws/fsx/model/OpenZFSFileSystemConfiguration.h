@@ -345,51 +345,51 @@ class OpenZFSFileSystemConfiguration {
   ///@}
  private:
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   bool m_copyTagsToBackups{false};
-  bool m_copyTagsToBackupsHasBeenSet = false;
 
   bool m_copyTagsToVolumes{false};
-  bool m_copyTagsToVolumesHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   OpenZFSDeploymentType m_deploymentType{OpenZFSDeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   DiskIopsConfiguration m_diskIopsConfiguration;
-  bool m_diskIopsConfigurationHasBeenSet = false;
 
   Aws::String m_rootVolumeId;
-  bool m_rootVolumeIdHasBeenSet = false;
 
   Aws::String m_preferredSubnetId;
-  bool m_preferredSubnetIdHasBeenSet = false;
 
   Aws::String m_endpointIpAddressRange;
-  bool m_endpointIpAddressRangeHasBeenSet = false;
 
   Aws::String m_endpointIpv6AddressRange;
-  bool m_endpointIpv6AddressRangeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routeTableIds;
-  bool m_routeTableIdsHasBeenSet = false;
 
   Aws::String m_endpointIpAddress;
-  bool m_endpointIpAddressHasBeenSet = false;
 
   Aws::String m_endpointIpv6Address;
-  bool m_endpointIpv6AddressHasBeenSet = false;
 
   OpenZFSReadCacheConfiguration m_readCacheConfiguration;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_copyTagsToBackupsHasBeenSet = false;
+  bool m_copyTagsToVolumesHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_diskIopsConfigurationHasBeenSet = false;
+  bool m_rootVolumeIdHasBeenSet = false;
+  bool m_preferredSubnetIdHasBeenSet = false;
+  bool m_endpointIpAddressRangeHasBeenSet = false;
+  bool m_endpointIpv6AddressRangeHasBeenSet = false;
+  bool m_routeTableIdsHasBeenSet = false;
+  bool m_endpointIpAddressHasBeenSet = false;
+  bool m_endpointIpv6AddressHasBeenSet = false;
   bool m_readCacheConfigurationHasBeenSet = false;
 };
 

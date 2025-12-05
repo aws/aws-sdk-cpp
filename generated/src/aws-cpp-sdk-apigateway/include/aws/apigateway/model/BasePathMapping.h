@@ -104,15 +104,15 @@ class BasePathMapping {
   ///@}
  private:
   Aws::String m_basePath;
-  bool m_basePathHasBeenSet = false;
 
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_basePathHasBeenSet = false;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

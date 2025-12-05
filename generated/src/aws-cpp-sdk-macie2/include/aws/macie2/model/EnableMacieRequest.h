@@ -86,12 +86,12 @@ class EnableMacieRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
-  bool m_findingPublishingFrequencyHasBeenSet = false;
 
   MacieStatus m_status{MacieStatus::NOT_SET};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_findingPublishingFrequencyHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class GetInstanceResult {
   ///@}
  private:
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Instance m_instance;
-  bool m_instanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_instanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

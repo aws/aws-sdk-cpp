@@ -69,9 +69,9 @@ class AssociatedResource {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

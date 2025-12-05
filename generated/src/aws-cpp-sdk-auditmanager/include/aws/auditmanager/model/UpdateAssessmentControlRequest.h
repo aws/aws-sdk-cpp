@@ -118,18 +118,18 @@ class UpdateAssessmentControlRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_controlId;
-  bool m_controlIdHasBeenSet = false;
 
   ControlStatus m_controlStatus{ControlStatus::NOT_SET};
-  bool m_controlStatusHasBeenSet = false;
 
   Aws::String m_commentBody;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_controlIdHasBeenSet = false;
+  bool m_controlStatusHasBeenSet = false;
   bool m_commentBodyHasBeenSet = false;
 };
 

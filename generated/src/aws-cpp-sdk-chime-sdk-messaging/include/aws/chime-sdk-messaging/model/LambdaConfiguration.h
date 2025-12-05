@@ -67,9 +67,9 @@ class LambdaConfiguration {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   InvocationType m_invocationType{InvocationType::NOT_SET};
+  bool m_resourceArnHasBeenSet = false;
   bool m_invocationTypeHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class DocumentRequires {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_requireType;
-  bool m_requireTypeHasBeenSet = false;
 
   Aws::String m_versionName;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_requireTypeHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
 };
 

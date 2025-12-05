@@ -142,15 +142,15 @@ class EBSItemFilter {
   ///@}
  private:
   Aws::Vector<StringCondition> m_filePaths;
-  bool m_filePathsHasBeenSet = false;
 
   Aws::Vector<LongCondition> m_sizes;
-  bool m_sizesHasBeenSet = false;
 
   Aws::Vector<TimeCondition> m_creationTimes;
-  bool m_creationTimesHasBeenSet = false;
 
   Aws::Vector<TimeCondition> m_lastModificationTimes;
+  bool m_filePathsHasBeenSet = false;
+  bool m_sizesHasBeenSet = false;
+  bool m_creationTimesHasBeenSet = false;
   bool m_lastModificationTimesHasBeenSet = false;
 };
 

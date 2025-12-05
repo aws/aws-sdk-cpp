@@ -267,12 +267,12 @@ class CreateQueueRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueName;
-  bool m_queueNameHasBeenSet = false;
 
   Aws::Map<QueueAttributeName, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_queueNameHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

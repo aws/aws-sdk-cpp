@@ -152,21 +152,21 @@ class ListCertificatesRequest : public ACMRequest {
   ///@}
  private:
   Aws::Vector<CertificateStatus> m_certificateStatuses;
-  bool m_certificateStatusesHasBeenSet = false;
 
   Filters m_includes;
-  bool m_includesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   SortBy m_sortBy{SortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_certificateStatusesHasBeenSet = false;
+  bool m_includesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

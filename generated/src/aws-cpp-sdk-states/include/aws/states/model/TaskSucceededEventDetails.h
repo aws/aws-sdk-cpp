@@ -108,15 +108,15 @@ class TaskSucceededEventDetails {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_output;
-  bool m_outputHasBeenSet = false;
 
   HistoryEventExecutionDataDetails m_outputDetails;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
   bool m_outputDetailsHasBeenSet = false;
 };
 

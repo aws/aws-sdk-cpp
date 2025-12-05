@@ -340,48 +340,48 @@ class Service {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_serviceUrl;
-  bool m_serviceUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
-  bool m_deletedAtHasBeenSet = false;
 
   ServiceStatus m_status{ServiceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   InstanceConfiguration m_instanceConfiguration;
-  bool m_instanceConfigurationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   HealthCheckConfiguration m_healthCheckConfiguration;
-  bool m_healthCheckConfigurationHasBeenSet = false;
 
   AutoScalingConfigurationSummary m_autoScalingConfigurationSummary;
-  bool m_autoScalingConfigurationSummaryHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   ServiceObservabilityConfiguration m_observabilityConfiguration;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_serviceUrlHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_deletedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
+  bool m_instanceConfigurationHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_healthCheckConfigurationHasBeenSet = false;
+  bool m_autoScalingConfigurationSummaryHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
   bool m_observabilityConfigurationHasBeenSet = false;
 };
 

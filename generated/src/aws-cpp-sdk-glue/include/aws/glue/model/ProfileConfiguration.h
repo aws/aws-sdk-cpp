@@ -83,9 +83,9 @@ class ProfileConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, ConfigurationObject> m_sessionConfiguration;
-  bool m_sessionConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, ConfigurationObject> m_jobConfiguration;
+  bool m_sessionConfigurationHasBeenSet = false;
   bool m_jobConfigurationHasBeenSet = false;
 };
 

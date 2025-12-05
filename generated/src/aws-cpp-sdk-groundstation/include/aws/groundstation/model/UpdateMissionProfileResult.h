@@ -64,9 +64,9 @@ class UpdateMissionProfileResult {
   ///@}
  private:
   Aws::String m_missionProfileId;
-  bool m_missionProfileIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_missionProfileIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

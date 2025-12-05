@@ -108,15 +108,15 @@ class ScanJobCreator {
   ///@}
  private:
   Aws::String m_backupPlanArn;
-  bool m_backupPlanArnHasBeenSet = false;
 
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::String m_backupPlanVersion;
-  bool m_backupPlanVersionHasBeenSet = false;
 
   Aws::String m_backupRuleId;
+  bool m_backupPlanArnHasBeenSet = false;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_backupPlanVersionHasBeenSet = false;
   bool m_backupRuleIdHasBeenSet = false;
 };
 

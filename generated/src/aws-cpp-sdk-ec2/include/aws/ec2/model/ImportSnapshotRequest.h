@@ -227,30 +227,30 @@ class ImportSnapshotRequest : public EC2Request {
   ///@}
  private:
   ClientData m_clientData;
-  bool m_clientDataHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SnapshotDiskContainer m_diskContainer;
-  bool m_diskContainerHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_clientDataHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_diskContainerHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_roleNameHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

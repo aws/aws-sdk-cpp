@@ -135,21 +135,21 @@ class GetRetainedMessageResult {
   ///@}
  private:
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_payload{};
-  bool m_payloadHasBeenSet = false;
 
   int m_qos{0};
-  bool m_qosHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_userProperties{};
-  bool m_userPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_qosHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_userPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

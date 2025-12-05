@@ -72,9 +72,9 @@ class EmrServerlessSettings {
   ///@}
  private:
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
+  bool m_executionRoleArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

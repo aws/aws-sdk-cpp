@@ -109,15 +109,15 @@ class CreateDelegationRequest {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   RoleType m_roleType{RoleType::NOT_SET};
+  bool m_commentHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_roleTypeHasBeenSet = false;
 };
 

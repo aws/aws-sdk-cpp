@@ -59,9 +59,9 @@ class CreateSolutionVersionResult {
   ///@}
  private:
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_solutionVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

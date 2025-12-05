@@ -76,12 +76,12 @@ class CreateQuickConnectResult {
   ///@}
  private:
   Aws::String m_quickConnectARN;
-  bool m_quickConnectARNHasBeenSet = false;
 
   Aws::String m_quickConnectId;
-  bool m_quickConnectIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quickConnectARNHasBeenSet = false;
+  bool m_quickConnectIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

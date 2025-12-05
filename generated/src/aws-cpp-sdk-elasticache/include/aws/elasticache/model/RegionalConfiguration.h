@@ -97,12 +97,12 @@ class RegionalConfiguration {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_replicationGroupRegion;
-  bool m_replicationGroupRegionHasBeenSet = false;
 
   Aws::Vector<ReshardingConfiguration> m_reshardingConfiguration;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_replicationGroupRegionHasBeenSet = false;
   bool m_reshardingConfigurationHasBeenSet = false;
 };
 

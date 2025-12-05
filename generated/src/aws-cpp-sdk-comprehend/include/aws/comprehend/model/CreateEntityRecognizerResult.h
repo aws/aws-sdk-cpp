@@ -59,9 +59,9 @@ class CreateEntityRecognizerResult {
   ///@}
  private:
   Aws::String m_entityRecognizerArn;
-  bool m_entityRecognizerArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityRecognizerArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

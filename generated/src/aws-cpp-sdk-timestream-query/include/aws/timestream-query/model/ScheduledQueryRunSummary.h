@@ -165,24 +165,24 @@ class ScheduledQueryRunSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_invocationTime{};
-  bool m_invocationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_triggerTime{};
-  bool m_triggerTimeHasBeenSet = false;
 
   ScheduledQueryRunStatus m_runStatus{ScheduledQueryRunStatus::NOT_SET};
-  bool m_runStatusHasBeenSet = false;
 
   ExecutionStats m_executionStats;
-  bool m_executionStatsHasBeenSet = false;
 
   ScheduledQueryInsightsResponse m_queryInsightsResponse;
-  bool m_queryInsightsResponseHasBeenSet = false;
 
   ErrorReportLocation m_errorReportLocation;
-  bool m_errorReportLocationHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_invocationTimeHasBeenSet = false;
+  bool m_triggerTimeHasBeenSet = false;
+  bool m_runStatusHasBeenSet = false;
+  bool m_executionStatsHasBeenSet = false;
+  bool m_queryInsightsResponseHasBeenSet = false;
+  bool m_errorReportLocationHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

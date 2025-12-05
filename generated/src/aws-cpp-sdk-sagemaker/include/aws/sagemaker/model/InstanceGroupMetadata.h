@@ -151,21 +151,21 @@ class InstanceGroupMetadata {
   ///@}
  private:
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   CapacityReservation m_capacityReservation;
-  bool m_capacityReservationHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_amiOverride;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_capacityReservationHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_amiOverrideHasBeenSet = false;
 };
 

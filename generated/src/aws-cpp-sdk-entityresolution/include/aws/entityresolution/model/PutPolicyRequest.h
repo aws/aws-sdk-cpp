@@ -88,12 +88,12 @@ class PutPolicyRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_arnHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

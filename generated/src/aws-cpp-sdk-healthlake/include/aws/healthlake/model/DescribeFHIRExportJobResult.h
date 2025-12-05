@@ -60,9 +60,9 @@ class DescribeFHIRExportJobResult {
   ///@}
  private:
   ExportJobProperties m_exportJobProperties;
-  bool m_exportJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

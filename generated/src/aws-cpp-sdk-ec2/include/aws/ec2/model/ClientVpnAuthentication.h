@@ -110,15 +110,15 @@ class ClientVpnAuthentication {
   ///@}
  private:
   ClientVpnAuthenticationType m_type{ClientVpnAuthenticationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DirectoryServiceAuthentication m_activeDirectory;
-  bool m_activeDirectoryHasBeenSet = false;
 
   CertificateAuthentication m_mutualAuthentication;
-  bool m_mutualAuthenticationHasBeenSet = false;
 
   FederatedAuthentication m_federatedAuthentication;
+  bool m_typeHasBeenSet = false;
+  bool m_activeDirectoryHasBeenSet = false;
+  bool m_mutualAuthenticationHasBeenSet = false;
   bool m_federatedAuthenticationHasBeenSet = false;
 };
 

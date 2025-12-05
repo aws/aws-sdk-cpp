@@ -66,9 +66,9 @@ class PurchaseOrderDataSource {
   ///@}
  private:
   EinvoiceDeliveryDocumentType m_einvoiceDeliveryDocumentType{EinvoiceDeliveryDocumentType::NOT_SET};
-  bool m_einvoiceDeliveryDocumentTypeHasBeenSet = false;
 
   PurchaseOrderDataSourceType m_purchaseOrderDataSourceType{PurchaseOrderDataSourceType::NOT_SET};
+  bool m_einvoiceDeliveryDocumentTypeHasBeenSet = false;
   bool m_purchaseOrderDataSourceTypeHasBeenSet = false;
 };
 

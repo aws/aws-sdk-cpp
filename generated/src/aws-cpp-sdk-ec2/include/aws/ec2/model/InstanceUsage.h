@@ -71,9 +71,9 @@ class InstanceUsage {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   int m_usedInstanceCount{0};
+  bool m_accountIdHasBeenSet = false;
   bool m_usedInstanceCountHasBeenSet = false;
 };
 

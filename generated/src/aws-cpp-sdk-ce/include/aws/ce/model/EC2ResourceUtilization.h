@@ -147,21 +147,21 @@ class EC2ResourceUtilization {
   ///@}
  private:
   Aws::String m_maxCpuUtilizationPercentage;
-  bool m_maxCpuUtilizationPercentageHasBeenSet = false;
 
   Aws::String m_maxMemoryUtilizationPercentage;
-  bool m_maxMemoryUtilizationPercentageHasBeenSet = false;
 
   Aws::String m_maxStorageUtilizationPercentage;
-  bool m_maxStorageUtilizationPercentageHasBeenSet = false;
 
   EBSResourceUtilization m_eBSResourceUtilization;
-  bool m_eBSResourceUtilizationHasBeenSet = false;
 
   DiskResourceUtilization m_diskResourceUtilization;
-  bool m_diskResourceUtilizationHasBeenSet = false;
 
   NetworkResourceUtilization m_networkResourceUtilization;
+  bool m_maxCpuUtilizationPercentageHasBeenSet = false;
+  bool m_maxMemoryUtilizationPercentageHasBeenSet = false;
+  bool m_maxStorageUtilizationPercentageHasBeenSet = false;
+  bool m_eBSResourceUtilizationHasBeenSet = false;
+  bool m_diskResourceUtilizationHasBeenSet = false;
   bool m_networkResourceUtilizationHasBeenSet = false;
 };
 

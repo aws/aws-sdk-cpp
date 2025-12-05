@@ -183,27 +183,27 @@ class OptimizeWaypointsResult {
   ///@}
  private:
   Aws::Vector<WaypointOptimizationConnection> m_connections;
-  bool m_connectionsHasBeenSet = false;
 
   long long m_distance{0};
-  bool m_distanceHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<WaypointOptimizationImpedingWaypoint> m_impedingWaypoints;
-  bool m_impedingWaypointsHasBeenSet = false;
 
   Aws::Vector<WaypointOptimizationOptimizedWaypoint> m_optimizedWaypoints;
-  bool m_optimizedWaypointsHasBeenSet = false;
 
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   WaypointOptimizationTimeBreakdown m_timeBreakdown;
-  bool m_timeBreakdownHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionsHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_impedingWaypointsHasBeenSet = false;
+  bool m_optimizedWaypointsHasBeenSet = false;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_timeBreakdownHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

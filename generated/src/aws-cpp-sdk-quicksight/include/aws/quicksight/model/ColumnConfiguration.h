@@ -105,15 +105,15 @@ class ColumnConfiguration {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   FormatConfiguration m_formatConfiguration;
-  bool m_formatConfigurationHasBeenSet = false;
 
   ColumnRole m_role{ColumnRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   ColorsConfiguration m_colorsConfiguration;
+  bool m_columnHasBeenSet = false;
+  bool m_formatConfigurationHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_colorsConfigurationHasBeenSet = false;
 };
 

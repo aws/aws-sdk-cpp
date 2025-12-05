@@ -68,9 +68,9 @@ class KxNAS1Configuration {
   ///@}
  private:
   KxNAS1Type m_type{KxNAS1Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_size{0};
+  bool m_typeHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

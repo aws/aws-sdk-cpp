@@ -287,42 +287,42 @@ class Capability {
   ///@}
  private:
   Aws::String m_capabilityName;
-  bool m_capabilityNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   CapabilityType m_type{CapabilityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   CapabilityStatus m_status{CapabilityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   CapabilityConfigurationResponse m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CapabilityHealth m_health;
-  bool m_healthHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   CapabilityDeletePropagationPolicy m_deletePropagationPolicy{CapabilityDeletePropagationPolicy::NOT_SET};
+  bool m_capabilityNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_deletePropagationPolicyHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class EffectivePolicyValidationError {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_pathToError;
-  bool m_pathToErrorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contributingPolicies;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_pathToErrorHasBeenSet = false;
   bool m_contributingPoliciesHasBeenSet = false;
 };
 

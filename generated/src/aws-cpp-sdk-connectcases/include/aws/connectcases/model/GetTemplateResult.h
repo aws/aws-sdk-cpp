@@ -271,42 +271,42 @@ class GetTemplateResult {
   ///@}
  private:
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LayoutConfiguration m_layoutConfiguration;
-  bool m_layoutConfigurationHasBeenSet = false;
 
   Aws::Vector<RequiredField> m_requiredFields;
-  bool m_requiredFieldsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TemplateStatus m_status{TemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_deleted{false};
-  bool m_deletedHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<TemplateRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateIdHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_layoutConfigurationHasBeenSet = false;
+  bool m_requiredFieldsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

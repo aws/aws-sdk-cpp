@@ -91,12 +91,12 @@ class MonitoringConfiguration {
   ///@}
  private:
   CloudWatchLoggingConfiguration m_cloudWatchLoggingConfiguration;
-  bool m_cloudWatchLoggingConfigurationHasBeenSet = false;
 
   ManagedLoggingConfiguration m_managedLoggingConfiguration;
-  bool m_managedLoggingConfigurationHasBeenSet = false;
 
   S3LoggingConfiguration m_s3LoggingConfiguration;
+  bool m_cloudWatchLoggingConfigurationHasBeenSet = false;
+  bool m_managedLoggingConfigurationHasBeenSet = false;
   bool m_s3LoggingConfigurationHasBeenSet = false;
 };
 

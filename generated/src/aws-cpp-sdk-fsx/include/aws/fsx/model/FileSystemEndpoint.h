@@ -100,12 +100,12 @@ class FileSystemEndpoint {
   ///@}
  private:
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipAddresses;
-  bool m_ipAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv6Addresses;
+  bool m_dNSNameHasBeenSet = false;
+  bool m_ipAddressesHasBeenSet = false;
   bool m_ipv6AddressesHasBeenSet = false;
 };
 

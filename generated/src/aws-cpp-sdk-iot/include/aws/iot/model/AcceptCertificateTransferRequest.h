@@ -73,9 +73,9 @@ class AcceptCertificateTransferRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   bool m_setAsActive{false};
+  bool m_certificateIdHasBeenSet = false;
   bool m_setAsActiveHasBeenSet = false;
 };
 

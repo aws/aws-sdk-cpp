@@ -66,9 +66,9 @@ class UpdateCodeSecurityScanConfigurationRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   CodeSecurityScanConfiguration m_configuration;
+  bool m_scanConfigurationArnHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

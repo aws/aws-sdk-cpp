@@ -73,9 +73,9 @@ class InstanceFleetResizingSpecifications {
   ///@}
  private:
   SpotResizingSpecification m_spotResizeSpecification;
-  bool m_spotResizeSpecificationHasBeenSet = false;
 
   OnDemandResizingSpecification m_onDemandResizeSpecification;
+  bool m_spotResizeSpecificationHasBeenSet = false;
   bool m_onDemandResizeSpecificationHasBeenSet = false;
 };
 

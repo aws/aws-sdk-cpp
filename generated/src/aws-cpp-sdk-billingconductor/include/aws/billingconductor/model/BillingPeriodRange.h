@@ -73,9 +73,9 @@ class BillingPeriodRange {
   ///@}
  private:
   Aws::String m_inclusiveStartBillingPeriod;
-  bool m_inclusiveStartBillingPeriodHasBeenSet = false;
 
   Aws::String m_exclusiveEndBillingPeriod;
+  bool m_inclusiveStartBillingPeriodHasBeenSet = false;
   bool m_exclusiveEndBillingPeriodHasBeenSet = false;
 };
 

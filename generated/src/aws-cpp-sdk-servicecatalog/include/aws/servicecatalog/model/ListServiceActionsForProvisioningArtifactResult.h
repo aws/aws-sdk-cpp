@@ -88,12 +88,12 @@ class ListServiceActionsForProvisioningArtifactResult {
   ///@}
  private:
   Aws::Vector<ServiceActionSummary> m_serviceActionSummaries;
-  bool m_serviceActionSummariesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceActionSummariesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

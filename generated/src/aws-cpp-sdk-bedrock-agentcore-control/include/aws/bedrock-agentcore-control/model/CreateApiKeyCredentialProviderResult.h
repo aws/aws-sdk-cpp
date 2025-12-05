@@ -97,15 +97,15 @@ class CreateApiKeyCredentialProviderResult {
   ///@}
  private:
   Secret m_apiKeySecretArn;
-  bool m_apiKeySecretArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_credentialProviderArn;
-  bool m_credentialProviderArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiKeySecretArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_credentialProviderArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

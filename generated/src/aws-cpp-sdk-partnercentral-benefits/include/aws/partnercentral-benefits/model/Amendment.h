@@ -70,9 +70,9 @@ class Amendment {
   ///@}
  private:
   Aws::String m_fieldPath;
-  bool m_fieldPathHasBeenSet = false;
 
   Aws::String m_newValue;
+  bool m_fieldPathHasBeenSet = false;
   bool m_newValueHasBeenSet = false;
 };
 

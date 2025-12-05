@@ -180,24 +180,24 @@ class TargetTrackingConfiguration {
   ///@}
  private:
   PredefinedScalingMetricSpecification m_predefinedScalingMetricSpecification;
-  bool m_predefinedScalingMetricSpecificationHasBeenSet = false;
 
   CustomizedScalingMetricSpecification m_customizedScalingMetricSpecification;
-  bool m_customizedScalingMetricSpecificationHasBeenSet = false;
 
   double m_targetValue{0.0};
-  bool m_targetValueHasBeenSet = false;
 
   bool m_disableScaleIn{false};
-  bool m_disableScaleInHasBeenSet = false;
 
   int m_scaleOutCooldown{0};
-  bool m_scaleOutCooldownHasBeenSet = false;
 
   int m_scaleInCooldown{0};
-  bool m_scaleInCooldownHasBeenSet = false;
 
   int m_estimatedInstanceWarmup{0};
+  bool m_predefinedScalingMetricSpecificationHasBeenSet = false;
+  bool m_customizedScalingMetricSpecificationHasBeenSet = false;
+  bool m_targetValueHasBeenSet = false;
+  bool m_disableScaleInHasBeenSet = false;
+  bool m_scaleOutCooldownHasBeenSet = false;
+  bool m_scaleInCooldownHasBeenSet = false;
   bool m_estimatedInstanceWarmupHasBeenSet = false;
 };
 

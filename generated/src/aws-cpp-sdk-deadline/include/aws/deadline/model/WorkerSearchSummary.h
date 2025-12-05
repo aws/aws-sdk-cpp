@@ -177,27 +177,27 @@ class WorkerSearchSummary {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   WorkerStatus m_status{WorkerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   HostPropertiesResponse m_hostProperties;
-  bool m_hostPropertiesHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_fleetIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_hostPropertiesHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

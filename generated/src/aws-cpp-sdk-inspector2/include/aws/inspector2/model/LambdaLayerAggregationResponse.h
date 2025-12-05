@@ -126,18 +126,18 @@ class LambdaLayerAggregationResponse {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_layerArn;
-  bool m_layerArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SeverityCounts m_severityCounts;
+  bool m_functionNameHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_layerArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse {
   ///@}
  private:
   Aws::Vector<LocalGatewayRouteTableVirtualInterfaceGroupAssociation> m_localGatewayRouteTableVirtualInterfaceGroupAssociations;
-  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

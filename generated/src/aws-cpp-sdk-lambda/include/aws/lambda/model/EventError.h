@@ -66,9 +66,9 @@ class EventError {
   ///@}
  private:
   ErrorObject m_payload;
-  bool m_payloadHasBeenSet = false;
 
   bool m_truncated{false};
+  bool m_payloadHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;
 };
 

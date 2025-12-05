@@ -67,9 +67,9 @@ class TerminateServiceJobRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_jobIdHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

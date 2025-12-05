@@ -145,21 +145,21 @@ class EcdhDerivationAttributes {
   ///@}
  private:
   Aws::String m_certificateAuthorityPublicKeyIdentifier;
-  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
 
   Aws::String m_publicKeyCertificate;
-  bool m_publicKeyCertificateHasBeenSet = false;
 
   SymmetricKeyAlgorithm m_keyAlgorithm{SymmetricKeyAlgorithm::NOT_SET};
-  bool m_keyAlgorithmHasBeenSet = false;
 
   KeyDerivationFunction m_keyDerivationFunction{KeyDerivationFunction::NOT_SET};
-  bool m_keyDerivationFunctionHasBeenSet = false;
 
   KeyDerivationHashAlgorithm m_keyDerivationHashAlgorithm{KeyDerivationHashAlgorithm::NOT_SET};
-  bool m_keyDerivationHashAlgorithmHasBeenSet = false;
 
   Aws::String m_sharedInformation;
+  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
+  bool m_publicKeyCertificateHasBeenSet = false;
+  bool m_keyAlgorithmHasBeenSet = false;
+  bool m_keyDerivationFunctionHasBeenSet = false;
+  bool m_keyDerivationHashAlgorithmHasBeenSet = false;
   bool m_sharedInformationHasBeenSet = false;
 };
 

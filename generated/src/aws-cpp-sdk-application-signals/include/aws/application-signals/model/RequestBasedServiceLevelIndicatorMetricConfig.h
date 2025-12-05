@@ -184,21 +184,21 @@ class RequestBasedServiceLevelIndicatorMetricConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   ServiceLevelIndicatorMetricType m_metricType{ServiceLevelIndicatorMetricType::NOT_SET};
-  bool m_metricTypeHasBeenSet = false;
 
   Aws::Vector<MetricDataQuery> m_totalRequestCountMetric;
-  bool m_totalRequestCountMetricHasBeenSet = false;
 
   MonitoredRequestCountMetricDataQueries m_monitoredRequestCountMetric;
-  bool m_monitoredRequestCountMetricHasBeenSet = false;
 
   DependencyConfig m_dependencyConfig;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_metricTypeHasBeenSet = false;
+  bool m_totalRequestCountMetricHasBeenSet = false;
+  bool m_monitoredRequestCountMetricHasBeenSet = false;
   bool m_dependencyConfigHasBeenSet = false;
 };
 

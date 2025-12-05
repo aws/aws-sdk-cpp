@@ -171,24 +171,24 @@ class UpdateClusterRequest : public DAXRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_notificationTopicArn;
-  bool m_notificationTopicArnHasBeenSet = false;
 
   Aws::String m_notificationTopicStatus;
-  bool m_notificationTopicStatusHasBeenSet = false;
 
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_notificationTopicArnHasBeenSet = false;
+  bool m_notificationTopicStatusHasBeenSet = false;
+  bool m_parameterGroupNameHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

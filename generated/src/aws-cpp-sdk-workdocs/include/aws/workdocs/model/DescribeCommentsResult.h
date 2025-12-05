@@ -85,12 +85,12 @@ class DescribeCommentsResult {
   ///@}
  private:
   Aws::Vector<Comment> m_comments;
-  bool m_commentsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commentsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class ListRegistriesRequest : public SchemasRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_registryNamePrefix;
-  bool m_registryNamePrefixHasBeenSet = false;
 
   Aws::String m_scope;
+  bool m_limitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_registryNamePrefixHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

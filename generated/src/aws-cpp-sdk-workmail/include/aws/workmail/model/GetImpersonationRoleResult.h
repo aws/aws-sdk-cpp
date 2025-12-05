@@ -169,27 +169,27 @@ class GetImpersonationRoleResult {
   ///@}
  private:
   Aws::String m_impersonationRoleId;
-  bool m_impersonationRoleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ImpersonationRoleType m_type{ImpersonationRoleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ImpersonationRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateModified{};
-  bool m_dateModifiedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_impersonationRoleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateModifiedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

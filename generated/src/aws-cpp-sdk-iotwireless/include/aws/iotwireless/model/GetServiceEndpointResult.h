@@ -92,15 +92,15 @@ class GetServiceEndpointResult {
   ///@}
  private:
   WirelessGatewayServiceType m_serviceType{WirelessGatewayServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_serviceEndpoint;
-  bool m_serviceEndpointHasBeenSet = false;
 
   Aws::String m_serverTrust;
-  bool m_serverTrustHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_serviceEndpointHasBeenSet = false;
+  bool m_serverTrustHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class PutConfigurationSetDeliveryOptionsRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   DeliveryOptions m_deliveryOptions;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_deliveryOptionsHasBeenSet = false;
 };
 

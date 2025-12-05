@@ -120,18 +120,18 @@ class ApprovePlanExecutionStepRequest : public ARCRegionswitchRequest {
   ///@}
  private:
   Aws::String m_planArn;
-  bool m_planArnHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   Approval m_approval{Approval::NOT_SET};
-  bool m_approvalHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_planArnHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_stepNameHasBeenSet = false;
+  bool m_approvalHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

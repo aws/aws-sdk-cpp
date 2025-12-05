@@ -116,15 +116,15 @@ class QueryGenerationTable {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IncludeExclude m_inclusion{IncludeExclude::NOT_SET};
-  bool m_inclusionHasBeenSet = false;
 
   Aws::Vector<QueryGenerationColumn> m_columns;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inclusionHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
 };
 

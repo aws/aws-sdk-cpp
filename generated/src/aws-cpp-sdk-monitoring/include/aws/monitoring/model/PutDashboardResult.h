@@ -72,9 +72,9 @@ class PutDashboardResult {
   ///@}
  private:
   Aws::Vector<DashboardValidationMessage> m_dashboardValidationMessages;
-  bool m_dashboardValidationMessagesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dashboardValidationMessagesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

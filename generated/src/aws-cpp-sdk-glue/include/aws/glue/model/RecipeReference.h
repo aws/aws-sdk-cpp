@@ -68,9 +68,9 @@ class RecipeReference {
   ///@}
  private:
   Aws::String m_recipeArn;
-  bool m_recipeArnHasBeenSet = false;
 
   Aws::String m_recipeVersion;
+  bool m_recipeArnHasBeenSet = false;
   bool m_recipeVersionHasBeenSet = false;
 };
 

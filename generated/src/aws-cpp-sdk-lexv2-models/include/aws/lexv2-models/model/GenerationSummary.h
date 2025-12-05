@@ -105,15 +105,15 @@ class GenerationSummary {
   ///@}
  private:
   Aws::String m_generationId;
-  bool m_generationIdHasBeenSet = false;
 
   GenerationStatus m_generationStatus{GenerationStatus::NOT_SET};
-  bool m_generationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_generationIdHasBeenSet = false;
+  bool m_generationStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

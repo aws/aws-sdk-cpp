@@ -101,12 +101,12 @@ class UpdateUserRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_newPath;
-  bool m_newPathHasBeenSet = false;
 
   Aws::String m_newUserName;
+  bool m_userNameHasBeenSet = false;
+  bool m_newPathHasBeenSet = false;
   bool m_newUserNameHasBeenSet = false;
 };
 

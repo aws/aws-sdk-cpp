@@ -77,9 +77,9 @@ class TestCaseFilter {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_keyword;
+  bool m_statusHasBeenSet = false;
   bool m_keywordHasBeenSet = false;
 };
 

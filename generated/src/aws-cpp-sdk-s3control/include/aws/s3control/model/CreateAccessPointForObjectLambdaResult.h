@@ -97,15 +97,15 @@ class CreateAccessPointForObjectLambdaResult {
   ///@}
  private:
   Aws::String m_objectLambdaAccessPointArn;
-  bool m_objectLambdaAccessPointArnHasBeenSet = false;
 
   ObjectLambdaAccessPointAlias m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_objectLambdaAccessPointArnHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

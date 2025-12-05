@@ -101,15 +101,15 @@ class GetCardinalityRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_aggregationField;
-  bool m_aggregationFieldHasBeenSet = false;
 
   Aws::String m_queryVersion;
+  bool m_indexNameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_aggregationFieldHasBeenSet = false;
   bool m_queryVersionHasBeenSet = false;
 };
 

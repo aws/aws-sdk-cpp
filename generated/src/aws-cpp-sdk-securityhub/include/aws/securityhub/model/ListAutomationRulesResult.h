@@ -86,12 +86,12 @@ class ListAutomationRulesResult {
   ///@}
  private:
   Aws::Vector<AutomationRulesMetadata> m_automationRulesMetadata;
-  bool m_automationRulesMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_automationRulesMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

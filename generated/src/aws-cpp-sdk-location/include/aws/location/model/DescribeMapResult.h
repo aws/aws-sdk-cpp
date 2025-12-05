@@ -193,30 +193,30 @@ class DescribeMapResult {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   Aws::String m_mapArn;
-  bool m_mapArnHasBeenSet = false;
 
   Aws::String m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   MapConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mapNameHasBeenSet = false;
+  bool m_mapArnHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

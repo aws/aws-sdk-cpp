@@ -71,9 +71,9 @@ class GetSyncJobRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_syncSource;
-  bool m_syncSourceHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_syncSourceHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

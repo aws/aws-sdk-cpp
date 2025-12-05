@@ -128,18 +128,18 @@ class CreateCisScanConfigurationRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanName;
-  bool m_scanNameHasBeenSet = false;
 
   CisSecurityLevel m_securityLevel{CisSecurityLevel::NOT_SET};
-  bool m_securityLevelHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   CreateCisTargets m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_scanNameHasBeenSet = false;
+  bool m_securityLevelHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

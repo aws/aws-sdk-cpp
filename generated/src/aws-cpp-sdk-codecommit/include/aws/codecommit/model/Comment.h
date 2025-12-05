@@ -230,33 +230,33 @@ class Comment {
   ///@}
  private:
   Aws::String m_commentId;
-  bool m_commentIdHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_inReplyTo;
-  bool m_inReplyToHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_authorArn;
-  bool m_authorArnHasBeenSet = false;
 
   bool m_deleted{false};
-  bool m_deletedHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_callerReactions;
-  bool m_callerReactionsHasBeenSet = false;
 
   Aws::Map<Aws::String, int> m_reactionCounts;
+  bool m_commentIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_inReplyToHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_authorArnHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_callerReactionsHasBeenSet = false;
   bool m_reactionCountsHasBeenSet = false;
 };
 

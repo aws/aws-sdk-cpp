@@ -241,36 +241,36 @@ class MonitorSummary {
   ///@}
  private:
   Aws::String m_monitorId;
-  bool m_monitorIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_subdomain;
-  bool m_subdomainHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_identityCenterInstanceArn;
-  bool m_identityCenterInstanceArnHasBeenSet = false;
 
   Aws::String m_identityCenterApplicationArn;
-  bool m_identityCenterApplicationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
+  bool m_monitorIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_subdomainHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_identityCenterApplicationArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class CopyDBParameterGroupRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_sourceDBParameterGroupIdentifier;
-  bool m_sourceDBParameterGroupIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBParameterGroupIdentifier;
-  bool m_targetDBParameterGroupIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBParameterGroupDescription;
-  bool m_targetDBParameterGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourceDBParameterGroupIdentifierHasBeenSet = false;
+  bool m_targetDBParameterGroupIdentifierHasBeenSet = false;
+  bool m_targetDBParameterGroupDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

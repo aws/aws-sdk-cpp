@@ -84,12 +84,12 @@ class DeleteAutomationRuleRequest : public ComputeOptimizerAutomationRequest {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   long long m_ruleRevision{0};
-  bool m_ruleRevisionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_ruleArnHasBeenSet = false;
+  bool m_ruleRevisionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

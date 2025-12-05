@@ -129,18 +129,18 @@ class FindingsReportSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_profileEndTime{};
-  bool m_profileEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_profileStartTime{};
-  bool m_profileStartTimeHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   int m_totalNumberOfFindings{0};
+  bool m_idHasBeenSet = false;
+  bool m_profileEndTimeHasBeenSet = false;
+  bool m_profileStartTimeHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_totalNumberOfFindingsHasBeenSet = false;
 };
 

@@ -268,36 +268,36 @@ class CreateMeetingWithAttendeesRequest : public ChimeSDKMeetingsRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_mediaRegion;
-  bool m_mediaRegionHasBeenSet = false;
 
   Aws::String m_meetingHostId;
-  bool m_meetingHostIdHasBeenSet = false;
 
   Aws::String m_externalMeetingId;
-  bool m_externalMeetingIdHasBeenSet = false;
 
   MeetingFeaturesConfiguration m_meetingFeatures;
-  bool m_meetingFeaturesHasBeenSet = false;
 
   NotificationsConfiguration m_notificationsConfiguration;
-  bool m_notificationsConfigurationHasBeenSet = false;
 
   Aws::Vector<CreateAttendeeRequestItem> m_attendees;
-  bool m_attendeesHasBeenSet = false;
 
   Aws::String m_primaryMeetingId;
-  bool m_primaryMeetingIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tenantIds;
-  bool m_tenantIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MediaPlacementNetworkType m_mediaPlacementNetworkType{MediaPlacementNetworkType::NOT_SET};
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_mediaRegionHasBeenSet = false;
+  bool m_meetingHostIdHasBeenSet = false;
+  bool m_externalMeetingIdHasBeenSet = false;
+  bool m_meetingFeaturesHasBeenSet = false;
+  bool m_notificationsConfigurationHasBeenSet = false;
+  bool m_attendeesHasBeenSet = false;
+  bool m_primaryMeetingIdHasBeenSet = false;
+  bool m_tenantIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_mediaPlacementNetworkTypeHasBeenSet = false;
 };
 

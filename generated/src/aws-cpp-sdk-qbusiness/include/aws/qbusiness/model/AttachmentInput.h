@@ -90,12 +90,12 @@ class AttachmentInput {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CopyFromSource m_copyFrom;
+  bool m_dataHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_copyFromHasBeenSet = false;
 };
 

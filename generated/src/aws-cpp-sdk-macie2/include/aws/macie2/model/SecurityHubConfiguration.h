@@ -72,9 +72,9 @@ class SecurityHubConfiguration {
   ///@}
  private:
   bool m_publishClassificationFindings{false};
-  bool m_publishClassificationFindingsHasBeenSet = false;
 
   bool m_publishPolicyFindings{false};
+  bool m_publishClassificationFindingsHasBeenSet = false;
   bool m_publishPolicyFindingsHasBeenSet = false;
 };
 

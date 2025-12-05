@@ -83,12 +83,12 @@ class ListFunctionsByCodeSigningConfigResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_functionArns;
-  bool m_functionArnsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_functionArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

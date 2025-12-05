@@ -87,9 +87,9 @@ class AdsInteractionLog {
   ///@}
  private:
   Aws::Vector<AdsInteractionPublishOptInEventType> m_publishOptInEventTypes;
-  bool m_publishOptInEventTypesHasBeenSet = false;
 
   Aws::Vector<AdsInteractionExcludeEventType> m_excludeEventTypes;
+  bool m_publishOptInEventTypesHasBeenSet = false;
   bool m_excludeEventTypesHasBeenSet = false;
 };
 

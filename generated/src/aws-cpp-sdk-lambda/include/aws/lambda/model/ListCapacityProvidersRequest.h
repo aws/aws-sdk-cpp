@@ -86,12 +86,12 @@ class ListCapacityProvidersRequest : public LambdaRequest {
   ///@}
  private:
   CapacityProviderState m_state{CapacityProviderState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_stateHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

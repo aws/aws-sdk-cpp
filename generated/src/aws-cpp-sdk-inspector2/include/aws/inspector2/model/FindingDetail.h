@@ -246,33 +246,33 @@ class FindingDetail {
   ///@}
  private:
   Aws::String m_findingArn;
-  bool m_findingArnHasBeenSet = false;
 
   CisaData m_cisaData;
-  bool m_cisaDataHasBeenSet = false;
 
   int m_riskScore{0};
-  bool m_riskScoreHasBeenSet = false;
 
   Aws::Vector<Evidence> m_evidences;
-  bool m_evidencesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ttps;
-  bool m_ttpsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tools;
-  bool m_toolsHasBeenSet = false;
 
   ExploitObserved m_exploitObserved;
-  bool m_exploitObservedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_referenceUrls;
-  bool m_referenceUrlsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cwes;
-  bool m_cwesHasBeenSet = false;
 
   double m_epssScore{0.0};
+  bool m_findingArnHasBeenSet = false;
+  bool m_cisaDataHasBeenSet = false;
+  bool m_riskScoreHasBeenSet = false;
+  bool m_evidencesHasBeenSet = false;
+  bool m_ttpsHasBeenSet = false;
+  bool m_toolsHasBeenSet = false;
+  bool m_exploitObservedHasBeenSet = false;
+  bool m_referenceUrlsHasBeenSet = false;
+  bool m_cwesHasBeenSet = false;
   bool m_epssScoreHasBeenSet = false;
 };
 

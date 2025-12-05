@@ -86,12 +86,12 @@ class ListEventConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<EventConfigurationItem> m_eventConfigurationsList;
-  bool m_eventConfigurationsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_eventConfigurationsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

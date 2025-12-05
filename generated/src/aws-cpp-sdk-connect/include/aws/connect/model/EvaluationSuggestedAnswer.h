@@ -121,18 +121,18 @@ class EvaluationSuggestedAnswer {
   ///@}
  private:
   EvaluationAnswerData m_value;
-  bool m_valueHasBeenSet = false;
 
   EvaluationSuggestedAnswerStatus m_status{EvaluationSuggestedAnswerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   EvaluationQuestionInputDetails m_input;
-  bool m_inputHasBeenSet = false;
 
   EvaluationQuestionAnswerAnalysisType m_analysisType{EvaluationQuestionAnswerAnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   EvaluationQuestionAnswerAnalysisDetails m_analysisDetails;
+  bool m_valueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_analysisTypeHasBeenSet = false;
   bool m_analysisDetailsHasBeenSet = false;
 };
 

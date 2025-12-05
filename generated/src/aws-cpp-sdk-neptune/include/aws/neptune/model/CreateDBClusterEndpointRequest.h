@@ -167,21 +167,21 @@ class CreateDBClusterEndpointRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterEndpointIdentifier;
-  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
 
   Aws::String m_endpointType;
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_staticMembers;
-  bool m_staticMembersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedMembers;
-  bool m_excludedMembersHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_dBClusterEndpointIdentifierHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_staticMembersHasBeenSet = false;
+  bool m_excludedMembersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

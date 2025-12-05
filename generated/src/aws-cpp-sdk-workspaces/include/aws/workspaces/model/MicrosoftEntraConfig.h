@@ -69,9 +69,9 @@ class MicrosoftEntraConfig {
   ///@}
  private:
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_applicationConfigSecretArn;
+  bool m_tenantIdHasBeenSet = false;
   bool m_applicationConfigSecretArnHasBeenSet = false;
 };
 

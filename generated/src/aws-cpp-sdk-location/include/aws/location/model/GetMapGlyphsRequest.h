@@ -155,15 +155,15 @@ class GetMapGlyphsRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   Aws::String m_fontStack;
-  bool m_fontStackHasBeenSet = false;
 
   Aws::String m_fontUnicodeRange;
-  bool m_fontUnicodeRangeHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_mapNameHasBeenSet = false;
+  bool m_fontStackHasBeenSet = false;
+  bool m_fontUnicodeRangeHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

@@ -111,18 +111,18 @@ class UpdateJobStatusResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusUpdateReason;
-  bool m_statusUpdateReasonHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusUpdateReasonHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

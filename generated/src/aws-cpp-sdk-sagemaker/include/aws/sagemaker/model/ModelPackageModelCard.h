@@ -90,9 +90,9 @@ class ModelPackageModelCard {
   ///@}
  private:
   Aws::String m_modelCardContent;
-  bool m_modelCardContentHasBeenSet = false;
 
   ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
+  bool m_modelCardContentHasBeenSet = false;
   bool m_modelCardStatusHasBeenSet = false;
 };
 

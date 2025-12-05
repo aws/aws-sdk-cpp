@@ -367,48 +367,48 @@ class AwsEcsTaskDefinitionDetails {
   ///@}
  private:
   Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsDetails> m_containerDefinitions;
-  bool m_containerDefinitionsHasBeenSet = false;
 
   Aws::String m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskDefinitionInferenceAcceleratorsDetails> m_inferenceAccelerators;
-  bool m_inferenceAcceleratorsHasBeenSet = false;
 
   Aws::String m_ipcMode;
-  bool m_ipcModeHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   Aws::String m_networkMode;
-  bool m_networkModeHasBeenSet = false;
 
   Aws::String m_pidMode;
-  bool m_pidModeHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskDefinitionPlacementConstraintsDetails> m_placementConstraints;
-  bool m_placementConstraintsHasBeenSet = false;
 
   AwsEcsTaskDefinitionProxyConfigurationDetails m_proxyConfiguration;
-  bool m_proxyConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requiresCompatibilities;
-  bool m_requiresCompatibilitiesHasBeenSet = false;
 
   Aws::String m_taskRoleArn;
-  bool m_taskRoleArnHasBeenSet = false;
 
   Aws::Vector<AwsEcsTaskDefinitionVolumesDetails> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_containerDefinitionsHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_familyHasBeenSet = false;
+  bool m_inferenceAcceleratorsHasBeenSet = false;
+  bool m_ipcModeHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_networkModeHasBeenSet = false;
+  bool m_pidModeHasBeenSet = false;
+  bool m_placementConstraintsHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
+  bool m_requiresCompatibilitiesHasBeenSet = false;
+  bool m_taskRoleArnHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

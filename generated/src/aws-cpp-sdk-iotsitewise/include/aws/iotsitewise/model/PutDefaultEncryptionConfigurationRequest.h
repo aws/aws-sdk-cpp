@@ -65,9 +65,9 @@ class PutDefaultEncryptionConfigurationRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

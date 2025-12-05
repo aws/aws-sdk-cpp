@@ -60,9 +60,9 @@ class UpdateAgreementResult {
   ///@}
  private:
   Aws::String m_agreementId;
-  bool m_agreementIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agreementIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

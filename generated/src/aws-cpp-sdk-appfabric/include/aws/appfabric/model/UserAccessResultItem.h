@@ -254,39 +254,39 @@ class UserAccessResultItem {
   ///@}
  private:
   Aws::String m_app;
-  bool m_appHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_tenantDisplayName;
-  bool m_tenantDisplayNameHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   ResultStatus m_resultStatus{ResultStatus::NOT_SET};
-  bool m_resultStatusHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_userFullName;
-  bool m_userFullNameHasBeenSet = false;
 
   Aws::String m_userFirstName;
-  bool m_userFirstNameHasBeenSet = false;
 
   Aws::String m_userLastName;
-  bool m_userLastNameHasBeenSet = false;
 
   Aws::String m_userStatus;
-  bool m_userStatusHasBeenSet = false;
 
   TaskError m_taskError;
+  bool m_appHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_tenantDisplayNameHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_resultStatusHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userFullNameHasBeenSet = false;
+  bool m_userFirstNameHasBeenSet = false;
+  bool m_userLastNameHasBeenSet = false;
+  bool m_userStatusHasBeenSet = false;
   bool m_taskErrorHasBeenSet = false;
 };
 

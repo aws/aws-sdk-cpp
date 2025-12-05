@@ -83,12 +83,12 @@ class ResponseTimeRootCauseEntity {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_coverage{0.0};
-  bool m_coverageHasBeenSet = false;
 
   bool m_remote{false};
+  bool m_nameHasBeenSet = false;
+  bool m_coverageHasBeenSet = false;
   bool m_remoteHasBeenSet = false;
 };
 

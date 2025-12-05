@@ -106,15 +106,15 @@ class ParameterDateTimePickerControl {
   ///@}
  private:
   Aws::String m_parameterControlId;
-  bool m_parameterControlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_sourceParameterName;
-  bool m_sourceParameterNameHasBeenSet = false;
 
   DateTimePickerControlDisplayOptions m_displayOptions;
+  bool m_parameterControlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceParameterNameHasBeenSet = false;
   bool m_displayOptionsHasBeenSet = false;
 };
 

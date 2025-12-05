@@ -104,12 +104,12 @@ class CreateObservabilityConfigurationRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_observabilityConfigurationName;
-  bool m_observabilityConfigurationNameHasBeenSet = false;
 
   TraceConfiguration m_traceConfiguration;
-  bool m_traceConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_observabilityConfigurationNameHasBeenSet = false;
+  bool m_traceConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

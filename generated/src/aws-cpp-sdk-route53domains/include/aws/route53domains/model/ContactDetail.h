@@ -307,45 +307,45 @@ class ContactDetail {
   ///@}
  private:
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   ContactType m_contactType{ContactType::NOT_SET};
-  bool m_contactTypeHasBeenSet = false;
 
   Aws::String m_organizationName;
-  bool m_organizationNameHasBeenSet = false;
 
   Aws::String m_addressLine1;
-  bool m_addressLine1HasBeenSet = false;
 
   Aws::String m_addressLine2;
-  bool m_addressLine2HasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   CountryCode m_countryCode{CountryCode::NOT_SET};
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_zipCode;
-  bool m_zipCodeHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_fax;
-  bool m_faxHasBeenSet = false;
 
   Aws::Vector<ExtraParam> m_extraParams;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_contactTypeHasBeenSet = false;
+  bool m_organizationNameHasBeenSet = false;
+  bool m_addressLine1HasBeenSet = false;
+  bool m_addressLine2HasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
+  bool m_zipCodeHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_faxHasBeenSet = false;
   bool m_extraParamsHasBeenSet = false;
 };
 

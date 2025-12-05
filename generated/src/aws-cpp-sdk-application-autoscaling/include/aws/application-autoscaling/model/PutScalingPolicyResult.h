@@ -84,12 +84,12 @@ class PutScalingPolicyResult {
   ///@}
  private:
   Aws::String m_policyARN;
-  bool m_policyARNHasBeenSet = false;
 
   Aws::Vector<Alarm> m_alarms;
-  bool m_alarmsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyARNHasBeenSet = false;
+  bool m_alarmsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

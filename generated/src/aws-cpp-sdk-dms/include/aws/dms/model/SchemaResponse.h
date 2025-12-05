@@ -194,30 +194,30 @@ class SchemaResponse {
   ///@}
  private:
   long long m_codeLineCount{0};
-  bool m_codeLineCountHasBeenSet = false;
 
   long long m_codeSize{0};
-  bool m_codeSizeHasBeenSet = false;
 
   Aws::String m_complexity;
-  bool m_complexityHasBeenSet = false;
 
   ServerShortInfoResponse m_server;
-  bool m_serverHasBeenSet = false;
 
   DatabaseShortInfoResponse m_databaseInstance;
-  bool m_databaseInstanceHasBeenSet = false;
 
   Aws::String m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   SchemaShortInfoResponse m_originalSchema;
-  bool m_originalSchemaHasBeenSet = false;
 
   double m_similarity{0.0};
+  bool m_codeLineCountHasBeenSet = false;
+  bool m_codeSizeHasBeenSet = false;
+  bool m_complexityHasBeenSet = false;
+  bool m_serverHasBeenSet = false;
+  bool m_databaseInstanceHasBeenSet = false;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_originalSchemaHasBeenSet = false;
   bool m_similarityHasBeenSet = false;
 };
 

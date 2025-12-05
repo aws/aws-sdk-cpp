@@ -77,12 +77,12 @@ class PredictQAppResult {
   ///@}
  private:
   PredictAppDefinition m_app;
-  bool m_appHasBeenSet = false;
 
   Aws::String m_problemStatement;
-  bool m_problemStatementHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appHasBeenSet = false;
+  bool m_problemStatementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

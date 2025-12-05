@@ -96,15 +96,15 @@ class TelephonyChannelSubtypeConfig {
   ///@}
  private:
   double m_capacity{0.0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::String m_connectQueueId;
-  bool m_connectQueueIdHasBeenSet = false;
 
   TelephonyOutboundMode m_outboundMode;
-  bool m_outboundModeHasBeenSet = false;
 
   TelephonyOutboundConfig m_defaultOutboundConfig;
+  bool m_capacityHasBeenSet = false;
+  bool m_connectQueueIdHasBeenSet = false;
+  bool m_outboundModeHasBeenSet = false;
   bool m_defaultOutboundConfigHasBeenSet = false;
 };
 

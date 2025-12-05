@@ -160,21 +160,21 @@ class ValidateTemplateResult {
   ///@}
  private:
   Aws::Vector<TemplateParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::String m_capabilitiesReason;
-  bool m_capabilitiesReasonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_declaredTransforms;
-  bool m_declaredTransformsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_parametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_capabilitiesReasonHasBeenSet = false;
+  bool m_declaredTransformsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

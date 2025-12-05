@@ -77,12 +77,12 @@ class GetConnectionResult {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   ConnectionDetails m_connectionDetails;
-  bool m_connectionDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_connectionDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

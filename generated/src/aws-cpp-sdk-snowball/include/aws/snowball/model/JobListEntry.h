@@ -163,24 +163,24 @@ class JobListEntry {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobState m_jobState{JobState::NOT_SET};
-  bool m_jobStateHasBeenSet = false;
 
   bool m_isMaster{false};
-  bool m_isMasterHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   SnowballType m_snowballType{SnowballType::NOT_SET};
-  bool m_snowballTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobStateHasBeenSet = false;
+  bool m_isMasterHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_snowballTypeHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateCapacityReservationResponse {
   ///@}
  private:
   CapacityReservation m_capacityReservation;
-  bool m_capacityReservationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityReservationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

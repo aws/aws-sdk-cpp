@@ -113,15 +113,15 @@ class UpdateLogLevelsByResourceTypesRequest : public IoTWirelessRequest {
   ///@}
  private:
   LogLevel m_defaultLogLevel{LogLevel::NOT_SET};
-  bool m_defaultLogLevelHasBeenSet = false;
 
   Aws::Vector<FuotaTaskLogOption> m_fuotaTaskLogOptions;
-  bool m_fuotaTaskLogOptionsHasBeenSet = false;
 
   Aws::Vector<WirelessDeviceLogOption> m_wirelessDeviceLogOptions;
-  bool m_wirelessDeviceLogOptionsHasBeenSet = false;
 
   Aws::Vector<WirelessGatewayLogOption> m_wirelessGatewayLogOptions;
+  bool m_defaultLogLevelHasBeenSet = false;
+  bool m_fuotaTaskLogOptionsHasBeenSet = false;
+  bool m_wirelessDeviceLogOptionsHasBeenSet = false;
   bool m_wirelessGatewayLogOptionsHasBeenSet = false;
 };
 

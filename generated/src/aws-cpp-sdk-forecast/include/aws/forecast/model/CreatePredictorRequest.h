@@ -390,48 +390,48 @@ class CreatePredictorRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_predictorName;
-  bool m_predictorNameHasBeenSet = false;
 
   Aws::String m_algorithmArn;
-  bool m_algorithmArnHasBeenSet = false;
 
   int m_forecastHorizon{0};
-  bool m_forecastHorizonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastTypes;
-  bool m_forecastTypesHasBeenSet = false;
 
   bool m_performAutoML{false};
-  bool m_performAutoMLHasBeenSet = false;
 
   AutoMLOverrideStrategy m_autoMLOverrideStrategy{AutoMLOverrideStrategy::NOT_SET};
-  bool m_autoMLOverrideStrategyHasBeenSet = false;
 
   bool m_performHPO{false};
-  bool m_performHPOHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_trainingParameters;
-  bool m_trainingParametersHasBeenSet = false;
 
   EvaluationParameters m_evaluationParameters;
-  bool m_evaluationParametersHasBeenSet = false;
 
   HyperParameterTuningJobConfig m_hPOConfig;
-  bool m_hPOConfigHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   FeaturizationConfig m_featurizationConfig;
-  bool m_featurizationConfigHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
+  bool m_predictorNameHasBeenSet = false;
+  bool m_algorithmArnHasBeenSet = false;
+  bool m_forecastHorizonHasBeenSet = false;
+  bool m_forecastTypesHasBeenSet = false;
+  bool m_performAutoMLHasBeenSet = false;
+  bool m_autoMLOverrideStrategyHasBeenSet = false;
+  bool m_performHPOHasBeenSet = false;
+  bool m_trainingParametersHasBeenSet = false;
+  bool m_evaluationParametersHasBeenSet = false;
+  bool m_hPOConfigHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_featurizationConfigHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_optimizationMetricHasBeenSet = false;
 };
 

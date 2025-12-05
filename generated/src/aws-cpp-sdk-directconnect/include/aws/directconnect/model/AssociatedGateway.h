@@ -104,15 +104,15 @@ class AssociatedGateway {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   GatewayType m_type{GatewayType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

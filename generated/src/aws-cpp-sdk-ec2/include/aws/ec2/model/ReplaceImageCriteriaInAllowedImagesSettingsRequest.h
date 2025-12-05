@@ -79,9 +79,9 @@ class ReplaceImageCriteriaInAllowedImagesSettingsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<ImageCriterionRequest> m_imageCriteria;
-  bool m_imageCriteriaHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_imageCriteriaHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class DeleteConnectionRequest : public IoTDataPlaneRequest {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   bool m_cleanSession{false};
-  bool m_cleanSessionHasBeenSet = false;
 
   bool m_preventWillMessage{false};
+  bool m_clientIdHasBeenSet = false;
+  bool m_cleanSessionHasBeenSet = false;
   bool m_preventWillMessageHasBeenSet = false;
 };
 

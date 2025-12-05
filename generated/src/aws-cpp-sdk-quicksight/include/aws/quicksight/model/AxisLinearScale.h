@@ -63,9 +63,9 @@ class AxisLinearScale {
   ///@}
  private:
   int m_stepCount{0};
-  bool m_stepCountHasBeenSet = false;
 
   double m_stepSize{0.0};
+  bool m_stepCountHasBeenSet = false;
   bool m_stepSizeHasBeenSet = false;
 };
 

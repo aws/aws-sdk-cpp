@@ -60,9 +60,9 @@ class DescribeOfferingResult {
   ///@}
  private:
   Offering m_offering;
-  bool m_offeringHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_offeringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

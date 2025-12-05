@@ -406,54 +406,54 @@ class CreateJobRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_documentSource;
-  bool m_documentSourceHasBeenSet = false;
 
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PresignedUrlConfig m_presignedUrlConfig;
-  bool m_presignedUrlConfigHasBeenSet = false;
 
   TargetSelection m_targetSelection{TargetSelection::NOT_SET};
-  bool m_targetSelectionHasBeenSet = false;
 
   JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
   AbortConfig m_abortConfig;
-  bool m_abortConfigHasBeenSet = false;
 
   TimeoutConfig m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   Aws::String m_jobTemplateArn;
-  bool m_jobTemplateArnHasBeenSet = false;
 
   JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-  bool m_jobExecutionsRetryConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_documentParameters;
-  bool m_documentParametersHasBeenSet = false;
 
   SchedulingConfig m_schedulingConfig;
-  bool m_schedulingConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationPackageVersions;
+  bool m_jobIdHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_documentSourceHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_presignedUrlConfigHasBeenSet = false;
+  bool m_targetSelectionHasBeenSet = false;
+  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_abortConfigHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
+  bool m_jobTemplateArnHasBeenSet = false;
+  bool m_jobExecutionsRetryConfigHasBeenSet = false;
+  bool m_documentParametersHasBeenSet = false;
+  bool m_schedulingConfigHasBeenSet = false;
   bool m_destinationPackageVersionsHasBeenSet = false;
 };
 

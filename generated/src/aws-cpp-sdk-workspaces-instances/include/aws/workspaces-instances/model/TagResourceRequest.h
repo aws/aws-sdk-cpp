@@ -78,9 +78,9 @@ class TagResourceRequest : public WorkspacesInstancesRequest {
   ///@}
  private:
   Aws::String m_workspaceInstanceId;
-  bool m_workspaceInstanceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_workspaceInstanceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

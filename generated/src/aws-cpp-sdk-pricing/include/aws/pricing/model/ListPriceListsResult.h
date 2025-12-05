@@ -84,12 +84,12 @@ class ListPriceListsResult {
   ///@}
  private:
   Aws::Vector<PriceList> m_priceLists;
-  bool m_priceListsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_priceListsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class IntegrationIdentifier {
   ///@}
  private:
   CustomerProfilesIntegrationIdentifier m_customerProfiles;
-  bool m_customerProfilesHasBeenSet = false;
 
   QConnectIntegrationIdentifier m_qConnect;
-  bool m_qConnectHasBeenSet = false;
 
   LambdaIntegrationIdentifier m_lambda;
+  bool m_customerProfilesHasBeenSet = false;
+  bool m_qConnectHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class CreateActivationResult {
   ///@}
  private:
   Aws::String m_activationId;
-  bool m_activationIdHasBeenSet = false;
 
   Aws::String m_activationCode;
-  bool m_activationCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_activationIdHasBeenSet = false;
+  bool m_activationCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

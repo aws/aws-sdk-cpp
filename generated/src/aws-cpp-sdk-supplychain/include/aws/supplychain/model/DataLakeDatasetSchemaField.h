@@ -83,12 +83,12 @@ class DataLakeDatasetSchemaField {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataLakeDatasetSchemaFieldType m_type{DataLakeDatasetSchemaFieldType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   bool m_isRequired{false};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_isRequiredHasBeenSet = false;
 };
 

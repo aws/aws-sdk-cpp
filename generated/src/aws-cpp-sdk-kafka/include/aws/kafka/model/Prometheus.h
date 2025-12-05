@@ -77,9 +77,9 @@ class Prometheus {
   ///@}
  private:
   JmxExporter m_jmxExporter;
-  bool m_jmxExporterHasBeenSet = false;
 
   NodeExporter m_nodeExporter;
+  bool m_jmxExporterHasBeenSet = false;
   bool m_nodeExporterHasBeenSet = false;
 };
 

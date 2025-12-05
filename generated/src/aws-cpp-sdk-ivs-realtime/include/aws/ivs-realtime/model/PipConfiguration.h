@@ -240,36 +240,36 @@ class PipConfiguration {
   ///@}
  private:
   Aws::String m_featuredParticipantAttribute;
-  bool m_featuredParticipantAttributeHasBeenSet = false;
 
   bool m_omitStoppedVideo{false};
-  bool m_omitStoppedVideoHasBeenSet = false;
 
   VideoFillMode m_videoFillMode{VideoFillMode::NOT_SET};
-  bool m_videoFillModeHasBeenSet = false;
 
   int m_gridGap{0};
-  bool m_gridGapHasBeenSet = false;
 
   Aws::String m_pipParticipantAttribute;
-  bool m_pipParticipantAttributeHasBeenSet = false;
 
   PipBehavior m_pipBehavior{PipBehavior::NOT_SET};
-  bool m_pipBehaviorHasBeenSet = false;
 
   int m_pipOffset{0};
-  bool m_pipOffsetHasBeenSet = false;
 
   PipPosition m_pipPosition{PipPosition::NOT_SET};
-  bool m_pipPositionHasBeenSet = false;
 
   int m_pipWidth{0};
-  bool m_pipWidthHasBeenSet = false;
 
   int m_pipHeight{0};
-  bool m_pipHeightHasBeenSet = false;
 
   Aws::String m_participantOrderAttribute;
+  bool m_featuredParticipantAttributeHasBeenSet = false;
+  bool m_omitStoppedVideoHasBeenSet = false;
+  bool m_videoFillModeHasBeenSet = false;
+  bool m_gridGapHasBeenSet = false;
+  bool m_pipParticipantAttributeHasBeenSet = false;
+  bool m_pipBehaviorHasBeenSet = false;
+  bool m_pipOffsetHasBeenSet = false;
+  bool m_pipPositionHasBeenSet = false;
+  bool m_pipWidthHasBeenSet = false;
+  bool m_pipHeightHasBeenSet = false;
   bool m_participantOrderAttributeHasBeenSet = false;
 };
 

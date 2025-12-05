@@ -123,18 +123,18 @@ class GetWhatsAppMessageMediaRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_mediaId;
-  bool m_mediaIdHasBeenSet = false;
 
   Aws::String m_originationPhoneNumberId;
-  bool m_originationPhoneNumberIdHasBeenSet = false;
 
   bool m_metadataOnly{false};
-  bool m_metadataOnlyHasBeenSet = false;
 
   S3PresignedUrl m_destinationS3PresignedUrl;
-  bool m_destinationS3PresignedUrlHasBeenSet = false;
 
   S3File m_destinationS3File;
+  bool m_mediaIdHasBeenSet = false;
+  bool m_originationPhoneNumberIdHasBeenSet = false;
+  bool m_metadataOnlyHasBeenSet = false;
+  bool m_destinationS3PresignedUrlHasBeenSet = false;
   bool m_destinationS3FileHasBeenSet = false;
 };
 

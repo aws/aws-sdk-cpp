@@ -84,12 +84,12 @@ class GetWorkUnitResultsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   long long m_workUnitId{0};
-  bool m_workUnitIdHasBeenSet = false;
 
   Aws::String m_workUnitToken;
+  bool m_queryIdHasBeenSet = false;
+  bool m_workUnitIdHasBeenSet = false;
   bool m_workUnitTokenHasBeenSet = false;
 };
 

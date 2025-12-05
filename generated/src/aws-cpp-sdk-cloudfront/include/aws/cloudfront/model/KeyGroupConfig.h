@@ -97,12 +97,12 @@ class KeyGroupConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_nameHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

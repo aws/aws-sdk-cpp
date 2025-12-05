@@ -90,12 +90,12 @@ class ListCACertificatesResult {
   ///@}
  private:
   Aws::Vector<CACertificate> m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificatesHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

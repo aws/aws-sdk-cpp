@@ -76,9 +76,9 @@ class CreateProjectFromProjectProfilePolicyGrantDetail {
   ///@}
  private:
   bool m_includeChildDomainUnits{false};
-  bool m_includeChildDomainUnitsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_projectProfiles;
+  bool m_includeChildDomainUnitsHasBeenSet = false;
   bool m_projectProfilesHasBeenSet = false;
 };
 

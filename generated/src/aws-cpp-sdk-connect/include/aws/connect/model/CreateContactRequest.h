@@ -335,45 +335,45 @@ class CreateContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Reference> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Channel m_channel{Channel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   ContactInitiationMethod m_initiationMethod{ContactInitiationMethod::NOT_SET};
-  bool m_initiationMethodHasBeenSet = false;
 
   int m_expiryDurationInMinutes{0};
-  bool m_expiryDurationInMinutesHasBeenSet = false;
 
   UserInfo m_userInfo;
-  bool m_userInfoHasBeenSet = false;
 
   InitiateAs m_initiateAs{InitiateAs::NOT_SET};
-  bool m_initiateAsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   Aws::String m_previousContactId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_initiationMethodHasBeenSet = false;
+  bool m_expiryDurationInMinutesHasBeenSet = false;
+  bool m_userInfoHasBeenSet = false;
+  bool m_initiateAsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
   bool m_previousContactIdHasBeenSet = false;
 };
 

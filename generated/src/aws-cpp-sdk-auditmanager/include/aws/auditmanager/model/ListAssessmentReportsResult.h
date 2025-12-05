@@ -85,12 +85,12 @@ class ListAssessmentReportsResult {
   ///@}
  private:
   Aws::Vector<AssessmentReportMetadata> m_assessmentReports;
-  bool m_assessmentReportsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentReportsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

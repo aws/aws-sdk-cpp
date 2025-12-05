@@ -69,9 +69,9 @@ class MessageData {
   ///@}
  private:
   TextMessage m_text;
-  bool m_textHasBeenSet = false;
 
   ToolUseResultData m_toolUseResult;
+  bool m_textHasBeenSet = false;
   bool m_toolUseResultHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ServiceLimitExceeded {
   ///@}
  private:
   ServiceLimit m_limit{ServiceLimit::NOT_SET};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_limitHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

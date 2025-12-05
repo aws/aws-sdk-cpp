@@ -87,12 +87,12 @@ class EwsAvailabilityProvider {
   ///@}
  private:
   Aws::String m_ewsEndpoint;
-  bool m_ewsEndpointHasBeenSet = false;
 
   Aws::String m_ewsUsername;
-  bool m_ewsUsernameHasBeenSet = false;
 
   Aws::String m_ewsPassword;
+  bool m_ewsEndpointHasBeenSet = false;
+  bool m_ewsUsernameHasBeenSet = false;
   bool m_ewsPasswordHasBeenSet = false;
 };
 

@@ -138,21 +138,21 @@ class DashboardVersionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_sourceEntityArn;
-  bool m_sourceEntityArnHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceEntityArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

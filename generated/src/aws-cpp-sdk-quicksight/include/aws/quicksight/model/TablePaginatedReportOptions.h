@@ -65,9 +65,9 @@ class TablePaginatedReportOptions {
   ///@}
  private:
   Visibility m_verticalOverflowVisibility{Visibility::NOT_SET};
-  bool m_verticalOverflowVisibilityHasBeenSet = false;
 
   Visibility m_overflowColumnHeaderVisibility{Visibility::NOT_SET};
+  bool m_verticalOverflowVisibilityHasBeenSet = false;
   bool m_overflowColumnHeaderVisibilityHasBeenSet = false;
 };
 

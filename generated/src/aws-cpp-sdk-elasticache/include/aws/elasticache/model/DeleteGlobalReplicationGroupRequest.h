@@ -68,9 +68,9 @@ class DeleteGlobalReplicationGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   bool m_retainPrimaryReplicationGroup{false};
+  bool m_globalReplicationGroupIdHasBeenSet = false;
   bool m_retainPrimaryReplicationGroupHasBeenSet = false;
 };
 

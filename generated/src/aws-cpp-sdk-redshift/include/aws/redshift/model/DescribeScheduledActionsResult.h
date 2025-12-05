@@ -90,12 +90,12 @@ class DescribeScheduledActionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ScheduledAction> m_scheduledActions;
-  bool m_scheduledActionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_scheduledActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

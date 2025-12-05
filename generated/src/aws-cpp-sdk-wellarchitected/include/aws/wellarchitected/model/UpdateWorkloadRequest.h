@@ -361,57 +361,57 @@ class UpdateWorkloadRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkloadEnvironment m_environment{WorkloadEnvironment::NOT_SET};
-  bool m_environmentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsRegions;
-  bool m_awsRegionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nonAwsRegions;
-  bool m_nonAwsRegionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pillarPriorities;
-  bool m_pillarPrioritiesHasBeenSet = false;
 
   Aws::String m_architecturalDesign;
-  bool m_architecturalDesignHasBeenSet = false;
 
   Aws::String m_reviewOwner;
-  bool m_reviewOwnerHasBeenSet = false;
 
   bool m_isReviewOwnerUpdateAcknowledged{false};
-  bool m_isReviewOwnerUpdateAcknowledgedHasBeenSet = false;
 
   Aws::String m_industryType;
-  bool m_industryTypeHasBeenSet = false;
 
   Aws::String m_industry;
-  bool m_industryHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   WorkloadImprovementStatus m_improvementStatus{WorkloadImprovementStatus::NOT_SET};
-  bool m_improvementStatusHasBeenSet = false;
 
   WorkloadDiscoveryConfig m_discoveryConfig;
-  bool m_discoveryConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   WorkloadJiraConfigurationInput m_jiraConfiguration;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_awsRegionsHasBeenSet = false;
+  bool m_nonAwsRegionsHasBeenSet = false;
+  bool m_pillarPrioritiesHasBeenSet = false;
+  bool m_architecturalDesignHasBeenSet = false;
+  bool m_reviewOwnerHasBeenSet = false;
+  bool m_isReviewOwnerUpdateAcknowledgedHasBeenSet = false;
+  bool m_industryTypeHasBeenSet = false;
+  bool m_industryHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_improvementStatusHasBeenSet = false;
+  bool m_discoveryConfigHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
   bool m_jiraConfigurationHasBeenSet = false;
 };
 

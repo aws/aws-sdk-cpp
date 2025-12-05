@@ -132,15 +132,15 @@ class ValidStorageOptions {
   ///@}
  private:
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::Vector<Range> m_storageSize;
-  bool m_storageSizeHasBeenSet = false;
 
   Aws::Vector<Range> m_provisionedIops;
-  bool m_provisionedIopsHasBeenSet = false;
 
   Aws::Vector<DoubleRange> m_iopsToStorageRatio;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_storageSizeHasBeenSet = false;
+  bool m_provisionedIopsHasBeenSet = false;
   bool m_iopsToStorageRatioHasBeenSet = false;
 };
 

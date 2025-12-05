@@ -73,9 +73,9 @@ class UpdateCellRequest : public Route53RecoveryReadinessRequest {
   ///@}
  private:
   Aws::String m_cellName;
-  bool m_cellNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cells;
+  bool m_cellNameHasBeenSet = false;
   bool m_cellsHasBeenSet = false;
 };
 

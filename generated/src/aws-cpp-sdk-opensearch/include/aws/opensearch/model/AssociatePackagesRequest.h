@@ -72,9 +72,9 @@ class AssociatePackagesRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::Vector<PackageDetailsForAssociation> m_packageList;
-  bool m_packageListHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_packageListHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

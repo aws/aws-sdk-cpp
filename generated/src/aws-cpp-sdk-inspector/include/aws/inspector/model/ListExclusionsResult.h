@@ -86,12 +86,12 @@ class ListExclusionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_exclusionArns;
-  bool m_exclusionArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exclusionArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

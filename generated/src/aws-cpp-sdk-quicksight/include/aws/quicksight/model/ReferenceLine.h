@@ -107,15 +107,15 @@ class ReferenceLine {
   ///@}
  private:
   WidgetStatus m_status{WidgetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ReferenceLineDataConfiguration m_dataConfiguration;
-  bool m_dataConfigurationHasBeenSet = false;
 
   ReferenceLineStyleConfiguration m_styleConfiguration;
-  bool m_styleConfigurationHasBeenSet = false;
 
   ReferenceLineLabelConfiguration m_labelConfiguration;
+  bool m_statusHasBeenSet = false;
+  bool m_dataConfigurationHasBeenSet = false;
+  bool m_styleConfigurationHasBeenSet = false;
   bool m_labelConfigurationHasBeenSet = false;
 };
 

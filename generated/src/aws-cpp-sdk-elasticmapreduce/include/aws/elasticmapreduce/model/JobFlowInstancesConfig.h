@@ -417,57 +417,57 @@ class JobFlowInstancesConfig {
   ///@}
  private:
   Aws::String m_masterInstanceType;
-  bool m_masterInstanceTypeHasBeenSet = false;
 
   Aws::String m_slaveInstanceType;
-  bool m_slaveInstanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Vector<InstanceGroupConfig> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   Aws::Vector<InstanceFleetConfig> m_instanceFleets;
-  bool m_instanceFleetsHasBeenSet = false;
 
   Aws::String m_ec2KeyName;
-  bool m_ec2KeyNameHasBeenSet = false;
 
   PlacementType m_placement;
-  bool m_placementHasBeenSet = false;
 
   bool m_keepJobFlowAliveWhenNoSteps{false};
-  bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
 
   bool m_terminationProtected{false};
-  bool m_terminationProtectedHasBeenSet = false;
 
   bool m_unhealthyNodeReplacement{false};
-  bool m_unhealthyNodeReplacementHasBeenSet = false;
 
   Aws::String m_hadoopVersion;
-  bool m_hadoopVersionHasBeenSet = false;
 
   Aws::String m_ec2SubnetId;
-  bool m_ec2SubnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ec2SubnetIds;
-  bool m_ec2SubnetIdsHasBeenSet = false;
 
   Aws::String m_emrManagedMasterSecurityGroup;
-  bool m_emrManagedMasterSecurityGroupHasBeenSet = false;
 
   Aws::String m_emrManagedSlaveSecurityGroup;
-  bool m_emrManagedSlaveSecurityGroupHasBeenSet = false;
 
   Aws::String m_serviceAccessSecurityGroup;
-  bool m_serviceAccessSecurityGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalMasterSecurityGroups;
-  bool m_additionalMasterSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalSlaveSecurityGroups;
+  bool m_masterInstanceTypeHasBeenSet = false;
+  bool m_slaveInstanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_instanceFleetsHasBeenSet = false;
+  bool m_ec2KeyNameHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
+  bool m_terminationProtectedHasBeenSet = false;
+  bool m_unhealthyNodeReplacementHasBeenSet = false;
+  bool m_hadoopVersionHasBeenSet = false;
+  bool m_ec2SubnetIdHasBeenSet = false;
+  bool m_ec2SubnetIdsHasBeenSet = false;
+  bool m_emrManagedMasterSecurityGroupHasBeenSet = false;
+  bool m_emrManagedSlaveSecurityGroupHasBeenSet = false;
+  bool m_serviceAccessSecurityGroupHasBeenSet = false;
+  bool m_additionalMasterSecurityGroupsHasBeenSet = false;
   bool m_additionalSlaveSecurityGroupsHasBeenSet = false;
 };
 

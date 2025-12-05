@@ -60,9 +60,9 @@ class GetAccessPolicyResult {
   ///@}
  private:
   AccessPolicyDetail m_accessPolicyDetail;
-  bool m_accessPolicyDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessPolicyDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

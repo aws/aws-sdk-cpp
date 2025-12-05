@@ -122,18 +122,18 @@ class DescribeFlowSourceMetadataResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::Vector<MessageDetail> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   TransportMediaInfo m_transportMediaInfo;
-  bool m_transportMediaInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_transportMediaInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -295,45 +295,45 @@ class FreeFormLayoutElement {
   ///@}
  private:
   Aws::String m_elementId;
-  bool m_elementIdHasBeenSet = false;
 
   LayoutElementType m_elementType{LayoutElementType::NOT_SET};
-  bool m_elementTypeHasBeenSet = false;
 
   Aws::String m_xAxisLocation;
-  bool m_xAxisLocationHasBeenSet = false;
 
   Aws::String m_yAxisLocation;
-  bool m_yAxisLocationHasBeenSet = false;
 
   Aws::String m_width;
-  bool m_widthHasBeenSet = false;
 
   Aws::String m_height;
-  bool m_heightHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::Vector<SheetElementRenderingRule> m_renderingRules;
-  bool m_renderingRulesHasBeenSet = false;
 
   FreeFormLayoutElementBorderStyle m_borderStyle;
-  bool m_borderStyleHasBeenSet = false;
 
   FreeFormLayoutElementBorderStyle m_selectedBorderStyle;
-  bool m_selectedBorderStyleHasBeenSet = false;
 
   FreeFormLayoutElementBackgroundStyle m_backgroundStyle;
-  bool m_backgroundStyleHasBeenSet = false;
 
   LoadingAnimation m_loadingAnimation;
-  bool m_loadingAnimationHasBeenSet = false;
 
   Aws::String m_borderRadius;
-  bool m_borderRadiusHasBeenSet = false;
 
   Aws::String m_padding;
+  bool m_elementIdHasBeenSet = false;
+  bool m_elementTypeHasBeenSet = false;
+  bool m_xAxisLocationHasBeenSet = false;
+  bool m_yAxisLocationHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_renderingRulesHasBeenSet = false;
+  bool m_borderStyleHasBeenSet = false;
+  bool m_selectedBorderStyleHasBeenSet = false;
+  bool m_backgroundStyleHasBeenSet = false;
+  bool m_loadingAnimationHasBeenSet = false;
+  bool m_borderRadiusHasBeenSet = false;
   bool m_paddingHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class GetReadinessCheckResourceStatusResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Readiness m_readiness{Readiness::NOT_SET};
-  bool m_readinessHasBeenSet = false;
 
   Aws::Vector<RuleResult> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_readinessHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

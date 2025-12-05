@@ -60,9 +60,9 @@ class DisableProfileResult {
   ///@}
  private:
   ProfileDetail m_profile;
-  bool m_profileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

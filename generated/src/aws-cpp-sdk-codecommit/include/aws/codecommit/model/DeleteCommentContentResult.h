@@ -60,9 +60,9 @@ class DeleteCommentContentResult {
   ///@}
  private:
   Comment m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

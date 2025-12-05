@@ -150,21 +150,21 @@ class UpdateMessageTemplateRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   MessageTemplateContentProvider m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   MessageTemplateSourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   MessageTemplateAttributes m_defaultAttributes;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
   bool m_defaultAttributesHasBeenSet = false;
 };
 

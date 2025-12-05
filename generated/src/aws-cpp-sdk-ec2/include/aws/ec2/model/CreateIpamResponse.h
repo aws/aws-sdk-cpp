@@ -60,9 +60,9 @@ class CreateIpamResponse {
   ///@}
  private:
   Ipam m_ipam;
-  bool m_ipamHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

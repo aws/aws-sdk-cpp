@@ -164,24 +164,24 @@ class CampaignUpdateSummary {
   ///@}
  private:
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   int m_minProvisionedTPS{0};
-  bool m_minProvisionedTPSHasBeenSet = false;
 
   CampaignConfig m_campaignConfig;
-  bool m_campaignConfigHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_minProvisionedTPSHasBeenSet = false;
+  bool m_campaignConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

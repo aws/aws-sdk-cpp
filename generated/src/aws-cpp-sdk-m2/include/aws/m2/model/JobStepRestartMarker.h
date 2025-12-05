@@ -139,21 +139,21 @@ class JobStepRestartMarker {
   ///@}
  private:
   Aws::String m_fromProcStep;
-  bool m_fromProcStepHasBeenSet = false;
 
   Aws::String m_fromStep;
-  bool m_fromStepHasBeenSet = false;
 
   bool m_skip{false};
-  bool m_skipHasBeenSet = false;
 
   int m_stepCheckpoint{0};
-  bool m_stepCheckpointHasBeenSet = false;
 
   Aws::String m_toProcStep;
-  bool m_toProcStepHasBeenSet = false;
 
   Aws::String m_toStep;
+  bool m_fromProcStepHasBeenSet = false;
+  bool m_fromStepHasBeenSet = false;
+  bool m_skipHasBeenSet = false;
+  bool m_stepCheckpointHasBeenSet = false;
+  bool m_toProcStepHasBeenSet = false;
   bool m_toStepHasBeenSet = false;
 };
 

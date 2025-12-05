@@ -109,15 +109,15 @@ class UpdateHubContentReferenceRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   Aws::String m_hubContentName;
-  bool m_hubContentNameHasBeenSet = false;
 
   HubContentType m_hubContentType{HubContentType::NOT_SET};
-  bool m_hubContentTypeHasBeenSet = false;
 
   Aws::String m_minVersion;
+  bool m_hubNameHasBeenSet = false;
+  bool m_hubContentNameHasBeenSet = false;
+  bool m_hubContentTypeHasBeenSet = false;
   bool m_minVersionHasBeenSet = false;
 };
 

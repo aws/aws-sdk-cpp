@@ -137,21 +137,21 @@ class UpdatePricingRuleRequest : public BillingConductorRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PricingRuleType m_type{PricingRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_modifierPercentage{0.0};
-  bool m_modifierPercentageHasBeenSet = false;
 
   UpdateTieringInput m_tiering;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_modifierPercentageHasBeenSet = false;
   bool m_tieringHasBeenSet = false;
 };
 

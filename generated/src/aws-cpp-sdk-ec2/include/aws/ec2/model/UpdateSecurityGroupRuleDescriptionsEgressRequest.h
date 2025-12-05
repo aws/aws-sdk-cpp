@@ -146,18 +146,18 @@ class UpdateSecurityGroupRuleDescriptionsEgressRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_ipPermissions;
-  bool m_ipPermissionsHasBeenSet = false;
 
   Aws::Vector<SecurityGroupRuleDescription> m_securityGroupRuleDescriptions;
+  bool m_dryRunHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_ipPermissionsHasBeenSet = false;
   bool m_securityGroupRuleDescriptionsHasBeenSet = false;
 };
 

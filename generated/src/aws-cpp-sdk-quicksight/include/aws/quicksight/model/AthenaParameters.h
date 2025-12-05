@@ -95,12 +95,12 @@ class AthenaParameters {
   ///@}
  private:
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   IdentityCenterConfiguration m_identityCenterConfiguration;
+  bool m_workGroupHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;
 };
 

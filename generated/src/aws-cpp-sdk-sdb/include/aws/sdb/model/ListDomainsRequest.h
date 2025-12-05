@@ -68,9 +68,9 @@ class ListDomainsRequest : public SimpleDBRequest {
   ///@}
  private:
   int m_maxNumberOfDomains{0};
-  bool m_maxNumberOfDomainsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_maxNumberOfDomainsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

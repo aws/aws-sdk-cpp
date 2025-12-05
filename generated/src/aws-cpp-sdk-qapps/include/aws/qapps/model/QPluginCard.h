@@ -182,27 +182,27 @@ class QPluginCard {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependencies;
-  bool m_dependenciesHasBeenSet = false;
 
   CardType m_type{CardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_prompt;
-  bool m_promptHasBeenSet = false;
 
   PluginType m_pluginType{PluginType::NOT_SET};
-  bool m_pluginTypeHasBeenSet = false;
 
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   Aws::String m_actionIdentifier;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_dependenciesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_promptHasBeenSet = false;
+  bool m_pluginTypeHasBeenSet = false;
+  bool m_pluginIdHasBeenSet = false;
   bool m_actionIdentifierHasBeenSet = false;
 };
 

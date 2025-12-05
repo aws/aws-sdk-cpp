@@ -87,12 +87,12 @@ class ModelVersionEvaluation {
   ///@}
  private:
   Aws::String m_outputVariableName;
-  bool m_outputVariableNameHasBeenSet = false;
 
   Aws::String m_evaluationScore;
-  bool m_evaluationScoreHasBeenSet = false;
 
   PredictionExplanations m_predictionExplanations;
+  bool m_outputVariableNameHasBeenSet = false;
+  bool m_evaluationScoreHasBeenSet = false;
   bool m_predictionExplanationsHasBeenSet = false;
 };
 

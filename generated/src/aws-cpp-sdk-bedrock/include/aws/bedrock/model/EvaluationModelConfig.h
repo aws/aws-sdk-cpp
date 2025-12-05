@@ -72,9 +72,9 @@ class EvaluationModelConfig {
   ///@}
  private:
   EvaluationBedrockModel m_bedrockModel;
-  bool m_bedrockModelHasBeenSet = false;
 
   EvaluationPrecomputedInferenceSource m_precomputedInferenceSource;
+  bool m_bedrockModelHasBeenSet = false;
   bool m_precomputedInferenceSourceHasBeenSet = false;
 };
 

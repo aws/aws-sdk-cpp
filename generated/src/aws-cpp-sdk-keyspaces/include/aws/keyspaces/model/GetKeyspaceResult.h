@@ -143,21 +143,21 @@ class GetKeyspaceResult {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Rs m_replicationStrategy{Rs::NOT_SET};
-  bool m_replicationStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicationRegions;
-  bool m_replicationRegionsHasBeenSet = false;
 
   Aws::Vector<ReplicationGroupStatus> m_replicationGroupStatuses;
-  bool m_replicationGroupStatusesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_replicationStrategyHasBeenSet = false;
+  bool m_replicationRegionsHasBeenSet = false;
+  bool m_replicationGroupStatusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

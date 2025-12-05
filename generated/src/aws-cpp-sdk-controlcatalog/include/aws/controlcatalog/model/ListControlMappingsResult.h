@@ -84,12 +84,12 @@ class ListControlMappingsResult {
   ///@}
  private:
   Aws::Vector<ControlMapping> m_controlMappings;
-  bool m_controlMappingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlMappingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -105,12 +105,12 @@ class SimpleScalingPolicyConfiguration {
   ///@}
  private:
   AdjustmentType m_adjustmentType{AdjustmentType::NOT_SET};
-  bool m_adjustmentTypeHasBeenSet = false;
 
   int m_scalingAdjustment{0};
-  bool m_scalingAdjustmentHasBeenSet = false;
 
   int m_coolDown{0};
+  bool m_adjustmentTypeHasBeenSet = false;
+  bool m_scalingAdjustmentHasBeenSet = false;
   bool m_coolDownHasBeenSet = false;
 };
 

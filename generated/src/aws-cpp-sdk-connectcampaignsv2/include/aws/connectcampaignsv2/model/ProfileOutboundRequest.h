@@ -81,12 +81,12 @@ class ProfileOutboundRequest {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
+  bool m_clientTokenHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;
 };
 

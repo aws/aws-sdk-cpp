@@ -283,36 +283,36 @@ class CreateAuthorizerRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_authorizerCredentialsArn;
-  bool m_authorizerCredentialsArnHasBeenSet = false;
 
   Aws::String m_authorizerPayloadFormatVersion;
-  bool m_authorizerPayloadFormatVersionHasBeenSet = false;
 
   int m_authorizerResultTtlInSeconds{0};
-  bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
   AuthorizerType m_authorizerType{AuthorizerType::NOT_SET};
-  bool m_authorizerTypeHasBeenSet = false;
 
   Aws::String m_authorizerUri;
-  bool m_authorizerUriHasBeenSet = false;
 
   bool m_enableSimpleResponses{false};
-  bool m_enableSimpleResponsesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_identitySource;
-  bool m_identitySourceHasBeenSet = false;
 
   Aws::String m_identityValidationExpression;
-  bool m_identityValidationExpressionHasBeenSet = false;
 
   JWTConfiguration m_jwtConfiguration;
-  bool m_jwtConfigurationHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_apiIdHasBeenSet = false;
+  bool m_authorizerCredentialsArnHasBeenSet = false;
+  bool m_authorizerPayloadFormatVersionHasBeenSet = false;
+  bool m_authorizerResultTtlInSecondsHasBeenSet = false;
+  bool m_authorizerTypeHasBeenSet = false;
+  bool m_authorizerUriHasBeenSet = false;
+  bool m_enableSimpleResponsesHasBeenSet = false;
+  bool m_identitySourceHasBeenSet = false;
+  bool m_identityValidationExpressionHasBeenSet = false;
+  bool m_jwtConfigurationHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

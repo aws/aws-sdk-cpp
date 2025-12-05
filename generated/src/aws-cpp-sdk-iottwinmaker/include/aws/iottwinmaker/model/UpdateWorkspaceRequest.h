@@ -102,15 +102,15 @@ class UpdateWorkspaceRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_s3Location;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

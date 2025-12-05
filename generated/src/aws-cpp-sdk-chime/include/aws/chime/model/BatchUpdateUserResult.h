@@ -69,9 +69,9 @@ class BatchUpdateUserResult {
   ///@}
  private:
   Aws::Vector<UserError> m_userErrors;
-  bool m_userErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

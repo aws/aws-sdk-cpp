@@ -108,15 +108,15 @@ class OAuthParameters {
   ///@}
  private:
   Aws::String m_tokenProviderUrl;
-  bool m_tokenProviderUrlHasBeenSet = false;
 
   Aws::String m_oAuthScope;
-  bool m_oAuthScopeHasBeenSet = false;
 
   VpcConnectionProperties m_identityProviderVpcConnectionProperties;
-  bool m_identityProviderVpcConnectionPropertiesHasBeenSet = false;
 
   Aws::String m_identityProviderResourceUri;
+  bool m_tokenProviderUrlHasBeenSet = false;
+  bool m_oAuthScopeHasBeenSet = false;
+  bool m_identityProviderVpcConnectionPropertiesHasBeenSet = false;
   bool m_identityProviderResourceUriHasBeenSet = false;
 };
 

@@ -213,33 +213,33 @@ class UpdateAddress {
   ///@}
  private:
   Aws::String m_address1;
-  bool m_address1HasBeenSet = false;
 
   Aws::String m_address2;
-  bool m_address2HasBeenSet = false;
 
   Aws::String m_address3;
-  bool m_address3HasBeenSet = false;
 
   Aws::String m_address4;
-  bool m_address4HasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_county;
-  bool m_countyHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_province;
-  bool m_provinceHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_postalCode;
+  bool m_address1HasBeenSet = false;
+  bool m_address2HasBeenSet = false;
+  bool m_address3HasBeenSet = false;
+  bool m_address4HasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_countyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_provinceHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
   bool m_postalCodeHasBeenSet = false;
 };
 

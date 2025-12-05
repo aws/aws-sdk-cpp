@@ -158,27 +158,27 @@ class JobProgressReport {
   ///@}
  private:
   long long m_totalNumberOfScannedFiles{0};
-  bool m_totalNumberOfScannedFilesHasBeenSet = false;
 
   double m_totalSizeOfScannedFilesInMB{0.0};
-  bool m_totalSizeOfScannedFilesInMBHasBeenSet = false;
 
   long long m_totalNumberOfImportedFiles{0};
-  bool m_totalNumberOfImportedFilesHasBeenSet = false;
 
   long long m_totalNumberOfResourcesScanned{0};
-  bool m_totalNumberOfResourcesScannedHasBeenSet = false;
 
   long long m_totalNumberOfResourcesImported{0};
-  bool m_totalNumberOfResourcesImportedHasBeenSet = false;
 
   long long m_totalNumberOfResourcesWithCustomerError{0};
-  bool m_totalNumberOfResourcesWithCustomerErrorHasBeenSet = false;
 
   long long m_totalNumberOfFilesReadWithCustomerError{0};
-  bool m_totalNumberOfFilesReadWithCustomerErrorHasBeenSet = false;
 
   double m_throughput{0.0};
+  bool m_totalNumberOfScannedFilesHasBeenSet = false;
+  bool m_totalSizeOfScannedFilesInMBHasBeenSet = false;
+  bool m_totalNumberOfImportedFilesHasBeenSet = false;
+  bool m_totalNumberOfResourcesScannedHasBeenSet = false;
+  bool m_totalNumberOfResourcesImportedHasBeenSet = false;
+  bool m_totalNumberOfResourcesWithCustomerErrorHasBeenSet = false;
+  bool m_totalNumberOfFilesReadWithCustomerErrorHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
 };
 

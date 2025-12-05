@@ -85,12 +85,12 @@ class ListAIGuardrailsResult {
   ///@}
  private:
   Aws::Vector<AIGuardrailSummary> m_aiGuardrailSummaries;
-  bool m_aiGuardrailSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiGuardrailSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -130,18 +130,18 @@ class TextOutputEvent {
   ///@}
  private:
   SystemMessageType m_systemMessageType{SystemMessageType::NOT_SET};
-  bool m_systemMessageTypeHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_userMessageId;
-  bool m_userMessageIdHasBeenSet = false;
 
   Aws::String m_systemMessageId;
-  bool m_systemMessageIdHasBeenSet = false;
 
   Aws::String m_systemMessage;
+  bool m_systemMessageTypeHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_userMessageIdHasBeenSet = false;
+  bool m_systemMessageIdHasBeenSet = false;
   bool m_systemMessageHasBeenSet = false;
 };
 

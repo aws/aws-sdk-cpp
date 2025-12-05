@@ -69,9 +69,9 @@ class DataLakeLifecycleTransition {
   ///@}
  private:
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   Aws::String m_storageClass;
+  bool m_daysHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;
 };
 

@@ -163,21 +163,21 @@ class MetricTransformation {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_metricNamespace;
-  bool m_metricNamespaceHasBeenSet = false;
 
   Aws::String m_metricValue;
-  bool m_metricValueHasBeenSet = false;
 
   double m_defaultValue{0.0};
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
+  bool m_metricNameHasBeenSet = false;
+  bool m_metricNamespaceHasBeenSet = false;
+  bool m_metricValueHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

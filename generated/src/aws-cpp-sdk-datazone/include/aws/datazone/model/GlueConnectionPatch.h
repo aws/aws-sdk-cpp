@@ -95,12 +95,12 @@ class GlueConnectionPatch {
   ///@}
  private:
   AuthenticationConfigurationPatch m_authenticationConfiguration;
-  bool m_authenticationConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_connectionProperties;
-  bool m_connectionPropertiesHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_authenticationConfigurationHasBeenSet = false;
+  bool m_connectionPropertiesHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

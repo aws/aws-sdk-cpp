@@ -75,9 +75,9 @@ class EngagementContextPayload {
   ///@}
  private:
   CustomerProjectsContext m_customerProject;
-  bool m_customerProjectHasBeenSet = false;
 
   LeadContext m_lead;
+  bool m_customerProjectHasBeenSet = false;
   bool m_leadHasBeenSet = false;
 };
 

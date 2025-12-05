@@ -71,9 +71,9 @@ class PlayerLatencyPolicy {
   ///@}
  private:
   int m_maximumIndividualPlayerLatencyMilliseconds{0};
-  bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = false;
 
   int m_policyDurationSeconds{0};
+  bool m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = false;
   bool m_policyDurationSecondsHasBeenSet = false;
 };
 

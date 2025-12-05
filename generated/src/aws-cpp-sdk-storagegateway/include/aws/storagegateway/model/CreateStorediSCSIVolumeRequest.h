@@ -232,30 +232,30 @@ class CreateStorediSCSIVolumeRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_diskId;
-  bool m_diskIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   bool m_preserveExistingData{false};
-  bool m_preserveExistingDataHasBeenSet = false;
 
   Aws::String m_targetName;
-  bool m_targetNameHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   bool m_kMSEncrypted{false};
-  bool m_kMSEncryptedHasBeenSet = false;
 
   Aws::String m_kMSKey;
-  bool m_kMSKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_diskIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_preserveExistingDataHasBeenSet = false;
+  bool m_targetNameHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_kMSEncryptedHasBeenSet = false;
+  bool m_kMSKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

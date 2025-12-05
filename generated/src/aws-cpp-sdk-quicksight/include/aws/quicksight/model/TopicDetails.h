@@ -131,18 +131,18 @@ class TopicDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TopicUserExperienceVersion m_userExperienceVersion{TopicUserExperienceVersion::NOT_SET};
-  bool m_userExperienceVersionHasBeenSet = false;
 
   Aws::Vector<DatasetMetadata> m_dataSets;
-  bool m_dataSetsHasBeenSet = false;
 
   TopicConfigOptions m_configOptions;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_userExperienceVersionHasBeenSet = false;
+  bool m_dataSetsHasBeenSet = false;
   bool m_configOptionsHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ResourcesListItem {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

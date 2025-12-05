@@ -89,9 +89,9 @@ class OriginRequestPolicyQueryStringsConfig {
   ///@}
  private:
   OriginRequestPolicyQueryStringBehavior m_queryStringBehavior{OriginRequestPolicyQueryStringBehavior::NOT_SET};
-  bool m_queryStringBehaviorHasBeenSet = false;
 
   QueryStringNames m_queryStrings;
+  bool m_queryStringBehaviorHasBeenSet = false;
   bool m_queryStringsHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class StartAttachmentUploadResult {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   UploadMetadata m_uploadMetadata;
-  bool m_uploadMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_uploadMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

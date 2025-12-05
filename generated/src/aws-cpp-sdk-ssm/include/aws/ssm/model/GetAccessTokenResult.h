@@ -77,12 +77,12 @@ class GetAccessTokenResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   AccessRequestStatus m_accessRequestStatus{AccessRequestStatus::NOT_SET};
-  bool m_accessRequestStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_credentialsHasBeenSet = false;
+  bool m_accessRequestStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

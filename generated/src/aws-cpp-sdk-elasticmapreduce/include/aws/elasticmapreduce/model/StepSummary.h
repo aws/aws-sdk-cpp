@@ -162,24 +162,24 @@ class StepSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   HadoopStepConfig m_config;
-  bool m_configHasBeenSet = false;
 
   ActionOnFailure m_actionOnFailure{ActionOnFailure::NOT_SET};
-  bool m_actionOnFailureHasBeenSet = false;
 
   StepStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configHasBeenSet = false;
+  bool m_actionOnFailureHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_logUriHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
 };
 

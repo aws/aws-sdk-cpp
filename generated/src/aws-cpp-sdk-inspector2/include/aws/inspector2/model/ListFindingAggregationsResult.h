@@ -103,15 +103,15 @@ class ListFindingAggregationsResult {
   ///@}
  private:
   AggregationType m_aggregationType{AggregationType::NOT_SET};
-  bool m_aggregationTypeHasBeenSet = false;
 
   Aws::Vector<AggregationResponse> m_responses;
-  bool m_responsesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregationTypeHasBeenSet = false;
+  bool m_responsesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

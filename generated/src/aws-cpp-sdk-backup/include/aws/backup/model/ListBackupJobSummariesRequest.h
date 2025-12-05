@@ -193,24 +193,24 @@ class ListBackupJobSummariesRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   BackupJobStatus m_state{BackupJobStatus::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_messageCategory;
-  bool m_messageCategoryHasBeenSet = false;
 
   AggregationPeriod m_aggregationPeriod{AggregationPeriod::NOT_SET};
-  bool m_aggregationPeriodHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_accountIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_messageCategoryHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

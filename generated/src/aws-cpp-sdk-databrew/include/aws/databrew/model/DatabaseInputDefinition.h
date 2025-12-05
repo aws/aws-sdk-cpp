@@ -106,15 +106,15 @@ class DatabaseInputDefinition {
   ///@}
  private:
   Aws::String m_glueConnectionName;
-  bool m_glueConnectionNameHasBeenSet = false;
 
   Aws::String m_databaseTableName;
-  bool m_databaseTableNameHasBeenSet = false;
 
   S3Location m_tempDirectory;
-  bool m_tempDirectoryHasBeenSet = false;
 
   Aws::String m_queryString;
+  bool m_glueConnectionNameHasBeenSet = false;
+  bool m_databaseTableNameHasBeenSet = false;
+  bool m_tempDirectoryHasBeenSet = false;
   bool m_queryStringHasBeenSet = false;
 };
 

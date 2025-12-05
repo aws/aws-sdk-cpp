@@ -204,33 +204,33 @@ class GraphSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   GraphStatus m_status{GraphStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_provisionedMemory{0};
-  bool m_provisionedMemoryHasBeenSet = false;
 
   bool m_publicConnectivity{false};
-  bool m_publicConnectivityHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   int m_replicaCount{0};
-  bool m_replicaCountHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   bool m_deletionProtection{false};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_publicConnectivityHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_replicaCountHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
 };
 

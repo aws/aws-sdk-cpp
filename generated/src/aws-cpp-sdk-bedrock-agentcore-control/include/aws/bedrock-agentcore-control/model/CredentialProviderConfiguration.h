@@ -70,9 +70,9 @@ class CredentialProviderConfiguration {
   ///@}
  private:
   CredentialProviderType m_credentialProviderType{CredentialProviderType::NOT_SET};
-  bool m_credentialProviderTypeHasBeenSet = false;
 
   CredentialProvider m_credentialProvider;
+  bool m_credentialProviderTypeHasBeenSet = false;
   bool m_credentialProviderHasBeenSet = false;
 };
 

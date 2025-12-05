@@ -84,12 +84,12 @@ class ConflictException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ConflictExceptionReason m_reason{ConflictExceptionReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_zonalShiftId;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_zonalShiftIdHasBeenSet = false;
 };
 

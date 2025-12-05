@@ -145,21 +145,21 @@ class ChannelSummary {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   ChannelStorageSummary m_channelStorage;
-  bool m_channelStorageHasBeenSet = false;
 
   ChannelStatus m_status{ChannelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastMessageArrivalTime{};
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelStorageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
   bool m_lastMessageArrivalTimeHasBeenSet = false;
 };
 

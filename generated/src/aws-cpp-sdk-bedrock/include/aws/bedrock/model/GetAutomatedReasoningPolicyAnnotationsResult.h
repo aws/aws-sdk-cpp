@@ -157,24 +157,24 @@ class GetAutomatedReasoningPolicyAnnotationsResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyAnnotation> m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   Aws::String m_annotationSetHash;
-  bool m_annotationSetHashHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
+  bool m_annotationSetHashHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

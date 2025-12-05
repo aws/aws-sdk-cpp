@@ -63,9 +63,9 @@ class RegisterTransitGatewayMulticastGroupSourcesResponse {
   ///@}
  private:
   TransitGatewayMulticastRegisteredGroupSources m_registeredMulticastGroupSources;
-  bool m_registeredMulticastGroupSourcesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_registeredMulticastGroupSourcesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

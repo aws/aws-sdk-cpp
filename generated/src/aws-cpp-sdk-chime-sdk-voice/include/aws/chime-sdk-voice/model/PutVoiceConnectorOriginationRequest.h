@@ -66,9 +66,9 @@ class PutVoiceConnectorOriginationRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Origination m_origination;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_originationHasBeenSet = false;
 };
 

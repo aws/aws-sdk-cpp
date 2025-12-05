@@ -58,9 +58,9 @@ class GetInAppMessagesResult {
   ///@}
  private:
   InAppMessagesResponse m_inAppMessagesResponse;
-  bool m_inAppMessagesResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inAppMessagesResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

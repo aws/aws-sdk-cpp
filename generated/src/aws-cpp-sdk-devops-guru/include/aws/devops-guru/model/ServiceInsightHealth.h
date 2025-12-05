@@ -62,9 +62,9 @@ class ServiceInsightHealth {
   ///@}
  private:
   int m_openProactiveInsights{0};
-  bool m_openProactiveInsightsHasBeenSet = false;
 
   int m_openReactiveInsights{0};
+  bool m_openProactiveInsightsHasBeenSet = false;
   bool m_openReactiveInsightsHasBeenSet = false;
 };
 

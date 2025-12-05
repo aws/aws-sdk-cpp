@@ -177,27 +177,27 @@ class SourceControlDetails {
   ///@}
  private:
   SourceControlProvider m_provider{SourceControlProvider::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_folder;
-  bool m_folderHasBeenSet = false;
 
   Aws::String m_lastCommitId;
-  bool m_lastCommitIdHasBeenSet = false;
 
   SourceControlAuthStrategy m_authStrategy{SourceControlAuthStrategy::NOT_SET};
-  bool m_authStrategyHasBeenSet = false;
 
   Aws::String m_authToken;
+  bool m_providerHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_branchHasBeenSet = false;
+  bool m_folderHasBeenSet = false;
+  bool m_lastCommitIdHasBeenSet = false;
+  bool m_authStrategyHasBeenSet = false;
   bool m_authTokenHasBeenSet = false;
 };
 

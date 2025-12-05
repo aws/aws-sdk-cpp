@@ -87,12 +87,12 @@ class DescribeFpgaImageAttributeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_fpgaImageId;
-  bool m_fpgaImageIdHasBeenSet = false;
 
   FpgaImageAttributeName m_attribute{FpgaImageAttributeName::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
+  bool m_fpgaImageIdHasBeenSet = false;
   bool m_attributeHasBeenSet = false;
 };
 

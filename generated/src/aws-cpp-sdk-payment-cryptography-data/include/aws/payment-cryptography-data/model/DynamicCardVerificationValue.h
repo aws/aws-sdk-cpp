@@ -107,15 +107,15 @@ class DynamicCardVerificationValue {
   ///@}
  private:
   Aws::String m_panSequenceNumber;
-  bool m_panSequenceNumberHasBeenSet = false;
 
   Aws::String m_cardExpiryDate;
-  bool m_cardExpiryDateHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_applicationTransactionCounter;
+  bool m_panSequenceNumberHasBeenSet = false;
+  bool m_cardExpiryDateHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
   bool m_applicationTransactionCounterHasBeenSet = false;
 };
 

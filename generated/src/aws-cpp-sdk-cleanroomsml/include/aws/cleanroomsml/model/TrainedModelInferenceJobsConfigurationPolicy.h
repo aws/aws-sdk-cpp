@@ -78,9 +78,9 @@ class TrainedModelInferenceJobsConfigurationPolicy {
   ///@}
  private:
   Aws::Vector<LogsConfigurationPolicy> m_containerLogs;
-  bool m_containerLogsHasBeenSet = false;
 
   TrainedModelInferenceMaxOutputSize m_maxOutputSize;
+  bool m_containerLogsHasBeenSet = false;
   bool m_maxOutputSizeHasBeenSet = false;
 };
 

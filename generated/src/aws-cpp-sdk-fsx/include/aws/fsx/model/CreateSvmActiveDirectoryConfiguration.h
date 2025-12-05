@@ -72,9 +72,9 @@ class CreateSvmActiveDirectoryConfiguration {
   ///@}
  private:
   Aws::String m_netBiosName;
-  bool m_netBiosNameHasBeenSet = false;
 
   SelfManagedActiveDirectoryConfiguration m_selfManagedActiveDirectoryConfiguration;
+  bool m_netBiosNameHasBeenSet = false;
   bool m_selfManagedActiveDirectoryConfigurationHasBeenSet = false;
 };
 

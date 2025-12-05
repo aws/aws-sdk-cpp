@@ -170,21 +170,21 @@ class ReceiptRule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   TlsPolicy m_tlsPolicy{TlsPolicy::NOT_SET};
-  bool m_tlsPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recipients;
-  bool m_recipientsHasBeenSet = false;
 
   Aws::Vector<ReceiptAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   bool m_scanEnabled{false};
+  bool m_nameHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_tlsPolicyHasBeenSet = false;
+  bool m_recipientsHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_scanEnabledHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListVpcIngressConnectionsResult {
   ///@}
  private:
   Aws::Vector<VpcIngressConnectionSummary> m_vpcIngressConnectionSummaryList;
-  bool m_vpcIngressConnectionSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcIngressConnectionSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

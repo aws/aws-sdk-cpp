@@ -93,12 +93,12 @@ class SelfManagedConfigurationInput {
   ///@}
  private:
   Aws::Vector<TriggerConditionInput> m_triggerConditions;
-  bool m_triggerConditionsHasBeenSet = false;
 
   InvocationConfigurationInput m_invocationConfiguration;
-  bool m_invocationConfigurationHasBeenSet = false;
 
   int m_historicalContextWindowSize{0};
+  bool m_triggerConditionsHasBeenSet = false;
+  bool m_invocationConfigurationHasBeenSet = false;
   bool m_historicalContextWindowSizeHasBeenSet = false;
 };
 

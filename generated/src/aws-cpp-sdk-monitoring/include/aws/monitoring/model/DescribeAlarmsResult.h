@@ -109,15 +109,15 @@ class DescribeAlarmsResult {
   ///@}
  private:
   Aws::Vector<CompositeAlarm> m_compositeAlarms;
-  bool m_compositeAlarmsHasBeenSet = false;
 
   Aws::Vector<MetricAlarm> m_metricAlarms;
-  bool m_metricAlarmsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_compositeAlarmsHasBeenSet = false;
+  bool m_metricAlarmsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

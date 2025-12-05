@@ -64,9 +64,9 @@ class DifferentialPrivacyPreviewParametersInput {
   ///@}
  private:
   int m_epsilon{0};
-  bool m_epsilonHasBeenSet = false;
 
   int m_usersNoisePerQuery{0};
+  bool m_epsilonHasBeenSet = false;
   bool m_usersNoisePerQueryHasBeenSet = false;
 };
 

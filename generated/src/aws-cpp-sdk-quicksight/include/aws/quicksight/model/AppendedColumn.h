@@ -69,9 +69,9 @@ class AppendedColumn {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::String m_newColumnId;
+  bool m_columnNameHasBeenSet = false;
   bool m_newColumnIdHasBeenSet = false;
 };
 

@@ -179,21 +179,21 @@ class UpdateStateTemplateRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stateTemplatePropertiesToAdd;
-  bool m_stateTemplatePropertiesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stateTemplatePropertiesToRemove;
-  bool m_stateTemplatePropertiesToRemoveHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataExtraDimensions;
-  bool m_dataExtraDimensionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metadataExtraDimensions;
+  bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateTemplatePropertiesToAddHasBeenSet = false;
+  bool m_stateTemplatePropertiesToRemoveHasBeenSet = false;
+  bool m_dataExtraDimensionsHasBeenSet = false;
   bool m_metadataExtraDimensionsHasBeenSet = false;
 };
 

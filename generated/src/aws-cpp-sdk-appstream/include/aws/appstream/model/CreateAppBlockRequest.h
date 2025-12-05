@@ -185,27 +185,27 @@ class CreateAppBlockRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   S3Location m_sourceS3Location;
-  bool m_sourceS3LocationHasBeenSet = false;
 
   ScriptDetails m_setupScriptDetails;
-  bool m_setupScriptDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ScriptDetails m_postSetupScriptDetails;
-  bool m_postSetupScriptDetailsHasBeenSet = false;
 
   PackagingType m_packagingType{PackagingType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_sourceS3LocationHasBeenSet = false;
+  bool m_setupScriptDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_postSetupScriptDetailsHasBeenSet = false;
   bool m_packagingTypeHasBeenSet = false;
 };
 

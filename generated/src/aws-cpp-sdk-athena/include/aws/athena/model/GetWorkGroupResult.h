@@ -60,9 +60,9 @@ class GetWorkGroupResult {
   ///@}
  private:
   WorkGroup m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class CodeRepositoryOnDemandScan {
   ///@}
  private:
   Aws::String m_lastScannedCommitId;
-  bool m_lastScannedCommitIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastScanAt{};
-  bool m_lastScanAtHasBeenSet = false;
 
   ScanStatus m_scanStatus;
+  bool m_lastScannedCommitIdHasBeenSet = false;
+  bool m_lastScanAtHasBeenSet = false;
   bool m_scanStatusHasBeenSet = false;
 };
 

@@ -207,30 +207,30 @@ class DiscoveredDeviceSummary {
   ///@}
  private:
   Aws::String m_connectorDeviceId;
-  bool m_connectorDeviceIdHasBeenSet = false;
 
   Aws::String m_connectorDeviceName;
-  bool m_connectorDeviceNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceTypes;
-  bool m_deviceTypesHasBeenSet = false;
 
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   DiscoveryModification m_modification{DiscoveryModification::NOT_SET};
-  bool m_modificationHasBeenSet = false;
 
   Aws::Utils::DateTime m_discoveredAt{};
-  bool m_discoveredAtHasBeenSet = false;
 
   Aws::String m_brand;
-  bool m_brandHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_authenticationMaterial;
+  bool m_connectorDeviceIdHasBeenSet = false;
+  bool m_connectorDeviceNameHasBeenSet = false;
+  bool m_deviceTypesHasBeenSet = false;
+  bool m_managedThingIdHasBeenSet = false;
+  bool m_modificationHasBeenSet = false;
+  bool m_discoveredAtHasBeenSet = false;
+  bool m_brandHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
   bool m_authenticationMaterialHasBeenSet = false;
 };
 

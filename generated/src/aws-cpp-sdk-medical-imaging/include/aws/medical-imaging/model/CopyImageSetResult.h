@@ -95,15 +95,15 @@ class CopyImageSetResult {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   CopySourceImageSetProperties m_sourceImageSetProperties;
-  bool m_sourceImageSetPropertiesHasBeenSet = false;
 
   CopyDestinationImageSetProperties m_destinationImageSetProperties;
-  bool m_destinationImageSetPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_sourceImageSetPropertiesHasBeenSet = false;
+  bool m_destinationImageSetPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

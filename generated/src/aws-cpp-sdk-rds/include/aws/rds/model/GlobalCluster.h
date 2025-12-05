@@ -309,45 +309,45 @@ class GlobalCluster {
   ///@}
  private:
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::String m_globalClusterResourceId;
-  bool m_globalClusterResourceIdHasBeenSet = false;
 
   Aws::String m_globalClusterArn;
-  bool m_globalClusterArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_engineLifecycleSupport;
-  bool m_engineLifecycleSupportHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::Vector<GlobalClusterMember> m_globalClusterMembers;
-  bool m_globalClusterMembersHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   FailoverState m_failoverState;
-  bool m_failoverStateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_globalClusterIdentifierHasBeenSet = false;
+  bool m_globalClusterResourceIdHasBeenSet = false;
+  bool m_globalClusterArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_globalClusterMembersHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_failoverStateHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

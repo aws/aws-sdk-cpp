@@ -68,9 +68,9 @@ class DeleteInterconnectResult {
   ///@}
  private:
   InterconnectState m_interconnectState{InterconnectState::NOT_SET};
-  bool m_interconnectStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_interconnectStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

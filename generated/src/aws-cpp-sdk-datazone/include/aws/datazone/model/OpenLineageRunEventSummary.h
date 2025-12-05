@@ -135,18 +135,18 @@ class OpenLineageRunEventSummary {
   ///@}
  private:
   OpenLineageRunState m_eventType{OpenLineageRunState::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Vector<NameIdentifier> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   NameIdentifier m_job;
-  bool m_jobHasBeenSet = false;
 
   Aws::Vector<NameIdentifier> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_jobHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class HierarchyGroups {
   ///@}
  private:
   AgentHierarchyGroup m_level1;
-  bool m_level1HasBeenSet = false;
 
   AgentHierarchyGroup m_level2;
-  bool m_level2HasBeenSet = false;
 
   AgentHierarchyGroup m_level3;
-  bool m_level3HasBeenSet = false;
 
   AgentHierarchyGroup m_level4;
-  bool m_level4HasBeenSet = false;
 
   AgentHierarchyGroup m_level5;
+  bool m_level1HasBeenSet = false;
+  bool m_level2HasBeenSet = false;
+  bool m_level3HasBeenSet = false;
+  bool m_level4HasBeenSet = false;
   bool m_level5HasBeenSet = false;
 };
 

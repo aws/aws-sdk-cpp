@@ -102,15 +102,15 @@ class WorkflowStepOutput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataType m_dataType{DataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   WorkflowStepOutputUnion m_value;
+  bool m_nameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

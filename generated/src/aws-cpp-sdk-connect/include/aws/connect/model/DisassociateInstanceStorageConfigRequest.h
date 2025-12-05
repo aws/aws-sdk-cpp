@@ -113,15 +113,15 @@ class DisassociateInstanceStorageConfigRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   InstanceStorageResourceType m_resourceType{InstanceStorageResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

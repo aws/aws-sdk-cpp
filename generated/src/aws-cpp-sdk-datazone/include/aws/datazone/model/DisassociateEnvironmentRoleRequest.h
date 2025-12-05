@@ -84,12 +84,12 @@ class DisassociateEnvironmentRoleRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_environmentRoleArn;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
   bool m_environmentRoleArnHasBeenSet = false;
 };
 

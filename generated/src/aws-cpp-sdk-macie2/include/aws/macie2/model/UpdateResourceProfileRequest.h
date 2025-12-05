@@ -72,9 +72,9 @@ class UpdateResourceProfileRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   int m_sensitivityScoreOverride{0};
+  bool m_resourceArnHasBeenSet = false;
   bool m_sensitivityScoreOverrideHasBeenSet = false;
 };
 

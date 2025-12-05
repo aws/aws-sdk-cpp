@@ -79,9 +79,9 @@ class EnumerationValue {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_synonyms;
+  bool m_valueHasBeenSet = false;
   bool m_synonymsHasBeenSet = false;
 };
 

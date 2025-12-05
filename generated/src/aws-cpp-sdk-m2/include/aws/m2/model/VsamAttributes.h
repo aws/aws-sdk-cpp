@@ -133,18 +133,18 @@ class VsamAttributes {
   ///@}
  private:
   Aws::Vector<AlternateKey> m_alternateKeys;
-  bool m_alternateKeysHasBeenSet = false;
 
   bool m_compressed{false};
-  bool m_compressedHasBeenSet = false;
 
   Aws::String m_encoding;
-  bool m_encodingHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   PrimaryKey m_primaryKey;
+  bool m_alternateKeysHasBeenSet = false;
+  bool m_compressedHasBeenSet = false;
+  bool m_encodingHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_primaryKeyHasBeenSet = false;
 };
 

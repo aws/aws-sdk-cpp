@@ -102,12 +102,12 @@ class NetworkInsightsAccessScopeContent {
   ///@}
  private:
   Aws::String m_networkInsightsAccessScopeId;
-  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
   Aws::Vector<AccessScopePath> m_matchPaths;
-  bool m_matchPathsHasBeenSet = false;
 
   Aws::Vector<AccessScopePath> m_excludePaths;
+  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
+  bool m_matchPathsHasBeenSet = false;
   bool m_excludePathsHasBeenSet = false;
 };
 

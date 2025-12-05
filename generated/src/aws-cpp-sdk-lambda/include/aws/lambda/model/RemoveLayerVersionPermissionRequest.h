@@ -105,15 +105,15 @@ class RemoveLayerVersionPermissionRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_layerName;
-  bool m_layerNameHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_layerNameHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_statementIdHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

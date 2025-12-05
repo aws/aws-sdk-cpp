@@ -91,12 +91,12 @@ class CloudFrontOriginAccessIdentity {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_s3CanonicalUserId;
-  bool m_s3CanonicalUserIdHasBeenSet = false;
 
   CloudFrontOriginAccessIdentityConfig m_cloudFrontOriginAccessIdentityConfig;
+  bool m_idHasBeenSet = false;
+  bool m_s3CanonicalUserIdHasBeenSet = false;
   bool m_cloudFrontOriginAccessIdentityConfigHasBeenSet = false;
 };
 

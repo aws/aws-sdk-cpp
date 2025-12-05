@@ -151,24 +151,24 @@ class GetMaintenanceWindowExecutionResult {
   ///@}
  private:
   Aws::String m_windowExecutionId;
-  bool m_windowExecutionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_taskIds;
-  bool m_taskIdsHasBeenSet = false;
 
   MaintenanceWindowExecutionStatus m_status{MaintenanceWindowExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowExecutionIdHasBeenSet = false;
+  bool m_taskIdsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class CacheSecurityGroupMembership {
   ///@}
  private:
   Aws::String m_cacheSecurityGroupName;
-  bool m_cacheSecurityGroupNameHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_cacheSecurityGroupNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

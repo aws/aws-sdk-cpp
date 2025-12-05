@@ -73,9 +73,9 @@ class AssociateSoftwareTokenRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_session;
+  bool m_accessTokenHasBeenSet = false;
   bool m_sessionHasBeenSet = false;
 };
 

@@ -383,60 +383,60 @@ class DescribeAssetBundleExportJobResult {
   ///@}
  private:
   AssetBundleExportJobStatus m_jobStatus{AssetBundleExportJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_downloadUrl;
-  bool m_downloadUrlHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_assetBundleExportJobId;
-  bool m_assetBundleExportJobIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   bool m_includeAllDependencies{false};
-  bool m_includeAllDependenciesHasBeenSet = false;
 
   AssetBundleExportFormat m_exportFormat{AssetBundleExportFormat::NOT_SET};
-  bool m_exportFormatHasBeenSet = false;
 
   AssetBundleCloudFormationOverridePropertyConfiguration m_cloudFormationOverridePropertyConfiguration;
-  bool m_cloudFormationOverridePropertyConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   bool m_includePermissions{false};
-  bool m_includePermissionsHasBeenSet = false;
 
   bool m_includeTags{false};
-  bool m_includeTagsHasBeenSet = false;
 
   AssetBundleExportJobValidationStrategy m_validationStrategy;
-  bool m_validationStrategyHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobWarning> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   bool m_includeFolderMemberships{false};
-  bool m_includeFolderMembershipsHasBeenSet = false;
 
   IncludeFolderMembers m_includeFolderMembers{IncludeFolderMembers::NOT_SET};
+  bool m_jobStatusHasBeenSet = false;
+  bool m_downloadUrlHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_assetBundleExportJobIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_includeAllDependenciesHasBeenSet = false;
+  bool m_exportFormatHasBeenSet = false;
+  bool m_cloudFormationOverridePropertyConfigurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_includePermissionsHasBeenSet = false;
+  bool m_includeTagsHasBeenSet = false;
+  bool m_validationStrategyHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
+  bool m_includeFolderMembershipsHasBeenSet = false;
   bool m_includeFolderMembersHasBeenSet = false;
 };
 

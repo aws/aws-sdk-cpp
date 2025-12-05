@@ -86,9 +86,9 @@ class ConfigurationItem {
   ///@}
  private:
   CognitoUserPoolConfigurationItem m_cognitoUserPoolConfiguration;
-  bool m_cognitoUserPoolConfigurationHasBeenSet = false;
 
   OpenIdConnectConfigurationItem m_openIdConnectConfiguration;
+  bool m_cognitoUserPoolConfigurationHasBeenSet = false;
   bool m_openIdConnectConfigurationHasBeenSet = false;
 };
 

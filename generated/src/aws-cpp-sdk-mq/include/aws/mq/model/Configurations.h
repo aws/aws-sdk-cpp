@@ -93,12 +93,12 @@ class Configurations {
   ///@}
  private:
   ConfigurationId m_current;
-  bool m_currentHasBeenSet = false;
 
   Aws::Vector<ConfigurationId> m_history;
-  bool m_historyHasBeenSet = false;
 
   ConfigurationId m_pending;
+  bool m_currentHasBeenSet = false;
+  bool m_historyHasBeenSet = false;
   bool m_pendingHasBeenSet = false;
 };
 

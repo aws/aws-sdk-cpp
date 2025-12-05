@@ -72,9 +72,9 @@ class VectorSearchRerankingConfiguration {
   ///@}
  private:
   VectorSearchRerankingConfigurationType m_type{VectorSearchRerankingConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   VectorSearchBedrockRerankingConfiguration m_bedrockRerankingConfiguration;
+  bool m_typeHasBeenSet = false;
   bool m_bedrockRerankingConfigurationHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class VisualReferenceOutput {
   ///@}
  private:
   Aws::Vector<BaseScreenshot> m_baseScreenshots;
-  bool m_baseScreenshotsHasBeenSet = false;
 
   Aws::String m_baseCanaryRunId;
-  bool m_baseCanaryRunIdHasBeenSet = false;
 
   BrowserType m_browserType{BrowserType::NOT_SET};
+  bool m_baseScreenshotsHasBeenSet = false;
+  bool m_baseCanaryRunIdHasBeenSet = false;
   bool m_browserTypeHasBeenSet = false;
 };
 

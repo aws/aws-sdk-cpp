@@ -454,69 +454,69 @@ class SetSourceRequest {
   ///@}
  private:
   Encryption m_decryption;
-  bool m_decryptionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_entitlementArn;
-  bool m_entitlementArnHasBeenSet = false;
 
   int m_ingestPort{0};
-  bool m_ingestPortHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_maxLatency{0};
-  bool m_maxLatencyHasBeenSet = false;
 
   int m_maxSyncBuffer{0};
-  bool m_maxSyncBufferHasBeenSet = false;
 
   Aws::Vector<MediaStreamSourceConfigurationRequest> m_mediaStreamSourceConfigurations;
-  bool m_mediaStreamSourceConfigurationsHasBeenSet = false;
 
   int m_minLatency{0};
-  bool m_minLatencyHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_senderControlPort{0};
-  bool m_senderControlPortHasBeenSet = false;
 
   Aws::String m_senderIpAddress;
-  bool m_senderIpAddressHasBeenSet = false;
 
   Aws::String m_sourceListenerAddress;
-  bool m_sourceListenerAddressHasBeenSet = false;
 
   int m_sourceListenerPort{0};
-  bool m_sourceListenerPortHasBeenSet = false;
 
   Aws::String m_streamId;
-  bool m_streamIdHasBeenSet = false;
 
   Aws::String m_vpcInterfaceName;
-  bool m_vpcInterfaceNameHasBeenSet = false;
 
   Aws::String m_whitelistCidr;
-  bool m_whitelistCidrHasBeenSet = false;
 
   SetGatewayBridgeSourceRequest m_gatewayBridgeSource;
-  bool m_gatewayBridgeSourceHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sourceTags;
-  bool m_sourceTagsHasBeenSet = false;
 
   State m_routerIntegrationState{State::NOT_SET};
-  bool m_routerIntegrationStateHasBeenSet = false;
 
   FlowTransitEncryption m_routerIntegrationTransitDecryption;
+  bool m_decryptionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_entitlementArnHasBeenSet = false;
+  bool m_ingestPortHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_maxLatencyHasBeenSet = false;
+  bool m_maxSyncBufferHasBeenSet = false;
+  bool m_mediaStreamSourceConfigurationsHasBeenSet = false;
+  bool m_minLatencyHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_senderControlPortHasBeenSet = false;
+  bool m_senderIpAddressHasBeenSet = false;
+  bool m_sourceListenerAddressHasBeenSet = false;
+  bool m_sourceListenerPortHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
+  bool m_vpcInterfaceNameHasBeenSet = false;
+  bool m_whitelistCidrHasBeenSet = false;
+  bool m_gatewayBridgeSourceHasBeenSet = false;
+  bool m_sourceTagsHasBeenSet = false;
+  bool m_routerIntegrationStateHasBeenSet = false;
   bool m_routerIntegrationTransitDecryptionHasBeenSet = false;
 };
 

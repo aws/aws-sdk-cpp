@@ -149,18 +149,18 @@ class UserDataFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_queues;
-  bool m_queuesHasBeenSet = false;
 
   ContactFilter m_contactFilter;
-  bool m_contactFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routingProfiles;
-  bool m_routingProfilesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agents;
-  bool m_agentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userHierarchyGroups;
+  bool m_queuesHasBeenSet = false;
+  bool m_contactFilterHasBeenSet = false;
+  bool m_routingProfilesHasBeenSet = false;
+  bool m_agentsHasBeenSet = false;
   bool m_userHierarchyGroupsHasBeenSet = false;
 };
 

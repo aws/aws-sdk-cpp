@@ -93,12 +93,12 @@ class RedshiftQueryEngineStorageConfiguration {
   ///@}
  private:
   RedshiftQueryEngineStorageType m_type{RedshiftQueryEngineStorageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RedshiftQueryEngineAwsDataCatalogStorageConfiguration m_awsDataCatalogConfiguration;
-  bool m_awsDataCatalogConfigurationHasBeenSet = false;
 
   RedshiftQueryEngineRedshiftStorageConfiguration m_redshiftConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_awsDataCatalogConfigurationHasBeenSet = false;
   bool m_redshiftConfigurationHasBeenSet = false;
 };
 

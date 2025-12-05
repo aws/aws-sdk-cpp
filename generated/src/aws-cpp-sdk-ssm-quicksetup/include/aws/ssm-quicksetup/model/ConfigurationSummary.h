@@ -230,33 +230,33 @@ class ConfigurationSummary {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_configurationDefinitionId;
-  bool m_configurationDefinitionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_firstClassParameters;
-  bool m_firstClassParametersHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_managerArn;
-  bool m_managerArnHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<StatusSummary> m_statusSummaries;
-  bool m_statusSummariesHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeVersion;
+  bool m_accountHasBeenSet = false;
+  bool m_configurationDefinitionIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_firstClassParametersHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_managerArnHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_statusSummariesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_typeVersionHasBeenSet = false;
 };
 

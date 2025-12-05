@@ -388,51 +388,51 @@ class ResolverEndpoint {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   ResolverEndpointDirection m_direction{ResolverEndpointDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   int m_ipAddressCount{0};
-  bool m_ipAddressCountHasBeenSet = false;
 
   Aws::String m_hostVPCId;
-  bool m_hostVPCIdHasBeenSet = false;
 
   ResolverEndpointStatus m_status{ResolverEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_modificationTime;
-  bool m_modificationTimeHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_preferredInstanceType;
-  bool m_preferredInstanceTypeHasBeenSet = false;
 
   ResolverEndpointType m_resolverEndpointType{ResolverEndpointType::NOT_SET};
-  bool m_resolverEndpointTypeHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
+  bool m_idHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
+  bool m_ipAddressCountHasBeenSet = false;
+  bool m_hostVPCIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_preferredInstanceTypeHasBeenSet = false;
+  bool m_resolverEndpointTypeHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
 };
 

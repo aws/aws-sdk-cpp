@@ -241,33 +241,33 @@ class CreateCachediSCSIVolumeRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   long long m_volumeSizeInBytes{0};
-  bool m_volumeSizeInBytesHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_targetName;
-  bool m_targetNameHasBeenSet = false;
 
   Aws::String m_sourceVolumeARN;
-  bool m_sourceVolumeARNHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   bool m_kMSEncrypted{false};
-  bool m_kMSEncryptedHasBeenSet = false;
 
   Aws::String m_kMSKey;
-  bool m_kMSKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_volumeSizeInBytesHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_targetNameHasBeenSet = false;
+  bool m_sourceVolumeARNHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_kMSEncryptedHasBeenSet = false;
+  bool m_kMSKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class UserAccount {
   ///@}
  private:
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_uidHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

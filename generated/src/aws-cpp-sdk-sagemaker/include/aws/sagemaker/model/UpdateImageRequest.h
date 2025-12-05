@@ -130,18 +130,18 @@ class UpdateImageRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deleteProperties;
-  bool m_deletePropertiesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_deletePropertiesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_imageNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

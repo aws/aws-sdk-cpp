@@ -91,12 +91,12 @@ class RdsDataApiConfig {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_databaseName;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
 };
 

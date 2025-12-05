@@ -301,48 +301,48 @@ class GetDataProductResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstRevisionCreatedAt{};
-  bool m_firstRevisionCreatedAtHasBeenSet = false;
 
   Aws::String m_firstRevisionCreatedBy;
-  bool m_firstRevisionCreatedByHasBeenSet = false;
 
   Aws::Vector<FormOutput> m_formsOutput;
-  bool m_formsOutputHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<DataProductItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owningProjectId;
-  bool m_owningProjectIdHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   DataProductStatus m_status{DataProductStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_firstRevisionCreatedAtHasBeenSet = false;
+  bool m_firstRevisionCreatedByHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

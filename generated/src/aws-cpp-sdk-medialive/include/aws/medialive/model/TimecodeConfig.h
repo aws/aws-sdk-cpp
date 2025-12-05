@@ -75,9 +75,9 @@ class TimecodeConfig {
   ///@}
  private:
   TimecodeConfigSource m_source{TimecodeConfigSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   int m_syncThreshold{0};
+  bool m_sourceHasBeenSet = false;
   bool m_syncThresholdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListContentAssociationsResult {
   ///@}
  private:
   Aws::Vector<ContentAssociationSummary> m_contentAssociationSummaries;
-  bool m_contentAssociationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentAssociationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class PortMapping {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   PortProtocol m_protocol{PortProtocol::NOT_SET};
+  bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

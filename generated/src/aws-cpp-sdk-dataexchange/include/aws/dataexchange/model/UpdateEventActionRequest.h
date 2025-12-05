@@ -66,9 +66,9 @@ class UpdateEventActionRequest : public DataExchangeRequest {
   ///@}
  private:
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_eventActionId;
+  bool m_actionHasBeenSet = false;
   bool m_eventActionIdHasBeenSet = false;
 };
 

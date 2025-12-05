@@ -84,9 +84,9 @@ class HostConfiguration {
   ///@}
  private:
   Aws::String m_scriptBody;
-  bool m_scriptBodyHasBeenSet = false;
 
   int m_scriptTimeoutSeconds{0};
+  bool m_scriptBodyHasBeenSet = false;
   bool m_scriptTimeoutSecondsHasBeenSet = false;
 };
 

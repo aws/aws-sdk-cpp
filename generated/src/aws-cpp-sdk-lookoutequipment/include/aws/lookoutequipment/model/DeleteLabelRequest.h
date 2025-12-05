@@ -69,9 +69,9 @@ class DeleteLabelRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_labelGroupName;
-  bool m_labelGroupNameHasBeenSet = false;
 
   Aws::String m_labelId;
+  bool m_labelGroupNameHasBeenSet = false;
   bool m_labelIdHasBeenSet = false;
 };
 

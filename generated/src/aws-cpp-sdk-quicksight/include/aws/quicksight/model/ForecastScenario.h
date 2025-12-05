@@ -70,9 +70,9 @@ class ForecastScenario {
   ///@}
  private:
   WhatIfPointScenario m_whatIfPointScenario;
-  bool m_whatIfPointScenarioHasBeenSet = false;
 
   WhatIfRangeScenario m_whatIfRangeScenario;
+  bool m_whatIfPointScenarioHasBeenSet = false;
   bool m_whatIfRangeScenarioHasBeenSet = false;
 };
 

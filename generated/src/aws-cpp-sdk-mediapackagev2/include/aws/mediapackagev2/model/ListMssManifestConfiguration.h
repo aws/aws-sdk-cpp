@@ -70,9 +70,9 @@ class ListMssManifestConfiguration {
   ///@}
  private:
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_manifestNameHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

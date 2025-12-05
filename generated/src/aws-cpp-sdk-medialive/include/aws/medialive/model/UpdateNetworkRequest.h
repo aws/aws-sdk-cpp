@@ -127,15 +127,15 @@ class UpdateNetworkRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::Vector<IpPoolUpdateRequest> m_ipPools;
-  bool m_ipPoolsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::Vector<RouteUpdateRequest> m_routes;
+  bool m_ipPoolsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkIdHasBeenSet = false;
   bool m_routesHasBeenSet = false;
 };
 

@@ -167,21 +167,21 @@ class CreateAnalyzerRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerName;
-  bool m_analyzerNameHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<InlineArchiveRule> m_archiveRules;
-  bool m_archiveRulesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   AnalyzerConfiguration m_configuration;
+  bool m_analyzerNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_archiveRulesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_configurationHasBeenSet = false;
 };
 

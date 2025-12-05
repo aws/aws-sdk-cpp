@@ -92,15 +92,15 @@ class CreateReplicatorResult {
   ///@}
  private:
   Aws::String m_replicatorArn;
-  bool m_replicatorArnHasBeenSet = false;
 
   Aws::String m_replicatorName;
-  bool m_replicatorNameHasBeenSet = false;
 
   ReplicatorState m_replicatorState{ReplicatorState::NOT_SET};
-  bool m_replicatorStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicatorArnHasBeenSet = false;
+  bool m_replicatorNameHasBeenSet = false;
+  bool m_replicatorStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

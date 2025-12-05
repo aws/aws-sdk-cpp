@@ -75,9 +75,9 @@ class ClarifyTextConfig {
   ///@}
  private:
   ClarifyTextLanguage m_language{ClarifyTextLanguage::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   ClarifyTextGranularity m_granularity{ClarifyTextGranularity::NOT_SET};
+  bool m_languageHasBeenSet = false;
   bool m_granularityHasBeenSet = false;
 };
 

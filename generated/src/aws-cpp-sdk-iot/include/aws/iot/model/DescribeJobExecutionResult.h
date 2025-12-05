@@ -60,9 +60,9 @@ class DescribeJobExecutionResult {
   ///@}
  private:
   JobExecution m_execution;
-  bool m_executionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

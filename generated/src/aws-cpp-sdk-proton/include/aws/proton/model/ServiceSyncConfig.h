@@ -125,18 +125,18 @@ class ServiceSyncConfig {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   RepositoryProvider m_repositoryProvider{RepositoryProvider::NOT_SET};
-  bool m_repositoryProviderHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_branchHasBeenSet = false;
+  bool m_filePathHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_repositoryProviderHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

@@ -193,30 +193,30 @@ class GetOperationDetailResult {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   OperationStatus m_status{OperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   OperationType m_type{OperationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedDate{};
-  bool m_submittedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   StatusFlag m_statusFlag{StatusFlag::NOT_SET};
-  bool m_statusFlagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_submittedDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_statusFlagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

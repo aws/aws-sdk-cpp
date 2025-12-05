@@ -85,9 +85,9 @@ class UpdateTaintsPayload {
   ///@}
  private:
   Aws::Vector<Taint> m_addOrUpdateTaints;
-  bool m_addOrUpdateTaintsHasBeenSet = false;
 
   Aws::Vector<Taint> m_removeTaints;
+  bool m_addOrUpdateTaintsHasBeenSet = false;
   bool m_removeTaintsHasBeenSet = false;
 };
 

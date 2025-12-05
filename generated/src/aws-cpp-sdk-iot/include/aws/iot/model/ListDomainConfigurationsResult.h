@@ -85,12 +85,12 @@ class ListDomainConfigurationsResult {
   ///@}
  private:
   Aws::Vector<DomainConfigurationSummary> m_domainConfigurations;
-  bool m_domainConfigurationsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainConfigurationsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

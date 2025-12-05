@@ -174,27 +174,27 @@ class GetTimeSeriesServiceStatisticsRequest : public XRayRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupARN;
-  bool m_groupARNHasBeenSet = false;
 
   Aws::String m_entitySelectorExpression;
-  bool m_entitySelectorExpressionHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   bool m_forecastStatistics{false};
-  bool m_forecastStatisticsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_groupARNHasBeenSet = false;
+  bool m_entitySelectorExpressionHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_forecastStatisticsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

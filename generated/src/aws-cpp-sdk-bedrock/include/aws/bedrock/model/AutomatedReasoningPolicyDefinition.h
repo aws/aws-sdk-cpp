@@ -135,15 +135,15 @@ class AutomatedReasoningPolicyDefinition {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyDefinitionType> m_types;
-  bool m_typesHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyDefinitionRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningPolicyDefinitionVariable> m_variables;
+  bool m_versionHasBeenSet = false;
+  bool m_typesHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_variablesHasBeenSet = false;
 };
 

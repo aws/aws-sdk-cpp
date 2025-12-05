@@ -69,9 +69,9 @@ class ActionRequired {
   ///@}
  private:
   Aws::String m_actionRequiredCode;
-  bool m_actionRequiredCodeHasBeenSet = false;
 
   Aws::String m_actionRequiredInfo;
+  bool m_actionRequiredCodeHasBeenSet = false;
   bool m_actionRequiredInfoHasBeenSet = false;
 };
 

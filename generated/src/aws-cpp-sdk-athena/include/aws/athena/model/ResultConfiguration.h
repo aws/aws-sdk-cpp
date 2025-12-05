@@ -145,15 +145,15 @@ class ResultConfiguration {
   ///@}
  private:
   Aws::String m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   AclConfiguration m_aclConfiguration;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_aclConfigurationHasBeenSet = false;
 };
 

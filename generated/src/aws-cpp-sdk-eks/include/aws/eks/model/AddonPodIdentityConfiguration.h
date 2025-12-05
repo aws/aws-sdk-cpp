@@ -76,9 +76,9 @@ class AddonPodIdentityConfiguration {
   ///@}
  private:
   Aws::String m_serviceAccount;
-  bool m_serviceAccountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendedManagedPolicies;
+  bool m_serviceAccountHasBeenSet = false;
   bool m_recommendedManagedPoliciesHasBeenSet = false;
 };
 

@@ -147,21 +147,21 @@ class TerminateProvisionedProductRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_provisionedProductName;
-  bool m_provisionedProductNameHasBeenSet = false;
 
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::String m_terminateToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_terminateTokenHasBeenSet = true;
 
   bool m_ignoreErrors{false};
-  bool m_ignoreErrorsHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   bool m_retainPhysicalResources{false};
+  bool m_provisionedProductNameHasBeenSet = false;
+  bool m_provisionedProductIdHasBeenSet = false;
+  bool m_terminateTokenHasBeenSet = true;
+  bool m_ignoreErrorsHasBeenSet = false;
+  bool m_acceptLanguageHasBeenSet = false;
   bool m_retainPhysicalResourcesHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class FecOutputSettings {
   ///@}
  private:
   int m_columnDepth{0};
-  bool m_columnDepthHasBeenSet = false;
 
   FecOutputIncludeFec m_includeFec{FecOutputIncludeFec::NOT_SET};
-  bool m_includeFecHasBeenSet = false;
 
   int m_rowLength{0};
+  bool m_columnDepthHasBeenSet = false;
+  bool m_includeFecHasBeenSet = false;
   bool m_rowLengthHasBeenSet = false;
 };
 

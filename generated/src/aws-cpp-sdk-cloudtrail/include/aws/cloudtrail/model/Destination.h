@@ -72,9 +72,9 @@ class Destination {
   ///@}
  private:
   DestinationType m_type{DestinationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_typeHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

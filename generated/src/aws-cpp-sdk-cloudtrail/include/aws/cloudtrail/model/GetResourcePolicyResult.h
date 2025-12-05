@@ -106,15 +106,15 @@ class GetResourcePolicyResult {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::String m_delegatedAdminResourcePolicy;
-  bool m_delegatedAdminResourcePolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
+  bool m_delegatedAdminResourcePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

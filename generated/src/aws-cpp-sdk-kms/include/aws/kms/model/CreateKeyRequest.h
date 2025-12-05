@@ -430,33 +430,33 @@ class CreateKeyRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   KeyUsageType m_keyUsage{KeyUsageType::NOT_SET};
-  bool m_keyUsageHasBeenSet = false;
 
   KeySpec m_keySpec{KeySpec::NOT_SET};
-  bool m_keySpecHasBeenSet = false;
 
   OriginType m_origin{OriginType::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::String m_customKeyStoreId;
-  bool m_customKeyStoreIdHasBeenSet = false;
 
   bool m_bypassPolicyLockoutSafetyCheck{false};
-  bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_multiRegion{false};
-  bool m_multiRegionHasBeenSet = false;
 
   Aws::String m_xksKeyId;
+  bool m_policyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_keyUsageHasBeenSet = false;
+  bool m_keySpecHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_customKeyStoreIdHasBeenSet = false;
+  bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_multiRegionHasBeenSet = false;
   bool m_xksKeyIdHasBeenSet = false;
 };
 

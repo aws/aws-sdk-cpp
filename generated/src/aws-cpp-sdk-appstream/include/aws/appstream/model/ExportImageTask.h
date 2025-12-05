@@ -214,30 +214,30 @@ class ExportImageTask {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_amiName;
-  bool m_amiNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_amiDescription;
-  bool m_amiDescriptionHasBeenSet = false;
 
   ExportImageTaskState m_state{ExportImageTaskState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::Vector<ErrorDetails> m_errorDetails;
+  bool m_taskIdHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
+  bool m_amiNameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_amiDescriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_amiIdHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

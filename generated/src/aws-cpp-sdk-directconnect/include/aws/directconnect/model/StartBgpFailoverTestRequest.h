@@ -92,12 +92,12 @@ class StartBgpFailoverTestRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bgpPeers;
-  bool m_bgpPeersHasBeenSet = false;
 
   int m_testDurationInMinutes{0};
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_bgpPeersHasBeenSet = false;
   bool m_testDurationInMinutesHasBeenSet = false;
 };
 

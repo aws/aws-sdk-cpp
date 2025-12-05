@@ -85,9 +85,9 @@ class OverrideAction {
   ///@}
  private:
   CountAction m_count;
-  bool m_countHasBeenSet = false;
 
   NoneAction m_none;
+  bool m_countHasBeenSet = false;
   bool m_noneHasBeenSet = false;
 };
 

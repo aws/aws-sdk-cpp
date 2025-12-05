@@ -134,18 +134,18 @@ class GlobalTableDescription {
   ///@}
  private:
   Aws::Vector<ReplicaDescription> m_replicationGroup;
-  bool m_replicationGroupHasBeenSet = false;
 
   Aws::String m_globalTableArn;
-  bool m_globalTableArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   GlobalTableStatus m_globalTableStatus{GlobalTableStatus::NOT_SET};
-  bool m_globalTableStatusHasBeenSet = false;
 
   Aws::String m_globalTableName;
+  bool m_replicationGroupHasBeenSet = false;
+  bool m_globalTableArnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_globalTableStatusHasBeenSet = false;
   bool m_globalTableNameHasBeenSet = false;
 };
 

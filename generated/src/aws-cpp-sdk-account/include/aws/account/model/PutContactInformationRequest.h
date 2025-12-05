@@ -86,9 +86,9 @@ class PutContactInformationRequest : public AccountRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ContactInformation m_contactInformation;
+  bool m_accountIdHasBeenSet = false;
   bool m_contactInformationHasBeenSet = false;
 };
 

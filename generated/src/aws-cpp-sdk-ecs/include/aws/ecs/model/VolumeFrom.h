@@ -70,9 +70,9 @@ class VolumeFrom {
   ///@}
  private:
   Aws::String m_sourceContainer;
-  bool m_sourceContainerHasBeenSet = false;
 
   bool m_readOnly{false};
+  bool m_sourceContainerHasBeenSet = false;
   bool m_readOnlyHasBeenSet = false;
 };
 

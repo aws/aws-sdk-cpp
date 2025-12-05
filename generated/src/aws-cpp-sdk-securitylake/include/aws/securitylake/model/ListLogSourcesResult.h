@@ -86,12 +86,12 @@ class ListLogSourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LogSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

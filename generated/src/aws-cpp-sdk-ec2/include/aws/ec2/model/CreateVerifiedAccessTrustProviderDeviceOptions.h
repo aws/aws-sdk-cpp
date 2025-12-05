@@ -72,9 +72,9 @@ class CreateVerifiedAccessTrustProviderDeviceOptions {
   ///@}
  private:
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_publicSigningKeyUrl;
+  bool m_tenantIdHasBeenSet = false;
   bool m_publicSigningKeyUrlHasBeenSet = false;
 };
 

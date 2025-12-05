@@ -146,24 +146,24 @@ class UpdateInterruptibleCapacityReservationAllocationResponse {
   ///@}
  private:
   Aws::String m_interruptibleCapacityReservationId;
-  bool m_interruptibleCapacityReservationIdHasBeenSet = false;
 
   Aws::String m_sourceCapacityReservationId;
-  bool m_sourceCapacityReservationIdHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   int m_targetInstanceCount{0};
-  bool m_targetInstanceCountHasBeenSet = false;
 
   InterruptibleCapacityReservationAllocationStatus m_status{InterruptibleCapacityReservationAllocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InterruptionType m_interruptionType{InterruptionType::NOT_SET};
-  bool m_interruptionTypeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_interruptibleCapacityReservationIdHasBeenSet = false;
+  bool m_sourceCapacityReservationIdHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_targetInstanceCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_interruptionTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

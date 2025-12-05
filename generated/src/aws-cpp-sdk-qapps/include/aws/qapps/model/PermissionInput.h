@@ -68,9 +68,9 @@ class PermissionInput {
   ///@}
  private:
   PermissionInputActionEnum m_action{PermissionInputActionEnum::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_principal;
+  bool m_actionHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

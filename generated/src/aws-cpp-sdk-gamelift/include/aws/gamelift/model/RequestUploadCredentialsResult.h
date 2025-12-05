@@ -81,12 +81,12 @@ class RequestUploadCredentialsResult {
   ///@}
  private:
   AwsCredentials m_uploadCredentials;
-  bool m_uploadCredentialsHasBeenSet = false;
 
   S3Location m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_uploadCredentialsHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

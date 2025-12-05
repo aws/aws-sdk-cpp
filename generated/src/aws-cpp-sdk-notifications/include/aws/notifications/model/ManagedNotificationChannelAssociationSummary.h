@@ -99,12 +99,12 @@ class ManagedNotificationChannelAssociationSummary {
   ///@}
  private:
   Aws::String m_channelIdentifier;
-  bool m_channelIdentifierHasBeenSet = false;
 
   ChannelType m_channelType{ChannelType::NOT_SET};
-  bool m_channelTypeHasBeenSet = false;
 
   ChannelAssociationOverrideOption m_overrideOption{ChannelAssociationOverrideOption::NOT_SET};
+  bool m_channelIdentifierHasBeenSet = false;
+  bool m_channelTypeHasBeenSet = false;
   bool m_overrideOptionHasBeenSet = false;
 };
 

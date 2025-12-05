@@ -397,66 +397,66 @@ class GetResourceConfigurationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceGatewayId;
-  bool m_resourceGatewayIdHasBeenSet = false;
 
   Aws::String m_resourceConfigurationGroupId;
-  bool m_resourceConfigurationGroupIdHasBeenSet = false;
 
   ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   bool m_allowAssociationToShareableServiceNetwork{false};
-  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_portRanges;
-  bool m_portRangesHasBeenSet = false;
 
   ProtocolType m_protocol{ProtocolType::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   ResourceConfigurationStatus m_status{ResourceConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResourceConfigurationDefinition m_resourceConfigurationDefinition;
-  bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   bool m_amazonManaged{false};
-  bool m_amazonManagedHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_domainVerificationId;
-  bool m_domainVerificationIdHasBeenSet = false;
 
   Aws::String m_domainVerificationArn;
-  bool m_domainVerificationArnHasBeenSet = false;
 
   VerificationStatus m_domainVerificationStatus{VerificationStatus::NOT_SET};
-  bool m_domainVerificationStatusHasBeenSet = false;
 
   Aws::String m_groupDomain;
-  bool m_groupDomainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceGatewayIdHasBeenSet = false;
+  bool m_resourceConfigurationGroupIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
+  bool m_portRangesHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceConfigurationDefinitionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_amazonManagedHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_domainVerificationIdHasBeenSet = false;
+  bool m_domainVerificationArnHasBeenSet = false;
+  bool m_domainVerificationStatusHasBeenSet = false;
+  bool m_groupDomainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

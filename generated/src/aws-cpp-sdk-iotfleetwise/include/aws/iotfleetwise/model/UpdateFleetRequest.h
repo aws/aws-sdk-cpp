@@ -67,9 +67,9 @@ class UpdateFleetRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_fleetIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

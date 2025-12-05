@@ -69,9 +69,9 @@ class CvssScoreAdjustment {
   ///@}
  private:
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_metricHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

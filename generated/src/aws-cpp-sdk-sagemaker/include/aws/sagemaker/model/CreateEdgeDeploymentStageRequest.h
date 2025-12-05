@@ -75,9 +75,9 @@ class CreateEdgeDeploymentStageRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_edgeDeploymentPlanName;
-  bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
   Aws::Vector<DeploymentStage> m_stages;
+  bool m_edgeDeploymentPlanNameHasBeenSet = false;
   bool m_stagesHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class BatchGetCustomEntityTypesResult {
   ///@}
  private:
   Aws::Vector<CustomEntityType> m_customEntityTypes;
-  bool m_customEntityTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customEntityTypesNotFound;
-  bool m_customEntityTypesNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customEntityTypesHasBeenSet = false;
+  bool m_customEntityTypesNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

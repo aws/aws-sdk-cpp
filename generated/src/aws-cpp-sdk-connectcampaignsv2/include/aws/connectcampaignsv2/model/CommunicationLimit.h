@@ -79,12 +79,12 @@ class CommunicationLimit {
   ///@}
  private:
   int m_maxCountPerRecipient{0};
-  bool m_maxCountPerRecipientHasBeenSet = false;
 
   int m_frequency{0};
-  bool m_frequencyHasBeenSet = false;
 
   CommunicationLimitTimeUnit m_unit{CommunicationLimitTimeUnit::NOT_SET};
+  bool m_maxCountPerRecipientHasBeenSet = false;
+  bool m_frequencyHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

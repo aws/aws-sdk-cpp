@@ -104,15 +104,15 @@ class JobLogEventData {
   ///@}
  private:
   Aws::String m_conversionServerID;
-  bool m_conversionServerIDHasBeenSet = false;
 
   Aws::String m_rawError;
-  bool m_rawErrorHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   Aws::String m_targetInstanceID;
+  bool m_conversionServerIDHasBeenSet = false;
+  bool m_rawErrorHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_targetInstanceIDHasBeenSet = false;
 };
 

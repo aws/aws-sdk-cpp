@@ -271,39 +271,39 @@ class AggregationRequest {
   ///@}
  private:
   AccountAggregation m_accountAggregation;
-  bool m_accountAggregationHasBeenSet = false;
 
   AmiAggregation m_amiAggregation;
-  bool m_amiAggregationHasBeenSet = false;
 
   AwsEcrContainerAggregation m_awsEcrContainerAggregation;
-  bool m_awsEcrContainerAggregationHasBeenSet = false;
 
   Ec2InstanceAggregation m_ec2InstanceAggregation;
-  bool m_ec2InstanceAggregationHasBeenSet = false;
 
   FindingTypeAggregation m_findingTypeAggregation;
-  bool m_findingTypeAggregationHasBeenSet = false;
 
   ImageLayerAggregation m_imageLayerAggregation;
-  bool m_imageLayerAggregationHasBeenSet = false;
 
   PackageAggregation m_packageAggregation;
-  bool m_packageAggregationHasBeenSet = false;
 
   RepositoryAggregation m_repositoryAggregation;
-  bool m_repositoryAggregationHasBeenSet = false;
 
   TitleAggregation m_titleAggregation;
-  bool m_titleAggregationHasBeenSet = false;
 
   LambdaLayerAggregation m_lambdaLayerAggregation;
-  bool m_lambdaLayerAggregationHasBeenSet = false;
 
   LambdaFunctionAggregation m_lambdaFunctionAggregation;
-  bool m_lambdaFunctionAggregationHasBeenSet = false;
 
   CodeRepositoryAggregation m_codeRepositoryAggregation;
+  bool m_accountAggregationHasBeenSet = false;
+  bool m_amiAggregationHasBeenSet = false;
+  bool m_awsEcrContainerAggregationHasBeenSet = false;
+  bool m_ec2InstanceAggregationHasBeenSet = false;
+  bool m_findingTypeAggregationHasBeenSet = false;
+  bool m_imageLayerAggregationHasBeenSet = false;
+  bool m_packageAggregationHasBeenSet = false;
+  bool m_repositoryAggregationHasBeenSet = false;
+  bool m_titleAggregationHasBeenSet = false;
+  bool m_lambdaLayerAggregationHasBeenSet = false;
+  bool m_lambdaFunctionAggregationHasBeenSet = false;
   bool m_codeRepositoryAggregationHasBeenSet = false;
 };
 

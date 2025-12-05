@@ -85,12 +85,12 @@ class DvbNitSettings {
   ///@}
  private:
   int m_networkId{0};
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_networkName;
-  bool m_networkNameHasBeenSet = false;
 
   int m_nitInterval{0};
+  bool m_networkIdHasBeenSet = false;
+  bool m_networkNameHasBeenSet = false;
   bool m_nitIntervalHasBeenSet = false;
 };
 

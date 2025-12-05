@@ -139,21 +139,21 @@ class ListDevicesRequest : public PanoramaRequest {
   ///@}
  private:
   DeviceAggregatedStatus m_deviceAggregatedStatusFilter{DeviceAggregatedStatus::NOT_SET};
-  bool m_deviceAggregatedStatusFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nameFilter;
-  bool m_nameFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ListDevicesSortBy m_sortBy{ListDevicesSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_deviceAggregatedStatusFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

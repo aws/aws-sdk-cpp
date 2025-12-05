@@ -148,21 +148,21 @@ class ListMetadataGenerationRunsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   MetadataGenerationRunStatus m_status{MetadataGenerationRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   MetadataGenerationRunType m_type{MetadataGenerationRunType::NOT_SET};
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

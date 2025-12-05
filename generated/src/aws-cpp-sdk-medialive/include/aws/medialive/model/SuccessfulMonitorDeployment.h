@@ -66,9 +66,9 @@ class SuccessfulMonitorDeployment {
   ///@}
  private:
   Aws::String m_detailsUri;
-  bool m_detailsUriHasBeenSet = false;
 
   SignalMapMonitorDeploymentStatus m_status{SignalMapMonitorDeploymentStatus::NOT_SET};
+  bool m_detailsUriHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

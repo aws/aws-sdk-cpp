@@ -65,9 +65,9 @@ class RejectLinkRequest : public RTBFabricRequest {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_linkId;
+  bool m_gatewayIdHasBeenSet = false;
   bool m_linkIdHasBeenSet = false;
 };
 

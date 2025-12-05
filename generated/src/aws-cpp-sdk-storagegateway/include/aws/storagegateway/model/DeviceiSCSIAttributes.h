@@ -101,15 +101,15 @@ class DeviceiSCSIAttributes {
   ///@}
  private:
   Aws::String m_targetARN;
-  bool m_targetARNHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   int m_networkInterfacePort{0};
-  bool m_networkInterfacePortHasBeenSet = false;
 
   bool m_chapEnabled{false};
+  bool m_targetARNHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_networkInterfacePortHasBeenSet = false;
   bool m_chapEnabledHasBeenSet = false;
 };
 

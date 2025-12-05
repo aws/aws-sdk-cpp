@@ -78,9 +78,9 @@ class DateTimeHierarchy {
   ///@}
  private:
   Aws::String m_hierarchyId;
-  bool m_hierarchyIdHasBeenSet = false;
 
   Aws::Vector<DrillDownFilter> m_drillDownFilters;
+  bool m_hierarchyIdHasBeenSet = false;
   bool m_drillDownFiltersHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListGuardrailsRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_guardrailIdentifier;
-  bool m_guardrailIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_guardrailIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

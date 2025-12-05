@@ -69,9 +69,9 @@ class UpdateTarget {
   ///@}
  private:
   Aws::String m_trackName;
-  bool m_trackNameHasBeenSet = false;
 
   Aws::String m_workgroupVersion;
+  bool m_trackNameHasBeenSet = false;
   bool m_workgroupVersionHasBeenSet = false;
 };
 

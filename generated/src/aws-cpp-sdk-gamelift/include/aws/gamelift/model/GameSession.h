@@ -428,60 +428,60 @@ class GameSession {
   ///@}
  private:
   Aws::String m_gameSessionId;
-  bool m_gameSessionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_terminationTime{};
-  bool m_terminationTimeHasBeenSet = false;
 
   int m_currentPlayerSessionCount{0};
-  bool m_currentPlayerSessionCountHasBeenSet = false;
 
   int m_maximumPlayerSessionCount{0};
-  bool m_maximumPlayerSessionCountHasBeenSet = false;
 
   GameSessionStatus m_status{GameSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   GameSessionStatusReason m_statusReason{GameSessionStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Vector<GameProperty> m_gameProperties;
-  bool m_gamePropertiesHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   PlayerSessionCreationPolicy m_playerSessionCreationPolicy{PlayerSessionCreationPolicy::NOT_SET};
-  bool m_playerSessionCreationPolicyHasBeenSet = false;
 
   Aws::String m_creatorId;
-  bool m_creatorIdHasBeenSet = false;
 
   Aws::String m_gameSessionData;
-  bool m_gameSessionDataHasBeenSet = false;
 
   Aws::String m_matchmakerData;
-  bool m_matchmakerDataHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_gameSessionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_terminationTimeHasBeenSet = false;
+  bool m_currentPlayerSessionCountHasBeenSet = false;
+  bool m_maximumPlayerSessionCountHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_gamePropertiesHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_playerSessionCreationPolicyHasBeenSet = false;
+  bool m_creatorIdHasBeenSet = false;
+  bool m_gameSessionDataHasBeenSet = false;
+  bool m_matchmakerDataHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

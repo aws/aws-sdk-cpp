@@ -236,27 +236,27 @@ class FindingFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_agentIds;
-  bool m_agentIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autoScalingGroups;
-  bool m_autoScalingGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ruleNames;
-  bool m_ruleNamesHasBeenSet = false;
 
   Aws::Vector<Severity> m_severities;
-  bool m_severitiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rulesPackageArns;
-  bool m_rulesPackageArnsHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<Attribute> m_userAttributes;
-  bool m_userAttributesHasBeenSet = false;
 
   TimestampRange m_creationTimeRange;
+  bool m_agentIdsHasBeenSet = false;
+  bool m_autoScalingGroupsHasBeenSet = false;
+  bool m_ruleNamesHasBeenSet = false;
+  bool m_severitiesHasBeenSet = false;
+  bool m_rulesPackageArnsHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_userAttributesHasBeenSet = false;
   bool m_creationTimeRangeHasBeenSet = false;
 };
 

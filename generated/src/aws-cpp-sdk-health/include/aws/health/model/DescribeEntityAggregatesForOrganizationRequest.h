@@ -84,9 +84,9 @@ class DescribeEntityAggregatesForOrganizationRequest : public HealthRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eventArns;
-  bool m_eventArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsAccountIds;
+  bool m_eventArnsHasBeenSet = false;
   bool m_awsAccountIdsHasBeenSet = false;
 };
 

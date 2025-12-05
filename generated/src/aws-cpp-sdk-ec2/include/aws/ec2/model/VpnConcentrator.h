@@ -150,21 +150,21 @@ class VpnConcentrator {
   ///@}
  private:
   Aws::String m_vpnConcentratorId;
-  bool m_vpnConcentratorIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_vpnConcentratorIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

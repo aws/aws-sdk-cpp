@@ -113,15 +113,15 @@ class MetricsFilter {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Tag m_tag;
-  bool m_tagHasBeenSet = false;
 
   Aws::String m_accessPointArn;
-  bool m_accessPointArnHasBeenSet = false;
 
   MetricsAndOperator m_and;
+  bool m_prefixHasBeenSet = false;
+  bool m_tagHasBeenSet = false;
+  bool m_accessPointArnHasBeenSet = false;
   bool m_andHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateTransitGatewayPolicyTableResponse {
   ///@}
  private:
   TransitGatewayPolicyTable m_transitGatewayPolicyTable;
-  bool m_transitGatewayPolicyTableHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayPolicyTableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

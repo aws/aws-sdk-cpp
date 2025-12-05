@@ -217,33 +217,33 @@ class AwsEc2EipDetails {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_publicIpv4Pool;
-  bool m_publicIpv4PoolHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
-  bool m_networkBorderGroupHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceOwnerId;
-  bool m_networkInterfaceOwnerIdHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_publicIpv4PoolHasBeenSet = false;
+  bool m_networkBorderGroupHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_networkInterfaceOwnerIdHasBeenSet = false;
   bool m_privateIpAddressHasBeenSet = false;
 };
 

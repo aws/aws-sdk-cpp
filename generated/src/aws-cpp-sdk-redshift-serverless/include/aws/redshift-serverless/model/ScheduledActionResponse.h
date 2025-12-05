@@ -256,36 +256,36 @@ class ScheduledActionResponse {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
-  bool m_nextInvocationsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_scheduledActionDescription;
-  bool m_scheduledActionDescriptionHasBeenSet = false;
 
   Aws::String m_scheduledActionName;
-  bool m_scheduledActionNameHasBeenSet = false;
 
   Aws::String m_scheduledActionUuid;
-  bool m_scheduledActionUuidHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   TargetAction m_targetAction;
+  bool m_endTimeHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_nextInvocationsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_scheduledActionDescriptionHasBeenSet = false;
+  bool m_scheduledActionNameHasBeenSet = false;
+  bool m_scheduledActionUuidHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_targetActionHasBeenSet = false;
 };
 

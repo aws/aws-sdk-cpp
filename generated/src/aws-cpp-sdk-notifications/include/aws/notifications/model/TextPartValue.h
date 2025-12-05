@@ -113,15 +113,15 @@ class TextPartValue {
   ///@}
  private:
   TextPartType m_type{TextPartType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_displayText;
-  bool m_displayTextHasBeenSet = false;
 
   Aws::Map<LocaleCode, Aws::String> m_textByLocale;
-  bool m_textByLocaleHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_typeHasBeenSet = false;
+  bool m_displayTextHasBeenSet = false;
+  bool m_textByLocaleHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

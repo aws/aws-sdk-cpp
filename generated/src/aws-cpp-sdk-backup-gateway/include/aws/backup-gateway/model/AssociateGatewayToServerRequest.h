@@ -70,9 +70,9 @@ class AssociateGatewayToServerRequest : public BackupGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_serverArn;
+  bool m_gatewayArnHasBeenSet = false;
   bool m_serverArnHasBeenSet = false;
 };
 

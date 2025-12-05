@@ -157,21 +157,21 @@ class SalesforceConnectorProfileCredentials {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   ConnectorOAuthRequest m_oAuthRequest;
-  bool m_oAuthRequestHasBeenSet = false;
 
   Aws::String m_clientCredentialsArn;
-  bool m_clientCredentialsArnHasBeenSet = false;
 
   OAuth2GrantType m_oAuth2GrantType{OAuth2GrantType::NOT_SET};
-  bool m_oAuth2GrantTypeHasBeenSet = false;
 
   Aws::String m_jwtToken;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
+  bool m_oAuthRequestHasBeenSet = false;
+  bool m_clientCredentialsArnHasBeenSet = false;
+  bool m_oAuth2GrantTypeHasBeenSet = false;
   bool m_jwtTokenHasBeenSet = false;
 };
 

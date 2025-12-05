@@ -189,27 +189,27 @@ class ParameterValue {
   ///@}
  private:
   int m_integer{0};
-  bool m_integerHasBeenSet = false;
 
   Aws::Vector<int> m_integerList;
-  bool m_integerListHasBeenSet = false;
 
   double m_double{0.0};
-  bool m_doubleHasBeenSet = false;
 
   Aws::String m_string;
-  bool m_stringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringList;
-  bool m_stringListHasBeenSet = false;
 
   bool m_boolean{false};
-  bool m_booleanHasBeenSet = false;
 
   Aws::String m_enum;
-  bool m_enumHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enumList;
+  bool m_integerHasBeenSet = false;
+  bool m_integerListHasBeenSet = false;
+  bool m_doubleHasBeenSet = false;
+  bool m_stringHasBeenSet = false;
+  bool m_stringListHasBeenSet = false;
+  bool m_booleanHasBeenSet = false;
+  bool m_enumHasBeenSet = false;
   bool m_enumListHasBeenSet = false;
 };
 

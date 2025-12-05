@@ -88,12 +88,12 @@ class GetBundlesRequest : public LightsailRequest {
   ///@}
  private:
   bool m_includeInactive{false};
-  bool m_includeInactiveHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   AppCategory m_appCategory{AppCategory::NOT_SET};
+  bool m_includeInactiveHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_appCategoryHasBeenSet = false;
 };
 

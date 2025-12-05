@@ -70,9 +70,9 @@ class CreateImportJobRequest : public SESV2Request {
   ///@}
  private:
   ImportDestination m_importDestination;
-  bool m_importDestinationHasBeenSet = false;
 
   ImportDataSource m_importDataSource;
+  bool m_importDestinationHasBeenSet = false;
   bool m_importDataSourceHasBeenSet = false;
 };
 

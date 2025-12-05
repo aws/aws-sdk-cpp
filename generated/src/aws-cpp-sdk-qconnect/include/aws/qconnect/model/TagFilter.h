@@ -103,12 +103,12 @@ class TagFilter {
   ///@}
  private:
   TagCondition m_tagCondition;
-  bool m_tagConditionHasBeenSet = false;
 
   Aws::Vector<TagCondition> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   Aws::Vector<OrCondition> m_orConditions;
+  bool m_tagConditionHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
   bool m_orConditionsHasBeenSet = false;
 };
 

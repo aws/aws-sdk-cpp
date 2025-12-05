@@ -76,9 +76,9 @@ class IngestConfiguration {
   ///@}
  private:
   AudioConfiguration m_audio;
-  bool m_audioHasBeenSet = false;
 
   VideoConfiguration m_video;
+  bool m_audioHasBeenSet = false;
   bool m_videoHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class IcebergMetadata {
   ///@}
  private:
   IcebergSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
+  bool m_schemaHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GetStatusRequest : public ImportExportRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_aPIVersion;
+  bool m_jobIdHasBeenSet = false;
   bool m_aPIVersionHasBeenSet = false;
 };
 

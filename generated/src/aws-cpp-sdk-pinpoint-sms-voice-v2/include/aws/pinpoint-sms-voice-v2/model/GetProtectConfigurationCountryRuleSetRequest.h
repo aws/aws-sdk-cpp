@@ -67,9 +67,9 @@ class GetProtectConfigurationCountryRuleSetRequest : public PinpointSMSVoiceV2Re
   ///@}
  private:
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   NumberCapability m_numberCapability{NumberCapability::NOT_SET};
+  bool m_protectConfigurationIdHasBeenSet = false;
   bool m_numberCapabilityHasBeenSet = false;
 };
 

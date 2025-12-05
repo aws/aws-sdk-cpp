@@ -77,9 +77,9 @@ class ContainerInstanceHealthStatus {
   ///@}
  private:
   InstanceHealthCheckState m_overallStatus{InstanceHealthCheckState::NOT_SET};
-  bool m_overallStatusHasBeenSet = false;
 
   Aws::Vector<InstanceHealthCheckResult> m_details;
+  bool m_overallStatusHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

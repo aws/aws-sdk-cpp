@@ -77,9 +77,9 @@ class TableSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_rowSort;
-  bool m_rowSortHasBeenSet = false;
 
   PaginationConfiguration m_paginationConfiguration;
+  bool m_rowSortHasBeenSet = false;
   bool m_paginationConfigurationHasBeenSet = false;
 };
 

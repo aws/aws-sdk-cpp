@@ -91,15 +91,15 @@ class UpdateRefreshScheduleResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_scheduleId;
-  bool m_scheduleIdHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_scheduleIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

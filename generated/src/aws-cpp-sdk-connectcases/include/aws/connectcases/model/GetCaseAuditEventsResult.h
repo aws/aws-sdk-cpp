@@ -86,12 +86,12 @@ class GetCaseAuditEventsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AuditEvent> m_auditEvents;
-  bool m_auditEventsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_auditEventsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -197,27 +197,27 @@ class S3DestinationUpdate {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_bucketARN;
-  bool m_bucketARNHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_errorOutputPrefix;
-  bool m_errorOutputPrefixHasBeenSet = false;
 
   BufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   CompressionFormat m_compressionFormat{CompressionFormat::NOT_SET};
-  bool m_compressionFormatHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
+  bool m_roleARNHasBeenSet = false;
+  bool m_bucketARNHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_errorOutputPrefixHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_compressionFormatHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 };
 

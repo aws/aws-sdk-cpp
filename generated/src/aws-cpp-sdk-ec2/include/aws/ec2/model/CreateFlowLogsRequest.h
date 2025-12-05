@@ -340,45 +340,45 @@ class CreateFlowLogsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_deliverLogsPermissionArn;
-  bool m_deliverLogsPermissionArnHasBeenSet = false;
 
   Aws::String m_deliverCrossAccountRole;
-  bool m_deliverCrossAccountRoleHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   FlowLogsResourceType m_resourceType{FlowLogsResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   TrafficType m_trafficType{TrafficType::NOT_SET};
-  bool m_trafficTypeHasBeenSet = false;
 
   LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
-  bool m_logDestinationTypeHasBeenSet = false;
 
   Aws::String m_logDestination;
-  bool m_logDestinationHasBeenSet = false;
 
   Aws::String m_logFormat;
-  bool m_logFormatHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   int m_maxAggregationInterval{0};
-  bool m_maxAggregationIntervalHasBeenSet = false;
 
   DestinationOptionsRequest m_destinationOptions;
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_deliverLogsPermissionArnHasBeenSet = false;
+  bool m_deliverCrossAccountRoleHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_trafficTypeHasBeenSet = false;
+  bool m_logDestinationTypeHasBeenSet = false;
+  bool m_logDestinationHasBeenSet = false;
+  bool m_logFormatHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_maxAggregationIntervalHasBeenSet = false;
   bool m_destinationOptionsHasBeenSet = false;
 };
 

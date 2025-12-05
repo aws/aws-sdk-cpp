@@ -207,30 +207,30 @@ class Segment {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   long long m_experimentCount{0};
-  bool m_experimentCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   long long m_launchCount{0};
-  bool m_launchCountHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_pattern;
-  bool m_patternHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_experimentCountHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_launchCountHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

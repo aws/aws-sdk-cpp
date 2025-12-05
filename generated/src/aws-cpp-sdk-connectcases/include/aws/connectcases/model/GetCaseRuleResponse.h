@@ -206,30 +206,30 @@ class GetCaseRuleResponse {
   ///@}
  private:
   Aws::String m_caseRuleId;
-  bool m_caseRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_caseRuleArn;
-  bool m_caseRuleArnHasBeenSet = false;
 
   CaseRuleDetails m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_deleted{false};
-  bool m_deletedHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_caseRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_caseRuleArnHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deletedHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

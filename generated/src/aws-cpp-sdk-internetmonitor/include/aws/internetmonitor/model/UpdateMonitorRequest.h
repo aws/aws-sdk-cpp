@@ -233,30 +233,30 @@ class UpdateMonitorRequest : public InternetMonitorRequest {
   ///@}
  private:
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourcesToAdd;
-  bool m_resourcesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourcesToRemove;
-  bool m_resourcesToRemoveHasBeenSet = false;
 
   MonitorConfigState m_status{MonitorConfigState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   int m_maxCityNetworksToMonitor{0};
-  bool m_maxCityNetworksToMonitorHasBeenSet = false;
 
   InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
-  bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
 
   int m_trafficPercentageToMonitor{0};
-  bool m_trafficPercentageToMonitorHasBeenSet = false;
 
   HealthEventsConfig m_healthEventsConfig;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_resourcesToAddHasBeenSet = false;
+  bool m_resourcesToRemoveHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_maxCityNetworksToMonitorHasBeenSet = false;
+  bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
+  bool m_trafficPercentageToMonitorHasBeenSet = false;
   bool m_healthEventsConfigHasBeenSet = false;
 };
 

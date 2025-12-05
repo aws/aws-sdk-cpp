@@ -86,12 +86,12 @@ class SelectOptionDescription {
   ///@}
  private:
   Aws::String m_option;
-  bool m_optionHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_optionHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

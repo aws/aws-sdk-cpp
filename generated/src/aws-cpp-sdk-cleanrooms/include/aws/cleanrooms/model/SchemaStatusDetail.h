@@ -137,18 +137,18 @@ class SchemaStatusDetail {
   ///@}
  private:
   SchemaStatus m_status{SchemaStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<SchemaStatusReason> m_reasons;
-  bool m_reasonsHasBeenSet = false;
 
   AnalysisRuleType m_analysisRuleType{AnalysisRuleType::NOT_SET};
-  bool m_analysisRuleTypeHasBeenSet = false;
 
   Aws::Vector<SchemaConfiguration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   AnalysisType m_analysisType{AnalysisType::NOT_SET};
+  bool m_statusHasBeenSet = false;
+  bool m_reasonsHasBeenSet = false;
+  bool m_analysisRuleTypeHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
   bool m_analysisTypeHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListQueuedMessagesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DownlinkQueueMessage> m_downlinkQueueMessagesList;
-  bool m_downlinkQueueMessagesListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_downlinkQueueMessagesListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

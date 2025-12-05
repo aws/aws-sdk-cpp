@@ -67,9 +67,9 @@ class StepDependency {
   ///@}
  private:
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   DependencyConsumerResolutionStatus m_status{DependencyConsumerResolutionStatus::NOT_SET};
+  bool m_stepIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

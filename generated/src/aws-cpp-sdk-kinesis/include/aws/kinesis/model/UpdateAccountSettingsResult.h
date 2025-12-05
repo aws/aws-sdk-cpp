@@ -63,9 +63,9 @@ class UpdateAccountSettingsResult {
   ///@}
  private:
   MinimumThroughputBillingCommitmentOutput m_minimumThroughputBillingCommitment;
-  bool m_minimumThroughputBillingCommitmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_minimumThroughputBillingCommitmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

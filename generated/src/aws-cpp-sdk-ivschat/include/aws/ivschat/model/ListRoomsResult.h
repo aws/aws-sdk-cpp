@@ -85,12 +85,12 @@ class ListRoomsResult {
   ///@}
  private:
   Aws::Vector<RoomSummary> m_rooms;
-  bool m_roomsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roomsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

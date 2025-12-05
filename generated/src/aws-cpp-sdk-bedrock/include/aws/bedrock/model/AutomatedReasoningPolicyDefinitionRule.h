@@ -89,12 +89,12 @@ class AutomatedReasoningPolicyDefinitionRule {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_alternateExpression;
+  bool m_idHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
   bool m_alternateExpressionHasBeenSet = false;
 };
 

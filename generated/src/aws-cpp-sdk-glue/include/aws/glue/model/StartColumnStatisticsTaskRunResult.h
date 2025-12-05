@@ -59,9 +59,9 @@ class StartColumnStatisticsTaskRunResult {
   ///@}
  private:
   Aws::String m_columnStatisticsTaskRunId;
-  bool m_columnStatisticsTaskRunIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_columnStatisticsTaskRunIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

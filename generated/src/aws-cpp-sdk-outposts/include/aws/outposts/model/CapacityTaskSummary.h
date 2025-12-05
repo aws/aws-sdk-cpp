@@ -178,27 +178,27 @@ class CapacityTaskSummary {
   ///@}
  private:
   Aws::String m_capacityTaskId;
-  bool m_capacityTaskIdHasBeenSet = false;
 
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_orderId;
-  bool m_orderIdHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   CapacityTaskStatus m_capacityTaskStatus{CapacityTaskStatus::NOT_SET};
-  bool m_capacityTaskStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
+  bool m_capacityTaskIdHasBeenSet = false;
+  bool m_outpostIdHasBeenSet = false;
+  bool m_orderIdHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_capacityTaskStatusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

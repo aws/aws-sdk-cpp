@@ -72,9 +72,9 @@ class ExecutionTimeFilter {
   ///@}
  private:
   Aws::Utils::DateTime m_oldestDate{};
-  bool m_oldestDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestDate{};
+  bool m_oldestDateHasBeenSet = false;
   bool m_latestDateHasBeenSet = false;
 };
 

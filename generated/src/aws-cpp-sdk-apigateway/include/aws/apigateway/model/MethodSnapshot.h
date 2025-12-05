@@ -70,9 +70,9 @@ class MethodSnapshot {
   ///@}
  private:
   Aws::String m_authorizationType;
-  bool m_authorizationTypeHasBeenSet = false;
 
   bool m_apiKeyRequired{false};
+  bool m_authorizationTypeHasBeenSet = false;
   bool m_apiKeyRequiredHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class ConnectionAuthResponseParameters {
   ///@}
  private:
   ConnectionBasicAuthResponseParameters m_basicAuthParameters;
-  bool m_basicAuthParametersHasBeenSet = false;
 
   ConnectionOAuthResponseParameters m_oAuthParameters;
-  bool m_oAuthParametersHasBeenSet = false;
 
   ConnectionApiKeyAuthResponseParameters m_apiKeyAuthParameters;
-  bool m_apiKeyAuthParametersHasBeenSet = false;
 
   ConnectionHttpParameters m_invocationHttpParameters;
-  bool m_invocationHttpParametersHasBeenSet = false;
 
   DescribeConnectionConnectivityParameters m_connectivityParameters;
+  bool m_basicAuthParametersHasBeenSet = false;
+  bool m_oAuthParametersHasBeenSet = false;
+  bool m_apiKeyAuthParametersHasBeenSet = false;
+  bool m_invocationHttpParametersHasBeenSet = false;
   bool m_connectivityParametersHasBeenSet = false;
 };
 

@@ -108,18 +108,18 @@ class DeleteImageSetResult {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   ImageSetState m_imageSetState{ImageSetState::NOT_SET};
-  bool m_imageSetStateHasBeenSet = false;
 
   ImageSetWorkflowStatus m_imageSetWorkflowStatus{ImageSetWorkflowStatus::NOT_SET};
-  bool m_imageSetWorkflowStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_imageSetIdHasBeenSet = false;
+  bool m_imageSetStateHasBeenSet = false;
+  bool m_imageSetWorkflowStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

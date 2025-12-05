@@ -88,12 +88,12 @@ class S3ContentLocationUpdate {
   ///@}
  private:
   Aws::String m_bucketARNUpdate;
-  bool m_bucketARNUpdateHasBeenSet = false;
 
   Aws::String m_fileKeyUpdate;
-  bool m_fileKeyUpdateHasBeenSet = false;
 
   Aws::String m_objectVersionUpdate;
+  bool m_bucketARNUpdateHasBeenSet = false;
+  bool m_fileKeyUpdateHasBeenSet = false;
   bool m_objectVersionUpdateHasBeenSet = false;
 };
 

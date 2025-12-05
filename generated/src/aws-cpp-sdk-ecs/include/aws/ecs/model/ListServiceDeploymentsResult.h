@@ -96,12 +96,12 @@ class ListServiceDeploymentsResult {
   ///@}
  private:
   Aws::Vector<ServiceDeploymentBrief> m_serviceDeployments;
-  bool m_serviceDeploymentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceDeploymentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

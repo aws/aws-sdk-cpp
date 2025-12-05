@@ -74,9 +74,9 @@ class PutItemsRequest : public PersonalizeEventsRequest {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::Vector<Item> m_items;
+  bool m_datasetArnHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

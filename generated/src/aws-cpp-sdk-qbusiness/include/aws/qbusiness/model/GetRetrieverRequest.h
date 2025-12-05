@@ -65,9 +65,9 @@ class GetRetrieverRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_retrieverId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_retrieverIdHasBeenSet = false;
 };
 

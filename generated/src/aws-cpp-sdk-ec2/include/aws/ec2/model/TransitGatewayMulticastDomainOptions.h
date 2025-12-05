@@ -88,12 +88,12 @@ class TransitGatewayMulticastDomainOptions {
   ///@}
  private:
   Igmpv2SupportValue m_igmpv2Support{Igmpv2SupportValue::NOT_SET};
-  bool m_igmpv2SupportHasBeenSet = false;
 
   StaticSourcesSupportValue m_staticSourcesSupport{StaticSourcesSupportValue::NOT_SET};
-  bool m_staticSourcesSupportHasBeenSet = false;
 
   AutoAcceptSharedAssociationsValue m_autoAcceptSharedAssociations{AutoAcceptSharedAssociationsValue::NOT_SET};
+  bool m_igmpv2SupportHasBeenSet = false;
+  bool m_staticSourcesSupportHasBeenSet = false;
   bool m_autoAcceptSharedAssociationsHasBeenSet = false;
 };
 

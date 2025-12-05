@@ -74,9 +74,9 @@ class GetCompatibleVersionsResult {
   ///@}
  private:
   Aws::Vector<CompatibleVersionsMap> m_compatibleVersions;
-  bool m_compatibleVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compatibleVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

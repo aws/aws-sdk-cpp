@@ -255,45 +255,45 @@ class DescribeReservedCapacityResult {
   ///@}
  private:
   Aws::String m_reservedCapacityArn;
-  bool m_reservedCapacityArnHasBeenSet = false;
 
   ReservedCapacityType m_reservedCapacityType{ReservedCapacityType::NOT_SET};
-  bool m_reservedCapacityTypeHasBeenSet = false;
 
   ReservedCapacityStatus m_status{ReservedCapacityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   long long m_durationHours{0};
-  bool m_durationHoursHasBeenSet = false;
 
   long long m_durationMinutes{0};
-  bool m_durationMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ReservedCapacityInstanceType m_instanceType{ReservedCapacityInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   int m_inUseInstanceCount{0};
-  bool m_inUseInstanceCountHasBeenSet = false;
 
   UltraServerSummary m_ultraServerSummary;
-  bool m_ultraServerSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reservedCapacityArnHasBeenSet = false;
+  bool m_reservedCapacityTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_durationHoursHasBeenSet = false;
+  bool m_durationMinutesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
+  bool m_inUseInstanceCountHasBeenSet = false;
+  bool m_ultraServerSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

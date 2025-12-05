@@ -143,21 +143,21 @@ class ListPermissionsRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   UserType m_userType{UserType::NOT_SET};
-  bool m_userTypeHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_groupIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userTypeHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

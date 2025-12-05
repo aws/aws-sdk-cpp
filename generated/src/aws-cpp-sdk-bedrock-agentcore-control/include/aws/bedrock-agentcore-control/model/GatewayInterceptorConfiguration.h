@@ -99,12 +99,12 @@ class GatewayInterceptorConfiguration {
   ///@}
  private:
   InterceptorConfiguration m_interceptor;
-  bool m_interceptorHasBeenSet = false;
 
   Aws::Vector<GatewayInterceptionPoint> m_interceptionPoints;
-  bool m_interceptionPointsHasBeenSet = false;
 
   InterceptorInputConfiguration m_inputConfiguration;
+  bool m_interceptorHasBeenSet = false;
+  bool m_interceptionPointsHasBeenSet = false;
   bool m_inputConfigurationHasBeenSet = false;
 };
 

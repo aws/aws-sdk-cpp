@@ -336,45 +336,45 @@ class UpdateMatchmakingConfigurationRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_gameSessionQueueArns;
-  bool m_gameSessionQueueArnsHasBeenSet = false;
 
   int m_requestTimeoutSeconds{0};
-  bool m_requestTimeoutSecondsHasBeenSet = false;
 
   int m_acceptanceTimeoutSeconds{0};
-  bool m_acceptanceTimeoutSecondsHasBeenSet = false;
 
   bool m_acceptanceRequired{false};
-  bool m_acceptanceRequiredHasBeenSet = false;
 
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   Aws::String m_notificationTarget;
-  bool m_notificationTargetHasBeenSet = false;
 
   int m_additionalPlayerCount{0};
-  bool m_additionalPlayerCountHasBeenSet = false;
 
   Aws::String m_customEventData;
-  bool m_customEventDataHasBeenSet = false;
 
   Aws::Vector<GameProperty> m_gameProperties;
-  bool m_gamePropertiesHasBeenSet = false;
 
   Aws::String m_gameSessionData;
-  bool m_gameSessionDataHasBeenSet = false;
 
   BackfillMode m_backfillMode{BackfillMode::NOT_SET};
-  bool m_backfillModeHasBeenSet = false;
 
   FlexMatchMode m_flexMatchMode{FlexMatchMode::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_gameSessionQueueArnsHasBeenSet = false;
+  bool m_requestTimeoutSecondsHasBeenSet = false;
+  bool m_acceptanceTimeoutSecondsHasBeenSet = false;
+  bool m_acceptanceRequiredHasBeenSet = false;
+  bool m_ruleSetNameHasBeenSet = false;
+  bool m_notificationTargetHasBeenSet = false;
+  bool m_additionalPlayerCountHasBeenSet = false;
+  bool m_customEventDataHasBeenSet = false;
+  bool m_gamePropertiesHasBeenSet = false;
+  bool m_gameSessionDataHasBeenSet = false;
+  bool m_backfillModeHasBeenSet = false;
   bool m_flexMatchModeHasBeenSet = false;
 };
 

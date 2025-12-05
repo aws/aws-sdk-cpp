@@ -85,9 +85,9 @@ class RegexPatternSetSummary {
   ///@}
  private:
   Aws::String m_regexPatternSetId;
-  bool m_regexPatternSetIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_regexPatternSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

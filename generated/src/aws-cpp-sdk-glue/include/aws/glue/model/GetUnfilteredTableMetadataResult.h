@@ -252,39 +252,39 @@ class GetUnfilteredTableMetadataResult {
   ///@}
  private:
   Table m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedColumns;
-  bool m_authorizedColumnsHasBeenSet = false;
 
   bool m_isRegisteredWithLakeFormation{false};
-  bool m_isRegisteredWithLakeFormationHasBeenSet = false;
 
   Aws::Vector<ColumnRowFilter> m_cellFilters;
-  bool m_cellFiltersHasBeenSet = false;
 
   Aws::String m_queryAuthorizationId;
-  bool m_queryAuthorizationIdHasBeenSet = false;
 
   bool m_isMultiDialectView{false};
-  bool m_isMultiDialectViewHasBeenSet = false;
 
   bool m_isMaterializedView{false};
-  bool m_isMaterializedViewHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   bool m_isProtected{false};
-  bool m_isProtectedHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_rowFilter;
-  bool m_rowFilterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableHasBeenSet = false;
+  bool m_authorizedColumnsHasBeenSet = false;
+  bool m_isRegisteredWithLakeFormationHasBeenSet = false;
+  bool m_cellFiltersHasBeenSet = false;
+  bool m_queryAuthorizationIdHasBeenSet = false;
+  bool m_isMultiDialectViewHasBeenSet = false;
+  bool m_isMaterializedViewHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_isProtectedHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_rowFilterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

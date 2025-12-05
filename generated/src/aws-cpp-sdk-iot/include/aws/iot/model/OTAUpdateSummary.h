@@ -87,12 +87,12 @@ class OTAUpdateSummary {
   ///@}
  private:
   Aws::String m_otaUpdateId;
-  bool m_otaUpdateIdHasBeenSet = false;
 
   Aws::String m_otaUpdateArn;
-  bool m_otaUpdateArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_otaUpdateIdHasBeenSet = false;
+  bool m_otaUpdateArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

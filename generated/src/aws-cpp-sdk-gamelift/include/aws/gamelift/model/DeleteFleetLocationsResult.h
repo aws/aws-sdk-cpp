@@ -107,15 +107,15 @@ class DeleteFleetLocationsResult {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::Vector<LocationState> m_locationStates;
-  bool m_locationStatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_locationStatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

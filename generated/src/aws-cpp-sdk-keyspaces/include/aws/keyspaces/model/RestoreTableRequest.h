@@ -283,36 +283,36 @@ class RestoreTableRequest : public KeyspacesRequest {
   ///@}
  private:
   Aws::String m_sourceKeyspaceName;
-  bool m_sourceKeyspaceNameHasBeenSet = false;
 
   Aws::String m_sourceTableName;
-  bool m_sourceTableNameHasBeenSet = false;
 
   Aws::String m_targetKeyspaceName;
-  bool m_targetKeyspaceNameHasBeenSet = false;
 
   Aws::String m_targetTableName;
-  bool m_targetTableNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreTimestamp{};
-  bool m_restoreTimestampHasBeenSet = false;
 
   CapacitySpecification m_capacitySpecificationOverride;
-  bool m_capacitySpecificationOverrideHasBeenSet = false;
 
   EncryptionSpecification m_encryptionSpecificationOverride;
-  bool m_encryptionSpecificationOverrideHasBeenSet = false;
 
   PointInTimeRecovery m_pointInTimeRecoveryOverride;
-  bool m_pointInTimeRecoveryOverrideHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagsOverride;
-  bool m_tagsOverrideHasBeenSet = false;
 
   AutoScalingSpecification m_autoScalingSpecification;
-  bool m_autoScalingSpecificationHasBeenSet = false;
 
   Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
+  bool m_sourceKeyspaceNameHasBeenSet = false;
+  bool m_sourceTableNameHasBeenSet = false;
+  bool m_targetKeyspaceNameHasBeenSet = false;
+  bool m_targetTableNameHasBeenSet = false;
+  bool m_restoreTimestampHasBeenSet = false;
+  bool m_capacitySpecificationOverrideHasBeenSet = false;
+  bool m_encryptionSpecificationOverrideHasBeenSet = false;
+  bool m_pointInTimeRecoveryOverrideHasBeenSet = false;
+  bool m_tagsOverrideHasBeenSet = false;
+  bool m_autoScalingSpecificationHasBeenSet = false;
   bool m_replicaSpecificationsHasBeenSet = false;
 };
 

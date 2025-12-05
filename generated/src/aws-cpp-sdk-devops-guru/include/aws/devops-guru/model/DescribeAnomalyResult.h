@@ -80,12 +80,12 @@ class DescribeAnomalyResult {
   ///@}
  private:
   ProactiveAnomaly m_proactiveAnomaly;
-  bool m_proactiveAnomalyHasBeenSet = false;
 
   ReactiveAnomaly m_reactiveAnomaly;
-  bool m_reactiveAnomalyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proactiveAnomalyHasBeenSet = false;
+  bool m_reactiveAnomalyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

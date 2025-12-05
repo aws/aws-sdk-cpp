@@ -144,21 +144,21 @@ class ListInstanceTypeDetailsRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_retrieveAZs{false};
-  bool m_retrieveAZsHasBeenSet = false;
 
   Aws::String m_instanceType;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_retrieveAZsHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
 };
 

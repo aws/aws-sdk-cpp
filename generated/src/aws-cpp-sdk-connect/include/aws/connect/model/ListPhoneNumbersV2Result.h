@@ -86,12 +86,12 @@ class ListPhoneNumbersV2Result {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListPhoneNumbersSummary> m_listPhoneNumbersSummaryList;
-  bool m_listPhoneNumbersSummaryListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_listPhoneNumbersSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class SheetVisualScopingConfiguration {
   ///@}
  private:
   Aws::String m_sheetId;
-  bool m_sheetIdHasBeenSet = false;
 
   FilterVisualScope m_scope{FilterVisualScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_visualIds;
+  bool m_sheetIdHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_visualIdsHasBeenSet = false;
 };
 

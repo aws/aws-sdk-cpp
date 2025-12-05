@@ -59,9 +59,9 @@ class RestoreTableResult {
   ///@}
  private:
   Aws::String m_restoredTableARN;
-  bool m_restoredTableARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_restoredTableARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

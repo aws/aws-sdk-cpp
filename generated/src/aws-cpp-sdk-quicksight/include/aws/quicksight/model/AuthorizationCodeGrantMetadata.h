@@ -109,15 +109,15 @@ class AuthorizationCodeGrantMetadata {
   ///@}
  private:
   Aws::String m_baseEndpoint;
-  bool m_baseEndpointHasBeenSet = false;
 
   Aws::String m_redirectUrl;
-  bool m_redirectUrlHasBeenSet = false;
 
   AuthorizationCodeGrantCredentialsSource m_authorizationCodeGrantCredentialsSource{AuthorizationCodeGrantCredentialsSource::NOT_SET};
-  bool m_authorizationCodeGrantCredentialsSourceHasBeenSet = false;
 
   AuthorizationCodeGrantCredentialsDetails m_authorizationCodeGrantCredentialsDetails;
+  bool m_baseEndpointHasBeenSet = false;
+  bool m_redirectUrlHasBeenSet = false;
+  bool m_authorizationCodeGrantCredentialsSourceHasBeenSet = false;
   bool m_authorizationCodeGrantCredentialsDetailsHasBeenSet = false;
 };
 

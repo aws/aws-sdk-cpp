@@ -85,9 +85,9 @@ class AutomatedReasoningCheckTranslationAmbiguousFinding {
   ///@}
  private:
   Aws::Vector<AutomatedReasoningCheckTranslationOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningCheckScenario> m_differenceScenarios;
+  bool m_optionsHasBeenSet = false;
   bool m_differenceScenariosHasBeenSet = false;
 };
 

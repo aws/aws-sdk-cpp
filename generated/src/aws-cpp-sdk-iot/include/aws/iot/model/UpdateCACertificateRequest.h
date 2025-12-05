@@ -126,18 +126,18 @@ class UpdateCACertificateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   CACertificateStatus m_newStatus{CACertificateStatus::NOT_SET};
-  bool m_newStatusHasBeenSet = false;
 
   AutoRegistrationStatus m_newAutoRegistrationStatus{AutoRegistrationStatus::NOT_SET};
-  bool m_newAutoRegistrationStatusHasBeenSet = false;
 
   RegistrationConfig m_registrationConfig;
-  bool m_registrationConfigHasBeenSet = false;
 
   bool m_removeAutoRegistration{false};
+  bool m_certificateIdHasBeenSet = false;
+  bool m_newStatusHasBeenSet = false;
+  bool m_newAutoRegistrationStatusHasBeenSet = false;
+  bool m_registrationConfigHasBeenSet = false;
   bool m_removeAutoRegistrationHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class ComponentPropertyGroupRequest {
   ///@}
  private:
   GroupType m_groupType{GroupType::NOT_SET};
-  bool m_groupTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_propertyNames;
-  bool m_propertyNamesHasBeenSet = false;
 
   PropertyGroupUpdateType m_updateType{PropertyGroupUpdateType::NOT_SET};
+  bool m_groupTypeHasBeenSet = false;
+  bool m_propertyNamesHasBeenSet = false;
   bool m_updateTypeHasBeenSet = false;
 };
 

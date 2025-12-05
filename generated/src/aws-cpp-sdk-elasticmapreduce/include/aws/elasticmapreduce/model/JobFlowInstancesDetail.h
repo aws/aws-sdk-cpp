@@ -299,45 +299,45 @@ class JobFlowInstancesDetail {
   ///@}
  private:
   Aws::String m_masterInstanceType;
-  bool m_masterInstanceTypeHasBeenSet = false;
 
   Aws::String m_masterPublicDnsName;
-  bool m_masterPublicDnsNameHasBeenSet = false;
 
   Aws::String m_masterInstanceId;
-  bool m_masterInstanceIdHasBeenSet = false;
 
   Aws::String m_slaveInstanceType;
-  bool m_slaveInstanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Vector<InstanceGroupDetail> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   int m_normalizedInstanceHours{0};
-  bool m_normalizedInstanceHoursHasBeenSet = false;
 
   Aws::String m_ec2KeyName;
-  bool m_ec2KeyNameHasBeenSet = false;
 
   Aws::String m_ec2SubnetId;
-  bool m_ec2SubnetIdHasBeenSet = false;
 
   PlacementType m_placement;
-  bool m_placementHasBeenSet = false;
 
   bool m_keepJobFlowAliveWhenNoSteps{false};
-  bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
 
   bool m_terminationProtected{false};
-  bool m_terminationProtectedHasBeenSet = false;
 
   bool m_unhealthyNodeReplacement{false};
-  bool m_unhealthyNodeReplacementHasBeenSet = false;
 
   Aws::String m_hadoopVersion;
+  bool m_masterInstanceTypeHasBeenSet = false;
+  bool m_masterPublicDnsNameHasBeenSet = false;
+  bool m_masterInstanceIdHasBeenSet = false;
+  bool m_slaveInstanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_normalizedInstanceHoursHasBeenSet = false;
+  bool m_ec2KeyNameHasBeenSet = false;
+  bool m_ec2SubnetIdHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_keepJobFlowAliveWhenNoStepsHasBeenSet = false;
+  bool m_terminationProtectedHasBeenSet = false;
+  bool m_unhealthyNodeReplacementHasBeenSet = false;
   bool m_hadoopVersionHasBeenSet = false;
 };
 

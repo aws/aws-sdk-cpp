@@ -78,9 +78,9 @@ class BedrockSessionContentBlock {
   ///@}
  private:
   ImageBlock m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_imageHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

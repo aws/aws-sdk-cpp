@@ -71,9 +71,9 @@ class AwsApiGatewayAccessLogSettings {
   ///@}
  private:
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_destinationArn;
+  bool m_formatHasBeenSet = false;
   bool m_destinationArnHasBeenSet = false;
 };
 

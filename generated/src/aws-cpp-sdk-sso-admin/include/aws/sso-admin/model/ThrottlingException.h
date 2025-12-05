@@ -66,9 +66,9 @@ class ThrottlingException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ThrottlingExceptionReason m_reason{ThrottlingExceptionReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

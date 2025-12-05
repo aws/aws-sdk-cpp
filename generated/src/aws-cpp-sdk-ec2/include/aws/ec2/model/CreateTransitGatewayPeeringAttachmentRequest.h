@@ -171,24 +171,24 @@ class CreateTransitGatewayPeeringAttachmentRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_peerTransitGatewayId;
-  bool m_peerTransitGatewayIdHasBeenSet = false;
 
   Aws::String m_peerAccountId;
-  bool m_peerAccountIdHasBeenSet = false;
 
   Aws::String m_peerRegion;
-  bool m_peerRegionHasBeenSet = false;
 
   CreateTransitGatewayPeeringAttachmentRequestOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_peerTransitGatewayIdHasBeenSet = false;
+  bool m_peerAccountIdHasBeenSet = false;
+  bool m_peerRegionHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

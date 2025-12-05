@@ -82,12 +82,12 @@ class CreatePresignedMlflowTrackingServerUrlRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_trackingServerName;
-  bool m_trackingServerNameHasBeenSet = false;
 
   int m_expiresInSeconds{0};
-  bool m_expiresInSecondsHasBeenSet = false;
 
   int m_sessionExpirationDurationInSeconds{0};
+  bool m_trackingServerNameHasBeenSet = false;
+  bool m_expiresInSecondsHasBeenSet = false;
   bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
 };
 

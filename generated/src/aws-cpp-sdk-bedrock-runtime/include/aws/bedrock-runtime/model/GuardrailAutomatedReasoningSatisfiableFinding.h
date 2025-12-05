@@ -109,15 +109,15 @@ class GuardrailAutomatedReasoningSatisfiableFinding {
   ///@}
  private:
   GuardrailAutomatedReasoningTranslation m_translation;
-  bool m_translationHasBeenSet = false;
 
   GuardrailAutomatedReasoningScenario m_claimsTrueScenario;
-  bool m_claimsTrueScenarioHasBeenSet = false;
 
   GuardrailAutomatedReasoningScenario m_claimsFalseScenario;
-  bool m_claimsFalseScenarioHasBeenSet = false;
 
   GuardrailAutomatedReasoningLogicWarning m_logicWarning;
+  bool m_translationHasBeenSet = false;
+  bool m_claimsTrueScenarioHasBeenSet = false;
+  bool m_claimsFalseScenarioHasBeenSet = false;
   bool m_logicWarningHasBeenSet = false;
 };
 

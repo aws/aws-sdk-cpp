@@ -154,21 +154,21 @@ class CreateVpcEndpointConnectionNotificationRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_connectionNotificationArn;
-  bool m_connectionNotificationArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectionEvents;
-  bool m_connectionEventsHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_dryRunHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_connectionNotificationArnHasBeenSet = false;
+  bool m_connectionEventsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

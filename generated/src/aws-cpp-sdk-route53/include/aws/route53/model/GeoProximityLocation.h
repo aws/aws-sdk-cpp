@@ -128,15 +128,15 @@ class GeoProximityLocation {
   ///@}
  private:
   Aws::String m_aWSRegion;
-  bool m_aWSRegionHasBeenSet = false;
 
   Aws::String m_localZoneGroup;
-  bool m_localZoneGroupHasBeenSet = false;
 
   Coordinates m_coordinates;
-  bool m_coordinatesHasBeenSet = false;
 
   int m_bias{0};
+  bool m_aWSRegionHasBeenSet = false;
+  bool m_localZoneGroupHasBeenSet = false;
+  bool m_coordinatesHasBeenSet = false;
   bool m_biasHasBeenSet = false;
 };
 

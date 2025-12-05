@@ -120,15 +120,15 @@ class HealthEventsConfig {
   ///@}
  private:
   double m_availabilityScoreThreshold{0.0};
-  bool m_availabilityScoreThresholdHasBeenSet = false;
 
   double m_performanceScoreThreshold{0.0};
-  bool m_performanceScoreThresholdHasBeenSet = false;
 
   LocalHealthEventsConfig m_availabilityLocalHealthEventsConfig;
-  bool m_availabilityLocalHealthEventsConfigHasBeenSet = false;
 
   LocalHealthEventsConfig m_performanceLocalHealthEventsConfig;
+  bool m_availabilityScoreThresholdHasBeenSet = false;
+  bool m_performanceScoreThresholdHasBeenSet = false;
+  bool m_availabilityLocalHealthEventsConfigHasBeenSet = false;
   bool m_performanceLocalHealthEventsConfigHasBeenSet = false;
 };
 

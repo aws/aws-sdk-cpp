@@ -71,9 +71,9 @@ class IamIdentityCenter {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_instanceArnHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

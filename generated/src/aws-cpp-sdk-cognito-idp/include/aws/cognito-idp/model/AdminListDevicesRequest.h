@@ -115,15 +115,15 @@ class AdminListDevicesRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_paginationToken;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
 };
 

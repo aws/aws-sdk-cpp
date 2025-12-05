@@ -84,9 +84,9 @@ class CreateInputSecurityGroupRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<InputWhitelistRuleCidr> m_whitelistRules;
+  bool m_tagsHasBeenSet = false;
   bool m_whitelistRulesHasBeenSet = false;
 };
 

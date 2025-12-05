@@ -101,15 +101,15 @@ class ListIAMPolicyAssignmentsForUserResult {
   ///@}
  private:
   Aws::Vector<ActiveIAMPolicyAssignment> m_activeAssignments;
-  bool m_activeAssignmentsHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_status{0};
+  bool m_activeAssignmentsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

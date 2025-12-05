@@ -93,12 +93,12 @@ class PhysicalConnectionRequirements {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIdList;
-  bool m_securityGroupIdListHasBeenSet = false;
 
   Aws::String m_availabilityZone;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_securityGroupIdListHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
 };
 

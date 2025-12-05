@@ -104,15 +104,15 @@ class AlternateKey {
   ///@}
  private:
   bool m_allowDuplicates{false};
-  bool m_allowDuplicatesHasBeenSet = false;
 
   int m_length{0};
-  bool m_lengthHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_offset{0};
+  bool m_allowDuplicatesHasBeenSet = false;
+  bool m_lengthHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_offsetHasBeenSet = false;
 };
 

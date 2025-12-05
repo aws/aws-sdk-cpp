@@ -108,15 +108,15 @@ class NestedFilter {
   ///@}
  private:
   Aws::String m_filterId;
-  bool m_filterIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   bool m_includeInnerSet{false};
-  bool m_includeInnerSetHasBeenSet = false;
 
   InnerFilter m_innerFilter;
+  bool m_filterIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_includeInnerSetHasBeenSet = false;
   bool m_innerFilterHasBeenSet = false;
 };
 

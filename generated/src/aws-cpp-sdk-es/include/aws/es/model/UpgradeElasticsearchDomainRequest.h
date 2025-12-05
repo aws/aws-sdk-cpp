@@ -84,12 +84,12 @@ class UpgradeElasticsearchDomainRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_targetVersion;
-  bool m_targetVersionHasBeenSet = false;
 
   bool m_performCheckOnly{false};
+  bool m_domainNameHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
   bool m_performCheckOnlyHasBeenSet = false;
 };
 

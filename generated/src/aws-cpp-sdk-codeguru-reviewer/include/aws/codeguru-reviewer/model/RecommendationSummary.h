@@ -179,27 +179,27 @@ class RecommendationSummary {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   int m_startLine{0};
-  bool m_startLineHasBeenSet = false;
 
   int m_endLine{0};
-  bool m_endLineHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RecommendationCategory m_recommendationCategory{RecommendationCategory::NOT_SET};
-  bool m_recommendationCategoryHasBeenSet = false;
 
   RuleMetadata m_ruleMetadata;
-  bool m_ruleMetadataHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
+  bool m_filePathHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_startLineHasBeenSet = false;
+  bool m_endLineHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_recommendationCategoryHasBeenSet = false;
+  bool m_ruleMetadataHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

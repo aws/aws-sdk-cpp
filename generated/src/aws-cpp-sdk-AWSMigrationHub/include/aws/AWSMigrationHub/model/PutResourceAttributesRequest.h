@@ -129,15 +129,15 @@ class PutResourceAttributesRequest : public MigrationHubRequest {
   ///@}
  private:
   Aws::String m_progressUpdateStream;
-  bool m_progressUpdateStreamHasBeenSet = false;
 
   Aws::String m_migrationTaskName;
-  bool m_migrationTaskNameHasBeenSet = false;
 
   Aws::Vector<ResourceAttribute> m_resourceAttributeList;
-  bool m_resourceAttributeListHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_progressUpdateStreamHasBeenSet = false;
+  bool m_migrationTaskNameHasBeenSet = false;
+  bool m_resourceAttributeListHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

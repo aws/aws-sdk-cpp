@@ -109,15 +109,15 @@ class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails {
   ///@}
  private:
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails m_ebs;
-  bool m_ebsHasBeenSet = false;
 
   bool m_noDevice{false};
-  bool m_noDeviceHasBeenSet = false;
 
   Aws::String m_virtualName;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_ebsHasBeenSet = false;
+  bool m_noDeviceHasBeenSet = false;
   bool m_virtualNameHasBeenSet = false;
 };
 

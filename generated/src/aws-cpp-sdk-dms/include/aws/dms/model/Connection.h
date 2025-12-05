@@ -148,21 +148,21 @@ class Connection {
   ///@}
  private:
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_lastFailureMessage;
-  bool m_lastFailureMessageHasBeenSet = false;
 
   Aws::String m_endpointIdentifier;
-  bool m_endpointIdentifierHasBeenSet = false;
 
   Aws::String m_replicationInstanceIdentifier;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastFailureMessageHasBeenSet = false;
+  bool m_endpointIdentifierHasBeenSet = false;
   bool m_replicationInstanceIdentifierHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class VpcAttachment {
   ///@}
  private:
   Attachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetArns;
-  bool m_subnetArnsHasBeenSet = false;
 
   VpcOptions m_options;
+  bool m_attachmentHasBeenSet = false;
+  bool m_subnetArnsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

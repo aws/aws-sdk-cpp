@@ -125,15 +125,15 @@ class DescribeRegionsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regionNames;
-  bool m_regionNamesHasBeenSet = false;
 
   bool m_allRegions{false};
-  bool m_allRegionsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_regionNamesHasBeenSet = false;
+  bool m_allRegionsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

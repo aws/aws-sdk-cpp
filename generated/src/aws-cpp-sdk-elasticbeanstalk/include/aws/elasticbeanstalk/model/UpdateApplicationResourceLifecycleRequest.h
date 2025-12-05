@@ -70,9 +70,9 @@ class UpdateApplicationResourceLifecycleRequest : public ElasticBeanstalkRequest
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
+  bool m_applicationNameHasBeenSet = false;
   bool m_resourceLifecycleConfigHasBeenSet = false;
 };
 

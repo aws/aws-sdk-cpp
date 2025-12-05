@@ -113,15 +113,15 @@ class UnassignPrivateNatGatewayAddressRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   int m_maxDrainDurationSeconds{0};
-  bool m_maxDrainDurationSecondsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_natGatewayIdHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_maxDrainDurationSecondsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListMemberAccountsResult {
   ///@}
  private:
   Aws::Vector<MemberAccount> m_memberAccounts;
-  bool m_memberAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memberAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

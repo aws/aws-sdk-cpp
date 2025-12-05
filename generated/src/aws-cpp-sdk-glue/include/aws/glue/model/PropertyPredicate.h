@@ -85,12 +85,12 @@ class PropertyPredicate {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Comparator m_comparator{Comparator::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_comparatorHasBeenSet = false;
 };
 

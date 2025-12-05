@@ -241,39 +241,39 @@ class GetMetadataTransferJobResult {
   ///@}
  private:
   Aws::String m_metadataTransferJobId;
-  bool m_metadataTransferJobIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<SourceConfiguration> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   DestinationConfiguration m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_metadataTransferJobRole;
-  bool m_metadataTransferJobRoleHasBeenSet = false;
 
   Aws::String m_reportUrl;
-  bool m_reportUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   MetadataTransferJobStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   MetadataTransferJobProgress m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataTransferJobIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_metadataTransferJobRoleHasBeenSet = false;
+  bool m_reportUrlHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

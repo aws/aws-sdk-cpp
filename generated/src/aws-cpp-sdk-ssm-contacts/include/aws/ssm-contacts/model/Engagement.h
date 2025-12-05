@@ -143,21 +143,21 @@ class Engagement {
   ///@}
  private:
   Aws::String m_engagementArn;
-  bool m_engagementArnHasBeenSet = false;
 
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_sender;
-  bool m_senderHasBeenSet = false;
 
   Aws::String m_incidentId;
-  bool m_incidentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
+  bool m_engagementArnHasBeenSet = false;
+  bool m_contactArnHasBeenSet = false;
+  bool m_senderHasBeenSet = false;
+  bool m_incidentIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_stopTimeHasBeenSet = false;
 };
 

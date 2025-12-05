@@ -103,15 +103,15 @@ class DescribeVolumeAttributeResponse {
   ///@}
  private:
   AttributeBooleanValue m_autoEnableIO;
-  bool m_autoEnableIOHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_autoEnableIOHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class ListAnomaliesRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_anomalyDetectorArn;
-  bool m_anomalyDetectorArnHasBeenSet = false;
 
   SuppressionState m_suppressionState{SuppressionState::NOT_SET};
-  bool m_suppressionStateHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_anomalyDetectorArnHasBeenSet = false;
+  bool m_suppressionStateHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

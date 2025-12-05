@@ -68,9 +68,9 @@ class AddClusterNodeSpecification {
   ///@}
  private:
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   int m_incrementTargetCountBy{0};
+  bool m_instanceGroupNameHasBeenSet = false;
   bool m_incrementTargetCountByHasBeenSet = false;
 };
 

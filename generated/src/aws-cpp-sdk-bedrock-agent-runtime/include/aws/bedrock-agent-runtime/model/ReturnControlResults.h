@@ -76,9 +76,9 @@ class ReturnControlResults {
   ///@}
  private:
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::Vector<InvocationResultMember> m_returnControlInvocationResults;
+  bool m_invocationIdHasBeenSet = false;
   bool m_returnControlInvocationResultsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class CompatibleImage {
   ///@}
  private:
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_amiIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

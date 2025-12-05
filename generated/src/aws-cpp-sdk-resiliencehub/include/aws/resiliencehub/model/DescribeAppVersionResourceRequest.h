@@ -162,24 +162,24 @@ class DescribeAppVersionResourceRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   LogicalResourceId m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

@@ -121,15 +121,15 @@ class OutputSource {
   ///@}
  private:
   Aws::String m_outputS3Path;
-  bool m_outputS3PathHasBeenSet = false;
 
   Aws::String m_kMSArn;
-  bool m_kMSArnHasBeenSet = false;
 
   Aws::Vector<OutputAttribute> m_output;
-  bool m_outputHasBeenSet = false;
 
   bool m_applyNormalization{false};
+  bool m_outputS3PathHasBeenSet = false;
+  bool m_kMSArnHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
   bool m_applyNormalizationHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DetectorModelSummary {
   ///@}
  private:
   Aws::String m_detectorModelName;
-  bool m_detectorModelNameHasBeenSet = false;
 
   Aws::String m_detectorModelDescription;
-  bool m_detectorModelDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_detectorModelNameHasBeenSet = false;
+  bool m_detectorModelDescriptionHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

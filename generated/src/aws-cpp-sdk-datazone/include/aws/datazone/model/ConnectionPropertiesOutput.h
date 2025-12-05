@@ -221,33 +221,33 @@ class ConnectionPropertiesOutput {
   ///@}
  private:
   AmazonQPropertiesOutput m_amazonQProperties;
-  bool m_amazonQPropertiesHasBeenSet = false;
 
   AthenaPropertiesOutput m_athenaProperties;
-  bool m_athenaPropertiesHasBeenSet = false;
 
   GluePropertiesOutput m_glueProperties;
-  bool m_gluePropertiesHasBeenSet = false;
 
   HyperPodPropertiesOutput m_hyperPodProperties;
-  bool m_hyperPodPropertiesHasBeenSet = false;
 
   IamPropertiesOutput m_iamProperties;
-  bool m_iamPropertiesHasBeenSet = false;
 
   MlflowPropertiesOutput m_mlflowProperties;
-  bool m_mlflowPropertiesHasBeenSet = false;
 
   RedshiftPropertiesOutput m_redshiftProperties;
-  bool m_redshiftPropertiesHasBeenSet = false;
 
   S3PropertiesOutput m_s3Properties;
-  bool m_s3PropertiesHasBeenSet = false;
 
   SparkEmrPropertiesOutput m_sparkEmrProperties;
-  bool m_sparkEmrPropertiesHasBeenSet = false;
 
   SparkGluePropertiesOutput m_sparkGlueProperties;
+  bool m_amazonQPropertiesHasBeenSet = false;
+  bool m_athenaPropertiesHasBeenSet = false;
+  bool m_gluePropertiesHasBeenSet = false;
+  bool m_hyperPodPropertiesHasBeenSet = false;
+  bool m_iamPropertiesHasBeenSet = false;
+  bool m_mlflowPropertiesHasBeenSet = false;
+  bool m_redshiftPropertiesHasBeenSet = false;
+  bool m_s3PropertiesHasBeenSet = false;
+  bool m_sparkEmrPropertiesHasBeenSet = false;
   bool m_sparkGluePropertiesHasBeenSet = false;
 };
 

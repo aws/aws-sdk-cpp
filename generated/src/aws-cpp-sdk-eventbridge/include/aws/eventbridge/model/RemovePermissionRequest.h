@@ -85,12 +85,12 @@ class RemovePermissionRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   bool m_removeAllPermissions{false};
-  bool m_removeAllPermissionsHasBeenSet = false;
 
   Aws::String m_eventBusName;
+  bool m_statementIdHasBeenSet = false;
+  bool m_removeAllPermissionsHasBeenSet = false;
   bool m_eventBusNameHasBeenSet = false;
 };
 

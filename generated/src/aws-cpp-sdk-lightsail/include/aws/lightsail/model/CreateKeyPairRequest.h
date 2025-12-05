@@ -77,9 +77,9 @@ class CreateKeyPairRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_keyPairName;
-  bool m_keyPairNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_keyPairNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

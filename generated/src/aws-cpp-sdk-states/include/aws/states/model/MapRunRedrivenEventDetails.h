@@ -69,9 +69,9 @@ class MapRunRedrivenEventDetails {
   ///@}
  private:
   Aws::String m_mapRunArn;
-  bool m_mapRunArnHasBeenSet = false;
 
   int m_redriveCount{0};
+  bool m_mapRunArnHasBeenSet = false;
   bool m_redriveCountHasBeenSet = false;
 };
 

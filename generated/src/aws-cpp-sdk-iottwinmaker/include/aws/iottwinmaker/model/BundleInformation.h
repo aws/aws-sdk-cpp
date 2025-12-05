@@ -74,9 +74,9 @@ class BundleInformation {
   ///@}
  private:
   Aws::Vector<Aws::String> m_bundleNames;
-  bool m_bundleNamesHasBeenSet = false;
 
   PricingTier m_pricingTier{PricingTier::NOT_SET};
+  bool m_bundleNamesHasBeenSet = false;
   bool m_pricingTierHasBeenSet = false;
 };
 

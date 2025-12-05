@@ -84,12 +84,12 @@ class ReservedInstanceOptions {
   ///@}
  private:
   PurchasingOption m_purchasingOption{PurchasingOption::NOT_SET};
-  bool m_purchasingOptionHasBeenSet = false;
 
   OfferingClass m_offeringClass{OfferingClass::NOT_SET};
-  bool m_offeringClassHasBeenSet = false;
 
   TermLength m_termLength{TermLength::NOT_SET};
+  bool m_purchasingOptionHasBeenSet = false;
+  bool m_offeringClassHasBeenSet = false;
   bool m_termLengthHasBeenSet = false;
 };
 

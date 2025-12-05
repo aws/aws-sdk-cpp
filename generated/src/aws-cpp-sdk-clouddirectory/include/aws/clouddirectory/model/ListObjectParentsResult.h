@@ -109,15 +109,15 @@ class ListObjectParentsResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_parents;
-  bool m_parentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ObjectIdentifierAndLinkNameTuple> m_parentLinks;
-  bool m_parentLinksHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_parentLinksHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

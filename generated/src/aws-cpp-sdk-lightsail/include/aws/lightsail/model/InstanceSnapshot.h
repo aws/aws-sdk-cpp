@@ -346,51 +346,51 @@ class InstanceSnapshot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   InstanceSnapshotState m_state{InstanceSnapshotState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::Vector<Disk> m_fromAttachedDisks;
-  bool m_fromAttachedDisksHasBeenSet = false;
 
   Aws::String m_fromInstanceName;
-  bool m_fromInstanceNameHasBeenSet = false;
 
   Aws::String m_fromInstanceArn;
-  bool m_fromInstanceArnHasBeenSet = false;
 
   Aws::String m_fromBlueprintId;
-  bool m_fromBlueprintIdHasBeenSet = false;
 
   Aws::String m_fromBundleId;
-  bool m_fromBundleIdHasBeenSet = false;
 
   bool m_isFromAutoSnapshot{false};
-  bool m_isFromAutoSnapshotHasBeenSet = false;
 
   int m_sizeInGb{0};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_fromAttachedDisksHasBeenSet = false;
+  bool m_fromInstanceNameHasBeenSet = false;
+  bool m_fromInstanceArnHasBeenSet = false;
+  bool m_fromBlueprintIdHasBeenSet = false;
+  bool m_fromBundleIdHasBeenSet = false;
+  bool m_isFromAutoSnapshotHasBeenSet = false;
   bool m_sizeInGbHasBeenSet = false;
 };
 

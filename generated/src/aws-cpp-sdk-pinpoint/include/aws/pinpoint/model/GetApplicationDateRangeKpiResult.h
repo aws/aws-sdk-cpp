@@ -58,9 +58,9 @@ class GetApplicationDateRangeKpiResult {
   ///@}
  private:
   ApplicationDateRangeKpiResponse m_applicationDateRangeKpiResponse;
-  bool m_applicationDateRangeKpiResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationDateRangeKpiResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

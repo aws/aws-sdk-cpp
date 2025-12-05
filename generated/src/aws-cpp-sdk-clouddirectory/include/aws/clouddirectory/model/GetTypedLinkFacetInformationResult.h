@@ -76,9 +76,9 @@ class GetTypedLinkFacetInformationResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_identityAttributeOrder;
-  bool m_identityAttributeOrderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityAttributeOrderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

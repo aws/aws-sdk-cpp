@@ -79,9 +79,9 @@ class AttributeFilter {
   ///@}
  private:
   Aws::String m_attributeFilterName;
-  bool m_attributeFilterNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeFilterValues;
+  bool m_attributeFilterNameHasBeenSet = false;
   bool m_attributeFilterValuesHasBeenSet = false;
 };
 

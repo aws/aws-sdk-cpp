@@ -83,9 +83,9 @@ class SnapshotJobResultFileGroup {
   ///@}
  private:
   Aws::Vector<SnapshotFile> m_files;
-  bool m_filesHasBeenSet = false;
 
   Aws::Vector<SnapshotJobS3Result> m_s3Results;
+  bool m_filesHasBeenSet = false;
   bool m_s3ResultsHasBeenSet = false;
 };
 

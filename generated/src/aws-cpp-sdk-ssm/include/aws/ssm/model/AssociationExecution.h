@@ -222,33 +222,33 @@ class AssociationExecution {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_associationVersion;
-  bool m_associationVersionHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_detailedStatus;
-  bool m_detailedStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastExecutionDate{};
-  bool m_lastExecutionDateHasBeenSet = false;
 
   Aws::String m_resourceCountByStatus;
-  bool m_resourceCountByStatusHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
-  bool m_alarmConfigurationHasBeenSet = false;
 
   Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+  bool m_associationIdHasBeenSet = false;
+  bool m_associationVersionHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_detailedStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastExecutionDateHasBeenSet = false;
+  bool m_resourceCountByStatusHasBeenSet = false;
+  bool m_alarmConfigurationHasBeenSet = false;
   bool m_triggeredAlarmsHasBeenSet = false;
 };
 

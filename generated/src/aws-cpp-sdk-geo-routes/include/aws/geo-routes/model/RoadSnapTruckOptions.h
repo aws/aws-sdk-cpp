@@ -171,24 +171,24 @@ class RoadSnapTruckOptions {
   ///@}
  private:
   long long m_grossWeight{0};
-  bool m_grossWeightHasBeenSet = false;
 
   Aws::Vector<RoadSnapHazardousCargoType> m_hazardousCargos;
-  bool m_hazardousCargosHasBeenSet = false;
 
   long long m_height{0};
-  bool m_heightHasBeenSet = false;
 
   long long m_length{0};
-  bool m_lengthHasBeenSet = false;
 
   RoadSnapTrailerOptions m_trailer;
-  bool m_trailerHasBeenSet = false;
 
   Aws::String m_tunnelRestrictionCode;
-  bool m_tunnelRestrictionCodeHasBeenSet = false;
 
   long long m_width{0};
+  bool m_grossWeightHasBeenSet = false;
+  bool m_hazardousCargosHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_lengthHasBeenSet = false;
+  bool m_trailerHasBeenSet = false;
+  bool m_tunnelRestrictionCodeHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

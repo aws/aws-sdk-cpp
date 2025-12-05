@@ -104,12 +104,12 @@ class Query {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pages;
+  bool m_textHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
   bool m_pagesHasBeenSet = false;
 };
 

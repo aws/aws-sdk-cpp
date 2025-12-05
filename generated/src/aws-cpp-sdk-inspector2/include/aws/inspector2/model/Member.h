@@ -106,15 +106,15 @@ class Member {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   RelationshipStatus m_relationshipStatus{RelationshipStatus::NOT_SET};
-  bool m_relationshipStatusHasBeenSet = false;
 
   Aws::String m_delegatedAdminAccountId;
-  bool m_delegatedAdminAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_accountIdHasBeenSet = false;
+  bool m_relationshipStatusHasBeenSet = false;
+  bool m_delegatedAdminAccountIdHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

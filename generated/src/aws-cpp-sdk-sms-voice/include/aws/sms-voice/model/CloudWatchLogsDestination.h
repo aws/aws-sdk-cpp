@@ -70,9 +70,9 @@ class CloudWatchLogsDestination {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_logGroupArn;
+  bool m_iamRoleArnHasBeenSet = false;
   bool m_logGroupArnHasBeenSet = false;
 };
 

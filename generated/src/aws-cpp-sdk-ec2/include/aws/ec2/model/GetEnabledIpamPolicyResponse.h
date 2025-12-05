@@ -91,15 +91,15 @@ class GetEnabledIpamPolicyResponse {
   ///@}
  private:
   bool m_ipamPolicyEnabled{false};
-  bool m_ipamPolicyEnabledHasBeenSet = false;
 
   Aws::String m_ipamPolicyId;
-  bool m_ipamPolicyIdHasBeenSet = false;
 
   IpamPolicyManagedBy m_managedBy{IpamPolicyManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPolicyEnabledHasBeenSet = false;
+  bool m_ipamPolicyIdHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

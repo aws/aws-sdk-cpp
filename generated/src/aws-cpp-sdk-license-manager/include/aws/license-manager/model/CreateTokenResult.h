@@ -92,15 +92,15 @@ class CreateTokenResult {
   ///@}
  private:
   Aws::String m_tokenId;
-  bool m_tokenIdHasBeenSet = false;
 
   TokenType m_tokenType{TokenType::NOT_SET};
-  bool m_tokenTypeHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenIdHasBeenSet = false;
+  bool m_tokenTypeHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

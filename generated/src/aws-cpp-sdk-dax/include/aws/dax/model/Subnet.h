@@ -97,12 +97,12 @@ class Subnet {
   ///@}
  private:
   Aws::String m_subnetIdentifier;
-  bool m_subnetIdentifierHasBeenSet = false;
 
   Aws::String m_subnetAvailabilityZone;
-  bool m_subnetAvailabilityZoneHasBeenSet = false;
 
   Aws::Vector<NetworkType> m_supportedNetworkTypes;
+  bool m_subnetIdentifierHasBeenSet = false;
+  bool m_subnetAvailabilityZoneHasBeenSet = false;
   bool m_supportedNetworkTypesHasBeenSet = false;
 };
 

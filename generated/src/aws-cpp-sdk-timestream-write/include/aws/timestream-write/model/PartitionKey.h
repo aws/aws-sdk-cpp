@@ -91,12 +91,12 @@ class PartitionKey {
   ///@}
  private:
   PartitionKeyType m_type{PartitionKeyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PartitionKeyEnforcementLevel m_enforcementInRecord{PartitionKeyEnforcementLevel::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_enforcementInRecordHasBeenSet = false;
 };
 

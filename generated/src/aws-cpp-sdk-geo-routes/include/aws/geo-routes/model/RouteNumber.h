@@ -85,12 +85,12 @@ class RouteNumber {
   ///@}
  private:
   RouteDirection m_direction{RouteDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_directionHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

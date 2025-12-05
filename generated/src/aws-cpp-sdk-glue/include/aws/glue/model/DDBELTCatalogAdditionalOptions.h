@@ -68,9 +68,9 @@ class DDBELTCatalogAdditionalOptions {
   ///@}
  private:
   Aws::String m_dynamodbExport;
-  bool m_dynamodbExportHasBeenSet = false;
 
   bool m_dynamodbUnnestDDBJson{false};
+  bool m_dynamodbExportHasBeenSet = false;
   bool m_dynamodbUnnestDDBJsonHasBeenSet = false;
 };
 

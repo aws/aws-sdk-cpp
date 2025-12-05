@@ -75,9 +75,9 @@ class PrincipalPermissions {
   ///@}
  private:
   DataLakePrincipal m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissions;
+  bool m_principalHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

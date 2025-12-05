@@ -101,15 +101,15 @@ class EstimatedMonthlySavings {
   ///@}
  private:
   Aws::String m_currency;
-  bool m_currencyHasBeenSet = false;
 
   double m_beforeDiscountSavings{0.0};
-  bool m_beforeDiscountSavingsHasBeenSet = false;
 
   double m_afterDiscountSavings{0.0};
-  bool m_afterDiscountSavingsHasBeenSet = false;
 
   SavingsEstimationMode m_savingsEstimationMode{SavingsEstimationMode::NOT_SET};
+  bool m_currencyHasBeenSet = false;
+  bool m_beforeDiscountSavingsHasBeenSet = false;
+  bool m_afterDiscountSavingsHasBeenSet = false;
   bool m_savingsEstimationModeHasBeenSet = false;
 };
 

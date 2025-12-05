@@ -91,12 +91,12 @@ class UpdateCertificateProviderRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateProviderName;
-  bool m_certificateProviderNameHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaFunctionArnHasBeenSet = false;
 
   Aws::Vector<CertificateProviderOperation> m_accountDefaultForOperations;
+  bool m_certificateProviderNameHasBeenSet = false;
+  bool m_lambdaFunctionArnHasBeenSet = false;
   bool m_accountDefaultForOperationsHasBeenSet = false;
 };
 

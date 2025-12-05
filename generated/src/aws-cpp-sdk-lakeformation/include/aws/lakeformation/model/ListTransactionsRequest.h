@@ -101,15 +101,15 @@ class ListTransactionsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   TransactionStatusFilter m_statusFilter{TransactionStatusFilter::NOT_SET};
-  bool m_statusFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_statusFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

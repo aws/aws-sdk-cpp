@@ -87,12 +87,12 @@ class BaseModel {
   ///@}
  private:
   Aws::String m_hubContentName;
-  bool m_hubContentNameHasBeenSet = false;
 
   Aws::String m_hubContentVersion;
-  bool m_hubContentVersionHasBeenSet = false;
 
   Aws::String m_recipeName;
+  bool m_hubContentNameHasBeenSet = false;
+  bool m_hubContentVersionHasBeenSet = false;
   bool m_recipeNameHasBeenSet = false;
 };
 

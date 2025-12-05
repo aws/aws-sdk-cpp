@@ -59,9 +59,9 @@ class CreateHITTypeResult {
   ///@}
  private:
   Aws::String m_hITTypeId;
-  bool m_hITTypeIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hITTypeIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

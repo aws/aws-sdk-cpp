@@ -101,12 +101,12 @@ class UpdateAccountSettingsRequest : public TimestreamQueryRequest {
   ///@}
  private:
   int m_maxQueryTCU{0};
-  bool m_maxQueryTCUHasBeenSet = false;
 
   QueryPricingModel m_queryPricingModel{QueryPricingModel::NOT_SET};
-  bool m_queryPricingModelHasBeenSet = false;
 
   QueryComputeRequest m_queryCompute;
+  bool m_maxQueryTCUHasBeenSet = false;
+  bool m_queryPricingModelHasBeenSet = false;
   bool m_queryComputeHasBeenSet = false;
 };
 

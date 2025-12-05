@@ -139,18 +139,18 @@ class UpdateLocationEfsRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_accessPointArn;
-  bool m_accessPointArnHasBeenSet = false;
 
   Aws::String m_fileSystemAccessRoleArn;
-  bool m_fileSystemAccessRoleArnHasBeenSet = false;
 
   EfsInTransitEncryption m_inTransitEncryption{EfsInTransitEncryption::NOT_SET};
+  bool m_locationArnHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_accessPointArnHasBeenSet = false;
+  bool m_fileSystemAccessRoleArnHasBeenSet = false;
   bool m_inTransitEncryptionHasBeenSet = false;
 };
 

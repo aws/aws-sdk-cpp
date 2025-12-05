@@ -338,45 +338,45 @@ class DescribedConnector {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   As2ConnectorConfig m_as2Config;
-  bool m_as2ConfigHasBeenSet = false;
 
   Aws::String m_accessRole;
-  bool m_accessRoleHasBeenSet = false;
 
   Aws::String m_loggingRole;
-  bool m_loggingRoleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SftpConnectorConfig m_sftpConfig;
-  bool m_sftpConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceManagedEgressIpAddresses;
-  bool m_serviceManagedEgressIpAddressesHasBeenSet = false;
 
   Aws::String m_securityPolicyName;
-  bool m_securityPolicyNameHasBeenSet = false;
 
   DescribedConnectorEgressConfig m_egressConfig;
-  bool m_egressConfigHasBeenSet = false;
 
   ConnectorEgressType m_egressType{ConnectorEgressType::NOT_SET};
-  bool m_egressTypeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   ConnectorStatus m_status{ConnectorStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_as2ConfigHasBeenSet = false;
+  bool m_accessRoleHasBeenSet = false;
+  bool m_loggingRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_sftpConfigHasBeenSet = false;
+  bool m_serviceManagedEgressIpAddressesHasBeenSet = false;
+  bool m_securityPolicyNameHasBeenSet = false;
+  bool m_egressConfigHasBeenSet = false;
+  bool m_egressTypeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

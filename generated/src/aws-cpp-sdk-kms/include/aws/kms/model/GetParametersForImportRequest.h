@@ -119,12 +119,12 @@ class GetParametersForImportRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   AlgorithmSpec m_wrappingAlgorithm{AlgorithmSpec::NOT_SET};
-  bool m_wrappingAlgorithmHasBeenSet = false;
 
   WrappingKeySpec m_wrappingKeySpec{WrappingKeySpec::NOT_SET};
+  bool m_keyIdHasBeenSet = false;
+  bool m_wrappingAlgorithmHasBeenSet = false;
   bool m_wrappingKeySpecHasBeenSet = false;
 };
 

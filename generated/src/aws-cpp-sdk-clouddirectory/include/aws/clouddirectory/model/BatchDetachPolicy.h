@@ -71,9 +71,9 @@ class BatchDetachPolicy {
   ///@}
  private:
   ObjectReference m_policyReference;
-  bool m_policyReferenceHasBeenSet = false;
 
   ObjectReference m_objectReference;
+  bool m_policyReferenceHasBeenSet = false;
   bool m_objectReferenceHasBeenSet = false;
 };
 

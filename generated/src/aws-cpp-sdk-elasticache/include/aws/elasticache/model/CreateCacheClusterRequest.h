@@ -776,93 +776,93 @@ class CreateCacheClusterRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   AZMode m_aZMode{AZMode::NOT_SET};
-  bool m_aZModeHasBeenSet = false;
 
   Aws::String m_preferredAvailabilityZone;
-  bool m_preferredAvailabilityZoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_preferredAvailabilityZones;
-  bool m_preferredAvailabilityZonesHasBeenSet = false;
 
   int m_numCacheNodes{0};
-  bool m_numCacheNodesHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_cacheSubnetGroupName;
-  bool m_cacheSubnetGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
-  bool m_cacheSecurityGroupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snapshotArns;
-  bool m_snapshotArnsHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_notificationTopicArn;
-  bool m_notificationTopicArnHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   Aws::String m_authToken;
-  bool m_authTokenHasBeenSet = false;
 
   OutpostMode m_outpostMode{OutpostMode::NOT_SET};
-  bool m_outpostModeHasBeenSet = false;
 
   Aws::String m_preferredOutpostArn;
-  bool m_preferredOutpostArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_preferredOutpostArns;
-  bool m_preferredOutpostArnsHasBeenSet = false;
 
   Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
-  bool m_logDeliveryConfigurationsHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_aZModeHasBeenSet = false;
+  bool m_preferredAvailabilityZoneHasBeenSet = false;
+  bool m_preferredAvailabilityZonesHasBeenSet = false;
+  bool m_numCacheNodesHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_cacheSubnetGroupNameHasBeenSet = false;
+  bool m_cacheSecurityGroupNamesHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_snapshotArnsHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_notificationTopicArnHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_authTokenHasBeenSet = false;
+  bool m_outpostModeHasBeenSet = false;
+  bool m_preferredOutpostArnHasBeenSet = false;
+  bool m_preferredOutpostArnsHasBeenSet = false;
+  bool m_logDeliveryConfigurationsHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_ipDiscoveryHasBeenSet = false;
 };
 

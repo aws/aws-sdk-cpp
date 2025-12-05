@@ -520,54 +520,54 @@ class UpdateServerRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   ProtocolDetails m_protocolDetails;
-  bool m_protocolDetailsHasBeenSet = false;
 
   EndpointDetails m_endpointDetails;
-  bool m_endpointDetailsHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_hostKey;
-  bool m_hostKeyHasBeenSet = false;
 
   IdentityProviderDetails m_identityProviderDetails;
-  bool m_identityProviderDetailsHasBeenSet = false;
 
   Aws::String m_loggingRole;
-  bool m_loggingRoleHasBeenSet = false;
 
   Aws::String m_postAuthenticationLoginBanner;
-  bool m_postAuthenticationLoginBannerHasBeenSet = false;
 
   Aws::String m_preAuthenticationLoginBanner;
-  bool m_preAuthenticationLoginBannerHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   Aws::String m_securityPolicyName;
-  bool m_securityPolicyNameHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   WorkflowDetails m_workflowDetails;
-  bool m_workflowDetailsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_structuredLogDestinations;
-  bool m_structuredLogDestinationsHasBeenSet = false;
 
   S3StorageOptions m_s3StorageOptions;
-  bool m_s3StorageOptionsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   IdentityProviderType m_identityProviderType{IdentityProviderType::NOT_SET};
+  bool m_certificateHasBeenSet = false;
+  bool m_protocolDetailsHasBeenSet = false;
+  bool m_endpointDetailsHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_hostKeyHasBeenSet = false;
+  bool m_identityProviderDetailsHasBeenSet = false;
+  bool m_loggingRoleHasBeenSet = false;
+  bool m_postAuthenticationLoginBannerHasBeenSet = false;
+  bool m_preAuthenticationLoginBannerHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
+  bool m_securityPolicyNameHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_workflowDetailsHasBeenSet = false;
+  bool m_structuredLogDestinationsHasBeenSet = false;
+  bool m_s3StorageOptionsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
   bool m_identityProviderTypeHasBeenSet = false;
 };
 

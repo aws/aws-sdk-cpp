@@ -91,12 +91,12 @@ class ListPublicKeysResult {
   ///@}
  private:
   Aws::Vector<PublicKey> m_publicKeyList;
-  bool m_publicKeyListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_publicKeyListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

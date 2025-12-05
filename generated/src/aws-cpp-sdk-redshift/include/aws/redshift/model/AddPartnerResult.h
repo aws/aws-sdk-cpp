@@ -77,12 +77,12 @@ class AddPartnerResult {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_partnerName;
-  bool m_partnerNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_partnerNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

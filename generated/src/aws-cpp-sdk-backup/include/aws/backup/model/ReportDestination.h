@@ -76,9 +76,9 @@ class ReportDestination {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_s3Keys;
+  bool m_s3BucketNameHasBeenSet = false;
   bool m_s3KeysHasBeenSet = false;
 };
 

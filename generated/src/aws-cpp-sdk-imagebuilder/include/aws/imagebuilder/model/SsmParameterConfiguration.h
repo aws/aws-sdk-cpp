@@ -91,12 +91,12 @@ class SsmParameterConfiguration {
   ///@}
  private:
   Aws::String m_amiAccountId;
-  bool m_amiAccountIdHasBeenSet = false;
 
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   SsmParameterDataType m_dataType{SsmParameterDataType::NOT_SET};
+  bool m_amiAccountIdHasBeenSet = false;
+  bool m_parameterNameHasBeenSet = false;
   bool m_dataTypeHasBeenSet = false;
 };
 

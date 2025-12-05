@@ -105,15 +105,15 @@ class IamRole {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   IamRoleStatus m_status{IamRoleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   SupportedAwsIntegration m_awsIntegration{SupportedAwsIntegration::NOT_SET};
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_awsIntegrationHasBeenSet = false;
 };
 

@@ -325,51 +325,51 @@ class GetMaintenanceWindowExecutionTaskResult {
   ///@}
  private:
   Aws::String m_windowExecutionId;
-  bool m_windowExecutionIdHasBeenSet = false;
 
   Aws::String m_taskExecutionId;
-  bool m_taskExecutionIdHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   MaintenanceWindowTaskType m_type{MaintenanceWindowTaskType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>> m_taskParameters;
-  bool m_taskParametersHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_maxConcurrency;
-  bool m_maxConcurrencyHasBeenSet = false;
 
   Aws::String m_maxErrors;
-  bool m_maxErrorsHasBeenSet = false;
 
   MaintenanceWindowExecutionStatus m_status{MaintenanceWindowExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
-  bool m_alarmConfigurationHasBeenSet = false;
 
   Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
-  bool m_triggeredAlarmsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowExecutionIdHasBeenSet = false;
+  bool m_taskExecutionIdHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_taskParametersHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_maxErrorsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_alarmConfigurationHasBeenSet = false;
+  bool m_triggeredAlarmsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

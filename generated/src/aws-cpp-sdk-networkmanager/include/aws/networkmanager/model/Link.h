@@ -239,36 +239,36 @@ class Link {
   ///@}
  private:
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   Aws::String m_linkArn;
-  bool m_linkArnHasBeenSet = false;
 
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Bandwidth m_bandwidth;
-  bool m_bandwidthHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   LinkState m_state{LinkState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_linkIdHasBeenSet = false;
+  bool m_linkArnHasBeenSet = false;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_siteIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_bandwidthHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

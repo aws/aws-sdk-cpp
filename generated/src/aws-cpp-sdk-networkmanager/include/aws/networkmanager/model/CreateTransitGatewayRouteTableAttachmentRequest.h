@@ -131,18 +131,18 @@ class CreateTransitGatewayRouteTableAttachmentRequest : public NetworkManagerReq
   ///@}
  private:
   Aws::String m_peeringId;
-  bool m_peeringIdHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableArn;
-  bool m_transitGatewayRouteTableArnHasBeenSet = false;
 
   Aws::String m_routingPolicyLabel;
-  bool m_routingPolicyLabelHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_peeringIdHasBeenSet = false;
+  bool m_transitGatewayRouteTableArnHasBeenSet = false;
+  bool m_routingPolicyLabelHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

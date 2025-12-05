@@ -60,9 +60,9 @@ class DescribeContactResult {
   ///@}
  private:
   Contact m_contact;
-  bool m_contactHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -139,21 +139,21 @@ class ListChecksRequest : public TrustedAdvisorRequest {
   ///@}
  private:
   Aws::String m_awsService;
-  bool m_awsServiceHasBeenSet = false;
 
   RecommendationLanguage m_language{RecommendationLanguage::NOT_SET};
-  bool m_languageHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   RecommendationPillar m_pillar{RecommendationPillar::NOT_SET};
-  bool m_pillarHasBeenSet = false;
 
   RecommendationSource m_source{RecommendationSource::NOT_SET};
+  bool m_awsServiceHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_pillarHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

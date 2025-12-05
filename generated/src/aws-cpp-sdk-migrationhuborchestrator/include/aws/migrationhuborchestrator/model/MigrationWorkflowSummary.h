@@ -208,33 +208,33 @@ class MigrationWorkflowSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_adsApplicationConfigurationName;
-  bool m_adsApplicationConfigurationNameHasBeenSet = false;
 
   MigrationWorkflowStatusEnum m_status{MigrationWorkflowStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   int m_completedSteps{0};
-  bool m_completedStepsHasBeenSet = false;
 
   int m_totalSteps{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_adsApplicationConfigurationNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_completedStepsHasBeenSet = false;
   bool m_totalStepsHasBeenSet = false;
 };
 

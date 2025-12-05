@@ -85,12 +85,12 @@ class ListFleetMetricsResult {
   ///@}
  private:
   Aws::Vector<FleetMetricNameAndArn> m_fleetMetrics;
-  bool m_fleetMetricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetMetricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

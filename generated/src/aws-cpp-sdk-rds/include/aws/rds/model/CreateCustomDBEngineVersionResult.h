@@ -781,117 +781,117 @@ class CreateCustomDBEngineVersionResult {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
-  bool m_majorEngineVersionHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_databaseInstallationFilesS3BucketName;
-  bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
 
   Aws::String m_databaseInstallationFilesS3Prefix;
-  bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
 
   Aws::String m_customDBEngineVersionManifest;
-  bool m_customDBEngineVersionManifestHasBeenSet = false;
 
   Aws::String m_dBParameterGroupFamily;
-  bool m_dBParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_dBEngineDescription;
-  bool m_dBEngineDescriptionHasBeenSet = false;
 
   Aws::String m_dBEngineVersionArn;
-  bool m_dBEngineVersionArnHasBeenSet = false;
 
   Aws::String m_dBEngineVersionDescription;
-  bool m_dBEngineVersionDescriptionHasBeenSet = false;
 
   CharacterSet m_defaultCharacterSet;
-  bool m_defaultCharacterSetHasBeenSet = false;
 
   CustomDBEngineVersionAMI m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_dBEngineMediaType;
-  bool m_dBEngineMediaTypeHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Vector<CharacterSet> m_supportedCharacterSets;
-  bool m_supportedCharacterSetsHasBeenSet = false;
 
   Aws::Vector<CharacterSet> m_supportedNcharCharacterSets;
-  bool m_supportedNcharCharacterSetsHasBeenSet = false;
 
   Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
-  bool m_validUpgradeTargetHasBeenSet = false;
 
   Aws::Vector<Timezone> m_supportedTimezones;
-  bool m_supportedTimezonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exportableLogTypes;
-  bool m_exportableLogTypesHasBeenSet = false;
 
   bool m_supportsLogExportsToCloudwatchLogs{false};
-  bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
 
   bool m_supportsReadReplica{false};
-  bool m_supportsReadReplicaHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedEngineModes;
-  bool m_supportedEngineModesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedFeatureNames;
-  bool m_supportedFeatureNamesHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_supportsParallelQuery{false};
-  bool m_supportsParallelQueryHasBeenSet = false;
 
   bool m_supportsGlobalDatabases{false};
-  bool m_supportsGlobalDatabasesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   bool m_supportsBabelfish{false};
-  bool m_supportsBabelfishHasBeenSet = false;
 
   bool m_supportsLimitlessDatabase{false};
-  bool m_supportsLimitlessDatabaseHasBeenSet = false;
 
   bool m_supportsCertificateRotationWithoutRestart{false};
-  bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedCACertificateIdentifiers;
-  bool m_supportedCACertificateIdentifiersHasBeenSet = false;
 
   bool m_supportsLocalWriteForwarding{false};
-  bool m_supportsLocalWriteForwardingHasBeenSet = false;
 
   bool m_supportsIntegrations{false};
-  bool m_supportsIntegrationsHasBeenSet = false;
 
   ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
-  bool m_serverlessV2FeaturesSupportHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_databaseInstallationFiles;
-  bool m_databaseInstallationFilesHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_engineHasBeenSet = false;
+  bool m_majorEngineVersionHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_databaseInstallationFilesS3BucketNameHasBeenSet = false;
+  bool m_databaseInstallationFilesS3PrefixHasBeenSet = false;
+  bool m_customDBEngineVersionManifestHasBeenSet = false;
+  bool m_dBParameterGroupFamilyHasBeenSet = false;
+  bool m_dBEngineDescriptionHasBeenSet = false;
+  bool m_dBEngineVersionArnHasBeenSet = false;
+  bool m_dBEngineVersionDescriptionHasBeenSet = false;
+  bool m_defaultCharacterSetHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_dBEngineMediaTypeHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_supportedCharacterSetsHasBeenSet = false;
+  bool m_supportedNcharCharacterSetsHasBeenSet = false;
+  bool m_validUpgradeTargetHasBeenSet = false;
+  bool m_supportedTimezonesHasBeenSet = false;
+  bool m_exportableLogTypesHasBeenSet = false;
+  bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
+  bool m_supportsReadReplicaHasBeenSet = false;
+  bool m_supportedEngineModesHasBeenSet = false;
+  bool m_supportedFeatureNamesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_supportsParallelQueryHasBeenSet = false;
+  bool m_supportsGlobalDatabasesHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
+  bool m_supportsBabelfishHasBeenSet = false;
+  bool m_supportsLimitlessDatabaseHasBeenSet = false;
+  bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;
+  bool m_supportedCACertificateIdentifiersHasBeenSet = false;
+  bool m_supportsLocalWriteForwardingHasBeenSet = false;
+  bool m_supportsIntegrationsHasBeenSet = false;
+  bool m_serverlessV2FeaturesSupportHasBeenSet = false;
+  bool m_databaseInstallationFilesHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

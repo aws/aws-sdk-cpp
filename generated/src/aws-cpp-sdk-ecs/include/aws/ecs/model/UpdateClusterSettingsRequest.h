@@ -86,9 +86,9 @@ class UpdateClusterSettingsRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<ClusterSetting> m_settings;
+  bool m_clusterHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

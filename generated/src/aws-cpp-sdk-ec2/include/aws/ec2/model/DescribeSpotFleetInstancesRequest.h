@@ -112,15 +112,15 @@ class DescribeSpotFleetInstancesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_spotFleetRequestId;
-  bool m_spotFleetRequestIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_spotFleetRequestIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GetProfileRecommendationsResult {
   ///@}
  private:
   Aws::Vector<Recommendation> m_recommendations;
-  bool m_recommendationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class GetTableVersionsResult {
   ///@}
  private:
   Aws::Vector<TableVersion> m_tableVersions;
-  bool m_tableVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

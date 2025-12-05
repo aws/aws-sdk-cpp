@@ -73,9 +73,9 @@ class StreamChannelDefinition {
   ///@}
  private:
   int m_numberOfChannels{0};
-  bool m_numberOfChannelsHasBeenSet = false;
 
   Aws::Vector<ChannelDefinition> m_channelDefinitions;
+  bool m_numberOfChannelsHasBeenSet = false;
   bool m_channelDefinitionsHasBeenSet = false;
 };
 

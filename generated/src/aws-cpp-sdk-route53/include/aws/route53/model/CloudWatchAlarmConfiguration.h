@@ -192,27 +192,27 @@ class CloudWatchAlarmConfiguration {
   ///@}
  private:
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Statistic m_statistic{Statistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
 };
 

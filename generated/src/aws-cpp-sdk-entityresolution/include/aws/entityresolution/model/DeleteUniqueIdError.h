@@ -72,9 +72,9 @@ class DeleteUniqueIdError {
   ///@}
  private:
   Aws::String m_uniqueId;
-  bool m_uniqueIdHasBeenSet = false;
 
   DeleteUniqueIdErrorType m_errorType{DeleteUniqueIdErrorType::NOT_SET};
+  bool m_uniqueIdHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

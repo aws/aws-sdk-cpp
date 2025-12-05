@@ -65,9 +65,9 @@ class RefreshSchemasResult {
   ///@}
  private:
   RefreshSchemasStatus m_refreshSchemasStatus;
-  bool m_refreshSchemasStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_refreshSchemasStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

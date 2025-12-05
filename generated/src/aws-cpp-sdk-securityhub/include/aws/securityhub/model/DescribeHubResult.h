@@ -127,18 +127,18 @@ class DescribeHubResult {
   ///@}
  private:
   Aws::String m_hubArn;
-  bool m_hubArnHasBeenSet = false;
 
   Aws::String m_subscribedAt;
-  bool m_subscribedAtHasBeenSet = false;
 
   bool m_autoEnableControls{false};
-  bool m_autoEnableControlsHasBeenSet = false;
 
   ControlFindingGenerator m_controlFindingGenerator{ControlFindingGenerator::NOT_SET};
-  bool m_controlFindingGeneratorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hubArnHasBeenSet = false;
+  bool m_subscribedAtHasBeenSet = false;
+  bool m_autoEnableControlsHasBeenSet = false;
+  bool m_controlFindingGeneratorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

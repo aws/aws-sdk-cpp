@@ -604,96 +604,96 @@ class Event {
   ///@}
  private:
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_subType;
-  bool m_subTypeHasBeenSet = false;
 
   int m_eventId{0};
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   ExecutionStartedDetails m_executionStartedDetails;
-  bool m_executionStartedDetailsHasBeenSet = false;
 
   ExecutionSucceededDetails m_executionSucceededDetails;
-  bool m_executionSucceededDetailsHasBeenSet = false;
 
   ExecutionFailedDetails m_executionFailedDetails;
-  bool m_executionFailedDetailsHasBeenSet = false;
 
   ExecutionTimedOutDetails m_executionTimedOutDetails;
-  bool m_executionTimedOutDetailsHasBeenSet = false;
 
   ExecutionStoppedDetails m_executionStoppedDetails;
-  bool m_executionStoppedDetailsHasBeenSet = false;
 
   ContextStartedDetails m_contextStartedDetails;
-  bool m_contextStartedDetailsHasBeenSet = false;
 
   ContextSucceededDetails m_contextSucceededDetails;
-  bool m_contextSucceededDetailsHasBeenSet = false;
 
   ContextFailedDetails m_contextFailedDetails;
-  bool m_contextFailedDetailsHasBeenSet = false;
 
   WaitStartedDetails m_waitStartedDetails;
-  bool m_waitStartedDetailsHasBeenSet = false;
 
   WaitSucceededDetails m_waitSucceededDetails;
-  bool m_waitSucceededDetailsHasBeenSet = false;
 
   WaitCancelledDetails m_waitCancelledDetails;
-  bool m_waitCancelledDetailsHasBeenSet = false;
 
   StepStartedDetails m_stepStartedDetails;
-  bool m_stepStartedDetailsHasBeenSet = false;
 
   StepSucceededDetails m_stepSucceededDetails;
-  bool m_stepSucceededDetailsHasBeenSet = false;
 
   StepFailedDetails m_stepFailedDetails;
-  bool m_stepFailedDetailsHasBeenSet = false;
 
   ChainedInvokeStartedDetails m_chainedInvokeStartedDetails;
-  bool m_chainedInvokeStartedDetailsHasBeenSet = false;
 
   ChainedInvokeSucceededDetails m_chainedInvokeSucceededDetails;
-  bool m_chainedInvokeSucceededDetailsHasBeenSet = false;
 
   ChainedInvokeFailedDetails m_chainedInvokeFailedDetails;
-  bool m_chainedInvokeFailedDetailsHasBeenSet = false;
 
   ChainedInvokeTimedOutDetails m_chainedInvokeTimedOutDetails;
-  bool m_chainedInvokeTimedOutDetailsHasBeenSet = false;
 
   ChainedInvokeStoppedDetails m_chainedInvokeStoppedDetails;
-  bool m_chainedInvokeStoppedDetailsHasBeenSet = false;
 
   CallbackStartedDetails m_callbackStartedDetails;
-  bool m_callbackStartedDetailsHasBeenSet = false;
 
   CallbackSucceededDetails m_callbackSucceededDetails;
-  bool m_callbackSucceededDetailsHasBeenSet = false;
 
   CallbackFailedDetails m_callbackFailedDetails;
-  bool m_callbackFailedDetailsHasBeenSet = false;
 
   CallbackTimedOutDetails m_callbackTimedOutDetails;
-  bool m_callbackTimedOutDetailsHasBeenSet = false;
 
   InvocationCompletedDetails m_invocationCompletedDetails;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_subTypeHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_executionStartedDetailsHasBeenSet = false;
+  bool m_executionSucceededDetailsHasBeenSet = false;
+  bool m_executionFailedDetailsHasBeenSet = false;
+  bool m_executionTimedOutDetailsHasBeenSet = false;
+  bool m_executionStoppedDetailsHasBeenSet = false;
+  bool m_contextStartedDetailsHasBeenSet = false;
+  bool m_contextSucceededDetailsHasBeenSet = false;
+  bool m_contextFailedDetailsHasBeenSet = false;
+  bool m_waitStartedDetailsHasBeenSet = false;
+  bool m_waitSucceededDetailsHasBeenSet = false;
+  bool m_waitCancelledDetailsHasBeenSet = false;
+  bool m_stepStartedDetailsHasBeenSet = false;
+  bool m_stepSucceededDetailsHasBeenSet = false;
+  bool m_stepFailedDetailsHasBeenSet = false;
+  bool m_chainedInvokeStartedDetailsHasBeenSet = false;
+  bool m_chainedInvokeSucceededDetailsHasBeenSet = false;
+  bool m_chainedInvokeFailedDetailsHasBeenSet = false;
+  bool m_chainedInvokeTimedOutDetailsHasBeenSet = false;
+  bool m_chainedInvokeStoppedDetailsHasBeenSet = false;
+  bool m_callbackStartedDetailsHasBeenSet = false;
+  bool m_callbackSucceededDetailsHasBeenSet = false;
+  bool m_callbackFailedDetailsHasBeenSet = false;
+  bool m_callbackTimedOutDetailsHasBeenSet = false;
   bool m_invocationCompletedDetailsHasBeenSet = false;
 };
 

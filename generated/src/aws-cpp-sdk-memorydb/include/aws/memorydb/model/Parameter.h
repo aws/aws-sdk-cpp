@@ -141,21 +141,21 @@ class Parameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_minimumEngineVersion;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
   bool m_minimumEngineVersionHasBeenSet = false;
 };
 

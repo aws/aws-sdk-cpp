@@ -78,9 +78,9 @@ class SpeakerSearchDetails {
   ///@}
  private:
   Aws::Vector<SpeakerSearchResult> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_voiceprintGenerationStatus;
+  bool m_resultsHasBeenSet = false;
   bool m_voiceprintGenerationStatusHasBeenSet = false;
 };
 

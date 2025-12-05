@@ -138,18 +138,18 @@ class ResourceSpec {
   ///@}
  private:
   Aws::String m_sageMakerImageArn;
-  bool m_sageMakerImageArnHasBeenSet = false;
 
   Aws::String m_sageMakerImageVersionArn;
-  bool m_sageMakerImageVersionArnHasBeenSet = false;
 
   Aws::String m_sageMakerImageVersionAlias;
-  bool m_sageMakerImageVersionAliasHasBeenSet = false;
 
   AppInstanceType m_instanceType{AppInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_lifecycleConfigArn;
+  bool m_sageMakerImageArnHasBeenSet = false;
+  bool m_sageMakerImageVersionArnHasBeenSet = false;
+  bool m_sageMakerImageVersionAliasHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_lifecycleConfigArnHasBeenSet = false;
 };
 

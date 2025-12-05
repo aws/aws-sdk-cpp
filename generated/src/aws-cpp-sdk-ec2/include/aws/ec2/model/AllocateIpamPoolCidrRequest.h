@@ -224,30 +224,30 @@ class AllocateIpamPoolCidrRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   int m_netmaskLength{0};
-  bool m_netmaskLengthHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_previewNextCidr{false};
-  bool m_previewNextCidrHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedCidrs;
-  bool m_allowedCidrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_disallowedCidrs;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_netmaskLengthHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_previewNextCidrHasBeenSet = false;
+  bool m_allowedCidrsHasBeenSet = false;
   bool m_disallowedCidrsHasBeenSet = false;
 };
 

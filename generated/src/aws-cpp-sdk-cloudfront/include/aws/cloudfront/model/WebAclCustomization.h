@@ -72,9 +72,9 @@ class WebAclCustomization {
   ///@}
  private:
   CustomizationActionType m_action{CustomizationActionType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_actionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

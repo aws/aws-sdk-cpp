@@ -72,9 +72,9 @@ class OrganizationDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   OrganizationStatistics m_organizationStatistics;
+  bool m_updatedAtHasBeenSet = false;
   bool m_organizationStatisticsHasBeenSet = false;
 };
 

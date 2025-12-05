@@ -103,15 +103,15 @@ class CreatePreparedStatementRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   Aws::String m_workGroup;
-  bool m_workGroupHasBeenSet = false;
 
   Aws::String m_queryStatement;
-  bool m_queryStatementHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_statementNameHasBeenSet = false;
+  bool m_workGroupHasBeenSet = false;
+  bool m_queryStatementHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

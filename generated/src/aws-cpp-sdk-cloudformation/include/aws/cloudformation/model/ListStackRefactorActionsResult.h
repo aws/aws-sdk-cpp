@@ -89,12 +89,12 @@ class ListStackRefactorActionsResult {
   ///@}
  private:
   Aws::Vector<StackRefactorAction> m_stackRefactorActions;
-  bool m_stackRefactorActionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackRefactorActionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -108,12 +108,12 @@ class LabelingJobOutputConfig {
   ///@}
  private:
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
+  bool m_s3OutputPathHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_snsTopicArnHasBeenSet = false;
 };
 

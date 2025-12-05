@@ -115,9 +115,9 @@ class DeviceSelectionConfiguration {
   ///@}
  private:
   Aws::Vector<DeviceFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxDevices{0};
+  bool m_filtersHasBeenSet = false;
   bool m_maxDevicesHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class Rule {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_ruleVersion;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
   bool m_ruleVersionHasBeenSet = false;
 };
 

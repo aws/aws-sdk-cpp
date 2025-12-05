@@ -170,24 +170,24 @@ class NotifyProvisionProductEngineWorkflowResultRequest : public ServiceCatalogR
   ///@}
  private:
   Aws::String m_workflowToken;
-  bool m_workflowTokenHasBeenSet = false;
 
   Aws::String m_recordId;
-  bool m_recordIdHasBeenSet = false;
 
   EngineWorkflowStatus m_status{EngineWorkflowStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   EngineWorkflowResourceIdentifier m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::Vector<RecordOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workflowTokenHasBeenSet = false;
+  bool m_recordIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

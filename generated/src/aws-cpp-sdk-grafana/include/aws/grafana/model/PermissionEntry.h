@@ -70,9 +70,9 @@ class PermissionEntry {
   ///@}
  private:
   Role m_role{Role::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   User m_user;
+  bool m_roleHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

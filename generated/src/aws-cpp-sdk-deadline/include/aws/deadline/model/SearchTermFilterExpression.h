@@ -72,9 +72,9 @@ class SearchTermFilterExpression {
   ///@}
  private:
   Aws::String m_searchTerm;
-  bool m_searchTermHasBeenSet = false;
 
   SearchTermMatchingType m_matchType{SearchTermMatchingType::NOT_SET};
+  bool m_searchTermHasBeenSet = false;
   bool m_matchTypeHasBeenSet = false;
 };
 

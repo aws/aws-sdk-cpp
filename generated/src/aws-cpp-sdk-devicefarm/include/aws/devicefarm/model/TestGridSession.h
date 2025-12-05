@@ -140,21 +140,21 @@ class TestGridSession {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   TestGridSessionStatus m_status{TestGridSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_ended{};
-  bool m_endedHasBeenSet = false;
 
   double m_billingMinutes{0.0};
-  bool m_billingMinutesHasBeenSet = false;
 
   Aws::String m_seleniumProperties;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_endedHasBeenSet = false;
+  bool m_billingMinutesHasBeenSet = false;
   bool m_seleniumPropertiesHasBeenSet = false;
 };
 

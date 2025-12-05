@@ -311,39 +311,39 @@ class JobQueueDetail {
   ///@}
  private:
   Aws::String m_jobQueueName;
-  bool m_jobQueueNameHasBeenSet = false;
 
   Aws::String m_jobQueueArn;
-  bool m_jobQueueArnHasBeenSet = false;
 
   JQState m_state{JQState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_schedulingPolicyArn;
-  bool m_schedulingPolicyArnHasBeenSet = false;
 
   JQStatus m_status{JQStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
-  bool m_computeEnvironmentOrderHasBeenSet = false;
 
   Aws::Vector<ServiceEnvironmentOrder> m_serviceEnvironmentOrder;
-  bool m_serviceEnvironmentOrderHasBeenSet = false;
 
   JobQueueType m_jobQueueType{JobQueueType::NOT_SET};
-  bool m_jobQueueTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<JobStateTimeLimitAction> m_jobStateTimeLimitActions;
+  bool m_jobQueueNameHasBeenSet = false;
+  bool m_jobQueueArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_schedulingPolicyArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_computeEnvironmentOrderHasBeenSet = false;
+  bool m_serviceEnvironmentOrderHasBeenSet = false;
+  bool m_jobQueueTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_jobStateTimeLimitActionsHasBeenSet = false;
 };
 

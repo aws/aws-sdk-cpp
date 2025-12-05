@@ -70,9 +70,9 @@ class RouteEmissionType {
   ///@}
  private:
   Aws::String m_co2EmissionClass;
-  bool m_co2EmissionClassHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_co2EmissionClassHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

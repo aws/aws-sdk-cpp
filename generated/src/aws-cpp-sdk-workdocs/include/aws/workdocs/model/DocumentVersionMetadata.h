@@ -277,42 +277,42 @@ class DocumentVersionMetadata {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   DocumentStatusType m_status{DocumentStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTimestamp{};
-  bool m_modifiedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_contentCreatedTimestamp{};
-  bool m_contentCreatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_contentModifiedTimestamp{};
-  bool m_contentModifiedTimestampHasBeenSet = false;
 
   Aws::String m_creatorId;
-  bool m_creatorIdHasBeenSet = false;
 
   Aws::Map<DocumentThumbnailType, Aws::String> m_thumbnail;
-  bool m_thumbnailHasBeenSet = false;
 
   Aws::Map<DocumentSourceType, Aws::String> m_source;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_signatureHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_modifiedTimestampHasBeenSet = false;
+  bool m_contentCreatedTimestampHasBeenSet = false;
+  bool m_contentModifiedTimestampHasBeenSet = false;
+  bool m_creatorIdHasBeenSet = false;
+  bool m_thumbnailHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

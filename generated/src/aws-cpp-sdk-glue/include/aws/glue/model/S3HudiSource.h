@@ -145,18 +145,18 @@ class S3HudiSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_paths;
-  bool m_pathsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalHudiOptions;
-  bool m_additionalHudiOptionsHasBeenSet = false;
 
   S3DirectSourceAdditionalOptions m_additionalOptions;
-  bool m_additionalOptionsHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_pathsHasBeenSet = false;
+  bool m_additionalHudiOptionsHasBeenSet = false;
+  bool m_additionalOptionsHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

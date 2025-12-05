@@ -272,39 +272,39 @@ class AwsDmsReplicationInstanceDetails {
   ///@}
  private:
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_replicationInstanceClass;
-  bool m_replicationInstanceClassHasBeenSet = false;
 
   Aws::String m_replicationInstanceIdentifier;
-  bool m_replicationInstanceIdentifierHasBeenSet = false;
 
   AwsDmsReplicationInstanceReplicationSubnetGroupDetails m_replicationSubnetGroup;
-  bool m_replicationSubnetGroupHasBeenSet = false;
 
   Aws::Vector<AwsDmsReplicationInstanceVpcSecurityGroupsDetails> m_vpcSecurityGroups;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_replicationInstanceClassHasBeenSet = false;
+  bool m_replicationInstanceIdentifierHasBeenSet = false;
+  bool m_replicationSubnetGroupHasBeenSet = false;
   bool m_vpcSecurityGroupsHasBeenSet = false;
 };
 

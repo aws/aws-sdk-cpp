@@ -100,12 +100,12 @@ class FacetResult {
   ///@}
  private:
   Aws::String m_documentAttributeKey;
-  bool m_documentAttributeKeyHasBeenSet = false;
 
   DocumentAttributeValueType m_documentAttributeValueType{DocumentAttributeValueType::NOT_SET};
-  bool m_documentAttributeValueTypeHasBeenSet = false;
 
   Aws::Vector<DocumentAttributeValueCountPair> m_documentAttributeValueCountPairs;
+  bool m_documentAttributeKeyHasBeenSet = false;
+  bool m_documentAttributeValueTypeHasBeenSet = false;
   bool m_documentAttributeValueCountPairsHasBeenSet = false;
 };
 

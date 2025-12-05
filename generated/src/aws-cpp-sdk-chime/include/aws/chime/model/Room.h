@@ -141,21 +141,21 @@ class Room {
   ///@}
  private:
   Aws::String m_roomId;
-  bool m_roomIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_roomIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

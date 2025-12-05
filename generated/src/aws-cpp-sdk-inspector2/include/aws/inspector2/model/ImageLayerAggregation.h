@@ -140,18 +140,18 @@ class ImageLayerAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_repositories;
-  bool m_repositoriesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_layerHashes;
-  bool m_layerHashesHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   ImageLayerSortBy m_sortBy{ImageLayerSortBy::NOT_SET};
+  bool m_repositoriesHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_layerHashesHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

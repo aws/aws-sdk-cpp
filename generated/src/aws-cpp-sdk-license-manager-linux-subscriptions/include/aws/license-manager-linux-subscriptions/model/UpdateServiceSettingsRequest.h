@@ -86,12 +86,12 @@ class UpdateServiceSettingsRequest : public LicenseManagerLinuxSubscriptionsRequ
   ///@}
  private:
   bool m_allowUpdate{false};
-  bool m_allowUpdateHasBeenSet = false;
 
   LinuxSubscriptionsDiscovery m_linuxSubscriptionsDiscovery{LinuxSubscriptionsDiscovery::NOT_SET};
-  bool m_linuxSubscriptionsDiscoveryHasBeenSet = false;
 
   LinuxSubscriptionsDiscoverySettings m_linuxSubscriptionsDiscoverySettings;
+  bool m_allowUpdateHasBeenSet = false;
+  bool m_linuxSubscriptionsDiscoveryHasBeenSet = false;
   bool m_linuxSubscriptionsDiscoverySettingsHasBeenSet = false;
 };
 

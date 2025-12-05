@@ -96,15 +96,15 @@ class DescribeWorkloadResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_workloadRemarks;
-  bool m_workloadRemarksHasBeenSet = false;
 
   WorkloadConfiguration m_workloadConfiguration;
-  bool m_workloadConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadRemarksHasBeenSet = false;
+  bool m_workloadConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

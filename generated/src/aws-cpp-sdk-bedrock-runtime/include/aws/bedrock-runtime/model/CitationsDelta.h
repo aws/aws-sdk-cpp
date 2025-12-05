@@ -119,15 +119,15 @@ class CitationsDelta {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<CitationSourceContentDelta> m_sourceContent;
-  bool m_sourceContentHasBeenSet = false;
 
   CitationLocation m_location;
+  bool m_titleHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceContentHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

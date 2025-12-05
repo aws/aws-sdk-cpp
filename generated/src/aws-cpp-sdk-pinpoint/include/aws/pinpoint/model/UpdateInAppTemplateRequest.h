@@ -126,15 +126,15 @@ class UpdateInAppTemplateRequest : public PinpointRequest {
   ///@}
  private:
   bool m_createNewVersion{false};
-  bool m_createNewVersionHasBeenSet = false;
 
   InAppTemplateRequest m_inAppTemplateRequest;
-  bool m_inAppTemplateRequestHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_createNewVersionHasBeenSet = false;
+  bool m_inAppTemplateRequestHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

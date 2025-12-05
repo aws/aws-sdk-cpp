@@ -90,12 +90,12 @@ class CustomExtractionConfiguration {
   ///@}
  private:
   SemanticExtractionOverride m_semanticExtractionOverride;
-  bool m_semanticExtractionOverrideHasBeenSet = false;
 
   UserPreferenceExtractionOverride m_userPreferenceExtractionOverride;
-  bool m_userPreferenceExtractionOverrideHasBeenSet = false;
 
   EpisodicExtractionOverride m_episodicExtractionOverride;
+  bool m_semanticExtractionOverrideHasBeenSet = false;
+  bool m_userPreferenceExtractionOverrideHasBeenSet = false;
   bool m_episodicExtractionOverrideHasBeenSet = false;
 };
 

@@ -158,21 +158,21 @@ class ClaimPhoneNumberRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_phoneNumberDescription;
-  bool m_phoneNumberDescriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_targetArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_phoneNumberDescriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

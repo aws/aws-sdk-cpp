@@ -109,15 +109,15 @@ class Proxy {
   ///@}
  private:
   int m_defaultSessionExpiryMinutes{0};
-  bool m_defaultSessionExpiryMinutesHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::String m_fallBackPhoneNumber;
-  bool m_fallBackPhoneNumberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_phoneNumberCountries;
+  bool m_defaultSessionExpiryMinutesHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
+  bool m_fallBackPhoneNumberHasBeenSet = false;
   bool m_phoneNumberCountriesHasBeenSet = false;
 };
 

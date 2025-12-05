@@ -69,9 +69,9 @@ class HttpEndpointCommonAttribute {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeValue;
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeValueHasBeenSet = false;
 };
 

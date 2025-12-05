@@ -164,21 +164,21 @@ class NodeRangeProperty {
   ///@}
  private:
   Aws::String m_targetNodes;
-  bool m_targetNodesHasBeenSet = false;
 
   ContainerProperties m_container;
-  bool m_containerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceTypes;
-  bool m_instanceTypesHasBeenSet = false;
 
   EcsProperties m_ecsProperties;
-  bool m_ecsPropertiesHasBeenSet = false;
 
   EksProperties m_eksProperties;
-  bool m_eksPropertiesHasBeenSet = false;
 
   ConsumableResourceProperties m_consumableResourceProperties;
+  bool m_targetNodesHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_instanceTypesHasBeenSet = false;
+  bool m_ecsPropertiesHasBeenSet = false;
+  bool m_eksPropertiesHasBeenSet = false;
   bool m_consumableResourcePropertiesHasBeenSet = false;
 };
 

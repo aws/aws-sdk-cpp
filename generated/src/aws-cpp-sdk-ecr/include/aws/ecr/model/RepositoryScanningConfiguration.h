@@ -128,18 +128,18 @@ class RepositoryScanningConfiguration {
   ///@}
  private:
   Aws::String m_repositoryArn;
-  bool m_repositoryArnHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   bool m_scanOnPush{false};
-  bool m_scanOnPushHasBeenSet = false;
 
   ScanFrequency m_scanFrequency{ScanFrequency::NOT_SET};
-  bool m_scanFrequencyHasBeenSet = false;
 
   Aws::Vector<ScanningRepositoryFilter> m_appliedScanFilters;
+  bool m_repositoryArnHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_scanOnPushHasBeenSet = false;
+  bool m_scanFrequencyHasBeenSet = false;
   bool m_appliedScanFiltersHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class ListModelsResult {
   ///@}
  private:
   Aws::Vector<ModelSummary> m_modelSummaries;
-  bool m_modelSummariesHasBeenSet = false;
 
   Aws::Vector<ModelAlias> m_modelAliases;
-  bool m_modelAliasesHasBeenSet = false;
 
   CompatibilityInformation m_compatibilityInformation;
-  bool m_compatibilityInformationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelSummariesHasBeenSet = false;
+  bool m_modelAliasesHasBeenSet = false;
+  bool m_compatibilityInformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

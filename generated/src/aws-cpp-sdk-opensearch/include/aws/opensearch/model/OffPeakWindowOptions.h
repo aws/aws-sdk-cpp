@@ -73,9 +73,9 @@ class OffPeakWindowOptions {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   OffPeakWindow m_offPeakWindow;
+  bool m_enabledHasBeenSet = false;
   bool m_offPeakWindowHasBeenSet = false;
 };
 

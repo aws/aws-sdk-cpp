@@ -110,18 +110,18 @@ class StartReplayResult {
   ///@}
  private:
   Aws::String m_replayArn;
-  bool m_replayArnHasBeenSet = false;
 
   ReplayState m_state{ReplayState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_replayStartTime{};
-  bool m_replayStartTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replayArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_replayStartTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class DescribeHsmConfigurationsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<HsmConfiguration> m_hsmConfigurations;
-  bool m_hsmConfigurationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_hsmConfigurationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

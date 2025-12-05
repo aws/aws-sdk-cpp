@@ -100,12 +100,12 @@ class BatchApplyUpdateActionRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_replicationGroupIds;
-  bool m_replicationGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheClusterIds;
-  bool m_cacheClusterIdsHasBeenSet = false;
 
   Aws::String m_serviceUpdateName;
+  bool m_replicationGroupIdsHasBeenSet = false;
+  bool m_cacheClusterIdsHasBeenSet = false;
   bool m_serviceUpdateNameHasBeenSet = false;
 };
 

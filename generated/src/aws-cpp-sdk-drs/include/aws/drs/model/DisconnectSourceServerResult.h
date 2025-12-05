@@ -293,48 +293,48 @@ class DisconnectSourceServerResult {
   ///@}
  private:
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DataReplicationInfo m_dataReplicationInfo;
-  bool m_dataReplicationInfoHasBeenSet = false;
 
   LastLaunchResult m_lastLaunchResult{LastLaunchResult::NOT_SET};
-  bool m_lastLaunchResultHasBeenSet = false;
 
   LifeCycle m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
   Aws::String m_recoveryInstanceId;
-  bool m_recoveryInstanceIdHasBeenSet = false;
 
   ReplicationDirection m_replicationDirection{ReplicationDirection::NOT_SET};
-  bool m_replicationDirectionHasBeenSet = false;
 
   Aws::String m_reversedDirectionSourceServerArn;
-  bool m_reversedDirectionSourceServerArnHasBeenSet = false;
 
   SourceCloudProperties m_sourceCloudProperties;
-  bool m_sourceCloudPropertiesHasBeenSet = false;
 
   Aws::String m_sourceNetworkID;
-  bool m_sourceNetworkIDHasBeenSet = false;
 
   SourceProperties m_sourceProperties;
-  bool m_sourcePropertiesHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   StagingArea m_stagingArea;
-  bool m_stagingAreaHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_dataReplicationInfoHasBeenSet = false;
+  bool m_lastLaunchResultHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_recoveryInstanceIdHasBeenSet = false;
+  bool m_replicationDirectionHasBeenSet = false;
+  bool m_reversedDirectionSourceServerArnHasBeenSet = false;
+  bool m_sourceCloudPropertiesHasBeenSet = false;
+  bool m_sourceNetworkIDHasBeenSet = false;
+  bool m_sourcePropertiesHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
+  bool m_stagingAreaHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -122,18 +122,18 @@ class ResourceContent {
   ///@}
  private:
   ResourceContentType m_type{ResourceContentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_blob{};
+  bool m_typeHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_mimeTypeHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_blobHasBeenSet = false;
 };
 

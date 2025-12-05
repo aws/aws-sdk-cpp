@@ -283,45 +283,45 @@ class DescribeJobTemplateResult {
   ///@}
  private:
   Aws::String m_jobTemplateArn;
-  bool m_jobTemplateArnHasBeenSet = false;
 
   Aws::String m_jobTemplateId;
-  bool m_jobTemplateIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_documentSource;
-  bool m_documentSourceHasBeenSet = false;
 
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   PresignedUrlConfig m_presignedUrlConfig;
-  bool m_presignedUrlConfigHasBeenSet = false;
 
   JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
-  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
 
   AbortConfig m_abortConfig;
-  bool m_abortConfigHasBeenSet = false;
 
   TimeoutConfig m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   JobExecutionsRetryConfig m_jobExecutionsRetryConfig;
-  bool m_jobExecutionsRetryConfigHasBeenSet = false;
 
   Aws::Vector<MaintenanceWindow> m_maintenanceWindows;
-  bool m_maintenanceWindowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationPackageVersions;
-  bool m_destinationPackageVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobTemplateArnHasBeenSet = false;
+  bool m_jobTemplateIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_documentSourceHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_presignedUrlConfigHasBeenSet = false;
+  bool m_jobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_abortConfigHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
+  bool m_jobExecutionsRetryConfigHasBeenSet = false;
+  bool m_maintenanceWindowsHasBeenSet = false;
+  bool m_destinationPackageVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class BooleanCondition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   BooleanComparisonType m_comparisonType{BooleanComparisonType::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
   bool m_comparisonTypeHasBeenSet = false;
 };
 

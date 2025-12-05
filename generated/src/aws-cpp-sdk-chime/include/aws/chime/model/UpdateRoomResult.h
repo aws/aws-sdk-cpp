@@ -60,9 +60,9 @@ class UpdateRoomResult {
   ///@}
  private:
   Room m_room;
-  bool m_roomHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roomHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

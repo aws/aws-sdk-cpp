@@ -191,24 +191,24 @@ class ListSolutionsRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   SolutionSort m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::Vector<SolutionStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_category;
+  bool m_catalogHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
 };
 

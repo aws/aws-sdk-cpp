@@ -169,21 +169,21 @@ class CustomMessageActivity {
   ///@}
  private:
   Aws::String m_deliveryUri;
-  bool m_deliveryUriHasBeenSet = false;
 
   Aws::Vector<__EndpointTypesElement> m_endpointTypes;
-  bool m_endpointTypesHasBeenSet = false;
 
   JourneyCustomMessage m_messageConfig;
-  bool m_messageConfigHasBeenSet = false;
 
   Aws::String m_nextActivity;
-  bool m_nextActivityHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateVersion;
+  bool m_deliveryUriHasBeenSet = false;
+  bool m_endpointTypesHasBeenSet = false;
+  bool m_messageConfigHasBeenSet = false;
+  bool m_nextActivityHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_templateVersionHasBeenSet = false;
 };
 

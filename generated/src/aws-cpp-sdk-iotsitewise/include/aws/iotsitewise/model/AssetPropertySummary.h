@@ -173,24 +173,24 @@ class AssetPropertySummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   PropertyNotification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   Aws::String m_assetCompositeModelId;
-  bool m_assetCompositeModelIdHasBeenSet = false;
 
   Aws::Vector<AssetPropertyPathSegment> m_path;
+  bool m_idHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_notificationHasBeenSet = false;
+  bool m_assetCompositeModelIdHasBeenSet = false;
   bool m_pathHasBeenSet = false;
 };
 

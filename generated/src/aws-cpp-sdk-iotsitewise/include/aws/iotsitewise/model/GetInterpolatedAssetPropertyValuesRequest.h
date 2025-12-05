@@ -298,42 +298,42 @@ class GetInterpolatedAssetPropertyValuesRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
-  bool m_propertyIdHasBeenSet = false;
 
   Aws::String m_propertyAlias;
-  bool m_propertyAliasHasBeenSet = false;
 
   long long m_startTimeInSeconds{0};
-  bool m_startTimeInSecondsHasBeenSet = false;
 
   int m_startTimeOffsetInNanos{0};
-  bool m_startTimeOffsetInNanosHasBeenSet = false;
 
   long long m_endTimeInSeconds{0};
-  bool m_endTimeInSecondsHasBeenSet = false;
 
   int m_endTimeOffsetInNanos{0};
-  bool m_endTimeOffsetInNanosHasBeenSet = false;
 
   Quality m_quality{Quality::NOT_SET};
-  bool m_qualityHasBeenSet = false;
 
   long long m_intervalInSeconds{0};
-  bool m_intervalInSecondsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   long long m_intervalWindowInSeconds{0};
+  bool m_assetIdHasBeenSet = false;
+  bool m_propertyIdHasBeenSet = false;
+  bool m_propertyAliasHasBeenSet = false;
+  bool m_startTimeInSecondsHasBeenSet = false;
+  bool m_startTimeOffsetInNanosHasBeenSet = false;
+  bool m_endTimeInSecondsHasBeenSet = false;
+  bool m_endTimeOffsetInNanosHasBeenSet = false;
+  bool m_qualityHasBeenSet = false;
+  bool m_intervalInSecondsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_intervalWindowInSecondsHasBeenSet = false;
 };
 

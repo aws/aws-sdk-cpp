@@ -85,12 +85,12 @@ class AddAttachmentsToSetResult {
   ///@}
  private:
   Aws::String m_attachmentSetId;
-  bool m_attachmentSetIdHasBeenSet = false;
 
   Aws::String m_expiryTime;
-  bool m_expiryTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachmentSetIdHasBeenSet = false;
+  bool m_expiryTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

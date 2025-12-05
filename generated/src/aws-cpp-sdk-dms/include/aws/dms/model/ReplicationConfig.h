@@ -256,39 +256,39 @@ class ReplicationConfig {
   ///@}
  private:
   Aws::String m_replicationConfigIdentifier;
-  bool m_replicationConfigIdentifierHasBeenSet = false;
 
   Aws::String m_replicationConfigArn;
-  bool m_replicationConfigArnHasBeenSet = false;
 
   Aws::String m_sourceEndpointArn;
-  bool m_sourceEndpointArnHasBeenSet = false;
 
   Aws::String m_targetEndpointArn;
-  bool m_targetEndpointArnHasBeenSet = false;
 
   MigrationTypeValue m_replicationType{MigrationTypeValue::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
   ComputeConfig m_computeConfig;
-  bool m_computeConfigHasBeenSet = false;
 
   Aws::String m_replicationSettings;
-  bool m_replicationSettingsHasBeenSet = false;
 
   Aws::String m_supplementalSettings;
-  bool m_supplementalSettingsHasBeenSet = false;
 
   Aws::String m_tableMappings;
-  bool m_tableMappingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationConfigCreateTime{};
-  bool m_replicationConfigCreateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationConfigUpdateTime{};
-  bool m_replicationConfigUpdateTimeHasBeenSet = false;
 
   bool m_isReadOnly{false};
+  bool m_replicationConfigIdentifierHasBeenSet = false;
+  bool m_replicationConfigArnHasBeenSet = false;
+  bool m_sourceEndpointArnHasBeenSet = false;
+  bool m_targetEndpointArnHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
+  bool m_computeConfigHasBeenSet = false;
+  bool m_replicationSettingsHasBeenSet = false;
+  bool m_supplementalSettingsHasBeenSet = false;
+  bool m_tableMappingsHasBeenSet = false;
+  bool m_replicationConfigCreateTimeHasBeenSet = false;
+  bool m_replicationConfigUpdateTimeHasBeenSet = false;
   bool m_isReadOnlyHasBeenSet = false;
 };
 

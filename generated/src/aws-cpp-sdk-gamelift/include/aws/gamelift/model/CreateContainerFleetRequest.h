@@ -442,48 +442,48 @@ class CreateContainerFleetRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetRoleArn;
-  bool m_fleetRoleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_gameServerContainerGroupDefinitionName;
-  bool m_gameServerContainerGroupDefinitionNameHasBeenSet = false;
 
   Aws::String m_perInstanceContainerGroupDefinitionName;
-  bool m_perInstanceContainerGroupDefinitionNameHasBeenSet = false;
 
   ConnectionPortRange m_instanceConnectionPortRange;
-  bool m_instanceConnectionPortRangeHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_instanceInboundPermissions;
-  bool m_instanceInboundPermissionsHasBeenSet = false;
 
   int m_gameServerContainerGroupsPerInstance{0};
-  bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   ContainerFleetBillingType m_billingType{ContainerFleetBillingType::NOT_SET};
-  bool m_billingTypeHasBeenSet = false;
 
   Aws::Vector<LocationConfiguration> m_locations;
-  bool m_locationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricGroups;
-  bool m_metricGroupsHasBeenSet = false;
 
   ProtectionPolicy m_newGameSessionProtectionPolicy{ProtectionPolicy::NOT_SET};
-  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
 
   GameSessionCreationLimitPolicy m_gameSessionCreationLimitPolicy;
-  bool m_gameSessionCreationLimitPolicyHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_fleetRoleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_gameServerContainerGroupDefinitionNameHasBeenSet = false;
+  bool m_perInstanceContainerGroupDefinitionNameHasBeenSet = false;
+  bool m_instanceConnectionPortRangeHasBeenSet = false;
+  bool m_instanceInboundPermissionsHasBeenSet = false;
+  bool m_gameServerContainerGroupsPerInstanceHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_billingTypeHasBeenSet = false;
+  bool m_locationsHasBeenSet = false;
+  bool m_metricGroupsHasBeenSet = false;
+  bool m_newGameSessionProtectionPolicyHasBeenSet = false;
+  bool m_gameSessionCreationLimitPolicyHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

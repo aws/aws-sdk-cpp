@@ -128,18 +128,18 @@ class ProvisionedThroughputDescription {
   ///@}
  private:
   Aws::Utils::DateTime m_lastIncreaseDateTime{};
-  bool m_lastIncreaseDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDecreaseDateTime{};
-  bool m_lastDecreaseDateTimeHasBeenSet = false;
 
   long long m_numberOfDecreasesToday{0};
-  bool m_numberOfDecreasesTodayHasBeenSet = false;
 
   long long m_readCapacityUnits{0};
-  bool m_readCapacityUnitsHasBeenSet = false;
 
   long long m_writeCapacityUnits{0};
+  bool m_lastIncreaseDateTimeHasBeenSet = false;
+  bool m_lastDecreaseDateTimeHasBeenSet = false;
+  bool m_numberOfDecreasesTodayHasBeenSet = false;
+  bool m_readCapacityUnitsHasBeenSet = false;
   bool m_writeCapacityUnitsHasBeenSet = false;
 };
 

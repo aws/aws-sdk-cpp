@@ -67,9 +67,9 @@ class OutboundStrategy {
   ///@}
  private:
   OutboundStrategyType m_type{OutboundStrategyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   OutboundStrategyConfig m_config;
+  bool m_typeHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

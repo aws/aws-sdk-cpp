@@ -77,12 +77,12 @@ class StartActiveApprovalTeamDeletionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_deletionCompletionTime{};
-  bool m_deletionCompletionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionStartTime{};
-  bool m_deletionStartTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletionCompletionTimeHasBeenSet = false;
+  bool m_deletionStartTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

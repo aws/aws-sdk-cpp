@@ -102,12 +102,12 @@ class CreateWorkspaceInstanceRequest : public WorkspacesInstancesRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ManagedInstanceRequest m_managedInstance;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_managedInstanceHasBeenSet = false;
 };
 

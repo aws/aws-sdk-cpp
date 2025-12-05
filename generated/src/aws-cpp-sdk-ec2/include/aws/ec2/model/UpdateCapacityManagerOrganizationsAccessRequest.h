@@ -90,12 +90,12 @@ class UpdateCapacityManagerOrganizationsAccessRequest : public EC2Request {
   ///@}
  private:
   bool m_organizationsAccess{false};
-  bool m_organizationsAccessHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_organizationsAccessHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

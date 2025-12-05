@@ -71,9 +71,9 @@ class PathStatement {
   ///@}
  private:
   PacketHeaderStatement m_packetHeaderStatement;
-  bool m_packetHeaderStatementHasBeenSet = false;
 
   ResourceStatement m_resourceStatement;
+  bool m_packetHeaderStatementHasBeenSet = false;
   bool m_resourceStatementHasBeenSet = false;
 };
 

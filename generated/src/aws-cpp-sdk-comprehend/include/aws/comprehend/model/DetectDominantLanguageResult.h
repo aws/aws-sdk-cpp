@@ -73,9 +73,9 @@ class DetectDominantLanguageResult {
   ///@}
  private:
   Aws::Vector<DominantLanguage> m_languages;
-  bool m_languagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_languagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

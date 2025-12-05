@@ -77,12 +77,12 @@ class UpdateDistributionWithStagingConfig2020_05_31Result {
   ///@}
  private:
   Distribution m_distribution;
-  bool m_distributionHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_distributionHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

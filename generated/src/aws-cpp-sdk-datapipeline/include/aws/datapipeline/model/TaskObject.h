@@ -116,15 +116,15 @@ class TaskObject {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::String m_attemptId;
-  bool m_attemptIdHasBeenSet = false;
 
   Aws::Map<Aws::String, PipelineObject> m_objects;
+  bool m_taskIdHasBeenSet = false;
+  bool m_pipelineIdHasBeenSet = false;
+  bool m_attemptIdHasBeenSet = false;
   bool m_objectsHasBeenSet = false;
 };
 

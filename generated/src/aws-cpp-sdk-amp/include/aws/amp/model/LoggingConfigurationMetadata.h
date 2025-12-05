@@ -128,18 +128,18 @@ class LoggingConfigurationMetadata {
   ///@}
  private:
   LoggingConfigurationStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_workspace;
-  bool m_workspaceHasBeenSet = false;
 
   Aws::String m_logGroupArn;
-  bool m_logGroupArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
+  bool m_statusHasBeenSet = false;
+  bool m_workspaceHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class SearchFilter {
   ///@}
  private:
   Aws::Vector<SearchByAttributeValue> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Operator m_operator{Operator::NOT_SET};
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

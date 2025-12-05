@@ -78,9 +78,9 @@ class SearchGroupedFilterExpressions {
   ///@}
  private:
   Aws::Vector<SearchFilterExpression> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   LogicalOperator m_operator{LogicalOperator::NOT_SET};
+  bool m_filtersHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

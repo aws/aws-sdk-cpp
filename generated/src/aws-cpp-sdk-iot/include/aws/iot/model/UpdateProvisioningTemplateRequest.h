@@ -154,24 +154,24 @@ class UpdateProvisioningTemplateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_defaultVersionId{0};
-  bool m_defaultVersionIdHasBeenSet = false;
 
   Aws::String m_provisioningRoleArn;
-  bool m_provisioningRoleArnHasBeenSet = false;
 
   ProvisioningHook m_preProvisioningHook;
-  bool m_preProvisioningHookHasBeenSet = false;
 
   bool m_removePreProvisioningHook{false};
+  bool m_templateNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_defaultVersionIdHasBeenSet = false;
+  bool m_provisioningRoleArnHasBeenSet = false;
+  bool m_preProvisioningHookHasBeenSet = false;
   bool m_removePreProvisioningHookHasBeenSet = false;
 };
 

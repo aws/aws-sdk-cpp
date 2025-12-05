@@ -66,9 +66,9 @@ class OcsfIpFilter {
   ///@}
  private:
   OcsfIpField m_fieldName{OcsfIpField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   IpFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

@@ -120,18 +120,18 @@ class GetAggregateDiscoveredResourceCountsResult {
   ///@}
  private:
   long long m_totalDiscoveredResources{0};
-  bool m_totalDiscoveredResourcesHasBeenSet = false;
 
   Aws::String m_groupByKey;
-  bool m_groupByKeyHasBeenSet = false;
 
   Aws::Vector<GroupedResourceCount> m_groupedResourceCounts;
-  bool m_groupedResourceCountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_totalDiscoveredResourcesHasBeenSet = false;
+  bool m_groupByKeyHasBeenSet = false;
+  bool m_groupedResourceCountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

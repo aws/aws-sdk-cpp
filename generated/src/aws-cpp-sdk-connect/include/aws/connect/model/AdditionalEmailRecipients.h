@@ -82,9 +82,9 @@ class AdditionalEmailRecipients {
   ///@}
  private:
   Aws::Vector<EmailRecipient> m_toList;
-  bool m_toListHasBeenSet = false;
 
   Aws::Vector<EmailRecipient> m_ccList;
+  bool m_toListHasBeenSet = false;
   bool m_ccListHasBeenSet = false;
 };
 

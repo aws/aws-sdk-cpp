@@ -81,9 +81,9 @@ class CustomRoutingListener {
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   Aws::Vector<PortRange> m_portRanges;
+  bool m_listenerArnHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
 };
 

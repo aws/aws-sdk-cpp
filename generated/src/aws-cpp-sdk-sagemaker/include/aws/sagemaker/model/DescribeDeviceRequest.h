@@ -85,12 +85,12 @@ class DescribeDeviceRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
   bool m_deviceFleetNameHasBeenSet = false;
 };
 

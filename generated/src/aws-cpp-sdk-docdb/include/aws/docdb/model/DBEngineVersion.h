@@ -264,36 +264,36 @@ class DBEngineVersion {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dBParameterGroupFamily;
-  bool m_dBParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_dBEngineDescription;
-  bool m_dBEngineDescriptionHasBeenSet = false;
 
   Aws::String m_dBEngineVersionDescription;
-  bool m_dBEngineVersionDescriptionHasBeenSet = false;
 
   Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
-  bool m_validUpgradeTargetHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exportableLogTypes;
-  bool m_exportableLogTypesHasBeenSet = false;
 
   bool m_supportsLogExportsToCloudwatchLogs{false};
-  bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedCACertificateIdentifiers;
-  bool m_supportedCACertificateIdentifiersHasBeenSet = false;
 
   bool m_supportsCertificateRotationWithoutRestart{false};
-  bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;
 
   ServerlessV2FeaturesSupport m_serverlessV2FeaturesSupport;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dBParameterGroupFamilyHasBeenSet = false;
+  bool m_dBEngineDescriptionHasBeenSet = false;
+  bool m_dBEngineVersionDescriptionHasBeenSet = false;
+  bool m_validUpgradeTargetHasBeenSet = false;
+  bool m_exportableLogTypesHasBeenSet = false;
+  bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
+  bool m_supportedCACertificateIdentifiersHasBeenSet = false;
+  bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;
   bool m_serverlessV2FeaturesSupportHasBeenSet = false;
 };
 

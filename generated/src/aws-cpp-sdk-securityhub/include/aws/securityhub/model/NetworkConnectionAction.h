@@ -146,21 +146,21 @@ class NetworkConnectionAction {
   ///@}
  private:
   Aws::String m_connectionDirection;
-  bool m_connectionDirectionHasBeenSet = false;
 
   ActionRemoteIpDetails m_remoteIpDetails;
-  bool m_remoteIpDetailsHasBeenSet = false;
 
   ActionRemotePortDetails m_remotePortDetails;
-  bool m_remotePortDetailsHasBeenSet = false;
 
   ActionLocalPortDetails m_localPortDetails;
-  bool m_localPortDetailsHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   bool m_blocked{false};
+  bool m_connectionDirectionHasBeenSet = false;
+  bool m_remoteIpDetailsHasBeenSet = false;
+  bool m_remotePortDetailsHasBeenSet = false;
+  bool m_localPortDetailsHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_blockedHasBeenSet = false;
 };
 

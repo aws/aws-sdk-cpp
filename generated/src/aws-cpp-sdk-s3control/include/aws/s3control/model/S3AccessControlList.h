@@ -76,9 +76,9 @@ class S3AccessControlList {
   ///@}
  private:
   S3ObjectOwner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Vector<S3Grant> m_grants;
+  bool m_ownerHasBeenSet = false;
   bool m_grantsHasBeenSet = false;
 };
 

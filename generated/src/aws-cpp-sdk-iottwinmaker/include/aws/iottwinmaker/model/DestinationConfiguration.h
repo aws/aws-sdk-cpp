@@ -88,12 +88,12 @@ class DestinationConfiguration {
   ///@}
  private:
   DestinationType m_type{DestinationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   S3DestinationConfiguration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   IotTwinMakerDestinationConfiguration m_iotTwinMakerConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
   bool m_iotTwinMakerConfigurationHasBeenSet = false;
 };
 

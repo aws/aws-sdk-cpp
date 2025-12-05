@@ -91,12 +91,12 @@ class BatchGetVariableResult {
   ///@}
  private:
   Aws::Vector<Variable> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::Vector<BatchGetVariableError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_variablesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

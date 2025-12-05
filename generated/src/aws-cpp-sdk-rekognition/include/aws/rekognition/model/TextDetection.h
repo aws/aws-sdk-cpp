@@ -147,21 +147,21 @@ class TextDetection {
   ///@}
  private:
   Aws::String m_detectedText;
-  bool m_detectedTextHasBeenSet = false;
 
   TextTypes m_type{TextTypes::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   int m_parentId{0};
-  bool m_parentIdHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Geometry m_geometry;
+  bool m_detectedTextHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_parentIdHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
   bool m_geometryHasBeenSet = false;
 };
 

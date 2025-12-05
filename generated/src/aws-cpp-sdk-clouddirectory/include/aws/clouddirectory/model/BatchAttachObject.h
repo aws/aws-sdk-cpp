@@ -88,12 +88,12 @@ class BatchAttachObject {
   ///@}
  private:
   ObjectReference m_parentReference;
-  bool m_parentReferenceHasBeenSet = false;
 
   ObjectReference m_childReference;
-  bool m_childReferenceHasBeenSet = false;
 
   Aws::String m_linkName;
+  bool m_parentReferenceHasBeenSet = false;
+  bool m_childReferenceHasBeenSet = false;
   bool m_linkNameHasBeenSet = false;
 };
 

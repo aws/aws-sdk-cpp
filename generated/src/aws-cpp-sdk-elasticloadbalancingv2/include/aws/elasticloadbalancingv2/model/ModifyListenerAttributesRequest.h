@@ -77,9 +77,9 @@ class ModifyListenerAttributesRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   Aws::Vector<ListenerAttribute> m_attributes;
+  bool m_listenerArnHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

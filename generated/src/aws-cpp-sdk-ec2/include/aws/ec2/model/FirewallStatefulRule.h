@@ -206,27 +206,27 @@ class FirewallStatefulRule {
   ///@}
  private:
   Aws::String m_ruleGroupArn;
-  bool m_ruleGroupArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<PortRange> m_sourcePorts;
-  bool m_sourcePortsHasBeenSet = false;
 
   Aws::Vector<PortRange> m_destinationPorts;
-  bool m_destinationPortsHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_ruleAction;
-  bool m_ruleActionHasBeenSet = false;
 
   Aws::String m_direction;
+  bool m_ruleGroupArnHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_sourcePortsHasBeenSet = false;
+  bool m_destinationPortsHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
   bool m_directionHasBeenSet = false;
 };
 

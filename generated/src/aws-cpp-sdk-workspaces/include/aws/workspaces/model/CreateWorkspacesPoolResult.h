@@ -60,9 +60,9 @@ class CreateWorkspacesPoolResult {
   ///@}
  private:
   WorkspacesPool m_workspacesPool;
-  bool m_workspacesPoolHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspacesPoolHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

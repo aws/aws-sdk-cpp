@@ -206,30 +206,30 @@ class PutProcurementPortalPreferenceRequest : public InvoicingRequest {
   ///@}
  private:
   Aws::String m_procurementPortalPreferenceArn;
-  bool m_procurementPortalPreferenceArnHasBeenSet = false;
 
   ProcurementPortalPreferenceSelector m_selector;
-  bool m_selectorHasBeenSet = false;
 
   Aws::String m_procurementPortalSharedSecret;
-  bool m_procurementPortalSharedSecretHasBeenSet = false;
 
   Aws::String m_procurementPortalInstanceEndpoint;
-  bool m_procurementPortalInstanceEndpointHasBeenSet = false;
 
   TestEnvPreferenceInput m_testEnvPreference;
-  bool m_testEnvPreferenceHasBeenSet = false;
 
   bool m_einvoiceDeliveryEnabled{false};
-  bool m_einvoiceDeliveryEnabledHasBeenSet = false;
 
   EinvoiceDeliveryPreference m_einvoiceDeliveryPreference;
-  bool m_einvoiceDeliveryPreferenceHasBeenSet = false;
 
   bool m_purchaseOrderRetrievalEnabled{false};
-  bool m_purchaseOrderRetrievalEnabledHasBeenSet = false;
 
   Aws::Vector<Contact> m_contacts;
+  bool m_procurementPortalPreferenceArnHasBeenSet = false;
+  bool m_selectorHasBeenSet = false;
+  bool m_procurementPortalSharedSecretHasBeenSet = false;
+  bool m_procurementPortalInstanceEndpointHasBeenSet = false;
+  bool m_testEnvPreferenceHasBeenSet = false;
+  bool m_einvoiceDeliveryEnabledHasBeenSet = false;
+  bool m_einvoiceDeliveryPreferenceHasBeenSet = false;
+  bool m_purchaseOrderRetrievalEnabledHasBeenSet = false;
   bool m_contactsHasBeenSet = false;
 };
 

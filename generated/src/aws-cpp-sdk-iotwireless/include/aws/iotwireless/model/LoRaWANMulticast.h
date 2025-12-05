@@ -79,12 +79,12 @@ class LoRaWANMulticast {
   ///@}
  private:
   SupportedRfRegion m_rfRegion{SupportedRfRegion::NOT_SET};
-  bool m_rfRegionHasBeenSet = false;
 
   DlClass m_dlClass{DlClass::NOT_SET};
-  bool m_dlClassHasBeenSet = false;
 
   ParticipatingGatewaysMulticast m_participatingGateways;
+  bool m_rfRegionHasBeenSet = false;
+  bool m_dlClassHasBeenSet = false;
   bool m_participatingGatewaysHasBeenSet = false;
 };
 

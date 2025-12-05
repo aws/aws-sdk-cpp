@@ -134,18 +134,18 @@ class Device {
   ///@}
  private:
   Aws::String m_connectorDeviceId;
-  bool m_connectorDeviceIdHasBeenSet = false;
 
   Aws::String m_connectorDeviceName;
-  bool m_connectorDeviceNameHasBeenSet = false;
 
   MatterCapabilityReport m_capabilityReport;
-  bool m_capabilityReportHasBeenSet = false;
 
   Aws::Vector<CapabilitySchemaItem> m_capabilitySchemas;
-  bool m_capabilitySchemasHasBeenSet = false;
 
   Aws::Utils::Document m_deviceMetadata;
+  bool m_connectorDeviceIdHasBeenSet = false;
+  bool m_connectorDeviceNameHasBeenSet = false;
+  bool m_capabilityReportHasBeenSet = false;
+  bool m_capabilitySchemasHasBeenSet = false;
   bool m_deviceMetadataHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class AssessmentFramework {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   FrameworkMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<AssessmentControlSet> m_controlSets;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_controlSetsHasBeenSet = false;
 };
 

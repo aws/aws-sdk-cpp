@@ -89,12 +89,12 @@ class AppInstanceUserMembershipSummary {
   ///@}
  private:
   ChannelMembershipType m_type{ChannelMembershipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_readMarkerTimestamp{};
-  bool m_readMarkerTimestampHasBeenSet = false;
 
   Aws::String m_subChannelId;
+  bool m_typeHasBeenSet = false;
+  bool m_readMarkerTimestampHasBeenSet = false;
   bool m_subChannelIdHasBeenSet = false;
 };
 

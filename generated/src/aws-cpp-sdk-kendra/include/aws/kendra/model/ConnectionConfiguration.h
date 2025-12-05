@@ -128,18 +128,18 @@ class ConnectionConfiguration {
   ///@}
  private:
   Aws::String m_databaseHost;
-  bool m_databaseHostHasBeenSet = false;
 
   int m_databasePort{0};
-  bool m_databasePortHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_databaseHostHasBeenSet = false;
+  bool m_databasePortHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

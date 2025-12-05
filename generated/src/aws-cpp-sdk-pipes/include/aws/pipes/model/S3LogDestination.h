@@ -111,15 +111,15 @@ class S3LogDestination {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_bucketOwner;
-  bool m_bucketOwnerHasBeenSet = false;
 
   S3OutputFormat m_outputFormat{S3OutputFormat::NOT_SET};
+  bool m_bucketNameHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_bucketOwnerHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

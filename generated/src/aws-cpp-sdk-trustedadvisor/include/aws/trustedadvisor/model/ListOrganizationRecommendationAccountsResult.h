@@ -92,12 +92,12 @@ class ListOrganizationRecommendationAccountsResult {
   ///@}
  private:
   Aws::Vector<AccountRecommendationLifecycleSummary> m_accountRecommendationLifecycleSummaries;
-  bool m_accountRecommendationLifecycleSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountRecommendationLifecycleSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

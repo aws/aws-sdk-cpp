@@ -124,18 +124,18 @@ class BatchGetTableOptimizerError {
   ///@}
  private:
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   TableOptimizerType m_type{TableOptimizerType::NOT_SET};
+  bool m_errorHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

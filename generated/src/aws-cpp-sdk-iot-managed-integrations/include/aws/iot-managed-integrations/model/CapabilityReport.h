@@ -95,12 +95,12 @@ class CapabilityReport {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::Vector<CapabilityReportEndpoint> m_endpoints;
+  bool m_versionHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;
 };
 

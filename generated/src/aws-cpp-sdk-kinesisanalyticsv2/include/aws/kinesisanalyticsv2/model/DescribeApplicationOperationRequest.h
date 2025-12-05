@@ -67,9 +67,9 @@ class DescribeApplicationOperationRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_operationId;
+  bool m_applicationNameHasBeenSet = false;
   bool m_operationIdHasBeenSet = false;
 };
 

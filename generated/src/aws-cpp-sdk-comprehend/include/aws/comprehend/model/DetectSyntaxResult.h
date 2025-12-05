@@ -72,9 +72,9 @@ class DetectSyntaxResult {
   ///@}
  private:
   Aws::Vector<SyntaxToken> m_syntaxTokens;
-  bool m_syntaxTokensHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_syntaxTokensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

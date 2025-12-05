@@ -115,15 +115,15 @@ class Evaluation {
   ///@}
  private:
   bool m_approved{false};
-  bool m_approvedHasBeenSet = false;
 
   bool m_overridden{false};
-  bool m_overriddenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_approvalRulesSatisfied;
-  bool m_approvalRulesSatisfiedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_approvalRulesNotSatisfied;
+  bool m_approvedHasBeenSet = false;
+  bool m_overriddenHasBeenSet = false;
+  bool m_approvalRulesSatisfiedHasBeenSet = false;
   bool m_approvalRulesNotSatisfiedHasBeenSet = false;
 };
 

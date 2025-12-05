@@ -86,12 +86,12 @@ class LambdaDeviceMount {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   LambdaFilesystemPermission m_permission{LambdaFilesystemPermission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   bool m_addGroupOwner{false};
+  bool m_pathHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
   bool m_addGroupOwnerHasBeenSet = false;
 };
 

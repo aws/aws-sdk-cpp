@@ -59,9 +59,9 @@ class CreateFilterResult {
   ///@}
  private:
   Aws::String m_filterArn;
-  bool m_filterArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_filterArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -193,27 +193,27 @@ class IdentityResolutionJob {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   IdentityResolutionJobStatus m_status{IdentityResolutionJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobStartTime{};
-  bool m_jobStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobEndTime{};
-  bool m_jobEndTimeHasBeenSet = false;
 
   JobStats m_jobStats;
-  bool m_jobStatsHasBeenSet = false;
 
   ExportingLocation m_exportingLocation;
-  bool m_exportingLocationHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_domainNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_jobStartTimeHasBeenSet = false;
+  bool m_jobEndTimeHasBeenSet = false;
+  bool m_jobStatsHasBeenSet = false;
+  bool m_exportingLocationHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -153,21 +153,21 @@ class BackendAPIResourceConfig {
   ///@}
  private:
   Aws::Vector<BackendAPIAuthType> m_additionalAuthTypes;
-  bool m_additionalAuthTypesHasBeenSet = false;
 
   Aws::String m_apiName;
-  bool m_apiNameHasBeenSet = false;
 
   BackendAPIConflictResolution m_conflictResolution;
-  bool m_conflictResolutionHasBeenSet = false;
 
   BackendAPIAuthType m_defaultAuthType;
-  bool m_defaultAuthTypeHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_transformSchema;
+  bool m_additionalAuthTypesHasBeenSet = false;
+  bool m_apiNameHasBeenSet = false;
+  bool m_conflictResolutionHasBeenSet = false;
+  bool m_defaultAuthTypeHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
   bool m_transformSchemaHasBeenSet = false;
 };
 

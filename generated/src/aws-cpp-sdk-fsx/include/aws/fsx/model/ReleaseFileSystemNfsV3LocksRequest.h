@@ -64,9 +64,9 @@ class ReleaseFileSystemNfsV3LocksRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

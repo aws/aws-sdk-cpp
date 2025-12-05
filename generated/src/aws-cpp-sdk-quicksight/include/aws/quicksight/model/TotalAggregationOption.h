@@ -71,9 +71,9 @@ class TotalAggregationOption {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   TotalAggregationFunction m_totalAggregationFunction;
+  bool m_fieldIdHasBeenSet = false;
   bool m_totalAggregationFunctionHasBeenSet = false;
 };
 

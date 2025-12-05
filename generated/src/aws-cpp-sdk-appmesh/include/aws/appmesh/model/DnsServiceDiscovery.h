@@ -87,12 +87,12 @@ class DnsServiceDiscovery {
   ///@}
  private:
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   IpPreference m_ipPreference{IpPreference::NOT_SET};
-  bool m_ipPreferenceHasBeenSet = false;
 
   DnsResponseType m_responseType{DnsResponseType::NOT_SET};
+  bool m_hostnameHasBeenSet = false;
+  bool m_ipPreferenceHasBeenSet = false;
   bool m_responseTypeHasBeenSet = false;
 };
 

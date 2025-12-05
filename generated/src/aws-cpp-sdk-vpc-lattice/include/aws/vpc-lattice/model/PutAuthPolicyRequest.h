@@ -67,9 +67,9 @@ class PutAuthPolicyRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

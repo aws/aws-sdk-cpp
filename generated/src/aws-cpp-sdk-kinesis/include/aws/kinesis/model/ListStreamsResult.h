@@ -129,18 +129,18 @@ class ListStreamsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_streamNames;
-  bool m_streamNamesHasBeenSet = false;
 
   bool m_hasMoreStreams{false};
-  bool m_hasMoreStreamsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<StreamSummary> m_streamSummaries;
-  bool m_streamSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamNamesHasBeenSet = false;
+  bool m_hasMoreStreamsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_streamSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -378,60 +378,60 @@ class DescribeCompilationJobResult {
   ///@}
  private:
   Aws::String m_compilationJobName;
-  bool m_compilationJobNameHasBeenSet = false;
 
   Aws::String m_compilationJobArn;
-  bool m_compilationJobArnHasBeenSet = false;
 
   CompilationJobStatus m_compilationJobStatus{CompilationJobStatus::NOT_SET};
-  bool m_compilationJobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_compilationStartTime{};
-  bool m_compilationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_compilationEndTime{};
-  bool m_compilationEndTimeHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::String m_inferenceImage;
-  bool m_inferenceImageHasBeenSet = false;
 
   Aws::String m_modelPackageVersionArn;
-  bool m_modelPackageVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   ModelArtifacts m_modelArtifacts;
-  bool m_modelArtifactsHasBeenSet = false;
 
   ModelDigests m_modelDigests;
-  bool m_modelDigestsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   InputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   NeoVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   DerivedInformation m_derivedInformation;
-  bool m_derivedInformationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_compilationJobNameHasBeenSet = false;
+  bool m_compilationJobArnHasBeenSet = false;
+  bool m_compilationJobStatusHasBeenSet = false;
+  bool m_compilationStartTimeHasBeenSet = false;
+  bool m_compilationEndTimeHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_inferenceImageHasBeenSet = false;
+  bool m_modelPackageVersionArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_modelArtifactsHasBeenSet = false;
+  bool m_modelDigestsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_derivedInformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

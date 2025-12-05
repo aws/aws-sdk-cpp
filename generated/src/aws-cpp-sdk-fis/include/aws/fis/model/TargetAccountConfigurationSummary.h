@@ -87,12 +87,12 @@ class TargetAccountConfigurationSummary {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_roleArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

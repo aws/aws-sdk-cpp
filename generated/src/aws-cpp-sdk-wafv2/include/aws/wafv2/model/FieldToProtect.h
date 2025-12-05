@@ -77,9 +77,9 @@ class FieldToProtect {
   ///@}
  private:
   FieldToProtectType m_fieldType{FieldToProtectType::NOT_SET};
-  bool m_fieldTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fieldKeys;
+  bool m_fieldTypeHasBeenSet = false;
   bool m_fieldKeysHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class CreateWorkspaceResult {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_workspaceArn;
-  bool m_workspaceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_workspaceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

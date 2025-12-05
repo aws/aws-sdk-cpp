@@ -65,9 +65,9 @@ class CreateFoundationModelAgreementRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_offerToken;
-  bool m_offerTokenHasBeenSet = false;
 
   Aws::String m_modelId;
+  bool m_offerTokenHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class Filter {
   ///@}
  private:
   Include m_include{Include::NOT_SET};
-  bool m_includeHasBeenSet = false;
 
   Aws::Vector<FilterGroup> m_groups;
+  bool m_includeHasBeenSet = false;
   bool m_groupsHasBeenSet = false;
 };
 

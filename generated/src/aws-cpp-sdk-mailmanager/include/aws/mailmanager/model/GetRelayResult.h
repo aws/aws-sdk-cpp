@@ -179,30 +179,30 @@ class GetRelayResult {
   ///@}
  private:
   Aws::String m_relayId;
-  bool m_relayIdHasBeenSet = false;
 
   Aws::String m_relayArn;
-  bool m_relayArnHasBeenSet = false;
 
   Aws::String m_relayName;
-  bool m_relayNameHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_serverPort{0};
-  bool m_serverPortHasBeenSet = false;
 
   RelayAuthentication m_authentication;
-  bool m_authenticationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relayIdHasBeenSet = false;
+  bool m_relayArnHasBeenSet = false;
+  bool m_relayNameHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_serverPortHasBeenSet = false;
+  bool m_authenticationHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

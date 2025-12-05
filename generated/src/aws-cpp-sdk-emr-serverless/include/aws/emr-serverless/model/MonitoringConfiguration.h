@@ -113,15 +113,15 @@ class MonitoringConfiguration {
   ///@}
  private:
   S3MonitoringConfiguration m_s3MonitoringConfiguration;
-  bool m_s3MonitoringConfigurationHasBeenSet = false;
 
   ManagedPersistenceMonitoringConfiguration m_managedPersistenceMonitoringConfiguration;
-  bool m_managedPersistenceMonitoringConfigurationHasBeenSet = false;
 
   CloudWatchLoggingConfiguration m_cloudWatchLoggingConfiguration;
-  bool m_cloudWatchLoggingConfigurationHasBeenSet = false;
 
   PrometheusMonitoringConfiguration m_prometheusMonitoringConfiguration;
+  bool m_s3MonitoringConfigurationHasBeenSet = false;
+  bool m_managedPersistenceMonitoringConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingConfigurationHasBeenSet = false;
   bool m_prometheusMonitoringConfigurationHasBeenSet = false;
 };
 

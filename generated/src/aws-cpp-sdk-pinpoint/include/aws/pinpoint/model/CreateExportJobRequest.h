@@ -65,9 +65,9 @@ class CreateExportJobRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   ExportJobRequest m_exportJobRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_exportJobRequestHasBeenSet = false;
 };
 

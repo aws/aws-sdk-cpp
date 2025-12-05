@@ -145,15 +145,15 @@ class ProjectCache {
   ///@}
  private:
   CacheType m_type{CacheType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Vector<CacheMode> m_modes;
-  bool m_modesHasBeenSet = false;
 
   Aws::String m_cacheNamespace;
+  bool m_typeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_modesHasBeenSet = false;
   bool m_cacheNamespaceHasBeenSet = false;
 };
 

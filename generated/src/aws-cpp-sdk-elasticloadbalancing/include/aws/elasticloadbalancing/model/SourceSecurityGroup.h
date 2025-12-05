@@ -71,9 +71,9 @@ class SourceSecurityGroup {
   ///@}
  private:
   Aws::String m_ownerAlias;
-  bool m_ownerAliasHasBeenSet = false;
 
   Aws::String m_groupName;
+  bool m_ownerAliasHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
 };
 

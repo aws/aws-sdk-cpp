@@ -320,48 +320,48 @@ class Scan {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_adminDetectorId;
-  bool m_adminDetectorIdHasBeenSet = false;
 
   Aws::String m_scanId;
-  bool m_scanIdHasBeenSet = false;
 
   ScanStatus m_scanStatus{ScanStatus::NOT_SET};
-  bool m_scanStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_scanStartTime{};
-  bool m_scanStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scanEndTime{};
-  bool m_scanEndTimeHasBeenSet = false;
 
   TriggerDetails m_triggerDetails;
-  bool m_triggerDetailsHasBeenSet = false;
 
   ResourceDetails m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   ScanResultDetails m_scanResultDetails;
-  bool m_scanResultDetailsHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   long long m_totalBytes{0};
-  bool m_totalBytesHasBeenSet = false;
 
   long long m_fileCount{0};
-  bool m_fileCountHasBeenSet = false;
 
   Aws::Vector<VolumeDetail> m_attachedVolumes;
-  bool m_attachedVolumesHasBeenSet = false;
 
   ScanType m_scanType{ScanType::NOT_SET};
+  bool m_detectorIdHasBeenSet = false;
+  bool m_adminDetectorIdHasBeenSet = false;
+  bool m_scanIdHasBeenSet = false;
+  bool m_scanStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_scanStartTimeHasBeenSet = false;
+  bool m_scanEndTimeHasBeenSet = false;
+  bool m_triggerDetailsHasBeenSet = false;
+  bool m_resourceDetailsHasBeenSet = false;
+  bool m_scanResultDetailsHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_totalBytesHasBeenSet = false;
+  bool m_fileCountHasBeenSet = false;
+  bool m_attachedVolumesHasBeenSet = false;
   bool m_scanTypeHasBeenSet = false;
 };
 

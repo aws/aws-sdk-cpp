@@ -66,9 +66,9 @@ class CreateAppBlockBuilderStreamingURLRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_appBlockBuilderName;
-  bool m_appBlockBuilderNameHasBeenSet = false;
 
   long long m_validity{0};
+  bool m_appBlockBuilderNameHasBeenSet = false;
   bool m_validityHasBeenSet = false;
 };
 

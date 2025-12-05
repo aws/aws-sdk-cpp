@@ -227,27 +227,27 @@ class Thumbnails {
   ///@}
  private:
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_interval;
-  bool m_intervalHasBeenSet = false;
 
   Aws::String m_resolution;
-  bool m_resolutionHasBeenSet = false;
 
   Aws::String m_aspectRatio;
-  bool m_aspectRatioHasBeenSet = false;
 
   Aws::String m_maxWidth;
-  bool m_maxWidthHasBeenSet = false;
 
   Aws::String m_maxHeight;
-  bool m_maxHeightHasBeenSet = false;
 
   Aws::String m_sizingPolicy;
-  bool m_sizingPolicyHasBeenSet = false;
 
   Aws::String m_paddingPolicy;
+  bool m_formatHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_aspectRatioHasBeenSet = false;
+  bool m_maxWidthHasBeenSet = false;
+  bool m_maxHeightHasBeenSet = false;
+  bool m_sizingPolicyHasBeenSet = false;
   bool m_paddingPolicyHasBeenSet = false;
 };
 

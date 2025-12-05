@@ -132,18 +132,18 @@ class AwsWafv2RulesDetails {
   ///@}
  private:
   AwsWafv2RulesActionDetails m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_overrideAction;
-  bool m_overrideActionHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   AwsWafv2VisibilityConfigDetails m_visibilityConfig;
+  bool m_actionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_overrideActionHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
   bool m_visibilityConfigHasBeenSet = false;
 };
 

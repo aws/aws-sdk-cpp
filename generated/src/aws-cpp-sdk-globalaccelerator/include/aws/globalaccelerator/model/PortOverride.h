@@ -71,9 +71,9 @@ class PortOverride {
   ///@}
  private:
   int m_listenerPort{0};
-  bool m_listenerPortHasBeenSet = false;
 
   int m_endpointPort{0};
+  bool m_listenerPortHasBeenSet = false;
   bool m_endpointPortHasBeenSet = false;
 };
 

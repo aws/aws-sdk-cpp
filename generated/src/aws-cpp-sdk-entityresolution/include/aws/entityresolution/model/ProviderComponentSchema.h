@@ -82,9 +82,9 @@ class ProviderComponentSchema {
   ///@}
  private:
   Aws::Vector<Aws::Vector<Aws::String>> m_schemas;
-  bool m_schemasHasBeenSet = false;
 
   Aws::Vector<ProviderSchemaAttribute> m_providerSchemaAttributes;
+  bool m_schemasHasBeenSet = false;
   bool m_providerSchemaAttributesHasBeenSet = false;
 };
 

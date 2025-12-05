@@ -126,18 +126,18 @@ class UpdateThemeRequest : public AmplifyUIBuilderRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   UpdateThemeData m_updatedTheme;
+  bool m_appIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_updatedThemeHasBeenSet = false;
 };
 

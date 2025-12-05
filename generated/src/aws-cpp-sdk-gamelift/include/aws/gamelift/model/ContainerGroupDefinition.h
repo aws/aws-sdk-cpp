@@ -340,42 +340,42 @@ class ContainerGroupDefinition {
   ///@}
  private:
   Aws::String m_containerGroupDefinitionArn;
-  bool m_containerGroupDefinitionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ContainerOperatingSystem m_operatingSystem{ContainerOperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ContainerGroupType m_containerGroupType{ContainerGroupType::NOT_SET};
-  bool m_containerGroupTypeHasBeenSet = false;
 
   int m_totalMemoryLimitMebibytes{0};
-  bool m_totalMemoryLimitMebibytesHasBeenSet = false;
 
   double m_totalVcpuLimit{0.0};
-  bool m_totalVcpuLimitHasBeenSet = false;
 
   GameServerContainerDefinition m_gameServerContainerDefinition;
-  bool m_gameServerContainerDefinitionHasBeenSet = false;
 
   Aws::Vector<SupportContainerDefinition> m_supportContainerDefinitions;
-  bool m_supportContainerDefinitionsHasBeenSet = false;
 
   int m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   ContainerGroupDefinitionStatus m_status{ContainerGroupDefinitionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_containerGroupDefinitionArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_containerGroupTypeHasBeenSet = false;
+  bool m_totalMemoryLimitMebibytesHasBeenSet = false;
+  bool m_totalVcpuLimitHasBeenSet = false;
+  bool m_gameServerContainerDefinitionHasBeenSet = false;
+  bool m_supportContainerDefinitionsHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

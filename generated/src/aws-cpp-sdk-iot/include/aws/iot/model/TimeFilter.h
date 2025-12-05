@@ -72,9 +72,9 @@ class TimeFilter {
   ///@}
  private:
   Aws::String m_after;
-  bool m_afterHasBeenSet = false;
 
   Aws::String m_before;
+  bool m_afterHasBeenSet = false;
   bool m_beforeHasBeenSet = false;
 };
 

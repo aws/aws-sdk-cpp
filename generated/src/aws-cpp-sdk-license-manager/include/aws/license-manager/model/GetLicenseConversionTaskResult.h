@@ -197,33 +197,33 @@ class GetLicenseConversionTaskResult {
   ///@}
  private:
   Aws::String m_licenseConversionTaskId;
-  bool m_licenseConversionTaskIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   LicenseConversionContext m_sourceLicenseContext;
-  bool m_sourceLicenseContextHasBeenSet = false;
 
   LicenseConversionContext m_destinationLicenseContext;
-  bool m_destinationLicenseContextHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   LicenseConversionTaskStatus m_status{LicenseConversionTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_licenseConversionTime{};
-  bool m_licenseConversionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseConversionTaskIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_sourceLicenseContextHasBeenSet = false;
+  bool m_destinationLicenseContextHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_licenseConversionTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

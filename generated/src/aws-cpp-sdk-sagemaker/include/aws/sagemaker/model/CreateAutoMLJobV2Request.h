@@ -291,36 +291,36 @@ class CreateAutoMLJobV2Request : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_autoMLJobName;
-  bool m_autoMLJobNameHasBeenSet = false;
 
   Aws::Vector<AutoMLJobChannel> m_autoMLJobInputDataConfig;
-  bool m_autoMLJobInputDataConfigHasBeenSet = false;
 
   AutoMLOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   AutoMLProblemTypeConfig m_autoMLProblemTypeConfig;
-  bool m_autoMLProblemTypeConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AutoMLSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   AutoMLJobObjective m_autoMLJobObjective;
-  bool m_autoMLJobObjectiveHasBeenSet = false;
 
   ModelDeployConfig m_modelDeployConfig;
-  bool m_modelDeployConfigHasBeenSet = false;
 
   AutoMLDataSplitConfig m_dataSplitConfig;
-  bool m_dataSplitConfigHasBeenSet = false;
 
   AutoMLComputeConfig m_autoMLComputeConfig;
+  bool m_autoMLJobNameHasBeenSet = false;
+  bool m_autoMLJobInputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_autoMLProblemTypeConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_securityConfigHasBeenSet = false;
+  bool m_autoMLJobObjectiveHasBeenSet = false;
+  bool m_modelDeployConfigHasBeenSet = false;
+  bool m_dataSplitConfigHasBeenSet = false;
   bool m_autoMLComputeConfigHasBeenSet = false;
 };
 

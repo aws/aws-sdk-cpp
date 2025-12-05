@@ -58,9 +58,9 @@ class AssociateEipToVlanResult {
   ///@}
  private:
   Vlan m_vlan;
-  bool m_vlanHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vlanHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class CreateEgressOnlyInternetGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

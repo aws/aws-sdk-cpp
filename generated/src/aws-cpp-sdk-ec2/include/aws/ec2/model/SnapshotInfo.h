@@ -278,42 +278,42 @@ class SnapshotInfo {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   SnapshotState m_state{SnapshotState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   SSEType m_sseType{SSEType::NOT_SET};
-  bool m_sseTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_sseTypeHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
 };
 

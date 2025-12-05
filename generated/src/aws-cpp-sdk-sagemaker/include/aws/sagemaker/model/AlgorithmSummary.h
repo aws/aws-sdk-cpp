@@ -123,18 +123,18 @@ class AlgorithmSummary {
   ///@}
  private:
   Aws::String m_algorithmName;
-  bool m_algorithmNameHasBeenSet = false;
 
   Aws::String m_algorithmArn;
-  bool m_algorithmArnHasBeenSet = false;
 
   Aws::String m_algorithmDescription;
-  bool m_algorithmDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   AlgorithmStatus m_algorithmStatus{AlgorithmStatus::NOT_SET};
+  bool m_algorithmNameHasBeenSet = false;
+  bool m_algorithmArnHasBeenSet = false;
+  bool m_algorithmDescriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_algorithmStatusHasBeenSet = false;
 };
 

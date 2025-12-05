@@ -165,24 +165,24 @@ class StartOutboundEmailContactRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   EmailAddressInfo m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   EmailAddressInfo m_destinationEmailAddress;
-  bool m_destinationEmailAddressHasBeenSet = false;
 
   OutboundAdditionalRecipients m_additionalRecipients;
-  bool m_additionalRecipientsHasBeenSet = false;
 
   OutboundEmailContent m_emailMessage;
-  bool m_emailMessageHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_destinationEmailAddressHasBeenSet = false;
+  bool m_additionalRecipientsHasBeenSet = false;
+  bool m_emailMessageHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

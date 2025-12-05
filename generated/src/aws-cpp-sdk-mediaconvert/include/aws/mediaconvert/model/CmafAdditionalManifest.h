@@ -86,9 +86,9 @@ class CmafAdditionalManifest {
   ///@}
  private:
   Aws::String m_manifestNameModifier;
-  bool m_manifestNameModifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedOutputs;
+  bool m_manifestNameModifierHasBeenSet = false;
   bool m_selectedOutputsHasBeenSet = false;
 };
 

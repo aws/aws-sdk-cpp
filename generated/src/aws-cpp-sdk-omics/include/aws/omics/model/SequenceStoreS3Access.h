@@ -87,12 +87,12 @@ class SequenceStoreS3Access {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_s3AccessPointArn;
-  bool m_s3AccessPointArnHasBeenSet = false;
 
   Aws::String m_accessLogLocation;
+  bool m_s3UriHasBeenSet = false;
+  bool m_s3AccessPointArnHasBeenSet = false;
   bool m_accessLogLocationHasBeenSet = false;
 };
 

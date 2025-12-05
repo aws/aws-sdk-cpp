@@ -68,9 +68,9 @@ class ListImagesFilter {
   ///@}
  private:
   TagStatus m_tagStatus{TagStatus::NOT_SET};
-  bool m_tagStatusHasBeenSet = false;
 
   ImageStatusFilter m_imageStatus{ImageStatusFilter::NOT_SET};
+  bool m_tagStatusHasBeenSet = false;
   bool m_imageStatusHasBeenSet = false;
 };
 

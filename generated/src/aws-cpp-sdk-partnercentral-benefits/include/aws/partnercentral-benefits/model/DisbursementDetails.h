@@ -70,9 +70,9 @@ class DisbursementDetails {
   ///@}
  private:
   MonetaryValue m_disbursedAmount;
-  bool m_disbursedAmountHasBeenSet = false;
 
   IssuanceDetail m_issuanceDetails;
+  bool m_disbursedAmountHasBeenSet = false;
   bool m_issuanceDetailsHasBeenSet = false;
 };
 

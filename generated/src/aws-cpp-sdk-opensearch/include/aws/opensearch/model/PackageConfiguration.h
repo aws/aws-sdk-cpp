@@ -100,15 +100,15 @@ class PackageConfiguration {
   ///@}
  private:
   RequirementLevel m_licenseRequirement{RequirementLevel::NOT_SET};
-  bool m_licenseRequirementHasBeenSet = false;
 
   Aws::String m_licenseFilepath;
-  bool m_licenseFilepathHasBeenSet = false;
 
   RequirementLevel m_configurationRequirement{RequirementLevel::NOT_SET};
-  bool m_configurationRequirementHasBeenSet = false;
 
   bool m_requiresRestartForConfigurationUpdate{false};
+  bool m_licenseRequirementHasBeenSet = false;
+  bool m_licenseFilepathHasBeenSet = false;
+  bool m_configurationRequirementHasBeenSet = false;
   bool m_requiresRestartForConfigurationUpdateHasBeenSet = false;
 };
 

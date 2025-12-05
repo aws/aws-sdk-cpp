@@ -259,36 +259,36 @@ class MedicalTranscriptionJobSummary {
   ///@}
  private:
   Aws::String m_medicalTranscriptionJobName;
-  bool m_medicalTranscriptionJobNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   TranscriptionJobStatus m_transcriptionJobStatus{TranscriptionJobStatus::NOT_SET};
-  bool m_transcriptionJobStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   OutputLocationType m_outputLocationType{OutputLocationType::NOT_SET};
-  bool m_outputLocationTypeHasBeenSet = false;
 
   Specialty m_specialty{Specialty::NOT_SET};
-  bool m_specialtyHasBeenSet = false;
 
   MedicalContentIdentificationType m_contentIdentificationType{MedicalContentIdentificationType::NOT_SET};
-  bool m_contentIdentificationTypeHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_medicalTranscriptionJobNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_transcriptionJobStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_outputLocationTypeHasBeenSet = false;
+  bool m_specialtyHasBeenSet = false;
+  bool m_contentIdentificationTypeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

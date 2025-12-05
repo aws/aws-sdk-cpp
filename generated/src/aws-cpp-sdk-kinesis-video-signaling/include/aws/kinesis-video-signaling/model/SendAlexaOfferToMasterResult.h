@@ -61,9 +61,9 @@ class SendAlexaOfferToMasterResult {
   ///@}
  private:
   Aws::String m_answer;
-  bool m_answerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_answerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,15 +94,15 @@ class GetAttachmentResult {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_urlExpiry;
-  bool m_urlExpiryHasBeenSet = false;
 
   long long m_attachmentSizeInBytes{0};
-  bool m_attachmentSizeInBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_urlHasBeenSet = false;
+  bool m_urlExpiryHasBeenSet = false;
+  bool m_attachmentSizeInBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -153,21 +153,21 @@ class CreateConnectionRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ConnectionAuthorizationType m_authorizationType{ConnectionAuthorizationType::NOT_SET};
-  bool m_authorizationTypeHasBeenSet = false;
 
   CreateConnectionAuthRequestParameters m_authParameters;
-  bool m_authParametersHasBeenSet = false;
 
   ConnectivityResourceParameters m_invocationConnectivityParameters;
-  bool m_invocationConnectivityParametersHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_authorizationTypeHasBeenSet = false;
+  bool m_authParametersHasBeenSet = false;
+  bool m_invocationConnectivityParametersHasBeenSet = false;
   bool m_kmsKeyIdentifierHasBeenSet = false;
 };
 

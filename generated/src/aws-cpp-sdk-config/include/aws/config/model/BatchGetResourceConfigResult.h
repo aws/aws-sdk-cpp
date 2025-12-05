@@ -95,12 +95,12 @@ class BatchGetResourceConfigResult {
   ///@}
  private:
   Aws::Vector<BaseConfigurationItem> m_baseConfigurationItems;
-  bool m_baseConfigurationItemsHasBeenSet = false;
 
   Aws::Vector<ResourceKey> m_unprocessedResourceKeys;
-  bool m_unprocessedResourceKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baseConfigurationItemsHasBeenSet = false;
+  bool m_unprocessedResourceKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

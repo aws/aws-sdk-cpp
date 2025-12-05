@@ -220,33 +220,33 @@ class AwsNetworkFirewallFirewallDetails {
   ///@}
  private:
   bool m_deleteProtection{false};
-  bool m_deleteProtectionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallId;
-  bool m_firewallIdHasBeenSet = false;
 
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_firewallPolicyArn;
-  bool m_firewallPolicyArnHasBeenSet = false;
 
   bool m_firewallPolicyChangeProtection{false};
-  bool m_firewallPolicyChangeProtectionHasBeenSet = false;
 
   bool m_subnetChangeProtection{false};
-  bool m_subnetChangeProtectionHasBeenSet = false;
 
   Aws::Vector<AwsNetworkFirewallFirewallSubnetMappingsDetails> m_subnetMappings;
-  bool m_subnetMappingsHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_deleteProtectionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallIdHasBeenSet = false;
+  bool m_firewallNameHasBeenSet = false;
+  bool m_firewallPolicyArnHasBeenSet = false;
+  bool m_firewallPolicyChangeProtectionHasBeenSet = false;
+  bool m_subnetChangeProtectionHasBeenSet = false;
+  bool m_subnetMappingsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

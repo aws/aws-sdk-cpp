@@ -68,9 +68,9 @@ class MlflowDetails {
   ///@}
  private:
   Aws::String m_mlflowExperimentId;
-  bool m_mlflowExperimentIdHasBeenSet = false;
 
   Aws::String m_mlflowRunId;
+  bool m_mlflowExperimentIdHasBeenSet = false;
   bool m_mlflowRunIdHasBeenSet = false;
 };
 

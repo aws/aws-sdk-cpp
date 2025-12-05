@@ -59,9 +59,9 @@ class CreateSolutionResult {
   ///@}
  private:
   Aws::String m_solutionArn;
-  bool m_solutionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_solutionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

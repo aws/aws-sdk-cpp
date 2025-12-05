@@ -77,12 +77,12 @@ class GetLineageGroupPolicyResult {
   ///@}
  private:
   Aws::String m_lineageGroupArn;
-  bool m_lineageGroupArnHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lineageGroupArnHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

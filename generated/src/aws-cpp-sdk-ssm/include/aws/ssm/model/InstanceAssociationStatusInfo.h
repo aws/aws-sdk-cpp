@@ -251,39 +251,39 @@ class InstanceAssociationStatusInfo {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::String m_associationVersion;
-  bool m_associationVersionHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionDate{};
-  bool m_executionDateHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_detailedStatus;
-  bool m_detailedStatusHasBeenSet = false;
 
   Aws::String m_executionSummary;
-  bool m_executionSummaryHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   InstanceAssociationOutputUrl m_outputUrl;
-  bool m_outputUrlHasBeenSet = false;
 
   Aws::String m_associationName;
+  bool m_associationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_associationVersionHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_executionDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_detailedStatusHasBeenSet = false;
+  bool m_executionSummaryHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_outputUrlHasBeenSet = false;
   bool m_associationNameHasBeenSet = false;
 };
 

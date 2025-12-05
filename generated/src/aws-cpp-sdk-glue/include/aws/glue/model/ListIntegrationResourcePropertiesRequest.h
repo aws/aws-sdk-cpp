@@ -93,12 +93,12 @@ class ListIntegrationResourcePropertiesRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<IntegrationResourcePropertyFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_markerHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

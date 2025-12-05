@@ -66,9 +66,9 @@ class ApplicationComponentStatusSummary {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   SrcCodeOrDbAnalysisStatus m_srcCodeOrDbAnalysisStatus{SrcCodeOrDbAnalysisStatus::NOT_SET};
+  bool m_countHasBeenSet = false;
   bool m_srcCodeOrDbAnalysisStatusHasBeenSet = false;
 };
 

@@ -107,15 +107,15 @@ class ThemeConfiguration {
   ///@}
  private:
   DataColorPalette m_dataColorPalette;
-  bool m_dataColorPaletteHasBeenSet = false;
 
   UIColorPalette m_uIColorPalette;
-  bool m_uIColorPaletteHasBeenSet = false;
 
   SheetStyle m_sheet;
-  bool m_sheetHasBeenSet = false;
 
   Typography m_typography;
+  bool m_dataColorPaletteHasBeenSet = false;
+  bool m_uIColorPaletteHasBeenSet = false;
+  bool m_sheetHasBeenSet = false;
   bool m_typographyHasBeenSet = false;
 };
 

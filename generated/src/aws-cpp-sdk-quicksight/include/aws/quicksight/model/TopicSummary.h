@@ -104,15 +104,15 @@ class TopicSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TopicUserExperienceVersion m_userExperienceVersion{TopicUserExperienceVersion::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_userExperienceVersionHasBeenSet = false;
 };
 

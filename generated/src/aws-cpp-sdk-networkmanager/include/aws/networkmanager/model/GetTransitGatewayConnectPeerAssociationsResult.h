@@ -89,12 +89,12 @@ class GetTransitGatewayConnectPeerAssociationsResult {
   ///@}
  private:
   Aws::Vector<TransitGatewayConnectPeerAssociation> m_transitGatewayConnectPeerAssociations;
-  bool m_transitGatewayConnectPeerAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transitGatewayConnectPeerAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

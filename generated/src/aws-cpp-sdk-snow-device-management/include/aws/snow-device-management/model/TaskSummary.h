@@ -113,15 +113,15 @@ class TaskSummary {
   ///@}
  private:
   TaskState m_state{TaskState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

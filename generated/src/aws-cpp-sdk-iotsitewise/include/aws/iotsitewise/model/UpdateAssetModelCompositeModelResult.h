@@ -86,12 +86,12 @@ class UpdateAssetModelCompositeModelResult {
   ///@}
  private:
   Aws::Vector<AssetModelCompositeModelPathSegment> m_assetModelCompositeModelPath;
-  bool m_assetModelCompositeModelPathHasBeenSet = false;
 
   AssetModelStatus m_assetModelStatus;
-  bool m_assetModelStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetModelCompositeModelPathHasBeenSet = false;
+  bool m_assetModelStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

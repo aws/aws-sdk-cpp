@@ -60,9 +60,9 @@ class CreateOtaTaskConfigurationResult {
   ///@}
  private:
   Aws::String m_taskConfigurationId;
-  bool m_taskConfigurationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskConfigurationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

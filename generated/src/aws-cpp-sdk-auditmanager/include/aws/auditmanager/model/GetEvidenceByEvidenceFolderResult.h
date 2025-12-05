@@ -85,12 +85,12 @@ class GetEvidenceByEvidenceFolderResult {
   ///@}
  private:
   Aws::Vector<Evidence> m_evidence;
-  bool m_evidenceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evidenceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

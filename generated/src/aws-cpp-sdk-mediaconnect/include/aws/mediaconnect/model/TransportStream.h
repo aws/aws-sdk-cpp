@@ -170,27 +170,27 @@ class TransportStream {
   ///@}
  private:
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_codec;
-  bool m_codecHasBeenSet = false;
 
   Aws::String m_frameRate;
-  bool m_frameRateHasBeenSet = false;
 
   FrameResolution m_frameResolution;
-  bool m_frameResolutionHasBeenSet = false;
 
   int m_pid{0};
-  bool m_pidHasBeenSet = false;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   int m_sampleSize{0};
-  bool m_sampleSizeHasBeenSet = false;
 
   Aws::String m_streamType;
+  bool m_channelsHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_frameResolutionHasBeenSet = false;
+  bool m_pidHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_sampleSizeHasBeenSet = false;
   bool m_streamTypeHasBeenSet = false;
 };
 

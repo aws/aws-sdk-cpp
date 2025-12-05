@@ -117,15 +117,15 @@ class AwsWafRegionalRuleDetails {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AwsWafRegionalRulePredicateListDetails> m_predicateList;
-  bool m_predicateListHasBeenSet = false;
 
   Aws::String m_ruleId;
+  bool m_metricNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_predicateListHasBeenSet = false;
   bool m_ruleIdHasBeenSet = false;
 };
 

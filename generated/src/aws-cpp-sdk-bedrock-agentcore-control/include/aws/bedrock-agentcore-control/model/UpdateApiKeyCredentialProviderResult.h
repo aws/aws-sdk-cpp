@@ -132,21 +132,21 @@ class UpdateApiKeyCredentialProviderResult {
   ///@}
  private:
   Secret m_apiKeySecretArn;
-  bool m_apiKeySecretArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_credentialProviderArn;
-  bool m_credentialProviderArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiKeySecretArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_credentialProviderArnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class BulkDeploymentMetrics {
   ///@}
  private:
   int m_invalidInputRecords{0};
-  bool m_invalidInputRecordsHasBeenSet = false;
 
   int m_recordsProcessed{0};
-  bool m_recordsProcessedHasBeenSet = false;
 
   int m_retryAttempts{0};
+  bool m_invalidInputRecordsHasBeenSet = false;
+  bool m_recordsProcessedHasBeenSet = false;
   bool m_retryAttemptsHasBeenSet = false;
 };
 

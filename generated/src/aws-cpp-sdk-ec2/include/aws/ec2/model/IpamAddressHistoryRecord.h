@@ -245,36 +245,36 @@ class IpamAddressHistoryRecord {
   ///@}
  private:
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   IpamAddressHistoryResourceType m_resourceType{IpamAddressHistoryResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceCidr;
-  bool m_resourceCidrHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   IpamComplianceStatus m_resourceComplianceStatus{IpamComplianceStatus::NOT_SET};
-  bool m_resourceComplianceStatusHasBeenSet = false;
 
   IpamOverlapStatus m_resourceOverlapStatus{IpamOverlapStatus::NOT_SET};
-  bool m_resourceOverlapStatusHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampledStartTime{};
-  bool m_sampledStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampledEndTime{};
+  bool m_resourceOwnerIdHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceCidrHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceComplianceStatusHasBeenSet = false;
+  bool m_resourceOverlapStatusHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_sampledStartTimeHasBeenSet = false;
   bool m_sampledEndTimeHasBeenSet = false;
 };
 

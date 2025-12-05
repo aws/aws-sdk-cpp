@@ -135,18 +135,18 @@ class KxDatabaseConfiguration {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::Vector<KxDatabaseCacheConfiguration> m_cacheConfigurations;
-  bool m_cacheConfigurationsHasBeenSet = false;
 
   Aws::String m_changesetId;
-  bool m_changesetIdHasBeenSet = false;
 
   Aws::String m_dataviewName;
-  bool m_dataviewNameHasBeenSet = false;
 
   KxDataviewConfiguration m_dataviewConfiguration;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_cacheConfigurationsHasBeenSet = false;
+  bool m_changesetIdHasBeenSet = false;
+  bool m_dataviewNameHasBeenSet = false;
   bool m_dataviewConfigurationHasBeenSet = false;
 };
 

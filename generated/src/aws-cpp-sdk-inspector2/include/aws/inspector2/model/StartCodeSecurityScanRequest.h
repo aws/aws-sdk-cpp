@@ -68,9 +68,9 @@ class StartCodeSecurityScanRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   CodeSecurityResource m_resource;
+  bool m_clientTokenHasBeenSet = true;
   bool m_resourceHasBeenSet = false;
 };
 

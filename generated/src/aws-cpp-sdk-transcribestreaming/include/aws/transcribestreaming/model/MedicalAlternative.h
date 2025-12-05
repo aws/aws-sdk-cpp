@@ -105,12 +105,12 @@ class MedicalAlternative {
   ///@}
  private:
   Aws::String m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   Aws::Vector<MedicalItem> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::Vector<MedicalEntity> m_entities;
+  bool m_transcriptHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_entitiesHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateAddonInstanceResult {
   ///@}
  private:
   Aws::String m_addonInstanceId;
-  bool m_addonInstanceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonInstanceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

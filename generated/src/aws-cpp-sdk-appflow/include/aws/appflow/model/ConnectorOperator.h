@@ -325,54 +325,54 @@ class ConnectorOperator {
   ///@}
  private:
   AmplitudeConnectorOperator m_amplitude{AmplitudeConnectorOperator::NOT_SET};
-  bool m_amplitudeHasBeenSet = false;
 
   DatadogConnectorOperator m_datadog{DatadogConnectorOperator::NOT_SET};
-  bool m_datadogHasBeenSet = false;
 
   DynatraceConnectorOperator m_dynatrace{DynatraceConnectorOperator::NOT_SET};
-  bool m_dynatraceHasBeenSet = false;
 
   GoogleAnalyticsConnectorOperator m_googleAnalytics{GoogleAnalyticsConnectorOperator::NOT_SET};
-  bool m_googleAnalyticsHasBeenSet = false;
 
   InforNexusConnectorOperator m_inforNexus{InforNexusConnectorOperator::NOT_SET};
-  bool m_inforNexusHasBeenSet = false;
 
   MarketoConnectorOperator m_marketo{MarketoConnectorOperator::NOT_SET};
-  bool m_marketoHasBeenSet = false;
 
   S3ConnectorOperator m_s3{S3ConnectorOperator::NOT_SET};
-  bool m_s3HasBeenSet = false;
 
   SalesforceConnectorOperator m_salesforce{SalesforceConnectorOperator::NOT_SET};
-  bool m_salesforceHasBeenSet = false;
 
   ServiceNowConnectorOperator m_serviceNow{ServiceNowConnectorOperator::NOT_SET};
-  bool m_serviceNowHasBeenSet = false;
 
   SingularConnectorOperator m_singular{SingularConnectorOperator::NOT_SET};
-  bool m_singularHasBeenSet = false;
 
   SlackConnectorOperator m_slack{SlackConnectorOperator::NOT_SET};
-  bool m_slackHasBeenSet = false;
 
   TrendmicroConnectorOperator m_trendmicro{TrendmicroConnectorOperator::NOT_SET};
-  bool m_trendmicroHasBeenSet = false;
 
   VeevaConnectorOperator m_veeva{VeevaConnectorOperator::NOT_SET};
-  bool m_veevaHasBeenSet = false;
 
   ZendeskConnectorOperator m_zendesk{ZendeskConnectorOperator::NOT_SET};
-  bool m_zendeskHasBeenSet = false;
 
   SAPODataConnectorOperator m_sAPOData{SAPODataConnectorOperator::NOT_SET};
-  bool m_sAPODataHasBeenSet = false;
 
   Operator m_customConnector{Operator::NOT_SET};
-  bool m_customConnectorHasBeenSet = false;
 
   PardotConnectorOperator m_pardot{PardotConnectorOperator::NOT_SET};
+  bool m_amplitudeHasBeenSet = false;
+  bool m_datadogHasBeenSet = false;
+  bool m_dynatraceHasBeenSet = false;
+  bool m_googleAnalyticsHasBeenSet = false;
+  bool m_inforNexusHasBeenSet = false;
+  bool m_marketoHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_serviceNowHasBeenSet = false;
+  bool m_singularHasBeenSet = false;
+  bool m_slackHasBeenSet = false;
+  bool m_trendmicroHasBeenSet = false;
+  bool m_veevaHasBeenSet = false;
+  bool m_zendeskHasBeenSet = false;
+  bool m_sAPODataHasBeenSet = false;
+  bool m_customConnectorHasBeenSet = false;
   bool m_pardotHasBeenSet = false;
 };
 

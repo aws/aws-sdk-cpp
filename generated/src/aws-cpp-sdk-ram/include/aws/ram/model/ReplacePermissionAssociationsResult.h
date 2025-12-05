@@ -86,12 +86,12 @@ class ReplacePermissionAssociationsResult {
   ///@}
  private:
   ReplacePermissionAssociationsWork m_replacePermissionAssociationsWork;
-  bool m_replacePermissionAssociationsWorkHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replacePermissionAssociationsWorkHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

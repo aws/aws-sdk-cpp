@@ -174,27 +174,27 @@ class DomainNodesStatus {
   ///@}
  private:
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   NodeType m_nodeType{NodeType::NOT_SET};
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   OpenSearchPartitionInstanceType m_instanceType{OpenSearchPartitionInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   NodeStatus m_nodeStatus{NodeStatus::NOT_SET};
-  bool m_nodeStatusHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   VolumeType m_storageVolumeType{VolumeType::NOT_SET};
-  bool m_storageVolumeTypeHasBeenSet = false;
 
   Aws::String m_storageSize;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_nodeStatusHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_storageVolumeTypeHasBeenSet = false;
   bool m_storageSizeHasBeenSet = false;
 };
 

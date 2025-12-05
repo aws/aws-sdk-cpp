@@ -90,12 +90,12 @@ class DeleteAgentRuntimeEndpointRequest : public BedrockAgentCoreControlRequest 
   ///@}
  private:
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

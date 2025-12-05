@@ -100,12 +100,12 @@ class AppSpecification {
   ///@}
  private:
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerEntrypoint;
-  bool m_containerEntrypointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerArguments;
+  bool m_imageUriHasBeenSet = false;
+  bool m_containerEntrypointHasBeenSet = false;
   bool m_containerArgumentsHasBeenSet = false;
 };
 

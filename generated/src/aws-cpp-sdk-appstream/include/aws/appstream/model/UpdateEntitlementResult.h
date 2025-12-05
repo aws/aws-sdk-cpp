@@ -60,9 +60,9 @@ class UpdateEntitlementResult {
   ///@}
  private:
   Entitlement m_entitlement;
-  bool m_entitlementHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitlementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

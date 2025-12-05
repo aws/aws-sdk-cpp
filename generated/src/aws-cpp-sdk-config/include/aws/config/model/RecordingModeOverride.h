@@ -106,12 +106,12 @@ class RecordingModeOverride {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   RecordingFrequency m_recordingFrequency{RecordingFrequency::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
   bool m_recordingFrequencyHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreatePatchBaselineResult {
   ///@}
  private:
   Aws::String m_baselineId;
-  bool m_baselineIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baselineIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

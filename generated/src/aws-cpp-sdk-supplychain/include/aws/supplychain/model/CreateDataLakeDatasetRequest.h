@@ -182,24 +182,24 @@ class CreateDataLakeDatasetRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataLakeDatasetSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataLakeDatasetPartitionSpec m_partitionSpec;
-  bool m_partitionSpecHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_partitionSpecHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

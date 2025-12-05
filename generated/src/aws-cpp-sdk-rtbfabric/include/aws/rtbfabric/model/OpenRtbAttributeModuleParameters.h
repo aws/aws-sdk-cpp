@@ -110,15 +110,15 @@ class OpenRtbAttributeModuleParameters {
   ///@}
  private:
   FilterType m_filterType{FilterType::NOT_SET};
-  bool m_filterTypeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filterConfiguration;
-  bool m_filterConfigurationHasBeenSet = false;
 
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   double m_holdbackPercentage{0.0};
+  bool m_filterTypeHasBeenSet = false;
+  bool m_filterConfigurationHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_holdbackPercentageHasBeenSet = false;
 };
 

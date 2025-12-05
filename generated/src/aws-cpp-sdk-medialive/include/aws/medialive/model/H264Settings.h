@@ -901,135 +901,135 @@ Enter a minimum bitrate if you
   ///@}
  private:
   H264AdaptiveQuantization m_adaptiveQuantization{H264AdaptiveQuantization::NOT_SET};
-  bool m_adaptiveQuantizationHasBeenSet = false;
 
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
-  bool m_afdSignalingHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   int m_bufFillPct{0};
-  bool m_bufFillPctHasBeenSet = false;
 
   int m_bufSize{0};
-  bool m_bufSizeHasBeenSet = false;
 
   H264ColorMetadata m_colorMetadata{H264ColorMetadata::NOT_SET};
-  bool m_colorMetadataHasBeenSet = false;
 
   H264ColorSpaceSettings m_colorSpaceSettings;
-  bool m_colorSpaceSettingsHasBeenSet = false;
 
   H264EntropyEncoding m_entropyEncoding{H264EntropyEncoding::NOT_SET};
-  bool m_entropyEncodingHasBeenSet = false;
 
   H264FilterSettings m_filterSettings;
-  bool m_filterSettingsHasBeenSet = false;
 
   FixedAfd m_fixedAfd{FixedAfd::NOT_SET};
-  bool m_fixedAfdHasBeenSet = false;
 
   H264FlickerAq m_flickerAq{H264FlickerAq::NOT_SET};
-  bool m_flickerAqHasBeenSet = false;
 
   H264ForceFieldPictures m_forceFieldPictures{H264ForceFieldPictures::NOT_SET};
-  bool m_forceFieldPicturesHasBeenSet = false;
 
   H264FramerateControl m_framerateControl{H264FramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   H264GopBReference m_gopBReference{H264GopBReference::NOT_SET};
-  bool m_gopBReferenceHasBeenSet = false;
 
   int m_gopClosedCadence{0};
-  bool m_gopClosedCadenceHasBeenSet = false;
 
   int m_gopNumBFrames{0};
-  bool m_gopNumBFramesHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   H264GopSizeUnits m_gopSizeUnits{H264GopSizeUnits::NOT_SET};
-  bool m_gopSizeUnitsHasBeenSet = false;
 
   H264Level m_level{H264Level::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   H264LookAheadRateControl m_lookAheadRateControl{H264LookAheadRateControl::NOT_SET};
-  bool m_lookAheadRateControlHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_minIInterval{0};
-  bool m_minIIntervalHasBeenSet = false;
 
   int m_numRefFrames{0};
-  bool m_numRefFramesHasBeenSet = false;
 
   H264ParControl m_parControl{H264ParControl::NOT_SET};
-  bool m_parControlHasBeenSet = false;
 
   int m_parDenominator{0};
-  bool m_parDenominatorHasBeenSet = false;
 
   int m_parNumerator{0};
-  bool m_parNumeratorHasBeenSet = false;
 
   H264Profile m_profile{H264Profile::NOT_SET};
-  bool m_profileHasBeenSet = false;
 
   H264QualityLevel m_qualityLevel{H264QualityLevel::NOT_SET};
-  bool m_qualityLevelHasBeenSet = false;
 
   int m_qvbrQualityLevel{0};
-  bool m_qvbrQualityLevelHasBeenSet = false;
 
   H264RateControlMode m_rateControlMode{H264RateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   H264ScanType m_scanType{H264ScanType::NOT_SET};
-  bool m_scanTypeHasBeenSet = false;
 
   H264SceneChangeDetect m_sceneChangeDetect{H264SceneChangeDetect::NOT_SET};
-  bool m_sceneChangeDetectHasBeenSet = false;
 
   int m_slices{0};
-  bool m_slicesHasBeenSet = false;
 
   int m_softness{0};
-  bool m_softnessHasBeenSet = false;
 
   H264SpatialAq m_spatialAq{H264SpatialAq::NOT_SET};
-  bool m_spatialAqHasBeenSet = false;
 
   H264SubGopLength m_subgopLength{H264SubGopLength::NOT_SET};
-  bool m_subgopLengthHasBeenSet = false;
 
   H264Syntax m_syntax{H264Syntax::NOT_SET};
-  bool m_syntaxHasBeenSet = false;
 
   H264TemporalAq m_temporalAq{H264TemporalAq::NOT_SET};
-  bool m_temporalAqHasBeenSet = false;
 
   H264TimecodeInsertionBehavior m_timecodeInsertion{H264TimecodeInsertionBehavior::NOT_SET};
-  bool m_timecodeInsertionHasBeenSet = false;
 
   TimecodeBurninSettings m_timecodeBurninSettings;
-  bool m_timecodeBurninSettingsHasBeenSet = false;
 
   int m_minQp{0};
-  bool m_minQpHasBeenSet = false;
 
   int m_minBitrate{0};
+  bool m_adaptiveQuantizationHasBeenSet = false;
+  bool m_afdSignalingHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_bufFillPctHasBeenSet = false;
+  bool m_bufSizeHasBeenSet = false;
+  bool m_colorMetadataHasBeenSet = false;
+  bool m_colorSpaceSettingsHasBeenSet = false;
+  bool m_entropyEncodingHasBeenSet = false;
+  bool m_filterSettingsHasBeenSet = false;
+  bool m_fixedAfdHasBeenSet = false;
+  bool m_flickerAqHasBeenSet = false;
+  bool m_forceFieldPicturesHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopBReferenceHasBeenSet = false;
+  bool m_gopClosedCadenceHasBeenSet = false;
+  bool m_gopNumBFramesHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_gopSizeUnitsHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_lookAheadRateControlHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_minIIntervalHasBeenSet = false;
+  bool m_numRefFramesHasBeenSet = false;
+  bool m_parControlHasBeenSet = false;
+  bool m_parDenominatorHasBeenSet = false;
+  bool m_parNumeratorHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_qualityLevelHasBeenSet = false;
+  bool m_qvbrQualityLevelHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
+  bool m_sceneChangeDetectHasBeenSet = false;
+  bool m_slicesHasBeenSet = false;
+  bool m_softnessHasBeenSet = false;
+  bool m_spatialAqHasBeenSet = false;
+  bool m_subgopLengthHasBeenSet = false;
+  bool m_syntaxHasBeenSet = false;
+  bool m_temporalAqHasBeenSet = false;
+  bool m_timecodeInsertionHasBeenSet = false;
+  bool m_timecodeBurninSettingsHasBeenSet = false;
+  bool m_minQpHasBeenSet = false;
   bool m_minBitrateHasBeenSet = false;
 };
 

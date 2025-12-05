@@ -65,9 +65,9 @@ class FailedItemDetails {
   ///@}
  private:
   FailedItemErrorCode m_failureCode{FailedItemErrorCode::NOT_SET};
-  bool m_failureCodeHasBeenSet = false;
 
   bool m_retryable{false};
+  bool m_failureCodeHasBeenSet = false;
   bool m_retryableHasBeenSet = false;
 };
 

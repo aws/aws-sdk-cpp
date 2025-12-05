@@ -204,30 +204,30 @@ class AutomatedReasoningPolicyMutation {
   ///@}
  private:
   AutomatedReasoningPolicyAddTypeMutation m_addType;
-  bool m_addTypeHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateTypeMutation m_updateType;
-  bool m_updateTypeHasBeenSet = false;
 
   AutomatedReasoningPolicyDeleteTypeMutation m_deleteType;
-  bool m_deleteTypeHasBeenSet = false;
 
   AutomatedReasoningPolicyAddVariableMutation m_addVariable;
-  bool m_addVariableHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateVariableMutation m_updateVariable;
-  bool m_updateVariableHasBeenSet = false;
 
   AutomatedReasoningPolicyDeleteVariableMutation m_deleteVariable;
-  bool m_deleteVariableHasBeenSet = false;
 
   AutomatedReasoningPolicyAddRuleMutation m_addRule;
-  bool m_addRuleHasBeenSet = false;
 
   AutomatedReasoningPolicyUpdateRuleMutation m_updateRule;
-  bool m_updateRuleHasBeenSet = false;
 
   AutomatedReasoningPolicyDeleteRuleMutation m_deleteRule;
+  bool m_addTypeHasBeenSet = false;
+  bool m_updateTypeHasBeenSet = false;
+  bool m_deleteTypeHasBeenSet = false;
+  bool m_addVariableHasBeenSet = false;
+  bool m_updateVariableHasBeenSet = false;
+  bool m_deleteVariableHasBeenSet = false;
+  bool m_addRuleHasBeenSet = false;
+  bool m_updateRuleHasBeenSet = false;
   bool m_deleteRuleHasBeenSet = false;
 };
 

@@ -251,36 +251,36 @@ class UpdateRecipeJobRequest : public GlueDataBrewRequest {
   ///@}
  private:
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   EncryptionMode m_encryptionMode{EncryptionMode::NOT_SET};
-  bool m_encryptionModeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LogSubscription m_logSubscription{LogSubscription::NOT_SET};
-  bool m_logSubscriptionHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_maxRetries{0};
-  bool m_maxRetriesHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<DataCatalogOutput> m_dataCatalogOutputs;
-  bool m_dataCatalogOutputsHasBeenSet = false;
 
   Aws::Vector<DatabaseOutput> m_databaseOutputs;
-  bool m_databaseOutputsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_timeout{0};
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_encryptionModeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_logSubscriptionHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_maxRetriesHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_dataCatalogOutputsHasBeenSet = false;
+  bool m_databaseOutputsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_timeoutHasBeenSet = false;
 };
 

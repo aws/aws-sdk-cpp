@@ -65,9 +65,9 @@ class PutEventStreamRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   WriteEventStream m_writeEventStream;
+  bool m_applicationIdHasBeenSet = false;
   bool m_writeEventStreamHasBeenSet = false;
 };
 

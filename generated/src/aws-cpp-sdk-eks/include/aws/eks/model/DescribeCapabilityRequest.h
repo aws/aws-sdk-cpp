@@ -66,9 +66,9 @@ class DescribeCapabilityRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_capabilityName;
+  bool m_clusterNameHasBeenSet = false;
   bool m_capabilityNameHasBeenSet = false;
 };
 

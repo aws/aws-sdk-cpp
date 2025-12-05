@@ -133,18 +133,18 @@ class DateTimeParameterDeclaration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DateTimeDefaultValues m_defaultValues;
-  bool m_defaultValuesHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   DateTimeValueWhenUnsetConfiguration m_valueWhenUnset;
-  bool m_valueWhenUnsetHasBeenSet = false;
 
   Aws::Vector<MappedDataSetParameter> m_mappedDataSetParameters;
+  bool m_nameHasBeenSet = false;
+  bool m_defaultValuesHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_valueWhenUnsetHasBeenSet = false;
   bool m_mappedDataSetParametersHasBeenSet = false;
 };
 

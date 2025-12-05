@@ -78,12 +78,12 @@ class AttachVerifiedAccessTrustProviderResponse {
   ///@}
  private:
   VerifiedAccessTrustProvider m_verifiedAccessTrustProvider;
-  bool m_verifiedAccessTrustProviderHasBeenSet = false;
 
   VerifiedAccessInstance m_verifiedAccessInstance;
-  bool m_verifiedAccessInstanceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessTrustProviderHasBeenSet = false;
+  bool m_verifiedAccessInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

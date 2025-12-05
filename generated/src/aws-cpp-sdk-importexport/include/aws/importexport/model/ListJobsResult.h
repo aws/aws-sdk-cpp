@@ -83,12 +83,12 @@ class ListJobsResult {
   ///@}
  private:
   Aws::Vector<Job> m_jobs;
-  bool m_jobsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_jobsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

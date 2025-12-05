@@ -66,9 +66,9 @@ class PutRetentionSettingsRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   RetentionSettings m_retentionSettings;
+  bool m_accountIdHasBeenSet = false;
   bool m_retentionSettingsHasBeenSet = false;
 };
 

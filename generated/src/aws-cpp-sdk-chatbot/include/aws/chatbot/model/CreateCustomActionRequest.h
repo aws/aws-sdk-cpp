@@ -164,21 +164,21 @@ class CreateCustomActionRequest : public ChatbotRequest {
   ///@}
  private:
   CustomActionDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::Vector<CustomActionAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_actionName;
+  bool m_definitionHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_actionNameHasBeenSet = false;
 };
 

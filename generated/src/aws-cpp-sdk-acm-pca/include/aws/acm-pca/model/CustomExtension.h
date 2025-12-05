@@ -90,12 +90,12 @@ class CustomExtension {
   ///@}
  private:
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_critical{false};
+  bool m_objectIdentifierHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_criticalHasBeenSet = false;
 };
 

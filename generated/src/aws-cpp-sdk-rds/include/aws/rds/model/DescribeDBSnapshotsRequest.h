@@ -254,30 +254,30 @@ class DescribeDBSnapshotsRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dBSnapshotIdentifier;
-  bool m_dBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_includeShared{false};
-  bool m_includeSharedHasBeenSet = false;
 
   bool m_includePublic{false};
-  bool m_includePublicHasBeenSet = false;
 
   Aws::String m_dbiResourceId;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_dBSnapshotIdentifierHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_includeSharedHasBeenSet = false;
+  bool m_includePublicHasBeenSet = false;
   bool m_dbiResourceIdHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class AddSourceIdentifierToSubscriptionRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_subscriptionName;
-  bool m_subscriptionNameHasBeenSet = false;
 
   Aws::String m_sourceIdentifier;
+  bool m_subscriptionNameHasBeenSet = false;
   bool m_sourceIdentifierHasBeenSet = false;
 };
 

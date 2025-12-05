@@ -176,27 +176,27 @@ class BatchCreateWorkloadEstimateUsageEntry {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   double m_amount{0.0};
-  bool m_amountHasBeenSet = false;
 
   HistoricalUsageEntity m_historicalUsage;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
+  bool m_amountHasBeenSet = false;
   bool m_historicalUsageHasBeenSet = false;
 };
 

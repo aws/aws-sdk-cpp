@@ -200,30 +200,30 @@ class Recipe {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_recipeArn;
-  bool m_recipeArnHasBeenSet = false;
 
   Aws::String m_algorithmArn;
-  bool m_algorithmArnHasBeenSet = false;
 
   Aws::String m_featureTransformationArn;
-  bool m_featureTransformationArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_recipeType;
-  bool m_recipeTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_recipeArnHasBeenSet = false;
+  bool m_algorithmArnHasBeenSet = false;
+  bool m_featureTransformationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_recipeTypeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

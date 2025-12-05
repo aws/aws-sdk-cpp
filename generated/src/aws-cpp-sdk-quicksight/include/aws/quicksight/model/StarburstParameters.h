@@ -158,24 +158,24 @@ class StarburstParameters {
   ///@}
  private:
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   StarburstProductType m_productType{StarburstProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   Aws::String m_databaseAccessControlRole;
-  bool m_databaseAccessControlRoleHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   OAuthParameters m_oAuthParameters;
+  bool m_hostHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
+  bool m_databaseAccessControlRoleHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
   bool m_oAuthParametersHasBeenSet = false;
 };
 

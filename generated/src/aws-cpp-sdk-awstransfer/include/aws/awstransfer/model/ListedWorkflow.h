@@ -87,12 +87,12 @@ class ListedWorkflow {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class AggregateConformancePackComplianceCount {
   ///@}
  private:
   int m_compliantConformancePackCount{0};
-  bool m_compliantConformancePackCountHasBeenSet = false;
 
   int m_nonCompliantConformancePackCount{0};
+  bool m_compliantConformancePackCountHasBeenSet = false;
   bool m_nonCompliantConformancePackCountHasBeenSet = false;
 };
 

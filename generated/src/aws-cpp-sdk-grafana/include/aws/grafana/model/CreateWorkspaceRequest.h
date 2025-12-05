@@ -420,54 +420,54 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   AccountAccessType m_accountAccessType{AccountAccessType::NOT_SET};
-  bool m_accountAccessTypeHasBeenSet = false;
 
   Aws::Vector<AuthenticationProviderTypes> m_authenticationProviders;
-  bool m_authenticationProvidersHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_grafanaVersion;
-  bool m_grafanaVersionHasBeenSet = false;
 
   NetworkAccessConfiguration m_networkAccessControl;
-  bool m_networkAccessControlHasBeenSet = false;
 
   Aws::String m_organizationRoleName;
-  bool m_organizationRoleNameHasBeenSet = false;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::Vector<DataSourceType> m_workspaceDataSources;
-  bool m_workspaceDataSourcesHasBeenSet = false;
 
   Aws::String m_workspaceDescription;
-  bool m_workspaceDescriptionHasBeenSet = false;
 
   Aws::String m_workspaceName;
-  bool m_workspaceNameHasBeenSet = false;
 
   Aws::Vector<NotificationDestinationType> m_workspaceNotificationDestinations;
-  bool m_workspaceNotificationDestinationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_workspaceOrganizationalUnits;
-  bool m_workspaceOrganizationalUnitsHasBeenSet = false;
 
   Aws::String m_workspaceRoleArn;
+  bool m_accountAccessTypeHasBeenSet = false;
+  bool m_authenticationProvidersHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_configurationHasBeenSet = false;
+  bool m_grafanaVersionHasBeenSet = false;
+  bool m_networkAccessControlHasBeenSet = false;
+  bool m_organizationRoleNameHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_workspaceDataSourcesHasBeenSet = false;
+  bool m_workspaceDescriptionHasBeenSet = false;
+  bool m_workspaceNameHasBeenSet = false;
+  bool m_workspaceNotificationDestinationsHasBeenSet = false;
+  bool m_workspaceOrganizationalUnitsHasBeenSet = false;
   bool m_workspaceRoleArnHasBeenSet = false;
 };
 

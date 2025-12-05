@@ -153,18 +153,18 @@ class UpdateResolverEndpointRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_resolverEndpointId;
-  bool m_resolverEndpointIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResolverEndpointType m_resolverEndpointType{ResolverEndpointType::NOT_SET};
-  bool m_resolverEndpointTypeHasBeenSet = false;
 
   Aws::Vector<UpdateIpAddress> m_updateIpAddresses;
-  bool m_updateIpAddressesHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
+  bool m_resolverEndpointIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resolverEndpointTypeHasBeenSet = false;
+  bool m_updateIpAddressesHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
 };
 

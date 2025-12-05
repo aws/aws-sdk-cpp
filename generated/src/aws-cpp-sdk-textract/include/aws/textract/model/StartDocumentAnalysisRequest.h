@@ -224,30 +224,30 @@ class StartDocumentAnalysisRequest : public TextractRequest {
   ///@}
  private:
   DocumentLocation m_documentLocation;
-  bool m_documentLocationHasBeenSet = false;
 
   Aws::Vector<FeatureType> m_featureTypes;
-  bool m_featureTypesHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_jobTag;
-  bool m_jobTagHasBeenSet = false;
 
   NotificationChannel m_notificationChannel;
-  bool m_notificationChannelHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   QueriesConfig m_queriesConfig;
-  bool m_queriesConfigHasBeenSet = false;
 
   AdaptersConfig m_adaptersConfig;
+  bool m_documentLocationHasBeenSet = false;
+  bool m_featureTypesHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_jobTagHasBeenSet = false;
+  bool m_notificationChannelHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_queriesConfigHasBeenSet = false;
   bool m_adaptersConfigHasBeenSet = false;
 };
 

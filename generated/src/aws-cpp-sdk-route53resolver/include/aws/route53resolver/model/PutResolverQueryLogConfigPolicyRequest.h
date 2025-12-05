@@ -78,9 +78,9 @@ class PutResolverQueryLogConfigPolicyRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resolverQueryLogConfigPolicy;
+  bool m_arnHasBeenSet = false;
   bool m_resolverQueryLogConfigPolicyHasBeenSet = false;
 };
 

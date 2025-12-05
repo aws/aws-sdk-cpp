@@ -87,12 +87,12 @@ class RollbackTransactionRequest : public RDSDataServiceRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_transactionId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
   bool m_transactionIdHasBeenSet = false;
 };
 

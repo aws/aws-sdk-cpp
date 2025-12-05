@@ -66,9 +66,9 @@ class NetworkInterfaceCountRequest {
   ///@}
  private:
   int m_min{0};
-  bool m_minHasBeenSet = false;
 
   int m_max{0};
+  bool m_minHasBeenSet = false;
   bool m_maxHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class EncryptionConfiguration {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   int m_kmsDataKeyReusePeriodSeconds{0};
-  bool m_kmsDataKeyReusePeriodSecondsHasBeenSet = false;
 
   EncryptionType m_type{EncryptionType::NOT_SET};
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_kmsDataKeyReusePeriodSecondsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

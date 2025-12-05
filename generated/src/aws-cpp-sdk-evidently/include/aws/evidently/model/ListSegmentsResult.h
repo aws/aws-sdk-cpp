@@ -86,12 +86,12 @@ class ListSegmentsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Segment> m_segments;
-  bool m_segmentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_segmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

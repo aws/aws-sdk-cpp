@@ -60,9 +60,9 @@ class ModifyIpamPolicyAllocationRulesResponse {
   ///@}
  private:
   IpamPolicyDocument m_ipamPolicyDocument;
-  bool m_ipamPolicyDocumentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPolicyDocumentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class MonitoringConfigurationUpdate {
   ///@}
  private:
   ConfigurationType m_configurationTypeUpdate{ConfigurationType::NOT_SET};
-  bool m_configurationTypeUpdateHasBeenSet = false;
 
   MetricsLevel m_metricsLevelUpdate{MetricsLevel::NOT_SET};
-  bool m_metricsLevelUpdateHasBeenSet = false;
 
   LogLevel m_logLevelUpdate{LogLevel::NOT_SET};
+  bool m_configurationTypeUpdateHasBeenSet = false;
+  bool m_metricsLevelUpdateHasBeenSet = false;
   bool m_logLevelUpdateHasBeenSet = false;
 };
 

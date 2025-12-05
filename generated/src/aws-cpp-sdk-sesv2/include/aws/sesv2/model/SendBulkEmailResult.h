@@ -74,9 +74,9 @@ class SendBulkEmailResult {
   ///@}
  private:
   Aws::Vector<BulkEmailEntryResult> m_bulkEmailEntryResults;
-  bool m_bulkEmailEntryResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bulkEmailEntryResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

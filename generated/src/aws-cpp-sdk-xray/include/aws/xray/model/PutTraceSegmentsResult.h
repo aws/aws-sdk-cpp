@@ -67,9 +67,9 @@ class PutTraceSegmentsResult {
   ///@}
  private:
   Aws::Vector<UnprocessedTraceSegment> m_unprocessedTraceSegments;
-  bool m_unprocessedTraceSegmentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_unprocessedTraceSegmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class IotAnalyticsAction {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   bool m_batchMode{false};
-  bool m_batchModeHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_channelArnHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_batchModeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

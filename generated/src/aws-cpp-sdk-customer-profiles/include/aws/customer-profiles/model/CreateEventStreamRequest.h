@@ -109,15 +109,15 @@ class CreateEventStreamRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_eventStreamName;
-  bool m_eventStreamNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_uriHasBeenSet = false;
+  bool m_eventStreamNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

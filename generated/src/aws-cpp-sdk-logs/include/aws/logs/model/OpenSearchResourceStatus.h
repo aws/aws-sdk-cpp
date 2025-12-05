@@ -68,9 +68,9 @@ class OpenSearchResourceStatus {
   ///@}
  private:
   OpenSearchResourceStatusType m_status{OpenSearchResourceStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DisassociateTransitGatewayConnectPeerRequest : public NetworkManagerReques
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_transitGatewayConnectPeerArn;
+  bool m_globalNetworkIdHasBeenSet = false;
   bool m_transitGatewayConnectPeerArnHasBeenSet = false;
 };
 

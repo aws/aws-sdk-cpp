@@ -113,15 +113,15 @@ class AddObjectInput {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_partitionValues;
+  bool m_uriHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_partitionValuesHasBeenSet = false;
 };
 

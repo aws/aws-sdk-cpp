@@ -64,9 +64,9 @@ class TimeFilter {
   ///@}
  private:
   BlockchainInstant m_from;
-  bool m_fromHasBeenSet = false;
 
   BlockchainInstant m_to;
+  bool m_fromHasBeenSet = false;
   bool m_toHasBeenSet = false;
 };
 

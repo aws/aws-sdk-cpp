@@ -70,9 +70,9 @@ class KubernetesDetails {
   ///@}
  private:
   KubernetesUserDetails m_kubernetesUserDetails;
-  bool m_kubernetesUserDetailsHasBeenSet = false;
 
   KubernetesWorkloadDetails m_kubernetesWorkloadDetails;
+  bool m_kubernetesUserDetailsHasBeenSet = false;
   bool m_kubernetesWorkloadDetailsHasBeenSet = false;
 };
 

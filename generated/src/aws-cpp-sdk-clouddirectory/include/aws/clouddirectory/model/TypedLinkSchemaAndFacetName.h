@@ -70,9 +70,9 @@ class TypedLinkSchemaAndFacetName {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_typedLinkName;
+  bool m_schemaArnHasBeenSet = false;
   bool m_typedLinkNameHasBeenSet = false;
 };
 

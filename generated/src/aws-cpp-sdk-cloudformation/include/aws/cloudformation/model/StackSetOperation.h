@@ -333,45 +333,45 @@ class StackSetOperation {
   ///@}
  private:
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   Aws::String m_stackSetId;
-  bool m_stackSetIdHasBeenSet = false;
 
   StackSetOperationAction m_action{StackSetOperationAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   StackSetOperationStatus m_status{StackSetOperationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StackSetOperationPreferences m_operationPreferences;
-  bool m_operationPreferencesHasBeenSet = false;
 
   bool m_retainStacks{false};
-  bool m_retainStacksHasBeenSet = false;
 
   Aws::String m_administrationRoleARN;
-  bool m_administrationRoleARNHasBeenSet = false;
 
   Aws::String m_executionRoleName;
-  bool m_executionRoleNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   DeploymentTargets m_deploymentTargets;
-  bool m_deploymentTargetsHasBeenSet = false;
 
   StackSetDriftDetectionDetails m_stackSetDriftDetectionDetails;
-  bool m_stackSetDriftDetectionDetailsHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   StackSetOperationStatusDetails m_statusDetails;
+  bool m_operationIdHasBeenSet = false;
+  bool m_stackSetIdHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_operationPreferencesHasBeenSet = false;
+  bool m_retainStacksHasBeenSet = false;
+  bool m_administrationRoleARNHasBeenSet = false;
+  bool m_executionRoleNameHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_deploymentTargetsHasBeenSet = false;
+  bool m_stackSetDriftDetectionDetailsHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_statusDetailsHasBeenSet = false;
 };
 

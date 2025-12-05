@@ -70,9 +70,9 @@ class EncryptionConfiguration {
   ///@}
  private:
   EncryptionConfigurationType m_type{EncryptionConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_typeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

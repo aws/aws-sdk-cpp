@@ -321,42 +321,42 @@ class CreateReplicationTaskRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationTaskIdentifier;
-  bool m_replicationTaskIdentifierHasBeenSet = false;
 
   Aws::String m_sourceEndpointArn;
-  bool m_sourceEndpointArnHasBeenSet = false;
 
   Aws::String m_targetEndpointArn;
-  bool m_targetEndpointArnHasBeenSet = false;
 
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   MigrationTypeValue m_migrationType{MigrationTypeValue::NOT_SET};
-  bool m_migrationTypeHasBeenSet = false;
 
   Aws::String m_tableMappings;
-  bool m_tableMappingsHasBeenSet = false;
 
   Aws::String m_replicationTaskSettings;
-  bool m_replicationTaskSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_cdcStartTime{};
-  bool m_cdcStartTimeHasBeenSet = false;
 
   Aws::String m_cdcStartPosition;
-  bool m_cdcStartPositionHasBeenSet = false;
 
   Aws::String m_cdcStopPosition;
-  bool m_cdcStopPositionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_taskData;
-  bool m_taskDataHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
+  bool m_replicationTaskIdentifierHasBeenSet = false;
+  bool m_sourceEndpointArnHasBeenSet = false;
+  bool m_targetEndpointArnHasBeenSet = false;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_migrationTypeHasBeenSet = false;
+  bool m_tableMappingsHasBeenSet = false;
+  bool m_replicationTaskSettingsHasBeenSet = false;
+  bool m_cdcStartTimeHasBeenSet = false;
+  bool m_cdcStartPositionHasBeenSet = false;
+  bool m_cdcStopPositionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_taskDataHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

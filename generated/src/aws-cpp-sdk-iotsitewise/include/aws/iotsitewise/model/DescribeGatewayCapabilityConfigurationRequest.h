@@ -67,9 +67,9 @@ class DescribeGatewayCapabilityConfigurationRequest : public IoTSiteWiseRequest 
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_capabilityNamespace;
+  bool m_gatewayIdHasBeenSet = false;
   bool m_capabilityNamespaceHasBeenSet = false;
 };
 

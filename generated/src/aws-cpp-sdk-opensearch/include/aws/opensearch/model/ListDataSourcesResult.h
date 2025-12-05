@@ -73,9 +73,9 @@ class ListDataSourcesResult {
   ///@}
  private:
   Aws::Vector<DataSourceDetails> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

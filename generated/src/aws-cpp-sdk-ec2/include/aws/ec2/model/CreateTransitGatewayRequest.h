@@ -115,15 +115,15 @@ class CreateTransitGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TransitGatewayRequestOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

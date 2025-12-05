@@ -76,12 +76,12 @@ class CancelChangeSetResult {
   ///@}
  private:
   Aws::String m_changeSetId;
-  bool m_changeSetIdHasBeenSet = false;
 
   Aws::String m_changeSetArn;
-  bool m_changeSetArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeSetIdHasBeenSet = false;
+  bool m_changeSetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class DataQualityResultDescription {
   ///@}
  private:
   Aws::String m_resultId;
-  bool m_resultIdHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobRunId;
-  bool m_jobRunIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
+  bool m_resultIdHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobRunIdHasBeenSet = false;
   bool m_startedOnHasBeenSet = false;
 };
 

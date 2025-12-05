@@ -73,9 +73,9 @@ class MessageTemplateOrderField {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Order m_order{Order::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

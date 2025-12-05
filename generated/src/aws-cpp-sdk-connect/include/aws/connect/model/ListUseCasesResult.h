@@ -85,12 +85,12 @@ class ListUseCasesResult {
   ///@}
  private:
   Aws::Vector<UseCase> m_useCaseSummaryList;
-  bool m_useCaseSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_useCaseSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

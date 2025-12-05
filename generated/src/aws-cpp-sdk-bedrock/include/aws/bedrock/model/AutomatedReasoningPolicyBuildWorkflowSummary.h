@@ -142,21 +142,21 @@ class AutomatedReasoningPolicyBuildWorkflowSummary {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildWorkflowStatus m_status{AutomatedReasoningPolicyBuildWorkflowStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildWorkflowType m_buildWorkflowType{AutomatedReasoningPolicyBuildWorkflowType::NOT_SET};
-  bool m_buildWorkflowTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_buildWorkflowTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

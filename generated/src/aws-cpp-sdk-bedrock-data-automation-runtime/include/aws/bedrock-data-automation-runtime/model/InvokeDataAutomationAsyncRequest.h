@@ -217,30 +217,30 @@ class InvokeDataAutomationAsyncRequest : public BedrockDataAutomationRuntimeRequ
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   InputConfiguration m_inputConfiguration;
-  bool m_inputConfigurationHasBeenSet = false;
 
   OutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   DataAutomationConfiguration m_dataAutomationConfiguration;
-  bool m_dataAutomationConfigurationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   Aws::Vector<Blueprint> m_blueprints;
-  bool m_blueprintsHasBeenSet = false;
 
   Aws::String m_dataAutomationProfileArn;
-  bool m_dataAutomationProfileArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_inputConfigurationHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
+  bool m_dataAutomationConfigurationHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
+  bool m_blueprintsHasBeenSet = false;
+  bool m_dataAutomationProfileArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

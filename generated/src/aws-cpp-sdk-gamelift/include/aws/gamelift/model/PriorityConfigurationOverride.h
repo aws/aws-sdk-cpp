@@ -100,9 +100,9 @@ class PriorityConfigurationOverride {
   ///@}
  private:
   PlacementFallbackStrategy m_placementFallbackStrategy{PlacementFallbackStrategy::NOT_SET};
-  bool m_placementFallbackStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_locationOrder;
+  bool m_placementFallbackStrategyHasBeenSet = false;
   bool m_locationOrderHasBeenSet = false;
 };
 

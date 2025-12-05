@@ -86,12 +86,12 @@ class AuditImage {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_bytes{};
-  bool m_bytesHasBeenSet = false;
 
   S3Object m_s3Object;
-  bool m_s3ObjectHasBeenSet = false;
 
   BoundingBox m_boundingBox;
+  bool m_bytesHasBeenSet = false;
+  bool m_s3ObjectHasBeenSet = false;
   bool m_boundingBoxHasBeenSet = false;
 };
 

@@ -214,27 +214,27 @@ class CreateFeatureRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_defaultVariation;
-  bool m_defaultVariationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_entityOverrides;
-  bool m_entityOverridesHasBeenSet = false;
 
   FeatureEvaluationStrategy m_evaluationStrategy{FeatureEvaluationStrategy::NOT_SET};
-  bool m_evaluationStrategyHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<VariationConfig> m_variations;
+  bool m_defaultVariationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_entityOverridesHasBeenSet = false;
+  bool m_evaluationStrategyHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_variationsHasBeenSet = false;
 };
 

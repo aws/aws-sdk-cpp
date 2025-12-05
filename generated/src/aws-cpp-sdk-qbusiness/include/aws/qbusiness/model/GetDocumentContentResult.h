@@ -83,12 +83,12 @@ class GetDocumentContentResult {
   ///@}
  private:
   Aws::String m_presignedUrl;
-  bool m_presignedUrlHasBeenSet = false;
 
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_presignedUrlHasBeenSet = false;
+  bool m_mimeTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class DashConfigurationForPut {
   ///@}
  private:
   Aws::String m_mpdLocation;
-  bool m_mpdLocationHasBeenSet = false;
 
   OriginManifestType m_originManifestType{OriginManifestType::NOT_SET};
+  bool m_mpdLocationHasBeenSet = false;
   bool m_originManifestTypeHasBeenSet = false;
 };
 

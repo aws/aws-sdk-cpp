@@ -131,18 +131,18 @@ class ApplyGuardrailRequest : public BedrockRuntimeRequest {
   ///@}
  private:
   Aws::String m_guardrailIdentifier;
-  bool m_guardrailIdentifierHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
-  bool m_guardrailVersionHasBeenSet = false;
 
   GuardrailContentSource m_source{GuardrailContentSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<GuardrailContentBlock> m_content;
-  bool m_contentHasBeenSet = false;
 
   GuardrailOutputScope m_outputScope{GuardrailOutputScope::NOT_SET};
+  bool m_guardrailIdentifierHasBeenSet = false;
+  bool m_guardrailVersionHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_outputScopeHasBeenSet = false;
 };
 

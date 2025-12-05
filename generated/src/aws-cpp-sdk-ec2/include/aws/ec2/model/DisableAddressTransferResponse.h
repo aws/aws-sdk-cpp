@@ -60,9 +60,9 @@ class DisableAddressTransferResponse {
   ///@}
  private:
   AddressTransfer m_addressTransfer;
-  bool m_addressTransferHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_addressTransferHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

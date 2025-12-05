@@ -104,15 +104,15 @@ class IdentificationHints {
   ///@}
  private:
   Aws::String m_awsInstanceID;
-  bool m_awsInstanceIDHasBeenSet = false;
 
   Aws::String m_fqdn;
-  bool m_fqdnHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_vmWareUuid;
+  bool m_awsInstanceIDHasBeenSet = false;
+  bool m_fqdnHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
   bool m_vmWareUuidHasBeenSet = false;
 };
 

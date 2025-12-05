@@ -77,9 +77,9 @@ class S3ExpressDirectoryAccessPointConfiguration {
   ///@}
  private:
   Aws::String m_accessPointPolicy;
-  bool m_accessPointPolicyHasBeenSet = false;
 
   NetworkOriginConfiguration m_networkOrigin;
+  bool m_accessPointPolicyHasBeenSet = false;
   bool m_networkOriginHasBeenSet = false;
 };
 

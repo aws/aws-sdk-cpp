@@ -69,9 +69,9 @@ class SubscriptionLimits {
   ///@}
  private:
   ProtectionLimits m_protectionLimits;
-  bool m_protectionLimitsHasBeenSet = false;
 
   ProtectionGroupLimits m_protectionGroupLimits;
+  bool m_protectionLimitsHasBeenSet = false;
   bool m_protectionGroupLimitsHasBeenSet = false;
 };
 

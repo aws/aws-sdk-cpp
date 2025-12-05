@@ -91,12 +91,12 @@ class KeyGroup {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   KeyGroupConfig m_keyGroupConfig;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_keyGroupConfigHasBeenSet = false;
 };
 

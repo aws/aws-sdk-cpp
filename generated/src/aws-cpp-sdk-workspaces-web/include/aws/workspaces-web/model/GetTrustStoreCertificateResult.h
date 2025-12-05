@@ -77,12 +77,12 @@ class GetTrustStoreCertificateResult {
   ///@}
  private:
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Certificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

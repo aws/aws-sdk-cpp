@@ -91,12 +91,12 @@ class GetTaskTemplateRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_taskTemplateId;
-  bool m_taskTemplateIdHasBeenSet = false;
 
   Aws::String m_snapshotVersion;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_taskTemplateIdHasBeenSet = false;
   bool m_snapshotVersionHasBeenSet = false;
 };
 

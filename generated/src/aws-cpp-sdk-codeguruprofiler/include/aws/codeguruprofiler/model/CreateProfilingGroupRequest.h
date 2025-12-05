@@ -143,18 +143,18 @@ class CreateProfilingGroupRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   AgentOrchestrationConfig m_agentOrchestrationConfig;
-  bool m_agentOrchestrationConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
-  bool m_computePlatformHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_agentOrchestrationConfigHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_computePlatformHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

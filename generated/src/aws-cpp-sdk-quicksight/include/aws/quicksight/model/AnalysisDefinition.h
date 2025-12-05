@@ -274,33 +274,33 @@ class AnalysisDefinition {
   ///@}
  private:
   Aws::Vector<DataSetIdentifierDeclaration> m_dataSetIdentifierDeclarations;
-  bool m_dataSetIdentifierDeclarationsHasBeenSet = false;
 
   Aws::Vector<SheetDefinition> m_sheets;
-  bool m_sheetsHasBeenSet = false;
 
   Aws::Vector<CalculatedField> m_calculatedFields;
-  bool m_calculatedFieldsHasBeenSet = false;
 
   Aws::Vector<ParameterDeclaration> m_parameterDeclarations;
-  bool m_parameterDeclarationsHasBeenSet = false;
 
   Aws::Vector<FilterGroup> m_filterGroups;
-  bool m_filterGroupsHasBeenSet = false;
 
   Aws::Vector<ColumnConfiguration> m_columnConfigurations;
-  bool m_columnConfigurationsHasBeenSet = false;
 
   AnalysisDefaults m_analysisDefaults;
-  bool m_analysisDefaultsHasBeenSet = false;
 
   AssetOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   QueryExecutionOptions m_queryExecutionOptions;
-  bool m_queryExecutionOptionsHasBeenSet = false;
 
   Aws::Vector<StaticFile> m_staticFiles;
+  bool m_dataSetIdentifierDeclarationsHasBeenSet = false;
+  bool m_sheetsHasBeenSet = false;
+  bool m_calculatedFieldsHasBeenSet = false;
+  bool m_parameterDeclarationsHasBeenSet = false;
+  bool m_filterGroupsHasBeenSet = false;
+  bool m_columnConfigurationsHasBeenSet = false;
+  bool m_analysisDefaultsHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_queryExecutionOptionsHasBeenSet = false;
   bool m_staticFilesHasBeenSet = false;
 };
 

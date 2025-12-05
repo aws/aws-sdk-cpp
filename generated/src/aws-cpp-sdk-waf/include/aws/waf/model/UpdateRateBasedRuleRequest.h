@@ -116,15 +116,15 @@ class UpdateRateBasedRuleRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::Vector<RuleUpdate> m_updates;
-  bool m_updatesHasBeenSet = false;
 
   long long m_rateLimit{0};
+  bool m_ruleIdHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
+  bool m_updatesHasBeenSet = false;
   bool m_rateLimitHasBeenSet = false;
 };
 

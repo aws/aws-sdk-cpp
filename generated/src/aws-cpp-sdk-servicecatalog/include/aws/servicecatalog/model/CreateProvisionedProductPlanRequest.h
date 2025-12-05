@@ -262,36 +262,36 @@ class CreateProvisionedProductPlanRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_planName;
-  bool m_planNameHasBeenSet = false;
 
   ProvisionedProductPlanType m_planType{ProvisionedProductPlanType::NOT_SET};
-  bool m_planTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationArns;
-  bool m_notificationArnsHasBeenSet = false;
 
   Aws::String m_pathId;
-  bool m_pathIdHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisionedProductName;
-  bool m_provisionedProductNameHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::Vector<UpdateProvisioningParameter> m_provisioningParameters;
-  bool m_provisioningParametersHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_planNameHasBeenSet = false;
+  bool m_planTypeHasBeenSet = false;
+  bool m_notificationArnsHasBeenSet = false;
+  bool m_pathIdHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_provisionedProductNameHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_provisioningParametersHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

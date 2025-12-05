@@ -111,15 +111,15 @@ class UpdateLibraryItemRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_libraryItemId;
-  bool m_libraryItemIdHasBeenSet = false;
 
   LibraryItemStatus m_status{LibraryItemStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categories;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_libraryItemIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
 };
 

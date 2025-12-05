@@ -74,9 +74,9 @@ class MemberDefinition {
   ///@}
  private:
   CognitoMemberDefinition m_cognitoMemberDefinition;
-  bool m_cognitoMemberDefinitionHasBeenSet = false;
 
   OidcMemberDefinition m_oidcMemberDefinition;
+  bool m_cognitoMemberDefinitionHasBeenSet = false;
   bool m_oidcMemberDefinitionHasBeenSet = false;
 };
 

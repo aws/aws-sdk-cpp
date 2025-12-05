@@ -69,9 +69,9 @@ class PutConfigurationSetReputationOptionsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   bool m_reputationMetricsEnabled{false};
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_reputationMetricsEnabledHasBeenSet = false;
 };
 

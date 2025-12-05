@@ -70,9 +70,9 @@ class SuggestedFix {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_code;
+  bool m_descriptionHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

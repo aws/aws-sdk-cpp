@@ -114,15 +114,15 @@ class OrderableClusterOption {
   ///@}
  private:
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   Aws::String m_clusterType;
-  bool m_clusterTypeHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::Vector<AvailabilityZone> m_availabilityZones;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
 };
 

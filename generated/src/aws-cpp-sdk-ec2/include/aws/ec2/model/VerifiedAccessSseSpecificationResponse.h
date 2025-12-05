@@ -69,9 +69,9 @@ class VerifiedAccessSseSpecificationResponse {
   ///@}
  private:
   bool m_customerManagedKeyEnabled{false};
-  bool m_customerManagedKeyEnabledHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_customerManagedKeyEnabledHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

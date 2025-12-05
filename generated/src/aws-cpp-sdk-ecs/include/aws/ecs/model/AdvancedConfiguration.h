@@ -115,15 +115,15 @@ class AdvancedConfiguration {
   ///@}
  private:
   Aws::String m_alternateTargetGroupArn;
-  bool m_alternateTargetGroupArnHasBeenSet = false;
 
   Aws::String m_productionListenerRule;
-  bool m_productionListenerRuleHasBeenSet = false;
 
   Aws::String m_testListenerRule;
-  bool m_testListenerRuleHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_alternateTargetGroupArnHasBeenSet = false;
+  bool m_productionListenerRuleHasBeenSet = false;
+  bool m_testListenerRuleHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

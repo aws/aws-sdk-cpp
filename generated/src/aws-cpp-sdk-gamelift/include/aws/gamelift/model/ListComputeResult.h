@@ -86,12 +86,12 @@ class ListComputeResult {
   ///@}
  private:
   Aws::Vector<Compute> m_computeList;
-  bool m_computeListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computeListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

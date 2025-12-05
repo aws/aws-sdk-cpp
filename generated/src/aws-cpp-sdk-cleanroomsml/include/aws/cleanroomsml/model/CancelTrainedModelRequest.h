@@ -92,12 +92,12 @@ class CancelTrainedModelRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_versionIdentifier;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
   bool m_versionIdentifierHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class EvaluationFormMultiSelectQuestionOption {
   ///@}
  private:
   Aws::String m_refId;
-  bool m_refIdHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_refIdHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

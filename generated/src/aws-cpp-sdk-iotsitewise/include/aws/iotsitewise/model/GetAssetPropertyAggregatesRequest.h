@@ -255,36 +255,36 @@ class GetAssetPropertyAggregatesRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
-  bool m_propertyIdHasBeenSet = false;
 
   Aws::String m_propertyAlias;
-  bool m_propertyAliasHasBeenSet = false;
 
   Aws::Vector<AggregateType> m_aggregateTypes;
-  bool m_aggregateTypesHasBeenSet = false;
 
   Aws::String m_resolution;
-  bool m_resolutionHasBeenSet = false;
 
   Aws::Vector<Quality> m_qualities;
-  bool m_qualitiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   TimeOrdering m_timeOrdering{TimeOrdering::NOT_SET};
-  bool m_timeOrderingHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_assetIdHasBeenSet = false;
+  bool m_propertyIdHasBeenSet = false;
+  bool m_propertyAliasHasBeenSet = false;
+  bool m_aggregateTypesHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_qualitiesHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_timeOrderingHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

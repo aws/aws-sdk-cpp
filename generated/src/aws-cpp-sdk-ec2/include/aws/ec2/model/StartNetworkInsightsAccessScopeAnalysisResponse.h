@@ -63,9 +63,9 @@ class StartNetworkInsightsAccessScopeAnalysisResponse {
   ///@}
  private:
   NetworkInsightsAccessScopeAnalysis m_networkInsightsAccessScopeAnalysis;
-  bool m_networkInsightsAccessScopeAnalysisHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsAccessScopeAnalysisHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

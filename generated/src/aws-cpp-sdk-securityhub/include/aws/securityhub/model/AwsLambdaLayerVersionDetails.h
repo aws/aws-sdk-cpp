@@ -105,12 +105,12 @@ class AwsLambdaLayerVersionDetails {
   ///@}
  private:
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_compatibleRuntimes;
-  bool m_compatibleRuntimesHasBeenSet = false;
 
   Aws::String m_createdDate;
+  bool m_versionHasBeenSet = false;
+  bool m_compatibleRuntimesHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
 };
 

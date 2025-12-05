@@ -254,33 +254,33 @@ class GetExperimentResultsRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   ExperimentBaseStat m_baseStat{ExperimentBaseStat::NOT_SET};
-  bool m_baseStatHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_experiment;
-  bool m_experimentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricNames;
-  bool m_metricNamesHasBeenSet = false;
 
   long long m_period{0};
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::Vector<ExperimentReportName> m_reportNames;
-  bool m_reportNamesHasBeenSet = false;
 
   Aws::Vector<ExperimentResultRequestType> m_resultStats;
-  bool m_resultStatsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_treatmentNames;
+  bool m_baseStatHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_experimentHasBeenSet = false;
+  bool m_metricNamesHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_reportNamesHasBeenSet = false;
+  bool m_resultStatsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_treatmentNamesHasBeenSet = false;
 };
 

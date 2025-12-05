@@ -89,12 +89,12 @@ class ManagedThingSchemaListItem {
   ///@}
  private:
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_capabilityId;
-  bool m_capabilityIdHasBeenSet = false;
 
   Aws::Utils::Document m_schema;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_capabilityIdHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
 };
 

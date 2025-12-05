@@ -104,15 +104,15 @@ class DescribeFleetInstancesResponse {
   ///@}
  private:
   Aws::Vector<ActiveInstance> m_activeInstances;
-  bool m_activeInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_activeInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

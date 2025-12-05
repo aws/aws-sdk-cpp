@@ -314,42 +314,42 @@ class CreateOTAUpdateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_otaUpdateId;
-  bool m_otaUpdateIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   TargetSelection m_targetSelection{TargetSelection::NOT_SET};
-  bool m_targetSelectionHasBeenSet = false;
 
   AwsJobExecutionsRolloutConfig m_awsJobExecutionsRolloutConfig;
-  bool m_awsJobExecutionsRolloutConfigHasBeenSet = false;
 
   AwsJobPresignedUrlConfig m_awsJobPresignedUrlConfig;
-  bool m_awsJobPresignedUrlConfigHasBeenSet = false;
 
   AwsJobAbortConfig m_awsJobAbortConfig;
-  bool m_awsJobAbortConfigHasBeenSet = false;
 
   AwsJobTimeoutConfig m_awsJobTimeoutConfig;
-  bool m_awsJobTimeoutConfigHasBeenSet = false;
 
   Aws::Vector<OTAUpdateFile> m_files;
-  bool m_filesHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalParameters;
-  bool m_additionalParametersHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_otaUpdateIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
+  bool m_targetSelectionHasBeenSet = false;
+  bool m_awsJobExecutionsRolloutConfigHasBeenSet = false;
+  bool m_awsJobPresignedUrlConfigHasBeenSet = false;
+  bool m_awsJobAbortConfigHasBeenSet = false;
+  bool m_awsJobTimeoutConfigHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_additionalParametersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

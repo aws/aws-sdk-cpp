@@ -438,66 +438,66 @@ class Studio {
   ///@}
  private:
   Aws::String m_studioId;
-  bool m_studioIdHasBeenSet = false;
 
   Aws::String m_studioArn;
-  bool m_studioArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AuthMode m_authMode{AuthMode::NOT_SET};
-  bool m_authModeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   Aws::String m_userRole;
-  bool m_userRoleHasBeenSet = false;
 
   Aws::String m_workspaceSecurityGroupId;
-  bool m_workspaceSecurityGroupIdHasBeenSet = false;
 
   Aws::String m_engineSecurityGroupId;
-  bool m_engineSecurityGroupIdHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_defaultS3Location;
-  bool m_defaultS3LocationHasBeenSet = false;
 
   Aws::String m_idpAuthUrl;
-  bool m_idpAuthUrlHasBeenSet = false;
 
   Aws::String m_idpRelayStateParameterName;
-  bool m_idpRelayStateParameterNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_idcInstanceArn;
-  bool m_idcInstanceArnHasBeenSet = false;
 
   bool m_trustedIdentityPropagationEnabled{false};
-  bool m_trustedIdentityPropagationEnabledHasBeenSet = false;
 
   IdcUserAssignment m_idcUserAssignment{IdcUserAssignment::NOT_SET};
-  bool m_idcUserAssignmentHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
+  bool m_studioIdHasBeenSet = false;
+  bool m_studioArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_authModeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_userRoleHasBeenSet = false;
+  bool m_workspaceSecurityGroupIdHasBeenSet = false;
+  bool m_engineSecurityGroupIdHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_defaultS3LocationHasBeenSet = false;
+  bool m_idpAuthUrlHasBeenSet = false;
+  bool m_idpRelayStateParameterNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_idcInstanceArnHasBeenSet = false;
+  bool m_trustedIdentityPropagationEnabledHasBeenSet = false;
+  bool m_idcUserAssignmentHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
 };
 

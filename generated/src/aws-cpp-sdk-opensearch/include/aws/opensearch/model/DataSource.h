@@ -67,9 +67,9 @@ class DataSource {
   ///@}
  private:
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   Aws::String m_dataSourceDescription;
+  bool m_dataSourceArnHasBeenSet = false;
   bool m_dataSourceDescriptionHasBeenSet = false;
 };
 

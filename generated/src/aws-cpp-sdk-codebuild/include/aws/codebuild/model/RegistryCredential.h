@@ -78,9 +78,9 @@ class RegistryCredential {
   ///@}
  private:
   Aws::String m_credential;
-  bool m_credentialHasBeenSet = false;
 
   CredentialProviderType m_credentialProvider{CredentialProviderType::NOT_SET};
+  bool m_credentialHasBeenSet = false;
   bool m_credentialProviderHasBeenSet = false;
 };
 

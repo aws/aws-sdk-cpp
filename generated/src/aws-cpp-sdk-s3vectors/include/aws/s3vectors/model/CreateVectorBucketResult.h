@@ -59,9 +59,9 @@ class CreateVectorBucketResult {
   ///@}
  private:
   Aws::String m_vectorBucketArn;
-  bool m_vectorBucketArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vectorBucketArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

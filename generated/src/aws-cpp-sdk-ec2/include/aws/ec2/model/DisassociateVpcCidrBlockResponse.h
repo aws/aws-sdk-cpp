@@ -96,15 +96,15 @@ class DisassociateVpcCidrBlockResponse {
   ///@}
  private:
   VpcIpv6CidrBlockAssociation m_ipv6CidrBlockAssociation;
-  bool m_ipv6CidrBlockAssociationHasBeenSet = false;
 
   VpcCidrBlockAssociation m_cidrBlockAssociation;
-  bool m_cidrBlockAssociationHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipv6CidrBlockAssociationHasBeenSet = false;
+  bool m_cidrBlockAssociationHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ThrottlingException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   ServiceCode m_serviceCode{ServiceCode::NOT_SET};
+  bool m_messageHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
 };
 

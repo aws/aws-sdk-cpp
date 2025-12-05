@@ -106,12 +106,12 @@ class ValidationExceptionError {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ValidationExceptionErrorCode m_code{ValidationExceptionErrorCode::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

@@ -130,18 +130,18 @@ class GetVpnConnectionDeviceSampleConfigurationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_vpnConnectionId;
-  bool m_vpnConnectionIdHasBeenSet = false;
 
   Aws::String m_vpnConnectionDeviceTypeId;
-  bool m_vpnConnectionDeviceTypeIdHasBeenSet = false;
 
   Aws::String m_internetKeyExchangeVersion;
-  bool m_internetKeyExchangeVersionHasBeenSet = false;
 
   Aws::String m_sampleType;
-  bool m_sampleTypeHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_vpnConnectionIdHasBeenSet = false;
+  bool m_vpnConnectionDeviceTypeIdHasBeenSet = false;
+  bool m_internetKeyExchangeVersionHasBeenSet = false;
+  bool m_sampleTypeHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

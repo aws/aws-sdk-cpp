@@ -88,12 +88,12 @@ class GetResourcesStatisticsV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::Vector<ResourceGroupByRule> m_groupByRules;
-  bool m_groupByRulesHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   int m_maxStatisticResults{0};
+  bool m_groupByRulesHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_maxStatisticResultsHasBeenSet = false;
 };
 

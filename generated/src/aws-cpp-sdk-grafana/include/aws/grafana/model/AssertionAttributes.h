@@ -148,21 +148,21 @@ class AssertionAttributes {
   ///@}
  private:
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_login;
-  bool m_loginHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_org;
-  bool m_orgHasBeenSet = false;
 
   Aws::String m_role;
+  bool m_emailHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_loginHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_orgHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

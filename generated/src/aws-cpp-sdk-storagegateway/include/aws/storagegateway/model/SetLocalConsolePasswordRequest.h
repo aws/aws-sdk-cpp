@@ -68,9 +68,9 @@ class SetLocalConsolePasswordRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_localConsolePassword;
+  bool m_gatewayARNHasBeenSet = false;
   bool m_localConsolePasswordHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class OperationEntry {
   ///@}
  private:
   OperationType m_operationType{OperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   Aws::String m_operationId;
+  bool m_operationTypeHasBeenSet = false;
   bool m_operationIdHasBeenSet = false;
 };
 

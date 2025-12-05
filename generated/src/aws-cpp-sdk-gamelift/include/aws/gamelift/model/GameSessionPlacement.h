@@ -459,60 +459,60 @@ class GameSessionPlacement {
   ///@}
  private:
   Aws::String m_placementId;
-  bool m_placementIdHasBeenSet = false;
 
   Aws::String m_gameSessionQueueName;
-  bool m_gameSessionQueueNameHasBeenSet = false;
 
   GameSessionPlacementState m_status{GameSessionPlacementState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<GameProperty> m_gameProperties;
-  bool m_gamePropertiesHasBeenSet = false;
 
   int m_maximumPlayerSessionCount{0};
-  bool m_maximumPlayerSessionCountHasBeenSet = false;
 
   Aws::String m_gameSessionName;
-  bool m_gameSessionNameHasBeenSet = false;
 
   Aws::String m_gameSessionId;
-  bool m_gameSessionIdHasBeenSet = false;
 
   Aws::String m_gameSessionArn;
-  bool m_gameSessionArnHasBeenSet = false;
 
   Aws::String m_gameSessionRegion;
-  bool m_gameSessionRegionHasBeenSet = false;
 
   Aws::Vector<PlayerLatency> m_playerLatencies;
-  bool m_playerLatenciesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::Vector<PlacedPlayerSession> m_placedPlayerSessions;
-  bool m_placedPlayerSessionsHasBeenSet = false;
 
   Aws::String m_gameSessionData;
-  bool m_gameSessionDataHasBeenSet = false;
 
   Aws::String m_matchmakerData;
-  bool m_matchmakerDataHasBeenSet = false;
 
   PriorityConfigurationOverride m_priorityConfigurationOverride;
+  bool m_placementIdHasBeenSet = false;
+  bool m_gameSessionQueueNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_gamePropertiesHasBeenSet = false;
+  bool m_maximumPlayerSessionCountHasBeenSet = false;
+  bool m_gameSessionNameHasBeenSet = false;
+  bool m_gameSessionIdHasBeenSet = false;
+  bool m_gameSessionArnHasBeenSet = false;
+  bool m_gameSessionRegionHasBeenSet = false;
+  bool m_playerLatenciesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_placedPlayerSessionsHasBeenSet = false;
+  bool m_gameSessionDataHasBeenSet = false;
+  bool m_matchmakerDataHasBeenSet = false;
   bool m_priorityConfigurationOverrideHasBeenSet = false;
 };
 

@@ -360,57 +360,57 @@ class ReplaceRouteRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_destinationPrefixListId;
-  bool m_destinationPrefixListIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   bool m_localTarget{false};
-  bool m_localTargetHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_localGatewayId;
-  bool m_localGatewayIdHasBeenSet = false;
 
   Aws::String m_carrierGatewayId;
-  bool m_carrierGatewayIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
-  bool m_coreNetworkArnHasBeenSet = false;
 
   Aws::String m_odbNetworkArn;
-  bool m_odbNetworkArnHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_destinationIpv6CidrBlock;
-  bool m_destinationIpv6CidrBlockHasBeenSet = false;
 
   Aws::String m_egressOnlyInternetGatewayId;
-  bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
-  bool m_vpcPeeringConnectionIdHasBeenSet = false;
 
   Aws::String m_natGatewayId;
+  bool m_destinationPrefixListIdHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_localTargetHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_localGatewayIdHasBeenSet = false;
+  bool m_carrierGatewayIdHasBeenSet = false;
+  bool m_coreNetworkArnHasBeenSet = false;
+  bool m_odbNetworkArnHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_destinationIpv6CidrBlockHasBeenSet = false;
+  bool m_egressOnlyInternetGatewayIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_vpcPeeringConnectionIdHasBeenSet = false;
   bool m_natGatewayIdHasBeenSet = false;
 };
 

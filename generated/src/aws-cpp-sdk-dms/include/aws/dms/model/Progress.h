@@ -113,15 +113,15 @@ class Progress {
   ///@}
  private:
   double m_progressPercent{0.0};
-  bool m_progressPercentHasBeenSet = false;
 
   long long m_totalObjects{0};
-  bool m_totalObjectsHasBeenSet = false;
 
   Aws::String m_progressStep;
-  bool m_progressStepHasBeenSet = false;
 
   ProcessedObject m_processedObject;
+  bool m_progressPercentHasBeenSet = false;
+  bool m_totalObjectsHasBeenSet = false;
+  bool m_progressStepHasBeenSet = false;
   bool m_processedObjectHasBeenSet = false;
 };
 

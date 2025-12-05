@@ -90,12 +90,12 @@ class ImageDetails {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_imageDigest;
-  bool m_imageDigestHasBeenSet = false;
 
   Aws::String m_sourceImage;
+  bool m_imageHasBeenSet = false;
+  bool m_imageDigestHasBeenSet = false;
   bool m_sourceImageHasBeenSet = false;
 };
 

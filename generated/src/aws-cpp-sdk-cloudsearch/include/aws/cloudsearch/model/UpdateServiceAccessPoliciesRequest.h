@@ -74,9 +74,9 @@ class UpdateServiceAccessPoliciesRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_accessPolicies;
+  bool m_domainNameHasBeenSet = false;
   bool m_accessPoliciesHasBeenSet = false;
 };
 

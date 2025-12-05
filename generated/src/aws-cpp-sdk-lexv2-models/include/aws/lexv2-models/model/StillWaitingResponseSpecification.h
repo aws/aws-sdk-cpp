@@ -110,15 +110,15 @@ class StillWaitingResponseSpecification {
   ///@}
  private:
   Aws::Vector<MessageGroup> m_messageGroups;
-  bool m_messageGroupsHasBeenSet = false;
 
   int m_frequencyInSeconds{0};
-  bool m_frequencyInSecondsHasBeenSet = false;
 
   int m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   bool m_allowInterrupt{false};
+  bool m_messageGroupsHasBeenSet = false;
+  bool m_frequencyInSecondsHasBeenSet = false;
+  bool m_timeoutInSecondsHasBeenSet = false;
   bool m_allowInterruptHasBeenSet = false;
 };
 

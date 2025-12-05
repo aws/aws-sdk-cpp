@@ -430,54 +430,54 @@ class SubmitJobRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobQueue;
-  bool m_jobQueueHasBeenSet = false;
 
   Aws::String m_shareIdentifier;
-  bool m_shareIdentifierHasBeenSet = false;
 
   int m_schedulingPriorityOverride{0};
-  bool m_schedulingPriorityOverrideHasBeenSet = false;
 
   ArrayProperties m_arrayProperties;
-  bool m_arrayPropertiesHasBeenSet = false;
 
   Aws::Vector<JobDependency> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   Aws::String m_jobDefinition;
-  bool m_jobDefinitionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   ContainerOverrides m_containerOverrides;
-  bool m_containerOverridesHasBeenSet = false;
 
   NodeOverrides m_nodeOverrides;
-  bool m_nodeOverridesHasBeenSet = false;
 
   RetryStrategy m_retryStrategy;
-  bool m_retryStrategyHasBeenSet = false;
 
   bool m_propagateTags{false};
-  bool m_propagateTagsHasBeenSet = false;
 
   JobTimeout m_timeout;
-  bool m_timeoutHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EksPropertiesOverride m_eksPropertiesOverride;
-  bool m_eksPropertiesOverrideHasBeenSet = false;
 
   EcsPropertiesOverride m_ecsPropertiesOverride;
-  bool m_ecsPropertiesOverrideHasBeenSet = false;
 
   ConsumableResourceProperties m_consumableResourcePropertiesOverride;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobQueueHasBeenSet = false;
+  bool m_shareIdentifierHasBeenSet = false;
+  bool m_schedulingPriorityOverrideHasBeenSet = false;
+  bool m_arrayPropertiesHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
+  bool m_jobDefinitionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_containerOverridesHasBeenSet = false;
+  bool m_nodeOverridesHasBeenSet = false;
+  bool m_retryStrategyHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_eksPropertiesOverrideHasBeenSet = false;
+  bool m_ecsPropertiesOverrideHasBeenSet = false;
   bool m_consumableResourcePropertiesOverrideHasBeenSet = false;
 };
 

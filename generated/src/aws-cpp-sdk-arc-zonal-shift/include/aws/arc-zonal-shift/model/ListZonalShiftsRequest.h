@@ -112,15 +112,15 @@ class ListZonalShiftsRequest : public ARCZonalShiftRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ZonalShiftStatus m_status{ZonalShiftStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ObjectLambdaAccessPoint {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_objectLambdaAccessPointArn;
-  bool m_objectLambdaAccessPointArnHasBeenSet = false;
 
   ObjectLambdaAccessPointAlias m_alias;
+  bool m_nameHasBeenSet = false;
+  bool m_objectLambdaAccessPointArnHasBeenSet = false;
   bool m_aliasHasBeenSet = false;
 };
 

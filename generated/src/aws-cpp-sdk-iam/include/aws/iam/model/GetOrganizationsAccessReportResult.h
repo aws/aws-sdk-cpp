@@ -212,33 +212,33 @@ class GetOrganizationsAccessReportResult {
   ///@}
  private:
   JobStatusType m_jobStatus{JobStatusType::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobCreationDate{};
-  bool m_jobCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobCompletionDate{};
-  bool m_jobCompletionDateHasBeenSet = false;
 
   int m_numberOfServicesAccessible{0};
-  bool m_numberOfServicesAccessibleHasBeenSet = false;
 
   int m_numberOfServicesNotAccessed{0};
-  bool m_numberOfServicesNotAccessedHasBeenSet = false;
 
   Aws::Vector<AccessDetail> m_accessDetails;
-  bool m_accessDetailsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_jobCreationDateHasBeenSet = false;
+  bool m_jobCompletionDateHasBeenSet = false;
+  bool m_numberOfServicesAccessibleHasBeenSet = false;
+  bool m_numberOfServicesNotAccessedHasBeenSet = false;
+  bool m_accessDetailsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class UpdateLiveSourceRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::Vector<HttpPackageConfiguration> m_httpPackageConfigurations;
-  bool m_httpPackageConfigurationsHasBeenSet = false;
 
   Aws::String m_liveSourceName;
-  bool m_liveSourceNameHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
+  bool m_httpPackageConfigurationsHasBeenSet = false;
+  bool m_liveSourceNameHasBeenSet = false;
   bool m_sourceLocationNameHasBeenSet = false;
 };
 

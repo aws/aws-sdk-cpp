@@ -85,12 +85,12 @@ class ObjectiveStatusCounters {
   ///@}
  private:
   int m_succeeded{0};
-  bool m_succeededHasBeenSet = false;
 
   int m_pending{0};
-  bool m_pendingHasBeenSet = false;
 
   int m_failed{0};
+  bool m_succeededHasBeenSet = false;
+  bool m_pendingHasBeenSet = false;
   bool m_failedHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class OcsfMapFilter {
   ///@}
  private:
   OcsfMapField m_fieldName{OcsfMapField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   MapFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

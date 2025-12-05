@@ -72,12 +72,12 @@ class DescribeStorageResult {
   ///@}
  private:
   double m_totalBackupSizeInMegaBytes{0.0};
-  bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
 
   double m_totalProvisionedStorageInMegaBytes{0.0};
-  bool m_totalProvisionedStorageInMegaBytesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
+  bool m_totalProvisionedStorageInMegaBytesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

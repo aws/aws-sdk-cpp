@@ -67,9 +67,9 @@ class ProductViewAggregationValue {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   int m_approximateCount{0};
+  bool m_valueHasBeenSet = false;
   bool m_approximateCountHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class UpdateDistributionBundleRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_distributionName;
-  bool m_distributionNameHasBeenSet = false;
 
   Aws::String m_bundleId;
+  bool m_distributionNameHasBeenSet = false;
   bool m_bundleIdHasBeenSet = false;
 };
 

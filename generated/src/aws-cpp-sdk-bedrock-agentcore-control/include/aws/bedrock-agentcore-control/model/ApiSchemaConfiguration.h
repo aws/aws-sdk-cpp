@@ -67,9 +67,9 @@ class ApiSchemaConfiguration {
   ///@}
  private:
   S3Configuration m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::String m_inlinePayload;
+  bool m_s3HasBeenSet = false;
   bool m_inlinePayloadHasBeenSet = false;
 };
 

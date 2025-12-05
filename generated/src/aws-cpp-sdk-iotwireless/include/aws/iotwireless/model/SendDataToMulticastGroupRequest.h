@@ -78,12 +78,12 @@ class SendDataToMulticastGroupRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_payloadData;
-  bool m_payloadDataHasBeenSet = false;
 
   MulticastWirelessMetadata m_wirelessMetadata;
+  bool m_idHasBeenSet = false;
+  bool m_payloadDataHasBeenSet = false;
   bool m_wirelessMetadataHasBeenSet = false;
 };
 

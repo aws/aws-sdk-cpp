@@ -78,9 +78,9 @@ class AzElSegments {
   ///@}
  private:
   AngleUnits m_angleUnit{AngleUnits::NOT_SET};
-  bool m_angleUnitHasBeenSet = false;
 
   Aws::Vector<AzElSegment> m_azElSegmentList;
+  bool m_angleUnitHasBeenSet = false;
   bool m_azElSegmentListHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class IntegrationConfig {
   ///@}
  private:
   Aws::String m_refreshInterval;
-  bool m_refreshIntervalHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sourceProperties;
-  bool m_sourcePropertiesHasBeenSet = false;
 
   bool m_continuousSync{false};
+  bool m_refreshIntervalHasBeenSet = false;
+  bool m_sourcePropertiesHasBeenSet = false;
   bool m_continuousSyncHasBeenSet = false;
 };
 

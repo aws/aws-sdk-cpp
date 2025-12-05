@@ -65,9 +65,9 @@ class CopyBackupToRegionResult {
   ///@}
  private:
   DestinationBackup m_destinationBackup;
-  bool m_destinationBackupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_destinationBackupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

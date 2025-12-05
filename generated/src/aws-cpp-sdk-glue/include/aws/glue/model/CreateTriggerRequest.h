@@ -236,33 +236,33 @@ class CreateTriggerRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   TriggerType m_type{TriggerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Predicate m_predicate;
-  bool m_predicateHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_startOnCreation{false};
-  bool m_startOnCreationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EventBatchingCondition m_eventBatchingCondition;
+  bool m_nameHasBeenSet = false;
+  bool m_workflowNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_predicateHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_startOnCreationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_eventBatchingConditionHasBeenSet = false;
 };
 

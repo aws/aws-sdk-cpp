@@ -107,12 +107,12 @@ class UsageCriteria {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Vector<UsageFeature> m_features;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
 };
 

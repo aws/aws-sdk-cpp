@@ -85,12 +85,12 @@ class InAppMessageBodyConfig {
   ///@}
  private:
   Alignment m_alignment{Alignment::NOT_SET};
-  bool m_alignmentHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_textColor;
+  bool m_alignmentHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
   bool m_textColorHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AnomalyDetection {
   ///@}
  private:
   AnomalyResultEnum m_result{AnomalyResultEnum::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   MitigationInEffectEnum m_mitigationInEffect{MitigationInEffectEnum::NOT_SET};
+  bool m_resultHasBeenSet = false;
   bool m_mitigationInEffectHasBeenSet = false;
 };
 

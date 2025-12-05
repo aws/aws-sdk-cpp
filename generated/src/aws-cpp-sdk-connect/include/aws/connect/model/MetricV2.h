@@ -121,15 +121,15 @@ class MetricV2 {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ThresholdV2> m_threshold;
-  bool m_thresholdHasBeenSet = false;
 
   Aws::String m_metricId;
-  bool m_metricIdHasBeenSet = false;
 
   Aws::Vector<MetricFilterV2> m_metricFilters;
+  bool m_nameHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_metricIdHasBeenSet = false;
   bool m_metricFiltersHasBeenSet = false;
 };
 

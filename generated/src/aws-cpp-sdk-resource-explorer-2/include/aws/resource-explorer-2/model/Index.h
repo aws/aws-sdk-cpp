@@ -103,12 +103,12 @@ class Index {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   IndexType m_type{IndexType::NOT_SET};
+  bool m_regionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

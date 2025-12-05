@@ -141,21 +141,21 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_eventExpiryDuration{0};
-  bool m_eventExpiryDurationHasBeenSet = false;
 
   Aws::String m_memoryExecutionRoleArn;
-  bool m_memoryExecutionRoleArnHasBeenSet = false;
 
   ModifyMemoryStrategies m_memoryStrategies;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventExpiryDurationHasBeenSet = false;
+  bool m_memoryExecutionRoleArnHasBeenSet = false;
   bool m_memoryStrategiesHasBeenSet = false;
 };
 

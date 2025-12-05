@@ -116,15 +116,15 @@ class DataBindingValueFilter {
   ///@}
  private:
   AssetBindingValueFilter m_asset;
-  bool m_assetHasBeenSet = false;
 
   AssetModelBindingValueFilter m_assetModel;
-  bool m_assetModelHasBeenSet = false;
 
   AssetPropertyBindingValueFilter m_assetProperty;
-  bool m_assetPropertyHasBeenSet = false;
 
   AssetModelPropertyBindingValueFilter m_assetModelProperty;
+  bool m_assetHasBeenSet = false;
+  bool m_assetModelHasBeenSet = false;
+  bool m_assetPropertyHasBeenSet = false;
   bool m_assetModelPropertyHasBeenSet = false;
 };
 

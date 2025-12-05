@@ -97,12 +97,12 @@ class DescribeClustersResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Cluster> m_clusters;
-  bool m_clustersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_clustersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

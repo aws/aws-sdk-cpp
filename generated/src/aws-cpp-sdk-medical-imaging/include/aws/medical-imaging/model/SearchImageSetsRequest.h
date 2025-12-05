@@ -108,15 +108,15 @@ class SearchImageSetsRequest : public MedicalImagingRequest {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   SearchCriteria m_searchCriteria;
-  bool m_searchCriteriaHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_searchCriteriaHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

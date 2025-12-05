@@ -67,9 +67,9 @@ class SortCriterion {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Sort m_sort{Sort::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

@@ -321,39 +321,39 @@ class QuipConfiguration {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   bool m_crawlFileComments{false};
-  bool m_crawlFileCommentsHasBeenSet = false;
 
   bool m_crawlChatRooms{false};
-  bool m_crawlChatRoomsHasBeenSet = false;
 
   bool m_crawlAttachments{false};
-  bool m_crawlAttachmentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_folderIds;
-  bool m_folderIdsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_threadFieldMappings;
-  bool m_threadFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_messageFieldMappings;
-  bool m_messageFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_attachmentFieldMappings;
-  bool m_attachmentFieldMappingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
+  bool m_domainHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_crawlFileCommentsHasBeenSet = false;
+  bool m_crawlChatRoomsHasBeenSet = false;
+  bool m_crawlAttachmentsHasBeenSet = false;
+  bool m_folderIdsHasBeenSet = false;
+  bool m_threadFieldMappingsHasBeenSet = false;
+  bool m_messageFieldMappingsHasBeenSet = false;
+  bool m_attachmentFieldMappingsHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ResponseResourceMetric {
   ///@}
  private:
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_metricHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

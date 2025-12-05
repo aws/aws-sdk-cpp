@@ -165,24 +165,24 @@ class NotificationConfigurationStructure {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   NotificationConfigurationStatus m_status{NotificationConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   AggregationDuration m_aggregationDuration{AggregationDuration::NOT_SET};
-  bool m_aggregationDurationHasBeenSet = false;
 
   NotificationConfigurationSubtype m_subtype{NotificationConfigurationSubtype::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_aggregationDurationHasBeenSet = false;
   bool m_subtypeHasBeenSet = false;
 };
 

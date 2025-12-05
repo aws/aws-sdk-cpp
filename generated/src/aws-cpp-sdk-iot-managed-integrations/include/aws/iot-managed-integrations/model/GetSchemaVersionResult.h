@@ -161,27 +161,27 @@ class GetSchemaVersionResult {
   ///@}
  private:
   Aws::String m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   SchemaVersionType m_type{SchemaVersionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   SchemaVersionVisibility m_visibility{SchemaVersionVisibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::Utils::Document m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

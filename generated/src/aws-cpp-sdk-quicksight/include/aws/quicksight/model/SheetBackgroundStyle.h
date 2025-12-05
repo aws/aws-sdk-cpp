@@ -68,9 +68,9 @@ class SheetBackgroundStyle {
   ///@}
  private:
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   Aws::String m_gradient;
+  bool m_colorHasBeenSet = false;
   bool m_gradientHasBeenSet = false;
 };
 

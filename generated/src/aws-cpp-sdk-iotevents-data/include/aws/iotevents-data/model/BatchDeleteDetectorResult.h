@@ -71,9 +71,9 @@ class BatchDeleteDetectorResult {
   ///@}
  private:
   Aws::Vector<BatchDeleteDetectorErrorEntry> m_batchDeleteDetectorErrorEntries;
-  bool m_batchDeleteDetectorErrorEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchDeleteDetectorErrorEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

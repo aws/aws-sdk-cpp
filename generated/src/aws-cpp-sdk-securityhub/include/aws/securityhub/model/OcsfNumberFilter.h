@@ -66,9 +66,9 @@ class OcsfNumberFilter {
   ///@}
  private:
   OcsfNumberField m_fieldName{OcsfNumberField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   NumberFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

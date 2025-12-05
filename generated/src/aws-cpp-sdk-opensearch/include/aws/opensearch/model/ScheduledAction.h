@@ -190,30 +190,30 @@ class ScheduledAction {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ActionType m_type{ActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ActionSeverity m_severity{ActionSeverity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   long long m_scheduledTime{0};
-  bool m_scheduledTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ScheduledBy m_scheduledBy{ScheduledBy::NOT_SET};
-  bool m_scheduledByHasBeenSet = false;
 
   ActionStatus m_status{ActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_mandatory{false};
-  bool m_mandatoryHasBeenSet = false;
 
   bool m_cancellable{false};
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_scheduledTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scheduledByHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_mandatoryHasBeenSet = false;
   bool m_cancellableHasBeenSet = false;
 };
 

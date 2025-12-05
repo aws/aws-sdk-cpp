@@ -142,21 +142,21 @@ class ExecutorsSummary {
   ///@}
  private:
   Aws::String m_executorId;
-  bool m_executorIdHasBeenSet = false;
 
   ExecutorType m_executorType{ExecutorType::NOT_SET};
-  bool m_executorTypeHasBeenSet = false;
 
   long long m_startDateTime{0};
-  bool m_startDateTimeHasBeenSet = false;
 
   long long m_terminationDateTime{0};
-  bool m_terminationDateTimeHasBeenSet = false;
 
   ExecutorState m_executorState{ExecutorState::NOT_SET};
-  bool m_executorStateHasBeenSet = false;
 
   long long m_executorSize{0};
+  bool m_executorIdHasBeenSet = false;
+  bool m_executorTypeHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
+  bool m_terminationDateTimeHasBeenSet = false;
+  bool m_executorStateHasBeenSet = false;
   bool m_executorSizeHasBeenSet = false;
 };
 

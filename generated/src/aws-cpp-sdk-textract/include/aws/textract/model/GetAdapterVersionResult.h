@@ -254,39 +254,39 @@ class GetAdapterVersionResult {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::String m_adapterVersion;
-  bool m_adapterVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<FeatureType> m_featureTypes;
-  bool m_featureTypesHasBeenSet = false;
 
   AdapterVersionStatus m_status{AdapterVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   AdapterVersionDatasetConfig m_datasetConfig;
-  bool m_datasetConfigHasBeenSet = false;
 
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::Vector<AdapterVersionEvaluationMetric> m_evaluationMetrics;
-  bool m_evaluationMetricsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adapterIdHasBeenSet = false;
+  bool m_adapterVersionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_featureTypesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_datasetConfigHasBeenSet = false;
+  bool m_kMSKeyIdHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_evaluationMetricsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

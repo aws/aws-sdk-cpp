@@ -88,12 +88,12 @@ class UpdateProjectDataDeliveryRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   CloudWatchLogsDestinationConfig m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   S3DestinationConfig m_s3Destination;
+  bool m_cloudWatchLogsHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
   bool m_s3DestinationHasBeenSet = false;
 };
 

@@ -195,30 +195,30 @@ class CreateUserRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::String m_surname;
-  bool m_surnameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_timeZoneId;
-  bool m_timeZoneIdHasBeenSet = false;
 
   StorageRuleType m_storageRule;
-  bool m_storageRuleHasBeenSet = false;
 
   Aws::String m_authenticationToken;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_surnameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_timeZoneIdHasBeenSet = false;
+  bool m_storageRuleHasBeenSet = false;
   bool m_authenticationTokenHasBeenSet = false;
 };
 

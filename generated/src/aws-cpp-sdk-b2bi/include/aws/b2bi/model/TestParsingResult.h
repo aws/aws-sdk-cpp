@@ -114,15 +114,15 @@ class TestParsingResult {
   ///@}
  private:
   Aws::String m_parsedFileContent;
-  bool m_parsedFileContentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parsedSplitFileContents;
-  bool m_parsedSplitFileContentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_validationMessages;
-  bool m_validationMessagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parsedFileContentHasBeenSet = false;
+  bool m_parsedSplitFileContentsHasBeenSet = false;
+  bool m_validationMessagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

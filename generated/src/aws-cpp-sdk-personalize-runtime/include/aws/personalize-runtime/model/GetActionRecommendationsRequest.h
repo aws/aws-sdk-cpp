@@ -141,18 +141,18 @@ class GetActionRecommendationsRequest : public PersonalizeRuntimeRequest {
   ///@}
  private:
   Aws::String m_campaignArn;
-  bool m_campaignArnHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   int m_numResults{0};
-  bool m_numResultsHasBeenSet = false;
 
   Aws::String m_filterArn;
-  bool m_filterArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filterValues;
+  bool m_campaignArnHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_numResultsHasBeenSet = false;
+  bool m_filterArnHasBeenSet = false;
   bool m_filterValuesHasBeenSet = false;
 };
 

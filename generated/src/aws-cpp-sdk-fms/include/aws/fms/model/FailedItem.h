@@ -68,9 +68,9 @@ class FailedItem {
   ///@}
  private:
   Aws::String m_uRI;
-  bool m_uRIHasBeenSet = false;
 
   FailedItemReason m_reason{FailedItemReason::NOT_SET};
+  bool m_uRIHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class AccountSettings {
   ///@}
  private:
   Aws::String m_pipelineCodebuildRoleArn;
-  bool m_pipelineCodebuildRoleArnHasBeenSet = false;
 
   RepositoryBranch m_pipelineProvisioningRepository;
-  bool m_pipelineProvisioningRepositoryHasBeenSet = false;
 
   Aws::String m_pipelineServiceRoleArn;
+  bool m_pipelineCodebuildRoleArnHasBeenSet = false;
+  bool m_pipelineProvisioningRepositoryHasBeenSet = false;
   bool m_pipelineServiceRoleArnHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class CreateThingRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   AttributePayload m_attributePayload;
-  bool m_attributePayloadHasBeenSet = false;
 
   Aws::String m_billingGroupName;
+  bool m_thingNameHasBeenSet = false;
+  bool m_thingTypeNameHasBeenSet = false;
+  bool m_attributePayloadHasBeenSet = false;
   bool m_billingGroupNameHasBeenSet = false;
 };
 

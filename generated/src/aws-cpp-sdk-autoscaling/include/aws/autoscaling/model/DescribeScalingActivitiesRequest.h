@@ -133,18 +133,18 @@ class DescribeScalingActivitiesRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_activityIds;
-  bool m_activityIdsHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   bool m_includeDeletedGroups{false};
-  bool m_includeDeletedGroupsHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_activityIdsHasBeenSet = false;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_includeDeletedGroupsHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

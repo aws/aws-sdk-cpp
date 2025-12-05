@@ -60,9 +60,9 @@ class GetMembershipResult {
   ///@}
  private:
   Membership m_membership;
-  bool m_membershipHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membershipHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

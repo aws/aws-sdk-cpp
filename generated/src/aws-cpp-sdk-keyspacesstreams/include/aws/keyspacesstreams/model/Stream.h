@@ -107,15 +107,15 @@ class Stream {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_streamLabel;
+  bool m_streamArnHasBeenSet = false;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_streamLabelHasBeenSet = false;
 };
 

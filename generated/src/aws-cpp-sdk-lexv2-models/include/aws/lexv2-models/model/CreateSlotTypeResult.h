@@ -261,42 +261,42 @@ class CreateSlotTypeResult {
   ///@}
  private:
   Aws::String m_slotTypeId;
-  bool m_slotTypeIdHasBeenSet = false;
 
   Aws::String m_slotTypeName;
-  bool m_slotTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<SlotTypeValue> m_slotTypeValues;
-  bool m_slotTypeValuesHasBeenSet = false;
 
   SlotValueSelectionSetting m_valueSelectionSetting;
-  bool m_valueSelectionSettingHasBeenSet = false;
 
   Aws::String m_parentSlotTypeSignature;
-  bool m_parentSlotTypeSignatureHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   ExternalSourceSetting m_externalSourceSetting;
-  bool m_externalSourceSettingHasBeenSet = false;
 
   CompositeSlotTypeSetting m_compositeSlotTypeSetting;
-  bool m_compositeSlotTypeSettingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_slotTypeIdHasBeenSet = false;
+  bool m_slotTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_slotTypeValuesHasBeenSet = false;
+  bool m_valueSelectionSettingHasBeenSet = false;
+  bool m_parentSlotTypeSignatureHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_externalSourceSettingHasBeenSet = false;
+  bool m_compositeSlotTypeSettingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

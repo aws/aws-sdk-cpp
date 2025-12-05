@@ -84,12 +84,12 @@ class ListKxVolumesResult {
   ///@}
  private:
   Aws::Vector<KxVolume> m_kxVolumeSummaries;
-  bool m_kxVolumeSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kxVolumeSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -162,21 +162,21 @@ class FleetCapacity {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   EC2InstanceType m_instanceType{EC2InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   EC2InstanceCounts m_instanceCounts;
-  bool m_instanceCountsHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   GameServerContainerGroupCounts m_gameServerContainerGroupCounts;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountsHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_gameServerContainerGroupCountsHasBeenSet = false;
 };
 

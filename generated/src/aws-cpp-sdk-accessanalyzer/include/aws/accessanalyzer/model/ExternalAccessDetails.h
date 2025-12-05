@@ -183,21 +183,21 @@ class ExternalAccessDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_condition;
-  bool m_conditionHasBeenSet = false;
 
   bool m_isPublic{false};
-  bool m_isPublicHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<FindingSource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   ResourceControlPolicyRestriction m_resourceControlPolicyRestriction{ResourceControlPolicyRestriction::NOT_SET};
+  bool m_actionHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_isPublicHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
   bool m_resourceControlPolicyRestrictionHasBeenSet = false;
 };
 

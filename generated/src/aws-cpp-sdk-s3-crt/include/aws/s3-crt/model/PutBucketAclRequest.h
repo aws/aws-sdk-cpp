@@ -285,39 +285,39 @@ class PutBucketAclRequest : public S3CrtRequest {
   ///@}
  private:
   BucketCannedACL m_aCL{BucketCannedACL::NOT_SET};
-  bool m_aCLHasBeenSet = false;
 
   AccessControlPolicy m_accessControlPolicy;
-  bool m_accessControlPolicyHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_contentMD5;
-  bool m_contentMD5HasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   Aws::String m_grantFullControl;
-  bool m_grantFullControlHasBeenSet = false;
 
   Aws::String m_grantRead;
-  bool m_grantReadHasBeenSet = false;
 
   Aws::String m_grantReadACP;
-  bool m_grantReadACPHasBeenSet = false;
 
   Aws::String m_grantWrite;
-  bool m_grantWriteHasBeenSet = false;
 
   Aws::String m_grantWriteACP;
-  bool m_grantWriteACPHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_aCLHasBeenSet = false;
+  bool m_accessControlPolicyHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_contentMD5HasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_grantFullControlHasBeenSet = false;
+  bool m_grantReadHasBeenSet = false;
+  bool m_grantReadACPHasBeenSet = false;
+  bool m_grantWriteHasBeenSet = false;
+  bool m_grantWriteACPHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

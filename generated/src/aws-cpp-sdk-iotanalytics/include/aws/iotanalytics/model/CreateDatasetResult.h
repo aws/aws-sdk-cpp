@@ -94,15 +94,15 @@ class CreateDatasetResult {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

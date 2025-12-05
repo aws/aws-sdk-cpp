@@ -139,21 +139,21 @@ class SearchVocabulariesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   VocabularyState m_state{VocabularyState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_nameStartsWith;
-  bool m_nameStartsWithHasBeenSet = false;
 
   VocabularyLanguageCode m_languageCode{VocabularyLanguageCode::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_nameStartsWithHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

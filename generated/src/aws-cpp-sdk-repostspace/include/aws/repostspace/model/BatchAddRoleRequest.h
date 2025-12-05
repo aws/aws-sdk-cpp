@@ -89,12 +89,12 @@ class BatchAddRoleRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accessorIds;
-  bool m_accessorIdsHasBeenSet = false;
 
   Role m_role{Role::NOT_SET};
+  bool m_spaceIdHasBeenSet = false;
+  bool m_accessorIdsHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

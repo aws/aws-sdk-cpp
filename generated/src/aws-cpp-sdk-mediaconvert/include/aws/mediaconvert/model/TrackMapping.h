@@ -101,12 +101,12 @@ class TrackMapping {
   ///@}
  private:
   Aws::Vector<int> m_audioTrackIndexes;
-  bool m_audioTrackIndexesHasBeenSet = false;
 
   Aws::Vector<int> m_dataTrackIndexes;
-  bool m_dataTrackIndexesHasBeenSet = false;
 
   Aws::Vector<int> m_videoTrackIndexes;
+  bool m_audioTrackIndexesHasBeenSet = false;
+  bool m_dataTrackIndexesHasBeenSet = false;
   bool m_videoTrackIndexesHasBeenSet = false;
 };
 

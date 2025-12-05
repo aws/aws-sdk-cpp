@@ -214,30 +214,30 @@ class CreateIntegrationRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dataFilter;
-  bool m_dataFilterHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IntegrationConfig m_integrationConfig;
+  bool m_integrationNameHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataFilterHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_integrationConfigHasBeenSet = false;
 };
 

@@ -191,27 +191,27 @@ class CreateDataSourceRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataSourceConfiguration m_dataSourceConfiguration;
-  bool m_dataSourceConfigurationHasBeenSet = false;
 
   DataDeletionPolicy m_dataDeletionPolicy{DataDeletionPolicy::NOT_SET};
-  bool m_dataDeletionPolicyHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   VectorIngestionConfiguration m_vectorIngestionConfiguration;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataSourceConfigurationHasBeenSet = false;
+  bool m_dataDeletionPolicyHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
   bool m_vectorIngestionConfigurationHasBeenSet = false;
 };
 

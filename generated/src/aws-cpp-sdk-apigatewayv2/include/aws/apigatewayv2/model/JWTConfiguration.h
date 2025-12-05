@@ -83,9 +83,9 @@ class JWTConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_audience;
-  bool m_audienceHasBeenSet = false;
 
   Aws::String m_issuer;
+  bool m_audienceHasBeenSet = false;
   bool m_issuerHasBeenSet = false;
 };
 

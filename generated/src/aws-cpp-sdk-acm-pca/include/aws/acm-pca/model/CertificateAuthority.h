@@ -332,48 +332,48 @@ class CertificateAuthority {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStateChangeAt{};
-  bool m_lastStateChangeAtHasBeenSet = false;
 
   CertificateAuthorityType m_type{CertificateAuthorityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_serial;
-  bool m_serialHasBeenSet = false;
 
   CertificateAuthorityStatus m_status{CertificateAuthorityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
-  bool m_notBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   FailureReason m_failureReason{FailureReason::NOT_SET};
-  bool m_failureReasonHasBeenSet = false;
 
   CertificateAuthorityConfiguration m_certificateAuthorityConfiguration;
-  bool m_certificateAuthorityConfigurationHasBeenSet = false;
 
   RevocationConfiguration m_revocationConfiguration;
-  bool m_revocationConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_restorableUntil{};
-  bool m_restorableUntilHasBeenSet = false;
 
   KeyStorageSecurityStandard m_keyStorageSecurityStandard{KeyStorageSecurityStandard::NOT_SET};
-  bool m_keyStorageSecurityStandardHasBeenSet = false;
 
   CertificateAuthorityUsageMode m_usageMode{CertificateAuthorityUsageMode::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastStateChangeAtHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_serialHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_notBeforeHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_certificateAuthorityConfigurationHasBeenSet = false;
+  bool m_revocationConfigurationHasBeenSet = false;
+  bool m_restorableUntilHasBeenSet = false;
+  bool m_keyStorageSecurityStandardHasBeenSet = false;
   bool m_usageModeHasBeenSet = false;
 };
 

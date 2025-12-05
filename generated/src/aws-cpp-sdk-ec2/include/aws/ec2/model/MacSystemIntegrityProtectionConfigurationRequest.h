@@ -147,24 +147,24 @@ class MacSystemIntegrityProtectionConfigurationRequest {
   ///@}
  private:
   MacSystemIntegrityProtectionSettingStatus m_appleInternal{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
-  bool m_appleInternalHasBeenSet = false;
 
   MacSystemIntegrityProtectionSettingStatus m_baseSystem{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
-  bool m_baseSystemHasBeenSet = false;
 
   MacSystemIntegrityProtectionSettingStatus m_debuggingRestrictions{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
-  bool m_debuggingRestrictionsHasBeenSet = false;
 
   MacSystemIntegrityProtectionSettingStatus m_dTraceRestrictions{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
-  bool m_dTraceRestrictionsHasBeenSet = false;
 
   MacSystemIntegrityProtectionSettingStatus m_filesystemProtections{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
-  bool m_filesystemProtectionsHasBeenSet = false;
 
   MacSystemIntegrityProtectionSettingStatus m_kextSigning{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
-  bool m_kextSigningHasBeenSet = false;
 
   MacSystemIntegrityProtectionSettingStatus m_nvramProtections{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
+  bool m_appleInternalHasBeenSet = false;
+  bool m_baseSystemHasBeenSet = false;
+  bool m_debuggingRestrictionsHasBeenSet = false;
+  bool m_dTraceRestrictionsHasBeenSet = false;
+  bool m_filesystemProtectionsHasBeenSet = false;
+  bool m_kextSigningHasBeenSet = false;
   bool m_nvramProtectionsHasBeenSet = false;
 };
 

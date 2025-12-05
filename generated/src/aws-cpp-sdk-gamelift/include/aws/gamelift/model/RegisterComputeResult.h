@@ -60,9 +60,9 @@ class RegisterComputeResult {
   ///@}
  private:
   Compute m_compute;
-  bool m_computeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

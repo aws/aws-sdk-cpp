@@ -102,15 +102,15 @@ class GuardrailPiiEntityFilter {
   ///@}
  private:
   Aws::String m_match;
-  bool m_matchHasBeenSet = false;
 
   GuardrailPiiEntityType m_type{GuardrailPiiEntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailSensitiveInformationPolicyAction m_action{GuardrailSensitiveInformationPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   bool m_detected{false};
+  bool m_matchHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_detectedHasBeenSet = false;
 };
 

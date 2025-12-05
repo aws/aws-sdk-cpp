@@ -118,18 +118,18 @@ class DistributionBundle {
   ///@}
  private:
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_price{0.0};
-  bool m_priceHasBeenSet = false;
 
   int m_transferPerMonthInGb{0};
-  bool m_transferPerMonthInGbHasBeenSet = false;
 
   bool m_isActive{false};
+  bool m_bundleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
+  bool m_transferPerMonthInGbHasBeenSet = false;
   bool m_isActiveHasBeenSet = false;
 };
 

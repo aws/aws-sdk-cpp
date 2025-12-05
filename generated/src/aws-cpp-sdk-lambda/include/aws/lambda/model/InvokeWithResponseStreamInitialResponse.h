@@ -84,12 +84,12 @@ class InvokeWithResponseStreamInitialResponse {
   ///@}
  private:
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_executedVersion;
-  bool m_executedVersionHasBeenSet = false;
 
   Aws::String m_responseStreamContentType;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_executedVersionHasBeenSet = false;
   bool m_responseStreamContentTypeHasBeenSet = false;
 };
 

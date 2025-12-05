@@ -127,18 +127,18 @@ class ProvisionPublicIpv4PoolCidrRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   int m_netmaskLength{0};
-  bool m_netmaskLengthHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_netmaskLengthHasBeenSet = false;
   bool m_networkBorderGroupHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class Command {
   ///@}
  private:
   Reboot m_reboot;
-  bool m_rebootHasBeenSet = false;
 
   Unlock m_unlock;
+  bool m_rebootHasBeenSet = false;
   bool m_unlockHasBeenSet = false;
 };
 

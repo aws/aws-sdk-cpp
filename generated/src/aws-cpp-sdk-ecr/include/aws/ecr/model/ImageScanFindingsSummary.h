@@ -93,12 +93,12 @@ class ImageScanFindingsSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_imageScanCompletedAt{};
-  bool m_imageScanCompletedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_vulnerabilitySourceUpdatedAt{};
-  bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
 
   Aws::Map<FindingSeverity, int> m_findingSeverityCounts;
+  bool m_imageScanCompletedAtHasBeenSet = false;
+  bool m_vulnerabilitySourceUpdatedAtHasBeenSet = false;
   bool m_findingSeverityCountsHasBeenSet = false;
 };
 

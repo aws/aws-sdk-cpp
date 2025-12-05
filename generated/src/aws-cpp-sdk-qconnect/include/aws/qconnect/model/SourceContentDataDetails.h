@@ -125,18 +125,18 @@ class SourceContentDataDetails {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SourceContentType m_type{SourceContentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TextData m_textData;
-  bool m_textDataHasBeenSet = false;
 
   RankingData m_rankingData;
-  bool m_rankingDataHasBeenSet = false;
 
   CitationSpan m_citationSpan;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_textDataHasBeenSet = false;
+  bool m_rankingDataHasBeenSet = false;
   bool m_citationSpanHasBeenSet = false;
 };
 

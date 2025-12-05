@@ -92,12 +92,12 @@ class FilterCondition {
   ///@}
  private:
   FieldNameString m_field{FieldNameString::NOT_SET};
-  bool m_fieldHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stringValueList;
+  bool m_fieldHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
   bool m_stringValueListHasBeenSet = false;
 };
 

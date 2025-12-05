@@ -116,15 +116,15 @@ class UpdateLinkRequest : public OAMRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   bool m_includeTags{false};
-  bool m_includeTagsHasBeenSet = false;
 
   LinkConfiguration m_linkConfiguration;
-  bool m_linkConfigurationHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
+  bool m_identifierHasBeenSet = false;
+  bool m_includeTagsHasBeenSet = false;
+  bool m_linkConfigurationHasBeenSet = false;
   bool m_resourceTypesHasBeenSet = false;
 };
 

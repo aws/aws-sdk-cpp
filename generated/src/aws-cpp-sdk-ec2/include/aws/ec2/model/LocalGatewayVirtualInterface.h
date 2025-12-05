@@ -287,45 +287,45 @@ class LocalGatewayVirtualInterface {
   ///@}
  private:
   Aws::String m_localGatewayVirtualInterfaceId;
-  bool m_localGatewayVirtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_localGatewayId;
-  bool m_localGatewayIdHasBeenSet = false;
 
   Aws::String m_localGatewayVirtualInterfaceGroupId;
-  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
   Aws::String m_localGatewayVirtualInterfaceArn;
-  bool m_localGatewayVirtualInterfaceArnHasBeenSet = false;
 
   Aws::String m_outpostLagId;
-  bool m_outpostLagIdHasBeenSet = false;
 
   int m_vlan{0};
-  bool m_vlanHasBeenSet = false;
 
   Aws::String m_localAddress;
-  bool m_localAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   int m_localBgpAsn{0};
-  bool m_localBgpAsnHasBeenSet = false;
 
   int m_peerBgpAsn{0};
-  bool m_peerBgpAsnHasBeenSet = false;
 
   long long m_peerBgpAsnExtended{0};
-  bool m_peerBgpAsnExtendedHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LocalGatewayVirtualInterfaceConfigurationState m_configurationState{LocalGatewayVirtualInterfaceConfigurationState::NOT_SET};
+  bool m_localGatewayVirtualInterfaceIdHasBeenSet = false;
+  bool m_localGatewayIdHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceArnHasBeenSet = false;
+  bool m_outpostLagIdHasBeenSet = false;
+  bool m_vlanHasBeenSet = false;
+  bool m_localAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_localBgpAsnHasBeenSet = false;
+  bool m_peerBgpAsnHasBeenSet = false;
+  bool m_peerBgpAsnExtendedHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_configurationStateHasBeenSet = false;
 };
 

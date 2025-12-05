@@ -69,9 +69,9 @@ class GetSourceApiAssociationRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_mergedApiIdentifier;
-  bool m_mergedApiIdentifierHasBeenSet = false;
 
   Aws::String m_associationId;
+  bool m_mergedApiIdentifierHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
 };
 

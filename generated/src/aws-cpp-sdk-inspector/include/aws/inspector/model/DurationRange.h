@@ -63,9 +63,9 @@ class DurationRange {
   ///@}
  private:
   int m_minSeconds{0};
-  bool m_minSecondsHasBeenSet = false;
 
   int m_maxSeconds{0};
+  bool m_minSecondsHasBeenSet = false;
   bool m_maxSecondsHasBeenSet = false;
 };
 

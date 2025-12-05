@@ -65,9 +65,9 @@ class GetComponentRequest : public SsmSapRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_componentId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_componentIdHasBeenSet = false;
 };
 

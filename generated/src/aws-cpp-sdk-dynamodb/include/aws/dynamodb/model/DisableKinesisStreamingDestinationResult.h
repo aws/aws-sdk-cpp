@@ -114,18 +114,18 @@ class DisableKinesisStreamingDestinationResult {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   DestinationStatus m_destinationStatus{DestinationStatus::NOT_SET};
-  bool m_destinationStatusHasBeenSet = false;
 
   EnableKinesisStreamingConfiguration m_enableKinesisStreamingConfiguration;
-  bool m_enableKinesisStreamingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableNameHasBeenSet = false;
+  bool m_streamArnHasBeenSet = false;
+  bool m_destinationStatusHasBeenSet = false;
+  bool m_enableKinesisStreamingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

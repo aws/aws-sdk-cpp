@@ -69,9 +69,9 @@ class GetExtensionRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_extensionIdentifier;
-  bool m_extensionIdentifierHasBeenSet = false;
 
   int m_versionNumber{0};
+  bool m_extensionIdentifierHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

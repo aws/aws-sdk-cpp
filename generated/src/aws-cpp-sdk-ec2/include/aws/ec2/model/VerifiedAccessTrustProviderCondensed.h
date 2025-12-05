@@ -121,18 +121,18 @@ class VerifiedAccessTrustProviderCondensed {
   ///@}
  private:
   Aws::String m_verifiedAccessTrustProviderId;
-  bool m_verifiedAccessTrustProviderIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TrustProviderType m_trustProviderType{TrustProviderType::NOT_SET};
-  bool m_trustProviderTypeHasBeenSet = false;
 
   UserTrustProviderType m_userTrustProviderType{UserTrustProviderType::NOT_SET};
-  bool m_userTrustProviderTypeHasBeenSet = false;
 
   DeviceTrustProviderType m_deviceTrustProviderType{DeviceTrustProviderType::NOT_SET};
+  bool m_verifiedAccessTrustProviderIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_trustProviderTypeHasBeenSet = false;
+  bool m_userTrustProviderTypeHasBeenSet = false;
   bool m_deviceTrustProviderTypeHasBeenSet = false;
 };
 

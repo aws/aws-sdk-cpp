@@ -61,9 +61,9 @@ class GetSpeechSynthesisTaskResult {
   ///@}
  private:
   SynthesisTask m_synthesisTask;
-  bool m_synthesisTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_synthesisTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -185,27 +185,27 @@ class UpdateLifecyclePolicyRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_lifecyclePolicyArn;
-  bool m_lifecyclePolicyArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LifecyclePolicyStatus m_status{LifecyclePolicyStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   LifecyclePolicyResourceType m_resourceType{LifecyclePolicyResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<LifecyclePolicyDetail> m_policyDetails;
-  bool m_policyDetailsHasBeenSet = false;
 
   LifecyclePolicyResourceSelection m_resourceSelection;
-  bool m_resourceSelectionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_lifecyclePolicyArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_policyDetailsHasBeenSet = false;
+  bool m_resourceSelectionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

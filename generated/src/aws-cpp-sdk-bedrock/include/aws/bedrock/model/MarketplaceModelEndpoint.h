@@ -200,30 +200,30 @@ class MarketplaceModelEndpoint {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_modelSourceIdentifier;
-  bool m_modelSourceIdentifierHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   EndpointConfig m_endpointConfig;
-  bool m_endpointConfigHasBeenSet = false;
 
   Aws::String m_endpointStatus;
-  bool m_endpointStatusHasBeenSet = false;
 
   Aws::String m_endpointStatusMessage;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_modelSourceIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_endpointConfigHasBeenSet = false;
+  bool m_endpointStatusHasBeenSet = false;
   bool m_endpointStatusMessageHasBeenSet = false;
 };
 

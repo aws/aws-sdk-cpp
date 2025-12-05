@@ -140,21 +140,21 @@ class ContentReference {
   ///@}
  private:
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_contentArn;
-  bool m_contentArnHasBeenSet = false;
 
   Aws::String m_contentId;
-  bool m_contentIdHasBeenSet = false;
 
   Aws::String m_sourceURL;
-  bool m_sourceURLHasBeenSet = false;
 
   ReferenceType m_referenceType{ReferenceType::NOT_SET};
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_contentArnHasBeenSet = false;
+  bool m_contentIdHasBeenSet = false;
+  bool m_sourceURLHasBeenSet = false;
   bool m_referenceTypeHasBeenSet = false;
 };
 

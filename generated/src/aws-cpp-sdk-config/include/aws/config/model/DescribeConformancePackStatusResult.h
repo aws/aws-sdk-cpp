@@ -86,12 +86,12 @@ class DescribeConformancePackStatusResult {
   ///@}
  private:
   Aws::Vector<ConformancePackStatusDetail> m_conformancePackStatusDetails;
-  bool m_conformancePackStatusDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_conformancePackStatusDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

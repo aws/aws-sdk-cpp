@@ -236,39 +236,39 @@ class GetWorkflowResult {
   ///@}
  private:
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sourceRepositoryName;
-  bool m_sourceRepositoryNameHasBeenSet = false;
 
   Aws::String m_sourceBranchName;
-  bool m_sourceBranchNameHasBeenSet = false;
 
   WorkflowDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   WorkflowRunMode m_runMode{WorkflowRunMode::NOT_SET};
-  bool m_runModeHasBeenSet = false;
 
   WorkflowStatus m_status{WorkflowStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceRepositoryNameHasBeenSet = false;
+  bool m_sourceBranchNameHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_runModeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

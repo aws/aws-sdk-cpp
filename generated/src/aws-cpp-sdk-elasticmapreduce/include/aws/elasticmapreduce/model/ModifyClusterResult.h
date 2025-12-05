@@ -72,12 +72,12 @@ class ModifyClusterResult {
   ///@}
  private:
   int m_stepConcurrencyLevel{0};
-  bool m_stepConcurrencyLevelHasBeenSet = false;
 
   bool m_extendedSupport{false};
-  bool m_extendedSupportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stepConcurrencyLevelHasBeenSet = false;
+  bool m_extendedSupportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

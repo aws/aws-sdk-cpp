@@ -1063,165 +1063,165 @@ class Explanation {
   ///@}
  private:
   AnalysisComponent m_acl;
-  bool m_aclHasBeenSet = false;
 
   AnalysisAclRule m_aclRule;
-  bool m_aclRuleHasBeenSet = false;
 
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addresses;
-  bool m_addressesHasBeenSet = false;
 
   AnalysisComponent m_attachedTo;
-  bool m_attachedToHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZoneIds;
-  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrs;
-  bool m_cidrsHasBeenSet = false;
 
   AnalysisComponent m_component;
-  bool m_componentHasBeenSet = false;
 
   AnalysisComponent m_customerGateway;
-  bool m_customerGatewayHasBeenSet = false;
 
   AnalysisComponent m_destination;
-  bool m_destinationHasBeenSet = false;
 
   AnalysisComponent m_destinationVpc;
-  bool m_destinationVpcHasBeenSet = false;
 
   Aws::String m_direction;
-  bool m_directionHasBeenSet = false;
 
   Aws::String m_explanationCode;
-  bool m_explanationCodeHasBeenSet = false;
 
   AnalysisComponent m_ingressRouteTable;
-  bool m_ingressRouteTableHasBeenSet = false;
 
   AnalysisComponent m_internetGateway;
-  bool m_internetGatewayHasBeenSet = false;
 
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   AnalysisLoadBalancerListener m_classicLoadBalancerListener;
-  bool m_classicLoadBalancerListenerHasBeenSet = false;
 
   int m_loadBalancerListenerPort{0};
-  bool m_loadBalancerListenerPortHasBeenSet = false;
 
   AnalysisLoadBalancerTarget m_loadBalancerTarget;
-  bool m_loadBalancerTargetHasBeenSet = false;
 
   AnalysisComponent m_loadBalancerTargetGroup;
-  bool m_loadBalancerTargetGroupHasBeenSet = false;
 
   Aws::Vector<AnalysisComponent> m_loadBalancerTargetGroups;
-  bool m_loadBalancerTargetGroupsHasBeenSet = false;
 
   int m_loadBalancerTargetPort{0};
-  bool m_loadBalancerTargetPortHasBeenSet = false;
 
   AnalysisComponent m_elasticLoadBalancerListener;
-  bool m_elasticLoadBalancerListenerHasBeenSet = false;
 
   Aws::String m_missingComponent;
-  bool m_missingComponentHasBeenSet = false;
 
   AnalysisComponent m_natGateway;
-  bool m_natGatewayHasBeenSet = false;
 
   AnalysisComponent m_networkInterface;
-  bool m_networkInterfaceHasBeenSet = false;
 
   Aws::String m_packetField;
-  bool m_packetFieldHasBeenSet = false;
 
   AnalysisComponent m_vpcPeeringConnection;
-  bool m_vpcPeeringConnectionHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::Vector<PortRange> m_portRanges;
-  bool m_portRangesHasBeenSet = false;
 
   AnalysisComponent m_prefixList;
-  bool m_prefixListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   AnalysisRouteTableRoute m_routeTableRoute;
-  bool m_routeTableRouteHasBeenSet = false;
 
   AnalysisComponent m_routeTable;
-  bool m_routeTableHasBeenSet = false;
 
   AnalysisComponent m_securityGroup;
-  bool m_securityGroupHasBeenSet = false;
 
   AnalysisSecurityGroupRule m_securityGroupRule;
-  bool m_securityGroupRuleHasBeenSet = false;
 
   Aws::Vector<AnalysisComponent> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   AnalysisComponent m_sourceVpc;
-  bool m_sourceVpcHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   AnalysisComponent m_subnet;
-  bool m_subnetHasBeenSet = false;
 
   AnalysisComponent m_subnetRouteTable;
-  bool m_subnetRouteTableHasBeenSet = false;
 
   AnalysisComponent m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   AnalysisComponent m_vpcEndpoint;
-  bool m_vpcEndpointHasBeenSet = false;
 
   AnalysisComponent m_vpnConnection;
-  bool m_vpnConnectionHasBeenSet = false;
 
   AnalysisComponent m_vpnGateway;
-  bool m_vpnGatewayHasBeenSet = false;
 
   AnalysisComponent m_transitGateway;
-  bool m_transitGatewayHasBeenSet = false;
 
   AnalysisComponent m_transitGatewayRouteTable;
-  bool m_transitGatewayRouteTableHasBeenSet = false;
 
   TransitGatewayRouteTableRoute m_transitGatewayRouteTableRoute;
-  bool m_transitGatewayRouteTableRouteHasBeenSet = false;
 
   AnalysisComponent m_transitGatewayAttachment;
-  bool m_transitGatewayAttachmentHasBeenSet = false;
 
   Aws::String m_componentAccount;
-  bool m_componentAccountHasBeenSet = false;
 
   Aws::String m_componentRegion;
-  bool m_componentRegionHasBeenSet = false;
 
   FirewallStatelessRule m_firewallStatelessRule;
-  bool m_firewallStatelessRuleHasBeenSet = false;
 
   FirewallStatefulRule m_firewallStatefulRule;
+  bool m_aclHasBeenSet = false;
+  bool m_aclRuleHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_addressesHasBeenSet = false;
+  bool m_attachedToHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
+  bool m_cidrsHasBeenSet = false;
+  bool m_componentHasBeenSet = false;
+  bool m_customerGatewayHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationVpcHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
+  bool m_explanationCodeHasBeenSet = false;
+  bool m_ingressRouteTableHasBeenSet = false;
+  bool m_internetGatewayHasBeenSet = false;
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_classicLoadBalancerListenerHasBeenSet = false;
+  bool m_loadBalancerListenerPortHasBeenSet = false;
+  bool m_loadBalancerTargetHasBeenSet = false;
+  bool m_loadBalancerTargetGroupHasBeenSet = false;
+  bool m_loadBalancerTargetGroupsHasBeenSet = false;
+  bool m_loadBalancerTargetPortHasBeenSet = false;
+  bool m_elasticLoadBalancerListenerHasBeenSet = false;
+  bool m_missingComponentHasBeenSet = false;
+  bool m_natGatewayHasBeenSet = false;
+  bool m_networkInterfaceHasBeenSet = false;
+  bool m_packetFieldHasBeenSet = false;
+  bool m_vpcPeeringConnectionHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_portRangesHasBeenSet = false;
+  bool m_prefixListHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
+  bool m_routeTableRouteHasBeenSet = false;
+  bool m_routeTableHasBeenSet = false;
+  bool m_securityGroupHasBeenSet = false;
+  bool m_securityGroupRuleHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_sourceVpcHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_subnetHasBeenSet = false;
+  bool m_subnetRouteTableHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
+  bool m_vpcEndpointHasBeenSet = false;
+  bool m_vpnConnectionHasBeenSet = false;
+  bool m_vpnGatewayHasBeenSet = false;
+  bool m_transitGatewayHasBeenSet = false;
+  bool m_transitGatewayRouteTableHasBeenSet = false;
+  bool m_transitGatewayRouteTableRouteHasBeenSet = false;
+  bool m_transitGatewayAttachmentHasBeenSet = false;
+  bool m_componentAccountHasBeenSet = false;
+  bool m_componentRegionHasBeenSet = false;
+  bool m_firewallStatelessRuleHasBeenSet = false;
   bool m_firewallStatefulRuleHasBeenSet = false;
 };
 

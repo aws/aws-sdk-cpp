@@ -101,15 +101,15 @@ class UpdateRevisionRequest : public DataExchangeRequest {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   bool m_finalized{false};
-  bool m_finalizedHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_commentHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_finalizedHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

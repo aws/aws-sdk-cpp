@@ -185,27 +185,27 @@ class RecommenderSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_recommenderArn;
-  bool m_recommenderArnHasBeenSet = false;
 
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::String m_recipeArn;
-  bool m_recipeArnHasBeenSet = false;
 
   RecommenderConfig m_recommenderConfig;
-  bool m_recommenderConfigHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_recommenderArnHasBeenSet = false;
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_recipeArnHasBeenSet = false;
+  bool m_recommenderConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

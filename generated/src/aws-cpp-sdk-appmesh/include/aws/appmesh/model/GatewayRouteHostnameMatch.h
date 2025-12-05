@@ -69,9 +69,9 @@ class GatewayRouteHostnameMatch {
   ///@}
  private:
   Aws::String m_exact;
-  bool m_exactHasBeenSet = false;
 
   Aws::String m_suffix;
+  bool m_exactHasBeenSet = false;
   bool m_suffixHasBeenSet = false;
 };
 

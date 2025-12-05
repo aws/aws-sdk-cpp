@@ -71,9 +71,9 @@ class AttributeAggregationFunction {
   ///@}
  private:
   SimpleAttributeAggregationFunction m_simpleAttributeAggregation{SimpleAttributeAggregationFunction::NOT_SET};
-  bool m_simpleAttributeAggregationHasBeenSet = false;
 
   Aws::String m_valueForMultipleValues;
+  bool m_simpleAttributeAggregationHasBeenSet = false;
   bool m_valueForMultipleValuesHasBeenSet = false;
 };
 

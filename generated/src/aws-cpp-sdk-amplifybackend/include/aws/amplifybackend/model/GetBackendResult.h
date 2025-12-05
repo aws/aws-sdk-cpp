@@ -168,27 +168,27 @@ class GetBackendResult {
   ///@}
  private:
   Aws::String m_amplifyFeatureFlags;
-  bool m_amplifyFeatureFlagsHasBeenSet = false;
 
   Aws::String m_amplifyMetaConfig;
-  bool m_amplifyMetaConfigHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_appName;
-  bool m_appNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_backendEnvironmentList;
-  bool m_backendEnvironmentListHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
-  bool m_backendEnvironmentNameHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_amplifyFeatureFlagsHasBeenSet = false;
+  bool m_amplifyMetaConfigHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_appNameHasBeenSet = false;
+  bool m_backendEnvironmentListHasBeenSet = false;
+  bool m_backendEnvironmentNameHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

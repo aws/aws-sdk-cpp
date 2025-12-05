@@ -70,9 +70,9 @@ class RegisterInstanceEventNotificationAttributesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   RegisterInstanceTagAttributeRequest m_instanceTagAttribute;
+  bool m_dryRunHasBeenSet = false;
   bool m_instanceTagAttributeHasBeenSet = false;
 };
 

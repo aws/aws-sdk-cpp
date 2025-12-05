@@ -139,15 +139,15 @@ class ServiceDependent {
   ///@}
  private:
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dependentKeyAttributes;
-  bool m_dependentKeyAttributesHasBeenSet = false;
 
   Aws::String m_dependentOperationName;
-  bool m_dependentOperationNameHasBeenSet = false;
 
   Aws::Vector<MetricReference> m_metricReferences;
+  bool m_operationNameHasBeenSet = false;
+  bool m_dependentKeyAttributesHasBeenSet = false;
+  bool m_dependentOperationNameHasBeenSet = false;
   bool m_metricReferencesHasBeenSet = false;
 };
 

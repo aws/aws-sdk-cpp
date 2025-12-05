@@ -165,21 +165,21 @@ class ListServiceDeploymentsRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<ServiceDeploymentStatus> m_status;
-  bool m_statusHasBeenSet = false;
 
   CreatedAt m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_serviceHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

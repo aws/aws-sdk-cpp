@@ -164,21 +164,21 @@ class CreateBillingViewRequest : public BillingRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceViews;
-  bool m_sourceViewsHasBeenSet = false;
 
   Expression m_dataFilterExpression;
-  bool m_dataFilterExpressionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceViewsHasBeenSet = false;
+  bool m_dataFilterExpressionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_resourceTagsHasBeenSet = false;
 };
 

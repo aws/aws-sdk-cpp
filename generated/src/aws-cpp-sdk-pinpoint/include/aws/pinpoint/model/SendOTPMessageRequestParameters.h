@@ -228,36 +228,36 @@ class SendOTPMessageRequestParameters {
   ///@}
  private:
   int m_allowedAttempts{0};
-  bool m_allowedAttemptsHasBeenSet = false;
 
   Aws::String m_brandName;
-  bool m_brandNameHasBeenSet = false;
 
   Aws::String m_channel;
-  bool m_channelHasBeenSet = false;
 
   int m_codeLength{0};
-  bool m_codeLengthHasBeenSet = false;
 
   Aws::String m_destinationIdentity;
-  bool m_destinationIdentityHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   int m_validityPeriod{0};
+  bool m_allowedAttemptsHasBeenSet = false;
+  bool m_brandNameHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_codeLengthHasBeenSet = false;
+  bool m_destinationIdentityHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
   bool m_validityPeriodHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class SlotTypeValue {
   ///@}
  private:
   SampleValue m_sampleValue;
-  bool m_sampleValueHasBeenSet = false;
 
   Aws::Vector<SampleValue> m_synonyms;
+  bool m_sampleValueHasBeenSet = false;
   bool m_synonymsHasBeenSet = false;
 };
 

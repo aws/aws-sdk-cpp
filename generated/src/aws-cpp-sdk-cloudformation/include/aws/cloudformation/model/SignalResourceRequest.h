@@ -114,15 +114,15 @@ class SignalResourceRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_uniqueId;
-  bool m_uniqueIdHasBeenSet = false;
 
   ResourceSignalStatus m_status{ResourceSignalStatus::NOT_SET};
+  bool m_stackNameHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_uniqueIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

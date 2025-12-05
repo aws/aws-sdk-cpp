@@ -201,27 +201,27 @@ class AssetAttributes {
   ///@}
  private:
   int m_schemaVersion{0};
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_autoScalingGroup;
-  bool m_autoScalingGroupHasBeenSet = false;
 
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv4Addresses;
-  bool m_ipv4AddressesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_autoScalingGroupHasBeenSet = false;
+  bool m_amiIdHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_ipv4AddressesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_networkInterfacesHasBeenSet = false;
 };
 

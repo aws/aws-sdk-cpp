@@ -61,9 +61,9 @@ class GPSCoordinates {
   ///@}
  private:
   double m_latitude{0.0};
-  bool m_latitudeHasBeenSet = false;
 
   double m_longitude{0.0};
+  bool m_latitudeHasBeenSet = false;
   bool m_longitudeHasBeenSet = false;
 };
 

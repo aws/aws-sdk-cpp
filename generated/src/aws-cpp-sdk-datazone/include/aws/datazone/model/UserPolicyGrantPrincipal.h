@@ -69,9 +69,9 @@ class UserPolicyGrantPrincipal {
   ///@}
  private:
   AllUsersGrantFilter m_allUsersGrantFilter;
-  bool m_allUsersGrantFilterHasBeenSet = false;
 
   Aws::String m_userIdentifier;
+  bool m_allUsersGrantFilterHasBeenSet = false;
   bool m_userIdentifierHasBeenSet = false;
 };
 

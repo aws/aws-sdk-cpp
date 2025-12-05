@@ -78,9 +78,9 @@ class InstanceTagNotificationAttribute {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceTagKeys;
-  bool m_instanceTagKeysHasBeenSet = false;
 
   bool m_includeAllTagsOfInstance{false};
+  bool m_instanceTagKeysHasBeenSet = false;
   bool m_includeAllTagsOfInstanceHasBeenSet = false;
 };
 

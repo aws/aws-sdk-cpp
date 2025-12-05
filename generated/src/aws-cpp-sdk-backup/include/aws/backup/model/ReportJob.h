@@ -197,27 +197,27 @@ class ReportJob {
   ///@}
  private:
   Aws::String m_reportJobId;
-  bool m_reportJobIdHasBeenSet = false;
 
   Aws::String m_reportPlanArn;
-  bool m_reportPlanArnHasBeenSet = false;
 
   Aws::String m_reportTemplate;
-  bool m_reportTemplateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   ReportDestination m_reportDestination;
+  bool m_reportJobIdHasBeenSet = false;
+  bool m_reportPlanArnHasBeenSet = false;
+  bool m_reportTemplateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_reportDestinationHasBeenSet = false;
 };
 

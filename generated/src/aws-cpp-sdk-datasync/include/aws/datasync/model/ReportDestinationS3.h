@@ -91,12 +91,12 @@ class ReportDestinationS3 {
   ///@}
  private:
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   Aws::String m_bucketAccessRoleArn;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_s3BucketArnHasBeenSet = false;
   bool m_bucketAccessRoleArnHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DescribeConfigurationRecorderStatusResult {
   ///@}
  private:
   Aws::Vector<ConfigurationRecorderStatus> m_configurationRecordersStatus;
-  bool m_configurationRecordersStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationRecordersStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

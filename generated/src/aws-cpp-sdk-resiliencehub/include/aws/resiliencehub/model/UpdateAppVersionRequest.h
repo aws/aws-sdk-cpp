@@ -87,9 +87,9 @@ class UpdateAppVersionRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::String m_appArn;
+  bool m_additionalInfoHasBeenSet = false;
   bool m_appArnHasBeenSet = false;
 };
 

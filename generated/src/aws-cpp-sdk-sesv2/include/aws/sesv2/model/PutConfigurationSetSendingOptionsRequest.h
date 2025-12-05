@@ -68,9 +68,9 @@ class PutConfigurationSetSendingOptionsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   bool m_sendingEnabled{false};
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_sendingEnabledHasBeenSet = false;
 };
 

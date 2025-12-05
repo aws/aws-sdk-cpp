@@ -97,12 +97,12 @@ class DeleteVolumeOntapConfiguration {
   ///@}
  private:
   bool m_skipFinalBackup{false};
-  bool m_skipFinalBackupHasBeenSet = false;
 
   Aws::Vector<Tag> m_finalBackupTags;
-  bool m_finalBackupTagsHasBeenSet = false;
 
   bool m_bypassSnaplockEnterpriseRetention{false};
+  bool m_skipFinalBackupHasBeenSet = false;
+  bool m_finalBackupTagsHasBeenSet = false;
   bool m_bypassSnaplockEnterpriseRetentionHasBeenSet = false;
 };
 

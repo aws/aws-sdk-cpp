@@ -107,12 +107,12 @@ class RouterNetworkInterfaceFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regionNames;
-  bool m_regionNamesHasBeenSet = false;
 
   Aws::Vector<RouterNetworkInterfaceType> m_networkInterfaceTypes;
-  bool m_networkInterfaceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nameContains;
+  bool m_regionNamesHasBeenSet = false;
+  bool m_networkInterfaceTypesHasBeenSet = false;
   bool m_nameContainsHasBeenSet = false;
 };
 

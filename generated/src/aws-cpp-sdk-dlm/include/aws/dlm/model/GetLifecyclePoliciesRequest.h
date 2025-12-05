@@ -172,21 +172,21 @@ class GetLifecyclePoliciesRequest : public DLMRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_policyIds;
-  bool m_policyIdsHasBeenSet = false;
 
   GettablePolicyStateValues m_state{GettablePolicyStateValues::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<ResourceTypeValues> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetTags;
-  bool m_targetTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagsToAdd;
-  bool m_tagsToAddHasBeenSet = false;
 
   DefaultPoliciesTypeValues m_defaultPolicyType{DefaultPoliciesTypeValues::NOT_SET};
+  bool m_policyIdsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_targetTagsHasBeenSet = false;
+  bool m_tagsToAddHasBeenSet = false;
   bool m_defaultPolicyTypeHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ICD10CMConcept {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_descriptionHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

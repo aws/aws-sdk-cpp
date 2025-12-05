@@ -82,9 +82,9 @@ class Exclude {
   ///@}
  private:
   Aws::Vector<Aws::String> m_buckets;
-  bool m_bucketsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_bucketsHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

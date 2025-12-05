@@ -231,36 +231,36 @@ class GetApplicationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   int m_associatedResourceCount{0};
-  bool m_associatedResourceCountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Integrations m_integrations;
-  bool m_integrationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_applicationTag;
-  bool m_applicationTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_associatedResourceCountHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_integrationsHasBeenSet = false;
+  bool m_applicationTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

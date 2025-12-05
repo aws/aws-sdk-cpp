@@ -223,33 +223,33 @@ class PipelineSummary {
   ///@}
  private:
   PipelineStatus m_status{PipelineStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PipelineStatusReason m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   int m_minUnits{0};
-  bool m_minUnitsHasBeenSet = false;
 
   int m_maxUnits{0};
-  bool m_maxUnitsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Vector<PipelineDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_minUnitsHasBeenSet = false;
+  bool m_maxUnitsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

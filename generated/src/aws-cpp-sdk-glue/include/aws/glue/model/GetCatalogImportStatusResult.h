@@ -60,9 +60,9 @@ class GetCatalogImportStatusResult {
   ///@}
  private:
   CatalogImportStatus m_importStatus;
-  bool m_importStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

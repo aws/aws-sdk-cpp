@@ -90,12 +90,12 @@ class ListAccountAssignmentsForPrincipalResult {
   ///@}
  private:
   Aws::Vector<AccountAssignmentForPrincipal> m_accountAssignments;
-  bool m_accountAssignmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountAssignmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

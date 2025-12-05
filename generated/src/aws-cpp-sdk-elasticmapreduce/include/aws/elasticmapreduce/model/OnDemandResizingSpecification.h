@@ -89,12 +89,12 @@ class OnDemandResizingSpecification {
   ///@}
  private:
   int m_timeoutDurationMinutes{0};
-  bool m_timeoutDurationMinutesHasBeenSet = false;
 
   OnDemandProvisioningAllocationStrategy m_allocationStrategy{OnDemandProvisioningAllocationStrategy::NOT_SET};
-  bool m_allocationStrategyHasBeenSet = false;
 
   OnDemandCapacityReservationOptions m_capacityReservationOptions;
+  bool m_timeoutDurationMinutesHasBeenSet = false;
+  bool m_allocationStrategyHasBeenSet = false;
   bool m_capacityReservationOptionsHasBeenSet = false;
 };
 

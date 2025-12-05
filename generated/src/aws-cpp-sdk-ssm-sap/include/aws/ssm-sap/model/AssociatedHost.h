@@ -113,15 +113,15 @@ class AssociatedHost {
   ///@}
  private:
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
-  bool m_ec2InstanceIdHasBeenSet = false;
 
   Aws::Vector<IpAddressMember> m_ipAddresses;
-  bool m_ipAddressesHasBeenSet = false;
 
   Aws::String m_osVersion;
+  bool m_hostnameHasBeenSet = false;
+  bool m_ec2InstanceIdHasBeenSet = false;
+  bool m_ipAddressesHasBeenSet = false;
   bool m_osVersionHasBeenSet = false;
 };
 

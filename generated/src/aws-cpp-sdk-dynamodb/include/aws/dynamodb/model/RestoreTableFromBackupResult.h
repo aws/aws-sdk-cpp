@@ -60,9 +60,9 @@ class RestoreTableFromBackupResult {
   ///@}
  private:
   TableDescription m_tableDescription;
-  bool m_tableDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

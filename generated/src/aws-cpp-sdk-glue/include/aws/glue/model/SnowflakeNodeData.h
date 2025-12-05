@@ -452,66 +452,66 @@ class SnowflakeNodeData {
   ///@}
  private:
   Aws::String m_sourceType;
-  bool m_sourceTypeHasBeenSet = false;
 
   Option m_connection;
-  bool m_connectionHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_tempDir;
-  bool m_tempDirHasBeenSet = false;
 
   Option m_iamRole;
-  bool m_iamRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalOptions;
-  bool m_additionalOptionsHasBeenSet = false;
 
   Aws::String m_sampleQuery;
-  bool m_sampleQueryHasBeenSet = false;
 
   Aws::String m_preAction;
-  bool m_preActionHasBeenSet = false;
 
   Aws::String m_postAction;
-  bool m_postActionHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   bool m_upsert{false};
-  bool m_upsertHasBeenSet = false;
 
   Aws::String m_mergeAction;
-  bool m_mergeActionHasBeenSet = false;
 
   Aws::String m_mergeWhenMatched;
-  bool m_mergeWhenMatchedHasBeenSet = false;
 
   Aws::String m_mergeWhenNotMatched;
-  bool m_mergeWhenNotMatchedHasBeenSet = false;
 
   Aws::String m_mergeClause;
-  bool m_mergeClauseHasBeenSet = false;
 
   Aws::String m_stagingTable;
-  bool m_stagingTableHasBeenSet = false;
 
   Aws::Vector<Option> m_selectedColumns;
-  bool m_selectedColumnsHasBeenSet = false;
 
   bool m_autoPushdown{false};
-  bool m_autoPushdownHasBeenSet = false;
 
   Aws::Vector<Option> m_tableSchema;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_connectionHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_tempDirHasBeenSet = false;
+  bool m_iamRoleHasBeenSet = false;
+  bool m_additionalOptionsHasBeenSet = false;
+  bool m_sampleQueryHasBeenSet = false;
+  bool m_preActionHasBeenSet = false;
+  bool m_postActionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_upsertHasBeenSet = false;
+  bool m_mergeActionHasBeenSet = false;
+  bool m_mergeWhenMatchedHasBeenSet = false;
+  bool m_mergeWhenNotMatchedHasBeenSet = false;
+  bool m_mergeClauseHasBeenSet = false;
+  bool m_stagingTableHasBeenSet = false;
+  bool m_selectedColumnsHasBeenSet = false;
+  bool m_autoPushdownHasBeenSet = false;
   bool m_tableSchemaHasBeenSet = false;
 };
 

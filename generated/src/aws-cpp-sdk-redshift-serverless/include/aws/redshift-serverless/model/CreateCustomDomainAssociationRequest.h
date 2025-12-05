@@ -85,12 +85,12 @@ class CreateCustomDomainAssociationRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_customDomainCertificateArnHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

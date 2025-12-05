@@ -120,18 +120,18 @@ class RecommendationDisruptionCompliance {
   ///@}
  private:
   ComplianceStatus m_expectedComplianceStatus{ComplianceStatus::NOT_SET};
-  bool m_expectedComplianceStatusHasBeenSet = false;
 
   Aws::String m_expectedRpoDescription;
-  bool m_expectedRpoDescriptionHasBeenSet = false;
 
   int m_expectedRpoInSecs{0};
-  bool m_expectedRpoInSecsHasBeenSet = false;
 
   Aws::String m_expectedRtoDescription;
-  bool m_expectedRtoDescriptionHasBeenSet = false;
 
   int m_expectedRtoInSecs{0};
+  bool m_expectedComplianceStatusHasBeenSet = false;
+  bool m_expectedRpoDescriptionHasBeenSet = false;
+  bool m_expectedRpoInSecsHasBeenSet = false;
+  bool m_expectedRtoDescriptionHasBeenSet = false;
   bool m_expectedRtoInSecsHasBeenSet = false;
 };
 

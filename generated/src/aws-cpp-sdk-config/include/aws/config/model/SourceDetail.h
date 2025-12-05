@@ -110,12 +110,12 @@ class SourceDetail {
   ///@}
  private:
   EventSource m_eventSource{EventSource::NOT_SET};
-  bool m_eventSourceHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   MaximumExecutionFrequency m_maximumExecutionFrequency{MaximumExecutionFrequency::NOT_SET};
+  bool m_eventSourceHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
   bool m_maximumExecutionFrequencyHasBeenSet = false;
 };
 

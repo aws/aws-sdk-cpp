@@ -81,9 +81,9 @@ class SetUserSettingsRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::Vector<MFAOptionType> m_mFAOptions;
+  bool m_accessTokenHasBeenSet = false;
   bool m_mFAOptionsHasBeenSet = false;
 };
 

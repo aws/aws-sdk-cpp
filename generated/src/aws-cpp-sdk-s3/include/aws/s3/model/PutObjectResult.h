@@ -406,57 +406,57 @@ class PutObjectResult {
   ///@}
  private:
   Aws::String m_expiration;
-  bool m_expirationHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_checksumCRC32;
-  bool m_checksumCRC32HasBeenSet = false;
 
   Aws::String m_checksumCRC32C;
-  bool m_checksumCRC32CHasBeenSet = false;
 
   Aws::String m_checksumCRC64NVME;
-  bool m_checksumCRC64NVMEHasBeenSet = false;
 
   Aws::String m_checksumSHA1;
-  bool m_checksumSHA1HasBeenSet = false;
 
   Aws::String m_checksumSHA256;
-  bool m_checksumSHA256HasBeenSet = false;
 
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
-  bool m_checksumTypeHasBeenSet = false;
 
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
-  bool m_sSEKMSKeyIdHasBeenSet = false;
 
   Aws::String m_sSEKMSEncryptionContext;
-  bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_expirationHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_checksumCRC32HasBeenSet = false;
+  bool m_checksumCRC32CHasBeenSet = false;
+  bool m_checksumCRC64NVMEHasBeenSet = false;
+  bool m_checksumSHA1HasBeenSet = false;
+  bool m_checksumSHA256HasBeenSet = false;
+  bool m_checksumTypeHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_sSEKMSKeyIdHasBeenSet = false;
+  bool m_sSEKMSEncryptionContextHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

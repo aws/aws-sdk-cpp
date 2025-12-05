@@ -86,12 +86,12 @@ class ListCustomActionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_customActions;
-  bool m_customActionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customActionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

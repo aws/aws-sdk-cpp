@@ -155,21 +155,21 @@ class SendMessageBatchResultEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_mD5OfMessageBody;
-  bool m_mD5OfMessageBodyHasBeenSet = false;
 
   Aws::String m_mD5OfMessageAttributes;
-  bool m_mD5OfMessageAttributesHasBeenSet = false;
 
   Aws::String m_mD5OfMessageSystemAttributes;
-  bool m_mD5OfMessageSystemAttributesHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
+  bool m_idHasBeenSet = false;
+  bool m_messageIdHasBeenSet = false;
+  bool m_mD5OfMessageBodyHasBeenSet = false;
+  bool m_mD5OfMessageAttributesHasBeenSet = false;
+  bool m_mD5OfMessageSystemAttributesHasBeenSet = false;
   bool m_sequenceNumberHasBeenSet = false;
 };
 

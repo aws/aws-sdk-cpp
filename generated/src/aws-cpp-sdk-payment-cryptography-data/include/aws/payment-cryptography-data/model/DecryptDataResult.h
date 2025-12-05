@@ -97,15 +97,15 @@ class DecryptDataResult {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   Aws::String m_keyCheckValue;
-  bool m_keyCheckValueHasBeenSet = false;
 
   Aws::String m_plainText;
-  bool m_plainTextHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyArnHasBeenSet = false;
+  bool m_keyCheckValueHasBeenSet = false;
+  bool m_plainTextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

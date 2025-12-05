@@ -122,18 +122,18 @@ class ListBucketAnalyticsConfigurationsResult {
   ///@}
  private:
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_nextContinuationToken;
-  bool m_nextContinuationTokenHasBeenSet = false;
 
   Aws::Vector<AnalyticsConfiguration> m_analyticsConfigurationList;
-  bool m_analyticsConfigurationListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
+  bool m_nextContinuationTokenHasBeenSet = false;
+  bool m_analyticsConfigurationListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

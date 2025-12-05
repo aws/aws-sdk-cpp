@@ -309,39 +309,39 @@ class SendEmailRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Aws::String m_fromEmailAddressIdentityArn;
-  bool m_fromEmailAddressIdentityArnHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replyToAddresses;
-  bool m_replyToAddressesHasBeenSet = false;
 
   Aws::String m_feedbackForwardingEmailAddress;
-  bool m_feedbackForwardingEmailAddressHasBeenSet = false;
 
   Aws::String m_feedbackForwardingEmailAddressIdentityArn;
-  bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = false;
 
   EmailContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_emailTags;
-  bool m_emailTagsHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::String m_tenantName;
-  bool m_tenantNameHasBeenSet = false;
 
   ListManagementOptions m_listManagementOptions;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_fromEmailAddressIdentityArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_replyToAddressesHasBeenSet = false;
+  bool m_feedbackForwardingEmailAddressHasBeenSet = false;
+  bool m_feedbackForwardingEmailAddressIdentityArnHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_emailTagsHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_tenantNameHasBeenSet = false;
   bool m_listManagementOptionsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeCodeReviewResult {
   ///@}
  private:
   CodeReview m_codeReview;
-  bool m_codeReviewHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeReviewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

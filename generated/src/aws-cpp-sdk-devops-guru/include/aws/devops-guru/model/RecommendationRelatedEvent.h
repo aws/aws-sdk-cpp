@@ -80,9 +80,9 @@ class RecommendationRelatedEvent {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<RecommendationRelatedEventResource> m_resources;
+  bool m_nameHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

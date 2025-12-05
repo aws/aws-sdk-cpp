@@ -68,9 +68,9 @@ class MonotonicValues {
   ///@}
  private:
   StatisticalIssueStatus m_status{StatisticalIssueStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Monotonicity m_monotonicity{Monotonicity::NOT_SET};
+  bool m_statusHasBeenSet = false;
   bool m_monotonicityHasBeenSet = false;
 };
 

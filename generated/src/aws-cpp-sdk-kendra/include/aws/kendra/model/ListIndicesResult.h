@@ -88,12 +88,12 @@ class ListIndicesResult {
   ///@}
  private:
   Aws::Vector<IndexConfigurationSummary> m_indexConfigurationSummaryItems;
-  bool m_indexConfigurationSummaryItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexConfigurationSummaryItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

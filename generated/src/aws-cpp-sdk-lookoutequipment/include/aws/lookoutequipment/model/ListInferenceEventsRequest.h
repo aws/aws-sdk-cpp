@@ -123,18 +123,18 @@ class ListInferenceEventsRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_intervalStartTime{};
-  bool m_intervalStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_intervalEndTime{};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_intervalStartTimeHasBeenSet = false;
   bool m_intervalEndTimeHasBeenSet = false;
 };
 

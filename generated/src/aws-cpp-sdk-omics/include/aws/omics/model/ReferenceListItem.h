@@ -194,30 +194,30 @@ class ReferenceListItem {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_referenceStoreId;
-  bool m_referenceStoreIdHasBeenSet = false;
 
   Aws::String m_md5;
-  bool m_md5HasBeenSet = false;
 
   ReferenceStatus m_status{ReferenceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_referenceStoreIdHasBeenSet = false;
+  bool m_md5HasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

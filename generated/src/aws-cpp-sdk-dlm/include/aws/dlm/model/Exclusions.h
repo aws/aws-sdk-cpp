@@ -107,12 +107,12 @@ class Exclusions {
   ///@}
  private:
   bool m_excludeBootVolumes{false};
-  bool m_excludeBootVolumesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeVolumeTypes;
-  bool m_excludeVolumeTypesHasBeenSet = false;
 
   Aws::Vector<Tag> m_excludeTags;
+  bool m_excludeBootVolumesHasBeenSet = false;
+  bool m_excludeVolumeTypesHasBeenSet = false;
   bool m_excludeTagsHasBeenSet = false;
 };
 

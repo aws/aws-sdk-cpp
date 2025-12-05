@@ -77,9 +77,9 @@ class AuthenticationSummary {
   ///@}
  private:
   Aws::Vector<AuthenticationProviderTypes> m_providers;
-  bool m_providersHasBeenSet = false;
 
   SamlConfigurationStatus m_samlConfigurationStatus{SamlConfigurationStatus::NOT_SET};
+  bool m_providersHasBeenSet = false;
   bool m_samlConfigurationStatusHasBeenSet = false;
 };
 

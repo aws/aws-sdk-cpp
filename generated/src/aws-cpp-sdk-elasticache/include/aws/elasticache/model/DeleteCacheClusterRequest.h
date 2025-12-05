@@ -76,9 +76,9 @@ class DeleteCacheClusterRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_finalSnapshotIdentifier;
+  bool m_cacheClusterIdHasBeenSet = false;
   bool m_finalSnapshotIdentifierHasBeenSet = false;
 };
 

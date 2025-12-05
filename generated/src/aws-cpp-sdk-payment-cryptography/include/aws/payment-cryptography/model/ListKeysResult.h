@@ -86,12 +86,12 @@ class ListKeysResult {
   ///@}
  private:
   Aws::Vector<KeySummary> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

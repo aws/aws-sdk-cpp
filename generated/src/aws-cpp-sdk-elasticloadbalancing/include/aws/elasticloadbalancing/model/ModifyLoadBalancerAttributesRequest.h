@@ -74,9 +74,9 @@ class ModifyLoadBalancerAttributesRequest : public ElasticLoadBalancingRequest {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   LoadBalancerAttributes m_loadBalancerAttributes;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_loadBalancerAttributesHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class DocumentClassificationConfig {
   ///@}
  private:
   DocumentClassifierMode m_mode{DocumentClassifierMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
+  bool m_modeHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
 };
 

@@ -176,30 +176,30 @@ class UpdateListenerResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ListenerProtocol m_protocol{ListenerProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   RuleAction m_defaultAction;
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

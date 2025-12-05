@@ -85,12 +85,12 @@ class ListEnvironmentsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<EnvironmentSummary> m_environmentSummaries;
-  bool m_environmentSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_environmentSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

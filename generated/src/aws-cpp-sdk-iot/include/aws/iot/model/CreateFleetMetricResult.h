@@ -76,12 +76,12 @@ class CreateFleetMetricResult {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_metricArn;
-  bool m_metricArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricNameHasBeenSet = false;
+  bool m_metricArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

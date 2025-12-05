@@ -68,9 +68,9 @@ class CidrBlockSummary {
   ///@}
  private:
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_locationName;
+  bool m_cidrBlockHasBeenSet = false;
   bool m_locationNameHasBeenSet = false;
 };
 

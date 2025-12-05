@@ -67,9 +67,9 @@ class DescribeCostCategoryDefinitionRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_effectiveOn;
+  bool m_costCategoryArnHasBeenSet = false;
   bool m_effectiveOnHasBeenSet = false;
 };
 

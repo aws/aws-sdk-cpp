@@ -118,15 +118,15 @@ class PutStorageLensConfigurationRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_configId;
-  bool m_configIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   StorageLensConfiguration m_storageLensConfiguration;
-  bool m_storageLensConfigurationHasBeenSet = false;
 
   Aws::Vector<StorageLensTag> m_tags;
+  bool m_configIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_storageLensConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

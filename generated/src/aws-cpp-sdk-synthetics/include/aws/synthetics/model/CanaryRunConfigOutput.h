@@ -99,15 +99,15 @@ class CanaryRunConfigOutput {
   ///@}
  private:
   int m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   int m_memoryInMB{0};
-  bool m_memoryInMBHasBeenSet = false;
 
   bool m_activeTracing{false};
-  bool m_activeTracingHasBeenSet = false;
 
   int m_ephemeralStorage{0};
+  bool m_timeoutInSecondsHasBeenSet = false;
+  bool m_memoryInMBHasBeenSet = false;
+  bool m_activeTracingHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
 };
 

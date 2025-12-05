@@ -71,9 +71,9 @@ class UpdatePipelineStatusRequest : public ElasticTranscoderRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

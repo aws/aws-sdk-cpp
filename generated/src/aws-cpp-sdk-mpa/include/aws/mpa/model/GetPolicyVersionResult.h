@@ -66,9 +66,9 @@ class GetPolicyVersionResult {
   ///@}
  private:
   PolicyVersion m_policyVersion;
-  bool m_policyVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

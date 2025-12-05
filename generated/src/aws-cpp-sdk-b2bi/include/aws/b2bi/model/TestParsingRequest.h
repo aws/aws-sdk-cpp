@@ -110,15 +110,15 @@ class TestParsingRequest : public B2BIRequest {
   ///@}
  private:
   S3Location m_inputFile;
-  bool m_inputFileHasBeenSet = false;
 
   FileFormat m_fileFormat{FileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   EdiType m_ediType;
-  bool m_ediTypeHasBeenSet = false;
 
   AdvancedOptions m_advancedOptions;
+  bool m_inputFileHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
+  bool m_ediTypeHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
 };
 

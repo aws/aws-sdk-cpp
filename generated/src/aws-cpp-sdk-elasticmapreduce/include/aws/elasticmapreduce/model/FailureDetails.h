@@ -92,12 +92,12 @@ class FailureDetails {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_logFile;
+  bool m_reasonHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_logFileHasBeenSet = false;
 };
 

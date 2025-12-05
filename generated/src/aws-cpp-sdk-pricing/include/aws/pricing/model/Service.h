@@ -76,9 +76,9 @@ class Service {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
+  bool m_serviceCodeHasBeenSet = false;
   bool m_attributeNamesHasBeenSet = false;
 };
 

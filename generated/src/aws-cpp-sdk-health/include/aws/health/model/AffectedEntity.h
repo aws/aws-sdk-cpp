@@ -221,30 +221,30 @@ class AffectedEntity {
   ///@}
  private:
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   Aws::String m_eventArn;
-  bool m_eventArnHasBeenSet = false;
 
   Aws::String m_entityValue;
-  bool m_entityValueHasBeenSet = false;
 
   Aws::String m_entityUrl;
-  bool m_entityUrlHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   EntityStatusCode m_statusCode{EntityStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_entityMetadata;
+  bool m_entityArnHasBeenSet = false;
+  bool m_eventArnHasBeenSet = false;
+  bool m_entityValueHasBeenSet = false;
+  bool m_entityUrlHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_entityMetadataHasBeenSet = false;
 };
 

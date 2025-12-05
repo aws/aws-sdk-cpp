@@ -66,9 +66,9 @@ class StartSchemaCreationRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_definition{};
+  bool m_apiIdHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

@@ -174,24 +174,24 @@ class TestSetImportResourceSpecification {
   ///@}
  private:
   Aws::String m_testSetName;
-  bool m_testSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   TestSetStorageLocation m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   TestSetImportInputLocation m_importInputLocation;
-  bool m_importInputLocationHasBeenSet = false;
 
   TestSetModality m_modality{TestSetModality::NOT_SET};
-  bool m_modalityHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_testSetTags;
+  bool m_testSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
+  bool m_importInputLocationHasBeenSet = false;
+  bool m_modalityHasBeenSet = false;
   bool m_testSetTagsHasBeenSet = false;
 };
 

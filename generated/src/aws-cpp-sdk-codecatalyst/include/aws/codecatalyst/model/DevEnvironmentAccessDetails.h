@@ -70,9 +70,9 @@ class DevEnvironmentAccessDetails {
   ///@}
  private:
   Aws::String m_streamUrl;
-  bool m_streamUrlHasBeenSet = false;
 
   Aws::String m_tokenValue;
+  bool m_streamUrlHasBeenSet = false;
   bool m_tokenValueHasBeenSet = false;
 };
 

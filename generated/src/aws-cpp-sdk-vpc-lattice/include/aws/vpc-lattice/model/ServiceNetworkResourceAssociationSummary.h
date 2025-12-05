@@ -324,51 +324,51 @@ class ServiceNetworkResourceAssociationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ServiceNetworkResourceAssociationStatus m_status{ServiceNetworkResourceAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_resourceConfigurationId;
-  bool m_resourceConfigurationIdHasBeenSet = false;
 
   Aws::String m_resourceConfigurationArn;
-  bool m_resourceConfigurationArnHasBeenSet = false;
 
   Aws::String m_resourceConfigurationName;
-  bool m_resourceConfigurationNameHasBeenSet = false;
 
   Aws::String m_serviceNetworkId;
-  bool m_serviceNetworkIdHasBeenSet = false;
 
   Aws::String m_serviceNetworkArn;
-  bool m_serviceNetworkArnHasBeenSet = false;
 
   Aws::String m_serviceNetworkName;
-  bool m_serviceNetworkNameHasBeenSet = false;
 
   DnsEntry m_dnsEntry;
-  bool m_dnsEntryHasBeenSet = false;
 
   DnsEntry m_privateDnsEntry;
-  bool m_privateDnsEntryHasBeenSet = false;
 
   bool m_isManagedAssociation{false};
-  bool m_isManagedAssociationHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   bool m_privateDnsEnabled{false};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_resourceConfigurationIdHasBeenSet = false;
+  bool m_resourceConfigurationArnHasBeenSet = false;
+  bool m_resourceConfigurationNameHasBeenSet = false;
+  bool m_serviceNetworkIdHasBeenSet = false;
+  bool m_serviceNetworkArnHasBeenSet = false;
+  bool m_serviceNetworkNameHasBeenSet = false;
+  bool m_dnsEntryHasBeenSet = false;
+  bool m_privateDnsEntryHasBeenSet = false;
+  bool m_isManagedAssociationHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_privateDnsEnabledHasBeenSet = false;
 };
 

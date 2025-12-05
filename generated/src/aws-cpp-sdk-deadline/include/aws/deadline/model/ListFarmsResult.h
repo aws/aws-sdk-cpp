@@ -90,12 +90,12 @@ class ListFarmsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<FarmSummary> m_farms;
-  bool m_farmsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_farmsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

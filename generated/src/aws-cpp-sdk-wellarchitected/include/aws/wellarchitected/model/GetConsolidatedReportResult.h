@@ -98,15 +98,15 @@ class GetConsolidatedReportResult {
   ///@}
  private:
   Aws::Vector<ConsolidatedReportMetric> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_base64String;
-  bool m_base64StringHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_base64StringHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -352,54 +352,54 @@ class ReservationAggregates {
   ///@}
  private:
   Aws::String m_utilizationPercentage;
-  bool m_utilizationPercentageHasBeenSet = false;
 
   Aws::String m_utilizationPercentageInUnits;
-  bool m_utilizationPercentageInUnitsHasBeenSet = false;
 
   Aws::String m_purchasedHours;
-  bool m_purchasedHoursHasBeenSet = false;
 
   Aws::String m_purchasedUnits;
-  bool m_purchasedUnitsHasBeenSet = false;
 
   Aws::String m_totalActualHours;
-  bool m_totalActualHoursHasBeenSet = false;
 
   Aws::String m_totalActualUnits;
-  bool m_totalActualUnitsHasBeenSet = false;
 
   Aws::String m_unusedHours;
-  bool m_unusedHoursHasBeenSet = false;
 
   Aws::String m_unusedUnits;
-  bool m_unusedUnitsHasBeenSet = false;
 
   Aws::String m_onDemandCostOfRIHoursUsed;
-  bool m_onDemandCostOfRIHoursUsedHasBeenSet = false;
 
   Aws::String m_netRISavings;
-  bool m_netRISavingsHasBeenSet = false;
 
   Aws::String m_totalPotentialRISavings;
-  bool m_totalPotentialRISavingsHasBeenSet = false;
 
   Aws::String m_amortizedUpfrontFee;
-  bool m_amortizedUpfrontFeeHasBeenSet = false;
 
   Aws::String m_amortizedRecurringFee;
-  bool m_amortizedRecurringFeeHasBeenSet = false;
 
   Aws::String m_totalAmortizedFee;
-  bool m_totalAmortizedFeeHasBeenSet = false;
 
   Aws::String m_rICostForUnusedHours;
-  bool m_rICostForUnusedHoursHasBeenSet = false;
 
   Aws::String m_realizedSavings;
-  bool m_realizedSavingsHasBeenSet = false;
 
   Aws::String m_unrealizedSavings;
+  bool m_utilizationPercentageHasBeenSet = false;
+  bool m_utilizationPercentageInUnitsHasBeenSet = false;
+  bool m_purchasedHoursHasBeenSet = false;
+  bool m_purchasedUnitsHasBeenSet = false;
+  bool m_totalActualHoursHasBeenSet = false;
+  bool m_totalActualUnitsHasBeenSet = false;
+  bool m_unusedHoursHasBeenSet = false;
+  bool m_unusedUnitsHasBeenSet = false;
+  bool m_onDemandCostOfRIHoursUsedHasBeenSet = false;
+  bool m_netRISavingsHasBeenSet = false;
+  bool m_totalPotentialRISavingsHasBeenSet = false;
+  bool m_amortizedUpfrontFeeHasBeenSet = false;
+  bool m_amortizedRecurringFeeHasBeenSet = false;
+  bool m_totalAmortizedFeeHasBeenSet = false;
+  bool m_rICostForUnusedHoursHasBeenSet = false;
+  bool m_realizedSavingsHasBeenSet = false;
   bool m_unrealizedSavingsHasBeenSet = false;
 };
 

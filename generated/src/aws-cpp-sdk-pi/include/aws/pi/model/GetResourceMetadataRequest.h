@@ -70,9 +70,9 @@ class GetResourceMetadataRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_serviceTypeHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

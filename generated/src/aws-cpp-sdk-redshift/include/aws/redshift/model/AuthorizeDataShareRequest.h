@@ -88,12 +88,12 @@ class AuthorizeDataShareRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_dataShareArn;
-  bool m_dataShareArnHasBeenSet = false;
 
   Aws::String m_consumerIdentifier;
-  bool m_consumerIdentifierHasBeenSet = false;
 
   bool m_allowWrites{false};
+  bool m_dataShareArnHasBeenSet = false;
+  bool m_consumerIdentifierHasBeenSet = false;
   bool m_allowWritesHasBeenSet = false;
 };
 

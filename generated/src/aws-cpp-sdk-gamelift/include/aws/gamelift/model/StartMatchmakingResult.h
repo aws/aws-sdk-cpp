@@ -62,9 +62,9 @@ class StartMatchmakingResult {
   ///@}
  private:
   MatchmakingTicket m_matchmakingTicket;
-  bool m_matchmakingTicketHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_matchmakingTicketHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

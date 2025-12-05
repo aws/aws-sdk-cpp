@@ -67,9 +67,9 @@ class RemoveLFTagsFromResourceResult {
   ///@}
  private:
   Aws::Vector<LFTagError> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

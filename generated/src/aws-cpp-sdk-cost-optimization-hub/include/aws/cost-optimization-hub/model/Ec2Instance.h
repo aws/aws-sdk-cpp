@@ -70,9 +70,9 @@ class Ec2Instance {
   ///@}
  private:
   Ec2InstanceConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ResourceCostCalculation m_costCalculation;
+  bool m_configurationHasBeenSet = false;
   bool m_costCalculationHasBeenSet = false;
 };
 

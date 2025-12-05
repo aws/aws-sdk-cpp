@@ -90,12 +90,12 @@ class ListFirewallPoliciesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<FirewallPolicyMetadata> m_firewallPolicies;
-  bool m_firewallPoliciesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_firewallPoliciesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

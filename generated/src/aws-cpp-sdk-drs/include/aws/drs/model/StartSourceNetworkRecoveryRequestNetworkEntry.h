@@ -69,9 +69,9 @@ class StartSourceNetworkRecoveryRequestNetworkEntry {
   ///@}
  private:
   Aws::String m_cfnStackName;
-  bool m_cfnStackNameHasBeenSet = false;
 
   Aws::String m_sourceNetworkID;
+  bool m_cfnStackNameHasBeenSet = false;
   bool m_sourceNetworkIDHasBeenSet = false;
 };
 

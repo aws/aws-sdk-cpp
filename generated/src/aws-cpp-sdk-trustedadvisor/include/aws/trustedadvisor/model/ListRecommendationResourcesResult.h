@@ -88,12 +88,12 @@ class ListRecommendationResourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecommendationResourceSummary> m_recommendationResourceSummaries;
-  bool m_recommendationResourceSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendationResourceSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

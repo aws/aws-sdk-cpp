@@ -74,9 +74,9 @@ class ListProjectsRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_arnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

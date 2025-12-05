@@ -100,12 +100,12 @@ class ExecuteCommandConfiguration {
   ///@}
  private:
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ExecuteCommandLogging m_logging{ExecuteCommandLogging::NOT_SET};
-  bool m_loggingHasBeenSet = false;
 
   ExecuteCommandLogConfiguration m_logConfiguration;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
   bool m_logConfigurationHasBeenSet = false;
 };
 

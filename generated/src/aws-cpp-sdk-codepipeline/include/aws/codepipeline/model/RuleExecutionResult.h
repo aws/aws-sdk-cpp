@@ -105,15 +105,15 @@ class RuleExecutionResult {
   ///@}
  private:
   Aws::String m_externalExecutionId;
-  bool m_externalExecutionIdHasBeenSet = false;
 
   Aws::String m_externalExecutionSummary;
-  bool m_externalExecutionSummaryHasBeenSet = false;
 
   Aws::String m_externalExecutionUrl;
-  bool m_externalExecutionUrlHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
+  bool m_externalExecutionIdHasBeenSet = false;
+  bool m_externalExecutionSummaryHasBeenSet = false;
+  bool m_externalExecutionUrlHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

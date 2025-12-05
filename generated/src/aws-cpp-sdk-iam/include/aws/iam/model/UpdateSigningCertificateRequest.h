@@ -95,12 +95,12 @@ class UpdateSigningCertificateRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
+  bool m_userNameHasBeenSet = false;
+  bool m_certificateIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

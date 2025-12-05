@@ -127,18 +127,18 @@ class Ec2AsgCapacityIncreaseConfiguration {
   ///@}
  private:
   int m_timeoutMinutes{0};
-  bool m_timeoutMinutesHasBeenSet = false;
 
   Aws::Vector<Asg> m_asgs;
-  bool m_asgsHasBeenSet = false;
 
   Ec2Ungraceful m_ungraceful;
-  bool m_ungracefulHasBeenSet = false;
 
   int m_targetPercent{0};
-  bool m_targetPercentHasBeenSet = false;
 
   Ec2AsgCapacityMonitoringApproach m_capacityMonitoringApproach{Ec2AsgCapacityMonitoringApproach::NOT_SET};
+  bool m_timeoutMinutesHasBeenSet = false;
+  bool m_asgsHasBeenSet = false;
+  bool m_ungracefulHasBeenSet = false;
+  bool m_targetPercentHasBeenSet = false;
   bool m_capacityMonitoringApproachHasBeenSet = false;
 };
 

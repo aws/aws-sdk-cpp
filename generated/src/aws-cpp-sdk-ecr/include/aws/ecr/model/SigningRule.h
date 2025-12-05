@@ -84,9 +84,9 @@ class SigningRule {
   ///@}
  private:
   Aws::String m_signingProfileArn;
-  bool m_signingProfileArnHasBeenSet = false;
 
   Aws::Vector<SigningRepositoryFilter> m_repositoryFilters;
+  bool m_signingProfileArnHasBeenSet = false;
   bool m_repositoryFiltersHasBeenSet = false;
 };
 

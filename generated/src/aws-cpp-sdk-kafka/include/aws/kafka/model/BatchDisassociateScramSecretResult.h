@@ -89,12 +89,12 @@ class BatchDisassociateScramSecretResult {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Vector<UnprocessedScramSecret> m_unprocessedScramSecrets;
-  bool m_unprocessedScramSecretsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_unprocessedScramSecretsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

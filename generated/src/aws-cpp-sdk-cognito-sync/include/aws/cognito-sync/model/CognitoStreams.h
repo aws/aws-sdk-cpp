@@ -91,12 +91,12 @@ class CognitoStreams {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   StreamingStatus m_streamingStatus{StreamingStatus::NOT_SET};
+  bool m_streamNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_streamingStatusHasBeenSet = false;
 };
 

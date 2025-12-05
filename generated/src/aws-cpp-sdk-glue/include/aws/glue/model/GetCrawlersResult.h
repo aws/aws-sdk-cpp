@@ -85,12 +85,12 @@ class GetCrawlersResult {
   ///@}
  private:
   Aws::Vector<Crawler> m_crawlers;
-  bool m_crawlersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crawlersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

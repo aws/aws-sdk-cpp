@@ -75,9 +75,9 @@ class AcceptedAssetScope {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterIds;
+  bool m_assetIdHasBeenSet = false;
   bool m_filterIdsHasBeenSet = false;
 };
 

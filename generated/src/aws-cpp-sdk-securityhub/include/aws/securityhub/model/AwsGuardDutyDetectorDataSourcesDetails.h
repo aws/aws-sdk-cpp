@@ -152,21 +152,21 @@ class AwsGuardDutyDetectorDataSourcesDetails {
   ///@}
  private:
   AwsGuardDutyDetectorDataSourcesCloudTrailDetails m_cloudTrail;
-  bool m_cloudTrailHasBeenSet = false;
 
   AwsGuardDutyDetectorDataSourcesDnsLogsDetails m_dnsLogs;
-  bool m_dnsLogsHasBeenSet = false;
 
   AwsGuardDutyDetectorDataSourcesFlowLogsDetails m_flowLogs;
-  bool m_flowLogsHasBeenSet = false;
 
   AwsGuardDutyDetectorDataSourcesKubernetesDetails m_kubernetes;
-  bool m_kubernetesHasBeenSet = false;
 
   AwsGuardDutyDetectorDataSourcesMalwareProtectionDetails m_malwareProtection;
-  bool m_malwareProtectionHasBeenSet = false;
 
   AwsGuardDutyDetectorDataSourcesS3LogsDetails m_s3Logs;
+  bool m_cloudTrailHasBeenSet = false;
+  bool m_dnsLogsHasBeenSet = false;
+  bool m_flowLogsHasBeenSet = false;
+  bool m_kubernetesHasBeenSet = false;
+  bool m_malwareProtectionHasBeenSet = false;
   bool m_s3LogsHasBeenSet = false;
 };
 

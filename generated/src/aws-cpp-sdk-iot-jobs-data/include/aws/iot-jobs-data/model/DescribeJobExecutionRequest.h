@@ -105,15 +105,15 @@ class DescribeJobExecutionRequest : public IoTJobsDataPlaneRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   bool m_includeJobDocument{false};
-  bool m_includeJobDocumentHasBeenSet = false;
 
   long long m_executionNumber{0};
+  bool m_jobIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_includeJobDocumentHasBeenSet = false;
   bool m_executionNumberHasBeenSet = false;
 };
 

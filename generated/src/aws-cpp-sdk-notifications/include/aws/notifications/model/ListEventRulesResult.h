@@ -85,12 +85,12 @@ class ListEventRulesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<EventRuleStructure> m_eventRules;
-  bool m_eventRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_eventRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

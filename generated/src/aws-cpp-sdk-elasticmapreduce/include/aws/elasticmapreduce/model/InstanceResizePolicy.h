@@ -102,12 +102,12 @@ class InstanceResizePolicy {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instancesToTerminate;
-  bool m_instancesToTerminateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instancesToProtect;
-  bool m_instancesToProtectHasBeenSet = false;
 
   int m_instanceTerminationTimeout{0};
+  bool m_instancesToTerminateHasBeenSet = false;
+  bool m_instancesToProtectHasBeenSet = false;
   bool m_instanceTerminationTimeoutHasBeenSet = false;
 };
 

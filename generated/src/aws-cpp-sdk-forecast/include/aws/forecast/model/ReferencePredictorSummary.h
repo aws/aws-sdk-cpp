@@ -69,9 +69,9 @@ class ReferencePredictorSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   State m_state{State::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

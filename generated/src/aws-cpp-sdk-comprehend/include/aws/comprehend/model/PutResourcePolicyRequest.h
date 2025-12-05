@@ -96,12 +96,12 @@ class PutResourcePolicyRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::String m_policyRevisionId;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
   bool m_policyRevisionIdHasBeenSet = false;
 };
 

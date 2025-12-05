@@ -67,9 +67,9 @@ class InstanceState {
   ///@}
  private:
   int m_code{0};
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_codeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

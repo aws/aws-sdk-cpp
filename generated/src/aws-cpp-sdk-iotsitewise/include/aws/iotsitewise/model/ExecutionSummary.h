@@ -197,30 +197,30 @@ class ExecutionSummary {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_actionType;
-  bool m_actionTypeHasBeenSet = false;
 
   TargetResource m_targetResource;
-  bool m_targetResourceHasBeenSet = false;
 
   Aws::String m_targetResourceVersion;
-  bool m_targetResourceVersionHasBeenSet = false;
 
   ResolveTo m_resolveTo;
-  bool m_resolveToHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionStartTime{};
-  bool m_executionStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionEndTime{};
-  bool m_executionEndTimeHasBeenSet = false;
 
   ExecutionStatus m_executionStatus;
-  bool m_executionStatusHasBeenSet = false;
 
   Aws::String m_executionEntityVersion;
+  bool m_executionIdHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_targetResourceHasBeenSet = false;
+  bool m_targetResourceVersionHasBeenSet = false;
+  bool m_resolveToHasBeenSet = false;
+  bool m_executionStartTimeHasBeenSet = false;
+  bool m_executionEndTimeHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
   bool m_executionEntityVersionHasBeenSet = false;
 };
 

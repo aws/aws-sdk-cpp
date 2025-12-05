@@ -77,9 +77,9 @@ class DeleteFileSystemWindowsResponse {
   ///@}
  private:
   Aws::String m_finalBackupId;
-  bool m_finalBackupIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_finalBackupTags;
+  bool m_finalBackupIdHasBeenSet = false;
   bool m_finalBackupTagsHasBeenSet = false;
 };
 

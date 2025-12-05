@@ -278,42 +278,42 @@ class CustomerAgreementSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_agreementArn;
-  bool m_agreementArnHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_organizationArn;
-  bool m_organizationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveStart{};
-  bool m_effectiveStartHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveEnd{};
-  bool m_effectiveEndHasBeenSet = false;
 
   CustomerAgreementState m_state{CustomerAgreementState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_acceptanceTerms;
-  bool m_acceptanceTermsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_terminateTerms;
-  bool m_terminateTermsHasBeenSet = false;
 
   AgreementType m_type{AgreementType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_agreementArnHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_organizationArnHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_effectiveEndHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_acceptanceTermsHasBeenSet = false;
+  bool m_terminateTermsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

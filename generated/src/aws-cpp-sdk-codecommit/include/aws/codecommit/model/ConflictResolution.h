@@ -108,12 +108,12 @@ class ConflictResolution {
   ///@}
  private:
   Aws::Vector<ReplaceContentEntry> m_replaceContents;
-  bool m_replaceContentsHasBeenSet = false;
 
   Aws::Vector<DeleteFileEntry> m_deleteFiles;
-  bool m_deleteFilesHasBeenSet = false;
 
   Aws::Vector<SetFileModeEntry> m_setFileModes;
+  bool m_replaceContentsHasBeenSet = false;
+  bool m_deleteFilesHasBeenSet = false;
   bool m_setFileModesHasBeenSet = false;
 };
 

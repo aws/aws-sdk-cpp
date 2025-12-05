@@ -370,54 +370,54 @@ class CreateVerifiedAccessEndpointRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessGroupId;
-  bool m_verifiedAccessGroupIdHasBeenSet = false;
 
   VerifiedAccessEndpointType m_endpointType{VerifiedAccessEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   VerifiedAccessEndpointAttachmentType m_attachmentType{VerifiedAccessEndpointAttachmentType::NOT_SET};
-  bool m_attachmentTypeHasBeenSet = false;
 
   Aws::String m_domainCertificateArn;
-  bool m_domainCertificateArnHasBeenSet = false;
 
   Aws::String m_applicationDomain;
-  bool m_applicationDomainHasBeenSet = false;
 
   Aws::String m_endpointDomainPrefix;
-  bool m_endpointDomainPrefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   CreateVerifiedAccessEndpointLoadBalancerOptions m_loadBalancerOptions;
-  bool m_loadBalancerOptionsHasBeenSet = false;
 
   CreateVerifiedAccessEndpointEniOptions m_networkInterfaceOptions;
-  bool m_networkInterfaceOptionsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   VerifiedAccessSseSpecificationRequest m_sseSpecification;
-  bool m_sseSpecificationHasBeenSet = false;
 
   CreateVerifiedAccessEndpointRdsOptions m_rdsOptions;
-  bool m_rdsOptionsHasBeenSet = false;
 
   CreateVerifiedAccessEndpointCidrOptions m_cidrOptions;
+  bool m_verifiedAccessGroupIdHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_attachmentTypeHasBeenSet = false;
+  bool m_domainCertificateArnHasBeenSet = false;
+  bool m_applicationDomainHasBeenSet = false;
+  bool m_endpointDomainPrefixHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_loadBalancerOptionsHasBeenSet = false;
+  bool m_networkInterfaceOptionsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_sseSpecificationHasBeenSet = false;
+  bool m_rdsOptionsHasBeenSet = false;
   bool m_cidrOptionsHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class DirectQueryDataSourceType {
   ///@}
  private:
   CloudWatchDirectQueryDataSource m_cloudWatchLog;
-  bool m_cloudWatchLogHasBeenSet = false;
 
   SecurityLakeDirectQueryDataSource m_securityLake;
+  bool m_cloudWatchLogHasBeenSet = false;
   bool m_securityLakeHasBeenSet = false;
 };
 

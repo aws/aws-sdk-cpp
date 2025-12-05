@@ -59,9 +59,9 @@ class DeleteMemoryRecordResult {
   ///@}
  private:
   Aws::String m_memoryRecordId;
-  bool m_memoryRecordIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memoryRecordIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

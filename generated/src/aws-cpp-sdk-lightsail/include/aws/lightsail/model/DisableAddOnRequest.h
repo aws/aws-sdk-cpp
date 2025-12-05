@@ -66,9 +66,9 @@ class DisableAddOnRequest : public LightsailRequest {
   ///@}
  private:
   AddOnType m_addOnType{AddOnType::NOT_SET};
-  bool m_addOnTypeHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_addOnTypeHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

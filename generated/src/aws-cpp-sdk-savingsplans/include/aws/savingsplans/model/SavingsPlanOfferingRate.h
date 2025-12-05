@@ -183,27 +183,27 @@ class SavingsPlanOfferingRate {
   ///@}
  private:
   ParentSavingsPlanOffering m_savingsPlanOffering;
-  bool m_savingsPlanOfferingHasBeenSet = false;
 
   Aws::String m_rate;
-  bool m_rateHasBeenSet = false;
 
   SavingsPlanRateUnit m_unit{SavingsPlanRateUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   SavingsPlanProductType m_productType{SavingsPlanProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   SavingsPlanRateServiceCode m_serviceCode{SavingsPlanRateServiceCode::NOT_SET};
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::Vector<SavingsPlanOfferingRateProperty> m_properties;
+  bool m_savingsPlanOfferingHasBeenSet = false;
+  bool m_rateHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

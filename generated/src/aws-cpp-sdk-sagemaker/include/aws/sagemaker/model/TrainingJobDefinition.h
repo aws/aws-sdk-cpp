@@ -164,21 +164,21 @@ class TrainingJobDefinition {
   ///@}
  private:
   TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
-  bool m_trainingInputModeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-  bool m_hyperParametersHasBeenSet = false;
 
   Aws::Vector<Channel> m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
+  bool m_trainingInputModeHasBeenSet = false;
+  bool m_hyperParametersHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
   bool m_stoppingConditionHasBeenSet = false;
 };
 

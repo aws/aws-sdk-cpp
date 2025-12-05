@@ -69,9 +69,9 @@ class DataflowEndpointListItem {
   ///@}
  private:
   Aws::String m_dataflowEndpointGroupId;
-  bool m_dataflowEndpointGroupIdHasBeenSet = false;
 
   Aws::String m_dataflowEndpointGroupArn;
+  bool m_dataflowEndpointGroupIdHasBeenSet = false;
   bool m_dataflowEndpointGroupArnHasBeenSet = false;
 };
 

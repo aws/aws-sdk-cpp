@@ -187,27 +187,27 @@ class CreateEdgePackagingJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_edgePackagingJobName;
-  bool m_edgePackagingJobNameHasBeenSet = false;
 
   Aws::String m_compilationJobName;
-  bool m_compilationJobNameHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   EdgeOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_resourceKey;
-  bool m_resourceKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_edgePackagingJobNameHasBeenSet = false;
+  bool m_compilationJobNameHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_resourceKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

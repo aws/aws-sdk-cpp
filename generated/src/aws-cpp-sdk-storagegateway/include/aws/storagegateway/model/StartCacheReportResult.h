@@ -60,9 +60,9 @@ class StartCacheReportResult {
   ///@}
  private:
   Aws::String m_cacheReportARN;
-  bool m_cacheReportARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cacheReportARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

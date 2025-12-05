@@ -85,12 +85,12 @@ class ListMarketplaceModelEndpointsResult {
   ///@}
  private:
   Aws::Vector<MarketplaceModelEndpointSummary> m_marketplaceModelEndpoints;
-  bool m_marketplaceModelEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_marketplaceModelEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

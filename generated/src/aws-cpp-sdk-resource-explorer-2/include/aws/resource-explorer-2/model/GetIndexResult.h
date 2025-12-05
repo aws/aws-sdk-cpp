@@ -208,30 +208,30 @@ class GetIndexResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   IndexType m_type{IndexType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   IndexState m_state{IndexState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicatingFrom;
-  bool m_replicatingFromHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicatingTo;
-  bool m_replicatingToHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_replicatingFromHasBeenSet = false;
+  bool m_replicatingToHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

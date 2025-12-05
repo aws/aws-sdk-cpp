@@ -80,9 +80,9 @@ class ApiGatewayProxyInput {
   ///@}
  private:
   ApiGatewayEndpointType m_endpointType{ApiGatewayEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_stageName;
+  bool m_endpointTypeHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;
 };
 

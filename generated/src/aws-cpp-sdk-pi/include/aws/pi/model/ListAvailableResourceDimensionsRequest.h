@@ -163,21 +163,21 @@ class ListAvailableResourceDimensionsRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<FineGrainedAction> m_authorizedActions;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_authorizedActionsHasBeenSet = false;
 };
 

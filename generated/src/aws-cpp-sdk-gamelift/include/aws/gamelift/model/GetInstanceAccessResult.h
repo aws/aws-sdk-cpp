@@ -61,9 +61,9 @@ class GetInstanceAccessResult {
   ///@}
  private:
   InstanceAccess m_instanceAccess;
-  bool m_instanceAccessHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceAccessHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -222,33 +222,33 @@ class TrafficMirrorSession {
   ///@}
  private:
   Aws::String m_trafficMirrorSessionId;
-  bool m_trafficMirrorSessionIdHasBeenSet = false;
 
   Aws::String m_trafficMirrorTargetId;
-  bool m_trafficMirrorTargetIdHasBeenSet = false;
 
   Aws::String m_trafficMirrorFilterId;
-  bool m_trafficMirrorFilterIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   int m_packetLength{0};
-  bool m_packetLengthHasBeenSet = false;
 
   int m_sessionNumber{0};
-  bool m_sessionNumberHasBeenSet = false;
 
   int m_virtualNetworkId{0};
-  bool m_virtualNetworkIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_trafficMirrorSessionIdHasBeenSet = false;
+  bool m_trafficMirrorTargetIdHasBeenSet = false;
+  bool m_trafficMirrorFilterIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_packetLengthHasBeenSet = false;
+  bool m_sessionNumberHasBeenSet = false;
+  bool m_virtualNetworkIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class LifecycleExecution {
   ///@}
  private:
   Aws::String m_lifecycleExecutionId;
-  bool m_lifecycleExecutionIdHasBeenSet = false;
 
   Aws::String m_lifecyclePolicyArn;
-  bool m_lifecyclePolicyArnHasBeenSet = false;
 
   LifecycleExecutionResourcesImpactedSummary m_resourcesImpactedSummary;
-  bool m_resourcesImpactedSummaryHasBeenSet = false;
 
   LifecycleExecutionState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_lifecycleExecutionIdHasBeenSet = false;
+  bool m_lifecyclePolicyArnHasBeenSet = false;
+  bool m_resourcesImpactedSummaryHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

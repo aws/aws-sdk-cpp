@@ -106,15 +106,15 @@ class DescribeEventAggregatesRequest : public HealthRequest {
   ///@}
  private:
   EventFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   EventAggregateField m_aggregateField{EventAggregateField::NOT_SET};
-  bool m_aggregateFieldHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterHasBeenSet = false;
+  bool m_aggregateFieldHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

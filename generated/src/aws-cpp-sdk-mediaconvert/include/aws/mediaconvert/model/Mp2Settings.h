@@ -106,15 +106,15 @@ class Mp2Settings {
   ///@}
  private:
   Mp2AudioDescriptionMix m_audioDescriptionMix{Mp2AudioDescriptionMix::NOT_SET};
-  bool m_audioDescriptionMixHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   int m_sampleRate{0};
+  bool m_audioDescriptionMixHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

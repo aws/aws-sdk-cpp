@@ -68,9 +68,9 @@ class GetIceServerConfigResult {
   ///@}
  private:
   Aws::Vector<IceServer> m_iceServerList;
-  bool m_iceServerListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_iceServerListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

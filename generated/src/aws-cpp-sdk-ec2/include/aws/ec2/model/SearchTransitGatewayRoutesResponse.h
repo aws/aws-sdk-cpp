@@ -82,12 +82,12 @@ class SearchTransitGatewayRoutesResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayRoute> m_routes;
-  bool m_routesHasBeenSet = false;
 
   bool m_additionalRoutesAvailable{false};
-  bool m_additionalRoutesAvailableHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routesHasBeenSet = false;
+  bool m_additionalRoutesAvailableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class AiAgentInfo {
   ///@}
  private:
   AiUseCase m_aiUseCase{AiUseCase::NOT_SET};
-  bool m_aiUseCaseHasBeenSet = false;
 
   Aws::String m_aiAgentVersionId;
-  bool m_aiAgentVersionIdHasBeenSet = false;
 
   bool m_aiAgentEscalated{false};
+  bool m_aiUseCaseHasBeenSet = false;
+  bool m_aiAgentVersionIdHasBeenSet = false;
   bool m_aiAgentEscalatedHasBeenSet = false;
 };
 

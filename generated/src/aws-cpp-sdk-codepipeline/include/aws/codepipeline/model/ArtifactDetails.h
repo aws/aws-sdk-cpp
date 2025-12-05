@@ -62,9 +62,9 @@ class ArtifactDetails {
   ///@}
  private:
   int m_minimumCount{0};
-  bool m_minimumCountHasBeenSet = false;
 
   int m_maximumCount{0};
+  bool m_minimumCountHasBeenSet = false;
   bool m_maximumCountHasBeenSet = false;
 };
 

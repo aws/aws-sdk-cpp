@@ -138,18 +138,18 @@ class CreateKeySigningKeyRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_keyManagementServiceArn;
-  bool m_keyManagementServiceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_keyManagementServiceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

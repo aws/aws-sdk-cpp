@@ -70,9 +70,9 @@ class RatingScaleItem {
   ///@}
  private:
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   RatingScaleItemValue m_value;
+  bool m_definitionHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

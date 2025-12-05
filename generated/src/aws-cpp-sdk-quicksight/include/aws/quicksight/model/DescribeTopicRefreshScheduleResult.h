@@ -128,21 +128,21 @@ class DescribeTopicRefreshScheduleResult {
   ///@}
  private:
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   TopicRefreshSchedule m_refreshSchedule;
-  bool m_refreshScheduleHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicIdHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_refreshScheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

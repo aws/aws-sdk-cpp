@@ -85,12 +85,12 @@ class ListWorkspacePagesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WorkspacePage> m_workspacePageList;
-  bool m_workspacePageListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workspacePageListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

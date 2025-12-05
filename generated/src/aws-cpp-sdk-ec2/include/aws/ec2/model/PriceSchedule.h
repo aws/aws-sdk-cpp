@@ -107,15 +107,15 @@ class PriceSchedule {
   ///@}
  private:
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   CurrencyCodeValues m_currencyCode{CurrencyCodeValues::NOT_SET};
-  bool m_currencyCodeHasBeenSet = false;
 
   double m_price{0.0};
-  bool m_priceHasBeenSet = false;
 
   long long m_term{0};
+  bool m_activeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
   bool m_termHasBeenSet = false;
 };
 

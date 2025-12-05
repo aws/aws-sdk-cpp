@@ -95,12 +95,12 @@ class GetSSHPublicKeyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_sSHPublicKeyId;
-  bool m_sSHPublicKeyIdHasBeenSet = false;
 
   EncodingType m_encoding{EncodingType::NOT_SET};
+  bool m_userNameHasBeenSet = false;
+  bool m_sSHPublicKeyIdHasBeenSet = false;
   bool m_encodingHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class GetUserDefinedFunctionsResult {
   ///@}
  private:
   Aws::Vector<UserDefinedFunction> m_userDefinedFunctions;
-  bool m_userDefinedFunctionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userDefinedFunctionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class CreateResourceDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_resourceDefinitionId;
-  bool m_resourceDefinitionIdHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_resourceDefinitionIdHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

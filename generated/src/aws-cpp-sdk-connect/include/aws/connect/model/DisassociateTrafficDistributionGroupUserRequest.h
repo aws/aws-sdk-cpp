@@ -91,12 +91,12 @@ class DisassociateTrafficDistributionGroupUserRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_trafficDistributionGroupId;
-  bool m_trafficDistributionGroupIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_trafficDistributionGroupIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

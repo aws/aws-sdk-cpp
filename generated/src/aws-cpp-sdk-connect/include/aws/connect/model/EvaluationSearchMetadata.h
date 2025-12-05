@@ -313,51 +313,51 @@ class EvaluationSearchMetadata {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_evaluatorArn;
-  bool m_evaluatorArnHasBeenSet = false;
 
   Aws::String m_contactAgentId;
-  bool m_contactAgentIdHasBeenSet = false;
 
   Aws::String m_calibrationSessionId;
-  bool m_calibrationSessionIdHasBeenSet = false;
 
   double m_scorePercentage{0.0};
-  bool m_scorePercentageHasBeenSet = false;
 
   bool m_scoreAutomaticFail{false};
-  bool m_scoreAutomaticFailHasBeenSet = false;
 
   bool m_scoreNotApplicable{false};
-  bool m_scoreNotApplicableHasBeenSet = false;
 
   bool m_autoEvaluationEnabled{false};
-  bool m_autoEvaluationEnabledHasBeenSet = false;
 
   AutoEvaluationStatus m_autoEvaluationStatus{AutoEvaluationStatus::NOT_SET};
-  bool m_autoEvaluationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_acknowledgedTime{};
-  bool m_acknowledgedTimeHasBeenSet = false;
 
   Aws::String m_acknowledgedBy;
-  bool m_acknowledgedByHasBeenSet = false;
 
   Aws::String m_acknowledgerComment;
-  bool m_acknowledgerCommentHasBeenSet = false;
 
   Aws::String m_samplingJobId;
-  bool m_samplingJobIdHasBeenSet = false;
 
   Aws::String m_reviewId;
-  bool m_reviewIdHasBeenSet = false;
 
   ContactParticipantRole m_contactParticipantRole{ContactParticipantRole::NOT_SET};
-  bool m_contactParticipantRoleHasBeenSet = false;
 
   Aws::String m_contactParticipantId;
+  bool m_contactIdHasBeenSet = false;
+  bool m_evaluatorArnHasBeenSet = false;
+  bool m_contactAgentIdHasBeenSet = false;
+  bool m_calibrationSessionIdHasBeenSet = false;
+  bool m_scorePercentageHasBeenSet = false;
+  bool m_scoreAutomaticFailHasBeenSet = false;
+  bool m_scoreNotApplicableHasBeenSet = false;
+  bool m_autoEvaluationEnabledHasBeenSet = false;
+  bool m_autoEvaluationStatusHasBeenSet = false;
+  bool m_acknowledgedTimeHasBeenSet = false;
+  bool m_acknowledgedByHasBeenSet = false;
+  bool m_acknowledgerCommentHasBeenSet = false;
+  bool m_samplingJobIdHasBeenSet = false;
+  bool m_reviewIdHasBeenSet = false;
+  bool m_contactParticipantRoleHasBeenSet = false;
   bool m_contactParticipantIdHasBeenSet = false;
 };
 

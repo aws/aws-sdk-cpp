@@ -60,9 +60,9 @@ class GetJobManifestResult {
   ///@}
  private:
   Aws::String m_manifestURI;
-  bool m_manifestURIHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_manifestURIHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

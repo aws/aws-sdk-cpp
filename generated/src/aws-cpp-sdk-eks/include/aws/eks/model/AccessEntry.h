@@ -229,30 +229,30 @@ class AccessEntry {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_kubernetesGroups;
-  bool m_kubernetesGroupsHasBeenSet = false;
 
   Aws::String m_accessEntryArn;
-  bool m_accessEntryArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
+  bool m_kubernetesGroupsHasBeenSet = false;
+  bool m_accessEntryArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

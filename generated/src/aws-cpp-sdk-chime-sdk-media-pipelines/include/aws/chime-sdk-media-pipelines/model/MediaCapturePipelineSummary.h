@@ -68,9 +68,9 @@ class MediaCapturePipelineSummary {
   ///@}
  private:
   Aws::String m_mediaPipelineId;
-  bool m_mediaPipelineIdHasBeenSet = false;
 
   Aws::String m_mediaPipelineArn;
+  bool m_mediaPipelineIdHasBeenSet = false;
   bool m_mediaPipelineArnHasBeenSet = false;
 };
 

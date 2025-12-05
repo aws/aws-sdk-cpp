@@ -65,9 +65,9 @@ class GetFlowVersionRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::String m_flowVersion;
+  bool m_flowIdentifierHasBeenSet = false;
   bool m_flowVersionHasBeenSet = false;
 };
 

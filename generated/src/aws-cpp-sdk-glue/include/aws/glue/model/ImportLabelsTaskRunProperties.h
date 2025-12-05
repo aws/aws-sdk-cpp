@@ -68,9 +68,9 @@ class ImportLabelsTaskRunProperties {
   ///@}
  private:
   Aws::String m_inputS3Path;
-  bool m_inputS3PathHasBeenSet = false;
 
   bool m_replace{false};
+  bool m_inputS3PathHasBeenSet = false;
   bool m_replaceHasBeenSet = false;
 };
 

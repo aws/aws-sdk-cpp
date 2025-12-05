@@ -121,18 +121,18 @@ class AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetai
   ///@}
  private:
   bool m_cloudWatchEncryptionEnabled{false};
-  bool m_cloudWatchEncryptionEnabledHasBeenSet = false;
 
   Aws::String m_cloudWatchLogGroupName;
-  bool m_cloudWatchLogGroupNameHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   bool m_s3EncryptionEnabled{false};
-  bool m_s3EncryptionEnabledHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
+  bool m_cloudWatchEncryptionEnabledHasBeenSet = false;
+  bool m_cloudWatchLogGroupNameHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3EncryptionEnabledHasBeenSet = false;
   bool m_s3KeyPrefixHasBeenSet = false;
 };
 

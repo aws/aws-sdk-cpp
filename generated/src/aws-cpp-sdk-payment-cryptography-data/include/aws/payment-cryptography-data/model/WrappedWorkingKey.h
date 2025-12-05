@@ -91,12 +91,12 @@ class WrappedWorkingKey {
   ///@}
  private:
   Aws::String m_wrappedKeyMaterial;
-  bool m_wrappedKeyMaterialHasBeenSet = false;
 
   Aws::String m_keyCheckValue;
-  bool m_keyCheckValueHasBeenSet = false;
 
   WrappedKeyMaterialFormat m_wrappedKeyMaterialFormat{WrappedKeyMaterialFormat::NOT_SET};
+  bool m_wrappedKeyMaterialHasBeenSet = false;
+  bool m_keyCheckValueHasBeenSet = false;
   bool m_wrappedKeyMaterialFormatHasBeenSet = false;
 };
 

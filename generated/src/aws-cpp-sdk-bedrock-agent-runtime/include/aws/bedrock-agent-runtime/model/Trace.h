@@ -173,24 +173,24 @@ class Trace {
   ///@}
  private:
   CustomOrchestrationTrace m_customOrchestrationTrace;
-  bool m_customOrchestrationTraceHasBeenSet = false;
 
   FailureTrace m_failureTrace;
-  bool m_failureTraceHasBeenSet = false;
 
   GuardrailTrace m_guardrailTrace;
-  bool m_guardrailTraceHasBeenSet = false;
 
   OrchestrationTrace m_orchestrationTrace;
-  bool m_orchestrationTraceHasBeenSet = false;
 
   PostProcessingTrace m_postProcessingTrace;
-  bool m_postProcessingTraceHasBeenSet = false;
 
   PreProcessingTrace m_preProcessingTrace;
-  bool m_preProcessingTraceHasBeenSet = false;
 
   RoutingClassifierTrace m_routingClassifierTrace;
+  bool m_customOrchestrationTraceHasBeenSet = false;
+  bool m_failureTraceHasBeenSet = false;
+  bool m_guardrailTraceHasBeenSet = false;
+  bool m_orchestrationTraceHasBeenSet = false;
+  bool m_postProcessingTraceHasBeenSet = false;
+  bool m_preProcessingTraceHasBeenSet = false;
   bool m_routingClassifierTraceHasBeenSet = false;
 };
 

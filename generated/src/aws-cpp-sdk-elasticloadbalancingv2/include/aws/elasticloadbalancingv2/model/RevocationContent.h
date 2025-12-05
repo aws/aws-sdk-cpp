@@ -106,15 +106,15 @@ class RevocationContent {
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Key;
-  bool m_s3KeyHasBeenSet = false;
 
   Aws::String m_s3ObjectVersion;
-  bool m_s3ObjectVersionHasBeenSet = false;
 
   RevocationType m_revocationType{RevocationType::NOT_SET};
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
+  bool m_s3ObjectVersionHasBeenSet = false;
   bool m_revocationTypeHasBeenSet = false;
 };
 

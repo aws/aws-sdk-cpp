@@ -102,15 +102,15 @@ class DescribeResourcePoliciesRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   PolicyScope m_policyScope{PolicyScope::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_policyScopeHasBeenSet = false;
 };
 

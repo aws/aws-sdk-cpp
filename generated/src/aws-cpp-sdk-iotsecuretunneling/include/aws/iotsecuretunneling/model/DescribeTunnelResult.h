@@ -60,9 +60,9 @@ class DescribeTunnelResult {
   ///@}
  private:
   Tunnel m_tunnel;
-  bool m_tunnelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tunnelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class UpdateConfigurationSetSendingEnabledRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class BotRecommendationSummary {
   ///@}
  private:
   BotRecommendationStatus m_botRecommendationStatus{BotRecommendationStatus::NOT_SET};
-  bool m_botRecommendationStatusHasBeenSet = false;
 
   Aws::String m_botRecommendationId;
-  bool m_botRecommendationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_botRecommendationStatusHasBeenSet = false;
+  bool m_botRecommendationIdHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

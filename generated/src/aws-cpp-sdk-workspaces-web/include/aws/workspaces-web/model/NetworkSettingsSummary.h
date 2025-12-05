@@ -68,9 +68,9 @@ class NetworkSettingsSummary {
   ///@}
  private:
   Aws::String m_networkSettingsArn;
-  bool m_networkSettingsArnHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_networkSettingsArnHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

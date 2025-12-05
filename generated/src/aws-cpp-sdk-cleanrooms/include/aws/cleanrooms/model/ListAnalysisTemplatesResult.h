@@ -84,12 +84,12 @@ class ListAnalysisTemplatesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AnalysisTemplateSummary> m_analysisTemplateSummaries;
-  bool m_analysisTemplateSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_analysisTemplateSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

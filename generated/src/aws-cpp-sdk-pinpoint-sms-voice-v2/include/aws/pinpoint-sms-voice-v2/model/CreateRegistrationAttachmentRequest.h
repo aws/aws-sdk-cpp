@@ -118,15 +118,15 @@ class CreateRegistrationAttachmentRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_attachmentBody{};
-  bool m_attachmentBodyHasBeenSet = false;
 
   Aws::String m_attachmentUrl;
-  bool m_attachmentUrlHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_attachmentBodyHasBeenSet = false;
+  bool m_attachmentUrlHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

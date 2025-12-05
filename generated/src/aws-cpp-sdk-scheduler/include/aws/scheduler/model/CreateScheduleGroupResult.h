@@ -59,9 +59,9 @@ class CreateScheduleGroupResult {
   ///@}
  private:
   Aws::String m_scheduleGroupArn;
-  bool m_scheduleGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduleGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

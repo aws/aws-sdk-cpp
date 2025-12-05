@@ -77,12 +77,12 @@ class ExportTaskSummary {
   ///@}
  private:
   long long m_applicationsCount{0};
-  bool m_applicationsCountHasBeenSet = false;
 
   long long m_serversCount{0};
-  bool m_serversCountHasBeenSet = false;
 
   long long m_wavesCount{0};
+  bool m_applicationsCountHasBeenSet = false;
+  bool m_serversCountHasBeenSet = false;
   bool m_wavesCountHasBeenSet = false;
 };
 

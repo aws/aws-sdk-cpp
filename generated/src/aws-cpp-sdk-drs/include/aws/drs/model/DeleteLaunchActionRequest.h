@@ -61,9 +61,9 @@ class DeleteLaunchActionRequest : public DrsRequest {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_resourceId;
+  bool m_actionIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
 };
 

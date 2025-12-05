@@ -60,9 +60,9 @@ class DescribeChannelBanResult {
   ///@}
  private:
   ChannelBan m_channelBan;
-  bool m_channelBanHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelBanHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class InstanceCountLimits {
   ///@}
  private:
   int m_minimumInstanceCount{0};
-  bool m_minimumInstanceCountHasBeenSet = false;
 
   int m_maximumInstanceCount{0};
+  bool m_minimumInstanceCountHasBeenSet = false;
   bool m_maximumInstanceCountHasBeenSet = false;
 };
 

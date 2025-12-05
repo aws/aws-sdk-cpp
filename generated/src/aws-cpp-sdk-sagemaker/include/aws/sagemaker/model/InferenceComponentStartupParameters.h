@@ -69,9 +69,9 @@ class InferenceComponentStartupParameters {
   ///@}
  private:
   int m_modelDataDownloadTimeoutInSeconds{0};
-  bool m_modelDataDownloadTimeoutInSecondsHasBeenSet = false;
 
   int m_containerStartupHealthCheckTimeoutInSeconds{0};
+  bool m_modelDataDownloadTimeoutInSecondsHasBeenSet = false;
   bool m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = false;
 };
 

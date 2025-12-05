@@ -96,12 +96,12 @@ class RescoreRequest : public KendraRankingRequest {
   ///@}
  private:
   Aws::String m_rescoreExecutionPlanId;
-  bool m_rescoreExecutionPlanIdHasBeenSet = false;
 
   Aws::String m_searchQuery;
-  bool m_searchQueryHasBeenSet = false;
 
   Aws::Vector<Document> m_documents;
+  bool m_rescoreExecutionPlanIdHasBeenSet = false;
+  bool m_searchQueryHasBeenSet = false;
   bool m_documentsHasBeenSet = false;
 };
 

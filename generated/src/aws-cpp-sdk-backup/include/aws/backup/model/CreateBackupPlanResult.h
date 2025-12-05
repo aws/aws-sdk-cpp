@@ -143,21 +143,21 @@ class CreateBackupPlanResult {
   ///@}
  private:
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::String m_backupPlanArn;
-  bool m_backupPlanArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
-  bool m_advancedBackupSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_backupPlanArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_advancedBackupSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

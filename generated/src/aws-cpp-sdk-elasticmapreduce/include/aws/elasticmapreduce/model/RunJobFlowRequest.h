@@ -777,102 +777,102 @@ class RunJobFlowRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_logEncryptionKmsKeyId;
-  bool m_logEncryptionKmsKeyIdHasBeenSet = false;
 
   Aws::String m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::String m_amiVersion;
-  bool m_amiVersionHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   JobFlowInstancesConfig m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::Vector<StepConfig> m_steps;
-  bool m_stepsHasBeenSet = false;
 
   Aws::Vector<BootstrapActionConfig> m_bootstrapActions;
-  bool m_bootstrapActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedProducts;
-  bool m_supportedProductsHasBeenSet = false;
 
   Aws::Vector<SupportedProductConfig> m_newSupportedProducts;
-  bool m_newSupportedProductsHasBeenSet = false;
 
   Aws::Vector<Application> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   Aws::Vector<Configuration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   bool m_visibleToAllUsers{false};
-  bool m_visibleToAllUsersHasBeenSet = false;
 
   Aws::String m_jobFlowRole;
-  bool m_jobFlowRoleHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::String m_autoScalingRole;
-  bool m_autoScalingRoleHasBeenSet = false;
 
   ScaleDownBehavior m_scaleDownBehavior{ScaleDownBehavior::NOT_SET};
-  bool m_scaleDownBehaviorHasBeenSet = false;
 
   Aws::String m_customAmiId;
-  bool m_customAmiIdHasBeenSet = false;
 
   int m_ebsRootVolumeSize{0};
-  bool m_ebsRootVolumeSizeHasBeenSet = false;
 
   RepoUpgradeOnBoot m_repoUpgradeOnBoot{RepoUpgradeOnBoot::NOT_SET};
-  bool m_repoUpgradeOnBootHasBeenSet = false;
 
   KerberosAttributes m_kerberosAttributes;
-  bool m_kerberosAttributesHasBeenSet = false;
 
   int m_stepConcurrencyLevel{0};
-  bool m_stepConcurrencyLevelHasBeenSet = false;
 
   ManagedScalingPolicy m_managedScalingPolicy;
-  bool m_managedScalingPolicyHasBeenSet = false;
 
   Aws::Vector<PlacementGroupConfig> m_placementGroupConfigs;
-  bool m_placementGroupConfigsHasBeenSet = false;
 
   AutoTerminationPolicy m_autoTerminationPolicy;
-  bool m_autoTerminationPolicyHasBeenSet = false;
 
   Aws::String m_oSReleaseLabel;
-  bool m_oSReleaseLabelHasBeenSet = false;
 
   int m_ebsRootVolumeIops{0};
-  bool m_ebsRootVolumeIopsHasBeenSet = false;
 
   int m_ebsRootVolumeThroughput{0};
-  bool m_ebsRootVolumeThroughputHasBeenSet = false;
 
   bool m_extendedSupport{false};
-  bool m_extendedSupportHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_logUriHasBeenSet = false;
+  bool m_logEncryptionKmsKeyIdHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_amiVersionHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_stepsHasBeenSet = false;
+  bool m_bootstrapActionsHasBeenSet = false;
+  bool m_supportedProductsHasBeenSet = false;
+  bool m_newSupportedProductsHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
+  bool m_visibleToAllUsersHasBeenSet = false;
+  bool m_jobFlowRoleHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_autoScalingRoleHasBeenSet = false;
+  bool m_scaleDownBehaviorHasBeenSet = false;
+  bool m_customAmiIdHasBeenSet = false;
+  bool m_ebsRootVolumeSizeHasBeenSet = false;
+  bool m_repoUpgradeOnBootHasBeenSet = false;
+  bool m_kerberosAttributesHasBeenSet = false;
+  bool m_stepConcurrencyLevelHasBeenSet = false;
+  bool m_managedScalingPolicyHasBeenSet = false;
+  bool m_placementGroupConfigsHasBeenSet = false;
+  bool m_autoTerminationPolicyHasBeenSet = false;
+  bool m_oSReleaseLabelHasBeenSet = false;
+  bool m_ebsRootVolumeIopsHasBeenSet = false;
+  bool m_ebsRootVolumeThroughputHasBeenSet = false;
+  bool m_extendedSupportHasBeenSet = false;
   bool m_monitoringConfigurationHasBeenSet = false;
 };
 

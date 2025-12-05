@@ -93,12 +93,12 @@ class CidrCollectionChange {
   ///@}
  private:
   Aws::String m_locationName;
-  bool m_locationNameHasBeenSet = false;
 
   CidrCollectionChangeAction m_action{CidrCollectionChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrList;
+  bool m_locationNameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_cidrListHasBeenSet = false;
 };
 

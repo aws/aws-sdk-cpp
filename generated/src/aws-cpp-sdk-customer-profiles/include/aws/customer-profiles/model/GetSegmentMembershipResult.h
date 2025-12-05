@@ -128,18 +128,18 @@ class GetSegmentMembershipResult {
   ///@}
  private:
   Aws::String m_segmentDefinitionName;
-  bool m_segmentDefinitionNameHasBeenSet = false;
 
   Aws::Vector<ProfileQueryResult> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   Aws::Vector<ProfileQueryFailures> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastComputedAt{};
-  bool m_lastComputedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_segmentDefinitionNameHasBeenSet = false;
+  bool m_profilesHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
+  bool m_lastComputedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

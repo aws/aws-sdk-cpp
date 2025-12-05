@@ -416,69 +416,69 @@ class CreateVolumeResponse {
   ///@}
  private:
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_sourceVolumeId;
-  bool m_sourceVolumeIdHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   bool m_fastRestored{false};
-  bool m_fastRestoredHasBeenSet = false;
 
   bool m_multiAttachEnabled{false};
-  bool m_multiAttachEnabledHasBeenSet = false;
 
   int m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   SSEType m_sseType{SSEType::NOT_SET};
-  bool m_sseTypeHasBeenSet = false;
 
   OperatorResponse m_operator;
-  bool m_operatorHasBeenSet = false;
 
   int m_volumeInitializationRate{0};
-  bool m_volumeInitializationRateHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   VolumeState m_state{VolumeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Vector<VolumeAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_sourceVolumeIdHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_fastRestoredHasBeenSet = false;
+  bool m_multiAttachEnabledHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
+  bool m_sseTypeHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_volumeInitializationRateHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

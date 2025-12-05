@@ -133,18 +133,18 @@ class AuthResult {
   ///@}
  private:
   AuthInfo m_authInfo;
-  bool m_authInfoHasBeenSet = false;
 
   Allowed m_allowed;
-  bool m_allowedHasBeenSet = false;
 
   Denied m_denied;
-  bool m_deniedHasBeenSet = false;
 
   AuthDecision m_authDecision{AuthDecision::NOT_SET};
-  bool m_authDecisionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_missingContextValues;
+  bool m_authInfoHasBeenSet = false;
+  bool m_allowedHasBeenSet = false;
+  bool m_deniedHasBeenSet = false;
+  bool m_authDecisionHasBeenSet = false;
   bool m_missingContextValuesHasBeenSet = false;
 };
 

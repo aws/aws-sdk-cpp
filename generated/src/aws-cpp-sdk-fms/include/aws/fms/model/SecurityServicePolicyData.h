@@ -314,12 +314,12 @@ class SecurityServicePolicyData {
   ///@}
  private:
   SecurityServiceType m_type{SecurityServiceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_managedServiceData;
-  bool m_managedServiceDataHasBeenSet = false;
 
   PolicyOption m_policyOption;
+  bool m_typeHasBeenSet = false;
+  bool m_managedServiceDataHasBeenSet = false;
   bool m_policyOptionHasBeenSet = false;
 };
 

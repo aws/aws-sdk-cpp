@@ -46,6 +46,7 @@ class SendDurableExecutionCallbackSuccessRequest : public StreamingLambdaRequest
   ///@}
  private:
   Aws::String m_callbackId;
+
   bool m_callbackIdHasBeenSet = false;
 };
 

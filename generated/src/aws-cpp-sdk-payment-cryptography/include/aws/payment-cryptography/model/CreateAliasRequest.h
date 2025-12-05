@@ -73,9 +73,9 @@ class CreateAliasRequest : public PaymentCryptographyRequest {
   ///@}
  private:
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::String m_keyArn;
+  bool m_aliasNameHasBeenSet = false;
   bool m_keyArnHasBeenSet = false;
 };
 

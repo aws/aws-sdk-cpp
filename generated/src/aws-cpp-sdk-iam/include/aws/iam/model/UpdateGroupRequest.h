@@ -101,12 +101,12 @@ class UpdateGroupRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_newPath;
-  bool m_newPathHasBeenSet = false;
 
   Aws::String m_newGroupName;
+  bool m_groupNameHasBeenSet = false;
+  bool m_newPathHasBeenSet = false;
   bool m_newGroupNameHasBeenSet = false;
 };
 

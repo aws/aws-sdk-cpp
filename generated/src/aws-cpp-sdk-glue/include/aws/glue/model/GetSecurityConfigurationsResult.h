@@ -85,12 +85,12 @@ class GetSecurityConfigurationsResult {
   ///@}
  private:
   Aws::Vector<SecurityConfiguration> m_securityConfigurations;
-  bool m_securityConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

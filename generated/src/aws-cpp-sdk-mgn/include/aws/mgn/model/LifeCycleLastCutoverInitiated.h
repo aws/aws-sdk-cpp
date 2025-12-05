@@ -68,9 +68,9 @@ class LifeCycleLastCutoverInitiated {
   ///@}
  private:
   Aws::String m_apiCallDateTime;
-  bool m_apiCallDateTimeHasBeenSet = false;
 
   Aws::String m_jobID;
+  bool m_apiCallDateTimeHasBeenSet = false;
   bool m_jobIDHasBeenSet = false;
 };
 

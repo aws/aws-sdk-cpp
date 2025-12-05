@@ -144,21 +144,21 @@ class AppInputSource {
   ///@}
  private:
   EksSourceClusterNamespace m_eksSourceClusterNamespace;
-  bool m_eksSourceClusterNamespaceHasBeenSet = false;
 
   ResourceMappingType m_importType{ResourceMappingType::NOT_SET};
-  bool m_importTypeHasBeenSet = false;
 
   int m_resourceCount{0};
-  bool m_resourceCountHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   TerraformSource m_terraformSource;
+  bool m_eksSourceClusterNamespaceHasBeenSet = false;
+  bool m_importTypeHasBeenSet = false;
+  bool m_resourceCountHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
   bool m_terraformSourceHasBeenSet = false;
 };
 

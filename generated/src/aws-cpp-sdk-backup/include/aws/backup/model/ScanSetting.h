@@ -96,12 +96,12 @@ class ScanSetting {
   ///@}
  private:
   MalwareScanner m_malwareScanner{MalwareScanner::NOT_SET};
-  bool m_malwareScannerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_scannerRoleArn;
+  bool m_malwareScannerHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
   bool m_scannerRoleArnHasBeenSet = false;
 };
 

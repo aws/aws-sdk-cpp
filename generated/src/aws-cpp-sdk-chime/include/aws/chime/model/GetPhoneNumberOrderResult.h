@@ -60,9 +60,9 @@ class GetPhoneNumberOrderResult {
   ///@}
  private:
   PhoneNumberOrder m_phoneNumberOrder;
-  bool m_phoneNumberOrderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_phoneNumberOrderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

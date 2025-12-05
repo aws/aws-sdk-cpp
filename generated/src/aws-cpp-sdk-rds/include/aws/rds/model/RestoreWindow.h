@@ -71,9 +71,9 @@ class RestoreWindow {
   ///@}
  private:
   Aws::Utils::DateTime m_earliestTime{};
-  bool m_earliestTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestTime{};
+  bool m_earliestTimeHasBeenSet = false;
   bool m_latestTimeHasBeenSet = false;
 };
 

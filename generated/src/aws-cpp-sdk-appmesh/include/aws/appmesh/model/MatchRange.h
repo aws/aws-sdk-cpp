@@ -64,9 +64,9 @@ class MatchRange {
   ///@}
  private:
   long long m_end{0};
-  bool m_endHasBeenSet = false;
 
   long long m_start{0};
+  bool m_endHasBeenSet = false;
   bool m_startHasBeenSet = false;
 };
 

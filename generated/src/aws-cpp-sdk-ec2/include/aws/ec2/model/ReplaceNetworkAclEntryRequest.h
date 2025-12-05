@@ -222,33 +222,33 @@ class ReplaceNetworkAclEntryRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkAclId;
-  bool m_networkAclIdHasBeenSet = false;
 
   int m_ruleNumber{0};
-  bool m_ruleNumberHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   RuleAction m_ruleAction{RuleAction::NOT_SET};
-  bool m_ruleActionHasBeenSet = false;
 
   bool m_egress{false};
-  bool m_egressHasBeenSet = false;
 
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
-  bool m_ipv6CidrBlockHasBeenSet = false;
 
   IcmpTypeCode m_icmpTypeCode;
-  bool m_icmpTypeCodeHasBeenSet = false;
 
   PortRange m_portRange;
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkAclIdHasBeenSet = false;
+  bool m_ruleNumberHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_ruleActionHasBeenSet = false;
+  bool m_egressHasBeenSet = false;
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_ipv6CidrBlockHasBeenSet = false;
+  bool m_icmpTypeCodeHasBeenSet = false;
   bool m_portRangeHasBeenSet = false;
 };
 

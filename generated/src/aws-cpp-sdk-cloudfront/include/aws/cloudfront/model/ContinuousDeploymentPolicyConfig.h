@@ -91,12 +91,12 @@ class ContinuousDeploymentPolicyConfig {
   ///@}
  private:
   StagingDistributionDnsNames m_stagingDistributionDnsNames;
-  bool m_stagingDistributionDnsNamesHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   TrafficConfig m_trafficConfig;
+  bool m_stagingDistributionDnsNamesHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_trafficConfigHasBeenSet = false;
 };
 

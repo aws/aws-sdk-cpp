@@ -87,12 +87,12 @@ class WeeklyStartTime {
   ///@}
  private:
   DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
-  bool m_dayOfWeekHasBeenSet = false;
 
   Aws::String m_timeOfDay;
-  bool m_timeOfDayHasBeenSet = false;
 
   Aws::String m_timeZone;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_timeOfDayHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
 };
 

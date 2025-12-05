@@ -86,12 +86,12 @@ class DescribeVpnConcentratorsResponse {
   ///@}
  private:
   Aws::Vector<VpnConcentrator> m_vpnConcentrators;
-  bool m_vpnConcentratorsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnConcentratorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

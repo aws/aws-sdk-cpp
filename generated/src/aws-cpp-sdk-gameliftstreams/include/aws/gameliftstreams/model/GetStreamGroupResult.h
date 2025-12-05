@@ -354,42 +354,42 @@ class GetStreamGroupResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DefaultApplication m_defaultApplication;
-  bool m_defaultApplicationHasBeenSet = false;
 
   Aws::Vector<LocationState> m_locationStates;
-  bool m_locationStatesHasBeenSet = false;
 
   StreamClass m_streamClass{StreamClass::NOT_SET};
-  bool m_streamClassHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   StreamGroupStatus m_status{StreamGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StreamGroupStatusReason m_statusReason{StreamGroupStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedApplications;
-  bool m_associatedApplicationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultApplicationHasBeenSet = false;
+  bool m_locationStatesHasBeenSet = false;
+  bool m_streamClassHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_associatedApplicationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

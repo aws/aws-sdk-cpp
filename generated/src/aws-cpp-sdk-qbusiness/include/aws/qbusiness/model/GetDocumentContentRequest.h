@@ -130,18 +130,18 @@ class GetDocumentContentRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

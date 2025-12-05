@@ -68,9 +68,9 @@ class AwsS3BucketNotificationConfigurationS3KeyFilterRule {
   ///@}
  private:
   AwsS3BucketNotificationConfigurationS3KeyFilterRuleName m_name{AwsS3BucketNotificationConfigurationS3KeyFilterRuleName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

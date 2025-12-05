@@ -106,15 +106,15 @@ class CreateDeploymentRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   int m_applicationVersion{0};
-  bool m_applicationVersionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_environmentId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationVersionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_environmentIdHasBeenSet = false;
 };
 

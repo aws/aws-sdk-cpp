@@ -319,45 +319,45 @@ class CreateWorkgroupRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   int m_baseCapacity{0};
-  bool m_baseCapacityHasBeenSet = false;
 
   Aws::Vector<ConfigParameter> m_configParameters;
-  bool m_configParametersHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::String m_ipAddressType;
-  bool m_ipAddressTypeHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   PerformanceTarget m_pricePerformanceTarget;
-  bool m_pricePerformanceTargetHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_trackName;
-  bool m_trackNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_baseCapacityHasBeenSet = false;
+  bool m_configParametersHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_pricePerformanceTargetHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_trackNameHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

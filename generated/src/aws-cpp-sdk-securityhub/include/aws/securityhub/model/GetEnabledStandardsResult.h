@@ -85,12 +85,12 @@ class GetEnabledStandardsResult {
   ///@}
  private:
   Aws::Vector<StandardsSubscription> m_standardsSubscriptions;
-  bool m_standardsSubscriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_standardsSubscriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

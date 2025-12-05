@@ -272,42 +272,42 @@ class ListMonitoringSchedulesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   MonitoringScheduleSortKey m_sortBy{MonitoringScheduleSortKey::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeBefore{};
-  bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeAfter{};
-  bool m_lastModifiedTimeAfterHasBeenSet = false;
 
   ScheduleStatus m_statusEquals{ScheduleStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   Aws::String m_monitoringJobDefinitionName;
-  bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
   MonitoringType m_monitoringTypeEquals{MonitoringType::NOT_SET};
+  bool m_endpointNameHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_lastModifiedTimeBeforeHasBeenSet = false;
+  bool m_lastModifiedTimeAfterHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_monitoringJobDefinitionNameHasBeenSet = false;
   bool m_monitoringTypeEqualsHasBeenSet = false;
 };
 

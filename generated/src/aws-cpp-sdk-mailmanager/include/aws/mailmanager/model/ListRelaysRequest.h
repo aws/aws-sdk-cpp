@@ -66,9 +66,9 @@ class ListRelaysRequest : public MailManagerRequest {
   ///@}
  private:
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_pageSizeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

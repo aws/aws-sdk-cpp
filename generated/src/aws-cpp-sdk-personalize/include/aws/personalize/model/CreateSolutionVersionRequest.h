@@ -132,15 +132,15 @@ class CreateSolutionVersionRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_solutionArn;
-  bool m_solutionArnHasBeenSet = false;
 
   TrainingMode m_trainingMode{TrainingMode::NOT_SET};
-  bool m_trainingModeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_solutionArnHasBeenSet = false;
+  bool m_trainingModeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

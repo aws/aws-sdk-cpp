@@ -71,9 +71,9 @@ class ImagePackage {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packageVersion;
+  bool m_packageNameHasBeenSet = false;
   bool m_packageVersionHasBeenSet = false;
 };
 

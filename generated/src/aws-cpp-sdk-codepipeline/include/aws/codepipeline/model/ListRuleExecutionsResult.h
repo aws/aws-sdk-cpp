@@ -86,12 +86,12 @@ class ListRuleExecutionsResult {
   ///@}
  private:
   Aws::Vector<RuleExecutionDetail> m_ruleExecutionDetails;
-  bool m_ruleExecutionDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleExecutionDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

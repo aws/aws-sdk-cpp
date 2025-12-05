@@ -137,21 +137,21 @@ class ListBotVersionReplicasResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_replicaRegion;
-  bool m_replicaRegionHasBeenSet = false;
 
   Aws::Vector<BotVersionReplicaSummary> m_botVersionReplicaSummaries;
-  bool m_botVersionReplicaSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_replicaRegionHasBeenSet = false;
+  bool m_botVersionReplicaSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

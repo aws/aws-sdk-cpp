@@ -65,9 +65,9 @@ class UpdateWorkforceResult {
   ///@}
  private:
   Workforce m_workforce;
-  bool m_workforceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workforceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

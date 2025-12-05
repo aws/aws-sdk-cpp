@@ -169,24 +169,24 @@ class ReservationPurchaseRecommendation {
   ///@}
  private:
   AccountScope m_accountScope{AccountScope::NOT_SET};
-  bool m_accountScopeHasBeenSet = false;
 
   LookbackPeriodInDays m_lookbackPeriodInDays{LookbackPeriodInDays::NOT_SET};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   TermInYears m_termInYears{TermInYears::NOT_SET};
-  bool m_termInYearsHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   ServiceSpecification m_serviceSpecification;
-  bool m_serviceSpecificationHasBeenSet = false;
 
   Aws::Vector<ReservationPurchaseRecommendationDetail> m_recommendationDetails;
-  bool m_recommendationDetailsHasBeenSet = false;
 
   ReservationPurchaseRecommendationSummary m_recommendationSummary;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
+  bool m_termInYearsHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_serviceSpecificationHasBeenSet = false;
+  bool m_recommendationDetailsHasBeenSet = false;
   bool m_recommendationSummaryHasBeenSet = false;
 };
 

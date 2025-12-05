@@ -114,15 +114,15 @@ class ApplicationTagResult {
   ///@}
  private:
   ApplicationTagStatus m_applicationTagStatus{ApplicationTagStatus::NOT_SET};
-  bool m_applicationTagStatusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<ResourcesListItem> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationTagStatusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

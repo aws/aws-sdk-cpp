@@ -170,24 +170,24 @@ class SystemInstanceDescription {
   ///@}
  private:
   SystemInstanceSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   DefinitionDocument m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   MetricsConfiguration m_metricsConfiguration;
-  bool m_metricsConfigurationHasBeenSet = false;
 
   long long m_validatedNamespaceVersion{0};
-  bool m_validatedNamespaceVersionHasBeenSet = false;
 
   Aws::Vector<DependencyRevision> m_validatedDependencyRevisions;
-  bool m_validatedDependencyRevisionsHasBeenSet = false;
 
   Aws::String m_flowActionsRoleArn;
+  bool m_summaryHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_metricsConfigurationHasBeenSet = false;
+  bool m_validatedNamespaceVersionHasBeenSet = false;
+  bool m_validatedDependencyRevisionsHasBeenSet = false;
   bool m_flowActionsRoleArnHasBeenSet = false;
 };
 

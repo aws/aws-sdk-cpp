@@ -124,18 +124,18 @@ class SubscribedWorkteam {
   ///@}
  private:
   Aws::String m_workteamArn;
-  bool m_workteamArnHasBeenSet = false;
 
   Aws::String m_marketplaceTitle;
-  bool m_marketplaceTitleHasBeenSet = false;
 
   Aws::String m_sellerName;
-  bool m_sellerNameHasBeenSet = false;
 
   Aws::String m_marketplaceDescription;
-  bool m_marketplaceDescriptionHasBeenSet = false;
 
   Aws::String m_listingId;
+  bool m_workteamArnHasBeenSet = false;
+  bool m_marketplaceTitleHasBeenSet = false;
+  bool m_sellerNameHasBeenSet = false;
+  bool m_marketplaceDescriptionHasBeenSet = false;
   bool m_listingIdHasBeenSet = false;
 };
 

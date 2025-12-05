@@ -110,15 +110,15 @@ class FlowOperationMetadata {
   ///@}
  private:
   Aws::String m_flowOperationId;
-  bool m_flowOperationIdHasBeenSet = false;
 
   FlowOperationType m_flowOperationType{FlowOperationType::NOT_SET};
-  bool m_flowOperationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_flowRequestTimestamp{};
-  bool m_flowRequestTimestampHasBeenSet = false;
 
   FlowOperationStatus m_flowOperationStatus{FlowOperationStatus::NOT_SET};
+  bool m_flowOperationIdHasBeenSet = false;
+  bool m_flowOperationTypeHasBeenSet = false;
+  bool m_flowRequestTimestampHasBeenSet = false;
   bool m_flowOperationStatusHasBeenSet = false;
 };
 

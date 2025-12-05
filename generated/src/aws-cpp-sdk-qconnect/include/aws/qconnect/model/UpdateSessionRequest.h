@@ -175,24 +175,24 @@ class UpdateSessionRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TagFilter m_tagFilter;
-  bool m_tagFilterHasBeenSet = false;
 
   Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
-  bool m_aiAgentConfigurationHasBeenSet = false;
 
   Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
-  bool m_orchestratorConfigurationListHasBeenSet = false;
 
   bool m_removeOrchestratorConfigurationList{false};
+  bool m_assistantIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagFilterHasBeenSet = false;
+  bool m_aiAgentConfigurationHasBeenSet = false;
+  bool m_orchestratorConfigurationListHasBeenSet = false;
   bool m_removeOrchestratorConfigurationListHasBeenSet = false;
 };
 

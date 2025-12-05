@@ -69,9 +69,9 @@ class AppBundle {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_customerManagedKeyArn;
+  bool m_arnHasBeenSet = false;
   bool m_customerManagedKeyArnHasBeenSet = false;
 };
 

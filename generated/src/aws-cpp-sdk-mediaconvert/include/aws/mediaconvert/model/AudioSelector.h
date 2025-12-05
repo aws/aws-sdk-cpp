@@ -350,42 +350,42 @@ To specify an offset:
   ///@}
  private:
   AudioDurationCorrection m_audioDurationCorrection{AudioDurationCorrection::NOT_SET};
-  bool m_audioDurationCorrectionHasBeenSet = false;
 
   Aws::String m_customLanguageCode;
-  bool m_customLanguageCodeHasBeenSet = false;
 
   AudioDefaultSelection m_defaultSelection{AudioDefaultSelection::NOT_SET};
-  bool m_defaultSelectionHasBeenSet = false;
 
   Aws::String m_externalAudioFileInput;
-  bool m_externalAudioFileInputHasBeenSet = false;
 
   HlsRenditionGroupSettings m_hlsRenditionGroupSettings;
-  bool m_hlsRenditionGroupSettingsHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_offset{0};
-  bool m_offsetHasBeenSet = false;
 
   Aws::Vector<int> m_pids;
-  bool m_pidsHasBeenSet = false;
 
   int m_programSelection{0};
-  bool m_programSelectionHasBeenSet = false;
 
   RemixSettings m_remixSettings;
-  bool m_remixSettingsHasBeenSet = false;
 
   AudioSelectorType m_selectorType{AudioSelectorType::NOT_SET};
-  bool m_selectorTypeHasBeenSet = false;
 
   Aws::Vector<int> m_streams;
-  bool m_streamsHasBeenSet = false;
 
   Aws::Vector<int> m_tracks;
+  bool m_audioDurationCorrectionHasBeenSet = false;
+  bool m_customLanguageCodeHasBeenSet = false;
+  bool m_defaultSelectionHasBeenSet = false;
+  bool m_externalAudioFileInputHasBeenSet = false;
+  bool m_hlsRenditionGroupSettingsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
+  bool m_pidsHasBeenSet = false;
+  bool m_programSelectionHasBeenSet = false;
+  bool m_remixSettingsHasBeenSet = false;
+  bool m_selectorTypeHasBeenSet = false;
+  bool m_streamsHasBeenSet = false;
   bool m_tracksHasBeenSet = false;
 };
 

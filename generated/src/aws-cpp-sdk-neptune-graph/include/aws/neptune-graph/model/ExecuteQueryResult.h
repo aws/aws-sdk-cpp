@@ -55,9 +55,9 @@ class ExecuteQueryResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_payload{};
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

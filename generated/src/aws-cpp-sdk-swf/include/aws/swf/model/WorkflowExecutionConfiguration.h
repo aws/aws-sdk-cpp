@@ -164,21 +164,21 @@ class WorkflowExecutionConfiguration {
   ///@}
  private:
   Aws::String m_taskStartToCloseTimeout;
-  bool m_taskStartToCloseTimeoutHasBeenSet = false;
 
   Aws::String m_executionStartToCloseTimeout;
-  bool m_executionStartToCloseTimeoutHasBeenSet = false;
 
   TaskList m_taskList;
-  bool m_taskListHasBeenSet = false;
 
   Aws::String m_taskPriority;
-  bool m_taskPriorityHasBeenSet = false;
 
   ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
-  bool m_childPolicyHasBeenSet = false;
 
   Aws::String m_lambdaRole;
+  bool m_taskStartToCloseTimeoutHasBeenSet = false;
+  bool m_executionStartToCloseTimeoutHasBeenSet = false;
+  bool m_taskListHasBeenSet = false;
+  bool m_taskPriorityHasBeenSet = false;
+  bool m_childPolicyHasBeenSet = false;
   bool m_lambdaRoleHasBeenSet = false;
 };
 

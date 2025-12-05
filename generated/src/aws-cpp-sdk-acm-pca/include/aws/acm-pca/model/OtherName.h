@@ -72,9 +72,9 @@ class OtherName {
   ///@}
  private:
   Aws::String m_typeId;
-  bool m_typeIdHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_typeIdHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class NetworkAccessConfiguration {
   ///@}
  private:
   Aws::String m_eniPrivateIpAddress;
-  bool m_eniPrivateIpAddressHasBeenSet = false;
 
   Aws::String m_eniId;
+  bool m_eniPrivateIpAddressHasBeenSet = false;
   bool m_eniIdHasBeenSet = false;
 };
 

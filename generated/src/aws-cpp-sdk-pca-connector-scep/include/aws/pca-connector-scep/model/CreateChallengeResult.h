@@ -60,9 +60,9 @@ class CreateChallengeResult {
   ///@}
  private:
   Challenge m_challenge;
-  bool m_challengeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_challengeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

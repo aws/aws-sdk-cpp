@@ -126,18 +126,18 @@ class WebExperience {
   ///@}
  private:
   Aws::String m_webExperienceId;
-  bool m_webExperienceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_defaultEndpoint;
-  bool m_defaultEndpointHasBeenSet = false;
 
   WebExperienceStatus m_status{WebExperienceStatus::NOT_SET};
+  bool m_webExperienceIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_defaultEndpointHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

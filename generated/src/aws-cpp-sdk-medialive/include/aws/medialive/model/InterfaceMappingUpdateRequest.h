@@ -74,9 +74,9 @@ class InterfaceMappingUpdateRequest {
   ///@}
  private:
   Aws::String m_logicalInterfaceName;
-  bool m_logicalInterfaceNameHasBeenSet = false;
 
   Aws::String m_networkId;
+  bool m_logicalInterfaceNameHasBeenSet = false;
   bool m_networkIdHasBeenSet = false;
 };
 

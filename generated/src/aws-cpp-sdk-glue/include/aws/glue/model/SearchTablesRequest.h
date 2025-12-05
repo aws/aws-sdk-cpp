@@ -204,27 +204,27 @@ class SearchTablesRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PropertyPredicate> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_searchText;
-  bool m_searchTextHasBeenSet = false;
 
   Aws::Vector<SortCriterion> m_sortCriteria;
-  bool m_sortCriteriaHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ResourceShareType m_resourceShareType{ResourceShareType::NOT_SET};
-  bool m_resourceShareTypeHasBeenSet = false;
 
   bool m_includeStatusDetails{false};
+  bool m_catalogIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_searchTextHasBeenSet = false;
+  bool m_sortCriteriaHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_resourceShareTypeHasBeenSet = false;
   bool m_includeStatusDetailsHasBeenSet = false;
 };
 

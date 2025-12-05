@@ -216,33 +216,33 @@ class ResponsibilityTransfer {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ResponsibilityTransferType m_type{ResponsibilityTransferType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ResponsibilityTransferStatus m_status{ResponsibilityTransferStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TransferParticipant m_source;
-  bool m_sourceHasBeenSet = false;
 
   TransferParticipant m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   Aws::String m_activeHandshakeId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
   bool m_activeHandshakeIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class DescribeProtectionGroupResult {
   ///@}
  private:
   ProtectionGroup m_protectionGroup;
-  bool m_protectionGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_protectionGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class RoleCredentials {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_secretAccessKey;
-  bool m_secretAccessKeyHasBeenSet = false;
 
   Aws::String m_sessionToken;
-  bool m_sessionTokenHasBeenSet = false;
 
   long long m_expiration{0};
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_secretAccessKeyHasBeenSet = false;
+  bool m_sessionTokenHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
 };
 

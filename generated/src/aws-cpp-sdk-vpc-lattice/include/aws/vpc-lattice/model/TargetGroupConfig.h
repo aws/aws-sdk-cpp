@@ -167,24 +167,24 @@ class TargetGroupConfig {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   TargetGroupProtocol m_protocol{TargetGroupProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   TargetGroupProtocolVersion m_protocolVersion{TargetGroupProtocolVersion::NOT_SET};
-  bool m_protocolVersionHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_vpcIdentifier;
-  bool m_vpcIdentifierHasBeenSet = false;
 
   HealthCheckConfig m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   LambdaEventStructureVersion m_lambdaEventStructureVersion{LambdaEventStructureVersion::NOT_SET};
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_protocolVersionHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_vpcIdentifierHasBeenSet = false;
+  bool m_healthCheckHasBeenSet = false;
   bool m_lambdaEventStructureVersionHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class RetrieveResult {
   ///@}
  private:
   GuadrailAction m_guardrailAction{GuadrailAction::NOT_SET};
-  bool m_guardrailActionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<KnowledgeBaseRetrievalResult> m_retrievalResults;
-  bool m_retrievalResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_guardrailActionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_retrievalResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

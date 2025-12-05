@@ -80,12 +80,12 @@ class CreateNetworkInsightsAccessScopeResponse {
   ///@}
  private:
   NetworkInsightsAccessScope m_networkInsightsAccessScope;
-  bool m_networkInsightsAccessScopeHasBeenSet = false;
 
   NetworkInsightsAccessScopeContent m_networkInsightsAccessScopeContent;
-  bool m_networkInsightsAccessScopeContentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsAccessScopeHasBeenSet = false;
+  bool m_networkInsightsAccessScopeContentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -105,12 +105,12 @@ class CloudWatchDimensionConfiguration {
   ///@}
  private:
   Aws::String m_dimensionName;
-  bool m_dimensionNameHasBeenSet = false;
 
   DimensionValueSource m_dimensionValueSource{DimensionValueSource::NOT_SET};
-  bool m_dimensionValueSourceHasBeenSet = false;
 
   Aws::String m_defaultDimensionValue;
+  bool m_dimensionNameHasBeenSet = false;
+  bool m_dimensionValueSourceHasBeenSet = false;
   bool m_defaultDimensionValueHasBeenSet = false;
 };
 

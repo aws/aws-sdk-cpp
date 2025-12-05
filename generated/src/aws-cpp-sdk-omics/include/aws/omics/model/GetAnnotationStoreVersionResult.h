@@ -270,45 +270,45 @@ class GetAnnotationStoreVersionResult {
   ///@}
  private:
   Aws::String m_storeId;
-  bool m_storeIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   VersionStatus m_status{VersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_versionArn;
-  bool m_versionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VersionOptions m_versionOptions;
-  bool m_versionOptionsHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   long long m_versionSizeBytes{0};
-  bool m_versionSizeBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storeIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_versionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_versionOptionsHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_versionSizeBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

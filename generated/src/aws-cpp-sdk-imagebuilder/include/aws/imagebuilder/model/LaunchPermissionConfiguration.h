@@ -143,15 +143,15 @@ class LaunchPermissionConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroups;
-  bool m_userGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationArns;
-  bool m_organizationArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitArns;
+  bool m_userIdsHasBeenSet = false;
+  bool m_userGroupsHasBeenSet = false;
+  bool m_organizationArnsHasBeenSet = false;
   bool m_organizationalUnitArnsHasBeenSet = false;
 };
 

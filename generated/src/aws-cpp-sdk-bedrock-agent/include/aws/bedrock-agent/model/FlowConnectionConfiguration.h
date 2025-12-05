@@ -70,9 +70,9 @@ class FlowConnectionConfiguration {
   ///@}
  private:
   FlowDataConnectionConfiguration m_data;
-  bool m_dataHasBeenSet = false;
 
   FlowConditionalConnectionConfiguration m_conditional;
+  bool m_dataHasBeenSet = false;
   bool m_conditionalHasBeenSet = false;
 };
 

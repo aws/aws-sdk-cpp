@@ -153,21 +153,21 @@ class DistributionIdOwnerList {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<DistributionIdOwner> m_items;
+  bool m_markerHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

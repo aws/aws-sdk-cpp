@@ -68,9 +68,9 @@ class ExperimentStopCondition {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_sourceHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

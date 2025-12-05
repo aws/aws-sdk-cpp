@@ -71,9 +71,9 @@ class CreatePhoneNumberOrderRequest : public ChimeRequest {
   ///@}
  private:
   PhoneNumberProductType m_productType{PhoneNumberProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_e164PhoneNumbers;
+  bool m_productTypeHasBeenSet = false;
   bool m_e164PhoneNumbersHasBeenSet = false;
 };
 

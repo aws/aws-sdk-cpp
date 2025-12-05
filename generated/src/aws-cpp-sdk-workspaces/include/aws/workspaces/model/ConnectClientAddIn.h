@@ -104,15 +104,15 @@ class ConnectClientAddIn {
   ///@}
  private:
   Aws::String m_addInId;
-  bool m_addInIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_uRL;
+  bool m_addInIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_uRLHasBeenSet = false;
 };
 

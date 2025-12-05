@@ -102,15 +102,15 @@ class PutConfiguredAudienceModelPolicyRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelPolicy;
-  bool m_configuredAudienceModelPolicyHasBeenSet = false;
 
   Aws::String m_previousPolicyHash;
-  bool m_previousPolicyHashHasBeenSet = false;
 
   PolicyExistenceCondition m_policyExistenceCondition{PolicyExistenceCondition::NOT_SET};
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_configuredAudienceModelPolicyHasBeenSet = false;
+  bool m_previousPolicyHashHasBeenSet = false;
   bool m_policyExistenceConditionHasBeenSet = false;
 };
 

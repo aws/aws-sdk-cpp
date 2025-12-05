@@ -383,57 +383,57 @@ class Attachment {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
-  bool m_coreNetworkArnHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   AttachmentType m_attachmentType{AttachmentType::NOT_SET};
-  bool m_attachmentTypeHasBeenSet = false;
 
   AttachmentState m_state{AttachmentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_edgeLocation;
-  bool m_edgeLocationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeLocations;
-  bool m_edgeLocationsHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   int m_attachmentPolicyRuleNumber{0};
-  bool m_attachmentPolicyRuleNumberHasBeenSet = false;
 
   Aws::String m_segmentName;
-  bool m_segmentNameHasBeenSet = false;
 
   Aws::String m_networkFunctionGroupName;
-  bool m_networkFunctionGroupNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ProposedSegmentChange m_proposedSegmentChange;
-  bool m_proposedSegmentChangeHasBeenSet = false;
 
   ProposedNetworkFunctionGroupChange m_proposedNetworkFunctionGroupChange;
-  bool m_proposedNetworkFunctionGroupChangeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<AttachmentError> m_lastModificationErrors;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_coreNetworkArnHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_attachmentTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_edgeLocationHasBeenSet = false;
+  bool m_edgeLocationsHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_attachmentPolicyRuleNumberHasBeenSet = false;
+  bool m_segmentNameHasBeenSet = false;
+  bool m_networkFunctionGroupNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_proposedSegmentChangeHasBeenSet = false;
+  bool m_proposedNetworkFunctionGroupChangeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_lastModificationErrorsHasBeenSet = false;
 };
 

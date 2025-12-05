@@ -88,12 +88,12 @@ class AccessDeniedException {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   AccessDeniedExceptionReason m_reason{AccessDeniedExceptionReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_error_description;
+  bool m_errorHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_error_descriptionHasBeenSet = false;
 };
 

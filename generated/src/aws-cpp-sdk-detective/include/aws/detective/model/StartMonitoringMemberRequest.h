@@ -67,9 +67,9 @@ class StartMonitoringMemberRequest : public DetectiveRequest {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_graphArnHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

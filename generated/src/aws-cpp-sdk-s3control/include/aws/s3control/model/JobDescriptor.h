@@ -399,60 +399,60 @@ class JobDescriptor {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   bool m_confirmationRequired{false};
-  bool m_confirmationRequiredHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   JobManifest m_manifest;
-  bool m_manifestHasBeenSet = false;
 
   JobOperation m_operation;
-  bool m_operationHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   JobProgressSummary m_progressSummary;
-  bool m_progressSummaryHasBeenSet = false;
 
   Aws::String m_statusUpdateReason;
-  bool m_statusUpdateReasonHasBeenSet = false;
 
   Aws::Vector<JobFailure> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   JobReport m_report;
-  bool m_reportHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_terminationDate{};
-  bool m_terminationDateHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_suspendedDate{};
-  bool m_suspendedDateHasBeenSet = false;
 
   Aws::String m_suspendedCause;
-  bool m_suspendedCauseHasBeenSet = false;
 
   JobManifestGenerator m_manifestGenerator;
-  bool m_manifestGeneratorHasBeenSet = false;
 
   S3GeneratedManifestDescriptor m_generatedManifestDescriptor;
+  bool m_jobIdHasBeenSet = false;
+  bool m_confirmationRequiredHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_manifestHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_progressSummaryHasBeenSet = false;
+  bool m_statusUpdateReasonHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_reportHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_terminationDateHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_suspendedDateHasBeenSet = false;
+  bool m_suspendedCauseHasBeenSet = false;
+  bool m_manifestGeneratorHasBeenSet = false;
   bool m_generatedManifestDescriptorHasBeenSet = false;
 };
 

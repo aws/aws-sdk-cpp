@@ -67,9 +67,9 @@ class ContinuousDeploymentSingleWeightConfig {
   ///@}
  private:
   double m_weight{0.0};
-  bool m_weightHasBeenSet = false;
 
   SessionStickinessConfig m_sessionStickinessConfig;
+  bool m_weightHasBeenSet = false;
   bool m_sessionStickinessConfigHasBeenSet = false;
 };
 

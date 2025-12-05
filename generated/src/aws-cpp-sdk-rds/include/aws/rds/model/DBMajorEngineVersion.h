@@ -98,12 +98,12 @@ class DBMajorEngineVersion {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_majorEngineVersion;
-  bool m_majorEngineVersionHasBeenSet = false;
 
   Aws::Vector<SupportedEngineLifecycle> m_supportedEngineLifecycles;
+  bool m_engineHasBeenSet = false;
+  bool m_majorEngineVersionHasBeenSet = false;
   bool m_supportedEngineLifecyclesHasBeenSet = false;
 };
 

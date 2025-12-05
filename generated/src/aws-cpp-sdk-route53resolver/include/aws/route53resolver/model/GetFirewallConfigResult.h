@@ -61,9 +61,9 @@ class GetFirewallConfigResult {
   ///@}
  private:
   FirewallConfig m_firewallConfig;
-  bool m_firewallConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -120,15 +120,15 @@ class CreateEndpointRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   DeploymentConfig m_deploymentConfig;
-  bool m_deploymentConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_deploymentConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

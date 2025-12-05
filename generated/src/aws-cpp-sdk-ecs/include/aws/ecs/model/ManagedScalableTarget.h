@@ -136,21 +136,21 @@ class ManagedScalableTarget {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   int m_minCapacity{0};
-  bool m_minCapacityHasBeenSet = false;
 
   int m_maxCapacity{0};
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_minCapacityHasBeenSet = false;
   bool m_maxCapacityHasBeenSet = false;
 };
 

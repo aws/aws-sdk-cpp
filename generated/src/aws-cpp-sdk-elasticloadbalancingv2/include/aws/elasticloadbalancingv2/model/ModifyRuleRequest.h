@@ -146,18 +146,18 @@ class ModifyRuleRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   Aws::Vector<RuleCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<RuleTransform> m_transforms;
-  bool m_transformsHasBeenSet = false;
 
   bool m_resetTransforms{false};
+  bool m_ruleArnHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_transformsHasBeenSet = false;
   bool m_resetTransformsHasBeenSet = false;
 };
 

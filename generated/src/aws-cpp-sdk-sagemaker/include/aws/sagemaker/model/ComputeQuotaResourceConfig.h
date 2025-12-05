@@ -145,21 +145,21 @@ class ComputeQuotaResourceConfig {
   ///@}
  private:
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   int m_accelerators{0};
-  bool m_acceleratorsHasBeenSet = false;
 
   double m_vCpu{0.0};
-  bool m_vCpuHasBeenSet = false;
 
   double m_memoryInGiB{0.0};
-  bool m_memoryInGiBHasBeenSet = false;
 
   AcceleratorPartitionConfig m_acceleratorPartition;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_acceleratorsHasBeenSet = false;
+  bool m_vCpuHasBeenSet = false;
+  bool m_memoryInGiBHasBeenSet = false;
   bool m_acceleratorPartitionHasBeenSet = false;
 };
 

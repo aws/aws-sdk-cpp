@@ -77,9 +77,9 @@ class BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest : public Code
   ///@}
  private:
   Aws::String m_approvalRuleTemplateName;
-  bool m_approvalRuleTemplateNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_repositoryNames;
+  bool m_approvalRuleTemplateNameHasBeenSet = false;
   bool m_repositoryNamesHasBeenSet = false;
 };
 

@@ -249,39 +249,39 @@ class FunctionConfiguration {
   ///@}
  private:
   Aws::String m_functionId;
-  bool m_functionIdHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   Aws::String m_requestMappingTemplate;
-  bool m_requestMappingTemplateHasBeenSet = false;
 
   Aws::String m_responseMappingTemplate;
-  bool m_responseMappingTemplateHasBeenSet = false;
 
   Aws::String m_functionVersion;
-  bool m_functionVersionHasBeenSet = false;
 
   SyncConfig m_syncConfig;
-  bool m_syncConfigHasBeenSet = false;
 
   int m_maxBatchSize{0};
-  bool m_maxBatchSizeHasBeenSet = false;
 
   AppSyncRuntime m_runtime;
-  bool m_runtimeHasBeenSet = false;
 
   Aws::String m_code;
+  bool m_functionIdHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataSourceNameHasBeenSet = false;
+  bool m_requestMappingTemplateHasBeenSet = false;
+  bool m_responseMappingTemplateHasBeenSet = false;
+  bool m_functionVersionHasBeenSet = false;
+  bool m_syncConfigHasBeenSet = false;
+  bool m_maxBatchSizeHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

@@ -139,15 +139,15 @@ class AddPermissionRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aWSAccountIds;
-  bool m_aWSAccountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
+  bool m_queueUrlHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_aWSAccountIdsHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

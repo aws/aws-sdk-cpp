@@ -154,24 +154,24 @@ class ListInventoryEntriesResult {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_captureTime;
-  bool m_captureTimeHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeNameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_captureTimeHasBeenSet = false;
+  bool m_entriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

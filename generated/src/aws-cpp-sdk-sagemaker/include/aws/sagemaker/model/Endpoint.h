@@ -284,39 +284,39 @@ class Endpoint {
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_endpointConfigName;
-  bool m_endpointConfigNameHasBeenSet = false;
 
   Aws::Vector<ProductionVariantSummary> m_productionVariants;
-  bool m_productionVariantsHasBeenSet = false;
 
   DataCaptureConfigSummary m_dataCaptureConfig;
-  bool m_dataCaptureConfigHasBeenSet = false;
 
   EndpointStatus m_endpointStatus{EndpointStatus::NOT_SET};
-  bool m_endpointStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<MonitoringSchedule> m_monitoringSchedules;
-  bool m_monitoringSchedulesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<ProductionVariantSummary> m_shadowProductionVariants;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_endpointConfigNameHasBeenSet = false;
+  bool m_productionVariantsHasBeenSet = false;
+  bool m_dataCaptureConfigHasBeenSet = false;
+  bool m_endpointStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_monitoringSchedulesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_shadowProductionVariantsHasBeenSet = false;
 };
 

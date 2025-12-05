@@ -85,12 +85,12 @@ class ListWirelessGatewaysResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WirelessGatewayStatistics> m_wirelessGatewayList;
-  bool m_wirelessGatewayListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_wirelessGatewayListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

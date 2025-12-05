@@ -72,9 +72,9 @@ class DocumentClassifierDocuments {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   Aws::String m_testS3Uri;
+  bool m_s3UriHasBeenSet = false;
   bool m_testS3UriHasBeenSet = false;
 };
 

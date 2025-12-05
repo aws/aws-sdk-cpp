@@ -67,9 +67,9 @@ class DescribeSchedulingPoliciesResult {
   ///@}
  private:
   Aws::Vector<SchedulingPolicyDetail> m_schedulingPolicies;
-  bool m_schedulingPoliciesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schedulingPoliciesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

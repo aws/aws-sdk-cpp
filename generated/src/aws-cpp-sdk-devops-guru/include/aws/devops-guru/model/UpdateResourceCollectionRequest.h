@@ -63,9 +63,9 @@ class UpdateResourceCollectionRequest : public DevOpsGuruRequest {
   ///@}
  private:
   UpdateResourceCollectionAction m_action{UpdateResourceCollectionAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   UpdateResourceCollectionFilter m_resourceCollection;
+  bool m_actionHasBeenSet = false;
   bool m_resourceCollectionHasBeenSet = false;
 };
 

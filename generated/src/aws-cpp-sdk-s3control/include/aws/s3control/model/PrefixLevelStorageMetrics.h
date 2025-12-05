@@ -65,9 +65,9 @@ class PrefixLevelStorageMetrics {
   ///@}
  private:
   bool m_isEnabled{false};
-  bool m_isEnabledHasBeenSet = false;
 
   SelectionCriteria m_selectionCriteria;
+  bool m_isEnabledHasBeenSet = false;
   bool m_selectionCriteriaHasBeenSet = false;
 };
 

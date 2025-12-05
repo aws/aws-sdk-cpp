@@ -70,9 +70,9 @@ class CreateVolumePermission {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   PermissionGroup m_group{PermissionGroup::NOT_SET};
+  bool m_userIdHasBeenSet = false;
   bool m_groupHasBeenSet = false;
 };
 

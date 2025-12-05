@@ -67,9 +67,9 @@ class ProjectMember {
   ///@}
  private:
   UserDesignation m_designation{UserDesignation::NOT_SET};
-  bool m_designationHasBeenSet = false;
 
   MemberDetails m_memberDetails;
+  bool m_designationHasBeenSet = false;
   bool m_memberDetailsHasBeenSet = false;
 };
 

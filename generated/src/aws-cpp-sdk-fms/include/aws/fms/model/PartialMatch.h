@@ -77,9 +77,9 @@ class PartialMatch {
   ///@}
  private:
   Aws::String m_reference;
-  bool m_referenceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetViolationReasons;
+  bool m_referenceHasBeenSet = false;
   bool m_targetViolationReasonsHasBeenSet = false;
 };
 

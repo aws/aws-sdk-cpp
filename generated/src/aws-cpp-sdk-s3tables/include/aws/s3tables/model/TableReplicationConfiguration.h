@@ -80,9 +80,9 @@ class TableReplicationConfiguration {
   ///@}
  private:
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::Vector<TableReplicationRule> m_rules;
+  bool m_roleHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetParameterResult {
   ///@}
  private:
   Parameter m_parameter;
-  bool m_parameterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_parameterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

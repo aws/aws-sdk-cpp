@@ -92,12 +92,12 @@ class DescribeDBClusterBacktracksResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBClusterBacktrack> m_dBClusterBacktracks;
-  bool m_dBClusterBacktracksHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBClusterBacktracksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

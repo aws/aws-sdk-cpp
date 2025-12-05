@@ -71,9 +71,9 @@ class SpeechFoundationModel {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_voiceId;
+  bool m_modelArnHasBeenSet = false;
   bool m_voiceIdHasBeenSet = false;
 };
 

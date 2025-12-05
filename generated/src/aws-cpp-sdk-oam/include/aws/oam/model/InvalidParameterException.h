@@ -66,9 +66,9 @@ class InvalidParameterException {
   ///@}
  private:
   Aws::String m_amznErrorType;
-  bool m_amznErrorTypeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_amznErrorTypeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

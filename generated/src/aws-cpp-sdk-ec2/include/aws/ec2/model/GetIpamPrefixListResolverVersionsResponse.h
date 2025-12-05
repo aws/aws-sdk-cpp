@@ -88,12 +88,12 @@ class GetIpamPrefixListResolverVersionsResponse {
   ///@}
  private:
   Aws::Vector<IpamPrefixListResolverVersion> m_ipamPrefixListResolverVersions;
-  bool m_ipamPrefixListResolverVersionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPrefixListResolverVersionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

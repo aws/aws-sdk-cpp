@@ -93,12 +93,12 @@ class DescribeReplicationSubnetGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReplicationSubnetGroup> m_replicationSubnetGroups;
-  bool m_replicationSubnetGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_replicationSubnetGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

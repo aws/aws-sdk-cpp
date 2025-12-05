@@ -198,27 +198,27 @@ class PrincipalResourcePermissions {
   ///@}
  private:
   DataLakePrincipal m_principal;
-  bool m_principalHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Condition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissionsWithGrantOption;
-  bool m_permissionsWithGrantOptionHasBeenSet = false;
 
   DetailsMap m_additionalDetails;
-  bool m_additionalDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
+  bool m_principalHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_permissionsWithGrantOptionHasBeenSet = false;
+  bool m_additionalDetailsHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_lastUpdatedByHasBeenSet = false;
 };
 

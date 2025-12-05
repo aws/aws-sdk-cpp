@@ -99,12 +99,12 @@ class WaypointOptimizationImpedingWaypoint {
   ///@}
  private:
   Aws::Vector<WaypointOptimizationFailedConstraint> m_failedConstraints;
-  bool m_failedConstraintsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<double> m_position;
+  bool m_failedConstraintsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_positionHasBeenSet = false;
 };
 

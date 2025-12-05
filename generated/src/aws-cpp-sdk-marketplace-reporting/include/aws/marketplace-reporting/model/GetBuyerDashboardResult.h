@@ -105,15 +105,15 @@ class GetBuyerDashboardResult {
   ///@}
  private:
   Aws::String m_embedUrl;
-  bool m_embedUrlHasBeenSet = false;
 
   Aws::String m_dashboardIdentifier;
-  bool m_dashboardIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_embeddingDomains;
-  bool m_embeddingDomainsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_embedUrlHasBeenSet = false;
+  bool m_dashboardIdentifierHasBeenSet = false;
+  bool m_embeddingDomainsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

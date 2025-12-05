@@ -61,9 +61,9 @@ class GetPermissionsBoundaryForPermissionSetResult {
   ///@}
  private:
   PermissionsBoundary m_permissionsBoundary;
-  bool m_permissionsBoundaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_permissionsBoundaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

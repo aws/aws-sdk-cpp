@@ -68,9 +68,9 @@ class ComponentState {
   ///@}
  private:
   ComponentStatus m_status{ComponentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_statusHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

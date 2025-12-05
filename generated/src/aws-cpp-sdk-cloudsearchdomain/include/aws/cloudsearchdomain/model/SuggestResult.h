@@ -86,12 +86,12 @@ class SuggestResult {
   ///@}
  private:
   SuggestStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   SuggestModel m_suggest;
-  bool m_suggestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_suggestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

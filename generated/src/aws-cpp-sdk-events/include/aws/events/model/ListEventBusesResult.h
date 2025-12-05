@@ -85,12 +85,12 @@ class ListEventBusesResult {
   ///@}
  private:
   Aws::Vector<EventBus> m_eventBuses;
-  bool m_eventBusesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventBusesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

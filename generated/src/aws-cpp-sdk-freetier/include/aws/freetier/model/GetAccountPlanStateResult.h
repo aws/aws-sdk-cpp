@@ -127,21 +127,21 @@ class GetAccountPlanStateResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AccountPlanType m_accountPlanType{AccountPlanType::NOT_SET};
-  bool m_accountPlanTypeHasBeenSet = false;
 
   AccountPlanStatus m_accountPlanStatus{AccountPlanStatus::NOT_SET};
-  bool m_accountPlanStatusHasBeenSet = false;
 
   MonetaryAmount m_accountPlanRemainingCredits;
-  bool m_accountPlanRemainingCreditsHasBeenSet = false;
 
   Aws::Utils::DateTime m_accountPlanExpirationDate{};
-  bool m_accountPlanExpirationDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_accountPlanTypeHasBeenSet = false;
+  bool m_accountPlanStatusHasBeenSet = false;
+  bool m_accountPlanRemainingCreditsHasBeenSet = false;
+  bool m_accountPlanExpirationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

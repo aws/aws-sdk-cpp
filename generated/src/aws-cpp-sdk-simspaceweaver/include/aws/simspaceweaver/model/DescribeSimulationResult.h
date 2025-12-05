@@ -303,48 +303,48 @@ class DescribeSimulationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   LiveSimulationState m_liveSimulationState;
-  bool m_liveSimulationStateHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   Aws::String m_maximumDuration;
-  bool m_maximumDurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   S3Location m_schemaS3Location;
-  bool m_schemaS3LocationHasBeenSet = false;
 
   S3Location m_snapshotS3Location;
-  bool m_snapshotS3LocationHasBeenSet = false;
 
   Aws::String m_startError;
-  bool m_startErrorHasBeenSet = false;
 
   SimulationStatus m_status{SimulationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SimulationTargetStatus m_targetStatus{SimulationTargetStatus::NOT_SET};
-  bool m_targetStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_liveSimulationStateHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_maximumDurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_schemaS3LocationHasBeenSet = false;
+  bool m_snapshotS3LocationHasBeenSet = false;
+  bool m_startErrorHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

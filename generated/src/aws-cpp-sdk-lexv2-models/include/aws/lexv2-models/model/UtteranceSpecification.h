@@ -461,69 +461,69 @@ class UtteranceSpecification {
   ///@}
  private:
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_channel;
-  bool m_channelHasBeenSet = false;
 
   AnalyticsModality m_mode{AnalyticsModality::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::Utils::DateTime m_conversationStartTime{};
-  bool m_conversationStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_conversationEndTime{};
-  bool m_conversationEndTimeHasBeenSet = false;
 
   Aws::String m_utterance;
-  bool m_utteranceHasBeenSet = false;
 
   Aws::Utils::DateTime m_utteranceTimestamp{};
-  bool m_utteranceTimestampHasBeenSet = false;
 
   long long m_audioVoiceDurationMillis{0};
-  bool m_audioVoiceDurationMillisHasBeenSet = false;
 
   bool m_utteranceUnderstood{false};
-  bool m_utteranceUnderstoodHasBeenSet = false;
 
   Aws::String m_inputType;
-  bool m_inputTypeHasBeenSet = false;
 
   Aws::String m_outputType;
-  bool m_outputTypeHasBeenSet = false;
 
   Aws::String m_associatedIntentName;
-  bool m_associatedIntentNameHasBeenSet = false;
 
   Aws::String m_associatedSlotName;
-  bool m_associatedSlotNameHasBeenSet = false;
 
   IntentState m_intentState{IntentState::NOT_SET};
-  bool m_intentStateHasBeenSet = false;
 
   Aws::String m_dialogActionType;
-  bool m_dialogActionTypeHasBeenSet = false;
 
   Aws::String m_botResponseAudioVoiceId;
-  bool m_botResponseAudioVoiceIdHasBeenSet = false;
 
   Aws::String m_slotsFilledInSession;
-  bool m_slotsFilledInSessionHasBeenSet = false;
 
   Aws::String m_utteranceRequestId;
-  bool m_utteranceRequestIdHasBeenSet = false;
 
   Aws::Vector<UtteranceBotResponse> m_botResponses;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_conversationStartTimeHasBeenSet = false;
+  bool m_conversationEndTimeHasBeenSet = false;
+  bool m_utteranceHasBeenSet = false;
+  bool m_utteranceTimestampHasBeenSet = false;
+  bool m_audioVoiceDurationMillisHasBeenSet = false;
+  bool m_utteranceUnderstoodHasBeenSet = false;
+  bool m_inputTypeHasBeenSet = false;
+  bool m_outputTypeHasBeenSet = false;
+  bool m_associatedIntentNameHasBeenSet = false;
+  bool m_associatedSlotNameHasBeenSet = false;
+  bool m_intentStateHasBeenSet = false;
+  bool m_dialogActionTypeHasBeenSet = false;
+  bool m_botResponseAudioVoiceIdHasBeenSet = false;
+  bool m_slotsFilledInSessionHasBeenSet = false;
+  bool m_utteranceRequestIdHasBeenSet = false;
   bool m_botResponsesHasBeenSet = false;
 };
 

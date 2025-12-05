@@ -98,9 +98,9 @@ class LustreRootSquashConfiguration {
   ///@}
  private:
   Aws::String m_rootSquash;
-  bool m_rootSquashHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_noSquashNids;
+  bool m_rootSquashHasBeenSet = false;
   bool m_noSquashNidsHasBeenSet = false;
 };
 

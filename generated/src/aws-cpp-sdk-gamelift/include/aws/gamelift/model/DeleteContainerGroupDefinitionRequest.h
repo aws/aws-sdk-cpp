@@ -83,12 +83,12 @@ class DeleteContainerGroupDefinitionRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   int m_versionCountToRetain{0};
+  bool m_nameHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_versionCountToRetainHasBeenSet = false;
 };
 

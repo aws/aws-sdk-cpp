@@ -81,12 +81,12 @@ class RouteSpanDynamicSpeedDetails {
   ///@}
  private:
   double m_bestCaseSpeed{0.0};
-  bool m_bestCaseSpeedHasBeenSet = false;
 
   long long m_turnDuration{0};
-  bool m_turnDurationHasBeenSet = false;
 
   double m_typicalSpeed{0.0};
+  bool m_bestCaseSpeedHasBeenSet = false;
+  bool m_turnDurationHasBeenSet = false;
   bool m_typicalSpeedHasBeenSet = false;
 };
 

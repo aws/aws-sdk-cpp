@@ -90,12 +90,12 @@ class TemplatedMessageConfig {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_messageTemplateId;
-  bool m_messageTemplateIdHasBeenSet = false;
 
   TemplateAttributes m_templateAttributes;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
   bool m_templateAttributesHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeLDAPSSettingsResult {
   ///@}
  private:
   Aws::Vector<LDAPSSettingInfo> m_lDAPSSettingsInfo;
-  bool m_lDAPSSettingsInfoHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lDAPSSettingsInfoHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

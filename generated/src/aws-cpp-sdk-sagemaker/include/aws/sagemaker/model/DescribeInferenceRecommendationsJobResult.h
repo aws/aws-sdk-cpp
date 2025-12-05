@@ -302,48 +302,48 @@ class DescribeInferenceRecommendationsJobResult {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobDescription;
-  bool m_jobDescriptionHasBeenSet = false;
 
   RecommendationJobType m_jobType{RecommendationJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   RecommendationJobStatus m_status{RecommendationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   RecommendationJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   RecommendationJobStoppingConditions m_stoppingConditions;
-  bool m_stoppingConditionsHasBeenSet = false;
 
   Aws::Vector<InferenceRecommendation> m_inferenceRecommendations;
-  bool m_inferenceRecommendationsHasBeenSet = false;
 
   Aws::Vector<EndpointPerformance> m_endpointPerformances;
-  bool m_endpointPerformancesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobDescriptionHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_stoppingConditionsHasBeenSet = false;
+  bool m_inferenceRecommendationsHasBeenSet = false;
+  bool m_endpointPerformancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

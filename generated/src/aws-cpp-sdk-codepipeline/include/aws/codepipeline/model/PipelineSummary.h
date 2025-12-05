@@ -152,21 +152,21 @@ class PipelineSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_version{0};
-  bool m_versionHasBeenSet = false;
 
   PipelineType m_pipelineType{PipelineType::NOT_SET};
-  bool m_pipelineTypeHasBeenSet = false;
 
   ExecutionMode m_executionMode{ExecutionMode::NOT_SET};
-  bool m_executionModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_updated{};
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_pipelineTypeHasBeenSet = false;
+  bool m_executionModeHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
   bool m_updatedHasBeenSet = false;
 };
 

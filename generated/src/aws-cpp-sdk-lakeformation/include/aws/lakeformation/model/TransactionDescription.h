@@ -106,15 +106,15 @@ class TransactionDescription {
   ///@}
  private:
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   TransactionStatus m_transactionStatus{TransactionStatus::NOT_SET};
-  bool m_transactionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_transactionStartTime{};
-  bool m_transactionStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_transactionEndTime{};
+  bool m_transactionIdHasBeenSet = false;
+  bool m_transactionStatusHasBeenSet = false;
+  bool m_transactionStartTimeHasBeenSet = false;
   bool m_transactionEndTimeHasBeenSet = false;
 };
 

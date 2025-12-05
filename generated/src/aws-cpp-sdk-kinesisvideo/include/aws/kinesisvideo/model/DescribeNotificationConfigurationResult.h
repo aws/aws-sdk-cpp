@@ -62,9 +62,9 @@ class DescribeNotificationConfigurationResult {
   ///@}
  private:
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

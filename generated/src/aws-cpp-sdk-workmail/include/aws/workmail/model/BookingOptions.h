@@ -79,12 +79,12 @@ class BookingOptions {
   ///@}
  private:
   bool m_autoAcceptRequests{false};
-  bool m_autoAcceptRequestsHasBeenSet = false;
 
   bool m_autoDeclineRecurringRequests{false};
-  bool m_autoDeclineRecurringRequestsHasBeenSet = false;
 
   bool m_autoDeclineConflictingRequests{false};
+  bool m_autoAcceptRequestsHasBeenSet = false;
+  bool m_autoDeclineRecurringRequestsHasBeenSet = false;
   bool m_autoDeclineConflictingRequestsHasBeenSet = false;
 };
 

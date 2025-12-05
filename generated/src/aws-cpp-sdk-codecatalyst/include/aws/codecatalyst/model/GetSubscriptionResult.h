@@ -118,18 +118,18 @@ class GetSubscriptionResult {
   ///@}
  private:
   Aws::String m_subscriptionType;
-  bool m_subscriptionTypeHasBeenSet = false;
 
   Aws::String m_awsAccountName;
-  bool m_awsAccountNameHasBeenSet = false;
 
   Aws::String m_pendingSubscriptionType;
-  bool m_pendingSubscriptionTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_pendingSubscriptionStartTime{};
-  bool m_pendingSubscriptionStartTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionTypeHasBeenSet = false;
+  bool m_awsAccountNameHasBeenSet = false;
+  bool m_pendingSubscriptionTypeHasBeenSet = false;
+  bool m_pendingSubscriptionStartTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

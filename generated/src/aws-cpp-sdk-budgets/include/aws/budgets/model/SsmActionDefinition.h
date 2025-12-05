@@ -93,12 +93,12 @@ class SsmActionDefinition {
   ///@}
  private:
   ActionSubType m_actionSubType{ActionSubType::NOT_SET};
-  bool m_actionSubTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
+  bool m_actionSubTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_instanceIdsHasBeenSet = false;
 };
 

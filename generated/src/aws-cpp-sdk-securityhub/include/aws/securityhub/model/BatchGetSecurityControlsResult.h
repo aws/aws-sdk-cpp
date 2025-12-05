@@ -96,12 +96,12 @@ class BatchGetSecurityControlsResult {
   ///@}
  private:
   Aws::Vector<SecurityControl> m_securityControls;
-  bool m_securityControlsHasBeenSet = false;
 
   Aws::Vector<UnprocessedSecurityControl> m_unprocessedIds;
-  bool m_unprocessedIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityControlsHasBeenSet = false;
+  bool m_unprocessedIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

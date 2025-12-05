@@ -216,24 +216,24 @@ class AssetBundleImportJobOverrideTags {
   ///@}
  private:
   Aws::Vector<AssetBundleImportJobVPCConnectionOverrideTags> m_vPCConnections;
-  bool m_vPCConnectionsHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobDataSourceOverrideTags> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobDataSetOverrideTags> m_dataSets;
-  bool m_dataSetsHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobThemeOverrideTags> m_themes;
-  bool m_themesHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobAnalysisOverrideTags> m_analyses;
-  bool m_analysesHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobDashboardOverrideTags> m_dashboards;
-  bool m_dashboardsHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobFolderOverrideTags> m_folders;
+  bool m_vPCConnectionsHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_dataSetsHasBeenSet = false;
+  bool m_themesHasBeenSet = false;
+  bool m_analysesHasBeenSet = false;
+  bool m_dashboardsHasBeenSet = false;
   bool m_foldersHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListPackagesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PackageListItem> m_packages;
-  bool m_packagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_packagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

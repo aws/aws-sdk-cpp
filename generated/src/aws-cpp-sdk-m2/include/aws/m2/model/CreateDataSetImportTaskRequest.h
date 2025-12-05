@@ -91,12 +91,12 @@ class CreateDataSetImportTaskRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DataSetImportConfig m_importConfig;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_importConfigHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class FindingDetails {
   ///@}
  private:
   CloudFormationStackUpdate m_cloudFormationStackUpdate;
-  bool m_cloudFormationStackUpdateHasBeenSet = false;
 
   CodeDeployDeployment m_codeDeployDeployment;
+  bool m_cloudFormationStackUpdateHasBeenSet = false;
   bool m_codeDeployDeploymentHasBeenSet = false;
 };
 

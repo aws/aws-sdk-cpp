@@ -94,12 +94,12 @@ class EvaluationFormSingleSelectQuestionProperties {
   ///@}
  private:
   Aws::Vector<EvaluationFormSingleSelectQuestionOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   EvaluationFormSingleSelectQuestionDisplayMode m_displayAs{EvaluationFormSingleSelectQuestionDisplayMode::NOT_SET};
-  bool m_displayAsHasBeenSet = false;
 
   EvaluationFormSingleSelectQuestionAutomation m_automation;
+  bool m_optionsHasBeenSet = false;
+  bool m_displayAsHasBeenSet = false;
   bool m_automationHasBeenSet = false;
 };
 

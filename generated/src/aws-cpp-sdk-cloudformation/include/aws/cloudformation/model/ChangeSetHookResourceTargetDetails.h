@@ -89,12 +89,12 @@ class ChangeSetHookResourceTargetDetails {
   ///@}
  private:
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   ChangeAction m_resourceAction{ChangeAction::NOT_SET};
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceActionHasBeenSet = false;
 };
 

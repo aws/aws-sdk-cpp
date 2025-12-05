@@ -173,24 +173,24 @@ class ModifySnapshotAttributeRequest : public EC2Request {
   ///@}
  private:
   SnapshotAttributeName m_attribute{SnapshotAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   CreateVolumePermissionModifications m_createVolumePermission;
-  bool m_createVolumePermissionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupNames;
-  bool m_groupNamesHasBeenSet = false;
 
   OperationType m_operationType{OperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_attributeHasBeenSet = false;
+  bool m_createVolumePermissionHasBeenSet = false;
+  bool m_groupNamesHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

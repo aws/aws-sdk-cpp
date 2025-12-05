@@ -237,33 +237,33 @@ class EndpointGroup {
   ///@}
  private:
   Aws::String m_endpointGroupArn;
-  bool m_endpointGroupArnHasBeenSet = false;
 
   Aws::String m_endpointGroupRegion;
-  bool m_endpointGroupRegionHasBeenSet = false;
 
   Aws::Vector<EndpointDescription> m_endpointDescriptions;
-  bool m_endpointDescriptionsHasBeenSet = false;
 
   double m_trafficDialPercentage{0.0};
-  bool m_trafficDialPercentageHasBeenSet = false;
 
   int m_healthCheckPort{0};
-  bool m_healthCheckPortHasBeenSet = false;
 
   HealthCheckProtocol m_healthCheckProtocol{HealthCheckProtocol::NOT_SET};
-  bool m_healthCheckProtocolHasBeenSet = false;
 
   Aws::String m_healthCheckPath;
-  bool m_healthCheckPathHasBeenSet = false;
 
   int m_healthCheckIntervalSeconds{0};
-  bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
   int m_thresholdCount{0};
-  bool m_thresholdCountHasBeenSet = false;
 
   Aws::Vector<PortOverride> m_portOverrides;
+  bool m_endpointGroupArnHasBeenSet = false;
+  bool m_endpointGroupRegionHasBeenSet = false;
+  bool m_endpointDescriptionsHasBeenSet = false;
+  bool m_trafficDialPercentageHasBeenSet = false;
+  bool m_healthCheckPortHasBeenSet = false;
+  bool m_healthCheckProtocolHasBeenSet = false;
+  bool m_healthCheckPathHasBeenSet = false;
+  bool m_healthCheckIntervalSecondsHasBeenSet = false;
+  bool m_thresholdCountHasBeenSet = false;
   bool m_portOverridesHasBeenSet = false;
 };
 

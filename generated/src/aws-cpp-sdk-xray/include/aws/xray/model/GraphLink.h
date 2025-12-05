@@ -93,12 +93,12 @@ class GraphLink {
   ///@}
  private:
   Aws::String m_referenceType;
-  bool m_referenceTypeHasBeenSet = false;
 
   Aws::String m_sourceTraceId;
-  bool m_sourceTraceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationTraceIds;
+  bool m_referenceTypeHasBeenSet = false;
+  bool m_sourceTraceIdHasBeenSet = false;
   bool m_destinationTraceIdsHasBeenSet = false;
 };
 

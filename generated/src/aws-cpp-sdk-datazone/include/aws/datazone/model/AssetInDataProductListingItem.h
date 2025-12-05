@@ -86,12 +86,12 @@ class AssetInDataProductListingItem {
   ///@}
  private:
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityRevision;
-  bool m_entityRevisionHasBeenSet = false;
 
   Aws::String m_entityType;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityRevisionHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
 };
 

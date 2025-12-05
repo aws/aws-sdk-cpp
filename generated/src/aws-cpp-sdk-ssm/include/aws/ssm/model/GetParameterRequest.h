@@ -74,9 +74,9 @@ class GetParameterRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_withDecryption{false};
+  bool m_nameHasBeenSet = false;
   bool m_withDecryptionHasBeenSet = false;
 };
 

@@ -170,24 +170,24 @@ class CreateUsageLimitRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   UsageLimitFeatureType m_featureType{UsageLimitFeatureType::NOT_SET};
-  bool m_featureTypeHasBeenSet = false;
 
   UsageLimitLimitType m_limitType{UsageLimitLimitType::NOT_SET};
-  bool m_limitTypeHasBeenSet = false;
 
   long long m_amount{0};
-  bool m_amountHasBeenSet = false;
 
   UsageLimitPeriod m_period{UsageLimitPeriod::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   UsageLimitBreachAction m_breachAction{UsageLimitBreachAction::NOT_SET};
-  bool m_breachActionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_featureTypeHasBeenSet = false;
+  bool m_limitTypeHasBeenSet = false;
+  bool m_amountHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_breachActionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeLocalGatewaysResponse {
   ///@}
  private:
   Aws::Vector<LocalGateway> m_localGateways;
-  bool m_localGatewaysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_localGatewaysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

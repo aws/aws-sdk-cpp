@@ -257,39 +257,39 @@ class WaterfallChartConfiguration {
   ///@}
  private:
   WaterfallChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   WaterfallChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   WaterfallChartOptions m_waterfallChartOptions;
-  bool m_waterfallChartOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryAxisLabelOptions;
-  bool m_categoryAxisLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_categoryAxisDisplayOptions;
-  bool m_categoryAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_primaryYAxisLabelOptions;
-  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_primaryYAxisDisplayOptions;
-  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   WaterfallChartColorConfiguration m_colorConfiguration;
-  bool m_colorConfigurationHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_waterfallChartOptionsHasBeenSet = false;
+  bool m_categoryAxisLabelOptionsHasBeenSet = false;
+  bool m_categoryAxisDisplayOptionsHasBeenSet = false;
+  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
+  bool m_colorConfigurationHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

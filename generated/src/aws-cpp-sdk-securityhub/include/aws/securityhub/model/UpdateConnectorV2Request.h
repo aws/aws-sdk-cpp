@@ -84,12 +84,12 @@ class UpdateConnectorV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProviderUpdateConfiguration m_provider;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_providerHasBeenSet = false;
 };
 

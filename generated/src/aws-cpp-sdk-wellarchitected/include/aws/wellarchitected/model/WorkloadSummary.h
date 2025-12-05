@@ -220,33 +220,33 @@ class WorkloadSummary {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_workloadArn;
-  bool m_workloadArnHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lenses;
-  bool m_lensesHasBeenSet = false;
 
   Aws::Map<Risk, int> m_riskCounts;
-  bool m_riskCountsHasBeenSet = false;
 
   WorkloadImprovementStatus m_improvementStatus{WorkloadImprovementStatus::NOT_SET};
-  bool m_improvementStatusHasBeenSet = false;
 
   Aws::Vector<WorkloadProfile> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   Aws::Map<Risk, int> m_prioritizedRiskCounts;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadArnHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_lensesHasBeenSet = false;
+  bool m_riskCountsHasBeenSet = false;
+  bool m_improvementStatusHasBeenSet = false;
+  bool m_profilesHasBeenSet = false;
   bool m_prioritizedRiskCountsHasBeenSet = false;
 };
 

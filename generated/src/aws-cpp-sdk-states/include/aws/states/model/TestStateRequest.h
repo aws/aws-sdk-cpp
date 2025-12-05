@@ -239,33 +239,33 @@ class TestStateRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   InspectionLevel m_inspectionLevel{InspectionLevel::NOT_SET};
-  bool m_inspectionLevelHasBeenSet = false;
 
   bool m_revealSecrets{false};
-  bool m_revealSecretsHasBeenSet = false;
 
   Aws::String m_variables;
-  bool m_variablesHasBeenSet = false;
 
   Aws::String m_stateName;
-  bool m_stateNameHasBeenSet = false;
 
   MockInput m_mock;
-  bool m_mockHasBeenSet = false;
 
   Aws::String m_context;
-  bool m_contextHasBeenSet = false;
 
   TestStateConfiguration m_stateConfiguration;
+  bool m_definitionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_inspectionLevelHasBeenSet = false;
+  bool m_revealSecretsHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
+  bool m_stateNameHasBeenSet = false;
+  bool m_mockHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
   bool m_stateConfigurationHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class AttributeDetails {
   ///@}
  private:
   Aws::Vector<AttributeItem> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_attributesHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

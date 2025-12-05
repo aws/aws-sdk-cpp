@@ -60,9 +60,9 @@ class CreateAIPromptResult {
   ///@}
  private:
   AIPromptData m_aiPrompt;
-  bool m_aiPromptHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aiPromptHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

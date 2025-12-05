@@ -78,9 +78,9 @@ class DescribeServicesRequest : public SupportRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_serviceCodeList;
-  bool m_serviceCodeListHasBeenSet = false;
 
   Aws::String m_language;
+  bool m_serviceCodeListHasBeenSet = false;
   bool m_languageHasBeenSet = false;
 };
 

@@ -88,9 +88,9 @@ class ListTrafficPoliciesRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_trafficPolicyIdMarker;
-  bool m_trafficPolicyIdMarkerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_trafficPolicyIdMarkerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

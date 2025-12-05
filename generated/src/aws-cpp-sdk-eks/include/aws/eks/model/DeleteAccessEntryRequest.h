@@ -65,9 +65,9 @@ class DeleteAccessEntryRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_principalArn;
+  bool m_clusterNameHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
 };
 

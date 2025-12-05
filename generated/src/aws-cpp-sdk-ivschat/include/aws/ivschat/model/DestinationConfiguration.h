@@ -94,12 +94,12 @@ class DestinationConfiguration {
   ///@}
  private:
   S3DestinationConfiguration m_s3;
-  bool m_s3HasBeenSet = false;
 
   CloudWatchLogsDestinationConfiguration m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   FirehoseDestinationConfiguration m_firehose;
+  bool m_s3HasBeenSet = false;
+  bool m_cloudWatchLogsHasBeenSet = false;
   bool m_firehoseHasBeenSet = false;
 };
 

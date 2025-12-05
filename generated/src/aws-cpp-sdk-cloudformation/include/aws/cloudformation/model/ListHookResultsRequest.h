@@ -138,18 +138,18 @@ class ListHookResultsRequest : public CloudFormationRequest {
   ///@}
  private:
   ListHookResultsTargetType m_targetType{ListHookResultsTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   HookStatus m_status{HookStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_typeArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

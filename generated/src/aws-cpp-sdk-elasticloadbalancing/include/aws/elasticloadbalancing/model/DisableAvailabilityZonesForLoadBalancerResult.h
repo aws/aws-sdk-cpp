@@ -75,9 +75,9 @@ class DisableAvailabilityZonesForLoadBalancerResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_availabilityZonesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

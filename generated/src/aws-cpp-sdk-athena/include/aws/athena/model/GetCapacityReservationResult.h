@@ -60,9 +60,9 @@ class GetCapacityReservationResult {
   ///@}
  private:
   CapacityReservation m_capacityReservation;
-  bool m_capacityReservationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityReservationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

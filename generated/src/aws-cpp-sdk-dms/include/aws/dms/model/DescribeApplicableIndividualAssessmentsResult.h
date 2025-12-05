@@ -99,12 +99,12 @@ class DescribeApplicableIndividualAssessmentsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_individualAssessmentNames;
-  bool m_individualAssessmentNamesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_individualAssessmentNamesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

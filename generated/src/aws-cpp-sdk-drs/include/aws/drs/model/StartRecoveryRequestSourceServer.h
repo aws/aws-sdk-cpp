@@ -70,9 +70,9 @@ class StartRecoveryRequestSourceServer {
   ///@}
  private:
   Aws::String m_recoverySnapshotID;
-  bool m_recoverySnapshotIDHasBeenSet = false;
 
   Aws::String m_sourceServerID;
+  bool m_recoverySnapshotIDHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
 };
 

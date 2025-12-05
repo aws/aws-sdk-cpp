@@ -102,12 +102,12 @@ class HandshakeResource {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   HandshakeResourceType m_type{HandshakeResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<HandshakeResource> m_resources;
+  bool m_valueHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

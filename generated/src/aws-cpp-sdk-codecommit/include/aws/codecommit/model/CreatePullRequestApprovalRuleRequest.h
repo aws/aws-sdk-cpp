@@ -109,12 +109,12 @@ class CreatePullRequestApprovalRuleRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   Aws::String m_approvalRuleName;
-  bool m_approvalRuleNameHasBeenSet = false;
 
   Aws::String m_approvalRuleContent;
+  bool m_pullRequestIdHasBeenSet = false;
+  bool m_approvalRuleNameHasBeenSet = false;
   bool m_approvalRuleContentHasBeenSet = false;
 };
 

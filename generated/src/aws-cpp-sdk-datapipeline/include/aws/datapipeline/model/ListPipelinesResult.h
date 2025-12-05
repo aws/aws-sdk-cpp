@@ -109,15 +109,15 @@ class ListPipelinesResult {
   ///@}
  private:
   Aws::Vector<PipelineIdName> m_pipelineIdList;
-  bool m_pipelineIdListHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_hasMoreResults{false};
-  bool m_hasMoreResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineIdListHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_hasMoreResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

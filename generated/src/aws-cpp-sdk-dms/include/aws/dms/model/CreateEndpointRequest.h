@@ -793,108 +793,108 @@ class CreateEndpointRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_endpointIdentifier;
-  bool m_endpointIdentifierHasBeenSet = false;
 
   ReplicationEndpointTypeValue m_endpointType{ReplicationEndpointTypeValue::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_extraConnectionAttributes;
-  bool m_extraConnectionAttributesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   DmsSslModeValue m_sslMode{DmsSslModeValue::NOT_SET};
-  bool m_sslModeHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_externalTableDefinition;
-  bool m_externalTableDefinitionHasBeenSet = false;
 
   DynamoDbSettings m_dynamoDbSettings;
-  bool m_dynamoDbSettingsHasBeenSet = false;
 
   S3Settings m_s3Settings;
-  bool m_s3SettingsHasBeenSet = false;
 
   DmsTransferSettings m_dmsTransferSettings;
-  bool m_dmsTransferSettingsHasBeenSet = false;
 
   MongoDbSettings m_mongoDbSettings;
-  bool m_mongoDbSettingsHasBeenSet = false;
 
   KinesisSettings m_kinesisSettings;
-  bool m_kinesisSettingsHasBeenSet = false;
 
   KafkaSettings m_kafkaSettings;
-  bool m_kafkaSettingsHasBeenSet = false;
 
   ElasticsearchSettings m_elasticsearchSettings;
-  bool m_elasticsearchSettingsHasBeenSet = false;
 
   NeptuneSettings m_neptuneSettings;
-  bool m_neptuneSettingsHasBeenSet = false;
 
   RedshiftSettings m_redshiftSettings;
-  bool m_redshiftSettingsHasBeenSet = false;
 
   PostgreSQLSettings m_postgreSQLSettings;
-  bool m_postgreSQLSettingsHasBeenSet = false;
 
   MySQLSettings m_mySQLSettings;
-  bool m_mySQLSettingsHasBeenSet = false;
 
   OracleSettings m_oracleSettings;
-  bool m_oracleSettingsHasBeenSet = false;
 
   SybaseSettings m_sybaseSettings;
-  bool m_sybaseSettingsHasBeenSet = false;
 
   MicrosoftSQLServerSettings m_microsoftSQLServerSettings;
-  bool m_microsoftSQLServerSettingsHasBeenSet = false;
 
   IBMDb2Settings m_iBMDb2Settings;
-  bool m_iBMDb2SettingsHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   DocDbSettings m_docDbSettings;
-  bool m_docDbSettingsHasBeenSet = false;
 
   RedisSettings m_redisSettings;
-  bool m_redisSettingsHasBeenSet = false;
 
   GcpMySQLSettings m_gcpMySQLSettings;
-  bool m_gcpMySQLSettingsHasBeenSet = false;
 
   TimestreamSettings m_timestreamSettings;
+  bool m_endpointIdentifierHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_extraConnectionAttributesHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_sslModeHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_externalTableDefinitionHasBeenSet = false;
+  bool m_dynamoDbSettingsHasBeenSet = false;
+  bool m_s3SettingsHasBeenSet = false;
+  bool m_dmsTransferSettingsHasBeenSet = false;
+  bool m_mongoDbSettingsHasBeenSet = false;
+  bool m_kinesisSettingsHasBeenSet = false;
+  bool m_kafkaSettingsHasBeenSet = false;
+  bool m_elasticsearchSettingsHasBeenSet = false;
+  bool m_neptuneSettingsHasBeenSet = false;
+  bool m_redshiftSettingsHasBeenSet = false;
+  bool m_postgreSQLSettingsHasBeenSet = false;
+  bool m_mySQLSettingsHasBeenSet = false;
+  bool m_oracleSettingsHasBeenSet = false;
+  bool m_sybaseSettingsHasBeenSet = false;
+  bool m_microsoftSQLServerSettingsHasBeenSet = false;
+  bool m_iBMDb2SettingsHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_docDbSettingsHasBeenSet = false;
+  bool m_redisSettingsHasBeenSet = false;
+  bool m_gcpMySQLSettingsHasBeenSet = false;
   bool m_timestreamSettingsHasBeenSet = false;
 };
 

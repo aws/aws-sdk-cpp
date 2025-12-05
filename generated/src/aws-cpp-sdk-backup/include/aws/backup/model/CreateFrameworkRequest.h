@@ -142,18 +142,18 @@ class CreateFrameworkRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_frameworkName;
-  bool m_frameworkNameHasBeenSet = false;
 
   Aws::String m_frameworkDescription;
-  bool m_frameworkDescriptionHasBeenSet = false;
 
   Aws::Vector<FrameworkControl> m_frameworkControls;
-  bool m_frameworkControlsHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_frameworkTags;
+  bool m_frameworkNameHasBeenSet = false;
+  bool m_frameworkDescriptionHasBeenSet = false;
+  bool m_frameworkControlsHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
   bool m_frameworkTagsHasBeenSet = false;
 };
 

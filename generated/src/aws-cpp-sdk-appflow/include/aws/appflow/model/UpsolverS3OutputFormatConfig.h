@@ -84,12 +84,12 @@ class UpsolverS3OutputFormatConfig {
   ///@}
  private:
   FileType m_fileType{FileType::NOT_SET};
-  bool m_fileTypeHasBeenSet = false;
 
   PrefixConfig m_prefixConfig;
-  bool m_prefixConfigHasBeenSet = false;
 
   AggregationConfig m_aggregationConfig;
+  bool m_fileTypeHasBeenSet = false;
+  bool m_prefixConfigHasBeenSet = false;
   bool m_aggregationConfigHasBeenSet = false;
 };
 

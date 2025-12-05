@@ -87,12 +87,12 @@ class ListDirectoryRegistrationsResult {
   ///@}
  private:
   Aws::Vector<DirectoryRegistrationSummary> m_directoryRegistrations;
-  bool m_directoryRegistrationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryRegistrationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class DataSourceCredentials {
   ///@}
  private:
   CredentialPair m_credentialPair;
-  bool m_credentialPairHasBeenSet = false;
 
   Aws::String m_copySourceArn;
-  bool m_copySourceArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   WebProxyCredentials m_webProxyCredentials;
+  bool m_credentialPairHasBeenSet = false;
+  bool m_copySourceArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
   bool m_webProxyCredentialsHasBeenSet = false;
 };
 

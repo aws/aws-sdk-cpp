@@ -119,18 +119,18 @@ class SelectAggregateResourceConfigRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_expressionHasBeenSet = false;
+  bool m_configurationAggregatorNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

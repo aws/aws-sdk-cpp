@@ -146,24 +146,24 @@ class ExecuteCommandResult {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_containerArn;
-  bool m_containerArnHasBeenSet = false;
 
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   bool m_interactive{false};
-  bool m_interactiveHasBeenSet = false;
 
   Session m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_containerArnHasBeenSet = false;
+  bool m_containerNameHasBeenSet = false;
+  bool m_interactiveHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -1172,141 +1172,141 @@ class FilterCriteria {
   ///@}
  private:
   Aws::Vector<StringFilter> m_findingArn;
-  bool m_findingArnHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_findingType;
-  bool m_findingTypeHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_firstObservedAt;
-  bool m_firstObservedAtHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_lastObservedAt;
-  bool m_lastObservedAtHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_updatedAt;
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_findingStatus;
-  bool m_findingStatusHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<NumberFilter> m_inspectorScore;
-  bool m_inspectorScoreHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<MapFilter> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ec2InstanceImageId;
-  bool m_ec2InstanceImageIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ec2InstanceVpcId;
-  bool m_ec2InstanceVpcIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ec2InstanceSubnetId;
-  bool m_ec2InstanceSubnetIdHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_ecrImagePushedAt;
-  bool m_ecrImagePushedAtHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ecrImageArchitecture;
-  bool m_ecrImageArchitectureHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ecrImageRegistry;
-  bool m_ecrImageRegistryHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ecrImageRepositoryName;
-  bool m_ecrImageRepositoryNameHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ecrImageTags;
-  bool m_ecrImageTagsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_ecrImageHash;
-  bool m_ecrImageHashHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_ecrImageLastInUseAt;
-  bool m_ecrImageLastInUseAtHasBeenSet = false;
 
   Aws::Vector<NumberFilter> m_ecrImageInUseCount;
-  bool m_ecrImageInUseCountHasBeenSet = false;
 
   Aws::Vector<PortRangeFilter> m_portRange;
-  bool m_portRangeHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_networkProtocol;
-  bool m_networkProtocolHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_componentType;
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_vulnerabilityId;
-  bool m_vulnerabilityIdHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_vulnerabilitySource;
-  bool m_vulnerabilitySourceHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_vendorSeverity;
-  bool m_vendorSeverityHasBeenSet = false;
 
   Aws::Vector<PackageFilter> m_vulnerablePackages;
-  bool m_vulnerablePackagesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_relatedVulnerabilities;
-  bool m_relatedVulnerabilitiesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_fixAvailable;
-  bool m_fixAvailableHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_lambdaFunctionName;
-  bool m_lambdaFunctionNameHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_lambdaFunctionLayers;
-  bool m_lambdaFunctionLayersHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_lambdaFunctionRuntime;
-  bool m_lambdaFunctionRuntimeHasBeenSet = false;
 
   Aws::Vector<DateFilter> m_lambdaFunctionLastModifiedAt;
-  bool m_lambdaFunctionLastModifiedAtHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_lambdaFunctionExecutionRoleArn;
-  bool m_lambdaFunctionExecutionRoleArnHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_exploitAvailable;
-  bool m_exploitAvailableHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_codeVulnerabilityDetectorName;
-  bool m_codeVulnerabilityDetectorNameHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_codeVulnerabilityDetectorTags;
-  bool m_codeVulnerabilityDetectorTagsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_codeVulnerabilityFilePath;
-  bool m_codeVulnerabilityFilePathHasBeenSet = false;
 
   Aws::Vector<NumberFilter> m_epssScore;
-  bool m_epssScoreHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_codeRepositoryProjectName;
-  bool m_codeRepositoryProjectNameHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_codeRepositoryProviderType;
+  bool m_findingArnHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_findingTypeHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_firstObservedAtHasBeenSet = false;
+  bool m_lastObservedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_findingStatusHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_inspectorScoreHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_ec2InstanceImageIdHasBeenSet = false;
+  bool m_ec2InstanceVpcIdHasBeenSet = false;
+  bool m_ec2InstanceSubnetIdHasBeenSet = false;
+  bool m_ecrImagePushedAtHasBeenSet = false;
+  bool m_ecrImageArchitectureHasBeenSet = false;
+  bool m_ecrImageRegistryHasBeenSet = false;
+  bool m_ecrImageRepositoryNameHasBeenSet = false;
+  bool m_ecrImageTagsHasBeenSet = false;
+  bool m_ecrImageHashHasBeenSet = false;
+  bool m_ecrImageLastInUseAtHasBeenSet = false;
+  bool m_ecrImageInUseCountHasBeenSet = false;
+  bool m_portRangeHasBeenSet = false;
+  bool m_networkProtocolHasBeenSet = false;
+  bool m_componentIdHasBeenSet = false;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_vulnerabilityIdHasBeenSet = false;
+  bool m_vulnerabilitySourceHasBeenSet = false;
+  bool m_vendorSeverityHasBeenSet = false;
+  bool m_vulnerablePackagesHasBeenSet = false;
+  bool m_relatedVulnerabilitiesHasBeenSet = false;
+  bool m_fixAvailableHasBeenSet = false;
+  bool m_lambdaFunctionNameHasBeenSet = false;
+  bool m_lambdaFunctionLayersHasBeenSet = false;
+  bool m_lambdaFunctionRuntimeHasBeenSet = false;
+  bool m_lambdaFunctionLastModifiedAtHasBeenSet = false;
+  bool m_lambdaFunctionExecutionRoleArnHasBeenSet = false;
+  bool m_exploitAvailableHasBeenSet = false;
+  bool m_codeVulnerabilityDetectorNameHasBeenSet = false;
+  bool m_codeVulnerabilityDetectorTagsHasBeenSet = false;
+  bool m_codeVulnerabilityFilePathHasBeenSet = false;
+  bool m_epssScoreHasBeenSet = false;
+  bool m_codeRepositoryProjectNameHasBeenSet = false;
   bool m_codeRepositoryProviderTypeHasBeenSet = false;
 };
 

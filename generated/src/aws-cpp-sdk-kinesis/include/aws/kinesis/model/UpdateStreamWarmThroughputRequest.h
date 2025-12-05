@@ -90,12 +90,12 @@ class UpdateStreamWarmThroughputRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   int m_warmThroughputMiBps{0};
+  bool m_streamARNHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
   bool m_warmThroughputMiBpsHasBeenSet = false;
 };
 

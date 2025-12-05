@@ -69,9 +69,9 @@ class StartConfigurationPolicyAssociationRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_configurationPolicyIdentifier;
-  bool m_configurationPolicyIdentifierHasBeenSet = false;
 
   Target m_target;
+  bool m_configurationPolicyIdentifierHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

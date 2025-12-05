@@ -60,9 +60,9 @@ class AssociateCustomerGatewayResult {
   ///@}
  private:
   CustomerGatewayAssociation m_customerGatewayAssociation;
-  bool m_customerGatewayAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customerGatewayAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -253,39 +253,39 @@ class ServiceUpdate {
   ///@}
  private:
   Aws::String m_serviceUpdateName;
-  bool m_serviceUpdateNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_serviceUpdateReleaseDate{};
-  bool m_serviceUpdateReleaseDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_serviceUpdateEndDate{};
-  bool m_serviceUpdateEndDateHasBeenSet = false;
 
   ServiceUpdateSeverity m_serviceUpdateSeverity{ServiceUpdateSeverity::NOT_SET};
-  bool m_serviceUpdateSeverityHasBeenSet = false;
 
   Aws::Utils::DateTime m_serviceUpdateRecommendedApplyByDate{};
-  bool m_serviceUpdateRecommendedApplyByDateHasBeenSet = false;
 
   ServiceUpdateStatus m_serviceUpdateStatus{ServiceUpdateStatus::NOT_SET};
-  bool m_serviceUpdateStatusHasBeenSet = false;
 
   Aws::String m_serviceUpdateDescription;
-  bool m_serviceUpdateDescriptionHasBeenSet = false;
 
   ServiceUpdateType m_serviceUpdateType{ServiceUpdateType::NOT_SET};
-  bool m_serviceUpdateTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_autoUpdateAfterRecommendedApplyByDate{false};
-  bool m_autoUpdateAfterRecommendedApplyByDateHasBeenSet = false;
 
   Aws::String m_estimatedUpdateTime;
+  bool m_serviceUpdateNameHasBeenSet = false;
+  bool m_serviceUpdateReleaseDateHasBeenSet = false;
+  bool m_serviceUpdateEndDateHasBeenSet = false;
+  bool m_serviceUpdateSeverityHasBeenSet = false;
+  bool m_serviceUpdateRecommendedApplyByDateHasBeenSet = false;
+  bool m_serviceUpdateStatusHasBeenSet = false;
+  bool m_serviceUpdateDescriptionHasBeenSet = false;
+  bool m_serviceUpdateTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_autoUpdateAfterRecommendedApplyByDateHasBeenSet = false;
   bool m_estimatedUpdateTimeHasBeenSet = false;
 };
 

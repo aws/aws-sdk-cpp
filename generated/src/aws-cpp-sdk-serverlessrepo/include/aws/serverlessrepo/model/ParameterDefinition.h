@@ -318,42 +318,42 @@ you use the parameter
   ///@}
  private:
   Aws::String m_allowedPattern;
-  bool m_allowedPatternHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_constraintDescription;
-  bool m_constraintDescriptionHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_maxLength{0};
-  bool m_maxLengthHasBeenSet = false;
 
   int m_maxValue{0};
-  bool m_maxValueHasBeenSet = false;
 
   int m_minLength{0};
-  bool m_minLengthHasBeenSet = false;
 
   int m_minValue{0};
-  bool m_minValueHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_noEcho{false};
-  bool m_noEchoHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_referencedByResources;
-  bool m_referencedByResourcesHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_allowedPatternHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_constraintDescriptionHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_maxLengthHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
+  bool m_minLengthHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_noEchoHasBeenSet = false;
+  bool m_referencedByResourcesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

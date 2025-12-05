@@ -61,9 +61,9 @@ class GetJobTemplateResult {
   ///@}
  private:
   JobTemplate m_jobTemplate;
-  bool m_jobTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

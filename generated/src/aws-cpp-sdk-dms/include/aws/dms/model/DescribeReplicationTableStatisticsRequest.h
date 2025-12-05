@@ -117,15 +117,15 @@ class DescribeReplicationTableStatisticsRequest : public DatabaseMigrationServic
   ///@}
  private:
   Aws::String m_replicationConfigArn;
-  bool m_replicationConfigArnHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_replicationConfigArnHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class CreateWhatsAppMessageTemplateMediaResult {
   ///@}
  private:
   Aws::String m_metaHeaderHandle;
-  bool m_metaHeaderHandleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metaHeaderHandleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

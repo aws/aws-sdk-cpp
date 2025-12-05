@@ -73,9 +73,9 @@ class HandshakeFilter {
   ///@}
  private:
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_parentHandshakeId;
+  bool m_actionTypeHasBeenSet = false;
   bool m_parentHandshakeIdHasBeenSet = false;
 };
 

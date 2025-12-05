@@ -220,30 +220,30 @@ class UpdateDistributionTenant2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::Vector<DomainItem> m_domains;
-  bool m_domainsHasBeenSet = false;
 
   Customizations m_customizations;
-  bool m_customizationsHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_connectionGroupId;
-  bool m_connectionGroupIdHasBeenSet = false;
 
   Aws::String m_ifMatch;
-  bool m_ifMatchHasBeenSet = false;
 
   ManagedCertificateRequest m_managedCertificateRequest;
-  bool m_managedCertificateRequestHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_idHasBeenSet = false;
+  bool m_distributionIdHasBeenSet = false;
+  bool m_domainsHasBeenSet = false;
+  bool m_customizationsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_connectionGroupIdHasBeenSet = false;
+  bool m_ifMatchHasBeenSet = false;
+  bool m_managedCertificateRequestHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

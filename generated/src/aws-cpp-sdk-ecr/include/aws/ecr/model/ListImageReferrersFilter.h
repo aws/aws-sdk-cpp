@@ -79,9 +79,9 @@ class ListImageReferrersFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_artifactTypes;
-  bool m_artifactTypesHasBeenSet = false;
 
   ArtifactStatusFilter m_artifactStatus{ArtifactStatusFilter::NOT_SET};
+  bool m_artifactTypesHasBeenSet = false;
   bool m_artifactStatusHasBeenSet = false;
 };
 

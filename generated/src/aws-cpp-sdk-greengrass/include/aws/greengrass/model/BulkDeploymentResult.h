@@ -185,27 +185,27 @@ class BulkDeploymentResult {
   ///@}
  private:
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_deploymentArn;
-  bool m_deploymentArnHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_deploymentStatus;
-  bool m_deploymentStatusHasBeenSet = false;
 
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_groupArn;
+  bool m_createdAtHasBeenSet = false;
+  bool m_deploymentArnHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_groupArnHasBeenSet = false;
 };
 

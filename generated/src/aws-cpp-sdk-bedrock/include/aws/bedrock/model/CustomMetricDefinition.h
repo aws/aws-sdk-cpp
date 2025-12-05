@@ -112,12 +112,12 @@ class CustomMetricDefinition {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instructions;
-  bool m_instructionsHasBeenSet = false;
 
   Aws::Vector<RatingScaleItem> m_ratingScale;
+  bool m_nameHasBeenSet = false;
+  bool m_instructionsHasBeenSet = false;
   bool m_ratingScaleHasBeenSet = false;
 };
 

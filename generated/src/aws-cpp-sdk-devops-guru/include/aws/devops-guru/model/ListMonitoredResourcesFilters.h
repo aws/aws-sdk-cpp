@@ -75,9 +75,9 @@ class ListMonitoredResourcesFilters {
   ///@}
  private:
   ResourcePermission m_resourcePermission{ResourcePermission::NOT_SET};
-  bool m_resourcePermissionHasBeenSet = false;
 
   Aws::Vector<ResourceTypeFilter> m_resourceTypeFilters;
+  bool m_resourcePermissionHasBeenSet = false;
   bool m_resourceTypeFiltersHasBeenSet = false;
 };
 

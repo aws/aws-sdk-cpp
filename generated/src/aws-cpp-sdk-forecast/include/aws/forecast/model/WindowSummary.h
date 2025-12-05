@@ -126,18 +126,18 @@ class WindowSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_testWindowStart{};
-  bool m_testWindowStartHasBeenSet = false;
 
   Aws::Utils::DateTime m_testWindowEnd{};
-  bool m_testWindowEndHasBeenSet = false;
 
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   Metrics m_metrics;
+  bool m_testWindowStartHasBeenSet = false;
+  bool m_testWindowEndHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

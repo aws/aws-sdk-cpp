@@ -114,15 +114,15 @@ class JobCommand {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_scriptLocation;
-  bool m_scriptLocationHasBeenSet = false;
 
   Aws::String m_pythonVersion;
-  bool m_pythonVersionHasBeenSet = false;
 
   Aws::String m_runtime;
+  bool m_nameHasBeenSet = false;
+  bool m_scriptLocationHasBeenSet = false;
+  bool m_pythonVersionHasBeenSet = false;
   bool m_runtimeHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class RDSDBUtilizationMetric {
   ///@}
  private:
   RDSDBMetricName m_name{RDSDBMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   RDSDBMetricStatistic m_statistic{RDSDBMetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

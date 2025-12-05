@@ -93,9 +93,9 @@ class TrainingDataConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_excludedDatasetColumns;
-  bool m_excludedDatasetColumnsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_includedDatasetColumns;
+  bool m_excludedDatasetColumnsHasBeenSet = false;
   bool m_includedDatasetColumnsHasBeenSet = false;
 };
 

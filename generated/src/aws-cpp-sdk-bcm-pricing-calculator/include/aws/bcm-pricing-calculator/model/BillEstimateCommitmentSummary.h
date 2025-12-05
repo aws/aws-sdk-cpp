@@ -197,30 +197,30 @@ class BillEstimateCommitmentSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   PurchaseAgreementType m_purchaseAgreementType{PurchaseAgreementType::NOT_SET};
-  bool m_purchaseAgreementTypeHasBeenSet = false;
 
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_termLength;
-  bool m_termLengthHasBeenSet = false;
 
   Aws::String m_paymentOption;
-  bool m_paymentOptionHasBeenSet = false;
 
   CostAmount m_upfrontPayment;
-  bool m_upfrontPaymentHasBeenSet = false;
 
   CostAmount m_monthlyPayment;
+  bool m_idHasBeenSet = false;
+  bool m_purchaseAgreementTypeHasBeenSet = false;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_termLengthHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_upfrontPaymentHasBeenSet = false;
   bool m_monthlyPaymentHasBeenSet = false;
 };
 

@@ -157,24 +157,24 @@ class ImportTask {
   ///@}
  private:
   Aws::String m_creationDateTime;
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_endDateTime;
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::String m_importID;
-  bool m_importIDHasBeenSet = false;
 
   double m_progressPercentage{0.0};
-  bool m_progressPercentageHasBeenSet = false;
 
   S3BucketSource m_s3BucketSource;
-  bool m_s3BucketSourceHasBeenSet = false;
 
   ImportStatus m_status{ImportStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ImportTaskSummary m_summary;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_importIDHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
+  bool m_s3BucketSourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
 };
 

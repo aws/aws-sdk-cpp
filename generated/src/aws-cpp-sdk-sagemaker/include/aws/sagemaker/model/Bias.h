@@ -86,12 +86,12 @@ class Bias {
   ///@}
  private:
   MetricsSource m_report;
-  bool m_reportHasBeenSet = false;
 
   MetricsSource m_preTrainingReport;
-  bool m_preTrainingReportHasBeenSet = false;
 
   MetricsSource m_postTrainingReport;
+  bool m_reportHasBeenSet = false;
+  bool m_preTrainingReportHasBeenSet = false;
   bool m_postTrainingReportHasBeenSet = false;
 };
 

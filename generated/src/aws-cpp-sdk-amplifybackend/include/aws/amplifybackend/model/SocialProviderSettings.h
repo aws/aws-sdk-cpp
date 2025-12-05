@@ -98,15 +98,15 @@ class SocialProviderSettings {
   ///@}
  private:
   BackendAuthSocialProviderConfig m_facebook;
-  bool m_facebookHasBeenSet = false;
 
   BackendAuthSocialProviderConfig m_google;
-  bool m_googleHasBeenSet = false;
 
   BackendAuthSocialProviderConfig m_loginWithAmazon;
-  bool m_loginWithAmazonHasBeenSet = false;
 
   BackendAuthAppleProviderConfig m_signInWithApple;
+  bool m_facebookHasBeenSet = false;
+  bool m_googleHasBeenSet = false;
+  bool m_loginWithAmazonHasBeenSet = false;
   bool m_signInWithAppleHasBeenSet = false;
 };
 

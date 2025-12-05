@@ -87,12 +87,12 @@ class QAResult {
   ///@}
  private:
   QAResultType m_resultType{QAResultType::NOT_SET};
-  bool m_resultTypeHasBeenSet = false;
 
   DashboardVisualResult m_dashboardVisual;
-  bool m_dashboardVisualHasBeenSet = false;
 
   GeneratedAnswerResult m_generatedAnswer;
+  bool m_resultTypeHasBeenSet = false;
+  bool m_dashboardVisualHasBeenSet = false;
   bool m_generatedAnswerHasBeenSet = false;
 };
 

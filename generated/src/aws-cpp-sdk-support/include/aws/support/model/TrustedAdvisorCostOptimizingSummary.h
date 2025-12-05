@@ -64,9 +64,9 @@ class TrustedAdvisorCostOptimizingSummary {
   ///@}
  private:
   double m_estimatedMonthlySavings{0.0};
-  bool m_estimatedMonthlySavingsHasBeenSet = false;
 
   double m_estimatedPercentMonthlySavings{0.0};
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
   bool m_estimatedPercentMonthlySavingsHasBeenSet = false;
 };
 

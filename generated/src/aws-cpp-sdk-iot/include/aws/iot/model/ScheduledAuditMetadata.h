@@ -124,18 +124,18 @@ class ScheduledAuditMetadata {
   ///@}
  private:
   Aws::String m_scheduledAuditName;
-  bool m_scheduledAuditNameHasBeenSet = false;
 
   Aws::String m_scheduledAuditArn;
-  bool m_scheduledAuditArnHasBeenSet = false;
 
   AuditFrequency m_frequency{AuditFrequency::NOT_SET};
-  bool m_frequencyHasBeenSet = false;
 
   Aws::String m_dayOfMonth;
-  bool m_dayOfMonthHasBeenSet = false;
 
   DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
+  bool m_scheduledAuditNameHasBeenSet = false;
+  bool m_scheduledAuditArnHasBeenSet = false;
+  bool m_frequencyHasBeenSet = false;
+  bool m_dayOfMonthHasBeenSet = false;
   bool m_dayOfWeekHasBeenSet = false;
 };
 

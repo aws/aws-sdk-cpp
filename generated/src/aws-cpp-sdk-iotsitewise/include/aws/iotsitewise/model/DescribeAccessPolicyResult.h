@@ -170,27 +170,27 @@ class DescribeAccessPolicyResult {
   ///@}
  private:
   Aws::String m_accessPolicyId;
-  bool m_accessPolicyIdHasBeenSet = false;
 
   Aws::String m_accessPolicyArn;
-  bool m_accessPolicyArnHasBeenSet = false;
 
   Identity m_accessPolicyIdentity;
-  bool m_accessPolicyIdentityHasBeenSet = false;
 
   Resource m_accessPolicyResource;
-  bool m_accessPolicyResourceHasBeenSet = false;
 
   Permission m_accessPolicyPermission{Permission::NOT_SET};
-  bool m_accessPolicyPermissionHasBeenSet = false;
 
   Aws::Utils::DateTime m_accessPolicyCreationDate{};
-  bool m_accessPolicyCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_accessPolicyLastUpdateDate{};
-  bool m_accessPolicyLastUpdateDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessPolicyIdHasBeenSet = false;
+  bool m_accessPolicyArnHasBeenSet = false;
+  bool m_accessPolicyIdentityHasBeenSet = false;
+  bool m_accessPolicyResourceHasBeenSet = false;
+  bool m_accessPolicyPermissionHasBeenSet = false;
+  bool m_accessPolicyCreationDateHasBeenSet = false;
+  bool m_accessPolicyLastUpdateDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -243,30 +243,30 @@ class DescribeAlarmsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_alarmNames;
-  bool m_alarmNamesHasBeenSet = false;
 
   Aws::String m_alarmNamePrefix;
-  bool m_alarmNamePrefixHasBeenSet = false;
 
   Aws::Vector<AlarmType> m_alarmTypes;
-  bool m_alarmTypesHasBeenSet = false;
 
   Aws::String m_childrenOfAlarmName;
-  bool m_childrenOfAlarmNameHasBeenSet = false;
 
   Aws::String m_parentsOfAlarmName;
-  bool m_parentsOfAlarmNameHasBeenSet = false;
 
   StateValue m_stateValue{StateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   Aws::String m_actionPrefix;
-  bool m_actionPrefixHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_alarmNamesHasBeenSet = false;
+  bool m_alarmNamePrefixHasBeenSet = false;
+  bool m_alarmTypesHasBeenSet = false;
+  bool m_childrenOfAlarmNameHasBeenSet = false;
+  bool m_parentsOfAlarmNameHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_actionPrefixHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

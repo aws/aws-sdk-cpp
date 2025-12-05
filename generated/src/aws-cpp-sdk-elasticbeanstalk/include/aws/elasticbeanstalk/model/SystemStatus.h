@@ -81,9 +81,9 @@ class SystemStatus {
   ///@}
  private:
   CPUUtilization m_cPUUtilization;
-  bool m_cPUUtilizationHasBeenSet = false;
 
   Aws::Vector<double> m_loadAverage;
+  bool m_cPUUtilizationHasBeenSet = false;
   bool m_loadAverageHasBeenSet = false;
 };
 

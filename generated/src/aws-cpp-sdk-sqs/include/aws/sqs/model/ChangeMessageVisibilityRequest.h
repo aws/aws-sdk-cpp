@@ -87,12 +87,12 @@ class ChangeMessageVisibilityRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::String m_receiptHandle;
-  bool m_receiptHandleHasBeenSet = false;
 
   int m_visibilityTimeout{0};
+  bool m_queueUrlHasBeenSet = false;
+  bool m_receiptHandleHasBeenSet = false;
   bool m_visibilityTimeoutHasBeenSet = false;
 };
 

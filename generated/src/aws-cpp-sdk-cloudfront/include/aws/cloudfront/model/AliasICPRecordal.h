@@ -88,9 +88,9 @@ class AliasICPRecordal {
   ///@}
  private:
   Aws::String m_cNAME;
-  bool m_cNAMEHasBeenSet = false;
 
   ICPRecordalStatus m_iCPRecordalStatus{ICPRecordalStatus::NOT_SET};
+  bool m_cNAMEHasBeenSet = false;
   bool m_iCPRecordalStatusHasBeenSet = false;
 };
 

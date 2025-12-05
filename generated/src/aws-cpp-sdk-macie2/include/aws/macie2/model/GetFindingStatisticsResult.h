@@ -68,9 +68,9 @@ class GetFindingStatisticsResult {
   ///@}
  private:
   Aws::Vector<GroupCount> m_countsByGroup;
-  bool m_countsByGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_countsByGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -106,12 +106,12 @@ class SimpleCriterionForJob {
   ///@}
  private:
   JobComparator m_comparator{JobComparator::NOT_SET};
-  bool m_comparatorHasBeenSet = false;
 
   SimpleCriterionKeyForJob m_key{SimpleCriterionKeyForJob::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_comparatorHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

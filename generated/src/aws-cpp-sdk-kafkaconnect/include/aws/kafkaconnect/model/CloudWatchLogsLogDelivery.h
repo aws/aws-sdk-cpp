@@ -68,9 +68,9 @@ class CloudWatchLogsLogDelivery {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_logGroup;
+  bool m_enabledHasBeenSet = false;
   bool m_logGroupHasBeenSet = false;
 };
 

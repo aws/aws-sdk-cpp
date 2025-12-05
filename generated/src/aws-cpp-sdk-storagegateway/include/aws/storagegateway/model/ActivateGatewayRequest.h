@@ -234,27 +234,27 @@ class ActivateGatewayRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_activationKey;
-  bool m_activationKeyHasBeenSet = false;
 
   Aws::String m_gatewayName;
-  bool m_gatewayNameHasBeenSet = false;
 
   Aws::String m_gatewayTimezone;
-  bool m_gatewayTimezoneHasBeenSet = false;
 
   Aws::String m_gatewayRegion;
-  bool m_gatewayRegionHasBeenSet = false;
 
   Aws::String m_gatewayType;
-  bool m_gatewayTypeHasBeenSet = false;
 
   Aws::String m_tapeDriveType;
-  bool m_tapeDriveTypeHasBeenSet = false;
 
   Aws::String m_mediumChangerType;
-  bool m_mediumChangerTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_activationKeyHasBeenSet = false;
+  bool m_gatewayNameHasBeenSet = false;
+  bool m_gatewayTimezoneHasBeenSet = false;
+  bool m_gatewayRegionHasBeenSet = false;
+  bool m_gatewayTypeHasBeenSet = false;
+  bool m_tapeDriveTypeHasBeenSet = false;
+  bool m_mediumChangerTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

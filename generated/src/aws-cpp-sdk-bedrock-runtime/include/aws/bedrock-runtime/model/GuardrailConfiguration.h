@@ -87,12 +87,12 @@ class GuardrailConfiguration {
   ///@}
  private:
   Aws::String m_guardrailIdentifier;
-  bool m_guardrailIdentifierHasBeenSet = false;
 
   Aws::String m_guardrailVersion;
-  bool m_guardrailVersionHasBeenSet = false;
 
   GuardrailTrace m_trace{GuardrailTrace::NOT_SET};
+  bool m_guardrailIdentifierHasBeenSet = false;
+  bool m_guardrailVersionHasBeenSet = false;
   bool m_traceHasBeenSet = false;
 };
 

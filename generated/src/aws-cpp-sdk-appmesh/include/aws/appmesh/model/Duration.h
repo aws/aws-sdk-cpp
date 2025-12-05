@@ -64,9 +64,9 @@ class Duration {
   ///@}
  private:
   DurationUnit m_unit{DurationUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   long long m_value{0};
+  bool m_unitHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -392,60 +392,60 @@ class DescribeHyperParameterTuningJobResult {
   ///@}
  private:
   Aws::String m_hyperParameterTuningJobName;
-  bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
   Aws::String m_hyperParameterTuningJobArn;
-  bool m_hyperParameterTuningJobArnHasBeenSet = false;
 
   HyperParameterTuningJobConfig m_hyperParameterTuningJobConfig;
-  bool m_hyperParameterTuningJobConfigHasBeenSet = false;
 
   HyperParameterTrainingJobDefinition m_trainingJobDefinition;
-  bool m_trainingJobDefinitionHasBeenSet = false;
 
   Aws::Vector<HyperParameterTrainingJobDefinition> m_trainingJobDefinitions;
-  bool m_trainingJobDefinitionsHasBeenSet = false;
 
   HyperParameterTuningJobStatus m_hyperParameterTuningJobStatus{HyperParameterTuningJobStatus::NOT_SET};
-  bool m_hyperParameterTuningJobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_hyperParameterTuningEndTime{};
-  bool m_hyperParameterTuningEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   TrainingJobStatusCounters m_trainingJobStatusCounters;
-  bool m_trainingJobStatusCountersHasBeenSet = false;
 
   ObjectiveStatusCounters m_objectiveStatusCounters;
-  bool m_objectiveStatusCountersHasBeenSet = false;
 
   HyperParameterTrainingJobSummary m_bestTrainingJob;
-  bool m_bestTrainingJobHasBeenSet = false;
 
   HyperParameterTrainingJobSummary m_overallBestTrainingJob;
-  bool m_overallBestTrainingJobHasBeenSet = false;
 
   HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
-  bool m_warmStartConfigHasBeenSet = false;
 
   Autotune m_autotune;
-  bool m_autotuneHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   HyperParameterTuningJobCompletionDetails m_tuningJobCompletionDetails;
-  bool m_tuningJobCompletionDetailsHasBeenSet = false;
 
   HyperParameterTuningJobConsumedResources m_consumedResources;
-  bool m_consumedResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hyperParameterTuningJobNameHasBeenSet = false;
+  bool m_hyperParameterTuningJobArnHasBeenSet = false;
+  bool m_hyperParameterTuningJobConfigHasBeenSet = false;
+  bool m_trainingJobDefinitionHasBeenSet = false;
+  bool m_trainingJobDefinitionsHasBeenSet = false;
+  bool m_hyperParameterTuningJobStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_hyperParameterTuningEndTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_trainingJobStatusCountersHasBeenSet = false;
+  bool m_objectiveStatusCountersHasBeenSet = false;
+  bool m_bestTrainingJobHasBeenSet = false;
+  bool m_overallBestTrainingJobHasBeenSet = false;
+  bool m_warmStartConfigHasBeenSet = false;
+  bool m_autotuneHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_tuningJobCompletionDetailsHasBeenSet = false;
+  bool m_consumedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

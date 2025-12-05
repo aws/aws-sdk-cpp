@@ -106,15 +106,15 @@ class Attribute {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_alternateNameEncoding;
-  bool m_alternateNameEncodingHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_alternateValueEncoding;
+  bool m_nameHasBeenSet = false;
+  bool m_alternateNameEncodingHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_alternateValueEncodingHasBeenSet = false;
 };
 

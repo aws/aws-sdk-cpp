@@ -127,15 +127,15 @@ class CreateThemeData {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ThemeValues> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<ThemeValues> m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

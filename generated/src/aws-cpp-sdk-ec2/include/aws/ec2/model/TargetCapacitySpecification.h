@@ -132,18 +132,18 @@ class TargetCapacitySpecification {
   ///@}
  private:
   int m_totalTargetCapacity{0};
-  bool m_totalTargetCapacityHasBeenSet = false;
 
   int m_onDemandTargetCapacity{0};
-  bool m_onDemandTargetCapacityHasBeenSet = false;
 
   int m_spotTargetCapacity{0};
-  bool m_spotTargetCapacityHasBeenSet = false;
 
   DefaultTargetCapacityType m_defaultTargetCapacityType{DefaultTargetCapacityType::NOT_SET};
-  bool m_defaultTargetCapacityTypeHasBeenSet = false;
 
   TargetCapacityUnitType m_targetCapacityUnitType{TargetCapacityUnitType::NOT_SET};
+  bool m_totalTargetCapacityHasBeenSet = false;
+  bool m_onDemandTargetCapacityHasBeenSet = false;
+  bool m_spotTargetCapacityHasBeenSet = false;
+  bool m_defaultTargetCapacityTypeHasBeenSet = false;
   bool m_targetCapacityUnitTypeHasBeenSet = false;
 };
 

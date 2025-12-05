@@ -108,15 +108,15 @@ class SendInvitesRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accessorIds;
-  bool m_accessorIdsHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_body;
+  bool m_spaceIdHasBeenSet = false;
+  bool m_accessorIdsHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
 };
 

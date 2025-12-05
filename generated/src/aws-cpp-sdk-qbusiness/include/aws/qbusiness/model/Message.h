@@ -192,27 +192,27 @@ class Message {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Utils::DateTime m_time{};
-  bool m_timeHasBeenSet = false;
 
   MessageType m_type{MessageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<AttachmentOutput> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::Vector<SourceAttribution> m_sourceAttribution;
-  bool m_sourceAttributionHasBeenSet = false;
 
   ActionReview m_actionReview;
-  bool m_actionReviewHasBeenSet = false;
 
   ActionExecution m_actionExecution;
+  bool m_messageIdHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_sourceAttributionHasBeenSet = false;
+  bool m_actionReviewHasBeenSet = false;
   bool m_actionExecutionHasBeenSet = false;
 };
 

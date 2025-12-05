@@ -98,15 +98,15 @@ class MssPackage {
   ///@}
  private:
   MssEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   int m_segmentDurationSeconds{0};
-  bool m_segmentDurationSecondsHasBeenSet = false;
 
   StreamSelection m_streamSelection;
+  bool m_encryptionHasBeenSet = false;
+  bool m_manifestWindowSecondsHasBeenSet = false;
+  bool m_segmentDurationSecondsHasBeenSet = false;
   bool m_streamSelectionHasBeenSet = false;
 };
 

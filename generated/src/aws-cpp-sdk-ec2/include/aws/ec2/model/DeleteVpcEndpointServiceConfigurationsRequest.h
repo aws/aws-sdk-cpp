@@ -77,9 +77,9 @@ class DeleteVpcEndpointServiceConfigurationsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceIds;
+  bool m_dryRunHasBeenSet = false;
   bool m_serviceIdsHasBeenSet = false;
 };
 

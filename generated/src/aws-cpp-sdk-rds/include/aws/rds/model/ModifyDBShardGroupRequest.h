@@ -106,15 +106,15 @@ class ModifyDBShardGroupRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBShardGroupIdentifier;
-  bool m_dBShardGroupIdentifierHasBeenSet = false;
 
   double m_maxACU{0.0};
-  bool m_maxACUHasBeenSet = false;
 
   double m_minACU{0.0};
-  bool m_minACUHasBeenSet = false;
 
   int m_computeRedundancy{0};
+  bool m_dBShardGroupIdentifierHasBeenSet = false;
+  bool m_maxACUHasBeenSet = false;
+  bool m_minACUHasBeenSet = false;
   bool m_computeRedundancyHasBeenSet = false;
 };
 

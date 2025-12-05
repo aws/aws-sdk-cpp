@@ -145,18 +145,18 @@ class DenyCustomRoutingTrafficRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_endpointGroupArn;
-  bool m_endpointGroupArnHasBeenSet = false;
 
   Aws::String m_endpointId;
-  bool m_endpointIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinationAddresses;
-  bool m_destinationAddressesHasBeenSet = false;
 
   Aws::Vector<int> m_destinationPorts;
-  bool m_destinationPortsHasBeenSet = false;
 
   bool m_denyAllTrafficToEndpoint{false};
+  bool m_endpointGroupArnHasBeenSet = false;
+  bool m_endpointIdHasBeenSet = false;
+  bool m_destinationAddressesHasBeenSet = false;
+  bool m_destinationPortsHasBeenSet = false;
   bool m_denyAllTrafficToEndpointHasBeenSet = false;
 };
 

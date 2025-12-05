@@ -177,30 +177,30 @@ class GetDiscoverySummaryResult {
   ///@}
  private:
   long long m_servers{0};
-  bool m_serversHasBeenSet = false;
 
   long long m_applications{0};
-  bool m_applicationsHasBeenSet = false;
 
   long long m_serversMappedToApplications{0};
-  bool m_serversMappedToApplicationsHasBeenSet = false;
 
   long long m_serversMappedtoTags{0};
-  bool m_serversMappedtoTagsHasBeenSet = false;
 
   CustomerAgentInfo m_agentSummary;
-  bool m_agentSummaryHasBeenSet = false;
 
   CustomerConnectorInfo m_connectorSummary;
-  bool m_connectorSummaryHasBeenSet = false;
 
   CustomerMeCollectorInfo m_meCollectorSummary;
-  bool m_meCollectorSummaryHasBeenSet = false;
 
   CustomerAgentlessCollectorInfo m_agentlessCollectorSummary;
-  bool m_agentlessCollectorSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serversHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
+  bool m_serversMappedToApplicationsHasBeenSet = false;
+  bool m_serversMappedtoTagsHasBeenSet = false;
+  bool m_agentSummaryHasBeenSet = false;
+  bool m_connectorSummaryHasBeenSet = false;
+  bool m_meCollectorSummaryHasBeenSet = false;
+  bool m_agentlessCollectorSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

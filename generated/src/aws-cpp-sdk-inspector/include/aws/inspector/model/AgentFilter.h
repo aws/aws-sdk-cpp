@@ -85,9 +85,9 @@ class AgentFilter {
   ///@}
  private:
   Aws::Vector<AgentHealth> m_agentHealths;
-  bool m_agentHealthsHasBeenSet = false;
 
   Aws::Vector<AgentHealthCode> m_agentHealthCodes;
+  bool m_agentHealthsHasBeenSet = false;
   bool m_agentHealthCodesHasBeenSet = false;
 };
 

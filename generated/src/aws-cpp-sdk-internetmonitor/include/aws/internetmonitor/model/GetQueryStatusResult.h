@@ -58,9 +58,9 @@ class GetQueryStatusResult {
   ///@}
  private:
   QueryStatus m_status{QueryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateAppInstanceBotResult {
   ///@}
  private:
   Aws::String m_appInstanceBotArn;
-  bool m_appInstanceBotArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceBotArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

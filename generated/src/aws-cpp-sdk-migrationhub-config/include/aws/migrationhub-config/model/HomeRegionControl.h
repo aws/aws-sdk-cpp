@@ -116,15 +116,15 @@ class HomeRegionControl {
   ///@}
  private:
   Aws::String m_controlId;
-  bool m_controlIdHasBeenSet = false;
 
   Aws::String m_homeRegion;
-  bool m_homeRegionHasBeenSet = false;
 
   Target m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedTime{};
+  bool m_controlIdHasBeenSet = false;
+  bool m_homeRegionHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_requestedTimeHasBeenSet = false;
 };
 

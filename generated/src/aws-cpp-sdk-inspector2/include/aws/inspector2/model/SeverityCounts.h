@@ -94,15 +94,15 @@ class SeverityCounts {
   ///@}
  private:
   long long m_all{0};
-  bool m_allHasBeenSet = false;
 
   long long m_medium{0};
-  bool m_mediumHasBeenSet = false;
 
   long long m_high{0};
-  bool m_highHasBeenSet = false;
 
   long long m_critical{0};
+  bool m_allHasBeenSet = false;
+  bool m_mediumHasBeenSet = false;
+  bool m_highHasBeenSet = false;
   bool m_criticalHasBeenSet = false;
 };
 

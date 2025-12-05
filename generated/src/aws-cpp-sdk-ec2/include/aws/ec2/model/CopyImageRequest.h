@@ -354,45 +354,45 @@ class CopyImageRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sourceImageId;
-  bool m_sourceImageIdHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_destinationOutpostArn;
-  bool m_destinationOutpostArnHasBeenSet = false;
 
   bool m_copyImageTags{false};
-  bool m_copyImageTagsHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   long long m_snapshotCopyCompletionDurationMinutes{0};
-  bool m_snapshotCopyCompletionDurationMinutesHasBeenSet = false;
 
   Aws::String m_destinationAvailabilityZone;
-  bool m_destinationAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_destinationAvailabilityZoneId;
-  bool m_destinationAvailabilityZoneIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceImageIdHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_destinationOutpostArnHasBeenSet = false;
+  bool m_copyImageTagsHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_snapshotCopyCompletionDurationMinutesHasBeenSet = false;
+  bool m_destinationAvailabilityZoneHasBeenSet = false;
+  bool m_destinationAvailabilityZoneIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

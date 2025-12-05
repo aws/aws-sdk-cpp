@@ -100,15 +100,15 @@ class RouterInputStreamDetails {
   ///@}
  private:
   StandardRouterInputStreamDetails m_standard;
-  bool m_standardHasBeenSet = false;
 
   FailoverRouterInputStreamDetails m_failover;
-  bool m_failoverHasBeenSet = false;
 
   MergeRouterInputStreamDetails m_merge;
-  bool m_mergeHasBeenSet = false;
 
   MediaConnectFlowRouterInputStreamDetails m_mediaConnectFlow;
+  bool m_standardHasBeenSet = false;
+  bool m_failoverHasBeenSet = false;
+  bool m_mergeHasBeenSet = false;
   bool m_mediaConnectFlowHasBeenSet = false;
 };
 

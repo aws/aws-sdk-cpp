@@ -167,24 +167,24 @@ class Host {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_hostArn;
-  bool m_hostArnHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_providerEndpoint;
-  bool m_providerEndpointHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_nameHasBeenSet = false;
+  bool m_hostArnHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_providerEndpointHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

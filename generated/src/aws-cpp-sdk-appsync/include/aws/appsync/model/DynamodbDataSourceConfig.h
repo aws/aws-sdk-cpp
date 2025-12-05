@@ -121,18 +121,18 @@ class DynamodbDataSourceConfig {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   bool m_useCallerCredentials{false};
-  bool m_useCallerCredentialsHasBeenSet = false;
 
   DeltaSyncConfig m_deltaSyncConfig;
-  bool m_deltaSyncConfigHasBeenSet = false;
 
   bool m_versioned{false};
+  bool m_tableNameHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_useCallerCredentialsHasBeenSet = false;
+  bool m_deltaSyncConfigHasBeenSet = false;
   bool m_versionedHasBeenSet = false;
 };
 

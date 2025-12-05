@@ -213,24 +213,24 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
   ///@}
  private:
   BrokerAZDistribution m_brokerAZDistribution{BrokerAZDistribution::NOT_SET};
-  bool m_brokerAZDistributionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientSubnets;
-  bool m_clientSubnetsHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   StorageInfo m_storageInfo;
-  bool m_storageInfoHasBeenSet = false;
 
   ConnectivityInfo m_connectivityInfo;
-  bool m_connectivityInfoHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_zoneIds;
+  bool m_brokerAZDistributionHasBeenSet = false;
+  bool m_clientSubnetsHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_storageInfoHasBeenSet = false;
+  bool m_connectivityInfoHasBeenSet = false;
   bool m_zoneIdsHasBeenSet = false;
 };
 

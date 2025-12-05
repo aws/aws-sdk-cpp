@@ -88,12 +88,12 @@ class SigV4Authorization {
   ///@}
  private:
   Aws::String m_signingRegion;
-  bool m_signingRegionHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_signingRegionHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

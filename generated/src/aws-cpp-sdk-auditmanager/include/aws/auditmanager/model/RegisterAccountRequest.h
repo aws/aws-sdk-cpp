@@ -65,9 +65,9 @@ class RegisterAccountRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_delegatedAdminAccount;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_delegatedAdminAccountHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class UnarchiveFindingsRequest : public GuardDutyRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_findingIds;
+  bool m_detectorIdHasBeenSet = false;
   bool m_findingIdsHasBeenSet = false;
 };
 

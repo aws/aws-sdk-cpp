@@ -146,24 +146,24 @@ class GetVpnTunnelReplacementStatusResponse {
   ///@}
  private:
   Aws::String m_vpnConnectionId;
-  bool m_vpnConnectionIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_customerGatewayId;
-  bool m_customerGatewayIdHasBeenSet = false;
 
   Aws::String m_vpnGatewayId;
-  bool m_vpnGatewayIdHasBeenSet = false;
 
   Aws::String m_vpnTunnelOutsideIpAddress;
-  bool m_vpnTunnelOutsideIpAddressHasBeenSet = false;
 
   MaintenanceDetails m_maintenanceDetails;
-  bool m_maintenanceDetailsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnConnectionIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_customerGatewayIdHasBeenSet = false;
+  bool m_vpnGatewayIdHasBeenSet = false;
+  bool m_vpnTunnelOutsideIpAddressHasBeenSet = false;
+  bool m_maintenanceDetailsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

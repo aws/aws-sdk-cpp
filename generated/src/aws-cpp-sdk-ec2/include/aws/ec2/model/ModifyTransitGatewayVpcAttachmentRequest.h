@@ -139,18 +139,18 @@ class ModifyTransitGatewayVpcAttachmentRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSubnetIds;
-  bool m_addSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSubnetIds;
-  bool m_removeSubnetIdsHasBeenSet = false;
 
   ModifyTransitGatewayVpcAttachmentRequestOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_addSubnetIdsHasBeenSet = false;
+  bool m_removeSubnetIdsHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

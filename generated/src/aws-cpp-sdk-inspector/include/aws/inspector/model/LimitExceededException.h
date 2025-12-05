@@ -85,12 +85,12 @@ class LimitExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   LimitExceededErrorCode m_errorCode{LimitExceededErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   bool m_canRetry{false};
+  bool m_messageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_canRetryHasBeenSet = false;
 };
 

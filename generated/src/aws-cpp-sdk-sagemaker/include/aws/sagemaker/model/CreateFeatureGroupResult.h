@@ -60,9 +60,9 @@ class CreateFeatureGroupResult {
   ///@}
  private:
   Aws::String m_featureGroupArn;
-  bool m_featureGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featureGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

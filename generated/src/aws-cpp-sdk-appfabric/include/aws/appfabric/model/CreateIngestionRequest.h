@@ -163,21 +163,21 @@ class CreateIngestionRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::String m_app;
-  bool m_appHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   IngestionType m_ingestionType{IngestionType::NOT_SET};
-  bool m_ingestionTypeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_appBundleIdentifierHasBeenSet = false;
+  bool m_appHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_ingestionTypeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

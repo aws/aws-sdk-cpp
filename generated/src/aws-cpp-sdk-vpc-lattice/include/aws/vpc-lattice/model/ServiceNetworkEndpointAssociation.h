@@ -160,24 +160,24 @@ class ServiceNetworkEndpointAssociation {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointOwnerId;
-  bool m_vpcEndpointOwnerIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_serviceNetworkArn;
-  bool m_serviceNetworkArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_vpcEndpointOwnerIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_serviceNetworkArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

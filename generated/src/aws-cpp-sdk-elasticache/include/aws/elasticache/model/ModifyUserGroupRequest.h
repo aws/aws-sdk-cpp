@@ -119,15 +119,15 @@ class ModifyUserGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_userGroupId;
-  bool m_userGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIdsToAdd;
-  bool m_userIdsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIdsToRemove;
-  bool m_userIdsToRemoveHasBeenSet = false;
 
   Aws::String m_engine;
+  bool m_userGroupIdHasBeenSet = false;
+  bool m_userIdsToAddHasBeenSet = false;
+  bool m_userIdsToRemoveHasBeenSet = false;
   bool m_engineHasBeenSet = false;
 };
 

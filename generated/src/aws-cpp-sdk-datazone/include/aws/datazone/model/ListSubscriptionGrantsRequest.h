@@ -240,36 +240,36 @@ class ListSubscriptionGrantsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_owningGroupId;
-  bool m_owningGroupIdHasBeenSet = false;
 
   Aws::String m_owningProjectId;
-  bool m_owningProjectIdHasBeenSet = false;
 
   Aws::String m_owningUserId;
-  bool m_owningUserIdHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_subscribedListingId;
-  bool m_subscribedListingIdHasBeenSet = false;
 
   Aws::String m_subscriptionId;
-  bool m_subscriptionIdHasBeenSet = false;
 
   Aws::String m_subscriptionTargetId;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_owningGroupIdHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_owningUserIdHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_subscribedListingIdHasBeenSet = false;
+  bool m_subscriptionIdHasBeenSet = false;
   bool m_subscriptionTargetIdHasBeenSet = false;
 };
 

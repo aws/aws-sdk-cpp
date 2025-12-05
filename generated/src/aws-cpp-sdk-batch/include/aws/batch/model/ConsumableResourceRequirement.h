@@ -67,9 +67,9 @@ class ConsumableResourceRequirement {
   ///@}
  private:
   Aws::String m_consumableResource;
-  bool m_consumableResourceHasBeenSet = false;
 
   long long m_quantity{0};
+  bool m_consumableResourceHasBeenSet = false;
   bool m_quantityHasBeenSet = false;
 };
 

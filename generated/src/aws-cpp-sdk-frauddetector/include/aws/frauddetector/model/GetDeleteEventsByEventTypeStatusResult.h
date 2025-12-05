@@ -76,12 +76,12 @@ class GetDeleteEventsByEventTypeStatusResult {
   ///@}
  private:
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   AsyncJobStatus m_eventsDeletionStatus{AsyncJobStatus::NOT_SET};
-  bool m_eventsDeletionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_eventsDeletionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

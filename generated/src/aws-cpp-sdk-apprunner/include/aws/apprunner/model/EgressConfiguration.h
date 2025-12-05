@@ -73,9 +73,9 @@ class EgressConfiguration {
   ///@}
  private:
   EgressType m_egressType{EgressType::NOT_SET};
-  bool m_egressTypeHasBeenSet = false;
 
   Aws::String m_vpcConnectorArn;
+  bool m_egressTypeHasBeenSet = false;
   bool m_vpcConnectorArnHasBeenSet = false;
 };
 

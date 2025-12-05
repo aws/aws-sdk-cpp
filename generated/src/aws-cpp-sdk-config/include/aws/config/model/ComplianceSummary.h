@@ -90,12 +90,12 @@ class ComplianceSummary {
   ///@}
  private:
   ComplianceContributorCount m_compliantResourceCount;
-  bool m_compliantResourceCountHasBeenSet = false;
 
   ComplianceContributorCount m_nonCompliantResourceCount;
-  bool m_nonCompliantResourceCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_complianceSummaryTimestamp{};
+  bool m_compliantResourceCountHasBeenSet = false;
+  bool m_nonCompliantResourceCountHasBeenSet = false;
   bool m_complianceSummaryTimestampHasBeenSet = false;
 };
 

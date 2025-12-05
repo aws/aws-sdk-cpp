@@ -157,27 +157,27 @@ class GetLineageEventResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_event{};
-  bool m_eventHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LineageEventProcessingStatus m_processingStatus{LineageEventProcessingStatus::NOT_SET};
-  bool m_processingStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

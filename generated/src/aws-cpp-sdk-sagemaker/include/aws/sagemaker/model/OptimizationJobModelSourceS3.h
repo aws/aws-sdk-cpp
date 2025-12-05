@@ -72,9 +72,9 @@ class OptimizationJobModelSourceS3 {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   OptimizationModelAccessConfig m_modelAccessConfig;
+  bool m_s3UriHasBeenSet = false;
   bool m_modelAccessConfigHasBeenSet = false;
 };
 

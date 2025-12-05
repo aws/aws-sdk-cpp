@@ -79,9 +79,9 @@ class AccessBudgetsPrivacyTemplateParametersOutput {
   ///@}
  private:
   Aws::Vector<BudgetParameter> m_budgetParameters;
-  bool m_budgetParametersHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_budgetParametersHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

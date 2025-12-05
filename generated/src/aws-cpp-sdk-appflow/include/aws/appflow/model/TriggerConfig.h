@@ -71,9 +71,9 @@ class TriggerConfig {
   ///@}
  private:
   TriggerType m_triggerType{TriggerType::NOT_SET};
-  bool m_triggerTypeHasBeenSet = false;
 
   TriggerProperties m_triggerProperties;
+  bool m_triggerTypeHasBeenSet = false;
   bool m_triggerPropertiesHasBeenSet = false;
 };
 

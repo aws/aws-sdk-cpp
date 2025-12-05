@@ -76,9 +76,9 @@ class RegionScope {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   bool m_allRegionsEnabled{false};
+  bool m_regionsHasBeenSet = false;
   bool m_allRegionsEnabledHasBeenSet = false;
 };
 

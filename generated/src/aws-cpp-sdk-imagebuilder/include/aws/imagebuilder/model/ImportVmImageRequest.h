@@ -216,30 +216,30 @@ class ImportVmImageRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_osVersion;
-  bool m_osVersionHasBeenSet = false;
 
   Aws::String m_vmImportTaskId;
-  bool m_vmImportTaskIdHasBeenSet = false;
 
   ImageLoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
+  bool m_vmImportTaskIdHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

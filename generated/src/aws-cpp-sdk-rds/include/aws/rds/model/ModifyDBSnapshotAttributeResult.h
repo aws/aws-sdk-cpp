@@ -58,9 +58,9 @@ class ModifyDBSnapshotAttributeResult {
   ///@}
  private:
   DBSnapshotAttributesResult m_dBSnapshotAttributesResult;
-  bool m_dBSnapshotAttributesResultHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBSnapshotAttributesResultHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class SelectFromCollection {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   int m_index{0};
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
   bool m_indexHasBeenSet = false;
 };
 

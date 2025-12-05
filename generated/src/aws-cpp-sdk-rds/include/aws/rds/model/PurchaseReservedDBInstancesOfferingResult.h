@@ -58,9 +58,9 @@ class PurchaseReservedDBInstancesOfferingResult {
   ///@}
  private:
   ReservedDBInstance m_reservedDBInstance;
-  bool m_reservedDBInstanceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservedDBInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

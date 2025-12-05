@@ -83,9 +83,9 @@ class RegionOfInterest {
   ///@}
  private:
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::Vector<Point> m_polygon;
+  bool m_boundingBoxHasBeenSet = false;
   bool m_polygonHasBeenSet = false;
 };
 

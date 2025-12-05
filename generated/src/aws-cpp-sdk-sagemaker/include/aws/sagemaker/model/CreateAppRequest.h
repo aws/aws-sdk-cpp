@@ -191,27 +191,27 @@ class CreateAppRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileName;
-  bool m_userProfileNameHasBeenSet = false;
 
   Aws::String m_spaceName;
-  bool m_spaceNameHasBeenSet = false;
 
   AppType m_appType{AppType::NOT_SET};
-  bool m_appTypeHasBeenSet = false;
 
   Aws::String m_appName;
-  bool m_appNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResourceSpec m_resourceSpec;
-  bool m_resourceSpecHasBeenSet = false;
 
   bool m_recoveryMode{false};
+  bool m_domainIdHasBeenSet = false;
+  bool m_userProfileNameHasBeenSet = false;
+  bool m_spaceNameHasBeenSet = false;
+  bool m_appTypeHasBeenSet = false;
+  bool m_appNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_resourceSpecHasBeenSet = false;
   bool m_recoveryModeHasBeenSet = false;
 };
 

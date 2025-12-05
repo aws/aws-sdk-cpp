@@ -70,9 +70,9 @@ class QueryArgProfileConfig {
   ///@}
  private:
   bool m_forwardWhenQueryArgProfileIsUnknown{false};
-  bool m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = false;
 
   QueryArgProfiles m_queryArgProfiles;
+  bool m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = false;
   bool m_queryArgProfilesHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ImageInput {
   ///@}
  private:
   ImageInputFormat m_format{ImageInputFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   ImageInputSource m_source;
+  bool m_formatHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

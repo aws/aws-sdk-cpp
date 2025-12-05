@@ -86,12 +86,12 @@ class ListSyncConfigurationsResult {
   ///@}
  private:
   Aws::Vector<SyncConfiguration> m_syncConfigurations;
-  bool m_syncConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_syncConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

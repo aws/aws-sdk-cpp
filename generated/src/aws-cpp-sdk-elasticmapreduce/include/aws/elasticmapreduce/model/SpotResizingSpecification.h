@@ -75,9 +75,9 @@ class SpotResizingSpecification {
   ///@}
  private:
   int m_timeoutDurationMinutes{0};
-  bool m_timeoutDurationMinutesHasBeenSet = false;
 
   SpotProvisioningAllocationStrategy m_allocationStrategy{SpotProvisioningAllocationStrategy::NOT_SET};
+  bool m_timeoutDurationMinutesHasBeenSet = false;
   bool m_allocationStrategyHasBeenSet = false;
 };
 

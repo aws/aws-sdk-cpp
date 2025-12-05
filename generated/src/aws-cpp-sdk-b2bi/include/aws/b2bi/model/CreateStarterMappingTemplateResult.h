@@ -59,9 +59,9 @@ class CreateStarterMappingTemplateResult {
   ///@}
  private:
   Aws::String m_mappingTemplate;
-  bool m_mappingTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mappingTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

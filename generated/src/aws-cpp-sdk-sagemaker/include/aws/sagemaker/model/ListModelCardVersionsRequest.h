@@ -175,27 +175,27 @@ class ListModelCardVersionsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
-  bool m_modelCardStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ModelCardVersionSortBy m_sortBy{ModelCardVersionSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   ModelCardSortOrder m_sortOrder{ModelCardSortOrder::NOT_SET};
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_modelCardStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

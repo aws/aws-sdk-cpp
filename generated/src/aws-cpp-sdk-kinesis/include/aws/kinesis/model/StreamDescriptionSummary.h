@@ -296,42 +296,42 @@ class StreamDescriptionSummary {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   StreamStatus m_streamStatus{StreamStatus::NOT_SET};
-  bool m_streamStatusHasBeenSet = false;
 
   StreamModeDetails m_streamModeDetails;
-  bool m_streamModeDetailsHasBeenSet = false;
 
   int m_retentionPeriodHours{0};
-  bool m_retentionPeriodHoursHasBeenSet = false;
 
   Aws::Utils::DateTime m_streamCreationTimestamp{};
-  bool m_streamCreationTimestampHasBeenSet = false;
 
   Aws::Vector<EnhancedMetrics> m_enhancedMonitoring;
-  bool m_enhancedMonitoringHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   int m_openShardCount{0};
-  bool m_openShardCountHasBeenSet = false;
 
   int m_consumerCount{0};
-  bool m_consumerCountHasBeenSet = false;
 
   WarmThroughputObject m_warmThroughput;
-  bool m_warmThroughputHasBeenSet = false;
 
   int m_maxRecordSizeInKiB{0};
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
+  bool m_streamStatusHasBeenSet = false;
+  bool m_streamModeDetailsHasBeenSet = false;
+  bool m_retentionPeriodHoursHasBeenSet = false;
+  bool m_streamCreationTimestampHasBeenSet = false;
+  bool m_enhancedMonitoringHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_openShardCountHasBeenSet = false;
+  bool m_consumerCountHasBeenSet = false;
+  bool m_warmThroughputHasBeenSet = false;
   bool m_maxRecordSizeInKiBHasBeenSet = false;
 };
 

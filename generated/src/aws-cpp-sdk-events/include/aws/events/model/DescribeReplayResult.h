@@ -249,42 +249,42 @@ class DescribeReplayResult {
   ///@}
  private:
   Aws::String m_replayName;
-  bool m_replayNameHasBeenSet = false;
 
   Aws::String m_replayArn;
-  bool m_replayArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ReplayState m_state{ReplayState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   ReplayDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventStartTime{};
-  bool m_eventStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventEndTime{};
-  bool m_eventEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventLastReplayedTime{};
-  bool m_eventLastReplayedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replayStartTime{};
-  bool m_replayStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replayEndTime{};
-  bool m_replayEndTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replayNameHasBeenSet = false;
+  bool m_replayArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_eventStartTimeHasBeenSet = false;
+  bool m_eventEndTimeHasBeenSet = false;
+  bool m_eventLastReplayedTimeHasBeenSet = false;
+  bool m_replayStartTimeHasBeenSet = false;
+  bool m_replayEndTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

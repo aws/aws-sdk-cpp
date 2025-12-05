@@ -69,9 +69,9 @@ class SearchResourcesSortCriteria {
   ///@}
  private:
   SearchResourcesSortAttributeName m_attributeName{SearchResourcesSortAttributeName::NOT_SET};
-  bool m_attributeNameHasBeenSet = false;
 
   OrderBy m_orderBy{OrderBy::NOT_SET};
+  bool m_attributeNameHasBeenSet = false;
   bool m_orderByHasBeenSet = false;
 };
 

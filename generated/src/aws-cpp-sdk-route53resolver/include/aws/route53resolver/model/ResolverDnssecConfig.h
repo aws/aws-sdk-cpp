@@ -111,15 +111,15 @@ class ResolverDnssecConfig {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ResolverDNSSECValidationStatus m_validationStatus{ResolverDNSSECValidationStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_validationStatusHasBeenSet = false;
 };
 

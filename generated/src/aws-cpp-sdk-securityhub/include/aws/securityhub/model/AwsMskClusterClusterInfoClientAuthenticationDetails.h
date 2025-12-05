@@ -89,12 +89,12 @@ class AwsMskClusterClusterInfoClientAuthenticationDetails {
   ///@}
  private:
   AwsMskClusterClusterInfoClientAuthenticationSaslDetails m_sasl;
-  bool m_saslHasBeenSet = false;
 
   AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetails m_unauthenticated;
-  bool m_unauthenticatedHasBeenSet = false;
 
   AwsMskClusterClusterInfoClientAuthenticationTlsDetails m_tls;
+  bool m_saslHasBeenSet = false;
+  bool m_unauthenticatedHasBeenSet = false;
   bool m_tlsHasBeenSet = false;
 };
 

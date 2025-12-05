@@ -94,15 +94,15 @@ class RemoveAttachmentRoutingPolicyLabelResult {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_routingPolicyLabel;
-  bool m_routingPolicyLabelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_routingPolicyLabelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

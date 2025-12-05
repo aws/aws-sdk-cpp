@@ -173,24 +173,24 @@ class DescribeSnapshotsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_snapshotSource;
-  bool m_snapshotSourceHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   bool m_showNodeGroupConfig{false};
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_snapshotSourceHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_showNodeGroupConfigHasBeenSet = false;
 };
 

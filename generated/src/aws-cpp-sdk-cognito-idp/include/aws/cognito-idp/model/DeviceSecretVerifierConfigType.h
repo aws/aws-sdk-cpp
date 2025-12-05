@@ -72,9 +72,9 @@ class DeviceSecretVerifierConfigType {
   ///@}
  private:
   Aws::String m_passwordVerifier;
-  bool m_passwordVerifierHasBeenSet = false;
 
   Aws::String m_salt;
+  bool m_passwordVerifierHasBeenSet = false;
   bool m_saltHasBeenSet = false;
 };
 

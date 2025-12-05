@@ -60,9 +60,9 @@ class GetAssetPropertyValueResult {
   ///@}
  private:
   AssetPropertyValue m_propertyValue;
-  bool m_propertyValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_propertyValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

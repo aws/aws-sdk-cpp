@@ -60,9 +60,9 @@ class UpdateMessageTemplateResult {
   ///@}
  private:
   MessageTemplateData m_messageTemplate;
-  bool m_messageTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messageTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

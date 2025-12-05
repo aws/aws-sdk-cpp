@@ -74,9 +74,9 @@ class DataReplicationMetadataOutput {
   ///@}
  private:
   DataReplicationCounterpart m_dataReplicationCounterpart;
-  bool m_dataReplicationCounterpartHasBeenSet = false;
 
   Aws::String m_dataReplicationRole;
+  bool m_dataReplicationCounterpartHasBeenSet = false;
   bool m_dataReplicationRoleHasBeenSet = false;
 };
 

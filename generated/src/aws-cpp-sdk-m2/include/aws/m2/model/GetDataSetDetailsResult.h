@@ -191,33 +191,33 @@ class GetDataSetDetailsResult {
   ///@}
  private:
   int m_blocksize{0};
-  bool m_blocksizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_dataSetName;
-  bool m_dataSetNameHasBeenSet = false;
 
   DatasetDetailOrgAttributes m_dataSetOrg;
-  bool m_dataSetOrgHasBeenSet = false;
 
   long long m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastReferencedTime{};
-  bool m_lastReferencedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   int m_recordLength{0};
-  bool m_recordLengthHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blocksizeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_dataSetNameHasBeenSet = false;
+  bool m_dataSetOrgHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
+  bool m_lastReferencedTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_recordLengthHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class GetRelationalDatabasesResult {
   ///@}
  private:
   Aws::Vector<RelationalDatabase> m_relationalDatabases;
-  bool m_relationalDatabasesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relationalDatabasesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

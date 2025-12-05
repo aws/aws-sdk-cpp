@@ -92,12 +92,12 @@ class LocationModel {
   ///@}
  private:
   Aws::String m_locationName;
-  bool m_locationNameHasBeenSet = false;
 
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   PingBeacon m_pingBeacon;
+  bool m_locationNameHasBeenSet = false;
+  bool m_locationArnHasBeenSet = false;
   bool m_pingBeaconHasBeenSet = false;
 };
 

@@ -118,15 +118,15 @@ class BouncedRecipientInfo {
   ///@}
  private:
   Aws::String m_recipient;
-  bool m_recipientHasBeenSet = false;
 
   Aws::String m_recipientArn;
-  bool m_recipientArnHasBeenSet = false;
 
   BounceType m_bounceType{BounceType::NOT_SET};
-  bool m_bounceTypeHasBeenSet = false;
 
   RecipientDsnFields m_recipientDsnFields;
+  bool m_recipientHasBeenSet = false;
+  bool m_recipientArnHasBeenSet = false;
+  bool m_bounceTypeHasBeenSet = false;
   bool m_recipientDsnFieldsHasBeenSet = false;
 };
 

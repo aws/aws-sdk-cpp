@@ -88,12 +88,12 @@ class MitigationActionIdentifier {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_actionArn;
-  bool m_actionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_actionNameHasBeenSet = false;
+  bool m_actionArnHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

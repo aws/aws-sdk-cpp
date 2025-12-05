@@ -72,9 +72,9 @@ class Message {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_payload{};
+  bool m_messageIdHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

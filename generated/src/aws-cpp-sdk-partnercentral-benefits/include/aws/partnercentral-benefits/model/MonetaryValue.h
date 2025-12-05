@@ -68,9 +68,9 @@ class MonetaryValue {
   ///@}
  private:
   Aws::String m_amount;
-  bool m_amountHasBeenSet = false;
 
   CurrencyCode m_currencyCode{CurrencyCode::NOT_SET};
+  bool m_amountHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;
 };
 

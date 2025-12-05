@@ -128,18 +128,18 @@ class Node {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Endpoint m_endpoint;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
 };
 

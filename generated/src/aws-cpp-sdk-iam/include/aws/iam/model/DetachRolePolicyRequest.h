@@ -77,9 +77,9 @@ class DetachRolePolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_policyArn;
+  bool m_roleNameHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
 };
 

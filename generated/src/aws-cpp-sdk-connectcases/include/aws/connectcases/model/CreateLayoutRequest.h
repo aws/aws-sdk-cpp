@@ -85,12 +85,12 @@ class CreateLayoutRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   LayoutContent m_content;
+  bool m_domainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

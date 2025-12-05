@@ -70,9 +70,9 @@ class AuthorizationConfig {
   ///@}
  private:
   AuthorizationType m_authorizationType{AuthorizationType::NOT_SET};
-  bool m_authorizationTypeHasBeenSet = false;
 
   AwsIamConfig m_awsIamConfig;
+  bool m_authorizationTypeHasBeenSet = false;
   bool m_awsIamConfigHasBeenSet = false;
 };
 

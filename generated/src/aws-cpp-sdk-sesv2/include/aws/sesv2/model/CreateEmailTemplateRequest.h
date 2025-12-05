@@ -73,9 +73,9 @@ class CreateEmailTemplateRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   EmailTemplateContent m_templateContent;
+  bool m_templateNameHasBeenSet = false;
   bool m_templateContentHasBeenSet = false;
 };
 

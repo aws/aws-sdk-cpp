@@ -163,24 +163,24 @@ class AggregatedSourceStatus {
   ///@}
  private:
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   AggregatedSourceType m_sourceType{AggregatedSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   AggregatedSourceStatusType m_lastUpdateStatus{AggregatedSourceStatusType::NOT_SET};
-  bool m_lastUpdateStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_lastErrorCode;
-  bool m_lastErrorCodeHasBeenSet = false;
 
   Aws::String m_lastErrorMessage;
+  bool m_sourceIdHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_lastUpdateStatusHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_lastErrorCodeHasBeenSet = false;
   bool m_lastErrorMessageHasBeenSet = false;
 };
 

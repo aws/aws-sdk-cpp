@@ -88,12 +88,12 @@ class EngagementCustomerProjectDetails {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_businessProblem;
-  bool m_businessProblemHasBeenSet = false;
 
   Aws::String m_targetCompletionDate;
+  bool m_titleHasBeenSet = false;
+  bool m_businessProblemHasBeenSet = false;
   bool m_targetCompletionDateHasBeenSet = false;
 };
 

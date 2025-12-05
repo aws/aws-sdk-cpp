@@ -247,42 +247,42 @@ class GetSessionResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   LogConfiguration m_log;
-  bool m_logHasBeenSet = false;
 
   SessionLifecycleStatus m_lifecycleStatus{SessionLifecycleStatus::NOT_SET};
-  bool m_lifecycleStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
-  bool m_targetLifecycleStatusHasBeenSet = false;
 
   HostPropertiesResponse m_hostProperties;
-  bool m_hostPropertiesHasBeenSet = false;
 
   LogConfiguration m_workerLog;
-  bool m_workerLogHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_logHasBeenSet = false;
+  bool m_lifecycleStatusHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_targetLifecycleStatusHasBeenSet = false;
+  bool m_hostPropertiesHasBeenSet = false;
+  bool m_workerLogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

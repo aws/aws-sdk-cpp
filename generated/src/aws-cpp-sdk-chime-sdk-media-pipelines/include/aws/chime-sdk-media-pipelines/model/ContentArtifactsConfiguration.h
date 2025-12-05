@@ -65,9 +65,9 @@ class ContentArtifactsConfiguration {
   ///@}
  private:
   ArtifactsState m_state{ArtifactsState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   ContentMuxType m_muxType{ContentMuxType::NOT_SET};
+  bool m_stateHasBeenSet = false;
   bool m_muxTypeHasBeenSet = false;
 };
 

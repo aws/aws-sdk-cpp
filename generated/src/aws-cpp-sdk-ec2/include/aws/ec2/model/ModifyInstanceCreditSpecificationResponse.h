@@ -99,12 +99,12 @@ class ModifyInstanceCreditSpecificationResponse {
   ///@}
  private:
   Aws::Vector<SuccessfulInstanceCreditSpecificationItem> m_successfulInstanceCreditSpecifications;
-  bool m_successfulInstanceCreditSpecificationsHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem> m_unsuccessfulInstanceCreditSpecifications;
-  bool m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulInstanceCreditSpecificationsHasBeenSet = false;
+  bool m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

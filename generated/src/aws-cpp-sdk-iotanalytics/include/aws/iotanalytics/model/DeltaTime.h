@@ -76,9 +76,9 @@ class DeltaTime {
   ///@}
  private:
   int m_offsetSeconds{0};
-  bool m_offsetSecondsHasBeenSet = false;
 
   Aws::String m_timeExpression;
+  bool m_offsetSecondsHasBeenSet = false;
   bool m_timeExpressionHasBeenSet = false;
 };
 

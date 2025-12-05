@@ -70,9 +70,9 @@ class DeleteSnapshotRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_snapshotIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

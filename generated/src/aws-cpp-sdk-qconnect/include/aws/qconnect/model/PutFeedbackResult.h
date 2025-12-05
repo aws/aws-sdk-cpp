@@ -127,21 +127,21 @@ class PutFeedbackResult {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_assistantArn;
-  bool m_assistantArnHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   ContentFeedbackData m_contentFeedback;
-  bool m_contentFeedbackHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_assistantArnHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_contentFeedbackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

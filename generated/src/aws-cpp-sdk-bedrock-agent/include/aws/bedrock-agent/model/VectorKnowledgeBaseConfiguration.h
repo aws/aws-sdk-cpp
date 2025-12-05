@@ -97,12 +97,12 @@ class VectorKnowledgeBaseConfiguration {
   ///@}
  private:
   Aws::String m_embeddingModelArn;
-  bool m_embeddingModelArnHasBeenSet = false;
 
   EmbeddingModelConfiguration m_embeddingModelConfiguration;
-  bool m_embeddingModelConfigurationHasBeenSet = false;
 
   SupplementalDataStorageConfiguration m_supplementalDataStorageConfiguration;
+  bool m_embeddingModelArnHasBeenSet = false;
+  bool m_embeddingModelConfigurationHasBeenSet = false;
   bool m_supplementalDataStorageConfigurationHasBeenSet = false;
 };
 

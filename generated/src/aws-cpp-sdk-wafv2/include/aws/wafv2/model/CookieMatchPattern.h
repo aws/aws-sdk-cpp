@@ -106,12 +106,12 @@ class CookieMatchPattern {
   ///@}
  private:
   All m_all;
-  bool m_allHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includedCookies;
-  bool m_includedCookiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedCookies;
+  bool m_allHasBeenSet = false;
+  bool m_includedCookiesHasBeenSet = false;
   bool m_excludedCookiesHasBeenSet = false;
 };
 

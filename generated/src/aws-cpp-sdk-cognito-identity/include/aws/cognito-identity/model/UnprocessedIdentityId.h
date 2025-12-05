@@ -68,9 +68,9 @@ class UnprocessedIdentityId {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
+  bool m_identityIdHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

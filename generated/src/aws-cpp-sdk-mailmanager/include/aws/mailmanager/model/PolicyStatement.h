@@ -77,9 +77,9 @@ class PolicyStatement {
   ///@}
  private:
   Aws::Vector<PolicyCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   AcceptAction m_action{AcceptAction::NOT_SET};
+  bool m_conditionsHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

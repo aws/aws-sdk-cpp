@@ -139,18 +139,18 @@ class DescribeKeywordsRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   Aws::Vector<KeywordFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_originationIdentityHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

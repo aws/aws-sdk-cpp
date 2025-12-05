@@ -92,12 +92,12 @@ class DisassociateTrunkInterfaceRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
+  bool m_associationIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_dryRunHasBeenSet = false;
 };
 

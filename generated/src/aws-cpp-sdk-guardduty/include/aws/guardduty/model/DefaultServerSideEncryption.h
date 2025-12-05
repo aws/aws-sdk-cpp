@@ -72,9 +72,9 @@ class DefaultServerSideEncryption {
   ///@}
  private:
   Aws::String m_encryptionType;
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsMasterKeyArn;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_kmsMasterKeyArnHasBeenSet = false;
 };
 

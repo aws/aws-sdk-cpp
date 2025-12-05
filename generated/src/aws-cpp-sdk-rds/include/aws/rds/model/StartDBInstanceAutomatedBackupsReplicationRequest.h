@@ -145,18 +145,18 @@ class StartDBInstanceAutomatedBackupsReplicationRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_sourceDBInstanceArn;
-  bool m_sourceDBInstanceArnHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   Aws::String m_sourceRegion;
+  bool m_sourceDBInstanceArnHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

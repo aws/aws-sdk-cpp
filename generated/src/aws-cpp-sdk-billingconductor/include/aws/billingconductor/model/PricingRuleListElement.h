@@ -288,45 +288,45 @@ class PricingRuleListElement {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   PricingRuleScope m_scope{PricingRuleScope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   PricingRuleType m_type{PricingRuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_modifierPercentage{0.0};
-  bool m_modifierPercentageHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   long long m_associatedPricingPlanCount{0};
-  bool m_associatedPricingPlanCountHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_billingEntity;
-  bool m_billingEntityHasBeenSet = false;
 
   Tiering m_tiering;
-  bool m_tieringHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_modifierPercentageHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_associatedPricingPlanCountHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_billingEntityHasBeenSet = false;
+  bool m_tieringHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

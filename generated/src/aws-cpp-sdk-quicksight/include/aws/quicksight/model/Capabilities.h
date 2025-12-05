@@ -629,114 +629,114 @@ class Capabilities {
   ///@}
  private:
   CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
-  bool m_exportToCsvHasBeenSet = false;
 
   CapabilityState m_exportToExcel{CapabilityState::NOT_SET};
-  bool m_exportToExcelHasBeenSet = false;
 
   CapabilityState m_exportToPdf{CapabilityState::NOT_SET};
-  bool m_exportToPdfHasBeenSet = false;
 
   CapabilityState m_printReports{CapabilityState::NOT_SET};
-  bool m_printReportsHasBeenSet = false;
 
   CapabilityState m_createAndUpdateThemes{CapabilityState::NOT_SET};
-  bool m_createAndUpdateThemesHasBeenSet = false;
 
   CapabilityState m_addOrRunAnomalyDetectionForAnalyses{CapabilityState::NOT_SET};
-  bool m_addOrRunAnomalyDetectionForAnalysesHasBeenSet = false;
 
   CapabilityState m_shareAnalyses{CapabilityState::NOT_SET};
-  bool m_shareAnalysesHasBeenSet = false;
 
   CapabilityState m_createAndUpdateDatasets{CapabilityState::NOT_SET};
-  bool m_createAndUpdateDatasetsHasBeenSet = false;
 
   CapabilityState m_shareDatasets{CapabilityState::NOT_SET};
-  bool m_shareDatasetsHasBeenSet = false;
 
   CapabilityState m_subscribeDashboardEmailReports{CapabilityState::NOT_SET};
-  bool m_subscribeDashboardEmailReportsHasBeenSet = false;
 
   CapabilityState m_createAndUpdateDashboardEmailReports{CapabilityState::NOT_SET};
-  bool m_createAndUpdateDashboardEmailReportsHasBeenSet = false;
 
   CapabilityState m_shareDashboards{CapabilityState::NOT_SET};
-  bool m_shareDashboardsHasBeenSet = false;
 
   CapabilityState m_createAndUpdateThresholdAlerts{CapabilityState::NOT_SET};
-  bool m_createAndUpdateThresholdAlertsHasBeenSet = false;
 
   CapabilityState m_renameSharedFolders{CapabilityState::NOT_SET};
-  bool m_renameSharedFoldersHasBeenSet = false;
 
   CapabilityState m_createSharedFolders{CapabilityState::NOT_SET};
-  bool m_createSharedFoldersHasBeenSet = false;
 
   CapabilityState m_createAndUpdateDataSources{CapabilityState::NOT_SET};
-  bool m_createAndUpdateDataSourcesHasBeenSet = false;
 
   CapabilityState m_shareDataSources{CapabilityState::NOT_SET};
-  bool m_shareDataSourcesHasBeenSet = false;
 
   CapabilityState m_viewAccountSPICECapacity{CapabilityState::NOT_SET};
-  bool m_viewAccountSPICECapacityHasBeenSet = false;
 
   CapabilityState m_createSPICEDataset{CapabilityState::NOT_SET};
-  bool m_createSPICEDatasetHasBeenSet = false;
 
   CapabilityState m_exportToPdfInScheduledReports{CapabilityState::NOT_SET};
-  bool m_exportToPdfInScheduledReportsHasBeenSet = false;
 
   CapabilityState m_exportToCsvInScheduledReports{CapabilityState::NOT_SET};
-  bool m_exportToCsvInScheduledReportsHasBeenSet = false;
 
   CapabilityState m_exportToExcelInScheduledReports{CapabilityState::NOT_SET};
-  bool m_exportToExcelInScheduledReportsHasBeenSet = false;
 
   CapabilityState m_includeContentInScheduledReportsEmail{CapabilityState::NOT_SET};
-  bool m_includeContentInScheduledReportsEmailHasBeenSet = false;
 
   CapabilityState m_dashboard{CapabilityState::NOT_SET};
-  bool m_dashboardHasBeenSet = false;
 
   CapabilityState m_analysis{CapabilityState::NOT_SET};
-  bool m_analysisHasBeenSet = false;
 
   CapabilityState m_automate{CapabilityState::NOT_SET};
-  bool m_automateHasBeenSet = false;
 
   CapabilityState m_flow{CapabilityState::NOT_SET};
-  bool m_flowHasBeenSet = false;
 
   CapabilityState m_publishWithoutApproval{CapabilityState::NOT_SET};
-  bool m_publishWithoutApprovalHasBeenSet = false;
 
   CapabilityState m_useBedrockModels{CapabilityState::NOT_SET};
-  bool m_useBedrockModelsHasBeenSet = false;
 
   CapabilityState m_performFlowUiTask{CapabilityState::NOT_SET};
-  bool m_performFlowUiTaskHasBeenSet = false;
 
   CapabilityState m_useAgentWebSearch{CapabilityState::NOT_SET};
-  bool m_useAgentWebSearchHasBeenSet = false;
 
   CapabilityState m_knowledgeBase{CapabilityState::NOT_SET};
-  bool m_knowledgeBaseHasBeenSet = false;
 
   CapabilityState m_action{CapabilityState::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   CapabilityState m_space{CapabilityState::NOT_SET};
-  bool m_spaceHasBeenSet = false;
 
   CapabilityState m_chatAgent{CapabilityState::NOT_SET};
-  bool m_chatAgentHasBeenSet = false;
 
   CapabilityState m_createChatAgents{CapabilityState::NOT_SET};
-  bool m_createChatAgentsHasBeenSet = false;
 
   CapabilityState m_research{CapabilityState::NOT_SET};
+  bool m_exportToCsvHasBeenSet = false;
+  bool m_exportToExcelHasBeenSet = false;
+  bool m_exportToPdfHasBeenSet = false;
+  bool m_printReportsHasBeenSet = false;
+  bool m_createAndUpdateThemesHasBeenSet = false;
+  bool m_addOrRunAnomalyDetectionForAnalysesHasBeenSet = false;
+  bool m_shareAnalysesHasBeenSet = false;
+  bool m_createAndUpdateDatasetsHasBeenSet = false;
+  bool m_shareDatasetsHasBeenSet = false;
+  bool m_subscribeDashboardEmailReportsHasBeenSet = false;
+  bool m_createAndUpdateDashboardEmailReportsHasBeenSet = false;
+  bool m_shareDashboardsHasBeenSet = false;
+  bool m_createAndUpdateThresholdAlertsHasBeenSet = false;
+  bool m_renameSharedFoldersHasBeenSet = false;
+  bool m_createSharedFoldersHasBeenSet = false;
+  bool m_createAndUpdateDataSourcesHasBeenSet = false;
+  bool m_shareDataSourcesHasBeenSet = false;
+  bool m_viewAccountSPICECapacityHasBeenSet = false;
+  bool m_createSPICEDatasetHasBeenSet = false;
+  bool m_exportToPdfInScheduledReportsHasBeenSet = false;
+  bool m_exportToCsvInScheduledReportsHasBeenSet = false;
+  bool m_exportToExcelInScheduledReportsHasBeenSet = false;
+  bool m_includeContentInScheduledReportsEmailHasBeenSet = false;
+  bool m_dashboardHasBeenSet = false;
+  bool m_analysisHasBeenSet = false;
+  bool m_automateHasBeenSet = false;
+  bool m_flowHasBeenSet = false;
+  bool m_publishWithoutApprovalHasBeenSet = false;
+  bool m_useBedrockModelsHasBeenSet = false;
+  bool m_performFlowUiTaskHasBeenSet = false;
+  bool m_useAgentWebSearchHasBeenSet = false;
+  bool m_knowledgeBaseHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_spaceHasBeenSet = false;
+  bool m_chatAgentHasBeenSet = false;
+  bool m_createChatAgentsHasBeenSet = false;
   bool m_researchHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class Variable {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   DatasetContentVersionValue m_datasetContentVersionValue;
-  bool m_datasetContentVersionValueHasBeenSet = false;
 
   OutputFileUriValue m_outputFileUriValue;
+  bool m_nameHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_datasetContentVersionValueHasBeenSet = false;
   bool m_outputFileUriValueHasBeenSet = false;
 };
 

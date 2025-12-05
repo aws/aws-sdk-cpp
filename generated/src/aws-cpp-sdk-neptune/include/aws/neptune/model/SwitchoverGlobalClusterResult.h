@@ -58,9 +58,9 @@ class SwitchoverGlobalClusterResult {
   ///@}
  private:
   GlobalCluster m_globalCluster;
-  bool m_globalClusterHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_globalClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

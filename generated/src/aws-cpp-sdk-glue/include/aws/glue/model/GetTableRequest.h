@@ -165,24 +165,24 @@ class GetTableRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryAsOfTime{};
-  bool m_queryAsOfTimeHasBeenSet = false;
 
   AuditContext m_auditContext;
-  bool m_auditContextHasBeenSet = false;
 
   bool m_includeStatusDetails{false};
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_queryAsOfTimeHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
   bool m_includeStatusDetailsHasBeenSet = false;
 };
 

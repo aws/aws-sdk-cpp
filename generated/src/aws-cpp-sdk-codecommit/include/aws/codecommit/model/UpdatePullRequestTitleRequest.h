@@ -68,9 +68,9 @@ class UpdatePullRequestTitleRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_pullRequestId;
-  bool m_pullRequestIdHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_pullRequestIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

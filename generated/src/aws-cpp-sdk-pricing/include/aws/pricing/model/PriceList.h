@@ -129,15 +129,15 @@ class PriceList {
   ///@}
  private:
   Aws::String m_priceListArn;
-  bool m_priceListArnHasBeenSet = false;
 
   Aws::String m_regionCode;
-  bool m_regionCodeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fileFormats;
+  bool m_priceListArnHasBeenSet = false;
+  bool m_regionCodeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
   bool m_fileFormatsHasBeenSet = false;
 };
 

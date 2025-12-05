@@ -65,9 +65,9 @@ class Source {
   ///@}
  private:
   Aws::String m_customerProfilesSegmentArn;
-  bool m_customerProfilesSegmentArnHasBeenSet = false;
 
   EventTrigger m_eventTrigger;
+  bool m_customerProfilesSegmentArnHasBeenSet = false;
   bool m_eventTriggerHasBeenSet = false;
 };
 

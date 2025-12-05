@@ -64,9 +64,9 @@ class DeregisterTransitGatewayMulticastGroupMembersResponse {
   ///@}
  private:
   TransitGatewayMulticastDeregisteredGroupMembers m_deregisteredMulticastGroupMembers;
-  bool m_deregisteredMulticastGroupMembersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_deregisteredMulticastGroupMembersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class DescribeTableStatisticsResult {
   ///@}
  private:
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   Aws::Vector<TableStatistics> m_tableStatistics;
-  bool m_tableStatisticsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationTaskArnHasBeenSet = false;
+  bool m_tableStatisticsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

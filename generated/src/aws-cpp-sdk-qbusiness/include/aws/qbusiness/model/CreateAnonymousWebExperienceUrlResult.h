@@ -62,9 +62,9 @@ class CreateAnonymousWebExperienceUrlResult {
   ///@}
  private:
   Aws::String m_anonymousUrl;
-  bool m_anonymousUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anonymousUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

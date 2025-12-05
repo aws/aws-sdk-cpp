@@ -83,9 +83,9 @@ class FleetSpotCapacityRebalance {
   ///@}
  private:
   FleetReplacementStrategy m_replacementStrategy{FleetReplacementStrategy::NOT_SET};
-  bool m_replacementStrategyHasBeenSet = false;
 
   int m_terminationDelay{0};
+  bool m_replacementStrategyHasBeenSet = false;
   bool m_terminationDelayHasBeenSet = false;
 };
 

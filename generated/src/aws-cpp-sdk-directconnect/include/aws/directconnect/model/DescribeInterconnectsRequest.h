@@ -86,12 +86,12 @@ class DescribeInterconnectsRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_interconnectId;
-  bool m_interconnectIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_interconnectIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

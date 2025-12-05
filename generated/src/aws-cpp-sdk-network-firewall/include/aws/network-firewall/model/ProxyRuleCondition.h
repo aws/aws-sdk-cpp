@@ -94,12 +94,12 @@ class ProxyRuleCondition {
   ///@}
  private:
   Aws::String m_conditionOperator;
-  bool m_conditionOperatorHasBeenSet = false;
 
   Aws::String m_conditionKey;
-  bool m_conditionKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_conditionValues;
+  bool m_conditionOperatorHasBeenSet = false;
+  bool m_conditionKeyHasBeenSet = false;
   bool m_conditionValuesHasBeenSet = false;
 };
 

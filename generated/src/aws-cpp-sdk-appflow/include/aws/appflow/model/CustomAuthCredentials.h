@@ -76,9 +76,9 @@ class CustomAuthCredentials {
   ///@}
  private:
   Aws::String m_customAuthenticationType;
-  bool m_customAuthenticationTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_credentialsMap;
+  bool m_customAuthenticationTypeHasBeenSet = false;
   bool m_credentialsMapHasBeenSet = false;
 };
 

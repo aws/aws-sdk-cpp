@@ -346,54 +346,54 @@ class CollaborationTrainedModelInferenceJobSummary {
   ///@}
  private:
   Aws::String m_trainedModelInferenceJobArn;
-  bool m_trainedModelInferenceJobArnHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_trainedModelArn;
-  bool m_trainedModelArnHasBeenSet = false;
 
   Aws::String m_trainedModelVersionIdentifier;
-  bool m_trainedModelVersionIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   TrainedModelInferenceJobStatus m_status{TrainedModelInferenceJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InferenceOutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   MetricsStatus m_metricsStatus{MetricsStatus::NOT_SET};
-  bool m_metricsStatusHasBeenSet = false;
 
   Aws::String m_metricsStatusDetails;
-  bool m_metricsStatusDetailsHasBeenSet = false;
 
   LogsStatus m_logsStatus{LogsStatus::NOT_SET};
-  bool m_logsStatusHasBeenSet = false;
 
   Aws::String m_logsStatusDetails;
-  bool m_logsStatusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
+  bool m_trainedModelInferenceJobArnHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_trainedModelArnHasBeenSet = false;
+  bool m_trainedModelVersionIdentifierHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_metricsStatusHasBeenSet = false;
+  bool m_metricsStatusDetailsHasBeenSet = false;
+  bool m_logsStatusHasBeenSet = false;
+  bool m_logsStatusDetailsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_creatorAccountIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class ListReceiptRuleSetsResult {
   ///@}
  private:
   Aws::Vector<ReceiptRuleSetMetadata> m_ruleSets;
-  bool m_ruleSetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ruleSetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

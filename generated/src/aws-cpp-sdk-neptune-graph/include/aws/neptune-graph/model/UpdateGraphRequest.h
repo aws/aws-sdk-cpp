@@ -104,15 +104,15 @@ class UpdateGraphRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   bool m_publicConnectivity{false};
-  bool m_publicConnectivityHasBeenSet = false;
 
   int m_provisionedMemory{0};
-  bool m_provisionedMemoryHasBeenSet = false;
 
   bool m_deletionProtection{false};
+  bool m_graphIdentifierHasBeenSet = false;
+  bool m_publicConnectivityHasBeenSet = false;
+  bool m_provisionedMemoryHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
 };
 

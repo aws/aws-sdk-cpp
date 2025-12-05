@@ -72,9 +72,9 @@ class UntagResourceRequest : public ChimeSDKIdentityRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

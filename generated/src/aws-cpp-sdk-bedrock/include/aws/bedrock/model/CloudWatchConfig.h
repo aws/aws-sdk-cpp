@@ -87,12 +87,12 @@ class CloudWatchConfig {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   S3Config m_largeDataDeliveryS3Config;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_largeDataDeliveryS3ConfigHasBeenSet = false;
 };
 

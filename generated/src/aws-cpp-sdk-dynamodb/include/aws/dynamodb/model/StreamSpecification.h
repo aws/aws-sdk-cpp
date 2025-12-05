@@ -75,9 +75,9 @@ class StreamSpecification {
   ///@}
  private:
   bool m_streamEnabled{false};
-  bool m_streamEnabledHasBeenSet = false;
 
   StreamViewType m_streamViewType{StreamViewType::NOT_SET};
+  bool m_streamEnabledHasBeenSet = false;
   bool m_streamViewTypeHasBeenSet = false;
 };
 

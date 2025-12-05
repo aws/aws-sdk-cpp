@@ -77,9 +77,9 @@ class LoggingFilter {
   ///@}
  private:
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   FilterBehavior m_defaultBehavior{FilterBehavior::NOT_SET};
+  bool m_filtersHasBeenSet = false;
   bool m_defaultBehaviorHasBeenSet = false;
 };
 

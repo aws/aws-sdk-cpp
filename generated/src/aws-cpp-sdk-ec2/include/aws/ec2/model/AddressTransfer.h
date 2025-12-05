@@ -149,21 +149,21 @@ class AddressTransfer {
   ///@}
  private:
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_transferAccountId;
-  bool m_transferAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_transferOfferExpirationTimestamp{};
-  bool m_transferOfferExpirationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_transferOfferAcceptedTimestamp{};
-  bool m_transferOfferAcceptedTimestampHasBeenSet = false;
 
   AddressTransferStatus m_addressTransferStatus{AddressTransferStatus::NOT_SET};
+  bool m_publicIpHasBeenSet = false;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_transferAccountIdHasBeenSet = false;
+  bool m_transferOfferExpirationTimestampHasBeenSet = false;
+  bool m_transferOfferAcceptedTimestampHasBeenSet = false;
   bool m_addressTransferStatusHasBeenSet = false;
 };
 

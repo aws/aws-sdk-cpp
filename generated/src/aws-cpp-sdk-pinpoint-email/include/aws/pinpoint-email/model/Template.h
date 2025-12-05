@@ -66,9 +66,9 @@ class Template {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateData;
+  bool m_templateArnHasBeenSet = false;
   bool m_templateDataHasBeenSet = false;
 };
 

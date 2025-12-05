@@ -120,15 +120,15 @@ class AssociateRoutingProfileQueuesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_routingProfileId;
-  bool m_routingProfileIdHasBeenSet = false;
 
   Aws::Vector<RoutingProfileQueueConfig> m_queueConfigs;
-  bool m_queueConfigsHasBeenSet = false;
 
   Aws::Vector<RoutingProfileManualAssignmentQueueConfig> m_manualAssignmentQueueConfigs;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_routingProfileIdHasBeenSet = false;
+  bool m_queueConfigsHasBeenSet = false;
   bool m_manualAssignmentQueueConfigsHasBeenSet = false;
 };
 

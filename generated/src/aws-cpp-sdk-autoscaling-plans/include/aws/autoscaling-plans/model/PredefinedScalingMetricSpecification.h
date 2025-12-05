@@ -86,9 +86,9 @@ class PredefinedScalingMetricSpecification {
   ///@}
  private:
   ScalingMetricType m_predefinedScalingMetricType{ScalingMetricType::NOT_SET};
-  bool m_predefinedScalingMetricTypeHasBeenSet = false;
 
   Aws::String m_resourceLabel;
+  bool m_predefinedScalingMetricTypeHasBeenSet = false;
   bool m_resourceLabelHasBeenSet = false;
 };
 

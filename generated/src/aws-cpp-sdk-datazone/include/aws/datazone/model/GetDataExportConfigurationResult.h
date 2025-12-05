@@ -145,24 +145,24 @@ class GetDataExportConfigurationResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   bool m_isExportEnabled{false};
-  bool m_isExportEnabledHasBeenSet = false;
 
   Aws::String m_s3TableBucketArn;
-  bool m_s3TableBucketArnHasBeenSet = false;
 
   ConfigurationStatus m_status{ConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_isExportEnabledHasBeenSet = false;
+  bool m_s3TableBucketArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

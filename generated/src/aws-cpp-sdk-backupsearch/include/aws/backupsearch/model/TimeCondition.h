@@ -72,9 +72,9 @@ class TimeCondition {
   ///@}
  private:
   Aws::Utils::DateTime m_value{};
-  bool m_valueHasBeenSet = false;
 
   TimeConditionOperator m_operator{TimeConditionOperator::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

@@ -407,66 +407,66 @@ class GetGuardrailResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_guardrailId;
-  bool m_guardrailIdHasBeenSet = false;
 
   Aws::String m_guardrailArn;
-  bool m_guardrailArnHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   GuardrailStatus m_status{GuardrailStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   GuardrailTopicPolicy m_topicPolicy;
-  bool m_topicPolicyHasBeenSet = false;
 
   GuardrailContentPolicy m_contentPolicy;
-  bool m_contentPolicyHasBeenSet = false;
 
   GuardrailWordPolicy m_wordPolicy;
-  bool m_wordPolicyHasBeenSet = false;
 
   GuardrailSensitiveInformationPolicy m_sensitiveInformationPolicy;
-  bool m_sensitiveInformationPolicyHasBeenSet = false;
 
   GuardrailContextualGroundingPolicy m_contextualGroundingPolicy;
-  bool m_contextualGroundingPolicyHasBeenSet = false;
 
   GuardrailAutomatedReasoningPolicy m_automatedReasoningPolicy;
-  bool m_automatedReasoningPolicyHasBeenSet = false;
 
   GuardrailCrossRegionDetails m_crossRegionDetails;
-  bool m_crossRegionDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureRecommendations;
-  bool m_failureRecommendationsHasBeenSet = false;
 
   Aws::String m_blockedInputMessaging;
-  bool m_blockedInputMessagingHasBeenSet = false;
 
   Aws::String m_blockedOutputsMessaging;
-  bool m_blockedOutputsMessagingHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_guardrailIdHasBeenSet = false;
+  bool m_guardrailArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_topicPolicyHasBeenSet = false;
+  bool m_contentPolicyHasBeenSet = false;
+  bool m_wordPolicyHasBeenSet = false;
+  bool m_sensitiveInformationPolicyHasBeenSet = false;
+  bool m_contextualGroundingPolicyHasBeenSet = false;
+  bool m_automatedReasoningPolicyHasBeenSet = false;
+  bool m_crossRegionDetailsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
+  bool m_failureRecommendationsHasBeenSet = false;
+  bool m_blockedInputMessagingHasBeenSet = false;
+  bool m_blockedOutputsMessagingHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

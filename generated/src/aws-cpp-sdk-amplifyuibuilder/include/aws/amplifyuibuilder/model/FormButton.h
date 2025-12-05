@@ -86,12 +86,12 @@ class FormButton {
   ///@}
  private:
   bool m_excluded{false};
-  bool m_excludedHasBeenSet = false;
 
   Aws::String m_children;
-  bool m_childrenHasBeenSet = false;
 
   FieldPosition m_position;
+  bool m_excludedHasBeenSet = false;
+  bool m_childrenHasBeenSet = false;
   bool m_positionHasBeenSet = false;
 };
 

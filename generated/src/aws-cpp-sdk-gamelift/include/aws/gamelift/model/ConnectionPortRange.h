@@ -64,9 +64,9 @@ class ConnectionPortRange {
   ///@}
  private:
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
+  bool m_fromPortHasBeenSet = false;
   bool m_toPortHasBeenSet = false;
 };
 

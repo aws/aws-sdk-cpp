@@ -104,15 +104,15 @@ class UpdateConfigRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_configId;
-  bool m_configIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
-  bool m_configTypeHasBeenSet = false;
 
   ConfigTypeData m_configData;
+  bool m_configIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configTypeHasBeenSet = false;
   bool m_configDataHasBeenSet = false;
 };
 

@@ -264,33 +264,33 @@ class StartReplicationTaskAssessmentRunRequest : public DatabaseMigrationService
   ///@}
  private:
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_resultLocationBucket;
-  bool m_resultLocationBucketHasBeenSet = false;
 
   Aws::String m_resultLocationFolder;
-  bool m_resultLocationFolderHasBeenSet = false;
 
   Aws::String m_resultEncryptionMode;
-  bool m_resultEncryptionModeHasBeenSet = false;
 
   Aws::String m_resultKmsKeyArn;
-  bool m_resultKmsKeyArnHasBeenSet = false;
 
   Aws::String m_assessmentRunName;
-  bool m_assessmentRunNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeOnly;
-  bool m_includeOnlyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclude;
-  bool m_excludeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_replicationTaskArnHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_resultLocationBucketHasBeenSet = false;
+  bool m_resultLocationFolderHasBeenSet = false;
+  bool m_resultEncryptionModeHasBeenSet = false;
+  bool m_resultKmsKeyArnHasBeenSet = false;
+  bool m_assessmentRunNameHasBeenSet = false;
+  bool m_includeOnlyHasBeenSet = false;
+  bool m_excludeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

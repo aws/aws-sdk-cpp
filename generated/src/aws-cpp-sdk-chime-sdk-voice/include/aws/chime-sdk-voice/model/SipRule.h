@@ -188,27 +188,27 @@ class SipRule {
   ///@}
  private:
   Aws::String m_sipRuleId;
-  bool m_sipRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   SipRuleTriggerType m_triggerType{SipRuleTriggerType::NOT_SET};
-  bool m_triggerTypeHasBeenSet = false;
 
   Aws::String m_triggerValue;
-  bool m_triggerValueHasBeenSet = false;
 
   Aws::Vector<SipRuleTargetApplication> m_targetApplications;
-  bool m_targetApplicationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_sipRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
+  bool m_triggerTypeHasBeenSet = false;
+  bool m_triggerValueHasBeenSet = false;
+  bool m_targetApplicationsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

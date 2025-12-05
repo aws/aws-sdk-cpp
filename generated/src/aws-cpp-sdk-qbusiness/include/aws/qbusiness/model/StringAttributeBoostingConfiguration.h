@@ -97,9 +97,9 @@ class StringAttributeBoostingConfiguration {
   ///@}
  private:
   DocumentAttributeBoostingLevel m_boostingLevel{DocumentAttributeBoostingLevel::NOT_SET};
-  bool m_boostingLevelHasBeenSet = false;
 
   Aws::Map<Aws::String, StringAttributeValueBoostingLevel> m_attributeValueBoosting;
+  bool m_boostingLevelHasBeenSet = false;
   bool m_attributeValueBoostingHasBeenSet = false;
 };
 

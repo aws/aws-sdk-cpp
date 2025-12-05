@@ -142,18 +142,18 @@ class UpdateIpRestrictionRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_ipRestrictionRuleMap;
-  bool m_ipRestrictionRuleMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_vpcIdRestrictionRuleMap;
-  bool m_vpcIdRestrictionRuleMapHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_vpcEndpointIdRestrictionRuleMap;
-  bool m_vpcEndpointIdRestrictionRuleMapHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_ipRestrictionRuleMapHasBeenSet = false;
+  bool m_vpcIdRestrictionRuleMapHasBeenSet = false;
+  bool m_vpcEndpointIdRestrictionRuleMapHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

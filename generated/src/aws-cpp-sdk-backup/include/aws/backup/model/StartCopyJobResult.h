@@ -96,15 +96,15 @@ class StartCopyJobResult {
   ///@}
  private:
   Aws::String m_copyJobId;
-  bool m_copyJobIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   bool m_isParent{false};
-  bool m_isParentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copyJobIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_isParentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

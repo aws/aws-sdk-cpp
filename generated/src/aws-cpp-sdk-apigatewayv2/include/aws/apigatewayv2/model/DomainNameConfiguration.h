@@ -239,36 +239,36 @@ class DomainNameConfiguration {
   ///@}
  private:
   Aws::String m_apiGatewayDomainName;
-  bool m_apiGatewayDomainNameHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_certificateUploadDate{};
-  bool m_certificateUploadDateHasBeenSet = false;
 
   DomainNameStatus m_domainNameStatus{DomainNameStatus::NOT_SET};
-  bool m_domainNameStatusHasBeenSet = false;
 
   Aws::String m_domainNameStatusMessage;
-  bool m_domainNameStatusMessageHasBeenSet = false;
 
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
-  bool m_securityPolicyHasBeenSet = false;
 
   Aws::String m_ownershipVerificationCertificateArn;
+  bool m_apiGatewayDomainNameHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_certificateUploadDateHasBeenSet = false;
+  bool m_domainNameStatusHasBeenSet = false;
+  bool m_domainNameStatusMessageHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_securityPolicyHasBeenSet = false;
   bool m_ownershipVerificationCertificateArnHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DetachSecurityProfileRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_securityProfileName;
-  bool m_securityProfileNameHasBeenSet = false;
 
   Aws::String m_securityProfileTargetArn;
+  bool m_securityProfileNameHasBeenSet = false;
   bool m_securityProfileTargetArnHasBeenSet = false;
 };
 

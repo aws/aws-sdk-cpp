@@ -62,9 +62,9 @@ class NumberFilter {
   ///@}
  private:
   double m_upperInclusive{0.0};
-  bool m_upperInclusiveHasBeenSet = false;
 
   double m_lowerInclusive{0.0};
+  bool m_upperInclusiveHasBeenSet = false;
   bool m_lowerInclusiveHasBeenSet = false;
 };
 

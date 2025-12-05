@@ -89,12 +89,12 @@ class ListReservationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Reservation> m_reservations;
-  bool m_reservationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reservationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

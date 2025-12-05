@@ -108,18 +108,18 @@ class GetSpritesResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_blob{};
-  bool m_blobHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blobHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

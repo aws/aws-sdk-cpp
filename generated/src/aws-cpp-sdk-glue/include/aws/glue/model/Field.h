@@ -367,57 +367,57 @@ class Field {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FieldDataType m_fieldType{FieldDataType::NOT_SET};
-  bool m_fieldTypeHasBeenSet = false;
 
   bool m_isPrimaryKey{false};
-  bool m_isPrimaryKeyHasBeenSet = false;
 
   bool m_isNullable{false};
-  bool m_isNullableHasBeenSet = false;
 
   bool m_isRetrievable{false};
-  bool m_isRetrievableHasBeenSet = false;
 
   bool m_isFilterable{false};
-  bool m_isFilterableHasBeenSet = false;
 
   bool m_isPartitionable{false};
-  bool m_isPartitionableHasBeenSet = false;
 
   bool m_isCreateable{false};
-  bool m_isCreateableHasBeenSet = false;
 
   bool m_isUpdateable{false};
-  bool m_isUpdateableHasBeenSet = false;
 
   bool m_isUpsertable{false};
-  bool m_isUpsertableHasBeenSet = false;
 
   bool m_isDefaultOnCreate{false};
-  bool m_isDefaultOnCreateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedValues;
-  bool m_supportedValuesHasBeenSet = false;
 
   Aws::Vector<FieldFilterOperator> m_supportedFilterOperators;
-  bool m_supportedFilterOperatorsHasBeenSet = false;
 
   Aws::String m_parentField;
-  bool m_parentFieldHasBeenSet = false;
 
   Aws::String m_nativeDataType;
-  bool m_nativeDataTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customProperties;
+  bool m_fieldNameHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_fieldTypeHasBeenSet = false;
+  bool m_isPrimaryKeyHasBeenSet = false;
+  bool m_isNullableHasBeenSet = false;
+  bool m_isRetrievableHasBeenSet = false;
+  bool m_isFilterableHasBeenSet = false;
+  bool m_isPartitionableHasBeenSet = false;
+  bool m_isCreateableHasBeenSet = false;
+  bool m_isUpdateableHasBeenSet = false;
+  bool m_isUpsertableHasBeenSet = false;
+  bool m_isDefaultOnCreateHasBeenSet = false;
+  bool m_supportedValuesHasBeenSet = false;
+  bool m_supportedFilterOperatorsHasBeenSet = false;
+  bool m_parentFieldHasBeenSet = false;
+  bool m_nativeDataTypeHasBeenSet = false;
   bool m_customPropertiesHasBeenSet = false;
 };
 

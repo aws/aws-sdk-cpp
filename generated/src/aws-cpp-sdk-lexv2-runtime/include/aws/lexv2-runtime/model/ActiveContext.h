@@ -105,12 +105,12 @@ class ActiveContext {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ActiveContextTimeToLive m_timeToLive;
-  bool m_timeToLiveHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_contextAttributes;
+  bool m_nameHasBeenSet = false;
+  bool m_timeToLiveHasBeenSet = false;
   bool m_contextAttributesHasBeenSet = false;
 };
 

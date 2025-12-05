@@ -85,12 +85,12 @@ class DeregisterTargetFromMaintenanceWindowRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::String m_windowTargetId;
-  bool m_windowTargetIdHasBeenSet = false;
 
   bool m_safe{false};
+  bool m_windowIdHasBeenSet = false;
+  bool m_windowTargetIdHasBeenSet = false;
   bool m_safeHasBeenSet = false;
 };
 

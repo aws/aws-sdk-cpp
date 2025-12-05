@@ -132,18 +132,18 @@ class OpensearchConfiguration {
   ///@}
  private:
   Aws::String m_domainEndpoint;
-  bool m_domainEndpointHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   bool m_exactResponse{false};
-  bool m_exactResponseHasBeenSet = false;
 
   ExactResponseFields m_exactResponseFields;
-  bool m_exactResponseFieldsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeFields;
+  bool m_domainEndpointHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_exactResponseHasBeenSet = false;
+  bool m_exactResponseFieldsHasBeenSet = false;
   bool m_includeFieldsHasBeenSet = false;
 };
 

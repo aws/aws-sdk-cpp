@@ -71,9 +71,9 @@ class TableFieldLinkContentConfiguration {
   ///@}
  private:
   TableFieldCustomTextContent m_customTextContent;
-  bool m_customTextContentHasBeenSet = false;
 
   TableFieldCustomIconContent m_customIconContent;
+  bool m_customTextContentHasBeenSet = false;
   bool m_customIconContentHasBeenSet = false;
 };
 

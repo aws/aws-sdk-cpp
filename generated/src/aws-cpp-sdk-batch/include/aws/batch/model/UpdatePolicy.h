@@ -68,9 +68,9 @@ class UpdatePolicy {
   ///@}
  private:
   bool m_terminateJobsOnUpdate{false};
-  bool m_terminateJobsOnUpdateHasBeenSet = false;
 
   long long m_jobExecutionTimeoutMinutes{0};
+  bool m_terminateJobsOnUpdateHasBeenSet = false;
   bool m_jobExecutionTimeoutMinutesHasBeenSet = false;
 };
 

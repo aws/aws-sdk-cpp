@@ -109,15 +109,15 @@ class GetSchemaVersionsDiffRequest : public GlueRequest {
   ///@}
  private:
   SchemaId m_schemaId;
-  bool m_schemaIdHasBeenSet = false;
 
   SchemaVersionNumber m_firstSchemaVersionNumber;
-  bool m_firstSchemaVersionNumberHasBeenSet = false;
 
   SchemaVersionNumber m_secondSchemaVersionNumber;
-  bool m_secondSchemaVersionNumberHasBeenSet = false;
 
   SchemaDiffType m_schemaDiffType{SchemaDiffType::NOT_SET};
+  bool m_schemaIdHasBeenSet = false;
+  bool m_firstSchemaVersionNumberHasBeenSet = false;
+  bool m_secondSchemaVersionNumberHasBeenSet = false;
   bool m_schemaDiffTypeHasBeenSet = false;
 };
 

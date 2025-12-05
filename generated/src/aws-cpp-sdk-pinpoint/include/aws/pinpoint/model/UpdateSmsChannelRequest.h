@@ -65,9 +65,9 @@ class UpdateSmsChannelRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   SMSChannelRequest m_sMSChannelRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_sMSChannelRequestHasBeenSet = false;
 };
 

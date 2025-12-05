@@ -206,27 +206,27 @@ class HyperParameterTuningJobConfig {
   ///@}
  private:
   HyperParameterTuningJobStrategyType m_strategy{HyperParameterTuningJobStrategyType::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   HyperParameterTuningJobStrategyConfig m_strategyConfig;
-  bool m_strategyConfigHasBeenSet = false;
 
   HyperParameterTuningJobObjective m_hyperParameterTuningJobObjective;
-  bool m_hyperParameterTuningJobObjectiveHasBeenSet = false;
 
   ResourceLimits m_resourceLimits;
-  bool m_resourceLimitsHasBeenSet = false;
 
   ParameterRanges m_parameterRanges;
-  bool m_parameterRangesHasBeenSet = false;
 
   TrainingJobEarlyStoppingType m_trainingJobEarlyStoppingType{TrainingJobEarlyStoppingType::NOT_SET};
-  bool m_trainingJobEarlyStoppingTypeHasBeenSet = false;
 
   TuningJobCompletionCriteria m_tuningJobCompletionCriteria;
-  bool m_tuningJobCompletionCriteriaHasBeenSet = false;
 
   int m_randomSeed{0};
+  bool m_strategyHasBeenSet = false;
+  bool m_strategyConfigHasBeenSet = false;
+  bool m_hyperParameterTuningJobObjectiveHasBeenSet = false;
+  bool m_resourceLimitsHasBeenSet = false;
+  bool m_parameterRangesHasBeenSet = false;
+  bool m_trainingJobEarlyStoppingTypeHasBeenSet = false;
+  bool m_tuningJobCompletionCriteriaHasBeenSet = false;
   bool m_randomSeedHasBeenSet = false;
 };
 

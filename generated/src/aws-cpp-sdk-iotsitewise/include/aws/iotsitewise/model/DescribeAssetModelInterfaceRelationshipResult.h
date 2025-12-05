@@ -128,18 +128,18 @@ class DescribeAssetModelInterfaceRelationshipResult {
   ///@}
  private:
   Aws::String m_assetModelId;
-  bool m_assetModelIdHasBeenSet = false;
 
   Aws::String m_interfaceAssetModelId;
-  bool m_interfaceAssetModelIdHasBeenSet = false;
 
   Aws::Vector<PropertyMapping> m_propertyMappings;
-  bool m_propertyMappingsHasBeenSet = false;
 
   Aws::Vector<HierarchyMapping> m_hierarchyMappings;
-  bool m_hierarchyMappingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetModelIdHasBeenSet = false;
+  bool m_interfaceAssetModelIdHasBeenSet = false;
+  bool m_propertyMappingsHasBeenSet = false;
+  bool m_hierarchyMappingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

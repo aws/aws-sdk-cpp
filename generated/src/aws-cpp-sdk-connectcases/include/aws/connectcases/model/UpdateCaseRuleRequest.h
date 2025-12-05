@@ -120,18 +120,18 @@ class UpdateCaseRuleRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_caseRuleId;
-  bool m_caseRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CaseRuleDetails m_rule;
+  bool m_domainIdHasBeenSet = false;
+  bool m_caseRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

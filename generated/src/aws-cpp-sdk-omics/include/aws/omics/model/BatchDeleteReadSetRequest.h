@@ -72,9 +72,9 @@ class BatchDeleteReadSetRequest : public OmicsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   Aws::String m_sequenceStoreId;
+  bool m_idsHasBeenSet = false;
   bool m_sequenceStoreIdHasBeenSet = false;
 };
 

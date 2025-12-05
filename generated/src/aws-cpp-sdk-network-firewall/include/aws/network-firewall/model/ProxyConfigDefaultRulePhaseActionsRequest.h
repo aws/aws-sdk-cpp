@@ -83,12 +83,12 @@ class ProxyConfigDefaultRulePhaseActionsRequest {
   ///@}
  private:
   ProxyRulePhaseAction m_preDNS{ProxyRulePhaseAction::NOT_SET};
-  bool m_preDNSHasBeenSet = false;
 
   ProxyRulePhaseAction m_preREQUEST{ProxyRulePhaseAction::NOT_SET};
-  bool m_preREQUESTHasBeenSet = false;
 
   ProxyRulePhaseAction m_postRESPONSE{ProxyRulePhaseAction::NOT_SET};
+  bool m_preDNSHasBeenSet = false;
+  bool m_preREQUESTHasBeenSet = false;
   bool m_postRESPONSEHasBeenSet = false;
 };
 

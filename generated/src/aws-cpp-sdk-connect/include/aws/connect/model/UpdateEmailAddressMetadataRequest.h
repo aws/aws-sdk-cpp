@@ -125,18 +125,18 @@ class UpdateEmailAddressMetadataRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_emailAddressId;
-  bool m_emailAddressIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_emailAddressIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

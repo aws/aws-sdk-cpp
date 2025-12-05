@@ -64,9 +64,9 @@ class SignatureValidityPeriod {
   ///@}
  private:
   int m_value{0};
-  bool m_valueHasBeenSet = false;
 
   ValidityType m_type{ValidityType::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

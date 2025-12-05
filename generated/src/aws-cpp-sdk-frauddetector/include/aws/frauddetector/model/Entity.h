@@ -69,9 +69,9 @@ class Entity {
   ///@}
  private:
   Aws::String m_entityType;
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_entityId;
+  bool m_entityTypeHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
 };
 

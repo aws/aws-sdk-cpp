@@ -106,15 +106,15 @@ class ListDistributionsByRealtimeLogConfig2020_05_31Request : public CloudFrontR
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_realtimeLogConfigName;
-  bool m_realtimeLogConfigNameHasBeenSet = false;
 
   Aws::String m_realtimeLogConfigArn;
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_realtimeLogConfigNameHasBeenSet = false;
   bool m_realtimeLogConfigArnHasBeenSet = false;
 };
 

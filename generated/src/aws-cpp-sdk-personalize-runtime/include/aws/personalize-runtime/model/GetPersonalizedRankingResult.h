@@ -86,12 +86,12 @@ class GetPersonalizedRankingResult {
   ///@}
  private:
   Aws::Vector<PredictedItem> m_personalizedRanking;
-  bool m_personalizedRankingHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_personalizedRankingHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

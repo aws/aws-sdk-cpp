@@ -115,18 +115,18 @@ class GetTagsResult {
   ///@}
  private:
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_returnSize{0};
-  bool m_returnSizeHasBeenSet = false;
 
   int m_totalSize{0};
-  bool m_totalSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_returnSizeHasBeenSet = false;
+  bool m_totalSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

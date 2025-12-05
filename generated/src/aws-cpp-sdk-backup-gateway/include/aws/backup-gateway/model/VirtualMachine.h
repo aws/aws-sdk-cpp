@@ -143,21 +143,21 @@ class VirtualMachine {
   ///@}
  private:
   Aws::String m_hostName;
-  bool m_hostNameHasBeenSet = false;
 
   Aws::String m_hypervisorId;
-  bool m_hypervisorIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastBackupDate{};
-  bool m_lastBackupDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_hostNameHasBeenSet = false;
+  bool m_hypervisorIdHasBeenSet = false;
+  bool m_lastBackupDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

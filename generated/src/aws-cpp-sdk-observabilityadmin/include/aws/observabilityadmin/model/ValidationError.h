@@ -95,12 +95,12 @@ class ValidationError {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_fieldMap;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_fieldMapHasBeenSet = false;
 };
 

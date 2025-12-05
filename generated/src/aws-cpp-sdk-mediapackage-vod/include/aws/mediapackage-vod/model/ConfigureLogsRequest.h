@@ -67,9 +67,9 @@ class ConfigureLogsRequest : public MediaPackageVodRequest {
   ///@}
  private:
   EgressAccessLogs m_egressAccessLogs;
-  bool m_egressAccessLogsHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_egressAccessLogsHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

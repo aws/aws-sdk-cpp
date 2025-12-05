@@ -98,12 +98,12 @@ class TestRepositoryTriggersResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_successfulExecutions;
-  bool m_successfulExecutionsHasBeenSet = false;
 
   Aws::Vector<RepositoryTriggerExecutionFailure> m_failedExecutions;
-  bool m_failedExecutionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulExecutionsHasBeenSet = false;
+  bool m_failedExecutionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class EncryptionEntity {
   ///@}
  private:
   Aws::String m_publicKeyId;
-  bool m_publicKeyIdHasBeenSet = false;
 
   Aws::String m_providerId;
-  bool m_providerIdHasBeenSet = false;
 
   FieldPatterns m_fieldPatterns;
+  bool m_publicKeyIdHasBeenSet = false;
+  bool m_providerIdHasBeenSet = false;
   bool m_fieldPatternsHasBeenSet = false;
 };
 

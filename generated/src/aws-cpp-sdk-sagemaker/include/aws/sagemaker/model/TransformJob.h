@@ -463,69 +463,69 @@ class TransformJob {
   ///@}
  private:
   Aws::String m_transformJobName;
-  bool m_transformJobNameHasBeenSet = false;
 
   Aws::String m_transformJobArn;
-  bool m_transformJobArnHasBeenSet = false;
 
   TransformJobStatus m_transformJobStatus{TransformJobStatus::NOT_SET};
-  bool m_transformJobStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   int m_maxConcurrentTransforms{0};
-  bool m_maxConcurrentTransformsHasBeenSet = false;
 
   ModelClientConfig m_modelClientConfig;
-  bool m_modelClientConfigHasBeenSet = false;
 
   int m_maxPayloadInMB{0};
-  bool m_maxPayloadInMBHasBeenSet = false;
 
   BatchStrategy m_batchStrategy{BatchStrategy::NOT_SET};
-  bool m_batchStrategyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   TransformInput m_transformInput;
-  bool m_transformInputHasBeenSet = false;
 
   TransformOutput m_transformOutput;
-  bool m_transformOutputHasBeenSet = false;
 
   BatchDataCaptureConfig m_dataCaptureConfig;
-  bool m_dataCaptureConfigHasBeenSet = false;
 
   TransformResources m_transformResources;
-  bool m_transformResourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_transformStartTime{};
-  bool m_transformStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_transformEndTime{};
-  bool m_transformEndTimeHasBeenSet = false;
 
   Aws::String m_labelingJobArn;
-  bool m_labelingJobArnHasBeenSet = false;
 
   Aws::String m_autoMLJobArn;
-  bool m_autoMLJobArnHasBeenSet = false;
 
   DataProcessing m_dataProcessing;
-  bool m_dataProcessingHasBeenSet = false;
 
   ExperimentConfig m_experimentConfig;
-  bool m_experimentConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transformJobNameHasBeenSet = false;
+  bool m_transformJobArnHasBeenSet = false;
+  bool m_transformJobStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_maxConcurrentTransformsHasBeenSet = false;
+  bool m_modelClientConfigHasBeenSet = false;
+  bool m_maxPayloadInMBHasBeenSet = false;
+  bool m_batchStrategyHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_transformInputHasBeenSet = false;
+  bool m_transformOutputHasBeenSet = false;
+  bool m_dataCaptureConfigHasBeenSet = false;
+  bool m_transformResourcesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_transformStartTimeHasBeenSet = false;
+  bool m_transformEndTimeHasBeenSet = false;
+  bool m_labelingJobArnHasBeenSet = false;
+  bool m_autoMLJobArnHasBeenSet = false;
+  bool m_dataProcessingHasBeenSet = false;
+  bool m_experimentConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

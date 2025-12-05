@@ -80,9 +80,9 @@ class ResourceTypeRequest {
   ///@}
  private:
   ImageReferenceResourceType m_resourceType{ImageReferenceResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<ResourceTypeOption> m_resourceTypeOptions;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceTypeOptionsHasBeenSet = false;
 };
 

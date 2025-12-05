@@ -150,21 +150,21 @@ class SearchRelatedItemsResponseItem {
   ///@}
  private:
   Aws::String m_relatedItemId;
-  bool m_relatedItemIdHasBeenSet = false;
 
   RelatedItemType m_type{RelatedItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_associationTime{};
-  bool m_associationTimeHasBeenSet = false;
 
   RelatedItemContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UserUnion m_performedBy;
+  bool m_relatedItemIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_associationTimeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_performedByHasBeenSet = false;
 };
 

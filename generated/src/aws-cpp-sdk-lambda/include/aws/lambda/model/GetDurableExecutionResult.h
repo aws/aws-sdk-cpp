@@ -255,39 +255,39 @@ class GetDurableExecutionResult {
   ///@}
  private:
   Aws::String m_durableExecutionArn;
-  bool m_durableExecutionArnHasBeenSet = false;
 
   Aws::String m_durableExecutionName;
-  bool m_durableExecutionNameHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::String m_inputPayload;
-  bool m_inputPayloadHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   ErrorObject m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   TraceHeader m_traceHeader;
-  bool m_traceHeaderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_durableExecutionArnHasBeenSet = false;
+  bool m_durableExecutionNameHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
+  bool m_inputPayloadHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_traceHeaderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

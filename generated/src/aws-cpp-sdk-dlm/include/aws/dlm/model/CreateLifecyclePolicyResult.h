@@ -59,9 +59,9 @@ class CreateLifecyclePolicyResult {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

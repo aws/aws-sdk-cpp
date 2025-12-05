@@ -72,9 +72,9 @@ class FaceRecord {
   ///@}
  private:
   Face m_face;
-  bool m_faceHasBeenSet = false;
 
   FaceDetail m_faceDetail;
+  bool m_faceHasBeenSet = false;
   bool m_faceDetailHasBeenSet = false;
 };
 

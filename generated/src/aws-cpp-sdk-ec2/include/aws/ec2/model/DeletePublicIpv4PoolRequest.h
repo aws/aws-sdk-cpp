@@ -92,12 +92,12 @@ class DeletePublicIpv4PoolRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
+  bool m_dryRunHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
   bool m_networkBorderGroupHasBeenSet = false;
 };
 

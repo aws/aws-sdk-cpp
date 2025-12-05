@@ -100,15 +100,15 @@ class ListTemplatesResult {
   ///@}
  private:
   Aws::Vector<TemplateSummary> m_templateSummaryList;
-  bool m_templateSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

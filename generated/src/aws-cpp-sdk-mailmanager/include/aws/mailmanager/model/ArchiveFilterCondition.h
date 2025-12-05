@@ -70,9 +70,9 @@ class ArchiveFilterCondition {
   ///@}
  private:
   ArchiveStringExpression m_stringExpression;
-  bool m_stringExpressionHasBeenSet = false;
 
   ArchiveBooleanExpression m_booleanExpression;
+  bool m_stringExpressionHasBeenSet = false;
   bool m_booleanExpressionHasBeenSet = false;
 };
 

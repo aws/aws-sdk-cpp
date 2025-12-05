@@ -103,15 +103,15 @@ class DetectorVersionSummary {
   ///@}
  private:
   Aws::String m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   DetectorVersionStatus m_status{DetectorVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
+  bool m_detectorVersionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

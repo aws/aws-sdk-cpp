@@ -61,9 +61,9 @@ class EnableTransitGatewayRouteTablePropagationResponse {
   ///@}
  private:
   TransitGatewayPropagation m_propagation;
-  bool m_propagationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_propagationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

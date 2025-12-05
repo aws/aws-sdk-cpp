@@ -174,27 +174,27 @@ class DescribeAnalysisDefinitionResult {
   ///@}
  private:
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AnalysisError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   ResourceStatus m_resourceStatus{ResourceStatus::NOT_SET};
-  bool m_resourceStatusHasBeenSet = false;
 
   Aws::String m_themeArn;
-  bool m_themeArnHasBeenSet = false;
 
   AnalysisDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_resourceStatusHasBeenSet = false;
+  bool m_themeArnHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

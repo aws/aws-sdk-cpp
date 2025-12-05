@@ -60,9 +60,9 @@ class UpdateCapacityProviderResult {
   ///@}
  private:
   CapacityProvider m_capacityProvider;
-  bool m_capacityProviderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityProviderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

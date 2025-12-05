@@ -80,12 +80,12 @@ class RoutingRuleActionInvokeApi {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   bool m_stripBasePath{false};
+  bool m_apiIdHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
   bool m_stripBasePathHasBeenSet = false;
 };
 

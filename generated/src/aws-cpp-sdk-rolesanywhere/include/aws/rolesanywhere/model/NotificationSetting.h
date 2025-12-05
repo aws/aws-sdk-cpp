@@ -104,15 +104,15 @@ class NotificationSetting {
   ///@}
  private:
   NotificationChannel m_channel{NotificationChannel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   NotificationEvent m_event{NotificationEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   int m_threshold{0};
+  bool m_channelHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
 };
 

@@ -143,21 +143,21 @@ class UpdateSubscriptionGrantStatusRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_assetIdentifier;
-  bool m_assetIdentifierHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   FailureCause m_failureCause;
-  bool m_failureCauseHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   SubscriptionGrantStatus m_status{SubscriptionGrantStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_targetName;
+  bool m_assetIdentifierHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_failureCauseHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
 };
 

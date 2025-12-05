@@ -69,9 +69,9 @@ class RuleConfiguration {
   ///@}
  private:
   ContentBlockerRule m_contentBlockerRule;
-  bool m_contentBlockerRuleHasBeenSet = false;
 
   ContentRetrievalRule m_contentRetrievalRule;
+  bool m_contentBlockerRuleHasBeenSet = false;
   bool m_contentRetrievalRuleHasBeenSet = false;
 };
 

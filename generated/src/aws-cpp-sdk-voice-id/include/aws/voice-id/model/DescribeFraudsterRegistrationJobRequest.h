@@ -68,9 +68,9 @@ class DescribeFraudsterRegistrationJobRequest : public VoiceIDRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_domainIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

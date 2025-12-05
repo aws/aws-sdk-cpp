@@ -105,15 +105,15 @@ class UpdatePortalProductRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   DisplayOrder m_displayOrder;
-  bool m_displayOrderHasBeenSet = false;
 
   Aws::String m_portalProductId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_displayOrderHasBeenSet = false;
   bool m_portalProductIdHasBeenSet = false;
 };
 

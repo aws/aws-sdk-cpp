@@ -81,9 +81,9 @@ class InlineAgentReturnControlPayload {
   ///@}
  private:
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::Vector<InvocationInputMember> m_invocationInputs;
+  bool m_invocationIdHasBeenSet = false;
   bool m_invocationInputsHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class AccountAggregation {
   ///@}
  private:
   AggregationFindingType m_findingType{AggregationFindingType::NOT_SET};
-  bool m_findingTypeHasBeenSet = false;
 
   AggregationResourceType m_resourceType{AggregationResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   AccountSortBy m_sortBy{AccountSortBy::NOT_SET};
+  bool m_findingTypeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

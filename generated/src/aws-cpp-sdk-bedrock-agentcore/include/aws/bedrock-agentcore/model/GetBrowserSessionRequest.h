@@ -70,9 +70,9 @@ class GetBrowserSessionRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_browserIdentifier;
-  bool m_browserIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_browserIdentifierHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

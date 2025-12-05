@@ -102,12 +102,12 @@ class RegisterStreamConsumerRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_consumerName;
-  bool m_consumerNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_streamARNHasBeenSet = false;
+  bool m_consumerNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

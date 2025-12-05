@@ -66,9 +66,9 @@ class DisableOrganizationAdminAccountRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_adminAccountId;
-  bool m_adminAccountIdHasBeenSet = false;
 
   SecurityHubFeature m_feature{SecurityHubFeature::NOT_SET};
+  bool m_adminAccountIdHasBeenSet = false;
   bool m_featureHasBeenSet = false;
 };
 

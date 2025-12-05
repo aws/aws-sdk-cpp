@@ -219,30 +219,30 @@ class CreateKnowledgeBaseRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   KnowledgeBaseType m_knowledgeBaseType{KnowledgeBaseType::NOT_SET};
-  bool m_knowledgeBaseTypeHasBeenSet = false;
 
   SourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   RenderingConfiguration m_renderingConfiguration;
-  bool m_renderingConfigurationHasBeenSet = false;
 
   VectorIngestionConfiguration m_vectorIngestionConfiguration;
-  bool m_vectorIngestionConfigurationHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_knowledgeBaseTypeHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
+  bool m_renderingConfigurationHasBeenSet = false;
+  bool m_vectorIngestionConfigurationHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

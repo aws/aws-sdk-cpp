@@ -74,9 +74,9 @@ class TestExecutionResultFilterBy {
   ///@}
  private:
   TestResultTypeFilter m_resultTypeFilter{TestResultTypeFilter::NOT_SET};
-  bool m_resultTypeFilterHasBeenSet = false;
 
   ConversationLevelTestResultsFilterBy m_conversationLevelTestResultsFilterBy;
+  bool m_resultTypeFilterHasBeenSet = false;
   bool m_conversationLevelTestResultsFilterByHasBeenSet = false;
 };
 

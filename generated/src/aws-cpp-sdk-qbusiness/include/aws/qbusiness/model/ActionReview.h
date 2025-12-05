@@ -116,15 +116,15 @@ class ActionReview {
   ///@}
  private:
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   PluginType m_pluginType{PluginType::NOT_SET};
-  bool m_pluginTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, ActionReviewPayloadField> m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_payloadFieldNameSeparator;
+  bool m_pluginIdHasBeenSet = false;
+  bool m_pluginTypeHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_payloadFieldNameSeparatorHasBeenSet = false;
 };
 

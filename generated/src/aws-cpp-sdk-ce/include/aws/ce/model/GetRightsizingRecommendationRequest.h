@@ -126,18 +126,18 @@ class GetRightsizingRecommendationRequest : public CostExplorerRequest {
   ///@}
  private:
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   RightsizingRecommendationConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_nextPageToken;
+  bool m_filterHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
 };
 

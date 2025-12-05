@@ -400,51 +400,51 @@ class RegisterTaskWithMaintenanceWindowRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   Aws::String m_serviceRoleArn;
-  bool m_serviceRoleArnHasBeenSet = false;
 
   MaintenanceWindowTaskType m_taskType{MaintenanceWindowTaskType::NOT_SET};
-  bool m_taskTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression> m_taskParameters;
-  bool m_taskParametersHasBeenSet = false;
 
   MaintenanceWindowTaskInvocationParameters m_taskInvocationParameters;
-  bool m_taskInvocationParametersHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_maxConcurrency;
-  bool m_maxConcurrencyHasBeenSet = false;
 
   Aws::String m_maxErrors;
-  bool m_maxErrorsHasBeenSet = false;
 
   LoggingInfo m_loggingInfo;
-  bool m_loggingInfoHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   MaintenanceWindowTaskCutoffBehavior m_cutoffBehavior{MaintenanceWindowTaskCutoffBehavior::NOT_SET};
-  bool m_cutoffBehaviorHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
+  bool m_windowIdHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_taskArnHasBeenSet = false;
+  bool m_serviceRoleArnHasBeenSet = false;
+  bool m_taskTypeHasBeenSet = false;
+  bool m_taskParametersHasBeenSet = false;
+  bool m_taskInvocationParametersHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_maxErrorsHasBeenSet = false;
+  bool m_loggingInfoHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_cutoffBehaviorHasBeenSet = false;
   bool m_alarmConfigurationHasBeenSet = false;
 };
 

@@ -198,27 +198,27 @@ class IcebergTableUpdate {
   ///@}
  private:
   IcebergSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   IcebergPartitionSpec m_partitionSpec;
-  bool m_partitionSpecHasBeenSet = false;
 
   IcebergSortOrder m_sortOrder;
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   IcebergUpdateAction m_action{IcebergUpdateAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   IcebergEncryptedKey m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::String m_keyId;
+  bool m_schemaHasBeenSet = false;
+  bool m_partitionSpecHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;
 };
 

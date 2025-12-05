@@ -124,18 +124,18 @@ class ListNodesRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   NodeStatus m_status{NodeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_networkIdHasBeenSet = false;
+  bool m_memberIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

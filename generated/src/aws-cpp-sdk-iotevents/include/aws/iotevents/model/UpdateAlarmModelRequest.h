@@ -178,27 +178,27 @@ class UpdateAlarmModelRequest : public IoTEventsRequest {
   ///@}
  private:
   Aws::String m_alarmModelName;
-  bool m_alarmModelNameHasBeenSet = false;
 
   Aws::String m_alarmModelDescription;
-  bool m_alarmModelDescriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   int m_severity{0};
-  bool m_severityHasBeenSet = false;
 
   AlarmRule m_alarmRule;
-  bool m_alarmRuleHasBeenSet = false;
 
   AlarmNotification m_alarmNotification;
-  bool m_alarmNotificationHasBeenSet = false;
 
   AlarmEventActions m_alarmEventActions;
-  bool m_alarmEventActionsHasBeenSet = false;
 
   AlarmCapabilities m_alarmCapabilities;
+  bool m_alarmModelNameHasBeenSet = false;
+  bool m_alarmModelDescriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_alarmRuleHasBeenSet = false;
+  bool m_alarmNotificationHasBeenSet = false;
+  bool m_alarmEventActionsHasBeenSet = false;
   bool m_alarmCapabilitiesHasBeenSet = false;
 };
 

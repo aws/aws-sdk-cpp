@@ -113,18 +113,18 @@ class ImportStatistics {
   ///@}
  private:
   long long m_prefixesFound{0};
-  bool m_prefixesFoundHasBeenSet = false;
 
   long long m_prefixesCompleted{0};
-  bool m_prefixesCompletedHasBeenSet = false;
 
   long long m_filesCompleted{0};
-  bool m_filesCompletedHasBeenSet = false;
 
   long long m_eventsCompleted{0};
-  bool m_eventsCompletedHasBeenSet = false;
 
   long long m_failedEntries{0};
+  bool m_prefixesFoundHasBeenSet = false;
+  bool m_prefixesCompletedHasBeenSet = false;
+  bool m_filesCompletedHasBeenSet = false;
+  bool m_eventsCompletedHasBeenSet = false;
   bool m_failedEntriesHasBeenSet = false;
 };
 

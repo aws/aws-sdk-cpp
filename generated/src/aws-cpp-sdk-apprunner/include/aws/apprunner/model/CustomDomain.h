@@ -114,15 +114,15 @@ class CustomDomain {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_enableWWWSubdomain{false};
-  bool m_enableWWWSubdomainHasBeenSet = false;
 
   Aws::Vector<CertificateValidationRecord> m_certificateValidationRecords;
-  bool m_certificateValidationRecordsHasBeenSet = false;
 
   CustomDomainAssociationStatus m_status{CustomDomainAssociationStatus::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
+  bool m_enableWWWSubdomainHasBeenSet = false;
+  bool m_certificateValidationRecordsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

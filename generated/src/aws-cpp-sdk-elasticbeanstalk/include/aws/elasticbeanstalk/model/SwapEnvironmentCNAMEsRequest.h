@@ -124,15 +124,15 @@ class SwapEnvironmentCNAMEsRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_sourceEnvironmentId;
-  bool m_sourceEnvironmentIdHasBeenSet = false;
 
   Aws::String m_sourceEnvironmentName;
-  bool m_sourceEnvironmentNameHasBeenSet = false;
 
   Aws::String m_destinationEnvironmentId;
-  bool m_destinationEnvironmentIdHasBeenSet = false;
 
   Aws::String m_destinationEnvironmentName;
+  bool m_sourceEnvironmentIdHasBeenSet = false;
+  bool m_sourceEnvironmentNameHasBeenSet = false;
+  bool m_destinationEnvironmentIdHasBeenSet = false;
   bool m_destinationEnvironmentNameHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class AwsDynamoDbTableProjection {
   ///@}
  private:
   Aws::Vector<Aws::String> m_nonKeyAttributes;
-  bool m_nonKeyAttributesHasBeenSet = false;
 
   Aws::String m_projectionType;
+  bool m_nonKeyAttributesHasBeenSet = false;
   bool m_projectionTypeHasBeenSet = false;
 };
 

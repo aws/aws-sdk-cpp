@@ -86,12 +86,12 @@ class DescribeAccessPointsResult {
   ///@}
  private:
   Aws::Vector<AccessPointDescription> m_accessPoints;
-  bool m_accessPointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessPointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

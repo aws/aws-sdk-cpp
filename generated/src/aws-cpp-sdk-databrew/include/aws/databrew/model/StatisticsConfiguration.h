@@ -85,9 +85,9 @@ class StatisticsConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_includedStatistics;
-  bool m_includedStatisticsHasBeenSet = false;
 
   Aws::Vector<StatisticOverride> m_overrides;
+  bool m_includedStatisticsHasBeenSet = false;
   bool m_overridesHasBeenSet = false;
 };
 

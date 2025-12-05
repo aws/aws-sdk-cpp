@@ -70,9 +70,9 @@ class AwsMskClusterClusterInfoClientAuthenticationSaslDetails {
   ///@}
  private:
   AwsMskClusterClusterInfoClientAuthenticationSaslIamDetails m_iam;
-  bool m_iamHasBeenSet = false;
 
   AwsMskClusterClusterInfoClientAuthenticationSaslScramDetails m_scram;
+  bool m_iamHasBeenSet = false;
   bool m_scramHasBeenSet = false;
 };
 

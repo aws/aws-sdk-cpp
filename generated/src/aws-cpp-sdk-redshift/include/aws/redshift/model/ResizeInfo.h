@@ -68,9 +68,9 @@ class ResizeInfo {
   ///@}
  private:
   Aws::String m_resizeType;
-  bool m_resizeTypeHasBeenSet = false;
 
   bool m_allowCancelResize{false};
+  bool m_resizeTypeHasBeenSet = false;
   bool m_allowCancelResizeHasBeenSet = false;
 };
 

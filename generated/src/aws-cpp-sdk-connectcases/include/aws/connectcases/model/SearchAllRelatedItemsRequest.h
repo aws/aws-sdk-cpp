@@ -138,18 +138,18 @@ class SearchAllRelatedItemsRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RelatedItemTypeFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<SearchAllRelatedItemsSort> m_sorts;
+  bool m_domainIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_sortsHasBeenSet = false;
 };
 

@@ -143,21 +143,21 @@ class ListFlowExecutionEventsRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   FlowExecutionEventType m_eventType{FlowExecutionEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_executionIdentifier;
-  bool m_executionIdentifierHasBeenSet = false;
 
   Aws::String m_flowAliasIdentifier;
-  bool m_flowAliasIdentifierHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_executionIdentifierHasBeenSet = false;
+  bool m_flowAliasIdentifierHasBeenSet = false;
+  bool m_flowIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

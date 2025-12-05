@@ -136,15 +136,15 @@ class InlineRedactionConfiguration {
   ///@}
  private:
   Aws::Vector<InlineRedactionPattern> m_inlineRedactionPatterns;
-  bool m_inlineRedactionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_globalEnforcedUrls;
-  bool m_globalEnforcedUrlsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_globalExemptUrls;
-  bool m_globalExemptUrlsHasBeenSet = false;
 
   int m_globalConfidenceLevel{0};
+  bool m_inlineRedactionPatternsHasBeenSet = false;
+  bool m_globalEnforcedUrlsHasBeenSet = false;
+  bool m_globalExemptUrlsHasBeenSet = false;
   bool m_globalConfidenceLevelHasBeenSet = false;
 };
 

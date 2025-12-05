@@ -85,12 +85,12 @@ class BatchError {
   ///@}
  private:
   Aws::String m_accessorId;
-  bool m_accessorIdHasBeenSet = false;
 
   int m_error{0};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_accessorIdHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

@@ -254,39 +254,39 @@ class DescribeBulkImportJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_jobRoleArn;
-  bool m_jobRoleArnHasBeenSet = false;
 
   Aws::Vector<File> m_files;
-  bool m_filesHasBeenSet = false;
 
   ErrorReportLocation m_errorReportLocation;
-  bool m_errorReportLocationHasBeenSet = false;
 
   JobConfiguration m_jobConfiguration;
-  bool m_jobConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobCreationDate{};
-  bool m_jobCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobLastUpdateDate{};
-  bool m_jobLastUpdateDateHasBeenSet = false;
 
   bool m_adaptiveIngestion{false};
-  bool m_adaptiveIngestionHasBeenSet = false;
 
   bool m_deleteFilesAfterImport{false};
-  bool m_deleteFilesAfterImportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_jobRoleArnHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
+  bool m_errorReportLocationHasBeenSet = false;
+  bool m_jobConfigurationHasBeenSet = false;
+  bool m_jobCreationDateHasBeenSet = false;
+  bool m_jobLastUpdateDateHasBeenSet = false;
+  bool m_adaptiveIngestionHasBeenSet = false;
+  bool m_deleteFilesAfterImportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

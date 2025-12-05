@@ -87,12 +87,12 @@ class UpdateGatewayCapabilityConfigurationResult {
   ///@}
  private:
   Aws::String m_capabilityNamespace;
-  bool m_capabilityNamespaceHasBeenSet = false;
 
   CapabilitySyncStatus m_capabilitySyncStatus{CapabilitySyncStatus::NOT_SET};
-  bool m_capabilitySyncStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capabilityNamespaceHasBeenSet = false;
+  bool m_capabilitySyncStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

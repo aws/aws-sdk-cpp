@@ -130,15 +130,15 @@ class Contacts {
   ///@}
  private:
   Aws::Vector<ContactDetails> m_phones;
-  bool m_phonesHasBeenSet = false;
 
   Aws::Vector<ContactDetails> m_faxes;
-  bool m_faxesHasBeenSet = false;
 
   Aws::Vector<ContactDetails> m_websites;
-  bool m_websitesHasBeenSet = false;
 
   Aws::Vector<ContactDetails> m_emails;
+  bool m_phonesHasBeenSet = false;
+  bool m_faxesHasBeenSet = false;
+  bool m_websitesHasBeenSet = false;
   bool m_emailsHasBeenSet = false;
 };
 

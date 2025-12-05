@@ -95,12 +95,12 @@ class EBSTagSpecification {
   ///@}
  private:
   EBSResourceType m_resourceType{EBSResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PropagateTags m_propagateTags{PropagateTags::NOT_SET};
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_propagateTagsHasBeenSet = false;
 };
 

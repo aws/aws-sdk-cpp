@@ -193,33 +193,33 @@ class DescribeDeviceJobResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   DeviceType m_deviceType{DeviceType::NOT_SET};
-  bool m_deviceTypeHasBeenSet = false;
 
   Aws::String m_imageVersion;
-  bool m_imageVersionHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   UpdateProgress m_status{UpdateProgress::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_deviceTypeHasBeenSet = false;
+  bool m_imageVersionHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

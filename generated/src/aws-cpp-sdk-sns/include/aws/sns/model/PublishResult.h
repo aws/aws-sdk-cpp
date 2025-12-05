@@ -87,12 +87,12 @@ class PublishResult {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_sequenceNumber;
-  bool m_sequenceNumberHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_messageIdHasBeenSet = false;
+  bool m_sequenceNumberHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

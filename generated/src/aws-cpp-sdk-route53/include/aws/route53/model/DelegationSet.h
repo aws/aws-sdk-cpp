@@ -97,12 +97,12 @@ class DelegationSet {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nameServers;
+  bool m_idHasBeenSet = false;
+  bool m_callerReferenceHasBeenSet = false;
   bool m_nameServersHasBeenSet = false;
 };
 

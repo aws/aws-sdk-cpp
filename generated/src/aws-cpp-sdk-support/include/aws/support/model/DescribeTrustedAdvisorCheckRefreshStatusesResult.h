@@ -75,9 +75,9 @@ class DescribeTrustedAdvisorCheckRefreshStatusesResult {
   ///@}
  private:
   Aws::Vector<TrustedAdvisorCheckRefreshStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

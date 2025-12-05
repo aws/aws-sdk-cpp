@@ -69,9 +69,9 @@ class OperationFailureDetails {
   ///@}
  private:
   Aws::String m_rollbackOperationId;
-  bool m_rollbackOperationIdHasBeenSet = false;
 
   ErrorInfo m_errorInfo;
+  bool m_rollbackOperationIdHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

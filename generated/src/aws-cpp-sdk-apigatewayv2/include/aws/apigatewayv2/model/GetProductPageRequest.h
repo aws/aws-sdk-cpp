@@ -88,12 +88,12 @@ class GetProductPageRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_productPageId;
-  bool m_productPageIdHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccountId;
+  bool m_portalProductIdHasBeenSet = false;
+  bool m_productPageIdHasBeenSet = false;
   bool m_resourceOwnerAccountIdHasBeenSet = false;
 };
 

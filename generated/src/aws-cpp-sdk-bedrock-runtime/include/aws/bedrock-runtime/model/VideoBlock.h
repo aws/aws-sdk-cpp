@@ -67,9 +67,9 @@ class VideoBlock {
   ///@}
  private:
   VideoFormat m_format{VideoFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   VideoSource m_source;
+  bool m_formatHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

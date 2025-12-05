@@ -144,21 +144,21 @@ class ReservationPlan {
   ///@}
  private:
   Commitment m_commitment{Commitment::NOT_SET};
-  bool m_commitmentHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_purchasedAt{};
-  bool m_purchasedAtHasBeenSet = false;
 
   RenewalType m_renewalType{RenewalType::NOT_SET};
-  bool m_renewalTypeHasBeenSet = false;
 
   int m_reservedSlots{0};
-  bool m_reservedSlotsHasBeenSet = false;
 
   ReservationPlanStatus m_status{ReservationPlanStatus::NOT_SET};
+  bool m_commitmentHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_purchasedAtHasBeenSet = false;
+  bool m_renewalTypeHasBeenSet = false;
+  bool m_reservedSlotsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

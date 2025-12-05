@@ -92,12 +92,12 @@ class CustomPolicyDetails {
   ///@}
  private:
   Aws::String m_policyRuntime;
-  bool m_policyRuntimeHasBeenSet = false;
 
   Aws::String m_policyText;
-  bool m_policyTextHasBeenSet = false;
 
   bool m_enableDebugLogDelivery{false};
+  bool m_policyRuntimeHasBeenSet = false;
+  bool m_policyTextHasBeenSet = false;
   bool m_enableDebugLogDeliveryHasBeenSet = false;
 };
 

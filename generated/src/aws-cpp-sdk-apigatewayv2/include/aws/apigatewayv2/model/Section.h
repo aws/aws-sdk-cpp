@@ -76,9 +76,9 @@ class Section {
   ///@}
  private:
   Aws::Vector<Aws::String> m_productRestEndpointPageArns;
-  bool m_productRestEndpointPageArnsHasBeenSet = false;
 
   Aws::String m_sectionName;
+  bool m_productRestEndpointPageArnsHasBeenSet = false;
   bool m_sectionNameHasBeenSet = false;
 };
 

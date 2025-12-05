@@ -83,12 +83,12 @@ class UpdateAccountAssociationRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_accountAssociationId;
-  bool m_accountAssociationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_accountAssociationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

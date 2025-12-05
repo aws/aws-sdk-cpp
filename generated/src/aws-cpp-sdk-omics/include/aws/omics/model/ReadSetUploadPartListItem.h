@@ -139,21 +139,21 @@ class ReadSetUploadPartListItem {
   ///@}
  private:
   int m_partNumber{0};
-  bool m_partNumberHasBeenSet = false;
 
   long long m_partSize{0};
-  bool m_partSizeHasBeenSet = false;
 
   ReadSetPartSource m_partSource{ReadSetPartSource::NOT_SET};
-  bool m_partSourceHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_partNumberHasBeenSet = false;
+  bool m_partSizeHasBeenSet = false;
+  bool m_partSourceHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

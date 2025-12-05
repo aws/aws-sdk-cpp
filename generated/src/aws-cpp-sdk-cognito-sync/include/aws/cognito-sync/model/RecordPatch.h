@@ -120,18 +120,18 @@ class RecordPatch {
   ///@}
  private:
   Operation m_op{Operation::NOT_SET};
-  bool m_opHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   long long m_syncCount{0};
-  bool m_syncCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_deviceLastModifiedDate{};
+  bool m_opHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_syncCountHasBeenSet = false;
   bool m_deviceLastModifiedDateHasBeenSet = false;
 };
 

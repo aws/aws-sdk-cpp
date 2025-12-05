@@ -87,12 +87,12 @@ class UpdateContinuousDeploymentPolicy2020_05_31Request : public CloudFrontReque
   ///@}
  private:
   ContinuousDeploymentPolicyConfig m_continuousDeploymentPolicyConfig;
-  bool m_continuousDeploymentPolicyConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_continuousDeploymentPolicyConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

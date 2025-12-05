@@ -60,9 +60,9 @@ class DeleteAccountSettingResult {
   ///@}
  private:
   Setting m_setting;
-  bool m_settingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_settingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

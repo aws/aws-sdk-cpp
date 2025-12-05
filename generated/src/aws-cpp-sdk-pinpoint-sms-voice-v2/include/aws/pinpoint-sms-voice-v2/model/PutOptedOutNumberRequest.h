@@ -69,9 +69,9 @@ class PutOptedOutNumberRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   Aws::String m_optedOutNumber;
+  bool m_optOutListNameHasBeenSet = false;
   bool m_optedOutNumberHasBeenSet = false;
 };
 

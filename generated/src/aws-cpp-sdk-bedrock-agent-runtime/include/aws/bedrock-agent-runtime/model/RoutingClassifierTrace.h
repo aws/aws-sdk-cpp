@@ -107,15 +107,15 @@ class RoutingClassifierTrace {
   ///@}
  private:
   InvocationInput m_invocationInput;
-  bool m_invocationInputHasBeenSet = false;
 
   ModelInvocationInput m_modelInvocationInput;
-  bool m_modelInvocationInputHasBeenSet = false;
 
   RoutingClassifierModelInvocationOutput m_modelInvocationOutput;
-  bool m_modelInvocationOutputHasBeenSet = false;
 
   Observation m_observation;
+  bool m_invocationInputHasBeenSet = false;
+  bool m_modelInvocationInputHasBeenSet = false;
+  bool m_modelInvocationOutputHasBeenSet = false;
   bool m_observationHasBeenSet = false;
 };
 

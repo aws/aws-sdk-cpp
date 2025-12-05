@@ -85,12 +85,12 @@ class EndpointInfo {
   ///@}
  private:
   EndpointType m_type{EndpointType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_typeHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

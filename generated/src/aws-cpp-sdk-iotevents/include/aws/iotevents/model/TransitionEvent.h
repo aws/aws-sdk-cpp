@@ -114,15 +114,15 @@ class TransitionEvent {
   ///@}
  private:
   Aws::String m_eventName;
-  bool m_eventNameHasBeenSet = false;
 
   Aws::String m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_nextState;
+  bool m_eventNameHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_nextStateHasBeenSet = false;
 };
 

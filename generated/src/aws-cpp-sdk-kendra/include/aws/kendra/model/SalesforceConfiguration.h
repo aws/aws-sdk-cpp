@@ -247,30 +247,30 @@ class SalesforceConfiguration {
   ///@}
  private:
   Aws::String m_serverUrl;
-  bool m_serverUrlHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::Vector<SalesforceStandardObjectConfiguration> m_standardObjectConfigurations;
-  bool m_standardObjectConfigurationsHasBeenSet = false;
 
   SalesforceKnowledgeArticleConfiguration m_knowledgeArticleConfiguration;
-  bool m_knowledgeArticleConfigurationHasBeenSet = false;
 
   SalesforceChatterFeedConfiguration m_chatterFeedConfiguration;
-  bool m_chatterFeedConfigurationHasBeenSet = false;
 
   bool m_crawlAttachments{false};
-  bool m_crawlAttachmentsHasBeenSet = false;
 
   SalesforceStandardObjectAttachmentConfiguration m_standardObjectAttachmentConfiguration;
-  bool m_standardObjectAttachmentConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includeAttachmentFilePatterns;
-  bool m_includeAttachmentFilePatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeAttachmentFilePatterns;
+  bool m_serverUrlHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_standardObjectConfigurationsHasBeenSet = false;
+  bool m_knowledgeArticleConfigurationHasBeenSet = false;
+  bool m_chatterFeedConfigurationHasBeenSet = false;
+  bool m_crawlAttachmentsHasBeenSet = false;
+  bool m_standardObjectAttachmentConfigurationHasBeenSet = false;
+  bool m_includeAttachmentFilePatternsHasBeenSet = false;
   bool m_excludeAttachmentFilePatternsHasBeenSet = false;
 };
 

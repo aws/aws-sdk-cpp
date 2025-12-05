@@ -86,12 +86,12 @@ class AudioLanguageConfiguration {
   ///@}
  private:
   Aws::Vector<Language> m_inputLanguages;
-  bool m_inputLanguagesHasBeenSet = false;
 
   AudioGenerativeOutputLanguage m_generativeOutputLanguage{AudioGenerativeOutputLanguage::NOT_SET};
-  bool m_generativeOutputLanguageHasBeenSet = false;
 
   bool m_identifyMultipleLanguages{false};
+  bool m_inputLanguagesHasBeenSet = false;
+  bool m_generativeOutputLanguageHasBeenSet = false;
   bool m_identifyMultipleLanguagesHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class BatchGetDeploymentGroupsRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deploymentGroupNames;
+  bool m_applicationNameHasBeenSet = false;
   bool m_deploymentGroupNamesHasBeenSet = false;
 };
 

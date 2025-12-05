@@ -104,15 +104,15 @@ class UpdateProductRestEndpointPageRequest : public ApiGatewayV2Request {
   ///@}
  private:
   EndpointDisplayContent m_displayContent;
-  bool m_displayContentHasBeenSet = false;
 
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_productRestEndpointPageId;
-  bool m_productRestEndpointPageIdHasBeenSet = false;
 
   TryItState m_tryItState{TryItState::NOT_SET};
+  bool m_displayContentHasBeenSet = false;
+  bool m_portalProductIdHasBeenSet = false;
+  bool m_productRestEndpointPageIdHasBeenSet = false;
   bool m_tryItStateHasBeenSet = false;
 };
 

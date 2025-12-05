@@ -69,9 +69,9 @@ class SessionContextAttributes {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   bool m_mfaAuthenticated{false};
+  bool m_creationDateHasBeenSet = false;
   bool m_mfaAuthenticatedHasBeenSet = false;
 };
 

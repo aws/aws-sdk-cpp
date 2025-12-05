@@ -69,9 +69,9 @@ class PayloadType {
   ///@}
  private:
   Conversational m_conversational;
-  bool m_conversationalHasBeenSet = false;
 
   Aws::Utils::Document m_blob;
+  bool m_conversationalHasBeenSet = false;
   bool m_blobHasBeenSet = false;
 };
 

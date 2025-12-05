@@ -193,27 +193,27 @@ class CreateEventTriggerRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_eventTriggerName;
-  bool m_eventTriggerNameHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EventTriggerCondition> m_eventTriggerConditions;
-  bool m_eventTriggerConditionsHasBeenSet = false;
 
   Aws::String m_segmentFilter;
-  bool m_segmentFilterHasBeenSet = false;
 
   EventTriggerLimits m_eventTriggerLimits;
-  bool m_eventTriggerLimitsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_domainNameHasBeenSet = false;
+  bool m_eventTriggerNameHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventTriggerConditionsHasBeenSet = false;
+  bool m_segmentFilterHasBeenSet = false;
+  bool m_eventTriggerLimitsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

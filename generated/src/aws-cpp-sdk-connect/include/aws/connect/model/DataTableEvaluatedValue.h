@@ -161,24 +161,24 @@ class DataTableEvaluatedValue {
   ///@}
  private:
   Aws::String m_recordId;
-  bool m_recordIdHasBeenSet = false;
 
   Aws::Vector<PrimaryValue> m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   DataTableAttributeValueType m_valueType{DataTableAttributeValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   bool m_found{false};
-  bool m_foundHasBeenSet = false;
 
   bool m_error{false};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_evaluatedValue;
+  bool m_recordIdHasBeenSet = false;
+  bool m_primaryValuesHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
+  bool m_foundHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_evaluatedValueHasBeenSet = false;
 };
 

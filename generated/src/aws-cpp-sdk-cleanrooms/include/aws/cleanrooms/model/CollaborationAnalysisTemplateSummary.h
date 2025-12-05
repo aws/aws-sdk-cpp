@@ -217,33 +217,33 @@ class CollaborationAnalysisTemplateSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_collaborationArn;
-  bool m_collaborationArnHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_isSyntheticData{false};
+  bool m_arnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_collaborationArnHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_isSyntheticDataHasBeenSet = false;
 };
 

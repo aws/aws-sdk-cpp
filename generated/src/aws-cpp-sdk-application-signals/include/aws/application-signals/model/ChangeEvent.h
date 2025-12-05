@@ -207,27 +207,27 @@ class ChangeEvent {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_entity;
-  bool m_entityHasBeenSet = false;
 
   ChangeEventType m_changeEventType{ChangeEventType::NOT_SET};
-  bool m_changeEventTypeHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_eventName;
+  bool m_timestampHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_entityHasBeenSet = false;
+  bool m_changeEventTypeHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_eventNameHasBeenSet = false;
 };
 

@@ -107,18 +107,18 @@ class UpdateBudgetActionResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   Action m_oldAction;
-  bool m_oldActionHasBeenSet = false;
 
   Action m_newAction;
-  bool m_newActionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_oldActionHasBeenSet = false;
+  bool m_newActionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

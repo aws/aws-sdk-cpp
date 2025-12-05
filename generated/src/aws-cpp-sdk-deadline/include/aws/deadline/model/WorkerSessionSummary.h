@@ -157,24 +157,24 @@ class WorkerSessionSummary {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   SessionLifecycleStatus m_lifecycleStatus{SessionLifecycleStatus::NOT_SET};
-  bool m_lifecycleStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   SessionLifecycleTargetStatus m_targetLifecycleStatus{SessionLifecycleTargetStatus::NOT_SET};
+  bool m_sessionIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_lifecycleStatusHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
   bool m_targetLifecycleStatusHasBeenSet = false;
 };
 

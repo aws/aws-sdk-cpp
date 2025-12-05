@@ -67,9 +67,9 @@ class SearchContactsTimestampCondition {
   ///@}
  private:
   SearchContactsTimeRangeType m_type{SearchContactsTimeRangeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   SearchContactsTimeRangeConditionType m_conditionType{SearchContactsTimeRangeConditionType::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_conditionTypeHasBeenSet = false;
 };
 

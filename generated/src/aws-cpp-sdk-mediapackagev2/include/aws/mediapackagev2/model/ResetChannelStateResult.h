@@ -113,18 +113,18 @@ class ResetChannelStateResult {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_resetAt{};
-  bool m_resetAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resetAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

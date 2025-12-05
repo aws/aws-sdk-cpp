@@ -103,12 +103,12 @@ class BlockedPhrasesConfigurationUpdate {
   ///@}
  private:
   Aws::Vector<Aws::String> m_blockedPhrasesToCreateOrUpdate;
-  bool m_blockedPhrasesToCreateOrUpdateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedPhrasesToDelete;
-  bool m_blockedPhrasesToDeleteHasBeenSet = false;
 
   Aws::String m_systemMessageOverride;
+  bool m_blockedPhrasesToCreateOrUpdateHasBeenSet = false;
+  bool m_blockedPhrasesToDeleteHasBeenSet = false;
   bool m_systemMessageOverrideHasBeenSet = false;
 };
 

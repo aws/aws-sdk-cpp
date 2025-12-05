@@ -88,12 +88,12 @@ class ListAutomationEventSummariesResult {
   ///@}
  private:
   Aws::Vector<AutomationEventSummary> m_automationEventSummaries;
-  bool m_automationEventSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_automationEventSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

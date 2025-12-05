@@ -76,12 +76,12 @@ class UpdateAuthorizerResult {
   ///@}
  private:
   Aws::String m_authorizerName;
-  bool m_authorizerNameHasBeenSet = false;
 
   Aws::String m_authorizerArn;
-  bool m_authorizerArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizerNameHasBeenSet = false;
+  bool m_authorizerArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

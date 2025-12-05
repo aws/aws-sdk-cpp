@@ -147,21 +147,21 @@ class InstanceMetadataOptionsResponse {
   ///@}
  private:
   InstanceMetadataOptionsState m_state{InstanceMetadataOptionsState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   HttpTokensState m_httpTokens{HttpTokensState::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   InstanceMetadataEndpointState m_httpEndpoint{InstanceMetadataEndpointState::NOT_SET};
-  bool m_httpEndpointHasBeenSet = false;
 
   InstanceMetadataProtocolState m_httpProtocolIpv6{InstanceMetadataProtocolState::NOT_SET};
-  bool m_httpProtocolIpv6HasBeenSet = false;
 
   InstanceMetadataTagsState m_instanceMetadataTags{InstanceMetadataTagsState::NOT_SET};
+  bool m_stateHasBeenSet = false;
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_httpProtocolIpv6HasBeenSet = false;
   bool m_instanceMetadataTagsHasBeenSet = false;
 };
 

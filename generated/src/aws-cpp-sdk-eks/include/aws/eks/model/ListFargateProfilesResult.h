@@ -90,12 +90,12 @@ class ListFargateProfilesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fargateProfileNames;
-  bool m_fargateProfileNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fargateProfileNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

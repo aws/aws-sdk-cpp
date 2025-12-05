@@ -69,9 +69,9 @@ class JobFailure {
   ///@}
  private:
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

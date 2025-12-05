@@ -188,27 +188,27 @@ class Event {
   ///@}
  private:
   ResourceCollection m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_time{};
-  bool m_timeHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EventDataSource m_dataSource{EventDataSource::NOT_SET};
-  bool m_dataSourceHasBeenSet = false;
 
   EventClass m_eventClass{EventClass::NOT_SET};
-  bool m_eventClassHasBeenSet = false;
 
   Aws::Vector<EventResource> m_resources;
+  bool m_resourceCollectionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_eventClassHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

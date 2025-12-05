@@ -69,9 +69,9 @@ class BedrockGuardrailConfiguration {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_identifierHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

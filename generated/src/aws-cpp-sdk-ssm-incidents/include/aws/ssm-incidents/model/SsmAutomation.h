@@ -159,21 +159,21 @@ class SsmAutomation {
   ///@}
  private:
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, DynamicSsmParameterValue> m_dynamicParameters;
-  bool m_dynamicParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   SsmTargetAccount m_targetAccount{SsmTargetAccount::NOT_SET};
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_dynamicParametersHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_targetAccountHasBeenSet = false;
 };
 

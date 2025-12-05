@@ -72,9 +72,9 @@ class ApplicationSettingsRequest {
   ///@}
  private:
   ApplicationSettingsStatusEnum m_status{ApplicationSettingsStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_settingsGroup;
+  bool m_statusHasBeenSet = false;
   bool m_settingsGroupHasBeenSet = false;
 };
 

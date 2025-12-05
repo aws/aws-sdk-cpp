@@ -65,9 +65,9 @@ class GetVectorBucketRequest : public S3VectorsRequest {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_vectorBucketArn;
+  bool m_vectorBucketNameHasBeenSet = false;
   bool m_vectorBucketArnHasBeenSet = false;
 };
 

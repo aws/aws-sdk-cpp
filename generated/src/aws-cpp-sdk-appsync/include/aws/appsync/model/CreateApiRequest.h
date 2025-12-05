@@ -108,15 +108,15 @@ class CreateApiRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerContact;
-  bool m_ownerContactHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EventConfig m_eventConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerContactHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_eventConfigHasBeenSet = false;
 };
 

@@ -151,21 +151,21 @@ class AmendBenefitApplicationRequest : public PartnerCentralBenefitsRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_amendmentReason;
-  bool m_amendmentReasonHasBeenSet = false;
 
   Aws::Vector<Amendment> m_amendments;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_amendmentReasonHasBeenSet = false;
   bool m_amendmentsHasBeenSet = false;
 };
 

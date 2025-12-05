@@ -172,24 +172,24 @@ class ChatResponseConfiguration {
   ///@}
  private:
   Aws::String m_chatResponseConfigurationId;
-  bool m_chatResponseConfigurationIdHasBeenSet = false;
 
   Aws::String m_chatResponseConfigurationArn;
-  bool m_chatResponseConfigurationArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_responseConfigurationSummary;
-  bool m_responseConfigurationSummaryHasBeenSet = false;
 
   ChatResponseConfigurationStatus m_status{ChatResponseConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_chatResponseConfigurationIdHasBeenSet = false;
+  bool m_chatResponseConfigurationArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_responseConfigurationSummaryHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

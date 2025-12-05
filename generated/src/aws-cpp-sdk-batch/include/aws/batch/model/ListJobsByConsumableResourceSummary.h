@@ -234,36 +234,36 @@ class ListJobsByConsumableResourceSummary {
   ///@}
  private:
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobQueueArn;
-  bool m_jobQueueArnHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobDefinitionArn;
-  bool m_jobDefinitionArnHasBeenSet = false;
 
   Aws::String m_shareIdentifier;
-  bool m_shareIdentifierHasBeenSet = false;
 
   Aws::String m_jobStatus;
-  bool m_jobStatusHasBeenSet = false;
 
   long long m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_createdAt{0};
-  bool m_createdAtHasBeenSet = false;
 
   ConsumableResourceProperties m_consumableResourceProperties;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobQueueArnHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobDefinitionArnHasBeenSet = false;
+  bool m_shareIdentifierHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_consumableResourcePropertiesHasBeenSet = false;
 };
 

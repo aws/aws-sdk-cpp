@@ -70,9 +70,9 @@ class FileInput {
   ///@}
  private:
   Aws::String m_fileURI;
-  bool m_fileURIHasBeenSet = false;
 
   Aws::String m_businessUseCase;
+  bool m_fileURIHasBeenSet = false;
   bool m_businessUseCaseHasBeenSet = false;
 };
 

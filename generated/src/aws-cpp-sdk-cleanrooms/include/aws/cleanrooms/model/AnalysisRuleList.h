@@ -126,15 +126,15 @@ class AnalysisRuleList {
   ///@}
  private:
   Aws::Vector<Aws::String> m_joinColumns;
-  bool m_joinColumnsHasBeenSet = false;
 
   Aws::Vector<JoinOperator> m_allowedJoinOperators;
-  bool m_allowedJoinOperatorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listColumns;
-  bool m_listColumnsHasBeenSet = false;
 
   AdditionalAnalyses m_additionalAnalyses{AdditionalAnalyses::NOT_SET};
+  bool m_joinColumnsHasBeenSet = false;
+  bool m_allowedJoinOperatorsHasBeenSet = false;
+  bool m_listColumnsHasBeenSet = false;
   bool m_additionalAnalysesHasBeenSet = false;
 };
 

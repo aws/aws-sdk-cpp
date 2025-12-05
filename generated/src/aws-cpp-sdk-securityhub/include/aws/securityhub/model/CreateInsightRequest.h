@@ -89,12 +89,12 @@ class CreateInsightRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AwsSecurityFindingFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_groupByAttribute;
+  bool m_nameHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_groupByAttributeHasBeenSet = false;
 };
 

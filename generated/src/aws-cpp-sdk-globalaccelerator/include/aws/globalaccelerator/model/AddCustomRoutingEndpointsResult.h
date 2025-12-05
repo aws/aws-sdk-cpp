@@ -86,12 +86,12 @@ class AddCustomRoutingEndpointsResult {
   ///@}
  private:
   Aws::Vector<CustomRoutingEndpointDescription> m_endpointDescriptions;
-  bool m_endpointDescriptionsHasBeenSet = false;
 
   Aws::String m_endpointGroupArn;
-  bool m_endpointGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointDescriptionsHasBeenSet = false;
+  bool m_endpointGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

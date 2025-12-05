@@ -97,12 +97,12 @@ class CustomConnectorSourceProperties {
   ///@}
  private:
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customProperties;
-  bool m_customPropertiesHasBeenSet = false;
 
   DataTransferApi m_dataTransferApi;
+  bool m_entityNameHasBeenSet = false;
+  bool m_customPropertiesHasBeenSet = false;
   bool m_dataTransferApiHasBeenSet = false;
 };
 

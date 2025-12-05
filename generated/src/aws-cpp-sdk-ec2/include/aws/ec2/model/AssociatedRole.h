@@ -108,15 +108,15 @@ class AssociatedRole {
   ///@}
  private:
   Aws::String m_associatedRoleArn;
-  bool m_associatedRoleArnHasBeenSet = false;
 
   Aws::String m_certificateS3BucketName;
-  bool m_certificateS3BucketNameHasBeenSet = false;
 
   Aws::String m_certificateS3ObjectKey;
-  bool m_certificateS3ObjectKeyHasBeenSet = false;
 
   Aws::String m_encryptionKmsKeyId;
+  bool m_associatedRoleArnHasBeenSet = false;
+  bool m_certificateS3BucketNameHasBeenSet = false;
+  bool m_certificateS3ObjectKeyHasBeenSet = false;
   bool m_encryptionKmsKeyIdHasBeenSet = false;
 };
 

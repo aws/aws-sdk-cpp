@@ -261,42 +261,42 @@ class DbClusterSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ClusterStatus m_status{ClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_readerEndpoint;
-  bool m_readerEndpointHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   ClusterDeploymentType m_deploymentType{ClusterDeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   DbInstanceType m_dbInstanceType{DbInstanceType::NOT_SET};
-  bool m_dbInstanceTypeHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   DbStorageType m_dbStorageType{DbStorageType::NOT_SET};
-  bool m_dbStorageTypeHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_readerEndpointHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_dbInstanceTypeHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_dbStorageTypeHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
   bool m_engineTypeHasBeenSet = false;
 };
 

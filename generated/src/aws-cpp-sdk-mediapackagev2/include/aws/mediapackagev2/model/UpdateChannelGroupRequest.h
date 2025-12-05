@@ -90,12 +90,12 @@ class UpdateChannelGroupRequest : public Mediapackagev2Request {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

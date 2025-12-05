@@ -74,9 +74,9 @@ class GetAccessTokenRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenProperties;
+  bool m_tokenHasBeenSet = false;
   bool m_tokenPropertiesHasBeenSet = false;
 };
 

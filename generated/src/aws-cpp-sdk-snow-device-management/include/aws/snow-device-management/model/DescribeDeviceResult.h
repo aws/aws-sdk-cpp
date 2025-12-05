@@ -256,39 +256,39 @@ class DescribeDeviceResult {
   ///@}
  private:
   Aws::String m_associatedWithJob;
-  bool m_associatedWithJobHasBeenSet = false;
 
   Aws::Vector<Capacity> m_deviceCapacities;
-  bool m_deviceCapacitiesHasBeenSet = false;
 
   UnlockState m_deviceState{UnlockState::NOT_SET};
-  bool m_deviceStateHasBeenSet = false;
 
   Aws::String m_deviceType;
-  bool m_deviceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastReachedOutAt{};
-  bool m_lastReachedOutAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_managedDeviceArn;
-  bool m_managedDeviceArnHasBeenSet = false;
 
   Aws::String m_managedDeviceId;
-  bool m_managedDeviceIdHasBeenSet = false;
 
   Aws::Vector<PhysicalNetworkInterface> m_physicalNetworkInterfaces;
-  bool m_physicalNetworkInterfacesHasBeenSet = false;
 
   SoftwareInformation m_software;
-  bool m_softwareHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedWithJobHasBeenSet = false;
+  bool m_deviceCapacitiesHasBeenSet = false;
+  bool m_deviceStateHasBeenSet = false;
+  bool m_deviceTypeHasBeenSet = false;
+  bool m_lastReachedOutAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_managedDeviceArnHasBeenSet = false;
+  bool m_managedDeviceIdHasBeenSet = false;
+  bool m_physicalNetworkInterfacesHasBeenSet = false;
+  bool m_softwareHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

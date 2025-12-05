@@ -405,51 +405,51 @@ class DataRepositoryAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   DataRepositoryLifecycle m_lifecycle{DataRepositoryLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   DataRepositoryFailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   Aws::String m_fileSystemPath;
-  bool m_fileSystemPathHasBeenSet = false;
 
   Aws::String m_dataRepositoryPath;
-  bool m_dataRepositoryPathHasBeenSet = false;
 
   bool m_batchImportMetaDataOnCreate{false};
-  bool m_batchImportMetaDataOnCreateHasBeenSet = false;
 
   int m_importedFileChunkSize{0};
-  bool m_importedFileChunkSizeHasBeenSet = false;
 
   S3DataRepositoryConfiguration m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_fileCacheId;
-  bool m_fileCacheIdHasBeenSet = false;
 
   Aws::String m_fileCachePath;
-  bool m_fileCachePathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataRepositorySubdirectories;
-  bool m_dataRepositorySubdirectoriesHasBeenSet = false;
 
   NFSDataRepositoryConfiguration m_nFS;
+  bool m_associationIdHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_fileSystemPathHasBeenSet = false;
+  bool m_dataRepositoryPathHasBeenSet = false;
+  bool m_batchImportMetaDataOnCreateHasBeenSet = false;
+  bool m_importedFileChunkSizeHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_fileCacheIdHasBeenSet = false;
+  bool m_fileCachePathHasBeenSet = false;
+  bool m_dataRepositorySubdirectoriesHasBeenSet = false;
   bool m_nFSHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class LoginAuthConfigReqObj {
   ///@}
  private:
   Aws::String m_awsCognitoIdentityPoolId;
-  bool m_awsCognitoIdentityPoolIdHasBeenSet = false;
 
   Aws::String m_awsCognitoRegion;
-  bool m_awsCognitoRegionHasBeenSet = false;
 
   Aws::String m_awsUserPoolsId;
-  bool m_awsUserPoolsIdHasBeenSet = false;
 
   Aws::String m_awsUserPoolsWebClientId;
+  bool m_awsCognitoIdentityPoolIdHasBeenSet = false;
+  bool m_awsCognitoRegionHasBeenSet = false;
+  bool m_awsUserPoolsIdHasBeenSet = false;
   bool m_awsUserPoolsWebClientIdHasBeenSet = false;
 };
 

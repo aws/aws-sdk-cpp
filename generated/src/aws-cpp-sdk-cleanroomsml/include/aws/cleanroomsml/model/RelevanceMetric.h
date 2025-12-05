@@ -64,9 +64,9 @@ class RelevanceMetric {
   ///@}
  private:
   AudienceSize m_audienceSize;
-  bool m_audienceSizeHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_audienceSizeHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

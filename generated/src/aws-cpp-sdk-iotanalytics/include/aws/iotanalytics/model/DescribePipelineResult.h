@@ -61,9 +61,9 @@ class DescribePipelineResult {
   ///@}
  private:
   Pipeline m_pipeline;
-  bool m_pipelineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

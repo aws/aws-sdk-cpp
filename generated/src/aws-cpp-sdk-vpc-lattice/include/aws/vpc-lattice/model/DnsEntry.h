@@ -68,9 +68,9 @@ class DnsEntry {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_hostedZoneId;
+  bool m_domainNameHasBeenSet = false;
   bool m_hostedZoneIdHasBeenSet = false;
 };
 

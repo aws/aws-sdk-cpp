@@ -87,12 +87,12 @@ class UpdateStageRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AutoParticipantRecordingConfiguration m_autoParticipantRecordingConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_autoParticipantRecordingConfigurationHasBeenSet = false;
 };
 

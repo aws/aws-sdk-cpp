@@ -73,9 +73,9 @@ class DescribeContributorInsightsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_indexName;
+  bool m_tableNameHasBeenSet = false;
   bool m_indexNameHasBeenSet = false;
 };
 

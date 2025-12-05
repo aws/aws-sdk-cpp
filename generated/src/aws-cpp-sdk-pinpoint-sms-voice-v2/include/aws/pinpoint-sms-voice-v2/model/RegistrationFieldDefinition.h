@@ -161,24 +161,24 @@ class RegistrationFieldDefinition {
   ///@}
  private:
   Aws::String m_sectionPath;
-  bool m_sectionPathHasBeenSet = false;
 
   Aws::String m_fieldPath;
-  bool m_fieldPathHasBeenSet = false;
 
   FieldType m_fieldType{FieldType::NOT_SET};
-  bool m_fieldTypeHasBeenSet = false;
 
   FieldRequirement m_fieldRequirement{FieldRequirement::NOT_SET};
-  bool m_fieldRequirementHasBeenSet = false;
 
   SelectValidation m_selectValidation;
-  bool m_selectValidationHasBeenSet = false;
 
   TextValidation m_textValidation;
-  bool m_textValidationHasBeenSet = false;
 
   RegistrationFieldDisplayHints m_displayHints;
+  bool m_sectionPathHasBeenSet = false;
+  bool m_fieldPathHasBeenSet = false;
+  bool m_fieldTypeHasBeenSet = false;
+  bool m_fieldRequirementHasBeenSet = false;
+  bool m_selectValidationHasBeenSet = false;
+  bool m_textValidationHasBeenSet = false;
   bool m_displayHintsHasBeenSet = false;
 };
 

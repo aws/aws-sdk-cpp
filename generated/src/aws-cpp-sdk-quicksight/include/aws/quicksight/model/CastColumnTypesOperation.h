@@ -97,12 +97,12 @@ class CastColumnTypesOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<CastColumnTypeOperation> m_castColumnTypeOperations;
+  bool m_aliasHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_castColumnTypeOperationsHasBeenSet = false;
 };
 

@@ -261,33 +261,33 @@ class AutocompleteRequest : public GeoPlacesRequest {
   ///@}
  private:
   Aws::String m_queryText;
-  bool m_queryTextHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<double> m_biasPosition;
-  bool m_biasPositionHasBeenSet = false;
 
   AutocompleteFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   PostalCodeMode m_postalCodeMode{PostalCodeMode::NOT_SET};
-  bool m_postalCodeModeHasBeenSet = false;
 
   Aws::Vector<AutocompleteAdditionalFeature> m_additionalFeatures;
-  bool m_additionalFeaturesHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   AutocompleteIntendedUse m_intendedUse{AutocompleteIntendedUse::NOT_SET};
-  bool m_intendedUseHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_queryTextHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_biasPositionHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_postalCodeModeHasBeenSet = false;
+  bool m_additionalFeaturesHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_politicalViewHasBeenSet = false;
+  bool m_intendedUseHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

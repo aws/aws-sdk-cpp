@@ -70,9 +70,9 @@ class BatchAttachToIndex {
   ///@}
  private:
   ObjectReference m_indexReference;
-  bool m_indexReferenceHasBeenSet = false;
 
   ObjectReference m_targetReference;
+  bool m_indexReferenceHasBeenSet = false;
   bool m_targetReferenceHasBeenSet = false;
 };
 

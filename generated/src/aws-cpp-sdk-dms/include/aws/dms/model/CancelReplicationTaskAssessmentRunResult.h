@@ -68,9 +68,9 @@ class CancelReplicationTaskAssessmentRunResult {
   ///@}
  private:
   ReplicationTaskAssessmentRun m_replicationTaskAssessmentRun;
-  bool m_replicationTaskAssessmentRunHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationTaskAssessmentRunHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

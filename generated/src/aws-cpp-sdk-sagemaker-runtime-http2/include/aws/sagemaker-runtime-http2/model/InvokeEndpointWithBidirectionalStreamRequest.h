@@ -153,21 +153,22 @@ class InvokeEndpointWithBidirectionalStreamRequest : public SageMakerRuntimeHTTP
   ///@}
  private:
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   std::shared_ptr<RequestStreamEvent> m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_targetVariant;
-  bool m_targetVariantHasBeenSet = false;
 
   Aws::String m_modelInvocationPath;
-  bool m_modelInvocationPathHasBeenSet = false;
 
   Aws::String m_modelQueryString;
-  bool m_modelQueryStringHasBeenSet = false;
   InvokeEndpointWithBidirectionalStreamHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_endpointNameHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_targetVariantHasBeenSet = false;
+  bool m_modelInvocationPathHasBeenSet = false;
+  bool m_modelQueryStringHasBeenSet = false;
 };
 
 }  // namespace Model

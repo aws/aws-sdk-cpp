@@ -164,24 +164,24 @@ class ComponentConditionProperty {
   ///@}
  private:
   Aws::String m_property;
-  bool m_propertyHasBeenSet = false;
 
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Aws::String m_operator;
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_operand;
-  bool m_operandHasBeenSet = false;
 
   std::shared_ptr<ComponentProperty> m_then;
-  bool m_thenHasBeenSet = false;
 
   std::shared_ptr<ComponentProperty> m_else;
-  bool m_elseHasBeenSet = false;
 
   Aws::String m_operandType;
+  bool m_propertyHasBeenSet = false;
+  bool m_fieldHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+  bool m_operandHasBeenSet = false;
+  bool m_thenHasBeenSet = false;
+  bool m_elseHasBeenSet = false;
   bool m_operandTypeHasBeenSet = false;
 };
 

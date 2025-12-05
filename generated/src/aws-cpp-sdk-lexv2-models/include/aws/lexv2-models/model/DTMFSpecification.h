@@ -103,15 +103,15 @@ class DTMFSpecification {
   ///@}
  private:
   int m_maxLength{0};
-  bool m_maxLengthHasBeenSet = false;
 
   int m_endTimeoutMs{0};
-  bool m_endTimeoutMsHasBeenSet = false;
 
   Aws::String m_deletionCharacter;
-  bool m_deletionCharacterHasBeenSet = false;
 
   Aws::String m_endCharacter;
+  bool m_maxLengthHasBeenSet = false;
+  bool m_endTimeoutMsHasBeenSet = false;
+  bool m_deletionCharacterHasBeenSet = false;
   bool m_endCharacterHasBeenSet = false;
 };
 

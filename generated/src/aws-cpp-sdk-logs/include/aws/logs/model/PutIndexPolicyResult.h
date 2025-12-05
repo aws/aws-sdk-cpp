@@ -60,9 +60,9 @@ class PutIndexPolicyResult {
   ///@}
  private:
   IndexPolicy m_indexPolicy;
-  bool m_indexPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

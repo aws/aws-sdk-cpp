@@ -67,9 +67,9 @@ class DisassociateWorkspaceApplicationRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_applicationId;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
 };
 

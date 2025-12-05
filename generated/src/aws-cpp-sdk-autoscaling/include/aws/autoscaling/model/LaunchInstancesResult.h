@@ -130,18 +130,18 @@ class LaunchInstancesResult {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<InstanceCollection> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::Vector<LaunchInstancesError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

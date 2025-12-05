@@ -59,9 +59,9 @@ class CreateWhatIfAnalysisResult {
   ///@}
  private:
   Aws::String m_whatIfAnalysisArn;
-  bool m_whatIfAnalysisArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_whatIfAnalysisArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class BatchGetStandardsControlAssociationsResult {
   ///@}
  private:
   Aws::Vector<StandardsControlAssociationDetail> m_standardsControlAssociationDetails;
-  bool m_standardsControlAssociationDetailsHasBeenSet = false;
 
   Aws::Vector<UnprocessedStandardsControlAssociation> m_unprocessedAssociations;
-  bool m_unprocessedAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_standardsControlAssociationDetailsHasBeenSet = false;
+  bool m_unprocessedAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

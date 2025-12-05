@@ -68,9 +68,9 @@ class AssociateResourceError {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   AssociateResourceErrorReason m_reason{AssociateResourceErrorReason::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class ModifyIdFormatRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   bool m_useLongIds{false};
+  bool m_resourceHasBeenSet = false;
   bool m_useLongIdsHasBeenSet = false;
 };
 

@@ -242,36 +242,36 @@ class S3ObjectMetadata {
   ///@}
  private:
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   Aws::String m_contentDisposition;
-  bool m_contentDispositionHasBeenSet = false;
 
   Aws::String m_contentEncoding;
-  bool m_contentEncodingHasBeenSet = false;
 
   Aws::String m_contentLanguage;
-  bool m_contentLanguageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userMetadata;
-  bool m_userMetadataHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   Aws::String m_contentMD5;
-  bool m_contentMD5HasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_httpExpiresDate{};
-  bool m_httpExpiresDateHasBeenSet = false;
 
   bool m_requesterCharged{false};
-  bool m_requesterChargedHasBeenSet = false;
 
   S3SSEAlgorithm m_sSEAlgorithm{S3SSEAlgorithm::NOT_SET};
+  bool m_cacheControlHasBeenSet = false;
+  bool m_contentDispositionHasBeenSet = false;
+  bool m_contentEncodingHasBeenSet = false;
+  bool m_contentLanguageHasBeenSet = false;
+  bool m_userMetadataHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
+  bool m_contentMD5HasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_httpExpiresDateHasBeenSet = false;
+  bool m_requesterChargedHasBeenSet = false;
   bool m_sSEAlgorithmHasBeenSet = false;
 };
 

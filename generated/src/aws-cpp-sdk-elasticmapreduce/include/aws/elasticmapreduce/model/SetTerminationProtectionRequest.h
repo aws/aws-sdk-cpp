@@ -80,9 +80,9 @@ class SetTerminationProtectionRequest : public EMRRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_jobFlowIds;
-  bool m_jobFlowIdsHasBeenSet = false;
 
   bool m_terminationProtected{false};
+  bool m_jobFlowIdsHasBeenSet = false;
   bool m_terminationProtectedHasBeenSet = false;
 };
 

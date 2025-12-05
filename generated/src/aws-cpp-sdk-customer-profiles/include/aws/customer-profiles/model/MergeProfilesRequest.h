@@ -112,15 +112,15 @@ class MergeProfilesRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_mainProfileId;
-  bool m_mainProfileIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_profileIdsToBeMerged;
-  bool m_profileIdsToBeMergedHasBeenSet = false;
 
   FieldSourceProfileIds m_fieldSourceProfileIds;
+  bool m_domainNameHasBeenSet = false;
+  bool m_mainProfileIdHasBeenSet = false;
+  bool m_profileIdsToBeMergedHasBeenSet = false;
   bool m_fieldSourceProfileIdsHasBeenSet = false;
 };
 

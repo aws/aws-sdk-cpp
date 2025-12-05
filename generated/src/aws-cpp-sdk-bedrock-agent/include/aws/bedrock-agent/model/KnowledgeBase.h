@@ -246,36 +246,36 @@ class KnowledgeBase {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   KnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
-  bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
   StorageConfiguration m_storageConfiguration;
-  bool m_storageConfigurationHasBeenSet = false;
 
   KnowledgeBaseStatus m_status{KnowledgeBaseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_knowledgeBaseConfigurationHasBeenSet = false;
+  bool m_storageConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;
 };
 

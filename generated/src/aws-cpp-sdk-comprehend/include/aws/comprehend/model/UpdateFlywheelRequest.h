@@ -105,15 +105,15 @@ class UpdateFlywheelRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_activeModelArn;
-  bool m_activeModelArnHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   UpdateDataSecurityConfig m_dataSecurityConfig;
+  bool m_flywheelArnHasBeenSet = false;
+  bool m_activeModelArnHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
   bool m_dataSecurityConfigHasBeenSet = false;
 };
 

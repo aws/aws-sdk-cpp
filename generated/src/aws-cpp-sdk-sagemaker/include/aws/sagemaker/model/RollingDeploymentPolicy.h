@@ -71,9 +71,9 @@ class RollingDeploymentPolicy {
   ///@}
  private:
   CapacitySizeConfig m_maximumBatchSize;
-  bool m_maximumBatchSizeHasBeenSet = false;
 
   CapacitySizeConfig m_rollbackMaximumBatchSize;
+  bool m_maximumBatchSizeHasBeenSet = false;
   bool m_rollbackMaximumBatchSizeHasBeenSet = false;
 };
 

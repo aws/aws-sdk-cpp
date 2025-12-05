@@ -136,18 +136,18 @@ class DeleteRecordRequest : public SageMakerFeatureStoreRuntimeRequest {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_recordIdentifierValueAsString;
-  bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
   Aws::String m_eventTime;
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::Vector<TargetStore> m_targetStores;
-  bool m_targetStoresHasBeenSet = false;
 
   DeletionMode m_deletionMode{DeletionMode::NOT_SET};
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordIdentifierValueAsStringHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_targetStoresHasBeenSet = false;
   bool m_deletionModeHasBeenSet = false;
 };
 

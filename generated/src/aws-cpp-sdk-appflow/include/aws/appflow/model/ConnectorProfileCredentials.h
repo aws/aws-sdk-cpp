@@ -391,60 +391,60 @@ class ConnectorProfileCredentials {
   ///@}
  private:
   AmplitudeConnectorProfileCredentials m_amplitude;
-  bool m_amplitudeHasBeenSet = false;
 
   DatadogConnectorProfileCredentials m_datadog;
-  bool m_datadogHasBeenSet = false;
 
   DynatraceConnectorProfileCredentials m_dynatrace;
-  bool m_dynatraceHasBeenSet = false;
 
   GoogleAnalyticsConnectorProfileCredentials m_googleAnalytics;
-  bool m_googleAnalyticsHasBeenSet = false;
 
   HoneycodeConnectorProfileCredentials m_honeycode;
-  bool m_honeycodeHasBeenSet = false;
 
   InforNexusConnectorProfileCredentials m_inforNexus;
-  bool m_inforNexusHasBeenSet = false;
 
   MarketoConnectorProfileCredentials m_marketo;
-  bool m_marketoHasBeenSet = false;
 
   RedshiftConnectorProfileCredentials m_redshift;
-  bool m_redshiftHasBeenSet = false;
 
   SalesforceConnectorProfileCredentials m_salesforce;
-  bool m_salesforceHasBeenSet = false;
 
   ServiceNowConnectorProfileCredentials m_serviceNow;
-  bool m_serviceNowHasBeenSet = false;
 
   SingularConnectorProfileCredentials m_singular;
-  bool m_singularHasBeenSet = false;
 
   SlackConnectorProfileCredentials m_slack;
-  bool m_slackHasBeenSet = false;
 
   SnowflakeConnectorProfileCredentials m_snowflake;
-  bool m_snowflakeHasBeenSet = false;
 
   TrendmicroConnectorProfileCredentials m_trendmicro;
-  bool m_trendmicroHasBeenSet = false;
 
   VeevaConnectorProfileCredentials m_veeva;
-  bool m_veevaHasBeenSet = false;
 
   ZendeskConnectorProfileCredentials m_zendesk;
-  bool m_zendeskHasBeenSet = false;
 
   SAPODataConnectorProfileCredentials m_sAPOData;
-  bool m_sAPODataHasBeenSet = false;
 
   CustomConnectorProfileCredentials m_customConnector;
-  bool m_customConnectorHasBeenSet = false;
 
   PardotConnectorProfileCredentials m_pardot;
+  bool m_amplitudeHasBeenSet = false;
+  bool m_datadogHasBeenSet = false;
+  bool m_dynatraceHasBeenSet = false;
+  bool m_googleAnalyticsHasBeenSet = false;
+  bool m_honeycodeHasBeenSet = false;
+  bool m_inforNexusHasBeenSet = false;
+  bool m_marketoHasBeenSet = false;
+  bool m_redshiftHasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_serviceNowHasBeenSet = false;
+  bool m_singularHasBeenSet = false;
+  bool m_slackHasBeenSet = false;
+  bool m_snowflakeHasBeenSet = false;
+  bool m_trendmicroHasBeenSet = false;
+  bool m_veevaHasBeenSet = false;
+  bool m_zendeskHasBeenSet = false;
+  bool m_sAPODataHasBeenSet = false;
+  bool m_customConnectorHasBeenSet = false;
   bool m_pardotHasBeenSet = false;
 };
 

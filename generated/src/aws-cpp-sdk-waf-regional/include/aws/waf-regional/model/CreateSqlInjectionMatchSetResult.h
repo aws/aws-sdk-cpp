@@ -86,12 +86,12 @@ class CreateSqlInjectionMatchSetResult {
   ///@}
  private:
   SqlInjectionMatchSet m_sqlInjectionMatchSet;
-  bool m_sqlInjectionMatchSetHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sqlInjectionMatchSetHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteNetworkInsightsPathResponse {
   ///@}
  private:
   Aws::String m_networkInsightsPathId;
-  bool m_networkInsightsPathIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsPathIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

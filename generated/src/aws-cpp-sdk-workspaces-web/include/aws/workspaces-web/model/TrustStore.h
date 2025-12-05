@@ -80,9 +80,9 @@ class TrustStore {
   ///@}
  private:
   Aws::Vector<Aws::String> m_associatedPortalArns;
-  bool m_associatedPortalArnsHasBeenSet = false;
 
   Aws::String m_trustStoreArn;
+  bool m_associatedPortalArnsHasBeenSet = false;
   bool m_trustStoreArnHasBeenSet = false;
 };
 

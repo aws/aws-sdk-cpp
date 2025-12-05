@@ -222,30 +222,30 @@ class JobManifestGeneratorFilter {
   ///@}
  private:
   bool m_eligibleForReplication{false};
-  bool m_eligibleForReplicationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   Aws::Vector<ReplicationStatus> m_objectReplicationStatuses;
-  bool m_objectReplicationStatusesHasBeenSet = false;
 
   KeyNameConstraint m_keyNameConstraint;
-  bool m_keyNameConstraintHasBeenSet = false;
 
   long long m_objectSizeGreaterThanBytes{0};
-  bool m_objectSizeGreaterThanBytesHasBeenSet = false;
 
   long long m_objectSizeLessThanBytes{0};
-  bool m_objectSizeLessThanBytesHasBeenSet = false;
 
   Aws::Vector<S3StorageClass> m_matchAnyStorageClass;
-  bool m_matchAnyStorageClassHasBeenSet = false;
 
   Aws::Vector<ObjectEncryptionFilter> m_matchAnyObjectEncryption;
+  bool m_eligibleForReplicationHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_objectReplicationStatusesHasBeenSet = false;
+  bool m_keyNameConstraintHasBeenSet = false;
+  bool m_objectSizeGreaterThanBytesHasBeenSet = false;
+  bool m_objectSizeLessThanBytesHasBeenSet = false;
+  bool m_matchAnyStorageClassHasBeenSet = false;
   bool m_matchAnyObjectEncryptionHasBeenSet = false;
 };
 

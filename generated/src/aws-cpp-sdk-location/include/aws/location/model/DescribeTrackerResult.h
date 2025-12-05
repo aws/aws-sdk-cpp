@@ -238,36 +238,36 @@ class DescribeTrackerResult {
   ///@}
  private:
   Aws::String m_trackerName;
-  bool m_trackerNameHasBeenSet = false;
 
   Aws::String m_trackerArn;
-  bool m_trackerArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   PositionFiltering m_positionFiltering{PositionFiltering::NOT_SET};
-  bool m_positionFilteringHasBeenSet = false;
 
   bool m_eventBridgeEnabled{false};
-  bool m_eventBridgeEnabledHasBeenSet = false;
 
   bool m_kmsKeyEnableGeospatialQueries{false};
-  bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trackerNameHasBeenSet = false;
+  bool m_trackerArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_positionFilteringHasBeenSet = false;
+  bool m_eventBridgeEnabledHasBeenSet = false;
+  bool m_kmsKeyEnableGeospatialQueriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -221,33 +221,33 @@ class SubscriptionFilter {
   ///@}
  private:
   Aws::String m_filterName;
-  bool m_filterNameHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Distribution m_distribution{Distribution::NOT_SET};
-  bool m_distributionHasBeenSet = false;
 
   bool m_applyOnTransformedLogs{false};
-  bool m_applyOnTransformedLogsHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_fieldSelectionCriteria;
-  bool m_fieldSelectionCriteriaHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_emitSystemFields;
+  bool m_filterNameHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_distributionHasBeenSet = false;
+  bool m_applyOnTransformedLogsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_fieldSelectionCriteriaHasBeenSet = false;
   bool m_emitSystemFieldsHasBeenSet = false;
 };
 

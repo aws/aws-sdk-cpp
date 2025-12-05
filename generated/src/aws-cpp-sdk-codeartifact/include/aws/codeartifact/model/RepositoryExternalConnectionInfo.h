@@ -94,12 +94,12 @@ class RepositoryExternalConnectionInfo {
   ///@}
  private:
   Aws::String m_externalConnectionName;
-  bool m_externalConnectionNameHasBeenSet = false;
 
   PackageFormat m_packageFormat{PackageFormat::NOT_SET};
-  bool m_packageFormatHasBeenSet = false;
 
   ExternalConnectionStatus m_status{ExternalConnectionStatus::NOT_SET};
+  bool m_externalConnectionNameHasBeenSet = false;
+  bool m_packageFormatHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

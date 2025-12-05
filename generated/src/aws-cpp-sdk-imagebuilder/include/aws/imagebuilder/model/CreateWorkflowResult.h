@@ -96,15 +96,15 @@ class CreateWorkflowResult {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_workflowBuildVersionArn;
-  bool m_workflowBuildVersionArnHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
-  bool m_latestVersionReferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_workflowBuildVersionArnHasBeenSet = false;
+  bool m_latestVersionReferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class BatchDetectDominantLanguageItemResult {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::Vector<DominantLanguage> m_languages;
+  bool m_indexHasBeenSet = false;
   bool m_languagesHasBeenSet = false;
 };
 

@@ -226,24 +226,24 @@ class CreateAccessEntryRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_kubernetesGroups;
-  bool m_kubernetesGroupsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
+  bool m_kubernetesGroupsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_usernameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

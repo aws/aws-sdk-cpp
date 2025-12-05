@@ -102,15 +102,15 @@ class ListTrustStoreCertificatesResult {
   ///@}
  private:
   Aws::Vector<CertificateSummary> m_certificateList;
-  bool m_certificateListHasBeenSet = false;
 
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateListHasBeenSet = false;
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

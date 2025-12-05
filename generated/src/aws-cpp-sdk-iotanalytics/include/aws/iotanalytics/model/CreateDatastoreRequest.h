@@ -158,21 +158,21 @@ class CreateDatastoreRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_datastoreName;
-  bool m_datastoreNameHasBeenSet = false;
 
   DatastoreStorage m_datastoreStorage;
-  bool m_datastoreStorageHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   FileFormatConfiguration m_fileFormatConfiguration;
-  bool m_fileFormatConfigurationHasBeenSet = false;
 
   DatastorePartitions m_datastorePartitions;
+  bool m_datastoreNameHasBeenSet = false;
+  bool m_datastoreStorageHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileFormatConfigurationHasBeenSet = false;
   bool m_datastorePartitionsHasBeenSet = false;
 };
 

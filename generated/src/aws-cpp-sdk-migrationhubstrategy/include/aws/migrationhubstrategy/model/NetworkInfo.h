@@ -109,15 +109,15 @@ class NetworkInfo {
   ///@}
  private:
   Aws::String m_interfaceName;
-  bool m_interfaceNameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_macAddress;
-  bool m_macAddressHasBeenSet = false;
 
   Aws::String m_netMask;
+  bool m_interfaceNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_macAddressHasBeenSet = false;
   bool m_netMaskHasBeenSet = false;
 };
 

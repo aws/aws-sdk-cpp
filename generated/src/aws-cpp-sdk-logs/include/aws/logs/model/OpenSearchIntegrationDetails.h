@@ -228,27 +228,27 @@ class OpenSearchIntegrationDetails {
   ///@}
  private:
   OpenSearchDataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   OpenSearchApplication m_application;
-  bool m_applicationHasBeenSet = false;
 
   OpenSearchCollection m_collection;
-  bool m_collectionHasBeenSet = false;
 
   OpenSearchWorkspace m_workspace;
-  bool m_workspaceHasBeenSet = false;
 
   OpenSearchEncryptionPolicy m_encryptionPolicy;
-  bool m_encryptionPolicyHasBeenSet = false;
 
   OpenSearchNetworkPolicy m_networkPolicy;
-  bool m_networkPolicyHasBeenSet = false;
 
   OpenSearchDataAccessPolicy m_accessPolicy;
-  bool m_accessPolicyHasBeenSet = false;
 
   OpenSearchLifecyclePolicy m_lifecyclePolicy;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_applicationHasBeenSet = false;
+  bool m_collectionHasBeenSet = false;
+  bool m_workspaceHasBeenSet = false;
+  bool m_encryptionPolicyHasBeenSet = false;
+  bool m_networkPolicyHasBeenSet = false;
+  bool m_accessPolicyHasBeenSet = false;
   bool m_lifecyclePolicyHasBeenSet = false;
 };
 

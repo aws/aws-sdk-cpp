@@ -69,9 +69,9 @@ class IamInstanceProfileSpecification {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

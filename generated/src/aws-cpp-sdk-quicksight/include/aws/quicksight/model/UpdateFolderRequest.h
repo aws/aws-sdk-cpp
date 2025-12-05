@@ -84,12 +84,12 @@ class UpdateFolderRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_folderIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

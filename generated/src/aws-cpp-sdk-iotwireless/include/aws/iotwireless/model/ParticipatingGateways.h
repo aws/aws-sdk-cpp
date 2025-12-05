@@ -96,12 +96,12 @@ class ParticipatingGateways {
   ///@}
  private:
   DownlinkMode m_downlinkMode{DownlinkMode::NOT_SET};
-  bool m_downlinkModeHasBeenSet = false;
 
   Aws::Vector<GatewayListItem> m_gatewayList;
-  bool m_gatewayListHasBeenSet = false;
 
   int m_transmissionInterval{0};
+  bool m_downlinkModeHasBeenSet = false;
+  bool m_gatewayListHasBeenSet = false;
   bool m_transmissionIntervalHasBeenSet = false;
 };
 

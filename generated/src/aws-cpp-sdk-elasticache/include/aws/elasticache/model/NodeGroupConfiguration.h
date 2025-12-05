@@ -181,24 +181,24 @@ class NodeGroupConfiguration {
   ///@}
  private:
   Aws::String m_nodeGroupId;
-  bool m_nodeGroupIdHasBeenSet = false;
 
   Aws::String m_slots;
-  bool m_slotsHasBeenSet = false;
 
   int m_replicaCount{0};
-  bool m_replicaCountHasBeenSet = false;
 
   Aws::String m_primaryAvailabilityZone;
-  bool m_primaryAvailabilityZoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicaAvailabilityZones;
-  bool m_replicaAvailabilityZonesHasBeenSet = false;
 
   Aws::String m_primaryOutpostArn;
-  bool m_primaryOutpostArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replicaOutpostArns;
+  bool m_nodeGroupIdHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_replicaCountHasBeenSet = false;
+  bool m_primaryAvailabilityZoneHasBeenSet = false;
+  bool m_replicaAvailabilityZonesHasBeenSet = false;
+  bool m_primaryOutpostArnHasBeenSet = false;
   bool m_replicaOutpostArnsHasBeenSet = false;
 };
 

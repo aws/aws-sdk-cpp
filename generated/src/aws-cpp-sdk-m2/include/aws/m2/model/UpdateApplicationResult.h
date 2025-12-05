@@ -57,9 +57,9 @@ class UpdateApplicationResult {
   ///@}
  private:
   int m_applicationVersion{0};
-  bool m_applicationVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

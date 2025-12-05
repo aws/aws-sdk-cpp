@@ -94,9 +94,9 @@ class EnablePolicyTypeRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_rootId;
-  bool m_rootIdHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
+  bool m_rootIdHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

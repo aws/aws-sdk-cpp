@@ -74,9 +74,9 @@ class BatchDetectTargetedSentimentItemResult {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::Vector<TargetedSentimentEntity> m_entities;
+  bool m_indexHasBeenSet = false;
   bool m_entitiesHasBeenSet = false;
 };
 

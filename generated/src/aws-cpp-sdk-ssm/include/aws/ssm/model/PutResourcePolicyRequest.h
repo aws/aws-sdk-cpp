@@ -106,15 +106,15 @@ class PutResourcePolicyRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_policyHash;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
   bool m_policyHashHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class NotificationChannelConfig {
   ///@}
  private:
   SnsChannelConfig m_sns;
-  bool m_snsHasBeenSet = false;
 
   NotificationFilterConfig m_filters;
+  bool m_snsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

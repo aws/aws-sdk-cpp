@@ -68,9 +68,9 @@ class MatchScoreDetails {
   ///@}
  private:
   double m_overall{0.0};
-  bool m_overallHasBeenSet = false;
 
   ComponentMatchScores m_components;
+  bool m_overallHasBeenSet = false;
   bool m_componentsHasBeenSet = false;
 };
 

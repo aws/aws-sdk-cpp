@@ -86,12 +86,12 @@ class IsolineConnection {
   ///@}
  private:
   int m_fromPolygonIndex{0};
-  bool m_fromPolygonIndexHasBeenSet = false;
 
   IsolineConnectionGeometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   int m_toPolygonIndex{0};
+  bool m_fromPolygonIndexHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
   bool m_toPolygonIndexHasBeenSet = false;
 };
 

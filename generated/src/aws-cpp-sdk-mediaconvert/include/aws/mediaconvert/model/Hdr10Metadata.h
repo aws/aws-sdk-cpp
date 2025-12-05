@@ -247,39 +247,39 @@ class Hdr10Metadata {
   ///@}
  private:
   int m_bluePrimaryX{0};
-  bool m_bluePrimaryXHasBeenSet = false;
 
   int m_bluePrimaryY{0};
-  bool m_bluePrimaryYHasBeenSet = false;
 
   int m_greenPrimaryX{0};
-  bool m_greenPrimaryXHasBeenSet = false;
 
   int m_greenPrimaryY{0};
-  bool m_greenPrimaryYHasBeenSet = false;
 
   int m_maxContentLightLevel{0};
-  bool m_maxContentLightLevelHasBeenSet = false;
 
   int m_maxFrameAverageLightLevel{0};
-  bool m_maxFrameAverageLightLevelHasBeenSet = false;
 
   int m_maxLuminance{0};
-  bool m_maxLuminanceHasBeenSet = false;
 
   int m_minLuminance{0};
-  bool m_minLuminanceHasBeenSet = false;
 
   int m_redPrimaryX{0};
-  bool m_redPrimaryXHasBeenSet = false;
 
   int m_redPrimaryY{0};
-  bool m_redPrimaryYHasBeenSet = false;
 
   int m_whitePointX{0};
-  bool m_whitePointXHasBeenSet = false;
 
   int m_whitePointY{0};
+  bool m_bluePrimaryXHasBeenSet = false;
+  bool m_bluePrimaryYHasBeenSet = false;
+  bool m_greenPrimaryXHasBeenSet = false;
+  bool m_greenPrimaryYHasBeenSet = false;
+  bool m_maxContentLightLevelHasBeenSet = false;
+  bool m_maxFrameAverageLightLevelHasBeenSet = false;
+  bool m_maxLuminanceHasBeenSet = false;
+  bool m_minLuminanceHasBeenSet = false;
+  bool m_redPrimaryXHasBeenSet = false;
+  bool m_redPrimaryYHasBeenSet = false;
+  bool m_whitePointXHasBeenSet = false;
   bool m_whitePointYHasBeenSet = false;
 };
 

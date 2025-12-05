@@ -115,15 +115,15 @@ class GetSensitiveDataOccurrencesResult {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<DetectedDataDetails>> m_sensitiveDataOccurrences;
-  bool m_sensitiveDataOccurrencesHasBeenSet = false;
 
   RevealRequestStatus m_status{RevealRequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorHasBeenSet = false;
+  bool m_sensitiveDataOccurrencesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

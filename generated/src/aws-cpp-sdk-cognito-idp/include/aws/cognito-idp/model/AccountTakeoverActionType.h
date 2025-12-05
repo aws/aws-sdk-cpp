@@ -78,9 +78,9 @@ class AccountTakeoverActionType {
   ///@}
  private:
   bool m_notify{false};
-  bool m_notifyHasBeenSet = false;
 
   AccountTakeoverEventActionType m_eventAction{AccountTakeoverEventActionType::NOT_SET};
+  bool m_notifyHasBeenSet = false;
   bool m_eventActionHasBeenSet = false;
 };
 

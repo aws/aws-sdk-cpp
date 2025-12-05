@@ -86,12 +86,12 @@ class CloudFormationStackRecordSourceInfo {
   ///@}
  private:
   CloudFormationStackRecordSourceType m_resourceType{CloudFormationStackRecordSourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

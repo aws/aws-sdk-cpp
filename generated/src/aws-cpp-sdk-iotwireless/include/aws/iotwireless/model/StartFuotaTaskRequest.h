@@ -62,9 +62,9 @@ class StartFuotaTaskRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LoRaWANStartFuotaTask m_loRaWAN;
+  bool m_idHasBeenSet = false;
   bool m_loRaWANHasBeenSet = false;
 };
 

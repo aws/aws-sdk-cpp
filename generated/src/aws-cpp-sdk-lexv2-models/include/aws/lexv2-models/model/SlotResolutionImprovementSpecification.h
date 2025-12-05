@@ -68,9 +68,9 @@ class SlotResolutionImprovementSpecification {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   BedrockModelSpecification m_bedrockModelSpecification;
+  bool m_enabledHasBeenSet = false;
   bool m_bedrockModelSpecificationHasBeenSet = false;
 };
 

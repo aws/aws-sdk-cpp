@@ -152,18 +152,18 @@ class UpdateProjectRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_projectDescription;
-  bool m_projectDescriptionHasBeenSet = false;
 
   ServiceCatalogProvisioningUpdateDetails m_serviceCatalogProvisioningUpdateDetails;
-  bool m_serviceCatalogProvisioningUpdateDetailsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<UpdateTemplateProvider> m_templateProvidersToUpdate;
+  bool m_projectNameHasBeenSet = false;
+  bool m_projectDescriptionHasBeenSet = false;
+  bool m_serviceCatalogProvisioningUpdateDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_templateProvidersToUpdateHasBeenSet = false;
 };
 

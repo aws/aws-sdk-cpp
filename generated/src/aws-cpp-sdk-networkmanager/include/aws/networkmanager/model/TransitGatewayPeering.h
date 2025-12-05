@@ -87,12 +87,12 @@ class TransitGatewayPeering {
   ///@}
  private:
   Peering m_peering;
-  bool m_peeringHasBeenSet = false;
 
   Aws::String m_transitGatewayArn;
-  bool m_transitGatewayArnHasBeenSet = false;
 
   Aws::String m_transitGatewayPeeringAttachmentId;
+  bool m_peeringHasBeenSet = false;
+  bool m_transitGatewayArnHasBeenSet = false;
   bool m_transitGatewayPeeringAttachmentIdHasBeenSet = false;
 };
 

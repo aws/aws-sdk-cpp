@@ -60,9 +60,9 @@ class GetLoggingConfigurationResult {
   ///@}
  private:
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_loggingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

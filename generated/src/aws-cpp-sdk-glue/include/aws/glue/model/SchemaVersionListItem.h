@@ -120,18 +120,18 @@ class SchemaVersionListItem {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   SchemaVersionStatus m_status{SchemaVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdTime;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_schemaVersionIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

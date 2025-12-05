@@ -88,12 +88,12 @@ class StorageProfileSummary {
   ///@}
  private:
   Aws::String m_storageProfileId;
-  bool m_storageProfileIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   StorageProfileOperatingSystemFamily m_osFamily{StorageProfileOperatingSystemFamily::NOT_SET};
+  bool m_storageProfileIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_osFamilyHasBeenSet = false;
 };
 

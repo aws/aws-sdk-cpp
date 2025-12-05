@@ -87,12 +87,12 @@ class Receipt {
   ///@}
  private:
   Aws::String m_deliveredTimestamp;
-  bool m_deliveredTimestampHasBeenSet = false;
 
   Aws::String m_readTimestamp;
-  bool m_readTimestampHasBeenSet = false;
 
   Aws::String m_recipientParticipantId;
+  bool m_deliveredTimestampHasBeenSet = false;
+  bool m_readTimestampHasBeenSet = false;
   bool m_recipientParticipantIdHasBeenSet = false;
 };
 

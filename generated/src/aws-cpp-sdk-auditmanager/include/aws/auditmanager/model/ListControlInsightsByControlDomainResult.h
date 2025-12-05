@@ -86,12 +86,12 @@ class ListControlInsightsByControlDomainResult {
   ///@}
  private:
   Aws::Vector<ControlInsightsMetadataItem> m_controlInsightsMetadata;
-  bool m_controlInsightsMetadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlInsightsMetadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

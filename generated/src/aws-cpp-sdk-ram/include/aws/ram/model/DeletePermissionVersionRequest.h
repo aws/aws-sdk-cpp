@@ -106,12 +106,12 @@ class DeletePermissionVersionRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_permissionArn;
-  bool m_permissionArnHasBeenSet = false;
 
   int m_permissionVersion{0};
-  bool m_permissionVersionHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_permissionArnHasBeenSet = false;
+  bool m_permissionVersionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

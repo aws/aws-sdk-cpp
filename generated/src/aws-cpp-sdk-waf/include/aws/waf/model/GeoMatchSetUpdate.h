@@ -78,9 +78,9 @@ class GeoMatchSetUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   GeoMatchConstraint m_geoMatchConstraint;
+  bool m_actionHasBeenSet = false;
   bool m_geoMatchConstraintHasBeenSet = false;
 };
 

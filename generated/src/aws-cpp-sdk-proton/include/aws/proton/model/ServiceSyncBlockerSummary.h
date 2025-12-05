@@ -104,12 +104,12 @@ class ServiceSyncBlockerSummary {
   ///@}
  private:
   Aws::Vector<SyncBlocker> m_latestBlockers;
-  bool m_latestBlockersHasBeenSet = false;
 
   Aws::String m_serviceInstanceName;
-  bool m_serviceInstanceNameHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_latestBlockersHasBeenSet = false;
+  bool m_serviceInstanceNameHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

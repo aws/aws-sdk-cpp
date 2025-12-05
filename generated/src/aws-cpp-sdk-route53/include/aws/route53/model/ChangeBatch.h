@@ -77,9 +77,9 @@ class ChangeBatch {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Vector<Change> m_changes;
+  bool m_commentHasBeenSet = false;
   bool m_changesHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class Ec2EbsVolume {
   ///@}
  private:
   int m_sizeGiB{0};
-  bool m_sizeGiBHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_throughputMiB{0};
+  bool m_sizeGiBHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
   bool m_throughputMiBHasBeenSet = false;
 };
 

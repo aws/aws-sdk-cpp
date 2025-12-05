@@ -101,9 +101,9 @@ class SystemControl {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_namespaceHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListCrossAccountResourcesResult {
   ///@}
  private:
   Aws::Vector<CrossAccountResource> m_crossAccountResources;
-  bool m_crossAccountResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crossAccountResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

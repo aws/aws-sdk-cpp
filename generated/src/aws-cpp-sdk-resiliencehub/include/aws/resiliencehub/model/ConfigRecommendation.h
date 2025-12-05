@@ -236,33 +236,33 @@ class ConfigRecommendation {
   ///@}
  private:
   Aws::String m_appComponentName;
-  bool m_appComponentNameHasBeenSet = false;
 
   Aws::Map<DisruptionType, DisruptionCompliance> m_compliance;
-  bool m_complianceHasBeenSet = false;
 
   Cost m_cost;
-  bool m_costHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   HaArchitecture m_haArchitecture{HaArchitecture::NOT_SET};
-  bool m_haArchitectureHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConfigRecommendationOptimizationType m_optimizationType{ConfigRecommendationOptimizationType::NOT_SET};
-  bool m_optimizationTypeHasBeenSet = false;
 
   Aws::Map<DisruptionType, RecommendationDisruptionCompliance> m_recommendationCompliance;
-  bool m_recommendationComplianceHasBeenSet = false;
 
   Aws::String m_referenceId;
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_suggestedChanges;
+  bool m_appComponentNameHasBeenSet = false;
+  bool m_complianceHasBeenSet = false;
+  bool m_costHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_haArchitectureHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_optimizationTypeHasBeenSet = false;
+  bool m_recommendationComplianceHasBeenSet = false;
+  bool m_referenceIdHasBeenSet = false;
   bool m_suggestedChangesHasBeenSet = false;
 };
 

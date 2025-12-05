@@ -141,18 +141,18 @@ class InferenceConfiguration {
   ///@}
  private:
   int m_maximumLength{0};
-  bool m_maximumLengthHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stopSequences;
-  bool m_stopSequencesHasBeenSet = false;
 
   double m_temperature{0.0};
-  bool m_temperatureHasBeenSet = false;
 
   int m_topK{0};
-  bool m_topKHasBeenSet = false;
 
   double m_topP{0.0};
+  bool m_maximumLengthHasBeenSet = false;
+  bool m_stopSequencesHasBeenSet = false;
+  bool m_temperatureHasBeenSet = false;
+  bool m_topKHasBeenSet = false;
   bool m_topPHasBeenSet = false;
 };
 

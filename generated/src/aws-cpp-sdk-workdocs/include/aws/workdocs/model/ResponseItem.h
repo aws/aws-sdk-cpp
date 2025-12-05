@@ -144,21 +144,21 @@ class ResponseItem {
   ///@}
  private:
   ResponseItemType m_resourceType{ResponseItemType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_webUrl;
-  bool m_webUrlHasBeenSet = false;
 
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   FolderMetadata m_folderMetadata;
-  bool m_folderMetadataHasBeenSet = false;
 
   CommentMetadata m_commentMetadata;
-  bool m_commentMetadataHasBeenSet = false;
 
   DocumentVersionMetadata m_documentVersionMetadata;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_webUrlHasBeenSet = false;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_folderMetadataHasBeenSet = false;
+  bool m_commentMetadataHasBeenSet = false;
   bool m_documentVersionMetadataHasBeenSet = false;
 };
 

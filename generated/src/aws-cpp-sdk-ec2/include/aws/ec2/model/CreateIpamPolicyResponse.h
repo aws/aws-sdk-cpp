@@ -67,9 +67,9 @@ class CreateIpamPolicyResponse {
   ///@}
  private:
   IpamPolicy m_ipamPolicy;
-  bool m_ipamPolicyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamPolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

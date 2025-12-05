@@ -417,51 +417,51 @@ class UpdateWebACLRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DefaultAction m_defaultAction;
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   VisibilityConfig m_visibilityConfig;
-  bool m_visibilityConfigHasBeenSet = false;
 
   DataProtectionConfig m_dataProtectionConfig;
-  bool m_dataProtectionConfigHasBeenSet = false;
 
   Aws::String m_lockToken;
-  bool m_lockTokenHasBeenSet = false;
 
   Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
-  bool m_customResponseBodiesHasBeenSet = false;
 
   CaptchaConfig m_captchaConfig;
-  bool m_captchaConfigHasBeenSet = false;
 
   ChallengeConfig m_challengeConfig;
-  bool m_challengeConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenDomains;
-  bool m_tokenDomainsHasBeenSet = false;
 
   AssociationConfig m_associationConfig;
-  bool m_associationConfigHasBeenSet = false;
 
   OnSourceDDoSProtectionConfig m_onSourceDDoSProtectionConfig;
-  bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
 
   ApplicationConfig m_applicationConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_visibilityConfigHasBeenSet = false;
+  bool m_dataProtectionConfigHasBeenSet = false;
+  bool m_lockTokenHasBeenSet = false;
+  bool m_customResponseBodiesHasBeenSet = false;
+  bool m_captchaConfigHasBeenSet = false;
+  bool m_challengeConfigHasBeenSet = false;
+  bool m_tokenDomainsHasBeenSet = false;
+  bool m_associationConfigHasBeenSet = false;
+  bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
   bool m_applicationConfigHasBeenSet = false;
 };
 

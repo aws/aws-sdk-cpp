@@ -387,60 +387,60 @@ class DescribeLabelingJobResult {
   ///@}
  private:
   LabelingJobStatus m_labelingJobStatus{LabelingJobStatus::NOT_SET};
-  bool m_labelingJobStatusHasBeenSet = false;
 
   LabelCounters m_labelCounters;
-  bool m_labelCountersHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_jobReferenceCode;
-  bool m_jobReferenceCodeHasBeenSet = false;
 
   Aws::String m_labelingJobName;
-  bool m_labelingJobNameHasBeenSet = false;
 
   Aws::String m_labelingJobArn;
-  bool m_labelingJobArnHasBeenSet = false;
 
   Aws::String m_labelAttributeName;
-  bool m_labelAttributeNameHasBeenSet = false;
 
   LabelingJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   LabelingJobOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_labelCategoryConfigS3Uri;
-  bool m_labelCategoryConfigS3UriHasBeenSet = false;
 
   LabelingJobStoppingConditions m_stoppingConditions;
-  bool m_stoppingConditionsHasBeenSet = false;
 
   LabelingJobAlgorithmsConfig m_labelingJobAlgorithmsConfig;
-  bool m_labelingJobAlgorithmsConfigHasBeenSet = false;
 
   HumanTaskConfig m_humanTaskConfig;
-  bool m_humanTaskConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LabelingJobOutput m_labelingJobOutput;
-  bool m_labelingJobOutputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelingJobStatusHasBeenSet = false;
+  bool m_labelCountersHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_jobReferenceCodeHasBeenSet = false;
+  bool m_labelingJobNameHasBeenSet = false;
+  bool m_labelingJobArnHasBeenSet = false;
+  bool m_labelAttributeNameHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_labelCategoryConfigS3UriHasBeenSet = false;
+  bool m_stoppingConditionsHasBeenSet = false;
+  bool m_labelingJobAlgorithmsConfigHasBeenSet = false;
+  bool m_humanTaskConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_labelingJobOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

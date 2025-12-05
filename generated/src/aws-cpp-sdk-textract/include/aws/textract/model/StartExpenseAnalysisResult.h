@@ -61,9 +61,9 @@ class StartExpenseAnalysisResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

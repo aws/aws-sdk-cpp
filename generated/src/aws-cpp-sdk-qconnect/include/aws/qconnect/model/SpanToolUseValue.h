@@ -87,12 +87,12 @@ class SpanToolUseValue {
   ///@}
  private:
   Aws::String m_toolUseId;
-  bool m_toolUseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::Document m_arguments;
+  bool m_toolUseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_argumentsHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListDetectorsResult {
   ///@}
  private:
   Aws::Vector<DetectorSummary> m_detectorSummaries;
-  bool m_detectorSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

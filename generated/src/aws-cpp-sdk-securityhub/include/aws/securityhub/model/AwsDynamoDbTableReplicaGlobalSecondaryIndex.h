@@ -73,9 +73,9 @@ class AwsDynamoDbTableReplicaGlobalSecondaryIndex {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   AwsDynamoDbTableProvisionedThroughputOverride m_provisionedThroughputOverride;
+  bool m_indexNameHasBeenSet = false;
   bool m_provisionedThroughputOverrideHasBeenSet = false;
 };
 

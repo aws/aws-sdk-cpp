@@ -77,9 +77,9 @@ class TerminologyDataLocation {
   ///@}
  private:
   Aws::String m_repositoryType;
-  bool m_repositoryTypeHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_repositoryTypeHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

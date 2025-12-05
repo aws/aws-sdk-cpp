@@ -125,15 +125,15 @@ class UpdateFirewallAnalysisSettingsRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
-  bool m_enabledAnalysisTypesHasBeenSet = false;
 
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_updateToken;
+  bool m_enabledAnalysisTypesHasBeenSet = false;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallNameHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
 };
 

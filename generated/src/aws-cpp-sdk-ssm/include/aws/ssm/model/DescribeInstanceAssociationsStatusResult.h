@@ -87,12 +87,12 @@ class DescribeInstanceAssociationsStatusResult {
   ///@}
  private:
   Aws::Vector<InstanceAssociationStatusInfo> m_instanceAssociationStatusInfos;
-  bool m_instanceAssociationStatusInfosHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceAssociationStatusInfosHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

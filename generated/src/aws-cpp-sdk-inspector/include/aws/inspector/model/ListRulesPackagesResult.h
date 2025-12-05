@@ -87,12 +87,12 @@ class ListRulesPackagesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_rulesPackageArns;
-  bool m_rulesPackageArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rulesPackageArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

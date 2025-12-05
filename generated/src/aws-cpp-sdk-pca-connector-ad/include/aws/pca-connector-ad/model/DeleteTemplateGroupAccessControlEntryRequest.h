@@ -67,9 +67,9 @@ class DeleteTemplateGroupAccessControlEntryRequest : public PcaConnectorAdReques
   ///@}
  private:
   Aws::String m_groupSecurityIdentifier;
-  bool m_groupSecurityIdentifierHasBeenSet = false;
 
   Aws::String m_templateArn;
+  bool m_groupSecurityIdentifierHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
 };
 

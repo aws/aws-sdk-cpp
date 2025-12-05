@@ -144,18 +144,18 @@ class CreateEdgeDeploymentPlanRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_edgeDeploymentPlanName;
-  bool m_edgeDeploymentPlanNameHasBeenSet = false;
 
   Aws::Vector<EdgeDeploymentModelConfig> m_modelConfigs;
-  bool m_modelConfigsHasBeenSet = false;
 
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   Aws::Vector<DeploymentStage> m_stages;
-  bool m_stagesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_edgeDeploymentPlanNameHasBeenSet = false;
+  bool m_modelConfigsHasBeenSet = false;
+  bool m_deviceFleetNameHasBeenSet = false;
+  bool m_stagesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

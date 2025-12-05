@@ -68,9 +68,9 @@ class PendingModifiedServiceUpdate {
   ///@}
  private:
   Aws::String m_serviceUpdateName;
-  bool m_serviceUpdateNameHasBeenSet = false;
 
   ServiceUpdateStatus m_status{ServiceUpdateStatus::NOT_SET};
+  bool m_serviceUpdateNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

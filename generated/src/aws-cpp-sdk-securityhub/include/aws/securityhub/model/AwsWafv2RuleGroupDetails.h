@@ -191,27 +191,27 @@ class AwsWafv2RuleGroupDetails {
   ///@}
  private:
   long long m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<AwsWafv2RulesDetails> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   AwsWafv2VisibilityConfigDetails m_visibilityConfig;
+  bool m_capacityHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_visibilityConfigHasBeenSet = false;
 };
 

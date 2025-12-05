@@ -104,15 +104,15 @@ class FormCTA {
   ///@}
  private:
   FormButtonsPosition m_position{FormButtonsPosition::NOT_SET};
-  bool m_positionHasBeenSet = false;
 
   FormButton m_clear;
-  bool m_clearHasBeenSet = false;
 
   FormButton m_cancel;
-  bool m_cancelHasBeenSet = false;
 
   FormButton m_submit;
+  bool m_positionHasBeenSet = false;
+  bool m_clearHasBeenSet = false;
+  bool m_cancelHasBeenSet = false;
   bool m_submitHasBeenSet = false;
 };
 

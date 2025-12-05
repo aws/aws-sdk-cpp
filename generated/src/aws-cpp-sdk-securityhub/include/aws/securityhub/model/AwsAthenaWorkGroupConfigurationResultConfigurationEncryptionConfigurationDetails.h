@@ -75,9 +75,9 @@ class AwsAthenaWorkGroupConfigurationResultConfigurationEncryptionConfigurationD
   ///@}
  private:
   Aws::String m_encryptionOption;
-  bool m_encryptionOptionHasBeenSet = false;
 
   Aws::String m_kmsKey;
+  bool m_encryptionOptionHasBeenSet = false;
   bool m_kmsKeyHasBeenSet = false;
 };
 

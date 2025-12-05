@@ -181,21 +181,21 @@ class CreateIPSetRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IPAddressVersion m_iPAddressVersion{IPAddressVersion::NOT_SET};
-  bool m_iPAddressVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addresses;
-  bool m_addressesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_iPAddressVersionHasBeenSet = false;
+  bool m_addressesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

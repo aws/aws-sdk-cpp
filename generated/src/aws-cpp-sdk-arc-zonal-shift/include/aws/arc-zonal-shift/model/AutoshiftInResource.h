@@ -110,12 +110,12 @@ class AutoshiftInResource {
   ///@}
  private:
   AutoshiftAppliedStatus m_appliedStatus{AutoshiftAppliedStatus::NOT_SET};
-  bool m_appliedStatusHasBeenSet = false;
 
   Aws::String m_awayFrom;
-  bool m_awayFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_appliedStatusHasBeenSet = false;
+  bool m_awayFromHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

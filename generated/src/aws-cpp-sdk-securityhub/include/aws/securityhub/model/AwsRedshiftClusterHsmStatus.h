@@ -92,12 +92,12 @@ class AwsRedshiftClusterHsmStatus {
   ///@}
  private:
   Aws::String m_hsmClientCertificateIdentifier;
-  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
   Aws::String m_hsmConfigurationIdentifier;
-  bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_hsmClientCertificateIdentifierHasBeenSet = false;
+  bool m_hsmConfigurationIdentifierHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class InputConversion {
   ///@}
  private:
   FromFormat m_fromFormat{FromFormat::NOT_SET};
-  bool m_fromFormatHasBeenSet = false;
 
   FormatOptions m_formatOptions;
-  bool m_formatOptionsHasBeenSet = false;
 
   AdvancedOptions m_advancedOptions;
+  bool m_fromFormatHasBeenSet = false;
+  bool m_formatOptionsHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
 };
 

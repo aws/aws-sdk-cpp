@@ -71,12 +71,12 @@ class GetSolFunctionPackageDescriptorResult {
   ///@}
  private:
   DescriptorContentType m_contentType{DescriptorContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_vnfd{};
-  bool m_vnfdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_vnfdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -182,24 +182,24 @@ class SendEmailRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replyToAddresses;
-  bool m_replyToAddressesHasBeenSet = false;
 
   Aws::String m_feedbackForwardingEmailAddress;
-  bool m_feedbackForwardingEmailAddressHasBeenSet = false;
 
   EmailContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<MessageTag> m_emailTags;
-  bool m_emailTagsHasBeenSet = false;
 
   Aws::String m_configurationSetName;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_replyToAddressesHasBeenSet = false;
+  bool m_feedbackForwardingEmailAddressHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_emailTagsHasBeenSet = false;
   bool m_configurationSetNameHasBeenSet = false;
 };
 

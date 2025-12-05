@@ -60,9 +60,9 @@ class GetQuickResponseResult {
   ///@}
  private:
   QuickResponseData m_quickResponse;
-  bool m_quickResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quickResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ProvisionedThroughput {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_volumeThroughput{0};
+  bool m_enabledHasBeenSet = false;
   bool m_volumeThroughputHasBeenSet = false;
 };
 

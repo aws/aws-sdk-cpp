@@ -63,9 +63,9 @@ class TdscdmaLocalId {
   ///@}
  private:
   int m_uarfcn{0};
-  bool m_uarfcnHasBeenSet = false;
 
   int m_cellParams{0};
+  bool m_uarfcnHasBeenSet = false;
   bool m_cellParamsHasBeenSet = false;
 };
 

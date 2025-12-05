@@ -60,9 +60,9 @@ class CreateClusterSnapshotResult {
   ///@}
  private:
   ClusterSnapshot m_snapshot;
-  bool m_snapshotHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

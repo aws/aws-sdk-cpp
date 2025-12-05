@@ -142,21 +142,21 @@ class CoreNetworkChangeEvent {
   ///@}
  private:
   ChangeType m_type{ChangeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_identifierPath;
-  bool m_identifierPathHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   ChangeStatus m_status{ChangeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CoreNetworkChangeEventValues m_values;
+  bool m_typeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_identifierPathHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

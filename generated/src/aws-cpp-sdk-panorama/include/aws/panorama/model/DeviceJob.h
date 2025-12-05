@@ -122,18 +122,18 @@ class DeviceJob {
   ///@}
  private:
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
+  bool m_createdTimeHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
 };
 

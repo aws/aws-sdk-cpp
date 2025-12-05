@@ -142,21 +142,21 @@ class ListProfileObjectsRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   ObjectFilter m_objectFilter;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_objectFilterHasBeenSet = false;
 };
 

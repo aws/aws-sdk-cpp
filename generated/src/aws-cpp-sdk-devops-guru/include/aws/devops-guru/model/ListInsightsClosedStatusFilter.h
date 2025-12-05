@@ -70,9 +70,9 @@ class ListInsightsClosedStatusFilter {
   ///@}
  private:
   InsightType m_type{InsightType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   EndTimeRange m_endTimeRange;
+  bool m_typeHasBeenSet = false;
   bool m_endTimeRangeHasBeenSet = false;
 };
 

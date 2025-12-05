@@ -143,18 +143,18 @@ class LogConfigurationType {
   ///@}
  private:
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   EventSourceName m_eventSource{EventSourceName::NOT_SET};
-  bool m_eventSourceHasBeenSet = false;
 
   CloudWatchLogsConfigurationType m_cloudWatchLogsConfiguration;
-  bool m_cloudWatchLogsConfigurationHasBeenSet = false;
 
   S3ConfigurationType m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   FirehoseConfigurationType m_firehoseConfiguration;
+  bool m_logLevelHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_cloudWatchLogsConfigurationHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
   bool m_firehoseConfigurationHasBeenSet = false;
 };
 

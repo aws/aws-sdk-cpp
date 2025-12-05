@@ -119,18 +119,18 @@ class UpdateUserRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   License m_licenseType{License::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   UserType m_userType{UserType::NOT_SET};
-  bool m_userTypeHasBeenSet = false;
 
   AlexaForBusinessMetadata m_alexaForBusinessMetadata;
+  bool m_accountIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_userTypeHasBeenSet = false;
   bool m_alexaForBusinessMetadataHasBeenSet = false;
 };
 

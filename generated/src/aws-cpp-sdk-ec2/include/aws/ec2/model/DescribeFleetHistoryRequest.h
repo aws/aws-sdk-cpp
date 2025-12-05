@@ -145,21 +145,21 @@ class DescribeFleetHistoryRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   FleetEventType m_eventType{FleetEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_dryRunHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_fleetIdHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

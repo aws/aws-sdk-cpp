@@ -96,12 +96,12 @@ class AutoMLJobCompletionCriteria {
   ///@}
  private:
   int m_maxCandidates{0};
-  bool m_maxCandidatesHasBeenSet = false;
 
   int m_maxRuntimePerTrainingJobInSeconds{0};
-  bool m_maxRuntimePerTrainingJobInSecondsHasBeenSet = false;
 
   int m_maxAutoMLJobRuntimeInSeconds{0};
+  bool m_maxCandidatesHasBeenSet = false;
+  bool m_maxRuntimePerTrainingJobInSecondsHasBeenSet = false;
   bool m_maxAutoMLJobRuntimeInSecondsHasBeenSet = false;
 };
 

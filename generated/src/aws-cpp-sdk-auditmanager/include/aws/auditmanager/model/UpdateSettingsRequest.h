@@ -177,24 +177,24 @@ class UpdateSettingsRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_snsTopic;
-  bool m_snsTopicHasBeenSet = false;
 
   AssessmentReportsDestination m_defaultAssessmentReportsDestination;
-  bool m_defaultAssessmentReportsDestinationHasBeenSet = false;
 
   Aws::Vector<Role> m_defaultProcessOwners;
-  bool m_defaultProcessOwnersHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   bool m_evidenceFinderEnabled{false};
-  bool m_evidenceFinderEnabledHasBeenSet = false;
 
   DeregistrationPolicy m_deregistrationPolicy;
-  bool m_deregistrationPolicyHasBeenSet = false;
 
   DefaultExportDestination m_defaultExportDestination;
+  bool m_snsTopicHasBeenSet = false;
+  bool m_defaultAssessmentReportsDestinationHasBeenSet = false;
+  bool m_defaultProcessOwnersHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
+  bool m_evidenceFinderEnabledHasBeenSet = false;
+  bool m_deregistrationPolicyHasBeenSet = false;
   bool m_defaultExportDestinationHasBeenSet = false;
 };
 

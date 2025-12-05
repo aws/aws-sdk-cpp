@@ -120,15 +120,15 @@ class VpcConnectionInfo {
   ///@}
  private:
   Aws::String m_vpcConnectionArn;
-  bool m_vpcConnectionArnHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   UserIdentity m_userIdentity;
-  bool m_userIdentityHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_vpcConnectionArnHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_userIdentityHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class GetTokensFromRefreshTokenResult {
   ///@}
  private:
   AuthenticationResultType m_authenticationResult;
-  bool m_authenticationResultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

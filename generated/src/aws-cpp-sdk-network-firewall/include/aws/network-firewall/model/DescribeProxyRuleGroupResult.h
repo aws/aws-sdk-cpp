@@ -85,12 +85,12 @@ class DescribeProxyRuleGroupResult {
   ///@}
  private:
   ProxyRuleGroup m_proxyRuleGroup;
-  bool m_proxyRuleGroupHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyRuleGroupHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

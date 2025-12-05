@@ -66,9 +66,9 @@ class GetWorkflowRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_includeGraph{false};
+  bool m_nameHasBeenSet = false;
   bool m_includeGraphHasBeenSet = false;
 };
 

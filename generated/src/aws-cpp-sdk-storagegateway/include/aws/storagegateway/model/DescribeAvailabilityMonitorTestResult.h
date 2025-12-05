@@ -94,15 +94,15 @@ class DescribeAvailabilityMonitorTestResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   AvailabilityMonitorTestStatus m_status{AvailabilityMonitorTestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

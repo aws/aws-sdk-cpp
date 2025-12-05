@@ -69,9 +69,9 @@ class PutManagedScalingPolicyRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   ManagedScalingPolicy m_managedScalingPolicy;
+  bool m_clusterIdHasBeenSet = false;
   bool m_managedScalingPolicyHasBeenSet = false;
 };
 

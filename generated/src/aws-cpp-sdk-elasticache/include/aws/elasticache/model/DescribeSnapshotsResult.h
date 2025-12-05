@@ -95,12 +95,12 @@ class DescribeSnapshotsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Snapshot> m_snapshots;
-  bool m_snapshotsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_snapshotsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

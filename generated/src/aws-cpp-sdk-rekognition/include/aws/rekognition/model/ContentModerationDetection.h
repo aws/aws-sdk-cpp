@@ -148,21 +148,21 @@ class ContentModerationDetection {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   ModerationLabel m_moderationLabel;
-  bool m_moderationLabelHasBeenSet = false;
 
   long long m_startTimestampMillis{0};
-  bool m_startTimestampMillisHasBeenSet = false;
 
   long long m_endTimestampMillis{0};
-  bool m_endTimestampMillisHasBeenSet = false;
 
   long long m_durationMillis{0};
-  bool m_durationMillisHasBeenSet = false;
 
   Aws::Vector<ContentType> m_contentTypes;
+  bool m_timestampHasBeenSet = false;
+  bool m_moderationLabelHasBeenSet = false;
+  bool m_startTimestampMillisHasBeenSet = false;
+  bool m_endTimestampMillisHasBeenSet = false;
+  bool m_durationMillisHasBeenSet = false;
   bool m_contentTypesHasBeenSet = false;
 };
 

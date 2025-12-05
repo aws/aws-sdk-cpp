@@ -68,9 +68,9 @@ class BatchGetAssetPropertyValueErrorInfo {
   ///@}
  private:
   BatchGetAssetPropertyValueErrorCode m_errorCode{BatchGetAssetPropertyValueErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_errorTimestamp{};
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorTimestampHasBeenSet = false;
 };
 

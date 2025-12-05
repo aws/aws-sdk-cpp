@@ -68,9 +68,9 @@ class CreateBackendConfigRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendManagerAppId;
+  bool m_appIdHasBeenSet = false;
   bool m_backendManagerAppIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class UplinkSpectrumConfig {
   ///@}
  private:
   Frequency m_centerFrequency;
-  bool m_centerFrequencyHasBeenSet = false;
 
   Polarization m_polarization{Polarization::NOT_SET};
+  bool m_centerFrequencyHasBeenSet = false;
   bool m_polarizationHasBeenSet = false;
 };
 

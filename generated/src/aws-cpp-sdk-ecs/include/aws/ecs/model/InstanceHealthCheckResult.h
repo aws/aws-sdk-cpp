@@ -105,15 +105,15 @@ class InstanceHealthCheckResult {
   ///@}
  private:
   InstanceHealthCheckType m_type{InstanceHealthCheckType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   InstanceHealthCheckState m_status{InstanceHealthCheckState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChange{};
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_lastStatusChangeHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class MonitoredResourceIdentifier {
   ///@}
  private:
   Aws::String m_monitoredResourceName;
-  bool m_monitoredResourceNameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   ResourcePermission m_resourcePermission{ResourcePermission::NOT_SET};
-  bool m_resourcePermissionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
+  bool m_monitoredResourceNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_resourcePermissionHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
   bool m_resourceCollectionHasBeenSet = false;
 };
 

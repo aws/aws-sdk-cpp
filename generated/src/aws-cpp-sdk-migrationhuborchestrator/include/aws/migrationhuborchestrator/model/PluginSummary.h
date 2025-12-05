@@ -140,21 +140,21 @@ class PluginSummary {
   ///@}
  private:
   Aws::String m_pluginId;
-  bool m_pluginIdHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   PluginHealth m_status{PluginHealth::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_registeredTime;
+  bool m_pluginIdHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_registeredTimeHasBeenSet = false;
 };
 

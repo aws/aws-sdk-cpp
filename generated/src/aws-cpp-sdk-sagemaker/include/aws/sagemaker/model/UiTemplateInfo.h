@@ -69,9 +69,9 @@ class UiTemplateInfo {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_contentSha256;
+  bool m_urlHasBeenSet = false;
   bool m_contentSha256HasBeenSet = false;
 };
 

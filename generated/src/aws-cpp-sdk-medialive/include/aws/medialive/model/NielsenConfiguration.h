@@ -67,9 +67,9 @@ class NielsenConfiguration {
   ///@}
  private:
   Aws::String m_distributorId;
-  bool m_distributorIdHasBeenSet = false;
 
   NielsenPcmToId3TaggingState m_nielsenPcmToId3Tagging{NielsenPcmToId3TaggingState::NOT_SET};
+  bool m_distributorIdHasBeenSet = false;
   bool m_nielsenPcmToId3TaggingHasBeenSet = false;
 };
 

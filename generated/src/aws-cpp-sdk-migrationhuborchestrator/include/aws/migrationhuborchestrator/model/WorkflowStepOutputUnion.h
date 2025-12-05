@@ -92,12 +92,12 @@ class WorkflowStepOutputUnion {
   ///@}
  private:
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_listOfStringValue;
+  bool m_integerValueHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
   bool m_listOfStringValueHasBeenSet = false;
 };
 

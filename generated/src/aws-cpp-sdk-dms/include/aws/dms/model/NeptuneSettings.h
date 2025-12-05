@@ -169,24 +169,24 @@ class NeptuneSettings {
   ///@}
  private:
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3BucketFolder;
-  bool m_s3BucketFolderHasBeenSet = false;
 
   int m_errorRetryDuration{0};
-  bool m_errorRetryDurationHasBeenSet = false;
 
   int m_maxFileSize{0};
-  bool m_maxFileSizeHasBeenSet = false;
 
   int m_maxRetryCount{0};
-  bool m_maxRetryCountHasBeenSet = false;
 
   bool m_iamAuthEnabled{false};
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3BucketFolderHasBeenSet = false;
+  bool m_errorRetryDurationHasBeenSet = false;
+  bool m_maxFileSizeHasBeenSet = false;
+  bool m_maxRetryCountHasBeenSet = false;
   bool m_iamAuthEnabledHasBeenSet = false;
 };
 

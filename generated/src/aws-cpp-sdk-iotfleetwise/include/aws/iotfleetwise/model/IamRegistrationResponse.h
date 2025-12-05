@@ -89,12 +89,12 @@ class IamRegistrationResponse {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_roleArnHasBeenSet = false;
+  bool m_registrationStatusHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

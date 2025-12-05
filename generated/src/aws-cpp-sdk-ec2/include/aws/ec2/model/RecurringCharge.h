@@ -66,9 +66,9 @@ class RecurringCharge {
   ///@}
  private:
   double m_amount{0.0};
-  bool m_amountHasBeenSet = false;
 
   RecurringChargeFrequency m_frequency{RecurringChargeFrequency::NOT_SET};
+  bool m_amountHasBeenSet = false;
   bool m_frequencyHasBeenSet = false;
 };
 

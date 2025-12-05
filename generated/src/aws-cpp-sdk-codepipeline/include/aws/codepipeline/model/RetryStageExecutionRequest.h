@@ -108,15 +108,15 @@ class RetryStageExecutionRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_pipelineExecutionId;
-  bool m_pipelineExecutionIdHasBeenSet = false;
 
   StageRetryMode m_retryMode{StageRetryMode::NOT_SET};
+  bool m_pipelineNameHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
+  bool m_pipelineExecutionIdHasBeenSet = false;
   bool m_retryModeHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class TagFilter {
   ///@}
  private:
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagValues;
+  bool m_tagKeyHasBeenSet = false;
   bool m_tagValuesHasBeenSet = false;
 };
 

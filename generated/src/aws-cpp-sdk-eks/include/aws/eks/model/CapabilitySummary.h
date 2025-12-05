@@ -161,24 +161,24 @@ class CapabilitySummary {
   ///@}
  private:
   Aws::String m_capabilityName;
-  bool m_capabilityNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CapabilityType m_type{CapabilityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CapabilityStatus m_status{CapabilityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
+  bool m_capabilityNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
 };
 

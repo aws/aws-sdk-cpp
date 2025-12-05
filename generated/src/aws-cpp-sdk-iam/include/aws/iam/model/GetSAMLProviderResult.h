@@ -189,27 +189,27 @@ class GetSAMLProviderResult {
   ///@}
  private:
   Aws::String m_sAMLProviderUUID;
-  bool m_sAMLProviderUUIDHasBeenSet = false;
 
   Aws::String m_sAMLMetadataDocument;
-  bool m_sAMLMetadataDocumentHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   AssertionEncryptionModeType m_assertionEncryptionMode{AssertionEncryptionModeType::NOT_SET};
-  bool m_assertionEncryptionModeHasBeenSet = false;
 
   Aws::Vector<SAMLPrivateKey> m_privateKeyList;
-  bool m_privateKeyListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_sAMLProviderUUIDHasBeenSet = false;
+  bool m_sAMLMetadataDocumentHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_assertionEncryptionModeHasBeenSet = false;
+  bool m_privateKeyListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -117,12 +117,12 @@ class ServiceConnectClientAlias {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   ServiceConnectTestTrafficRules m_testTrafficRules;
+  bool m_portHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
   bool m_testTrafficRulesHasBeenSet = false;
 };
 

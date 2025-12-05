@@ -173,24 +173,24 @@ class DnssecKey {
   ///@}
  private:
   int m_algorithm{0};
-  bool m_algorithmHasBeenSet = false;
 
   int m_flags{0};
-  bool m_flagsHasBeenSet = false;
 
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   int m_digestType{0};
-  bool m_digestTypeHasBeenSet = false;
 
   Aws::String m_digest;
-  bool m_digestHasBeenSet = false;
 
   int m_keyTag{0};
-  bool m_keyTagHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_algorithmHasBeenSet = false;
+  bool m_flagsHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_digestTypeHasBeenSet = false;
+  bool m_digestHasBeenSet = false;
+  bool m_keyTagHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

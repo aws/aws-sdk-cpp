@@ -143,21 +143,21 @@ class ListSpacesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   SpaceSortKey m_sortBy{SpaceSortKey::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   Aws::String m_domainIdEquals;
-  bool m_domainIdEqualsHasBeenSet = false;
 
   Aws::String m_spaceNameContains;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_domainIdEqualsHasBeenSet = false;
   bool m_spaceNameContainsHasBeenSet = false;
 };
 

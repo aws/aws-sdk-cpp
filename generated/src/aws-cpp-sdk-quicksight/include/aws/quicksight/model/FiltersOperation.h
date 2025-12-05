@@ -96,12 +96,12 @@ class FiltersOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<FilterOperation> m_filterOperations;
+  bool m_aliasHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_filterOperationsHasBeenSet = false;
 };
 

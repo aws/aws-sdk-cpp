@@ -69,9 +69,9 @@ class DeleteCampaignChannelSubtypeConfigRequest : public ConnectCampaignsV2Reque
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ChannelSubtype m_channelSubtype{ChannelSubtype::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_channelSubtypeHasBeenSet = false;
 };
 

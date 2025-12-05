@@ -120,18 +120,18 @@ class RouteOriginOptions {
   ///@}
  private:
   long long m_avoidActionsForDistance{0};
-  bool m_avoidActionsForDistanceHasBeenSet = false;
 
   bool m_avoidUTurns{false};
-  bool m_avoidUTurnsHasBeenSet = false;
 
   double m_heading{0.0};
-  bool m_headingHasBeenSet = false;
 
   RouteMatchingOptions m_matching;
-  bool m_matchingHasBeenSet = false;
 
   RouteSideOfStreetOptions m_sideOfStreet;
+  bool m_avoidActionsForDistanceHasBeenSet = false;
+  bool m_avoidUTurnsHasBeenSet = false;
+  bool m_headingHasBeenSet = false;
+  bool m_matchingHasBeenSet = false;
   bool m_sideOfStreetHasBeenSet = false;
 };
 

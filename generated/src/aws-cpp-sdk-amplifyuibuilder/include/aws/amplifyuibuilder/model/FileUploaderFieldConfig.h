@@ -155,21 +155,21 @@ class FileUploaderFieldConfig {
   ///@}
  private:
   StorageAccessLevel m_accessLevel{StorageAccessLevel::NOT_SET};
-  bool m_accessLevelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_acceptedFileTypes;
-  bool m_acceptedFileTypesHasBeenSet = false;
 
   bool m_showThumbnails{false};
-  bool m_showThumbnailsHasBeenSet = false;
 
   bool m_isResumable{false};
-  bool m_isResumableHasBeenSet = false;
 
   int m_maxFileCount{0};
-  bool m_maxFileCountHasBeenSet = false;
 
   int m_maxSize{0};
+  bool m_accessLevelHasBeenSet = false;
+  bool m_acceptedFileTypesHasBeenSet = false;
+  bool m_showThumbnailsHasBeenSet = false;
+  bool m_isResumableHasBeenSet = false;
+  bool m_maxFileCountHasBeenSet = false;
   bool m_maxSizeHasBeenSet = false;
 };
 

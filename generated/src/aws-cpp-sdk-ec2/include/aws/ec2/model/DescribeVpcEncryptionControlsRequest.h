@@ -164,21 +164,21 @@ class DescribeVpcEncryptionControlsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcEncryptionControlIds;
-  bool m_vpcEncryptionControlIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcIds;
-  bool m_vpcIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_vpcEncryptionControlIdsHasBeenSet = false;
+  bool m_vpcIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

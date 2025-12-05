@@ -70,9 +70,9 @@ class KPIPrimaryValueConditionalFormatting {
   ///@}
  private:
   ConditionalFormattingColor m_textColor;
-  bool m_textColorHasBeenSet = false;
 
   ConditionalFormattingIcon m_icon;
+  bool m_textColorHasBeenSet = false;
   bool m_iconHasBeenSet = false;
 };
 

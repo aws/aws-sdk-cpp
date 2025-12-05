@@ -88,12 +88,12 @@ class AppflowIntegrationWorkflowAttributes {
   ///@}
  private:
   SourceConnectorType m_sourceConnectorType{SourceConnectorType::NOT_SET};
-  bool m_sourceConnectorTypeHasBeenSet = false;
 
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_sourceConnectorTypeHasBeenSet = false;
+  bool m_connectorProfileNameHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

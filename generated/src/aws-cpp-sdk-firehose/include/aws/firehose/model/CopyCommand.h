@@ -103,12 +103,12 @@ class CopyCommand {
   ///@}
  private:
   Aws::String m_dataTableName;
-  bool m_dataTableNameHasBeenSet = false;
 
   Aws::String m_dataTableColumns;
-  bool m_dataTableColumnsHasBeenSet = false;
 
   Aws::String m_copyOptions;
+  bool m_dataTableNameHasBeenSet = false;
+  bool m_dataTableColumnsHasBeenSet = false;
   bool m_copyOptionsHasBeenSet = false;
 };
 

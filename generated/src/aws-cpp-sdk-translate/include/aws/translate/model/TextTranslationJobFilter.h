@@ -109,15 +109,15 @@ class TextTranslationJobFilter {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedBeforeTime{};
-  bool m_submittedBeforeTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedAfterTime{};
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_submittedBeforeTimeHasBeenSet = false;
   bool m_submittedAfterTimeHasBeenSet = false;
 };
 

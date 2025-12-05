@@ -68,9 +68,9 @@ class ResourceConfiguration {
   ///@}
  private:
   ComputeType m_computeType{ComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
+  bool m_computeTypeHasBeenSet = false;
   bool m_volumeSizeInGBHasBeenSet = false;
 };
 

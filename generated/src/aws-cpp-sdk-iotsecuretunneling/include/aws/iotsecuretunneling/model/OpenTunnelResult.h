@@ -112,18 +112,18 @@ class OpenTunnelResult {
   ///@}
  private:
   Aws::String m_tunnelId;
-  bool m_tunnelIdHasBeenSet = false;
 
   Aws::String m_tunnelArn;
-  bool m_tunnelArnHasBeenSet = false;
 
   Aws::String m_sourceAccessToken;
-  bool m_sourceAccessTokenHasBeenSet = false;
 
   Aws::String m_destinationAccessToken;
-  bool m_destinationAccessTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tunnelIdHasBeenSet = false;
+  bool m_tunnelArnHasBeenSet = false;
+  bool m_sourceAccessTokenHasBeenSet = false;
+  bool m_destinationAccessTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

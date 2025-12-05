@@ -111,15 +111,15 @@ class InvocationCompletedDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   EventError m_error;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

@@ -160,21 +160,21 @@ class StartChangeSetRequest : public MarketplaceCatalogRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::Vector<Change> m_changeSet;
-  bool m_changeSetHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_changeSetTags;
-  bool m_changeSetTagsHasBeenSet = false;
 
   Intent m_intent{Intent::NOT_SET};
+  bool m_catalogHasBeenSet = false;
+  bool m_changeSetHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_changeSetTagsHasBeenSet = false;
   bool m_intentHasBeenSet = false;
 };
 

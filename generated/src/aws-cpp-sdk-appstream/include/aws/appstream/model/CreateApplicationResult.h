@@ -58,9 +58,9 @@ class CreateApplicationResult {
   ///@}
  private:
   Application m_application;
-  bool m_applicationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

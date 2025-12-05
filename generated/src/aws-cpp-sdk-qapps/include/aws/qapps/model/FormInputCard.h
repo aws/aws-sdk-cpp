@@ -152,21 +152,21 @@ class FormInputCard {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependencies;
-  bool m_dependenciesHasBeenSet = false;
 
   CardType m_type{CardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FormInputCardMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   InputCardComputeMode m_computeMode{InputCardComputeMode::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_dependenciesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_computeModeHasBeenSet = false;
 };
 

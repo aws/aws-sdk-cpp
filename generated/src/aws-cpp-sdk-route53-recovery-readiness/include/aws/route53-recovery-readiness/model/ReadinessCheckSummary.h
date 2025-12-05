@@ -69,9 +69,9 @@ class ReadinessCheckSummary {
   ///@}
  private:
   Readiness m_readiness{Readiness::NOT_SET};
-  bool m_readinessHasBeenSet = false;
 
   Aws::String m_readinessCheckName;
+  bool m_readinessHasBeenSet = false;
   bool m_readinessCheckNameHasBeenSet = false;
 };
 

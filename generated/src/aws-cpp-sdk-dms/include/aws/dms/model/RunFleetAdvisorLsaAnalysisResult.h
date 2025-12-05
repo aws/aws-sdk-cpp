@@ -77,12 +77,12 @@ class RunFleetAdvisorLsaAnalysisResult {
   ///@}
  private:
   Aws::String m_lsaAnalysisId;
-  bool m_lsaAnalysisIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lsaAnalysisIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

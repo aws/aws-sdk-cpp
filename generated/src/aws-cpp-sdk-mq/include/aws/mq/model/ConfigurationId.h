@@ -66,9 +66,9 @@ class ConfigurationId {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_revision{0};
+  bool m_idHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

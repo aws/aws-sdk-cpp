@@ -71,9 +71,9 @@ class EventTimeRange {
   ///@}
  private:
   Aws::Utils::DateTime m_fromTime{};
-  bool m_fromTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_toTime{};
+  bool m_fromTimeHasBeenSet = false;
   bool m_toTimeHasBeenSet = false;
 };
 

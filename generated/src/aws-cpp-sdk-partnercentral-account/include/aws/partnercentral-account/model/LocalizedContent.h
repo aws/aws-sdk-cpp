@@ -123,18 +123,18 @@ class LocalizedContent {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_websiteUrl;
-  bool m_websiteUrlHasBeenSet = false;
 
   Aws::String m_logoUrl;
-  bool m_logoUrlHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_websiteUrlHasBeenSet = false;
+  bool m_logoUrlHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

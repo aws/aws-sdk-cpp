@@ -306,39 +306,39 @@ class CreateCaseRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ResolverType m_resolverType{ResolverType::NOT_SET};
-  bool m_resolverTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EngagementType m_engagementType{EngagementType::NOT_SET};
-  bool m_engagementTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportedIncidentStartDate{};
-  bool m_reportedIncidentStartDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedAccounts;
-  bool m_impactedAccountsHasBeenSet = false;
 
   Aws::Vector<Watcher> m_watchers;
-  bool m_watchersHasBeenSet = false;
 
   Aws::Vector<ThreatActorIp> m_threatActorIpAddresses;
-  bool m_threatActorIpAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedServices;
-  bool m_impactedServicesHasBeenSet = false;
 
   Aws::Vector<ImpactedAwsRegion> m_impactedAwsRegions;
-  bool m_impactedAwsRegionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_resolverTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engagementTypeHasBeenSet = false;
+  bool m_reportedIncidentStartDateHasBeenSet = false;
+  bool m_impactedAccountsHasBeenSet = false;
+  bool m_watchersHasBeenSet = false;
+  bool m_threatActorIpAddressesHasBeenSet = false;
+  bool m_impactedServicesHasBeenSet = false;
+  bool m_impactedAwsRegionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

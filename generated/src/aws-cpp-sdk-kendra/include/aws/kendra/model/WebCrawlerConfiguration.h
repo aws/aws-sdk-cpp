@@ -244,30 +244,30 @@ class WebCrawlerConfiguration {
   ///@}
  private:
   Urls m_urls;
-  bool m_urlsHasBeenSet = false;
 
   int m_crawlDepth{0};
-  bool m_crawlDepthHasBeenSet = false;
 
   int m_maxLinksPerPage{0};
-  bool m_maxLinksPerPageHasBeenSet = false;
 
   double m_maxContentSizePerPageInMegaBytes{0.0};
-  bool m_maxContentSizePerPageInMegaBytesHasBeenSet = false;
 
   int m_maxUrlsPerMinuteCrawlRate{0};
-  bool m_maxUrlsPerMinuteCrawlRateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_urlInclusionPatterns;
-  bool m_urlInclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_urlExclusionPatterns;
-  bool m_urlExclusionPatternsHasBeenSet = false;
 
   ProxyConfiguration m_proxyConfiguration;
-  bool m_proxyConfigurationHasBeenSet = false;
 
   AuthenticationConfiguration m_authenticationConfiguration;
+  bool m_urlsHasBeenSet = false;
+  bool m_crawlDepthHasBeenSet = false;
+  bool m_maxLinksPerPageHasBeenSet = false;
+  bool m_maxContentSizePerPageInMegaBytesHasBeenSet = false;
+  bool m_maxUrlsPerMinuteCrawlRateHasBeenSet = false;
+  bool m_urlInclusionPatternsHasBeenSet = false;
+  bool m_urlExclusionPatternsHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
   bool m_authenticationConfigurationHasBeenSet = false;
 };
 

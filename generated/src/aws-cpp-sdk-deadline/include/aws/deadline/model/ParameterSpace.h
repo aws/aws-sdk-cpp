@@ -77,9 +77,9 @@ class ParameterSpace {
   ///@}
  private:
   Aws::Vector<StepParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_combination;
+  bool m_parametersHasBeenSet = false;
   bool m_combinationHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class PostLineageEventResult {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

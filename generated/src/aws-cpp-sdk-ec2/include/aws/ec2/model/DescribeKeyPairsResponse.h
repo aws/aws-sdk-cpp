@@ -67,9 +67,9 @@ class DescribeKeyPairsResponse {
   ///@}
  private:
   Aws::Vector<KeyPairInfo> m_keyPairs;
-  bool m_keyPairsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_keyPairsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

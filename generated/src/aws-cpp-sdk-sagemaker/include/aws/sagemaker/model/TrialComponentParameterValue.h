@@ -72,9 +72,9 @@ class TrialComponentParameterValue {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   double m_numberValue{0.0};
+  bool m_stringValueHasBeenSet = false;
   bool m_numberValueHasBeenSet = false;
 };
 

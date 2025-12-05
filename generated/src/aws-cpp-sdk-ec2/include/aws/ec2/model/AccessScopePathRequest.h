@@ -96,12 +96,12 @@ class AccessScopePathRequest {
   ///@}
  private:
   PathStatementRequest m_source;
-  bool m_sourceHasBeenSet = false;
 
   PathStatementRequest m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<ThroughResourcesStatementRequest> m_throughResources;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_throughResourcesHasBeenSet = false;
 };
 

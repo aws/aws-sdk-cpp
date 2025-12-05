@@ -122,18 +122,18 @@ class CreateTopicRefreshScheduleRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   TopicRefreshSchedule m_refreshSchedule;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
   bool m_refreshScheduleHasBeenSet = false;
 };
 

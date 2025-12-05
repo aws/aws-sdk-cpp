@@ -82,9 +82,9 @@ class ImageUsageResourceTypeRequest {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<ImageUsageResourceTypeOptionRequest> m_resourceTypeOptions;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceTypeOptionsHasBeenSet = false;
 };
 

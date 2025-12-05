@@ -242,36 +242,36 @@ class BatchCreateBillScenarioUsageModificationItem {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_usageAccountId;
-  bool m_usageAccountIdHasBeenSet = false;
 
   Aws::Vector<UsageQuantity> m_quantities;
-  bool m_quantitiesHasBeenSet = false;
 
   HistoricalUsageEntity m_historicalUsage;
-  bool m_historicalUsageHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_usageTypeHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
+  bool m_usageAccountIdHasBeenSet = false;
+  bool m_quantitiesHasBeenSet = false;
+  bool m_historicalUsageHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

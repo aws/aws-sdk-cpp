@@ -80,9 +80,9 @@ class AddStreamGroupLocationsRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<LocationConfiguration> m_locationConfigurations;
+  bool m_identifierHasBeenSet = false;
   bool m_locationConfigurationsHasBeenSet = false;
 };
 

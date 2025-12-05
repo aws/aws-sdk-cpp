@@ -284,36 +284,36 @@ class StartChangeRequestExecutionRequest : public SSMRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_scheduledTime{};
-  bool m_scheduledTimeHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_changeRequestName;
-  bool m_changeRequestNameHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   bool m_autoApprove{false};
-  bool m_autoApproveHasBeenSet = false;
 
   Aws::Vector<Runbook> m_runbooks;
-  bool m_runbooksHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledEndTime{};
-  bool m_scheduledEndTimeHasBeenSet = false;
 
   Aws::String m_changeDetails;
+  bool m_scheduledTimeHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_changeRequestNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_autoApproveHasBeenSet = false;
+  bool m_runbooksHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_scheduledEndTimeHasBeenSet = false;
   bool m_changeDetailsHasBeenSet = false;
 };
 

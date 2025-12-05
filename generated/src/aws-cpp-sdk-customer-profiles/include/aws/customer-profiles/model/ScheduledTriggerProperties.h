@@ -163,24 +163,24 @@ class ScheduledTriggerProperties {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   DataPullMode m_dataPullMode{DataPullMode::NOT_SET};
-  bool m_dataPullModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduleStartTime{};
-  bool m_scheduleStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduleEndTime{};
-  bool m_scheduleEndTimeHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   long long m_scheduleOffset{0};
-  bool m_scheduleOffsetHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstExecutionFrom{};
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_dataPullModeHasBeenSet = false;
+  bool m_scheduleStartTimeHasBeenSet = false;
+  bool m_scheduleEndTimeHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_scheduleOffsetHasBeenSet = false;
   bool m_firstExecutionFromHasBeenSet = false;
 };
 

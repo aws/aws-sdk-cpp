@@ -62,9 +62,9 @@ class RecommendationJobResourceLimit {
   ///@}
  private:
   int m_maxNumberOfTests{0};
-  bool m_maxNumberOfTestsHasBeenSet = false;
 
   int m_maxParallelOfTests{0};
+  bool m_maxNumberOfTestsHasBeenSet = false;
   bool m_maxParallelOfTestsHasBeenSet = false;
 };
 

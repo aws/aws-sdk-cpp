@@ -165,24 +165,24 @@ class MetricStreamEntry {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
-  bool m_lastUpdateDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_firehoseArn;
-  bool m_firehoseArnHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   MetricStreamOutputFormat m_outputFormat{MetricStreamOutputFormat::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastUpdateDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_firehoseArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

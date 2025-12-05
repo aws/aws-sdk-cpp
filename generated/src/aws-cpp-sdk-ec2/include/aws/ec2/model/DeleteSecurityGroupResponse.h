@@ -76,12 +76,12 @@ class DeleteSecurityGroupResponse {
   ///@}
  private:
   bool m_return{false};
-  bool m_returnHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

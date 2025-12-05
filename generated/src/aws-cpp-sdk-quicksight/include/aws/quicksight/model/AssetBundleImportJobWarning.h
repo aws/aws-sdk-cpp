@@ -70,9 +70,9 @@ class AssetBundleImportJobWarning {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_arnHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

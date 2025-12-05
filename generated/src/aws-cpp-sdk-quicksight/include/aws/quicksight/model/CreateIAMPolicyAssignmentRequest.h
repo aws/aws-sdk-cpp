@@ -153,21 +153,21 @@ class CreateIAMPolicyAssignmentRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_assignmentName;
-  bool m_assignmentNameHasBeenSet = false;
 
   AssignmentStatus m_assignmentStatus{AssignmentStatus::NOT_SET};
-  bool m_assignmentStatusHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_identities;
-  bool m_identitiesHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_assignmentNameHasBeenSet = false;
+  bool m_assignmentStatusHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
+  bool m_identitiesHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

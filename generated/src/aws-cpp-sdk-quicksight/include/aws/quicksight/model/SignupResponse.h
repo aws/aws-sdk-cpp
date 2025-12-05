@@ -106,15 +106,15 @@ class SignupResponse {
   ///@}
  private:
   bool m_iAMUser{false};
-  bool m_iAMUserHasBeenSet = false;
 
   Aws::String m_userLoginName;
-  bool m_userLoginNameHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_directoryType;
+  bool m_iAMUserHasBeenSet = false;
+  bool m_userLoginNameHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
   bool m_directoryTypeHasBeenSet = false;
 };
 

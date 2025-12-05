@@ -67,9 +67,9 @@ class Scale {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   ScaleUnit m_unit{ScaleUnit::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

@@ -195,27 +195,27 @@ class GetCostAndUsageComparisonsRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   DateInterval m_baselineTimePeriod;
-  bool m_baselineTimePeriodHasBeenSet = false;
 
   DateInterval m_comparisonTimePeriod;
-  bool m_comparisonTimePeriodHasBeenSet = false;
 
   Aws::String m_metricForComparison;
-  bool m_metricForComparisonHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<GroupDefinition> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
+  bool m_billingViewArnHasBeenSet = false;
+  bool m_baselineTimePeriodHasBeenSet = false;
+  bool m_comparisonTimePeriodHasBeenSet = false;
+  bool m_metricForComparisonHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
 };
 

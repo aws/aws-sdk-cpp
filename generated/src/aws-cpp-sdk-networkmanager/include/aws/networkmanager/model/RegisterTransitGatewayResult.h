@@ -60,9 +60,9 @@ class RegisterTransitGatewayResult {
   ///@}
  private:
   TransitGatewayRegistration m_transitGatewayRegistration;
-  bool m_transitGatewayRegistrationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transitGatewayRegistrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

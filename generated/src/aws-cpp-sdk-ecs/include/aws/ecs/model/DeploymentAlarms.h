@@ -103,12 +103,12 @@ class DeploymentAlarms {
   ///@}
  private:
   Aws::Vector<Aws::String> m_alarmNames;
-  bool m_alarmNamesHasBeenSet = false;
 
   bool m_rollback{false};
-  bool m_rollbackHasBeenSet = false;
 
   bool m_enable{false};
+  bool m_alarmNamesHasBeenSet = false;
+  bool m_rollbackHasBeenSet = false;
   bool m_enableHasBeenSet = false;
 };
 

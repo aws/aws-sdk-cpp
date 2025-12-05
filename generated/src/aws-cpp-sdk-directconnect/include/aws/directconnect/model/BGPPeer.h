@@ -254,36 +254,36 @@ class BGPPeer {
   ///@}
  private:
   Aws::String m_bgpPeerId;
-  bool m_bgpPeerIdHasBeenSet = false;
 
   int m_asn{0};
-  bool m_asnHasBeenSet = false;
 
   long long m_asnLong{0};
-  bool m_asnLongHasBeenSet = false;
 
   Aws::String m_authKey;
-  bool m_authKeyHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   Aws::String m_amazonAddress;
-  bool m_amazonAddressHasBeenSet = false;
 
   Aws::String m_customerAddress;
-  bool m_customerAddressHasBeenSet = false;
 
   BGPPeerState m_bgpPeerState{BGPPeerState::NOT_SET};
-  bool m_bgpPeerStateHasBeenSet = false;
 
   BGPStatus m_bgpStatus{BGPStatus::NOT_SET};
-  bool m_bgpStatusHasBeenSet = false;
 
   Aws::String m_awsDeviceV2;
-  bool m_awsDeviceV2HasBeenSet = false;
 
   Aws::String m_awsLogicalDeviceId;
+  bool m_bgpPeerIdHasBeenSet = false;
+  bool m_asnHasBeenSet = false;
+  bool m_asnLongHasBeenSet = false;
+  bool m_authKeyHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_amazonAddressHasBeenSet = false;
+  bool m_customerAddressHasBeenSet = false;
+  bool m_bgpPeerStateHasBeenSet = false;
+  bool m_bgpStatusHasBeenSet = false;
+  bool m_awsDeviceV2HasBeenSet = false;
   bool m_awsLogicalDeviceIdHasBeenSet = false;
 };
 

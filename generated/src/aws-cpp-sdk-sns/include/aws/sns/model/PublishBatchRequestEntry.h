@@ -241,24 +241,24 @@ class PublishBatchRequestEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_messageStructure;
-  bool m_messageStructureHasBeenSet = false;
 
   Aws::Map<Aws::String, MessageAttributeValue> m_messageAttributes;
-  bool m_messageAttributesHasBeenSet = false;
 
   Aws::String m_messageDeduplicationId;
-  bool m_messageDeduplicationIdHasBeenSet = false;
 
   Aws::String m_messageGroupId;
+  bool m_idHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_messageStructureHasBeenSet = false;
+  bool m_messageAttributesHasBeenSet = false;
+  bool m_messageDeduplicationIdHasBeenSet = false;
   bool m_messageGroupIdHasBeenSet = false;
 };
 

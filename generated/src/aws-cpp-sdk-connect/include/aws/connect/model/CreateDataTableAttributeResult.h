@@ -97,15 +97,15 @@ class CreateDataTableAttributeResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_attributeId;
-  bool m_attributeIdHasBeenSet = false;
 
   DataTableLockVersion m_lockVersion;
-  bool m_lockVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_attributeIdHasBeenSet = false;
+  bool m_lockVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

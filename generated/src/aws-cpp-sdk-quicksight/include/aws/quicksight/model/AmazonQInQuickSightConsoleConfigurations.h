@@ -109,15 +109,15 @@ class AmazonQInQuickSightConsoleConfigurations {
   ///@}
  private:
   DataQnAConfigurations m_dataQnA;
-  bool m_dataQnAHasBeenSet = false;
 
   GenerativeAuthoringConfigurations m_generativeAuthoring;
-  bool m_generativeAuthoringHasBeenSet = false;
 
   ExecutiveSummaryConfigurations m_executiveSummary;
-  bool m_executiveSummaryHasBeenSet = false;
 
   DataStoriesConfigurations m_dataStories;
+  bool m_dataQnAHasBeenSet = false;
+  bool m_generativeAuthoringHasBeenSet = false;
+  bool m_executiveSummaryHasBeenSet = false;
   bool m_dataStoriesHasBeenSet = false;
 };
 

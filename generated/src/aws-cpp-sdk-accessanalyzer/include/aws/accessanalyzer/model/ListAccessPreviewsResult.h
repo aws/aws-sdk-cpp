@@ -84,12 +84,12 @@ class ListAccessPreviewsResult {
   ///@}
  private:
   Aws::Vector<AccessPreviewSummary> m_accessPreviews;
-  bool m_accessPreviewsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessPreviewsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

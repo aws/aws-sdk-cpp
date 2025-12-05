@@ -279,42 +279,42 @@ class UserImportJobType {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   UserImportJobStatusType m_status{UserImportJobStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsRoleArn;
-  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
   long long m_importedUsers{0};
-  bool m_importedUsersHasBeenSet = false;
 
   long long m_skippedUsers{0};
-  bool m_skippedUsersHasBeenSet = false;
 
   long long m_failedUsers{0};
-  bool m_failedUsersHasBeenSet = false;
 
   Aws::String m_completionMessage;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
+  bool m_importedUsersHasBeenSet = false;
+  bool m_skippedUsersHasBeenSet = false;
+  bool m_failedUsersHasBeenSet = false;
   bool m_completionMessageHasBeenSet = false;
 };
 

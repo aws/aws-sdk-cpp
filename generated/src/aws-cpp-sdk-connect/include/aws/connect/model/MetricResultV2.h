@@ -102,12 +102,12 @@ class MetricResultV2 {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   MetricInterval m_metricInterval;
-  bool m_metricIntervalHasBeenSet = false;
 
   Aws::Vector<MetricDataV2> m_collections;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_metricIntervalHasBeenSet = false;
   bool m_collectionsHasBeenSet = false;
 };
 

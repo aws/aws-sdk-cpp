@@ -124,15 +124,15 @@ class PresetSettings {
   ///@}
  private:
   Aws::Vector<AudioDescription> m_audioDescriptions;
-  bool m_audioDescriptionsHasBeenSet = false;
 
   Aws::Vector<CaptionDescriptionPreset> m_captionDescriptions;
-  bool m_captionDescriptionsHasBeenSet = false;
 
   ContainerSettings m_containerSettings;
-  bool m_containerSettingsHasBeenSet = false;
 
   VideoDescription m_videoDescription;
+  bool m_audioDescriptionsHasBeenSet = false;
+  bool m_captionDescriptionsHasBeenSet = false;
+  bool m_containerSettingsHasBeenSet = false;
   bool m_videoDescriptionHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class CreateStageResult {
   ///@}
  private:
   Stage m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::Vector<ParticipantToken> m_participantTokens;
-  bool m_participantTokensHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stageHasBeenSet = false;
+  bool m_participantTokensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

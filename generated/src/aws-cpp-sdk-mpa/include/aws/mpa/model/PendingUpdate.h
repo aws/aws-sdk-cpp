@@ -207,30 +207,30 @@ class PendingUpdate {
   ///@}
  private:
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ApprovalStrategyResponse m_approvalStrategy;
-  bool m_approvalStrategyHasBeenSet = false;
 
   int m_numberOfApprovers{0};
-  bool m_numberOfApproversHasBeenSet = false;
 
   ApprovalTeamStatus m_status{ApprovalTeamStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ApprovalTeamStatusCode m_statusCode{ApprovalTeamStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<GetApprovalTeamResponseApprover> m_approvers;
-  bool m_approversHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateInitiationTime{};
+  bool m_versionIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_approvalStrategyHasBeenSet = false;
+  bool m_numberOfApproversHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_approversHasBeenSet = false;
   bool m_updateInitiationTimeHasBeenSet = false;
 };
 

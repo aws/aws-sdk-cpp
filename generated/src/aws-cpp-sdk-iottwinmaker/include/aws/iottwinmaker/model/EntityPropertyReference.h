@@ -132,18 +132,18 @@ class EntityPropertyReference {
   ///@}
  private:
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_componentPath;
-  bool m_componentPathHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_externalIdProperty;
-  bool m_externalIdPropertyHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_propertyName;
+  bool m_componentNameHasBeenSet = false;
+  bool m_componentPathHasBeenSet = false;
+  bool m_externalIdPropertyHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
   bool m_propertyNameHasBeenSet = false;
 };
 

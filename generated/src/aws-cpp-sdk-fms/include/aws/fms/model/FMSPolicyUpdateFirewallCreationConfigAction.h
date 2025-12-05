@@ -75,9 +75,9 @@ class FMSPolicyUpdateFirewallCreationConfigAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_firewallCreationConfig;
+  bool m_descriptionHasBeenSet = false;
   bool m_firewallCreationConfigHasBeenSet = false;
 };
 

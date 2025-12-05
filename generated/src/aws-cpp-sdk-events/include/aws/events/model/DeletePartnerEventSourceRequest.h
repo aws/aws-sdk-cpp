@@ -68,9 +68,9 @@ class DeletePartnerEventSourceRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_account;
+  bool m_nameHasBeenSet = false;
   bool m_accountHasBeenSet = false;
 };
 

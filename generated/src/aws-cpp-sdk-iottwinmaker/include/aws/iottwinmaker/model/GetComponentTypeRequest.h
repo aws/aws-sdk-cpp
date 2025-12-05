@@ -65,9 +65,9 @@ class GetComponentTypeRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_componentTypeId;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_componentTypeIdHasBeenSet = false;
 };
 

@@ -104,12 +104,12 @@ class S3AccessPointConfiguration {
   ///@}
  private:
   Aws::String m_accessPointPolicy;
-  bool m_accessPointPolicyHasBeenSet = false;
 
   S3PublicAccessBlockConfiguration m_publicAccessBlock;
-  bool m_publicAccessBlockHasBeenSet = false;
 
   NetworkOriginConfiguration m_networkOrigin;
+  bool m_accessPointPolicyHasBeenSet = false;
+  bool m_publicAccessBlockHasBeenSet = false;
   bool m_networkOriginHasBeenSet = false;
 };
 

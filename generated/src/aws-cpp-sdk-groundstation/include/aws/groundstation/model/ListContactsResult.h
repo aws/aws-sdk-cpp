@@ -90,12 +90,12 @@ class ListContactsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ContactData> m_contactList;
-  bool m_contactListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_contactListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

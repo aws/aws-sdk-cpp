@@ -194,27 +194,27 @@ class SegmentationDescriptor {
   ///@}
  private:
   int m_segmentationEventId{0};
-  bool m_segmentationEventIdHasBeenSet = false;
 
   int m_segmentationUpidType{0};
-  bool m_segmentationUpidTypeHasBeenSet = false;
 
   Aws::String m_segmentationUpid;
-  bool m_segmentationUpidHasBeenSet = false;
 
   int m_segmentationTypeId{0};
-  bool m_segmentationTypeIdHasBeenSet = false;
 
   int m_segmentNum{0};
-  bool m_segmentNumHasBeenSet = false;
 
   int m_segmentsExpected{0};
-  bool m_segmentsExpectedHasBeenSet = false;
 
   int m_subSegmentNum{0};
-  bool m_subSegmentNumHasBeenSet = false;
 
   int m_subSegmentsExpected{0};
+  bool m_segmentationEventIdHasBeenSet = false;
+  bool m_segmentationUpidTypeHasBeenSet = false;
+  bool m_segmentationUpidHasBeenSet = false;
+  bool m_segmentationTypeIdHasBeenSet = false;
+  bool m_segmentNumHasBeenSet = false;
+  bool m_segmentsExpectedHasBeenSet = false;
+  bool m_subSegmentNumHasBeenSet = false;
   bool m_subSegmentsExpectedHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class ListProfileSharesResult {
   ///@}
  private:
   Aws::Vector<ProfileShareSummary> m_profileShareSummaries;
-  bool m_profileShareSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_profileShareSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

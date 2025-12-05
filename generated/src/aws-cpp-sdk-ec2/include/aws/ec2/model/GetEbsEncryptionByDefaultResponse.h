@@ -73,12 +73,12 @@ class GetEbsEncryptionByDefaultResponse {
   ///@}
  private:
   bool m_ebsEncryptionByDefault{false};
-  bool m_ebsEncryptionByDefaultHasBeenSet = false;
 
   SSEType m_sseType{SSEType::NOT_SET};
-  bool m_sseTypeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ebsEncryptionByDefaultHasBeenSet = false;
+  bool m_sseTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

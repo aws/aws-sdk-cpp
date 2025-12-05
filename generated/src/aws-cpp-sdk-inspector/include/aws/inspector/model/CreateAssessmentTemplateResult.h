@@ -59,9 +59,9 @@ class CreateAssessmentTemplateResult {
   ///@}
  private:
   Aws::String m_assessmentTemplateArn;
-  bool m_assessmentTemplateArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentTemplateArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

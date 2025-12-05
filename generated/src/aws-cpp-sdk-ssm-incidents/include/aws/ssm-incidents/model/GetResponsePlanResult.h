@@ -205,30 +205,30 @@ class GetResponsePlanResult {
   ///@}
  private:
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ChatChannel m_chatChannel;
-  bool m_chatChannelHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_engagements;
-  bool m_engagementsHasBeenSet = false;
 
   IncidentTemplate m_incidentTemplate;
-  bool m_incidentTemplateHasBeenSet = false;
 
   Aws::Vector<Integration> m_integrations;
-  bool m_integrationsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_chatChannelHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_engagementsHasBeenSet = false;
+  bool m_incidentTemplateHasBeenSet = false;
+  bool m_integrationsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -103,12 +103,12 @@ class InventoryAggregator {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Vector<InventoryAggregator> m_aggregators;
-  bool m_aggregatorsHasBeenSet = false;
 
   Aws::Vector<InventoryGroup> m_groups;
+  bool m_expressionHasBeenSet = false;
+  bool m_aggregatorsHasBeenSet = false;
   bool m_groupsHasBeenSet = false;
 };
 

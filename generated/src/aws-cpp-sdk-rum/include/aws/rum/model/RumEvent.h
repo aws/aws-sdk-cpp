@@ -128,18 +128,18 @@ class RumEvent {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_details;
+  bool m_idHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

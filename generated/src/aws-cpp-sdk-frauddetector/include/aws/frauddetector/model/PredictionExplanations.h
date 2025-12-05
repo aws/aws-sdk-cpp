@@ -92,9 +92,9 @@ class PredictionExplanations {
   ///@}
  private:
   Aws::Vector<VariableImpactExplanation> m_variableImpactExplanations;
-  bool m_variableImpactExplanationsHasBeenSet = false;
 
   Aws::Vector<AggregatedVariablesImpactExplanation> m_aggregatedVariablesImpactExplanations;
+  bool m_variableImpactExplanationsHasBeenSet = false;
   bool m_aggregatedVariablesImpactExplanationsHasBeenSet = false;
 };
 

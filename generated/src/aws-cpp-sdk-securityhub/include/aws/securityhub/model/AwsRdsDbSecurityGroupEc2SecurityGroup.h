@@ -106,15 +106,15 @@ class AwsRdsDbSecurityGroupEc2SecurityGroup {
   ///@}
  private:
   Aws::String m_ec2SecurityGroupId;
-  bool m_ec2SecurityGroupIdHasBeenSet = false;
 
   Aws::String m_ec2SecurityGroupName;
-  bool m_ec2SecurityGroupNameHasBeenSet = false;
 
   Aws::String m_ec2SecurityGroupOwnerId;
-  bool m_ec2SecurityGroupOwnerIdHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_ec2SecurityGroupIdHasBeenSet = false;
+  bool m_ec2SecurityGroupNameHasBeenSet = false;
+  bool m_ec2SecurityGroupOwnerIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

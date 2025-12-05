@@ -94,12 +94,12 @@ class DescribeStreamConsumerRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   Aws::String m_consumerName;
-  bool m_consumerNameHasBeenSet = false;
 
   Aws::String m_consumerARN;
+  bool m_streamARNHasBeenSet = false;
+  bool m_consumerNameHasBeenSet = false;
   bool m_consumerARNHasBeenSet = false;
 };
 

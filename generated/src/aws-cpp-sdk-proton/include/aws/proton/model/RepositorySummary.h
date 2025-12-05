@@ -105,15 +105,15 @@ class RepositorySummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RepositoryProvider m_provider{RepositoryProvider::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_providerHasBeenSet = false;
 };
 

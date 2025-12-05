@@ -92,12 +92,12 @@ class BatchGetImageResult {
   ///@}
  private:
   Aws::Vector<Image> m_images;
-  bool m_imagesHasBeenSet = false;
 
   Aws::Vector<ImageFailure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imagesHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

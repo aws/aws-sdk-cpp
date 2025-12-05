@@ -70,9 +70,9 @@ class InferenceInputNameConfiguration {
   ///@}
  private:
   Aws::String m_timestampFormat;
-  bool m_timestampFormatHasBeenSet = false;
 
   Aws::String m_componentTimestampDelimiter;
+  bool m_timestampFormatHasBeenSet = false;
   bool m_componentTimestampDelimiterHasBeenSet = false;
 };
 

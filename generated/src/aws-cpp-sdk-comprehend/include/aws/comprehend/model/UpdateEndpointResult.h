@@ -59,9 +59,9 @@ class UpdateEndpointResult {
   ///@}
  private:
   Aws::String m_desiredModelArn;
-  bool m_desiredModelArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_desiredModelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

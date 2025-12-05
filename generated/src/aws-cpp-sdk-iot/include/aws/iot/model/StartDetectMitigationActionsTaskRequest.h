@@ -165,24 +165,24 @@ class StartDetectMitigationActionsTaskRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   DetectMitigationActionsTaskTarget m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   ViolationEventOccurrenceRange m_violationEventOccurrenceRange;
-  bool m_violationEventOccurrenceRangeHasBeenSet = false;
 
   bool m_includeOnlyActiveViolations{false};
-  bool m_includeOnlyActiveViolationsHasBeenSet = false;
 
   bool m_includeSuppressedAlerts{false};
-  bool m_includeSuppressedAlertsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_taskIdHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_violationEventOccurrenceRangeHasBeenSet = false;
+  bool m_includeOnlyActiveViolationsHasBeenSet = false;
+  bool m_includeSuppressedAlertsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

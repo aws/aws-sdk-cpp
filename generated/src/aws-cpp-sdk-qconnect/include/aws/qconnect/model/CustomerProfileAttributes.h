@@ -1086,177 +1086,177 @@ class CustomerProfileAttributes {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_profileARN;
-  bool m_profileARNHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_middleName;
-  bool m_middleNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   Aws::String m_accountNumber;
-  bool m_accountNumberHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_additionalInformation;
-  bool m_additionalInformationHasBeenSet = false;
 
   Aws::String m_partyType;
-  bool m_partyTypeHasBeenSet = false;
 
   Aws::String m_businessName;
-  bool m_businessNameHasBeenSet = false;
 
   Aws::String m_birthDate;
-  bool m_birthDateHasBeenSet = false;
 
   Aws::String m_gender;
-  bool m_genderHasBeenSet = false;
 
   Aws::String m_mobilePhoneNumber;
-  bool m_mobilePhoneNumberHasBeenSet = false;
 
   Aws::String m_homePhoneNumber;
-  bool m_homePhoneNumberHasBeenSet = false;
 
   Aws::String m_businessPhoneNumber;
-  bool m_businessPhoneNumberHasBeenSet = false;
 
   Aws::String m_businessEmailAddress;
-  bool m_businessEmailAddressHasBeenSet = false;
 
   Aws::String m_address1;
-  bool m_address1HasBeenSet = false;
 
   Aws::String m_address2;
-  bool m_address2HasBeenSet = false;
 
   Aws::String m_address3;
-  bool m_address3HasBeenSet = false;
 
   Aws::String m_address4;
-  bool m_address4HasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_county;
-  bool m_countyHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_province;
-  bool m_provinceHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_shippingAddress1;
-  bool m_shippingAddress1HasBeenSet = false;
 
   Aws::String m_shippingAddress2;
-  bool m_shippingAddress2HasBeenSet = false;
 
   Aws::String m_shippingAddress3;
-  bool m_shippingAddress3HasBeenSet = false;
 
   Aws::String m_shippingAddress4;
-  bool m_shippingAddress4HasBeenSet = false;
 
   Aws::String m_shippingCity;
-  bool m_shippingCityHasBeenSet = false;
 
   Aws::String m_shippingCounty;
-  bool m_shippingCountyHasBeenSet = false;
 
   Aws::String m_shippingCountry;
-  bool m_shippingCountryHasBeenSet = false;
 
   Aws::String m_shippingPostalCode;
-  bool m_shippingPostalCodeHasBeenSet = false;
 
   Aws::String m_shippingProvince;
-  bool m_shippingProvinceHasBeenSet = false;
 
   Aws::String m_shippingState;
-  bool m_shippingStateHasBeenSet = false;
 
   Aws::String m_mailingAddress1;
-  bool m_mailingAddress1HasBeenSet = false;
 
   Aws::String m_mailingAddress2;
-  bool m_mailingAddress2HasBeenSet = false;
 
   Aws::String m_mailingAddress3;
-  bool m_mailingAddress3HasBeenSet = false;
 
   Aws::String m_mailingAddress4;
-  bool m_mailingAddress4HasBeenSet = false;
 
   Aws::String m_mailingCity;
-  bool m_mailingCityHasBeenSet = false;
 
   Aws::String m_mailingCounty;
-  bool m_mailingCountyHasBeenSet = false;
 
   Aws::String m_mailingCountry;
-  bool m_mailingCountryHasBeenSet = false;
 
   Aws::String m_mailingPostalCode;
-  bool m_mailingPostalCodeHasBeenSet = false;
 
   Aws::String m_mailingProvince;
-  bool m_mailingProvinceHasBeenSet = false;
 
   Aws::String m_mailingState;
-  bool m_mailingStateHasBeenSet = false;
 
   Aws::String m_billingAddress1;
-  bool m_billingAddress1HasBeenSet = false;
 
   Aws::String m_billingAddress2;
-  bool m_billingAddress2HasBeenSet = false;
 
   Aws::String m_billingAddress3;
-  bool m_billingAddress3HasBeenSet = false;
 
   Aws::String m_billingAddress4;
-  bool m_billingAddress4HasBeenSet = false;
 
   Aws::String m_billingCity;
-  bool m_billingCityHasBeenSet = false;
 
   Aws::String m_billingCounty;
-  bool m_billingCountyHasBeenSet = false;
 
   Aws::String m_billingCountry;
-  bool m_billingCountryHasBeenSet = false;
 
   Aws::String m_billingPostalCode;
-  bool m_billingPostalCodeHasBeenSet = false;
 
   Aws::String m_billingProvince;
-  bool m_billingProvinceHasBeenSet = false;
 
   Aws::String m_billingState;
-  bool m_billingStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_custom;
+  bool m_profileIdHasBeenSet = false;
+  bool m_profileARNHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_middleNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_accountNumberHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_additionalInformationHasBeenSet = false;
+  bool m_partyTypeHasBeenSet = false;
+  bool m_businessNameHasBeenSet = false;
+  bool m_birthDateHasBeenSet = false;
+  bool m_genderHasBeenSet = false;
+  bool m_mobilePhoneNumberHasBeenSet = false;
+  bool m_homePhoneNumberHasBeenSet = false;
+  bool m_businessPhoneNumberHasBeenSet = false;
+  bool m_businessEmailAddressHasBeenSet = false;
+  bool m_address1HasBeenSet = false;
+  bool m_address2HasBeenSet = false;
+  bool m_address3HasBeenSet = false;
+  bool m_address4HasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_countyHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_provinceHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_shippingAddress1HasBeenSet = false;
+  bool m_shippingAddress2HasBeenSet = false;
+  bool m_shippingAddress3HasBeenSet = false;
+  bool m_shippingAddress4HasBeenSet = false;
+  bool m_shippingCityHasBeenSet = false;
+  bool m_shippingCountyHasBeenSet = false;
+  bool m_shippingCountryHasBeenSet = false;
+  bool m_shippingPostalCodeHasBeenSet = false;
+  bool m_shippingProvinceHasBeenSet = false;
+  bool m_shippingStateHasBeenSet = false;
+  bool m_mailingAddress1HasBeenSet = false;
+  bool m_mailingAddress2HasBeenSet = false;
+  bool m_mailingAddress3HasBeenSet = false;
+  bool m_mailingAddress4HasBeenSet = false;
+  bool m_mailingCityHasBeenSet = false;
+  bool m_mailingCountyHasBeenSet = false;
+  bool m_mailingCountryHasBeenSet = false;
+  bool m_mailingPostalCodeHasBeenSet = false;
+  bool m_mailingProvinceHasBeenSet = false;
+  bool m_mailingStateHasBeenSet = false;
+  bool m_billingAddress1HasBeenSet = false;
+  bool m_billingAddress2HasBeenSet = false;
+  bool m_billingAddress3HasBeenSet = false;
+  bool m_billingAddress4HasBeenSet = false;
+  bool m_billingCityHasBeenSet = false;
+  bool m_billingCountyHasBeenSet = false;
+  bool m_billingCountryHasBeenSet = false;
+  bool m_billingPostalCodeHasBeenSet = false;
+  bool m_billingProvinceHasBeenSet = false;
+  bool m_billingStateHasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

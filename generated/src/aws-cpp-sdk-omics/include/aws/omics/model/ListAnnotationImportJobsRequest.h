@@ -113,15 +113,15 @@ class ListAnnotationImportJobsRequest : public OmicsRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ListAnnotationImportJobsFilter m_filter;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_idsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

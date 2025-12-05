@@ -94,12 +94,12 @@ class ShareError {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_error;
+  bool m_accountsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

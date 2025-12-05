@@ -201,30 +201,30 @@ class BrandDetail {
   ///@}
  private:
   Aws::String m_brandId;
-  bool m_brandIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   BrandStatus m_brandStatus{BrandStatus::NOT_SET};
-  bool m_brandStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   BrandVersionStatus m_versionStatus{BrandVersionStatus::NOT_SET};
-  bool m_versionStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Logo m_logo;
+  bool m_brandIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_brandStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_versionStatusHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_logoHasBeenSet = false;
 };
 

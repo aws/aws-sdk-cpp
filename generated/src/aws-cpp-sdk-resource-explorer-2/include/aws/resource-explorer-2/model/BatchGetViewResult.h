@@ -93,12 +93,12 @@ class BatchGetViewResult {
   ///@}
  private:
   Aws::Vector<View> m_views;
-  bool m_viewsHasBeenSet = false;
 
   Aws::Vector<BatchGetViewError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_viewsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class CreateDeploymentResult {
   ///@}
  private:
   Aws::String m_deploymentArn;
-  bool m_deploymentArnHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentArnHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class DataSetStringFilterCondition {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   DataSetStringComparisonFilterCondition m_comparisonFilterCondition;
-  bool m_comparisonFilterConditionHasBeenSet = false;
 
   DataSetStringListFilterCondition m_listFilterCondition;
+  bool m_columnNameHasBeenSet = false;
+  bool m_comparisonFilterConditionHasBeenSet = false;
   bool m_listFilterConditionHasBeenSet = false;
 };
 

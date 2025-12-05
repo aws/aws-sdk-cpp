@@ -105,15 +105,15 @@ class CopyImageRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_sourceImageName;
-  bool m_sourceImageNameHasBeenSet = false;
 
   Aws::String m_destinationImageName;
-  bool m_destinationImageNameHasBeenSet = false;
 
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   Aws::String m_destinationImageDescription;
+  bool m_sourceImageNameHasBeenSet = false;
+  bool m_destinationImageNameHasBeenSet = false;
+  bool m_destinationRegionHasBeenSet = false;
   bool m_destinationImageDescriptionHasBeenSet = false;
 };
 

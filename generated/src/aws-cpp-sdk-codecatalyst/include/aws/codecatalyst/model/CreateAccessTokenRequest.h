@@ -68,9 +68,9 @@ class CreateAccessTokenRequest : public CodeCatalystRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresTime{};
+  bool m_nameHasBeenSet = false;
   bool m_expiresTimeHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class IntentClosingSetting {
   ///@}
  private:
   ResponseSpecification m_closingResponse;
-  bool m_closingResponseHasBeenSet = false;
 
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   DialogState m_nextStep;
-  bool m_nextStepHasBeenSet = false;
 
   ConditionalSpecification m_conditional;
+  bool m_closingResponseHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_nextStepHasBeenSet = false;
   bool m_conditionalHasBeenSet = false;
 };
 

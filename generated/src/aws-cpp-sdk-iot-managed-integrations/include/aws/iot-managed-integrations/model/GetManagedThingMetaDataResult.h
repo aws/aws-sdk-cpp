@@ -84,12 +84,12 @@ class GetManagedThingMetaDataResult {
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metaData;
-  bool m_metaDataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedThingIdHasBeenSet = false;
+  bool m_metaDataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

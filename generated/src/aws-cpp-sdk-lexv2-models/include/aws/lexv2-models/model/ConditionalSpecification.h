@@ -102,12 +102,12 @@ class ConditionalSpecification {
   ///@}
  private:
   bool m_active{false};
-  bool m_activeHasBeenSet = false;
 
   Aws::Vector<ConditionalBranch> m_conditionalBranches;
-  bool m_conditionalBranchesHasBeenSet = false;
 
   DefaultConditionalBranch m_defaultBranch;
+  bool m_activeHasBeenSet = false;
+  bool m_conditionalBranchesHasBeenSet = false;
   bool m_defaultBranchHasBeenSet = false;
 };
 

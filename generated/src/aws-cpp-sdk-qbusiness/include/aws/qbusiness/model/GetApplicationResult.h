@@ -392,63 +392,63 @@ class GetApplicationResult {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   Aws::String m_iamIdentityProviderArn;
-  bool m_iamIdentityProviderArnHasBeenSet = false;
 
   Aws::String m_identityCenterApplicationArn;
-  bool m_identityCenterApplicationArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   AppliedAttachmentsConfiguration m_attachmentsConfiguration;
-  bool m_attachmentsConfigurationHasBeenSet = false;
 
   QAppsConfiguration m_qAppsConfiguration;
-  bool m_qAppsConfigurationHasBeenSet = false;
 
   PersonalizationConfiguration m_personalizationConfiguration;
-  bool m_personalizationConfigurationHasBeenSet = false;
 
   AutoSubscriptionConfiguration m_autoSubscriptionConfiguration;
-  bool m_autoSubscriptionConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientIdsForOIDC;
-  bool m_clientIdsForOIDCHasBeenSet = false;
 
   QuickSightConfiguration m_quickSightConfiguration;
-  bool m_quickSightConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_displayNameHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_iamIdentityProviderArnHasBeenSet = false;
+  bool m_identityCenterApplicationArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_attachmentsConfigurationHasBeenSet = false;
+  bool m_qAppsConfigurationHasBeenSet = false;
+  bool m_personalizationConfigurationHasBeenSet = false;
+  bool m_autoSubscriptionConfigurationHasBeenSet = false;
+  bool m_clientIdsForOIDCHasBeenSet = false;
+  bool m_quickSightConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

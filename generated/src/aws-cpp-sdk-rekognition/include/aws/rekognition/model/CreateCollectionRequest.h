@@ -75,9 +75,9 @@ class CreateCollectionRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_collectionIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

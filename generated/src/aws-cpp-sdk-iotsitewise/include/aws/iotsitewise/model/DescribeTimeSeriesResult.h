@@ -205,33 +205,33 @@ class DescribeTimeSeriesResult {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
-  bool m_propertyIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_timeSeriesId;
-  bool m_timeSeriesIdHasBeenSet = false;
 
   PropertyDataType m_dataType{PropertyDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_dataTypeSpec;
-  bool m_dataTypeSpecHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeSeriesCreationDate{};
-  bool m_timeSeriesCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeSeriesLastUpdateDate{};
-  bool m_timeSeriesLastUpdateDateHasBeenSet = false;
 
   Aws::String m_timeSeriesArn;
-  bool m_timeSeriesArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetIdHasBeenSet = false;
+  bool m_propertyIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_timeSeriesIdHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dataTypeSpecHasBeenSet = false;
+  bool m_timeSeriesCreationDateHasBeenSet = false;
+  bool m_timeSeriesLastUpdateDateHasBeenSet = false;
+  bool m_timeSeriesArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

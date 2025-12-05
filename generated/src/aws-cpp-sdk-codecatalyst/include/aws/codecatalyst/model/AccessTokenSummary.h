@@ -90,12 +90,12 @@ class AccessTokenSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresTime{};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_expiresTimeHasBeenSet = false;
 };
 

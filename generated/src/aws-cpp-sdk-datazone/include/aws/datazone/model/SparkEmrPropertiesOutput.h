@@ -286,45 +286,45 @@ class SparkEmrPropertiesOutput {
   ///@}
  private:
   Aws::String m_certificateData;
-  bool m_certificateDataHasBeenSet = false;
 
   Aws::String m_computeArn;
-  bool m_computeArnHasBeenSet = false;
 
   UsernamePassword m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::Utils::DateTime m_credentialsExpiration{};
-  bool m_credentialsExpirationHasBeenSet = false;
 
   GovernanceType m_governanceType{GovernanceType::NOT_SET};
-  bool m_governanceTypeHasBeenSet = false;
 
   Aws::String m_instanceProfileArn;
-  bool m_instanceProfileArnHasBeenSet = false;
 
   Aws::String m_javaVirtualEnv;
-  bool m_javaVirtualEnvHasBeenSet = false;
 
   Aws::String m_livyEndpoint;
-  bool m_livyEndpointHasBeenSet = false;
 
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_managedEndpointArn;
-  bool m_managedEndpointArnHasBeenSet = false;
 
   ManagedEndpointCredentials m_managedEndpointCredentials;
-  bool m_managedEndpointCredentialsHasBeenSet = false;
 
   Aws::String m_pythonVirtualEnv;
-  bool m_pythonVirtualEnvHasBeenSet = false;
 
   Aws::String m_runtimeRole;
-  bool m_runtimeRoleHasBeenSet = false;
 
   Aws::String m_trustedCertificatesS3Uri;
+  bool m_certificateDataHasBeenSet = false;
+  bool m_computeArnHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_credentialsExpirationHasBeenSet = false;
+  bool m_governanceTypeHasBeenSet = false;
+  bool m_instanceProfileArnHasBeenSet = false;
+  bool m_javaVirtualEnvHasBeenSet = false;
+  bool m_livyEndpointHasBeenSet = false;
+  bool m_logUriHasBeenSet = false;
+  bool m_managedEndpointArnHasBeenSet = false;
+  bool m_managedEndpointCredentialsHasBeenSet = false;
+  bool m_pythonVirtualEnvHasBeenSet = false;
+  bool m_runtimeRoleHasBeenSet = false;
   bool m_trustedCertificatesS3UriHasBeenSet = false;
 };
 

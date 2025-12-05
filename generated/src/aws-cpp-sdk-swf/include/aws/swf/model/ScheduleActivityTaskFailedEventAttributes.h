@@ -114,15 +114,15 @@ class ScheduleActivityTaskFailedEventAttributes {
   ///@}
  private:
   ActivityType m_activityType;
-  bool m_activityTypeHasBeenSet = false;
 
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   ScheduleActivityTaskFailedCause m_cause{ScheduleActivityTaskFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_activityTypeHasBeenSet = false;
+  bool m_activityIdHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

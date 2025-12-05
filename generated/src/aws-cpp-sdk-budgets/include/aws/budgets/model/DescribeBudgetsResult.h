@@ -90,12 +90,12 @@ class DescribeBudgetsResult {
   ///@}
  private:
   Aws::Vector<Budget> m_budgets;
-  bool m_budgetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_budgetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

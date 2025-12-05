@@ -90,12 +90,12 @@ class HistoryRecordEntry {
   ///@}
  private:
   EventInformation m_eventInformation;
-  bool m_eventInformationHasBeenSet = false;
 
   FleetEventType m_eventType{FleetEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_eventInformationHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

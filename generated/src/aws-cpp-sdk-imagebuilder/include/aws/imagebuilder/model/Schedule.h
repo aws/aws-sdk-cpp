@@ -124,15 +124,15 @@ class Schedule {
   ///@}
  private:
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   PipelineExecutionStartCondition m_pipelineExecutionStartCondition{PipelineExecutionStartCondition::NOT_SET};
-  bool m_pipelineExecutionStartConditionHasBeenSet = false;
 
   AutoDisablePolicy m_autoDisablePolicy;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_pipelineExecutionStartConditionHasBeenSet = false;
   bool m_autoDisablePolicyHasBeenSet = false;
 };
 

@@ -266,42 +266,42 @@ class ApplicationSummary {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   int m_applicationVersion{0};
-  bool m_applicationVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ApplicationDeploymentLifecycle m_deploymentStatus{ApplicationDeploymentLifecycle::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStartTime{};
-  bool m_lastStartTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ApplicationLifecycle m_status{ApplicationLifecycle::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ApplicationVersionLifecycle m_versionStatus{ApplicationVersionLifecycle::NOT_SET};
+  bool m_applicationArnHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_applicationVersionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_lastStartTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_versionStatusHasBeenSet = false;
 };
 

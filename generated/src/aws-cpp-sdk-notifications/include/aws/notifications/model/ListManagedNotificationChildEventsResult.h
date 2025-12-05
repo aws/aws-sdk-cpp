@@ -89,12 +89,12 @@ class ListManagedNotificationChildEventsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ManagedNotificationChildEventOverview> m_managedNotificationChildEvents;
-  bool m_managedNotificationChildEventsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_managedNotificationChildEventsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

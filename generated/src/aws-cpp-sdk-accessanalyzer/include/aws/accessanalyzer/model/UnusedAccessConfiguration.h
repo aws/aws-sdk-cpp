@@ -69,9 +69,9 @@ class UnusedAccessConfiguration {
   ///@}
  private:
   int m_unusedAccessAge{0};
-  bool m_unusedAccessAgeHasBeenSet = false;
 
   AnalysisRule m_analysisRule;
+  bool m_unusedAccessAgeHasBeenSet = false;
   bool m_analysisRuleHasBeenSet = false;
 };
 

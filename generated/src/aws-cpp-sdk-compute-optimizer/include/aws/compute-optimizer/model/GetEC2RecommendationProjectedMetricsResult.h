@@ -71,9 +71,9 @@ class GetEC2RecommendationProjectedMetricsResult {
   ///@}
  private:
   Aws::Vector<RecommendedOptionProjectedMetric> m_recommendedOptionProjectedMetrics;
-  bool m_recommendedOptionProjectedMetricsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendedOptionProjectedMetricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

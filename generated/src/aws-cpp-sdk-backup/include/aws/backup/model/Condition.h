@@ -96,12 +96,12 @@ class Condition {
   ///@}
  private:
   ConditionType m_conditionType{ConditionType::NOT_SET};
-  bool m_conditionTypeHasBeenSet = false;
 
   Aws::String m_conditionKey;
-  bool m_conditionKeyHasBeenSet = false;
 
   Aws::String m_conditionValue;
+  bool m_conditionTypeHasBeenSet = false;
+  bool m_conditionKeyHasBeenSet = false;
   bool m_conditionValueHasBeenSet = false;
 };
 

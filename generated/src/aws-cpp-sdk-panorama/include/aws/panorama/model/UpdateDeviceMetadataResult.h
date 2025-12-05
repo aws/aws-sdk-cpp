@@ -59,9 +59,9 @@ class UpdateDeviceMetadataResult {
   ///@}
  private:
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

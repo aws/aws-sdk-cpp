@@ -71,9 +71,9 @@ class SourceConfiguration {
   ///@}
  private:
   AppIntegrationsConfiguration m_appIntegrations;
-  bool m_appIntegrationsHasBeenSet = false;
 
   ManagedSourceConfiguration m_managedSourceConfiguration;
+  bool m_appIntegrationsHasBeenSet = false;
   bool m_managedSourceConfigurationHasBeenSet = false;
 };
 

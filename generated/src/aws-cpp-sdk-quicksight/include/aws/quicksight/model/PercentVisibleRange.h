@@ -61,9 +61,9 @@ class PercentVisibleRange {
   ///@}
  private:
   double m_from{0.0};
-  bool m_fromHasBeenSet = false;
 
   double m_to{0.0};
+  bool m_fromHasBeenSet = false;
   bool m_toHasBeenSet = false;
 };
 

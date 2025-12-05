@@ -168,24 +168,24 @@ class InstanceInfo {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_iamSessionArn;
-  bool m_iamSessionArnHasBeenSet = false;
 
   Aws::String m_iamUserArn;
-  bool m_iamUserArnHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_registerTime{};
-  bool m_registerTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deregisterTime{};
-  bool m_deregisterTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_iamSessionArnHasBeenSet = false;
+  bool m_iamUserArnHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_registerTimeHasBeenSet = false;
+  bool m_deregisterTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

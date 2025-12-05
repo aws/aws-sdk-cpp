@@ -68,9 +68,9 @@ class DeleteSchemaVersionsResult {
   ///@}
  private:
   Aws::Vector<SchemaVersionErrorItem> m_schemaVersionErrors;
-  bool m_schemaVersionErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaVersionErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

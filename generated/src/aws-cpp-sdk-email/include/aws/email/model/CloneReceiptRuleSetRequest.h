@@ -80,9 +80,9 @@ class CloneReceiptRuleSetRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   Aws::String m_originalRuleSetName;
+  bool m_ruleSetNameHasBeenSet = false;
   bool m_originalRuleSetNameHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class ListCapacityTasksResult {
   ///@}
  private:
   Aws::Vector<CapacityTaskSummary> m_capacityTasks;
-  bool m_capacityTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

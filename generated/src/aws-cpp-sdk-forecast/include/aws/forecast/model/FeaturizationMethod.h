@@ -109,9 +109,9 @@ class FeaturizationMethod {
   ///@}
  private:
   FeaturizationMethodName m_featurizationMethodName{FeaturizationMethodName::NOT_SET};
-  bool m_featurizationMethodNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_featurizationMethodParameters;
+  bool m_featurizationMethodNameHasBeenSet = false;
   bool m_featurizationMethodParametersHasBeenSet = false;
 };
 

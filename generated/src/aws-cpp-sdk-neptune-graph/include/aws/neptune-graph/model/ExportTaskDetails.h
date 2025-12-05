@@ -115,18 +115,18 @@ class ExportTaskDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_timeElapsedSeconds{0};
-  bool m_timeElapsedSecondsHasBeenSet = false;
 
   int m_progressPercentage{0};
-  bool m_progressPercentageHasBeenSet = false;
 
   long long m_numVerticesWritten{0};
-  bool m_numVerticesWrittenHasBeenSet = false;
 
   long long m_numEdgesWritten{0};
+  bool m_startTimeHasBeenSet = false;
+  bool m_timeElapsedSecondsHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
+  bool m_numVerticesWrittenHasBeenSet = false;
   bool m_numEdgesWrittenHasBeenSet = false;
 };
 

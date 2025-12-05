@@ -68,9 +68,9 @@ class CancelFlowExecutionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_invalidExecutions;
-  bool m_invalidExecutionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invalidExecutionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

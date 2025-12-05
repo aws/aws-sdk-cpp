@@ -206,33 +206,33 @@ class GetClusterResult {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ClusterStatus m_status{ClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   MultiRegionProperties m_multiRegionProperties;
-  bool m_multiRegionPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EncryptionDetails m_encryptionDetails;
-  bool m_encryptionDetailsHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identifierHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_multiRegionPropertiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_encryptionDetailsHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

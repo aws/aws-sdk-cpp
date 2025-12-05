@@ -79,12 +79,12 @@ class UpdateIntegrationRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   IntegratingService m_integratingService{IntegratingService::NOT_SET};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_integratingServiceHasBeenSet = false;
 };
 

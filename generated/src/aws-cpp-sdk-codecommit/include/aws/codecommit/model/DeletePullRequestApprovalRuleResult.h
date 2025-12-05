@@ -61,9 +61,9 @@ class DeletePullRequestApprovalRuleResult {
   ///@}
  private:
   Aws::String m_approvalRuleId;
-  bool m_approvalRuleIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_approvalRuleIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

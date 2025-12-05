@@ -72,12 +72,12 @@ class GetBucketAccelerateConfigurationResult {
   ///@}
  private:
   BucketAccelerateStatus m_status{BucketAccelerateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

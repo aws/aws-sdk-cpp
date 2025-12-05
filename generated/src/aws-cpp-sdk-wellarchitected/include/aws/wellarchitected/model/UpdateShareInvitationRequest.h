@@ -65,9 +65,9 @@ class UpdateShareInvitationRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_shareInvitationId;
-  bool m_shareInvitationIdHasBeenSet = false;
 
   ShareInvitationAction m_shareInvitationAction{ShareInvitationAction::NOT_SET};
+  bool m_shareInvitationIdHasBeenSet = false;
   bool m_shareInvitationActionHasBeenSet = false;
 };
 

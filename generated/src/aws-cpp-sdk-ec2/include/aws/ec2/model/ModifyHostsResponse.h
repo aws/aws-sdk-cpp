@@ -92,12 +92,12 @@ class ModifyHostsResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulItem> m_unsuccessful;
-  bool m_unsuccessfulHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulHasBeenSet = false;
+  bool m_unsuccessfulHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

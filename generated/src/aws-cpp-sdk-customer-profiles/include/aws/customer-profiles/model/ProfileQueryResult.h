@@ -84,12 +84,12 @@ class ProfileQueryResult {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   QueryResult m_queryResult{QueryResult::NOT_SET};
-  bool m_queryResultHasBeenSet = false;
 
   Profile m_profile;
+  bool m_profileIdHasBeenSet = false;
+  bool m_queryResultHasBeenSet = false;
   bool m_profileHasBeenSet = false;
 };
 

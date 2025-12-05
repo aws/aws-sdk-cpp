@@ -71,9 +71,9 @@ class MLUserDataEncryption {
   ///@}
  private:
   MLUserDataEncryptionModeString m_mlUserDataEncryptionMode{MLUserDataEncryptionModeString::NOT_SET};
-  bool m_mlUserDataEncryptionModeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_mlUserDataEncryptionModeHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

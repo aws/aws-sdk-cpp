@@ -90,12 +90,12 @@ class HPOConfig {
   ///@}
  private:
   HPOObjective m_hpoObjective;
-  bool m_hpoObjectiveHasBeenSet = false;
 
   HPOResourceConfig m_hpoResourceConfig;
-  bool m_hpoResourceConfigHasBeenSet = false;
 
   HyperParameterRanges m_algorithmHyperParameterRanges;
+  bool m_hpoObjectiveHasBeenSet = false;
+  bool m_hpoResourceConfigHasBeenSet = false;
   bool m_algorithmHyperParameterRangesHasBeenSet = false;
 };
 

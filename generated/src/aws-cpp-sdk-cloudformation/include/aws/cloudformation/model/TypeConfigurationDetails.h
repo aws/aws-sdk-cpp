@@ -175,24 +175,24 @@ class TypeConfigurationDetails {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_typeArn;
-  bool m_typeArnHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   bool m_isDefaultConfiguration{false};
+  bool m_arnHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_typeArnHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
   bool m_isDefaultConfigurationHasBeenSet = false;
 };
 

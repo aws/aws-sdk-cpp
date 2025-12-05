@@ -150,21 +150,21 @@ class Connection {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   ProviderType m_providerType{ProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   ConnectionStatus m_connectionStatus{ConnectionStatus::NOT_SET};
-  bool m_connectionStatusHasBeenSet = false;
 
   Aws::String m_hostArn;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_providerTypeHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_connectionStatusHasBeenSet = false;
   bool m_hostArnHasBeenSet = false;
 };
 

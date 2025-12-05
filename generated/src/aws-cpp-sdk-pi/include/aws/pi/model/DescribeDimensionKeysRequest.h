@@ -310,39 +310,39 @@ class DescribeDimensionKeysRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   int m_periodInSeconds{0};
-  bool m_periodInSecondsHasBeenSet = false;
 
   DimensionGroup m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalMetrics;
-  bool m_additionalMetricsHasBeenSet = false;
 
   DimensionGroup m_partitionBy;
-  bool m_partitionByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filter;
-  bool m_filterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_metricHasBeenSet = false;
+  bool m_periodInSecondsHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_additionalMetricsHasBeenSet = false;
+  bool m_partitionByHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

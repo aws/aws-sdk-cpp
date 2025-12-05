@@ -106,15 +106,15 @@ class PutResourcePolicyRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::String m_policyRevisionId;
-  bool m_policyRevisionIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
+  bool m_policyRevisionIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

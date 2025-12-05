@@ -112,15 +112,15 @@ class ChangeProgressStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   ChangeProgressStatuses m_status{ChangeProgressStatuses::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_totalNumberOfStages{0};
-  bool m_totalNumberOfStagesHasBeenSet = false;
 
   Aws::Vector<ChangeProgressStage> m_changeProgressStages;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_totalNumberOfStagesHasBeenSet = false;
   bool m_changeProgressStagesHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class SAMLIdp {
   ///@}
  private:
   Aws::String m_metadataContent;
-  bool m_metadataContentHasBeenSet = false;
 
   Aws::String m_entityId;
+  bool m_metadataContentHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
 };
 

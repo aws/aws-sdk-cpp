@@ -81,12 +81,12 @@ class EC2UnexpectedException {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_eC2ErrorCode;
+  bool m_typeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_eC2ErrorCodeHasBeenSet = false;
 };
 

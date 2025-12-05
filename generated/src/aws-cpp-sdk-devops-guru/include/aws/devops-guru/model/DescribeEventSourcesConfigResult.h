@@ -60,9 +60,9 @@ class DescribeEventSourcesConfigResult {
   ///@}
  private:
   EventSourcesConfig m_eventSources;
-  bool m_eventSourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventSourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

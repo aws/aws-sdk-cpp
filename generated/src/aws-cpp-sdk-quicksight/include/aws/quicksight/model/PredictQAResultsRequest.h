@@ -116,18 +116,18 @@ class PredictQAResultsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_queryText;
-  bool m_queryTextHasBeenSet = false;
 
   IncludeQuickSightQIndex m_includeQuickSightQIndex{IncludeQuickSightQIndex::NOT_SET};
-  bool m_includeQuickSightQIndexHasBeenSet = false;
 
   IncludeGeneratedAnswer m_includeGeneratedAnswer{IncludeGeneratedAnswer::NOT_SET};
-  bool m_includeGeneratedAnswerHasBeenSet = false;
 
   int m_maxTopicsToConsider{0};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_queryTextHasBeenSet = false;
+  bool m_includeQuickSightQIndexHasBeenSet = false;
+  bool m_includeGeneratedAnswerHasBeenSet = false;
   bool m_maxTopicsToConsiderHasBeenSet = false;
 };
 

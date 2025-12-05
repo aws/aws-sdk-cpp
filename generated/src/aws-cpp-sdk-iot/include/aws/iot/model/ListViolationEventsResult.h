@@ -87,12 +87,12 @@ class ListViolationEventsResult {
   ///@}
  private:
   Aws::Vector<ViolationEvent> m_violationEvents;
-  bool m_violationEventsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_violationEventsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

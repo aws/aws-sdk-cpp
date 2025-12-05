@@ -131,21 +131,21 @@ class StatisticModelResult {
   ///@}
  private:
   double m_lowerBound{0.0};
-  bool m_lowerBoundHasBeenSet = false;
 
   double m_upperBound{0.0};
-  bool m_upperBoundHasBeenSet = false;
 
   double m_predictedValue{0.0};
-  bool m_predictedValueHasBeenSet = false;
 
   double m_actualValue{0.0};
-  bool m_actualValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   InclusionAnnotationValue m_inclusionAnnotation{InclusionAnnotationValue::NOT_SET};
+  bool m_lowerBoundHasBeenSet = false;
+  bool m_upperBoundHasBeenSet = false;
+  bool m_predictedValueHasBeenSet = false;
+  bool m_actualValueHasBeenSet = false;
+  bool m_dateHasBeenSet = false;
   bool m_inclusionAnnotationHasBeenSet = false;
 };
 

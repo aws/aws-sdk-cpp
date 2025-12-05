@@ -75,9 +75,9 @@ class SourceConfig {
   ///@}
  private:
   bool m_applyToAllRegions{false};
-  bool m_applyToAllRegionsHasBeenSet = false;
 
   Aws::Vector<AdvancedEventSelector> m_advancedEventSelectors;
+  bool m_applyToAllRegionsHasBeenSet = false;
   bool m_advancedEventSelectorsHasBeenSet = false;
 };
 

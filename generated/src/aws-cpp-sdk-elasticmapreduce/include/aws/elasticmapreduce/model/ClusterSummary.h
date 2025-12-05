@@ -145,21 +145,21 @@ class ClusterSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ClusterStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_normalizedInstanceHours{0};
-  bool m_normalizedInstanceHoursHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_outpostArn;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_normalizedInstanceHoursHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
 };
 

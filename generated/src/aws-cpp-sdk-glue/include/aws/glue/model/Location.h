@@ -105,12 +105,12 @@ class Location {
   ///@}
  private:
   Aws::Vector<CodeGenNodeArg> m_jdbc;
-  bool m_jdbcHasBeenSet = false;
 
   Aws::Vector<CodeGenNodeArg> m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::Vector<CodeGenNodeArg> m_dynamoDB;
+  bool m_jdbcHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
   bool m_dynamoDBHasBeenSet = false;
 };
 

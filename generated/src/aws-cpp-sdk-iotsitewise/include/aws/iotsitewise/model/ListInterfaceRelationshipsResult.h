@@ -87,12 +87,12 @@ class ListInterfaceRelationshipsResult {
   ///@}
  private:
   Aws::Vector<InterfaceRelationshipSummary> m_interfaceRelationshipSummaries;
-  bool m_interfaceRelationshipSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_interfaceRelationshipSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

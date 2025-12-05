@@ -101,12 +101,12 @@ class DescribeConfigRuleEvaluationStatusRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configRuleNames;
-  bool m_configRuleNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_configRuleNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

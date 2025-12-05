@@ -92,12 +92,12 @@ class UpdateFirewallDomainsRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_domains;
-  bool m_domainsHasBeenSet = false;
 
   Aws::String m_firewallDomainListId;
-  bool m_firewallDomainListIdHasBeenSet = false;
 
   Aws::String m_operation;
+  bool m_domainsHasBeenSet = false;
+  bool m_firewallDomainListIdHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

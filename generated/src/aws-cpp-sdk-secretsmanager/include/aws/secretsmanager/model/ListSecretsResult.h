@@ -88,12 +88,12 @@ class ListSecretsResult {
   ///@}
  private:
   Aws::Vector<SecretListEntry> m_secretList;
-  bool m_secretListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_secretListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -115,18 +115,18 @@ class ModifyCustomDomainAssociationResult {
   ///@}
  private:
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_customDomainCertExpiryTime;
-  bool m_customDomainCertExpiryTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_customDomainCertificateArnHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_customDomainCertExpiryTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

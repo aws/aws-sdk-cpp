@@ -71,9 +71,9 @@ class AddHeaderAction {
   ///@}
  private:
   Aws::String m_headerName;
-  bool m_headerNameHasBeenSet = false;
 
   Aws::String m_headerValue;
+  bool m_headerNameHasBeenSet = false;
   bool m_headerValueHasBeenSet = false;
 };
 

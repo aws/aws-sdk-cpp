@@ -85,12 +85,12 @@ class PendingModifiedRelationalDatabaseValues {
   ///@}
  private:
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_backupRetentionEnabled{false};
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
   bool m_backupRetentionEnabledHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class GetReadinessCheckStatusResult {
   ///@}
  private:
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Readiness m_readiness{Readiness::NOT_SET};
-  bool m_readinessHasBeenSet = false;
 
   Aws::Vector<ResourceResult> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_messagesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_readinessHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

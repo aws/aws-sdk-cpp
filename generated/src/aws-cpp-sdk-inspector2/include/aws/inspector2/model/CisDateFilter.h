@@ -68,9 +68,9 @@ class CisDateFilter {
   ///@}
  private:
   Aws::Utils::DateTime m_earliestScanStartTime{};
-  bool m_earliestScanStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestScanStartTime{};
+  bool m_earliestScanStartTimeHasBeenSet = false;
   bool m_latestScanStartTimeHasBeenSet = false;
 };
 

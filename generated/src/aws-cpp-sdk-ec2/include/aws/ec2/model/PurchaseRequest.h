@@ -69,9 +69,9 @@ class PurchaseRequest {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_purchaseToken;
+  bool m_instanceCountHasBeenSet = false;
   bool m_purchaseTokenHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ListenerTlsValidationContext {
   ///@}
  private:
   SubjectAlternativeNames m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   ListenerTlsValidationContextTrust m_trust;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
   bool m_trustHasBeenSet = false;
 };
 

@@ -145,21 +145,21 @@ class ContainerServiceHealthCheckConfig {
   ///@}
  private:
   int m_healthyThreshold{0};
-  bool m_healthyThresholdHasBeenSet = false;
 
   int m_unhealthyThreshold{0};
-  bool m_unhealthyThresholdHasBeenSet = false;
 
   int m_timeoutSeconds{0};
-  bool m_timeoutSecondsHasBeenSet = false;
 
   int m_intervalSeconds{0};
-  bool m_intervalSecondsHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_successCodes;
+  bool m_healthyThresholdHasBeenSet = false;
+  bool m_unhealthyThresholdHasBeenSet = false;
+  bool m_timeoutSecondsHasBeenSet = false;
+  bool m_intervalSecondsHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_successCodesHasBeenSet = false;
 };
 

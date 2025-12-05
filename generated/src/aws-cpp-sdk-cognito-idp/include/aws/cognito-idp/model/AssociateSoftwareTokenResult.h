@@ -79,12 +79,12 @@ class AssociateSoftwareTokenResult {
   ///@}
  private:
   Aws::String m_secretCode;
-  bool m_secretCodeHasBeenSet = false;
 
   Aws::String m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_secretCodeHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

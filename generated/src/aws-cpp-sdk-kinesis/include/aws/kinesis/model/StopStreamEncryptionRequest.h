@@ -119,15 +119,15 @@ class StopStreamEncryptionRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

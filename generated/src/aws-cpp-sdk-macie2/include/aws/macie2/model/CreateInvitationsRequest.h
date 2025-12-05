@@ -93,12 +93,12 @@ class CreateInvitationsRequest : public Macie2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   bool m_disableEmailNotification{false};
-  bool m_disableEmailNotificationHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_disableEmailNotificationHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

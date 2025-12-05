@@ -128,15 +128,15 @@ class RequiredActivatedType {
   ///@}
  private:
   Aws::String m_typeNameAlias;
-  bool m_typeNameAliasHasBeenSet = false;
 
   Aws::String m_originalTypeName;
-  bool m_originalTypeNameHasBeenSet = false;
 
   Aws::String m_publisherId;
-  bool m_publisherIdHasBeenSet = false;
 
   Aws::Vector<int> m_supportedMajorVersions;
+  bool m_typeNameAliasHasBeenSet = false;
+  bool m_originalTypeNameHasBeenSet = false;
+  bool m_publisherIdHasBeenSet = false;
   bool m_supportedMajorVersionsHasBeenSet = false;
 };
 

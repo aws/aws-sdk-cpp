@@ -78,9 +78,9 @@ class IPSetUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   IPSetDescriptor m_iPSetDescriptor;
+  bool m_actionHasBeenSet = false;
   bool m_iPSetDescriptorHasBeenSet = false;
 };
 

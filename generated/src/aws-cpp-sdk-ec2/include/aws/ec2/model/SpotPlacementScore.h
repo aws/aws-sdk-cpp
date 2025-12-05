@@ -92,12 +92,12 @@ class SpotPlacementScore {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   int m_score{0};
+  bool m_regionHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

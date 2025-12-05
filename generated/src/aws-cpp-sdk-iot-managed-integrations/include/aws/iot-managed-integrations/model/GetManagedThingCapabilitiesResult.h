@@ -95,15 +95,15 @@ class GetManagedThingCapabilitiesResult {
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   Aws::String m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   CapabilityReport m_capabilityReport;
-  bool m_capabilityReportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedThingIdHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_capabilityReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

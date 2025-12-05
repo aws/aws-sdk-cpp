@@ -84,12 +84,12 @@ class ListMulticastGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MulticastGroup> m_multicastGroupList;
-  bool m_multicastGroupListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_multicastGroupListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

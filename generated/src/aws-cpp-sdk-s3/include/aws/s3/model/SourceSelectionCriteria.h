@@ -84,9 +84,9 @@ class SourceSelectionCriteria {
   ///@}
  private:
   SseKmsEncryptedObjects m_sseKmsEncryptedObjects;
-  bool m_sseKmsEncryptedObjectsHasBeenSet = false;
 
   ReplicaModifications m_replicaModifications;
+  bool m_sseKmsEncryptedObjectsHasBeenSet = false;
   bool m_replicaModificationsHasBeenSet = false;
 };
 

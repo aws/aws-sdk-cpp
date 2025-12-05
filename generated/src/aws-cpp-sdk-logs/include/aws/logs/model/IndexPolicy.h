@@ -122,18 +122,18 @@ class IndexPolicy {
   ///@}
  private:
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   long long m_lastUpdateTime{0};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   IndexSource m_source{IndexSource::NOT_SET};
+  bool m_logGroupIdentifierHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

@@ -112,18 +112,18 @@ class CreateProductPageResult {
   ///@}
  private:
   DisplayContent m_displayContent;
-  bool m_displayContentHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_productPageArn;
-  bool m_productPageArnHasBeenSet = false;
 
   Aws::String m_productPageId;
-  bool m_productPageIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_displayContentHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_productPageArnHasBeenSet = false;
+  bool m_productPageIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -278,42 +278,42 @@ class AgentInfo {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_acceptedByAgentTimestamp{};
-  bool m_acceptedByAgentTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_previewEndTimestamp{};
-  bool m_previewEndTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_connectedToAgentTimestamp{};
-  bool m_connectedToAgentTimestampHasBeenSet = false;
 
   int m_agentPauseDurationInSeconds{0};
-  bool m_agentPauseDurationInSecondsHasBeenSet = false;
 
   HierarchyGroups m_hierarchyGroups;
-  bool m_hierarchyGroupsHasBeenSet = false;
 
   DeviceInfo m_deviceInfo;
-  bool m_deviceInfoHasBeenSet = false;
 
   ParticipantCapabilities m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   int m_afterContactWorkDuration{0};
-  bool m_afterContactWorkDurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_afterContactWorkStartTimestamp{};
-  bool m_afterContactWorkStartTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_afterContactWorkEndTimestamp{};
-  bool m_afterContactWorkEndTimestampHasBeenSet = false;
 
   int m_agentInitiatedHoldDuration{0};
-  bool m_agentInitiatedHoldDurationHasBeenSet = false;
 
   Aws::Vector<StateTransition> m_stateTransitions;
+  bool m_idHasBeenSet = false;
+  bool m_acceptedByAgentTimestampHasBeenSet = false;
+  bool m_previewEndTimestampHasBeenSet = false;
+  bool m_connectedToAgentTimestampHasBeenSet = false;
+  bool m_agentPauseDurationInSecondsHasBeenSet = false;
+  bool m_hierarchyGroupsHasBeenSet = false;
+  bool m_deviceInfoHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_afterContactWorkDurationHasBeenSet = false;
+  bool m_afterContactWorkStartTimestampHasBeenSet = false;
+  bool m_afterContactWorkEndTimestampHasBeenSet = false;
+  bool m_agentInitiatedHoldDurationHasBeenSet = false;
   bool m_stateTransitionsHasBeenSet = false;
 };
 

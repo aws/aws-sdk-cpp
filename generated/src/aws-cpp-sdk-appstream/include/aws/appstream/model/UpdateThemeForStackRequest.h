@@ -198,27 +198,27 @@ class UpdateThemeForStackRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::Vector<ThemeFooterLink> m_footerLinks;
-  bool m_footerLinksHasBeenSet = false;
 
   Aws::String m_titleText;
-  bool m_titleTextHasBeenSet = false;
 
   ThemeStyling m_themeStyling{ThemeStyling::NOT_SET};
-  bool m_themeStylingHasBeenSet = false;
 
   S3Location m_organizationLogoS3Location;
-  bool m_organizationLogoS3LocationHasBeenSet = false;
 
   S3Location m_faviconS3Location;
-  bool m_faviconS3LocationHasBeenSet = false;
 
   ThemeState m_state{ThemeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<ThemeAttribute> m_attributesToDelete;
+  bool m_stackNameHasBeenSet = false;
+  bool m_footerLinksHasBeenSet = false;
+  bool m_titleTextHasBeenSet = false;
+  bool m_themeStylingHasBeenSet = false;
+  bool m_organizationLogoS3LocationHasBeenSet = false;
+  bool m_faviconS3LocationHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_attributesToDeleteHasBeenSet = false;
 };
 

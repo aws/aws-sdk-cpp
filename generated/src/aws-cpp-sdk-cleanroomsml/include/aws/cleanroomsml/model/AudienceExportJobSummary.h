@@ -194,30 +194,30 @@ class AudienceExportJobSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_audienceGenerationJobArn;
-  bool m_audienceGenerationJobArnHasBeenSet = false;
 
   AudienceSize m_audienceSize;
-  bool m_audienceSizeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AudienceExportJobStatus m_status{AudienceExportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_outputLocation;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_audienceGenerationJobArnHasBeenSet = false;
+  bool m_audienceSizeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
   bool m_outputLocationHasBeenSet = false;
 };
 

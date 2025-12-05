@@ -156,24 +156,24 @@ class VolumeDetail {
   ///@}
  private:
   Aws::String m_volumeArn;
-  bool m_volumeArnHasBeenSet = false;
 
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   Aws::String m_encryptionType;
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_volumeArnHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_volumeSizeInGBHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

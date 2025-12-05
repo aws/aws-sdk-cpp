@@ -69,9 +69,9 @@ class ResourceServerScopeDetails {
   ///@}
  private:
   Aws::String m_longDescription;
-  bool m_longDescriptionHasBeenSet = false;
 
   Aws::String m_detailedTitle;
+  bool m_longDescriptionHasBeenSet = false;
   bool m_detailedTitleHasBeenSet = false;
 };
 

@@ -95,15 +95,15 @@ class IcebergOrphanFileDeletionMetrics {
   ///@}
  private:
   long long m_numberOfOrphanFilesDeleted{0};
-  bool m_numberOfOrphanFilesDeletedHasBeenSet = false;
 
   double m_dpuHours{0.0};
-  bool m_dpuHoursHasBeenSet = false;
 
   int m_numberOfDpus{0};
-  bool m_numberOfDpusHasBeenSet = false;
 
   double m_jobDurationInHour{0.0};
+  bool m_numberOfOrphanFilesDeletedHasBeenSet = false;
+  bool m_dpuHoursHasBeenSet = false;
+  bool m_numberOfDpusHasBeenSet = false;
   bool m_jobDurationInHourHasBeenSet = false;
 };
 

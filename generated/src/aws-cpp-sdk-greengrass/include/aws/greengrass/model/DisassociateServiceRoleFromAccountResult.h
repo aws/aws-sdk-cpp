@@ -60,9 +60,9 @@ class DisassociateServiceRoleFromAccountResult {
   ///@}
  private:
   Aws::String m_disassociatedAt;
-  bool m_disassociatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_disassociatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

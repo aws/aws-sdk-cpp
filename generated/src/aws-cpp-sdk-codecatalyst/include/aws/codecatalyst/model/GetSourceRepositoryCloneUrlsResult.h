@@ -60,9 +60,9 @@ class GetSourceRepositoryCloneUrlsResult {
   ///@}
  private:
   Aws::String m_https;
-  bool m_httpsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_httpsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DeleteIdNamespaceAssociationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_idNamespaceAssociationIdentifier;
-  bool m_idNamespaceAssociationIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
+  bool m_idNamespaceAssociationIdentifierHasBeenSet = false;
   bool m_membershipIdentifierHasBeenSet = false;
 };
 

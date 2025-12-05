@@ -126,15 +126,15 @@ class CompletionReport {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   ReportFormat m_format{ReportFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   ReportScope m_scope{ReportScope::NOT_SET};
+  bool m_enabledHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

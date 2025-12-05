@@ -112,15 +112,15 @@ class RetrieveAndGenerateRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   RetrieveAndGenerateInput m_input;
-  bool m_inputHasBeenSet = false;
 
   RetrieveAndGenerateConfiguration m_retrieveAndGenerateConfiguration;
-  bool m_retrieveAndGenerateConfigurationHasBeenSet = false;
 
   RetrieveAndGenerateSessionConfiguration m_sessionConfiguration;
-  bool m_sessionConfigurationHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_inputHasBeenSet = false;
+  bool m_retrieveAndGenerateConfigurationHasBeenSet = false;
+  bool m_sessionConfigurationHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

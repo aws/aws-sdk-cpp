@@ -106,15 +106,15 @@ class SnapshotErrorMessage {
   ///@}
  private:
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotClusterIdentifier;
-  bool m_snapshotClusterIdentifierHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_snapshotClusterIdentifierHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

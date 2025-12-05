@@ -229,33 +229,33 @@ class Namespace {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NamespaceType m_type{NamespaceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_serviceCount{0};
-  bool m_serviceCountHasBeenSet = false;
 
   NamespaceProperties m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_serviceCountHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = false;
 };
 

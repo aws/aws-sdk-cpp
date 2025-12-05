@@ -263,39 +263,39 @@ class StatementData {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryStrings;
-  bool m_queryStringsHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   StatusString m_status{StatusString::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<SqlParameter> m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   bool m_isBatchStatement{false};
-  bool m_isBatchStatementHasBeenSet = false;
 
   ResultFormatString m_resultFormat{ResultFormatString::NOT_SET};
-  bool m_resultFormatHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_idHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_queryStringsHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statementNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_queryParametersHasBeenSet = false;
+  bool m_isBatchStatementHasBeenSet = false;
+  bool m_resultFormatHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

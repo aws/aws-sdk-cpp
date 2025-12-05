@@ -99,12 +99,12 @@ class DescribeStackResourceDriftsResult {
   ///@}
  private:
   Aws::Vector<StackResourceDrift> m_stackResourceDrifts;
-  bool m_stackResourceDriftsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackResourceDriftsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

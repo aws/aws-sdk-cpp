@@ -297,39 +297,39 @@ class AudioDescription {
   ///@}
  private:
   AudioChannelTaggingSettings m_audioChannelTaggingSettings;
-  bool m_audioChannelTaggingSettingsHasBeenSet = false;
 
   AudioNormalizationSettings m_audioNormalizationSettings;
-  bool m_audioNormalizationSettingsHasBeenSet = false;
 
   AudioPitchCorrectionSettings m_audioPitchCorrectionSettings;
-  bool m_audioPitchCorrectionSettingsHasBeenSet = false;
 
   Aws::String m_audioSourceName;
-  bool m_audioSourceNameHasBeenSet = false;
 
   int m_audioType{0};
-  bool m_audioTypeHasBeenSet = false;
 
   AudioTypeControl m_audioTypeControl{AudioTypeControl::NOT_SET};
-  bool m_audioTypeControlHasBeenSet = false;
 
   AudioCodecSettings m_codecSettings;
-  bool m_codecSettingsHasBeenSet = false;
 
   Aws::String m_customLanguageCode;
-  bool m_customLanguageCodeHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   AudioLanguageCodeControl m_languageCodeControl{AudioLanguageCodeControl::NOT_SET};
-  bool m_languageCodeControlHasBeenSet = false;
 
   RemixSettings m_remixSettings;
-  bool m_remixSettingsHasBeenSet = false;
 
   Aws::String m_streamName;
+  bool m_audioChannelTaggingSettingsHasBeenSet = false;
+  bool m_audioNormalizationSettingsHasBeenSet = false;
+  bool m_audioPitchCorrectionSettingsHasBeenSet = false;
+  bool m_audioSourceNameHasBeenSet = false;
+  bool m_audioTypeHasBeenSet = false;
+  bool m_audioTypeControlHasBeenSet = false;
+  bool m_codecSettingsHasBeenSet = false;
+  bool m_customLanguageCodeHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_languageCodeControlHasBeenSet = false;
+  bool m_remixSettingsHasBeenSet = false;
   bool m_streamNameHasBeenSet = false;
 };
 

@@ -318,42 +318,42 @@ class UpdateMobileDeviceAccessRuleRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_mobileDeviceAccessRuleId;
-  bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   MobileDeviceAccessRuleEffect m_effect{MobileDeviceAccessRuleEffect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceTypes;
-  bool m_deviceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notDeviceTypes;
-  bool m_notDeviceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceModels;
-  bool m_deviceModelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notDeviceModels;
-  bool m_notDeviceModelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceOperatingSystems;
-  bool m_deviceOperatingSystemsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notDeviceOperatingSystems;
-  bool m_notDeviceOperatingSystemsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceUserAgents;
-  bool m_deviceUserAgentsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notDeviceUserAgents;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_mobileDeviceAccessRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
+  bool m_deviceTypesHasBeenSet = false;
+  bool m_notDeviceTypesHasBeenSet = false;
+  bool m_deviceModelsHasBeenSet = false;
+  bool m_notDeviceModelsHasBeenSet = false;
+  bool m_deviceOperatingSystemsHasBeenSet = false;
+  bool m_notDeviceOperatingSystemsHasBeenSet = false;
+  bool m_deviceUserAgentsHasBeenSet = false;
   bool m_notDeviceUserAgentsHasBeenSet = false;
 };
 

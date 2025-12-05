@@ -75,9 +75,9 @@ class EventTriggerCondition {
   ///@}
  private:
   Aws::Vector<EventTriggerDimension> m_eventTriggerDimensions;
-  bool m_eventTriggerDimensionsHasBeenSet = false;
 
   EventTriggerLogicalOperator m_logicalOperator{EventTriggerLogicalOperator::NOT_SET};
+  bool m_eventTriggerDimensionsHasBeenSet = false;
   bool m_logicalOperatorHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class RenewDomainRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   int m_durationInYears{0};
-  bool m_durationInYearsHasBeenSet = false;
 
   int m_currentExpiryYear{0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_durationInYearsHasBeenSet = false;
   bool m_currentExpiryYearHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class AccessControlPolicy {
   ///@}
  private:
   Aws::Vector<Grant> m_grants;
-  bool m_grantsHasBeenSet = false;
 
   Owner m_owner;
+  bool m_grantsHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

@@ -166,24 +166,24 @@ class DirectConnectGatewayAttachment {
   ///@}
  private:
   Aws::String m_directConnectGatewayId;
-  bool m_directConnectGatewayIdHasBeenSet = false;
 
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_virtualInterfaceRegion;
-  bool m_virtualInterfaceRegionHasBeenSet = false;
 
   Aws::String m_virtualInterfaceOwnerAccount;
-  bool m_virtualInterfaceOwnerAccountHasBeenSet = false;
 
   DirectConnectGatewayAttachmentState m_attachmentState{DirectConnectGatewayAttachmentState::NOT_SET};
-  bool m_attachmentStateHasBeenSet = false;
 
   DirectConnectGatewayAttachmentType m_attachmentType{DirectConnectGatewayAttachmentType::NOT_SET};
-  bool m_attachmentTypeHasBeenSet = false;
 
   Aws::String m_stateChangeError;
+  bool m_directConnectGatewayIdHasBeenSet = false;
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_virtualInterfaceRegionHasBeenSet = false;
+  bool m_virtualInterfaceOwnerAccountHasBeenSet = false;
+  bool m_attachmentStateHasBeenSet = false;
+  bool m_attachmentTypeHasBeenSet = false;
   bool m_stateChangeErrorHasBeenSet = false;
 };
 

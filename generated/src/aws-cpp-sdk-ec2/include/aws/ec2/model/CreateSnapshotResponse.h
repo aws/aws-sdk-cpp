@@ -472,75 +472,75 @@ class CreateSnapshotResponse {
   ///@}
  private:
   Aws::String m_ownerAlias;
-  bool m_ownerAliasHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   StorageTier m_storageTier{StorageTier::NOT_SET};
-  bool m_storageTierHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreExpiryTime{};
-  bool m_restoreExpiryTimeHasBeenSet = false;
 
   SSEType m_sseType{SSEType::NOT_SET};
-  bool m_sseTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   TransferType m_transferType{TransferType::NOT_SET};
-  bool m_transferTypeHasBeenSet = false;
 
   int m_completionDurationMinutes{0};
-  bool m_completionDurationMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   long long m_fullSnapshotSizeInBytes{0};
-  bool m_fullSnapshotSizeInBytesHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   SnapshotState m_state{SnapshotState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dataEncryptionKeyId;
-  bool m_dataEncryptionKeyIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ownerAliasHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_storageTierHasBeenSet = false;
+  bool m_restoreExpiryTimeHasBeenSet = false;
+  bool m_sseTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_transferTypeHasBeenSet = false;
+  bool m_completionDurationMinutesHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_fullSnapshotSizeInBytesHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dataEncryptionKeyIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

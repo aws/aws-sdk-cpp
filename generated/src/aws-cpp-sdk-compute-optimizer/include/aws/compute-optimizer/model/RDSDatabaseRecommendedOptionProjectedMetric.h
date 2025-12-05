@@ -98,12 +98,12 @@ class RDSDatabaseRecommendedOptionProjectedMetric {
   ///@}
  private:
   Aws::String m_recommendedDBInstanceClass;
-  bool m_recommendedDBInstanceClassHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   Aws::Vector<RDSDatabaseProjectedMetric> m_projectedMetrics;
+  bool m_recommendedDBInstanceClassHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
   bool m_projectedMetricsHasBeenSet = false;
 };
 

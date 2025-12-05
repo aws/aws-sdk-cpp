@@ -95,12 +95,12 @@ class ListSqlInjectionMatchSetsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<SqlInjectionMatchSetSummary> m_sqlInjectionMatchSets;
-  bool m_sqlInjectionMatchSetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_sqlInjectionMatchSetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

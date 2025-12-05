@@ -76,9 +76,9 @@ class InstancePropertyFilter {
   ///@}
  private:
   InstancePropertyFilterKey m_key{InstancePropertyFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valueSet;
+  bool m_keyHasBeenSet = false;
   bool m_valueSetHasBeenSet = false;
 };
 

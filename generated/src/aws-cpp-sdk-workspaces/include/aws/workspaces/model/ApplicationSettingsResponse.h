@@ -91,12 +91,12 @@ class ApplicationSettingsResponse {
   ///@}
  private:
   ApplicationSettingsStatusEnum m_status{ApplicationSettingsStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_settingsGroup;
-  bool m_settingsGroupHasBeenSet = false;
 
   Aws::String m_s3BucketName;
+  bool m_statusHasBeenSet = false;
+  bool m_settingsGroupHasBeenSet = false;
   bool m_s3BucketNameHasBeenSet = false;
 };
 

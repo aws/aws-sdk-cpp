@@ -86,9 +86,9 @@ class AddTagsRequest : public ElasticLoadBalancingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_loadBalancerNames;
-  bool m_loadBalancerNamesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_loadBalancerNamesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -155,18 +155,18 @@ class CreateCapacityProviderRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   AutoScalingGroupProvider m_autoScalingGroupProvider;
-  bool m_autoScalingGroupProviderHasBeenSet = false;
 
   CreateManagedInstancesProviderConfiguration m_managedInstancesProvider;
-  bool m_managedInstancesProviderHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_autoScalingGroupProviderHasBeenSet = false;
+  bool m_managedInstancesProviderHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

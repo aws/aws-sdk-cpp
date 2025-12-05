@@ -75,9 +75,9 @@ class DeleteContainerImageRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_image;
+  bool m_serviceNameHasBeenSet = false;
   bool m_imageHasBeenSet = false;
 };
 

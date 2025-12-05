@@ -111,15 +111,15 @@ class ImageSigningStatus {
   ///@}
  private:
   Aws::String m_signingProfileArn;
-  bool m_signingProfileArnHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   SigningStatus m_status{SigningStatus::NOT_SET};
+  bool m_signingProfileArnHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

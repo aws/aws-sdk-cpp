@@ -85,9 +85,9 @@ class AzElEphemeris {
   ///@}
  private:
   Aws::String m_groundStation;
-  bool m_groundStationHasBeenSet = false;
 
   AzElSegmentsData m_data;
+  bool m_groundStationHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

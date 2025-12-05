@@ -60,9 +60,9 @@ class GetWorkloadResult {
   ///@}
  private:
   WorkloadData m_workload;
-  bool m_workloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -130,18 +130,18 @@ class ExecutePolicyRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   bool m_honorCooldown{false};
-  bool m_honorCooldownHasBeenSet = false;
 
   double m_metricValue{0.0};
-  bool m_metricValueHasBeenSet = false;
 
   double m_breachThreshold{0.0};
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_honorCooldownHasBeenSet = false;
+  bool m_metricValueHasBeenSet = false;
   bool m_breachThresholdHasBeenSet = false;
 };
 

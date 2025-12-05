@@ -59,9 +59,9 @@ class DescribeDefaultClusterParametersResult {
   ///@}
  private:
   DefaultClusterParameters m_defaultClusterParameters;
-  bool m_defaultClusterParametersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_defaultClusterParametersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

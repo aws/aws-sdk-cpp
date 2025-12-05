@@ -112,15 +112,15 @@ class ChangeInfo {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ChangeStatus m_status{ChangeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedAt{};
-  bool m_submittedAtHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_submittedAtHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

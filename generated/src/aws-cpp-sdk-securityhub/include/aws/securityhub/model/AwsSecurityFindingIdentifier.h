@@ -71,9 +71,9 @@ class AwsSecurityFindingIdentifier {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_productArn;
+  bool m_idHasBeenSet = false;
   bool m_productArnHasBeenSet = false;
 };
 

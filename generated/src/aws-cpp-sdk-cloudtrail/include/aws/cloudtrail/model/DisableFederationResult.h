@@ -76,12 +76,12 @@ class DisableFederationResult {
   ///@}
  private:
   Aws::String m_eventDataStoreArn;
-  bool m_eventDataStoreArnHasBeenSet = false;
 
   FederationStatus m_federationStatus{FederationStatus::NOT_SET};
-  bool m_federationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventDataStoreArnHasBeenSet = false;
+  bool m_federationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

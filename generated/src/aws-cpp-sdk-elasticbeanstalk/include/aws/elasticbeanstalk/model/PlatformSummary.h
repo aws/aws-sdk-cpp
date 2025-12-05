@@ -268,39 +268,39 @@ class PlatformSummary {
   ///@}
  private:
   Aws::String m_platformArn;
-  bool m_platformArnHasBeenSet = false;
 
   Aws::String m_platformOwner;
-  bool m_platformOwnerHasBeenSet = false;
 
   PlatformStatus m_platformStatus{PlatformStatus::NOT_SET};
-  bool m_platformStatusHasBeenSet = false;
 
   Aws::String m_platformCategory;
-  bool m_platformCategoryHasBeenSet = false;
 
   Aws::String m_operatingSystemName;
-  bool m_operatingSystemNameHasBeenSet = false;
 
   Aws::String m_operatingSystemVersion;
-  bool m_operatingSystemVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedTierList;
-  bool m_supportedTierListHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedAddonList;
-  bool m_supportedAddonListHasBeenSet = false;
 
   Aws::String m_platformLifecycleState;
-  bool m_platformLifecycleStateHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_platformBranchName;
-  bool m_platformBranchNameHasBeenSet = false;
 
   Aws::String m_platformBranchLifecycleState;
+  bool m_platformArnHasBeenSet = false;
+  bool m_platformOwnerHasBeenSet = false;
+  bool m_platformStatusHasBeenSet = false;
+  bool m_platformCategoryHasBeenSet = false;
+  bool m_operatingSystemNameHasBeenSet = false;
+  bool m_operatingSystemVersionHasBeenSet = false;
+  bool m_supportedTierListHasBeenSet = false;
+  bool m_supportedAddonListHasBeenSet = false;
+  bool m_platformLifecycleStateHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_platformBranchNameHasBeenSet = false;
   bool m_platformBranchLifecycleStateHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class AggregatedScanResult {
   ///@}
  private:
   bool m_failedScan{false};
-  bool m_failedScanHasBeenSet = false;
 
   Aws::Vector<ScanFinding> m_findings;
-  bool m_findingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastComputed{};
+  bool m_failedScanHasBeenSet = false;
+  bool m_findingsHasBeenSet = false;
   bool m_lastComputedHasBeenSet = false;
 };
 

@@ -186,24 +186,24 @@ class DefaultPushNotificationMessage {
   ///@}
  private:
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_data;
-  bool m_dataHasBeenSet = false;
 
   bool m_silentPush{false};
-  bool m_silentPushHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
-  bool m_substitutionsHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_actionHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_silentPushHasBeenSet = false;
+  bool m_substitutionsHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

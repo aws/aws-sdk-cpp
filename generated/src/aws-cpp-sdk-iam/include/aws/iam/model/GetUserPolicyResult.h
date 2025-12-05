@@ -104,15 +104,15 @@ class GetUserPolicyResult {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_userNameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

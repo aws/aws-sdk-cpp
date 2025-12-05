@@ -176,24 +176,24 @@ class CreateStorageVirtualMachineRequest : public FSxRequest {
   ///@}
  private:
   CreateSvmActiveDirectoryConfiguration m_activeDirectoryConfiguration;
-  bool m_activeDirectoryConfigurationHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_svmAdminPassword;
-  bool m_svmAdminPasswordHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   StorageVirtualMachineRootVolumeSecurityStyle m_rootVolumeSecurityStyle{StorageVirtualMachineRootVolumeSecurityStyle::NOT_SET};
+  bool m_activeDirectoryConfigurationHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_svmAdminPasswordHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_rootVolumeSecurityStyleHasBeenSet = false;
 };
 

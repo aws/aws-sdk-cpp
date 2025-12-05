@@ -126,15 +126,15 @@ class IdMappingRuleBasedProperties {
   ///@}
  private:
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   IdMappingWorkflowRuleDefinitionType m_ruleDefinitionType{IdMappingWorkflowRuleDefinitionType::NOT_SET};
-  bool m_ruleDefinitionTypeHasBeenSet = false;
 
   AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
-  bool m_attributeMatchingModelHasBeenSet = false;
 
   RecordMatchingModel m_recordMatchingModel{RecordMatchingModel::NOT_SET};
+  bool m_rulesHasBeenSet = false;
+  bool m_ruleDefinitionTypeHasBeenSet = false;
+  bool m_attributeMatchingModelHasBeenSet = false;
   bool m_recordMatchingModelHasBeenSet = false;
 };
 

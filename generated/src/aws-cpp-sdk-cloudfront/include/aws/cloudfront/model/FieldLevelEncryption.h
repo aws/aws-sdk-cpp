@@ -92,12 +92,12 @@ class FieldLevelEncryption {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   FieldLevelEncryptionConfig m_fieldLevelEncryptionConfig;
+  bool m_idHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_fieldLevelEncryptionConfigHasBeenSet = false;
 };
 

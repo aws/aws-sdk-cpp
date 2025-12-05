@@ -67,9 +67,9 @@ class DeleteAssociationRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destinationArn;
+  bool m_sourceArnHasBeenSet = false;
   bool m_destinationArnHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetDelegatedAdminAccountResult {
   ///@}
  private:
   DelegatedAdmin m_delegatedAdmin;
-  bool m_delegatedAdminHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_delegatedAdminHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

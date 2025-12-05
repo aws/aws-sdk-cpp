@@ -113,18 +113,18 @@ class CreateWebLoginTokenResult {
   ///@}
  private:
   Aws::String m_webToken;
-  bool m_webTokenHasBeenSet = false;
 
   Aws::String m_webServerHostname;
-  bool m_webServerHostnameHasBeenSet = false;
 
   Aws::String m_iamIdentity;
-  bool m_iamIdentityHasBeenSet = false;
 
   Aws::String m_airflowIdentity;
-  bool m_airflowIdentityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webTokenHasBeenSet = false;
+  bool m_webServerHostnameHasBeenSet = false;
+  bool m_iamIdentityHasBeenSet = false;
+  bool m_airflowIdentityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

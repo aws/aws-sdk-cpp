@@ -146,9 +146,9 @@ class ResourceQuery {
   ///@}
  private:
   QueryType m_type{QueryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_query;
+  bool m_typeHasBeenSet = false;
   bool m_queryHasBeenSet = false;
 };
 

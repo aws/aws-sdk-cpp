@@ -80,9 +80,9 @@ class AddTagsToResourceRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

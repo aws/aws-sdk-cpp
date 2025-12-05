@@ -105,15 +105,15 @@ class ParticipatingServer {
   ///@}
  private:
   LaunchActionsStatus m_launchActionsStatus;
-  bool m_launchActionsStatusHasBeenSet = false;
 
   LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
-  bool m_launchStatusHasBeenSet = false;
 
   Aws::String m_recoveryInstanceID;
-  bool m_recoveryInstanceIDHasBeenSet = false;
 
   Aws::String m_sourceServerID;
+  bool m_launchActionsStatusHasBeenSet = false;
+  bool m_launchStatusHasBeenSet = false;
+  bool m_recoveryInstanceIDHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
 };
 

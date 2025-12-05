@@ -67,9 +67,9 @@ class GPSPointDimension {
   ///@}
  private:
   GPSCoordinates m_coordinates;
-  bool m_coordinatesHasBeenSet = false;
 
   double m_rangeInKilometers{0.0};
+  bool m_coordinatesHasBeenSet = false;
   bool m_rangeInKilometersHasBeenSet = false;
 };
 

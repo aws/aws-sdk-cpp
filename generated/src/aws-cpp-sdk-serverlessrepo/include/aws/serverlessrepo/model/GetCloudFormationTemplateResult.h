@@ -172,27 +172,27 @@ AWS
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_expirationTime;
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_templateUrl;
-  bool m_templateUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_templateUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

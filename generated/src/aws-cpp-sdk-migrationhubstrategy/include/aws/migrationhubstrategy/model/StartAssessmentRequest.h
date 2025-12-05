@@ -110,15 +110,15 @@ class StartAssessmentRequest : public MigrationHubStrategyRecommendationsRequest
   ///@}
  private:
   AssessmentDataSourceType m_assessmentDataSourceType{AssessmentDataSourceType::NOT_SET};
-  bool m_assessmentDataSourceTypeHasBeenSet = false;
 
   Aws::Vector<AssessmentTarget> m_assessmentTargets;
-  bool m_assessmentTargetsHasBeenSet = false;
 
   Aws::String m_s3bucketForAnalysisData;
-  bool m_s3bucketForAnalysisDataHasBeenSet = false;
 
   Aws::String m_s3bucketForReportData;
+  bool m_assessmentDataSourceTypeHasBeenSet = false;
+  bool m_assessmentTargetsHasBeenSet = false;
+  bool m_s3bucketForAnalysisDataHasBeenSet = false;
   bool m_s3bucketForReportDataHasBeenSet = false;
 };
 

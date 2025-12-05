@@ -89,9 +89,9 @@ class FindingProviderSeverity {
   ///@}
  private:
   SeverityLabel m_label{SeverityLabel::NOT_SET};
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_original;
+  bool m_labelHasBeenSet = false;
   bool m_originalHasBeenSet = false;
 };
 

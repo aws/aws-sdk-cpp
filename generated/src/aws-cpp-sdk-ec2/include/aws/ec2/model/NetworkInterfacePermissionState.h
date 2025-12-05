@@ -70,9 +70,9 @@ class NetworkInterfacePermissionState {
   ///@}
  private:
   NetworkInterfacePermissionStateCode m_state{NetworkInterfacePermissionStateCode::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_stateHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

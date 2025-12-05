@@ -141,21 +141,21 @@ class CreateQueueEnvironmentRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   EnvironmentTemplateType m_templateType{EnvironmentTemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_template;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
   bool m_templateHasBeenSet = false;
 };
 

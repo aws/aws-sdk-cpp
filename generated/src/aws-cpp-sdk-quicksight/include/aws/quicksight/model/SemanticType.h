@@ -178,24 +178,24 @@ class SemanticType {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_subTypeName;
-  bool m_subTypeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_typeParameters;
-  bool m_typeParametersHasBeenSet = false;
 
   Aws::String m_truthyCellValue;
-  bool m_truthyCellValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_truthyCellValueSynonyms;
-  bool m_truthyCellValueSynonymsHasBeenSet = false;
 
   Aws::String m_falseyCellValue;
-  bool m_falseyCellValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_falseyCellValueSynonyms;
+  bool m_typeNameHasBeenSet = false;
+  bool m_subTypeNameHasBeenSet = false;
+  bool m_typeParametersHasBeenSet = false;
+  bool m_truthyCellValueHasBeenSet = false;
+  bool m_truthyCellValueSynonymsHasBeenSet = false;
+  bool m_falseyCellValueHasBeenSet = false;
   bool m_falseyCellValueSynonymsHasBeenSet = false;
 };
 

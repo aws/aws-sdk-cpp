@@ -75,9 +75,9 @@ class GetIdentityNotificationAttributesResult {
   ///@}
  private:
   Aws::Map<Aws::String, IdentityNotificationAttributes> m_notificationAttributes;
-  bool m_notificationAttributesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_notificationAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

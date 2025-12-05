@@ -233,33 +233,33 @@ class OpportunitySummary {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_partnerOpportunityIdentifier;
-  bool m_partnerOpportunityIdentifierHasBeenSet = false;
 
   OpportunityType m_opportunityType{OpportunityType::NOT_SET};
-  bool m_opportunityTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   LifeCycleSummary m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
   CustomerSummary m_customer;
-  bool m_customerHasBeenSet = false;
 
   ProjectSummary m_project;
+  bool m_catalogHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_partnerOpportunityIdentifierHasBeenSet = false;
+  bool m_opportunityTypeHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

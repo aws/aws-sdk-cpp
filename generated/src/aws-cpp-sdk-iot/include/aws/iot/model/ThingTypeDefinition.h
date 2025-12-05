@@ -109,15 +109,15 @@ class ThingTypeDefinition {
   ///@}
  private:
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   Aws::String m_thingTypeArn;
-  bool m_thingTypeArnHasBeenSet = false;
 
   ThingTypeProperties m_thingTypeProperties;
-  bool m_thingTypePropertiesHasBeenSet = false;
 
   ThingTypeMetadata m_thingTypeMetadata;
+  bool m_thingTypeNameHasBeenSet = false;
+  bool m_thingTypeArnHasBeenSet = false;
+  bool m_thingTypePropertiesHasBeenSet = false;
   bool m_thingTypeMetadataHasBeenSet = false;
 };
 

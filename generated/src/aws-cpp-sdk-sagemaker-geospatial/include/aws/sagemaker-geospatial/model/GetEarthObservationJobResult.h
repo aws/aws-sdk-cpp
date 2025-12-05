@@ -298,48 +298,48 @@ class GetEarthObservationJobResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   EarthObservationJobErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   ExportErrorDetails m_exportErrorDetails;
-  bool m_exportErrorDetailsHasBeenSet = false;
 
   EarthObservationJobExportStatus m_exportStatus{EarthObservationJobExportStatus::NOT_SET};
-  bool m_exportStatusHasBeenSet = false;
 
   InputConfigOutput m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   JobConfigInput m_jobConfig;
-  bool m_jobConfigHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<OutputBand> m_outputBands;
-  bool m_outputBandsHasBeenSet = false;
 
   EarthObservationJobStatus m_status{EarthObservationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_exportErrorDetailsHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_jobConfigHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outputBandsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

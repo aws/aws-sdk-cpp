@@ -174,30 +174,30 @@ class KeyUsage {
   ///@}
  private:
   bool m_digitalSignature{false};
-  bool m_digitalSignatureHasBeenSet = false;
 
   bool m_nonRepudiation{false};
-  bool m_nonRepudiationHasBeenSet = false;
 
   bool m_keyEncipherment{false};
-  bool m_keyEnciphermentHasBeenSet = false;
 
   bool m_dataEncipherment{false};
-  bool m_dataEnciphermentHasBeenSet = false;
 
   bool m_keyAgreement{false};
-  bool m_keyAgreementHasBeenSet = false;
 
   bool m_keyCertSign{false};
-  bool m_keyCertSignHasBeenSet = false;
 
   bool m_cRLSign{false};
-  bool m_cRLSignHasBeenSet = false;
 
   bool m_encipherOnly{false};
-  bool m_encipherOnlyHasBeenSet = false;
 
   bool m_decipherOnly{false};
+  bool m_digitalSignatureHasBeenSet = false;
+  bool m_nonRepudiationHasBeenSet = false;
+  bool m_keyEnciphermentHasBeenSet = false;
+  bool m_dataEnciphermentHasBeenSet = false;
+  bool m_keyAgreementHasBeenSet = false;
+  bool m_keyCertSignHasBeenSet = false;
+  bool m_cRLSignHasBeenSet = false;
+  bool m_encipherOnlyHasBeenSet = false;
   bool m_decipherOnlyHasBeenSet = false;
 };
 

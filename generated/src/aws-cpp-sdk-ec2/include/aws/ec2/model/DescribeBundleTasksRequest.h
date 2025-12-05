@@ -116,12 +116,12 @@ class DescribeBundleTasksRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_bundleIds;
-  bool m_bundleIdsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_bundleIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

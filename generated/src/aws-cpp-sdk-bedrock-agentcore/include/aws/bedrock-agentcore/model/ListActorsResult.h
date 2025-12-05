@@ -85,12 +85,12 @@ class ListActorsResult {
   ///@}
  private:
   Aws::Vector<ActorSummary> m_actorSummaries;
-  bool m_actorSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actorSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

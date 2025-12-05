@@ -86,12 +86,12 @@ class ListOrganizationsResult {
   ///@}
  private:
   Aws::Vector<OrganizationSummary> m_organizationSummaries;
-  bool m_organizationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

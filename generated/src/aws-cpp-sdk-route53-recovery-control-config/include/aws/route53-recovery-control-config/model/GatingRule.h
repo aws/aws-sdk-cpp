@@ -227,30 +227,30 @@ class GatingRule {
   ///@}
  private:
   Aws::String m_controlPanelArn;
-  bool m_controlPanelArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_gatingControls;
-  bool m_gatingControlsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleConfig m_ruleConfig;
-  bool m_ruleConfigHasBeenSet = false;
 
   Aws::String m_safetyRuleArn;
-  bool m_safetyRuleArnHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetControls;
-  bool m_targetControlsHasBeenSet = false;
 
   int m_waitPeriodMs{0};
-  bool m_waitPeriodMsHasBeenSet = false;
 
   Aws::String m_owner;
+  bool m_controlPanelArnHasBeenSet = false;
+  bool m_gatingControlsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleConfigHasBeenSet = false;
+  bool m_safetyRuleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetControlsHasBeenSet = false;
+  bool m_waitPeriodMsHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

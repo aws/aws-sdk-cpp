@@ -90,12 +90,12 @@ class GetFileRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_commitSpecifier;
-  bool m_commitSpecifierHasBeenSet = false;
 
   Aws::String m_filePath;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_commitSpecifierHasBeenSet = false;
   bool m_filePathHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ReplicaRegionType {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_regionHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

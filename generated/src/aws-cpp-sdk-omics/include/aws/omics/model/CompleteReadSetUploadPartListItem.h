@@ -85,12 +85,12 @@ class CompleteReadSetUploadPartListItem {
   ///@}
  private:
   int m_partNumber{0};
-  bool m_partNumberHasBeenSet = false;
 
   ReadSetPartSource m_partSource{ReadSetPartSource::NOT_SET};
-  bool m_partSourceHasBeenSet = false;
 
   Aws::String m_checksum;
+  bool m_partNumberHasBeenSet = false;
+  bool m_partSourceHasBeenSet = false;
   bool m_checksumHasBeenSet = false;
 };
 

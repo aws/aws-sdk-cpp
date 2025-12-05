@@ -69,9 +69,9 @@ class TargetResource {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_computationModelId;
+  bool m_assetIdHasBeenSet = false;
   bool m_computationModelIdHasBeenSet = false;
 };
 

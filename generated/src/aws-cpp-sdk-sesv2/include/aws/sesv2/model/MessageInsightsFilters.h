@@ -192,21 +192,21 @@ class MessageInsightsFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_isp;
-  bool m_ispHasBeenSet = false;
 
   Aws::Vector<DeliveryEventType> m_lastDeliveryEvent;
-  bool m_lastDeliveryEventHasBeenSet = false;
 
   Aws::Vector<EngagementEventType> m_lastEngagementEvent;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_ispHasBeenSet = false;
+  bool m_lastDeliveryEventHasBeenSet = false;
   bool m_lastEngagementEventHasBeenSet = false;
 };
 

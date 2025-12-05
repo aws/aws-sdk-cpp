@@ -93,15 +93,15 @@ class DeleteRegistryResult {
   ///@}
  private:
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_registryArn;
-  bool m_registryArnHasBeenSet = false;
 
   RegistryStatus m_status{RegistryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryNameHasBeenSet = false;
+  bool m_registryArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

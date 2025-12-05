@@ -79,12 +79,12 @@ class CreateAppInstanceAdminResult {
   ///@}
  private:
   Identity m_appInstanceAdmin;
-  bool m_appInstanceAdminHasBeenSet = false;
 
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceAdminHasBeenSet = false;
+  bool m_appInstanceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

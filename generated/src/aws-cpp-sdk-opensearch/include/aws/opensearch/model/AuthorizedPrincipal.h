@@ -71,9 +71,9 @@ class AuthorizedPrincipal {
   ///@}
  private:
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_principal;
+  bool m_principalTypeHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

@@ -189,24 +189,24 @@ class EcsTaskOverride {
   ///@}
  private:
   Aws::Vector<EcsContainerOverride> m_containerOverrides;
-  bool m_containerOverridesHasBeenSet = false;
 
   Aws::String m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   EcsEphemeralStorage m_ephemeralStorage;
-  bool m_ephemeralStorageHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::Vector<EcsInferenceAcceleratorOverride> m_inferenceAcceleratorOverrides;
-  bool m_inferenceAcceleratorOverridesHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   Aws::String m_taskRoleArn;
+  bool m_containerOverridesHasBeenSet = false;
+  bool m_cpuHasBeenSet = false;
+  bool m_ephemeralStorageHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_inferenceAcceleratorOverridesHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
   bool m_taskRoleArnHasBeenSet = false;
 };
 

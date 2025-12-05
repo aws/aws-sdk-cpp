@@ -136,18 +136,18 @@ class DescribeRouteServersRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_routeServerIds;
-  bool m_routeServerIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_routeServerIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

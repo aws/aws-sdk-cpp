@@ -92,12 +92,12 @@ class ProjectListFilter {
   ///@}
  private:
   FilterKey m_key{FilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_comparisonOperatorHasBeenSet = false;
 };
 

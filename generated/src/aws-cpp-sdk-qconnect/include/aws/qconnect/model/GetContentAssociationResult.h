@@ -60,9 +60,9 @@ class GetContentAssociationResult {
   ///@}
  private:
   ContentAssociationData m_contentAssociation;
-  bool m_contentAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

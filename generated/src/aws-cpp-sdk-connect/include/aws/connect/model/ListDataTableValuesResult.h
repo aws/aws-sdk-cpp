@@ -86,12 +86,12 @@ class ListDataTableValuesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DataTableValueSummary> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

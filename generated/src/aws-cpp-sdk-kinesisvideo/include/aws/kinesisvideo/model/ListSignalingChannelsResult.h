@@ -85,12 +85,12 @@ class ListSignalingChannelsResult {
   ///@}
  private:
   Aws::Vector<ChannelInfo> m_channelInfoList;
-  bool m_channelInfoListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelInfoListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

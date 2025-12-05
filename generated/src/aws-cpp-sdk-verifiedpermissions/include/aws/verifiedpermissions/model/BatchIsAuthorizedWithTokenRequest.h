@@ -155,18 +155,18 @@ class BatchIsAuthorizedWithTokenRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_identityToken;
-  bool m_identityTokenHasBeenSet = false;
 
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   EntitiesDefinition m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::Vector<BatchIsAuthorizedWithTokenInputItem> m_requests;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_identityTokenHasBeenSet = false;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_entitiesHasBeenSet = false;
   bool m_requestsHasBeenSet = false;
 };
 

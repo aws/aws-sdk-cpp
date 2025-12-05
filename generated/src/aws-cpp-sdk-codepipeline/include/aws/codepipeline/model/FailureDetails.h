@@ -85,12 +85,12 @@ class FailureDetails {
   ///@}
  private:
   FailureType m_type{FailureType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_externalExecutionId;
+  bool m_typeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_externalExecutionIdHasBeenSet = false;
 };
 

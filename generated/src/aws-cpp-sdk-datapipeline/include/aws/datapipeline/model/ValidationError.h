@@ -77,9 +77,9 @@ class ValidationError {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_errors;
+  bool m_idHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
 };
 

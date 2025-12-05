@@ -102,12 +102,12 @@ class PollForTaskRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_workerGroup;
-  bool m_workerGroupHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   InstanceIdentity m_instanceIdentity;
+  bool m_workerGroupHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
   bool m_instanceIdentityHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class GetAutoMergingPreviewRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Consolidation m_consolidation;
-  bool m_consolidationHasBeenSet = false;
 
   ConflictResolution m_conflictResolution;
-  bool m_conflictResolutionHasBeenSet = false;
 
   double m_minAllowedConfidenceScoreForMerging{0.0};
+  bool m_domainNameHasBeenSet = false;
+  bool m_consolidationHasBeenSet = false;
+  bool m_conflictResolutionHasBeenSet = false;
   bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
 };
 

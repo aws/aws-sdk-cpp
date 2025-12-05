@@ -78,12 +78,12 @@ class CreateCertificateAuthorityAuditReportResult {
   ///@}
  private:
   Aws::String m_auditReportId;
-  bool m_auditReportIdHasBeenSet = false;
 
   Aws::String m_s3Key;
-  bool m_s3KeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_auditReportIdHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

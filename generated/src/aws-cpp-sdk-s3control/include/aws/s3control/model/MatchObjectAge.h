@@ -65,9 +65,9 @@ class MatchObjectAge {
   ///@}
  private:
   int m_daysGreaterThan{0};
-  bool m_daysGreaterThanHasBeenSet = false;
 
   int m_daysLessThan{0};
+  bool m_daysGreaterThanHasBeenSet = false;
   bool m_daysLessThanHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ConditionBasedSignalFetchConfig {
   ///@}
  private:
   Aws::String m_conditionExpression;
-  bool m_conditionExpressionHasBeenSet = false;
 
   TriggerMode m_triggerMode{TriggerMode::NOT_SET};
+  bool m_conditionExpressionHasBeenSet = false;
   bool m_triggerModeHasBeenSet = false;
 };
 

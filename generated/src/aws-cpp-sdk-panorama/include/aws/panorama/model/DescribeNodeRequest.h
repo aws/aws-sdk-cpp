@@ -70,9 +70,9 @@ class DescribeNodeRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_ownerAccount;
+  bool m_nodeIdHasBeenSet = false;
   bool m_ownerAccountHasBeenSet = false;
 };
 

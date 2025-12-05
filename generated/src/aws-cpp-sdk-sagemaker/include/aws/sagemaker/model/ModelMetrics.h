@@ -107,15 +107,15 @@ class ModelMetrics {
   ///@}
  private:
   ModelQuality m_modelQuality;
-  bool m_modelQualityHasBeenSet = false;
 
   ModelDataQuality m_modelDataQuality;
-  bool m_modelDataQualityHasBeenSet = false;
 
   Bias m_bias;
-  bool m_biasHasBeenSet = false;
 
   Explainability m_explainability;
+  bool m_modelQualityHasBeenSet = false;
+  bool m_modelDataQualityHasBeenSet = false;
+  bool m_biasHasBeenSet = false;
   bool m_explainabilityHasBeenSet = false;
 };
 

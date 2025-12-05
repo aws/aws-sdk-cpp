@@ -65,9 +65,9 @@ class UpdateBaiduChannelRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   BaiduChannelRequest m_baiduChannelRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_baiduChannelRequestHasBeenSet = false;
 };
 

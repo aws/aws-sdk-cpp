@@ -129,18 +129,18 @@ class TimeSeriesServiceStatistics {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   EdgeStatistics m_edgeSummaryStatistics;
-  bool m_edgeSummaryStatisticsHasBeenSet = false;
 
   ServiceStatistics m_serviceSummaryStatistics;
-  bool m_serviceSummaryStatisticsHasBeenSet = false;
 
   ForecastStatistics m_serviceForecastStatistics;
-  bool m_serviceForecastStatisticsHasBeenSet = false;
 
   Aws::Vector<HistogramEntry> m_responseTimeHistogram;
+  bool m_timestampHasBeenSet = false;
+  bool m_edgeSummaryStatisticsHasBeenSet = false;
+  bool m_serviceSummaryStatisticsHasBeenSet = false;
+  bool m_serviceForecastStatisticsHasBeenSet = false;
   bool m_responseTimeHistogramHasBeenSet = false;
 };
 

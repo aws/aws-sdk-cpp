@@ -310,48 +310,48 @@ class Address {
   ///@}
  private:
   Aws::String m_addressId;
-  bool m_addressIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_company;
-  bool m_companyHasBeenSet = false;
 
   Aws::String m_street1;
-  bool m_street1HasBeenSet = false;
 
   Aws::String m_street2;
-  bool m_street2HasBeenSet = false;
 
   Aws::String m_street3;
-  bool m_street3HasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   Aws::String m_stateOrProvince;
-  bool m_stateOrProvinceHasBeenSet = false;
 
   Aws::String m_prefectureOrDistrict;
-  bool m_prefectureOrDistrictHasBeenSet = false;
 
   Aws::String m_landmark;
-  bool m_landmarkHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   bool m_isRestricted{false};
-  bool m_isRestrictedHasBeenSet = false;
 
   AddressType m_type{AddressType::NOT_SET};
+  bool m_addressIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_companyHasBeenSet = false;
+  bool m_street1HasBeenSet = false;
+  bool m_street2HasBeenSet = false;
+  bool m_street3HasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_stateOrProvinceHasBeenSet = false;
+  bool m_prefectureOrDistrictHasBeenSet = false;
+  bool m_landmarkHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_isRestrictedHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class ModifyRuleResult {
   ///@}
  private:
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_rulesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

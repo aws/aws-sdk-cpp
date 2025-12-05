@@ -106,15 +106,15 @@ class NetworkStatus {
   ///@}
  private:
   EthernetStatus m_ethernet0Status;
-  bool m_ethernet0StatusHasBeenSet = false;
 
   EthernetStatus m_ethernet1Status;
-  bool m_ethernet1StatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   NtpStatus m_ntpStatus;
+  bool m_ethernet0StatusHasBeenSet = false;
+  bool m_ethernet1StatusHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_ntpStatusHasBeenSet = false;
 };
 

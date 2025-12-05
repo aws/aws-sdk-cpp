@@ -107,15 +107,15 @@ class PropertySummary {
   ///@}
  private:
   PropertyDefinitionResponse m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_propertyName;
-  bool m_propertyNameHasBeenSet = false;
 
   DataValue m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_areAllPropertyValuesReturned{false};
+  bool m_definitionHasBeenSet = false;
+  bool m_propertyNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_areAllPropertyValuesReturnedHasBeenSet = false;
 };
 

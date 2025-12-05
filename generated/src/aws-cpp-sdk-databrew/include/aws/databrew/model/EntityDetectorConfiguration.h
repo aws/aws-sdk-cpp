@@ -96,9 +96,9 @@ class EntityDetectorConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_entityTypes;
-  bool m_entityTypesHasBeenSet = false;
 
   Aws::Vector<AllowedStatistics> m_allowedStatistics;
+  bool m_entityTypesHasBeenSet = false;
   bool m_allowedStatisticsHasBeenSet = false;
 };
 

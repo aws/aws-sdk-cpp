@@ -69,9 +69,9 @@ class DownlinkAwsGroundStationAgentEndpoint {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DownlinkDataflowDetails m_dataflowDetails;
+  bool m_nameHasBeenSet = false;
   bool m_dataflowDetailsHasBeenSet = false;
 };
 

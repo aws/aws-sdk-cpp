@@ -327,42 +327,42 @@ class CreateFileSystemFromBackupRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CreateFileSystemWindowsConfiguration m_windowsConfiguration;
-  bool m_windowsConfigurationHasBeenSet = false;
 
   CreateFileSystemLustreConfiguration m_lustreConfiguration;
-  bool m_lustreConfigurationHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_fileSystemTypeVersion;
-  bool m_fileSystemTypeVersionHasBeenSet = false;
 
   CreateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
-  bool m_openZFSConfigurationHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_backupIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_windowsConfigurationHasBeenSet = false;
+  bool m_lustreConfigurationHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_fileSystemTypeVersionHasBeenSet = false;
+  bool m_openZFSConfigurationHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListSavingsPlansPurchaseRecommendationGenerationResult {
   ///@}
  private:
   Aws::Vector<GenerationSummary> m_generationSummaryList;
-  bool m_generationSummaryListHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_generationSummaryListHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

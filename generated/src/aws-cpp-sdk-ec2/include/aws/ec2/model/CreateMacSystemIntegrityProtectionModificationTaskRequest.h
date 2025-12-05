@@ -198,24 +198,24 @@ class CreateMacSystemIntegrityProtectionModificationTaskRequest : public EC2Requ
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_macCredentials;
-  bool m_macCredentialsHasBeenSet = false;
 
   MacSystemIntegrityProtectionConfigurationRequest m_macSystemIntegrityProtectionConfiguration;
-  bool m_macSystemIntegrityProtectionConfigurationHasBeenSet = false;
 
   MacSystemIntegrityProtectionSettingStatus m_macSystemIntegrityProtectionStatus{MacSystemIntegrityProtectionSettingStatus::NOT_SET};
-  bool m_macSystemIntegrityProtectionStatusHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_macCredentialsHasBeenSet = false;
+  bool m_macSystemIntegrityProtectionConfigurationHasBeenSet = false;
+  bool m_macSystemIntegrityProtectionStatusHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

@@ -126,12 +126,12 @@ class InstanceSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_createdByAccount;
+  bool m_idHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_createdByAccountHasBeenSet = false;
 };
 

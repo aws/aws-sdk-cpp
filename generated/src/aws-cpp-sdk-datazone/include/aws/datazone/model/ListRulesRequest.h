@@ -245,36 +245,36 @@ class ListRulesRequest : public DataZoneRequest {
   ///@}
  private:
   RuleAction m_action{RuleAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_assetTypes;
-  bool m_assetTypesHasBeenSet = false;
 
   bool m_dataProduct{false};
-  bool m_dataProductHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   bool m_includeCascaded{false};
-  bool m_includeCascadedHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_projectIds;
-  bool m_projectIdsHasBeenSet = false;
 
   RuleType m_ruleType{RuleType::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   RuleTargetType m_targetType{RuleTargetType::NOT_SET};
+  bool m_actionHasBeenSet = false;
+  bool m_assetTypesHasBeenSet = false;
+  bool m_dataProductHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_includeCascadedHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_projectIdsHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
 };
 

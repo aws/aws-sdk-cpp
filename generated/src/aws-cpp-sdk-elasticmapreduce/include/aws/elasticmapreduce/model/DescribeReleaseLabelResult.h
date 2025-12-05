@@ -131,18 +131,18 @@ class DescribeReleaseLabelResult {
   ///@}
  private:
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   Aws::Vector<SimplifiedApplication> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<OSRelease> m_availableOSReleases;
-  bool m_availableOSReleasesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_availableOSReleasesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

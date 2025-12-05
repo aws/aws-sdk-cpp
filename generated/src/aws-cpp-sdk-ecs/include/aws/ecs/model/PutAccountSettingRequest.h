@@ -198,12 +198,12 @@ class PutAccountSettingRequest : public ECSRequest {
   ///@}
  private:
   SettingName m_name{SettingName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_principalArn;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
 };
 

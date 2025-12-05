@@ -731,114 +731,114 @@ class Snapshot {
   ///@}
  private:
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotCreateTime{};
-  bool m_snapshotCreateTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Utils::DateTime m_clusterCreateTime{};
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   Aws::String m_engineFullVersion;
-  bool m_engineFullVersionHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   Aws::String m_dBName;
-  bool m_dBNameHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_encryptedWithHSM{false};
-  bool m_encryptedWithHSMHasBeenSet = false;
 
   Aws::Vector<AccountWithRestoreAccess> m_accountsWithRestoreAccess;
-  bool m_accountsWithRestoreAccessHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   double m_totalBackupSizeInMegaBytes{0.0};
-  bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
 
   double m_actualIncrementalBackupSizeInMegaBytes{0.0};
-  bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = false;
 
   double m_backupProgressInMegaBytes{0.0};
-  bool m_backupProgressInMegaBytesHasBeenSet = false;
 
   double m_currentBackupRateInMegaBytesPerSecond{0.0};
-  bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet = false;
 
   long long m_estimatedSecondsToCompletion{0};
-  bool m_estimatedSecondsToCompletionHasBeenSet = false;
 
   long long m_elapsedTimeInSeconds{0};
-  bool m_elapsedTimeInSecondsHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_restorableNodeTypes;
-  bool m_restorableNodeTypesHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::String m_maintenanceTrackName;
-  bool m_maintenanceTrackNameHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   int m_manualSnapshotRemainingDays{0};
-  bool m_manualSnapshotRemainingDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_snapshotRetentionStartTime{};
-  bool m_snapshotRetentionStartTimeHasBeenSet = false;
 
   Aws::String m_masterPasswordSecretArn;
-  bool m_masterPasswordSecretArnHasBeenSet = false;
 
   Aws::String m_masterPasswordSecretKmsKeyId;
-  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
 
   Aws::String m_snapshotArn;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_snapshotCreateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_engineFullVersionHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_dBNameHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_encryptedWithHSMHasBeenSet = false;
+  bool m_accountsWithRestoreAccessHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_totalBackupSizeInMegaBytesHasBeenSet = false;
+  bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = false;
+  bool m_backupProgressInMegaBytesHasBeenSet = false;
+  bool m_currentBackupRateInMegaBytesPerSecondHasBeenSet = false;
+  bool m_estimatedSecondsToCompletionHasBeenSet = false;
+  bool m_elapsedTimeInSecondsHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_restorableNodeTypesHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_maintenanceTrackNameHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_manualSnapshotRemainingDaysHasBeenSet = false;
+  bool m_snapshotRetentionStartTimeHasBeenSet = false;
+  bool m_masterPasswordSecretArnHasBeenSet = false;
+  bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
   bool m_snapshotArnHasBeenSet = false;
 };
 

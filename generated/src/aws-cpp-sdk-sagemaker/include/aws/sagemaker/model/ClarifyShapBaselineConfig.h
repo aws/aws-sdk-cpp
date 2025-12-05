@@ -118,12 +118,12 @@ class ClarifyShapBaselineConfig {
   ///@}
  private:
   Aws::String m_mimeType;
-  bool m_mimeTypeHasBeenSet = false;
 
   Aws::String m_shapBaseline;
-  bool m_shapBaselineHasBeenSet = false;
 
   Aws::String m_shapBaselineUri;
+  bool m_mimeTypeHasBeenSet = false;
+  bool m_shapBaselineHasBeenSet = false;
   bool m_shapBaselineUriHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class CreateAutomatedReasoningPolicyVersionRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_lastUpdatedDefinitionHash;
-  bool m_lastUpdatedDefinitionHashHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_policyArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_lastUpdatedDefinitionHashHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

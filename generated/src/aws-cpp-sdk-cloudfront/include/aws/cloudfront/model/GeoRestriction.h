@@ -113,12 +113,12 @@ class GeoRestriction {
   ///@}
  private:
   GeoRestrictionType m_restrictionType{GeoRestrictionType::NOT_SET};
-  bool m_restrictionTypeHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_items;
+  bool m_restrictionTypeHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

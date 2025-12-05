@@ -92,9 +92,9 @@ class TransformS3DataSource {
   ///@}
  private:
   S3DataType m_s3DataType{S3DataType::NOT_SET};
-  bool m_s3DataTypeHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_s3DataTypeHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class ViewRepresentationInput {
   ///@}
  private:
   ViewDialect m_dialect{ViewDialect::NOT_SET};
-  bool m_dialectHasBeenSet = false;
 
   Aws::String m_dialectVersion;
-  bool m_dialectVersionHasBeenSet = false;
 
   Aws::String m_viewOriginalText;
-  bool m_viewOriginalTextHasBeenSet = false;
 
   Aws::String m_validationConnection;
-  bool m_validationConnectionHasBeenSet = false;
 
   Aws::String m_viewExpandedText;
+  bool m_dialectHasBeenSet = false;
+  bool m_dialectVersionHasBeenSet = false;
+  bool m_viewOriginalTextHasBeenSet = false;
+  bool m_validationConnectionHasBeenSet = false;
   bool m_viewExpandedTextHasBeenSet = false;
 };
 

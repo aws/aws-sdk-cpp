@@ -188,27 +188,27 @@ class AlarmHistoryItem {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmContributorId;
-  bool m_alarmContributorIdHasBeenSet = false;
 
   AlarmType m_alarmType{AlarmType::NOT_SET};
-  bool m_alarmTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   HistoryItemType m_historyItemType{HistoryItemType::NOT_SET};
-  bool m_historyItemTypeHasBeenSet = false;
 
   Aws::String m_historySummary;
-  bool m_historySummaryHasBeenSet = false;
 
   Aws::String m_historyData;
-  bool m_historyDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_alarmContributorAttributes;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmContributorIdHasBeenSet = false;
+  bool m_alarmTypeHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_historyItemTypeHasBeenSet = false;
+  bool m_historySummaryHasBeenSet = false;
+  bool m_historyDataHasBeenSet = false;
   bool m_alarmContributorAttributesHasBeenSet = false;
 };
 

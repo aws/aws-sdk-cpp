@@ -112,15 +112,15 @@ class ConfigurationObject {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_minValue;
-  bool m_minValueHasBeenSet = false;
 
   Aws::String m_maxValue;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
   bool m_maxValueHasBeenSet = false;
 };
 

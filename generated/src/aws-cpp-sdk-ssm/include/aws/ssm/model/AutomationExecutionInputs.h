@@ -177,21 +177,21 @@ class AutomationExecutionInputs {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_targetParameterName;
-  bool m_targetParameterNameHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-  bool m_targetMapsHasBeenSet = false;
 
   Aws::Vector<TargetLocation> m_targetLocations;
-  bool m_targetLocationsHasBeenSet = false;
 
   Aws::String m_targetLocationsURL;
+  bool m_parametersHasBeenSet = false;
+  bool m_targetParameterNameHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_targetMapsHasBeenSet = false;
+  bool m_targetLocationsHasBeenSet = false;
   bool m_targetLocationsURLHasBeenSet = false;
 };
 

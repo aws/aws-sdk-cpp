@@ -109,12 +109,12 @@ class InstanceRequirements {
   ///@}
  private:
   Aws::Vector<Architecture> m_architectures;
-  bool m_architecturesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedInstanceTypes;
-  bool m_allowedInstanceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedInstanceTypes;
+  bool m_architecturesHasBeenSet = false;
+  bool m_allowedInstanceTypesHasBeenSet = false;
   bool m_excludedInstanceTypesHasBeenSet = false;
 };
 

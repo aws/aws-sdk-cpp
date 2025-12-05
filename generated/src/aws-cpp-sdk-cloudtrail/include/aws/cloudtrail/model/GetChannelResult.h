@@ -163,24 +163,24 @@ class GetChannelResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   SourceConfig m_sourceConfig;
-  bool m_sourceConfigHasBeenSet = false;
 
   Aws::Vector<Destination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   IngestionStatus m_ingestionStatus;
-  bool m_ingestionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_sourceConfigHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_ingestionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

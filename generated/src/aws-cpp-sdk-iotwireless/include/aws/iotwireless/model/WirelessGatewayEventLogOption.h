@@ -64,9 +64,9 @@ class WirelessGatewayEventLogOption {
   ///@}
  private:
   WirelessGatewayEvent m_event{WirelessGatewayEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
+  bool m_eventHasBeenSet = false;
   bool m_logLevelHasBeenSet = false;
 };
 

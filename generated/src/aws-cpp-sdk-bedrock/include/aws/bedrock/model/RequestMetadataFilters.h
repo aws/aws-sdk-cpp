@@ -134,15 +134,15 @@ class RequestMetadataFilters {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_equals;
-  bool m_equalsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_notEquals;
-  bool m_notEqualsHasBeenSet = false;
 
   Aws::Vector<RequestMetadataBaseFilters> m_andAll;
-  bool m_andAllHasBeenSet = false;
 
   Aws::Vector<RequestMetadataBaseFilters> m_orAll;
+  bool m_equalsHasBeenSet = false;
+  bool m_notEqualsHasBeenSet = false;
+  bool m_andAllHasBeenSet = false;
   bool m_orAllHasBeenSet = false;
 };
 

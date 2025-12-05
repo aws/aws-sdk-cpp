@@ -148,21 +148,21 @@ class ListJobExecutionsForThingRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_namespaceId;
-  bool m_namespaceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_thingNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_namespaceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

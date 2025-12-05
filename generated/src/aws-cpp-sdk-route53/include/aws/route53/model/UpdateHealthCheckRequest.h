@@ -540,54 +540,54 @@ class UpdateHealthCheckRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_healthCheckId;
-  bool m_healthCheckIdHasBeenSet = false;
 
   long long m_healthCheckVersion{0};
-  bool m_healthCheckVersionHasBeenSet = false;
 
   Aws::String m_iPAddress;
-  bool m_iPAddressHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_resourcePath;
-  bool m_resourcePathHasBeenSet = false;
 
   Aws::String m_fullyQualifiedDomainName;
-  bool m_fullyQualifiedDomainNameHasBeenSet = false;
 
   Aws::String m_searchString;
-  bool m_searchStringHasBeenSet = false;
 
   int m_failureThreshold{0};
-  bool m_failureThresholdHasBeenSet = false;
 
   bool m_inverted{false};
-  bool m_invertedHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   int m_healthThreshold{0};
-  bool m_healthThresholdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_childHealthChecks;
-  bool m_childHealthChecksHasBeenSet = false;
 
   bool m_enableSNI{false};
-  bool m_enableSNIHasBeenSet = false;
 
   Aws::Vector<HealthCheckRegion> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   AlarmIdentifier m_alarmIdentifier;
-  bool m_alarmIdentifierHasBeenSet = false;
 
   InsufficientDataHealthStatus m_insufficientDataHealthStatus{InsufficientDataHealthStatus::NOT_SET};
-  bool m_insufficientDataHealthStatusHasBeenSet = false;
 
   Aws::Vector<ResettableElementName> m_resetElements;
+  bool m_healthCheckIdHasBeenSet = false;
+  bool m_healthCheckVersionHasBeenSet = false;
+  bool m_iPAddressHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_resourcePathHasBeenSet = false;
+  bool m_fullyQualifiedDomainNameHasBeenSet = false;
+  bool m_searchStringHasBeenSet = false;
+  bool m_failureThresholdHasBeenSet = false;
+  bool m_invertedHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
+  bool m_healthThresholdHasBeenSet = false;
+  bool m_childHealthChecksHasBeenSet = false;
+  bool m_enableSNIHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_alarmIdentifierHasBeenSet = false;
+  bool m_insufficientDataHealthStatusHasBeenSet = false;
   bool m_resetElementsHasBeenSet = false;
 };
 

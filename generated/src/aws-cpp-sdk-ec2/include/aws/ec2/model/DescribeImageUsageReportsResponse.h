@@ -86,12 +86,12 @@ class DescribeImageUsageReportsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ImageUsageReport> m_imageUsageReports;
-  bool m_imageUsageReportsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_imageUsageReportsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

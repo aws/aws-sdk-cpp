@@ -156,18 +156,18 @@ class RouterInputFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regionNames;
-  bool m_regionNamesHasBeenSet = false;
 
   Aws::Vector<RouterInputType> m_inputTypes;
-  bool m_inputTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceArns;
-  bool m_networkInterfaceArnsHasBeenSet = false;
 
   Aws::Vector<RoutingScope> m_routingScopes;
+  bool m_regionNamesHasBeenSet = false;
+  bool m_inputTypesHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_networkInterfaceArnsHasBeenSet = false;
   bool m_routingScopesHasBeenSet = false;
 };
 

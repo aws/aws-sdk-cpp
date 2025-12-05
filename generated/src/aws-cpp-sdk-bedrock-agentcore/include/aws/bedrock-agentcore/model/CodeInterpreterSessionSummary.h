@@ -150,21 +150,21 @@ class CodeInterpreterSessionSummary {
   ///@}
  private:
   Aws::String m_codeInterpreterIdentifier;
-  bool m_codeInterpreterIdentifierHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CodeInterpreterSessionStatus m_status{CodeInterpreterSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_codeInterpreterIdentifierHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

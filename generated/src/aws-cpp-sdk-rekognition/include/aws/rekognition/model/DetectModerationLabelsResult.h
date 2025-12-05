@@ -148,21 +148,21 @@ class DetectModerationLabelsResult {
   ///@}
  private:
   Aws::Vector<ModerationLabel> m_moderationLabels;
-  bool m_moderationLabelsHasBeenSet = false;
 
   Aws::String m_moderationModelVersion;
-  bool m_moderationModelVersionHasBeenSet = false;
 
   HumanLoopActivationOutput m_humanLoopActivationOutput;
-  bool m_humanLoopActivationOutputHasBeenSet = false;
 
   Aws::String m_projectVersion;
-  bool m_projectVersionHasBeenSet = false;
 
   Aws::Vector<ContentType> m_contentTypes;
-  bool m_contentTypesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_moderationLabelsHasBeenSet = false;
+  bool m_moderationModelVersionHasBeenSet = false;
+  bool m_humanLoopActivationOutputHasBeenSet = false;
+  bool m_projectVersionHasBeenSet = false;
+  bool m_contentTypesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

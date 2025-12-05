@@ -87,12 +87,12 @@ class S3Source {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

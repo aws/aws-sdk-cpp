@@ -63,9 +63,9 @@ class GetQueryLoggingConfigResult {
   ///@}
  private:
   QueryLoggingConfig m_queryLoggingConfig;
-  bool m_queryLoggingConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryLoggingConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

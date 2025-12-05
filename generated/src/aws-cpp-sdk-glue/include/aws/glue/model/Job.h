@@ -606,81 +606,81 @@ class Job {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   JobMode m_jobMode{JobMode::NOT_SET};
-  bool m_jobModeHasBeenSet = false;
 
   bool m_jobRunQueuingEnabled{false};
-  bool m_jobRunQueuingEnabledHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   ExecutionProperty m_executionProperty;
-  bool m_executionPropertyHasBeenSet = false;
 
   JobCommand m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-  bool m_defaultArgumentsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_nonOverridableArguments;
-  bool m_nonOverridableArgumentsHasBeenSet = false;
 
   ConnectionsList m_connections;
-  bool m_connectionsHasBeenSet = false;
 
   int m_maxRetries{0};
-  bool m_maxRetriesHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   NotificationProperty m_notificationProperty;
-  bool m_notificationPropertyHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, CodeGenConfigurationNode> m_codeGenConfigurationNodes;
-  bool m_codeGenConfigurationNodesHasBeenSet = false;
 
   ExecutionClass m_executionClass{ExecutionClass::NOT_SET};
-  bool m_executionClassHasBeenSet = false;
 
   SourceControlDetails m_sourceControlDetails;
-  bool m_sourceControlDetailsHasBeenSet = false;
 
   Aws::String m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   Aws::String m_profileName;
+  bool m_nameHasBeenSet = false;
+  bool m_jobModeHasBeenSet = false;
+  bool m_jobRunQueuingEnabledHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_logUriHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_executionPropertyHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_defaultArgumentsHasBeenSet = false;
+  bool m_nonOverridableArgumentsHasBeenSet = false;
+  bool m_connectionsHasBeenSet = false;
+  bool m_maxRetriesHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_notificationPropertyHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_codeGenConfigurationNodesHasBeenSet = false;
+  bool m_executionClassHasBeenSet = false;
+  bool m_sourceControlDetailsHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
   bool m_profileNameHasBeenSet = false;
 };
 

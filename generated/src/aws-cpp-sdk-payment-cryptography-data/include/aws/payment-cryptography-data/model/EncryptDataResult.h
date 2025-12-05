@@ -97,15 +97,15 @@ class EncryptDataResult {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   Aws::String m_keyCheckValue;
-  bool m_keyCheckValueHasBeenSet = false;
 
   Aws::String m_cipherText;
-  bool m_cipherTextHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyArnHasBeenSet = false;
+  bool m_keyCheckValueHasBeenSet = false;
+  bool m_cipherTextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class FlowConnection {
   ///@}
  private:
   FlowConnectionType m_type{FlowConnectionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   FlowConnectionConfiguration m_configuration;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

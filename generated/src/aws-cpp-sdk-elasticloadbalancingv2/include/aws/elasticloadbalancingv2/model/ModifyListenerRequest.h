@@ -215,27 +215,27 @@ class ModifyListenerRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   ProtocolEnum m_protocol{ProtocolEnum::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_sslPolicy;
-  bool m_sslPolicyHasBeenSet = false;
 
   Aws::Vector<Certificate> m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   Aws::Vector<Action> m_defaultActions;
-  bool m_defaultActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alpnPolicy;
-  bool m_alpnPolicyHasBeenSet = false;
 
   MutualAuthenticationAttributes m_mutualAuthentication;
+  bool m_listenerArnHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_sslPolicyHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
+  bool m_defaultActionsHasBeenSet = false;
+  bool m_alpnPolicyHasBeenSet = false;
   bool m_mutualAuthenticationHasBeenSet = false;
 };
 

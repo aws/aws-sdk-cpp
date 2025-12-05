@@ -83,9 +83,9 @@ class ListAllowedNodeTypeModificationsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_replicationGroupId;
+  bool m_cacheClusterIdHasBeenSet = false;
   bool m_replicationGroupIdHasBeenSet = false;
 };
 

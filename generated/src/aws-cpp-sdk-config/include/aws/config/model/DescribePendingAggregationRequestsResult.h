@@ -86,12 +86,12 @@ class DescribePendingAggregationRequestsResult {
   ///@}
  private:
   Aws::Vector<PendingAggregationRequest> m_pendingAggregationRequests;
-  bool m_pendingAggregationRequestsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pendingAggregationRequestsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

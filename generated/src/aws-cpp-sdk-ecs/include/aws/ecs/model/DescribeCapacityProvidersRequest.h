@@ -153,18 +153,18 @@ class DescribeCapacityProvidersRequest : public ECSRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_capacityProviders;
-  bool m_capacityProvidersHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::Vector<CapacityProviderField> m_include;
-  bool m_includeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_capacityProvidersHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_includeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

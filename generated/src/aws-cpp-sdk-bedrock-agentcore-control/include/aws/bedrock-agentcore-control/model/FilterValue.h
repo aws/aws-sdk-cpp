@@ -83,12 +83,12 @@ class FilterValue {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   bool m_booleanValue{false};
+  bool m_stringValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
   bool m_booleanValueHasBeenSet = false;
 };
 

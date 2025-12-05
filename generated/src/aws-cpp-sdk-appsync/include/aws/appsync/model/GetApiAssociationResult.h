@@ -60,9 +60,9 @@ class GetApiAssociationResult {
   ///@}
  private:
   ApiAssociation m_apiAssociation;
-  bool m_apiAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

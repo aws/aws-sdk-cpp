@@ -82,12 +82,12 @@ class ListLogGroupsForQueryResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
-  bool m_logGroupIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logGroupIdentifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

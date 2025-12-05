@@ -173,24 +173,24 @@ class CreateCapacityManagerDataExportRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3BucketPrefix;
-  bool m_s3BucketPrefixHasBeenSet = false;
 
   Schedule m_schedule{Schedule::NOT_SET};
-  bool m_scheduleHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3BucketPrefixHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

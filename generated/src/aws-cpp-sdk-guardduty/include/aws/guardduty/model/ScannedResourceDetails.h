@@ -70,9 +70,9 @@ class ScannedResourceDetails {
   ///@}
  private:
   VolumeDetail m_ebsVolume;
-  bool m_ebsVolumeHasBeenSet = false;
 
   EbsSnapshot m_ebsSnapshot;
+  bool m_ebsVolumeHasBeenSet = false;
   bool m_ebsSnapshotHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class CloudWatchLoggingOptions {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logStreamName;
+  bool m_enabledHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_logStreamNameHasBeenSet = false;
 };
 

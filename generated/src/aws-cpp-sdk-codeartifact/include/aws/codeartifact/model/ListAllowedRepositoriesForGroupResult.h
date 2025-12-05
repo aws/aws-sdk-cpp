@@ -86,12 +86,12 @@ class ListAllowedRepositoriesForGroupResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedRepositories;
-  bool m_allowedRepositoriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_allowedRepositoriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

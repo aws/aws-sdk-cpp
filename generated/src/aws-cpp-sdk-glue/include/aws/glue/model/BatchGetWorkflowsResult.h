@@ -90,12 +90,12 @@ class BatchGetWorkflowsResult {
   ///@}
  private:
   Aws::Vector<Workflow> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_missingWorkflows;
-  bool m_missingWorkflowsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowsHasBeenSet = false;
+  bool m_missingWorkflowsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class SubjectStructure {
   ///@}
  private:
   long long m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_predicates;
+  bool m_countHasBeenSet = false;
   bool m_predicatesHasBeenSet = false;
 };
 

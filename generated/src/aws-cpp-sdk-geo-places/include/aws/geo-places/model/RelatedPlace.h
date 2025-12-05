@@ -153,21 +153,21 @@ class RelatedPlace {
   ///@}
  private:
   Aws::String m_placeId;
-  bool m_placeIdHasBeenSet = false;
 
   PlaceType m_placeType{PlaceType::NOT_SET};
-  bool m_placeTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   Aws::Vector<AccessPoint> m_accessPoints;
+  bool m_placeIdHasBeenSet = false;
+  bool m_placeTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
   bool m_accessPointsHasBeenSet = false;
 };
 

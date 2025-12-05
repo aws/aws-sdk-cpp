@@ -157,24 +157,24 @@ class PhysicalNetworkInterface {
   ///@}
  private:
   Aws::String m_defaultGateway;
-  bool m_defaultGatewayHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   IpAddressAssignment m_ipAddressAssignment{IpAddressAssignment::NOT_SET};
-  bool m_ipAddressAssignmentHasBeenSet = false;
 
   Aws::String m_macAddress;
-  bool m_macAddressHasBeenSet = false;
 
   Aws::String m_netmask;
-  bool m_netmaskHasBeenSet = false;
 
   PhysicalConnectorType m_physicalConnectorType{PhysicalConnectorType::NOT_SET};
-  bool m_physicalConnectorTypeHasBeenSet = false;
 
   Aws::String m_physicalNetworkInterfaceId;
+  bool m_defaultGatewayHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_ipAddressAssignmentHasBeenSet = false;
+  bool m_macAddressHasBeenSet = false;
+  bool m_netmaskHasBeenSet = false;
+  bool m_physicalConnectorTypeHasBeenSet = false;
   bool m_physicalNetworkInterfaceIdHasBeenSet = false;
 };
 

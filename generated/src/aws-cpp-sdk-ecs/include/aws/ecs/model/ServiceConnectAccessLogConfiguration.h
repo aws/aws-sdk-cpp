@@ -76,9 +76,9 @@ class ServiceConnectAccessLogConfiguration {
   ///@}
  private:
   ServiceConnectAccessLoggingFormat m_format{ServiceConnectAccessLoggingFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   ServiceConnectIncludeQueryParameters m_includeQueryParameters{ServiceConnectIncludeQueryParameters::NOT_SET};
+  bool m_formatHasBeenSet = false;
   bool m_includeQueryParametersHasBeenSet = false;
 };
 

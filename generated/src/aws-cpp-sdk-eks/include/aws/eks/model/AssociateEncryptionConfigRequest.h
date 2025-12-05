@@ -93,12 +93,12 @@ class AssociateEncryptionConfigRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Vector<EncryptionConfig> m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

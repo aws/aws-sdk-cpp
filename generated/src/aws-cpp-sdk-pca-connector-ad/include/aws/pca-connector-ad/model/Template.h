@@ -224,33 +224,33 @@ class Template {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   TemplateDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   int m_policySchema{0};
-  bool m_policySchemaHasBeenSet = false;
 
   TemplateRevision m_revision;
-  bool m_revisionHasBeenSet = false;
 
   TemplateStatus m_status{TemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_objectIdentifierHasBeenSet = false;
+  bool m_policySchemaHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -155,21 +155,21 @@ class EksContainerSecurityContext {
   ///@}
  private:
   long long m_runAsUser{0};
-  bool m_runAsUserHasBeenSet = false;
 
   long long m_runAsGroup{0};
-  bool m_runAsGroupHasBeenSet = false;
 
   bool m_privileged{false};
-  bool m_privilegedHasBeenSet = false;
 
   bool m_allowPrivilegeEscalation{false};
-  bool m_allowPrivilegeEscalationHasBeenSet = false;
 
   bool m_readOnlyRootFilesystem{false};
-  bool m_readOnlyRootFilesystemHasBeenSet = false;
 
   bool m_runAsNonRoot{false};
+  bool m_runAsUserHasBeenSet = false;
+  bool m_runAsGroupHasBeenSet = false;
+  bool m_privilegedHasBeenSet = false;
+  bool m_allowPrivilegeEscalationHasBeenSet = false;
+  bool m_readOnlyRootFilesystemHasBeenSet = false;
   bool m_runAsNonRootHasBeenSet = false;
 };
 

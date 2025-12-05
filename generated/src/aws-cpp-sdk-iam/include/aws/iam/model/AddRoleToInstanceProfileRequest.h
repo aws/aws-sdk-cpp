@@ -76,9 +76,9 @@ class AddRoleToInstanceProfileRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_instanceProfileName;
-  bool m_instanceProfileNameHasBeenSet = false;
 
   Aws::String m_roleName;
+  bool m_instanceProfileNameHasBeenSet = false;
   bool m_roleNameHasBeenSet = false;
 };
 

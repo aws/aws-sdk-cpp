@@ -151,21 +151,21 @@ class CreateIdNamespaceAssociationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   IdNamespaceAssociationInputReferenceConfig m_inputReferenceConfig;
-  bool m_inputReferenceConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IdMappingConfig m_idMappingConfig;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_inputReferenceConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_idMappingConfigHasBeenSet = false;
 };
 

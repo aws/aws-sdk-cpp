@@ -111,15 +111,15 @@ class ResolutionTechniques {
   ///@}
  private:
   ResolutionType m_resolutionType{ResolutionType::NOT_SET};
-  bool m_resolutionTypeHasBeenSet = false;
 
   RuleBasedProperties m_ruleBasedProperties;
-  bool m_ruleBasedPropertiesHasBeenSet = false;
 
   RuleConditionProperties m_ruleConditionProperties;
-  bool m_ruleConditionPropertiesHasBeenSet = false;
 
   ProviderProperties m_providerProperties;
+  bool m_resolutionTypeHasBeenSet = false;
+  bool m_ruleBasedPropertiesHasBeenSet = false;
+  bool m_ruleConditionPropertiesHasBeenSet = false;
   bool m_providerPropertiesHasBeenSet = false;
 };
 

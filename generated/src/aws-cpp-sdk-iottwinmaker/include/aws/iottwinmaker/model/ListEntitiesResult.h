@@ -84,12 +84,12 @@ class ListEntitiesResult {
   ///@}
  private:
   Aws::Vector<EntitySummary> m_entitySummaries;
-  bool m_entitySummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitySummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

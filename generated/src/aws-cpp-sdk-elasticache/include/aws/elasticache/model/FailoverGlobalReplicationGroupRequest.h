@@ -87,12 +87,12 @@ class FailoverGlobalReplicationGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   Aws::String m_primaryRegion;
-  bool m_primaryRegionHasBeenSet = false;
 
   Aws::String m_primaryReplicationGroupId;
+  bool m_globalReplicationGroupIdHasBeenSet = false;
+  bool m_primaryRegionHasBeenSet = false;
   bool m_primaryReplicationGroupIdHasBeenSet = false;
 };
 

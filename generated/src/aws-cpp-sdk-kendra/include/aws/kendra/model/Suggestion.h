@@ -98,12 +98,12 @@ class Suggestion {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SuggestionValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<SourceDocument> m_sourceDocuments;
+  bool m_idHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_sourceDocumentsHasBeenSet = false;
 };
 

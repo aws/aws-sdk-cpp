@@ -256,36 +256,36 @@ class ServiceLevelObjective {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   ServiceLevelIndicator m_sli;
-  bool m_sliHasBeenSet = false;
 
   RequestBasedServiceLevelIndicator m_requestBasedSli;
-  bool m_requestBasedSliHasBeenSet = false;
 
   EvaluationType m_evaluationType{EvaluationType::NOT_SET};
-  bool m_evaluationTypeHasBeenSet = false;
 
   Goal m_goal;
-  bool m_goalHasBeenSet = false;
 
   Aws::Vector<BurnRateConfiguration> m_burnRateConfigurations;
-  bool m_burnRateConfigurationsHasBeenSet = false;
 
   MetricSourceType m_metricSourceType{MetricSourceType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_sliHasBeenSet = false;
+  bool m_requestBasedSliHasBeenSet = false;
+  bool m_evaluationTypeHasBeenSet = false;
+  bool m_goalHasBeenSet = false;
+  bool m_burnRateConfigurationsHasBeenSet = false;
   bool m_metricSourceTypeHasBeenSet = false;
 };
 

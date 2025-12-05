@@ -165,24 +165,24 @@ class PivotTableConfiguration {
   ///@}
  private:
   PivotTableFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   PivotTableSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   PivotTableOptions m_tableOptions;
-  bool m_tableOptionsHasBeenSet = false;
 
   PivotTableTotalOptions m_totalOptions;
-  bool m_totalOptionsHasBeenSet = false;
 
   PivotTableFieldOptions m_fieldOptions;
-  bool m_fieldOptionsHasBeenSet = false;
 
   PivotTablePaginatedReportOptions m_paginatedReportOptions;
-  bool m_paginatedReportOptionsHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_tableOptionsHasBeenSet = false;
+  bool m_totalOptionsHasBeenSet = false;
+  bool m_fieldOptionsHasBeenSet = false;
+  bool m_paginatedReportOptionsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

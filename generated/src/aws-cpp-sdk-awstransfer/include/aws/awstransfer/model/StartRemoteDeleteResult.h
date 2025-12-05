@@ -59,9 +59,9 @@ class StartRemoteDeleteResult {
   ///@}
  private:
   Aws::String m_deleteId;
-  bool m_deleteIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deleteIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -149,21 +149,21 @@ class Metadata {
   ///@}
  private:
   Aws::String m_clientRequestId;
-  bool m_clientRequestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   long long m_operationTotalTimeMs{0};
-  bool m_operationTotalTimeMsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_totalTimeMs{0};
-  bool m_totalTimeMsHasBeenSet = false;
 
   Usage m_usage;
+  bool m_clientRequestIdHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_operationTotalTimeMsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_totalTimeMsHasBeenSet = false;
   bool m_usageHasBeenSet = false;
 };
 

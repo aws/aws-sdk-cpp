@@ -88,12 +88,12 @@ class UpdateHostRequest : public CodeStarconnectionsRequest {
   ///@}
  private:
   Aws::String m_hostArn;
-  bool m_hostArnHasBeenSet = false;
 
   Aws::String m_providerEndpoint;
-  bool m_providerEndpointHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
+  bool m_hostArnHasBeenSet = false;
+  bool m_providerEndpointHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

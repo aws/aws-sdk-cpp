@@ -112,12 +112,12 @@ class PermissionModel {
   ///@}
  private:
   Aws::Vector<Aws::String> m_crossAccountRoleArns;
-  bool m_crossAccountRoleArnsHasBeenSet = false;
 
   Aws::String m_invokerRoleName;
-  bool m_invokerRoleNameHasBeenSet = false;
 
   PermissionModelType m_type{PermissionModelType::NOT_SET};
+  bool m_crossAccountRoleArnsHasBeenSet = false;
+  bool m_invokerRoleNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

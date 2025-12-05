@@ -84,12 +84,12 @@ class ModifyVpcEndpointServicePermissionsResponse {
   ///@}
  private:
   Aws::Vector<AddedPrincipal> m_addedPrincipals;
-  bool m_addedPrincipalsHasBeenSet = false;
 
   bool m_returnValue{false};
-  bool m_returnValueHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_addedPrincipalsHasBeenSet = false;
+  bool m_returnValueHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

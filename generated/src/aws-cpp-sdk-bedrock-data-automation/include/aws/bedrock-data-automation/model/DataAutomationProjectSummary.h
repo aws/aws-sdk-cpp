@@ -111,18 +111,18 @@ class DataAutomationProjectSummary {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
-  bool m_projectStageHasBeenSet = false;
 
   DataAutomationProjectType m_projectType{DataAutomationProjectType::NOT_SET};
-  bool m_projectTypeHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_projectArnHasBeenSet = false;
+  bool m_projectStageHasBeenSet = false;
+  bool m_projectTypeHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

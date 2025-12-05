@@ -168,27 +168,27 @@ class RuntimeLogConfigurations {
   ///@}
  private:
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   LogLevel m_logFlushLevel{LogLevel::NOT_SET};
-  bool m_logFlushLevelHasBeenSet = false;
 
   Aws::String m_localStoreLocation;
-  bool m_localStoreLocationHasBeenSet = false;
 
   int m_localStoreFileRotationMaxFiles{0};
-  bool m_localStoreFileRotationMaxFilesHasBeenSet = false;
 
   int m_localStoreFileRotationMaxBytes{0};
-  bool m_localStoreFileRotationMaxBytesHasBeenSet = false;
 
   bool m_uploadLog{false};
-  bool m_uploadLogHasBeenSet = false;
 
   int m_uploadPeriodMinutes{0};
-  bool m_uploadPeriodMinutesHasBeenSet = false;
 
   bool m_deleteLocalStoreAfterUpload{false};
+  bool m_logLevelHasBeenSet = false;
+  bool m_logFlushLevelHasBeenSet = false;
+  bool m_localStoreLocationHasBeenSet = false;
+  bool m_localStoreFileRotationMaxFilesHasBeenSet = false;
+  bool m_localStoreFileRotationMaxBytesHasBeenSet = false;
+  bool m_uploadLogHasBeenSet = false;
+  bool m_uploadPeriodMinutesHasBeenSet = false;
   bool m_deleteLocalStoreAfterUploadHasBeenSet = false;
 };
 

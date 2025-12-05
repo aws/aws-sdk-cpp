@@ -167,21 +167,21 @@ class ProtectionGroup {
   ///@}
  private:
   Aws::String m_protectionGroupId;
-  bool m_protectionGroupIdHasBeenSet = false;
 
   ProtectionGroupAggregation m_aggregation{ProtectionGroupAggregation::NOT_SET};
-  bool m_aggregationHasBeenSet = false;
 
   ProtectionGroupPattern m_pattern{ProtectionGroupPattern::NOT_SET};
-  bool m_patternHasBeenSet = false;
 
   ProtectedResourceType m_resourceType{ProtectedResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_members;
-  bool m_membersHasBeenSet = false;
 
   Aws::String m_protectionGroupArn;
+  bool m_protectionGroupIdHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
+  bool m_patternHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_membersHasBeenSet = false;
   bool m_protectionGroupArnHasBeenSet = false;
 };
 

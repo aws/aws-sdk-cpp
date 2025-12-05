@@ -131,18 +131,18 @@ class Transition {
   ///@}
  private:
   long long m_durationMillis{0};
-  bool m_durationMillisHasBeenSet = false;
 
   RelativePosition m_relativePosition{RelativePosition::NOT_SET};
-  bool m_relativePositionHasBeenSet = false;
 
   Aws::String m_relativeProgram;
-  bool m_relativeProgramHasBeenSet = false;
 
   long long m_scheduledStartTimeMillis{0};
-  bool m_scheduledStartTimeMillisHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_durationMillisHasBeenSet = false;
+  bool m_relativePositionHasBeenSet = false;
+  bool m_relativeProgramHasBeenSet = false;
+  bool m_scheduledStartTimeMillisHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

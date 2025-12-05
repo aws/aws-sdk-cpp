@@ -70,9 +70,9 @@ class GlobalTableBorderOptions {
   ///@}
  private:
   TableBorderOptions m_uniformBorder;
-  bool m_uniformBorderHasBeenSet = false;
 
   TableSideBorderOptions m_sideSpecificBorder;
+  bool m_uniformBorderHasBeenSet = false;
   bool m_sideSpecificBorderHasBeenSet = false;
 };
 

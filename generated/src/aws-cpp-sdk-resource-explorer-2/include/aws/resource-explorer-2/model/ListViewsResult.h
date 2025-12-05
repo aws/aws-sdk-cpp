@@ -88,12 +88,12 @@ class ListViewsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_views;
-  bool m_viewsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_viewsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

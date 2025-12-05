@@ -81,9 +81,9 @@ class FulfillmentActivity {
   ///@}
  private:
   FulfillmentActivityType m_type{FulfillmentActivityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CodeHook m_codeHook;
+  bool m_typeHasBeenSet = false;
   bool m_codeHookHasBeenSet = false;
 };
 

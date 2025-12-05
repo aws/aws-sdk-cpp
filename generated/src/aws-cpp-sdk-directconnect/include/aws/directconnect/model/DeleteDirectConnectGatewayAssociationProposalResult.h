@@ -65,9 +65,9 @@ class DeleteDirectConnectGatewayAssociationProposalResult {
   ///@}
  private:
   DirectConnectGatewayAssociationProposal m_directConnectGatewayAssociationProposal;
-  bool m_directConnectGatewayAssociationProposalHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directConnectGatewayAssociationProposalHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

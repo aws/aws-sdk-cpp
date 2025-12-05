@@ -69,9 +69,9 @@ class QnAIntentConfiguration {
   ///@}
  private:
   DataSourceConfiguration m_dataSourceConfiguration;
-  bool m_dataSourceConfigurationHasBeenSet = false;
 
   BedrockModelSpecification m_bedrockModelConfiguration;
+  bool m_dataSourceConfigurationHasBeenSet = false;
   bool m_bedrockModelConfigurationHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class AutomatedReasoningPolicyDefinitionElement {
   ///@}
  private:
   AutomatedReasoningPolicyDefinitionVariable m_policyDefinitionVariable;
-  bool m_policyDefinitionVariableHasBeenSet = false;
 
   AutomatedReasoningPolicyDefinitionType m_policyDefinitionType;
-  bool m_policyDefinitionTypeHasBeenSet = false;
 
   AutomatedReasoningPolicyDefinitionRule m_policyDefinitionRule;
+  bool m_policyDefinitionVariableHasBeenSet = false;
+  bool m_policyDefinitionTypeHasBeenSet = false;
   bool m_policyDefinitionRuleHasBeenSet = false;
 };
 

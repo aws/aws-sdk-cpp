@@ -67,9 +67,9 @@ class UpdateActiveModelVersionRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   long long m_modelVersion{0};
+  bool m_modelNameHasBeenSet = false;
   bool m_modelVersionHasBeenSet = false;
 };
 

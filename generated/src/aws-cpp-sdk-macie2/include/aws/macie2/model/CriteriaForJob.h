@@ -73,9 +73,9 @@ class CriteriaForJob {
   ///@}
  private:
   SimpleCriterionForJob m_simpleCriterion;
-  bool m_simpleCriterionHasBeenSet = false;
 
   TagCriterionForJob m_tagCriterion;
+  bool m_simpleCriterionHasBeenSet = false;
   bool m_tagCriterionHasBeenSet = false;
 };
 

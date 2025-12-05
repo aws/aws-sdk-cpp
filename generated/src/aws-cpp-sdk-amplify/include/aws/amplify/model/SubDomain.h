@@ -85,12 +85,12 @@ class SubDomain {
   ///@}
  private:
   SubDomainSetting m_subDomainSetting;
-  bool m_subDomainSettingHasBeenSet = false;
 
   bool m_verified{false};
-  bool m_verifiedHasBeenSet = false;
 
   Aws::String m_dnsRecord;
+  bool m_subDomainSettingHasBeenSet = false;
+  bool m_verifiedHasBeenSet = false;
   bool m_dnsRecordHasBeenSet = false;
 };
 

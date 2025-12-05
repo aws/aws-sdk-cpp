@@ -79,9 +79,9 @@ class UpdateUsagePlanRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_usagePlanId;
-  bool m_usagePlanIdHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_usagePlanIdHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

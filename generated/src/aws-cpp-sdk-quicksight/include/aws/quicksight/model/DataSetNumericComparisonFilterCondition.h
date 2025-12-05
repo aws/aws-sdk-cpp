@@ -70,9 +70,9 @@ class DataSetNumericComparisonFilterCondition {
   ///@}
  private:
   DataSetNumericComparisonFilterOperator m_operator{DataSetNumericComparisonFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DataSetNumericFilterValue m_value;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

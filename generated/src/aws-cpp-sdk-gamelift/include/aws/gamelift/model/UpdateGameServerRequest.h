@@ -126,18 +126,18 @@ class UpdateGameServerRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::String m_gameServerId;
-  bool m_gameServerIdHasBeenSet = false;
 
   Aws::String m_gameServerData;
-  bool m_gameServerDataHasBeenSet = false;
 
   GameServerUtilizationStatus m_utilizationStatus{GameServerUtilizationStatus::NOT_SET};
-  bool m_utilizationStatusHasBeenSet = false;
 
   GameServerHealthCheck m_healthCheck{GameServerHealthCheck::NOT_SET};
+  bool m_gameServerGroupNameHasBeenSet = false;
+  bool m_gameServerIdHasBeenSet = false;
+  bool m_gameServerDataHasBeenSet = false;
+  bool m_utilizationStatusHasBeenSet = false;
   bool m_healthCheckHasBeenSet = false;
 };
 

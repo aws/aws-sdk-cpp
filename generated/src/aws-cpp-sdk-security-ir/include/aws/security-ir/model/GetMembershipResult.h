@@ -291,45 +291,45 @@ class GetMembershipResult {
   ///@}
  private:
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AwsRegion m_region{AwsRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_membershipName;
-  bool m_membershipNameHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   MembershipStatus m_membershipStatus{MembershipStatus::NOT_SET};
-  bool m_membershipStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_membershipActivationTimestamp{};
-  bool m_membershipActivationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_membershipDeactivationTimestamp{};
-  bool m_membershipDeactivationTimestampHasBeenSet = false;
 
   CustomerType m_customerType{CustomerType::NOT_SET};
-  bool m_customerTypeHasBeenSet = false;
 
   long long m_numberOfAccountsCovered{0};
-  bool m_numberOfAccountsCoveredHasBeenSet = false;
 
   Aws::Vector<IncidentResponder> m_incidentResponseTeam;
-  bool m_incidentResponseTeamHasBeenSet = false;
 
   Aws::Vector<OptInFeature> m_optInFeatures;
-  bool m_optInFeaturesHasBeenSet = false;
 
   MembershipAccountsConfigurations m_membershipAccountsConfigurations;
-  bool m_membershipAccountsConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_membershipNameHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_membershipStatusHasBeenSet = false;
+  bool m_membershipActivationTimestampHasBeenSet = false;
+  bool m_membershipDeactivationTimestampHasBeenSet = false;
+  bool m_customerTypeHasBeenSet = false;
+  bool m_numberOfAccountsCoveredHasBeenSet = false;
+  bool m_incidentResponseTeamHasBeenSet = false;
+  bool m_optInFeaturesHasBeenSet = false;
+  bool m_membershipAccountsConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

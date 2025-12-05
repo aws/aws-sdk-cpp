@@ -113,15 +113,15 @@ class IpPermission {
   ///@}
  private:
   int m_fromPort{0};
-  bool m_fromPortHasBeenSet = false;
 
   int m_toPort{0};
-  bool m_toPortHasBeenSet = false;
 
   Aws::String m_ipRange;
-  bool m_ipRangeHasBeenSet = false;
 
   IpProtocol m_protocol{IpProtocol::NOT_SET};
+  bool m_fromPortHasBeenSet = false;
+  bool m_toPortHasBeenSet = false;
+  bool m_ipRangeHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

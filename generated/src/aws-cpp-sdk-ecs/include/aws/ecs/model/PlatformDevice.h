@@ -71,9 +71,9 @@ class PlatformDevice {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   PlatformDeviceType m_type{PlatformDeviceType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

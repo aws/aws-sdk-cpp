@@ -80,9 +80,9 @@ class ReceiptRuleSetMetadata {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_nameHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class PricingDetail {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   double m_price{0.0};
+  bool m_countHasBeenSet = false;
   bool m_priceHasBeenSet = false;
 };
 

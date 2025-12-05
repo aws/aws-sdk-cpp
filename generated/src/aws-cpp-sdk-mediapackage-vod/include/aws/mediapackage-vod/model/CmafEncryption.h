@@ -69,9 +69,9 @@ class CmafEncryption {
   ///@}
  private:
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
+  bool m_constantInitializationVectorHasBeenSet = false;
   bool m_spekeKeyProviderHasBeenSet = false;
 };
 

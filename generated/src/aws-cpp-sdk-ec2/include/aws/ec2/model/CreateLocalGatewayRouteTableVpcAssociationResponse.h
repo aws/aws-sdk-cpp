@@ -64,9 +64,9 @@ class CreateLocalGatewayRouteTableVpcAssociationResponse {
   ///@}
  private:
   LocalGatewayRouteTableVpcAssociation m_localGatewayRouteTableVpcAssociation;
-  bool m_localGatewayRouteTableVpcAssociationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_localGatewayRouteTableVpcAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

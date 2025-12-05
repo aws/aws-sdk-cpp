@@ -157,24 +157,24 @@ class WorkloadData {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_documentationUrl;
-  bool m_documentationUrlHasBeenSet = false;
 
   Aws::String m_iconUrl;
-  bool m_iconUrlHasBeenSet = false;
 
   WorkloadStatus m_status{WorkloadStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_workloadName;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_documentationUrlHasBeenSet = false;
+  bool m_iconUrlHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
 };
 

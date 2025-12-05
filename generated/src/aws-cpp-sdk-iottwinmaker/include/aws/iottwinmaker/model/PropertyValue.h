@@ -80,9 +80,9 @@ class PropertyValue {
   ///@}
  private:
   DataValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_time;
+  bool m_valueHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

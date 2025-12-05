@@ -88,12 +88,12 @@ class MediaLiveInputRouterOutputConfiguration {
   ///@}
  private:
   Aws::String m_mediaLiveInputArn;
-  bool m_mediaLiveInputArnHasBeenSet = false;
 
   MediaLiveInputPipelineId m_mediaLivePipelineId{MediaLiveInputPipelineId::NOT_SET};
-  bool m_mediaLivePipelineIdHasBeenSet = false;
 
   MediaLiveTransitEncryption m_destinationTransitEncryption;
+  bool m_mediaLiveInputArnHasBeenSet = false;
+  bool m_mediaLivePipelineIdHasBeenSet = false;
   bool m_destinationTransitEncryptionHasBeenSet = false;
 };
 

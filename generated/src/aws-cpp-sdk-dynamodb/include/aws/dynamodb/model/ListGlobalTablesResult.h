@@ -84,12 +84,12 @@ class ListGlobalTablesResult {
   ///@}
  private:
   Aws::Vector<GlobalTable> m_globalTables;
-  bool m_globalTablesHasBeenSet = false;
 
   Aws::String m_lastEvaluatedGlobalTableName;
-  bool m_lastEvaluatedGlobalTableNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_globalTablesHasBeenSet = false;
+  bool m_lastEvaluatedGlobalTableNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

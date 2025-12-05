@@ -251,39 +251,39 @@ class Network {
   ///@}
  private:
   NetworkDirection m_direction{NetworkDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   PortRange m_openPortRange;
-  bool m_openPortRangeHasBeenSet = false;
 
   Aws::String m_sourceIpV4;
-  bool m_sourceIpV4HasBeenSet = false;
 
   Aws::String m_sourceIpV6;
-  bool m_sourceIpV6HasBeenSet = false;
 
   int m_sourcePort{0};
-  bool m_sourcePortHasBeenSet = false;
 
   Aws::String m_sourceDomain;
-  bool m_sourceDomainHasBeenSet = false;
 
   Aws::String m_sourceMac;
-  bool m_sourceMacHasBeenSet = false;
 
   Aws::String m_destinationIpV4;
-  bool m_destinationIpV4HasBeenSet = false;
 
   Aws::String m_destinationIpV6;
-  bool m_destinationIpV6HasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Aws::String m_destinationDomain;
+  bool m_directionHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_openPortRangeHasBeenSet = false;
+  bool m_sourceIpV4HasBeenSet = false;
+  bool m_sourceIpV6HasBeenSet = false;
+  bool m_sourcePortHasBeenSet = false;
+  bool m_sourceDomainHasBeenSet = false;
+  bool m_sourceMacHasBeenSet = false;
+  bool m_destinationIpV4HasBeenSet = false;
+  bool m_destinationIpV6HasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
   bool m_destinationDomainHasBeenSet = false;
 };
 

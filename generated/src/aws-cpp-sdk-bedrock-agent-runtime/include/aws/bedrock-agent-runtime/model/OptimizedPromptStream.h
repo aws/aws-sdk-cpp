@@ -189,27 +189,27 @@ class OptimizedPromptStream {
   ///@}
  private:
   BedrockAgentRuntimeError m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
 
   AnalyzePromptEvent m_analyzePromptEvent;
-  bool m_analyzePromptEventHasBeenSet = false;
 
   BadGatewayException m_badGatewayException;
-  bool m_badGatewayExceptionHasBeenSet = false;
 
   DependencyFailedException m_dependencyFailedException;
-  bool m_dependencyFailedExceptionHasBeenSet = false;
 
   InternalServerException m_internalServerException;
-  bool m_internalServerExceptionHasBeenSet = false;
 
   OptimizedPromptEvent m_optimizedPromptEvent;
-  bool m_optimizedPromptEventHasBeenSet = false;
 
   BedrockAgentRuntimeError m_throttlingException;
-  bool m_throttlingExceptionHasBeenSet = false;
 
   BedrockAgentRuntimeError m_validationException;
+  bool m_accessDeniedExceptionHasBeenSet = false;
+  bool m_analyzePromptEventHasBeenSet = false;
+  bool m_badGatewayExceptionHasBeenSet = false;
+  bool m_dependencyFailedExceptionHasBeenSet = false;
+  bool m_internalServerExceptionHasBeenSet = false;
+  bool m_optimizedPromptEventHasBeenSet = false;
+  bool m_throttlingExceptionHasBeenSet = false;
   bool m_validationExceptionHasBeenSet = false;
 };
 

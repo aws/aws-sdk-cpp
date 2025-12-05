@@ -95,12 +95,12 @@ class DescribeTrustsResult {
   ///@}
  private:
   Aws::Vector<Trust> m_trusts;
-  bool m_trustsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

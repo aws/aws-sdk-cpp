@@ -246,39 +246,39 @@ class DescribeBotRecommendationResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   BotRecommendationStatus m_botRecommendationStatus{BotRecommendationStatus::NOT_SET};
-  bool m_botRecommendationStatusHasBeenSet = false;
 
   Aws::String m_botRecommendationId;
-  bool m_botRecommendationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   TranscriptSourceSetting m_transcriptSourceSetting;
-  bool m_transcriptSourceSettingHasBeenSet = false;
 
   EncryptionSetting m_encryptionSetting;
-  bool m_encryptionSettingHasBeenSet = false;
 
   BotRecommendationResults m_botRecommendationResults;
-  bool m_botRecommendationResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_botRecommendationStatusHasBeenSet = false;
+  bool m_botRecommendationIdHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_transcriptSourceSettingHasBeenSet = false;
+  bool m_encryptionSettingHasBeenSet = false;
+  bool m_botRecommendationResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

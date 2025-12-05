@@ -181,30 +181,30 @@ class DataMigrationStatistics {
   ///@}
  private:
   int m_tablesLoaded{0};
-  bool m_tablesLoadedHasBeenSet = false;
 
   long long m_elapsedTimeMillis{0};
-  bool m_elapsedTimeMillisHasBeenSet = false;
 
   int m_tablesLoading{0};
-  bool m_tablesLoadingHasBeenSet = false;
 
   int m_fullLoadPercentage{0};
-  bool m_fullLoadPercentageHasBeenSet = false;
 
   int m_cDCLatency{0};
-  bool m_cDCLatencyHasBeenSet = false;
 
   int m_tablesQueued{0};
-  bool m_tablesQueuedHasBeenSet = false;
 
   int m_tablesErrored{0};
-  bool m_tablesErroredHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
+  bool m_tablesLoadedHasBeenSet = false;
+  bool m_elapsedTimeMillisHasBeenSet = false;
+  bool m_tablesLoadingHasBeenSet = false;
+  bool m_fullLoadPercentageHasBeenSet = false;
+  bool m_cDCLatencyHasBeenSet = false;
+  bool m_tablesQueuedHasBeenSet = false;
+  bool m_tablesErroredHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_stopTimeHasBeenSet = false;
 };
 

@@ -150,18 +150,18 @@ class OrganizationConfigRuleStatus {
   ///@}
  private:
   Aws::String m_organizationConfigRuleName;
-  bool m_organizationConfigRuleNameHasBeenSet = false;
 
   OrganizationRuleStatus m_organizationRuleStatus{OrganizationRuleStatus::NOT_SET};
-  bool m_organizationRuleStatusHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
+  bool m_organizationConfigRuleNameHasBeenSet = false;
+  bool m_organizationRuleStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
 };
 

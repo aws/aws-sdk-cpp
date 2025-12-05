@@ -84,9 +84,9 @@ class SizeConstraintSetUpdate {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   SizeConstraint m_sizeConstraint;
+  bool m_actionHasBeenSet = false;
   bool m_sizeConstraintHasBeenSet = false;
 };
 

@@ -122,18 +122,18 @@ class CostAllocationTagBackfillRequest {
   ///@}
  private:
   Aws::String m_backfillFrom;
-  bool m_backfillFromHasBeenSet = false;
 
   Aws::String m_requestedAt;
-  bool m_requestedAtHasBeenSet = false;
 
   Aws::String m_completedAt;
-  bool m_completedAtHasBeenSet = false;
 
   CostAllocationTagBackfillStatus m_backfillStatus{CostAllocationTagBackfillStatus::NOT_SET};
-  bool m_backfillStatusHasBeenSet = false;
 
   Aws::String m_lastUpdatedAt;
+  bool m_backfillFromHasBeenSet = false;
+  bool m_requestedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_backfillStatusHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

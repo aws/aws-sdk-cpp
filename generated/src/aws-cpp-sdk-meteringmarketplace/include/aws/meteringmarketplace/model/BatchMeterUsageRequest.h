@@ -83,9 +83,9 @@ class BatchMeterUsageRequest : public MarketplaceMeteringRequest {
   ///@}
  private:
   Aws::Vector<UsageRecord> m_usageRecords;
-  bool m_usageRecordsHasBeenSet = false;
 
   Aws::String m_productCode;
+  bool m_usageRecordsHasBeenSet = false;
   bool m_productCodeHasBeenSet = false;
 };
 

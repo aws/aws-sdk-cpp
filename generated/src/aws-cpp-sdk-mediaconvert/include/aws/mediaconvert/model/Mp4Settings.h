@@ -222,30 +222,30 @@ class Mp4Settings {
   ///@}
  private:
   CmfcAudioDuration m_audioDuration{CmfcAudioDuration::NOT_SET};
-  bool m_audioDurationHasBeenSet = false;
 
   Mp4C2paManifest m_c2paManifest{Mp4C2paManifest::NOT_SET};
-  bool m_c2paManifestHasBeenSet = false;
 
   Aws::String m_certificateSecret;
-  bool m_certificateSecretHasBeenSet = false;
 
   Mp4CslgAtom m_cslgAtom{Mp4CslgAtom::NOT_SET};
-  bool m_cslgAtomHasBeenSet = false;
 
   int m_cttsVersion{0};
-  bool m_cttsVersionHasBeenSet = false;
 
   Mp4FreeSpaceBox m_freeSpaceBox{Mp4FreeSpaceBox::NOT_SET};
-  bool m_freeSpaceBoxHasBeenSet = false;
 
   Mp4MoovPlacement m_moovPlacement{Mp4MoovPlacement::NOT_SET};
-  bool m_moovPlacementHasBeenSet = false;
 
   Aws::String m_mp4MajorBrand;
-  bool m_mp4MajorBrandHasBeenSet = false;
 
   Aws::String m_signingKmsKey;
+  bool m_audioDurationHasBeenSet = false;
+  bool m_c2paManifestHasBeenSet = false;
+  bool m_certificateSecretHasBeenSet = false;
+  bool m_cslgAtomHasBeenSet = false;
+  bool m_cttsVersionHasBeenSet = false;
+  bool m_freeSpaceBoxHasBeenSet = false;
+  bool m_moovPlacementHasBeenSet = false;
+  bool m_mp4MajorBrandHasBeenSet = false;
   bool m_signingKmsKeyHasBeenSet = false;
 };
 

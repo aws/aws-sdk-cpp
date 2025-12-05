@@ -59,9 +59,9 @@ class CreateThreatIntelSetResult {
   ///@}
  private:
   Aws::String m_threatIntelSetId;
-  bool m_threatIntelSetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_threatIntelSetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

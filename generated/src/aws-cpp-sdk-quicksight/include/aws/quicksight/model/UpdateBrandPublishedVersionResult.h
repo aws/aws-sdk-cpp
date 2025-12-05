@@ -59,9 +59,9 @@ class UpdateBrandPublishedVersionResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_requestIdHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

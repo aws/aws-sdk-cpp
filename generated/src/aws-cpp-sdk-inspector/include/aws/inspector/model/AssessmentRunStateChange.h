@@ -68,9 +68,9 @@ class AssessmentRunStateChange {
   ///@}
  private:
   Aws::Utils::DateTime m_stateChangedAt{};
-  bool m_stateChangedAtHasBeenSet = false;
 
   AssessmentRunState m_state{AssessmentRunState::NOT_SET};
+  bool m_stateChangedAtHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

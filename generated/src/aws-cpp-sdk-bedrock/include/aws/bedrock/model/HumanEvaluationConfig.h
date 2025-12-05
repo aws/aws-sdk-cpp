@@ -118,12 +118,12 @@ class HumanEvaluationConfig {
   ///@}
  private:
   HumanWorkflowConfig m_humanWorkflowConfig;
-  bool m_humanWorkflowConfigHasBeenSet = false;
 
   Aws::Vector<HumanEvaluationCustomMetric> m_customMetrics;
-  bool m_customMetricsHasBeenSet = false;
 
   Aws::Vector<EvaluationDatasetMetricConfig> m_datasetMetricConfigs;
+  bool m_humanWorkflowConfigHasBeenSet = false;
+  bool m_customMetricsHasBeenSet = false;
   bool m_datasetMetricConfigsHasBeenSet = false;
 };
 

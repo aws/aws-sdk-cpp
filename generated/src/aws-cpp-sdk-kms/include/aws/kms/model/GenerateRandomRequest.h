@@ -108,12 +108,12 @@ class GenerateRandomRequest : public KMSRequest {
   ///@}
  private:
   int m_numberOfBytes{0};
-  bool m_numberOfBytesHasBeenSet = false;
 
   Aws::String m_customKeyStoreId;
-  bool m_customKeyStoreIdHasBeenSet = false;
 
   RecipientInfo m_recipient;
+  bool m_numberOfBytesHasBeenSet = false;
+  bool m_customKeyStoreIdHasBeenSet = false;
   bool m_recipientHasBeenSet = false;
 };
 
