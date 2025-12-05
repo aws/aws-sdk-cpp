@@ -18,6 +18,7 @@ public class C2jOperation {
     private String authtype;
     private String authorizer;
     private C2jHttp http;
+    List<String> auth;
     private C2jShapeMember input;
     private C2jShapeMember output;
     private List<C2jError> errors;

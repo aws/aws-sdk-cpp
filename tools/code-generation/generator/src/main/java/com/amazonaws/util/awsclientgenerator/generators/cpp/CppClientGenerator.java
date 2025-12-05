@@ -728,6 +728,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
         context.put("CppViewHelper", CppViewHelper.class);
         context.put("RequestlessOperations", requestlessOperations);
         selectAuthschemeResolver(serviceModel, context);
+        List<String> allAuthSchemes =  getUpdatedAuthSchemesFromOperations(serviceModel);
+        context.put("AuthSchemeVariants", allAuthSchemes.stream().map(this::mapAuthSchemes).filter(scheme -> !scheme.isEmpty()).collect(Collectors.joining(",")));
+
         String fileName = String.format("include/aws/%s/%sClient.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
 
@@ -746,8 +749,6 @@ public abstract class CppClientGenerator implements ClientGenerator {
         {
             throw new RuntimeException(String.format("authSchemes '%s'",serviceModel.getAuthSchemes().stream().collect(Collectors.toList())));
         }
-        context.put("AuthSchemeVariants", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemes).collect(Collectors.joining(",")));
-        context.put("AuthSchemeOptions", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemeOptions).collect(Collectors.joining(",")));
     }
 
     protected SdkFileEntry GenerateSmithyClientSourceFile(final ServiceModel serviceModel, int i, Optional<String> templateFile) {
@@ -758,7 +759,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
         selectAuthschemeResolver(serviceModel, context);
-        context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(serviceModel));
+        context.put("AuthSchemeOptions", serviceModel.getAuthSchemes().stream().map(this::mapAuthSchemeOptions).filter(scheme -> !scheme.isEmpty()).collect(Collectors.joining(",")));
+
+        //We want to make sure the authSchemeMapEntries includes all possible auths, even the ones supported in specific operations
+        List<String> allAuthSchemes =  getUpdatedAuthSchemesFromOperations(serviceModel);
+        context.put("AuthSchemeVariants", allAuthSchemes.stream().map(this::mapAuthSchemes).filter(scheme -> !scheme.isEmpty()).collect(Collectors.joining(",")));
+        context.put("AuthSchemeMapEntries", createAuthSchemeMapEntries(allAuthSchemes));
         context.put("AuthSchemes", getSupportedAuthSchemes(serviceModel));
 
         final String fileName;
@@ -793,6 +799,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
     private static final Map<String, String> AuthSchemeMapping = ImmutableMap.of(
             "aws.auth#sigv4", "smithy::SigV4AuthScheme",
             "aws.auth#sigv4a", "smithy::SigV4aAuthScheme",
+            "smithy.api#httpBearerAuth", "smithy::BearerTokenAuthScheme",
+            "smithy.api#noAuth", "smithy::NoAuthScheme",
             "bearer", "smithy::BearerTokenAuthScheme",
             "v4","smithy::SigV4AuthScheme",
             "sigv4-s3express","S3ExpressSigV4AuthScheme",
@@ -817,6 +825,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
     private static final Map<String, String> SchemeIdMapping = ImmutableMap.of(
             "aws.auth#sigv4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
             "aws.auth#sigv4a", "smithy::SigV4aAuthSchemeOption::sigV4aAuthSchemeOption",
+            "smithy.api#httpBearerAuth", "smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption",
+            "smithy.api#noAuth", "smithy::NoAuthSchemeOption::noAuthSchemeOption",
             "bearer", "smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption",
             "v4", "smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption",
             "sigv4-s3express", "S3ExpressSigV4AuthSchemeOption::s3ExpressSigV4AuthSchemeOption",
@@ -826,6 +836,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
     protected static final Map<String, String> ResolverMapping = ImmutableMap.of(
             "aws.auth#sigv4", "GenericAuthSchemeResolver",
             "aws.auth#sigv4a", "GenericAuthSchemeResolver",
+            "smithy.api#httpBearerAuth", "GenericAuthSchemeResolver",
             "bearer", "GenericAuthSchemeResolver",
             "v4", "GenericAuthSchemeResolver",
             "v2", "GenericAuthSchemeResolver"
@@ -835,6 +846,14 @@ public abstract class CppClientGenerator implements ClientGenerator {
     private static final String SchemeMapFormat = "%s.schemeId, %s";
     protected List<String> createAuthSchemeMapEntries(final ServiceModel serviceModel) {
         return  getSupportedAuthSchemes(serviceModel).stream()
+                .filter(authScheme -> !SchemeIdMapping.get(authScheme).isEmpty())
+                .map(authScheme -> String.format(SchemeMapFormat, SchemeIdMapping.get(authScheme), AuthSchemeMapping.get(authScheme)))
+                .collect(Collectors.toList());
+    }
+
+    protected List<String> createAuthSchemeMapEntries(final List<String> authSchemes) {
+        return  authSchemes.stream()
+                .filter(authScheme -> !SchemeIdMapping.get(authScheme).isEmpty())
                 .map(authScheme -> String.format(SchemeMapFormat, SchemeIdMapping.get(authScheme), AuthSchemeMapping.get(authScheme)))
                 .collect(Collectors.toList());
     }
@@ -938,10 +957,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
 
-    protected void updateAuthSchemesFromOperations(ServiceModel serviceModel)
+    protected List<String> getUpdatedAuthSchemesFromOperations(ServiceModel serviceModel)
     {
-        List<String> authschemes =  new ArrayList<>(serviceModel.getAuthSchemes());
-        Set<String> authSchemeSet = new HashSet<>(authschemes);
+        Set<String> authSchemeSet = new HashSet<>(serviceModel.getAuthSchemes());
 
         serviceModel.getOperations().values().forEach(operation -> {
             if (operation.getAuth() == null) {
@@ -953,12 +971,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
                 }
                 // only add if it's not already present in the authSchemeSet
                 if (!authSchemeSet.contains(authScheme)) {
-                    serviceModel.getAuthSchemes().add(authScheme);
                     authSchemeSet.add(authScheme);
                 }
             });
         });
-        serviceModel.setAuthSchemes(authschemes);
+        return new ArrayList<>(authSchemeSet);
     }
     //auth schemes can be named differently in endpoints/operations, this is a mapping
     private static final Map<String, String> AuthSchemeNameMapping = ImmutableMap.of(
