@@ -8146,6 +8146,9 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
     std::shared_ptr<Aws::Http::HttpResponse> response;
     std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
     Aws::UniquePtr<struct aws_s3_checksum_config> checksumConfig;
+    std::mutex requestLifetimeMutex;
+    std::condition_variable requestLifetimeCondition;
+    bool requestLifetimeShouldContinue = true;
   };
 
   Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
@@ -8167,7 +8170,7 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   };
 
   static void CrtClientShutdownCallback(void* data);
-  void CancelCrtRequestAsync(aws_s3_meta_request* meta_request) const;
+  void CancelCrtRequestAsync(aws_s3_meta_request* meta_request, S3CrtClient::CrtRequestCallbackUserData* userData) const;
   static int S3CrtRequestHeadersCallback(aws_s3_meta_request* meta_request, const struct aws_http_headers* headers, int response_status,
                                          void* user_data);
   static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request* meta_request, const struct aws_byte_cursor* body, uint64_t range_start,
