@@ -18,13 +18,13 @@ namespace Model {
 SourceData::SourceData(JsonView jsonValue) { *this = jsonValue; }
 
 SourceData& SourceData::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("acmPcaArn")) {
-    m_acmPcaArn = jsonValue.GetString("acmPcaArn");
-    m_acmPcaArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("x509CertificateData")) {
     m_x509CertificateData = jsonValue.GetString("x509CertificateData");
     m_x509CertificateDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("acmPcaArn")) {
+    m_acmPcaArn = jsonValue.GetString("acmPcaArn");
+    m_acmPcaArnHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ SourceData& SourceData::operator=(JsonView jsonValue) {
 JsonValue SourceData::Jsonize() const {
   JsonValue payload;
 
-  if (m_acmPcaArnHasBeenSet) {
-    payload.WithString("acmPcaArn", m_acmPcaArn);
-  }
-
   if (m_x509CertificateDataHasBeenSet) {
     payload.WithString("x509CertificateData", m_x509CertificateData);
+  }
+
+  if (m_acmPcaArnHasBeenSet) {
+    payload.WithString("acmPcaArn", m_acmPcaArn);
   }
 
   return payload;

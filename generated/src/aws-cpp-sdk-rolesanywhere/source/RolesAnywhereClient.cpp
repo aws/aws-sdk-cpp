@@ -230,15 +230,15 @@ CreateTrustAnchorOutcome RolesAnywhereClient::CreateTrustAnchor(const CreateTrus
 DeleteAttributeMappingOutcome RolesAnywhereClient::DeleteAttributeMapping(const DeleteAttributeMappingRequest& request) const {
   AWS_OPERATION_GUARD(DeleteAttributeMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAttributeMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.CertificateFieldHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("DeleteAttributeMapping", "Required field: CertificateField, is not set");
-    return DeleteAttributeMappingOutcome(Aws::Client::AWSError<RolesAnywhereErrors>(
-        RolesAnywhereErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateField]", false));
-  }
   if (!request.ProfileIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteAttributeMapping", "Required field: ProfileId, is not set");
     return DeleteAttributeMappingOutcome(Aws::Client::AWSError<RolesAnywhereErrors>(
         RolesAnywhereErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileId]", false));
+  }
+  if (!request.CertificateFieldHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteAttributeMapping", "Required field: CertificateField, is not set");
+    return DeleteAttributeMappingOutcome(Aws::Client::AWSError<RolesAnywhereErrors>(
+        RolesAnywhereErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateField]", false));
   }
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteAttributeMapping, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});

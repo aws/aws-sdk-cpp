@@ -142,7 +142,7 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Creates a new Cost Category with the requested name and rules.</p><p><h3>See
+   * <p>Creates a new cost category with the requested name and rules.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
    * API Reference</a></p>
@@ -226,8 +226,8 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a Cost Category. Expenses from this month going forward will no
-   * longer be categorized with this Cost Category.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a cost category. Expenses from this month going forward will no
+   * longer be categorized with this cost category.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">AWS
    * API Reference</a></p>
    */
@@ -257,10 +257,10 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Returns the name, Amazon Resource Name (ARN), rules, definition, and
-   * effective dates of a Cost Category that's defined in the account.</p> <p>You
-   * have the option to use <code>EffectiveOn</code> to return a Cost Category that's
+   * effective dates of a cost category that's defined in the account.</p> <p>You
+   * have the option to use <code>EffectiveOn</code> to return a cost category that's
    * active on a specific date. If there's no <code>EffectiveOn</code> specified, you
-   * see a Cost Category that's effective on the current date. If Cost Category is
+   * see a Cost Category that's effective on the current date. If cost category is
    * still effective, <code>EffectiveEnd</code> is omitted in the response.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
@@ -547,8 +547,8 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Retrieves an array of Cost Category names and values incurred cost.</p>
-   *  <p>If some Cost Category names and values are not associated with any
+   * <p>Retrieves an array of cost category names and values incurred cost.</p>
+   *  <p>If some cost category names and values are not associated with any
    * cost, they will not be returned by this API.</p> <p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">AWS
@@ -665,7 +665,7 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
    * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
    * Relational Database Service, or Amazon Redshift usage is covered by a
    * reservation. An organization's management account can see the coverage of the
-   * associated member accounts. This supports dimensions, Cost Categories, and
+   * associated member accounts. This supports dimensions, cost categories, and
    * nested expressions. For any time period, you can filter data about reservation
    * usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li>
    * <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
@@ -849,7 +849,7 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
    * <p>Retrieves the Savings Plans covered for your account. This enables you to see
    * how much of your cost is covered by a Savings Plan. An organization’s management
    * account can see the coverage of the associated member accounts. This supports
-   * dimensions, Cost Categories, and nested expressions. For any time period, you
+   * dimensions, cost categories, and nested expressions. For any time period, you
    * can filter data for Savings Plans usage with the following dimensions:</p> <ul>
    * <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code>
    * </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
@@ -1130,14 +1130,14 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and
-   * effective dates of all Cost Categories defined in the account. You have the
-   * option to use <code>EffectiveOn</code> to return a list of Cost Categories that
-   * were active on a specific date. If there is no <code>EffectiveOn</code>
-   * specified, you’ll see Cost Categories that are effective on the current date. If
-   * Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the
-   * response. <code>ListCostCategoryDefinitions</code> supports pagination. The
-   * request can have a <code>MaxResults</code> range up to 100.</p><p><h3>See
-   * Also:</h3>   <a
+   * effective dates of all cost categories defined in the account. You have the
+   * option to use <code>EffectiveOn</code> and <code>SupportedResourceTypes</code>
+   * to return a list of cost categories that were active on a specific date. If
+   * there is no <code>EffectiveOn</code> specified, you’ll see cost categories that
+   * are effective on the current date. If cost category is still effective,
+   * <code>EffectiveEnd</code> is omitted in the response.
+   * <code>ListCostCategoryDefinitions</code> supports pagination. The request can
+   * have a <code>MaxResults</code> range up to 100.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
    * API Reference</a></p>
    */
@@ -1163,6 +1163,39 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                         const ListCostCategoryDefinitionsRequestT& request = {}) const {
     return SubmitAsync(&CostExplorerClient::ListCostCategoryDefinitions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns resource associations of all cost categories defined in the account.
+   * You have the option to use <code>CostCategoryArn</code> to get the association
+   * for a specific cost category. <code>ListCostCategoryResourceAssociations</code>
+   * supports pagination. The request can have a <code>MaxResults</code> range up to
+   * 100. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryResourceAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListCostCategoryResourceAssociationsOutcome ListCostCategoryResourceAssociations(
+      const Model::ListCostCategoryResourceAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListCostCategoryResourceAssociations that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListCostCategoryResourceAssociationsRequestT = Model::ListCostCategoryResourceAssociationsRequest>
+  Model::ListCostCategoryResourceAssociationsOutcomeCallable ListCostCategoryResourceAssociationsCallable(
+      const ListCostCategoryResourceAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&CostExplorerClient::ListCostCategoryResourceAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListCostCategoryResourceAssociations that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListCostCategoryResourceAssociationsRequestT = Model::ListCostCategoryResourceAssociationsRequest>
+  void ListCostCategoryResourceAssociationsAsync(const ListCostCategoryResourceAssociationsResponseReceivedHandler& handler,
+                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                 const ListCostCategoryResourceAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&CostExplorerClient::ListCostCategoryResourceAssociations, request, handler, context);
   }
 
   /**
@@ -1509,7 +1542,7 @@ class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates an existing Cost Category. Changes made to the Cost Category rules
+   * <p>Updates an existing cost category. Changes made to the cost category rules
    * will be used to categorize the current month’s expenses and future expenses.
    * This won’t change categorization for the previous months.</p><p><h3>See
    * Also:</h3>   <a

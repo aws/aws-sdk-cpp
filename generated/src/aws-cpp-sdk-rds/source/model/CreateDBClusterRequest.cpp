@@ -272,6 +272,18 @@ Aws::String CreateDBClusterRequest::SerializePayload() const {
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
+  if (m_tagSpecificationsHasBeenSet) {
+    if (m_tagSpecifications.empty()) {
+      ss << "TagSpecifications=&";
+    } else {
+      unsigned tagSpecificationsCount = 1;
+      for (auto& item : m_tagSpecifications) {
+        item.OutputToStream(ss, "TagSpecifications.item.", tagSpecificationsCount, "");
+        tagSpecificationsCount++;
+      }
+    }
+  }
+
   if (m_masterUserAuthenticationTypeHasBeenSet) {
     ss << "MasterUserAuthenticationType="
        << StringUtils::URLEncode(MasterUserAuthenticationTypeMapper::GetNameForMasterUserAuthenticationType(m_masterUserAuthenticationType))

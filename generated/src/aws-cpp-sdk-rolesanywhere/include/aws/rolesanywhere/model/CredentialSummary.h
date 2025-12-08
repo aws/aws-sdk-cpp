@@ -35,57 +35,6 @@ class CredentialSummary {
 
   ///@{
   /**
-   * <p>Indicates whether the credential is enabled.</p>
-   */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
-  }
-  inline CredentialSummary& WithEnabled(bool value) {
-    SetEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Indicates whether the temporary credential request was successful. </p>
-   */
-  inline bool GetFailed() const { return m_failed; }
-  inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
-  inline void SetFailed(bool value) {
-    m_failedHasBeenSet = true;
-    m_failed = value;
-  }
-  inline CredentialSummary& WithFailed(bool value) {
-    SetFailed(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The fully qualified domain name of the issuing certificate for the presented
-   * end-entity certificate.</p>
-   */
-  inline const Aws::String& GetIssuer() const { return m_issuer; }
-  inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-  template <typename IssuerT = Aws::String>
-  void SetIssuer(IssuerT&& value) {
-    m_issuerHasBeenSet = true;
-    m_issuer = std::forward<IssuerT>(value);
-  }
-  template <typename IssuerT = Aws::String>
-  CredentialSummary& WithIssuer(IssuerT&& value) {
-    SetIssuer(std::forward<IssuerT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
    * credential request.</p>
    */
@@ -123,6 +72,41 @@ class CredentialSummary {
 
   ///@{
   /**
+   * <p>The fully qualified domain name of the issuing certificate for the presented
+   * end-entity certificate.</p>
+   */
+  inline const Aws::String& GetIssuer() const { return m_issuer; }
+  inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
+  template <typename IssuerT = Aws::String>
+  void SetIssuer(IssuerT&& value) {
+    m_issuerHasBeenSet = true;
+    m_issuer = std::forward<IssuerT>(value);
+  }
+  template <typename IssuerT = Aws::String>
+  CredentialSummary& WithIssuer(IssuerT&& value) {
+    SetIssuer(std::forward<IssuerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the credential is enabled.</p>
+   */
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline CredentialSummary& WithEnabled(bool value) {
+    SetEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The PEM-encoded data of the certificate.</p>
    */
   inline const Aws::String& GetX509CertificateData() const { return m_x509CertificateData; }
@@ -138,24 +122,40 @@ class CredentialSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the temporary credential request was successful. </p>
+   */
+  inline bool GetFailed() const { return m_failed; }
+  inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
+  inline void SetFailed(bool value) {
+    m_failedHasBeenSet = true;
+    m_failed = value;
+  }
+  inline CredentialSummary& WithFailed(bool value) {
+    SetFailed(value);
+    return *this;
+  }
+  ///@}
  private:
-  bool m_enabled{false};
-
-  bool m_failed{false};
-
-  Aws::String m_issuer;
-
   Aws::Utils::DateTime m_seenAt{};
 
   Aws::String m_serialNumber;
 
+  Aws::String m_issuer;
+
+  bool m_enabled{false};
+
   Aws::String m_x509CertificateData;
-  bool m_enabledHasBeenSet = false;
-  bool m_failedHasBeenSet = false;
-  bool m_issuerHasBeenSet = false;
+
+  bool m_failed{false};
   bool m_seenAtHasBeenSet = false;
   bool m_serialNumberHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_x509CertificateDataHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
 };
 
 }  // namespace Model

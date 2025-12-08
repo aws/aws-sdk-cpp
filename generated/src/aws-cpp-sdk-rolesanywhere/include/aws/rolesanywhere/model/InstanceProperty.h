@@ -36,16 +36,19 @@ class InstanceProperty {
 
   ///@{
   /**
-   * <p>Indicates whether the temporary credential request was successful. </p>
+   * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+   * credential request.</p>
    */
-  inline bool GetFailed() const { return m_failed; }
-  inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
-  inline void SetFailed(bool value) {
-    m_failedHasBeenSet = true;
-    m_failed = value;
+  inline const Aws::Utils::DateTime& GetSeenAt() const { return m_seenAt; }
+  inline bool SeenAtHasBeenSet() const { return m_seenAtHasBeenSet; }
+  template <typename SeenAtT = Aws::Utils::DateTime>
+  void SetSeenAt(SeenAtT&& value) {
+    m_seenAtHasBeenSet = true;
+    m_seenAt = std::forward<SeenAtT>(value);
   }
-  inline InstanceProperty& WithFailed(bool value) {
-    SetFailed(value);
+  template <typename SeenAtT = Aws::Utils::DateTime>
+  InstanceProperty& WithSeenAt(SeenAtT&& value) {
+    SetSeenAt(std::forward<SeenAtT>(value));
     return *this;
   }
   ///@}
@@ -76,31 +79,28 @@ class InstanceProperty {
 
   ///@{
   /**
-   * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
-   * credential request.</p>
+   * <p>Indicates whether the temporary credential request was successful. </p>
    */
-  inline const Aws::Utils::DateTime& GetSeenAt() const { return m_seenAt; }
-  inline bool SeenAtHasBeenSet() const { return m_seenAtHasBeenSet; }
-  template <typename SeenAtT = Aws::Utils::DateTime>
-  void SetSeenAt(SeenAtT&& value) {
-    m_seenAtHasBeenSet = true;
-    m_seenAt = std::forward<SeenAtT>(value);
+  inline bool GetFailed() const { return m_failed; }
+  inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
+  inline void SetFailed(bool value) {
+    m_failedHasBeenSet = true;
+    m_failed = value;
   }
-  template <typename SeenAtT = Aws::Utils::DateTime>
-  InstanceProperty& WithSeenAt(SeenAtT&& value) {
-    SetSeenAt(std::forward<SeenAtT>(value));
+  inline InstanceProperty& WithFailed(bool value) {
+    SetFailed(value);
     return *this;
   }
   ///@}
  private:
-  bool m_failed{false};
+  Aws::Utils::DateTime m_seenAt{};
 
   Aws::Map<Aws::String, Aws::String> m_properties;
 
-  Aws::Utils::DateTime m_seenAt{};
-  bool m_failedHasBeenSet = false;
-  bool m_propertiesHasBeenSet = false;
+  bool m_failed{false};
   bool m_seenAtHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
 };
 
 }  // namespace Model

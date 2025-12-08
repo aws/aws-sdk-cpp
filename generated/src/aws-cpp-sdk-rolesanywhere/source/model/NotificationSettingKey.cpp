@@ -18,13 +18,13 @@ namespace Model {
 NotificationSettingKey::NotificationSettingKey(JsonView jsonValue) { *this = jsonValue; }
 
 NotificationSettingKey& NotificationSettingKey::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("channel")) {
-    m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
-    m_channelHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("event")) {
     m_event = NotificationEventMapper::GetNotificationEventForName(jsonValue.GetString("event"));
     m_eventHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("channel")) {
+    m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
+    m_channelHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ NotificationSettingKey& NotificationSettingKey::operator=(JsonView jsonValue) {
 JsonValue NotificationSettingKey::Jsonize() const {
   JsonValue payload;
 
-  if (m_channelHasBeenSet) {
-    payload.WithString("channel", NotificationChannelMapper::GetNameForNotificationChannel(m_channel));
-  }
-
   if (m_eventHasBeenSet) {
     payload.WithString("event", NotificationEventMapper::GetNameForNotificationEvent(m_event));
+  }
+
+  if (m_channelHasBeenSet) {
+    payload.WithString("channel", NotificationChannelMapper::GetNameForNotificationChannel(m_channel));
   }
 
   return payload;

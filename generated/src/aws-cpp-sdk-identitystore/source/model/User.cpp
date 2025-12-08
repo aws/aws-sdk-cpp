@@ -129,6 +129,13 @@ User& User::operator=(JsonView jsonValue) {
     m_updatedBy = jsonValue.GetString("UpdatedBy");
     m_updatedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Extensions")) {
+    Aws::Map<Aws::String, JsonView> extensionsJsonMap = jsonValue.GetObject("Extensions").GetAllObjects();
+    for (auto& extensionsItem : extensionsJsonMap) {
+      m_extensions[extensionsItem.first] = extensionsItem.second.AsObject();
+    }
+    m_extensionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -249,6 +256,14 @@ JsonValue User::Jsonize() const {
 
   if (m_updatedByHasBeenSet) {
     payload.WithString("UpdatedBy", m_updatedBy);
+  }
+
+  if (m_extensionsHasBeenSet) {
+    JsonValue extensionsJsonMap;
+    for (auto& extensionsItem : m_extensions) {
+      extensionsJsonMap.WithObject(extensionsItem.first, extensionsItem.second.View());
+    }
+    payload.WithObject("Extensions", std::move(extensionsJsonMap));
   }
 
   return payload;

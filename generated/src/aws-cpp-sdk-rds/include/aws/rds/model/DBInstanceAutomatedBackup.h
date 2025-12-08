@@ -12,6 +12,7 @@
 #include <aws/rds/model/AdditionalStorageVolume.h>
 #include <aws/rds/model/DBInstanceAutomatedBackupsReplication.h>
 #include <aws/rds/model/RestoreWindow.h>
+#include <aws/rds/model/Tag.h>
 
 #include <utility>
 
@@ -597,6 +598,28 @@ class DBInstanceAutomatedBackup {
   ///@}
 
   ///@{
+
+  inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
+  inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+  template <typename TagListT = Aws::Vector<Tag>>
+  void SetTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList = std::forward<TagListT>(value);
+  }
+  template <typename TagListT = Aws::Vector<Tag>>
+  DBInstanceAutomatedBackup& WithTagList(TagListT&& value) {
+    SetTagList(std::forward<TagListT>(value));
+    return *this;
+  }
+  template <typename TagListT = Tag>
+  DBInstanceAutomatedBackup& AddTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList.emplace_back(std::forward<TagListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
    * enabled.</p>
@@ -698,6 +721,8 @@ class DBInstanceAutomatedBackup {
 
   Aws::String m_awsBackupRecoveryPointArn;
 
+  Aws::Vector<Tag> m_tagList;
+
   bool m_dedicatedLogVolume{false};
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
@@ -731,6 +756,7 @@ class DBInstanceAutomatedBackup {
   bool m_backupTargetHasBeenSet = false;
   bool m_multiTenantHasBeenSet = false;
   bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
 };

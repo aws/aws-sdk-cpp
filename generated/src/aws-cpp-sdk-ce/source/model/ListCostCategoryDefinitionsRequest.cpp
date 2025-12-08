@@ -27,6 +27,15 @@ Aws::String ListCostCategoryDefinitionsRequest::SerializePayload() const {
     payload.WithInteger("MaxResults", m_maxResults);
   }
 
+  if (m_supportedResourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedResourceTypesJsonList(m_supportedResourceTypes.size());
+    for (unsigned supportedResourceTypesIndex = 0; supportedResourceTypesIndex < supportedResourceTypesJsonList.GetLength();
+         ++supportedResourceTypesIndex) {
+      supportedResourceTypesJsonList[supportedResourceTypesIndex].AsString(m_supportedResourceTypes[supportedResourceTypesIndex]);
+    }
+    payload.WithArray("SupportedResourceTypes", std::move(supportedResourceTypesJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

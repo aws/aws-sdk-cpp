@@ -73,9 +73,9 @@ class StartVerificationRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   VerificationDetails m_verificationDetails;
+  bool m_clientTokenHasBeenSet = true;
   bool m_verificationDetailsHasBeenSet = false;
 };
 

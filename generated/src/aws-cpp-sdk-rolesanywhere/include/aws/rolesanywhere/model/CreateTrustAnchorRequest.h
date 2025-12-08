@@ -34,22 +34,6 @@ class CreateTrustAnchorRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>Specifies whether the trust anchor is enabled.</p>
-   */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
-  }
-  inline CreateTrustAnchorRequest& WithEnabled(bool value) {
-    SetEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the trust anchor.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -68,30 +52,6 @@ class CreateTrustAnchorRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>A list of notification settings to be associated to the trust anchor.</p>
-   */
-  inline const Aws::Vector<NotificationSetting>& GetNotificationSettings() const { return m_notificationSettings; }
-  inline bool NotificationSettingsHasBeenSet() const { return m_notificationSettingsHasBeenSet; }
-  template <typename NotificationSettingsT = Aws::Vector<NotificationSetting>>
-  void SetNotificationSettings(NotificationSettingsT&& value) {
-    m_notificationSettingsHasBeenSet = true;
-    m_notificationSettings = std::forward<NotificationSettingsT>(value);
-  }
-  template <typename NotificationSettingsT = Aws::Vector<NotificationSetting>>
-  CreateTrustAnchorRequest& WithNotificationSettings(NotificationSettingsT&& value) {
-    SetNotificationSettings(std::forward<NotificationSettingsT>(value));
-    return *this;
-  }
-  template <typename NotificationSettingsT = NotificationSetting>
-  CreateTrustAnchorRequest& AddNotificationSettings(NotificationSettingsT&& value) {
-    m_notificationSettingsHasBeenSet = true;
-    m_notificationSettings.emplace_back(std::forward<NotificationSettingsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The trust anchor type and its related certificate data.</p>
    */
   inline const Source& GetSource() const { return m_source; }
@@ -104,6 +64,22 @@ class CreateTrustAnchorRequest : public RolesAnywhereRequest {
   template <typename SourceT = Source>
   CreateTrustAnchorRequest& WithSource(SourceT&& value) {
     SetSource(std::forward<SourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the trust anchor is enabled.</p>
+   */
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
+  }
+  inline CreateTrustAnchorRequest& WithEnabled(bool value) {
+    SetEnabled(value);
     return *this;
   }
   ///@}
@@ -131,21 +107,45 @@ class CreateTrustAnchorRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of notification settings to be associated to the trust anchor.</p>
+   */
+  inline const Aws::Vector<NotificationSetting>& GetNotificationSettings() const { return m_notificationSettings; }
+  inline bool NotificationSettingsHasBeenSet() const { return m_notificationSettingsHasBeenSet; }
+  template <typename NotificationSettingsT = Aws::Vector<NotificationSetting>>
+  void SetNotificationSettings(NotificationSettingsT&& value) {
+    m_notificationSettingsHasBeenSet = true;
+    m_notificationSettings = std::forward<NotificationSettingsT>(value);
+  }
+  template <typename NotificationSettingsT = Aws::Vector<NotificationSetting>>
+  CreateTrustAnchorRequest& WithNotificationSettings(NotificationSettingsT&& value) {
+    SetNotificationSettings(std::forward<NotificationSettingsT>(value));
+    return *this;
+  }
+  template <typename NotificationSettingsT = NotificationSetting>
+  CreateTrustAnchorRequest& AddNotificationSettings(NotificationSettingsT&& value) {
+    m_notificationSettingsHasBeenSet = true;
+    m_notificationSettings.emplace_back(std::forward<NotificationSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  bool m_enabled{false};
-
   Aws::String m_name;
-
-  Aws::Vector<NotificationSetting> m_notificationSettings;
 
   Source m_source;
 
+  bool m_enabled{false};
+
   Aws::Vector<Tag> m_tags;
-  bool m_enabledHasBeenSet = false;
+
+  Aws::Vector<NotificationSetting> m_notificationSettings;
   bool m_nameHasBeenSet = false;
-  bool m_notificationSettingsHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_notificationSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

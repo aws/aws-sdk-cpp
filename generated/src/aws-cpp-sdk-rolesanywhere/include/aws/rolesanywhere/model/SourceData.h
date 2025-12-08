@@ -34,6 +34,25 @@ class SourceData {
 
   ///@{
   /**
+   * <p>The PEM-encoded data for the certificate anchor. Included for trust anchors
+   * of type <code>CERTIFICATE_BUNDLE</code>. </p>
+   */
+  inline const Aws::String& GetX509CertificateData() const { return m_x509CertificateData; }
+  inline bool X509CertificateDataHasBeenSet() const { return m_x509CertificateDataHasBeenSet; }
+  template <typename X509CertificateDataT = Aws::String>
+  void SetX509CertificateData(X509CertificateDataT&& value) {
+    m_x509CertificateDataHasBeenSet = true;
+    m_x509CertificateData = std::forward<X509CertificateDataT>(value);
+  }
+  template <typename X509CertificateDataT = Aws::String>
+  SourceData& WithX509CertificateData(X509CertificateDataT&& value) {
+    SetX509CertificateData(std::forward<X509CertificateDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The root certificate of the Private Certificate Authority specified by this
    * ARN is used in trust validation for temporary credential requests. Included for
    * trust anchors of type <code>AWS_ACM_PCA</code>. </p>
@@ -51,31 +70,12 @@ class SourceData {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The PEM-encoded data for the certificate anchor. Included for trust anchors
-   * of type <code>CERTIFICATE_BUNDLE</code>. </p>
-   */
-  inline const Aws::String& GetX509CertificateData() const { return m_x509CertificateData; }
-  inline bool X509CertificateDataHasBeenSet() const { return m_x509CertificateDataHasBeenSet; }
-  template <typename X509CertificateDataT = Aws::String>
-  void SetX509CertificateData(X509CertificateDataT&& value) {
-    m_x509CertificateDataHasBeenSet = true;
-    m_x509CertificateData = std::forward<X509CertificateDataT>(value);
-  }
-  template <typename X509CertificateDataT = Aws::String>
-  SourceData& WithX509CertificateData(X509CertificateDataT&& value) {
-    SetX509CertificateData(std::forward<X509CertificateDataT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_acmPcaArn;
-
   Aws::String m_x509CertificateData;
-  bool m_acmPcaArnHasBeenSet = false;
+
+  Aws::String m_acmPcaArn;
   bool m_x509CertificateDataHasBeenSet = false;
+  bool m_acmPcaArnHasBeenSet = false;
 };
 
 }  // namespace Model

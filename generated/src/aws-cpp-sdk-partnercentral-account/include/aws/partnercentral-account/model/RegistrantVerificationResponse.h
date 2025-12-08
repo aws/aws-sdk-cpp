@@ -74,9 +74,9 @@ class RegistrantVerificationResponse {
   ///@}
  private:
   Aws::String m_completionUrl;
-  bool m_completionUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionUrlExpiresAt{};
+  bool m_completionUrlHasBeenSet = false;
   bool m_completionUrlExpiresAtHasBeenSet = false;
 };
 

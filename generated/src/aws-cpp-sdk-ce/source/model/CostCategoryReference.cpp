@@ -56,6 +56,14 @@ CostCategoryReference& CostCategoryReference::operator=(JsonView jsonValue) {
     m_defaultValue = jsonValue.GetString("DefaultValue");
     m_defaultValueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SupportedResourceTypes")) {
+    Aws::Utils::Array<JsonView> supportedResourceTypesJsonList = jsonValue.GetArray("SupportedResourceTypes");
+    for (unsigned supportedResourceTypesIndex = 0; supportedResourceTypesIndex < supportedResourceTypesJsonList.GetLength();
+         ++supportedResourceTypesIndex) {
+      m_supportedResourceTypes.push_back(supportedResourceTypesJsonList[supportedResourceTypesIndex].AsString());
+    }
+    m_supportedResourceTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -100,6 +108,15 @@ JsonValue CostCategoryReference::Jsonize() const {
 
   if (m_defaultValueHasBeenSet) {
     payload.WithString("DefaultValue", m_defaultValue);
+  }
+
+  if (m_supportedResourceTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedResourceTypesJsonList(m_supportedResourceTypes.size());
+    for (unsigned supportedResourceTypesIndex = 0; supportedResourceTypesIndex < supportedResourceTypesJsonList.GetLength();
+         ++supportedResourceTypesIndex) {
+      supportedResourceTypesJsonList[supportedResourceTypesIndex].AsString(m_supportedResourceTypes[supportedResourceTypesIndex]);
+    }
+    payload.WithArray("SupportedResourceTypes", std::move(supportedResourceTypesJsonList));
   }
 
   return payload;

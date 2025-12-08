@@ -18,18 +18,6 @@ namespace Model {
 CredentialSummary::CredentialSummary(JsonView jsonValue) { *this = jsonValue; }
 
 CredentialSummary& CredentialSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("enabled")) {
-    m_enabled = jsonValue.GetBool("enabled");
-    m_enabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("failed")) {
-    m_failed = jsonValue.GetBool("failed");
-    m_failedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("issuer")) {
-    m_issuer = jsonValue.GetString("issuer");
-    m_issuerHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("seenAt")) {
     m_seenAt = jsonValue.GetString("seenAt");
     m_seenAtHasBeenSet = true;
@@ -38,27 +26,27 @@ CredentialSummary& CredentialSummary::operator=(JsonView jsonValue) {
     m_serialNumber = jsonValue.GetString("serialNumber");
     m_serialNumberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("issuer")) {
+    m_issuer = jsonValue.GetString("issuer");
+    m_issuerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enabled")) {
+    m_enabled = jsonValue.GetBool("enabled");
+    m_enabledHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("x509CertificateData")) {
     m_x509CertificateData = jsonValue.GetString("x509CertificateData");
     m_x509CertificateDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failed")) {
+    m_failed = jsonValue.GetBool("failed");
+    m_failedHasBeenSet = true;
   }
   return *this;
 }
 
 JsonValue CredentialSummary::Jsonize() const {
   JsonValue payload;
-
-  if (m_enabledHasBeenSet) {
-    payload.WithBool("enabled", m_enabled);
-  }
-
-  if (m_failedHasBeenSet) {
-    payload.WithBool("failed", m_failed);
-  }
-
-  if (m_issuerHasBeenSet) {
-    payload.WithString("issuer", m_issuer);
-  }
 
   if (m_seenAtHasBeenSet) {
     payload.WithString("seenAt", m_seenAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -68,8 +56,20 @@ JsonValue CredentialSummary::Jsonize() const {
     payload.WithString("serialNumber", m_serialNumber);
   }
 
+  if (m_issuerHasBeenSet) {
+    payload.WithString("issuer", m_issuer);
+  }
+
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
+  }
+
   if (m_x509CertificateDataHasBeenSet) {
     payload.WithString("x509CertificateData", m_x509CertificateData);
+  }
+
+  if (m_failedHasBeenSet) {
+    payload.WithBool("failed", m_failed);
   }
 
   return payload;

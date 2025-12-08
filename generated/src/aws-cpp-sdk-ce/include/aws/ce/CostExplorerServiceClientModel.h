@@ -59,6 +59,8 @@
 #include <aws/ce/model/ListCostAllocationTagsResult.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsRequest.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsResult.h>
+#include <aws/ce/model/ListCostCategoryResourceAssociationsRequest.h>
+#include <aws/ce/model/ListCostCategoryResourceAssociationsResult.h>
 #include <aws/ce/model/ListSavingsPlansPurchaseRecommendationGenerationRequest.h>
 #include <aws/ce/model/ListSavingsPlansPurchaseRecommendationGenerationResult.h>
 #include <aws/ce/model/ListTagsForResourceResult.h>
@@ -140,6 +142,7 @@ class ListCommitmentPurchaseAnalysesRequest;
 class ListCostAllocationTagBackfillHistoryRequest;
 class ListCostAllocationTagsRequest;
 class ListCostCategoryDefinitionsRequest;
+class ListCostCategoryResourceAssociationsRequest;
 class ListSavingsPlansPurchaseRecommendationGenerationRequest;
 class ListTagsForResourceRequest;
 class ProvideAnomalyFeedbackRequest;
@@ -190,6 +193,7 @@ typedef Aws::Utils::Outcome<ListCommitmentPurchaseAnalysesResult, CostExplorerEr
 typedef Aws::Utils::Outcome<ListCostAllocationTagBackfillHistoryResult, CostExplorerError> ListCostAllocationTagBackfillHistoryOutcome;
 typedef Aws::Utils::Outcome<ListCostAllocationTagsResult, CostExplorerError> ListCostAllocationTagsOutcome;
 typedef Aws::Utils::Outcome<ListCostCategoryDefinitionsResult, CostExplorerError> ListCostCategoryDefinitionsOutcome;
+typedef Aws::Utils::Outcome<ListCostCategoryResourceAssociationsResult, CostExplorerError> ListCostCategoryResourceAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListSavingsPlansPurchaseRecommendationGenerationResult, CostExplorerError>
     ListSavingsPlansPurchaseRecommendationGenerationOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CostExplorerError> ListTagsForResourceOutcome;
@@ -241,6 +245,7 @@ typedef std::future<ListCommitmentPurchaseAnalysesOutcome> ListCommitmentPurchas
 typedef std::future<ListCostAllocationTagBackfillHistoryOutcome> ListCostAllocationTagBackfillHistoryOutcomeCallable;
 typedef std::future<ListCostAllocationTagsOutcome> ListCostAllocationTagsOutcomeCallable;
 typedef std::future<ListCostCategoryDefinitionsOutcome> ListCostCategoryDefinitionsOutcomeCallable;
+typedef std::future<ListCostCategoryResourceAssociationsOutcome> ListCostCategoryResourceAssociationsOutcomeCallable;
 typedef std::future<ListSavingsPlansPurchaseRecommendationGenerationOutcome>
     ListSavingsPlansPurchaseRecommendationGenerationOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -375,6 +380,10 @@ typedef std::function<void(const CostExplorerClient*, const Model::ListCostAlloc
 typedef std::function<void(const CostExplorerClient*, const Model::ListCostCategoryDefinitionsRequest&,
                            const Model::ListCostCategoryDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCostCategoryDefinitionsResponseReceivedHandler;
+typedef std::function<void(const CostExplorerClient*, const Model::ListCostCategoryResourceAssociationsRequest&,
+                           const Model::ListCostCategoryResourceAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListCostCategoryResourceAssociationsResponseReceivedHandler;
 typedef std::function<void(const CostExplorerClient*, const Model::ListSavingsPlansPurchaseRecommendationGenerationRequest&,
                            const Model::ListSavingsPlansPurchaseRecommendationGenerationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

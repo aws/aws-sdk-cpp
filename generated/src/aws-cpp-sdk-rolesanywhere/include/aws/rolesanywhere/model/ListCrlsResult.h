@@ -30,6 +30,25 @@ class ListCrlsResult {
 
   ///@{
   /**
+   * <p>A token that indicates where the output should continue from, if a previous
+   * request did not show all results. To get the next results, make the request
+   * again with this value.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListCrlsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of certificate revocation lists (CRL). </p>
    */
   inline const Aws::Vector<CrlDetail>& GetCrls() const { return m_crls; }
@@ -52,25 +71,6 @@ class ListCrlsResult {
   ///@}
 
   ///@{
-  /**
-   * <p>A token that indicates where the output should continue from, if a previous
-   * request did not show all results. To get the next results, make the request
-   * again with this value.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListCrlsResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -85,13 +85,13 @@ class ListCrlsResult {
   }
   ///@}
  private:
-  Aws::Vector<CrlDetail> m_crls;
-
   Aws::String m_nextToken;
 
+  Aws::Vector<CrlDetail> m_crls;
+
   Aws::String m_requestId;
-  bool m_crlsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_crlsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

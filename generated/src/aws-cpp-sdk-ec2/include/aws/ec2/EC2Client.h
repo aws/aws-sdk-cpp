@@ -10963,15 +10963,11 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Clie
    * <li> <p> <b>Instance state</b> - You can manage your instances from the moment
    * you launch them through their termination. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-   * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> <li> <p> <b>SQL
-   * license exemption monitoring</b> - For instances registered with the SQL LE
-   * service, status includes SQL license exemption monitoring health and processing
-   * status to provide operational visibility into license exemption
-   * functionality.</p> </li> </ul> <p>The Amazon EC2 API follows an eventual
-   * consistency model. This means that the result of an API command you run that
-   * creates or modifies resources might not be immediately available to all
-   * subsequent commands you run. For guidance on how to manage eventual consistency,
-   * see <a
+   * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> </li> </ul> <p>The Amazon
+   * EC2 API follows an eventual consistency model. This means that the result of an
+   * API command you run that creates or modifies resources might not be immediately
+   * available to all subsequent commands you run. For guidance on how to manage
+   * eventual consistency, see <a
    * href="https://docs.aws.amazon.com/ec2/latest/devguide/eventual-consistency.html">Eventual
    * consistency in the Amazon EC2 API</a> in the <i>Amazon EC2 Developer
    * Guide</i>.</p>  <p>The order of the elements in the response, including

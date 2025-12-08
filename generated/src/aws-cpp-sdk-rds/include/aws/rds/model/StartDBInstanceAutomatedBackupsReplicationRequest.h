@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDSRequest.h>
 #include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/Tag.h>
 
 #include <utility>
 
@@ -128,6 +130,30 @@ class StartDBInstanceAutomatedBackupsReplicationRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>A list of tags to associate with the replicated automated backups.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  StartDBInstanceAutomatedBackupsReplicationRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  StartDBInstanceAutomatedBackupsReplicationRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
    */
   inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
@@ -152,11 +178,14 @@ class StartDBInstanceAutomatedBackupsReplicationRequest : public RDSRequest {
 
   Aws::String m_preSignedUrl;
 
+  Aws::Vector<Tag> m_tags;
+
   Aws::String m_sourceRegion;
   bool m_sourceDBInstanceArnHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_preSignedUrlHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

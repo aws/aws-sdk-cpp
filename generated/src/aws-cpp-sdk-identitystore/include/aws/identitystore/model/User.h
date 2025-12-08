@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Document.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
@@ -515,6 +517,31 @@ class User {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map of explicitly requested attribute extensions associated with the user.
+   * Not populated if the user has no requested extensions.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  User& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsKeyT = Aws::String, typename ExtensionsValueT = Aws::Utils::Document>
+  User& AddExtensions(ExtensionsKeyT&& key, ExtensionsValueT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace(std::forward<ExtensionsKeyT>(key), std::forward<ExtensionsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityStoreId;
 
@@ -563,6 +590,8 @@ class User {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::String m_updatedBy;
+
+  Aws::Map<Aws::String, Aws::Utils::Document> m_extensions;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
@@ -587,6 +616,7 @@ class User {
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_updatedByHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
 };
 
 }  // namespace Model

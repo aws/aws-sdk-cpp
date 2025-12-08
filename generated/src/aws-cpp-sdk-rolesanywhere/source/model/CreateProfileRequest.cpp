@@ -15,32 +15,16 @@ using namespace Aws::Utils;
 Aws::String CreateProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_acceptRoleSessionNameHasBeenSet) {
-    payload.WithBool("acceptRoleSessionName", m_acceptRoleSessionName);
-  }
-
-  if (m_durationSecondsHasBeenSet) {
-    payload.WithInteger("durationSeconds", m_durationSeconds);
-  }
-
-  if (m_enabledHasBeenSet) {
-    payload.WithBool("enabled", m_enabled);
-  }
-
-  if (m_managedPolicyArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> managedPolicyArnsJsonList(m_managedPolicyArns.size());
-    for (unsigned managedPolicyArnsIndex = 0; managedPolicyArnsIndex < managedPolicyArnsJsonList.GetLength(); ++managedPolicyArnsIndex) {
-      managedPolicyArnsJsonList[managedPolicyArnsIndex].AsString(m_managedPolicyArns[managedPolicyArnsIndex]);
-    }
-    payload.WithArray("managedPolicyArns", std::move(managedPolicyArnsJsonList));
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
   if (m_requireInstancePropertiesHasBeenSet) {
     payload.WithBool("requireInstanceProperties", m_requireInstanceProperties);
+  }
+
+  if (m_sessionPolicyHasBeenSet) {
+    payload.WithString("sessionPolicy", m_sessionPolicy);
   }
 
   if (m_roleArnsHasBeenSet) {
@@ -51,8 +35,20 @@ Aws::String CreateProfileRequest::SerializePayload() const {
     payload.WithArray("roleArns", std::move(roleArnsJsonList));
   }
 
-  if (m_sessionPolicyHasBeenSet) {
-    payload.WithString("sessionPolicy", m_sessionPolicy);
+  if (m_managedPolicyArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> managedPolicyArnsJsonList(m_managedPolicyArns.size());
+    for (unsigned managedPolicyArnsIndex = 0; managedPolicyArnsIndex < managedPolicyArnsJsonList.GetLength(); ++managedPolicyArnsIndex) {
+      managedPolicyArnsJsonList[managedPolicyArnsIndex].AsString(m_managedPolicyArns[managedPolicyArnsIndex]);
+    }
+    payload.WithArray("managedPolicyArns", std::move(managedPolicyArnsJsonList));
+  }
+
+  if (m_durationSecondsHasBeenSet) {
+    payload.WithInteger("durationSeconds", m_durationSeconds);
+  }
+
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
   }
 
   if (m_tagsHasBeenSet) {
@@ -61,6 +57,10 @@ Aws::String CreateProfileRequest::SerializePayload() const {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("tags", std::move(tagsJsonList));
+  }
+
+  if (m_acceptRoleSessionNameHasBeenSet) {
+    payload.WithBool("acceptRoleSessionName", m_acceptRoleSessionName);
   }
 
   return payload.View().WriteReadable();

@@ -89,8 +89,8 @@ class DimensionValues {
   ///@{
   /**
    * <p>The match options that you can use to filter your results.</p> <p>
-   * <code>MatchOptions</code> is only applicable for actions related to Cost
-   * Category and Anomaly Subscriptions. Refer to the documentation for each specific
+   * <code>MatchOptions</code> is only applicable for actions related to cost
+   * category and Anomaly Subscriptions. Refer to the documentation for each specific
    * API to see what is supported.</p> <p>The default values for
    * <code>MatchOptions</code> are <code>EQUALS</code> and
    * <code>CASE_SENSITIVE</code>.</p>

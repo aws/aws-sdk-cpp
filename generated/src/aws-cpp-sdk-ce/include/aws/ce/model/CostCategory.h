@@ -39,7 +39,7 @@ class CostCategory {
 
   ///@{
   /**
-   * <p>The unique identifier for your Cost Category. </p>
+   * <p>The unique identifier for your cost category. </p>
    */
   inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
   inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
@@ -57,7 +57,7 @@ class CostCategory {
 
   ///@{
   /**
-   * <p>The effective start date of your Cost Category.</p>
+   * <p>The effective start date of your cost category.</p>
    */
   inline const Aws::String& GetEffectiveStart() const { return m_effectiveStart; }
   inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
@@ -75,7 +75,7 @@ class CostCategory {
 
   ///@{
   /**
-   * <p>The effective end date of your Cost Category.</p>
+   * <p>The effective end date of your cost category.</p>
    */
   inline const Aws::String& GetEffectiveEnd() const { return m_effectiveEnd; }
   inline bool EffectiveEndHasBeenSet() const { return m_effectiveEndHasBeenSet; }
@@ -124,7 +124,7 @@ class CostCategory {
   ///@{
   /**
    * <p>The rules are processed in order. If there are multiple rules that match the
-   * line item, then the first rule to match is used to determine that Cost Category
+   * line item, then the first rule to match is used to determine that cost category
    * value. </p>
    */
   inline const Aws::Vector<CostCategoryRule>& GetRules() const { return m_rules; }
@@ -150,7 +150,7 @@ class CostCategory {
   ///@{
   /**
    * <p> The split charge rules that are used to allocate your charges between your
-   * Cost Category values. </p>
+   * cost category values. </p>
    */
   inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const { return m_splitChargeRules; }
   inline bool SplitChargeRulesHasBeenSet() const { return m_splitChargeRulesHasBeenSet; }

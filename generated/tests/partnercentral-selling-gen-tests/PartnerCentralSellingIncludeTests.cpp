@@ -34,6 +34,11 @@
 #include <aws/partnercentral-selling/model/AwsOpportunityProject.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityRelatedEntities.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityStage.h>
+#include <aws/partnercentral-selling/model/AwsProductDetails.h>
+#include <aws/partnercentral-selling/model/AwsProductInsights.h>
+#include <aws/partnercentral-selling/model/AwsProductInsightsCurrencyCodeEnum.h>
+#include <aws/partnercentral-selling/model/AwsProductOptimization.h>
+#include <aws/partnercentral-selling/model/AwsProductsSpendInsightsBySource.h>
 #include <aws/partnercentral-selling/model/AwsSubmission.h>
 #include <aws/partnercentral-selling/model/AwsTeamMember.h>
 #include <aws/partnercentral-selling/model/Channel.h>

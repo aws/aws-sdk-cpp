@@ -23,6 +23,14 @@ Aws::String DescribeUserRequest::SerializePayload() const {
     payload.WithString("UserId", m_userId);
   }
 
+  if (m_extensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extensionsJsonList(m_extensions.size());
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      extensionsJsonList[extensionsIndex].AsString(m_extensions[extensionsIndex]);
+    }
+    payload.WithArray("Extensions", std::move(extensionsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -16,16 +16,16 @@ using namespace Aws::Utils;
 Aws::String ImportCrlRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
   if (m_crlDataHasBeenSet) {
     payload.WithString("crlData", HashingUtils::Base64Encode(m_crlData));
   }
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
   }
 
   if (m_tagsHasBeenSet) {

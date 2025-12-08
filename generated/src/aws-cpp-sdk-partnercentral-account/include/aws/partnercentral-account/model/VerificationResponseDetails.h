@@ -74,9 +74,9 @@ class VerificationResponseDetails {
   ///@}
  private:
   BusinessVerificationResponse m_businessVerificationResponse;
-  bool m_businessVerificationResponseHasBeenSet = false;
 
   RegistrantVerificationResponse m_registrantVerificationResponse;
+  bool m_businessVerificationResponseHasBeenSet = false;
   bool m_registrantVerificationResponseHasBeenSet = false;
 };
 

@@ -149,24 +149,24 @@ class GetVerificationResult {
   ///@}
  private:
   VerificationType m_verificationType{VerificationType::NOT_SET};
-  bool m_verificationTypeHasBeenSet = false;
 
   VerificationStatus m_verificationStatus{VerificationStatus::NOT_SET};
-  bool m_verificationStatusHasBeenSet = false;
 
   Aws::String m_verificationStatusReason;
-  bool m_verificationStatusReasonHasBeenSet = false;
 
   VerificationResponseDetails m_verificationResponseDetails;
-  bool m_verificationResponseDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_verificationTypeHasBeenSet = false;
+  bool m_verificationStatusHasBeenSet = false;
+  bool m_verificationStatusReasonHasBeenSet = false;
+  bool m_verificationResponseDetailsHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

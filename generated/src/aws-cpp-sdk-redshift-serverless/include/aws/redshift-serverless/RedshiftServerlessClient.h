@@ -715,6 +715,42 @@ class AWS_REDSHIFTSERVERLESS_API RedshiftServerlessClient : public Aws::Client::
   }
 
   /**
+   * <p>Returns an Identity Center authentication token for accessing Amazon Redshift
+   * Serverless workgroups.</p> <p>The token provides secure access to data within
+   * the specified workgroups using Identity Center identity propagation. The token
+   * expires after a specified duration and must be refreshed for continued
+   * access.</p> <p>The Identity and Access Management (IAM) user or role that runs
+   * GetIdentityCenterAuthToken must have appropriate permissions to access the
+   * specified workgroups and Identity Center integration must be configured for the
+   * workgroups.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetIdentityCenterAuthToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIdentityCenterAuthTokenOutcome GetIdentityCenterAuthToken(
+      const Model::GetIdentityCenterAuthTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIdentityCenterAuthToken that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetIdentityCenterAuthTokenRequestT = Model::GetIdentityCenterAuthTokenRequest>
+  Model::GetIdentityCenterAuthTokenOutcomeCallable GetIdentityCenterAuthTokenCallable(
+      const GetIdentityCenterAuthTokenRequestT& request) const {
+    return SubmitCallable(&RedshiftServerlessClient::GetIdentityCenterAuthToken, request);
+  }
+
+  /**
+   * An Async wrapper for GetIdentityCenterAuthToken that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetIdentityCenterAuthTokenRequestT = Model::GetIdentityCenterAuthTokenRequest>
+  void GetIdentityCenterAuthTokenAsync(const GetIdentityCenterAuthTokenRequestT& request,
+                                       const GetIdentityCenterAuthTokenResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RedshiftServerlessClient::GetIdentityCenterAuthToken, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about a namespace in Amazon Redshift
    * Serverless.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetNamespace">AWS

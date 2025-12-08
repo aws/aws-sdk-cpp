@@ -29,7 +29,7 @@ class UpdateCostCategoryDefinitionResult {
 
   ///@{
   /**
-   * <p>The unique identifier for your Cost Category. </p>
+   * <p>The unique identifier for your cost category. </p>
    */
   inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
   template <typename CostCategoryArnT = Aws::String>
@@ -46,7 +46,7 @@ class UpdateCostCategoryDefinitionResult {
 
   ///@{
   /**
-   * <p>The Cost Category's effective start date. It can only be a billing start date
+   * <p>The cost category's effective start date. It can only be a billing start date
    * (first day of the month).</p>
    */
   inline const Aws::String& GetEffectiveStart() const { return m_effectiveStart; }

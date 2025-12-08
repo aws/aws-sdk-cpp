@@ -18,14 +18,6 @@ namespace Model {
 NotificationSettingDetail::NotificationSettingDetail(JsonView jsonValue) { *this = jsonValue; }
 
 NotificationSettingDetail& NotificationSettingDetail::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("channel")) {
-    m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
-    m_channelHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("configuredBy")) {
-    m_configuredBy = jsonValue.GetString("configuredBy");
-    m_configuredByHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
@@ -38,19 +30,19 @@ NotificationSettingDetail& NotificationSettingDetail::operator=(JsonView jsonVal
     m_threshold = jsonValue.GetInteger("threshold");
     m_thresholdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channel")) {
+    m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
+    m_channelHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuredBy")) {
+    m_configuredBy = jsonValue.GetString("configuredBy");
+    m_configuredByHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue NotificationSettingDetail::Jsonize() const {
   JsonValue payload;
-
-  if (m_channelHasBeenSet) {
-    payload.WithString("channel", NotificationChannelMapper::GetNameForNotificationChannel(m_channel));
-  }
-
-  if (m_configuredByHasBeenSet) {
-    payload.WithString("configuredBy", m_configuredBy);
-  }
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
@@ -62,6 +54,14 @@ JsonValue NotificationSettingDetail::Jsonize() const {
 
   if (m_thresholdHasBeenSet) {
     payload.WithInteger("threshold", m_threshold);
+  }
+
+  if (m_channelHasBeenSet) {
+    payload.WithString("channel", NotificationChannelMapper::GetNameForNotificationChannel(m_channel));
+  }
+
+  if (m_configuredByHasBeenSet) {
+    payload.WithString("configuredBy", m_configuredBy);
   }
 
   return payload;

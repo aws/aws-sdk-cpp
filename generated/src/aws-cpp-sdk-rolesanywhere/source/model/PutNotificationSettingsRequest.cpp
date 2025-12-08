@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String PutNotificationSettingsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_trustAnchorIdHasBeenSet) {
+    payload.WithString("trustAnchorId", m_trustAnchorId);
+  }
+
   if (m_notificationSettingsHasBeenSet) {
     Aws::Utils::Array<JsonValue> notificationSettingsJsonList(m_notificationSettings.size());
     for (unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength();
@@ -22,10 +26,6 @@ Aws::String PutNotificationSettingsRequest::SerializePayload() const {
       notificationSettingsJsonList[notificationSettingsIndex].AsObject(m_notificationSettings[notificationSettingsIndex].Jsonize());
     }
     payload.WithArray("notificationSettings", std::move(notificationSettingsJsonList));
-  }
-
-  if (m_trustAnchorIdHasBeenSet) {
-    payload.WithString("trustAnchorId", m_trustAnchorId);
   }
 
   return payload.View().WriteReadable();

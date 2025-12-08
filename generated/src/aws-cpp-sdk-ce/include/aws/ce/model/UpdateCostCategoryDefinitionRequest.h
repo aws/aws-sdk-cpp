@@ -36,7 +36,7 @@ class UpdateCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>The unique identifier for your Cost Category.</p>
+   * <p>The unique identifier for your cost category.</p>
    */
   inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
   inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
@@ -54,7 +54,7 @@ class UpdateCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>The Cost Category's effective start date. It can only be a billing start date
+   * <p>The cost category's effective start date. It can only be a billing start date
    * (first day of the month). If the date isn't provided, it's the first day of the
    * current month. Dates can't be before the previous twelve months, or in the
    * future.</p>
@@ -132,8 +132,8 @@ class UpdateCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p> The split charge rules used to allocate your charges between your Cost
-   * Category values. </p>
+   * <p> The split charge rules used to allocate your charges between your cost
+   * category values. </p>
    */
   inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const { return m_splitChargeRules; }
   inline bool SplitChargeRulesHasBeenSet() const { return m_splitChargeRulesHasBeenSet; }

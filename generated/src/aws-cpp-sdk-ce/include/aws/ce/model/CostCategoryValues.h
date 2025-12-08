@@ -58,7 +58,7 @@ class CostCategoryValues {
 
   ///@{
   /**
-   * <p>The specific value of the Cost Category.</p>
+   * <p>The specific value of the cost category.</p>
    */
   inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

@@ -13,6 +13,7 @@
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -855,6 +856,32 @@ class RestoreDBClusterToPointInTimeRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Tags to assign to resources associated with the DB cluster.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>cluster-auto-backup</code> - The DB cluster's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  RestoreDBClusterToPointInTimeRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  RestoreDBClusterToPointInTimeRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterIdentifier;
 
@@ -925,6 +952,8 @@ class RestoreDBClusterToPointInTimeRequest : public RDSRequest {
   int m_performanceInsightsRetentionPeriod{0};
 
   Aws::String m_engineLifecycleSupport;
+
+  Aws::Vector<TagSpecification> m_tagSpecifications;
   bool m_dBClusterIdentifierHasBeenSet = false;
   bool m_restoreTypeHasBeenSet = false;
   bool m_sourceDBClusterIdentifierHasBeenSet = false;
@@ -960,6 +989,7 @@ class RestoreDBClusterToPointInTimeRequest : public RDSRequest {
   bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
 };
 
 }  // namespace Model

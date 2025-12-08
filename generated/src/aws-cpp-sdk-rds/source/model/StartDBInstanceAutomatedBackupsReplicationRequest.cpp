@@ -29,6 +29,18 @@ Aws::String StartDBInstanceAutomatedBackupsReplicationRequest::SerializePayload(
     ss << "PreSignedUrl=" << StringUtils::URLEncode(m_preSignedUrl.c_str()) << "&";
   }
 
+  if (m_tagsHasBeenSet) {
+    if (m_tags.empty()) {
+      ss << "Tags=&";
+    } else {
+      unsigned tagsCount = 1;
+      for (auto& item : m_tags) {
+        item.OutputToStream(ss, "Tags.Tag.", tagsCount, "");
+        tagsCount++;
+      }
+    }
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

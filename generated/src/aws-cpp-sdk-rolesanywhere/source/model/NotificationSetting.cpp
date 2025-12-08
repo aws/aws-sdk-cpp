@@ -18,10 +18,6 @@ namespace Model {
 NotificationSetting::NotificationSetting(JsonView jsonValue) { *this = jsonValue; }
 
 NotificationSetting& NotificationSetting::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("channel")) {
-    m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
-    m_channelHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
@@ -34,15 +30,15 @@ NotificationSetting& NotificationSetting::operator=(JsonView jsonValue) {
     m_threshold = jsonValue.GetInteger("threshold");
     m_thresholdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channel")) {
+    m_channel = NotificationChannelMapper::GetNotificationChannelForName(jsonValue.GetString("channel"));
+    m_channelHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue NotificationSetting::Jsonize() const {
   JsonValue payload;
-
-  if (m_channelHasBeenSet) {
-    payload.WithString("channel", NotificationChannelMapper::GetNameForNotificationChannel(m_channel));
-  }
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
@@ -54,6 +50,10 @@ JsonValue NotificationSetting::Jsonize() const {
 
   if (m_thresholdHasBeenSet) {
     payload.WithInteger("threshold", m_threshold);
+  }
+
+  if (m_channelHasBeenSet) {
+    payload.WithString("channel", NotificationChannelMapper::GetNameForNotificationChannel(m_channel));
   }
 
   return payload;

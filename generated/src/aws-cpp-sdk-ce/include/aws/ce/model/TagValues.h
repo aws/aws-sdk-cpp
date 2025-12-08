@@ -84,8 +84,8 @@ class TagValues {
   ///@{
   /**
    * <p>The match options that you can use to filter your results.
-   * <code>MatchOptions</code> is only applicable for actions related to Cost
-   * Category. The default values for <code>MatchOptions</code> are
+   * <code>MatchOptions</code> is only applicable for actions related to cost
+   * category. The default values for <code>MatchOptions</code> are
    * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
    */
   inline const Aws::Vector<MatchOption>& GetMatchOptions() const { return m_matchOptions; }
