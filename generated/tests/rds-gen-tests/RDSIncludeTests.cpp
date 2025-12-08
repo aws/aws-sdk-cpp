@@ -475,6 +475,7 @@
 #include <aws/rds/model/SwitchoverReadReplicaRequest.h>
 #include <aws/rds/model/SwitchoverReadReplicaResult.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 #include <aws/rds/model/TargetConnectionNetworkType.h>
 #include <aws/rds/model/TargetHealth.h>
 #include <aws/rds/model/TargetHealthReason.h>

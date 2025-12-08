@@ -34,60 +34,6 @@ class SubjectSummary {
 
   ///@{
   /**
-   * <p>The ISO-8601 time stamp of when the certificate was first used in a temporary
-   * credential request.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
-  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  void SetCreatedAt(CreatedAtT&& value) {
-    m_createdAtHasBeenSet = true;
-    m_createdAt = std::forward<CreatedAtT>(value);
-  }
-  template <typename CreatedAtT = Aws::Utils::DateTime>
-  SubjectSummary& WithCreatedAt(CreatedAtT&& value) {
-    SetCreatedAt(std::forward<CreatedAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The enabled status of the subject. </p>
-   */
-  inline bool GetEnabled() const { return m_enabled; }
-  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-  inline void SetEnabled(bool value) {
-    m_enabledHasBeenSet = true;
-    m_enabled = value;
-  }
-  inline SubjectSummary& WithEnabled(bool value) {
-    SetEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
-   * credential request.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastSeenAt() const { return m_lastSeenAt; }
-  inline bool LastSeenAtHasBeenSet() const { return m_lastSeenAtHasBeenSet; }
-  template <typename LastSeenAtT = Aws::Utils::DateTime>
-  void SetLastSeenAt(LastSeenAtT&& value) {
-    m_lastSeenAtHasBeenSet = true;
-    m_lastSeenAt = std::forward<LastSeenAtT>(value);
-  }
-  template <typename LastSeenAtT = Aws::Utils::DateTime>
-  SubjectSummary& WithLastSeenAt(LastSeenAtT&& value) {
-    SetLastSeenAt(std::forward<LastSeenAtT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The ARN of the resource.</p>
    */
   inline const Aws::String& GetSubjectArn() const { return m_subjectArn; }
@@ -124,18 +70,16 @@ class SubjectSummary {
 
   ///@{
   /**
-   * <p>The ISO-8601 timestamp when the subject was last updated. </p>
+   * <p>The enabled status of the subject. </p>
    */
-  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
-  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  void SetUpdatedAt(UpdatedAtT&& value) {
-    m_updatedAtHasBeenSet = true;
-    m_updatedAt = std::forward<UpdatedAtT>(value);
+  inline bool GetEnabled() const { return m_enabled; }
+  inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+  inline void SetEnabled(bool value) {
+    m_enabledHasBeenSet = true;
+    m_enabled = value;
   }
-  template <typename UpdatedAtT = Aws::Utils::DateTime>
-  SubjectSummary& WithUpdatedAt(UpdatedAtT&& value) {
-    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+  inline SubjectSummary& WithEnabled(bool value) {
+    SetEnabled(value);
     return *this;
   }
   ///@}
@@ -157,27 +101,83 @@ class SubjectSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+   * credential request.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastSeenAt() const { return m_lastSeenAt; }
+  inline bool LastSeenAtHasBeenSet() const { return m_lastSeenAtHasBeenSet; }
+  template <typename LastSeenAtT = Aws::Utils::DateTime>
+  void SetLastSeenAt(LastSeenAtT&& value) {
+    m_lastSeenAtHasBeenSet = true;
+    m_lastSeenAt = std::forward<LastSeenAtT>(value);
+  }
+  template <typename LastSeenAtT = Aws::Utils::DateTime>
+  SubjectSummary& WithLastSeenAt(LastSeenAtT&& value) {
+    SetLastSeenAt(std::forward<LastSeenAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ISO-8601 time stamp of when the certificate was first used in a temporary
+   * credential request.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  SubjectSummary& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ISO-8601 timestamp when the subject was last updated. </p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  SubjectSummary& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_createdAt{};
-
-  bool m_enabled{false};
-
-  Aws::Utils::DateTime m_lastSeenAt{};
-
   Aws::String m_subjectArn;
 
   Aws::String m_subjectId;
 
-  Aws::Utils::DateTime m_updatedAt{};
+  bool m_enabled{false};
 
   Aws::String m_x509Subject;
-  bool m_createdAtHasBeenSet = false;
-  bool m_enabledHasBeenSet = false;
-  bool m_lastSeenAtHasBeenSet = false;
+
+  Aws::Utils::DateTime m_lastSeenAt{};
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_updatedAt{};
   bool m_subjectArnHasBeenSet = false;
   bool m_subjectIdHasBeenSet = false;
-  bool m_updatedAtHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
   bool m_x509SubjectHasBeenSet = false;
+  bool m_lastSeenAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
 };
 
 }  // namespace Model

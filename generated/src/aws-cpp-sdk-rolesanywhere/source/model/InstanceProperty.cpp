@@ -18,9 +18,9 @@ namespace Model {
 InstanceProperty::InstanceProperty(JsonView jsonValue) { *this = jsonValue; }
 
 InstanceProperty& InstanceProperty::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("failed")) {
-    m_failed = jsonValue.GetBool("failed");
-    m_failedHasBeenSet = true;
+  if (jsonValue.ValueExists("seenAt")) {
+    m_seenAt = jsonValue.GetString("seenAt");
+    m_seenAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("properties")) {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
@@ -29,9 +29,9 @@ InstanceProperty& InstanceProperty::operator=(JsonView jsonValue) {
     }
     m_propertiesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("seenAt")) {
-    m_seenAt = jsonValue.GetString("seenAt");
-    m_seenAtHasBeenSet = true;
+  if (jsonValue.ValueExists("failed")) {
+    m_failed = jsonValue.GetBool("failed");
+    m_failedHasBeenSet = true;
   }
   return *this;
 }
@@ -39,8 +39,8 @@ InstanceProperty& InstanceProperty::operator=(JsonView jsonValue) {
 JsonValue InstanceProperty::Jsonize() const {
   JsonValue payload;
 
-  if (m_failedHasBeenSet) {
-    payload.WithBool("failed", m_failed);
+  if (m_seenAtHasBeenSet) {
+    payload.WithString("seenAt", m_seenAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_propertiesHasBeenSet) {
@@ -51,8 +51,8 @@ JsonValue InstanceProperty::Jsonize() const {
     payload.WithObject("properties", std::move(propertiesJsonMap));
   }
 
-  if (m_seenAtHasBeenSet) {
-    payload.WithString("seenAt", m_seenAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_failedHasBeenSet) {
+    payload.WithBool("failed", m_failed);
   }
 
   return payload;

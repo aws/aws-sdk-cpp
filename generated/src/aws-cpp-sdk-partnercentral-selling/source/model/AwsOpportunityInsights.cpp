@@ -26,6 +26,10 @@ AwsOpportunityInsights& AwsOpportunityInsights::operator=(JsonView jsonValue) {
     m_engagementScore = EngagementScoreMapper::GetEngagementScoreForName(jsonValue.GetString("EngagementScore"));
     m_engagementScoreHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsProductsSpendInsightsBySource")) {
+    m_awsProductsSpendInsightsBySource = jsonValue.GetObject("AwsProductsSpendInsightsBySource");
+    m_awsProductsSpendInsightsBySourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AwsOpportunityInsights::Jsonize() const {
 
   if (m_engagementScoreHasBeenSet) {
     payload.WithString("EngagementScore", EngagementScoreMapper::GetNameForEngagementScore(m_engagementScore));
+  }
+
+  if (m_awsProductsSpendInsightsBySourceHasBeenSet) {
+    payload.WithObject("AwsProductsSpendInsightsBySource", m_awsProductsSpendInsightsBySource.Jsonize());
   }
 
   return payload;

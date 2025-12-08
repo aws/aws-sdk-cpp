@@ -132,6 +132,13 @@ DescribeUserResult& DescribeUserResult::operator=(const Aws::AmazonWebServiceRes
     m_updatedBy = jsonValue.GetString("UpdatedBy");
     m_updatedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Extensions")) {
+    Aws::Map<Aws::String, JsonView> extensionsJsonMap = jsonValue.GetObject("Extensions").GetAllObjects();
+    for (auto& extensionsItem : extensionsJsonMap) {
+      m_extensions[extensionsItem.first] = extensionsItem.second.AsObject();
+    }
+    m_extensionsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

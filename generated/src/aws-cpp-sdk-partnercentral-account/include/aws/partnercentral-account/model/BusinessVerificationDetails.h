@@ -112,15 +112,15 @@ class BusinessVerificationDetails {
   ///@}
  private:
   Aws::String m_legalName;
-  bool m_legalNameHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_countryCode;
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_jurisdictionOfIncorporation;
+  bool m_legalNameHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
   bool m_jurisdictionOfIncorporationHasBeenSet = false;
 };
 

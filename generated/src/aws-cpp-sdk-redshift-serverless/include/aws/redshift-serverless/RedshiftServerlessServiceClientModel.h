@@ -42,6 +42,7 @@
 #include <aws/redshift-serverless/model/GetCredentialsResult.h>
 #include <aws/redshift-serverless/model/GetCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/GetEndpointAccessResult.h>
+#include <aws/redshift-serverless/model/GetIdentityCenterAuthTokenResult.h>
 #include <aws/redshift-serverless/model/GetNamespaceResult.h>
 #include <aws/redshift-serverless/model/GetRecoveryPointResult.h>
 #include <aws/redshift-serverless/model/GetReservationOfferingResult.h>
@@ -154,6 +155,7 @@ class DeleteWorkgroupRequest;
 class GetCredentialsRequest;
 class GetCustomDomainAssociationRequest;
 class GetEndpointAccessRequest;
+class GetIdentityCenterAuthTokenRequest;
 class GetNamespaceRequest;
 class GetRecoveryPointRequest;
 class GetReservationRequest;
@@ -221,6 +223,7 @@ typedef Aws::Utils::Outcome<DeleteWorkgroupResult, RedshiftServerlessError> Dele
 typedef Aws::Utils::Outcome<GetCredentialsResult, RedshiftServerlessError> GetCredentialsOutcome;
 typedef Aws::Utils::Outcome<GetCustomDomainAssociationResult, RedshiftServerlessError> GetCustomDomainAssociationOutcome;
 typedef Aws::Utils::Outcome<GetEndpointAccessResult, RedshiftServerlessError> GetEndpointAccessOutcome;
+typedef Aws::Utils::Outcome<GetIdentityCenterAuthTokenResult, RedshiftServerlessError> GetIdentityCenterAuthTokenOutcome;
 typedef Aws::Utils::Outcome<GetNamespaceResult, RedshiftServerlessError> GetNamespaceOutcome;
 typedef Aws::Utils::Outcome<GetRecoveryPointResult, RedshiftServerlessError> GetRecoveryPointOutcome;
 typedef Aws::Utils::Outcome<GetReservationResult, RedshiftServerlessError> GetReservationOutcome;
@@ -288,6 +291,7 @@ typedef std::future<DeleteWorkgroupOutcome> DeleteWorkgroupOutcomeCallable;
 typedef std::future<GetCredentialsOutcome> GetCredentialsOutcomeCallable;
 typedef std::future<GetCustomDomainAssociationOutcome> GetCustomDomainAssociationOutcomeCallable;
 typedef std::future<GetEndpointAccessOutcome> GetEndpointAccessOutcomeCallable;
+typedef std::future<GetIdentityCenterAuthTokenOutcome> GetIdentityCenterAuthTokenOutcomeCallable;
 typedef std::future<GetNamespaceOutcome> GetNamespaceOutcomeCallable;
 typedef std::future<GetRecoveryPointOutcome> GetRecoveryPointOutcomeCallable;
 typedef std::future<GetReservationOutcome> GetReservationOutcomeCallable;
@@ -407,6 +411,9 @@ typedef std::function<void(const RedshiftServerlessClient*, const Model::GetCust
 typedef std::function<void(const RedshiftServerlessClient*, const Model::GetEndpointAccessRequest&, const Model::GetEndpointAccessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEndpointAccessResponseReceivedHandler;
+typedef std::function<void(const RedshiftServerlessClient*, const Model::GetIdentityCenterAuthTokenRequest&,
+                           const Model::GetIdentityCenterAuthTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIdentityCenterAuthTokenResponseReceivedHandler;
 typedef std::function<void(const RedshiftServerlessClient*, const Model::GetNamespaceRequest&, const Model::GetNamespaceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetNamespaceResponseReceivedHandler;

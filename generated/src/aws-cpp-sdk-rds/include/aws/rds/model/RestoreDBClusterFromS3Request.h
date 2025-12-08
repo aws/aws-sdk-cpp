@@ -10,6 +10,7 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -853,6 +854,32 @@ class RestoreDBClusterFromS3Request : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Tags to assign to resources associated with the DB cluster.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>cluster-auto-backup</code> - The DB cluster's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  RestoreDBClusterFromS3Request& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  RestoreDBClusterFromS3Request& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_availabilityZones;
 
@@ -927,6 +954,8 @@ class RestoreDBClusterFromS3Request : public RDSRequest {
   Aws::String m_masterUserSecretKmsKeyId;
 
   Aws::String m_engineLifecycleSupport;
+
+  Aws::Vector<TagSpecification> m_tagSpecifications;
   bool m_availabilityZonesHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_characterSetNameHasBeenSet = false;
@@ -964,6 +993,7 @@ class RestoreDBClusterFromS3Request : public RDSRequest {
   bool m_manageMasterUserPasswordHasBeenSet = false;
   bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
 };
 
 }  // namespace Model

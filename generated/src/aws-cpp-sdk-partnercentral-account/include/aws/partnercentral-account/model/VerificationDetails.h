@@ -73,9 +73,9 @@ class VerificationDetails {
   ///@}
  private:
   BusinessVerificationDetails m_businessVerificationDetails;
-  bool m_businessVerificationDetailsHasBeenSet = false;
 
   RegistrantVerificationDetails m_registrantVerificationDetails;
+  bool m_businessVerificationDetailsHasBeenSet = false;
   bool m_registrantVerificationDetailsHasBeenSet = false;
 };
 

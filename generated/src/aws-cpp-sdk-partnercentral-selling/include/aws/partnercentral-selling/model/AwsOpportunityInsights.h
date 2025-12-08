@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/AwsProductsSpendInsightsBySource.h>
 #include <aws/partnercentral-selling/model/EngagementScore.h>
 
 #include <utility>
@@ -70,12 +71,31 @@ class AwsOpportunityInsights {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const AwsProductsSpendInsightsBySource& GetAwsProductsSpendInsightsBySource() const { return m_awsProductsSpendInsightsBySource; }
+  inline bool AwsProductsSpendInsightsBySourceHasBeenSet() const { return m_awsProductsSpendInsightsBySourceHasBeenSet; }
+  template <typename AwsProductsSpendInsightsBySourceT = AwsProductsSpendInsightsBySource>
+  void SetAwsProductsSpendInsightsBySource(AwsProductsSpendInsightsBySourceT&& value) {
+    m_awsProductsSpendInsightsBySourceHasBeenSet = true;
+    m_awsProductsSpendInsightsBySource = std::forward<AwsProductsSpendInsightsBySourceT>(value);
+  }
+  template <typename AwsProductsSpendInsightsBySourceT = AwsProductsSpendInsightsBySource>
+  AwsOpportunityInsights& WithAwsProductsSpendInsightsBySource(AwsProductsSpendInsightsBySourceT&& value) {
+    SetAwsProductsSpendInsightsBySource(std::forward<AwsProductsSpendInsightsBySourceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextBestActions;
 
   EngagementScore m_engagementScore{EngagementScore::NOT_SET};
+
+  AwsProductsSpendInsightsBySource m_awsProductsSpendInsightsBySource;
   bool m_nextBestActionsHasBeenSet = false;
   bool m_engagementScoreHasBeenSet = false;
+  bool m_awsProductsSpendInsightsBySourceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -49,7 +49,7 @@ class GetCostCategoriesResult {
 
   ///@{
   /**
-   * <p>The names of the Cost Categories.</p>
+   * <p>The names of the cost categories.</p>
    */
   inline const Aws::Vector<Aws::String>& GetCostCategoryNames() const { return m_costCategoryNames; }
   template <typename CostCategoryNamesT = Aws::Vector<Aws::String>>
@@ -72,7 +72,7 @@ class GetCostCategoriesResult {
 
   ///@{
   /**
-   * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+   * <p>The cost category values.</p> <p>If the <code>CostCategoryName</code> key
    * isn't specified in the request, the <code>CostCategoryValues</code> fields
    * aren't returned. </p>
    */

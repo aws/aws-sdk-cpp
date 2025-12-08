@@ -31,24 +31,6 @@ class UpdateCrlRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>The x509 v3 specified certificate revocation list (CRL).</p>
-   */
-  inline const Aws::Utils::ByteBuffer& GetCrlData() const { return m_crlData; }
-  inline bool CrlDataHasBeenSet() const { return m_crlDataHasBeenSet; }
-  template <typename CrlDataT = Aws::Utils::ByteBuffer>
-  void SetCrlData(CrlDataT&& value) {
-    m_crlDataHasBeenSet = true;
-    m_crlData = std::forward<CrlDataT>(value);
-  }
-  template <typename CrlDataT = Aws::Utils::ByteBuffer>
-  UpdateCrlRequest& WithCrlData(CrlDataT&& value) {
-    SetCrlData(std::forward<CrlDataT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The unique identifier of the certificate revocation list (CRL).</p>
    */
   inline const Aws::String& GetCrlId() const { return m_crlId; }
@@ -82,15 +64,33 @@ class UpdateCrlRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::Utils::ByteBuffer m_crlData{};
 
+  ///@{
+  /**
+   * <p>The x509 v3 specified certificate revocation list (CRL).</p>
+   */
+  inline const Aws::Utils::ByteBuffer& GetCrlData() const { return m_crlData; }
+  inline bool CrlDataHasBeenSet() const { return m_crlDataHasBeenSet; }
+  template <typename CrlDataT = Aws::Utils::ByteBuffer>
+  void SetCrlData(CrlDataT&& value) {
+    m_crlDataHasBeenSet = true;
+    m_crlData = std::forward<CrlDataT>(value);
+  }
+  template <typename CrlDataT = Aws::Utils::ByteBuffer>
+  UpdateCrlRequest& WithCrlData(CrlDataT&& value) {
+    SetCrlData(std::forward<CrlDataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_crlId;
 
   Aws::String m_name;
-  bool m_crlDataHasBeenSet = false;
+
+  Aws::Utils::ByteBuffer m_crlData{};
   bool m_crlIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_crlDataHasBeenSet = false;
 };
 
 }  // namespace Model

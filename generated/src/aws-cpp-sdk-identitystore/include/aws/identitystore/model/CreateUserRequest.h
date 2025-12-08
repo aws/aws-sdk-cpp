@@ -4,6 +4,8 @@
  */
 
 #pragma once
+#include <aws/core/utils/Document.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/identitystore/IdentityStoreRequest.h>
@@ -383,6 +385,34 @@ class CreateUserRequest : public IdentityStoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map with additional attribute extensions for the user. Each map key
+   * corresponds to an extension name, while map values represent extension data in
+   * <code>Document</code> type (not supported by Java V1, Go V1 and older versions
+   * of the CLI). <code>aws:identitystore:enterprise</code> is the only supported
+   * extension name.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  CreateUserRequest& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsKeyT = Aws::String, typename ExtensionsValueT = Aws::Utils::Document>
+  CreateUserRequest& AddExtensions(ExtensionsKeyT&& key, ExtensionsValueT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace(std::forward<ExtensionsKeyT>(key), std::forward<ExtensionsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityStoreId;
 
@@ -417,6 +447,8 @@ class CreateUserRequest : public IdentityStoreRequest {
   Aws::String m_website;
 
   Aws::String m_birthdate;
+
+  Aws::Map<Aws::String, Aws::Utils::Document> m_extensions;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -434,6 +466,7 @@ class CreateUserRequest : public IdentityStoreRequest {
   bool m_photosHasBeenSet = false;
   bool m_websiteHasBeenSet = false;
   bool m_birthdateHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
 };
 
 }  // namespace Model

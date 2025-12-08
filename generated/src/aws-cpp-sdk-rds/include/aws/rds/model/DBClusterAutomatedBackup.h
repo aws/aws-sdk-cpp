@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/RestoreWindow.h>
+#include <aws/rds/model/Tag.h>
 
 #include <utility>
 
@@ -498,6 +499,28 @@ class DBClusterAutomatedBackup {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
+  inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+  template <typename TagListT = Aws::Vector<Tag>>
+  void SetTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList = std::forward<TagListT>(value);
+  }
+  template <typename TagListT = Aws::Vector<Tag>>
+  DBClusterAutomatedBackup& WithTagList(TagListT&& value) {
+    SetTagList(std::forward<TagListT>(value));
+    return *this;
+  }
+  template <typename TagListT = Tag>
+  DBClusterAutomatedBackup& AddTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList.emplace_back(std::forward<TagListT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_engine;
 
@@ -548,6 +571,8 @@ class DBClusterAutomatedBackup {
   int m_storageThroughput{0};
 
   Aws::String m_awsBackupRecoveryPointArn;
+
+  Aws::Vector<Tag> m_tagList;
   bool m_engineHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
   bool m_dBClusterAutomatedBackupsArnHasBeenSet = false;
@@ -573,6 +598,7 @@ class DBClusterAutomatedBackup {
   bool m_iopsHasBeenSet = false;
   bool m_storageThroughputHasBeenSet = false;
   bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
 };
 
 }  // namespace Model

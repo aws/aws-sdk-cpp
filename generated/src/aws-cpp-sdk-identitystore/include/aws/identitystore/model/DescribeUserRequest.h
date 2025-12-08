@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/identitystore/IdentityStoreRequest.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 
@@ -69,12 +70,42 @@ class DescribeUserRequest : public IdentityStoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A collection of extension names indicating what extensions the service should
+   * retrieve alongside other user attributes.
+   * <code>aws:identitystore:enterprise</code> is the only supported extension
+   * name.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Vector<Aws::String>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Vector<Aws::String>>
+  DescribeUserRequest& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsT = Aws::String>
+  DescribeUserRequest& AddExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace_back(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityStoreId;
 
   Aws::String m_userId;
+
+  Aws::Vector<Aws::String> m_extensions;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
 };
 
 }  // namespace Model

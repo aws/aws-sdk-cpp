@@ -15,6 +15,7 @@
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -1425,6 +1426,32 @@ class CreateDBClusterRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>Tags to assign to resources associated with the DB cluster.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>cluster-auto-backup</code> - The DB cluster's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  CreateDBClusterRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  CreateDBClusterRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the authentication type for the master user. With IAM master user
    * authentication, you can configure the master DB user with IAM database
    * authentication when you create a DB cluster.</p> <p>You can specify one of the
@@ -1577,6 +1604,8 @@ class CreateDBClusterRequest : public RDSRequest {
 
   Aws::String m_engineLifecycleSupport;
 
+  Aws::Vector<TagSpecification> m_tagSpecifications;
+
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
 
   Aws::String m_sourceRegion;
@@ -1636,6 +1665,7 @@ class CreateDBClusterRequest : public RDSRequest {
   bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   bool m_cACertificateIdentifierHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };

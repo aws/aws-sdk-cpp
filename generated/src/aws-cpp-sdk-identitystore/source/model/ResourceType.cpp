@@ -19,6 +19,7 @@ static const int GROUP_HASH = HashingUtils::HashString("GROUP");
 static const int USER_HASH = HashingUtils::HashString("USER");
 static const int IDENTITY_STORE_HASH = HashingUtils::HashString("IDENTITY_STORE");
 static const int GROUP_MEMBERSHIP_HASH = HashingUtils::HashString("GROUP_MEMBERSHIP");
+static const int RESOURCE_POLICY_HASH = HashingUtils::HashString("RESOURCE_POLICY");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::IDENTITY_STORE;
   } else if (hashCode == GROUP_MEMBERSHIP_HASH) {
     return ResourceType::GROUP_MEMBERSHIP;
+  } else if (hashCode == RESOURCE_POLICY_HASH) {
+    return ResourceType::RESOURCE_POLICY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "IDENTITY_STORE";
     case ResourceType::GROUP_MEMBERSHIP:
       return "GROUP_MEMBERSHIP";
+    case ResourceType::RESOURCE_POLICY:
+      return "RESOURCE_POLICY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

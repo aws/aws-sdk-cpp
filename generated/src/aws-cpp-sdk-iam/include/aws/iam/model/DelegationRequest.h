@@ -443,7 +443,6 @@ class DelegationRequest {
   StateType m_state{StateType::NOT_SET};
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::String m_requestorId;
 
@@ -472,6 +471,7 @@ class DelegationRequest {
   bool m_ownerIdHasBeenSet = false;
   bool m_approverIdHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
   bool m_requestorIdHasBeenSet = false;
   bool m_requestorNameHasBeenSet = false;
   bool m_createDateHasBeenSet = false;

@@ -64,6 +64,8 @@
 #include <aws/redshift-serverless/model/GetCustomDomainAssociationResult.h>
 #include <aws/redshift-serverless/model/GetEndpointAccessRequest.h>
 #include <aws/redshift-serverless/model/GetEndpointAccessResult.h>
+#include <aws/redshift-serverless/model/GetIdentityCenterAuthTokenRequest.h>
+#include <aws/redshift-serverless/model/GetIdentityCenterAuthTokenResult.h>
 #include <aws/redshift-serverless/model/GetNamespaceRequest.h>
 #include <aws/redshift-serverless/model/GetNamespaceResult.h>
 #include <aws/redshift-serverless/model/GetRecoveryPointRequest.h>

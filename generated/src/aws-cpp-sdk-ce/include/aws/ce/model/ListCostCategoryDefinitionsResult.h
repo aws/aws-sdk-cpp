@@ -30,7 +30,7 @@ class ListCostCategoryDefinitionsResult {
 
   ///@{
   /**
-   * <p>A reference to a Cost Category that contains enough information to identify
+   * <p>A reference to a cost category that contains enough information to identify
    * the Cost Category. </p>
    */
   inline const Aws::Vector<CostCategoryReference>& GetCostCategoryReferences() const { return m_costCategoryReferences; }

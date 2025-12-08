@@ -38,9 +38,9 @@ class GetCostCategoriesRequest : public CostExplorerRequest {
   /**
    * <p>The value that you want to search the filter values for.</p> <p>If you don't
    * specify a <code>CostCategoryName</code>, <code>SearchString</code> is used to
-   * filter Cost Category names that match the <code>SearchString</code> pattern. If
+   * filter cost category names that match the <code>SearchString</code> pattern. If
    * you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
-   * to filter Cost Category values that match the <code>SearchString</code>
+   * to filter cost category values that match the <code>SearchString</code>
    * pattern.</p>
    */
   inline const Aws::String& GetSearchString() const { return m_searchString; }

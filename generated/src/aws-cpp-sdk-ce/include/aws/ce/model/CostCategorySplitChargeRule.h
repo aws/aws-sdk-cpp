@@ -23,7 +23,7 @@ namespace CostExplorer {
 namespace Model {
 
 /**
- * <p>Use the split charge rule to split the cost of one Cost Category value across
+ * <p>Use the split charge rule to split the cost of one cost category value across
  * several other target values. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategorySplitChargeRule">AWS
  * API Reference</a></p>
@@ -37,7 +37,7 @@ class CostCategorySplitChargeRule {
 
   ///@{
   /**
-   * <p>The Cost Category value that you want to split. That value can't be used as a
+   * <p>The cost category value that you want to split. That value can't be used as a
    * source or a target in other split charge rules. To indicate uncategorized costs,
    * you can use an empty string as the source.</p>
    */
@@ -57,7 +57,7 @@ class CostCategorySplitChargeRule {
 
   ///@{
   /**
-   * <p>The Cost Category values that you want to split costs across. These values
+   * <p>The cost category values that you want to split costs across. These values
    * can't be used as a source in other split charge rules. </p>
    */
   inline const Aws::Vector<Aws::String>& GetTargets() const { return m_targets; }

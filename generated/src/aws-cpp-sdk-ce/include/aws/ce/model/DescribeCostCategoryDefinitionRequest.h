@@ -32,7 +32,7 @@ class DescribeCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>The unique identifier for your Cost Category. </p>
+   * <p>The unique identifier for your cost category. </p>
    */
   inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
   inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
@@ -50,7 +50,7 @@ class DescribeCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>The date when the Cost Category was effective. </p>
+   * <p>The date when the cost category was effective. </p>
    */
   inline const Aws::String& GetEffectiveOn() const { return m_effectiveOn; }
   inline bool EffectiveOnHasBeenSet() const { return m_effectiveOnHasBeenSet; }

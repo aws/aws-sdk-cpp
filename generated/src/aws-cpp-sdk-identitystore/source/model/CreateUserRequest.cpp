@@ -99,6 +99,14 @@ Aws::String CreateUserRequest::SerializePayload() const {
     payload.WithString("Birthdate", m_birthdate);
   }
 
+  if (m_extensionsHasBeenSet) {
+    JsonValue extensionsJsonMap;
+    for (auto& extensionsItem : m_extensions) {
+      extensionsJsonMap.WithObject(extensionsItem.first, extensionsItem.second.View());
+    }
+    payload.WithObject("Extensions", std::move(extensionsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }
 

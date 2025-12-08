@@ -13,6 +13,7 @@
 #include <aws/rds/model/MasterUserAuthenticationType.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -1733,6 +1734,32 @@ class CreateDBInstanceRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>Tags to assign to resources associated with the DB instance.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>auto-backup</code> - The DB instance's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  CreateDBInstanceRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  CreateDBInstanceRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the authentication type for the master user. With IAM master user
    * authentication, you can configure the master DB user with IAM database
    * authentication when you create a DB instance.</p> <p>You can specify one of the
@@ -1910,6 +1937,8 @@ class CreateDBInstanceRequest : public RDSRequest {
 
   Aws::String m_engineLifecycleSupport;
 
+  Aws::Vector<TagSpecification> m_tagSpecifications;
+
   MasterUserAuthenticationType m_masterUserAuthenticationType{MasterUserAuthenticationType::NOT_SET};
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
@@ -1977,6 +2006,7 @@ class CreateDBInstanceRequest : public RDSRequest {
   bool m_multiTenantHasBeenSet = false;
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_masterUserAuthenticationTypeHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
 };
