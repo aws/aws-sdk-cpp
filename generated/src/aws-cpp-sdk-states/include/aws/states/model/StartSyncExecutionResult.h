@@ -291,48 +291,48 @@ class StartSyncExecutionResult {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopDate{};
-  bool m_stopDateHasBeenSet = false;
 
   SyncExecutionStatus m_status{SyncExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_cause;
-  bool m_causeHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   CloudWatchEventsExecutionDataDetails m_inputDetails;
-  bool m_inputDetailsHasBeenSet = false;
 
   Aws::String m_output;
-  bool m_outputHasBeenSet = false;
 
   CloudWatchEventsExecutionDataDetails m_outputDetails;
-  bool m_outputDetailsHasBeenSet = false;
 
   Aws::String m_traceHeader;
-  bool m_traceHeaderHasBeenSet = false;
 
   BillingDetails m_billingDetails;
-  bool m_billingDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionArnHasBeenSet = false;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_stopDateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_inputDetailsHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_outputDetailsHasBeenSet = false;
+  bool m_traceHeaderHasBeenSet = false;
+  bool m_billingDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

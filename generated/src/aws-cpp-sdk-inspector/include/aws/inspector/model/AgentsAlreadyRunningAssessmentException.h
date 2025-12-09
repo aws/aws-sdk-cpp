@@ -109,15 +109,15 @@ class AgentsAlreadyRunningAssessmentException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<AgentAlreadyRunningAssessment> m_agents;
-  bool m_agentsHasBeenSet = false;
 
   bool m_agentsTruncated{false};
-  bool m_agentsTruncatedHasBeenSet = false;
 
   bool m_canRetry{false};
+  bool m_messageHasBeenSet = false;
+  bool m_agentsHasBeenSet = false;
+  bool m_agentsTruncatedHasBeenSet = false;
   bool m_canRetryHasBeenSet = false;
 };
 

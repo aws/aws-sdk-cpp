@@ -79,9 +79,9 @@ class SMSSandboxPhoneNumber {
   ///@}
  private:
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   SMSSandboxPhoneNumberVerificationStatus m_status{SMSSandboxPhoneNumberVerificationStatus::NOT_SET};
+  bool m_phoneNumberHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

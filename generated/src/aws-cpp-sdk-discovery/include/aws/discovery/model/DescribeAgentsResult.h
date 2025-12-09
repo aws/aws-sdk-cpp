@@ -93,12 +93,12 @@ class DescribeAgentsResult {
   ///@}
  private:
   Aws::Vector<AgentInfo> m_agentsInfo;
-  bool m_agentsInfoHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentsInfoHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class NodeInterfaceMappingCreateRequest {
   ///@}
  private:
   Aws::String m_logicalInterfaceName;
-  bool m_logicalInterfaceNameHasBeenSet = false;
 
   NetworkInterfaceMode m_networkInterfaceMode{NetworkInterfaceMode::NOT_SET};
-  bool m_networkInterfaceModeHasBeenSet = false;
 
   Aws::String m_physicalInterfaceName;
+  bool m_logicalInterfaceNameHasBeenSet = false;
+  bool m_networkInterfaceModeHasBeenSet = false;
   bool m_physicalInterfaceNameHasBeenSet = false;
 };
 

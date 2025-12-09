@@ -79,12 +79,12 @@ class GetUsageStatisticsResult {
   ///@}
  private:
   UsageStatistics m_usageStatistics;
-  bool m_usageStatisticsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usageStatisticsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

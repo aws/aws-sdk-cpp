@@ -123,18 +123,18 @@ class UpdateKxVolumeRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_volumeName;
-  bool m_volumeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   KxNAS1Configuration m_nas1Configuration;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_volumeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_nas1ConfigurationHasBeenSet = false;
 };
 

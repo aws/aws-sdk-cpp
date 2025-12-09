@@ -86,12 +86,12 @@ class PropertyValidationExceptionProperty {
   ///@}
  private:
   Aws::String m_propertyPath;
-  bool m_propertyPathHasBeenSet = false;
 
   PropertyValidationExceptionReason m_reason{PropertyValidationExceptionReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_propertyPathHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

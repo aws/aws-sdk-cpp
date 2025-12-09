@@ -70,9 +70,9 @@ class GetWorkflowStepGroupRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_workflowId;
+  bool m_idHasBeenSet = false;
   bool m_workflowIdHasBeenSet = false;
 };
 

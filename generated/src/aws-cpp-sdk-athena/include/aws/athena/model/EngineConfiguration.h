@@ -166,21 +166,21 @@ class EngineConfiguration {
   ///@}
  private:
   int m_coordinatorDpuSize{0};
-  bool m_coordinatorDpuSizeHasBeenSet = false;
 
   int m_maxConcurrentDpus{0};
-  bool m_maxConcurrentDpusHasBeenSet = false;
 
   int m_defaultExecutorDpuSize{0};
-  bool m_defaultExecutorDpuSizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalConfigs;
-  bool m_additionalConfigsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sparkProperties;
-  bool m_sparkPropertiesHasBeenSet = false;
 
   Aws::Vector<Classification> m_classifications;
+  bool m_coordinatorDpuSizeHasBeenSet = false;
+  bool m_maxConcurrentDpusHasBeenSet = false;
+  bool m_defaultExecutorDpuSizeHasBeenSet = false;
+  bool m_additionalConfigsHasBeenSet = false;
+  bool m_sparkPropertiesHasBeenSet = false;
   bool m_classificationsHasBeenSet = false;
 };
 

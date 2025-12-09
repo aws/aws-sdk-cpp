@@ -75,9 +75,9 @@ class S3RepositoryDetails {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   CodeArtifacts m_codeArtifacts;
+  bool m_bucketNameHasBeenSet = false;
   bool m_codeArtifactsHasBeenSet = false;
 };
 

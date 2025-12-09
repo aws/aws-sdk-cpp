@@ -33,6 +33,24 @@ class ImportCrlRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
+   * <p>The name of the certificate revocation list (CRL).</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ImportCrlRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The x509 v3 specified certificate revocation list (CRL).</p>
    */
   inline const Aws::Utils::ByteBuffer& GetCrlData() const { return m_crlData; }
@@ -61,24 +79,6 @@ class ImportCrlRequest : public RolesAnywhereRequest {
   }
   inline ImportCrlRequest& WithEnabled(bool value) {
     SetEnabled(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the certificate revocation list (CRL).</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ImportCrlRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -126,19 +126,19 @@ class ImportCrlRequest : public RolesAnywhereRequest {
   }
   ///@}
  private:
+  Aws::String m_name;
+
   Aws::Utils::ByteBuffer m_crlData{};
-  bool m_crlDataHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
-
-  Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_trustAnchorArn;
+  bool m_nameHasBeenSet = false;
+  bool m_crlDataHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_trustAnchorArnHasBeenSet = false;
 };
 

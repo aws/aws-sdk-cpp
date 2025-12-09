@@ -114,15 +114,15 @@ class ActionTypeSettings {
   ///@}
  private:
   Aws::String m_thirdPartyConfigurationUrl;
-  bool m_thirdPartyConfigurationUrlHasBeenSet = false;
 
   Aws::String m_entityUrlTemplate;
-  bool m_entityUrlTemplateHasBeenSet = false;
 
   Aws::String m_executionUrlTemplate;
-  bool m_executionUrlTemplateHasBeenSet = false;
 
   Aws::String m_revisionUrlTemplate;
+  bool m_thirdPartyConfigurationUrlHasBeenSet = false;
+  bool m_entityUrlTemplateHasBeenSet = false;
+  bool m_executionUrlTemplateHasBeenSet = false;
   bool m_revisionUrlTemplateHasBeenSet = false;
 };
 

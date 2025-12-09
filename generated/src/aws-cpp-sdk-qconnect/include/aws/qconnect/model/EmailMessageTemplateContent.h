@@ -96,12 +96,12 @@ class EmailMessageTemplateContent {
   ///@}
  private:
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   EmailMessageTemplateContentBody m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Vector<EmailHeader> m_headers;
+  bool m_subjectHasBeenSet = false;
+  bool m_bodyHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class GetVoiceToneAnalysisTaskRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_voiceToneAnalysisTaskId;
-  bool m_voiceToneAnalysisTaskIdHasBeenSet = false;
 
   bool m_isCaller{false};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_voiceToneAnalysisTaskIdHasBeenSet = false;
   bool m_isCallerHasBeenSet = false;
 };
 

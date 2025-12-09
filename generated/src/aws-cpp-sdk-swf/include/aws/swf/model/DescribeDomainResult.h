@@ -85,12 +85,12 @@ class DescribeDomainResult {
   ///@}
  private:
   DomainInfo m_domainInfo;
-  bool m_domainInfoHasBeenSet = false;
 
   DomainConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainInfoHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

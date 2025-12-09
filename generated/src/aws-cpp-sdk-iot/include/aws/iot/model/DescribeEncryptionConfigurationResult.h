@@ -130,21 +130,21 @@ class DescribeEncryptionConfigurationResult {
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_kmsAccessRoleArn;
-  bool m_kmsAccessRoleArnHasBeenSet = false;
 
   ConfigurationDetails m_configurationDetails;
-  bool m_configurationDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_kmsAccessRoleArnHasBeenSet = false;
+  bool m_configurationDetailsHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

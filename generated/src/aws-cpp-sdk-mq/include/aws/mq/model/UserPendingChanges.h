@@ -93,12 +93,12 @@ class UserPendingChanges {
   ///@}
  private:
   bool m_consoleAccess{false};
-  bool m_consoleAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   ChangeType m_pendingChange{ChangeType::NOT_SET};
+  bool m_consoleAccessHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_pendingChangeHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class ResourceLocation {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
+  bool m_stackNameHasBeenSet = false;
   bool m_logicalResourceIdHasBeenSet = false;
 };
 

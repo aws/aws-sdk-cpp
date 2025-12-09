@@ -68,9 +68,9 @@ class RedshiftStorageProperties {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_clusterNameHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

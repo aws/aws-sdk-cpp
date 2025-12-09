@@ -396,60 +396,60 @@ class GetIntentResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Slot> m_slots;
-  bool m_slotsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sampleUtterances;
-  bool m_sampleUtterancesHasBeenSet = false;
 
   Prompt m_confirmationPrompt;
-  bool m_confirmationPromptHasBeenSet = false;
 
   Statement m_rejectionStatement;
-  bool m_rejectionStatementHasBeenSet = false;
 
   FollowUpPrompt m_followUpPrompt;
-  bool m_followUpPromptHasBeenSet = false;
 
   Statement m_conclusionStatement;
-  bool m_conclusionStatementHasBeenSet = false;
 
   CodeHook m_dialogCodeHook;
-  bool m_dialogCodeHookHasBeenSet = false;
 
   FulfillmentActivity m_fulfillmentActivity;
-  bool m_fulfillmentActivityHasBeenSet = false;
 
   Aws::String m_parentIntentSignature;
-  bool m_parentIntentSignatureHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   KendraConfiguration m_kendraConfiguration;
-  bool m_kendraConfigurationHasBeenSet = false;
 
   Aws::Vector<InputContext> m_inputContexts;
-  bool m_inputContextsHasBeenSet = false;
 
   Aws::Vector<OutputContext> m_outputContexts;
-  bool m_outputContextsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_sampleUtterancesHasBeenSet = false;
+  bool m_confirmationPromptHasBeenSet = false;
+  bool m_rejectionStatementHasBeenSet = false;
+  bool m_followUpPromptHasBeenSet = false;
+  bool m_conclusionStatementHasBeenSet = false;
+  bool m_dialogCodeHookHasBeenSet = false;
+  bool m_fulfillmentActivityHasBeenSet = false;
+  bool m_parentIntentSignatureHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_kendraConfigurationHasBeenSet = false;
+  bool m_inputContextsHasBeenSet = false;
+  bool m_outputContextsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

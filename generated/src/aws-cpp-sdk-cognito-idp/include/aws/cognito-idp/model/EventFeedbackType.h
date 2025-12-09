@@ -95,12 +95,12 @@ class EventFeedbackType {
   ///@}
  private:
   FeedbackValueType m_feedbackValue{FeedbackValueType::NOT_SET};
-  bool m_feedbackValueHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::Utils::DateTime m_feedbackDate{};
+  bool m_feedbackValueHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_feedbackDateHasBeenSet = false;
 };
 

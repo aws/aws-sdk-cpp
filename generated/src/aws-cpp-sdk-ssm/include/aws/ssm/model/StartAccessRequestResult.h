@@ -59,9 +59,9 @@ class StartAccessRequestResult {
   ///@}
  private:
   Aws::String m_accessRequestId;
-  bool m_accessRequestIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessRequestIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

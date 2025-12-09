@@ -85,12 +85,12 @@ class InAppMessageHeaderConfig {
   ///@}
  private:
   Alignment m_alignment{Alignment::NOT_SET};
-  bool m_alignmentHasBeenSet = false;
 
   Aws::String m_header;
-  bool m_headerHasBeenSet = false;
 
   Aws::String m_textColor;
+  bool m_alignmentHasBeenSet = false;
+  bool m_headerHasBeenSet = false;
   bool m_textColorHasBeenSet = false;
 };
 

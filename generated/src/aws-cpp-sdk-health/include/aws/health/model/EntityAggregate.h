@@ -99,12 +99,12 @@ class EntityAggregate {
   ///@}
  private:
   Aws::String m_eventArn;
-  bool m_eventArnHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Map<EntityStatusCode, int> m_statuses;
+  bool m_eventArnHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_statusesHasBeenSet = false;
 };
 

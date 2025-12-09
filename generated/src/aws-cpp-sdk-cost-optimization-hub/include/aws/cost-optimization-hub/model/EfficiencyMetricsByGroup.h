@@ -105,12 +105,12 @@ class EfficiencyMetricsByGroup {
   ///@}
  private:
   Aws::Vector<MetricsByTime> m_metricsByTime;
-  bool m_metricsByTimeHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_metricsByTimeHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

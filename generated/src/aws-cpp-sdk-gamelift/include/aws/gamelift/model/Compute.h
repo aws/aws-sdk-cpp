@@ -355,51 +355,51 @@ class Compute {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::String m_computeName;
-  bool m_computeNameHasBeenSet = false;
 
   Aws::String m_computeArn;
-  bool m_computeArnHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   ComputeStatus m_computeStatus{ComputeStatus::NOT_SET};
-  bool m_computeStatusHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   EC2InstanceType m_type{EC2InstanceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_gameLiftServiceSdkEndpoint;
-  bool m_gameLiftServiceSdkEndpointHasBeenSet = false;
 
   Aws::String m_gameLiftAgentEndpoint;
-  bool m_gameLiftAgentEndpointHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<ContainerAttribute> m_containerAttributes;
-  bool m_containerAttributesHasBeenSet = false;
 
   Aws::String m_gameServerContainerGroupDefinitionArn;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_computeNameHasBeenSet = false;
+  bool m_computeArnHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_computeStatusHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_gameLiftServiceSdkEndpointHasBeenSet = false;
+  bool m_gameLiftAgentEndpointHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_containerAttributesHasBeenSet = false;
   bool m_gameServerContainerGroupDefinitionArnHasBeenSet = false;
 };
 

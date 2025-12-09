@@ -68,9 +68,9 @@ class DescribeTrustedAdvisorCheckResultResult {
   ///@}
  private:
   TrustedAdvisorCheckResult m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

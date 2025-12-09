@@ -91,12 +91,12 @@ class ReplicaGlobalSecondaryIndex {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   ProvisionedThroughputOverride m_provisionedThroughputOverride;
-  bool m_provisionedThroughputOverrideHasBeenSet = false;
 
   OnDemandThroughputOverride m_onDemandThroughputOverride;
+  bool m_indexNameHasBeenSet = false;
+  bool m_provisionedThroughputOverrideHasBeenSet = false;
   bool m_onDemandThroughputOverrideHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class AwsLocation {
   ///@}
  private:
   Aws::String m_accessRole;
-  bool m_accessRoleHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   Aws::String m_iamConnectionId;
+  bool m_accessRoleHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
   bool m_iamConnectionIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UploadReadSetPartResult {
   ///@}
  private:
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_checksumHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class PostWhatsAppMessageMediaRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_originationPhoneNumberId;
-  bool m_originationPhoneNumberIdHasBeenSet = false;
 
   S3PresignedUrl m_sourceS3PresignedUrl;
-  bool m_sourceS3PresignedUrlHasBeenSet = false;
 
   S3File m_sourceS3File;
+  bool m_originationPhoneNumberIdHasBeenSet = false;
+  bool m_sourceS3PresignedUrlHasBeenSet = false;
   bool m_sourceS3FileHasBeenSet = false;
 };
 

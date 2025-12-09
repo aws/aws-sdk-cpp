@@ -84,12 +84,12 @@ class ListModelMetadataResult {
   ///@}
  private:
   Aws::Vector<ModelMetadataSummary> m_modelMetadataSummaries;
-  bool m_modelMetadataSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelMetadataSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

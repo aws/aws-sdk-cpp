@@ -74,9 +74,9 @@ class UnusedIamUserAccessKeyDetails {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessed{};
+  bool m_accessKeyIdHasBeenSet = false;
   bool m_lastAccessedHasBeenSet = false;
 };
 

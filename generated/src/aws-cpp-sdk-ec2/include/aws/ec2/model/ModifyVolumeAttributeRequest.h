@@ -89,12 +89,12 @@ class ModifyVolumeAttributeRequest : public EC2Request {
   ///@}
  private:
   AttributeBooleanValue m_autoEnableIO;
-  bool m_autoEnableIOHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_autoEnableIOHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

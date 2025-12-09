@@ -86,9 +86,9 @@ class AWSManagedRulesBotControlRuleSet {
   ///@}
  private:
   InspectionLevel m_inspectionLevel{InspectionLevel::NOT_SET};
-  bool m_inspectionLevelHasBeenSet = false;
 
   bool m_enableMachineLearning{false};
+  bool m_inspectionLevelHasBeenSet = false;
   bool m_enableMachineLearningHasBeenSet = false;
 };
 

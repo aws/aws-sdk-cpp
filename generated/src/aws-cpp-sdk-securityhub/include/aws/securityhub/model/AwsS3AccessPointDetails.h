@@ -181,27 +181,27 @@ class AwsS3AccessPointDetails {
   ///@}
  private:
   Aws::String m_accessPointArn;
-  bool m_accessPointArnHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_bucketAccountId;
-  bool m_bucketAccountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_networkOrigin;
-  bool m_networkOriginHasBeenSet = false;
 
   AwsS3AccountPublicAccessBlockDetails m_publicAccessBlockConfiguration;
-  bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
   AwsS3AccessPointVpcConfigurationDetails m_vpcConfiguration;
+  bool m_accessPointArnHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_bucketAccountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_networkOriginHasBeenSet = false;
+  bool m_publicAccessBlockConfigurationHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

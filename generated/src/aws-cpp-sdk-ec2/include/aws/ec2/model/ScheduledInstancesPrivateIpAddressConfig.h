@@ -70,9 +70,9 @@ class ScheduledInstancesPrivateIpAddressConfig {
   ///@}
  private:
   bool m_primary{false};
-  bool m_primaryHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
+  bool m_primaryHasBeenSet = false;
   bool m_privateIpAddressHasBeenSet = false;
 };
 

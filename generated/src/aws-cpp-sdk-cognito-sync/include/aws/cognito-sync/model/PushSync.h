@@ -77,9 +77,9 @@ class PushSync {
   ///@}
  private:
   Aws::Vector<Aws::String> m_applicationArns;
-  bool m_applicationArnsHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_applicationArnsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class EthernetStatus {
   ///@}
  private:
   NetworkConnectionStatus m_connectionStatus{NetworkConnectionStatus::NOT_SET};
-  bool m_connectionStatusHasBeenSet = false;
 
   Aws::String m_hwAddress;
-  bool m_hwAddressHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_connectionStatusHasBeenSet = false;
+  bool m_hwAddressHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

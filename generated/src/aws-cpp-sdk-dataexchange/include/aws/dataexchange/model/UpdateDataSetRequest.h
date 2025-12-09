@@ -83,12 +83,12 @@ class UpdateDataSetRequest : public DataExchangeRequest {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

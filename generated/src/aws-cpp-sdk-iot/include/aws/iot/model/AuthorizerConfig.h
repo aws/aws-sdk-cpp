@@ -68,9 +68,9 @@ class AuthorizerConfig {
   ///@}
  private:
   Aws::String m_defaultAuthorizerName;
-  bool m_defaultAuthorizerNameHasBeenSet = false;
 
   bool m_allowAuthorizerOverride{false};
+  bool m_defaultAuthorizerNameHasBeenSet = false;
   bool m_allowAuthorizerOverrideHasBeenSet = false;
 };
 

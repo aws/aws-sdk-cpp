@@ -412,63 +412,63 @@ class UpdateBranchRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_framework;
-  bool m_frameworkHasBeenSet = false;
 
   Stage m_stage{Stage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   bool m_enableNotification{false};
-  bool m_enableNotificationHasBeenSet = false;
 
   bool m_enableAutoBuild{false};
-  bool m_enableAutoBuildHasBeenSet = false;
 
   bool m_enableSkewProtection{false};
-  bool m_enableSkewProtectionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   Aws::String m_basicAuthCredentials;
-  bool m_basicAuthCredentialsHasBeenSet = false;
 
   bool m_enableBasicAuth{false};
-  bool m_enableBasicAuthHasBeenSet = false;
 
   bool m_enablePerformanceMode{false};
-  bool m_enablePerformanceModeHasBeenSet = false;
 
   Aws::String m_buildSpec;
-  bool m_buildSpecHasBeenSet = false;
 
   Aws::String m_ttl;
-  bool m_ttlHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   bool m_enablePullRequestPreview{false};
-  bool m_enablePullRequestPreviewHasBeenSet = false;
 
   Aws::String m_pullRequestEnvironmentName;
-  bool m_pullRequestEnvironmentNameHasBeenSet = false;
 
   Aws::String m_backendEnvironmentArn;
-  bool m_backendEnvironmentArnHasBeenSet = false;
 
   Backend m_backend;
-  bool m_backendHasBeenSet = false;
 
   Aws::String m_computeRoleArn;
+  bool m_appIdHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_enableNotificationHasBeenSet = false;
+  bool m_enableAutoBuildHasBeenSet = false;
+  bool m_enableSkewProtectionHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
+  bool m_basicAuthCredentialsHasBeenSet = false;
+  bool m_enableBasicAuthHasBeenSet = false;
+  bool m_enablePerformanceModeHasBeenSet = false;
+  bool m_buildSpecHasBeenSet = false;
+  bool m_ttlHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_enablePullRequestPreviewHasBeenSet = false;
+  bool m_pullRequestEnvironmentNameHasBeenSet = false;
+  bool m_backendEnvironmentArnHasBeenSet = false;
+  bool m_backendHasBeenSet = false;
   bool m_computeRoleArnHasBeenSet = false;
 };
 

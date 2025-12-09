@@ -15,12 +15,24 @@ using namespace Aws::Utils;
 Aws::String CreateTrustAnchorRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_sourceHasBeenSet) {
+    payload.WithObject("source", m_source.Jsonize());
+  }
+
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   if (m_notificationSettingsHasBeenSet) {
@@ -30,18 +42,6 @@ Aws::String CreateTrustAnchorRequest::SerializePayload() const {
       notificationSettingsJsonList[notificationSettingsIndex].AsObject(m_notificationSettings[notificationSettingsIndex].Jsonize());
     }
     payload.WithArray("notificationSettings", std::move(notificationSettingsJsonList));
-  }
-
-  if (m_sourceHasBeenSet) {
-    payload.WithObject("source", m_source.Jsonize());
-  }
-
-  if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-    }
-    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   return payload.View().WriteReadable();

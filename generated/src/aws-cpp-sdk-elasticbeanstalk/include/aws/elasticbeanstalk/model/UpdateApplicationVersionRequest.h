@@ -94,12 +94,12 @@ class UpdateApplicationVersionRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

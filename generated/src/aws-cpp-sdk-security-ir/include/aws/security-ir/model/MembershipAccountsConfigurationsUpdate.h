@@ -117,12 +117,12 @@ class MembershipAccountsConfigurationsUpdate {
   ///@}
  private:
   bool m_coverEntireOrganization{false};
-  bool m_coverEntireOrganizationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitsToAdd;
-  bool m_organizationalUnitsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_organizationalUnitsToRemove;
+  bool m_coverEntireOrganizationHasBeenSet = false;
+  bool m_organizationalUnitsToAddHasBeenSet = false;
   bool m_organizationalUnitsToRemoveHasBeenSet = false;
 };
 

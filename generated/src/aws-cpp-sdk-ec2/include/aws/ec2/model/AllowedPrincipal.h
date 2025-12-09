@@ -131,18 +131,18 @@ class AllowedPrincipal {
   ///@}
  private:
   PrincipalType m_principalType{PrincipalType::NOT_SET};
-  bool m_principalTypeHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_servicePermissionId;
-  bool m_servicePermissionIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_serviceId;
+  bool m_principalTypeHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_servicePermissionIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_serviceIdHasBeenSet = false;
 };
 

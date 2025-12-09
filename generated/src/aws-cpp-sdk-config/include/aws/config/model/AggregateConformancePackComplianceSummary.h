@@ -71,9 +71,9 @@ class AggregateConformancePackComplianceSummary {
   ///@}
  private:
   AggregateConformancePackComplianceCount m_complianceSummary;
-  bool m_complianceSummaryHasBeenSet = false;
 
   Aws::String m_groupName;
+  bool m_complianceSummaryHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
 };
 

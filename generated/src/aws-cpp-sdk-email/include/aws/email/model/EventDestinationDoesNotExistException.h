@@ -71,9 +71,9 @@ class EventDestinationDoesNotExistException {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_eventDestinationName;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_eventDestinationNameHasBeenSet = false;
 };
 

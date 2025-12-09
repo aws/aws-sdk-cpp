@@ -89,12 +89,12 @@ class DescribeProxyRuleRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_proxyRuleName;
-  bool m_proxyRuleNameHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupArn;
+  bool m_proxyRuleNameHasBeenSet = false;
+  bool m_proxyRuleGroupNameHasBeenSet = false;
   bool m_proxyRuleGroupArnHasBeenSet = false;
 };
 

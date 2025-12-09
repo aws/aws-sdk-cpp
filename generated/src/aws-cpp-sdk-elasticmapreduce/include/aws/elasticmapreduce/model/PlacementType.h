@@ -83,9 +83,9 @@ class PlacementType {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class JobMessages {
   ///@}
  private:
   Aws::Vector<Aws::String> m_info;
-  bool m_infoHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_warning;
+  bool m_infoHasBeenSet = false;
   bool m_warningHasBeenSet = false;
 };
 

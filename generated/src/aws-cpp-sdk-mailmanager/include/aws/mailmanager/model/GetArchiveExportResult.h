@@ -169,27 +169,27 @@ class GetArchiveExportResult {
   ///@}
  private:
   Aws::String m_archiveId;
-  bool m_archiveIdHasBeenSet = false;
 
   ArchiveFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Utils::DateTime m_fromTimestamp{};
-  bool m_fromTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_toTimestamp{};
-  bool m_toTimestampHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ExportDestinationConfiguration m_exportDestinationConfiguration;
-  bool m_exportDestinationConfigurationHasBeenSet = false;
 
   ExportStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_archiveIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_fromTimestampHasBeenSet = false;
+  bool m_toTimestampHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_exportDestinationConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

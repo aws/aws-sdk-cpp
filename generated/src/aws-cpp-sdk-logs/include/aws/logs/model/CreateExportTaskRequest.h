@@ -164,24 +164,24 @@ class CreateExportTaskRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_taskName;
-  bool m_taskNameHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logStreamNamePrefix;
-  bool m_logStreamNamePrefixHasBeenSet = false;
 
   long long m_from{0};
-  bool m_fromHasBeenSet = false;
 
   long long m_to{0};
-  bool m_toHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_destinationPrefix;
+  bool m_taskNameHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_logStreamNamePrefixHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
+  bool m_toHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_destinationPrefixHasBeenSet = false;
 };
 

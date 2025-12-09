@@ -105,15 +105,15 @@ class VariableValue {
   ///@}
  private:
   bool m_boolValue{false};
-  bool m_boolValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   long long m_longValue{0};
-  bool m_longValueHasBeenSet = false;
 
   Aws::String m_stringValue;
+  bool m_boolValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
   bool m_stringValueHasBeenSet = false;
 };
 

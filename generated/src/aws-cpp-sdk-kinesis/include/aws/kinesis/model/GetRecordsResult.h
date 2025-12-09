@@ -135,18 +135,18 @@ class GetRecordsResult {
   ///@}
  private:
   Aws::Vector<Record> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_nextShardIterator;
-  bool m_nextShardIteratorHasBeenSet = false;
 
   long long m_millisBehindLatest{0};
-  bool m_millisBehindLatestHasBeenSet = false;
 
   Aws::Vector<ChildShard> m_childShards;
-  bool m_childShardsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_nextShardIteratorHasBeenSet = false;
+  bool m_millisBehindLatestHasBeenSet = false;
+  bool m_childShardsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

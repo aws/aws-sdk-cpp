@@ -69,9 +69,9 @@ class VersioningConfiguration {
   ///@}
  private:
   MFADelete m_mFADelete{MFADelete::NOT_SET};
-  bool m_mFADeleteHasBeenSet = false;
 
   BucketVersioningStatus m_status{BucketVersioningStatus::NOT_SET};
+  bool m_mFADeleteHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

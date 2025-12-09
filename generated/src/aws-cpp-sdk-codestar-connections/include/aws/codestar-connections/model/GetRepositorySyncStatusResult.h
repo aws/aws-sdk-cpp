@@ -62,9 +62,9 @@ class GetRepositorySyncStatusResult {
   ///@}
  private:
   RepositorySyncAttempt m_latestSync;
-  bool m_latestSyncHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_latestSyncHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

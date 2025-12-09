@@ -194,33 +194,33 @@ class GetSigningPlatformResult {
   ///@}
  private:
   Aws::String m_platformId;
-  bool m_platformIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_partner;
-  bool m_partnerHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Category m_category{Category::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   SigningConfiguration m_signingConfiguration;
-  bool m_signingConfigurationHasBeenSet = false;
 
   SigningImageFormat m_signingImageFormat;
-  bool m_signingImageFormatHasBeenSet = false;
 
   int m_maxSizeInMB{0};
-  bool m_maxSizeInMBHasBeenSet = false;
 
   bool m_revocationSupported{false};
-  bool m_revocationSupportedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_platformIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_partnerHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_signingConfigurationHasBeenSet = false;
+  bool m_signingImageFormatHasBeenSet = false;
+  bool m_maxSizeInMBHasBeenSet = false;
+  bool m_revocationSupportedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

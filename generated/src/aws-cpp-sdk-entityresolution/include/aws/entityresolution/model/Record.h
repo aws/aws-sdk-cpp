@@ -93,12 +93,12 @@ class Record {
   ///@}
  private:
   Aws::String m_inputSourceARN;
-  bool m_inputSourceARNHasBeenSet = false;
 
   Aws::String m_uniqueId;
-  bool m_uniqueIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_recordAttributeMap;
+  bool m_inputSourceARNHasBeenSet = false;
+  bool m_uniqueIdHasBeenSet = false;
   bool m_recordAttributeMapHasBeenSet = false;
 };
 

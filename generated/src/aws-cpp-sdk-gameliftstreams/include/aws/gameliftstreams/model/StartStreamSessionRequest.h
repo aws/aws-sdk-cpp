@@ -316,39 +316,39 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_signalRequest;
-  bool m_signalRequestHasBeenSet = false;
 
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_locations;
-  bool m_locationsHasBeenSet = false;
 
   int m_connectionTimeoutSeconds{0};
-  bool m_connectionTimeoutSecondsHasBeenSet = false;
 
   int m_sessionLengthSeconds{0};
-  bool m_sessionLengthSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalLaunchArgs;
-  bool m_additionalLaunchArgsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEnvironmentVariables;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_signalRequestHasBeenSet = false;
+  bool m_applicationIdentifierHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_locationsHasBeenSet = false;
+  bool m_connectionTimeoutSecondsHasBeenSet = false;
+  bool m_sessionLengthSecondsHasBeenSet = false;
+  bool m_additionalLaunchArgsHasBeenSet = false;
   bool m_additionalEnvironmentVariablesHasBeenSet = false;
 };
 

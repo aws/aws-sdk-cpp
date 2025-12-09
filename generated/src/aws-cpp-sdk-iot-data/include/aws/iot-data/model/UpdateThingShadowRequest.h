@@ -72,9 +72,10 @@ class UpdateThingShadowRequest : public StreamingIoTDataPlaneRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_shadowName;
+
+  bool m_thingNameHasBeenSet = false;
   bool m_shadowNameHasBeenSet = false;
 };
 

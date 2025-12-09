@@ -123,15 +123,15 @@ class MigrationAlert {
   ///@}
  private:
   MigrationAlertType m_type{MigrationAlertType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_referenceURLs;
+  bool m_typeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
   bool m_referenceURLsHasBeenSet = false;
 };
 

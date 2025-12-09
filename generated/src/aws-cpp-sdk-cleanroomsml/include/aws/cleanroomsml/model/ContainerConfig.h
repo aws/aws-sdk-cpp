@@ -142,15 +142,15 @@ class ContainerConfig {
   ///@}
  private:
   Aws::String m_imageUri;
-  bool m_imageUriHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entrypoint;
-  bool m_entrypointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_arguments;
-  bool m_argumentsHasBeenSet = false;
 
   Aws::Vector<MetricDefinition> m_metricDefinitions;
+  bool m_imageUriHasBeenSet = false;
+  bool m_entrypointHasBeenSet = false;
+  bool m_argumentsHasBeenSet = false;
   bool m_metricDefinitionsHasBeenSet = false;
 };
 

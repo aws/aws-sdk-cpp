@@ -61,9 +61,9 @@ class CreateVpcIngressConnectionResult {
   ///@}
  private:
   VpcIngressConnection m_vpcIngressConnection;
-  bool m_vpcIngressConnectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcIngressConnectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class MetricsSource {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_contentDigest;
-  bool m_contentDigestHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_contentDigestHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

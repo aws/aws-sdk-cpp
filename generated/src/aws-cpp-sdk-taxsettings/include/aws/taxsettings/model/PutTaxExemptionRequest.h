@@ -106,15 +106,15 @@ class PutTaxExemptionRequest : public TaxSettingsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Authority m_authority;
-  bool m_authorityHasBeenSet = false;
 
   ExemptionCertificate m_exemptionCertificate;
-  bool m_exemptionCertificateHasBeenSet = false;
 
   Aws::String m_exemptionType;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_authorityHasBeenSet = false;
+  bool m_exemptionCertificateHasBeenSet = false;
   bool m_exemptionTypeHasBeenSet = false;
 };
 

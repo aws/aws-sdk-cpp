@@ -121,18 +121,18 @@ class UpdateConnectionRequest : public DataZoneRequest {
   ///@}
  private:
   AwsLocation m_awsLocation;
-  bool m_awsLocationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   ConnectionPropertiesPatch m_props;
+  bool m_awsLocationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_propsHasBeenSet = false;
 };
 

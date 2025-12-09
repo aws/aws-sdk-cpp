@@ -114,15 +114,15 @@ class ModifyVpcEndpointConnectionNotificationRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_connectionNotificationId;
-  bool m_connectionNotificationIdHasBeenSet = false;
 
   Aws::String m_connectionNotificationArn;
-  bool m_connectionNotificationArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_connectionEvents;
+  bool m_dryRunHasBeenSet = false;
+  bool m_connectionNotificationIdHasBeenSet = false;
+  bool m_connectionNotificationArnHasBeenSet = false;
   bool m_connectionEventsHasBeenSet = false;
 };
 

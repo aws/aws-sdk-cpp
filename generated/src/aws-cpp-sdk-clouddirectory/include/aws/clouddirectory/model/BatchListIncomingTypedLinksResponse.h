@@ -77,9 +77,9 @@ class BatchListIncomingTypedLinksResponse {
   ///@}
  private:
   Aws::Vector<TypedLinkSpecifier> m_linkSpecifiers;
-  bool m_linkSpecifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_linkSpecifiersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

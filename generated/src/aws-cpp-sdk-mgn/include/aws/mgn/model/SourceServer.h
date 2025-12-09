@@ -304,48 +304,48 @@ class SourceServer {
   ///@}
  private:
   Aws::String m_applicationID;
-  bool m_applicationIDHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   SourceServerConnectorAction m_connectorAction;
-  bool m_connectorActionHasBeenSet = false;
 
   DataReplicationInfo m_dataReplicationInfo;
-  bool m_dataReplicationInfoHasBeenSet = false;
 
   Aws::String m_fqdnForActionFramework;
-  bool m_fqdnForActionFrameworkHasBeenSet = false;
 
   bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
 
   LaunchedInstance m_launchedInstance;
-  bool m_launchedInstanceHasBeenSet = false;
 
   LifeCycle m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
   ReplicationType m_replicationType{ReplicationType::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
   SourceProperties m_sourceProperties;
-  bool m_sourcePropertiesHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_userProvidedID;
-  bool m_userProvidedIDHasBeenSet = false;
 
   Aws::String m_vcenterClientID;
-  bool m_vcenterClientIDHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIDHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_connectorActionHasBeenSet = false;
+  bool m_dataReplicationInfoHasBeenSet = false;
+  bool m_fqdnForActionFrameworkHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
+  bool m_launchedInstanceHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
+  bool m_sourcePropertiesHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_userProvidedIDHasBeenSet = false;
+  bool m_vcenterClientIDHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

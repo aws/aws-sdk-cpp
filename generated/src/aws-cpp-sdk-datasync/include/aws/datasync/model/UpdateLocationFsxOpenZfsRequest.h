@@ -87,12 +87,12 @@ class UpdateLocationFsxOpenZfsRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   FsxProtocol m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_subdirectory;
+  bool m_locationArnHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_subdirectoryHasBeenSet = false;
 };
 

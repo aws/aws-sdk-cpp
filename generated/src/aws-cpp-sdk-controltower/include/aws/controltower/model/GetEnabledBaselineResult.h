@@ -60,9 +60,9 @@ class GetEnabledBaselineResult {
   ///@}
  private:
   EnabledBaselineDetails m_enabledBaselineDetails;
-  bool m_enabledBaselineDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_enabledBaselineDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

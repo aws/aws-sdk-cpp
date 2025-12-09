@@ -90,12 +90,12 @@ class StateEnteredEventDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   HistoryEventExecutionDataDetails m_inputDetails;
+  bool m_nameHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_inputDetailsHasBeenSet = false;
 };
 

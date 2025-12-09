@@ -105,15 +105,15 @@ class VoiceToneAnalysisTask {
   ///@}
  private:
   Aws::String m_voiceToneAnalysisTaskId;
-  bool m_voiceToneAnalysisTaskIdHasBeenSet = false;
 
   MediaPipelineTaskStatus m_voiceToneAnalysisTaskStatus{MediaPipelineTaskStatus::NOT_SET};
-  bool m_voiceToneAnalysisTaskStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_voiceToneAnalysisTaskIdHasBeenSet = false;
+  bool m_voiceToneAnalysisTaskStatusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

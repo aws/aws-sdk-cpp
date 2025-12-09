@@ -358,51 +358,51 @@ class OntapVolumeConfiguration {
   ///@}
  private:
   FlexCacheEndpointType m_flexCacheEndpointType{FlexCacheEndpointType::NOT_SET};
-  bool m_flexCacheEndpointTypeHasBeenSet = false;
 
   Aws::String m_junctionPath;
-  bool m_junctionPathHasBeenSet = false;
 
   SecurityStyle m_securityStyle{SecurityStyle::NOT_SET};
-  bool m_securityStyleHasBeenSet = false;
 
   int m_sizeInMegabytes{0};
-  bool m_sizeInMegabytesHasBeenSet = false;
 
   bool m_storageEfficiencyEnabled{false};
-  bool m_storageEfficiencyEnabledHasBeenSet = false;
 
   Aws::String m_storageVirtualMachineId;
-  bool m_storageVirtualMachineIdHasBeenSet = false;
 
   bool m_storageVirtualMachineRoot{false};
-  bool m_storageVirtualMachineRootHasBeenSet = false;
 
   TieringPolicy m_tieringPolicy;
-  bool m_tieringPolicyHasBeenSet = false;
 
   Aws::String m_uUID;
-  bool m_uUIDHasBeenSet = false;
 
   OntapVolumeType m_ontapVolumeType{OntapVolumeType::NOT_SET};
-  bool m_ontapVolumeTypeHasBeenSet = false;
 
   Aws::String m_snapshotPolicy;
-  bool m_snapshotPolicyHasBeenSet = false;
 
   bool m_copyTagsToBackups{false};
-  bool m_copyTagsToBackupsHasBeenSet = false;
 
   SnaplockConfiguration m_snaplockConfiguration;
-  bool m_snaplockConfigurationHasBeenSet = false;
 
   VolumeStyle m_volumeStyle{VolumeStyle::NOT_SET};
-  bool m_volumeStyleHasBeenSet = false;
 
   AggregateConfiguration m_aggregateConfiguration;
-  bool m_aggregateConfigurationHasBeenSet = false;
 
   long long m_sizeInBytes{0};
+  bool m_flexCacheEndpointTypeHasBeenSet = false;
+  bool m_junctionPathHasBeenSet = false;
+  bool m_securityStyleHasBeenSet = false;
+  bool m_sizeInMegabytesHasBeenSet = false;
+  bool m_storageEfficiencyEnabledHasBeenSet = false;
+  bool m_storageVirtualMachineIdHasBeenSet = false;
+  bool m_storageVirtualMachineRootHasBeenSet = false;
+  bool m_tieringPolicyHasBeenSet = false;
+  bool m_uUIDHasBeenSet = false;
+  bool m_ontapVolumeTypeHasBeenSet = false;
+  bool m_snapshotPolicyHasBeenSet = false;
+  bool m_copyTagsToBackupsHasBeenSet = false;
+  bool m_snaplockConfigurationHasBeenSet = false;
+  bool m_volumeStyleHasBeenSet = false;
+  bool m_aggregateConfigurationHasBeenSet = false;
   bool m_sizeInBytesHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class UpdateEnvironmentMembershipRequest : public Cloud9Request {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_userArn;
-  bool m_userArnHasBeenSet = false;
 
   MemberPermissions m_permissions{MemberPermissions::NOT_SET};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_userArnHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

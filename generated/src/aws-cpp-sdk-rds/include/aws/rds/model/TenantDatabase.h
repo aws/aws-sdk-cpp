@@ -295,45 +295,45 @@ class TenantDatabase {
   ///@}
  private:
   Aws::Utils::DateTime m_tenantDatabaseCreateTime{};
-  bool m_tenantDatabaseCreateTimeHasBeenSet = false;
 
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_tenantDBName;
-  bool m_tenantDBNameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_dbiResourceId;
-  bool m_dbiResourceIdHasBeenSet = false;
 
   Aws::String m_tenantDatabaseResourceId;
-  bool m_tenantDatabaseResourceIdHasBeenSet = false;
 
   Aws::String m_tenantDatabaseARN;
-  bool m_tenantDatabaseARNHasBeenSet = false;
 
   Aws::String m_characterSetName;
-  bool m_characterSetNameHasBeenSet = false;
 
   Aws::String m_ncharCharacterSetName;
-  bool m_ncharCharacterSetNameHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   TenantDatabasePendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   MasterUserSecret m_masterUserSecret;
-  bool m_masterUserSecretHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_tenantDatabaseCreateTimeHasBeenSet = false;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_tenantDBNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_dbiResourceIdHasBeenSet = false;
+  bool m_tenantDatabaseResourceIdHasBeenSet = false;
+  bool m_tenantDatabaseARNHasBeenSet = false;
+  bool m_characterSetNameHasBeenSet = false;
+  bool m_ncharCharacterSetNameHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_masterUserSecretHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

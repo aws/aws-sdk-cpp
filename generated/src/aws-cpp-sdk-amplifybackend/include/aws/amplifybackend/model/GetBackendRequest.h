@@ -68,9 +68,9 @@ class GetBackendRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
+  bool m_appIdHasBeenSet = false;
   bool m_backendEnvironmentNameHasBeenSet = false;
 };
 

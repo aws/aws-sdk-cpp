@@ -110,15 +110,15 @@ class MeetingFeaturesConfiguration {
   ///@}
  private:
   AudioFeatures m_audio;
-  bool m_audioHasBeenSet = false;
 
   VideoFeatures m_video;
-  bool m_videoHasBeenSet = false;
 
   ContentFeatures m_content;
-  bool m_contentHasBeenSet = false;
 
   AttendeeFeatures m_attendee;
+  bool m_audioHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_attendeeHasBeenSet = false;
 };
 

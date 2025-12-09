@@ -72,9 +72,9 @@ class PutDedicatedIpInPoolRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_ip;
-  bool m_ipHasBeenSet = false;
 
   Aws::String m_destinationPoolName;
+  bool m_ipHasBeenSet = false;
   bool m_destinationPoolNameHasBeenSet = false;
 };
 

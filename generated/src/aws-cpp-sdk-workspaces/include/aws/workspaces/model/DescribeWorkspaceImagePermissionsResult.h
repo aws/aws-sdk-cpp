@@ -104,15 +104,15 @@ class DescribeWorkspaceImagePermissionsResult {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::Vector<ImagePermission> m_imagePermissions;
-  bool m_imagePermissionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageIdHasBeenSet = false;
+  bool m_imagePermissionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

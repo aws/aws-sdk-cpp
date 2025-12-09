@@ -116,15 +116,15 @@ class CapacitySpecificationSummary {
   ///@}
  private:
   ThroughputMode m_throughputMode{ThroughputMode::NOT_SET};
-  bool m_throughputModeHasBeenSet = false;
 
   long long m_readCapacityUnits{0};
-  bool m_readCapacityUnitsHasBeenSet = false;
 
   long long m_writeCapacityUnits{0};
-  bool m_writeCapacityUnitsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateToPayPerRequestTimestamp{};
+  bool m_throughputModeHasBeenSet = false;
+  bool m_readCapacityUnitsHasBeenSet = false;
+  bool m_writeCapacityUnitsHasBeenSet = false;
   bool m_lastUpdateToPayPerRequestTimestampHasBeenSet = false;
 };
 

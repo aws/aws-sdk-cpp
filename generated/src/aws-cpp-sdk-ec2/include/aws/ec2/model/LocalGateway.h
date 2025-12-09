@@ -132,18 +132,18 @@ class LocalGateway {
   ///@}
  private:
   Aws::String m_localGatewayId;
-  bool m_localGatewayIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_localGatewayIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class UpdatePrivacyBudgetTemplateRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_privacyBudgetTemplateIdentifier;
-  bool m_privacyBudgetTemplateIdentifierHasBeenSet = false;
 
   PrivacyBudgetType m_privacyBudgetType{PrivacyBudgetType::NOT_SET};
-  bool m_privacyBudgetTypeHasBeenSet = false;
 
   PrivacyBudgetTemplateUpdateParameters m_parameters;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_privacyBudgetTemplateIdentifierHasBeenSet = false;
+  bool m_privacyBudgetTypeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

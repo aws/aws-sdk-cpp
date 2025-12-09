@@ -335,48 +335,48 @@ class TextTranslationJobProperties {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   JobDetails m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   Aws::String m_sourceLanguageCode;
-  bool m_sourceLanguageCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetLanguageCodes;
-  bool m_targetLanguageCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_terminologyNames;
-  bool m_terminologyNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parallelDataNames;
-  bool m_parallelDataNamesHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_submittedTime{};
-  bool m_submittedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   TranslationSettings m_settings;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_jobDetailsHasBeenSet = false;
+  bool m_sourceLanguageCodeHasBeenSet = false;
+  bool m_targetLanguageCodesHasBeenSet = false;
+  bool m_terminologyNamesHasBeenSet = false;
+  bool m_parallelDataNamesHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_submittedTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

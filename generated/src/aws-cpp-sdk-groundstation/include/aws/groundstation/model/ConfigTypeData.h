@@ -173,24 +173,24 @@ class ConfigTypeData {
   ///@}
  private:
   AntennaDownlinkConfig m_antennaDownlinkConfig;
-  bool m_antennaDownlinkConfigHasBeenSet = false;
 
   TrackingConfig m_trackingConfig;
-  bool m_trackingConfigHasBeenSet = false;
 
   DataflowEndpointConfig m_dataflowEndpointConfig;
-  bool m_dataflowEndpointConfigHasBeenSet = false;
 
   AntennaDownlinkDemodDecodeConfig m_antennaDownlinkDemodDecodeConfig;
-  bool m_antennaDownlinkDemodDecodeConfigHasBeenSet = false;
 
   AntennaUplinkConfig m_antennaUplinkConfig;
-  bool m_antennaUplinkConfigHasBeenSet = false;
 
   UplinkEchoConfig m_uplinkEchoConfig;
-  bool m_uplinkEchoConfigHasBeenSet = false;
 
   S3RecordingConfig m_s3RecordingConfig;
+  bool m_antennaDownlinkConfigHasBeenSet = false;
+  bool m_trackingConfigHasBeenSet = false;
+  bool m_dataflowEndpointConfigHasBeenSet = false;
+  bool m_antennaDownlinkDemodDecodeConfigHasBeenSet = false;
+  bool m_antennaUplinkConfigHasBeenSet = false;
+  bool m_uplinkEchoConfigHasBeenSet = false;
   bool m_s3RecordingConfigHasBeenSet = false;
 };
 

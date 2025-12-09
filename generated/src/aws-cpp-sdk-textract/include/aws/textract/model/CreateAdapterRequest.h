@@ -157,21 +157,21 @@ class CreateAdapterRequest : public TextractRequest {
   ///@}
  private:
   Aws::String m_adapterName;
-  bool m_adapterNameHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<FeatureType> m_featureTypes;
-  bool m_featureTypesHasBeenSet = false;
 
   AutoUpdate m_autoUpdate{AutoUpdate::NOT_SET};
-  bool m_autoUpdateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_adapterNameHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_featureTypesHasBeenSet = false;
+  bool m_autoUpdateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -919,132 +919,132 @@ SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
   ///@}
  private:
   Aws::Vector<HlsAdMarkers> m_adMarkers;
-  bool m_adMarkersHasBeenSet = false;
 
   Aws::String m_baseUrlContent;
-  bool m_baseUrlContentHasBeenSet = false;
 
   Aws::String m_baseUrlContent1;
-  bool m_baseUrlContent1HasBeenSet = false;
 
   Aws::String m_baseUrlManifest;
-  bool m_baseUrlManifestHasBeenSet = false;
 
   Aws::String m_baseUrlManifest1;
-  bool m_baseUrlManifest1HasBeenSet = false;
 
   Aws::Vector<CaptionLanguageMapping> m_captionLanguageMappings;
-  bool m_captionLanguageMappingsHasBeenSet = false;
 
   HlsCaptionLanguageSetting m_captionLanguageSetting{HlsCaptionLanguageSetting::NOT_SET};
-  bool m_captionLanguageSettingHasBeenSet = false;
 
   HlsClientCache m_clientCache{HlsClientCache::NOT_SET};
-  bool m_clientCacheHasBeenSet = false;
 
   HlsCodecSpecification m_codecSpecification{HlsCodecSpecification::NOT_SET};
-  bool m_codecSpecificationHasBeenSet = false;
 
   Aws::String m_constantIv;
-  bool m_constantIvHasBeenSet = false;
 
   OutputLocationRef m_destination;
-  bool m_destinationHasBeenSet = false;
 
   HlsDirectoryStructure m_directoryStructure{HlsDirectoryStructure::NOT_SET};
-  bool m_directoryStructureHasBeenSet = false;
 
   HlsDiscontinuityTags m_discontinuityTags{HlsDiscontinuityTags::NOT_SET};
-  bool m_discontinuityTagsHasBeenSet = false;
 
   HlsEncryptionType m_encryptionType{HlsEncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   HlsCdnSettings m_hlsCdnSettings;
-  bool m_hlsCdnSettingsHasBeenSet = false;
 
   HlsId3SegmentTaggingState m_hlsId3SegmentTagging{HlsId3SegmentTaggingState::NOT_SET};
-  bool m_hlsId3SegmentTaggingHasBeenSet = false;
 
   IFrameOnlyPlaylistType m_iFrameOnlyPlaylists{IFrameOnlyPlaylistType::NOT_SET};
-  bool m_iFrameOnlyPlaylistsHasBeenSet = false;
 
   HlsIncompleteSegmentBehavior m_incompleteSegmentBehavior{HlsIncompleteSegmentBehavior::NOT_SET};
-  bool m_incompleteSegmentBehaviorHasBeenSet = false;
 
   int m_indexNSegments{0};
-  bool m_indexNSegmentsHasBeenSet = false;
 
   InputLossActionForHlsOut m_inputLossAction{InputLossActionForHlsOut::NOT_SET};
-  bool m_inputLossActionHasBeenSet = false;
 
   HlsIvInManifest m_ivInManifest{HlsIvInManifest::NOT_SET};
-  bool m_ivInManifestHasBeenSet = false;
 
   HlsIvSource m_ivSource{HlsIvSource::NOT_SET};
-  bool m_ivSourceHasBeenSet = false;
 
   int m_keepSegments{0};
-  bool m_keepSegmentsHasBeenSet = false;
 
   Aws::String m_keyFormat;
-  bool m_keyFormatHasBeenSet = false;
 
   Aws::String m_keyFormatVersions;
-  bool m_keyFormatVersionsHasBeenSet = false;
 
   KeyProviderSettings m_keyProviderSettings;
-  bool m_keyProviderSettingsHasBeenSet = false;
 
   HlsManifestCompression m_manifestCompression{HlsManifestCompression::NOT_SET};
-  bool m_manifestCompressionHasBeenSet = false;
 
   HlsManifestDurationFormat m_manifestDurationFormat{HlsManifestDurationFormat::NOT_SET};
-  bool m_manifestDurationFormatHasBeenSet = false;
 
   int m_minSegmentLength{0};
-  bool m_minSegmentLengthHasBeenSet = false;
 
   HlsMode m_mode{HlsMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   HlsOutputSelection m_outputSelection{HlsOutputSelection::NOT_SET};
-  bool m_outputSelectionHasBeenSet = false;
 
   HlsProgramDateTime m_programDateTime{HlsProgramDateTime::NOT_SET};
-  bool m_programDateTimeHasBeenSet = false;
 
   HlsProgramDateTimeClock m_programDateTimeClock{HlsProgramDateTimeClock::NOT_SET};
-  bool m_programDateTimeClockHasBeenSet = false;
 
   int m_programDateTimePeriod{0};
-  bool m_programDateTimePeriodHasBeenSet = false;
 
   HlsRedundantManifest m_redundantManifest{HlsRedundantManifest::NOT_SET};
-  bool m_redundantManifestHasBeenSet = false;
 
   int m_segmentLength{0};
-  bool m_segmentLengthHasBeenSet = false;
 
   HlsSegmentationMode m_segmentationMode{HlsSegmentationMode::NOT_SET};
-  bool m_segmentationModeHasBeenSet = false;
 
   int m_segmentsPerSubdirectory{0};
-  bool m_segmentsPerSubdirectoryHasBeenSet = false;
 
   HlsStreamInfResolution m_streamInfResolution{HlsStreamInfResolution::NOT_SET};
-  bool m_streamInfResolutionHasBeenSet = false;
 
   HlsTimedMetadataId3Frame m_timedMetadataId3Frame{HlsTimedMetadataId3Frame::NOT_SET};
-  bool m_timedMetadataId3FrameHasBeenSet = false;
 
   int m_timedMetadataId3Period{0};
-  bool m_timedMetadataId3PeriodHasBeenSet = false;
 
   int m_timestampDeltaMilliseconds{0};
-  bool m_timestampDeltaMillisecondsHasBeenSet = false;
 
   HlsTsFileMode m_tsFileMode{HlsTsFileMode::NOT_SET};
+  bool m_adMarkersHasBeenSet = false;
+  bool m_baseUrlContentHasBeenSet = false;
+  bool m_baseUrlContent1HasBeenSet = false;
+  bool m_baseUrlManifestHasBeenSet = false;
+  bool m_baseUrlManifest1HasBeenSet = false;
+  bool m_captionLanguageMappingsHasBeenSet = false;
+  bool m_captionLanguageSettingHasBeenSet = false;
+  bool m_clientCacheHasBeenSet = false;
+  bool m_codecSpecificationHasBeenSet = false;
+  bool m_constantIvHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_directoryStructureHasBeenSet = false;
+  bool m_discontinuityTagsHasBeenSet = false;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_hlsCdnSettingsHasBeenSet = false;
+  bool m_hlsId3SegmentTaggingHasBeenSet = false;
+  bool m_iFrameOnlyPlaylistsHasBeenSet = false;
+  bool m_incompleteSegmentBehaviorHasBeenSet = false;
+  bool m_indexNSegmentsHasBeenSet = false;
+  bool m_inputLossActionHasBeenSet = false;
+  bool m_ivInManifestHasBeenSet = false;
+  bool m_ivSourceHasBeenSet = false;
+  bool m_keepSegmentsHasBeenSet = false;
+  bool m_keyFormatHasBeenSet = false;
+  bool m_keyFormatVersionsHasBeenSet = false;
+  bool m_keyProviderSettingsHasBeenSet = false;
+  bool m_manifestCompressionHasBeenSet = false;
+  bool m_manifestDurationFormatHasBeenSet = false;
+  bool m_minSegmentLengthHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_outputSelectionHasBeenSet = false;
+  bool m_programDateTimeHasBeenSet = false;
+  bool m_programDateTimeClockHasBeenSet = false;
+  bool m_programDateTimePeriodHasBeenSet = false;
+  bool m_redundantManifestHasBeenSet = false;
+  bool m_segmentLengthHasBeenSet = false;
+  bool m_segmentationModeHasBeenSet = false;
+  bool m_segmentsPerSubdirectoryHasBeenSet = false;
+  bool m_streamInfResolutionHasBeenSet = false;
+  bool m_timedMetadataId3FrameHasBeenSet = false;
+  bool m_timedMetadataId3PeriodHasBeenSet = false;
+  bool m_timestampDeltaMillisecondsHasBeenSet = false;
   bool m_tsFileModeHasBeenSet = false;
 };
 

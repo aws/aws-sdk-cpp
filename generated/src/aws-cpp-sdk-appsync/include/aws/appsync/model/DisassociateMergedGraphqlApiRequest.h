@@ -69,9 +69,9 @@ class DisassociateMergedGraphqlApiRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_sourceApiIdentifier;
-  bool m_sourceApiIdentifierHasBeenSet = false;
 
   Aws::String m_associationId;
+  bool m_sourceApiIdentifierHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
 };
 

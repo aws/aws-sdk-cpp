@@ -78,9 +78,9 @@ class GetComplianceSummaryByResourceTypeResult {
   ///@}
  private:
   Aws::Vector<ComplianceSummaryByResourceType> m_complianceSummariesByResourceType;
-  bool m_complianceSummariesByResourceTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_complianceSummariesByResourceTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

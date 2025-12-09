@@ -181,24 +181,24 @@ class ParticipantToken {
   ///@}
  private:
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<ParticipantTokenCapability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
+  bool m_participantIdHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class TestMigrationRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::Vector<CustomerNodeEndpoint> m_customerNodeEndpointList;
+  bool m_replicationGroupIdHasBeenSet = false;
   bool m_customerNodeEndpointListHasBeenSet = false;
 };
 

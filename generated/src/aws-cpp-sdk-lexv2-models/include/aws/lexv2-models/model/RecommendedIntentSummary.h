@@ -87,12 +87,12 @@ class RecommendedIntentSummary {
   ///@}
  private:
   Aws::String m_intentId;
-  bool m_intentIdHasBeenSet = false;
 
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   int m_sampleUtterancesCount{0};
+  bool m_intentIdHasBeenSet = false;
+  bool m_intentNameHasBeenSet = false;
   bool m_sampleUtterancesCountHasBeenSet = false;
 };
 

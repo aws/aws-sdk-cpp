@@ -61,9 +61,9 @@ class DescribeContainerFleetResult {
   ///@}
  private:
   ContainerFleet m_containerFleet;
-  bool m_containerFleetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerFleetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class GetVerifiedAccessEndpointPolicyRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessEndpointId;
-  bool m_verifiedAccessEndpointIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_verifiedAccessEndpointIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

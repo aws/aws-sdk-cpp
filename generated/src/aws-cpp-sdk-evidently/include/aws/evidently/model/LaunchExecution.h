@@ -69,9 +69,9 @@ class LaunchExecution {
   ///@}
  private:
   Aws::Utils::DateTime m_endedTime{};
-  bool m_endedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedTime{};
+  bool m_endedTimeHasBeenSet = false;
   bool m_startedTimeHasBeenSet = false;
 };
 

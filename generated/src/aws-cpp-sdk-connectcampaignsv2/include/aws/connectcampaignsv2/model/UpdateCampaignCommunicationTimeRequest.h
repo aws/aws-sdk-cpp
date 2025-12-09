@@ -66,9 +66,9 @@ class UpdateCampaignCommunicationTimeRequest : public ConnectCampaignsV2Request 
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CommunicationTimeConfig m_communicationTimeConfig;
+  bool m_idHasBeenSet = false;
   bool m_communicationTimeConfigHasBeenSet = false;
 };
 

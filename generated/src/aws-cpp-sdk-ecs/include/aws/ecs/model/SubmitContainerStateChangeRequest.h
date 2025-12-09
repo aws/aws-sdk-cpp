@@ -182,27 +182,27 @@ class SubmitContainerStateChangeRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::String m_runtimeId;
-  bool m_runtimeIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_exitCode{0};
-  bool m_exitCodeHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<NetworkBinding> m_networkBindings;
+  bool m_clusterHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_containerNameHasBeenSet = false;
+  bool m_runtimeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_exitCodeHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_networkBindingsHasBeenSet = false;
 };
 

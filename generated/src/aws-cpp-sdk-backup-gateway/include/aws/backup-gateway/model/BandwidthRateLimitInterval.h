@@ -149,21 +149,21 @@ class BandwidthRateLimitInterval {
   ///@}
  private:
   long long m_averageUploadRateLimitInBitsPerSec{0};
-  bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
 
   Aws::Vector<int> m_daysOfWeek;
-  bool m_daysOfWeekHasBeenSet = false;
 
   int m_endHourOfDay{0};
-  bool m_endHourOfDayHasBeenSet = false;
 
   int m_endMinuteOfHour{0};
-  bool m_endMinuteOfHourHasBeenSet = false;
 
   int m_startHourOfDay{0};
-  bool m_startHourOfDayHasBeenSet = false;
 
   int m_startMinuteOfHour{0};
+  bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
+  bool m_daysOfWeekHasBeenSet = false;
+  bool m_endHourOfDayHasBeenSet = false;
+  bool m_endMinuteOfHourHasBeenSet = false;
+  bool m_startHourOfDayHasBeenSet = false;
   bool m_startMinuteOfHourHasBeenSet = false;
 };
 

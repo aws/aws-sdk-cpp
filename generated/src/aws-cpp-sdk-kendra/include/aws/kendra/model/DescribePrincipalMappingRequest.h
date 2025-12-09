@@ -90,12 +90,12 @@ class DescribePrincipalMappingRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_groupId;
+  bool m_indexIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
 };
 

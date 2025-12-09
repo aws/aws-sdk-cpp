@@ -61,9 +61,9 @@ class UpdateLifecyclePolicyResult {
   ///@}
  private:
   LifecyclePolicyDetail m_lifecyclePolicyDetail;
-  bool m_lifecyclePolicyDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecyclePolicyDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

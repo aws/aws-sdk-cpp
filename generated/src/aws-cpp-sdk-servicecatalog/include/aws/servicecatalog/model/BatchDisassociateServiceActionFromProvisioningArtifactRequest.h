@@ -77,9 +77,9 @@ class BatchDisassociateServiceActionFromProvisioningArtifactRequest : public Ser
   ///@}
  private:
   Aws::Vector<ServiceActionAssociation> m_serviceActionAssociations;
-  bool m_serviceActionAssociationsHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
+  bool m_serviceActionAssociationsHasBeenSet = false;
   bool m_acceptLanguageHasBeenSet = false;
 };
 

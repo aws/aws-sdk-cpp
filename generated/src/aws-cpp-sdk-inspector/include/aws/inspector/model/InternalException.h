@@ -66,9 +66,9 @@ class InternalException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   bool m_canRetry{false};
+  bool m_messageHasBeenSet = false;
   bool m_canRetryHasBeenSet = false;
 };
 

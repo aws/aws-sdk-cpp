@@ -72,9 +72,9 @@ class DeleteKeywordRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_originationIdentity;
-  bool m_originationIdentityHasBeenSet = false;
 
   Aws::String m_keyword;
+  bool m_originationIdentityHasBeenSet = false;
   bool m_keywordHasBeenSet = false;
 };
 

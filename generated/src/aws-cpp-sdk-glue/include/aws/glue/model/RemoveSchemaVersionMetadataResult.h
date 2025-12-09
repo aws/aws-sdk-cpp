@@ -174,30 +174,30 @@ class RemoveSchemaVersionMetadataResult {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   bool m_latestVersion{false};
-  bool m_latestVersionHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   Aws::String m_metadataKey;
-  bool m_metadataKeyHasBeenSet = false;
 
   Aws::String m_metadataValue;
-  bool m_metadataValueHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_registryNameHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_schemaVersionIdHasBeenSet = false;
+  bool m_metadataKeyHasBeenSet = false;
+  bool m_metadataValueHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

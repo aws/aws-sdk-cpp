@@ -126,21 +126,21 @@ class GetSchemaByDefinitionResult {
   ///@}
  private:
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   SchemaVersionStatus m_status{SchemaVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaVersionIdHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

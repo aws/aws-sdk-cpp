@@ -79,9 +79,9 @@ class PutResourceSetRequest : public FMSRequest {
   ///@}
  private:
   ResourceSet m_resourceSet;
-  bool m_resourceSetHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_resourceSetHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

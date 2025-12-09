@@ -115,15 +115,15 @@ class UpdateConnectorRequest : public KafkaConnectRequest {
   ///@}
  private:
   CapacityUpdate m_capacity;
-  bool m_capacityHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_connectorConfiguration;
-  bool m_connectorConfigurationHasBeenSet = false;
 
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
+  bool m_capacityHasBeenSet = false;
+  bool m_connectorConfigurationHasBeenSet = false;
+  bool m_connectorArnHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
 };
 

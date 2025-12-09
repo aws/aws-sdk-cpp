@@ -72,9 +72,9 @@ class RecommendedActionUpdate {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_actionIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

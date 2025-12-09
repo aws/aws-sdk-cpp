@@ -83,9 +83,9 @@ class EksEmptyDir {
   ///@}
  private:
   Aws::String m_medium;
-  bool m_mediumHasBeenSet = false;
 
   Aws::String m_sizeLimit;
+  bool m_mediumHasBeenSet = false;
   bool m_sizeLimitHasBeenSet = false;
 };
 

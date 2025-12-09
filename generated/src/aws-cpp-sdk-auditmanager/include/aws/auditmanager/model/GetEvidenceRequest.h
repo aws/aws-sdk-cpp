@@ -101,15 +101,15 @@ class GetEvidenceRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_evidenceFolderId;
-  bool m_evidenceFolderIdHasBeenSet = false;
 
   Aws::String m_evidenceId;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_evidenceFolderIdHasBeenSet = false;
   bool m_evidenceIdHasBeenSet = false;
 };
 

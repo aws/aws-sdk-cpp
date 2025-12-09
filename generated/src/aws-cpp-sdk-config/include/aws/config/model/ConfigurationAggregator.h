@@ -189,27 +189,27 @@ class ConfigurationAggregator {
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   Aws::String m_configurationAggregatorArn;
-  bool m_configurationAggregatorArnHasBeenSet = false;
 
   Aws::Vector<AccountAggregationSource> m_accountAggregationSources;
-  bool m_accountAggregationSourcesHasBeenSet = false;
 
   OrganizationAggregationSource m_organizationAggregationSource;
-  bool m_organizationAggregationSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   AggregatorFilters m_aggregatorFilters;
+  bool m_configurationAggregatorNameHasBeenSet = false;
+  bool m_configurationAggregatorArnHasBeenSet = false;
+  bool m_accountAggregationSourcesHasBeenSet = false;
+  bool m_organizationAggregationSourceHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_aggregatorFiltersHasBeenSet = false;
 };
 

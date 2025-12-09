@@ -95,15 +95,15 @@ class StartSavingsPlansPurchaseRecommendationGenerationResult {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_generationStartedTime;
-  bool m_generationStartedTimeHasBeenSet = false;
 
   Aws::String m_estimatedCompletionTime;
-  bool m_estimatedCompletionTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_generationStartedTimeHasBeenSet = false;
+  bool m_estimatedCompletionTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

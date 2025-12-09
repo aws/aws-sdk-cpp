@@ -62,9 +62,9 @@ class DescribeWorkspaceConfigurationResult {
   ///@}
  private:
   WorkspaceConfigurationDescription m_workspaceConfiguration;
-  bool m_workspaceConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workspaceConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

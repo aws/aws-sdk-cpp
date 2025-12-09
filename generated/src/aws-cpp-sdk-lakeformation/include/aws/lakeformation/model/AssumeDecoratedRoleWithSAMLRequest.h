@@ -106,15 +106,15 @@ class AssumeDecoratedRoleWithSAMLRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_sAMLAssertion;
-  bool m_sAMLAssertionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   int m_durationSeconds{0};
+  bool m_sAMLAssertionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
 };
 

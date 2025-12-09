@@ -142,21 +142,21 @@ class VgwTelemetry {
   ///@}
  private:
   int m_acceptedRouteCount{0};
-  bool m_acceptedRouteCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChange{};
-  bool m_lastStatusChangeHasBeenSet = false;
 
   Aws::String m_outsideIpAddress;
-  bool m_outsideIpAddressHasBeenSet = false;
 
   TelemetryStatus m_status{TelemetryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_certificateArn;
+  bool m_acceptedRouteCountHasBeenSet = false;
+  bool m_lastStatusChangeHasBeenSet = false;
+  bool m_outsideIpAddressHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
 };
 

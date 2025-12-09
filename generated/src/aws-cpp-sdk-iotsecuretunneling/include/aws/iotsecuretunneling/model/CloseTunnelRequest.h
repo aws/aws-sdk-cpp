@@ -66,9 +66,9 @@ class CloseTunnelRequest : public IoTSecureTunnelingRequest {
   ///@}
  private:
   Aws::String m_tunnelId;
-  bool m_tunnelIdHasBeenSet = false;
 
   bool m_delete{false};
+  bool m_tunnelIdHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
 };
 

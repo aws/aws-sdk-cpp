@@ -171,21 +171,21 @@ class MedicalTranscriptionSetting {
   ///@}
  private:
   bool m_showSpeakerLabels{false};
-  bool m_showSpeakerLabelsHasBeenSet = false;
 
   int m_maxSpeakerLabels{0};
-  bool m_maxSpeakerLabelsHasBeenSet = false;
 
   bool m_channelIdentification{false};
-  bool m_channelIdentificationHasBeenSet = false;
 
   bool m_showAlternatives{false};
-  bool m_showAlternativesHasBeenSet = false;
 
   int m_maxAlternatives{0};
-  bool m_maxAlternativesHasBeenSet = false;
 
   Aws::String m_vocabularyName;
+  bool m_showSpeakerLabelsHasBeenSet = false;
+  bool m_maxSpeakerLabelsHasBeenSet = false;
+  bool m_channelIdentificationHasBeenSet = false;
+  bool m_showAlternativesHasBeenSet = false;
+  bool m_maxAlternativesHasBeenSet = false;
   bool m_vocabularyNameHasBeenSet = false;
 };
 

@@ -173,24 +173,24 @@ class CreateConnectorProfileRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   Aws::String m_kmsArn;
-  bool m_kmsArnHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorLabel;
-  bool m_connectorLabelHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
-  bool m_connectionModeHasBeenSet = false;
 
   ConnectorProfileConfig m_connectorProfileConfig;
-  bool m_connectorProfileConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_connectorProfileNameHasBeenSet = false;
+  bool m_kmsArnHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_connectorLabelHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
+  bool m_connectorProfileConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

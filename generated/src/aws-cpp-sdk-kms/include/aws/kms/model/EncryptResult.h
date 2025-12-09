@@ -96,15 +96,15 @@ class EncryptResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
-  bool m_ciphertextBlobHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   EncryptionAlgorithmSpec m_encryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
-  bool m_encryptionAlgorithmHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ciphertextBlobHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_encryptionAlgorithmHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

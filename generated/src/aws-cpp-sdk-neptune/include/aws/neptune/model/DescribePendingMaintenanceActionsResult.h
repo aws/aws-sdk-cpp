@@ -89,12 +89,12 @@ class DescribePendingMaintenanceActionsResult {
   ///@}
  private:
   Aws::Vector<ResourcePendingMaintenanceActions> m_pendingMaintenanceActions;
-  bool m_pendingMaintenanceActionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_pendingMaintenanceActionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

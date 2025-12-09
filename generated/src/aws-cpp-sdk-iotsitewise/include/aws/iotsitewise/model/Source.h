@@ -72,9 +72,9 @@ class Source {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Location m_location;
+  bool m_arnHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

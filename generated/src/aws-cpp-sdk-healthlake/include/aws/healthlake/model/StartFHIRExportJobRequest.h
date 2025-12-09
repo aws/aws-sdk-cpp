@@ -123,18 +123,18 @@ class StartFHIRExportJobRequest : public HealthLakeRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   OutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_jobNameHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -19,33 +19,33 @@ namespace Model {
 CrlDetail::CrlDetail(JsonView jsonValue) { *this = jsonValue; }
 
 CrlDetail& CrlDetail::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetString("createdAt");
-    m_createdAtHasBeenSet = true;
+  if (jsonValue.ValueExists("crlId")) {
+    m_crlId = jsonValue.GetString("crlId");
+    m_crlIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("crlArn")) {
     m_crlArn = jsonValue.GetString("crlArn");
     m_crlArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("crlData")) {
-    m_crlData = HashingUtils::Base64Decode(jsonValue.GetString("crlData"));
-    m_crlDataHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("crlId")) {
-    m_crlId = jsonValue.GetString("crlId");
-    m_crlIdHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("enabled")) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("crlData")) {
+    m_crlData = HashingUtils::Base64Decode(jsonValue.GetString("crlData"));
+    m_crlDataHasBeenSet = true;
   }
   if (jsonValue.ValueExists("trustAnchorArn")) {
     m_trustAnchorArn = jsonValue.GetString("trustAnchorArn");
     m_trustAnchorArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdAt")) {
+    m_createdAt = jsonValue.GetString("createdAt");
+    m_createdAtHasBeenSet = true;
   }
   if (jsonValue.ValueExists("updatedAt")) {
     m_updatedAt = jsonValue.GetString("updatedAt");
@@ -57,32 +57,32 @@ CrlDetail& CrlDetail::operator=(JsonView jsonValue) {
 JsonValue CrlDetail::Jsonize() const {
   JsonValue payload;
 
-  if (m_createdAtHasBeenSet) {
-    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  if (m_crlIdHasBeenSet) {
+    payload.WithString("crlId", m_crlId);
   }
 
   if (m_crlArnHasBeenSet) {
     payload.WithString("crlArn", m_crlArn);
   }
 
-  if (m_crlDataHasBeenSet) {
-    payload.WithString("crlData", HashingUtils::Base64Encode(m_crlData));
-  }
-
-  if (m_crlIdHasBeenSet) {
-    payload.WithString("crlId", m_crlId);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_crlDataHasBeenSet) {
+    payload.WithString("crlData", HashingUtils::Base64Encode(m_crlData));
   }
 
   if (m_trustAnchorArnHasBeenSet) {
     payload.WithString("trustAnchorArn", m_trustAnchorArn);
+  }
+
+  if (m_createdAtHasBeenSet) {
+    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_updatedAtHasBeenSet) {

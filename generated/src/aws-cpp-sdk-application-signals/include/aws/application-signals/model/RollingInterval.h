@@ -67,9 +67,9 @@ class RollingInterval {
   ///@}
  private:
   DurationUnit m_durationUnit{DurationUnit::NOT_SET};
-  bool m_durationUnitHasBeenSet = false;
 
   int m_duration{0};
+  bool m_durationUnitHasBeenSet = false;
   bool m_durationHasBeenSet = false;
 };
 

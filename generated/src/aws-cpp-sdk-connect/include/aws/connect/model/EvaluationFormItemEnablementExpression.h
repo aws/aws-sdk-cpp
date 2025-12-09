@@ -94,12 +94,12 @@ class EvaluationFormItemEnablementExpression {
   ///@}
  private:
   EvaluationFormItemEnablementSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<EvaluationFormItemEnablementSourceValue> m_values;
-  bool m_valuesHasBeenSet = false;
 
   EvaluationFormItemSourceValuesComparator m_comparator{EvaluationFormItemSourceValuesComparator::NOT_SET};
+  bool m_sourceHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_comparatorHasBeenSet = false;
 };
 

@@ -177,24 +177,24 @@ class CreateWorkflowRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_applicationConfigurationId;
-  bool m_applicationConfigurationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, StepInput> m_inputParameters;
-  bool m_inputParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stepTargets;
-  bool m_stepTargetsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_applicationConfigurationIdHasBeenSet = false;
+  bool m_inputParametersHasBeenSet = false;
+  bool m_stepTargetsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

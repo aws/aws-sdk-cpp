@@ -110,15 +110,15 @@ class DeregisterTypeRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

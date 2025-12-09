@@ -98,15 +98,15 @@ class UpdateReportPlanResult {
   ///@}
  private:
   Aws::String m_reportPlanName;
-  bool m_reportPlanNameHasBeenSet = false;
 
   Aws::String m_reportPlanArn;
-  bool m_reportPlanArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportPlanNameHasBeenSet = false;
+  bool m_reportPlanArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

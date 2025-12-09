@@ -154,24 +154,24 @@ class ListCandidatesForAutoMLJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_autoMLJobName;
-  bool m_autoMLJobNameHasBeenSet = false;
 
   CandidateStatus m_statusEquals{CandidateStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   Aws::String m_candidateNameEquals;
-  bool m_candidateNameEqualsHasBeenSet = false;
 
   AutoMLSortOrder m_sortOrder{AutoMLSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   CandidateSortBy m_sortBy{CandidateSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_autoMLJobNameHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_candidateNameEqualsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

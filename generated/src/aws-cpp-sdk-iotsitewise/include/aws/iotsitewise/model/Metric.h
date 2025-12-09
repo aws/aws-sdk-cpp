@@ -132,15 +132,15 @@ class Metric {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Vector<ExpressionVariable> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   MetricWindow m_window;
-  bool m_windowHasBeenSet = false;
 
   MetricProcessingConfig m_processingConfig;
+  bool m_expressionHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
+  bool m_windowHasBeenSet = false;
   bool m_processingConfigHasBeenSet = false;
 };
 

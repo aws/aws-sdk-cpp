@@ -67,9 +67,9 @@ class UploadSigningCertificateResult {
   ///@}
  private:
   SigningCertificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_certificateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

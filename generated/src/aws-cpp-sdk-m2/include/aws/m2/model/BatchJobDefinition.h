@@ -69,9 +69,9 @@ class BatchJobDefinition {
   ///@}
  private:
   FileBatchJobDefinition m_fileBatchJobDefinition;
-  bool m_fileBatchJobDefinitionHasBeenSet = false;
 
   ScriptBatchJobDefinition m_scriptBatchJobDefinition;
+  bool m_fileBatchJobDefinitionHasBeenSet = false;
   bool m_scriptBatchJobDefinitionHasBeenSet = false;
 };
 

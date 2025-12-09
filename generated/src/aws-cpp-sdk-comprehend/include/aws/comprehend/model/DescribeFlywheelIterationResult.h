@@ -60,9 +60,9 @@ class DescribeFlywheelIterationResult {
   ///@}
  private:
   FlywheelIterationProperties m_flywheelIterationProperties;
-  bool m_flywheelIterationPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flywheelIterationPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

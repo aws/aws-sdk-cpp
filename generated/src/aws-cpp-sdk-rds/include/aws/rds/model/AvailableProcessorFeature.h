@@ -93,12 +93,12 @@ class AvailableProcessorFeature {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_allowedValues;
+  bool m_nameHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
   bool m_allowedValuesHasBeenSet = false;
 };
 

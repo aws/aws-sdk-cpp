@@ -87,12 +87,12 @@ class ListServersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListedServer> m_servers;
-  bool m_serversHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serversHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

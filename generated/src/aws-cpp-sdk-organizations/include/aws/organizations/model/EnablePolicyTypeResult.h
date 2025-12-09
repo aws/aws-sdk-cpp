@@ -61,9 +61,9 @@ class EnablePolicyTypeResult {
   ///@}
  private:
   Root m_root;
-  bool m_rootHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rootHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

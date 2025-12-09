@@ -61,9 +61,9 @@ class DescribeSecurityConfigurationResult {
   ///@}
  private:
   SecurityConfiguration m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

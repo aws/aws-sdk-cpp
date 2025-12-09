@@ -121,18 +121,18 @@ class DescribeComponentConfigurationRecommendationRequest : public ApplicationIn
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Tier m_tier{Tier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   RecommendationType m_recommendationType{RecommendationType::NOT_SET};
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
   bool m_recommendationTypeHasBeenSet = false;
 };
 

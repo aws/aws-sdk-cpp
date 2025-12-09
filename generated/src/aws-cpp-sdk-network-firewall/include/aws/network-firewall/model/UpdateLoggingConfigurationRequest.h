@@ -113,15 +113,15 @@ class UpdateLoggingConfigurationRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   bool m_enableMonitoringDashboard{false};
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallNameHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
   bool m_enableMonitoringDashboardHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails {
   ///@}
  private:
   Aws::String m_dayOfWeek;
-  bool m_dayOfWeekHasBeenSet = false;
 
   Aws::String m_timeOfDay;
-  bool m_timeOfDayHasBeenSet = false;
 
   Aws::String m_timeZone;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_timeOfDayHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class UpdateAllowListRequest : public Macie2Request {
   ///@}
  private:
   AllowListCriteria m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_criteriaHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

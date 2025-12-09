@@ -539,45 +539,45 @@ class SearchRequest : public CloudSearchDomainRequest {
   ///@}
  private:
   Aws::String m_cursor;
-  bool m_cursorHasBeenSet = false;
 
   Aws::String m_expr;
-  bool m_exprHasBeenSet = false;
 
   Aws::String m_facet;
-  bool m_facetHasBeenSet = false;
 
   Aws::String m_filterQuery;
-  bool m_filterQueryHasBeenSet = false;
 
   Aws::String m_highlight;
-  bool m_highlightHasBeenSet = false;
 
   bool m_partial{false};
-  bool m_partialHasBeenSet = false;
 
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   Aws::String m_queryOptions;
-  bool m_queryOptionsHasBeenSet = false;
 
   QueryParser m_queryParser{QueryParser::NOT_SET};
-  bool m_queryParserHasBeenSet = false;
 
   Aws::String m_return;
-  bool m_returnHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::String m_sort;
-  bool m_sortHasBeenSet = false;
 
   long long m_start{0};
-  bool m_startHasBeenSet = false;
 
   Aws::String m_stats;
+  bool m_cursorHasBeenSet = false;
+  bool m_exprHasBeenSet = false;
+  bool m_facetHasBeenSet = false;
+  bool m_filterQueryHasBeenSet = false;
+  bool m_highlightHasBeenSet = false;
+  bool m_partialHasBeenSet = false;
+  bool m_queryHasBeenSet = false;
+  bool m_queryOptionsHasBeenSet = false;
+  bool m_queryParserHasBeenSet = false;
+  bool m_returnHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_startHasBeenSet = false;
   bool m_statsHasBeenSet = false;
 };
 

@@ -242,33 +242,33 @@ class CreateDistributionRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_distributionName;
-  bool m_distributionNameHasBeenSet = false;
 
   InputOrigin m_origin;
-  bool m_originHasBeenSet = false;
 
   CacheBehavior m_defaultCacheBehavior;
-  bool m_defaultCacheBehaviorHasBeenSet = false;
 
   CacheSettings m_cacheBehaviorSettings;
-  bool m_cacheBehaviorSettingsHasBeenSet = false;
 
   Aws::Vector<CacheBehaviorPerPath> m_cacheBehaviors;
-  bool m_cacheBehaviorsHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   ViewerMinimumTlsProtocolVersionEnum m_viewerMinimumTlsProtocolVersion{ViewerMinimumTlsProtocolVersionEnum::NOT_SET};
+  bool m_distributionNameHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_defaultCacheBehaviorHasBeenSet = false;
+  bool m_cacheBehaviorSettingsHasBeenSet = false;
+  bool m_cacheBehaviorsHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
   bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
 };
 

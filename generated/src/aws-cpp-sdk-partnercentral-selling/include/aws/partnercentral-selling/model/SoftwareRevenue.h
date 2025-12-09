@@ -110,15 +110,15 @@ class SoftwareRevenue {
   ///@}
  private:
   RevenueModel m_deliveryModel{RevenueModel::NOT_SET};
-  bool m_deliveryModelHasBeenSet = false;
 
   MonetaryValue m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_effectiveDate;
-  bool m_effectiveDateHasBeenSet = false;
 
   Aws::String m_expirationDate;
+  bool m_deliveryModelHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_effectiveDateHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
 };
 

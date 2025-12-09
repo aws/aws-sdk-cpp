@@ -106,15 +106,15 @@ class ProductPageSummaryNoBody {
   ///@}
  private:
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_pageTitle;
-  bool m_pageTitleHasBeenSet = false;
 
   Aws::String m_productPageArn;
-  bool m_productPageArnHasBeenSet = false;
 
   Aws::String m_productPageId;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_pageTitleHasBeenSet = false;
+  bool m_productPageArnHasBeenSet = false;
   bool m_productPageIdHasBeenSet = false;
 };
 

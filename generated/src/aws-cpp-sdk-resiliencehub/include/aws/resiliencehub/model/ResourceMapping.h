@@ -184,27 +184,27 @@ class ResourceMapping {
   ///@}
  private:
   Aws::String m_appRegistryAppName;
-  bool m_appRegistryAppNameHasBeenSet = false;
 
   Aws::String m_eksSourceName;
-  bool m_eksSourceNameHasBeenSet = false;
 
   Aws::String m_logicalStackName;
-  bool m_logicalStackNameHasBeenSet = false;
 
   ResourceMappingType m_mappingType{ResourceMappingType::NOT_SET};
-  bool m_mappingTypeHasBeenSet = false;
 
   PhysicalResourceId m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_terraformSourceName;
+  bool m_appRegistryAppNameHasBeenSet = false;
+  bool m_eksSourceNameHasBeenSet = false;
+  bool m_logicalStackNameHasBeenSet = false;
+  bool m_mappingTypeHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_terraformSourceNameHasBeenSet = false;
 };
 

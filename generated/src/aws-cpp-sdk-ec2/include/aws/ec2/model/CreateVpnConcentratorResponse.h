@@ -60,9 +60,9 @@ class CreateVpnConcentratorResponse {
   ///@}
  private:
   VpnConcentrator m_vpnConcentrator;
-  bool m_vpnConcentratorHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnConcentratorHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

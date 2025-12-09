@@ -203,30 +203,30 @@ class ScanJobSummary {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ScanJobStatus m_state{ScanJobStatus::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   MalwareScanner m_malwareScanner{MalwareScanner::NOT_SET};
-  bool m_malwareScannerHasBeenSet = false;
 
   ScanResultStatus m_scanResultStatus{ScanResultStatus::NOT_SET};
+  bool m_regionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_malwareScannerHasBeenSet = false;
   bool m_scanResultStatusHasBeenSet = false;
 };
 

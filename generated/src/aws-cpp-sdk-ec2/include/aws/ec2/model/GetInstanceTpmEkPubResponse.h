@@ -109,18 +109,18 @@ class GetInstanceTpmEkPubResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   EkPubKeyType m_keyType{EkPubKeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   EkPubKeyFormat m_keyFormat{EkPubKeyFormat::NOT_SET};
-  bool m_keyFormatHasBeenSet = false;
 
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_keyTypeHasBeenSet = false;
+  bool m_keyFormatHasBeenSet = false;
+  bool m_keyValueHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -138,18 +138,18 @@ class ModifyInstanceConnectEndpointRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_instanceConnectEndpointId;
-  bool m_instanceConnectEndpointIdHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   bool m_preserveClientIp{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceConnectEndpointIdHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
   bool m_preserveClientIpHasBeenSet = false;
 };
 

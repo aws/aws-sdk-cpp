@@ -259,39 +259,39 @@ class Report {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ReportType m_type{ReportType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_reportGroupArn;
-  bool m_reportGroupArnHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   ReportStatusType m_status{ReportStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_expired{};
-  bool m_expiredHasBeenSet = false;
 
   ReportExportConfig m_exportConfig;
-  bool m_exportConfigHasBeenSet = false;
 
   bool m_truncated{false};
-  bool m_truncatedHasBeenSet = false;
 
   TestReportSummary m_testSummary;
-  bool m_testSummaryHasBeenSet = false;
 
   CodeCoverageReportSummary m_codeCoverageSummary;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_reportGroupArnHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_expiredHasBeenSet = false;
+  bool m_exportConfigHasBeenSet = false;
+  bool m_truncatedHasBeenSet = false;
+  bool m_testSummaryHasBeenSet = false;
   bool m_codeCoverageSummaryHasBeenSet = false;
 };
 

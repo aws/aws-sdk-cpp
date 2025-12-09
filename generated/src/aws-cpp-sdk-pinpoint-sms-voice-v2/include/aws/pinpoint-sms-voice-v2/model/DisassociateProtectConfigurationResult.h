@@ -111,18 +111,18 @@ class DisassociateProtectConfigurationResult {
   ///@}
  private:
   Aws::String m_configurationSetArn;
-  bool m_configurationSetArnHasBeenSet = false;
 
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_protectConfigurationArn;
-  bool m_protectConfigurationArnHasBeenSet = false;
 
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationSetArnHasBeenSet = false;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_protectConfigurationArnHasBeenSet = false;
+  bool m_protectConfigurationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

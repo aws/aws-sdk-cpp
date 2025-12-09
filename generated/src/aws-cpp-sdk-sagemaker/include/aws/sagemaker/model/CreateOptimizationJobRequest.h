@@ -266,36 +266,36 @@ class CreateOptimizationJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_optimizationJobName;
-  bool m_optimizationJobNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   OptimizationJobModelSource m_modelSource;
-  bool m_modelSourceHasBeenSet = false;
 
   OptimizationJobDeploymentInstanceType m_deploymentInstanceType{OptimizationJobDeploymentInstanceType::NOT_SET};
-  bool m_deploymentInstanceTypeHasBeenSet = false;
 
   int m_maxInstanceCount{0};
-  bool m_maxInstanceCountHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_optimizationEnvironment;
-  bool m_optimizationEnvironmentHasBeenSet = false;
 
   Aws::Vector<OptimizationConfig> m_optimizationConfigs;
-  bool m_optimizationConfigsHasBeenSet = false;
 
   OptimizationJobOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   OptimizationVpcConfig m_vpcConfig;
+  bool m_optimizationJobNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_modelSourceHasBeenSet = false;
+  bool m_deploymentInstanceTypeHasBeenSet = false;
+  bool m_maxInstanceCountHasBeenSet = false;
+  bool m_optimizationEnvironmentHasBeenSet = false;
+  bool m_optimizationConfigsHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

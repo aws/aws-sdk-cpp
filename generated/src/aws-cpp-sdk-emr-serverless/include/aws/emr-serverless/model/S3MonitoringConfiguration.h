@@ -70,9 +70,9 @@ class S3MonitoringConfiguration {
   ///@}
  private:
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
+  bool m_logUriHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
 };
 

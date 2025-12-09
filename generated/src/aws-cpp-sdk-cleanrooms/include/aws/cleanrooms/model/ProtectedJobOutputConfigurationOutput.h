@@ -69,9 +69,9 @@ class ProtectedJobOutputConfigurationOutput {
   ///@}
  private:
   ProtectedJobS3OutputConfigurationOutput m_s3;
-  bool m_s3HasBeenSet = false;
 
   ProtectedJobMemberOutputConfigurationOutput m_member;
+  bool m_s3HasBeenSet = false;
   bool m_memberHasBeenSet = false;
 };
 

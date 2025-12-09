@@ -59,9 +59,9 @@ class CreateTrainingDatasetResult {
   ///@}
  private:
   Aws::String m_trainingDatasetArn;
-  bool m_trainingDatasetArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trainingDatasetArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

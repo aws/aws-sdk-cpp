@@ -92,12 +92,12 @@ class BatchAssociateAssessmentReportEvidenceResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_evidenceIds;
-  bool m_evidenceIdsHasBeenSet = false;
 
   Aws::Vector<AssessmentReportEvidenceError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evidenceIdsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

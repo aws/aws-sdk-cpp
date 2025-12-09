@@ -85,12 +85,12 @@ class ListHoursOfOperationsResult {
   ///@}
  private:
   Aws::Vector<HoursOfOperationSummary> m_hoursOfOperationSummaryList;
-  bool m_hoursOfOperationSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hoursOfOperationSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

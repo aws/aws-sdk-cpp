@@ -133,18 +133,18 @@ class AttemptDetail {
   ///@}
  private:
   AttemptContainerDetail m_container;
-  bool m_containerHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_stoppedAt{0};
-  bool m_stoppedAtHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Vector<AttemptEcsTaskDetails> m_taskProperties;
+  bool m_containerHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_taskPropertiesHasBeenSet = false;
 };
 

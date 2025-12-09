@@ -69,9 +69,9 @@ class SamplingBoost {
   ///@}
  private:
   double m_boostRate{0.0};
-  bool m_boostRateHasBeenSet = false;
 
   Aws::Utils::DateTime m_boostRateTTL{};
+  bool m_boostRateHasBeenSet = false;
   bool m_boostRateTTLHasBeenSet = false;
 };
 

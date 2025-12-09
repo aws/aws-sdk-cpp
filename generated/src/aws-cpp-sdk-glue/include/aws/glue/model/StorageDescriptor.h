@@ -326,45 +326,45 @@ class StorageDescriptor {
   ///@}
  private:
   Aws::Vector<Column> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalLocations;
-  bool m_additionalLocationsHasBeenSet = false;
 
   Aws::String m_inputFormat;
-  bool m_inputFormatHasBeenSet = false;
 
   Aws::String m_outputFormat;
-  bool m_outputFormatHasBeenSet = false;
 
   bool m_compressed{false};
-  bool m_compressedHasBeenSet = false;
 
   int m_numberOfBuckets{0};
-  bool m_numberOfBucketsHasBeenSet = false;
 
   SerDeInfo m_serdeInfo;
-  bool m_serdeInfoHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bucketColumns;
-  bool m_bucketColumnsHasBeenSet = false;
 
   Aws::Vector<Order> m_sortColumns;
-  bool m_sortColumnsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   SkewedInfo m_skewedInfo;
-  bool m_skewedInfoHasBeenSet = false;
 
   bool m_storedAsSubDirectories{false};
-  bool m_storedAsSubDirectoriesHasBeenSet = false;
 
   SchemaReference m_schemaReference;
+  bool m_columnsHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_additionalLocationsHasBeenSet = false;
+  bool m_inputFormatHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_compressedHasBeenSet = false;
+  bool m_numberOfBucketsHasBeenSet = false;
+  bool m_serdeInfoHasBeenSet = false;
+  bool m_bucketColumnsHasBeenSet = false;
+  bool m_sortColumnsHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_skewedInfoHasBeenSet = false;
+  bool m_storedAsSubDirectoriesHasBeenSet = false;
   bool m_schemaReferenceHasBeenSet = false;
 };
 

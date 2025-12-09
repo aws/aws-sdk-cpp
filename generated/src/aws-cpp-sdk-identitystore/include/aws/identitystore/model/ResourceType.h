@@ -10,7 +10,7 @@
 namespace Aws {
 namespace IdentityStore {
 namespace Model {
-enum class ResourceType { NOT_SET, GROUP, USER, IDENTITY_STORE, GROUP_MEMBERSHIP };
+enum class ResourceType { NOT_SET, GROUP, USER, IDENTITY_STORE, GROUP_MEMBERSHIP, RESOURCE_POLICY };
 
 namespace ResourceTypeMapper {
 AWS_IDENTITYSTORE_API ResourceType GetResourceTypeForName(const Aws::String& name);

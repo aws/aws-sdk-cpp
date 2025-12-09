@@ -101,15 +101,15 @@ class CreateWorkspaceApiKeyRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_keyRole;
-  bool m_keyRoleHasBeenSet = false;
 
   int m_secondsToLive{0};
-  bool m_secondsToLiveHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_keyNameHasBeenSet = false;
+  bool m_keyRoleHasBeenSet = false;
+  bool m_secondsToLiveHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

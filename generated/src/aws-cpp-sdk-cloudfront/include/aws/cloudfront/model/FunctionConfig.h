@@ -87,12 +87,12 @@ class FunctionConfig {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   FunctionRuntime m_runtime{FunctionRuntime::NOT_SET};
-  bool m_runtimeHasBeenSet = false;
 
   KeyValueStoreAssociations m_keyValueStoreAssociations;
+  bool m_commentHasBeenSet = false;
+  bool m_runtimeHasBeenSet = false;
   bool m_keyValueStoreAssociationsHasBeenSet = false;
 };
 

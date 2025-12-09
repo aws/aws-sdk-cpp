@@ -171,18 +171,18 @@ class QualificationRequirement {
   ///@}
  private:
   Aws::String m_qualificationTypeId;
-  bool m_qualificationTypeIdHasBeenSet = false;
 
   Comparator m_comparator{Comparator::NOT_SET};
-  bool m_comparatorHasBeenSet = false;
 
   Aws::Vector<int> m_integerValues;
-  bool m_integerValuesHasBeenSet = false;
 
   Aws::Vector<Locale> m_localeValues;
-  bool m_localeValuesHasBeenSet = false;
 
   HITAccessActions m_actionsGuarded{HITAccessActions::NOT_SET};
+  bool m_qualificationTypeIdHasBeenSet = false;
+  bool m_comparatorHasBeenSet = false;
+  bool m_integerValuesHasBeenSet = false;
+  bool m_localeValuesHasBeenSet = false;
   bool m_actionsGuardedHasBeenSet = false;
 };
 

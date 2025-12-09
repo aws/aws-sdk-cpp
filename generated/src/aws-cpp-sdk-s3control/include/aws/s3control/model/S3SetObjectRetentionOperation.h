@@ -78,9 +78,9 @@ class S3SetObjectRetentionOperation {
   ///@}
  private:
   bool m_bypassGovernanceRetention{false};
-  bool m_bypassGovernanceRetentionHasBeenSet = false;
 
   S3Retention m_retention;
+  bool m_bypassGovernanceRetentionHasBeenSet = false;
   bool m_retentionHasBeenSet = false;
 };
 

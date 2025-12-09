@@ -70,9 +70,9 @@ class CustomOrchestrationTrace {
   ///@}
  private:
   CustomOrchestrationTraceEvent m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_traceId;
+  bool m_eventHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
 };
 

@@ -196,27 +196,27 @@ class S3GlueParquetTarget {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   ParquetCompressionType m_compression{ParquetCompressionType::NOT_SET};
-  bool m_compressionHasBeenSet = false;
 
   Aws::String m_numberTargetPartitions;
-  bool m_numberTargetPartitionsHasBeenSet = false;
 
   DirectSchemaChangePolicy m_schemaChangePolicy;
-  bool m_schemaChangePolicyHasBeenSet = false;
 
   AutoDataQuality m_autoDataQuality;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_compressionHasBeenSet = false;
+  bool m_numberTargetPartitionsHasBeenSet = false;
+  bool m_schemaChangePolicyHasBeenSet = false;
   bool m_autoDataQualityHasBeenSet = false;
 };
 

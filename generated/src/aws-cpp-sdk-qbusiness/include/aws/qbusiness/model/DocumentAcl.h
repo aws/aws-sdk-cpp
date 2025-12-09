@@ -72,9 +72,9 @@ class DocumentAcl {
   ///@}
  private:
   DocumentAclMembership m_allowlist;
-  bool m_allowlistHasBeenSet = false;
 
   DocumentAclMembership m_denyList;
+  bool m_allowlistHasBeenSet = false;
   bool m_denyListHasBeenSet = false;
 };
 

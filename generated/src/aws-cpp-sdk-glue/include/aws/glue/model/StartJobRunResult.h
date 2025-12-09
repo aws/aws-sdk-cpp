@@ -59,9 +59,9 @@ class StartJobRunResult {
   ///@}
  private:
   Aws::String m_jobRunId;
-  bool m_jobRunIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobRunIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -165,21 +165,21 @@ class Gateway {
   ///@}
  private:
   Aws::Vector<Aws::String> m_egressCidrBlocks;
-  bool m_egressCidrBlocksHasBeenSet = false;
 
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::Vector<MessageDetail> m_gatewayMessages;
-  bool m_gatewayMessagesHasBeenSet = false;
 
   GatewayState m_gatewayState{GatewayState::NOT_SET};
-  bool m_gatewayStateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<GatewayNetwork> m_networks;
+  bool m_egressCidrBlocksHasBeenSet = false;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_gatewayMessagesHasBeenSet = false;
+  bool m_gatewayStateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_networksHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class OpenSearchEncryptionPolicy {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   OpenSearchResourceStatus m_status;
+  bool m_policyNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

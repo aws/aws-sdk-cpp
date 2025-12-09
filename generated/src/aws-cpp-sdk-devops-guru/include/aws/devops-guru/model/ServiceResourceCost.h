@@ -130,18 +130,18 @@ class ServiceResourceCost {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   CostEstimationServiceResourceState m_state{CostEstimationServiceResourceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   double m_unitCost{0.0};
-  bool m_unitCostHasBeenSet = false;
 
   double m_cost{0.0};
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_unitCostHasBeenSet = false;
   bool m_costHasBeenSet = false;
 };
 

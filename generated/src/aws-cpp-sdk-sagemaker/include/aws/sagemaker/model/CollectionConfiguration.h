@@ -80,9 +80,9 @@ class CollectionConfiguration {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_collectionParameters;
+  bool m_collectionNameHasBeenSet = false;
   bool m_collectionParametersHasBeenSet = false;
 };
 

@@ -258,45 +258,45 @@ class GetSchemaResult {
   ///@}
  private:
   Aws::String m_registryName;
-  bool m_registryNameHasBeenSet = false;
 
   Aws::String m_registryArn;
-  bool m_registryArnHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Compatibility m_compatibility{Compatibility::NOT_SET};
-  bool m_compatibilityHasBeenSet = false;
 
   long long m_schemaCheckpoint{0};
-  bool m_schemaCheckpointHasBeenSet = false;
 
   long long m_latestSchemaVersion{0};
-  bool m_latestSchemaVersionHasBeenSet = false;
 
   long long m_nextSchemaVersion{0};
-  bool m_nextSchemaVersionHasBeenSet = false;
 
   SchemaStatus m_schemaStatus{SchemaStatus::NOT_SET};
-  bool m_schemaStatusHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_updatedTime;
-  bool m_updatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryNameHasBeenSet = false;
+  bool m_registryArnHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_compatibilityHasBeenSet = false;
+  bool m_schemaCheckpointHasBeenSet = false;
+  bool m_latestSchemaVersionHasBeenSet = false;
+  bool m_nextSchemaVersionHasBeenSet = false;
+  bool m_schemaStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_updatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

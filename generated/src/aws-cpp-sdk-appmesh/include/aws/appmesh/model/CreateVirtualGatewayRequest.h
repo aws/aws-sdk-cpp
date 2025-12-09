@@ -162,21 +162,21 @@ class CreateVirtualGatewayRequest : public AppMeshRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   Aws::String m_meshOwner;
-  bool m_meshOwnerHasBeenSet = false;
 
   VirtualGatewaySpec m_spec;
-  bool m_specHasBeenSet = false;
 
   Aws::Vector<TagRef> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_virtualGatewayName;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_meshNameHasBeenSet = false;
+  bool m_meshOwnerHasBeenSet = false;
+  bool m_specHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_virtualGatewayNameHasBeenSet = false;
 };
 

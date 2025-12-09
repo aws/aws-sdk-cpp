@@ -68,9 +68,9 @@ class NextContactEntry {
   ///@}
  private:
   NextContactType m_type{NextContactType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   NextContactMetadata m_nextContactMetadata;
+  bool m_typeHasBeenSet = false;
   bool m_nextContactMetadataHasBeenSet = false;
 };
 

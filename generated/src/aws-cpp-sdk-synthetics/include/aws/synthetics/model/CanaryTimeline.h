@@ -105,15 +105,15 @@ class CanaryTimeline {
   ///@}
  private:
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStarted{};
-  bool m_lastStartedHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStopped{};
+  bool m_createdHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_lastStartedHasBeenSet = false;
   bool m_lastStoppedHasBeenSet = false;
 };
 

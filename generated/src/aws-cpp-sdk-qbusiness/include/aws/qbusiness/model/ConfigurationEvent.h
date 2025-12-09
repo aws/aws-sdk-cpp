@@ -97,12 +97,12 @@ class ConfigurationEvent {
   ///@}
  private:
   ChatMode m_chatMode{ChatMode::NOT_SET};
-  bool m_chatModeHasBeenSet = false;
 
   ChatModeConfiguration m_chatModeConfiguration;
-  bool m_chatModeConfigurationHasBeenSet = false;
 
   AttributeFilter m_attributeFilter;
+  bool m_chatModeHasBeenSet = false;
+  bool m_chatModeConfigurationHasBeenSet = false;
   bool m_attributeFilterHasBeenSet = false;
 };
 

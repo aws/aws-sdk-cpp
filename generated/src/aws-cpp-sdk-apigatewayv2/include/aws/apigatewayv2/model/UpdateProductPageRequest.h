@@ -87,12 +87,12 @@ class UpdateProductPageRequest : public ApiGatewayV2Request {
   ///@}
  private:
   DisplayContent m_displayContent;
-  bool m_displayContentHasBeenSet = false;
 
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_productPageId;
+  bool m_displayContentHasBeenSet = false;
+  bool m_portalProductIdHasBeenSet = false;
   bool m_productPageIdHasBeenSet = false;
 };
 

@@ -111,18 +111,18 @@ class UpdateParallelDataResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ParallelDataStatus m_status{ParallelDataStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ParallelDataStatus m_latestUpdateAttemptStatus{ParallelDataStatus::NOT_SET};
-  bool m_latestUpdateAttemptStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestUpdateAttemptAt{};
-  bool m_latestUpdateAttemptAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_latestUpdateAttemptStatusHasBeenSet = false;
+  bool m_latestUpdateAttemptAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

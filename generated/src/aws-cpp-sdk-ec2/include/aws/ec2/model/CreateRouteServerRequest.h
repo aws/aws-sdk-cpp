@@ -176,24 +176,24 @@ class CreateRouteServerRequest : public EC2Request {
   ///@}
  private:
   long long m_amazonSideAsn{0};
-  bool m_amazonSideAsnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   RouteServerPersistRoutesAction m_persistRoutes{RouteServerPersistRoutesAction::NOT_SET};
-  bool m_persistRoutesHasBeenSet = false;
 
   long long m_persistRoutesDuration{0};
-  bool m_persistRoutesDurationHasBeenSet = false;
 
   bool m_snsNotificationsEnabled{false};
-  bool m_snsNotificationsEnabledHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_amazonSideAsnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_persistRoutesHasBeenSet = false;
+  bool m_persistRoutesDurationHasBeenSet = false;
+  bool m_snsNotificationsEnabledHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

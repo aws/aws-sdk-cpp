@@ -92,12 +92,12 @@ class ServiceChange {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DnsConfigChange m_dnsConfig;
-  bool m_dnsConfigHasBeenSet = false;
 
   HealthCheckConfig m_healthCheckConfig;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dnsConfigHasBeenSet = false;
   bool m_healthCheckConfigHasBeenSet = false;
 };
 

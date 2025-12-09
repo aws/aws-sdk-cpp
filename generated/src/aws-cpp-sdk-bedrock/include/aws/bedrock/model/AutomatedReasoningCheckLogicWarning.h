@@ -103,12 +103,12 @@ class AutomatedReasoningCheckLogicWarning {
   ///@}
  private:
   AutomatedReasoningCheckLogicWarningType m_type{AutomatedReasoningCheckLogicWarningType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningLogicStatement> m_premises;
-  bool m_premisesHasBeenSet = false;
 
   Aws::Vector<AutomatedReasoningLogicStatement> m_claims;
+  bool m_typeHasBeenSet = false;
+  bool m_premisesHasBeenSet = false;
   bool m_claimsHasBeenSet = false;
 };
 

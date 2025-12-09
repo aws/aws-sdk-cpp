@@ -156,24 +156,24 @@ class ListExecutionsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   TargetResourceType m_targetResourceType{TargetResourceType::NOT_SET};
-  bool m_targetResourceTypeHasBeenSet = false;
 
   Aws::String m_targetResourceId;
-  bool m_targetResourceIdHasBeenSet = false;
 
   ResolveToResourceType m_resolveToResourceType{ResolveToResourceType::NOT_SET};
-  bool m_resolveToResourceTypeHasBeenSet = false;
 
   Aws::String m_resolveToResourceId;
-  bool m_resolveToResourceIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_actionType;
+  bool m_targetResourceTypeHasBeenSet = false;
+  bool m_targetResourceIdHasBeenSet = false;
+  bool m_resolveToResourceTypeHasBeenSet = false;
+  bool m_resolveToResourceIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_actionTypeHasBeenSet = false;
 };
 

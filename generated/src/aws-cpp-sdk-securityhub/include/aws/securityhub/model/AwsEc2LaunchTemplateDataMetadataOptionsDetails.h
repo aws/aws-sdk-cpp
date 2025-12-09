@@ -130,18 +130,18 @@ class AwsEc2LaunchTemplateDataMetadataOptionsDetails {
   ///@}
  private:
   Aws::String m_httpEndpoint;
-  bool m_httpEndpointHasBeenSet = false;
 
   Aws::String m_httpProtocolIpv6;
-  bool m_httpProtocolIpv6HasBeenSet = false;
 
   Aws::String m_httpTokens;
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   Aws::String m_instanceMetadataTags;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_httpProtocolIpv6HasBeenSet = false;
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
   bool m_instanceMetadataTagsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class MeshSpec {
   ///@}
  private:
   EgressFilter m_egressFilter;
-  bool m_egressFilterHasBeenSet = false;
 
   MeshServiceDiscovery m_serviceDiscovery;
+  bool m_egressFilterHasBeenSet = false;
   bool m_serviceDiscoveryHasBeenSet = false;
 };
 

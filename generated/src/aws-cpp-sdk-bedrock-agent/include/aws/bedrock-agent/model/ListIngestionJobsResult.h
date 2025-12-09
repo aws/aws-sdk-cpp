@@ -86,12 +86,12 @@ class ListIngestionJobsResult {
   ///@}
  private:
   Aws::Vector<IngestionJobSummary> m_ingestionJobSummaries;
-  bool m_ingestionJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ingestionJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

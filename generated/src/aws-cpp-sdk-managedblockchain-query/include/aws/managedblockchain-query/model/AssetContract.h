@@ -88,12 +88,12 @@ class AssetContract {
   ///@}
  private:
   ContractIdentifier m_contractIdentifier;
-  bool m_contractIdentifierHasBeenSet = false;
 
   QueryTokenStandard m_tokenStandard{QueryTokenStandard::NOT_SET};
-  bool m_tokenStandardHasBeenSet = false;
 
   Aws::String m_deployerAddress;
+  bool m_contractIdentifierHasBeenSet = false;
+  bool m_tokenStandardHasBeenSet = false;
   bool m_deployerAddressHasBeenSet = false;
 };
 

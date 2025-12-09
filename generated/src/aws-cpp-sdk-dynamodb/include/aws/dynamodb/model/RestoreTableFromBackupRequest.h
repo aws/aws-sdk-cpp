@@ -199,27 +199,27 @@ class RestoreTableFromBackupRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_targetTableName;
-  bool m_targetTableNameHasBeenSet = false;
 
   Aws::String m_backupArn;
-  bool m_backupArnHasBeenSet = false;
 
   BillingMode m_billingModeOverride{BillingMode::NOT_SET};
-  bool m_billingModeOverrideHasBeenSet = false;
 
   Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexOverride;
-  bool m_globalSecondaryIndexOverrideHasBeenSet = false;
 
   Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexOverride;
-  bool m_localSecondaryIndexOverrideHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughputOverride;
-  bool m_provisionedThroughputOverrideHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughputOverride;
-  bool m_onDemandThroughputOverrideHasBeenSet = false;
 
   SSESpecification m_sSESpecificationOverride;
+  bool m_targetTableNameHasBeenSet = false;
+  bool m_backupArnHasBeenSet = false;
+  bool m_billingModeOverrideHasBeenSet = false;
+  bool m_globalSecondaryIndexOverrideHasBeenSet = false;
+  bool m_localSecondaryIndexOverrideHasBeenSet = false;
+  bool m_provisionedThroughputOverrideHasBeenSet = false;
+  bool m_onDemandThroughputOverrideHasBeenSet = false;
   bool m_sSESpecificationOverrideHasBeenSet = false;
 };
 

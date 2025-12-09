@@ -109,15 +109,15 @@ class StartLiveTailResponseStream {
   ///@}
  private:
   LiveTailSessionStart m_sessionStart;
-  bool m_sessionStartHasBeenSet = false;
 
   LiveTailSessionUpdate m_sessionUpdate;
-  bool m_sessionUpdateHasBeenSet = false;
 
   CloudWatchLogsError m_sessionTimeoutException;
-  bool m_sessionTimeoutExceptionHasBeenSet = false;
 
   CloudWatchLogsError m_sessionStreamingException;
+  bool m_sessionStartHasBeenSet = false;
+  bool m_sessionUpdateHasBeenSet = false;
+  bool m_sessionTimeoutExceptionHasBeenSet = false;
   bool m_sessionStreamingExceptionHasBeenSet = false;
 };
 

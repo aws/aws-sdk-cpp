@@ -75,9 +75,9 @@ class TagResourceRequest : public BudgetsRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_resourceARNHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

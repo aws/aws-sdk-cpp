@@ -85,12 +85,12 @@ class RuleConfig {
   ///@}
  private:
   bool m_inverted{false};
-  bool m_invertedHasBeenSet = false;
 
   int m_threshold{0};
-  bool m_thresholdHasBeenSet = false;
 
   RuleType m_type{RuleType::NOT_SET};
+  bool m_invertedHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

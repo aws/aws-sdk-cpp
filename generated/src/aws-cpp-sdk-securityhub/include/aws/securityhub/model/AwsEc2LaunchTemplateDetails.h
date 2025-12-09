@@ -120,18 +120,18 @@ class AwsEc2LaunchTemplateDetails {
   ///@}
  private:
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataDetails m_launchTemplateData;
-  bool m_launchTemplateDataHasBeenSet = false;
 
   long long m_defaultVersionNumber{0};
-  bool m_defaultVersionNumberHasBeenSet = false;
 
   long long m_latestVersionNumber{0};
+  bool m_launchTemplateNameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_launchTemplateDataHasBeenSet = false;
+  bool m_defaultVersionNumberHasBeenSet = false;
   bool m_latestVersionNumberHasBeenSet = false;
 };
 

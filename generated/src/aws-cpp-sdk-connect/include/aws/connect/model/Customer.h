@@ -67,9 +67,9 @@ class Customer {
   ///@}
  private:
   DeviceInfo m_deviceInfo;
-  bool m_deviceInfoHasBeenSet = false;
 
   ParticipantCapabilities m_capabilities;
+  bool m_deviceInfoHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

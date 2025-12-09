@@ -85,12 +85,12 @@ class ListEnvironmentHostsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Host> m_environmentHosts;
-  bool m_environmentHostsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_environmentHostsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

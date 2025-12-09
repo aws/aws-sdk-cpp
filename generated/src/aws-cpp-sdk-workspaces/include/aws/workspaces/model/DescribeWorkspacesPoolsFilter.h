@@ -92,12 +92,12 @@ class DescribeWorkspacesPoolsFilter {
   ///@}
  private:
   DescribeWorkspacesPoolsFilterName m_name{DescribeWorkspacesPoolsFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   DescribeWorkspacesPoolsFilterOperator m_operator{DescribeWorkspacesPoolsFilterOperator::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

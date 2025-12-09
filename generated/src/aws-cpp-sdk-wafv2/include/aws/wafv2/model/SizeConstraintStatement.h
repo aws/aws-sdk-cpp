@@ -130,15 +130,15 @@ class SizeConstraintStatement {
   ///@}
  private:
   FieldToMatch m_fieldToMatch;
-  bool m_fieldToMatchHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::Vector<TextTransformation> m_textTransformations;
+  bool m_fieldToMatchHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_textTransformationsHasBeenSet = false;
 };
 

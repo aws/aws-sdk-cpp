@@ -192,27 +192,27 @@ class ActionGroupInvocationInput {
   ///@}
  private:
   Aws::String m_actionGroupName;
-  bool m_actionGroupNameHasBeenSet = false;
 
   Aws::String m_apiPath;
-  bool m_apiPathHasBeenSet = false;
 
   ExecutionType m_executionType{ExecutionType::NOT_SET};
-  bool m_executionTypeHasBeenSet = false;
 
   Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   Aws::String m_invocationId;
-  bool m_invocationIdHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   RequestBody m_requestBody;
-  bool m_requestBodyHasBeenSet = false;
 
   Aws::String m_verb;
+  bool m_actionGroupNameHasBeenSet = false;
+  bool m_apiPathHasBeenSet = false;
+  bool m_executionTypeHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
+  bool m_invocationIdHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_requestBodyHasBeenSet = false;
   bool m_verbHasBeenSet = false;
 };
 

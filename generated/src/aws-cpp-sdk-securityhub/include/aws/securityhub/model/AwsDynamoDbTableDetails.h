@@ -435,63 +435,63 @@ class AwsDynamoDbTableDetails {
   ///@}
  private:
   Aws::Vector<AwsDynamoDbTableAttributeDefinition> m_attributeDefinitions;
-  bool m_attributeDefinitionsHasBeenSet = false;
 
   AwsDynamoDbTableBillingModeSummary m_billingModeSummary;
-  bool m_billingModeSummaryHasBeenSet = false;
 
   Aws::String m_creationDateTime;
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Vector<AwsDynamoDbTableGlobalSecondaryIndex> m_globalSecondaryIndexes;
-  bool m_globalSecondaryIndexesHasBeenSet = false;
 
   Aws::String m_globalTableVersion;
-  bool m_globalTableVersionHasBeenSet = false;
 
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   Aws::Vector<AwsDynamoDbTableKeySchema> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   Aws::String m_latestStreamArn;
-  bool m_latestStreamArnHasBeenSet = false;
 
   Aws::String m_latestStreamLabel;
-  bool m_latestStreamLabelHasBeenSet = false;
 
   Aws::Vector<AwsDynamoDbTableLocalSecondaryIndex> m_localSecondaryIndexes;
-  bool m_localSecondaryIndexesHasBeenSet = false;
 
   AwsDynamoDbTableProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   Aws::Vector<AwsDynamoDbTableReplica> m_replicas;
-  bool m_replicasHasBeenSet = false;
 
   AwsDynamoDbTableRestoreSummary m_restoreSummary;
-  bool m_restoreSummaryHasBeenSet = false;
 
   AwsDynamoDbTableSseDescription m_sseDescription;
-  bool m_sseDescriptionHasBeenSet = false;
 
   AwsDynamoDbTableStreamSpecification m_streamSpecification;
-  bool m_streamSpecificationHasBeenSet = false;
 
   Aws::String m_tableId;
-  bool m_tableIdHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   long long m_tableSizeBytes{0};
-  bool m_tableSizeBytesHasBeenSet = false;
 
   Aws::String m_tableStatus;
-  bool m_tableStatusHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
+  bool m_attributeDefinitionsHasBeenSet = false;
+  bool m_billingModeSummaryHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_globalTableVersionHasBeenSet = false;
+  bool m_itemCountHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
+  bool m_latestStreamArnHasBeenSet = false;
+  bool m_latestStreamLabelHasBeenSet = false;
+  bool m_localSecondaryIndexesHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_replicasHasBeenSet = false;
+  bool m_restoreSummaryHasBeenSet = false;
+  bool m_sseDescriptionHasBeenSet = false;
+  bool m_streamSpecificationHasBeenSet = false;
+  bool m_tableIdHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_tableSizeBytesHasBeenSet = false;
+  bool m_tableStatusHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 

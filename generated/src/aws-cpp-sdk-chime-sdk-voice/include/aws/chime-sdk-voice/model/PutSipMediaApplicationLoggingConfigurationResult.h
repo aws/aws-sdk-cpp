@@ -66,9 +66,9 @@ class PutSipMediaApplicationLoggingConfigurationResult {
   ///@}
  private:
   SipMediaApplicationLoggingConfiguration m_sipMediaApplicationLoggingConfiguration;
-  bool m_sipMediaApplicationLoggingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sipMediaApplicationLoggingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

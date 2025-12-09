@@ -108,15 +108,15 @@ class RasterDataCollectionQueryInput {
   ///@}
  private:
   AreaOfInterest m_areaOfInterest;
-  bool m_areaOfInterestHasBeenSet = false;
 
   PropertyFilters m_propertyFilters;
-  bool m_propertyFiltersHasBeenSet = false;
 
   Aws::String m_rasterDataCollectionArn;
-  bool m_rasterDataCollectionArnHasBeenSet = false;
 
   TimeRangeFilterInput m_timeRangeFilter;
+  bool m_areaOfInterestHasBeenSet = false;
+  bool m_propertyFiltersHasBeenSet = false;
+  bool m_rasterDataCollectionArnHasBeenSet = false;
   bool m_timeRangeFilterHasBeenSet = false;
 };
 

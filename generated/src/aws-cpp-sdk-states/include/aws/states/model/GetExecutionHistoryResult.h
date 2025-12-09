@@ -89,12 +89,12 @@ class GetExecutionHistoryResult {
   ///@}
  private:
   Aws::Vector<HistoryEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

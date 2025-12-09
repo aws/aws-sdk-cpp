@@ -125,18 +125,18 @@ class RecommenderUpdate {
   ///@}
  private:
   RecommenderConfig m_recommenderConfig;
-  bool m_recommenderConfigHasBeenSet = false;
 
   RecommenderStatus m_status{RecommenderStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_recommenderConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class SendAction {
   ///@}
  private:
   ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
-  bool m_actionFailurePolicyHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_actionFailurePolicyHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

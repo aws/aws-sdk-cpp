@@ -95,12 +95,12 @@ class LoggingInfo {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
-  bool m_s3KeyPrefixHasBeenSet = false;
 
   Aws::String m_s3Region;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3KeyPrefixHasBeenSet = false;
   bool m_s3RegionHasBeenSet = false;
 };
 

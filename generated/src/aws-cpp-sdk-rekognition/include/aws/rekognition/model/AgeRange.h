@@ -65,9 +65,9 @@ class AgeRange {
   ///@}
  private:
   int m_low{0};
-  bool m_lowHasBeenSet = false;
 
   int m_high{0};
+  bool m_lowHasBeenSet = false;
   bool m_highHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DashDvbMetricsReporting {
   ///@}
  private:
   Aws::String m_reportingUrl;
-  bool m_reportingUrlHasBeenSet = false;
 
   int m_probability{0};
+  bool m_reportingUrlHasBeenSet = false;
   bool m_probabilityHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class DescribeCapacityBlockExtensionOfferingsResponse {
   ///@}
  private:
   Aws::Vector<CapacityBlockExtensionOffering> m_capacityBlockExtensionOfferings;
-  bool m_capacityBlockExtensionOfferingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityBlockExtensionOfferingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

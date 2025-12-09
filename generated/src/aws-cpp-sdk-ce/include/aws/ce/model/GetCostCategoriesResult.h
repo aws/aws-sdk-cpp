@@ -49,7 +49,7 @@ class GetCostCategoriesResult {
 
   ///@{
   /**
-   * <p>The names of the Cost Categories.</p>
+   * <p>The names of the cost categories.</p>
    */
   inline const Aws::Vector<Aws::String>& GetCostCategoryNames() const { return m_costCategoryNames; }
   template <typename CostCategoryNamesT = Aws::Vector<Aws::String>>
@@ -72,7 +72,7 @@ class GetCostCategoriesResult {
 
   ///@{
   /**
-   * <p>The Cost Category values.</p> <p>If the <code>CostCategoryName</code> key
+   * <p>The cost category values.</p> <p>If the <code>CostCategoryName</code> key
    * isn't specified in the request, the <code>CostCategoryValues</code> fields
    * aren't returned. </p>
    */
@@ -141,21 +141,21 @@ class GetCostCategoriesResult {
   ///@}
  private:
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_costCategoryNames;
-  bool m_costCategoryNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_costCategoryValues;
-  bool m_costCategoryValuesHasBeenSet = false;
 
   int m_returnSize{0};
-  bool m_returnSizeHasBeenSet = false;
 
   int m_totalSize{0};
-  bool m_totalSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_costCategoryNamesHasBeenSet = false;
+  bool m_costCategoryValuesHasBeenSet = false;
+  bool m_returnSizeHasBeenSet = false;
+  bool m_totalSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

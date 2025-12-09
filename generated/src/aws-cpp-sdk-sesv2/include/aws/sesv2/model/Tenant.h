@@ -149,21 +149,21 @@ class Tenant {
   ///@}
  private:
   Aws::String m_tenantName;
-  bool m_tenantNameHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_tenantArn;
-  bool m_tenantArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SendingStatus m_sendingStatus{SendingStatus::NOT_SET};
+  bool m_tenantNameHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_tenantArnHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_sendingStatusHasBeenSet = false;
 };
 

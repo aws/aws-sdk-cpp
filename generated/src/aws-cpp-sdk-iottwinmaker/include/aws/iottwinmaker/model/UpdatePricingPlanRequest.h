@@ -71,9 +71,9 @@ class UpdatePricingPlanRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   PricingMode m_pricingMode{PricingMode::NOT_SET};
-  bool m_pricingModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bundleNames;
+  bool m_pricingModeHasBeenSet = false;
   bool m_bundleNamesHasBeenSet = false;
 };
 

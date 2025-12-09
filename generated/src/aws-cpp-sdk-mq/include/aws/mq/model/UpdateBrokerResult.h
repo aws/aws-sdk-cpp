@@ -302,48 +302,48 @@ class UpdateBrokerResult {
   ///@}
  private:
   AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
-  bool m_authenticationStrategyHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   ConfigurationId m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_hostInstanceType;
-  bool m_hostInstanceTypeHasBeenSet = false;
 
   LdapServerMetadataOutput m_ldapServerMetadata;
-  bool m_ldapServerMetadataHasBeenSet = false;
 
   Logs m_logs;
-  bool m_logsHasBeenSet = false;
 
   WeeklyStartTime m_maintenanceWindowStartTime;
-  bool m_maintenanceWindowStartTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   DataReplicationMetadataOutput m_dataReplicationMetadata;
-  bool m_dataReplicationMetadataHasBeenSet = false;
 
   DataReplicationMode m_dataReplicationMode{DataReplicationMode::NOT_SET};
-  bool m_dataReplicationModeHasBeenSet = false;
 
   DataReplicationMetadataOutput m_pendingDataReplicationMetadata;
-  bool m_pendingDataReplicationMetadataHasBeenSet = false;
 
   DataReplicationMode m_pendingDataReplicationMode{DataReplicationMode::NOT_SET};
-  bool m_pendingDataReplicationModeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationStrategyHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_brokerIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_hostInstanceTypeHasBeenSet = false;
+  bool m_ldapServerMetadataHasBeenSet = false;
+  bool m_logsHasBeenSet = false;
+  bool m_maintenanceWindowStartTimeHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_dataReplicationMetadataHasBeenSet = false;
+  bool m_dataReplicationModeHasBeenSet = false;
+  bool m_pendingDataReplicationMetadataHasBeenSet = false;
+  bool m_pendingDataReplicationModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -98,15 +98,15 @@ class GetApproximateUsageRecordsResult {
   ///@}
  private:
   Aws::Map<Aws::String, long long> m_services;
-  bool m_servicesHasBeenSet = false;
 
   long long m_totalRecords{0};
-  bool m_totalRecordsHasBeenSet = false;
 
   DateInterval m_lookbackPeriod;
-  bool m_lookbackPeriodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_servicesHasBeenSet = false;
+  bool m_totalRecordsHasBeenSet = false;
+  bool m_lookbackPeriodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -174,24 +174,24 @@ class SubscribedAssetListing {
   ///@}
  private:
   AssetScope m_assetScope;
-  bool m_assetScopeHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityRevision;
-  bool m_entityRevisionHasBeenSet = false;
 
   Aws::String m_entityType;
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_forms;
-  bool m_formsHasBeenSet = false;
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Permissions m_permissions;
+  bool m_assetScopeHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityRevisionHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_formsHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

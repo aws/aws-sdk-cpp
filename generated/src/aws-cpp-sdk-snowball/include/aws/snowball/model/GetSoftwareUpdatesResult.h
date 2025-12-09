@@ -62,9 +62,9 @@ class GetSoftwareUpdatesResult {
   ///@}
  private:
   Aws::String m_updatesURI;
-  bool m_updatesURIHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updatesURIHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

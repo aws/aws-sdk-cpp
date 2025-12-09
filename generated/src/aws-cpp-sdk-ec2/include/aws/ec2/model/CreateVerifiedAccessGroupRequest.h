@@ -173,24 +173,24 @@ class CreateVerifiedAccessGroupRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   VerifiedAccessSseSpecificationRequest m_sseSpecification;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
   bool m_sseSpecificationHasBeenSet = false;
 };
 

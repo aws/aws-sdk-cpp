@@ -71,9 +71,9 @@ class SectionStyle {
   ///@}
  private:
   Aws::String m_height;
-  bool m_heightHasBeenSet = false;
 
   Spacing m_padding;
+  bool m_heightHasBeenSet = false;
   bool m_paddingHasBeenSet = false;
 };
 

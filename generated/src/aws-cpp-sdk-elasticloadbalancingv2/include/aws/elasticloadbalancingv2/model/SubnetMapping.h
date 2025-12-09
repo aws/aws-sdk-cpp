@@ -130,18 +130,18 @@ class SubnetMapping {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_privateIPv4Address;
-  bool m_privateIPv4AddressHasBeenSet = false;
 
   Aws::String m_iPv6Address;
-  bool m_iPv6AddressHasBeenSet = false;
 
   Aws::String m_sourceNatIpv6Prefix;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_privateIPv4AddressHasBeenSet = false;
+  bool m_iPv6AddressHasBeenSet = false;
   bool m_sourceNatIpv6PrefixHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class PostAgentProfileRequest : public StreamingCodeGuruProfilerRequest {
   ///@}
  private:
   Aws::String m_profileToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_profileTokenHasBeenSet = true;
 
   Aws::String m_profilingGroupName;
+  bool m_profileTokenHasBeenSet = true;
   bool m_profilingGroupNameHasBeenSet = false;
 };
 

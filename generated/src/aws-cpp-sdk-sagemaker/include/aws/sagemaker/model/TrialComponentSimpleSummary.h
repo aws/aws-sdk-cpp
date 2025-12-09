@@ -121,18 +121,18 @@ class TrialComponentSimpleSummary {
   ///@}
  private:
   Aws::String m_trialComponentName;
-  bool m_trialComponentNameHasBeenSet = false;
 
   Aws::String m_trialComponentArn;
-  bool m_trialComponentArnHasBeenSet = false;
 
   TrialComponentSource m_trialComponentSource;
-  bool m_trialComponentSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
+  bool m_trialComponentNameHasBeenSet = false;
+  bool m_trialComponentArnHasBeenSet = false;
+  bool m_trialComponentSourceHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
 };
 

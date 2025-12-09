@@ -81,12 +81,12 @@ class TextLogSetting {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   TextLogDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   bool m_selectiveLoggingEnabled{false};
+  bool m_enabledHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_selectiveLoggingEnabledHasBeenSet = false;
 };
 

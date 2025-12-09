@@ -89,12 +89,12 @@ class UpdateLeadContext {
   ///@}
  private:
   Aws::String m_qualificationStatus;
-  bool m_qualificationStatusHasBeenSet = false;
 
   LeadCustomer m_customer;
-  bool m_customerHasBeenSet = false;
 
   LeadInteraction m_interaction;
+  bool m_qualificationStatusHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
   bool m_interactionHasBeenSet = false;
 };
 

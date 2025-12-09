@@ -95,12 +95,12 @@ class DescribeOrderableReplicationInstancesResult {
   ///@}
  private:
   Aws::Vector<OrderableReplicationInstance> m_orderableReplicationInstances;
-  bool m_orderableReplicationInstancesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_orderableReplicationInstancesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

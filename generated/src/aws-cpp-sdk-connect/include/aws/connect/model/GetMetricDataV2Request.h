@@ -1149,30 +1149,30 @@ class GetMetricDataV2Request : public ConnectRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   IntervalDetails m_interval;
-  bool m_intervalHasBeenSet = false;
 
   Aws::Vector<FilterV2> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupings;
-  bool m_groupingsHasBeenSet = false;
 
   Aws::Vector<MetricV2> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_groupingsHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

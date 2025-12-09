@@ -59,9 +59,9 @@ class CreateRotationOverrideResult {
   ///@}
  private:
   Aws::String m_rotationOverrideId;
-  bool m_rotationOverrideIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rotationOverrideIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

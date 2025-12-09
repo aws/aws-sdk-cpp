@@ -74,9 +74,9 @@ class SetDataRetrievalPolicyRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   DataRetrievalPolicy m_policy;
+  bool m_accountIdHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

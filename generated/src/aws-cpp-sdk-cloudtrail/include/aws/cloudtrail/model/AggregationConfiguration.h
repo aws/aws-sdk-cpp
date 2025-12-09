@@ -75,9 +75,9 @@ class AggregationConfiguration {
   ///@}
  private:
   Aws::Vector<Template> m_templates;
-  bool m_templatesHasBeenSet = false;
 
   EventCategoryAggregation m_eventCategory{EventCategoryAggregation::NOT_SET};
+  bool m_templatesHasBeenSet = false;
   bool m_eventCategoryHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetTableMetadataResult {
   ///@}
  private:
   TableMetadata m_tableMetadata;
-  bool m_tableMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

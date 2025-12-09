@@ -142,18 +142,18 @@ class CollapseConfiguration {
   ///@}
  private:
   Aws::String m_documentAttributeKey;
-  bool m_documentAttributeKeyHasBeenSet = false;
 
   Aws::Vector<SortingConfiguration> m_sortingConfigurations;
-  bool m_sortingConfigurationsHasBeenSet = false;
 
   MissingAttributeKeyStrategy m_missingAttributeKeyStrategy{MissingAttributeKeyStrategy::NOT_SET};
-  bool m_missingAttributeKeyStrategyHasBeenSet = false;
 
   bool m_expand{false};
-  bool m_expandHasBeenSet = false;
 
   ExpandConfiguration m_expandConfiguration;
+  bool m_documentAttributeKeyHasBeenSet = false;
+  bool m_sortingConfigurationsHasBeenSet = false;
+  bool m_missingAttributeKeyStrategyHasBeenSet = false;
+  bool m_expandHasBeenSet = false;
   bool m_expandConfigurationHasBeenSet = false;
 };
 

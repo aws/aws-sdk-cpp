@@ -66,9 +66,9 @@ class Distribution {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   int m_percentage{0};
+  bool m_regionHasBeenSet = false;
   bool m_percentageHasBeenSet = false;
 };
 

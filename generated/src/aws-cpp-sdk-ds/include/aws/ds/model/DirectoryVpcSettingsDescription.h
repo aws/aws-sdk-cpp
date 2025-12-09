@@ -117,15 +117,15 @@ class DirectoryVpcSettingsDescription {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::String m_securityGroupId;
-  bool m_securityGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdHasBeenSet = false;
   bool m_availabilityZonesHasBeenSet = false;
 };
 

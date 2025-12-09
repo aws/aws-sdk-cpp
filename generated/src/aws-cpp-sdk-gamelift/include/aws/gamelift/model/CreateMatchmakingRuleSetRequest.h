@@ -102,12 +102,12 @@ class CreateMatchmakingRuleSetRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ruleSetBody;
-  bool m_ruleSetBodyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleSetBodyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeRetentionConfigurationsResult {
   ///@}
  private:
   Aws::Vector<RetentionConfiguration> m_retentionConfigurations;
-  bool m_retentionConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retentionConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

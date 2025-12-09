@@ -96,12 +96,12 @@ class ReloadTablesRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   Aws::Vector<TableToReload> m_tablesToReload;
-  bool m_tablesToReloadHasBeenSet = false;
 
   ReloadOptionValue m_reloadOption{ReloadOptionValue::NOT_SET};
+  bool m_replicationTaskArnHasBeenSet = false;
+  bool m_tablesToReloadHasBeenSet = false;
   bool m_reloadOptionHasBeenSet = false;
 };
 

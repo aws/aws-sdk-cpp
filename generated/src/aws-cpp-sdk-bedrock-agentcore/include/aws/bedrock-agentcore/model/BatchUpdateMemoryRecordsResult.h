@@ -93,12 +93,12 @@ class BatchUpdateMemoryRecordsResult {
   ///@}
  private:
   Aws::Vector<MemoryRecordOutput> m_successfulRecords;
-  bool m_successfulRecordsHasBeenSet = false;
 
   Aws::Vector<MemoryRecordOutput> m_failedRecords;
-  bool m_failedRecordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulRecordsHasBeenSet = false;
+  bool m_failedRecordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

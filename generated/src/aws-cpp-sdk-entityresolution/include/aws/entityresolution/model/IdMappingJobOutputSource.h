@@ -90,12 +90,12 @@ class IdMappingJobOutputSource {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_outputS3Path;
-  bool m_outputS3PathHasBeenSet = false;
 
   Aws::String m_kMSArn;
+  bool m_roleArnHasBeenSet = false;
+  bool m_outputS3PathHasBeenSet = false;
   bool m_kMSArnHasBeenSet = false;
 };
 

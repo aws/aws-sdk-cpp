@@ -61,9 +61,9 @@ class CreateVolumeFromBackupResult {
   ///@}
  private:
   Volume m_volume;
-  bool m_volumeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_volumeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

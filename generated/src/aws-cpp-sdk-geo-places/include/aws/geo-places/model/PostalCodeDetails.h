@@ -127,18 +127,18 @@ class PostalCodeDetails {
   ///@}
  private:
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   PostalAuthority m_postalAuthority{PostalAuthority::NOT_SET};
-  bool m_postalAuthorityHasBeenSet = false;
 
   PostalCodeType m_postalCodeType{PostalCodeType::NOT_SET};
-  bool m_postalCodeTypeHasBeenSet = false;
 
   UspsZip m_uspsZip;
-  bool m_uspsZipHasBeenSet = false;
 
   UspsZipPlus4 m_uspsZipPlus4;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_postalAuthorityHasBeenSet = false;
+  bool m_postalCodeTypeHasBeenSet = false;
+  bool m_uspsZipHasBeenSet = false;
   bool m_uspsZipPlus4HasBeenSet = false;
 };
 

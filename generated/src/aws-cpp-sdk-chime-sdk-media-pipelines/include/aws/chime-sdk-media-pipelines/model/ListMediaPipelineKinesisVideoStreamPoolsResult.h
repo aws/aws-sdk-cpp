@@ -86,12 +86,12 @@ class ListMediaPipelineKinesisVideoStreamPoolsResult {
   ///@}
  private:
   Aws::Vector<KinesisVideoStreamPoolSummary> m_kinesisVideoStreamPools;
-  bool m_kinesisVideoStreamPoolsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_kinesisVideoStreamPoolsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

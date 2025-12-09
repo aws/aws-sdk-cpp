@@ -107,15 +107,15 @@ class BatchGetRepositoriesError {
   ///@}
  private:
   Aws::String m_repositoryId;
-  bool m_repositoryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   BatchGetRepositoriesErrorCodeEnum m_errorCode{BatchGetRepositoriesErrorCodeEnum::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_repositoryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

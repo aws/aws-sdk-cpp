@@ -466,72 +466,72 @@ class DescribeGatewayInformationResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_gatewayName;
-  bool m_gatewayNameHasBeenSet = false;
 
   Aws::String m_gatewayTimezone;
-  bool m_gatewayTimezoneHasBeenSet = false;
 
   Aws::String m_gatewayState;
-  bool m_gatewayStateHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_gatewayNetworkInterfaces;
-  bool m_gatewayNetworkInterfacesHasBeenSet = false;
 
   Aws::String m_gatewayType;
-  bool m_gatewayTypeHasBeenSet = false;
 
   Aws::String m_nextUpdateAvailabilityDate;
-  bool m_nextUpdateAvailabilityDateHasBeenSet = false;
 
   Aws::String m_lastSoftwareUpdate;
-  bool m_lastSoftwareUpdateHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
-  bool m_ec2InstanceIdHasBeenSet = false;
 
   Aws::String m_ec2InstanceRegion;
-  bool m_ec2InstanceRegionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vPCEndpoint;
-  bool m_vPCEndpointHasBeenSet = false;
 
   Aws::String m_cloudWatchLogGroupARN;
-  bool m_cloudWatchLogGroupARNHasBeenSet = false;
 
   HostEnvironment m_hostEnvironment{HostEnvironment::NOT_SET};
-  bool m_hostEnvironmentHasBeenSet = false;
 
   Aws::String m_endpointType;
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_softwareUpdatesEndDate;
-  bool m_softwareUpdatesEndDateHasBeenSet = false;
 
   Aws::String m_deprecationDate;
-  bool m_deprecationDateHasBeenSet = false;
 
   GatewayCapacity m_gatewayCapacity{GatewayCapacity::NOT_SET};
-  bool m_gatewayCapacityHasBeenSet = false;
 
   Aws::Vector<GatewayCapacity> m_supportedGatewayCapacities;
-  bool m_supportedGatewayCapacitiesHasBeenSet = false;
 
   Aws::String m_hostEnvironmentId;
-  bool m_hostEnvironmentIdHasBeenSet = false;
 
   Aws::String m_softwareVersion;
-  bool m_softwareVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_gatewayNameHasBeenSet = false;
+  bool m_gatewayTimezoneHasBeenSet = false;
+  bool m_gatewayStateHasBeenSet = false;
+  bool m_gatewayNetworkInterfacesHasBeenSet = false;
+  bool m_gatewayTypeHasBeenSet = false;
+  bool m_nextUpdateAvailabilityDateHasBeenSet = false;
+  bool m_lastSoftwareUpdateHasBeenSet = false;
+  bool m_ec2InstanceIdHasBeenSet = false;
+  bool m_ec2InstanceRegionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vPCEndpointHasBeenSet = false;
+  bool m_cloudWatchLogGroupARNHasBeenSet = false;
+  bool m_hostEnvironmentHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_softwareUpdatesEndDateHasBeenSet = false;
+  bool m_deprecationDateHasBeenSet = false;
+  bool m_gatewayCapacityHasBeenSet = false;
+  bool m_supportedGatewayCapacitiesHasBeenSet = false;
+  bool m_hostEnvironmentIdHasBeenSet = false;
+  bool m_softwareVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

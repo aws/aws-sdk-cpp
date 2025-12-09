@@ -108,15 +108,15 @@ class WAFInvalidParameterException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ParameterExceptionField m_field{ParameterExceptionField::NOT_SET};
-  bool m_fieldHasBeenSet = false;
 
   Aws::String m_parameter;
-  bool m_parameterHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_messageHasBeenSet = false;
+  bool m_fieldHasBeenSet = false;
+  bool m_parameterHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

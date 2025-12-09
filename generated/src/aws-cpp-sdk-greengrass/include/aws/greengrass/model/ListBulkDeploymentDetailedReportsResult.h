@@ -86,12 +86,12 @@ class ListBulkDeploymentDetailedReportsResult {
   ///@}
  private:
   Aws::Vector<BulkDeploymentResult> m_deployments;
-  bool m_deploymentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

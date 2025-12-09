@@ -106,12 +106,12 @@ class AutoDeployment {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_retainStacksOnAccountRemoval{false};
-  bool m_retainStacksOnAccountRemovalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependsOn;
+  bool m_enabledHasBeenSet = false;
+  bool m_retainStacksOnAccountRemovalHasBeenSet = false;
   bool m_dependsOnHasBeenSet = false;
 };
 

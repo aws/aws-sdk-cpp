@@ -73,9 +73,9 @@ class Condition {
   ///@}
  private:
   ActionCondition m_actionCondition;
-  bool m_actionConditionHasBeenSet = false;
 
   LabelNameCondition m_labelNameCondition;
+  bool m_actionConditionHasBeenSet = false;
   bool m_labelNameConditionHasBeenSet = false;
 };
 

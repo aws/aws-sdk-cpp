@@ -220,30 +220,30 @@ class VpcBlockPublicAccessExclusion {
   ///@}
  private:
   Aws::String m_exclusionId;
-  bool m_exclusionIdHasBeenSet = false;
 
   InternetGatewayExclusionMode m_internetGatewayExclusionMode{InternetGatewayExclusionMode::NOT_SET};
-  bool m_internetGatewayExclusionModeHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   VpcBlockPublicAccessExclusionState m_state{VpcBlockPublicAccessExclusionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionTimestamp{};
-  bool m_deletionTimestampHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_exclusionIdHasBeenSet = false;
+  bool m_internetGatewayExclusionModeHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
+  bool m_deletionTimestampHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -480,57 +480,57 @@ class CreateFileSystemLustreConfiguration {
   ///@}
  private:
   Aws::String m_weeklyMaintenanceStartTime;
-  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
   Aws::String m_importPath;
-  bool m_importPathHasBeenSet = false;
 
   Aws::String m_exportPath;
-  bool m_exportPathHasBeenSet = false;
 
   int m_importedFileChunkSize{0};
-  bool m_importedFileChunkSizeHasBeenSet = false;
 
   LustreDeploymentType m_deploymentType{LustreDeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   AutoImportPolicyType m_autoImportPolicy{AutoImportPolicyType::NOT_SET};
-  bool m_autoImportPolicyHasBeenSet = false;
 
   int m_perUnitStorageThroughput{0};
-  bool m_perUnitStorageThroughputHasBeenSet = false;
 
   Aws::String m_dailyAutomaticBackupStartTime;
-  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
   int m_automaticBackupRetentionDays{0};
-  bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
   bool m_copyTagsToBackups{false};
-  bool m_copyTagsToBackupsHasBeenSet = false;
 
   DriveCacheType m_driveCacheType{DriveCacheType::NOT_SET};
-  bool m_driveCacheTypeHasBeenSet = false;
 
   DataCompressionType m_dataCompressionType{DataCompressionType::NOT_SET};
-  bool m_dataCompressionTypeHasBeenSet = false;
 
   bool m_efaEnabled{false};
-  bool m_efaEnabledHasBeenSet = false;
 
   LustreLogCreateConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   LustreRootSquashConfiguration m_rootSquashConfiguration;
-  bool m_rootSquashConfigurationHasBeenSet = false;
 
   CreateFileSystemLustreMetadataConfiguration m_metadataConfiguration;
-  bool m_metadataConfigurationHasBeenSet = false;
 
   int m_throughputCapacity{0};
-  bool m_throughputCapacityHasBeenSet = false;
 
   LustreReadCacheConfiguration m_dataReadCacheConfiguration;
+  bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
+  bool m_importPathHasBeenSet = false;
+  bool m_exportPathHasBeenSet = false;
+  bool m_importedFileChunkSizeHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_autoImportPolicyHasBeenSet = false;
+  bool m_perUnitStorageThroughputHasBeenSet = false;
+  bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
+  bool m_automaticBackupRetentionDaysHasBeenSet = false;
+  bool m_copyTagsToBackupsHasBeenSet = false;
+  bool m_driveCacheTypeHasBeenSet = false;
+  bool m_dataCompressionTypeHasBeenSet = false;
+  bool m_efaEnabledHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_rootSquashConfigurationHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
+  bool m_throughputCapacityHasBeenSet = false;
   bool m_dataReadCacheConfigurationHasBeenSet = false;
 };
 

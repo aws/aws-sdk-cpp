@@ -86,12 +86,12 @@ class AccountInfo {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
+  bool m_accountIdHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
   bool m_emailAddressHasBeenSet = false;
 };
 

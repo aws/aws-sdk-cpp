@@ -61,9 +61,9 @@ class GetInstanceResult {
   ///@}
  private:
   Instance m_instance;
-  bool m_instanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

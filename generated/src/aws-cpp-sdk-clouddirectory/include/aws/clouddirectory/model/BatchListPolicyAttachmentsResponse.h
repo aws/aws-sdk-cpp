@@ -76,9 +76,9 @@ class BatchListPolicyAttachmentsResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_objectIdentifiers;
-  bool m_objectIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_objectIdentifiersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

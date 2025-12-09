@@ -171,24 +171,24 @@ class Container {
   ///@}
  private:
   Aws::String m_containerRuntime;
-  bool m_containerRuntimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_imagePrefix;
-  bool m_imagePrefixHasBeenSet = false;
 
   Aws::Vector<VolumeMount> m_volumeMounts;
-  bool m_volumeMountsHasBeenSet = false;
 
   SecurityContext m_securityContext;
+  bool m_containerRuntimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_imagePrefixHasBeenSet = false;
+  bool m_volumeMountsHasBeenSet = false;
   bool m_securityContextHasBeenSet = false;
 };
 

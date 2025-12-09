@@ -66,9 +66,9 @@ class GetRepositoryResult {
   ///@}
  private:
   RepositoryMetadata m_repositoryMetadata;
-  bool m_repositoryMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

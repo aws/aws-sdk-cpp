@@ -60,9 +60,9 @@ class EnableDelegatedAdminAccountResult {
   ///@}
  private:
   Aws::String m_delegatedAdminAccountId;
-  bool m_delegatedAdminAccountIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_delegatedAdminAccountIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

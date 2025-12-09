@@ -176,27 +176,27 @@ class SparkEmrPropertiesInput {
   ///@}
  private:
   Aws::String m_computeArn;
-  bool m_computeArnHasBeenSet = false;
 
   Aws::String m_instanceProfileArn;
-  bool m_instanceProfileArnHasBeenSet = false;
 
   Aws::String m_javaVirtualEnv;
-  bool m_javaVirtualEnvHasBeenSet = false;
 
   Aws::String m_logUri;
-  bool m_logUriHasBeenSet = false;
 
   Aws::String m_managedEndpointArn;
-  bool m_managedEndpointArnHasBeenSet = false;
 
   Aws::String m_pythonVirtualEnv;
-  bool m_pythonVirtualEnvHasBeenSet = false;
 
   Aws::String m_runtimeRole;
-  bool m_runtimeRoleHasBeenSet = false;
 
   Aws::String m_trustedCertificatesS3Uri;
+  bool m_computeArnHasBeenSet = false;
+  bool m_instanceProfileArnHasBeenSet = false;
+  bool m_javaVirtualEnvHasBeenSet = false;
+  bool m_logUriHasBeenSet = false;
+  bool m_managedEndpointArnHasBeenSet = false;
+  bool m_pythonVirtualEnvHasBeenSet = false;
+  bool m_runtimeRoleHasBeenSet = false;
   bool m_trustedCertificatesS3UriHasBeenSet = false;
 };
 

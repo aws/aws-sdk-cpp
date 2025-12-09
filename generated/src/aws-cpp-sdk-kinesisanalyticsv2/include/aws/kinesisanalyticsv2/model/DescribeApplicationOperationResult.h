@@ -65,9 +65,9 @@ class DescribeApplicationOperationResult {
   ///@}
  private:
   ApplicationOperationInfoDetails m_applicationOperationInfoDetails;
-  bool m_applicationOperationInfoDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationOperationInfoDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

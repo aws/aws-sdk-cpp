@@ -231,30 +231,30 @@ class ActionInteraction {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impression;
-  bool m_impressionHasBeenSet = false;
 
   Aws::String m_properties;
+  bool m_actionIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_impressionHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

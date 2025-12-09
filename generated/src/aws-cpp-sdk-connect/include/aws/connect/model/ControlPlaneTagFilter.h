@@ -106,12 +106,12 @@ class ControlPlaneTagFilter {
   ///@}
  private:
   Aws::Vector<Aws::Vector<TagCondition>> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<TagCondition> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   TagCondition m_tagCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
   bool m_tagConditionHasBeenSet = false;
 };
 

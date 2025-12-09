@@ -95,12 +95,12 @@ class CreateWorkspacesResult {
   ///@}
  private:
   Aws::Vector<FailedCreateWorkspaceRequest> m_failedRequests;
-  bool m_failedRequestsHasBeenSet = false;
 
   Aws::Vector<Workspace> m_pendingRequests;
-  bool m_pendingRequestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedRequestsHasBeenSet = false;
+  bool m_pendingRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -154,24 +154,24 @@ class DescribeCodeCoveragesRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_reportArn;
-  bool m_reportArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   SortOrderType m_sortOrder{SortOrderType::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   ReportCodeCoverageSortByType m_sortBy{ReportCodeCoverageSortByType::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   double m_minLineCoveragePercentage{0.0};
-  bool m_minLineCoveragePercentageHasBeenSet = false;
 
   double m_maxLineCoveragePercentage{0.0};
+  bool m_reportArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_minLineCoveragePercentageHasBeenSet = false;
   bool m_maxLineCoveragePercentageHasBeenSet = false;
 };
 

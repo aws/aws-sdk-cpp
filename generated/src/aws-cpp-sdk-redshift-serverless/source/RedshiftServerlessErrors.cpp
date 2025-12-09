@@ -50,8 +50,8 @@ static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServer
 static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
 static const int IPV6_CIDR_BLOCK_NOT_FOUND_HASH = HashingUtils::HashString("Ipv6CidrBlockNotFoundException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
-static const int INVALID_PAGINATION_HASH = HashingUtils::HashString("InvalidPaginationException");
 static const int DRY_RUN_HASH = HashingUtils::HashString("DryRunException");
+static const int INVALID_PAGINATION_HASH = HashingUtils::HashString("InvalidPaginationException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -68,10 +68,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::IPV6_CIDR_BLOCK_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_TAGS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
-  } else if (hashCode == INVALID_PAGINATION_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INVALID_PAGINATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DRY_RUN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::DRY_RUN), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_PAGINATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftServerlessErrors::INVALID_PAGINATION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -78,9 +78,9 @@ class MessageGroup {
   ///@}
  private:
   Message m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Message> m_variations;
+  bool m_messageHasBeenSet = false;
   bool m_variationsHasBeenSet = false;
 };
 

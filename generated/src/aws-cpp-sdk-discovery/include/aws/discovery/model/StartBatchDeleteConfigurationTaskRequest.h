@@ -73,9 +73,9 @@ class StartBatchDeleteConfigurationTaskRequest : public ApplicationDiscoveryServ
   ///@}
  private:
   DeletionConfigurationItemType m_configurationType{DeletionConfigurationItemType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_configurationIds;
+  bool m_configurationTypeHasBeenSet = false;
   bool m_configurationIdsHasBeenSet = false;
 };
 

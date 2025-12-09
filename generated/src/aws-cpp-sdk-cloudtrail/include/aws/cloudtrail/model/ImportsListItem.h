@@ -130,18 +130,18 @@ class ImportsListItem {
   ///@}
  private:
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
+  bool m_importIdHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_updatedTimestampHasBeenSet = false;
 };
 

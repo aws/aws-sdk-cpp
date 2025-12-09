@@ -93,12 +93,12 @@ class NotificationConfiguration {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::String m_topicARN;
-  bool m_topicARNHasBeenSet = false;
 
   Aws::String m_notificationType;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_topicARNHasBeenSet = false;
   bool m_notificationTypeHasBeenSet = false;
 };
 

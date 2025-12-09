@@ -104,12 +104,12 @@ class DataSourceConfiguration {
   ///@}
  private:
   OpensearchConfiguration m_opensearchConfiguration;
-  bool m_opensearchConfigurationHasBeenSet = false;
 
   QnAKendraConfiguration m_kendraConfiguration;
-  bool m_kendraConfigurationHasBeenSet = false;
 
   BedrockKnowledgeStoreConfiguration m_bedrockKnowledgeStoreConfiguration;
+  bool m_opensearchConfigurationHasBeenSet = false;
+  bool m_kendraConfigurationHasBeenSet = false;
   bool m_bedrockKnowledgeStoreConfigurationHasBeenSet = false;
 };
 

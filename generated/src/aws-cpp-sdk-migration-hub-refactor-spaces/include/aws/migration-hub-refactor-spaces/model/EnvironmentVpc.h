@@ -170,24 +170,24 @@ class EnvironmentVpc {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cidrBlocks;
-  bool m_cidrBlocksHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpcName;
+  bool m_accountIdHasBeenSet = false;
+  bool m_cidrBlocksHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_vpcNameHasBeenSet = false;
 };
 

@@ -108,12 +108,12 @@ class UpdateContactAttributesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

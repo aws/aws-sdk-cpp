@@ -98,12 +98,12 @@ class Tmpfs {
   ///@}
  private:
   Aws::String m_containerPath;
-  bool m_containerPathHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_mountOptions;
+  bool m_containerPathHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_mountOptionsHasBeenSet = false;
 };
 

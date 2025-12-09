@@ -346,36 +346,36 @@ class PutItemRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_item;
-  bool m_itemHasBeenSet = false;
 
   Aws::Map<Aws::String, ExpectedAttributeValue> m_expected;
-  bool m_expectedHasBeenSet = false;
 
   ReturnValue m_returnValues{ReturnValue::NOT_SET};
-  bool m_returnValuesHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
-  bool m_returnConsumedCapacityHasBeenSet = false;
 
   ReturnItemCollectionMetrics m_returnItemCollectionMetrics{ReturnItemCollectionMetrics::NOT_SET};
-  bool m_returnItemCollectionMetricsHasBeenSet = false;
 
   ConditionalOperator m_conditionalOperator{ConditionalOperator::NOT_SET};
-  bool m_conditionalOperatorHasBeenSet = false;
 
   Aws::String m_conditionExpression;
-  bool m_conditionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-  bool m_expressionAttributeNamesHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-  bool m_expressionAttributeValuesHasBeenSet = false;
 
   ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure{ReturnValuesOnConditionCheckFailure::NOT_SET};
+  bool m_tableNameHasBeenSet = false;
+  bool m_itemHasBeenSet = false;
+  bool m_expectedHasBeenSet = false;
+  bool m_returnValuesHasBeenSet = false;
+  bool m_returnConsumedCapacityHasBeenSet = false;
+  bool m_returnItemCollectionMetricsHasBeenSet = false;
+  bool m_conditionalOperatorHasBeenSet = false;
+  bool m_conditionExpressionHasBeenSet = false;
+  bool m_expressionAttributeNamesHasBeenSet = false;
+  bool m_expressionAttributeValuesHasBeenSet = false;
   bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
 };
 

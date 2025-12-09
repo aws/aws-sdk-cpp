@@ -67,9 +67,9 @@ class StatementTimeoutException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_dbConnectionId{0};
+  bool m_messageHasBeenSet = false;
   bool m_dbConnectionIdHasBeenSet = false;
 };
 

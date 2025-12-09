@@ -75,9 +75,9 @@ class UpdateAutomatedDiscoveryConfigurationRequest : public Macie2Request {
   ///@}
  private:
   AutoEnableMode m_autoEnableOrganizationMembers{AutoEnableMode::NOT_SET};
-  bool m_autoEnableOrganizationMembersHasBeenSet = false;
 
   AutomatedDiscoveryStatus m_status{AutomatedDiscoveryStatus::NOT_SET};
+  bool m_autoEnableOrganizationMembersHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

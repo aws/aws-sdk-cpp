@@ -251,36 +251,36 @@ class GetCapacityReservationUsageResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   CapacityReservationState m_state{CapacityReservationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<InstanceUsage> m_instanceUsages;
-  bool m_instanceUsagesHasBeenSet = false;
 
   bool m_interruptible{false};
-  bool m_interruptibleHasBeenSet = false;
 
   InterruptibleCapacityAllocation m_interruptibleCapacityAllocation;
-  bool m_interruptibleCapacityAllocationHasBeenSet = false;
 
   InterruptionInfo m_interruptionInfo;
-  bool m_interruptionInfoHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_instanceUsagesHasBeenSet = false;
+  bool m_interruptibleHasBeenSet = false;
+  bool m_interruptibleCapacityAllocationHasBeenSet = false;
+  bool m_interruptionInfoHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

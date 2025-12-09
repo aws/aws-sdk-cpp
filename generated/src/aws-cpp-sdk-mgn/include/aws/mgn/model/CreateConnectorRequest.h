@@ -109,15 +109,15 @@ class CreateConnectorRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConnectorSsmCommandConfig m_ssmCommandConfig;
-  bool m_ssmCommandConfigHasBeenSet = false;
 
   Aws::String m_ssmInstanceID;
-  bool m_ssmInstanceIDHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_ssmCommandConfigHasBeenSet = false;
+  bool m_ssmInstanceIDHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class BedrockRerankingModelConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
-  bool m_additionalModelRequestFieldsHasBeenSet = false;
 
   Aws::String m_modelArn;
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
   bool m_modelArnHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class CostAllocationTagStatusEntry {
   ///@}
  private:
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   CostAllocationTagStatus m_status{CostAllocationTagStatus::NOT_SET};
+  bool m_tagKeyHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

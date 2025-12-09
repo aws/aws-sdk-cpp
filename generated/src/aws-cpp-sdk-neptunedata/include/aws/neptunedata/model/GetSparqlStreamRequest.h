@@ -138,18 +138,18 @@ class GetSparqlStreamRequest : public NeptunedataRequest {
   ///@}
  private:
   long long m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   IteratorType m_iteratorType{IteratorType::NOT_SET};
-  bool m_iteratorTypeHasBeenSet = false;
 
   long long m_commitNum{0};
-  bool m_commitNumHasBeenSet = false;
 
   long long m_opNum{0};
-  bool m_opNumHasBeenSet = false;
 
   Encoding m_encoding{Encoding::NOT_SET};
+  bool m_limitHasBeenSet = false;
+  bool m_iteratorTypeHasBeenSet = false;
+  bool m_commitNumHasBeenSet = false;
+  bool m_opNumHasBeenSet = false;
   bool m_encodingHasBeenSet = false;
 };
 

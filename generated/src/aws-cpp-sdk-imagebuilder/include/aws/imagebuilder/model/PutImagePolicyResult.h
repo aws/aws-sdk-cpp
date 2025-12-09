@@ -62,9 +62,9 @@ class PutImagePolicyResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_imageArn;
+  bool m_requestIdHasBeenSet = false;
   bool m_imageArnHasBeenSet = false;
 };
 

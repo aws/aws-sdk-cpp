@@ -130,21 +130,21 @@ class DeleteResourceEndpointAssociationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceConfigurationId;
-  bool m_resourceConfigurationIdHasBeenSet = false;
 
   Aws::String m_resourceConfigurationArn;
-  bool m_resourceConfigurationArnHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceConfigurationIdHasBeenSet = false;
+  bool m_resourceConfigurationArnHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class ReorderReceiptRuleSetRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_ruleSetName;
-  bool m_ruleSetNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ruleNames;
+  bool m_ruleSetNameHasBeenSet = false;
   bool m_ruleNamesHasBeenSet = false;
 };
 

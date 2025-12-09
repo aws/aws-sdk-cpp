@@ -436,63 +436,63 @@ class DBRecommendation {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_typeId;
-  bool m_typeIdHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTime{};
-  bool m_updatedTimeHasBeenSet = false;
 
   Aws::String m_detection;
-  bool m_detectionHasBeenSet = false;
 
   Aws::String m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<RecommendedAction> m_recommendedActions;
-  bool m_recommendedActionsHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_typeDetection;
-  bool m_typeDetectionHasBeenSet = false;
 
   Aws::String m_typeRecommendation;
-  bool m_typeRecommendationHasBeenSet = false;
 
   Aws::String m_impact;
-  bool m_impactHasBeenSet = false;
 
   Aws::String m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::Vector<DocLink> m_links;
-  bool m_linksHasBeenSet = false;
 
   IssueDetails m_issueDetails;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_typeIdHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_updatedTimeHasBeenSet = false;
+  bool m_detectionHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_recommendedActionsHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_typeDetectionHasBeenSet = false;
+  bool m_typeRecommendationHasBeenSet = false;
+  bool m_impactHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_linksHasBeenSet = false;
   bool m_issueDetailsHasBeenSet = false;
 };
 

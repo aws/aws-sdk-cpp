@@ -270,42 +270,42 @@ class DescribeConnectorOperationResult {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_connectorOperationArn;
-  bool m_connectorOperationArnHasBeenSet = false;
 
   ConnectorOperationState m_connectorOperationState{ConnectorOperationState::NOT_SET};
-  bool m_connectorOperationStateHasBeenSet = false;
 
   ConnectorOperationType m_connectorOperationType{ConnectorOperationType::NOT_SET};
-  bool m_connectorOperationTypeHasBeenSet = false;
 
   Aws::Vector<ConnectorOperationStep> m_operationSteps;
-  bool m_operationStepsHasBeenSet = false;
 
   WorkerSetting m_originWorkerSetting;
-  bool m_originWorkerSettingHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_originConnectorConfiguration;
-  bool m_originConnectorConfigurationHasBeenSet = false;
 
   WorkerSetting m_targetWorkerSetting;
-  bool m_targetWorkerSettingHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_targetConnectorConfiguration;
-  bool m_targetConnectorConfigurationHasBeenSet = false;
 
   StateDescription m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorOperationArnHasBeenSet = false;
+  bool m_connectorOperationStateHasBeenSet = false;
+  bool m_connectorOperationTypeHasBeenSet = false;
+  bool m_operationStepsHasBeenSet = false;
+  bool m_originWorkerSettingHasBeenSet = false;
+  bool m_originConnectorConfigurationHasBeenSet = false;
+  bool m_targetWorkerSettingHasBeenSet = false;
+  bool m_targetConnectorConfigurationHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

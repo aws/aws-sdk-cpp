@@ -93,12 +93,12 @@ class ListTLSInspectionConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TLSInspectionConfigurationMetadata> m_tLSInspectionConfigurations;
-  bool m_tLSInspectionConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_tLSInspectionConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

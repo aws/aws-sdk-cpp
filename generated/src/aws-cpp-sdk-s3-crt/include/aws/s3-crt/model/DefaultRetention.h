@@ -90,12 +90,12 @@ class DefaultRetention {
   ///@}
  private:
   ObjectLockRetentionMode m_mode{ObjectLockRetentionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   int m_days{0};
-  bool m_daysHasBeenSet = false;
 
   int m_years{0};
+  bool m_modeHasBeenSet = false;
+  bool m_daysHasBeenSet = false;
   bool m_yearsHasBeenSet = false;
 };
 

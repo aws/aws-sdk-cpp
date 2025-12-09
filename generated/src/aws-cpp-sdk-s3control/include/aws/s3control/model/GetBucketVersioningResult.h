@@ -96,15 +96,15 @@ class GetBucketVersioningResult {
   ///@}
  private:
   BucketVersioningStatus m_status{BucketVersioningStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   MFADeleteStatus m_mFADelete{MFADeleteStatus::NOT_SET};
-  bool m_mFADeleteHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_statusHasBeenSet = false;
+  bool m_mFADeleteHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

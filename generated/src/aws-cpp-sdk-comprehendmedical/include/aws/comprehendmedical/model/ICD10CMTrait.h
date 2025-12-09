@@ -67,9 +67,9 @@ class ICD10CMTrait {
   ///@}
  private:
   ICD10CMTraitName m_name{ICD10CMTraitName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_nameHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

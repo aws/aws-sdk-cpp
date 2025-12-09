@@ -82,12 +82,12 @@ class LargeTimestampGaps {
   ///@}
  private:
   StatisticalIssueStatus m_status{StatisticalIssueStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_numberOfLargeTimestampGaps{0};
-  bool m_numberOfLargeTimestampGapsHasBeenSet = false;
 
   int m_maxTimestampGapInDays{0};
+  bool m_statusHasBeenSet = false;
+  bool m_numberOfLargeTimestampGapsHasBeenSet = false;
   bool m_maxTimestampGapInDaysHasBeenSet = false;
 };
 

@@ -119,15 +119,15 @@ class TypedLinkSpecifier {
   ///@}
  private:
   TypedLinkSchemaAndFacetName m_typedLinkFacet;
-  bool m_typedLinkFacetHasBeenSet = false;
 
   ObjectReference m_sourceObjectReference;
-  bool m_sourceObjectReferenceHasBeenSet = false;
 
   ObjectReference m_targetObjectReference;
-  bool m_targetObjectReferenceHasBeenSet = false;
 
   Aws::Vector<AttributeNameAndValue> m_identityAttributeValues;
+  bool m_typedLinkFacetHasBeenSet = false;
+  bool m_sourceObjectReferenceHasBeenSet = false;
+  bool m_targetObjectReferenceHasBeenSet = false;
   bool m_identityAttributeValuesHasBeenSet = false;
 };
 

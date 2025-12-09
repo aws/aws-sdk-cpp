@@ -66,9 +66,9 @@ class GetWorkflowRunPropertiesResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_runProperties;
-  bool m_runPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

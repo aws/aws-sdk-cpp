@@ -233,33 +233,33 @@ class JobOperation {
   ///@}
  private:
   LambdaInvokeOperation m_lambdaInvoke;
-  bool m_lambdaInvokeHasBeenSet = false;
 
   S3CopyObjectOperation m_s3PutObjectCopy;
-  bool m_s3PutObjectCopyHasBeenSet = false;
 
   S3SetObjectAclOperation m_s3PutObjectAcl;
-  bool m_s3PutObjectAclHasBeenSet = false;
 
   S3SetObjectTaggingOperation m_s3PutObjectTagging;
-  bool m_s3PutObjectTaggingHasBeenSet = false;
 
   S3DeleteObjectTaggingOperation m_s3DeleteObjectTagging;
-  bool m_s3DeleteObjectTaggingHasBeenSet = false;
 
   S3InitiateRestoreObjectOperation m_s3InitiateRestoreObject;
-  bool m_s3InitiateRestoreObjectHasBeenSet = false;
 
   S3SetObjectLegalHoldOperation m_s3PutObjectLegalHold;
-  bool m_s3PutObjectLegalHoldHasBeenSet = false;
 
   S3SetObjectRetentionOperation m_s3PutObjectRetention;
-  bool m_s3PutObjectRetentionHasBeenSet = false;
 
   S3ReplicateObjectOperation m_s3ReplicateObject;
-  bool m_s3ReplicateObjectHasBeenSet = false;
 
   S3ComputeObjectChecksumOperation m_s3ComputeObjectChecksum;
+  bool m_lambdaInvokeHasBeenSet = false;
+  bool m_s3PutObjectCopyHasBeenSet = false;
+  bool m_s3PutObjectAclHasBeenSet = false;
+  bool m_s3PutObjectTaggingHasBeenSet = false;
+  bool m_s3DeleteObjectTaggingHasBeenSet = false;
+  bool m_s3InitiateRestoreObjectHasBeenSet = false;
+  bool m_s3PutObjectLegalHoldHasBeenSet = false;
+  bool m_s3PutObjectRetentionHasBeenSet = false;
+  bool m_s3ReplicateObjectHasBeenSet = false;
   bool m_s3ComputeObjectChecksumHasBeenSet = false;
 };
 

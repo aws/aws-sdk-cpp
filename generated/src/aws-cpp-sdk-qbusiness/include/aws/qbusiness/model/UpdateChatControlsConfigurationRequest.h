@@ -220,30 +220,30 @@ class UpdateChatControlsConfigurationRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ResponseScope m_responseScope{ResponseScope::NOT_SET};
-  bool m_responseScopeHasBeenSet = false;
 
   OrchestrationConfiguration m_orchestrationConfiguration;
-  bool m_orchestrationConfigurationHasBeenSet = false;
 
   BlockedPhrasesConfigurationUpdate m_blockedPhrasesConfigurationUpdate;
-  bool m_blockedPhrasesConfigurationUpdateHasBeenSet = false;
 
   Aws::Vector<TopicConfiguration> m_topicConfigurationsToCreateOrUpdate;
-  bool m_topicConfigurationsToCreateOrUpdateHasBeenSet = false;
 
   Aws::Vector<TopicConfiguration> m_topicConfigurationsToDelete;
-  bool m_topicConfigurationsToDeleteHasBeenSet = false;
 
   CreatorModeConfiguration m_creatorModeConfiguration;
-  bool m_creatorModeConfigurationHasBeenSet = false;
 
   HallucinationReductionConfiguration m_hallucinationReductionConfiguration;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_responseScopeHasBeenSet = false;
+  bool m_orchestrationConfigurationHasBeenSet = false;
+  bool m_blockedPhrasesConfigurationUpdateHasBeenSet = false;
+  bool m_topicConfigurationsToCreateOrUpdateHasBeenSet = false;
+  bool m_topicConfigurationsToDeleteHasBeenSet = false;
+  bool m_creatorModeConfigurationHasBeenSet = false;
   bool m_hallucinationReductionConfigurationHasBeenSet = false;
 };
 

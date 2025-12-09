@@ -187,24 +187,24 @@ class GetAccountAuthorizationDetailsResult {
   ///@}
  private:
   Aws::Vector<UserDetail> m_userDetailList;
-  bool m_userDetailListHasBeenSet = false;
 
   Aws::Vector<GroupDetail> m_groupDetailList;
-  bool m_groupDetailListHasBeenSet = false;
 
   Aws::Vector<RoleDetail> m_roleDetailList;
-  bool m_roleDetailListHasBeenSet = false;
 
   Aws::Vector<ManagedPolicyDetail> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_userDetailListHasBeenSet = false;
+  bool m_groupDetailListHasBeenSet = false;
+  bool m_roleDetailListHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

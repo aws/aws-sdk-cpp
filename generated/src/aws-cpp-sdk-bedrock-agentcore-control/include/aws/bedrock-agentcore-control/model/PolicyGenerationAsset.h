@@ -128,15 +128,15 @@ class PolicyGenerationAsset {
   ///@}
  private:
   Aws::String m_policyGenerationAssetId;
-  bool m_policyGenerationAssetIdHasBeenSet = false;
 
   PolicyDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_rawTextFragment;
-  bool m_rawTextFragmentHasBeenSet = false;
 
   Aws::Vector<Finding> m_findings;
+  bool m_policyGenerationAssetIdHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_rawTextFragmentHasBeenSet = false;
   bool m_findingsHasBeenSet = false;
 };
 

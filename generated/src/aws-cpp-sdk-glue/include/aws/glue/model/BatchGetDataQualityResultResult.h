@@ -91,12 +91,12 @@ class BatchGetDataQualityResultResult {
   ///@}
  private:
   Aws::Vector<DataQualityResult> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resultsNotFound;
-  bool m_resultsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
+  bool m_resultsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

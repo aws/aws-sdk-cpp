@@ -99,12 +99,12 @@ class RedshiftConfiguration {
   ///@}
  private:
   Aws::Vector<RedshiftQueryEngineStorageConfiguration> m_storageConfigurations;
-  bool m_storageConfigurationsHasBeenSet = false;
 
   RedshiftQueryEngineConfiguration m_queryEngineConfiguration;
-  bool m_queryEngineConfigurationHasBeenSet = false;
 
   QueryGenerationConfiguration m_queryGenerationConfiguration;
+  bool m_storageConfigurationsHasBeenSet = false;
+  bool m_queryEngineConfigurationHasBeenSet = false;
   bool m_queryGenerationConfigurationHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class AutoRetryConfig {
   ///@}
  private:
   int m_autoRetryLimit{0};
-  bool m_autoRetryLimitHasBeenSet = false;
 
   int m_autoRetryNumber{0};
-  bool m_autoRetryNumberHasBeenSet = false;
 
   Aws::String m_nextAutoRetry;
-  bool m_nextAutoRetryHasBeenSet = false;
 
   Aws::String m_previousAutoRetry;
+  bool m_autoRetryLimitHasBeenSet = false;
+  bool m_autoRetryNumberHasBeenSet = false;
+  bool m_nextAutoRetryHasBeenSet = false;
   bool m_previousAutoRetryHasBeenSet = false;
 };
 

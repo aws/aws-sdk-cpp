@@ -100,15 +100,15 @@ class SearchDataSetsResult {
   ///@}
  private:
   Aws::Vector<DataSetSummary> m_dataSetSummaries;
-  bool m_dataSetSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSetSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

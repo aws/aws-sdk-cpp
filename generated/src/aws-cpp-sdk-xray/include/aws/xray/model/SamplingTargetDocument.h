@@ -142,21 +142,21 @@ class SamplingTargetDocument {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   double m_fixedRate{0.0};
-  bool m_fixedRateHasBeenSet = false;
 
   int m_reservoirQuota{0};
-  bool m_reservoirQuotaHasBeenSet = false;
 
   Aws::Utils::DateTime m_reservoirQuotaTTL{};
-  bool m_reservoirQuotaTTLHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   SamplingBoost m_samplingBoost;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_fixedRateHasBeenSet = false;
+  bool m_reservoirQuotaHasBeenSet = false;
+  bool m_reservoirQuotaTTLHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
   bool m_samplingBoostHasBeenSet = false;
 };
 

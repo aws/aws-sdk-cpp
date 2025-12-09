@@ -68,9 +68,9 @@ class TopicSortClause {
   ///@}
  private:
   Identifier m_operand;
-  bool m_operandHasBeenSet = false;
 
   TopicSortDirection m_sortDirection{TopicSortDirection::NOT_SET};
+  bool m_operandHasBeenSet = false;
   bool m_sortDirectionHasBeenSet = false;
 };
 

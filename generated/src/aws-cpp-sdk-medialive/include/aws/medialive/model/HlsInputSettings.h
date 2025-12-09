@@ -122,18 +122,18 @@ class HlsInputSettings {
   ///@}
  private:
   int m_bandwidth{0};
-  bool m_bandwidthHasBeenSet = false;
 
   int m_bufferSegments{0};
-  bool m_bufferSegmentsHasBeenSet = false;
 
   int m_retries{0};
-  bool m_retriesHasBeenSet = false;
 
   int m_retryInterval{0};
-  bool m_retryIntervalHasBeenSet = false;
 
   HlsScte35SourceType m_scte35Source{HlsScte35SourceType::NOT_SET};
+  bool m_bandwidthHasBeenSet = false;
+  bool m_bufferSegmentsHasBeenSet = false;
+  bool m_retriesHasBeenSet = false;
+  bool m_retryIntervalHasBeenSet = false;
   bool m_scte35SourceHasBeenSet = false;
 };
 

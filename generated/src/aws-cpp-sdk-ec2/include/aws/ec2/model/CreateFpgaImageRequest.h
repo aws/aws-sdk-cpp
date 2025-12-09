@@ -173,24 +173,24 @@ class CreateFpgaImageRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   StorageLocation m_inputStorageLocation;
-  bool m_inputStorageLocationHasBeenSet = false;
 
   StorageLocation m_logsStorageLocation;
-  bool m_logsStorageLocationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dryRunHasBeenSet = false;
+  bool m_inputStorageLocationHasBeenSet = false;
+  bool m_logsStorageLocationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class BasicAuthConnectionMetadata {
   ///@}
  private:
   Aws::String m_baseEndpoint;
-  bool m_baseEndpointHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
+  bool m_baseEndpointHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
 };
 

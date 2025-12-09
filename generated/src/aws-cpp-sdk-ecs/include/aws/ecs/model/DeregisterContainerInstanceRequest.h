@@ -97,12 +97,12 @@ class DeregisterContainerInstanceRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   Aws::String m_containerInstance;
-  bool m_containerInstanceHasBeenSet = false;
 
   bool m_force{false};
+  bool m_clusterHasBeenSet = false;
+  bool m_containerInstanceHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

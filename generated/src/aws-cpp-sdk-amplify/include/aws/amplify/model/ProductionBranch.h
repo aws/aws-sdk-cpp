@@ -106,15 +106,15 @@ class ProductionBranch {
   ///@}
  private:
   Aws::Utils::DateTime m_lastDeployTime{};
-  bool m_lastDeployTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_thumbnailUrl;
-  bool m_thumbnailUrlHasBeenSet = false;
 
   Aws::String m_branchName;
+  bool m_lastDeployTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_thumbnailUrlHasBeenSet = false;
   bool m_branchNameHasBeenSet = false;
 };
 

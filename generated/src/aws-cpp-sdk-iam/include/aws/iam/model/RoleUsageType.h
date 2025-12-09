@@ -81,9 +81,9 @@ class RoleUsageType {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
+  bool m_regionHasBeenSet = false;
   bool m_resourcesHasBeenSet = false;
 };
 

@@ -140,15 +140,15 @@ class CampaignConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
-  bool m_itemExplorationConfigHasBeenSet = false;
 
   bool m_enableMetadataWithRecommendations{false};
-  bool m_enableMetadataWithRecommendationsHasBeenSet = false;
 
   bool m_syncWithLatestSolutionVersion{false};
-  bool m_syncWithLatestSolutionVersionHasBeenSet = false;
 
   Aws::Map<RankingInfluenceType, double> m_rankingInfluence;
+  bool m_itemExplorationConfigHasBeenSet = false;
+  bool m_enableMetadataWithRecommendationsHasBeenSet = false;
+  bool m_syncWithLatestSolutionVersionHasBeenSet = false;
   bool m_rankingInfluenceHasBeenSet = false;
 };
 

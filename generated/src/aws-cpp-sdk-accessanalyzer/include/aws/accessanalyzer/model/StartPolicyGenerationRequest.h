@@ -94,12 +94,12 @@ class StartPolicyGenerationRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   PolicyGenerationDetails m_policyGenerationDetails;
-  bool m_policyGenerationDetailsHasBeenSet = false;
 
   CloudTrailDetails m_cloudTrailDetails;
-  bool m_cloudTrailDetailsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_policyGenerationDetailsHasBeenSet = false;
+  bool m_cloudTrailDetailsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

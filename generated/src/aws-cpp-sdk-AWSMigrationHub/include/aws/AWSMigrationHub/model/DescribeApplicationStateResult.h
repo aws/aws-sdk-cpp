@@ -76,12 +76,12 @@ class DescribeApplicationStateResult {
   ///@}
  private:
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
-  bool m_applicationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationStatusHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

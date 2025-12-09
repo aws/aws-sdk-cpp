@@ -121,18 +121,18 @@ class DescribeWorkingStorageResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_diskIds;
-  bool m_diskIdsHasBeenSet = false;
 
   long long m_workingStorageUsedInBytes{0};
-  bool m_workingStorageUsedInBytesHasBeenSet = false;
 
   long long m_workingStorageAllocatedInBytes{0};
-  bool m_workingStorageAllocatedInBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_diskIdsHasBeenSet = false;
+  bool m_workingStorageUsedInBytesHasBeenSet = false;
+  bool m_workingStorageAllocatedInBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -228,30 +228,30 @@ class UpdateClusterRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Vector<ClusterInstanceGroupSpecification> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   Aws::Vector<ClusterRestrictedInstanceGroupSpecification> m_restrictedInstanceGroups;
-  bool m_restrictedInstanceGroupsHasBeenSet = false;
 
   ClusterTieredStorageConfig m_tieredStorageConfig;
-  bool m_tieredStorageConfigHasBeenSet = false;
 
   ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
-  bool m_nodeRecoveryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceGroupsToDelete;
-  bool m_instanceGroupsToDeleteHasBeenSet = false;
 
   ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
-  bool m_nodeProvisioningModeHasBeenSet = false;
 
   Aws::String m_clusterRole;
-  bool m_clusterRoleHasBeenSet = false;
 
   ClusterAutoScalingConfig m_autoScaling;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_restrictedInstanceGroupsHasBeenSet = false;
+  bool m_tieredStorageConfigHasBeenSet = false;
+  bool m_nodeRecoveryHasBeenSet = false;
+  bool m_instanceGroupsToDeleteHasBeenSet = false;
+  bool m_nodeProvisioningModeHasBeenSet = false;
+  bool m_clusterRoleHasBeenSet = false;
   bool m_autoScalingHasBeenSet = false;
 };
 

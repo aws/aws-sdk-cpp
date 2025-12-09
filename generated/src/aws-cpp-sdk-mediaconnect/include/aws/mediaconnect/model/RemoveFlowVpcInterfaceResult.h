@@ -102,15 +102,15 @@ class RemoveFlowVpcInterfaceResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nonDeletedNetworkInterfaceIds;
-  bool m_nonDeletedNetworkInterfaceIdsHasBeenSet = false;
 
   Aws::String m_vpcInterfaceName;
-  bool m_vpcInterfaceNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_nonDeletedNetworkInterfaceIdsHasBeenSet = false;
+  bool m_vpcInterfaceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

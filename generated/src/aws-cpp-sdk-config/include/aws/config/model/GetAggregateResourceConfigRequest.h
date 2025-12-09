@@ -68,9 +68,9 @@ class GetAggregateResourceConfigRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   AggregateResourceIdentifier m_resourceIdentifier;
+  bool m_configurationAggregatorNameHasBeenSet = false;
   bool m_resourceIdentifierHasBeenSet = false;
 };
 

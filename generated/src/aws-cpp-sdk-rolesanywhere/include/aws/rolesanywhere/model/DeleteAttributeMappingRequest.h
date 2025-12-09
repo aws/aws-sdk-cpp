@@ -37,22 +37,6 @@ class DeleteAttributeMappingRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
-   */
-  inline CertificateField GetCertificateField() const { return m_certificateField; }
-  inline bool CertificateFieldHasBeenSet() const { return m_certificateFieldHasBeenSet; }
-  inline void SetCertificateField(CertificateField value) {
-    m_certificateFieldHasBeenSet = true;
-    m_certificateField = value;
-  }
-  inline DeleteAttributeMappingRequest& WithCertificateField(CertificateField value) {
-    SetCertificateField(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The unique identifier of the profile.</p>
    */
   inline const Aws::String& GetProfileId() const { return m_profileId; }
@@ -65,6 +49,22 @@ class DeleteAttributeMappingRequest : public RolesAnywhereRequest {
   template <typename ProfileIdT = Aws::String>
   DeleteAttributeMappingRequest& WithProfileId(ProfileIdT&& value) {
     SetProfileId(std::forward<ProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
+   */
+  inline CertificateField GetCertificateField() const { return m_certificateField; }
+  inline bool CertificateFieldHasBeenSet() const { return m_certificateFieldHasBeenSet; }
+  inline void SetCertificateField(CertificateField value) {
+    m_certificateFieldHasBeenSet = true;
+    m_certificateField = value;
+  }
+  inline DeleteAttributeMappingRequest& WithCertificateField(CertificateField value) {
+    SetCertificateField(value);
     return *this;
   }
   ///@}
@@ -94,13 +94,13 @@ class DeleteAttributeMappingRequest : public RolesAnywhereRequest {
   }
   ///@}
  private:
-  CertificateField m_certificateField{CertificateField::NOT_SET};
-  bool m_certificateFieldHasBeenSet = false;
-
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
+
+  CertificateField m_certificateField{CertificateField::NOT_SET};
 
   Aws::Vector<Aws::String> m_specifiers;
+  bool m_profileIdHasBeenSet = false;
+  bool m_certificateFieldHasBeenSet = false;
   bool m_specifiersHasBeenSet = false;
 };
 

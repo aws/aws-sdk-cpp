@@ -182,27 +182,27 @@ class GeospatialMapConfiguration {
   ///@}
  private:
   GeospatialMapFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   GeospatialWindowOptions m_windowOptions;
-  bool m_windowOptionsHasBeenSet = false;
 
   GeospatialMapStyleOptions m_mapStyleOptions;
-  bool m_mapStyleOptionsHasBeenSet = false;
 
   GeospatialPointStyleOptions m_pointStyleOptions;
-  bool m_pointStyleOptionsHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_windowOptionsHasBeenSet = false;
+  bool m_mapStyleOptionsHasBeenSet = false;
+  bool m_pointStyleOptionsHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

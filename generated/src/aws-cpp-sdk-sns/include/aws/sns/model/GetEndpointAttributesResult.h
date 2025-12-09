@@ -84,9 +84,9 @@ class GetEndpointAttributesResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_attributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeIntegrationsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Integration> m_integrations;
-  bool m_integrationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_integrationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

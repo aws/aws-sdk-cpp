@@ -72,9 +72,9 @@ class UpdateAccountingRequest {
   ///@}
  private:
   int m_defaultPurgeTimeInDays{0};
-  bool m_defaultPurgeTimeInDaysHasBeenSet = false;
 
   AccountingMode m_mode{AccountingMode::NOT_SET};
+  bool m_defaultPurgeTimeInDaysHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

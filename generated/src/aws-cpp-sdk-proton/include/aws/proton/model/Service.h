@@ -271,42 +271,42 @@ class Service {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedAt{};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ServicePipeline m_pipeline;
-  bool m_pipelineHasBeenSet = false;
 
   Aws::String m_repositoryConnectionArn;
-  bool m_repositoryConnectionArnHasBeenSet = false;
 
   Aws::String m_repositoryId;
-  bool m_repositoryIdHasBeenSet = false;
 
   Aws::String m_spec;
-  bool m_specHasBeenSet = false;
 
   ServiceStatus m_status{ServiceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_arnHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pipelineHasBeenSet = false;
+  bool m_repositoryConnectionArnHasBeenSet = false;
+  bool m_repositoryIdHasBeenSet = false;
+  bool m_specHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

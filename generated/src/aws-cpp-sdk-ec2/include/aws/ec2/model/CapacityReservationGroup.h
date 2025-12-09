@@ -71,9 +71,9 @@ class CapacityReservationGroup {
   ///@}
  private:
   Aws::String m_groupArn;
-  bool m_groupArnHasBeenSet = false;
 
   Aws::String m_ownerId;
+  bool m_groupArnHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
 };
 

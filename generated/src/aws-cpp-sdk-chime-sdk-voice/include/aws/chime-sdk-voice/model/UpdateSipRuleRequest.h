@@ -107,15 +107,15 @@ class UpdateSipRuleRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_sipRuleId;
-  bool m_sipRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::Vector<SipRuleTargetApplication> m_targetApplications;
+  bool m_sipRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
   bool m_targetApplicationsHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class ConnectionAliasAssociation {
   ///@}
  private:
   AssociationStatus m_associationStatus{AssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::String m_associatedAccountId;
-  bool m_associatedAccountIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_connectionIdentifier;
+  bool m_associationStatusHasBeenSet = false;
+  bool m_associatedAccountIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_connectionIdentifierHasBeenSet = false;
 };
 

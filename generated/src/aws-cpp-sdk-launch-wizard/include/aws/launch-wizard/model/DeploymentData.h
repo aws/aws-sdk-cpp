@@ -251,36 +251,36 @@ class DeploymentData {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
-  bool m_deletedAtHasBeenSet = false;
 
   Aws::String m_deploymentArn;
-  bool m_deploymentArnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_patternName;
-  bool m_patternNameHasBeenSet = false;
 
   Aws::String m_resourceGroup;
-  bool m_resourceGroupHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_specifications;
-  bool m_specificationsHasBeenSet = false;
 
   DeploymentStatus m_status{DeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workloadName;
+  bool m_createdAtHasBeenSet = false;
+  bool m_deletedAtHasBeenSet = false;
+  bool m_deploymentArnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_patternNameHasBeenSet = false;
+  bool m_resourceGroupHasBeenSet = false;
+  bool m_specificationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
 };
 

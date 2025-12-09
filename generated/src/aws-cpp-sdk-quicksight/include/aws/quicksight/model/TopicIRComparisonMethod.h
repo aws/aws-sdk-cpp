@@ -82,12 +82,12 @@ class TopicIRComparisonMethod {
   ///@}
  private:
   ComparisonMethodType m_type{ComparisonMethodType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TopicTimeGranularity m_period{TopicTimeGranularity::NOT_SET};
-  bool m_periodHasBeenSet = false;
 
   int m_windowSize{0};
+  bool m_typeHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
   bool m_windowSizeHasBeenSet = false;
 };
 

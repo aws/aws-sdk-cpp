@@ -110,15 +110,15 @@ class GetCaseRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Vector<FieldIdentifier> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_caseIdHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

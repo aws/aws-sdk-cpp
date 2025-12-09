@@ -69,9 +69,9 @@ class PipelineExperimentConfig {
   ///@}
  private:
   Aws::String m_experimentName;
-  bool m_experimentNameHasBeenSet = false;
 
   Aws::String m_trialName;
+  bool m_experimentNameHasBeenSet = false;
   bool m_trialNameHasBeenSet = false;
 };
 

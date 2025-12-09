@@ -385,54 +385,54 @@ class ContainerRecipe {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ContainerType m_containerType{ContainerType::NOT_SET};
-  bool m_containerTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<ComponentConfiguration> m_components;
-  bool m_componentsHasBeenSet = false;
 
   InstanceConfiguration m_instanceConfiguration;
-  bool m_instanceConfigurationHasBeenSet = false;
 
   Aws::String m_dockerfileTemplateData;
-  bool m_dockerfileTemplateDataHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_parentImage;
-  bool m_parentImageHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   TargetContainerRepository m_targetRepository;
+  bool m_arnHasBeenSet = false;
+  bool m_containerTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_instanceConfigurationHasBeenSet = false;
+  bool m_dockerfileTemplateDataHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_parentImageHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
   bool m_targetRepositoryHasBeenSet = false;
 };
 

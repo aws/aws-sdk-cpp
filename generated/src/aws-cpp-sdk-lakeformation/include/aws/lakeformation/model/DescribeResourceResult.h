@@ -60,9 +60,9 @@ class DescribeResourceResult {
   ///@}
  private:
   ResourceInfo m_resourceInfo;
-  bool m_resourceInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -184,30 +184,30 @@ class DescribeHumanLoopResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   HumanLoopStatus m_humanLoopStatus{HumanLoopStatus::NOT_SET};
-  bool m_humanLoopStatusHasBeenSet = false;
 
   Aws::String m_humanLoopName;
-  bool m_humanLoopNameHasBeenSet = false;
 
   Aws::String m_humanLoopArn;
-  bool m_humanLoopArnHasBeenSet = false;
 
   Aws::String m_flowDefinitionArn;
-  bool m_flowDefinitionArnHasBeenSet = false;
 
   HumanLoopOutput m_humanLoopOutput;
-  bool m_humanLoopOutputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
+  bool m_humanLoopStatusHasBeenSet = false;
+  bool m_humanLoopNameHasBeenSet = false;
+  bool m_humanLoopArnHasBeenSet = false;
+  bool m_flowDefinitionArnHasBeenSet = false;
+  bool m_humanLoopOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

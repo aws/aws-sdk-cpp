@@ -96,12 +96,12 @@ class ListJobsByPipelineRequest : public ElasticTranscoderRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::String m_ascending;
-  bool m_ascendingHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_pipelineIdHasBeenSet = false;
+  bool m_ascendingHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

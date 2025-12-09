@@ -61,9 +61,9 @@ class ExportTransitGatewayRoutesResponse {
   ///@}
  private:
   Aws::String m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_s3LocationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

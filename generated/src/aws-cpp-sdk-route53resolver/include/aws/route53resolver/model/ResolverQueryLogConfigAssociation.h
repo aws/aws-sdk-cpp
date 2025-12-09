@@ -184,24 +184,24 @@ class ResolverQueryLogConfigAssociation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_resolverQueryLogConfigId;
-  bool m_resolverQueryLogConfigIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ResolverQueryLogConfigAssociationStatus m_status{ResolverQueryLogConfigAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResolverQueryLogConfigAssociationError m_error{ResolverQueryLogConfigAssociationError::NOT_SET};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_creationTime;
+  bool m_idHasBeenSet = false;
+  bool m_resolverQueryLogConfigIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

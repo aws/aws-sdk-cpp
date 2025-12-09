@@ -70,9 +70,9 @@ class JwtKey {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_secretVersion;
+  bool m_secretArnHasBeenSet = false;
   bool m_secretVersionHasBeenSet = false;
 };
 

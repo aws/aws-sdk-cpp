@@ -85,12 +85,12 @@ class ListApplicationsResult {
   ///@}
  private:
   Aws::Vector<ApplicationInfo> m_applicationInfoList;
-  bool m_applicationInfoListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationInfoListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

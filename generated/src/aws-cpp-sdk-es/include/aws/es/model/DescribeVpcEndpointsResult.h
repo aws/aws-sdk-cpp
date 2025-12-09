@@ -101,12 +101,12 @@ class DescribeVpcEndpointsResult {
   ///@}
  private:
   Aws::Vector<VpcEndpoint> m_vpcEndpoints;
-  bool m_vpcEndpointsHasBeenSet = false;
 
   Aws::Vector<VpcEndpointError> m_vpcEndpointErrors;
-  bool m_vpcEndpointErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcEndpointsHasBeenSet = false;
+  bool m_vpcEndpointErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

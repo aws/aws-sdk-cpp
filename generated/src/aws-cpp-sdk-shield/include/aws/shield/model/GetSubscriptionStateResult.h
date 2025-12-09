@@ -58,9 +58,9 @@ class GetSubscriptionStateResult {
   ///@}
  private:
   SubscriptionState m_subscriptionState{SubscriptionState::NOT_SET};
-  bool m_subscriptionStateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

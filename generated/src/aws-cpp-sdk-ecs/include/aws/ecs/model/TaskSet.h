@@ -573,78 +573,78 @@ class TaskSet {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_taskSetArn;
-  bool m_taskSetArnHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_taskDefinition;
-  bool m_taskDefinitionHasBeenSet = false;
 
   int m_computedDesiredCount{0};
-  bool m_computedDesiredCountHasBeenSet = false;
 
   int m_pendingCount{0};
-  bool m_pendingCountHasBeenSet = false;
 
   int m_runningCount{0};
-  bool m_runningCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   LaunchType m_launchType{LaunchType::NOT_SET};
-  bool m_launchTypeHasBeenSet = false;
 
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-  bool m_capacityProviderStrategyHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_platformFamily;
-  bool m_platformFamilyHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::Vector<LoadBalancer> m_loadBalancers;
-  bool m_loadBalancersHasBeenSet = false;
 
   Aws::Vector<ServiceRegistry> m_serviceRegistries;
-  bool m_serviceRegistriesHasBeenSet = false;
 
   Scale m_scale;
-  bool m_scaleHasBeenSet = false;
 
   StabilityStatus m_stabilityStatus{StabilityStatus::NOT_SET};
-  bool m_stabilityStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_stabilityStatusAt{};
-  bool m_stabilityStatusAtHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DeploymentEphemeralStorage m_fargateEphemeralStorage;
+  bool m_idHasBeenSet = false;
+  bool m_taskSetArnHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_taskDefinitionHasBeenSet = false;
+  bool m_computedDesiredCountHasBeenSet = false;
+  bool m_pendingCountHasBeenSet = false;
+  bool m_runningCountHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_capacityProviderStrategyHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_platformFamilyHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_loadBalancersHasBeenSet = false;
+  bool m_serviceRegistriesHasBeenSet = false;
+  bool m_scaleHasBeenSet = false;
+  bool m_stabilityStatusHasBeenSet = false;
+  bool m_stabilityStatusAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_fargateEphemeralStorageHasBeenSet = false;
 };
 

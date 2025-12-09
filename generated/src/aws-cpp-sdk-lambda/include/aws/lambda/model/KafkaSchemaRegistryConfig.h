@@ -130,15 +130,15 @@ class KafkaSchemaRegistryConfig {
   ///@}
  private:
   Aws::String m_schemaRegistryURI;
-  bool m_schemaRegistryURIHasBeenSet = false;
 
   SchemaRegistryEventRecordFormat m_eventRecordFormat{SchemaRegistryEventRecordFormat::NOT_SET};
-  bool m_eventRecordFormatHasBeenSet = false;
 
   Aws::Vector<KafkaSchemaRegistryAccessConfig> m_accessConfigs;
-  bool m_accessConfigsHasBeenSet = false;
 
   Aws::Vector<KafkaSchemaValidationConfig> m_schemaValidationConfigs;
+  bool m_schemaRegistryURIHasBeenSet = false;
+  bool m_eventRecordFormatHasBeenSet = false;
+  bool m_accessConfigsHasBeenSet = false;
   bool m_schemaValidationConfigsHasBeenSet = false;
 };
 

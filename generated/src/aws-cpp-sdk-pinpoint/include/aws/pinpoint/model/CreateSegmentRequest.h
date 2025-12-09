@@ -65,9 +65,9 @@ class CreateSegmentRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   WriteSegmentRequest m_writeSegmentRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_writeSegmentRequestHasBeenSet = false;
 };
 

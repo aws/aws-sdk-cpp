@@ -70,9 +70,9 @@ class ExperienceEndpoint {
   ///@}
  private:
   EndpointType m_endpointType{EndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_endpoint;
+  bool m_endpointTypeHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
 };
 

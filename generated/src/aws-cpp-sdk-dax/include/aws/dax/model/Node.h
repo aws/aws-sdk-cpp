@@ -146,21 +146,21 @@ class Node {
   ///@}
  private:
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Endpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_nodeCreateTime{};
-  bool m_nodeCreateTimeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_nodeStatus;
-  bool m_nodeStatusHasBeenSet = false;
 
   Aws::String m_parameterGroupStatus;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_nodeCreateTimeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_nodeStatusHasBeenSet = false;
   bool m_parameterGroupStatusHasBeenSet = false;
 };
 

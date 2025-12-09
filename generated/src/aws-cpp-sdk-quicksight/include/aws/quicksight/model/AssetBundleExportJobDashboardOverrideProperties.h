@@ -78,9 +78,9 @@ class AssetBundleExportJobDashboardOverrideProperties {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<AssetBundleExportJobDashboardPropertyToOverride> m_properties;
+  bool m_arnHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

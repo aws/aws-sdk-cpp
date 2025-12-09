@@ -65,9 +65,9 @@ class StopReplicationRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   Aws::String m_sourceServerID;
+  bool m_accountIDHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
 };
 

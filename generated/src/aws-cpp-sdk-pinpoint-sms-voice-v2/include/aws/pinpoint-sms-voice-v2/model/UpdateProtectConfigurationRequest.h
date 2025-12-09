@@ -66,9 +66,9 @@ class UpdateProtectConfigurationRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
+  bool m_protectConfigurationIdHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 

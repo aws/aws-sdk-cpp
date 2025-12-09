@@ -87,9 +87,9 @@ class DatabaseColumnList {
   ///@}
  private:
   Aws::Vector<Aws::String> m_include;
-  bool m_includeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclude;
+  bool m_includeHasBeenSet = false;
   bool m_excludeHasBeenSet = false;
 };
 

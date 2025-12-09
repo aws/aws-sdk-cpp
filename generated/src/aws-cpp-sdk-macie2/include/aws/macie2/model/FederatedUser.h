@@ -130,18 +130,18 @@ class FederatedUser {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   SessionContext m_sessionContext;
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
   bool m_sessionContextHasBeenSet = false;
 };
 

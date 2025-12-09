@@ -71,9 +71,9 @@ class ServerlessIdentifier {
   ///@}
  private:
   Aws::String m_namespaceIdentifier;
-  bool m_namespaceIdentifierHasBeenSet = false;
 
   Aws::String m_workgroupIdentifier;
+  bool m_namespaceIdentifierHasBeenSet = false;
   bool m_workgroupIdentifierHasBeenSet = false;
 };
 

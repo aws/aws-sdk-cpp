@@ -103,12 +103,12 @@ class MaintenanceTrack {
   ///@}
  private:
   Aws::String m_maintenanceTrackName;
-  bool m_maintenanceTrackNameHasBeenSet = false;
 
   Aws::String m_databaseVersion;
-  bool m_databaseVersionHasBeenSet = false;
 
   Aws::Vector<UpdateTarget> m_updateTargets;
+  bool m_maintenanceTrackNameHasBeenSet = false;
+  bool m_databaseVersionHasBeenSet = false;
   bool m_updateTargetsHasBeenSet = false;
 };
 

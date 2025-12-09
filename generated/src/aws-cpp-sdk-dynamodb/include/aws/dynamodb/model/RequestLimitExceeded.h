@@ -83,9 +83,9 @@ class RequestLimitExceeded {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<ThrottlingReason> m_throttlingReasons;
+  bool m_messageHasBeenSet = false;
   bool m_throttlingReasonsHasBeenSet = false;
 };
 

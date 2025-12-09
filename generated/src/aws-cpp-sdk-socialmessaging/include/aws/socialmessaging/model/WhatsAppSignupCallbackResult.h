@@ -84,9 +84,9 @@ class WhatsAppSignupCallbackResult {
   ///@}
  private:
   Aws::String m_associateInProgressToken;
-  bool m_associateInProgressTokenHasBeenSet = false;
 
   Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData> m_linkedAccountsWithIncompleteSetup;
+  bool m_associateInProgressTokenHasBeenSet = false;
   bool m_linkedAccountsWithIncompleteSetupHasBeenSet = false;
 };
 

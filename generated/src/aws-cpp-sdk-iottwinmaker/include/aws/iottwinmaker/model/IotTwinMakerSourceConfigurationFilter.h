@@ -70,9 +70,9 @@ class IotTwinMakerSourceConfigurationFilter {
   ///@}
  private:
   FilterByComponentType m_filterByComponentType;
-  bool m_filterByComponentTypeHasBeenSet = false;
 
   FilterByEntity m_filterByEntity;
+  bool m_filterByComponentTypeHasBeenSet = false;
   bool m_filterByEntityHasBeenSet = false;
 };
 

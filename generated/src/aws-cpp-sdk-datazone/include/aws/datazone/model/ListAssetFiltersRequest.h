@@ -130,18 +130,18 @@ class ListAssetFiltersRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_assetIdentifier;
-  bool m_assetIdentifierHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   FilterStatus m_status{FilterStatus::NOT_SET};
+  bool m_assetIdentifierHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

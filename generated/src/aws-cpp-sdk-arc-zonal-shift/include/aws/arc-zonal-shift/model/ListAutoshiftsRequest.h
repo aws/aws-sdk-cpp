@@ -89,12 +89,12 @@ class ListAutoshiftsRequest : public ARCZonalShiftRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   AutoshiftExecutionStatus m_status{AutoshiftExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

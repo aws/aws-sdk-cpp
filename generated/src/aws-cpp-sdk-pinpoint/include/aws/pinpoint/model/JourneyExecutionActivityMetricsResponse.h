@@ -167,21 +167,21 @@ class JourneyExecutionActivityMetricsResponse {
   ///@}
  private:
   Aws::String m_activityType;
-  bool m_activityTypeHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_journeyActivityId;
-  bool m_journeyActivityIdHasBeenSet = false;
 
   Aws::String m_journeyId;
-  bool m_journeyIdHasBeenSet = false;
 
   Aws::String m_lastEvaluatedTime;
-  bool m_lastEvaluatedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metrics;
+  bool m_activityTypeHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_journeyActivityIdHasBeenSet = false;
+  bool m_journeyIdHasBeenSet = false;
+  bool m_lastEvaluatedTimeHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

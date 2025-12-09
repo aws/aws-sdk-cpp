@@ -65,9 +65,9 @@ class DeleteConnectorProfileRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_connectorProfileNameHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

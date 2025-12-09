@@ -67,9 +67,9 @@ class Threshold {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Operator m_operator{Operator::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_operatorHasBeenSet = false;
 };
 

@@ -81,12 +81,12 @@ class CreateByteMatchSetResult {
   ///@}
  private:
   ByteMatchSet m_byteMatchSet;
-  bool m_byteMatchSetHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_byteMatchSetHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

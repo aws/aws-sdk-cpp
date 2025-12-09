@@ -72,9 +72,9 @@ class RAGConfig {
   ///@}
  private:
   KnowledgeBaseConfig m_knowledgeBaseConfig;
-  bool m_knowledgeBaseConfigHasBeenSet = false;
 
   EvaluationPrecomputedRagSourceConfig m_precomputedRagSourceConfig;
+  bool m_knowledgeBaseConfigHasBeenSet = false;
   bool m_precomputedRagSourceConfigHasBeenSet = false;
 };
 

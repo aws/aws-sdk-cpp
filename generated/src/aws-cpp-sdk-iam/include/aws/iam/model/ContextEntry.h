@@ -106,12 +106,12 @@ class ContextEntry {
   ///@}
  private:
   Aws::String m_contextKeyName;
-  bool m_contextKeyNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contextKeyValues;
-  bool m_contextKeyValuesHasBeenSet = false;
 
   ContextKeyTypeEnum m_contextKeyType{ContextKeyTypeEnum::NOT_SET};
+  bool m_contextKeyNameHasBeenSet = false;
+  bool m_contextKeyValuesHasBeenSet = false;
   bool m_contextKeyTypeHasBeenSet = false;
 };
 

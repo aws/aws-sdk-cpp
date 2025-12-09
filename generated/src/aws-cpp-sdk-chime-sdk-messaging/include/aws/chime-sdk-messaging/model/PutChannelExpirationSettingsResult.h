@@ -78,12 +78,12 @@ class PutChannelExpirationSettingsResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   ExpirationSettings m_expirationSettings;
-  bool m_expirationSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_expirationSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

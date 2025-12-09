@@ -104,15 +104,15 @@ class DescribeRecordRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

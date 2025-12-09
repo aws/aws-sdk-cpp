@@ -78,9 +78,9 @@ class MultiRegionProperties {
   ///@}
  private:
   Aws::String m_witnessRegion;
-  bool m_witnessRegionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clusters;
+  bool m_witnessRegionHasBeenSet = false;
   bool m_clustersHasBeenSet = false;
 };
 

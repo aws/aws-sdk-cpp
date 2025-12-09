@@ -57,9 +57,9 @@ class EnableEbsEncryptionByDefaultResponse {
   ///@}
  private:
   bool m_ebsEncryptionByDefault{false};
-  bool m_ebsEncryptionByDefaultHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ebsEncryptionByDefaultHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class RestoreVolumeFromSnapshotRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Vector<RestoreOpenZFSVolumeOption> m_options;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

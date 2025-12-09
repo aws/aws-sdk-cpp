@@ -87,12 +87,12 @@ class StopParticipantReplicationRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_sourceStageArn;
-  bool m_sourceStageArnHasBeenSet = false;
 
   Aws::String m_destinationStageArn;
-  bool m_destinationStageArnHasBeenSet = false;
 
   Aws::String m_participantId;
+  bool m_sourceStageArnHasBeenSet = false;
+  bool m_destinationStageArnHasBeenSet = false;
   bool m_participantIdHasBeenSet = false;
 };
 

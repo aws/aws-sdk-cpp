@@ -108,15 +108,15 @@ class Status {
   ///@}
  private:
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   DocumentStatus m_documentStatus{DocumentStatus::NOT_SET};
-  bool m_documentStatusHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_documentIdHasBeenSet = false;
+  bool m_documentStatusHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

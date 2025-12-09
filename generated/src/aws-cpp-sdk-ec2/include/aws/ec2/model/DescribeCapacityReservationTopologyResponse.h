@@ -87,12 +87,12 @@ class DescribeCapacityReservationTopologyResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CapacityReservationTopology> m_capacityReservations;
-  bool m_capacityReservationsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_capacityReservationsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

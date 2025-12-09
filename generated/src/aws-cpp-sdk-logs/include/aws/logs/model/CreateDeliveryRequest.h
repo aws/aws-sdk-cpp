@@ -162,21 +162,21 @@ class CreateDeliveryRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_deliverySourceName;
-  bool m_deliverySourceNameHasBeenSet = false;
 
   Aws::String m_deliveryDestinationArn;
-  bool m_deliveryDestinationArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recordFields;
-  bool m_recordFieldsHasBeenSet = false;
 
   Aws::String m_fieldDelimiter;
-  bool m_fieldDelimiterHasBeenSet = false;
 
   S3DeliveryConfiguration m_s3DeliveryConfiguration;
-  bool m_s3DeliveryConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_deliverySourceNameHasBeenSet = false;
+  bool m_deliveryDestinationArnHasBeenSet = false;
+  bool m_recordFieldsHasBeenSet = false;
+  bool m_fieldDelimiterHasBeenSet = false;
+  bool m_s3DeliveryConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

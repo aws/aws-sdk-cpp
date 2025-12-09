@@ -69,9 +69,9 @@ class ChannelStorageSummary {
   ///@}
  private:
   ServiceManagedChannelS3StorageSummary m_serviceManagedS3;
-  bool m_serviceManagedS3HasBeenSet = false;
 
   CustomerManagedChannelS3StorageSummary m_customerManagedS3;
+  bool m_serviceManagedS3HasBeenSet = false;
   bool m_customerManagedS3HasBeenSet = false;
 };
 

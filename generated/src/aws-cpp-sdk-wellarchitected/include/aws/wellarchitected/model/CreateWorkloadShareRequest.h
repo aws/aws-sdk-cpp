@@ -96,15 +96,15 @@ class CreateWorkloadShareRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_sharedWith;
-  bool m_sharedWithHasBeenSet = false;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workloadIdHasBeenSet = false;
+  bool m_sharedWithHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

@@ -60,9 +60,9 @@ class DescribeSolutionVersionResult {
   ///@}
  private:
   SolutionVersion m_solutionVersion;
-  bool m_solutionVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_solutionVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

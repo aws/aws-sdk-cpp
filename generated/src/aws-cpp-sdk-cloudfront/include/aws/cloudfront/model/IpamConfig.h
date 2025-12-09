@@ -77,9 +77,9 @@ class IpamConfig {
   ///@}
  private:
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Vector<IpamCidrConfig> m_ipamCidrConfigs;
+  bool m_quantityHasBeenSet = false;
   bool m_ipamCidrConfigsHasBeenSet = false;
 };
 

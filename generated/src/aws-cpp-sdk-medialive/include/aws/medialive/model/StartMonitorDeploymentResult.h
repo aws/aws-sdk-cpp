@@ -368,60 +368,60 @@ class StartMonitorDeploymentResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cloudWatchAlarmTemplateGroupIds;
-  bool m_cloudWatchAlarmTemplateGroupIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_discoveryEntryPointArn;
-  bool m_discoveryEntryPointArnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventBridgeRuleTemplateGroupIds;
-  bool m_eventBridgeRuleTemplateGroupIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, MediaResource> m_failedMediaResourceMap;
-  bool m_failedMediaResourceMapHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDiscoveredAt{};
-  bool m_lastDiscoveredAtHasBeenSet = false;
 
   SuccessfulMonitorDeployment m_lastSuccessfulMonitorDeployment;
-  bool m_lastSuccessfulMonitorDeploymentHasBeenSet = false;
 
   Aws::Map<Aws::String, MediaResource> m_mediaResourceMap;
-  bool m_mediaResourceMapHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   bool m_monitorChangesPendingDeployment{false};
-  bool m_monitorChangesPendingDeploymentHasBeenSet = false;
 
   MonitorDeployment m_monitorDeployment;
-  bool m_monitorDeploymentHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SignalMapStatus m_status{SignalMapStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_cloudWatchAlarmTemplateGroupIdsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_discoveryEntryPointArnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_eventBridgeRuleTemplateGroupIdsHasBeenSet = false;
+  bool m_failedMediaResourceMapHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastDiscoveredAtHasBeenSet = false;
+  bool m_lastSuccessfulMonitorDeploymentHasBeenSet = false;
+  bool m_mediaResourceMapHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_monitorChangesPendingDeploymentHasBeenSet = false;
+  bool m_monitorDeploymentHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

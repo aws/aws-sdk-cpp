@@ -72,9 +72,9 @@ class NodeFrameworkAttributes {
   ///@}
  private:
   NodeFabricAttributes m_fabric;
-  bool m_fabricHasBeenSet = false;
 
   NodeEthereumAttributes m_ethereum;
+  bool m_fabricHasBeenSet = false;
   bool m_ethereumHasBeenSet = false;
 };
 

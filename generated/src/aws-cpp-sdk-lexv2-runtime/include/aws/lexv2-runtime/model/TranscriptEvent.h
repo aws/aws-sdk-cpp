@@ -71,9 +71,9 @@ class TranscriptEvent {
   ///@}
  private:
   Aws::String m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   Aws::String m_eventId;
+  bool m_transcriptHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
 };
 

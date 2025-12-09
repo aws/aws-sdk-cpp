@@ -91,12 +91,12 @@ class CommandExecutionResult {
   ///@}
  private:
   Aws::String m_s;
-  bool m_sHasBeenSet = false;
 
   bool m_b{false};
-  bool m_bHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_bIN{};
+  bool m_sHasBeenSet = false;
+  bool m_bHasBeenSet = false;
   bool m_bINHasBeenSet = false;
 };
 

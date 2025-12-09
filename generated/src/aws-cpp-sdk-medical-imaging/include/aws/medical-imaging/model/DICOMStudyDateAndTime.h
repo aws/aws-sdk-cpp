@@ -69,9 +69,9 @@ class DICOMStudyDateAndTime {
   ///@}
  private:
   Aws::String m_dICOMStudyDate;
-  bool m_dICOMStudyDateHasBeenSet = false;
 
   Aws::String m_dICOMStudyTime;
+  bool m_dICOMStudyDateHasBeenSet = false;
   bool m_dICOMStudyTimeHasBeenSet = false;
 };
 

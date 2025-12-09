@@ -92,12 +92,12 @@ class BatchGetSchemaResult {
   ///@}
  private:
   Aws::Vector<Schema> m_schemas;
-  bool m_schemasHasBeenSet = false;
 
   Aws::Vector<BatchGetSchemaError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemasHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

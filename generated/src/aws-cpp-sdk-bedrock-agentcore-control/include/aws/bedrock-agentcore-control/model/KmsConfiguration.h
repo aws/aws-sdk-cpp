@@ -67,9 +67,9 @@ class KmsConfiguration {
   ///@}
  private:
   KeyType m_keyType{KeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_keyTypeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

@@ -81,9 +81,9 @@ class PutConfigurationRecorderRequest : public ConfigServiceRequest {
   ///@}
  private:
   ConfigurationRecorder m_configurationRecorder;
-  bool m_configurationRecorderHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_configurationRecorderHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

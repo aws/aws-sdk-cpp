@@ -61,9 +61,9 @@ class TestRenderTemplateResult {
   ///@}
  private:
   Aws::String m_renderedTemplate;
-  bool m_renderedTemplateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_renderedTemplateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

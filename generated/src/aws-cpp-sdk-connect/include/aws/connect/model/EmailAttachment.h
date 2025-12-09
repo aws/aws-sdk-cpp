@@ -69,9 +69,9 @@ class EmailAttachment {
   ///@}
  private:
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_s3Url;
+  bool m_fileNameHasBeenSet = false;
   bool m_s3UrlHasBeenSet = false;
 };
 

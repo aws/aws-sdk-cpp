@@ -129,15 +129,15 @@ class ResponseInspection {
   ///@}
  private:
   ResponseInspectionStatusCode m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   ResponseInspectionHeader m_header;
-  bool m_headerHasBeenSet = false;
 
   ResponseInspectionBodyContains m_bodyContains;
-  bool m_bodyContainsHasBeenSet = false;
 
   ResponseInspectionJson m_json;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_headerHasBeenSet = false;
+  bool m_bodyContainsHasBeenSet = false;
   bool m_jsonHasBeenSet = false;
 };
 

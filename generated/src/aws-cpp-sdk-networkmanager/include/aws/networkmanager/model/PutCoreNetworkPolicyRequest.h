@@ -118,18 +118,18 @@ class PutCoreNetworkPolicyRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_latestVersionId{0};
-  bool m_latestVersionIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_latestVersionIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

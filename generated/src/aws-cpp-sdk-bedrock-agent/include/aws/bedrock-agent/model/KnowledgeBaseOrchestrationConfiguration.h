@@ -124,15 +124,15 @@ class KnowledgeBaseOrchestrationConfiguration {
   ///@}
  private:
   KnowledgeBasePromptTemplate m_promptTemplate;
-  bool m_promptTemplateHasBeenSet = false;
 
   PromptInferenceConfiguration m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
-  bool m_additionalModelRequestFieldsHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfig;
+  bool m_promptTemplateHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
   bool m_performanceConfigHasBeenSet = false;
 };
 

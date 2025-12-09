@@ -113,15 +113,15 @@ class CreateServiceNetworkServiceAssociationRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_serviceIdentifier;
-  bool m_serviceIdentifierHasBeenSet = false;
 
   Aws::String m_serviceNetworkIdentifier;
-  bool m_serviceNetworkIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_serviceIdentifierHasBeenSet = false;
+  bool m_serviceNetworkIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

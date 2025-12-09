@@ -78,9 +78,9 @@ class DatasetInputConfig {
   ///@}
  private:
   Aws::Vector<ColumnSchema> m_schema;
-  bool m_schemaHasBeenSet = false;
 
   DataSource m_dataSource;
+  bool m_schemaHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
 };
 

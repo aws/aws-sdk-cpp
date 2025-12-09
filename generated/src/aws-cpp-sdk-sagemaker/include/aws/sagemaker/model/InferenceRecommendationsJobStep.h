@@ -106,15 +106,15 @@ class InferenceRecommendationsJobStep {
   ///@}
  private:
   RecommendationStepType m_stepType{RecommendationStepType::NOT_SET};
-  bool m_stepTypeHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   RecommendationJobStatus m_status{RecommendationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RecommendationJobInferenceBenchmark m_inferenceBenchmark;
+  bool m_stepTypeHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_inferenceBenchmarkHasBeenSet = false;
 };
 

@@ -121,15 +121,15 @@ class AcceptDirectConnectGatewayAssociationProposalRequest : public DirectConnec
   ///@}
  private:
   Aws::String m_directConnectGatewayId;
-  bool m_directConnectGatewayIdHasBeenSet = false;
 
   Aws::String m_proposalId;
-  bool m_proposalIdHasBeenSet = false;
 
   Aws::String m_associatedGatewayOwnerAccount;
-  bool m_associatedGatewayOwnerAccountHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_overrideAllowedPrefixesToDirectConnectGateway;
+  bool m_directConnectGatewayIdHasBeenSet = false;
+  bool m_proposalIdHasBeenSet = false;
+  bool m_associatedGatewayOwnerAccountHasBeenSet = false;
   bool m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 };
 

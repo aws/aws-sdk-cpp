@@ -65,9 +65,9 @@ class DeleteDataAccessorRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_dataAccessorId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_dataAccessorIdHasBeenSet = false;
 };
 

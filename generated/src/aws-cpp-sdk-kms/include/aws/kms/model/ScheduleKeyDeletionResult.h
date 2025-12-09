@@ -119,18 +119,18 @@ class ScheduleKeyDeletionResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletionDate{};
-  bool m_deletionDateHasBeenSet = false;
 
   KeyState m_keyState{KeyState::NOT_SET};
-  bool m_keyStateHasBeenSet = false;
 
   int m_pendingWindowInDays{0};
-  bool m_pendingWindowInDaysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_deletionDateHasBeenSet = false;
+  bool m_keyStateHasBeenSet = false;
+  bool m_pendingWindowInDaysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

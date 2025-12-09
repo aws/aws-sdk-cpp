@@ -266,39 +266,39 @@ class AwsAppSyncGraphQlApiDetails {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AwsAppSyncGraphQlApiOpenIdConnectConfigDetails m_openIdConnectConfig;
-  bool m_openIdConnectConfigHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails m_lambdaAuthorizerConfig;
-  bool m_lambdaAuthorizerConfigHasBeenSet = false;
 
   bool m_xrayEnabled{false};
-  bool m_xrayEnabledHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AwsAppSyncGraphQlApiUserPoolConfigDetails m_userPoolConfig;
-  bool m_userPoolConfigHasBeenSet = false;
 
   Aws::String m_authenticationType;
-  bool m_authenticationTypeHasBeenSet = false;
 
   AwsAppSyncGraphQlApiLogConfigDetails m_logConfig;
-  bool m_logConfigHasBeenSet = false;
 
   Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails> m_additionalAuthenticationProviders;
-  bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
   Aws::String m_wafWebAclArn;
+  bool m_apiIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_openIdConnectConfigHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_lambdaAuthorizerConfigHasBeenSet = false;
+  bool m_xrayEnabledHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_userPoolConfigHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_logConfigHasBeenSet = false;
+  bool m_additionalAuthenticationProvidersHasBeenSet = false;
   bool m_wafWebAclArnHasBeenSet = false;
 };
 

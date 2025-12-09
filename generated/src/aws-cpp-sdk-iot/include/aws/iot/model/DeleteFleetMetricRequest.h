@@ -68,9 +68,9 @@ class DeleteFleetMetricRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_metricNameHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

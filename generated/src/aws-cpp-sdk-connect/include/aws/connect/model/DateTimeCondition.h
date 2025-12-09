@@ -103,15 +103,15 @@ class DateTimeCondition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_minValue;
-  bool m_minValueHasBeenSet = false;
 
   Aws::String m_maxValue;
-  bool m_maxValueHasBeenSet = false;
 
   DateTimeComparisonType m_comparisonType{DateTimeComparisonType::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
   bool m_comparisonTypeHasBeenSet = false;
 };
 

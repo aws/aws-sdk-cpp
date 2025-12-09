@@ -82,12 +82,12 @@ class ListLensSharesResult {
   ///@}
  private:
   Aws::Vector<LensShareSummary> m_lensShareSummaries;
-  bool m_lensShareSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lensShareSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

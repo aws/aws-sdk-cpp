@@ -90,12 +90,12 @@ class CreateNetworkAclAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionTarget m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   bool m_fMSCanRemediate{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
   bool m_fMSCanRemediateHasBeenSet = false;
 };
 

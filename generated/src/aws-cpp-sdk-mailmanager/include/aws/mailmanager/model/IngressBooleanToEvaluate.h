@@ -72,9 +72,9 @@ class IngressBooleanToEvaluate {
   ///@}
  private:
   IngressAnalysis m_analysis;
-  bool m_analysisHasBeenSet = false;
 
   IngressIsInAddressList m_isInAddressList;
+  bool m_analysisHasBeenSet = false;
   bool m_isInAddressListHasBeenSet = false;
 };
 

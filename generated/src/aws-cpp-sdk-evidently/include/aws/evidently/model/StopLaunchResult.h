@@ -60,9 +60,9 @@ class StopLaunchResult {
   ///@}
  private:
   Aws::Utils::DateTime m_endedTime{};
-  bool m_endedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

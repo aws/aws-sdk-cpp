@@ -124,18 +124,18 @@ class LakeFormationOptInsInfo {
   ///@}
  private:
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   DataLakePrincipal m_principal;
-  bool m_principalHasBeenSet = false;
 
   Condition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
+  bool m_resourceHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_lastUpdatedByHasBeenSet = false;
 };
 

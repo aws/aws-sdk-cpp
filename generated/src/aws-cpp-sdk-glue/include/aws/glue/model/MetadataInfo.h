@@ -95,12 +95,12 @@ class MetadataInfo {
   ///@}
  private:
   Aws::String m_metadataValue;
-  bool m_metadataValueHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Vector<OtherMetadataValueListItem> m_otherMetadataValueList;
+  bool m_metadataValueHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_otherMetadataValueListHasBeenSet = false;
 };
 

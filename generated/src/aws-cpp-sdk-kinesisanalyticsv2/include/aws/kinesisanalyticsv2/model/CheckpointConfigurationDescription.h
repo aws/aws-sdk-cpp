@@ -117,15 +117,15 @@ class CheckpointConfigurationDescription {
   ///@}
  private:
   ConfigurationType m_configurationType{ConfigurationType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   bool m_checkpointingEnabled{false};
-  bool m_checkpointingEnabledHasBeenSet = false;
 
   long long m_checkpointInterval{0};
-  bool m_checkpointIntervalHasBeenSet = false;
 
   long long m_minPauseBetweenCheckpoints{0};
+  bool m_configurationTypeHasBeenSet = false;
+  bool m_checkpointingEnabledHasBeenSet = false;
+  bool m_checkpointIntervalHasBeenSet = false;
   bool m_minPauseBetweenCheckpointsHasBeenSet = false;
 };
 

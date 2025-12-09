@@ -112,15 +112,15 @@ class UpdateConsumableResourceRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_consumableResource;
-  bool m_consumableResourceHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   long long m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_consumableResourceHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

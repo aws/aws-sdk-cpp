@@ -135,9 +135,9 @@ class EksContainerResourceRequirements {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_limits;
-  bool m_limitsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requests;
+  bool m_limitsHasBeenSet = false;
   bool m_requestsHasBeenSet = false;
 };
 

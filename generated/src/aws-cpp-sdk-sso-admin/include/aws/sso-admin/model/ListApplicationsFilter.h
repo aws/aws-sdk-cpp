@@ -71,9 +71,9 @@ class ListApplicationsFilter {
   ///@}
  private:
   Aws::String m_applicationAccount;
-  bool m_applicationAccountHasBeenSet = false;
 
   Aws::String m_applicationProvider;
+  bool m_applicationAccountHasBeenSet = false;
   bool m_applicationProviderHasBeenSet = false;
 };
 

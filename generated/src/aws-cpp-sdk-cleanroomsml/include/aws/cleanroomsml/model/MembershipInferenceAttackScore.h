@@ -68,9 +68,9 @@ class MembershipInferenceAttackScore {
   ///@}
  private:
   MembershipInferenceAttackVersion m_attackVersion{MembershipInferenceAttackVersion::NOT_SET};
-  bool m_attackVersionHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_attackVersionHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

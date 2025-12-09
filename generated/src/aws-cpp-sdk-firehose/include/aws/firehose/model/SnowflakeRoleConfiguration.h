@@ -67,9 +67,9 @@ class SnowflakeRoleConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_snowflakeRole;
+  bool m_enabledHasBeenSet = false;
   bool m_snowflakeRoleHasBeenSet = false;
 };
 

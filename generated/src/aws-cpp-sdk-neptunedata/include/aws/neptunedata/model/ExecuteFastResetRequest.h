@@ -69,9 +69,9 @@ class ExecuteFastResetRequest : public NeptunedataRequest {
   ///@}
  private:
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_token;
+  bool m_actionHasBeenSet = false;
   bool m_tokenHasBeenSet = false;
 };
 

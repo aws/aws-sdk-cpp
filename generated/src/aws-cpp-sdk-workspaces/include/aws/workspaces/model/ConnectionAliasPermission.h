@@ -72,9 +72,9 @@ class ConnectionAliasPermission {
   ///@}
  private:
   Aws::String m_sharedAccountId;
-  bool m_sharedAccountIdHasBeenSet = false;
 
   bool m_allowAssociation{false};
+  bool m_sharedAccountIdHasBeenSet = false;
   bool m_allowAssociationHasBeenSet = false;
 };
 

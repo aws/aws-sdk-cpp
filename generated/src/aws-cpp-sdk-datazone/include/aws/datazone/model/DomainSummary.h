@@ -212,33 +212,33 @@ class DomainSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DomainVersion m_domainVersion{DomainVersion::NOT_SET};
-  bool m_domainVersionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_managedAccountId;
-  bool m_managedAccountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_portalUrl;
-  bool m_portalUrlHasBeenSet = false;
 
   DomainStatus m_status{DomainStatus::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainVersionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_managedAccountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_portalUrlHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

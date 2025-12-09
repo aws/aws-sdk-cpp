@@ -119,18 +119,18 @@ class WaveAggregatedStatus {
   ///@}
  private:
   WaveHealthStatus m_healthStatus{WaveHealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::String m_lastUpdateDateTime;
-  bool m_lastUpdateDateTimeHasBeenSet = false;
 
   WaveProgressStatus m_progressStatus{WaveProgressStatus::NOT_SET};
-  bool m_progressStatusHasBeenSet = false;
 
   Aws::String m_replicationStartedDateTime;
-  bool m_replicationStartedDateTimeHasBeenSet = false;
 
   long long m_totalApplications{0};
+  bool m_healthStatusHasBeenSet = false;
+  bool m_lastUpdateDateTimeHasBeenSet = false;
+  bool m_progressStatusHasBeenSet = false;
+  bool m_replicationStartedDateTimeHasBeenSet = false;
   bool m_totalApplicationsHasBeenSet = false;
 };
 

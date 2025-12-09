@@ -74,9 +74,9 @@ class TargetResource {
   ///@}
  private:
   TargetIdentifier m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_targetIdentifierHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

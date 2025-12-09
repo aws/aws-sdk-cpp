@@ -122,18 +122,18 @@ class StartProtectedQueryRequest : public CleanRoomsRequest {
   ///@}
  private:
   ProtectedQueryType m_type{ProtectedQueryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   ProtectedQuerySQLParameters m_sqlParameters;
-  bool m_sqlParametersHasBeenSet = false;
 
   ProtectedQueryResultConfiguration m_resultConfiguration;
-  bool m_resultConfigurationHasBeenSet = false;
 
   ComputeConfiguration m_computeConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_sqlParametersHasBeenSet = false;
+  bool m_resultConfigurationHasBeenSet = false;
   bool m_computeConfigurationHasBeenSet = false;
 };
 

@@ -120,18 +120,18 @@ class AdvancedSecurityOptions {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   bool m_internalUserDatabaseEnabled{false};
-  bool m_internalUserDatabaseEnabledHasBeenSet = false;
 
   SAMLOptionsOutput m_sAMLOptions;
-  bool m_sAMLOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_anonymousAuthDisableDate{};
-  bool m_anonymousAuthDisableDateHasBeenSet = false;
 
   bool m_anonymousAuthEnabled{false};
+  bool m_enabledHasBeenSet = false;
+  bool m_internalUserDatabaseEnabledHasBeenSet = false;
+  bool m_sAMLOptionsHasBeenSet = false;
+  bool m_anonymousAuthDisableDateHasBeenSet = false;
   bool m_anonymousAuthEnabledHasBeenSet = false;
 };
 

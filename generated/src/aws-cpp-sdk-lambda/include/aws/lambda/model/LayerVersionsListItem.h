@@ -180,24 +180,24 @@ class LayerVersionsListItem {
   ///@}
  private:
   Aws::String m_layerVersionArn;
-  bool m_layerVersionArnHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_createdDate;
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Vector<Runtime> m_compatibleRuntimes;
-  bool m_compatibleRuntimesHasBeenSet = false;
 
   Aws::String m_licenseInfo;
-  bool m_licenseInfoHasBeenSet = false;
 
   Aws::Vector<Architecture> m_compatibleArchitectures;
+  bool m_layerVersionArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_compatibleRuntimesHasBeenSet = false;
+  bool m_licenseInfoHasBeenSet = false;
   bool m_compatibleArchitecturesHasBeenSet = false;
 };
 

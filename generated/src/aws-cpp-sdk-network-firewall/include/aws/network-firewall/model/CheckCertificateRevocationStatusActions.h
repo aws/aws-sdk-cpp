@@ -84,9 +84,9 @@ class CheckCertificateRevocationStatusActions {
   ///@}
  private:
   RevocationCheckAction m_revokedStatusAction{RevocationCheckAction::NOT_SET};
-  bool m_revokedStatusActionHasBeenSet = false;
 
   RevocationCheckAction m_unknownStatusAction{RevocationCheckAction::NOT_SET};
+  bool m_revokedStatusActionHasBeenSet = false;
   bool m_unknownStatusActionHasBeenSet = false;
 };
 

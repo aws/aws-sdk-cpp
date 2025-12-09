@@ -59,9 +59,9 @@ class PurchaseReservedCacheNodesOfferingResult {
   ///@}
  private:
   ReservedCacheNode m_reservedCacheNode;
-  bool m_reservedCacheNodeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservedCacheNodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

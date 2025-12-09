@@ -234,33 +234,33 @@ class ManagedView {
   ///@}
  private:
   Aws::String m_managedViewArn;
-  bool m_managedViewArnHasBeenSet = false;
 
   Aws::String m_managedViewName;
-  bool m_managedViewNameHasBeenSet = false;
 
   Aws::String m_trustedService;
-  bool m_trustedServiceHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<IncludedProperty> m_includedProperties;
-  bool m_includedPropertiesHasBeenSet = false;
 
   SearchFilter m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_managedViewArnHasBeenSet = false;
+  bool m_managedViewNameHasBeenSet = false;
+  bool m_trustedServiceHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_includedPropertiesHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

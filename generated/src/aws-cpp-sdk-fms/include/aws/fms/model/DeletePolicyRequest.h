@@ -85,9 +85,9 @@ class DeletePolicyRequest : public FMSRequest {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   bool m_deleteAllPolicyResources{false};
+  bool m_policyIdHasBeenSet = false;
   bool m_deleteAllPolicyResourcesHasBeenSet = false;
 };
 

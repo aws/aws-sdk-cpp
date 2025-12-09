@@ -71,9 +71,9 @@ class SNSTopicPublishAction {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Payload m_payload;
+  bool m_targetArnHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

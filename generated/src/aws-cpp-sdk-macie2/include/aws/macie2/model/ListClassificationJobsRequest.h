@@ -102,15 +102,15 @@ class ListClassificationJobsRequest : public Macie2Request {
   ///@}
  private:
   ListJobsFilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ListJobsSortCriteria m_sortCriteria;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
 };
 

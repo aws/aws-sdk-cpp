@@ -72,9 +72,9 @@ class GetLogRecordRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logRecordPointer;
-  bool m_logRecordPointerHasBeenSet = false;
 
   bool m_unmask{false};
+  bool m_logRecordPointerHasBeenSet = false;
   bool m_unmaskHasBeenSet = false;
 };
 

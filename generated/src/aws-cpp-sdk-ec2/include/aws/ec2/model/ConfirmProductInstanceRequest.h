@@ -88,12 +88,12 @@ class ConfirmProductInstanceRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_productCode;
-  bool m_productCodeHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_productCodeHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -154,21 +154,21 @@ class Block {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   BlockType m_blockType{BlockType::NOT_SET};
-  bool m_blockTypeHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   int m_page{0};
-  bool m_pageHasBeenSet = false;
 
   Geometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::Vector<RelationshipsListItem> m_relationships;
+  bool m_idHasBeenSet = false;
+  bool m_blockTypeHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_pageHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
   bool m_relationshipsHasBeenSet = false;
 };
 

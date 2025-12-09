@@ -201,24 +201,24 @@ class CreateApprovalTeamRequest : public MPARequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ApprovalStrategy m_approvalStrategy;
-  bool m_approvalStrategyHasBeenSet = false;
 
   Aws::Vector<ApprovalTeamRequestApprover> m_approvers;
-  bool m_approversHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<PolicyReference> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_approvalStrategyHasBeenSet = false;
+  bool m_approversHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class EbsConfiguration {
   ///@}
  private:
   Aws::Vector<EbsBlockDeviceConfig> m_ebsBlockDeviceConfigs;
-  bool m_ebsBlockDeviceConfigsHasBeenSet = false;
 
   bool m_ebsOptimized{false};
+  bool m_ebsBlockDeviceConfigsHasBeenSet = false;
   bool m_ebsOptimizedHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DateTimeFormatConfiguration {
   ///@}
  private:
   Aws::String m_dateTimeFormat;
-  bool m_dateTimeFormatHasBeenSet = false;
 
   NullValueFormatConfiguration m_nullValueFormatConfiguration;
-  bool m_nullValueFormatConfigurationHasBeenSet = false;
 
   NumericFormatConfiguration m_numericFormatConfiguration;
+  bool m_dateTimeFormatHasBeenSet = false;
+  bool m_nullValueFormatConfigurationHasBeenSet = false;
   bool m_numericFormatConfigurationHasBeenSet = false;
 };
 

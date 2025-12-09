@@ -91,12 +91,12 @@ class ListVaultsResult {
   ///@}
  private:
   Aws::Vector<DescribeVaultOutput> m_vaultList;
-  bool m_vaultListHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vaultListHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

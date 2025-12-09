@@ -166,21 +166,21 @@ class CreateIpamScopeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamId;
-  bool m_ipamIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ExternalAuthorityConfiguration m_externalAuthorityConfiguration;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_externalAuthorityConfigurationHasBeenSet = false;
 };
 

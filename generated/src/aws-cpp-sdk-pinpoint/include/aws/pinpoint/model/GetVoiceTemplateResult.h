@@ -58,9 +58,9 @@ class GetVoiceTemplateResult {
   ///@}
  private:
   VoiceTemplateResponse m_voiceTemplateResponse;
-  bool m_voiceTemplateResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceTemplateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

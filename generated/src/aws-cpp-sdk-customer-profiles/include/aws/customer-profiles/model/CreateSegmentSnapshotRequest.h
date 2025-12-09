@@ -140,21 +140,21 @@ class CreateSegmentSnapshotRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_segmentDefinitionName;
-  bool m_segmentDefinitionNameHasBeenSet = false;
 
   DataFormat m_dataFormat{DataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_destinationUri;
+  bool m_domainNameHasBeenSet = false;
+  bool m_segmentDefinitionNameHasBeenSet = false;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_destinationUriHasBeenSet = false;
 };
 

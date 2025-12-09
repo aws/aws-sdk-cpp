@@ -115,15 +115,15 @@ class UpdateFeatureGroupRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::Vector<FeatureDefinition> m_featureAdditions;
-  bool m_featureAdditionsHasBeenSet = false;
 
   OnlineStoreConfigUpdate m_onlineStoreConfig;
-  bool m_onlineStoreConfigHasBeenSet = false;
 
   ThroughputConfigUpdate m_throughputConfig;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_featureAdditionsHasBeenSet = false;
+  bool m_onlineStoreConfigHasBeenSet = false;
   bool m_throughputConfigHasBeenSet = false;
 };
 

@@ -307,45 +307,45 @@ class DomainDeliverabilityCampaign {
   ///@}
  private:
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   Aws::String m_imageUrl;
-  bool m_imageUrlHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_fromAddress;
-  bool m_fromAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sendingIps;
-  bool m_sendingIpsHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstSeenDateTime{};
-  bool m_firstSeenDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSeenDateTime{};
-  bool m_lastSeenDateTimeHasBeenSet = false;
 
   long long m_inboxCount{0};
-  bool m_inboxCountHasBeenSet = false;
 
   long long m_spamCount{0};
-  bool m_spamCountHasBeenSet = false;
 
   double m_readRate{0.0};
-  bool m_readRateHasBeenSet = false;
 
   double m_deleteRate{0.0};
-  bool m_deleteRateHasBeenSet = false;
 
   double m_readDeleteRate{0.0};
-  bool m_readDeleteRateHasBeenSet = false;
 
   long long m_projectedVolume{0};
-  bool m_projectedVolumeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_esps;
+  bool m_campaignIdHasBeenSet = false;
+  bool m_imageUrlHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_fromAddressHasBeenSet = false;
+  bool m_sendingIpsHasBeenSet = false;
+  bool m_firstSeenDateTimeHasBeenSet = false;
+  bool m_lastSeenDateTimeHasBeenSet = false;
+  bool m_inboxCountHasBeenSet = false;
+  bool m_spamCountHasBeenSet = false;
+  bool m_readRateHasBeenSet = false;
+  bool m_deleteRateHasBeenSet = false;
+  bool m_readDeleteRateHasBeenSet = false;
+  bool m_projectedVolumeHasBeenSet = false;
   bool m_espsHasBeenSet = false;
 };
 

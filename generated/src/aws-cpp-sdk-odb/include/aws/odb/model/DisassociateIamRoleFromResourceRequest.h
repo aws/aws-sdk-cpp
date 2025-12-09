@@ -87,12 +87,12 @@ class DisassociateIamRoleFromResourceRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   SupportedAwsIntegration m_awsIntegration{SupportedAwsIntegration::NOT_SET};
-  bool m_awsIntegrationHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_awsIntegrationHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

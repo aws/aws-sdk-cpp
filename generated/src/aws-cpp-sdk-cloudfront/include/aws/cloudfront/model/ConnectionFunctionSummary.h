@@ -175,27 +175,27 @@ class ConnectionFunctionSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   FunctionConfig m_connectionFunctionConfig;
-  bool m_connectionFunctionConfigHasBeenSet = false;
 
   Aws::String m_connectionFunctionArn;
-  bool m_connectionFunctionArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   FunctionStage m_stage{FunctionStage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_connectionFunctionConfigHasBeenSet = false;
+  bool m_connectionFunctionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

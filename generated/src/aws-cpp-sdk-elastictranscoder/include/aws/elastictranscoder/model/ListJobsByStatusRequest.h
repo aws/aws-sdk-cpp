@@ -99,12 +99,12 @@ class ListJobsByStatusRequest : public ElasticTranscoderRequest {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_ascending;
-  bool m_ascendingHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_statusHasBeenSet = false;
+  bool m_ascendingHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

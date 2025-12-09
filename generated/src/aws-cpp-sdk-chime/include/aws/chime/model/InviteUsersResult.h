@@ -67,9 +67,9 @@ class InviteUsersResult {
   ///@}
  private:
   Aws::Vector<Invite> m_invites;
-  bool m_invitesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invitesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

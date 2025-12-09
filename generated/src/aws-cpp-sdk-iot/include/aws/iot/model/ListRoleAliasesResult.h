@@ -83,12 +83,12 @@ class ListRoleAliasesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_roleAliases;
-  bool m_roleAliasesHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleAliasesHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

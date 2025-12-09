@@ -94,9 +94,9 @@ class MaintenanceWindowAutomationParameters {
   ///@}
  private:
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
+  bool m_documentVersionHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

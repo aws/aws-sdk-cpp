@@ -75,9 +75,9 @@ class UpdatePackageConfigurationRequest : public IoTRequest {
   ///@}
  private:
   VersionUpdateByJobsConfig m_versionUpdateByJobsConfig;
-  bool m_versionUpdateByJobsConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_versionUpdateByJobsConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

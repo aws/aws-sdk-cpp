@@ -137,18 +137,18 @@ class AttachVolumeRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_targetName;
-  bool m_targetNameHasBeenSet = false;
 
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_diskId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_targetNameHasBeenSet = false;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
   bool m_diskIdHasBeenSet = false;
 };
 

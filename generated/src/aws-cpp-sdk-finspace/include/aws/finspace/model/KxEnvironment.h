@@ -368,54 +368,54 @@ class KxEnvironment {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TgwStatus m_tgwStatus{TgwStatus::NOT_SET};
-  bool m_tgwStatusHasBeenSet = false;
 
   DnsStatus m_dnsStatus{DnsStatus::NOT_SET};
-  bool m_dnsStatusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_environmentArn;
-  bool m_environmentArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dedicatedServiceAccountId;
-  bool m_dedicatedServiceAccountIdHasBeenSet = false;
 
   TransitGatewayConfiguration m_transitGatewayConfiguration;
-  bool m_transitGatewayConfigurationHasBeenSet = false;
 
   Aws::Vector<CustomDNSServer> m_customDNSConfiguration;
-  bool m_customDNSConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTimestamp{};
-  bool m_updateTimestampHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZoneIds;
-  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
+  bool m_nameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tgwStatusHasBeenSet = false;
+  bool m_dnsStatusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dedicatedServiceAccountIdHasBeenSet = false;
+  bool m_transitGatewayConfigurationHasBeenSet = false;
+  bool m_customDNSConfigurationHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_updateTimestampHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
   bool m_certificateAuthorityArnHasBeenSet = false;
 };
 

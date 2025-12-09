@@ -59,9 +59,9 @@ class CreateDataDeletionJobResult {
   ///@}
  private:
   Aws::String m_dataDeletionJobArn;
-  bool m_dataDeletionJobArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataDeletionJobArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

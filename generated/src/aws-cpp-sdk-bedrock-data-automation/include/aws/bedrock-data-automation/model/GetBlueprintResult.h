@@ -63,9 +63,9 @@ class GetBlueprintResult {
   ///@}
  private:
   Blueprint m_blueprint;
-  bool m_blueprintHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blueprintHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

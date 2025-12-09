@@ -141,21 +141,21 @@ class PipelineExecutionSummary {
   ///@}
  private:
   Aws::String m_pipelineExecutionArn;
-  bool m_pipelineExecutionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   PipelineExecutionStatus m_pipelineExecutionStatus{PipelineExecutionStatus::NOT_SET};
-  bool m_pipelineExecutionStatusHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDescription;
-  bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDisplayName;
-  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
   Aws::String m_pipelineExecutionFailureReason;
+  bool m_pipelineExecutionArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_pipelineExecutionStatusHasBeenSet = false;
+  bool m_pipelineExecutionDescriptionHasBeenSet = false;
+  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
   bool m_pipelineExecutionFailureReasonHasBeenSet = false;
 };
 

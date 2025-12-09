@@ -80,12 +80,12 @@ class GetGeneratedPolicyResult {
   ///@}
  private:
   JobDetails m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   GeneratedPolicyResults m_generatedPolicyResults;
-  bool m_generatedPolicyResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobDetailsHasBeenSet = false;
+  bool m_generatedPolicyResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

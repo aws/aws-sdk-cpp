@@ -113,15 +113,15 @@ class ScheduleLambdaFunctionFailedEventAttributes {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScheduleLambdaFunctionFailedCause m_cause{ScheduleLambdaFunctionFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

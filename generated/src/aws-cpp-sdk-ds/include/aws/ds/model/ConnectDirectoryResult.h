@@ -65,9 +65,9 @@ class ConnectDirectoryResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

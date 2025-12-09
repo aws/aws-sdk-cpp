@@ -90,12 +90,12 @@ class CodeSigning {
   ///@}
  private:
   Aws::String m_awsSignerJobId;
-  bool m_awsSignerJobIdHasBeenSet = false;
 
   StartSigningJobParameter m_startSigningJobParameter;
-  bool m_startSigningJobParameterHasBeenSet = false;
 
   CustomCodeSigning m_customCodeSigning;
+  bool m_awsSignerJobIdHasBeenSet = false;
+  bool m_startSigningJobParameterHasBeenSet = false;
   bool m_customCodeSigningHasBeenSet = false;
 };
 

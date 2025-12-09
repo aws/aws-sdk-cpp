@@ -79,12 +79,12 @@ class ModifyVpcPeeringConnectionOptionsResponse {
   ///@}
  private:
   PeeringConnectionOptions m_accepterPeeringConnectionOptions;
-  bool m_accepterPeeringConnectionOptionsHasBeenSet = false;
 
   PeeringConnectionOptions m_requesterPeeringConnectionOptions;
-  bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_accepterPeeringConnectionOptionsHasBeenSet = false;
+  bool m_requesterPeeringConnectionOptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

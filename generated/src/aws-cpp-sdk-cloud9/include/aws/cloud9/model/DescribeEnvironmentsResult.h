@@ -67,9 +67,9 @@ class DescribeEnvironmentsResult {
   ///@}
  private:
   Aws::Vector<Environment> m_environments;
-  bool m_environmentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListInvoiceSummariesResult {
   ///@}
  private:
   Aws::Vector<InvoiceSummary> m_invoiceSummaries;
-  bool m_invoiceSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_invoiceSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

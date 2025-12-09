@@ -74,9 +74,9 @@ class UpdateContinuousBackupsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   PointInTimeRecoverySpecification m_pointInTimeRecoverySpecification;
+  bool m_tableNameHasBeenSet = false;
   bool m_pointInTimeRecoverySpecificationHasBeenSet = false;
 };
 

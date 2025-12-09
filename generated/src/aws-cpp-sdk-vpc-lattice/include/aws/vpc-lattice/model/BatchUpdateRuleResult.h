@@ -91,12 +91,12 @@ class BatchUpdateRuleResult {
   ///@}
  private:
   Aws::Vector<RuleUpdateSuccess> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<RuleUpdateFailure> m_unsuccessful;
-  bool m_unsuccessfulHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_successfulHasBeenSet = false;
+  bool m_unsuccessfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

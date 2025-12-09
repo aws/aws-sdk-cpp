@@ -85,12 +85,12 @@ class ListRecommenderRecipesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecommenderRecipe> m_recommenderRecipes;
-  bool m_recommenderRecipesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommenderRecipesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

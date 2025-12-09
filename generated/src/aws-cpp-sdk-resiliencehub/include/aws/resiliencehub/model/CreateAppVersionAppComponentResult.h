@@ -101,15 +101,15 @@ class CreateAppVersionAppComponentResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   AppComponent m_appComponent;
-  bool m_appComponentHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appComponentHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

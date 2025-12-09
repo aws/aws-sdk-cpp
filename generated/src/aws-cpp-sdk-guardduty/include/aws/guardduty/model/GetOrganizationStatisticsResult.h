@@ -60,9 +60,9 @@ class GetOrganizationStatisticsResult {
   ///@}
  private:
   OrganizationDetails m_organizationDetails;
-  bool m_organizationDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

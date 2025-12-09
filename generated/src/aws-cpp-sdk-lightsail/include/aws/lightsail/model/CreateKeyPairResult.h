@@ -115,18 +115,18 @@ class CreateKeyPairResult {
   ///@}
  private:
   KeyPair m_keyPair;
-  bool m_keyPairHasBeenSet = false;
 
   Aws::String m_publicKeyBase64;
-  bool m_publicKeyBase64HasBeenSet = false;
 
   Aws::String m_privateKeyBase64;
-  bool m_privateKeyBase64HasBeenSet = false;
 
   Operation m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyPairHasBeenSet = false;
+  bool m_publicKeyBase64HasBeenSet = false;
+  bool m_privateKeyBase64HasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

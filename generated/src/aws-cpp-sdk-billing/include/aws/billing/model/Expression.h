@@ -91,12 +91,12 @@ class Expression {
   ///@}
  private:
   DimensionValues m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   TagValues m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TimeRange m_timeRange;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_timeRangeHasBeenSet = false;
 };
 

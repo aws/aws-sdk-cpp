@@ -68,9 +68,9 @@ class ListCrossAccountResourceAccountsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_resourceOwnerAwsAccountIds;
-  bool m_resourceOwnerAwsAccountIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceOwnerAwsAccountIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

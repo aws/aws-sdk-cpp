@@ -60,9 +60,9 @@ class UpdateShareInvitationResult {
   ///@}
  private:
   ShareInvitation m_shareInvitation;
-  bool m_shareInvitationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shareInvitationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

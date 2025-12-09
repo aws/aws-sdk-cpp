@@ -89,12 +89,12 @@ class GetIdentityCenterAuthTokenResult {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tokenHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

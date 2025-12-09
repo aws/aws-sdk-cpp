@@ -199,33 +199,33 @@ class LensSummary {
   ///@}
  private:
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensName;
-  bool m_lensNameHasBeenSet = false;
 
   LensType m_lensType{LensType::NOT_SET};
-  bool m_lensTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_lensVersion;
-  bool m_lensVersionHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   LensStatus m_lensStatus{LensStatus::NOT_SET};
+  bool m_lensArnHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensNameHasBeenSet = false;
+  bool m_lensTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_lensVersionHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_lensStatusHasBeenSet = false;
 };
 

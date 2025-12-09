@@ -79,9 +79,9 @@ class RouteServerBgpOptions {
   ///@}
  private:
   long long m_peerAsn{0};
-  bool m_peerAsnHasBeenSet = false;
 
   RouteServerPeerLivenessMode m_peerLivenessDetection{RouteServerPeerLivenessMode::NOT_SET};
+  bool m_peerAsnHasBeenSet = false;
   bool m_peerLivenessDetectionHasBeenSet = false;
 };
 

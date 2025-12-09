@@ -76,12 +76,12 @@ class GetOrganizationAdminAccountResult {
   ///@}
  private:
   Aws::String m_adminAccountId;
-  bool m_adminAccountIdHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adminAccountIdHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

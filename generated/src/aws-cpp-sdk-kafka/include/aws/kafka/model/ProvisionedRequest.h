@@ -265,36 +265,36 @@ class ProvisionedRequest {
   ///@}
  private:
   BrokerNodeGroupInfo m_brokerNodeGroupInfo;
-  bool m_brokerNodeGroupInfoHasBeenSet = false;
 
   Rebalancing m_rebalancing;
-  bool m_rebalancingHasBeenSet = false;
 
   ClientAuthentication m_clientAuthentication;
-  bool m_clientAuthenticationHasBeenSet = false;
 
   ConfigurationInfo m_configurationInfo;
-  bool m_configurationInfoHasBeenSet = false;
 
   EncryptionInfo m_encryptionInfo;
-  bool m_encryptionInfoHasBeenSet = false;
 
   EnhancedMonitoring m_enhancedMonitoring{EnhancedMonitoring::NOT_SET};
-  bool m_enhancedMonitoringHasBeenSet = false;
 
   OpenMonitoringInfo m_openMonitoring;
-  bool m_openMonitoringHasBeenSet = false;
 
   Aws::String m_kafkaVersion;
-  bool m_kafkaVersionHasBeenSet = false;
 
   LoggingInfo m_loggingInfo;
-  bool m_loggingInfoHasBeenSet = false;
 
   int m_numberOfBrokerNodes{0};
-  bool m_numberOfBrokerNodesHasBeenSet = false;
 
   StorageMode m_storageMode{StorageMode::NOT_SET};
+  bool m_brokerNodeGroupInfoHasBeenSet = false;
+  bool m_rebalancingHasBeenSet = false;
+  bool m_clientAuthenticationHasBeenSet = false;
+  bool m_configurationInfoHasBeenSet = false;
+  bool m_encryptionInfoHasBeenSet = false;
+  bool m_enhancedMonitoringHasBeenSet = false;
+  bool m_openMonitoringHasBeenSet = false;
+  bool m_kafkaVersionHasBeenSet = false;
+  bool m_loggingInfoHasBeenSet = false;
+  bool m_numberOfBrokerNodesHasBeenSet = false;
   bool m_storageModeHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class SqlRunConfiguration {
   ///@}
  private:
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
+  bool m_inputIdHasBeenSet = false;
   bool m_inputStartingPositionConfigurationHasBeenSet = false;
 };
 

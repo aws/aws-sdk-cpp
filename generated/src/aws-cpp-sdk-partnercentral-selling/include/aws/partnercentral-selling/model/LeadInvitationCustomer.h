@@ -152,21 +152,21 @@ class LeadInvitationCustomer {
   ///@}
  private:
   Industry m_industry{Industry::NOT_SET};
-  bool m_industryHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_websiteUrl;
-  bool m_websiteUrlHasBeenSet = false;
 
   CountryCode m_countryCode{CountryCode::NOT_SET};
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_awsMaturity;
-  bool m_awsMaturityHasBeenSet = false;
 
   MarketSegment m_marketSegment{MarketSegment::NOT_SET};
+  bool m_industryHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_websiteUrlHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
+  bool m_awsMaturityHasBeenSet = false;
   bool m_marketSegmentHasBeenSet = false;
 };
 

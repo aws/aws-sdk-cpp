@@ -112,15 +112,15 @@ class ParameterDeclaration {
   ///@}
  private:
   StringParameterDeclaration m_stringParameterDeclaration;
-  bool m_stringParameterDeclarationHasBeenSet = false;
 
   DecimalParameterDeclaration m_decimalParameterDeclaration;
-  bool m_decimalParameterDeclarationHasBeenSet = false;
 
   IntegerParameterDeclaration m_integerParameterDeclaration;
-  bool m_integerParameterDeclarationHasBeenSet = false;
 
   DateTimeParameterDeclaration m_dateTimeParameterDeclaration;
+  bool m_stringParameterDeclarationHasBeenSet = false;
+  bool m_decimalParameterDeclarationHasBeenSet = false;
+  bool m_integerParameterDeclarationHasBeenSet = false;
   bool m_dateTimeParameterDeclarationHasBeenSet = false;
 };
 

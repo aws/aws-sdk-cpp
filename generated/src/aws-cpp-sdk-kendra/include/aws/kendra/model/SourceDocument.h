@@ -104,12 +104,12 @@ class SourceDocument {
   ///@}
  private:
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_suggestionAttributes;
-  bool m_suggestionAttributesHasBeenSet = false;
 
   Aws::Vector<DocumentAttribute> m_additionalAttributes;
+  bool m_documentIdHasBeenSet = false;
+  bool m_suggestionAttributesHasBeenSet = false;
   bool m_additionalAttributesHasBeenSet = false;
 };
 

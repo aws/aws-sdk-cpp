@@ -164,21 +164,21 @@ class CreateServiceActionRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ServiceActionDefinitionType m_definitionType{ServiceActionDefinitionType::NOT_SET};
-  bool m_definitionTypeHasBeenSet = false;
 
   Aws::Map<ServiceActionDefinitionKey, Aws::String> m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_definitionTypeHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_acceptLanguageHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

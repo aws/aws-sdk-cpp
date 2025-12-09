@@ -97,15 +97,15 @@ class DeleteConfigResult {
   ///@}
  private:
   Aws::String m_configId;
-  bool m_configIdHasBeenSet = false;
 
   ConfigCapabilityType m_configType{ConfigCapabilityType::NOT_SET};
-  bool m_configTypeHasBeenSet = false;
 
   Aws::String m_configArn;
-  bool m_configArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configIdHasBeenSet = false;
+  bool m_configTypeHasBeenSet = false;
+  bool m_configArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

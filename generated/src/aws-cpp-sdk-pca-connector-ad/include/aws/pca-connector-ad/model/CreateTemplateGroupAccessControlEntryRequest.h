@@ -125,18 +125,18 @@ class CreateTemplateGroupAccessControlEntryRequest : public PcaConnectorAdReques
   ///@}
  private:
   AccessRights m_accessRights;
-  bool m_accessRightsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_groupDisplayName;
-  bool m_groupDisplayNameHasBeenSet = false;
 
   Aws::String m_groupSecurityIdentifier;
-  bool m_groupSecurityIdentifierHasBeenSet = false;
 
   Aws::String m_templateArn;
+  bool m_accessRightsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_groupDisplayNameHasBeenSet = false;
+  bool m_groupSecurityIdentifierHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
 };
 

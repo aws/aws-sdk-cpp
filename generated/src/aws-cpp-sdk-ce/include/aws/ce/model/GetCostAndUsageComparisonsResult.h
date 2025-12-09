@@ -113,15 +113,15 @@ class GetCostAndUsageComparisonsResult {
   ///@}
  private:
   Aws::Vector<CostAndUsageComparison> m_costAndUsageComparisons;
-  bool m_costAndUsageComparisonsHasBeenSet = false;
 
   Aws::Map<Aws::String, ComparisonMetricValue> m_totalCostAndUsage;
-  bool m_totalCostAndUsageHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costAndUsageComparisonsHasBeenSet = false;
+  bool m_totalCostAndUsageHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

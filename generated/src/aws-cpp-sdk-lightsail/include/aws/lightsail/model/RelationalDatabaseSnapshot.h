@@ -322,48 +322,48 @@ class RelationalDatabaseSnapshot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   int m_sizeInGb{0};
-  bool m_sizeInGbHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_fromRelationalDatabaseName;
-  bool m_fromRelationalDatabaseNameHasBeenSet = false;
 
   Aws::String m_fromRelationalDatabaseArn;
-  bool m_fromRelationalDatabaseArnHasBeenSet = false;
 
   Aws::String m_fromRelationalDatabaseBundleId;
-  bool m_fromRelationalDatabaseBundleIdHasBeenSet = false;
 
   Aws::String m_fromRelationalDatabaseBlueprintId;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_sizeInGbHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_fromRelationalDatabaseNameHasBeenSet = false;
+  bool m_fromRelationalDatabaseArnHasBeenSet = false;
+  bool m_fromRelationalDatabaseBundleIdHasBeenSet = false;
   bool m_fromRelationalDatabaseBlueprintIdHasBeenSet = false;
 };
 

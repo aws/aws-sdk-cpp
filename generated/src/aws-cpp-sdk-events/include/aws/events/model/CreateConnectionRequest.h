@@ -104,15 +104,15 @@ class CreateConnectionRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ConnectionAuthorizationType m_authorizationType{ConnectionAuthorizationType::NOT_SET};
-  bool m_authorizationTypeHasBeenSet = false;
 
   CreateConnectionAuthRequestParameters m_authParameters;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_authorizationTypeHasBeenSet = false;
   bool m_authParametersHasBeenSet = false;
 };
 

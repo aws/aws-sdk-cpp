@@ -80,9 +80,9 @@ class Origination {
   ///@}
  private:
   Aws::Vector<OriginationRoute> m_routes;
-  bool m_routesHasBeenSet = false;
 
   bool m_disabled{false};
+  bool m_routesHasBeenSet = false;
   bool m_disabledHasBeenSet = false;
 };
 

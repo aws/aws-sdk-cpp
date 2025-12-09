@@ -79,9 +79,9 @@ class CdnConfiguration {
   ///@}
  private:
   Aws::String m_adSegmentUrlPrefix;
-  bool m_adSegmentUrlPrefixHasBeenSet = false;
 
   Aws::String m_contentSegmentUrlPrefix;
+  bool m_adSegmentUrlPrefixHasBeenSet = false;
   bool m_contentSegmentUrlPrefixHasBeenSet = false;
 };
 

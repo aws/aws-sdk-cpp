@@ -61,9 +61,9 @@ class GetCollaborationAnalysisTemplateResult {
   ///@}
  private:
   CollaborationAnalysisTemplate m_collaborationAnalysisTemplate;
-  bool m_collaborationAnalysisTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collaborationAnalysisTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

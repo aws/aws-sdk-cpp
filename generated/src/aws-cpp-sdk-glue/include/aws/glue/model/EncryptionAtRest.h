@@ -87,12 +87,12 @@ class EncryptionAtRest {
   ///@}
  private:
   CatalogEncryptionMode m_catalogEncryptionMode{CatalogEncryptionMode::NOT_SET};
-  bool m_catalogEncryptionModeHasBeenSet = false;
 
   Aws::String m_sseAwsKmsKeyId;
-  bool m_sseAwsKmsKeyIdHasBeenSet = false;
 
   Aws::String m_catalogEncryptionServiceRole;
+  bool m_catalogEncryptionModeHasBeenSet = false;
+  bool m_sseAwsKmsKeyIdHasBeenSet = false;
   bool m_catalogEncryptionServiceRoleHasBeenSet = false;
 };
 

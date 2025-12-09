@@ -71,9 +71,9 @@ class PackageGroupReference {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_pattern;
+  bool m_arnHasBeenSet = false;
   bool m_patternHasBeenSet = false;
 };
 

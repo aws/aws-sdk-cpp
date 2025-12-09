@@ -158,27 +158,27 @@ class WorkflowRunStatistics {
   ///@}
  private:
   int m_totalActions{0};
-  bool m_totalActionsHasBeenSet = false;
 
   int m_timeoutActions{0};
-  bool m_timeoutActionsHasBeenSet = false;
 
   int m_failedActions{0};
-  bool m_failedActionsHasBeenSet = false;
 
   int m_stoppedActions{0};
-  bool m_stoppedActionsHasBeenSet = false;
 
   int m_succeededActions{0};
-  bool m_succeededActionsHasBeenSet = false;
 
   int m_runningActions{0};
-  bool m_runningActionsHasBeenSet = false;
 
   int m_erroredActions{0};
-  bool m_erroredActionsHasBeenSet = false;
 
   int m_waitingActions{0};
+  bool m_totalActionsHasBeenSet = false;
+  bool m_timeoutActionsHasBeenSet = false;
+  bool m_failedActionsHasBeenSet = false;
+  bool m_stoppedActionsHasBeenSet = false;
+  bool m_succeededActionsHasBeenSet = false;
+  bool m_runningActionsHasBeenSet = false;
+  bool m_erroredActionsHasBeenSet = false;
   bool m_waitingActionsHasBeenSet = false;
 };
 

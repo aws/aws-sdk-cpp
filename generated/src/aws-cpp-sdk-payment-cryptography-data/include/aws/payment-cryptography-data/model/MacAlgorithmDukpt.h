@@ -91,12 +91,12 @@ class MacAlgorithmDukpt {
   ///@}
  private:
   Aws::String m_keySerialNumber;
-  bool m_keySerialNumberHasBeenSet = false;
 
   DukptKeyVariant m_dukptKeyVariant{DukptKeyVariant::NOT_SET};
-  bool m_dukptKeyVariantHasBeenSet = false;
 
   DukptDerivationType m_dukptDerivationType{DukptDerivationType::NOT_SET};
+  bool m_keySerialNumberHasBeenSet = false;
+  bool m_dukptKeyVariantHasBeenSet = false;
   bool m_dukptDerivationTypeHasBeenSet = false;
 };
 

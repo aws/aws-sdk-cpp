@@ -128,18 +128,18 @@ class StartQueryRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_queryStatement;
-  bool m_queryStatementHasBeenSet = false;
 
   Aws::String m_deliveryS3Uri;
-  bool m_deliveryS3UriHasBeenSet = false;
 
   Aws::String m_queryAlias;
-  bool m_queryAliasHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   Aws::String m_eventDataStoreOwnerAccountId;
+  bool m_queryStatementHasBeenSet = false;
+  bool m_deliveryS3UriHasBeenSet = false;
+  bool m_queryAliasHasBeenSet = false;
+  bool m_queryParametersHasBeenSet = false;
   bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 };
 

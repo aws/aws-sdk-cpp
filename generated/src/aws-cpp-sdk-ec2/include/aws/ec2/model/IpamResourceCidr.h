@@ -344,51 +344,51 @@ class IpamResourceCidr {
   ///@}
  private:
   Aws::String m_ipamId;
-  bool m_ipamIdHasBeenSet = false;
 
   Aws::String m_ipamScopeId;
-  bool m_ipamScopeIdHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_resourceRegion;
-  bool m_resourceRegionHasBeenSet = false;
 
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_resourceCidr;
-  bool m_resourceCidrHasBeenSet = false;
 
   IpamResourceType m_resourceType{IpamResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<IpamResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   double m_ipUsage{0.0};
-  bool m_ipUsageHasBeenSet = false;
 
   IpamComplianceStatus m_complianceStatus{IpamComplianceStatus::NOT_SET};
-  bool m_complianceStatusHasBeenSet = false;
 
   IpamManagementState m_managementState{IpamManagementState::NOT_SET};
-  bool m_managementStateHasBeenSet = false;
 
   IpamOverlapStatus m_overlapStatus{IpamOverlapStatus::NOT_SET};
-  bool m_overlapStatusHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
+  bool m_ipamIdHasBeenSet = false;
+  bool m_ipamScopeIdHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_resourceRegionHasBeenSet = false;
+  bool m_resourceOwnerIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceCidrHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_ipUsageHasBeenSet = false;
+  bool m_complianceStatusHasBeenSet = false;
+  bool m_managementStateHasBeenSet = false;
+  bool m_overlapStatusHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
 };
 

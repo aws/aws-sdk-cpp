@@ -145,21 +145,21 @@ class AcceptPageRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_pageId;
-  bool m_pageIdHasBeenSet = false;
 
   Aws::String m_contactChannelId;
-  bool m_contactChannelIdHasBeenSet = false;
 
   AcceptType m_acceptType{AcceptType::NOT_SET};
-  bool m_acceptTypeHasBeenSet = false;
 
   Aws::String m_note;
-  bool m_noteHasBeenSet = false;
 
   Aws::String m_acceptCode;
-  bool m_acceptCodeHasBeenSet = false;
 
   AcceptCodeValidation m_acceptCodeValidation{AcceptCodeValidation::NOT_SET};
+  bool m_pageIdHasBeenSet = false;
+  bool m_contactChannelIdHasBeenSet = false;
+  bool m_acceptTypeHasBeenSet = false;
+  bool m_noteHasBeenSet = false;
+  bool m_acceptCodeHasBeenSet = false;
   bool m_acceptCodeValidationHasBeenSet = false;
 };
 

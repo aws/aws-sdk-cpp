@@ -65,9 +65,9 @@ class GetGeofenceRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_geofenceId;
+  bool m_collectionNameHasBeenSet = false;
   bool m_geofenceIdHasBeenSet = false;
 };
 

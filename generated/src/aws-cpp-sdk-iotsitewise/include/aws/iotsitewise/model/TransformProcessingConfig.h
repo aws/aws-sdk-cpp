@@ -68,9 +68,9 @@ class TransformProcessingConfig {
   ///@}
  private:
   ComputeLocation m_computeLocation{ComputeLocation::NOT_SET};
-  bool m_computeLocationHasBeenSet = false;
 
   ForwardingConfig m_forwardingConfig;
+  bool m_computeLocationHasBeenSet = false;
   bool m_forwardingConfigHasBeenSet = false;
 };
 

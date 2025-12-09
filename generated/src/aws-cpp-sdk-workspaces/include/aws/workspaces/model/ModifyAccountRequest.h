@@ -71,9 +71,9 @@ class ModifyAccountRequest : public WorkSpacesRequest {
   ///@}
  private:
   DedicatedTenancySupportEnum m_dedicatedTenancySupport{DedicatedTenancySupportEnum::NOT_SET};
-  bool m_dedicatedTenancySupportHasBeenSet = false;
 
   Aws::String m_dedicatedTenancyManagementCidrRange;
+  bool m_dedicatedTenancySupportHasBeenSet = false;
   bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
 };
 

@@ -114,18 +114,18 @@ class GetTableRecordExpirationJobStatusResult {
   ///@}
  private:
   TableRecordExpirationJobStatus m_status{TableRecordExpirationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRunTimestamp{};
-  bool m_lastRunTimestampHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   TableRecordExpirationJobMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_lastRunTimestampHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

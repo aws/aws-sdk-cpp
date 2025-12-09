@@ -153,18 +153,18 @@ class DescribeKeyPairsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_keyNames;
-  bool m_keyNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keyPairIds;
-  bool m_keyPairIdsHasBeenSet = false;
 
   bool m_includePublicKey{false};
-  bool m_includePublicKeyHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_keyNamesHasBeenSet = false;
+  bool m_keyPairIdsHasBeenSet = false;
+  bool m_includePublicKeyHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

@@ -94,9 +94,9 @@ class InboundAdditionalRecipients {
   ///@}
  private:
   Aws::Vector<EmailAddressInfo> m_toAddresses;
-  bool m_toAddressesHasBeenSet = false;
 
   Aws::Vector<EmailAddressInfo> m_ccAddresses;
+  bool m_toAddressesHasBeenSet = false;
   bool m_ccAddressesHasBeenSet = false;
 };
 

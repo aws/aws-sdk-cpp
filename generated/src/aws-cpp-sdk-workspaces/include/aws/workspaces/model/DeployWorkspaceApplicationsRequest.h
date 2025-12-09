@@ -67,9 +67,9 @@ class DeployWorkspaceApplicationsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   bool m_force{false};
+  bool m_workspaceIdHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

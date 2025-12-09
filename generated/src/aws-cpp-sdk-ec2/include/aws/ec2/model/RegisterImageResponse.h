@@ -65,9 +65,9 @@ class RegisterImageResponse {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_imageIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

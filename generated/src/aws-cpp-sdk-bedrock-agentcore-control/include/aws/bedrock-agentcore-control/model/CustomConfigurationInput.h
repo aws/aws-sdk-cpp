@@ -128,18 +128,18 @@ class CustomConfigurationInput {
   ///@}
  private:
   SemanticOverrideConfigurationInput m_semanticOverride;
-  bool m_semanticOverrideHasBeenSet = false;
 
   SummaryOverrideConfigurationInput m_summaryOverride;
-  bool m_summaryOverrideHasBeenSet = false;
 
   UserPreferenceOverrideConfigurationInput m_userPreferenceOverride;
-  bool m_userPreferenceOverrideHasBeenSet = false;
 
   EpisodicOverrideConfigurationInput m_episodicOverride;
-  bool m_episodicOverrideHasBeenSet = false;
 
   SelfManagedConfigurationInput m_selfManagedConfiguration;
+  bool m_semanticOverrideHasBeenSet = false;
+  bool m_summaryOverrideHasBeenSet = false;
+  bool m_userPreferenceOverrideHasBeenSet = false;
+  bool m_episodicOverrideHasBeenSet = false;
   bool m_selfManagedConfigurationHasBeenSet = false;
 };
 

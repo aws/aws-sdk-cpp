@@ -60,9 +60,9 @@ class DescribeStackInstanceResult {
   ///@}
  private:
   StackInstance m_stackInstance;
-  bool m_stackInstanceHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackInstanceHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

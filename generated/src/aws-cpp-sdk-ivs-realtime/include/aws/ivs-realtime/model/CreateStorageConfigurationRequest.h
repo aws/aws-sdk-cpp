@@ -98,12 +98,12 @@ class CreateStorageConfigurationRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3StorageConfiguration m_s3;
-  bool m_s3HasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class MetricDimensionGroups {
   ///@}
  private:
   Aws::String m_metric;
-  bool m_metricHasBeenSet = false;
 
   Aws::Vector<DimensionGroupDetail> m_groups;
+  bool m_metricHasBeenSet = false;
   bool m_groupsHasBeenSet = false;
 };
 

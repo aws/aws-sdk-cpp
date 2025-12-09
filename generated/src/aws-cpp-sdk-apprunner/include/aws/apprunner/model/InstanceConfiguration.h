@@ -91,12 +91,12 @@ class InstanceConfiguration {
   ///@}
  private:
   Aws::String m_cpu;
-  bool m_cpuHasBeenSet = false;
 
   Aws::String m_memory;
-  bool m_memoryHasBeenSet = false;
 
   Aws::String m_instanceRoleArn;
+  bool m_cpuHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
   bool m_instanceRoleArnHasBeenSet = false;
 };
 

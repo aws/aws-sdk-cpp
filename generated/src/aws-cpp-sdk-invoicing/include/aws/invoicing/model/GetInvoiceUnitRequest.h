@@ -72,9 +72,9 @@ class GetInvoiceUnitRequest : public InvoicingRequest {
   ///@}
  private:
   Aws::String m_invoiceUnitArn;
-  bool m_invoiceUnitArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_asOf{};
+  bool m_invoiceUnitArnHasBeenSet = false;
   bool m_asOfHasBeenSet = false;
 };
 

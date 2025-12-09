@@ -398,63 +398,63 @@ class Session {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   SessionStatus m_status{SessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   SessionCommand m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-  bool m_defaultArgumentsHasBeenSet = false;
 
   ConnectionsList m_connections;
-  bool m_connectionsHasBeenSet = false;
 
   double m_progress{0.0};
-  bool m_progressHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   Aws::String m_securityConfiguration;
-  bool m_securityConfigurationHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   double m_executionTime{0.0};
-  bool m_executionTimeHasBeenSet = false;
 
   double m_dPUSeconds{0.0};
-  bool m_dPUSecondsHasBeenSet = false;
 
   int m_idleTimeout{0};
-  bool m_idleTimeoutHasBeenSet = false;
 
   Aws::String m_profileName;
+  bool m_idHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_commandHasBeenSet = false;
+  bool m_defaultArgumentsHasBeenSet = false;
+  bool m_connectionsHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_securityConfigurationHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_executionTimeHasBeenSet = false;
+  bool m_dPUSecondsHasBeenSet = false;
+  bool m_idleTimeoutHasBeenSet = false;
   bool m_profileNameHasBeenSet = false;
 };
 

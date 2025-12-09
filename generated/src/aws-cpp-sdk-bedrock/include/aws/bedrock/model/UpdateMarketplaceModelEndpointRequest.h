@@ -90,12 +90,12 @@ class UpdateMarketplaceModelEndpointRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   EndpointConfig m_endpointConfig;
-  bool m_endpointConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_endpointArnHasBeenSet = false;
+  bool m_endpointConfigHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

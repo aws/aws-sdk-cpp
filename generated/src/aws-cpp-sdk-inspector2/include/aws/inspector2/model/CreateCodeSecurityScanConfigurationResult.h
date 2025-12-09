@@ -60,9 +60,9 @@ class CreateCodeSecurityScanConfigurationResult {
   ///@}
  private:
   Aws::String m_scanConfigurationArn;
-  bool m_scanConfigurationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scanConfigurationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

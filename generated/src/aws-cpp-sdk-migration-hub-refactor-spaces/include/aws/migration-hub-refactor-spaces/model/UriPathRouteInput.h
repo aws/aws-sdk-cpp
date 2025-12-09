@@ -133,18 +133,18 @@ class UriPathRouteInput {
   ///@}
  private:
   RouteActivationState m_activationState{RouteActivationState::NOT_SET};
-  bool m_activationStateHasBeenSet = false;
 
   bool m_appendSourcePath{false};
-  bool m_appendSourcePathHasBeenSet = false;
 
   bool m_includeChildPaths{false};
-  bool m_includeChildPathsHasBeenSet = false;
 
   Aws::Vector<HttpMethod> m_methods;
-  bool m_methodsHasBeenSet = false;
 
   Aws::String m_sourcePath;
+  bool m_activationStateHasBeenSet = false;
+  bool m_appendSourcePathHasBeenSet = false;
+  bool m_includeChildPathsHasBeenSet = false;
+  bool m_methodsHasBeenSet = false;
   bool m_sourcePathHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class InsightResultValue {
   ///@}
  private:
   Aws::String m_groupByAttributeValue;
-  bool m_groupByAttributeValueHasBeenSet = false;
 
   int m_count{0};
+  bool m_groupByAttributeValueHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class TableOptimizer {
   ///@}
  private:
   TableOptimizerType m_type{TableOptimizerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TableOptimizerConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   TableOptimizerRun m_lastRun;
-  bool m_lastRunHasBeenSet = false;
 
   ConfigurationSource m_configurationSource{ConfigurationSource::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_lastRunHasBeenSet = false;
   bool m_configurationSourceHasBeenSet = false;
 };
 

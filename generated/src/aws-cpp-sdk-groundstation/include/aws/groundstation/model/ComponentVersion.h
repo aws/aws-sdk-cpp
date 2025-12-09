@@ -75,9 +75,9 @@ class ComponentVersion {
   ///@}
  private:
   Aws::String m_componentType;
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versions;
+  bool m_componentTypeHasBeenSet = false;
   bool m_versionsHasBeenSet = false;
 };
 

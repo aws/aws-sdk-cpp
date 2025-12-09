@@ -293,33 +293,33 @@ class StartMedicalScribeJobRequest : public TranscribeServiceRequest {
   ///@}
  private:
   Aws::String m_medicalScribeJobName;
-  bool m_medicalScribeJobNameHasBeenSet = false;
 
   Media m_media;
-  bool m_mediaHasBeenSet = false;
 
   Aws::String m_outputBucketName;
-  bool m_outputBucketNameHasBeenSet = false;
 
   Aws::String m_outputEncryptionKMSKeyId;
-  bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_kMSEncryptionContext;
-  bool m_kMSEncryptionContextHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   MedicalScribeSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::Vector<MedicalScribeChannelDefinition> m_channelDefinitions;
-  bool m_channelDefinitionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MedicalScribeContext m_medicalScribeContext;
+  bool m_medicalScribeJobNameHasBeenSet = false;
+  bool m_mediaHasBeenSet = false;
+  bool m_outputBucketNameHasBeenSet = false;
+  bool m_outputEncryptionKMSKeyIdHasBeenSet = false;
+  bool m_kMSEncryptionContextHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_channelDefinitionsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_medicalScribeContextHasBeenSet = false;
 };
 

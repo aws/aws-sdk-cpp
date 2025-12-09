@@ -162,24 +162,24 @@ class StoreImageTaskResponse {
   ///@}
  private:
   Aws::String m_amiId;
-  bool m_amiIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskStartTime{};
-  bool m_taskStartTimeHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_s3objectKey;
-  bool m_s3objectKeyHasBeenSet = false;
 
   int m_progressPercentage{0};
-  bool m_progressPercentageHasBeenSet = false;
 
   Aws::String m_storeTaskState;
-  bool m_storeTaskStateHasBeenSet = false;
 
   Aws::String m_storeTaskFailureReason;
+  bool m_amiIdHasBeenSet = false;
+  bool m_taskStartTimeHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_s3objectKeyHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
+  bool m_storeTaskStateHasBeenSet = false;
   bool m_storeTaskFailureReasonHasBeenSet = false;
 };
 

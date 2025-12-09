@@ -101,12 +101,12 @@ class CheckAccessNotGrantedRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Vector<Access> m_access;
-  bool m_accessHasBeenSet = false;
 
   AccessCheckPolicyType m_policyType{AccessCheckPolicyType::NOT_SET};
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_accessHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

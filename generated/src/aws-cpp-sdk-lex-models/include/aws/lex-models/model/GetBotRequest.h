@@ -65,9 +65,9 @@ class GetBotRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_versionOrAlias;
+  bool m_nameHasBeenSet = false;
   bool m_versionOrAliasHasBeenSet = false;
 };
 

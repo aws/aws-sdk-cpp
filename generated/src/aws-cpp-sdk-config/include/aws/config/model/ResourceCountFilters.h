@@ -86,12 +86,12 @@ class ResourceCountFilters {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

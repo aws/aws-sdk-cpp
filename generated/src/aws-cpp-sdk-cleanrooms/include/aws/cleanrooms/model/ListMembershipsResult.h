@@ -84,12 +84,12 @@ class ListMembershipsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MembershipSummary> m_membershipSummaries;
-  bool m_membershipSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_membershipSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

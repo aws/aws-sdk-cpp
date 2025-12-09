@@ -68,9 +68,9 @@ class UpdateTerminationProtectionRequest : public CloudFormationRequest {
   ///@}
  private:
   bool m_enableTerminationProtection{false};
-  bool m_enableTerminationProtectionHasBeenSet = false;
 
   Aws::String m_stackName;
+  bool m_enableTerminationProtectionHasBeenSet = false;
   bool m_stackNameHasBeenSet = false;
 };
 

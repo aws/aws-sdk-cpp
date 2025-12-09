@@ -108,15 +108,15 @@ class EventTypeSummary {
   ///@}
  private:
   Aws::String m_eventTypeId;
-  bool m_eventTypeIdHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_eventTypeIdHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

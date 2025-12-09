@@ -184,27 +184,27 @@ class DocumentMetadata {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_creatorId;
-  bool m_creatorIdHasBeenSet = false;
 
   Aws::String m_parentFolderId;
-  bool m_parentFolderIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTimestamp{};
-  bool m_modifiedTimestampHasBeenSet = false;
 
   DocumentVersionMetadata m_latestVersionMetadata;
-  bool m_latestVersionMetadataHasBeenSet = false;
 
   ResourceStateType m_resourceState{ResourceStateType::NOT_SET};
-  bool m_resourceStateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
+  bool m_idHasBeenSet = false;
+  bool m_creatorIdHasBeenSet = false;
+  bool m_parentFolderIdHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_modifiedTimestampHasBeenSet = false;
+  bool m_latestVersionMetadataHasBeenSet = false;
+  bool m_resourceStateHasBeenSet = false;
   bool m_labelsHasBeenSet = false;
 };
 

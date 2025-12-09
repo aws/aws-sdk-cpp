@@ -106,15 +106,15 @@ class TenantInfo {
   ///@}
  private:
   Aws::String m_tenantName;
-  bool m_tenantNameHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_tenantArn;
-  bool m_tenantArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_tenantNameHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_tenantArnHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

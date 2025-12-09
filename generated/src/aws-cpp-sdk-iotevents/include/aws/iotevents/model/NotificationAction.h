@@ -106,12 +106,12 @@ class NotificationAction {
   ///@}
  private:
   NotificationTargetActions m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<SMSConfiguration> m_smsConfigurations;
-  bool m_smsConfigurationsHasBeenSet = false;
 
   Aws::Vector<EmailConfiguration> m_emailConfigurations;
+  bool m_actionHasBeenSet = false;
+  bool m_smsConfigurationsHasBeenSet = false;
   bool m_emailConfigurationsHasBeenSet = false;
 };
 

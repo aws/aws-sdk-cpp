@@ -198,27 +198,27 @@ class TableOptimizerRun {
   ///@}
  private:
   TableOptimizerEventType m_eventType{TableOptimizerEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   CompactionMetrics m_compactionMetrics;
-  bool m_compactionMetricsHasBeenSet = false;
 
   CompactionStrategy m_compactionStrategy{CompactionStrategy::NOT_SET};
-  bool m_compactionStrategyHasBeenSet = false;
 
   RetentionMetrics m_retentionMetrics;
-  bool m_retentionMetricsHasBeenSet = false;
 
   OrphanFileDeletionMetrics m_orphanFileDeletionMetrics;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_compactionMetricsHasBeenSet = false;
+  bool m_compactionStrategyHasBeenSet = false;
+  bool m_retentionMetricsHasBeenSet = false;
   bool m_orphanFileDeletionMetricsHasBeenSet = false;
 };
 

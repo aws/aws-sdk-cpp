@@ -275,39 +275,39 @@ class DeliveryStreamDescription {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   Aws::String m_deliveryStreamARN;
-  bool m_deliveryStreamARNHasBeenSet = false;
 
   DeliveryStreamStatus m_deliveryStreamStatus{DeliveryStreamStatus::NOT_SET};
-  bool m_deliveryStreamStatusHasBeenSet = false;
 
   FailureDescription m_failureDescription;
-  bool m_failureDescriptionHasBeenSet = false;
 
   DeliveryStreamEncryptionConfiguration m_deliveryStreamEncryptionConfiguration;
-  bool m_deliveryStreamEncryptionConfigurationHasBeenSet = false;
 
   DeliveryStreamType m_deliveryStreamType{DeliveryStreamType::NOT_SET};
-  bool m_deliveryStreamTypeHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   SourceDescription m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<DestinationDescription> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   bool m_hasMoreDestinations{false};
+  bool m_deliveryStreamNameHasBeenSet = false;
+  bool m_deliveryStreamARNHasBeenSet = false;
+  bool m_deliveryStreamStatusHasBeenSet = false;
+  bool m_failureDescriptionHasBeenSet = false;
+  bool m_deliveryStreamEncryptionConfigurationHasBeenSet = false;
+  bool m_deliveryStreamTypeHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
   bool m_hasMoreDestinationsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class S3MachineLearningModelResourceData {
   ///@}
  private:
   Aws::String m_destinationPath;
-  bool m_destinationPathHasBeenSet = false;
 
   ResourceDownloadOwnerSetting m_ownerSetting;
-  bool m_ownerSettingHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_destinationPathHasBeenSet = false;
+  bool m_ownerSettingHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

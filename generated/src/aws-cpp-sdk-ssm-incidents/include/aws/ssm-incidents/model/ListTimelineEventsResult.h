@@ -85,12 +85,12 @@ class ListTimelineEventsResult {
   ///@}
  private:
   Aws::Vector<EventSummary> m_eventSummaries;
-  bool m_eventSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

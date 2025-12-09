@@ -77,9 +77,9 @@ class TemplateSourceAnalysis {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<DataSetReference> m_dataSetReferences;
+  bool m_arnHasBeenSet = false;
   bool m_dataSetReferencesHasBeenSet = false;
 };
 

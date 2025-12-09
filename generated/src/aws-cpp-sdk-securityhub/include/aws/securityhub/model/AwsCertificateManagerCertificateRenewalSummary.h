@@ -133,15 +133,15 @@ class AwsCertificateManagerCertificateRenewalSummary {
   ///@}
  private:
   Aws::Vector<AwsCertificateManagerCertificateDomainValidationOption> m_domainValidationOptions;
-  bool m_domainValidationOptionsHasBeenSet = false;
 
   Aws::String m_renewalStatus;
-  bool m_renewalStatusHasBeenSet = false;
 
   Aws::String m_renewalStatusReason;
-  bool m_renewalStatusReasonHasBeenSet = false;
 
   Aws::String m_updatedAt;
+  bool m_domainValidationOptionsHasBeenSet = false;
+  bool m_renewalStatusHasBeenSet = false;
+  bool m_renewalStatusReasonHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

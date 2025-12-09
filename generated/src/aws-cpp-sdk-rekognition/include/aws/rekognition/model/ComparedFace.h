@@ -179,24 +179,24 @@ class ComparedFace {
   ///@}
  private:
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::Vector<Landmark> m_landmarks;
-  bool m_landmarksHasBeenSet = false;
 
   Pose m_pose;
-  bool m_poseHasBeenSet = false;
 
   ImageQuality m_quality;
-  bool m_qualityHasBeenSet = false;
 
   Aws::Vector<Emotion> m_emotions;
-  bool m_emotionsHasBeenSet = false;
 
   Smile m_smile;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_landmarksHasBeenSet = false;
+  bool m_poseHasBeenSet = false;
+  bool m_qualityHasBeenSet = false;
+  bool m_emotionsHasBeenSet = false;
   bool m_smileHasBeenSet = false;
 };
 

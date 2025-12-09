@@ -104,15 +104,15 @@ class TableCell {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_topAnswer{false};
-  bool m_topAnswerHasBeenSet = false;
 
   bool m_highlighted{false};
-  bool m_highlightedHasBeenSet = false;
 
   bool m_header{false};
+  bool m_valueHasBeenSet = false;
+  bool m_topAnswerHasBeenSet = false;
+  bool m_highlightedHasBeenSet = false;
   bool m_headerHasBeenSet = false;
 };
 

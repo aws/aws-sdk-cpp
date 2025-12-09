@@ -58,9 +58,9 @@ class GetSegmentExportJobsResult {
   ///@}
  private:
   ExportJobsResponse m_exportJobsResponse;
-  bool m_exportJobsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportJobsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

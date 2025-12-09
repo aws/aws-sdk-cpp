@@ -174,21 +174,21 @@ class MetricDataResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<double> m_values;
-  bool m_valuesHasBeenSet = false;
 
   StatusCode m_statusCode{StatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Vector<MessageData> m_messages;
+  bool m_idHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_timestampsHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
 };
 

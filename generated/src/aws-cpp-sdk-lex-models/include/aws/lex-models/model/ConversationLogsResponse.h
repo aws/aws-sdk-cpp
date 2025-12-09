@@ -79,9 +79,9 @@ class ConversationLogsResponse {
   ///@}
  private:
   Aws::Vector<LogSettingsResponse> m_logSettings;
-  bool m_logSettingsHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
+  bool m_logSettingsHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
 };
 

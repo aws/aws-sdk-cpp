@@ -68,9 +68,9 @@ class ImageFile {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   ImageFileType m_type{ImageFileType::NOT_SET};
+  bool m_dataHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

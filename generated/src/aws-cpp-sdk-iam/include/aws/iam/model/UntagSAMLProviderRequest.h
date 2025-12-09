@@ -81,9 +81,9 @@ class UntagSAMLProviderRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_sAMLProviderArn;
-  bool m_sAMLProviderArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_sAMLProviderArnHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

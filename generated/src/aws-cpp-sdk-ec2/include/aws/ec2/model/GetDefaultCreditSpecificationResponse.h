@@ -62,9 +62,9 @@ class GetDefaultCreditSpecificationResponse {
   ///@}
  private:
   InstanceFamilyCreditSpecification m_instanceFamilyCreditSpecification;
-  bool m_instanceFamilyCreditSpecificationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceFamilyCreditSpecificationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

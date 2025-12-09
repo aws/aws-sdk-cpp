@@ -137,18 +137,18 @@ class CreateTapePoolRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_poolName;
-  bool m_poolNameHasBeenSet = false;
 
   TapeStorageClass m_storageClass{TapeStorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   RetentionLockType m_retentionLockType{RetentionLockType::NOT_SET};
-  bool m_retentionLockTypeHasBeenSet = false;
 
   int m_retentionLockTimeInDays{0};
-  bool m_retentionLockTimeInDaysHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_poolNameHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_retentionLockTypeHasBeenSet = false;
+  bool m_retentionLockTimeInDaysHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

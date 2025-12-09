@@ -190,27 +190,27 @@ class CreateActionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   ActionSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_actionType;
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionStatus m_status{ActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   MetadataProperties m_metadataProperties;
-  bool m_metadataPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_actionNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_metadataPropertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

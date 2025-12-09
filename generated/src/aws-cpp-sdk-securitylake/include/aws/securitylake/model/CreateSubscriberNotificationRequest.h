@@ -67,9 +67,9 @@ class CreateSubscriberNotificationRequest : public SecurityLakeRequest {
   ///@}
  private:
   NotificationConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_subscriberId;
+  bool m_configurationHasBeenSet = false;
   bool m_subscriberIdHasBeenSet = false;
 };
 

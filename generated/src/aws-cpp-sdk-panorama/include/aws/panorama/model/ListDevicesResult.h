@@ -84,12 +84,12 @@ class ListDevicesResult {
   ///@}
  private:
   Aws::Vector<Device> m_devices;
-  bool m_devicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_devicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

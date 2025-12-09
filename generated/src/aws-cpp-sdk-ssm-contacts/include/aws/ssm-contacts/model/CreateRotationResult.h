@@ -59,9 +59,9 @@ class CreateRotationResult {
   ///@}
  private:
   Aws::String m_rotationArn;
-  bool m_rotationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_rotationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -159,24 +159,24 @@ class ProfileHistoryRecord {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_objectTypeName;
-  bool m_objectTypeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_profileObjectUniqueKey;
-  bool m_profileObjectUniqueKeyHasBeenSet = false;
 
   Aws::String m_performedBy;
+  bool m_idHasBeenSet = false;
+  bool m_objectTypeNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_profileObjectUniqueKeyHasBeenSet = false;
   bool m_performedByHasBeenSet = false;
 };
 

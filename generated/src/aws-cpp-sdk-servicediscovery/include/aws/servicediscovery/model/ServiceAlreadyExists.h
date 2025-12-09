@@ -103,15 +103,15 @@ class ServiceAlreadyExists {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_serviceArn;
+  bool m_messageHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
   bool m_serviceArnHasBeenSet = false;
 };
 

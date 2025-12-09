@@ -118,18 +118,18 @@ class DataCaptureConfigSummary {
   ///@}
  private:
   bool m_enableCapture{false};
-  bool m_enableCaptureHasBeenSet = false;
 
   CaptureStatus m_captureStatus{CaptureStatus::NOT_SET};
-  bool m_captureStatusHasBeenSet = false;
 
   int m_currentSamplingPercentage{0};
-  bool m_currentSamplingPercentageHasBeenSet = false;
 
   Aws::String m_destinationS3Uri;
-  bool m_destinationS3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_enableCaptureHasBeenSet = false;
+  bool m_captureStatusHasBeenSet = false;
+  bool m_currentSamplingPercentageHasBeenSet = false;
+  bool m_destinationS3UriHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

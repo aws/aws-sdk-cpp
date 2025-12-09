@@ -93,12 +93,12 @@ class DetectFacesResult {
   ///@}
  private:
   Aws::Vector<FaceDetail> m_faceDetails;
-  bool m_faceDetailsHasBeenSet = false;
 
   OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
-  bool m_orientationCorrectionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_faceDetailsHasBeenSet = false;
+  bool m_orientationCorrectionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

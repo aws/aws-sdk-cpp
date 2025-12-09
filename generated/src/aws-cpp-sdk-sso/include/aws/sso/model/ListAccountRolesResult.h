@@ -85,12 +85,12 @@ class ListAccountRolesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RoleInfo> m_roleList;
-  bool m_roleListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_roleListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

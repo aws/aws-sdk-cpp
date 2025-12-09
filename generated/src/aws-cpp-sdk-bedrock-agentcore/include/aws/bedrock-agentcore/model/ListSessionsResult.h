@@ -85,12 +85,12 @@ class ListSessionsResult {
   ///@}
  private:
   Aws::Vector<SessionSummary> m_sessionSummaries;
-  bool m_sessionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

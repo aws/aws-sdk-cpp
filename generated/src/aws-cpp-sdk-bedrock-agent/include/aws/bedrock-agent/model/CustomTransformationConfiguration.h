@@ -84,9 +84,9 @@ class CustomTransformationConfiguration {
   ///@}
  private:
   IntermediateStorage m_intermediateStorage;
-  bool m_intermediateStorageHasBeenSet = false;
 
   Aws::Vector<Transformation> m_transformations;
+  bool m_intermediateStorageHasBeenSet = false;
   bool m_transformationsHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class VirtualGatewayPortMapping {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   VirtualGatewayPortProtocol m_protocol{VirtualGatewayPortProtocol::NOT_SET};
+  bool m_portHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

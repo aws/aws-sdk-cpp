@@ -60,9 +60,9 @@ class DeleteNatGatewayResponse {
   ///@}
  private:
   Aws::String m_natGatewayId;
-  bool m_natGatewayIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_natGatewayIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

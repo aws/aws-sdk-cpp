@@ -132,18 +132,18 @@ class StartVariantImportJobRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<VariantImportItemSource> m_items;
-  bool m_itemsHasBeenSet = false;
 
   bool m_runLeftNormalization{false};
-  bool m_runLeftNormalizationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_annotationFields;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_runLeftNormalizationHasBeenSet = false;
   bool m_annotationFieldsHasBeenSet = false;
 };
 

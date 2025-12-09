@@ -110,15 +110,15 @@ class PineconeConfiguration {
   ///@}
  private:
   Aws::String m_connectionString;
-  bool m_connectionStringHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
-  bool m_credentialsSecretArnHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   PineconeFieldMapping m_fieldMapping;
+  bool m_connectionStringHasBeenSet = false;
+  bool m_credentialsSecretArnHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
   bool m_fieldMappingHasBeenSet = false;
 };
 

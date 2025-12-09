@@ -95,12 +95,12 @@ class BatchStatementResponse {
   ///@}
  private:
   BatchStatementError m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_item;
+  bool m_errorHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_itemHasBeenSet = false;
 };
 

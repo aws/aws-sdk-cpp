@@ -377,54 +377,54 @@ class Eac3AtmosSettings {
   ///@}
  private:
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   Eac3AtmosBitstreamMode m_bitstreamMode{Eac3AtmosBitstreamMode::NOT_SET};
-  bool m_bitstreamModeHasBeenSet = false;
 
   Eac3AtmosCodingMode m_codingMode{Eac3AtmosCodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   Eac3AtmosDialogueIntelligence m_dialogueIntelligence{Eac3AtmosDialogueIntelligence::NOT_SET};
-  bool m_dialogueIntelligenceHasBeenSet = false;
 
   Eac3AtmosDownmixControl m_downmixControl{Eac3AtmosDownmixControl::NOT_SET};
-  bool m_downmixControlHasBeenSet = false;
 
   Eac3AtmosDynamicRangeCompressionLine m_dynamicRangeCompressionLine{Eac3AtmosDynamicRangeCompressionLine::NOT_SET};
-  bool m_dynamicRangeCompressionLineHasBeenSet = false;
 
   Eac3AtmosDynamicRangeCompressionRf m_dynamicRangeCompressionRf{Eac3AtmosDynamicRangeCompressionRf::NOT_SET};
-  bool m_dynamicRangeCompressionRfHasBeenSet = false;
 
   Eac3AtmosDynamicRangeControl m_dynamicRangeControl{Eac3AtmosDynamicRangeControl::NOT_SET};
-  bool m_dynamicRangeControlHasBeenSet = false;
 
   double m_loRoCenterMixLevel{0.0};
-  bool m_loRoCenterMixLevelHasBeenSet = false;
 
   double m_loRoSurroundMixLevel{0.0};
-  bool m_loRoSurroundMixLevelHasBeenSet = false;
 
   double m_ltRtCenterMixLevel{0.0};
-  bool m_ltRtCenterMixLevelHasBeenSet = false;
 
   double m_ltRtSurroundMixLevel{0.0};
-  bool m_ltRtSurroundMixLevelHasBeenSet = false;
 
   Eac3AtmosMeteringMode m_meteringMode{Eac3AtmosMeteringMode::NOT_SET};
-  bool m_meteringModeHasBeenSet = false;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   int m_speechThreshold{0};
-  bool m_speechThresholdHasBeenSet = false;
 
   Eac3AtmosStereoDownmix m_stereoDownmix{Eac3AtmosStereoDownmix::NOT_SET};
-  bool m_stereoDownmixHasBeenSet = false;
 
   Eac3AtmosSurroundExMode m_surroundExMode{Eac3AtmosSurroundExMode::NOT_SET};
+  bool m_bitrateHasBeenSet = false;
+  bool m_bitstreamModeHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
+  bool m_dialogueIntelligenceHasBeenSet = false;
+  bool m_downmixControlHasBeenSet = false;
+  bool m_dynamicRangeCompressionLineHasBeenSet = false;
+  bool m_dynamicRangeCompressionRfHasBeenSet = false;
+  bool m_dynamicRangeControlHasBeenSet = false;
+  bool m_loRoCenterMixLevelHasBeenSet = false;
+  bool m_loRoSurroundMixLevelHasBeenSet = false;
+  bool m_ltRtCenterMixLevelHasBeenSet = false;
+  bool m_ltRtSurroundMixLevelHasBeenSet = false;
+  bool m_meteringModeHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_speechThresholdHasBeenSet = false;
+  bool m_stereoDownmixHasBeenSet = false;
   bool m_surroundExModeHasBeenSet = false;
 };
 

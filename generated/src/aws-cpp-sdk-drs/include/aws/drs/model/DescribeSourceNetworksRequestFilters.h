@@ -95,12 +95,12 @@ class DescribeSourceNetworksRequestFilters {
   ///@}
  private:
   Aws::String m_originAccountID;
-  bool m_originAccountIDHasBeenSet = false;
 
   Aws::String m_originRegion;
-  bool m_originRegionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceNetworkIDs;
+  bool m_originAccountIDHasBeenSet = false;
+  bool m_originRegionHasBeenSet = false;
   bool m_sourceNetworkIDsHasBeenSet = false;
 };
 

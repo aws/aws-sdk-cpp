@@ -86,12 +86,12 @@ class ListDataIntegrationsResult {
   ///@}
  private:
   Aws::Vector<DataIntegrationSummary> m_dataIntegrations;
-  bool m_dataIntegrationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataIntegrationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

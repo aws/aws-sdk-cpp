@@ -90,12 +90,12 @@ class ListAppVersionResourceMappingsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ResourceMapping> m_resourceMappings;
-  bool m_resourceMappingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourceMappingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

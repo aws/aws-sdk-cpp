@@ -86,12 +86,12 @@ class DocumentDefaultVersionDescription {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_defaultVersion;
-  bool m_defaultVersionHasBeenSet = false;
 
   Aws::String m_defaultVersionName;
+  bool m_nameHasBeenSet = false;
+  bool m_defaultVersionHasBeenSet = false;
   bool m_defaultVersionNameHasBeenSet = false;
 };
 

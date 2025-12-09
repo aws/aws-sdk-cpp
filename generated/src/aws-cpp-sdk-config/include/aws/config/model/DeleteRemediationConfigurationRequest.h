@@ -68,9 +68,9 @@ class DeleteRemediationConfigurationRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_configRuleName;
-  bool m_configRuleNameHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_configRuleNameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

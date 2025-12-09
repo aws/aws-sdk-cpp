@@ -74,9 +74,9 @@ class RegisteredUserDashboardEmbeddingConfiguration {
   ///@}
  private:
   Aws::String m_initialDashboardId;
-  bool m_initialDashboardIdHasBeenSet = false;
 
   RegisteredUserDashboardFeatureConfigurations m_featureConfigurations;
+  bool m_initialDashboardIdHasBeenSet = false;
   bool m_featureConfigurationsHasBeenSet = false;
 };
 

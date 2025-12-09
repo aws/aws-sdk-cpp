@@ -139,18 +139,18 @@ class Datum {
   ///@}
  private:
   Aws::String m_scalarValue;
-  bool m_scalarValueHasBeenSet = false;
 
   Aws::Vector<TimeSeriesDataPoint> m_timeSeriesValue;
-  bool m_timeSeriesValueHasBeenSet = false;
 
   Aws::Vector<Datum> m_arrayValue;
-  bool m_arrayValueHasBeenSet = false;
 
   std::shared_ptr<Row> m_rowValue;
-  bool m_rowValueHasBeenSet = false;
 
   bool m_nullValue{false};
+  bool m_scalarValueHasBeenSet = false;
+  bool m_timeSeriesValueHasBeenSet = false;
+  bool m_arrayValueHasBeenSet = false;
+  bool m_rowValueHasBeenSet = false;
   bool m_nullValueHasBeenSet = false;
 };
 

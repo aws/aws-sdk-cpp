@@ -617,99 +617,99 @@ class DescribeModelPackageResult {
   ///@}
  private:
   Aws::String m_modelPackageName;
-  bool m_modelPackageNameHasBeenSet = false;
 
   Aws::String m_modelPackageGroupName;
-  bool m_modelPackageGroupNameHasBeenSet = false;
 
   int m_modelPackageVersion{0};
-  bool m_modelPackageVersionHasBeenSet = false;
 
   ModelPackageRegistrationType m_modelPackageRegistrationType{ModelPackageRegistrationType::NOT_SET};
-  bool m_modelPackageRegistrationTypeHasBeenSet = false;
 
   Aws::String m_modelPackageArn;
-  bool m_modelPackageArnHasBeenSet = false;
 
   Aws::String m_modelPackageDescription;
-  bool m_modelPackageDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   InferenceSpecification m_inferenceSpecification;
-  bool m_inferenceSpecificationHasBeenSet = false;
 
   SourceAlgorithmSpecification m_sourceAlgorithmSpecification;
-  bool m_sourceAlgorithmSpecificationHasBeenSet = false;
 
   ModelPackageValidationSpecification m_validationSpecification;
-  bool m_validationSpecificationHasBeenSet = false;
 
   ModelPackageStatus m_modelPackageStatus{ModelPackageStatus::NOT_SET};
-  bool m_modelPackageStatusHasBeenSet = false;
 
   ModelPackageStatusDetails m_modelPackageStatusDetails;
-  bool m_modelPackageStatusDetailsHasBeenSet = false;
 
   bool m_certifyForMarketplace{false};
-  bool m_certifyForMarketplaceHasBeenSet = false;
 
   ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
-  bool m_modelApprovalStatusHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   MetadataProperties m_metadataProperties;
-  bool m_metadataPropertiesHasBeenSet = false;
 
   ModelMetrics m_modelMetrics;
-  bool m_modelMetricsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   Aws::String m_approvalDescription;
-  bool m_approvalDescriptionHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_samplePayloadUrl;
-  bool m_samplePayloadUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-  bool m_customerMetadataPropertiesHasBeenSet = false;
 
   DriftCheckBaselines m_driftCheckBaselines;
-  bool m_driftCheckBaselinesHasBeenSet = false;
 
   Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
-  bool m_additionalInferenceSpecificationsHasBeenSet = false;
 
   SkipModelValidation m_skipModelValidation{SkipModelValidation::NOT_SET};
-  bool m_skipModelValidationHasBeenSet = false;
 
   Aws::String m_sourceUri;
-  bool m_sourceUriHasBeenSet = false;
 
   ModelPackageSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   ModelPackageModelCard m_modelCard;
-  bool m_modelCardHasBeenSet = false;
 
   ModelLifeCycle m_modelLifeCycle;
-  bool m_modelLifeCycleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelPackageNameHasBeenSet = false;
+  bool m_modelPackageGroupNameHasBeenSet = false;
+  bool m_modelPackageVersionHasBeenSet = false;
+  bool m_modelPackageRegistrationTypeHasBeenSet = false;
+  bool m_modelPackageArnHasBeenSet = false;
+  bool m_modelPackageDescriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_inferenceSpecificationHasBeenSet = false;
+  bool m_sourceAlgorithmSpecificationHasBeenSet = false;
+  bool m_validationSpecificationHasBeenSet = false;
+  bool m_modelPackageStatusHasBeenSet = false;
+  bool m_modelPackageStatusDetailsHasBeenSet = false;
+  bool m_certifyForMarketplaceHasBeenSet = false;
+  bool m_modelApprovalStatusHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_metadataPropertiesHasBeenSet = false;
+  bool m_modelMetricsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_approvalDescriptionHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_samplePayloadUrlHasBeenSet = false;
+  bool m_customerMetadataPropertiesHasBeenSet = false;
+  bool m_driftCheckBaselinesHasBeenSet = false;
+  bool m_additionalInferenceSpecificationsHasBeenSet = false;
+  bool m_skipModelValidationHasBeenSet = false;
+  bool m_sourceUriHasBeenSet = false;
+  bool m_securityConfigHasBeenSet = false;
+  bool m_modelCardHasBeenSet = false;
+  bool m_modelLifeCycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

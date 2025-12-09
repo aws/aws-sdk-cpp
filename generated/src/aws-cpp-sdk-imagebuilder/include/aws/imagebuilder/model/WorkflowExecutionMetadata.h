@@ -262,42 +262,42 @@ class WorkflowExecutionMetadata {
   ///@}
  private:
   Aws::String m_workflowBuildVersionArn;
-  bool m_workflowBuildVersionArnHasBeenSet = false;
 
   Aws::String m_workflowExecutionId;
-  bool m_workflowExecutionIdHasBeenSet = false;
 
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   WorkflowExecutionStatus m_status{WorkflowExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_totalStepCount{0};
-  bool m_totalStepCountHasBeenSet = false;
 
   int m_totalStepsSucceeded{0};
-  bool m_totalStepsSucceededHasBeenSet = false;
 
   int m_totalStepsFailed{0};
-  bool m_totalStepsFailedHasBeenSet = false;
 
   int m_totalStepsSkipped{0};
-  bool m_totalStepsSkippedHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_parallelGroup;
-  bool m_parallelGroupHasBeenSet = false;
 
   bool m_retried{false};
+  bool m_workflowBuildVersionArnHasBeenSet = false;
+  bool m_workflowExecutionIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_totalStepCountHasBeenSet = false;
+  bool m_totalStepsSucceededHasBeenSet = false;
+  bool m_totalStepsFailedHasBeenSet = false;
+  bool m_totalStepsSkippedHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_parallelGroupHasBeenSet = false;
   bool m_retriedHasBeenSet = false;
 };
 

@@ -177,27 +177,27 @@ class ExportDiffieHellmanTr31KeyBlock {
   ///@}
  private:
   Aws::String m_privateKeyIdentifier;
-  bool m_privateKeyIdentifierHasBeenSet = false;
 
   Aws::String m_certificateAuthorityPublicKeyIdentifier;
-  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
 
   Aws::String m_publicKeyCertificate;
-  bool m_publicKeyCertificateHasBeenSet = false;
 
   SymmetricKeyAlgorithm m_deriveKeyAlgorithm{SymmetricKeyAlgorithm::NOT_SET};
-  bool m_deriveKeyAlgorithmHasBeenSet = false;
 
   KeyDerivationFunction m_keyDerivationFunction{KeyDerivationFunction::NOT_SET};
-  bool m_keyDerivationFunctionHasBeenSet = false;
 
   KeyDerivationHashAlgorithm m_keyDerivationHashAlgorithm{KeyDerivationHashAlgorithm::NOT_SET};
-  bool m_keyDerivationHashAlgorithmHasBeenSet = false;
 
   DiffieHellmanDerivationData m_derivationData;
-  bool m_derivationDataHasBeenSet = false;
 
   KeyBlockHeaders m_keyBlockHeaders;
+  bool m_privateKeyIdentifierHasBeenSet = false;
+  bool m_certificateAuthorityPublicKeyIdentifierHasBeenSet = false;
+  bool m_publicKeyCertificateHasBeenSet = false;
+  bool m_deriveKeyAlgorithmHasBeenSet = false;
+  bool m_keyDerivationFunctionHasBeenSet = false;
+  bool m_keyDerivationHashAlgorithmHasBeenSet = false;
+  bool m_derivationDataHasBeenSet = false;
   bool m_keyBlockHeadersHasBeenSet = false;
 };
 

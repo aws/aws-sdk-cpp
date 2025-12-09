@@ -262,30 +262,30 @@ class EvaluationResult {
   ///@}
  private:
   Aws::String m_evalActionName;
-  bool m_evalActionNameHasBeenSet = false;
 
   Aws::String m_evalResourceName;
-  bool m_evalResourceNameHasBeenSet = false;
 
   PolicyEvaluationDecisionType m_evalDecision{PolicyEvaluationDecisionType::NOT_SET};
-  bool m_evalDecisionHasBeenSet = false;
 
   Aws::Vector<Statement> m_matchedStatements;
-  bool m_matchedStatementsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_missingContextValues;
-  bool m_missingContextValuesHasBeenSet = false;
 
   OrganizationsDecisionDetail m_organizationsDecisionDetail;
-  bool m_organizationsDecisionDetailHasBeenSet = false;
 
   PermissionsBoundaryDecisionDetail m_permissionsBoundaryDecisionDetail;
-  bool m_permissionsBoundaryDecisionDetailHasBeenSet = false;
 
   Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
-  bool m_evalDecisionDetailsHasBeenSet = false;
 
   Aws::Vector<ResourceSpecificResult> m_resourceSpecificResults;
+  bool m_evalActionNameHasBeenSet = false;
+  bool m_evalResourceNameHasBeenSet = false;
+  bool m_evalDecisionHasBeenSet = false;
+  bool m_matchedStatementsHasBeenSet = false;
+  bool m_missingContextValuesHasBeenSet = false;
+  bool m_organizationsDecisionDetailHasBeenSet = false;
+  bool m_permissionsBoundaryDecisionDetailHasBeenSet = false;
+  bool m_evalDecisionDetailsHasBeenSet = false;
   bool m_resourceSpecificResultsHasBeenSet = false;
 };
 

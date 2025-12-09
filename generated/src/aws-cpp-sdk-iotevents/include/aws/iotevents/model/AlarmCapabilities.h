@@ -71,9 +71,9 @@ class AlarmCapabilities {
   ///@}
  private:
   InitializationConfiguration m_initializationConfiguration;
-  bool m_initializationConfigurationHasBeenSet = false;
 
   AcknowledgeFlow m_acknowledgeFlow;
+  bool m_initializationConfigurationHasBeenSet = false;
   bool m_acknowledgeFlowHasBeenSet = false;
 };
 

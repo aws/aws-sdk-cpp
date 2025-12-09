@@ -299,42 +299,42 @@ class Integration {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IntegrationStatus m_status{IntegrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   IntegrationConfig m_integrationConfig;
-  bool m_integrationConfigHasBeenSet = false;
 
   Aws::Vector<IntegrationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_dataFilter;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_integrationNameHasBeenSet = false;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_integrationConfigHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_dataFilterHasBeenSet = false;
 };
 

@@ -154,24 +154,24 @@ class HlsAkamaiSettings {
   ///@}
  private:
   int m_connectionRetryInterval{0};
-  bool m_connectionRetryIntervalHasBeenSet = false;
 
   int m_filecacheDuration{0};
-  bool m_filecacheDurationHasBeenSet = false;
 
   HlsAkamaiHttpTransferMode m_httpTransferMode{HlsAkamaiHttpTransferMode::NOT_SET};
-  bool m_httpTransferModeHasBeenSet = false;
 
   int m_numRetries{0};
-  bool m_numRetriesHasBeenSet = false;
 
   int m_restartDelay{0};
-  bool m_restartDelayHasBeenSet = false;
 
   Aws::String m_salt;
-  bool m_saltHasBeenSet = false;
 
   Aws::String m_token;
+  bool m_connectionRetryIntervalHasBeenSet = false;
+  bool m_filecacheDurationHasBeenSet = false;
+  bool m_httpTransferModeHasBeenSet = false;
+  bool m_numRetriesHasBeenSet = false;
+  bool m_restartDelayHasBeenSet = false;
+  bool m_saltHasBeenSet = false;
   bool m_tokenHasBeenSet = false;
 };
 

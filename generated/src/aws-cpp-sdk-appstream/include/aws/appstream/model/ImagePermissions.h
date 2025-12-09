@@ -61,9 +61,9 @@ class ImagePermissions {
   ///@}
  private:
   bool m_allowFleet{false};
-  bool m_allowFleetHasBeenSet = false;
 
   bool m_allowImageBuilder{false};
+  bool m_allowFleetHasBeenSet = false;
   bool m_allowImageBuilderHasBeenSet = false;
 };
 

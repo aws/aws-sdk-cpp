@@ -61,9 +61,9 @@ class GetOutpostResolverResult {
   ///@}
  private:
   OutpostResolver m_outpostResolver;
-  bool m_outpostResolverHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outpostResolverHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

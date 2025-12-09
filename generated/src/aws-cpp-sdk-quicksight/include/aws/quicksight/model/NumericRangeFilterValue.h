@@ -66,9 +66,9 @@ class NumericRangeFilterValue {
   ///@}
  private:
   double m_staticValue{0.0};
-  bool m_staticValueHasBeenSet = false;
 
   Aws::String m_parameter;
+  bool m_staticValueHasBeenSet = false;
   bool m_parameterHasBeenSet = false;
 };
 

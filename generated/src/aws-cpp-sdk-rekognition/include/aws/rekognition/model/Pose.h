@@ -78,12 +78,12 @@ class Pose {
   ///@}
  private:
   double m_roll{0.0};
-  bool m_rollHasBeenSet = false;
 
   double m_yaw{0.0};
-  bool m_yawHasBeenSet = false;
 
   double m_pitch{0.0};
+  bool m_rollHasBeenSet = false;
+  bool m_yawHasBeenSet = false;
   bool m_pitchHasBeenSet = false;
 };
 

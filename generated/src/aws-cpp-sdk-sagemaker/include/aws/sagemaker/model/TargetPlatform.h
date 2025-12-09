@@ -99,12 +99,12 @@ class TargetPlatform {
   ///@}
  private:
   TargetPlatformOs m_os{TargetPlatformOs::NOT_SET};
-  bool m_osHasBeenSet = false;
 
   TargetPlatformArch m_arch{TargetPlatformArch::NOT_SET};
-  bool m_archHasBeenSet = false;
 
   TargetPlatformAccelerator m_accelerator{TargetPlatformAccelerator::NOT_SET};
+  bool m_osHasBeenSet = false;
+  bool m_archHasBeenSet = false;
   bool m_acceleratorHasBeenSet = false;
 };
 

@@ -110,18 +110,18 @@ class CreateApiMappingResult {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_apiMappingId;
-  bool m_apiMappingIdHasBeenSet = false;
 
   Aws::String m_apiMappingKey;
-  bool m_apiMappingKeyHasBeenSet = false;
 
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiIdHasBeenSet = false;
+  bool m_apiMappingIdHasBeenSet = false;
+  bool m_apiMappingKeyHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

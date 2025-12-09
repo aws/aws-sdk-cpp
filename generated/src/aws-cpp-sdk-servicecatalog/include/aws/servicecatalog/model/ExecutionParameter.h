@@ -94,12 +94,12 @@ class ExecutionParameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_defaultValues;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_defaultValuesHasBeenSet = false;
 };
 

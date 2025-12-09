@@ -66,9 +66,9 @@ class RevokeFlowEntitlementRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_entitlementArn;
-  bool m_entitlementArnHasBeenSet = false;
 
   Aws::String m_flowArn;
+  bool m_entitlementArnHasBeenSet = false;
   bool m_flowArnHasBeenSet = false;
 };
 

@@ -169,24 +169,24 @@ class UpdatePortalRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Authorization m_authorization;
-  bool m_authorizationHasBeenSet = false;
 
   EndpointConfigurationRequest m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_includedPortalProductArns;
-  bool m_includedPortalProductArnsHasBeenSet = false;
 
   Aws::String m_logoUri;
-  bool m_logoUriHasBeenSet = false;
 
   PortalContent m_portalContent;
-  bool m_portalContentHasBeenSet = false;
 
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Aws::String m_rumAppMonitorName;
+  bool m_authorizationHasBeenSet = false;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_includedPortalProductArnsHasBeenSet = false;
+  bool m_logoUriHasBeenSet = false;
+  bool m_portalContentHasBeenSet = false;
+  bool m_portalIdHasBeenSet = false;
   bool m_rumAppMonitorNameHasBeenSet = false;
 };
 

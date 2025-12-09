@@ -214,30 +214,30 @@ class Option {
   ///@}
  private:
   Aws::String m_optionName;
-  bool m_optionNameHasBeenSet = false;
 
   Aws::String m_optionDescription;
-  bool m_optionDescriptionHasBeenSet = false;
 
   bool m_persistent{false};
-  bool m_persistentHasBeenSet = false;
 
   bool m_permanent{false};
-  bool m_permanentHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_optionVersion;
-  bool m_optionVersionHasBeenSet = false;
 
   Aws::Vector<OptionSetting> m_optionSettings;
-  bool m_optionSettingsHasBeenSet = false;
 
   Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroupMemberships;
-  bool m_dBSecurityGroupMembershipsHasBeenSet = false;
 
   Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroupMemberships;
+  bool m_optionNameHasBeenSet = false;
+  bool m_optionDescriptionHasBeenSet = false;
+  bool m_persistentHasBeenSet = false;
+  bool m_permanentHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_optionVersionHasBeenSet = false;
+  bool m_optionSettingsHasBeenSet = false;
+  bool m_dBSecurityGroupMembershipsHasBeenSet = false;
   bool m_vpcSecurityGroupMembershipsHasBeenSet = false;
 };
 

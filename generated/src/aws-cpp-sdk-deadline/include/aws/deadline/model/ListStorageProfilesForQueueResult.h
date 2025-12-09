@@ -90,12 +90,12 @@ class ListStorageProfilesForQueueResult {
   ///@}
  private:
   Aws::Vector<StorageProfileSummary> m_storageProfiles;
-  bool m_storageProfilesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageProfilesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

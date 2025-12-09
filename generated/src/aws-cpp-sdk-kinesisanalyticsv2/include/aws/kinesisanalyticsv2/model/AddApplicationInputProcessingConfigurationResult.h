@@ -117,18 +117,18 @@ class AddApplicationInputProcessingConfigurationResult {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   InputProcessingConfigurationDescription m_inputProcessingConfigurationDescription;
-  bool m_inputProcessingConfigurationDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_inputIdHasBeenSet = false;
+  bool m_inputProcessingConfigurationDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

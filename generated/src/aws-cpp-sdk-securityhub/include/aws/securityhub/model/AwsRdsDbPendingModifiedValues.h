@@ -303,48 +303,48 @@ class AwsRdsDbPendingModifiedValues {
   ///@}
  private:
   Aws::String m_dbInstanceClass;
-  bool m_dbInstanceClassHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::String m_dbInstanceIdentifier;
-  bool m_dbInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_caCertificateIdentifier;
-  bool m_caCertificateIdentifierHasBeenSet = false;
 
   Aws::String m_dbSubnetGroupName;
-  bool m_dbSubnetGroupNameHasBeenSet = false;
 
   AwsRdsPendingCloudWatchLogsExports m_pendingCloudWatchLogsExports;
-  bool m_pendingCloudWatchLogsExportsHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbProcessorFeature> m_processorFeatures;
+  bool m_dbInstanceClassHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_dbInstanceIdentifierHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_caCertificateIdentifierHasBeenSet = false;
+  bool m_dbSubnetGroupNameHasBeenSet = false;
+  bool m_pendingCloudWatchLogsExportsHasBeenSet = false;
   bool m_processorFeaturesHasBeenSet = false;
 };
 

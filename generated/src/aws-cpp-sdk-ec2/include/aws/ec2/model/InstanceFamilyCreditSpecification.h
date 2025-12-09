@@ -71,9 +71,9 @@ class InstanceFamilyCreditSpecification {
   ///@}
  private:
   UnlimitedSupportedInstanceFamily m_instanceFamily{UnlimitedSupportedInstanceFamily::NOT_SET};
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_cpuCredits;
+  bool m_instanceFamilyHasBeenSet = false;
   bool m_cpuCreditsHasBeenSet = false;
 };
 

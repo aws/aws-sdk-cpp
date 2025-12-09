@@ -73,9 +73,9 @@ class VpcEncryptionControlExclusion {
   ///@}
  private:
   VpcEncryptionControlExclusionState m_state{VpcEncryptionControlExclusionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
+  bool m_stateHasBeenSet = false;
   bool m_stateMessageHasBeenSet = false;
 };
 

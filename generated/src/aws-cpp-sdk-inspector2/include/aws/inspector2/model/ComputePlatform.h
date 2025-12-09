@@ -86,12 +86,12 @@ class ComputePlatform {
   ///@}
  private:
   Aws::String m_vendor;
-  bool m_vendorHasBeenSet = false;
 
   Aws::String m_product;
-  bool m_productHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_vendorHasBeenSet = false;
+  bool m_productHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

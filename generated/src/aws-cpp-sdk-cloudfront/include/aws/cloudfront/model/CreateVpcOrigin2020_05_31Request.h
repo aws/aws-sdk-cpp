@@ -64,9 +64,9 @@ class CreateVpcOrigin2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   VpcOriginEndpointConfig m_vpcOriginEndpointConfig;
-  bool m_vpcOriginEndpointConfigHasBeenSet = false;
 
   Tags m_tags;
+  bool m_vpcOriginEndpointConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

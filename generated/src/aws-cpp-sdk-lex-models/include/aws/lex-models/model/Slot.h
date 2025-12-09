@@ -252,36 +252,36 @@ class Slot {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SlotConstraint m_slotConstraint{SlotConstraint::NOT_SET};
-  bool m_slotConstraintHasBeenSet = false;
 
   Aws::String m_slotType;
-  bool m_slotTypeHasBeenSet = false;
 
   Aws::String m_slotTypeVersion;
-  bool m_slotTypeVersionHasBeenSet = false;
 
   Prompt m_valueElicitationPrompt;
-  bool m_valueElicitationPromptHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sampleUtterances;
-  bool m_sampleUtterancesHasBeenSet = false;
 
   Aws::String m_responseCard;
-  bool m_responseCardHasBeenSet = false;
 
   ObfuscationSetting m_obfuscationSetting{ObfuscationSetting::NOT_SET};
-  bool m_obfuscationSettingHasBeenSet = false;
 
   SlotDefaultValueSpec m_defaultValueSpec;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_slotConstraintHasBeenSet = false;
+  bool m_slotTypeHasBeenSet = false;
+  bool m_slotTypeVersionHasBeenSet = false;
+  bool m_valueElicitationPromptHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_sampleUtterancesHasBeenSet = false;
+  bool m_responseCardHasBeenSet = false;
+  bool m_obfuscationSettingHasBeenSet = false;
   bool m_defaultValueSpecHasBeenSet = false;
 };
 

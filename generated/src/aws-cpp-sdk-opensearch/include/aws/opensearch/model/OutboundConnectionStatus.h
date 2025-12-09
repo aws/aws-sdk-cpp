@@ -81,9 +81,9 @@ class OutboundConnectionStatus {
   ///@}
  private:
   OutboundConnectionStatusCode m_statusCode{OutboundConnectionStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

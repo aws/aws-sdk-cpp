@@ -67,9 +67,9 @@ class DataAutomationConfiguration {
   ///@}
  private:
   Aws::String m_dataAutomationProjectArn;
-  bool m_dataAutomationProjectArnHasBeenSet = false;
 
   DataAutomationStage m_stage{DataAutomationStage::NOT_SET};
+  bool m_dataAutomationProjectArnHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

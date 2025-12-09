@@ -87,12 +87,12 @@ class AutoMLResolvedAttributes {
   ///@}
  private:
   AutoMLJobObjective m_autoMLJobObjective;
-  bool m_autoMLJobObjectiveHasBeenSet = false;
 
   AutoMLJobCompletionCriteria m_completionCriteria;
-  bool m_completionCriteriaHasBeenSet = false;
 
   AutoMLProblemTypeResolvedAttributes m_autoMLProblemTypeResolvedAttributes;
+  bool m_autoMLJobObjectiveHasBeenSet = false;
+  bool m_completionCriteriaHasBeenSet = false;
   bool m_autoMLProblemTypeResolvedAttributesHasBeenSet = false;
 };
 

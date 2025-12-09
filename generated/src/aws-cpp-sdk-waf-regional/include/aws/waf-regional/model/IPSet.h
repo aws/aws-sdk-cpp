@@ -122,12 +122,12 @@ class IPSet {
   ///@}
  private:
   Aws::String m_iPSetId;
-  bool m_iPSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<IPSetDescriptor> m_iPSetDescriptors;
+  bool m_iPSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_iPSetDescriptorsHasBeenSet = false;
 };
 

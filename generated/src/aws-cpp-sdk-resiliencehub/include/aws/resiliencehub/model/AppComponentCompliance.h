@@ -151,21 +151,21 @@ class AppComponentCompliance {
   ///@}
  private:
   Aws::String m_appComponentName;
-  bool m_appComponentNameHasBeenSet = false;
 
   Aws::Map<DisruptionType, DisruptionCompliance> m_compliance;
-  bool m_complianceHasBeenSet = false;
 
   Cost m_cost;
-  bool m_costHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ResiliencyScore m_resiliencyScore;
-  bool m_resiliencyScoreHasBeenSet = false;
 
   ComplianceStatus m_status{ComplianceStatus::NOT_SET};
+  bool m_appComponentNameHasBeenSet = false;
+  bool m_complianceHasBeenSet = false;
+  bool m_costHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_resiliencyScoreHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

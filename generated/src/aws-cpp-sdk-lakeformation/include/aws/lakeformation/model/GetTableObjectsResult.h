@@ -84,12 +84,12 @@ class GetTableObjectsResult {
   ///@}
  private:
   Aws::Vector<PartitionObjects> m_objects;
-  bool m_objectsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_objectsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

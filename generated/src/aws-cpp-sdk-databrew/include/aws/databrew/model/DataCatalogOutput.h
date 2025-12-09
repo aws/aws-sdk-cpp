@@ -146,21 +146,21 @@ class DataCatalogOutput {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   S3TableOutputOptions m_s3Options;
-  bool m_s3OptionsHasBeenSet = false;
 
   DatabaseTableOutputOptions m_databaseOptions;
-  bool m_databaseOptionsHasBeenSet = false;
 
   bool m_overwrite{false};
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_s3OptionsHasBeenSet = false;
+  bool m_databaseOptionsHasBeenSet = false;
   bool m_overwriteHasBeenSet = false;
 };
 

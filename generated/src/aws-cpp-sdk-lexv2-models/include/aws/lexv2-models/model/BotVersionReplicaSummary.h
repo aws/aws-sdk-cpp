@@ -114,15 +114,15 @@ class BotVersionReplicaSummary {
   ///@}
  private:
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   BotVersionReplicationStatus m_botVersionReplicationStatus{BotVersionReplicationStatus::NOT_SET};
-  bool m_botVersionReplicationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
+  bool m_botVersionHasBeenSet = false;
+  bool m_botVersionReplicationStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class RerankQuery {
   ///@}
  private:
   RerankTextDocument m_textQuery;
-  bool m_textQueryHasBeenSet = false;
 
   RerankQueryContentType m_type{RerankQueryContentType::NOT_SET};
+  bool m_textQueryHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class KinesisVideoStreamSourceTaskConfiguration {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   int m_channelId{0};
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_fragmentNumber;
+  bool m_streamArnHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
   bool m_fragmentNumberHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class BatchDeleteRumMetricDefinitionsResult {
   ///@}
  private:
   Aws::Vector<BatchDeleteRumMetricDefinitionsError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metricDefinitionIds;
-  bool m_metricDefinitionIdsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_metricDefinitionIdsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

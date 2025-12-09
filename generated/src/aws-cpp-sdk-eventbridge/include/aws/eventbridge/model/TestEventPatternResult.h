@@ -57,9 +57,9 @@ class TestEventPatternResult {
   ///@}
  private:
   bool m_result{false};
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

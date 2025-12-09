@@ -79,9 +79,9 @@ class ServiceJobRetryStrategy {
   ///@}
  private:
   int m_attempts{0};
-  bool m_attemptsHasBeenSet = false;
 
   Aws::Vector<ServiceJobEvaluateOnExit> m_evaluateOnExit;
+  bool m_attemptsHasBeenSet = false;
   bool m_evaluateOnExitHasBeenSet = false;
 };
 

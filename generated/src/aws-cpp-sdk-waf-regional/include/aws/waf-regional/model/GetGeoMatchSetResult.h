@@ -63,9 +63,9 @@ class GetGeoMatchSetResult {
   ///@}
  private:
   GeoMatchSet m_geoMatchSet;
-  bool m_geoMatchSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_geoMatchSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

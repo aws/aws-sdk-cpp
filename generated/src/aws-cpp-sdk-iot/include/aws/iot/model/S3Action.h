@@ -109,15 +109,15 @@ class S3Action {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   CannedAccessControlList m_cannedAcl{CannedAccessControlList::NOT_SET};
+  bool m_roleArnHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_cannedAclHasBeenSet = false;
 };
 

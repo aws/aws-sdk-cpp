@@ -231,39 +231,39 @@ class GetAgentRuntimeEndpointResult {
   ///@}
  private:
   Aws::String m_liveVersion;
-  bool m_liveVersionHasBeenSet = false;
 
   Aws::String m_targetVersion;
-  bool m_targetVersionHasBeenSet = false;
 
   Aws::String m_agentRuntimeEndpointArn;
-  bool m_agentRuntimeEndpointArnHasBeenSet = false;
 
   Aws::String m_agentRuntimeArn;
-  bool m_agentRuntimeArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AgentRuntimeEndpointStatus m_status{AgentRuntimeEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_liveVersionHasBeenSet = false;
+  bool m_targetVersionHasBeenSet = false;
+  bool m_agentRuntimeEndpointArnHasBeenSet = false;
+  bool m_agentRuntimeArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class DeleteIpamExternalResourceVerificationTokenResponse {
   ///@}
  private:
   IpamExternalResourceVerificationToken m_ipamExternalResourceVerificationToken;
-  bool m_ipamExternalResourceVerificationTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamExternalResourceVerificationTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

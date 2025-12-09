@@ -89,12 +89,12 @@ class GeospatialColor {
   ///@}
  private:
   GeospatialSolidColor m_solid;
-  bool m_solidHasBeenSet = false;
 
   GeospatialGradientColor m_gradient;
-  bool m_gradientHasBeenSet = false;
 
   GeospatialCategoricalColor m_categorical;
+  bool m_solidHasBeenSet = false;
+  bool m_gradientHasBeenSet = false;
   bool m_categoricalHasBeenSet = false;
 };
 

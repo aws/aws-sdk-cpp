@@ -109,15 +109,15 @@ class CreateConnectionOAuthRequestParameters {
   ///@}
  private:
   CreateConnectionOAuthClientRequestParameters m_clientParameters;
-  bool m_clientParametersHasBeenSet = false;
 
   Aws::String m_authorizationEndpoint;
-  bool m_authorizationEndpointHasBeenSet = false;
 
   ConnectionOAuthHttpMethod m_httpMethod{ConnectionOAuthHttpMethod::NOT_SET};
-  bool m_httpMethodHasBeenSet = false;
 
   ConnectionHttpParameters m_oAuthHttpParameters;
+  bool m_clientParametersHasBeenSet = false;
+  bool m_authorizationEndpointHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
   bool m_oAuthHttpParametersHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class GetResourcePositionResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_geoJsonPayload{};
-  bool m_geoJsonPayloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_geoJsonPayloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

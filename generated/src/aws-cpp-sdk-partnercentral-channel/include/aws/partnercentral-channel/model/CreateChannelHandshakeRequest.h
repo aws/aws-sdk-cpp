@@ -149,21 +149,21 @@ class CreateChannelHandshakeRequest : public PartnerCentralChannelRequest {
   ///@}
  private:
   HandshakeType m_handshakeType{HandshakeType::NOT_SET};
-  bool m_handshakeTypeHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_associatedResourceIdentifier;
-  bool m_associatedResourceIdentifierHasBeenSet = false;
 
   ChannelHandshakePayload m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_handshakeTypeHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_associatedResourceIdentifierHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

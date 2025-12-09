@@ -58,9 +58,9 @@ class GetSegmentImportJobsResult {
   ///@}
  private:
   ImportJobsResponse m_importJobsResponse;
-  bool m_importJobsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importJobsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

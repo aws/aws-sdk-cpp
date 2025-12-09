@@ -91,12 +91,12 @@ class ListResourceTenantsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

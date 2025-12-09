@@ -60,9 +60,9 @@ class ResetJobBookmarkResult {
   ///@}
  private:
   JobBookmarkEntry m_jobBookmarkEntry;
-  bool m_jobBookmarkEntryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobBookmarkEntryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

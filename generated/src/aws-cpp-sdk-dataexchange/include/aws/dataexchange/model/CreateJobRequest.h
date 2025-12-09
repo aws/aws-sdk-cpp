@@ -64,9 +64,9 @@ class CreateJobRequest : public DataExchangeRequest {
   ///@}
  private:
   RequestDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_detailsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

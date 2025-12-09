@@ -156,24 +156,24 @@ class TrustStore {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TrustStoreStatus m_status{TrustStoreStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_numberOfCaCertificates{0};
-  bool m_numberOfCaCertificatesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_numberOfCaCertificatesHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

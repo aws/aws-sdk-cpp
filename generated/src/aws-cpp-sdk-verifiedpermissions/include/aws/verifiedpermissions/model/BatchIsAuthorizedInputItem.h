@@ -111,15 +111,15 @@ class BatchIsAuthorizedInputItem {
   ///@}
  private:
   EntityIdentifier m_principal;
-  bool m_principalHasBeenSet = false;
 
   ActionIdentifier m_action;
-  bool m_actionHasBeenSet = false;
 
   EntityIdentifier m_resource;
-  bool m_resourceHasBeenSet = false;
 
   ContextDefinition m_context;
+  bool m_principalHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

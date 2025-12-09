@@ -84,9 +84,9 @@ class RuleGroupSourceStatelessRuleMatchAttributesTcpFlags {
   ///@}
  private:
   Aws::Vector<Aws::String> m_flags;
-  bool m_flagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_masks;
+  bool m_flagsHasBeenSet = false;
   bool m_masksHasBeenSet = false;
 };
 

@@ -216,33 +216,33 @@ class Attachment {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CopyFromSource m_copyFrom;
-  bool m_copyFromHasBeenSet = false;
 
   Aws::String m_fileType;
-  bool m_fileTypeHasBeenSet = false;
 
   int m_fileSize{0};
-  bool m_fileSizeHasBeenSet = false;
 
   Aws::String m_md5chksum;
-  bool m_md5chksumHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   AttachmentStatus m_status{AttachmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ErrorDetail m_error;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_copyFromHasBeenSet = false;
+  bool m_fileTypeHasBeenSet = false;
+  bool m_fileSizeHasBeenSet = false;
+  bool m_md5chksumHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

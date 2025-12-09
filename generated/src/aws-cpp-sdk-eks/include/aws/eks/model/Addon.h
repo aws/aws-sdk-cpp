@@ -349,51 +349,51 @@ class Addon {
   ///@}
  private:
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   AddonStatus m_status{AddonStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_addonVersion;
-  bool m_addonVersionHasBeenSet = false;
 
   AddonHealth m_health;
-  bool m_healthHasBeenSet = false;
 
   Aws::String m_addonArn;
-  bool m_addonArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_serviceAccountRoleArn;
-  bool m_serviceAccountRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_publisher;
-  bool m_publisherHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   MarketplaceInformation m_marketplaceInformation;
-  bool m_marketplaceInformationHasBeenSet = false;
 
   Aws::String m_configurationValues;
-  bool m_configurationValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_podIdentityAssociations;
-  bool m_podIdentityAssociationsHasBeenSet = false;
 
   AddonNamespaceConfigResponse m_namespaceConfig;
+  bool m_addonNameHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_addonVersionHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_addonArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_serviceAccountRoleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_publisherHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_marketplaceInformationHasBeenSet = false;
+  bool m_configurationValuesHasBeenSet = false;
+  bool m_podIdentityAssociationsHasBeenSet = false;
   bool m_namespaceConfigHasBeenSet = false;
 };
 

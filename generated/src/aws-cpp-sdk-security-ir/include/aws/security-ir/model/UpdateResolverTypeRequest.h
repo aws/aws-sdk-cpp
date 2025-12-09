@@ -64,9 +64,9 @@ class UpdateResolverTypeRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   ResolverType m_resolverType{ResolverType::NOT_SET};
+  bool m_caseIdHasBeenSet = false;
   bool m_resolverTypeHasBeenSet = false;
 };
 

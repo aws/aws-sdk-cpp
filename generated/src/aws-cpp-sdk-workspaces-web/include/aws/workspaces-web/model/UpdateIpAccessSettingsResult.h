@@ -60,9 +60,9 @@ class UpdateIpAccessSettingsResult {
   ///@}
  private:
   IpAccessSettings m_ipAccessSettings;
-  bool m_ipAccessSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ipAccessSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class DeleteLibraryItemRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_libraryItemId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_libraryItemIdHasBeenSet = false;
 };
 

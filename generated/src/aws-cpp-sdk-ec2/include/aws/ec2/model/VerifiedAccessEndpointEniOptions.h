@@ -111,15 +111,15 @@ class VerifiedAccessEndpointEniOptions {
   ///@}
  private:
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   VerifiedAccessEndpointProtocol m_protocol{VerifiedAccessEndpointProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::Vector<VerifiedAccessEndpointPortRange> m_portRanges;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
 };
 

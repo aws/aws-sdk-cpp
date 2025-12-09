@@ -71,9 +71,9 @@ class ActionGroupInvocationOutput {
   ///@}
  private:
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_metadataHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

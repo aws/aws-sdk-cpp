@@ -227,33 +227,33 @@ class DescribeTableRequest : public RedshiftDataAPIServiceRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_connectedDatabase;
-  bool m_connectedDatabaseHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_dbUserHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_connectedDatabaseHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

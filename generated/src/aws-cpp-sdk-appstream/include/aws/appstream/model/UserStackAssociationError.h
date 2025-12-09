@@ -89,12 +89,12 @@ class UserStackAssociationError {
   ///@}
  private:
   UserStackAssociation m_userStackAssociation;
-  bool m_userStackAssociationHasBeenSet = false;
 
   UserStackAssociationErrorCode m_errorCode{UserStackAssociationErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_userStackAssociationHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

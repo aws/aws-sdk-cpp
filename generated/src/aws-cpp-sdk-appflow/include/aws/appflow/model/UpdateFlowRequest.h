@@ -205,27 +205,27 @@ class UpdateFlowRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TriggerConfig m_triggerConfig;
-  bool m_triggerConfigHasBeenSet = false;
 
   SourceFlowConfig m_sourceFlowConfig;
-  bool m_sourceFlowConfigHasBeenSet = false;
 
   Aws::Vector<DestinationFlowConfig> m_destinationFlowConfigList;
-  bool m_destinationFlowConfigListHasBeenSet = false;
 
   Aws::Vector<Task> m_tasks;
-  bool m_tasksHasBeenSet = false;
 
   MetadataCatalogConfig m_metadataCatalogConfig;
-  bool m_metadataCatalogConfigHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_flowNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_triggerConfigHasBeenSet = false;
+  bool m_sourceFlowConfigHasBeenSet = false;
+  bool m_destinationFlowConfigListHasBeenSet = false;
+  bool m_tasksHasBeenSet = false;
+  bool m_metadataCatalogConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -89,12 +89,12 @@ class UserDetails {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_userNameHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

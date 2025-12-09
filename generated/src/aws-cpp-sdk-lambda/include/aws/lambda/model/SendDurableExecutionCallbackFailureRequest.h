@@ -66,9 +66,9 @@ class SendDurableExecutionCallbackFailureRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_callbackId;
-  bool m_callbackIdHasBeenSet = false;
 
   ErrorObject m_error;
+  bool m_callbackIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

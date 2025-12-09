@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/identitystore/IdentityStoreRequest.h>
 #include <aws/identitystore/IdentityStore_EXPORTS.h>
 
@@ -54,6 +55,33 @@ class ListUsersRequest : public IdentityStoreRequest {
 
   ///@{
   /**
+   * <p>A collection of extension names indicating what extensions the service should
+   * retrieve alongside other user attributes.
+   * <code>aws:identitystore:enterprise</code> is the only supported extension
+   * name.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Vector<Aws::String>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Vector<Aws::String>>
+  ListUsersRequest& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsT = Aws::String>
+  ListUsersRequest& AddExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace_back(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of results to be returned per request. This parameter is
    * used in the <code> ListUsers</code> and <code>ListGroups</code> requests to
    * specify how many results to return in one page. The length limit is 50
@@ -94,12 +122,15 @@ class ListUsersRequest : public IdentityStoreRequest {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
+
+  Aws::Vector<Aws::String> m_extensions;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

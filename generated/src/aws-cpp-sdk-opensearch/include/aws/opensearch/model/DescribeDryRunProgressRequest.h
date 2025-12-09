@@ -88,12 +88,12 @@ class DescribeDryRunProgressRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_dryRunId;
-  bool m_dryRunIdHasBeenSet = false;
 
   bool m_loadDryRunConfig{false};
+  bool m_domainNameHasBeenSet = false;
+  bool m_dryRunIdHasBeenSet = false;
   bool m_loadDryRunConfigHasBeenSet = false;
 };
 

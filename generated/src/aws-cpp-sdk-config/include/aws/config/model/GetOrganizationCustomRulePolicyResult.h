@@ -61,9 +61,9 @@ class GetOrganizationCustomRulePolicyResult {
   ///@}
  private:
   Aws::String m_policyText;
-  bool m_policyTextHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyTextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

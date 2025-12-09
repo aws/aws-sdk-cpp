@@ -129,18 +129,18 @@ class CacheEngineVersion {
   ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupFamily;
-  bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_cacheEngineDescription;
-  bool m_cacheEngineDescriptionHasBeenSet = false;
 
   Aws::String m_cacheEngineVersionDescription;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_cacheParameterGroupFamilyHasBeenSet = false;
+  bool m_cacheEngineDescriptionHasBeenSet = false;
   bool m_cacheEngineVersionDescriptionHasBeenSet = false;
 };
 

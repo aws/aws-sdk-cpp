@@ -169,24 +169,24 @@ class ChannelListConfiguration {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   InputType m_inputType{InputType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_inputTypeHasBeenSet = false;
 };
 

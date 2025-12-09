@@ -87,9 +87,9 @@ class PutGraphqlApiEnvironmentVariablesRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
+  bool m_apiIdHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
 };
 

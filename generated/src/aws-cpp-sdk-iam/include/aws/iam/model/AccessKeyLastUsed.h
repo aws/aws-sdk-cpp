@@ -110,12 +110,12 @@ class AccessKeyLastUsed {
   ///@}
  private:
   Aws::Utils::DateTime m_lastUsedDate{};
-  bool m_lastUsedDateHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_lastUsedDateHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

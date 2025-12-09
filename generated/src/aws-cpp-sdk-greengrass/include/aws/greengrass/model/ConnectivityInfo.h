@@ -102,15 +102,15 @@ class ConnectivityInfo {
   ///@}
  private:
   Aws::String m_hostAddress;
-  bool m_hostAddressHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   int m_portNumber{0};
+  bool m_hostAddressHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_portNumberHasBeenSet = false;
 };
 

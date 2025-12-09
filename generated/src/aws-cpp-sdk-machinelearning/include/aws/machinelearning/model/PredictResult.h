@@ -58,9 +58,9 @@ class PredictResult {
   ///@}
  private:
   Prediction m_prediction;
-  bool m_predictionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

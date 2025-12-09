@@ -96,12 +96,12 @@ class OAuth2Properties {
   ///@}
  private:
   Aws::String m_tokenUrl;
-  bool m_tokenUrlHasBeenSet = false;
 
   OAuth2GrantType m_oAuth2GrantType{OAuth2GrantType::NOT_SET};
-  bool m_oAuth2GrantTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tokenUrlCustomProperties;
+  bool m_tokenUrlHasBeenSet = false;
+  bool m_oAuth2GrantTypeHasBeenSet = false;
   bool m_tokenUrlCustomPropertiesHasBeenSet = false;
 };
 

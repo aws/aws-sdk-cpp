@@ -71,9 +71,9 @@ class ActionGroupExecutor {
   ///@}
  private:
   Aws::String m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   CustomControlMethod m_customControl{CustomControlMethod::NOT_SET};
+  bool m_lambdaHasBeenSet = false;
   bool m_customControlHasBeenSet = false;
 };
 

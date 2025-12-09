@@ -97,12 +97,12 @@ class RegistrationConfig {
   ///@}
  private:
   DuplicateRegistrationAction m_duplicateRegistrationAction{DuplicateRegistrationAction::NOT_SET};
-  bool m_duplicateRegistrationActionHasBeenSet = false;
 
   int m_fraudsterSimilarityThreshold{0};
-  bool m_fraudsterSimilarityThresholdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_watchlistIds;
+  bool m_duplicateRegistrationActionHasBeenSet = false;
+  bool m_fraudsterSimilarityThresholdHasBeenSet = false;
   bool m_watchlistIdsHasBeenSet = false;
 };
 

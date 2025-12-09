@@ -72,9 +72,9 @@ class FSxLustreFileSystemConfig {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_fileSystemPath;
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_fileSystemPathHasBeenSet = false;
 };
 

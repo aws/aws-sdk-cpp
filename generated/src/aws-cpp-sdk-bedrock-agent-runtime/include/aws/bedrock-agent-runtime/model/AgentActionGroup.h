@@ -207,24 +207,24 @@ class AgentActionGroup {
   ///@}
  private:
   ActionGroupExecutor m_actionGroupExecutor;
-  bool m_actionGroupExecutorHasBeenSet = false;
 
   Aws::String m_actionGroupName;
-  bool m_actionGroupNameHasBeenSet = false;
 
   APISchema m_apiSchema;
-  bool m_apiSchemaHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   FunctionSchema m_functionSchema;
-  bool m_functionSchemaHasBeenSet = false;
 
   ActionGroupSignature m_parentActionGroupSignature{ActionGroupSignature::NOT_SET};
-  bool m_parentActionGroupSignatureHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parentActionGroupSignatureParams;
+  bool m_actionGroupExecutorHasBeenSet = false;
+  bool m_actionGroupNameHasBeenSet = false;
+  bool m_apiSchemaHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_functionSchemaHasBeenSet = false;
+  bool m_parentActionGroupSignatureHasBeenSet = false;
   bool m_parentActionGroupSignatureParamsHasBeenSet = false;
 };
 

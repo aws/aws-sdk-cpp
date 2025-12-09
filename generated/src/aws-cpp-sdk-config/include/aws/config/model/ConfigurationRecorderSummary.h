@@ -110,15 +110,15 @@ class ConfigurationRecorderSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_servicePrincipal;
-  bool m_servicePrincipalHasBeenSet = false;
 
   RecordingScope m_recordingScope{RecordingScope::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_servicePrincipalHasBeenSet = false;
   bool m_recordingScopeHasBeenSet = false;
 };
 

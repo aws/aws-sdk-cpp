@@ -88,12 +88,12 @@ class ListImageReferrersResult {
   ///@}
  private:
   Aws::Vector<ImageReferrer> m_referrers;
-  bool m_referrersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_referrersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

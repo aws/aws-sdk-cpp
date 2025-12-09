@@ -374,57 +374,57 @@ class ApplicationDetail {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   Aws::String m_applicationDescription;
-  bool m_applicationDescriptionHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   RuntimeEnvironment m_runtimeEnvironment{RuntimeEnvironment::NOT_SET};
-  bool m_runtimeEnvironmentHasBeenSet = false;
 
   Aws::String m_serviceExecutionRole;
-  bool m_serviceExecutionRoleHasBeenSet = false;
 
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
-  bool m_applicationStatusHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   ApplicationConfigurationDescription m_applicationConfigurationDescription;
-  bool m_applicationConfigurationDescriptionHasBeenSet = false;
 
   Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
-  bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
 
   ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
-  bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet = false;
 
   long long m_applicationVersionUpdatedFrom{0};
-  bool m_applicationVersionUpdatedFromHasBeenSet = false;
 
   long long m_applicationVersionRolledBackFrom{0};
-  bool m_applicationVersionRolledBackFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_applicationVersionCreateTimestamp{};
-  bool m_applicationVersionCreateTimestampHasBeenSet = false;
 
   Aws::String m_conditionalToken;
-  bool m_conditionalTokenHasBeenSet = false;
 
   long long m_applicationVersionRolledBackTo{0};
-  bool m_applicationVersionRolledBackToHasBeenSet = false;
 
   ApplicationMode m_applicationMode{ApplicationMode::NOT_SET};
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationDescriptionHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_runtimeEnvironmentHasBeenSet = false;
+  bool m_serviceExecutionRoleHasBeenSet = false;
+  bool m_applicationStatusHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
+  bool m_applicationConfigurationDescriptionHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
+  bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet = false;
+  bool m_applicationVersionUpdatedFromHasBeenSet = false;
+  bool m_applicationVersionRolledBackFromHasBeenSet = false;
+  bool m_applicationVersionCreateTimestampHasBeenSet = false;
+  bool m_conditionalTokenHasBeenSet = false;
+  bool m_applicationVersionRolledBackToHasBeenSet = false;
   bool m_applicationModeHasBeenSet = false;
 };
 

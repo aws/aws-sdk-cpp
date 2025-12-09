@@ -87,12 +87,12 @@ class SchemaChangeDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SchemaChangeType m_type{SchemaChangeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class QueryInputData {
   ///@}
  private:
   QueryTextInputData m_queryTextInputData;
-  bool m_queryTextInputDataHasBeenSet = false;
 
   IntentInputData m_intentInputData;
-  bool m_intentInputDataHasBeenSet = false;
 
   CaseSummarizationInputData m_caseSummarizationInputData;
+  bool m_queryTextInputDataHasBeenSet = false;
+  bool m_intentInputDataHasBeenSet = false;
   bool m_caseSummarizationInputDataHasBeenSet = false;
 };
 

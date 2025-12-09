@@ -69,9 +69,9 @@ class ExportTaskError {
   ///@}
  private:
   ExportErrorData m_errorData;
-  bool m_errorDataHasBeenSet = false;
 
   Aws::String m_errorDateTime;
+  bool m_errorDataHasBeenSet = false;
   bool m_errorDateTimeHasBeenSet = false;
 };
 

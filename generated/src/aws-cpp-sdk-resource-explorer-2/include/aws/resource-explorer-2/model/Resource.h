@@ -177,24 +177,24 @@ class Resource {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_owningAccountId;
-  bool m_owningAccountIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastReportedAt{};
-  bool m_lastReportedAtHasBeenSet = false;
 
   Aws::Vector<ResourceProperty> m_properties;
+  bool m_arnHasBeenSet = false;
+  bool m_owningAccountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_lastReportedAtHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

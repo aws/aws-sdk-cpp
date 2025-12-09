@@ -88,12 +88,12 @@ class KubernetesRoleDetails {
   ///@}
  private:
   Aws::String m_kind;
-  bool m_kindHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_uid;
+  bool m_kindHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_uidHasBeenSet = false;
 };
 

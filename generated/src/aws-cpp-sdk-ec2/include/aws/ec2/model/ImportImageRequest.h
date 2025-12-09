@@ -386,51 +386,51 @@ class ImportImageRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   ClientData m_clientData;
-  bool m_clientDataHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ImageDiskContainer> m_diskContainers;
-  bool m_diskContainersHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_hypervisor;
-  bool m_hypervisorHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_licenseType;
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::Vector<ImportImageLicenseConfigurationRequest> m_licenseSpecifications;
-  bool m_licenseSpecificationsHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_usageOperation;
-  bool m_usageOperationHasBeenSet = false;
 
   BootModeValues m_bootMode{BootModeValues::NOT_SET};
+  bool m_architectureHasBeenSet = false;
+  bool m_clientDataHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_diskContainersHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_hypervisorHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_roleNameHasBeenSet = false;
+  bool m_licenseSpecificationsHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_usageOperationHasBeenSet = false;
   bool m_bootModeHasBeenSet = false;
 };
 

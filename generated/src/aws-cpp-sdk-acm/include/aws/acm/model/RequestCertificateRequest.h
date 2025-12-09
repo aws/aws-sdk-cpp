@@ -305,33 +305,33 @@ class RequestCertificateRequest : public ACMRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ValidationMethod m_validationMethod{ValidationMethod::NOT_SET};
-  bool m_validationMethodHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   Aws::Vector<DomainValidationOption> m_domainValidationOptions;
-  bool m_domainValidationOptionsHasBeenSet = false;
 
   CertificateOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
-  bool m_keyAlgorithmHasBeenSet = false;
 
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
+  bool m_validationMethodHasBeenSet = false;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
+  bool m_domainValidationOptionsHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_keyAlgorithmHasBeenSet = false;
   bool m_managedByHasBeenSet = false;
 };
 

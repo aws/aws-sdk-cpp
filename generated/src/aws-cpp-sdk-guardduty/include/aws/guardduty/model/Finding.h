@@ -321,51 +321,51 @@ class Finding {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_partition;
-  bool m_partitionHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Service m_service;
-  bool m_serviceHasBeenSet = false;
 
   double m_severity{0.0};
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_updatedAt;
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_associatedAttackSequenceArn;
+  bool m_accountIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_partitionHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_associatedAttackSequenceArnHasBeenSet = false;
 };
 

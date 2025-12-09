@@ -317,42 +317,42 @@ class CreateJobRequest : public BraketRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   AlgorithmSpecification m_algorithmSpecification;
-  bool m_algorithmSpecificationHasBeenSet = false;
 
   Aws::Vector<InputFileConfig> m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   JobOutputDataConfig m_outputDataConfig;
-  bool m_outputDataConfigHasBeenSet = false;
 
   JobCheckpointConfig m_checkpointConfig;
-  bool m_checkpointConfigHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   JobStoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   InstanceConfig m_instanceConfig;
-  bool m_instanceConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-  bool m_hyperParametersHasBeenSet = false;
 
   DeviceConfig m_deviceConfig;
-  bool m_deviceConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Association> m_associations;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_algorithmSpecificationHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_outputDataConfigHasBeenSet = false;
+  bool m_checkpointConfigHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_instanceConfigHasBeenSet = false;
+  bool m_hyperParametersHasBeenSet = false;
+  bool m_deviceConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_associationsHasBeenSet = false;
 };
 

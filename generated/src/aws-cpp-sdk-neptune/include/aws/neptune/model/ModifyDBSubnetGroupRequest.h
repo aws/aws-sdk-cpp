@@ -97,12 +97,12 @@ class ModifyDBSubnetGroupRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupDescription;
-  bool m_dBSubnetGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_dBSubnetGroupDescriptionHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
 };
 

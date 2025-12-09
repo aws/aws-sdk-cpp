@@ -80,9 +80,9 @@ class PropertyValueEntry {
   ///@}
  private:
   EntityPropertyReference m_entityPropertyReference;
-  bool m_entityPropertyReferenceHasBeenSet = false;
 
   Aws::Vector<PropertyValue> m_propertyValues;
+  bool m_entityPropertyReferenceHasBeenSet = false;
   bool m_propertyValuesHasBeenSet = false;
 };
 

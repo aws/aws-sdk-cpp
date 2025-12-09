@@ -61,9 +61,9 @@ class GetSiteToSiteVpnAttachmentResult {
   ///@}
  private:
   SiteToSiteVpnAttachment m_siteToSiteVpnAttachment;
-  bool m_siteToSiteVpnAttachmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_siteToSiteVpnAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

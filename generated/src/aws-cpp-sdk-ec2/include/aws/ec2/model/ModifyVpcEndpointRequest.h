@@ -336,45 +336,45 @@ class ModifyVpcEndpointRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   bool m_resetPolicy{false};
-  bool m_resetPolicyHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addRouteTableIds;
-  bool m_addRouteTableIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeRouteTableIds;
-  bool m_removeRouteTableIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSubnetIds;
-  bool m_addSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSubnetIds;
-  bool m_removeSubnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_addSecurityGroupIds;
-  bool m_addSecurityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeSecurityGroupIds;
-  bool m_removeSecurityGroupIdsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   DnsOptionsSpecification m_dnsOptions;
-  bool m_dnsOptionsHasBeenSet = false;
 
   bool m_privateDnsEnabled{false};
-  bool m_privateDnsEnabledHasBeenSet = false;
 
   Aws::Vector<SubnetConfiguration> m_subnetConfigurations;
+  bool m_dryRunHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_resetPolicyHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_addRouteTableIdsHasBeenSet = false;
+  bool m_removeRouteTableIdsHasBeenSet = false;
+  bool m_addSubnetIdsHasBeenSet = false;
+  bool m_removeSubnetIdsHasBeenSet = false;
+  bool m_addSecurityGroupIdsHasBeenSet = false;
+  bool m_removeSecurityGroupIdsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_dnsOptionsHasBeenSet = false;
+  bool m_privateDnsEnabledHasBeenSet = false;
   bool m_subnetConfigurationsHasBeenSet = false;
 };
 

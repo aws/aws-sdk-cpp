@@ -192,27 +192,27 @@ class ListScanJobSummariesRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   MalwareScanner m_malwareScanner{MalwareScanner::NOT_SET};
-  bool m_malwareScannerHasBeenSet = false;
 
   ScanResultStatus m_scanResultStatus{ScanResultStatus::NOT_SET};
-  bool m_scanResultStatusHasBeenSet = false;
 
   ScanJobStatus m_state{ScanJobStatus::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   AggregationPeriod m_aggregationPeriod{AggregationPeriod::NOT_SET};
-  bool m_aggregationPeriodHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_malwareScannerHasBeenSet = false;
+  bool m_scanResultStatusHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -132,21 +132,21 @@ class GetSensitivityInspectionTemplateResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SensitivityInspectionTemplateExcludes m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   SensitivityInspectionTemplateIncludes m_includes;
-  bool m_includesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sensitivityInspectionTemplateId;
-  bool m_sensitivityInspectionTemplateIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_excludesHasBeenSet = false;
+  bool m_includesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sensitivityInspectionTemplateIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

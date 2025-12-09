@@ -101,15 +101,15 @@ class NumberCondition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   int m_minValue{0};
-  bool m_minValueHasBeenSet = false;
 
   int m_maxValue{0};
-  bool m_maxValueHasBeenSet = false;
 
   NumberComparisonType m_comparisonType{NumberComparisonType::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
   bool m_comparisonTypeHasBeenSet = false;
 };
 

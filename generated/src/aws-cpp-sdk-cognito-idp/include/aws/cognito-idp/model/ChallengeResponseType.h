@@ -153,9 +153,9 @@ class ChallengeResponseType {
   ///@}
  private:
   ChallengeName m_challengeName{ChallengeName::NOT_SET};
-  bool m_challengeNameHasBeenSet = false;
 
   ChallengeResponse m_challengeResponse{ChallengeResponse::NOT_SET};
+  bool m_challengeNameHasBeenSet = false;
   bool m_challengeResponseHasBeenSet = false;
 };
 

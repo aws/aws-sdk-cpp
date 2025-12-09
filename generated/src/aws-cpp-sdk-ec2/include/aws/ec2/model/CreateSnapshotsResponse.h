@@ -67,9 +67,9 @@ class CreateSnapshotsResponse {
   ///@}
  private:
   Aws::Vector<SnapshotInfo> m_snapshots;
-  bool m_snapshotsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

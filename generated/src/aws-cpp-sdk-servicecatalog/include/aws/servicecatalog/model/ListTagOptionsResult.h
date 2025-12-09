@@ -85,12 +85,12 @@ class ListTagOptionsResult {
   ///@}
  private:
   Aws::Vector<TagOptionDetail> m_tagOptionDetails;
-  bool m_tagOptionDetailsHasBeenSet = false;
 
   Aws::String m_pageToken;
-  bool m_pageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagOptionDetailsHasBeenSet = false;
+  bool m_pageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

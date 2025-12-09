@@ -158,24 +158,24 @@ class ListNodesRequest : public PanoramaRequest {
   ///@}
  private:
   NodeCategory m_category{NodeCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_patchVersion;
+  bool m_categoryHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
   bool m_patchVersionHasBeenSet = false;
 };
 

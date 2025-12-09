@@ -86,12 +86,12 @@ class DeleteFleetSuccessItem {
   ///@}
  private:
   FleetStateCode m_currentFleetState{FleetStateCode::NOT_SET};
-  bool m_currentFleetStateHasBeenSet = false;
 
   FleetStateCode m_previousFleetState{FleetStateCode::NOT_SET};
-  bool m_previousFleetStateHasBeenSet = false;
 
   Aws::String m_fleetId;
+  bool m_currentFleetStateHasBeenSet = false;
+  bool m_previousFleetStateHasBeenSet = false;
   bool m_fleetIdHasBeenSet = false;
 };
 

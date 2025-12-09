@@ -88,12 +88,12 @@ class RetryBuildBatchRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   RetryBuildBatchType m_retryType{RetryBuildBatchType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
   bool m_retryTypeHasBeenSet = false;
 };
 

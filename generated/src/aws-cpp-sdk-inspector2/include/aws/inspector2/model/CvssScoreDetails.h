@@ -147,21 +147,21 @@ class CvssScoreDetails {
   ///@}
  private:
   Aws::String m_scoreSource;
-  bool m_scoreSourceHasBeenSet = false;
 
   Aws::String m_cvssSource;
-  bool m_cvssSourceHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   Aws::String m_scoringVector;
-  bool m_scoringVectorHasBeenSet = false;
 
   Aws::Vector<CvssScoreAdjustment> m_adjustments;
+  bool m_scoreSourceHasBeenSet = false;
+  bool m_cvssSourceHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_scoringVectorHasBeenSet = false;
   bool m_adjustmentsHasBeenSet = false;
 };
 

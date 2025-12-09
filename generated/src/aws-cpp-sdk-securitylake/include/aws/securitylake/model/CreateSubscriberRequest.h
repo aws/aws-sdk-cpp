@@ -163,21 +163,21 @@ class CreateSubscriberRequest : public SecurityLakeRequest {
   ///@}
  private:
   Aws::Vector<AccessType> m_accessTypes;
-  bool m_accessTypesHasBeenSet = false;
 
   Aws::Vector<LogSourceResource> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   Aws::String m_subscriberDescription;
-  bool m_subscriberDescriptionHasBeenSet = false;
 
   AwsIdentity m_subscriberIdentity;
-  bool m_subscriberIdentityHasBeenSet = false;
 
   Aws::String m_subscriberName;
-  bool m_subscriberNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_accessTypesHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_subscriberDescriptionHasBeenSet = false;
+  bool m_subscriberIdentityHasBeenSet = false;
+  bool m_subscriberNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

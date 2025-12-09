@@ -237,30 +237,30 @@ class TimeSeriesForecastingJobConfig {
   ///@}
  private:
   Aws::String m_featureSpecificationS3Uri;
-  bool m_featureSpecificationS3UriHasBeenSet = false;
 
   AutoMLJobCompletionCriteria m_completionCriteria;
-  bool m_completionCriteriaHasBeenSet = false;
 
   Aws::String m_forecastFrequency;
-  bool m_forecastFrequencyHasBeenSet = false;
 
   int m_forecastHorizon{0};
-  bool m_forecastHorizonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_forecastQuantiles;
-  bool m_forecastQuantilesHasBeenSet = false;
 
   TimeSeriesTransformations m_transformations;
-  bool m_transformationsHasBeenSet = false;
 
   TimeSeriesConfig m_timeSeriesConfig;
-  bool m_timeSeriesConfigHasBeenSet = false;
 
   Aws::Vector<HolidayConfigAttributes> m_holidayConfig;
-  bool m_holidayConfigHasBeenSet = false;
 
   CandidateGenerationConfig m_candidateGenerationConfig;
+  bool m_featureSpecificationS3UriHasBeenSet = false;
+  bool m_completionCriteriaHasBeenSet = false;
+  bool m_forecastFrequencyHasBeenSet = false;
+  bool m_forecastHorizonHasBeenSet = false;
+  bool m_forecastQuantilesHasBeenSet = false;
+  bool m_transformationsHasBeenSet = false;
+  bool m_timeSeriesConfigHasBeenSet = false;
+  bool m_holidayConfigHasBeenSet = false;
   bool m_candidateGenerationConfigHasBeenSet = false;
 };
 

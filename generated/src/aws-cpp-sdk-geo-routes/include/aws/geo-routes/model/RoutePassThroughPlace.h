@@ -95,12 +95,12 @@ class RoutePassThroughPlace {
   ///@}
  private:
   Aws::Vector<double> m_originalPosition;
-  bool m_originalPositionHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_waypointIndex{0};
+  bool m_originalPositionHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
   bool m_waypointIndexHasBeenSet = false;
 };
 

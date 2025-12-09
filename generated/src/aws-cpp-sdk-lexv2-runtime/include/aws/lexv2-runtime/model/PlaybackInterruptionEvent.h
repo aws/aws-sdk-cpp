@@ -93,12 +93,12 @@ class PlaybackInterruptionEvent {
   ///@}
  private:
   PlaybackInterruptionReason m_eventReason{PlaybackInterruptionReason::NOT_SET};
-  bool m_eventReasonHasBeenSet = false;
 
   Aws::String m_causedByEventId;
-  bool m_causedByEventIdHasBeenSet = false;
 
   Aws::String m_eventId;
+  bool m_eventReasonHasBeenSet = false;
+  bool m_causedByEventIdHasBeenSet = false;
   bool m_eventIdHasBeenSet = false;
 };
 

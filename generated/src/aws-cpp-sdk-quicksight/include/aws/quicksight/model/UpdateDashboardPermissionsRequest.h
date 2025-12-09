@@ -164,21 +164,21 @@ class UpdateDashboardPermissionsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_grantPermissions;
-  bool m_grantPermissionsHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_revokePermissions;
-  bool m_revokePermissionsHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_grantLinkPermissions;
-  bool m_grantLinkPermissionsHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_revokeLinkPermissions;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_grantPermissionsHasBeenSet = false;
+  bool m_revokePermissionsHasBeenSet = false;
+  bool m_grantLinkPermissionsHasBeenSet = false;
   bool m_revokeLinkPermissionsHasBeenSet = false;
 };
 

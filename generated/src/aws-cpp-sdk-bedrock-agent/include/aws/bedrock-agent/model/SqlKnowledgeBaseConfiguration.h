@@ -73,9 +73,9 @@ class SqlKnowledgeBaseConfiguration {
   ///@}
  private:
   QueryEngineType m_type{QueryEngineType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RedshiftConfiguration m_redshiftConfiguration;
+  bool m_typeHasBeenSet = false;
   bool m_redshiftConfigurationHasBeenSet = false;
 };
 

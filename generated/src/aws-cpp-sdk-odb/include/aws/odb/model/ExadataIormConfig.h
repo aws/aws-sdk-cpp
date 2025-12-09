@@ -110,15 +110,15 @@ class ExadataIormConfig {
   ///@}
  private:
   Aws::Vector<DbIormConfig> m_dbPlans;
-  bool m_dbPlansHasBeenSet = false;
 
   Aws::String m_lifecycleDetails;
-  bool m_lifecycleDetailsHasBeenSet = false;
 
   IormLifecycleState m_lifecycleState{IormLifecycleState::NOT_SET};
-  bool m_lifecycleStateHasBeenSet = false;
 
   Objective m_objective{Objective::NOT_SET};
+  bool m_dbPlansHasBeenSet = false;
+  bool m_lifecycleDetailsHasBeenSet = false;
+  bool m_lifecycleStateHasBeenSet = false;
   bool m_objectiveHasBeenSet = false;
 };
 

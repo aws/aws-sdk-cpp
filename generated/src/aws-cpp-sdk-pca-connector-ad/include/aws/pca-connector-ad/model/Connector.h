@@ -203,30 +203,30 @@ class Connector {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::String m_certificateEnrollmentPolicyServerEndpoint;
-  bool m_certificateEnrollmentPolicyServerEndpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   ConnectorStatus m_status{ConnectorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ConnectorStatusReason m_statusReason{ConnectorStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   VpcInformation m_vpcInformation;
+  bool m_arnHasBeenSet = false;
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_certificateEnrollmentPolicyServerEndpointHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_vpcInformationHasBeenSet = false;
 };
 

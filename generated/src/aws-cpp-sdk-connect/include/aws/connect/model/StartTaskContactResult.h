@@ -59,9 +59,9 @@ class StartTaskContactResult {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

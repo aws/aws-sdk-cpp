@@ -116,18 +116,18 @@ class RouteSettings {
   ///@}
  private:
   bool m_dataTraceEnabled{false};
-  bool m_dataTraceEnabledHasBeenSet = false;
 
   bool m_detailedMetricsEnabled{false};
-  bool m_detailedMetricsEnabledHasBeenSet = false;
 
   LoggingLevel m_loggingLevel{LoggingLevel::NOT_SET};
-  bool m_loggingLevelHasBeenSet = false;
 
   int m_throttlingBurstLimit{0};
-  bool m_throttlingBurstLimitHasBeenSet = false;
 
   double m_throttlingRateLimit{0.0};
+  bool m_dataTraceEnabledHasBeenSet = false;
+  bool m_detailedMetricsEnabledHasBeenSet = false;
+  bool m_loggingLevelHasBeenSet = false;
+  bool m_throttlingBurstLimitHasBeenSet = false;
   bool m_throttlingRateLimitHasBeenSet = false;
 };
 

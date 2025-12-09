@@ -349,51 +349,51 @@ class CreateDomainNameRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_certificateName;
-  bool m_certificateNameHasBeenSet = false;
 
   Aws::String m_certificateBody;
-  bool m_certificateBodyHasBeenSet = false;
 
   Aws::String m_certificatePrivateKey;
-  bool m_certificatePrivateKeyHasBeenSet = false;
 
   Aws::String m_certificateChain;
-  bool m_certificateChainHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_regionalCertificateName;
-  bool m_regionalCertificateNameHasBeenSet = false;
 
   Aws::String m_regionalCertificateArn;
-  bool m_regionalCertificateArnHasBeenSet = false;
 
   EndpointConfiguration m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SecurityPolicy m_securityPolicy{SecurityPolicy::NOT_SET};
-  bool m_securityPolicyHasBeenSet = false;
 
   EndpointAccessMode m_endpointAccessMode{EndpointAccessMode::NOT_SET};
-  bool m_endpointAccessModeHasBeenSet = false;
 
   MutualTlsAuthenticationInput m_mutualTlsAuthentication;
-  bool m_mutualTlsAuthenticationHasBeenSet = false;
 
   Aws::String m_ownershipVerificationCertificateArn;
-  bool m_ownershipVerificationCertificateArnHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   RoutingMode m_routingMode{RoutingMode::NOT_SET};
+  bool m_domainNameHasBeenSet = false;
+  bool m_certificateNameHasBeenSet = false;
+  bool m_certificateBodyHasBeenSet = false;
+  bool m_certificatePrivateKeyHasBeenSet = false;
+  bool m_certificateChainHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_regionalCertificateNameHasBeenSet = false;
+  bool m_regionalCertificateArnHasBeenSet = false;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_securityPolicyHasBeenSet = false;
+  bool m_endpointAccessModeHasBeenSet = false;
+  bool m_mutualTlsAuthenticationHasBeenSet = false;
+  bool m_ownershipVerificationCertificateArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_routingModeHasBeenSet = false;
 };
 

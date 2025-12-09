@@ -125,18 +125,18 @@ class ActionGroupSummary {
   ///@}
  private:
   Aws::String m_actionGroupId;
-  bool m_actionGroupIdHasBeenSet = false;
 
   Aws::String m_actionGroupName;
-  bool m_actionGroupNameHasBeenSet = false;
 
   ActionGroupState m_actionGroupState{ActionGroupState::NOT_SET};
-  bool m_actionGroupStateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_actionGroupIdHasBeenSet = false;
+  bool m_actionGroupNameHasBeenSet = false;
+  bool m_actionGroupStateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

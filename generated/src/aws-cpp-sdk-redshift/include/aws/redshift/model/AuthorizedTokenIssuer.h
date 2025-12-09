@@ -80,9 +80,9 @@ class AuthorizedTokenIssuer {
   ///@}
  private:
   Aws::String m_trustedTokenIssuerArn;
-  bool m_trustedTokenIssuerArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedAudiencesList;
+  bool m_trustedTokenIssuerArnHasBeenSet = false;
   bool m_authorizedAudiencesListHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class UpdateSourceServerRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
   SourceServerConnectorAction m_connectorAction;
-  bool m_connectorActionHasBeenSet = false;
 
   Aws::String m_sourceServerID;
+  bool m_accountIDHasBeenSet = false;
+  bool m_connectorActionHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
 };
 

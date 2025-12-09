@@ -143,21 +143,21 @@ class Database {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   long long m_tableCount{0};
-  bool m_tableCountHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_arnHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableCountHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

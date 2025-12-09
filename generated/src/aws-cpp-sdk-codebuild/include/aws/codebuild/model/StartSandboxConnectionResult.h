@@ -60,9 +60,9 @@ class StartSandboxConnectionResult {
   ///@}
  private:
   SSMSession m_ssmSession;
-  bool m_ssmSessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ssmSessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

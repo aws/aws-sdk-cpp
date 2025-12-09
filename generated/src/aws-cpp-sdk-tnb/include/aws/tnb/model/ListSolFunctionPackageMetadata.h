@@ -72,9 +72,9 @@ class ListSolFunctionPackageMetadata {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
+  bool m_createdAtHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
 };
 

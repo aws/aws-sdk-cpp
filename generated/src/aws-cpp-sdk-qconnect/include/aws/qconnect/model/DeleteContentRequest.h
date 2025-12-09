@@ -67,9 +67,9 @@ class DeleteContentRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_contentId;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_contentIdHasBeenSet = false;
 };
 

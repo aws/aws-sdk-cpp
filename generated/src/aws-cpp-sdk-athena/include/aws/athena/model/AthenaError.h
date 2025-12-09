@@ -108,15 +108,15 @@ class AthenaError {
   ///@}
  private:
   int m_errorCategory{0};
-  bool m_errorCategoryHasBeenSet = false;
 
   int m_errorType{0};
-  bool m_errorTypeHasBeenSet = false;
 
   bool m_retryable{false};
-  bool m_retryableHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_errorCategoryHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
+  bool m_retryableHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

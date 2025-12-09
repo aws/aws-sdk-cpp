@@ -67,9 +67,9 @@ class Expiry {
   ///@}
  private:
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTimestamp{};
+  bool m_durationInSecondsHasBeenSet = false;
   bool m_expiryTimestampHasBeenSet = false;
 };
 

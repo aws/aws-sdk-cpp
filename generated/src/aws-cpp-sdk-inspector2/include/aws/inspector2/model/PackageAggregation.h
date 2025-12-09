@@ -92,12 +92,12 @@ class PackageAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_packageNames;
-  bool m_packageNamesHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   PackageSortBy m_sortBy{PackageSortBy::NOT_SET};
+  bool m_packageNamesHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

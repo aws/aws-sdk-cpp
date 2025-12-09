@@ -60,9 +60,9 @@ class DescribeAppInstanceUserResult {
   ///@}
  private:
   AppInstanceUser m_appInstanceUser;
-  bool m_appInstanceUserHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceUserHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

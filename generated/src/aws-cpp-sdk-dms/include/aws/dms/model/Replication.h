@@ -462,66 +462,66 @@ class Replication {
   ///@}
  private:
   Aws::String m_replicationConfigIdentifier;
-  bool m_replicationConfigIdentifierHasBeenSet = false;
 
   Aws::String m_replicationConfigArn;
-  bool m_replicationConfigArnHasBeenSet = false;
 
   Aws::String m_sourceEndpointArn;
-  bool m_sourceEndpointArnHasBeenSet = false;
 
   Aws::String m_targetEndpointArn;
-  bool m_targetEndpointArnHasBeenSet = false;
 
   MigrationTypeValue m_replicationType{MigrationTypeValue::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ProvisionData m_provisionData;
-  bool m_provisionDataHasBeenSet = false;
 
   Aws::Vector<PremigrationAssessmentStatus> m_premigrationAssessmentStatuses;
-  bool m_premigrationAssessmentStatusesHasBeenSet = false;
 
   Aws::String m_stopReason;
-  bool m_stopReasonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureMessages;
-  bool m_failureMessagesHasBeenSet = false;
 
   ReplicationStats m_replicationStats;
-  bool m_replicationStatsHasBeenSet = false;
 
   Aws::String m_startReplicationType;
-  bool m_startReplicationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_cdcStartTime{};
-  bool m_cdcStartTimeHasBeenSet = false;
 
   Aws::String m_cdcStartPosition;
-  bool m_cdcStartPositionHasBeenSet = false;
 
   Aws::String m_cdcStopPosition;
-  bool m_cdcStopPositionHasBeenSet = false;
 
   Aws::String m_recoveryCheckpoint;
-  bool m_recoveryCheckpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationCreateTime{};
-  bool m_replicationCreateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationUpdateTime{};
-  bool m_replicationUpdateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationLastStopTime{};
-  bool m_replicationLastStopTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationDeprovisionTime{};
-  bool m_replicationDeprovisionTimeHasBeenSet = false;
 
   bool m_isReadOnly{false};
+  bool m_replicationConfigIdentifierHasBeenSet = false;
+  bool m_replicationConfigArnHasBeenSet = false;
+  bool m_sourceEndpointArnHasBeenSet = false;
+  bool m_targetEndpointArnHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_provisionDataHasBeenSet = false;
+  bool m_premigrationAssessmentStatusesHasBeenSet = false;
+  bool m_stopReasonHasBeenSet = false;
+  bool m_failureMessagesHasBeenSet = false;
+  bool m_replicationStatsHasBeenSet = false;
+  bool m_startReplicationTypeHasBeenSet = false;
+  bool m_cdcStartTimeHasBeenSet = false;
+  bool m_cdcStartPositionHasBeenSet = false;
+  bool m_cdcStopPositionHasBeenSet = false;
+  bool m_recoveryCheckpointHasBeenSet = false;
+  bool m_replicationCreateTimeHasBeenSet = false;
+  bool m_replicationUpdateTimeHasBeenSet = false;
+  bool m_replicationLastStopTimeHasBeenSet = false;
+  bool m_replicationDeprovisionTimeHasBeenSet = false;
   bool m_isReadOnlyHasBeenSet = false;
 };
 

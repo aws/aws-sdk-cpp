@@ -82,9 +82,9 @@ class Condition {
   ///@}
  private:
   Result m_result{Result::NOT_SET};
-  bool m_resultHasBeenSet = false;
 
   Aws::Vector<RuleDeclaration> m_rules;
+  bool m_resultHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

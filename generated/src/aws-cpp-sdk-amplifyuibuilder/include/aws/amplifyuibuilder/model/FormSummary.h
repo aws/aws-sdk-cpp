@@ -140,21 +140,21 @@ class FormSummary {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   FormDataTypeConfig m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   FormActionType m_formActionType{FormActionType::NOT_SET};
-  bool m_formActionTypeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_appIdHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_formActionTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

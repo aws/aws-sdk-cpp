@@ -61,9 +61,9 @@ class UpdateLaunchResult {
   ///@}
  private:
   Launch m_launch;
-  bool m_launchHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_launchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

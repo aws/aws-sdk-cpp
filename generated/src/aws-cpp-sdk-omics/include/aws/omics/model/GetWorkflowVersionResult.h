@@ -471,78 +471,78 @@ class GetWorkflowVersionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Accelerators m_accelerators{Accelerators::NOT_SET};
-  bool m_acceleratorsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_digest;
-  bool m_digestHasBeenSet = false;
 
   WorkflowEngine m_engine{WorkflowEngine::NOT_SET};
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_main;
-  bool m_mainHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Map<Aws::String, WorkflowParameter> m_parameterTemplate;
-  bool m_parameterTemplateHasBeenSet = false;
 
   WorkflowStatus m_status{WorkflowStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_uuid;
-  bool m_uuidHasBeenSet = false;
 
   Aws::String m_workflowBucketOwnerId;
-  bool m_workflowBucketOwnerIdHasBeenSet = false;
 
   ContainerRegistryMap m_containerRegistryMap;
-  bool m_containerRegistryMapHasBeenSet = false;
 
   Aws::String m_readme;
-  bool m_readmeHasBeenSet = false;
 
   DefinitionRepositoryDetails m_definitionRepositoryDetails;
-  bool m_definitionRepositoryDetailsHasBeenSet = false;
 
   Aws::String m_readmePath;
-  bool m_readmePathHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_acceleratorsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_digestHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_mainHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_parameterTemplateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_uuidHasBeenSet = false;
+  bool m_workflowBucketOwnerIdHasBeenSet = false;
+  bool m_containerRegistryMapHasBeenSet = false;
+  bool m_readmeHasBeenSet = false;
+  bool m_definitionRepositoryDetailsHasBeenSet = false;
+  bool m_readmePathHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

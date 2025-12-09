@@ -115,18 +115,18 @@ class DifferentialPrivacySensitivityParameters {
   ///@}
  private:
   DifferentialPrivacyAggregationType m_aggregationType{DifferentialPrivacyAggregationType::NOT_SET};
-  bool m_aggregationTypeHasBeenSet = false;
 
   Aws::String m_aggregationExpression;
-  bool m_aggregationExpressionHasBeenSet = false;
 
   int m_userContributionLimit{0};
-  bool m_userContributionLimitHasBeenSet = false;
 
   double m_minColumnValue{0.0};
-  bool m_minColumnValueHasBeenSet = false;
 
   double m_maxColumnValue{0.0};
+  bool m_aggregationTypeHasBeenSet = false;
+  bool m_aggregationExpressionHasBeenSet = false;
+  bool m_userContributionLimitHasBeenSet = false;
+  bool m_minColumnValueHasBeenSet = false;
   bool m_maxColumnValueHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AssetBundleImportJobThemeOverrideParameters {
   ///@}
  private:
   Aws::String m_themeId;
-  bool m_themeIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_themeIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

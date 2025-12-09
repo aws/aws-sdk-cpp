@@ -196,33 +196,33 @@ class UpdateAnnotationStoreResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ReferenceItem m_reference;
-  bool m_referenceHasBeenSet = false;
 
   StoreStatus m_status{StoreStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   StoreOptions m_storeOptions;
-  bool m_storeOptionsHasBeenSet = false;
 
   StoreFormat m_storeFormat{StoreFormat::NOT_SET};
-  bool m_storeFormatHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_referenceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_storeOptionsHasBeenSet = false;
+  bool m_storeFormatHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

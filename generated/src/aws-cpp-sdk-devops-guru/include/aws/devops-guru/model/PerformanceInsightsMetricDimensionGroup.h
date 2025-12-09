@@ -153,12 +153,12 @@ class PerformanceInsightsMetricDimensionGroup {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   int m_limit{0};
+  bool m_groupHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

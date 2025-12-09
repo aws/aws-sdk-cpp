@@ -127,21 +127,21 @@ class ExecutionStats {
   ///@}
  private:
   long long m_executionTimeInMillis{0};
-  bool m_executionTimeInMillisHasBeenSet = false;
 
   long long m_dataWrites{0};
-  bool m_dataWritesHasBeenSet = false;
 
   long long m_bytesMetered{0};
-  bool m_bytesMeteredHasBeenSet = false;
 
   long long m_cumulativeBytesScanned{0};
-  bool m_cumulativeBytesScannedHasBeenSet = false;
 
   long long m_recordsIngested{0};
-  bool m_recordsIngestedHasBeenSet = false;
 
   long long m_queryResultRows{0};
+  bool m_executionTimeInMillisHasBeenSet = false;
+  bool m_dataWritesHasBeenSet = false;
+  bool m_bytesMeteredHasBeenSet = false;
+  bool m_cumulativeBytesScannedHasBeenSet = false;
+  bool m_recordsIngestedHasBeenSet = false;
   bool m_queryResultRowsHasBeenSet = false;
 };
 

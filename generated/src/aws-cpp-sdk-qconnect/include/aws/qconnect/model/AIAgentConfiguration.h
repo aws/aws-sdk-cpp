@@ -219,30 +219,30 @@ class AIAgentConfiguration {
   ///@}
  private:
   ManualSearchAIAgentConfiguration m_manualSearchAIAgentConfiguration;
-  bool m_manualSearchAIAgentConfigurationHasBeenSet = false;
 
   AnswerRecommendationAIAgentConfiguration m_answerRecommendationAIAgentConfiguration;
-  bool m_answerRecommendationAIAgentConfigurationHasBeenSet = false;
 
   SelfServiceAIAgentConfiguration m_selfServiceAIAgentConfiguration;
-  bool m_selfServiceAIAgentConfigurationHasBeenSet = false;
 
   EmailResponseAIAgentConfiguration m_emailResponseAIAgentConfiguration;
-  bool m_emailResponseAIAgentConfigurationHasBeenSet = false;
 
   EmailOverviewAIAgentConfiguration m_emailOverviewAIAgentConfiguration;
-  bool m_emailOverviewAIAgentConfigurationHasBeenSet = false;
 
   EmailGenerativeAnswerAIAgentConfiguration m_emailGenerativeAnswerAIAgentConfiguration;
-  bool m_emailGenerativeAnswerAIAgentConfigurationHasBeenSet = false;
 
   OrchestrationAIAgentConfiguration m_orchestrationAIAgentConfiguration;
-  bool m_orchestrationAIAgentConfigurationHasBeenSet = false;
 
   NoteTakingAIAgentConfiguration m_noteTakingAIAgentConfiguration;
-  bool m_noteTakingAIAgentConfigurationHasBeenSet = false;
 
   CaseSummarizationAIAgentConfiguration m_caseSummarizationAIAgentConfiguration;
+  bool m_manualSearchAIAgentConfigurationHasBeenSet = false;
+  bool m_answerRecommendationAIAgentConfigurationHasBeenSet = false;
+  bool m_selfServiceAIAgentConfigurationHasBeenSet = false;
+  bool m_emailResponseAIAgentConfigurationHasBeenSet = false;
+  bool m_emailOverviewAIAgentConfigurationHasBeenSet = false;
+  bool m_emailGenerativeAnswerAIAgentConfigurationHasBeenSet = false;
+  bool m_orchestrationAIAgentConfigurationHasBeenSet = false;
+  bool m_noteTakingAIAgentConfigurationHasBeenSet = false;
   bool m_caseSummarizationAIAgentConfigurationHasBeenSet = false;
 };
 

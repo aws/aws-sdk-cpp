@@ -92,15 +92,15 @@ class CreatePresignedNotebookUrlResult {
   ///@}
  private:
   Aws::String m_notebookUrl;
-  bool m_notebookUrlHasBeenSet = false;
 
   Aws::String m_authToken;
-  bool m_authTokenHasBeenSet = false;
 
   long long m_authTokenExpirationTime{0};
-  bool m_authTokenExpirationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookUrlHasBeenSet = false;
+  bool m_authTokenHasBeenSet = false;
+  bool m_authTokenExpirationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

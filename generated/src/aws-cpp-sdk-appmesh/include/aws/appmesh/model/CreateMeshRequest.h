@@ -119,15 +119,15 @@ class CreateMeshRequest : public AppMeshRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_meshName;
-  bool m_meshNameHasBeenSet = false;
 
   MeshSpec m_spec;
-  bool m_specHasBeenSet = false;
 
   Aws::Vector<TagRef> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_meshNameHasBeenSet = false;
+  bool m_specHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

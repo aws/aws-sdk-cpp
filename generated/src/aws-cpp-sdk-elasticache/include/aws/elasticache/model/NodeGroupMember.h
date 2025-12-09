@@ -149,21 +149,21 @@ class NodeGroupMember {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   Aws::String m_cacheNodeId;
-  bool m_cacheNodeIdHasBeenSet = false;
 
   Endpoint m_readEndpoint;
-  bool m_readEndpointHasBeenSet = false;
 
   Aws::String m_preferredAvailabilityZone;
-  bool m_preferredAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_preferredOutpostArn;
-  bool m_preferredOutpostArnHasBeenSet = false;
 
   Aws::String m_currentRole;
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_cacheNodeIdHasBeenSet = false;
+  bool m_readEndpointHasBeenSet = false;
+  bool m_preferredAvailabilityZoneHasBeenSet = false;
+  bool m_preferredOutpostArnHasBeenSet = false;
   bool m_currentRoleHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class MediaDeviceInfo {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_manufacturer;
-  bool m_manufacturerHasBeenSet = false;
 
   MediaDeviceMemoryInfo m_memoryInfo;
+  bool m_countHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_manufacturerHasBeenSet = false;
   bool m_memoryInfoHasBeenSet = false;
 };
 

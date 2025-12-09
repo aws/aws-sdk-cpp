@@ -77,9 +77,9 @@ class StringCriteriaCondition {
   ///@}
  private:
   ComparisonOperator m_comparison{ComparisonOperator::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_comparisonHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

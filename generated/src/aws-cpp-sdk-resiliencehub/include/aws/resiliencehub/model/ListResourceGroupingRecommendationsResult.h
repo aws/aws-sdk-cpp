@@ -85,12 +85,12 @@ class ListResourceGroupingRecommendationsResult {
   ///@}
  private:
   Aws::Vector<GroupingRecommendation> m_groupingRecommendations;
-  bool m_groupingRecommendationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupingRecommendationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

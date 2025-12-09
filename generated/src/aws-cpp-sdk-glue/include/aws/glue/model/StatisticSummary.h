@@ -252,36 +252,36 @@ class StatisticSummary {
   ///@}
  private:
   Aws::String m_statisticId;
-  bool m_statisticIdHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   RunIdentifier m_runIdentifier;
-  bool m_runIdentifierHasBeenSet = false;
 
   Aws::String m_statisticName;
-  bool m_statisticNameHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   StatisticEvaluationLevel m_evaluationLevel{StatisticEvaluationLevel::NOT_SET};
-  bool m_evaluationLevelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columnsReferenced;
-  bool m_columnsReferencedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_referencedDatasets;
-  bool m_referencedDatasetsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statisticProperties;
-  bool m_statisticPropertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_recordedOn{};
-  bool m_recordedOnHasBeenSet = false;
 
   TimestampedInclusionAnnotation m_inclusionAnnotation;
+  bool m_statisticIdHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_runIdentifierHasBeenSet = false;
+  bool m_statisticNameHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_evaluationLevelHasBeenSet = false;
+  bool m_columnsReferencedHasBeenSet = false;
+  bool m_referencedDatasetsHasBeenSet = false;
+  bool m_statisticPropertiesHasBeenSet = false;
+  bool m_recordedOnHasBeenSet = false;
   bool m_inclusionAnnotationHasBeenSet = false;
 };
 

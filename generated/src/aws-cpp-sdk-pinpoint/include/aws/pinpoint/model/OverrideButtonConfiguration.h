@@ -67,9 +67,9 @@ class OverrideButtonConfiguration {
   ///@}
  private:
   ButtonAction m_buttonAction{ButtonAction::NOT_SET};
-  bool m_buttonActionHasBeenSet = false;
 
   Aws::String m_link;
+  bool m_buttonActionHasBeenSet = false;
   bool m_linkHasBeenSet = false;
 };
 

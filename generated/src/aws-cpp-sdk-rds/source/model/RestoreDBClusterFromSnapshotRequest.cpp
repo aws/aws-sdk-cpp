@@ -186,6 +186,18 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const {
     ss << "EngineLifecycleSupport=" << StringUtils::URLEncode(m_engineLifecycleSupport.c_str()) << "&";
   }
 
+  if (m_tagSpecificationsHasBeenSet) {
+    if (m_tagSpecifications.empty()) {
+      ss << "TagSpecifications=&";
+    } else {
+      unsigned tagSpecificationsCount = 1;
+      for (auto& item : m_tagSpecifications) {
+        item.OutputToStream(ss, "TagSpecifications.item.", tagSpecificationsCount, "");
+        tagSpecificationsCount++;
+      }
+    }
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

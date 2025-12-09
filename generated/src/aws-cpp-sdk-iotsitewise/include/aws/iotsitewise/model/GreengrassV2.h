@@ -78,9 +78,9 @@ class GreengrassV2 {
   ///@}
  private:
   Aws::String m_coreDeviceThingName;
-  bool m_coreDeviceThingNameHasBeenSet = false;
 
   CoreDeviceOperatingSystem m_coreDeviceOperatingSystem{CoreDeviceOperatingSystem::NOT_SET};
+  bool m_coreDeviceThingNameHasBeenSet = false;
   bool m_coreDeviceOperatingSystemHasBeenSet = false;
 };
 

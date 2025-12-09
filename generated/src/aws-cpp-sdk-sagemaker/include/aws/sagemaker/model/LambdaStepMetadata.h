@@ -77,9 +77,9 @@ class LambdaStepMetadata {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<OutputParameter> m_outputParameters;
+  bool m_arnHasBeenSet = false;
   bool m_outputParametersHasBeenSet = false;
 };
 

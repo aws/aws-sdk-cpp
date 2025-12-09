@@ -88,12 +88,12 @@ class ListAssistantAssociationsResult {
   ///@}
  private:
   Aws::Vector<AssistantAssociationSummary> m_assistantAssociationSummaries;
-  bool m_assistantAssociationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assistantAssociationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

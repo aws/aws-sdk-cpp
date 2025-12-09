@@ -93,12 +93,12 @@ class CategoryFilterConfiguration {
   ///@}
  private:
   FilterListConfiguration m_filterListConfiguration;
-  bool m_filterListConfigurationHasBeenSet = false;
 
   CustomFilterListConfiguration m_customFilterListConfiguration;
-  bool m_customFilterListConfigurationHasBeenSet = false;
 
   CustomFilterConfiguration m_customFilterConfiguration;
+  bool m_filterListConfigurationHasBeenSet = false;
+  bool m_customFilterListConfigurationHasBeenSet = false;
   bool m_customFilterConfigurationHasBeenSet = false;
 };
 

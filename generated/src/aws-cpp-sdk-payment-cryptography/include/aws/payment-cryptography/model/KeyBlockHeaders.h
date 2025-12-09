@@ -128,15 +128,15 @@ class KeyBlockHeaders {
   ///@}
  private:
   KeyModesOfUse m_keyModesOfUse;
-  bool m_keyModesOfUseHasBeenSet = false;
 
   KeyExportability m_keyExportability{KeyExportability::NOT_SET};
-  bool m_keyExportabilityHasBeenSet = false;
 
   Aws::String m_keyVersion;
-  bool m_keyVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_optionalBlocks;
+  bool m_keyModesOfUseHasBeenSet = false;
+  bool m_keyExportabilityHasBeenSet = false;
+  bool m_keyVersionHasBeenSet = false;
   bool m_optionalBlocksHasBeenSet = false;
 };
 

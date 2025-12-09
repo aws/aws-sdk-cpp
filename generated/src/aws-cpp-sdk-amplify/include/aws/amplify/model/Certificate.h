@@ -98,12 +98,12 @@ class Certificate {
   ///@}
  private:
   CertificateType m_type{CertificateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_customCertificateArn;
-  bool m_customCertificateArnHasBeenSet = false;
 
   Aws::String m_certificateVerificationDNSRecord;
+  bool m_typeHasBeenSet = false;
+  bool m_customCertificateArnHasBeenSet = false;
   bool m_certificateVerificationDNSRecordHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class LoadBalancerDescription {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::Vector<Listener> m_listeners;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
   bool m_listenersHasBeenSet = false;
 };
 

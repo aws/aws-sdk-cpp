@@ -84,12 +84,12 @@ class GetNetworkTelemetryResult {
   ///@}
  private:
   Aws::Vector<NetworkTelemetry> m_networkTelemetry;
-  bool m_networkTelemetryHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkTelemetryHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

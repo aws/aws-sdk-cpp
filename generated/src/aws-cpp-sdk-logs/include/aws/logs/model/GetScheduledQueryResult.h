@@ -342,60 +342,60 @@ class GetScheduledQueryResult {
   ///@}
  private:
   Aws::String m_scheduledQueryArn;
-  bool m_scheduledQueryArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
-  bool m_queryLanguageHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
-  bool m_logGroupIdentifiersHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   long long m_startTimeOffset{0};
-  bool m_startTimeOffsetHasBeenSet = false;
 
   DestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   ScheduledQueryState m_state{ScheduledQueryState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   long long m_lastTriggeredTime{0};
-  bool m_lastTriggeredTimeHasBeenSet = false;
 
   ExecutionStatus m_lastExecutionStatus{ExecutionStatus::NOT_SET};
-  bool m_lastExecutionStatusHasBeenSet = false;
 
   long long m_scheduleStartTime{0};
-  bool m_scheduleStartTimeHasBeenSet = false;
 
   long long m_scheduleEndTime{0};
-  bool m_scheduleEndTimeHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_lastUpdatedTime{0};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledQueryArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_queryLanguageHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_logGroupIdentifiersHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_startTimeOffsetHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_lastTriggeredTimeHasBeenSet = false;
+  bool m_lastExecutionStatusHasBeenSet = false;
+  bool m_scheduleStartTimeHasBeenSet = false;
+  bool m_scheduleEndTimeHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

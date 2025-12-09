@@ -89,12 +89,12 @@ class SubscribedPrincipalInput {
   ///@}
  private:
   SubscribedGroupInput m_group;
-  bool m_groupHasBeenSet = false;
 
   SubscribedProjectInput m_project;
-  bool m_projectHasBeenSet = false;
 
   SubscribedUserInput m_user;
+  bool m_groupHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

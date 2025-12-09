@@ -406,54 +406,54 @@ class CreateDataSetRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, PhysicalTable> m_physicalTableMap;
-  bool m_physicalTableMapHasBeenSet = false;
 
   DataSetImportMode m_importMode{DataSetImportMode::NOT_SET};
-  bool m_importModeHasBeenSet = false;
 
   Aws::Vector<ColumnGroup> m_columnGroups;
-  bool m_columnGroupsHasBeenSet = false;
 
   Aws::Map<Aws::String, FieldFolder> m_fieldFolders;
-  bool m_fieldFoldersHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::Vector<ColumnLevelPermissionRule> m_columnLevelPermissionRules;
-  bool m_columnLevelPermissionRulesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DataSetUsageConfiguration m_dataSetUsageConfiguration;
-  bool m_dataSetUsageConfigurationHasBeenSet = false;
 
   Aws::Vector<DatasetParameter> m_datasetParameters;
-  bool m_datasetParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_folderArns;
-  bool m_folderArnsHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfiguration;
-  bool m_performanceConfigurationHasBeenSet = false;
 
   DataSetUseAs m_useAs{DataSetUseAs::NOT_SET};
-  bool m_useAsHasBeenSet = false;
 
   DataPrepConfiguration m_dataPrepConfiguration;
-  bool m_dataPrepConfigurationHasBeenSet = false;
 
   SemanticModelConfiguration m_semanticModelConfiguration;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_physicalTableMapHasBeenSet = false;
+  bool m_importModeHasBeenSet = false;
+  bool m_columnGroupsHasBeenSet = false;
+  bool m_fieldFoldersHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_columnLevelPermissionRulesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dataSetUsageConfigurationHasBeenSet = false;
+  bool m_datasetParametersHasBeenSet = false;
+  bool m_folderArnsHasBeenSet = false;
+  bool m_performanceConfigurationHasBeenSet = false;
+  bool m_useAsHasBeenSet = false;
+  bool m_dataPrepConfigurationHasBeenSet = false;
   bool m_semanticModelConfigurationHasBeenSet = false;
 };
 

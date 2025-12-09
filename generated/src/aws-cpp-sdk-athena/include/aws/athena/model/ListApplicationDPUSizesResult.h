@@ -87,12 +87,12 @@ class ListApplicationDPUSizesResult {
   ///@}
  private:
   Aws::Vector<ApplicationDPUSizes> m_applicationDPUSizes;
-  bool m_applicationDPUSizesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationDPUSizesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

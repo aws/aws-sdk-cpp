@@ -59,9 +59,9 @@ class PutHubConfigurationResult {
   ///@}
  private:
   long long m_hubTokenTimerExpirySettingInSeconds{0};
-  bool m_hubTokenTimerExpirySettingInSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hubTokenTimerExpirySettingInSecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

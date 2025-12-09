@@ -88,12 +88,12 @@ class GeneratedPolicyProperties {
   ///@}
  private:
   bool m_isComplete{false};
-  bool m_isCompleteHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   CloudTrailProperties m_cloudTrailProperties;
+  bool m_isCompleteHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
   bool m_cloudTrailPropertiesHasBeenSet = false;
 };
 

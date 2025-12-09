@@ -144,21 +144,21 @@ class DeriveSharedSecretResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_sharedSecret{};
-  bool m_sharedSecretHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_ciphertextForRecipient{};
-  bool m_ciphertextForRecipientHasBeenSet = false;
 
   KeyAgreementAlgorithmSpec m_keyAgreementAlgorithm{KeyAgreementAlgorithmSpec::NOT_SET};
-  bool m_keyAgreementAlgorithmHasBeenSet = false;
 
   OriginType m_keyOrigin{OriginType::NOT_SET};
-  bool m_keyOriginHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_sharedSecretHasBeenSet = false;
+  bool m_ciphertextForRecipientHasBeenSet = false;
+  bool m_keyAgreementAlgorithmHasBeenSet = false;
+  bool m_keyOriginHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

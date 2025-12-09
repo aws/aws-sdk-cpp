@@ -73,9 +73,9 @@ class PersonDetection {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   PersonDetail m_person;
+  bool m_timestampHasBeenSet = false;
   bool m_personHasBeenSet = false;
 };
 

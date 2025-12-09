@@ -98,12 +98,12 @@ class EmailGenerativeAnswerChunkDataDetails {
   ///@}
  private:
   Aws::String m_completion;
-  bool m_completionHasBeenSet = false;
 
   Aws::Vector<DataSummary> m_references;
-  bool m_referencesHasBeenSet = false;
 
   Aws::String m_nextChunkToken;
+  bool m_completionHasBeenSet = false;
+  bool m_referencesHasBeenSet = false;
   bool m_nextChunkTokenHasBeenSet = false;
 };
 

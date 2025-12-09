@@ -90,12 +90,12 @@ class ListDeliveryStreamsRequest : public FirehoseRequest {
   ///@}
  private:
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   DeliveryStreamType m_deliveryStreamType{DeliveryStreamType::NOT_SET};
-  bool m_deliveryStreamTypeHasBeenSet = false;
 
   Aws::String m_exclusiveStartDeliveryStreamName;
+  bool m_limitHasBeenSet = false;
+  bool m_deliveryStreamTypeHasBeenSet = false;
   bool m_exclusiveStartDeliveryStreamNameHasBeenSet = false;
 };
 

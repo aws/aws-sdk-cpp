@@ -176,24 +176,24 @@ class InputDeviceConfigurableSettings {
   ///@}
  private:
   InputDeviceConfiguredInput m_configuredInput{InputDeviceConfiguredInput::NOT_SET};
-  bool m_configuredInputHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_latencyMs{0};
-  bool m_latencyMsHasBeenSet = false;
 
   InputDeviceCodec m_codec{InputDeviceCodec::NOT_SET};
-  bool m_codecHasBeenSet = false;
 
   InputDeviceMediaConnectConfigurableSettings m_mediaconnectSettings;
-  bool m_mediaconnectSettingsHasBeenSet = false;
 
   Aws::Vector<InputDeviceConfigurableAudioChannelPairConfig> m_audioChannelPairs;
-  bool m_audioChannelPairsHasBeenSet = false;
 
   Aws::String m_inputResolution;
+  bool m_configuredInputHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_latencyMsHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_mediaconnectSettingsHasBeenSet = false;
+  bool m_audioChannelPairsHasBeenSet = false;
   bool m_inputResolutionHasBeenSet = false;
 };
 

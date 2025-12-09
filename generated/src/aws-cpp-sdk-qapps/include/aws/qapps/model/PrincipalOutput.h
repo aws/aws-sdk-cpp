@@ -85,12 +85,12 @@ class PrincipalOutput {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   PrincipalOutputUserTypeEnum m_userType{PrincipalOutputUserTypeEnum::NOT_SET};
-  bool m_userTypeHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_userIdHasBeenSet = false;
+  bool m_userTypeHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

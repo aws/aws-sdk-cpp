@@ -124,15 +124,15 @@ class CaptionDescriptionPreset {
   ///@}
  private:
   Aws::String m_customLanguageCode;
-  bool m_customLanguageCodeHasBeenSet = false;
 
   CaptionDestinationSettings m_destinationSettings;
-  bool m_destinationSettingsHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_languageDescription;
+  bool m_customLanguageCodeHasBeenSet = false;
+  bool m_destinationSettingsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_languageDescriptionHasBeenSet = false;
 };
 

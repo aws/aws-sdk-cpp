@@ -86,12 +86,12 @@ class DisassociateMacSecKeyResult {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::Vector<MacSecKey> m_macSecKeys;
-  bool m_macSecKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_macSecKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

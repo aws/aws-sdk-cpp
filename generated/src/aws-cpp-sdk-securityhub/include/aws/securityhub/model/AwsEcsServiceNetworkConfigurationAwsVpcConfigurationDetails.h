@@ -104,12 +104,12 @@ class AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
   ///@}
  private:
   Aws::String m_assignPublicIp;
-  bool m_assignPublicIpHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
+  bool m_assignPublicIpHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_subnetsHasBeenSet = false;
 };
 

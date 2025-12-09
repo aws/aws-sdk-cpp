@@ -76,9 +76,9 @@ class DeleteScraperRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_scraperId;
-  bool m_scraperIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_scraperIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

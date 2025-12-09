@@ -69,9 +69,9 @@ class WhatsAppBusinessAccountEventDestination {
   ///@}
  private:
   Aws::String m_eventDestinationArn;
-  bool m_eventDestinationArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_eventDestinationArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

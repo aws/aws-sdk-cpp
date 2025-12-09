@@ -229,30 +229,30 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SourceBuildInformation m_sourceBuildInformation;
-  bool m_sourceBuildInformationHasBeenSet = false;
 
   S3Location m_sourceBundle;
-  bool m_sourceBundleHasBeenSet = false;
 
   BuildConfiguration m_buildConfiguration;
-  bool m_buildConfigurationHasBeenSet = false;
 
   bool m_autoCreateApplication{false};
-  bool m_autoCreateApplicationHasBeenSet = false;
 
   bool m_process{false};
-  bool m_processHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceBuildInformationHasBeenSet = false;
+  bool m_sourceBundleHasBeenSet = false;
+  bool m_buildConfigurationHasBeenSet = false;
+  bool m_autoCreateApplicationHasBeenSet = false;
+  bool m_processHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

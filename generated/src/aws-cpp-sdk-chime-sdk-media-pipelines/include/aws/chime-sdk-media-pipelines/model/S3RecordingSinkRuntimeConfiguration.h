@@ -70,9 +70,9 @@ class S3RecordingSinkRuntimeConfiguration {
   ///@}
  private:
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   RecordingFileFormat m_recordingFileFormat{RecordingFileFormat::NOT_SET};
+  bool m_destinationHasBeenSet = false;
   bool m_recordingFileFormatHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class DukptDerivationAttributes {
   ///@}
  private:
   Aws::String m_keySerialNumber;
-  bool m_keySerialNumberHasBeenSet = false;
 
   DukptDerivationType m_dukptKeyDerivationType{DukptDerivationType::NOT_SET};
-  bool m_dukptKeyDerivationTypeHasBeenSet = false;
 
   DukptKeyVariant m_dukptKeyVariant{DukptKeyVariant::NOT_SET};
+  bool m_keySerialNumberHasBeenSet = false;
+  bool m_dukptKeyDerivationTypeHasBeenSet = false;
   bool m_dukptKeyVariantHasBeenSet = false;
 };
 

@@ -37,46 +37,6 @@ class NotificationSettingDetail {
 
   ///@{
   /**
-   * <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch
-   * metrics, EventBridge, and Health Dashboard to notify for an event.</p>
-   * <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting
-   * to 'ALL' channels.</p>
-   */
-  inline NotificationChannel GetChannel() const { return m_channel; }
-  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-  inline void SetChannel(NotificationChannel value) {
-    m_channelHasBeenSet = true;
-    m_channel = value;
-  }
-  inline NotificationSettingDetail& WithChannel(NotificationChannel value) {
-    SetChannel(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The principal that configured the notification setting. For default settings
-   * configured by IAM Roles Anywhere, the value is
-   * <code>rolesanywhere.amazonaws.com</code>, and for customized notifications
-   * settings, it is the respective account ID. </p>
-   */
-  inline const Aws::String& GetConfiguredBy() const { return m_configuredBy; }
-  inline bool ConfiguredByHasBeenSet() const { return m_configuredByHasBeenSet; }
-  template <typename ConfiguredByT = Aws::String>
-  void SetConfiguredBy(ConfiguredByT&& value) {
-    m_configuredByHasBeenSet = true;
-    m_configuredBy = std::forward<ConfiguredByT>(value);
-  }
-  template <typename ConfiguredByT = Aws::String>
-  NotificationSettingDetail& WithConfiguredBy(ConfiguredByT&& value) {
-    SetConfiguredBy(std::forward<ConfiguredByT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Indicates whether the notification setting is enabled.</p>
    */
   inline bool GetEnabled() const { return m_enabled; }
@@ -122,21 +82,61 @@ class NotificationSettingDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The specified channel of notification. IAM Roles Anywhere uses CloudWatch
+   * metrics, EventBridge, and Health Dashboard to notify for an event.</p>
+   * <p>In the absence of a specific channel, IAM Roles Anywhere applies this setting
+   * to 'ALL' channels.</p>
+   */
+  inline NotificationChannel GetChannel() const { return m_channel; }
+  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+  inline void SetChannel(NotificationChannel value) {
+    m_channelHasBeenSet = true;
+    m_channel = value;
+  }
+  inline NotificationSettingDetail& WithChannel(NotificationChannel value) {
+    SetChannel(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The principal that configured the notification setting. For default settings
+   * configured by IAM Roles Anywhere, the value is
+   * <code>rolesanywhere.amazonaws.com</code>, and for customized notifications
+   * settings, it is the respective account ID. </p>
+   */
+  inline const Aws::String& GetConfiguredBy() const { return m_configuredBy; }
+  inline bool ConfiguredByHasBeenSet() const { return m_configuredByHasBeenSet; }
+  template <typename ConfiguredByT = Aws::String>
+  void SetConfiguredBy(ConfiguredByT&& value) {
+    m_configuredByHasBeenSet = true;
+    m_configuredBy = std::forward<ConfiguredByT>(value);
+  }
+  template <typename ConfiguredByT = Aws::String>
+  NotificationSettingDetail& WithConfiguredBy(ConfiguredByT&& value) {
+    SetConfiguredBy(std::forward<ConfiguredByT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  NotificationChannel m_channel{NotificationChannel::NOT_SET};
-  bool m_channelHasBeenSet = false;
-
-  Aws::String m_configuredBy;
-  bool m_configuredByHasBeenSet = false;
-
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   NotificationEvent m_event{NotificationEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   int m_threshold{0};
+
+  NotificationChannel m_channel{NotificationChannel::NOT_SET};
+
+  Aws::String m_configuredBy;
+  bool m_enabledHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
   bool m_thresholdHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
+  bool m_configuredByHasBeenSet = false;
 };
 
 }  // namespace Model

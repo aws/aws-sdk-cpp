@@ -114,15 +114,15 @@ class AdminUpdateAuthEventFeedbackRequest : public CognitoIdentityProviderReques
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   FeedbackValueType m_feedbackValue{FeedbackValueType::NOT_SET};
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_feedbackValueHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ThreatActorIp {
   ///@}
  private:
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_userAgent;
+  bool m_ipAddressHasBeenSet = false;
   bool m_userAgentHasBeenSet = false;
 };
 

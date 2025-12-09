@@ -298,48 +298,48 @@ class BatchPrediction {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   AsyncJobStatus m_status{AsyncJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_completionTime;
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_lastHeartbeatTime;
-  bool m_lastHeartbeatTimeHasBeenSet = false;
 
   Aws::String m_inputPath;
-  bool m_inputPathHasBeenSet = false;
 
   Aws::String m_outputPath;
-  bool m_outputPathHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_detectorName;
-  bool m_detectorNameHasBeenSet = false;
 
   Aws::String m_detectorVersion;
-  bool m_detectorVersionHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_processedRecordsCount{0};
-  bool m_processedRecordsCountHasBeenSet = false;
 
   int m_totalRecordsCount{0};
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_lastHeartbeatTimeHasBeenSet = false;
+  bool m_inputPathHasBeenSet = false;
+  bool m_outputPathHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_detectorNameHasBeenSet = false;
+  bool m_detectorVersionHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_processedRecordsCountHasBeenSet = false;
   bool m_totalRecordsCountHasBeenSet = false;
 };
 

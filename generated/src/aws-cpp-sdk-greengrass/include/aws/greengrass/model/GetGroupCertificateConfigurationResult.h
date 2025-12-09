@@ -95,15 +95,15 @@ class GetGroupCertificateConfigurationResult {
   ///@}
  private:
   Aws::String m_certificateAuthorityExpiryInMilliseconds;
-  bool m_certificateAuthorityExpiryInMillisecondsHasBeenSet = false;
 
   Aws::String m_certificateExpiryInMilliseconds;
-  bool m_certificateExpiryInMillisecondsHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateAuthorityExpiryInMillisecondsHasBeenSet = false;
+  bool m_certificateExpiryInMillisecondsHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

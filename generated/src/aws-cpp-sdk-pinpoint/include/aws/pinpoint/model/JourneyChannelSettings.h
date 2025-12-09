@@ -70,9 +70,9 @@ class JourneyChannelSettings {
   ///@}
  private:
   Aws::String m_connectCampaignArn;
-  bool m_connectCampaignArnHasBeenSet = false;
 
   Aws::String m_connectCampaignExecutionRoleArn;
+  bool m_connectCampaignArnHasBeenSet = false;
   bool m_connectCampaignExecutionRoleArnHasBeenSet = false;
 };
 

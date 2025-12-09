@@ -484,60 +484,60 @@ class ReplicationTask {
   ///@}
  private:
   Aws::String m_replicationTaskIdentifier;
-  bool m_replicationTaskIdentifierHasBeenSet = false;
 
   Aws::String m_sourceEndpointArn;
-  bool m_sourceEndpointArnHasBeenSet = false;
 
   Aws::String m_targetEndpointArn;
-  bool m_targetEndpointArnHasBeenSet = false;
 
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   MigrationTypeValue m_migrationType{MigrationTypeValue::NOT_SET};
-  bool m_migrationTypeHasBeenSet = false;
 
   Aws::String m_tableMappings;
-  bool m_tableMappingsHasBeenSet = false;
 
   Aws::String m_replicationTaskSettings;
-  bool m_replicationTaskSettingsHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_lastFailureMessage;
-  bool m_lastFailureMessageHasBeenSet = false;
 
   Aws::String m_stopReason;
-  bool m_stopReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationTaskCreationDate{};
-  bool m_replicationTaskCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationTaskStartDate{};
-  bool m_replicationTaskStartDateHasBeenSet = false;
 
   Aws::String m_cdcStartPosition;
-  bool m_cdcStartPositionHasBeenSet = false;
 
   Aws::String m_cdcStopPosition;
-  bool m_cdcStopPositionHasBeenSet = false;
 
   Aws::String m_recoveryCheckpoint;
-  bool m_recoveryCheckpointHasBeenSet = false;
 
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   ReplicationTaskStats m_replicationTaskStats;
-  bool m_replicationTaskStatsHasBeenSet = false;
 
   Aws::String m_taskData;
-  bool m_taskDataHasBeenSet = false;
 
   Aws::String m_targetReplicationInstanceArn;
+  bool m_replicationTaskIdentifierHasBeenSet = false;
+  bool m_sourceEndpointArnHasBeenSet = false;
+  bool m_targetEndpointArnHasBeenSet = false;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_migrationTypeHasBeenSet = false;
+  bool m_tableMappingsHasBeenSet = false;
+  bool m_replicationTaskSettingsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastFailureMessageHasBeenSet = false;
+  bool m_stopReasonHasBeenSet = false;
+  bool m_replicationTaskCreationDateHasBeenSet = false;
+  bool m_replicationTaskStartDateHasBeenSet = false;
+  bool m_cdcStartPositionHasBeenSet = false;
+  bool m_cdcStopPositionHasBeenSet = false;
+  bool m_recoveryCheckpointHasBeenSet = false;
+  bool m_replicationTaskArnHasBeenSet = false;
+  bool m_replicationTaskStatsHasBeenSet = false;
+  bool m_taskDataHasBeenSet = false;
   bool m_targetReplicationInstanceArnHasBeenSet = false;
 };
 

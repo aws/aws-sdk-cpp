@@ -70,9 +70,9 @@ class DeleteTransitGatewayConnectPeerRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayConnectPeerId;
-  bool m_transitGatewayConnectPeerIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayConnectPeerIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

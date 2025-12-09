@@ -3410,7 +3410,7 @@ PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSi
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutEmailIdentityDkimSigningAttributes, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/v1/email/identities/");
+        endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/identities/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEmailIdentity());
         endpointResolutionOutcome.GetResult().AddPathSegments("/dkim/signing");
         return PutEmailIdentityDkimSigningAttributesOutcome(

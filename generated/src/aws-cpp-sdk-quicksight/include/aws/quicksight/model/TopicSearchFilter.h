@@ -84,12 +84,12 @@ class TopicSearchFilter {
   ///@}
  private:
   TopicFilterOperator m_operator{TopicFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   TopicFilterAttribute m_name{TopicFilterAttribute::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_operatorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

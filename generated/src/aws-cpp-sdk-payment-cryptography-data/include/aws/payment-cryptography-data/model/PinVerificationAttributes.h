@@ -70,9 +70,9 @@ class PinVerificationAttributes {
   ///@}
  private:
   VisaPinVerification m_visaPin;
-  bool m_visaPinHasBeenSet = false;
 
   Ibm3624PinVerification m_ibm3624Pin;
+  bool m_visaPinHasBeenSet = false;
   bool m_ibm3624PinHasBeenSet = false;
 };
 

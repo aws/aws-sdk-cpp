@@ -94,15 +94,15 @@ class UpdateRepositoryEncryptionKeyResult {
   ///@}
  private:
   Aws::String m_repositoryId;
-  bool m_repositoryIdHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_originalKmsKeyId;
-  bool m_originalKmsKeyIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoryIdHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_originalKmsKeyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

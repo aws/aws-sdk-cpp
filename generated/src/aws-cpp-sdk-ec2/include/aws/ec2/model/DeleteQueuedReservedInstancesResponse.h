@@ -95,12 +95,12 @@ class DeleteQueuedReservedInstancesResponse {
   ///@}
  private:
   Aws::Vector<SuccessfulQueuedPurchaseDeletion> m_successfulQueuedPurchaseDeletions;
-  bool m_successfulQueuedPurchaseDeletionsHasBeenSet = false;
 
   Aws::Vector<FailedQueuedPurchaseDeletion> m_failedQueuedPurchaseDeletions;
-  bool m_failedQueuedPurchaseDeletionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulQueuedPurchaseDeletionsHasBeenSet = false;
+  bool m_failedQueuedPurchaseDeletionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

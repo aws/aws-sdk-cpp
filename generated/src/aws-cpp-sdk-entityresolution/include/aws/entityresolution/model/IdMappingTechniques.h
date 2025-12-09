@@ -89,12 +89,12 @@ class IdMappingTechniques {
   ///@}
  private:
   IdMappingType m_idMappingType{IdMappingType::NOT_SET};
-  bool m_idMappingTypeHasBeenSet = false;
 
   IdMappingRuleBasedProperties m_ruleBasedProperties;
-  bool m_ruleBasedPropertiesHasBeenSet = false;
 
   ProviderProperties m_providerProperties;
+  bool m_idMappingTypeHasBeenSet = false;
+  bool m_ruleBasedPropertiesHasBeenSet = false;
   bool m_providerPropertiesHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class DescribeUpdateActionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<UpdateAction> m_updateActions;
-  bool m_updateActionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_updateActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

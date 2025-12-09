@@ -85,12 +85,12 @@ class RouteFerryAfterTravelStep {
   ///@}
  private:
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   RouteFerryAfterTravelStepType m_type{RouteFerryAfterTravelStepType::NOT_SET};
+  bool m_durationHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

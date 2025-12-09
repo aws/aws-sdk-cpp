@@ -255,36 +255,36 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   Aws::Vector<NumberCapability> m_numberCapabilities;
-  bool m_numberCapabilitiesHasBeenSet = false;
 
   RequestableNumberType m_numberType{RequestableNumberType::NOT_SET};
-  bool m_numberTypeHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   bool m_internationalSendingEnabled{false};
-  bool m_internationalSendingEnabledHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_numberCapabilitiesHasBeenSet = false;
+  bool m_numberTypeHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_internationalSendingEnabledHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

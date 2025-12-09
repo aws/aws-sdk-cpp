@@ -78,12 +78,12 @@ class CodeErrorLocation {
   ///@}
  private:
   int m_line{0};
-  bool m_lineHasBeenSet = false;
 
   int m_column{0};
-  bool m_columnHasBeenSet = false;
 
   int m_span{0};
+  bool m_lineHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
   bool m_spanHasBeenSet = false;
 };
 

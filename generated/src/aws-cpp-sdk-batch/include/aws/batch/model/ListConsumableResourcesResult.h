@@ -88,12 +88,12 @@ class ListConsumableResourcesResult {
   ///@}
  private:
   Aws::Vector<ConsumableResourceSummary> m_consumableResources;
-  bool m_consumableResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumableResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

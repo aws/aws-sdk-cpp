@@ -73,9 +73,9 @@ class DescribeServicesResult {
   ///@}
  private:
   Aws::Vector<Service> m_services;
-  bool m_servicesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_servicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

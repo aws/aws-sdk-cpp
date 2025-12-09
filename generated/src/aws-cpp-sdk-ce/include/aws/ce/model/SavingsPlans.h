@@ -154,24 +154,24 @@ class SavingsPlans {
   ///@}
  private:
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   SupportedSavingsPlansType m_savingsPlansType{SupportedSavingsPlansType::NOT_SET};
-  bool m_savingsPlansTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_instanceFamily;
-  bool m_instanceFamilyHasBeenSet = false;
 
   TermInYears m_termInYears{TermInYears::NOT_SET};
-  bool m_termInYearsHasBeenSet = false;
 
   double m_savingsPlansCommitment{0.0};
-  bool m_savingsPlansCommitmentHasBeenSet = false;
 
   Aws::String m_offeringId;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_savingsPlansTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
+  bool m_termInYearsHasBeenSet = false;
+  bool m_savingsPlansCommitmentHasBeenSet = false;
   bool m_offeringIdHasBeenSet = false;
 };
 

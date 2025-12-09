@@ -126,18 +126,18 @@ class SearchGroupProfilesRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   GroupSearchType m_groupType{GroupSearchType::NOT_SET};
-  bool m_groupTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_searchText;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_groupTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_searchTextHasBeenSet = false;
 };
 

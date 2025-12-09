@@ -79,9 +79,9 @@ class ManagedDataIdentifierSummary {
   ///@}
  private:
   SensitiveDataItemCategory m_category{SensitiveDataItemCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_categoryHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

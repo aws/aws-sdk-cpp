@@ -93,12 +93,12 @@ class Change {
   ///@}
  private:
   ChangeSpecificationType m_specificationType{ChangeSpecificationType::NOT_SET};
-  bool m_specificationTypeHasBeenSet = false;
 
   ChangeSpecification m_specification;
-  bool m_specificationHasBeenSet = false;
 
   Aws::Vector<ChangeType> m_types;
+  bool m_specificationTypeHasBeenSet = false;
+  bool m_specificationHasBeenSet = false;
   bool m_typesHasBeenSet = false;
 };
 

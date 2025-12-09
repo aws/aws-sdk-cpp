@@ -85,12 +85,12 @@ class PathMappingRule {
   ///@}
  private:
   PathFormat m_sourcePathFormat{PathFormat::NOT_SET};
-  bool m_sourcePathFormatHasBeenSet = false;
 
   Aws::String m_sourcePath;
-  bool m_sourcePathHasBeenSet = false;
 
   Aws::String m_destinationPath;
+  bool m_sourcePathFormatHasBeenSet = false;
+  bool m_sourcePathHasBeenSet = false;
   bool m_destinationPathHasBeenSet = false;
 };
 

@@ -180,21 +180,21 @@ class CisScanResultsAggregatedByChecksFilterCriteria {
   ///@}
  private:
   Aws::Vector<CisStringFilter> m_accountIdFilters;
-  bool m_accountIdFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_checkIdFilters;
-  bool m_checkIdFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_titleFilters;
-  bool m_titleFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_platformFilters;
-  bool m_platformFiltersHasBeenSet = false;
 
   Aws::Vector<CisNumberFilter> m_failedResourcesFilters;
-  bool m_failedResourcesFiltersHasBeenSet = false;
 
   Aws::Vector<CisSecurityLevelFilter> m_securityLevelFilters;
+  bool m_accountIdFiltersHasBeenSet = false;
+  bool m_checkIdFiltersHasBeenSet = false;
+  bool m_titleFiltersHasBeenSet = false;
+  bool m_platformFiltersHasBeenSet = false;
+  bool m_failedResourcesFiltersHasBeenSet = false;
   bool m_securityLevelFiltersHasBeenSet = false;
 };
 

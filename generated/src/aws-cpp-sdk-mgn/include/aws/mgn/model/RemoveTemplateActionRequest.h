@@ -66,9 +66,9 @@ class RemoveTemplateActionRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_actionID;
-  bool m_actionIDHasBeenSet = false;
 
   Aws::String m_launchConfigurationTemplateID;
+  bool m_actionIDHasBeenSet = false;
   bool m_launchConfigurationTemplateIDHasBeenSet = false;
 };
 

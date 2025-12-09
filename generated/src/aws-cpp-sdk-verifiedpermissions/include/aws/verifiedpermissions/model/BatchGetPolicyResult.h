@@ -93,12 +93,12 @@ class BatchGetPolicyResult {
   ///@}
  private:
   Aws::Vector<BatchGetPolicyOutputItem> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::Vector<BatchGetPolicyErrorItem> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

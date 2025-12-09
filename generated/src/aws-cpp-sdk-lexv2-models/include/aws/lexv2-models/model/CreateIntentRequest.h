@@ -433,57 +433,57 @@ class CreateIntentRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::String m_intentDisplayName;
-  bool m_intentDisplayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_parentIntentSignature;
-  bool m_parentIntentSignatureHasBeenSet = false;
 
   Aws::Vector<SampleUtterance> m_sampleUtterances;
-  bool m_sampleUtterancesHasBeenSet = false;
 
   DialogCodeHookSettings m_dialogCodeHook;
-  bool m_dialogCodeHookHasBeenSet = false;
 
   FulfillmentCodeHookSettings m_fulfillmentCodeHook;
-  bool m_fulfillmentCodeHookHasBeenSet = false;
 
   IntentConfirmationSetting m_intentConfirmationSetting;
-  bool m_intentConfirmationSettingHasBeenSet = false;
 
   IntentClosingSetting m_intentClosingSetting;
-  bool m_intentClosingSettingHasBeenSet = false;
 
   Aws::Vector<InputContext> m_inputContexts;
-  bool m_inputContextsHasBeenSet = false;
 
   Aws::Vector<OutputContext> m_outputContexts;
-  bool m_outputContextsHasBeenSet = false;
 
   KendraConfiguration m_kendraConfiguration;
-  bool m_kendraConfigurationHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   InitialResponseSetting m_initialResponseSetting;
-  bool m_initialResponseSettingHasBeenSet = false;
 
   QnAIntentConfiguration m_qnAIntentConfiguration;
-  bool m_qnAIntentConfigurationHasBeenSet = false;
 
   QInConnectIntentConfiguration m_qInConnectIntentConfiguration;
+  bool m_intentNameHasBeenSet = false;
+  bool m_intentDisplayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parentIntentSignatureHasBeenSet = false;
+  bool m_sampleUtterancesHasBeenSet = false;
+  bool m_dialogCodeHookHasBeenSet = false;
+  bool m_fulfillmentCodeHookHasBeenSet = false;
+  bool m_intentConfirmationSettingHasBeenSet = false;
+  bool m_intentClosingSettingHasBeenSet = false;
+  bool m_inputContextsHasBeenSet = false;
+  bool m_outputContextsHasBeenSet = false;
+  bool m_kendraConfigurationHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_initialResponseSettingHasBeenSet = false;
+  bool m_qnAIntentConfigurationHasBeenSet = false;
   bool m_qInConnectIntentConfigurationHasBeenSet = false;
 };
 

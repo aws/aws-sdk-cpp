@@ -95,12 +95,12 @@ class TokenValidityUnitsType {
   ///@}
  private:
   TimeUnitsType m_accessToken{TimeUnitsType::NOT_SET};
-  bool m_accessTokenHasBeenSet = false;
 
   TimeUnitsType m_idToken{TimeUnitsType::NOT_SET};
-  bool m_idTokenHasBeenSet = false;
 
   TimeUnitsType m_refreshToken{TimeUnitsType::NOT_SET};
+  bool m_accessTokenHasBeenSet = false;
+  bool m_idTokenHasBeenSet = false;
   bool m_refreshTokenHasBeenSet = false;
 };
 

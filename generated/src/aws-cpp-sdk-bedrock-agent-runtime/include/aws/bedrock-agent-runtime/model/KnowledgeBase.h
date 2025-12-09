@@ -92,12 +92,12 @@ class KnowledgeBase {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   KnowledgeBaseRetrievalConfiguration m_retrievalConfiguration;
+  bool m_descriptionHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_retrievalConfigurationHasBeenSet = false;
 };
 

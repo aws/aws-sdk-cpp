@@ -164,21 +164,21 @@ class UpdatePodIdentityAssociationRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   bool m_disableSessionTags{false};
-  bool m_disableSessionTagsHasBeenSet = false;
 
   Aws::String m_targetRoleArn;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_disableSessionTagsHasBeenSet = false;
   bool m_targetRoleArnHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class AutoMLConfig {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recipeList;
+  bool m_metricNameHasBeenSet = false;
   bool m_recipeListHasBeenSet = false;
 };
 

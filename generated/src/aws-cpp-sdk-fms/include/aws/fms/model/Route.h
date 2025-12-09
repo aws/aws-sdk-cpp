@@ -102,15 +102,15 @@ class Route {
   ///@}
  private:
   DestinationType m_destinationType{DestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_target;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

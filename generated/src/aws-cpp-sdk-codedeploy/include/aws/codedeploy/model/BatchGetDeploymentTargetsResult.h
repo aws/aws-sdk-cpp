@@ -74,9 +74,9 @@ class BatchGetDeploymentTargetsResult {
   ///@}
  private:
   Aws::Vector<DeploymentTarget> m_deploymentTargets;
-  bool m_deploymentTargetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentTargetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

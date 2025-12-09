@@ -108,12 +108,12 @@ class HookConfiguration {
   ///@}
  private:
   DocumentAttributeCondition m_invocationCondition;
-  bool m_invocationConditionHasBeenSet = false;
 
   Aws::String m_lambdaArn;
-  bool m_lambdaArnHasBeenSet = false;
 
   Aws::String m_s3Bucket;
+  bool m_invocationConditionHasBeenSet = false;
+  bool m_lambdaArnHasBeenSet = false;
   bool m_s3BucketHasBeenSet = false;
 };
 

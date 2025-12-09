@@ -101,15 +101,15 @@ class ListLanguagesResult {
   ///@}
  private:
   Aws::Vector<Language> m_languages;
-  bool m_languagesHasBeenSet = false;
 
   DisplayLanguageCode m_displayLanguageCode{DisplayLanguageCode::NOT_SET};
-  bool m_displayLanguageCodeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_languagesHasBeenSet = false;
+  bool m_displayLanguageCodeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

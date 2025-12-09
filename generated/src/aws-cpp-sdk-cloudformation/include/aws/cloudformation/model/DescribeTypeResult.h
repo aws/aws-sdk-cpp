@@ -611,87 +611,87 @@ class DescribeTypeResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   RegistryType m_type{RegistryType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_defaultVersionId;
-  bool m_defaultVersionIdHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
-  bool m_isDefaultVersionHasBeenSet = false;
 
   TypeTestsStatus m_typeTestsStatus{TypeTestsStatus::NOT_SET};
-  bool m_typeTestsStatusHasBeenSet = false;
 
   Aws::String m_typeTestsStatusDescription;
-  bool m_typeTestsStatusDescriptionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   ProvisioningType m_provisioningType{ProvisioningType::NOT_SET};
-  bool m_provisioningTypeHasBeenSet = false;
 
   DeprecatedStatus m_deprecatedStatus{DeprecatedStatus::NOT_SET};
-  bool m_deprecatedStatusHasBeenSet = false;
 
   LoggingConfig m_loggingConfig;
-  bool m_loggingConfigHasBeenSet = false;
 
   Aws::Vector<RequiredActivatedType> m_requiredActivatedTypes;
-  bool m_requiredActivatedTypesHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_sourceUrl;
-  bool m_sourceUrlHasBeenSet = false;
 
   Aws::String m_documentationUrl;
-  bool m_documentationUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeCreated{};
-  bool m_timeCreatedHasBeenSet = false;
 
   Aws::String m_configurationSchema;
-  bool m_configurationSchemaHasBeenSet = false;
 
   Aws::String m_publisherId;
-  bool m_publisherIdHasBeenSet = false;
 
   Aws::String m_originalTypeName;
-  bool m_originalTypeNameHasBeenSet = false;
 
   Aws::String m_originalTypeArn;
-  bool m_originalTypeArnHasBeenSet = false;
 
   Aws::String m_publicVersionNumber;
-  bool m_publicVersionNumberHasBeenSet = false;
 
   Aws::String m_latestPublicVersion;
-  bool m_latestPublicVersionHasBeenSet = false;
 
   bool m_isActivated{false};
-  bool m_isActivatedHasBeenSet = false;
 
   bool m_autoUpdate{false};
-  bool m_autoUpdateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_defaultVersionIdHasBeenSet = false;
+  bool m_isDefaultVersionHasBeenSet = false;
+  bool m_typeTestsStatusHasBeenSet = false;
+  bool m_typeTestsStatusDescriptionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_provisioningTypeHasBeenSet = false;
+  bool m_deprecatedStatusHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
+  bool m_requiredActivatedTypesHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_sourceUrlHasBeenSet = false;
+  bool m_documentationUrlHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_timeCreatedHasBeenSet = false;
+  bool m_configurationSchemaHasBeenSet = false;
+  bool m_publisherIdHasBeenSet = false;
+  bool m_originalTypeNameHasBeenSet = false;
+  bool m_originalTypeArnHasBeenSet = false;
+  bool m_publicVersionNumberHasBeenSet = false;
+  bool m_latestPublicVersionHasBeenSet = false;
+  bool m_isActivatedHasBeenSet = false;
+  bool m_autoUpdateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

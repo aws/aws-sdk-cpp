@@ -85,12 +85,12 @@ class FilterCondition {
   ///@}
  private:
   Aws::String m_equalsValue;
-  bool m_equalsValueHasBeenSet = false;
 
   long long m_greaterThan{0};
-  bool m_greaterThanHasBeenSet = false;
 
   long long m_lessThan{0};
+  bool m_equalsValueHasBeenSet = false;
+  bool m_greaterThanHasBeenSet = false;
   bool m_lessThanHasBeenSet = false;
 };
 

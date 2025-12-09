@@ -89,12 +89,12 @@ class ListProcurementPortalPreferencesResult {
   ///@}
  private:
   Aws::Vector<ProcurementPortalPreferenceSummary> m_procurementPortalPreferences;
-  bool m_procurementPortalPreferencesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_procurementPortalPreferencesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -166,24 +166,24 @@ class SidewalkListDevice {
   ///@}
  private:
   Aws::String m_amazonId;
-  bool m_amazonIdHasBeenSet = false;
 
   Aws::String m_sidewalkId;
-  bool m_sidewalkIdHasBeenSet = false;
 
   Aws::String m_sidewalkManufacturingSn;
-  bool m_sidewalkManufacturingSnHasBeenSet = false;
 
   Aws::Vector<CertificateList> m_deviceCertificates;
-  bool m_deviceCertificatesHasBeenSet = false;
 
   Aws::String m_deviceProfileId;
-  bool m_deviceProfileIdHasBeenSet = false;
 
   WirelessDeviceSidewalkStatus m_status{WirelessDeviceSidewalkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SidewalkPositioning m_positioning;
+  bool m_amazonIdHasBeenSet = false;
+  bool m_sidewalkIdHasBeenSet = false;
+  bool m_sidewalkManufacturingSnHasBeenSet = false;
+  bool m_deviceCertificatesHasBeenSet = false;
+  bool m_deviceProfileIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_positioningHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class TraceLocation {
   ///@}
  private:
   TraceLocationType m_locationType{TraceLocationType::NOT_SET};
-  bool m_locationTypeHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_locationTypeHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class DescribeRuleGroupSummaryResult {
   ///@}
  private:
   Aws::String m_ruleGroupName;
-  bool m_ruleGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Summary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

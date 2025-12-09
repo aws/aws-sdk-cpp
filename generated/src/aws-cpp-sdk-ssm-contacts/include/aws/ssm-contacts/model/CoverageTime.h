@@ -69,9 +69,9 @@ class CoverageTime {
   ///@}
  private:
   HandOffTime m_start;
-  bool m_startHasBeenSet = false;
 
   HandOffTime m_end;
+  bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

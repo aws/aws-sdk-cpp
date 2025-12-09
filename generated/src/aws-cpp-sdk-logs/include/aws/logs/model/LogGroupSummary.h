@@ -89,12 +89,12 @@ class LogGroupSummary {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logGroupArn;
-  bool m_logGroupArnHasBeenSet = false;
 
   LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_logGroupArnHasBeenSet = false;
   bool m_logGroupClassHasBeenSet = false;
 };
 

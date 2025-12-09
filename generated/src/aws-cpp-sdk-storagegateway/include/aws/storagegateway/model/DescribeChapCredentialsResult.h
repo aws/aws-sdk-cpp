@@ -83,9 +83,9 @@ class DescribeChapCredentialsResult {
   ///@}
  private:
   Aws::Vector<ChapInfo> m_chapCredentials;
-  bool m_chapCredentialsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_chapCredentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

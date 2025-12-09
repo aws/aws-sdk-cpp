@@ -89,12 +89,12 @@ class RegisterOnPremisesInstanceRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::String m_iamSessionArn;
-  bool m_iamSessionArnHasBeenSet = false;
 
   Aws::String m_iamUserArn;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_iamSessionArnHasBeenSet = false;
   bool m_iamUserArnHasBeenSet = false;
 };
 

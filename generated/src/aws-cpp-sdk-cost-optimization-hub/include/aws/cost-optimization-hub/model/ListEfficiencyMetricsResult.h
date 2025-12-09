@@ -90,12 +90,12 @@ class ListEfficiencyMetricsResult {
   ///@}
  private:
   Aws::Vector<EfficiencyMetricsByGroup> m_efficiencyMetricsByGroup;
-  bool m_efficiencyMetricsByGroupHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_efficiencyMetricsByGroupHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

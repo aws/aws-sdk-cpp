@@ -209,24 +209,24 @@ class UpdateComputeEnvironmentRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_computeEnvironment;
-  bool m_computeEnvironmentHasBeenSet = false;
 
   CEState m_state{CEState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_unmanagedvCpus{0};
-  bool m_unmanagedvCpusHasBeenSet = false;
 
   ComputeResourceUpdate m_computeResources;
-  bool m_computeResourcesHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   UpdatePolicy m_updatePolicy;
-  bool m_updatePolicyHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_computeEnvironmentHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_unmanagedvCpusHasBeenSet = false;
+  bool m_computeResourcesHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_updatePolicyHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

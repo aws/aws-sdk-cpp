@@ -101,15 +101,15 @@ class DQResultsPublishingOptions {
   ///@}
  private:
   Aws::String m_evaluationContext;
-  bool m_evaluationContextHasBeenSet = false;
 
   Aws::String m_resultsS3Prefix;
-  bool m_resultsS3PrefixHasBeenSet = false;
 
   bool m_cloudWatchMetricsEnabled{false};
-  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
   bool m_resultsPublishingEnabled{false};
+  bool m_evaluationContextHasBeenSet = false;
+  bool m_resultsS3PrefixHasBeenSet = false;
+  bool m_cloudWatchMetricsEnabledHasBeenSet = false;
   bool m_resultsPublishingEnabledHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class AddLFTagsToResourceRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<LFTagPair> m_lFTags;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
   bool m_lFTagsHasBeenSet = false;
 };
 

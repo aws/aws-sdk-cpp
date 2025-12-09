@@ -105,15 +105,15 @@ class Principal {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PrincipalType m_type{PrincipalType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ReadAccessType m_access{ReadAccessType::NOT_SET};
-  bool m_accessHasBeenSet = false;
 
   Aws::String m_dataSourceId;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_accessHasBeenSet = false;
   bool m_dataSourceIdHasBeenSet = false;
 };
 

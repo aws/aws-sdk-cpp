@@ -68,9 +68,9 @@ class CaseSummary {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_templateId;
+  bool m_caseIdHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
 };
 

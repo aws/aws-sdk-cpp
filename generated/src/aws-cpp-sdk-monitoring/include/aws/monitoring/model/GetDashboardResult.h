@@ -98,15 +98,15 @@ class GetDashboardResult {
   ///@}
  private:
   Aws::String m_dashboardArn;
-  bool m_dashboardArnHasBeenSet = false;
 
   Aws::String m_dashboardBody;
-  bool m_dashboardBodyHasBeenSet = false;
 
   Aws::String m_dashboardName;
-  bool m_dashboardNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dashboardArnHasBeenSet = false;
+  bool m_dashboardBodyHasBeenSet = false;
+  bool m_dashboardNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

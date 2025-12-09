@@ -84,12 +84,12 @@ class GetGroupsResult {
   ///@}
  private:
   Aws::Vector<GroupSummary> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

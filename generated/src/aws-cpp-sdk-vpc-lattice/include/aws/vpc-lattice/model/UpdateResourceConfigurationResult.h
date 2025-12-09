@@ -240,39 +240,39 @@ class UpdateResourceConfigurationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceGatewayId;
-  bool m_resourceGatewayIdHasBeenSet = false;
 
   Aws::String m_resourceConfigurationGroupId;
-  bool m_resourceConfigurationGroupIdHasBeenSet = false;
 
   ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_portRanges;
-  bool m_portRangesHasBeenSet = false;
 
   bool m_allowAssociationToShareableServiceNetwork{false};
-  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
   ProtocolType m_protocol{ProtocolType::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   ResourceConfigurationStatus m_status{ResourceConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResourceConfigurationDefinition m_resourceConfigurationDefinition;
-  bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceGatewayIdHasBeenSet = false;
+  bool m_resourceConfigurationGroupIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_portRangesHasBeenSet = false;
+  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_resourceConfigurationDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

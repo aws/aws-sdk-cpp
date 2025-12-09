@@ -112,15 +112,15 @@ class Diagnostics {
   ///@}
  private:
   LifecycleErrorCode m_errorCode{LifecycleErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_scriptName;
-  bool m_scriptNameHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_logTail;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_scriptNameHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_logTailHasBeenSet = false;
 };
 

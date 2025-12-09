@@ -85,12 +85,12 @@ class ListDomainsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_domainNames;
-  bool m_domainNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_domainNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

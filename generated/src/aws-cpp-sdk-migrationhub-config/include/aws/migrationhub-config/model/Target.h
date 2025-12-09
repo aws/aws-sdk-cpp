@@ -71,9 +71,9 @@ class Target {
   ///@}
  private:
   TargetType m_type{TargetType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_typeHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

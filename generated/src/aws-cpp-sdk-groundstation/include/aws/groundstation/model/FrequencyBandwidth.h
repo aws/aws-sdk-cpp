@@ -70,9 +70,9 @@ class FrequencyBandwidth {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   BandwidthUnits m_units{BandwidthUnits::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_unitsHasBeenSet = false;
 };
 

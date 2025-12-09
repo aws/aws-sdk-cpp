@@ -81,9 +81,9 @@ class UntagPolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_policyArnHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

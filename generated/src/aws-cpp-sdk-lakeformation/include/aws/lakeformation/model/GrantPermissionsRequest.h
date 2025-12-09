@@ -164,21 +164,21 @@ class GrantPermissionsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   DataLakePrincipal m_principal;
-  bool m_principalHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Condition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissionsWithGrantOption;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_permissionsWithGrantOptionHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class DestinationBackup {
   ///@}
  private:
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_sourceBackup;
-  bool m_sourceBackupHasBeenSet = false;
 
   Aws::String m_sourceCluster;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_sourceBackupHasBeenSet = false;
   bool m_sourceClusterHasBeenSet = false;
 };
 

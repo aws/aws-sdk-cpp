@@ -72,9 +72,9 @@ class IdentityVerificationAttributes {
   ///@}
  private:
   VerificationStatus m_verificationStatus{VerificationStatus::NOT_SET};
-  bool m_verificationStatusHasBeenSet = false;
 
   Aws::String m_verificationToken;
+  bool m_verificationStatusHasBeenSet = false;
   bool m_verificationTokenHasBeenSet = false;
 };
 

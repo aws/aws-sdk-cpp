@@ -109,15 +109,15 @@ class DescribeConfigurationOptionsResult {
   ///@}
  private:
   Aws::String m_solutionStackName;
-  bool m_solutionStackNameHasBeenSet = false;
 
   Aws::String m_platformArn;
-  bool m_platformArnHasBeenSet = false;
 
   Aws::Vector<ConfigurationOptionDescription> m_options;
-  bool m_optionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_solutionStackNameHasBeenSet = false;
+  bool m_platformArnHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

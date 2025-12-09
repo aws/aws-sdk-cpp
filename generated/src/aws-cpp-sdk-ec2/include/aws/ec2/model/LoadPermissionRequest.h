@@ -69,9 +69,9 @@ class LoadPermissionRequest {
   ///@}
  private:
   PermissionGroup m_group{PermissionGroup::NOT_SET};
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_groupHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

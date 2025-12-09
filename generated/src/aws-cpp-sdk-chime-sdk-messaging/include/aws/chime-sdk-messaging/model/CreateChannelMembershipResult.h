@@ -95,15 +95,15 @@ class CreateChannelMembershipResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Identity m_member;
-  bool m_memberHasBeenSet = false;
 
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

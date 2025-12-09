@@ -72,12 +72,12 @@ class GetMailboxDetailsResult {
   ///@}
  private:
   int m_mailboxQuota{0};
-  bool m_mailboxQuotaHasBeenSet = false;
 
   double m_mailboxSize{0.0};
-  bool m_mailboxSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mailboxQuotaHasBeenSet = false;
+  bool m_mailboxSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

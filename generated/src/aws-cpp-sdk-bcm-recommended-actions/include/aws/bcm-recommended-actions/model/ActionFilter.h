@@ -95,12 +95,12 @@ class ActionFilter {
   ///@}
  private:
   FilterName m_key{FilterName::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   MatchOption m_matchOption{MatchOption::NOT_SET};
-  bool m_matchOptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_keyHasBeenSet = false;
+  bool m_matchOptionHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

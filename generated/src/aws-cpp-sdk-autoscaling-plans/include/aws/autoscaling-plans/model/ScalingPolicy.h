@@ -87,12 +87,12 @@ class ScalingPolicy {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   TargetTrackingConfiguration m_targetTrackingConfiguration;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_targetTrackingConfigurationHasBeenSet = false;
 };
 

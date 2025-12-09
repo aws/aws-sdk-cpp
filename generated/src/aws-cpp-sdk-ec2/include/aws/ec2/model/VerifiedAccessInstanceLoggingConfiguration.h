@@ -72,9 +72,9 @@ class VerifiedAccessInstanceLoggingConfiguration {
   ///@}
  private:
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   VerifiedAccessLogs m_accessLogs;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
   bool m_accessLogsHasBeenSet = false;
 };
 

@@ -128,15 +128,15 @@ class RecommenderConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
-  bool m_itemExplorationConfigHasBeenSet = false;
 
   int m_minRecommendationRequestsPerSecond{0};
-  bool m_minRecommendationRequestsPerSecondHasBeenSet = false;
 
   TrainingDataConfig m_trainingDataConfig;
-  bool m_trainingDataConfigHasBeenSet = false;
 
   bool m_enableMetadataWithRecommendations{false};
+  bool m_itemExplorationConfigHasBeenSet = false;
+  bool m_minRecommendationRequestsPerSecondHasBeenSet = false;
+  bool m_trainingDataConfigHasBeenSet = false;
   bool m_enableMetadataWithRecommendationsHasBeenSet = false;
 };
 

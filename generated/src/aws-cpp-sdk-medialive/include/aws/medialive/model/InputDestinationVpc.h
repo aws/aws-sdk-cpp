@@ -68,9 +68,9 @@ class InputDestinationVpc {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
+  bool m_availabilityZoneHasBeenSet = false;
   bool m_networkInterfaceIdHasBeenSet = false;
 };
 

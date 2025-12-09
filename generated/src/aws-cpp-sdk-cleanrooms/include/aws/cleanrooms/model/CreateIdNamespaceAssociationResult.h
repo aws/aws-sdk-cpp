@@ -60,9 +60,9 @@ class CreateIdNamespaceAssociationResult {
   ///@}
  private:
   IdNamespaceAssociation m_idNamespaceAssociation;
-  bool m_idNamespaceAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idNamespaceAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

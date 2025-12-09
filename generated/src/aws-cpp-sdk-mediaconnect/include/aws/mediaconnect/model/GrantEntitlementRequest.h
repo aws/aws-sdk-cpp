@@ -180,24 +180,24 @@ class GrantEntitlementRequest {
   ///@}
  private:
   int m_dataTransferSubscriberFeePercent{0};
-  bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Encryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   EntitlementStatus m_entitlementStatus{EntitlementStatus::NOT_SET};
-  bool m_entitlementStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subscribers;
-  bool m_subscribersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_entitlementTags;
+  bool m_dataTransferSubscriberFeePercentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_entitlementStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_subscribersHasBeenSet = false;
   bool m_entitlementTagsHasBeenSet = false;
 };
 

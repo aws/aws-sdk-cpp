@@ -88,12 +88,12 @@ class DescribeTrustStoreAssociationsResult {
   ///@}
  private:
   Aws::Vector<TrustStoreAssociation> m_trustStoreAssociations;
-  bool m_trustStoreAssociationsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trustStoreAssociationsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

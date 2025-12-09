@@ -99,12 +99,12 @@ class ListShardsResult {
   ///@}
  private:
   Aws::Vector<Shard> m_shards;
-  bool m_shardsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shardsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,15 +95,15 @@ class CreateWhatsAppMessageTemplateFromLibraryResult {
   ///@}
  private:
   Aws::String m_metaTemplateId;
-  bool m_metaTemplateIdHasBeenSet = false;
 
   Aws::String m_templateStatus;
-  bool m_templateStatusHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metaTemplateIdHasBeenSet = false;
+  bool m_templateStatusHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -188,18 +188,18 @@ class LaunchTemplateOverrides {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_weightedCapacity;
-  bool m_weightedCapacityHasBeenSet = false;
 
   LaunchTemplateSpecification m_launchTemplateSpecification;
-  bool m_launchTemplateSpecificationHasBeenSet = false;
 
   InstanceRequirements m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   Aws::String m_imageId;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_weightedCapacityHasBeenSet = false;
+  bool m_launchTemplateSpecificationHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
 };
 

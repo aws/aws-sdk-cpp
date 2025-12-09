@@ -151,21 +151,21 @@ class GetIpamDiscoveredAccountsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamResourceDiscoveryId;
-  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
 
   Aws::String m_discoveryRegion;
-  bool m_discoveryRegionHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
+  bool m_discoveryRegionHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

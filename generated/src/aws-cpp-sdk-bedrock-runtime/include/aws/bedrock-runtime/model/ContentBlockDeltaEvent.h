@@ -66,9 +66,9 @@ class ContentBlockDeltaEvent {
   ///@}
  private:
   ContentBlockDelta m_delta;
-  bool m_deltaHasBeenSet = false;
 
   int m_contentBlockIndex{0};
+  bool m_deltaHasBeenSet = false;
   bool m_contentBlockIndexHasBeenSet = false;
 };
 

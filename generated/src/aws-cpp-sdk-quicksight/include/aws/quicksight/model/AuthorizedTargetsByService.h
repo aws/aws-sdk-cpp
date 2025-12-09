@@ -76,9 +76,9 @@ class AuthorizedTargetsByService {
   ///@}
  private:
   ServiceType m_service{ServiceType::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authorizedTargets;
+  bool m_serviceHasBeenSet = false;
   bool m_authorizedTargetsHasBeenSet = false;
 };
 

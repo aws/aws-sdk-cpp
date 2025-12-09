@@ -73,9 +73,9 @@ class UpdateSolNetworkModify {
   ///@}
  private:
   Aws::Utils::Document m_vnfConfigurableProperties;
-  bool m_vnfConfigurablePropertiesHasBeenSet = false;
 
   Aws::String m_vnfInstanceId;
+  bool m_vnfConfigurablePropertiesHasBeenSet = false;
   bool m_vnfInstanceIdHasBeenSet = false;
 };
 

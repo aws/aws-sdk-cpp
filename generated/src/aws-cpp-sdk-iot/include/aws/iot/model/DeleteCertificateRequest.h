@@ -73,9 +73,9 @@ class DeleteCertificateRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_certificateIdHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

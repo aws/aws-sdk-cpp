@@ -71,9 +71,9 @@ class InvalidScopeException {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_error_description;
+  bool m_errorHasBeenSet = false;
   bool m_error_descriptionHasBeenSet = false;
 };
 

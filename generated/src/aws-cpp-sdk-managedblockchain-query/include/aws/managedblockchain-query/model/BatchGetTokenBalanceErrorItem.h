@@ -137,21 +137,21 @@ class BatchGetTokenBalanceErrorItem {
   ///@}
  private:
   TokenIdentifier m_tokenIdentifier;
-  bool m_tokenIdentifierHasBeenSet = false;
 
   OwnerIdentifier m_ownerIdentifier;
-  bool m_ownerIdentifierHasBeenSet = false;
 
   BlockchainInstant m_atBlockchainInstant;
-  bool m_atBlockchainInstantHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   ErrorType m_errorType{ErrorType::NOT_SET};
+  bool m_tokenIdentifierHasBeenSet = false;
+  bool m_ownerIdentifierHasBeenSet = false;
+  bool m_atBlockchainInstantHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

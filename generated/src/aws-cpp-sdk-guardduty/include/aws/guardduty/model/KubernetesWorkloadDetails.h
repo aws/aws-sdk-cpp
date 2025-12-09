@@ -223,33 +223,33 @@ class KubernetesWorkloadDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   bool m_hostNetwork{false};
-  bool m_hostNetworkHasBeenSet = false;
 
   Aws::Vector<Container> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::String m_serviceAccountName;
-  bool m_serviceAccountNameHasBeenSet = false;
 
   bool m_hostIPC{false};
-  bool m_hostIPCHasBeenSet = false;
 
   bool m_hostPID{false};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_uidHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_hostNetworkHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
+  bool m_serviceAccountNameHasBeenSet = false;
+  bool m_hostIPCHasBeenSet = false;
   bool m_hostPIDHasBeenSet = false;
 };
 

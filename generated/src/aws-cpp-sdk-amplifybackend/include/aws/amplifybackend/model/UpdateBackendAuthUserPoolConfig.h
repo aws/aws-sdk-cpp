@@ -133,18 +133,18 @@ class UpdateBackendAuthUserPoolConfig {
   ///@}
  private:
   UpdateBackendAuthForgotPasswordConfig m_forgotPassword;
-  bool m_forgotPasswordHasBeenSet = false;
 
   UpdateBackendAuthMFAConfig m_mfa;
-  bool m_mfaHasBeenSet = false;
 
   UpdateBackendAuthOAuthConfig m_oAuth;
-  bool m_oAuthHasBeenSet = false;
 
   UpdateBackendAuthPasswordPolicyConfig m_passwordPolicy;
-  bool m_passwordPolicyHasBeenSet = false;
 
   UpdateBackendAuthVerificationMessageConfig m_verificationMessage;
+  bool m_forgotPasswordHasBeenSet = false;
+  bool m_mfaHasBeenSet = false;
+  bool m_oAuthHasBeenSet = false;
+  bool m_passwordPolicyHasBeenSet = false;
   bool m_verificationMessageHasBeenSet = false;
 };
 

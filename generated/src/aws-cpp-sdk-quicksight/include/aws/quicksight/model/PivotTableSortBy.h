@@ -90,12 +90,12 @@ class PivotTableSortBy {
   ///@}
  private:
   FieldSort m_field;
-  bool m_fieldHasBeenSet = false;
 
   ColumnSort m_column;
-  bool m_columnHasBeenSet = false;
 
   DataPathSort m_dataPath;
+  bool m_fieldHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
   bool m_dataPathHasBeenSet = false;
 };
 

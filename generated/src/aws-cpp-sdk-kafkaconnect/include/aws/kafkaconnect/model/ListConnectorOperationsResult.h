@@ -85,12 +85,12 @@ class ListConnectorOperationsResult {
   ///@}
  private:
   Aws::Vector<ConnectorOperationSummary> m_connectorOperations;
-  bool m_connectorOperationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorOperationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

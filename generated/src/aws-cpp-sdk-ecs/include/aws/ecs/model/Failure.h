@@ -89,12 +89,12 @@ class Failure {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_detail;
+  bool m_arnHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_detailHasBeenSet = false;
 };
 

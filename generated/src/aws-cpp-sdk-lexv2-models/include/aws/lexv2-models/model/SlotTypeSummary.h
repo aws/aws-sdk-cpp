@@ -152,21 +152,21 @@ class SlotTypeSummary {
   ///@}
  private:
   Aws::String m_slotTypeId;
-  bool m_slotTypeIdHasBeenSet = false;
 
   Aws::String m_slotTypeName;
-  bool m_slotTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_parentSlotTypeSignature;
-  bool m_parentSlotTypeSignatureHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   SlotTypeCategory m_slotTypeCategory{SlotTypeCategory::NOT_SET};
+  bool m_slotTypeIdHasBeenSet = false;
+  bool m_slotTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parentSlotTypeSignatureHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_slotTypeCategoryHasBeenSet = false;
 };
 

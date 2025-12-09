@@ -133,18 +133,18 @@ class CreateProfileRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileDescription;
-  bool m_profileDescriptionHasBeenSet = false;
 
   Aws::Vector<ProfileQuestionUpdate> m_profileQuestions;
-  bool m_profileQuestionsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileDescriptionHasBeenSet = false;
+  bool m_profileQuestionsHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

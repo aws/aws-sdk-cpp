@@ -278,39 +278,39 @@ class CreateMicrosoftTeamsChannelConfigurationRequest : public ChatbotRequest {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_teamName;
-  bool m_teamNameHasBeenSet = false;
 
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_snsTopicArns;
-  bool m_snsTopicArnsHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_configurationName;
-  bool m_configurationNameHasBeenSet = false;
 
   Aws::String m_loggingLevel;
-  bool m_loggingLevelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_guardrailPolicyArns;
-  bool m_guardrailPolicyArnsHasBeenSet = false;
 
   bool m_userAuthorizationRequired{false};
-  bool m_userAuthorizationRequiredHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_channelIdHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_teamIdHasBeenSet = false;
+  bool m_teamNameHasBeenSet = false;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_snsTopicArnsHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_configurationNameHasBeenSet = false;
+  bool m_loggingLevelHasBeenSet = false;
+  bool m_guardrailPolicyArnsHasBeenSet = false;
+  bool m_userAuthorizationRequiredHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

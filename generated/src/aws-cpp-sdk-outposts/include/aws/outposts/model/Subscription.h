@@ -189,27 +189,27 @@ class Subscription {
   ///@}
  private:
   Aws::String m_subscriptionId;
-  bool m_subscriptionIdHasBeenSet = false;
 
   SubscriptionType m_subscriptionType{SubscriptionType::NOT_SET};
-  bool m_subscriptionTypeHasBeenSet = false;
 
   SubscriptionStatus m_subscriptionStatus{SubscriptionStatus::NOT_SET};
-  bool m_subscriptionStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_orderIds;
-  bool m_orderIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_beginDate{};
-  bool m_beginDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   double m_monthlyRecurringPrice{0.0};
-  bool m_monthlyRecurringPriceHasBeenSet = false;
 
   double m_upfrontPrice{0.0};
+  bool m_subscriptionIdHasBeenSet = false;
+  bool m_subscriptionTypeHasBeenSet = false;
+  bool m_subscriptionStatusHasBeenSet = false;
+  bool m_orderIdsHasBeenSet = false;
+  bool m_beginDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_monthlyRecurringPriceHasBeenSet = false;
   bool m_upfrontPriceHasBeenSet = false;
 };
 

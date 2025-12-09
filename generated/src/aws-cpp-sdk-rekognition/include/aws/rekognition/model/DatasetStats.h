@@ -94,15 +94,15 @@ class DatasetStats {
   ///@}
  private:
   int m_labeledEntries{0};
-  bool m_labeledEntriesHasBeenSet = false;
 
   int m_totalEntries{0};
-  bool m_totalEntriesHasBeenSet = false;
 
   int m_totalLabels{0};
-  bool m_totalLabelsHasBeenSet = false;
 
   int m_errorEntries{0};
+  bool m_labeledEntriesHasBeenSet = false;
+  bool m_totalEntriesHasBeenSet = false;
+  bool m_totalLabelsHasBeenSet = false;
   bool m_errorEntriesHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetSessionRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_assistantIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

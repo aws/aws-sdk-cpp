@@ -92,12 +92,12 @@ class ListImportsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_tableArn;
-  bool m_tableArnHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_tableArnHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -153,21 +153,21 @@ class TelemetryRule {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   TelemetryType m_telemetryType{TelemetryType::NOT_SET};
-  bool m_telemetryTypeHasBeenSet = false;
 
   Aws::Vector<TelemetrySourceType> m_telemetrySourceTypes;
-  bool m_telemetrySourceTypesHasBeenSet = false;
 
   TelemetryDestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_selectionCriteria;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_telemetryTypeHasBeenSet = false;
+  bool m_telemetrySourceTypesHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_selectionCriteriaHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class DeleteCodeInterpreterRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_codeInterpreterId;
-  bool m_codeInterpreterIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_codeInterpreterIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

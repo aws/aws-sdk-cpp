@@ -60,9 +60,9 @@ class ModifyDBClusterSnapshotAttributeResult {
   ///@}
  private:
   DBClusterSnapshotAttributesResult m_dBClusterSnapshotAttributesResult;
-  bool m_dBClusterSnapshotAttributesResultHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBClusterSnapshotAttributesResultHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

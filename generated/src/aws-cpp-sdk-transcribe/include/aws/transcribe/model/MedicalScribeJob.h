@@ -357,45 +357,45 @@ class MedicalScribeJob {
   ///@}
  private:
   Aws::String m_medicalScribeJobName;
-  bool m_medicalScribeJobNameHasBeenSet = false;
 
   MedicalScribeJobStatus m_medicalScribeJobStatus{MedicalScribeJobStatus::NOT_SET};
-  bool m_medicalScribeJobStatusHasBeenSet = false;
 
   MedicalScribeLanguageCode m_languageCode{MedicalScribeLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Media m_media;
-  bool m_mediaHasBeenSet = false;
 
   MedicalScribeOutput m_medicalScribeOutput;
-  bool m_medicalScribeOutputHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   MedicalScribeSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::Vector<MedicalScribeChannelDefinition> m_channelDefinitions;
-  bool m_channelDefinitionsHasBeenSet = false;
 
   bool m_medicalScribeContextProvided{false};
-  bool m_medicalScribeContextProvidedHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_medicalScribeJobNameHasBeenSet = false;
+  bool m_medicalScribeJobStatusHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_mediaHasBeenSet = false;
+  bool m_medicalScribeOutputHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_channelDefinitionsHasBeenSet = false;
+  bool m_medicalScribeContextProvidedHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

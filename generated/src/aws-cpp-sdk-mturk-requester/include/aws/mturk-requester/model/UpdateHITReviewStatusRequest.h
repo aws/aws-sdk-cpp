@@ -69,9 +69,9 @@ class UpdateHITReviewStatusRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   bool m_revert{false};
+  bool m_hITIdHasBeenSet = false;
   bool m_revertHasBeenSet = false;
 };
 

@@ -225,36 +225,36 @@ class CreateEndpointAccessResult {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_resourceOwner;
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   Aws::String m_endpointStatus;
-  bool m_endpointStatusHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_endpointCreateTime{};
-  bool m_endpointCreateTimeHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   VpcEndpoint m_vpcEndpoint;
-  bool m_vpcEndpointHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_endpointStatusHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_endpointCreateTimeHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
+  bool m_vpcEndpointHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

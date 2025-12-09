@@ -92,12 +92,12 @@ class Parameters {
   ///@}
  private:
   InfluxDBv2Parameters m_influxDBv2;
-  bool m_influxDBv2HasBeenSet = false;
 
   InfluxDBv3CoreParameters m_influxDBv3Core;
-  bool m_influxDBv3CoreHasBeenSet = false;
 
   InfluxDBv3EnterpriseParameters m_influxDBv3Enterprise;
+  bool m_influxDBv2HasBeenSet = false;
+  bool m_influxDBv3CoreHasBeenSet = false;
   bool m_influxDBv3EnterpriseHasBeenSet = false;
 };
 

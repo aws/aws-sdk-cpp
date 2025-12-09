@@ -72,9 +72,9 @@ class IotEventsAction {
   ///@}
  private:
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   Payload m_payload;
+  bool m_inputNameHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

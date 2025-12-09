@@ -75,9 +75,9 @@ class DateDimension {
   ///@}
  private:
   DateDimensionType m_dimensionType{DateDimensionType::NOT_SET};
-  bool m_dimensionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_dimensionTypeHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

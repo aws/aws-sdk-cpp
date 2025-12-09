@@ -75,9 +75,9 @@ class ListSupportedInstanceTypesRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_releaseLabelHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

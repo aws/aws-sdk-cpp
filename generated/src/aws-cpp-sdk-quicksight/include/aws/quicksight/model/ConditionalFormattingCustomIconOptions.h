@@ -67,9 +67,9 @@ class ConditionalFormattingCustomIconOptions {
   ///@}
  private:
   Icon m_icon{Icon::NOT_SET};
-  bool m_iconHasBeenSet = false;
 
   Aws::String m_unicodeIcon;
+  bool m_iconHasBeenSet = false;
   bool m_unicodeIconHasBeenSet = false;
 };
 

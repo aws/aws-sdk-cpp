@@ -177,21 +177,21 @@ class ListTrafficPolicyInstancesByPolicyRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   int m_trafficPolicyVersion{0};
-  bool m_trafficPolicyVersionHasBeenSet = false;
 
   Aws::String m_hostedZoneIdMarker;
-  bool m_hostedZoneIdMarkerHasBeenSet = false;
 
   Aws::String m_trafficPolicyInstanceNameMarker;
-  bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
 
   RRType m_trafficPolicyInstanceTypeMarker{RRType::NOT_SET};
-  bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_trafficPolicyIdHasBeenSet = false;
+  bool m_trafficPolicyVersionHasBeenSet = false;
+  bool m_hostedZoneIdMarkerHasBeenSet = false;
+  bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
+  bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

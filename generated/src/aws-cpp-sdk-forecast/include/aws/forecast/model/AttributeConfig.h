@@ -108,9 +108,9 @@ class AttributeConfig {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_transformations;
+  bool m_attributeNameHasBeenSet = false;
   bool m_transformationsHasBeenSet = false;
 };
 

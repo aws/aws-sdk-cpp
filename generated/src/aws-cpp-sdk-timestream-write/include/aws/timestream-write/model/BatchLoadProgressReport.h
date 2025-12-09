@@ -126,21 +126,21 @@ class BatchLoadProgressReport {
   ///@}
  private:
   long long m_recordsProcessed{0};
-  bool m_recordsProcessedHasBeenSet = false;
 
   long long m_recordsIngested{0};
-  bool m_recordsIngestedHasBeenSet = false;
 
   long long m_parseFailures{0};
-  bool m_parseFailuresHasBeenSet = false;
 
   long long m_recordIngestionFailures{0};
-  bool m_recordIngestionFailuresHasBeenSet = false;
 
   long long m_fileFailures{0};
-  bool m_fileFailuresHasBeenSet = false;
 
   long long m_bytesMetered{0};
+  bool m_recordsProcessedHasBeenSet = false;
+  bool m_recordsIngestedHasBeenSet = false;
+  bool m_parseFailuresHasBeenSet = false;
+  bool m_recordIngestionFailuresHasBeenSet = false;
+  bool m_fileFailuresHasBeenSet = false;
   bool m_bytesMeteredHasBeenSet = false;
 };
 

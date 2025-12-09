@@ -87,12 +87,12 @@ class AwsEc2NetworkAclAssociation {
   ///@}
  private:
   Aws::String m_networkAclAssociationId;
-  bool m_networkAclAssociationIdHasBeenSet = false;
 
   Aws::String m_networkAclId;
-  bool m_networkAclIdHasBeenSet = false;
 
   Aws::String m_subnetId;
+  bool m_networkAclAssociationIdHasBeenSet = false;
+  bool m_networkAclIdHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
 };
 

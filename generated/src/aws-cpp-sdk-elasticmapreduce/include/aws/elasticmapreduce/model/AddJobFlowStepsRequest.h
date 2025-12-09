@@ -103,12 +103,12 @@ class AddJobFlowStepsRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_jobFlowId;
-  bool m_jobFlowIdHasBeenSet = false;
 
   Aws::Vector<StepConfig> m_steps;
-  bool m_stepsHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_jobFlowIdHasBeenSet = false;
+  bool m_stepsHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

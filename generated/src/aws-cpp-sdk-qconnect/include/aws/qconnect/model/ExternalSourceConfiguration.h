@@ -68,9 +68,9 @@ class ExternalSourceConfiguration {
   ///@}
  private:
   ExternalSource m_source{ExternalSource::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   Configuration m_configuration;
+  bool m_sourceHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

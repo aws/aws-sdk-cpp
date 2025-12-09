@@ -63,9 +63,9 @@ class BlockStoragePerformanceConfiguration {
   ///@}
  private:
   double m_iops{0.0};
-  bool m_iopsHasBeenSet = false;
 
   double m_throughput{0.0};
+  bool m_iopsHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
 };
 

@@ -138,15 +138,15 @@ class EntityItem {
   ///@}
  private:
   EntityIdentifier m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<EntityIdentifier> m_parents;
-  bool m_parentsHasBeenSet = false;
 
   Aws::Map<Aws::String, CedarTagValue> m_tags;
+  bool m_identifierHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_parentsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetTransformerJobRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_transformerJobId;
-  bool m_transformerJobIdHasBeenSet = false;
 
   Aws::String m_transformerId;
+  bool m_transformerJobIdHasBeenSet = false;
   bool m_transformerIdHasBeenSet = false;
 };
 

@@ -212,24 +212,24 @@ class CreateCertificateAuthorityRequest : public ACMPCARequest {
   ///@}
  private:
   CertificateAuthorityConfiguration m_certificateAuthorityConfiguration;
-  bool m_certificateAuthorityConfigurationHasBeenSet = false;
 
   RevocationConfiguration m_revocationConfiguration;
-  bool m_revocationConfigurationHasBeenSet = false;
 
   CertificateAuthorityType m_certificateAuthorityType{CertificateAuthorityType::NOT_SET};
-  bool m_certificateAuthorityTypeHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
-  bool m_idempotencyTokenHasBeenSet = false;
 
   KeyStorageSecurityStandard m_keyStorageSecurityStandard{KeyStorageSecurityStandard::NOT_SET};
-  bool m_keyStorageSecurityStandardHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CertificateAuthorityUsageMode m_usageMode{CertificateAuthorityUsageMode::NOT_SET};
+  bool m_certificateAuthorityConfigurationHasBeenSet = false;
+  bool m_revocationConfigurationHasBeenSet = false;
+  bool m_certificateAuthorityTypeHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = false;
+  bool m_keyStorageSecurityStandardHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_usageModeHasBeenSet = false;
 };
 

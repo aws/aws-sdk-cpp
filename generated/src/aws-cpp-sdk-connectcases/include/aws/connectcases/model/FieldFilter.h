@@ -141,21 +141,21 @@ class FieldFilter {
   ///@}
  private:
   FieldValue m_equalTo;
-  bool m_equalToHasBeenSet = false;
 
   FieldValue m_contains;
-  bool m_containsHasBeenSet = false;
 
   FieldValue m_greaterThan;
-  bool m_greaterThanHasBeenSet = false;
 
   FieldValue m_greaterThanOrEqualTo;
-  bool m_greaterThanOrEqualToHasBeenSet = false;
 
   FieldValue m_lessThan;
-  bool m_lessThanHasBeenSet = false;
 
   FieldValue m_lessThanOrEqualTo;
+  bool m_equalToHasBeenSet = false;
+  bool m_containsHasBeenSet = false;
+  bool m_greaterThanHasBeenSet = false;
+  bool m_greaterThanOrEqualToHasBeenSet = false;
+  bool m_lessThanHasBeenSet = false;
   bool m_lessThanOrEqualToHasBeenSet = false;
 };
 

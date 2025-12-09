@@ -100,12 +100,12 @@ class PolicyTypeDescription {
   ///@}
  private:
   Aws::String m_policyTypeName;
-  bool m_policyTypeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<PolicyAttributeTypeDescription> m_policyAttributeTypeDescriptions;
+  bool m_policyTypeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_policyAttributeTypeDescriptionsHasBeenSet = false;
 };
 

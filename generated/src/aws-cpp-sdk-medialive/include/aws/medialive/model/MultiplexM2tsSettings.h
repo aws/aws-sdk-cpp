@@ -284,45 +284,45 @@ class MultiplexM2tsSettings {
   ///@}
  private:
   M2tsAbsentInputAudioBehavior m_absentInputAudioBehavior{M2tsAbsentInputAudioBehavior::NOT_SET};
-  bool m_absentInputAudioBehaviorHasBeenSet = false;
 
   M2tsArib m_arib{M2tsArib::NOT_SET};
-  bool m_aribHasBeenSet = false;
 
   M2tsAudioBufferModel m_audioBufferModel{M2tsAudioBufferModel::NOT_SET};
-  bool m_audioBufferModelHasBeenSet = false;
 
   int m_audioFramesPerPes{0};
-  bool m_audioFramesPerPesHasBeenSet = false;
 
   M2tsAudioStreamType m_audioStreamType{M2tsAudioStreamType::NOT_SET};
-  bool m_audioStreamTypeHasBeenSet = false;
 
   M2tsCcDescriptor m_ccDescriptor{M2tsCcDescriptor::NOT_SET};
-  bool m_ccDescriptorHasBeenSet = false;
 
   M2tsEbifControl m_ebif{M2tsEbifControl::NOT_SET};
-  bool m_ebifHasBeenSet = false;
 
   M2tsEsRateInPes m_esRateInPes{M2tsEsRateInPes::NOT_SET};
-  bool m_esRateInPesHasBeenSet = false;
 
   M2tsKlv m_klv{M2tsKlv::NOT_SET};
-  bool m_klvHasBeenSet = false;
 
   M2tsNielsenId3Behavior m_nielsenId3Behavior{M2tsNielsenId3Behavior::NOT_SET};
-  bool m_nielsenId3BehaviorHasBeenSet = false;
 
   M2tsPcrControl m_pcrControl{M2tsPcrControl::NOT_SET};
-  bool m_pcrControlHasBeenSet = false;
 
   int m_pcrPeriod{0};
-  bool m_pcrPeriodHasBeenSet = false;
 
   M2tsScte35Control m_scte35Control{M2tsScte35Control::NOT_SET};
-  bool m_scte35ControlHasBeenSet = false;
 
   double m_scte35PrerollPullupMilliseconds{0.0};
+  bool m_absentInputAudioBehaviorHasBeenSet = false;
+  bool m_aribHasBeenSet = false;
+  bool m_audioBufferModelHasBeenSet = false;
+  bool m_audioFramesPerPesHasBeenSet = false;
+  bool m_audioStreamTypeHasBeenSet = false;
+  bool m_ccDescriptorHasBeenSet = false;
+  bool m_ebifHasBeenSet = false;
+  bool m_esRateInPesHasBeenSet = false;
+  bool m_klvHasBeenSet = false;
+  bool m_nielsenId3BehaviorHasBeenSet = false;
+  bool m_pcrControlHasBeenSet = false;
+  bool m_pcrPeriodHasBeenSet = false;
+  bool m_scte35ControlHasBeenSet = false;
   bool m_scte35PrerollPullupMillisecondsHasBeenSet = false;
 };
 

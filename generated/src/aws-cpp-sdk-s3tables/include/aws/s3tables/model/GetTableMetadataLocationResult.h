@@ -93,15 +93,15 @@ class GetTableMetadataLocationResult {
   ///@}
  private:
   Aws::String m_versionToken;
-  bool m_versionTokenHasBeenSet = false;
 
   Aws::String m_metadataLocation;
-  bool m_metadataLocationHasBeenSet = false;
 
   Aws::String m_warehouseLocation;
-  bool m_warehouseLocationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionTokenHasBeenSet = false;
+  bool m_metadataLocationHasBeenSet = false;
+  bool m_warehouseLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ModifyReflectionConfiguration {
   ///@}
  private:
   EpisodicReflectionConfigurationInput m_episodicReflectionConfiguration;
-  bool m_episodicReflectionConfigurationHasBeenSet = false;
 
   CustomReflectionConfigurationInput m_customReflectionConfiguration;
+  bool m_episodicReflectionConfigurationHasBeenSet = false;
   bool m_customReflectionConfigurationHasBeenSet = false;
 };
 

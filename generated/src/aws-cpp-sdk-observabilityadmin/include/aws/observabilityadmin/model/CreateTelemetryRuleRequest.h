@@ -94,12 +94,12 @@ class CreateTelemetryRuleRequest : public ObservabilityAdminRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   TelemetryRule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

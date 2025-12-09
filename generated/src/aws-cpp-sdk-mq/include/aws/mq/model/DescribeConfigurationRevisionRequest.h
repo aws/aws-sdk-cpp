@@ -65,9 +65,9 @@ class DescribeConfigurationRevisionRequest : public MQRequest {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   Aws::String m_configurationRevision;
+  bool m_configurationIdHasBeenSet = false;
   bool m_configurationRevisionHasBeenSet = false;
 };
 

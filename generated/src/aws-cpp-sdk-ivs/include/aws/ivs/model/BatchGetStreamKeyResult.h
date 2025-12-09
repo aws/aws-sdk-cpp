@@ -91,12 +91,12 @@ class BatchGetStreamKeyResult {
   ///@}
  private:
   Aws::Vector<BatchError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<StreamKey> m_streamKeys;
-  bool m_streamKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_streamKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ServiceConnectTlsConfiguration {
   ///@}
  private:
   ServiceConnectTlsCertificateAuthority m_issuerCertificateAuthority;
-  bool m_issuerCertificateAuthorityHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_issuerCertificateAuthorityHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class DescribeManagedLoginBrandingRequest : public CognitoIdentityProviderReques
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_managedLoginBrandingId;
-  bool m_managedLoginBrandingIdHasBeenSet = false;
 
   bool m_returnMergedResources{false};
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_managedLoginBrandingIdHasBeenSet = false;
   bool m_returnMergedResourcesHasBeenSet = false;
 };
 

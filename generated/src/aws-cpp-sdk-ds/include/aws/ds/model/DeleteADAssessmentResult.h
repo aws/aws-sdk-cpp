@@ -59,9 +59,9 @@ class DeleteADAssessmentResult {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

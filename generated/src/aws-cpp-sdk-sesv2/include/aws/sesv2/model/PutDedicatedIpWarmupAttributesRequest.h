@@ -70,9 +70,9 @@ class PutDedicatedIpWarmupAttributesRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_ip;
-  bool m_ipHasBeenSet = false;
 
   int m_warmupPercentage{0};
+  bool m_ipHasBeenSet = false;
   bool m_warmupPercentageHasBeenSet = false;
 };
 

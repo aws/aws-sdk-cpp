@@ -90,12 +90,12 @@ class DeleteWorkspaceMediaRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   MediaType m_mediaType{MediaType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_mediaTypeHasBeenSet = false;
 };
 

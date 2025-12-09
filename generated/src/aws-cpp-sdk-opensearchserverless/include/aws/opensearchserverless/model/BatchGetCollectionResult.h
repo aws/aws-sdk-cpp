@@ -91,12 +91,12 @@ class BatchGetCollectionResult {
   ///@}
  private:
   Aws::Vector<CollectionDetail> m_collectionDetails;
-  bool m_collectionDetailsHasBeenSet = false;
 
   Aws::Vector<CollectionErrorDetail> m_collectionErrorDetails;
-  bool m_collectionErrorDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collectionDetailsHasBeenSet = false;
+  bool m_collectionErrorDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

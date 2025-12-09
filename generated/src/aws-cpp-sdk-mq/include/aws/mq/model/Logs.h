@@ -63,9 +63,9 @@ class Logs {
   ///@}
  private:
   bool m_audit{false};
-  bool m_auditHasBeenSet = false;
 
   bool m_general{false};
+  bool m_auditHasBeenSet = false;
   bool m_generalHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class UpdateApnsSandboxChannelRequest : public PinpointRequest {
   ///@}
  private:
   APNSSandboxChannelRequest m_aPNSSandboxChannelRequest;
-  bool m_aPNSSandboxChannelRequestHasBeenSet = false;
 
   Aws::String m_applicationId;
+  bool m_aPNSSandboxChannelRequestHasBeenSet = false;
   bool m_applicationIdHasBeenSet = false;
 };
 

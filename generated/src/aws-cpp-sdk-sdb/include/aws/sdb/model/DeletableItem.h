@@ -69,9 +69,9 @@ class DeletableItem {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Attribute> m_attributes;
+  bool m_nameHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

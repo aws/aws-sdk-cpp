@@ -66,9 +66,9 @@ class DescribeLanguageModelResult {
   ///@}
  private:
   LanguageModel m_languageModel;
-  bool m_languageModelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_languageModelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -204,30 +204,30 @@ class CreateLocalGatewayVirtualInterfaceRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_localGatewayVirtualInterfaceGroupId;
-  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
   Aws::String m_outpostLagId;
-  bool m_outpostLagIdHasBeenSet = false;
 
   int m_vlan{0};
-  bool m_vlanHasBeenSet = false;
 
   Aws::String m_localAddress;
-  bool m_localAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   int m_peerBgpAsn{0};
-  bool m_peerBgpAsnHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   long long m_peerBgpAsnExtended{0};
+  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
+  bool m_outpostLagIdHasBeenSet = false;
+  bool m_vlanHasBeenSet = false;
+  bool m_localAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_peerBgpAsnHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_peerBgpAsnExtendedHasBeenSet = false;
 };
 

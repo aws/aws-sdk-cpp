@@ -127,15 +127,15 @@ class ListProfilingGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_profilingGroupNames;
-  bool m_profilingGroupNamesHasBeenSet = false;
 
   Aws::Vector<ProfilingGroupDescription> m_profilingGroups;
-  bool m_profilingGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_profilingGroupNamesHasBeenSet = false;
+  bool m_profilingGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

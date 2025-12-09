@@ -112,12 +112,12 @@ class AwsElbLoadBalancerPolicies {
   ///@}
  private:
   Aws::Vector<AwsElbAppCookieStickinessPolicy> m_appCookieStickinessPolicies;
-  bool m_appCookieStickinessPoliciesHasBeenSet = false;
 
   Aws::Vector<AwsElbLbCookieStickinessPolicy> m_lbCookieStickinessPolicies;
-  bool m_lbCookieStickinessPoliciesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_otherPolicies;
+  bool m_appCookieStickinessPoliciesHasBeenSet = false;
+  bool m_lbCookieStickinessPoliciesHasBeenSet = false;
   bool m_otherPoliciesHasBeenSet = false;
 };
 

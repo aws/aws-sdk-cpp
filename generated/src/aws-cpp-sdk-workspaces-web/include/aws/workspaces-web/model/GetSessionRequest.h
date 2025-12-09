@@ -65,9 +65,9 @@ class GetSessionRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_portalIdHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

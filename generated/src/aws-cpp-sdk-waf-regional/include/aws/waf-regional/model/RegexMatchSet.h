@@ -127,12 +127,12 @@ class RegexMatchSet {
   ///@}
  private:
   Aws::String m_regexMatchSetId;
-  bool m_regexMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<RegexMatchTuple> m_regexMatchTuples;
+  bool m_regexMatchSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_regexMatchTuplesHasBeenSet = false;
 };
 

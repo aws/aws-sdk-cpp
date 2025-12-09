@@ -69,9 +69,9 @@ class GetServerStrategiesResult {
   ///@}
  private:
   Aws::Vector<ServerStrategy> m_serverStrategies;
-  bool m_serverStrategiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverStrategiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

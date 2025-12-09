@@ -132,18 +132,18 @@ class Record {
   ///@}
  private:
   Aws::String m_sequenceNumber;
-  bool m_sequenceNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_approximateArrivalTimestamp{};
-  bool m_approximateArrivalTimestampHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_partitionKey;
-  bool m_partitionKeyHasBeenSet = false;
 
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
+  bool m_sequenceNumberHasBeenSet = false;
+  bool m_approximateArrivalTimestampHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_partitionKeyHasBeenSet = false;
   bool m_encryptionTypeHasBeenSet = false;
 };
 

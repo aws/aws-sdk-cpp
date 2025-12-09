@@ -87,12 +87,12 @@ class InstanceStatusDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_impairedSince{};
-  bool m_impairedSinceHasBeenSet = false;
 
   StatusName m_name{StatusName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
+  bool m_impairedSinceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

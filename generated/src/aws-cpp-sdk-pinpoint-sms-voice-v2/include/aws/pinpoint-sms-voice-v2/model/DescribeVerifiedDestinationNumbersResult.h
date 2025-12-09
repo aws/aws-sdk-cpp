@@ -89,12 +89,12 @@ class DescribeVerifiedDestinationNumbersResult {
   ///@}
  private:
   Aws::Vector<VerifiedDestinationNumberInformation> m_verifiedDestinationNumbers;
-  bool m_verifiedDestinationNumbersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_verifiedDestinationNumbersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

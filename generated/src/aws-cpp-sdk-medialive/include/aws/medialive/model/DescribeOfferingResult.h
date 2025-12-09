@@ -229,39 +229,39 @@ class DescribeOfferingResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   OfferingDurationUnits m_durationUnits{OfferingDurationUnits::NOT_SET};
-  bool m_durationUnitsHasBeenSet = false;
 
   double m_fixedPrice{0.0};
-  bool m_fixedPriceHasBeenSet = false;
 
   Aws::String m_offeringDescription;
-  bool m_offeringDescriptionHasBeenSet = false;
 
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   OfferingType m_offeringType{OfferingType::NOT_SET};
-  bool m_offeringTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   ReservationResourceSpecification m_resourceSpecification;
-  bool m_resourceSpecificationHasBeenSet = false;
 
   double m_usagePrice{0.0};
-  bool m_usagePriceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_durationUnitsHasBeenSet = false;
+  bool m_fixedPriceHasBeenSet = false;
+  bool m_offeringDescriptionHasBeenSet = false;
+  bool m_offeringIdHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceSpecificationHasBeenSet = false;
+  bool m_usagePriceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

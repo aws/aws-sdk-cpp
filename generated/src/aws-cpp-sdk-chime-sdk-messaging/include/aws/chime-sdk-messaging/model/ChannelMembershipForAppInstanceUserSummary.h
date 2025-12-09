@@ -70,9 +70,9 @@ class ChannelMembershipForAppInstanceUserSummary {
   ///@}
  private:
   ChannelSummary m_channelSummary;
-  bool m_channelSummaryHasBeenSet = false;
 
   AppInstanceUserMembershipSummary m_appInstanceUserMembershipSummary;
+  bool m_channelSummaryHasBeenSet = false;
   bool m_appInstanceUserMembershipSummaryHasBeenSet = false;
 };
 

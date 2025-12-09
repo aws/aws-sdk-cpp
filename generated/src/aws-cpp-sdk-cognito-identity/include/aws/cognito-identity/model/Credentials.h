@@ -105,15 +105,15 @@ class Credentials {
   ///@}
  private:
   Aws::String m_accessKeyId;
-  bool m_accessKeyIdHasBeenSet = false;
 
   Aws::String m_secretKey;
-  bool m_secretKeyHasBeenSet = false;
 
   Aws::String m_sessionToken;
-  bool m_sessionTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
+  bool m_accessKeyIdHasBeenSet = false;
+  bool m_secretKeyHasBeenSet = false;
+  bool m_sessionTokenHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
 };
 

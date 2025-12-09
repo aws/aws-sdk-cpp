@@ -76,9 +76,9 @@ class GetIdentityVerificationAttributesResult {
   ///@}
  private:
   Aws::Map<Aws::String, IdentityVerificationAttributes> m_verificationAttributes;
-  bool m_verificationAttributesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verificationAttributesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

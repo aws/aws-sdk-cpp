@@ -67,9 +67,9 @@ class GetResourceSyncStatusRequest : public CodeStarconnectionsRequest {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
+  bool m_resourceNameHasBeenSet = false;
   bool m_syncTypeHasBeenSet = false;
 };
 

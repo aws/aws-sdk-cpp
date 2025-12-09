@@ -84,12 +84,12 @@ class DeleteRouteSettingsRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_routeKey;
-  bool m_routeKeyHasBeenSet = false;
 
   Aws::String m_stageName;
+  bool m_apiIdHasBeenSet = false;
+  bool m_routeKeyHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;
 };
 

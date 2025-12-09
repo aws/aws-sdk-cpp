@@ -107,15 +107,15 @@ class NotScaledReason {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_minCapacity{0};
-  bool m_minCapacityHasBeenSet = false;
 
   int m_currentCapacity{0};
+  bool m_codeHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_minCapacityHasBeenSet = false;
   bool m_currentCapacityHasBeenSet = false;
 };
 

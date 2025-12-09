@@ -70,9 +70,9 @@ class ImageBlockDelta {
   ///@}
  private:
   ImageSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   ErrorBlock m_error;
+  bool m_sourceHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class UpdateDomainContactRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ContactDetail m_adminContact;
-  bool m_adminContactHasBeenSet = false;
 
   ContactDetail m_registrantContact;
-  bool m_registrantContactHasBeenSet = false;
 
   ContactDetail m_techContact;
-  bool m_techContactHasBeenSet = false;
 
   Consent m_consent;
-  bool m_consentHasBeenSet = false;
 
   ContactDetail m_billingContact;
+  bool m_domainNameHasBeenSet = false;
+  bool m_adminContactHasBeenSet = false;
+  bool m_registrantContactHasBeenSet = false;
+  bool m_techContactHasBeenSet = false;
+  bool m_consentHasBeenSet = false;
   bool m_billingContactHasBeenSet = false;
 };
 

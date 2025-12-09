@@ -76,12 +76,12 @@ class CreateNetworkResult {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_memberId;
-  bool m_memberIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkIdHasBeenSet = false;
+  bool m_memberIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

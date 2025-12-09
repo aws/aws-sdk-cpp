@@ -102,15 +102,15 @@ class MetricDatum {
   ///@}
  private:
   AutoMLMetricEnum m_metricName{AutoMLMetricEnum::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   AutoMLMetricExtendedEnum m_standardMetricName{AutoMLMetricExtendedEnum::NOT_SET};
-  bool m_standardMetricNameHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   MetricSetSource m_set{MetricSetSource::NOT_SET};
+  bool m_metricNameHasBeenSet = false;
+  bool m_standardMetricNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_setHasBeenSet = false;
 };
 

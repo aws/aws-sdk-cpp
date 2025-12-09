@@ -96,12 +96,12 @@ class CreateGlobalReplicationGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_globalReplicationGroupIdSuffix;
-  bool m_globalReplicationGroupIdSuffixHasBeenSet = false;
 
   Aws::String m_globalReplicationGroupDescription;
-  bool m_globalReplicationGroupDescriptionHasBeenSet = false;
 
   Aws::String m_primaryReplicationGroupId;
+  bool m_globalReplicationGroupIdSuffixHasBeenSet = false;
+  bool m_globalReplicationGroupDescriptionHasBeenSet = false;
   bool m_primaryReplicationGroupIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateTrustStoreResult {
   ///@}
  private:
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustStoreArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -156,24 +156,24 @@ class RecommendationJobInferenceBenchmark {
   ///@}
  private:
   RecommendationMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   InferenceMetrics m_endpointMetrics;
-  bool m_endpointMetricsHasBeenSet = false;
 
   EndpointOutputConfiguration m_endpointConfiguration;
-  bool m_endpointConfigurationHasBeenSet = false;
 
   ModelConfiguration m_modelConfiguration;
-  bool m_modelConfigurationHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationEndTime{};
-  bool m_invocationEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_invocationStartTime{};
+  bool m_metricsHasBeenSet = false;
+  bool m_endpointMetricsHasBeenSet = false;
+  bool m_endpointConfigurationHasBeenSet = false;
+  bool m_modelConfigurationHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_invocationEndTimeHasBeenSet = false;
   bool m_invocationStartTimeHasBeenSet = false;
 };
 

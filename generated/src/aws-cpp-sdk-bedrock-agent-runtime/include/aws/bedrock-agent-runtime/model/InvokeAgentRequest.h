@@ -293,42 +293,43 @@ class InvokeAgentRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_agentAliasId;
-  bool m_agentAliasIdHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   BedrockModelConfigurations m_bedrockModelConfigurations;
-  bool m_bedrockModelConfigurationsHasBeenSet = false;
 
   bool m_enableTrace{false};
-  bool m_enableTraceHasBeenSet = false;
 
   bool m_endSession{false};
-  bool m_endSessionHasBeenSet = false;
 
   Aws::String m_inputText;
-  bool m_inputTextHasBeenSet = false;
 
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   PromptCreationConfigurations m_promptCreationConfigurations;
-  bool m_promptCreationConfigurationsHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   SessionState m_sessionState;
-  bool m_sessionStateHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   StreamingConfigurations m_streamingConfigurations;
-  bool m_streamingConfigurationsHasBeenSet = false;
   InvokeAgentHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_agentAliasIdHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_bedrockModelConfigurationsHasBeenSet = false;
+  bool m_enableTraceHasBeenSet = false;
+  bool m_endSessionHasBeenSet = false;
+  bool m_inputTextHasBeenSet = false;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_promptCreationConfigurationsHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionStateHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_streamingConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -116,15 +116,15 @@ class SearchResultBlock {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<SearchResultContentBlock> m_content;
-  bool m_contentHasBeenSet = false;
 
   CitationsConfig m_citations;
+  bool m_sourceHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_citationsHasBeenSet = false;
 };
 

@@ -197,27 +197,27 @@ class AwsApiCallAction {
   ///@}
  private:
   Aws::String m_api;
-  bool m_apiHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_callerType;
-  bool m_callerTypeHasBeenSet = false;
 
   ActionRemoteIpDetails m_remoteIpDetails;
-  bool m_remoteIpDetailsHasBeenSet = false;
 
   AwsApiCallActionDomainDetails m_domainDetails;
-  bool m_domainDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_affectedResources;
-  bool m_affectedResourcesHasBeenSet = false;
 
   Aws::String m_firstSeen;
-  bool m_firstSeenHasBeenSet = false;
 
   Aws::String m_lastSeen;
+  bool m_apiHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_callerTypeHasBeenSet = false;
+  bool m_remoteIpDetailsHasBeenSet = false;
+  bool m_domainDetailsHasBeenSet = false;
+  bool m_affectedResourcesHasBeenSet = false;
+  bool m_firstSeenHasBeenSet = false;
   bool m_lastSeenHasBeenSet = false;
 };
 

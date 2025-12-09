@@ -85,12 +85,12 @@ class ListAuditSuppressionsResult {
   ///@}
  private:
   Aws::Vector<AuditSuppression> m_suppressions;
-  bool m_suppressionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suppressionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class AttachedPermissionsBoundary {
   ///@}
  private:
   PermissionsBoundaryAttachmentType m_permissionsBoundaryType{PermissionsBoundaryAttachmentType::NOT_SET};
-  bool m_permissionsBoundaryTypeHasBeenSet = false;
 
   Aws::String m_permissionsBoundaryArn;
+  bool m_permissionsBoundaryTypeHasBeenSet = false;
   bool m_permissionsBoundaryArnHasBeenSet = false;
 };
 

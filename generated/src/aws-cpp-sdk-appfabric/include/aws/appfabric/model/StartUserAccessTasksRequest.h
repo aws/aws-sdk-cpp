@@ -66,9 +66,9 @@ class StartUserAccessTasksRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_appBundleIdentifierHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

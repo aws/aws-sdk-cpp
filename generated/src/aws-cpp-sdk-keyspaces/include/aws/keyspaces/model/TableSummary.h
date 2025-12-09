@@ -89,12 +89,12 @@ class TableSummary {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

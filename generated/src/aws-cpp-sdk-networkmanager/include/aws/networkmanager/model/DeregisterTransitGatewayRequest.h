@@ -65,9 +65,9 @@ class DeregisterTransitGatewayRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_transitGatewayArn;
+  bool m_globalNetworkIdHasBeenSet = false;
   bool m_transitGatewayArnHasBeenSet = false;
 };
 

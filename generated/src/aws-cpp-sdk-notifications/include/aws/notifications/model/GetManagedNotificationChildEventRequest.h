@@ -72,9 +72,9 @@ class GetManagedNotificationChildEventRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   LocaleCode m_locale{LocaleCode::NOT_SET};
+  bool m_arnHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

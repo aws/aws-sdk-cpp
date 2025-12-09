@@ -86,12 +86,12 @@ class DescribeRemediationExecutionStatusResult {
   ///@}
  private:
   Aws::Vector<RemediationExecutionStatus> m_remediationExecutionStatuses;
-  bool m_remediationExecutionStatusesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_remediationExecutionStatusesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

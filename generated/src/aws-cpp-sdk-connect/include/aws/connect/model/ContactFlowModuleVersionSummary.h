@@ -84,12 +84,12 @@ class ContactFlowModuleVersionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   long long m_version{0};
+  bool m_arnHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

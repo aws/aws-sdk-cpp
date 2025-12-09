@@ -130,18 +130,18 @@ class CreateLocalGatewayVirtualInterfaceGroupRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_localGatewayId;
-  bool m_localGatewayIdHasBeenSet = false;
 
   int m_localBgpAsn{0};
-  bool m_localBgpAsnHasBeenSet = false;
 
   long long m_localBgpAsnExtended{0};
-  bool m_localBgpAsnExtendedHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_localGatewayIdHasBeenSet = false;
+  bool m_localBgpAsnHasBeenSet = false;
+  bool m_localBgpAsnExtendedHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

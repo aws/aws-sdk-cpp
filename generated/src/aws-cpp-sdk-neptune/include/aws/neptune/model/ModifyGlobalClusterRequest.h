@@ -136,18 +136,18 @@ class ModifyGlobalClusterRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::String m_newGlobalClusterIdentifier;
-  bool m_newGlobalClusterIdentifierHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_allowMajorVersionUpgrade{false};
+  bool m_globalClusterIdentifierHasBeenSet = false;
+  bool m_newGlobalClusterIdentifierHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
   bool m_allowMajorVersionUpgradeHasBeenSet = false;
 };
 

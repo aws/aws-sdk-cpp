@@ -60,9 +60,9 @@ class DeleteAccountAssignmentResult {
   ///@}
  private:
   AccountAssignmentOperationStatus m_accountAssignmentDeletionStatus;
-  bool m_accountAssignmentDeletionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountAssignmentDeletionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

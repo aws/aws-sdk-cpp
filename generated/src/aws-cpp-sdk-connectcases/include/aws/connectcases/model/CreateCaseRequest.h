@@ -132,18 +132,18 @@ class CreateCaseRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::Vector<FieldValue> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   UserUnion m_performedBy;
+  bool m_domainIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_performedByHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class MergeHunk {
   ///@}
  private:
   bool m_isConflict{false};
-  bool m_isConflictHasBeenSet = false;
 
   MergeHunkDetail m_source;
-  bool m_sourceHasBeenSet = false;
 
   MergeHunkDetail m_destination;
-  bool m_destinationHasBeenSet = false;
 
   MergeHunkDetail m_base;
+  bool m_isConflictHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_baseHasBeenSet = false;
 };
 

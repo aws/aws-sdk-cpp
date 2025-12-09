@@ -90,12 +90,12 @@ class RevokeRestoreAccessBackupVaultRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_restoreAccessBackupVaultArn;
-  bool m_restoreAccessBackupVaultArnHasBeenSet = false;
 
   Aws::String m_requesterComment;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_restoreAccessBackupVaultArnHasBeenSet = false;
   bool m_requesterCommentHasBeenSet = false;
 };
 

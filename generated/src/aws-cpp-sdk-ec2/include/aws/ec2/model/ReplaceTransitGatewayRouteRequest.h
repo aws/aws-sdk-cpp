@@ -123,18 +123,18 @@ class ReplaceTransitGatewayRouteRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   bool m_blackhole{false};
-  bool m_blackholeHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_blackholeHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -177,27 +177,27 @@ class ListMetricValuesRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_dimensionName;
-  bool m_dimensionNameHasBeenSet = false;
 
   DimensionValueOperator m_dimensionValueOperator{DimensionValueOperator::NOT_SET};
-  bool m_dimensionValueOperatorHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_thingNameHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_dimensionNameHasBeenSet = false;
+  bool m_dimensionValueOperatorHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

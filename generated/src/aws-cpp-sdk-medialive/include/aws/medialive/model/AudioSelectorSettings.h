@@ -99,15 +99,15 @@ class AudioSelectorSettings {
   ///@}
  private:
   AudioHlsRenditionSelection m_audioHlsRenditionSelection;
-  bool m_audioHlsRenditionSelectionHasBeenSet = false;
 
   AudioLanguageSelection m_audioLanguageSelection;
-  bool m_audioLanguageSelectionHasBeenSet = false;
 
   AudioPidSelection m_audioPidSelection;
-  bool m_audioPidSelectionHasBeenSet = false;
 
   AudioTrackSelection m_audioTrackSelection;
+  bool m_audioHlsRenditionSelectionHasBeenSet = false;
+  bool m_audioLanguageSelectionHasBeenSet = false;
+  bool m_audioPidSelectionHasBeenSet = false;
   bool m_audioTrackSelectionHasBeenSet = false;
 };
 

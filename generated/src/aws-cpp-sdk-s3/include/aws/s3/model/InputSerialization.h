@@ -107,15 +107,15 @@ class InputSerialization {
   ///@}
  private:
   CSVInput m_cSV;
-  bool m_cSVHasBeenSet = false;
 
   CompressionType m_compressionType{CompressionType::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   JSONInput m_jSON;
-  bool m_jSONHasBeenSet = false;
 
   ParquetInput m_parquet;
+  bool m_cSVHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
+  bool m_jSONHasBeenSet = false;
   bool m_parquetHasBeenSet = false;
 };
 

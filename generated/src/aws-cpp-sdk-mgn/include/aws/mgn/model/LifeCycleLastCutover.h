@@ -88,12 +88,12 @@ class LifeCycleLastCutover {
   ///@}
  private:
   LifeCycleLastCutoverFinalized m_finalized;
-  bool m_finalizedHasBeenSet = false;
 
   LifeCycleLastCutoverInitiated m_initiated;
-  bool m_initiatedHasBeenSet = false;
 
   LifeCycleLastCutoverReverted m_reverted;
+  bool m_finalizedHasBeenSet = false;
+  bool m_initiatedHasBeenSet = false;
   bool m_revertedHasBeenSet = false;
 };
 

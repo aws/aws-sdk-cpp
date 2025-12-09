@@ -98,12 +98,12 @@ class AccountGrouping {
   ///@}
  private:
   Aws::Vector<Aws::String> m_linkedAccountIds;
-  bool m_linkedAccountIdsHasBeenSet = false;
 
   bool m_autoAssociate{false};
-  bool m_autoAssociateHasBeenSet = false;
 
   Aws::String m_responsibilityTransferArn;
+  bool m_linkedAccountIdsHasBeenSet = false;
+  bool m_autoAssociateHasBeenSet = false;
   bool m_responsibilityTransferArnHasBeenSet = false;
 };
 

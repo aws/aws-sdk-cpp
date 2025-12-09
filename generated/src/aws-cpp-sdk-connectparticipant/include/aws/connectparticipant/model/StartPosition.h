@@ -86,12 +86,12 @@ class StartPosition {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_absoluteTime;
-  bool m_absoluteTimeHasBeenSet = false;
 
   int m_mostRecent{0};
+  bool m_idHasBeenSet = false;
+  bool m_absoluteTimeHasBeenSet = false;
   bool m_mostRecentHasBeenSet = false;
 };
 

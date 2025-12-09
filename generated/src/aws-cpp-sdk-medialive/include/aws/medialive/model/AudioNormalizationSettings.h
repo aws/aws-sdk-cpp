@@ -86,12 +86,12 @@ class AudioNormalizationSettings {
   ///@}
  private:
   AudioNormalizationAlgorithm m_algorithm{AudioNormalizationAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   AudioNormalizationAlgorithmControl m_algorithmControl{AudioNormalizationAlgorithmControl::NOT_SET};
-  bool m_algorithmControlHasBeenSet = false;
 
   double m_targetLkfs{0.0};
+  bool m_algorithmHasBeenSet = false;
+  bool m_algorithmControlHasBeenSet = false;
   bool m_targetLkfsHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class CustomPluginDescription {
   ///@}
  private:
   Aws::String m_customPluginArn;
-  bool m_customPluginArnHasBeenSet = false;
 
   long long m_revision{0};
+  bool m_customPluginArnHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

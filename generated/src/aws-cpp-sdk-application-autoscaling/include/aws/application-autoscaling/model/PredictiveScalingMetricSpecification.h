@@ -178,24 +178,24 @@ class PredictiveScalingMetricSpecification {
   ///@}
  private:
   double m_targetValue{0.0};
-  bool m_targetValueHasBeenSet = false;
 
   PredictiveScalingPredefinedMetricPairSpecification m_predefinedMetricPairSpecification;
-  bool m_predefinedMetricPairSpecificationHasBeenSet = false;
 
   PredictiveScalingPredefinedScalingMetricSpecification m_predefinedScalingMetricSpecification;
-  bool m_predefinedScalingMetricSpecificationHasBeenSet = false;
 
   PredictiveScalingPredefinedLoadMetricSpecification m_predefinedLoadMetricSpecification;
-  bool m_predefinedLoadMetricSpecificationHasBeenSet = false;
 
   PredictiveScalingCustomizedMetricSpecification m_customizedScalingMetricSpecification;
-  bool m_customizedScalingMetricSpecificationHasBeenSet = false;
 
   PredictiveScalingCustomizedMetricSpecification m_customizedLoadMetricSpecification;
-  bool m_customizedLoadMetricSpecificationHasBeenSet = false;
 
   PredictiveScalingCustomizedMetricSpecification m_customizedCapacityMetricSpecification;
+  bool m_targetValueHasBeenSet = false;
+  bool m_predefinedMetricPairSpecificationHasBeenSet = false;
+  bool m_predefinedScalingMetricSpecificationHasBeenSet = false;
+  bool m_predefinedLoadMetricSpecificationHasBeenSet = false;
+  bool m_customizedScalingMetricSpecificationHasBeenSet = false;
+  bool m_customizedLoadMetricSpecificationHasBeenSet = false;
   bool m_customizedCapacityMetricSpecificationHasBeenSet = false;
 };
 

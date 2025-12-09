@@ -110,15 +110,15 @@ class Subscription {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_target;
+  bool m_idHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

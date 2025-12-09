@@ -223,33 +223,33 @@ class BlueprintRun {
   ///@}
  private:
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   BlueprintRunState m_state{BlueprintRunState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_rollbackErrorMessage;
-  bool m_rollbackErrorMessageHasBeenSet = false;
 
   Aws::String m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_blueprintNameHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_workflowNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_rollbackErrorMessageHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

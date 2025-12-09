@@ -82,9 +82,9 @@ class EntityDetails {
   ///@}
  private:
   EntityInfo m_entityInfo;
-  bool m_entityInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAuthenticated{};
+  bool m_entityInfoHasBeenSet = false;
   bool m_lastAuthenticatedHasBeenSet = false;
 };
 

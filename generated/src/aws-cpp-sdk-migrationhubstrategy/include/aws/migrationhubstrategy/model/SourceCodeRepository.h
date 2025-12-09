@@ -105,15 +105,15 @@ class SourceCodeRepository {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_projectName;
-  bool m_projectNameHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_versionControlType;
+  bool m_branchHasBeenSet = false;
+  bool m_projectNameHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
   bool m_versionControlTypeHasBeenSet = false;
 };
 

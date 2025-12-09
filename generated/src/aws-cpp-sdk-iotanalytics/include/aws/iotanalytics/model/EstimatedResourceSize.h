@@ -66,9 +66,9 @@ class EstimatedResourceSize {
   ///@}
  private:
   double m_estimatedSizeInBytes{0.0};
-  bool m_estimatedSizeInBytesHasBeenSet = false;
 
   Aws::Utils::DateTime m_estimatedOn{};
+  bool m_estimatedSizeInBytesHasBeenSet = false;
   bool m_estimatedOnHasBeenSet = false;
 };
 

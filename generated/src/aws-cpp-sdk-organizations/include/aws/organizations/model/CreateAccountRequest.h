@@ -175,18 +175,18 @@ class CreateAccountRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   IAMUserAccessToBilling m_iamUserAccessToBilling{IAMUserAccessToBilling::NOT_SET};
-  bool m_iamUserAccessToBillingHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_emailHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
+  bool m_roleNameHasBeenSet = false;
+  bool m_iamUserAccessToBillingHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

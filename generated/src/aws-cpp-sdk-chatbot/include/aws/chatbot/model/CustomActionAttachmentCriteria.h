@@ -87,12 +87,12 @@ class CustomActionAttachmentCriteria {
   ///@}
  private:
   CustomActionAttachmentCriteriaOperator m_operator{CustomActionAttachmentCriteriaOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::String m_variableName;
-  bool m_variableNameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_operatorHasBeenSet = false;
+  bool m_variableNameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

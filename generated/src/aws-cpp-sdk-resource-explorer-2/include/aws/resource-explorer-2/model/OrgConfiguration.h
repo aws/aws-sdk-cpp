@@ -71,9 +71,9 @@ class OrgConfiguration {
   ///@}
  private:
   AWSServiceAccessStatus m_aWSServiceAccessStatus{AWSServiceAccessStatus::NOT_SET};
-  bool m_aWSServiceAccessStatusHasBeenSet = false;
 
   Aws::String m_serviceLinkedRole;
+  bool m_aWSServiceAccessStatusHasBeenSet = false;
   bool m_serviceLinkedRoleHasBeenSet = false;
 };
 

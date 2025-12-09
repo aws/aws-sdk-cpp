@@ -97,15 +97,15 @@ class VideoAttribute {
   ///@}
  private:
   int m_cornerRadius{0};
-  bool m_cornerRadiusHasBeenSet = false;
 
   BorderColor m_borderColor{BorderColor::NOT_SET};
-  bool m_borderColorHasBeenSet = false;
 
   HighlightColor m_highlightColor{HighlightColor::NOT_SET};
-  bool m_highlightColorHasBeenSet = false;
 
   int m_borderThickness{0};
+  bool m_cornerRadiusHasBeenSet = false;
+  bool m_borderColorHasBeenSet = false;
+  bool m_highlightColorHasBeenSet = false;
   bool m_borderThicknessHasBeenSet = false;
 };
 

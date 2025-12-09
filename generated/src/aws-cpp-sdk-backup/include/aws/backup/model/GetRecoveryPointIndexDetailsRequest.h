@@ -69,9 +69,9 @@ class GetRecoveryPointIndexDetailsRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
+  bool m_backupVaultNameHasBeenSet = false;
   bool m_recoveryPointArnHasBeenSet = false;
 };
 

@@ -213,15 +213,15 @@ class ByteMatchTuple {
   ///@}
  private:
   FieldToMatch m_fieldToMatch;
-  bool m_fieldToMatchHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_targetString{};
-  bool m_targetStringHasBeenSet = false;
 
   TextTransformation m_textTransformation{TextTransformation::NOT_SET};
-  bool m_textTransformationHasBeenSet = false;
 
   PositionalConstraint m_positionalConstraint{PositionalConstraint::NOT_SET};
+  bool m_fieldToMatchHasBeenSet = false;
+  bool m_targetStringHasBeenSet = false;
+  bool m_textTransformationHasBeenSet = false;
   bool m_positionalConstraintHasBeenSet = false;
 };
 

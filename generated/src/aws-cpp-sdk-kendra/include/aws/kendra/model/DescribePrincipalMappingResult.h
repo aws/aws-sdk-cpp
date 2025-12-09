@@ -132,18 +132,18 @@ class DescribePrincipalMappingResult {
   ///@}
  private:
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<GroupOrderingIdSummary> m_groupOrderingIdSummaries;
-  bool m_groupOrderingIdSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_groupOrderingIdSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

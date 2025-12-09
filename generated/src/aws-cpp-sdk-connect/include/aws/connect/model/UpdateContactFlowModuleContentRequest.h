@@ -106,15 +106,15 @@ class UpdateContactFlowModuleContentRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowModuleId;
-  bool m_contactFlowModuleIdHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_settings;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactFlowModuleIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

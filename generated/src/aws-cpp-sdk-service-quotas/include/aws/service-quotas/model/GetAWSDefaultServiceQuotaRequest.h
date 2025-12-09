@@ -70,9 +70,9 @@ class GetAWSDefaultServiceQuotaRequest : public ServiceQuotasRequest {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_quotaCode;
+  bool m_serviceCodeHasBeenSet = false;
   bool m_quotaCodeHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListTagsForResourceRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

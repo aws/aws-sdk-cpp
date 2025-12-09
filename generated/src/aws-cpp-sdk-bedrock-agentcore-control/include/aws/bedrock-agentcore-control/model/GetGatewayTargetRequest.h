@@ -65,9 +65,9 @@ class GetGatewayTargetRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_gatewayIdentifier;
-  bool m_gatewayIdentifierHasBeenSet = false;
 
   Aws::String m_targetId;
+  bool m_gatewayIdentifierHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
 };
 

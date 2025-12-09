@@ -70,9 +70,9 @@ class TargetOnDeviceService {
   ///@}
  private:
   DeviceServiceName m_serviceName{DeviceServiceName::NOT_SET};
-  bool m_serviceNameHasBeenSet = false;
 
   TransferOption m_transferOption{TransferOption::NOT_SET};
+  bool m_serviceNameHasBeenSet = false;
   bool m_transferOptionHasBeenSet = false;
 };
 

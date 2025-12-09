@@ -71,9 +71,9 @@ class AutoSubscriptionConfiguration {
   ///@}
  private:
   AutoSubscriptionStatus m_autoSubscribe{AutoSubscriptionStatus::NOT_SET};
-  bool m_autoSubscribeHasBeenSet = false;
 
   SubscriptionType m_defaultSubscriptionType{SubscriptionType::NOT_SET};
+  bool m_autoSubscribeHasBeenSet = false;
   bool m_defaultSubscriptionTypeHasBeenSet = false;
 };
 

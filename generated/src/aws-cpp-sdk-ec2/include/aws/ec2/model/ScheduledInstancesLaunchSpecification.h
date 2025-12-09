@@ -315,45 +315,45 @@ class ScheduledInstancesLaunchSpecification {
   ///@}
  private:
   Aws::Vector<ScheduledInstancesBlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   ScheduledInstancesIamInstanceProfile m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   ScheduledInstancesMonitoring m_monitoring;
-  bool m_monitoringHasBeenSet = false;
 
   Aws::Vector<ScheduledInstancesNetworkInterface> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   ScheduledInstancesPlacement m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::String m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_userData;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
   bool m_userDataHasBeenSet = false;
 };
 

@@ -172,21 +172,21 @@ class GetCostForecastRequest : public CostExplorerRequest {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Metric m_metric{Metric::NOT_SET};
-  bool m_metricHasBeenSet = false;
 
   Granularity m_granularity{Granularity::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_billingViewArn;
-  bool m_billingViewArnHasBeenSet = false;
 
   int m_predictionIntervalLevel{0};
+  bool m_timePeriodHasBeenSet = false;
+  bool m_metricHasBeenSet = false;
+  bool m_granularityHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_billingViewArnHasBeenSet = false;
   bool m_predictionIntervalLevelHasBeenSet = false;
 };
 

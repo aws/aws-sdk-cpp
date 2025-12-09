@@ -87,12 +87,12 @@ class ExperimentState {
   ///@}
  private:
   ExperimentStatus m_status{ExperimentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   ExperimentError m_error;
+  bool m_statusHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

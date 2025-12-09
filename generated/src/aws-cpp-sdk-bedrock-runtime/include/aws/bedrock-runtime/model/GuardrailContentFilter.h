@@ -116,18 +116,18 @@ class GuardrailContentFilter {
   ///@}
  private:
   GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailContentFilterConfidence m_confidence{GuardrailContentFilterConfidence::NOT_SET};
-  bool m_confidenceHasBeenSet = false;
 
   GuardrailContentFilterStrength m_filterStrength{GuardrailContentFilterStrength::NOT_SET};
-  bool m_filterStrengthHasBeenSet = false;
 
   GuardrailContentPolicyAction m_action{GuardrailContentPolicyAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   bool m_detected{false};
+  bool m_typeHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_filterStrengthHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_detectedHasBeenSet = false;
 };
 

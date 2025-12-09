@@ -120,18 +120,18 @@ class GetStorageProfileForQueueResult {
   ///@}
  private:
   Aws::String m_storageProfileId;
-  bool m_storageProfileIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   StorageProfileOperatingSystemFamily m_osFamily{StorageProfileOperatingSystemFamily::NOT_SET};
-  bool m_osFamilyHasBeenSet = false;
 
   Aws::Vector<FileSystemLocation> m_fileSystemLocations;
-  bool m_fileSystemLocationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageProfileIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_osFamilyHasBeenSet = false;
+  bool m_fileSystemLocationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

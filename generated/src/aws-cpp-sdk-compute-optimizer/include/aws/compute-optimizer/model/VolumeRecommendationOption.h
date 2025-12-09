@@ -135,18 +135,18 @@ class VolumeRecommendationOption {
   ///@}
  private:
   VolumeConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   double m_performanceRisk{0.0};
-  bool m_performanceRiskHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   EBSSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
+  bool m_configurationHasBeenSet = false;
+  bool m_performanceRiskHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
   bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class LocationAttributes {
   ///@}
  private:
   LocationState m_locationState;
-  bool m_locationStateHasBeenSet = false;
 
   Aws::Vector<FleetAction> m_stoppedActions;
-  bool m_stoppedActionsHasBeenSet = false;
 
   LocationUpdateStatus m_updateStatus{LocationUpdateStatus::NOT_SET};
+  bool m_locationStateHasBeenSet = false;
+  bool m_stoppedActionsHasBeenSet = false;
   bool m_updateStatusHasBeenSet = false;
 };
 

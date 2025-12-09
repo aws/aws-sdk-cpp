@@ -258,36 +258,36 @@ class CreateQueueRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DefaultQueueBudgetAction m_defaultBudgetAction{DefaultQueueBudgetAction::NOT_SET};
-  bool m_defaultBudgetActionHasBeenSet = false;
 
   JobAttachmentSettings m_jobAttachmentSettings;
-  bool m_jobAttachmentSettingsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   JobRunAsUser m_jobRunAsUser;
-  bool m_jobRunAsUserHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_requiredFileSystemLocationNames;
-  bool m_requiredFileSystemLocationNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedStorageProfileIds;
-  bool m_allowedStorageProfileIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_farmIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_defaultBudgetActionHasBeenSet = false;
+  bool m_jobAttachmentSettingsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_jobRunAsUserHasBeenSet = false;
+  bool m_requiredFileSystemLocationNamesHasBeenSet = false;
+  bool m_allowedStorageProfileIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -92,15 +92,15 @@ class DescribeRefreshScheduleResult {
   ///@}
  private:
   RefreshSchedule m_refreshSchedule;
-  bool m_refreshScheduleHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_refreshScheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

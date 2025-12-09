@@ -83,12 +83,12 @@ class DeleteRelatedItemRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_relatedItemId;
+  bool m_domainIdHasBeenSet = false;
+  bool m_caseIdHasBeenSet = false;
   bool m_relatedItemIdHasBeenSet = false;
 };
 

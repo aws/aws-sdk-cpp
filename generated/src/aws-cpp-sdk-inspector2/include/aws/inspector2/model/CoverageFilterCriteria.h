@@ -560,66 +560,66 @@ class CoverageFilterCriteria {
   ///@}
  private:
   Aws::Vector<CoverageStringFilter> m_scanStatusCode;
-  bool m_scanStatusCodeHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_scanStatusReason;
-  bool m_scanStatusReasonHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_scanType;
-  bool m_scanTypeHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_ecrRepositoryName;
-  bool m_ecrRepositoryNameHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_ecrImageTags;
-  bool m_ecrImageTagsHasBeenSet = false;
 
   Aws::Vector<CoverageMapFilter> m_ec2InstanceTags;
-  bool m_ec2InstanceTagsHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_lambdaFunctionName;
-  bool m_lambdaFunctionNameHasBeenSet = false;
 
   Aws::Vector<CoverageMapFilter> m_lambdaFunctionTags;
-  bool m_lambdaFunctionTagsHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_lambdaFunctionRuntime;
-  bool m_lambdaFunctionRuntimeHasBeenSet = false;
 
   Aws::Vector<CoverageDateFilter> m_lastScannedAt;
-  bool m_lastScannedAtHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_scanMode;
-  bool m_scanModeHasBeenSet = false;
 
   Aws::Vector<CoverageDateFilter> m_imagePulledAt;
-  bool m_imagePulledAtHasBeenSet = false;
 
   Aws::Vector<CoverageDateFilter> m_ecrImageLastInUseAt;
-  bool m_ecrImageLastInUseAtHasBeenSet = false;
 
   Aws::Vector<CoverageNumberFilter> m_ecrImageInUseCount;
-  bool m_ecrImageInUseCountHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_codeRepositoryProjectName;
-  bool m_codeRepositoryProjectNameHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_codeRepositoryProviderType;
-  bool m_codeRepositoryProviderTypeHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_codeRepositoryProviderTypeVisibility;
-  bool m_codeRepositoryProviderTypeVisibilityHasBeenSet = false;
 
   Aws::Vector<CoverageStringFilter> m_lastScannedCommitId;
+  bool m_scanStatusCodeHasBeenSet = false;
+  bool m_scanStatusReasonHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_scanTypeHasBeenSet = false;
+  bool m_ecrRepositoryNameHasBeenSet = false;
+  bool m_ecrImageTagsHasBeenSet = false;
+  bool m_ec2InstanceTagsHasBeenSet = false;
+  bool m_lambdaFunctionNameHasBeenSet = false;
+  bool m_lambdaFunctionTagsHasBeenSet = false;
+  bool m_lambdaFunctionRuntimeHasBeenSet = false;
+  bool m_lastScannedAtHasBeenSet = false;
+  bool m_scanModeHasBeenSet = false;
+  bool m_imagePulledAtHasBeenSet = false;
+  bool m_ecrImageLastInUseAtHasBeenSet = false;
+  bool m_ecrImageInUseCountHasBeenSet = false;
+  bool m_codeRepositoryProjectNameHasBeenSet = false;
+  bool m_codeRepositoryProviderTypeHasBeenSet = false;
+  bool m_codeRepositoryProviderTypeVisibilityHasBeenSet = false;
   bool m_lastScannedCommitIdHasBeenSet = false;
 };
 

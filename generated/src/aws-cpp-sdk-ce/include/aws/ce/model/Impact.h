@@ -117,18 +117,18 @@ class Impact {
   ///@}
  private:
   double m_maxImpact{0.0};
-  bool m_maxImpactHasBeenSet = false;
 
   double m_totalImpact{0.0};
-  bool m_totalImpactHasBeenSet = false;
 
   double m_totalActualSpend{0.0};
-  bool m_totalActualSpendHasBeenSet = false;
 
   double m_totalExpectedSpend{0.0};
-  bool m_totalExpectedSpendHasBeenSet = false;
 
   double m_totalImpactPercentage{0.0};
+  bool m_maxImpactHasBeenSet = false;
+  bool m_totalImpactHasBeenSet = false;
+  bool m_totalActualSpendHasBeenSet = false;
+  bool m_totalExpectedSpendHasBeenSet = false;
   bool m_totalImpactPercentageHasBeenSet = false;
 };
 

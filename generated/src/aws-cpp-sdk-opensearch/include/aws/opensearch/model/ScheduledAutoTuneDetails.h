@@ -107,15 +107,15 @@ class ScheduledAutoTuneDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   ScheduledAutoTuneActionType m_actionType{ScheduledAutoTuneActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   ScheduledAutoTuneSeverityType m_severity{ScheduledAutoTuneSeverityType::NOT_SET};
+  bool m_dateHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

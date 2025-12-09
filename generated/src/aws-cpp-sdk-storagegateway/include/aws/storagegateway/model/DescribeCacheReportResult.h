@@ -61,9 +61,9 @@ class DescribeCacheReportResult {
   ///@}
  private:
   CacheReportInfo m_cacheReportInfo;
-  bool m_cacheReportInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cacheReportInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

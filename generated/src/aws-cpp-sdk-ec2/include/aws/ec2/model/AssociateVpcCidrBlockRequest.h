@@ -228,33 +228,33 @@ class AssociateVpcCidrBlockRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_cidrBlock;
-  bool m_cidrBlockHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlockNetworkBorderGroup;
-  bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = false;
 
   Aws::String m_ipv6Pool;
-  bool m_ipv6PoolHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
-  bool m_ipv6CidrBlockHasBeenSet = false;
 
   Aws::String m_ipv4IpamPoolId;
-  bool m_ipv4IpamPoolIdHasBeenSet = false;
 
   int m_ipv4NetmaskLength{0};
-  bool m_ipv4NetmaskLengthHasBeenSet = false;
 
   Aws::String m_ipv6IpamPoolId;
-  bool m_ipv6IpamPoolIdHasBeenSet = false;
 
   int m_ipv6NetmaskLength{0};
-  bool m_ipv6NetmaskLengthHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_amazonProvidedIpv6CidrBlock{false};
+  bool m_cidrBlockHasBeenSet = false;
+  bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = false;
+  bool m_ipv6PoolHasBeenSet = false;
+  bool m_ipv6CidrBlockHasBeenSet = false;
+  bool m_ipv4IpamPoolIdHasBeenSet = false;
+  bool m_ipv4NetmaskLengthHasBeenSet = false;
+  bool m_ipv6IpamPoolIdHasBeenSet = false;
+  bool m_ipv6NetmaskLengthHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_amazonProvidedIpv6CidrBlockHasBeenSet = false;
 };
 

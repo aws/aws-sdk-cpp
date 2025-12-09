@@ -68,9 +68,9 @@ class InventoryItemAttribute {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InventoryAttributeDataType m_dataType{InventoryAttributeDataType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_dataTypeHasBeenSet = false;
 };
 

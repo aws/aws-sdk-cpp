@@ -76,9 +76,9 @@ class LocationInfo {
   ///@}
  private:
   LocationType m_type{LocationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_typeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

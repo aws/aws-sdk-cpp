@@ -78,9 +78,9 @@ class DisableInstanceSqlHaStandbyDetectionsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_instanceIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

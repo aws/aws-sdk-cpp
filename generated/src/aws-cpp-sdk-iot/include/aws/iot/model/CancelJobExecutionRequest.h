@@ -142,18 +142,18 @@ class CancelJobExecutionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   long long m_expectedVersion{0};
-  bool m_expectedVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statusDetails;
+  bool m_jobIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
+  bool m_expectedVersionHasBeenSet = false;
   bool m_statusDetailsHasBeenSet = false;
 };
 

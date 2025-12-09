@@ -76,12 +76,12 @@ class CreateCertificateProviderResult {
   ///@}
  private:
   Aws::String m_certificateProviderName;
-  bool m_certificateProviderNameHasBeenSet = false;
 
   Aws::String m_certificateProviderArn;
-  bool m_certificateProviderArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateProviderNameHasBeenSet = false;
+  bool m_certificateProviderArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class OpenIdConnectGroupConfiguration {
   ///@}
  private:
   Aws::String m_groupClaim;
-  bool m_groupClaimHasBeenSet = false;
 
   Aws::String m_groupEntityType;
+  bool m_groupClaimHasBeenSet = false;
   bool m_groupEntityTypeHasBeenSet = false;
 };
 

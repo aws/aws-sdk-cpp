@@ -159,24 +159,24 @@ class ContactEvaluation {
   ///@}
  private:
   Aws::String m_formId;
-  bool m_formIdHasBeenSet = false;
 
   Aws::String m_evaluationArn;
-  bool m_evaluationArnHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTimestamp{};
-  bool m_deleteTimestampHasBeenSet = false;
 
   Aws::String m_exportLocation;
+  bool m_formIdHasBeenSet = false;
+  bool m_evaluationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_deleteTimestampHasBeenSet = false;
   bool m_exportLocationHasBeenSet = false;
 };
 

@@ -164,21 +164,21 @@ class InsightImpactGraphService {
   ///@}
  private:
   int m_referenceId{0};
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<InsightImpactGraphEdge> m_edges;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
   bool m_edgesHasBeenSet = false;
 };
 

@@ -91,9 +91,9 @@ class RdsDbSnapshotConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, RdsDbSnapshotAttributeValue> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_attributesHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

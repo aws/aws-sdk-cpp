@@ -90,12 +90,12 @@ class ListStreamsRequest : public DynamoDBStreamsRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_exclusiveStartStreamArn;
+  bool m_tableNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_exclusiveStartStreamArnHasBeenSet = false;
 };
 

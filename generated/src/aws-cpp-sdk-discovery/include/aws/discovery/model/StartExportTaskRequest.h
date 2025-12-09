@@ -150,18 +150,18 @@ class StartExportTaskRequest : public ApplicationDiscoveryServiceRequest {
   ///@}
  private:
   Aws::Vector<ExportDataFormat> m_exportDataFormat;
-  bool m_exportDataFormatHasBeenSet = false;
 
   Aws::Vector<ExportFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ExportPreferences m_preferences;
+  bool m_exportDataFormatHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_preferencesHasBeenSet = false;
 };
 

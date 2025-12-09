@@ -65,9 +65,9 @@ class DeleteWorkspaceApiKeyRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_keyNameHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

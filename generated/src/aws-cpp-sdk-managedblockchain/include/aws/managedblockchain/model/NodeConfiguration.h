@@ -109,15 +109,15 @@ class NodeConfiguration {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   NodeLogPublishingConfiguration m_logPublishingConfiguration;
-  bool m_logPublishingConfigurationHasBeenSet = false;
 
   StateDBType m_stateDB{StateDBType::NOT_SET};
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_logPublishingConfigurationHasBeenSet = false;
   bool m_stateDBHasBeenSet = false;
 };
 

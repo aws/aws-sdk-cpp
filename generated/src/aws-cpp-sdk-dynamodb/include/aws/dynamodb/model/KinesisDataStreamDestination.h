@@ -105,15 +105,15 @@ class KinesisDataStreamDestination {
   ///@}
  private:
   Aws::String m_streamArn;
-  bool m_streamArnHasBeenSet = false;
 
   DestinationStatus m_destinationStatus{DestinationStatus::NOT_SET};
-  bool m_destinationStatusHasBeenSet = false;
 
   Aws::String m_destinationStatusDescription;
-  bool m_destinationStatusDescriptionHasBeenSet = false;
 
   ApproximateCreationDateTimePrecision m_approximateCreationDateTimePrecision{ApproximateCreationDateTimePrecision::NOT_SET};
+  bool m_streamArnHasBeenSet = false;
+  bool m_destinationStatusHasBeenSet = false;
+  bool m_destinationStatusDescriptionHasBeenSet = false;
   bool m_approximateCreationDateTimePrecisionHasBeenSet = false;
 };
 

@@ -137,18 +137,18 @@ class InventoryRetrievalJobDescription {
   ///@}
  private:
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_startDate;
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_endDate;
-  bool m_endDateHasBeenSet = false;
 
   Aws::String m_limit;
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_formatHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

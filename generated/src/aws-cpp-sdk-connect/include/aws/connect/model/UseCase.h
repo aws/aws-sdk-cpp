@@ -86,12 +86,12 @@ class UseCase {
   ///@}
  private:
   Aws::String m_useCaseId;
-  bool m_useCaseIdHasBeenSet = false;
 
   Aws::String m_useCaseArn;
-  bool m_useCaseArnHasBeenSet = false;
 
   UseCaseType m_useCaseType{UseCaseType::NOT_SET};
+  bool m_useCaseIdHasBeenSet = false;
+  bool m_useCaseArnHasBeenSet = false;
   bool m_useCaseTypeHasBeenSet = false;
 };
 

@@ -86,9 +86,9 @@ class AsnMatchStatement {
   ///@}
  private:
   Aws::Vector<long long> m_asnList;
-  bool m_asnListHasBeenSet = false;
 
   ForwardedIPConfig m_forwardedIPConfig;
+  bool m_asnListHasBeenSet = false;
   bool m_forwardedIPConfigHasBeenSet = false;
 };
 

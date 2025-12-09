@@ -299,36 +299,36 @@ class CreateLoadBalancerRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<SubnetMapping> m_subnetMappings;
-  bool m_subnetMappingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   LoadBalancerSchemeEnum m_scheme{LoadBalancerSchemeEnum::NOT_SET};
-  bool m_schemeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LoadBalancerTypeEnum m_type{LoadBalancerTypeEnum::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
-  bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
   EnablePrefixForIpv6SourceNatEnum m_enablePrefixForIpv6SourceNat{EnablePrefixForIpv6SourceNatEnum::NOT_SET};
-  bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
 
   IpamPools m_ipamPools;
+  bool m_nameHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_subnetMappingsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_schemeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_customerOwnedIpv4PoolHasBeenSet = false;
+  bool m_enablePrefixForIpv6SourceNatHasBeenSet = false;
   bool m_ipamPoolsHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class WorkerCapabilities {
   ///@}
  private:
   Aws::Vector<WorkerAmountCapability> m_amounts;
-  bool m_amountsHasBeenSet = false;
 
   Aws::Vector<WorkerAttributeCapability> m_attributes;
+  bool m_amountsHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

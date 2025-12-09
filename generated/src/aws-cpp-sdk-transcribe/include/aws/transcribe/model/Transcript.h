@@ -92,9 +92,9 @@ class Transcript {
   ///@}
  private:
   Aws::String m_transcriptFileUri;
-  bool m_transcriptFileUriHasBeenSet = false;
 
   Aws::String m_redactedTranscriptFileUri;
+  bool m_transcriptFileUriHasBeenSet = false;
   bool m_redactedTranscriptFileUriHasBeenSet = false;
 };
 

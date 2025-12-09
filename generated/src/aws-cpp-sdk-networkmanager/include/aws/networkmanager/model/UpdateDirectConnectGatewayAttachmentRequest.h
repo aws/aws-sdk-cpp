@@ -76,9 +76,9 @@ class UpdateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_edgeLocations;
+  bool m_attachmentIdHasBeenSet = false;
   bool m_edgeLocationsHasBeenSet = false;
 };
 

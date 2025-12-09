@@ -87,12 +87,12 @@ class DescribeComputationModelExecutionSummaryRequest : public IoTSiteWiseReques
   ///@}
  private:
   Aws::String m_computationModelId;
-  bool m_computationModelIdHasBeenSet = false;
 
   ResolveToResourceType m_resolveToResourceType{ResolveToResourceType::NOT_SET};
-  bool m_resolveToResourceTypeHasBeenSet = false;
 
   Aws::String m_resolveToResourceId;
+  bool m_computationModelIdHasBeenSet = false;
+  bool m_resolveToResourceTypeHasBeenSet = false;
   bool m_resolveToResourceIdHasBeenSet = false;
 };
 

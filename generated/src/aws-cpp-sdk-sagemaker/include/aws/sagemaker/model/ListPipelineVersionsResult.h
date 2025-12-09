@@ -89,12 +89,12 @@ class ListPipelineVersionsResult {
   ///@}
  private:
   Aws::Vector<PipelineVersionSummary> m_pipelineVersionSummaries;
-  bool m_pipelineVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

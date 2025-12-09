@@ -68,9 +68,9 @@ class ScrollBarOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   VisibleRangeOptions m_visibleRange;
+  bool m_visibilityHasBeenSet = false;
   bool m_visibleRangeHasBeenSet = false;
 };
 

@@ -368,57 +368,57 @@ class DescribeInstanceAttributeResponse {
   ///@}
  private:
   Aws::Vector<InstanceBlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   AttributeBooleanValue m_disableApiTermination;
-  bool m_disableApiTerminationHasBeenSet = false;
 
   AttributeBooleanValue m_enaSupport;
-  bool m_enaSupportHasBeenSet = false;
 
   EnclaveOptions m_enclaveOptions;
-  bool m_enclaveOptionsHasBeenSet = false;
 
   AttributeBooleanValue m_ebsOptimized;
-  bool m_ebsOptimizedHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   AttributeValue m_instanceInitiatedShutdownBehavior;
-  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
   AttributeValue m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   AttributeValue m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   AttributeValue m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   AttributeValue m_rootDeviceName;
-  bool m_rootDeviceNameHasBeenSet = false;
 
   AttributeBooleanValue m_sourceDestCheck;
-  bool m_sourceDestCheckHasBeenSet = false;
 
   AttributeValue m_sriovNetSupport;
-  bool m_sriovNetSupportHasBeenSet = false;
 
   AttributeValue m_userData;
-  bool m_userDataHasBeenSet = false;
 
   AttributeBooleanValue m_disableApiStop;
-  bool m_disableApiStopHasBeenSet = false;
 
   Aws::Vector<GroupIdentifier> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_disableApiTerminationHasBeenSet = false;
+  bool m_enaSupportHasBeenSet = false;
+  bool m_enclaveOptionsHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_rootDeviceNameHasBeenSet = false;
+  bool m_sourceDestCheckHasBeenSet = false;
+  bool m_sriovNetSupportHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
+  bool m_disableApiStopHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

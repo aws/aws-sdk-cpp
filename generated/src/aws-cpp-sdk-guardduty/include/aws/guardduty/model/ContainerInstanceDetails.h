@@ -63,9 +63,9 @@ class ContainerInstanceDetails {
   ///@}
  private:
   long long m_coveredContainerInstances{0};
-  bool m_coveredContainerInstancesHasBeenSet = false;
 
   long long m_compatibleContainerInstances{0};
+  bool m_coveredContainerInstancesHasBeenSet = false;
   bool m_compatibleContainerInstancesHasBeenSet = false;
 };
 

@@ -417,51 +417,51 @@ class PolicyDetails {
   ///@}
  private:
   PolicyTypeValues m_policyType{PolicyTypeValues::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::Vector<ResourceTypeValues> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<ResourceLocationValues> m_resourceLocations;
-  bool m_resourceLocationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_targetTags;
-  bool m_targetTagsHasBeenSet = false;
 
   Aws::Vector<Schedule> m_schedules;
-  bool m_schedulesHasBeenSet = false;
 
   Parameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   EventSource m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::Vector<Action> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   PolicyLanguageValues m_policyLanguage{PolicyLanguageValues::NOT_SET};
-  bool m_policyLanguageHasBeenSet = false;
 
   ResourceTypeValues m_resourceType{ResourceTypeValues::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_createInterval{0};
-  bool m_createIntervalHasBeenSet = false;
 
   int m_retainInterval{0};
-  bool m_retainIntervalHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::Vector<CrossRegionCopyTarget> m_crossRegionCopyTargets;
-  bool m_crossRegionCopyTargetsHasBeenSet = false;
 
   bool m_extendDeletion{false};
-  bool m_extendDeletionHasBeenSet = false;
 
   Exclusions m_exclusions;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_resourceLocationsHasBeenSet = false;
+  bool m_targetTagsHasBeenSet = false;
+  bool m_schedulesHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_policyLanguageHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_createIntervalHasBeenSet = false;
+  bool m_retainIntervalHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_crossRegionCopyTargetsHasBeenSet = false;
+  bool m_extendDeletionHasBeenSet = false;
   bool m_exclusionsHasBeenSet = false;
 };
 

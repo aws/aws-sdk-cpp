@@ -81,9 +81,9 @@ class BatchCreateVariableRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::Vector<VariableEntry> m_variableEntries;
-  bool m_variableEntriesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_variableEntriesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

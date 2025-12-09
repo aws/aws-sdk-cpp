@@ -85,12 +85,12 @@ class DataSourceConfiguration {
   ///@}
  private:
   DataSourceS3Configuration m_dataSourceS3Configuration;
-  bool m_dataSourceS3ConfigurationHasBeenSet = false;
 
   CsvConfiguration m_csvConfiguration;
-  bool m_csvConfigurationHasBeenSet = false;
 
   BatchLoadDataFormat m_dataFormat{BatchLoadDataFormat::NOT_SET};
+  bool m_dataSourceS3ConfigurationHasBeenSet = false;
+  bool m_csvConfigurationHasBeenSet = false;
   bool m_dataFormatHasBeenSet = false;
 };
 

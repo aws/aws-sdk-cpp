@@ -181,18 +181,18 @@ class PracticeRunConfiguration {
   ///@}
  private:
   Aws::Vector<ControlCondition> m_blockingAlarms;
-  bool m_blockingAlarmsHasBeenSet = false;
 
   Aws::Vector<ControlCondition> m_outcomeAlarms;
-  bool m_outcomeAlarmsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedWindows;
-  bool m_blockedWindowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedWindows;
-  bool m_allowedWindowsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blockedDates;
+  bool m_blockingAlarmsHasBeenSet = false;
+  bool m_outcomeAlarmsHasBeenSet = false;
+  bool m_blockedWindowsHasBeenSet = false;
+  bool m_allowedWindowsHasBeenSet = false;
   bool m_blockedDatesHasBeenSet = false;
 };
 

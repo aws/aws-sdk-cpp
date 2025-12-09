@@ -95,12 +95,12 @@ class JobExecutionState {
   ///@}
  private:
   JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   long long m_versionNumber{0};
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
 };
 

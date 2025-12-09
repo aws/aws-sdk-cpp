@@ -71,9 +71,9 @@ class OfferAvailabilityEndDateFilterDateRange {
   ///@}
  private:
   Aws::String m_afterValue;
-  bool m_afterValueHasBeenSet = false;
 
   Aws::String m_beforeValue;
+  bool m_afterValueHasBeenSet = false;
   bool m_beforeValueHasBeenSet = false;
 };
 

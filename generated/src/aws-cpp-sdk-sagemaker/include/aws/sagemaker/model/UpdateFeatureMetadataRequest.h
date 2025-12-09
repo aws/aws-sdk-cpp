@@ -138,18 +138,18 @@ class UpdateFeatureMetadataRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_featureName;
-  bool m_featureNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<FeatureParameter> m_parameterAdditions;
-  bool m_parameterAdditionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_parameterRemovals;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_featureNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_parameterAdditionsHasBeenSet = false;
   bool m_parameterRemovalsHasBeenSet = false;
 };
 

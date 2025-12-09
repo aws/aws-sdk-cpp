@@ -80,9 +80,9 @@ class S3DataRepositoryConfiguration {
   ///@}
  private:
   AutoImportPolicy m_autoImportPolicy;
-  bool m_autoImportPolicyHasBeenSet = false;
 
   AutoExportPolicy m_autoExportPolicy;
+  bool m_autoImportPolicyHasBeenSet = false;
   bool m_autoExportPolicyHasBeenSet = false;
 };
 

@@ -197,30 +197,30 @@ class CreateTokenWithIAMResult {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_tokenType;
-  bool m_tokenTypeHasBeenSet = false;
 
   int m_expiresIn{0};
-  bool m_expiresInHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   Aws::String m_idToken;
-  bool m_idTokenHasBeenSet = false;
 
   Aws::String m_issuedTokenType;
-  bool m_issuedTokenTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scope;
-  bool m_scopeHasBeenSet = false;
 
   AwsAdditionalDetails m_awsAdditionalDetails;
-  bool m_awsAdditionalDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_tokenTypeHasBeenSet = false;
+  bool m_expiresInHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
+  bool m_idTokenHasBeenSet = false;
+  bool m_issuedTokenTypeHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_awsAdditionalDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

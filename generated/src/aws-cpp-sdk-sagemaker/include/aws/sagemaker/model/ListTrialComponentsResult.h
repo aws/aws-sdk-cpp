@@ -84,12 +84,12 @@ class ListTrialComponentsResult {
   ///@}
  private:
   Aws::Vector<TrialComponentSummary> m_trialComponentSummaries;
-  bool m_trialComponentSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trialComponentSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

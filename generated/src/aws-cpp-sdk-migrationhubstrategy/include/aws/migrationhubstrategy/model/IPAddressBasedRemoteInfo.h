@@ -84,12 +84,12 @@ class IPAddressBasedRemoteInfo {
   ///@}
  private:
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_ipAddressConfigurationTimeStamp;
-  bool m_ipAddressConfigurationTimeStampHasBeenSet = false;
 
   OSType m_osType{OSType::NOT_SET};
+  bool m_authTypeHasBeenSet = false;
+  bool m_ipAddressConfigurationTimeStampHasBeenSet = false;
   bool m_osTypeHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class BackintConfig {
   ///@}
  private:
   BackintMode m_backintMode{BackintMode::NOT_SET};
-  bool m_backintModeHasBeenSet = false;
 
   bool m_ensureNoBackupInProcess{false};
+  bool m_backintModeHasBeenSet = false;
   bool m_ensureNoBackupInProcessHasBeenSet = false;
 };
 

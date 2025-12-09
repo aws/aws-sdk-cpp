@@ -71,9 +71,9 @@ class TableFieldWells {
   ///@}
  private:
   TableAggregatedFieldWells m_tableAggregatedFieldWells;
-  bool m_tableAggregatedFieldWellsHasBeenSet = false;
 
   TableUnaggregatedFieldWells m_tableUnaggregatedFieldWells;
+  bool m_tableAggregatedFieldWellsHasBeenSet = false;
   bool m_tableUnaggregatedFieldWellsHasBeenSet = false;
 };
 

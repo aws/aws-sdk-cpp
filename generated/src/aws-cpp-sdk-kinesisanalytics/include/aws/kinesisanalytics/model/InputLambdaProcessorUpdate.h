@@ -79,9 +79,9 @@ class InputLambdaProcessorUpdate {
   ///@}
  private:
   Aws::String m_resourceARNUpdate;
-  bool m_resourceARNUpdateHasBeenSet = false;
 
   Aws::String m_roleARNUpdate;
+  bool m_resourceARNUpdateHasBeenSet = false;
   bool m_roleARNUpdateHasBeenSet = false;
 };
 

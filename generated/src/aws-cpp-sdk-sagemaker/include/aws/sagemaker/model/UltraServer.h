@@ -220,36 +220,36 @@ class UltraServer {
   ///@}
  private:
   Aws::String m_ultraServerId;
-  bool m_ultraServerIdHasBeenSet = false;
 
   Aws::String m_ultraServerType;
-  bool m_ultraServerTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   ReservedCapacityInstanceType m_instanceType{ReservedCapacityInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   int m_configuredSpareInstanceCount{0};
-  bool m_configuredSpareInstanceCountHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   int m_inUseInstanceCount{0};
-  bool m_inUseInstanceCountHasBeenSet = false;
 
   int m_availableSpareInstanceCount{0};
-  bool m_availableSpareInstanceCountHasBeenSet = false;
 
   int m_unhealthyInstanceCount{0};
-  bool m_unhealthyInstanceCountHasBeenSet = false;
 
   UltraServerHealthStatus m_healthStatus{UltraServerHealthStatus::NOT_SET};
+  bool m_ultraServerIdHasBeenSet = false;
+  bool m_ultraServerTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_configuredSpareInstanceCountHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
+  bool m_inUseInstanceCountHasBeenSet = false;
+  bool m_availableSpareInstanceCountHasBeenSet = false;
+  bool m_unhealthyInstanceCountHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class BatchDescribeEntitiesResult {
   ///@}
  private:
   Aws::Map<Aws::String, EntityDetail> m_entityDetails;
-  bool m_entityDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, BatchDescribeErrorDetail> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entityDetailsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

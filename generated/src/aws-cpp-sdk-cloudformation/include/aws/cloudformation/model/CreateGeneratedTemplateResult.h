@@ -60,9 +60,9 @@ class CreateGeneratedTemplateResult {
   ///@}
  private:
   Aws::String m_generatedTemplateId;
-  bool m_generatedTemplateIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_generatedTemplateIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

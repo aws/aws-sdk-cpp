@@ -121,18 +121,18 @@ class ConsumableResourceSummary {
   ///@}
  private:
   Aws::String m_consumableResourceArn;
-  bool m_consumableResourceArnHasBeenSet = false;
 
   Aws::String m_consumableResourceName;
-  bool m_consumableResourceNameHasBeenSet = false;
 
   long long m_totalQuantity{0};
-  bool m_totalQuantityHasBeenSet = false;
 
   long long m_inUseQuantity{0};
-  bool m_inUseQuantityHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_consumableResourceArnHasBeenSet = false;
+  bool m_consumableResourceNameHasBeenSet = false;
+  bool m_totalQuantityHasBeenSet = false;
+  bool m_inUseQuantityHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

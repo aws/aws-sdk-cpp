@@ -87,12 +87,12 @@ class DescribeSharedDirectoriesResult {
   ///@}
  private:
   Aws::Vector<SharedDirectory> m_sharedDirectories;
-  bool m_sharedDirectoriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sharedDirectoriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

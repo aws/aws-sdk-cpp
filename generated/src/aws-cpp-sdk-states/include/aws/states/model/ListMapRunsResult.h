@@ -91,12 +91,12 @@ class ListMapRunsResult {
   ///@}
  private:
   Aws::Vector<MapRunListItem> m_mapRuns;
-  bool m_mapRunsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mapRunsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

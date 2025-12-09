@@ -76,9 +76,9 @@ class NodeFabricLogPublishingConfiguration {
   ///@}
  private:
   LogConfigurations m_chaincodeLogs;
-  bool m_chaincodeLogsHasBeenSet = false;
 
   LogConfigurations m_peerLogs;
+  bool m_chaincodeLogsHasBeenSet = false;
   bool m_peerLogsHasBeenSet = false;
 };
 

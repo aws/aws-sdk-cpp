@@ -65,9 +65,9 @@ class GetKxUserRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_environmentId;
+  bool m_userNameHasBeenSet = false;
   bool m_environmentIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class AcceptVpcEndpointConnectionsResponse {
   ///@}
  private:
   Aws::Vector<UnsuccessfulItem> m_unsuccessful;
-  bool m_unsuccessfulHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_unsuccessfulHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

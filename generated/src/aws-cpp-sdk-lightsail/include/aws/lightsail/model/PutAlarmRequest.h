@@ -301,36 +301,36 @@ class PutAlarmRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   MetricName m_metricName{MetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_monitoredResourceName;
-  bool m_monitoredResourceNameHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
 
   TreatMissingData m_treatMissingData{TreatMissingData::NOT_SET};
-  bool m_treatMissingDataHasBeenSet = false;
 
   Aws::Vector<ContactProtocol> m_contactProtocols;
-  bool m_contactProtocolsHasBeenSet = false;
 
   Aws::Vector<AlarmState> m_notificationTriggers;
-  bool m_notificationTriggersHasBeenSet = false;
 
   bool m_notificationEnabled{false};
+  bool m_alarmNameHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_monitoredResourceNameHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_treatMissingDataHasBeenSet = false;
+  bool m_contactProtocolsHasBeenSet = false;
+  bool m_notificationTriggersHasBeenSet = false;
   bool m_notificationEnabledHasBeenSet = false;
 };
 

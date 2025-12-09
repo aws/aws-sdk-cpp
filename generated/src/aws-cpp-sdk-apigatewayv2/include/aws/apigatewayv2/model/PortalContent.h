@@ -88,12 +88,12 @@ class PortalContent {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   PortalTheme m_theme;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_themeHasBeenSet = false;
 };
 

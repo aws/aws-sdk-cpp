@@ -69,9 +69,9 @@ class FormBindingElement {
   ///@}
  private:
   Aws::String m_element;
-  bool m_elementHasBeenSet = false;
 
   Aws::String m_property;
+  bool m_elementHasBeenSet = false;
   bool m_propertyHasBeenSet = false;
 };
 

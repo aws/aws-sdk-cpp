@@ -103,15 +103,15 @@ class AppVersionSummary {
   ///@}
  private:
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_identifier{0};
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_versionName;
+  bool m_appVersionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_versionNameHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class DisableSerialConsoleAccessResponse {
   ///@}
  private:
   bool m_serialConsoleAccessEnabled{false};
-  bool m_serialConsoleAccessEnabledHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serialConsoleAccessEnabledHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

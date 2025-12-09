@@ -69,9 +69,9 @@ class ReplicationInfoSummary {
   ///@}
  private:
   Aws::String m_sourceKafkaClusterAlias;
-  bool m_sourceKafkaClusterAliasHasBeenSet = false;
 
   Aws::String m_targetKafkaClusterAlias;
+  bool m_sourceKafkaClusterAliasHasBeenSet = false;
   bool m_targetKafkaClusterAliasHasBeenSet = false;
 };
 

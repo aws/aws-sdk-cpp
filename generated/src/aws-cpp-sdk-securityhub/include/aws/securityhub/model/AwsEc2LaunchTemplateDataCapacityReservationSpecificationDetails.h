@@ -78,9 +78,9 @@ class AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails {
   ///@}
  private:
   Aws::String m_capacityReservationPreference;
-  bool m_capacityReservationPreferenceHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataCapacityReservationSpecificationCapacityReservationTargetDetails m_capacityReservationTarget;
+  bool m_capacityReservationPreferenceHasBeenSet = false;
   bool m_capacityReservationTargetHasBeenSet = false;
 };
 

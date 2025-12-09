@@ -196,27 +196,27 @@ class CreateLaunchTemplateVersionRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_launchTemplateId;
-  bool m_launchTemplateIdHasBeenSet = false;
 
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   RequestLaunchTemplateData m_launchTemplateData;
-  bool m_launchTemplateDataHasBeenSet = false;
 
   bool m_resolveAlias{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_launchTemplateIdHasBeenSet = false;
+  bool m_launchTemplateNameHasBeenSet = false;
+  bool m_sourceVersionHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_launchTemplateDataHasBeenSet = false;
   bool m_resolveAliasHasBeenSet = false;
 };
 

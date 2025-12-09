@@ -86,12 +86,12 @@ class DescribeWorkspaceBundlesResult {
   ///@}
  private:
   Aws::Vector<WorkspaceBundle> m_bundles;
-  bool m_bundlesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bundlesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

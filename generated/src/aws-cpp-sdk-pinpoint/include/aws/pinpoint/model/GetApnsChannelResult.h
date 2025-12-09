@@ -58,9 +58,9 @@ class GetApnsChannelResult {
   ///@}
  private:
   APNSChannelResponse m_aPNSChannelResponse;
-  bool m_aPNSChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aPNSChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

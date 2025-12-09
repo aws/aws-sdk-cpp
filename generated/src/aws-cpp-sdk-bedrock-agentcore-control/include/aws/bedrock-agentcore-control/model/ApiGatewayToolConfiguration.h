@@ -85,9 +85,9 @@ class ApiGatewayToolConfiguration {
   ///@}
  private:
   Aws::Vector<ApiGatewayToolOverride> m_toolOverrides;
-  bool m_toolOverridesHasBeenSet = false;
 
   Aws::Vector<ApiGatewayToolFilter> m_toolFilters;
+  bool m_toolOverridesHasBeenSet = false;
   bool m_toolFiltersHasBeenSet = false;
 };
 

@@ -153,21 +153,21 @@ class QualificationRequest {
   ///@}
  private:
   Aws::String m_qualificationRequestId;
-  bool m_qualificationRequestIdHasBeenSet = false;
 
   Aws::String m_qualificationTypeId;
-  bool m_qualificationTypeIdHasBeenSet = false;
 
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::String m_test;
-  bool m_testHasBeenSet = false;
 
   Aws::String m_answer;
-  bool m_answerHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTime{};
+  bool m_qualificationRequestIdHasBeenSet = false;
+  bool m_qualificationTypeIdHasBeenSet = false;
+  bool m_workerIdHasBeenSet = false;
+  bool m_testHasBeenSet = false;
+  bool m_answerHasBeenSet = false;
   bool m_submitTimeHasBeenSet = false;
 };
 

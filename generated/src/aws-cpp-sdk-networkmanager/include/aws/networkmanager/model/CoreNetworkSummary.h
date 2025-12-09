@@ -166,24 +166,24 @@ class CoreNetworkSummary {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
-  bool m_coreNetworkArnHasBeenSet = false;
 
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   CoreNetworkState m_state{CoreNetworkState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_coreNetworkArnHasBeenSet = false;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

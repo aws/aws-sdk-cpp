@@ -146,15 +146,15 @@ class DescribePlacementGroupsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_groupIds;
-  bool m_groupIdsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupNames;
-  bool m_groupNamesHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_groupIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_groupNamesHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

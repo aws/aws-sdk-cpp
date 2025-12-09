@@ -90,12 +90,12 @@ class UpdatePublicDnsNamespaceRequest : public ServiceDiscoveryRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_updaterRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_updaterRequestIdHasBeenSet = true;
 
   PublicDnsNamespaceChange m_namespace;
+  bool m_idHasBeenSet = false;
+  bool m_updaterRequestIdHasBeenSet = true;
   bool m_namespaceHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class UpdateAgentStatusRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   AggregateStatus m_aggregateStatus;
-  bool m_aggregateStatusHasBeenSet = false;
 
   Aws::Vector<ComponentStatusData> m_componentStatuses;
+  bool m_agentIdHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
+  bool m_aggregateStatusHasBeenSet = false;
   bool m_componentStatusesHasBeenSet = false;
 };
 

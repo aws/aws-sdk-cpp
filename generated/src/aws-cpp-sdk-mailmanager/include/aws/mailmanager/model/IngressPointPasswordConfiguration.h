@@ -88,12 +88,12 @@ class IngressPointPasswordConfiguration {
   ///@}
  private:
   Aws::String m_smtpPasswordVersion;
-  bool m_smtpPasswordVersionHasBeenSet = false;
 
   Aws::String m_previousSmtpPasswordVersion;
-  bool m_previousSmtpPasswordVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_previousSmtpPasswordExpiryTimestamp{};
+  bool m_smtpPasswordVersionHasBeenSet = false;
+  bool m_previousSmtpPasswordVersionHasBeenSet = false;
   bool m_previousSmtpPasswordExpiryTimestampHasBeenSet = false;
 };
 

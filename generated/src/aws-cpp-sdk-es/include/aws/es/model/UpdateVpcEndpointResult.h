@@ -66,9 +66,9 @@ class UpdateVpcEndpointResult {
   ///@}
  private:
   VpcEndpoint m_vpcEndpoint;
-  bool m_vpcEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -112,18 +112,18 @@ class DescribeApplicationProviderResult {
   ///@}
  private:
   Aws::String m_applicationProviderArn;
-  bool m_applicationProviderArnHasBeenSet = false;
 
   FederationProtocol m_federationProtocol{FederationProtocol::NOT_SET};
-  bool m_federationProtocolHasBeenSet = false;
 
   DisplayData m_displayData;
-  bool m_displayDataHasBeenSet = false;
 
   ResourceServerConfig m_resourceServerConfig;
-  bool m_resourceServerConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationProviderArnHasBeenSet = false;
+  bool m_federationProtocolHasBeenSet = false;
+  bool m_displayDataHasBeenSet = false;
+  bool m_resourceServerConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

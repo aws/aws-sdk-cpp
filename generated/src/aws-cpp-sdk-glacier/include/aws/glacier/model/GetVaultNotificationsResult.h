@@ -66,9 +66,9 @@ class GetVaultNotificationsResult {
   ///@}
  private:
   VaultNotificationConfig m_vaultNotificationConfig;
-  bool m_vaultNotificationConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vaultNotificationConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

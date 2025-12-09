@@ -85,9 +85,9 @@ class ColumnLevelPermissionRule {
   ///@}
  private:
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columnNames;
+  bool m_principalsHasBeenSet = false;
   bool m_columnNamesHasBeenSet = false;
 };
 

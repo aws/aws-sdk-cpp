@@ -119,15 +119,15 @@ class IpamPolicyDocument {
   ///@}
  private:
   Aws::String m_ipamPolicyId;
-  bool m_ipamPolicyIdHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   IpamPolicyResourceType m_resourceType{IpamPolicyResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<IpamPolicyAllocationRule> m_allocationRules;
+  bool m_ipamPolicyIdHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_allocationRulesHasBeenSet = false;
 };
 

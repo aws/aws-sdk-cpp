@@ -175,24 +175,24 @@ class UpdateStorageProfileRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_storageProfileId;
-  bool m_storageProfileIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   StorageProfileOperatingSystemFamily m_osFamily{StorageProfileOperatingSystemFamily::NOT_SET};
-  bool m_osFamilyHasBeenSet = false;
 
   Aws::Vector<FileSystemLocation> m_fileSystemLocationsToAdd;
-  bool m_fileSystemLocationsToAddHasBeenSet = false;
 
   Aws::Vector<FileSystemLocation> m_fileSystemLocationsToRemove;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_farmIdHasBeenSet = false;
+  bool m_storageProfileIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_osFamilyHasBeenSet = false;
+  bool m_fileSystemLocationsToAddHasBeenSet = false;
   bool m_fileSystemLocationsToRemoveHasBeenSet = false;
 };
 

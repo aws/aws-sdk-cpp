@@ -97,15 +97,15 @@ class GetResourceSyncStatusResult {
   ///@}
  private:
   Revision m_desiredState;
-  bool m_desiredStateHasBeenSet = false;
 
   ResourceSyncAttempt m_latestSuccessfulSync;
-  bool m_latestSuccessfulSyncHasBeenSet = false;
 
   ResourceSyncAttempt m_latestSync;
-  bool m_latestSyncHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_latestSuccessfulSyncHasBeenSet = false;
+  bool m_latestSyncHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

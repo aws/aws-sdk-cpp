@@ -90,12 +90,12 @@ class ListDistributionsByConnectionFunction2020_05_31Request : public CloudFront
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_connectionFunctionIdentifier;
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_connectionFunctionIdentifierHasBeenSet = false;
 };
 

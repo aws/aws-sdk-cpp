@@ -148,21 +148,21 @@ class Entity {
   ///@}
  private:
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   EntityType m_type{EntityType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   int m_beginOffset{0};
-  bool m_beginOffsetHasBeenSet = false;
 
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   Aws::Vector<BlockReference> m_blockReferences;
+  bool m_scoreHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_beginOffsetHasBeenSet = false;
+  bool m_endOffsetHasBeenSet = false;
   bool m_blockReferencesHasBeenSet = false;
 };
 

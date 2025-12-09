@@ -69,9 +69,9 @@ class ConditionalFormattingColor {
   ///@}
  private:
   ConditionalFormattingSolidColor m_solid;
-  bool m_solidHasBeenSet = false;
 
   ConditionalFormattingGradientColor m_gradient;
+  bool m_solidHasBeenSet = false;
   bool m_gradientHasBeenSet = false;
 };
 

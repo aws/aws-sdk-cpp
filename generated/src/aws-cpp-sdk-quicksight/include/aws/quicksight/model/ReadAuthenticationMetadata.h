@@ -149,21 +149,21 @@ class ReadAuthenticationMetadata {
   ///@}
  private:
   ReadAuthorizationCodeGrantMetadata m_authorizationCodeGrantMetadata;
-  bool m_authorizationCodeGrantMetadataHasBeenSet = false;
 
   ReadClientCredentialsGrantMetadata m_clientCredentialsGrantMetadata;
-  bool m_clientCredentialsGrantMetadataHasBeenSet = false;
 
   ReadBasicAuthConnectionMetadata m_basicAuthConnectionMetadata;
-  bool m_basicAuthConnectionMetadataHasBeenSet = false;
 
   ReadAPIKeyConnectionMetadata m_apiKeyConnectionMetadata;
-  bool m_apiKeyConnectionMetadataHasBeenSet = false;
 
   ReadNoneConnectionMetadata m_noneConnectionMetadata;
-  bool m_noneConnectionMetadataHasBeenSet = false;
 
   ReadIamConnectionMetadata m_iamConnectionMetadata;
+  bool m_authorizationCodeGrantMetadataHasBeenSet = false;
+  bool m_clientCredentialsGrantMetadataHasBeenSet = false;
+  bool m_basicAuthConnectionMetadataHasBeenSet = false;
+  bool m_apiKeyConnectionMetadataHasBeenSet = false;
+  bool m_noneConnectionMetadataHasBeenSet = false;
   bool m_iamConnectionMetadataHasBeenSet = false;
 };
 

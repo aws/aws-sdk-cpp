@@ -160,21 +160,21 @@ class TelemetryConfiguration {
   ///@}
  private:
   Aws::String m_accountIdentifier;
-  bool m_accountIdentifierHasBeenSet = false;
 
   Aws::Map<TelemetryType, TelemetryState> m_telemetryConfigurationState;
-  bool m_telemetryConfigurationStateHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   long long m_lastUpdateTimeStamp{0};
+  bool m_accountIdentifierHasBeenSet = false;
+  bool m_telemetryConfigurationStateHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
   bool m_lastUpdateTimeStampHasBeenSet = false;
 };
 

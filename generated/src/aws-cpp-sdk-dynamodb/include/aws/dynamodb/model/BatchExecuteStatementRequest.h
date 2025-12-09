@@ -71,9 +71,9 @@ class BatchExecuteStatementRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Vector<BatchStatementRequest> m_statements;
-  bool m_statementsHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
+  bool m_statementsHasBeenSet = false;
   bool m_returnConsumedCapacityHasBeenSet = false;
 };
 

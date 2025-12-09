@@ -126,18 +126,18 @@ class PutProtectConfigurationRuleSetNumberOverrideRequest : public PinpointSMSVo
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   Aws::String m_destinationPhoneNumber;
-  bool m_destinationPhoneNumberHasBeenSet = false;
 
   ProtectConfigurationRuleOverrideAction m_action{ProtectConfigurationRuleOverrideAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTimestamp{};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_protectConfigurationIdHasBeenSet = false;
+  bool m_destinationPhoneNumberHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
   bool m_expirationTimestampHasBeenSet = false;
 };
 

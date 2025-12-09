@@ -117,18 +117,18 @@ class ListTopicRefreshSchedulesResult {
   ///@}
  private:
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::Vector<TopicRefreshScheduleSummary> m_refreshSchedules;
-  bool m_refreshSchedulesHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_topicIdHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_refreshSchedulesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

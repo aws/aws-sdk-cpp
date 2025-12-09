@@ -297,39 +297,39 @@ class CreateDataSourceRequest : public KendraRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   DataSourceType m_type{DataSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DataSourceConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_languageCode;
-  bool m_languageCodeHasBeenSet = false;
 
   CustomDocumentEnrichmentConfiguration m_customDocumentEnrichmentConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_languageCodeHasBeenSet = false;
   bool m_customDocumentEnrichmentConfigurationHasBeenSet = false;
 };
 

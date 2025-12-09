@@ -193,30 +193,30 @@ class CreateGroupVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_connectorDefinitionVersionArn;
-  bool m_connectorDefinitionVersionArnHasBeenSet = false;
 
   Aws::String m_coreDefinitionVersionArn;
-  bool m_coreDefinitionVersionArnHasBeenSet = false;
 
   Aws::String m_deviceDefinitionVersionArn;
-  bool m_deviceDefinitionVersionArnHasBeenSet = false;
 
   Aws::String m_functionDefinitionVersionArn;
-  bool m_functionDefinitionVersionArnHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_loggerDefinitionVersionArn;
-  bool m_loggerDefinitionVersionArnHasBeenSet = false;
 
   Aws::String m_resourceDefinitionVersionArn;
-  bool m_resourceDefinitionVersionArnHasBeenSet = false;
 
   Aws::String m_subscriptionDefinitionVersionArn;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_connectorDefinitionVersionArnHasBeenSet = false;
+  bool m_coreDefinitionVersionArnHasBeenSet = false;
+  bool m_deviceDefinitionVersionArnHasBeenSet = false;
+  bool m_functionDefinitionVersionArnHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_loggerDefinitionVersionArnHasBeenSet = false;
+  bool m_resourceDefinitionVersionArnHasBeenSet = false;
   bool m_subscriptionDefinitionVersionArnHasBeenSet = false;
 };
 

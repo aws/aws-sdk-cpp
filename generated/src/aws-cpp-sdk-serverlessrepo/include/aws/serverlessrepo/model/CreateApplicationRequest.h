@@ -336,48 +336,48 @@ The file
   ///@}
  private:
   Aws::String m_author;
-  bool m_authorHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_homePageUrl;
-  bool m_homePageUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::String m_licenseBody;
-  bool m_licenseBodyHasBeenSet = false;
 
   Aws::String m_licenseUrl;
-  bool m_licenseUrlHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_readmeBody;
-  bool m_readmeBodyHasBeenSet = false;
 
   Aws::String m_readmeUrl;
-  bool m_readmeUrlHasBeenSet = false;
 
   Aws::String m_semanticVersion;
-  bool m_semanticVersionHasBeenSet = false;
 
   Aws::String m_sourceCodeArchiveUrl;
-  bool m_sourceCodeArchiveUrlHasBeenSet = false;
 
   Aws::String m_sourceCodeUrl;
-  bool m_sourceCodeUrlHasBeenSet = false;
 
   Aws::String m_spdxLicenseId;
-  bool m_spdxLicenseIdHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateUrl;
+  bool m_authorHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_homePageUrlHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_licenseBodyHasBeenSet = false;
+  bool m_licenseUrlHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_readmeBodyHasBeenSet = false;
+  bool m_readmeUrlHasBeenSet = false;
+  bool m_semanticVersionHasBeenSet = false;
+  bool m_sourceCodeArchiveUrlHasBeenSet = false;
+  bool m_sourceCodeUrlHasBeenSet = false;
+  bool m_spdxLicenseIdHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
   bool m_templateUrlHasBeenSet = false;
 };
 

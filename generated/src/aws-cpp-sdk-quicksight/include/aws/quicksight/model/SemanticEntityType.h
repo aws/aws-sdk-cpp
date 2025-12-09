@@ -94,12 +94,12 @@ class SemanticEntityType {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_subTypeName;
-  bool m_subTypeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_typeParameters;
+  bool m_typeNameHasBeenSet = false;
+  bool m_subTypeNameHasBeenSet = false;
   bool m_typeParametersHasBeenSet = false;
 };
 

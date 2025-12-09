@@ -68,9 +68,9 @@ class DescribeViewRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::String m_viewToken;
-  bool m_viewTokenHasBeenSet = false;
 
   Aws::String m_connectionToken;
+  bool m_viewTokenHasBeenSet = false;
   bool m_connectionTokenHasBeenSet = false;
 };
 

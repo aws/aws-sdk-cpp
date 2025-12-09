@@ -239,39 +239,39 @@ class DescribeTestSetGenerationResult {
   ///@}
  private:
   Aws::String m_testSetGenerationId;
-  bool m_testSetGenerationIdHasBeenSet = false;
 
   TestSetGenerationStatus m_testSetGenerationStatus{TestSetGenerationStatus::NOT_SET};
-  bool m_testSetGenerationStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   Aws::String m_testSetName;
-  bool m_testSetNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TestSetStorageLocation m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   TestSetGenerationDataSource m_generationDataSource;
-  bool m_generationDataSourceHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testSetGenerationIdHasBeenSet = false;
+  bool m_testSetGenerationStatusHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_testSetIdHasBeenSet = false;
+  bool m_testSetNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
+  bool m_generationDataSourceHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

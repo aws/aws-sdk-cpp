@@ -92,12 +92,12 @@ class ListenerTls {
   ///@}
  private:
   ListenerTlsCertificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   ListenerTlsMode m_mode{ListenerTlsMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   ListenerTlsValidationContext m_validation;
+  bool m_certificateHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

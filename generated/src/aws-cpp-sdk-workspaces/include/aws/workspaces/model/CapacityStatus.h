@@ -99,15 +99,15 @@ class CapacityStatus {
   ///@}
  private:
   int m_availableUserSessions{0};
-  bool m_availableUserSessionsHasBeenSet = false;
 
   int m_desiredUserSessions{0};
-  bool m_desiredUserSessionsHasBeenSet = false;
 
   int m_actualUserSessions{0};
-  bool m_actualUserSessionsHasBeenSet = false;
 
   int m_activeUserSessions{0};
+  bool m_availableUserSessionsHasBeenSet = false;
+  bool m_desiredUserSessionsHasBeenSet = false;
+  bool m_actualUserSessionsHasBeenSet = false;
   bool m_activeUserSessionsHasBeenSet = false;
 };
 

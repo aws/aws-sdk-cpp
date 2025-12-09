@@ -68,9 +68,9 @@ class SourceCampaign {
   ///@}
  private:
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   Aws::String m_outboundRequestId;
+  bool m_campaignIdHasBeenSet = false;
   bool m_outboundRequestIdHasBeenSet = false;
 };
 

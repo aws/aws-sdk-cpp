@@ -164,24 +164,24 @@ class AssessmentValidation {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDateTime{};
+  bool m_categoryHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_lastUpdateDateTimeHasBeenSet = false;
 };
 

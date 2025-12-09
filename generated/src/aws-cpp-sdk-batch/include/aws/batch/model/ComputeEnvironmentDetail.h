@@ -366,51 +366,51 @@ class ComputeEnvironmentDetail {
   ///@}
  private:
   Aws::String m_computeEnvironmentName;
-  bool m_computeEnvironmentNameHasBeenSet = false;
 
   Aws::String m_computeEnvironmentArn;
-  bool m_computeEnvironmentArnHasBeenSet = false;
 
   int m_unmanagedvCpus{0};
-  bool m_unmanagedvCpusHasBeenSet = false;
 
   Aws::String m_ecsClusterArn;
-  bool m_ecsClusterArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CEType m_type{CEType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CEState m_state{CEState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   CEStatus m_status{CEStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   ComputeResource m_computeResources;
-  bool m_computeResourcesHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   UpdatePolicy m_updatePolicy;
-  bool m_updatePolicyHasBeenSet = false;
 
   EksConfiguration m_eksConfiguration;
-  bool m_eksConfigurationHasBeenSet = false;
 
   OrchestrationType m_containerOrchestrationType{OrchestrationType::NOT_SET};
-  bool m_containerOrchestrationTypeHasBeenSet = false;
 
   Aws::String m_uuid;
-  bool m_uuidHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_computeEnvironmentNameHasBeenSet = false;
+  bool m_computeEnvironmentArnHasBeenSet = false;
+  bool m_unmanagedvCpusHasBeenSet = false;
+  bool m_ecsClusterArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_computeResourcesHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_updatePolicyHasBeenSet = false;
+  bool m_eksConfigurationHasBeenSet = false;
+  bool m_containerOrchestrationTypeHasBeenSet = false;
+  bool m_uuidHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

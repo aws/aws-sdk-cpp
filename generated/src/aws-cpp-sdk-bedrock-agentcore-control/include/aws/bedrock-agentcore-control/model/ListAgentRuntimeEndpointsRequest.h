@@ -86,12 +86,12 @@ class ListAgentRuntimeEndpointsRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_agentRuntimeId;
-  bool m_agentRuntimeIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class OtaTaskConfigurationSummary {
   ///@}
  private:
   Aws::String m_taskConfigurationId;
-  bool m_taskConfigurationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_taskConfigurationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

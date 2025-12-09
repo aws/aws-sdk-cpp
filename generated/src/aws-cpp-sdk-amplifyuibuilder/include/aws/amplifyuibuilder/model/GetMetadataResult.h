@@ -66,9 +66,9 @@ class GetMetadataResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

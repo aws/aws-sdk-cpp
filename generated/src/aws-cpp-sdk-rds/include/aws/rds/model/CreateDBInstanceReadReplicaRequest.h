@@ -13,6 +13,7 @@
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/ReplicaMode.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -1196,6 +1197,32 @@ class CreateDBInstanceReadReplicaRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>Tags to assign to resources associated with the DB instance.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>auto-backup</code> - The DB instance's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  CreateDBInstanceReadReplicaRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  CreateDBInstanceReadReplicaRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of additional storage volumes to create for the DB instance. You can
    * create up to three additional storage volumes using the names
    * <code>rdsdbdata2</code>, <code>rdsdbdata3</code>, and <code>rdsdbdata4</code>.
@@ -1241,150 +1268,153 @@ class CreateDBInstanceReadReplicaRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_sourceDBInstanceIdentifier;
-  bool m_sourceDBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_storageThroughput{0};
-  bool m_storageThroughputHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   int m_monitoringInterval{0};
-  bool m_monitoringIntervalHasBeenSet = false;
 
   Aws::String m_monitoringRoleArn;
-  bool m_monitoringRoleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   DatabaseInsightsMode m_databaseInsightsMode{DatabaseInsightsMode::NOT_SET};
-  bool m_databaseInsightsModeHasBeenSet = false;
 
   bool m_enablePerformanceInsights{false};
-  bool m_enablePerformanceInsightsHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
-  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
   int m_performanceInsightsRetentionPeriod{0};
-  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
   Aws::Vector<ProcessorFeature> m_processorFeatures;
-  bool m_processorFeaturesHasBeenSet = false;
 
   bool m_useDefaultProcessorFeatures{false};
-  bool m_useDefaultProcessorFeaturesHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainIAMRoleName;
-  bool m_domainIAMRoleNameHasBeenSet = false;
 
   Aws::String m_domainFqdn;
-  bool m_domainFqdnHasBeenSet = false;
 
   Aws::String m_domainOu;
-  bool m_domainOuHasBeenSet = false;
 
   Aws::String m_domainAuthSecretArn;
-  bool m_domainAuthSecretArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainDnsIps;
-  bool m_domainDnsIpsHasBeenSet = false;
 
   ReplicaMode m_replicaMode{ReplicaMode::NOT_SET};
-  bool m_replicaModeHasBeenSet = false;
 
   bool m_enableCustomerOwnedIp{false};
-  bool m_enableCustomerOwnedIpHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   int m_maxAllocatedStorage{0};
-  bool m_maxAllocatedStorageHasBeenSet = false;
 
   Aws::String m_backupTarget;
-  bool m_backupTargetHasBeenSet = false;
 
   Aws::String m_customIamInstanceProfile;
-  bool m_customIamInstanceProfileHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_sourceDBClusterIdentifier;
-  bool m_sourceDBClusterIdentifierHasBeenSet = false;
 
   bool m_dedicatedLogVolume{false};
-  bool m_dedicatedLogVolumeHasBeenSet = false;
 
   bool m_upgradeStorageConfig{false};
-  bool m_upgradeStorageConfigHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
+
+  Aws::Vector<TagSpecification> m_tagSpecifications;
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
-  bool m_additionalStorageVolumesHasBeenSet = false;
 
   Aws::String m_sourceRegion;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_sourceDBInstanceIdentifierHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_storageThroughputHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_dBParameterGroupNameHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_monitoringIntervalHasBeenSet = false;
+  bool m_monitoringRoleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_databaseInsightsModeHasBeenSet = false;
+  bool m_enablePerformanceInsightsHasBeenSet = false;
+  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
+  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
+  bool m_processorFeaturesHasBeenSet = false;
+  bool m_useDefaultProcessorFeaturesHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_domainIAMRoleNameHasBeenSet = false;
+  bool m_domainFqdnHasBeenSet = false;
+  bool m_domainOuHasBeenSet = false;
+  bool m_domainAuthSecretArnHasBeenSet = false;
+  bool m_domainDnsIpsHasBeenSet = false;
+  bool m_replicaModeHasBeenSet = false;
+  bool m_enableCustomerOwnedIpHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_maxAllocatedStorageHasBeenSet = false;
+  bool m_backupTargetHasBeenSet = false;
+  bool m_customIamInstanceProfileHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_sourceDBClusterIdentifierHasBeenSet = false;
+  bool m_dedicatedLogVolumeHasBeenSet = false;
+  bool m_upgradeStorageConfigHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_additionalStorageVolumesHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

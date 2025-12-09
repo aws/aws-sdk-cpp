@@ -68,9 +68,9 @@ class AnchorDateConfiguration {
   ///@}
  private:
   AnchorOption m_anchorOption{AnchorOption::NOT_SET};
-  bool m_anchorOptionHasBeenSet = false;
 
   Aws::String m_parameterName;
+  bool m_anchorOptionHasBeenSet = false;
   bool m_parameterNameHasBeenSet = false;
 };
 

@@ -225,33 +225,33 @@ class Application {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ApplicationType m_type{ApplicationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_appRegistryArn;
-  bool m_appRegistryArnHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ApplicationDiscoveryStatus m_discoveryStatus{ApplicationDiscoveryStatus::NOT_SET};
-  bool m_discoveryStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_components;
-  bool m_componentsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedApplicationArns;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_appRegistryArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_discoveryStatusHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_associatedApplicationArnsHasBeenSet = false;
 };
 

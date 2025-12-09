@@ -77,9 +77,9 @@ class EcsCluster {
   ///@}
  private:
   EcsClusterStatus m_status{EcsClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ec2InstanceUids;
+  bool m_statusHasBeenSet = false;
   bool m_ec2InstanceUidsHasBeenSet = false;
 };
 

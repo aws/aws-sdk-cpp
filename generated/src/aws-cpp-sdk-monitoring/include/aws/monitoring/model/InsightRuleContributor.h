@@ -108,12 +108,12 @@ class InsightRuleContributor {
   ///@}
  private:
   Aws::Vector<Aws::String> m_keys;
-  bool m_keysHasBeenSet = false;
 
   double m_approximateAggregateValue{0.0};
-  bool m_approximateAggregateValueHasBeenSet = false;
 
   Aws::Vector<InsightRuleContributorDatapoint> m_datapoints;
+  bool m_keysHasBeenSet = false;
+  bool m_approximateAggregateValueHasBeenSet = false;
   bool m_datapointsHasBeenSet = false;
 };
 

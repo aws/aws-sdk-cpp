@@ -185,27 +185,27 @@ class RegistrationFieldDisplayHints {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_shortDescription;
-  bool m_shortDescriptionHasBeenSet = false;
 
   Aws::String m_longDescription;
-  bool m_longDescriptionHasBeenSet = false;
 
   Aws::String m_documentationTitle;
-  bool m_documentationTitleHasBeenSet = false;
 
   Aws::String m_documentationLink;
-  bool m_documentationLinkHasBeenSet = false;
 
   Aws::Vector<SelectOptionDescription> m_selectOptionDescriptions;
-  bool m_selectOptionDescriptionsHasBeenSet = false;
 
   Aws::String m_textValidationDescription;
-  bool m_textValidationDescriptionHasBeenSet = false;
 
   Aws::String m_exampleTextValue;
+  bool m_titleHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_longDescriptionHasBeenSet = false;
+  bool m_documentationTitleHasBeenSet = false;
+  bool m_documentationLinkHasBeenSet = false;
+  bool m_selectOptionDescriptionsHasBeenSet = false;
+  bool m_textValidationDescriptionHasBeenSet = false;
   bool m_exampleTextValueHasBeenSet = false;
 };
 

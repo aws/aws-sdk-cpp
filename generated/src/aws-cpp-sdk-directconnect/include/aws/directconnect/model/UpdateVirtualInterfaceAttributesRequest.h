@@ -100,15 +100,15 @@ class UpdateVirtualInterfaceAttributesRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   int m_mtu{0};
-  bool m_mtuHasBeenSet = false;
 
   bool m_enableSiteLink{false};
-  bool m_enableSiteLinkHasBeenSet = false;
 
   Aws::String m_virtualInterfaceName;
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_mtuHasBeenSet = false;
+  bool m_enableSiteLinkHasBeenSet = false;
   bool m_virtualInterfaceNameHasBeenSet = false;
 };
 

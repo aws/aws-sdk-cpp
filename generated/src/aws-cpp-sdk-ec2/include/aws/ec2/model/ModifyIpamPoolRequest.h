@@ -238,33 +238,33 @@ class ModifyIpamPoolRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_autoImport{false};
-  bool m_autoImportHasBeenSet = false;
 
   int m_allocationMinNetmaskLength{0};
-  bool m_allocationMinNetmaskLengthHasBeenSet = false;
 
   int m_allocationMaxNetmaskLength{0};
-  bool m_allocationMaxNetmaskLengthHasBeenSet = false;
 
   int m_allocationDefaultNetmaskLength{0};
-  bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
 
   bool m_clearAllocationDefaultNetmaskLength{false};
-  bool m_clearAllocationDefaultNetmaskLengthHasBeenSet = false;
 
   Aws::Vector<RequestIpamResourceTag> m_addAllocationResourceTags;
-  bool m_addAllocationResourceTagsHasBeenSet = false;
 
   Aws::Vector<RequestIpamResourceTag> m_removeAllocationResourceTags;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_autoImportHasBeenSet = false;
+  bool m_allocationMinNetmaskLengthHasBeenSet = false;
+  bool m_allocationMaxNetmaskLengthHasBeenSet = false;
+  bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
+  bool m_clearAllocationDefaultNetmaskLengthHasBeenSet = false;
+  bool m_addAllocationResourceTagsHasBeenSet = false;
   bool m_removeAllocationResourceTagsHasBeenSet = false;
 };
 

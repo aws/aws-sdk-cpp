@@ -65,9 +65,9 @@ class DolbyVisionLevel6Metadata {
   ///@}
  private:
   int m_maxCll{0};
-  bool m_maxCllHasBeenSet = false;
 
   int m_maxFall{0};
+  bool m_maxCllHasBeenSet = false;
   bool m_maxFallHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeUsageReportSubscriptionsResult {
   ///@}
  private:
   Aws::Vector<UsageReportSubscription> m_usageReportSubscriptions;
-  bool m_usageReportSubscriptionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usageReportSubscriptionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

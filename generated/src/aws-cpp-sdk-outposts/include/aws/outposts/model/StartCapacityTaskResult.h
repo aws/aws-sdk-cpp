@@ -278,45 +278,45 @@ class StartCapacityTaskResult {
   ///@}
  private:
   Aws::String m_capacityTaskId;
-  bool m_capacityTaskIdHasBeenSet = false;
 
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_orderId;
-  bool m_orderIdHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::Vector<InstanceTypeCapacity> m_requestedInstancePools;
-  bool m_requestedInstancePoolsHasBeenSet = false;
 
   InstancesToExclude m_instancesToExclude;
-  bool m_instancesToExcludeHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   CapacityTaskStatus m_capacityTaskStatus{CapacityTaskStatus::NOT_SET};
-  bool m_capacityTaskStatusHasBeenSet = false;
 
   CapacityTaskFailure m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   TaskActionOnBlockingInstances m_taskActionOnBlockingInstances{TaskActionOnBlockingInstances::NOT_SET};
-  bool m_taskActionOnBlockingInstancesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityTaskIdHasBeenSet = false;
+  bool m_outpostIdHasBeenSet = false;
+  bool m_orderIdHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_requestedInstancePoolsHasBeenSet = false;
+  bool m_instancesToExcludeHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_capacityTaskStatusHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_taskActionOnBlockingInstancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

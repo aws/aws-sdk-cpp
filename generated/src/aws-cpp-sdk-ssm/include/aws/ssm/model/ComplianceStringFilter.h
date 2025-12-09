@@ -94,12 +94,12 @@ class ComplianceStringFilter {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   ComplianceQueryOperatorType m_type{ComplianceQueryOperatorType::NOT_SET};
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

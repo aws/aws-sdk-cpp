@@ -207,27 +207,27 @@ class S3Bucket {
   ///@}
  private:
   AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads{AllowsUnencryptedObjectUploads::NOT_SET};
-  bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ServerSideEncryption m_defaultServerSideEncryption;
-  bool m_defaultServerSideEncryptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3BucketOwner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   BucketPublicAccess m_publicAccess;
-  bool m_publicAccessHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_tags;
+  bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_defaultServerSideEncryptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_publicAccessHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

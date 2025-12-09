@@ -110,12 +110,12 @@ class AuditMitigationActionsTaskTarget {
   ///@}
  private:
   Aws::String m_auditTaskId;
-  bool m_auditTaskIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_findingIds;
-  bool m_findingIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_auditCheckToReasonCodeFilter;
+  bool m_auditTaskIdHasBeenSet = false;
+  bool m_findingIdsHasBeenSet = false;
   bool m_auditCheckToReasonCodeFilterHasBeenSet = false;
 };
 

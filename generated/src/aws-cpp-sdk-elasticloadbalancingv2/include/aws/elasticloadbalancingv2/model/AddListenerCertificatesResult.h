@@ -68,9 +68,9 @@ class AddListenerCertificatesResult {
   ///@}
  private:
   Aws::Vector<Certificate> m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_certificatesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DescribeAddonConfigurationRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_addonVersion;
+  bool m_addonNameHasBeenSet = false;
   bool m_addonVersionHasBeenSet = false;
 };
 

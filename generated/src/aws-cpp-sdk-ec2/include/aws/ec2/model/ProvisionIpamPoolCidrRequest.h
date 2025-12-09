@@ -190,27 +190,27 @@ class ProvisionIpamPoolCidrRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   IpamCidrAuthorizationContext m_cidrAuthorizationContext;
-  bool m_cidrAuthorizationContextHasBeenSet = false;
 
   int m_netmaskLength{0};
-  bool m_netmaskLengthHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   VerificationMethod m_verificationMethod{VerificationMethod::NOT_SET};
-  bool m_verificationMethodHasBeenSet = false;
 
   Aws::String m_ipamExternalResourceVerificationTokenId;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_cidrHasBeenSet = false;
+  bool m_cidrAuthorizationContextHasBeenSet = false;
+  bool m_netmaskLengthHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_verificationMethodHasBeenSet = false;
   bool m_ipamExternalResourceVerificationTokenIdHasBeenSet = false;
 };
 

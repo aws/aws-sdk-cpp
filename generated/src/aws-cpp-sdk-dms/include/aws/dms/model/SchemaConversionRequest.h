@@ -138,21 +138,21 @@ class SchemaConversionRequest {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestIdentifier;
-  bool m_requestIdentifierHasBeenSet = false;
 
   Aws::String m_migrationProjectArn;
-  bool m_migrationProjectArnHasBeenSet = false;
 
   ErrorDetails m_error;
-  bool m_errorHasBeenSet = false;
 
   ExportSqlDetails m_exportSqlDetails;
-  bool m_exportSqlDetailsHasBeenSet = false;
 
   Progress m_progress;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdentifierHasBeenSet = false;
+  bool m_migrationProjectArnHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_exportSqlDetailsHasBeenSet = false;
   bool m_progressHasBeenSet = false;
 };
 

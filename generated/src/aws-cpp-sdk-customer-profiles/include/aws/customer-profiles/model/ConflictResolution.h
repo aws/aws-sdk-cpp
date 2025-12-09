@@ -76,9 +76,9 @@ class ConflictResolution {
   ///@}
  private:
   ConflictResolvingModel m_conflictResolvingModel{ConflictResolvingModel::NOT_SET};
-  bool m_conflictResolvingModelHasBeenSet = false;
 
   Aws::String m_sourceName;
+  bool m_conflictResolvingModelHasBeenSet = false;
   bool m_sourceNameHasBeenSet = false;
 };
 

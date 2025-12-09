@@ -77,9 +77,9 @@ class LineSeriesAxisDisplayOptions {
   ///@}
  private:
   AxisDisplayOptions m_axisOptions;
-  bool m_axisOptionsHasBeenSet = false;
 
   Aws::Vector<MissingDataConfiguration> m_missingDataConfigurations;
+  bool m_axisOptionsHasBeenSet = false;
   bool m_missingDataConfigurationsHasBeenSet = false;
 };
 

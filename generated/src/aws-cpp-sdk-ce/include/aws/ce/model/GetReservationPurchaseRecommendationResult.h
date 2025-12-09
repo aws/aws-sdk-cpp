@@ -104,15 +104,15 @@ class GetReservationPurchaseRecommendationResult {
   ///@}
  private:
   ReservationPurchaseRecommendationMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<ReservationPurchaseRecommendation> m_recommendations;
-  bool m_recommendationsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataHasBeenSet = false;
+  bool m_recommendationsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

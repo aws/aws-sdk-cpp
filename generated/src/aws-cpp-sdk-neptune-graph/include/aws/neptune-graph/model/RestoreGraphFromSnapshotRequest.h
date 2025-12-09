@@ -169,24 +169,24 @@ class RestoreGraphFromSnapshotRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_graphName;
-  bool m_graphNameHasBeenSet = false;
 
   int m_provisionedMemory{0};
-  bool m_provisionedMemoryHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_replicaCount{0};
-  bool m_replicaCountHasBeenSet = false;
 
   bool m_publicConnectivity{false};
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_graphNameHasBeenSet = false;
+  bool m_provisionedMemoryHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_replicaCountHasBeenSet = false;
   bool m_publicConnectivityHasBeenSet = false;
 };
 

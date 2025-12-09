@@ -245,36 +245,36 @@ class FirewallPolicyResponse {
   ///@}
  private:
   Aws::String m_firewallPolicyName;
-  bool m_firewallPolicyNameHasBeenSet = false;
 
   Aws::String m_firewallPolicyArn;
-  bool m_firewallPolicyArnHasBeenSet = false;
 
   Aws::String m_firewallPolicyId;
-  bool m_firewallPolicyIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ResourceStatus m_firewallPolicyStatus{ResourceStatus::NOT_SET};
-  bool m_firewallPolicyStatusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_consumedStatelessRuleCapacity{0};
-  bool m_consumedStatelessRuleCapacityHasBeenSet = false;
 
   int m_consumedStatefulRuleCapacity{0};
-  bool m_consumedStatefulRuleCapacityHasBeenSet = false;
 
   int m_numberOfAssociations{0};
-  bool m_numberOfAssociationsHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_firewallPolicyNameHasBeenSet = false;
+  bool m_firewallPolicyArnHasBeenSet = false;
+  bool m_firewallPolicyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_firewallPolicyStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_consumedStatelessRuleCapacityHasBeenSet = false;
+  bool m_consumedStatefulRuleCapacityHasBeenSet = false;
+  bool m_numberOfAssociationsHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

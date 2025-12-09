@@ -114,15 +114,15 @@ class ContinuousParameterRange {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_maxValue{0.0};
-  bool m_maxValueHasBeenSet = false;
 
   double m_minValue{0.0};
-  bool m_minValueHasBeenSet = false;
 
   ScalingType m_scalingType{ScalingType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
   bool m_scalingTypeHasBeenSet = false;
 };
 

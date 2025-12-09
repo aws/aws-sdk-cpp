@@ -161,24 +161,24 @@ class ApiGatewayProxyConfig {
   ///@}
  private:
   Aws::String m_apiGatewayId;
-  bool m_apiGatewayIdHasBeenSet = false;
 
   ApiGatewayEndpointType m_endpointType{ApiGatewayEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_nlbArn;
-  bool m_nlbArnHasBeenSet = false;
 
   Aws::String m_nlbName;
-  bool m_nlbNameHasBeenSet = false;
 
   Aws::String m_proxyUrl;
-  bool m_proxyUrlHasBeenSet = false;
 
   Aws::String m_stageName;
-  bool m_stageNameHasBeenSet = false;
 
   Aws::String m_vpcLinkId;
+  bool m_apiGatewayIdHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_nlbArnHasBeenSet = false;
+  bool m_nlbNameHasBeenSet = false;
+  bool m_proxyUrlHasBeenSet = false;
+  bool m_stageNameHasBeenSet = false;
   bool m_vpcLinkIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class RerankSource {
   ///@}
  private:
   RerankDocument m_inlineDocumentSource;
-  bool m_inlineDocumentSourceHasBeenSet = false;
 
   RerankSourceType m_type{RerankSourceType::NOT_SET};
+  bool m_inlineDocumentSourceHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

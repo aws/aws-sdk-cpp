@@ -110,15 +110,15 @@ class BatchGetRecordError {
   ///@}
  private:
   Aws::String m_featureGroupName;
-  bool m_featureGroupNameHasBeenSet = false;
 
   Aws::String m_recordIdentifierValueAsString;
-  bool m_recordIdentifierValueAsStringHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_featureGroupNameHasBeenSet = false;
+  bool m_recordIdentifierValueAsStringHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

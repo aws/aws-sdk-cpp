@@ -68,9 +68,9 @@ class GetLensRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensVersion;
+  bool m_lensAliasHasBeenSet = false;
   bool m_lensVersionHasBeenSet = false;
 };
 

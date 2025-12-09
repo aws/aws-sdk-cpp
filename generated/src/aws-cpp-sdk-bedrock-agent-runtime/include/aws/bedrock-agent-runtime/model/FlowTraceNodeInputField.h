@@ -152,21 +152,21 @@ class FlowTraceNodeInputField {
   ///@}
  private:
   FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   FlowTraceNodeInputContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<FlowTraceNodeInputExecutionChainItem> m_executionChain;
-  bool m_executionChainHasBeenSet = false;
 
   Aws::String m_nodeInputName;
-  bool m_nodeInputNameHasBeenSet = false;
 
   FlowTraceNodeInputSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
+  bool m_categoryHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_executionChainHasBeenSet = false;
+  bool m_nodeInputNameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ProcessorParameter {
   ///@}
  private:
   ProcessorParameterName m_parameterName{ProcessorParameterName::NOT_SET};
-  bool m_parameterNameHasBeenSet = false;
 
   Aws::String m_parameterValue;
+  bool m_parameterNameHasBeenSet = false;
   bool m_parameterValueHasBeenSet = false;
 };
 

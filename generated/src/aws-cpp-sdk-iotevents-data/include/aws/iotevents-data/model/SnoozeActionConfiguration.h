@@ -68,9 +68,9 @@ class SnoozeActionConfiguration {
   ///@}
  private:
   int m_snoozeDuration{0};
-  bool m_snoozeDurationHasBeenSet = false;
 
   Aws::String m_note;
+  bool m_snoozeDurationHasBeenSet = false;
   bool m_noteHasBeenSet = false;
 };
 

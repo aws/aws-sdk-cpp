@@ -159,24 +159,24 @@ class AwsEc2NetworkInterfaceAttachment {
   ///@}
  private:
   Aws::String m_attachTime;
-  bool m_attachTimeHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   int m_deviceIndex{0};
-  bool m_deviceIndexHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceOwnerId;
-  bool m_instanceOwnerIdHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_attachTimeHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_deviceIndexHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceOwnerIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

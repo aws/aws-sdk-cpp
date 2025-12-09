@@ -65,9 +65,9 @@ class DescribeExecutionRequest : public SnowDeviceManagementRequest {
   ///@}
  private:
   Aws::String m_managedDeviceId;
-  bool m_managedDeviceIdHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_managedDeviceIdHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

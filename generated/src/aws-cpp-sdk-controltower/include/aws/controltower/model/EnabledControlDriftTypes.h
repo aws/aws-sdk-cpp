@@ -72,9 +72,9 @@ class EnabledControlDriftTypes {
   ///@}
  private:
   EnabledControlInheritanceDrift m_inheritance;
-  bool m_inheritanceHasBeenSet = false;
 
   EnabledControlResourceDrift m_resource;
+  bool m_inheritanceHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

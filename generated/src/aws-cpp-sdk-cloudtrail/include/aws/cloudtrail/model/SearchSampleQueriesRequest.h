@@ -86,12 +86,12 @@ class SearchSampleQueriesRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_searchPhrase;
-  bool m_searchPhraseHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_searchPhraseHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

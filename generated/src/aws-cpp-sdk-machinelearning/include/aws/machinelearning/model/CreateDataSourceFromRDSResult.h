@@ -73,9 +73,9 @@ class CreateDataSourceFromRDSResult {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSourceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

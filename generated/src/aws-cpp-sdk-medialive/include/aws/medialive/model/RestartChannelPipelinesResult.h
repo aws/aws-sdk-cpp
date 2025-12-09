@@ -444,69 +444,69 @@ one destination per
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CdiInputSpecification m_cdiInputSpecification;
-  bool m_cdiInputSpecificationHasBeenSet = false;
 
   ChannelClass m_channelClass{ChannelClass::NOT_SET};
-  bool m_channelClassHasBeenSet = false;
 
   Aws::Vector<OutputDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<ChannelEgressEndpoint> m_egressEndpoints;
-  bool m_egressEndpointsHasBeenSet = false;
 
   EncoderSettings m_encoderSettings;
-  bool m_encoderSettingsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<InputAttachment> m_inputAttachments;
-  bool m_inputAttachmentsHasBeenSet = false;
 
   InputSpecification m_inputSpecification;
-  bool m_inputSpecificationHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   MaintenanceStatus m_maintenance;
-  bool m_maintenanceHasBeenSet = false;
 
   Aws::String m_maintenanceStatus;
-  bool m_maintenanceStatusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<PipelineDetail> m_pipelineDetails;
-  bool m_pipelineDetailsHasBeenSet = false;
 
   int m_pipelinesRunningCount{0};
-  bool m_pipelinesRunningCountHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ChannelState m_state{ChannelState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VpcOutputSettingsDescription m_vpc;
-  bool m_vpcHasBeenSet = false;
 
   DescribeAnywhereSettings m_anywhereSettings;
-  bool m_anywhereSettingsHasBeenSet = false;
 
   ChannelEngineVersionResponse m_channelEngineVersion;
-  bool m_channelEngineVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_cdiInputSpecificationHasBeenSet = false;
+  bool m_channelClassHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_egressEndpointsHasBeenSet = false;
+  bool m_encoderSettingsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_inputAttachmentsHasBeenSet = false;
+  bool m_inputSpecificationHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
+  bool m_maintenanceHasBeenSet = false;
+  bool m_maintenanceStatusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_pipelineDetailsHasBeenSet = false;
+  bool m_pipelinesRunningCountHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcHasBeenSet = false;
+  bool m_anywhereSettingsHasBeenSet = false;
+  bool m_channelEngineVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

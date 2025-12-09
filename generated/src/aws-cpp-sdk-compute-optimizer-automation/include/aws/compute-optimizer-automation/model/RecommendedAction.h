@@ -304,48 +304,48 @@ class RecommendedAction {
   ///@}
  private:
   Aws::String m_recommendedActionId;
-  bool m_recommendedActionIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_lookBackPeriodInDays{0};
-  bool m_lookBackPeriodInDaysHasBeenSet = false;
 
   RecommendedActionType m_recommendedActionType{RecommendedActionType::NOT_SET};
-  bool m_recommendedActionTypeHasBeenSet = false;
 
   Aws::String m_currentResourceSummary;
-  bool m_currentResourceSummaryHasBeenSet = false;
 
   ResourceDetails m_currentResourceDetails;
-  bool m_currentResourceDetailsHasBeenSet = false;
 
   Aws::String m_recommendedResourceSummary;
-  bool m_recommendedResourceSummaryHasBeenSet = false;
 
   ResourceDetails m_recommendedResourceDetails;
-  bool m_recommendedResourceDetailsHasBeenSet = false;
 
   bool m_restartNeeded{false};
-  bool m_restartNeededHasBeenSet = false;
 
   EstimatedMonthlySavings m_estimatedMonthlySavings;
-  bool m_estimatedMonthlySavingsHasBeenSet = false;
 
   Aws::Vector<Tag> m_resourceTags;
+  bool m_recommendedActionIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_lookBackPeriodInDaysHasBeenSet = false;
+  bool m_recommendedActionTypeHasBeenSet = false;
+  bool m_currentResourceSummaryHasBeenSet = false;
+  bool m_currentResourceDetailsHasBeenSet = false;
+  bool m_recommendedResourceSummaryHasBeenSet = false;
+  bool m_recommendedResourceDetailsHasBeenSet = false;
+  bool m_restartNeededHasBeenSet = false;
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

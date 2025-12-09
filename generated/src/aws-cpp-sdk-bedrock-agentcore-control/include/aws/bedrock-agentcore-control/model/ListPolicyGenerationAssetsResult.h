@@ -91,12 +91,12 @@ class ListPolicyGenerationAssetsResult {
   ///@}
  private:
   Aws::Vector<PolicyGenerationAsset> m_policyGenerationAssets;
-  bool m_policyGenerationAssetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyGenerationAssetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class CardVerificationValue1 {
   ///@}
  private:
   Aws::String m_cardExpiryDate;
-  bool m_cardExpiryDateHasBeenSet = false;
 
   Aws::String m_serviceCode;
+  bool m_cardExpiryDateHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
 };
 

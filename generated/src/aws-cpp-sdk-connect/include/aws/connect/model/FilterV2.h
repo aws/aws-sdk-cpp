@@ -107,12 +107,12 @@ class FilterV2 {
   ///@}
  private:
   Aws::String m_filterKey;
-  bool m_filterKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterValues;
-  bool m_filterValuesHasBeenSet = false;
 
   FilterV2StringCondition m_stringCondition;
+  bool m_filterKeyHasBeenSet = false;
+  bool m_filterValuesHasBeenSet = false;
   bool m_stringConditionHasBeenSet = false;
 };
 

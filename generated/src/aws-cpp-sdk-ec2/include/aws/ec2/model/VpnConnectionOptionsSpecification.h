@@ -252,36 +252,36 @@ class VpnConnectionOptionsSpecification {
   ///@}
  private:
   bool m_enableAcceleration{false};
-  bool m_enableAccelerationHasBeenSet = false;
 
   TunnelInsideIpVersion m_tunnelInsideIpVersion{TunnelInsideIpVersion::NOT_SET};
-  bool m_tunnelInsideIpVersionHasBeenSet = false;
 
   Aws::Vector<VpnTunnelOptionsSpecification> m_tunnelOptions;
-  bool m_tunnelOptionsHasBeenSet = false;
 
   Aws::String m_localIpv4NetworkCidr;
-  bool m_localIpv4NetworkCidrHasBeenSet = false;
 
   Aws::String m_remoteIpv4NetworkCidr;
-  bool m_remoteIpv4NetworkCidrHasBeenSet = false;
 
   Aws::String m_localIpv6NetworkCidr;
-  bool m_localIpv6NetworkCidrHasBeenSet = false;
 
   Aws::String m_remoteIpv6NetworkCidr;
-  bool m_remoteIpv6NetworkCidrHasBeenSet = false;
 
   Aws::String m_outsideIpAddressType;
-  bool m_outsideIpAddressTypeHasBeenSet = false;
 
   Aws::String m_transportTransitGatewayAttachmentId;
-  bool m_transportTransitGatewayAttachmentIdHasBeenSet = false;
 
   VpnTunnelBandwidth m_tunnelBandwidth{VpnTunnelBandwidth::NOT_SET};
-  bool m_tunnelBandwidthHasBeenSet = false;
 
   bool m_staticRoutesOnly{false};
+  bool m_enableAccelerationHasBeenSet = false;
+  bool m_tunnelInsideIpVersionHasBeenSet = false;
+  bool m_tunnelOptionsHasBeenSet = false;
+  bool m_localIpv4NetworkCidrHasBeenSet = false;
+  bool m_remoteIpv4NetworkCidrHasBeenSet = false;
+  bool m_localIpv6NetworkCidrHasBeenSet = false;
+  bool m_remoteIpv6NetworkCidrHasBeenSet = false;
+  bool m_outsideIpAddressTypeHasBeenSet = false;
+  bool m_transportTransitGatewayAttachmentIdHasBeenSet = false;
+  bool m_tunnelBandwidthHasBeenSet = false;
   bool m_staticRoutesOnlyHasBeenSet = false;
 };
 

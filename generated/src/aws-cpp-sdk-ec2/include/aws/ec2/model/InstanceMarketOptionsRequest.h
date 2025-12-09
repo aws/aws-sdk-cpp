@@ -70,9 +70,9 @@ class InstanceMarketOptionsRequest {
   ///@}
  private:
   MarketType m_marketType{MarketType::NOT_SET};
-  bool m_marketTypeHasBeenSet = false;
 
   SpotMarketOptions m_spotOptions;
+  bool m_marketTypeHasBeenSet = false;
   bool m_spotOptionsHasBeenSet = false;
 };
 

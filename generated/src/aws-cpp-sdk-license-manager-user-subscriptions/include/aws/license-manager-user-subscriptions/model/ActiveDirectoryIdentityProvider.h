@@ -107,15 +107,15 @@ class ActiveDirectoryIdentityProvider {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   ActiveDirectorySettings m_activeDirectorySettings;
-  bool m_activeDirectorySettingsHasBeenSet = false;
 
   ActiveDirectoryType m_activeDirectoryType{ActiveDirectoryType::NOT_SET};
-  bool m_activeDirectoryTypeHasBeenSet = false;
 
   bool m_isSharedActiveDirectory{false};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_activeDirectorySettingsHasBeenSet = false;
+  bool m_activeDirectoryTypeHasBeenSet = false;
   bool m_isSharedActiveDirectoryHasBeenSet = false;
 };
 

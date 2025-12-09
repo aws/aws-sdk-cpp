@@ -125,15 +125,15 @@ class PluginVisualFieldWell {
   ///@}
  private:
   PluginVisualAxisName m_axisName{PluginVisualAxisName::NOT_SET};
-  bool m_axisNameHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_measures;
-  bool m_measuresHasBeenSet = false;
 
   Aws::Vector<UnaggregatedField> m_unaggregated;
+  bool m_axisNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_measuresHasBeenSet = false;
   bool m_unaggregatedHasBeenSet = false;
 };
 

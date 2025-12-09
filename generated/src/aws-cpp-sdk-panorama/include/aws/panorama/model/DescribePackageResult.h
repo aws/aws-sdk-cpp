@@ -200,30 +200,30 @@ class DescribePackageResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_packageId;
-  bool m_packageIdHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readAccessPrincipalArns;
-  bool m_readAccessPrincipalArnsHasBeenSet = false;
 
   StorageLocation m_storageLocation;
-  bool m_storageLocationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_writeAccessPrincipalArns;
-  bool m_writeAccessPrincipalArnsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_packageIdHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_readAccessPrincipalArnsHasBeenSet = false;
+  bool m_storageLocationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_writeAccessPrincipalArnsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

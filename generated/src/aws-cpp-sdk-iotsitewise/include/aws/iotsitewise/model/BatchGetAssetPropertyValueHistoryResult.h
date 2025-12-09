@@ -139,18 +139,18 @@ class BatchGetAssetPropertyValueHistoryResult {
   ///@}
  private:
   Aws::Vector<BatchGetAssetPropertyValueHistoryErrorEntry> m_errorEntries;
-  bool m_errorEntriesHasBeenSet = false;
 
   Aws::Vector<BatchGetAssetPropertyValueHistorySuccessEntry> m_successEntries;
-  bool m_successEntriesHasBeenSet = false;
 
   Aws::Vector<BatchGetAssetPropertyValueHistorySkippedEntry> m_skippedEntries;
-  bool m_skippedEntriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorEntriesHasBeenSet = false;
+  bool m_successEntriesHasBeenSet = false;
+  bool m_skippedEntriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

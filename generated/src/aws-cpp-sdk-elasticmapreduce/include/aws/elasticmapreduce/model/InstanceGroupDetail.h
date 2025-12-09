@@ -300,48 +300,48 @@ class InstanceGroupDetail {
   ///@}
  private:
   Aws::String m_instanceGroupId;
-  bool m_instanceGroupIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   MarketType m_market{MarketType::NOT_SET};
-  bool m_marketHasBeenSet = false;
 
   InstanceRoleType m_instanceRole{InstanceRoleType::NOT_SET};
-  bool m_instanceRoleHasBeenSet = false;
 
   Aws::String m_bidPrice;
-  bool m_bidPriceHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceRequestCount{0};
-  bool m_instanceRequestCountHasBeenSet = false;
 
   int m_instanceRunningCount{0};
-  bool m_instanceRunningCountHasBeenSet = false;
 
   InstanceGroupState m_state{InstanceGroupState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_lastStateChangeReason;
-  bool m_lastStateChangeReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDateTime{};
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_readyDateTime{};
-  bool m_readyDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::String m_customAmiId;
+  bool m_instanceGroupIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_marketHasBeenSet = false;
+  bool m_instanceRoleHasBeenSet = false;
+  bool m_bidPriceHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceRequestCountHasBeenSet = false;
+  bool m_instanceRunningCountHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_lastStateChangeReasonHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
+  bool m_readyDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
   bool m_customAmiIdHasBeenSet = false;
 };
 

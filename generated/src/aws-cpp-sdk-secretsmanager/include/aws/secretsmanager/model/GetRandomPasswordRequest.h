@@ -171,27 +171,27 @@ class GetRandomPasswordRequest : public SecretsManagerRequest {
   ///@}
  private:
   long long m_passwordLength{0};
-  bool m_passwordLengthHasBeenSet = false;
 
   Aws::String m_excludeCharacters;
-  bool m_excludeCharactersHasBeenSet = false;
 
   bool m_excludeNumbers{false};
-  bool m_excludeNumbersHasBeenSet = false;
 
   bool m_excludePunctuation{false};
-  bool m_excludePunctuationHasBeenSet = false;
 
   bool m_excludeUppercase{false};
-  bool m_excludeUppercaseHasBeenSet = false;
 
   bool m_excludeLowercase{false};
-  bool m_excludeLowercaseHasBeenSet = false;
 
   bool m_includeSpace{false};
-  bool m_includeSpaceHasBeenSet = false;
 
   bool m_requireEachIncludedType{false};
+  bool m_passwordLengthHasBeenSet = false;
+  bool m_excludeCharactersHasBeenSet = false;
+  bool m_excludeNumbersHasBeenSet = false;
+  bool m_excludePunctuationHasBeenSet = false;
+  bool m_excludeUppercaseHasBeenSet = false;
+  bool m_excludeLowercaseHasBeenSet = false;
+  bool m_includeSpaceHasBeenSet = false;
   bool m_requireEachIncludedTypeHasBeenSet = false;
 };
 

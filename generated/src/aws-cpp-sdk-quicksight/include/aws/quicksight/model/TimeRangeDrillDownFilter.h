@@ -105,15 +105,15 @@ class TimeRangeDrillDownFilter {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   Aws::Utils::DateTime m_rangeMinimum{};
-  bool m_rangeMinimumHasBeenSet = false;
 
   Aws::Utils::DateTime m_rangeMaximum{};
-  bool m_rangeMaximumHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
+  bool m_columnHasBeenSet = false;
+  bool m_rangeMinimumHasBeenSet = false;
+  bool m_rangeMaximumHasBeenSet = false;
   bool m_timeGranularityHasBeenSet = false;
 };
 

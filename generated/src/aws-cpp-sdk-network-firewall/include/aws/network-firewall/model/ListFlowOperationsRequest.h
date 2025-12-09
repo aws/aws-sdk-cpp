@@ -164,24 +164,24 @@ class ListFlowOperationsRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_vpcEndpointAssociationArn;
-  bool m_vpcEndpointAssociationArnHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   FlowOperationType m_flowOperationType{FlowOperationType::NOT_SET};
-  bool m_flowOperationTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_firewallArnHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_vpcEndpointAssociationArnHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_flowOperationTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -111,12 +111,12 @@ class CreateAccessGrantsInstanceRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_identityCenterArn;
-  bool m_identityCenterArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_identityCenterArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class TemplateSummary {
   ///@}
  private:
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TemplateStatus m_status{TemplateStatus::NOT_SET};
+  bool m_templateIdHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

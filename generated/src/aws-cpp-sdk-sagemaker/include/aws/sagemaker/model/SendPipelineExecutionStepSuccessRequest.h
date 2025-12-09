@@ -96,12 +96,12 @@ class SendPipelineExecutionStepSuccessRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_callbackToken;
-  bool m_callbackTokenHasBeenSet = false;
 
   Aws::Vector<OutputParameter> m_outputParameters;
-  bool m_outputParametersHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_callbackTokenHasBeenSet = false;
+  bool m_outputParametersHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

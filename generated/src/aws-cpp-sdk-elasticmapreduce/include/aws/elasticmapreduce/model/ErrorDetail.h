@@ -96,12 +96,12 @@ class ErrorDetail {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_errorData;
-  bool m_errorDataHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorDataHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

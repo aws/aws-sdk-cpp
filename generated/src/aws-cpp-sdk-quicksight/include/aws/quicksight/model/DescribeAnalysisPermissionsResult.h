@@ -118,18 +118,18 @@ class DescribeAnalysisPermissionsResult {
   ///@}
  private:
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::String m_analysisArn;
-  bool m_analysisArnHasBeenSet = false;
 
   Aws::Vector<ResourcePermission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_analysisArnHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

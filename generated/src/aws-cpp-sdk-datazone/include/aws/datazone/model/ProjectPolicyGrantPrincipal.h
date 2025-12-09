@@ -86,12 +86,12 @@ class ProjectPolicyGrantPrincipal {
   ///@}
  private:
   ProjectDesignation m_projectDesignation{ProjectDesignation::NOT_SET};
-  bool m_projectDesignationHasBeenSet = false;
 
   ProjectGrantFilter m_projectGrantFilter;
-  bool m_projectGrantFilterHasBeenSet = false;
 
   Aws::String m_projectIdentifier;
+  bool m_projectDesignationHasBeenSet = false;
+  bool m_projectGrantFilterHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
 };
 

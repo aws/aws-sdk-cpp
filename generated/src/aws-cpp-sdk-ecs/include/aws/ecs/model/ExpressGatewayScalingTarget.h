@@ -105,15 +105,15 @@ class ExpressGatewayScalingTarget {
   ///@}
  private:
   int m_minTaskCount{0};
-  bool m_minTaskCountHasBeenSet = false;
 
   int m_maxTaskCount{0};
-  bool m_maxTaskCountHasBeenSet = false;
 
   ExpressGatewayServiceScalingMetric m_autoScalingMetric{ExpressGatewayServiceScalingMetric::NOT_SET};
-  bool m_autoScalingMetricHasBeenSet = false;
 
   int m_autoScalingTargetValue{0};
+  bool m_minTaskCountHasBeenSet = false;
+  bool m_maxTaskCountHasBeenSet = false;
+  bool m_autoScalingMetricHasBeenSet = false;
   bool m_autoScalingTargetValueHasBeenSet = false;
 };
 

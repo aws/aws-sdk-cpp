@@ -60,9 +60,9 @@ class ActionThreshold {
   ///@}
  private:
   double m_actionThresholdValue{0.0};
-  bool m_actionThresholdValueHasBeenSet = false;
 
   ThresholdType m_actionThresholdType{ThresholdType::NOT_SET};
+  bool m_actionThresholdValueHasBeenSet = false;
   bool m_actionThresholdTypeHasBeenSet = false;
 };
 

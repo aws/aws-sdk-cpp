@@ -110,15 +110,15 @@ class AutomatedReasoningPolicyBuildWorkflowDocument {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_document{};
-  bool m_documentHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildDocumentContentType m_documentContentType{AutomatedReasoningPolicyBuildDocumentContentType::NOT_SET};
-  bool m_documentContentTypeHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentDescription;
+  bool m_documentHasBeenSet = false;
+  bool m_documentContentTypeHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
   bool m_documentDescriptionHasBeenSet = false;
 };
 

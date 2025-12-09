@@ -67,9 +67,9 @@ class GetDimensionKeyDetailsResult {
   ///@}
  private:
   Aws::Vector<DimensionKeyDetail> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dimensionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

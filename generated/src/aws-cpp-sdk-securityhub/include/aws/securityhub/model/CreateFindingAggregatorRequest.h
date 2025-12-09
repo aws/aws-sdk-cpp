@@ -96,9 +96,9 @@ class CreateFindingAggregatorRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_regionLinkingMode;
-  bool m_regionLinkingModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_regionLinkingModeHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

@@ -242,36 +242,36 @@ class TransitGatewayRouteTableAnnouncement {
   ///@}
  private:
   Aws::String m_transitGatewayRouteTableAnnouncementId;
-  bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_peerTransitGatewayId;
-  bool m_peerTransitGatewayIdHasBeenSet = false;
 
   Aws::String m_peerCoreNetworkId;
-  bool m_peerCoreNetworkIdHasBeenSet = false;
 
   Aws::String m_peeringAttachmentId;
-  bool m_peeringAttachmentIdHasBeenSet = false;
 
   TransitGatewayRouteTableAnnouncementDirection m_announcementDirection{TransitGatewayRouteTableAnnouncementDirection::NOT_SET};
-  bool m_announcementDirectionHasBeenSet = false;
 
   Aws::String m_transitGatewayRouteTableId;
-  bool m_transitGatewayRouteTableIdHasBeenSet = false;
 
   TransitGatewayRouteTableAnnouncementState m_state{TransitGatewayRouteTableAnnouncementState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_coreNetworkIdHasBeenSet = false;
+  bool m_peerTransitGatewayIdHasBeenSet = false;
+  bool m_peerCoreNetworkIdHasBeenSet = false;
+  bool m_peeringAttachmentIdHasBeenSet = false;
+  bool m_announcementDirectionHasBeenSet = false;
+  bool m_transitGatewayRouteTableIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class GetCustomEntityTypeResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_regexString;
-  bool m_regexStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_contextWords;
-  bool m_contextWordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_regexStringHasBeenSet = false;
+  bool m_contextWordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

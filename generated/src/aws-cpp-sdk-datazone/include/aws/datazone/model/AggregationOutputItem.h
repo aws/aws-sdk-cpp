@@ -86,12 +86,12 @@ class AggregationOutputItem {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_displayValue;
-  bool m_displayValueHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_countHasBeenSet = false;
+  bool m_displayValueHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

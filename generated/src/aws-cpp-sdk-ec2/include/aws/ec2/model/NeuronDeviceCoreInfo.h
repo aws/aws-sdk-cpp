@@ -64,9 +64,9 @@ class NeuronDeviceCoreInfo {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   int m_version{0};
+  bool m_countHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class ComputeConfiguration {
   ///@}
  private:
   double m_vCpu{0.0};
-  bool m_vCpuHasBeenSet = false;
 
   int m_memorySizeInMB{0};
-  bool m_memorySizeInMBHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_platform;
+  bool m_vCpuHasBeenSet = false;
+  bool m_memorySizeInMBHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
   bool m_platformHasBeenSet = false;
 };
 

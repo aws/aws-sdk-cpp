@@ -154,24 +154,24 @@ class GetProvisioningProfileResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProvisioningType m_provisioningType{ProvisioningType::NOT_SET};
-  bool m_provisioningTypeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_claimCertificate;
-  bool m_claimCertificateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_provisioningTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_claimCertificateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

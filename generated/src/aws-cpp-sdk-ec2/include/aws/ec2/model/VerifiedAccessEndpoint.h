@@ -439,66 +439,66 @@ class VerifiedAccessEndpoint {
   ///@}
  private:
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   Aws::String m_verifiedAccessGroupId;
-  bool m_verifiedAccessGroupIdHasBeenSet = false;
 
   Aws::String m_verifiedAccessEndpointId;
-  bool m_verifiedAccessEndpointIdHasBeenSet = false;
 
   Aws::String m_applicationDomain;
-  bool m_applicationDomainHasBeenSet = false;
 
   VerifiedAccessEndpointType m_endpointType{VerifiedAccessEndpointType::NOT_SET};
-  bool m_endpointTypeHasBeenSet = false;
 
   VerifiedAccessEndpointAttachmentType m_attachmentType{VerifiedAccessEndpointAttachmentType::NOT_SET};
-  bool m_attachmentTypeHasBeenSet = false;
 
   Aws::String m_domainCertificateArn;
-  bool m_domainCertificateArnHasBeenSet = false;
 
   Aws::String m_endpointDomain;
-  bool m_endpointDomainHasBeenSet = false;
 
   Aws::String m_deviceValidationDomain;
-  bool m_deviceValidationDomainHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   VerifiedAccessEndpointLoadBalancerOptions m_loadBalancerOptions;
-  bool m_loadBalancerOptionsHasBeenSet = false;
 
   VerifiedAccessEndpointEniOptions m_networkInterfaceOptions;
-  bool m_networkInterfaceOptionsHasBeenSet = false;
 
   VerifiedAccessEndpointStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedTime;
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_deletionTime;
-  bool m_deletionTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VerifiedAccessSseSpecificationResponse m_sseSpecification;
-  bool m_sseSpecificationHasBeenSet = false;
 
   VerifiedAccessEndpointRdsOptions m_rdsOptions;
-  bool m_rdsOptionsHasBeenSet = false;
 
   VerifiedAccessEndpointCidrOptions m_cidrOptions;
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
+  bool m_verifiedAccessGroupIdHasBeenSet = false;
+  bool m_verifiedAccessEndpointIdHasBeenSet = false;
+  bool m_applicationDomainHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_attachmentTypeHasBeenSet = false;
+  bool m_domainCertificateArnHasBeenSet = false;
+  bool m_endpointDomainHasBeenSet = false;
+  bool m_deviceValidationDomainHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_loadBalancerOptionsHasBeenSet = false;
+  bool m_networkInterfaceOptionsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_deletionTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_sseSpecificationHasBeenSet = false;
+  bool m_rdsOptionsHasBeenSet = false;
   bool m_cidrOptionsHasBeenSet = false;
 };
 

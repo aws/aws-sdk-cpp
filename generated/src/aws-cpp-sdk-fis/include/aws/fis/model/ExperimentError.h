@@ -87,12 +87,12 @@ class ExperimentError {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_accountIdHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

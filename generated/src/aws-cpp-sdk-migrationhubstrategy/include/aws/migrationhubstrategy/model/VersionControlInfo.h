@@ -68,9 +68,9 @@ class VersionControlInfo {
   ///@}
  private:
   Aws::String m_versionControlConfigurationTimeStamp;
-  bool m_versionControlConfigurationTimeStampHasBeenSet = false;
 
   VersionControlType m_versionControlType{VersionControlType::NOT_SET};
+  bool m_versionControlConfigurationTimeStampHasBeenSet = false;
   bool m_versionControlTypeHasBeenSet = false;
 };
 

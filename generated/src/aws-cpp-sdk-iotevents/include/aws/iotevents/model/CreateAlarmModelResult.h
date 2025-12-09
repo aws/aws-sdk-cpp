@@ -137,21 +137,21 @@ class CreateAlarmModelResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_alarmModelArn;
-  bool m_alarmModelArnHasBeenSet = false;
 
   Aws::String m_alarmModelVersion;
-  bool m_alarmModelVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   AlarmModelVersionStatus m_status{AlarmModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_alarmModelArnHasBeenSet = false;
+  bool m_alarmModelVersionHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ToolResultBlockStart {
   ///@}
  private:
   Aws::String m_toolUseId;
-  bool m_toolUseIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   ToolResultStatus m_status{ToolResultStatus::NOT_SET};
+  bool m_toolUseIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

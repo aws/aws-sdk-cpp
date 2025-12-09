@@ -188,30 +188,30 @@ class GetChannelResult {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_channelDescription;
-  bool m_channelDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDateTime{};
-  bool m_createDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteDateTime{};
-  bool m_deleteDateTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<ChannelRole>> m_channelRoles;
-  bool m_channelRolesHasBeenSet = false;
 
   ChannelStatus m_channelStatus{ChannelStatus::NOT_SET};
-  bool m_channelStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_spaceIdHasBeenSet = false;
+  bool m_channelIdHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelDescriptionHasBeenSet = false;
+  bool m_createDateTimeHasBeenSet = false;
+  bool m_deleteDateTimeHasBeenSet = false;
+  bool m_channelRolesHasBeenSet = false;
+  bool m_channelStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

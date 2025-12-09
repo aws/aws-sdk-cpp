@@ -69,9 +69,9 @@ class DatabasePreferences {
   ///@}
  private:
   DatabaseManagementPreference m_databaseManagementPreference{DatabaseManagementPreference::NOT_SET};
-  bool m_databaseManagementPreferenceHasBeenSet = false;
 
   DatabaseMigrationPreference m_databaseMigrationPreference;
+  bool m_databaseManagementPreferenceHasBeenSet = false;
   bool m_databaseMigrationPreferenceHasBeenSet = false;
 };
 

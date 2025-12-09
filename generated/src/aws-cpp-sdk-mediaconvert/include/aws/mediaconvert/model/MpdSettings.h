@@ -340,45 +340,45 @@ When you specify Version
   ///@}
  private:
   MpdAccessibilityCaptionHints m_accessibilityCaptionHints{MpdAccessibilityCaptionHints::NOT_SET};
-  bool m_accessibilityCaptionHintsHasBeenSet = false;
 
   MpdAudioDuration m_audioDuration{MpdAudioDuration::NOT_SET};
-  bool m_audioDurationHasBeenSet = false;
 
   MpdC2paManifest m_c2paManifest{MpdC2paManifest::NOT_SET};
-  bool m_c2paManifestHasBeenSet = false;
 
   MpdCaptionContainerType m_captionContainerType{MpdCaptionContainerType::NOT_SET};
-  bool m_captionContainerTypeHasBeenSet = false;
 
   Aws::String m_certificateSecret;
-  bool m_certificateSecretHasBeenSet = false;
 
   MpdKlvMetadata m_klvMetadata{MpdKlvMetadata::NOT_SET};
-  bool m_klvMetadataHasBeenSet = false;
 
   MpdManifestMetadataSignaling m_manifestMetadataSignaling{MpdManifestMetadataSignaling::NOT_SET};
-  bool m_manifestMetadataSignalingHasBeenSet = false;
 
   MpdScte35Esam m_scte35Esam{MpdScte35Esam::NOT_SET};
-  bool m_scte35EsamHasBeenSet = false;
 
   MpdScte35Source m_scte35Source{MpdScte35Source::NOT_SET};
-  bool m_scte35SourceHasBeenSet = false;
 
   Aws::String m_signingKmsKey;
-  bool m_signingKmsKeyHasBeenSet = false;
 
   MpdTimedMetadata m_timedMetadata{MpdTimedMetadata::NOT_SET};
-  bool m_timedMetadataHasBeenSet = false;
 
   MpdTimedMetadataBoxVersion m_timedMetadataBoxVersion{MpdTimedMetadataBoxVersion::NOT_SET};
-  bool m_timedMetadataBoxVersionHasBeenSet = false;
 
   Aws::String m_timedMetadataSchemeIdUri;
-  bool m_timedMetadataSchemeIdUriHasBeenSet = false;
 
   Aws::String m_timedMetadataValue;
+  bool m_accessibilityCaptionHintsHasBeenSet = false;
+  bool m_audioDurationHasBeenSet = false;
+  bool m_c2paManifestHasBeenSet = false;
+  bool m_captionContainerTypeHasBeenSet = false;
+  bool m_certificateSecretHasBeenSet = false;
+  bool m_klvMetadataHasBeenSet = false;
+  bool m_manifestMetadataSignalingHasBeenSet = false;
+  bool m_scte35EsamHasBeenSet = false;
+  bool m_scte35SourceHasBeenSet = false;
+  bool m_signingKmsKeyHasBeenSet = false;
+  bool m_timedMetadataHasBeenSet = false;
+  bool m_timedMetadataBoxVersionHasBeenSet = false;
+  bool m_timedMetadataSchemeIdUriHasBeenSet = false;
   bool m_timedMetadataValueHasBeenSet = false;
 };
 

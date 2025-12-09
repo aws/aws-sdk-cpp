@@ -116,18 +116,18 @@ class EvaluationFormNumericQuestionOption {
   ///@}
  private:
   int m_minValue{0};
-  bool m_minValueHasBeenSet = false;
 
   int m_maxValue{0};
-  bool m_maxValueHasBeenSet = false;
 
   int m_score{0};
-  bool m_scoreHasBeenSet = false;
 
   bool m_automaticFail{false};
-  bool m_automaticFailHasBeenSet = false;
 
   AutomaticFailConfiguration m_automaticFailConfiguration;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_automaticFailHasBeenSet = false;
   bool m_automaticFailConfigurationHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ErrorInfo {
   ///@}
  private:
   IngestionErrorType m_type{IngestionErrorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

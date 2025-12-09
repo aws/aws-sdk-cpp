@@ -312,48 +312,48 @@ class BatchInferenceJob {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_batchInferenceJobArn;
-  bool m_batchInferenceJobArnHasBeenSet = false;
 
   Aws::String m_filterArn;
-  bool m_filterArnHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   int m_numResults{0};
-  bool m_numResultsHasBeenSet = false;
 
   BatchInferenceJobInput m_jobInput;
-  bool m_jobInputHasBeenSet = false;
 
   BatchInferenceJobOutput m_jobOutput;
-  bool m_jobOutputHasBeenSet = false;
 
   BatchInferenceJobConfig m_batchInferenceJobConfig;
-  bool m_batchInferenceJobConfigHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   BatchInferenceJobMode m_batchInferenceJobMode{BatchInferenceJobMode::NOT_SET};
-  bool m_batchInferenceJobModeHasBeenSet = false;
 
   ThemeGenerationConfig m_themeGenerationConfig;
-  bool m_themeGenerationConfigHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
+  bool m_jobNameHasBeenSet = false;
+  bool m_batchInferenceJobArnHasBeenSet = false;
+  bool m_filterArnHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_numResultsHasBeenSet = false;
+  bool m_jobInputHasBeenSet = false;
+  bool m_jobOutputHasBeenSet = false;
+  bool m_batchInferenceJobConfigHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_batchInferenceJobModeHasBeenSet = false;
+  bool m_themeGenerationConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
 };
 

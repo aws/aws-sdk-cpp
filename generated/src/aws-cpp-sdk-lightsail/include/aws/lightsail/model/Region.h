@@ -159,21 +159,21 @@ class Region {
   ///@}
  private:
   Aws::String m_continentCode;
-  bool m_continentCodeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   RegionName m_name{RegionName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<AvailabilityZone> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<AvailabilityZone> m_relationalDatabaseAvailabilityZones;
+  bool m_continentCodeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
   bool m_relationalDatabaseAvailabilityZonesHasBeenSet = false;
 };
 

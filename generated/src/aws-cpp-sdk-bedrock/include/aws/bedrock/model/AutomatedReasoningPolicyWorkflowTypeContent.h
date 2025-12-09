@@ -78,9 +78,9 @@ class AutomatedReasoningPolicyWorkflowTypeContent {
   ///@}
  private:
   Aws::Vector<AutomatedReasoningPolicyBuildWorkflowDocument> m_documents;
-  bool m_documentsHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildWorkflowRepairContent m_policyRepairAssets;
+  bool m_documentsHasBeenSet = false;
   bool m_policyRepairAssetsHasBeenSet = false;
 };
 

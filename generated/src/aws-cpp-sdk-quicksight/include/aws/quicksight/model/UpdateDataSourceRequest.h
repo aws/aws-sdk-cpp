@@ -165,24 +165,24 @@ class UpdateDataSourceRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataSourceParameters m_dataSourceParameters;
-  bool m_dataSourceParametersHasBeenSet = false;
 
   DataSourceCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   VpcConnectionProperties m_vpcConnectionProperties;
-  bool m_vpcConnectionPropertiesHasBeenSet = false;
 
   SslProperties m_sslProperties;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dataSourceParametersHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_vpcConnectionPropertiesHasBeenSet = false;
   bool m_sslPropertiesHasBeenSet = false;
 };
 

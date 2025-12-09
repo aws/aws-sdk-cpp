@@ -96,12 +96,12 @@ class CopyBackupToRegionRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_destinationRegion;
-  bool m_destinationRegionHasBeenSet = false;
 
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_destinationRegionHasBeenSet = false;
+  bool m_backupIdHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

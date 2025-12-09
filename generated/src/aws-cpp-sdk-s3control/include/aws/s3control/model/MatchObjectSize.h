@@ -64,9 +64,9 @@ class MatchObjectSize {
   ///@}
  private:
   long long m_bytesGreaterThan{0};
-  bool m_bytesGreaterThanHasBeenSet = false;
 
   long long m_bytesLessThan{0};
+  bool m_bytesGreaterThanHasBeenSet = false;
   bool m_bytesLessThanHasBeenSet = false;
 };
 

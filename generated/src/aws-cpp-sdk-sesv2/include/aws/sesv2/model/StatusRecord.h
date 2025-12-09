@@ -93,12 +93,12 @@ class StatusRecord {
   ///@}
  private:
   SendingStatus m_status{SendingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_cause;
-  bool m_causeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_statusHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListTrafficDistributionGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<TrafficDistributionGroupSummary> m_trafficDistributionGroupSummaryList;
-  bool m_trafficDistributionGroupSummaryListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_trafficDistributionGroupSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -281,39 +281,39 @@ class DBProxyEndpoint {
   ///@}
  private:
   Aws::String m_dBProxyEndpointName;
-  bool m_dBProxyEndpointNameHasBeenSet = false;
 
   Aws::String m_dBProxyEndpointArn;
-  bool m_dBProxyEndpointArnHasBeenSet = false;
 
   Aws::String m_dBProxyName;
-  bool m_dBProxyNameHasBeenSet = false;
 
   DBProxyEndpointStatus m_status{DBProxyEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSubnetIds;
-  bool m_vpcSubnetIdsHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   DBProxyEndpointTargetRole m_targetRole{DBProxyEndpointTargetRole::NOT_SET};
-  bool m_targetRoleHasBeenSet = false;
 
   bool m_isDefault{false};
-  bool m_isDefaultHasBeenSet = false;
 
   EndpointNetworkType m_endpointNetworkType{EndpointNetworkType::NOT_SET};
+  bool m_dBProxyEndpointNameHasBeenSet = false;
+  bool m_dBProxyEndpointArnHasBeenSet = false;
+  bool m_dBProxyNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_vpcSubnetIdsHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_targetRoleHasBeenSet = false;
+  bool m_isDefaultHasBeenSet = false;
   bool m_endpointNetworkTypeHasBeenSet = false;
 };
 

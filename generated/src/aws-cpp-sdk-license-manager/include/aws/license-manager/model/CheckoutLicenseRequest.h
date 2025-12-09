@@ -165,24 +165,24 @@ class CheckoutLicenseRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_productSKU;
-  bool m_productSKUHasBeenSet = false;
 
   CheckoutType m_checkoutType{CheckoutType::NOT_SET};
-  bool m_checkoutTypeHasBeenSet = false;
 
   Aws::String m_keyFingerprint;
-  bool m_keyFingerprintHasBeenSet = false;
 
   Aws::Vector<EntitlementData> m_entitlements;
-  bool m_entitlementsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_beneficiary;
-  bool m_beneficiaryHasBeenSet = false;
 
   Aws::String m_nodeId;
+  bool m_productSKUHasBeenSet = false;
+  bool m_checkoutTypeHasBeenSet = false;
+  bool m_keyFingerprintHasBeenSet = false;
+  bool m_entitlementsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_beneficiaryHasBeenSet = false;
   bool m_nodeIdHasBeenSet = false;
 };
 

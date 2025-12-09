@@ -86,12 +86,12 @@ class ListApplicationStatesResult {
   ///@}
  private:
   Aws::Vector<ApplicationState> m_applicationStateList;
-  bool m_applicationStateListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationStateListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

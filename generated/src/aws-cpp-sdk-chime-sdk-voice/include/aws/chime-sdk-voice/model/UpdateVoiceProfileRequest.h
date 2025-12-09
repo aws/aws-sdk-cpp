@@ -65,9 +65,9 @@ class UpdateVoiceProfileRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceProfileId;
-  bool m_voiceProfileIdHasBeenSet = false;
 
   Aws::String m_speakerSearchTaskId;
+  bool m_voiceProfileIdHasBeenSet = false;
   bool m_speakerSearchTaskIdHasBeenSet = false;
 };
 

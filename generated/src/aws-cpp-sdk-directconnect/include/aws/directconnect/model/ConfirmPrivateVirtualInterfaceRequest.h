@@ -85,12 +85,12 @@ class ConfirmPrivateVirtualInterfaceRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_virtualInterfaceId;
-  bool m_virtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_virtualGatewayId;
-  bool m_virtualGatewayIdHasBeenSet = false;
 
   Aws::String m_directConnectGatewayId;
+  bool m_virtualInterfaceIdHasBeenSet = false;
+  bool m_virtualGatewayIdHasBeenSet = false;
   bool m_directConnectGatewayIdHasBeenSet = false;
 };
 

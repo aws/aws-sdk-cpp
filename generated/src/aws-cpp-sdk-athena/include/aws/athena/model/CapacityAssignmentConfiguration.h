@@ -83,9 +83,9 @@ class CapacityAssignmentConfiguration {
   ///@}
  private:
   Aws::String m_capacityReservationName;
-  bool m_capacityReservationNameHasBeenSet = false;
 
   Aws::Vector<CapacityAssignment> m_capacityAssignments;
+  bool m_capacityReservationNameHasBeenSet = false;
   bool m_capacityAssignmentsHasBeenSet = false;
 };
 

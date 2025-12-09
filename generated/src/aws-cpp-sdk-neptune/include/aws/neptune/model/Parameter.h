@@ -213,33 +213,33 @@ class Parameter {
   ///@}
  private:
   Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
 
   Aws::String m_parameterValue;
-  bool m_parameterValueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_applyType;
-  bool m_applyTypeHasBeenSet = false;
 
   Aws::String m_dataType;
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   bool m_isModifiable{false};
-  bool m_isModifiableHasBeenSet = false;
 
   Aws::String m_minimumEngineVersion;
-  bool m_minimumEngineVersionHasBeenSet = false;
 
   ApplyMethod m_applyMethod{ApplyMethod::NOT_SET};
+  bool m_parameterNameHasBeenSet = false;
+  bool m_parameterValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_applyTypeHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_isModifiableHasBeenSet = false;
+  bool m_minimumEngineVersionHasBeenSet = false;
   bool m_applyMethodHasBeenSet = false;
 };
 

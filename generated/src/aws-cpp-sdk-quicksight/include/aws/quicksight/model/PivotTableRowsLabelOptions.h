@@ -69,9 +69,9 @@ class PivotTableRowsLabelOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Aws::String m_customLabel;
+  bool m_visibilityHasBeenSet = false;
   bool m_customLabelHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class ScheduledInstanceRecurrence {
   ///@}
  private:
   Aws::String m_frequency;
-  bool m_frequencyHasBeenSet = false;
 
   int m_interval{0};
-  bool m_intervalHasBeenSet = false;
 
   Aws::Vector<int> m_occurrenceDaySet;
-  bool m_occurrenceDaySetHasBeenSet = false;
 
   bool m_occurrenceRelativeToEnd{false};
-  bool m_occurrenceRelativeToEndHasBeenSet = false;
 
   Aws::String m_occurrenceUnit;
+  bool m_frequencyHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_occurrenceDaySetHasBeenSet = false;
+  bool m_occurrenceRelativeToEndHasBeenSet = false;
   bool m_occurrenceUnitHasBeenSet = false;
 };
 

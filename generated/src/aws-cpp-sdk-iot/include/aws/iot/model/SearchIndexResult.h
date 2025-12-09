@@ -109,15 +109,15 @@ class SearchIndexResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ThingDocument> m_things;
-  bool m_thingsHasBeenSet = false;
 
   Aws::Vector<ThingGroupDocument> m_thingGroups;
-  bool m_thingGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_thingsHasBeenSet = false;
+  bool m_thingGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

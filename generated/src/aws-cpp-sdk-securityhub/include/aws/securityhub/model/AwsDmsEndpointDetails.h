@@ -273,42 +273,42 @@ class AwsDmsEndpointDetails {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_endpointIdentifier;
-  bool m_endpointIdentifierHasBeenSet = false;
 
   Aws::String m_endpointType;
-  bool m_endpointTypeHasBeenSet = false;
 
   Aws::String m_engineName;
-  bool m_engineNameHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_extraConnectionAttributes;
-  bool m_extraConnectionAttributesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   Aws::String m_sslMode;
-  bool m_sslModeHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_endpointIdentifierHasBeenSet = false;
+  bool m_endpointTypeHasBeenSet = false;
+  bool m_engineNameHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_extraConnectionAttributesHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_sslModeHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

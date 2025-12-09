@@ -58,9 +58,9 @@ class GetImportJobResult {
   ///@}
  private:
   ImportJobResponse m_importJobResponse;
-  bool m_importJobResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importJobResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class GetTrustStoreCaCertificatesBundleResult {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_locationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -151,21 +151,21 @@ class BackupSelectionsListMember {
   ///@}
  private:
   Aws::String m_selectionId;
-  bool m_selectionIdHasBeenSet = false;
 
   Aws::String m_selectionName;
-  bool m_selectionNameHasBeenSet = false;
 
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
+  bool m_selectionIdHasBeenSet = false;
+  bool m_selectionNameHasBeenSet = false;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
 };
 

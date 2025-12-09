@@ -65,9 +65,9 @@ class DeleteFeatureRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::String m_feature;
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_project;
+  bool m_featureHasBeenSet = false;
   bool m_projectHasBeenSet = false;
 };
 

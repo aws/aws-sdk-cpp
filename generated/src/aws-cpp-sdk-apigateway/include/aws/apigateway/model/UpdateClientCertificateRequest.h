@@ -79,9 +79,9 @@ class UpdateClientCertificateRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_clientCertificateId;
-  bool m_clientCertificateIdHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_clientCertificateIdHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

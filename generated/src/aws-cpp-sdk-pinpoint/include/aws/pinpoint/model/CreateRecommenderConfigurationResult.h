@@ -58,9 +58,9 @@ class CreateRecommenderConfigurationResult {
   ///@}
  private:
   RecommenderConfigurationResponse m_recommenderConfigurationResponse;
-  bool m_recommenderConfigurationResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommenderConfigurationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

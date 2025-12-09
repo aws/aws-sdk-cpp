@@ -150,18 +150,18 @@ class WebCrawlerConfiguration {
   ///@}
  private:
   UrlConfiguration m_urlConfiguration;
-  bool m_urlConfigurationHasBeenSet = false;
 
   WebCrawlerLimits m_crawlerLimits;
-  bool m_crawlerLimitsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionFilters;
-  bool m_inclusionFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionFilters;
-  bool m_exclusionFiltersHasBeenSet = false;
 
   WebScopeType m_scope{WebScopeType::NOT_SET};
+  bool m_urlConfigurationHasBeenSet = false;
+  bool m_crawlerLimitsHasBeenSet = false;
+  bool m_inclusionFiltersHasBeenSet = false;
+  bool m_exclusionFiltersHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class GraphQLRenderConfig {
   ///@}
  private:
   Aws::String m_typesFilePath;
-  bool m_typesFilePathHasBeenSet = false;
 
   Aws::String m_queriesFilePath;
-  bool m_queriesFilePathHasBeenSet = false;
 
   Aws::String m_mutationsFilePath;
-  bool m_mutationsFilePathHasBeenSet = false;
 
   Aws::String m_subscriptionsFilePath;
-  bool m_subscriptionsFilePathHasBeenSet = false;
 
   Aws::String m_fragmentsFilePath;
+  bool m_typesFilePathHasBeenSet = false;
+  bool m_queriesFilePathHasBeenSet = false;
+  bool m_mutationsFilePathHasBeenSet = false;
+  bool m_subscriptionsFilePathHasBeenSet = false;
   bool m_fragmentsFilePathHasBeenSet = false;
 };
 

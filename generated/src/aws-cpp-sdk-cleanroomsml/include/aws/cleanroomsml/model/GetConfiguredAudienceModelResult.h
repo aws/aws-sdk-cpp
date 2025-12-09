@@ -285,45 +285,45 @@ class GetConfiguredAudienceModelResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_audienceModelArn;
-  bool m_audienceModelArnHasBeenSet = false;
 
   ConfiguredAudienceModelOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ConfiguredAudienceModelStatus m_status{ConfiguredAudienceModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<SharedAudienceMetrics> m_sharedAudienceMetrics;
-  bool m_sharedAudienceMetricsHasBeenSet = false;
 
   int m_minMatchingSeedSize{0};
-  bool m_minMatchingSeedSizeHasBeenSet = false;
 
   AudienceSizeConfig m_audienceSizeConfig;
-  bool m_audienceSizeConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TagOnCreatePolicy m_childResourceTagOnCreatePolicy{TagOnCreatePolicy::NOT_SET};
-  bool m_childResourceTagOnCreatePolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_audienceModelArnHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sharedAudienceMetricsHasBeenSet = false;
+  bool m_minMatchingSeedSizeHasBeenSet = false;
+  bool m_audienceSizeConfigHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_childResourceTagOnCreatePolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -135,18 +135,18 @@ class DescribeOrganizationConfigurationResult {
   ///@}
  private:
   bool m_memberAccountLimitReached{false};
-  bool m_memberAccountLimitReachedHasBeenSet = false;
 
   Aws::Vector<OrganizationFeatureConfigurationResult> m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   AutoEnableMembers m_autoEnableOrganizationMembers{AutoEnableMembers::NOT_SET};
-  bool m_autoEnableOrganizationMembersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_memberAccountLimitReachedHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_autoEnableOrganizationMembersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

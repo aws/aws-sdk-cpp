@@ -78,9 +78,9 @@ class InboxPlacementTrackingOption {
   ///@}
  private:
   bool m_global{false};
-  bool m_globalHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_trackedIsps;
+  bool m_globalHasBeenSet = false;
   bool m_trackedIspsHasBeenSet = false;
 };
 

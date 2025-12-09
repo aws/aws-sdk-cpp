@@ -96,15 +96,15 @@ class GenerateMacResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_mac{};
-  bool m_macHasBeenSet = false;
 
   MacAlgorithmSpec m_macAlgorithm{MacAlgorithmSpec::NOT_SET};
-  bool m_macAlgorithmHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_macHasBeenSet = false;
+  bool m_macAlgorithmHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

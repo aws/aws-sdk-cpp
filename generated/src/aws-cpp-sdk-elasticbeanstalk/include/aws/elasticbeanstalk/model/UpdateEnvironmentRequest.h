@@ -292,39 +292,39 @@ class UpdateEnvironmentRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EnvironmentTier m_tier;
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_solutionStackName;
-  bool m_solutionStackNameHasBeenSet = false;
 
   Aws::String m_platformArn;
-  bool m_platformArnHasBeenSet = false;
 
   Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
-  bool m_optionSettingsHasBeenSet = false;
 
   Aws::Vector<OptionSpecification> m_optionsToRemove;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_solutionStackNameHasBeenSet = false;
+  bool m_platformArnHasBeenSet = false;
+  bool m_optionSettingsHasBeenSet = false;
   bool m_optionsToRemoveHasBeenSet = false;
 };
 

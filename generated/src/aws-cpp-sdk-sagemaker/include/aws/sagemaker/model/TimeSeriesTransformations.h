@@ -106,9 +106,9 @@ class TimeSeriesTransformations {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Map<FillingType, Aws::String>> m_filling;
-  bool m_fillingHasBeenSet = false;
 
   Aws::Map<Aws::String, AggregationTransformationValue> m_aggregation;
+  bool m_fillingHasBeenSet = false;
   bool m_aggregationHasBeenSet = false;
 };
 

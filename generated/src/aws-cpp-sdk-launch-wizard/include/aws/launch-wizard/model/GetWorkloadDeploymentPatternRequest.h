@@ -65,9 +65,9 @@ class GetWorkloadDeploymentPatternRequest : public LaunchWizardRequest {
   ///@}
  private:
   Aws::String m_deploymentPatternName;
-  bool m_deploymentPatternNameHasBeenSet = false;
 
   Aws::String m_workloadName;
+  bool m_deploymentPatternNameHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
 };
 

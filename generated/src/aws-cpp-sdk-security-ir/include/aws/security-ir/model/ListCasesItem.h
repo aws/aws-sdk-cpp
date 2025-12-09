@@ -209,33 +209,33 @@ class ListCasesItem {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_caseArn;
-  bool m_caseArnHasBeenSet = false;
 
   EngagementType m_engagementType{EngagementType::NOT_SET};
-  bool m_engagementTypeHasBeenSet = false;
 
   CaseStatus m_caseStatus{CaseStatus::NOT_SET};
-  bool m_caseStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_closedDate{};
-  bool m_closedDateHasBeenSet = false;
 
   ResolverType m_resolverType{ResolverType::NOT_SET};
-  bool m_resolverTypeHasBeenSet = false;
 
   PendingAction m_pendingAction{PendingAction::NOT_SET};
+  bool m_caseIdHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_caseArnHasBeenSet = false;
+  bool m_engagementTypeHasBeenSet = false;
+  bool m_caseStatusHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_closedDateHasBeenSet = false;
+  bool m_resolverTypeHasBeenSet = false;
   bool m_pendingActionHasBeenSet = false;
 };
 

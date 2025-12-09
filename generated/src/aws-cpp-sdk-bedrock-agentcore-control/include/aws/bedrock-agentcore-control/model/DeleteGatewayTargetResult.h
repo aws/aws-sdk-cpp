@@ -117,18 +117,18 @@ class DeleteGatewayTargetResult {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   TargetStatus m_status{TargetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

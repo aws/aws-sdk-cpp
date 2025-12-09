@@ -75,9 +75,9 @@ class DescribeWorkspacesConnectionStatusRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_workspaceIds;
-  bool m_workspaceIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_workspaceIdsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

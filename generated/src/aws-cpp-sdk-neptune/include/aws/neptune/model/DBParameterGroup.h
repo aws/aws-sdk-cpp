@@ -109,15 +109,15 @@ class DBParameterGroup {
   ///@}
  private:
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   Aws::String m_dBParameterGroupFamily;
-  bool m_dBParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_dBParameterGroupArn;
+  bool m_dBParameterGroupNameHasBeenSet = false;
+  bool m_dBParameterGroupFamilyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_dBParameterGroupArnHasBeenSet = false;
 };
 

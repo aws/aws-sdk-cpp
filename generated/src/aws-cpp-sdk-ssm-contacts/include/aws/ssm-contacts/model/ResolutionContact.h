@@ -90,12 +90,12 @@ class ResolutionContact {
   ///@}
  private:
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   ContactType m_type{ContactType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_stageIndex{0};
+  bool m_contactArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_stageIndexHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class DataPathSort {
   ///@}
  private:
   SortDirection m_direction{SortDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   Aws::Vector<DataPathValue> m_sortPaths;
+  bool m_directionHasBeenSet = false;
   bool m_sortPathsHasBeenSet = false;
 };
 

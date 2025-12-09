@@ -101,15 +101,15 @@ class GetImpersonationRoleEffectResult {
   ///@}
  private:
   ImpersonationRoleType m_type{ImpersonationRoleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AccessEffect m_effect{AccessEffect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::Vector<ImpersonationMatchedRule> m_matchedRules;
-  bool m_matchedRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_typeHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
+  bool m_matchedRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeAlarmsForMetricResult {
   ///@}
  private:
   Aws::Vector<MetricAlarm> m_metricAlarms;
-  bool m_metricAlarmsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_metricAlarmsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

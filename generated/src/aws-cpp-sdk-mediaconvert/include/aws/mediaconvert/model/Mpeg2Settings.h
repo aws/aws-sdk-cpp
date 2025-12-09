@@ -768,105 +768,105 @@ class Mpeg2Settings {
   ///@}
  private:
   Mpeg2AdaptiveQuantization m_adaptiveQuantization{Mpeg2AdaptiveQuantization::NOT_SET};
-  bool m_adaptiveQuantizationHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   Mpeg2CodecLevel m_codecLevel{Mpeg2CodecLevel::NOT_SET};
-  bool m_codecLevelHasBeenSet = false;
 
   Mpeg2CodecProfile m_codecProfile{Mpeg2CodecProfile::NOT_SET};
-  bool m_codecProfileHasBeenSet = false;
 
   Mpeg2DynamicSubGop m_dynamicSubGop{Mpeg2DynamicSubGop::NOT_SET};
-  bool m_dynamicSubGopHasBeenSet = false;
 
   Mpeg2FramerateControl m_framerateControl{Mpeg2FramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   Mpeg2FramerateConversionAlgorithm m_framerateConversionAlgorithm{Mpeg2FramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   int m_gopClosedCadence{0};
-  bool m_gopClosedCadenceHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   Mpeg2GopSizeUnits m_gopSizeUnits{Mpeg2GopSizeUnits::NOT_SET};
-  bool m_gopSizeUnitsHasBeenSet = false;
 
   int m_hrdBufferFinalFillPercentage{0};
-  bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
   int m_hrdBufferInitialFillPercentage{0};
-  bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
   int m_hrdBufferSize{0};
-  bool m_hrdBufferSizeHasBeenSet = false;
 
   Mpeg2InterlaceMode m_interlaceMode{Mpeg2InterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   Mpeg2IntraDcPrecision m_intraDcPrecision{Mpeg2IntraDcPrecision::NOT_SET};
-  bool m_intraDcPrecisionHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_minIInterval{0};
-  bool m_minIIntervalHasBeenSet = false;
 
   int m_numberBFramesBetweenReferenceFrames{0};
-  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
   Mpeg2ParControl m_parControl{Mpeg2ParControl::NOT_SET};
-  bool m_parControlHasBeenSet = false;
 
   int m_parDenominator{0};
-  bool m_parDenominatorHasBeenSet = false;
 
   int m_parNumerator{0};
-  bool m_parNumeratorHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   Mpeg2QualityTuningLevel m_qualityTuningLevel{Mpeg2QualityTuningLevel::NOT_SET};
-  bool m_qualityTuningLevelHasBeenSet = false;
 
   Mpeg2RateControlMode m_rateControlMode{Mpeg2RateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   Mpeg2ScanTypeConversionMode m_scanTypeConversionMode{Mpeg2ScanTypeConversionMode::NOT_SET};
-  bool m_scanTypeConversionModeHasBeenSet = false;
 
   Mpeg2SceneChangeDetect m_sceneChangeDetect{Mpeg2SceneChangeDetect::NOT_SET};
-  bool m_sceneChangeDetectHasBeenSet = false;
 
   Mpeg2SlowPal m_slowPal{Mpeg2SlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   int m_softness{0};
-  bool m_softnessHasBeenSet = false;
 
   Mpeg2SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{Mpeg2SpatialAdaptiveQuantization::NOT_SET};
-  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
   Mpeg2Syntax m_syntax{Mpeg2Syntax::NOT_SET};
-  bool m_syntaxHasBeenSet = false;
 
   Mpeg2Telecine m_telecine{Mpeg2Telecine::NOT_SET};
-  bool m_telecineHasBeenSet = false;
 
   Mpeg2TemporalAdaptiveQuantization m_temporalAdaptiveQuantization{Mpeg2TemporalAdaptiveQuantization::NOT_SET};
+  bool m_adaptiveQuantizationHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_codecLevelHasBeenSet = false;
+  bool m_codecProfileHasBeenSet = false;
+  bool m_dynamicSubGopHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopClosedCadenceHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_gopSizeUnitsHasBeenSet = false;
+  bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
+  bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
+  bool m_hrdBufferSizeHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_intraDcPrecisionHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_minIIntervalHasBeenSet = false;
+  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
+  bool m_parControlHasBeenSet = false;
+  bool m_parDenominatorHasBeenSet = false;
+  bool m_parNumeratorHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
+  bool m_qualityTuningLevelHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_scanTypeConversionModeHasBeenSet = false;
+  bool m_sceneChangeDetectHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
+  bool m_softnessHasBeenSet = false;
+  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
+  bool m_syntaxHasBeenSet = false;
+  bool m_telecineHasBeenSet = false;
   bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 };
 

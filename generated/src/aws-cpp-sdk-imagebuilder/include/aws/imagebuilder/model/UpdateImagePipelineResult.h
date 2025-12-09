@@ -79,12 +79,12 @@ class UpdateImagePipelineResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_imagePipelineArn;
+  bool m_requestIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_imagePipelineArnHasBeenSet = false;
 };
 

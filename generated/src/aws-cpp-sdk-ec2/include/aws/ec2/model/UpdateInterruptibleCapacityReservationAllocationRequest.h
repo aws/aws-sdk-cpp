@@ -87,12 +87,12 @@ class UpdateInterruptibleCapacityReservationAllocationRequest : public EC2Reques
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   int m_targetInstanceCount{0};
-  bool m_targetInstanceCountHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_targetInstanceCountHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class CatalogTarget {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tables;
-  bool m_tablesHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_eventQueueArn;
-  bool m_eventQueueArnHasBeenSet = false;
 
   Aws::String m_dlqEventQueueArn;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tablesHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_eventQueueArnHasBeenSet = false;
   bool m_dlqEventQueueArnHasBeenSet = false;
 };
 

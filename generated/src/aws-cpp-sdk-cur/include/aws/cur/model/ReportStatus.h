@@ -70,9 +70,9 @@ class ReportStatus {
   ///@}
  private:
   Aws::String m_lastDelivery;
-  bool m_lastDeliveryHasBeenSet = false;
 
   LastStatus m_lastStatus{LastStatus::NOT_SET};
+  bool m_lastDeliveryHasBeenSet = false;
   bool m_lastStatusHasBeenSet = false;
 };
 

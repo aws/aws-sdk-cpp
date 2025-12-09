@@ -85,12 +85,12 @@ class FrameCaptureSettings {
   ///@}
  private:
   int m_captureInterval{0};
-  bool m_captureIntervalHasBeenSet = false;
 
   FrameCaptureIntervalUnit m_captureIntervalUnits{FrameCaptureIntervalUnit::NOT_SET};
-  bool m_captureIntervalUnitsHasBeenSet = false;
 
   TimecodeBurninSettings m_timecodeBurninSettings;
+  bool m_captureIntervalHasBeenSet = false;
+  bool m_captureIntervalUnitsHasBeenSet = false;
   bool m_timecodeBurninSettingsHasBeenSet = false;
 };
 

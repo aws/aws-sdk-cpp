@@ -69,9 +69,9 @@ class Subscription {
   ///@}
  private:
   Aws::String m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_eventHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

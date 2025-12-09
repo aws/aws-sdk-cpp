@@ -69,9 +69,9 @@ class EngineVersionsSummary {
   ///@}
  private:
   Aws::String m_engineType;
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
+  bool m_engineTypeHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
 };
 

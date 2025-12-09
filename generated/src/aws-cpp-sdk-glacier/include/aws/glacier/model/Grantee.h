@@ -121,18 +121,18 @@ class Grantee {
   ///@}
  private:
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_uRI;
-  bool m_uRIHasBeenSet = false;
 
   Aws::String m_iD;
-  bool m_iDHasBeenSet = false;
 
   Aws::String m_emailAddress;
+  bool m_typeHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_uRIHasBeenSet = false;
+  bool m_iDHasBeenSet = false;
   bool m_emailAddressHasBeenSet = false;
 };
 

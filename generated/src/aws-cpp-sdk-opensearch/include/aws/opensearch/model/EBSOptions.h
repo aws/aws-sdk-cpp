@@ -117,18 +117,18 @@ class EBSOptions {
   ///@}
  private:
   bool m_eBSEnabled{false};
-  bool m_eBSEnabledHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   int m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_throughput{0};
+  bool m_eBSEnabledHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
 };
 

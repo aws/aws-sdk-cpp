@@ -143,21 +143,21 @@ class UpdateAIAgentRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-  bool m_visibilityStatusHasBeenSet = false;
 
   AIAgentConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiAgentIdHasBeenSet = false;
+  bool m_visibilityStatusHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

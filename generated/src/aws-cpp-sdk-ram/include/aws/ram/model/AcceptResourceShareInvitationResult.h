@@ -81,12 +81,12 @@ class AcceptResourceShareInvitationResult {
   ///@}
  private:
   ResourceShareInvitation m_resourceShareInvitation;
-  bool m_resourceShareInvitationHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceShareInvitationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

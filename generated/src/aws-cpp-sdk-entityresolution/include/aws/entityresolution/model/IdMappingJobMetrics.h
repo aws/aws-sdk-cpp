@@ -283,48 +283,48 @@ class IdMappingJobMetrics {
   ///@}
  private:
   int m_inputRecords{0};
-  bool m_inputRecordsHasBeenSet = false;
 
   int m_totalRecordsProcessed{0};
-  bool m_totalRecordsProcessedHasBeenSet = false;
 
   int m_recordsNotProcessed{0};
-  bool m_recordsNotProcessedHasBeenSet = false;
 
   int m_deleteRecordsProcessed{0};
-  bool m_deleteRecordsProcessedHasBeenSet = false;
 
   int m_totalMappedRecords{0};
-  bool m_totalMappedRecordsHasBeenSet = false;
 
   int m_totalMappedSourceRecords{0};
-  bool m_totalMappedSourceRecordsHasBeenSet = false;
 
   int m_totalMappedTargetRecords{0};
-  bool m_totalMappedTargetRecordsHasBeenSet = false;
 
   int m_uniqueRecordsLoaded{0};
-  bool m_uniqueRecordsLoadedHasBeenSet = false;
 
   int m_newMappedRecords{0};
-  bool m_newMappedRecordsHasBeenSet = false;
 
   int m_newMappedSourceRecords{0};
-  bool m_newMappedSourceRecordsHasBeenSet = false;
 
   int m_newMappedTargetRecords{0};
-  bool m_newMappedTargetRecordsHasBeenSet = false;
 
   int m_newUniqueRecordsLoaded{0};
-  bool m_newUniqueRecordsLoadedHasBeenSet = false;
 
   int m_mappedRecordsRemoved{0};
-  bool m_mappedRecordsRemovedHasBeenSet = false;
 
   int m_mappedSourceRecordsRemoved{0};
-  bool m_mappedSourceRecordsRemovedHasBeenSet = false;
 
   int m_mappedTargetRecordsRemoved{0};
+  bool m_inputRecordsHasBeenSet = false;
+  bool m_totalRecordsProcessedHasBeenSet = false;
+  bool m_recordsNotProcessedHasBeenSet = false;
+  bool m_deleteRecordsProcessedHasBeenSet = false;
+  bool m_totalMappedRecordsHasBeenSet = false;
+  bool m_totalMappedSourceRecordsHasBeenSet = false;
+  bool m_totalMappedTargetRecordsHasBeenSet = false;
+  bool m_uniqueRecordsLoadedHasBeenSet = false;
+  bool m_newMappedRecordsHasBeenSet = false;
+  bool m_newMappedSourceRecordsHasBeenSet = false;
+  bool m_newMappedTargetRecordsHasBeenSet = false;
+  bool m_newUniqueRecordsLoadedHasBeenSet = false;
+  bool m_mappedRecordsRemovedHasBeenSet = false;
+  bool m_mappedSourceRecordsRemovedHasBeenSet = false;
   bool m_mappedTargetRecordsRemovedHasBeenSet = false;
 };
 

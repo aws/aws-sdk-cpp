@@ -68,9 +68,9 @@ class CreateParameterGroupRequest : public DAXRequest {
   ///@}
  private:
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_parameterGroupNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

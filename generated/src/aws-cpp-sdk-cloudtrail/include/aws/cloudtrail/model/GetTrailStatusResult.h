@@ -363,57 +363,57 @@ class GetTrailStatusResult {
   ///@}
  private:
   bool m_isLogging{false};
-  bool m_isLoggingHasBeenSet = false;
 
   Aws::String m_latestDeliveryError;
-  bool m_latestDeliveryErrorHasBeenSet = false;
 
   Aws::String m_latestNotificationError;
-  bool m_latestNotificationErrorHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestDeliveryTime{};
-  bool m_latestDeliveryTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestNotificationTime{};
-  bool m_latestNotificationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startLoggingTime{};
-  bool m_startLoggingTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopLoggingTime{};
-  bool m_stopLoggingTimeHasBeenSet = false;
 
   Aws::String m_latestCloudWatchLogsDeliveryError;
-  bool m_latestCloudWatchLogsDeliveryErrorHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestCloudWatchLogsDeliveryTime{};
-  bool m_latestCloudWatchLogsDeliveryTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestDigestDeliveryTime{};
-  bool m_latestDigestDeliveryTimeHasBeenSet = false;
 
   Aws::String m_latestDigestDeliveryError;
-  bool m_latestDigestDeliveryErrorHasBeenSet = false;
 
   Aws::String m_latestDeliveryAttemptTime;
-  bool m_latestDeliveryAttemptTimeHasBeenSet = false;
 
   Aws::String m_latestNotificationAttemptTime;
-  bool m_latestNotificationAttemptTimeHasBeenSet = false;
 
   Aws::String m_latestNotificationAttemptSucceeded;
-  bool m_latestNotificationAttemptSucceededHasBeenSet = false;
 
   Aws::String m_latestDeliveryAttemptSucceeded;
-  bool m_latestDeliveryAttemptSucceededHasBeenSet = false;
 
   Aws::String m_timeLoggingStarted;
-  bool m_timeLoggingStartedHasBeenSet = false;
 
   Aws::String m_timeLoggingStopped;
-  bool m_timeLoggingStoppedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_isLoggingHasBeenSet = false;
+  bool m_latestDeliveryErrorHasBeenSet = false;
+  bool m_latestNotificationErrorHasBeenSet = false;
+  bool m_latestDeliveryTimeHasBeenSet = false;
+  bool m_latestNotificationTimeHasBeenSet = false;
+  bool m_startLoggingTimeHasBeenSet = false;
+  bool m_stopLoggingTimeHasBeenSet = false;
+  bool m_latestCloudWatchLogsDeliveryErrorHasBeenSet = false;
+  bool m_latestCloudWatchLogsDeliveryTimeHasBeenSet = false;
+  bool m_latestDigestDeliveryTimeHasBeenSet = false;
+  bool m_latestDigestDeliveryErrorHasBeenSet = false;
+  bool m_latestDeliveryAttemptTimeHasBeenSet = false;
+  bool m_latestNotificationAttemptTimeHasBeenSet = false;
+  bool m_latestNotificationAttemptSucceededHasBeenSet = false;
+  bool m_latestDeliveryAttemptSucceededHasBeenSet = false;
+  bool m_timeLoggingStartedHasBeenSet = false;
+  bool m_timeLoggingStoppedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

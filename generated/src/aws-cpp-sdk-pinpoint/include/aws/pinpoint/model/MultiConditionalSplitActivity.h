@@ -107,12 +107,12 @@ class MultiConditionalSplitActivity {
   ///@}
  private:
   Aws::Vector<MultiConditionalBranch> m_branches;
-  bool m_branchesHasBeenSet = false;
 
   Aws::String m_defaultActivity;
-  bool m_defaultActivityHasBeenSet = false;
 
   WaitTime m_evaluationWaitTime;
+  bool m_branchesHasBeenSet = false;
+  bool m_defaultActivityHasBeenSet = false;
   bool m_evaluationWaitTimeHasBeenSet = false;
 };
 

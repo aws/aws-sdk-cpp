@@ -408,60 +408,60 @@ class S3CsvSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_paths;
-  bool m_pathsHasBeenSet = false;
 
   CompressionType m_compressionType{CompressionType::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusions;
-  bool m_exclusionsHasBeenSet = false;
 
   Aws::String m_groupSize;
-  bool m_groupSizeHasBeenSet = false;
 
   Aws::String m_groupFiles;
-  bool m_groupFilesHasBeenSet = false;
 
   bool m_recurse{false};
-  bool m_recurseHasBeenSet = false;
 
   int m_maxBand{0};
-  bool m_maxBandHasBeenSet = false;
 
   int m_maxFilesInBand{0};
-  bool m_maxFilesInBandHasBeenSet = false;
 
   S3DirectSourceAdditionalOptions m_additionalOptions;
-  bool m_additionalOptionsHasBeenSet = false;
 
   Separator m_separator{Separator::NOT_SET};
-  bool m_separatorHasBeenSet = false;
 
   Aws::String m_escaper;
-  bool m_escaperHasBeenSet = false;
 
   QuoteChar m_quoteChar{QuoteChar::NOT_SET};
-  bool m_quoteCharHasBeenSet = false;
 
   bool m_multiline{false};
-  bool m_multilineHasBeenSet = false;
 
   bool m_withHeader{false};
-  bool m_withHeaderHasBeenSet = false;
 
   bool m_writeHeader{false};
-  bool m_writeHeaderHasBeenSet = false;
 
   bool m_skipFirst{false};
-  bool m_skipFirstHasBeenSet = false;
 
   bool m_optimizePerformance{false};
-  bool m_optimizePerformanceHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_pathsHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
+  bool m_exclusionsHasBeenSet = false;
+  bool m_groupSizeHasBeenSet = false;
+  bool m_groupFilesHasBeenSet = false;
+  bool m_recurseHasBeenSet = false;
+  bool m_maxBandHasBeenSet = false;
+  bool m_maxFilesInBandHasBeenSet = false;
+  bool m_additionalOptionsHasBeenSet = false;
+  bool m_separatorHasBeenSet = false;
+  bool m_escaperHasBeenSet = false;
+  bool m_quoteCharHasBeenSet = false;
+  bool m_multilineHasBeenSet = false;
+  bool m_withHeaderHasBeenSet = false;
+  bool m_writeHeaderHasBeenSet = false;
+  bool m_skipFirstHasBeenSet = false;
+  bool m_optimizePerformanceHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

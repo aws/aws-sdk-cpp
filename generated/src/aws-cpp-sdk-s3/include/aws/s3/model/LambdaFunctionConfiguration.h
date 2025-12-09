@@ -113,15 +113,15 @@ class LambdaFunctionConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaFunctionArnHasBeenSet = false;
 
   Aws::Vector<Event> m_events;
-  bool m_eventsHasBeenSet = false;
 
   NotificationConfigurationFilter m_filter;
+  bool m_idHasBeenSet = false;
+  bool m_lambdaFunctionArnHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

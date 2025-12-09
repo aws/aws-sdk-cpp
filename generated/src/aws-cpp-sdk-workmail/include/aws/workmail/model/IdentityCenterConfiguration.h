@@ -71,9 +71,9 @@ class IdentityCenterConfiguration {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_applicationArn;
+  bool m_instanceArnHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;
 };
 

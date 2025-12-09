@@ -308,48 +308,48 @@ class AIPromptSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_assistantArn;
-  bool m_assistantArnHasBeenSet = false;
 
   Aws::String m_aiPromptId;
-  bool m_aiPromptIdHasBeenSet = false;
 
   AIPromptType m_type{AIPromptType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_aiPromptArn;
-  bool m_aiPromptArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTime{};
-  bool m_modifiedTimeHasBeenSet = false;
 
   AIPromptTemplateType m_templateType{AIPromptTemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   AIPromptAPIFormat m_apiFormat{AIPromptAPIFormat::NOT_SET};
-  bool m_apiFormatHasBeenSet = false;
 
   VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-  bool m_visibilityStatusHasBeenSet = false;
 
   Origin m_origin{Origin::NOT_SET};
-  bool m_originHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_assistantArnHasBeenSet = false;
+  bool m_aiPromptIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_aiPromptArnHasBeenSet = false;
+  bool m_modifiedTimeHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_apiFormatHasBeenSet = false;
+  bool m_visibilityStatusHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

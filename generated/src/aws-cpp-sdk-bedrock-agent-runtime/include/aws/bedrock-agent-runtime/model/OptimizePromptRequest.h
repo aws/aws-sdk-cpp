@@ -96,12 +96,13 @@ class OptimizePromptRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   InputPrompt m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_targetModelId;
-  bool m_targetModelIdHasBeenSet = false;
   OptimizePromptHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_inputHasBeenSet = false;
+  bool m_targetModelIdHasBeenSet = false;
 };
 
 }  // namespace Model

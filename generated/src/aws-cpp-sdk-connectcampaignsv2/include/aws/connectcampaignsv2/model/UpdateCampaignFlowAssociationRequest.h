@@ -65,9 +65,9 @@ class UpdateCampaignFlowAssociationRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_connectCampaignFlowArn;
+  bool m_idHasBeenSet = false;
   bool m_connectCampaignFlowArnHasBeenSet = false;
 };
 

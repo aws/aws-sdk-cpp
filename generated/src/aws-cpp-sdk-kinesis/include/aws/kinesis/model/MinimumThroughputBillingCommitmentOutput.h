@@ -104,15 +104,15 @@ class MinimumThroughputBillingCommitmentOutput {
   ///@}
  private:
   MinimumThroughputBillingCommitmentOutputStatus m_status{MinimumThroughputBillingCommitmentOutputStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_earliestAllowedEndAt{};
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
   bool m_earliestAllowedEndAtHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class UserPoolPolicyType {
   ///@}
  private:
   PasswordPolicyType m_passwordPolicy;
-  bool m_passwordPolicyHasBeenSet = false;
 
   SignInPolicyType m_signInPolicy;
+  bool m_passwordPolicyHasBeenSet = false;
   bool m_signInPolicyHasBeenSet = false;
 };
 

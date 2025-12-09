@@ -230,33 +230,33 @@ class OrcSerDe {
   ///@}
  private:
   int m_stripeSizeBytes{0};
-  bool m_stripeSizeBytesHasBeenSet = false;
 
   int m_blockSizeBytes{0};
-  bool m_blockSizeBytesHasBeenSet = false;
 
   int m_rowIndexStride{0};
-  bool m_rowIndexStrideHasBeenSet = false;
 
   bool m_enablePadding{false};
-  bool m_enablePaddingHasBeenSet = false;
 
   double m_paddingTolerance{0.0};
-  bool m_paddingToleranceHasBeenSet = false;
 
   OrcCompression m_compression{OrcCompression::NOT_SET};
-  bool m_compressionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bloomFilterColumns;
-  bool m_bloomFilterColumnsHasBeenSet = false;
 
   double m_bloomFilterFalsePositiveProbability{0.0};
-  bool m_bloomFilterFalsePositiveProbabilityHasBeenSet = false;
 
   double m_dictionaryKeyThreshold{0.0};
-  bool m_dictionaryKeyThresholdHasBeenSet = false;
 
   OrcFormatVersion m_formatVersion{OrcFormatVersion::NOT_SET};
+  bool m_stripeSizeBytesHasBeenSet = false;
+  bool m_blockSizeBytesHasBeenSet = false;
+  bool m_rowIndexStrideHasBeenSet = false;
+  bool m_enablePaddingHasBeenSet = false;
+  bool m_paddingToleranceHasBeenSet = false;
+  bool m_compressionHasBeenSet = false;
+  bool m_bloomFilterColumnsHasBeenSet = false;
+  bool m_bloomFilterFalsePositiveProbabilityHasBeenSet = false;
+  bool m_dictionaryKeyThresholdHasBeenSet = false;
   bool m_formatVersionHasBeenSet = false;
 };
 

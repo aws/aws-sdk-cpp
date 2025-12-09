@@ -85,12 +85,12 @@ class DescribeTopicRefreshScheduleRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   Aws::String m_datasetId;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
   bool m_datasetIdHasBeenSet = false;
 };
 

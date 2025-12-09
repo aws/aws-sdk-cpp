@@ -88,12 +88,12 @@ class AnalysisParameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ParameterType m_type{ParameterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

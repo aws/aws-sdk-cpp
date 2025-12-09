@@ -63,9 +63,9 @@ class UpdateSMBFileShareVisibilityRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   bool m_fileSharesVisible{false};
+  bool m_gatewayARNHasBeenSet = false;
   bool m_fileSharesVisibleHasBeenSet = false;
 };
 

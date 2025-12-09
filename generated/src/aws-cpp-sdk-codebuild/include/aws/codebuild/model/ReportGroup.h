@@ -196,27 +196,27 @@ class ReportGroup {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ReportType m_type{ReportType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ReportExportConfig m_exportConfig;
-  bool m_exportConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ReportGroupStatusType m_status{ReportGroupStatusType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_exportConfigHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

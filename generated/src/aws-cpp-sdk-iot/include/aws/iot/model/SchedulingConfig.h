@@ -134,15 +134,15 @@ class SchedulingConfig {
   ///@}
  private:
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   JobEndBehavior m_endBehavior{JobEndBehavior::NOT_SET};
-  bool m_endBehaviorHasBeenSet = false;
 
   Aws::Vector<MaintenanceWindow> m_maintenanceWindows;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_endBehaviorHasBeenSet = false;
   bool m_maintenanceWindowsHasBeenSet = false;
 };
 

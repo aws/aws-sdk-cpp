@@ -71,9 +71,9 @@ class NodeFabricAttributes {
   ///@}
  private:
   Aws::String m_peerEndpoint;
-  bool m_peerEndpointHasBeenSet = false;
 
   Aws::String m_peerEventEndpoint;
+  bool m_peerEndpointHasBeenSet = false;
   bool m_peerEventEndpointHasBeenSet = false;
 };
 

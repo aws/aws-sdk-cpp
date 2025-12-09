@@ -174,24 +174,24 @@ class DateTimeConverter {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_targetFormat;
-  bool m_targetFormatHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchPatterns;
-  bool m_matchPatternsHasBeenSet = false;
 
   Aws::String m_sourceTimezone;
-  bool m_sourceTimezoneHasBeenSet = false;
 
   Aws::String m_targetTimezone;
-  bool m_targetTimezoneHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_targetFormatHasBeenSet = false;
+  bool m_matchPatternsHasBeenSet = false;
+  bool m_sourceTimezoneHasBeenSet = false;
+  bool m_targetTimezoneHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

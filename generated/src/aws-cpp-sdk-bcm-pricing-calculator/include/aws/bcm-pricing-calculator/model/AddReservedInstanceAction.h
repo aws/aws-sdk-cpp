@@ -70,9 +70,9 @@ class AddReservedInstanceAction {
   ///@}
  private:
   Aws::String m_reservedInstancesOfferingId;
-  bool m_reservedInstancesOfferingIdHasBeenSet = false;
 
   int m_instanceCount{0};
+  bool m_reservedInstancesOfferingIdHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
 };
 

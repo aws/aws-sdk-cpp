@@ -84,12 +84,12 @@ class ListLibraryItemsResult {
   ///@}
  private:
   Aws::Vector<LibraryItemMember> m_libraryItems;
-  bool m_libraryItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_libraryItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

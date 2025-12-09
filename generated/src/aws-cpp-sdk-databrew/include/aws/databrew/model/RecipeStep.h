@@ -79,9 +79,9 @@ class RecipeStep {
   ///@}
  private:
   RecipeAction m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<ConditionExpression> m_conditionExpressions;
+  bool m_actionHasBeenSet = false;
   bool m_conditionExpressionsHasBeenSet = false;
 };
 

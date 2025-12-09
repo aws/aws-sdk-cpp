@@ -99,12 +99,12 @@ class PutAuditEventsRequest : public CloudTrailDataRequest {
   ///@}
  private:
   Aws::Vector<AuditEvent> m_auditEvents;
-  bool m_auditEventsHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_externalId;
+  bool m_auditEventsHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
 };
 

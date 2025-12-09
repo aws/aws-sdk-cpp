@@ -71,9 +71,9 @@ class SearchResultItem {
   ///@}
  private:
   AssetListingItem m_assetListing;
-  bool m_assetListingHasBeenSet = false;
 
   DataProductListingItem m_dataProductListing;
+  bool m_assetListingHasBeenSet = false;
   bool m_dataProductListingHasBeenSet = false;
 };
 

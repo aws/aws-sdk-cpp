@@ -130,18 +130,18 @@ class BatchChannelMemberships {
   ///@}
  private:
   Identity m_invitedBy;
-  bool m_invitedByHasBeenSet = false;
 
   ChannelMembershipType m_type{ChannelMembershipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Identity> m_members;
-  bool m_membersHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_subChannelId;
+  bool m_invitedByHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_membersHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
   bool m_subChannelIdHasBeenSet = false;
 };
 

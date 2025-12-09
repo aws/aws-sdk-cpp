@@ -106,15 +106,15 @@ class TlsCertificateData {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateSerial;
-  bool m_certificateSerialHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateSerialHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

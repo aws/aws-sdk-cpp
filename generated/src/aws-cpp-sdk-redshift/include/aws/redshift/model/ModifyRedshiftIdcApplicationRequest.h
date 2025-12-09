@@ -163,21 +163,21 @@ class ModifyRedshiftIdcApplicationRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_redshiftIdcApplicationArn;
-  bool m_redshiftIdcApplicationArnHasBeenSet = false;
 
   Aws::String m_identityNamespace;
-  bool m_identityNamespaceHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_idcDisplayName;
-  bool m_idcDisplayNameHasBeenSet = false;
 
   Aws::Vector<AuthorizedTokenIssuer> m_authorizedTokenIssuerList;
-  bool m_authorizedTokenIssuerListHasBeenSet = false;
 
   Aws::Vector<ServiceIntegrationsUnion> m_serviceIntegrations;
+  bool m_redshiftIdcApplicationArnHasBeenSet = false;
+  bool m_identityNamespaceHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_idcDisplayNameHasBeenSet = false;
+  bool m_authorizedTokenIssuerListHasBeenSet = false;
   bool m_serviceIntegrationsHasBeenSet = false;
 };
 

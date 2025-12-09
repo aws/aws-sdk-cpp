@@ -104,12 +104,12 @@ class CreateKeyspaceRequest : public KeyspacesRequest {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ReplicationSpecification m_replicationSpecification;
+  bool m_keyspaceNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_replicationSpecificationHasBeenSet = false;
 };
 

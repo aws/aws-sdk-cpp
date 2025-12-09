@@ -70,9 +70,9 @@ class AutoMLProblemTypeResolvedAttributes {
   ///@}
  private:
   TabularResolvedAttributes m_tabularResolvedAttributes;
-  bool m_tabularResolvedAttributesHasBeenSet = false;
 
   TextGenerationResolvedAttributes m_textGenerationResolvedAttributes;
+  bool m_tabularResolvedAttributesHasBeenSet = false;
   bool m_textGenerationResolvedAttributesHasBeenSet = false;
 };
 

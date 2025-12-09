@@ -77,9 +77,9 @@ class PutWhatsAppBusinessAccountEventDestinationsRequest : public SocialMessagin
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<WhatsAppBusinessAccountEventDestination> m_eventDestinations;
+  bool m_idHasBeenSet = false;
   bool m_eventDestinationsHasBeenSet = false;
 };
 

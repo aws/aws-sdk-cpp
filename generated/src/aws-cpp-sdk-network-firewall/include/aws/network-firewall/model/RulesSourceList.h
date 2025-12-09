@@ -121,12 +121,12 @@ class RulesSourceList {
   ///@}
  private:
   Aws::Vector<Aws::String> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<TargetType> m_targetTypes;
-  bool m_targetTypesHasBeenSet = false;
 
   GeneratedRulesType m_generatedRulesType{GeneratedRulesType::NOT_SET};
+  bool m_targetsHasBeenSet = false;
+  bool m_targetTypesHasBeenSet = false;
   bool m_generatedRulesTypeHasBeenSet = false;
 };
 

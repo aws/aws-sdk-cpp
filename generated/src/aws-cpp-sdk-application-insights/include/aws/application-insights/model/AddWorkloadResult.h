@@ -78,12 +78,12 @@ class AddWorkloadResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   WorkloadConfiguration m_workloadConfiguration;
-  bool m_workloadConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_workloadConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

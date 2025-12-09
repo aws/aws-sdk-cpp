@@ -72,12 +72,12 @@ class GetAccountBalanceResult {
   ///@}
  private:
   Aws::String m_availableBalance;
-  bool m_availableBalanceHasBeenSet = false;
 
   Aws::String m_onHoldBalance;
-  bool m_onHoldBalanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_availableBalanceHasBeenSet = false;
+  bool m_onHoldBalanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

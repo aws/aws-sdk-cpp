@@ -71,9 +71,9 @@ class RouteVehicleSummary {
   ///@}
  private:
   RouteVehicleOverviewSummary m_overview;
-  bool m_overviewHasBeenSet = false;
 
   RouteVehicleTravelOnlySummary m_travelOnly;
+  bool m_overviewHasBeenSet = false;
   bool m_travelOnlyHasBeenSet = false;
 };
 

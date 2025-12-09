@@ -85,12 +85,12 @@ class UpdateConfigurationSetEventDestinationRequest : public PinpointSMSVoiceReq
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   EventDestinationDefinition m_eventDestination;
-  bool m_eventDestinationHasBeenSet = false;
 
   Aws::String m_eventDestinationName;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_eventDestinationHasBeenSet = false;
   bool m_eventDestinationNameHasBeenSet = false;
 };
 

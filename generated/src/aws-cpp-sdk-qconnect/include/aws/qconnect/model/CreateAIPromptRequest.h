@@ -263,39 +263,39 @@ class CreateAIPromptRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AIPromptType m_type{AIPromptType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AIPromptTemplateConfiguration m_templateConfiguration;
-  bool m_templateConfigurationHasBeenSet = false;
 
   VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
-  bool m_visibilityStatusHasBeenSet = false;
 
   AIPromptTemplateType m_templateType{AIPromptTemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   AIPromptAPIFormat m_apiFormat{AIPromptAPIFormat::NOT_SET};
-  bool m_apiFormatHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AIPromptInferenceConfiguration m_inferenceConfiguration;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_templateConfigurationHasBeenSet = false;
+  bool m_visibilityStatusHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_apiFormatHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_inferenceConfigurationHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class StepExecutionFilter {
   ///@}
  private:
   StepExecutionFilterKey m_key{StepExecutionFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_keyHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

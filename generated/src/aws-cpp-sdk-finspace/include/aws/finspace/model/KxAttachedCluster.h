@@ -93,12 +93,12 @@ class KxAttachedCluster {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   KxClusterType m_clusterType{KxClusterType::NOT_SET};
-  bool m_clusterTypeHasBeenSet = false;
 
   KxClusterStatus m_clusterStatus{KxClusterStatus::NOT_SET};
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
   bool m_clusterStatusHasBeenSet = false;
 };
 

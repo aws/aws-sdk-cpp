@@ -108,15 +108,15 @@ class StartIdMappingJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
-  bool m_outputSourceConfigHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_outputSourceConfigHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

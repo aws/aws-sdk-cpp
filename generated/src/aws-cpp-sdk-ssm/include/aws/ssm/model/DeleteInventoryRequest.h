@@ -114,15 +114,15 @@ class DeleteInventoryRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   InventorySchemaDeleteOption m_schemaDeleteOption{InventorySchemaDeleteOption::NOT_SET};
-  bool m_schemaDeleteOptionHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_typeNameHasBeenSet = false;
+  bool m_schemaDeleteOptionHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -81,9 +81,9 @@ class ExtendedKeyUsage {
   ///@}
  private:
   ExtendedKeyUsageName m_name{ExtendedKeyUsageName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_oID;
+  bool m_nameHasBeenSet = false;
   bool m_oIDHasBeenSet = false;
 };
 

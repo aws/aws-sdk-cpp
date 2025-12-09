@@ -100,15 +100,15 @@ class RouterInputProtocolConfiguration {
   ///@}
  private:
   RtpRouterInputConfiguration m_rtp;
-  bool m_rtpHasBeenSet = false;
 
   RistRouterInputConfiguration m_rist;
-  bool m_ristHasBeenSet = false;
 
   SrtListenerRouterInputConfiguration m_srtListener;
-  bool m_srtListenerHasBeenSet = false;
 
   SrtCallerRouterInputConfiguration m_srtCaller;
+  bool m_rtpHasBeenSet = false;
+  bool m_ristHasBeenSet = false;
+  bool m_srtListenerHasBeenSet = false;
   bool m_srtCallerHasBeenSet = false;
 };
 

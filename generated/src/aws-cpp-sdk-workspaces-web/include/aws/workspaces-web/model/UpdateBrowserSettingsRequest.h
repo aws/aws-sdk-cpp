@@ -111,15 +111,15 @@ class UpdateBrowserSettingsRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_browserSettingsArn;
-  bool m_browserSettingsArnHasBeenSet = false;
 
   Aws::String m_browserPolicy;
-  bool m_browserPolicyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   WebContentFilteringPolicy m_webContentFilteringPolicy;
+  bool m_browserSettingsArnHasBeenSet = false;
+  bool m_browserPolicyHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_webContentFilteringPolicyHasBeenSet = false;
 };
 

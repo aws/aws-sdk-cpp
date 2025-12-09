@@ -132,18 +132,18 @@ class CreateKeyPairRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   KeyType m_keyType{KeyType::NOT_SET};
-  bool m_keyTypeHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   KeyFormat m_keyFormat{KeyFormat::NOT_SET};
-  bool m_keyFormatHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_keyNameHasBeenSet = false;
+  bool m_keyTypeHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_keyFormatHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class DeleteDBSnapshotResult {
   ///@}
  private:
   DBSnapshot m_dBSnapshot;
-  bool m_dBSnapshotHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBSnapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

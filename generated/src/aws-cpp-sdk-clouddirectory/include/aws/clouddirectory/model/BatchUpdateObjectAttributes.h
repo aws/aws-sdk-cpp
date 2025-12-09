@@ -77,9 +77,9 @@ class BatchUpdateObjectAttributes {
   ///@}
  private:
   ObjectReference m_objectReference;
-  bool m_objectReferenceHasBeenSet = false;
 
   Aws::Vector<ObjectAttributeUpdate> m_attributeUpdates;
+  bool m_objectReferenceHasBeenSet = false;
   bool m_attributeUpdatesHasBeenSet = false;
 };
 

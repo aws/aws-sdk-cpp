@@ -94,12 +94,12 @@ class DeleteAssociationRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_associationId;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_associationIdHasBeenSet = false;
 };
 

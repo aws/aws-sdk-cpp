@@ -125,18 +125,18 @@ class PolicyGrantMember {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   PolicyGrantDetail m_detail;
-  bool m_detailHasBeenSet = false;
 
   Aws::String m_grantId;
-  bool m_grantIdHasBeenSet = false;
 
   PolicyGrantPrincipal m_principal;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_grantIdHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

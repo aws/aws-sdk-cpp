@@ -121,15 +121,15 @@ class ImageResponseCard {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_subtitle;
-  bool m_subtitleHasBeenSet = false;
 
   Aws::String m_imageUrl;
-  bool m_imageUrlHasBeenSet = false;
 
   Aws::Vector<Button> m_buttons;
+  bool m_titleHasBeenSet = false;
+  bool m_subtitleHasBeenSet = false;
+  bool m_imageUrlHasBeenSet = false;
   bool m_buttonsHasBeenSet = false;
 };
 

@@ -167,24 +167,24 @@ class RestoreJobSummary {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   RestoreJobState m_state{RestoreJobState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_regionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

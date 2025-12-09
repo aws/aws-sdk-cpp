@@ -105,15 +105,15 @@ class IndexSummary {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

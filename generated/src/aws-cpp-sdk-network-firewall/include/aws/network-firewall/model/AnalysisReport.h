@@ -112,15 +112,15 @@ class AnalysisReport {
   ///@}
  private:
   Aws::String m_analysisReportId;
-  bool m_analysisReportIdHasBeenSet = false;
 
   EnabledAnalysisType m_analysisType{EnabledAnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportTime{};
-  bool m_reportTimeHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_analysisReportIdHasBeenSet = false;
+  bool m_analysisTypeHasBeenSet = false;
+  bool m_reportTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

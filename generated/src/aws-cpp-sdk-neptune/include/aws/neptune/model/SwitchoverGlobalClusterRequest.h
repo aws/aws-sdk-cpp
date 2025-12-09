@@ -72,9 +72,9 @@ class SwitchoverGlobalClusterRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::String m_targetDbClusterIdentifier;
+  bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_targetDbClusterIdentifierHasBeenSet = false;
 };
 

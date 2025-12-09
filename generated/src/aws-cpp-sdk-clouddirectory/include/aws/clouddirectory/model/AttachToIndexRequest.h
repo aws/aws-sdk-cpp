@@ -87,12 +87,12 @@ class AttachToIndexRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   ObjectReference m_indexReference;
-  bool m_indexReferenceHasBeenSet = false;
 
   ObjectReference m_targetReference;
+  bool m_directoryArnHasBeenSet = false;
+  bool m_indexReferenceHasBeenSet = false;
   bool m_targetReferenceHasBeenSet = false;
 };
 

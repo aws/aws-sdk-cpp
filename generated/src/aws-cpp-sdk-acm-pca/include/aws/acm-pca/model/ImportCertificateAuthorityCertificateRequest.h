@@ -97,12 +97,12 @@ class ImportCertificateAuthorityCertificateRequest : public ACMPCARequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_certificate{};
-  bool m_certificateHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_certificateChain{};
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
   bool m_certificateChainHasBeenSet = false;
 };
 

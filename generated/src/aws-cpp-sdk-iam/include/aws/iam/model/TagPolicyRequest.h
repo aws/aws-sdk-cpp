@@ -82,9 +82,9 @@ class TagPolicyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_policyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

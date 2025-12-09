@@ -85,12 +85,12 @@ class ListNetworkSettingsResult {
   ///@}
  private:
   Aws::Vector<NetworkSettingsSummary> m_networkSettings;
-  bool m_networkSettingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkSettingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

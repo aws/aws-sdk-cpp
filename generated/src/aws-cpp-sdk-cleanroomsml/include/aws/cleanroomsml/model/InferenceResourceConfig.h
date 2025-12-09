@@ -65,9 +65,9 @@ class InferenceResourceConfig {
   ///@}
  private:
   InferenceInstanceType m_instanceType{InferenceInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
+  bool m_instanceTypeHasBeenSet = false;
   bool m_instanceCountHasBeenSet = false;
 };
 

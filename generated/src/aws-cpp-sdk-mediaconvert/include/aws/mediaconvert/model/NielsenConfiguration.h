@@ -71,9 +71,9 @@ class NielsenConfiguration {
   ///@}
  private:
   int m_breakoutCode{0};
-  bool m_breakoutCodeHasBeenSet = false;
 
   Aws::String m_distributorId;
+  bool m_breakoutCodeHasBeenSet = false;
   bool m_distributorIdHasBeenSet = false;
 };
 

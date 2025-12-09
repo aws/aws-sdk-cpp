@@ -119,15 +119,15 @@ class UpdateUserPoolDomainRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   int m_managedLoginVersion{0};
-  bool m_managedLoginVersionHasBeenSet = false;
 
   CustomDomainConfigType m_customDomainConfig;
+  bool m_domainHasBeenSet = false;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_managedLoginVersionHasBeenSet = false;
   bool m_customDomainConfigHasBeenSet = false;
 };
 

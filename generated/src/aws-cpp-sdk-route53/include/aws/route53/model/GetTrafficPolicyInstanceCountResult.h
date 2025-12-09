@@ -65,9 +65,9 @@ class GetTrafficPolicyInstanceCountResult {
   ///@}
  private:
   int m_trafficPolicyInstanceCount{0};
-  bool m_trafficPolicyInstanceCountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficPolicyInstanceCountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

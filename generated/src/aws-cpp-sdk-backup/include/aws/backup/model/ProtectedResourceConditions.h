@@ -84,9 +84,9 @@ class ProtectedResourceConditions {
   ///@}
  private:
   Aws::Vector<KeyValue> m_stringEquals;
-  bool m_stringEqualsHasBeenSet = false;
 
   Aws::Vector<KeyValue> m_stringNotEquals;
+  bool m_stringEqualsHasBeenSet = false;
   bool m_stringNotEqualsHasBeenSet = false;
 };
 

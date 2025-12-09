@@ -79,9 +79,9 @@ class DeregisterNamespaceRequest : public RedshiftRequest {
   ///@}
  private:
   NamespaceIdentifierUnion m_namespaceIdentifier;
-  bool m_namespaceIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_consumerIdentifiers;
+  bool m_namespaceIdentifierHasBeenSet = false;
   bool m_consumerIdentifiersHasBeenSet = false;
 };
 

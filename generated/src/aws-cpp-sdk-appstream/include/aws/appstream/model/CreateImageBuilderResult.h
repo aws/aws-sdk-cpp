@@ -60,9 +60,9 @@ class CreateImageBuilderResult {
   ///@}
  private:
   ImageBuilder m_imageBuilder;
-  bool m_imageBuilderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageBuilderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

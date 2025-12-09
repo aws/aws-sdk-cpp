@@ -66,9 +66,9 @@ class CisSecurityLevelFilter {
   ///@}
  private:
   CisSecurityLevelComparison m_comparison{CisSecurityLevelComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   CisSecurityLevel m_value{CisSecurityLevel::NOT_SET};
+  bool m_comparisonHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

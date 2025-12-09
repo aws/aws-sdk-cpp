@@ -127,18 +127,18 @@ class UpdateThingRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   AttributePayload m_attributePayload;
-  bool m_attributePayloadHasBeenSet = false;
 
   long long m_expectedVersion{0};
-  bool m_expectedVersionHasBeenSet = false;
 
   bool m_removeThingType{false};
+  bool m_thingNameHasBeenSet = false;
+  bool m_thingTypeNameHasBeenSet = false;
+  bool m_attributePayloadHasBeenSet = false;
+  bool m_expectedVersionHasBeenSet = false;
   bool m_removeThingTypeHasBeenSet = false;
 };
 

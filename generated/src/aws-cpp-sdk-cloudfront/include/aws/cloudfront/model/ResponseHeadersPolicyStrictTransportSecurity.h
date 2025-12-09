@@ -106,15 +106,15 @@ class ResponseHeadersPolicyStrictTransportSecurity {
   ///@}
  private:
   bool m_override{false};
-  bool m_overrideHasBeenSet = false;
 
   bool m_includeSubdomains{false};
-  bool m_includeSubdomainsHasBeenSet = false;
 
   bool m_preload{false};
-  bool m_preloadHasBeenSet = false;
 
   int m_accessControlMaxAgeSec{0};
+  bool m_overrideHasBeenSet = false;
+  bool m_includeSubdomainsHasBeenSet = false;
+  bool m_preloadHasBeenSet = false;
   bool m_accessControlMaxAgeSecHasBeenSet = false;
 };
 

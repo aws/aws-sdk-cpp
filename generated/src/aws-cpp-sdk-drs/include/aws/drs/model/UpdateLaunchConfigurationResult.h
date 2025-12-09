@@ -211,36 +211,36 @@ class UpdateLaunchConfigurationResult {
   ///@}
  private:
   bool m_copyPrivateIp{false};
-  bool m_copyPrivateIpHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::String m_ec2LaunchTemplateID;
-  bool m_ec2LaunchTemplateIDHasBeenSet = false;
 
   LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
-  bool m_launchDispositionHasBeenSet = false;
 
   LaunchIntoInstanceProperties m_launchIntoInstanceProperties;
-  bool m_launchIntoInstancePropertiesHasBeenSet = false;
 
   Licensing m_licensing;
-  bool m_licensingHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_postLaunchEnabled{false};
-  bool m_postLaunchEnabledHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
-  bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copyPrivateIpHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_ec2LaunchTemplateIDHasBeenSet = false;
+  bool m_launchDispositionHasBeenSet = false;
+  bool m_launchIntoInstancePropertiesHasBeenSet = false;
+  bool m_licensingHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_postLaunchEnabledHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
+  bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

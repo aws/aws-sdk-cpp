@@ -75,12 +75,12 @@ class CreateFlowResult {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   FlowStatus m_flowStatus{FlowStatus::NOT_SET};
-  bool m_flowStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowArnHasBeenSet = false;
+  bool m_flowStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

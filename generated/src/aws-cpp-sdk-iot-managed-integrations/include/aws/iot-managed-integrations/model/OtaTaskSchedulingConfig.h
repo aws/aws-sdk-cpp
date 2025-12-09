@@ -113,15 +113,15 @@ class OtaTaskSchedulingConfig {
   ///@}
  private:
   SchedulingConfigEndBehavior m_endBehavior{SchedulingConfigEndBehavior::NOT_SET};
-  bool m_endBehaviorHasBeenSet = false;
 
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<ScheduleMaintenanceWindow> m_maintenanceWindows;
-  bool m_maintenanceWindowsHasBeenSet = false;
 
   Aws::String m_startTime;
+  bool m_endBehaviorHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_maintenanceWindowsHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

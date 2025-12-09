@@ -140,21 +140,21 @@ class Group {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EntityState m_state{EntityState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_enabledDate{};
-  bool m_enabledDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_disabledDate{};
+  bool m_idHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_enabledDateHasBeenSet = false;
   bool m_disabledDateHasBeenSet = false;
 };
 

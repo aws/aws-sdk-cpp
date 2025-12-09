@@ -75,9 +75,9 @@ class ProjectsForRule {
   ///@}
  private:
   RuleScopeSelectionMode m_selectionMode{RuleScopeSelectionMode::NOT_SET};
-  bool m_selectionModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_specificProjects;
+  bool m_selectionModeHasBeenSet = false;
   bool m_specificProjectsHasBeenSet = false;
 };
 

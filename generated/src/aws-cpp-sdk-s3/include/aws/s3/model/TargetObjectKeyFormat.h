@@ -71,9 +71,9 @@ class TargetObjectKeyFormat {
   ///@}
  private:
   SimplePrefix m_simplePrefix;
-  bool m_simplePrefixHasBeenSet = false;
 
   PartitionedPrefix m_partitionedPrefix;
+  bool m_simplePrefixHasBeenSet = false;
   bool m_partitionedPrefixHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class DatasetParameter {
   ///@}
  private:
   StringDatasetParameter m_stringDatasetParameter;
-  bool m_stringDatasetParameterHasBeenSet = false;
 
   DecimalDatasetParameter m_decimalDatasetParameter;
-  bool m_decimalDatasetParameterHasBeenSet = false;
 
   IntegerDatasetParameter m_integerDatasetParameter;
-  bool m_integerDatasetParameterHasBeenSet = false;
 
   DateTimeDatasetParameter m_dateTimeDatasetParameter;
+  bool m_stringDatasetParameterHasBeenSet = false;
+  bool m_decimalDatasetParameterHasBeenSet = false;
+  bool m_integerDatasetParameterHasBeenSet = false;
   bool m_dateTimeDatasetParameterHasBeenSet = false;
 };
 

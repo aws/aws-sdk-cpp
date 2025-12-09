@@ -142,21 +142,21 @@ class InvoiceProfile {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_receiverName;
-  bool m_receiverNameHasBeenSet = false;
 
   ReceiverAddress m_receiverAddress;
-  bool m_receiverAddressHasBeenSet = false;
 
   Aws::String m_receiverEmail;
-  bool m_receiverEmailHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_taxRegistrationNumber;
+  bool m_accountIdHasBeenSet = false;
+  bool m_receiverNameHasBeenSet = false;
+  bool m_receiverAddressHasBeenSet = false;
+  bool m_receiverEmailHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
   bool m_taxRegistrationNumberHasBeenSet = false;
 };
 

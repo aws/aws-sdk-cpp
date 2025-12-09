@@ -341,45 +341,45 @@ class CreateJobRequest : public MediaConvertRequest {
   ///@}
  private:
   AccelerationSettings m_accelerationSettings;
-  bool m_accelerationSettingsHasBeenSet = false;
 
   BillingTagsSource m_billingTagsSource{BillingTagsSource::NOT_SET};
-  bool m_billingTagsSourceHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<HopDestination> m_hopDestinations;
-  bool m_hopDestinationsHasBeenSet = false;
 
   Aws::String m_jobEngineVersion;
-  bool m_jobEngineVersionHasBeenSet = false;
 
   Aws::String m_jobTemplate;
-  bool m_jobTemplateHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_queue;
-  bool m_queueHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   JobSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   SimulateReservedQueue m_simulateReservedQueue{SimulateReservedQueue::NOT_SET};
-  bool m_simulateReservedQueueHasBeenSet = false;
 
   StatusUpdateInterval m_statusUpdateInterval{StatusUpdateInterval::NOT_SET};
-  bool m_statusUpdateIntervalHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_userMetadata;
+  bool m_accelerationSettingsHasBeenSet = false;
+  bool m_billingTagsSourceHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_hopDestinationsHasBeenSet = false;
+  bool m_jobEngineVersionHasBeenSet = false;
+  bool m_jobTemplateHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_queueHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_simulateReservedQueueHasBeenSet = false;
+  bool m_statusUpdateIntervalHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_userMetadataHasBeenSet = false;
 };
 

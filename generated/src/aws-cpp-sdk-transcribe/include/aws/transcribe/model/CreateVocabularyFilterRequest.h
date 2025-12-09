@@ -193,21 +193,21 @@ class CreateVocabularyFilterRequest : public TranscribeServiceRequest {
   ///@}
  private:
   Aws::String m_vocabularyFilterName;
-  bool m_vocabularyFilterNameHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_words;
-  bool m_wordsHasBeenSet = false;
 
   Aws::String m_vocabularyFilterFileUri;
-  bool m_vocabularyFilterFileUriHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
+  bool m_vocabularyFilterNameHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_wordsHasBeenSet = false;
+  bool m_vocabularyFilterFileUriHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_dataAccessRoleArnHasBeenSet = false;
 };
 

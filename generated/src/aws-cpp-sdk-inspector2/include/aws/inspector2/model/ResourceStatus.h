@@ -115,18 +115,18 @@ class ResourceStatus {
   ///@}
  private:
   Status m_ec2{Status::NOT_SET};
-  bool m_ec2HasBeenSet = false;
 
   Status m_ecr{Status::NOT_SET};
-  bool m_ecrHasBeenSet = false;
 
   Status m_lambda{Status::NOT_SET};
-  bool m_lambdaHasBeenSet = false;
 
   Status m_lambdaCode{Status::NOT_SET};
-  bool m_lambdaCodeHasBeenSet = false;
 
   Status m_codeRepository{Status::NOT_SET};
+  bool m_ec2HasBeenSet = false;
+  bool m_ecrHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_lambdaCodeHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
 };
 

@@ -174,27 +174,27 @@ class Placement {
   ///@}
  private:
   Aws::String m_affinity;
-  bool m_affinityHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   Aws::String m_hostResourceGroupArn;
-  bool m_hostResourceGroupArnHasBeenSet = false;
 
   int m_partitionNumber{0};
-  bool m_partitionNumberHasBeenSet = false;
 
   TenancyEnum m_tenancy{TenancyEnum::NOT_SET};
+  bool m_affinityHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_hostIdHasBeenSet = false;
+  bool m_hostResourceGroupArnHasBeenSet = false;
+  bool m_partitionNumberHasBeenSet = false;
   bool m_tenancyHasBeenSet = false;
 };
 

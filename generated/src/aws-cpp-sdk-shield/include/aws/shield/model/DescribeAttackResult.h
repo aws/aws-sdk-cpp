@@ -60,9 +60,9 @@ class DescribeAttackResult {
   ///@}
  private:
   AttackDetail m_attack;
-  bool m_attackHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attackHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

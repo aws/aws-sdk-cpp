@@ -115,12 +115,12 @@ class SubtitlesOutput {
   ///@}
  private:
   Aws::Vector<SubtitleFormat> m_formats;
-  bool m_formatsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subtitleFileUris;
-  bool m_subtitleFileUrisHasBeenSet = false;
 
   int m_outputStartIndex{0};
+  bool m_formatsHasBeenSet = false;
+  bool m_subtitleFileUrisHasBeenSet = false;
   bool m_outputStartIndexHasBeenSet = false;
 };
 

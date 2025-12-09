@@ -78,9 +78,9 @@ class AutocompleteHighlights {
   ///@}
  private:
   Aws::Vector<Highlight> m_title;
-  bool m_titleHasBeenSet = false;
 
   AutocompleteAddressHighlights m_address;
+  bool m_titleHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

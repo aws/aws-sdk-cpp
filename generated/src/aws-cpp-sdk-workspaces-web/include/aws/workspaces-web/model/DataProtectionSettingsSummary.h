@@ -105,15 +105,15 @@ class DataProtectionSettingsSummary {
   ///@}
  private:
   Aws::String m_dataProtectionSettingsArn;
-  bool m_dataProtectionSettingsArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_dataProtectionSettingsArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

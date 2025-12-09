@@ -131,18 +131,18 @@ class GetStatementResultResult {
   ///@}
  private:
   Aws::Vector<Aws::Vector<Field>> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::Vector<ColumnMetadata> m_columnMetadata;
-  bool m_columnMetadataHasBeenSet = false;
 
   long long m_totalNumRows{0};
-  bool m_totalNumRowsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
+  bool m_columnMetadataHasBeenSet = false;
+  bool m_totalNumRowsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

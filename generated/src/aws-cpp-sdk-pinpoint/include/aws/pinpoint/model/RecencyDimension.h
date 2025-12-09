@@ -70,9 +70,9 @@ class RecencyDimension {
   ///@}
  private:
   Duration m_duration{Duration::NOT_SET};
-  bool m_durationHasBeenSet = false;
 
   RecencyType m_recencyType{RecencyType::NOT_SET};
+  bool m_durationHasBeenSet = false;
   bool m_recencyTypeHasBeenSet = false;
 };
 

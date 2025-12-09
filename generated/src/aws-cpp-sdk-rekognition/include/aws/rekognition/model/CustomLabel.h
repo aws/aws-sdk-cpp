@@ -89,12 +89,12 @@ class CustomLabel {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Geometry m_geometry;
+  bool m_nameHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
   bool m_geometryHasBeenSet = false;
 };
 

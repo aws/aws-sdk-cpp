@@ -125,18 +125,18 @@ class TemplateConfiguration {
   ///@}
  private:
   Template m_emailTemplate;
-  bool m_emailTemplateHasBeenSet = false;
 
   Template m_pushTemplate;
-  bool m_pushTemplateHasBeenSet = false;
 
   Template m_sMSTemplate;
-  bool m_sMSTemplateHasBeenSet = false;
 
   Template m_voiceTemplate;
-  bool m_voiceTemplateHasBeenSet = false;
 
   Template m_inAppTemplate;
+  bool m_emailTemplateHasBeenSet = false;
+  bool m_pushTemplateHasBeenSet = false;
+  bool m_sMSTemplateHasBeenSet = false;
+  bool m_voiceTemplateHasBeenSet = false;
   bool m_inAppTemplateHasBeenSet = false;
 };
 

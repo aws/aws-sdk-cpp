@@ -90,12 +90,12 @@ class BlacklistEntry {
   ///@}
  private:
   Aws::String m_rblName;
-  bool m_rblNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_listingTime{};
-  bool m_listingTimeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_rblNameHasBeenSet = false;
+  bool m_listingTimeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

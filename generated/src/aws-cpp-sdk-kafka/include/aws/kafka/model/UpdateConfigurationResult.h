@@ -82,12 +82,12 @@ class UpdateConfigurationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ConfigurationRevision m_latestRevision;
-  bool m_latestRevisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_latestRevisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

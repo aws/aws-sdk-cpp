@@ -422,66 +422,66 @@ class CreateAssetResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_externalIdentifier;
-  bool m_externalIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstRevisionCreatedAt{};
-  bool m_firstRevisionCreatedAtHasBeenSet = false;
 
   Aws::String m_firstRevisionCreatedBy;
-  bool m_firstRevisionCreatedByHasBeenSet = false;
 
   Aws::Vector<FormOutput> m_formsOutput;
-  bool m_formsOutputHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_governedGlossaryTerms;
-  bool m_governedGlossaryTermsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<TimeSeriesDataPointSummaryFormOutput> m_latestTimeSeriesDataPointFormsOutput;
-  bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
 
   AssetListingDetails m_listing;
-  bool m_listingHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owningProjectId;
-  bool m_owningProjectIdHasBeenSet = false;
 
   PredictionConfiguration m_predictionConfiguration;
-  bool m_predictionConfigurationHasBeenSet = false;
 
   Aws::Vector<FormOutput> m_readOnlyFormsOutput;
-  bool m_readOnlyFormsOutputHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_typeIdentifier;
-  bool m_typeIdentifierHasBeenSet = false;
 
   Aws::String m_typeRevision;
-  bool m_typeRevisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_externalIdentifierHasBeenSet = false;
+  bool m_firstRevisionCreatedAtHasBeenSet = false;
+  bool m_firstRevisionCreatedByHasBeenSet = false;
+  bool m_formsOutputHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_governedGlossaryTermsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_latestTimeSeriesDataPointFormsOutputHasBeenSet = false;
+  bool m_listingHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_predictionConfigurationHasBeenSet = false;
+  bool m_readOnlyFormsOutputHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_typeIdentifierHasBeenSet = false;
+  bool m_typeRevisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

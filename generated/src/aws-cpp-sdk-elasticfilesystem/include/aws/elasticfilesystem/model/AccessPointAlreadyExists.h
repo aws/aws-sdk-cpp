@@ -82,12 +82,12 @@ class AccessPointAlreadyExists {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_accessPointId;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_accessPointIdHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class DeletePushNotificationRegistrationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_contactId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
 };
 

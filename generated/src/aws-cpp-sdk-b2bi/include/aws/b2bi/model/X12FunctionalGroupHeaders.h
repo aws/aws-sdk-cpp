@@ -89,12 +89,12 @@ class X12FunctionalGroupHeaders {
   ///@}
  private:
   Aws::String m_applicationSenderCode;
-  bool m_applicationSenderCodeHasBeenSet = false;
 
   Aws::String m_applicationReceiverCode;
-  bool m_applicationReceiverCodeHasBeenSet = false;
 
   Aws::String m_responsibleAgencyCode;
+  bool m_applicationSenderCodeHasBeenSet = false;
+  bool m_applicationReceiverCodeHasBeenSet = false;
   bool m_responsibleAgencyCodeHasBeenSet = false;
 };
 

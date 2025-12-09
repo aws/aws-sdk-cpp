@@ -92,15 +92,15 @@ class DeleteDataRepositoryAssociationResult {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   DataRepositoryLifecycle m_lifecycle{DataRepositoryLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   bool m_deleteDataInFileSystem{false};
-  bool m_deleteDataInFileSystemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associationIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_deleteDataInFileSystemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

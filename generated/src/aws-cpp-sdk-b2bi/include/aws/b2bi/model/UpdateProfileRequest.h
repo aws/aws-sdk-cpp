@@ -121,18 +121,18 @@ class UpdateProfileRequest : public B2BIRequest {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::String m_phone;
-  bool m_phoneHasBeenSet = false;
 
   Aws::String m_businessName;
+  bool m_profileIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_phoneHasBeenSet = false;
   bool m_businessNameHasBeenSet = false;
 };
 

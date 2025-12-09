@@ -83,9 +83,9 @@ class FilterExpression {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_valuesMap;
+  bool m_expressionHasBeenSet = false;
   bool m_valuesMapHasBeenSet = false;
 };
 

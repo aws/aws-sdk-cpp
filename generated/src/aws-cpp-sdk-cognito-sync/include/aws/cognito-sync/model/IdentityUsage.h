@@ -121,18 +121,18 @@ class IdentityUsage {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   int m_datasetCount{0};
-  bool m_datasetCountHasBeenSet = false;
 
   long long m_dataStorage{0};
+  bool m_identityIdHasBeenSet = false;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_datasetCountHasBeenSet = false;
   bool m_dataStorageHasBeenSet = false;
 };
 

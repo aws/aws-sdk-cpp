@@ -163,24 +163,24 @@ class BotSummary {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   BotStatus m_botStatus{BotStatus::NOT_SET};
-  bool m_botStatusHasBeenSet = false;
 
   Aws::String m_latestBotVersion;
-  bool m_latestBotVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   BotType m_botType{BotType::NOT_SET};
+  bool m_botIdHasBeenSet = false;
+  bool m_botNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_botStatusHasBeenSet = false;
+  bool m_latestBotVersionHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
   bool m_botTypeHasBeenSet = false;
 };
 

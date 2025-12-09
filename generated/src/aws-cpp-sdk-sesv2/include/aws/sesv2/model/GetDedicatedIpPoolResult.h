@@ -66,9 +66,9 @@ class GetDedicatedIpPoolResult {
   ///@}
  private:
   DedicatedIpPool m_dedicatedIpPool;
-  bool m_dedicatedIpPoolHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dedicatedIpPoolHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

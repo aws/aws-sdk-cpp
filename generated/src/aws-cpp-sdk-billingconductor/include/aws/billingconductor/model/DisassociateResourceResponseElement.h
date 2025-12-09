@@ -71,9 +71,9 @@ class DisassociateResourceResponseElement {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AssociateResourceError m_error;
+  bool m_arnHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

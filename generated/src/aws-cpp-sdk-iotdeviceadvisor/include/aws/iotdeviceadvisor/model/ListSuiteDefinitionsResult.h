@@ -87,12 +87,12 @@ class ListSuiteDefinitionsResult {
   ///@}
  private:
   Aws::Vector<SuiteDefinitionInformation> m_suiteDefinitionInformationList;
-  bool m_suiteDefinitionInformationListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suiteDefinitionInformationListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

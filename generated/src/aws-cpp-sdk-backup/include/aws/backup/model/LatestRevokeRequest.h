@@ -123,18 +123,18 @@ class LatestRevokeRequest {
   ///@}
  private:
   Aws::String m_mpaSessionArn;
-  bool m_mpaSessionArnHasBeenSet = false;
 
   MpaRevokeSessionStatus m_status{MpaRevokeSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationDate{};
-  bool m_initiationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryDate{};
+  bool m_mpaSessionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_initiationDateHasBeenSet = false;
   bool m_expiryDateHasBeenSet = false;
 };
 

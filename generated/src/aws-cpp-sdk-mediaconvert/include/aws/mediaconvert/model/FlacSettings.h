@@ -81,12 +81,12 @@ class FlacSettings {
   ///@}
  private:
   int m_bitDepth{0};
-  bool m_bitDepthHasBeenSet = false;
 
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   int m_sampleRate{0};
+  bool m_bitDepthHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
 };
 

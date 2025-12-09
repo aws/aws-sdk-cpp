@@ -74,9 +74,9 @@ class ObjectLambdaAccessPointAlias {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   ObjectLambdaAccessPointAliasStatus m_status{ObjectLambdaAccessPointAliasStatus::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class GetSampledRequestsRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_webAclId;
-  bool m_webAclIdHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   TimeWindow m_timeWindow;
-  bool m_timeWindowHasBeenSet = false;
 
   long long m_maxItems{0};
+  bool m_webAclIdHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_timeWindowHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

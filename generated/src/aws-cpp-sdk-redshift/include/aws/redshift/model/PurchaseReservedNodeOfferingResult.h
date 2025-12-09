@@ -58,9 +58,9 @@ class PurchaseReservedNodeOfferingResult {
   ///@}
  private:
   ReservedNode m_reservedNode;
-  bool m_reservedNodeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservedNodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

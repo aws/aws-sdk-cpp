@@ -60,9 +60,9 @@ class GetBucketAbacResult {
   ///@}
  private:
   AbacStatus m_abacStatus;
-  bool m_abacStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_abacStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

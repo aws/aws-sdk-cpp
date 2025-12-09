@@ -72,9 +72,9 @@ class GaugeChartConditionalFormattingOption {
   ///@}
  private:
   GaugeChartPrimaryValueConditionalFormatting m_primaryValue;
-  bool m_primaryValueHasBeenSet = false;
 
   GaugeChartArcConditionalFormatting m_arc;
+  bool m_primaryValueHasBeenSet = false;
   bool m_arcHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class GetRateBasedStatementManagedKeysRequest : public WAFV2Request {
   ///@}
  private:
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_webACLName;
-  bool m_webACLNameHasBeenSet = false;
 
   Aws::String m_webACLId;
-  bool m_webACLIdHasBeenSet = false;
 
   Aws::String m_ruleGroupRuleName;
-  bool m_ruleGroupRuleNameHasBeenSet = false;
 
   Aws::String m_ruleName;
+  bool m_scopeHasBeenSet = false;
+  bool m_webACLNameHasBeenSet = false;
+  bool m_webACLIdHasBeenSet = false;
+  bool m_ruleGroupRuleNameHasBeenSet = false;
   bool m_ruleNameHasBeenSet = false;
 };
 

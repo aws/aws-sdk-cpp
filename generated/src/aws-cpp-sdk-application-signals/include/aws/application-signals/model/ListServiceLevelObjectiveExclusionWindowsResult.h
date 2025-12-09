@@ -87,12 +87,12 @@ class ListServiceLevelObjectiveExclusionWindowsResult {
   ///@}
  private:
   Aws::Vector<ExclusionWindow> m_exclusionWindows;
-  bool m_exclusionWindowsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exclusionWindowsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

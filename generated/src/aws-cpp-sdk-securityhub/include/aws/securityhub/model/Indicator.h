@@ -124,15 +124,15 @@ class Indicator {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

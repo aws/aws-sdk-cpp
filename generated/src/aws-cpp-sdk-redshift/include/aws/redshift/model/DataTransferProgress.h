@@ -136,21 +136,21 @@ class DataTransferProgress {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   double m_currentRateInMegaBytesPerSecond{0.0};
-  bool m_currentRateInMegaBytesPerSecondHasBeenSet = false;
 
   long long m_totalDataInMegaBytes{0};
-  bool m_totalDataInMegaBytesHasBeenSet = false;
 
   long long m_dataTransferredInMegaBytes{0};
-  bool m_dataTransferredInMegaBytesHasBeenSet = false;
 
   long long m_estimatedTimeToCompletionInSeconds{0};
-  bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
 
   long long m_elapsedTimeInSeconds{0};
+  bool m_statusHasBeenSet = false;
+  bool m_currentRateInMegaBytesPerSecondHasBeenSet = false;
+  bool m_totalDataInMegaBytesHasBeenSet = false;
+  bool m_dataTransferredInMegaBytesHasBeenSet = false;
+  bool m_estimatedTimeToCompletionInSecondsHasBeenSet = false;
   bool m_elapsedTimeInSecondsHasBeenSet = false;
 };
 

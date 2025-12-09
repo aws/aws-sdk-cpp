@@ -210,33 +210,33 @@ class GetBenefitResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_programs;
-  bool m_programsHasBeenSet = false;
 
   Aws::Vector<FulfillmentType> m_fulfillmentTypes;
-  bool m_fulfillmentTypesHasBeenSet = false;
 
   Aws::Utils::Document m_benefitRequestSchema;
-  bool m_benefitRequestSchemaHasBeenSet = false;
 
   BenefitStatus m_status{BenefitStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_programsHasBeenSet = false;
+  bool m_fulfillmentTypesHasBeenSet = false;
+  bool m_benefitRequestSchemaHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

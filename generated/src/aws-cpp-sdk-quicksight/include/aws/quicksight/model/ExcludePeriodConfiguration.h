@@ -84,12 +84,12 @@ class ExcludePeriodConfiguration {
   ///@}
  private:
   int m_amount{0};
-  bool m_amountHasBeenSet = false;
 
   TimeGranularity m_granularity{TimeGranularity::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   WidgetStatus m_status{WidgetStatus::NOT_SET};
+  bool m_amountHasBeenSet = false;
+  bool m_granularityHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class FailoverConfig {
   ///@}
  private:
   FailoverMode m_failoverMode{FailoverMode::NOT_SET};
-  bool m_failoverModeHasBeenSet = false;
 
   int m_recoveryWindow{0};
-  bool m_recoveryWindowHasBeenSet = false;
 
   SourcePriority m_sourcePriority;
-  bool m_sourcePriorityHasBeenSet = false;
 
   State m_state{State::NOT_SET};
+  bool m_failoverModeHasBeenSet = false;
+  bool m_recoveryWindowHasBeenSet = false;
+  bool m_sourcePriorityHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ExceedsLimitException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_quotaName;
-  bool m_quotaNameHasBeenSet = false;
 
   int m_quotaValue{0};
+  bool m_messageHasBeenSet = false;
+  bool m_quotaNameHasBeenSet = false;
   bool m_quotaValueHasBeenSet = false;
 };
 

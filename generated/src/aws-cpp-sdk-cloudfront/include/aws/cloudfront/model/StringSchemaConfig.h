@@ -84,12 +84,12 @@ class StringSchemaConfig {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   bool m_required{false};
+  bool m_commentHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
 };
 

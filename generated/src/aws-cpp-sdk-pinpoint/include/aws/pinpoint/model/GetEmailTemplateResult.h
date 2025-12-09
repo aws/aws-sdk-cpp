@@ -58,9 +58,9 @@ class GetEmailTemplateResult {
   ///@}
  private:
   EmailTemplateResponse m_emailTemplateResponse;
-  bool m_emailTemplateResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emailTemplateResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -113,12 +113,12 @@ class AnalyticsIntentStageResult {
   ///@}
  private:
   Aws::Vector<AnalyticsBinKey> m_binKeys;
-  bool m_binKeysHasBeenSet = false;
 
   Aws::Vector<AnalyticsIntentStageGroupByKey> m_groupByKeys;
-  bool m_groupByKeysHasBeenSet = false;
 
   Aws::Vector<AnalyticsIntentStageMetricResult> m_metricsResults;
+  bool m_binKeysHasBeenSet = false;
+  bool m_groupByKeysHasBeenSet = false;
   bool m_metricsResultsHasBeenSet = false;
 };
 

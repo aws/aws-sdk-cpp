@@ -69,9 +69,9 @@ class AwsIamConfig {
   ///@}
  private:
   Aws::String m_signingRegion;
-  bool m_signingRegionHasBeenSet = false;
 
   Aws::String m_signingServiceName;
+  bool m_signingRegionHasBeenSet = false;
   bool m_signingServiceNameHasBeenSet = false;
 };
 

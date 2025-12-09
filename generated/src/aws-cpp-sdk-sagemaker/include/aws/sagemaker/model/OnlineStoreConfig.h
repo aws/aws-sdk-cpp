@@ -118,15 +118,15 @@ class OnlineStoreConfig {
   ///@}
  private:
   OnlineStoreSecurityConfig m_securityConfig;
-  bool m_securityConfigHasBeenSet = false;
 
   bool m_enableOnlineStore{false};
-  bool m_enableOnlineStoreHasBeenSet = false;
 
   TtlDuration m_ttlDuration;
-  bool m_ttlDurationHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
+  bool m_securityConfigHasBeenSet = false;
+  bool m_enableOnlineStoreHasBeenSet = false;
+  bool m_ttlDurationHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
 };
 

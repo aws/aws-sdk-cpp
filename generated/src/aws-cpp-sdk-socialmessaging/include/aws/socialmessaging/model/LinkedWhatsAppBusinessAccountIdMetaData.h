@@ -114,15 +114,15 @@ class LinkedWhatsAppBusinessAccountIdMetaData {
   ///@}
  private:
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusHasBeenSet = false;
 
   Aws::Vector<WhatsAppPhoneNumberDetail> m_unregisteredWhatsAppPhoneNumbers;
-  bool m_unregisteredWhatsAppPhoneNumbersHasBeenSet = false;
 
   Aws::String m_wabaId;
+  bool m_accountNameHasBeenSet = false;
+  bool m_registrationStatusHasBeenSet = false;
+  bool m_unregisteredWhatsAppPhoneNumbersHasBeenSet = false;
   bool m_wabaIdHasBeenSet = false;
 };
 

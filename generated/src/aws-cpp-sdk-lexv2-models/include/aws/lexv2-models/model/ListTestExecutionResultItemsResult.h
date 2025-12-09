@@ -81,12 +81,12 @@ class ListTestExecutionResultItemsResult {
   ///@}
  private:
   TestExecutionResultItems m_testExecutionResults;
-  bool m_testExecutionResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testExecutionResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

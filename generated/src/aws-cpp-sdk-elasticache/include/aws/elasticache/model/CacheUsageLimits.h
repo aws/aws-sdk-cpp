@@ -70,9 +70,9 @@ class CacheUsageLimits {
   ///@}
  private:
   DataStorage m_dataStorage;
-  bool m_dataStorageHasBeenSet = false;
 
   ECPUPerSecond m_eCPUPerSecond;
+  bool m_dataStorageHasBeenSet = false;
   bool m_eCPUPerSecondHasBeenSet = false;
 };
 

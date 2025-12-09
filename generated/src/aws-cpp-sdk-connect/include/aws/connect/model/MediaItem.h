@@ -69,9 +69,9 @@ class MediaItem {
   ///@}
  private:
   MediaType m_type{MediaType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_source;
+  bool m_typeHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

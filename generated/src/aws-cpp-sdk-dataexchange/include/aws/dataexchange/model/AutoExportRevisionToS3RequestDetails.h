@@ -71,9 +71,9 @@ class AutoExportRevisionToS3RequestDetails {
   ///@}
  private:
   ExportServerSideEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   AutoExportRevisionDestinationEntry m_revisionDestination;
+  bool m_encryptionHasBeenSet = false;
   bool m_revisionDestinationHasBeenSet = false;
 };
 

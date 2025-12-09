@@ -93,12 +93,12 @@ class X12ElementLengthValidationRule {
   ///@}
  private:
   Aws::String m_elementId;
-  bool m_elementIdHasBeenSet = false;
 
   int m_maxLength{0};
-  bool m_maxLengthHasBeenSet = false;
 
   int m_minLength{0};
+  bool m_elementIdHasBeenSet = false;
+  bool m_maxLengthHasBeenSet = false;
   bool m_minLengthHasBeenSet = false;
 };
 

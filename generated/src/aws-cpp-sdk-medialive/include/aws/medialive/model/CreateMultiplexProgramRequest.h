@@ -107,15 +107,15 @@ resources.
   ///@}
  private:
   Aws::String m_multiplexId;
-  bool m_multiplexIdHasBeenSet = false;
 
   MultiplexProgramSettings m_multiplexProgramSettings;
-  bool m_multiplexProgramSettingsHasBeenSet = false;
 
   Aws::String m_programName;
-  bool m_programNameHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_multiplexIdHasBeenSet = false;
+  bool m_multiplexProgramSettingsHasBeenSet = false;
+  bool m_programNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = true;
 };
 

@@ -193,30 +193,30 @@ class GetContactResult {
   ///@}
  private:
   Aws::String m_contactListName;
-  bool m_contactListNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::Vector<TopicPreference> m_topicPreferences;
-  bool m_topicPreferencesHasBeenSet = false;
 
   Aws::Vector<TopicPreference> m_topicDefaultPreferences;
-  bool m_topicDefaultPreferencesHasBeenSet = false;
 
   bool m_unsubscribeAll{false};
-  bool m_unsubscribeAllHasBeenSet = false;
 
   Aws::String m_attributesData;
-  bool m_attributesDataHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactListNameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_topicPreferencesHasBeenSet = false;
+  bool m_topicDefaultPreferencesHasBeenSet = false;
+  bool m_unsubscribeAllHasBeenSet = false;
+  bool m_attributesDataHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,9 +85,9 @@ class CapacityReservationTarget {
   ///@}
  private:
   Aws::Vector<Aws::String> m_capacityReservationIds;
-  bool m_capacityReservationIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capacityReservationResourceGroupArns;
+  bool m_capacityReservationIdsHasBeenSet = false;
   bool m_capacityReservationResourceGroupArnsHasBeenSet = false;
 };
 

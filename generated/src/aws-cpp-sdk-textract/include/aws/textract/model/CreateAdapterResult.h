@@ -59,9 +59,9 @@ class CreateAdapterResult {
   ///@}
  private:
   Aws::String m_adapterId;
-  bool m_adapterIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adapterIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class CreateGeofenceCollectionResult {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::String m_collectionArn;
-  bool m_collectionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collectionNameHasBeenSet = false;
+  bool m_collectionArnHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

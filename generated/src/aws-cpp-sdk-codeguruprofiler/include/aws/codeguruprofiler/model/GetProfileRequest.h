@@ -172,21 +172,21 @@ class GetProfileRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_maxDepth{0};
-  bool m_maxDepthHasBeenSet = false;
 
   Aws::String m_period;
-  bool m_periodHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_acceptHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_maxDepthHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

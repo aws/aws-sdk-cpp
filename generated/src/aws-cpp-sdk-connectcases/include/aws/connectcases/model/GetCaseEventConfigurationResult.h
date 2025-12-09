@@ -61,9 +61,9 @@ class GetCaseEventConfigurationResult {
   ///@}
  private:
   EventBridgeConfiguration m_eventBridge;
-  bool m_eventBridgeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventBridgeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

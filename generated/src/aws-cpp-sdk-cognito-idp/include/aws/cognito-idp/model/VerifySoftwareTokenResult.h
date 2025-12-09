@@ -80,12 +80,12 @@ class VerifySoftwareTokenResult {
   ///@}
  private:
   VerifySoftwareTokenResponseType m_status{VerifySoftwareTokenResponseType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_session;
-  bool m_sessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

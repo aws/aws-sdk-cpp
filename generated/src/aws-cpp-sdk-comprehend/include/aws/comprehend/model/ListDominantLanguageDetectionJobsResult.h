@@ -89,12 +89,12 @@ class ListDominantLanguageDetectionJobsResult {
   ///@}
  private:
   Aws::Vector<DominantLanguageDetectionJobProperties> m_dominantLanguageDetectionJobPropertiesList;
-  bool m_dominantLanguageDetectionJobPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dominantLanguageDetectionJobPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

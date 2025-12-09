@@ -108,15 +108,15 @@ class EksContainerVolumeMount {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_mountPath;
-  bool m_mountPathHasBeenSet = false;
 
   Aws::String m_subPath;
-  bool m_subPathHasBeenSet = false;
 
   bool m_readOnly{false};
+  bool m_nameHasBeenSet = false;
+  bool m_mountPathHasBeenSet = false;
+  bool m_subPathHasBeenSet = false;
   bool m_readOnlyHasBeenSet = false;
 };
 

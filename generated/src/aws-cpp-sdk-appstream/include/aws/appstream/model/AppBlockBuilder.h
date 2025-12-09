@@ -302,45 +302,45 @@ class AppBlockBuilder {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AppBlockBuilderPlatformType m_platform{AppBlockBuilderPlatformType::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   bool m_enableDefaultInternetAccess{false};
-  bool m_enableDefaultInternetAccessHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   AppBlockBuilderState m_state{AppBlockBuilderState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Vector<ResourceError> m_appBlockBuilderErrors;
-  bool m_appBlockBuilderErrorsHasBeenSet = false;
 
   AppBlockBuilderStateChangeReason m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_enableDefaultInternetAccessHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_appBlockBuilderErrorsHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
   bool m_accessEndpointsHasBeenSet = false;
 };
 

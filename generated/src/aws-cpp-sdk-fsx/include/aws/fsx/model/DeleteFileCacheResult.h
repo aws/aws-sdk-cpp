@@ -77,12 +77,12 @@ class DeleteFileCacheResult {
   ///@}
  private:
   Aws::String m_fileCacheId;
-  bool m_fileCacheIdHasBeenSet = false;
 
   FileCacheLifecycle m_lifecycle{FileCacheLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileCacheIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

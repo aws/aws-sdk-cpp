@@ -242,27 +242,27 @@ class CreateResourceShareRequest : public RAMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_allowExternalPrincipals{false};
-  bool m_allowExternalPrincipalsHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_permissionArns;
-  bool m_permissionArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sources;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_allowExternalPrincipalsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_permissionArnsHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

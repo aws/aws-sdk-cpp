@@ -70,9 +70,9 @@ class TestSetTurnResult {
   ///@}
  private:
   AgentTurnResult m_agent;
-  bool m_agentHasBeenSet = false;
 
   UserTurnResult m_user;
+  bool m_agentHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

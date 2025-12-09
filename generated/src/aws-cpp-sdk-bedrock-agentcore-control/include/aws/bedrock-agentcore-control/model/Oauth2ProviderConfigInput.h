@@ -204,30 +204,30 @@ class Oauth2ProviderConfigInput {
   ///@}
  private:
   CustomOauth2ProviderConfigInput m_customOauth2ProviderConfig;
-  bool m_customOauth2ProviderConfigHasBeenSet = false;
 
   GoogleOauth2ProviderConfigInput m_googleOauth2ProviderConfig;
-  bool m_googleOauth2ProviderConfigHasBeenSet = false;
 
   GithubOauth2ProviderConfigInput m_githubOauth2ProviderConfig;
-  bool m_githubOauth2ProviderConfigHasBeenSet = false;
 
   SlackOauth2ProviderConfigInput m_slackOauth2ProviderConfig;
-  bool m_slackOauth2ProviderConfigHasBeenSet = false;
 
   SalesforceOauth2ProviderConfigInput m_salesforceOauth2ProviderConfig;
-  bool m_salesforceOauth2ProviderConfigHasBeenSet = false;
 
   MicrosoftOauth2ProviderConfigInput m_microsoftOauth2ProviderConfig;
-  bool m_microsoftOauth2ProviderConfigHasBeenSet = false;
 
   AtlassianOauth2ProviderConfigInput m_atlassianOauth2ProviderConfig;
-  bool m_atlassianOauth2ProviderConfigHasBeenSet = false;
 
   LinkedinOauth2ProviderConfigInput m_linkedinOauth2ProviderConfig;
-  bool m_linkedinOauth2ProviderConfigHasBeenSet = false;
 
   IncludedOauth2ProviderConfigInput m_includedOauth2ProviderConfig;
+  bool m_customOauth2ProviderConfigHasBeenSet = false;
+  bool m_googleOauth2ProviderConfigHasBeenSet = false;
+  bool m_githubOauth2ProviderConfigHasBeenSet = false;
+  bool m_slackOauth2ProviderConfigHasBeenSet = false;
+  bool m_salesforceOauth2ProviderConfigHasBeenSet = false;
+  bool m_microsoftOauth2ProviderConfigHasBeenSet = false;
+  bool m_atlassianOauth2ProviderConfigHasBeenSet = false;
+  bool m_linkedinOauth2ProviderConfigHasBeenSet = false;
   bool m_includedOauth2ProviderConfigHasBeenSet = false;
 };
 

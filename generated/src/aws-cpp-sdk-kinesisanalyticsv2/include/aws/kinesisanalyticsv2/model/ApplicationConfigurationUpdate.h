@@ -233,30 +233,30 @@ class ApplicationConfigurationUpdate {
   ///@}
  private:
   SqlApplicationConfigurationUpdate m_sqlApplicationConfigurationUpdate;
-  bool m_sqlApplicationConfigurationUpdateHasBeenSet = false;
 
   ApplicationCodeConfigurationUpdate m_applicationCodeConfigurationUpdate;
-  bool m_applicationCodeConfigurationUpdateHasBeenSet = false;
 
   FlinkApplicationConfigurationUpdate m_flinkApplicationConfigurationUpdate;
-  bool m_flinkApplicationConfigurationUpdateHasBeenSet = false;
 
   EnvironmentPropertyUpdates m_environmentPropertyUpdates;
-  bool m_environmentPropertyUpdatesHasBeenSet = false;
 
   ApplicationSnapshotConfigurationUpdate m_applicationSnapshotConfigurationUpdate;
-  bool m_applicationSnapshotConfigurationUpdateHasBeenSet = false;
 
   ApplicationSystemRollbackConfigurationUpdate m_applicationSystemRollbackConfigurationUpdate;
-  bool m_applicationSystemRollbackConfigurationUpdateHasBeenSet = false;
 
   Aws::Vector<VpcConfigurationUpdate> m_vpcConfigurationUpdates;
-  bool m_vpcConfigurationUpdatesHasBeenSet = false;
 
   ZeppelinApplicationConfigurationUpdate m_zeppelinApplicationConfigurationUpdate;
-  bool m_zeppelinApplicationConfigurationUpdateHasBeenSet = false;
 
   ApplicationEncryptionConfigurationUpdate m_applicationEncryptionConfigurationUpdate;
+  bool m_sqlApplicationConfigurationUpdateHasBeenSet = false;
+  bool m_applicationCodeConfigurationUpdateHasBeenSet = false;
+  bool m_flinkApplicationConfigurationUpdateHasBeenSet = false;
+  bool m_environmentPropertyUpdatesHasBeenSet = false;
+  bool m_applicationSnapshotConfigurationUpdateHasBeenSet = false;
+  bool m_applicationSystemRollbackConfigurationUpdateHasBeenSet = false;
+  bool m_vpcConfigurationUpdatesHasBeenSet = false;
+  bool m_zeppelinApplicationConfigurationUpdateHasBeenSet = false;
   bool m_applicationEncryptionConfigurationUpdateHasBeenSet = false;
 };
 

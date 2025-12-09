@@ -131,18 +131,18 @@ class ResourceInfo {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   ResourceDetails m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   Aws::Vector<AssociationOption> m_options;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceDetailsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

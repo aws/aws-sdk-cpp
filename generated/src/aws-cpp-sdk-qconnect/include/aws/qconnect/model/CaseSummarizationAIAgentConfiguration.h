@@ -87,12 +87,12 @@ class CaseSummarizationAIAgentConfiguration {
   ///@}
  private:
   Aws::String m_caseSummarizationAIPromptId;
-  bool m_caseSummarizationAIPromptIdHasBeenSet = false;
 
   Aws::String m_caseSummarizationAIGuardrailId;
-  bool m_caseSummarizationAIGuardrailIdHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_caseSummarizationAIPromptIdHasBeenSet = false;
+  bool m_caseSummarizationAIGuardrailIdHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

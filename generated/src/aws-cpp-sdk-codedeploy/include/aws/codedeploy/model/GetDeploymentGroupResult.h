@@ -66,9 +66,9 @@ class GetDeploymentGroupResult {
   ///@}
  private:
   DeploymentGroupInfo m_deploymentGroupInfo;
-  bool m_deploymentGroupInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentGroupInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

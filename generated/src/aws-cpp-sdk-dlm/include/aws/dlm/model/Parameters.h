@@ -111,12 +111,12 @@ class Parameters {
   ///@}
  private:
   bool m_excludeBootVolume{false};
-  bool m_excludeBootVolumeHasBeenSet = false;
 
   bool m_noReboot{false};
-  bool m_noRebootHasBeenSet = false;
 
   Aws::Vector<Tag> m_excludeDataVolumeTags;
+  bool m_excludeBootVolumeHasBeenSet = false;
+  bool m_noRebootHasBeenSet = false;
   bool m_excludeDataVolumeTagsHasBeenSet = false;
 };
 

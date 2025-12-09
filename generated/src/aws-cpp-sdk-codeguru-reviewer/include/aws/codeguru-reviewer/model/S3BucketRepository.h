@@ -75,9 +75,9 @@ class S3BucketRepository {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3RepositoryDetails m_details;
+  bool m_nameHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

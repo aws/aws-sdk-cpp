@@ -77,12 +77,12 @@ class DeregisterNotificationHubResult {
   ///@}
  private:
   Aws::String m_notificationHubRegion;
-  bool m_notificationHubRegionHasBeenSet = false;
 
   NotificationHubStatusSummary m_statusSummary;
-  bool m_statusSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationHubRegionHasBeenSet = false;
+  bool m_statusSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

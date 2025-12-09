@@ -105,15 +105,15 @@ class UpdateTopicRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_topicId;
-  bool m_topicIdHasBeenSet = false;
 
   TopicDetails m_topic;
-  bool m_topicHasBeenSet = false;
 
   CustomInstructions m_customInstructions;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_topicIdHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
   bool m_customInstructionsHasBeenSet = false;
 };
 

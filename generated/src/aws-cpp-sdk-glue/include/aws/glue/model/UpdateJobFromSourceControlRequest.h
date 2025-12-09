@@ -197,30 +197,30 @@ class UpdateJobFromSourceControlRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   SourceControlProvider m_provider{SourceControlProvider::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_repositoryOwner;
-  bool m_repositoryOwnerHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_folder;
-  bool m_folderHasBeenSet = false;
 
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   SourceControlAuthStrategy m_authStrategy{SourceControlAuthStrategy::NOT_SET};
-  bool m_authStrategyHasBeenSet = false;
 
   Aws::String m_authToken;
+  bool m_jobNameHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_repositoryOwnerHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_folderHasBeenSet = false;
+  bool m_commitIdHasBeenSet = false;
+  bool m_authStrategyHasBeenSet = false;
   bool m_authTokenHasBeenSet = false;
 };
 

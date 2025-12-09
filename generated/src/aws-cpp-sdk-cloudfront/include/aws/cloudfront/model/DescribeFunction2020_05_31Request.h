@@ -70,9 +70,9 @@ class DescribeFunction2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FunctionStage m_stage{FunctionStage::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

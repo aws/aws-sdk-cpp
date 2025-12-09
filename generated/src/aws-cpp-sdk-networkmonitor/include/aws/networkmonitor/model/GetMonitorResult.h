@@ -191,30 +191,30 @@ class GetMonitorResult {
   ///@}
  private:
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   MonitorState m_state{MonitorState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   long long m_aggregationPeriod{0};
-  bool m_aggregationPeriodHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Probe> m_probes;
-  bool m_probesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitorArnHasBeenSet = false;
+  bool m_monitorNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_probesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListCoreNetworkRoutingInformationResult {
   ///@}
  private:
   Aws::Vector<CoreNetworkRoutingInformation> m_coreNetworkRoutingInformation;
-  bool m_coreNetworkRoutingInformationHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreNetworkRoutingInformationHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

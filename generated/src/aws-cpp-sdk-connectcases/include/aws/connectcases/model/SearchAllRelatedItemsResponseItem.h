@@ -167,24 +167,24 @@ class SearchAllRelatedItemsResponseItem {
   ///@}
  private:
   Aws::String m_relatedItemId;
-  bool m_relatedItemIdHasBeenSet = false;
 
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   RelatedItemType m_type{RelatedItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_associationTime{};
-  bool m_associationTimeHasBeenSet = false;
 
   RelatedItemContent m_content;
-  bool m_contentHasBeenSet = false;
 
   UserUnion m_performedBy;
-  bool m_performedByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_relatedItemIdHasBeenSet = false;
+  bool m_caseIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_associationTimeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_performedByHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -177,24 +177,24 @@ class WhatIfAnalysisSummary {
   ///@}
  private:
   Aws::String m_whatIfAnalysisArn;
-  bool m_whatIfAnalysisArnHasBeenSet = false;
 
   Aws::String m_whatIfAnalysisName;
-  bool m_whatIfAnalysisNameHasBeenSet = false;
 
   Aws::String m_forecastArn;
-  bool m_forecastArnHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
+  bool m_whatIfAnalysisArnHasBeenSet = false;
+  bool m_whatIfAnalysisNameHasBeenSet = false;
+  bool m_forecastArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModificationTimeHasBeenSet = false;
 };
 

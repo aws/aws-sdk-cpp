@@ -86,12 +86,12 @@ class RepositoryScanningConfigurationFailure {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   ScanningConfigurationFailureCode m_failureCode{ScanningConfigurationFailureCode::NOT_SET};
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

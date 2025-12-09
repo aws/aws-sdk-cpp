@@ -86,12 +86,12 @@ class ListEventsDetectionJobsResult {
   ///@}
  private:
   Aws::Vector<EventsDetectionJobProperties> m_eventsDetectionJobPropertiesList;
-  bool m_eventsDetectionJobPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsDetectionJobPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

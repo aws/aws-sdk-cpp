@@ -173,24 +173,24 @@ class JourneyDateRangeKpiResponse {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_journeyId;
-  bool m_journeyIdHasBeenSet = false;
 
   Aws::String m_kpiName;
-  bool m_kpiNameHasBeenSet = false;
 
   BaseKpiResult m_kpiResult;
-  bool m_kpiResultHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_journeyIdHasBeenSet = false;
+  bool m_kpiNameHasBeenSet = false;
+  bool m_kpiResultHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class PutFunctionRecursionConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   RecursiveLoop m_recursiveLoop{RecursiveLoop::NOT_SET};
+  bool m_functionNameHasBeenSet = false;
   bool m_recursiveLoopHasBeenSet = false;
 };
 

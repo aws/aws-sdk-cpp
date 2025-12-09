@@ -124,18 +124,18 @@ class OrganizationSummary {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_defaultMailDomain;
-  bool m_defaultMailDomainHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_state;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_defaultMailDomainHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

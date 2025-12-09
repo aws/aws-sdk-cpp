@@ -103,12 +103,12 @@ class JwtValidationActionConfig {
   ///@}
  private:
   Aws::String m_jwksEndpoint;
-  bool m_jwksEndpointHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::Vector<JwtValidationActionAdditionalClaim> m_additionalClaims;
+  bool m_jwksEndpointHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
   bool m_additionalClaimsHasBeenSet = false;
 };
 

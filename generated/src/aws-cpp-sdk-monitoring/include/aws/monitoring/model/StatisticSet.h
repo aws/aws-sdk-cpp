@@ -96,15 +96,15 @@ class StatisticSet {
   ///@}
  private:
   double m_sampleCount{0.0};
-  bool m_sampleCountHasBeenSet = false;
 
   double m_sum{0.0};
-  bool m_sumHasBeenSet = false;
 
   double m_minimum{0.0};
-  bool m_minimumHasBeenSet = false;
 
   double m_maximum{0.0};
+  bool m_sampleCountHasBeenSet = false;
+  bool m_sumHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
   bool m_maximumHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetTargetSelectionRulesResult {
   ///@}
  private:
   Aws::String m_targetSelectionRules;
-  bool m_targetSelectionRulesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetSelectionRulesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

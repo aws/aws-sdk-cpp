@@ -73,9 +73,9 @@ class AllowListCriteria {
   ///@}
  private:
   Aws::String m_regex;
-  bool m_regexHasBeenSet = false;
 
   S3WordsList m_s3WordsList;
+  bool m_regexHasBeenSet = false;
   bool m_s3WordsListHasBeenSet = false;
 };
 

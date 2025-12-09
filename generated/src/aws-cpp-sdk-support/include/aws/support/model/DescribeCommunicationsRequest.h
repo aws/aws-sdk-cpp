@@ -123,18 +123,18 @@ class DescribeCommunicationsRequest : public SupportRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_beforeTime;
-  bool m_beforeTimeHasBeenSet = false;
 
   Aws::String m_afterTime;
-  bool m_afterTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_caseIdHasBeenSet = false;
+  bool m_beforeTimeHasBeenSet = false;
+  bool m_afterTimeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

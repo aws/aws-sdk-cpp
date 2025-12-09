@@ -113,15 +113,15 @@ class CreateOauth2CredentialProviderRequest : public BedrockAgentCoreControlRequ
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CredentialProviderVendorType m_credentialProviderVendor{CredentialProviderVendorType::NOT_SET};
-  bool m_credentialProviderVendorHasBeenSet = false;
 
   Oauth2ProviderConfigInput m_oauth2ProviderConfigInput;
-  bool m_oauth2ProviderConfigInputHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_credentialProviderVendorHasBeenSet = false;
+  bool m_oauth2ProviderConfigInputHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

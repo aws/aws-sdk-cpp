@@ -128,15 +128,15 @@ class DataLakeSource {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventClasses;
-  bool m_eventClassesHasBeenSet = false;
 
   Aws::String m_sourceName;
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::Vector<DataLakeSourceStatus> m_sourceStatuses;
+  bool m_accountHasBeenSet = false;
+  bool m_eventClassesHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
   bool m_sourceStatusesHasBeenSet = false;
 };
 

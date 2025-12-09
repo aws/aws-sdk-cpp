@@ -61,9 +61,9 @@ class DescribePiiEntitiesDetectionJobResult {
   ///@}
  private:
   PiiEntitiesDetectionJobProperties m_piiEntitiesDetectionJobProperties;
-  bool m_piiEntitiesDetectionJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_piiEntitiesDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

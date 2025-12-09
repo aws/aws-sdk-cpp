@@ -87,12 +87,12 @@ class UpdateOriginAccessControl2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   OriginAccessControlConfig m_originAccessControlConfig;
-  bool m_originAccessControlConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_originAccessControlConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

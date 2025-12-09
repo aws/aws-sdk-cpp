@@ -126,18 +126,18 @@ class InstanceAccess {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
-  bool m_operatingSystemHasBeenSet = false;
 
   InstanceCredentials m_credentials;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
 };
 

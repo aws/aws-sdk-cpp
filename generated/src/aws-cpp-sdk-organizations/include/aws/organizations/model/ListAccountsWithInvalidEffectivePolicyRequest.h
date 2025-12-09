@@ -109,12 +109,12 @@ class ListAccountsWithInvalidEffectivePolicyRequest : public OrganizationsReques
   ///@}
  private:
   EffectivePolicyType m_policyType{EffectivePolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_policyTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

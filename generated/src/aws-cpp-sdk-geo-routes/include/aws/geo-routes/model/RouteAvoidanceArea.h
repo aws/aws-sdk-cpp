@@ -74,9 +74,9 @@ class RouteAvoidanceArea {
   ///@}
  private:
   Aws::Vector<RouteAvoidanceAreaGeometry> m_except;
-  bool m_exceptHasBeenSet = false;
 
   RouteAvoidanceAreaGeometry m_geometry;
+  bool m_exceptHasBeenSet = false;
   bool m_geometryHasBeenSet = false;
 };
 

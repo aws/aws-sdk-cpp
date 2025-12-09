@@ -70,9 +70,9 @@ class JoinEventConfiguration {
   ///@}
  private:
   LoRaWANJoinEventNotificationConfigurations m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   EventNotificationTopicStatus m_wirelessDeviceIdEventTopic{EventNotificationTopicStatus::NOT_SET};
+  bool m_loRaWANHasBeenSet = false;
   bool m_wirelessDeviceIdEventTopicHasBeenSet = false;
 };
 

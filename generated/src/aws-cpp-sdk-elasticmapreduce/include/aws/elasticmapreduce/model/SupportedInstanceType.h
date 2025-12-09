@@ -229,36 +229,36 @@ class SupportedInstanceType {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   double m_memoryGB{0.0};
-  bool m_memoryGBHasBeenSet = false;
 
   int m_storageGB{0};
-  bool m_storageGBHasBeenSet = false;
 
   int m_vCPU{0};
-  bool m_vCPUHasBeenSet = false;
 
   bool m_is64BitsOnly{false};
-  bool m_is64BitsOnlyHasBeenSet = false;
 
   Aws::String m_instanceFamilyId;
-  bool m_instanceFamilyIdHasBeenSet = false;
 
   bool m_ebsOptimizedAvailable{false};
-  bool m_ebsOptimizedAvailableHasBeenSet = false;
 
   bool m_ebsOptimizedByDefault{false};
-  bool m_ebsOptimizedByDefaultHasBeenSet = false;
 
   int m_numberOfDisks{0};
-  bool m_numberOfDisksHasBeenSet = false;
 
   bool m_ebsStorageOnly{false};
-  bool m_ebsStorageOnlyHasBeenSet = false;
 
   Aws::String m_architecture;
+  bool m_typeHasBeenSet = false;
+  bool m_memoryGBHasBeenSet = false;
+  bool m_storageGBHasBeenSet = false;
+  bool m_vCPUHasBeenSet = false;
+  bool m_is64BitsOnlyHasBeenSet = false;
+  bool m_instanceFamilyIdHasBeenSet = false;
+  bool m_ebsOptimizedAvailableHasBeenSet = false;
+  bool m_ebsOptimizedByDefaultHasBeenSet = false;
+  bool m_numberOfDisksHasBeenSet = false;
+  bool m_ebsStorageOnlyHasBeenSet = false;
   bool m_architectureHasBeenSet = false;
 };
 

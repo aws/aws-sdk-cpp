@@ -302,42 +302,42 @@ class Service {
   ///@}
  private:
   int m_referenceId{0};
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   bool m_root{false};
-  bool m_rootHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<Edge> m_edges;
-  bool m_edgesHasBeenSet = false;
 
   ServiceStatistics m_summaryStatistics;
-  bool m_summaryStatisticsHasBeenSet = false;
 
   Aws::Vector<HistogramEntry> m_durationHistogram;
-  bool m_durationHistogramHasBeenSet = false;
 
   Aws::Vector<HistogramEntry> m_responseTimeHistogram;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_rootHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_edgesHasBeenSet = false;
+  bool m_summaryStatisticsHasBeenSet = false;
+  bool m_durationHistogramHasBeenSet = false;
   bool m_responseTimeHistogramHasBeenSet = false;
 };
 

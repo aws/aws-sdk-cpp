@@ -60,9 +60,9 @@ class UpdateAppAuthorizationResult {
   ///@}
  private:
   AppAuthorization m_appAuthorization;
-  bool m_appAuthorizationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appAuthorizationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

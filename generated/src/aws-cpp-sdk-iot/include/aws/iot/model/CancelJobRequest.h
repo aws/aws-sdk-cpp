@@ -109,15 +109,15 @@ class CancelJobRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_reasonCode;
-  bool m_reasonCodeHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   bool m_force{false};
+  bool m_jobIdHasBeenSet = false;
+  bool m_reasonCodeHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

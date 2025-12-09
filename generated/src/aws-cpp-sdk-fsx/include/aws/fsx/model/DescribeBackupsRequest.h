@@ -128,15 +128,15 @@ class DescribeBackupsRequest : public FSxRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_backupIds;
-  bool m_backupIdsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_backupIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

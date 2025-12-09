@@ -82,9 +82,9 @@ class ConfigurationEvent {
   ///@}
  private:
   Aws::Vector<ChannelDefinition> m_channelDefinitions;
-  bool m_channelDefinitionsHasBeenSet = false;
 
   PostCallAnalyticsSettings m_postCallAnalyticsSettings;
+  bool m_channelDefinitionsHasBeenSet = false;
   bool m_postCallAnalyticsSettingsHasBeenSet = false;
 };
 

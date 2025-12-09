@@ -67,9 +67,9 @@ class ModifyTrustStoreResult {
   ///@}
  private:
   Aws::Vector<TrustStore> m_trustStores;
-  bool m_trustStoresHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trustStoresHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

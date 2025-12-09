@@ -93,12 +93,12 @@ class UpdateSecurityControlRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_securityControlId;
-  bool m_securityControlIdHasBeenSet = false;
 
   Aws::Map<Aws::String, ParameterConfiguration> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::String m_lastUpdateReason;
+  bool m_securityControlIdHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
   bool m_lastUpdateReasonHasBeenSet = false;
 };
 

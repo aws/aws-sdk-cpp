@@ -58,9 +58,9 @@ class GetApnsSandboxChannelResult {
   ///@}
  private:
   APNSSandboxChannelResponse m_aPNSSandboxChannelResponse;
-  bool m_aPNSSandboxChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aPNSSandboxChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

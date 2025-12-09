@@ -85,12 +85,12 @@ class Subscription {
   ///@}
  private:
   Aws::String m_subscriptionId;
-  bool m_subscriptionIdHasBeenSet = false;
 
   Aws::String m_endPoint;
-  bool m_endPointHasBeenSet = false;
 
   SubscriptionProtocolType m_protocol{SubscriptionProtocolType::NOT_SET};
+  bool m_subscriptionIdHasBeenSet = false;
+  bool m_endPointHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

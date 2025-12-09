@@ -72,9 +72,9 @@ class ImageGenerationDestinationConfig {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_destinationRegion;
+  bool m_uriHasBeenSet = false;
   bool m_destinationRegionHasBeenSet = false;
 };
 

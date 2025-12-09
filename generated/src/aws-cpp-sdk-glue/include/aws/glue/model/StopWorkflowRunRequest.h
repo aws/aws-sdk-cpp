@@ -67,9 +67,9 @@ class StopWorkflowRunRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_nameHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

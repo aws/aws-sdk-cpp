@@ -74,9 +74,9 @@ class ObjectLockConfiguration {
   ///@}
  private:
   ObjectLockEnabled m_objectLockEnabled{ObjectLockEnabled::NOT_SET};
-  bool m_objectLockEnabledHasBeenSet = false;
 
   ObjectLockRule m_rule;
+  bool m_objectLockEnabledHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

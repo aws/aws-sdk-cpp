@@ -241,36 +241,36 @@ class CapacityManagerDataExportResponse {
   ///@}
  private:
   Aws::String m_capacityManagerDataExportId;
-  bool m_capacityManagerDataExportIdHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3BucketPrefix;
-  bool m_s3BucketPrefixHasBeenSet = false;
 
   Schedule m_schedule{Schedule::NOT_SET};
-  bool m_scheduleHasBeenSet = false;
 
   OutputFormat m_outputFormat{OutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   CapacityManagerDataExportStatus m_latestDeliveryStatus{CapacityManagerDataExportStatus::NOT_SET};
-  bool m_latestDeliveryStatusHasBeenSet = false;
 
   Aws::String m_latestDeliveryStatusMessage;
-  bool m_latestDeliveryStatusMessageHasBeenSet = false;
 
   Aws::String m_latestDeliveryS3LocationUri;
-  bool m_latestDeliveryS3LocationUriHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestDeliveryTime{};
-  bool m_latestDeliveryTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_capacityManagerDataExportIdHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3BucketPrefixHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_latestDeliveryStatusHasBeenSet = false;
+  bool m_latestDeliveryStatusMessageHasBeenSet = false;
+  bool m_latestDeliveryS3LocationUriHasBeenSet = false;
+  bool m_latestDeliveryTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

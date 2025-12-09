@@ -120,18 +120,18 @@ class ListModelsRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ModelStatus m_status{ModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_modelNameBeginsWith;
-  bool m_modelNameBeginsWithHasBeenSet = false;
 
   Aws::String m_datasetNameBeginsWith;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_modelNameBeginsWithHasBeenSet = false;
   bool m_datasetNameBeginsWithHasBeenSet = false;
 };
 

@@ -110,15 +110,15 @@ class BatchGetCalculatedAttributeForProfileRequest : public CustomerProfilesRequ
   ///@}
  private:
   Aws::String m_calculatedAttributeName;
-  bool m_calculatedAttributeNameHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_profileIds;
-  bool m_profileIdsHasBeenSet = false;
 
   ConditionOverrides m_conditionOverrides;
+  bool m_calculatedAttributeNameHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_profileIdsHasBeenSet = false;
   bool m_conditionOverridesHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class ScanRange {
   ///@}
  private:
   long long m_start{0};
-  bool m_startHasBeenSet = false;
 
   long long m_end{0};
+  bool m_startHasBeenSet = false;
   bool m_endHasBeenSet = false;
 };
 

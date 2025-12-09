@@ -96,12 +96,12 @@ class DescribeClustersRequest : public DAXRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_clusterNames;
-  bool m_clusterNamesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_clusterNamesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

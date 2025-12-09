@@ -134,21 +134,21 @@ class GetAccessPointForObjectLambdaResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
-  bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   ObjectLambdaAccessPointAlias m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_nameHasBeenSet = false;
+  bool m_publicAccessBlockConfigurationHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class LabelingJobResourceConfig {
   ///@}
  private:
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

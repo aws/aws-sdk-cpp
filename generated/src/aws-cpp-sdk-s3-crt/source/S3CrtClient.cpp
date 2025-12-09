@@ -165,6 +165,8 @@ const char ALLOCATION_TAG[] = "S3CrtClient";
 const char* S3CrtClient::GetServiceName() { return SERVICE_NAME; }
 const char* S3CrtClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
+const std::chrono::minutes REQUEST_LIFETIME_WAIT_TIMEOUT = std::chrono::minutes(1);
+
 S3CrtClient::S3CrtClient(const S3CrtClient& rhs)
     : BASECLASS(rhs.m_clientConfiguration,
                 Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
@@ -501,9 +503,17 @@ void S3CrtClient::CrtClientShutdownCallback(void* data) {
   wrappedData->clientShutdownSem->Release();
 }
 
-void S3CrtClient::CancelCrtRequestAsync(aws_s3_meta_request* meta_request) const {
+void S3CrtClient::CancelCrtRequestAsync(aws_s3_meta_request* meta_request, S3CrtClient::CrtRequestCallbackUserData* userData) const {
   assert(meta_request);
-  m_clientConfiguration.executor->Submit([meta_request]() { aws_s3_meta_request_cancel(meta_request); });
+  userData->requestLifetimeShouldContinue = false;
+  m_clientConfiguration.executor->Submit([meta_request, userData]() {
+    {
+      std::lock_guard<std::mutex> requestLifetimeLock{userData->requestLifetimeMutex};
+      aws_s3_meta_request_cancel(meta_request);
+      userData->requestLifetimeShouldContinue = true;
+    }
+    userData->requestLifetimeCondition.notify_all();
+  });
 }
 
 int S3CrtClient::S3CrtRequestHeadersCallback(struct aws_s3_meta_request* meta_request, const struct aws_http_headers* headers,
@@ -525,7 +535,7 @@ int S3CrtClient::S3CrtRequestHeadersCallback(struct aws_s3_meta_request* meta_re
   auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
   const HttpRequest* httpRequest = userData->request ? userData->request.get() : nullptr;
   if (shouldContinueFn && !shouldContinueFn(httpRequest)) {
-    userData->s3CrtClient->CancelCrtRequestAsync(meta_request);
+    userData->s3CrtClient->CancelCrtRequestAsync(meta_request, userData);
   }
 
   return AWS_OP_SUCCESS;
@@ -558,7 +568,7 @@ int S3CrtClient::S3CrtRequestGetBodyCallback(struct aws_s3_meta_request* meta_re
   auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
   const HttpRequest* httpRequest = userData->request ? userData->request.get() : nullptr;
   if (shouldContinueFn && !shouldContinueFn(httpRequest)) {
-    userData->s3CrtClient->CancelCrtRequestAsync(meta_request);
+    userData->s3CrtClient->CancelCrtRequestAsync(meta_request, userData);
   }
 
   return AWS_OP_SUCCESS;
@@ -580,7 +590,7 @@ void S3CrtClient::S3CrtRequestProgressCallback(struct aws_s3_meta_request* meta_
   auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
   const HttpRequest* httpRequest = userData->request ? userData->request.get() : nullptr;
   if (shouldContinueFn && !shouldContinueFn(httpRequest)) {
-    userData->s3CrtClient->CancelCrtRequestAsync(meta_request);
+    userData->s3CrtClient->CancelCrtRequestAsync(meta_request, userData);
   }
 
   return;
@@ -642,6 +652,12 @@ void S3CrtClient::S3CrtRequestFinishCallback(struct aws_s3_meta_request* meta_re
                                              const struct aws_s3_meta_request_result* meta_request_result, void* user_data) {
   AWS_UNREFERENCED_PARAM(meta_request);
   auto* userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+
+  {
+    std::unique_lock<std::mutex> requestLifetimeLock{userData->requestLifetimeMutex};
+    userData->requestLifetimeCondition.wait_for(requestLifetimeLock, REQUEST_LIFETIME_WAIT_TIMEOUT,
+                                                [userData]() -> bool { return userData->requestLifetimeShouldContinue; });
+  }
 
   if (meta_request_result->error_code != AWS_ERROR_SUCCESS && meta_request_result->response_status == 0) {
     /* client side error */

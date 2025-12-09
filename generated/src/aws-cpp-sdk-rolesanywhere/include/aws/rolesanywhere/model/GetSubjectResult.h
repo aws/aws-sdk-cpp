@@ -60,9 +60,9 @@ class GetSubjectResult {
   ///@}
  private:
   SubjectDetail m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subjectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

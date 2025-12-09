@@ -249,36 +249,36 @@ class KnowledgeBaseSummary {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_knowledgeBaseArn;
-  bool m_knowledgeBaseArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   KnowledgeBaseType m_knowledgeBaseType{KnowledgeBaseType::NOT_SET};
-  bool m_knowledgeBaseTypeHasBeenSet = false;
 
   KnowledgeBaseStatus m_status{KnowledgeBaseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   VectorIngestionConfiguration m_vectorIngestionConfiguration;
-  bool m_vectorIngestionConfigurationHasBeenSet = false;
 
   RenderingConfiguration m_renderingConfiguration;
-  bool m_renderingConfigurationHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_knowledgeBaseArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_knowledgeBaseTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
+  bool m_vectorIngestionConfigurationHasBeenSet = false;
+  bool m_renderingConfigurationHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -105,12 +105,12 @@ class S3Resource {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   KeyRange m_keyRange;
-  bool m_keyRangeHasBeenSet = false;
 
   Aws::Vector<TargetOnDeviceService> m_targetOnDeviceServices;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_keyRangeHasBeenSet = false;
   bool m_targetOnDeviceServicesHasBeenSet = false;
 };
 

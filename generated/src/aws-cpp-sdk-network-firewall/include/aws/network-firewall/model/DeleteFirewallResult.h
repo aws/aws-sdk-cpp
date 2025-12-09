@@ -74,12 +74,12 @@ class DeleteFirewallResult {
   ///@}
  private:
   Firewall m_firewall;
-  bool m_firewallHasBeenSet = false;
 
   FirewallStatus m_firewallStatus;
-  bool m_firewallStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallHasBeenSet = false;
+  bool m_firewallStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

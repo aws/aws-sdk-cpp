@@ -132,18 +132,18 @@ class KnowledgeBaseVectorSearchConfiguration {
   ///@}
  private:
   int m_numberOfResults{0};
-  bool m_numberOfResultsHasBeenSet = false;
 
   SearchType m_overrideSearchType{SearchType::NOT_SET};
-  bool m_overrideSearchTypeHasBeenSet = false;
 
   RetrievalFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   ImplicitFilterConfiguration m_implicitFilterConfiguration;
-  bool m_implicitFilterConfigurationHasBeenSet = false;
 
   VectorSearchRerankingConfiguration m_rerankingConfiguration;
+  bool m_numberOfResultsHasBeenSet = false;
+  bool m_overrideSearchTypeHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_implicitFilterConfigurationHasBeenSet = false;
   bool m_rerankingConfigurationHasBeenSet = false;
 };
 

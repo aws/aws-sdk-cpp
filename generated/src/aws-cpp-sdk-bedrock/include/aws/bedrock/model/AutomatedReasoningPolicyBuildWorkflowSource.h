@@ -73,9 +73,9 @@ class AutomatedReasoningPolicyBuildWorkflowSource {
   ///@}
  private:
   AutomatedReasoningPolicyDefinition m_policyDefinition;
-  bool m_policyDefinitionHasBeenSet = false;
 
   AutomatedReasoningPolicyWorkflowTypeContent m_workflowContent;
+  bool m_policyDefinitionHasBeenSet = false;
   bool m_workflowContentHasBeenSet = false;
 };
 

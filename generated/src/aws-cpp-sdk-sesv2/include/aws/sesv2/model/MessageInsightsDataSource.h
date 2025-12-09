@@ -124,18 +124,18 @@ class MessageInsightsDataSource {
   ///@}
  private:
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   MessageInsightsFilters m_include;
-  bool m_includeHasBeenSet = false;
 
   MessageInsightsFilters m_exclude;
-  bool m_excludeHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_includeHasBeenSet = false;
+  bool m_excludeHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

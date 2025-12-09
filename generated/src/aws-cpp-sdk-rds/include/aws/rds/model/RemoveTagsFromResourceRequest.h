@@ -82,9 +82,9 @@ class RemoveTagsFromResourceRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_resourceNameHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

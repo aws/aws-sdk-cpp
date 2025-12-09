@@ -84,12 +84,12 @@ class ListS3BucketsResult {
   ///@}
  private:
   Aws::Vector<S3BucketInfo> m_buckets;
-  bool m_bucketsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

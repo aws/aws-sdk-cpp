@@ -67,9 +67,9 @@ class StopIngestionRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_ingestionIdentifier;
-  bool m_ingestionIdentifierHasBeenSet = false;
 
   Aws::String m_appBundleIdentifier;
+  bool m_ingestionIdentifierHasBeenSet = false;
   bool m_appBundleIdentifierHasBeenSet = false;
 };
 

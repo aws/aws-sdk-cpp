@@ -73,9 +73,9 @@ class DatadogConnectorProfileCredentials {
   ///@}
  private:
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::String m_applicationKey;
+  bool m_apiKeyHasBeenSet = false;
   bool m_applicationKeyHasBeenSet = false;
 };
 

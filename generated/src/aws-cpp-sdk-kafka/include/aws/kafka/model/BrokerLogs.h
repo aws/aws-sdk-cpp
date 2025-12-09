@@ -77,12 +77,12 @@ class BrokerLogs {
   ///@}
  private:
   CloudWatchLogs m_cloudWatchLogs;
-  bool m_cloudWatchLogsHasBeenSet = false;
 
   Firehose m_firehose;
-  bool m_firehoseHasBeenSet = false;
 
   S3 m_s3;
+  bool m_cloudWatchLogsHasBeenSet = false;
+  bool m_firehoseHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

@@ -133,21 +133,21 @@ class H265ColorSpaceSettings {
   ///@}
  private:
   ColorSpacePassthroughSettings m_colorSpacePassthroughSettings;
-  bool m_colorSpacePassthroughSettingsHasBeenSet = false;
 
   DolbyVision81Settings m_dolbyVision81Settings;
-  bool m_dolbyVision81SettingsHasBeenSet = false;
 
   Hdr10Settings m_hdr10Settings;
-  bool m_hdr10SettingsHasBeenSet = false;
 
   Rec601Settings m_rec601Settings;
-  bool m_rec601SettingsHasBeenSet = false;
 
   Rec709Settings m_rec709Settings;
-  bool m_rec709SettingsHasBeenSet = false;
 
   Hlg2020Settings m_hlg2020Settings;
+  bool m_colorSpacePassthroughSettingsHasBeenSet = false;
+  bool m_dolbyVision81SettingsHasBeenSet = false;
+  bool m_hdr10SettingsHasBeenSet = false;
+  bool m_rec601SettingsHasBeenSet = false;
+  bool m_rec709SettingsHasBeenSet = false;
   bool m_hlg2020SettingsHasBeenSet = false;
 };
 

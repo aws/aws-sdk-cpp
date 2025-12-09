@@ -128,21 +128,21 @@ class DescribeInputDeviceThumbnailResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
-  bool m_bodyHasBeenSet = false;
 
   ContentType m_contentType{ContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

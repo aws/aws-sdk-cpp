@@ -67,9 +67,9 @@ class PutTaxRegistrationRequest : public TaxSettingsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   TaxRegistrationEntry m_taxRegistrationEntry;
+  bool m_accountIdHasBeenSet = false;
   bool m_taxRegistrationEntryHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetDistributionBundlesResult {
   ///@}
  private:
   Aws::Vector<DistributionBundle> m_bundles;
-  bool m_bundlesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bundlesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

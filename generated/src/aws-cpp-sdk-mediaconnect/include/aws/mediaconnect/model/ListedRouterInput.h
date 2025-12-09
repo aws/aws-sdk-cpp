@@ -316,51 +316,51 @@ class ListedRouterInput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   RouterInputType m_inputType{RouterInputType::NOT_SET};
-  bool m_inputTypeHasBeenSet = false;
 
   RouterInputState m_state{RouterInputState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_routedOutputs{0};
-  bool m_routedOutputsHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   long long m_maximumBitrate{0};
-  bool m_maximumBitrateHasBeenSet = false;
 
   RoutingScope m_routingScope{RoutingScope::NOT_SET};
-  bool m_routingScopeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   int m_messageCount{0};
-  bool m_messageCountHasBeenSet = false;
 
   Aws::String m_networkInterfaceArn;
-  bool m_networkInterfaceArnHasBeenSet = false;
 
   MaintenanceScheduleType m_maintenanceScheduleType{MaintenanceScheduleType::NOT_SET};
-  bool m_maintenanceScheduleTypeHasBeenSet = false;
 
   MaintenanceSchedule m_maintenanceSchedule;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_inputTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_routedOutputsHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_maximumBitrateHasBeenSet = false;
+  bool m_routingScopeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_messageCountHasBeenSet = false;
+  bool m_networkInterfaceArnHasBeenSet = false;
+  bool m_maintenanceScheduleTypeHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
 };
 

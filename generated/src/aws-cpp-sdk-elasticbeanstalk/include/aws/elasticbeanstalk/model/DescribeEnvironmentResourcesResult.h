@@ -67,9 +67,9 @@ class DescribeEnvironmentResourcesResult {
   ///@}
  private:
   EnvironmentResourceDescription m_environmentResources;
-  bool m_environmentResourcesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_environmentResourcesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

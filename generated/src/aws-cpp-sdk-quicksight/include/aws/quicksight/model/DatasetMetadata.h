@@ -206,27 +206,27 @@ class DatasetMetadata {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetDescription;
-  bool m_datasetDescriptionHasBeenSet = false;
 
   DataAggregation m_dataAggregation;
-  bool m_dataAggregationHasBeenSet = false;
 
   Aws::Vector<TopicFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<TopicColumn> m_columns;
-  bool m_columnsHasBeenSet = false;
 
   Aws::Vector<TopicCalculatedField> m_calculatedFields;
-  bool m_calculatedFieldsHasBeenSet = false;
 
   Aws::Vector<TopicNamedEntity> m_namedEntities;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetDescriptionHasBeenSet = false;
+  bool m_dataAggregationHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_columnsHasBeenSet = false;
+  bool m_calculatedFieldsHasBeenSet = false;
   bool m_namedEntitiesHasBeenSet = false;
 };
 

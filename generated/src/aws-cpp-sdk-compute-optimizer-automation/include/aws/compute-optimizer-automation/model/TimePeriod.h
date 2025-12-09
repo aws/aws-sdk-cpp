@@ -71,9 +71,9 @@ class TimePeriod {
   ///@}
  private:
   Aws::Utils::DateTime m_startTimeInclusive{};
-  bool m_startTimeInclusiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimeExclusive{};
+  bool m_startTimeInclusiveHasBeenSet = false;
   bool m_endTimeExclusiveHasBeenSet = false;
 };
 

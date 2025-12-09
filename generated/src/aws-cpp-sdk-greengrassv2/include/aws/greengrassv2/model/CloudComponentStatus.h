@@ -143,18 +143,18 @@ class CloudComponentStatus {
   ///@}
  private:
   CloudComponentState m_componentState{CloudComponentState::NOT_SET};
-  bool m_componentStateHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   VendorGuidance m_vendorGuidance{VendorGuidance::NOT_SET};
-  bool m_vendorGuidanceHasBeenSet = false;
 
   Aws::String m_vendorGuidanceMessage;
+  bool m_componentStateHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_vendorGuidanceHasBeenSet = false;
   bool m_vendorGuidanceMessageHasBeenSet = false;
 };
 

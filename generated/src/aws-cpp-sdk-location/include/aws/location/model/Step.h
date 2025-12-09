@@ -136,18 +136,18 @@ class Step {
   ///@}
  private:
   Aws::Vector<double> m_startPosition;
-  bool m_startPositionHasBeenSet = false;
 
   Aws::Vector<double> m_endPosition;
-  bool m_endPositionHasBeenSet = false;
 
   double m_distance{0.0};
-  bool m_distanceHasBeenSet = false;
 
   double m_durationSeconds{0.0};
-  bool m_durationSecondsHasBeenSet = false;
 
   int m_geometryOffset{0};
+  bool m_startPositionHasBeenSet = false;
+  bool m_endPositionHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
   bool m_geometryOffsetHasBeenSet = false;
 };
 

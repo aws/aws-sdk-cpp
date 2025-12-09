@@ -185,21 +185,21 @@ class UpdateGlobalTableSettingsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_globalTableName;
-  bool m_globalTableNameHasBeenSet = false;
 
   BillingMode m_globalTableBillingMode{BillingMode::NOT_SET};
-  bool m_globalTableBillingModeHasBeenSet = false;
 
   long long m_globalTableProvisionedWriteCapacityUnits{0};
-  bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
-  bool m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = false;
 
   Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate> m_globalTableGlobalSecondaryIndexSettingsUpdate;
-  bool m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = false;
 
   Aws::Vector<ReplicaSettingsUpdate> m_replicaSettingsUpdate;
+  bool m_globalTableNameHasBeenSet = false;
+  bool m_globalTableBillingModeHasBeenSet = false;
+  bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet = false;
+  bool m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = false;
+  bool m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet = false;
   bool m_replicaSettingsUpdateHasBeenSet = false;
 };
 

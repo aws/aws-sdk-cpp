@@ -93,12 +93,12 @@ class VectorSearchBedrockRerankingConfiguration {
   ///@}
  private:
   VectorSearchBedrockRerankingModelConfiguration m_modelConfiguration;
-  bool m_modelConfigurationHasBeenSet = false;
 
   int m_numberOfRerankedResults{0};
-  bool m_numberOfRerankedResultsHasBeenSet = false;
 
   MetadataConfigurationForReranking m_metadataConfiguration;
+  bool m_modelConfigurationHasBeenSet = false;
+  bool m_numberOfRerankedResultsHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
 };
 

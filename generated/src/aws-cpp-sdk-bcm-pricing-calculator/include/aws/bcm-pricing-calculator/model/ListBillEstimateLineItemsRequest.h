@@ -109,15 +109,15 @@ class ListBillEstimateLineItemsRequest : public BCMPricingCalculatorRequest {
   ///@}
  private:
   Aws::String m_billEstimateId;
-  bool m_billEstimateIdHasBeenSet = false;
 
   Aws::Vector<ListBillEstimateLineItemsFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_billEstimateIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class RegisterContainerImageResult {
   ///@}
  private:
   ContainerImage m_containerImage;
-  bool m_containerImageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerImageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

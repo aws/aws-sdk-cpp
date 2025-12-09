@@ -178,27 +178,27 @@ class WhatsAppPhoneNumberSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   Aws::String m_metaPhoneNumberId;
-  bool m_metaPhoneNumberIdHasBeenSet = false;
 
   Aws::String m_displayPhoneNumberName;
-  bool m_displayPhoneNumberNameHasBeenSet = false;
 
   Aws::String m_displayPhoneNumber;
-  bool m_displayPhoneNumberHasBeenSet = false;
 
   Aws::String m_qualityRating;
-  bool m_qualityRatingHasBeenSet = false;
 
   Aws::String m_dataLocalizationRegion;
+  bool m_arnHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_metaPhoneNumberIdHasBeenSet = false;
+  bool m_displayPhoneNumberNameHasBeenSet = false;
+  bool m_displayPhoneNumberHasBeenSet = false;
+  bool m_qualityRatingHasBeenSet = false;
   bool m_dataLocalizationRegionHasBeenSet = false;
 };
 

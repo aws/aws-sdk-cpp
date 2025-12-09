@@ -70,9 +70,9 @@ class WorkflowExecutionCanceledEventAttributes {
   ///@}
  private:
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_detailsHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

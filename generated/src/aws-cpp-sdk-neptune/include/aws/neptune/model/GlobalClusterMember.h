@@ -97,12 +97,12 @@ class GlobalClusterMember {
   ///@}
  private:
   Aws::String m_dBClusterArn;
-  bool m_dBClusterArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_readers;
-  bool m_readersHasBeenSet = false;
 
   bool m_isWriter{false};
+  bool m_dBClusterArnHasBeenSet = false;
+  bool m_readersHasBeenSet = false;
   bool m_isWriterHasBeenSet = false;
 };
 

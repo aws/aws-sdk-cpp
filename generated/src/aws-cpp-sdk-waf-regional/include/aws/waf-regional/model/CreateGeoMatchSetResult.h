@@ -82,12 +82,12 @@ class CreateGeoMatchSetResult {
   ///@}
  private:
   GeoMatchSet m_geoMatchSet;
-  bool m_geoMatchSetHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_geoMatchSetHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class ListClustersV2Result {
   ///@}
  private:
   Aws::Vector<Cluster> m_clusterInfoList;
-  bool m_clusterInfoListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterInfoListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

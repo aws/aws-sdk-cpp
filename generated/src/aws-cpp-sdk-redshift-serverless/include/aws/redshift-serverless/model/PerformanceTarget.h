@@ -67,9 +67,9 @@ class PerformanceTarget {
   ///@}
  private:
   int m_level{0};
-  bool m_levelHasBeenSet = false;
 
   PerformanceTargetStatus m_status{PerformanceTargetStatus::NOT_SET};
+  bool m_levelHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

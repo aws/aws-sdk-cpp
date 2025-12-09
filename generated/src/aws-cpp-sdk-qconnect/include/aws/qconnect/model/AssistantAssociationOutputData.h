@@ -73,9 +73,9 @@ class AssistantAssociationOutputData {
   ///@}
  private:
   KnowledgeBaseAssociationData m_knowledgeBaseAssociation;
-  bool m_knowledgeBaseAssociationHasBeenSet = false;
 
   ExternalBedrockKnowledgeBaseConfig m_externalBedrockKnowledgeBaseConfig;
+  bool m_knowledgeBaseAssociationHasBeenSet = false;
   bool m_externalBedrockKnowledgeBaseConfigHasBeenSet = false;
 };
 

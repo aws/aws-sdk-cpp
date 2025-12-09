@@ -89,12 +89,12 @@ class HttpPackageConfiguration {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_sourceGroup;
-  bool m_sourceGroupHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_pathHasBeenSet = false;
+  bool m_sourceGroupHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

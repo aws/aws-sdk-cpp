@@ -146,21 +146,21 @@ class TransitGatewayPolicyRule {
   ///@}
  private:
   Aws::String m_sourceCidrBlock;
-  bool m_sourceCidrBlockHasBeenSet = false;
 
   Aws::String m_sourcePortRange;
-  bool m_sourcePortRangeHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_destinationPortRange;
-  bool m_destinationPortRangeHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   TransitGatewayPolicyRuleMetaData m_metaData;
+  bool m_sourceCidrBlockHasBeenSet = false;
+  bool m_sourcePortRangeHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_destinationPortRangeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_metaDataHasBeenSet = false;
 };
 

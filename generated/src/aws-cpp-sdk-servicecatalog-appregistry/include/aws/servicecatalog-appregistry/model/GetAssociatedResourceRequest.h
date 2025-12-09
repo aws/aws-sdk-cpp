@@ -149,21 +149,21 @@ class GetAssociatedResourceRequest : public AppRegistryRequest {
   ///@}
  private:
   Aws::String m_application;
-  bool m_applicationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ResourceItemStatus> m_resourceTagStatus;
-  bool m_resourceTagStatusHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_applicationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourceTagStatusHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

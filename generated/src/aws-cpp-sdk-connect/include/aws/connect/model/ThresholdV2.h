@@ -68,9 +68,9 @@ class ThresholdV2 {
   ///@}
  private:
   Aws::String m_comparison;
-  bool m_comparisonHasBeenSet = false;
 
   double m_thresholdValue{0.0};
+  bool m_comparisonHasBeenSet = false;
   bool m_thresholdValueHasBeenSet = false;
 };
 

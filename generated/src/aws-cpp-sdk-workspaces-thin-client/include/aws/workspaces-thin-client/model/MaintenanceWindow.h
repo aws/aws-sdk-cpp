@@ -160,24 +160,24 @@ class MaintenanceWindow {
   ///@}
  private:
   MaintenanceWindowType m_type{MaintenanceWindowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_startTimeHour{0};
-  bool m_startTimeHourHasBeenSet = false;
 
   int m_startTimeMinute{0};
-  bool m_startTimeMinuteHasBeenSet = false;
 
   int m_endTimeHour{0};
-  bool m_endTimeHourHasBeenSet = false;
 
   int m_endTimeMinute{0};
-  bool m_endTimeMinuteHasBeenSet = false;
 
   Aws::Vector<DayOfWeek> m_daysOfTheWeek;
-  bool m_daysOfTheWeekHasBeenSet = false;
 
   ApplyTimeOf m_applyTimeOf{ApplyTimeOf::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_startTimeHourHasBeenSet = false;
+  bool m_startTimeMinuteHasBeenSet = false;
+  bool m_endTimeHourHasBeenSet = false;
+  bool m_endTimeMinuteHasBeenSet = false;
+  bool m_daysOfTheWeekHasBeenSet = false;
   bool m_applyTimeOfHasBeenSet = false;
 };
 

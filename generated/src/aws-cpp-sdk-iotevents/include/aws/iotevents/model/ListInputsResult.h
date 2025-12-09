@@ -85,12 +85,12 @@ class ListInputsResult {
   ///@}
  private:
   Aws::Vector<InputSummary> m_inputSummaries;
-  bool m_inputSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

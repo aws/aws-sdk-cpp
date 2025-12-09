@@ -205,33 +205,33 @@ class GetObjectAttributesResult {
   ///@}
  private:
   bool m_deleteMarker{false};
-  bool m_deleteMarkerHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Checksum m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   GetObjectAttributesParts m_objectParts;
-  bool m_objectPartsHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   long long m_objectSize{0};
-  bool m_objectSizeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deleteMarkerHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_objectPartsHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_objectSizeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

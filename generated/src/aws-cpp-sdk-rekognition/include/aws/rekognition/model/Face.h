@@ -161,24 +161,24 @@ class Face {
   ///@}
  private:
   Aws::String m_faceId;
-  bool m_faceIdHasBeenSet = false;
 
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_externalImageId;
-  bool m_externalImageIdHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   Aws::String m_indexFacesModelVersion;
-  bool m_indexFacesModelVersionHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_faceIdHasBeenSet = false;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_externalImageIdHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_indexFacesModelVersionHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

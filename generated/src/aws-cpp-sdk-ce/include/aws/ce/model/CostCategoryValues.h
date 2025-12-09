@@ -58,7 +58,7 @@ class CostCategoryValues {
 
   ///@{
   /**
-   * <p>The specific value of the Cost Category.</p>
+   * <p>The specific value of the cost category.</p>
    */
   inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
@@ -107,12 +107,12 @@ class CostCategoryValues {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<MatchOption> m_matchOptions;
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_matchOptionsHasBeenSet = false;
 };
 

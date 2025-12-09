@@ -99,12 +99,12 @@ class DeleteConfigurationProfileRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_configurationProfileId;
-  bool m_configurationProfileIdHasBeenSet = false;
 
   DeletionProtectionCheck m_deletionProtectionCheck{DeletionProtectionCheck::NOT_SET};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_configurationProfileIdHasBeenSet = false;
   bool m_deletionProtectionCheckHasBeenSet = false;
 };
 

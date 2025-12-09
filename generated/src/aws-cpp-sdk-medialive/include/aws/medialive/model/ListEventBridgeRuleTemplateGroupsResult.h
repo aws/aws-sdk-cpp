@@ -91,12 +91,12 @@ class ListEventBridgeRuleTemplateGroupsResult {
   ///@}
  private:
   Aws::Vector<EventBridgeRuleTemplateGroupSummary> m_eventBridgeRuleTemplateGroups;
-  bool m_eventBridgeRuleTemplateGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventBridgeRuleTemplateGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DeleteVolumeRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_volumeIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

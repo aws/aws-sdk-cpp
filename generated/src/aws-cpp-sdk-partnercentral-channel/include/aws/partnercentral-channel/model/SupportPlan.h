@@ -89,12 +89,12 @@ class SupportPlan {
   ///@}
  private:
   ResoldBusiness m_resoldBusiness;
-  bool m_resoldBusinessHasBeenSet = false;
 
   ResoldEnterprise m_resoldEnterprise;
-  bool m_resoldEnterpriseHasBeenSet = false;
 
   PartnerLedSupport m_partnerLedSupport;
+  bool m_resoldBusinessHasBeenSet = false;
+  bool m_resoldEnterpriseHasBeenSet = false;
   bool m_partnerLedSupportHasBeenSet = false;
 };
 

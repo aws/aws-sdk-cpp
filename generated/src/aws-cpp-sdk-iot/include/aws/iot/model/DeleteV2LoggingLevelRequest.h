@@ -70,9 +70,9 @@ class DeleteV2LoggingLevelRequest : public IoTRequest {
   ///@}
  private:
   LogTargetType m_targetType{LogTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_targetName;
+  bool m_targetTypeHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
 };
 

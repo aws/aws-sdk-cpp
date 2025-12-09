@@ -96,12 +96,12 @@ class RemovePermissionRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   ActionGroup m_actionGroup{ActionGroup::NOT_SET};
-  bool m_actionGroupHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
-  bool m_profilingGroupNameHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_actionGroupHasBeenSet = false;
+  bool m_profilingGroupNameHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

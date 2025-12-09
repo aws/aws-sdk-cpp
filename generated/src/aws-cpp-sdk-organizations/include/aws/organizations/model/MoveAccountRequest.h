@@ -101,12 +101,12 @@ class MoveAccountRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_sourceParentId;
-  bool m_sourceParentIdHasBeenSet = false;
 
   Aws::String m_destinationParentId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_sourceParentIdHasBeenSet = false;
   bool m_destinationParentIdHasBeenSet = false;
 };
 

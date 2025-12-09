@@ -112,18 +112,18 @@ class UpdateIdentitySourceResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_identitySourceId;
-  bool m_identitySourceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdDateHasBeenSet = false;
+  bool m_identitySourceIdHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_policyStoreIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -139,15 +139,15 @@ class DocumentAttributeBoostingConfiguration {
   ///@}
  private:
   NumberAttributeBoostingConfiguration m_numberConfiguration;
-  bool m_numberConfigurationHasBeenSet = false;
 
   StringAttributeBoostingConfiguration m_stringConfiguration;
-  bool m_stringConfigurationHasBeenSet = false;
 
   DateAttributeBoostingConfiguration m_dateConfiguration;
-  bool m_dateConfigurationHasBeenSet = false;
 
   StringListAttributeBoostingConfiguration m_stringListConfiguration;
+  bool m_numberConfigurationHasBeenSet = false;
+  bool m_stringConfigurationHasBeenSet = false;
+  bool m_dateConfigurationHasBeenSet = false;
   bool m_stringListConfigurationHasBeenSet = false;
 };
 

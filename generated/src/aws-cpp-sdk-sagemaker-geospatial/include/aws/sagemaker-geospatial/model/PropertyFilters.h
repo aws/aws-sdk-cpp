@@ -74,9 +74,9 @@ class PropertyFilters {
   ///@}
  private:
   LogicalOperator m_logicalOperator{LogicalOperator::NOT_SET};
-  bool m_logicalOperatorHasBeenSet = false;
 
   Aws::Vector<PropertyFilter> m_properties;
+  bool m_logicalOperatorHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

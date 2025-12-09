@@ -83,9 +83,9 @@ class BackendStoragePermissions {
   ///@}
  private:
   Aws::Vector<AuthenticatedElement> m_authenticated;
-  bool m_authenticatedHasBeenSet = false;
 
   Aws::Vector<UnAuthenticatedElement> m_unAuthenticated;
+  bool m_authenticatedHasBeenSet = false;
   bool m_unAuthenticatedHasBeenSet = false;
 };
 

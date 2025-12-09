@@ -86,9 +86,9 @@ class OpenIdConnectAccessTokenConfiguration {
   ///@}
  private:
   Aws::String m_principalIdClaim;
-  bool m_principalIdClaimHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_audiences;
+  bool m_principalIdClaimHasBeenSet = false;
   bool m_audiencesHasBeenSet = false;
 };
 

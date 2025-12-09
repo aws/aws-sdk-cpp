@@ -199,30 +199,30 @@ class GetRasterDataCollectionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_descriptionPageUrl;
-  bool m_descriptionPageUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_imageSourceBands;
-  bool m_imageSourceBandsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Filter> m_supportedFilters;
-  bool m_supportedFiltersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   DataCollectionType m_type{DataCollectionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_descriptionPageUrlHasBeenSet = false;
+  bool m_imageSourceBandsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_supportedFiltersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

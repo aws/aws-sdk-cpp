@@ -195,30 +195,30 @@ class PackagingConfiguration {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CmafPackage m_cmafPackage;
-  bool m_cmafPackageHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   DashPackage m_dashPackage;
-  bool m_dashPackageHasBeenSet = false;
 
   HlsPackage m_hlsPackage;
-  bool m_hlsPackageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MssPackage m_mssPackage;
-  bool m_mssPackageHasBeenSet = false;
 
   Aws::String m_packagingGroupId;
-  bool m_packagingGroupIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_cmafPackageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_dashPackageHasBeenSet = false;
+  bool m_hlsPackageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_mssPackageHasBeenSet = false;
+  bool m_packagingGroupIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

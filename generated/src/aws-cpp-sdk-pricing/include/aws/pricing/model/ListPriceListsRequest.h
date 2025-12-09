@@ -154,21 +154,21 @@ class ListPriceListsRequest : public PricingRequest {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveDate{};
-  bool m_effectiveDateHasBeenSet = false;
 
   Aws::String m_regionCode;
-  bool m_regionCodeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_effectiveDateHasBeenSet = false;
+  bool m_regionCodeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

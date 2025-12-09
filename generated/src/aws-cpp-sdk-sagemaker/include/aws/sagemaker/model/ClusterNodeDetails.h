@@ -418,63 +418,63 @@ class ClusterNodeDetails {
   ///@}
  private:
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_nodeLogicalId;
-  bool m_nodeLogicalIdHasBeenSet = false;
 
   ClusterInstanceStatusDetails m_instanceStatus;
-  bool m_instanceStatusHasBeenSet = false;
 
   ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSoftwareUpdateTime{};
-  bool m_lastSoftwareUpdateTimeHasBeenSet = false;
 
   ClusterLifeCycleConfig m_lifeCycleConfig;
-  bool m_lifeCycleConfigHasBeenSet = false;
 
   VpcConfig m_overrideVpcConfig;
-  bool m_overrideVpcConfigHasBeenSet = false;
 
   int m_threadsPerCore{0};
-  bool m_threadsPerCoreHasBeenSet = false;
 
   Aws::Vector<ClusterInstanceStorageConfig> m_instanceStorageConfigs;
-  bool m_instanceStorageConfigsHasBeenSet = false;
 
   Aws::String m_privatePrimaryIp;
-  bool m_privatePrimaryIpHasBeenSet = false;
 
   Aws::String m_privatePrimaryIpv6;
-  bool m_privatePrimaryIpv6HasBeenSet = false;
 
   Aws::String m_privateDnsHostname;
-  bool m_privateDnsHostnameHasBeenSet = false;
 
   ClusterInstancePlacement m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::String m_currentImageId;
-  bool m_currentImageIdHasBeenSet = false;
 
   Aws::String m_desiredImageId;
-  bool m_desiredImageIdHasBeenSet = false;
 
   UltraServerInfo m_ultraServerInfo;
-  bool m_ultraServerInfoHasBeenSet = false;
 
   ClusterKubernetesConfigNodeDetails m_kubernetesConfig;
-  bool m_kubernetesConfigHasBeenSet = false;
 
   ClusterCapacityType m_capacityType{ClusterCapacityType::NOT_SET};
+  bool m_instanceGroupNameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nodeLogicalIdHasBeenSet = false;
+  bool m_instanceStatusHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_lastSoftwareUpdateTimeHasBeenSet = false;
+  bool m_lifeCycleConfigHasBeenSet = false;
+  bool m_overrideVpcConfigHasBeenSet = false;
+  bool m_threadsPerCoreHasBeenSet = false;
+  bool m_instanceStorageConfigsHasBeenSet = false;
+  bool m_privatePrimaryIpHasBeenSet = false;
+  bool m_privatePrimaryIpv6HasBeenSet = false;
+  bool m_privateDnsHostnameHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_currentImageIdHasBeenSet = false;
+  bool m_desiredImageIdHasBeenSet = false;
+  bool m_ultraServerInfoHasBeenSet = false;
+  bool m_kubernetesConfigHasBeenSet = false;
   bool m_capacityTypeHasBeenSet = false;
 };
 

@@ -318,42 +318,42 @@ class PodIdentityAssociation {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_serviceAccount;
-  bool m_serviceAccountHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_associationArn;
-  bool m_associationArnHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::String m_ownerArn;
-  bool m_ownerArnHasBeenSet = false;
 
   bool m_disableSessionTags{false};
-  bool m_disableSessionTagsHasBeenSet = false;
 
   Aws::String m_targetRoleArn;
-  bool m_targetRoleArnHasBeenSet = false;
 
   Aws::String m_externalId;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_serviceAccountHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_associationArnHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_ownerArnHasBeenSet = false;
+  bool m_disableSessionTagsHasBeenSet = false;
+  bool m_targetRoleArnHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
 };
 

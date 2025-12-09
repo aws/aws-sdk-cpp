@@ -71,9 +71,9 @@ class AuthorizeVpcEndpointAccessRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_account;
+  bool m_domainNameHasBeenSet = false;
   bool m_accountHasBeenSet = false;
 };
 

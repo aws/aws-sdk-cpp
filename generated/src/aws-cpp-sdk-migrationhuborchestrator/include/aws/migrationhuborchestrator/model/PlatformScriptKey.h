@@ -69,9 +69,9 @@ class PlatformScriptKey {
   ///@}
  private:
   Aws::String m_linux;
-  bool m_linuxHasBeenSet = false;
 
   Aws::String m_windows;
+  bool m_linuxHasBeenSet = false;
   bool m_windowsHasBeenSet = false;
 };
 

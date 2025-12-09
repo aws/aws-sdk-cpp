@@ -75,9 +75,9 @@ class Indicator {
   ///@}
  private:
   IndicatorType m_indicatorType{IndicatorType::NOT_SET};
-  bool m_indicatorTypeHasBeenSet = false;
 
   IndicatorDetail m_indicatorDetail;
+  bool m_indicatorTypeHasBeenSet = false;
   bool m_indicatorDetailHasBeenSet = false;
 };
 

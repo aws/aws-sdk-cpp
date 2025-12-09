@@ -180,21 +180,21 @@ class ListVehiclesRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_modelManifestArn;
-  bool m_modelManifestArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeNames;
-  bool m_attributeNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributeValues;
-  bool m_attributeValuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ListResponseScope m_listResponseScope{ListResponseScope::NOT_SET};
+  bool m_modelManifestArnHasBeenSet = false;
+  bool m_attributeNamesHasBeenSet = false;
+  bool m_attributeValuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_listResponseScopeHasBeenSet = false;
 };
 

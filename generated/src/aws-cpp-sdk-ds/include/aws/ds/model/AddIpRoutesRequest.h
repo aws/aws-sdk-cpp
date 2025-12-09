@@ -124,12 +124,12 @@ class AddIpRoutesRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<IpRoute> m_ipRoutes;
-  bool m_ipRoutesHasBeenSet = false;
 
   bool m_updateSecurityGroupForDirectoryControllers{false};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_ipRoutesHasBeenSet = false;
   bool m_updateSecurityGroupForDirectoryControllersHasBeenSet = false;
 };
 

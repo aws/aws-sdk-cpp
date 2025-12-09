@@ -69,9 +69,9 @@ class ModifyAquaConfigurationRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   AquaConfigurationStatus m_aquaConfigurationStatus{AquaConfigurationStatus::NOT_SET};
+  bool m_clusterIdentifierHasBeenSet = false;
   bool m_aquaConfigurationStatusHasBeenSet = false;
 };
 

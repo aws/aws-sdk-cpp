@@ -175,24 +175,24 @@ class Record {
   ///@}
  private:
   Aws::String m_eventID;
-  bool m_eventIDHasBeenSet = false;
 
   OperationType m_eventName{OperationType::NOT_SET};
-  bool m_eventNameHasBeenSet = false;
 
   Aws::String m_eventVersion;
-  bool m_eventVersionHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::String m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   StreamRecord m_dynamodb;
-  bool m_dynamodbHasBeenSet = false;
 
   Identity m_userIdentity;
+  bool m_eventIDHasBeenSet = false;
+  bool m_eventNameHasBeenSet = false;
+  bool m_eventVersionHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_dynamodbHasBeenSet = false;
   bool m_userIdentityHasBeenSet = false;
 };
 

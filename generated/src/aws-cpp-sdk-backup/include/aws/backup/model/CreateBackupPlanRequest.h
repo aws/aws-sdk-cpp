@@ -97,12 +97,12 @@ class CreateBackupPlanRequest : public BackupRequest {
   ///@}
  private:
   BackupPlanInput m_backupPlan;
-  bool m_backupPlanHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_backupPlanTags;
-  bool m_backupPlanTagsHasBeenSet = false;
 
   Aws::String m_creatorRequestId{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_backupPlanHasBeenSet = false;
+  bool m_backupPlanTagsHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = true;
 };
 

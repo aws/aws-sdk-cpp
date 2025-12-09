@@ -316,51 +316,51 @@ class GetAudienceGenerationJobResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_audienceGenerationJobArn;
-  bool m_audienceGenerationJobArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AudienceGenerationJobStatus m_status{AudienceGenerationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   AudienceGenerationJobDataSource m_seedAudience;
-  bool m_seedAudienceHasBeenSet = false;
 
   bool m_includeSeedInOutput{false};
-  bool m_includeSeedInOutputHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   AudienceQualityMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_protectedQueryIdentifier;
-  bool m_protectedQueryIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_audienceGenerationJobArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_seedAudienceHasBeenSet = false;
+  bool m_includeSeedInOutputHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_protectedQueryIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

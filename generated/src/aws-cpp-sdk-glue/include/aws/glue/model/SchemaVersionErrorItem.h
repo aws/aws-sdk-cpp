@@ -67,9 +67,9 @@ class SchemaVersionErrorItem {
   ///@}
  private:
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
+  bool m_versionNumberHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

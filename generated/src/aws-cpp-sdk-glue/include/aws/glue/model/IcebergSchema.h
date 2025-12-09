@@ -118,15 +118,15 @@ class IcebergSchema {
   ///@}
  private:
   int m_schemaId{0};
-  bool m_schemaIdHasBeenSet = false;
 
   Aws::Vector<int> m_identifierFieldIds;
-  bool m_identifierFieldIdsHasBeenSet = false;
 
   IcebergStructTypeEnum m_type{IcebergStructTypeEnum::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<IcebergStructField> m_fields;
+  bool m_schemaIdHasBeenSet = false;
+  bool m_identifierFieldIdsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
 };
 

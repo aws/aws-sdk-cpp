@@ -74,9 +74,9 @@ class BatchPutTaxRegistrationRequest : public TaxSettingsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   TaxRegistrationEntry m_taxRegistrationEntry;
+  bool m_accountIdsHasBeenSet = false;
   bool m_taxRegistrationEntryHasBeenSet = false;
 };
 

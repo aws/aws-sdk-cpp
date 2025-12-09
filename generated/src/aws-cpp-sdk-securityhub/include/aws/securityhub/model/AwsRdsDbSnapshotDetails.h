@@ -536,84 +536,84 @@ class AwsRdsDbSnapshotDetails {
   ///@}
  private:
   Aws::String m_dbSnapshotIdentifier;
-  bool m_dbSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_dbInstanceIdentifier;
-  bool m_dbInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotCreateTime;
-  bool m_snapshotCreateTimeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_instanceCreateTime;
-  bool m_instanceCreateTimeHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_snapshotType;
-  bool m_snapshotTypeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   int m_percentProgress{0};
-  bool m_percentProgressHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_sourceDbSnapshotIdentifier;
-  bool m_sourceDbSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_tdeCredentialArn;
-  bool m_tdeCredentialArnHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   bool m_iamDatabaseAuthenticationEnabled{false};
-  bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbProcessorFeature> m_processorFeatures;
-  bool m_processorFeaturesHasBeenSet = false;
 
   Aws::String m_dbiResourceId;
+  bool m_dbSnapshotIdentifierHasBeenSet = false;
+  bool m_dbInstanceIdentifierHasBeenSet = false;
+  bool m_snapshotCreateTimeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_instanceCreateTimeHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_snapshotTypeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_sourceDbSnapshotIdentifierHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_tdeCredentialArnHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_iamDatabaseAuthenticationEnabledHasBeenSet = false;
+  bool m_processorFeaturesHasBeenSet = false;
   bool m_dbiResourceIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class StopColumnStatisticsTaskRunScheduleRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
+  bool m_databaseNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
 };
 

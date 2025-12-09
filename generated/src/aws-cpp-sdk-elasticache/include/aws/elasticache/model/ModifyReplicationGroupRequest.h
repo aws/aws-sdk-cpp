@@ -661,90 +661,90 @@ class ModifyReplicationGroupRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_replicationGroupDescription;
-  bool m_replicationGroupDescriptionHasBeenSet = false;
 
   Aws::String m_primaryClusterId;
-  bool m_primaryClusterIdHasBeenSet = false;
 
   Aws::String m_snapshottingClusterId;
-  bool m_snapshottingClusterIdHasBeenSet = false;
 
   bool m_automaticFailoverEnabled{false};
-  bool m_automaticFailoverEnabledHasBeenSet = false;
 
   bool m_multiAZEnabled{false};
-  bool m_multiAZEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cacheSecurityGroupNames;
-  bool m_cacheSecurityGroupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   Aws::String m_notificationTopicArn;
-  bool m_notificationTopicArnHasBeenSet = false;
 
   Aws::String m_cacheParameterGroupName;
-  bool m_cacheParameterGroupNameHasBeenSet = false;
 
   Aws::String m_notificationTopicStatus;
-  bool m_notificationTopicStatusHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_authToken;
-  bool m_authTokenHasBeenSet = false;
 
   AuthTokenUpdateStrategyType m_authTokenUpdateStrategy{AuthTokenUpdateStrategyType::NOT_SET};
-  bool m_authTokenUpdateStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroupIdsToAdd;
-  bool m_userGroupIdsToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroupIdsToRemove;
-  bool m_userGroupIdsToRemoveHasBeenSet = false;
 
   bool m_removeUserGroups{false};
-  bool m_removeUserGroupsHasBeenSet = false;
 
   Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
-  bool m_logDeliveryConfigurationsHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
-  bool m_ipDiscoveryHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
-  bool m_transitEncryptionModeHasBeenSet = false;
 
   ClusterMode m_clusterMode{ClusterMode::NOT_SET};
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_replicationGroupDescriptionHasBeenSet = false;
+  bool m_primaryClusterIdHasBeenSet = false;
+  bool m_snapshottingClusterIdHasBeenSet = false;
+  bool m_automaticFailoverEnabledHasBeenSet = false;
+  bool m_multiAZEnabledHasBeenSet = false;
+  bool m_cacheSecurityGroupNamesHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_notificationTopicArnHasBeenSet = false;
+  bool m_cacheParameterGroupNameHasBeenSet = false;
+  bool m_notificationTopicStatusHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_authTokenHasBeenSet = false;
+  bool m_authTokenUpdateStrategyHasBeenSet = false;
+  bool m_userGroupIdsToAddHasBeenSet = false;
+  bool m_userGroupIdsToRemoveHasBeenSet = false;
+  bool m_removeUserGroupsHasBeenSet = false;
+  bool m_logDeliveryConfigurationsHasBeenSet = false;
+  bool m_ipDiscoveryHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_transitEncryptionModeHasBeenSet = false;
   bool m_clusterModeHasBeenSet = false;
 };
 

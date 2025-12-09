@@ -108,15 +108,15 @@ class ComponentState {
   ///@}
  private:
   Aws::String m_serviceInstanceName;
-  bool m_serviceInstanceNameHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_serviceSpec;
-  bool m_serviceSpecHasBeenSet = false;
 
   Aws::String m_templateFile;
+  bool m_serviceInstanceNameHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_serviceSpecHasBeenSet = false;
   bool m_templateFileHasBeenSet = false;
 };
 

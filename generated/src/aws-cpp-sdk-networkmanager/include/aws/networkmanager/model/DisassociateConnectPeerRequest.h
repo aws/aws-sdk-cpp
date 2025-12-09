@@ -65,9 +65,9 @@ class DisassociateConnectPeerRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_connectPeerId;
+  bool m_globalNetworkIdHasBeenSet = false;
   bool m_connectPeerIdHasBeenSet = false;
 };
 

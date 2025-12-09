@@ -83,12 +83,12 @@ class DeleteAssetFilterRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_assetIdentifier;
-  bool m_assetIdentifierHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_assetIdentifierHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

@@ -159,24 +159,24 @@ class LifeCycle {
   ///@}
  private:
   Aws::String m_addedToServiceDateTime;
-  bool m_addedToServiceDateTimeHasBeenSet = false;
 
   Aws::String m_elapsedReplicationDuration;
-  bool m_elapsedReplicationDurationHasBeenSet = false;
 
   Aws::String m_firstByteDateTime;
-  bool m_firstByteDateTimeHasBeenSet = false;
 
   LifeCycleLastCutover m_lastCutover;
-  bool m_lastCutoverHasBeenSet = false;
 
   Aws::String m_lastSeenByServiceDateTime;
-  bool m_lastSeenByServiceDateTimeHasBeenSet = false;
 
   LifeCycleLastTest m_lastTest;
-  bool m_lastTestHasBeenSet = false;
 
   LifeCycleState m_state{LifeCycleState::NOT_SET};
+  bool m_addedToServiceDateTimeHasBeenSet = false;
+  bool m_elapsedReplicationDurationHasBeenSet = false;
+  bool m_firstByteDateTimeHasBeenSet = false;
+  bool m_lastCutoverHasBeenSet = false;
+  bool m_lastSeenByServiceDateTimeHasBeenSet = false;
+  bool m_lastTestHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

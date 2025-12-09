@@ -67,9 +67,9 @@ class SseConfig {
   ///@}
  private:
   EncryptionType m_type{EncryptionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_keyArn;
+  bool m_typeHasBeenSet = false;
   bool m_keyArnHasBeenSet = false;
 };
 

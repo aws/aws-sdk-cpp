@@ -123,18 +123,18 @@ class Revision {
   ///@}
  private:
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_directory;
-  bool m_directoryHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   RepositoryProvider m_repositoryProvider{RepositoryProvider::NOT_SET};
-  bool m_repositoryProviderHasBeenSet = false;
 
   Aws::String m_sha;
+  bool m_branchHasBeenSet = false;
+  bool m_directoryHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_repositoryProviderHasBeenSet = false;
   bool m_shaHasBeenSet = false;
 };
 

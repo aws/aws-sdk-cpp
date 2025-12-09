@@ -71,9 +71,9 @@ class CacheNodeTypeSpecificValue {
   ///@}
  private:
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_cacheNodeTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

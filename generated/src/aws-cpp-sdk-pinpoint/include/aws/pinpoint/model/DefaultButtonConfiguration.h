@@ -137,21 +137,21 @@ class DefaultButtonConfiguration {
   ///@}
  private:
   Aws::String m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   int m_borderRadius{0};
-  bool m_borderRadiusHasBeenSet = false;
 
   ButtonAction m_buttonAction{ButtonAction::NOT_SET};
-  bool m_buttonActionHasBeenSet = false;
 
   Aws::String m_link;
-  bool m_linkHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_textColor;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_borderRadiusHasBeenSet = false;
+  bool m_buttonActionHasBeenSet = false;
+  bool m_linkHasBeenSet = false;
+  bool m_textHasBeenSet = false;
   bool m_textColorHasBeenSet = false;
 };
 

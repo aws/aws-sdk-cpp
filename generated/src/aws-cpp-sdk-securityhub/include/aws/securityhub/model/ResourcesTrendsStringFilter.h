@@ -67,9 +67,9 @@ class ResourcesTrendsStringFilter {
   ///@}
  private:
   ResourcesTrendsStringField m_fieldName{ResourcesTrendsStringField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   StringFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

@@ -229,27 +229,27 @@ class CreateAccessPointRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
-  bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
   Aws::String m_bucketAccountId;
-  bool m_bucketAccountIdHasBeenSet = false;
 
   Scope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_accountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_publicAccessBlockConfigurationHasBeenSet = false;
+  bool m_bucketAccountIdHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

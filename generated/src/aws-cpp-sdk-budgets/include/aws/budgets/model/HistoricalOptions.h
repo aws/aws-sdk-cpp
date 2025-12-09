@@ -81,9 +81,9 @@ class HistoricalOptions {
   ///@}
  private:
   int m_budgetAdjustmentPeriod{0};
-  bool m_budgetAdjustmentPeriodHasBeenSet = false;
 
   int m_lookBackAvailablePeriods{0};
+  bool m_budgetAdjustmentPeriodHasBeenSet = false;
   bool m_lookBackAvailablePeriodsHasBeenSet = false;
 };
 

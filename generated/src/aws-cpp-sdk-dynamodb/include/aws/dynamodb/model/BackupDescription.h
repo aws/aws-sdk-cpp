@@ -90,12 +90,12 @@ class BackupDescription {
   ///@}
  private:
   BackupDetails m_backupDetails;
-  bool m_backupDetailsHasBeenSet = false;
 
   SourceTableDetails m_sourceTableDetails;
-  bool m_sourceTableDetailsHasBeenSet = false;
 
   SourceTableFeatureDetails m_sourceTableFeatureDetails;
+  bool m_backupDetailsHasBeenSet = false;
+  bool m_sourceTableDetailsHasBeenSet = false;
   bool m_sourceTableFeatureDetailsHasBeenSet = false;
 };
 

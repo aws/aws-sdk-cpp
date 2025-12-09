@@ -84,12 +84,12 @@ class GetMembershipAccountDetailItem {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   MembershipAccountRelationshipStatus m_relationshipStatus{MembershipAccountRelationshipStatus::NOT_SET};
-  bool m_relationshipStatusHasBeenSet = false;
 
   MembershipAccountRelationshipType m_relationshipType{MembershipAccountRelationshipType::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
+  bool m_relationshipStatusHasBeenSet = false;
   bool m_relationshipTypeHasBeenSet = false;
 };
 

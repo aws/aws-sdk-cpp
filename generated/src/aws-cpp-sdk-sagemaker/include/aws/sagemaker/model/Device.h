@@ -86,12 +86,12 @@ class Device {
   ///@}
  private:
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_iotThingName;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_iotThingNameHasBeenSet = false;
 };
 

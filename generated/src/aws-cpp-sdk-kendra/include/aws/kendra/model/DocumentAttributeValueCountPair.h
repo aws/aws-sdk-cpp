@@ -104,12 +104,12 @@ class DocumentAttributeValueCountPair {
   ///@}
  private:
   DocumentAttributeValue m_documentAttributeValue;
-  bool m_documentAttributeValueHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::Vector<FacetResult> m_facetResults;
+  bool m_documentAttributeValueHasBeenSet = false;
+  bool m_countHasBeenSet = false;
   bool m_facetResultsHasBeenSet = false;
 };
 

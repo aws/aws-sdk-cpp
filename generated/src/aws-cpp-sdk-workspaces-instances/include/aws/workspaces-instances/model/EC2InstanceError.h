@@ -87,12 +87,12 @@ class EC2InstanceError {
   ///@}
  private:
   Aws::String m_eC2ErrorCode;
-  bool m_eC2ErrorCodeHasBeenSet = false;
 
   Aws::String m_eC2ExceptionType;
-  bool m_eC2ExceptionTypeHasBeenSet = false;
 
   Aws::String m_eC2ErrorMessage;
+  bool m_eC2ErrorCodeHasBeenSet = false;
+  bool m_eC2ExceptionTypeHasBeenSet = false;
   bool m_eC2ErrorMessageHasBeenSet = false;
 };
 

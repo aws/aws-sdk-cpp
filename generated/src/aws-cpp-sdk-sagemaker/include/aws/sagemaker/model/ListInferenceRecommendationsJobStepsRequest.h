@@ -121,18 +121,18 @@ class ListInferenceRecommendationsJobStepsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   RecommendationJobStatus m_status{RecommendationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   RecommendationStepType m_stepType{RecommendationStepType::NOT_SET};
-  bool m_stepTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_jobNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stepTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

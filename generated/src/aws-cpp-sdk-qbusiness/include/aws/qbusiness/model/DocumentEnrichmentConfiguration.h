@@ -95,12 +95,12 @@ class DocumentEnrichmentConfiguration {
   ///@}
  private:
   Aws::Vector<InlineDocumentEnrichmentConfiguration> m_inlineConfigurations;
-  bool m_inlineConfigurationsHasBeenSet = false;
 
   HookConfiguration m_preExtractionHookConfiguration;
-  bool m_preExtractionHookConfigurationHasBeenSet = false;
 
   HookConfiguration m_postExtractionHookConfiguration;
+  bool m_inlineConfigurationsHasBeenSet = false;
+  bool m_preExtractionHookConfigurationHasBeenSet = false;
   bool m_postExtractionHookConfigurationHasBeenSet = false;
 };
 

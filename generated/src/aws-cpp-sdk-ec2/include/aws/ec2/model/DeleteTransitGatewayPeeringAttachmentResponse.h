@@ -61,9 +61,9 @@ class DeleteTransitGatewayPeeringAttachmentResponse {
   ///@}
  private:
   TransitGatewayPeeringAttachment m_transitGatewayPeeringAttachment;
-  bool m_transitGatewayPeeringAttachmentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayPeeringAttachmentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

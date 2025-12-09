@@ -179,27 +179,27 @@ class TestInvokeAuthorizerResult {
   ///@}
  private:
   int m_clientStatus{0};
-  bool m_clientStatusHasBeenSet = false;
 
   Aws::String m_log;
-  bool m_logHasBeenSet = false;
 
   long long m_latency{0};
-  bool m_latencyHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_authorization;
-  bool m_authorizationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_claims;
-  bool m_claimsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientStatusHasBeenSet = false;
+  bool m_logHasBeenSet = false;
+  bool m_latencyHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_authorizationHasBeenSet = false;
+  bool m_claimsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class ListCrossAccountResourcesRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_acceleratorArn;
-  bool m_acceleratorArnHasBeenSet = false;
 
   Aws::String m_resourceOwnerAwsAccountId;
-  bool m_resourceOwnerAwsAccountIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_acceleratorArnHasBeenSet = false;
+  bool m_resourceOwnerAwsAccountIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

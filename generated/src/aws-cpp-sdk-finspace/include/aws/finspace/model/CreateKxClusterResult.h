@@ -533,78 +533,78 @@ class CreateKxClusterResult {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   KxClusterStatus m_status{KxClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   KxClusterType m_clusterType{KxClusterType::NOT_SET};
-  bool m_clusterTypeHasBeenSet = false;
 
   TickerplantLogConfiguration m_tickerplantLogConfiguration;
-  bool m_tickerplantLogConfigurationHasBeenSet = false;
 
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::Vector<KxDatabaseConfiguration> m_databases;
-  bool m_databasesHasBeenSet = false;
 
   Aws::Vector<KxCacheStorageConfiguration> m_cacheStorageConfigurations;
-  bool m_cacheStorageConfigurationsHasBeenSet = false;
 
   AutoScalingConfiguration m_autoScalingConfiguration;
-  bool m_autoScalingConfigurationHasBeenSet = false;
 
   Aws::String m_clusterDescription;
-  bool m_clusterDescriptionHasBeenSet = false;
 
   CapacityConfiguration m_capacityConfiguration;
-  bool m_capacityConfigurationHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_initializationScript;
-  bool m_initializationScriptHasBeenSet = false;
 
   Aws::Vector<KxCommandLineArgument> m_commandLineArguments;
-  bool m_commandLineArgumentsHasBeenSet = false;
 
   CodeConfiguration m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   KxSavedownStorageConfiguration m_savedownStorageConfiguration;
-  bool m_savedownStorageConfigurationHasBeenSet = false;
 
   KxAzMode m_azMode{KxAzMode::NOT_SET};
-  bool m_azModeHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   KxScalingGroupConfiguration m_scalingGroupConfiguration;
-  bool m_scalingGroupConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_tickerplantLogConfigurationHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
+  bool m_databasesHasBeenSet = false;
+  bool m_cacheStorageConfigurationsHasBeenSet = false;
+  bool m_autoScalingConfigurationHasBeenSet = false;
+  bool m_clusterDescriptionHasBeenSet = false;
+  bool m_capacityConfigurationHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_initializationScriptHasBeenSet = false;
+  bool m_commandLineArgumentsHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
+  bool m_savedownStorageConfigurationHasBeenSet = false;
+  bool m_azModeHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_scalingGroupConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

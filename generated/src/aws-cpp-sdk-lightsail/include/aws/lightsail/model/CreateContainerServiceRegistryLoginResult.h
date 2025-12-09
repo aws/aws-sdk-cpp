@@ -62,9 +62,9 @@ class CreateContainerServiceRegistryLoginResult {
   ///@}
  private:
   ContainerServiceRegistryLogin m_registryLogin;
-  bool m_registryLoginHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryLoginHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

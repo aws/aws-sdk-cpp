@@ -95,15 +95,15 @@ class ResendContactReachabilityEmailResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   bool m_isAlreadyVerified{false};
-  bool m_isAlreadyVerifiedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_isAlreadyVerifiedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -208,33 +208,33 @@ class DescribePredictorBacktestExportJobResult {
   ///@}
  private:
   Aws::String m_predictorBacktestExportJobArn;
-  bool m_predictorBacktestExportJobArnHasBeenSet = false;
 
   Aws::String m_predictorBacktestExportJobName;
-  bool m_predictorBacktestExportJobNameHasBeenSet = false;
 
   Aws::String m_predictorArn;
-  bool m_predictorArnHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictorBacktestExportJobArnHasBeenSet = false;
+  bool m_predictorBacktestExportJobNameHasBeenSet = false;
+  bool m_predictorArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

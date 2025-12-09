@@ -201,30 +201,30 @@ class ImportCustomWorkspaceImageRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_imageDescription;
-  bool m_imageDescriptionHasBeenSet = false;
 
   ImageComputeType m_computeType{ImageComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   CustomImageProtocol m_protocol{CustomImageProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   ImageSourceIdentifier m_imageSource;
-  bool m_imageSourceHasBeenSet = false;
 
   Aws::String m_infrastructureConfigurationArn;
-  bool m_infrastructureConfigurationArnHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   OSVersion m_osVersion{OSVersion::NOT_SET};
-  bool m_osVersionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_imageNameHasBeenSet = false;
+  bool m_imageDescriptionHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_imageSourceHasBeenSet = false;
+  bool m_infrastructureConfigurationArnHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

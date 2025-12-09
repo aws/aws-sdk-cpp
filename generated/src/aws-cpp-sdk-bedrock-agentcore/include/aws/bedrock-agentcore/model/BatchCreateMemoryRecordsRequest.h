@@ -94,12 +94,12 @@ class BatchCreateMemoryRecordsRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::Vector<MemoryRecordCreateInput> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_memoryIdHasBeenSet = false;
+  bool m_recordsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

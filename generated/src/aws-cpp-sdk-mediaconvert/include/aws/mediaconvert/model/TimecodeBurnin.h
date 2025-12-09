@@ -90,12 +90,12 @@ class TimecodeBurnin {
   ///@}
  private:
   int m_fontSize{0};
-  bool m_fontSizeHasBeenSet = false;
 
   TimecodeBurninPosition m_position{TimecodeBurninPosition::NOT_SET};
-  bool m_positionHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_fontSizeHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

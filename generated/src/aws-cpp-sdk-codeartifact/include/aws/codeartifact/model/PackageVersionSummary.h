@@ -112,15 +112,15 @@ class PackageVersionSummary {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   PackageVersionOrigin m_origin;
+  bool m_versionHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_originHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteRouteResult {
   ///@}
  private:
   RouteData m_route;
-  bool m_routeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

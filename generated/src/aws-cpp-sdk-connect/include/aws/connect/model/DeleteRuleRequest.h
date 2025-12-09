@@ -67,9 +67,9 @@ class DeleteRuleRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_ruleId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_ruleIdHasBeenSet = false;
 };
 

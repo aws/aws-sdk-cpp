@@ -111,18 +111,18 @@ class DescribeMetricsExportResult {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   S3Location m_exportLocation;
-  bool m_exportLocationHasBeenSet = false;
 
   Aws::String m_metricsExportId;
-  bool m_metricsExportIdHasBeenSet = false;
 
   MetricsExportStatusType m_status{MetricsExportStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_exportLocationHasBeenSet = false;
+  bool m_metricsExportIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

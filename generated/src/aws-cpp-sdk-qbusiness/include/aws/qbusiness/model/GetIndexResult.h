@@ -284,45 +284,45 @@ class GetIndexResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   IndexStatus m_status{IndexStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   IndexType m_type{IndexType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   IndexCapacityConfiguration m_capacityConfiguration;
-  bool m_capacityConfigurationHasBeenSet = false;
 
   Aws::Vector<DocumentAttributeConfiguration> m_documentAttributeConfigurations;
-  bool m_documentAttributeConfigurationsHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   IndexStatistics m_indexStatistics;
-  bool m_indexStatisticsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_indexArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_capacityConfigurationHasBeenSet = false;
+  bool m_documentAttributeConfigurationsHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_indexStatisticsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListDataCellsFilterResult {
   ///@}
  private:
   Aws::Vector<DataCellsFilter> m_dataCellsFilters;
-  bool m_dataCellsFiltersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataCellsFiltersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

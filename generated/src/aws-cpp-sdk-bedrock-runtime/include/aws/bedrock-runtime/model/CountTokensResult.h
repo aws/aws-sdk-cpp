@@ -61,9 +61,9 @@ class CountTokensResult {
   ///@}
  private:
   int m_inputTokens{0};
-  bool m_inputTokensHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputTokensHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

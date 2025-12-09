@@ -138,15 +138,15 @@ class AnalysisResult {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   AnalysisResultLevel m_level{AnalysisResultLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<AnalysisResultLocation> m_locations;
+  bool m_typeHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_locationsHasBeenSet = false;
 };
 

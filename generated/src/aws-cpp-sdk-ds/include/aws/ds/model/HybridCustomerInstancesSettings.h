@@ -84,9 +84,9 @@ class HybridCustomerInstancesSettings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_customerDnsIps;
-  bool m_customerDnsIpsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceIds;
+  bool m_customerDnsIpsHasBeenSet = false;
   bool m_instanceIdsHasBeenSet = false;
 };
 

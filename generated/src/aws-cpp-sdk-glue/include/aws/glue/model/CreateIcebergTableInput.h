@@ -138,18 +138,18 @@ class CreateIcebergTableInput {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   IcebergSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   IcebergPartitionSpec m_partitionSpec;
-  bool m_partitionSpecHasBeenSet = false;
 
   IcebergSortOrder m_writeOrder;
-  bool m_writeOrderHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
+  bool m_locationHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_partitionSpecHasBeenSet = false;
+  bool m_writeOrderHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

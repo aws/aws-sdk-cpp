@@ -60,9 +60,9 @@ class UpdateFileCacheResult {
   ///@}
  private:
   FileCache m_fileCache;
-  bool m_fileCacheHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileCacheHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

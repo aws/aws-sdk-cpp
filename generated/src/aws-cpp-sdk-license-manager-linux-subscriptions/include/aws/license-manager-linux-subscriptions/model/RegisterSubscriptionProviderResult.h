@@ -95,15 +95,15 @@ class RegisterSubscriptionProviderResult {
   ///@}
  private:
   Aws::String m_subscriptionProviderArn;
-  bool m_subscriptionProviderArnHasBeenSet = false;
 
   SubscriptionProviderSource m_subscriptionProviderSource{SubscriptionProviderSource::NOT_SET};
-  bool m_subscriptionProviderSourceHasBeenSet = false;
 
   SubscriptionProviderStatus m_subscriptionProviderStatus{SubscriptionProviderStatus::NOT_SET};
-  bool m_subscriptionProviderStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_subscriptionProviderArnHasBeenSet = false;
+  bool m_subscriptionProviderSourceHasBeenSet = false;
+  bool m_subscriptionProviderStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

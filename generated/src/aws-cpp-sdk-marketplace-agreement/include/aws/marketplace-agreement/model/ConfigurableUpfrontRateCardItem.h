@@ -99,12 +99,12 @@ class ConfigurableUpfrontRateCardItem {
   ///@}
  private:
   Selector m_selector;
-  bool m_selectorHasBeenSet = false;
 
   Constraints m_constraints;
-  bool m_constraintsHasBeenSet = false;
 
   Aws::Vector<RateCardItem> m_rateCard;
+  bool m_selectorHasBeenSet = false;
+  bool m_constraintsHasBeenSet = false;
   bool m_rateCardHasBeenSet = false;
 };
 

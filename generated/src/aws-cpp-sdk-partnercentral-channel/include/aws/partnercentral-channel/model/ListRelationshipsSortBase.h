@@ -65,9 +65,9 @@ class ListRelationshipsSortBase {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   ListRelationshipsSortName m_sortBy{ListRelationshipsSortName::NOT_SET};
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

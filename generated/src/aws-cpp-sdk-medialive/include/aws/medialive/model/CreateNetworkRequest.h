@@ -152,18 +152,18 @@ class CreateNetworkRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::Vector<IpPoolCreateRequest> m_ipPools;
-  bool m_ipPoolsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::Vector<RouteCreateRequest> m_routes;
-  bool m_routesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_ipPoolsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
+  bool m_routesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

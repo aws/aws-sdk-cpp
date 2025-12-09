@@ -347,54 +347,54 @@ class ListPartsResult {
   ///@}
  private:
   Aws::Utils::DateTime m_abortDate{};
-  bool m_abortDateHasBeenSet = false;
 
   Aws::String m_abortRuleId;
-  bool m_abortRuleIdHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   int m_partNumberMarker{0};
-  bool m_partNumberMarkerHasBeenSet = false;
 
   int m_nextPartNumberMarker{0};
-  bool m_nextPartNumberMarkerHasBeenSet = false;
 
   int m_maxParts{0};
-  bool m_maxPartsHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::Vector<Part> m_parts;
-  bool m_partsHasBeenSet = false;
 
   Initiator m_initiator;
-  bool m_initiatorHasBeenSet = false;
 
   Owner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   RequestCharged m_requestCharged{RequestCharged::NOT_SET};
-  bool m_requestChargedHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
-  bool m_checksumTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_abortDateHasBeenSet = false;
+  bool m_abortRuleIdHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_partNumberMarkerHasBeenSet = false;
+  bool m_nextPartNumberMarkerHasBeenSet = false;
+  bool m_maxPartsHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_partsHasBeenSet = false;
+  bool m_initiatorHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_requestChargedHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_checksumTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

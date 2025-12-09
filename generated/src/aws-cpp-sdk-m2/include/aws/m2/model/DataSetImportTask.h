@@ -105,15 +105,15 @@ class DataSetImportTask {
   ///@}
  private:
   DataSetTaskLifecycle m_status{DataSetTaskLifecycle::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   DataSetImportSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_taskId;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_taskIdHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateAttributeGroupResult {
   ///@}
  private:
   AttributeGroup m_attributeGroup;
-  bool m_attributeGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributeGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

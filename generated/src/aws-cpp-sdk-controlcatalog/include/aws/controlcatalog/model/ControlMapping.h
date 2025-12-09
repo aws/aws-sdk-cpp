@@ -89,12 +89,12 @@ class ControlMapping {
   ///@}
  private:
   Aws::String m_controlArn;
-  bool m_controlArnHasBeenSet = false;
 
   MappingType m_mappingType{MappingType::NOT_SET};
-  bool m_mappingTypeHasBeenSet = false;
 
   Mapping m_mapping;
+  bool m_controlArnHasBeenSet = false;
+  bool m_mappingTypeHasBeenSet = false;
   bool m_mappingHasBeenSet = false;
 };
 

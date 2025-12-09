@@ -159,21 +159,21 @@ class MemoryRecord {
   ///@}
  private:
   Aws::String m_memoryRecordId;
-  bool m_memoryRecordIdHasBeenSet = false;
 
   MemoryContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_memoryStrategyId;
-  bool m_memoryStrategyIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Map<Aws::String, MetadataValue> m_metadata;
+  bool m_memoryRecordIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_memoryStrategyIdHasBeenSet = false;
+  bool m_namespacesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

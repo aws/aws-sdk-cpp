@@ -77,9 +77,9 @@ class MutualTlsAuthenticationInput {
   ///@}
  private:
   Aws::String m_truststoreUri;
-  bool m_truststoreUriHasBeenSet = false;
 
   Aws::String m_truststoreVersion;
+  bool m_truststoreUriHasBeenSet = false;
   bool m_truststoreVersionHasBeenSet = false;
 };
 

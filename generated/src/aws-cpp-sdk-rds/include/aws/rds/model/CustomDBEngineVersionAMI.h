@@ -70,9 +70,9 @@ class CustomDBEngineVersionAMI {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_imageIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -191,27 +191,27 @@ class SourceEventMetadata {
   ///@}
  private:
   Aws::String m_eventTypeVersion;
-  bool m_eventTypeVersionHasBeenSet = false;
 
   Aws::String m_sourceEventId;
-  bool m_sourceEventIdHasBeenSet = false;
 
   Aws::String m_eventOriginRegion;
-  bool m_eventOriginRegionHasBeenSet = false;
 
   Aws::String m_relatedAccount;
-  bool m_relatedAccountHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventOccurrenceTime{};
-  bool m_eventOccurrenceTimeHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Vector<Resource> m_relatedResources;
+  bool m_eventTypeVersionHasBeenSet = false;
+  bool m_sourceEventIdHasBeenSet = false;
+  bool m_eventOriginRegionHasBeenSet = false;
+  bool m_relatedAccountHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_eventOccurrenceTimeHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_relatedResourcesHasBeenSet = false;
 };
 

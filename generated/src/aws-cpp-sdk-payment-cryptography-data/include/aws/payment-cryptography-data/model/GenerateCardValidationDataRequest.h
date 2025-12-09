@@ -103,15 +103,15 @@ class GenerateCardValidationDataRequest : public PaymentCryptographyDataRequest 
   ///@}
  private:
   Aws::String m_keyIdentifier;
-  bool m_keyIdentifierHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   CardGenerationAttributes m_generationAttributes;
-  bool m_generationAttributesHasBeenSet = false;
 
   int m_validationDataLength{0};
+  bool m_keyIdentifierHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_generationAttributesHasBeenSet = false;
   bool m_validationDataLengthHasBeenSet = false;
 };
 

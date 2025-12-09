@@ -154,21 +154,21 @@ class DescribeDimensionKeysResult {
   ///@}
  private:
   Aws::Utils::DateTime m_alignedStartTime{};
-  bool m_alignedStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_alignedEndTime{};
-  bool m_alignedEndTimeHasBeenSet = false;
 
   Aws::Vector<ResponsePartitionKey> m_partitionKeys;
-  bool m_partitionKeysHasBeenSet = false;
 
   Aws::Vector<DimensionKeyDescription> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_alignedStartTimeHasBeenSet = false;
+  bool m_alignedEndTimeHasBeenSet = false;
+  bool m_partitionKeysHasBeenSet = false;
+  bool m_keysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class IndexDocumentsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_fieldNames;
-  bool m_fieldNamesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_fieldNamesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

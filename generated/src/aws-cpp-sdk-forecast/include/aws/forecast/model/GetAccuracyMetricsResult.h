@@ -119,18 +119,18 @@ class GetAccuracyMetricsResult {
   ///@}
  private:
   Aws::Vector<EvaluationResult> m_predictorEvaluationResults;
-  bool m_predictorEvaluationResultsHasBeenSet = false;
 
   bool m_isAutoPredictor{false};
-  bool m_isAutoPredictorHasBeenSet = false;
 
   AutoMLOverrideStrategy m_autoMLOverrideStrategy{AutoMLOverrideStrategy::NOT_SET};
-  bool m_autoMLOverrideStrategyHasBeenSet = false;
 
   OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
-  bool m_optimizationMetricHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_predictorEvaluationResultsHasBeenSet = false;
+  bool m_isAutoPredictorHasBeenSet = false;
+  bool m_autoMLOverrideStrategyHasBeenSet = false;
+  bool m_optimizationMetricHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

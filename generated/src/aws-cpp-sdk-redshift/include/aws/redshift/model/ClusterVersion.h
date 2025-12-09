@@ -89,12 +89,12 @@ class ClusterVersion {
   ///@}
  private:
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   Aws::String m_clusterParameterGroupFamily;
-  bool m_clusterParameterGroupFamilyHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_clusterParameterGroupFamilyHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

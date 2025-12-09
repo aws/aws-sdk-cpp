@@ -169,27 +169,27 @@ class DescribeChangeSetHooksResult {
   ///@}
  private:
   Aws::String m_changeSetId;
-  bool m_changeSetIdHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::Vector<ChangeSetHook> m_hooks;
-  bool m_hooksHasBeenSet = false;
 
   ChangeSetHooksStatus m_status{ChangeSetHooksStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_changeSetIdHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_hooksHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

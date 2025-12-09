@@ -76,12 +76,12 @@ class DisassociateAttributeGroupResult {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_attributeGroupArn;
-  bool m_attributeGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_attributeGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

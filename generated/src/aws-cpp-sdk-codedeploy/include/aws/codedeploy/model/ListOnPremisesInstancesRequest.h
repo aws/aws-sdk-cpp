@@ -101,12 +101,12 @@ class ListOnPremisesInstancesRequest : public CodeDeployRequest {
   ///@}
  private:
   RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusHasBeenSet = false;
 
   Aws::Vector<TagFilter> m_tagFilters;
-  bool m_tagFiltersHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_registrationStatusHasBeenSet = false;
+  bool m_tagFiltersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

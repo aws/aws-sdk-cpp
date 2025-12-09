@@ -114,18 +114,18 @@ class DescribeUploadBufferResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_diskIds;
-  bool m_diskIdsHasBeenSet = false;
 
   long long m_uploadBufferUsedInBytes{0};
-  bool m_uploadBufferUsedInBytesHasBeenSet = false;
 
   long long m_uploadBufferAllocatedInBytes{0};
-  bool m_uploadBufferAllocatedInBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_diskIdsHasBeenSet = false;
+  bool m_uploadBufferUsedInBytesHasBeenSet = false;
+  bool m_uploadBufferAllocatedInBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

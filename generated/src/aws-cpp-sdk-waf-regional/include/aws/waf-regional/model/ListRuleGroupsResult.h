@@ -89,12 +89,12 @@ class ListRuleGroupsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<RuleGroupSummary> m_ruleGroups;
-  bool m_ruleGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_ruleGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

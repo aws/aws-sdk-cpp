@@ -123,18 +123,18 @@ class HierarchyStructureUpdate {
   ///@}
  private:
   HierarchyLevelUpdate m_levelOne;
-  bool m_levelOneHasBeenSet = false;
 
   HierarchyLevelUpdate m_levelTwo;
-  bool m_levelTwoHasBeenSet = false;
 
   HierarchyLevelUpdate m_levelThree;
-  bool m_levelThreeHasBeenSet = false;
 
   HierarchyLevelUpdate m_levelFour;
-  bool m_levelFourHasBeenSet = false;
 
   HierarchyLevelUpdate m_levelFive;
+  bool m_levelOneHasBeenSet = false;
+  bool m_levelTwoHasBeenSet = false;
+  bool m_levelThreeHasBeenSet = false;
+  bool m_levelFourHasBeenSet = false;
   bool m_levelFiveHasBeenSet = false;
 };
 

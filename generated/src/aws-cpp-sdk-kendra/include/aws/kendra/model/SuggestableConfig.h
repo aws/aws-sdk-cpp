@@ -68,9 +68,9 @@ class SuggestableConfig {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   bool m_suggestable{false};
+  bool m_attributeNameHasBeenSet = false;
   bool m_suggestableHasBeenSet = false;
 };
 

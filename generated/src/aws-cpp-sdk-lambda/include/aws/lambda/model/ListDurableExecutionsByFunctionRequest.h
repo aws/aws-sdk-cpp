@@ -205,30 +205,30 @@ class ListDurableExecutionsByFunctionRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   Aws::String m_durableExecutionName;
-  bool m_durableExecutionNameHasBeenSet = false;
 
   Aws::Vector<ExecutionStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAfter{};
-  bool m_startedAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedBefore{};
-  bool m_startedBeforeHasBeenSet = false;
 
   bool m_reverseOrder{false};
-  bool m_reverseOrderHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
+  bool m_functionNameHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
+  bool m_durableExecutionNameHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
+  bool m_startedAfterHasBeenSet = false;
+  bool m_startedBeforeHasBeenSet = false;
+  bool m_reverseOrderHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

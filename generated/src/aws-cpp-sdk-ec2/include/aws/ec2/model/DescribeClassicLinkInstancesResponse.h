@@ -86,12 +86,12 @@ class DescribeClassicLinkInstancesResponse {
   ///@}
  private:
   Aws::Vector<ClassicLinkInstance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

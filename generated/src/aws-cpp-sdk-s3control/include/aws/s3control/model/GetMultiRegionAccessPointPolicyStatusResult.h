@@ -78,12 +78,12 @@ class GetMultiRegionAccessPointPolicyStatusResult {
   ///@}
  private:
   PolicyStatus m_established;
-  bool m_establishedHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_establishedHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

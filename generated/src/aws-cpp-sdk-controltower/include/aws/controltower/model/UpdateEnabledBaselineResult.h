@@ -62,9 +62,9 @@ class UpdateEnabledBaselineResult {
   ///@}
  private:
   Aws::String m_operationIdentifier;
-  bool m_operationIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,9 +94,9 @@ class InternetHealth {
   ///@}
  private:
   AvailabilityMeasurement m_availability;
-  bool m_availabilityHasBeenSet = false;
 
   PerformanceMeasurement m_performance;
+  bool m_availabilityHasBeenSet = false;
   bool m_performanceHasBeenSet = false;
 };
 

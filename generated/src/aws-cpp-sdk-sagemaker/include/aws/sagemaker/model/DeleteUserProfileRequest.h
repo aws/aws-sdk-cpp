@@ -67,9 +67,9 @@ class DeleteUserProfileRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_userProfileName;
+  bool m_domainIdHasBeenSet = false;
   bool m_userProfileNameHasBeenSet = false;
 };
 

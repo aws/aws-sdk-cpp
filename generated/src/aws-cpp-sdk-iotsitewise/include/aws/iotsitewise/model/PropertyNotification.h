@@ -73,9 +73,9 @@ class PropertyNotification {
   ///@}
  private:
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   PropertyNotificationState m_state{PropertyNotificationState::NOT_SET};
+  bool m_topicHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

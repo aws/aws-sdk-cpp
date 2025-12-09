@@ -68,9 +68,9 @@ class BusinessValidationError {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   BusinessValidationCode m_code{BusinessValidationCode::NOT_SET};
+  bool m_messageHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

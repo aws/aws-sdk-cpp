@@ -73,9 +73,9 @@ class GameSessionCreationLimitPolicy {
   ///@}
  private:
   int m_newGameSessionsPerCreator{0};
-  bool m_newGameSessionsPerCreatorHasBeenSet = false;
 
   int m_policyPeriodInMinutes{0};
+  bool m_newGameSessionsPerCreatorHasBeenSet = false;
   bool m_policyPeriodInMinutesHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class ApprovalTeamRequestApprover {
   ///@}
  private:
   Aws::String m_primaryIdentityId;
-  bool m_primaryIdentityIdHasBeenSet = false;
 
   Aws::String m_primaryIdentitySourceArn;
+  bool m_primaryIdentityIdHasBeenSet = false;
   bool m_primaryIdentitySourceArnHasBeenSet = false;
 };
 

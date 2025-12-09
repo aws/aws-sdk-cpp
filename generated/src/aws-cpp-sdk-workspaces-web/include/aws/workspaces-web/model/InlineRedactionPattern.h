@@ -167,21 +167,21 @@ class InlineRedactionPattern {
   ///@}
  private:
   Aws::String m_builtInPatternId;
-  bool m_builtInPatternIdHasBeenSet = false;
 
   CustomPattern m_customPattern;
-  bool m_customPatternHasBeenSet = false;
 
   RedactionPlaceHolder m_redactionPlaceHolder;
-  bool m_redactionPlaceHolderHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enforcedUrls;
-  bool m_enforcedUrlsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exemptUrls;
-  bool m_exemptUrlsHasBeenSet = false;
 
   int m_confidenceLevel{0};
+  bool m_builtInPatternIdHasBeenSet = false;
+  bool m_customPatternHasBeenSet = false;
+  bool m_redactionPlaceHolderHasBeenSet = false;
+  bool m_enforcedUrlsHasBeenSet = false;
+  bool m_exemptUrlsHasBeenSet = false;
   bool m_confidenceLevelHasBeenSet = false;
 };
 

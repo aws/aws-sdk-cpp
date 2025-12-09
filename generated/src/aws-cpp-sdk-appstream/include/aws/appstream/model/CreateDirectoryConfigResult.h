@@ -60,9 +60,9 @@ class CreateDirectoryConfigResult {
   ///@}
  private:
   DirectoryConfig m_directoryConfig;
-  bool m_directoryConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

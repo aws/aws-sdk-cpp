@@ -68,9 +68,9 @@ class UpdateVpcLinkRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_vpcLinkId;
+  bool m_nameHasBeenSet = false;
   bool m_vpcLinkIdHasBeenSet = false;
 };
 

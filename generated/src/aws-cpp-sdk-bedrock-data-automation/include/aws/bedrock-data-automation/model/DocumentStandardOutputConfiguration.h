@@ -82,12 +82,12 @@ class DocumentStandardOutputConfiguration {
   ///@}
  private:
   DocumentStandardExtraction m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   DocumentStandardGenerativeField m_generativeField;
-  bool m_generativeFieldHasBeenSet = false;
 
   DocumentOutputFormat m_outputFormat;
+  bool m_extractionHasBeenSet = false;
+  bool m_generativeFieldHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

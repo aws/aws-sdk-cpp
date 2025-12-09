@@ -116,15 +116,15 @@ class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_engagementIdentifier;
-  bool m_engagementIdentifierHasBeenSet = false;
 
   Invitation m_invitation;
+  bool m_catalogHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_engagementIdentifierHasBeenSet = false;
   bool m_invitationHasBeenSet = false;
 };
 

@@ -111,18 +111,18 @@ class GetBucketResult {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   bool m_publicAccessBlockEnabled{false};
-  bool m_publicAccessBlockEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_bucketHasBeenSet = false;
+  bool m_publicAccessBlockEnabledHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class AwsKinesisStreamDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   AwsKinesisStreamStreamEncryptionDetails m_streamEncryption;
-  bool m_streamEncryptionHasBeenSet = false;
 
   int m_shardCount{0};
-  bool m_shardCountHasBeenSet = false;
 
   int m_retentionPeriodHours{0};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_streamEncryptionHasBeenSet = false;
+  bool m_shardCountHasBeenSet = false;
   bool m_retentionPeriodHoursHasBeenSet = false;
 };
 

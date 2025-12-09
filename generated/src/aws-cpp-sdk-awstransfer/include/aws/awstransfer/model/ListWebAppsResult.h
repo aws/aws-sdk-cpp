@@ -86,12 +86,12 @@ class ListWebAppsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListedWebApp> m_webApps;
-  bool m_webAppsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_webAppsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

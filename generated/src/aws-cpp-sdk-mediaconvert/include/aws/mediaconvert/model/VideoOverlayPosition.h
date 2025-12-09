@@ -163,21 +163,21 @@ class VideoOverlayPosition {
   ///@}
  private:
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   int m_opacity{0};
-  bool m_opacityHasBeenSet = false;
 
   VideoOverlayUnit m_unit{VideoOverlayUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_xPosition{0};
-  bool m_xPositionHasBeenSet = false;
 
   int m_yPosition{0};
+  bool m_heightHasBeenSet = false;
+  bool m_opacityHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_xPositionHasBeenSet = false;
   bool m_yPositionHasBeenSet = false;
 };
 

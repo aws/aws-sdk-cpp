@@ -68,9 +68,9 @@ class PutRecordRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   Record m_record;
+  bool m_deliveryStreamNameHasBeenSet = false;
   bool m_recordHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListUserSettingsResult {
   ///@}
  private:
   Aws::Vector<UserSettingsSummary> m_userSettings;
-  bool m_userSettingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userSettingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

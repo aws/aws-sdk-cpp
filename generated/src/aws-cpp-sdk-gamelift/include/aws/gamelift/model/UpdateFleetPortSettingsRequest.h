@@ -100,12 +100,12 @@ class UpdateFleetPortSettingsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_inboundPermissionAuthorizations;
-  bool m_inboundPermissionAuthorizationsHasBeenSet = false;
 
   Aws::Vector<IpPermission> m_inboundPermissionRevocations;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_inboundPermissionAuthorizationsHasBeenSet = false;
   bool m_inboundPermissionRevocationsHasBeenSet = false;
 };
 

@@ -241,21 +241,21 @@ class ReplicateKeyRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_replicaRegion;
-  bool m_replicaRegionHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   bool m_bypassPolicyLockoutSafetyCheck{false};
-  bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_keyIdHasBeenSet = false;
+  bool m_replicaRegionHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -139,15 +139,15 @@ class AnalyticsUtteranceResult {
   ///@}
  private:
   Aws::Vector<AnalyticsBinKey> m_binKeys;
-  bool m_binKeysHasBeenSet = false;
 
   Aws::Vector<AnalyticsUtteranceGroupByKey> m_groupByKeys;
-  bool m_groupByKeysHasBeenSet = false;
 
   Aws::Vector<AnalyticsUtteranceMetricResult> m_metricsResults;
-  bool m_metricsResultsHasBeenSet = false;
 
   Aws::Vector<AnalyticsUtteranceAttributeResult> m_attributeResults;
+  bool m_binKeysHasBeenSet = false;
+  bool m_groupByKeysHasBeenSet = false;
+  bool m_metricsResultsHasBeenSet = false;
   bool m_attributeResultsHasBeenSet = false;
 };
 

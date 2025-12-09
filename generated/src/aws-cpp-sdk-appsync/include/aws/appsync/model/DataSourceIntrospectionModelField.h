@@ -86,12 +86,12 @@ class DataSourceIntrospectionModelField {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DataSourceIntrospectionModelFieldType m_type;
-  bool m_typeHasBeenSet = false;
 
   long long m_length{0};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_lengthHasBeenSet = false;
 };
 

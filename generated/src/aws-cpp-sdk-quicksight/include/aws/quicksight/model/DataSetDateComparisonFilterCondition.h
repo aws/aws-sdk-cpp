@@ -71,9 +71,9 @@ class DataSetDateComparisonFilterCondition {
   ///@}
  private:
   DataSetDateComparisonFilterOperator m_operator{DataSetDateComparisonFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DataSetDateFilterValue m_value;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

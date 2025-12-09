@@ -92,12 +92,12 @@ class S3BatchJobIdentifier {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   JobIdentifier m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_keyPrefix;
+  bool m_bucketHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_keyPrefixHasBeenSet = false;
 };
 

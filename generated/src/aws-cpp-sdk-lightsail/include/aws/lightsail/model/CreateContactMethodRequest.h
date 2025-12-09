@@ -88,9 +88,9 @@ class CreateContactMethodRequest : public LightsailRequest {
   ///@}
  private:
   ContactProtocol m_protocol{ContactProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_contactEndpoint;
+  bool m_protocolHasBeenSet = false;
   bool m_contactEndpointHasBeenSet = false;
 };
 

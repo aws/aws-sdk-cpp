@@ -147,21 +147,21 @@ class GenerateDataKeyResult {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
-  bool m_ciphertextBlobHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_plaintext{};
-  bool m_plaintextHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_ciphertextForRecipient{};
-  bool m_ciphertextForRecipientHasBeenSet = false;
 
   Aws::String m_keyMaterialId;
-  bool m_keyMaterialIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ciphertextBlobHasBeenSet = false;
+  bool m_plaintextHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_ciphertextForRecipientHasBeenSet = false;
+  bool m_keyMaterialIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class Tag {
   ///@}
  private:
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::String m_tagValue;
+  bool m_tagKeyHasBeenSet = false;
   bool m_tagValueHasBeenSet = false;
 };
 

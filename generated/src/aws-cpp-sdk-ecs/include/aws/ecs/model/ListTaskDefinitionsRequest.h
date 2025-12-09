@@ -144,18 +144,18 @@ class ListTaskDefinitionsRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_familyPrefix;
-  bool m_familyPrefixHasBeenSet = false;
 
   TaskDefinitionStatus m_status{TaskDefinitionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SortOrder m_sort{SortOrder::NOT_SET};
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_familyPrefixHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

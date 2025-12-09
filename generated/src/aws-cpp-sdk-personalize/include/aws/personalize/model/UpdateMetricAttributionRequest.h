@@ -118,15 +118,15 @@ class UpdateMetricAttributionRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::Vector<MetricAttribute> m_addMetrics;
-  bool m_addMetricsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeMetrics;
-  bool m_removeMetricsHasBeenSet = false;
 
   MetricAttributionOutput m_metricsOutputConfig;
-  bool m_metricsOutputConfigHasBeenSet = false;
 
   Aws::String m_metricAttributionArn;
+  bool m_addMetricsHasBeenSet = false;
+  bool m_removeMetricsHasBeenSet = false;
+  bool m_metricsOutputConfigHasBeenSet = false;
   bool m_metricAttributionArnHasBeenSet = false;
 };
 

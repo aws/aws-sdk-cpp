@@ -66,9 +66,9 @@ class PutRawMessageContentRequest : public WorkMailMessageFlowRequest {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   RawMessageContent m_content;
+  bool m_messageIdHasBeenSet = false;
   bool m_contentHasBeenSet = false;
 };
 

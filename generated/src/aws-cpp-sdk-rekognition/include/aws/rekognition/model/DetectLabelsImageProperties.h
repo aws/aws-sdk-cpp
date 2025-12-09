@@ -124,15 +124,15 @@ class DetectLabelsImageProperties {
   ///@}
  private:
   DetectLabelsImageQuality m_quality;
-  bool m_qualityHasBeenSet = false;
 
   Aws::Vector<DominantColor> m_dominantColors;
-  bool m_dominantColorsHasBeenSet = false;
 
   DetectLabelsImageForeground m_foreground;
-  bool m_foregroundHasBeenSet = false;
 
   DetectLabelsImageBackground m_background;
+  bool m_qualityHasBeenSet = false;
+  bool m_dominantColorsHasBeenSet = false;
+  bool m_foregroundHasBeenSet = false;
   bool m_backgroundHasBeenSet = false;
 };
 

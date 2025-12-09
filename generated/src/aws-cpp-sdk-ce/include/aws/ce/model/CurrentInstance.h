@@ -247,36 +247,36 @@ class CurrentInstance {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_instanceName;
-  bool m_instanceNameHasBeenSet = false;
 
   Aws::Vector<TagValues> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResourceDetails m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   ResourceUtilization m_resourceUtilization;
-  bool m_resourceUtilizationHasBeenSet = false;
 
   Aws::String m_reservationCoveredHoursInLookbackPeriod;
-  bool m_reservationCoveredHoursInLookbackPeriodHasBeenSet = false;
 
   Aws::String m_savingsPlansCoveredHoursInLookbackPeriod;
-  bool m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = false;
 
   Aws::String m_onDemandHoursInLookbackPeriod;
-  bool m_onDemandHoursInLookbackPeriodHasBeenSet = false;
 
   Aws::String m_totalRunningHoursInLookbackPeriod;
-  bool m_totalRunningHoursInLookbackPeriodHasBeenSet = false;
 
   Aws::String m_monthlyCost;
-  bool m_monthlyCostHasBeenSet = false;
 
   Aws::String m_currencyCode;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_instanceNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_resourceDetailsHasBeenSet = false;
+  bool m_resourceUtilizationHasBeenSet = false;
+  bool m_reservationCoveredHoursInLookbackPeriodHasBeenSet = false;
+  bool m_savingsPlansCoveredHoursInLookbackPeriodHasBeenSet = false;
+  bool m_onDemandHoursInLookbackPeriodHasBeenSet = false;
+  bool m_totalRunningHoursInLookbackPeriodHasBeenSet = false;
+  bool m_monthlyCostHasBeenSet = false;
   bool m_currencyCodeHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class DeactivateTypeRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   ThirdPartyType m_type{ThirdPartyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

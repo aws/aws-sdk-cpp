@@ -128,15 +128,15 @@ class ConverseTokensRequest {
   ///@}
  private:
   Aws::Vector<Message> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::Vector<SystemContentBlock> m_system;
-  bool m_systemHasBeenSet = false;
 
   ToolConfiguration m_toolConfig;
-  bool m_toolConfigHasBeenSet = false;
 
   Aws::Utils::Document m_additionalModelRequestFields;
+  bool m_messagesHasBeenSet = false;
+  bool m_systemHasBeenSet = false;
+  bool m_toolConfigHasBeenSet = false;
   bool m_additionalModelRequestFieldsHasBeenSet = false;
 };
 

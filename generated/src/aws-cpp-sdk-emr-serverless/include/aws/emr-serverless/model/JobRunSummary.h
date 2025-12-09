@@ -319,51 +319,51 @@ class JobRunSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   JobRunMode m_mode{JobRunMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   JobRunState m_state{JobRunState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateDetails;
-  bool m_stateDetailsHasBeenSet = false;
 
   Aws::String m_releaseLabel;
-  bool m_releaseLabelHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   int m_attempt{0};
-  bool m_attemptHasBeenSet = false;
 
   Aws::Utils::DateTime m_attemptCreatedAt{};
-  bool m_attemptCreatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_attemptUpdatedAt{};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateDetailsHasBeenSet = false;
+  bool m_releaseLabelHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_attemptHasBeenSet = false;
+  bool m_attemptCreatedAtHasBeenSet = false;
   bool m_attemptUpdatedAtHasBeenSet = false;
 };
 

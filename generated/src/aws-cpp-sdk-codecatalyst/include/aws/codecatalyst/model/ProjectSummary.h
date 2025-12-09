@@ -87,12 +87,12 @@ class ProjectSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

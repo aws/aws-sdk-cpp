@@ -159,24 +159,24 @@ class ListEventPredictionsRequest : public FraudDetectorRequest {
   ///@}
  private:
   FilterCondition m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   FilterCondition m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   FilterCondition m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   FilterCondition m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   PredictionTimeRange m_predictionTimeRange;
-  bool m_predictionTimeRangeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionIdHasBeenSet = false;
+  bool m_predictionTimeRangeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

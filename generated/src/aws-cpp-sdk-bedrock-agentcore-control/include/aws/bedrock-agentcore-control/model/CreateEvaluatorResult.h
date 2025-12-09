@@ -110,18 +110,18 @@ class CreateEvaluatorResult {
   ///@}
  private:
   Aws::String m_evaluatorArn;
-  bool m_evaluatorArnHasBeenSet = false;
 
   Aws::String m_evaluatorId;
-  bool m_evaluatorIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   EvaluatorStatus m_status{EvaluatorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluatorArnHasBeenSet = false;
+  bool m_evaluatorIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

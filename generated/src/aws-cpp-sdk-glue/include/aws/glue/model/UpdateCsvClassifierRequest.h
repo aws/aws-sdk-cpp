@@ -223,33 +223,33 @@ class UpdateCsvClassifierRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   Aws::String m_quoteSymbol;
-  bool m_quoteSymbolHasBeenSet = false;
 
   CsvHeaderOption m_containsHeader{CsvHeaderOption::NOT_SET};
-  bool m_containsHeaderHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_header;
-  bool m_headerHasBeenSet = false;
 
   bool m_disableValueTrimming{false};
-  bool m_disableValueTrimmingHasBeenSet = false;
 
   bool m_allowSingleColumn{false};
-  bool m_allowSingleColumnHasBeenSet = false;
 
   bool m_customDatatypeConfigured{false};
-  bool m_customDatatypeConfiguredHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customDatatypes;
-  bool m_customDatatypesHasBeenSet = false;
 
   CsvSerdeOption m_serde{CsvSerdeOption::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_delimiterHasBeenSet = false;
+  bool m_quoteSymbolHasBeenSet = false;
+  bool m_containsHeaderHasBeenSet = false;
+  bool m_headerHasBeenSet = false;
+  bool m_disableValueTrimmingHasBeenSet = false;
+  bool m_allowSingleColumnHasBeenSet = false;
+  bool m_customDatatypeConfiguredHasBeenSet = false;
+  bool m_customDatatypesHasBeenSet = false;
   bool m_serdeHasBeenSet = false;
 };
 

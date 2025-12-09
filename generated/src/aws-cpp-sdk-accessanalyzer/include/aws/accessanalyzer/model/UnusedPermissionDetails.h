@@ -101,12 +101,12 @@ class UnusedPermissionDetails {
   ///@}
  private:
   Aws::Vector<UnusedAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_serviceNamespace;
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessed{};
+  bool m_actionsHasBeenSet = false;
+  bool m_serviceNamespaceHasBeenSet = false;
   bool m_lastAccessedHasBeenSet = false;
 };
 

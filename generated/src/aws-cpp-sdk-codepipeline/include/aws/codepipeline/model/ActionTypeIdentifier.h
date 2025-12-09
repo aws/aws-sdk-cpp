@@ -110,15 +110,15 @@ class ActionTypeIdentifier {
   ///@}
  private:
   ActionCategory m_category{ActionCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_categoryHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

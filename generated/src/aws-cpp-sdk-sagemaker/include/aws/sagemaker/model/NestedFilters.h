@@ -93,9 +93,9 @@ class NestedFilters {
   ///@}
  private:
   Aws::String m_nestedPropertyName;
-  bool m_nestedPropertyNameHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_nestedPropertyNameHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

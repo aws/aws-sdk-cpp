@@ -343,42 +343,42 @@ class ReservedCacheNode {
   ///@}
  private:
   Aws::String m_reservedCacheNodeId;
-  bool m_reservedCacheNodeIdHasBeenSet = false;
 
   Aws::String m_reservedCacheNodesOfferingId;
-  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   double m_fixedPrice{0.0};
-  bool m_fixedPriceHasBeenSet = false;
 
   double m_usagePrice{0.0};
-  bool m_usagePriceHasBeenSet = false;
 
   int m_cacheNodeCount{0};
-  bool m_cacheNodeCountHasBeenSet = false;
 
   Aws::String m_productDescription;
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::String m_offeringType;
-  bool m_offeringTypeHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<RecurringCharge> m_recurringCharges;
-  bool m_recurringChargesHasBeenSet = false;
 
   Aws::String m_reservationARN;
+  bool m_reservedCacheNodeIdHasBeenSet = false;
+  bool m_reservedCacheNodesOfferingIdHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_fixedPriceHasBeenSet = false;
+  bool m_usagePriceHasBeenSet = false;
+  bool m_cacheNodeCountHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_recurringChargesHasBeenSet = false;
   bool m_reservationARNHasBeenSet = false;
 };
 

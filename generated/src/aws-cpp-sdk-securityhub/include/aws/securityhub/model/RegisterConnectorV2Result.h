@@ -76,12 +76,12 @@ class RegisterConnectorV2Result {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_connectorIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

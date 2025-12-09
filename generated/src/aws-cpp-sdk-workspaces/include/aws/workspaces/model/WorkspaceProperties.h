@@ -201,27 +201,27 @@ class WorkspaceProperties {
   ///@}
  private:
   RunningMode m_runningMode{RunningMode::NOT_SET};
-  bool m_runningModeHasBeenSet = false;
 
   int m_runningModeAutoStopTimeoutInMinutes{0};
-  bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet = false;
 
   int m_rootVolumeSizeGib{0};
-  bool m_rootVolumeSizeGibHasBeenSet = false;
 
   int m_userVolumeSizeGib{0};
-  bool m_userVolumeSizeGibHasBeenSet = false;
 
   Compute m_computeTypeName{Compute::NOT_SET};
-  bool m_computeTypeNameHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
-  bool m_protocolsHasBeenSet = false;
 
   OperatingSystemName m_operatingSystemName{OperatingSystemName::NOT_SET};
-  bool m_operatingSystemNameHasBeenSet = false;
 
   GlobalAcceleratorForWorkSpace m_globalAccelerator;
+  bool m_runningModeHasBeenSet = false;
+  bool m_runningModeAutoStopTimeoutInMinutesHasBeenSet = false;
+  bool m_rootVolumeSizeGibHasBeenSet = false;
+  bool m_userVolumeSizeGibHasBeenSet = false;
+  bool m_computeTypeNameHasBeenSet = false;
+  bool m_protocolsHasBeenSet = false;
+  bool m_operatingSystemNameHasBeenSet = false;
   bool m_globalAcceleratorHasBeenSet = false;
 };
 

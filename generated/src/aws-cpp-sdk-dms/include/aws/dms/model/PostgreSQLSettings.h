@@ -576,84 +576,84 @@ class PostgreSQLSettings {
   ///@}
  private:
   Aws::String m_afterConnectScript;
-  bool m_afterConnectScriptHasBeenSet = false;
 
   bool m_captureDdls{false};
-  bool m_captureDdlsHasBeenSet = false;
 
   int m_maxFileSize{0};
-  bool m_maxFileSizeHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_ddlArtifactsSchema;
-  bool m_ddlArtifactsSchemaHasBeenSet = false;
 
   int m_executeTimeout{0};
-  bool m_executeTimeoutHasBeenSet = false;
 
   bool m_failTasksOnLobTruncation{false};
-  bool m_failTasksOnLobTruncationHasBeenSet = false;
 
   bool m_heartbeatEnable{false};
-  bool m_heartbeatEnableHasBeenSet = false;
 
   Aws::String m_heartbeatSchema;
-  bool m_heartbeatSchemaHasBeenSet = false;
 
   int m_heartbeatFrequency{0};
-  bool m_heartbeatFrequencyHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_slotName;
-  bool m_slotNameHasBeenSet = false;
 
   PluginNameValue m_pluginName{PluginNameValue::NOT_SET};
-  bool m_pluginNameHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   bool m_trimSpaceInChar{false};
-  bool m_trimSpaceInCharHasBeenSet = false;
 
   bool m_mapBooleanAsBoolean{false};
-  bool m_mapBooleanAsBooleanHasBeenSet = false;
 
   bool m_mapJsonbAsClob{false};
-  bool m_mapJsonbAsClobHasBeenSet = false;
 
   LongVarcharMappingType m_mapLongVarcharAs{LongVarcharMappingType::NOT_SET};
-  bool m_mapLongVarcharAsHasBeenSet = false;
 
   DatabaseMode m_databaseMode{DatabaseMode::NOT_SET};
-  bool m_databaseModeHasBeenSet = false;
 
   Aws::String m_babelfishDatabaseName;
-  bool m_babelfishDatabaseNameHasBeenSet = false;
 
   bool m_disableUnicodeSourceFilter{false};
-  bool m_disableUnicodeSourceFilterHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   PostgreSQLAuthenticationMethod m_authenticationMethod{PostgreSQLAuthenticationMethod::NOT_SET};
+  bool m_afterConnectScriptHasBeenSet = false;
+  bool m_captureDdlsHasBeenSet = false;
+  bool m_maxFileSizeHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_ddlArtifactsSchemaHasBeenSet = false;
+  bool m_executeTimeoutHasBeenSet = false;
+  bool m_failTasksOnLobTruncationHasBeenSet = false;
+  bool m_heartbeatEnableHasBeenSet = false;
+  bool m_heartbeatSchemaHasBeenSet = false;
+  bool m_heartbeatFrequencyHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_slotNameHasBeenSet = false;
+  bool m_pluginNameHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
+  bool m_trimSpaceInCharHasBeenSet = false;
+  bool m_mapBooleanAsBooleanHasBeenSet = false;
+  bool m_mapJsonbAsClobHasBeenSet = false;
+  bool m_mapLongVarcharAsHasBeenSet = false;
+  bool m_databaseModeHasBeenSet = false;
+  bool m_babelfishDatabaseNameHasBeenSet = false;
+  bool m_disableUnicodeSourceFilterHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
   bool m_authenticationMethodHasBeenSet = false;
 };
 

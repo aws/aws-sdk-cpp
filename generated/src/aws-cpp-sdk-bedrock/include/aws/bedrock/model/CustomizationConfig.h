@@ -70,9 +70,9 @@ class CustomizationConfig {
   ///@}
  private:
   DistillationConfig m_distillationConfig;
-  bool m_distillationConfigHasBeenSet = false;
 
   RFTConfig m_rftConfig;
+  bool m_distillationConfigHasBeenSet = false;
   bool m_rftConfigHasBeenSet = false;
 };
 

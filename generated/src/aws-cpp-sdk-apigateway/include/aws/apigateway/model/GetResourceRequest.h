@@ -104,12 +104,12 @@ class GetResourceRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_embed;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_embedHasBeenSet = false;
 };
 

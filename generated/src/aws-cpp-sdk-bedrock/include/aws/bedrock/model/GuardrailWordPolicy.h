@@ -83,9 +83,9 @@ class GuardrailWordPolicy {
   ///@}
  private:
   Aws::Vector<GuardrailWord> m_words;
-  bool m_wordsHasBeenSet = false;
 
   Aws::Vector<GuardrailManagedWords> m_managedWordLists;
+  bool m_wordsHasBeenSet = false;
   bool m_managedWordListsHasBeenSet = false;
 };
 

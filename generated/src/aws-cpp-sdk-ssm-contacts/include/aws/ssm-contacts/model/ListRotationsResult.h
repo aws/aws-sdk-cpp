@@ -85,12 +85,12 @@ class ListRotationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Rotation> m_rotations;
-  bool m_rotationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_rotationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

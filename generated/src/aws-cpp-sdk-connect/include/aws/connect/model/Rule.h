@@ -247,36 +247,36 @@ class Rule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   RuleTriggerEventSource m_triggerEventSource;
-  bool m_triggerEventSourceHasBeenSet = false;
 
   Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   Aws::Vector<RuleAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   RulePublishStatus m_publishStatus{RulePublishStatus::NOT_SET};
-  bool m_publishStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_triggerEventSourceHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_publishStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

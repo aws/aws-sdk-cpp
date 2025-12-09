@@ -169,12 +169,12 @@ class Ec2Configuration {
   ///@}
  private:
   Aws::String m_imageType;
-  bool m_imageTypeHasBeenSet = false;
 
   Aws::String m_imageIdOverride;
-  bool m_imageIdOverrideHasBeenSet = false;
 
   Aws::String m_imageKubernetesVersion;
+  bool m_imageTypeHasBeenSet = false;
+  bool m_imageIdOverrideHasBeenSet = false;
   bool m_imageKubernetesVersionHasBeenSet = false;
 };
 

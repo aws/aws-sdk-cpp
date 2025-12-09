@@ -65,9 +65,9 @@ class WeightedQuantileLoss {
   ///@}
  private:
   double m_quantile{0.0};
-  bool m_quantileHasBeenSet = false;
 
   double m_lossValue{0.0};
+  bool m_quantileHasBeenSet = false;
   bool m_lossValueHasBeenSet = false;
 };
 

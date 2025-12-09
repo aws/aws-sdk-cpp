@@ -76,12 +76,12 @@ class CreateContactFlowModuleAliasResult {
   ///@}
  private:
   Aws::String m_contactFlowModuleArn;
-  bool m_contactFlowModuleArnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactFlowModuleArnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

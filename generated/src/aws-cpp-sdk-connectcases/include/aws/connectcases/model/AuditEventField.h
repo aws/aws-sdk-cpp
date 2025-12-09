@@ -87,12 +87,12 @@ class AuditEventField {
   ///@}
  private:
   Aws::String m_eventFieldId;
-  bool m_eventFieldIdHasBeenSet = false;
 
   AuditEventFieldValueUnion m_oldValue;
-  bool m_oldValueHasBeenSet = false;
 
   AuditEventFieldValueUnion m_newValue;
+  bool m_eventFieldIdHasBeenSet = false;
+  bool m_oldValueHasBeenSet = false;
   bool m_newValueHasBeenSet = false;
 };
 

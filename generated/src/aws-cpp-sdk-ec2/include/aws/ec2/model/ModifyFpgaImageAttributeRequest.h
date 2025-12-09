@@ -236,33 +236,33 @@ class ModifyFpgaImageAttributeRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_fpgaImageId;
-  bool m_fpgaImageIdHasBeenSet = false;
 
   FpgaImageAttributeName m_attribute{FpgaImageAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   OperationType m_operationType{OperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroups;
-  bool m_userGroupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   LoadPermissionModifications m_loadPermission;
-  bool m_loadPermissionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_dryRunHasBeenSet = false;
+  bool m_fpgaImageIdHasBeenSet = false;
+  bool m_attributeHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_userIdsHasBeenSet = false;
+  bool m_userGroupsHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
+  bool m_loadPermissionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

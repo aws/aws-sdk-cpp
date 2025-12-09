@@ -142,18 +142,18 @@ class ZookeeperNodeInfo {
   ///@}
  private:
   Aws::String m_attachedENIId;
-  bool m_attachedENIIdHasBeenSet = false;
 
   Aws::String m_clientVpcIpAddress;
-  bool m_clientVpcIpAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   double m_zookeeperId{0.0};
-  bool m_zookeeperIdHasBeenSet = false;
 
   Aws::String m_zookeeperVersion;
+  bool m_attachedENIIdHasBeenSet = false;
+  bool m_clientVpcIpAddressHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_zookeeperIdHasBeenSet = false;
   bool m_zookeeperVersionHasBeenSet = false;
 };
 

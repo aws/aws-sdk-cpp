@@ -137,18 +137,18 @@ class DestinationTableConfiguration {
   ///@}
  private:
   Aws::String m_destinationTableName;
-  bool m_destinationTableNameHasBeenSet = false;
 
   Aws::String m_destinationDatabaseName;
-  bool m_destinationDatabaseNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_uniqueKeys;
-  bool m_uniqueKeysHasBeenSet = false;
 
   PartitionSpec m_partitionSpec;
-  bool m_partitionSpecHasBeenSet = false;
 
   Aws::String m_s3ErrorOutputPrefix;
+  bool m_destinationTableNameHasBeenSet = false;
+  bool m_destinationDatabaseNameHasBeenSet = false;
+  bool m_uniqueKeysHasBeenSet = false;
+  bool m_partitionSpecHasBeenSet = false;
   bool m_s3ErrorOutputPrefixHasBeenSet = false;
 };
 

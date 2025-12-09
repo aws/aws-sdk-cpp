@@ -271,36 +271,36 @@ class ClaimedPhoneNumberSummary {
   ///@}
  private:
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   Aws::String m_phoneNumberArn;
-  bool m_phoneNumberArnHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   PhoneNumberCountryCode m_phoneNumberCountryCode{PhoneNumberCountryCode::NOT_SET};
-  bool m_phoneNumberCountryCodeHasBeenSet = false;
 
   PhoneNumberType m_phoneNumberType{PhoneNumberType::NOT_SET};
-  bool m_phoneNumberTypeHasBeenSet = false;
 
   Aws::String m_phoneNumberDescription;
-  bool m_phoneNumberDescriptionHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   PhoneNumberStatus m_phoneNumberStatus;
-  bool m_phoneNumberStatusHasBeenSet = false;
 
   Aws::String m_sourcePhoneNumberArn;
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_phoneNumberArnHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_phoneNumberCountryCodeHasBeenSet = false;
+  bool m_phoneNumberTypeHasBeenSet = false;
+  bool m_phoneNumberDescriptionHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_phoneNumberStatusHasBeenSet = false;
   bool m_sourcePhoneNumberArnHasBeenSet = false;
 };
 

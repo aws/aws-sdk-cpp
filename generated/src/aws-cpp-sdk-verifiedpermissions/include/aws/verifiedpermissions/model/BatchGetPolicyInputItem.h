@@ -70,9 +70,9 @@ class BatchGetPolicyInputItem {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_policyId;
+  bool m_policyStoreIdHasBeenSet = false;
   bool m_policyIdHasBeenSet = false;
 };
 

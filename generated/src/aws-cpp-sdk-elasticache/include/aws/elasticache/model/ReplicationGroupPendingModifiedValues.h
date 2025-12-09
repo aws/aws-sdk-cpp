@@ -211,30 +211,30 @@ class ReplicationGroupPendingModifiedValues {
   ///@}
  private:
   Aws::String m_primaryClusterId;
-  bool m_primaryClusterIdHasBeenSet = false;
 
   PendingAutomaticFailoverStatus m_automaticFailoverStatus{PendingAutomaticFailoverStatus::NOT_SET};
-  bool m_automaticFailoverStatusHasBeenSet = false;
 
   ReshardingStatus m_resharding;
-  bool m_reshardingHasBeenSet = false;
 
   AuthTokenUpdateStatus m_authTokenStatus{AuthTokenUpdateStatus::NOT_SET};
-  bool m_authTokenStatusHasBeenSet = false;
 
   UserGroupsUpdateStatus m_userGroups;
-  bool m_userGroupsHasBeenSet = false;
 
   Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
-  bool m_logDeliveryConfigurationsHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
-  bool m_transitEncryptionModeHasBeenSet = false;
 
   ClusterMode m_clusterMode{ClusterMode::NOT_SET};
+  bool m_primaryClusterIdHasBeenSet = false;
+  bool m_automaticFailoverStatusHasBeenSet = false;
+  bool m_reshardingHasBeenSet = false;
+  bool m_authTokenStatusHasBeenSet = false;
+  bool m_userGroupsHasBeenSet = false;
+  bool m_logDeliveryConfigurationsHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_transitEncryptionModeHasBeenSet = false;
   bool m_clusterModeHasBeenSet = false;
 };
 

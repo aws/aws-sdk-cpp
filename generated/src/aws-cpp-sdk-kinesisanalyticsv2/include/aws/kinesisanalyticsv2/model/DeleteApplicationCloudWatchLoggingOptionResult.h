@@ -123,18 +123,18 @@ class DeleteApplicationCloudWatchLoggingOptionResult {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
-  bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
 
   Aws::String m_operationId;
-  bool m_operationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

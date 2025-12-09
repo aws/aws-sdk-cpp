@@ -138,18 +138,18 @@ class BuildSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestedOn{};
-  bool m_requestedOnHasBeenSet = false;
 
   StatusType m_buildStatus{StatusType::NOT_SET};
-  bool m_buildStatusHasBeenSet = false;
 
   ResolvedArtifact m_primaryArtifact;
-  bool m_primaryArtifactHasBeenSet = false;
 
   Aws::Vector<ResolvedArtifact> m_secondaryArtifacts;
+  bool m_arnHasBeenSet = false;
+  bool m_requestedOnHasBeenSet = false;
+  bool m_buildStatusHasBeenSet = false;
+  bool m_primaryArtifactHasBeenSet = false;
   bool m_secondaryArtifactsHasBeenSet = false;
 };
 

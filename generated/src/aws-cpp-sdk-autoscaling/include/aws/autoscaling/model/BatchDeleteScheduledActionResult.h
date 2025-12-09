@@ -68,9 +68,9 @@ class BatchDeleteScheduledActionResult {
   ///@}
  private:
   Aws::Vector<FailedScheduledUpdateGroupActionRequest> m_failedScheduledActions;
-  bool m_failedScheduledActionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_failedScheduledActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

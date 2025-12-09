@@ -345,51 +345,51 @@ class CreateImagePipelineRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_imageRecipeArn;
-  bool m_imageRecipeArnHasBeenSet = false;
 
   Aws::String m_containerRecipeArn;
-  bool m_containerRecipeArnHasBeenSet = false;
 
   Aws::String m_infrastructureConfigurationArn;
-  bool m_infrastructureConfigurationArnHasBeenSet = false;
 
   Aws::String m_distributionConfigurationArn;
-  bool m_distributionConfigurationArnHasBeenSet = false;
 
   ImageTestsConfiguration m_imageTestsConfiguration;
-  bool m_imageTestsConfigurationHasBeenSet = false;
 
   bool m_enhancedImageMetadataEnabled{false};
-  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   PipelineStatus m_status{PipelineStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   Aws::Vector<WorkflowConfiguration> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   PipelineLoggingConfiguration m_loggingConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_imageRecipeArnHasBeenSet = false;
+  bool m_containerRecipeArnHasBeenSet = false;
+  bool m_infrastructureConfigurationArnHasBeenSet = false;
+  bool m_distributionConfigurationArnHasBeenSet = false;
+  bool m_imageTestsConfigurationHasBeenSet = false;
+  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_imageScanningConfigurationHasBeenSet = false;
+  bool m_workflowsHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;
 };
 

@@ -298,45 +298,45 @@ class GetInvestigationGroupResult {
   ///@}
  private:
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   long long m_createdAt{0};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_lastModifiedBy;
-  bool m_lastModifiedByHasBeenSet = false;
 
   long long m_lastModifiedAt{0};
-  bool m_lastModifiedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   long long m_retentionInDays{0};
-  bool m_retentionInDaysHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_chatbotNotificationChannel;
-  bool m_chatbotNotificationChannelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyBoundaries;
-  bool m_tagKeyBoundariesHasBeenSet = false;
 
   bool m_isCloudTrailEventHistoryEnabled{false};
-  bool m_isCloudTrailEventHistoryEnabledHasBeenSet = false;
 
   Aws::Vector<CrossAccountConfiguration> m_crossAccountConfigurations;
-  bool m_crossAccountConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
+  bool m_lastModifiedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_retentionInDaysHasBeenSet = false;
+  bool m_chatbotNotificationChannelHasBeenSet = false;
+  bool m_tagKeyBoundariesHasBeenSet = false;
+  bool m_isCloudTrailEventHistoryEnabledHasBeenSet = false;
+  bool m_crossAccountConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

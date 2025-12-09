@@ -89,12 +89,12 @@ class ListWebACLsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<WebACLSummary> m_webACLs;
-  bool m_webACLsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_webACLsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

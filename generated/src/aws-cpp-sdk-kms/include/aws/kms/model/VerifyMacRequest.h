@@ -163,21 +163,21 @@ class VerifyMacRequest : public KMSRequest {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_message{};
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   MacAlgorithmSpec m_macAlgorithm{MacAlgorithmSpec::NOT_SET};
-  bool m_macAlgorithmHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_mac{};
-  bool m_macHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTokens;
-  bool m_grantTokensHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_messageHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_macAlgorithmHasBeenSet = false;
+  bool m_macHasBeenSet = false;
+  bool m_grantTokensHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

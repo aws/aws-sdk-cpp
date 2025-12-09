@@ -114,9 +114,9 @@ class NetworkAccessConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_prefixListIds;
-  bool m_prefixListIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpceIds;
+  bool m_prefixListIdsHasBeenSet = false;
   bool m_vpceIdsHasBeenSet = false;
 };
 

@@ -152,21 +152,21 @@ class SharePointSourceConfiguration {
   ///@}
  private:
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_siteUrls;
-  bool m_siteUrlsHasBeenSet = false;
 
   SharePointHostType m_hostType{SharePointHostType::NOT_SET};
-  bool m_hostTypeHasBeenSet = false;
 
   SharePointAuthType m_authType{SharePointAuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_siteUrlsHasBeenSet = false;
+  bool m_hostTypeHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
   bool m_credentialsSecretArnHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class UpdateResolverRuleResult {
   ///@}
  private:
   ResolverRule m_resolverRule;
-  bool m_resolverRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

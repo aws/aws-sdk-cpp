@@ -190,24 +190,24 @@ class DialogAction {
   ///@}
  private:
   DialogActionType m_type{DialogActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_intentName;
-  bool m_intentNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_slots;
-  bool m_slotsHasBeenSet = false;
 
   Aws::String m_slotToElicit;
-  bool m_slotToElicitHasBeenSet = false;
 
   FulfillmentState m_fulfillmentState{FulfillmentState::NOT_SET};
-  bool m_fulfillmentStateHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   MessageFormatType m_messageFormat{MessageFormatType::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_intentNameHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
+  bool m_slotToElicitHasBeenSet = false;
+  bool m_fulfillmentStateHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_messageFormatHasBeenSet = false;
 };
 

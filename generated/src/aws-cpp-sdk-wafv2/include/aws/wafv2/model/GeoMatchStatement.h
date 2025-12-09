@@ -110,9 +110,9 @@ class GeoMatchStatement {
   ///@}
  private:
   Aws::Vector<CountryCode> m_countryCodes;
-  bool m_countryCodesHasBeenSet = false;
 
   ForwardedIPConfig m_forwardedIPConfig;
+  bool m_countryCodesHasBeenSet = false;
   bool m_forwardedIPConfigHasBeenSet = false;
 };
 

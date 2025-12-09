@@ -69,9 +69,9 @@ class AwsKinesisStreamStreamEncryptionDetails {
   ///@}
  private:
   Aws::String m_encryptionType;
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_keyId;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_keyIdHasBeenSet = false;
 };
 

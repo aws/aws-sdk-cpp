@@ -67,9 +67,9 @@ class DeleteEndpointRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_endpointId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_endpointIdHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class EventActionEntry {
   ///@}
  private:
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Event m_event;
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_actionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

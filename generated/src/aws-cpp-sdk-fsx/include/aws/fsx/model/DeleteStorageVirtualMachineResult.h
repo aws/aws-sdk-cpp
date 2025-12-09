@@ -75,12 +75,12 @@ class DeleteStorageVirtualMachineResult {
   ///@}
  private:
   Aws::String m_storageVirtualMachineId;
-  bool m_storageVirtualMachineIdHasBeenSet = false;
 
   StorageVirtualMachineLifecycle m_lifecycle{StorageVirtualMachineLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageVirtualMachineIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

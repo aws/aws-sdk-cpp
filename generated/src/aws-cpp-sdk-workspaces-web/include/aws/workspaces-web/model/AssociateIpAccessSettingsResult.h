@@ -76,12 +76,12 @@ class AssociateIpAccessSettingsResult {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_ipAccessSettingsArn;
-  bool m_ipAccessSettingsArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalArnHasBeenSet = false;
+  bool m_ipAccessSettingsArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

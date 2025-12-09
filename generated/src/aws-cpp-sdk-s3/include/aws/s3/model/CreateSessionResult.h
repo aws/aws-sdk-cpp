@@ -136,21 +136,21 @@ class CreateSessionResult {
   ///@}
  private:
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
-  bool m_sSEKMSKeyIdHasBeenSet = false;
 
   Aws::String m_sSEKMSEncryptionContext;
-  bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   SessionCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_sSEKMSKeyIdHasBeenSet = false;
+  bool m_sSEKMSEncryptionContextHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

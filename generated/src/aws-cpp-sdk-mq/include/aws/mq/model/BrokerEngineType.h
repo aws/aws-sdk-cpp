@@ -74,9 +74,9 @@ class BrokerEngineType {
   ///@}
  private:
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::Vector<EngineVersion> m_engineVersions;
+  bool m_engineTypeHasBeenSet = false;
   bool m_engineVersionsHasBeenSet = false;
 };
 

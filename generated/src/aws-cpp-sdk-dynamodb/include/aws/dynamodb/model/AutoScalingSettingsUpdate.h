@@ -121,18 +121,18 @@ class AutoScalingSettingsUpdate {
   ///@}
  private:
   long long m_minimumUnits{0};
-  bool m_minimumUnitsHasBeenSet = false;
 
   long long m_maximumUnits{0};
-  bool m_maximumUnitsHasBeenSet = false;
 
   bool m_autoScalingDisabled{false};
-  bool m_autoScalingDisabledHasBeenSet = false;
 
   Aws::String m_autoScalingRoleArn;
-  bool m_autoScalingRoleArnHasBeenSet = false;
 
   AutoScalingPolicyUpdate m_scalingPolicyUpdate;
+  bool m_minimumUnitsHasBeenSet = false;
+  bool m_maximumUnitsHasBeenSet = false;
+  bool m_autoScalingDisabledHasBeenSet = false;
+  bool m_autoScalingRoleArnHasBeenSet = false;
   bool m_scalingPolicyUpdateHasBeenSet = false;
 };
 

@@ -93,12 +93,12 @@ class ModifyVerifiedAccessEndpointEniOptions {
   ///@}
  private:
   VerifiedAccessEndpointProtocol m_protocol{VerifiedAccessEndpointProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::Vector<ModifyVerifiedAccessEndpointPortRange> m_portRanges;
+  bool m_protocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_portRangesHasBeenSet = false;
 };
 

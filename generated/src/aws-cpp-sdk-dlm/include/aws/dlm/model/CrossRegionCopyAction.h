@@ -90,12 +90,12 @@ class CrossRegionCopyAction {
   ///@}
  private:
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   CrossRegionCopyRetainRule m_retainRule;
+  bool m_targetHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_retainRuleHasBeenSet = false;
 };
 

@@ -117,15 +117,15 @@ class DescribeRegistrationAttachmentsRequest : public PinpointSMSVoiceV2Request 
   ///@}
  private:
   Aws::Vector<Aws::String> m_registrationAttachmentIds;
-  bool m_registrationAttachmentIdsHasBeenSet = false;
 
   Aws::Vector<RegistrationAttachmentFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_registrationAttachmentIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

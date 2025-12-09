@@ -92,12 +92,12 @@ class EpisodicOverrideConfigurationInput {
   ///@}
  private:
   EpisodicOverrideExtractionConfigurationInput m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   EpisodicOverrideConsolidationConfigurationInput m_consolidation;
-  bool m_consolidationHasBeenSet = false;
 
   EpisodicOverrideReflectionConfigurationInput m_reflection;
+  bool m_extractionHasBeenSet = false;
+  bool m_consolidationHasBeenSet = false;
   bool m_reflectionHasBeenSet = false;
 };
 

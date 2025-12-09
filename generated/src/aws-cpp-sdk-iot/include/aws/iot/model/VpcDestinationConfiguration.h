@@ -119,15 +119,15 @@ class VpcDestinationConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

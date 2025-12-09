@@ -91,12 +91,12 @@ class ResourceNotFoundException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_referencedBy;
+  bool m_messageHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_referencedByHasBeenSet = false;
 };
 

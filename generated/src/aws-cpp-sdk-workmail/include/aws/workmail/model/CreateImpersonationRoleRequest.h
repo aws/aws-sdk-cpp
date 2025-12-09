@@ -148,21 +148,21 @@ class CreateImpersonationRoleRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ImpersonationRoleType m_type{ImpersonationRoleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ImpersonationRule> m_rules;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListBackupPlanVersionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<BackupPlansListMember> m_backupPlanVersionsList;
-  bool m_backupPlanVersionsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_backupPlanVersionsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -260,39 +260,39 @@ class DescribeNotificationRuleResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<EventTypeSummary> m_eventTypes;
-  bool m_eventTypesHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<TargetSummary> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   DetailType m_detailType{DetailType::NOT_SET};
-  bool m_detailTypeHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   NotificationRuleStatus m_status{NotificationRuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimestamp{};
-  bool m_lastModifiedTimestampHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_eventTypesHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_detailTypeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_lastModifiedTimestampHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

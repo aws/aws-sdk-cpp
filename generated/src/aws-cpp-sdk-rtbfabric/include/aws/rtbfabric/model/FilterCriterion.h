@@ -75,9 +75,9 @@ class FilterCriterion {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_pathHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

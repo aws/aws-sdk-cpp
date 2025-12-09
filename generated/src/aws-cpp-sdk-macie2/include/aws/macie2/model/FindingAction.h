@@ -71,9 +71,9 @@ class FindingAction {
   ///@}
  private:
   FindingActionType m_actionType{FindingActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   ApiCallDetails m_apiCallDetails;
+  bool m_actionTypeHasBeenSet = false;
   bool m_apiCallDetailsHasBeenSet = false;
 };
 

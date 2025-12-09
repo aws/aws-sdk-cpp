@@ -156,21 +156,21 @@ class GetDeliverabilityTestReportResult {
   ///@}
  private:
   DeliverabilityTestReport m_deliverabilityTestReport;
-  bool m_deliverabilityTestReportHasBeenSet = false;
 
   PlacementStatistics m_overallPlacement;
-  bool m_overallPlacementHasBeenSet = false;
 
   Aws::Vector<IspPlacement> m_ispPlacements;
-  bool m_ispPlacementsHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliverabilityTestReportHasBeenSet = false;
+  bool m_overallPlacementHasBeenSet = false;
+  bool m_ispPlacementsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

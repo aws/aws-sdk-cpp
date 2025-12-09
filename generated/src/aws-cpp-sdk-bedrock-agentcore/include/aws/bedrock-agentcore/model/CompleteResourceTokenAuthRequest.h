@@ -70,9 +70,9 @@ class CompleteResourceTokenAuthRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   UserIdentifier m_userIdentifier;
-  bool m_userIdentifierHasBeenSet = false;
 
   Aws::String m_sessionUri;
+  bool m_userIdentifierHasBeenSet = false;
   bool m_sessionUriHasBeenSet = false;
 };
 

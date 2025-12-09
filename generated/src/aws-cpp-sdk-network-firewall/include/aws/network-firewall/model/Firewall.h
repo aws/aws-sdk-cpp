@@ -422,57 +422,57 @@ class Firewall {
   ///@}
  private:
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallPolicyArn;
-  bool m_firewallPolicyArnHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<SubnetMapping> m_subnetMappings;
-  bool m_subnetMappingsHasBeenSet = false;
 
   bool m_deleteProtection{false};
-  bool m_deleteProtectionHasBeenSet = false;
 
   bool m_subnetChangeProtection{false};
-  bool m_subnetChangeProtectionHasBeenSet = false;
 
   bool m_firewallPolicyChangeProtection{false};
-  bool m_firewallPolicyChangeProtectionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_firewallId;
-  bool m_firewallIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   int m_numberOfAssociations{0};
-  bool m_numberOfAssociationsHasBeenSet = false;
 
   Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
-  bool m_enabledAnalysisTypesHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_transitGatewayOwnerAccountId;
-  bool m_transitGatewayOwnerAccountIdHasBeenSet = false;
 
   Aws::Vector<AvailabilityZoneMapping> m_availabilityZoneMappings;
-  bool m_availabilityZoneMappingsHasBeenSet = false;
 
   bool m_availabilityZoneChangeProtection{false};
+  bool m_firewallNameHasBeenSet = false;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallPolicyArnHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetMappingsHasBeenSet = false;
+  bool m_deleteProtectionHasBeenSet = false;
+  bool m_subnetChangeProtectionHasBeenSet = false;
+  bool m_firewallPolicyChangeProtectionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_firewallIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_numberOfAssociationsHasBeenSet = false;
+  bool m_enabledAnalysisTypesHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_transitGatewayOwnerAccountIdHasBeenSet = false;
+  bool m_availabilityZoneMappingsHasBeenSet = false;
   bool m_availabilityZoneChangeProtectionHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class Definition {
   ///@}
  private:
   IamActionDefinition m_iamActionDefinition;
-  bool m_iamActionDefinitionHasBeenSet = false;
 
   ScpActionDefinition m_scpActionDefinition;
-  bool m_scpActionDefinitionHasBeenSet = false;
 
   SsmActionDefinition m_ssmActionDefinition;
+  bool m_iamActionDefinitionHasBeenSet = false;
+  bool m_scpActionDefinitionHasBeenSet = false;
   bool m_ssmActionDefinitionHasBeenSet = false;
 };
 

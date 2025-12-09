@@ -135,18 +135,18 @@ class CreateSipMediaApplicationCallRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_fromPhoneNumber;
-  bool m_fromPhoneNumberHasBeenSet = false;
 
   Aws::String m_toPhoneNumber;
-  bool m_toPhoneNumberHasBeenSet = false;
 
   Aws::String m_sipMediaApplicationId;
-  bool m_sipMediaApplicationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sipHeaders;
-  bool m_sipHeadersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_argumentsMap;
+  bool m_fromPhoneNumberHasBeenSet = false;
+  bool m_toPhoneNumberHasBeenSet = false;
+  bool m_sipMediaApplicationIdHasBeenSet = false;
+  bool m_sipHeadersHasBeenSet = false;
   bool m_argumentsMapHasBeenSet = false;
 };
 

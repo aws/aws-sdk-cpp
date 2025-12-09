@@ -70,9 +70,9 @@ class IdentityCenterConfig {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_role;
+  bool m_instanceArnHasBeenSet = false;
   bool m_roleHasBeenSet = false;
 };
 

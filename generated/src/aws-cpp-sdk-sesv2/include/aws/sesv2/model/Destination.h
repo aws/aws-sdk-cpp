@@ -117,12 +117,12 @@ class Destination {
   ///@}
  private:
   Aws::Vector<Aws::String> m_toAddresses;
-  bool m_toAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ccAddresses;
-  bool m_ccAddressesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_bccAddresses;
+  bool m_toAddressesHasBeenSet = false;
+  bool m_ccAddressesHasBeenSet = false;
   bool m_bccAddressesHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class SingleSelectQuestionRuleCategoryAutomation {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   SingleSelectQuestionRuleCategoryAutomationCondition m_condition{SingleSelectQuestionRuleCategoryAutomationCondition::NOT_SET};
-  bool m_conditionHasBeenSet = false;
 
   Aws::String m_optionRefId;
+  bool m_categoryHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
   bool m_optionRefIdHasBeenSet = false;
 };
 

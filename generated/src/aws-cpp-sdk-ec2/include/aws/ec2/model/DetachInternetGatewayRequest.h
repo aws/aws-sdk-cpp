@@ -88,12 +88,12 @@ class DetachInternetGatewayRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_internetGatewayId;
-  bool m_internetGatewayIdHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_dryRunHasBeenSet = false;
+  bool m_internetGatewayIdHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

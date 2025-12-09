@@ -67,9 +67,9 @@ class MessageStopEvent {
   ///@}
  private:
   StopReason m_stopReason{StopReason::NOT_SET};
-  bool m_stopReasonHasBeenSet = false;
 
   Aws::Utils::Document m_additionalModelResponseFields;
+  bool m_stopReasonHasBeenSet = false;
   bool m_additionalModelResponseFieldsHasBeenSet = false;
 };
 

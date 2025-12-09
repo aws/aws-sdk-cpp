@@ -87,12 +87,12 @@ class SigningJobRevocationRecord {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedAt{};
-  bool m_revokedAtHasBeenSet = false;
 
   Aws::String m_revokedBy;
+  bool m_reasonHasBeenSet = false;
+  bool m_revokedAtHasBeenSet = false;
   bool m_revokedByHasBeenSet = false;
 };
 

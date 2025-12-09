@@ -126,18 +126,18 @@ class ListRecommendationSummariesRequest : public CostOptimizationHubRequest {
   ///@}
  private:
   Filter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<SummaryMetrics> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_filterHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

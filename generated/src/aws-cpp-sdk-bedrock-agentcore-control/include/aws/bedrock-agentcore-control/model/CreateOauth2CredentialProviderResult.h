@@ -132,21 +132,21 @@ class CreateOauth2CredentialProviderResult {
   ///@}
  private:
   Secret m_clientSecretArn;
-  bool m_clientSecretArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_credentialProviderArn;
-  bool m_credentialProviderArnHasBeenSet = false;
 
   Aws::String m_callbackUrl;
-  bool m_callbackUrlHasBeenSet = false;
 
   Oauth2ProviderConfigOutput m_oauth2ProviderConfigOutput;
-  bool m_oauth2ProviderConfigOutputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientSecretArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_credentialProviderArnHasBeenSet = false;
+  bool m_callbackUrlHasBeenSet = false;
+  bool m_oauth2ProviderConfigOutputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

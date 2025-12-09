@@ -151,21 +151,21 @@ class ListUpdatesRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nodegroupName;
-  bool m_nodegroupNameHasBeenSet = false;
 
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_capabilityName;
-  bool m_capabilityNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nameHasBeenSet = false;
+  bool m_nodegroupNameHasBeenSet = false;
+  bool m_addonNameHasBeenSet = false;
+  bool m_capabilityNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

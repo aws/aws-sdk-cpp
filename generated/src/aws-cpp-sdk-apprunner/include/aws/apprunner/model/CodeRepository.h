@@ -110,15 +110,15 @@ class CodeRepository {
   ///@}
  private:
   Aws::String m_repositoryUrl;
-  bool m_repositoryUrlHasBeenSet = false;
 
   SourceCodeVersion m_sourceCodeVersion;
-  bool m_sourceCodeVersionHasBeenSet = false;
 
   CodeConfiguration m_codeConfiguration;
-  bool m_codeConfigurationHasBeenSet = false;
 
   Aws::String m_sourceDirectory;
+  bool m_repositoryUrlHasBeenSet = false;
+  bool m_sourceCodeVersionHasBeenSet = false;
+  bool m_codeConfigurationHasBeenSet = false;
   bool m_sourceDirectoryHasBeenSet = false;
 };
 

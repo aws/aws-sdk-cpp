@@ -76,9 +76,9 @@ class ActionIdentifier {
   ///@}
  private:
   Aws::String m_actionType;
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_actionId;
+  bool m_actionTypeHasBeenSet = false;
   bool m_actionIdHasBeenSet = false;
 };
 

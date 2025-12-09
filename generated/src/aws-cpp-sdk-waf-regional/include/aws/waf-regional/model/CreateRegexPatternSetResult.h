@@ -80,12 +80,12 @@ class CreateRegexPatternSetResult {
   ///@}
  private:
   RegexPatternSet m_regexPatternSet;
-  bool m_regexPatternSetHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_regexPatternSetHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

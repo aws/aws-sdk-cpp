@@ -94,12 +94,12 @@ class GlobalTableGlobalSecondaryIndexSettingsUpdate {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   long long m_provisionedWriteCapacityUnits{0};
-  bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingSettingsUpdate;
+  bool m_indexNameHasBeenSet = false;
+  bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
   bool m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = false;
 };
 

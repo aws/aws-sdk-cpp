@@ -74,9 +74,9 @@ class S3DeliveryConfiguration {
   ///@}
  private:
   Aws::String m_suffixPath;
-  bool m_suffixPathHasBeenSet = false;
 
   bool m_enableHiveCompatiblePath{false};
+  bool m_suffixPathHasBeenSet = false;
   bool m_enableHiveCompatiblePathHasBeenSet = false;
 };
 

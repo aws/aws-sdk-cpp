@@ -60,9 +60,9 @@ class GetDeviceInstanceResult {
   ///@}
  private:
   DeviceInstance m_deviceInstance;
-  bool m_deviceInstanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

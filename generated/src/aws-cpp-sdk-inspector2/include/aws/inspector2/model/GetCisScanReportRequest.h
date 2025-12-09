@@ -91,12 +91,12 @@ class GetCisScanReportRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanArn;
-  bool m_scanArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetAccounts;
-  bool m_targetAccountsHasBeenSet = false;
 
   CisReportFormat m_reportFormat{CisReportFormat::NOT_SET};
+  bool m_scanArnHasBeenSet = false;
+  bool m_targetAccountsHasBeenSet = false;
   bool m_reportFormatHasBeenSet = false;
 };
 

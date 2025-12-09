@@ -70,9 +70,9 @@ class PutConfigurationSetTrackingOptionsRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_customRedirectDomain;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_customRedirectDomainHasBeenSet = false;
 };
 

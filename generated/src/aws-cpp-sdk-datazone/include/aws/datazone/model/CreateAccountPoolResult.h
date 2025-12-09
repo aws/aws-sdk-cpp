@@ -233,39 +233,39 @@ class CreateAccountPoolResult {
   ///@}
  private:
   AccountSource m_accountSource;
-  bool m_accountSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResolutionStrategy m_resolutionStrategy{ResolutionStrategy::NOT_SET};
-  bool m_resolutionStrategyHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountSourceHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resolutionStrategyHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

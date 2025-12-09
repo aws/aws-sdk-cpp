@@ -264,39 +264,39 @@ class Item {
   ///@}
  private:
   Aws::String m_absoluteTime;
-  bool m_absoluteTimeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ChatItemType m_type{ChatItemType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   Aws::Vector<AttachmentItem> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   MessageMetadata m_messageMetadata;
-  bool m_messageMetadataHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::String m_contactId;
+  bool m_absoluteTimeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_messageMetadataHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
 };
 

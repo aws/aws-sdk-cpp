@@ -86,12 +86,12 @@ class ListCentralizationRulesForOrganizationResult {
   ///@}
  private:
   Aws::Vector<CentralizationRuleSummary> m_centralizationRuleSummaries;
-  bool m_centralizationRuleSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_centralizationRuleSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

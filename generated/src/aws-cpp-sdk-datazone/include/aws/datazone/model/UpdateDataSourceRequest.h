@@ -242,36 +242,36 @@ class UpdateDataSourceRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<FormInput> m_assetFormsInput;
-  bool m_assetFormsInputHasBeenSet = false;
 
   DataSourceConfigurationInput m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   EnableSetting m_enableSetting{EnableSetting::NOT_SET};
-  bool m_enableSettingHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_publishOnImport{false};
-  bool m_publishOnImportHasBeenSet = false;
 
   RecommendationConfiguration m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   bool m_retainPermissionsOnRevokeFailure{false};
-  bool m_retainPermissionsOnRevokeFailureHasBeenSet = false;
 
   ScheduleConfiguration m_schedule;
+  bool m_assetFormsInputHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_enableSettingHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_publishOnImportHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_retainPermissionsOnRevokeFailureHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

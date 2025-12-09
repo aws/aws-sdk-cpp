@@ -85,12 +85,12 @@ class ListComputeQuotasResult {
   ///@}
  private:
   Aws::Vector<ComputeQuotaSummary> m_computeQuotaSummaries;
-  bool m_computeQuotaSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computeQuotaSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class ListStepsResult {
   ///@}
  private:
   Aws::Vector<StepSummary> m_steps;
-  bool m_stepsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stepsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

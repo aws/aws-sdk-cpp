@@ -105,15 +105,15 @@ class UpdateIngestionDestinationRequest : public AppFabricRequest {
   ///@}
  private:
   Aws::String m_appBundleIdentifier;
-  bool m_appBundleIdentifierHasBeenSet = false;
 
   Aws::String m_ingestionIdentifier;
-  bool m_ingestionIdentifierHasBeenSet = false;
 
   Aws::String m_ingestionDestinationIdentifier;
-  bool m_ingestionDestinationIdentifierHasBeenSet = false;
 
   DestinationConfiguration m_destinationConfiguration;
+  bool m_appBundleIdentifierHasBeenSet = false;
+  bool m_ingestionIdentifierHasBeenSet = false;
+  bool m_ingestionDestinationIdentifierHasBeenSet = false;
   bool m_destinationConfigurationHasBeenSet = false;
 };
 

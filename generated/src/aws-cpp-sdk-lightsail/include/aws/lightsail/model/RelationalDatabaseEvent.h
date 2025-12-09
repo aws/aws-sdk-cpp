@@ -112,15 +112,15 @@ class RelationalDatabaseEvent {
   ///@}
  private:
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventCategories;
+  bool m_resourceHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_eventCategoriesHasBeenSet = false;
 };
 

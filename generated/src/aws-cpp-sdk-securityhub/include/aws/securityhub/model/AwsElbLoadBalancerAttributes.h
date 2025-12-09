@@ -143,18 +143,18 @@ class AwsElbLoadBalancerAttributes {
   ///@}
  private:
   AwsElbLoadBalancerAccessLog m_accessLog;
-  bool m_accessLogHasBeenSet = false;
 
   AwsElbLoadBalancerConnectionDraining m_connectionDraining;
-  bool m_connectionDrainingHasBeenSet = false;
 
   AwsElbLoadBalancerConnectionSettings m_connectionSettings;
-  bool m_connectionSettingsHasBeenSet = false;
 
   AwsElbLoadBalancerCrossZoneLoadBalancing m_crossZoneLoadBalancing;
-  bool m_crossZoneLoadBalancingHasBeenSet = false;
 
   Aws::Vector<AwsElbLoadBalancerAdditionalAttribute> m_additionalAttributes;
+  bool m_accessLogHasBeenSet = false;
+  bool m_connectionDrainingHasBeenSet = false;
+  bool m_connectionSettingsHasBeenSet = false;
+  bool m_crossZoneLoadBalancingHasBeenSet = false;
   bool m_additionalAttributesHasBeenSet = false;
 };
 

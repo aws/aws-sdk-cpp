@@ -71,9 +71,9 @@ class ContentTypeProfileConfig {
   ///@}
  private:
   bool m_forwardWhenContentTypeIsUnknown{false};
-  bool m_forwardWhenContentTypeIsUnknownHasBeenSet = false;
 
   ContentTypeProfiles m_contentTypeProfiles;
+  bool m_forwardWhenContentTypeIsUnknownHasBeenSet = false;
   bool m_contentTypeProfilesHasBeenSet = false;
 };
 

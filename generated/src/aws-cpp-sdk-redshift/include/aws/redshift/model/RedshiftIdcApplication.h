@@ -309,42 +309,42 @@ class RedshiftIdcApplication {
   ///@}
  private:
   Aws::String m_idcInstanceArn;
-  bool m_idcInstanceArnHasBeenSet = false;
 
   Aws::String m_redshiftIdcApplicationName;
-  bool m_redshiftIdcApplicationNameHasBeenSet = false;
 
   Aws::String m_redshiftIdcApplicationArn;
-  bool m_redshiftIdcApplicationArnHasBeenSet = false;
 
   Aws::String m_identityNamespace;
-  bool m_identityNamespaceHasBeenSet = false;
 
   Aws::String m_idcDisplayName;
-  bool m_idcDisplayNameHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_idcManagedApplicationArn;
-  bool m_idcManagedApplicationArnHasBeenSet = false;
 
   Aws::String m_idcOnboardStatus;
-  bool m_idcOnboardStatusHasBeenSet = false;
 
   Aws::Vector<AuthorizedTokenIssuer> m_authorizedTokenIssuerList;
-  bool m_authorizedTokenIssuerListHasBeenSet = false;
 
   Aws::Vector<ServiceIntegrationsUnion> m_serviceIntegrations;
-  bool m_serviceIntegrationsHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
-  bool m_applicationTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ssoTagKeys;
+  bool m_idcInstanceArnHasBeenSet = false;
+  bool m_redshiftIdcApplicationNameHasBeenSet = false;
+  bool m_redshiftIdcApplicationArnHasBeenSet = false;
+  bool m_identityNamespaceHasBeenSet = false;
+  bool m_idcDisplayNameHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_idcManagedApplicationArnHasBeenSet = false;
+  bool m_idcOnboardStatusHasBeenSet = false;
+  bool m_authorizedTokenIssuerListHasBeenSet = false;
+  bool m_serviceIntegrationsHasBeenSet = false;
+  bool m_applicationTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_ssoTagKeysHasBeenSet = false;
 };
 

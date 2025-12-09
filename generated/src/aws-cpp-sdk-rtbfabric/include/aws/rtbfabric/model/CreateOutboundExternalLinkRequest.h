@@ -144,21 +144,21 @@ class CreateOutboundExternalLinkRequest : public RTBFabricRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   LinkAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_publicEndpoint;
-  bool m_publicEndpointHasBeenSet = false;
 
   LinkLogSettings m_logSettings;
-  bool m_logSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_publicEndpointHasBeenSet = false;
+  bool m_logSettingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

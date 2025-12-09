@@ -76,12 +76,12 @@ class StartConnectionResult {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_underlayIpAddress;
-  bool m_underlayIpAddressHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_underlayIpAddressHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

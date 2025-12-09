@@ -68,9 +68,9 @@ class RuleGroupsNamespaceStatus {
   ///@}
  private:
   RuleGroupsNamespaceStatusCode m_statusCode{RuleGroupsNamespaceStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusReason;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

@@ -39,7 +39,7 @@ class CostCategory {
 
   ///@{
   /**
-   * <p>The unique identifier for your Cost Category. </p>
+   * <p>The unique identifier for your cost category. </p>
    */
   inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
   inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
@@ -57,7 +57,7 @@ class CostCategory {
 
   ///@{
   /**
-   * <p>The effective start date of your Cost Category.</p>
+   * <p>The effective start date of your cost category.</p>
    */
   inline const Aws::String& GetEffectiveStart() const { return m_effectiveStart; }
   inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
@@ -75,7 +75,7 @@ class CostCategory {
 
   ///@{
   /**
-   * <p>The effective end date of your Cost Category.</p>
+   * <p>The effective end date of your cost category.</p>
    */
   inline const Aws::String& GetEffectiveEnd() const { return m_effectiveEnd; }
   inline bool EffectiveEndHasBeenSet() const { return m_effectiveEndHasBeenSet; }
@@ -124,7 +124,7 @@ class CostCategory {
   ///@{
   /**
    * <p>The rules are processed in order. If there are multiple rules that match the
-   * line item, then the first rule to match is used to determine that Cost Category
+   * line item, then the first rule to match is used to determine that cost category
    * value. </p>
    */
   inline const Aws::Vector<CostCategoryRule>& GetRules() const { return m_rules; }
@@ -150,7 +150,7 @@ class CostCategory {
   ///@{
   /**
    * <p> The split charge rules that are used to allocate your charges between your
-   * Cost Category values. </p>
+   * cost category values. </p>
    */
   inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const { return m_splitChargeRules; }
   inline bool SplitChargeRulesHasBeenSet() const { return m_splitChargeRulesHasBeenSet; }
@@ -214,30 +214,30 @@ class CostCategory {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   Aws::String m_effectiveEnd;
-  bool m_effectiveEndHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CostCategoryRuleVersion m_ruleVersion{CostCategoryRuleVersion::NOT_SET};
-  bool m_ruleVersionHasBeenSet = false;
 
   Aws::Vector<CostCategoryRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-  bool m_splitChargeRulesHasBeenSet = false;
 
   Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
-  bool m_processingStatusHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_effectiveEndHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleVersionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_splitChargeRulesHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

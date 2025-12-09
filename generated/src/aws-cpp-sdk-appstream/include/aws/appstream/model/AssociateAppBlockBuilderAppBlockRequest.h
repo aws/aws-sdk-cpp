@@ -67,9 +67,9 @@ class AssociateAppBlockBuilderAppBlockRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_appBlockArn;
-  bool m_appBlockArnHasBeenSet = false;
 
   Aws::String m_appBlockBuilderName;
+  bool m_appBlockArnHasBeenSet = false;
   bool m_appBlockBuilderNameHasBeenSet = false;
 };
 

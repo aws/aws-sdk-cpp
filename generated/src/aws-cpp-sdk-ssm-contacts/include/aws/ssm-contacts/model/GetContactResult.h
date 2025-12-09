@@ -129,21 +129,21 @@ class GetContactResult {
   ///@}
  private:
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ContactType m_type{ContactType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Plan m_plan;
-  bool m_planHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactArnHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_planHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class CrawlsFilter {
   ///@}
  private:
   FieldName m_fieldName{FieldName::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   FilterOperator m_filterOperator{FilterOperator::NOT_SET};
-  bool m_filterOperatorHasBeenSet = false;
 
   Aws::String m_fieldValue;
+  bool m_fieldNameHasBeenSet = false;
+  bool m_filterOperatorHasBeenSet = false;
   bool m_fieldValueHasBeenSet = false;
 };
 

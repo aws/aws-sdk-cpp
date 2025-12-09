@@ -88,12 +88,12 @@ class AssetBundleImportJobFolderOverrideParameters {
   ///@}
  private:
   Aws::String m_folderId;
-  bool m_folderIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_parentFolderArn;
+  bool m_folderIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_parentFolderArnHasBeenSet = false;
 };
 

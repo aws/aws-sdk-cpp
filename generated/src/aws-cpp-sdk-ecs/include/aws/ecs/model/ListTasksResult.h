@@ -87,12 +87,12 @@ class ListTasksResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_taskArns;
-  bool m_taskArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

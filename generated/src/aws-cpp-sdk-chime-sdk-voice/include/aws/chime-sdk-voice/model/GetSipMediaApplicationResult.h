@@ -60,9 +60,9 @@ class GetSipMediaApplicationResult {
   ///@}
  private:
   SipMediaApplication m_sipMediaApplication;
-  bool m_sipMediaApplicationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sipMediaApplicationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

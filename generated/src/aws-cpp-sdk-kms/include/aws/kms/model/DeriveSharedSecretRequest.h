@@ -209,21 +209,21 @@ class DeriveSharedSecretRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   KeyAgreementAlgorithmSpec m_keyAgreementAlgorithm{KeyAgreementAlgorithmSpec::NOT_SET};
-  bool m_keyAgreementAlgorithmHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_publicKey{};
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTokens;
-  bool m_grantTokensHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   RecipientInfo m_recipient;
+  bool m_keyIdHasBeenSet = false;
+  bool m_keyAgreementAlgorithmHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_grantTokensHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_recipientHasBeenSet = false;
 };
 

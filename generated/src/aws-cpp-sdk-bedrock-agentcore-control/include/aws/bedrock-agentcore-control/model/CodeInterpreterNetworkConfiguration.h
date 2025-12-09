@@ -67,9 +67,9 @@ class CodeInterpreterNetworkConfiguration {
   ///@}
  private:
   CodeInterpreterNetworkMode m_networkMode{CodeInterpreterNetworkMode::NOT_SET};
-  bool m_networkModeHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
+  bool m_networkModeHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
 };
 

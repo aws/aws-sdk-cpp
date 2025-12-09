@@ -96,12 +96,12 @@ class RuleGroupSourceStatefulRulesDetails {
   ///@}
  private:
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   RuleGroupSourceStatefulRulesHeaderDetails m_header;
-  bool m_headerHasBeenSet = false;
 
   Aws::Vector<RuleGroupSourceStatefulRulesOptionsDetails> m_ruleOptions;
+  bool m_actionHasBeenSet = false;
+  bool m_headerHasBeenSet = false;
   bool m_ruleOptionsHasBeenSet = false;
 };
 

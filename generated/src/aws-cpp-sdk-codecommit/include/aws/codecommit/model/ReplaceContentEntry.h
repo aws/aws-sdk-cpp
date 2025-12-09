@@ -105,15 +105,15 @@ class ReplaceContentEntry {
   ///@}
  private:
   Aws::String m_filePath;
-  bool m_filePathHasBeenSet = false;
 
   ReplacementTypeEnum m_replacementType{ReplacementTypeEnum::NOT_SET};
-  bool m_replacementTypeHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_content{};
-  bool m_contentHasBeenSet = false;
 
   FileModeTypeEnum m_fileMode{FileModeTypeEnum::NOT_SET};
+  bool m_filePathHasBeenSet = false;
+  bool m_replacementTypeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_fileModeHasBeenSet = false;
 };
 

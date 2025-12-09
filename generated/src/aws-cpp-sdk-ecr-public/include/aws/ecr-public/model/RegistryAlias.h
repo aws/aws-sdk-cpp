@@ -111,15 +111,15 @@ class RegistryAlias {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RegistryAliasStatus m_status{RegistryAliasStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_primaryRegistryAlias{false};
-  bool m_primaryRegistryAliasHasBeenSet = false;
 
   bool m_defaultRegistryAlias{false};
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_primaryRegistryAliasHasBeenSet = false;
   bool m_defaultRegistryAliasHasBeenSet = false;
 };
 

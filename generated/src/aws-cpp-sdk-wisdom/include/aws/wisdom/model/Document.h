@@ -87,12 +87,12 @@ class Document {
   ///@}
  private:
   ContentReference m_contentReference;
-  bool m_contentReferenceHasBeenSet = false;
 
   DocumentText m_excerpt;
-  bool m_excerptHasBeenSet = false;
 
   DocumentText m_title;
+  bool m_contentReferenceHasBeenSet = false;
+  bool m_excerptHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

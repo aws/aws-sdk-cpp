@@ -369,45 +369,45 @@ class SlackConfiguration {
   ///@}
  private:
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::Vector<SlackEntity> m_slackEntityList;
-  bool m_slackEntityListHasBeenSet = false;
 
   bool m_useChangeLog{false};
-  bool m_useChangeLogHasBeenSet = false;
 
   bool m_crawlBotMessage{false};
-  bool m_crawlBotMessageHasBeenSet = false;
 
   bool m_excludeArchived{false};
-  bool m_excludeArchivedHasBeenSet = false;
 
   Aws::String m_sinceCrawlDate;
-  bool m_sinceCrawlDateHasBeenSet = false;
 
   int m_lookBackPeriod{0};
-  bool m_lookBackPeriodHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_privateChannelFilter;
-  bool m_privateChannelFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_publicChannelFilter;
-  bool m_publicChannelFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
+  bool m_teamIdHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_slackEntityListHasBeenSet = false;
+  bool m_useChangeLogHasBeenSet = false;
+  bool m_crawlBotMessageHasBeenSet = false;
+  bool m_excludeArchivedHasBeenSet = false;
+  bool m_sinceCrawlDateHasBeenSet = false;
+  bool m_lookBackPeriodHasBeenSet = false;
+  bool m_privateChannelFilterHasBeenSet = false;
+  bool m_publicChannelFilterHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
   bool m_fieldMappingsHasBeenSet = false;
 };
 

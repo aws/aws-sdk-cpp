@@ -119,15 +119,15 @@ class MediaStreamOutputConfiguration {
   ///@}
  private:
   Aws::Vector<DestinationConfiguration> m_destinationConfigurations;
-  bool m_destinationConfigurationsHasBeenSet = false;
 
   EncodingName m_encodingName{EncodingName::NOT_SET};
-  bool m_encodingNameHasBeenSet = false;
 
   EncodingParameters m_encodingParameters;
-  bool m_encodingParametersHasBeenSet = false;
 
   Aws::String m_mediaStreamName;
+  bool m_destinationConfigurationsHasBeenSet = false;
+  bool m_encodingNameHasBeenSet = false;
+  bool m_encodingParametersHasBeenSet = false;
   bool m_mediaStreamNameHasBeenSet = false;
 };
 

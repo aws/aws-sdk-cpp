@@ -86,12 +86,12 @@ class CreateFolderRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_parentFolderId;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_parentFolderIdHasBeenSet = false;
 };
 

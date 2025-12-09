@@ -92,12 +92,12 @@ class AnalyticsConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   AnalyticsFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   StorageClassAnalysis m_storageClassAnalysis;
+  bool m_idHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
   bool m_storageClassAnalysisHasBeenSet = false;
 };
 

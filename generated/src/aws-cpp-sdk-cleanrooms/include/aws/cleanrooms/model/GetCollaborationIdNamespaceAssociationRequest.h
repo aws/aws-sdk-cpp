@@ -67,9 +67,9 @@ class GetCollaborationIdNamespaceAssociationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_idNamespaceAssociationIdentifier;
+  bool m_collaborationIdentifierHasBeenSet = false;
   bool m_idNamespaceAssociationIdentifierHasBeenSet = false;
 };
 

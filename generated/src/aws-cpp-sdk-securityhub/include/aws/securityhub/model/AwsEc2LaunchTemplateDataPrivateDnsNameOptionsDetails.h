@@ -85,12 +85,12 @@ class AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails {
   ///@}
  private:
   bool m_enableResourceNameDnsAAAARecord{false};
-  bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
 
   bool m_enableResourceNameDnsARecord{false};
-  bool m_enableResourceNameDnsARecordHasBeenSet = false;
 
   Aws::String m_hostnameType;
+  bool m_enableResourceNameDnsAAAARecordHasBeenSet = false;
+  bool m_enableResourceNameDnsARecordHasBeenSet = false;
   bool m_hostnameTypeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class PutFunctionConcurrencyRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   int m_reservedConcurrentExecutions{0};
+  bool m_functionNameHasBeenSet = false;
   bool m_reservedConcurrentExecutionsHasBeenSet = false;
 };
 

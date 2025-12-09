@@ -89,12 +89,12 @@ class RuleBooleanToEvaluate {
   ///@}
  private:
   RuleBooleanEmailAttribute m_attribute{RuleBooleanEmailAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Analysis m_analysis;
-  bool m_analysisHasBeenSet = false;
 
   RuleIsInAddressList m_isInAddressList;
+  bool m_attributeHasBeenSet = false;
+  bool m_analysisHasBeenSet = false;
   bool m_isInAddressListHasBeenSet = false;
 };
 

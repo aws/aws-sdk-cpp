@@ -245,30 +245,30 @@ class DescribedSecurityPolicy {
   ///@}
  private:
   bool m_fips{false};
-  bool m_fipsHasBeenSet = false;
 
   Aws::String m_securityPolicyName;
-  bool m_securityPolicyNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sshCiphers;
-  bool m_sshCiphersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sshKexs;
-  bool m_sshKexsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sshMacs;
-  bool m_sshMacsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tlsCiphers;
-  bool m_tlsCiphersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sshHostKeyAlgorithms;
-  bool m_sshHostKeyAlgorithmsHasBeenSet = false;
 
   SecurityPolicyResourceType m_type{SecurityPolicyResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<SecurityPolicyProtocol> m_protocols;
+  bool m_fipsHasBeenSet = false;
+  bool m_securityPolicyNameHasBeenSet = false;
+  bool m_sshCiphersHasBeenSet = false;
+  bool m_sshKexsHasBeenSet = false;
+  bool m_sshMacsHasBeenSet = false;
+  bool m_tlsCiphersHasBeenSet = false;
+  bool m_sshHostKeyAlgorithmsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
 };
 

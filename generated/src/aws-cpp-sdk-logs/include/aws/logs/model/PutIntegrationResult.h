@@ -77,12 +77,12 @@ class PutIntegrationResult {
   ///@}
  private:
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   IntegrationStatus m_integrationStatus{IntegrationStatus::NOT_SET};
-  bool m_integrationStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationNameHasBeenSet = false;
+  bool m_integrationStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

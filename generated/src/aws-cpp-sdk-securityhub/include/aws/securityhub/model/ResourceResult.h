@@ -264,39 +264,39 @@ class ResourceResult {
   ///@}
  private:
   Aws::String m_resourceGuid;
-  bool m_resourceGuidHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   ResourceCategory m_resourceCategory{ResourceCategory::NOT_SET};
-  bool m_resourceCategoryHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_resourceCreationTimeDt;
-  bool m_resourceCreationTimeDtHasBeenSet = false;
 
   Aws::String m_resourceDetailCaptureTimeDt;
-  bool m_resourceDetailCaptureTimeDtHasBeenSet = false;
 
   Aws::Vector<ResourceFindingsSummary> m_findingsSummary;
-  bool m_findingsSummaryHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Utils::Document m_resourceConfig;
+  bool m_resourceGuidHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceCategoryHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceCreationTimeDtHasBeenSet = false;
+  bool m_resourceDetailCaptureTimeDtHasBeenSet = false;
+  bool m_findingsSummaryHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
   bool m_resourceConfigHasBeenSet = false;
 };
 

@@ -311,51 +311,51 @@ class FieldInputConfig {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   bool m_readOnly{false};
-  bool m_readOnlyHasBeenSet = false;
 
   Aws::String m_placeholder;
-  bool m_placeholderHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_descriptiveText;
-  bool m_descriptiveTextHasBeenSet = false;
 
   bool m_defaultChecked{false};
-  bool m_defaultCheckedHasBeenSet = false;
 
   Aws::String m_defaultCountryCode;
-  bool m_defaultCountryCodeHasBeenSet = false;
 
   ValueMappings m_valueMappings;
-  bool m_valueMappingsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   double m_minValue{0.0};
-  bool m_minValueHasBeenSet = false;
 
   double m_maxValue{0.0};
-  bool m_maxValueHasBeenSet = false;
 
   double m_step{0.0};
-  bool m_stepHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   bool m_isArray{false};
-  bool m_isArrayHasBeenSet = false;
 
   FileUploaderFieldConfig m_fileUploaderConfig;
+  bool m_typeHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
+  bool m_readOnlyHasBeenSet = false;
+  bool m_placeholderHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptiveTextHasBeenSet = false;
+  bool m_defaultCheckedHasBeenSet = false;
+  bool m_defaultCountryCodeHasBeenSet = false;
+  bool m_valueMappingsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
+  bool m_stepHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_isArrayHasBeenSet = false;
   bool m_fileUploaderConfigHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class ModifyVpcTenancyResponse {
   ///@}
  private:
   bool m_returnValue{false};
-  bool m_returnValueHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_returnValueHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

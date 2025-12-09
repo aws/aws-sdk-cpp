@@ -146,21 +146,21 @@ class ImageReferrer {
   ///@}
  private:
   Aws::String m_digest;
-  bool m_digestHasBeenSet = false;
 
   Aws::String m_mediaType;
-  bool m_mediaTypeHasBeenSet = false;
 
   Aws::String m_artifactType;
-  bool m_artifactTypeHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   ArtifactStatus m_artifactStatus{ArtifactStatus::NOT_SET};
+  bool m_digestHasBeenSet = false;
+  bool m_mediaTypeHasBeenSet = false;
+  bool m_artifactTypeHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
   bool m_artifactStatusHasBeenSet = false;
 };
 

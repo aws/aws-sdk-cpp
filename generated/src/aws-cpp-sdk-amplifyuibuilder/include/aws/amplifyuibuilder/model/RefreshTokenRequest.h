@@ -65,9 +65,9 @@ class RefreshTokenRequest : public AmplifyUIBuilderRequest {
   ///@}
  private:
   TokenProviders m_provider{TokenProviders::NOT_SET};
-  bool m_providerHasBeenSet = false;
 
   RefreshTokenRequestBody m_refreshTokenBody;
+  bool m_providerHasBeenSet = false;
   bool m_refreshTokenBodyHasBeenSet = false;
 };
 

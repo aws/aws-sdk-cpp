@@ -90,12 +90,12 @@ class ListRumMetricsDestinationsRequest : public CloudWatchRUMRequest {
   ///@}
  private:
   Aws::String m_appMonitorName;
-  bool m_appMonitorNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_appMonitorNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

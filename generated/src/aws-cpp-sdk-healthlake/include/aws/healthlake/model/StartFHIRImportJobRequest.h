@@ -158,24 +158,24 @@ class StartFHIRImportJobRequest : public HealthLakeRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   OutputDataConfig m_jobOutputDataConfig;
-  bool m_jobOutputDataConfigHasBeenSet = false;
 
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ValidationLevel m_validationLevel{ValidationLevel::NOT_SET};
+  bool m_jobNameHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_jobOutputDataConfigHasBeenSet = false;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_validationLevelHasBeenSet = false;
 };
 

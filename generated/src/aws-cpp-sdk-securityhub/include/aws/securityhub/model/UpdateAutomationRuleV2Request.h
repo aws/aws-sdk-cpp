@@ -161,24 +161,24 @@ class UpdateAutomationRuleV2Request : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   RuleStatusV2 m_ruleStatus{RuleStatusV2::NOT_SET};
-  bool m_ruleStatusHasBeenSet = false;
 
   double m_ruleOrder{0.0};
-  bool m_ruleOrderHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Criteria m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   Aws::Vector<AutomationRulesActionV2> m_actions;
+  bool m_identifierHasBeenSet = false;
+  bool m_ruleStatusHasBeenSet = false;
+  bool m_ruleOrderHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_criteriaHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

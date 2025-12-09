@@ -205,24 +205,24 @@ class SearchGameSessionsRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_filterExpression;
-  bool m_filterExpressionHasBeenSet = false;
 
   Aws::String m_sortExpression;
-  bool m_sortExpressionHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_aliasIdHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_filterExpressionHasBeenSet = false;
+  bool m_sortExpressionHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

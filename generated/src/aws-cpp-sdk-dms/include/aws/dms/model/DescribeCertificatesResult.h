@@ -86,12 +86,12 @@ class DescribeCertificatesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<Certificate> m_certificates;
-  bool m_certificatesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_markerHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

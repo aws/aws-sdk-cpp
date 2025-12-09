@@ -65,9 +65,9 @@ class DescribeScalingParametersResult {
   ///@}
  private:
   ScalingParametersStatus m_scalingParameters;
-  bool m_scalingParametersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_scalingParametersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

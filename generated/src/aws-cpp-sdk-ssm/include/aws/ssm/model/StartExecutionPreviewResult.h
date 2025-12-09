@@ -59,9 +59,9 @@ class StartExecutionPreviewResult {
   ///@}
  private:
   Aws::String m_executionPreviewId;
-  bool m_executionPreviewIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_executionPreviewIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -188,30 +188,30 @@ class GetDomainVerificationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   VerificationStatus m_status{VerificationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   TxtMethodConfig m_txtMethodConfig;
-  bool m_txtMethodConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastVerifiedTime{};
-  bool m_lastVerifiedTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_txtMethodConfigHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastVerifiedTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

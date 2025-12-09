@@ -95,15 +95,15 @@ class WaypointOptimizationTimeBreakdown {
   ///@}
  private:
   long long m_restDuration{0};
-  bool m_restDurationHasBeenSet = false;
 
   long long m_serviceDuration{0};
-  bool m_serviceDurationHasBeenSet = false;
 
   long long m_travelDuration{0};
-  bool m_travelDurationHasBeenSet = false;
 
   long long m_waitDuration{0};
+  bool m_restDurationHasBeenSet = false;
+  bool m_serviceDurationHasBeenSet = false;
+  bool m_travelDurationHasBeenSet = false;
   bool m_waitDurationHasBeenSet = false;
 };
 

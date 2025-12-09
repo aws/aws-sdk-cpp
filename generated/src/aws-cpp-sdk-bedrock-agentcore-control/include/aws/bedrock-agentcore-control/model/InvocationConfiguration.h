@@ -69,9 +69,9 @@ class InvocationConfiguration {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_payloadDeliveryBucketName;
+  bool m_topicArnHasBeenSet = false;
   bool m_payloadDeliveryBucketNameHasBeenSet = false;
 };
 

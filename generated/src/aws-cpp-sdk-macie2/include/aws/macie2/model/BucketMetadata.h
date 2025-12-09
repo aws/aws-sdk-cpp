@@ -606,84 +606,84 @@ class BucketMetadata {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AllowsUnencryptedObjectUploads m_allowsUnencryptedObjectUploads{AllowsUnencryptedObjectUploads::NOT_SET};
-  bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
   AutomatedDiscoveryMonitoringStatus m_automatedDiscoveryMonitoringStatus{AutomatedDiscoveryMonitoringStatus::NOT_SET};
-  bool m_automatedDiscoveryMonitoringStatusHasBeenSet = false;
 
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_bucketCreatedAt{};
-  bool m_bucketCreatedAtHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   long long m_classifiableObjectCount{0};
-  bool m_classifiableObjectCountHasBeenSet = false;
 
   long long m_classifiableSizeInBytes{0};
-  bool m_classifiableSizeInBytesHasBeenSet = false;
 
   BucketMetadataErrorCode m_errorCode{BucketMetadataErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   JobDetails m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAutomatedDiscoveryTime{};
-  bool m_lastAutomatedDiscoveryTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   long long m_objectCount{0};
-  bool m_objectCountHasBeenSet = false;
 
   ObjectCountByEncryptionType m_objectCountByEncryptionType;
-  bool m_objectCountByEncryptionTypeHasBeenSet = false;
 
   BucketPublicAccess m_publicAccess;
-  bool m_publicAccessHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   ReplicationDetails m_replicationDetails;
-  bool m_replicationDetailsHasBeenSet = false;
 
   int m_sensitivityScore{0};
-  bool m_sensitivityScoreHasBeenSet = false;
 
   BucketServerSideEncryption m_serverSideEncryption;
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   SharedAccess m_sharedAccess{SharedAccess::NOT_SET};
-  bool m_sharedAccessHasBeenSet = false;
 
   long long m_sizeInBytes{0};
-  bool m_sizeInBytesHasBeenSet = false;
 
   long long m_sizeInBytesCompressed{0};
-  bool m_sizeInBytesCompressedHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ObjectLevelStatistics m_unclassifiableObjectCount;
-  bool m_unclassifiableObjectCountHasBeenSet = false;
 
   ObjectLevelStatistics m_unclassifiableObjectSizeInBytes;
-  bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
 
   bool m_versioning{false};
+  bool m_accountIdHasBeenSet = false;
+  bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
+  bool m_automatedDiscoveryMonitoringStatusHasBeenSet = false;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_bucketCreatedAtHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_classifiableObjectCountHasBeenSet = false;
+  bool m_classifiableSizeInBytesHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_jobDetailsHasBeenSet = false;
+  bool m_lastAutomatedDiscoveryTimeHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_objectCountHasBeenSet = false;
+  bool m_objectCountByEncryptionTypeHasBeenSet = false;
+  bool m_publicAccessHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_replicationDetailsHasBeenSet = false;
+  bool m_sensitivityScoreHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_sharedAccessHasBeenSet = false;
+  bool m_sizeInBytesHasBeenSet = false;
+  bool m_sizeInBytesCompressedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_unclassifiableObjectCountHasBeenSet = false;
+  bool m_unclassifiableObjectSizeInBytesHasBeenSet = false;
   bool m_versioningHasBeenSet = false;
 };
 

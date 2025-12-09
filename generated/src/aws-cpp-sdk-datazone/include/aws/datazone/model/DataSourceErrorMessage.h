@@ -70,9 +70,9 @@ class DataSourceErrorMessage {
   ///@}
  private:
   Aws::String m_errorDetail;
-  bool m_errorDetailHasBeenSet = false;
 
   DataSourceErrorType m_errorType{DataSourceErrorType::NOT_SET};
+  bool m_errorDetailHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

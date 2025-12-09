@@ -89,12 +89,12 @@ class OptOutListInformation {
   ///@}
  private:
   Aws::String m_optOutListArn;
-  bool m_optOutListArnHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_optOutListArnHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class MapRunListItem {
   ///@}
  private:
   Aws::String m_executionArn;
-  bool m_executionArnHasBeenSet = false;
 
   Aws::String m_mapRunArn;
-  bool m_mapRunArnHasBeenSet = false;
 
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopDate{};
+  bool m_executionArnHasBeenSet = false;
+  bool m_mapRunArnHasBeenSet = false;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_stopDateHasBeenSet = false;
 };
 

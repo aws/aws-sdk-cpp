@@ -120,18 +120,18 @@ class WarmPoolConfiguration {
   ///@}
  private:
   int m_maxGroupPreparedCapacity{0};
-  bool m_maxGroupPreparedCapacityHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   WarmPoolState m_poolState{WarmPoolState::NOT_SET};
-  bool m_poolStateHasBeenSet = false;
 
   WarmPoolStatus m_status{WarmPoolStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   InstanceReusePolicy m_instanceReusePolicy;
+  bool m_maxGroupPreparedCapacityHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_poolStateHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_instanceReusePolicyHasBeenSet = false;
 };
 

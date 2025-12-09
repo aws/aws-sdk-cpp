@@ -67,9 +67,9 @@ class DeleteSamplingRuleRequest : public XRayRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleARN;
+  bool m_ruleNameHasBeenSet = false;
   bool m_ruleARNHasBeenSet = false;
 };
 

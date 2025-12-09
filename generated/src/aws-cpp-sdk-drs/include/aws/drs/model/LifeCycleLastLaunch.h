@@ -69,9 +69,9 @@ class LifeCycleLastLaunch {
   ///@}
  private:
   LifeCycleLastLaunchInitiated m_initiated;
-  bool m_initiatedHasBeenSet = false;
 
   LaunchStatus m_status{LaunchStatus::NOT_SET};
+  bool m_initiatedHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

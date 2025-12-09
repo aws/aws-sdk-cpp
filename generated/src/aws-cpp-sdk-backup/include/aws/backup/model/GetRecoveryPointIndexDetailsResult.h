@@ -212,33 +212,33 @@ class GetRecoveryPointIndexDetailsResult {
   ///@}
  private:
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_sourceResourceArn;
-  bool m_sourceResourceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_indexCreationDate{};
-  bool m_indexCreationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_indexDeletionDate{};
-  bool m_indexDeletionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_indexCompletionDate{};
-  bool m_indexCompletionDateHasBeenSet = false;
 
   IndexStatus m_indexStatus{IndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   Aws::String m_indexStatusMessage;
-  bool m_indexStatusMessageHasBeenSet = false;
 
   long long m_totalItemsIndexed{0};
-  bool m_totalItemsIndexedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_sourceResourceArnHasBeenSet = false;
+  bool m_indexCreationDateHasBeenSet = false;
+  bool m_indexDeletionDateHasBeenSet = false;
+  bool m_indexCompletionDateHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
+  bool m_indexStatusMessageHasBeenSet = false;
+  bool m_totalItemsIndexedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

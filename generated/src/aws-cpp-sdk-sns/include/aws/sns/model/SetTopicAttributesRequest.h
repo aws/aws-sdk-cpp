@@ -200,12 +200,12 @@ class SetTopicAttributesRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeValue;
+  bool m_topicArnHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeValueHasBeenSet = false;
 };
 

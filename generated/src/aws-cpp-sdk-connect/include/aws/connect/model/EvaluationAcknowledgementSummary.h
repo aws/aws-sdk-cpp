@@ -89,12 +89,12 @@ class EvaluationAcknowledgementSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_acknowledgedTime{};
-  bool m_acknowledgedTimeHasBeenSet = false;
 
   Aws::String m_acknowledgedBy;
-  bool m_acknowledgedByHasBeenSet = false;
 
   Aws::String m_acknowledgerComment;
+  bool m_acknowledgedTimeHasBeenSet = false;
+  bool m_acknowledgedByHasBeenSet = false;
   bool m_acknowledgerCommentHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeScalableTargetsResult {
   ///@}
  private:
   Aws::Vector<ScalableTarget> m_scalableTargets;
-  bool m_scalableTargetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scalableTargetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

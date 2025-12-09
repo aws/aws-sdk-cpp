@@ -87,9 +87,9 @@ class EvaluationTarget {
   ///@}
  private:
   Aws::Vector<Aws::String> m_spanIds;
-  bool m_spanIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_traceIds;
+  bool m_spanIdsHasBeenSet = false;
   bool m_traceIdsHasBeenSet = false;
 };
 

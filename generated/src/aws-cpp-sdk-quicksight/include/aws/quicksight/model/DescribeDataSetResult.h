@@ -75,12 +75,12 @@ class DescribeDataSetResult {
   ///@}
  private:
   DataSet m_dataSet;
-  bool m_dataSetHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_dataSetHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

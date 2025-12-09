@@ -68,9 +68,9 @@ class InputLogEvent {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_timestampHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

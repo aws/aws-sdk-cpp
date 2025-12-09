@@ -65,9 +65,9 @@ class InterpolationParameters {
   ///@}
  private:
   InterpolationType m_interpolationType{InterpolationType::NOT_SET};
-  bool m_interpolationTypeHasBeenSet = false;
 
   long long m_intervalInSeconds{0};
+  bool m_interpolationTypeHasBeenSet = false;
   bool m_intervalInSecondsHasBeenSet = false;
 };
 

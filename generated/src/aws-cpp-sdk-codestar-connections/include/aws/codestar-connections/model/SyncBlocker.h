@@ -183,27 +183,27 @@ class SyncBlocker {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   BlockerType m_type{BlockerType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   BlockerStatus m_status{BlockerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdReason;
-  bool m_createdReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Vector<SyncBlockerContext> m_contexts;
-  bool m_contextsHasBeenSet = false;
 
   Aws::String m_resolvedReason;
-  bool m_resolvedReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_resolvedAt{};
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdReasonHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_contextsHasBeenSet = false;
+  bool m_resolvedReasonHasBeenSet = false;
   bool m_resolvedAtHasBeenSet = false;
 };
 

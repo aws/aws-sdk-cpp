@@ -68,9 +68,9 @@ class PutLogGroupDeletionProtectionRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
+  bool m_logGroupIdentifierHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
 };
 

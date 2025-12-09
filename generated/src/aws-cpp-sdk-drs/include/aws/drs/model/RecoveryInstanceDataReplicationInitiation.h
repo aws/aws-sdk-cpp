@@ -76,9 +76,9 @@ class RecoveryInstanceDataReplicationInitiation {
   ///@}
  private:
   Aws::String m_startDateTime;
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Vector<RecoveryInstanceDataReplicationInitiationStep> m_steps;
+  bool m_startDateTimeHasBeenSet = false;
   bool m_stepsHasBeenSet = false;
 };
 

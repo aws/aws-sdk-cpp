@@ -92,12 +92,12 @@ class CreateBillingGroupRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_billingGroupName;
-  bool m_billingGroupNameHasBeenSet = false;
 
   BillingGroupProperties m_billingGroupProperties;
-  bool m_billingGroupPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_billingGroupNameHasBeenSet = false;
+  bool m_billingGroupPropertiesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

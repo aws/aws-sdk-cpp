@@ -84,12 +84,12 @@ class GetSolutionMetricsResult {
   ///@}
  private:
   Aws::String m_solutionVersionArn;
-  bool m_solutionVersionArnHasBeenSet = false;
 
   Aws::Map<Aws::String, double> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_solutionVersionArnHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

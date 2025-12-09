@@ -303,39 +303,39 @@ class RateBasedStatementCustomKey {
   ///@}
  private:
   RateLimitHeader m_header;
-  bool m_headerHasBeenSet = false;
 
   RateLimitCookie m_cookie;
-  bool m_cookieHasBeenSet = false;
 
   RateLimitQueryArgument m_queryArgument;
-  bool m_queryArgumentHasBeenSet = false;
 
   RateLimitQueryString m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   RateLimitHTTPMethod m_hTTPMethod;
-  bool m_hTTPMethodHasBeenSet = false;
 
   RateLimitForwardedIP m_forwardedIP;
-  bool m_forwardedIPHasBeenSet = false;
 
   RateLimitIP m_iP;
-  bool m_iPHasBeenSet = false;
 
   RateLimitLabelNamespace m_labelNamespace;
-  bool m_labelNamespaceHasBeenSet = false;
 
   RateLimitUriPath m_uriPath;
-  bool m_uriPathHasBeenSet = false;
 
   RateLimitJA3Fingerprint m_jA3Fingerprint;
-  bool m_jA3FingerprintHasBeenSet = false;
 
   RateLimitJA4Fingerprint m_jA4Fingerprint;
-  bool m_jA4FingerprintHasBeenSet = false;
 
   RateLimitAsn m_aSN;
+  bool m_headerHasBeenSet = false;
+  bool m_cookieHasBeenSet = false;
+  bool m_queryArgumentHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_hTTPMethodHasBeenSet = false;
+  bool m_forwardedIPHasBeenSet = false;
+  bool m_iPHasBeenSet = false;
+  bool m_labelNamespaceHasBeenSet = false;
+  bool m_uriPathHasBeenSet = false;
+  bool m_jA3FingerprintHasBeenSet = false;
+  bool m_jA4FingerprintHasBeenSet = false;
   bool m_aSNHasBeenSet = false;
 };
 

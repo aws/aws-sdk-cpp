@@ -177,27 +177,27 @@ class IntegrationAssociationSummary {
   ///@}
  private:
   Aws::String m_integrationAssociationId;
-  bool m_integrationAssociationIdHasBeenSet = false;
 
   Aws::String m_integrationAssociationArn;
-  bool m_integrationAssociationArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IntegrationType m_integrationType{IntegrationType::NOT_SET};
-  bool m_integrationTypeHasBeenSet = false;
 
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_sourceApplicationUrl;
-  bool m_sourceApplicationUrlHasBeenSet = false;
 
   Aws::String m_sourceApplicationName;
-  bool m_sourceApplicationNameHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
+  bool m_integrationAssociationIdHasBeenSet = false;
+  bool m_integrationAssociationArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_integrationTypeHasBeenSet = false;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_sourceApplicationUrlHasBeenSet = false;
+  bool m_sourceApplicationNameHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

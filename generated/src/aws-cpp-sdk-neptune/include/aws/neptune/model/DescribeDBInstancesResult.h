@@ -87,12 +87,12 @@ class DescribeDBInstancesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBInstance> m_dBInstances;
-  bool m_dBInstancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBInstancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

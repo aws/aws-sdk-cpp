@@ -71,12 +71,12 @@ class Positioning {
   ///@}
  private:
   int m_clockSync{0};
-  bool m_clockSyncHasBeenSet = false;
 
   int m_stream{0};
-  bool m_streamHasBeenSet = false;
 
   int m_gnss{0};
+  bool m_clockSyncHasBeenSet = false;
+  bool m_streamHasBeenSet = false;
   bool m_gnssHasBeenSet = false;
 };
 

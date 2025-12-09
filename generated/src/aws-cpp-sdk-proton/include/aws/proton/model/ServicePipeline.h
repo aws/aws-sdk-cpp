@@ -252,39 +252,39 @@ class ServicePipeline {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_deploymentStatusMessage;
-  bool m_deploymentStatusMessageHasBeenSet = false;
 
   Aws::String m_lastAttemptedDeploymentId;
-  bool m_lastAttemptedDeploymentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDeploymentAttemptedAt{};
-  bool m_lastDeploymentAttemptedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDeploymentSucceededAt{};
-  bool m_lastDeploymentSucceededAtHasBeenSet = false;
 
   Aws::String m_lastSucceededDeploymentId;
-  bool m_lastSucceededDeploymentIdHasBeenSet = false;
 
   Aws::String m_spec;
-  bool m_specHasBeenSet = false;
 
   Aws::String m_templateMajorVersion;
-  bool m_templateMajorVersionHasBeenSet = false;
 
   Aws::String m_templateMinorVersion;
-  bool m_templateMinorVersionHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentStatusMessageHasBeenSet = false;
+  bool m_lastAttemptedDeploymentIdHasBeenSet = false;
+  bool m_lastDeploymentAttemptedAtHasBeenSet = false;
+  bool m_lastDeploymentSucceededAtHasBeenSet = false;
+  bool m_lastSucceededDeploymentIdHasBeenSet = false;
+  bool m_specHasBeenSet = false;
+  bool m_templateMajorVersionHasBeenSet = false;
+  bool m_templateMinorVersionHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

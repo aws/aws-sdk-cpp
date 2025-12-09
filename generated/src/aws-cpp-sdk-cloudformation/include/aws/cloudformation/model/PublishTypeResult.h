@@ -61,9 +61,9 @@ class PublishTypeResult {
   ///@}
  private:
   Aws::String m_publicTypeArn;
-  bool m_publicTypeArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_publicTypeArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

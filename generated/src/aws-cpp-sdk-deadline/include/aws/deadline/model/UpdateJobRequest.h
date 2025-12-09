@@ -213,33 +213,33 @@ class UpdateJobRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   JobTargetTaskRunStatus m_targetTaskRunStatus{JobTargetTaskRunStatus::NOT_SET};
-  bool m_targetTaskRunStatusHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   int m_maxFailedTasksCount{0};
-  bool m_maxFailedTasksCountHasBeenSet = false;
 
   int m_maxRetriesPerTask{0};
-  bool m_maxRetriesPerTaskHasBeenSet = false;
 
   UpdateJobLifecycleStatus m_lifecycleStatus{UpdateJobLifecycleStatus::NOT_SET};
-  bool m_lifecycleStatusHasBeenSet = false;
 
   int m_maxWorkerCount{0};
-  bool m_maxWorkerCountHasBeenSet = false;
 
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_jobId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_targetTaskRunStatusHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_maxFailedTasksCountHasBeenSet = false;
+  bool m_maxRetriesPerTaskHasBeenSet = false;
+  bool m_lifecycleStatusHasBeenSet = false;
+  bool m_maxWorkerCountHasBeenSet = false;
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
   bool m_jobIdHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class TaskListEntry {
   ///@}
  private:
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   TaskStatus m_status{TaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TaskMode m_taskMode{TaskMode::NOT_SET};
+  bool m_taskArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_taskModeHasBeenSet = false;
 };
 

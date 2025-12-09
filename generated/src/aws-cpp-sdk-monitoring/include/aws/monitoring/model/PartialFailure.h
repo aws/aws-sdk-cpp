@@ -109,15 +109,15 @@ class PartialFailure {
   ///@}
  private:
   Aws::String m_failureResource;
-  bool m_failureResourceHasBeenSet = false;
 
   Aws::String m_exceptionType;
-  bool m_exceptionTypeHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureDescription;
+  bool m_failureResourceHasBeenSet = false;
+  bool m_exceptionTypeHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureDescriptionHasBeenSet = false;
 };
 

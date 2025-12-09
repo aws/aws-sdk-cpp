@@ -154,21 +154,21 @@ class NetworkInterface {
   ///@}
  private:
   Aws::String m_interfaceId;
-  bool m_interfaceIdHasBeenSet = false;
 
   NetworkInterfaceType m_type{NetworkInterfaceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CanInterface m_canInterface;
-  bool m_canInterfaceHasBeenSet = false;
 
   ObdInterface m_obdInterface;
-  bool m_obdInterfaceHasBeenSet = false;
 
   VehicleMiddleware m_vehicleMiddleware;
-  bool m_vehicleMiddlewareHasBeenSet = false;
 
   CustomDecodingInterface m_customDecodingInterface;
+  bool m_interfaceIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_canInterfaceHasBeenSet = false;
+  bool m_obdInterfaceHasBeenSet = false;
+  bool m_vehicleMiddlewareHasBeenSet = false;
   bool m_customDecodingInterfaceHasBeenSet = false;
 };
 

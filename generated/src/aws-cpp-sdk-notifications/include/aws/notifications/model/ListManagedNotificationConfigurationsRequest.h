@@ -90,12 +90,12 @@ class ListManagedNotificationConfigurationsRequest : public NotificationsRequest
   ///@}
  private:
   Aws::String m_channelIdentifier;
-  bool m_channelIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_channelIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

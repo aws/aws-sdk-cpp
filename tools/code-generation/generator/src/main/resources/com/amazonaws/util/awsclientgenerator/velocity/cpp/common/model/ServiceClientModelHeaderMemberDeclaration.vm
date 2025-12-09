@@ -31,10 +31,3 @@
 #end
     $cppType $memberVariableName$initializer;
 #end
-#set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
-#set($isRequired = $useRequiredField && $member.value.required)
-#if(($isRequired || $isIdempontencyToken) && !$isStreamingMember && !$member.value.shape.isEventStream())
-    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true;
-#else
-    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
-#end

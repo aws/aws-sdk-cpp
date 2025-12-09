@@ -67,9 +67,9 @@ class EvaluationFormItemEnablementSourceValue {
   ///@}
  private:
   EvaluationFormItemEnablementSourceValueType m_type{EvaluationFormItemEnablementSourceValueType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_refId;
+  bool m_typeHasBeenSet = false;
   bool m_refIdHasBeenSet = false;
 };
 

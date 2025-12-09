@@ -85,12 +85,12 @@ class PreviewConfig {
   ///@}
  private:
   double m_bandwidthAllocation{0.0};
-  bool m_bandwidthAllocationHasBeenSet = false;
 
   TimeoutConfig m_timeoutConfig;
-  bool m_timeoutConfigHasBeenSet = false;
 
   Aws::Vector<AgentAction> m_agentActions;
+  bool m_bandwidthAllocationHasBeenSet = false;
+  bool m_timeoutConfigHasBeenSet = false;
   bool m_agentActionsHasBeenSet = false;
 };
 

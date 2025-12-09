@@ -89,12 +89,12 @@ class DescribeTransitGatewayMeteringPoliciesResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayMeteringPolicy> m_transitGatewayMeteringPolicies;
-  bool m_transitGatewayMeteringPoliciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayMeteringPoliciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

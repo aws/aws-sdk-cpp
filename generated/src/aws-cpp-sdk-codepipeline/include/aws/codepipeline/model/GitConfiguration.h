@@ -110,12 +110,12 @@ class GitConfiguration {
   ///@}
  private:
   Aws::String m_sourceActionName;
-  bool m_sourceActionNameHasBeenSet = false;
 
   Aws::Vector<GitPushFilter> m_push;
-  bool m_pushHasBeenSet = false;
 
   Aws::Vector<GitPullRequestFilter> m_pullRequest;
+  bool m_sourceActionNameHasBeenSet = false;
+  bool m_pushHasBeenSet = false;
   bool m_pullRequestHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class MxfXavcProfileSettings {
   ///@}
  private:
   MxfXavcDurationMode m_durationMode{MxfXavcDurationMode::NOT_SET};
-  bool m_durationModeHasBeenSet = false;
 
   int m_maxAncDataSize{0};
+  bool m_durationModeHasBeenSet = false;
   bool m_maxAncDataSizeHasBeenSet = false;
 };
 

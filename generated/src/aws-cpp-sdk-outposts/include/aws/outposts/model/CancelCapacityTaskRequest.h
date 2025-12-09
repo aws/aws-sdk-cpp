@@ -66,9 +66,9 @@ class CancelCapacityTaskRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_capacityTaskId;
-  bool m_capacityTaskIdHasBeenSet = false;
 
   Aws::String m_outpostIdentifier;
+  bool m_capacityTaskIdHasBeenSet = false;
   bool m_outpostIdentifierHasBeenSet = false;
 };
 

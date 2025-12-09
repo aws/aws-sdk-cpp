@@ -96,15 +96,15 @@ class Job {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   bool m_isCanceled{false};
-  bool m_isCanceledHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
+  bool m_jobIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_isCanceledHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
 };
 

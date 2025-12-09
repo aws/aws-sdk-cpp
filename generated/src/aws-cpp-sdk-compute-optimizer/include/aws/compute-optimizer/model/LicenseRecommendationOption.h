@@ -120,18 +120,18 @@ class LicenseRecommendationOption {
   ///@}
  private:
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   Aws::String m_operatingSystem;
-  bool m_operatingSystemHasBeenSet = false;
 
   LicenseEdition m_licenseEdition{LicenseEdition::NOT_SET};
-  bool m_licenseEditionHasBeenSet = false;
 
   LicenseModel m_licenseModel{LicenseModel::NOT_SET};
-  bool m_licenseModelHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
+  bool m_rankHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_licenseEditionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
   bool m_savingsOpportunityHasBeenSet = false;
 };
 

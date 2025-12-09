@@ -160,24 +160,24 @@ class DescribeDraftAppVersionResourcesImportStatusResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::Vector<ErrorDetail> m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   ResourceImportStatusType m_status{ResourceImportStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_statusChangeTime{};
-  bool m_statusChangeTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusChangeTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

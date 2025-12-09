@@ -168,24 +168,24 @@ class NetworkEndpoint {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ip;
-  bool m_ipHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   NetworkGeoLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   NetworkAutonomousSystem m_autonomousSystem;
-  bool m_autonomousSystemHasBeenSet = false;
 
   NetworkConnection m_connection;
+  bool m_idHasBeenSet = false;
+  bool m_ipHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_autonomousSystemHasBeenSet = false;
   bool m_connectionHasBeenSet = false;
 };
 

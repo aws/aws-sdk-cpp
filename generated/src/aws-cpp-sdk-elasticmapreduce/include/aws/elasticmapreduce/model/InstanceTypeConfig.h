@@ -203,27 +203,27 @@ class InstanceTypeConfig {
   ///@}
  private:
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_weightedCapacity{0};
-  bool m_weightedCapacityHasBeenSet = false;
 
   Aws::String m_bidPrice;
-  bool m_bidPriceHasBeenSet = false;
 
   double m_bidPriceAsPercentageOfOnDemandPrice{0.0};
-  bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = false;
 
   EbsConfiguration m_ebsConfiguration;
-  bool m_ebsConfigurationHasBeenSet = false;
 
   Aws::Vector<Configuration> m_configurations;
-  bool m_configurationsHasBeenSet = false;
 
   Aws::String m_customAmiId;
-  bool m_customAmiIdHasBeenSet = false;
 
   double m_priority{0.0};
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_weightedCapacityHasBeenSet = false;
+  bool m_bidPriceHasBeenSet = false;
+  bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = false;
+  bool m_ebsConfigurationHasBeenSet = false;
+  bool m_configurationsHasBeenSet = false;
+  bool m_customAmiIdHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 
