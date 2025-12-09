@@ -22,10 +22,6 @@ ReplicationConfigurationReplicatedDisk& ReplicationConfigurationReplicatedDisk::
     m_deviceName = jsonValue.GetString("deviceName");
     m_deviceNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("iops")) {
-    m_iops = jsonValue.GetInt64("iops");
-    m_iopsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("isBootDisk")) {
     m_isBootDisk = jsonValue.GetBool("isBootDisk");
     m_isBootDiskHasBeenSet = true;
@@ -35,6 +31,10 @@ ReplicationConfigurationReplicatedDisk& ReplicationConfigurationReplicatedDisk::
         ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper::GetReplicationConfigurationReplicatedDiskStagingDiskTypeForName(
             jsonValue.GetString("stagingDiskType"));
     m_stagingDiskTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("iops")) {
+    m_iops = jsonValue.GetInt64("iops");
+    m_iopsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("throughput")) {
     m_throughput = jsonValue.GetInt64("throughput");
@@ -50,10 +50,6 @@ JsonValue ReplicationConfigurationReplicatedDisk::Jsonize() const {
     payload.WithString("deviceName", m_deviceName);
   }
 
-  if (m_iopsHasBeenSet) {
-    payload.WithInt64("iops", m_iops);
-  }
-
   if (m_isBootDiskHasBeenSet) {
     payload.WithBool("isBootDisk", m_isBootDisk);
   }
@@ -63,6 +59,10 @@ JsonValue ReplicationConfigurationReplicatedDisk::Jsonize() const {
         "stagingDiskType",
         ReplicationConfigurationReplicatedDiskStagingDiskTypeMapper::GetNameForReplicationConfigurationReplicatedDiskStagingDiskType(
             m_stagingDiskType));
+  }
+
+  if (m_iopsHasBeenSet) {
+    payload.WithInt64("iops", m_iops);
   }
 
   if (m_throughputHasBeenSet) {

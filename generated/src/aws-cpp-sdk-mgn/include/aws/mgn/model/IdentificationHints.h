@@ -33,24 +33,6 @@ class IdentificationHints {
 
   ///@{
   /**
-   * <p>AWS Instance ID identification hint.</p>
-   */
-  inline const Aws::String& GetAwsInstanceID() const { return m_awsInstanceID; }
-  inline bool AwsInstanceIDHasBeenSet() const { return m_awsInstanceIDHasBeenSet; }
-  template <typename AwsInstanceIDT = Aws::String>
-  void SetAwsInstanceID(AwsInstanceIDT&& value) {
-    m_awsInstanceIDHasBeenSet = true;
-    m_awsInstanceID = std::forward<AwsInstanceIDT>(value);
-  }
-  template <typename AwsInstanceIDT = Aws::String>
-  IdentificationHints& WithAwsInstanceID(AwsInstanceIDT&& value) {
-    SetAwsInstanceID(std::forward<AwsInstanceIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>FQDN address identification hint.</p>
    */
   inline const Aws::String& GetFqdn() const { return m_fqdn; }
@@ -87,24 +69,6 @@ class IdentificationHints {
 
   ///@{
   /**
-   * <p>vCenter VM path identification hint.</p>
-   */
-  inline const Aws::String& GetVmPath() const { return m_vmPath; }
-  inline bool VmPathHasBeenSet() const { return m_vmPathHasBeenSet; }
-  template <typename VmPathT = Aws::String>
-  void SetVmPath(VmPathT&& value) {
-    m_vmPathHasBeenSet = true;
-    m_vmPath = std::forward<VmPathT>(value);
-  }
-  template <typename VmPathT = Aws::String>
-  IdentificationHints& WithVmPath(VmPathT&& value) {
-    SetVmPath(std::forward<VmPathT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>vmWare UUID identification hint.</p>
    */
   inline const Aws::String& GetVmWareUuid() const { return m_vmWareUuid; }
@@ -120,21 +84,57 @@ class IdentificationHints {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_awsInstanceID;
 
+  ///@{
+  /**
+   * <p>AWS Instance ID identification hint.</p>
+   */
+  inline const Aws::String& GetAwsInstanceID() const { return m_awsInstanceID; }
+  inline bool AwsInstanceIDHasBeenSet() const { return m_awsInstanceIDHasBeenSet; }
+  template <typename AwsInstanceIDT = Aws::String>
+  void SetAwsInstanceID(AwsInstanceIDT&& value) {
+    m_awsInstanceIDHasBeenSet = true;
+    m_awsInstanceID = std::forward<AwsInstanceIDT>(value);
+  }
+  template <typename AwsInstanceIDT = Aws::String>
+  IdentificationHints& WithAwsInstanceID(AwsInstanceIDT&& value) {
+    SetAwsInstanceID(std::forward<AwsInstanceIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>vCenter VM path identification hint.</p>
+   */
+  inline const Aws::String& GetVmPath() const { return m_vmPath; }
+  inline bool VmPathHasBeenSet() const { return m_vmPathHasBeenSet; }
+  template <typename VmPathT = Aws::String>
+  void SetVmPath(VmPathT&& value) {
+    m_vmPathHasBeenSet = true;
+    m_vmPath = std::forward<VmPathT>(value);
+  }
+  template <typename VmPathT = Aws::String>
+  IdentificationHints& WithVmPath(VmPathT&& value) {
+    SetVmPath(std::forward<VmPathT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_fqdn;
 
   Aws::String m_hostname;
 
-  Aws::String m_vmPath;
-
   Aws::String m_vmWareUuid;
-  bool m_awsInstanceIDHasBeenSet = false;
+
+  Aws::String m_awsInstanceID;
+
+  Aws::String m_vmPath;
   bool m_fqdnHasBeenSet = false;
   bool m_hostnameHasBeenSet = false;
-  bool m_vmPathHasBeenSet = false;
   bool m_vmWareUuidHasBeenSet = false;
+  bool m_awsInstanceIDHasBeenSet = false;
+  bool m_vmPathHasBeenSet = false;
 };
 
 }  // namespace Model

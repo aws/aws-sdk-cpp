@@ -118,6 +118,7 @@
 #include <aws/mgn/model/InitializeServiceResult.h>
 #include <aws/mgn/model/InitiatedBy.h>
 #include <aws/mgn/model/InternalServerException.h>
+#include <aws/mgn/model/InternetProtocol.h>
 #include <aws/mgn/model/Job.h>
 #include <aws/mgn/model/JobLog.h>
 #include <aws/mgn/model/JobLogEvent.h>

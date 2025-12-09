@@ -52,22 +52,6 @@ class LaunchedInstance {
 
   ///@{
   /**
-   * <p>Launched instance first boot.</p>
-   */
-  inline FirstBoot GetFirstBoot() const { return m_firstBoot; }
-  inline bool FirstBootHasBeenSet() const { return m_firstBootHasBeenSet; }
-  inline void SetFirstBoot(FirstBoot value) {
-    m_firstBootHasBeenSet = true;
-    m_firstBoot = value;
-  }
-  inline LaunchedInstance& WithFirstBoot(FirstBoot value) {
-    SetFirstBoot(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Launched instance Job ID.</p>
    */
   inline const Aws::String& GetJobID() const { return m_jobID; }
@@ -83,15 +67,31 @@ class LaunchedInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Launched instance first boot.</p>
+   */
+  inline FirstBoot GetFirstBoot() const { return m_firstBoot; }
+  inline bool FirstBootHasBeenSet() const { return m_firstBootHasBeenSet; }
+  inline void SetFirstBoot(FirstBoot value) {
+    m_firstBootHasBeenSet = true;
+    m_firstBoot = value;
+  }
+  inline LaunchedInstance& WithFirstBoot(FirstBoot value) {
+    SetFirstBoot(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ec2InstanceID;
 
-  FirstBoot m_firstBoot{FirstBoot::NOT_SET};
-
   Aws::String m_jobID;
+
+  FirstBoot m_firstBoot{FirstBoot::NOT_SET};
   bool m_ec2InstanceIDHasBeenSet = false;
-  bool m_firstBootHasBeenSet = false;
   bool m_jobIDHasBeenSet = false;
+  bool m_firstBootHasBeenSet = false;
 };
 
 }  // namespace Model

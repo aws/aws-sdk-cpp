@@ -33,18 +33,18 @@ class ImportErrorData {
 
   ///@{
   /**
-   * <p>Import error data source account ID.</p>
+   * <p>Import error data source server ID.</p>
    */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
   }
-  template <typename AccountIDT = Aws::String>
-  ImportErrorData& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
+  template <typename SourceServerIDT = Aws::String>
+  ImportErrorData& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -69,6 +69,24 @@ class ImportErrorData {
 
   ///@{
   /**
+   * <p>Import error data wave id.</p>
+   */
+  inline const Aws::String& GetWaveID() const { return m_waveID; }
+  inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
+  template <typename WaveIDT = Aws::String>
+  void SetWaveID(WaveIDT&& value) {
+    m_waveIDHasBeenSet = true;
+    m_waveID = std::forward<WaveIDT>(value);
+  }
+  template <typename WaveIDT = Aws::String>
+  ImportErrorData& WithWaveID(WaveIDT&& value) {
+    SetWaveID(std::forward<WaveIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Import error data ec2 LaunchTemplate ID.</p>
    */
   inline const Aws::String& GetEc2LaunchTemplateID() const { return m_ec2LaunchTemplateID; }
@@ -81,6 +99,22 @@ class ImportErrorData {
   template <typename Ec2LaunchTemplateIDT = Aws::String>
   ImportErrorData& WithEc2LaunchTemplateID(Ec2LaunchTemplateIDT&& value) {
     SetEc2LaunchTemplateID(std::forward<Ec2LaunchTemplateIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import error data row number.</p>
+   */
+  inline long long GetRowNumber() const { return m_rowNumber; }
+  inline bool RowNumberHasBeenSet() const { return m_rowNumberHasBeenSet; }
+  inline void SetRowNumber(long long value) {
+    m_rowNumberHasBeenSet = true;
+    m_rowNumber = value;
+  }
+  inline ImportErrorData& WithRowNumber(long long value) {
+    SetRowNumber(value);
     return *this;
   }
   ///@}
@@ -105,76 +139,42 @@ class ImportErrorData {
 
   ///@{
   /**
-   * <p>Import error data row number.</p>
+   * <p>Import error data source account ID.</p>
    */
-  inline long long GetRowNumber() const { return m_rowNumber; }
-  inline bool RowNumberHasBeenSet() const { return m_rowNumberHasBeenSet; }
-  inline void SetRowNumber(long long value) {
-    m_rowNumberHasBeenSet = true;
-    m_rowNumber = value;
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
   }
-  inline ImportErrorData& WithRowNumber(long long value) {
-    SetRowNumber(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Import error data source server ID.</p>
-   */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
-  }
-  template <typename SourceServerIDT = Aws::String>
-  ImportErrorData& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Import error data wave id.</p>
-   */
-  inline const Aws::String& GetWaveID() const { return m_waveID; }
-  inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
-  template <typename WaveIDT = Aws::String>
-  void SetWaveID(WaveIDT&& value) {
-    m_waveIDHasBeenSet = true;
-    m_waveID = std::forward<WaveIDT>(value);
-  }
-  template <typename WaveIDT = Aws::String>
-  ImportErrorData& WithWaveID(WaveIDT&& value) {
-    SetWaveID(std::forward<WaveIDT>(value));
+  template <typename AccountIDT = Aws::String>
+  ImportErrorData& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_accountID;
+  Aws::String m_sourceServerID;
 
   Aws::String m_applicationID;
 
-  Aws::String m_ec2LaunchTemplateID;
+  Aws::String m_waveID;
 
-  Aws::String m_rawError;
+  Aws::String m_ec2LaunchTemplateID;
 
   long long m_rowNumber{0};
 
-  Aws::String m_sourceServerID;
+  Aws::String m_rawError;
 
-  Aws::String m_waveID;
-  bool m_accountIDHasBeenSet = false;
-  bool m_applicationIDHasBeenSet = false;
-  bool m_ec2LaunchTemplateIDHasBeenSet = false;
-  bool m_rawErrorHasBeenSet = false;
-  bool m_rowNumberHasBeenSet = false;
+  Aws::String m_accountID;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_applicationIDHasBeenSet = false;
   bool m_waveIDHasBeenSet = false;
+  bool m_ec2LaunchTemplateIDHasBeenSet = false;
+  bool m_rowNumberHasBeenSet = false;
+  bool m_rawErrorHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

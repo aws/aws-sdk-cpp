@@ -36,6 +36,40 @@ class JobPostLaunchActionsLaunchStatus {
 
   ///@{
   /**
+   * <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+   */
+  inline const SsmDocument& GetSsmDocument() const { return m_ssmDocument; }
+  inline bool SsmDocumentHasBeenSet() const { return m_ssmDocumentHasBeenSet; }
+  template <typename SsmDocumentT = SsmDocument>
+  void SetSsmDocument(SsmDocumentT&& value) {
+    m_ssmDocumentHasBeenSet = true;
+    m_ssmDocument = std::forward<SsmDocumentT>(value);
+  }
+  template <typename SsmDocumentT = SsmDocument>
+  JobPostLaunchActionsLaunchStatus& WithSsmDocument(SsmDocumentT&& value) {
+    SetSsmDocument(std::forward<SsmDocumentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>AWS Systems Manager Document type.</p>
+   */
+  inline SsmDocumentType GetSsmDocumentType() const { return m_ssmDocumentType; }
+  inline bool SsmDocumentTypeHasBeenSet() const { return m_ssmDocumentTypeHasBeenSet; }
+  inline void SetSsmDocumentType(SsmDocumentType value) {
+    m_ssmDocumentTypeHasBeenSet = true;
+    m_ssmDocumentType = value;
+  }
+  inline JobPostLaunchActionsLaunchStatus& WithSsmDocumentType(SsmDocumentType value) {
+    SetSsmDocumentType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch
    * Actions.</p>
    */
@@ -86,55 +120,21 @@ class JobPostLaunchActionsLaunchStatus {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
-   */
-  inline const SsmDocument& GetSsmDocument() const { return m_ssmDocument; }
-  inline bool SsmDocumentHasBeenSet() const { return m_ssmDocumentHasBeenSet; }
-  template <typename SsmDocumentT = SsmDocument>
-  void SetSsmDocument(SsmDocumentT&& value) {
-    m_ssmDocumentHasBeenSet = true;
-    m_ssmDocument = std::forward<SsmDocumentT>(value);
-  }
-  template <typename SsmDocumentT = SsmDocument>
-  JobPostLaunchActionsLaunchStatus& WithSsmDocument(SsmDocumentT&& value) {
-    SetSsmDocument(std::forward<SsmDocumentT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>AWS Systems Manager Document type.</p>
-   */
-  inline SsmDocumentType GetSsmDocumentType() const { return m_ssmDocumentType; }
-  inline bool SsmDocumentTypeHasBeenSet() const { return m_ssmDocumentTypeHasBeenSet; }
-  inline void SetSsmDocumentType(SsmDocumentType value) {
-    m_ssmDocumentTypeHasBeenSet = true;
-    m_ssmDocumentType = value;
-  }
-  inline JobPostLaunchActionsLaunchStatus& WithSsmDocumentType(SsmDocumentType value) {
-    SetSsmDocumentType(value);
-    return *this;
-  }
-  ///@}
  private:
+  SsmDocument m_ssmDocument;
+
+  SsmDocumentType m_ssmDocumentType{SsmDocumentType::NOT_SET};
+
   Aws::String m_executionID;
 
   PostLaunchActionExecutionStatus m_executionStatus{PostLaunchActionExecutionStatus::NOT_SET};
 
   Aws::String m_failureReason;
-
-  SsmDocument m_ssmDocument;
-
-  SsmDocumentType m_ssmDocumentType{SsmDocumentType::NOT_SET};
+  bool m_ssmDocumentHasBeenSet = false;
+  bool m_ssmDocumentTypeHasBeenSet = false;
   bool m_executionIDHasBeenSet = false;
   bool m_executionStatusHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
-  bool m_ssmDocumentHasBeenSet = false;
-  bool m_ssmDocumentTypeHasBeenSet = false;
 };
 
 }  // namespace Model

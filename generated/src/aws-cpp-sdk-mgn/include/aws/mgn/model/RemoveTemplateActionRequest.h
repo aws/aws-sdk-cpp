@@ -30,24 +30,6 @@ class RemoveTemplateActionRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Template post migration custom action ID to remove.</p>
-   */
-  inline const Aws::String& GetActionID() const { return m_actionID; }
-  inline bool ActionIDHasBeenSet() const { return m_actionIDHasBeenSet; }
-  template <typename ActionIDT = Aws::String>
-  void SetActionID(ActionIDT&& value) {
-    m_actionIDHasBeenSet = true;
-    m_actionID = std::forward<ActionIDT>(value);
-  }
-  template <typename ActionIDT = Aws::String>
-  RemoveTemplateActionRequest& WithActionID(ActionIDT&& value) {
-    SetActionID(std::forward<ActionIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Launch configuration template ID of the post migration custom action to
    * remove.</p>
    */
@@ -64,12 +46,30 @@ class RemoveTemplateActionRequest : public MgnRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_actionID;
 
+  ///@{
+  /**
+   * <p>Template post migration custom action ID to remove.</p>
+   */
+  inline const Aws::String& GetActionID() const { return m_actionID; }
+  inline bool ActionIDHasBeenSet() const { return m_actionIDHasBeenSet; }
+  template <typename ActionIDT = Aws::String>
+  void SetActionID(ActionIDT&& value) {
+    m_actionIDHasBeenSet = true;
+    m_actionID = std::forward<ActionIDT>(value);
+  }
+  template <typename ActionIDT = Aws::String>
+  RemoveTemplateActionRequest& WithActionID(ActionIDT&& value) {
+    SetActionID(std::forward<ActionIDT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_launchConfigurationTemplateID;
-  bool m_actionIDHasBeenSet = false;
+
+  Aws::String m_actionID;
   bool m_launchConfigurationTemplateIDHasBeenSet = false;
+  bool m_actionIDHasBeenSet = false;
 };
 
 }  // namespace Model

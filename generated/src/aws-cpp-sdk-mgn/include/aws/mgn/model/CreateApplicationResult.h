@@ -30,23 +30,6 @@ class CreateApplicationResult {
 
   ///@{
   /**
-   * <p>Application aggregated status.</p>
-   */
-  inline const ApplicationAggregatedStatus& GetApplicationAggregatedStatus() const { return m_applicationAggregatedStatus; }
-  template <typename ApplicationAggregatedStatusT = ApplicationAggregatedStatus>
-  void SetApplicationAggregatedStatus(ApplicationAggregatedStatusT&& value) {
-    m_applicationAggregatedStatusHasBeenSet = true;
-    m_applicationAggregatedStatus = std::forward<ApplicationAggregatedStatusT>(value);
-  }
-  template <typename ApplicationAggregatedStatusT = ApplicationAggregatedStatus>
-  CreateApplicationResult& WithApplicationAggregatedStatus(ApplicationAggregatedStatusT&& value) {
-    SetApplicationAggregatedStatus(std::forward<ApplicationAggregatedStatusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Application ID.</p>
    */
   inline const Aws::String& GetApplicationID() const { return m_applicationID; }
@@ -81,17 +64,17 @@ class CreateApplicationResult {
 
   ///@{
   /**
-   * <p>Application creation dateTime.</p>
+   * <p>Application name.</p>
    */
-  inline const Aws::String& GetCreationDateTime() const { return m_creationDateTime; }
-  template <typename CreationDateTimeT = Aws::String>
-  void SetCreationDateTime(CreationDateTimeT&& value) {
-    m_creationDateTimeHasBeenSet = true;
-    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreationDateTimeT = Aws::String>
-  CreateApplicationResult& WithCreationDateTime(CreationDateTimeT&& value) {
-    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+  template <typename NameT = Aws::String>
+  CreateApplicationResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -130,6 +113,40 @@ class CreateApplicationResult {
 
   ///@{
   /**
+   * <p>Application aggregated status.</p>
+   */
+  inline const ApplicationAggregatedStatus& GetApplicationAggregatedStatus() const { return m_applicationAggregatedStatus; }
+  template <typename ApplicationAggregatedStatusT = ApplicationAggregatedStatus>
+  void SetApplicationAggregatedStatus(ApplicationAggregatedStatusT&& value) {
+    m_applicationAggregatedStatusHasBeenSet = true;
+    m_applicationAggregatedStatus = std::forward<ApplicationAggregatedStatusT>(value);
+  }
+  template <typename ApplicationAggregatedStatusT = ApplicationAggregatedStatus>
+  CreateApplicationResult& WithApplicationAggregatedStatus(ApplicationAggregatedStatusT&& value) {
+    SetApplicationAggregatedStatus(std::forward<ApplicationAggregatedStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Application creation dateTime.</p>
+   */
+  inline const Aws::String& GetCreationDateTime() const { return m_creationDateTime; }
+  template <typename CreationDateTimeT = Aws::String>
+  void SetCreationDateTime(CreationDateTimeT&& value) {
+    m_creationDateTimeHasBeenSet = true;
+    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  }
+  template <typename CreationDateTimeT = Aws::String>
+  CreateApplicationResult& WithCreationDateTime(CreationDateTimeT&& value) {
+    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Application last modified dateTime.</p>
    */
   inline const Aws::String& GetLastModifiedDateTime() const { return m_lastModifiedDateTime; }
@@ -141,23 +158,6 @@ class CreateApplicationResult {
   template <typename LastModifiedDateTimeT = Aws::String>
   CreateApplicationResult& WithLastModifiedDateTime(LastModifiedDateTimeT&& value) {
     SetLastModifiedDateTime(std::forward<LastModifiedDateTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Application name.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateApplicationResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -217,35 +217,35 @@ class CreateApplicationResult {
   }
   ///@}
  private:
-  ApplicationAggregatedStatus m_applicationAggregatedStatus;
-
   Aws::String m_applicationID;
 
   Aws::String m_arn;
 
-  Aws::String m_creationDateTime;
+  Aws::String m_name;
 
   Aws::String m_description;
 
   bool m_isArchived{false};
 
-  Aws::String m_lastModifiedDateTime;
+  ApplicationAggregatedStatus m_applicationAggregatedStatus;
 
-  Aws::String m_name;
+  Aws::String m_creationDateTime;
+
+  Aws::String m_lastModifiedDateTime;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_waveID;
 
   Aws::String m_requestId;
-  bool m_applicationAggregatedStatusHasBeenSet = false;
   bool m_applicationIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
-  bool m_creationDateTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_isArchivedHasBeenSet = false;
+  bool m_applicationAggregatedStatusHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_lastModifiedDateTimeHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_waveIDHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

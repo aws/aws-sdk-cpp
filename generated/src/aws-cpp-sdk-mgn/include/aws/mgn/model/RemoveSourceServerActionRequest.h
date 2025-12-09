@@ -30,18 +30,18 @@ class RemoveSourceServerActionRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Source server post migration account ID.</p>
+   * <p>Source server ID of the post migration custom action to remove.</p>
    */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
   }
-  template <typename AccountIDT = Aws::String>
-  RemoveSourceServerActionRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
+  template <typename SourceServerIDT = Aws::String>
+  RemoveSourceServerActionRequest& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -66,30 +66,30 @@ class RemoveSourceServerActionRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Source server ID of the post migration custom action to remove.</p>
+   * <p>Source server post migration account ID.</p>
    */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
   }
-  template <typename SourceServerIDT = Aws::String>
-  RemoveSourceServerActionRequest& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
+  template <typename AccountIDT = Aws::String>
+  RemoveSourceServerActionRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_accountID;
+  Aws::String m_sourceServerID;
 
   Aws::String m_actionID;
 
-  Aws::String m_sourceServerID;
-  bool m_accountIDHasBeenSet = false;
-  bool m_actionIDHasBeenSet = false;
+  Aws::String m_accountID;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_actionIDHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

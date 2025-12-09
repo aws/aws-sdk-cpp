@@ -25,8 +25,8 @@ Ec2LaunchTemplate& Ec2LaunchTemplate::operator=(JsonView jsonValue) {
     }
     m_ec2InstanceUidsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Version")) {
-    m_version = jsonValue.GetString("Version");
+  if (jsonValue.ValueExists("version")) {
+    m_version = jsonValue.GetString("version");
     m_versionHasBeenSet = true;
   }
   return *this;
@@ -44,7 +44,7 @@ JsonValue Ec2LaunchTemplate::Jsonize() const {
   }
 
   if (m_versionHasBeenSet) {
-    payload.WithString("Version", m_version);
+    payload.WithString("version", m_version);
   }
 
   return payload;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mgn/MgnRequest.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/InternetProtocol.h>
 #include <aws/mgn/model/ReplicationConfigurationDataPlaneRouting.h>
 #include <aws/mgn/model/ReplicationConfigurationDefaultLargeStagingDiskType.h>
 #include <aws/mgn/model/ReplicationConfigurationEbsEncryption.h>
@@ -35,6 +36,24 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Update replication configuration template template ID request.</p>
+   */
+  inline const Aws::String& GetReplicationConfigurationTemplateID() const { return m_replicationConfigurationTemplateID; }
+  inline bool ReplicationConfigurationTemplateIDHasBeenSet() const { return m_replicationConfigurationTemplateIDHasBeenSet; }
+  template <typename ReplicationConfigurationTemplateIDT = Aws::String>
+  void SetReplicationConfigurationTemplateID(ReplicationConfigurationTemplateIDT&& value) {
+    m_replicationConfigurationTemplateIDHasBeenSet = true;
+    m_replicationConfigurationTemplateID = std::forward<ReplicationConfigurationTemplateIDT>(value);
+  }
+  template <typename ReplicationConfigurationTemplateIDT = Aws::String>
+  UpdateReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(ReplicationConfigurationTemplateIDT&& value) {
+    SetReplicationConfigurationTemplateID(std::forward<ReplicationConfigurationTemplateIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Update replication configuration template ARN request.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -47,6 +66,24 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
   template <typename ArnT = Aws::String>
   UpdateReplicationConfigurationTemplateRequest& WithArn(ArnT&& value) {
     SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Update replication configuration template Staging Area subnet ID request.</p>
+   */
+  inline const Aws::String& GetStagingAreaSubnetId() const { return m_stagingAreaSubnetId; }
+  inline bool StagingAreaSubnetIdHasBeenSet() const { return m_stagingAreaSubnetIdHasBeenSet; }
+  template <typename StagingAreaSubnetIdT = Aws::String>
+  void SetStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
+    m_stagingAreaSubnetIdHasBeenSet = true;
+    m_stagingAreaSubnetId = std::forward<StagingAreaSubnetIdT>(value);
+  }
+  template <typename StagingAreaSubnetIdT = Aws::String>
+  UpdateReplicationConfigurationTemplateRequest& WithStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
+    SetStagingAreaSubnetId(std::forward<StagingAreaSubnetIdT>(value));
     return *this;
   }
   ///@}
@@ -70,48 +107,61 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Update replication configuration template bandwidth throttling request.</p>
+   * <p>Update replication configuration template Replication Server Security groups
+   * IDs request.</p>
    */
-  inline long long GetBandwidthThrottling() const { return m_bandwidthThrottling; }
-  inline bool BandwidthThrottlingHasBeenSet() const { return m_bandwidthThrottlingHasBeenSet; }
-  inline void SetBandwidthThrottling(long long value) {
-    m_bandwidthThrottlingHasBeenSet = true;
-    m_bandwidthThrottling = value;
+  inline const Aws::Vector<Aws::String>& GetReplicationServersSecurityGroupsIDs() const { return m_replicationServersSecurityGroupsIDs; }
+  inline bool ReplicationServersSecurityGroupsIDsHasBeenSet() const { return m_replicationServersSecurityGroupsIDsHasBeenSet; }
+  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
+  void SetReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
+    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
+    m_replicationServersSecurityGroupsIDs = std::forward<ReplicationServersSecurityGroupsIDsT>(value);
   }
-  inline UpdateReplicationConfigurationTemplateRequest& WithBandwidthThrottling(long long value) {
-    SetBandwidthThrottling(value);
+  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
+  UpdateReplicationConfigurationTemplateRequest& WithReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
+    SetReplicationServersSecurityGroupsIDs(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
+    return *this;
+  }
+  template <typename ReplicationServersSecurityGroupsIDsT = Aws::String>
+  UpdateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
+    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
+    m_replicationServersSecurityGroupsIDs.emplace_back(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Update replication configuration template create Public IP request.</p>
+   * <p>Update replication configuration template Replication Server instance type
+   * request.</p>
    */
-  inline bool GetCreatePublicIP() const { return m_createPublicIP; }
-  inline bool CreatePublicIPHasBeenSet() const { return m_createPublicIPHasBeenSet; }
-  inline void SetCreatePublicIP(bool value) {
-    m_createPublicIPHasBeenSet = true;
-    m_createPublicIP = value;
+  inline const Aws::String& GetReplicationServerInstanceType() const { return m_replicationServerInstanceType; }
+  inline bool ReplicationServerInstanceTypeHasBeenSet() const { return m_replicationServerInstanceTypeHasBeenSet; }
+  template <typename ReplicationServerInstanceTypeT = Aws::String>
+  void SetReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
+    m_replicationServerInstanceTypeHasBeenSet = true;
+    m_replicationServerInstanceType = std::forward<ReplicationServerInstanceTypeT>(value);
   }
-  inline UpdateReplicationConfigurationTemplateRequest& WithCreatePublicIP(bool value) {
-    SetCreatePublicIP(value);
+  template <typename ReplicationServerInstanceTypeT = Aws::String>
+  UpdateReplicationConfigurationTemplateRequest& WithReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
+    SetReplicationServerInstanceType(std::forward<ReplicationServerInstanceTypeT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Update replication configuration template data plane routing request.</p>
+   * <p>Update replication configuration template use dedicated Replication Server
+   * request.</p>
    */
-  inline ReplicationConfigurationDataPlaneRouting GetDataPlaneRouting() const { return m_dataPlaneRouting; }
-  inline bool DataPlaneRoutingHasBeenSet() const { return m_dataPlaneRoutingHasBeenSet; }
-  inline void SetDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
-    m_dataPlaneRoutingHasBeenSet = true;
-    m_dataPlaneRouting = value;
+  inline bool GetUseDedicatedReplicationServer() const { return m_useDedicatedReplicationServer; }
+  inline bool UseDedicatedReplicationServerHasBeenSet() const { return m_useDedicatedReplicationServerHasBeenSet; }
+  inline void SetUseDedicatedReplicationServer(bool value) {
+    m_useDedicatedReplicationServerHasBeenSet = true;
+    m_useDedicatedReplicationServer = value;
   }
-  inline UpdateReplicationConfigurationTemplateRequest& WithDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
-    SetDataPlaneRouting(value);
+  inline UpdateReplicationConfigurationTemplateRequest& WithUseDedicatedReplicationServer(bool value) {
+    SetUseDedicatedReplicationServer(value);
     return *this;
   }
   ///@}
@@ -172,80 +222,48 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Update replication configuration template template ID request.</p>
+   * <p>Update replication configuration template bandwidth throttling request.</p>
    */
-  inline const Aws::String& GetReplicationConfigurationTemplateID() const { return m_replicationConfigurationTemplateID; }
-  inline bool ReplicationConfigurationTemplateIDHasBeenSet() const { return m_replicationConfigurationTemplateIDHasBeenSet; }
-  template <typename ReplicationConfigurationTemplateIDT = Aws::String>
-  void SetReplicationConfigurationTemplateID(ReplicationConfigurationTemplateIDT&& value) {
-    m_replicationConfigurationTemplateIDHasBeenSet = true;
-    m_replicationConfigurationTemplateID = std::forward<ReplicationConfigurationTemplateIDT>(value);
+  inline long long GetBandwidthThrottling() const { return m_bandwidthThrottling; }
+  inline bool BandwidthThrottlingHasBeenSet() const { return m_bandwidthThrottlingHasBeenSet; }
+  inline void SetBandwidthThrottling(long long value) {
+    m_bandwidthThrottlingHasBeenSet = true;
+    m_bandwidthThrottling = value;
   }
-  template <typename ReplicationConfigurationTemplateIDT = Aws::String>
-  UpdateReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(ReplicationConfigurationTemplateIDT&& value) {
-    SetReplicationConfigurationTemplateID(std::forward<ReplicationConfigurationTemplateIDT>(value));
+  inline UpdateReplicationConfigurationTemplateRequest& WithBandwidthThrottling(long long value) {
+    SetBandwidthThrottling(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Update replication configuration template Replication Server instance type
-   * request.</p>
+   * <p>Update replication configuration template data plane routing request.</p>
    */
-  inline const Aws::String& GetReplicationServerInstanceType() const { return m_replicationServerInstanceType; }
-  inline bool ReplicationServerInstanceTypeHasBeenSet() const { return m_replicationServerInstanceTypeHasBeenSet; }
-  template <typename ReplicationServerInstanceTypeT = Aws::String>
-  void SetReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
-    m_replicationServerInstanceTypeHasBeenSet = true;
-    m_replicationServerInstanceType = std::forward<ReplicationServerInstanceTypeT>(value);
+  inline ReplicationConfigurationDataPlaneRouting GetDataPlaneRouting() const { return m_dataPlaneRouting; }
+  inline bool DataPlaneRoutingHasBeenSet() const { return m_dataPlaneRoutingHasBeenSet; }
+  inline void SetDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
+    m_dataPlaneRoutingHasBeenSet = true;
+    m_dataPlaneRouting = value;
   }
-  template <typename ReplicationServerInstanceTypeT = Aws::String>
-  UpdateReplicationConfigurationTemplateRequest& WithReplicationServerInstanceType(ReplicationServerInstanceTypeT&& value) {
-    SetReplicationServerInstanceType(std::forward<ReplicationServerInstanceTypeT>(value));
+  inline UpdateReplicationConfigurationTemplateRequest& WithDataPlaneRouting(ReplicationConfigurationDataPlaneRouting value) {
+    SetDataPlaneRouting(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Update replication configuration template Replication Server Security groups
-   * IDs request.</p>
+   * <p>Update replication configuration template create Public IP request.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetReplicationServersSecurityGroupsIDs() const { return m_replicationServersSecurityGroupsIDs; }
-  inline bool ReplicationServersSecurityGroupsIDsHasBeenSet() const { return m_replicationServersSecurityGroupsIDsHasBeenSet; }
-  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
-  void SetReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
-    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
-    m_replicationServersSecurityGroupsIDs = std::forward<ReplicationServersSecurityGroupsIDsT>(value);
+  inline bool GetCreatePublicIP() const { return m_createPublicIP; }
+  inline bool CreatePublicIPHasBeenSet() const { return m_createPublicIPHasBeenSet; }
+  inline void SetCreatePublicIP(bool value) {
+    m_createPublicIPHasBeenSet = true;
+    m_createPublicIP = value;
   }
-  template <typename ReplicationServersSecurityGroupsIDsT = Aws::Vector<Aws::String>>
-  UpdateReplicationConfigurationTemplateRequest& WithReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
-    SetReplicationServersSecurityGroupsIDs(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
-    return *this;
-  }
-  template <typename ReplicationServersSecurityGroupsIDsT = Aws::String>
-  UpdateReplicationConfigurationTemplateRequest& AddReplicationServersSecurityGroupsIDs(ReplicationServersSecurityGroupsIDsT&& value) {
-    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
-    m_replicationServersSecurityGroupsIDs.emplace_back(std::forward<ReplicationServersSecurityGroupsIDsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Update replication configuration template Staging Area subnet ID request.</p>
-   */
-  inline const Aws::String& GetStagingAreaSubnetId() const { return m_stagingAreaSubnetId; }
-  inline bool StagingAreaSubnetIdHasBeenSet() const { return m_stagingAreaSubnetIdHasBeenSet; }
-  template <typename StagingAreaSubnetIdT = Aws::String>
-  void SetStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
-    m_stagingAreaSubnetIdHasBeenSet = true;
-    m_stagingAreaSubnetId = std::forward<StagingAreaSubnetIdT>(value);
-  }
-  template <typename StagingAreaSubnetIdT = Aws::String>
-  UpdateReplicationConfigurationTemplateRequest& WithStagingAreaSubnetId(StagingAreaSubnetIdT&& value) {
-    SetStagingAreaSubnetId(std::forward<StagingAreaSubnetIdT>(value));
+  inline UpdateReplicationConfigurationTemplateRequest& WithCreatePublicIP(bool value) {
+    SetCreatePublicIP(value);
     return *this;
   }
   ///@}
@@ -276,23 +294,6 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Update replication configuration template use dedicated Replication Server
-   * request.</p>
-   */
-  inline bool GetUseDedicatedReplicationServer() const { return m_useDedicatedReplicationServer; }
-  inline bool UseDedicatedReplicationServerHasBeenSet() const { return m_useDedicatedReplicationServerHasBeenSet; }
-  inline void SetUseDedicatedReplicationServer(bool value) {
-    m_useDedicatedReplicationServerHasBeenSet = true;
-    m_useDedicatedReplicationServer = value;
-  }
-  inline UpdateReplicationConfigurationTemplateRequest& WithUseDedicatedReplicationServer(bool value) {
-    SetUseDedicatedReplicationServer(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Update replication configuration template use Fips Endpoint request.</p>
    */
   inline bool GetUseFipsEndpoint() const { return m_useFipsEndpoint; }
@@ -306,16 +307,36 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Update replication configuration template internet protocol request.</p>
+   */
+  inline InternetProtocol GetInternetProtocol() const { return m_internetProtocol; }
+  inline bool InternetProtocolHasBeenSet() const { return m_internetProtocolHasBeenSet; }
+  inline void SetInternetProtocol(InternetProtocol value) {
+    m_internetProtocolHasBeenSet = true;
+    m_internetProtocol = value;
+  }
+  inline UpdateReplicationConfigurationTemplateRequest& WithInternetProtocol(InternetProtocol value) {
+    SetInternetProtocol(value);
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_replicationConfigurationTemplateID;
+
   Aws::String m_arn;
+
+  Aws::String m_stagingAreaSubnetId;
 
   bool m_associateDefaultSecurityGroup{false};
 
-  long long m_bandwidthThrottling{0};
+  Aws::Vector<Aws::String> m_replicationServersSecurityGroupsIDs;
 
-  bool m_createPublicIP{false};
+  Aws::String m_replicationServerInstanceType;
 
-  ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting{ReplicationConfigurationDataPlaneRouting::NOT_SET};
+  bool m_useDedicatedReplicationServer{false};
 
   ReplicationConfigurationDefaultLargeStagingDiskType m_defaultLargeStagingDiskType{
       ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET};
@@ -324,34 +345,33 @@ class UpdateReplicationConfigurationTemplateRequest : public MgnRequest {
 
   Aws::String m_ebsEncryptionKeyArn;
 
-  Aws::String m_replicationConfigurationTemplateID;
+  long long m_bandwidthThrottling{0};
 
-  Aws::String m_replicationServerInstanceType;
+  ReplicationConfigurationDataPlaneRouting m_dataPlaneRouting{ReplicationConfigurationDataPlaneRouting::NOT_SET};
 
-  Aws::Vector<Aws::String> m_replicationServersSecurityGroupsIDs;
-
-  Aws::String m_stagingAreaSubnetId;
+  bool m_createPublicIP{false};
 
   Aws::Map<Aws::String, Aws::String> m_stagingAreaTags;
 
-  bool m_useDedicatedReplicationServer{false};
-
   bool m_useFipsEndpoint{false};
+
+  InternetProtocol m_internetProtocol{InternetProtocol::NOT_SET};
+  bool m_replicationConfigurationTemplateIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
+  bool m_stagingAreaSubnetIdHasBeenSet = false;
   bool m_associateDefaultSecurityGroupHasBeenSet = false;
-  bool m_bandwidthThrottlingHasBeenSet = false;
-  bool m_createPublicIPHasBeenSet = false;
-  bool m_dataPlaneRoutingHasBeenSet = false;
+  bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
+  bool m_replicationServerInstanceTypeHasBeenSet = false;
+  bool m_useDedicatedReplicationServerHasBeenSet = false;
   bool m_defaultLargeStagingDiskTypeHasBeenSet = false;
   bool m_ebsEncryptionHasBeenSet = false;
   bool m_ebsEncryptionKeyArnHasBeenSet = false;
-  bool m_replicationConfigurationTemplateIDHasBeenSet = false;
-  bool m_replicationServerInstanceTypeHasBeenSet = false;
-  bool m_replicationServersSecurityGroupsIDsHasBeenSet = false;
-  bool m_stagingAreaSubnetIdHasBeenSet = false;
+  bool m_bandwidthThrottlingHasBeenSet = false;
+  bool m_dataPlaneRoutingHasBeenSet = false;
+  bool m_createPublicIPHasBeenSet = false;
   bool m_stagingAreaTagsHasBeenSet = false;
-  bool m_useDedicatedReplicationServerHasBeenSet = false;
   bool m_useFipsEndpointHasBeenSet = false;
+  bool m_internetProtocolHasBeenSet = false;
 };
 
 }  // namespace Model

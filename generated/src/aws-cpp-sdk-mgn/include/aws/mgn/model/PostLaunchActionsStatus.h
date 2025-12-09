@@ -36,6 +36,25 @@ class PostLaunchActionsStatus {
 
   ///@{
   /**
+   * <p>Time where the AWS Systems Manager was detected as running on the Test or
+   * Cutover instance.</p>
+   */
+  inline const Aws::String& GetSsmAgentDiscoveryDatetime() const { return m_ssmAgentDiscoveryDatetime; }
+  inline bool SsmAgentDiscoveryDatetimeHasBeenSet() const { return m_ssmAgentDiscoveryDatetimeHasBeenSet; }
+  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
+  void SetSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
+    m_ssmAgentDiscoveryDatetimeHasBeenSet = true;
+    m_ssmAgentDiscoveryDatetime = std::forward<SsmAgentDiscoveryDatetimeT>(value);
+  }
+  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
+  PostLaunchActionsStatus& WithSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
+    SetSsmAgentDiscoveryDatetime(std::forward<SsmAgentDiscoveryDatetimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of Post Launch Action status.</p>
    */
   inline const Aws::Vector<JobPostLaunchActionsLaunchStatus>& GetPostLaunchActionsLaunchStatusList() const {
@@ -59,31 +78,12 @@ class PostLaunchActionsStatus {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Time where the AWS Systems Manager was detected as running on the Test or
-   * Cutover instance.</p>
-   */
-  inline const Aws::String& GetSsmAgentDiscoveryDatetime() const { return m_ssmAgentDiscoveryDatetime; }
-  inline bool SsmAgentDiscoveryDatetimeHasBeenSet() const { return m_ssmAgentDiscoveryDatetimeHasBeenSet; }
-  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
-  void SetSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
-    m_ssmAgentDiscoveryDatetimeHasBeenSet = true;
-    m_ssmAgentDiscoveryDatetime = std::forward<SsmAgentDiscoveryDatetimeT>(value);
-  }
-  template <typename SsmAgentDiscoveryDatetimeT = Aws::String>
-  PostLaunchActionsStatus& WithSsmAgentDiscoveryDatetime(SsmAgentDiscoveryDatetimeT&& value) {
-    SetSsmAgentDiscoveryDatetime(std::forward<SsmAgentDiscoveryDatetimeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<JobPostLaunchActionsLaunchStatus> m_postLaunchActionsLaunchStatusList;
-
   Aws::String m_ssmAgentDiscoveryDatetime;
-  bool m_postLaunchActionsLaunchStatusListHasBeenSet = false;
+
+  Aws::Vector<JobPostLaunchActionsLaunchStatus> m_postLaunchActionsLaunchStatusList;
   bool m_ssmAgentDiscoveryDatetimeHasBeenSet = false;
+  bool m_postLaunchActionsLaunchStatusListHasBeenSet = false;
 };
 
 }  // namespace Model

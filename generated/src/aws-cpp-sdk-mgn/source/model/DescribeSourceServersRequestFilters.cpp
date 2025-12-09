@@ -18,23 +18,16 @@ namespace Model {
 DescribeSourceServersRequestFilters::DescribeSourceServersRequestFilters(JsonView jsonValue) { *this = jsonValue; }
 
 DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("applicationIDs")) {
-    Aws::Utils::Array<JsonView> applicationIDsJsonList = jsonValue.GetArray("applicationIDs");
-    for (unsigned applicationIDsIndex = 0; applicationIDsIndex < applicationIDsJsonList.GetLength(); ++applicationIDsIndex) {
-      m_applicationIDs.push_back(applicationIDsJsonList[applicationIDsIndex].AsString());
+  if (jsonValue.ValueExists("sourceServerIDs")) {
+    Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
+    for (unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex) {
+      m_sourceServerIDs.push_back(sourceServerIDsJsonList[sourceServerIDsIndex].AsString());
     }
-    m_applicationIDsHasBeenSet = true;
+    m_sourceServerIDsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("isArchived")) {
     m_isArchived = jsonValue.GetBool("isArchived");
     m_isArchivedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lifeCycleStates")) {
-    Aws::Utils::Array<JsonView> lifeCycleStatesJsonList = jsonValue.GetArray("lifeCycleStates");
-    for (unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex) {
-      m_lifeCycleStates.push_back(LifeCycleStateMapper::GetLifeCycleStateForName(lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString()));
-    }
-    m_lifeCycleStatesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("replicationTypes")) {
     Aws::Utils::Array<JsonView> replicationTypesJsonList = jsonValue.GetArray("replicationTypes");
@@ -44,12 +37,19 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
     }
     m_replicationTypesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sourceServerIDs")) {
-    Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
-    for (unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex) {
-      m_sourceServerIDs.push_back(sourceServerIDsJsonList[sourceServerIDsIndex].AsString());
+  if (jsonValue.ValueExists("lifeCycleStates")) {
+    Aws::Utils::Array<JsonView> lifeCycleStatesJsonList = jsonValue.GetArray("lifeCycleStates");
+    for (unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex) {
+      m_lifeCycleStates.push_back(LifeCycleStateMapper::GetLifeCycleStateForName(lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString()));
     }
-    m_sourceServerIDsHasBeenSet = true;
+    m_lifeCycleStatesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("applicationIDs")) {
+    Aws::Utils::Array<JsonView> applicationIDsJsonList = jsonValue.GetArray("applicationIDs");
+    for (unsigned applicationIDsIndex = 0; applicationIDsIndex < applicationIDsJsonList.GetLength(); ++applicationIDsIndex) {
+      m_applicationIDs.push_back(applicationIDsJsonList[applicationIDsIndex].AsString());
+    }
+    m_applicationIDsHasBeenSet = true;
   }
   return *this;
 }
@@ -57,25 +57,16 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 JsonValue DescribeSourceServersRequestFilters::Jsonize() const {
   JsonValue payload;
 
-  if (m_applicationIDsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> applicationIDsJsonList(m_applicationIDs.size());
-    for (unsigned applicationIDsIndex = 0; applicationIDsIndex < applicationIDsJsonList.GetLength(); ++applicationIDsIndex) {
-      applicationIDsJsonList[applicationIDsIndex].AsString(m_applicationIDs[applicationIDsIndex]);
+  if (m_sourceServerIDsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
+    for (unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex) {
+      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);
     }
-    payload.WithArray("applicationIDs", std::move(applicationIDsJsonList));
+    payload.WithArray("sourceServerIDs", std::move(sourceServerIDsJsonList));
   }
 
   if (m_isArchivedHasBeenSet) {
     payload.WithBool("isArchived", m_isArchived);
-  }
-
-  if (m_lifeCycleStatesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> lifeCycleStatesJsonList(m_lifeCycleStates.size());
-    for (unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex) {
-      lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString(
-          LifeCycleStateMapper::GetNameForLifeCycleState(m_lifeCycleStates[lifeCycleStatesIndex]));
-    }
-    payload.WithArray("lifeCycleStates", std::move(lifeCycleStatesJsonList));
   }
 
   if (m_replicationTypesHasBeenSet) {
@@ -87,12 +78,21 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const {
     payload.WithArray("replicationTypes", std::move(replicationTypesJsonList));
   }
 
-  if (m_sourceServerIDsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
-    for (unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex) {
-      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);
+  if (m_lifeCycleStatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> lifeCycleStatesJsonList(m_lifeCycleStates.size());
+    for (unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex) {
+      lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString(
+          LifeCycleStateMapper::GetNameForLifeCycleState(m_lifeCycleStates[lifeCycleStatesIndex]));
     }
-    payload.WithArray("sourceServerIDs", std::move(sourceServerIDsJsonList));
+    payload.WithArray("lifeCycleStates", std::move(lifeCycleStatesJsonList));
+  }
+
+  if (m_applicationIDsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> applicationIDsJsonList(m_applicationIDs.size());
+    for (unsigned applicationIDsIndex = 0; applicationIDsIndex < applicationIDsJsonList.GetLength(); ++applicationIDsIndex) {
+      applicationIDsJsonList[applicationIDsIndex].AsString(m_applicationIDs[applicationIDsIndex]);
+    }
+    payload.WithArray("applicationIDs", std::move(applicationIDsJsonList));
   }
 
   return payload;

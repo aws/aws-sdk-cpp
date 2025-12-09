@@ -19,10 +19,6 @@ Aws::String CreateConnectorRequest::SerializePayload() const {
     payload.WithString("name", m_name);
   }
 
-  if (m_ssmCommandConfigHasBeenSet) {
-    payload.WithObject("ssmCommandConfig", m_ssmCommandConfig.Jsonize());
-  }
-
   if (m_ssmInstanceIDHasBeenSet) {
     payload.WithString("ssmInstanceID", m_ssmInstanceID);
   }
@@ -33,6 +29,10 @@ Aws::String CreateConnectorRequest::SerializePayload() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_ssmCommandConfigHasBeenSet) {
+    payload.WithObject("ssmCommandConfig", m_ssmCommandConfig.Jsonize());
   }
 
   return payload.View().WriteReadable();

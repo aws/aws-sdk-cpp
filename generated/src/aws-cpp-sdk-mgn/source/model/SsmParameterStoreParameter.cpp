@@ -18,13 +18,13 @@ namespace Model {
 SsmParameterStoreParameter::SsmParameterStoreParameter(JsonView jsonValue) { *this = jsonValue; }
 
 SsmParameterStoreParameter& SsmParameterStoreParameter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("parameterName")) {
-    m_parameterName = jsonValue.GetString("parameterName");
-    m_parameterNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("parameterType")) {
     m_parameterType = SsmParameterStoreParameterTypeMapper::GetSsmParameterStoreParameterTypeForName(jsonValue.GetString("parameterType"));
     m_parameterTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parameterName")) {
+    m_parameterName = jsonValue.GetString("parameterName");
+    m_parameterNameHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ SsmParameterStoreParameter& SsmParameterStoreParameter::operator=(JsonView jsonV
 JsonValue SsmParameterStoreParameter::Jsonize() const {
   JsonValue payload;
 
-  if (m_parameterNameHasBeenSet) {
-    payload.WithString("parameterName", m_parameterName);
-  }
-
   if (m_parameterTypeHasBeenSet) {
     payload.WithString("parameterType", SsmParameterStoreParameterTypeMapper::GetNameForSsmParameterStoreParameterType(m_parameterType));
+  }
+
+  if (m_parameterNameHasBeenSet) {
+    payload.WithString("parameterName", m_parameterName);
   }
 
   return payload;

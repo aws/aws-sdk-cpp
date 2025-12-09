@@ -49,24 +49,6 @@ class UpdateSourceServerRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Update Source Server request connector action.</p>
-   */
-  inline const SourceServerConnectorAction& GetConnectorAction() const { return m_connectorAction; }
-  inline bool ConnectorActionHasBeenSet() const { return m_connectorActionHasBeenSet; }
-  template <typename ConnectorActionT = SourceServerConnectorAction>
-  void SetConnectorAction(ConnectorActionT&& value) {
-    m_connectorActionHasBeenSet = true;
-    m_connectorAction = std::forward<ConnectorActionT>(value);
-  }
-  template <typename ConnectorActionT = SourceServerConnectorAction>
-  UpdateSourceServerRequest& WithConnectorAction(ConnectorActionT&& value) {
-    SetConnectorAction(std::forward<ConnectorActionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Update Source Server request source server ID.</p>
    */
   inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
@@ -82,15 +64,33 @@ class UpdateSourceServerRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Update Source Server request connector action.</p>
+   */
+  inline const SourceServerConnectorAction& GetConnectorAction() const { return m_connectorAction; }
+  inline bool ConnectorActionHasBeenSet() const { return m_connectorActionHasBeenSet; }
+  template <typename ConnectorActionT = SourceServerConnectorAction>
+  void SetConnectorAction(ConnectorActionT&& value) {
+    m_connectorActionHasBeenSet = true;
+    m_connectorAction = std::forward<ConnectorActionT>(value);
+  }
+  template <typename ConnectorActionT = SourceServerConnectorAction>
+  UpdateSourceServerRequest& WithConnectorAction(ConnectorActionT&& value) {
+    SetConnectorAction(std::forward<ConnectorActionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountID;
 
-  SourceServerConnectorAction m_connectorAction;
-
   Aws::String m_sourceServerID;
+
+  SourceServerConnectorAction m_connectorAction;
   bool m_accountIDHasBeenSet = false;
-  bool m_connectorActionHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_connectorActionHasBeenSet = false;
 };
 
 }  // namespace Model

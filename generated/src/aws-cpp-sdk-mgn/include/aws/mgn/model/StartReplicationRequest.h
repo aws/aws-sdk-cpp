@@ -30,24 +30,6 @@ class StartReplicationRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Account ID on which to start replication.</p>
-   */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
-  }
-  template <typename AccountIDT = Aws::String>
-  StartReplicationRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>ID of source server on which to start replication.</p>
    */
   inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
@@ -63,12 +45,30 @@ class StartReplicationRequest : public MgnRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_accountID;
 
+  ///@{
+  /**
+   * <p>Account ID on which to start replication.</p>
+   */
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
+  }
+  template <typename AccountIDT = Aws::String>
+  StartReplicationRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_sourceServerID;
-  bool m_accountIDHasBeenSet = false;
+
+  Aws::String m_accountID;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

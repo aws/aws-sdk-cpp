@@ -33,34 +33,16 @@ class ConnectorSsmCommandConfig {
 
   ///@{
   /**
-   * <p>Connector SSM command config CloudWatch log group name.</p>
+   * <p>Connector SSM command config S3 output enabled.</p>
    */
-  inline const Aws::String& GetCloudWatchLogGroupName() const { return m_cloudWatchLogGroupName; }
-  inline bool CloudWatchLogGroupNameHasBeenSet() const { return m_cloudWatchLogGroupNameHasBeenSet; }
-  template <typename CloudWatchLogGroupNameT = Aws::String>
-  void SetCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
-    m_cloudWatchLogGroupNameHasBeenSet = true;
-    m_cloudWatchLogGroupName = std::forward<CloudWatchLogGroupNameT>(value);
+  inline bool GetS3OutputEnabled() const { return m_s3OutputEnabled; }
+  inline bool S3OutputEnabledHasBeenSet() const { return m_s3OutputEnabledHasBeenSet; }
+  inline void SetS3OutputEnabled(bool value) {
+    m_s3OutputEnabledHasBeenSet = true;
+    m_s3OutputEnabled = value;
   }
-  template <typename CloudWatchLogGroupNameT = Aws::String>
-  ConnectorSsmCommandConfig& WithCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
-    SetCloudWatchLogGroupName(std::forward<CloudWatchLogGroupNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Connector SSM command config CloudWatch output enabled.</p>
-   */
-  inline bool GetCloudWatchOutputEnabled() const { return m_cloudWatchOutputEnabled; }
-  inline bool CloudWatchOutputEnabledHasBeenSet() const { return m_cloudWatchOutputEnabledHasBeenSet; }
-  inline void SetCloudWatchOutputEnabled(bool value) {
-    m_cloudWatchOutputEnabledHasBeenSet = true;
-    m_cloudWatchOutputEnabled = value;
-  }
-  inline ConnectorSsmCommandConfig& WithCloudWatchOutputEnabled(bool value) {
-    SetCloudWatchOutputEnabled(value);
+  inline ConnectorSsmCommandConfig& WithS3OutputEnabled(bool value) {
+    SetS3OutputEnabled(value);
     return *this;
   }
   ///@}
@@ -85,31 +67,49 @@ class ConnectorSsmCommandConfig {
 
   ///@{
   /**
-   * <p>Connector SSM command config S3 output enabled.</p>
+   * <p>Connector SSM command config CloudWatch output enabled.</p>
    */
-  inline bool GetS3OutputEnabled() const { return m_s3OutputEnabled; }
-  inline bool S3OutputEnabledHasBeenSet() const { return m_s3OutputEnabledHasBeenSet; }
-  inline void SetS3OutputEnabled(bool value) {
-    m_s3OutputEnabledHasBeenSet = true;
-    m_s3OutputEnabled = value;
+  inline bool GetCloudWatchOutputEnabled() const { return m_cloudWatchOutputEnabled; }
+  inline bool CloudWatchOutputEnabledHasBeenSet() const { return m_cloudWatchOutputEnabledHasBeenSet; }
+  inline void SetCloudWatchOutputEnabled(bool value) {
+    m_cloudWatchOutputEnabledHasBeenSet = true;
+    m_cloudWatchOutputEnabled = value;
   }
-  inline ConnectorSsmCommandConfig& WithS3OutputEnabled(bool value) {
-    SetS3OutputEnabled(value);
+  inline ConnectorSsmCommandConfig& WithCloudWatchOutputEnabled(bool value) {
+    SetCloudWatchOutputEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Connector SSM command config CloudWatch log group name.</p>
+   */
+  inline const Aws::String& GetCloudWatchLogGroupName() const { return m_cloudWatchLogGroupName; }
+  inline bool CloudWatchLogGroupNameHasBeenSet() const { return m_cloudWatchLogGroupNameHasBeenSet; }
+  template <typename CloudWatchLogGroupNameT = Aws::String>
+  void SetCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
+    m_cloudWatchLogGroupNameHasBeenSet = true;
+    m_cloudWatchLogGroupName = std::forward<CloudWatchLogGroupNameT>(value);
+  }
+  template <typename CloudWatchLogGroupNameT = Aws::String>
+  ConnectorSsmCommandConfig& WithCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
+    SetCloudWatchLogGroupName(std::forward<CloudWatchLogGroupNameT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_cloudWatchLogGroupName;
-
-  bool m_cloudWatchOutputEnabled{false};
+  bool m_s3OutputEnabled{false};
 
   Aws::String m_outputS3BucketName;
 
-  bool m_s3OutputEnabled{false};
-  bool m_cloudWatchLogGroupNameHasBeenSet = false;
-  bool m_cloudWatchOutputEnabledHasBeenSet = false;
-  bool m_outputS3BucketNameHasBeenSet = false;
+  bool m_cloudWatchOutputEnabled{false};
+
+  Aws::String m_cloudWatchLogGroupName;
   bool m_s3OutputEnabledHasBeenSet = false;
+  bool m_outputS3BucketNameHasBeenSet = false;
+  bool m_cloudWatchOutputEnabledHasBeenSet = false;
+  bool m_cloudWatchLogGroupNameHasBeenSet = false;
 };
 
 }  // namespace Model

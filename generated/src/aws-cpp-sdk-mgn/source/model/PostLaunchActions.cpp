@@ -18,10 +18,6 @@ namespace Model {
 PostLaunchActions::PostLaunchActions(JsonView jsonValue) { *this = jsonValue; }
 
 PostLaunchActions& PostLaunchActions::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("cloudWatchLogGroupName")) {
-    m_cloudWatchLogGroupName = jsonValue.GetString("cloudWatchLogGroupName");
-    m_cloudWatchLogGroupNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("deployment")) {
     m_deployment = PostLaunchActionsDeploymentTypeMapper::GetPostLaunchActionsDeploymentTypeForName(jsonValue.GetString("deployment"));
     m_deploymentHasBeenSet = true;
@@ -33,6 +29,10 @@ PostLaunchActions& PostLaunchActions::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("s3OutputKeyPrefix")) {
     m_s3OutputKeyPrefix = jsonValue.GetString("s3OutputKeyPrefix");
     m_s3OutputKeyPrefixHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudWatchLogGroupName")) {
+    m_cloudWatchLogGroupName = jsonValue.GetString("cloudWatchLogGroupName");
+    m_cloudWatchLogGroupNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ssmDocuments")) {
     Aws::Utils::Array<JsonView> ssmDocumentsJsonList = jsonValue.GetArray("ssmDocuments");
@@ -47,10 +47,6 @@ PostLaunchActions& PostLaunchActions::operator=(JsonView jsonValue) {
 JsonValue PostLaunchActions::Jsonize() const {
   JsonValue payload;
 
-  if (m_cloudWatchLogGroupNameHasBeenSet) {
-    payload.WithString("cloudWatchLogGroupName", m_cloudWatchLogGroupName);
-  }
-
   if (m_deploymentHasBeenSet) {
     payload.WithString("deployment", PostLaunchActionsDeploymentTypeMapper::GetNameForPostLaunchActionsDeploymentType(m_deployment));
   }
@@ -61,6 +57,10 @@ JsonValue PostLaunchActions::Jsonize() const {
 
   if (m_s3OutputKeyPrefixHasBeenSet) {
     payload.WithString("s3OutputKeyPrefix", m_s3OutputKeyPrefix);
+  }
+
+  if (m_cloudWatchLogGroupNameHasBeenSet) {
+    payload.WithString("cloudWatchLogGroupName", m_cloudWatchLogGroupName);
   }
 
   if (m_ssmDocumentsHasBeenSet) {

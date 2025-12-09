@@ -99,8 +99,10 @@ class ParticipantToken {
   ///@{
   /**
    * <p>Application-provided attributes to encode into the token and attach to a
-   * stage. <i>This field is exposed to all stage participants and should not be used
-   * for personally identifying, confidential, or sensitive information.</i> </p>
+   * stage. Map keys and values can contain UTF-8 encoded text. The maximum length of
+   * this field is 1 KB total. <i>This field is exposed to all stage participants and
+   * should not be used for personally identifying, confidential, or sensitive
+   * information.</i> </p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
   inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
