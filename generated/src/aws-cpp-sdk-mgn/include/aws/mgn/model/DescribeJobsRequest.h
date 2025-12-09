@@ -31,24 +31,6 @@ class DescribeJobsRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Request to describe job log items by Account ID.</p>
-   */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
-  }
-  template <typename AccountIDT = Aws::String>
-  DescribeJobsRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Request to describe Job log filters.</p>
    */
   inline const DescribeJobsRequestFilters& GetFilters() const { return m_filters; }
@@ -98,18 +80,36 @@ class DescribeJobsRequest : public MgnRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_accountID;
 
+  ///@{
+  /**
+   * <p>Request to describe job log items by Account ID.</p>
+   */
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
+  }
+  template <typename AccountIDT = Aws::String>
+  DescribeJobsRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   DescribeJobsRequestFilters m_filters;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-  bool m_accountIDHasBeenSet = false;
+
+  Aws::String m_accountID;
   bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

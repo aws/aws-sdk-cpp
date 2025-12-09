@@ -10,7 +10,7 @@
 namespace Aws {
 namespace mgn {
 namespace Model {
-enum class SsmParameterStoreParameterType { NOT_SET, STRING };
+enum class SsmParameterStoreParameterType { NOT_SET, STRING, SECURE_STRING };
 
 namespace SsmParameterStoreParameterTypeMapper {
 AWS_MGN_API SsmParameterStoreParameterType GetSsmParameterStoreParameterTypeForName(const Aws::String& name);

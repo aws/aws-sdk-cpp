@@ -55,6 +55,7 @@
 #include <aws/ivs-realtime/model/Event.h>
 #include <aws/ivs-realtime/model/EventErrorCode.h>
 #include <aws/ivs-realtime/model/EventName.h>
+#include <aws/ivs-realtime/model/ExchangedParticipantToken.h>
 #include <aws/ivs-realtime/model/GetCompositionRequest.h>
 #include <aws/ivs-realtime/model/GetCompositionResult.h>
 #include <aws/ivs-realtime/model/GetEncoderConfigurationRequest.h>

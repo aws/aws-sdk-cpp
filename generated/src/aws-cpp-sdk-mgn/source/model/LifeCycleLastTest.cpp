@@ -18,10 +18,6 @@ namespace Model {
 LifeCycleLastTest::LifeCycleLastTest(JsonView jsonValue) { *this = jsonValue; }
 
 LifeCycleLastTest& LifeCycleLastTest::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("finalized")) {
-    m_finalized = jsonValue.GetObject("finalized");
-    m_finalizedHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("initiated")) {
     m_initiated = jsonValue.GetObject("initiated");
     m_initiatedHasBeenSet = true;
@@ -30,15 +26,15 @@ LifeCycleLastTest& LifeCycleLastTest::operator=(JsonView jsonValue) {
     m_reverted = jsonValue.GetObject("reverted");
     m_revertedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("finalized")) {
+    m_finalized = jsonValue.GetObject("finalized");
+    m_finalizedHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue LifeCycleLastTest::Jsonize() const {
   JsonValue payload;
-
-  if (m_finalizedHasBeenSet) {
-    payload.WithObject("finalized", m_finalized.Jsonize());
-  }
 
   if (m_initiatedHasBeenSet) {
     payload.WithObject("initiated", m_initiated.Jsonize());
@@ -46,6 +42,10 @@ JsonValue LifeCycleLastTest::Jsonize() const {
 
   if (m_revertedHasBeenSet) {
     payload.WithObject("reverted", m_reverted.Jsonize());
+  }
+
+  if (m_finalizedHasBeenSet) {
+    payload.WithObject("finalized", m_finalized.Jsonize());
   }
 
   return payload;

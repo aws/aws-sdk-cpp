@@ -18,13 +18,13 @@ namespace Model {
 SourceServerConnectorAction::SourceServerConnectorAction(JsonView jsonValue) { *this = jsonValue; }
 
 SourceServerConnectorAction& SourceServerConnectorAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("connectorArn")) {
-    m_connectorArn = jsonValue.GetString("connectorArn");
-    m_connectorArnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("credentialsSecretArn")) {
     m_credentialsSecretArn = jsonValue.GetString("credentialsSecretArn");
     m_credentialsSecretArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("connectorArn")) {
+    m_connectorArn = jsonValue.GetString("connectorArn");
+    m_connectorArnHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ SourceServerConnectorAction& SourceServerConnectorAction::operator=(JsonView jso
 JsonValue SourceServerConnectorAction::Jsonize() const {
   JsonValue payload;
 
-  if (m_connectorArnHasBeenSet) {
-    payload.WithString("connectorArn", m_connectorArn);
-  }
-
   if (m_credentialsSecretArnHasBeenSet) {
     payload.WithString("credentialsSecretArn", m_credentialsSecretArn);
+  }
+
+  if (m_connectorArnHasBeenSet) {
+    payload.WithString("connectorArn", m_connectorArn);
   }
 
   return payload;

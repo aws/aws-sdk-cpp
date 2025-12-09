@@ -31,24 +31,6 @@ class ListTemplateActionsRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Filters to apply when listing template post migration custom actions.</p>
-   */
-  inline const TemplateActionsRequestFilters& GetFilters() const { return m_filters; }
-  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-  template <typename FiltersT = TemplateActionsRequestFilters>
-  void SetFilters(FiltersT&& value) {
-    m_filtersHasBeenSet = true;
-    m_filters = std::forward<FiltersT>(value);
-  }
-  template <typename FiltersT = TemplateActionsRequestFilters>
-  ListTemplateActionsRequest& WithFilters(FiltersT&& value) {
-    SetFilters(std::forward<FiltersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Launch configuration template ID.</p>
    */
   inline const Aws::String& GetLaunchConfigurationTemplateID() const { return m_launchConfigurationTemplateID; }
@@ -61,6 +43,24 @@ class ListTemplateActionsRequest : public MgnRequest {
   template <typename LaunchConfigurationTemplateIDT = Aws::String>
   ListTemplateActionsRequest& WithLaunchConfigurationTemplateID(LaunchConfigurationTemplateIDT&& value) {
     SetLaunchConfigurationTemplateID(std::forward<LaunchConfigurationTemplateIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters to apply when listing template post migration custom actions.</p>
+   */
+  inline const TemplateActionsRequestFilters& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = TemplateActionsRequestFilters>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = TemplateActionsRequestFilters>
+  ListTemplateActionsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
     return *this;
   }
   ///@}
@@ -100,15 +100,15 @@ class ListTemplateActionsRequest : public MgnRequest {
   }
   ///@}
  private:
-  TemplateActionsRequestFilters m_filters;
-
   Aws::String m_launchConfigurationTemplateID;
+
+  TemplateActionsRequestFilters m_filters;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
-  bool m_filtersHasBeenSet = false;
   bool m_launchConfigurationTemplateIDHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

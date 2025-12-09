@@ -38,76 +38,6 @@ class DataReplicationInfo {
 
   ///@{
   /**
-   * <p>Error in obtaining data replication info.</p>
-   */
-  inline const DataReplicationError& GetDataReplicationError() const { return m_dataReplicationError; }
-  inline bool DataReplicationErrorHasBeenSet() const { return m_dataReplicationErrorHasBeenSet; }
-  template <typename DataReplicationErrorT = DataReplicationError>
-  void SetDataReplicationError(DataReplicationErrorT&& value) {
-    m_dataReplicationErrorHasBeenSet = true;
-    m_dataReplicationError = std::forward<DataReplicationErrorT>(value);
-  }
-  template <typename DataReplicationErrorT = DataReplicationError>
-  DataReplicationInfo& WithDataReplicationError(DataReplicationErrorT&& value) {
-    SetDataReplicationError(std::forward<DataReplicationErrorT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Request to query whether data replication has been initiated.</p>
-   */
-  inline const DataReplicationInitiation& GetDataReplicationInitiation() const { return m_dataReplicationInitiation; }
-  inline bool DataReplicationInitiationHasBeenSet() const { return m_dataReplicationInitiationHasBeenSet; }
-  template <typename DataReplicationInitiationT = DataReplicationInitiation>
-  void SetDataReplicationInitiation(DataReplicationInitiationT&& value) {
-    m_dataReplicationInitiationHasBeenSet = true;
-    m_dataReplicationInitiation = std::forward<DataReplicationInitiationT>(value);
-  }
-  template <typename DataReplicationInitiationT = DataReplicationInitiation>
-  DataReplicationInfo& WithDataReplicationInitiation(DataReplicationInitiationT&& value) {
-    SetDataReplicationInitiation(std::forward<DataReplicationInitiationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Request to query the data replication state.</p>
-   */
-  inline DataReplicationState GetDataReplicationState() const { return m_dataReplicationState; }
-  inline bool DataReplicationStateHasBeenSet() const { return m_dataReplicationStateHasBeenSet; }
-  inline void SetDataReplicationState(DataReplicationState value) {
-    m_dataReplicationStateHasBeenSet = true;
-    m_dataReplicationState = value;
-  }
-  inline DataReplicationInfo& WithDataReplicationState(DataReplicationState value) {
-    SetDataReplicationState(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Request to query the time when data replication will be complete.</p>
-   */
-  inline const Aws::String& GetEtaDateTime() const { return m_etaDateTime; }
-  inline bool EtaDateTimeHasBeenSet() const { return m_etaDateTimeHasBeenSet; }
-  template <typename EtaDateTimeT = Aws::String>
-  void SetEtaDateTime(EtaDateTimeT&& value) {
-    m_etaDateTimeHasBeenSet = true;
-    m_etaDateTime = std::forward<EtaDateTimeT>(value);
-  }
-  template <typename EtaDateTimeT = Aws::String>
-  DataReplicationInfo& WithEtaDateTime(EtaDateTimeT&& value) {
-    SetEtaDateTime(std::forward<EtaDateTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Request to query data replication lag duration.</p>
    */
   inline const Aws::String& GetLagDuration() const { return m_lagDuration; }
@@ -126,18 +56,18 @@ class DataReplicationInfo {
 
   ///@{
   /**
-   * <p>Request to query data replication last snapshot time.</p>
+   * <p>Request to query the time when data replication will be complete.</p>
    */
-  inline const Aws::String& GetLastSnapshotDateTime() const { return m_lastSnapshotDateTime; }
-  inline bool LastSnapshotDateTimeHasBeenSet() const { return m_lastSnapshotDateTimeHasBeenSet; }
-  template <typename LastSnapshotDateTimeT = Aws::String>
-  void SetLastSnapshotDateTime(LastSnapshotDateTimeT&& value) {
-    m_lastSnapshotDateTimeHasBeenSet = true;
-    m_lastSnapshotDateTime = std::forward<LastSnapshotDateTimeT>(value);
+  inline const Aws::String& GetEtaDateTime() const { return m_etaDateTime; }
+  inline bool EtaDateTimeHasBeenSet() const { return m_etaDateTimeHasBeenSet; }
+  template <typename EtaDateTimeT = Aws::String>
+  void SetEtaDateTime(EtaDateTimeT&& value) {
+    m_etaDateTimeHasBeenSet = true;
+    m_etaDateTime = std::forward<EtaDateTimeT>(value);
   }
-  template <typename LastSnapshotDateTimeT = Aws::String>
-  DataReplicationInfo& WithLastSnapshotDateTime(LastSnapshotDateTimeT&& value) {
-    SetLastSnapshotDateTime(std::forward<LastSnapshotDateTimeT>(value));
+  template <typename EtaDateTimeT = Aws::String>
+  DataReplicationInfo& WithEtaDateTime(EtaDateTimeT&& value) {
+    SetEtaDateTime(std::forward<EtaDateTimeT>(value));
     return *this;
   }
   ///@}
@@ -165,27 +95,118 @@ class DataReplicationInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Request to query the data replication state.</p>
+   */
+  inline DataReplicationState GetDataReplicationState() const { return m_dataReplicationState; }
+  inline bool DataReplicationStateHasBeenSet() const { return m_dataReplicationStateHasBeenSet; }
+  inline void SetDataReplicationState(DataReplicationState value) {
+    m_dataReplicationStateHasBeenSet = true;
+    m_dataReplicationState = value;
+  }
+  inline DataReplicationInfo& WithDataReplicationState(DataReplicationState value) {
+    SetDataReplicationState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Request to query whether data replication has been initiated.</p>
+   */
+  inline const DataReplicationInitiation& GetDataReplicationInitiation() const { return m_dataReplicationInitiation; }
+  inline bool DataReplicationInitiationHasBeenSet() const { return m_dataReplicationInitiationHasBeenSet; }
+  template <typename DataReplicationInitiationT = DataReplicationInitiation>
+  void SetDataReplicationInitiation(DataReplicationInitiationT&& value) {
+    m_dataReplicationInitiationHasBeenSet = true;
+    m_dataReplicationInitiation = std::forward<DataReplicationInitiationT>(value);
+  }
+  template <typename DataReplicationInitiationT = DataReplicationInitiation>
+  DataReplicationInfo& WithDataReplicationInitiation(DataReplicationInitiationT&& value) {
+    SetDataReplicationInitiation(std::forward<DataReplicationInitiationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Error in obtaining data replication info.</p>
+   */
+  inline const DataReplicationError& GetDataReplicationError() const { return m_dataReplicationError; }
+  inline bool DataReplicationErrorHasBeenSet() const { return m_dataReplicationErrorHasBeenSet; }
+  template <typename DataReplicationErrorT = DataReplicationError>
+  void SetDataReplicationError(DataReplicationErrorT&& value) {
+    m_dataReplicationErrorHasBeenSet = true;
+    m_dataReplicationError = std::forward<DataReplicationErrorT>(value);
+  }
+  template <typename DataReplicationErrorT = DataReplicationError>
+  DataReplicationInfo& WithDataReplicationError(DataReplicationErrorT&& value) {
+    SetDataReplicationError(std::forward<DataReplicationErrorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Request to query data replication last snapshot time.</p>
+   */
+  inline const Aws::String& GetLastSnapshotDateTime() const { return m_lastSnapshotDateTime; }
+  inline bool LastSnapshotDateTimeHasBeenSet() const { return m_lastSnapshotDateTimeHasBeenSet; }
+  template <typename LastSnapshotDateTimeT = Aws::String>
+  void SetLastSnapshotDateTime(LastSnapshotDateTimeT&& value) {
+    m_lastSnapshotDateTimeHasBeenSet = true;
+    m_lastSnapshotDateTime = std::forward<LastSnapshotDateTimeT>(value);
+  }
+  template <typename LastSnapshotDateTimeT = Aws::String>
+  DataReplicationInfo& WithLastSnapshotDateTime(LastSnapshotDateTimeT&& value) {
+    SetLastSnapshotDateTime(std::forward<LastSnapshotDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Replication server instance ID.</p>
+   */
+  inline const Aws::String& GetReplicatorId() const { return m_replicatorId; }
+  inline bool ReplicatorIdHasBeenSet() const { return m_replicatorIdHasBeenSet; }
+  template <typename ReplicatorIdT = Aws::String>
+  void SetReplicatorId(ReplicatorIdT&& value) {
+    m_replicatorIdHasBeenSet = true;
+    m_replicatorId = std::forward<ReplicatorIdT>(value);
+  }
+  template <typename ReplicatorIdT = Aws::String>
+  DataReplicationInfo& WithReplicatorId(ReplicatorIdT&& value) {
+    SetReplicatorId(std::forward<ReplicatorIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  DataReplicationError m_dataReplicationError;
-
-  DataReplicationInitiation m_dataReplicationInitiation;
-
-  DataReplicationState m_dataReplicationState{DataReplicationState::NOT_SET};
+  Aws::String m_lagDuration;
 
   Aws::String m_etaDateTime;
 
-  Aws::String m_lagDuration;
+  Aws::Vector<DataReplicationInfoReplicatedDisk> m_replicatedDisks;
+
+  DataReplicationState m_dataReplicationState{DataReplicationState::NOT_SET};
+
+  DataReplicationInitiation m_dataReplicationInitiation;
+
+  DataReplicationError m_dataReplicationError;
 
   Aws::String m_lastSnapshotDateTime;
 
-  Aws::Vector<DataReplicationInfoReplicatedDisk> m_replicatedDisks;
-  bool m_dataReplicationErrorHasBeenSet = false;
-  bool m_dataReplicationInitiationHasBeenSet = false;
-  bool m_dataReplicationStateHasBeenSet = false;
-  bool m_etaDateTimeHasBeenSet = false;
+  Aws::String m_replicatorId;
   bool m_lagDurationHasBeenSet = false;
-  bool m_lastSnapshotDateTimeHasBeenSet = false;
+  bool m_etaDateTimeHasBeenSet = false;
   bool m_replicatedDisksHasBeenSet = false;
+  bool m_dataReplicationStateHasBeenSet = false;
+  bool m_dataReplicationInitiationHasBeenSet = false;
+  bool m_dataReplicationErrorHasBeenSet = false;
+  bool m_lastSnapshotDateTimeHasBeenSet = false;
+  bool m_replicatorIdHasBeenSet = false;
 };
 
 }  // namespace Model

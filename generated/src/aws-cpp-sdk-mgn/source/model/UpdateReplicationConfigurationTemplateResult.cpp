@@ -25,26 +25,39 @@ UpdateReplicationConfigurationTemplateResult::UpdateReplicationConfigurationTemp
 UpdateReplicationConfigurationTemplateResult& UpdateReplicationConfigurationTemplateResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("replicationConfigurationTemplateID")) {
+    m_replicationConfigurationTemplateID = jsonValue.GetString("replicationConfigurationTemplateID");
+    m_replicationConfigurationTemplateIDHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("stagingAreaSubnetId")) {
+    m_stagingAreaSubnetId = jsonValue.GetString("stagingAreaSubnetId");
+    m_stagingAreaSubnetIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("associateDefaultSecurityGroup")) {
     m_associateDefaultSecurityGroup = jsonValue.GetBool("associateDefaultSecurityGroup");
     m_associateDefaultSecurityGroupHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("bandwidthThrottling")) {
-    m_bandwidthThrottling = jsonValue.GetInt64("bandwidthThrottling");
-    m_bandwidthThrottlingHasBeenSet = true;
+  if (jsonValue.ValueExists("replicationServersSecurityGroupsIDs")) {
+    Aws::Utils::Array<JsonView> replicationServersSecurityGroupsIDsJsonList = jsonValue.GetArray("replicationServersSecurityGroupsIDs");
+    for (unsigned replicationServersSecurityGroupsIDsIndex = 0;
+         replicationServersSecurityGroupsIDsIndex < replicationServersSecurityGroupsIDsJsonList.GetLength();
+         ++replicationServersSecurityGroupsIDsIndex) {
+      m_replicationServersSecurityGroupsIDs.push_back(
+          replicationServersSecurityGroupsIDsJsonList[replicationServersSecurityGroupsIDsIndex].AsString());
+    }
+    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("createPublicIP")) {
-    m_createPublicIP = jsonValue.GetBool("createPublicIP");
-    m_createPublicIPHasBeenSet = true;
+  if (jsonValue.ValueExists("replicationServerInstanceType")) {
+    m_replicationServerInstanceType = jsonValue.GetString("replicationServerInstanceType");
+    m_replicationServerInstanceTypeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("dataPlaneRouting")) {
-    m_dataPlaneRouting = ReplicationConfigurationDataPlaneRoutingMapper::GetReplicationConfigurationDataPlaneRoutingForName(
-        jsonValue.GetString("dataPlaneRouting"));
-    m_dataPlaneRoutingHasBeenSet = true;
+  if (jsonValue.ValueExists("useDedicatedReplicationServer")) {
+    m_useDedicatedReplicationServer = jsonValue.GetBool("useDedicatedReplicationServer");
+    m_useDedicatedReplicationServerHasBeenSet = true;
   }
   if (jsonValue.ValueExists("defaultLargeStagingDiskType")) {
     m_defaultLargeStagingDiskType =
@@ -61,27 +74,18 @@ UpdateReplicationConfigurationTemplateResult& UpdateReplicationConfigurationTemp
     m_ebsEncryptionKeyArn = jsonValue.GetString("ebsEncryptionKeyArn");
     m_ebsEncryptionKeyArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("replicationConfigurationTemplateID")) {
-    m_replicationConfigurationTemplateID = jsonValue.GetString("replicationConfigurationTemplateID");
-    m_replicationConfigurationTemplateIDHasBeenSet = true;
+  if (jsonValue.ValueExists("bandwidthThrottling")) {
+    m_bandwidthThrottling = jsonValue.GetInt64("bandwidthThrottling");
+    m_bandwidthThrottlingHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("replicationServerInstanceType")) {
-    m_replicationServerInstanceType = jsonValue.GetString("replicationServerInstanceType");
-    m_replicationServerInstanceTypeHasBeenSet = true;
+  if (jsonValue.ValueExists("dataPlaneRouting")) {
+    m_dataPlaneRouting = ReplicationConfigurationDataPlaneRoutingMapper::GetReplicationConfigurationDataPlaneRoutingForName(
+        jsonValue.GetString("dataPlaneRouting"));
+    m_dataPlaneRoutingHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("replicationServersSecurityGroupsIDs")) {
-    Aws::Utils::Array<JsonView> replicationServersSecurityGroupsIDsJsonList = jsonValue.GetArray("replicationServersSecurityGroupsIDs");
-    for (unsigned replicationServersSecurityGroupsIDsIndex = 0;
-         replicationServersSecurityGroupsIDsIndex < replicationServersSecurityGroupsIDsJsonList.GetLength();
-         ++replicationServersSecurityGroupsIDsIndex) {
-      m_replicationServersSecurityGroupsIDs.push_back(
-          replicationServersSecurityGroupsIDsJsonList[replicationServersSecurityGroupsIDsIndex].AsString());
-    }
-    m_replicationServersSecurityGroupsIDsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("stagingAreaSubnetId")) {
-    m_stagingAreaSubnetId = jsonValue.GetString("stagingAreaSubnetId");
-    m_stagingAreaSubnetIdHasBeenSet = true;
+  if (jsonValue.ValueExists("createPublicIP")) {
+    m_createPublicIP = jsonValue.GetBool("createPublicIP");
+    m_createPublicIPHasBeenSet = true;
   }
   if (jsonValue.ValueExists("stagingAreaTags")) {
     Aws::Map<Aws::String, JsonView> stagingAreaTagsJsonMap = jsonValue.GetObject("stagingAreaTags").GetAllObjects();
@@ -90,6 +94,10 @@ UpdateReplicationConfigurationTemplateResult& UpdateReplicationConfigurationTemp
     }
     m_stagingAreaTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("useFipsEndpoint")) {
+    m_useFipsEndpoint = jsonValue.GetBool("useFipsEndpoint");
+    m_useFipsEndpointHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -97,13 +105,9 @@ UpdateReplicationConfigurationTemplateResult& UpdateReplicationConfigurationTemp
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("useDedicatedReplicationServer")) {
-    m_useDedicatedReplicationServer = jsonValue.GetBool("useDedicatedReplicationServer");
-    m_useDedicatedReplicationServerHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("useFipsEndpoint")) {
-    m_useFipsEndpoint = jsonValue.GetBool("useFipsEndpoint");
-    m_useFipsEndpointHasBeenSet = true;
+  if (jsonValue.ValueExists("internetProtocol")) {
+    m_internetProtocol = InternetProtocolMapper::GetInternetProtocolForName(jsonValue.GetString("internetProtocol"));
+    m_internetProtocolHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -18,17 +18,25 @@ namespace Model {
 VcenterClient::VcenterClient(JsonView jsonValue) { *this = jsonValue; }
 
 VcenterClient& VcenterClient::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("vcenterClientID")) {
+    m_vcenterClientID = jsonValue.GetString("vcenterClientID");
+    m_vcenterClientIDHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("datacenterName")) {
-    m_datacenterName = jsonValue.GetString("datacenterName");
-    m_datacenterNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("hostname")) {
     m_hostname = jsonValue.GetString("hostname");
     m_hostnameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("vcenterUUID")) {
+    m_vcenterUUID = jsonValue.GetString("vcenterUUID");
+    m_vcenterUUIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("datacenterName")) {
+    m_datacenterName = jsonValue.GetString("datacenterName");
+    m_datacenterNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("lastSeenDatetime")) {
     m_lastSeenDatetime = jsonValue.GetString("lastSeenDatetime");
@@ -48,30 +56,30 @@ VcenterClient& VcenterClient::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("vcenterClientID")) {
-    m_vcenterClientID = jsonValue.GetString("vcenterClientID");
-    m_vcenterClientIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("vcenterUUID")) {
-    m_vcenterUUID = jsonValue.GetString("vcenterUUID");
-    m_vcenterUUIDHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue VcenterClient::Jsonize() const {
   JsonValue payload;
 
+  if (m_vcenterClientIDHasBeenSet) {
+    payload.WithString("vcenterClientID", m_vcenterClientID);
+  }
+
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
   }
 
-  if (m_datacenterNameHasBeenSet) {
-    payload.WithString("datacenterName", m_datacenterName);
-  }
-
   if (m_hostnameHasBeenSet) {
     payload.WithString("hostname", m_hostname);
+  }
+
+  if (m_vcenterUUIDHasBeenSet) {
+    payload.WithString("vcenterUUID", m_vcenterUUID);
+  }
+
+  if (m_datacenterNameHasBeenSet) {
+    payload.WithString("datacenterName", m_datacenterName);
   }
 
   if (m_lastSeenDatetimeHasBeenSet) {
@@ -92,14 +100,6 @@ JsonValue VcenterClient::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
-  }
-
-  if (m_vcenterClientIDHasBeenSet) {
-    payload.WithString("vcenterClientID", m_vcenterClientID);
-  }
-
-  if (m_vcenterUUIDHasBeenSet) {
-    payload.WithString("vcenterUUID", m_vcenterUUID);
   }
 
   return payload;

@@ -18,6 +18,10 @@ namespace Model {
 ParticipatingServer::ParticipatingServer(JsonView jsonValue) { *this = jsonValue; }
 
 ParticipatingServer& ParticipatingServer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceServerID")) {
+    m_sourceServerID = jsonValue.GetString("sourceServerID");
+    m_sourceServerIDHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("launchStatus")) {
     m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
     m_launchStatusHasBeenSet = true;
@@ -30,15 +34,15 @@ ParticipatingServer& ParticipatingServer::operator=(JsonView jsonValue) {
     m_postLaunchActionsStatus = jsonValue.GetObject("postLaunchActionsStatus");
     m_postLaunchActionsStatusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sourceServerID")) {
-    m_sourceServerID = jsonValue.GetString("sourceServerID");
-    m_sourceServerIDHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ParticipatingServer::Jsonize() const {
   JsonValue payload;
+
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
+  }
 
   if (m_launchStatusHasBeenSet) {
     payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
@@ -50,10 +54,6 @@ JsonValue ParticipatingServer::Jsonize() const {
 
   if (m_postLaunchActionsStatusHasBeenSet) {
     payload.WithObject("postLaunchActionsStatus", m_postLaunchActionsStatus.Jsonize());
-  }
-
-  if (m_sourceServerIDHasBeenSet) {
-    payload.WithString("sourceServerID", m_sourceServerID);
   }
 
   return payload;

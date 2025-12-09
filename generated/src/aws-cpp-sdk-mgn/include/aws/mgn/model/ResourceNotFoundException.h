@@ -33,22 +33,6 @@ class ResourceNotFoundException {
 
   ///@{
 
-  inline const Aws::String& GetCode() const { return m_code; }
-  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-  template <typename CodeT = Aws::String>
-  void SetCode(CodeT&& value) {
-    m_codeHasBeenSet = true;
-    m_code = std::forward<CodeT>(value);
-  }
-  template <typename CodeT = Aws::String>
-  ResourceNotFoundException& WithCode(CodeT&& value) {
-    SetCode(std::forward<CodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>
@@ -59,6 +43,22 @@ class ResourceNotFoundException {
   template <typename MessageT = Aws::String>
   ResourceNotFoundException& WithMessage(MessageT&& value) {
     SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  ResourceNotFoundException& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
     return *this;
   }
   ///@}
@@ -99,15 +99,15 @@ class ResourceNotFoundException {
   }
   ///@}
  private:
-  Aws::String m_code;
-
   Aws::String m_message;
+
+  Aws::String m_code;
 
   Aws::String m_resourceId;
 
   Aws::String m_resourceType;
-  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };

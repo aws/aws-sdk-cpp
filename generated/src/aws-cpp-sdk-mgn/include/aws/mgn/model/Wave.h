@@ -30,6 +30,24 @@ class Wave {
 
   ///@{
   /**
+   * <p>Wave ID.</p>
+   */
+  inline const Aws::String& GetWaveID() const { return m_waveID; }
+  inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
+  template <typename WaveIDT = Aws::String>
+  void SetWaveID(WaveIDT&& value) {
+    m_waveIDHasBeenSet = true;
+    m_waveID = std::forward<WaveIDT>(value);
+  }
+  template <typename WaveIDT = Aws::String>
+  Wave& WithWaveID(WaveIDT&& value) {
+    SetWaveID(std::forward<WaveIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Wave ARN.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -48,18 +66,18 @@ class Wave {
 
   ///@{
   /**
-   * <p>Wave creation dateTime.</p>
+   * <p>Wave name.</p>
    */
-  inline const Aws::String& GetCreationDateTime() const { return m_creationDateTime; }
-  inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-  template <typename CreationDateTimeT = Aws::String>
-  void SetCreationDateTime(CreationDateTimeT&& value) {
-    m_creationDateTimeHasBeenSet = true;
-    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreationDateTimeT = Aws::String>
-  Wave& WithCreationDateTime(CreationDateTimeT&& value) {
-    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+  template <typename NameT = Aws::String>
+  Wave& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -100,6 +118,42 @@ class Wave {
 
   ///@{
   /**
+   * <p>Wave aggregated status.</p>
+   */
+  inline const WaveAggregatedStatus& GetWaveAggregatedStatus() const { return m_waveAggregatedStatus; }
+  inline bool WaveAggregatedStatusHasBeenSet() const { return m_waveAggregatedStatusHasBeenSet; }
+  template <typename WaveAggregatedStatusT = WaveAggregatedStatus>
+  void SetWaveAggregatedStatus(WaveAggregatedStatusT&& value) {
+    m_waveAggregatedStatusHasBeenSet = true;
+    m_waveAggregatedStatus = std::forward<WaveAggregatedStatusT>(value);
+  }
+  template <typename WaveAggregatedStatusT = WaveAggregatedStatus>
+  Wave& WithWaveAggregatedStatus(WaveAggregatedStatusT&& value) {
+    SetWaveAggregatedStatus(std::forward<WaveAggregatedStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Wave creation dateTime.</p>
+   */
+  inline const Aws::String& GetCreationDateTime() const { return m_creationDateTime; }
+  inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+  template <typename CreationDateTimeT = Aws::String>
+  void SetCreationDateTime(CreationDateTimeT&& value) {
+    m_creationDateTimeHasBeenSet = true;
+    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  }
+  template <typename CreationDateTimeT = Aws::String>
+  Wave& WithCreationDateTime(CreationDateTimeT&& value) {
+    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Wave last modified dateTime.</p>
    */
   inline const Aws::String& GetLastModifiedDateTime() const { return m_lastModifiedDateTime; }
@@ -112,24 +166,6 @@ class Wave {
   template <typename LastModifiedDateTimeT = Aws::String>
   Wave& WithLastModifiedDateTime(LastModifiedDateTimeT&& value) {
     SetLastModifiedDateTime(std::forward<LastModifiedDateTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Wave name.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  Wave& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -159,42 +195,6 @@ class Wave {
   ///@}
 
   ///@{
-  /**
-   * <p>Wave aggregated status.</p>
-   */
-  inline const WaveAggregatedStatus& GetWaveAggregatedStatus() const { return m_waveAggregatedStatus; }
-  inline bool WaveAggregatedStatusHasBeenSet() const { return m_waveAggregatedStatusHasBeenSet; }
-  template <typename WaveAggregatedStatusT = WaveAggregatedStatus>
-  void SetWaveAggregatedStatus(WaveAggregatedStatusT&& value) {
-    m_waveAggregatedStatusHasBeenSet = true;
-    m_waveAggregatedStatus = std::forward<WaveAggregatedStatusT>(value);
-  }
-  template <typename WaveAggregatedStatusT = WaveAggregatedStatus>
-  Wave& WithWaveAggregatedStatus(WaveAggregatedStatusT&& value) {
-    SetWaveAggregatedStatus(std::forward<WaveAggregatedStatusT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Wave ID.</p>
-   */
-  inline const Aws::String& GetWaveID() const { return m_waveID; }
-  inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
-  template <typename WaveIDT = Aws::String>
-  void SetWaveID(WaveIDT&& value) {
-    m_waveIDHasBeenSet = true;
-    m_waveID = std::forward<WaveIDT>(value);
-  }
-  template <typename WaveIDT = Aws::String>
-  Wave& WithWaveID(WaveIDT&& value) {
-    SetWaveID(std::forward<WaveIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -210,34 +210,34 @@ class Wave {
   }
   ///@}
  private:
+  Aws::String m_waveID;
+
   Aws::String m_arn;
 
-  Aws::String m_creationDateTime;
+  Aws::String m_name;
 
   Aws::String m_description;
 
   bool m_isArchived{false};
 
-  Aws::String m_lastModifiedDateTime;
+  WaveAggregatedStatus m_waveAggregatedStatus;
 
-  Aws::String m_name;
+  Aws::String m_creationDateTime;
+
+  Aws::String m_lastModifiedDateTime;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
-  WaveAggregatedStatus m_waveAggregatedStatus;
-
-  Aws::String m_waveID;
-
   Aws::String m_requestId;
+  bool m_waveIDHasBeenSet = false;
   bool m_arnHasBeenSet = false;
-  bool m_creationDateTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_isArchivedHasBeenSet = false;
-  bool m_lastModifiedDateTimeHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
-  bool m_tagsHasBeenSet = false;
   bool m_waveAggregatedStatusHasBeenSet = false;
-  bool m_waveIDHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastModifiedDateTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

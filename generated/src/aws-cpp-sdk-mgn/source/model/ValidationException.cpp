@@ -18,9 +18,17 @@ namespace Model {
 ValidationException::ValidationException(JsonView jsonValue) { *this = jsonValue; }
 
 ValidationException& ValidationException::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("reason")) {
+    m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("reason"));
+    m_reasonHasBeenSet = true;
   }
   if (jsonValue.ValueExists("fieldList")) {
     Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
@@ -29,22 +37,22 @@ ValidationException& ValidationException::operator=(JsonView jsonValue) {
     }
     m_fieldListHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("message")) {
-    m_message = jsonValue.GetString("message");
-    m_messageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("reason")) {
-    m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("reason"));
-    m_reasonHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ValidationException::Jsonize() const {
   JsonValue payload;
 
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
+  }
+
   if (m_codeHasBeenSet) {
     payload.WithString("code", m_code);
+  }
+
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
   }
 
   if (m_fieldListHasBeenSet) {
@@ -53,14 +61,6 @@ JsonValue ValidationException::Jsonize() const {
       fieldListJsonList[fieldListIndex].AsObject(m_fieldList[fieldListIndex].Jsonize());
     }
     payload.WithArray("fieldList", std::move(fieldListJsonList));
-  }
-
-  if (m_messageHasBeenSet) {
-    payload.WithString("message", m_message);
-  }
-
-  if (m_reasonHasBeenSet) {
-    payload.WithString("reason", ValidationExceptionReasonMapper::GetNameForValidationExceptionReason(m_reason));
   }
 
   return payload;

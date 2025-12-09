@@ -15,8 +15,8 @@ using namespace Aws::Utils;
 Aws::String AssociateApplicationsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
+  if (m_waveIDHasBeenSet) {
+    payload.WithString("waveID", m_waveID);
   }
 
   if (m_applicationIDsHasBeenSet) {
@@ -27,8 +27,8 @@ Aws::String AssociateApplicationsRequest::SerializePayload() const {
     payload.WithArray("applicationIDs", std::move(applicationIDsJsonList));
   }
 
-  if (m_waveIDHasBeenSet) {
-    payload.WithString("waveID", m_waveID);
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

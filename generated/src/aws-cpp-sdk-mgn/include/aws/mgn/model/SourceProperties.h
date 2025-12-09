@@ -39,48 +39,36 @@ class SourceProperties {
 
   ///@{
   /**
-   * <p>Source Server CPUs.</p>
+   * <p>Source server last update date and time.</p>
    */
-  inline const Aws::Vector<CPU>& GetCpus() const { return m_cpus; }
-  inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
-  template <typename CpusT = Aws::Vector<CPU>>
-  void SetCpus(CpusT&& value) {
-    m_cpusHasBeenSet = true;
-    m_cpus = std::forward<CpusT>(value);
+  inline const Aws::String& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+  inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
+  template <typename LastUpdatedDateTimeT = Aws::String>
+  void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    m_lastUpdatedDateTimeHasBeenSet = true;
+    m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value);
   }
-  template <typename CpusT = Aws::Vector<CPU>>
-  SourceProperties& WithCpus(CpusT&& value) {
-    SetCpus(std::forward<CpusT>(value));
-    return *this;
-  }
-  template <typename CpusT = CPU>
-  SourceProperties& AddCpus(CpusT&& value) {
-    m_cpusHasBeenSet = true;
-    m_cpus.emplace_back(std::forward<CpusT>(value));
+  template <typename LastUpdatedDateTimeT = Aws::String>
+  SourceProperties& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
+    SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Source Server disks.</p>
+   * <p>Source server recommended instance type.</p>
    */
-  inline const Aws::Vector<Disk>& GetDisks() const { return m_disks; }
-  inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
-  template <typename DisksT = Aws::Vector<Disk>>
-  void SetDisks(DisksT&& value) {
-    m_disksHasBeenSet = true;
-    m_disks = std::forward<DisksT>(value);
+  inline const Aws::String& GetRecommendedInstanceType() const { return m_recommendedInstanceType; }
+  inline bool RecommendedInstanceTypeHasBeenSet() const { return m_recommendedInstanceTypeHasBeenSet; }
+  template <typename RecommendedInstanceTypeT = Aws::String>
+  void SetRecommendedInstanceType(RecommendedInstanceTypeT&& value) {
+    m_recommendedInstanceTypeHasBeenSet = true;
+    m_recommendedInstanceType = std::forward<RecommendedInstanceTypeT>(value);
   }
-  template <typename DisksT = Aws::Vector<Disk>>
-  SourceProperties& WithDisks(DisksT&& value) {
-    SetDisks(std::forward<DisksT>(value));
-    return *this;
-  }
-  template <typename DisksT = Disk>
-  SourceProperties& AddDisks(DisksT&& value) {
-    m_disksHasBeenSet = true;
-    m_disks.emplace_back(std::forward<DisksT>(value));
+  template <typename RecommendedInstanceTypeT = Aws::String>
+  SourceProperties& WithRecommendedInstanceType(RecommendedInstanceTypeT&& value) {
+    SetRecommendedInstanceType(std::forward<RecommendedInstanceTypeT>(value));
     return *this;
   }
   ///@}
@@ -99,24 +87,6 @@ class SourceProperties {
   template <typename IdentificationHintsT = IdentificationHints>
   SourceProperties& WithIdentificationHints(IdentificationHintsT&& value) {
     SetIdentificationHints(std::forward<IdentificationHintsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server last update date and time.</p>
-   */
-  inline const Aws::String& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
-  inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-  template <typename LastUpdatedDateTimeT = Aws::String>
-  void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
-    m_lastUpdatedDateTimeHasBeenSet = true;
-    m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value);
-  }
-  template <typename LastUpdatedDateTimeT = Aws::String>
-  SourceProperties& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) {
-    SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value));
     return *this;
   }
   ///@}
@@ -147,18 +117,48 @@ class SourceProperties {
 
   ///@{
   /**
-   * <p>Source server OS.</p>
+   * <p>Source Server disks.</p>
    */
-  inline const OS& GetOs() const { return m_os; }
-  inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
-  template <typename OsT = OS>
-  void SetOs(OsT&& value) {
-    m_osHasBeenSet = true;
-    m_os = std::forward<OsT>(value);
+  inline const Aws::Vector<Disk>& GetDisks() const { return m_disks; }
+  inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
+  template <typename DisksT = Aws::Vector<Disk>>
+  void SetDisks(DisksT&& value) {
+    m_disksHasBeenSet = true;
+    m_disks = std::forward<DisksT>(value);
   }
-  template <typename OsT = OS>
-  SourceProperties& WithOs(OsT&& value) {
-    SetOs(std::forward<OsT>(value));
+  template <typename DisksT = Aws::Vector<Disk>>
+  SourceProperties& WithDisks(DisksT&& value) {
+    SetDisks(std::forward<DisksT>(value));
+    return *this;
+  }
+  template <typename DisksT = Disk>
+  SourceProperties& AddDisks(DisksT&& value) {
+    m_disksHasBeenSet = true;
+    m_disks.emplace_back(std::forward<DisksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source Server CPUs.</p>
+   */
+  inline const Aws::Vector<CPU>& GetCpus() const { return m_cpus; }
+  inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
+  template <typename CpusT = Aws::Vector<CPU>>
+  void SetCpus(CpusT&& value) {
+    m_cpusHasBeenSet = true;
+    m_cpus = std::forward<CpusT>(value);
+  }
+  template <typename CpusT = Aws::Vector<CPU>>
+  SourceProperties& WithCpus(CpusT&& value) {
+    SetCpus(std::forward<CpusT>(value));
+    return *this;
+  }
+  template <typename CpusT = CPU>
+  SourceProperties& AddCpus(CpusT&& value) {
+    m_cpusHasBeenSet = true;
+    m_cpus.emplace_back(std::forward<CpusT>(value));
     return *this;
   }
   ///@}
@@ -181,45 +181,45 @@ class SourceProperties {
 
   ///@{
   /**
-   * <p>Source server recommended instance type.</p>
+   * <p>Source server OS.</p>
    */
-  inline const Aws::String& GetRecommendedInstanceType() const { return m_recommendedInstanceType; }
-  inline bool RecommendedInstanceTypeHasBeenSet() const { return m_recommendedInstanceTypeHasBeenSet; }
-  template <typename RecommendedInstanceTypeT = Aws::String>
-  void SetRecommendedInstanceType(RecommendedInstanceTypeT&& value) {
-    m_recommendedInstanceTypeHasBeenSet = true;
-    m_recommendedInstanceType = std::forward<RecommendedInstanceTypeT>(value);
+  inline const OS& GetOs() const { return m_os; }
+  inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
+  template <typename OsT = OS>
+  void SetOs(OsT&& value) {
+    m_osHasBeenSet = true;
+    m_os = std::forward<OsT>(value);
   }
-  template <typename RecommendedInstanceTypeT = Aws::String>
-  SourceProperties& WithRecommendedInstanceType(RecommendedInstanceTypeT&& value) {
-    SetRecommendedInstanceType(std::forward<RecommendedInstanceTypeT>(value));
+  template <typename OsT = OS>
+  SourceProperties& WithOs(OsT&& value) {
+    SetOs(std::forward<OsT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Vector<CPU> m_cpus;
+  Aws::String m_lastUpdatedDateTime;
 
-  Aws::Vector<Disk> m_disks;
+  Aws::String m_recommendedInstanceType;
 
   IdentificationHints m_identificationHints;
 
-  Aws::String m_lastUpdatedDateTime;
-
   Aws::Vector<NetworkInterface> m_networkInterfaces;
 
-  OS m_os;
+  Aws::Vector<Disk> m_disks;
+
+  Aws::Vector<CPU> m_cpus;
 
   long long m_ramBytes{0};
 
-  Aws::String m_recommendedInstanceType;
-  bool m_cpusHasBeenSet = false;
-  bool m_disksHasBeenSet = false;
-  bool m_identificationHintsHasBeenSet = false;
+  OS m_os;
   bool m_lastUpdatedDateTimeHasBeenSet = false;
-  bool m_networkInterfacesHasBeenSet = false;
-  bool m_osHasBeenSet = false;
-  bool m_ramBytesHasBeenSet = false;
   bool m_recommendedInstanceTypeHasBeenSet = false;
+  bool m_identificationHintsHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_disksHasBeenSet = false;
+  bool m_cpusHasBeenSet = false;
+  bool m_ramBytesHasBeenSet = false;
+  bool m_osHasBeenSet = false;
 };
 
 }  // namespace Model

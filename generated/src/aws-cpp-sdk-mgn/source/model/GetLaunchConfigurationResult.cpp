@@ -21,9 +21,26 @@ GetLaunchConfigurationResult::GetLaunchConfigurationResult(const Aws::AmazonWebS
 
 GetLaunchConfigurationResult& GetLaunchConfigurationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("bootMode")) {
-    m_bootMode = BootModeMapper::GetBootModeForName(jsonValue.GetString("bootMode"));
-    m_bootModeHasBeenSet = true;
+  if (jsonValue.ValueExists("sourceServerID")) {
+    m_sourceServerID = jsonValue.GetString("sourceServerID");
+    m_sourceServerIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ec2LaunchTemplateID")) {
+    m_ec2LaunchTemplateID = jsonValue.GetString("ec2LaunchTemplateID");
+    m_ec2LaunchTemplateIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchDisposition")) {
+    m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
+    m_launchDispositionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("targetInstanceTypeRightSizingMethod")) {
+    m_targetInstanceTypeRightSizingMethod = TargetInstanceTypeRightSizingMethodMapper::GetTargetInstanceTypeRightSizingMethodForName(
+        jsonValue.GetString("targetInstanceTypeRightSizingMethod"));
+    m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
   }
   if (jsonValue.ValueExists("copyPrivateIp")) {
     m_copyPrivateIp = jsonValue.GetBool("copyPrivateIp");
@@ -33,42 +50,25 @@ GetLaunchConfigurationResult& GetLaunchConfigurationResult::operator=(const Aws:
     m_copyTags = jsonValue.GetBool("copyTags");
     m_copyTagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ec2LaunchTemplateID")) {
-    m_ec2LaunchTemplateID = jsonValue.GetString("ec2LaunchTemplateID");
-    m_ec2LaunchTemplateIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("enableMapAutoTagging")) {
-    m_enableMapAutoTagging = jsonValue.GetBool("enableMapAutoTagging");
-    m_enableMapAutoTaggingHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("launchDisposition")) {
-    m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
-    m_launchDispositionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("licensing")) {
     m_licensing = jsonValue.GetObject("licensing");
     m_licensingHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("mapAutoTaggingMpeID")) {
-    m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
-    m_mapAutoTaggingMpeIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
+  if (jsonValue.ValueExists("bootMode")) {
+    m_bootMode = BootModeMapper::GetBootModeForName(jsonValue.GetString("bootMode"));
+    m_bootModeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("postLaunchActions")) {
     m_postLaunchActions = jsonValue.GetObject("postLaunchActions");
     m_postLaunchActionsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("sourceServerID")) {
-    m_sourceServerID = jsonValue.GetString("sourceServerID");
-    m_sourceServerIDHasBeenSet = true;
+  if (jsonValue.ValueExists("enableMapAutoTagging")) {
+    m_enableMapAutoTagging = jsonValue.GetBool("enableMapAutoTagging");
+    m_enableMapAutoTaggingHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("targetInstanceTypeRightSizingMethod")) {
-    m_targetInstanceTypeRightSizingMethod = TargetInstanceTypeRightSizingMethodMapper::GetTargetInstanceTypeRightSizingMethodForName(
-        jsonValue.GetString("targetInstanceTypeRightSizingMethod"));
-    m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
+  if (jsonValue.ValueExists("mapAutoTaggingMpeID")) {
+    m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
+    m_mapAutoTaggingMpeIDHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

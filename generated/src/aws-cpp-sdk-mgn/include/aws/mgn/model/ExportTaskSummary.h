@@ -30,22 +30,6 @@ class ExportTaskSummary {
 
   ///@{
   /**
-   * <p>Export task summary applications count.</p>
-   */
-  inline long long GetApplicationsCount() const { return m_applicationsCount; }
-  inline bool ApplicationsCountHasBeenSet() const { return m_applicationsCountHasBeenSet; }
-  inline void SetApplicationsCount(long long value) {
-    m_applicationsCountHasBeenSet = true;
-    m_applicationsCount = value;
-  }
-  inline ExportTaskSummary& WithApplicationsCount(long long value) {
-    SetApplicationsCount(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Export task summary servers count.</p>
    */
   inline long long GetServersCount() const { return m_serversCount; }
@@ -56,6 +40,22 @@ class ExportTaskSummary {
   }
   inline ExportTaskSummary& WithServersCount(long long value) {
     SetServersCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Export task summary applications count.</p>
+   */
+  inline long long GetApplicationsCount() const { return m_applicationsCount; }
+  inline bool ApplicationsCountHasBeenSet() const { return m_applicationsCountHasBeenSet; }
+  inline void SetApplicationsCount(long long value) {
+    m_applicationsCountHasBeenSet = true;
+    m_applicationsCount = value;
+  }
+  inline ExportTaskSummary& WithApplicationsCount(long long value) {
+    SetApplicationsCount(value);
     return *this;
   }
   ///@}
@@ -76,13 +76,13 @@ class ExportTaskSummary {
   }
   ///@}
  private:
-  long long m_applicationsCount{0};
-
   long long m_serversCount{0};
 
+  long long m_applicationsCount{0};
+
   long long m_wavesCount{0};
-  bool m_applicationsCountHasBeenSet = false;
   bool m_serversCountHasBeenSet = false;
+  bool m_applicationsCountHasBeenSet = false;
   bool m_wavesCountHasBeenSet = false;
 };
 

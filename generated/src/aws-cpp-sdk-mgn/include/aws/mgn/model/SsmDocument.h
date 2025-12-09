@@ -55,24 +55,34 @@ class SsmDocument {
 
   ///@{
   /**
-   * <p>AWS Systems Manager Document external parameters.</p>
+   * <p>AWS Systems Manager Document name or full ARN.</p>
    */
-  inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const { return m_externalParameters; }
-  inline bool ExternalParametersHasBeenSet() const { return m_externalParametersHasBeenSet; }
-  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
-  void SetExternalParameters(ExternalParametersT&& value) {
-    m_externalParametersHasBeenSet = true;
-    m_externalParameters = std::forward<ExternalParametersT>(value);
+  inline const Aws::String& GetSsmDocumentName() const { return m_ssmDocumentName; }
+  inline bool SsmDocumentNameHasBeenSet() const { return m_ssmDocumentNameHasBeenSet; }
+  template <typename SsmDocumentNameT = Aws::String>
+  void SetSsmDocumentName(SsmDocumentNameT&& value) {
+    m_ssmDocumentNameHasBeenSet = true;
+    m_ssmDocumentName = std::forward<SsmDocumentNameT>(value);
   }
-  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
-  SsmDocument& WithExternalParameters(ExternalParametersT&& value) {
-    SetExternalParameters(std::forward<ExternalParametersT>(value));
+  template <typename SsmDocumentNameT = Aws::String>
+  SsmDocument& WithSsmDocumentName(SsmDocumentNameT&& value) {
+    SetSsmDocumentName(std::forward<SsmDocumentNameT>(value));
     return *this;
   }
-  template <typename ExternalParametersKeyT = Aws::String, typename ExternalParametersValueT = SsmExternalParameter>
-  SsmDocument& AddExternalParameters(ExternalParametersKeyT&& key, ExternalParametersValueT&& value) {
-    m_externalParametersHasBeenSet = true;
-    m_externalParameters.emplace(std::forward<ExternalParametersKeyT>(key), std::forward<ExternalParametersValueT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>AWS Systems Manager Document timeout seconds.</p>
+   */
+  inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
+  inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
+  inline void SetTimeoutSeconds(int value) {
+    m_timeoutSecondsHasBeenSet = true;
+    m_timeoutSeconds = value;
+  }
+  inline SsmDocument& WithTimeoutSeconds(int value) {
+    SetTimeoutSeconds(value);
     return *this;
   }
   ///@}
@@ -119,55 +129,45 @@ class SsmDocument {
 
   ///@{
   /**
-   * <p>AWS Systems Manager Document name or full ARN.</p>
+   * <p>AWS Systems Manager Document external parameters.</p>
    */
-  inline const Aws::String& GetSsmDocumentName() const { return m_ssmDocumentName; }
-  inline bool SsmDocumentNameHasBeenSet() const { return m_ssmDocumentNameHasBeenSet; }
-  template <typename SsmDocumentNameT = Aws::String>
-  void SetSsmDocumentName(SsmDocumentNameT&& value) {
-    m_ssmDocumentNameHasBeenSet = true;
-    m_ssmDocumentName = std::forward<SsmDocumentNameT>(value);
+  inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const { return m_externalParameters; }
+  inline bool ExternalParametersHasBeenSet() const { return m_externalParametersHasBeenSet; }
+  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
+  void SetExternalParameters(ExternalParametersT&& value) {
+    m_externalParametersHasBeenSet = true;
+    m_externalParameters = std::forward<ExternalParametersT>(value);
   }
-  template <typename SsmDocumentNameT = Aws::String>
-  SsmDocument& WithSsmDocumentName(SsmDocumentNameT&& value) {
-    SetSsmDocumentName(std::forward<SsmDocumentNameT>(value));
+  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
+  SsmDocument& WithExternalParameters(ExternalParametersT&& value) {
+    SetExternalParameters(std::forward<ExternalParametersT>(value));
     return *this;
   }
-  ///@}
-
-  ///@{
-  /**
-   * <p>AWS Systems Manager Document timeout seconds.</p>
-   */
-  inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
-  inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
-  inline void SetTimeoutSeconds(int value) {
-    m_timeoutSecondsHasBeenSet = true;
-    m_timeoutSeconds = value;
-  }
-  inline SsmDocument& WithTimeoutSeconds(int value) {
-    SetTimeoutSeconds(value);
+  template <typename ExternalParametersKeyT = Aws::String, typename ExternalParametersValueT = SsmExternalParameter>
+  SsmDocument& AddExternalParameters(ExternalParametersKeyT&& key, ExternalParametersValueT&& value) {
+    m_externalParametersHasBeenSet = true;
+    m_externalParameters.emplace(std::forward<ExternalParametersKeyT>(key), std::forward<ExternalParametersValueT>(value));
     return *this;
   }
   ///@}
  private:
   Aws::String m_actionName;
 
-  Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
+  Aws::String m_ssmDocumentName;
+
+  int m_timeoutSeconds{0};
 
   bool m_mustSucceedForCutover{false};
 
   Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
 
-  Aws::String m_ssmDocumentName;
-
-  int m_timeoutSeconds{0};
+  Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
   bool m_actionNameHasBeenSet = false;
-  bool m_externalParametersHasBeenSet = false;
-  bool m_mustSucceedForCutoverHasBeenSet = false;
-  bool m_parametersHasBeenSet = false;
   bool m_ssmDocumentNameHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
+  bool m_mustSucceedForCutoverHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_externalParametersHasBeenSet = false;
 };
 
 }  // namespace Model

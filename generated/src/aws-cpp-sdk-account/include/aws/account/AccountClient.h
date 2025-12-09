@@ -103,12 +103,13 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public 
    * <p>Deletes the specified alternate contact from an Amazon Web Services
    * account.</p> <p>For complete details about how to use the alternate contact
    * operations, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-   * or updating the alternate contacts</a>.</p>  <p>Before you can update the
-   * alternate contact information for an Amazon Web Services account that is managed
-   * by Organizations, you must first enable integration between Amazon Web Services
-   * Account Management and Organizations. For more information, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+   * the alternate contacts for your Amazon Web Services account</a>.</p>
+   * <p>Before you can update the alternate contact information for an Amazon Web
+   * Services account that is managed by Organizations, you must first enable
+   * integration between Amazon Web Services Account Management and Organizations.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
    * trusted access for Amazon Web Services Account Management</a>.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DeleteAlternateContact">AWS
@@ -223,12 +224,13 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public 
    * <p>Retrieves the specified alternate contact attached to an Amazon Web Services
    * account.</p> <p>For complete details about how to use the alternate contact
    * operations, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-   * or updating the alternate contacts</a>.</p>  <p>Before you can update the
-   * alternate contact information for an Amazon Web Services account that is managed
-   * by Organizations, you must first enable integration between Amazon Web Services
-   * Account Management and Organizations. For more information, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+   * the alternate contacts for your Amazon Web Services account</a>.</p>
+   * <p>Before you can update the alternate contact information for an Amazon Web
+   * Services account that is managed by Organizations, you must first enable
+   * integration between Amazon Web Services Account Management and Organizations.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
    * trusted access for Amazon Web Services Account Management</a>.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetAlternateContact">AWS
@@ -259,8 +261,9 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public 
    * <p>Retrieves the primary contact information of an Amazon Web Services
    * account.</p> <p>For complete details about how to use the primary contact
    * operations, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-   * the primary and alternate contact information</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+   * the primary contact for your Amazon Web Services account</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetContactInformation">AWS
    * API Reference</a></p>
    */
@@ -284,6 +287,39 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public 
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                   const GetContactInformationRequestT& request = {}) const {
     return SubmitAsync(&AccountClient::GetContactInformation, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about the GovCloud account linked to the specified
+   * standard account (if it exists) including the GovCloud account ID and state. To
+   * use this API, an IAM user or role must have the
+   * <code>account:GetGovCloudAccountInformation</code> IAM permission.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetGovCloudAccountInformation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetGovCloudAccountInformationOutcome GetGovCloudAccountInformation(
+      const Model::GetGovCloudAccountInformationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetGovCloudAccountInformation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetGovCloudAccountInformationRequestT = Model::GetGovCloudAccountInformationRequest>
+  Model::GetGovCloudAccountInformationOutcomeCallable GetGovCloudAccountInformationCallable(
+      const GetGovCloudAccountInformationRequestT& request = {}) const {
+    return SubmitCallable(&AccountClient::GetGovCloudAccountInformation, request);
+  }
+
+  /**
+   * An Async wrapper for GetGovCloudAccountInformation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetGovCloudAccountInformationRequestT = Model::GetGovCloudAccountInformationRequest>
+  void GetGovCloudAccountInformationAsync(const GetGovCloudAccountInformationResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                          const GetGovCloudAccountInformationRequestT& request = {}) const {
+    return SubmitAsync(&AccountClient::GetGovCloudAccountInformation, request, handler, context);
   }
 
   /**
@@ -399,12 +435,13 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public 
    * <p>Modifies the specified alternate contact attached to an Amazon Web Services
    * account.</p> <p>For complete details about how to use the alternate contact
    * operations, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Access
-   * or updating the alternate contacts</a>.</p>  <p>Before you can update the
-   * alternate contact information for an Amazon Web Services account that is managed
-   * by Organizations, you must first enable integration between Amazon Web Services
-   * Account Management and Organizations. For more information, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enabling
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-alternate.html">Update
+   * the alternate contacts for your Amazon Web Services account</a>.</p>
+   * <p>Before you can update the alternate contact information for an Amazon Web
+   * Services account that is managed by Organizations, you must first enable
+   * integration between Amazon Web Services Account Management and Organizations.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-trusted-access.html">Enable
    * trusted access for Amazon Web Services Account Management</a>.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutAlternateContact">AWS
@@ -435,8 +472,9 @@ class AWS_ACCOUNT_API AccountClient : public Aws::Client::AWSJsonClient, public 
    * <p>Updates the primary contact information of an Amazon Web Services
    * account.</p> <p>For complete details about how to use the primary contact
    * operations, see <a
-   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update
-   * the primary and alternate contact information</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+   * the primary contact for your Amazon Web Services account</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/PutContactInformation">AWS
    * API Reference</a></p>
    */

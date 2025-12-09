@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String ArchiveApplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
-  }
-
   if (m_applicationIDHasBeenSet) {
     payload.WithString("applicationID", m_applicationID);
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

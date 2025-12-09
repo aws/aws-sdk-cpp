@@ -35,22 +35,6 @@ class ApplicationAggregatedStatus {
 
   ///@{
   /**
-   * <p>Application aggregated status health status.</p>
-   */
-  inline ApplicationHealthStatus GetHealthStatus() const { return m_healthStatus; }
-  inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
-  inline void SetHealthStatus(ApplicationHealthStatus value) {
-    m_healthStatusHasBeenSet = true;
-    m_healthStatus = value;
-  }
-  inline ApplicationAggregatedStatus& WithHealthStatus(ApplicationHealthStatus value) {
-    SetHealthStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Application aggregated status last update dateTime.</p>
    */
   inline const Aws::String& GetLastUpdateDateTime() const { return m_lastUpdateDateTime; }
@@ -63,6 +47,22 @@ class ApplicationAggregatedStatus {
   template <typename LastUpdateDateTimeT = Aws::String>
   ApplicationAggregatedStatus& WithLastUpdateDateTime(LastUpdateDateTimeT&& value) {
     SetLastUpdateDateTime(std::forward<LastUpdateDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Application aggregated status health status.</p>
+   */
+  inline ApplicationHealthStatus GetHealthStatus() const { return m_healthStatus; }
+  inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+  inline void SetHealthStatus(ApplicationHealthStatus value) {
+    m_healthStatusHasBeenSet = true;
+    m_healthStatus = value;
+  }
+  inline ApplicationAggregatedStatus& WithHealthStatus(ApplicationHealthStatus value) {
+    SetHealthStatus(value);
     return *this;
   }
   ///@}
@@ -99,15 +99,15 @@ class ApplicationAggregatedStatus {
   }
   ///@}
  private:
-  ApplicationHealthStatus m_healthStatus{ApplicationHealthStatus::NOT_SET};
-
   Aws::String m_lastUpdateDateTime;
+
+  ApplicationHealthStatus m_healthStatus{ApplicationHealthStatus::NOT_SET};
 
   ApplicationProgressStatus m_progressStatus{ApplicationProgressStatus::NOT_SET};
 
   long long m_totalSourceServers{0};
-  bool m_healthStatusHasBeenSet = false;
   bool m_lastUpdateDateTimeHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
   bool m_progressStatusHasBeenSet = false;
   bool m_totalSourceServersHasBeenSet = false;
 };

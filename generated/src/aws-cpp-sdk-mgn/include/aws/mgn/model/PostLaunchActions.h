@@ -37,24 +37,6 @@ class PostLaunchActions {
 
   ///@{
   /**
-   * <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-   */
-  inline const Aws::String& GetCloudWatchLogGroupName() const { return m_cloudWatchLogGroupName; }
-  inline bool CloudWatchLogGroupNameHasBeenSet() const { return m_cloudWatchLogGroupNameHasBeenSet; }
-  template <typename CloudWatchLogGroupNameT = Aws::String>
-  void SetCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
-    m_cloudWatchLogGroupNameHasBeenSet = true;
-    m_cloudWatchLogGroupName = std::forward<CloudWatchLogGroupNameT>(value);
-  }
-  template <typename CloudWatchLogGroupNameT = Aws::String>
-  PostLaunchActions& WithCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
-    SetCloudWatchLogGroupName(std::forward<CloudWatchLogGroupNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
    */
   inline PostLaunchActionsDeploymentType GetDeployment() const { return m_deployment; }
@@ -107,6 +89,24 @@ class PostLaunchActions {
 
   ///@{
   /**
+   * <p>AWS Systems Manager Command's CloudWatch log group name.</p>
+   */
+  inline const Aws::String& GetCloudWatchLogGroupName() const { return m_cloudWatchLogGroupName; }
+  inline bool CloudWatchLogGroupNameHasBeenSet() const { return m_cloudWatchLogGroupNameHasBeenSet; }
+  template <typename CloudWatchLogGroupNameT = Aws::String>
+  void SetCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
+    m_cloudWatchLogGroupNameHasBeenSet = true;
+    m_cloudWatchLogGroupName = std::forward<CloudWatchLogGroupNameT>(value);
+  }
+  template <typename CloudWatchLogGroupNameT = Aws::String>
+  PostLaunchActions& WithCloudWatchLogGroupName(CloudWatchLogGroupNameT&& value) {
+    SetCloudWatchLogGroupName(std::forward<CloudWatchLogGroupNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>AWS Systems Manager Documents.</p>
    */
   inline const Aws::Vector<SsmDocument>& GetSsmDocuments() const { return m_ssmDocuments; }
@@ -129,19 +129,19 @@ class PostLaunchActions {
   }
   ///@}
  private:
-  Aws::String m_cloudWatchLogGroupName;
-
   PostLaunchActionsDeploymentType m_deployment{PostLaunchActionsDeploymentType::NOT_SET};
 
   Aws::String m_s3LogBucket;
 
   Aws::String m_s3OutputKeyPrefix;
 
+  Aws::String m_cloudWatchLogGroupName;
+
   Aws::Vector<SsmDocument> m_ssmDocuments;
-  bool m_cloudWatchLogGroupNameHasBeenSet = false;
   bool m_deploymentHasBeenSet = false;
   bool m_s3LogBucketHasBeenSet = false;
   bool m_s3OutputKeyPrefixHasBeenSet = false;
+  bool m_cloudWatchLogGroupNameHasBeenSet = false;
   bool m_ssmDocumentsHasBeenSet = false;
 };
 

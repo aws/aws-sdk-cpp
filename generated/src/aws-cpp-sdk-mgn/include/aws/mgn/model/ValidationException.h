@@ -36,6 +36,22 @@ class ValidationException {
 
   ///@{
 
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  ValidationException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const Aws::String& GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
   template <typename CodeT = Aws::String>
@@ -46,6 +62,22 @@ class ValidationException {
   template <typename CodeT = Aws::String>
   ValidationException& WithCode(CodeT&& value) {
     SetCode(std::forward<CodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Validate exception reason.</p>
+   */
+  inline ValidationExceptionReason GetReason() const { return m_reason; }
+  inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+  inline void SetReason(ValidationExceptionReason value) {
+    m_reasonHasBeenSet = true;
+    m_reason = value;
+  }
+  inline ValidationException& WithReason(ValidationExceptionReason value) {
+    SetReason(value);
     return *this;
   }
   ///@}
@@ -73,50 +105,18 @@ class ValidationException {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetMessage() const { return m_message; }
-  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-  template <typename MessageT = Aws::String>
-  void SetMessage(MessageT&& value) {
-    m_messageHasBeenSet = true;
-    m_message = std::forward<MessageT>(value);
-  }
-  template <typename MessageT = Aws::String>
-  ValidationException& WithMessage(MessageT&& value) {
-    SetMessage(std::forward<MessageT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Validate exception reason.</p>
-   */
-  inline ValidationExceptionReason GetReason() const { return m_reason; }
-  inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-  inline void SetReason(ValidationExceptionReason value) {
-    m_reasonHasBeenSet = true;
-    m_reason = value;
-  }
-  inline ValidationException& WithReason(ValidationExceptionReason value) {
-    SetReason(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_code;
-
-  Aws::Vector<ValidationExceptionField> m_fieldList;
-
   Aws::String m_message;
 
+  Aws::String m_code;
+
   ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
-  bool m_codeHasBeenSet = false;
-  bool m_fieldListHasBeenSet = false;
+
+  Aws::Vector<ValidationExceptionField> m_fieldList;
   bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
+  bool m_fieldListHasBeenSet = false;
 };
 
 }  // namespace Model

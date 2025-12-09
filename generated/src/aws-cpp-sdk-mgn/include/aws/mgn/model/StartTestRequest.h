@@ -32,24 +32,6 @@ class StartTestRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Start Test for Account ID.</p>
-   */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
-  }
-  template <typename AccountIDT = Aws::String>
-  StartTestRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Start Test for Source Server IDs.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const { return m_sourceServerIDs; }
@@ -95,15 +77,33 @@ class StartTestRequest : public MgnRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_accountID;
 
+  ///@{
+  /**
+   * <p>Start Test for Account ID.</p>
+   */
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
+  }
+  template <typename AccountIDT = Aws::String>
+  StartTestRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<Aws::String> m_sourceServerIDs;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_accountIDHasBeenSet = false;
+
+  Aws::String m_accountID;
   bool m_sourceServerIDsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

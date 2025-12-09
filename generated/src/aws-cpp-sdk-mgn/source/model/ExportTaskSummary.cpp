@@ -18,13 +18,13 @@ namespace Model {
 ExportTaskSummary::ExportTaskSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ExportTaskSummary& ExportTaskSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("applicationsCount")) {
-    m_applicationsCount = jsonValue.GetInt64("applicationsCount");
-    m_applicationsCountHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("serversCount")) {
     m_serversCount = jsonValue.GetInt64("serversCount");
     m_serversCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("applicationsCount")) {
+    m_applicationsCount = jsonValue.GetInt64("applicationsCount");
+    m_applicationsCountHasBeenSet = true;
   }
   if (jsonValue.ValueExists("wavesCount")) {
     m_wavesCount = jsonValue.GetInt64("wavesCount");
@@ -36,12 +36,12 @@ ExportTaskSummary& ExportTaskSummary::operator=(JsonView jsonValue) {
 JsonValue ExportTaskSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_applicationsCountHasBeenSet) {
-    payload.WithInt64("applicationsCount", m_applicationsCount);
-  }
-
   if (m_serversCountHasBeenSet) {
     payload.WithInt64("serversCount", m_serversCount);
+  }
+
+  if (m_applicationsCountHasBeenSet) {
+    payload.WithInt64("applicationsCount", m_applicationsCount);
   }
 
   if (m_wavesCountHasBeenSet) {

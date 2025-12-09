@@ -22,13 +22,13 @@ LaunchedInstance& LaunchedInstance::operator=(JsonView jsonValue) {
     m_ec2InstanceID = jsonValue.GetString("ec2InstanceID");
     m_ec2InstanceIDHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("firstBoot")) {
-    m_firstBoot = FirstBootMapper::GetFirstBootForName(jsonValue.GetString("firstBoot"));
-    m_firstBootHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("jobID")) {
     m_jobID = jsonValue.GetString("jobID");
     m_jobIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("firstBoot")) {
+    m_firstBoot = FirstBootMapper::GetFirstBootForName(jsonValue.GetString("firstBoot"));
+    m_firstBootHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue LaunchedInstance::Jsonize() const {
     payload.WithString("ec2InstanceID", m_ec2InstanceID);
   }
 
-  if (m_firstBootHasBeenSet) {
-    payload.WithString("firstBoot", FirstBootMapper::GetNameForFirstBoot(m_firstBoot));
-  }
-
   if (m_jobIDHasBeenSet) {
     payload.WithString("jobID", m_jobID);
+  }
+
+  if (m_firstBootHasBeenSet) {
+    payload.WithString("firstBoot", FirstBootMapper::GetNameForFirstBoot(m_firstBoot));
   }
 
   return payload;

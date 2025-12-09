@@ -18,21 +18,21 @@ namespace Model {
 ConnectorSsmCommandConfig::ConnectorSsmCommandConfig(JsonView jsonValue) { *this = jsonValue; }
 
 ConnectorSsmCommandConfig& ConnectorSsmCommandConfig::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("cloudWatchLogGroupName")) {
-    m_cloudWatchLogGroupName = jsonValue.GetString("cloudWatchLogGroupName");
-    m_cloudWatchLogGroupNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("cloudWatchOutputEnabled")) {
-    m_cloudWatchOutputEnabled = jsonValue.GetBool("cloudWatchOutputEnabled");
-    m_cloudWatchOutputEnabledHasBeenSet = true;
+  if (jsonValue.ValueExists("s3OutputEnabled")) {
+    m_s3OutputEnabled = jsonValue.GetBool("s3OutputEnabled");
+    m_s3OutputEnabledHasBeenSet = true;
   }
   if (jsonValue.ValueExists("outputS3BucketName")) {
     m_outputS3BucketName = jsonValue.GetString("outputS3BucketName");
     m_outputS3BucketNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("s3OutputEnabled")) {
-    m_s3OutputEnabled = jsonValue.GetBool("s3OutputEnabled");
-    m_s3OutputEnabledHasBeenSet = true;
+  if (jsonValue.ValueExists("cloudWatchOutputEnabled")) {
+    m_cloudWatchOutputEnabled = jsonValue.GetBool("cloudWatchOutputEnabled");
+    m_cloudWatchOutputEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudWatchLogGroupName")) {
+    m_cloudWatchLogGroupName = jsonValue.GetString("cloudWatchLogGroupName");
+    m_cloudWatchLogGroupNameHasBeenSet = true;
   }
   return *this;
 }
@@ -40,20 +40,20 @@ ConnectorSsmCommandConfig& ConnectorSsmCommandConfig::operator=(JsonView jsonVal
 JsonValue ConnectorSsmCommandConfig::Jsonize() const {
   JsonValue payload;
 
-  if (m_cloudWatchLogGroupNameHasBeenSet) {
-    payload.WithString("cloudWatchLogGroupName", m_cloudWatchLogGroupName);
-  }
-
-  if (m_cloudWatchOutputEnabledHasBeenSet) {
-    payload.WithBool("cloudWatchOutputEnabled", m_cloudWatchOutputEnabled);
+  if (m_s3OutputEnabledHasBeenSet) {
+    payload.WithBool("s3OutputEnabled", m_s3OutputEnabled);
   }
 
   if (m_outputS3BucketNameHasBeenSet) {
     payload.WithString("outputS3BucketName", m_outputS3BucketName);
   }
 
-  if (m_s3OutputEnabledHasBeenSet) {
-    payload.WithBool("s3OutputEnabled", m_s3OutputEnabled);
+  if (m_cloudWatchOutputEnabledHasBeenSet) {
+    payload.WithBool("cloudWatchOutputEnabled", m_cloudWatchOutputEnabled);
+  }
+
+  if (m_cloudWatchLogGroupNameHasBeenSet) {
+    payload.WithString("cloudWatchLogGroupName", m_cloudWatchLogGroupName);
   }
 
   return payload;

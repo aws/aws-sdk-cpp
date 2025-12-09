@@ -35,24 +35,6 @@ class ImportTaskError {
 
   ///@{
   /**
-   * <p>Import task error data.</p>
-   */
-  inline const ImportErrorData& GetErrorData() const { return m_errorData; }
-  inline bool ErrorDataHasBeenSet() const { return m_errorDataHasBeenSet; }
-  template <typename ErrorDataT = ImportErrorData>
-  void SetErrorData(ErrorDataT&& value) {
-    m_errorDataHasBeenSet = true;
-    m_errorData = std::forward<ErrorDataT>(value);
-  }
-  template <typename ErrorDataT = ImportErrorData>
-  ImportTaskError& WithErrorData(ErrorDataT&& value) {
-    SetErrorData(std::forward<ErrorDataT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Import task error datetime.</p>
    */
   inline const Aws::String& GetErrorDateTime() const { return m_errorDateTime; }
@@ -84,15 +66,33 @@ class ImportTaskError {
     return *this;
   }
   ///@}
- private:
-  ImportErrorData m_errorData;
 
+  ///@{
+  /**
+   * <p>Import task error data.</p>
+   */
+  inline const ImportErrorData& GetErrorData() const { return m_errorData; }
+  inline bool ErrorDataHasBeenSet() const { return m_errorDataHasBeenSet; }
+  template <typename ErrorDataT = ImportErrorData>
+  void SetErrorData(ErrorDataT&& value) {
+    m_errorDataHasBeenSet = true;
+    m_errorData = std::forward<ErrorDataT>(value);
+  }
+  template <typename ErrorDataT = ImportErrorData>
+  ImportTaskError& WithErrorData(ErrorDataT&& value) {
+    SetErrorData(std::forward<ErrorDataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_errorDateTime;
 
   ImportErrorType m_errorType{ImportErrorType::NOT_SET};
-  bool m_errorDataHasBeenSet = false;
+
+  ImportErrorData m_errorData;
   bool m_errorDateTimeHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
+  bool m_errorDataHasBeenSet = false;
 };
 
 }  // namespace Model

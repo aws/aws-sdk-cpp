@@ -19,65 +19,25 @@ namespace Model {
 LaunchConfigurationTemplate::LaunchConfigurationTemplate(JsonView jsonValue) { *this = jsonValue; }
 
 LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("arn")) {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("associatePublicIpAddress")) {
-    m_associatePublicIpAddress = jsonValue.GetBool("associatePublicIpAddress");
-    m_associatePublicIpAddressHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("bootMode")) {
-    m_bootMode = BootModeMapper::GetBootModeForName(jsonValue.GetString("bootMode"));
-    m_bootModeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("copyPrivateIp")) {
-    m_copyPrivateIp = jsonValue.GetBool("copyPrivateIp");
-    m_copyPrivateIpHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("copyTags")) {
-    m_copyTags = jsonValue.GetBool("copyTags");
-    m_copyTagsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ec2LaunchTemplateID")) {
-    m_ec2LaunchTemplateID = jsonValue.GetString("ec2LaunchTemplateID");
-    m_ec2LaunchTemplateIDHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("enableMapAutoTagging")) {
-    m_enableMapAutoTagging = jsonValue.GetBool("enableMapAutoTagging");
-    m_enableMapAutoTaggingHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("largeVolumeConf")) {
-    m_largeVolumeConf = jsonValue.GetObject("largeVolumeConf");
-    m_largeVolumeConfHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("launchConfigurationTemplateID")) {
     m_launchConfigurationTemplateID = jsonValue.GetString("launchConfigurationTemplateID");
     m_launchConfigurationTemplateIDHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("launchDisposition")) {
-    m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
-    m_launchDispositionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("licensing")) {
-    m_licensing = jsonValue.GetObject("licensing");
-    m_licensingHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("mapAutoTaggingMpeID")) {
-    m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
-    m_mapAutoTaggingMpeIDHasBeenSet = true;
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("postLaunchActions")) {
     m_postLaunchActions = jsonValue.GetObject("postLaunchActions");
     m_postLaunchActionsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("smallVolumeConf")) {
-    m_smallVolumeConf = jsonValue.GetObject("smallVolumeConf");
-    m_smallVolumeConfHasBeenSet = true;
+  if (jsonValue.ValueExists("enableMapAutoTagging")) {
+    m_enableMapAutoTagging = jsonValue.GetBool("enableMapAutoTagging");
+    m_enableMapAutoTaggingHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("smallVolumeMaxSize")) {
-    m_smallVolumeMaxSize = jsonValue.GetInt64("smallVolumeMaxSize");
-    m_smallVolumeMaxSizeHasBeenSet = true;
+  if (jsonValue.ValueExists("mapAutoTaggingMpeID")) {
+    m_mapAutoTaggingMpeID = jsonValue.GetString("mapAutoTaggingMpeID");
+    m_mapAutoTaggingMpeIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -86,10 +46,58 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator=(JsonView jso
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ec2LaunchTemplateID")) {
+    m_ec2LaunchTemplateID = jsonValue.GetString("ec2LaunchTemplateID");
+    m_ec2LaunchTemplateIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchDisposition")) {
+    m_launchDisposition = LaunchDispositionMapper::GetLaunchDispositionForName(jsonValue.GetString("launchDisposition"));
+    m_launchDispositionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("targetInstanceTypeRightSizingMethod")) {
     m_targetInstanceTypeRightSizingMethod = TargetInstanceTypeRightSizingMethodMapper::GetTargetInstanceTypeRightSizingMethodForName(
         jsonValue.GetString("targetInstanceTypeRightSizingMethod"));
     m_targetInstanceTypeRightSizingMethodHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("copyPrivateIp")) {
+    m_copyPrivateIp = jsonValue.GetBool("copyPrivateIp");
+    m_copyPrivateIpHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("associatePublicIpAddress")) {
+    m_associatePublicIpAddress = jsonValue.GetBool("associatePublicIpAddress");
+    m_associatePublicIpAddressHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("copyTags")) {
+    m_copyTags = jsonValue.GetBool("copyTags");
+    m_copyTagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("licensing")) {
+    m_licensing = jsonValue.GetObject("licensing");
+    m_licensingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bootMode")) {
+    m_bootMode = BootModeMapper::GetBootModeForName(jsonValue.GetString("bootMode"));
+    m_bootModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("smallVolumeMaxSize")) {
+    m_smallVolumeMaxSize = jsonValue.GetInt64("smallVolumeMaxSize");
+    m_smallVolumeMaxSizeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("smallVolumeConf")) {
+    m_smallVolumeConf = jsonValue.GetObject("smallVolumeConf");
+    m_smallVolumeConfHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("largeVolumeConf")) {
+    m_largeVolumeConf = jsonValue.GetObject("largeVolumeConf");
+    m_largeVolumeConfHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enableParametersEncryption")) {
+    m_enableParametersEncryption = jsonValue.GetBool("enableParametersEncryption");
+    m_enableParametersEncryptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parametersEncryptionKey")) {
+    m_parametersEncryptionKey = jsonValue.GetString("parametersEncryptionKey");
+    m_parametersEncryptionKeyHasBeenSet = true;
   }
   return *this;
 }
@@ -97,64 +105,24 @@ LaunchConfigurationTemplate& LaunchConfigurationTemplate::operator=(JsonView jso
 JsonValue LaunchConfigurationTemplate::Jsonize() const {
   JsonValue payload;
 
-  if (m_arnHasBeenSet) {
-    payload.WithString("arn", m_arn);
-  }
-
-  if (m_associatePublicIpAddressHasBeenSet) {
-    payload.WithBool("associatePublicIpAddress", m_associatePublicIpAddress);
-  }
-
-  if (m_bootModeHasBeenSet) {
-    payload.WithString("bootMode", BootModeMapper::GetNameForBootMode(m_bootMode));
-  }
-
-  if (m_copyPrivateIpHasBeenSet) {
-    payload.WithBool("copyPrivateIp", m_copyPrivateIp);
-  }
-
-  if (m_copyTagsHasBeenSet) {
-    payload.WithBool("copyTags", m_copyTags);
-  }
-
-  if (m_ec2LaunchTemplateIDHasBeenSet) {
-    payload.WithString("ec2LaunchTemplateID", m_ec2LaunchTemplateID);
-  }
-
-  if (m_enableMapAutoTaggingHasBeenSet) {
-    payload.WithBool("enableMapAutoTagging", m_enableMapAutoTagging);
-  }
-
-  if (m_largeVolumeConfHasBeenSet) {
-    payload.WithObject("largeVolumeConf", m_largeVolumeConf.Jsonize());
-  }
-
   if (m_launchConfigurationTemplateIDHasBeenSet) {
     payload.WithString("launchConfigurationTemplateID", m_launchConfigurationTemplateID);
   }
 
-  if (m_launchDispositionHasBeenSet) {
-    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
-  }
-
-  if (m_licensingHasBeenSet) {
-    payload.WithObject("licensing", m_licensing.Jsonize());
-  }
-
-  if (m_mapAutoTaggingMpeIDHasBeenSet) {
-    payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
   }
 
   if (m_postLaunchActionsHasBeenSet) {
     payload.WithObject("postLaunchActions", m_postLaunchActions.Jsonize());
   }
 
-  if (m_smallVolumeConfHasBeenSet) {
-    payload.WithObject("smallVolumeConf", m_smallVolumeConf.Jsonize());
+  if (m_enableMapAutoTaggingHasBeenSet) {
+    payload.WithBool("enableMapAutoTagging", m_enableMapAutoTagging);
   }
 
-  if (m_smallVolumeMaxSizeHasBeenSet) {
-    payload.WithInt64("smallVolumeMaxSize", m_smallVolumeMaxSize);
+  if (m_mapAutoTaggingMpeIDHasBeenSet) {
+    payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
   }
 
   if (m_tagsHasBeenSet) {
@@ -165,10 +133,58 @@ JsonValue LaunchConfigurationTemplate::Jsonize() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_ec2LaunchTemplateIDHasBeenSet) {
+    payload.WithString("ec2LaunchTemplateID", m_ec2LaunchTemplateID);
+  }
+
+  if (m_launchDispositionHasBeenSet) {
+    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
+  }
+
   if (m_targetInstanceTypeRightSizingMethodHasBeenSet) {
     payload.WithString(
         "targetInstanceTypeRightSizingMethod",
         TargetInstanceTypeRightSizingMethodMapper::GetNameForTargetInstanceTypeRightSizingMethod(m_targetInstanceTypeRightSizingMethod));
+  }
+
+  if (m_copyPrivateIpHasBeenSet) {
+    payload.WithBool("copyPrivateIp", m_copyPrivateIp);
+  }
+
+  if (m_associatePublicIpAddressHasBeenSet) {
+    payload.WithBool("associatePublicIpAddress", m_associatePublicIpAddress);
+  }
+
+  if (m_copyTagsHasBeenSet) {
+    payload.WithBool("copyTags", m_copyTags);
+  }
+
+  if (m_licensingHasBeenSet) {
+    payload.WithObject("licensing", m_licensing.Jsonize());
+  }
+
+  if (m_bootModeHasBeenSet) {
+    payload.WithString("bootMode", BootModeMapper::GetNameForBootMode(m_bootMode));
+  }
+
+  if (m_smallVolumeMaxSizeHasBeenSet) {
+    payload.WithInt64("smallVolumeMaxSize", m_smallVolumeMaxSize);
+  }
+
+  if (m_smallVolumeConfHasBeenSet) {
+    payload.WithObject("smallVolumeConf", m_smallVolumeConf.Jsonize());
+  }
+
+  if (m_largeVolumeConfHasBeenSet) {
+    payload.WithObject("largeVolumeConf", m_largeVolumeConf.Jsonize());
+  }
+
+  if (m_enableParametersEncryptionHasBeenSet) {
+    payload.WithBool("enableParametersEncryption", m_enableParametersEncryption);
+  }
+
+  if (m_parametersEncryptionKeyHasBeenSet) {
+    payload.WithString("parametersEncryptionKey", m_parametersEncryptionKey);
   }
 
   return payload;

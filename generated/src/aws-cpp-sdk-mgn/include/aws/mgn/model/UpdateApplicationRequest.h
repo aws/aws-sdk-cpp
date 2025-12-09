@@ -30,24 +30,6 @@ class UpdateApplicationRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Account ID.</p>
-   */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
-  }
-  template <typename AccountIDT = Aws::String>
-  UpdateApplicationRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Application ID.</p>
    */
   inline const Aws::String& GetApplicationID() const { return m_applicationID; }
@@ -60,6 +42,24 @@ class UpdateApplicationRequest : public MgnRequest {
   template <typename ApplicationIDT = Aws::String>
   UpdateApplicationRequest& WithApplicationID(ApplicationIDT&& value) {
     SetApplicationID(std::forward<ApplicationIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Application name.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateApplicationRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -84,33 +84,33 @@ class UpdateApplicationRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Application name.</p>
+   * <p>Account ID.</p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
   }
-  template <typename NameT = Aws::String>
-  UpdateApplicationRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename AccountIDT = Aws::String>
+  UpdateApplicationRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_accountID;
-
   Aws::String m_applicationID;
+
+  Aws::String m_name;
 
   Aws::String m_description;
 
-  Aws::String m_name;
-  bool m_accountIDHasBeenSet = false;
+  Aws::String m_accountID;
   bool m_applicationIDHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

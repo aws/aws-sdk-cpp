@@ -56,7 +56,8 @@ enum class CloudWatchRegion {
   ap_east_2,
   eu_isoe_west_1,
   ap_southeast_6,
-  us_isob_west_1
+  us_isob_west_1,
+  eusc_de_east_1
 };
 
 namespace CloudWatchRegionMapper {

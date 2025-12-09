@@ -35,24 +35,6 @@ class LifeCycleLastTest {
 
   ///@{
   /**
-   * <p>Lifecycle last Test finalized.</p>
-   */
-  inline const LifeCycleLastTestFinalized& GetFinalized() const { return m_finalized; }
-  inline bool FinalizedHasBeenSet() const { return m_finalizedHasBeenSet; }
-  template <typename FinalizedT = LifeCycleLastTestFinalized>
-  void SetFinalized(FinalizedT&& value) {
-    m_finalizedHasBeenSet = true;
-    m_finalized = std::forward<FinalizedT>(value);
-  }
-  template <typename FinalizedT = LifeCycleLastTestFinalized>
-  LifeCycleLastTest& WithFinalized(FinalizedT&& value) {
-    SetFinalized(std::forward<FinalizedT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Lifecycle last Test initiated.</p>
    */
   inline const LifeCycleLastTestInitiated& GetInitiated() const { return m_initiated; }
@@ -86,15 +68,33 @@ class LifeCycleLastTest {
     return *this;
   }
   ///@}
- private:
-  LifeCycleLastTestFinalized m_finalized;
 
+  ///@{
+  /**
+   * <p>Lifecycle last Test finalized.</p>
+   */
+  inline const LifeCycleLastTestFinalized& GetFinalized() const { return m_finalized; }
+  inline bool FinalizedHasBeenSet() const { return m_finalizedHasBeenSet; }
+  template <typename FinalizedT = LifeCycleLastTestFinalized>
+  void SetFinalized(FinalizedT&& value) {
+    m_finalizedHasBeenSet = true;
+    m_finalized = std::forward<FinalizedT>(value);
+  }
+  template <typename FinalizedT = LifeCycleLastTestFinalized>
+  LifeCycleLastTest& WithFinalized(FinalizedT&& value) {
+    SetFinalized(std::forward<FinalizedT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   LifeCycleLastTestInitiated m_initiated;
 
   LifeCycleLastTestReverted m_reverted;
-  bool m_finalizedHasBeenSet = false;
+
+  LifeCycleLastTestFinalized m_finalized;
   bool m_initiatedHasBeenSet = false;
   bool m_revertedHasBeenSet = false;
+  bool m_finalizedHasBeenSet = false;
 };
 
 }  // namespace Model

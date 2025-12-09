@@ -21,10 +21,6 @@ UpdateConnectorResult::UpdateConnectorResult(const Aws::AmazonWebServiceResult<J
 
 UpdateConnectorResult& UpdateConnectorResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("arn")) {
-    m_arn = jsonValue.GetString("arn");
-    m_arnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("connectorID")) {
     m_connectorID = jsonValue.GetString("connectorID");
     m_connectorIDHasBeenSet = true;
@@ -33,13 +29,13 @@ UpdateConnectorResult& UpdateConnectorResult::operator=(const Aws::AmazonWebServ
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ssmCommandConfig")) {
-    m_ssmCommandConfig = jsonValue.GetObject("ssmCommandConfig");
-    m_ssmCommandConfigHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("ssmInstanceID")) {
     m_ssmInstanceID = jsonValue.GetString("ssmInstanceID");
     m_ssmInstanceIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -47,6 +43,10 @@ UpdateConnectorResult& UpdateConnectorResult::operator=(const Aws::AmazonWebServ
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ssmCommandConfig")) {
+    m_ssmCommandConfig = jsonValue.GetObject("ssmCommandConfig");
+    m_ssmCommandConfigHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

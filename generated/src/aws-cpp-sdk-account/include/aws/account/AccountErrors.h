@@ -46,6 +46,7 @@ enum class AccountErrors {
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
+  RESOURCE_UNAVAILABLE,
   TOO_MANY_REQUESTS
 };
 

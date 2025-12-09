@@ -18,6 +18,14 @@ namespace Model {
 JobPostLaunchActionsLaunchStatus::JobPostLaunchActionsLaunchStatus(JsonView jsonValue) { *this = jsonValue; }
 
 JobPostLaunchActionsLaunchStatus& JobPostLaunchActionsLaunchStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ssmDocument")) {
+    m_ssmDocument = jsonValue.GetObject("ssmDocument");
+    m_ssmDocumentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ssmDocumentType")) {
+    m_ssmDocumentType = SsmDocumentTypeMapper::GetSsmDocumentTypeForName(jsonValue.GetString("ssmDocumentType"));
+    m_ssmDocumentTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("executionID")) {
     m_executionID = jsonValue.GetString("executionID");
     m_executionIDHasBeenSet = true;
@@ -31,19 +39,19 @@ JobPostLaunchActionsLaunchStatus& JobPostLaunchActionsLaunchStatus::operator=(Js
     m_failureReason = jsonValue.GetString("failureReason");
     m_failureReasonHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ssmDocument")) {
-    m_ssmDocument = jsonValue.GetObject("ssmDocument");
-    m_ssmDocumentHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ssmDocumentType")) {
-    m_ssmDocumentType = SsmDocumentTypeMapper::GetSsmDocumentTypeForName(jsonValue.GetString("ssmDocumentType"));
-    m_ssmDocumentTypeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue JobPostLaunchActionsLaunchStatus::Jsonize() const {
   JsonValue payload;
+
+  if (m_ssmDocumentHasBeenSet) {
+    payload.WithObject("ssmDocument", m_ssmDocument.Jsonize());
+  }
+
+  if (m_ssmDocumentTypeHasBeenSet) {
+    payload.WithString("ssmDocumentType", SsmDocumentTypeMapper::GetNameForSsmDocumentType(m_ssmDocumentType));
+  }
 
   if (m_executionIDHasBeenSet) {
     payload.WithString("executionID", m_executionID);
@@ -56,14 +64,6 @@ JsonValue JobPostLaunchActionsLaunchStatus::Jsonize() const {
 
   if (m_failureReasonHasBeenSet) {
     payload.WithString("failureReason", m_failureReason);
-  }
-
-  if (m_ssmDocumentHasBeenSet) {
-    payload.WithObject("ssmDocument", m_ssmDocument.Jsonize());
-  }
-
-  if (m_ssmDocumentTypeHasBeenSet) {
-    payload.WithString("ssmDocumentType", SsmDocumentTypeMapper::GetNameForSsmDocumentType(m_ssmDocumentType));
   }
 
   return payload;

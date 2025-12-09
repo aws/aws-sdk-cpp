@@ -8,6 +8,7 @@
 #include <aws/account/model/ConflictException.h>
 #include <aws/account/model/InternalServerException.h>
 #include <aws/account/model/ResourceNotFoundException.h>
+#include <aws/account/model/ResourceUnavailableException.h>
 #include <aws/account/model/TooManyRequestsException.h>
 #include <aws/account/model/ValidationException.h>
 #include <aws/core/client/AWSError.h>
@@ -56,11 +57,18 @@ AWS_ACCOUNT_API TooManyRequestsException AccountError::GetModeledError() {
   return TooManyRequestsException(this->GetJsonPayload().View());
 }
 
+template <>
+AWS_ACCOUNT_API ResourceUnavailableException AccountError::GetModeledError() {
+  assert(this->GetErrorType() == AccountErrors::RESOURCE_UNAVAILABLE);
+  return ResourceUnavailableException(this->GetJsonPayload().View());
+}
+
 namespace AccountErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -71,6 +79,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AccountErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AccountErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE_THROTTLING);
+  } else if (hashCode == RESOURCE_UNAVAILABLE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AccountErrors::RESOURCE_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

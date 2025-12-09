@@ -22,12 +22,13 @@ SsmDocument& SsmDocument::operator=(JsonView jsonValue) {
     m_actionName = jsonValue.GetString("actionName");
     m_actionNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("externalParameters")) {
-    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
-    for (auto& externalParametersItem : externalParametersJsonMap) {
-      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
-    }
-    m_externalParametersHasBeenSet = true;
+  if (jsonValue.ValueExists("ssmDocumentName")) {
+    m_ssmDocumentName = jsonValue.GetString("ssmDocumentName");
+    m_ssmDocumentNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("timeoutSeconds")) {
+    m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
+    m_timeoutSecondsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("mustSucceedForCutover")) {
     m_mustSucceedForCutover = jsonValue.GetBool("mustSucceedForCutover");
@@ -47,13 +48,12 @@ SsmDocument& SsmDocument::operator=(JsonView jsonValue) {
     }
     m_parametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ssmDocumentName")) {
-    m_ssmDocumentName = jsonValue.GetString("ssmDocumentName");
-    m_ssmDocumentNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("timeoutSeconds")) {
-    m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
-    m_timeoutSecondsHasBeenSet = true;
+  if (jsonValue.ValueExists("externalParameters")) {
+    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
+    for (auto& externalParametersItem : externalParametersJsonMap) {
+      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
+    }
+    m_externalParametersHasBeenSet = true;
   }
   return *this;
 }
@@ -65,12 +65,12 @@ JsonValue SsmDocument::Jsonize() const {
     payload.WithString("actionName", m_actionName);
   }
 
-  if (m_externalParametersHasBeenSet) {
-    JsonValue externalParametersJsonMap;
-    for (auto& externalParametersItem : m_externalParameters) {
-      externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
-    }
-    payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
+  if (m_ssmDocumentNameHasBeenSet) {
+    payload.WithString("ssmDocumentName", m_ssmDocumentName);
+  }
+
+  if (m_timeoutSecondsHasBeenSet) {
+    payload.WithInteger("timeoutSeconds", m_timeoutSeconds);
   }
 
   if (m_mustSucceedForCutoverHasBeenSet) {
@@ -91,12 +91,12 @@ JsonValue SsmDocument::Jsonize() const {
     payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
-  if (m_ssmDocumentNameHasBeenSet) {
-    payload.WithString("ssmDocumentName", m_ssmDocumentName);
-  }
-
-  if (m_timeoutSecondsHasBeenSet) {
-    payload.WithInteger("timeoutSeconds", m_timeoutSeconds);
+  if (m_externalParametersHasBeenSet) {
+    JsonValue externalParametersJsonMap;
+    for (auto& externalParametersItem : m_externalParameters) {
+      externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
+    }
+    payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
   }
 
   return payload;

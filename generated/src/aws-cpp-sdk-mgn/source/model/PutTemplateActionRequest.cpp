@@ -15,56 +15,40 @@ using namespace Aws::Utils;
 Aws::String PutTemplateActionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_actionIDHasBeenSet) {
-    payload.WithString("actionID", m_actionID);
+  if (m_launchConfigurationTemplateIDHasBeenSet) {
+    payload.WithString("launchConfigurationTemplateID", m_launchConfigurationTemplateID);
   }
 
   if (m_actionNameHasBeenSet) {
     payload.WithString("actionName", m_actionName);
   }
 
-  if (m_activeHasBeenSet) {
-    payload.WithBool("active", m_active);
-  }
-
-  if (m_categoryHasBeenSet) {
-    payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_documentIdentifierHasBeenSet) {
     payload.WithString("documentIdentifier", m_documentIdentifier);
+  }
+
+  if (m_orderHasBeenSet) {
+    payload.WithInteger("order", m_order);
+  }
+
+  if (m_actionIDHasBeenSet) {
+    payload.WithString("actionID", m_actionID);
   }
 
   if (m_documentVersionHasBeenSet) {
     payload.WithString("documentVersion", m_documentVersion);
   }
 
-  if (m_externalParametersHasBeenSet) {
-    JsonValue externalParametersJsonMap;
-    for (auto& externalParametersItem : m_externalParameters) {
-      externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
-    }
-    payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
+  if (m_activeHasBeenSet) {
+    payload.WithBool("active", m_active);
   }
 
-  if (m_launchConfigurationTemplateIDHasBeenSet) {
-    payload.WithString("launchConfigurationTemplateID", m_launchConfigurationTemplateID);
+  if (m_timeoutSecondsHasBeenSet) {
+    payload.WithInteger("timeoutSeconds", m_timeoutSeconds);
   }
 
   if (m_mustSucceedForCutoverHasBeenSet) {
     payload.WithBool("mustSucceedForCutover", m_mustSucceedForCutover);
-  }
-
-  if (m_operatingSystemHasBeenSet) {
-    payload.WithString("operatingSystem", m_operatingSystem);
-  }
-
-  if (m_orderHasBeenSet) {
-    payload.WithInteger("order", m_order);
   }
 
   if (m_parametersHasBeenSet) {
@@ -81,8 +65,24 @@ Aws::String PutTemplateActionRequest::SerializePayload() const {
     payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
-  if (m_timeoutSecondsHasBeenSet) {
-    payload.WithInteger("timeoutSeconds", m_timeoutSeconds);
+  if (m_operatingSystemHasBeenSet) {
+    payload.WithString("operatingSystem", m_operatingSystem);
+  }
+
+  if (m_externalParametersHasBeenSet) {
+    JsonValue externalParametersJsonMap;
+    for (auto& externalParametersItem : m_externalParameters) {
+      externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
+    }
+    payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
   }
 
   return payload.View().WriteReadable();

@@ -27,40 +27,29 @@ SourceServerActionDocument& SourceServerActionDocument::operator=(JsonView jsonV
     m_actionName = jsonValue.GetString("actionName");
     m_actionNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("active")) {
-    m_active = jsonValue.GetBool("active");
-    m_activeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("category")) {
-    m_category = ActionCategoryMapper::GetActionCategoryForName(jsonValue.GetString("category"));
-    m_categoryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("documentIdentifier")) {
     m_documentIdentifier = jsonValue.GetString("documentIdentifier");
     m_documentIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("order")) {
+    m_order = jsonValue.GetInteger("order");
+    m_orderHasBeenSet = true;
   }
   if (jsonValue.ValueExists("documentVersion")) {
     m_documentVersion = jsonValue.GetString("documentVersion");
     m_documentVersionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("externalParameters")) {
-    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
-    for (auto& externalParametersItem : externalParametersJsonMap) {
-      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
-    }
-    m_externalParametersHasBeenSet = true;
+  if (jsonValue.ValueExists("active")) {
+    m_active = jsonValue.GetBool("active");
+    m_activeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("timeoutSeconds")) {
+    m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
+    m_timeoutSecondsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("mustSucceedForCutover")) {
     m_mustSucceedForCutover = jsonValue.GetBool("mustSucceedForCutover");
     m_mustSucceedForCutoverHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("order")) {
-    m_order = jsonValue.GetInteger("order");
-    m_orderHasBeenSet = true;
   }
   if (jsonValue.ValueExists("parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -76,9 +65,20 @@ SourceServerActionDocument& SourceServerActionDocument::operator=(JsonView jsonV
     }
     m_parametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("timeoutSeconds")) {
-    m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
-    m_timeoutSecondsHasBeenSet = true;
+  if (jsonValue.ValueExists("externalParameters")) {
+    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
+    for (auto& externalParametersItem : externalParametersJsonMap) {
+      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
+    }
+    m_externalParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("category")) {
+    m_category = ActionCategoryMapper::GetActionCategoryForName(jsonValue.GetString("category"));
+    m_categoryHasBeenSet = true;
   }
   return *this;
 }
@@ -94,40 +94,28 @@ JsonValue SourceServerActionDocument::Jsonize() const {
     payload.WithString("actionName", m_actionName);
   }
 
-  if (m_activeHasBeenSet) {
-    payload.WithBool("active", m_active);
-  }
-
-  if (m_categoryHasBeenSet) {
-    payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
-  }
-
   if (m_documentIdentifierHasBeenSet) {
     payload.WithString("documentIdentifier", m_documentIdentifier);
+  }
+
+  if (m_orderHasBeenSet) {
+    payload.WithInteger("order", m_order);
   }
 
   if (m_documentVersionHasBeenSet) {
     payload.WithString("documentVersion", m_documentVersion);
   }
 
-  if (m_externalParametersHasBeenSet) {
-    JsonValue externalParametersJsonMap;
-    for (auto& externalParametersItem : m_externalParameters) {
-      externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
-    }
-    payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
+  if (m_activeHasBeenSet) {
+    payload.WithBool("active", m_active);
+  }
+
+  if (m_timeoutSecondsHasBeenSet) {
+    payload.WithInteger("timeoutSeconds", m_timeoutSeconds);
   }
 
   if (m_mustSucceedForCutoverHasBeenSet) {
     payload.WithBool("mustSucceedForCutover", m_mustSucceedForCutover);
-  }
-
-  if (m_orderHasBeenSet) {
-    payload.WithInteger("order", m_order);
   }
 
   if (m_parametersHasBeenSet) {
@@ -144,8 +132,20 @@ JsonValue SourceServerActionDocument::Jsonize() const {
     payload.WithObject("parameters", std::move(parametersJsonMap));
   }
 
-  if (m_timeoutSecondsHasBeenSet) {
-    payload.WithInteger("timeoutSeconds", m_timeoutSeconds);
+  if (m_externalParametersHasBeenSet) {
+    JsonValue externalParametersJsonMap;
+    for (auto& externalParametersItem : m_externalParameters) {
+      externalParametersJsonMap.WithObject(externalParametersItem.first, externalParametersItem.second.Jsonize());
+    }
+    payload.WithObject("externalParameters", std::move(externalParametersJsonMap));
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_categoryHasBeenSet) {
+    payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
   }
 
   return payload;

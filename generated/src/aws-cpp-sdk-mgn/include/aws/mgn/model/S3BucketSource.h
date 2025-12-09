@@ -51,24 +51,6 @@ class S3BucketSource {
 
   ///@{
   /**
-   * <p>S3 bucket source s3 bucket owner.</p>
-   */
-  inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
-  inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
-  template <typename S3BucketOwnerT = Aws::String>
-  void SetS3BucketOwner(S3BucketOwnerT&& value) {
-    m_s3BucketOwnerHasBeenSet = true;
-    m_s3BucketOwner = std::forward<S3BucketOwnerT>(value);
-  }
-  template <typename S3BucketOwnerT = Aws::String>
-  S3BucketSource& WithS3BucketOwner(S3BucketOwnerT&& value) {
-    SetS3BucketOwner(std::forward<S3BucketOwnerT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>S3 bucket source s3 key.</p>
    */
   inline const Aws::String& GetS3Key() const { return m_s3Key; }
@@ -84,15 +66,33 @@ class S3BucketSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>S3 bucket source s3 bucket owner.</p>
+   */
+  inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
+  inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
+  template <typename S3BucketOwnerT = Aws::String>
+  void SetS3BucketOwner(S3BucketOwnerT&& value) {
+    m_s3BucketOwnerHasBeenSet = true;
+    m_s3BucketOwner = std::forward<S3BucketOwnerT>(value);
+  }
+  template <typename S3BucketOwnerT = Aws::String>
+  S3BucketSource& WithS3BucketOwner(S3BucketOwnerT&& value) {
+    SetS3BucketOwner(std::forward<S3BucketOwnerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_s3Bucket;
 
-  Aws::String m_s3BucketOwner;
-
   Aws::String m_s3Key;
+
+  Aws::String m_s3BucketOwner;
   bool m_s3BucketHasBeenSet = false;
-  bool m_s3BucketOwnerHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

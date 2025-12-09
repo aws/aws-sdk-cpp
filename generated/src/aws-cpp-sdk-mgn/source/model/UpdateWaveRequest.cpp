@@ -15,20 +15,20 @@ using namespace Aws::Utils;
 Aws::String UpdateWaveRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
+  if (m_waveIDHasBeenSet) {
+    payload.WithString("waveID", m_waveID);
   }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
-  if (m_waveIDHasBeenSet) {
-    payload.WithString("waveID", m_waveID);
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

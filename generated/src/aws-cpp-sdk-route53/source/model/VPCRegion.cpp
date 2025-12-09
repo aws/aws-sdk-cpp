@@ -60,6 +60,7 @@ static const int ap_east_2_HASH = HashingUtils::HashString("ap-east-2");
 static const int eu_isoe_west_1_HASH = HashingUtils::HashString("eu-isoe-west-1");
 static const int ap_southeast_6_HASH = HashingUtils::HashString("ap-southeast-6");
 static const int us_isob_west_1_HASH = HashingUtils::HashString("us-isob-west-1");
+static const int eusc_de_east_1_HASH = HashingUtils::HashString("eusc-de-east-1");
 
 VPCRegion GetVPCRegionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -153,6 +154,8 @@ VPCRegion GetVPCRegionForName(const Aws::String& name) {
     return VPCRegion::ap_southeast_6;
   } else if (hashCode == us_isob_west_1_HASH) {
     return VPCRegion::us_isob_west_1;
+  } else if (hashCode == eusc_de_east_1_HASH) {
+    return VPCRegion::eusc_de_east_1;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -257,6 +260,8 @@ Aws::String GetNameForVPCRegion(VPCRegion enumValue) {
       return "ap-southeast-6";
     case VPCRegion::us_isob_west_1:
       return "us-isob-west-1";
+    case VPCRegion::eusc_de_east_1:
+      return "eusc-de-east-1";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

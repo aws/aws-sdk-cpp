@@ -19,13 +19,17 @@ namespace Model {
 Wave::Wave(JsonView jsonValue) { *this = jsonValue; }
 
 Wave& Wave::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("waveID")) {
+    m_waveID = jsonValue.GetString("waveID");
+    m_waveIDHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("creationDateTime")) {
-    m_creationDateTime = jsonValue.GetString("creationDateTime");
-    m_creationDateTimeHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
@@ -35,13 +39,17 @@ Wave& Wave::operator=(JsonView jsonValue) {
     m_isArchived = jsonValue.GetBool("isArchived");
     m_isArchivedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("waveAggregatedStatus")) {
+    m_waveAggregatedStatus = jsonValue.GetObject("waveAggregatedStatus");
+    m_waveAggregatedStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("creationDateTime")) {
+    m_creationDateTime = jsonValue.GetString("creationDateTime");
+    m_creationDateTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastModifiedDateTime")) {
     m_lastModifiedDateTime = jsonValue.GetString("lastModifiedDateTime");
     m_lastModifiedDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -50,26 +58,22 @@ Wave& Wave::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("waveAggregatedStatus")) {
-    m_waveAggregatedStatus = jsonValue.GetObject("waveAggregatedStatus");
-    m_waveAggregatedStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("waveID")) {
-    m_waveID = jsonValue.GetString("waveID");
-    m_waveIDHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue Wave::Jsonize() const {
   JsonValue payload;
 
+  if (m_waveIDHasBeenSet) {
+    payload.WithString("waveID", m_waveID);
+  }
+
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
   }
 
-  if (m_creationDateTimeHasBeenSet) {
-    payload.WithString("creationDateTime", m_creationDateTime);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
@@ -80,12 +84,16 @@ JsonValue Wave::Jsonize() const {
     payload.WithBool("isArchived", m_isArchived);
   }
 
-  if (m_lastModifiedDateTimeHasBeenSet) {
-    payload.WithString("lastModifiedDateTime", m_lastModifiedDateTime);
+  if (m_waveAggregatedStatusHasBeenSet) {
+    payload.WithObject("waveAggregatedStatus", m_waveAggregatedStatus.Jsonize());
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithString("creationDateTime", m_creationDateTime);
+  }
+
+  if (m_lastModifiedDateTimeHasBeenSet) {
+    payload.WithString("lastModifiedDateTime", m_lastModifiedDateTime);
   }
 
   if (m_tagsHasBeenSet) {
@@ -94,14 +102,6 @@ JsonValue Wave::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
-  }
-
-  if (m_waveAggregatedStatusHasBeenSet) {
-    payload.WithObject("waveAggregatedStatus", m_waveAggregatedStatus.Jsonize());
-  }
-
-  if (m_waveIDHasBeenSet) {
-    payload.WithString("waveID", m_waveID);
   }
 
   return payload;

@@ -33,24 +33,6 @@ class SourceServerConnectorAction {
 
   ///@{
   /**
-   * <p>Source Server connector action connector arn.</p>
-   */
-  inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
-  inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-  template <typename ConnectorArnT = Aws::String>
-  void SetConnectorArn(ConnectorArnT&& value) {
-    m_connectorArnHasBeenSet = true;
-    m_connectorArn = std::forward<ConnectorArnT>(value);
-  }
-  template <typename ConnectorArnT = Aws::String>
-  SourceServerConnectorAction& WithConnectorArn(ConnectorArnT&& value) {
-    SetConnectorArn(std::forward<ConnectorArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Source Server connector action credentials secret arn.</p>
    */
   inline const Aws::String& GetCredentialsSecretArn() const { return m_credentialsSecretArn; }
@@ -66,12 +48,30 @@ class SourceServerConnectorAction {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_connectorArn;
 
+  ///@{
+  /**
+   * <p>Source Server connector action connector arn.</p>
+   */
+  inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
+  inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
+  template <typename ConnectorArnT = Aws::String>
+  void SetConnectorArn(ConnectorArnT&& value) {
+    m_connectorArnHasBeenSet = true;
+    m_connectorArn = std::forward<ConnectorArnT>(value);
+  }
+  template <typename ConnectorArnT = Aws::String>
+  SourceServerConnectorAction& WithConnectorArn(ConnectorArnT&& value) {
+    SetConnectorArn(std::forward<ConnectorArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_credentialsSecretArn;
-  bool m_connectorArnHasBeenSet = false;
+
+  Aws::String m_connectorArn;
   bool m_credentialsSecretArnHasBeenSet = false;
+  bool m_connectorArnHasBeenSet = false;
 };
 
 }  // namespace Model
