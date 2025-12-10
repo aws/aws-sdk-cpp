@@ -69,7 +69,7 @@ class AddProfilePermissionRequest : public SignerRequest {
    * <p>For cross-account signing. Grant a designated account permission to perform
    * one or more of the following actions. Each action is associated with a specific
    * API's operations. For more information about cross-account signing, see <a
-   * href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+   * href="http://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
    * cross-account signing with signing profiles</a> in the <i>AWS Signer Developer
    * Guide</i>.</p> <p>You can designate the following actions to an account.</p>
    * <ul> <li> <p> <code>signer:StartSigningJob</code>. This action isn't supported

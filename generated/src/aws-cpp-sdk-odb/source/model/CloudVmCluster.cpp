@@ -42,6 +42,10 @@ CloudVmCluster& CloudVmCluster::operator=(JsonView jsonValue) {
     m_cloudExadataInfrastructureId = jsonValue.GetString("cloudExadataInfrastructureId");
     m_cloudExadataInfrastructureIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudExadataInfrastructureArn")) {
+    m_cloudExadataInfrastructureArn = jsonValue.GetString("cloudExadataInfrastructureArn");
+    m_cloudExadataInfrastructureArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");
     m_clusterNameHasBeenSet = true;
@@ -182,6 +186,10 @@ CloudVmCluster& CloudVmCluster::operator=(JsonView jsonValue) {
     m_odbNetworkId = jsonValue.GetString("odbNetworkId");
     m_odbNetworkIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("odbNetworkArn")) {
+    m_odbNetworkArn = jsonValue.GetString("odbNetworkArn");
+    m_odbNetworkArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("percentProgress")) {
     m_percentProgress = jsonValue.GetDouble("percentProgress");
     m_percentProgressHasBeenSet = true;
@@ -225,6 +233,10 @@ JsonValue CloudVmCluster::Jsonize() const {
 
   if (m_cloudExadataInfrastructureIdHasBeenSet) {
     payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
+  }
+
+  if (m_cloudExadataInfrastructureArnHasBeenSet) {
+    payload.WithString("cloudExadataInfrastructureArn", m_cloudExadataInfrastructureArn);
   }
 
   if (m_clusterNameHasBeenSet) {
@@ -369,6 +381,10 @@ JsonValue CloudVmCluster::Jsonize() const {
 
   if (m_odbNetworkIdHasBeenSet) {
     payload.WithString("odbNetworkId", m_odbNetworkId);
+  }
+
+  if (m_odbNetworkArnHasBeenSet) {
+    payload.WithString("odbNetworkArn", m_odbNetworkArn);
   }
 
   if (m_percentProgressHasBeenSet) {

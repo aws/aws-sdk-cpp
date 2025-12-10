@@ -207,8 +207,8 @@ class UpdateOdbNetworkRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The STS policy document that defines permissions for token service usage
-   * within the ODB network.</p>
+   * <p>The Amazon Web Services Security Token Service (STS) policy document that
+   * defines permissions for token service usage within the ODB network.</p>
    */
   inline const Aws::String& GetStsPolicyDocument() const { return m_stsPolicyDocument; }
   inline bool StsPolicyDocumentHasBeenSet() const { return m_stsPolicyDocumentHasBeenSet; }
@@ -226,8 +226,8 @@ class UpdateOdbNetworkRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The KMS policy document that defines permissions for key usage within the ODB
-   * network.</p>
+   * <p>The Amazon Web Services Key Management Service (KMS) policy document that
+   * defines permissions for key usage within the ODB network.</p>
    */
   inline const Aws::String& GetKmsPolicyDocument() const { return m_kmsPolicyDocument; }
   inline bool KmsPolicyDocumentHasBeenSet() const { return m_kmsPolicyDocumentHasBeenSet; }

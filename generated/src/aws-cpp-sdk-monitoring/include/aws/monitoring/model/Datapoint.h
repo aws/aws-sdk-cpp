@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/StandardUnit.h>
 
@@ -15,9 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -31,11 +31,9 @@ namespace Model {
 class Datapoint {
  public:
   AWS_CLOUDWATCH_API Datapoint() = default;
-  AWS_CLOUDWATCH_API Datapoint(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API Datapoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API Datapoint(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API Datapoint& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

@@ -4,11 +4,10 @@
  */
 
 #pragma once
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatchServiceClientModel.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 
@@ -29,10 +28,10 @@ namespace CloudWatch {
  * system-wide visibility into resource utilization, application performance, and
  * operational health.</p>
  */
-class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSXMLClient,
+class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CloudWatchClient> {
  public:
-  typedef Aws::Client::AWSXMLClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 
@@ -86,11 +85,6 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSXMLClient,
 
   /* End of legacy constructors due deprecation */
   virtual ~CloudWatchClient();
-
-  /**
-   * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
-   */
-  Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
   /**
    * <p>Deletes the specified alarms. You can delete up to 100 alarms in one

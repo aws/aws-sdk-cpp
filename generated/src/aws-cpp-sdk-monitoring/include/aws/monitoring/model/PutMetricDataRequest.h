@@ -31,14 +31,12 @@ class PutMetricDataRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 #ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
   virtual Aws::Client::CompressionAlgorithm GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;
 #endif
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
-
- public:
   ///@{
   /**
    * <p>The namespace for the metric data. You can use ASCII characters for the

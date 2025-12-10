@@ -36,7 +36,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM service role.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+   * Management (IAM) service role.</p>
    */
   inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
   inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -54,7 +55,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>The current status of the IAM service role.</p>
+   * <p>The current status of the Amazon Web Services Identity and Access Management
+   * (IAM) service role.</p>
    */
   inline IamRoleStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -70,8 +72,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>Additional information about the current status of the IAM service role, if
-   * applicable.</p>
+   * <p>Additional information about the current status of the Amazon Web Services
+   * Identity and Access Management (IAM) service role, if applicable.</p>
    */
   inline const Aws::String& GetStatusReason() const { return m_statusReason; }
   inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
@@ -89,8 +91,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>The Amazon Web Services integration configuration settings for the IAM
-   * service role.</p>
+   * <p>The Amazon Web Services integration configuration settings for the Amazon Web
+   * Services Identity and Access Management (IAM) service role.</p>
    */
   inline SupportedAwsIntegration GetAwsIntegration() const { return m_awsIntegration; }
   inline bool AwsIntegrationHasBeenSet() const { return m_awsIntegrationHasBeenSet; }

@@ -15,11 +15,14 @@ namespace BillingConductor {
 namespace Model {
 namespace ComputationRuleEnumMapper {
 
+static const int ITEMIZED_HASH = HashingUtils::HashString("ITEMIZED");
 static const int CONSOLIDATED_HASH = HashingUtils::HashString("CONSOLIDATED");
 
 ComputationRuleEnum GetComputationRuleEnumForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CONSOLIDATED_HASH) {
+  if (hashCode == ITEMIZED_HASH) {
+    return ComputationRuleEnum::ITEMIZED;
+  } else if (hashCode == CONSOLIDATED_HASH) {
     return ComputationRuleEnum::CONSOLIDATED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -35,6 +38,8 @@ Aws::String GetNameForComputationRuleEnum(ComputationRuleEnum enumValue) {
   switch (enumValue) {
     case ComputationRuleEnum::NOT_SET:
       return {};
+    case ComputationRuleEnum::ITEMIZED:
+      return "ITEMIZED";
     case ComputationRuleEnum::CONSOLIDATED:
       return "CONSOLIDATED";
     default:

@@ -10,7 +10,14 @@
 namespace Aws {
 namespace Bedrock {
 namespace Model {
-enum class AutomatedReasoningPolicyBuildResultAssetType { NOT_SET, BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES };
+enum class AutomatedReasoningPolicyBuildResultAssetType {
+  NOT_SET,
+  BUILD_LOG,
+  QUALITY_REPORT,
+  POLICY_DEFINITION,
+  GENERATED_TEST_CASES,
+  POLICY_SCENARIOS
+};
 
 namespace AutomatedReasoningPolicyBuildResultAssetTypeMapper {
 AWS_BEDROCK_API AutomatedReasoningPolicyBuildResultAssetType

@@ -39,7 +39,7 @@ namespace signer {
  * Registry (ECR). The signatures are stored in the registry alongside the images,
  * where they are available for verifying image authenticity and integrity.</p>
  * <p>For more information about Signer, see the <a
- * href="https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
+ * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
  * Signer Developer Guide</a>.</p>
  */
 class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SignerClient> {
@@ -127,7 +127,10 @@ class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aw
    * <p>Changes the state of an <code>ACTIVE</code> signing profile to
    * <code>CANCELED</code>. A canceled profile is still viewable with the
    * <code>ListSigningProfiles</code> operation, but it cannot perform new signing
-   * jobs, and is deleted two years after cancelation.</p><p><h3>See Also:</h3>   <a
+   * jobs. See <a
+   * href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data
+   * Retention</a> for more information on scheduled deletion of a canceled signing
+   * profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/CancelSigningProfile">AWS
    * API Reference</a></p>
    */
@@ -475,8 +478,8 @@ class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
-   * <p>Changes the state of a signing job to REVOKED. This indicates that the
-   * signature is no longer valid.</p><p><h3>See Also:</h3>   <a
+   * <p>Changes the state of a signing job to <code>REVOKED</code>. This indicates
+   * that the signature is no longer valid.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSignature">AWS
    * API Reference</a></p>
    */
@@ -501,9 +504,14 @@ class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aw
   }
 
   /**
-   * <p>Changes the state of a signing profile to REVOKED. This indicates that
-   * signatures generated using the signing profile after an effective start date are
-   * no longer valid.</p><p><h3>See Also:</h3>   <a
+   * <p>Changes the state of a signing profile to <code>REVOKED</code>. This
+   * indicates that signatures generated using the signing profile after an effective
+   * start date are no longer valid. A revoked profile is still viewable with the
+   * <code>ListSigningProfiles</code> operation, but it cannot perform new signing
+   * jobs. See <a
+   * href="https://docs.aws.amazon.com/signer/latest/developerguide/retention.html">Data
+   * Retention</a> for more information on scheduled deletion of a revoked signing
+   * profile. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSigningProfile">AWS
    * API Reference</a></p>
    */
@@ -556,9 +564,9 @@ class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aw
 
   /**
    * <p>Initiates a signing job to be performed on the code provided. Signing jobs
-   * are viewable by the <code>ListSigningJobs</code> operation for two years after
-   * they are performed. Note the following requirements: </p> <ul> <li> <p> You must
-   * create an Amazon S3 source bucket. For more information, see <a
+   * are viewable by the <code>ListSigningJobs</code> operation. Note the following
+   * requirements: </p> <ul> <li> <p> You must create an Amazon S3 source bucket. For
+   * more information, see <a
    * href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Creating
    * a Bucket</a> in the <i>Amazon S3 Getting Started Guide</i>. </p> </li> <li>
    * <p>Your S3 source bucket must be version enabled.</p> </li> <li> <p>You must

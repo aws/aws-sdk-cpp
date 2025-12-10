@@ -310,7 +310,7 @@ GetRevocationStatusOutcome SignerClient::GetRevocationStatus(const GetRevocation
              {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRevocationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
-        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("verification.");
+        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("data-");
         AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GetRevocationStatusOutcome(addPrefixErr.value()));
         endpointResolutionOutcome.GetResult().AddPathSegments("/revocations");
         return GetRevocationStatusOutcome(

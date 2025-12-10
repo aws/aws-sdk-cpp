@@ -174,8 +174,8 @@ class ManagedServices {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Security Token Service (STS) access configuration for
-   * managed services.</p>
+   * <p>The Amazon Web Services Security Token Service (STS) access
+   * configuration.</p>
    */
   inline const StsAccess& GetStsAccess() const { return m_stsAccess; }
   inline bool StsAccessHasBeenSet() const { return m_stsAccessHasBeenSet; }
@@ -193,8 +193,8 @@ class ManagedServices {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Key Management Service (KMS) access configuration for
-   * managed services.</p>
+   * <p>The Amazon Web Services Key Management Service (KMS) access
+   * configuration.</p>
    */
   inline const KmsAccess& GetKmsAccess() const { return m_kmsAccess; }
   inline bool KmsAccessHasBeenSet() const { return m_kmsAccessHasBeenSet; }

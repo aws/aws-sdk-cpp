@@ -3,94 +3,132 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/PutCompositeAlarmRequest.h>
 
+#include <utility>
+
 using namespace Aws::CloudWatch::Model;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PutCompositeAlarmRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=PutCompositeAlarm&";
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_actionsEnabledHasBeenSet) {
-    ss << "ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
+    mapSize++;
+  }
+  if (m_alarmActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_alarmDescriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_alarmNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_alarmRuleHasBeenSet) {
+    mapSize++;
+  }
+  if (m_insufficientDataActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_oKActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_actionsSuppressorHasBeenSet) {
+    mapSize++;
+  }
+  if (m_actionsSuppressorWaitPeriodHasBeenSet) {
+    mapSize++;
+  }
+  if (m_actionsSuppressorExtensionPeriodHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_actionsEnabledHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionsEnabled"));
+    encoder.WriteBool(m_actionsEnabled);
   }
 
   if (m_alarmActionsHasBeenSet) {
-    if (m_alarmActions.empty()) {
-      ss << "AlarmActions=&";
-    } else {
-      unsigned alarmActionsCount = 1;
-      for (auto& item : m_alarmActions) {
-        ss << "AlarmActions.member." << alarmActionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        alarmActionsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmActions"));
+    encoder.WriteArrayStart(m_alarmActions.size());
+    for (const auto& item_0 : m_alarmActions) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }
 
   if (m_alarmDescriptionHasBeenSet) {
-    ss << "AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmDescription"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alarmDescription.c_str()));
   }
 
   if (m_alarmNameHasBeenSet) {
-    ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alarmName.c_str()));
   }
 
   if (m_alarmRuleHasBeenSet) {
-    ss << "AlarmRule=" << StringUtils::URLEncode(m_alarmRule.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmRule"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alarmRule.c_str()));
   }
 
   if (m_insufficientDataActionsHasBeenSet) {
-    if (m_insufficientDataActions.empty()) {
-      ss << "InsufficientDataActions=&";
-    } else {
-      unsigned insufficientDataActionsCount = 1;
-      for (auto& item : m_insufficientDataActions) {
-        ss << "InsufficientDataActions.member." << insufficientDataActionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        insufficientDataActionsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InsufficientDataActions"));
+    encoder.WriteArrayStart(m_insufficientDataActions.size());
+    for (const auto& item_0 : m_insufficientDataActions) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }
 
   if (m_oKActionsHasBeenSet) {
-    if (m_oKActions.empty()) {
-      ss << "OKActions=&";
-    } else {
-      unsigned oKActionsCount = 1;
-      for (auto& item : m_oKActions) {
-        ss << "OKActions.member." << oKActionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        oKActionsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OKActions"));
+    encoder.WriteArrayStart(m_oKActions.size());
+    for (const auto& item_0 : m_oKActions) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }
 
   if (m_tagsHasBeenSet) {
-    if (m_tags.empty()) {
-      ss << "Tags=&";
-    } else {
-      unsigned tagsCount = 1;
-      for (auto& item : m_tags) {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-        tagsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_actionsSuppressorHasBeenSet) {
-    ss << "ActionsSuppressor=" << StringUtils::URLEncode(m_actionsSuppressor.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionsSuppressor"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_actionsSuppressor.c_str()));
   }
 
   if (m_actionsSuppressorWaitPeriodHasBeenSet) {
-    ss << "ActionsSuppressorWaitPeriod=" << m_actionsSuppressorWaitPeriod << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionsSuppressorWaitPeriod"));
+    (m_actionsSuppressorWaitPeriod >= 0) ? encoder.WriteUInt(m_actionsSuppressorWaitPeriod)
+                                         : encoder.WriteNegInt(m_actionsSuppressorWaitPeriod);
   }
 
   if (m_actionsSuppressorExtensionPeriodHasBeenSet) {
-    ss << "ActionsSuppressorExtensionPeriod=" << m_actionsSuppressorExtensionPeriod << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionsSuppressorExtensionPeriod"));
+    (m_actionsSuppressorExtensionPeriod >= 0) ? encoder.WriteUInt(m_actionsSuppressorExtensionPeriod)
+                                              : encoder.WriteNegInt(m_actionsSuppressorExtensionPeriod);
   }
-
-  ss << "Version=2010-08-01";
-  return ss.str();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
-void PutCompositeAlarmRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+Aws::Http::HeaderValueCollection PutCompositeAlarmRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  return headers;
+}

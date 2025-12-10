@@ -6,28 +6,28 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/AlarmHistoryItem.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Xml {
-class XmlDocument;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
 class DescribeAlarmHistoryResult {
  public:
   AWS_CLOUDWATCH_API DescribeAlarmHistoryResult() = default;
-  AWS_CLOUDWATCH_API DescribeAlarmHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_CLOUDWATCH_API DescribeAlarmHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_CLOUDWATCH_API DescribeAlarmHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_CLOUDWATCH_API DescribeAlarmHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -71,6 +71,21 @@ class DescribeAlarmHistoryResult {
 
   ///@{
 
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeAlarmHistoryResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -88,9 +103,12 @@ class DescribeAlarmHistoryResult {
 
   Aws::String m_nextToken;
 
+  Aws::String m_requestId;
+
   ResponseMetadata m_responseMetadata;
   bool m_alarmHistoryItemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

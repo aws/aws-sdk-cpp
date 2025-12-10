@@ -51,5 +51,9 @@ Aws::String CreateApplicationRequest::SerializePayload() const {
     payload.WithArray("tagList", std::move(tagListJsonList));
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
   return payload.View().WriteReadable();
 }

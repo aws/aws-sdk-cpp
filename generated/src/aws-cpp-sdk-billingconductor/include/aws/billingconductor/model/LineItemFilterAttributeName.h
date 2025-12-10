@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BillingConductor {
 namespace Model {
-enum class LineItemFilterAttributeName { NOT_SET, LINE_ITEM_TYPE };
+enum class LineItemFilterAttributeName { NOT_SET, LINE_ITEM_TYPE, SERVICE };
 
 namespace LineItemFilterAttributeNameMapper {
 AWS_BILLINGCONDUCTOR_API LineItemFilterAttributeName GetLineItemFilterAttributeNameForName(const Aws::String& name);

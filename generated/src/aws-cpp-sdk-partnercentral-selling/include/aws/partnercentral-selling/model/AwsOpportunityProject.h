@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/AwsPartition.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
 
 #include <utility>
@@ -61,9 +62,30 @@ class AwsOpportunityProject {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>AWS partition where the opportunity will be deployed. Possible values:
+   * 'aws-eusc' for AWS European Sovereign Cloud, <code>null</code> for all other
+   * partitions</p>
+   */
+  inline AwsPartition GetAwsPartition() const { return m_awsPartition; }
+  inline bool AwsPartitionHasBeenSet() const { return m_awsPartitionHasBeenSet; }
+  inline void SetAwsPartition(AwsPartition value) {
+    m_awsPartitionHasBeenSet = true;
+    m_awsPartition = value;
+  }
+  inline AwsOpportunityProject& WithAwsPartition(AwsPartition value) {
+    SetAwsPartition(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
+
+  AwsPartition m_awsPartition{AwsPartition::NOT_SET};
   bool m_expectedCustomerSpendHasBeenSet = false;
+  bool m_awsPartitionHasBeenSet = false;
 };
 
 }  // namespace Model

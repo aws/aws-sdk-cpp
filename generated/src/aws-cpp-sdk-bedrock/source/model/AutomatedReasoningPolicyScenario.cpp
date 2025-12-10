@@ -26,16 +26,16 @@ AutomatedReasoningPolicyScenario& AutomatedReasoningPolicyScenario::operator=(Js
     m_alternateExpression = jsonValue.GetString("alternateExpression");
     m_alternateExpressionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("expectedResult")) {
+    m_expectedResult = AutomatedReasoningCheckResultMapper::GetAutomatedReasoningCheckResultForName(jsonValue.GetString("expectedResult"));
+    m_expectedResultHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ruleIds")) {
     Aws::Utils::Array<JsonView> ruleIdsJsonList = jsonValue.GetArray("ruleIds");
     for (unsigned ruleIdsIndex = 0; ruleIdsIndex < ruleIdsJsonList.GetLength(); ++ruleIdsIndex) {
       m_ruleIds.push_back(ruleIdsJsonList[ruleIdsIndex].AsString());
     }
     m_ruleIdsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("expectedResult")) {
-    m_expectedResult = AutomatedReasoningCheckResultMapper::GetAutomatedReasoningCheckResultForName(jsonValue.GetString("expectedResult"));
-    m_expectedResultHasBeenSet = true;
   }
   return *this;
 }
@@ -51,16 +51,16 @@ JsonValue AutomatedReasoningPolicyScenario::Jsonize() const {
     payload.WithString("alternateExpression", m_alternateExpression);
   }
 
+  if (m_expectedResultHasBeenSet) {
+    payload.WithString("expectedResult", AutomatedReasoningCheckResultMapper::GetNameForAutomatedReasoningCheckResult(m_expectedResult));
+  }
+
   if (m_ruleIdsHasBeenSet) {
     Aws::Utils::Array<JsonValue> ruleIdsJsonList(m_ruleIds.size());
     for (unsigned ruleIdsIndex = 0; ruleIdsIndex < ruleIdsJsonList.GetLength(); ++ruleIdsIndex) {
       ruleIdsJsonList[ruleIdsIndex].AsString(m_ruleIds[ruleIdsIndex]);
     }
     payload.WithArray("ruleIds", std::move(ruleIdsJsonList));
-  }
-
-  if (m_expectedResultHasBeenSet) {
-    payload.WithString("expectedResult", AutomatedReasoningCheckResultMapper::GetNameForAutomatedReasoningCheckResult(m_expectedResult));
   }
 
   return payload;

@@ -3,191 +3,543 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/MetricDatum.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Xml;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CloudWatch {
 namespace Model {
 
-MetricDatum::MetricDatum(const XmlNode& xmlNode) { *this = xmlNode; }
+MetricDatum::MetricDatum(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-MetricDatum& MetricDatum::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+MetricDatum& MetricDatum::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-  if (!resultNode.IsNull()) {
-    XmlNode metricNameNode = resultNode.FirstChild("MetricName");
-    if (!metricNameNode.IsNull()) {
-      m_metricName = Aws::Utils::Xml::DecodeEscapedXmlText(metricNameNode.GetText());
-      m_metricNameHasBeenSet = true;
-    }
-    XmlNode dimensionsNode = resultNode.FirstChild("Dimensions");
-    if (!dimensionsNode.IsNull()) {
-      XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
-      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
-      while (!dimensionsMember.IsNull()) {
-        m_dimensions.push_back(dimensionsMember);
-        dimensionsMember = dimensionsMember.NextNode("member");
+              if (initialKeyStr == "MetricName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_metricName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_metricName = ss.str();
+                  }
+                }
+                m_metricNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Dimensions") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_dimensions.push_back(Dimension(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_dimensions.push_back(Dimension(decoder));
+                    }
+                  }
+                }
+                m_dimensionsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Timestamp") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_timestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_timestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_timestampHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Value") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_value = val.value();
+                }
+                m_valueHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StatisticValues") {
+                m_statisticValues = StatisticSet(decoder);
+                m_statisticValuesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Values") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto val = decoder->PopNextFloatVal();
+                        if (val.has_value()) {
+                          m_values.push_back(val.value());
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_values.push_back(val.value());
+                      }
+                    }
+                  }
+                }
+                m_valuesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Counts") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto val = decoder->PopNextFloatVal();
+                        if (val.has_value()) {
+                          m_counts.push_back(val.value());
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_counts.push_back(val.value());
+                      }
+                    }
+                  }
+                }
+                m_countsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Unit") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_unit = StandardUnitMapper::GetStandardUnitForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_unitHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StorageResolution") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_storageResolution = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_storageResolution = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_storageResolutionHasBeenSet = true;
+              }
+
+              else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("MetricDatum", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "MetricName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_metricName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_metricName = ss.str();
+                }
+              }
+              m_metricNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Dimensions") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_dimensions.push_back(Dimension(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_dimensions.push_back(Dimension(decoder));
+                  }
+                }
+              }
+              m_dimensionsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Timestamp") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_timestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_timestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_timestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Value") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_value = val.value();
+              }
+              m_valueHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StatisticValues") {
+              m_statisticValues = StatisticSet(decoder);
+              m_statisticValuesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Values") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_values.push_back(val.value());
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_values.push_back(val.value());
+                    }
+                  }
+                }
+              }
+              m_valuesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Counts") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_counts.push_back(val.value());
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_counts.push_back(val.value());
+                    }
+                  }
+                }
+              }
+              m_countsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Unit") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_unit = StandardUnitMapper::GetStandardUnitForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_unitHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StorageResolution") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_storageResolution = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_storageResolution = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_storageResolutionHasBeenSet = true;
+            }
+
+            else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
       }
-
-      m_dimensionsHasBeenSet = true;
-    }
-    XmlNode timestampNode = resultNode.FirstChild("Timestamp");
-    if (!timestampNode.IsNull()) {
-      m_timestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str(),
-                             Aws::Utils::DateFormat::ISO_8601);
-      m_timestampHasBeenSet = true;
-    }
-    XmlNode valueNode = resultNode.FirstChild("Value");
-    if (!valueNode.IsNull()) {
-      m_value = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(valueNode.GetText()).c_str()).c_str());
-      m_valueHasBeenSet = true;
-    }
-    XmlNode statisticValuesNode = resultNode.FirstChild("StatisticValues");
-    if (!statisticValuesNode.IsNull()) {
-      m_statisticValues = statisticValuesNode;
-      m_statisticValuesHasBeenSet = true;
-    }
-    XmlNode valuesNode = resultNode.FirstChild("Values");
-    if (!valuesNode.IsNull()) {
-      XmlNode valuesMember = valuesNode.FirstChild("member");
-      m_valuesHasBeenSet = !valuesMember.IsNull();
-      while (!valuesMember.IsNull()) {
-        m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));
-        valuesMember = valuesMember.NextNode("member");
-      }
-
-      m_valuesHasBeenSet = true;
-    }
-    XmlNode countsNode = resultNode.FirstChild("Counts");
-    if (!countsNode.IsNull()) {
-      XmlNode countsMember = countsNode.FirstChild("member");
-      m_countsHasBeenSet = !countsMember.IsNull();
-      while (!countsMember.IsNull()) {
-        m_counts.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(countsMember.GetText().c_str()).c_str()));
-        countsMember = countsMember.NextNode("member");
-      }
-
-      m_countsHasBeenSet = true;
-    }
-    XmlNode unitNode = resultNode.FirstChild("Unit");
-    if (!unitNode.IsNull()) {
-      m_unit =
-          StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
-      m_unitHasBeenSet = true;
-    }
-    XmlNode storageResolutionNode = resultNode.FirstChild("StorageResolution");
-    if (!storageResolutionNode.IsNull()) {
-      m_storageResolution = StringUtils::ConvertToInt32(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageResolutionNode.GetText()).c_str()).c_str());
-      m_storageResolutionHasBeenSet = true;
     }
   }
 
   return *this;
 }
 
-void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+void MetricDatum::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_metricNameHasBeenSet) {
-    oStream << location << index << locationValue << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+    mapSize++;
+  }
+  if (m_dimensionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_timestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_valueHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statisticValuesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_valuesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_countsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_unitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_storageResolutionHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_metricNameHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_metricName.c_str()));
   }
 
   if (m_dimensionsHasBeenSet) {
-    unsigned dimensionsIdx = 1;
-    for (auto& item : m_dimensions) {
-      Aws::StringStream dimensionsSs;
-      dimensionsSs << location << index << locationValue << ".Dimensions.member." << dimensionsIdx++;
-      item.OutputToStream(oStream, dimensionsSs.str().c_str());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Dimensions"));
+    encoder.WriteArrayStart(m_dimensions.size());
+    for (const auto& item_0 : m_dimensions) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_timestampHasBeenSet) {
-    oStream << location << index << locationValue
-            << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Timestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_timestamp.Seconds());
   }
 
   if (m_valueHasBeenSet) {
-    oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(m_value) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Value"));
+    encoder.WriteFloat(m_value);
   }
 
   if (m_statisticValuesHasBeenSet) {
-    Aws::StringStream statisticValuesLocationAndMemberSs;
-    statisticValuesLocationAndMemberSs << location << index << locationValue << ".StatisticValues";
-    m_statisticValues.OutputToStream(oStream, statisticValuesLocationAndMemberSs.str().c_str());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StatisticValues"));
+    m_statisticValues.CborEncode(encoder);
   }
 
   if (m_valuesHasBeenSet) {
-    unsigned valuesIdx = 1;
-    for (auto& item : m_values) {
-      oStream << location << index << locationValue << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Values"));
+    encoder.WriteArrayStart(m_values.size());
+    for (const auto& item_0 : m_values) {
+      encoder.WriteFloat(item_0);
     }
   }
 
   if (m_countsHasBeenSet) {
-    unsigned countsIdx = 1;
-    for (auto& item : m_counts) {
-      oStream << location << index << locationValue << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Counts"));
+    encoder.WriteArrayStart(m_counts.size());
+    for (const auto& item_0 : m_counts) {
+      encoder.WriteFloat(item_0);
     }
   }
 
   if (m_unitHasBeenSet) {
-    oStream << location << index << locationValue << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit))
-            << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Unit"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StandardUnitMapper::GetNameForStandardUnit(m_unit).c_str()));
   }
 
   if (m_storageResolutionHasBeenSet) {
-    oStream << location << index << locationValue << ".StorageResolution=" << m_storageResolution << "&";
-  }
-}
-
-void MetricDatum::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_metricNameHasBeenSet) {
-    oStream << location << ".MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
-  }
-  if (m_dimensionsHasBeenSet) {
-    unsigned dimensionsIdx = 1;
-    for (auto& item : m_dimensions) {
-      Aws::StringStream dimensionsSs;
-      dimensionsSs << location << ".Dimensions.member." << dimensionsIdx++;
-      item.OutputToStream(oStream, dimensionsSs.str().c_str());
-    }
-  }
-  if (m_timestampHasBeenSet) {
-    oStream << location << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
-            << "&";
-  }
-  if (m_valueHasBeenSet) {
-    oStream << location << ".Value=" << StringUtils::URLEncode(m_value) << "&";
-  }
-  if (m_statisticValuesHasBeenSet) {
-    Aws::String statisticValuesLocationAndMember(location);
-    statisticValuesLocationAndMember += ".StatisticValues";
-    m_statisticValues.OutputToStream(oStream, statisticValuesLocationAndMember.c_str());
-  }
-  if (m_valuesHasBeenSet) {
-    unsigned valuesIdx = 1;
-    for (auto& item : m_values) {
-      oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-    }
-  }
-  if (m_countsHasBeenSet) {
-    unsigned countsIdx = 1;
-    for (auto& item : m_counts) {
-      oStream << location << ".Counts.member." << countsIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-    }
-  }
-  if (m_unitHasBeenSet) {
-    oStream << location << ".Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
-  }
-  if (m_storageResolutionHasBeenSet) {
-    oStream << location << ".StorageResolution=" << m_storageResolution << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StorageResolution"));
+    (m_storageResolution >= 0) ? encoder.WriteUInt(m_storageResolution) : encoder.WriteNegInt(m_storageResolution);
   }
 }
 

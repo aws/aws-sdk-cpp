@@ -6,41 +6,222 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 
 #include <utility>
 
 using namespace Aws::CloudWatch::Model;
-using namespace Aws::Utils::Xml;
-using namespace Aws::Utils::Logging;
+using namespace Aws::Crt;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
 using namespace Aws;
 
-GetMetricWidgetImageResult::GetMetricWidgetImageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+GetMetricWidgetImageResult::GetMetricWidgetImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  *this = result;
+}
 
-GetMetricWidgetImageResult& GetMetricWidgetImageResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "GetMetricWidgetImageResult")) {
-    resultNode = rootNode.FirstChild("GetMetricWidgetImageResult");
-  }
+GetMetricWidgetImageResult& GetMetricWidgetImageResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  const auto& cborValue = result.GetPayload();
+  const auto decoder = cborValue.GetDecoder();
 
-  if (!resultNode.IsNull()) {
-    XmlNode metricWidgetImageNode = resultNode.FirstChild("MetricWidgetImage");
-    if (!metricWidgetImageNode.IsNull()) {
-      m_metricWidgetImage = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(metricWidgetImageNode.GetText()));
-      m_metricWidgetImageHasBeenSet = true;
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "MetricWidgetImage") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Bytes) {
+                    auto val = decoder->PopNextBytesVal();
+                    if (val.has_value()) {
+                      m_metricWidgetImage = Aws::Utils::ByteBuffer(val.value().ptr, val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextBytesVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_metricWidgetImage = Aws::Utils::ByteBuffer(ss.str());
+                    ss.clear();
+                  }
+                }
+                m_metricWidgetImageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "x-amzn-requestid") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_requestId = ss.str();
+                  }
+                }
+                m_requestIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "x-amzn-requestid") {
+                m_responseMetadata = ResponseMetadata(decoder);
+                m_responseMetadataHasBeenSet = true;
+              }
+
+              else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("GetMetricWidgetImageResult", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "MetricWidgetImage") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Bytes) {
+                  auto val = decoder->PopNextBytesVal();
+                  if (val.has_value()) {
+                    m_metricWidgetImage = Aws::Utils::ByteBuffer(val.value().ptr, val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextBytesVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_metricWidgetImage = Aws::Utils::ByteBuffer(ss.str());
+                  ss.clear();
+                }
+              }
+              m_metricWidgetImageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "x-amzn-requestid") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_requestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_requestId = ss.str();
+                }
+              }
+              m_requestIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "x-amzn-requestid") {
+              m_responseMetadata = ResponseMetadata(decoder);
+              m_responseMetadataHasBeenSet = true;
+            }
+
+            else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
   }
 
-  if (!rootNode.IsNull()) {
-    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-    m_responseMetadata = responseMetadataNode;
-    m_responseMetadataHasBeenSet = true;
-    AWS_LOGSTREAM_DEBUG("Aws::CloudWatch::Model::GetMetricWidgetImageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
+
+  const auto& responseMetadataIter = headers.find("x-amzn-requestid");
+  if (responseMetadataIter != headers.end()) {
+    m_responseMetadataHasBeenSet = true;
+    // for backward compatibility for customers used to an old XML Client interface
+    m_responseMetadata.SetRequestId(responseMetadataIter->second);
+  }
+
   return *this;
 }

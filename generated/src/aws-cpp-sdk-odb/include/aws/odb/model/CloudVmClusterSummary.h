@@ -149,6 +149,25 @@ class CloudVmClusterSummary {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that this VM
+   * cluster belongs to.</p>
+   */
+  inline const Aws::String& GetCloudExadataInfrastructureArn() const { return m_cloudExadataInfrastructureArn; }
+  inline bool CloudExadataInfrastructureArnHasBeenSet() const { return m_cloudExadataInfrastructureArnHasBeenSet; }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  void SetCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    m_cloudExadataInfrastructureArnHasBeenSet = true;
+    m_cloudExadataInfrastructureArn = std::forward<CloudExadataInfrastructureArnT>(value);
+  }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  CloudVmClusterSummary& WithCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    SetCloudExadataInfrastructureArn(std::forward<CloudExadataInfrastructureArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the Grid Infrastructure (GI) cluster.</p>
    */
   inline const Aws::String& GetClusterName() const { return m_clusterName; }
@@ -738,6 +757,25 @@ class CloudVmClusterSummary {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the ODB network associated with this VM
+   * cluster.</p>
+   */
+  inline const Aws::String& GetOdbNetworkArn() const { return m_odbNetworkArn; }
+  inline bool OdbNetworkArnHasBeenSet() const { return m_odbNetworkArnHasBeenSet; }
+  template <typename OdbNetworkArnT = Aws::String>
+  void SetOdbNetworkArn(OdbNetworkArnT&& value) {
+    m_odbNetworkArnHasBeenSet = true;
+    m_odbNetworkArn = std::forward<OdbNetworkArnT>(value);
+  }
+  template <typename OdbNetworkArnT = Aws::String>
+  CloudVmClusterSummary& WithOdbNetworkArn(OdbNetworkArnT&& value) {
+    SetOdbNetworkArn(std::forward<OdbNetworkArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The amount of progress made on the current operation on the VM cluster,
    * expressed as a percentage.</p>
    */
@@ -810,6 +848,8 @@ class CloudVmClusterSummary {
 
   Aws::String m_cloudExadataInfrastructureId;
 
+  Aws::String m_cloudExadataInfrastructureArn;
+
   Aws::String m_clusterName;
 
   int m_cpuCoreCount{0};
@@ -874,6 +914,8 @@ class CloudVmClusterSummary {
 
   Aws::String m_odbNetworkId;
 
+  Aws::String m_odbNetworkArn;
+
   double m_percentProgress{0.0};
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
@@ -885,6 +927,7 @@ class CloudVmClusterSummary {
   bool m_statusReasonHasBeenSet = false;
   bool m_cloudVmClusterArnHasBeenSet = false;
   bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_cloudExadataInfrastructureArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
   bool m_cpuCoreCountHasBeenSet = false;
   bool m_dataCollectionOptionsHasBeenSet = false;
@@ -917,6 +960,7 @@ class CloudVmClusterSummary {
   bool m_timeZoneHasBeenSet = false;
   bool m_vipIdsHasBeenSet = false;
   bool m_odbNetworkIdHasBeenSet = false;
+  bool m_odbNetworkArnHasBeenSet = false;
   bool m_percentProgressHasBeenSet = false;
   bool m_computeModelHasBeenSet = false;
   bool m_iamRolesHasBeenSet = false;

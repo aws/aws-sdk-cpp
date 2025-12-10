@@ -11,7 +11,7 @@
 namespace Aws {
 namespace Client {
 
-class AWS_CLOUDWATCH_API CloudWatchErrorMarshaller : public Aws::Client::XmlErrorMarshaller {
+class AWS_CLOUDWATCH_API CloudWatchErrorMarshaller : public Aws::Client::RpcV2ErrorMarshallerQueryCompatible {
  public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };

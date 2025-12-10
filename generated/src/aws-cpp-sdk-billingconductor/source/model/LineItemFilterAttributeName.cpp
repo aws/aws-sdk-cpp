@@ -16,11 +16,14 @@ namespace Model {
 namespace LineItemFilterAttributeNameMapper {
 
 static const int LINE_ITEM_TYPE_HASH = HashingUtils::HashString("LINE_ITEM_TYPE");
+static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
 
 LineItemFilterAttributeName GetLineItemFilterAttributeNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == LINE_ITEM_TYPE_HASH) {
     return LineItemFilterAttributeName::LINE_ITEM_TYPE;
+  } else if (hashCode == SERVICE_HASH) {
+    return LineItemFilterAttributeName::SERVICE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForLineItemFilterAttributeName(LineItemFilterAttributeName en
       return {};
     case LineItemFilterAttributeName::LINE_ITEM_TYPE:
       return "LINE_ITEM_TYPE";
+    case LineItemFilterAttributeName::SERVICE:
+      return "SERVICE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

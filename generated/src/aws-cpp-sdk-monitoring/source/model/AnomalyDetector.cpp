@@ -3,114 +3,176 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/AnomalyDetector.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Xml;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CloudWatch {
 namespace Model {
 
-AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode) { *this = xmlNode; }
+AnomalyDetector::AnomalyDetector(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-AnomalyDetector& AnomalyDetector::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+AnomalyDetector& AnomalyDetector::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-  if (!resultNode.IsNull()) {
-    XmlNode configurationNode = resultNode.FirstChild("Configuration");
-    if (!configurationNode.IsNull()) {
-      m_configuration = configurationNode;
-      m_configurationHasBeenSet = true;
-    }
-    XmlNode stateValueNode = resultNode.FirstChild("StateValue");
-    if (!stateValueNode.IsNull()) {
-      m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
-      m_stateValueHasBeenSet = true;
-    }
-    XmlNode metricCharacteristicsNode = resultNode.FirstChild("MetricCharacteristics");
-    if (!metricCharacteristicsNode.IsNull()) {
-      m_metricCharacteristics = metricCharacteristicsNode;
-      m_metricCharacteristicsHasBeenSet = true;
-    }
-    XmlNode singleMetricAnomalyDetectorNode = resultNode.FirstChild("SingleMetricAnomalyDetector");
-    if (!singleMetricAnomalyDetectorNode.IsNull()) {
-      m_singleMetricAnomalyDetector = singleMetricAnomalyDetectorNode;
-      m_singleMetricAnomalyDetectorHasBeenSet = true;
-    }
-    XmlNode metricMathAnomalyDetectorNode = resultNode.FirstChild("MetricMathAnomalyDetector");
-    if (!metricMathAnomalyDetectorNode.IsNull()) {
-      m_metricMathAnomalyDetector = metricMathAnomalyDetectorNode;
-      m_metricMathAnomalyDetectorHasBeenSet = true;
+              if (initialKeyStr == "Configuration") {
+                m_configuration = AnomalyDetectorConfiguration(decoder);
+                m_configurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StateValue") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_stateValueHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "MetricCharacteristics") {
+                m_metricCharacteristics = MetricCharacteristics(decoder);
+                m_metricCharacteristicsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SingleMetricAnomalyDetector") {
+                m_singleMetricAnomalyDetector = SingleMetricAnomalyDetector(decoder);
+                m_singleMetricAnomalyDetectorHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "MetricMathAnomalyDetector") {
+                m_metricMathAnomalyDetector = MetricMathAnomalyDetector(decoder);
+                m_metricMathAnomalyDetectorHasBeenSet = true;
+              }
+
+              else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("AnomalyDetector", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Configuration") {
+              m_configuration = AnomalyDetectorConfiguration(decoder);
+              m_configurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StateValue") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_stateValueHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "MetricCharacteristics") {
+              m_metricCharacteristics = MetricCharacteristics(decoder);
+              m_metricCharacteristicsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SingleMetricAnomalyDetector") {
+              m_singleMetricAnomalyDetector = SingleMetricAnomalyDetector(decoder);
+              m_singleMetricAnomalyDetectorHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "MetricMathAnomalyDetector") {
+              m_metricMathAnomalyDetector = MetricMathAnomalyDetector(decoder);
+              m_metricMathAnomalyDetectorHasBeenSet = true;
+            }
+
+            else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
   }
 
   return *this;
 }
 
-void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+void AnomalyDetector::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_configurationHasBeenSet) {
-    Aws::StringStream configurationLocationAndMemberSs;
-    configurationLocationAndMemberSs << location << index << locationValue << ".Configuration";
-    m_configuration.OutputToStream(oStream, configurationLocationAndMemberSs.str().c_str());
+    mapSize++;
+  }
+  if (m_stateValueHasBeenSet) {
+    mapSize++;
+  }
+  if (m_metricCharacteristicsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_singleMetricAnomalyDetectorHasBeenSet) {
+    mapSize++;
+  }
+  if (m_metricMathAnomalyDetectorHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_configurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Configuration"));
+    m_configuration.CborEncode(encoder);
   }
 
   if (m_stateValueHasBeenSet) {
-    oStream << location << index << locationValue
-            << ".StateValue=" << StringUtils::URLEncode(AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue))
-            << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateValue"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue).c_str()));
   }
 
   if (m_metricCharacteristicsHasBeenSet) {
-    Aws::StringStream metricCharacteristicsLocationAndMemberSs;
-    metricCharacteristicsLocationAndMemberSs << location << index << locationValue << ".MetricCharacteristics";
-    m_metricCharacteristics.OutputToStream(oStream, metricCharacteristicsLocationAndMemberSs.str().c_str());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricCharacteristics"));
+    m_metricCharacteristics.CborEncode(encoder);
   }
 
   if (m_singleMetricAnomalyDetectorHasBeenSet) {
-    Aws::StringStream singleMetricAnomalyDetectorLocationAndMemberSs;
-    singleMetricAnomalyDetectorLocationAndMemberSs << location << index << locationValue << ".SingleMetricAnomalyDetector";
-    m_singleMetricAnomalyDetector.OutputToStream(oStream, singleMetricAnomalyDetectorLocationAndMemberSs.str().c_str());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SingleMetricAnomalyDetector"));
+    m_singleMetricAnomalyDetector.CborEncode(encoder);
   }
 
   if (m_metricMathAnomalyDetectorHasBeenSet) {
-    Aws::StringStream metricMathAnomalyDetectorLocationAndMemberSs;
-    metricMathAnomalyDetectorLocationAndMemberSs << location << index << locationValue << ".MetricMathAnomalyDetector";
-    m_metricMathAnomalyDetector.OutputToStream(oStream, metricMathAnomalyDetectorLocationAndMemberSs.str().c_str());
-  }
-}
-
-void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_configurationHasBeenSet) {
-    Aws::String configurationLocationAndMember(location);
-    configurationLocationAndMember += ".Configuration";
-    m_configuration.OutputToStream(oStream, configurationLocationAndMember.c_str());
-  }
-  if (m_stateValueHasBeenSet) {
-    oStream << location
-            << ".StateValue=" << StringUtils::URLEncode(AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue))
-            << "&";
-  }
-  if (m_metricCharacteristicsHasBeenSet) {
-    Aws::String metricCharacteristicsLocationAndMember(location);
-    metricCharacteristicsLocationAndMember += ".MetricCharacteristics";
-    m_metricCharacteristics.OutputToStream(oStream, metricCharacteristicsLocationAndMember.c_str());
-  }
-  if (m_singleMetricAnomalyDetectorHasBeenSet) {
-    Aws::String singleMetricAnomalyDetectorLocationAndMember(location);
-    singleMetricAnomalyDetectorLocationAndMember += ".SingleMetricAnomalyDetector";
-    m_singleMetricAnomalyDetector.OutputToStream(oStream, singleMetricAnomalyDetectorLocationAndMember.c_str());
-  }
-  if (m_metricMathAnomalyDetectorHasBeenSet) {
-    Aws::String metricMathAnomalyDetectorLocationAndMember(location);
-    metricMathAnomalyDetectorLocationAndMember += ".MetricMathAnomalyDetector";
-    m_metricMathAnomalyDetector.OutputToStream(oStream, metricMathAnomalyDetectorLocationAndMember.c_str());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricMathAnomalyDetector"));
+    m_metricMathAnomalyDetector.CborEncode(encoder);
   }
 }
 

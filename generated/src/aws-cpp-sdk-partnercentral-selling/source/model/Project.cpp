@@ -79,6 +79,10 @@ Project& Project::operator=(JsonView jsonValue) {
     m_additionalComments = jsonValue.GetString("AdditionalComments");
     m_additionalCommentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsPartition")) {
+    m_awsPartition = AwsPartitionMapper::GetAwsPartitionForName(jsonValue.GetString("AwsPartition"));
+    m_awsPartitionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +154,10 @@ JsonValue Project::Jsonize() const {
 
   if (m_additionalCommentsHasBeenSet) {
     payload.WithString("AdditionalComments", m_additionalComments);
+  }
+
+  if (m_awsPartitionHasBeenSet) {
+    payload.WithString("AwsPartition", AwsPartitionMapper::GetNameForAwsPartition(m_awsPartition));
   }
 
   return payload;
