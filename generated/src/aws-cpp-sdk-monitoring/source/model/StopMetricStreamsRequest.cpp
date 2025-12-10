@@ -3,30 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/StopMetricStreamsRequest.h>
 
+#include <utility>
+
 using namespace Aws::CloudWatch::Model;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StopMetricStreamsRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=StopMetricStreams&";
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_namesHasBeenSet) {
-    if (m_names.empty()) {
-      ss << "Names=&";
-    } else {
-      unsigned namesCount = 1;
-      for (auto& item : m_names) {
-        ss << "Names.member." << namesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        namesCount++;
-      }
-    }
+    mapSize++;
   }
 
-  ss << "Version=2010-08-01";
-  return ss.str();
+  encoder.WriteMapStart(mapSize);
+
+  if (m_namesHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Names"));
+    encoder.WriteArrayStart(m_names.size());
+    for (const auto& item_0 : m_names) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
+  }
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
-void StopMetricStreamsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+Aws::Http::HeaderValueCollection StopMetricStreamsRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  return headers;
+}

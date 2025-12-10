@@ -28,10 +28,8 @@ class DescribeInsightRulesRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>Include this value, if it was returned by the previous operation, to get the

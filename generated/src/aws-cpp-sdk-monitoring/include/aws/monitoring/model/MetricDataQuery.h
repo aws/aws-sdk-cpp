@@ -4,8 +4,8 @@
  */
 
 #pragma once
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/MetricStat.h>
 
@@ -13,9 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -52,11 +52,9 @@ namespace Model {
 class MetricDataQuery {
  public:
   AWS_CLOUDWATCH_API MetricDataQuery() = default;
-  AWS_CLOUDWATCH_API MetricDataQuery(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API MetricDataQuery& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API MetricDataQuery(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API MetricDataQuery& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -191,13 +189,13 @@ class MetricDataQuery {
    * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
    * 1 second</code>.</p>
    */
-  inline int GetPeriod() const { return m_period; }
+  inline int64_t GetPeriod() const { return m_period; }
   inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-  inline void SetPeriod(int value) {
+  inline void SetPeriod(int64_t value) {
     m_periodHasBeenSet = true;
     m_period = value;
   }
-  inline MetricDataQuery& WithPeriod(int value) {
+  inline MetricDataQuery& WithPeriod(int64_t value) {
     SetPeriod(value);
     return *this;
   }
@@ -235,7 +233,7 @@ class MetricDataQuery {
 
   bool m_returnData{false};
 
-  int m_period{0};
+  int64_t m_period{0};
 
   Aws::String m_accountId;
   bool m_idHasBeenSet = false;

@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
@@ -21,9 +21,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -36,11 +36,9 @@ namespace Model {
 class MetricAlarm {
  public:
   AWS_CLOUDWATCH_API MetricAlarm() = default;
-  AWS_CLOUDWATCH_API MetricAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API MetricAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API MetricAlarm(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API MetricAlarm& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -381,13 +379,13 @@ class MetricAlarm {
   /**
    * <p>The period, in seconds, over which the statistic is applied.</p>
    */
-  inline int GetPeriod() const { return m_period; }
+  inline int64_t GetPeriod() const { return m_period; }
   inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-  inline void SetPeriod(int value) {
+  inline void SetPeriod(int64_t value) {
     m_periodHasBeenSet = true;
     m_period = value;
   }
-  inline MetricAlarm& WithPeriod(int value) {
+  inline MetricAlarm& WithPeriod(int64_t value) {
     SetPeriod(value);
     return *this;
   }
@@ -414,13 +412,13 @@ class MetricAlarm {
    * <p>The number of periods over which data is compared to the specified
    * threshold.</p>
    */
-  inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
+  inline int64_t GetEvaluationPeriods() const { return m_evaluationPeriods; }
   inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
-  inline void SetEvaluationPeriods(int value) {
+  inline void SetEvaluationPeriods(int64_t value) {
     m_evaluationPeriodsHasBeenSet = true;
     m_evaluationPeriods = value;
   }
-  inline MetricAlarm& WithEvaluationPeriods(int value) {
+  inline MetricAlarm& WithEvaluationPeriods(int64_t value) {
     SetEvaluationPeriods(value);
     return *this;
   }
@@ -430,13 +428,13 @@ class MetricAlarm {
   /**
    * <p>The number of data points that must be breaching to trigger the alarm.</p>
    */
-  inline int GetDatapointsToAlarm() const { return m_datapointsToAlarm; }
+  inline int64_t GetDatapointsToAlarm() const { return m_datapointsToAlarm; }
   inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
-  inline void SetDatapointsToAlarm(int value) {
+  inline void SetDatapointsToAlarm(int64_t value) {
     m_datapointsToAlarmHasBeenSet = true;
     m_datapointsToAlarm = value;
   }
-  inline MetricAlarm& WithDatapointsToAlarm(int value) {
+  inline MetricAlarm& WithDatapointsToAlarm(int64_t value) {
     SetDatapointsToAlarm(value);
     return *this;
   }
@@ -641,13 +639,13 @@ class MetricAlarm {
 
   Aws::Vector<Dimension> m_dimensions;
 
-  int m_period{0};
+  int64_t m_period{0};
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
 
-  int m_evaluationPeriods{0};
+  int64_t m_evaluationPeriods{0};
 
-  int m_datapointsToAlarm{0};
+  int64_t m_datapointsToAlarm{0};
 
   double m_threshold{0.0};
 
