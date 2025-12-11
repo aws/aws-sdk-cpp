@@ -9,6 +9,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <smithy/interceptor/Interceptor.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/Outcome.h>
@@ -29,8 +30,7 @@ public:
     AwsChunkedStreamBuf(Aws::Http::HttpRequest* request,
                         const std::shared_ptr<Aws::IOStream>& stream,
                         size_t bufferSize = DataBufferSize)
-        : m_chunkingStream(Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG)),
-          m_request(request),
+        : m_request(request),
           m_stream(stream),
           m_data(bufferSize)
     {
@@ -67,36 +67,32 @@ protected:
             }
         }
 
-        // if the underlying stream is empty there is nothing to read
-        if ((m_chunkingStream->peek() == EOF || m_chunkingStream->eof()) && !m_chunkingStream->bad()) {
+        // if the chunking buffer is empty there is nothing to read
+        if (m_chunkingBufferPos >= m_chunkingBuffer.size()) {
             return traits_type::eof();
         }
 
-        // Read from chunking stream to internal buffer
-        m_chunkingStream->read(m_buffer.GetUnderlyingData(), m_buffer.GetLength());
-        size_t bytesRead = static_cast<size_t>(m_chunkingStream->gcount());
-        if (bytesRead == 0) {
-            return traits_type::eof();
-        }
-
-        setg(m_buffer.GetUnderlyingData(), m_buffer.GetUnderlyingData(), m_buffer.GetUnderlyingData() + bytesRead);
+        // Set up buffer pointers to read from chunking buffer
+        size_t remainingBytes = m_chunkingBuffer.size() - m_chunkingBufferPos;
+        size_t bytesToRead = std::min(remainingBytes, DataBufferSize);
+        
+        setg(m_chunkingBuffer.data() + m_chunkingBufferPos, 
+             m_chunkingBuffer.data() + m_chunkingBufferPos, 
+             m_chunkingBuffer.data() + m_chunkingBufferPos + bytesToRead);
+        
+        m_chunkingBufferPos += bytesToRead;
         return traits_type::to_int_type(*gptr());
     }
 
 private:
     void writeTrailerToUnderlyingStream() {
-        Aws::StringStream chunkedTrailerStream;
-        chunkedTrailerStream << "0\r\n";
+        Aws::String trailer = "0\r\n";
         if (m_request->GetRequestHash().second != nullptr) {
-            chunkedTrailerStream << "x-amz-checksum-" << m_request->GetRequestHash().first << ":"
-                               << Aws::Utils::HashingUtils::Base64Encode(m_request->GetRequestHash().second->GetHash().GetResult()) << "\r\n";
+            trailer += "x-amz-checksum-" + m_request->GetRequestHash().first + ":"
+                     + Aws::Utils::HashingUtils::Base64Encode(m_request->GetRequestHash().second->GetHash().GetResult()) + "\r\n";
         }
-        chunkedTrailerStream << "\r\n";
-        const auto chunkedTrailer = chunkedTrailerStream.str();
-        if (m_chunkingStream->eof()) {
-            m_chunkingStream->clear();
-        }
-        *m_chunkingStream << chunkedTrailer;
+        trailer += "\r\n";
+        m_chunkingBuffer.insert(m_chunkingBuffer.end(), trailer.begin(), trailer.end());
     }
 
     void writeChunk(size_t bytesRead) {
@@ -104,21 +100,20 @@ private:
             m_request->GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(m_data.GetUnderlyingData()), bytesRead);
         }
 
-        if (bytesRead > 0 && m_chunkingStream && !m_chunkingStream->bad()) {
-            if (m_chunkingStream->eof()) {
-                m_chunkingStream->clear();
-            }
-            *m_chunkingStream << Aws::Utils::StringUtils::ToHexString(bytesRead) << "\r\n";
-            m_chunkingStream->write(m_data.GetUnderlyingData(), bytesRead);
-            *m_chunkingStream << "\r\n";
+        if (bytesRead > 0) {
+            Aws::String chunkHeader = Aws::Utils::StringUtils::ToHexString(bytesRead) + "\r\n";
+            m_chunkingBuffer.insert(m_chunkingBuffer.end(), chunkHeader.begin(), chunkHeader.end());
+            m_chunkingBuffer.insert(m_chunkingBuffer.end(), m_data.GetUnderlyingData(), m_data.GetUnderlyingData() + bytesRead);
+            Aws::String chunkFooter = "\r\n";
+            m_chunkingBuffer.insert(m_chunkingBuffer.end(), chunkFooter.begin(), chunkFooter.end());
         }
     }
 
-    std::shared_ptr<Aws::IOStream> m_chunkingStream;
+    Aws::Vector<char> m_chunkingBuffer;
+    size_t m_chunkingBufferPos{0};
     Aws::Http::HttpRequest* m_request{nullptr};
     std::shared_ptr<Aws::IOStream> m_stream;
     Aws::Utils::Array<char> m_data;
-    Aws::Utils::Array<char> m_buffer{DataBufferSize};
 };
 
 class AwsChunkedIOStream : public Aws::IOStream {
