@@ -50,6 +50,10 @@ TableConfiguration& TableConfiguration::operator=(JsonView jsonValue) {
     }
     m_tableInlineVisualizationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DashboardCustomizationVisualOptions")) {
+    m_dashboardCustomizationVisualOptions = jsonValue.GetObject("DashboardCustomizationVisualOptions");
+    m_dashboardCustomizationVisualOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Interactions")) {
     m_interactions = jsonValue.GetObject("Interactions");
     m_interactionsHasBeenSet = true;
@@ -92,6 +96,10 @@ JsonValue TableConfiguration::Jsonize() const {
           m_tableInlineVisualizations[tableInlineVisualizationsIndex].Jsonize());
     }
     payload.WithArray("TableInlineVisualizations", std::move(tableInlineVisualizationsJsonList));
+  }
+
+  if (m_dashboardCustomizationVisualOptionsHasBeenSet) {
+    payload.WithObject("DashboardCustomizationVisualOptions", m_dashboardCustomizationVisualOptions.Jsonize());
   }
 
   if (m_interactionsHasBeenSet) {

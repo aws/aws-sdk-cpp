@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/DashboardCustomizationVisualOptions.h>
 #include <aws/quicksight/model/TableFieldOptions.h>
 #include <aws/quicksight/model/TableFieldWells.h>
 #include <aws/quicksight/model/TableInlineVisualization.h>
@@ -174,6 +175,27 @@ class TableConfiguration {
 
   ///@{
   /**
+   * <p>The options that define customizations available to dashboard readers for a
+   * specific visual</p>
+   */
+  inline const DashboardCustomizationVisualOptions& GetDashboardCustomizationVisualOptions() const {
+    return m_dashboardCustomizationVisualOptions;
+  }
+  inline bool DashboardCustomizationVisualOptionsHasBeenSet() const { return m_dashboardCustomizationVisualOptionsHasBeenSet; }
+  template <typename DashboardCustomizationVisualOptionsT = DashboardCustomizationVisualOptions>
+  void SetDashboardCustomizationVisualOptions(DashboardCustomizationVisualOptionsT&& value) {
+    m_dashboardCustomizationVisualOptionsHasBeenSet = true;
+    m_dashboardCustomizationVisualOptions = std::forward<DashboardCustomizationVisualOptionsT>(value);
+  }
+  template <typename DashboardCustomizationVisualOptionsT = DashboardCustomizationVisualOptions>
+  TableConfiguration& WithDashboardCustomizationVisualOptions(DashboardCustomizationVisualOptionsT&& value) {
+    SetDashboardCustomizationVisualOptions(std::forward<DashboardCustomizationVisualOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The general visual interactions setup for a visual.</p>
    */
   inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
@@ -204,6 +226,8 @@ class TableConfiguration {
 
   Aws::Vector<TableInlineVisualization> m_tableInlineVisualizations;
 
+  DashboardCustomizationVisualOptions m_dashboardCustomizationVisualOptions;
+
   VisualInteractionOptions m_interactions;
   bool m_fieldWellsHasBeenSet = false;
   bool m_sortConfigurationHasBeenSet = false;
@@ -212,6 +236,7 @@ class TableConfiguration {
   bool m_fieldOptionsHasBeenSet = false;
   bool m_paginatedReportOptionsHasBeenSet = false;
   bool m_tableInlineVisualizationsHasBeenSet = false;
+  bool m_dashboardCustomizationVisualOptionsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

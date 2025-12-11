@@ -22,7 +22,10 @@ namespace Model {
 
 /**
  * <p>A structure that contains information about the users that the dashboard
- * snapshot is generated for.</p><p><h3>See Also:</h3>   <a
+ * snapshot is generated for.</p>  <p>When using identity-enhanced
+ * session credentials, set the UserConfiguration request attribute to null.
+ * Otherwise, the request will be invalid.</p> <p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SnapshotUserConfiguration">AWS
  * API Reference</a></p>
  */

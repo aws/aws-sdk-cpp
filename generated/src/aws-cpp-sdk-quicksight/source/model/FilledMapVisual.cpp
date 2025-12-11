@@ -56,6 +56,14 @@ FilledMapVisual& FilledMapVisual::operator=(JsonView jsonValue) {
     m_visualContentAltText = jsonValue.GetString("VisualContentAltText");
     m_visualContentAltTextHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GeocodingPreferences")) {
+    Aws::Utils::Array<JsonView> geocodingPreferencesJsonList = jsonValue.GetArray("GeocodingPreferences");
+    for (unsigned geocodingPreferencesIndex = 0; geocodingPreferencesIndex < geocodingPreferencesJsonList.GetLength();
+         ++geocodingPreferencesIndex) {
+      m_geocodingPreferences.push_back(geocodingPreferencesJsonList[geocodingPreferencesIndex].AsObject());
+    }
+    m_geocodingPreferencesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -100,6 +108,15 @@ JsonValue FilledMapVisual::Jsonize() const {
 
   if (m_visualContentAltTextHasBeenSet) {
     payload.WithString("VisualContentAltText", m_visualContentAltText);
+  }
+
+  if (m_geocodingPreferencesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> geocodingPreferencesJsonList(m_geocodingPreferences.size());
+    for (unsigned geocodingPreferencesIndex = 0; geocodingPreferencesIndex < geocodingPreferencesJsonList.GetLength();
+         ++geocodingPreferencesIndex) {
+      geocodingPreferencesJsonList[geocodingPreferencesIndex].AsObject(m_geocodingPreferences[geocodingPreferencesIndex].Jsonize());
+    }
+    payload.WithArray("GeocodingPreferences", std::move(geocodingPreferencesJsonList));
   }
 
   return payload;

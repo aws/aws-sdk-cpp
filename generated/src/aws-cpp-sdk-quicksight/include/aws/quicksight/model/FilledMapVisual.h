@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/ColumnHierarchy.h>
 #include <aws/quicksight/model/FilledMapConditionalFormatting.h>
 #include <aws/quicksight/model/FilledMapConfiguration.h>
+#include <aws/quicksight/model/GeocodePreference.h>
 #include <aws/quicksight/model/VisualCustomAction.h>
 #include <aws/quicksight/model/VisualSubtitleLabelOptions.h>
 #include <aws/quicksight/model/VisualTitleLabelOptions.h>
@@ -198,6 +199,30 @@ class FilledMapVisual {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The geocoding prefences for filled map visual.</p>
+   */
+  inline const Aws::Vector<GeocodePreference>& GetGeocodingPreferences() const { return m_geocodingPreferences; }
+  inline bool GeocodingPreferencesHasBeenSet() const { return m_geocodingPreferencesHasBeenSet; }
+  template <typename GeocodingPreferencesT = Aws::Vector<GeocodePreference>>
+  void SetGeocodingPreferences(GeocodingPreferencesT&& value) {
+    m_geocodingPreferencesHasBeenSet = true;
+    m_geocodingPreferences = std::forward<GeocodingPreferencesT>(value);
+  }
+  template <typename GeocodingPreferencesT = Aws::Vector<GeocodePreference>>
+  FilledMapVisual& WithGeocodingPreferences(GeocodingPreferencesT&& value) {
+    SetGeocodingPreferences(std::forward<GeocodingPreferencesT>(value));
+    return *this;
+  }
+  template <typename GeocodingPreferencesT = GeocodePreference>
+  FilledMapVisual& AddGeocodingPreferences(GeocodingPreferencesT&& value) {
+    m_geocodingPreferencesHasBeenSet = true;
+    m_geocodingPreferences.emplace_back(std::forward<GeocodingPreferencesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_visualId;
 
@@ -214,6 +239,8 @@ class FilledMapVisual {
   Aws::Vector<VisualCustomAction> m_actions;
 
   Aws::String m_visualContentAltText;
+
+  Aws::Vector<GeocodePreference> m_geocodingPreferences;
   bool m_visualIdHasBeenSet = false;
   bool m_titleHasBeenSet = false;
   bool m_subtitleHasBeenSet = false;
@@ -222,6 +249,7 @@ class FilledMapVisual {
   bool m_columnHierarchiesHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
+  bool m_geocodingPreferencesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/DashboardCustomizationVisualOptions.h>
 #include <aws/quicksight/model/PivotTableFieldOptions.h>
 #include <aws/quicksight/model/PivotTableFieldWells.h>
 #include <aws/quicksight/model/PivotTableOptions.h>
@@ -148,6 +149,27 @@ class PivotTableConfiguration {
 
   ///@{
   /**
+   * <p>The options that define customizations available to dashboard readers for a
+   * specific visual</p>
+   */
+  inline const DashboardCustomizationVisualOptions& GetDashboardCustomizationVisualOptions() const {
+    return m_dashboardCustomizationVisualOptions;
+  }
+  inline bool DashboardCustomizationVisualOptionsHasBeenSet() const { return m_dashboardCustomizationVisualOptionsHasBeenSet; }
+  template <typename DashboardCustomizationVisualOptionsT = DashboardCustomizationVisualOptions>
+  void SetDashboardCustomizationVisualOptions(DashboardCustomizationVisualOptionsT&& value) {
+    m_dashboardCustomizationVisualOptionsHasBeenSet = true;
+    m_dashboardCustomizationVisualOptions = std::forward<DashboardCustomizationVisualOptionsT>(value);
+  }
+  template <typename DashboardCustomizationVisualOptionsT = DashboardCustomizationVisualOptions>
+  PivotTableConfiguration& WithDashboardCustomizationVisualOptions(DashboardCustomizationVisualOptionsT&& value) {
+    SetDashboardCustomizationVisualOptions(std::forward<DashboardCustomizationVisualOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The general visual interactions setup for a visual.</p>
    */
   inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
@@ -176,6 +198,8 @@ class PivotTableConfiguration {
 
   PivotTablePaginatedReportOptions m_paginatedReportOptions;
 
+  DashboardCustomizationVisualOptions m_dashboardCustomizationVisualOptions;
+
   VisualInteractionOptions m_interactions;
   bool m_fieldWellsHasBeenSet = false;
   bool m_sortConfigurationHasBeenSet = false;
@@ -183,6 +207,7 @@ class PivotTableConfiguration {
   bool m_totalOptionsHasBeenSet = false;
   bool m_fieldOptionsHasBeenSet = false;
   bool m_paginatedReportOptionsHasBeenSet = false;
+  bool m_dashboardCustomizationVisualOptionsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

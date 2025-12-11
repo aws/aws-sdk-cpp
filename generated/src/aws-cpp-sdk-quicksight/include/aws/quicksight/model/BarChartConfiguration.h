@@ -7,9 +7,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AxisDisplayOptions.h>
+#include <aws/quicksight/model/BarChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/BarChartFieldWells.h>
 #include <aws/quicksight/model/BarChartOrientation.h>
 #include <aws/quicksight/model/BarChartSortConfiguration.h>
+#include <aws/quicksight/model/BarSeriesItem.h>
 #include <aws/quicksight/model/BarsArrangement.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
 #include <aws/quicksight/model/ContributionAnalysisDefault.h>
@@ -254,6 +256,49 @@ class BarChartConfiguration {
 
   ///@{
   /**
+   * <p>The options that determine the default presentation of all bar series in
+   * <code>BarChartVisual</code>.</p>
+   */
+  inline const BarChartDefaultSeriesSettings& GetDefaultSeriesSettings() const { return m_defaultSeriesSettings; }
+  inline bool DefaultSeriesSettingsHasBeenSet() const { return m_defaultSeriesSettingsHasBeenSet; }
+  template <typename DefaultSeriesSettingsT = BarChartDefaultSeriesSettings>
+  void SetDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    m_defaultSeriesSettingsHasBeenSet = true;
+    m_defaultSeriesSettings = std::forward<DefaultSeriesSettingsT>(value);
+  }
+  template <typename DefaultSeriesSettingsT = BarChartDefaultSeriesSettings>
+  BarChartConfiguration& WithDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    SetDefaultSeriesSettings(std::forward<DefaultSeriesSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The series item configuration of a <code>BarChartVisual</code>.</p>
+   */
+  inline const Aws::Vector<BarSeriesItem>& GetSeries() const { return m_series; }
+  inline bool SeriesHasBeenSet() const { return m_seriesHasBeenSet; }
+  template <typename SeriesT = Aws::Vector<BarSeriesItem>>
+  void SetSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series = std::forward<SeriesT>(value);
+  }
+  template <typename SeriesT = Aws::Vector<BarSeriesItem>>
+  BarChartConfiguration& WithSeries(SeriesT&& value) {
+    SetSeries(std::forward<SeriesT>(value));
+    return *this;
+  }
+  template <typename SeriesT = BarSeriesItem>
+  BarChartConfiguration& AddSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series.emplace_back(std::forward<SeriesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The legend display setup of the visual.</p>
    */
   inline const LegendOptions& GetLegend() const { return m_legend; }
@@ -394,6 +439,10 @@ class BarChartConfiguration {
 
   ChartAxisLabelOptions m_colorLabelOptions;
 
+  BarChartDefaultSeriesSettings m_defaultSeriesSettings;
+
+  Aws::Vector<BarSeriesItem> m_series;
+
   LegendOptions m_legend;
 
   DataLabelOptions m_dataLabels;
@@ -416,6 +465,8 @@ class BarChartConfiguration {
   bool m_valueAxisHasBeenSet = false;
   bool m_valueLabelOptionsHasBeenSet = false;
   bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_defaultSeriesSettingsHasBeenSet = false;
+  bool m_seriesHasBeenSet = false;
   bool m_legendHasBeenSet = false;
   bool m_dataLabelsHasBeenSet = false;
   bool m_tooltipHasBeenSet = false;

@@ -33,6 +33,10 @@ DkimAttributes& DkimAttributes::operator=(JsonView jsonValue) {
     }
     m_tokensHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SigningHostedZone")) {
+    m_signingHostedZone = jsonValue.GetString("SigningHostedZone");
+    m_signingHostedZoneHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SigningAttributesOrigin")) {
     m_signingAttributesOrigin =
         DkimSigningAttributesOriginMapper::GetDkimSigningAttributesOriginForName(jsonValue.GetString("SigningAttributesOrigin"));
@@ -70,6 +74,10 @@ JsonValue DkimAttributes::Jsonize() const {
       tokensJsonList[tokensIndex].AsString(m_tokens[tokensIndex]);
     }
     payload.WithArray("Tokens", std::move(tokensJsonList));
+  }
+
+  if (m_signingHostedZoneHasBeenSet) {
+    payload.WithString("SigningHostedZone", m_signingHostedZone);
   }
 
   if (m_signingAttributesOriginHasBeenSet) {

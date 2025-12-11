@@ -30,6 +30,10 @@ LineChartDefaultSeriesSettings& LineChartDefaultSeriesSettings::operator=(JsonVi
     m_markerStyleSettings = jsonValue.GetObject("MarkerStyleSettings");
     m_markerStyleSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DecalSettings")) {
+    m_decalSettings = jsonValue.GetObject("DecalSettings");
+    m_decalSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue LineChartDefaultSeriesSettings::Jsonize() const {
 
   if (m_markerStyleSettingsHasBeenSet) {
     payload.WithObject("MarkerStyleSettings", m_markerStyleSettings.Jsonize());
+  }
+
+  if (m_decalSettingsHasBeenSet) {
+    payload.WithObject("DecalSettings", m_decalSettings.Jsonize());
   }
 
   return payload;

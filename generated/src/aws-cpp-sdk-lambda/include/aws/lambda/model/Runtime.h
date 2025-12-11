@@ -55,7 +55,8 @@ enum class Runtime {
   nodejs22_x,
   nodejs24_x,
   python3_14,
-  java25
+  java25,
+  dotnet10
 };
 
 namespace RuntimeMapper {
