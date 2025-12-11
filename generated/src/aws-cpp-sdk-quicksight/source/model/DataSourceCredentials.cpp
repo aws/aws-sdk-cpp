@@ -30,6 +30,10 @@ DataSourceCredentials& DataSourceCredentials::operator=(JsonView jsonValue) {
     m_secretArn = jsonValue.GetString("SecretArn");
     m_secretArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("KeyPairCredentials")) {
+    m_keyPairCredentials = jsonValue.GetObject("KeyPairCredentials");
+    m_keyPairCredentialsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("WebProxyCredentials")) {
     m_webProxyCredentials = jsonValue.GetObject("WebProxyCredentials");
     m_webProxyCredentialsHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue DataSourceCredentials::Jsonize() const {
 
   if (m_secretArnHasBeenSet) {
     payload.WithString("SecretArn", m_secretArn);
+  }
+
+  if (m_keyPairCredentialsHasBeenSet) {
+    payload.WithObject("KeyPairCredentials", m_keyPairCredentials.Jsonize());
   }
 
   if (m_webProxyCredentialsHasBeenSet) {

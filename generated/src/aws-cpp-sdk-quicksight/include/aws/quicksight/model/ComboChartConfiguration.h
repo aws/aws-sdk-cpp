@@ -9,8 +9,10 @@
 #include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/BarsArrangement.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
+#include <aws/quicksight/model/ComboChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/ComboChartFieldWells.h>
 #include <aws/quicksight/model/ComboChartSortConfiguration.h>
+#include <aws/quicksight/model/ComboSeriesItem.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/ReferenceLine.h>
@@ -250,6 +252,49 @@ class ComboChartConfiguration {
 
   ///@{
   /**
+   * <p>The options that determine the default presentation of all series in
+   * <code>ComboChartVisual</code>.</p>
+   */
+  inline const ComboChartDefaultSeriesSettings& GetDefaultSeriesSettings() const { return m_defaultSeriesSettings; }
+  inline bool DefaultSeriesSettingsHasBeenSet() const { return m_defaultSeriesSettingsHasBeenSet; }
+  template <typename DefaultSeriesSettingsT = ComboChartDefaultSeriesSettings>
+  void SetDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    m_defaultSeriesSettingsHasBeenSet = true;
+    m_defaultSeriesSettings = std::forward<DefaultSeriesSettingsT>(value);
+  }
+  template <typename DefaultSeriesSettingsT = ComboChartDefaultSeriesSettings>
+  ComboChartConfiguration& WithDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    SetDefaultSeriesSettings(std::forward<DefaultSeriesSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The series item configuration of a <code>ComboChartVisual</code>.</p>
+   */
+  inline const Aws::Vector<ComboSeriesItem>& GetSeries() const { return m_series; }
+  inline bool SeriesHasBeenSet() const { return m_seriesHasBeenSet; }
+  template <typename SeriesT = Aws::Vector<ComboSeriesItem>>
+  void SetSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series = std::forward<SeriesT>(value);
+  }
+  template <typename SeriesT = Aws::Vector<ComboSeriesItem>>
+  ComboChartConfiguration& WithSeries(SeriesT&& value) {
+    SetSeries(std::forward<SeriesT>(value));
+    return *this;
+  }
+  template <typename SeriesT = ComboSeriesItem>
+  ComboChartConfiguration& AddSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series.emplace_back(std::forward<SeriesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The legend display setup of the visual.</p>
    */
   inline const LegendOptions& GetLegend() const { return m_legend; }
@@ -404,6 +449,10 @@ class ComboChartConfiguration {
 
   ChartAxisLabelOptions m_colorLabelOptions;
 
+  ComboChartDefaultSeriesSettings m_defaultSeriesSettings;
+
+  Aws::Vector<ComboSeriesItem> m_series;
+
   LegendOptions m_legend;
 
   DataLabelOptions m_barDataLabels;
@@ -428,6 +477,8 @@ class ComboChartConfiguration {
   bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
   bool m_singleAxisOptionsHasBeenSet = false;
   bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_defaultSeriesSettingsHasBeenSet = false;
+  bool m_seriesHasBeenSet = false;
   bool m_legendHasBeenSet = false;
   bool m_barDataLabelsHasBeenSet = false;
   bool m_lineDataLabelsHasBeenSet = false;

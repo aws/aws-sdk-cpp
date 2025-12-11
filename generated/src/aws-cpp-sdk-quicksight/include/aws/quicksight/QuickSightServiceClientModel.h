@@ -140,6 +140,7 @@
 #include <aws/quicksight/model/GetDashboardEmbedUrlResult.h>
 #include <aws/quicksight/model/GetFlowMetadataResult.h>
 #include <aws/quicksight/model/GetFlowPermissionsResult.h>
+#include <aws/quicksight/model/GetIdentityContextResult.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlResult.h>
 #include <aws/quicksight/model/ListActionConnectorsResult.h>
 #include <aws/quicksight/model/ListAnalysesResult.h>
@@ -398,6 +399,7 @@ class GenerateEmbedUrlForRegisteredUserWithIdentityRequest;
 class GetDashboardEmbedUrlRequest;
 class GetFlowMetadataRequest;
 class GetFlowPermissionsRequest;
+class GetIdentityContextRequest;
 class GetSessionEmbedUrlRequest;
 class ListActionConnectorsRequest;
 class ListAnalysesRequest;
@@ -627,6 +629,7 @@ typedef Aws::Utils::Outcome<GenerateEmbedUrlForRegisteredUserWithIdentityResult,
 typedef Aws::Utils::Outcome<GetDashboardEmbedUrlResult, QuickSightError> GetDashboardEmbedUrlOutcome;
 typedef Aws::Utils::Outcome<GetFlowMetadataResult, QuickSightError> GetFlowMetadataOutcome;
 typedef Aws::Utils::Outcome<GetFlowPermissionsResult, QuickSightError> GetFlowPermissionsOutcome;
+typedef Aws::Utils::Outcome<GetIdentityContextResult, QuickSightError> GetIdentityContextOutcome;
 typedef Aws::Utils::Outcome<GetSessionEmbedUrlResult, QuickSightError> GetSessionEmbedUrlOutcome;
 typedef Aws::Utils::Outcome<ListActionConnectorsResult, QuickSightError> ListActionConnectorsOutcome;
 typedef Aws::Utils::Outcome<ListAnalysesResult, QuickSightError> ListAnalysesOutcome;
@@ -855,6 +858,7 @@ typedef std::future<GenerateEmbedUrlForRegisteredUserWithIdentityOutcome> Genera
 typedef std::future<GetDashboardEmbedUrlOutcome> GetDashboardEmbedUrlOutcomeCallable;
 typedef std::future<GetFlowMetadataOutcome> GetFlowMetadataOutcomeCallable;
 typedef std::future<GetFlowPermissionsOutcome> GetFlowPermissionsOutcomeCallable;
+typedef std::future<GetIdentityContextOutcome> GetIdentityContextOutcomeCallable;
 typedef std::future<GetSessionEmbedUrlOutcome> GetSessionEmbedUrlOutcomeCallable;
 typedef std::future<ListActionConnectorsOutcome> ListActionConnectorsOutcomeCallable;
 typedef std::future<ListAnalysesOutcome> ListAnalysesOutcomeCallable;
@@ -1355,6 +1359,9 @@ typedef std::function<void(const QuickSightClient*, const Model::GetFlowMetadata
 typedef std::function<void(const QuickSightClient*, const Model::GetFlowPermissionsRequest&, const Model::GetFlowPermissionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetFlowPermissionsResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::GetIdentityContextRequest&, const Model::GetIdentityContextOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIdentityContextResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::GetSessionEmbedUrlRequest&, const Model::GetSessionEmbedUrlOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSessionEmbedUrlResponseReceivedHandler;

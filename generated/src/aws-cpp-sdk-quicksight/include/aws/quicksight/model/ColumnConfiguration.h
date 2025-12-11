@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/ColorsConfiguration.h>
 #include <aws/quicksight/model/ColumnIdentifier.h>
 #include <aws/quicksight/model/ColumnRole.h>
+#include <aws/quicksight/model/DecalSettingsConfiguration.h>
 #include <aws/quicksight/model/FormatConfiguration.h>
 
 #include <utility>
@@ -103,6 +104,24 @@ class ColumnConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Decal configuration of the column.</p>
+   */
+  inline const DecalSettingsConfiguration& GetDecalSettingsConfiguration() const { return m_decalSettingsConfiguration; }
+  inline bool DecalSettingsConfigurationHasBeenSet() const { return m_decalSettingsConfigurationHasBeenSet; }
+  template <typename DecalSettingsConfigurationT = DecalSettingsConfiguration>
+  void SetDecalSettingsConfiguration(DecalSettingsConfigurationT&& value) {
+    m_decalSettingsConfigurationHasBeenSet = true;
+    m_decalSettingsConfiguration = std::forward<DecalSettingsConfigurationT>(value);
+  }
+  template <typename DecalSettingsConfigurationT = DecalSettingsConfiguration>
+  ColumnConfiguration& WithDecalSettingsConfiguration(DecalSettingsConfigurationT&& value) {
+    SetDecalSettingsConfiguration(std::forward<DecalSettingsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ColumnIdentifier m_column;
 
@@ -111,10 +130,13 @@ class ColumnConfiguration {
   ColumnRole m_role{ColumnRole::NOT_SET};
 
   ColorsConfiguration m_colorsConfiguration;
+
+  DecalSettingsConfiguration m_decalSettingsConfiguration;
   bool m_columnHasBeenSet = false;
   bool m_formatConfigurationHasBeenSet = false;
   bool m_roleHasBeenSet = false;
   bool m_colorsConfigurationHasBeenSet = false;
+  bool m_decalSettingsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model
