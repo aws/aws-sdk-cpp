@@ -132,8 +132,8 @@ private:
  */
 class ChunkingInterceptor : public smithy::interceptor::Interceptor {
 public:
-    explicit ChunkingInterceptor(const Aws::Client::ClientConfiguration& config, bool isDefaultHttpClient = true)
-        : m_httpClientChunkedMode(isDefaultHttpClient ? config.httpClientChunkedMode : Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION) {}
+    explicit ChunkingInterceptor(const Aws::Client::ClientConfiguration& config)
+        : m_httpClientChunkedMode(config.httpClientChunkedMode) {}
     ~ChunkingInterceptor() override = default;
 
     ModifyRequestOutcome ModifyBeforeSigning(smithy::interceptor::InterceptorContext& context) override {

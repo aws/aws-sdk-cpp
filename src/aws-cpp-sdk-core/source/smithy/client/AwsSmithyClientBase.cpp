@@ -106,7 +106,11 @@ void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
   
   m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{
       Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
-      Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", *m_clientConfig, m_httpClient->IsDefaultAwsHttpClient())
+      Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", [this]() {
+          Aws::Client::ClientConfiguration chunkingConfig = *m_clientConfig;
+          chunkingConfig.httpClientChunkedMode = m_httpClient->IsDefaultAwsHttpClient() ? m_clientConfig->httpClientChunkedMode : Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
+          return chunkingConfig;
+      }())
   };
 
   baseCopyInit();

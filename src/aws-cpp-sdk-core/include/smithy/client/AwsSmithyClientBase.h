@@ -103,7 +103,11 @@ namespace client
           m_errorMarshaller(std::move(errorMarshaller)),
           m_interceptors({
               Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
-              Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", *m_clientConfig, m_httpClient->IsDefaultAwsHttpClient())
+              Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", [this]() {
+                  Aws::Client::ClientConfiguration chunkingConfig = *m_clientConfig;
+                  chunkingConfig.httpClientChunkedMode = m_httpClient->IsDefaultAwsHttpClient() ? m_clientConfig->httpClientChunkedMode : Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
+                  return chunkingConfig;
+              }())
           })
         {
             
