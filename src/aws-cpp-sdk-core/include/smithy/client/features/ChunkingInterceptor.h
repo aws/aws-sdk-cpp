@@ -42,8 +42,6 @@ public:
         if (m_request == nullptr) {
             AWS_LOGSTREAM_ERROR("AwsChunkedStream", "request is null");
         }
-
-        setg(nullptr, nullptr, nullptr);
     }
 
 protected:
@@ -134,8 +132,8 @@ private:
  */
 class ChunkingInterceptor : public smithy::interceptor::Interceptor {
 public:
-    explicit ChunkingInterceptor(const Aws::Client::ClientConfiguration& config)
-        : m_httpClientChunkedMode(config.httpClientChunkedMode) {}
+    explicit ChunkingInterceptor(const Aws::Client::ClientConfiguration& config, bool isDefaultHttpClient = true)
+        : m_httpClientChunkedMode(isDefaultHttpClient ? config.httpClientChunkedMode : Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION) {}
     ~ChunkingInterceptor() override = default;
 
     ModifyRequestOutcome ModifyBeforeSigning(smithy::interceptor::InterceptorContext& context) override {

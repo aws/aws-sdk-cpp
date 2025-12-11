@@ -118,14 +118,7 @@ struct RequestInfo
     }
 };
 
-static ClientConfiguration GetChunkingConfig(const ClientConfiguration& config, const std::shared_ptr<HttpClient>& httpClient)
-{
-    ClientConfiguration chunkingConfig(config);
-    if (!httpClient->IsDefaultAwsHttpClient()) {
-        chunkingConfig.httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
-    }
-    return chunkingConfig;
-}
+
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
@@ -149,7 +142,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG, GetChunkingConfig(configuration, m_httpClient)), m_userAgentInterceptor}
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_httpClient->IsDefaultAwsHttpClient()), m_userAgentInterceptor}
 {
 }
 
@@ -175,7 +168,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_requestCompressionConfig(configuration.requestCompressionConfig),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG, GetChunkingConfig(configuration, m_httpClient)), m_userAgentInterceptor}
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_httpClient->IsDefaultAwsHttpClient()), m_userAgentInterceptor}
 {
 }
 

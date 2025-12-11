@@ -100,18 +100,12 @@ namespace client
           m_serviceName(std::move(serviceName)),
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
-          m_errorMarshaller(std::move(errorMarshaller))
+          m_errorMarshaller(std::move(errorMarshaller)),
+          m_interceptors({
+              Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
+              Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", *m_clientConfig, m_httpClient->IsDefaultAwsHttpClient())
+          })
         {
-            // Create modified config for chunking interceptor
-            Aws::Client::ClientConfiguration chunkingConfig(*m_clientConfig);
-            if (!m_httpClient->IsDefaultAwsHttpClient()) {
-                chunkingConfig.httpClientChunkedMode = Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
-            }
-            
-            m_interceptors = {
-                Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
-                Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", chunkingConfig)
-            };
             
             baseInit();
         }
