@@ -81,5 +81,16 @@ Aws::String StartChatContactRequest::SerializePayload() const {
     payload.WithString("CustomerId", m_customerId);
   }
 
+  if (m_disconnectOnCustomerExitHasBeenSet) {
+    Aws::Utils::Array<JsonValue> disconnectOnCustomerExitJsonList(m_disconnectOnCustomerExit.size());
+    for (unsigned disconnectOnCustomerExitIndex = 0; disconnectOnCustomerExitIndex < disconnectOnCustomerExitJsonList.GetLength();
+         ++disconnectOnCustomerExitIndex) {
+      disconnectOnCustomerExitJsonList[disconnectOnCustomerExitIndex].AsString(
+          DisconnectOnCustomerExitParticipantTypeMapper::GetNameForDisconnectOnCustomerExitParticipantType(
+              m_disconnectOnCustomerExit[disconnectOnCustomerExitIndex]));
+    }
+    payload.WithArray("DisconnectOnCustomerExit", std::move(disconnectOnCustomerExitJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

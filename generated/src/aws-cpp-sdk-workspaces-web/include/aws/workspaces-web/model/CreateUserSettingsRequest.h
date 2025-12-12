@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/model/BrandingConfigurationCreateInput.h>
 #include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
 #include <aws/workspaces-web/model/Tag.h>
@@ -305,6 +306,26 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The branding configuration input that customizes the appearance of the web
+   * portal for end users. This includes a custom logo, favicon, wallpaper, localized
+   * strings, color theme, and an optional terms of service.</p>
+   */
+  inline const BrandingConfigurationCreateInput& GetBrandingConfigurationInput() const { return m_brandingConfigurationInput; }
+  inline bool BrandingConfigurationInputHasBeenSet() const { return m_brandingConfigurationInputHasBeenSet; }
+  template <typename BrandingConfigurationInputT = BrandingConfigurationCreateInput>
+  void SetBrandingConfigurationInput(BrandingConfigurationInputT&& value) {
+    m_brandingConfigurationInputHasBeenSet = true;
+    m_brandingConfigurationInput = std::forward<BrandingConfigurationInputT>(value);
+  }
+  template <typename BrandingConfigurationInputT = BrandingConfigurationCreateInput>
+  CreateUserSettingsRequest& WithBrandingConfigurationInput(BrandingConfigurationInputT&& value) {
+    SetBrandingConfigurationInput(std::forward<BrandingConfigurationInputT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EnabledType m_copyAllowed{EnabledType::NOT_SET};
 
@@ -333,6 +354,8 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
   EnabledType m_deepLinkAllowed{EnabledType::NOT_SET};
 
   ToolbarConfiguration m_toolbarConfiguration;
+
+  BrandingConfigurationCreateInput m_brandingConfigurationInput;
   bool m_copyAllowedHasBeenSet = false;
   bool m_pasteAllowedHasBeenSet = false;
   bool m_downloadAllowedHasBeenSet = false;
@@ -347,6 +370,7 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
   bool m_additionalEncryptionContextHasBeenSet = false;
   bool m_deepLinkAllowedHasBeenSet = false;
   bool m_toolbarConfigurationHasBeenSet = false;
+  bool m_brandingConfigurationInputHasBeenSet = false;
 };
 
 }  // namespace Model

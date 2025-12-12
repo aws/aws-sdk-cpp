@@ -161,6 +161,8 @@
 #include <aws/datasync/model/TagResourceResult.h>
 #include <aws/datasync/model/TaskExecutionFilesFailedDetail.h>
 #include <aws/datasync/model/TaskExecutionFilesListedDetail.h>
+#include <aws/datasync/model/TaskExecutionFoldersFailedDetail.h>
+#include <aws/datasync/model/TaskExecutionFoldersListedDetail.h>
 #include <aws/datasync/model/TaskExecutionListEntry.h>
 #include <aws/datasync/model/TaskExecutionResultDetail.h>
 #include <aws/datasync/model/TaskExecutionStatus.h>

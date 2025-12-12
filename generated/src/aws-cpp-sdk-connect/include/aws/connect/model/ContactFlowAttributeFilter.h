@@ -23,8 +23,8 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p> Filter for contact flow attributes with multiple condition types.
- * </p><p><h3>See Also:</h3>   <a
+ * <p> Filter for contact flow attributes with multiple condition
+ * types.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowAttributeFilter">AWS
  * API Reference</a></p>
  */
@@ -37,8 +37,8 @@ class ContactFlowAttributeFilter {
 
   ///@{
   /**
-   * <p> A list of conditions which would be applied together with an OR condition.
-   * </p>
+   * <p> A list of conditions which would be applied together with an OR
+   * condition.</p>
    */
   inline const Aws::Vector<ContactFlowAttributeAndCondition>& GetOrConditions() const { return m_orConditions; }
   inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
@@ -62,8 +62,8 @@ class ContactFlowAttributeFilter {
 
   ///@{
   /**
-   * <p> A list of conditions which would be applied together with a AND condition.
-   * </p>
+   * <p> A list of conditions which would be applied together with a AND
+   * condition.</p>
    */
   inline const ContactFlowAttributeAndCondition& GetAndCondition() const { return m_andCondition; }
   inline bool AndConditionHasBeenSet() const { return m_andConditionHasBeenSet; }
@@ -97,7 +97,7 @@ class ContactFlowAttributeFilter {
 
   ///@{
   /**
-   * <p> Contact flow type condition within attribute filter. </p>
+   * <p> Contact flow type condition within attribute filter.</p>
    */
   inline const ContactFlowTypeCondition& GetContactFlowTypeCondition() const { return m_contactFlowTypeCondition; }
   inline bool ContactFlowTypeConditionHasBeenSet() const { return m_contactFlowTypeConditionHasBeenSet; }

@@ -84,7 +84,7 @@ class DecimalCondition {
 
   ///@{
   /**
-   * <p>The type of comparison to be made when evaluating the decimal condition. </p>
+   * <p>The type of comparison to be made when evaluating the decimal condition.</p>
    */
   inline DecimalComparisonType GetComparisonType() const { return m_comparisonType; }
   inline bool ComparisonTypeHasBeenSet() const { return m_comparisonTypeHasBeenSet; }

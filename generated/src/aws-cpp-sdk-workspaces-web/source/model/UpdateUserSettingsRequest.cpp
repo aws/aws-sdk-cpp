@@ -59,5 +59,9 @@ Aws::String UpdateUserSettingsRequest::SerializePayload() const {
     payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
   }
 
+  if (m_brandingConfigurationInputHasBeenSet) {
+    payload.WithObject("brandingConfigurationInput", m_brandingConfigurationInput.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

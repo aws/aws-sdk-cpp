@@ -21,11 +21,12 @@ namespace Model {
 
 /**
  * <p>Specifies configuration information for a DataSync-managed secret, such as an
- * authentication token or secret key that DataSync uses to access a specific
- * storage location, with a customer-managed KMS key.</p>  <p>You can use
- * either <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code> to
- * provide credentials for a <code>CreateLocation</code> request. Do not provide
- * both parameters for the same request.</p> <p><h3>See Also:</h3>   <a
+ * authentication token, secret key, password, or Kerberos keytab that DataSync
+ * uses to access a specific storage location, with a customer-managed KMS key.</p>
+ *  <p>You can use either <code>CmkSecretConfig</code> or
+ * <code>CustomSecretConfig</code> to provide credentials for a
+ * <code>CreateLocation</code> request. Do not provide both parameters for the same
+ * request.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CmkSecretConfig">AWS
  * API Reference</a></p>
  */

@@ -31,12 +31,16 @@
 #include <aws/workspaces-web/model/AssociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateUserSettingsResult.h>
 #include <aws/workspaces-web/model/AuthenticationType.h>
+#include <aws/workspaces-web/model/BrandingConfiguration.h>
+#include <aws/workspaces-web/model/BrandingConfigurationCreateInput.h>
+#include <aws/workspaces-web/model/BrandingConfigurationUpdateInput.h>
 #include <aws/workspaces-web/model/BrowserSettings.h>
 #include <aws/workspaces-web/model/BrowserSettingsSummary.h>
 #include <aws/workspaces-web/model/BrowserType.h>
 #include <aws/workspaces-web/model/Category.h>
 #include <aws/workspaces-web/model/Certificate.h>
 #include <aws/workspaces-web/model/CertificateSummary.h>
+#include <aws/workspaces-web/model/ColorTheme.h>
 #include <aws/workspaces-web/model/ConflictException.h>
 #include <aws/workspaces-web/model/CookieSpecification.h>
 #include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
@@ -131,9 +135,11 @@
 #include <aws/workspaces-web/model/GetUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/GetUserSettingsRequest.h>
 #include <aws/workspaces-web/model/GetUserSettingsResult.h>
+#include <aws/workspaces-web/model/IconImageInput.h>
 #include <aws/workspaces-web/model/IdentityProvider.h>
 #include <aws/workspaces-web/model/IdentityProviderSummary.h>
 #include <aws/workspaces-web/model/IdentityProviderType.h>
+#include <aws/workspaces-web/model/ImageMetadata.h>
 #include <aws/workspaces-web/model/InlineRedactionConfiguration.h>
 #include <aws/workspaces-web/model/InlineRedactionPattern.h>
 #include <aws/workspaces-web/model/InstanceType.h>
@@ -167,9 +173,12 @@
 #include <aws/workspaces-web/model/ListUserAccessLoggingSettingsResult.h>
 #include <aws/workspaces-web/model/ListUserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListUserSettingsResult.h>
+#include <aws/workspaces-web/model/Locale.h>
+#include <aws/workspaces-web/model/LocalizedBrandingStrings.h>
 #include <aws/workspaces-web/model/LogConfiguration.h>
 #include <aws/workspaces-web/model/LogFileFormat.h>
 #include <aws/workspaces-web/model/MaxDisplayResolution.h>
+#include <aws/workspaces-web/model/MimeType.h>
 #include <aws/workspaces-web/model/NetworkSettings.h>
 #include <aws/workspaces-web/model/NetworkSettingsSummary.h>
 #include <aws/workspaces-web/model/Portal.h>
@@ -228,6 +237,7 @@
 #include <aws/workspaces-web/model/ValidationExceptionField.h>
 #include <aws/workspaces-web/model/ValidationExceptionReason.h>
 #include <aws/workspaces-web/model/VisualMode.h>
+#include <aws/workspaces-web/model/WallpaperImageInput.h>
 #include <aws/workspaces-web/model/WebContentFilteringPolicy.h>
 
 using WorkSpacesWebIncludeTest = ::testing::Test;

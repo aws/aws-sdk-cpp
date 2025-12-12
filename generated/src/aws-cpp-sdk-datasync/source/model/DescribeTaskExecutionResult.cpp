@@ -123,6 +123,42 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator=(const Aws::A
     m_filesFailed = jsonValue.GetObject("FilesFailed");
     m_filesFailedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EstimatedFoldersToDelete")) {
+    m_estimatedFoldersToDelete = jsonValue.GetInt64("EstimatedFoldersToDelete");
+    m_estimatedFoldersToDeleteHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EstimatedFoldersToTransfer")) {
+    m_estimatedFoldersToTransfer = jsonValue.GetInt64("EstimatedFoldersToTransfer");
+    m_estimatedFoldersToTransferHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FoldersSkipped")) {
+    m_foldersSkipped = jsonValue.GetInt64("FoldersSkipped");
+    m_foldersSkippedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FoldersPrepared")) {
+    m_foldersPrepared = jsonValue.GetInt64("FoldersPrepared");
+    m_foldersPreparedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FoldersTransferred")) {
+    m_foldersTransferred = jsonValue.GetInt64("FoldersTransferred");
+    m_foldersTransferredHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FoldersVerified")) {
+    m_foldersVerified = jsonValue.GetInt64("FoldersVerified");
+    m_foldersVerifiedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FoldersDeleted")) {
+    m_foldersDeleted = jsonValue.GetInt64("FoldersDeleted");
+    m_foldersDeletedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FoldersListed")) {
+    m_foldersListed = jsonValue.GetObject("FoldersListed");
+    m_foldersListedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FoldersFailed")) {
+    m_foldersFailed = jsonValue.GetObject("FoldersFailed");
+    m_foldersFailedHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LaunchTime")) {
     m_launchTime = jsonValue.GetDouble("LaunchTime");
     m_launchTimeHasBeenSet = true;

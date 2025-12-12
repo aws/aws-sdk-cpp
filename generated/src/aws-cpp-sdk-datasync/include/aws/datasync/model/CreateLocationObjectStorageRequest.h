@@ -265,11 +265,11 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
    * <p>Specifies configuration information for a DataSync-managed secret, which
    * includes the <code>SecretKey</code> that DataSync uses to access a specific
    * object storage location, with a customer-managed KMS key.</p> <p>When you
-   * include this paramater as part of a <code>CreateLocationObjectStorage</code>
+   * include this parameter as part of a <code>CreateLocationObjectStorage</code>
    * request, you provide only the KMS key ARN. DataSync uses this KMS key together
    * with the value you specify for the <code>SecretKey</code> parameter to create a
    * DataSync-managed secret to store the location access credentials.</p> <p>Make
-   * sure the DataSync has permission to access the KMS key that you specify.</p>
+   * sure that DataSync has permission to access the KMS key that you specify.</p>
    *  <p>You can use either <code>CmkSecretConfig</code> (with
    * <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without
    * <code>SecretKey</code>) to provide credentials for a
@@ -294,9 +294,9 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
   /**
    * <p>Specifies configuration information for a customer-managed Secrets Manager
    * secret where the secret key for a specific object storage location is stored in
-   * plain text. This configuration includes the secret ARN, and the ARN for an IAM
-   * role that provides access to the secret.</p>  <p>You can use either
-   * <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or
+   * plain text, in Secrets Manager. This configuration includes the secret ARN, and
+   * the ARN for an IAM role that provides access to the secret.</p>  <p>You
+   * can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or
    * <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide
    * credentials for a <code>CreateLocationObjectStorage</code> request. Do not
    * provide both parameters for the same request.</p>

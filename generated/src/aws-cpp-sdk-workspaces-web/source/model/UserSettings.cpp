@@ -81,6 +81,10 @@ UserSettings& UserSettings::operator=(JsonView jsonValue) {
     m_toolbarConfiguration = jsonValue.GetObject("toolbarConfiguration");
     m_toolbarConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("brandingConfiguration")) {
+    m_brandingConfiguration = jsonValue.GetObject("brandingConfiguration");
+    m_brandingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +154,10 @@ JsonValue UserSettings::Jsonize() const {
 
   if (m_toolbarConfigurationHasBeenSet) {
     payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
+  }
+
+  if (m_brandingConfigurationHasBeenSet) {
+    payload.WithObject("brandingConfiguration", m_brandingConfiguration.Jsonize());
   }
 
   return payload;

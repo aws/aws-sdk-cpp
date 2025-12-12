@@ -22,8 +22,8 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p> A list of conditions which would be applied together with an AND condition.
- * </p><p><h3>See Also:</h3>   <a
+ * <p> A list of conditions which would be applied together with an AND
+ * condition.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowAttributeAndCondition">AWS
  * API Reference</a></p>
  */
@@ -36,7 +36,7 @@ class ContactFlowAttributeAndCondition {
 
   ///@{
   /**
-   * <p> Tag-based conditions for contact flow filtering. </p>
+   * <p> Tag-based conditions for contact flow filtering.</p>
    */
   inline const Aws::Vector<TagCondition>& GetTagConditions() const { return m_tagConditions; }
   inline bool TagConditionsHasBeenSet() const { return m_tagConditionsHasBeenSet; }
@@ -60,7 +60,7 @@ class ContactFlowAttributeAndCondition {
 
   ///@{
   /**
-   * <p> Contact flow type condition. </p>
+   * <p> Contact flow type condition.</p>
    */
   inline const ContactFlowTypeCondition& GetContactFlowTypeCondition() const { return m_contactFlowTypeCondition; }
   inline bool ContactFlowTypeConditionHasBeenSet() const { return m_contactFlowTypeConditionHasBeenSet; }

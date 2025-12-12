@@ -40,6 +40,14 @@ Aws::String UpdateLocationSmbRequest::SerializePayload() const {
     payload.WithString("Password", m_password);
   }
 
+  if (m_cmkSecretConfigHasBeenSet) {
+    payload.WithObject("CmkSecretConfig", m_cmkSecretConfig.Jsonize());
+  }
+
+  if (m_customSecretConfigHasBeenSet) {
+    payload.WithObject("CustomSecretConfig", m_customSecretConfig.Jsonize());
+  }
+
   if (m_agentArnsHasBeenSet) {
     Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
     for (unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex) {

@@ -30,7 +30,7 @@ namespace Model {
  * <code>OR</code> operator</p> </li> <li> <p>The inner list specifies conditions
  * that need to be applied with <code>AND</code> operator.</p> </li> </ul>
  * <p>Only one field can be populated. Maximum number of allowed Tag conditions is
- * 25. Maximum number of allowed Hierarchy Group conditions is 20. </p>
+ * 25. Maximum number of allowed Hierarchy Group conditions is 20.</p>
  * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ControlPlaneUserAttributeFilter">AWS
  * API Reference</a></p>
