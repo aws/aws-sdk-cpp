@@ -136,7 +136,7 @@ TEST_F(ChunkingInterceptorTest, ShouldNotApplyChunkingForCustomHttpClient) {
         config.httpClientChunkedMode = Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
     }
     
-    ChunkingInterceptor interceptor(config);
+    ChunkingInterceptor interceptor(config.httpClientChunkedMode);
     
     // Create request with checksum (would normally trigger chunking)
     auto request = Aws::MakeShared<StandardHttpRequest>(CHUNKING_TEST_LOG_TAG, "test.com", Http::HttpMethod::HTTP_POST);
