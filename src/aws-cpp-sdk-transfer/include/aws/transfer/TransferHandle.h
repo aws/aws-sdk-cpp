@@ -292,6 +292,12 @@ namespace Aws
             inline const Aws::String& GetTargetFilePath() const { return m_fileName; }
 
             /**
+             * (Download only) Temporary file path used during download before atomic rename to target.
+             */
+            inline const Aws::String& GetTempFilePath() const { return m_tempFilePath; }
+            inline void SetTempFilePath(const Aws::String& tempPath) { m_tempFilePath = tempPath; }
+
+            /**
              * (Download only) version id of the object to retrieve; if not specified in constructor, then latest is used
             */
             const Aws::String GetVersionId() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_versionId; }
@@ -366,6 +372,11 @@ namespace Aws
             void WaitUntilFinished() const;
 
             const CreateDownloadStreamCallback& GetCreateDownloadStreamFunction() const { return m_createDownloadStreamFn; }
+            void SetCreateDownloadStreamFunction(const CreateDownloadStreamCallback& fn) { 
+                std::lock_guard<std::mutex> lock(m_downloadStreamLock);
+                m_createDownloadStreamFn = fn; 
+                m_downloadStream = nullptr;
+            }
 
             /**
              * Write @partStream to the configured output (f)stream.
@@ -409,6 +420,7 @@ namespace Aws
             Aws::String m_bucket;
             Aws::String m_key;
             Aws::String m_fileName;
+            Aws::String m_tempFilePath;
             Aws::String m_contentType;
             Aws::String m_versionId;
             Aws::String m_etag;
