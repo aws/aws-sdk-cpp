@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/DataSyncRequest.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/SmbAuthenticationType.h>
 #include <aws/datasync/model/SmbMountOptions.h>
 #include <aws/datasync/model/TagListEntry.h>
@@ -146,6 +148,65 @@ class CreateLocationSmbRequest : public DataSyncRequest {
   template <typename PasswordT = Aws::String>
   CreateLocationSmbRequest& WithPassword(PasswordT&& value) {
     SetPassword(std::forward<PasswordT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a DataSync-managed secret, either a
+   * <code>Password</code> or <code>KerberosKeytab</code> (for <code>NTLM</code>
+   * (default) and <code>KERBEROS</code> authentication types, respectively) that
+   * DataSync uses to access a specific SMB storage location, with a customer-managed
+   * KMS key.</p> <p>When you include this parameter as part of a
+   * <code>CreateLocationSmbRequest</code> request, you provide only the KMS key ARN.
+   * DataSync uses this KMS key together with either the <code>Password</code> or
+   * <code>KerberosKeytab</code> you specify to create a DataSync-managed secret to
+   * store the location access credentials.</p> <p>Make sure that DataSync has
+   * permission to access the KMS key that you specify.</p>  <p>You can use
+   * either <code>CmkSecretConfig</code> (with either <code>Password</code> or
+   * <code>KerberosKeytab</code>) or <code>CustomSecretConfig</code> (without any
+   * <code>Password</code> and <code>KerberosKeytab</code>) to provide credentials
+   * for a <code>CreateLocationSmbRequest</code> request. Do not provide both
+   * <code>CmkSecretConfig</code> and <code>CustomSecretConfig</code> parameters for
+   * the same request.</p>
+   */
+  inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+  inline bool CmkSecretConfigHasBeenSet() const { return m_cmkSecretConfigHasBeenSet; }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  void SetCmkSecretConfig(CmkSecretConfigT&& value) {
+    m_cmkSecretConfigHasBeenSet = true;
+    m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value);
+  }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  CreateLocationSmbRequest& WithCmkSecretConfig(CmkSecretConfigT&& value) {
+    SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies configuration information for a customer-managed Secrets Manager
+   * secret where the SMB storage location credentials is stored in Secrets Manager
+   * as plain text (for <code>Password</code>) or binary (for
+   * <code>KerberosKeytab</code>). This configuration includes the secret ARN, and
+   * the ARN for an IAM role that provides access to the secret.</p>  <p>You
+   * can use either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>)
+   * or <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to
+   * provide credentials for a <code>CreateLocationSmbRequest</code> request. Do not
+   * provide both parameters for the same request.</p>
+   */
+  inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+  inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  void SetCustomSecretConfig(CustomSecretConfigT&& value) {
+    m_customSecretConfigHasBeenSet = true;
+    m_customSecretConfig = std::forward<CustomSecretConfigT>(value);
+  }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  CreateLocationSmbRequest& WithCustomSecretConfig(CustomSecretConfigT&& value) {
+    SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value));
     return *this;
   }
   ///@}
@@ -344,6 +405,10 @@ class CreateLocationSmbRequest : public DataSyncRequest {
 
   Aws::String m_password;
 
+  CmkSecretConfig m_cmkSecretConfig;
+
+  CustomSecretConfig m_customSecretConfig;
+
   Aws::Vector<Aws::String> m_agentArns;
 
   SmbMountOptions m_mountOptions;
@@ -364,6 +429,8 @@ class CreateLocationSmbRequest : public DataSyncRequest {
   bool m_userHasBeenSet = false;
   bool m_domainHasBeenSet = false;
   bool m_passwordHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;
   bool m_mountOptionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

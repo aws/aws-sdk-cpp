@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/model/BrandingConfiguration.h>
 #include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
 #include <aws/workspaces-web/model/ToolbarConfiguration.h>
@@ -303,6 +304,25 @@ class UserSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The branding configuration output that customizes the appearance of the web
+   * portal for end users.</p>
+   */
+  inline const BrandingConfiguration& GetBrandingConfiguration() const { return m_brandingConfiguration; }
+  inline bool BrandingConfigurationHasBeenSet() const { return m_brandingConfigurationHasBeenSet; }
+  template <typename BrandingConfigurationT = BrandingConfiguration>
+  void SetBrandingConfiguration(BrandingConfigurationT&& value) {
+    m_brandingConfigurationHasBeenSet = true;
+    m_brandingConfiguration = std::forward<BrandingConfigurationT>(value);
+  }
+  template <typename BrandingConfigurationT = BrandingConfiguration>
+  UserSettings& WithBrandingConfiguration(BrandingConfigurationT&& value) {
+    SetBrandingConfiguration(std::forward<BrandingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userSettingsArn;
 
@@ -331,6 +351,8 @@ class UserSettings {
   EnabledType m_deepLinkAllowed{EnabledType::NOT_SET};
 
   ToolbarConfiguration m_toolbarConfiguration;
+
+  BrandingConfiguration m_brandingConfiguration;
   bool m_userSettingsArnHasBeenSet = false;
   bool m_associatedPortalArnsHasBeenSet = false;
   bool m_copyAllowedHasBeenSet = false;
@@ -345,6 +367,7 @@ class UserSettings {
   bool m_additionalEncryptionContextHasBeenSet = false;
   bool m_deepLinkAllowedHasBeenSet = false;
   bool m_toolbarConfigurationHasBeenSet = false;
+  bool m_brandingConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

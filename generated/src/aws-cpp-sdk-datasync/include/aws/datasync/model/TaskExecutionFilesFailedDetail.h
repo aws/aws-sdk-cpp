@@ -17,8 +17,8 @@ namespace DataSync {
 namespace Model {
 
 /**
- * <p>The number of objects that DataSync fails to prepare, transfer, verify, and
- * delete during your task execution.</p>  <p>Applies only to <a
+ * <p>The number of files or objects that DataSync fails to prepare, transfer,
+ * verify, and delete during your task execution.</p>  <p>Applies only to <a
  * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
  * mode tasks</a>.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskExecutionFilesFailedDetail">AWS
@@ -33,8 +33,8 @@ class TaskExecutionFilesFailedDetail {
 
   ///@{
   /**
-   * <p>The number of objects that DataSync fails to prepare during your task
-   * execution.</p>
+   * <p>The number of files or objects that DataSync fails to prepare during your
+   * task execution.</p>
    */
   inline long long GetPrepare() const { return m_prepare; }
   inline bool PrepareHasBeenSet() const { return m_prepareHasBeenSet; }
@@ -50,8 +50,8 @@ class TaskExecutionFilesFailedDetail {
 
   ///@{
   /**
-   * <p>The number of objects that DataSync fails to transfer during your task
-   * execution.</p>
+   * <p>The number of files or objects that DataSync fails to transfer during your
+   * task execution.</p>
    */
   inline long long GetTransfer() const { return m_transfer; }
   inline bool TransferHasBeenSet() const { return m_transferHasBeenSet; }
@@ -67,7 +67,7 @@ class TaskExecutionFilesFailedDetail {
 
   ///@{
   /**
-   * <p>The number of objects that DataSync fails to verify during your task
+   * <p>The number of files or objects that DataSync fails to verify during your task
    * execution.</p>
    */
   inline long long GetVerify() const { return m_verify; }
@@ -84,7 +84,7 @@ class TaskExecutionFilesFailedDetail {
 
   ///@{
   /**
-   * <p>The number of objects that DataSync fails to delete during your task
+   * <p>The number of files or objects that DataSync fails to delete during your task
    * execution.</p>
    */
   inline long long GetDelete() const { return m_delete; }

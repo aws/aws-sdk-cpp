@@ -294,9 +294,7 @@ class Options {
   /**
    * <p>Limits the bandwidth used by a DataSync task. For example, if you want
    * DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
-   * (<code>=1024*1024</code>).</p>  <p>Not applicable to <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
-   * mode tasks</a>.</p>
+   * (<code>=1024*1024</code>).</p>
    */
   inline long long GetBytesPerSecond() const { return m_bytesPerSecond; }
   inline bool BytesPerSecondHasBeenSet() const { return m_bytesPerSecondHasBeenSet; }

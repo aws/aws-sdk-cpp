@@ -20,7 +20,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p> The contact flow type condition. </p><p><h3>See Also:</h3>   <a
+ * <p> The contact flow type condition.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowTypeCondition">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,7 @@ class ContactFlowTypeCondition {
 
   ///@{
   /**
-   * <p> Contact flow type of the contact flow type condition. </p>
+   * <p> Contact flow type of the contact flow type condition.</p>
    */
   inline ContactFlowType GetContactFlowType() const { return m_contactFlowType; }
   inline bool ContactFlowTypeHasBeenSet() const { return m_contactFlowTypeHasBeenSet; }
