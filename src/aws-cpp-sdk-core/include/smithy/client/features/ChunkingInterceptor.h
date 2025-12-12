@@ -79,6 +79,13 @@ protected:
              m_chunkingBuffer.data() + m_chunkingBufferPos + bytesToRead);
         
         m_chunkingBufferPos += bytesToRead;
+        
+        // Remove consumed data to prevent unbounded growth
+        if (m_chunkingBufferPos > DataBufferSize) {
+            m_chunkingBuffer.erase(m_chunkingBuffer.begin(), m_chunkingBuffer.begin() + m_chunkingBufferPos);
+            m_chunkingBufferPos = 0;
+        }
+        
         return traits_type::to_int_type(*gptr());
     }
 
