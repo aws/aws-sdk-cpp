@@ -105,7 +105,8 @@ namespace client
               Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
               Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", [this]() {
                   Aws::Client::ClientConfiguration chunkingConfig = *m_clientConfig;
-                  chunkingConfig.httpClientChunkedMode = m_httpClient->IsDefaultAwsHttpClient() ? m_clientConfig->httpClientChunkedMode : Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
+                  chunkingConfig.httpClientChunkedMode = m_httpClient->IsDefaultAwsHttpClient() ? 
+                      Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode;
                   return chunkingConfig;
               }())
           })
