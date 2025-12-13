@@ -66,23 +66,29 @@ protected:
         }
 
         // if the chunking buffer is empty there is nothing to read
-        if (m_chunkingBufferPos >= m_chunkingBuffer.size()) {
+        if (m_chunkingBufferPos >= m_chunkingBufferSize) {
             return traits_type::eof();
         }
 
         // Set up buffer pointers to read from chunking buffer
-        size_t remainingBytes = m_chunkingBuffer.size() - m_chunkingBufferPos;
+        size_t remainingBytes = m_chunkingBufferSize - m_chunkingBufferPos;
         size_t bytesToRead = std::min(remainingBytes, DataBufferSize);
         
-        setg(m_chunkingBuffer.data() + m_chunkingBufferPos, 
-             m_chunkingBuffer.data() + m_chunkingBufferPos, 
-             m_chunkingBuffer.data() + m_chunkingBufferPos + bytesToRead);
+        setg(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos, 
+             m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos, 
+             m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos + bytesToRead);
         
         m_chunkingBufferPos += bytesToRead;
         
-        // Remove consumed data to prevent unbounded growth
-        if (m_chunkingBufferPos > DataBufferSize) {
-            m_chunkingBuffer.erase(m_chunkingBuffer.begin(), m_chunkingBuffer.begin() + m_chunkingBufferPos);
+        // Compact buffer when consumed data exceeds half buffer size
+        if (m_chunkingBufferPos > m_chunkingBuffer.GetLength() / 2) {
+            size_t remaining = m_chunkingBufferSize - m_chunkingBufferPos;
+            if (remaining > 0) {
+                std::memmove(m_chunkingBuffer.GetUnderlyingData(), 
+                           m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos, 
+                           remaining);
+            }
+            m_chunkingBufferSize = remaining;
             m_chunkingBufferPos = 0;
         }
         
@@ -97,7 +103,10 @@ private:
                      + Aws::Utils::HashingUtils::Base64Encode(m_request->GetRequestHash().second->GetHash().GetResult()) + "\r\n";
         }
         trailer += "\r\n";
-        m_chunkingBuffer.insert(m_chunkingBuffer.end(), trailer.begin(), trailer.end());
+        if (m_chunkingBufferSize + trailer.length() <= m_chunkingBuffer.GetLength()) {
+            std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, trailer.c_str(), trailer.length());
+            m_chunkingBufferSize += trailer.length();
+        }
     }
 
     void writeChunk(size_t bytesRead) {
@@ -107,14 +116,17 @@ private:
 
         if (bytesRead > 0) {
             Aws::String chunkHeader = Aws::Utils::StringUtils::ToHexString(bytesRead) + "\r\n";
-            m_chunkingBuffer.insert(m_chunkingBuffer.end(), chunkHeader.begin(), chunkHeader.end());
-            m_chunkingBuffer.insert(m_chunkingBuffer.end(), m_data.GetUnderlyingData(), m_data.GetUnderlyingData() + bytesRead);
-            Aws::String chunkFooter = "\r\n";
-            m_chunkingBuffer.insert(m_chunkingBuffer.end(), chunkFooter.begin(), chunkFooter.end());
+            std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, chunkHeader.c_str(), chunkHeader.length());
+            m_chunkingBufferSize += chunkHeader.length();
+            std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, m_data.GetUnderlyingData(), bytesRead);
+            m_chunkingBufferSize += bytesRead;
+            std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, "\r\n", 2);
+            m_chunkingBufferSize += 2;
         }
     }
 
-    Aws::Vector<char> m_chunkingBuffer;
+    Aws::Utils::Array<char> m_chunkingBuffer{DataBufferSize * 4};
+    size_t m_chunkingBufferSize{0};
     size_t m_chunkingBufferPos{0};
     Aws::Http::HttpRequest* m_request{nullptr};
     std::shared_ptr<Aws::IOStream> m_stream;
