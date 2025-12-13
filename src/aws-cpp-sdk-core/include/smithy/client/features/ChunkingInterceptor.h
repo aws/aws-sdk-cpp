@@ -50,18 +50,34 @@ protected:
             return traits_type::to_int_type(*gptr());
         }
 
-        // only read and write to chunked stream if the underlying stream
-        // is still in a valid state
-        if (m_stream->good()) {
-            // Try to read in a 64K chunk, if we cant we know the stream is over
-            m_stream->read(m_data.GetUnderlyingData(), m_data.GetLength());
-            size_t bytesRead = static_cast<size_t>(m_stream->gcount());
-            writeChunk(bytesRead);
+        // Compact buffer when consumed data exceeds half buffer size
+        if (m_chunkingBufferPos > m_chunkingBuffer.GetLength() / 2) {
+            size_t remaining = m_chunkingBufferSize - m_chunkingBufferPos;
+            if (remaining > 0) {
+                std::memmove(m_chunkingBuffer.GetUnderlyingData(), 
+                           m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos, 
+                           remaining);
+            }
+            m_chunkingBufferSize = remaining;
+            m_chunkingBufferPos = 0;
+        }
 
-            // if we've read everything from the stream, we want to add the trailer
-            // to the underlying stream
-            if ((m_stream->peek() == EOF || m_stream->eof()) && !m_stream->bad()) {
-                writeTrailerToUnderlyingStream();
+        // only read and write to chunked stream if the underlying stream
+        // is still in a valid state and we have buffer space
+        if (m_stream->good()) {
+            // Check if we have enough space for worst-case chunk (data + header + footer)
+            size_t maxChunkSize = m_data.GetLength() + 20; // data + hex header + CRLF
+            if (m_chunkingBufferSize + maxChunkSize <= m_chunkingBuffer.GetLength()) {
+                // Try to read in a 64K chunk, if we cant we know the stream is over
+                m_stream->read(m_data.GetUnderlyingData(), m_data.GetLength());
+                size_t bytesRead = static_cast<size_t>(m_stream->gcount());
+                writeChunk(bytesRead);
+
+                // if we've read everything from the stream, we want to add the trailer
+                // to the underlying stream
+                if ((m_stream->peek() == EOF || m_stream->eof()) && !m_stream->bad()) {
+                    writeTrailerToUnderlyingStream();
+                }
             }
         }
 
@@ -79,18 +95,6 @@ protected:
              m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos + bytesToRead);
         
         m_chunkingBufferPos += bytesToRead;
-        
-        // Compact buffer when consumed data exceeds half buffer size
-        if (m_chunkingBufferPos > m_chunkingBuffer.GetLength() / 2) {
-            size_t remaining = m_chunkingBufferSize - m_chunkingBufferPos;
-            if (remaining > 0) {
-                std::memmove(m_chunkingBuffer.GetUnderlyingData(), 
-                           m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferPos, 
-                           remaining);
-            }
-            m_chunkingBufferSize = remaining;
-            m_chunkingBufferPos = 0;
-        }
         
         return traits_type::to_int_type(*gptr());
     }
@@ -116,12 +120,15 @@ private:
 
         if (bytesRead > 0) {
             Aws::String chunkHeader = Aws::Utils::StringUtils::ToHexString(bytesRead) + "\r\n";
-            std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, chunkHeader.c_str(), chunkHeader.length());
-            m_chunkingBufferSize += chunkHeader.length();
-            std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, m_data.GetUnderlyingData(), bytesRead);
-            m_chunkingBufferSize += bytesRead;
-            std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, "\r\n", 2);
-            m_chunkingBufferSize += 2;
+            size_t totalSize = chunkHeader.length() + bytesRead + 2;
+            if (m_chunkingBufferSize + totalSize <= m_chunkingBuffer.GetLength()) {
+                std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, chunkHeader.c_str(), chunkHeader.length());
+                m_chunkingBufferSize += chunkHeader.length();
+                std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, m_data.GetUnderlyingData(), bytesRead);
+                m_chunkingBufferSize += bytesRead;
+                std::memcpy(m_chunkingBuffer.GetUnderlyingData() + m_chunkingBufferSize, "\r\n", 2);
+                m_chunkingBufferSize += 2;
+            }
         }
     }
 
