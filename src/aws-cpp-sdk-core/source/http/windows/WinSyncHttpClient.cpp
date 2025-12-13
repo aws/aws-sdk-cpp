@@ -7,7 +7,6 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/stream/StreamBufProtectedWriter.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -100,21 +99,14 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const std::shared_ptr<HttpRequest
 {
     bool success = true;
     bool isChunked = request->HasTransferEncoding() && request->GetTransferEncoding() == Aws::Http::CHUNKED_VALUE;
-    bool isAwsChunked = request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
-                        request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER).find(Aws::Http::AWS_CHUNKED_VALUE) != Aws::String::npos;
     auto payloadStream = request->GetContentBody();
-    const char CRLF[] = "\r\n";
     if(payloadStream)
     {
         uint64_t bytesWritten;
         uint64_t bytesToRead = HTTP_REQUEST_WRITE_BUFFER_LENGTH;
         auto startingPos = payloadStream->tellg();
         bool done = false;
-        // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
-        // Length of hex(HTTP_REQUEST_WRITE_BUFFER_LENGTH) is 4;
-        // Length of each CRLF is 2.
-        // Reserve 8 bytes in total, should the request be aws-chunked.
-        char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH + 8 ];
+        char streamBuffer[HTTP_REQUEST_WRITE_BUFFER_LENGTH];
         while(success && !done)
         {
             payloadStream->read(streamBuffer, bytesToRead);
@@ -124,21 +116,6 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const std::shared_ptr<HttpRequest
             bytesWritten = 0;
             if (bytesRead > 0)
             {
-                if (isAwsChunked)
-                {
-                    if (request->GetRequestHash().second != nullptr)
-                    {
-                        request->GetRequestHash().second->Update(reinterpret_cast<unsigned char*>(streamBuffer), static_cast<size_t>(bytesRead));
-                    }
-
-                    Aws::String hex = Aws::Utils::StringUtils::ToHexString(static_cast<uint64_t>(bytesRead));
-                    memcpy(streamBuffer + hex.size() + 2, streamBuffer, static_cast<size_t>(bytesRead));
-                    memcpy(streamBuffer + hex.size() + 2 + bytesRead, CRLF, 2);
-                    memcpy(streamBuffer, hex.c_str(), hex.size());
-                    memcpy(streamBuffer + hex.size(), CRLF, 2);
-                    bytesRead += hex.size() + 4;
-                }
-
                 bytesWritten = DoWriteData(hHttpRequest, streamBuffer, bytesRead, isChunked);
                 if (!bytesWritten)
                 {
@@ -162,27 +139,6 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const std::shared_ptr<HttpRequest
             }
 
             success = success && ContinueRequest(*request) && IsRequestProcessingEnabled();
-        }
-
-        if (success && isAwsChunked)
-        {
-            Aws::StringStream chunkedTrailer;
-            chunkedTrailer << "0" << CRLF;
-            if (request->GetRequestHash().second != nullptr)
-            {
-                chunkedTrailer << "x-amz-checksum-" << request->GetRequestHash().first << ":"
-                    << Aws::Utils::HashingUtils::Base64Encode(request->GetRequestHash().second->GetHash().GetResult()) << CRLF;
-            }
-            chunkedTrailer << CRLF;
-            bytesWritten = DoWriteData(hHttpRequest, const_cast<char*>(chunkedTrailer.str().c_str()), chunkedTrailer.str().size(), isChunked);
-            if (!bytesWritten)
-            {
-                success = false;
-            }
-            else if(writeLimiter)
-            {
-                writeLimiter->ApplyAndPayForCost(bytesWritten);
-            }
         }
 
         if (success && isChunked)

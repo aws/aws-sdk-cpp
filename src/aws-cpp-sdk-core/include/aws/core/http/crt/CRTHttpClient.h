@@ -52,6 +52,8 @@ namespace Aws
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const override;
 
+            bool IsDefaultAwsHttpClient() const override { return true; }
+
         private:
             // Yeah, I know, but someone made MakeRequest() const and didn't think about the fact that
             // making an HTTP request most certainly mutates state. It was me. I'm the person that did that, and

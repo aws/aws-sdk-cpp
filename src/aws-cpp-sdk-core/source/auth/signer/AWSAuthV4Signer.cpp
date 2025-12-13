@@ -218,26 +218,10 @@ bool AWSAuthV4Signer::SignRequestWithCreds(Aws::Http::HttpRequest& request, cons
         request.SetAwsSessionToken(credentials.GetSessionToken());
     }
 
-    // If the request checksum, set the signer to use a unsigned
-    // trailing payload. otherwise use it in the header
-    if (request.GetRequestHash().second != nullptr && !request.GetRequestHash().first.empty() && request.GetContentBody() != nullptr) {
-      AWS_LOGSTREAM_DEBUG(v4LogTag, "Note: Http payloads are not being signed. signPayloads="
-                                        << signBody << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
-      if (request.GetRequestHash().second != nullptr) {
+    // If the request has checksum and chunking was applied by interceptor, use streaming payload
+    if (request.GetRequestHash().second != nullptr && !request.GetRequestHash().first.empty() && 
+        request.GetContentBody() != nullptr && request.HasHeader(Http::AWS_TRAILER_HEADER)) {
         payloadHash = STREAMING_UNSIGNED_PAYLOAD_TRAILER;
-        Aws::String checksumHeaderValue = Aws::String("x-amz-checksum-") + request.GetRequestHash().first;
-        request.DeleteHeader(checksumHeaderValue.c_str());
-        request.SetHeaderValue(Http::AWS_TRAILER_HEADER, checksumHeaderValue);
-        request.SetTransferEncoding(CHUNKED_VALUE);
-        request.HasContentEncoding()
-                ? request.SetContentEncoding(Aws::String{Http::AWS_CHUNKED_VALUE} + "," + request.GetContentEncoding())
-                : request.SetContentEncoding(Http::AWS_CHUNKED_VALUE);
-
-        if (request.HasHeader(Http::CONTENT_LENGTH_HEADER)) {
-          request.SetHeaderValue(Http::DECODED_CONTENT_LENGTH_HEADER, request.GetHeaderValue(Http::CONTENT_LENGTH_HEADER));
-          request.DeleteHeader(Http::CONTENT_LENGTH_HEADER);
-        }
-      }
     } else {
       payloadHash = ComputePayloadHash(request);
       if (payloadHash.empty()) {
