@@ -10,6 +10,7 @@
 #include <aws/connect/model/Endpoint.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
+#include <aws/connect/model/TemplatedMessageConfig.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -216,6 +217,22 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@}
 
   ///@{
+
+  inline const TemplatedMessageConfig& GetInitialTemplatedSystemMessage() const { return m_initialTemplatedSystemMessage; }
+  inline bool InitialTemplatedSystemMessageHasBeenSet() const { return m_initialTemplatedSystemMessageHasBeenSet; }
+  template <typename InitialTemplatedSystemMessageT = TemplatedMessageConfig>
+  void SetInitialTemplatedSystemMessage(InitialTemplatedSystemMessageT&& value) {
+    m_initialTemplatedSystemMessageHasBeenSet = true;
+    m_initialTemplatedSystemMessage = std::forward<InitialTemplatedSystemMessageT>(value);
+  }
+  template <typename InitialTemplatedSystemMessageT = TemplatedMessageConfig>
+  StartOutboundChatContactRequest& WithInitialTemplatedSystemMessage(InitialTemplatedSystemMessageT&& value) {
+    SetInitialTemplatedSystemMessage(std::forward<InitialTemplatedSystemMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The unique identifier for an Amazon Connect contact. This identifier is
    * related to the contact starting.</p>
@@ -311,6 +328,8 @@ class StartOutboundChatContactRequest : public ConnectRequest {
 
   ChatMessage m_initialSystemMessage;
 
+  TemplatedMessageConfig m_initialTemplatedSystemMessage;
+
   Aws::String m_relatedContactId;
 
   Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
@@ -325,6 +344,7 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   bool m_chatDurationInMinutesHasBeenSet = false;
   bool m_participantDetailsHasBeenSet = false;
   bool m_initialSystemMessageHasBeenSet = false;
+  bool m_initialTemplatedSystemMessageHasBeenSet = false;
   bool m_relatedContactIdHasBeenSet = false;
   bool m_supportedMessagingContentTypesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/AdConditioningConfiguration.h>
+#include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
@@ -449,6 +450,25 @@ class GetPlaybackConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The configuration for customizing HTTP requests to the ad decision server
+   * (ADS). This includes settings for request method, headers, body content, and
+   * compression options.</p>
+   */
+  inline const AdDecisionServerConfiguration& GetAdDecisionServerConfiguration() const { return m_adDecisionServerConfiguration; }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  void SetAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    m_adDecisionServerConfigurationHasBeenSet = true;
+    m_adDecisionServerConfiguration = std::forward<AdDecisionServerConfigurationT>(value);
+  }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  GetPlaybackConfigurationResult& WithAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    SetAdDecisionServerConfiguration(std::forward<AdDecisionServerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -505,6 +525,8 @@ class GetPlaybackConfigurationResult {
 
   AdConditioningConfiguration m_adConditioningConfiguration;
 
+  AdDecisionServerConfiguration m_adDecisionServerConfiguration;
+
   Aws::String m_requestId;
   bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_availSuppressionHasBeenSet = false;
@@ -527,6 +549,7 @@ class GetPlaybackConfigurationResult {
   bool m_transcodeProfileNameHasBeenSet = false;
   bool m_videoContentSourceUrlHasBeenSet = false;
   bool m_adConditioningConfigurationHasBeenSet = false;
+  bool m_adDecisionServerConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

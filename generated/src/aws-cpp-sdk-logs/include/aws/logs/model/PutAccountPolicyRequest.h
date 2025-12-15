@@ -34,7 +34,8 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
 
   ///@{
   /**
-   * <p>A name for the policy. This must be unique within the account.</p>
+   * <p>A name for the policy. This must be unique within the account and cannot
+   * start with <code>aws/</code>.</p>
    */
   inline const Aws::String& GetPolicyName() const { return m_policyName; }
   inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
@@ -110,11 +111,16 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
    * Processors that you can use</a>. </p> <p> <b>Field index policy</b> </p> <p>A
    * field index filter policy can include the following attribute in a JSON
    * block:</p> <ul> <li> <p> <b>Fields</b> The array of field indexes to create.</p>
-   * </li> </ul> <p>It must contain at least one field index.</p> <p>The following is
-   * an example of an index policy document that creates two indexes,
-   * <code>RequestId</code> and <code>TransactionId</code>.</p> <p>
-   * <code>"policyDocument": "{ \"Fields\": [ \"RequestId\", \"TransactionId\" ]
-   * }"</code> </p>
+   * </li> <li> <p> <b>FieldsV2</b> The object of field indexes to create along with
+   * it's type.</p> </li> </ul> <p>It must contain at least one field index.</p>
+   * <p>The following is an example of an index policy document that creates indexes
+   * with different types.</p> <p> <code>"policyDocument": "{ \"Fields\": [
+   * \"TransactionId\" ], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"},
+   * \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\":
+   * \"FACET\"}}}"</code> </p> <p>You can use <code>FieldsV2</code> to specify the
+   * type for each field. Supported types are <code>FIELD_INDEX</code> and
+   * <code>FACET</code>. Field names within <code>Fields</code> and
+   * <code>FieldsV2</code> must be mutually exclusive.</p>
    */
   inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
   inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
@@ -168,16 +174,24 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
   ///@{
   /**
    * <p>Use this parameter to apply the new policy to a subset of log groups in the
-   * account.</p> <p>Specifying <code>selectionCriteria</code> is valid only when you
-   * specify <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code>
-   * or <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p> <p>If
+   * account or a data source name and type combination. </p> <p>Specifying
+   * <code>selectionCriteria</code> is valid only when you specify
+   * <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or
+   * <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p> <ul> <li> <p>If
    * <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only
    * supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN
-   * []</code> </p> <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>
-   * or <code>TRANSFORMER_POLICY</code>, the only supported
+   * []</code> </p> </li> <li> <p>If <code>policyType</code> is
+   * <code>TRANSFORMER_POLICY</code>, the only supported
    * <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code> </p>
-   * <p>The <code>selectionCriteria</code> string can be up to 25KB in length. The
-   * length is determined by using its UTF-8 bytes.</p> <p>Using the
+   * </li> <li> <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>, the
+   * supported <code>selectionCriteria</code> filters are:</p> <ul> <li> <p>
+   * <code>LogGroupNamePrefix</code> </p> </li> <li> <p> <code>DataSourceName</code>
+   * AND <code>DataSourceType</code> </p> </li> </ul> <p>When you specify
+   * <code>selectionCriteria</code> for a field index policy you can use either
+   * <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and
+   * <code>DataSourceType</code> together.</p> </li> </ul> <p>The
+   * <code>selectionCriteria</code> string can be up to 25KB in length. The length is
+   * determined by using its UTF-8 bytes.</p> <p>Using the
    * <code>selectionCriteria</code> parameter with
    * <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite
    * loops. For more information, see <a

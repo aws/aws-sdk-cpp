@@ -36,7 +36,7 @@ class ListPoliciesRequest : public BedrockAgentCoreControlRequest {
   ///@{
   /**
    * <p>A pagination token returned from a previous <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_ListPolicies.html">ListPolicies</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicies.html">ListPolicies</a>
    * call. Use this token to retrieve the next page of results when the response is
    * paginated.</p>
    */
