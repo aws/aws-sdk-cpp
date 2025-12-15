@@ -18,6 +18,13 @@ namespace Aws
             {
             }
 
+            ContentCryptoMaterial::ContentCryptoMaterial(const char * msg) :
+                m_cryptoTagLength(0), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE), m_contentCryptoScheme(ContentCryptoScheme::NONE),
+                m_error(msg)
+            {
+                AWS_LOGSTREAM_ERROR("DataHandler", msg);
+            }
+
             ContentCryptoMaterial::ContentCryptoMaterial(ContentCryptoScheme contentCryptoScheme) :
                 m_contentEncryptionKey(SymmetricCipher::GenerateKey()), m_cryptoTagLength(0), m_keyWrapAlgorithm(KeyWrapAlgorithm::NONE), m_contentCryptoScheme(contentCryptoScheme)
             {

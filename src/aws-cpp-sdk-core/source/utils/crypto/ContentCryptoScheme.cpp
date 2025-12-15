@@ -20,6 +20,8 @@ namespace Aws
                 static const int cryptoScheme_CBC_HASH = HashingUtils::HashString("AES/CBC/PKCS5Padding");
                 static const int cryptoScheme_CTR_HASH = HashingUtils::HashString("AES/CTR/NoPadding");
                 static const int cryptoScheme_GCM_HASH = HashingUtils::HashString("AES/GCM/NoPadding");
+                // "115" represents ALG_AES_256_GCM_HKDF_SHA512_COMMIT_KEY (0x0073)
+                static const int cryptoScheme_COMMIT_HASH = HashingUtils::HashString("115");
 
                 ContentCryptoScheme GetContentCryptoSchemeForName(const Aws::String& name)
                 {
@@ -36,8 +38,12 @@ namespace Aws
                     {
                         return ContentCryptoScheme::GCM;
                     }
-                    assert(0);
-                    return ContentCryptoScheme::NONE;
+                else if (hashcode == cryptoScheme_COMMIT_HASH)
+                {
+                    return ContentCryptoScheme::GCM_COMMIT;
+                }
+                // Return NONE for unrecognized schemes instead of asserting
+                return ContentCryptoScheme::NONE;
                 }
 
                 Aws::String GetNameForContentCryptoScheme(ContentCryptoScheme enumValue)
@@ -50,6 +56,8 @@ namespace Aws
                         return "AES/CTR/NoPadding";
                     case ContentCryptoScheme::GCM:
                         return "AES/GCM/NoPadding";
+                    case ContentCryptoScheme::GCM_COMMIT:
+                        return "115";
                     default:
                         assert(0);
                         return "";

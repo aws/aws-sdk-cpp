@@ -14,11 +14,13 @@
 #include <aws/s3-encryption/handlers/DataHandler.h>
 #include <aws/s3-encryption/handlers/InstructionFileHandler.h>
 #include <aws/s3-encryption/handlers/MetadataHandler.h>
+#include <aws/s3-encryption/HKDF.h>
 #include <aws/core/utils/crypto/ContentCryptoScheme.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/GetObjectResult.h>
 #include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/PutObjectResult.h>
 
 static const char* const INSTRUCTION_HEADER_VALUE = "default instruction file header";
@@ -33,7 +35,7 @@ public:
     MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
         S3Client(Aws::Auth::AWSCredentials("", ""),
                  Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>(Aws::S3::S3Client::GetAllocationTag()),
-                         clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
+                         clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_headObjectCalled(0), m_body(nullptr)
     {
     }
 
@@ -62,8 +64,17 @@ public:
         return Aws::S3::Model::GetObjectOutcome(std::move(getObjectResult));
     }
 
+    Aws::S3::Model::HeadObjectOutcome HeadObject(const Aws::S3::Model::HeadObjectRequest& ) const override
+    {
+        m_headObjectCalled++;
+        Aws::S3::Model::HeadObjectResult headObjectResult;
+        headObjectResult.SetMetadata(m_metadata);
+        return Aws::S3::Model::HeadObjectOutcome(std::move(headObjectResult));
+    }
+
     mutable size_t m_putObjectCalled;
     mutable size_t m_getObjectCalled;
+    mutable size_t m_headObjectCalled;
     mutable Aws::Map<Aws::String, Aws::String> m_metadata;
     mutable std::shared_ptr<Aws::IOStream> m_body;
 };
@@ -108,7 +119,7 @@ namespace
             contentCryptoMaterial.SetMaterialsDescription(testMap);
         }
 
-        static void PopulateGetObjectResultMetadata(GetObjectResult& result)
+        static void PopulateHeadObjectResultMetadata(HeadObjectResult& result)
         {
             auto metadata = result.GetMetadata();
             auto cekIV = SymmetricCipher::GenerateIV(IV_SIZE);
@@ -153,8 +164,9 @@ namespace
         ASSERT_NE(metadata.find(MATERIALS_DESCRIPTION_HEADER), metadata.end());
         ASSERT_STREQ(metadata[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
 
-        GetObjectResult result;
+        HeadObjectResult result;
         result.SetMetadata(metadata);
+
         ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(result);
         ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
         ASSERT_EQ(contentCryptoMaterial.GetIV(), readContentCryptoMaterial.GetIV());
@@ -170,9 +182,9 @@ namespace
     //This tests the read metadata functionality of the handler without a mock client.
     TEST_F(HandlerTest, ReadMetadataTest)
     {
-        GetObjectResult result;
+        HeadObjectResult result;
         MetadataHandler handler;
-        PopulateGetObjectResultMetadata(result);
+        PopulateHeadObjectResultMetadata(result);
 
         ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(result);
         auto metadata = result.GetMetadata();
@@ -246,15 +258,15 @@ namespace
 
         PutObjectOutcome putObjectOutcome = myClient->PutObject(putObjectRequest);
 
-        GetObjectRequest getObjectRequest;
-        getObjectRequest.SetBucket(fullBucketName);
-        getObjectRequest.SetKey(TEST_OBJ_KEY);
+        HeadObjectRequest headObjectRequest;
+        headObjectRequest.SetBucket(fullBucketName);
+        headObjectRequest.SetKey(TEST_OBJ_KEY);
 
-        GetObjectOutcome getObjectOutcome = myClient->GetObject(getObjectRequest);
+        auto headObjectOutcome = myClient->HeadObject(headObjectRequest);
 
-        GetObjectResult& getObjectResult = getObjectOutcome.GetResult();
+        auto& headObjectResult = headObjectOutcome.GetResult();
 
-        ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(getObjectResult);
+        ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(headObjectResult);
 
         ASSERT_EQ(contentCryptoMaterial.GetEncryptedContentEncryptionKey(), readContentCryptoMaterial.GetEncryptedContentEncryptionKey());
         ASSERT_EQ(contentCryptoMaterial.GetIV(), readContentCryptoMaterial.GetIV());
@@ -266,7 +278,7 @@ namespace
         ASSERT_EQ(contentCryptoMaterial.GetCEKGCMTag(), readContentCryptoMaterial.GetCEKGCMTag());
         ASSERT_EQ(contentCryptoMaterial.GetGCMAAD(), readContentCryptoMaterial.GetGCMAAD());
 
-        ASSERT_EQ(myClient->m_getObjectCalled, 1u);
+        ASSERT_EQ(myClient->m_headObjectCalled, 1u);
         ASSERT_EQ(myClient->m_putObjectCalled, 1u);
     }
 
@@ -274,10 +286,11 @@ namespace
     TEST_F(HandlerTest, WriteInstructionFileTest)
     {
         PutObjectRequest request;
+        PutObjectRequest objRequest;
         ContentCryptoMaterial contentCryptoMaterial;
         PopulateContentCryptoMaterial(contentCryptoMaterial);
         InstructionFileHandler handler;
-        handler.PopulateRequest(request, contentCryptoMaterial);
+        handler.PopulateRequest(objRequest, request, contentCryptoMaterial);
 
         auto bodyStream = request.GetBody();
         Aws::String jsonString;
@@ -303,6 +316,99 @@ namespace
         ASSERT_STREQ(cryptoContentMap[MATERIALS_DESCRIPTION_HEADER].c_str(), handler.SerializeMap(contentCryptoMaterial.GetMaterialsDescription()).c_str());
     }
 
+    struct keygen_test
+    {
+        std::vector<uint8_t> data_key;
+        std::vector<uint8_t> message_id;
+        std::vector<uint8_t> encryption_key;
+        std::vector<uint8_t> commitment_key;
+        void run_test()
+        {
+            CryptoBuffer EncryptionKey(32);
+            CryptoBuffer CommitmentKey(28);
+            CryptoBuffer dataKey = CryptoBuffer(data_key.data(), data_key.size());
+            CryptoBuffer messageId = CryptoBuffer(message_id.data(), message_id.size());
+            Aws::S3Encryption::derive_encryption_key(dataKey, messageId, EncryptionKey);
+            Aws::S3Encryption::derive_commitment_key(dataKey, messageId, CommitmentKey);
+
+            CryptoBuffer encKey = CryptoBuffer(encryption_key.data(), encryption_key.size());
+            CryptoBuffer comKey = CryptoBuffer(commitment_key.data(), commitment_key.size());
+
+            ASSERT_EQ(CommitmentKey, comKey);
+            ASSERT_EQ(EncryptionKey, encKey);
+        }
+    };
+    std::vector<uint8_t> hex_decode(const std::string &x)
+    {
+        std::vector<uint8_t> bytes;
+        if (x.length() % 2 != 0)
+        {
+            return bytes;
+        }
+
+        for (size_t i = 0; i < x.length(); i += 2)
+        {
+            std::string byteString = x.substr(i, 2);
+            char byte = (char)strtol(byteString.c_str(), NULL, 16);
+            bytes.push_back(byte);
+        }
+        return bytes;
+    }
+    keygen_test make_keygen_test(const char *data_key, const char *message_id, const char *encryption_key, const char *commitment_key)
+    {
+        keygen_test test;
+        test.data_key = hex_decode(data_key);
+        test.message_id = hex_decode(message_id);
+        test.encryption_key = hex_decode(encryption_key);
+        test.commitment_key = hex_decode(commitment_key);
+        return test;
+    }
+
+    // ** If these test vector pass, then the HKDF key derivation must be properly implemented
+    //= ../specification/s3-encryption/key-derivation.md#hkdf-operation
+    //= type=test
+    //# - The hash function MUST be specified by the algorithm suite commitment settings.
+    //# - The input keying material MUST be the plaintext data key (PDK) generated by the key provider.
+    //# - The length of the input keying material MUST equal the key derivation input length specified by the algorithm suite commit key derivation setting.
+    //# - The salt MUST be the Message ID with the length defined in the algorithm suite.
+
+    //= ../specification/s3-encryption/key-derivation.md#hkdf-operation
+    //= type=test
+    //# - The length of the output keying material MUST equal the encryption key length specified by the algorithm suite encryption settings.
+    //# - The input info MUST be a concatenation of the algorithm suite ID as bytes followed by the string DERIVEKEY as UTF8 encoded bytes.
+
+    //= ../specification/s3-encryption/key-derivation.md#hkdf-operation
+    //= type=test
+    //# - The length of the output keying material MUST equal the commit key length specified by the supported algorithm suites.
+    //# - The input info MUST be a concatenation of the algorithm suite ID as bytes followed by the string COMMITKEY as UTF8 encoded bytes.
+
+    //= ../specification/s3-encryption/key-derivation.md#hkdf-operation
+    //= type=test
+    //# When encrypting or decrypting with ALG_AES_256_GCM_HKDF_SHA512_COMMIT_KEY,
+    //# the IV used in the AES-GCM content encryption/decryption MUST consist entirely of bytes with the value 0x01.
+    //# The IV's total length MUST match the IV length defined by the algorithm suite.
+    //# The client MUST initialize the cipher, or call an AES-GCM encryption API, with the derived encryption key, an IV containing only bytes with the value 0x01,
+    //# and the tag length defined in the Algorithm Suite when encrypting or decrypting with ALG_AES_256_GCM_HKDF_SHA512_COMMIT_KEY.
+    //# This means that the IV for ALG_AES_256_GCM_HKDF_SHA512_COMMIT_KEY, which is 12 bytes long, would be `[0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01 ]`.
+    //# The client MUST set the AAD to the Algorithm Suite ID represented as bytes.
+
+    //This tests that the V3 key generation works as expected
+    TEST_F(HandlerTest, HkdfTest)
+    {
+        auto test1 = make_keygen_test(
+            "80d90dc4cc7e77d8a6332efa44eba56230a7fe7b89af37d1e501ab2e07c0a163",
+            "b8ea76bed24c7b85382a148cb9dcd1cfdfb765f55ded4dfa6e0c4c79",
+            "6dd14f546cc006e639126e83f5d4d1b118576bb5df97f38c6fb3a1db87bbc338",
+            "f89818bc0a346d3a3426b68e9509b6b2ae5fe1f904aa329fb73625db");
+        auto test2 = make_keygen_test(
+            "501afb8227d22e75e68010414b8abdaf3064c081e8e922dafef4992036394d60",
+            "61a00b4981a5aacfd136c55cb726e32d2a547dc7600a7d4675c69127",
+            "e14786a714748d1d2c3a4a6816dec56ddf1881bbeabb4f39420ffb9f63700b2f",
+            "5c1e73e47f6fe3a70d6d094283aceaa76d2975feb829212d88f0afc1");
+        test1.run_test();
+        test2.run_test();
+
+    }
     //This tests the instruction file read/write functionality by using a mock S3 client.
     TEST_F(HandlerTest, InstructionFileS3OperationsTest)
     {
@@ -310,6 +416,7 @@ namespace
         Aws::String fullBucketName = TEST_BUCKET_NAME;
 
         PutObjectRequest instructionPutObjectRequest;
+        PutObjectRequest objPutObjectRequest;
         instructionPutObjectRequest.SetBucket(fullBucketName);
         instructionPutObjectRequest.SetKey(TEST_OBJ_KEY);
 
@@ -318,7 +425,7 @@ namespace
 
         //content crypto material into body of a putObjectRequest
         InstructionFileHandler handler;
-        handler.PopulateRequest(instructionPutObjectRequest, contentCryptoMaterial);
+        handler.PopulateRequest(objPutObjectRequest, instructionPutObjectRequest, contentCryptoMaterial);
 
         PutObjectOutcome putObjectOutcome = myClient->PutObject(instructionPutObjectRequest);
 
@@ -329,8 +436,8 @@ namespace
         GetObjectOutcome getObjectOutcome = myClient->GetObject(getObjectRequest);
 
         GetObjectResult& getObjectResult = getObjectOutcome.GetResult();
-
-        ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(getObjectResult);
+        HeadObjectResult hResult;
+        ContentCryptoMaterial readContentCryptoMaterial = handler.ReadContentCryptoMaterial(getObjectResult, hResult);
 
         auto metadata = getObjectResult.GetMetadata();
         ASSERT_TRUE(metadata.find(INSTRUCTION_FILE_HEADER) != metadata.end());
