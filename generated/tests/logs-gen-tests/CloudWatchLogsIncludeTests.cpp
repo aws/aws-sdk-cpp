@@ -27,6 +27,8 @@
 #include <aws/logs/model/AssociateSourceToS3TableIntegrationResult.h>
 #include <aws/logs/model/CSV.h>
 #include <aws/logs/model/CancelExportTaskRequest.h>
+#include <aws/logs/model/CancelImportTaskRequest.h>
+#include <aws/logs/model/CancelImportTaskResult.h>
 #include <aws/logs/model/ConfigurationTemplate.h>
 #include <aws/logs/model/ConfigurationTemplateDeliveryConfigValues.h>
 #include <aws/logs/model/CopyValue.h>
@@ -35,6 +37,8 @@
 #include <aws/logs/model/CreateDeliveryResult.h>
 #include <aws/logs/model/CreateExportTaskRequest.h>
 #include <aws/logs/model/CreateExportTaskResult.h>
+#include <aws/logs/model/CreateImportTaskRequest.h>
+#include <aws/logs/model/CreateImportTaskResult.h>
 #include <aws/logs/model/CreateLogAnomalyDetectorRequest.h>
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
 #include <aws/logs/model/CreateLogGroupRequest.h>
@@ -91,6 +95,10 @@
 #include <aws/logs/model/DescribeExportTasksResult.h>
 #include <aws/logs/model/DescribeFieldIndexesRequest.h>
 #include <aws/logs/model/DescribeFieldIndexesResult.h>
+#include <aws/logs/model/DescribeImportTaskBatchesRequest.h>
+#include <aws/logs/model/DescribeImportTaskBatchesResult.h>
+#include <aws/logs/model/DescribeImportTasksRequest.h>
+#include <aws/logs/model/DescribeImportTasksResult.h>
 #include <aws/logs/model/DescribeIndexPoliciesRequest.h>
 #include <aws/logs/model/DescribeIndexPoliciesResult.h>
 #include <aws/logs/model/DescribeLogGroupsRequest.h>
@@ -164,6 +172,11 @@
 #include <aws/logs/model/GetTransformerResult.h>
 #include <aws/logs/model/Grok.h>
 #include <aws/logs/model/GroupingIdentifier.h>
+#include <aws/logs/model/Import.h>
+#include <aws/logs/model/ImportBatch.h>
+#include <aws/logs/model/ImportFilter.h>
+#include <aws/logs/model/ImportStatistics.h>
+#include <aws/logs/model/ImportStatus.h>
 #include <aws/logs/model/IndexPolicy.h>
 #include <aws/logs/model/IndexSource.h>
 #include <aws/logs/model/IndexType.h>

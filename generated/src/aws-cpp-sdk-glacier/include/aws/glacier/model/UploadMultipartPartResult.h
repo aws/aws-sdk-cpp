@@ -21,7 +21,7 @@ class JsonValue;
 namespace Glacier {
 namespace Model {
 /**
- * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
+ * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/UploadMultipartPartOutput">AWS
  * API Reference</a></p>
@@ -34,8 +34,7 @@ class UploadMultipartPartResult {
 
   ///@{
   /**
-   * <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded
-   * part.</p>
+   * <p>The SHA256 tree hash that Amazon Glacier computed for the uploaded part.</p>
    */
   inline const Aws::String& GetChecksum() const { return m_checksum; }
   template <typename ChecksumT = Aws::String>

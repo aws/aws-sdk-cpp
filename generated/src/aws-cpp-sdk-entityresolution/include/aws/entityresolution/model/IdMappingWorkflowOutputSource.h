@@ -33,24 +33,6 @@ class IdMappingWorkflowOutputSource {
 
   ///@{
   /**
-   * <p>The S3 path to which Entity Resolution will write the output table.</p>
-   */
-  inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
-  inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
-  template <typename OutputS3PathT = Aws::String>
-  void SetOutputS3Path(OutputS3PathT&& value) {
-    m_outputS3PathHasBeenSet = true;
-    m_outputS3Path = std::forward<OutputS3PathT>(value);
-  }
-  template <typename OutputS3PathT = Aws::String>
-  IdMappingWorkflowOutputSource& WithOutputS3Path(OutputS3PathT&& value) {
-    SetOutputS3Path(std::forward<OutputS3PathT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Customer KMS ARN for encryption at rest. If not provided, system will use an
    * Entity Resolution managed KMS key.</p>
    */
@@ -67,12 +49,30 @@ class IdMappingWorkflowOutputSource {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_outputS3Path;
 
+  ///@{
+  /**
+   * <p>The S3 path to which Entity Resolution will write the output table.</p>
+   */
+  inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
+  inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
+  template <typename OutputS3PathT = Aws::String>
+  void SetOutputS3Path(OutputS3PathT&& value) {
+    m_outputS3PathHasBeenSet = true;
+    m_outputS3Path = std::forward<OutputS3PathT>(value);
+  }
+  template <typename OutputS3PathT = Aws::String>
+  IdMappingWorkflowOutputSource& WithOutputS3Path(OutputS3PathT&& value) {
+    SetOutputS3Path(std::forward<OutputS3PathT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_kMSArn;
-  bool m_outputS3PathHasBeenSet = false;
+
+  Aws::String m_outputS3Path;
   bool m_kMSArnHasBeenSet = false;
+  bool m_outputS3PathHasBeenSet = false;
 };
 
 }  // namespace Model

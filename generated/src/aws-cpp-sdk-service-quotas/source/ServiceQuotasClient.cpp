@@ -27,6 +27,7 @@
 #include <aws/service-quotas/model/GetAWSDefaultServiceQuotaRequest.h>
 #include <aws/service-quotas/model/GetAssociationForServiceQuotaTemplateRequest.h>
 #include <aws/service-quotas/model/GetAutoManagementConfigurationRequest.h>
+#include <aws/service-quotas/model/GetQuotaUtilizationReportRequest.h>
 #include <aws/service-quotas/model/GetRequestedServiceQuotaChangeRequest.h>
 #include <aws/service-quotas/model/GetServiceQuotaIncreaseRequestFromTemplateRequest.h>
 #include <aws/service-quotas/model/GetServiceQuotaRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/service-quotas/model/PutServiceQuotaIncreaseRequestIntoTemplateRequest.h>
 #include <aws/service-quotas/model/RequestServiceQuotaIncreaseRequest.h>
 #include <aws/service-quotas/model/StartAutoManagementRequest.h>
+#include <aws/service-quotas/model/StartQuotaUtilizationReportRequest.h>
 #include <aws/service-quotas/model/StopAutoManagementRequest.h>
 #include <aws/service-quotas/model/TagResourceRequest.h>
 #include <aws/service-quotas/model/UntagResourceRequest.h>
@@ -363,6 +365,35 @@ GetAutoManagementConfigurationOutcome ServiceQuotasClient::GetAutoManagementConf
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAutoManagementConfiguration, CoreErrors,
                                     CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
         return GetAutoManagementConfigurationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetQuotaUtilizationReportOutcome ServiceQuotasClient::GetQuotaUtilizationReport(const GetQuotaUtilizationReportRequest& request) const {
+  AWS_OPERATION_GUARD(GetQuotaUtilizationReport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetQuotaUtilizationReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetQuotaUtilizationReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetQuotaUtilizationReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetQuotaUtilizationReport",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetQuotaUtilizationReportOutcome>(
+      [&]() -> GetQuotaUtilizationReportOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetQuotaUtilizationReport, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return GetQuotaUtilizationReportOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
@@ -752,6 +783,36 @@ StartAutoManagementOutcome ServiceQuotasClient::StartAutoManagement(const StartA
         AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartAutoManagement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                     endpointResolutionOutcome.GetError().GetMessage());
         return StartAutoManagementOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartQuotaUtilizationReportOutcome ServiceQuotasClient::StartQuotaUtilizationReport(
+    const StartQuotaUtilizationReportRequest& request) const {
+  AWS_OPERATION_GUARD(StartQuotaUtilizationReport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartQuotaUtilizationReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartQuotaUtilizationReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartQuotaUtilizationReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartQuotaUtilizationReport",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartQuotaUtilizationReportOutcome>(
+      [&]() -> StartQuotaUtilizationReportOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartQuotaUtilizationReport, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        return StartQuotaUtilizationReportOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

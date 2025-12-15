@@ -299,6 +299,44 @@ class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Retrieves the quota utilization report for your Amazon Web Services account.
+   * This operation returns paginated results showing your quota usage across all
+   * Amazon Web Services services, sorted by utilization percentage in descending
+   * order (highest utilization first).</p> <p>You must first initiate a report using
+   * the <code>StartQuotaUtilizationReport</code> operation. The report generation
+   * process is asynchronous and may take several seconds to complete. Poll this
+   * operation periodically to check the status and retrieve results when the report
+   * is ready.</p> <p>Each report contains up to 1,000 quota records per page. Use
+   * the <code>NextToken</code> parameter to retrieve additional pages of results.
+   * Reports are automatically deleted after 15 minutes.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetQuotaUtilizationReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQuotaUtilizationReportOutcome GetQuotaUtilizationReport(const Model::GetQuotaUtilizationReportRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQuotaUtilizationReport that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetQuotaUtilizationReportRequestT = Model::GetQuotaUtilizationReportRequest>
+  Model::GetQuotaUtilizationReportOutcomeCallable GetQuotaUtilizationReportCallable(
+      const GetQuotaUtilizationReportRequestT& request) const {
+    return SubmitCallable(&ServiceQuotasClient::GetQuotaUtilizationReport, request);
+  }
+
+  /**
+   * An Async wrapper for GetQuotaUtilizationReport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetQuotaUtilizationReportRequestT = Model::GetQuotaUtilizationReportRequest>
+  void GetQuotaUtilizationReportAsync(const GetQuotaUtilizationReportRequestT& request,
+                                      const GetQuotaUtilizationReportResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ServiceQuotasClient::GetQuotaUtilizationReport, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about the specified quota increase
    * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetRequestedServiceQuotaChange">AWS
@@ -686,6 +724,41 @@ class AWS_SERVICEQUOTAS_API ServiceQuotasClient : public Aws::Client::AWSJsonCli
   void StartAutoManagementAsync(const StartAutoManagementRequestT& request, const StartAutoManagementResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ServiceQuotasClient::StartAutoManagement, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates the generation of a quota utilization report for your Amazon Web
+   * Services account. This asynchronous operation analyzes your quota usage across
+   * all Amazon Web Services services and returns a unique report identifier that you
+   * can use to retrieve the results.</p> <p>The report generation process may take
+   * several seconds to complete, depending on the number of quotas in your account.
+   * Use the <code>GetQuotaUtilizationReport</code> operation to check the status and
+   * retrieve the results when the report is ready.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/StartQuotaUtilizationReport">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartQuotaUtilizationReportOutcome StartQuotaUtilizationReport(
+      const Model::StartQuotaUtilizationReportRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for StartQuotaUtilizationReport that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename StartQuotaUtilizationReportRequestT = Model::StartQuotaUtilizationReportRequest>
+  Model::StartQuotaUtilizationReportOutcomeCallable StartQuotaUtilizationReportCallable(
+      const StartQuotaUtilizationReportRequestT& request = {}) const {
+    return SubmitCallable(&ServiceQuotasClient::StartQuotaUtilizationReport, request);
+  }
+
+  /**
+   * An Async wrapper for StartQuotaUtilizationReport that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartQuotaUtilizationReportRequestT = Model::StartQuotaUtilizationReportRequest>
+  void StartQuotaUtilizationReportAsync(const StartQuotaUtilizationReportResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const StartQuotaUtilizationReportRequestT& request = {}) const {
+    return SubmitAsync(&ServiceQuotasClient::StartQuotaUtilizationReport, request, handler, context);
   }
 
   /**

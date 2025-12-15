@@ -26,7 +26,8 @@ enum class InventoryOptionalField {
   BucketKeyStatus,
   ChecksumAlgorithm,
   ObjectAccessControlList,
-  ObjectOwner
+  ObjectOwner,
+  LifecycleExpirationDate
 };
 
 namespace InventoryOptionalFieldMapper {

@@ -21,8 +21,10 @@
 /* Service model headers required in CloudWatchLogsClient header */
 #include <aws/core/NoResult.h>
 #include <aws/logs/model/AssociateSourceToS3TableIntegrationResult.h>
+#include <aws/logs/model/CancelImportTaskResult.h>
 #include <aws/logs/model/CreateDeliveryResult.h>
 #include <aws/logs/model/CreateExportTaskResult.h>
+#include <aws/logs/model/CreateImportTaskResult.h>
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
 #include <aws/logs/model/CreateScheduledQueryResult.h>
 #include <aws/logs/model/DeleteIndexPolicyResult.h>
@@ -44,6 +46,9 @@
 #include <aws/logs/model/DescribeExportTasksRequest.h>
 #include <aws/logs/model/DescribeExportTasksResult.h>
 #include <aws/logs/model/DescribeFieldIndexesResult.h>
+#include <aws/logs/model/DescribeImportTaskBatchesResult.h>
+#include <aws/logs/model/DescribeImportTasksRequest.h>
+#include <aws/logs/model/DescribeImportTasksResult.h>
 #include <aws/logs/model/DescribeIndexPoliciesResult.h>
 #include <aws/logs/model/DescribeLogGroupsRequest.h>
 #include <aws/logs/model/DescribeLogGroupsResult.h>
@@ -146,8 +151,10 @@ namespace Model {
 class AssociateKmsKeyRequest;
 class AssociateSourceToS3TableIntegrationRequest;
 class CancelExportTaskRequest;
+class CancelImportTaskRequest;
 class CreateDeliveryRequest;
 class CreateExportTaskRequest;
+class CreateImportTaskRequest;
 class CreateLogAnomalyDetectorRequest;
 class CreateLogGroupRequest;
 class CreateLogStreamRequest;
@@ -179,6 +186,8 @@ class DescribeDeliverySourcesRequest;
 class DescribeDestinationsRequest;
 class DescribeExportTasksRequest;
 class DescribeFieldIndexesRequest;
+class DescribeImportTaskBatchesRequest;
+class DescribeImportTasksRequest;
 class DescribeIndexPoliciesRequest;
 class DescribeLogGroupsRequest;
 class DescribeLogStreamsRequest;
@@ -249,8 +258,10 @@ class UpdateScheduledQueryRequest;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> AssociateKmsKeyOutcome;
 typedef Aws::Utils::Outcome<AssociateSourceToS3TableIntegrationResult, CloudWatchLogsError> AssociateSourceToS3TableIntegrationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CancelExportTaskOutcome;
+typedef Aws::Utils::Outcome<CancelImportTaskResult, CloudWatchLogsError> CancelImportTaskOutcome;
 typedef Aws::Utils::Outcome<CreateDeliveryResult, CloudWatchLogsError> CreateDeliveryOutcome;
 typedef Aws::Utils::Outcome<CreateExportTaskResult, CloudWatchLogsError> CreateExportTaskOutcome;
+typedef Aws::Utils::Outcome<CreateImportTaskResult, CloudWatchLogsError> CreateImportTaskOutcome;
 typedef Aws::Utils::Outcome<CreateLogAnomalyDetectorResult, CloudWatchLogsError> CreateLogAnomalyDetectorOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogGroupOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogStreamOutcome;
@@ -282,6 +293,8 @@ typedef Aws::Utils::Outcome<DescribeDeliverySourcesResult, CloudWatchLogsError> 
 typedef Aws::Utils::Outcome<DescribeDestinationsResult, CloudWatchLogsError> DescribeDestinationsOutcome;
 typedef Aws::Utils::Outcome<DescribeExportTasksResult, CloudWatchLogsError> DescribeExportTasksOutcome;
 typedef Aws::Utils::Outcome<DescribeFieldIndexesResult, CloudWatchLogsError> DescribeFieldIndexesOutcome;
+typedef Aws::Utils::Outcome<DescribeImportTaskBatchesResult, CloudWatchLogsError> DescribeImportTaskBatchesOutcome;
+typedef Aws::Utils::Outcome<DescribeImportTasksResult, CloudWatchLogsError> DescribeImportTasksOutcome;
 typedef Aws::Utils::Outcome<DescribeIndexPoliciesResult, CloudWatchLogsError> DescribeIndexPoliciesOutcome;
 typedef Aws::Utils::Outcome<DescribeLogGroupsResult, CloudWatchLogsError> DescribeLogGroupsOutcome;
 typedef Aws::Utils::Outcome<DescribeLogStreamsResult, CloudWatchLogsError> DescribeLogStreamsOutcome;
@@ -353,8 +366,10 @@ typedef Aws::Utils::Outcome<UpdateScheduledQueryResult, CloudWatchLogsError> Upd
 typedef std::future<AssociateKmsKeyOutcome> AssociateKmsKeyOutcomeCallable;
 typedef std::future<AssociateSourceToS3TableIntegrationOutcome> AssociateSourceToS3TableIntegrationOutcomeCallable;
 typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
+typedef std::future<CancelImportTaskOutcome> CancelImportTaskOutcomeCallable;
 typedef std::future<CreateDeliveryOutcome> CreateDeliveryOutcomeCallable;
 typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
+typedef std::future<CreateImportTaskOutcome> CreateImportTaskOutcomeCallable;
 typedef std::future<CreateLogAnomalyDetectorOutcome> CreateLogAnomalyDetectorOutcomeCallable;
 typedef std::future<CreateLogGroupOutcome> CreateLogGroupOutcomeCallable;
 typedef std::future<CreateLogStreamOutcome> CreateLogStreamOutcomeCallable;
@@ -386,6 +401,8 @@ typedef std::future<DescribeDeliverySourcesOutcome> DescribeDeliverySourcesOutco
 typedef std::future<DescribeDestinationsOutcome> DescribeDestinationsOutcomeCallable;
 typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
 typedef std::future<DescribeFieldIndexesOutcome> DescribeFieldIndexesOutcomeCallable;
+typedef std::future<DescribeImportTaskBatchesOutcome> DescribeImportTaskBatchesOutcomeCallable;
+typedef std::future<DescribeImportTasksOutcome> DescribeImportTasksOutcomeCallable;
 typedef std::future<DescribeIndexPoliciesOutcome> DescribeIndexPoliciesOutcomeCallable;
 typedef std::future<DescribeLogGroupsOutcome> DescribeLogGroupsOutcomeCallable;
 typedef std::future<DescribeLogStreamsOutcome> DescribeLogStreamsOutcomeCallable;
@@ -466,12 +483,18 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::AssociateSo
 typedef std::function<void(const CloudWatchLogsClient*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelExportTaskResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::CancelImportTaskRequest&, const Model::CancelImportTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelImportTaskResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateDeliveryRequest&, const Model::CreateDeliveryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDeliveryResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateExportTaskRequest&, const Model::CreateExportTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateExportTaskResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateImportTaskRequest&, const Model::CreateImportTaskOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateImportTaskResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::CreateLogAnomalyDetectorRequest&,
                            const Model::CreateLogAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateLogAnomalyDetectorResponseReceivedHandler;
@@ -568,6 +591,12 @@ typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeExp
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeFieldIndexesRequest&,
                            const Model::DescribeFieldIndexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeFieldIndexesResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeImportTaskBatchesRequest&,
+                           const Model::DescribeImportTaskBatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeImportTaskBatchesResponseReceivedHandler;
+typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeImportTasksRequest&, const Model::DescribeImportTasksOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeImportTasksResponseReceivedHandler;
 typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeIndexPoliciesRequest&,
                            const Model::DescribeIndexPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeIndexPoliciesResponseReceivedHandler;

@@ -10,6 +10,7 @@
 #include <aws/service-quotas/model/AppliedLevelEnum.h>
 #include <aws/service-quotas/model/QuotaContextInfo.h>
 #include <aws/service-quotas/model/RequestStatus.h>
+#include <aws/service-quotas/model/RequestType.h>
 
 #include <utility>
 
@@ -49,6 +50,26 @@ class RequestedServiceQuotaChange {
   template <typename IdT = Aws::String>
   RequestedServiceQuotaChange& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of quota increase request. Possible values include:</p> <ul> <li>
+   * <p> <code>AutomaticManagement</code> - The request was automatically created by
+   * Service Quotas Automatic Management when quota utilization approached the
+   * limit.</p> </li> </ul> <p>If this field is not present, the request was manually
+   * created by a user.</p>
+   */
+  inline RequestType GetRequestType() const { return m_requestType; }
+  inline bool RequestTypeHasBeenSet() const { return m_requestTypeHasBeenSet; }
+  inline void SetRequestType(RequestType value) {
+    m_requestTypeHasBeenSet = true;
+    m_requestType = value;
+  }
+  inline RequestedServiceQuotaChange& WithRequestType(RequestType value) {
+    SetRequestType(value);
     return *this;
   }
   ///@}
@@ -338,6 +359,8 @@ class RequestedServiceQuotaChange {
  private:
   Aws::String m_id;
 
+  RequestType m_requestType{RequestType::NOT_SET};
+
   Aws::String m_caseId;
 
   Aws::String m_serviceCode;
@@ -368,6 +391,7 @@ class RequestedServiceQuotaChange {
 
   QuotaContextInfo m_quotaContext;
   bool m_idHasBeenSet = false;
+  bool m_requestTypeHasBeenSet = false;
   bool m_caseIdHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;

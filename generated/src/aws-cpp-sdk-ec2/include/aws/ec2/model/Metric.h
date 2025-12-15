@@ -54,7 +54,13 @@ enum class Metric {
   spot_total_estimated_cost,
   spot_avg_run_time_before_interruption_inst,
   spot_max_run_time_before_interruption_inst,
-  spot_min_run_time_before_interruption_inst
+  spot_min_run_time_before_interruption_inst,
+  spot_total_interruptions_inst,
+  spot_total_interruptions_vcpu,
+  spot_total_count_inst,
+  spot_total_count_vcpu,
+  spot_interruption_rate_inst,
+  spot_interruption_rate_vcpu
 };
 
 namespace MetricMapper {

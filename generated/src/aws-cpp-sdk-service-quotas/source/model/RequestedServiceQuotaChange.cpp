@@ -22,6 +22,10 @@ RequestedServiceQuotaChange& RequestedServiceQuotaChange::operator=(JsonView jso
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RequestType")) {
+    m_requestType = RequestTypeMapper::GetRequestTypeForName(jsonValue.GetString("RequestType"));
+    m_requestTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CaseId")) {
     m_caseId = jsonValue.GetString("CaseId");
     m_caseIdHasBeenSet = true;
@@ -90,6 +94,10 @@ JsonValue RequestedServiceQuotaChange::Jsonize() const {
 
   if (m_idHasBeenSet) {
     payload.WithString("Id", m_id);
+  }
+
+  if (m_requestTypeHasBeenSet) {
+    payload.WithString("RequestType", RequestTypeMapper::GetNameForRequestType(m_requestType));
   }
 
   if (m_caseIdHasBeenSet) {

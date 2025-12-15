@@ -59,6 +59,10 @@ Aws::String StartOutboundChatContactRequest::SerializePayload() const {
     payload.WithObject("InitialSystemMessage", m_initialSystemMessage.Jsonize());
   }
 
+  if (m_initialTemplatedSystemMessageHasBeenSet) {
+    payload.WithObject("InitialTemplatedSystemMessage", m_initialTemplatedSystemMessage.Jsonize());
+  }
+
   if (m_relatedContactIdHasBeenSet) {
     payload.WithString("RelatedContactId", m_relatedContactId);
   }

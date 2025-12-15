@@ -82,7 +82,10 @@ class ResolverRuleAssociation {
 
   ///@{
   /**
-   * <p>The name of an association between a Resolver rule and a VPC.</p>
+   * <p>The name of an association between a Resolver rule and a VPC.</p> <p>The name
+   * can be up to 64 characters long and can contain letters (a-z, A-Z), numbers
+   * (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only
+   * numbers.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

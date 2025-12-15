@@ -116,6 +116,10 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator=(const 
     m_adConditioningConfiguration = jsonValue.GetObject("AdConditioningConfiguration");
     m_adConditioningConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdDecisionServerConfiguration")) {
+    m_adDecisionServerConfiguration = jsonValue.GetObject("AdDecisionServerConfiguration");
+    m_adDecisionServerConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -27,6 +27,7 @@
 #include <aws/entityresolution/model/CreateMatchingWorkflowResult.h>
 #include <aws/entityresolution/model/CreateSchemaMappingRequest.h>
 #include <aws/entityresolution/model/CreateSchemaMappingResult.h>
+#include <aws/entityresolution/model/CustomerProfilesIntegrationConfig.h>
 #include <aws/entityresolution/model/DeleteIdMappingWorkflowRequest.h>
 #include <aws/entityresolution/model/DeleteIdMappingWorkflowResult.h>
 #include <aws/entityresolution/model/DeleteIdNamespaceRequest.h>

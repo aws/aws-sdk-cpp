@@ -16,10 +16,10 @@ namespace Model {
 
 /**
  * <p>Provides options to complete a multipart upload operation. This informs
- * Amazon Glacier that all the archive parts have been uploaded and Amazon S3
- * Glacier (Glacier) can now assemble the archive from the uploaded parts. After
- * assembling and saving the archive to the vault, Glacier returns the URI path of
- * the newly created archive resource.</p><p><h3>See Also:</h3>   <a
+ * Amazon Glacier that all the archive parts have been uploaded and Amazon Glacier
+ * (Glacier) can now assemble the archive from the uploaded parts. After assembling
+ * and saving the archive to the vault, Glacier returns the URI path of the newly
+ * created archive resource.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/CompleteMultipartUploadInput">AWS
  * API Reference</a></p>
  */
@@ -41,9 +41,9 @@ class CompleteMultipartUploadRequest : public GlacierRequest {
   /**
    * <p>The <code>AccountId</code> value is the AWS account ID of the account that
    * owns the vault. You can either specify an AWS account ID or optionally a single
-   * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-   * ID associated with the credentials used to sign the request. If you use an
-   * account ID, do not include any hyphens ('-') in the ID.</p>
+   * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+   * associated with the credentials used to sign the request. If you use an account
+   * ID, do not include any hyphens ('-') in the ID.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -119,7 +119,7 @@ class CompleteMultipartUploadRequest : public GlacierRequest {
    * <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256
    * tree hash of the individual parts. If the value you specify in the request does
    * not match the SHA256 tree hash of the final assembled archive as computed by
-   * Amazon S3 Glacier (Glacier), Glacier returns an error and the request fails.</p>
+   * Amazon Glacier (Glacier), Glacier returns an error and the request fails.</p>
    */
   inline const Aws::String& GetChecksum() const { return m_checksum; }
   inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }

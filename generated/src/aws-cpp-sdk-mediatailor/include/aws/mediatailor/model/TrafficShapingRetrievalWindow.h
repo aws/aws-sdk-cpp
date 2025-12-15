@@ -17,10 +17,10 @@ namespace MediaTailor {
 namespace Model {
 
 /**
- * <p>The configuration that tells Elemental MediaTailor how to spread out requests
- * to the ad decision server (ADS). Instead of sending ADS requests for all
- * sessions at the same time, MediaTailor spreads the requests across the amount of
- * time specified in the retrieval window.</p><p><h3>See Also:</h3>   <a
+ * <p>The configuration that tells Elemental MediaTailor how many seconds to spread
+ * out requests to the ad decision server (ADS). Instead of sending ADS requests
+ * for all sessions at the same time, MediaTailor spreads the requests across the
+ * amount of time specified in the retrieval window.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TrafficShapingRetrievalWindow">AWS
  * API Reference</a></p>
  */

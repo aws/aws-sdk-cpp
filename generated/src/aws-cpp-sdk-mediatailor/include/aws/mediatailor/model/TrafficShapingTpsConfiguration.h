@@ -19,8 +19,7 @@ namespace Model {
 /**
  * <p>The configuration for TPS-based traffic shaping. This approach limits
  * requests to the ad decision server (ADS) based on transactions per second and
- * concurrent users, providing more intuitive capacity management compared to
- * time-window based traffic shaping.</p><p><h3>See Also:</h3>   <a
+ * concurrent users.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TrafficShapingTpsConfiguration">AWS
  * API Reference</a></p>
  */

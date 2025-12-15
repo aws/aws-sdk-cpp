@@ -21,7 +21,7 @@ class JsonValue;
 namespace Glacier {
 namespace Model {
 /**
- * <p>The Amazon S3 Glacier response to your request.</p><p><h3>See Also:</h3>   <a
+ * <p>The Amazon Glacier response to your request.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateMultipartUploadOutput">AWS
  * API Reference</a></p>
  */
@@ -33,8 +33,7 @@ class InitiateMultipartUploadResult {
 
   ///@{
   /**
-   * <p>The relative URI path of the multipart upload ID Amazon S3 Glacier
-   * created.</p>
+   * <p>The relative URI path of the multipart upload ID Amazon Glacier created.</p>
    */
   inline const Aws::String& GetLocation() const { return m_location; }
   template <typename LocationT = Aws::String>

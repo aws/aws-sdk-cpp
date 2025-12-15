@@ -80,6 +80,7 @@
 #include <aws/glacier/model/ListVaultsRequest.h>
 #include <aws/glacier/model/ListVaultsResult.h>
 #include <aws/glacier/model/MissingParameterValueException.h>
+#include <aws/glacier/model/NoLongerSupportedException.h>
 #include <aws/glacier/model/OutputLocation.h>
 #include <aws/glacier/model/OutputSerialization.h>
 #include <aws/glacier/model/PartListElement.h>

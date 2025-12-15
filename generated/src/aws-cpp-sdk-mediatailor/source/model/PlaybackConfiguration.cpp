@@ -113,6 +113,10 @@ PlaybackConfiguration& PlaybackConfiguration::operator=(JsonView jsonValue) {
     m_adConditioningConfiguration = jsonValue.GetObject("AdConditioningConfiguration");
     m_adConditioningConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdDecisionServerConfiguration")) {
+    m_adDecisionServerConfiguration = jsonValue.GetObject("AdDecisionServerConfiguration");
+    m_adDecisionServerConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -213,6 +217,10 @@ JsonValue PlaybackConfiguration::Jsonize() const {
 
   if (m_adConditioningConfigurationHasBeenSet) {
     payload.WithObject("AdConditioningConfiguration", m_adConditioningConfiguration.Jsonize());
+  }
+
+  if (m_adDecisionServerConfigurationHasBeenSet) {
+    payload.WithObject("AdDecisionServerConfiguration", m_adDecisionServerConfiguration.Jsonize());
   }
 
   return payload;

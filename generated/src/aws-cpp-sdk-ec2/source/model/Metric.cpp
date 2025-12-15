@@ -58,6 +58,12 @@ static const int spot_total_estimated_cost_HASH = HashingUtils::HashString("spot
 static const int spot_avg_run_time_before_interruption_inst_HASH = HashingUtils::HashString("spot-avg-run-time-before-interruption-inst");
 static const int spot_max_run_time_before_interruption_inst_HASH = HashingUtils::HashString("spot-max-run-time-before-interruption-inst");
 static const int spot_min_run_time_before_interruption_inst_HASH = HashingUtils::HashString("spot-min-run-time-before-interruption-inst");
+static const int spot_total_interruptions_inst_HASH = HashingUtils::HashString("spot-total-interruptions-inst");
+static const int spot_total_interruptions_vcpu_HASH = HashingUtils::HashString("spot-total-interruptions-vcpu");
+static const int spot_total_count_inst_HASH = HashingUtils::HashString("spot-total-count-inst");
+static const int spot_total_count_vcpu_HASH = HashingUtils::HashString("spot-total-count-vcpu");
+static const int spot_interruption_rate_inst_HASH = HashingUtils::HashString("spot-interruption-rate-inst");
+static const int spot_interruption_rate_vcpu_HASH = HashingUtils::HashString("spot-interruption-rate-vcpu");
 
 Metric GetMetricForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -147,6 +153,18 @@ Metric GetMetricForName(const Aws::String& name) {
     return Metric::spot_max_run_time_before_interruption_inst;
   } else if (hashCode == spot_min_run_time_before_interruption_inst_HASH) {
     return Metric::spot_min_run_time_before_interruption_inst;
+  } else if (hashCode == spot_total_interruptions_inst_HASH) {
+    return Metric::spot_total_interruptions_inst;
+  } else if (hashCode == spot_total_interruptions_vcpu_HASH) {
+    return Metric::spot_total_interruptions_vcpu;
+  } else if (hashCode == spot_total_count_inst_HASH) {
+    return Metric::spot_total_count_inst;
+  } else if (hashCode == spot_total_count_vcpu_HASH) {
+    return Metric::spot_total_count_vcpu;
+  } else if (hashCode == spot_interruption_rate_inst_HASH) {
+    return Metric::spot_interruption_rate_inst;
+  } else if (hashCode == spot_interruption_rate_vcpu_HASH) {
+    return Metric::spot_interruption_rate_vcpu;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -247,6 +265,18 @@ Aws::String GetNameForMetric(Metric enumValue) {
       return "spot-max-run-time-before-interruption-inst";
     case Metric::spot_min_run_time_before_interruption_inst:
       return "spot-min-run-time-before-interruption-inst";
+    case Metric::spot_total_interruptions_inst:
+      return "spot-total-interruptions-inst";
+    case Metric::spot_total_interruptions_vcpu:
+      return "spot-total-interruptions-vcpu";
+    case Metric::spot_total_count_inst:
+      return "spot-total-count-inst";
+    case Metric::spot_total_count_vcpu:
+      return "spot-total-count-vcpu";
+    case Metric::spot_interruption_rate_inst:
+      return "spot-interruption-rate-inst";
+    case Metric::spot_interruption_rate_vcpu:
+      return "spot-interruption-rate-vcpu";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

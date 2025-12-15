@@ -393,7 +393,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
    * schema generated from the Gateway's tools' input schemas, which defines the
    * available tools, their parameters, and expected data types. This is an
    * asynchronous operation. Use the <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_GetPolicy.html">GetPolicy</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
    * operation to poll the <code>status</code> field to track
    * completion.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicy">AWS
@@ -427,7 +427,7 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
    * engine), the policy engine intercepts all agent requests and determines whether
    * to allow or deny each action based on the defined policies. This is an
    * asynchronous operation. Use the <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_GetPolicyEngine.html">GetPolicyEngine</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngine.html">GetPolicyEngine</a>
    * operation to poll the <code>status</code> field to track
    * completion.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicyEngine">AWS

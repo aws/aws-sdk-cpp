@@ -191,7 +191,9 @@ class ResolverRule {
   ///@{
   /**
    * <p>The name for the Resolver rule, which you specified when you created the
-   * Resolver rule.</p>
+   * Resolver rule.</p> <p>The name can be up to 64 characters long and can contain
+   * letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The
+   * name cannot consist of only numbers.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
