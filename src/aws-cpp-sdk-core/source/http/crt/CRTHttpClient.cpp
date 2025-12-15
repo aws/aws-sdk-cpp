@@ -9,7 +9,6 @@
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
-#include <aws/core/utils/stream/AwsChunkedStream.h>
 #include <aws/crt/http/HttpConnectionManager.h>
 #include <aws/crt/http/HttpRequestResponse.h>
 
@@ -379,11 +378,7 @@ namespace Aws
             if (request->GetContentBody())
             {
                 bool isStreaming = request->IsEventStreamRequest();
-                if (request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) && request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER) == Aws::Http::AWS_CHUNKED_VALUE) {
-                  crtRequest->SetBody(Aws::MakeShared<Aws::Utils::Stream::AwsChunkedStream<>>(CRT_HTTP_CLIENT_TAG, request.get(), request->GetContentBody()));
-                } else {
-                  crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
-                }
+                crtRequest->SetBody(Aws::MakeShared<SDKAdaptingInputStream>(CRT_HTTP_CLIENT_TAG, m_configuration.writeRateLimiter, request->GetContentBody(), *this, *request, isStreaming));
             }
 
             Crt::Http::HttpRequestOptions requestOptions;

@@ -78,6 +78,16 @@ namespace Aws
           WHEN_REQUIRED,
         };
 
+        /**
+         * Control HTTP client chunking implementation mode.
+         * DEFAULT: Use SDK's ChunkingInterceptor for aws-chunked encoding
+         * CLIENT_IMPLEMENTATION: Rely on HTTP client's native chunking (default for custom clients)
+         */
+        enum class HttpClientChunkedMode {
+          DEFAULT,
+          CLIENT_IMPLEMENTATION,
+        };
+
         struct RequestCompressionConfig {
           UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
           size_t requestMinCompressionSizeBytes = 10240;
@@ -493,6 +503,12 @@ namespace Aws
            * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
            */
           Aws::String accountIdEndpointMode = "preferred";
+
+          /**
+           * Control HTTP client chunking implementation mode.
+           * Default is set automatically: CLIENT_IMPLEMENTATION for custom clients, DEFAULT for AWS clients.
+           */
+          HttpClientChunkedMode httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
           /**
           * Configuration structure for credential providers in the AWS SDK.
           * This structure allows passing configuration options to credential providers

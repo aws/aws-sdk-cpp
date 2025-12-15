@@ -54,6 +54,8 @@ namespace Aws
              */
             virtual bool SupportsChunkedTransferEncoding() const override { return false; }
 
+            bool IsDefaultAwsHttpClient() const override { return true; }
+
         protected:
             /**
              * Override any configuration on request handle.

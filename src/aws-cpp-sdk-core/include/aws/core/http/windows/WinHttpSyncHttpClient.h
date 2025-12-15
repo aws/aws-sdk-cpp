@@ -42,6 +42,8 @@ namespace Aws
              */
             const char* GetLogTag() const override { return "WinHttpSyncHttpClient"; }
 
+            bool IsDefaultAwsHttpClient() const override { return true; }
+
         private:
             // WinHttp specific implementations
             void* OpenRequest(const std::shared_ptr<HttpRequest>& request, void* connection, const Aws::StringStream& ss) const override;
