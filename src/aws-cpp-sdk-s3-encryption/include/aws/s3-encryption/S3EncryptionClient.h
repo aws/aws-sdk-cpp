@@ -82,6 +82,10 @@ namespace Aws
             * For KMSWithContext encryption materials, you can provide a context map as the KMS context for encrypting the CEK.
             * For other encryption materials, this context map must be an empty map.
             */
+            //= ../specification/s3-encryption/client.md#required-api-operations
+            //= type=implication
+            //# - PutObject MUST be implemented by the S3EC.
+            //# - PutObject MUST encrypt its input data before it is uploaded to S3.
             S3EncryptionPutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request, const Aws::Map<Aws::String, Aws::String>& contextMap) const;
 
             /*
@@ -90,6 +94,10 @@ namespace Aws
             * Range gets using this method are deprecated. Please see
             * <https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html> for more information
             */
+            //= ../specification/s3-encryption/client.md#required-api-operations
+            //= type=implication
+            //# - GetObject MUST be implemented by the S3EC.
+            //# - GetObject MUST decrypt data received from the S3 server and return it as plaintext.
             S3EncryptionGetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const;
 
             /*
@@ -103,6 +111,10 @@ namespace Aws
             inline bool MultipartUploadSupported() const { return false; }
 
         protected:
+            bool ValidateStorageMethod(StorageMethod s);
+            bool ValidateSecurityProfile(SecurityProfile s);
+            bool ValidateCommitmentPolicy(CommitmentPolicy s);
+            bool ValidateRangeGetMode(RangeGetMode s);
             /*
 	     * GetObject with optional contextMap.
 	     * Fail if contextMap is supplied and does not exactly match stored Materials Description
@@ -118,13 +130,14 @@ namespace Aws
             Aws::S3Encryption::Modules::CryptoModuleFactory m_cryptoModuleFactory;
             std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> m_encryptionMaterials;
             Aws::S3Encryption::CryptoConfiguration m_cryptoConfig;
+            Aws::String m_error;
         };
 
         /**
-         * @deprecated This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV2.
+         * @deprecated This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV3.
          */
         class
-        AWS_DEPRECATED("This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV2. Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.")
+        AWS_DEPRECATED("This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV3. Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.")
         AWS_S3ENCRYPTION_API S3EncryptionClient : public S3EncryptionClientBase
         {
         public:
@@ -165,7 +178,12 @@ namespace Aws
          * S3EncryptionClientV2 enforce the secure postures for customers. See https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html
          * Examples: https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/cpp/example_code/s3encryption/s3Encryption.cpp
          */
-        class AWS_S3ENCRYPTION_API S3EncryptionClientV2 : public S3EncryptionClientBase
+        /**
+         * @deprecated This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV3.
+         */
+        class
+        AWS_DEPRECATED("This class is in the maintenance mode, no new updates will be released, use S3EncryptionClientV3. Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.")
+        AWS_S3ENCRYPTION_API S3EncryptionClientV2 : public S3EncryptionClientBase
         {
         public:
             /*
@@ -218,6 +236,76 @@ namespace Aws
 
         private:
             void Init(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig);
+        };
+
+        class AWS_S3ENCRYPTION_API S3EncryptionClientV3 : public S3EncryptionClientBase
+        {
+        public:
+            /*
+            * Initialize the S3 Encryption Client V3 with crypto configuration v3, and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            //= ../specification/s3-encryption/client.md#cryptographic-materials
+            //= type=implication
+            //# The S3EC MAY accept key material directly.
+
+            //= ../specification/s3-encryption/client.md#inherited-sdk-configuration
+            //= type=implication
+            //# The S3EC MAY support directly configuring the wrapped SDK clients through its initialization.
+            //# For example, the S3EC MAY accept a credentials provider instance during its initialization.
+            //# If the S3EC accepts SDK client configuration, the configuration MUST be applied to all wrapped S3 clients.
+            // There's only one client, so it's safe to say "all"
+            S3EncryptionClientV3(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig,
+                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), clientConfig)
+            {
+                Init(cryptoConfig);
+            }
+
+
+            /*
+            * Initialize the S3 Encryption Client V3 with crypto configuration v3, AWS credentials and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClientV3(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig, const Aws::Auth::AWSCredentials& credentials,
+                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentials, clientConfig)
+            {
+                Init(cryptoConfig);
+            }
+
+            /*
+            * Initialize the S3 Encryption Client V3 with crypto configuration v3, AWS credentials provider and a client configuration. If no client configuration is supplied,
+            * the default client configuration will be used.
+            */
+            S3EncryptionClientV3(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentialsProvider, clientConfig)
+            {
+                Init(cryptoConfig);
+            }
+
+            /*
+             * Initialize the S3 Encryption Client V3 with crypto configuration v3, and a s3 client factory.
+             * The factory will be used to create the underlying S3 Client.
+             */
+            //= ../specification/s3-encryption/client.md#wrapped-s3-client-s
+            //= type=implication
+            //# The S3EC MUST support the option to provide an SDK S3 client instance during its initialization.
+            //# The S3EC MUST NOT support use of S3EC as the provided S3 client during its initialization; it MUST throw an exception in this case.
+            // The S3EncryptionClientV3 is not an S3Client, so this can't happen.
+            S3EncryptionClientV3(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig,
+                const std::function<Aws::UniquePtr<Aws::S3::S3Client> ()>& s3ClientFactory)
+                : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), s3ClientFactory)
+            {
+                Init(cryptoConfig);
+            }
+
+            S3EncryptionClientV3(const S3EncryptionClientV3&) = delete;
+            S3EncryptionClientV3& operator=(const S3EncryptionClientV3&) = delete;
+
+        private:
+            void Init(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig);
         };
     }
 }
