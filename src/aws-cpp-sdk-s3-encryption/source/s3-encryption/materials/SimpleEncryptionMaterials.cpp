@@ -7,6 +7,7 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/s3-encryption/HKDF.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
@@ -67,6 +68,10 @@ namespace Aws
             CryptoOutcome SimpleEncryptionMaterialsBase::EncryptCEK(ContentCryptoMaterial& contentCryptoMaterial)
             {
                 // non empty context map passed in.
+                //= ../specification/s3-encryption/data-format/content-metadata.md#v3-only
+                //= type=implication
+                //# The Material Description MUST be used for wrapping algorithms `AES/GCM` (`02`) and `RSA-OAEP-SHA1` (`22`).
+                //# If the mapkey x-amz-m is not present, the default Material Description value MUST be set to an empty map (`{}`).
                 if (!contentCryptoMaterial.GetMaterialsDescription().empty())
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Customized encryption context map is not allowed for AES/GCM Key wrap algorithm.");
@@ -91,6 +96,18 @@ namespace Aws
                 }
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
                 contentCryptoMaterial.SetCEKGCMTag(cipher->GetTag());
+
+                if (contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM_COMMIT) {
+                    contentCryptoMaterial.SetV3IV();
+                    contentCryptoMaterial.SetMessageID(SymmetricCipher::GenerateIV(MESSAGE_ID_BYTES, false));
+                    CryptoBuffer CommitmentKey(COMMITMENT_KEY_BYTES);
+                    Aws::S3Encryption::derive_commitment_key(contentEncryptionKey, contentCryptoMaterial.GetMessageID(), CommitmentKey);
+                    contentCryptoMaterial.SetKeyCommitment(CommitmentKey);
+
+                    CryptoBuffer EncryptionKey(ENCRYPTION_KEY_BYTES);
+                    Aws::S3Encryption::derive_encryption_key(contentEncryptionKey, contentCryptoMaterial.GetMessageID(), EncryptionKey);
+                    contentCryptoMaterial.SetContentEncryptionKey(EncryptionKey);
+                }
 
                 if (contentCryptoMaterial.GetKeyWrapAlgorithm() == KeyWrapAlgorithm::AES_GCM)
                 {
@@ -147,9 +164,21 @@ namespace Aws
                 const CryptoBuffer& encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
                 CryptoBuffer&& decryptResult = cipher->DecryptBuffer(encryptedContentEncryptionKey);
                 CryptoBuffer&& decryptFinalizeResult = cipher->FinalizeDecryption();
-                CryptoBuffer decryptedBuffer = CryptoBuffer({ &decryptResult, &decryptFinalizeResult });
-                contentCryptoMaterial.SetContentEncryptionKey(decryptedBuffer);
-                if (!(*cipher) || contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
+                CryptoBuffer decryptedKey = CryptoBuffer({ &decryptResult, &decryptFinalizeResult });
+                if (contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM_COMMIT) {
+                    CryptoBuffer CommitmentKey(COMMITMENT_KEY_BYTES);
+                    Aws::S3Encryption::derive_commitment_key(decryptedKey, contentCryptoMaterial.GetMessageID(), CommitmentKey);
+                    if (!constant_time_equal(CommitmentKey, contentCryptoMaterial.GetKeyCommitment())) {
+                        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Commitment Key does not match.");
+                        return errorOutcome;
+                    }
+                    CryptoBuffer EncryptionKey(ENCRYPTION_KEY_BYTES);
+                    Aws::S3Encryption::derive_encryption_key(decryptedKey, contentCryptoMaterial.GetMessageID(), EncryptionKey);
+                    contentCryptoMaterial.SetContentEncryptionKey(EncryptionKey);
+                } else {
+                    contentCryptoMaterial.SetContentEncryptionKey(decryptedKey);
+                }
+                if (cipher->Fail() || contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Content Encryption Key could not be decrypted.");
                     return errorOutcome;
