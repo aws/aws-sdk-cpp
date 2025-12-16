@@ -41,6 +41,6 @@ TEST_F(CostandUsageReportServiceSmokeTestSuite, DescribeReportDefinitionsSuccess
     
     DescribeReportDefinitionsRequest input;
     auto outcome = clientSp->DescribeReportDefinitions(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

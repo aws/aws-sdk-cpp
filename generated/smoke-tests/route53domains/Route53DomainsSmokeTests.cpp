@@ -56,6 +56,6 @@ TEST_F(Route53DomainsSmokeTestSuite, ListDomainsSuccess )
     
     ListDomainsRequest input;
     auto outcome = clientSp->ListDomains(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }
