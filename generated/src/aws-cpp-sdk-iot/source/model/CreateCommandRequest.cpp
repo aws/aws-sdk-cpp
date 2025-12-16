@@ -31,6 +31,14 @@ Aws::String CreateCommandRequest::SerializePayload() const {
     payload.WithObject("payload", m_payload.Jsonize());
   }
 
+  if (m_payloadTemplateHasBeenSet) {
+    payload.WithString("payloadTemplate", m_payloadTemplate);
+  }
+
+  if (m_preprocessorHasBeenSet) {
+    payload.WithObject("preprocessor", m_preprocessor.Jsonize());
+  }
+
   if (m_mandatoryParametersHasBeenSet) {
     Aws::Utils::Array<JsonValue> mandatoryParametersJsonList(m_mandatoryParameters.size());
     for (unsigned mandatoryParametersIndex = 0; mandatoryParametersIndex < mandatoryParametersJsonList.GetLength();

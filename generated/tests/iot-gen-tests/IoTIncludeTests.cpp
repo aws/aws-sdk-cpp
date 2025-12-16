@@ -80,6 +80,7 @@
 #include <aws/iot/model/AwsJobPresignedUrlConfig.h>
 #include <aws/iot/model/AwsJobRateIncreaseCriteria.h>
 #include <aws/iot/model/AwsJobTimeoutConfig.h>
+#include <aws/iot/model/AwsJsonSubstitutionCommandPreprocessorConfig.h>
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/BehaviorCriteria.h>
 #include <aws/iot/model/BehaviorCriteriaType.h>
@@ -124,8 +125,14 @@
 #include <aws/iot/model/CommandExecutionSummary.h>
 #include <aws/iot/model/CommandNamespace.h>
 #include <aws/iot/model/CommandParameter.h>
+#include <aws/iot/model/CommandParameterType.h>
 #include <aws/iot/model/CommandParameterValue.h>
+#include <aws/iot/model/CommandParameterValueComparisonOperand.h>
+#include <aws/iot/model/CommandParameterValueComparisonOperator.h>
+#include <aws/iot/model/CommandParameterValueCondition.h>
+#include <aws/iot/model/CommandParameterValueNumberRange.h>
 #include <aws/iot/model/CommandPayload.h>
+#include <aws/iot/model/CommandPreprocessor.h>
 #include <aws/iot/model/CommandSummary.h>
 #include <aws/iot/model/ComparisonOperator.h>
 #include <aws/iot/model/ConfidenceLevel.h>
@@ -619,6 +626,7 @@
 #include <aws/iot/model/OTAUpdateSummary.h>
 #include <aws/iot/model/OpenSearchAction.h>
 #include <aws/iot/model/OutgoingCertificate.h>
+#include <aws/iot/model/OutputFormat.h>
 #include <aws/iot/model/PackageSummary.h>
 #include <aws/iot/model/PackageVersionAction.h>
 #include <aws/iot/model/PackageVersionArtifact.h>

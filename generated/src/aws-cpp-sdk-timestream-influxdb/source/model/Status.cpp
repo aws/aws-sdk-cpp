@@ -25,6 +25,8 @@ static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int UPDATING_DEPLOYMENT_TYPE_HASH = HashingUtils::HashString("UPDATING_DEPLOYMENT_TYPE");
 static const int UPDATING_INSTANCE_TYPE_HASH = HashingUtils::HashString("UPDATING_INSTANCE_TYPE");
 static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
+static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
+static const int REBOOT_FAILED_HASH = HashingUtils::HashString("REBOOT_FAILED");
 
 Status GetStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +50,10 @@ Status GetStatusForName(const Aws::String& name) {
     return Status::UPDATING_INSTANCE_TYPE;
   } else if (hashCode == MAINTENANCE_HASH) {
     return Status::MAINTENANCE;
+  } else if (hashCode == REBOOTING_HASH) {
+    return Status::REBOOTING;
+  } else if (hashCode == REBOOT_FAILED_HASH) {
+    return Status::REBOOT_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +88,10 @@ Aws::String GetNameForStatus(Status enumValue) {
       return "UPDATING_INSTANCE_TYPE";
     case Status::MAINTENANCE:
       return "MAINTENANCE";
+    case Status::REBOOTING:
+      return "REBOOTING";
+    case Status::REBOOT_FAILED:
+      return "REBOOT_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

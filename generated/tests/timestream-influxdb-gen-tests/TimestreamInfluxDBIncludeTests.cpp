@@ -65,6 +65,10 @@
 #include <aws/timestream-influxdb/model/NetworkType.h>
 #include <aws/timestream-influxdb/model/Parameters.h>
 #include <aws/timestream-influxdb/model/PercentOrAbsoluteLong.h>
+#include <aws/timestream-influxdb/model/RebootDbClusterRequest.h>
+#include <aws/timestream-influxdb/model/RebootDbClusterResult.h>
+#include <aws/timestream-influxdb/model/RebootDbInstanceRequest.h>
+#include <aws/timestream-influxdb/model/RebootDbInstanceResult.h>
 #include <aws/timestream-influxdb/model/ResourceNotFoundException.h>
 #include <aws/timestream-influxdb/model/S3Configuration.h>
 #include <aws/timestream-influxdb/model/Status.h>
