@@ -22,6 +22,10 @@ static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 static const int DELETED_HASH = HashingUtils::HashString("DELETED");
 static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
+static const int UPDATING_INSTANCE_TYPE_HASH = HashingUtils::HashString("UPDATING_INSTANCE_TYPE");
+static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
+static const int REBOOT_FAILED_HASH = HashingUtils::HashString("REBOOT_FAILED");
+static const int PARTIALLY_AVAILABLE_HASH = HashingUtils::HashString("PARTIALLY_AVAILABLE");
 
 ClusterStatus GetClusterStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +43,14 @@ ClusterStatus GetClusterStatusForName(const Aws::String& name) {
     return ClusterStatus::DELETED;
   } else if (hashCode == MAINTENANCE_HASH) {
     return ClusterStatus::MAINTENANCE;
+  } else if (hashCode == UPDATING_INSTANCE_TYPE_HASH) {
+    return ClusterStatus::UPDATING_INSTANCE_TYPE;
+  } else if (hashCode == REBOOTING_HASH) {
+    return ClusterStatus::REBOOTING;
+  } else if (hashCode == REBOOT_FAILED_HASH) {
+    return ClusterStatus::REBOOT_FAILED;
+  } else if (hashCode == PARTIALLY_AVAILABLE_HASH) {
+    return ClusterStatus::PARTIALLY_AVAILABLE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +79,14 @@ Aws::String GetNameForClusterStatus(ClusterStatus enumValue) {
       return "DELETED";
     case ClusterStatus::MAINTENANCE:
       return "MAINTENANCE";
+    case ClusterStatus::UPDATING_INSTANCE_TYPE:
+      return "UPDATING_INSTANCE_TYPE";
+    case ClusterStatus::REBOOTING:
+      return "REBOOTING";
+    case ClusterStatus::REBOOT_FAILED:
+      return "REBOOT_FAILED";
+    case ClusterStatus::PARTIALLY_AVAILABLE:
+      return "PARTIALLY_AVAILABLE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

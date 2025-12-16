@@ -31,7 +31,7 @@ class DescribeEncryptionConfigurationResult {
 
   ///@{
   /**
-   * <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+   * <p>The type of the KMS key.</p>
    */
   inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
   inline void SetEncryptionType(EncryptionType value) {
@@ -46,8 +46,7 @@ class DescribeEncryptionConfigurationResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM role assumed by Amazon Web Services
-   * IoT Core to call KMS on behalf of the customer.</p>
+   * <p>The ARN of the customer managed KMS key.</p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
   template <typename KmsKeyArnT = Aws::String>
@@ -64,7 +63,8 @@ class DescribeEncryptionConfigurationResult {
 
   ///@{
   /**
-   * <p>The ARN of the customer-managed KMS key.</p>
+   * <p>The Amazon Resource Name (ARN) of the IAM role assumed by Amazon Web Services
+   * IoT Core to call KMS on behalf of the customer.</p>
    */
   inline const Aws::String& GetKmsAccessRoleArn() const { return m_kmsAccessRoleArn; }
   template <typename KmsAccessRoleArnT = Aws::String>
