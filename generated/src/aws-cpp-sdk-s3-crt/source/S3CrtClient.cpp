@@ -510,7 +510,7 @@ int S3CrtClient::S3CrtRequestHeadersCallback(struct aws_s3_meta_request* meta_re
                                              int response_status, void* user_data) {
   AWS_UNREFERENCED_PARAM(meta_request);
   auto* userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
-  if (!userData || !userData->response || !userData->originalRequest) {
+  if (!userData || !userData->response || !userData->originalRequest || !headers) {
     return AWS_OP_ERR;
   }
 
