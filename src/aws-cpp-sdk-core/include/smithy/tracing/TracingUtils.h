@@ -19,6 +19,16 @@ namespace smithy {
              * A utility class for common tracing activities.
              */
             class SMITHY_API TracingUtils {
+                using SteadyTime = std::chrono::steady_clock::time_point;
+
+                static void RecordExecutionDuration(
+                    SteadyTime before,
+                    SteadyTime after,
+                    Aws::String metricName,
+                    const Meter &meter,
+                    Aws::Map<Aws::String, Aws::String> attributes,
+                    Aws::String description
+                );
             public:
                 TracingUtils() = default;
 
@@ -65,13 +75,7 @@ namespace smithy {
                     auto before = std::chrono::steady_clock::now();
                     auto returnValue = func();
                     auto after = std::chrono::steady_clock::now();
-                    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(after - before).count();
-                    auto histogram = meter.CreateHistogram(metricName, MICROSECOND_METRIC_TYPE, description);
-                    if (!histogram) {
-                        AWS_LOG_ERROR("TracingUtil", "Failed to create histogram");
-                        return {};
-                    }
-                    histogram->record((double) duration, std::forward<Aws::Map<Aws::String, Aws::String>>(attributes));
+                    RecordExecutionDuration(before, after, std::move(metricName), meter, std::move(attributes), std::move(description));
                     return returnValue;
                 }
 
@@ -93,13 +97,7 @@ namespace smithy {
                     auto before = std::chrono::steady_clock::now();
                     func();
                     auto after = std::chrono::steady_clock::now();
-                    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(after - before).count();
-                    auto histogram = meter.CreateHistogram(std::move(metricName), MICROSECOND_METRIC_TYPE, std::move(description));
-                    if (!histogram) {
-                        AWS_LOG_ERROR("TracingUtil", "Failed to create histogram");
-                        return;
-                    }
-                    histogram->record((double) duration, std::forward<Aws::Map<Aws::String, Aws::String>>(attributes));
+                    RecordExecutionDuration(before, after, std::move(metricName), meter, std::move(attributes), std::move(description));
                 }
 
                 /**
@@ -122,8 +120,9 @@ namespace smithy {
                                 std::move(description));
                             if (!histogram) {
                                 AWS_LOG_ERROR("TracingUtil", "Failed to create histogram");
+                            } else {
+                                histogram->record((double) entry.second, attributes);
                             }
-                            histogram->record((double) entry.second, attributes);
                         }
                     }
                 }

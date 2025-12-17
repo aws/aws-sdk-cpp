@@ -29,3 +29,20 @@ const char TracingUtils::SMITHY_METRICS_SSL_DURATION[] = "smithy.client.http.ssl
 const char TracingUtils::SMITHY_METRICS_DOWNLOAD_SPEED_METRIC[] = "smithy.client.http.download_speed";
 const char TracingUtils::SMITHY_METRICS_UPLOAD_SPEED_METRIC[] = "smithy.client.http.upload_speed";
 const char TracingUtils::SMITHY_METRICS_UNKNOWN_METRIC[] = "smithy.client.http.unknown_metric";
+
+void TracingUtils::RecordExecutionDuration(
+    SteadyTime before,
+    SteadyTime after,
+    Aws::String metricName,
+    const Meter &meter,
+    Aws::Map<Aws::String, Aws::String> attributes,
+    Aws::String description
+) {
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(after - before).count();
+    auto histogram = meter.CreateHistogram(std::move(metricName), MICROSECOND_METRIC_TYPE, description);
+    if (!histogram) {
+        AWS_LOG_ERROR("TracingUtil", "Failed to create histogram");
+    } else {
+        histogram->record((double) duration, std::move(attributes));
+    }
+}
