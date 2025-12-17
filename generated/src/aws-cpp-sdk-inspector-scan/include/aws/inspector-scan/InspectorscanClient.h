@@ -79,8 +79,13 @@ class AWS_INSPECTORSCAN_API InspectorscanClient : public Aws::Client::AWSJsonCli
   /**
    * <p>Scans a provided CycloneDX 1.5 SBOM and reports on any vulnerabilities
    * discovered in that SBOM. You can generate compatible SBOMs for your resources
-   * using the <a href="">Amazon Inspector SBOM generator</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * using the <a
+   * href="https://docs.aws.amazon.com/inspector/latest/user/sbom-generator.html">Amazon
+   * Inspector SBOM generator</a>.</p>  <p> The output of this action reports
+   * NVD and CVSS scores when NVD and CVSS scores are available. Because the output
+   * reports both scores, you might notice a discrepency between them. However, you
+   * can triage the severity of either score depending on the vendor of your
+   * choosing. </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector-scan-2023-08-08/ScanSbom">AWS
    * API Reference</a></p>
    */

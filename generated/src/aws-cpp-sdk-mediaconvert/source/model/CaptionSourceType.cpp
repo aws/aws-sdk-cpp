@@ -29,6 +29,7 @@ static const int TELETEXT_HASH = HashingUtils::HashString("TELETEXT");
 static const int NULL_SOURCE_HASH = HashingUtils::HashString("NULL_SOURCE");
 static const int IMSC_HASH = HashingUtils::HashString("IMSC");
 static const int WEBVTT_HASH = HashingUtils::HashString("WEBVTT");
+static const int TT_3GPP_HASH = HashingUtils::HashString("TT_3GPP");
 
 CaptionSourceType GetCaptionSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +61,8 @@ CaptionSourceType GetCaptionSourceTypeForName(const Aws::String& name) {
     return CaptionSourceType::IMSC;
   } else if (hashCode == WEBVTT_HASH) {
     return CaptionSourceType::WEBVTT;
+  } else if (hashCode == TT_3GPP_HASH) {
+    return CaptionSourceType::TT_3GPP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +105,8 @@ Aws::String GetNameForCaptionSourceType(CaptionSourceType enumValue) {
       return "IMSC";
     case CaptionSourceType::WEBVTT:
       return "WEBVTT";
+    case CaptionSourceType::TT_3GPP:
+      return "TT_3GPP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

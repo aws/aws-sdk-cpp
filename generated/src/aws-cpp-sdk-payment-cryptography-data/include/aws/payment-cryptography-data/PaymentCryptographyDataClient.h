@@ -233,6 +233,61 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
   }
 
   /**
+   * <p>Establishes node-to-node initialization between payment processing nodes such
+   * as an acquirer, issuer or payment network using Australian Standard 2805
+   * (AS2805).</p> <p>During node-to-node initialization, both communicating nodes
+   * must validate that they possess the correct Key Encrypting Keys (KEKs) before
+   * proceeding with session key exchange. In AS2805, the sending KEK (KEKs) of one
+   * node corresponds to the receiving KEK (KEKr) of its partner node. Each node uses
+   * its KEK to encrypt and decrypt session keys exchanged between the nodes. A KEK
+   * can be created or imported into Amazon Web Services Payment Cryptography using
+   * either the <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+   * operations.</p> <p>The node initiating communication can use
+   * <code>GenerateAS2805KekValidation</code> to generate a combined KEK validation
+   * request and KEK validation response to send to the partnering node for
+   * validation. When invoked, the API internally generates a random sending key
+   * encrypted under KEKs and provides a receiving key encrypted under KEKr as
+   * response. The initiating node sends the response returned by this API to its
+   * partner for validation.</p> <p>For information about valid keys for this
+   * operation, see <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+   * key attributes</a> and <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
+   * types for specific data operations</a> in the <i>Amazon Web Services Payment
+   * Cryptography User Guide</i>. </p> <p> <b>Cross-account use</b>: This operation
+   * can't be used across different Amazon Web Services accounts.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateAs2805KekValidation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GenerateAs2805KekValidationOutcome GenerateAs2805KekValidation(
+      const Model::GenerateAs2805KekValidationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GenerateAs2805KekValidation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GenerateAs2805KekValidationRequestT = Model::GenerateAs2805KekValidationRequest>
+  Model::GenerateAs2805KekValidationOutcomeCallable GenerateAs2805KekValidationCallable(
+      const GenerateAs2805KekValidationRequestT& request) const {
+    return SubmitCallable(&PaymentCryptographyDataClient::GenerateAs2805KekValidation, request);
+  }
+
+  /**
+   * An Async wrapper for GenerateAs2805KekValidation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GenerateAs2805KekValidationRequestT = Model::GenerateAs2805KekValidationRequest>
+  void GenerateAs2805KekValidationAsync(const GenerateAs2805KekValidationRequestT& request,
+                                        const GenerateAs2805KekValidationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PaymentCryptographyDataClient::GenerateAs2805KekValidation, request, handler, context);
+  }
+
+  /**
    * <p>Generates card-related validation data using algorithms such as Card
    * Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2),
    * or Card Security Codes (CSC). For more information, see <a
@@ -299,8 +354,8 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
    * or EMV MAC by setting generation attributes and algorithm to the associated
    * values. The MAC generation encryption key must have valid values for
    * <code>KeyUsage</code> such as <code>TR31_M7_HMAC_KEY</code> for HMAC generation,
-   * and the key must have <code>KeyModesOfUse</code> set to <code>Generate</code>
-   * and <code>Verify</code>.</p> <p>For information about valid keys for this
+   * and the key must have <code>KeyModesOfUse</code> set to
+   * <code>Generate</code>.</p> <p>For information about valid keys for this
    * operation, see <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
    * key attributes</a> and <a
@@ -498,25 +553,26 @@ class AWS_PAYMENTCRYPTOGRAPHYDATA_API PaymentCryptographyDataClient
   }
 
   /**
-   * <p>Translates an encryption key between different wrapping keys without
+   * <p>Translates an cryptographic key between different wrapping keys without
    * importing the key into Amazon Web Services Payment Cryptography.</p> <p>This
    * operation can be used when key material is frequently rotated, such as during
    * every card transaction, and there is a need to avoid importing short-lived keys
    * into Amazon Web Services Payment Cryptography. It translates short-lived
-   * transaction keys such as Pin Encryption Key (PEK) generated for each transaction
-   * and wrapped with an ECDH (Elliptic Curve Diffie-Hellman) derived wrapping key to
-   * another KEK (Key Encryption Key) wrapping key. </p> <p>Before using this
-   * operation, you must first request the public key certificate of the ECC key pair
-   * generated within Amazon Web Services Payment Cryptography to establish an ECDH
-   * key agreement. In <code>TranslateKeyData</code>, the service uses its own ECC
-   * key pair, public certificate of receiving ECC key pair, and the key derivation
-   * parameters to generate a derived key. The service uses this derived key to
-   * unwrap the incoming transaction key received as a TR31WrappedKeyBlock and
-   * re-wrap using a user provided KEK to generate an outgoing Tr31WrappedKeyBlock.
-   * For more information on establishing ECDH derived keys, see the <a
-   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
-   * keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
-   * <p>For information about valid keys for this operation, see <a
+   * transaction keys such as <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/terminology.html#terms.pek">PEK</a>
+   * generated for each transaction and wrapped with an <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/terminology.html#terms.ecdh">ECDH</a>
+   * derived wrapping key to another <a
+   * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/terminology.html#terms.kek">KEK</a>
+   * wrapping key. </p> <p>Before using this operation, you must first request the
+   * public key certificate of the ECC key pair generated within Amazon Web Services
+   * Payment Cryptography to establish an ECDH key agreement. In
+   * <code>TranslateKeyData</code>, the service uses its own ECC key pair, public
+   * certificate of receiving ECC key pair, and the key derivation parameters to
+   * generate a derived key. The service uses this derived key to unwrap the incoming
+   * transaction key received as a TR31WrappedKeyBlock and re-wrap using a user
+   * provided KEK to generate an outgoing Tr31WrappedKeyBlock.</p> <p>For information
+   * about valid keys for this operation, see <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
    * key attributes</a> and <a
    * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key

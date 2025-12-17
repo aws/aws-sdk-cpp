@@ -153,6 +153,7 @@ static const int ml_r7i_24xlarge_HASH = HashingUtils::HashString("ml.r7i.24xlarg
 static const int ml_r7i_48xlarge_HASH = HashingUtils::HashString("ml.r7i.48xlarge");
 static const int ml_p6e_gb200_36xlarge_HASH = HashingUtils::HashString("ml.p6e-gb200.36xlarge");
 static const int ml_p5_4xlarge_HASH = HashingUtils::HashString("ml.p5.4xlarge");
+static const int ml_p6_b300_48xlarge_HASH = HashingUtils::HashString("ml.p6-b300.48xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -577,6 +578,9 @@ static bool GetEnumForNameHelper1(int hashCode, TrainingInstanceType& enumValue)
     return true;
   } else if (hashCode == ml_p5_4xlarge_HASH) {
     enumValue = TrainingInstanceType::ml_p5_4xlarge;
+    return true;
+  } else if (hashCode == ml_p6_b300_48xlarge_HASH) {
+    enumValue = TrainingInstanceType::ml_p6_b300_48xlarge;
     return true;
   }
   return false;
@@ -1003,6 +1007,9 @@ static bool GetNameForEnumHelper1(TrainingInstanceType enumValue, Aws::String& v
       return true;
     case TrainingInstanceType::ml_p5_4xlarge:
       value = "ml.p5.4xlarge";
+      return true;
+    case TrainingInstanceType::ml_p6_b300_48xlarge:
+      value = "ml.p6-b300.48xlarge";
       return true;
     default:
       return false;

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace inspectorscan {
 namespace Model {
-enum class OutputFormat { NOT_SET, CYCLONE_DX_1_5, INSPECTOR };
+enum class OutputFormat { NOT_SET, CYCLONE_DX_1_5, INSPECTOR, INSPECTOR_ALT };
 
 namespace OutputFormatMapper {
 AWS_INSPECTORSCAN_API OutputFormat GetOutputFormatForName(const Aws::String& name);

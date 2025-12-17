@@ -21,6 +21,8 @@
 #include <aws/mediaconvert/model/H265GopBReference.h>
 #include <aws/mediaconvert/model/H265GopSizeUnits.h>
 #include <aws/mediaconvert/model/H265InterlaceMode.h>
+#include <aws/mediaconvert/model/H265MvOverPictureBoundaries.h>
+#include <aws/mediaconvert/model/H265MvTemporalPredictor.h>
 #include <aws/mediaconvert/model/H265ParControl.h>
 #include <aws/mediaconvert/model/H265QualityTuningLevel.h>
 #include <aws/mediaconvert/model/H265QvbrSettings.h>
@@ -33,7 +35,9 @@
 #include <aws/mediaconvert/model/H265Telecine.h>
 #include <aws/mediaconvert/model/H265TemporalAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H265TemporalIds.h>
+#include <aws/mediaconvert/model/H265TilePadding.h>
 #include <aws/mediaconvert/model/H265Tiles.h>
+#include <aws/mediaconvert/model/H265TreeBlockSize.h>
 #include <aws/mediaconvert/model/H265UnregisteredSeiTimecode.h>
 #include <aws/mediaconvert/model/H265WriteMp4PackagingType.h>
 
@@ -571,6 +575,40 @@ class H265Settings {
 
   ///@{
   /**
+   * If you are setting up the picture as a tile, you must set this to "disabled". In
+   * all other configurations, you typically enter "enabled".
+   */
+  inline H265MvOverPictureBoundaries GetMvOverPictureBoundaries() const { return m_mvOverPictureBoundaries; }
+  inline bool MvOverPictureBoundariesHasBeenSet() const { return m_mvOverPictureBoundariesHasBeenSet; }
+  inline void SetMvOverPictureBoundaries(H265MvOverPictureBoundaries value) {
+    m_mvOverPictureBoundariesHasBeenSet = true;
+    m_mvOverPictureBoundaries = value;
+  }
+  inline H265Settings& WithMvOverPictureBoundaries(H265MvOverPictureBoundaries value) {
+    SetMvOverPictureBoundaries(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * If you are setting up the picture as a tile, you must set this to "disabled". In
+   * other configurations, you typically enter "enabled".
+   */
+  inline H265MvTemporalPredictor GetMvTemporalPredictor() const { return m_mvTemporalPredictor; }
+  inline bool MvTemporalPredictorHasBeenSet() const { return m_mvTemporalPredictorHasBeenSet; }
+  inline void SetMvTemporalPredictor(H265MvTemporalPredictor value) {
+    m_mvTemporalPredictorHasBeenSet = true;
+    m_mvTemporalPredictor = value;
+  }
+  inline H265Settings& WithMvTemporalPredictor(H265MvTemporalPredictor value) {
+    SetMvTemporalPredictor(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Specify the number of B-frames between reference frames in this output. For the
    * best video quality: Leave blank. MediaConvert automatically determines the
    * number of B-frames to use based on the characteristics of your input video. To
@@ -964,6 +1002,63 @@ class H265Settings {
 
   ///@{
   /**
+   * Set this field to set up the picture as a tile. You must also set TileWidth. The
+   * tile height must result in 22 or fewer rows in the frame. The tile width must
+   * result in 20 or fewer columns in the frame. And finally, the product of the
+   * column count and row count must be 64 or less. If the tile width and height are
+   * specified, MediaConvert will override the video codec slices field with a value
+   * that MediaConvert calculates.
+   */
+  inline int GetTileHeight() const { return m_tileHeight; }
+  inline bool TileHeightHasBeenSet() const { return m_tileHeightHasBeenSet; }
+  inline void SetTileHeight(int value) {
+    m_tileHeightHasBeenSet = true;
+    m_tileHeight = value;
+  }
+  inline H265Settings& WithTileHeight(int value) {
+    SetTileHeight(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Set to "padded" to force MediaConvert to add padding to the frame, to obtain a
+   * frame that is a whole multiple of the tile size. If you are setting up the
+   * picture as a tile, you must enter "padded". In all other configurations, you
+   * typically enter "none".
+   */
+  inline H265TilePadding GetTilePadding() const { return m_tilePadding; }
+  inline bool TilePaddingHasBeenSet() const { return m_tilePaddingHasBeenSet; }
+  inline void SetTilePadding(H265TilePadding value) {
+    m_tilePaddingHasBeenSet = true;
+    m_tilePadding = value;
+  }
+  inline H265Settings& WithTilePadding(H265TilePadding value) {
+    SetTilePadding(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Set this field to set up the picture as a tile. See TileHeight for more
+   * information.
+   */
+  inline int GetTileWidth() const { return m_tileWidth; }
+  inline bool TileWidthHasBeenSet() const { return m_tileWidthHasBeenSet; }
+  inline void SetTileWidth(int value) {
+    m_tileWidthHasBeenSet = true;
+    m_tileWidth = value;
+  }
+  inline H265Settings& WithTileWidth(int value) {
+    SetTileWidth(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
    * encoded pictures.
    */
@@ -975,6 +1070,24 @@ class H265Settings {
   }
   inline H265Settings& WithTiles(H265Tiles value) {
     SetTiles(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Select the tree block size used for encoding. If you enter "auto", the encoder
+   * will pick the best size. If you are setting up the picture as a tile, you must
+   * set this to 32x32. In all other configurations, you typically enter "auto".
+   */
+  inline H265TreeBlockSize GetTreeBlockSize() const { return m_treeBlockSize; }
+  inline bool TreeBlockSizeHasBeenSet() const { return m_treeBlockSizeHasBeenSet; }
+  inline void SetTreeBlockSize(H265TreeBlockSize value) {
+    m_treeBlockSizeHasBeenSet = true;
+    m_treeBlockSize = value;
+  }
+  inline H265Settings& WithTreeBlockSize(H265TreeBlockSize value) {
+    SetTreeBlockSize(value);
     return *this;
   }
   ///@}
@@ -1068,6 +1181,10 @@ class H265Settings {
 
   int m_minIInterval{0};
 
+  H265MvOverPictureBoundaries m_mvOverPictureBoundaries{H265MvOverPictureBoundaries::NOT_SET};
+
+  H265MvTemporalPredictor m_mvTemporalPredictor{H265MvTemporalPredictor::NOT_SET};
+
   int m_numberBFramesBetweenReferenceFrames{0};
 
   int m_numberReferenceFrames{0};
@@ -1104,7 +1221,15 @@ class H265Settings {
 
   H265TemporalIds m_temporalIds{H265TemporalIds::NOT_SET};
 
+  int m_tileHeight{0};
+
+  H265TilePadding m_tilePadding{H265TilePadding::NOT_SET};
+
+  int m_tileWidth{0};
+
   H265Tiles m_tiles{H265Tiles::NOT_SET};
+
+  H265TreeBlockSize m_treeBlockSize{H265TreeBlockSize::NOT_SET};
 
   H265UnregisteredSeiTimecode m_unregisteredSeiTimecode{H265UnregisteredSeiTimecode::NOT_SET};
 
@@ -1133,6 +1258,8 @@ class H265Settings {
   bool m_interlaceModeHasBeenSet = false;
   bool m_maxBitrateHasBeenSet = false;
   bool m_minIIntervalHasBeenSet = false;
+  bool m_mvOverPictureBoundariesHasBeenSet = false;
+  bool m_mvTemporalPredictorHasBeenSet = false;
   bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
   bool m_numberReferenceFramesHasBeenSet = false;
   bool m_parControlHasBeenSet = false;
@@ -1151,7 +1278,11 @@ class H265Settings {
   bool m_telecineHasBeenSet = false;
   bool m_temporalAdaptiveQuantizationHasBeenSet = false;
   bool m_temporalIdsHasBeenSet = false;
+  bool m_tileHeightHasBeenSet = false;
+  bool m_tilePaddingHasBeenSet = false;
+  bool m_tileWidthHasBeenSet = false;
   bool m_tilesHasBeenSet = false;
+  bool m_treeBlockSizeHasBeenSet = false;
   bool m_unregisteredSeiTimecodeHasBeenSet = false;
   bool m_writeMp4PackagingTypeHasBeenSet = false;
 };

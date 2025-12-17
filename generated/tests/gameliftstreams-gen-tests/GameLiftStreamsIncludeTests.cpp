@@ -54,6 +54,7 @@
 #include <aws/gameliftstreams/model/ListTagsForResourceResult.h>
 #include <aws/gameliftstreams/model/LocationConfiguration.h>
 #include <aws/gameliftstreams/model/LocationState.h>
+#include <aws/gameliftstreams/model/PerformanceStatsConfiguration.h>
 #include <aws/gameliftstreams/model/Protocol.h>
 #include <aws/gameliftstreams/model/RemoveStreamGroupLocationsRequest.h>
 #include <aws/gameliftstreams/model/ReplicationStatus.h>

@@ -41,6 +41,10 @@ SpekeKeyProvider& SpekeKeyProvider::operator=(JsonView jsonValue) {
     m_url = jsonValue.GetString("Url");
     m_urlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CertificateArn")) {
+    m_certificateArn = jsonValue.GetString("CertificateArn");
+    m_certificateArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue SpekeKeyProvider::Jsonize() const {
 
   if (m_urlHasBeenSet) {
     payload.WithString("Url", m_url);
+  }
+
+  if (m_certificateArnHasBeenSet) {
+    payload.WithString("CertificateArn", m_certificateArn);
   }
 
   return payload;

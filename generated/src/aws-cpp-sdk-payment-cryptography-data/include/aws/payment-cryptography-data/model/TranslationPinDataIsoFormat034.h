@@ -20,8 +20,8 @@ namespace PaymentCryptographyData {
 namespace Model {
 
 /**
- * <p>Parameters that are required for tranlation between ISO9564 PIN format 0,3,4
- * tranlation.</p><p><h3>See Also:</h3>   <a
+ * <p>Parameters that are required for translation between ISO9564 PIN format 0,3,4
+ * translation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslationPinDataIsoFormat034">AWS
  * API Reference</a></p>
  */

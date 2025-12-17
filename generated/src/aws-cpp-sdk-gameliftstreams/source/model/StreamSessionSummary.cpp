@@ -30,6 +30,10 @@ StreamSessionSummary& StreamSessionSummary::operator=(JsonView jsonValue) {
     m_status = StreamSessionStatusMapper::GetStreamSessionStatusForName(jsonValue.GetString("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StatusReason")) {
+    m_statusReason = StreamSessionStatusReasonMapper::GetStreamSessionStatusReasonForName(jsonValue.GetString("StatusReason"));
+    m_statusReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Protocol")) {
     m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("Protocol"));
     m_protocolHasBeenSet = true;
@@ -70,6 +74,10 @@ JsonValue StreamSessionSummary::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("Status", StreamSessionStatusMapper::GetNameForStreamSessionStatus(m_status));
+  }
+
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("StatusReason", StreamSessionStatusReasonMapper::GetNameForStreamSessionStatusReason(m_statusReason));
   }
 
   if (m_protocolHasBeenSet) {

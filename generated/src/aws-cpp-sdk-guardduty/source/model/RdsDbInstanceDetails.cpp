@@ -38,6 +38,10 @@ RdsDbInstanceDetails& RdsDbInstanceDetails::operator=(JsonView jsonValue) {
     m_dbInstanceArn = jsonValue.GetString("dbInstanceArn");
     m_dbInstanceArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dbiResourceId")) {
+    m_dbiResourceId = jsonValue.GetString("dbiResourceId");
+    m_dbiResourceIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
@@ -69,6 +73,10 @@ JsonValue RdsDbInstanceDetails::Jsonize() const {
 
   if (m_dbInstanceArnHasBeenSet) {
     payload.WithString("dbInstanceArn", m_dbInstanceArn);
+  }
+
+  if (m_dbiResourceIdHasBeenSet) {
+    payload.WithString("dbiResourceId", m_dbiResourceId);
   }
 
   if (m_tagsHasBeenSet) {

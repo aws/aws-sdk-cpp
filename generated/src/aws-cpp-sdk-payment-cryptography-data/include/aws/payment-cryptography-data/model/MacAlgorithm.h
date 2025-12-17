@@ -10,7 +10,18 @@
 namespace Aws {
 namespace PaymentCryptographyData {
 namespace Model {
-enum class MacAlgorithm { NOT_SET, ISO9797_ALGORITHM1, ISO9797_ALGORITHM3, CMAC, HMAC, HMAC_SHA224, HMAC_SHA256, HMAC_SHA384, HMAC_SHA512 };
+enum class MacAlgorithm {
+  NOT_SET,
+  ISO9797_ALGORITHM1,
+  ISO9797_ALGORITHM3,
+  CMAC,
+  HMAC,
+  HMAC_SHA224,
+  HMAC_SHA256,
+  HMAC_SHA384,
+  HMAC_SHA512,
+  AS2805_4_1
+};
 
 namespace MacAlgorithmMapper {
 AWS_PAYMENTCRYPTOGRAPHYDATA_API MacAlgorithm GetMacAlgorithmForName(const Aws::String& name);
