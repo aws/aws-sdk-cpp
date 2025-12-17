@@ -225,6 +225,33 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Cancels an active import task and stops importing data from the CloudTrail
+   * Lake Event Data Store.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelImportTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelImportTaskOutcome CancelImportTask(const Model::CancelImportTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelImportTask that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelImportTaskRequestT = Model::CancelImportTaskRequest>
+  Model::CancelImportTaskOutcomeCallable CancelImportTaskCallable(const CancelImportTaskRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::CancelImportTask, request);
+  }
+
+  /**
+   * An Async wrapper for CancelImportTask that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CancelImportTaskRequestT = Model::CancelImportTaskRequest>
+  void CancelImportTaskAsync(const CancelImportTaskRequestT& request, const CancelImportTaskResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::CancelImportTask, request, handler, context);
+  }
+
+  /**
    * <p>Creates a <i>delivery</i>. A delivery is a connection between a logical
    * <i>delivery source</i> and a logical <i>delivery destination</i> that you have
    * already created.</p> <p>Only some Amazon Web Services services support being
@@ -326,6 +353,66 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void CreateExportTaskAsync(const CreateExportTaskRequestT& request, const CreateExportTaskResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::CreateExportTask, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an import from a data source to CloudWatch Log and creates a managed
+   * log group as the destination for the imported data. Currently, <a
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">CloudTrail
+   * Event Data Store</a> is the only supported data source. </p> <p>The import task
+   * must satisfy the following constraints:</p> <ul> <li> <p>The specified source
+   * must be in an ACTIVE state.</p> </li> <li> <p>The API caller must have
+   * permissions to access the data in the provided source and to perform
+   * iam:PassRole on the provided import role which has the same permissions, as
+   * described below.</p> </li> <li> <p>The provided IAM role must trust the
+   * "cloudtrail.amazonaws.com" principal and have the following permissions:</p>
+   * <ul> <li> <p>cloudtrail:GetEventDataStoreData</p> </li> <li>
+   * <p>logs:CreateLogGroup</p> </li> <li> <p>logs:CreateLogStream</p> </li> <li>
+   * <p>logs:PutResourcePolicy</p> </li> <li> <p>(If source has an associated AWS KMS
+   * Key) kms:Decrypt</p> </li> <li> <p>(If source has an associated AWS KMS Key)
+   * kms:GenerateDataKey</p> </li> </ul> <p>Example IAM policy for provided import
+   * role:</p> <p> <code>[ { "Effect": "Allow", "Action": "iam:PassRole", "Resource":
+   * "arn:aws:iam::123456789012:role/apiCallerCredentials", "Condition": {
+   * "StringLike": { "iam:AssociatedResourceARN":
+   * "arn:aws:logs:us-east-1:123456789012:log-group:aws/cloudtrail/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb:*"
+   * } } }, { "Effect": "Allow", "Action": [ "cloudtrail:GetEventDataStoreData" ],
+   * "Resource": [
+   * "arn:aws:cloudtrail:us-east-1:123456789012:eventdatastore/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb"
+   * ] }, { "Effect": "Allow", "Action": [ "logs:CreateImportTask",
+   * "logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutResourcePolicy" ],
+   * "Resource": [ "arn:aws:logs:us-east-1:123456789012:log-group:/aws/cloudtrail/ *"
+   * ] }, { "Effect": "Allow", "Action": [ "kms:Decrypt", "kms:GenerateDataKey" ],
+   * "Resource": [
+   * "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012" ]
+   * } ]</code> </p> </li> <li> <p>If the import source has a customer managed key,
+   * the "cloudtrail.amazonaws.com" principal needs permissions to perform
+   * kms:Decrypt and kms:GenerateDataKey.</p> </li> <li> <p>There can be no more than
+   * 3 active imports per account at a given time.</p> </li> <li> <p>The
+   * startEventTime must be less than or equal to endEventTime.</p> </li> <li> <p>The
+   * data being imported must be within the specified source's retention period.</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateImportTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateImportTaskOutcome CreateImportTask(const Model::CreateImportTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateImportTask that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateImportTaskRequestT = Model::CreateImportTaskRequest>
+  Model::CreateImportTaskOutcomeCallable CreateImportTaskCallable(const CreateImportTaskRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::CreateImportTask, request);
+  }
+
+  /**
+   * An Async wrapper for CreateImportTask that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateImportTaskRequestT = Model::CreateImportTaskRequest>
+  void CreateImportTaskAsync(const CreateImportTaskRequestT& request, const CreateImportTaskResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::CreateImportTask, request, handler, context);
   }
 
   /**
@@ -734,7 +821,7 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * Logs Insights console for this log group. However, facet data is retained for up
    * to 30 days.</p> <p>You can't use this operation to delete an account-level index
    * policy. Instead, use <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeletAccountPolicy</a>.</p>
+   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteAccountPolicy.html">DeleteAccountPolicy</a>.</p>
    * <p>If you delete a log-group level field index policy and there is an
    * account-level field index policy, in a few minutes the log group begins using
    * that account-wide policy to index new incoming log events. This operation only
@@ -1330,6 +1417,65 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   void DescribeFieldIndexesAsync(const DescribeFieldIndexesRequestT& request, const DescribeFieldIndexesResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchLogsClient::DescribeFieldIndexes, request, handler, context);
+  }
+
+  /**
+   * <p>Gets detailed information about the individual batches within an import task,
+   * including their status and any error messages. For CloudTrail Event Data Store
+   * sources, a batch refers to a subset of stored events grouped by their eventTime.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeImportTaskBatches">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeImportTaskBatchesOutcome DescribeImportTaskBatches(const Model::DescribeImportTaskBatchesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeImportTaskBatches that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeImportTaskBatchesRequestT = Model::DescribeImportTaskBatchesRequest>
+  Model::DescribeImportTaskBatchesOutcomeCallable DescribeImportTaskBatchesCallable(
+      const DescribeImportTaskBatchesRequestT& request) const {
+    return SubmitCallable(&CloudWatchLogsClient::DescribeImportTaskBatches, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeImportTaskBatches that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeImportTaskBatchesRequestT = Model::DescribeImportTaskBatchesRequest>
+  void DescribeImportTaskBatchesAsync(const DescribeImportTaskBatchesRequestT& request,
+                                      const DescribeImportTaskBatchesResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchLogsClient::DescribeImportTaskBatches, request, handler, context);
+  }
+
+  /**
+   * <p>Lists and describes import tasks, with optional filtering by import status
+   * and source ARN.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeImportTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeImportTasksOutcome DescribeImportTasks(const Model::DescribeImportTasksRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeImportTasks that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeImportTasksRequestT = Model::DescribeImportTasksRequest>
+  Model::DescribeImportTasksOutcomeCallable DescribeImportTasksCallable(const DescribeImportTasksRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchLogsClient::DescribeImportTasks, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeImportTasks that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeImportTasksRequestT = Model::DescribeImportTasksRequest>
+  void DescribeImportTasksAsync(const DescribeImportTasksResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const DescribeImportTasksRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchLogsClient::DescribeImportTasks, request, handler, context);
   }
 
   /**
@@ -2561,11 +2707,12 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
   /**
    * <p>Creates an account-level data protection policy, subscription filter policy,
    * field index policy, transformer policy, or metric extraction policy that applies
-   * to all log groups or a subset of log groups in the account.</p> <p>For field
-   * index policies, you can configure indexed fields as <i>facets</i> to enable
-   * interactive exploration of your logs. Facets provide value distributions and
-   * counts for indexed fields in the CloudWatch Logs Insights console without
-   * requiring query execution. For more information, see <a
+   * to all log groups, a subset of log groups, or a data source name and type
+   * combination in the account.</p> <p>For field index policies, you can configure
+   * indexed fields as <i>facets</i> to enable interactive exploration of your logs.
+   * Facets provide value distributions and counts for indexed fields in the
+   * CloudWatch Logs Insights console without requiring query execution. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html">Use
    * facets to group and explore logs</a>.</p> <p>To use this operation, you must be
    * signed on with the correct permissions depending on the type of policy that you
@@ -2669,34 +2816,28 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * transformer policies with selection criteria, no two of them can use the same or
    * overlapping log group name prefixes. For example, if you have one policy
    * filtered to log groups that start with <code>my-log</code>, you can't have
-   * another field index policy filtered to <code>my-logpprod</code> or
-   * <code>my-logging</code>.</p> <p>CloudWatch Logs provides default field indexes
-   * for all log groups in the Standard log class. Default field indexes are
-   * automatically available for the following fields: </p> <ul> <li> <p>
-   * <code>@logStream</code> </p> </li> <li> <p> <code>@aws.region</code> </p> </li>
-   * <li> <p> <code>@aws.account</code> </p> </li> <li> <p> <code>@source.log</code>
-   * </p> </li> <li> <p> <code>traceId</code> </p> </li> </ul> <p>Default field
-   * indexes are in addition to any custom field indexes you define within your
-   * policy. Default field indexes are not counted towards your field index quota.
-   * </p> <p>You can also set up a transformer at the log-group level. For more
-   * information, see <a
+   * another transformer policy filtered to <code>my-logpprod</code> or
+   * <code>my-logging</code>.</p> <p>You can also set up a transformer at the
+   * log-group level. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutTransformer.html">PutTransformer</a>.
    * If there is both a log-group level transformer created with
    * <code>PutTransformer</code> and an account-level transformer that could apply to
    * the same log group, the log group uses only the log-group level transformer. It
    * ignores the account-level transformer.</p> <p> <b>Field index policy</b> </p>
    * <p>You can use field index policies to create indexes on fields found in log
-   * events in the log group. Creating field indexes can help lower the scan volume
-   * for CloudWatch Logs Insights queries that reference those fields, because these
-   * queries attempt to skip the processing of log events that are known to not match
-   * the indexed field. Good fields to index are fields that you often need to query
-   * for and fields or values that match only a small fraction of the total log
-   * events. Common examples of indexes include request ID, session ID, user IDs, or
-   * instance IDs. For more information, see <a
+   * events for a log group or data source name and type combination. Creating field
+   * indexes can help lower the scan volume for CloudWatch Logs Insights queries that
+   * reference those fields, because these queries attempt to skip the processing of
+   * log events that are known to not match the indexed field. Good fields to index
+   * are fields that you often need to query for and fields or values that match only
+   * a small fraction of the total log events. Common examples of indexes include
+   * request ID, session ID, user IDs, or instance IDs. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html">Create
    * field indexes to improve query performance and reduce costs</a> </p> <p>To find
    * the fields that are in your log group events, use the <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogGroupFields.html">GetLogGroupFields</a>
+   * operation. To find the fields for a data source use the <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogFields.html">GetLogFields</a>
    * operation.</p> <p>For example, suppose you have created a field index for
    * <code>requestId</code>. Then, any CloudWatch Logs Insights query on that log
    * group that includes <code>requestId = <i>value</i> </code> or <code>requestId in
@@ -2705,64 +2846,102 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * log events to the names of indexed fields are case-sensitive. For example, an
    * indexed field of <code>RequestId</code> won't match a log event containing
    * <code>requestId</code>.</p> <p>You can have one account-level field index policy
-   * that applies to all log groups in the account. Or you can create as many as 40
-   * account-level field index policies (20 for log group prefix selection, 20 for
-   * data source selection) that are each scoped to a subset of log groups or data
-   * sources with the <code>selectionCriteria</code> parameter. Field index policies
-   * can now be created for specific data source name and type combinations using
-   * DataSourceName and DataSourceType selection criteria. If you have multiple
-   * account-level index policies with selection criteria, no two of them can use the
+   * that applies to all log groups in the account. Or you can create as many as 20
+   * account-level field index policies that are each scoped to a subset of log
+   * groups using <code>LogGroupNamePrefix</code> with the
+   * <code>selectionCriteria</code> parameter. You can have another 20 account-level
+   * field index policies using <code>DataSourceName</code> and
+   * <code>DataSourceType</code> for the <code>selectionCriteria</code> parameter. If
+   * you have multiple account-level index policies with
+   * <code>LogGroupNamePrefix</code> selection criteria, no two of them can use the
    * same or overlapping log group name prefixes. For example, if you have one policy
-   * filtered to log groups that start with <code>my-log</code>, you can't have
-   * another field index policy filtered to <code>my-logpprod</code> or
-   * <code>my-logging</code>.</p> <p>If you create an account-level field index
-   * policy in a monitoring account in cross-account observability, the policy is
-   * applied only to the monitoring account and not to any source accounts.</p> <p>If
-   * you want to create a field index policy for a single log group, you can use <a
+   * filtered to log groups that start with <i>my-log</i>, you can't have another
+   * field index policy filtered to <i>my-logpprod</i> or <i>my-logging</i>.
+   * Similarly, if you have multiple account-level index policies with
+   * <code>DataSourceName</code> and <code>DataSourceType</code> selection criteria,
+   * no two of them can use the same data source name and type combination. For
+   * example, if you have one policy filtered to the data source name
+   * <code>amazon_vpc</code> and data source type <code>flow</code> you cannot create
+   * another policy with this combination.</p> <p>If you create an account-level
+   * field index policy in a monitoring account in cross-account observability, the
+   * policy is applied only to the monitoring account and not to any source
+   * accounts.</p> <p>CloudWatch Logs provides default field indexes for all log
+   * groups in the Standard log class. Default field indexes are automatically
+   * available for the following fields: </p> <ul> <li> <p> <code>@logStream</code>
+   * </p> </li> <li> <p> <code>@aws.region</code> </p> </li> <li> <p>
+   * <code>@aws.account</code> </p> </li> <li> <p> <code>@source.log</code> </p>
+   * </li> <li> <p> <code>@data_source_name</code> </p> </li> <li> <p>
+   * <code>@data_source_type</code> </p> </li> <li> <p> <code>@data_format</code>
+   * </p> </li> <li> <p> <code>traceId</code> </p> </li> <li> <p>
+   * <code>severityText</code> </p> </li> <li> <p> <code>attributes.session.id</code>
+   * </p> </li> </ul> <p>CloudWatch Logs provides default field indexes for certain
+   * data source name and type combinations as well. Default field indexes are
+   * automatically available for the following data source name and type combinations
+   * as identified in the following list:</p> <p> <code>amazon_vpc.flow</code> </p>
+   * <ul> <li> <p> <code>action</code> </p> </li> <li> <p> <code>logStatus</code>
+   * </p> </li> <li> <p> <code>region</code> </p> </li> <li> <p>
+   * <code>flowDirection</code> </p> </li> <li> <p> <code>type</code> </p> </li>
+   * </ul> <p> <code>amazon_route53.resolver_query</code> </p> <ul> <li> <p>
+   * <code>transport</code> </p> </li> <li> <p> <code>rcode</code> </p> </li> </ul>
+   * <p> <code>aws_waf.access</code> </p> <ul> <li> <p> <code>action</code> </p>
+   * </li> <li> <p> <code>httpRequest.country</code> </p> </li> </ul> <p>
+   * <code>aws_cloudtrail.data</code>, <code>aws_cloudtrail.management</code> </p>
+   * <ul> <li> <p> <code>eventSource</code> </p> </li> <li> <p>
+   * <code>eventName</code> </p> </li> <li> <p> <code>awsRegion</code> </p> </li>
+   * <li> <p> <code>userAgent</code> </p> </li> <li> <p> <code>errorCode</code> </p>
+   * </li> <li> <p> <code>eventType</code> </p> </li> <li> <p>
+   * <code>managementEvent</code> </p> </li> <li> <p> <code>readOnly</code> </p>
+   * </li> <li> <p> <code>eventCategory</code> </p> </li> <li> <p>
+   * <code>requestId</code> </p> </li> </ul> <p>Default field indexes are in addition
+   * to any custom field indexes you define within your policy. Default field indexes
+   * are not counted towards your <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax">field
+   * index quota</a>. </p> <p>If you want to create a field index policy for a single
+   * log group, you can use <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>
    * instead of <code>PutAccountPolicy</code>. If you do so, that log group will use
-   * only that log-group level policy, and will ignore the account-level policy that
-   * you create with <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>.</p>
-   * <p> <b>Metric extraction policy</b> </p> <p>A metric extraction policy controls
-   * whether CloudWatch Metrics can be created through the Embedded Metrics Format
-   * (EMF) for log groups in your account. By default, EMF metric creation is enabled
-   * for all log groups. You can use metric extraction policies to disable EMF metric
-   * creation for your entire account or specific log groups.</p> <p>When a policy
-   * disables EMF metric creation for a log group, log events in the EMF format are
-   * still ingested, but no CloudWatch Metrics are created from them.</p>
-   * <p>Creating a policy disables metrics for AWS features that use EMF to create
-   * metrics, such as CloudWatch Container Insights and CloudWatch Application
-   * Signals. To prevent turning off those features by accident, we recommend that
-   * you exclude the underlying log-groups through a selection-criteria such as
-   * <code>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
-   * "/aws/ecs/containerinsights", "/aws/application-signals/data"]</code>.</p>
-   *  <p>Each account can have either one account-level metric extraction
-   * policy that applies to all log groups, or up to 5 policies that are each scoped
-   * to a subset of log groups with the <code>selectionCriteria</code> parameter. The
-   * selection criteria supports filtering by <code>LogGroupName</code> and
-   * <code>LogGroupNamePrefix</code> using the operators <code>IN</code> and
-   * <code>NOT IN</code>. You can specify up to 50 values in each <code>IN</code> or
-   * <code>NOT IN</code> list.</p> <p>The selection criteria can be specified in
-   * these formats:</p> <p> <code>LogGroupName IN ["log-group-1",
-   * "log-group-2"]</code> </p> <p> <code>LogGroupNamePrefix NOT IN ["/aws/prefix1",
-   * "/aws/prefix2"]</code> </p> <p>If you have multiple account-level metric
-   * extraction policies with selection criteria, no two of them can have overlapping
-   * criteria. For example, if you have one policy with selection criteria
-   * <code>LogGroupNamePrefix IN ["my-log"]</code>, you can't have another metric
-   * extraction policy with selection criteria <code>LogGroupNamePrefix IN
-   * ["/my-log-prod"]</code> or <code>LogGroupNamePrefix IN ["/my-logging"]</code>,
-   * as the set of log groups matching these prefixes would be a subset of the log
-   * groups matching the first policy's prefix, creating an overlap.</p> <p>When
-   * using <code>NOT IN</code>, only one policy with this operator is allowed per
-   * account.</p> <p>When combining policies with <code>IN</code> and <code>NOT
-   * IN</code> operators, the overlap check ensures that policies don't have
-   * conflicting effects. Two policies with <code>IN</code> and <code>NOT IN</code>
-   * operators do not overlap if and only if every value in the <code>IN
-   * </code>policy is completely contained within some value in the <code>NOT
-   * IN</code> policy. For example:</p> <ul> <li> <p>If you have a <code>NOT
-   * IN</code> policy for prefix <code>"/aws/lambda"</code>, you can create an
-   * <code>IN</code> policy for the exact log group name
+   * that log-group level policy and any account-level policies that match at the
+   * data source level; any account-level policy that matches at the log group level
+   * (for example, no selection criteria or log group name prefix selection criteria)
+   * will be ignored.</p> <p> <b>Metric extraction policy</b> </p> <p>A metric
+   * extraction policy controls whether CloudWatch Metrics can be created through the
+   * Embedded Metrics Format (EMF) for log groups in your account. By default, EMF
+   * metric creation is enabled for all log groups. You can use metric extraction
+   * policies to disable EMF metric creation for your entire account or specific log
+   * groups.</p> <p>When a policy disables EMF metric creation for a log group, log
+   * events in the EMF format are still ingested, but no CloudWatch Metrics are
+   * created from them.</p>  <p>Creating a policy disables metrics for AWS
+   * features that use EMF to create metrics, such as CloudWatch Container Insights
+   * and CloudWatch Application Signals. To prevent turning off those features by
+   * accident, we recommend that you exclude the underlying log-groups through a
+   * selection-criteria such as <code>LogGroupNamePrefix NOT IN
+   * ["/aws/containerinsights", "/aws/ecs/containerinsights",
+   * "/aws/application-signals/data"]</code>.</p>  <p>Each account can
+   * have either one account-level metric extraction policy that applies to all log
+   * groups, or up to 5 policies that are each scoped to a subset of log groups with
+   * the <code>selectionCriteria</code> parameter. The selection criteria supports
+   * filtering by <code>LogGroupName</code> and <code>LogGroupNamePrefix</code> using
+   * the operators <code>IN</code> and <code>NOT IN</code>. You can specify up to 50
+   * values in each <code>IN</code> or <code>NOT IN</code> list.</p> <p>The selection
+   * criteria can be specified in these formats:</p> <p> <code>LogGroupName IN
+   * ["log-group-1", "log-group-2"]</code> </p> <p> <code>LogGroupNamePrefix NOT IN
+   * ["/aws/prefix1", "/aws/prefix2"]</code> </p> <p>If you have multiple
+   * account-level metric extraction policies with selection criteria, no two of them
+   * can have overlapping criteria. For example, if you have one policy with
+   * selection criteria <code>LogGroupNamePrefix IN ["my-log"]</code>, you can't have
+   * another metric extraction policy with selection criteria
+   * <code>LogGroupNamePrefix IN ["/my-log-prod"]</code> or <code>LogGroupNamePrefix
+   * IN ["/my-logging"]</code>, as the set of log groups matching these prefixes
+   * would be a subset of the log groups matching the first policy's prefix, creating
+   * an overlap.</p> <p>When using <code>NOT IN</code>, only one policy with this
+   * operator is allowed per account.</p> <p>When combining policies with
+   * <code>IN</code> and <code>NOT IN</code> operators, the overlap check ensures
+   * that policies don't have conflicting effects. Two policies with <code>IN</code>
+   * and <code>NOT IN</code> operators do not overlap if and only if every value in
+   * the <code>IN </code>policy is completely contained within some value in the
+   * <code>NOT IN</code> policy. For example:</p> <ul> <li> <p>If you have a
+   * <code>NOT IN</code> policy for prefix <code>"/aws/lambda"</code>, you can create
+   * an <code>IN</code> policy for the exact log group name
    * <code>"/aws/lambda/function1"</code> because the set of log groups matching
    * <code>"/aws/lambda/function1"</code> is a subset of the log groups matching
    * <code>"/aws/lambda"</code>.</p> </li> <li> <p>If you have a <code>NOT IN</code>

@@ -36,6 +36,15 @@ namespace smithy {
             assert(m_signer);
         }
 
+        explicit SigV4aAuthScheme(const Aws::String& serviceName, const Aws::String& region,
+                                  const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
+            : SigV4aAuthScheme(
+                  Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4aAuthScheme", config),
+                  serviceName, region) {
+          assert(m_identityResolver);
+          assert(m_signer);
+        }
+
         explicit SigV4aAuthScheme(const Aws::String& serviceName,
                                   const Aws::String& region)
             : SigV4aAuthScheme(Aws::MakeShared<DefaultAwsCredentialIdentityResolver>("SigV4aAuthScheme"), serviceName, region)

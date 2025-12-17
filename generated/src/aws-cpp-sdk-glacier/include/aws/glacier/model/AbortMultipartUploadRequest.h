@@ -20,7 +20,7 @@ namespace Model {
  * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
  * Multipart Upload</a>. For conceptual information, see <a
  * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
- * with Archives in Amazon S3 Glacier</a>.</p><p><h3>See Also:</h3>   <a
+ * with Archives in Amazon Glacier</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AbortMultipartUploadInput">AWS
  * API Reference</a></p>
  */
@@ -40,9 +40,9 @@ class AbortMultipartUploadRequest : public GlacierRequest {
   /**
    * <p>The <code>AccountId</code> value is the AWS account ID of the account that
    * owns the vault. You can either specify an AWS account ID or optionally a single
-   * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-   * ID associated with the credentials used to sign the request. If you use an
-   * account ID, do not include any hyphens ('-') in the ID.</p>
+   * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+   * associated with the credentials used to sign the request. If you use an account
+   * ID, do not include any hyphens ('-') in the ID.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }

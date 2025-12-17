@@ -37,12 +37,12 @@ namespace Aws
                     {
                         return KeyWrapAlgorithm::AES_KEY_WRAP;
                     } 
-                    else if (hashcode == keyWrapAlgorithm_AES_GCM_HASH)
-                    {
-                        return KeyWrapAlgorithm::AES_GCM;
-                    }
-                    assert(0);
-                    return KeyWrapAlgorithm::NONE;
+                else if (hashcode == keyWrapAlgorithm_AES_GCM_HASH)
+                {
+                    return KeyWrapAlgorithm::AES_GCM;
+                }
+                // Return NONE for unrecognized algorithms instead of asserting
+                return KeyWrapAlgorithm::NONE;
                 }
 
                 Aws::String GetNameForKeyWrapAlgorithm(KeyWrapAlgorithm enumValue)

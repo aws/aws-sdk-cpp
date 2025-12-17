@@ -272,6 +272,53 @@ class CreateResolverEndpointRequest : public Route53ResolverRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether RNI enhanced metrics are enabled for the Resolver
+   * endpoints. When set to true, one-minute granular metrics are published in
+   * CloudWatch for each RNI associated with this endpoint. When set to false,
+   * metrics are not published. Default is false.</p>  <p>Standard CloudWatch
+   * pricing and charges are applied for using the Route 53 Resolver endpoint RNI
+   * enhanced metrics. For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+   * metrics</a>.</p>
+   */
+  inline bool GetRniEnhancedMetricsEnabled() const { return m_rniEnhancedMetricsEnabled; }
+  inline bool RniEnhancedMetricsEnabledHasBeenSet() const { return m_rniEnhancedMetricsEnabledHasBeenSet; }
+  inline void SetRniEnhancedMetricsEnabled(bool value) {
+    m_rniEnhancedMetricsEnabledHasBeenSet = true;
+    m_rniEnhancedMetricsEnabled = value;
+  }
+  inline CreateResolverEndpointRequest& WithRniEnhancedMetricsEnabled(bool value) {
+    SetRniEnhancedMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether target name server metrics are enabled for the outbound
+   * Resolver endpoints. When set to true, one-minute granular metrics are published
+   * in CloudWatch for each target name server associated with this endpoint. When
+   * set to false, metrics are not published. Default is false. This is not supported
+   * for inbound Resolver endpoints.</p>  <p>Standard CloudWatch pricing and
+   * charges are applied for using the Route 53 Resolver endpoint target name server
+   * metrics. For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+   * metrics</a>.</p>
+   */
+  inline bool GetTargetNameServerMetricsEnabled() const { return m_targetNameServerMetricsEnabled; }
+  inline bool TargetNameServerMetricsEnabledHasBeenSet() const { return m_targetNameServerMetricsEnabledHasBeenSet; }
+  inline void SetTargetNameServerMetricsEnabled(bool value) {
+    m_targetNameServerMetricsEnabledHasBeenSet = true;
+    m_targetNameServerMetricsEnabled = value;
+  }
+  inline CreateResolverEndpointRequest& WithTargetNameServerMetricsEnabled(bool value) {
+    SetTargetNameServerMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_creatorRequestId;
 
@@ -292,6 +339,10 @@ class CreateResolverEndpointRequest : public Route53ResolverRequest {
   ResolverEndpointType m_resolverEndpointType{ResolverEndpointType::NOT_SET};
 
   Aws::Vector<Protocol> m_protocols;
+
+  bool m_rniEnhancedMetricsEnabled{false};
+
+  bool m_targetNameServerMetricsEnabled{false};
   bool m_creatorRequestIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
@@ -302,6 +353,8 @@ class CreateResolverEndpointRequest : public Route53ResolverRequest {
   bool m_tagsHasBeenSet = false;
   bool m_resolverEndpointTypeHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
+  bool m_rniEnhancedMetricsEnabledHasBeenSet = false;
+  bool m_targetNameServerMetricsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

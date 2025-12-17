@@ -91,5 +91,9 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const {
     payload.WithObject("AdConditioningConfiguration", m_adConditioningConfiguration.Jsonize());
   }
 
+  if (m_adDecisionServerConfigurationHasBeenSet) {
+    payload.WithObject("AdDecisionServerConfiguration", m_adDecisionServerConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

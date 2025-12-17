@@ -14,7 +14,7 @@
 namespace Aws {
 namespace Glacier {
 /**
- * <p> Amazon S3 Glacier (Glacier) is a storage solution for "cold data."</p>
+ * <p> Amazon Glacier (Glacier) is a storage solution for "cold data."</p>
  * <p>Glacier is an extremely low-cost storage service that provides secure,
  * durable, and easy-to-use storage for data backup and archival. With Glacier,
  * customers can store their data cost effectively for months, years, or decades.
@@ -29,17 +29,16 @@ namespace Glacier {
  * S3)</a>.</p> <p>You can store any kind of data in any format. There is no
  * maximum limit on the total amount of data you can store in Glacier.</p> <p>If
  * you are a first-time user of Glacier, we recommend that you begin by reading the
- * following sections in the <i>Amazon S3 Glacier Developer Guide</i>:</p> <ul>
- * <li> <p> <a
+ * following sections in the <i>Amazon Glacier Developer Guide</i>:</p> <ul> <li>
+ * <p> <a
  * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
- * is Amazon S3 Glacier</a> - This section of the Developer Guide describes the
+ * is Amazon Glacier</a> - This section of the Developer Guide describes the
  * underlying data model, the operations it supports, and the AWS SDKs that you can
  * use to interact with the service.</p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
- * Started with Amazon S3 Glacier</a> - The Getting Started section walks you
- * through the process of creating a vault, uploading archives, creating jobs to
- * download archives, retrieving the job output, and deleting archives.</p> </li>
- * </ul>
+ * Started with Amazon Glacier</a> - The Getting Started section walks you through
+ * the process of creating a vault, uploading archives, creating jobs to download
+ * archives, retrieving the job output, and deleting archives.</p> </li> </ul>
  */
 class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient> {
  public:
@@ -111,7 +110,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
    * conceptual information and underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-   * with Archives in Amazon S3 Glacier</a> and <a
+   * with Archives in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
    * Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
    * </p><p><h3>See Also:</h3>   <a
@@ -188,7 +187,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * under a specified key, the existing key value will be overwritten. For more
    * information about tags, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-   * Amazon S3 Glacier Resources</a>. </p><p><h3>See Also:</h3>   <a
+   * Amazon Glacier Resources</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/AddTagsToVault">AWS
    * API Reference</a></p>
    */
@@ -213,7 +212,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
-   * <p>You call this operation to inform Amazon S3 Glacier (Glacier) that all the
+   * <p>You call this operation to inform Amazon Glacier (Glacier) that all the
    * archive parts have been uploaded and that Glacier can now assemble the archive
    * from the uploaded parts. After assembling and saving the archive to the vault,
    * Glacier returns the URI path of the newly created archive resource. Using the
@@ -322,7 +321,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
   /**
    * <p>This operation creates a new vault with the specified name. The name of the
    * vault must be unique within a region for an AWS account. You can create up to
-   * 1,000 vaults per account. If you need to create more vaults, contact Amazon S3
+   * 1,000 vaults per account. If you need to create more vaults, contact Amazon
    * Glacier.</p> <p>You must use the following guidelines when naming a vault.</p>
    * <ul> <li> <p>Names can be between 1 and 255 characters long.</p> </li> <li>
    * <p>Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), and '.'
@@ -367,16 +366,16 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * initiate a retrieval of this archive will fail. Archive retrievals that are in
    * progress for this archive ID may or may not succeed according to the following
    * scenarios:</p> <ul> <li> <p>If the archive retrieval job is actively preparing
-   * the data for download when Amazon S3 Glacier receives the delete archive
-   * request, the archival retrieval operation might fail.</p> </li> <li> <p>If the
-   * archive retrieval job has successfully prepared the archive for download when
-   * Amazon S3 Glacier receives the delete archive request, you will be able to
-   * download the output.</p> </li> </ul> <p>This operation is idempotent. Attempting
-   * to delete an already-deleted archive does not result in an error.</p> <p>An AWS
-   * account has full permission to perform all operations (actions). However, AWS
-   * Identity and Access Management (IAM) users don't have any permissions by
-   * default. You must grant them explicit permission to perform specific actions.
-   * For more information, see <a
+   * the data for download when Amazon Glacier receives the delete archive request,
+   * the archival retrieval operation might fail.</p> </li> <li> <p>If the archive
+   * retrieval job has successfully prepared the archive for download when Amazon
+   * Glacier receives the delete archive request, you will be able to download the
+   * output.</p> </li> </ul> <p>This operation is idempotent. Attempting to delete an
+   * already-deleted archive does not result in an error.</p> <p>An AWS account has
+   * full permission to perform all operations (actions). However, AWS Identity and
+   * Access Management (IAM) users don't have any permissions by default. You must
+   * grant them explicit permission to perform specific actions. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
    * conceptual information and underlying REST API, see <a
@@ -409,12 +408,12 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
-   * <p>This operation deletes a vault. Amazon S3 Glacier will delete a vault only if
+   * <p>This operation deletes a vault. Amazon Glacier will delete a vault only if
    * there are no archives in the vault as of the last inventory and there have been
    * no writes to the vault since the last inventory. If either of these conditions
    * is not satisfied, the vault deletion fails (that is, the vault is not removed)
-   * and Amazon S3 Glacier returns an error. You can use <a>DescribeVault</a> to
-   * return the number of archives in a vault, and you can use <a
+   * and Amazon Glacier returns an error. You can use <a>DescribeVault</a> to return
+   * the number of archives in a vault, and you can use <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
    * a Job (POST jobs)</a> to initiate a new inventory retrieval for a vault. The
    * inventory contains the archive IDs you use to delete archives using <a
@@ -430,7 +429,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
    * a Vault in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
-   * Vault </a> in the <i>Amazon S3 Glacier Developer Guide</i>. </p><p><h3>See
+   * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVault">AWS
    * API Reference</a></p>
@@ -458,11 +457,11 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
   /**
    * <p>This operation deletes the access policy associated with the specified vault.
    * The operation is eventually consistent; that is, it might take some time for
-   * Amazon S3 Glacier to completely remove the access policy, and you might still
-   * see the effect of the policy for a short time after you send the delete
-   * request.</p> <p>This operation is idempotent. You can invoke delete multiple
-   * times, even if there is no policy associated with the vault. For more
-   * information about vault access policies, see <a
+   * Amazon Glacier to completely remove the access policy, and you might still see
+   * the effect of the policy for a short time after you send the delete request.</p>
+   * <p>This operation is idempotent. You can invoke delete multiple times, even if
+   * there is no policy associated with the vault. For more information about vault
+   * access policies, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
    * Glacier Access Control with Vault Access Policies</a>. </p><p><h3>See Also:</h3>
    * <a
@@ -494,19 +493,19 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
   /**
    * <p>This operation deletes the notification configuration set for a vault. The
    * operation is eventually consistent; that is, it might take some time for Amazon
-   * S3 Glacier to completely disable the notifications and you might still receive
-   * some notifications for a short time after you send the delete request.</p> <p>An
-   * AWS account has full permission to perform all operations (actions). However,
-   * AWS Identity and Access Management (IAM) users don't have any permissions by
+   * Glacier to completely disable the notifications and you might still receive some
+   * notifications for a short time after you send the delete request.</p> <p>An AWS
+   * account has full permission to perform all operations (actions). However, AWS
+   * Identity and Access Management (IAM) users don't have any permissions by
    * default. You must grant them explicit permission to perform specific actions.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
    * conceptual information and underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-   * Vault Notifications in Amazon S3 Glacier</a> and <a
+   * Vault Notifications in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
-   * Vault Notification Configuration </a> in the Amazon S3 Glacier Developer Guide.
+   * Vault Notification Configuration </a> in the Amazon Glacier Developer Guide.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DeleteVaultNotifications">AWS
    * API Reference</a></p>
@@ -536,7 +535,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
   /**
    * <p>This operation returns information about a job you previously initiated,
    * including the job initiation date, the user who initiated the job, the job
-   * status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
+   * status code/message and the Amazon SNS topic to notify after Amazon Glacier
    * (Glacier) completes the job. For more information about initiating a job, see
    * <a>InitiateJob</a>. </p>  <p>This operation enables you to check the
    * status of your job. However, it is strongly recommended that you set up an
@@ -585,10 +584,10 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * This means that if you add or remove an archive from a vault, and then
    * immediately use Describe Vault, the change in contents will not be immediately
    * reflected. If you want to retrieve the latest inventory of the vault, use
-   * <a>InitiateJob</a>. Amazon S3 Glacier generates vault inventories approximately
+   * <a>InitiateJob</a>. Amazon Glacier generates vault inventories approximately
    * daily. For more information, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
-   * a Vault Inventory in Amazon S3 Glacier</a>. </p> <p>An AWS account has full
+   * a Vault Inventory in Amazon Glacier</a>. </p> <p>An AWS account has full
    * permission to perform all operations (actions). However, AWS Identity and Access
    * Management (IAM) users don't have any permissions by default. You must grant
    * them explicit permission to perform specific actions. For more information, see
@@ -597,7 +596,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For
    * conceptual information and underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
-   * Vault Metadata in Amazon S3 Glacier</a> and <a
+   * Vault Metadata in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
    * Vault </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
@@ -661,7 +660,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * the job, the output will be either the content of an archive or a vault
    * inventory.</p> <p>You can download all the job output or download a portion of
    * the output by specifying a byte range. In the case of an archive retrieval job,
-   * depending on the byte range you specify, Amazon S3 Glacier (Glacier) returns the
+   * depending on the byte range you specify, Amazon Glacier (Glacier) returns the
    * checksum for the portion of the data. You can compute the checksum on the client
    * and verify that the values match to ensure the portion you downloaded is the
    * correct data.</p> <p>A job ID will not expire for at least 24 hours after
@@ -673,7 +672,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * bytes you specified. For example, if you specify a range of
    * <code>bytes=0-1048575</code>, you should verify your download size is 1,048,576
    * bytes. If you download an entire archive, the expected size is the size of the
-   * archive when you uploaded it to Amazon S3 Glacier The expected size is also
+   * archive when you uploaded it to Amazon Glacier The expected size is also
    * returned in the headers from the <b>Get Job Output</b> response.</p> <p>In the
    * case of an archive retrieval job, depending on the byte range you specify,
    * Glacier returns the checksum for the portion of the data. To ensure the portion
@@ -801,7 +800,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * <code>404 Not Found</code> error. For more information about vault
    * notifications, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-   * Vault Notifications in Amazon S3 Glacier</a>. </p> <p>An AWS account has full
+   * Vault Notifications in Amazon Glacier</a>. </p> <p>An AWS account has full
    * permission to perform all operations (actions). However, AWS Identity and Access
    * Management (IAM) users don't have any permissions by default. You must grant
    * them explicit permission to perform specific actions. For more information, see
@@ -810,7 +809,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For
    * conceptual information and underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-   * Vault Notifications in Amazon S3 Glacier</a> and <a
+   * Vault Notifications in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
    * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
    * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -868,7 +867,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
-   * <p>This operation initiates a multipart upload. Amazon S3 Glacier creates a
+   * <p>This operation initiates a multipart upload. Amazon Glacier creates a
    * multipart upload resource and returns its ID in the response. The multipart
    * upload ID is used in subsequent requests to upload parts of an archive (see
    * <a>UploadMultipartPart</a>).</p> <p>When you initiate a multipart upload, you
@@ -881,10 +880,10 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * upload a 16.2 MB file. If you initiate the multipart upload with a part size of
    * 4 MB, you will upload four parts of 4 MB each and one part of 0.2 MB. </p>
    *  <p>You don't need to know the size of the archive when you start a
-   * multipart upload because Amazon S3 Glacier does not require you to specify the
+   * multipart upload because Amazon Glacier does not require you to specify the
    * overall archive size.</p>  <p>After you complete the multipart upload,
-   * Amazon S3 Glacier (Glacier) removes the multipart upload resource referenced by
-   * the ID. Glacier also removes the multipart upload resource if you cancel the
+   * Amazon Glacier (Glacier) removes the multipart upload resource referenced by the
+   * ID. Glacier also removes the multipart upload resource if you cancel the
    * multipart upload or it may be removed if there is no activity for a period of 24
    * hours.</p> <p>An AWS account has full permission to perform all operations
    * (actions). However, AWS Identity and Access Management (IAM) users don't have
@@ -1054,7 +1053,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For
    * conceptual information and the underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-   * with Archives in Amazon S3 Glacier</a> and <a
+   * with Archives in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
    * Multipart Uploads </a> in the <i>Amazon Glacier Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1104,7 +1103,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For
    * conceptual information and the underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
-   * with Archives in Amazon S3 Glacier</a> and <a
+   * with Archives in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
    * Parts</a> in the <i>Amazon Glacier Developer Guide</i>.</p><p><h3>See Also:</h3>
    * <a
@@ -1163,7 +1162,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * <p>This operation lists all the tags attached to a vault. The operation returns
    * an empty map if there are no tags. For more information about tags, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-   * Amazon S3 Glacier Resources</a>.</p><p><h3>See Also:</h3>   <a
+   * Amazon Glacier Resources</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListTagsForVault">AWS
    * API Reference</a></p>
    */
@@ -1207,7 +1206,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For
    * conceptual information and underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
-   * Vault Metadata in Amazon S3 Glacier</a> and <a
+   * Vault Metadata in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
    * Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
@@ -1268,9 +1267,9 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * <p>This operation removes one or more tags from the set of tags attached to a
    * vault. For more information about tags, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-   * Amazon S3 Glacier Resources</a>. This operation is idempotent. The operation
-   * will be successful, even if there are no tags attached to the vault.
-   * </p><p><h3>See Also:</h3>   <a
+   * Amazon Glacier Resources</a>. This operation is idempotent. The operation will
+   * be successful, even if there are no tags attached to the vault. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RemoveTagsFromVault">AWS
    * API Reference</a></p>
    */
@@ -1369,10 +1368,10 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * configure vault notifications, send a PUT request to the
    * <code>notification-configuration</code> subresource of the vault. The request
    * should include a JSON document that provides an Amazon SNS topic and specific
-   * events for which you want Amazon S3 Glacier to send notifications to the
-   * topic.</p> <p>Amazon SNS topics must grant permission to the vault to be allowed
-   * to publish notifications to the topic. You can configure a vault to publish a
-   * notification for the following vault events:</p> <ul> <li> <p>
+   * events for which you want Amazon Glacier to send notifications to the topic.</p>
+   * <p>Amazon SNS topics must grant permission to the vault to be allowed to publish
+   * notifications to the topic. You can configure a vault to publish a notification
+   * for the following vault events:</p> <ul> <li> <p>
    * <b>ArchiveRetrievalCompleted</b> This event occurs when a job that was initiated
    * for an archive retrieval is completed (<a>InitiateJob</a>). The status of the
    * completed job can be "Succeeded" or "Failed". The notification sent to the SNS
@@ -1389,7 +1388,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p>For
    * conceptual information and underlying REST API, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
-   * Vault Notifications in Amazon S3 Glacier</a> and <a
+   * Vault Notifications in Amazon Glacier</a> and <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
    * Vault Notification Configuration </a> in the <i>Amazon Glacier Developer
    * Guide</i>. </p><p><h3>See Also:</h3>   <a
@@ -1419,9 +1418,9 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
 
   /**
    * <p>This operation adds an archive to a vault. This is a synchronous operation,
-   * and for a successful upload, your data is durably persisted. Amazon S3 Glacier
+   * and for a successful upload, your data is durably persisted. Amazon Glacier
    * returns the archive ID in the <code>x-amz-archive-id</code> header of the
-   * response. </p> <p>You must use the archive ID to access your data in Amazon S3
+   * response. </p> <p>You must use the archive ID to access your data in Amazon
    * Glacier. After you upload an archive, you should save the archive ID returned so
    * that you can retrieve or delete the archive later. Besides saving the archive
    * ID, you can also index it and give it a friendly name to allow for better
@@ -1481,7 +1480,7 @@ class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public 
    * request if any of the following conditions is true:</p> <ul> <li> <p> <b>SHA256
    * tree hash does not match</b>To ensure that part data is not corrupted in
    * transmission, you compute a SHA256 tree hash of the part and include it in your
-   * request. Upon receiving the part data, Amazon S3 Glacier also computes a SHA256
+   * request. Upon receiving the part data, Amazon Glacier also computes a SHA256
    * tree hash. If these hash values don't match, the operation fails. For
    * information about computing a SHA256 tree hash, see <a
    * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/checksum-calculations.html">Computing
