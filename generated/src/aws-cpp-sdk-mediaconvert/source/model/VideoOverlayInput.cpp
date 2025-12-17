@@ -18,6 +18,13 @@ namespace Model {
 VideoOverlayInput::VideoOverlayInput(JsonView jsonValue) { *this = jsonValue; }
 
 VideoOverlayInput& VideoOverlayInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioSelectors")) {
+    Aws::Map<Aws::String, JsonView> audioSelectorsJsonMap = jsonValue.GetObject("audioSelectors").GetAllObjects();
+    for (auto& audioSelectorsItem : audioSelectorsJsonMap) {
+      m_audioSelectors[audioSelectorsItem.first] = audioSelectorsItem.second.AsObject();
+    }
+    m_audioSelectorsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("fileInput")) {
     m_fileInput = jsonValue.GetString("fileInput");
     m_fileInputHasBeenSet = true;
@@ -42,6 +49,14 @@ VideoOverlayInput& VideoOverlayInput::operator=(JsonView jsonValue) {
 
 JsonValue VideoOverlayInput::Jsonize() const {
   JsonValue payload;
+
+  if (m_audioSelectorsHasBeenSet) {
+    JsonValue audioSelectorsJsonMap;
+    for (auto& audioSelectorsItem : m_audioSelectors) {
+      audioSelectorsJsonMap.WithObject(audioSelectorsItem.first, audioSelectorsItem.second.Jsonize());
+    }
+    payload.WithObject("audioSelectors", std::move(audioSelectorsJsonMap));
+  }
 
   if (m_fileInputHasBeenSet) {
     payload.WithString("fileInput", m_fileInput);

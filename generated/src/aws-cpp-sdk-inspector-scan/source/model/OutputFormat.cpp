@@ -17,6 +17,7 @@ namespace OutputFormatMapper {
 
 static const int CYCLONE_DX_1_5_HASH = HashingUtils::HashString("CYCLONE_DX_1_5");
 static const int INSPECTOR_HASH = HashingUtils::HashString("INSPECTOR");
+static const int INSPECTOR_ALT_HASH = HashingUtils::HashString("INSPECTOR_ALT");
 
 OutputFormat GetOutputFormatForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ OutputFormat GetOutputFormatForName(const Aws::String& name) {
     return OutputFormat::CYCLONE_DX_1_5;
   } else if (hashCode == INSPECTOR_HASH) {
     return OutputFormat::INSPECTOR;
+  } else if (hashCode == INSPECTOR_ALT_HASH) {
+    return OutputFormat::INSPECTOR_ALT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForOutputFormat(OutputFormat enumValue) {
       return "CYCLONE_DX_1_5";
     case OutputFormat::INSPECTOR:
       return "INSPECTOR";
+    case OutputFormat::INSPECTOR_ALT:
+      return "INSPECTOR_ALT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

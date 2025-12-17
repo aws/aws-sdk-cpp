@@ -134,9 +134,7 @@ class GeneratePinDataRequest : public PaymentCryptographyDataRequest {
    * <code>ISO_Format_3</code> PIN block format is the same as
    * <code>ISO_Format_0</code> except that the fill digits are random values from 10
    * to 15.</p> <p>The <code>ISO_Format_4</code> PIN block format is the only one
-   * supporting AES encryption. It is similar to <code>ISO_Format_3</code> but
-   * doubles the pin block length by padding with fill digit A and random values from
-   * 10 to 15.</p>
+   * supporting AES encryption.</p>
    */
   inline PinBlockFormatForPinData GetPinBlockFormat() const { return m_pinBlockFormat; }
   inline bool PinBlockFormatHasBeenSet() const { return m_pinBlockFormatHasBeenSet; }
