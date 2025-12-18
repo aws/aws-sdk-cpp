@@ -220,8 +220,9 @@ class CreateRepositoryCreationTemplateRequest : public ECRRequest {
   ///@{
   /**
    * <p>A list of enumerable strings representing the Amazon ECR repository creation
-   * scenarios that this template will apply towards. The two supported scenarios are
-   * <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code> </p>
+   * scenarios that this template will apply towards. The supported scenarios are
+   * <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and
+   * <code>CREATE_ON_PUSH</code> </p>
    */
   inline const Aws::Vector<RCTAppliedFor>& GetAppliedFor() const { return m_appliedFor; }
   inline bool AppliedForHasBeenSet() const { return m_appliedForHasBeenSet; }

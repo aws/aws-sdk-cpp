@@ -165,11 +165,7 @@ class Fleet {
    * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
    * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
    * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-   * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-   * <p>stream.graphics-design.xlarge</p> </li> <li>
-   * <p>stream.graphics-design.2xlarge</p> </li> <li>
-   * <p>stream.graphics-design.4xlarge</p> </li> <li>
-   * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+   * </li> <li> <p>stream.graphics.g4dn.xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>

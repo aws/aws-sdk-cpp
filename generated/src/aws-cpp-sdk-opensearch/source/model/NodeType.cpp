@@ -18,6 +18,7 @@ namespace NodeTypeMapper {
 static const int Data_HASH = HashingUtils::HashString("Data");
 static const int Ultrawarm_HASH = HashingUtils::HashString("Ultrawarm");
 static const int Master_HASH = HashingUtils::HashString("Master");
+static const int Warm_HASH = HashingUtils::HashString("Warm");
 
 NodeType GetNodeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ NodeType GetNodeTypeForName(const Aws::String& name) {
     return NodeType::Ultrawarm;
   } else if (hashCode == Master_HASH) {
     return NodeType::Master;
+  } else if (hashCode == Warm_HASH) {
+    return NodeType::Warm;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForNodeType(NodeType enumValue) {
       return "Ultrawarm";
     case NodeType::Master:
       return "Master";
+    case NodeType::Warm:
+      return "Warm";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

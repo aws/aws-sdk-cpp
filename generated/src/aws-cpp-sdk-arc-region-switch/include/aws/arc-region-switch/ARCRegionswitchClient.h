@@ -453,6 +453,36 @@ class AWS_ARCREGIONSWITCH_API ARCRegionswitchClient : public Aws::Client::AWSJso
   }
 
   /**
+   * <p>List the Amazon Route 53 health checks in a specific Amazon Web Services
+   * Region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListRoute53HealthChecksInRegion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRoute53HealthChecksInRegionOutcome ListRoute53HealthChecksInRegion(
+      const Model::ListRoute53HealthChecksInRegionRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRoute53HealthChecksInRegion that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListRoute53HealthChecksInRegionRequestT = Model::ListRoute53HealthChecksInRegionRequest>
+  Model::ListRoute53HealthChecksInRegionOutcomeCallable ListRoute53HealthChecksInRegionCallable(
+      const ListRoute53HealthChecksInRegionRequestT& request) const {
+    return SubmitCallable(&ARCRegionswitchClient::ListRoute53HealthChecksInRegion, request);
+  }
+
+  /**
+   * An Async wrapper for ListRoute53HealthChecksInRegion that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListRoute53HealthChecksInRegionRequestT = Model::ListRoute53HealthChecksInRegionRequest>
+  void ListRoute53HealthChecksInRegionAsync(const ListRoute53HealthChecksInRegionRequestT& request,
+                                            const ListRoute53HealthChecksInRegionResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ARCRegionswitchClient::ListRoute53HealthChecksInRegion, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags attached to a Region switch resource.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListTagsForResource">AWS

@@ -82,6 +82,11 @@ FleetLaunchTemplateOverrides& FleetLaunchTemplateOverrides::operator=(const XmlN
 
       m_blockDeviceMappingsHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -138,6 +143,10 @@ void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const c
       item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
     }
   }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
 }
 
 void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -179,6 +188,9 @@ void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const c
       blockDeviceMappingsSs << location << ".BlockDeviceMappingSet." << blockDeviceMappingsIdx++;
       item.OutputToStream(oStream, blockDeviceMappingsSs.str().c_str());
     }
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

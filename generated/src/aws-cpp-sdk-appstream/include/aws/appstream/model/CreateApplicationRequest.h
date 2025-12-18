@@ -164,8 +164,8 @@ class CreateApplicationRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2
-   * are supported for Elastic fleets.</p>
+   * <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2
+   * and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
    */
   inline const Aws::Vector<PlatformType>& GetPlatforms() const { return m_platforms; }
   inline bool PlatformsHasBeenSet() const { return m_platformsHasBeenSet; }

@@ -19,13 +19,16 @@
 /* End of generic header includes */
 
 /* Service model headers required in BedrockDataAutomationClient header */
+#include <aws/bedrock-data-automation/model/CopyBlueprintStageResult.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintVersionResult.h>
 #include <aws/bedrock-data-automation/model/CreateDataAutomationProjectResult.h>
 #include <aws/bedrock-data-automation/model/DeleteBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/DeleteDataAutomationProjectResult.h>
+#include <aws/bedrock-data-automation/model/GetBlueprintOptimizationStatusResult.h>
 #include <aws/bedrock-data-automation/model/GetBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/GetDataAutomationProjectResult.h>
+#include <aws/bedrock-data-automation/model/InvokeBlueprintOptimizationAsyncResult.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsRequest.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsResult.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsRequest.h>
@@ -68,13 +71,16 @@ using BedrockDataAutomationEndpointProvider = Aws::BedrockDataAutomation::Endpoi
 
 namespace Model {
 /* Service model forward declarations required in BedrockDataAutomationClient header */
+class CopyBlueprintStageRequest;
 class CreateBlueprintRequest;
 class CreateBlueprintVersionRequest;
 class CreateDataAutomationProjectRequest;
 class DeleteBlueprintRequest;
 class DeleteDataAutomationProjectRequest;
 class GetBlueprintRequest;
+class GetBlueprintOptimizationStatusRequest;
 class GetDataAutomationProjectRequest;
+class InvokeBlueprintOptimizationAsyncRequest;
 class ListBlueprintsRequest;
 class ListDataAutomationProjectsRequest;
 class ListTagsForResourceRequest;
@@ -85,13 +91,16 @@ class UpdateDataAutomationProjectRequest;
 /* End of service model forward declarations required in BedrockDataAutomationClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<CopyBlueprintStageResult, BedrockDataAutomationError> CopyBlueprintStageOutcome;
 typedef Aws::Utils::Outcome<CreateBlueprintResult, BedrockDataAutomationError> CreateBlueprintOutcome;
 typedef Aws::Utils::Outcome<CreateBlueprintVersionResult, BedrockDataAutomationError> CreateBlueprintVersionOutcome;
 typedef Aws::Utils::Outcome<CreateDataAutomationProjectResult, BedrockDataAutomationError> CreateDataAutomationProjectOutcome;
 typedef Aws::Utils::Outcome<DeleteBlueprintResult, BedrockDataAutomationError> DeleteBlueprintOutcome;
 typedef Aws::Utils::Outcome<DeleteDataAutomationProjectResult, BedrockDataAutomationError> DeleteDataAutomationProjectOutcome;
 typedef Aws::Utils::Outcome<GetBlueprintResult, BedrockDataAutomationError> GetBlueprintOutcome;
+typedef Aws::Utils::Outcome<GetBlueprintOptimizationStatusResult, BedrockDataAutomationError> GetBlueprintOptimizationStatusOutcome;
 typedef Aws::Utils::Outcome<GetDataAutomationProjectResult, BedrockDataAutomationError> GetDataAutomationProjectOutcome;
+typedef Aws::Utils::Outcome<InvokeBlueprintOptimizationAsyncResult, BedrockDataAutomationError> InvokeBlueprintOptimizationAsyncOutcome;
 typedef Aws::Utils::Outcome<ListBlueprintsResult, BedrockDataAutomationError> ListBlueprintsOutcome;
 typedef Aws::Utils::Outcome<ListDataAutomationProjectsResult, BedrockDataAutomationError> ListDataAutomationProjectsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockDataAutomationError> ListTagsForResourceOutcome;
@@ -102,13 +111,16 @@ typedef Aws::Utils::Outcome<UpdateDataAutomationProjectResult, BedrockDataAutoma
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<CopyBlueprintStageOutcome> CopyBlueprintStageOutcomeCallable;
 typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
 typedef std::future<CreateBlueprintVersionOutcome> CreateBlueprintVersionOutcomeCallable;
 typedef std::future<CreateDataAutomationProjectOutcome> CreateDataAutomationProjectOutcomeCallable;
 typedef std::future<DeleteBlueprintOutcome> DeleteBlueprintOutcomeCallable;
 typedef std::future<DeleteDataAutomationProjectOutcome> DeleteDataAutomationProjectOutcomeCallable;
 typedef std::future<GetBlueprintOutcome> GetBlueprintOutcomeCallable;
+typedef std::future<GetBlueprintOptimizationStatusOutcome> GetBlueprintOptimizationStatusOutcomeCallable;
 typedef std::future<GetDataAutomationProjectOutcome> GetDataAutomationProjectOutcomeCallable;
+typedef std::future<InvokeBlueprintOptimizationAsyncOutcome> InvokeBlueprintOptimizationAsyncOutcomeCallable;
 typedef std::future<ListBlueprintsOutcome> ListBlueprintsOutcomeCallable;
 typedef std::future<ListDataAutomationProjectsOutcome> ListDataAutomationProjectsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -122,6 +134,9 @@ typedef std::future<UpdateDataAutomationProjectOutcome> UpdateDataAutomationProj
 class BedrockDataAutomationClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const BedrockDataAutomationClient*, const Model::CopyBlueprintStageRequest&,
+                           const Model::CopyBlueprintStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CopyBlueprintStageResponseReceivedHandler;
 typedef std::function<void(const BedrockDataAutomationClient*, const Model::CreateBlueprintRequest&, const Model::CreateBlueprintOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBlueprintResponseReceivedHandler;
@@ -140,9 +155,17 @@ typedef std::function<void(const BedrockDataAutomationClient*, const Model::Dele
 typedef std::function<void(const BedrockDataAutomationClient*, const Model::GetBlueprintRequest&, const Model::GetBlueprintOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetBlueprintResponseReceivedHandler;
+typedef std::function<void(const BedrockDataAutomationClient*, const Model::GetBlueprintOptimizationStatusRequest&,
+                           const Model::GetBlueprintOptimizationStatusOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetBlueprintOptimizationStatusResponseReceivedHandler;
 typedef std::function<void(const BedrockDataAutomationClient*, const Model::GetDataAutomationProjectRequest&,
                            const Model::GetDataAutomationProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataAutomationProjectResponseReceivedHandler;
+typedef std::function<void(const BedrockDataAutomationClient*, const Model::InvokeBlueprintOptimizationAsyncRequest&,
+                           const Model::InvokeBlueprintOptimizationAsyncOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InvokeBlueprintOptimizationAsyncResponseReceivedHandler;
 typedef std::function<void(const BedrockDataAutomationClient*, const Model::ListBlueprintsRequest&, const Model::ListBlueprintsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBlueprintsResponseReceivedHandler;

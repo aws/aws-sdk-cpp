@@ -49,6 +49,13 @@ CollaborationChangeRequest& CollaborationChangeRequest::operator=(JsonView jsonV
     }
     m_changesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("approvals")) {
+    Aws::Map<Aws::String, JsonView> approvalsJsonMap = jsonValue.GetObject("approvals").GetAllObjects();
+    for (auto& approvalsItem : approvalsJsonMap) {
+      m_approvals[approvalsItem.first] = approvalsItem.second.AsObject();
+    }
+    m_approvalsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -85,6 +92,14 @@ JsonValue CollaborationChangeRequest::Jsonize() const {
       changesJsonList[changesIndex].AsObject(m_changes[changesIndex].Jsonize());
     }
     payload.WithArray("changes", std::move(changesJsonList));
+  }
+
+  if (m_approvalsHasBeenSet) {
+    JsonValue approvalsJsonMap;
+    for (auto& approvalsItem : m_approvals) {
+      approvalsJsonMap.WithObject(approvalsItem.first, approvalsItem.second.Jsonize());
+    }
+    payload.WithObject("approvals", std::move(approvalsJsonMap));
   }
 
   return payload;

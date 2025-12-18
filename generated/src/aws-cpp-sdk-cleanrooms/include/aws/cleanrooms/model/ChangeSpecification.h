@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/CollaborationChangeSpecification.h>
 #include <aws/cleanrooms/model/MemberChangeSpecification.h>
 
 #include <utility>
@@ -50,9 +51,32 @@ class ChangeSpecification {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The collaboration configuration changes being requested. Currently, this only
+   * supports modifying which change types are auto-approved for the
+   * collaboration.</p>
+   */
+  inline const CollaborationChangeSpecification& GetCollaboration() const { return m_collaboration; }
+  inline bool CollaborationHasBeenSet() const { return m_collaborationHasBeenSet; }
+  template <typename CollaborationT = CollaborationChangeSpecification>
+  void SetCollaboration(CollaborationT&& value) {
+    m_collaborationHasBeenSet = true;
+    m_collaboration = std::forward<CollaborationT>(value);
+  }
+  template <typename CollaborationT = CollaborationChangeSpecification>
+  ChangeSpecification& WithCollaboration(CollaborationT&& value) {
+    SetCollaboration(std::forward<CollaborationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MemberChangeSpecification m_member;
+
+  CollaborationChangeSpecification m_collaboration;
   bool m_memberHasBeenSet = false;
+  bool m_collaborationHasBeenSet = false;
 };
 
 }  // namespace Model

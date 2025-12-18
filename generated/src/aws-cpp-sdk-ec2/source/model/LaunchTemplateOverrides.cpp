@@ -61,6 +61,11 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator=(const XmlNode& xmlNo
       m_instanceRequirements = instanceRequirementsNode;
       m_instanceRequirementsHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -97,6 +102,10 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
     instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
     m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
   }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
 }
 
 void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -122,6 +131,9 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
     Aws::String instanceRequirementsLocationAndMember(location);
     instanceRequirementsLocationAndMember += ".InstanceRequirements";
     m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

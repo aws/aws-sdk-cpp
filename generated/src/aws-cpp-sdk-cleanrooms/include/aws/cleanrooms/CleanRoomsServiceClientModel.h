@@ -97,6 +97,7 @@
 #include <aws/cleanrooms/model/TagResourceResult.h>
 #include <aws/cleanrooms/model/UntagResourceResult.h>
 #include <aws/cleanrooms/model/UpdateAnalysisTemplateResult.h>
+#include <aws/cleanrooms/model/UpdateCollaborationChangeRequestResult.h>
 #include <aws/cleanrooms/model/UpdateCollaborationResult.h>
 #include <aws/cleanrooms/model/UpdateConfiguredAudienceModelAssociationResult.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableAnalysisRuleResult.h>
@@ -218,6 +219,7 @@ class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAnalysisTemplateRequest;
 class UpdateCollaborationRequest;
+class UpdateCollaborationChangeRequestRequest;
 class UpdateConfiguredAudienceModelAssociationRequest;
 class UpdateConfiguredTableRequest;
 class UpdateConfiguredTableAnalysisRuleRequest;
@@ -316,6 +318,7 @@ typedef Aws::Utils::Outcome<TagResourceResult, CleanRoomsError> TagResourceOutco
 typedef Aws::Utils::Outcome<UntagResourceResult, CleanRoomsError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAnalysisTemplateResult, CleanRoomsError> UpdateAnalysisTemplateOutcome;
 typedef Aws::Utils::Outcome<UpdateCollaborationResult, CleanRoomsError> UpdateCollaborationOutcome;
+typedef Aws::Utils::Outcome<UpdateCollaborationChangeRequestResult, CleanRoomsError> UpdateCollaborationChangeRequestOutcome;
 typedef Aws::Utils::Outcome<UpdateConfiguredAudienceModelAssociationResult, CleanRoomsError>
     UpdateConfiguredAudienceModelAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateConfiguredTableResult, CleanRoomsError> UpdateConfiguredTableOutcome;
@@ -410,6 +413,7 @@ typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAnalysisTemplateOutcome> UpdateAnalysisTemplateOutcomeCallable;
 typedef std::future<UpdateCollaborationOutcome> UpdateCollaborationOutcomeCallable;
+typedef std::future<UpdateCollaborationChangeRequestOutcome> UpdateCollaborationChangeRequestOutcomeCallable;
 typedef std::future<UpdateConfiguredAudienceModelAssociationOutcome> UpdateConfiguredAudienceModelAssociationOutcomeCallable;
 typedef std::future<UpdateConfiguredTableOutcome> UpdateConfiguredTableOutcomeCallable;
 typedef std::future<UpdateConfiguredTableAnalysisRuleOutcome> UpdateConfiguredTableAnalysisRuleOutcomeCallable;
@@ -684,6 +688,10 @@ typedef std::function<void(const CleanRoomsClient*, const Model::UpdateAnalysisT
 typedef std::function<void(const CleanRoomsClient*, const Model::UpdateCollaborationRequest&, const Model::UpdateCollaborationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCollaborationResponseReceivedHandler;
+typedef std::function<void(const CleanRoomsClient*, const Model::UpdateCollaborationChangeRequestRequest&,
+                           const Model::UpdateCollaborationChangeRequestOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCollaborationChangeRequestResponseReceivedHandler;
 typedef std::function<void(const CleanRoomsClient*, const Model::UpdateConfiguredAudienceModelAssociationRequest&,
                            const Model::UpdateConfiguredAudienceModelAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

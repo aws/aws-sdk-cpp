@@ -26,6 +26,10 @@ SuppressionOptions& SuppressionOptions::operator=(JsonView jsonValue) {
     }
     m_suppressedReasonsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ValidationOptions")) {
+    m_validationOptions = jsonValue.GetObject("ValidationOptions");
+    m_validationOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -39,6 +43,10 @@ JsonValue SuppressionOptions::Jsonize() const {
           SuppressionListReasonMapper::GetNameForSuppressionListReason(m_suppressedReasons[suppressedReasonsIndex]));
     }
     payload.WithArray("SuppressedReasons", std::move(suppressedReasonsJsonList));
+  }
+
+  if (m_validationOptionsHasBeenSet) {
+    payload.WithObject("ValidationOptions", m_validationOptions.Jsonize());
   }
 
   return payload;

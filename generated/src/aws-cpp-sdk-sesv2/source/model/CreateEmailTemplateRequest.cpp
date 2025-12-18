@@ -23,5 +23,13 @@ Aws::String CreateEmailTemplateRequest::SerializePayload() const {
     payload.WithObject("TemplateContent", m_templateContent.Jsonize());
   }
 
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

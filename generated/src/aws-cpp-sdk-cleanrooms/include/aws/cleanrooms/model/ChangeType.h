@@ -10,7 +10,13 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Model {
-enum class ChangeType { NOT_SET, ADD_MEMBER };
+enum class ChangeType {
+  NOT_SET,
+  ADD_MEMBER,
+  GRANT_RECEIVE_RESULTS_ABILITY,
+  REVOKE_RECEIVE_RESULTS_ABILITY,
+  EDIT_AUTO_APPROVED_CHANGE_TYPES
+};
 
 namespace ChangeTypeMapper {
 AWS_CLEANROOMS_API ChangeType GetChangeTypeForName(const Aws::String& name);

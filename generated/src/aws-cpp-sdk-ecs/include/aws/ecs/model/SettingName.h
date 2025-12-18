@@ -21,7 +21,8 @@ enum class SettingName {
   tagResourceAuthorization,
   fargateTaskRetirementWaitPeriod,
   guardDutyActivate,
-  defaultLogDriverMode
+  defaultLogDriverMode,
+  fargateEventWindows
 };
 
 namespace SettingNameMapper {

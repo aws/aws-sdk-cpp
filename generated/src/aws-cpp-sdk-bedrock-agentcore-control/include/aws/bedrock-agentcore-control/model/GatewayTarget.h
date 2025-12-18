@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -243,6 +244,25 @@ class GatewayTarget {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The metadata configuration for HTTP header and query parameter propagation to
+   * and from this gateway target.</p>
+   */
+  inline const MetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+  inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
+    m_metadataConfigurationHasBeenSet = true;
+    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
+  }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  GatewayTarget& WithMetadataConfiguration(MetadataConfigurationT&& value) {
+    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayArn;
 
@@ -265,6 +285,8 @@ class GatewayTarget {
   Aws::Vector<CredentialProviderConfiguration> m_credentialProviderConfigurations;
 
   Aws::Utils::DateTime m_lastSynchronizedAt{};
+
+  MetadataConfiguration m_metadataConfiguration;
   bool m_gatewayArnHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -276,6 +298,7 @@ class GatewayTarget {
   bool m_targetConfigurationHasBeenSet = false;
   bool m_credentialProviderConfigurationsHasBeenSet = false;
   bool m_lastSynchronizedAtHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

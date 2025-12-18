@@ -40,6 +40,13 @@ GetCustomVerificationEmailTemplateResult& GetCustomVerificationEmailTemplateResu
     m_templateContent = jsonValue.GetString("TemplateContent");
     m_templateContentHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Tags")) {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SuccessRedirectionURL")) {
     m_successRedirectionURL = jsonValue.GetString("SuccessRedirectionURL");
     m_successRedirectionURLHasBeenSet = true;

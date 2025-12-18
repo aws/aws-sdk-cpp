@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
+#include <aws/sesv2/model/Tag.h>
 
 #include <utility>
 
@@ -111,6 +113,31 @@ class CreateCustomVerificationEmailTemplateRequest : public SESV2Request {
 
   ///@{
   /**
+   * <p>An array of objects that define the tags (keys and values) to associate with
+   * the custom verification email template.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  CreateCustomVerificationEmailTemplateRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  CreateCustomVerificationEmailTemplateRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The URL that the recipient of the verification email is sent to if his or her
    * address is successfully verified.</p>
    */
@@ -155,6 +182,8 @@ class CreateCustomVerificationEmailTemplateRequest : public SESV2Request {
 
   Aws::String m_templateContent;
 
+  Aws::Vector<Tag> m_tags;
+
   Aws::String m_successRedirectionURL;
 
   Aws::String m_failureRedirectionURL;
@@ -162,6 +191,7 @@ class CreateCustomVerificationEmailTemplateRequest : public SESV2Request {
   bool m_fromEmailAddressHasBeenSet = false;
   bool m_templateSubjectHasBeenSet = false;
   bool m_templateContentHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_successRedirectionURLHasBeenSet = false;
   bool m_failureRedirectionURLHasBeenSet = false;
 };

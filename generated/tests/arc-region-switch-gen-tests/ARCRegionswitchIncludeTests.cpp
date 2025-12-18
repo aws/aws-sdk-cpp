@@ -76,6 +76,8 @@
 #include <aws/arc-region-switch/model/ListPlansInRegionResult.h>
 #include <aws/arc-region-switch/model/ListPlansRequest.h>
 #include <aws/arc-region-switch/model/ListPlansResult.h>
+#include <aws/arc-region-switch/model/ListRoute53HealthChecksInRegionRequest.h>
+#include <aws/arc-region-switch/model/ListRoute53HealthChecksInRegionResult.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksRequest.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksResult.h>
 #include <aws/arc-region-switch/model/ListTagsForResourceRequest.h>
@@ -90,6 +92,7 @@
 #include <aws/arc-region-switch/model/ResourceWarningStatus.h>
 #include <aws/arc-region-switch/model/Route53HealthCheck.h>
 #include <aws/arc-region-switch/model/Route53HealthCheckConfiguration.h>
+#include <aws/arc-region-switch/model/Route53HealthCheckStatus.h>
 #include <aws/arc-region-switch/model/Route53ResourceRecordSet.h>
 #include <aws/arc-region-switch/model/RoutingControlStateChange.h>
 #include <aws/arc-region-switch/model/Service.h>
