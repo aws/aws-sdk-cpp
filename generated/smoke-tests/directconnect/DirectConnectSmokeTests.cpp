@@ -42,7 +42,7 @@ TEST_F(DirectConnectSmokeTestSuite, DescribeConnectionsSuccess )
     
     DescribeConnectionsRequest input;
     auto outcome = clientSp->DescribeConnections(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 TEST_F(DirectConnectSmokeTestSuite, DescribeConnectionsFailure )
 {

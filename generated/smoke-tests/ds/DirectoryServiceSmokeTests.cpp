@@ -41,6 +41,6 @@ TEST_F(DirectoryServiceSmokeTestSuite, DescribeDirectoriesSuccess )
     
     DescribeDirectoriesRequest input;
     auto outcome = clientSp->DescribeDirectories(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

@@ -42,6 +42,6 @@ TEST_F(ApplicationAutoScalingSmokeTestSuite, DescribeScalableTargetsSuccess )
     DescribeScalableTargetsRequest input;
     input.SetServiceNamespace(ServiceNamespace::ec2);
     auto outcome = clientSp->DescribeScalableTargets(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

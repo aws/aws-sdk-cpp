@@ -56,6 +56,6 @@ TEST_F(SecretsManagerSmokeTestSuite, ListSecretsSuccess )
     
     ListSecretsRequest input;
     auto outcome = clientSp->ListSecrets(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

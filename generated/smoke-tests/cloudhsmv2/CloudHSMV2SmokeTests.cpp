@@ -41,6 +41,6 @@ TEST_F(CloudHSMV2SmokeTestSuite, DescribeClustersSuccess )
     
     DescribeClustersRequest input;
     auto outcome = clientSp->DescribeClusters(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

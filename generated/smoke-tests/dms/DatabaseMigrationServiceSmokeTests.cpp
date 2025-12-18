@@ -41,6 +41,6 @@ TEST_F(DatabaseMigrationServiceSmokeTestSuite, DescribeEndpointsSuccess )
     
     DescribeEndpointsRequest input;
     auto outcome = clientSp->DescribeEndpoints(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

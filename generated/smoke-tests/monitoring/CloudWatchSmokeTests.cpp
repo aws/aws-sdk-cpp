@@ -43,6 +43,6 @@ TEST_F(CloudWatchSmokeTestSuite, ListMetricsSuccess )
     ListMetricsRequest input;
     input.SetNamespace("AWS/EC2");
     auto outcome = clientSp->ListMetrics(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

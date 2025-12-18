@@ -56,6 +56,6 @@ TEST_F(Route53SmokeTestSuite, ListHostedZonesSuccess )
     
     ListHostedZonesRequest input;
     auto outcome = clientSp->ListHostedZones(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }
