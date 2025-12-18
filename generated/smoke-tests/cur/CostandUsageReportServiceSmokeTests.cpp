@@ -36,6 +36,7 @@ TEST_F(CostandUsageReportServiceSmokeTestSuite, DescribeReportDefinitionsSuccess
     clientConfiguration.region = "us-east-1";
     clientConfiguration.useFIPS = false;
     clientConfiguration.useDualStack = false;
+    clientConfiguration.connectTimeoutMs = 30000;
     auto clientSp = Aws::MakeShared<CostandUsageReportServiceClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

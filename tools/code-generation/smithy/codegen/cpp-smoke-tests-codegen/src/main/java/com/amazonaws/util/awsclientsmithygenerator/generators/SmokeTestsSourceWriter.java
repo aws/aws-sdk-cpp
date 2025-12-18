@@ -50,6 +50,7 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
         write("Aws::$L::$LClientConfiguration clientConfiguration;",
                         clientNamespace,
                         CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, clientNamespace));
+        write("clientConfiguration.connectTimeoutMs = 30000;")
         if(test.getConfig().getParams() instanceof AwsVendorParams)
         {
             AwsVendorParams configParams = (AwsVendorParams) test.getConfig().getParams();
