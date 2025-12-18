@@ -55,6 +55,10 @@ Aws::String CreateConnectorRequest::SerializePayload() const {
     payload.WithObject("logDelivery", m_logDelivery.Jsonize());
   }
 
+  if (m_networkTypeHasBeenSet) {
+    payload.WithString("networkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+  }
+
   if (m_pluginsHasBeenSet) {
     Aws::Utils::Array<JsonValue> pluginsJsonList(m_plugins.size());
     for (unsigned pluginsIndex = 0; pluginsIndex < pluginsJsonList.GetLength(); ++pluginsIndex) {

@@ -22,6 +22,7 @@
 #include <aws/payment-cryptography-data/PaymentCryptographyDataErrorMarshaller.h>
 #include <aws/payment-cryptography-data/model/DecryptDataRequest.h>
 #include <aws/payment-cryptography-data/model/EncryptDataRequest.h>
+#include <aws/payment-cryptography-data/model/GenerateAs2805KekValidationRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateMacRequest.h>
@@ -225,6 +226,37 @@ EncryptDataOutcome PaymentCryptographyDataClient::EncryptData(const EncryptDataR
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKeyIdentifier());
         endpointResolutionOutcome.GetResult().AddPathSegments("/encrypt");
         return EncryptDataOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GenerateAs2805KekValidationOutcome PaymentCryptographyDataClient::GenerateAs2805KekValidation(
+    const GenerateAs2805KekValidationRequest& request) const {
+  AWS_OPERATION_GUARD(GenerateAs2805KekValidation);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateAs2805KekValidation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GenerateAs2805KekValidation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GenerateAs2805KekValidation, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GenerateAs2805KekValidation",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GenerateAs2805KekValidationOutcome>(
+      [&]() -> GenerateAs2805KekValidationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateAs2805KekValidation, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/as2805kekvalidation/generate");
+        return GenerateAs2805KekValidationOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

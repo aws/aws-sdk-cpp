@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/gameliftstreams/model/ExportFilesMetadata.h>
+#include <aws/gameliftstreams/model/PerformanceStatsConfiguration.h>
 #include <aws/gameliftstreams/model/Protocol.h>
 #include <aws/gameliftstreams/model/StreamSessionStatus.h>
 #include <aws/gameliftstreams/model/StreamSessionStatusReason.h>
@@ -374,6 +375,23 @@ class GetStreamSessionResult {
 
   ///@{
   /**
+   * <p>The performance stats configuration for the stream session</p>
+   */
+  inline const PerformanceStatsConfiguration& GetPerformanceStatsConfiguration() const { return m_performanceStatsConfiguration; }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  void SetPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    m_performanceStatsConfigurationHasBeenSet = true;
+    m_performanceStatsConfiguration = std::forward<PerformanceStatsConfigurationT>(value);
+  }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  GetStreamSessionResult& WithPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    SetPerformanceStatsConfiguration(std::forward<PerformanceStatsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Access location for log files that your content generates during a stream
    * session. These log files are uploaded to cloud storage location at the end of a
    * stream session. The Amazon GameLift Streams application resource defines which
@@ -530,6 +548,8 @@ class GetStreamSessionResult {
 
   Aws::Map<Aws::String, Aws::String> m_additionalEnvironmentVariables;
 
+  PerformanceStatsConfiguration m_performanceStatsConfiguration;
+
   Aws::String m_logFileLocationUri;
 
   Aws::String m_webSdkProtocolUrl;
@@ -557,6 +577,7 @@ class GetStreamSessionResult {
   bool m_sessionLengthSecondsHasBeenSet = false;
   bool m_additionalLaunchArgsHasBeenSet = false;
   bool m_additionalEnvironmentVariablesHasBeenSet = false;
+  bool m_performanceStatsConfigurationHasBeenSet = false;
   bool m_logFileLocationUriHasBeenSet = false;
   bool m_webSdkProtocolUrlHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;

@@ -118,6 +118,15 @@ H265Settings& H265Settings::operator=(JsonView jsonValue) {
     m_minIInterval = jsonValue.GetInteger("minIInterval");
     m_minIIntervalHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mvOverPictureBoundaries")) {
+    m_mvOverPictureBoundaries =
+        H265MvOverPictureBoundariesMapper::GetH265MvOverPictureBoundariesForName(jsonValue.GetString("mvOverPictureBoundaries"));
+    m_mvOverPictureBoundariesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mvTemporalPredictor")) {
+    m_mvTemporalPredictor = H265MvTemporalPredictorMapper::GetH265MvTemporalPredictorForName(jsonValue.GetString("mvTemporalPredictor"));
+    m_mvTemporalPredictorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("numberBFramesBetweenReferenceFrames")) {
     m_numberBFramesBetweenReferenceFrames = jsonValue.GetInteger("numberBFramesBetweenReferenceFrames");
     m_numberBFramesBetweenReferenceFramesHasBeenSet = true;
@@ -198,9 +207,25 @@ H265Settings& H265Settings::operator=(JsonView jsonValue) {
     m_temporalIds = H265TemporalIdsMapper::GetH265TemporalIdsForName(jsonValue.GetString("temporalIds"));
     m_temporalIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tileHeight")) {
+    m_tileHeight = jsonValue.GetInteger("tileHeight");
+    m_tileHeightHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tilePadding")) {
+    m_tilePadding = H265TilePaddingMapper::GetH265TilePaddingForName(jsonValue.GetString("tilePadding"));
+    m_tilePaddingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tileWidth")) {
+    m_tileWidth = jsonValue.GetInteger("tileWidth");
+    m_tileWidthHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tiles")) {
     m_tiles = H265TilesMapper::GetH265TilesForName(jsonValue.GetString("tiles"));
     m_tilesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("treeBlockSize")) {
+    m_treeBlockSize = H265TreeBlockSizeMapper::GetH265TreeBlockSizeForName(jsonValue.GetString("treeBlockSize"));
+    m_treeBlockSizeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("unregisteredSeiTimecode")) {
     m_unregisteredSeiTimecode =
@@ -317,6 +342,15 @@ JsonValue H265Settings::Jsonize() const {
     payload.WithInteger("minIInterval", m_minIInterval);
   }
 
+  if (m_mvOverPictureBoundariesHasBeenSet) {
+    payload.WithString("mvOverPictureBoundaries",
+                       H265MvOverPictureBoundariesMapper::GetNameForH265MvOverPictureBoundaries(m_mvOverPictureBoundaries));
+  }
+
+  if (m_mvTemporalPredictorHasBeenSet) {
+    payload.WithString("mvTemporalPredictor", H265MvTemporalPredictorMapper::GetNameForH265MvTemporalPredictor(m_mvTemporalPredictor));
+  }
+
   if (m_numberBFramesBetweenReferenceFramesHasBeenSet) {
     payload.WithInteger("numberBFramesBetweenReferenceFrames", m_numberBFramesBetweenReferenceFrames);
   }
@@ -399,8 +433,24 @@ JsonValue H265Settings::Jsonize() const {
     payload.WithString("temporalIds", H265TemporalIdsMapper::GetNameForH265TemporalIds(m_temporalIds));
   }
 
+  if (m_tileHeightHasBeenSet) {
+    payload.WithInteger("tileHeight", m_tileHeight);
+  }
+
+  if (m_tilePaddingHasBeenSet) {
+    payload.WithString("tilePadding", H265TilePaddingMapper::GetNameForH265TilePadding(m_tilePadding));
+  }
+
+  if (m_tileWidthHasBeenSet) {
+    payload.WithInteger("tileWidth", m_tileWidth);
+  }
+
   if (m_tilesHasBeenSet) {
     payload.WithString("tiles", H265TilesMapper::GetNameForH265Tiles(m_tiles));
+  }
+
+  if (m_treeBlockSizeHasBeenSet) {
+    payload.WithString("treeBlockSize", H265TreeBlockSizeMapper::GetNameForH265TreeBlockSize(m_treeBlockSize));
   }
 
   if (m_unregisteredSeiTimecodeHasBeenSet) {
