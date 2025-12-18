@@ -41,6 +41,6 @@ TEST_F(APIGatewaySmokeTestSuite, GetDomainNamesSuccess )
     
     GetDomainNamesRequest input;
     auto outcome = clientSp->GetDomainNames(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }
