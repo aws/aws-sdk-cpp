@@ -266,6 +266,7 @@
 #include <aws/bedrock-agentcore-control/model/MemorySummary.h>
 #include <aws/bedrock-agentcore-control/model/MessageBasedTrigger.h>
 #include <aws/bedrock-agentcore-control/model/MessageBasedTriggerInput.h>
+#include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/MicrosoftOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/MicrosoftOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/ModifyConsolidationConfiguration.h>

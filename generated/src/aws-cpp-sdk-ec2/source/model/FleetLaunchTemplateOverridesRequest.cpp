@@ -82,6 +82,11 @@ FleetLaunchTemplateOverridesRequest& FleetLaunchTemplateOverridesRequest::operat
       m_imageId = Aws::Utils::Xml::DecodeEscapedXmlText(imageIdNode.GetText());
       m_imageIdHasBeenSet = true;
     }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("AvailabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -138,6 +143,10 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
   if (m_imageIdHasBeenSet) {
     oStream << location << index << locationValue << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
   }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
 }
 
 void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -179,6 +188,9 @@ void FleetLaunchTemplateOverridesRequest::OutputToStream(Aws::OStream& oStream, 
   }
   if (m_imageIdHasBeenSet) {
     oStream << location << ".ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

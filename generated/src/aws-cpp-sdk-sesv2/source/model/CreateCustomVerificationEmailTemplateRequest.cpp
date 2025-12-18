@@ -31,6 +31,14 @@ Aws::String CreateCustomVerificationEmailTemplateRequest::SerializePayload() con
     payload.WithString("TemplateContent", m_templateContent);
   }
 
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("Tags", std::move(tagsJsonList));
+  }
+
   if (m_successRedirectionURLHasBeenSet) {
     payload.WithString("SuccessRedirectionURL", m_successRedirectionURL);
   }

@@ -77,6 +77,32 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
   virtual ~BedrockDataAutomationClient();
 
   /**
+   * <p>Copies a Blueprint from one stage to another</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CopyBlueprintStage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CopyBlueprintStageOutcome CopyBlueprintStage(const Model::CopyBlueprintStageRequest& request) const;
+
+  /**
+   * A Callable wrapper for CopyBlueprintStage that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CopyBlueprintStageRequestT = Model::CopyBlueprintStageRequest>
+  Model::CopyBlueprintStageOutcomeCallable CopyBlueprintStageCallable(const CopyBlueprintStageRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::CopyBlueprintStage, request);
+  }
+
+  /**
+   * An Async wrapper for CopyBlueprintStage that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CopyBlueprintStageRequestT = Model::CopyBlueprintStageRequest>
+  void CopyBlueprintStageAsync(const CopyBlueprintStageRequestT& request, const CopyBlueprintStageResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::CopyBlueprintStage, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon Bedrock Data Automation Blueprint</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/CreateBlueprint">AWS
@@ -243,6 +269,35 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
   }
 
   /**
+   * <p>API used to get blueprint optimization status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetBlueprintOptimizationStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBlueprintOptimizationStatusOutcome GetBlueprintOptimizationStatus(
+      const Model::GetBlueprintOptimizationStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBlueprintOptimizationStatus that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetBlueprintOptimizationStatusRequestT = Model::GetBlueprintOptimizationStatusRequest>
+  Model::GetBlueprintOptimizationStatusOutcomeCallable GetBlueprintOptimizationStatusCallable(
+      const GetBlueprintOptimizationStatusRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::GetBlueprintOptimizationStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetBlueprintOptimizationStatus that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetBlueprintOptimizationStatusRequestT = Model::GetBlueprintOptimizationStatusRequest>
+  void GetBlueprintOptimizationStatusAsync(const GetBlueprintOptimizationStatusRequestT& request,
+                                           const GetBlueprintOptimizationStatusResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::GetBlueprintOptimizationStatus, request, handler, context);
+  }
+
+  /**
    * <p>Gets an existing Amazon Bedrock Data Automation Project</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/GetDataAutomationProject">AWS
@@ -268,6 +323,36 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
                                      const GetDataAutomationProjectResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockDataAutomationClient::GetDataAutomationProject, request, handler, context);
+  }
+
+  /**
+   * <p>Invoke an async job to perform Blueprint Optimization</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-data-automation-2023-07-26/InvokeBlueprintOptimizationAsync">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeBlueprintOptimizationAsyncOutcome InvokeBlueprintOptimizationAsync(
+      const Model::InvokeBlueprintOptimizationAsyncRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeBlueprintOptimizationAsync that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename InvokeBlueprintOptimizationAsyncRequestT = Model::InvokeBlueprintOptimizationAsyncRequest>
+  Model::InvokeBlueprintOptimizationAsyncOutcomeCallable InvokeBlueprintOptimizationAsyncCallable(
+      const InvokeBlueprintOptimizationAsyncRequestT& request) const {
+    return SubmitCallable(&BedrockDataAutomationClient::InvokeBlueprintOptimizationAsync, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeBlueprintOptimizationAsync that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename InvokeBlueprintOptimizationAsyncRequestT = Model::InvokeBlueprintOptimizationAsyncRequest>
+  void InvokeBlueprintOptimizationAsyncAsync(const InvokeBlueprintOptimizationAsyncRequestT& request,
+                                             const InvokeBlueprintOptimizationAsyncResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockDataAutomationClient::InvokeBlueprintOptimizationAsync, request, handler, context);
   }
 
   /**

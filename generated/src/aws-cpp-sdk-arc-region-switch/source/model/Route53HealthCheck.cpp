@@ -30,6 +30,10 @@ Route53HealthCheck& Route53HealthCheck::operator=(JsonView jsonValue) {
     m_healthCheckId = jsonValue.GetString("healthCheckId");
     m_healthCheckIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("status")) {
+    m_status = Route53HealthCheckStatusMapper::GetRoute53HealthCheckStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("region")) {
     m_region = jsonValue.GetString("region");
     m_regionHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue Route53HealthCheck::Jsonize() const {
 
   if (m_healthCheckIdHasBeenSet) {
     payload.WithString("healthCheckId", m_healthCheckId);
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", Route53HealthCheckStatusMapper::GetNameForRoute53HealthCheckStatus(m_status));
   }
 
   if (m_regionHasBeenSet) {

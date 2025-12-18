@@ -16,11 +16,14 @@ namespace Model {
 namespace ChangeSpecificationTypeMapper {
 
 static const int MEMBER_HASH = HashingUtils::HashString("MEMBER");
+static const int COLLABORATION_HASH = HashingUtils::HashString("COLLABORATION");
 
 ChangeSpecificationType GetChangeSpecificationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == MEMBER_HASH) {
     return ChangeSpecificationType::MEMBER;
+  } else if (hashCode == COLLABORATION_HASH) {
+    return ChangeSpecificationType::COLLABORATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForChangeSpecificationType(ChangeSpecificationType enumValue)
       return {};
     case ChangeSpecificationType::MEMBER:
       return "MEMBER";
+    case ChangeSpecificationType::COLLABORATION:
+      return "COLLABORATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

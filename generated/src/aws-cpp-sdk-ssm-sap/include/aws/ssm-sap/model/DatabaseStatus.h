@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SsmSap {
 namespace Model {
-enum class DatabaseStatus { NOT_SET, RUNNING, STARTING, STOPPED, WARNING, UNKNOWN, ERROR_ };
+enum class DatabaseStatus { NOT_SET, RUNNING, STARTING, STOPPED, WARNING, UNKNOWN, ERROR_, STOPPING };
 
 namespace DatabaseStatusMapper {
 AWS_SSMSAP_API DatabaseStatus GetDatabaseStatusForName(const Aws::String& name);

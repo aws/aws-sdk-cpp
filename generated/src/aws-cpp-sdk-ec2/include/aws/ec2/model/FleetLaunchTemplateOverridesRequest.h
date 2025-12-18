@@ -105,7 +105,10 @@ class FleetLaunchTemplateOverridesRequest {
 
   ///@{
   /**
-   * <p>The Availability Zone in which to launch the instances.</p>
+   * <p>The Availability Zone in which to launch the instances. For example,
+   * <code>us-east-2a</code>.</p> <p>Either <code>AvailabilityZone</code> or
+   * <code>AvailabilityZoneId</code> must be specified in the request, but not
+   * both.</p>
    */
   inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
   inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -278,6 +281,27 @@ class FleetLaunchTemplateOverridesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Availability Zone in which to launch the instances. For
+   * example, <code>use2-az1</code>.</p> <p>Either <code>AvailabilityZone</code> or
+   * <code>AvailabilityZoneId</code> must be specified in the request, but not
+   * both.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  FleetLaunchTemplateOverridesRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
 
@@ -298,6 +322,8 @@ class FleetLaunchTemplateOverridesRequest {
   InstanceRequirementsRequest m_instanceRequirements;
 
   Aws::String m_imageId;
+
+  Aws::String m_availabilityZoneId;
   bool m_instanceTypeHasBeenSet = false;
   bool m_maxPriceHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
@@ -308,6 +334,7 @@ class FleetLaunchTemplateOverridesRequest {
   bool m_blockDeviceMappingsHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
   bool m_imageIdHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
 };
 
 }  // namespace Model

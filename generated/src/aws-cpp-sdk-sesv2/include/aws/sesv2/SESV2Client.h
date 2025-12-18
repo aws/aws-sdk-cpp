@@ -1423,6 +1423,35 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient, public Aws:
   }
 
   /**
+   * <p>Provides validation insights about a specific email address, including syntax
+   * validation, DNS record checks, mailbox existence, and other deliverability
+   * factors.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailAddressInsights">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetEmailAddressInsightsOutcome GetEmailAddressInsights(const Model::GetEmailAddressInsightsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetEmailAddressInsights that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetEmailAddressInsightsRequestT = Model::GetEmailAddressInsightsRequest>
+  Model::GetEmailAddressInsightsOutcomeCallable GetEmailAddressInsightsCallable(const GetEmailAddressInsightsRequestT& request) const {
+    return SubmitCallable(&SESV2Client::GetEmailAddressInsights, request);
+  }
+
+  /**
+   * An Async wrapper for GetEmailAddressInsights that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetEmailAddressInsightsRequestT = Model::GetEmailAddressInsightsRequest>
+  void GetEmailAddressInsightsAsync(const GetEmailAddressInsightsRequestT& request,
+                                    const GetEmailAddressInsightsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SESV2Client::GetEmailAddressInsights, request, handler, context);
+  }
+
+  /**
    * <p>Provides information about a specific identity, including the identity's
    * verification status, sending authorization policies, its DKIM authentication
    * status, and its custom Mail-From settings.</p><p><h3>See Also:</h3>   <a
