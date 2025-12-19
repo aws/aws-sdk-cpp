@@ -1281,16 +1281,6 @@ namespace Aws
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
 
-                    // checksum for this part if validation is enabled
-                    if (m_transferConfig.validateChecksums)
-                    {
-                        auto hash = handle->GetPartChecksum(partState->GetPartId());
-                        if (hash && partState->GetDownloadBuffer())
-                        {
-                            hash->Update(partState->GetDownloadBuffer(), static_cast<size_t>(partState->GetSizeInBytes()));
-                        }
-                    }
-
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
                         handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());

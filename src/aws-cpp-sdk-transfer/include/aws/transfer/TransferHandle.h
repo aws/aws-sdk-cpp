@@ -442,7 +442,6 @@ namespace Aws
             mutable std::mutex m_getterSetterLock;
             Aws::String m_checksum;
             // Map of part number to Hash instance for multipart download checksum validation
-            // TODO: Add CRT checksum combining utility when available
             Aws::Map<int, std::shared_ptr<Aws::Utils::Crypto::Hash>> m_partChecksums;
         };
 
