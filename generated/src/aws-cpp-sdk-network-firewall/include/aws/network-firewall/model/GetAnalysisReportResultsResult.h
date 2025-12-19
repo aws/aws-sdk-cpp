@@ -178,27 +178,27 @@ class GetAnalysisReportResultsResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportTime{};
-  bool m_reportTimeHasBeenSet = false;
 
   EnabledAnalysisType m_analysisType{EnabledAnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AnalysisTypeReportResult> m_analysisReportResults;
-  bool m_analysisReportResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_reportTimeHasBeenSet = false;
+  bool m_analysisTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_analysisReportResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListCollaborationTrainedModelExportJobsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CollaborationTrainedModelExportJobSummary> m_collaborationTrainedModelExportJobs;
-  bool m_collaborationTrainedModelExportJobsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_collaborationTrainedModelExportJobsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class CommitDiffSourceCodeType {
   ///@}
  private:
   Aws::String m_sourceCommit;
-  bool m_sourceCommitHasBeenSet = false;
 
   Aws::String m_destinationCommit;
-  bool m_destinationCommitHasBeenSet = false;
 
   Aws::String m_mergeBaseCommit;
+  bool m_sourceCommitHasBeenSet = false;
+  bool m_destinationCommitHasBeenSet = false;
   bool m_mergeBaseCommitHasBeenSet = false;
 };
 

@@ -3,34 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/SetAlarmStateRequest.h>
 
+#include <utility>
+
 using namespace Aws::CloudWatch::Model;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String SetAlarmStateRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=SetAlarmState&";
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_alarmNameHasBeenSet) {
-    ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+    mapSize++;
+  }
+  if (m_stateValueHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stateReasonHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stateReasonDataHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_alarmNameHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alarmName.c_str()));
   }
 
   if (m_stateValueHasBeenSet) {
-    ss << "StateValue=" << StringUtils::URLEncode(StateValueMapper::GetNameForStateValue(m_stateValue)) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateValue"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StateValueMapper::GetNameForStateValue(m_stateValue).c_str()));
   }
 
   if (m_stateReasonHasBeenSet) {
-    ss << "StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateReason"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_stateReason.c_str()));
   }
 
   if (m_stateReasonDataHasBeenSet) {
-    ss << "StateReasonData=" << StringUtils::URLEncode(m_stateReasonData.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateReasonData"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_stateReasonData.c_str()));
   }
-
-  ss << "Version=2010-08-01";
-  return ss.str();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
-void SetAlarmStateRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+Aws::Http::HeaderValueCollection SetAlarmStateRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  return headers;
+}

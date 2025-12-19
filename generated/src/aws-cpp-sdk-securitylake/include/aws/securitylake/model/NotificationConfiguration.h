@@ -71,9 +71,9 @@ class NotificationConfiguration {
   ///@}
  private:
   HttpsNotificationConfiguration m_httpsNotificationConfiguration;
-  bool m_httpsNotificationConfigurationHasBeenSet = false;
 
   SqsNotificationConfiguration m_sqsNotificationConfiguration;
+  bool m_httpsNotificationConfigurationHasBeenSet = false;
   bool m_sqsNotificationConfigurationHasBeenSet = false;
 };
 

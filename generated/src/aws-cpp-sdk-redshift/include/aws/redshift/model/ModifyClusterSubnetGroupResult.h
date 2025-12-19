@@ -58,9 +58,9 @@ class ModifyClusterSubnetGroupResult {
   ///@}
  private:
   ClusterSubnetGroup m_clusterSubnetGroup;
-  bool m_clusterSubnetGroupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clusterSubnetGroupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

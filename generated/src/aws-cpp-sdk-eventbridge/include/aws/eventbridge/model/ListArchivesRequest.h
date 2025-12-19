@@ -124,18 +124,18 @@ class ListArchivesRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_namePrefix;
-  bool m_namePrefixHasBeenSet = false;
 
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   ArchiveState m_state{ArchiveState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_namePrefixHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

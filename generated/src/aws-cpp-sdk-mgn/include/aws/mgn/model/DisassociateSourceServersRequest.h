@@ -31,24 +31,6 @@ class DisassociateSourceServersRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Account ID.</p>
-   */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
-  }
-  template <typename AccountIDT = Aws::String>
-  DisassociateSourceServersRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Application ID.</p>
    */
   inline const Aws::String& GetApplicationID() const { return m_applicationID; }
@@ -88,15 +70,33 @@ class DisassociateSourceServersRequest : public MgnRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Account ID.</p>
+   */
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
+  }
+  template <typename AccountIDT = Aws::String>
+  DisassociateSourceServersRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_applicationID;
-  bool m_applicationIDHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceServerIDs;
+
+  Aws::String m_accountID;
+  bool m_applicationIDHasBeenSet = false;
   bool m_sourceServerIDsHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

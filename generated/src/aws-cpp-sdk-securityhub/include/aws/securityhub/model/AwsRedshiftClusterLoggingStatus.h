@@ -144,21 +144,21 @@ class AwsRedshiftClusterLoggingStatus {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_lastFailureMessage;
-  bool m_lastFailureMessageHasBeenSet = false;
 
   Aws::String m_lastFailureTime;
-  bool m_lastFailureTimeHasBeenSet = false;
 
   Aws::String m_lastSuccessfulDeliveryTime;
-  bool m_lastSuccessfulDeliveryTimeHasBeenSet = false;
 
   bool m_loggingEnabled{false};
-  bool m_loggingEnabledHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_lastFailureMessageHasBeenSet = false;
+  bool m_lastFailureTimeHasBeenSet = false;
+  bool m_lastSuccessfulDeliveryTimeHasBeenSet = false;
+  bool m_loggingEnabledHasBeenSet = false;
   bool m_s3KeyPrefixHasBeenSet = false;
 };
 

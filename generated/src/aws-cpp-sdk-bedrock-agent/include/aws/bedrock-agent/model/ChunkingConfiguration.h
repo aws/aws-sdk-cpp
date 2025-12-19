@@ -130,15 +130,15 @@ class ChunkingConfiguration {
   ///@}
  private:
   ChunkingStrategy m_chunkingStrategy{ChunkingStrategy::NOT_SET};
-  bool m_chunkingStrategyHasBeenSet = false;
 
   FixedSizeChunkingConfiguration m_fixedSizeChunkingConfiguration;
-  bool m_fixedSizeChunkingConfigurationHasBeenSet = false;
 
   HierarchicalChunkingConfiguration m_hierarchicalChunkingConfiguration;
-  bool m_hierarchicalChunkingConfigurationHasBeenSet = false;
 
   SemanticChunkingConfiguration m_semanticChunkingConfiguration;
+  bool m_chunkingStrategyHasBeenSet = false;
+  bool m_fixedSizeChunkingConfigurationHasBeenSet = false;
+  bool m_hierarchicalChunkingConfigurationHasBeenSet = false;
   bool m_semanticChunkingConfigurationHasBeenSet = false;
 };
 

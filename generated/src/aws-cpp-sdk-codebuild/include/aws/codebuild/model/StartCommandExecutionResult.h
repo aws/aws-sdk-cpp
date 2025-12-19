@@ -60,9 +60,9 @@ class StartCommandExecutionResult {
   ///@}
  private:
   CommandExecution m_commandExecution;
-  bool m_commandExecutionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandExecutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

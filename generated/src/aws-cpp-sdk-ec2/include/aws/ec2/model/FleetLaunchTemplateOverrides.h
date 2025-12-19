@@ -102,7 +102,10 @@ class FleetLaunchTemplateOverrides {
 
   ///@{
   /**
-   * <p>The Availability Zone in which to launch the instances.</p>
+   * <p>The Availability Zone in which to launch the instances. For example,
+   * <code>us-east-2a</code>.</p> <p>Either <code>AvailabilityZone</code> or
+   * <code>AvailabilityZoneId</code> must be specified in the request, but not
+   * both.</p>
    */
   inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
   inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -274,36 +277,60 @@ class FleetLaunchTemplateOverrides {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Availability Zone in which to launch the instances. For
+   * example, <code>use2-az1</code>.</p> <p>Either <code>AvailabilityZone</code> or
+   * <code>AvailabilityZoneId</code> must be specified in the request, but not
+   * both.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  FleetLaunchTemplateOverrides& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_maxPrice;
-  bool m_maxPriceHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   double m_weightedCapacity{0.0};
-  bool m_weightedCapacityHasBeenSet = false;
 
   double m_priority{0.0};
-  bool m_priorityHasBeenSet = false;
 
   PlacementResponse m_placement;
-  bool m_placementHasBeenSet = false;
 
   InstanceRequirements m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::Vector<BlockDeviceMappingResponse> m_blockDeviceMappings;
+
+  Aws::String m_availabilityZoneId;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_maxPriceHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_weightedCapacityHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
   bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
 };
 
 }  // namespace Model

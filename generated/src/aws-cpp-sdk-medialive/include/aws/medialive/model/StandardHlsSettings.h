@@ -68,9 +68,9 @@ class StandardHlsSettings {
   ///@}
  private:
   Aws::String m_audioRenditionSets;
-  bool m_audioRenditionSetsHasBeenSet = false;
 
   M3u8Settings m_m3u8Settings;
+  bool m_audioRenditionSetsHasBeenSet = false;
   bool m_m3u8SettingsHasBeenSet = false;
 };
 

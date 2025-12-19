@@ -212,27 +212,27 @@ class CreateNotificationRuleRequest : public CodeStarNotificationsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_eventTypeIds;
-  bool m_eventTypeIdsHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   DetailType m_detailType{DetailType::NOT_SET};
-  bool m_detailTypeHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   NotificationRuleStatus m_status{NotificationRuleStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_eventTypeIdsHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_detailTypeHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

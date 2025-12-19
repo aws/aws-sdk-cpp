@@ -69,9 +69,9 @@ class UpdateVTLDeviceTypeRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_vTLDeviceARN;
-  bool m_vTLDeviceARNHasBeenSet = false;
 
   Aws::String m_deviceType;
+  bool m_vTLDeviceARNHasBeenSet = false;
   bool m_deviceTypeHasBeenSet = false;
 };
 

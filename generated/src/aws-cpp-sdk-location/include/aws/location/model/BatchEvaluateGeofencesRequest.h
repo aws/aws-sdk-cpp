@@ -75,9 +75,9 @@ class BatchEvaluateGeofencesRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   Aws::Vector<DevicePositionUpdate> m_devicePositionUpdates;
+  bool m_collectionNameHasBeenSet = false;
   bool m_devicePositionUpdatesHasBeenSet = false;
 };
 

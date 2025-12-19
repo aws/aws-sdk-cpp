@@ -80,9 +80,9 @@ class GroupingConfiguration {
   ///@}
  private:
   Aws::Vector<GroupingAttributeDefinition> m_groupingAttributeDefinitions;
-  bool m_groupingAttributeDefinitionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_groupingAttributeDefinitionsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

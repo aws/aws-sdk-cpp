@@ -111,12 +111,12 @@ class Headers {
   ///@}
  private:
   HeaderMatchPattern m_matchPattern;
-  bool m_matchPatternHasBeenSet = false;
 
   MapMatchScope m_matchScope{MapMatchScope::NOT_SET};
-  bool m_matchScopeHasBeenSet = false;
 
   OversizeHandling m_oversizeHandling{OversizeHandling::NOT_SET};
+  bool m_matchPatternHasBeenSet = false;
+  bool m_matchScopeHasBeenSet = false;
   bool m_oversizeHandlingHasBeenSet = false;
 };
 

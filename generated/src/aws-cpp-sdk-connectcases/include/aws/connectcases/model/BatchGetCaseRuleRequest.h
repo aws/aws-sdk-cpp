@@ -73,9 +73,9 @@ class BatchGetCaseRuleRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Vector<CaseRuleIdentifier> m_caseRules;
+  bool m_domainIdHasBeenSet = false;
   bool m_caseRulesHasBeenSet = false;
 };
 

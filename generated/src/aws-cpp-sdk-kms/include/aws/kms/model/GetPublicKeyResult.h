@@ -197,27 +197,27 @@ class GetPublicKeyResult {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_publicKey{};
-  bool m_publicKeyHasBeenSet = false;
 
   KeySpec m_keySpec{KeySpec::NOT_SET};
-  bool m_keySpecHasBeenSet = false;
 
   KeyUsageType m_keyUsage{KeyUsageType::NOT_SET};
-  bool m_keyUsageHasBeenSet = false;
 
   Aws::Vector<EncryptionAlgorithmSpec> m_encryptionAlgorithms;
-  bool m_encryptionAlgorithmsHasBeenSet = false;
 
   Aws::Vector<SigningAlgorithmSpec> m_signingAlgorithms;
-  bool m_signingAlgorithmsHasBeenSet = false;
 
   Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
-  bool m_keyAgreementAlgorithmsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyIdHasBeenSet = false;
+  bool m_publicKeyHasBeenSet = false;
+  bool m_keySpecHasBeenSet = false;
+  bool m_keyUsageHasBeenSet = false;
+  bool m_encryptionAlgorithmsHasBeenSet = false;
+  bool m_signingAlgorithmsHasBeenSet = false;
+  bool m_keyAgreementAlgorithmsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -160,24 +160,24 @@ class Speaker {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_customerSpeakerId;
-  bool m_customerSpeakerIdHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_generatedSpeakerId;
-  bool m_generatedSpeakerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessedAt{};
-  bool m_lastAccessedAtHasBeenSet = false;
 
   SpeakerStatus m_status{SpeakerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_createdAtHasBeenSet = false;
+  bool m_customerSpeakerIdHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_generatedSpeakerIdHasBeenSet = false;
+  bool m_lastAccessedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class CampaignEventFilter {
   ///@}
  private:
   EventDimensions m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   FilterType m_filterType{FilterType::NOT_SET};
+  bool m_dimensionsHasBeenSet = false;
   bool m_filterTypeHasBeenSet = false;
 };
 

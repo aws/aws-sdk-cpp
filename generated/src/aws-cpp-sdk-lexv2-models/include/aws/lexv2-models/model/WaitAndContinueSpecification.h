@@ -109,15 +109,15 @@ class WaitAndContinueSpecification {
   ///@}
  private:
   ResponseSpecification m_waitingResponse;
-  bool m_waitingResponseHasBeenSet = false;
 
   ResponseSpecification m_continueResponse;
-  bool m_continueResponseHasBeenSet = false;
 
   StillWaitingResponseSpecification m_stillWaitingResponse;
-  bool m_stillWaitingResponseHasBeenSet = false;
 
   bool m_active{false};
+  bool m_waitingResponseHasBeenSet = false;
+  bool m_continueResponseHasBeenSet = false;
+  bool m_stillWaitingResponseHasBeenSet = false;
   bool m_activeHasBeenSet = false;
 };
 

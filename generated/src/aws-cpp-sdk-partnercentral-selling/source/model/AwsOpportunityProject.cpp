@@ -26,6 +26,10 @@ AwsOpportunityProject& AwsOpportunityProject::operator=(JsonView jsonValue) {
     }
     m_expectedCustomerSpendHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsPartition")) {
+    m_awsPartition = AwsPartitionMapper::GetAwsPartitionForName(jsonValue.GetString("AwsPartition"));
+    m_awsPartitionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -39,6 +43,10 @@ JsonValue AwsOpportunityProject::Jsonize() const {
       expectedCustomerSpendJsonList[expectedCustomerSpendIndex].AsObject(m_expectedCustomerSpend[expectedCustomerSpendIndex].Jsonize());
     }
     payload.WithArray("ExpectedCustomerSpend", std::move(expectedCustomerSpendJsonList));
+  }
+
+  if (m_awsPartitionHasBeenSet) {
+    payload.WithString("AwsPartition", AwsPartitionMapper::GetNameForAwsPartition(m_awsPartition));
   }
 
   return payload;

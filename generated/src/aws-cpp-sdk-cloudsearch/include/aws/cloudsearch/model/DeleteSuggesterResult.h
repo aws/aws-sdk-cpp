@@ -66,9 +66,9 @@ class DeleteSuggesterResult {
   ///@}
  private:
   SuggesterStatus m_suggester;
-  bool m_suggesterHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_suggesterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

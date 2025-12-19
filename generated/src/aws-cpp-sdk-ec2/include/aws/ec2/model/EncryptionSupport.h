@@ -70,9 +70,9 @@ class EncryptionSupport {
   ///@}
  private:
   EncryptionStateValue m_encryptionState{EncryptionStateValue::NOT_SET};
-  bool m_encryptionStateHasBeenSet = false;
 
   Aws::String m_stateMessage;
+  bool m_encryptionStateHasBeenSet = false;
   bool m_stateMessageHasBeenSet = false;
 };
 

@@ -269,39 +269,39 @@ class AvailabilityZone {
   ///@}
  private:
   AvailabilityZoneOptInStatus m_optInStatus{AvailabilityZoneOptInStatus::NOT_SET};
-  bool m_optInStatusHasBeenSet = false;
 
   Aws::Vector<AvailabilityZoneMessage> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_zoneName;
-  bool m_zoneNameHasBeenSet = false;
 
   Aws::String m_zoneId;
-  bool m_zoneIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
-  bool m_networkBorderGroupHasBeenSet = false;
 
   Aws::String m_zoneType;
-  bool m_zoneTypeHasBeenSet = false;
 
   Aws::String m_parentZoneName;
-  bool m_parentZoneNameHasBeenSet = false;
 
   Aws::String m_parentZoneId;
-  bool m_parentZoneIdHasBeenSet = false;
 
   Aws::String m_groupLongName;
-  bool m_groupLongNameHasBeenSet = false;
 
   AvailabilityZoneState m_state{AvailabilityZoneState::NOT_SET};
+  bool m_optInStatusHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
+  bool m_zoneNameHasBeenSet = false;
+  bool m_zoneIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_networkBorderGroupHasBeenSet = false;
+  bool m_zoneTypeHasBeenSet = false;
+  bool m_parentZoneNameHasBeenSet = false;
+  bool m_parentZoneIdHasBeenSet = false;
+  bool m_groupLongNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

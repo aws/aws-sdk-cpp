@@ -98,15 +98,15 @@ class SearchJobsResult {
   ///@}
  private:
   Aws::Vector<JobSearchSummary> m_jobs;
-  bool m_jobsHasBeenSet = false;
 
   int m_nextItemOffset{0};
-  bool m_nextItemOffsetHasBeenSet = false;
 
   int m_totalResults{0};
-  bool m_totalResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobsHasBeenSet = false;
+  bool m_nextItemOffsetHasBeenSet = false;
+  bool m_totalResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -182,27 +182,27 @@ class StartJobRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_branchName;
-  bool m_branchNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_jobReason;
-  bool m_jobReasonHasBeenSet = false;
 
   Aws::String m_commitId;
-  bool m_commitIdHasBeenSet = false;
 
   Aws::String m_commitMessage;
-  bool m_commitMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_commitTime{};
+  bool m_appIdHasBeenSet = false;
+  bool m_branchNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_jobReasonHasBeenSet = false;
+  bool m_commitIdHasBeenSet = false;
+  bool m_commitMessageHasBeenSet = false;
   bool m_commitTimeHasBeenSet = false;
 };
 

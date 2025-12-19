@@ -183,6 +183,15 @@ Aws::String UserAgent::SerializeWithFeatures(const Aws::Set<UserAgentFeature>& f
     SerializeMetadata(METADATA, m_compilerMetadata);
   }
 
+  // Add HTTP client metadata
+#if AWS_SDK_USE_CRT_HTTP
+  SerializeMetadata(METADATA, "http#crt");
+#elif ENABLE_CURL_CLIENT
+  SerializeMetadata(METADATA, "http#curl");
+#elif ENABLE_WINDOWS_CLIENT
+  SerializeMetadata(METADATA, "http#winhttp");
+#endif
+
   // metrics
   Aws::Vector<Aws::String> encodedMetrics{};
 

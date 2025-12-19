@@ -88,12 +88,12 @@ class AggregationConstraint {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   int m_minimum{0};
-  bool m_minimumHasBeenSet = false;
 
   AggregationType m_type{AggregationType::NOT_SET};
+  bool m_columnNameHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

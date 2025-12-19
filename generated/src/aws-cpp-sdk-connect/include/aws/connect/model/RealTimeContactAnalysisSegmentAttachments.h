@@ -150,21 +150,21 @@ class RealTimeContactAnalysisSegmentAttachments {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Vector<RealTimeContactAnalysisAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   RealTimeContactAnalysisTimeData m_time;
+  bool m_idHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

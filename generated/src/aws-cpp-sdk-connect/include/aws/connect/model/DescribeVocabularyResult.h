@@ -62,9 +62,9 @@ class DescribeVocabularyResult {
   ///@}
  private:
   Vocabulary m_vocabulary;
-  bool m_vocabularyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vocabularyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

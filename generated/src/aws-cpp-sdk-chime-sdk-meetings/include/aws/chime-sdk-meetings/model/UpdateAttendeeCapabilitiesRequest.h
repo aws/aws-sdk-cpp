@@ -84,12 +84,12 @@ class UpdateAttendeeCapabilitiesRequest : public ChimeSDKMeetingsRequest {
   ///@}
  private:
   Aws::String m_meetingId;
-  bool m_meetingIdHasBeenSet = false;
 
   Aws::String m_attendeeId;
-  bool m_attendeeIdHasBeenSet = false;
 
   AttendeeCapabilities m_capabilities;
+  bool m_meetingIdHasBeenSet = false;
+  bool m_attendeeIdHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

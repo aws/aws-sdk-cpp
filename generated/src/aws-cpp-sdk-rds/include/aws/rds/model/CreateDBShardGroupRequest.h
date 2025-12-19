@@ -185,24 +185,24 @@ class CreateDBShardGroupRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBShardGroupIdentifier;
-  bool m_dBShardGroupIdentifierHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   int m_computeRedundancy{0};
-  bool m_computeRedundancyHasBeenSet = false;
 
   double m_maxACU{0.0};
-  bool m_maxACUHasBeenSet = false;
 
   double m_minACU{0.0};
-  bool m_minACUHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dBShardGroupIdentifierHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_computeRedundancyHasBeenSet = false;
+  bool m_maxACUHasBeenSet = false;
+  bool m_minACUHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

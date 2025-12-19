@@ -93,12 +93,12 @@ class CreateLoggerDefinitionVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_loggerDefinitionId;
-  bool m_loggerDefinitionIdHasBeenSet = false;
 
   Aws::Vector<Logger> m_loggers;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_loggerDefinitionIdHasBeenSet = false;
   bool m_loggersHasBeenSet = false;
 };
 

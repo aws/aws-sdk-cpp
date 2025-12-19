@@ -86,12 +86,12 @@ class DescribeCapacityBlockStatusResponse {
   ///@}
  private:
   Aws::Vector<CapacityBlockStatus> m_capacityBlockStatuses;
-  bool m_capacityBlockStatusesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityBlockStatusesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

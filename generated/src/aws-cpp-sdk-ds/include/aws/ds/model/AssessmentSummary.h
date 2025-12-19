@@ -191,27 +191,27 @@ class AssessmentSummary {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_dnsName;
-  bool m_dnsNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDateTime{};
-  bool m_lastUpdateDateTimeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customerDnsIps;
-  bool m_customerDnsIpsHasBeenSet = false;
 
   Aws::String m_reportType;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_dnsNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_lastUpdateDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_customerDnsIpsHasBeenSet = false;
   bool m_reportTypeHasBeenSet = false;
 };
 

@@ -136,15 +136,15 @@ class Rule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<RuleCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   Aws::Vector<RuleCondition> m_unless;
-  bool m_unlessHasBeenSet = false;
 
   Aws::Vector<RuleAction> m_actions;
+  bool m_nameHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
+  bool m_unlessHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

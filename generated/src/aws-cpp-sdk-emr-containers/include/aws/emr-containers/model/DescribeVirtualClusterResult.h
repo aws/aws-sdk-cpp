@@ -60,9 +60,9 @@ class DescribeVirtualClusterResult {
   ///@}
  private:
   VirtualCluster m_virtualCluster;
-  bool m_virtualClusterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_virtualClusterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

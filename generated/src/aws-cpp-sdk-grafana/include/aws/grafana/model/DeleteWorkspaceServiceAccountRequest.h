@@ -65,9 +65,9 @@ class DeleteWorkspaceServiceAccountRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::String m_serviceAccountId;
-  bool m_serviceAccountIdHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_serviceAccountIdHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

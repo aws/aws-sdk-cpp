@@ -237,30 +237,30 @@ class GameSessionQueue {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_gameSessionQueueArn;
-  bool m_gameSessionQueueArnHasBeenSet = false;
 
   int m_timeoutInSeconds{0};
-  bool m_timeoutInSecondsHasBeenSet = false;
 
   Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;
-  bool m_playerLatencyPoliciesHasBeenSet = false;
 
   Aws::Vector<GameSessionQueueDestination> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   FilterConfiguration m_filterConfiguration;
-  bool m_filterConfigurationHasBeenSet = false;
 
   PriorityConfiguration m_priorityConfiguration;
-  bool m_priorityConfigurationHasBeenSet = false;
 
   Aws::String m_customEventData;
-  bool m_customEventDataHasBeenSet = false;
 
   Aws::String m_notificationTarget;
+  bool m_nameHasBeenSet = false;
+  bool m_gameSessionQueueArnHasBeenSet = false;
+  bool m_timeoutInSecondsHasBeenSet = false;
+  bool m_playerLatencyPoliciesHasBeenSet = false;
+  bool m_destinationsHasBeenSet = false;
+  bool m_filterConfigurationHasBeenSet = false;
+  bool m_priorityConfigurationHasBeenSet = false;
+  bool m_customEventDataHasBeenSet = false;
   bool m_notificationTargetHasBeenSet = false;
 };
 

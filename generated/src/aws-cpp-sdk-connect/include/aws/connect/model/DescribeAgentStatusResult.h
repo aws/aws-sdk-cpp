@@ -60,9 +60,9 @@ class DescribeAgentStatusResult {
   ///@}
  private:
   AgentStatus m_agentStatus;
-  bool m_agentStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_agentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

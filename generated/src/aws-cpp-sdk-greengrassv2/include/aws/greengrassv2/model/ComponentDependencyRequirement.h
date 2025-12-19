@@ -73,9 +73,9 @@ class ComponentDependencyRequirement {
   ///@}
  private:
   Aws::String m_versionRequirement;
-  bool m_versionRequirementHasBeenSet = false;
 
   ComponentDependencyType m_dependencyType{ComponentDependencyType::NOT_SET};
+  bool m_versionRequirementHasBeenSet = false;
   bool m_dependencyTypeHasBeenSet = false;
 };
 

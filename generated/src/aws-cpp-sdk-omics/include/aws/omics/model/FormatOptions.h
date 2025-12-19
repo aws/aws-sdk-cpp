@@ -69,9 +69,9 @@ class FormatOptions {
   ///@}
  private:
   TsvOptions m_tsvOptions;
-  bool m_tsvOptionsHasBeenSet = false;
 
   VcfOptions m_vcfOptions;
+  bool m_tsvOptionsHasBeenSet = false;
   bool m_vcfOptionsHasBeenSet = false;
 };
 

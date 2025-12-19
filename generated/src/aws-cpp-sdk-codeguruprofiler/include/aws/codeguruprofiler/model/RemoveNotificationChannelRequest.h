@@ -70,9 +70,9 @@ class RemoveNotificationChannelRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
+  bool m_channelIdHasBeenSet = false;
   bool m_profilingGroupNameHasBeenSet = false;
 };
 

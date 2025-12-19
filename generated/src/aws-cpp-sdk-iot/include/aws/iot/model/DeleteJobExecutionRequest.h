@@ -137,18 +137,18 @@ class DeleteJobExecutionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   long long m_executionNumber{0};
-  bool m_executionNumberHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   Aws::String m_namespaceId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_thingNameHasBeenSet = false;
+  bool m_executionNumberHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_namespaceIdHasBeenSet = false;
 };
 

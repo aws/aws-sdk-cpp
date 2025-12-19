@@ -166,27 +166,27 @@ class ChatContactMetrics {
   ///@}
  private:
   bool m_multiParty{false};
-  bool m_multiPartyHasBeenSet = false;
 
   int m_totalMessages{0};
-  bool m_totalMessagesHasBeenSet = false;
 
   int m_totalBotMessages{0};
-  bool m_totalBotMessagesHasBeenSet = false;
 
   int m_totalBotMessageLengthInChars{0};
-  bool m_totalBotMessageLengthInCharsHasBeenSet = false;
 
   long long m_conversationCloseTimeInMillis{0};
-  bool m_conversationCloseTimeInMillisHasBeenSet = false;
 
   int m_conversationTurnCount{0};
-  bool m_conversationTurnCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_agentFirstResponseTimestamp{};
-  bool m_agentFirstResponseTimestampHasBeenSet = false;
 
   long long m_agentFirstResponseTimeInMillis{0};
+  bool m_multiPartyHasBeenSet = false;
+  bool m_totalMessagesHasBeenSet = false;
+  bool m_totalBotMessagesHasBeenSet = false;
+  bool m_totalBotMessageLengthInCharsHasBeenSet = false;
+  bool m_conversationCloseTimeInMillisHasBeenSet = false;
+  bool m_conversationTurnCountHasBeenSet = false;
+  bool m_agentFirstResponseTimestampHasBeenSet = false;
   bool m_agentFirstResponseTimeInMillisHasBeenSet = false;
 };
 

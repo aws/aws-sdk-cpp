@@ -87,12 +87,12 @@ class NumericalScaleDefinition {
   ///@}
  private:
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_label;
+  bool m_definitionHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_labelHasBeenSet = false;
 };
 

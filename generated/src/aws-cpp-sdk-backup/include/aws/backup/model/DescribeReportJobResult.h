@@ -62,9 +62,9 @@ class DescribeReportJobResult {
   ///@}
  private:
   ReportJob m_reportJob;
-  bool m_reportJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

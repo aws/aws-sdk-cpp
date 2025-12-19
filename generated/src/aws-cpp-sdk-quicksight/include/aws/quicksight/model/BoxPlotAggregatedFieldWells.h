@@ -84,9 +84,9 @@ class BoxPlotAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
+  bool m_groupByHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

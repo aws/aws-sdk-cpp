@@ -72,9 +72,9 @@ class EvaluationConfig {
   ///@}
  private:
   AutomatedEvaluationConfig m_automated;
-  bool m_automatedHasBeenSet = false;
 
   HumanEvaluationConfig m_human;
+  bool m_automatedHasBeenSet = false;
   bool m_humanHasBeenSet = false;
 };
 

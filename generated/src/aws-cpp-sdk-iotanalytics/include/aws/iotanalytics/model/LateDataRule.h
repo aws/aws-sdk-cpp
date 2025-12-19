@@ -70,9 +70,9 @@ class LateDataRule {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   LateDataRuleConfiguration m_ruleConfiguration;
+  bool m_ruleNameHasBeenSet = false;
   bool m_ruleConfigurationHasBeenSet = false;
 };
 

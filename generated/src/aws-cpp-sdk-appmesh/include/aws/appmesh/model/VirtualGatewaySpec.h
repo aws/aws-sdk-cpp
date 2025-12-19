@@ -95,12 +95,12 @@ class VirtualGatewaySpec {
   ///@}
  private:
   VirtualGatewayBackendDefaults m_backendDefaults;
-  bool m_backendDefaultsHasBeenSet = false;
 
   Aws::Vector<VirtualGatewayListener> m_listeners;
-  bool m_listenersHasBeenSet = false;
 
   VirtualGatewayLogging m_logging;
+  bool m_backendDefaultsHasBeenSet = false;
+  bool m_listenersHasBeenSet = false;
   bool m_loggingHasBeenSet = false;
 };
 

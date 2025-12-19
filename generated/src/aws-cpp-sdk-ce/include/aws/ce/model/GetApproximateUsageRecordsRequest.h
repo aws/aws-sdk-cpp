@@ -94,12 +94,12 @@ class GetApproximateUsageRecordsRequest : public CostExplorerRequest {
   ///@}
  private:
   Granularity m_granularity{Granularity::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_services;
-  bool m_servicesHasBeenSet = false;
 
   ApproximationDimension m_approximationDimension{ApproximationDimension::NOT_SET};
+  bool m_granularityHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
   bool m_approximationDimensionHasBeenSet = false;
 };
 

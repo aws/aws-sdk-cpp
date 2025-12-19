@@ -231,27 +231,27 @@ class CreateDatasetRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::Vector<DatasetAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::Vector<DatasetTrigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::Vector<DatasetContentDeliveryRule> m_contentDeliveryRules;
-  bool m_contentDeliveryRulesHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   VersioningConfiguration m_versioningConfiguration;
-  bool m_versioningConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<LateDataRule> m_lateDataRules;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_triggersHasBeenSet = false;
+  bool m_contentDeliveryRulesHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_versioningConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_lateDataRulesHasBeenSet = false;
 };
 

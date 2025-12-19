@@ -70,9 +70,9 @@ class Resource {
   ///@}
  private:
   Aws::String m_uRI;
-  bool m_uRIHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_uRIHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

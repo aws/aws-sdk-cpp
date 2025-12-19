@@ -8167,7 +8167,7 @@ class AWS_S3CRT_API S3CrtClient : public Aws::Client::AWSXMLClient, public Aws::
   };
 
   static void CrtClientShutdownCallback(void* data);
-  void CancelCrtRequestAsync(aws_s3_meta_request* meta_request) const;
+  void CancelCrtRequest(aws_s3_meta_request* meta_request) const;
   static int S3CrtRequestHeadersCallback(aws_s3_meta_request* meta_request, const struct aws_http_headers* headers, int response_status,
                                          void* user_data);
   static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request* meta_request, const struct aws_byte_cursor* body, uint64_t range_start,

@@ -173,24 +173,24 @@ class InputUpdate {
   ///@}
  private:
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   Aws::String m_namePrefixUpdate;
-  bool m_namePrefixUpdateHasBeenSet = false;
 
   InputProcessingConfigurationUpdate m_inputProcessingConfigurationUpdate;
-  bool m_inputProcessingConfigurationUpdateHasBeenSet = false;
 
   KinesisStreamsInputUpdate m_kinesisStreamsInputUpdate;
-  bool m_kinesisStreamsInputUpdateHasBeenSet = false;
 
   KinesisFirehoseInputUpdate m_kinesisFirehoseInputUpdate;
-  bool m_kinesisFirehoseInputUpdateHasBeenSet = false;
 
   InputSchemaUpdate m_inputSchemaUpdate;
-  bool m_inputSchemaUpdateHasBeenSet = false;
 
   InputParallelismUpdate m_inputParallelismUpdate;
+  bool m_inputIdHasBeenSet = false;
+  bool m_namePrefixUpdateHasBeenSet = false;
+  bool m_inputProcessingConfigurationUpdateHasBeenSet = false;
+  bool m_kinesisStreamsInputUpdateHasBeenSet = false;
+  bool m_kinesisFirehoseInputUpdateHasBeenSet = false;
+  bool m_inputSchemaUpdateHasBeenSet = false;
   bool m_inputParallelismUpdateHasBeenSet = false;
 };
 

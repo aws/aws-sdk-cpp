@@ -68,9 +68,9 @@ class Checksum {
   ///@}
  private:
   ChecksumType m_type{ChecksumType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_sum;
+  bool m_typeHasBeenSet = false;
   bool m_sumHasBeenSet = false;
 };
 

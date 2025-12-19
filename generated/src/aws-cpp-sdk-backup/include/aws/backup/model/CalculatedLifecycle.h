@@ -81,9 +81,9 @@ class CalculatedLifecycle {
   ///@}
  private:
   Aws::Utils::DateTime m_moveToColdStorageAt{};
-  bool m_moveToColdStorageAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteAt{};
+  bool m_moveToColdStorageAtHasBeenSet = false;
   bool m_deleteAtHasBeenSet = false;
 };
 

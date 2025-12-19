@@ -117,18 +117,18 @@ class ConnectorOperator {
   ///@}
  private:
   MarketoConnectorOperator m_marketo{MarketoConnectorOperator::NOT_SET};
-  bool m_marketoHasBeenSet = false;
 
   S3ConnectorOperator m_s3{S3ConnectorOperator::NOT_SET};
-  bool m_s3HasBeenSet = false;
 
   SalesforceConnectorOperator m_salesforce{SalesforceConnectorOperator::NOT_SET};
-  bool m_salesforceHasBeenSet = false;
 
   ServiceNowConnectorOperator m_serviceNow{ServiceNowConnectorOperator::NOT_SET};
-  bool m_serviceNowHasBeenSet = false;
 
   ZendeskConnectorOperator m_zendesk{ZendeskConnectorOperator::NOT_SET};
+  bool m_marketoHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_serviceNowHasBeenSet = false;
   bool m_zendeskHasBeenSet = false;
 };
 

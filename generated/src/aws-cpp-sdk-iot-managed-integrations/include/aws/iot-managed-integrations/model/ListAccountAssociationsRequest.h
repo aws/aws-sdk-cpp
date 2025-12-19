@@ -88,12 +88,12 @@ class ListAccountAssociationsRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_connectorDestinationId;
-  bool m_connectorDestinationIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_connectorDestinationIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

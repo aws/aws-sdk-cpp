@@ -83,12 +83,12 @@ class ListMessageMoveTasksResult {
   ///@}
  private:
   Aws::Vector<ListMessageMoveTasksResultEntry> m_results;
-  bool m_resultsHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resultsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

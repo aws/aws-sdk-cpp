@@ -36,7 +36,7 @@ class CrossRegionS3RestoreSourcesAccess {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Region for cross-Region S3 restore access.</p>
+   * <p>The Amazon Web Services Region for cross-Region Amazon S3 restore access.</p>
    */
   inline const Aws::String& GetRegion() const { return m_region; }
   inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
@@ -54,7 +54,7 @@ class CrossRegionS3RestoreSourcesAccess {
 
   ///@{
   /**
-   * <p>The IPv4 addresses allowed for cross-Region S3 restore access.</p>
+   * <p>The IPv4 addresses allowed for cross-Region Amazon S3 restore access.</p>
    */
   inline const Aws::Vector<Aws::String>& GetIpv4Addresses() const { return m_ipv4Addresses; }
   inline bool Ipv4AddressesHasBeenSet() const { return m_ipv4AddressesHasBeenSet; }
@@ -78,7 +78,8 @@ class CrossRegionS3RestoreSourcesAccess {
 
   ///@{
   /**
-   * <p>The current status of the cross-Region S3 restore access configuration.</p>
+   * <p>The current status of the cross-Region Amazon S3 restore access
+   * configuration.</p>
    */
   inline ManagedResourceStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -93,12 +94,12 @@ class CrossRegionS3RestoreSourcesAccess {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv4Addresses;
-  bool m_ipv4AddressesHasBeenSet = false;
 
   ManagedResourceStatus m_status{ManagedResourceStatus::NOT_SET};
+  bool m_regionHasBeenSet = false;
+  bool m_ipv4AddressesHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class SnsAction {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MessageFormat m_messageFormat{MessageFormat::NOT_SET};
+  bool m_targetArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_messageFormatHasBeenSet = false;
 };
 

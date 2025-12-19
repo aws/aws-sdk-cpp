@@ -72,9 +72,9 @@ class S3ComputeObjectChecksumOperation {
   ///@}
  private:
   ComputeObjectChecksumAlgorithm m_checksumAlgorithm{ComputeObjectChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   ComputeObjectChecksumType m_checksumType{ComputeObjectChecksumType::NOT_SET};
+  bool m_checksumAlgorithmHasBeenSet = false;
   bool m_checksumTypeHasBeenSet = false;
 };
 

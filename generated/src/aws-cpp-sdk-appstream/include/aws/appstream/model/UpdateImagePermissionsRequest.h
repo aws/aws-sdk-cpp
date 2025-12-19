@@ -87,12 +87,12 @@ class UpdateImagePermissionsRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_sharedAccountId;
-  bool m_sharedAccountIdHasBeenSet = false;
 
   ImagePermissions m_imagePermissions;
+  bool m_nameHasBeenSet = false;
+  bool m_sharedAccountIdHasBeenSet = false;
   bool m_imagePermissionsHasBeenSet = false;
 };
 

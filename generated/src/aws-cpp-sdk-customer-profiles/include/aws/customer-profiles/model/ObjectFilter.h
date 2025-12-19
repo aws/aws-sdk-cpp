@@ -81,9 +81,9 @@ class ObjectFilter {
   ///@}
  private:
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_keyNameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

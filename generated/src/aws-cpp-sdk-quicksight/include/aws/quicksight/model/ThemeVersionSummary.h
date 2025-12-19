@@ -120,18 +120,18 @@ class ThemeVersionSummary {
   ///@}
  private:
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
+  bool m_versionNumberHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

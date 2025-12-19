@@ -254,36 +254,36 @@ class IpamPrefixListResolver {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ipamPrefixListResolverId;
-  bool m_ipamPrefixListResolverIdHasBeenSet = false;
 
   Aws::String m_ipamPrefixListResolverArn;
-  bool m_ipamPrefixListResolverArnHasBeenSet = false;
 
   Aws::String m_ipamArn;
-  bool m_ipamArnHasBeenSet = false;
 
   Aws::String m_ipamRegion;
-  bool m_ipamRegionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   IpamPrefixListResolverState m_state{IpamPrefixListResolverState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IpamPrefixListResolverVersionCreationStatus m_lastVersionCreationStatus{IpamPrefixListResolverVersionCreationStatus::NOT_SET};
-  bool m_lastVersionCreationStatusHasBeenSet = false;
 
   Aws::String m_lastVersionCreationStatusMessage;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ipamPrefixListResolverIdHasBeenSet = false;
+  bool m_ipamPrefixListResolverArnHasBeenSet = false;
+  bool m_ipamArnHasBeenSet = false;
+  bool m_ipamRegionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_lastVersionCreationStatusHasBeenSet = false;
   bool m_lastVersionCreationStatusMessageHasBeenSet = false;
 };
 

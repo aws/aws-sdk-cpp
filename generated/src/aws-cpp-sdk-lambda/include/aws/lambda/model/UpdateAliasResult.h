@@ -154,24 +154,24 @@ class UpdateAliasResult {
   ///@}
  private:
   Aws::String m_aliasArn;
-  bool m_aliasArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_functionVersion;
-  bool m_functionVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AliasRoutingConfiguration m_routingConfig;
-  bool m_routingConfigHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aliasArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_functionVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

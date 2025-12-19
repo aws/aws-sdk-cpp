@@ -112,18 +112,18 @@ class UpdateEngagementContextResult {
   ///@}
  private:
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   Aws::String m_engagementArn;
-  bool m_engagementArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_engagementLastModifiedAt{};
-  bool m_engagementLastModifiedAtHasBeenSet = false;
 
   Aws::String m_contextId;
-  bool m_contextIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_engagementIdHasBeenSet = false;
+  bool m_engagementArnHasBeenSet = false;
+  bool m_engagementLastModifiedAtHasBeenSet = false;
+  bool m_contextIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

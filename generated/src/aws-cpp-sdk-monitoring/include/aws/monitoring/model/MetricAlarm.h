@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
@@ -21,9 +21,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -36,11 +36,9 @@ namespace Model {
 class MetricAlarm {
  public:
   AWS_CLOUDWATCH_API MetricAlarm() = default;
-  AWS_CLOUDWATCH_API MetricAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API MetricAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API MetricAlarm(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API MetricAlarm& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -381,13 +379,13 @@ class MetricAlarm {
   /**
    * <p>The period, in seconds, over which the statistic is applied.</p>
    */
-  inline int GetPeriod() const { return m_period; }
+  inline int64_t GetPeriod() const { return m_period; }
   inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-  inline void SetPeriod(int value) {
+  inline void SetPeriod(int64_t value) {
     m_periodHasBeenSet = true;
     m_period = value;
   }
-  inline MetricAlarm& WithPeriod(int value) {
+  inline MetricAlarm& WithPeriod(int64_t value) {
     SetPeriod(value);
     return *this;
   }
@@ -414,13 +412,13 @@ class MetricAlarm {
    * <p>The number of periods over which data is compared to the specified
    * threshold.</p>
    */
-  inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
+  inline int64_t GetEvaluationPeriods() const { return m_evaluationPeriods; }
   inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
-  inline void SetEvaluationPeriods(int value) {
+  inline void SetEvaluationPeriods(int64_t value) {
     m_evaluationPeriodsHasBeenSet = true;
     m_evaluationPeriods = value;
   }
-  inline MetricAlarm& WithEvaluationPeriods(int value) {
+  inline MetricAlarm& WithEvaluationPeriods(int64_t value) {
     SetEvaluationPeriods(value);
     return *this;
   }
@@ -430,13 +428,13 @@ class MetricAlarm {
   /**
    * <p>The number of data points that must be breaching to trigger the alarm.</p>
    */
-  inline int GetDatapointsToAlarm() const { return m_datapointsToAlarm; }
+  inline int64_t GetDatapointsToAlarm() const { return m_datapointsToAlarm; }
   inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
-  inline void SetDatapointsToAlarm(int value) {
+  inline void SetDatapointsToAlarm(int64_t value) {
     m_datapointsToAlarmHasBeenSet = true;
     m_datapointsToAlarm = value;
   }
-  inline MetricAlarm& WithDatapointsToAlarm(int value) {
+  inline MetricAlarm& WithDatapointsToAlarm(int64_t value) {
     SetDatapointsToAlarm(value);
     return *this;
   }
@@ -608,90 +606,90 @@ class MetricAlarm {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmArn;
-  bool m_alarmArnHasBeenSet = false;
 
   Aws::String m_alarmDescription;
-  bool m_alarmDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp{};
-  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
   bool m_actionsEnabled{false};
-  bool m_actionsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_oKActions;
-  bool m_oKActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmActions;
-  bool m_alarmActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insufficientDataActions;
-  bool m_insufficientDataActionsHasBeenSet = false;
 
   StateValue m_stateValue{StateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_stateReasonData;
-  bool m_stateReasonDataHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateUpdatedTimestamp{};
-  bool m_stateUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Statistic m_statistic{Statistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::String m_extendedStatistic;
-  bool m_extendedStatisticHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
-  int m_period{0};
-  bool m_periodHasBeenSet = false;
+  int64_t m_period{0};
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
-  int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
+  int64_t m_evaluationPeriods{0};
 
-  int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
+  int64_t m_datapointsToAlarm{0};
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::String m_treatMissingData;
-  bool m_treatMissingDataHasBeenSet = false;
 
   Aws::String m_evaluateLowSampleCountPercentile;
-  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
 
   Aws::Vector<MetricDataQuery> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_thresholdMetricId;
-  bool m_thresholdMetricIdHasBeenSet = false;
 
   EvaluationState m_evaluationState{EvaluationState::NOT_SET};
-  bool m_evaluationStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateTransitionedTimestamp{};
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmArnHasBeenSet = false;
+  bool m_alarmDescriptionHasBeenSet = false;
+  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
+  bool m_actionsEnabledHasBeenSet = false;
+  bool m_oKActionsHasBeenSet = false;
+  bool m_alarmActionsHasBeenSet = false;
+  bool m_insufficientDataActionsHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_stateReasonDataHasBeenSet = false;
+  bool m_stateUpdatedTimestampHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_extendedStatisticHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_treatMissingDataHasBeenSet = false;
+  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_thresholdMetricIdHasBeenSet = false;
+  bool m_evaluationStateHasBeenSet = false;
   bool m_stateTransitionedTimestampHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class UpdateKxEnvironmentNetworkRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   TransitGatewayConfiguration m_transitGatewayConfiguration;
-  bool m_transitGatewayConfigurationHasBeenSet = false;
 
   Aws::Vector<CustomDNSServer> m_customDNSConfiguration;
-  bool m_customDNSConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_transitGatewayConfigurationHasBeenSet = false;
+  bool m_customDNSConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

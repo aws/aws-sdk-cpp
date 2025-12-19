@@ -139,18 +139,18 @@ class DeviceType {
   ///@}
  private:
   Aws::String m_deviceKey;
-  bool m_deviceKeyHasBeenSet = false;
 
   Aws::Vector<AttributeType> m_deviceAttributes;
-  bool m_deviceAttributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_deviceCreateDate{};
-  bool m_deviceCreateDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deviceLastModifiedDate{};
-  bool m_deviceLastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_deviceLastAuthenticatedDate{};
+  bool m_deviceKeyHasBeenSet = false;
+  bool m_deviceAttributesHasBeenSet = false;
+  bool m_deviceCreateDateHasBeenSet = false;
+  bool m_deviceLastModifiedDateHasBeenSet = false;
   bool m_deviceLastAuthenticatedDateHasBeenSet = false;
 };
 

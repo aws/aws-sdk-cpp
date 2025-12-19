@@ -137,18 +137,18 @@ class InventoryTableConfigurationResult {
   ///@}
  private:
   InventoryConfigurationState m_configurationState{InventoryConfigurationState::NOT_SET};
-  bool m_configurationStateHasBeenSet = false;
 
   Aws::String m_tableStatus;
-  bool m_tableStatusHasBeenSet = false;
 
   ErrorDetails m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_tableArn;
+  bool m_configurationStateHasBeenSet = false;
+  bool m_tableStatusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_tableArnHasBeenSet = false;
 };
 

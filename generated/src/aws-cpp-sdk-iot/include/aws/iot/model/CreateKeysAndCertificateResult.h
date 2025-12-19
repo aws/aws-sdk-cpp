@@ -118,18 +118,18 @@ class CreateKeysAndCertificateResult {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   KeyPair m_keyPair;
-  bool m_keyPairHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_certificatePemHasBeenSet = false;
+  bool m_keyPairHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

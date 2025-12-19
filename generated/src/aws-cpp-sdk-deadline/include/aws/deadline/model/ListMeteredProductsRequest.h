@@ -88,12 +88,12 @@ class ListMeteredProductsRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_licenseEndpointId;
-  bool m_licenseEndpointIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_licenseEndpointIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

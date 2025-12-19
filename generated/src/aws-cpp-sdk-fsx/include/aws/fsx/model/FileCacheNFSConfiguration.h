@@ -80,9 +80,9 @@ class FileCacheNFSConfiguration {
   ///@}
  private:
   NfsVersion m_version{NfsVersion::NOT_SET};
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIps;
+  bool m_versionHasBeenSet = false;
   bool m_dnsIpsHasBeenSet = false;
 };
 

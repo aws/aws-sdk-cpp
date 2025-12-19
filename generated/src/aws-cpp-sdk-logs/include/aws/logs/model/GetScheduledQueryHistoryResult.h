@@ -116,18 +116,18 @@ class GetScheduledQueryHistoryResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_scheduledQueryArn;
-  bool m_scheduledQueryArnHasBeenSet = false;
 
   Aws::Vector<TriggerHistoryRecord> m_triggerHistory;
-  bool m_triggerHistoryHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_scheduledQueryArnHasBeenSet = false;
+  bool m_triggerHistoryHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

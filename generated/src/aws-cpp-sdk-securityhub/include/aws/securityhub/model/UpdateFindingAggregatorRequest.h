@@ -115,12 +115,12 @@ class UpdateFindingAggregatorRequest : public SecurityHubRequest {
   ///@}
  private:
   Aws::String m_findingAggregatorArn;
-  bool m_findingAggregatorArnHasBeenSet = false;
 
   Aws::String m_regionLinkingMode;
-  bool m_regionLinkingModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
+  bool m_findingAggregatorArnHasBeenSet = false;
+  bool m_regionLinkingModeHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
 };
 

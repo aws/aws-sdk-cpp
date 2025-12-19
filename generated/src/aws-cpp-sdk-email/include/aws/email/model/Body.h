@@ -75,9 +75,9 @@ class Body {
   ///@}
  private:
   Content m_text;
-  bool m_textHasBeenSet = false;
 
   Content m_html;
+  bool m_textHasBeenSet = false;
   bool m_htmlHasBeenSet = false;
 };
 

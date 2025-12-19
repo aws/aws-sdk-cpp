@@ -95,12 +95,12 @@ class HomeDirectoryMapEntry {
   ///@}
  private:
   Aws::String m_entry;
-  bool m_entryHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   MapType m_type{MapType::NOT_SET};
+  bool m_entryHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

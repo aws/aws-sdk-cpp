@@ -126,18 +126,18 @@ class CapabilitySchemaItem {
   ///@}
  private:
   SchemaVersionFormat m_format{SchemaVersionFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_capabilityId;
-  bool m_capabilityIdHasBeenSet = false;
 
   Aws::String m_extrinsicId;
-  bool m_extrinsicIdHasBeenSet = false;
 
   int m_extrinsicVersion{0};
-  bool m_extrinsicVersionHasBeenSet = false;
 
   Aws::Utils::Document m_schema;
+  bool m_formatHasBeenSet = false;
+  bool m_capabilityIdHasBeenSet = false;
+  bool m_extrinsicIdHasBeenSet = false;
+  bool m_extrinsicVersionHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
 };
 

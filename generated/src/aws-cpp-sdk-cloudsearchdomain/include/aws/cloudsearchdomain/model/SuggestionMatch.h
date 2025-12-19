@@ -86,12 +86,12 @@ class SuggestionMatch {
   ///@}
  private:
   Aws::String m_suggestion;
-  bool m_suggestionHasBeenSet = false;
 
   long long m_score{0};
-  bool m_scoreHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_suggestionHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

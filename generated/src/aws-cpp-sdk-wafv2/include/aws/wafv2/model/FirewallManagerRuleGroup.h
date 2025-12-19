@@ -139,18 +139,18 @@ class FirewallManagerRuleGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   FirewallManagerStatement m_firewallManagerStatement;
-  bool m_firewallManagerStatementHasBeenSet = false;
 
   OverrideAction m_overrideAction;
-  bool m_overrideActionHasBeenSet = false;
 
   VisibilityConfig m_visibilityConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_firewallManagerStatementHasBeenSet = false;
+  bool m_overrideActionHasBeenSet = false;
   bool m_visibilityConfigHasBeenSet = false;
 };
 

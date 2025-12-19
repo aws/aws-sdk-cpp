@@ -80,9 +80,9 @@ class UpdateGlobalTableRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_globalTableName;
-  bool m_globalTableNameHasBeenSet = false;
 
   Aws::Vector<ReplicaUpdate> m_replicaUpdates;
+  bool m_globalTableNameHasBeenSet = false;
   bool m_replicaUpdatesHasBeenSet = false;
 };
 

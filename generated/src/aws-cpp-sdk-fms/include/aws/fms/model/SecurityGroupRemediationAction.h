@@ -104,15 +104,15 @@ class SecurityGroupRemediationAction {
   ///@}
  private:
   RemediationActionType m_remediationActionType{RemediationActionType::NOT_SET};
-  bool m_remediationActionTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SecurityGroupRuleDescription m_remediationResult;
-  bool m_remediationResultHasBeenSet = false;
 
   bool m_isDefaultAction{false};
+  bool m_remediationActionTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_remediationResultHasBeenSet = false;
   bool m_isDefaultActionHasBeenSet = false;
 };
 

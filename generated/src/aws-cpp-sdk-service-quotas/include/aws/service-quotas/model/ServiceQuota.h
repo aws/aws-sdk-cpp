@@ -304,48 +304,48 @@ class ServiceQuota {
   ///@}
  private:
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_quotaArn;
-  bool m_quotaArnHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_quotaName;
-  bool m_quotaNameHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   bool m_adjustable{false};
-  bool m_adjustableHasBeenSet = false;
 
   bool m_globalQuota{false};
-  bool m_globalQuotaHasBeenSet = false;
 
   MetricInfo m_usageMetric;
-  bool m_usageMetricHasBeenSet = false;
 
   QuotaPeriod m_period;
-  bool m_periodHasBeenSet = false;
 
   ErrorReason m_errorReason;
-  bool m_errorReasonHasBeenSet = false;
 
   AppliedLevelEnum m_quotaAppliedAtLevel{AppliedLevelEnum::NOT_SET};
-  bool m_quotaAppliedAtLevelHasBeenSet = false;
 
   QuotaContextInfo m_quotaContext;
-  bool m_quotaContextHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_quotaArnHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
+  bool m_quotaNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_adjustableHasBeenSet = false;
+  bool m_globalQuotaHasBeenSet = false;
+  bool m_usageMetricHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_errorReasonHasBeenSet = false;
+  bool m_quotaAppliedAtLevelHasBeenSet = false;
+  bool m_quotaContextHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

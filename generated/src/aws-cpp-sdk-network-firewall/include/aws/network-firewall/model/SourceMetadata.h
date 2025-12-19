@@ -77,9 +77,9 @@ class SourceMetadata {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_sourceUpdateToken;
+  bool m_sourceArnHasBeenSet = false;
   bool m_sourceUpdateTokenHasBeenSet = false;
 };
 

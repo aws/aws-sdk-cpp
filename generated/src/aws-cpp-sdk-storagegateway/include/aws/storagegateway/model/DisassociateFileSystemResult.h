@@ -59,9 +59,9 @@ class DisassociateFileSystemResult {
   ///@}
  private:
   Aws::String m_fileSystemAssociationARN;
-  bool m_fileSystemAssociationARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileSystemAssociationARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

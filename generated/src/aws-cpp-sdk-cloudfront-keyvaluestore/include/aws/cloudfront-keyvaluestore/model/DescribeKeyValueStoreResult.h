@@ -182,30 +182,30 @@ class DescribeKeyValueStoreResult {
   ///@}
  private:
   int m_itemCount{0};
-  bool m_itemCountHasBeenSet = false;
 
   long long m_totalSizeInBytes{0};
-  bool m_totalSizeInBytesHasBeenSet = false;
 
   Aws::String m_kvsARN;
-  bool m_kvsARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemCountHasBeenSet = false;
+  bool m_totalSizeInBytesHasBeenSet = false;
+  bool m_kvsARNHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -343,54 +343,54 @@ class ClusterConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_parameterGroupName;
-  bool m_parameterGroupNameHasBeenSet = false;
 
   Aws::String m_subnetGroupName;
-  bool m_subnetGroupNameHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   int m_numShards{0};
-  bool m_numShardsHasBeenSet = false;
 
   Aws::Vector<ShardDetail> m_shards;
-  bool m_shardsHasBeenSet = false;
 
   Aws::String m_multiRegionParameterGroupName;
-  bool m_multiRegionParameterGroupNameHasBeenSet = false;
 
   Aws::String m_multiRegionClusterName;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_parameterGroupNameHasBeenSet = false;
+  bool m_subnetGroupNameHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_numShardsHasBeenSet = false;
+  bool m_shardsHasBeenSet = false;
+  bool m_multiRegionParameterGroupNameHasBeenSet = false;
   bool m_multiRegionClusterNameHasBeenSet = false;
 };
 

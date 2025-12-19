@@ -214,33 +214,33 @@ class CreateVpcLinkResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcLinkId;
-  bool m_vpcLinkIdHasBeenSet = false;
 
   VpcLinkStatus m_vpcLinkStatus{VpcLinkStatus::NOT_SET};
-  bool m_vpcLinkStatusHasBeenSet = false;
 
   Aws::String m_vpcLinkStatusMessage;
-  bool m_vpcLinkStatusMessageHasBeenSet = false;
 
   VpcLinkVersion m_vpcLinkVersion{VpcLinkVersion::NOT_SET};
-  bool m_vpcLinkVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdDateHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcLinkIdHasBeenSet = false;
+  bool m_vpcLinkStatusHasBeenSet = false;
+  bool m_vpcLinkStatusMessageHasBeenSet = false;
+  bool m_vpcLinkVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

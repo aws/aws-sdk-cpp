@@ -10,7 +10,7 @@
 namespace Aws {
 namespace OpenSearchService {
 namespace Model {
-enum class NodeType { NOT_SET, Data, Ultrawarm, Master };
+enum class NodeType { NOT_SET, Data, Ultrawarm, Master, Warm };
 
 namespace NodeTypeMapper {
 AWS_OPENSEARCHSERVICE_API NodeType GetNodeTypeForName(const Aws::String& name);

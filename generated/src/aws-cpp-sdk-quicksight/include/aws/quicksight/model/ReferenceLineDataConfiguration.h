@@ -107,15 +107,15 @@ class ReferenceLineDataConfiguration {
   ///@}
  private:
   ReferenceLineStaticDataConfiguration m_staticConfiguration;
-  bool m_staticConfigurationHasBeenSet = false;
 
   ReferenceLineDynamicDataConfiguration m_dynamicConfiguration;
-  bool m_dynamicConfigurationHasBeenSet = false;
 
   AxisBinding m_axisBinding{AxisBinding::NOT_SET};
-  bool m_axisBindingHasBeenSet = false;
 
   ReferenceLineSeriesType m_seriesType{ReferenceLineSeriesType::NOT_SET};
+  bool m_staticConfigurationHasBeenSet = false;
+  bool m_dynamicConfigurationHasBeenSet = false;
+  bool m_axisBindingHasBeenSet = false;
   bool m_seriesTypeHasBeenSet = false;
 };
 

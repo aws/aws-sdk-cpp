@@ -155,21 +155,21 @@ class EventStream {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_destinationStreamArn;
-  bool m_destinationStreamArnHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_lastModifiedDate;
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_destinationStreamArnHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

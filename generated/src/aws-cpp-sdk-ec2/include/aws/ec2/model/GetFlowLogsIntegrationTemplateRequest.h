@@ -108,15 +108,15 @@ class GetFlowLogsIntegrationTemplateRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_flowLogId;
-  bool m_flowLogIdHasBeenSet = false;
 
   Aws::String m_configDeliveryS3DestinationArn;
-  bool m_configDeliveryS3DestinationArnHasBeenSet = false;
 
   IntegrateServices m_integrateServices;
+  bool m_dryRunHasBeenSet = false;
+  bool m_flowLogIdHasBeenSet = false;
+  bool m_configDeliveryS3DestinationArnHasBeenSet = false;
   bool m_integrateServicesHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class TypeConverterEntry {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_keyHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

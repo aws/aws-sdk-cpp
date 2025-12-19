@@ -67,9 +67,9 @@ class DescribeFlywheelIterationRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_flywheelArn;
-  bool m_flywheelArnHasBeenSet = false;
 
   Aws::String m_flywheelIterationId;
+  bool m_flywheelArnHasBeenSet = false;
   bool m_flywheelIterationIdHasBeenSet = false;
 };
 

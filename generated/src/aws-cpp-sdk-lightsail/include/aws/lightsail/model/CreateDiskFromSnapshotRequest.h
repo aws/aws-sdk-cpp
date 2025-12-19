@@ -238,30 +238,30 @@ class CreateDiskFromSnapshotRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_diskName;
-  bool m_diskNameHasBeenSet = false;
 
   Aws::String m_diskSnapshotName;
-  bool m_diskSnapshotNameHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   int m_sizeInGb{0};
-  bool m_sizeInGbHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AddOnRequest> m_addOns;
-  bool m_addOnsHasBeenSet = false;
 
   Aws::String m_sourceDiskName;
-  bool m_sourceDiskNameHasBeenSet = false;
 
   Aws::String m_restoreDate;
-  bool m_restoreDateHasBeenSet = false;
 
   bool m_useLatestRestorableAutoSnapshot{false};
+  bool m_diskNameHasBeenSet = false;
+  bool m_diskSnapshotNameHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_sizeInGbHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_addOnsHasBeenSet = false;
+  bool m_sourceDiskNameHasBeenSet = false;
+  bool m_restoreDateHasBeenSet = false;
   bool m_useLatestRestorableAutoSnapshotHasBeenSet = false;
 };
 

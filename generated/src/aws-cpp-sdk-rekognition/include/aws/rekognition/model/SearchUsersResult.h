@@ -124,18 +124,18 @@ class SearchUsersResult {
   ///@}
  private:
   Aws::Vector<UserMatch> m_userMatches;
-  bool m_userMatchesHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   SearchedFace m_searchedFace;
-  bool m_searchedFaceHasBeenSet = false;
 
   SearchedUser m_searchedUser;
-  bool m_searchedUserHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userMatchesHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
+  bool m_searchedFaceHasBeenSet = false;
+  bool m_searchedUserHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

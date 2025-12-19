@@ -280,24 +280,24 @@ class Event {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   EventCode m_eventCode{EventCode::NOT_SET};
-  bool m_eventCodeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_preSignedLogUrl;
-  bool m_preSignedLogUrlHasBeenSet = false;
 
   long long m_count{0};
+  bool m_eventIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_eventCodeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_preSignedLogUrlHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

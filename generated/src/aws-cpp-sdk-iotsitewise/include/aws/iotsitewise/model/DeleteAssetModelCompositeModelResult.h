@@ -59,9 +59,9 @@ class DeleteAssetModelCompositeModelResult {
   ///@}
  private:
   AssetModelStatus m_assetModelStatus;
-  bool m_assetModelStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assetModelStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

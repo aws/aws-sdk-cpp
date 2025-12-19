@@ -91,12 +91,12 @@ class BatchGetJobEntityResult {
   ///@}
  private:
   Aws::Vector<JobEntity> m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::Vector<GetJobEntityError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitiesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

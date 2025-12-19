@@ -147,21 +147,21 @@ class ManifestProperties {
   ///@}
  private:
   Aws::String m_fileSystemLocationName;
-  bool m_fileSystemLocationNameHasBeenSet = false;
 
   Aws::String m_rootPath;
-  bool m_rootPathHasBeenSet = false;
 
   PathFormat m_rootPathFormat{PathFormat::NOT_SET};
-  bool m_rootPathFormatHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outputRelativeDirectories;
-  bool m_outputRelativeDirectoriesHasBeenSet = false;
 
   Aws::String m_inputManifestPath;
-  bool m_inputManifestPathHasBeenSet = false;
 
   Aws::String m_inputManifestHash;
+  bool m_fileSystemLocationNameHasBeenSet = false;
+  bool m_rootPathHasBeenSet = false;
+  bool m_rootPathFormatHasBeenSet = false;
+  bool m_outputRelativeDirectoriesHasBeenSet = false;
+  bool m_inputManifestPathHasBeenSet = false;
   bool m_inputManifestHashHasBeenSet = false;
 };
 

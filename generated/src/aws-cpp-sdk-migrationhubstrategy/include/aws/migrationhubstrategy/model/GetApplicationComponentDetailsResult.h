@@ -128,18 +128,18 @@ class GetApplicationComponentDetailsResult {
   ///@}
  private:
   ApplicationComponentDetail m_applicationComponentDetail;
-  bool m_applicationComponentDetailHasBeenSet = false;
 
   Aws::Vector<AssociatedApplication> m_associatedApplications;
-  bool m_associatedApplicationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedServerIds;
-  bool m_associatedServerIdsHasBeenSet = false;
 
   bool m_moreApplicationResource{false};
-  bool m_moreApplicationResourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationComponentDetailHasBeenSet = false;
+  bool m_associatedApplicationsHasBeenSet = false;
+  bool m_associatedServerIdsHasBeenSet = false;
+  bool m_moreApplicationResourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

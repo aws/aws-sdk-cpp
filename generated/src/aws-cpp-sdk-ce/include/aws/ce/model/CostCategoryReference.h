@@ -22,9 +22,9 @@ namespace CostExplorer {
 namespace Model {
 
 /**
- * <p>A reference to a Cost Category containing only enough information to identify
- * the Cost Category.</p> <p>You can use this information to retrieve the full Cost
- * Category information using <code>DescribeCostCategory</code>.</p><p><h3>See
+ * <p>A reference to a cost category containing only enough information to identify
+ * the Cost Category.</p> <p>You can use this information to retrieve the full cost
+ * category information using <code>DescribeCostCategory</code>.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryReference">AWS
  * API Reference</a></p>
@@ -38,7 +38,7 @@ class CostCategoryReference {
 
   ///@{
   /**
-   * <p>The unique identifier for your Cost Category. </p>
+   * <p>The unique identifier for your cost category. </p>
    */
   inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
   inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
@@ -72,7 +72,7 @@ class CostCategoryReference {
 
   ///@{
   /**
-   * <p>The Cost Category's effective start date.</p>
+   * <p>The cost category's effective start date.</p>
    */
   inline const Aws::String& GetEffectiveStart() const { return m_effectiveStart; }
   inline bool EffectiveStartHasBeenSet() const { return m_effectiveStartHasBeenSet; }
@@ -90,7 +90,7 @@ class CostCategoryReference {
 
   ///@{
   /**
-   * <p>The Cost Category's effective end date.</p>
+   * <p>The cost category's effective end date.</p>
    */
   inline const Aws::String& GetEffectiveEnd() const { return m_effectiveEnd; }
   inline bool EffectiveEndHasBeenSet() const { return m_effectiveEndHasBeenSet; }
@@ -108,7 +108,7 @@ class CostCategoryReference {
 
   ///@{
   /**
-   * <p>The number of rules that are associated with a specific Cost Category. </p>
+   * <p>The number of rules that are associated with a specific cost category. </p>
    */
   inline int GetNumberOfRules() const { return m_numberOfRules; }
   inline bool NumberOfRulesHasBeenSet() const { return m_numberOfRulesHasBeenSet; }
@@ -186,30 +186,57 @@ class CostCategoryReference {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The resource types supported by a specific cost category. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSupportedResourceTypes() const { return m_supportedResourceTypes; }
+  inline bool SupportedResourceTypesHasBeenSet() const { return m_supportedResourceTypesHasBeenSet; }
+  template <typename SupportedResourceTypesT = Aws::Vector<Aws::String>>
+  void SetSupportedResourceTypes(SupportedResourceTypesT&& value) {
+    m_supportedResourceTypesHasBeenSet = true;
+    m_supportedResourceTypes = std::forward<SupportedResourceTypesT>(value);
+  }
+  template <typename SupportedResourceTypesT = Aws::Vector<Aws::String>>
+  CostCategoryReference& WithSupportedResourceTypes(SupportedResourceTypesT&& value) {
+    SetSupportedResourceTypes(std::forward<SupportedResourceTypesT>(value));
+    return *this;
+  }
+  template <typename SupportedResourceTypesT = Aws::String>
+  CostCategoryReference& AddSupportedResourceTypes(SupportedResourceTypesT&& value) {
+    m_supportedResourceTypesHasBeenSet = true;
+    m_supportedResourceTypes.emplace_back(std::forward<SupportedResourceTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   Aws::String m_effectiveEnd;
-  bool m_effectiveEndHasBeenSet = false;
 
   int m_numberOfRules{0};
-  bool m_numberOfRulesHasBeenSet = false;
 
   Aws::Vector<CostCategoryProcessingStatus> m_processingStatus;
-  bool m_processingStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_defaultValue;
+
+  Aws::Vector<Aws::String> m_supportedResourceTypes;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_effectiveEndHasBeenSet = false;
+  bool m_numberOfRulesHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
+  bool m_supportedResourceTypesHasBeenSet = false;
 };
 
 }  // namespace Model

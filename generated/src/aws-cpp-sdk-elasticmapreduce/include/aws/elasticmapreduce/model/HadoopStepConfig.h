@@ -123,15 +123,15 @@ class HadoopStepConfig {
   ///@}
  private:
   Aws::String m_jar;
-  bool m_jarHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   Aws::String m_mainClass;
-  bool m_mainClassHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_args;
+  bool m_jarHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
+  bool m_mainClassHasBeenSet = false;
   bool m_argsHasBeenSet = false;
 };
 

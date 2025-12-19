@@ -69,9 +69,9 @@ class ResourceReceivingAccess {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_nameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

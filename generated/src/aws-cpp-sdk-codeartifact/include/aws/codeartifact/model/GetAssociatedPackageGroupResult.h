@@ -78,12 +78,12 @@ class GetAssociatedPackageGroupResult {
   ///@}
  private:
   PackageGroupDescription m_packageGroup;
-  bool m_packageGroupHasBeenSet = false;
 
   PackageGroupAssociationType m_associationType{PackageGroupAssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageGroupHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

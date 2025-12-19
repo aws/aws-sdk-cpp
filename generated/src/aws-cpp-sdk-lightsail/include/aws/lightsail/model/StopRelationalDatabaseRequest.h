@@ -68,9 +68,9 @@ class StopRelationalDatabaseRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   Aws::String m_relationalDatabaseSnapshotName;
+  bool m_relationalDatabaseNameHasBeenSet = false;
   bool m_relationalDatabaseSnapshotNameHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class Ipv6CidrBlockAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_ipv6CidrBlock;
-  bool m_ipv6CidrBlockHasBeenSet = false;
 
   Aws::String m_cidrBlockState;
+  bool m_associationIdHasBeenSet = false;
+  bool m_ipv6CidrBlockHasBeenSet = false;
   bool m_cidrBlockStateHasBeenSet = false;
 };
 

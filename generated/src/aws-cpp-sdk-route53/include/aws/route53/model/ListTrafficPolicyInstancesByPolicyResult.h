@@ -173,24 +173,24 @@ class ListTrafficPolicyInstancesByPolicyResult {
   ///@}
  private:
   Aws::Vector<TrafficPolicyInstance> m_trafficPolicyInstances;
-  bool m_trafficPolicyInstancesHasBeenSet = false;
 
   Aws::String m_hostedZoneIdMarker;
-  bool m_hostedZoneIdMarkerHasBeenSet = false;
 
   Aws::String m_trafficPolicyInstanceNameMarker;
-  bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
 
   RRType m_trafficPolicyInstanceTypeMarker{RRType::NOT_SET};
-  bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
 
   bool m_isTruncated{false};
-  bool m_isTruncatedHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficPolicyInstancesHasBeenSet = false;
+  bool m_hostedZoneIdMarkerHasBeenSet = false;
+  bool m_trafficPolicyInstanceNameMarkerHasBeenSet = false;
+  bool m_trafficPolicyInstanceTypeMarkerHasBeenSet = false;
+  bool m_isTruncatedHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class AwsEc2NetworkInterfacePrivateIpAddressDetail {
   ///@}
  private:
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::String m_privateDnsName;
+  bool m_privateIpAddressHasBeenSet = false;
   bool m_privateDnsNameHasBeenSet = false;
 };
 

@@ -77,12 +77,12 @@ class AssociateDataProtectionSettingsResult {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_dataProtectionSettingsArn;
-  bool m_dataProtectionSettingsArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalArnHasBeenSet = false;
+  bool m_dataProtectionSettingsArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

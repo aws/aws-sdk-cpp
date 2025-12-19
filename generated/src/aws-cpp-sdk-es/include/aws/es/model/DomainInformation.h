@@ -75,12 +75,12 @@ class DomainInformation {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

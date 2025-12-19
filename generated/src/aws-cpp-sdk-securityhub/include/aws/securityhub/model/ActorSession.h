@@ -114,15 +114,15 @@ class ActorSession {
   ///@}
  private:
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   ActorSessionMfaStatus m_mfaStatus{ActorSessionMfaStatus::NOT_SET};
-  bool m_mfaStatusHasBeenSet = false;
 
   long long m_createdTime{0};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_issuer;
+  bool m_uidHasBeenSet = false;
+  bool m_mfaStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_issuerHasBeenSet = false;
 };
 

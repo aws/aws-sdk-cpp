@@ -67,9 +67,9 @@ class GetSSHPublicKeyResult {
   ///@}
  private:
   SSHPublicKey m_sSHPublicKey;
-  bool m_sSHPublicKeyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_sSHPublicKeyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

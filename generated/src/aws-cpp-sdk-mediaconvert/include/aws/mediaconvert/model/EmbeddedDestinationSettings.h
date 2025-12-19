@@ -76,9 +76,9 @@ class EmbeddedDestinationSettings {
   ///@}
  private:
   int m_destination608ChannelNumber{0};
-  bool m_destination608ChannelNumberHasBeenSet = false;
 
   int m_destination708ServiceNumber{0};
+  bool m_destination608ChannelNumberHasBeenSet = false;
   bool m_destination708ServiceNumberHasBeenSet = false;
 };
 

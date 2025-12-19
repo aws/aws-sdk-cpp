@@ -68,9 +68,9 @@ class DiskImageVolumeDescription {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   long long m_size{0};
+  bool m_idHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

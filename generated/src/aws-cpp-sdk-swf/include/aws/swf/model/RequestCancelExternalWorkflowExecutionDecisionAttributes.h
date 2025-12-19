@@ -103,12 +103,12 @@ class RequestCancelExternalWorkflowExecutionDecisionAttributes {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_control;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
   bool m_controlHasBeenSet = false;
 };
 

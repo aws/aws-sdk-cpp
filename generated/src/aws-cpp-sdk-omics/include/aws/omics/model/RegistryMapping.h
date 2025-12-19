@@ -107,15 +107,15 @@ class RegistryMapping {
   ///@}
  private:
   Aws::String m_upstreamRegistryUrl;
-  bool m_upstreamRegistryUrlHasBeenSet = false;
 
   Aws::String m_ecrRepositoryPrefix;
-  bool m_ecrRepositoryPrefixHasBeenSet = false;
 
   Aws::String m_upstreamRepositoryPrefix;
-  bool m_upstreamRepositoryPrefixHasBeenSet = false;
 
   Aws::String m_ecrAccountId;
+  bool m_upstreamRegistryUrlHasBeenSet = false;
+  bool m_ecrRepositoryPrefixHasBeenSet = false;
+  bool m_upstreamRepositoryPrefixHasBeenSet = false;
   bool m_ecrAccountIdHasBeenSet = false;
 };
 

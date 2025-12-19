@@ -85,12 +85,12 @@ class IngressTlsProtocolExpression {
   ///@}
  private:
   IngressTlsProtocolToEvaluate m_evaluate;
-  bool m_evaluateHasBeenSet = false;
 
   IngressTlsProtocolOperator m_operator{IngressTlsProtocolOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   IngressTlsProtocolAttribute m_value{IngressTlsProtocolAttribute::NOT_SET};
+  bool m_evaluateHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

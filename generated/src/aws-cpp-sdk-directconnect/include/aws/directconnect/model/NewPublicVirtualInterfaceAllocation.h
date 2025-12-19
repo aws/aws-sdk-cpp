@@ -241,33 +241,33 @@ class NewPublicVirtualInterfaceAllocation {
   ///@}
  private:
   Aws::String m_virtualInterfaceName;
-  bool m_virtualInterfaceNameHasBeenSet = false;
 
   int m_vlan{0};
-  bool m_vlanHasBeenSet = false;
 
   int m_asn{0};
-  bool m_asnHasBeenSet = false;
 
   long long m_asnLong{0};
-  bool m_asnLongHasBeenSet = false;
 
   Aws::String m_authKey;
-  bool m_authKeyHasBeenSet = false;
 
   Aws::String m_amazonAddress;
-  bool m_amazonAddressHasBeenSet = false;
 
   Aws::String m_customerAddress;
-  bool m_customerAddressHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   Aws::Vector<RouteFilterPrefix> m_routeFilterPrefixes;
-  bool m_routeFilterPrefixesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_virtualInterfaceNameHasBeenSet = false;
+  bool m_vlanHasBeenSet = false;
+  bool m_asnHasBeenSet = false;
+  bool m_asnLongHasBeenSet = false;
+  bool m_authKeyHasBeenSet = false;
+  bool m_amazonAddressHasBeenSet = false;
+  bool m_customerAddressHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_routeFilterPrefixesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

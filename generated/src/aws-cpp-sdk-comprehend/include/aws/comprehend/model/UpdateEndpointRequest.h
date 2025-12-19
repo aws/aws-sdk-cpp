@@ -122,18 +122,18 @@ class UpdateEndpointRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_desiredModelArn;
-  bool m_desiredModelArnHasBeenSet = false;
 
   int m_desiredInferenceUnits{0};
-  bool m_desiredInferenceUnitsHasBeenSet = false;
 
   Aws::String m_desiredDataAccessRoleArn;
-  bool m_desiredDataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_flywheelArn;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_desiredModelArnHasBeenSet = false;
+  bool m_desiredInferenceUnitsHasBeenSet = false;
+  bool m_desiredDataAccessRoleArnHasBeenSet = false;
   bool m_flywheelArnHasBeenSet = false;
 };
 

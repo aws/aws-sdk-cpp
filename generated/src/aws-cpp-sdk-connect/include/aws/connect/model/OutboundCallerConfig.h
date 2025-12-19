@@ -87,12 +87,12 @@ class OutboundCallerConfig {
   ///@}
  private:
   Aws::String m_outboundCallerIdName;
-  bool m_outboundCallerIdNameHasBeenSet = false;
 
   Aws::String m_outboundCallerIdNumberId;
-  bool m_outboundCallerIdNumberIdHasBeenSet = false;
 
   Aws::String m_outboundFlowId;
+  bool m_outboundCallerIdNameHasBeenSet = false;
+  bool m_outboundCallerIdNumberIdHasBeenSet = false;
   bool m_outboundFlowIdHasBeenSet = false;
 };
 

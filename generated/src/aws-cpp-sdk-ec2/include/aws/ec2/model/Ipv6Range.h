@@ -83,9 +83,9 @@ class Ipv6Range {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_cidrIpv6;
+  bool m_descriptionHasBeenSet = false;
   bool m_cidrIpv6HasBeenSet = false;
 };
 

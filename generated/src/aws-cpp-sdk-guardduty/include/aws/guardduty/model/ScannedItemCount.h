@@ -77,12 +77,12 @@ class ScannedItemCount {
   ///@}
  private:
   int m_totalGb{0};
-  bool m_totalGbHasBeenSet = false;
 
   int m_files{0};
-  bool m_filesHasBeenSet = false;
 
   int m_volumes{0};
+  bool m_totalGbHasBeenSet = false;
+  bool m_filesHasBeenSet = false;
   bool m_volumesHasBeenSet = false;
 };
 

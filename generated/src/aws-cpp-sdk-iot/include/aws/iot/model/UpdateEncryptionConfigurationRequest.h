@@ -31,7 +31,7 @@ class UpdateEncryptionConfigurationRequest : public IoTRequest {
 
   ///@{
   /**
-   * <p>The type of the Amazon Web Services Key Management Service (KMS) key.</p>
+   * <p>The type of the KMS key.</p>
    */
   inline EncryptionType GetEncryptionType() const { return m_encryptionType; }
   inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
@@ -47,7 +47,7 @@ class UpdateEncryptionConfigurationRequest : public IoTRequest {
 
   ///@{
   /**
-   * <p>The ARN of the customer-managed KMS key.</p>
+   * <p>The ARN of the customer managedKMS key.</p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
   inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
@@ -83,12 +83,12 @@ class UpdateEncryptionConfigurationRequest : public IoTRequest {
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_kmsAccessRoleArn;
+  bool m_encryptionTypeHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_kmsAccessRoleArnHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class PutContainerPolicyRequest : public MediaStoreRequest {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_containerNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

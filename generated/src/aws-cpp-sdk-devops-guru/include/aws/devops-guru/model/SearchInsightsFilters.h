@@ -121,15 +121,15 @@ class SearchInsightsFilters {
   ///@}
  private:
   Aws::Vector<InsightSeverity> m_severities;
-  bool m_severitiesHasBeenSet = false;
 
   Aws::Vector<InsightStatus> m_statuses;
-  bool m_statusesHasBeenSet = false;
 
   ResourceCollection m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   ServiceCollection m_serviceCollection;
+  bool m_severitiesHasBeenSet = false;
+  bool m_statusesHasBeenSet = false;
+  bool m_resourceCollectionHasBeenSet = false;
   bool m_serviceCollectionHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class UpdateAccessResult {
   ///@}
  private:
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serverIdHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

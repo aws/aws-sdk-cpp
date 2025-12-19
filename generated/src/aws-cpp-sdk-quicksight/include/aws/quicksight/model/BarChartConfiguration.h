@@ -7,9 +7,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AxisDisplayOptions.h>
+#include <aws/quicksight/model/BarChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/BarChartFieldWells.h>
 #include <aws/quicksight/model/BarChartOrientation.h>
 #include <aws/quicksight/model/BarChartSortConfiguration.h>
+#include <aws/quicksight/model/BarSeriesItem.h>
 #include <aws/quicksight/model/BarsArrangement.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
 #include <aws/quicksight/model/ContributionAnalysisDefault.h>
@@ -254,6 +256,49 @@ class BarChartConfiguration {
 
   ///@{
   /**
+   * <p>The options that determine the default presentation of all bar series in
+   * <code>BarChartVisual</code>.</p>
+   */
+  inline const BarChartDefaultSeriesSettings& GetDefaultSeriesSettings() const { return m_defaultSeriesSettings; }
+  inline bool DefaultSeriesSettingsHasBeenSet() const { return m_defaultSeriesSettingsHasBeenSet; }
+  template <typename DefaultSeriesSettingsT = BarChartDefaultSeriesSettings>
+  void SetDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    m_defaultSeriesSettingsHasBeenSet = true;
+    m_defaultSeriesSettings = std::forward<DefaultSeriesSettingsT>(value);
+  }
+  template <typename DefaultSeriesSettingsT = BarChartDefaultSeriesSettings>
+  BarChartConfiguration& WithDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    SetDefaultSeriesSettings(std::forward<DefaultSeriesSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The series item configuration of a <code>BarChartVisual</code>.</p>
+   */
+  inline const Aws::Vector<BarSeriesItem>& GetSeries() const { return m_series; }
+  inline bool SeriesHasBeenSet() const { return m_seriesHasBeenSet; }
+  template <typename SeriesT = Aws::Vector<BarSeriesItem>>
+  void SetSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series = std::forward<SeriesT>(value);
+  }
+  template <typename SeriesT = Aws::Vector<BarSeriesItem>>
+  BarChartConfiguration& WithSeries(SeriesT&& value) {
+    SetSeries(std::forward<SeriesT>(value));
+    return *this;
+  }
+  template <typename SeriesT = BarSeriesItem>
+  BarChartConfiguration& AddSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series.emplace_back(std::forward<SeriesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The legend display setup of the visual.</p>
    */
   inline const LegendOptions& GetLegend() const { return m_legend; }
@@ -373,54 +418,60 @@ class BarChartConfiguration {
   ///@}
  private:
   BarChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   BarChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   BarChartOrientation m_orientation{BarChartOrientation::NOT_SET};
-  bool m_orientationHasBeenSet = false;
 
   BarsArrangement m_barsArrangement{BarsArrangement::NOT_SET};
-  bool m_barsArrangementHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   SmallMultiplesOptions m_smallMultiplesOptions;
-  bool m_smallMultiplesOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_categoryAxis;
-  bool m_categoryAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_valueAxis;
-  bool m_valueAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_valueLabelOptions;
-  bool m_valueLabelOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_colorLabelOptions;
-  bool m_colorLabelOptionsHasBeenSet = false;
+
+  BarChartDefaultSeriesSettings m_defaultSeriesSettings;
+
+  Aws::Vector<BarSeriesItem> m_series;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   Aws::Vector<ReferenceLine> m_referenceLines;
-  bool m_referenceLinesHasBeenSet = false;
 
   Aws::Vector<ContributionAnalysisDefault> m_contributionAnalysisDefaults;
-  bool m_contributionAnalysisDefaultsHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_orientationHasBeenSet = false;
+  bool m_barsArrangementHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
+  bool m_smallMultiplesOptionsHasBeenSet = false;
+  bool m_categoryAxisHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_valueAxisHasBeenSet = false;
+  bool m_valueLabelOptionsHasBeenSet = false;
+  bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_defaultSeriesSettingsHasBeenSet = false;
+  bool m_seriesHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_referenceLinesHasBeenSet = false;
+  bool m_contributionAnalysisDefaultsHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

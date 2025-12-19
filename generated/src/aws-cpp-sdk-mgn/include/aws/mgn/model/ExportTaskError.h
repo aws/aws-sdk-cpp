@@ -34,24 +34,6 @@ class ExportTaskError {
 
   ///@{
   /**
-   * <p>Export task error data.</p>
-   */
-  inline const ExportErrorData& GetErrorData() const { return m_errorData; }
-  inline bool ErrorDataHasBeenSet() const { return m_errorDataHasBeenSet; }
-  template <typename ErrorDataT = ExportErrorData>
-  void SetErrorData(ErrorDataT&& value) {
-    m_errorDataHasBeenSet = true;
-    m_errorData = std::forward<ErrorDataT>(value);
-  }
-  template <typename ErrorDataT = ExportErrorData>
-  ExportTaskError& WithErrorData(ErrorDataT&& value) {
-    SetErrorData(std::forward<ErrorDataT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Export task error datetime.</p>
    */
   inline const Aws::String& GetErrorDateTime() const { return m_errorDateTime; }
@@ -67,12 +49,30 @@ class ExportTaskError {
     return *this;
   }
   ///@}
- private:
-  ExportErrorData m_errorData;
-  bool m_errorDataHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Export task error data.</p>
+   */
+  inline const ExportErrorData& GetErrorData() const { return m_errorData; }
+  inline bool ErrorDataHasBeenSet() const { return m_errorDataHasBeenSet; }
+  template <typename ErrorDataT = ExportErrorData>
+  void SetErrorData(ErrorDataT&& value) {
+    m_errorDataHasBeenSet = true;
+    m_errorData = std::forward<ErrorDataT>(value);
+  }
+  template <typename ErrorDataT = ExportErrorData>
+  ExportTaskError& WithErrorData(ErrorDataT&& value) {
+    SetErrorData(std::forward<ErrorDataT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_errorDateTime;
+
+  ExportErrorData m_errorData;
   bool m_errorDateTimeHasBeenSet = false;
+  bool m_errorDataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -129,18 +129,18 @@ class DatasetDefinition {
   ///@}
  private:
   AthenaDatasetDefinition m_athenaDatasetDefinition;
-  bool m_athenaDatasetDefinitionHasBeenSet = false;
 
   RedshiftDatasetDefinition m_redshiftDatasetDefinition;
-  bool m_redshiftDatasetDefinitionHasBeenSet = false;
 
   Aws::String m_localPath;
-  bool m_localPathHasBeenSet = false;
 
   DataDistributionType m_dataDistributionType{DataDistributionType::NOT_SET};
-  bool m_dataDistributionTypeHasBeenSet = false;
 
   InputMode m_inputMode{InputMode::NOT_SET};
+  bool m_athenaDatasetDefinitionHasBeenSet = false;
+  bool m_redshiftDatasetDefinitionHasBeenSet = false;
+  bool m_localPathHasBeenSet = false;
+  bool m_dataDistributionTypeHasBeenSet = false;
   bool m_inputModeHasBeenSet = false;
 };
 

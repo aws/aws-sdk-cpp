@@ -173,24 +173,25 @@ class StartConversationRequest : public LexRuntimeV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   ConversationMode m_conversationMode{ConversationMode::NOT_SET};
-  bool m_conversationModeHasBeenSet = false;
 
   std::shared_ptr<StartConversationRequestEventStream> m_requestEventStream;
-  bool m_requestEventStreamHasBeenSet = false;
   StartConversationHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_botIdHasBeenSet = false;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_conversationModeHasBeenSet = false;
+  bool m_requestEventStreamHasBeenSet = false;
 };
 
 }  // namespace Model

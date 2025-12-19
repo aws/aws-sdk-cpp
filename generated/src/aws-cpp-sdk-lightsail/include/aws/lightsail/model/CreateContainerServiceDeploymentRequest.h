@@ -96,12 +96,12 @@ class CreateContainerServiceDeploymentRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Container> m_containers;
-  bool m_containersHasBeenSet = false;
 
   EndpointRequest m_publicEndpoint;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
   bool m_publicEndpointHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class GetPrincipalTagAttributeMapRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityProviderName;
+  bool m_identityPoolIdHasBeenSet = false;
   bool m_identityProviderNameHasBeenSet = false;
 };
 

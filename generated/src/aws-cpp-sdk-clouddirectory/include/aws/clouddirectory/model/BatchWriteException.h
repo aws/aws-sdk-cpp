@@ -78,12 +78,12 @@ class BatchWriteException {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   BatchWriteExceptionType m_type{BatchWriteExceptionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_indexHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

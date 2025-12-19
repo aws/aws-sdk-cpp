@@ -78,9 +78,9 @@ class ParametricConfigurationOverrides {
   ///@}
  private:
   Aws::Vector<Configuration> m_applicationConfiguration;
-  bool m_applicationConfigurationHasBeenSet = false;
 
   ParametricMonitoringConfiguration m_monitoringConfiguration;
+  bool m_applicationConfigurationHasBeenSet = false;
   bool m_monitoringConfigurationHasBeenSet = false;
 };
 

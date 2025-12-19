@@ -145,18 +145,18 @@ class RemixSettings {
   ///@}
  private:
   int m_audioDescriptionAudioChannel{0};
-  bool m_audioDescriptionAudioChannelHasBeenSet = false;
 
   int m_audioDescriptionDataChannel{0};
-  bool m_audioDescriptionDataChannelHasBeenSet = false;
 
   ChannelMapping m_channelMapping;
-  bool m_channelMappingHasBeenSet = false;
 
   int m_channelsIn{0};
-  bool m_channelsInHasBeenSet = false;
 
   int m_channelsOut{0};
+  bool m_audioDescriptionAudioChannelHasBeenSet = false;
+  bool m_audioDescriptionDataChannelHasBeenSet = false;
+  bool m_channelMappingHasBeenSet = false;
+  bool m_channelsInHasBeenSet = false;
   bool m_channelsOutHasBeenSet = false;
 };
 

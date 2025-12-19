@@ -63,9 +63,9 @@ class StartOutpostDecommissionRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_outpostIdentifier;
-  bool m_outpostIdentifierHasBeenSet = false;
 
   bool m_validateOnly{false};
+  bool m_outpostIdentifierHasBeenSet = false;
   bool m_validateOnlyHasBeenSet = false;
 };
 

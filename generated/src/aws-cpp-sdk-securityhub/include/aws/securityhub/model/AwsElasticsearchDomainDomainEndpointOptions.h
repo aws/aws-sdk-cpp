@@ -71,9 +71,9 @@ class AwsElasticsearchDomainDomainEndpointOptions {
   ///@}
  private:
   bool m_enforceHTTPS{false};
-  bool m_enforceHTTPSHasBeenSet = false;
 
   Aws::String m_tLSSecurityPolicy;
+  bool m_enforceHTTPSHasBeenSet = false;
   bool m_tLSSecurityPolicyHasBeenSet = false;
 };
 

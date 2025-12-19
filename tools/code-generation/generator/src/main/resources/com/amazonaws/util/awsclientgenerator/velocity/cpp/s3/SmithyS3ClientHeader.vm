@@ -250,7 +250,7 @@ namespace ${rootNamespace}
         };
 
         static void CrtClientShutdownCallback(void *data);
-        void CancelCrtRequestAsync(aws_s3_meta_request *meta_request) const;
+        void CancelCrtRequest(aws_s3_meta_request *meta_request) const;
         static int S3CrtRequestHeadersCallback(aws_s3_meta_request *meta_request, const struct aws_http_headers *headers, int response_status, void *user_data);
         static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request, const struct aws_byte_cursor *body, uint64_t range_start, void *user_data);
         static void S3CrtRequestProgressCallback(struct aws_s3_meta_request *meta_request, const struct aws_s3_meta_request_progress *progress, void *user_data);

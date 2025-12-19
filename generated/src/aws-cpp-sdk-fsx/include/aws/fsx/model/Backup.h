@@ -352,54 +352,54 @@ class Backup {
   ///@}
  private:
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   BackupLifecycle m_lifecycle{BackupLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   BackupFailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   BackupType m_type{BackupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_progressPercent{0};
-  bool m_progressPercentHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   FileSystem m_fileSystem;
-  bool m_fileSystemHasBeenSet = false;
 
   ActiveDirectoryBackupAttributes m_directoryInformation;
-  bool m_directoryInformationHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_sourceBackupId;
-  bool m_sourceBackupIdHasBeenSet = false;
 
   Aws::String m_sourceBackupRegion;
-  bool m_sourceBackupRegionHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Volume m_volume;
-  bool m_volumeHasBeenSet = false;
 
   long long m_sizeInBytes{0};
+  bool m_backupIdHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_progressPercentHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileSystemHasBeenSet = false;
+  bool m_directoryInformationHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_sourceBackupIdHasBeenSet = false;
+  bool m_sourceBackupRegionHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_volumeHasBeenSet = false;
   bool m_sizeInBytesHasBeenSet = false;
 };
 

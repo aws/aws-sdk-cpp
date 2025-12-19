@@ -182,18 +182,18 @@ class KeysAndAttributes {
   ///@}
  private:
   Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_keys;
-  bool m_keysHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributesToGet;
-  bool m_attributesToGetHasBeenSet = false;
 
   bool m_consistentRead{false};
-  bool m_consistentReadHasBeenSet = false;
 
   Aws::String m_projectionExpression;
-  bool m_projectionExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
+  bool m_keysHasBeenSet = false;
+  bool m_attributesToGetHasBeenSet = false;
+  bool m_consistentReadHasBeenSet = false;
+  bool m_projectionExpressionHasBeenSet = false;
   bool m_expressionAttributeNamesHasBeenSet = false;
 };
 

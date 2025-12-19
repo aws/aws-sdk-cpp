@@ -157,18 +157,18 @@ class ListResourceRecordSetsRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_startRecordName;
-  bool m_startRecordNameHasBeenSet = false;
 
   RRType m_startRecordType{RRType::NOT_SET};
-  bool m_startRecordTypeHasBeenSet = false;
 
   Aws::String m_startRecordIdentifier;
-  bool m_startRecordIdentifierHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_startRecordNameHasBeenSet = false;
+  bool m_startRecordTypeHasBeenSet = false;
+  bool m_startRecordIdentifierHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

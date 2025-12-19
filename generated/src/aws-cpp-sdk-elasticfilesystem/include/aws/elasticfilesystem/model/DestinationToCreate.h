@@ -175,18 +175,18 @@ class DestinationToCreate {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_availabilityZoneName;
-  bool m_availabilityZoneNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_regionHasBeenSet = false;
+  bool m_availabilityZoneNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

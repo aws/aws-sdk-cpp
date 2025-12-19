@@ -214,27 +214,27 @@ class StartQueryRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
-  bool m_queryLanguageHasBeenSet = false;
 
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupNames;
-  bool m_logGroupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
-  bool m_logGroupIdentifiersHasBeenSet = false;
 
   long long m_startTime{0};
-  bool m_startTimeHasBeenSet = false;
 
   long long m_endTime{0};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   int m_limit{0};
+  bool m_queryLanguageHasBeenSet = false;
+  bool m_logGroupNameHasBeenSet = false;
+  bool m_logGroupNamesHasBeenSet = false;
+  bool m_logGroupIdentifiersHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

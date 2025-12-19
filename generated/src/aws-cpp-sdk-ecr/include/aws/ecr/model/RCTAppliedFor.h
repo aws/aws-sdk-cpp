@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ECR {
 namespace Model {
-enum class RCTAppliedFor { NOT_SET, REPLICATION, PULL_THROUGH_CACHE };
+enum class RCTAppliedFor { NOT_SET, REPLICATION, PULL_THROUGH_CACHE, CREATE_ON_PUSH };
 
 namespace RCTAppliedForMapper {
 AWS_ECR_API RCTAppliedFor GetRCTAppliedForForName(const Aws::String& name);

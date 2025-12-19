@@ -60,9 +60,9 @@ class GetObjectLockConfigurationResult {
   ///@}
  private:
   ObjectLockConfiguration m_objectLockConfiguration;
-  bool m_objectLockConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_objectLockConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class GetActiveNamesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_activeNames;
-  bool m_activeNamesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_activeNamesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

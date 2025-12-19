@@ -98,12 +98,12 @@ class UnprocessedStandardsControlAssociationUpdate {
   ///@}
  private:
   StandardsControlAssociationUpdate m_standardsControlAssociationUpdate;
-  bool m_standardsControlAssociationUpdateHasBeenSet = false;
 
   UnprocessedErrorCode m_errorCode{UnprocessedErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorReason;
+  bool m_standardsControlAssociationUpdateHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorReasonHasBeenSet = false;
 };
 

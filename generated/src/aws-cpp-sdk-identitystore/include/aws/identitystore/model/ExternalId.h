@@ -69,9 +69,9 @@ class ExternalId {
   ///@}
  private:
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_issuerHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

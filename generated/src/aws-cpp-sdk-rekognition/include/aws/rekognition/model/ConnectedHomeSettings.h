@@ -84,9 +84,9 @@ class ConnectedHomeSettings {
   ///@}
  private:
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   double m_minConfidence{0.0};
+  bool m_labelsHasBeenSet = false;
   bool m_minConfidenceHasBeenSet = false;
 };
 

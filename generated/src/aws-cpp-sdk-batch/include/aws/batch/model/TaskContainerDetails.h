@@ -602,66 +602,66 @@ class TaskContainerDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_command;
-  bool m_commandHasBeenSet = false;
 
   Aws::Vector<TaskContainerDependency> m_dependsOn;
-  bool m_dependsOnHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   bool m_essential{false};
-  bool m_essentialHasBeenSet = false;
 
   FirelensConfiguration m_firelensConfiguration;
-  bool m_firelensConfigurationHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   LinuxParameters m_linuxParameters;
-  bool m_linuxParametersHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   Aws::Vector<MountPoint> m_mountPoints;
-  bool m_mountPointsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_privileged{false};
-  bool m_privilegedHasBeenSet = false;
 
   bool m_readonlyRootFilesystem{false};
-  bool m_readonlyRootFilesystemHasBeenSet = false;
 
   RepositoryCredentials m_repositoryCredentials;
-  bool m_repositoryCredentialsHasBeenSet = false;
 
   Aws::Vector<ResourceRequirement> m_resourceRequirements;
-  bool m_resourceRequirementsHasBeenSet = false;
 
   Aws::Vector<Secret> m_secrets;
-  bool m_secretsHasBeenSet = false;
 
   Aws::Vector<Ulimit> m_ulimits;
-  bool m_ulimitsHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   int m_exitCode{0};
-  bool m_exitCodeHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfaces;
+  bool m_commandHasBeenSet = false;
+  bool m_dependsOnHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_essentialHasBeenSet = false;
+  bool m_firelensConfigurationHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_linuxParametersHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_mountPointsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_privilegedHasBeenSet = false;
+  bool m_readonlyRootFilesystemHasBeenSet = false;
+  bool m_repositoryCredentialsHasBeenSet = false;
+  bool m_resourceRequirementsHasBeenSet = false;
+  bool m_secretsHasBeenSet = false;
+  bool m_ulimitsHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_exitCodeHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_logStreamNameHasBeenSet = false;
   bool m_networkInterfacesHasBeenSet = false;
 };
 

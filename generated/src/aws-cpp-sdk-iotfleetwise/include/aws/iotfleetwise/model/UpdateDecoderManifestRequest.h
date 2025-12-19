@@ -260,33 +260,33 @@ class UpdateDecoderManifestRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<SignalDecoder> m_signalDecodersToAdd;
-  bool m_signalDecodersToAddHasBeenSet = false;
 
   Aws::Vector<SignalDecoder> m_signalDecodersToUpdate;
-  bool m_signalDecodersToUpdateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_signalDecodersToRemove;
-  bool m_signalDecodersToRemoveHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfacesToAdd;
-  bool m_networkInterfacesToAddHasBeenSet = false;
 
   Aws::Vector<NetworkInterface> m_networkInterfacesToUpdate;
-  bool m_networkInterfacesToUpdateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfacesToRemove;
-  bool m_networkInterfacesToRemoveHasBeenSet = false;
 
   ManifestStatus m_status{ManifestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DefaultForUnmappedSignalsType m_defaultForUnmappedSignals{DefaultForUnmappedSignalsType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_signalDecodersToAddHasBeenSet = false;
+  bool m_signalDecodersToUpdateHasBeenSet = false;
+  bool m_signalDecodersToRemoveHasBeenSet = false;
+  bool m_networkInterfacesToAddHasBeenSet = false;
+  bool m_networkInterfacesToUpdateHasBeenSet = false;
+  bool m_networkInterfacesToRemoveHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_defaultForUnmappedSignalsHasBeenSet = false;
 };
 

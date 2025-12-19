@@ -368,45 +368,45 @@ class ProresSettings {
   ///@}
  private:
   ProresChromaSampling m_chromaSampling{ProresChromaSampling::NOT_SET};
-  bool m_chromaSamplingHasBeenSet = false;
 
   ProresCodecProfile m_codecProfile{ProresCodecProfile::NOT_SET};
-  bool m_codecProfileHasBeenSet = false;
 
   ProresFramerateControl m_framerateControl{ProresFramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   ProresFramerateConversionAlgorithm m_framerateConversionAlgorithm{ProresFramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   ProresInterlaceMode m_interlaceMode{ProresInterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   ProresParControl m_parControl{ProresParControl::NOT_SET};
-  bool m_parControlHasBeenSet = false;
 
   int m_parDenominator{0};
-  bool m_parDenominatorHasBeenSet = false;
 
   int m_parNumerator{0};
-  bool m_parNumeratorHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   ProresScanTypeConversionMode m_scanTypeConversionMode{ProresScanTypeConversionMode::NOT_SET};
-  bool m_scanTypeConversionModeHasBeenSet = false;
 
   ProresSlowPal m_slowPal{ProresSlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   ProresTelecine m_telecine{ProresTelecine::NOT_SET};
+  bool m_chromaSamplingHasBeenSet = false;
+  bool m_codecProfileHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_parControlHasBeenSet = false;
+  bool m_parDenominatorHasBeenSet = false;
+  bool m_parNumeratorHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
+  bool m_scanTypeConversionModeHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
   bool m_telecineHasBeenSet = false;
 };
 

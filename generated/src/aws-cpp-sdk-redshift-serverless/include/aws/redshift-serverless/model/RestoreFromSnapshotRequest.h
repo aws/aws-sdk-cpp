@@ -164,24 +164,24 @@ class RestoreFromSnapshotRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_adminPasswordSecretKmsKeyId;
-  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
 
   bool m_manageAdminPassword{false};
-  bool m_manageAdminPasswordHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_snapshotName;
-  bool m_snapshotNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
+  bool m_manageAdminPasswordHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_snapshotNameHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

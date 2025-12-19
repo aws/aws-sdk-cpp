@@ -60,9 +60,9 @@ class DeleteTransitGatewayRouteTableResponse {
   ///@}
  private:
   TransitGatewayRouteTable m_transitGatewayRouteTable;
-  bool m_transitGatewayRouteTableHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayRouteTableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

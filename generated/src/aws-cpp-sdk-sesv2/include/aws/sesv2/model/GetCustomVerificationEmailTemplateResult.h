@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
+#include <aws/sesv2/model/Tag.h>
 
 #include <utility>
 
@@ -102,6 +104,30 @@ class GetCustomVerificationEmailTemplateResult {
 
   ///@{
   /**
+   * <p>An array of objects that define the tags (keys and values) that are
+   * associated with the custom verification email template.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  GetCustomVerificationEmailTemplateResult& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  GetCustomVerificationEmailTemplateResult& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The URL that the recipient of the verification email is sent to if his or her
    * address is successfully verified.</p>
    */
@@ -152,24 +178,27 @@ class GetCustomVerificationEmailTemplateResult {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Aws::String m_templateSubject;
-  bool m_templateSubjectHasBeenSet = false;
 
   Aws::String m_templateContent;
-  bool m_templateContentHasBeenSet = false;
+
+  Aws::Vector<Tag> m_tags;
 
   Aws::String m_successRedirectionURL;
-  bool m_successRedirectionURLHasBeenSet = false;
 
   Aws::String m_failureRedirectionURL;
-  bool m_failureRedirectionURLHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateNameHasBeenSet = false;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_templateSubjectHasBeenSet = false;
+  bool m_templateContentHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_successRedirectionURLHasBeenSet = false;
+  bool m_failureRedirectionURLHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

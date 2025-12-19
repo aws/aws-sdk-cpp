@@ -118,15 +118,15 @@ class AdminScope {
   ///@}
  private:
   AccountScope m_accountScope;
-  bool m_accountScopeHasBeenSet = false;
 
   OrganizationalUnitScope m_organizationalUnitScope;
-  bool m_organizationalUnitScopeHasBeenSet = false;
 
   RegionScope m_regionScope;
-  bool m_regionScopeHasBeenSet = false;
 
   PolicyTypeScope m_policyTypeScope;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_organizationalUnitScopeHasBeenSet = false;
+  bool m_regionScopeHasBeenSet = false;
   bool m_policyTypeScopeHasBeenSet = false;
 };
 

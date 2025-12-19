@@ -140,21 +140,21 @@ class KubernetesMetadata {
   ///@}
  private:
   Aws::String m_localServiceName;
-  bool m_localServiceNameHasBeenSet = false;
 
   Aws::String m_localPodName;
-  bool m_localPodNameHasBeenSet = false;
 
   Aws::String m_localPodNamespace;
-  bool m_localPodNamespaceHasBeenSet = false;
 
   Aws::String m_remoteServiceName;
-  bool m_remoteServiceNameHasBeenSet = false;
 
   Aws::String m_remotePodName;
-  bool m_remotePodNameHasBeenSet = false;
 
   Aws::String m_remotePodNamespace;
+  bool m_localServiceNameHasBeenSet = false;
+  bool m_localPodNameHasBeenSet = false;
+  bool m_localPodNamespaceHasBeenSet = false;
+  bool m_remoteServiceNameHasBeenSet = false;
+  bool m_remotePodNameHasBeenSet = false;
   bool m_remotePodNamespaceHasBeenSet = false;
 };
 

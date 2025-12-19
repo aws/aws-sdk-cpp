@@ -251,36 +251,36 @@ class SummaryMetricQueryResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   MetricQueryStatus m_queryStatus{MetricQueryStatus::NOT_SET};
-  bool m_queryStatusHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   MetricName m_metricName{MetricName::NOT_SET};
-  bool m_metricNameHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   AggregationPeriod m_aggregationPeriod{AggregationPeriod::NOT_SET};
-  bool m_aggregationPeriodHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTimestamp{};
-  bool m_endTimestampHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<MetricQueryValue> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_unit;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryStatusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_aggregationPeriodHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_endTimestampHasBeenSet = false;
+  bool m_timestampsHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

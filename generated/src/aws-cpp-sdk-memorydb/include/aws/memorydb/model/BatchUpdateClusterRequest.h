@@ -75,9 +75,9 @@ class BatchUpdateClusterRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_clusterNames;
-  bool m_clusterNamesHasBeenSet = false;
 
   ServiceUpdateRequest m_serviceUpdate;
+  bool m_clusterNamesHasBeenSet = false;
   bool m_serviceUpdateHasBeenSet = false;
 };
 

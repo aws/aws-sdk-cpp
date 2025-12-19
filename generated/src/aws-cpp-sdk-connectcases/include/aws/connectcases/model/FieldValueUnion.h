@@ -123,18 +123,18 @@ class FieldValueUnion {
   ///@}
  private:
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   EmptyFieldValue m_emptyValue;
-  bool m_emptyValueHasBeenSet = false;
 
   Aws::String m_userArnValue;
+  bool m_stringValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_emptyValueHasBeenSet = false;
   bool m_userArnValueHasBeenSet = false;
 };
 

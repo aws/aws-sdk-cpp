@@ -107,15 +107,15 @@ class Contact {
   ///@}
  private:
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ContactType m_type{ContactType::NOT_SET};
+  bool m_contactArnHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

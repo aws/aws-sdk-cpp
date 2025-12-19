@@ -111,9 +111,9 @@ class DnsConfig {
   ///@}
  private:
   RoutingPolicy m_routingPolicy{RoutingPolicy::NOT_SET};
-  bool m_routingPolicyHasBeenSet = false;
 
   Aws::Vector<DnsRecord> m_dnsRecords;
+  bool m_routingPolicyHasBeenSet = false;
   bool m_dnsRecordsHasBeenSet = false;
 };
 

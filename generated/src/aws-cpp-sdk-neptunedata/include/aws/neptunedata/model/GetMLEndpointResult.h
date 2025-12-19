@@ -112,18 +112,18 @@ class GetMLEndpointResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MlResourceDefinition m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   MlConfigDefinition m_endpointConfig;
-  bool m_endpointConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_endpointConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

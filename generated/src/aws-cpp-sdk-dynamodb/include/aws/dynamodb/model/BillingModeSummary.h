@@ -80,9 +80,9 @@ class BillingModeSummary {
   ///@}
  private:
   BillingMode m_billingMode{BillingMode::NOT_SET};
-  bool m_billingModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateToPayPerRequestDateTime{};
+  bool m_billingModeHasBeenSet = false;
   bool m_lastUpdateToPayPerRequestDateTimeHasBeenSet = false;
 };
 

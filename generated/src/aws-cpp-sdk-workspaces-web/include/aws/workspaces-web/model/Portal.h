@@ -423,66 +423,66 @@ class Portal {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   RendererType m_rendererType{RendererType::NOT_SET};
-  bool m_rendererTypeHasBeenSet = false;
 
   BrowserType m_browserType{BrowserType::NOT_SET};
-  bool m_browserTypeHasBeenSet = false;
 
   PortalStatus m_portalStatus{PortalStatus::NOT_SET};
-  bool m_portalStatusHasBeenSet = false;
 
   Aws::String m_portalEndpoint;
-  bool m_portalEndpointHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_browserSettingsArn;
-  bool m_browserSettingsArnHasBeenSet = false;
 
   Aws::String m_dataProtectionSettingsArn;
-  bool m_dataProtectionSettingsArnHasBeenSet = false;
 
   Aws::String m_userSettingsArn;
-  bool m_userSettingsArnHasBeenSet = false;
 
   Aws::String m_networkSettingsArn;
-  bool m_networkSettingsArnHasBeenSet = false;
 
   Aws::String m_sessionLoggerArn;
-  bool m_sessionLoggerArnHasBeenSet = false;
 
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_userAccessLoggingSettingsArn;
-  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   Aws::String m_ipAccessSettingsArn;
-  bool m_ipAccessSettingsArnHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_maxConcurrentSessions{0};
+  bool m_portalArnHasBeenSet = false;
+  bool m_rendererTypeHasBeenSet = false;
+  bool m_browserTypeHasBeenSet = false;
+  bool m_portalStatusHasBeenSet = false;
+  bool m_portalEndpointHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_browserSettingsArnHasBeenSet = false;
+  bool m_dataProtectionSettingsArnHasBeenSet = false;
+  bool m_userSettingsArnHasBeenSet = false;
+  bool m_networkSettingsArnHasBeenSet = false;
+  bool m_sessionLoggerArnHasBeenSet = false;
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_ipAccessSettingsArnHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_maxConcurrentSessionsHasBeenSet = false;
 };
 

@@ -105,12 +105,12 @@ class ThingGroupIndexingConfiguration {
   ///@}
  private:
   ThingGroupIndexingMode m_thingGroupIndexingMode{ThingGroupIndexingMode::NOT_SET};
-  bool m_thingGroupIndexingModeHasBeenSet = false;
 
   Aws::Vector<Field> m_managedFields;
-  bool m_managedFieldsHasBeenSet = false;
 
   Aws::Vector<Field> m_customFields;
+  bool m_thingGroupIndexingModeHasBeenSet = false;
+  bool m_managedFieldsHasBeenSet = false;
   bool m_customFieldsHasBeenSet = false;
 };
 

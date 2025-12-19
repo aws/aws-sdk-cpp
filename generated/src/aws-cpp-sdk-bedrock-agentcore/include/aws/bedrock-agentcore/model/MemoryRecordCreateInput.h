@@ -134,18 +134,18 @@ class MemoryRecordCreateInput {
   ///@}
  private:
   Aws::String m_requestIdentifier;
-  bool m_requestIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
 
   MemoryContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_memoryStrategyId;
+  bool m_requestIdentifierHasBeenSet = false;
+  bool m_namespacesHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_memoryStrategyIdHasBeenSet = false;
 };
 

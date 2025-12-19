@@ -94,12 +94,12 @@ class DescribeInstanceTypeLimitsRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   OpenSearchPartitionInstanceType m_instanceType{OpenSearchPartitionInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_engineVersion;
+  bool m_domainNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
 };
 

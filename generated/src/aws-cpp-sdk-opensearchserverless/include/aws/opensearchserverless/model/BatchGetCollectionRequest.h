@@ -85,9 +85,9 @@ class BatchGetCollectionRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
+  bool m_idsHasBeenSet = false;
   bool m_namesHasBeenSet = false;
 };
 

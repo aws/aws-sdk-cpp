@@ -105,15 +105,15 @@ class UpdatePipelineExecutionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_pipelineExecutionArn;
-  bool m_pipelineExecutionArnHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDescription;
-  bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
   Aws::String m_pipelineExecutionDisplayName;
-  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
   ParallelismConfiguration m_parallelismConfiguration;
+  bool m_pipelineExecutionArnHasBeenSet = false;
+  bool m_pipelineExecutionDescriptionHasBeenSet = false;
+  bool m_pipelineExecutionDisplayNameHasBeenSet = false;
   bool m_parallelismConfigurationHasBeenSet = false;
 };
 

@@ -567,78 +567,78 @@ class LoadBalancerTlsCertificate {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   bool m_isAttached{false};
-  bool m_isAttachedHasBeenSet = false;
 
   LoadBalancerTlsCertificateStatus m_status{LoadBalancerTlsCertificateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<LoadBalancerTlsCertificateDomainValidationRecord> m_domainValidationRecords;
-  bool m_domainValidationRecordsHasBeenSet = false;
 
   LoadBalancerTlsCertificateFailureReason m_failureReason{LoadBalancerTlsCertificateFailureReason::NOT_SET};
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_issuedAt{};
-  bool m_issuedAtHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_keyAlgorithm;
-  bool m_keyAlgorithmHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
-  bool m_notBeforeHasBeenSet = false;
 
   LoadBalancerTlsCertificateRenewalSummary m_renewalSummary;
-  bool m_renewalSummaryHasBeenSet = false;
 
   LoadBalancerTlsCertificateRevocationReason m_revocationReason{LoadBalancerTlsCertificateRevocationReason::NOT_SET};
-  bool m_revocationReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedAt{};
-  bool m_revokedAtHasBeenSet = false;
 
   Aws::String m_serial;
-  bool m_serialHasBeenSet = false;
 
   Aws::String m_signatureAlgorithm;
-  bool m_signatureAlgorithmHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subjectAlternativeNames;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_isAttachedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_domainValidationRecordsHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_issuedAtHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_keyAlgorithmHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_notBeforeHasBeenSet = false;
+  bool m_renewalSummaryHasBeenSet = false;
+  bool m_revocationReasonHasBeenSet = false;
+  bool m_revokedAtHasBeenSet = false;
+  bool m_serialHasBeenSet = false;
+  bool m_signatureAlgorithmHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
   bool m_subjectAlternativeNamesHasBeenSet = false;
 };
 

@@ -95,15 +95,15 @@ class GetConfiguredAudienceModelPolicyResult {
   ///@}
  private:
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelPolicy;
-  bool m_configuredAudienceModelPolicyHasBeenSet = false;
 
   Aws::String m_policyHash;
-  bool m_policyHashHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
+  bool m_configuredAudienceModelPolicyHasBeenSet = false;
+  bool m_policyHashHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListFindingsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_findingArns;
-  bool m_findingArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_findingArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

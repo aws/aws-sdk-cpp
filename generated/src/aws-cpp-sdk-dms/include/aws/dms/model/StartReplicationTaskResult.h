@@ -66,9 +66,9 @@ class StartReplicationTaskResult {
   ///@}
  private:
   ReplicationTask m_replicationTask;
-  bool m_replicationTaskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationTaskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

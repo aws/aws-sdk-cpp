@@ -115,15 +115,15 @@ class SubmitOpportunityRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   SalesInvolvementType m_involvementType{SalesInvolvementType::NOT_SET};
-  bool m_involvementTypeHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
+  bool m_catalogHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_involvementTypeHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

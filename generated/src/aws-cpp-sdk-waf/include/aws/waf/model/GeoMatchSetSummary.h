@@ -79,9 +79,9 @@ class GeoMatchSetSummary {
   ///@}
  private:
   Aws::String m_geoMatchSetId;
-  bool m_geoMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_geoMatchSetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

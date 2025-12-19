@@ -385,60 +385,60 @@ class ProjectVersionDescription {
   ///@}
  private:
   Aws::String m_projectVersionArn;
-  bool m_projectVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   int m_minInferenceUnits{0};
-  bool m_minInferenceUnitsHasBeenSet = false;
 
   ProjectVersionStatus m_status{ProjectVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   long long m_billableTrainingTimeInSeconds{0};
-  bool m_billableTrainingTimeInSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingEndTimestamp{};
-  bool m_trainingEndTimestampHasBeenSet = false;
 
   OutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   TrainingDataResult m_trainingDataResult;
-  bool m_trainingDataResultHasBeenSet = false;
 
   TestingDataResult m_testingDataResult;
-  bool m_testingDataResultHasBeenSet = false;
 
   EvaluationResult m_evaluationResult;
-  bool m_evaluationResultHasBeenSet = false;
 
   GroundTruthManifest m_manifestSummary;
-  bool m_manifestSummaryHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   int m_maxInferenceUnits{0};
-  bool m_maxInferenceUnitsHasBeenSet = false;
 
   Aws::String m_sourceProjectVersionArn;
-  bool m_sourceProjectVersionArnHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   CustomizationFeature m_feature{CustomizationFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_baseModelVersion;
-  bool m_baseModelVersionHasBeenSet = false;
 
   CustomizationFeatureConfig m_featureConfig;
+  bool m_projectVersionArnHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_minInferenceUnitsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_billableTrainingTimeInSecondsHasBeenSet = false;
+  bool m_trainingEndTimestampHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_trainingDataResultHasBeenSet = false;
+  bool m_testingDataResultHasBeenSet = false;
+  bool m_evaluationResultHasBeenSet = false;
+  bool m_manifestSummaryHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_maxInferenceUnitsHasBeenSet = false;
+  bool m_sourceProjectVersionArnHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
+  bool m_baseModelVersionHasBeenSet = false;
   bool m_featureConfigHasBeenSet = false;
 };
 

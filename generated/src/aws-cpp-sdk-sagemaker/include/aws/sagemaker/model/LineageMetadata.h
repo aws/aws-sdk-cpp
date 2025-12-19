@@ -132,15 +132,15 @@ class LineageMetadata {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_actionArns;
-  bool m_actionArnsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_artifactArns;
-  bool m_artifactArnsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_contextArns;
-  bool m_contextArnsHasBeenSet = false;
 
   Aws::Vector<AssociationInfo> m_associations;
+  bool m_actionArnsHasBeenSet = false;
+  bool m_artifactArnsHasBeenSet = false;
+  bool m_contextArnsHasBeenSet = false;
   bool m_associationsHasBeenSet = false;
 };
 

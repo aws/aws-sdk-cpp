@@ -90,9 +90,10 @@ class ImportRestApiRequest : public StreamingAPIGatewayRequest {
   ///@}
  private:
   bool m_failOnWarnings{false};
-  bool m_failOnWarningsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+
+  bool m_failOnWarningsHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

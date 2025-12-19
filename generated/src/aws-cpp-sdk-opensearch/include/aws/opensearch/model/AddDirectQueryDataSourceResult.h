@@ -61,9 +61,9 @@ class AddDirectQueryDataSourceResult {
   ///@}
  private:
   Aws::String m_dataSourceArn;
-  bool m_dataSourceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

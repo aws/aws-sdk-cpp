@@ -136,18 +136,18 @@ class ManagedScaling {
   ///@}
  private:
   ManagedScalingStatus m_status{ManagedScalingStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   int m_targetCapacity{0};
-  bool m_targetCapacityHasBeenSet = false;
 
   int m_minimumScalingStepSize{0};
-  bool m_minimumScalingStepSizeHasBeenSet = false;
 
   int m_maximumScalingStepSize{0};
-  bool m_maximumScalingStepSizeHasBeenSet = false;
 
   int m_instanceWarmupPeriod{0};
+  bool m_statusHasBeenSet = false;
+  bool m_targetCapacityHasBeenSet = false;
+  bool m_minimumScalingStepSizeHasBeenSet = false;
+  bool m_maximumScalingStepSizeHasBeenSet = false;
   bool m_instanceWarmupPeriodHasBeenSet = false;
 };
 

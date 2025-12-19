@@ -78,9 +78,9 @@ class RemoveTagsRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_aRNHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

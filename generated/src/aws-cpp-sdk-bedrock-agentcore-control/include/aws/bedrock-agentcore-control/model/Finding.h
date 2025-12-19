@@ -80,9 +80,9 @@ class Finding {
   ///@}
  private:
   FindingType m_type{FindingType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

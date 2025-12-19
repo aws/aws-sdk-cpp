@@ -90,12 +90,12 @@ class AllocatePublicVirtualInterfaceRequest : public DirectConnectRequest {
   ///@}
  private:
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   NewPublicVirtualInterfaceAllocation m_newPublicVirtualInterfaceAllocation;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_ownerAccountHasBeenSet = false;
   bool m_newPublicVirtualInterfaceAllocationHasBeenSet = false;
 };
 

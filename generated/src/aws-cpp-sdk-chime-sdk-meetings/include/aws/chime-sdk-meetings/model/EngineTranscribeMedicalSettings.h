@@ -138,21 +138,21 @@ class EngineTranscribeMedicalSettings {
   ///@}
  private:
   TranscribeMedicalLanguageCode m_languageCode{TranscribeMedicalLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   TranscribeMedicalSpecialty m_specialty{TranscribeMedicalSpecialty::NOT_SET};
-  bool m_specialtyHasBeenSet = false;
 
   TranscribeMedicalType m_type{TranscribeMedicalType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   TranscribeMedicalRegion m_region{TranscribeMedicalRegion::NOT_SET};
-  bool m_regionHasBeenSet = false;
 
   TranscribeMedicalContentIdentificationType m_contentIdentificationType{TranscribeMedicalContentIdentificationType::NOT_SET};
+  bool m_languageCodeHasBeenSet = false;
+  bool m_specialtyHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_contentIdentificationTypeHasBeenSet = false;
 };
 

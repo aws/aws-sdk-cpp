@@ -86,12 +86,12 @@ class ListAcceptedPortfolioSharesResult {
   ///@}
  private:
   Aws::Vector<PortfolioDetail> m_portfolioDetails;
-  bool m_portfolioDetailsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portfolioDetailsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

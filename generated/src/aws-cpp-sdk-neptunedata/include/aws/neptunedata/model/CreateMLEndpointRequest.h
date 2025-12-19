@@ -206,30 +206,30 @@ class CreateMLEndpointRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_mlModelTrainingJobId;
-  bool m_mlModelTrainingJobIdHasBeenSet = false;
 
   Aws::String m_mlModelTransformJobId;
-  bool m_mlModelTransformJobIdHasBeenSet = false;
 
   bool m_update{false};
-  bool m_updateHasBeenSet = false;
 
   Aws::String m_neptuneIamRoleArn;
-  bool m_neptuneIamRoleArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_volumeEncryptionKMSKey;
+  bool m_idHasBeenSet = false;
+  bool m_mlModelTrainingJobIdHasBeenSet = false;
+  bool m_mlModelTransformJobIdHasBeenSet = false;
+  bool m_updateHasBeenSet = false;
+  bool m_neptuneIamRoleArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
   bool m_volumeEncryptionKMSKeyHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class DeleteImportResult {
   ///@}
  private:
   Aws::String m_importId;
-  bool m_importIdHasBeenSet = false;
 
   ImportStatus m_importStatus{ImportStatus::NOT_SET};
-  bool m_importStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_importIdHasBeenSet = false;
+  bool m_importStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

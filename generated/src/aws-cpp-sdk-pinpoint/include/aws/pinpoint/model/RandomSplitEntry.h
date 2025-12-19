@@ -72,9 +72,9 @@ class RandomSplitEntry {
   ///@}
  private:
   Aws::String m_nextActivity;
-  bool m_nextActivityHasBeenSet = false;
 
   int m_percentage{0};
+  bool m_nextActivityHasBeenSet = false;
   bool m_percentageHasBeenSet = false;
 };
 

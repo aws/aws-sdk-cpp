@@ -139,18 +139,18 @@ class ListAssociatedAssetsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_hierarchyId;
-  bool m_hierarchyIdHasBeenSet = false;
 
   TraversalDirection m_traversalDirection{TraversalDirection::NOT_SET};
-  bool m_traversalDirectionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_assetIdHasBeenSet = false;
+  bool m_hierarchyIdHasBeenSet = false;
+  bool m_traversalDirectionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

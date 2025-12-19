@@ -122,18 +122,18 @@ class TextInputCardInput {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CardType m_type{CardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_placeholder;
-  bool m_placeholderHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_titleHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_placeholderHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

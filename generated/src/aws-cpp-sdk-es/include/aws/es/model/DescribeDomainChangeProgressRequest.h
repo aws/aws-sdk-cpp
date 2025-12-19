@@ -77,9 +77,9 @@ class DescribeDomainChangeProgressRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_changeId;
+  bool m_domainNameHasBeenSet = false;
   bool m_changeIdHasBeenSet = false;
 };
 

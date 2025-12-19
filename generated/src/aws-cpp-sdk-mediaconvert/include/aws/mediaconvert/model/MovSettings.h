@@ -127,18 +127,18 @@ class MovSettings {
   ///@}
  private:
   MovClapAtom m_clapAtom{MovClapAtom::NOT_SET};
-  bool m_clapAtomHasBeenSet = false;
 
   MovCslgAtom m_cslgAtom{MovCslgAtom::NOT_SET};
-  bool m_cslgAtomHasBeenSet = false;
 
   MovMpeg2FourCCControl m_mpeg2FourCCControl{MovMpeg2FourCCControl::NOT_SET};
-  bool m_mpeg2FourCCControlHasBeenSet = false;
 
   MovPaddingControl m_paddingControl{MovPaddingControl::NOT_SET};
-  bool m_paddingControlHasBeenSet = false;
 
   MovReference m_reference{MovReference::NOT_SET};
+  bool m_clapAtomHasBeenSet = false;
+  bool m_cslgAtomHasBeenSet = false;
+  bool m_mpeg2FourCCControlHasBeenSet = false;
+  bool m_paddingControlHasBeenSet = false;
   bool m_referenceHasBeenSet = false;
 };
 

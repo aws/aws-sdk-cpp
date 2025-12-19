@@ -108,12 +108,12 @@ class ModifyMemoryStrategies {
   ///@}
  private:
   Aws::Vector<MemoryStrategyInput> m_addMemoryStrategies;
-  bool m_addMemoryStrategiesHasBeenSet = false;
 
   Aws::Vector<ModifyMemoryStrategyInput> m_modifyMemoryStrategies;
-  bool m_modifyMemoryStrategiesHasBeenSet = false;
 
   Aws::Vector<DeleteMemoryStrategyInput> m_deleteMemoryStrategies;
+  bool m_addMemoryStrategiesHasBeenSet = false;
+  bool m_modifyMemoryStrategiesHasBeenSet = false;
   bool m_deleteMemoryStrategiesHasBeenSet = false;
 };
 

@@ -255,36 +255,36 @@ class EcsTaskDetails {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_definitionArn;
-  bool m_definitionArnHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_taskCreatedAt{};
-  bool m_taskCreatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Volume> m_volumes;
-  bool m_volumesHasBeenSet = false;
 
   Aws::Vector<Container> m_containers;
-  bool m_containersHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_launchType;
+  bool m_arnHasBeenSet = false;
+  bool m_definitionArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_taskCreatedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_volumesHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
   bool m_launchTypeHasBeenSet = false;
 };
 

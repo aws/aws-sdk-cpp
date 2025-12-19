@@ -68,9 +68,9 @@ class CommentContent {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   CommentBodyTextType m_contentType{CommentBodyTextType::NOT_SET};
+  bool m_bodyHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

@@ -177,21 +177,21 @@ class ResponseHeadersPolicySecurityHeadersConfig {
   ///@}
  private:
   ResponseHeadersPolicyXSSProtection m_xSSProtection;
-  bool m_xSSProtectionHasBeenSet = false;
 
   ResponseHeadersPolicyFrameOptions m_frameOptions;
-  bool m_frameOptionsHasBeenSet = false;
 
   ResponseHeadersPolicyReferrerPolicy m_referrerPolicy;
-  bool m_referrerPolicyHasBeenSet = false;
 
   ResponseHeadersPolicyContentSecurityPolicy m_contentSecurityPolicy;
-  bool m_contentSecurityPolicyHasBeenSet = false;
 
   ResponseHeadersPolicyContentTypeOptions m_contentTypeOptions;
-  bool m_contentTypeOptionsHasBeenSet = false;
 
   ResponseHeadersPolicyStrictTransportSecurity m_strictTransportSecurity;
+  bool m_xSSProtectionHasBeenSet = false;
+  bool m_frameOptionsHasBeenSet = false;
+  bool m_referrerPolicyHasBeenSet = false;
+  bool m_contentSecurityPolicyHasBeenSet = false;
+  bool m_contentTypeOptionsHasBeenSet = false;
   bool m_strictTransportSecurityHasBeenSet = false;
 };
 

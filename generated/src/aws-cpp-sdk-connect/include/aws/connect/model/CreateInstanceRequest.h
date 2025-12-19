@@ -159,24 +159,24 @@ class CreateInstanceRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DirectoryType m_identityManagementType{DirectoryType::NOT_SET};
-  bool m_identityManagementTypeHasBeenSet = false;
 
   Aws::String m_instanceAlias;
-  bool m_instanceAliasHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   bool m_inboundCallsEnabled{false};
-  bool m_inboundCallsEnabledHasBeenSet = false;
 
   bool m_outboundCallsEnabled{false};
-  bool m_outboundCallsEnabledHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_identityManagementTypeHasBeenSet = false;
+  bool m_instanceAliasHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_inboundCallsEnabledHasBeenSet = false;
+  bool m_outboundCallsEnabledHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

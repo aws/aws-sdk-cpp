@@ -81,12 +81,12 @@ class BadRequestException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   BadRequestReason m_reason{BadRequestReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   BadRequestDetails m_details;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

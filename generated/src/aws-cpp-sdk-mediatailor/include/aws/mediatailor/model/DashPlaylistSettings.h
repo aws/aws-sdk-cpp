@@ -100,15 +100,15 @@ class DashPlaylistSettings {
   ///@}
  private:
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   int m_minBufferTimeSeconds{0};
-  bool m_minBufferTimeSecondsHasBeenSet = false;
 
   int m_minUpdatePeriodSeconds{0};
-  bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
   int m_suggestedPresentationDelaySeconds{0};
+  bool m_manifestWindowSecondsHasBeenSet = false;
+  bool m_minBufferTimeSecondsHasBeenSet = false;
+  bool m_minUpdatePeriodSecondsHasBeenSet = false;
   bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
 };
 

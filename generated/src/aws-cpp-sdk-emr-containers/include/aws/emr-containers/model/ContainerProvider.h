@@ -87,12 +87,12 @@ class ContainerProvider {
   ///@}
  private:
   ContainerProviderType m_type{ContainerProviderType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ContainerInfo m_info;
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_infoHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class StartAssessmentRunResult {
   ///@}
  private:
   Aws::String m_assessmentRunArn;
-  bool m_assessmentRunArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentRunArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

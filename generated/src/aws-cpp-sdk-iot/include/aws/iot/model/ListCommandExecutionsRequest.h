@@ -206,30 +206,30 @@ class ListCommandExecutionsRequest : public IoTRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   CommandNamespace m_namespace{CommandNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   CommandExecutionStatus m_status{CommandExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   TimeFilter m_startedTimeFilter;
-  bool m_startedTimeFilterHasBeenSet = false;
 
   TimeFilter m_completedTimeFilter;
-  bool m_completedTimeFilterHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_commandArn;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_startedTimeFilterHasBeenSet = false;
+  bool m_completedTimeFilterHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
   bool m_commandArnHasBeenSet = false;
 };
 

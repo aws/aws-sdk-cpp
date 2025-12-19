@@ -180,24 +180,24 @@ class CreateMembershipRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   MembershipQueryLogStatus m_queryLogStatus{MembershipQueryLogStatus::NOT_SET};
-  bool m_queryLogStatusHasBeenSet = false;
 
   MembershipJobLogStatus m_jobLogStatus{MembershipJobLogStatus::NOT_SET};
-  bool m_jobLogStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;
-  bool m_defaultResultConfigurationHasBeenSet = false;
 
   MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
-  bool m_defaultJobResultConfigurationHasBeenSet = false;
 
   MembershipPaymentConfiguration m_paymentConfiguration;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_queryLogStatusHasBeenSet = false;
+  bool m_jobLogStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_defaultResultConfigurationHasBeenSet = false;
+  bool m_defaultJobResultConfigurationHasBeenSet = false;
   bool m_paymentConfigurationHasBeenSet = false;
 };
 

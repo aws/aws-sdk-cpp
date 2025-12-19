@@ -119,15 +119,15 @@ class RDSEffectiveRecommendationPreferences {
   ///@}
  private:
   Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
-  bool m_cpuVendorArchitecturesHasBeenSet = false;
 
   EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics{EnhancedInfrastructureMetrics::NOT_SET};
-  bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
   LookBackPeriodPreference m_lookBackPeriod{LookBackPeriodPreference::NOT_SET};
-  bool m_lookBackPeriodHasBeenSet = false;
 
   RDSSavingsEstimationMode m_savingsEstimationMode;
+  bool m_cpuVendorArchitecturesHasBeenSet = false;
+  bool m_enhancedInfrastructureMetricsHasBeenSet = false;
+  bool m_lookBackPeriodHasBeenSet = false;
   bool m_savingsEstimationModeHasBeenSet = false;
 };
 

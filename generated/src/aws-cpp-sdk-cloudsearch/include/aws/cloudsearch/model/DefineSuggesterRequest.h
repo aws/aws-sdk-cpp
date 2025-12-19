@@ -71,9 +71,9 @@ class DefineSuggesterRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Suggester m_suggester;
+  bool m_domainNameHasBeenSet = false;
   bool m_suggesterHasBeenSet = false;
 };
 

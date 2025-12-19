@@ -109,15 +109,15 @@ class UpdateEnvironmentRequest : public Cloud9Request {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ManagedCredentialsAction m_managedCredentialsAction{ManagedCredentialsAction::NOT_SET};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_managedCredentialsActionHasBeenSet = false;
 };
 

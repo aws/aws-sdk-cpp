@@ -84,12 +84,12 @@ class DeleteProjectMembershipRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Member m_member;
-  bool m_memberHasBeenSet = false;
 
   Aws::String m_projectIdentifier;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
 };
 

@@ -79,12 +79,12 @@ class DescribeFlowResult {
   ///@}
  private:
   Flow m_flow;
-  bool m_flowHasBeenSet = false;
 
   Messages m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -308,39 +308,39 @@ class CreateRuleGroupRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_ruleGroupName;
-  bool m_ruleGroupNameHasBeenSet = false;
 
   RuleGroup m_ruleGroup;
-  bool m_ruleGroupHasBeenSet = false;
 
   Aws::String m_rules;
-  bool m_rulesHasBeenSet = false;
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   SourceMetadata m_sourceMetadata;
-  bool m_sourceMetadataHasBeenSet = false;
 
   bool m_analyzeRuleGroup{false};
-  bool m_analyzeRuleGroupHasBeenSet = false;
 
   SummaryConfiguration m_summaryConfiguration;
+  bool m_ruleGroupNameHasBeenSet = false;
+  bool m_ruleGroupHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_sourceMetadataHasBeenSet = false;
+  bool m_analyzeRuleGroupHasBeenSet = false;
   bool m_summaryConfigurationHasBeenSet = false;
 };
 

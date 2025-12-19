@@ -65,9 +65,9 @@ class GetChannelRequest : public RepostspaceRequest {
   ///@}
  private:
   Aws::String m_spaceId;
-  bool m_spaceIdHasBeenSet = false;
 
   Aws::String m_channelId;
+  bool m_spaceIdHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
 };
 

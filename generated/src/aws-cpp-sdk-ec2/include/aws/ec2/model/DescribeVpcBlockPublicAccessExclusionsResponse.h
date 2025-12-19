@@ -89,12 +89,12 @@ class DescribeVpcBlockPublicAccessExclusionsResponse {
   ///@}
  private:
   Aws::Vector<VpcBlockPublicAccessExclusion> m_vpcBlockPublicAccessExclusions;
-  bool m_vpcBlockPublicAccessExclusionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcBlockPublicAccessExclusionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

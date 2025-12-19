@@ -157,24 +157,24 @@ class ImprovementSummary {
   ///@}
  private:
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_questionTitle;
-  bool m_questionTitleHasBeenSet = false;
 
   Risk m_risk{Risk::NOT_SET};
-  bool m_riskHasBeenSet = false;
 
   Aws::String m_improvementPlanUrl;
-  bool m_improvementPlanUrlHasBeenSet = false;
 
   Aws::Vector<ChoiceImprovementPlan> m_improvementPlans;
-  bool m_improvementPlansHasBeenSet = false;
 
   JiraConfiguration m_jiraConfiguration;
+  bool m_questionIdHasBeenSet = false;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_questionTitleHasBeenSet = false;
+  bool m_riskHasBeenSet = false;
+  bool m_improvementPlanUrlHasBeenSet = false;
+  bool m_improvementPlansHasBeenSet = false;
   bool m_jiraConfigurationHasBeenSet = false;
 };
 

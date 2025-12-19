@@ -148,18 +148,18 @@ class DescribeSecurityGroupRulesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupRuleIds;
-  bool m_securityGroupRuleIdsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filtersHasBeenSet = false;
+  bool m_securityGroupRuleIdsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

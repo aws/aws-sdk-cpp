@@ -415,66 +415,66 @@ class GetMLInputChannelResult {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_mlInputChannelArn;
-  bool m_mlInputChannelArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_configuredModelAlgorithmAssociations;
-  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
 
   MLInputChannelStatus m_status{MLInputChannelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StatusDetails m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   int m_retentionInDays{0};
-  bool m_retentionInDaysHasBeenSet = false;
 
   long long m_numberOfRecords{0};
-  bool m_numberOfRecordsHasBeenSet = false;
 
   PrivacyBudgets m_privacyBudgets;
-  bool m_privacyBudgetsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SyntheticDataConfiguration m_syntheticDataConfiguration;
-  bool m_syntheticDataConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   InputChannel m_inputChannel;
-  bool m_inputChannelHasBeenSet = false;
 
   Aws::String m_protectedQueryIdentifier;
-  bool m_protectedQueryIdentifierHasBeenSet = false;
 
   double m_numberOfFiles{0.0};
-  bool m_numberOfFilesHasBeenSet = false;
 
   double m_sizeInGb{0.0};
-  bool m_sizeInGbHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_mlInputChannelArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_retentionInDaysHasBeenSet = false;
+  bool m_numberOfRecordsHasBeenSet = false;
+  bool m_privacyBudgetsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_syntheticDataConfigurationHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_inputChannelHasBeenSet = false;
+  bool m_protectedQueryIdentifierHasBeenSet = false;
+  bool m_numberOfFilesHasBeenSet = false;
+  bool m_sizeInGbHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

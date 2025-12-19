@@ -85,12 +85,12 @@ class ListAuditMitigationActionsExecutionsResult {
   ///@}
  private:
   Aws::Vector<AuditMitigationActionExecutionMetadata> m_actionsExecutions;
-  bool m_actionsExecutionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionsExecutionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class ListBillEstimatesRequest : public BCMPricingCalculatorRequest {
   ///@}
  private:
   Aws::Vector<ListBillEstimatesFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   FilterTimestamp m_createdAtFilter;
-  bool m_createdAtFilterHasBeenSet = false;
 
   FilterTimestamp m_expiresAtFilter;
-  bool m_expiresAtFilterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filtersHasBeenSet = false;
+  bool m_createdAtFilterHasBeenSet = false;
+  bool m_expiresAtFilterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

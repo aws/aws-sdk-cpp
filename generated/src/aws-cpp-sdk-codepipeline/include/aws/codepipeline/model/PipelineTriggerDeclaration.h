@@ -74,9 +74,9 @@ class PipelineTriggerDeclaration {
   ///@}
  private:
   PipelineTriggerProviderType m_providerType{PipelineTriggerProviderType::NOT_SET};
-  bool m_providerTypeHasBeenSet = false;
 
   GitConfiguration m_gitConfiguration;
+  bool m_providerTypeHasBeenSet = false;
   bool m_gitConfigurationHasBeenSet = false;
 };
 

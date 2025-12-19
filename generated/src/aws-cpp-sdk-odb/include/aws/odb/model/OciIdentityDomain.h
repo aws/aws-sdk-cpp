@@ -142,21 +142,21 @@ class OciIdentityDomain {
   ///@}
  private:
   Aws::String m_ociIdentityDomainId;
-  bool m_ociIdentityDomainIdHasBeenSet = false;
 
   Aws::String m_ociIdentityDomainResourceUrl;
-  bool m_ociIdentityDomainResourceUrlHasBeenSet = false;
 
   Aws::String m_ociIdentityDomainUrl;
-  bool m_ociIdentityDomainUrlHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_accountSetupCloudFormationUrl;
+  bool m_ociIdentityDomainIdHasBeenSet = false;
+  bool m_ociIdentityDomainResourceUrlHasBeenSet = false;
+  bool m_ociIdentityDomainUrlHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_accountSetupCloudFormationUrlHasBeenSet = false;
 };
 

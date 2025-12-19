@@ -147,21 +147,21 @@ class DeviceInstance {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   InstanceStatus m_status{InstanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_udid;
-  bool m_udidHasBeenSet = false;
 
   InstanceProfile m_instanceProfile;
+  bool m_arnHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_udidHasBeenSet = false;
   bool m_instanceProfileHasBeenSet = false;
 };
 

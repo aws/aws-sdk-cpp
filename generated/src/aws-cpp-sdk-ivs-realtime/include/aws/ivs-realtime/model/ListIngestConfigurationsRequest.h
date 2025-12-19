@@ -101,15 +101,15 @@ class ListIngestConfigurationsRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_filterByStageArn;
-  bool m_filterByStageArnHasBeenSet = false;
 
   IngestConfigurationState m_filterByState{IngestConfigurationState::NOT_SET};
-  bool m_filterByStateHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filterByStageArnHasBeenSet = false;
+  bool m_filterByStateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

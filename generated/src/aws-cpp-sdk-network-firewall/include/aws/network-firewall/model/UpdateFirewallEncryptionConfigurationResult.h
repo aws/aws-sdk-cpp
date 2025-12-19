@@ -123,18 +123,18 @@ class UpdateFirewallEncryptionConfigurationResult {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_firewallNameHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -154,24 +154,24 @@ class AuditCheckDetails {
   ///@}
  private:
   AuditCheckRunStatus m_checkRunStatus{AuditCheckRunStatus::NOT_SET};
-  bool m_checkRunStatusHasBeenSet = false;
 
   bool m_checkCompliant{false};
-  bool m_checkCompliantHasBeenSet = false;
 
   long long m_totalResourcesCount{0};
-  bool m_totalResourcesCountHasBeenSet = false;
 
   long long m_nonCompliantResourcesCount{0};
-  bool m_nonCompliantResourcesCountHasBeenSet = false;
 
   long long m_suppressedNonCompliantResourcesCount{0};
-  bool m_suppressedNonCompliantResourcesCountHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_checkRunStatusHasBeenSet = false;
+  bool m_checkCompliantHasBeenSet = false;
+  bool m_totalResourcesCountHasBeenSet = false;
+  bool m_nonCompliantResourcesCountHasBeenSet = false;
+  bool m_suppressedNonCompliantResourcesCountHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

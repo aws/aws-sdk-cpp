@@ -134,18 +134,18 @@ class DescribeCacheClustersRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheClusterId;
-  bool m_cacheClusterIdHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_showCacheNodeInfo{false};
-  bool m_showCacheNodeInfoHasBeenSet = false;
 
   bool m_showCacheClustersNotInReplicationGroups{false};
+  bool m_cacheClusterIdHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_showCacheNodeInfoHasBeenSet = false;
   bool m_showCacheClustersNotInReplicationGroupsHasBeenSet = false;
 };
 

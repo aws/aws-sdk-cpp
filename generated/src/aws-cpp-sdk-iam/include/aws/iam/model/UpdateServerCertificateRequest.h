@@ -103,12 +103,12 @@ class UpdateServerCertificateRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_serverCertificateName;
-  bool m_serverCertificateNameHasBeenSet = false;
 
   Aws::String m_newPath;
-  bool m_newPathHasBeenSet = false;
 
   Aws::String m_newServerCertificateName;
+  bool m_serverCertificateNameHasBeenSet = false;
+  bool m_newPathHasBeenSet = false;
   bool m_newServerCertificateNameHasBeenSet = false;
 };
 

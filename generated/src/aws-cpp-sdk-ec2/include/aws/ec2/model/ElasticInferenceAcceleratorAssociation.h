@@ -118,15 +118,15 @@ class ElasticInferenceAcceleratorAssociation {
   ///@}
  private:
   Aws::String m_elasticInferenceAcceleratorArn;
-  bool m_elasticInferenceAcceleratorArnHasBeenSet = false;
 
   Aws::String m_elasticInferenceAcceleratorAssociationId;
-  bool m_elasticInferenceAcceleratorAssociationIdHasBeenSet = false;
 
   Aws::String m_elasticInferenceAcceleratorAssociationState;
-  bool m_elasticInferenceAcceleratorAssociationStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_elasticInferenceAcceleratorAssociationTime{};
+  bool m_elasticInferenceAcceleratorArnHasBeenSet = false;
+  bool m_elasticInferenceAcceleratorAssociationIdHasBeenSet = false;
+  bool m_elasticInferenceAcceleratorAssociationStateHasBeenSet = false;
   bool m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = false;
 };
 

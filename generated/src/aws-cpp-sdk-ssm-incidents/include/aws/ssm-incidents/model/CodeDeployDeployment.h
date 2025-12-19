@@ -109,15 +109,15 @@ class CodeDeployDeployment {
   ///@}
  private:
   Aws::String m_deploymentGroupArn;
-  bool m_deploymentGroupArnHasBeenSet = false;
 
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_deploymentGroupArnHasBeenSet = false;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class StartADAssessmentRequest : public DirectoryServiceRequest {
   ///@}
  private:
   AssessmentConfiguration m_assessmentConfiguration;
-  bool m_assessmentConfigurationHasBeenSet = false;
 
   Aws::String m_directoryId;
+  bool m_assessmentConfigurationHasBeenSet = false;
   bool m_directoryIdHasBeenSet = false;
 };
 

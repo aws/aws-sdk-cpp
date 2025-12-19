@@ -85,12 +85,12 @@ class WorkloadConfiguration {
   ///@}
  private:
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Tier m_tier{Tier::NOT_SET};
-  bool m_tierHasBeenSet = false;
 
   Aws::String m_configuration;
+  bool m_workloadNameHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

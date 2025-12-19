@@ -62,9 +62,9 @@ class OverrideTimeSlice {
   ///@}
  private:
   int m_hours{0};
-  bool m_hoursHasBeenSet = false;
 
   int m_minutes{0};
+  bool m_hoursHasBeenSet = false;
   bool m_minutesHasBeenSet = false;
 };
 

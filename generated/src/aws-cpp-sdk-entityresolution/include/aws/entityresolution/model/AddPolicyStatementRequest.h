@@ -159,21 +159,21 @@ class AddPolicyStatementRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_statementId;
-  bool m_statementIdHasBeenSet = false;
 
   StatementEffect m_effect{StatementEffect::NOT_SET};
-  bool m_effectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_condition;
+  bool m_arnHasBeenSet = false;
+  bool m_statementIdHasBeenSet = false;
+  bool m_effectHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

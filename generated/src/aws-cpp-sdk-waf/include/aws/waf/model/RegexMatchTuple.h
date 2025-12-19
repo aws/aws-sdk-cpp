@@ -144,12 +144,12 @@ class RegexMatchTuple {
   ///@}
  private:
   FieldToMatch m_fieldToMatch;
-  bool m_fieldToMatchHasBeenSet = false;
 
   TextTransformation m_textTransformation{TextTransformation::NOT_SET};
-  bool m_textTransformationHasBeenSet = false;
 
   Aws::String m_regexPatternSetId;
+  bool m_fieldToMatchHasBeenSet = false;
+  bool m_textTransformationHasBeenSet = false;
   bool m_regexPatternSetIdHasBeenSet = false;
 };
 

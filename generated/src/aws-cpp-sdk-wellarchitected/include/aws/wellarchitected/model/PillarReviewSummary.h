@@ -124,18 +124,18 @@ class PillarReviewSummary {
   ///@}
  private:
   Aws::String m_pillarId;
-  bool m_pillarIdHasBeenSet = false;
 
   Aws::String m_pillarName;
-  bool m_pillarNameHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Map<Risk, int> m_riskCounts;
-  bool m_riskCountsHasBeenSet = false;
 
   Aws::Map<Risk, int> m_prioritizedRiskCounts;
+  bool m_pillarIdHasBeenSet = false;
+  bool m_pillarNameHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_riskCountsHasBeenSet = false;
   bool m_prioritizedRiskCountsHasBeenSet = false;
 };
 

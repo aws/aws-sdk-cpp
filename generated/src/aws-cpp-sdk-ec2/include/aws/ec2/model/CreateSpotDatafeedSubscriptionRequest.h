@@ -95,12 +95,12 @@ class CreateSpotDatafeedSubscriptionRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_dryRunHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

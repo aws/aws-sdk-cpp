@@ -248,33 +248,33 @@ class ListClosedWorkflowExecutionsRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   ExecutionTimeFilter m_startTimeFilter;
-  bool m_startTimeFilterHasBeenSet = false;
 
   ExecutionTimeFilter m_closeTimeFilter;
-  bool m_closeTimeFilterHasBeenSet = false;
 
   WorkflowExecutionFilter m_executionFilter;
-  bool m_executionFilterHasBeenSet = false;
 
   CloseStatusFilter m_closeStatusFilter;
-  bool m_closeStatusFilterHasBeenSet = false;
 
   WorkflowTypeFilter m_typeFilter;
-  bool m_typeFilterHasBeenSet = false;
 
   TagFilter m_tagFilter;
-  bool m_tagFilterHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   int m_maximumPageSize{0};
-  bool m_maximumPageSizeHasBeenSet = false;
 
   bool m_reverseOrder{false};
+  bool m_domainHasBeenSet = false;
+  bool m_startTimeFilterHasBeenSet = false;
+  bool m_closeTimeFilterHasBeenSet = false;
+  bool m_executionFilterHasBeenSet = false;
+  bool m_closeStatusFilterHasBeenSet = false;
+  bool m_typeFilterHasBeenSet = false;
+  bool m_tagFilterHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_maximumPageSizeHasBeenSet = false;
   bool m_reverseOrderHasBeenSet = false;
 };
 

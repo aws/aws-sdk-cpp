@@ -116,15 +116,15 @@ class GetAutoScalingGroupRecommendationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AutoScalingGroupRecommendation> m_autoScalingGroupRecommendations;
-  bool m_autoScalingGroupRecommendationsHasBeenSet = false;
 
   Aws::Vector<GetRecommendationError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_autoScalingGroupRecommendationsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

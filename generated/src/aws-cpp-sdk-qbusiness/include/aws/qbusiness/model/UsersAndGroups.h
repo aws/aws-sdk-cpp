@@ -82,9 +82,9 @@ class UsersAndGroups {
   ///@}
  private:
   Aws::Vector<Aws::String> m_userIds;
-  bool m_userIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroups;
+  bool m_userIdsHasBeenSet = false;
   bool m_userGroupsHasBeenSet = false;
 };
 

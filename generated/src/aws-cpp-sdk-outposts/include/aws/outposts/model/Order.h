@@ -208,30 +208,30 @@ class Order {
   ///@}
  private:
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_orderId;
-  bool m_orderIdHasBeenSet = false;
 
   OrderStatus m_status{OrderStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<LineItem> m_lineItems;
-  bool m_lineItemsHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_orderSubmissionDate{};
-  bool m_orderSubmissionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_orderFulfilledDate{};
-  bool m_orderFulfilledDateHasBeenSet = false;
 
   PaymentTerm m_paymentTerm{PaymentTerm::NOT_SET};
-  bool m_paymentTermHasBeenSet = false;
 
   OrderType m_orderType{OrderType::NOT_SET};
+  bool m_outpostIdHasBeenSet = false;
+  bool m_orderIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lineItemsHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_orderSubmissionDateHasBeenSet = false;
+  bool m_orderFulfilledDateHasBeenSet = false;
+  bool m_paymentTermHasBeenSet = false;
   bool m_orderTypeHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DataProviderDescriptorDefinition {
   ///@}
  private:
   Aws::String m_dataProviderIdentifier;
-  bool m_dataProviderIdentifierHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
+  bool m_dataProviderIdentifierHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
   bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 };
 

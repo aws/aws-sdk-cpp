@@ -139,21 +139,21 @@ class ContactFlowModuleAliasSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_aliasId;
-  bool m_aliasIdHasBeenSet = false;
 
   long long m_version{0};
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_aliasName;
-  bool m_aliasNameHasBeenSet = false;
 
   Aws::String m_aliasDescription;
-  bool m_aliasDescriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_arnHasBeenSet = false;
+  bool m_aliasIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
+  bool m_aliasDescriptionHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

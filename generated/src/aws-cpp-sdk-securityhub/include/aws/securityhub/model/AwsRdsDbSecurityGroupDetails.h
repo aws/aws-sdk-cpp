@@ -175,24 +175,24 @@ class AwsRdsDbSecurityGroupDetails {
   ///@}
  private:
   Aws::String m_dbSecurityGroupArn;
-  bool m_dbSecurityGroupArnHasBeenSet = false;
 
   Aws::String m_dbSecurityGroupDescription;
-  bool m_dbSecurityGroupDescriptionHasBeenSet = false;
 
   Aws::String m_dbSecurityGroupName;
-  bool m_dbSecurityGroupNameHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbSecurityGroupEc2SecurityGroup> m_ec2SecurityGroups;
-  bool m_ec2SecurityGroupsHasBeenSet = false;
 
   Aws::Vector<AwsRdsDbSecurityGroupIpRange> m_ipRanges;
-  bool m_ipRangesHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_dbSecurityGroupArnHasBeenSet = false;
+  bool m_dbSecurityGroupDescriptionHasBeenSet = false;
+  bool m_dbSecurityGroupNameHasBeenSet = false;
+  bool m_ec2SecurityGroupsHasBeenSet = false;
+  bool m_ipRangesHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

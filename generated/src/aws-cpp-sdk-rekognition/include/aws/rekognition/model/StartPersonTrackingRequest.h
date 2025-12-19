@@ -115,15 +115,15 @@ class StartPersonTrackingRequest : public RekognitionRequest {
   ///@}
  private:
   Video m_video;
-  bool m_videoHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   NotificationChannel m_notificationChannel;
-  bool m_notificationChannelHasBeenSet = false;
 
   Aws::String m_jobTag;
+  bool m_videoHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_notificationChannelHasBeenSet = false;
   bool m_jobTagHasBeenSet = false;
 };
 

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/GameLiftStreamsRequest.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
+#include <aws/gameliftstreams/model/PerformanceStatsConfiguration.h>
 #include <aws/gameliftstreams/model/Protocol.h>
 
 #include <utility>
@@ -314,42 +315,64 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for sharing the stream session's performance stats
+   * with the client</p>
+   */
+  inline const PerformanceStatsConfiguration& GetPerformanceStatsConfiguration() const { return m_performanceStatsConfiguration; }
+  inline bool PerformanceStatsConfigurationHasBeenSet() const { return m_performanceStatsConfigurationHasBeenSet; }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  void SetPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    m_performanceStatsConfigurationHasBeenSet = true;
+    m_performanceStatsConfiguration = std::forward<PerformanceStatsConfigurationT>(value);
+  }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  StartStreamSessionRequest& WithPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    SetPerformanceStatsConfiguration(std::forward<PerformanceStatsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_signalRequest;
-  bool m_signalRequestHasBeenSet = false;
 
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_locations;
-  bool m_locationsHasBeenSet = false;
 
   int m_connectionTimeoutSeconds{0};
-  bool m_connectionTimeoutSecondsHasBeenSet = false;
 
   int m_sessionLengthSeconds{0};
-  bool m_sessionLengthSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalLaunchArgs;
-  bool m_additionalLaunchArgsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEnvironmentVariables;
+
+  PerformanceStatsConfiguration m_performanceStatsConfiguration;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_signalRequestHasBeenSet = false;
+  bool m_applicationIdentifierHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_locationsHasBeenSet = false;
+  bool m_connectionTimeoutSecondsHasBeenSet = false;
+  bool m_sessionLengthSecondsHasBeenSet = false;
+  bool m_additionalLaunchArgsHasBeenSet = false;
   bool m_additionalEnvironmentVariablesHasBeenSet = false;
+  bool m_performanceStatsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

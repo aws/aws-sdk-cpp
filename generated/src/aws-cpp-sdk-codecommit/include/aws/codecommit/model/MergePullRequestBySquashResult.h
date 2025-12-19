@@ -58,9 +58,9 @@ class MergePullRequestBySquashResult {
   ///@}
  private:
   PullRequest m_pullRequest;
-  bool m_pullRequestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pullRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

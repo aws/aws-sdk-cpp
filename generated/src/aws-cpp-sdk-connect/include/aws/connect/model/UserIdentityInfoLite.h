@@ -68,9 +68,9 @@ class UserIdentityInfoLite {
   ///@}
  private:
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
+  bool m_firstNameHasBeenSet = false;
   bool m_lastNameHasBeenSet = false;
 };
 

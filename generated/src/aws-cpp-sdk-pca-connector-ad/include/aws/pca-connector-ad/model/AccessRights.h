@@ -68,9 +68,9 @@ class AccessRights {
   ///@}
  private:
   AccessRight m_autoEnroll{AccessRight::NOT_SET};
-  bool m_autoEnrollHasBeenSet = false;
 
   AccessRight m_enroll{AccessRight::NOT_SET};
+  bool m_autoEnrollHasBeenSet = false;
   bool m_enrollHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class SsoUserProfileDetails {
   ///@}
  private:
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

@@ -200,27 +200,27 @@ class AwsIamUserDetails {
   ///@}
  private:
   Aws::Vector<AwsIamAttachedManagedPolicy> m_attachedManagedPolicies;
-  bool m_attachedManagedPoliciesHasBeenSet = false;
 
   Aws::String m_createDate;
-  bool m_createDateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupList;
-  bool m_groupListHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   AwsIamPermissionsBoundary m_permissionsBoundary;
-  bool m_permissionsBoundaryHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::Vector<AwsIamUserPolicy> m_userPolicyList;
+  bool m_attachedManagedPoliciesHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_groupListHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_permissionsBoundaryHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_userPolicyListHasBeenSet = false;
 };
 

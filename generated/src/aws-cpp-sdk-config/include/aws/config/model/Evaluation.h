@@ -137,18 +137,18 @@ class Evaluation {
   ///@}
  private:
   Aws::String m_complianceResourceType;
-  bool m_complianceResourceTypeHasBeenSet = false;
 
   Aws::String m_complianceResourceId;
-  bool m_complianceResourceIdHasBeenSet = false;
 
   ComplianceType m_complianceType{ComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_annotation;
-  bool m_annotationHasBeenSet = false;
 
   Aws::Utils::DateTime m_orderingTimestamp{};
+  bool m_complianceResourceTypeHasBeenSet = false;
+  bool m_complianceResourceIdHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_annotationHasBeenSet = false;
   bool m_orderingTimestampHasBeenSet = false;
 };
 

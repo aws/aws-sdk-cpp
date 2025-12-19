@@ -85,9 +85,9 @@ class S3ClassificationScopeExclusionUpdate {
   ///@}
  private:
   Aws::Vector<Aws::String> m_bucketNames;
-  bool m_bucketNamesHasBeenSet = false;
 
   ClassificationScopeUpdateOperation m_operation{ClassificationScopeUpdateOperation::NOT_SET};
+  bool m_bucketNamesHasBeenSet = false;
   bool m_operationHasBeenSet = false;
 };
 

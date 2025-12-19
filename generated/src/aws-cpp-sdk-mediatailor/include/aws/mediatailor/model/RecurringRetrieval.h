@@ -82,8 +82,8 @@ class RecurringRetrieval {
 
   ///@{
   /**
-   * <p>Indicates the type of traffic shaping used for traffic shaping and limiting
-   * the number of requests to the ADS at one time.</p>
+   * <p>Indicates the type of traffic shaping used to limit the number of requests to
+   * the ADS at one time.</p>
    */
   inline TrafficShapingType GetTrafficShapingType() const { return m_trafficShapingType; }
   inline bool TrafficShapingTypeHasBeenSet() const { return m_trafficShapingTypeHasBeenSet; }
@@ -99,8 +99,10 @@ class RecurringRetrieval {
 
   ///@{
   /**
-   * <p>Configuration for spreading ADS traffic across a set window instead of
-   * sending ADS requests for all sessions at the same time.</p>
+   * <p>The configuration that tells Elemental MediaTailor how many seconds to spread
+   * out requests to the ad decision server (ADS). Instead of sending ADS requests
+   * for all sessions at the same time, MediaTailor spreads the requests across the
+   * amount of time specified in the retrieval window.</p>
    */
   inline const TrafficShapingRetrievalWindow& GetTrafficShapingRetrievalWindow() const { return m_trafficShapingRetrievalWindow; }
   inline bool TrafficShapingRetrievalWindowHasBeenSet() const { return m_trafficShapingRetrievalWindowHasBeenSet; }
@@ -118,9 +120,9 @@ class RecurringRetrieval {
 
   ///@{
   /**
-   * <p>The configuration for TPS-based traffic shaping that limits the number of
-   * requests to the ad decision server (ADS) based on transactions per second
-   * instead of time windows.</p>
+   * <p>The configuration for TPS-based traffic shaping. This approach limits
+   * requests to the ad decision server (ADS) based on transactions per second and
+   * concurrent users.</p>
    */
   inline const TrafficShapingTpsConfiguration& GetTrafficShapingTpsConfiguration() const { return m_trafficShapingTpsConfiguration; }
   inline bool TrafficShapingTpsConfigurationHasBeenSet() const { return m_trafficShapingTpsConfigurationHasBeenSet; }
@@ -137,18 +139,18 @@ class RecurringRetrieval {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
-  bool m_dynamicVariablesHasBeenSet = false;
 
   int m_delayAfterAvailEndSeconds{0};
-  bool m_delayAfterAvailEndSecondsHasBeenSet = false;
 
   TrafficShapingType m_trafficShapingType{TrafficShapingType::NOT_SET};
-  bool m_trafficShapingTypeHasBeenSet = false;
 
   TrafficShapingRetrievalWindow m_trafficShapingRetrievalWindow;
-  bool m_trafficShapingRetrievalWindowHasBeenSet = false;
 
   TrafficShapingTpsConfiguration m_trafficShapingTpsConfiguration;
+  bool m_dynamicVariablesHasBeenSet = false;
+  bool m_delayAfterAvailEndSecondsHasBeenSet = false;
+  bool m_trafficShapingTypeHasBeenSet = false;
+  bool m_trafficShapingRetrievalWindowHasBeenSet = false;
   bool m_trafficShapingTpsConfigurationHasBeenSet = false;
 };
 

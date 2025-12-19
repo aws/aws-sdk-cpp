@@ -111,12 +111,12 @@ class OutpostConfigRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_outpostArns;
-  bool m_outpostArnsHasBeenSet = false;
 
   Aws::String m_controlPlaneInstanceType;
-  bool m_controlPlaneInstanceTypeHasBeenSet = false;
 
   ControlPlanePlacementRequest m_controlPlanePlacement;
+  bool m_outpostArnsHasBeenSet = false;
+  bool m_controlPlaneInstanceTypeHasBeenSet = false;
   bool m_controlPlanePlacementHasBeenSet = false;
 };
 

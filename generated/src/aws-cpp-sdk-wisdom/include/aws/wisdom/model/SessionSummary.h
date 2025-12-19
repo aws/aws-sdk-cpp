@@ -104,15 +104,15 @@ class SessionSummary {
   ///@}
  private:
   Aws::String m_assistantArn;
-  bool m_assistantArnHasBeenSet = false;
 
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionId;
+  bool m_assistantArnHasBeenSet = false;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
   bool m_sessionIdHasBeenSet = false;
 };
 

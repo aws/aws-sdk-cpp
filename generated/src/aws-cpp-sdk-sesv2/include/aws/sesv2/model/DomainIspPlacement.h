@@ -121,18 +121,18 @@ class DomainIspPlacement {
   ///@}
  private:
   Aws::String m_ispName;
-  bool m_ispNameHasBeenSet = false;
 
   long long m_inboxRawCount{0};
-  bool m_inboxRawCountHasBeenSet = false;
 
   long long m_spamRawCount{0};
-  bool m_spamRawCountHasBeenSet = false;
 
   double m_inboxPercentage{0.0};
-  bool m_inboxPercentageHasBeenSet = false;
 
   double m_spamPercentage{0.0};
+  bool m_ispNameHasBeenSet = false;
+  bool m_inboxRawCountHasBeenSet = false;
+  bool m_spamRawCountHasBeenSet = false;
+  bool m_inboxPercentageHasBeenSet = false;
   bool m_spamPercentageHasBeenSet = false;
 };
 

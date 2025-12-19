@@ -21,7 +21,7 @@ class JsonValue;
 namespace Glacier {
 namespace Model {
 /**
- * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
+ * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateVaultLockOutput">AWS
  * API Reference</a></p>
@@ -65,9 +65,9 @@ class InitiateVaultLockResult {
   ///@}
  private:
   Aws::String m_lockId;
-  bool m_lockIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lockIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class ListRuleTypesRequest : public CodePipelineRequest {
   ///@}
  private:
   RuleOwner m_ruleOwnerFilter{RuleOwner::NOT_SET};
-  bool m_ruleOwnerFilterHasBeenSet = false;
 
   Aws::String m_regionFilter;
+  bool m_ruleOwnerFilterHasBeenSet = false;
   bool m_regionFilterHasBeenSet = false;
 };
 

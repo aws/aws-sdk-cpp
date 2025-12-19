@@ -70,9 +70,9 @@ class DeleteRouteTableRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_routeTableId;
+  bool m_dryRunHasBeenSet = false;
   bool m_routeTableIdHasBeenSet = false;
 };
 

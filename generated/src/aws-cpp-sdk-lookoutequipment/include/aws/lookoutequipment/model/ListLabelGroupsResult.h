@@ -85,12 +85,12 @@ class ListLabelGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<LabelGroupSummary> m_labelGroupSummaries;
-  bool m_labelGroupSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_labelGroupSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class CustomerProfilesIntegrationSummary {
   ///@}
  private:
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   Aws::Map<EventType, Aws::String> m_objectTypeNames;
+  bool m_domainArnHasBeenSet = false;
   bool m_objectTypeNamesHasBeenSet = false;
 };
 

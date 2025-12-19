@@ -71,9 +71,9 @@ class DeleteConditionalForwarderRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_remoteDomainName;
+  bool m_directoryIdHasBeenSet = false;
   bool m_remoteDomainNameHasBeenSet = false;
 };
 

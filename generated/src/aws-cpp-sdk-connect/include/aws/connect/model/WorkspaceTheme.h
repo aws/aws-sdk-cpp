@@ -69,9 +69,9 @@ class WorkspaceTheme {
   ///@}
  private:
   WorkspaceThemeConfig m_light;
-  bool m_lightHasBeenSet = false;
 
   WorkspaceThemeConfig m_dark;
+  bool m_lightHasBeenSet = false;
   bool m_darkHasBeenSet = false;
 };
 

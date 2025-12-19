@@ -166,24 +166,24 @@ class CreateApplicationRequest : public MigrationHubRefactorSpacesRequest {
   ///@}
  private:
   ApiGatewayProxyInput m_apiGatewayProxy;
-  bool m_apiGatewayProxyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProxyType m_proxyType{ProxyType::NOT_SET};
-  bool m_proxyTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_apiGatewayProxyHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_proxyTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

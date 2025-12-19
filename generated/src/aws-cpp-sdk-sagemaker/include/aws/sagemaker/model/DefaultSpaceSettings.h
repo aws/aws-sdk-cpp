@@ -189,27 +189,27 @@ class DefaultSpaceSettings {
   ///@}
  private:
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   JupyterServerAppSettings m_jupyterServerAppSettings;
-  bool m_jupyterServerAppSettingsHasBeenSet = false;
 
   KernelGatewayAppSettings m_kernelGatewayAppSettings;
-  bool m_kernelGatewayAppSettingsHasBeenSet = false;
 
   JupyterLabAppSettings m_jupyterLabAppSettings;
-  bool m_jupyterLabAppSettingsHasBeenSet = false;
 
   DefaultSpaceStorageSettings m_spaceStorageSettings;
-  bool m_spaceStorageSettingsHasBeenSet = false;
 
   CustomPosixUserConfig m_customPosixUserConfig;
-  bool m_customPosixUserConfigHasBeenSet = false;
 
   Aws::Vector<CustomFileSystemConfig> m_customFileSystemConfigs;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_jupyterServerAppSettingsHasBeenSet = false;
+  bool m_kernelGatewayAppSettingsHasBeenSet = false;
+  bool m_jupyterLabAppSettingsHasBeenSet = false;
+  bool m_spaceStorageSettingsHasBeenSet = false;
+  bool m_customPosixUserConfigHasBeenSet = false;
   bool m_customFileSystemConfigsHasBeenSet = false;
 };
 

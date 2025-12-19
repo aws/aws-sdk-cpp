@@ -127,15 +127,15 @@ This field corresponds to
   ///@}
  private:
   double m_height{0.0};
-  bool m_heightHasBeenSet = false;
 
   double m_leftOffset{0.0};
-  bool m_leftOffsetHasBeenSet = false;
 
   double m_topOffset{0.0};
-  bool m_topOffsetHasBeenSet = false;
 
   double m_width{0.0};
+  bool m_heightHasBeenSet = false;
+  bool m_leftOffsetHasBeenSet = false;
+  bool m_topOffsetHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class BatchGetAssetPropertyValueHistorySkippedEntry {
   ///@}
  private:
   Aws::String m_entryId;
-  bool m_entryIdHasBeenSet = false;
 
   BatchEntryCompletionStatus m_completionStatus{BatchEntryCompletionStatus::NOT_SET};
-  bool m_completionStatusHasBeenSet = false;
 
   BatchGetAssetPropertyValueHistoryErrorInfo m_errorInfo;
+  bool m_entryIdHasBeenSet = false;
+  bool m_completionStatusHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

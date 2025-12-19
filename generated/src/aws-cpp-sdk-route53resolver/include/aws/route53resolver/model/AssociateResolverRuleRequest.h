@@ -53,7 +53,9 @@ class AssociateResolverRuleRequest : public Route53ResolverRequest {
   ///@{
   /**
    * <p>A name for the association that you're creating between a Resolver rule and a
-   * VPC.</p>
+   * VPC.</p> <p>The name can be up to 64 characters long and can contain letters
+   * (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name
+   * cannot consist of only numbers.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -88,12 +90,12 @@ class AssociateResolverRuleRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_resolverRuleId;
-  bool m_resolverRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_vPCId;
+  bool m_resolverRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_vPCIdHasBeenSet = false;
 };
 

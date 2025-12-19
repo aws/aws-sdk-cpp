@@ -160,24 +160,24 @@ class DescribeClusterVersionsRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterType;
-  bool m_clusterTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_defaultOnly{false};
-  bool m_defaultOnlyHasBeenSet = false;
 
   bool m_includeAll{false};
-  bool m_includeAllHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clusterVersions;
-  bool m_clusterVersionsHasBeenSet = false;
 
   VersionStatus m_versionStatus{VersionStatus::NOT_SET};
+  bool m_clusterTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_defaultOnlyHasBeenSet = false;
+  bool m_includeAllHasBeenSet = false;
+  bool m_clusterVersionsHasBeenSet = false;
   bool m_versionStatusHasBeenSet = false;
 };
 

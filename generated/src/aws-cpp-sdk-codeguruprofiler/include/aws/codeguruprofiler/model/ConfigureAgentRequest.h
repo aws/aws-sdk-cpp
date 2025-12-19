@@ -112,12 +112,12 @@ class ConfigureAgentRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   Aws::String m_fleetInstanceId;
-  bool m_fleetInstanceIdHasBeenSet = false;
 
   Aws::Map<MetadataField, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_profilingGroupName;
+  bool m_fleetInstanceIdHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_profilingGroupNameHasBeenSet = false;
 };
 

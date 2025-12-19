@@ -2446,7 +2446,13 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Describes an existing snapshot job.</p> <p>Poll job descriptions after a job
    * starts to know the status of the job. For information on available status codes,
-   * see <code>JobStatus</code>.</p><p><h3>See Also:</h3>   <a
+   * see <code>JobStatus</code>.</p> <p> <b>Registered user support</b> </p> <p>This
+   * API can be called as before to get status of a job started by the same Quick
+   * Sight user.</p> <p> <b>Possible error scenarios</b> </p> <p>Request will fail
+   * with an Access Denied error in the following scenarios:</p> <ul> <li> <p>The
+   * credentials have expired.</p> </li> <li> <p>Job has been started by a different
+   * user.</p> </li> <li> <p>Impersonated Quick Sight user doesn't have access to the
+   * specified dashboard in the job.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob">AWS
    * API Reference</a></p>
    */
@@ -2481,7 +2487,28 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * <code>DescribeDashboardSnapshotJob</code> API call.</p> <p>If the job has not
    * finished running, this operation returns a message that says <code>Dashboard
    * Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal
-   * state.</code>.</p><p><h3>See Also:</h3>   <a
+   * state.</code>.</p> <p> <b>Registered user support</b> </p> <p>This API can be
+   * called as before to get the result of a job started by the same Quick Sight
+   * user. The result for the user will be returned in <code>RegisteredUsers</code>
+   * response attribute. The attribute will contain a list with at most one object in
+   * it.</p> <p> <b>Possible error scenarios</b> </p> <p>The request fails with an
+   * Access Denied error in the following scenarios:</p> <ul> <li> <p>The credentials
+   * have expired.</p> </li> <li> <p>The job was started by a different user.</p>
+   * </li> <li> <p>The registered user doesn't have access to the specified
+   * dashboard.</p> </li> </ul> <p>The request succeeds but the job fails in the
+   * following scenarios:</p> <ul> <li> <p> <code>DASHBOARD_ACCESS_DENIED</code> -
+   * The registered user lost access to the dashboard.</p> </li> <li> <p>
+   * <code>CAPABILITY_RESTRICTED</code> - The registered user is restricted from
+   * exporting data in <b>all</b> selected formats.</p> </li> </ul> <p>The request
+   * succeeds but the response contains an error code in the following scenarios:</p>
+   * <ul> <li> <p> <code>CAPABILITY_RESTRICTED</code> - The registered user is
+   * restricted from exporting data in <b>some</b> selected formats.</p> </li> <li>
+   * <p> <code>RLS_CHANGED</code> - Row-level security settings have changed. Re-run
+   * the job with current settings.</p> </li> <li> <p> <code>CLS_CHANGED</code> -
+   * Column-level security settings have changed. Re-run the job with current
+   * settings.</p> </li> <li> <p> <code>DATASET_DELETED</code> - The dataset has been
+   * deleted. Verify the dataset exists before re-running the job.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult">AWS
    * API Reference</a></p>
    */
@@ -3693,6 +3720,64 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void GetFlowPermissionsAsync(const GetFlowPermissionsRequestT& request, const GetFlowPermissionsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::GetFlowPermissions, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the identity context for a Quick Sight user in a specified
+   * namespace, allowing you to obtain identity tokens that can be used with
+   * identity-enhanced IAM role sessions to call identity-aware APIs.</p>
+   * <p>Currently, you can call the following APIs with identity-enhanced
+   * Credentials</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_StartDashboardSnapshotJob.html">StartDashboardSnapshotJob</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJob.html">DescribeDashboardSnapshotJob</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJobResult.html">DescribeDashboardSnapshotJobResult</a>
+   * </p> </li> </ul> <p> <b>Supported Authentication Methods</b> </p> <p>This API
+   * supports Quick Sight native users, IAM federated users, and Active Directory
+   * users. For Quick Sight users authenticated by Amazon Web Services Identity
+   * Center, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">Identity
+   * Center documentation on identity-enhanced IAM role sessions</a>.</p> <p>
+   * <b>Getting Identity-Enhanced Credentials</b> </p> <p>To obtain identity-enhanced
+   * credentials, follow these steps:</p> <ul> <li> <p>Call the GetIdentityContext
+   * API to retrieve an identity token for the specified user.</p> </li> <li> <p>Use
+   * the identity token with the <a
+   * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS
+   * AssumeRole API</a> to obtain identity-enhanced IAM role session credentials.</p>
+   * </li> </ul> <p> <b>Usage with STS AssumeRole</b> </p> <p>The identity token
+   * returned by this API should be used with the STS AssumeRole API to obtain
+   * credentials for an identity-enhanced IAM role session. When calling AssumeRole,
+   * include the identity token in the <code>ProvidedContexts</code> parameter with
+   * <code>ProviderArn</code> set to
+   * <code>arn:aws:iam::aws:contextProvider/QuickSight</code> and
+   * <code>ContextAssertion</code> set to the identity token received from this
+   * API.</p> <p>The assumed role must allow the <code>sts:SetContext</code> action
+   * in addition to <code>sts:AssumeRole</code> in its trust relationship policy. The
+   * trust policy should include both actions for the principal that will be assuming
+   * the role.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetIdentityContext">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIdentityContextOutcome GetIdentityContext(const Model::GetIdentityContextRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIdentityContext that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetIdentityContextRequestT = Model::GetIdentityContextRequest>
+  Model::GetIdentityContextOutcomeCallable GetIdentityContextCallable(const GetIdentityContextRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::GetIdentityContext, request);
+  }
+
+  /**
+   * An Async wrapper for GetIdentityContext that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetIdentityContextRequestT = Model::GetIdentityContextRequest>
+  void GetIdentityContextAsync(const GetIdentityContextRequestT& request, const GetIdentityContextResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::GetIdentityContext, request, handler, context);
   }
 
   /**
@@ -5209,7 +5294,64 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * </li> <li> <p>The number of visuals that are on a sheet.</p> </li> <li> <p>The
    * types of visuals that are on the sheet.</p> </li> <li> <p>The number of formats
    * and snapshots that are requested in the job configuration.</p> </li> <li> <p>The
-   * size of the generated snapshots.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * size of the generated snapshots.</p> </li> </ul> <p> <b>Registered user
+   * support</b> </p> <p>You can generate snapshots for registered Quick Sight users
+   * by using the Snapshot Job APIs with <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">identity-enhanced
+   * IAM role session credentials</a>. This approach allows you to create snapshots
+   * on behalf of specific Quick Sight users while respecting their row-level
+   * security (RLS), column-level security (CLS), dynamic default parameters and
+   * dashboard parameter/filter settings.</p> <p>To generate snapshots for registered
+   * Quick Sight users, you need to:</p> <ul> <li> <p>Obtain identity-enhanced IAM
+   * role session credentials from AWS Security Token Service (STS).</p> </li> <li>
+   * <p>Use these credentials to call the Snapshot Job APIs.</p> </li> </ul>
+   * <p>Identity-enhanced credentials are credentials that contain information about
+   * the end user (e.g., registered Quick Sight user).</p> <p>If your Quick Sight
+   * users are backed by <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS
+   * Identity Center</a>, then you need to set up a <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
+   * token issuer</a>. Then, getting identity-enhanced IAM credentials for a Quick
+   * Sight user will look like the following:</p> <ul> <li> <p>Authenticate user with
+   * your OIDC compliant Identity Provider. You should get auth tokens back.</p>
+   * </li> <li> <p>Use the OIDC API, <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateTokenWithIAM.html">CreateTokenWithIAM</a>,
+   * to exchange auth tokens to IAM tokens. One of the resulted tokens will be
+   * identity token.</p> </li> <li> <p>Call STS AssumeRole API as you normally would,
+   * but provide an extra <code>ProvidedContexts</code> parameter in the API request.
+   * The list of contexts must have a single trusted context assertion. The
+   * <code>ProviderArn</code> should be
+   * <code>arn:aws:iam::aws:contextProvider/IdentityCenter</code> while
+   * <code>ContextAssertion</code> will be the identity token you received in
+   * response from CreateTokenWithIAM</p> </li> </ul> <p>For more details, see <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-identity-enhanced-iam-role-sessions.html">IdC
+   * documentation on Identity-enhanced IAM role sessions</a>.</p> <p>To obtain
+   * Identity-enhanced credentials for Quick Sight native users, IAM federated users,
+   * or Active Directory users, follow the steps below:</p> <ul> <li> <p>Call Quick
+   * Sight <a
+   * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetIdentityContext.html">GetIdentityContext
+   * API</a> to get identity token.</p> </li> <li> <p>Call STS AssumeRole API as you
+   * normally would, but provide extra <code>ProvidedContexts</code> parameter in the
+   * API request. The list of contexts must have a single trusted context assertion.
+   * The <code>ProviderArn</code> should be
+   * <code>arn:aws:iam::aws:contextProvider/QuickSight</code> while
+   * <code>ContextAssertion</code> will be the identity token you received in
+   * response from GetIdentityContext</p> </li> </ul> <p>After obtaining the
+   * identity-enhanced IAM role session credentials, you can use them to start a job,
+   * describe the job and describe job result. You can use the same credentials as
+   * long as they haven't expired. All API requests made with these credentials are
+   * considered to be made by the impersonated Quick Sight user.</p>
+   * <p>When using identity-enhanced session credentials, set the UserConfiguration
+   * request attribute to null. Otherwise, the request will be invalid.</p>
+   *  <p> <b>Possible error scenarios</b> </p> <p>The request fails with
+   * an Access Denied error in the following scenarios:</p> <ul> <li> <p>The
+   * credentials have expired.</p> </li> <li> <p>The impersonated Quick Sight user
+   * doesn't have access to the specified dashboard.</p> </li> <li> <p>The
+   * impersonated Quick Sight user is restricted from exporting data in the selected
+   * formats. For more information about export restrictions, see <a
+   * href="https://docs.aws.amazon.com/quicksuite/latest/userguide/create-custom-permisions-profile.html">Customizing
+   * access to Amazon Quick Sight capabilities</a>.</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob">AWS
    * API Reference</a></p>
    */

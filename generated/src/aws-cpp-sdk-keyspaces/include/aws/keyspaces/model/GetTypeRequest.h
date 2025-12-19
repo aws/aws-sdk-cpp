@@ -70,9 +70,9 @@ class GetTypeRequest : public KeyspacesRequest {
   ///@}
  private:
   Aws::String m_keyspaceName;
-  bool m_keyspaceNameHasBeenSet = false;
 
   Aws::String m_typeName;
+  bool m_keyspaceNameHasBeenSet = false;
   bool m_typeNameHasBeenSet = false;
 };
 

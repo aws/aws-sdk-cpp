@@ -135,21 +135,21 @@ class ApplicationOperationInfoDetails {
   ///@}
  private:
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   OperationStatus m_operationStatus{OperationStatus::NOT_SET};
-  bool m_operationStatusHasBeenSet = false;
 
   ApplicationVersionChangeDetails m_applicationVersionChangeDetails;
-  bool m_applicationVersionChangeDetailsHasBeenSet = false;
 
   OperationFailureDetails m_operationFailureDetails;
+  bool m_operationHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_operationStatusHasBeenSet = false;
+  bool m_applicationVersionChangeDetailsHasBeenSet = false;
   bool m_operationFailureDetailsHasBeenSet = false;
 };
 

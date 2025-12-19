@@ -72,9 +72,9 @@ class S3BucketCriteriaForJob {
   ///@}
  private:
   CriteriaBlockForJob m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   CriteriaBlockForJob m_includes;
+  bool m_excludesHasBeenSet = false;
   bool m_includesHasBeenSet = false;
 };
 

@@ -124,15 +124,15 @@ class PrivateLinkConfig {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_privateLinkEndpoint;
-  bool m_privateLinkEndpointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetArns;
-  bool m_subnetArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupArns;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_privateLinkEndpointHasBeenSet = false;
+  bool m_subnetArnsHasBeenSet = false;
   bool m_securityGroupArnsHasBeenSet = false;
 };
 

@@ -187,27 +187,27 @@ class RecommendedAction {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ActionType m_type{ActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
-  bool m_severityHasBeenSet = false;
 
   Feature m_feature{Feature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nextSteps;
-  bool m_nextStepsHasBeenSet = false;
 
   Aws::String m_lastUpdatedTimeStamp;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_nextStepsHasBeenSet = false;
   bool m_lastUpdatedTimeStampHasBeenSet = false;
 };
 

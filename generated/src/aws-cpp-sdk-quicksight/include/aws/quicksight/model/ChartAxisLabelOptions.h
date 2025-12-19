@@ -92,12 +92,12 @@ class ChartAxisLabelOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   Visibility m_sortIconVisibility{Visibility::NOT_SET};
-  bool m_sortIconVisibilityHasBeenSet = false;
 
   Aws::Vector<AxisLabelOptions> m_axisLabelOptions;
+  bool m_visibilityHasBeenSet = false;
+  bool m_sortIconVisibilityHasBeenSet = false;
   bool m_axisLabelOptionsHasBeenSet = false;
 };
 

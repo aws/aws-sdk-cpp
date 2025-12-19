@@ -328,51 +328,51 @@ class Service {
   ///@}
  private:
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   Evidence m_evidence;
-  bool m_evidenceHasBeenSet = false;
 
   bool m_archived{false};
-  bool m_archivedHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_eventFirstSeen;
-  bool m_eventFirstSeenHasBeenSet = false;
 
   Aws::String m_eventLastSeen;
-  bool m_eventLastSeenHasBeenSet = false;
 
   Aws::String m_resourceRole;
-  bool m_resourceRoleHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_userFeedback;
-  bool m_userFeedbackHasBeenSet = false;
 
   ServiceAdditionalInfo m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   Aws::String m_featureName;
-  bool m_featureNameHasBeenSet = false;
 
   EbsVolumeScanDetails m_ebsVolumeScanDetails;
-  bool m_ebsVolumeScanDetailsHasBeenSet = false;
 
   RuntimeDetails m_runtimeDetails;
-  bool m_runtimeDetailsHasBeenSet = false;
 
   Detection m_detection;
-  bool m_detectionHasBeenSet = false;
 
   MalwareScanDetails m_malwareScanDetails;
+  bool m_actionHasBeenSet = false;
+  bool m_evidenceHasBeenSet = false;
+  bool m_archivedHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_eventFirstSeenHasBeenSet = false;
+  bool m_eventLastSeenHasBeenSet = false;
+  bool m_resourceRoleHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_userFeedbackHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
+  bool m_featureNameHasBeenSet = false;
+  bool m_ebsVolumeScanDetailsHasBeenSet = false;
+  bool m_runtimeDetailsHasBeenSet = false;
+  bool m_detectionHasBeenSet = false;
   bool m_malwareScanDetailsHasBeenSet = false;
 };
 

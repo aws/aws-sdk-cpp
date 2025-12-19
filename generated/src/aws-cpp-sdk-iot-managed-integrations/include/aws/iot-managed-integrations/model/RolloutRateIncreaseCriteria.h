@@ -63,9 +63,9 @@ class RolloutRateIncreaseCriteria {
   ///@}
  private:
   int m_numberOfNotifiedThings{0};
-  bool m_numberOfNotifiedThingsHasBeenSet = false;
 
   int m_numberOfSucceededThings{0};
+  bool m_numberOfNotifiedThingsHasBeenSet = false;
   bool m_numberOfSucceededThingsHasBeenSet = false;
 };
 

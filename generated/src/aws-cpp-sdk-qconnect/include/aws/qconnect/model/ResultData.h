@@ -121,18 +121,18 @@ class ResultData {
   ///@}
  private:
   Aws::String m_resultId;
-  bool m_resultIdHasBeenSet = false;
 
   Document m_document;
-  bool m_documentHasBeenSet = false;
 
   double m_relevanceScore{0.0};
-  bool m_relevanceScoreHasBeenSet = false;
 
   DataSummary m_data;
-  bool m_dataHasBeenSet = false;
 
   QueryResultType m_type{QueryResultType::NOT_SET};
+  bool m_resultIdHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_relevanceScoreHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

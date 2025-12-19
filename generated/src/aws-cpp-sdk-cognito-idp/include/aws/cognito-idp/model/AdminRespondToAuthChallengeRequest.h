@@ -386,27 +386,27 @@ class AdminRespondToAuthChallengeRequest : public CognitoIdentityProviderRequest
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   ChallengeNameType m_challengeName{ChallengeNameType::NOT_SET};
-  bool m_challengeNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_challengeResponses;
-  bool m_challengeResponsesHasBeenSet = false;
 
   Aws::String m_session;
-  bool m_sessionHasBeenSet = false;
 
   AnalyticsMetadataType m_analyticsMetadata;
-  bool m_analyticsMetadataHasBeenSet = false;
 
   ContextDataType m_contextData;
-  bool m_contextDataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_challengeNameHasBeenSet = false;
+  bool m_challengeResponsesHasBeenSet = false;
+  bool m_sessionHasBeenSet = false;
+  bool m_analyticsMetadataHasBeenSet = false;
+  bool m_contextDataHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

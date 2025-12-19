@@ -126,18 +126,18 @@ class InvokeRestApiRequest : public MWAARequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   RestApiMethod m_method{RestApiMethod::NOT_SET};
-  bool m_methodHasBeenSet = false;
 
   Aws::Utils::Document m_queryParameters;
-  bool m_queryParametersHasBeenSet = false;
 
   Aws::Utils::Document m_body;
+  bool m_nameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_methodHasBeenSet = false;
+  bool m_queryParametersHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
 };
 

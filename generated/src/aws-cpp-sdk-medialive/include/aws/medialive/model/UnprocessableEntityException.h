@@ -77,9 +77,9 @@ class UnprocessableEntityException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<ValidationError> m_validationErrors;
+  bool m_messageHasBeenSet = false;
   bool m_validationErrorsHasBeenSet = false;
 };
 

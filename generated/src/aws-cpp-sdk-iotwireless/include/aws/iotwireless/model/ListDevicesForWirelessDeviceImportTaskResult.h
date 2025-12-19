@@ -140,21 +140,21 @@ class ListDevicesForWirelessDeviceImportTaskResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
-  bool m_positioningHasBeenSet = false;
 
   SidewalkListDevicesForImportInfo m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   Aws::Vector<ImportedWirelessDevice> m_importedWirelessDeviceList;
-  bool m_importedWirelessDeviceListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
+  bool m_sidewalkHasBeenSet = false;
+  bool m_importedWirelessDeviceListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class ListBillingGroupAccountGrouping {
   ///@}
  private:
   bool m_autoAssociate{false};
-  bool m_autoAssociateHasBeenSet = false;
 
   Aws::String m_responsibilityTransferArn;
+  bool m_autoAssociateHasBeenSet = false;
   bool m_responsibilityTransferArnHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class KeyPair {
   ///@}
  private:
   Aws::String m_publicKey;
-  bool m_publicKeyHasBeenSet = false;
 
   Aws::String m_privateKey;
+  bool m_publicKeyHasBeenSet = false;
   bool m_privateKeyHasBeenSet = false;
 };
 

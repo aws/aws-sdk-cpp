@@ -72,9 +72,9 @@ class Attachment {
   ///@}
  private:
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_data{};
+  bool m_fileNameHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

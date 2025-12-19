@@ -145,18 +145,18 @@ class CreateApiCacheRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   long long m_ttl{0};
-  bool m_ttlHasBeenSet = false;
 
   ApiCachingBehavior m_apiCachingBehavior{ApiCachingBehavior::NOT_SET};
-  bool m_apiCachingBehaviorHasBeenSet = false;
 
   ApiCacheType m_type{ApiCacheType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CacheHealthMetricsConfig m_healthMetricsConfig{CacheHealthMetricsConfig::NOT_SET};
+  bool m_apiIdHasBeenSet = false;
+  bool m_ttlHasBeenSet = false;
+  bool m_apiCachingBehaviorHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_healthMetricsConfigHasBeenSet = false;
 };
 

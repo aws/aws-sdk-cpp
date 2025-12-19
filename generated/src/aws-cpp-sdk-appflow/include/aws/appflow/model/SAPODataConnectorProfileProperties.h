@@ -183,27 +183,27 @@ class SAPODataConnectorProfileProperties {
   ///@}
  private:
   Aws::String m_applicationHostUrl;
-  bool m_applicationHostUrlHasBeenSet = false;
 
   Aws::String m_applicationServicePath;
-  bool m_applicationServicePathHasBeenSet = false;
 
   int m_portNumber{0};
-  bool m_portNumberHasBeenSet = false;
 
   Aws::String m_clientNumber;
-  bool m_clientNumberHasBeenSet = false;
 
   Aws::String m_logonLanguage;
-  bool m_logonLanguageHasBeenSet = false;
 
   Aws::String m_privateLinkServiceName;
-  bool m_privateLinkServiceNameHasBeenSet = false;
 
   OAuthProperties m_oAuthProperties;
-  bool m_oAuthPropertiesHasBeenSet = false;
 
   bool m_disableSSO{false};
+  bool m_applicationHostUrlHasBeenSet = false;
+  bool m_applicationServicePathHasBeenSet = false;
+  bool m_portNumberHasBeenSet = false;
+  bool m_clientNumberHasBeenSet = false;
+  bool m_logonLanguageHasBeenSet = false;
+  bool m_privateLinkServiceNameHasBeenSet = false;
+  bool m_oAuthPropertiesHasBeenSet = false;
   bool m_disableSSOHasBeenSet = false;
 };
 

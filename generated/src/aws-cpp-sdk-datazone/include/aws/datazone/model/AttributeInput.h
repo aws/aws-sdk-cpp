@@ -76,9 +76,9 @@ class AttributeInput {
   ///@}
  private:
   Aws::String m_attributeIdentifier;
-  bool m_attributeIdentifierHasBeenSet = false;
 
   Aws::Vector<FormInput> m_forms;
+  bool m_attributeIdentifierHasBeenSet = false;
   bool m_formsHasBeenSet = false;
 };
 

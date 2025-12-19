@@ -80,12 +80,12 @@ class CreateChatResponseConfigurationResult {
   ///@}
  private:
   Aws::String m_chatResponseConfigurationId;
-  bool m_chatResponseConfigurationIdHasBeenSet = false;
 
   Aws::String m_chatResponseConfigurationArn;
-  bool m_chatResponseConfigurationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_chatResponseConfigurationIdHasBeenSet = false;
+  bool m_chatResponseConfigurationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

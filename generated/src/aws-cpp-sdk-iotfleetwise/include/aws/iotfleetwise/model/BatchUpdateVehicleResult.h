@@ -94,12 +94,12 @@ class BatchUpdateVehicleResult {
   ///@}
  private:
   Aws::Vector<UpdateVehicleResponseItem> m_vehicles;
-  bool m_vehiclesHasBeenSet = false;
 
   Aws::Vector<UpdateVehicleError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vehiclesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

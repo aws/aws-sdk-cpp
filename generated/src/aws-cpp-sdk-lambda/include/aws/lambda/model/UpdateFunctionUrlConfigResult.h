@@ -178,27 +178,27 @@ class UpdateFunctionUrlConfigResult {
   ///@}
  private:
   Aws::String m_functionUrl;
-  bool m_functionUrlHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   FunctionUrlAuthType m_authType{FunctionUrlAuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   Cors m_cors;
-  bool m_corsHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedTime;
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   InvokeMode m_invokeMode{InvokeMode::NOT_SET};
-  bool m_invokeModeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionUrlHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_corsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_invokeModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class AssociateDistributionTenantWebACL2020_05_31Request : public CloudFrontRequ
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_webACLArn;
-  bool m_webACLArnHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_idHasBeenSet = false;
+  bool m_webACLArnHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

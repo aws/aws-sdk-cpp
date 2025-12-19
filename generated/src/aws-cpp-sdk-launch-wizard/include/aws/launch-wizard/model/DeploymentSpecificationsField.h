@@ -137,18 +137,18 @@ class DeploymentSpecificationsField {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::Vector<DeploymentConditionalField> m_conditionals;
-  bool m_conditionalsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_required;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_conditionalsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
 };
 

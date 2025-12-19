@@ -112,18 +112,18 @@ class WorkflowExecutionOpenCounts {
   ///@}
  private:
   int m_openActivityTasks{0};
-  bool m_openActivityTasksHasBeenSet = false;
 
   int m_openDecisionTasks{0};
-  bool m_openDecisionTasksHasBeenSet = false;
 
   int m_openTimers{0};
-  bool m_openTimersHasBeenSet = false;
 
   int m_openChildWorkflowExecutions{0};
-  bool m_openChildWorkflowExecutionsHasBeenSet = false;
 
   int m_openLambdaFunctions{0};
+  bool m_openActivityTasksHasBeenSet = false;
+  bool m_openDecisionTasksHasBeenSet = false;
+  bool m_openTimersHasBeenSet = false;
+  bool m_openChildWorkflowExecutionsHasBeenSet = false;
   bool m_openLambdaFunctionsHasBeenSet = false;
 };
 

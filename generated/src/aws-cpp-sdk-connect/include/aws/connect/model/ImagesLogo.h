@@ -69,9 +69,9 @@ class ImagesLogo {
   ///@}
  private:
   Aws::String m_default;
-  bool m_defaultHasBeenSet = false;
 
   Aws::String m_favicon;
+  bool m_defaultHasBeenSet = false;
   bool m_faviconHasBeenSet = false;
 };
 

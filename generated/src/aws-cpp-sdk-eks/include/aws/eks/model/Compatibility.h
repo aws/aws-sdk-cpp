@@ -91,12 +91,12 @@ class Compatibility {
   ///@}
  private:
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_platformVersions;
-  bool m_platformVersionsHasBeenSet = false;
 
   bool m_defaultVersion{false};
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_platformVersionsHasBeenSet = false;
   bool m_defaultVersionHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class WorkerConfiguration {
   ///@}
  private:
   long long m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_workerConfigurationArn;
+  bool m_revisionHasBeenSet = false;
   bool m_workerConfigurationArnHasBeenSet = false;
 };
 

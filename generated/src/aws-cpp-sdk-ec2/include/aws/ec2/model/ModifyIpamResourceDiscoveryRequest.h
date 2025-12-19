@@ -218,24 +218,24 @@ class ModifyIpamResourceDiscoveryRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamResourceDiscoveryId;
-  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AddIpamOperatingRegion> m_addOperatingRegions;
-  bool m_addOperatingRegionsHasBeenSet = false;
 
   Aws::Vector<RemoveIpamOperatingRegion> m_removeOperatingRegions;
-  bool m_removeOperatingRegionsHasBeenSet = false;
 
   Aws::Vector<AddIpamOrganizationalUnitExclusion> m_addOrganizationalUnitExclusions;
-  bool m_addOrganizationalUnitExclusionsHasBeenSet = false;
 
   Aws::Vector<RemoveIpamOrganizationalUnitExclusion> m_removeOrganizationalUnitExclusions;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_addOperatingRegionsHasBeenSet = false;
+  bool m_removeOperatingRegionsHasBeenSet = false;
+  bool m_addOrganizationalUnitExclusionsHasBeenSet = false;
   bool m_removeOrganizationalUnitExclusionsHasBeenSet = false;
 };
 

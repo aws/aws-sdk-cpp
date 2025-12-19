@@ -112,18 +112,18 @@ class GetAddonInstanceResult {
   ///@}
  private:
   Aws::String m_addonSubscriptionId;
-  bool m_addonSubscriptionIdHasBeenSet = false;
 
   Aws::String m_addonName;
-  bool m_addonNameHasBeenSet = false;
 
   Aws::String m_addonInstanceArn;
-  bool m_addonInstanceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_addonSubscriptionIdHasBeenSet = false;
+  bool m_addonNameHasBeenSet = false;
+  bool m_addonInstanceArnHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

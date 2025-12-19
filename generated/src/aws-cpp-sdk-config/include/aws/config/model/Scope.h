@@ -124,15 +124,15 @@ class Scope {
   ///@}
  private:
   Aws::Vector<Aws::String> m_complianceResourceTypes;
-  bool m_complianceResourceTypesHasBeenSet = false;
 
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::String m_tagValue;
-  bool m_tagValueHasBeenSet = false;
 
   Aws::String m_complianceResourceId;
+  bool m_complianceResourceTypesHasBeenSet = false;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_tagValueHasBeenSet = false;
   bool m_complianceResourceIdHasBeenSet = false;
 };
 

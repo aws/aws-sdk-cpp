@@ -113,15 +113,15 @@ class PurchaseCapacityBlockRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_capacityBlockOfferingId;
-  bool m_capacityBlockOfferingIdHasBeenSet = false;
 
   CapacityReservationInstancePlatform m_instancePlatform{CapacityReservationInstancePlatform::NOT_SET};
+  bool m_dryRunHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_capacityBlockOfferingIdHasBeenSet = false;
   bool m_instancePlatformHasBeenSet = false;
 };
 

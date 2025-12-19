@@ -131,18 +131,18 @@ class ChatOutputStream {
   ///@}
  private:
   TextOutputEvent m_textEvent;
-  bool m_textEventHasBeenSet = false;
 
   MetadataEvent m_metadataEvent;
-  bool m_metadataEventHasBeenSet = false;
 
   ActionReviewEvent m_actionReviewEvent;
-  bool m_actionReviewEventHasBeenSet = false;
 
   FailedAttachmentEvent m_failedAttachmentEvent;
-  bool m_failedAttachmentEventHasBeenSet = false;
 
   AuthChallengeRequestEvent m_authChallengeRequestEvent;
+  bool m_textEventHasBeenSet = false;
+  bool m_metadataEventHasBeenSet = false;
+  bool m_actionReviewEventHasBeenSet = false;
+  bool m_failedAttachmentEventHasBeenSet = false;
   bool m_authChallengeRequestEventHasBeenSet = false;
 };
 

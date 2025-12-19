@@ -366,48 +366,48 @@ class Av1Settings {
   ///@}
  private:
   Av1AdaptiveQuantization m_adaptiveQuantization{Av1AdaptiveQuantization::NOT_SET};
-  bool m_adaptiveQuantizationHasBeenSet = false;
 
   Av1BitDepth m_bitDepth{Av1BitDepth::NOT_SET};
-  bool m_bitDepthHasBeenSet = false;
 
   Av1FilmGrainSynthesis m_filmGrainSynthesis{Av1FilmGrainSynthesis::NOT_SET};
-  bool m_filmGrainSynthesisHasBeenSet = false;
 
   Av1FramerateControl m_framerateControl{Av1FramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   Av1FramerateConversionAlgorithm m_framerateConversionAlgorithm{Av1FramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_numberBFramesBetweenReferenceFrames{0};
-  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   Av1QvbrSettings m_qvbrSettings;
-  bool m_qvbrSettingsHasBeenSet = false;
 
   Av1RateControlMode m_rateControlMode{Av1RateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   int m_slices{0};
-  bool m_slicesHasBeenSet = false;
 
   Av1SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{Av1SpatialAdaptiveQuantization::NOT_SET};
+  bool m_adaptiveQuantizationHasBeenSet = false;
+  bool m_bitDepthHasBeenSet = false;
+  bool m_filmGrainSynthesisHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
+  bool m_qvbrSettingsHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_slicesHasBeenSet = false;
   bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 };
 

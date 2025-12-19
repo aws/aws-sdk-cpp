@@ -19,12 +19,12 @@ Aws::String UpdateSourceServerRequest::SerializePayload() const {
     payload.WithString("accountID", m_accountID);
   }
 
-  if (m_connectorActionHasBeenSet) {
-    payload.WithObject("connectorAction", m_connectorAction.Jsonize());
-  }
-
   if (m_sourceServerIDHasBeenSet) {
     payload.WithString("sourceServerID", m_sourceServerID);
+  }
+
+  if (m_connectorActionHasBeenSet) {
+    payload.WithObject("connectorAction", m_connectorAction.Jsonize());
   }
 
   return payload.View().WriteReadable();

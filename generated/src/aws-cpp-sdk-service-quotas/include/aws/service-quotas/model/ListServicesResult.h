@@ -88,12 +88,12 @@ class ListServicesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ServiceInfo> m_services;
-  bool m_servicesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

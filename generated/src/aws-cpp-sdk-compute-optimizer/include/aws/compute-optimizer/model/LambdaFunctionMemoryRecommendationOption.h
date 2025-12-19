@@ -138,18 +138,18 @@ class LambdaFunctionMemoryRecommendationOption {
   ///@}
  private:
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   int m_memorySize{0};
-  bool m_memorySizeHasBeenSet = false;
 
   Aws::Vector<LambdaFunctionMemoryProjectedMetric> m_projectedUtilizationMetrics;
-  bool m_projectedUtilizationMetricsHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   LambdaSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
+  bool m_rankHasBeenSet = false;
+  bool m_memorySizeHasBeenSet = false;
+  bool m_projectedUtilizationMetricsHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
   bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 };
 

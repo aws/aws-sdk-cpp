@@ -70,9 +70,9 @@ class BatchReadOperationResponse {
   ///@}
  private:
   BatchReadSuccessfulResponse m_successfulResponse;
-  bool m_successfulResponseHasBeenSet = false;
 
   BatchReadException m_exceptionResponse;
+  bool m_successfulResponseHasBeenSet = false;
   bool m_exceptionResponseHasBeenSet = false;
 };
 

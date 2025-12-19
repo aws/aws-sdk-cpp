@@ -89,12 +89,12 @@ class ListProxiesResult {
   ///@}
  private:
   Aws::Vector<ProxyMetadata> m_proxies;
-  bool m_proxiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

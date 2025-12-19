@@ -154,21 +154,21 @@ class ImportTerminologyRequest : public TranslateRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
-  bool m_mergeStrategyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TerminologyData m_terminologyData;
-  bool m_terminologyDataHasBeenSet = false;
 
   EncryptionKey m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_mergeStrategyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_terminologyDataHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

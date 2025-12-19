@@ -97,15 +97,15 @@ class OutboundCallConfig {
   ///@}
  private:
   Aws::String m_connectContactFlowId;
-  bool m_connectContactFlowIdHasBeenSet = false;
 
   Aws::String m_connectSourcePhoneNumber;
-  bool m_connectSourcePhoneNumberHasBeenSet = false;
 
   Aws::String m_connectQueueId;
-  bool m_connectQueueIdHasBeenSet = false;
 
   AnswerMachineDetectionConfig m_answerMachineDetectionConfig;
+  bool m_connectContactFlowIdHasBeenSet = false;
+  bool m_connectSourcePhoneNumberHasBeenSet = false;
+  bool m_connectQueueIdHasBeenSet = false;
   bool m_answerMachineDetectionConfigHasBeenSet = false;
 };
 

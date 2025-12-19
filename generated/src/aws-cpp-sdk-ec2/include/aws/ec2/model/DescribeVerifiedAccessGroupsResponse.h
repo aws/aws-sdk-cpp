@@ -86,12 +86,12 @@ class DescribeVerifiedAccessGroupsResponse {
   ///@}
  private:
   Aws::Vector<VerifiedAccessGroup> m_verifiedAccessGroups;
-  bool m_verifiedAccessGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedAccessGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

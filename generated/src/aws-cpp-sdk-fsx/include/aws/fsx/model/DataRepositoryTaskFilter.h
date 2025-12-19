@@ -84,9 +84,9 @@ class DataRepositoryTaskFilter {
   ///@}
  private:
   DataRepositoryTaskFilterName m_name{DataRepositoryTaskFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

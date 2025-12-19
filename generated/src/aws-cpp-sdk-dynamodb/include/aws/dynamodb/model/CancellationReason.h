@@ -98,12 +98,12 @@ class CancellationReason {
   ///@}
  private:
   Aws::Map<Aws::String, AttributeValue> m_item;
-  bool m_itemHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_itemHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

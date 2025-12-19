@@ -168,24 +168,24 @@ class PullRequestTarget {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_sourceReference;
-  bool m_sourceReferenceHasBeenSet = false;
 
   Aws::String m_destinationReference;
-  bool m_destinationReferenceHasBeenSet = false;
 
   Aws::String m_destinationCommit;
-  bool m_destinationCommitHasBeenSet = false;
 
   Aws::String m_sourceCommit;
-  bool m_sourceCommitHasBeenSet = false;
 
   Aws::String m_mergeBase;
-  bool m_mergeBaseHasBeenSet = false;
 
   MergeMetadata m_mergeMetadata;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_sourceReferenceHasBeenSet = false;
+  bool m_destinationReferenceHasBeenSet = false;
+  bool m_destinationCommitHasBeenSet = false;
+  bool m_sourceCommitHasBeenSet = false;
+  bool m_mergeBaseHasBeenSet = false;
   bool m_mergeMetadataHasBeenSet = false;
 };
 

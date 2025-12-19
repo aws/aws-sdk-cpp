@@ -77,12 +77,12 @@ class UpdateLogPatternResult {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   LogPattern m_logPattern;
-  bool m_logPatternHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_logPatternHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

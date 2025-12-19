@@ -75,9 +75,9 @@ class Signer {
   ///@}
  private:
   Aws::String m_awsAccountNumber;
-  bool m_awsAccountNumberHasBeenSet = false;
 
   KeyPairIds m_keyPairIds;
+  bool m_awsAccountNumberHasBeenSet = false;
   bool m_keyPairIdsHasBeenSet = false;
 };
 

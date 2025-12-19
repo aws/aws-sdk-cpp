@@ -67,9 +67,9 @@ class GetAIAgentRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   Aws::String m_aiAgentId;
+  bool m_assistantIdHasBeenSet = false;
   bool m_aiAgentIdHasBeenSet = false;
 };
 

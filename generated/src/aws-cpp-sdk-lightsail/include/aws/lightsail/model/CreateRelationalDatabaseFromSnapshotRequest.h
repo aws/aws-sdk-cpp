@@ -224,30 +224,30 @@ class CreateRelationalDatabaseFromSnapshotRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_relationalDatabaseName;
-  bool m_relationalDatabaseNameHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   Aws::String m_relationalDatabaseSnapshotName;
-  bool m_relationalDatabaseSnapshotNameHasBeenSet = false;
 
   Aws::String m_relationalDatabaseBundleId;
-  bool m_relationalDatabaseBundleIdHasBeenSet = false;
 
   Aws::String m_sourceRelationalDatabaseName;
-  bool m_sourceRelationalDatabaseNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreTime{};
-  bool m_restoreTimeHasBeenSet = false;
 
   bool m_useLatestRestorableTime{false};
-  bool m_useLatestRestorableTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_relationalDatabaseNameHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_relationalDatabaseSnapshotNameHasBeenSet = false;
+  bool m_relationalDatabaseBundleIdHasBeenSet = false;
+  bool m_sourceRelationalDatabaseNameHasBeenSet = false;
+  bool m_restoreTimeHasBeenSet = false;
+  bool m_useLatestRestorableTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

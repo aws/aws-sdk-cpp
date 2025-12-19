@@ -60,9 +60,9 @@ class DeleteLocalGatewayRouteTableResponse {
   ///@}
  private:
   LocalGatewayRouteTable m_localGatewayRouteTable;
-  bool m_localGatewayRouteTableHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_localGatewayRouteTableHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class BatchGetFlowAssociationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   ListFlowAssociationResourceType m_resourceType{ListFlowAssociationResourceType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

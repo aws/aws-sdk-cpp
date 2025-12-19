@@ -86,12 +86,12 @@ class ListDataTablePrimaryValuesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecordPrimaryValue> m_primaryValuesList;
-  bool m_primaryValuesListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_primaryValuesListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

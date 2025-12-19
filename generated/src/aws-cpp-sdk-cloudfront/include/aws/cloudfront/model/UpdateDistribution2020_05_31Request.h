@@ -90,12 +90,12 @@ class UpdateDistribution2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   DistributionConfig m_distributionConfig;
-  bool m_distributionConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_distributionConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

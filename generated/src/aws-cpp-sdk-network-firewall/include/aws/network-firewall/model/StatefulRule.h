@@ -117,12 +117,12 @@ class StatefulRule {
   ///@}
  private:
   StatefulAction m_action{StatefulAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Header m_header;
-  bool m_headerHasBeenSet = false;
 
   Aws::Vector<RuleOption> m_ruleOptions;
+  bool m_actionHasBeenSet = false;
+  bool m_headerHasBeenSet = false;
   bool m_ruleOptionsHasBeenSet = false;
 };
 

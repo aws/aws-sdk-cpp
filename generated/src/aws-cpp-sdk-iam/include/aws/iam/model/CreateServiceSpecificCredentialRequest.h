@@ -95,12 +95,12 @@ class CreateServiceSpecificCredentialRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   int m_credentialAgeDays{0};
+  bool m_userNameHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
   bool m_credentialAgeDaysHasBeenSet = false;
 };
 

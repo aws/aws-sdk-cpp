@@ -158,24 +158,24 @@ class UpdateWirelessDeviceRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_destinationName;
-  bool m_destinationNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LoRaWANUpdateDevice m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   PositioningConfigStatus m_positioning{PositioningConfigStatus::NOT_SET};
-  bool m_positioningHasBeenSet = false;
 
   SidewalkUpdateWirelessDevice m_sidewalk;
+  bool m_idHasBeenSet = false;
+  bool m_destinationNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_positioningHasBeenSet = false;
   bool m_sidewalkHasBeenSet = false;
 };
 

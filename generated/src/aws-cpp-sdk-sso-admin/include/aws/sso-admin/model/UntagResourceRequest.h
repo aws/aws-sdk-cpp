@@ -96,12 +96,12 @@ class UntagResourceRequest : public SSOAdminRequest {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

@@ -102,12 +102,12 @@ class DescribeAnalysisSchemesRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_analysisSchemeNames;
-  bool m_analysisSchemeNamesHasBeenSet = false;
 
   bool m_deployed{false};
+  bool m_domainNameHasBeenSet = false;
+  bool m_analysisSchemeNamesHasBeenSet = false;
   bool m_deployedHasBeenSet = false;
 };
 

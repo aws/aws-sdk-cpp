@@ -85,12 +85,12 @@ class ListRecordingConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecordingConfigurationSummary> m_recordingConfigurations;
-  bool m_recordingConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recordingConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

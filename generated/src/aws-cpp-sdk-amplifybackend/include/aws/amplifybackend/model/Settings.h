@@ -76,9 +76,9 @@ class Settings {
   ///@}
  private:
   Aws::Vector<MfaTypesElement> m_mfaTypes;
-  bool m_mfaTypesHasBeenSet = false;
 
   Aws::String m_smsMessage;
+  bool m_mfaTypesHasBeenSet = false;
   bool m_smsMessageHasBeenSet = false;
 };
 

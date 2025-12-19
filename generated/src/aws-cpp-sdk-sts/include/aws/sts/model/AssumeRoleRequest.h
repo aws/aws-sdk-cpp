@@ -451,39 +451,39 @@ class AssumeRoleRequest : public STSRequest {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_roleSessionName;
-  bool m_roleSessionNameHasBeenSet = false;
 
   Aws::Vector<PolicyDescriptorType> m_policyArns;
-  bool m_policyArnsHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_transitiveTagKeys;
-  bool m_transitiveTagKeysHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_tokenCode;
-  bool m_tokenCodeHasBeenSet = false;
 
   Aws::String m_sourceIdentity;
-  bool m_sourceIdentityHasBeenSet = false;
 
   Aws::Vector<ProvidedContext> m_providedContexts;
+  bool m_roleArnHasBeenSet = false;
+  bool m_roleSessionNameHasBeenSet = false;
+  bool m_policyArnsHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_transitiveTagKeysHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_tokenCodeHasBeenSet = false;
+  bool m_sourceIdentityHasBeenSet = false;
   bool m_providedContextsHasBeenSet = false;
 };
 

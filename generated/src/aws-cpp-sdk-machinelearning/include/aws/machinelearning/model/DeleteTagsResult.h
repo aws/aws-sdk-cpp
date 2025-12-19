@@ -80,12 +80,12 @@ class DeleteTagsResult {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TaggableResourceType m_resourceType{TaggableResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

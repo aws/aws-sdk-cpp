@@ -155,21 +155,21 @@ class RejectPredictionsRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<RejectChoice> m_rejectChoices;
-  bool m_rejectChoicesHasBeenSet = false;
 
   RejectRule m_rejectRule;
-  bool m_rejectRuleHasBeenSet = false;
 
   Aws::String m_revision;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_rejectChoicesHasBeenSet = false;
+  bool m_rejectRuleHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

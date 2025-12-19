@@ -109,15 +109,15 @@ class ListInstalledComponentsRequest : public GreengrassV2Request {
   ///@}
  private:
   Aws::String m_coreDeviceThingName;
-  bool m_coreDeviceThingNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   InstalledComponentTopologyFilter m_topologyFilter{InstalledComponentTopologyFilter::NOT_SET};
+  bool m_coreDeviceThingNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_topologyFilterHasBeenSet = false;
 };
 

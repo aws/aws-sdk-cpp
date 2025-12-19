@@ -196,27 +196,27 @@ class ActionTypeDeclaration {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ActionTypeExecutor m_executor;
-  bool m_executorHasBeenSet = false;
 
   ActionTypeIdentifier m_id;
-  bool m_idHasBeenSet = false;
 
   ActionTypeArtifactDetails m_inputArtifactDetails;
-  bool m_inputArtifactDetailsHasBeenSet = false;
 
   ActionTypeArtifactDetails m_outputArtifactDetails;
-  bool m_outputArtifactDetailsHasBeenSet = false;
 
   ActionTypePermissions m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::Vector<ActionTypeProperty> m_properties;
-  bool m_propertiesHasBeenSet = false;
 
   ActionTypeUrls m_urls;
+  bool m_descriptionHasBeenSet = false;
+  bool m_executorHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_inputArtifactDetailsHasBeenSet = false;
+  bool m_outputArtifactDetailsHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
   bool m_urlsHasBeenSet = false;
 };
 

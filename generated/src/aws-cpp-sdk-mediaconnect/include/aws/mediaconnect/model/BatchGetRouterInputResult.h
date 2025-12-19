@@ -92,12 +92,12 @@ class BatchGetRouterInputResult {
   ///@}
  private:
   Aws::Vector<RouterInput> m_routerInputs;
-  bool m_routerInputsHasBeenSet = false;
 
   Aws::Vector<BatchGetRouterInputError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routerInputsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

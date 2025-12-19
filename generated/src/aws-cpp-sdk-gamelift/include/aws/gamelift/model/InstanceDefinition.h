@@ -78,9 +78,9 @@ class InstanceDefinition {
   ///@}
  private:
   GameServerGroupInstanceType m_instanceType{GameServerGroupInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_weightedCapacity;
+  bool m_instanceTypeHasBeenSet = false;
   bool m_weightedCapacityHasBeenSet = false;
 };
 

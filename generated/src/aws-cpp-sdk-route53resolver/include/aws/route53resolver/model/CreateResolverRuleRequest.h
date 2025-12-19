@@ -58,7 +58,9 @@ class CreateResolverRuleRequest : public Route53ResolverRequest {
   ///@{
   /**
    * <p>A friendly name that lets you easily find a rule in the Resolver dashboard in
-   * the Route 53 console.</p>
+   * the Route 53 console.</p> <p>The name can be up to 64 characters long and can
+   * contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and
+   * spaces. The name cannot consist of only numbers.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -125,7 +127,13 @@ class CreateResolverRuleRequest : public Route53ResolverRequest {
    * <p>The IPs that you want Resolver to forward DNS queries to. You can specify
    * either Ipv4 or Ipv6 addresses but not both in the same rule. Separate IP
    * addresses with a space.</p> <p> <code>TargetIps</code> is available only when
-   * the value of <code>Rule type</code> is <code>FORWARD</code>.</p>
+   * the value of <code>Rule type</code> is <code>FORWARD</code>. You should not
+   * provide TargetIps when the Rule type is <code>DELEGATE</code>.</p>
+   * <p>when creating a DELEGATE rule, you must not provide the
+   * <code>TargetIps</code> parameter. If you provide the <code>TargetIps</code>, you
+   * may receive an ERROR message similar to "Delegate resolver rules need to specify
+   * a nameserver name". This error means you should not provide
+   * <code>TargetIps</code>.</p>
    */
   inline const Aws::Vector<TargetAddress>& GetTargetIps() const { return m_targetIps; }
   inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
@@ -211,27 +219,27 @@ class CreateResolverRuleRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleTypeOption m_ruleType{RuleTypeOption::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<TargetAddress> m_targetIps;
-  bool m_targetIpsHasBeenSet = false;
 
   Aws::String m_resolverEndpointId;
-  bool m_resolverEndpointIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_delegationRecord;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_targetIpsHasBeenSet = false;
+  bool m_resolverEndpointIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_delegationRecordHasBeenSet = false;
 };
 

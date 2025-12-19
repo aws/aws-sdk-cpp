@@ -106,15 +106,15 @@ class UserIdentity {
   ///@}
  private:
   UserType m_userType{UserType::NOT_SET};
-  bool m_userTypeHasBeenSet = false;
 
   Aws::String m_principalId;
-  bool m_principalIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_awsAccountId;
+  bool m_userTypeHasBeenSet = false;
+  bool m_principalIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
 };
 

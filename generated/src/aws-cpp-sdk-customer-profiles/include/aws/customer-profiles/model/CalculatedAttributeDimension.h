@@ -95,12 +95,12 @@ class CalculatedAttributeDimension {
   ///@}
  private:
   AttributeDimensionType m_dimensionType{AttributeDimensionType::NOT_SET};
-  bool m_dimensionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   ConditionOverrides m_conditionOverrides;
+  bool m_dimensionTypeHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_conditionOverridesHasBeenSet = false;
 };
 

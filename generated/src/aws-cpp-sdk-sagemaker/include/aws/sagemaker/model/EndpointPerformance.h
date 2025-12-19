@@ -68,9 +68,9 @@ class EndpointPerformance {
   ///@}
  private:
   InferenceMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   EndpointInfo m_endpointInfo;
+  bool m_metricsHasBeenSet = false;
   bool m_endpointInfoHasBeenSet = false;
 };
 

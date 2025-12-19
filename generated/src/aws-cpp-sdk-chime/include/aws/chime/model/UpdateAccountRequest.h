@@ -83,12 +83,12 @@ class UpdateAccountRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   License m_defaultLicense{License::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_defaultLicenseHasBeenSet = false;
 };
 

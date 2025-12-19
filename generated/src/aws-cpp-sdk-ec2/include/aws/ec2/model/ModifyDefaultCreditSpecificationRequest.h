@@ -88,12 +88,12 @@ class ModifyDefaultCreditSpecificationRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   UnlimitedSupportedInstanceFamily m_instanceFamily{UnlimitedSupportedInstanceFamily::NOT_SET};
-  bool m_instanceFamilyHasBeenSet = false;
 
   Aws::String m_cpuCredits;
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceFamilyHasBeenSet = false;
   bool m_cpuCreditsHasBeenSet = false;
 };
 

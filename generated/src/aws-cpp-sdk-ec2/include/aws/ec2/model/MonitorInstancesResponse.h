@@ -67,9 +67,9 @@ class MonitorInstancesResponse {
   ///@}
  private:
   Aws::Vector<InstanceMonitoring> m_instanceMonitorings;
-  bool m_instanceMonitoringsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceMonitoringsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

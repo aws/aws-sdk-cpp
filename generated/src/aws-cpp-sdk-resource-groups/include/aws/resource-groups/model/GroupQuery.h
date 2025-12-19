@@ -73,9 +73,9 @@ class GroupQuery {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   ResourceQuery m_resourceQuery;
+  bool m_groupNameHasBeenSet = false;
   bool m_resourceQueryHasBeenSet = false;
 };
 

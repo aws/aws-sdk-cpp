@@ -79,12 +79,12 @@ class NullCheckBoxList {
   ///@}
  private:
   bool m_isEmpty{false};
-  bool m_isEmptyHasBeenSet = false;
 
   bool m_isNullString{false};
-  bool m_isNullStringHasBeenSet = false;
 
   bool m_isNegOne{false};
+  bool m_isEmptyHasBeenSet = false;
+  bool m_isNullStringHasBeenSet = false;
   bool m_isNegOneHasBeenSet = false;
 };
 

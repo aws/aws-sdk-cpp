@@ -172,24 +172,24 @@ class ResourceChange {
   ///@}
  private:
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Replacement m_replacement{Replacement::NOT_SET};
-  bool m_replacementHasBeenSet = false;
 
   Aws::Vector<ResourceAttribute> m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<ResourceChangeDetail> m_details;
+  bool m_actionHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_replacementHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_detailsHasBeenSet = false;
 };
 

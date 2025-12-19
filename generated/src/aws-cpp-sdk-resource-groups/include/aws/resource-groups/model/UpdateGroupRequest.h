@@ -121,18 +121,18 @@ class UpdateGroupRequest : public ResourceGroupsRequest {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_criticality{0};
-  bool m_criticalityHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_groupHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

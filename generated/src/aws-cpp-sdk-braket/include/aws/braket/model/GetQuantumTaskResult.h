@@ -350,57 +350,57 @@ class GetQuantumTaskResult {
   ///@}
  private:
   Aws::String m_quantumTaskArn;
-  bool m_quantumTaskArnHasBeenSet = false;
 
   QuantumTaskStatus m_status{QuantumTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_deviceParameters;
-  bool m_deviceParametersHasBeenSet = false;
 
   long long m_shots{0};
-  bool m_shotsHasBeenSet = false;
 
   Aws::String m_outputS3Bucket;
-  bool m_outputS3BucketHasBeenSet = false;
 
   Aws::String m_outputS3Directory;
-  bool m_outputS3DirectoryHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   QuantumTaskQueueInfo m_queueInfo;
-  bool m_queueInfoHasBeenSet = false;
 
   Aws::Vector<Association> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   long long m_numSuccessfulShots{0};
-  bool m_numSuccessfulShotsHasBeenSet = false;
 
   ActionMetadata m_actionMetadata;
-  bool m_actionMetadataHasBeenSet = false;
 
   ExperimentalCapabilities m_experimentalCapabilities;
-  bool m_experimentalCapabilitiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_quantumTaskArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_deviceParametersHasBeenSet = false;
+  bool m_shotsHasBeenSet = false;
+  bool m_outputS3BucketHasBeenSet = false;
+  bool m_outputS3DirectoryHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_queueInfoHasBeenSet = false;
+  bool m_associationsHasBeenSet = false;
+  bool m_numSuccessfulShotsHasBeenSet = false;
+  bool m_actionMetadataHasBeenSet = false;
+  bool m_experimentalCapabilitiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

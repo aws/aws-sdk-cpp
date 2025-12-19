@@ -70,9 +70,9 @@ class StartAutomationEventRequest : public ComputeOptimizerAutomationRequest {
   ///@}
  private:
   Aws::String m_recommendedActionId;
-  bool m_recommendedActionIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_recommendedActionIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

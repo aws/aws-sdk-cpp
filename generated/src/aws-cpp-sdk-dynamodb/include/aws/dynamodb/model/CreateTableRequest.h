@@ -472,48 +472,48 @@ class CreateTableRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-  bool m_attributeDefinitionsHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<KeySchemaElement> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   Aws::Vector<LocalSecondaryIndex> m_localSecondaryIndexes;
-  bool m_localSecondaryIndexesHasBeenSet = false;
 
   Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
-  bool m_globalSecondaryIndexesHasBeenSet = false;
 
   BillingMode m_billingMode{BillingMode::NOT_SET};
-  bool m_billingModeHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   StreamSpecification m_streamSpecification;
-  bool m_streamSpecificationHasBeenSet = false;
 
   SSESpecification m_sSESpecification;
-  bool m_sSESpecificationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TableClass m_tableClass{TableClass::NOT_SET};
-  bool m_tableClassHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   WarmThroughput m_warmThroughput;
-  bool m_warmThroughputHasBeenSet = false;
 
   Aws::String m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughput;
+  bool m_attributeDefinitionsHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
+  bool m_localSecondaryIndexesHasBeenSet = false;
+  bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_billingModeHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_streamSpecificationHasBeenSet = false;
+  bool m_sSESpecificationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tableClassHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_warmThroughputHasBeenSet = false;
+  bool m_resourcePolicyHasBeenSet = false;
   bool m_onDemandThroughputHasBeenSet = false;
 };
 

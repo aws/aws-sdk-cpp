@@ -138,21 +138,21 @@ class RealtimeContactAnalysisSegment {
   ///@}
  private:
   RealTimeContactAnalysisSegmentTranscript m_transcript;
-  bool m_transcriptHasBeenSet = false;
 
   RealTimeContactAnalysisSegmentCategories m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   RealTimeContactAnalysisSegmentIssues m_issues;
-  bool m_issuesHasBeenSet = false;
 
   RealTimeContactAnalysisSegmentEvent m_event;
-  bool m_eventHasBeenSet = false;
 
   RealTimeContactAnalysisSegmentAttachments m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   RealTimeContactAnalysisSegmentPostContactSummary m_postContactSummary;
+  bool m_transcriptHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_issuesHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
   bool m_postContactSummaryHasBeenSet = false;
 };
 

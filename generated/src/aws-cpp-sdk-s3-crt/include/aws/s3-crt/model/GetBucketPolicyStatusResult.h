@@ -60,9 +60,9 @@ class GetBucketPolicyStatusResult {
   ///@}
  private:
   PolicyStatus m_policyStatus;
-  bool m_policyStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

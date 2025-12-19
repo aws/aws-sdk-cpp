@@ -110,15 +110,15 @@ class AwsWafv2RulesActionDetails {
   ///@}
  private:
   AwsWafv2ActionAllowDetails m_allow;
-  bool m_allowHasBeenSet = false;
 
   AwsWafv2ActionBlockDetails m_block;
-  bool m_blockHasBeenSet = false;
 
   AwsWafv2RulesActionCaptchaDetails m_captcha;
-  bool m_captchaHasBeenSet = false;
 
   AwsWafv2RulesActionCountDetails m_count;
+  bool m_allowHasBeenSet = false;
+  bool m_blockHasBeenSet = false;
+  bool m_captchaHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

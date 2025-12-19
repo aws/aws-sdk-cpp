@@ -87,12 +87,12 @@ class DescribeDeclarativePoliciesReportsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<DeclarativePoliciesReport> m_reports;
-  bool m_reportsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reportsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

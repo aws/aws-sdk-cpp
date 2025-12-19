@@ -227,33 +227,33 @@ class UserSearchSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_directoryUserId;
-  bool m_directoryUserIdHasBeenSet = false;
 
   Aws::String m_hierarchyGroupId;
-  bool m_hierarchyGroupIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   UserIdentityInfoLite m_identityInfo;
-  bool m_identityInfoHasBeenSet = false;
 
   UserPhoneConfig m_phoneConfig;
-  bool m_phoneConfigHasBeenSet = false;
 
   Aws::String m_routingProfileId;
-  bool m_routingProfileIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityProfileIds;
-  bool m_securityProfileIdsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_arnHasBeenSet = false;
+  bool m_directoryUserIdHasBeenSet = false;
+  bool m_hierarchyGroupIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_identityInfoHasBeenSet = false;
+  bool m_phoneConfigHasBeenSet = false;
+  bool m_routingProfileIdHasBeenSet = false;
+  bool m_securityProfileIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

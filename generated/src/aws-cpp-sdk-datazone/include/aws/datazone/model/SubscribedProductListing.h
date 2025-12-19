@@ -155,21 +155,21 @@ class SubscribedProductListing {
   ///@}
  private:
   Aws::Vector<AssetInDataProductListingItem> m_assetListings;
-  bool m_assetListingsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityRevision;
-  bool m_entityRevisionHasBeenSet = false;
 
   Aws::Vector<DetailedGlossaryTerm> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_assetListingsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityRevisionHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

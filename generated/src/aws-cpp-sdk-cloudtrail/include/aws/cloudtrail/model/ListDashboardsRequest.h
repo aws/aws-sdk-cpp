@@ -101,15 +101,15 @@ class ListDashboardsRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_namePrefix;
-  bool m_namePrefixHasBeenSet = false;
 
   DashboardType m_type{DashboardType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_namePrefixHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class AbortConfigCriteria {
   ///@}
  private:
   AbortCriteriaAction m_action{AbortCriteriaAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   AbortCriteriaFailureType m_failureType{AbortCriteriaFailureType::NOT_SET};
-  bool m_failureTypeHasBeenSet = false;
 
   int m_minNumberOfExecutedThings{0};
-  bool m_minNumberOfExecutedThingsHasBeenSet = false;
 
   double m_thresholdPercentage{0.0};
+  bool m_actionHasBeenSet = false;
+  bool m_failureTypeHasBeenSet = false;
+  bool m_minNumberOfExecutedThingsHasBeenSet = false;
   bool m_thresholdPercentageHasBeenSet = false;
 };
 

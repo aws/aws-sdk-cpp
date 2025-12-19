@@ -143,21 +143,21 @@ class ServicePrincipalNameSummary {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_directoryRegistrationArn;
-  bool m_directoryRegistrationArnHasBeenSet = false;
 
   ServicePrincipalNameStatus m_status{ServicePrincipalNameStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ServicePrincipalNameStatusReason m_statusReason{ServicePrincipalNameStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_connectorArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_directoryRegistrationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class CertificateList {
   ///@}
  private:
   SigningAlg m_signingAlg{SigningAlg::NOT_SET};
-  bool m_signingAlgHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_signingAlgHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

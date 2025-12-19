@@ -90,12 +90,12 @@ class ScopeConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   WebhookScopeType m_scope{WebhookScopeType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
 };
 

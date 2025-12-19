@@ -105,15 +105,15 @@ class CastColumnTypeOperation {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   ColumnDataType m_newColumnType{ColumnDataType::NOT_SET};
-  bool m_newColumnTypeHasBeenSet = false;
 
   ColumnDataSubType m_subType{ColumnDataSubType::NOT_SET};
-  bool m_subTypeHasBeenSet = false;
 
   Aws::String m_format;
+  bool m_columnNameHasBeenSet = false;
+  bool m_newColumnTypeHasBeenSet = false;
+  bool m_subTypeHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

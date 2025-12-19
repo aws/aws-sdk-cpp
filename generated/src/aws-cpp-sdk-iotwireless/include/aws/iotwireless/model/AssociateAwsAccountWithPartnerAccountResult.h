@@ -78,12 +78,12 @@ class AssociateAwsAccountWithPartnerAccountResult {
   ///@}
  private:
   SidewalkAccountInfo m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sidewalkHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

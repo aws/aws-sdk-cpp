@@ -98,12 +98,12 @@ class RenameColumnsOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<RenameColumnOperation> m_renameColumnOperations;
+  bool m_aliasHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_renameColumnOperationsHasBeenSet = false;
 };
 

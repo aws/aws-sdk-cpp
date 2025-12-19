@@ -83,12 +83,12 @@ class ValidationException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorCodeReason;
+  bool m_messageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorCodeReasonHasBeenSet = false;
 };
 

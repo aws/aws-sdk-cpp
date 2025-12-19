@@ -93,12 +93,12 @@ class DescribeDBSecurityGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBSecurityGroup> m_dBSecurityGroups;
-  bool m_dBSecurityGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBSecurityGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

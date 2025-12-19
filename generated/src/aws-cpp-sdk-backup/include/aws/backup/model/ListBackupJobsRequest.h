@@ -307,42 +307,42 @@ class ListBackupJobsRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_byResourceArn;
-  bool m_byResourceArnHasBeenSet = false;
 
   BackupJobState m_byState{BackupJobState::NOT_SET};
-  bool m_byStateHasBeenSet = false;
 
   Aws::String m_byBackupVaultName;
-  bool m_byBackupVaultNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreatedBefore{};
-  bool m_byCreatedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCreatedAfter{};
-  bool m_byCreatedAfterHasBeenSet = false;
 
   Aws::String m_byResourceType;
-  bool m_byResourceTypeHasBeenSet = false;
 
   Aws::String m_byAccountId;
-  bool m_byAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCompleteAfter{};
-  bool m_byCompleteAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_byCompleteBefore{};
-  bool m_byCompleteBeforeHasBeenSet = false;
 
   Aws::String m_byParentJobId;
-  bool m_byParentJobIdHasBeenSet = false;
 
   Aws::String m_byMessageCategory;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_byResourceArnHasBeenSet = false;
+  bool m_byStateHasBeenSet = false;
+  bool m_byBackupVaultNameHasBeenSet = false;
+  bool m_byCreatedBeforeHasBeenSet = false;
+  bool m_byCreatedAfterHasBeenSet = false;
+  bool m_byResourceTypeHasBeenSet = false;
+  bool m_byAccountIdHasBeenSet = false;
+  bool m_byCompleteAfterHasBeenSet = false;
+  bool m_byCompleteBeforeHasBeenSet = false;
+  bool m_byParentJobIdHasBeenSet = false;
   bool m_byMessageCategoryHasBeenSet = false;
 };
 

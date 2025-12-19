@@ -86,12 +86,12 @@ class ListLaunchesResult {
   ///@}
  private:
   Aws::Vector<Launch> m_launches;
-  bool m_launchesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_launchesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

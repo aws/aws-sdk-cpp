@@ -67,9 +67,9 @@ class GetMLModelRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   bool m_verbose{false};
+  bool m_mLModelIdHasBeenSet = false;
   bool m_verboseHasBeenSet = false;
 };
 

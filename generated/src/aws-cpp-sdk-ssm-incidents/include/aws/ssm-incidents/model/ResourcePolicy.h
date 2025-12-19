@@ -88,12 +88,12 @@ class ResourcePolicy {
   ///@}
  private:
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_ramResourceShareRegion;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
   bool m_ramResourceShareRegionHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class UpdateJobStatusRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   RequestedJobStatus m_requestedJobStatus{RequestedJobStatus::NOT_SET};
-  bool m_requestedJobStatusHasBeenSet = false;
 
   Aws::String m_statusUpdateReason;
+  bool m_accountIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_requestedJobStatusHasBeenSet = false;
   bool m_statusUpdateReasonHasBeenSet = false;
 };
 

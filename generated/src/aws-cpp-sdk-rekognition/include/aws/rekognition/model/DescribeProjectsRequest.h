@@ -121,15 +121,15 @@ class DescribeProjectsRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_projectNames;
-  bool m_projectNamesHasBeenSet = false;
 
   Aws::Vector<CustomizationFeature> m_features;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_projectNamesHasBeenSet = false;
   bool m_featuresHasBeenSet = false;
 };
 

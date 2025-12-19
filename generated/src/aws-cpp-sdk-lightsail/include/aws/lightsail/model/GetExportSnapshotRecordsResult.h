@@ -88,12 +88,12 @@ class GetExportSnapshotRecordsResult {
   ///@}
  private:
   Aws::Vector<ExportSnapshotRecord> m_exportSnapshotRecords;
-  bool m_exportSnapshotRecordsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportSnapshotRecordsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -103,12 +103,12 @@ class DocumentAclCondition {
   ///@}
  private:
   MemberRelation m_memberRelation{MemberRelation::NOT_SET};
-  bool m_memberRelationHasBeenSet = false;
 
   Aws::Vector<DocumentAclUser> m_users;
-  bool m_usersHasBeenSet = false;
 
   Aws::Vector<DocumentAclGroup> m_groups;
+  bool m_memberRelationHasBeenSet = false;
+  bool m_usersHasBeenSet = false;
   bool m_groupsHasBeenSet = false;
 };
 

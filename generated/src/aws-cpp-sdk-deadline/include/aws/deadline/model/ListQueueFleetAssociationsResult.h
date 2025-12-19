@@ -90,12 +90,12 @@ class ListQueueFleetAssociationsResult {
   ///@}
  private:
   Aws::Vector<QueueFleetAssociationSummary> m_queueFleetAssociations;
-  bool m_queueFleetAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queueFleetAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListProposalsResult {
   ///@}
  private:
   Aws::Vector<ProposalSummary> m_proposals;
-  bool m_proposalsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proposalsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -119,15 +119,15 @@ class SalesforceStandardObjectConfiguration {
   ///@}
  private:
   SalesforceStandardObjectName m_name{SalesforceStandardObjectName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_documentDataFieldName;
-  bool m_documentDataFieldNameHasBeenSet = false;
 
   Aws::String m_documentTitleFieldName;
-  bool m_documentTitleFieldNameHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
+  bool m_nameHasBeenSet = false;
+  bool m_documentDataFieldNameHasBeenSet = false;
+  bool m_documentTitleFieldNameHasBeenSet = false;
   bool m_fieldMappingsHasBeenSet = false;
 };
 

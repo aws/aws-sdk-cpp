@@ -70,9 +70,9 @@ class GetBlobRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_blobId;
+  bool m_repositoryNameHasBeenSet = false;
   bool m_blobIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class DisassociateBenefitApplicationResourceRequest : public PartnerCentralBenef
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_benefitApplicationIdentifier;
-  bool m_benefitApplicationIdentifierHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_catalogHasBeenSet = false;
+  bool m_benefitApplicationIdentifierHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

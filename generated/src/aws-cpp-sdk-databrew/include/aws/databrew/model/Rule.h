@@ -176,21 +176,21 @@ class Rule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::String m_checkExpression;
-  bool m_checkExpressionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_substitutionMap;
-  bool m_substitutionMapHasBeenSet = false;
 
   Threshold m_threshold;
-  bool m_thresholdHasBeenSet = false;
 
   Aws::Vector<ColumnSelector> m_columnSelectors;
+  bool m_nameHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
+  bool m_checkExpressionHasBeenSet = false;
+  bool m_substitutionMapHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
   bool m_columnSelectorsHasBeenSet = false;
 };
 

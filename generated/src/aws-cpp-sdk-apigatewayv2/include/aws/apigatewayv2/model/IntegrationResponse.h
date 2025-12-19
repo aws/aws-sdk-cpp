@@ -171,21 +171,21 @@ class IntegrationResponse {
   ///@}
  private:
   ContentHandlingStrategy m_contentHandlingStrategy{ContentHandlingStrategy::NOT_SET};
-  bool m_contentHandlingStrategyHasBeenSet = false;
 
   Aws::String m_integrationResponseId;
-  bool m_integrationResponseIdHasBeenSet = false;
 
   Aws::String m_integrationResponseKey;
-  bool m_integrationResponseKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseParameters;
-  bool m_responseParametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-  bool m_responseTemplatesHasBeenSet = false;
 
   Aws::String m_templateSelectionExpression;
+  bool m_contentHandlingStrategyHasBeenSet = false;
+  bool m_integrationResponseIdHasBeenSet = false;
+  bool m_integrationResponseKeyHasBeenSet = false;
+  bool m_responseParametersHasBeenSet = false;
+  bool m_responseTemplatesHasBeenSet = false;
   bool m_templateSelectionExpressionHasBeenSet = false;
 };
 

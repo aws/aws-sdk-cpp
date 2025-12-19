@@ -71,9 +71,9 @@ class ExecutionTrigger {
   ///@}
  private:
   TriggerType m_triggerType{TriggerType::NOT_SET};
-  bool m_triggerTypeHasBeenSet = false;
 
   Aws::String m_triggerDetail;
+  bool m_triggerTypeHasBeenSet = false;
   bool m_triggerDetailHasBeenSet = false;
 };
 

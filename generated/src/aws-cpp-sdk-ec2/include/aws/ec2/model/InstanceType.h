@@ -1096,7 +1096,20 @@ enum class InstanceType {
   r8a_24xlarge,
   r8a_48xlarge,
   r8a_metal_24xl,
-  r8a_metal_48xl
+  r8a_metal_48xl,
+  p6_b300_48xlarge,
+  c8a_medium,
+  c8a_large,
+  c8a_xlarge,
+  c8a_2xlarge,
+  c8a_4xlarge,
+  c8a_8xlarge,
+  c8a_12xlarge,
+  c8a_16xlarge,
+  c8a_24xlarge,
+  c8a_48xlarge,
+  c8a_metal_24xl,
+  c8a_metal_48xl
 };
 
 namespace InstanceTypeMapper {

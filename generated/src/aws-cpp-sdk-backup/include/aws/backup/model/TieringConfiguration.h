@@ -180,24 +180,24 @@ class TieringConfiguration {
   ///@}
  private:
   Aws::String m_tieringConfigurationName;
-  bool m_tieringConfigurationNameHasBeenSet = false;
 
   Aws::String m_tieringConfigurationArn;
-  bool m_tieringConfigurationArnHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::Vector<ResourceSelection> m_resourceSelection;
-  bool m_resourceSelectionHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_tieringConfigurationNameHasBeenSet = false;
+  bool m_tieringConfigurationArnHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_resourceSelectionHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

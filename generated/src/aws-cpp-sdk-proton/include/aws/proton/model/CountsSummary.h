@@ -172,24 +172,24 @@ class CountsSummary {
   ///@}
  private:
   ResourceCountsSummary m_components;
-  bool m_componentsHasBeenSet = false;
 
   ResourceCountsSummary m_environmentTemplates;
-  bool m_environmentTemplatesHasBeenSet = false;
 
   ResourceCountsSummary m_environments;
-  bool m_environmentsHasBeenSet = false;
 
   ResourceCountsSummary m_pipelines;
-  bool m_pipelinesHasBeenSet = false;
 
   ResourceCountsSummary m_serviceInstances;
-  bool m_serviceInstancesHasBeenSet = false;
 
   ResourceCountsSummary m_serviceTemplates;
-  bool m_serviceTemplatesHasBeenSet = false;
 
   ResourceCountsSummary m_services;
+  bool m_componentsHasBeenSet = false;
+  bool m_environmentTemplatesHasBeenSet = false;
+  bool m_environmentsHasBeenSet = false;
+  bool m_pipelinesHasBeenSet = false;
+  bool m_serviceInstancesHasBeenSet = false;
+  bool m_serviceTemplatesHasBeenSet = false;
   bool m_servicesHasBeenSet = false;
 };
 

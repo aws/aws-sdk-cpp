@@ -82,12 +82,12 @@ class InternalAccessResourceTypeDetails {
   ///@}
  private:
   int m_totalActiveFindings{0};
-  bool m_totalActiveFindingsHasBeenSet = false;
 
   int m_totalResolvedFindings{0};
-  bool m_totalResolvedFindingsHasBeenSet = false;
 
   int m_totalArchivedFindings{0};
+  bool m_totalActiveFindingsHasBeenSet = false;
+  bool m_totalResolvedFindingsHasBeenSet = false;
   bool m_totalArchivedFindingsHasBeenSet = false;
 };
 

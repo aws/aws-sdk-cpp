@@ -109,15 +109,15 @@ class DefaultFilterDropDownControlOptions {
   ///@}
  private:
   DropDownControlDisplayOptions m_displayOptions;
-  bool m_displayOptionsHasBeenSet = false;
 
   SheetControlListType m_type{SheetControlListType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   FilterSelectableValues m_selectableValues;
-  bool m_selectableValuesHasBeenSet = false;
 
   CommitMode m_commitMode{CommitMode::NOT_SET};
+  bool m_displayOptionsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_selectableValuesHasBeenSet = false;
   bool m_commitModeHasBeenSet = false;
 };
 

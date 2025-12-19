@@ -100,12 +100,12 @@ class BatchGetConfigurationPolicyAssociationsResult {
   ///@}
  private:
   Aws::Vector<ConfigurationPolicyAssociationSummary> m_configurationPolicyAssociations;
-  bool m_configurationPolicyAssociationsHasBeenSet = false;
 
   Aws::Vector<UnprocessedConfigurationPolicyAssociation> m_unprocessedConfigurationPolicyAssociations;
-  bool m_unprocessedConfigurationPolicyAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationPolicyAssociationsHasBeenSet = false;
+  bool m_unprocessedConfigurationPolicyAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateDeliveryStreamResult {
   ///@}
  private:
   Aws::String m_deliveryStreamARN;
-  bool m_deliveryStreamARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliveryStreamARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

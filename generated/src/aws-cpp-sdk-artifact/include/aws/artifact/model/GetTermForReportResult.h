@@ -76,12 +76,12 @@ class GetTermForReportResult {
   ///@}
  private:
   Aws::String m_documentPresignedUrl;
-  bool m_documentPresignedUrlHasBeenSet = false;
 
   Aws::String m_termToken;
-  bool m_termTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentPresignedUrlHasBeenSet = false;
+  bool m_termTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

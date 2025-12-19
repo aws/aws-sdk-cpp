@@ -70,9 +70,9 @@ class EvaluationQuestionAnswerAnalysisDetails {
   ///@}
  private:
   EvaluationGenAIAnswerAnalysisDetails m_genAI;
-  bool m_genAIHasBeenSet = false;
 
   EvaluationContactLensAnswerAnalysisDetails m_contactLens;
+  bool m_genAIHasBeenSet = false;
   bool m_contactLensHasBeenSet = false;
 };
 

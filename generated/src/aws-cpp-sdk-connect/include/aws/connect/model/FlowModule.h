@@ -68,9 +68,9 @@ class FlowModule {
   ///@}
  private:
   FlowModuleType m_type{FlowModuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_flowModuleId;
+  bool m_typeHasBeenSet = false;
   bool m_flowModuleIdHasBeenSet = false;
 };
 

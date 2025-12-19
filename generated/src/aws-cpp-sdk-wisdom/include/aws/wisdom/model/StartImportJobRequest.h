@@ -152,21 +152,21 @@ class StartImportJobRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   ExternalSourceConfiguration m_externalSourceConfiguration;
-  bool m_externalSourceConfigurationHasBeenSet = false;
 
   ImportJobType m_importJobType{ImportJobType::NOT_SET};
-  bool m_importJobTypeHasBeenSet = false;
 
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_uploadId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_externalSourceConfigurationHasBeenSet = false;
+  bool m_importJobTypeHasBeenSet = false;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_uploadIdHasBeenSet = false;
 };
 

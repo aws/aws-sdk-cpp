@@ -70,9 +70,9 @@ class PutEmailIdentityDkimAttributesRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   bool m_signingEnabled{false};
+  bool m_emailIdentityHasBeenSet = false;
   bool m_signingEnabledHasBeenSet = false;
 };
 

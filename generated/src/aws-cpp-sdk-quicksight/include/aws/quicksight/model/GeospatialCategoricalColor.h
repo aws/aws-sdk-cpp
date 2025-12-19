@@ -109,15 +109,15 @@ class GeospatialCategoricalColor {
   ///@}
  private:
   Aws::Vector<GeospatialCategoricalDataColor> m_categoryDataColors;
-  bool m_categoryDataColorsHasBeenSet = false;
 
   Visibility m_nullDataVisibility{Visibility::NOT_SET};
-  bool m_nullDataVisibilityHasBeenSet = false;
 
   GeospatialNullDataSettings m_nullDataSettings;
-  bool m_nullDataSettingsHasBeenSet = false;
 
   double m_defaultOpacity{0.0};
+  bool m_categoryDataColorsHasBeenSet = false;
+  bool m_nullDataVisibilityHasBeenSet = false;
+  bool m_nullDataSettingsHasBeenSet = false;
   bool m_defaultOpacityHasBeenSet = false;
 };
 

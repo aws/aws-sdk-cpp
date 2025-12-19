@@ -86,12 +86,12 @@ class ListPluginsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Plugin> m_plugins;
-  bool m_pluginsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_pluginsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

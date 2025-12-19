@@ -85,12 +85,12 @@ class ListAggregatorsV2Result {
   ///@}
  private:
   Aws::Vector<AggregatorV2> m_aggregatorsV2;
-  bool m_aggregatorsV2HasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregatorsV2HasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

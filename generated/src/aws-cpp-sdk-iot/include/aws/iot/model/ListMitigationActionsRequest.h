@@ -86,12 +86,12 @@ class ListMitigationActionsRequest : public IoTRequest {
   ///@}
  private:
   MitigationActionType m_actionType{MitigationActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

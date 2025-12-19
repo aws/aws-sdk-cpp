@@ -143,21 +143,21 @@ class LegendOptions {
   ///@}
  private:
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   LabelOptions m_title;
-  bool m_titleHasBeenSet = false;
 
   LegendPosition m_position{LegendPosition::NOT_SET};
-  bool m_positionHasBeenSet = false;
 
   Aws::String m_width;
-  bool m_widthHasBeenSet = false;
 
   Aws::String m_height;
-  bool m_heightHasBeenSet = false;
 
   FontConfiguration m_valueFontConfiguration;
+  bool m_visibilityHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
   bool m_valueFontConfigurationHasBeenSet = false;
 };
 

@@ -137,18 +137,18 @@ class Contact {
   ///@}
  private:
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::Vector<TopicPreference> m_topicPreferences;
-  bool m_topicPreferencesHasBeenSet = false;
 
   Aws::Vector<TopicPreference> m_topicDefaultPreferences;
-  bool m_topicDefaultPreferencesHasBeenSet = false;
 
   bool m_unsubscribeAll{false};
-  bool m_unsubscribeAllHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_emailAddressHasBeenSet = false;
+  bool m_topicPreferencesHasBeenSet = false;
+  bool m_topicDefaultPreferencesHasBeenSet = false;
+  bool m_unsubscribeAllHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

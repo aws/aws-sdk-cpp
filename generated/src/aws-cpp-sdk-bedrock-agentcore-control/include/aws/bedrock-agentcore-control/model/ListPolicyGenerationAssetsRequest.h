@@ -37,7 +37,7 @@ class ListPolicyGenerationAssetsRequest : public BedrockAgentCoreControlRequest 
   /**
    * <p>The unique identifier of the policy generation request whose assets are to be
    * retrieved. This must be a valid generation ID from a previous <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
    * call that has completed processing.</p>
    */
   inline const Aws::String& GetPolicyGenerationId() const { return m_policyGenerationId; }
@@ -77,7 +77,7 @@ class ListPolicyGenerationAssetsRequest : public BedrockAgentCoreControlRequest 
   ///@{
   /**
    * <p>A pagination token returned from a previous <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
    * call. Use this token to retrieve the next page of assets when the response is
    * paginated due to large numbers of generated policy options.</p>
    */
@@ -115,15 +115,15 @@ class ListPolicyGenerationAssetsRequest : public BedrockAgentCoreControlRequest 
   ///@}
  private:
   Aws::String m_policyGenerationId;
-  bool m_policyGenerationIdHasBeenSet = false;
 
   Aws::String m_policyEngineId;
-  bool m_policyEngineIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_policyGenerationIdHasBeenSet = false;
+  bool m_policyEngineIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

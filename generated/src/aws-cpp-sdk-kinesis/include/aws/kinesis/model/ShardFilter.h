@@ -110,12 +110,12 @@ class ShardFilter {
   ///@}
  private:
   ShardFilterType m_type{ShardFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_shardId;
-  bool m_shardIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_typeHasBeenSet = false;
+  bool m_shardIdHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class UpdateMediaInsightsPipelineConfigurationResult {
   ///@}
  private:
   MediaInsightsPipelineConfiguration m_mediaInsightsPipelineConfiguration;
-  bool m_mediaInsightsPipelineConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaInsightsPipelineConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

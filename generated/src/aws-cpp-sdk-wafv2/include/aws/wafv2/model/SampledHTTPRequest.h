@@ -266,36 +266,36 @@ class SampledHTTPRequest {
   ///@}
  private:
   HTTPRequest m_request;
-  bool m_requestHasBeenSet = false;
 
   long long m_weight{0};
-  bool m_weightHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_ruleNameWithinRuleGroup;
-  bool m_ruleNameWithinRuleGroupHasBeenSet = false;
 
   Aws::Vector<HTTPHeader> m_requestHeadersInserted;
-  bool m_requestHeadersInsertedHasBeenSet = false;
 
   int m_responseCodeSent{0};
-  bool m_responseCodeSentHasBeenSet = false;
 
   Aws::Vector<Label> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   CaptchaResponse m_captchaResponse;
-  bool m_captchaResponseHasBeenSet = false;
 
   ChallengeResponse m_challengeResponse;
-  bool m_challengeResponseHasBeenSet = false;
 
   Aws::String m_overriddenAction;
+  bool m_requestHasBeenSet = false;
+  bool m_weightHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_ruleNameWithinRuleGroupHasBeenSet = false;
+  bool m_requestHeadersInsertedHasBeenSet = false;
+  bool m_responseCodeSentHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_captchaResponseHasBeenSet = false;
+  bool m_challengeResponseHasBeenSet = false;
   bool m_overriddenActionHasBeenSet = false;
 };
 

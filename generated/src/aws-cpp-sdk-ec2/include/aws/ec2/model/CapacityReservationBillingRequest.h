@@ -166,24 +166,24 @@ class CapacityReservationBillingRequest {
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   Aws::String m_requestedBy;
-  bool m_requestedByHasBeenSet = false;
 
   Aws::String m_unusedReservationBillingOwnerId;
-  bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   CapacityReservationBillingRequestStatus m_status{CapacityReservationBillingRequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   CapacityReservationInfo m_capacityReservationInfo;
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_requestedByHasBeenSet = false;
+  bool m_unusedReservationBillingOwnerIdHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_capacityReservationInfoHasBeenSet = false;
 };
 

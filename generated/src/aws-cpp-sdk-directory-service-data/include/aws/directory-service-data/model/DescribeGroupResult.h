@@ -191,30 +191,30 @@ class DescribeGroupResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_distinguishedName;
-  bool m_distinguishedNameHasBeenSet = false;
 
   GroupScope m_groupScope{GroupScope::NOT_SET};
-  bool m_groupScopeHasBeenSet = false;
 
   GroupType m_groupType{GroupType::NOT_SET};
-  bool m_groupTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_otherAttributes;
-  bool m_otherAttributesHasBeenSet = false;
 
   Aws::String m_realm;
-  bool m_realmHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   Aws::String m_sID;
-  bool m_sIDHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_distinguishedNameHasBeenSet = false;
+  bool m_groupScopeHasBeenSet = false;
+  bool m_groupTypeHasBeenSet = false;
+  bool m_otherAttributesHasBeenSet = false;
+  bool m_realmHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
+  bool m_sIDHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

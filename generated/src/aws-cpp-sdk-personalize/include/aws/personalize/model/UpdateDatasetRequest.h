@@ -67,9 +67,9 @@ class UpdateDatasetRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_schemaArn;
+  bool m_datasetArnHasBeenSet = false;
   bool m_schemaArnHasBeenSet = false;
 };
 

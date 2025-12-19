@@ -213,30 +213,30 @@ class GetResourceOauth2TokenRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_workloadIdentityToken;
-  bool m_workloadIdentityTokenHasBeenSet = false;
 
   Aws::String m_resourceCredentialProviderName;
-  bool m_resourceCredentialProviderNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Oauth2FlowType m_oauth2Flow{Oauth2FlowType::NOT_SET};
-  bool m_oauth2FlowHasBeenSet = false;
 
   Aws::String m_sessionUri;
-  bool m_sessionUriHasBeenSet = false;
 
   Aws::String m_resourceOauth2ReturnUrl;
-  bool m_resourceOauth2ReturnUrlHasBeenSet = false;
 
   bool m_forceAuthentication{false};
-  bool m_forceAuthenticationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customParameters;
-  bool m_customParametersHasBeenSet = false;
 
   Aws::String m_customState;
+  bool m_workloadIdentityTokenHasBeenSet = false;
+  bool m_resourceCredentialProviderNameHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
+  bool m_oauth2FlowHasBeenSet = false;
+  bool m_sessionUriHasBeenSet = false;
+  bool m_resourceOauth2ReturnUrlHasBeenSet = false;
+  bool m_forceAuthenticationHasBeenSet = false;
+  bool m_customParametersHasBeenSet = false;
   bool m_customStateHasBeenSet = false;
 };
 

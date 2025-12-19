@@ -202,27 +202,27 @@ class ModifyMigrationProjectRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_migrationProjectName;
-  bool m_migrationProjectNameHasBeenSet = false;
 
   Aws::Vector<DataProviderDescriptorDefinition> m_sourceDataProviderDescriptors;
-  bool m_sourceDataProviderDescriptorsHasBeenSet = false;
 
   Aws::Vector<DataProviderDescriptorDefinition> m_targetDataProviderDescriptors;
-  bool m_targetDataProviderDescriptorsHasBeenSet = false;
 
   Aws::String m_instanceProfileIdentifier;
-  bool m_instanceProfileIdentifierHasBeenSet = false;
 
   Aws::String m_transformationRules;
-  bool m_transformationRulesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   SCApplicationAttributes m_schemaConversionApplicationAttributes;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_migrationProjectNameHasBeenSet = false;
+  bool m_sourceDataProviderDescriptorsHasBeenSet = false;
+  bool m_targetDataProviderDescriptorsHasBeenSet = false;
+  bool m_instanceProfileIdentifierHasBeenSet = false;
+  bool m_transformationRulesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_schemaConversionApplicationAttributesHasBeenSet = false;
 };
 

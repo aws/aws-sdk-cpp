@@ -105,15 +105,15 @@ class ListAccessGrantsInstancesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListAccessGrantsInstanceEntry> m_accessGrantsInstancesList;
-  bool m_accessGrantsInstancesListHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_accessGrantsInstancesListHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

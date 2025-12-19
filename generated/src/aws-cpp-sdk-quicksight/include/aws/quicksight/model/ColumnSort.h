@@ -85,12 +85,12 @@ class ColumnSort {
   ///@}
  private:
   ColumnIdentifier m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   SortDirection m_direction{SortDirection::NOT_SET};
-  bool m_directionHasBeenSet = false;
 
   AggregationFunction m_aggregationFunction;
+  bool m_sortByHasBeenSet = false;
+  bool m_directionHasBeenSet = false;
   bool m_aggregationFunctionHasBeenSet = false;
 };
 

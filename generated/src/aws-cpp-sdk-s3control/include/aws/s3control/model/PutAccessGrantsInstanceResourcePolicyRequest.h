@@ -93,12 +93,12 @@ class PutAccessGrantsInstanceResourcePolicyRequest : public S3ControlRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_organization;
+  bool m_accountIdHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_organizationHasBeenSet = false;
 };
 

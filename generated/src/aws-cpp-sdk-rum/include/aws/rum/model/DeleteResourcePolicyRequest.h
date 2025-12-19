@@ -74,9 +74,9 @@ class DeleteResourcePolicyRequest : public CloudWatchRUMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_policyRevisionId;
+  bool m_nameHasBeenSet = false;
   bool m_policyRevisionIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class MotionImageInsertionFramerate {
   ///@}
  private:
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
+  bool m_framerateDenominatorHasBeenSet = false;
   bool m_framerateNumeratorHasBeenSet = false;
 };
 

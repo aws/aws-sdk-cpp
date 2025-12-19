@@ -160,24 +160,24 @@ class ApplyGuardrailResult {
   ///@}
  private:
   GuardrailUsage m_usage;
-  bool m_usageHasBeenSet = false;
 
   GuardrailAction m_action{GuardrailAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_actionReason;
-  bool m_actionReasonHasBeenSet = false;
 
   Aws::Vector<GuardrailOutputContent> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<GuardrailAssessment> m_assessments;
-  bool m_assessmentsHasBeenSet = false;
 
   GuardrailCoverage m_guardrailCoverage;
-  bool m_guardrailCoverageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usageHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_actionReasonHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_assessmentsHasBeenSet = false;
+  bool m_guardrailCoverageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

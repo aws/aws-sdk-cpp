@@ -59,9 +59,9 @@ class CreateForecastResult {
   ///@}
  private:
   Aws::String m_forecastArn;
-  bool m_forecastArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_forecastArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

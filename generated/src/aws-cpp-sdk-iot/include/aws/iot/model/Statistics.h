@@ -161,27 +161,27 @@ class Statistics {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   double m_average{0.0};
-  bool m_averageHasBeenSet = false;
 
   double m_sum{0.0};
-  bool m_sumHasBeenSet = false;
 
   double m_minimum{0.0};
-  bool m_minimumHasBeenSet = false;
 
   double m_maximum{0.0};
-  bool m_maximumHasBeenSet = false;
 
   double m_sumOfSquares{0.0};
-  bool m_sumOfSquaresHasBeenSet = false;
 
   double m_variance{0.0};
-  bool m_varianceHasBeenSet = false;
 
   double m_stdDeviation{0.0};
+  bool m_countHasBeenSet = false;
+  bool m_averageHasBeenSet = false;
+  bool m_sumHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
+  bool m_maximumHasBeenSet = false;
+  bool m_sumOfSquaresHasBeenSet = false;
+  bool m_varianceHasBeenSet = false;
   bool m_stdDeviationHasBeenSet = false;
 };
 

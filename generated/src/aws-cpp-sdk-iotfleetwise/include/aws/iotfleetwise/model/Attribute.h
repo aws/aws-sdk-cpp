@@ -217,33 +217,33 @@ class Attribute {
   ///@}
  private:
   Aws::String m_fullyQualifiedName;
-  bool m_fullyQualifiedNameHasBeenSet = false;
 
   NodeDataType m_dataType{NodeDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   double m_min{0.0};
-  bool m_minHasBeenSet = false;
 
   double m_max{0.0};
-  bool m_maxHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_deprecationMessage;
-  bool m_deprecationMessageHasBeenSet = false;
 
   Aws::String m_comment;
+  bool m_fullyQualifiedNameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_minHasBeenSet = false;
+  bool m_maxHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_deprecationMessageHasBeenSet = false;
   bool m_commentHasBeenSet = false;
 };
 

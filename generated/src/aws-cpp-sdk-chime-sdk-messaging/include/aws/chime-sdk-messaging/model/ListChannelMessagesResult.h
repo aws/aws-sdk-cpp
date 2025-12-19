@@ -119,18 +119,18 @@ class ListChannelMessagesResult {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ChannelMessageSummary> m_channelMessages;
-  bool m_channelMessagesHasBeenSet = false;
 
   Aws::String m_subChannelId;
-  bool m_subChannelIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_channelMessagesHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

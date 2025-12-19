@@ -83,9 +83,9 @@ class AccessEndpointConfig {
   ///@}
  private:
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
-  bool m_accessEndpointsHasBeenSet = false;
 
   Aws::Vector<InternetFallbackProtocol> m_internetFallbackProtocols;
+  bool m_accessEndpointsHasBeenSet = false;
   bool m_internetFallbackProtocolsHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class DeleteObjectInput {
   ///@}
  private:
   Aws::String m_uri;
-  bool m_uriHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_partitionValues;
+  bool m_uriHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_partitionValuesHasBeenSet = false;
 };
 

@@ -24,5 +24,9 @@ Aws::String PutConfigurationSetSuppressionOptionsRequest::SerializePayload() con
     payload.WithArray("SuppressedReasons", std::move(suppressedReasonsJsonList));
   }
 
+  if (m_validationOptionsHasBeenSet) {
+    payload.WithObject("ValidationOptions", m_validationOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

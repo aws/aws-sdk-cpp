@@ -66,9 +66,9 @@ class SortCriteria {
   ///@}
  private:
   Field m_field{Field::NOT_SET};
-  bool m_fieldHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_fieldHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

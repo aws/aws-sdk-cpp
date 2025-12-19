@@ -74,9 +74,9 @@ class MessageSignal {
   ///@}
  private:
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   StructuredMessage m_structuredMessage;
+  bool m_topicNameHasBeenSet = false;
   bool m_structuredMessageHasBeenSet = false;
 };
 

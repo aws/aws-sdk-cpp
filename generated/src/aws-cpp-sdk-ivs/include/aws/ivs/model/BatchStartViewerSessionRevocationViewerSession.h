@@ -89,12 +89,12 @@ class BatchStartViewerSessionRevocationViewerSession {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_viewerId;
-  bool m_viewerIdHasBeenSet = false;
 
   int m_viewerSessionVersionsLessThanOrEqualTo{0};
+  bool m_channelArnHasBeenSet = false;
+  bool m_viewerIdHasBeenSet = false;
   bool m_viewerSessionVersionsLessThanOrEqualToHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class GetRunRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<RunExport> m_export;
+  bool m_idHasBeenSet = false;
   bool m_exportHasBeenSet = false;
 };
 

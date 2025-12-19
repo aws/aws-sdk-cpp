@@ -82,12 +82,12 @@ class RemoveTargetsResult {
   ///@}
  private:
   int m_failedEntryCount{0};
-  bool m_failedEntryCountHasBeenSet = false;
 
   Aws::Vector<RemoveTargetsResultEntry> m_failedEntries;
-  bool m_failedEntriesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedEntryCountHasBeenSet = false;
+  bool m_failedEntriesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -184,27 +184,27 @@ class StartMailboxExportJobRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3Prefix;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
   bool m_s3PrefixHasBeenSet = false;
 };
 

@@ -184,30 +184,30 @@ class ResponseStream {
   ///@}
  private:
   Trace m_trace;
-  bool m_traceHasBeenSet = false;
 
   InvocationOutput m_output;
-  bool m_outputHasBeenSet = false;
 
   IoTSiteWiseError m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
 
   ConflictingOperationException m_conflictingOperationException;
-  bool m_conflictingOperationExceptionHasBeenSet = false;
 
   IoTSiteWiseError m_internalFailureException;
-  bool m_internalFailureExceptionHasBeenSet = false;
 
   IoTSiteWiseError m_invalidRequestException;
-  bool m_invalidRequestExceptionHasBeenSet = false;
 
   IoTSiteWiseError m_limitExceededException;
-  bool m_limitExceededExceptionHasBeenSet = false;
 
   IoTSiteWiseError m_resourceNotFoundException;
-  bool m_resourceNotFoundExceptionHasBeenSet = false;
 
   IoTSiteWiseError m_throttlingException;
+  bool m_traceHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_accessDeniedExceptionHasBeenSet = false;
+  bool m_conflictingOperationExceptionHasBeenSet = false;
+  bool m_internalFailureExceptionHasBeenSet = false;
+  bool m_invalidRequestExceptionHasBeenSet = false;
+  bool m_limitExceededExceptionHasBeenSet = false;
+  bool m_resourceNotFoundExceptionHasBeenSet = false;
   bool m_throttlingExceptionHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class ImportDestination {
   ///@}
  private:
   SuppressionListDestination m_suppressionListDestination;
-  bool m_suppressionListDestinationHasBeenSet = false;
 
   ContactListDestination m_contactListDestination;
+  bool m_suppressionListDestinationHasBeenSet = false;
   bool m_contactListDestinationHasBeenSet = false;
 };
 

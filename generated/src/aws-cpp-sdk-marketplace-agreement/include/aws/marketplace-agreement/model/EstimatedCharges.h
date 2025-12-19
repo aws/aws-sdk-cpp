@@ -85,9 +85,9 @@ class EstimatedCharges {
   ///@}
  private:
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   Aws::String m_agreementValue;
+  bool m_currencyCodeHasBeenSet = false;
   bool m_agreementValueHasBeenSet = false;
 };
 

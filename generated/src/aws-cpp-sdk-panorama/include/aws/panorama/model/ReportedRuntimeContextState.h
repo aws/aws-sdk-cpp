@@ -103,15 +103,15 @@ class ReportedRuntimeContextState {
   ///@}
  private:
   DesiredState m_desiredState{DesiredState::NOT_SET};
-  bool m_desiredStateHasBeenSet = false;
 
   DeviceReportedStatus m_deviceReportedStatus{DeviceReportedStatus::NOT_SET};
-  bool m_deviceReportedStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_deviceReportedTime{};
-  bool m_deviceReportedTimeHasBeenSet = false;
 
   Aws::String m_runtimeContextName;
+  bool m_desiredStateHasBeenSet = false;
+  bool m_deviceReportedStatusHasBeenSet = false;
+  bool m_deviceReportedTimeHasBeenSet = false;
   bool m_runtimeContextNameHasBeenSet = false;
 };
 

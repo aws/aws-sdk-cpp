@@ -58,9 +58,9 @@ class DeleteDBClusterAutomatedBackupResult {
   ///@}
  private:
   DBClusterAutomatedBackup m_dBClusterAutomatedBackup;
-  bool m_dBClusterAutomatedBackupHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBClusterAutomatedBackupHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

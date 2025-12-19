@@ -222,33 +222,33 @@ class TimeRangeFilter {
   ///@}
  private:
   Aws::String m_filterId;
-  bool m_filterIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   bool m_includeMinimum{false};
-  bool m_includeMinimumHasBeenSet = false;
 
   bool m_includeMaximum{false};
-  bool m_includeMaximumHasBeenSet = false;
 
   TimeRangeFilterValue m_rangeMinimumValue;
-  bool m_rangeMinimumValueHasBeenSet = false;
 
   TimeRangeFilterValue m_rangeMaximumValue;
-  bool m_rangeMaximumValueHasBeenSet = false;
 
   FilterNullOption m_nullOption{FilterNullOption::NOT_SET};
-  bool m_nullOptionHasBeenSet = false;
 
   ExcludePeriodConfiguration m_excludePeriodConfiguration;
-  bool m_excludePeriodConfigurationHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   DefaultFilterControlConfiguration m_defaultFilterControlConfiguration;
+  bool m_filterIdHasBeenSet = false;
+  bool m_columnHasBeenSet = false;
+  bool m_includeMinimumHasBeenSet = false;
+  bool m_includeMaximumHasBeenSet = false;
+  bool m_rangeMinimumValueHasBeenSet = false;
+  bool m_rangeMaximumValueHasBeenSet = false;
+  bool m_nullOptionHasBeenSet = false;
+  bool m_excludePeriodConfigurationHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
   bool m_defaultFilterControlConfigurationHasBeenSet = false;
 };
 

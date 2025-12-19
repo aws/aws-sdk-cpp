@@ -158,21 +158,21 @@ class Attachment {
   ///@}
  private:
   Aws::String m_attachmentArn;
-  bool m_attachmentArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::Vector<Resource> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
+  bool m_attachmentArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

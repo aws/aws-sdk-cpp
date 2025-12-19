@@ -61,9 +61,9 @@ class DescribeTransactionResult {
   ///@}
  private:
   TransactionDescription m_transactionDescription;
-  bool m_transactionDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transactionDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

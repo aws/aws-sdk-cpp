@@ -109,15 +109,15 @@ class ListAccessPointsForDirectoryBucketsResult {
   ///@}
  private:
   Aws::Vector<AccessPoint> m_accessPointList;
-  bool m_accessPointListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_accessPointListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

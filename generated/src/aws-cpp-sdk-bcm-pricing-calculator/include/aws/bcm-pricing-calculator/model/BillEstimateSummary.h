@@ -141,21 +141,21 @@ class BillEstimateSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   BillEstimateStatus m_status{BillEstimateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   BillInterval m_billInterval;
-  bool m_billIntervalHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_billIntervalHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
 };
 

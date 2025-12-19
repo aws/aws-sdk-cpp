@@ -72,9 +72,9 @@ class LFResourceDetails {
   ///@}
  private:
   DatabaseLFTagPolicy m_database;
-  bool m_databaseHasBeenSet = false;
 
   TableLFTagPolicy m_table;
+  bool m_databaseHasBeenSet = false;
   bool m_tableHasBeenSet = false;
 };
 

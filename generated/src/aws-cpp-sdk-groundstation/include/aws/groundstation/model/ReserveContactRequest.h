@@ -167,24 +167,24 @@ class ReserveContactRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_missionProfileArn;
-  bool m_missionProfileArnHasBeenSet = false;
 
   Aws::String m_satelliteArn;
-  bool m_satelliteArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_groundStation;
-  bool m_groundStationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TrackingOverrides m_trackingOverrides;
+  bool m_missionProfileArnHasBeenSet = false;
+  bool m_satelliteArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_groundStationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_trackingOverridesHasBeenSet = false;
 };
 

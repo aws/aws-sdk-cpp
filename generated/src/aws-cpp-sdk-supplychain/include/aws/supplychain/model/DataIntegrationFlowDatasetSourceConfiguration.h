@@ -70,9 +70,9 @@ class DataIntegrationFlowDatasetSourceConfiguration {
   ///@}
  private:
   Aws::String m_datasetIdentifier;
-  bool m_datasetIdentifierHasBeenSet = false;
 
   DataIntegrationFlowDatasetOptions m_options;
+  bool m_datasetIdentifierHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

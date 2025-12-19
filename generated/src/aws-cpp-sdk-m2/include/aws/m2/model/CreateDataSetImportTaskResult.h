@@ -61,9 +61,9 @@ class CreateDataSetImportTaskResult {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

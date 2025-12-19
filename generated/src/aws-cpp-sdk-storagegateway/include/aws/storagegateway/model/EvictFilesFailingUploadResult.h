@@ -60,9 +60,9 @@ class EvictFilesFailingUploadResult {
   ///@}
  private:
   Aws::String m_notificationId;
-  bool m_notificationIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notificationIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

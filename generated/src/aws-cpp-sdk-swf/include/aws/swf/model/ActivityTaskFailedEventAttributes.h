@@ -105,15 +105,15 @@ class ActivityTaskFailedEventAttributes {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_details;
-  bool m_detailsHasBeenSet = false;
 
   long long m_scheduledEventId{0};
-  bool m_scheduledEventIdHasBeenSet = false;
 
   long long m_startedEventId{0};
+  bool m_reasonHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_scheduledEventIdHasBeenSet = false;
   bool m_startedEventIdHasBeenSet = false;
 };
 

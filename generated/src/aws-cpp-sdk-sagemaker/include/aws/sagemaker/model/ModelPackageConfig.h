@@ -70,9 +70,9 @@ class ModelPackageConfig {
   ///@}
  private:
   Aws::String m_modelPackageGroupArn;
-  bool m_modelPackageGroupArnHasBeenSet = false;
 
   Aws::String m_sourceModelPackageArn;
+  bool m_modelPackageGroupArnHasBeenSet = false;
   bool m_sourceModelPackageArnHasBeenSet = false;
 };
 

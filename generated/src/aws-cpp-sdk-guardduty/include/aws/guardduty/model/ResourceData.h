@@ -350,51 +350,51 @@ class ResourceData {
   ///@}
  private:
   S3Bucket m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Ec2Instance m_ec2Instance;
-  bool m_ec2InstanceHasBeenSet = false;
 
   AccessKey m_accessKey;
-  bool m_accessKeyHasBeenSet = false;
 
   Ec2NetworkInterface m_ec2NetworkInterface;
-  bool m_ec2NetworkInterfaceHasBeenSet = false;
 
   S3Object m_s3Object;
-  bool m_s3ObjectHasBeenSet = false;
 
   EksCluster m_eksCluster;
-  bool m_eksClusterHasBeenSet = false;
 
   KubernetesWorkload m_kubernetesWorkload;
-  bool m_kubernetesWorkloadHasBeenSet = false;
 
   ContainerFindingResource m_container;
-  bool m_containerHasBeenSet = false;
 
   EcsCluster m_ecsCluster;
-  bool m_ecsClusterHasBeenSet = false;
 
   EcsTask m_ecsTask;
-  bool m_ecsTaskHasBeenSet = false;
 
   IamInstanceProfileV2 m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   AutoscalingAutoScalingGroup m_autoscalingAutoScalingGroup;
-  bool m_autoscalingAutoScalingGroupHasBeenSet = false;
 
   Ec2LaunchTemplate m_ec2LaunchTemplate;
-  bool m_ec2LaunchTemplateHasBeenSet = false;
 
   Ec2Vpc m_ec2Vpc;
-  bool m_ec2VpcHasBeenSet = false;
 
   Ec2Image m_ec2Image;
-  bool m_ec2ImageHasBeenSet = false;
 
   CloudformationStack m_cloudformationStack;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_ec2InstanceHasBeenSet = false;
+  bool m_accessKeyHasBeenSet = false;
+  bool m_ec2NetworkInterfaceHasBeenSet = false;
+  bool m_s3ObjectHasBeenSet = false;
+  bool m_eksClusterHasBeenSet = false;
+  bool m_kubernetesWorkloadHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_ecsClusterHasBeenSet = false;
+  bool m_ecsTaskHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_autoscalingAutoScalingGroupHasBeenSet = false;
+  bool m_ec2LaunchTemplateHasBeenSet = false;
+  bool m_ec2VpcHasBeenSet = false;
+  bool m_ec2ImageHasBeenSet = false;
   bool m_cloudformationStackHasBeenSet = false;
 };
 

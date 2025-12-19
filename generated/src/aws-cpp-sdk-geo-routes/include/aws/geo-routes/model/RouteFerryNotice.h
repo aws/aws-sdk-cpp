@@ -68,9 +68,9 @@ class RouteFerryNotice {
   ///@}
  private:
   RouteFerryNoticeCode m_code{RouteFerryNoticeCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   RouteNoticeImpact m_impact{RouteNoticeImpact::NOT_SET};
+  bool m_codeHasBeenSet = false;
   bool m_impactHasBeenSet = false;
 };
 

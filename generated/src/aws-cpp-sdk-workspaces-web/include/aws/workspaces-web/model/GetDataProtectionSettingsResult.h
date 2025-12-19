@@ -60,9 +60,9 @@ class GetDataProtectionSettingsResult {
   ///@}
  private:
   DataProtectionSettings m_dataProtectionSettings;
-  bool m_dataProtectionSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataProtectionSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

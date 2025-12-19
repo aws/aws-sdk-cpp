@@ -92,12 +92,12 @@ class ListOperationsResult {
   ///@}
  private:
   Aws::Vector<OperationSummary> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::String m_nextPageMarker;
-  bool m_nextPageMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_operationsHasBeenSet = false;
+  bool m_nextPageMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

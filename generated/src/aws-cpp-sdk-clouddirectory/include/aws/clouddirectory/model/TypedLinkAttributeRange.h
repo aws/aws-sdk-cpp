@@ -70,9 +70,9 @@ class TypedLinkAttributeRange {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   TypedAttributeValueRange m_range;
+  bool m_attributeNameHasBeenSet = false;
   bool m_rangeHasBeenSet = false;
 };
 

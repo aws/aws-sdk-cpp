@@ -91,12 +91,12 @@ class CustomClaimValidationType {
   ///@}
  private:
   Aws::String m_inboundTokenClaimName;
-  bool m_inboundTokenClaimNameHasBeenSet = false;
 
   InboundTokenClaimValueType m_inboundTokenClaimValueType{InboundTokenClaimValueType::NOT_SET};
-  bool m_inboundTokenClaimValueTypeHasBeenSet = false;
 
   AuthorizingClaimMatchValueType m_authorizingClaimMatchValue;
+  bool m_inboundTokenClaimNameHasBeenSet = false;
+  bool m_inboundTokenClaimValueTypeHasBeenSet = false;
   bool m_authorizingClaimMatchValueHasBeenSet = false;
 };
 

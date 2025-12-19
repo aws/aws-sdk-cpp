@@ -68,9 +68,9 @@ class GetExecutionRequest : public BCMDataExportsRequest {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_exportArn;
+  bool m_executionIdHasBeenSet = false;
   bool m_exportArnHasBeenSet = false;
 };
 

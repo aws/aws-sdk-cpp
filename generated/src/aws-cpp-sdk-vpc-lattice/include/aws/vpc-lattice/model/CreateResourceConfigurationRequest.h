@@ -302,42 +302,42 @@ class CreateResourceConfigurationRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_portRanges;
-  bool m_portRangesHasBeenSet = false;
 
   ProtocolType m_protocol{ProtocolType::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_resourceGatewayIdentifier;
-  bool m_resourceGatewayIdentifierHasBeenSet = false;
 
   Aws::String m_resourceConfigurationGroupIdentifier;
-  bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
 
   ResourceConfigurationDefinition m_resourceConfigurationDefinition;
-  bool m_resourceConfigurationDefinitionHasBeenSet = false;
 
   bool m_allowAssociationToShareableServiceNetwork{false};
-  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_groupDomain;
-  bool m_groupDomainHasBeenSet = false;
 
   Aws::String m_domainVerificationIdentifier;
-  bool m_domainVerificationIdentifierHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_portRangesHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_resourceGatewayIdentifierHasBeenSet = false;
+  bool m_resourceConfigurationGroupIdentifierHasBeenSet = false;
+  bool m_resourceConfigurationDefinitionHasBeenSet = false;
+  bool m_allowAssociationToShareableServiceNetworkHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_groupDomainHasBeenSet = false;
+  bool m_domainVerificationIdentifierHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

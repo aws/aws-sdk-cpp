@@ -105,15 +105,15 @@ class UpdateQAppSessionMetadataRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_sessionName;
-  bool m_sessionNameHasBeenSet = false;
 
   SessionSharingConfiguration m_sharingConfiguration;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
   bool m_sharingConfigurationHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class GetPortalProductRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_portalProductId;
-  bool m_portalProductIdHasBeenSet = false;
 
   Aws::String m_resourceOwnerAccountId;
+  bool m_portalProductIdHasBeenSet = false;
   bool m_resourceOwnerAccountIdHasBeenSet = false;
 };
 

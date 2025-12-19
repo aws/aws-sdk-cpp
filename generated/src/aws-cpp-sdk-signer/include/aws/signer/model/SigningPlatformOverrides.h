@@ -75,9 +75,9 @@ class SigningPlatformOverrides {
   ///@}
  private:
   SigningConfigurationOverrides m_signingConfiguration;
-  bool m_signingConfigurationHasBeenSet = false;
 
   ImageFormat m_signingImageFormat{ImageFormat::NOT_SET};
+  bool m_signingConfigurationHasBeenSet = false;
   bool m_signingImageFormatHasBeenSet = false;
 };
 

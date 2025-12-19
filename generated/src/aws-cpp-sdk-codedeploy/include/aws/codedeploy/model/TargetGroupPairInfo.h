@@ -101,12 +101,12 @@ class TargetGroupPairInfo {
   ///@}
  private:
   Aws::Vector<TargetGroupInfo> m_targetGroups;
-  bool m_targetGroupsHasBeenSet = false;
 
   TrafficRoute m_prodTrafficRoute;
-  bool m_prodTrafficRouteHasBeenSet = false;
 
   TrafficRoute m_testTrafficRoute;
+  bool m_targetGroupsHasBeenSet = false;
+  bool m_prodTrafficRouteHasBeenSet = false;
   bool m_testTrafficRouteHasBeenSet = false;
 };
 

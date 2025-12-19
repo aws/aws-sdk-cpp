@@ -86,12 +86,12 @@ class ListSecurityControlDefinitionsResult {
   ///@}
  private:
   Aws::Vector<SecurityControlDefinition> m_securityControlDefinitions;
-  bool m_securityControlDefinitionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityControlDefinitionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

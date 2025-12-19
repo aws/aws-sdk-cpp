@@ -94,12 +94,12 @@ class ListDevicesRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_paginationToken;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_paginationTokenHasBeenSet = false;
 };
 

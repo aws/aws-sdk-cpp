@@ -61,9 +61,9 @@ class ImportTaskSummaryWaves {
   ///@}
  private:
   long long m_createdCount{0};
-  bool m_createdCountHasBeenSet = false;
 
   long long m_modifiedCount{0};
+  bool m_createdCountHasBeenSet = false;
   bool m_modifiedCountHasBeenSet = false;
 };
 

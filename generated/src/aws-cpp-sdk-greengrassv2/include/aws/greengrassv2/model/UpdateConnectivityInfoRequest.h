@@ -73,9 +73,9 @@ class UpdateConnectivityInfoRequest : public GreengrassV2Request {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   Aws::Vector<ConnectivityInfo> m_connectivityInfo;
+  bool m_thingNameHasBeenSet = false;
   bool m_connectivityInfoHasBeenSet = false;
 };
 

@@ -283,42 +283,42 @@ class ReportGenerator {
   ///@}
  private:
   Aws::String m_reportGeneratorName;
-  bool m_reportGeneratorNameHasBeenSet = false;
 
   Aws::Vector<ReportType> m_reportType;
-  bool m_reportTypeHasBeenSet = false;
 
   ReportContext m_reportContext;
-  bool m_reportContextHasBeenSet = false;
 
   ReportFrequency m_reportFrequency;
-  bool m_reportFrequencyHasBeenSet = false;
 
   Aws::String m_licenseManagerReportGeneratorArn;
-  bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
 
   Aws::String m_lastRunStatus;
-  bool m_lastRunStatusHasBeenSet = false;
 
   Aws::String m_lastRunFailureReason;
-  bool m_lastRunFailureReasonHasBeenSet = false;
 
   Aws::String m_lastReportGenerationTime;
-  bool m_lastReportGenerationTimeHasBeenSet = false;
 
   Aws::String m_reportCreatorAccount;
-  bool m_reportCreatorAccountHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   S3Location m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   Aws::String m_createTime;
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_reportGeneratorNameHasBeenSet = false;
+  bool m_reportTypeHasBeenSet = false;
+  bool m_reportContextHasBeenSet = false;
+  bool m_reportFrequencyHasBeenSet = false;
+  bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
+  bool m_lastRunStatusHasBeenSet = false;
+  bool m_lastRunFailureReasonHasBeenSet = false;
+  bool m_lastReportGenerationTimeHasBeenSet = false;
+  bool m_reportCreatorAccountHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

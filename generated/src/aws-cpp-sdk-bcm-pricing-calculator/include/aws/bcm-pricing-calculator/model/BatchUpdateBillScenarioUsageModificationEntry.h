@@ -95,12 +95,12 @@ class BatchUpdateBillScenarioUsageModificationEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::Vector<UsageAmount> m_amounts;
+  bool m_idHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
   bool m_amountsHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class UsageTopAccountsResult {
   ///@}
  private:
   UsageFeature m_feature{UsageFeature::NOT_SET};
-  bool m_featureHasBeenSet = false;
 
   Aws::Vector<UsageTopAccountResult> m_accounts;
+  bool m_featureHasBeenSet = false;
   bool m_accountsHasBeenSet = false;
 };
 

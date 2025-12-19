@@ -106,15 +106,15 @@ class LastRecorderStatus {
   ///@}
  private:
   Aws::String m_jobStatusDetails;
-  bool m_jobStatusDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastCollectedTime{};
-  bool m_lastCollectedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   RecorderStatus m_recorderStatus{RecorderStatus::NOT_SET};
+  bool m_jobStatusDetailsHasBeenSet = false;
+  bool m_lastCollectedTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_recorderStatusHasBeenSet = false;
 };
 

@@ -166,21 +166,21 @@ class UpdateTLSInspectionConfigurationRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_tLSInspectionConfigurationArn;
-  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
 
   Aws::String m_tLSInspectionConfigurationName;
-  bool m_tLSInspectionConfigurationNameHasBeenSet = false;
 
   TLSInspectionConfiguration m_tLSInspectionConfiguration;
-  bool m_tLSInspectionConfigurationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::String m_updateToken;
+  bool m_tLSInspectionConfigurationArnHasBeenSet = false;
+  bool m_tLSInspectionConfigurationNameHasBeenSet = false;
+  bool m_tLSInspectionConfigurationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
   bool m_updateTokenHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class DetectToxicContentRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::Vector<TextSegment> m_textSegments;
-  bool m_textSegmentsHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
+  bool m_textSegmentsHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

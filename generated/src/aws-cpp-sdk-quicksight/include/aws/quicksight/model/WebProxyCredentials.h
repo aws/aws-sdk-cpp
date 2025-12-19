@@ -69,9 +69,9 @@ class WebProxyCredentials {
   ///@}
  private:
   Aws::String m_webProxyUsername;
-  bool m_webProxyUsernameHasBeenSet = false;
 
   Aws::String m_webProxyPassword;
+  bool m_webProxyUsernameHasBeenSet = false;
   bool m_webProxyPasswordHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class SelectionCriteria {
   ///@}
  private:
   Aws::String m_delimiter;
-  bool m_delimiterHasBeenSet = false;
 
   int m_maxDepth{0};
-  bool m_maxDepthHasBeenSet = false;
 
   double m_minStorageBytesPercentage{0.0};
+  bool m_delimiterHasBeenSet = false;
+  bool m_maxDepthHasBeenSet = false;
   bool m_minStorageBytesPercentageHasBeenSet = false;
 };
 

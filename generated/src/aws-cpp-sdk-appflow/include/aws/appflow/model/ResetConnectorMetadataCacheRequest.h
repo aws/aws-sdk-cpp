@@ -147,18 +147,18 @@ class ResetConnectorMetadataCacheRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorProfileName;
-  bool m_connectorProfileNameHasBeenSet = false;
 
   ConnectorType m_connectorType{ConnectorType::NOT_SET};
-  bool m_connectorTypeHasBeenSet = false;
 
   Aws::String m_connectorEntityName;
-  bool m_connectorEntityNameHasBeenSet = false;
 
   Aws::String m_entitiesPath;
-  bool m_entitiesPathHasBeenSet = false;
 
   Aws::String m_apiVersion;
+  bool m_connectorProfileNameHasBeenSet = false;
+  bool m_connectorTypeHasBeenSet = false;
+  bool m_connectorEntityNameHasBeenSet = false;
+  bool m_entitiesPathHasBeenSet = false;
   bool m_apiVersionHasBeenSet = false;
 };
 

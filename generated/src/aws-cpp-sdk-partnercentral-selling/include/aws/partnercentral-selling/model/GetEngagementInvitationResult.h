@@ -357,57 +357,57 @@ class GetEngagementInvitationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   EngagementInvitationPayloadType m_payloadType{EngagementInvitationPayloadType::NOT_SET};
-  bool m_payloadTypeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   Aws::String m_engagementTitle;
-  bool m_engagementTitleHasBeenSet = false;
 
   InvitationStatus m_status{InvitationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_invitationDate{};
-  bool m_invitationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_senderAwsAccountId;
-  bool m_senderAwsAccountIdHasBeenSet = false;
 
   Aws::String m_senderCompanyName;
-  bool m_senderCompanyNameHasBeenSet = false;
 
   Receiver m_receiver;
-  bool m_receiverHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_rejectionReason;
-  bool m_rejectionReasonHasBeenSet = false;
 
   Payload m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_invitationMessage;
-  bool m_invitationMessageHasBeenSet = false;
 
   Aws::String m_engagementDescription;
-  bool m_engagementDescriptionHasBeenSet = false;
 
   Aws::Vector<EngagementMemberSummary> m_existingMembers;
-  bool m_existingMembersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_payloadTypeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_engagementIdHasBeenSet = false;
+  bool m_engagementTitleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_invitationDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_senderAwsAccountIdHasBeenSet = false;
+  bool m_senderCompanyNameHasBeenSet = false;
+  bool m_receiverHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_rejectionReasonHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_invitationMessageHasBeenSet = false;
+  bool m_engagementDescriptionHasBeenSet = false;
+  bool m_existingMembersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

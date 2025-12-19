@@ -58,9 +58,9 @@ class DeleteDbClusterResult {
   ///@}
  private:
   ClusterStatus m_dbClusterStatus{ClusterStatus::NOT_SET};
-  bool m_dbClusterStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dbClusterStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -116,18 +116,18 @@ class HlsWebdavSettings {
   ///@}
  private:
   int m_connectionRetryInterval{0};
-  bool m_connectionRetryIntervalHasBeenSet = false;
 
   int m_filecacheDuration{0};
-  bool m_filecacheDurationHasBeenSet = false;
 
   HlsWebdavHttpTransferMode m_httpTransferMode{HlsWebdavHttpTransferMode::NOT_SET};
-  bool m_httpTransferModeHasBeenSet = false;
 
   int m_numRetries{0};
-  bool m_numRetriesHasBeenSet = false;
 
   int m_restartDelay{0};
+  bool m_connectionRetryIntervalHasBeenSet = false;
+  bool m_filecacheDurationHasBeenSet = false;
+  bool m_httpTransferModeHasBeenSet = false;
+  bool m_numRetriesHasBeenSet = false;
   bool m_restartDelayHasBeenSet = false;
 };
 

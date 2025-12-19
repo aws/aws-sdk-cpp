@@ -146,21 +146,21 @@ class ListRuleGroupsRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   ResourceManagedStatus m_scope{ResourceManagedStatus::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   ResourceManagedType m_managedType{ResourceManagedType::NOT_SET};
-  bool m_managedTypeHasBeenSet = false;
 
   SubscriptionStatus m_subscriptionStatus{SubscriptionStatus::NOT_SET};
-  bool m_subscriptionStatusHasBeenSet = false;
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_managedTypeHasBeenSet = false;
+  bool m_subscriptionStatusHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

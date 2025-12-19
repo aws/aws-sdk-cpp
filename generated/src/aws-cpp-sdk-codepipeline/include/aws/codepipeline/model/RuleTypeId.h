@@ -113,15 +113,15 @@ class RuleTypeId {
   ///@}
  private:
   RuleCategory m_category{RuleCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   RuleOwner m_owner{RuleOwner::NOT_SET};
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_categoryHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

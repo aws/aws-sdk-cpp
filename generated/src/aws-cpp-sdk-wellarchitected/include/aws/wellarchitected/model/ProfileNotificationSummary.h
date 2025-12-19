@@ -153,24 +153,24 @@ class ProfileNotificationSummary {
   ///@}
  private:
   Aws::String m_currentProfileVersion;
-  bool m_currentProfileVersionHasBeenSet = false;
 
   Aws::String m_latestProfileVersion;
-  bool m_latestProfileVersionHasBeenSet = false;
 
   ProfileNotificationType m_type{ProfileNotificationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_workloadName;
+  bool m_currentProfileVersionHasBeenSet = false;
+  bool m_latestProfileVersionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_profileArnHasBeenSet = false;
+  bool m_profileNameHasBeenSet = false;
+  bool m_workloadIdHasBeenSet = false;
   bool m_workloadNameHasBeenSet = false;
 };
 

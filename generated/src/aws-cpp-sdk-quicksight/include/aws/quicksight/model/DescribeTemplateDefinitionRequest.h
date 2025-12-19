@@ -109,15 +109,15 @@ class DescribeTemplateDefinitionRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   long long m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::String m_aliasName;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_aliasNameHasBeenSet = false;
 };
 

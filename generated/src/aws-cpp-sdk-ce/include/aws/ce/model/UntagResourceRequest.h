@@ -80,9 +80,9 @@ class UntagResourceRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTagKeys;
+  bool m_resourceArnHasBeenSet = false;
   bool m_resourceTagKeysHasBeenSet = false;
 };
 

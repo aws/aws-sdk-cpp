@@ -239,30 +239,30 @@ class TrainingSpecification {
   ///@}
  private:
   Aws::String m_trainingImage;
-  bool m_trainingImageHasBeenSet = false;
 
   Aws::String m_trainingImageDigest;
-  bool m_trainingImageDigestHasBeenSet = false;
 
   Aws::Vector<HyperParameterSpecification> m_supportedHyperParameters;
-  bool m_supportedHyperParametersHasBeenSet = false;
 
   Aws::Vector<TrainingInstanceType> m_supportedTrainingInstanceTypes;
-  bool m_supportedTrainingInstanceTypesHasBeenSet = false;
 
   bool m_supportsDistributedTraining{false};
-  bool m_supportsDistributedTrainingHasBeenSet = false;
 
   Aws::Vector<MetricDefinition> m_metricDefinitions;
-  bool m_metricDefinitionsHasBeenSet = false;
 
   Aws::Vector<ChannelSpecification> m_trainingChannels;
-  bool m_trainingChannelsHasBeenSet = false;
 
   Aws::Vector<HyperParameterTuningJobObjective> m_supportedTuningJobObjectiveMetrics;
-  bool m_supportedTuningJobObjectiveMetricsHasBeenSet = false;
 
   AdditionalS3DataSource m_additionalS3DataSource;
+  bool m_trainingImageHasBeenSet = false;
+  bool m_trainingImageDigestHasBeenSet = false;
+  bool m_supportedHyperParametersHasBeenSet = false;
+  bool m_supportedTrainingInstanceTypesHasBeenSet = false;
+  bool m_supportsDistributedTrainingHasBeenSet = false;
+  bool m_metricDefinitionsHasBeenSet = false;
+  bool m_trainingChannelsHasBeenSet = false;
+  bool m_supportedTuningJobObjectiveMetricsHasBeenSet = false;
   bool m_additionalS3DataSourceHasBeenSet = false;
 };
 

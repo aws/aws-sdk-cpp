@@ -96,15 +96,15 @@ class GetPasswordDataResponse {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_passwordData;
-  bool m_passwordDataHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_passwordDataHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

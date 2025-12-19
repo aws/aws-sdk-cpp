@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/MetricStreamFilter.h>
 #include <aws/monitoring/model/MetricStreamOutputFormat.h>
@@ -14,23 +15,22 @@
 #include <aws/monitoring/model/ResponseMetadata.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Xml {
-class XmlDocument;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
 class GetMetricStreamResult {
  public:
   AWS_CLOUDWATCH_API GetMetricStreamResult() = default;
-  AWS_CLOUDWATCH_API GetMetricStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-  AWS_CLOUDWATCH_API GetMetricStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_CLOUDWATCH_API GetMetricStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_CLOUDWATCH_API GetMetricStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -268,6 +268,21 @@ class GetMetricStreamResult {
 
   ///@{
 
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetMetricStreamResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
   void SetResponseMetadata(ResponseMetadataT&& value) {
@@ -282,42 +297,45 @@ class GetMetricStreamResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<MetricStreamFilter> m_includeFilters;
-  bool m_includeFiltersHasBeenSet = false;
 
   Aws::Vector<MetricStreamFilter> m_excludeFilters;
-  bool m_excludeFiltersHasBeenSet = false;
 
   Aws::String m_firehoseArn;
-  bool m_firehoseArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
-  bool m_lastUpdateDateHasBeenSet = false;
 
   MetricStreamOutputFormat m_outputFormat{MetricStreamOutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
-  bool m_statisticsConfigurationsHasBeenSet = false;
 
   bool m_includeLinkedAccountsMetrics{false};
-  bool m_includeLinkedAccountsMetricsHasBeenSet = false;
+
+  Aws::String m_requestId;
 
   ResponseMetadata m_responseMetadata;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_includeFiltersHasBeenSet = false;
+  bool m_excludeFiltersHasBeenSet = false;
+  bool m_firehoseArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastUpdateDateHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_statisticsConfigurationsHasBeenSet = false;
+  bool m_includeLinkedAccountsMetricsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

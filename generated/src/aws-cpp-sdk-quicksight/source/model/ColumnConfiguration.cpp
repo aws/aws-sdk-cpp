@@ -34,6 +34,10 @@ ColumnConfiguration& ColumnConfiguration::operator=(JsonView jsonValue) {
     m_colorsConfiguration = jsonValue.GetObject("ColorsConfiguration");
     m_colorsConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DecalSettingsConfiguration")) {
+    m_decalSettingsConfiguration = jsonValue.GetObject("DecalSettingsConfiguration");
+    m_decalSettingsConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ColumnConfiguration::Jsonize() const {
 
   if (m_colorsConfigurationHasBeenSet) {
     payload.WithObject("ColorsConfiguration", m_colorsConfiguration.Jsonize());
+  }
+
+  if (m_decalSettingsConfigurationHasBeenSet) {
+    payload.WithObject("DecalSettingsConfiguration", m_decalSettingsConfiguration.Jsonize());
   }
 
   return payload;

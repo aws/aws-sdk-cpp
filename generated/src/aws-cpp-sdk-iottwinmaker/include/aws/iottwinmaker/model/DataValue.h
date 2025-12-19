@@ -202,30 +202,30 @@ class DataValue {
   ///@}
  private:
   bool m_booleanValue{false};
-  bool m_booleanValueHasBeenSet = false;
 
   double m_doubleValue{0.0};
-  bool m_doubleValueHasBeenSet = false;
 
   int m_integerValue{0};
-  bool m_integerValueHasBeenSet = false;
 
   long long m_longValue{0};
-  bool m_longValueHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::Vector<DataValue> m_listValue;
-  bool m_listValueHasBeenSet = false;
 
   Aws::Map<Aws::String, DataValue> m_mapValue;
-  bool m_mapValueHasBeenSet = false;
 
   RelationshipValue m_relationshipValue;
-  bool m_relationshipValueHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_booleanValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
+  bool m_listValueHasBeenSet = false;
+  bool m_mapValueHasBeenSet = false;
+  bool m_relationshipValueHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

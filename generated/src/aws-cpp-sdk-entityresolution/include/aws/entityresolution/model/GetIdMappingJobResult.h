@@ -194,30 +194,30 @@ class GetIdMappingJobResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   IdMappingJobMetrics m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   ErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   Aws::Vector<IdMappingJobOutputSource> m_outputSourceConfig;
-  bool m_outputSourceConfigHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_outputSourceConfigHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

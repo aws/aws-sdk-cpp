@@ -267,39 +267,39 @@ class RedshiftDestinationConfiguration {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_clusterJDBCURL;
-  bool m_clusterJDBCURLHasBeenSet = false;
 
   CopyCommand m_copyCommand;
-  bool m_copyCommandHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   RedshiftRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   S3DestinationConfiguration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   RedshiftS3BackupMode m_s3BackupMode{RedshiftS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationConfiguration m_s3BackupConfiguration;
-  bool m_s3BackupConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   SecretsManagerConfiguration m_secretsManagerConfiguration;
+  bool m_roleARNHasBeenSet = false;
+  bool m_clusterJDBCURLHasBeenSet = false;
+  bool m_copyCommandHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3BackupConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
   bool m_secretsManagerConfigurationHasBeenSet = false;
 };
 

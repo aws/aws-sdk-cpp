@@ -165,21 +165,21 @@ class SessionState {
   ///@}
  private:
   DialogAction m_dialogAction;
-  bool m_dialogActionHasBeenSet = false;
 
   Intent m_intent;
-  bool m_intentHasBeenSet = false;
 
   Aws::Vector<ActiveContext> m_activeContexts;
-  bool m_activeContextsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
-  bool m_sessionAttributesHasBeenSet = false;
 
   Aws::String m_originatingRequestId;
-  bool m_originatingRequestIdHasBeenSet = false;
 
   RuntimeHints m_runtimeHints;
+  bool m_dialogActionHasBeenSet = false;
+  bool m_intentHasBeenSet = false;
+  bool m_activeContextsHasBeenSet = false;
+  bool m_sessionAttributesHasBeenSet = false;
+  bool m_originatingRequestIdHasBeenSet = false;
   bool m_runtimeHintsHasBeenSet = false;
 };
 

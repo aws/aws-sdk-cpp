@@ -22,6 +22,10 @@ ChangeSpecification& ChangeSpecification::operator=(JsonView jsonValue) {
     m_member = jsonValue.GetObject("member");
     m_memberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("collaboration")) {
+    m_collaboration = jsonValue.GetObject("collaboration");
+    m_collaborationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ChangeSpecification::Jsonize() const {
 
   if (m_memberHasBeenSet) {
     payload.WithObject("member", m_member.Jsonize());
+  }
+
+  if (m_collaborationHasBeenSet) {
+    payload.WithObject("collaboration", m_collaboration.Jsonize());
   }
 
   return payload;

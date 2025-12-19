@@ -108,12 +108,12 @@ class HarvestedManifests {
   ///@}
  private:
   Aws::Vector<HarvestedHlsManifest> m_hlsManifests;
-  bool m_hlsManifestsHasBeenSet = false;
 
   Aws::Vector<HarvestedDashManifest> m_dashManifests;
-  bool m_dashManifestsHasBeenSet = false;
 
   Aws::Vector<HarvestedLowLatencyHlsManifest> m_lowLatencyHlsManifests;
+  bool m_hlsManifestsHasBeenSet = false;
+  bool m_dashManifestsHasBeenSet = false;
   bool m_lowLatencyHlsManifestsHasBeenSet = false;
 };
 

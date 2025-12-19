@@ -79,9 +79,9 @@ class ChangePasswordRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_oldPassword;
-  bool m_oldPasswordHasBeenSet = false;
 
   Aws::String m_newPassword;
+  bool m_oldPasswordHasBeenSet = false;
   bool m_newPasswordHasBeenSet = false;
 };
 

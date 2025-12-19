@@ -133,21 +133,21 @@ class ListChangedBlocksResult {
   ///@}
  private:
   Aws::Vector<ChangedBlock> m_changedBlocks;
-  bool m_changedBlocksHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTime{};
-  bool m_expiryTimeHasBeenSet = false;
 
   long long m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   int m_blockSize{0};
-  bool m_blockSizeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changedBlocksHasBeenSet = false;
+  bool m_expiryTimeHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_blockSizeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

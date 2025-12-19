@@ -86,12 +86,12 @@ class CustomColor {
   ///@}
  private:
   Aws::String m_fieldValue;
-  bool m_fieldValueHasBeenSet = false;
 
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   SpecialValue m_specialValue{SpecialValue::NOT_SET};
+  bool m_fieldValueHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
   bool m_specialValueHasBeenSet = false;
 };
 

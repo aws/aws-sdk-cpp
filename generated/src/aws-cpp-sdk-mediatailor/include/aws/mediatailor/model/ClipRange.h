@@ -64,9 +64,9 @@ class ClipRange {
   ///@}
  private:
   long long m_endOffsetMillis{0};
-  bool m_endOffsetMillisHasBeenSet = false;
 
   long long m_startOffsetMillis{0};
+  bool m_endOffsetMillisHasBeenSet = false;
   bool m_startOffsetMillisHasBeenSet = false;
 };
 

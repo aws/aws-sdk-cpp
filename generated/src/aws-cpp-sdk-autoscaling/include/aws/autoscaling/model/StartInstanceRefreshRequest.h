@@ -123,15 +123,15 @@ class StartInstanceRefreshRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   RefreshStrategy m_strategy{RefreshStrategy::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   DesiredConfiguration m_desiredConfiguration;
-  bool m_desiredConfigurationHasBeenSet = false;
 
   RefreshPreferences m_preferences;
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_strategyHasBeenSet = false;
+  bool m_desiredConfigurationHasBeenSet = false;
   bool m_preferencesHasBeenSet = false;
 };
 

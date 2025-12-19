@@ -62,9 +62,9 @@ class GsmLocalId {
   ///@}
  private:
   int m_bsic{0};
-  bool m_bsicHasBeenSet = false;
 
   int m_bcch{0};
+  bool m_bsicHasBeenSet = false;
   bool m_bcchHasBeenSet = false;
 };
 

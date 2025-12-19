@@ -104,6 +104,32 @@ class PutEmailIdentityDkimSigningAttributesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The hosted zone where Amazon SES publishes the DKIM public key TXT records
+   * for this email identity. This value indicates the DNS zone that customers must
+   * reference when configuring their CNAME records for DKIM authentication.</p>
+   * <p>When configuring DKIM for your domain, create CNAME records in your DNS that
+   * point to the selectors in this hosted zone. For example:</p> <p> <code>
+   * selector1._domainkey.yourdomain.com CNAME selector1.&lt;SigningHostedZone&gt;
+   * </code> </p> <p> <code> selector2._domainkey.yourdomain.com CNAME
+   * selector2.&lt;SigningHostedZone&gt; </code> </p> <p> <code>
+   * selector3._domainkey.yourdomain.com CNAME selector3.&lt;SigningHostedZone&gt;
+   * </code> </p>
+   */
+  inline const Aws::String& GetSigningHostedZone() const { return m_signingHostedZone; }
+  template <typename SigningHostedZoneT = Aws::String>
+  void SetSigningHostedZone(SigningHostedZoneT&& value) {
+    m_signingHostedZoneHasBeenSet = true;
+    m_signingHostedZone = std::forward<SigningHostedZoneT>(value);
+  }
+  template <typename SigningHostedZoneT = Aws::String>
+  PutEmailIdentityDkimSigningAttributesResult& WithSigningHostedZone(SigningHostedZoneT&& value) {
+    SetSigningHostedZone(std::forward<SigningHostedZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -119,12 +145,15 @@ class PutEmailIdentityDkimSigningAttributesResult {
   ///@}
  private:
   DkimStatus m_dkimStatus{DkimStatus::NOT_SET};
-  bool m_dkimStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dkimTokens;
-  bool m_dkimTokensHasBeenSet = false;
+
+  Aws::String m_signingHostedZone;
 
   Aws::String m_requestId;
+  bool m_dkimStatusHasBeenSet = false;
+  bool m_dkimTokensHasBeenSet = false;
+  bool m_signingHostedZoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class ExecutorConfiguration {
   ///@}
  private:
   LambdaExecutorConfiguration m_lambdaExecutorConfiguration;
-  bool m_lambdaExecutorConfigurationHasBeenSet = false;
 
   JobWorkerExecutorConfiguration m_jobWorkerExecutorConfiguration;
+  bool m_lambdaExecutorConfigurationHasBeenSet = false;
   bool m_jobWorkerExecutorConfigurationHasBeenSet = false;
 };
 

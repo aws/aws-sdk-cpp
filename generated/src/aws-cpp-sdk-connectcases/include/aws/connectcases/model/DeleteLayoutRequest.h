@@ -65,9 +65,9 @@ class DeleteLayoutRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_layoutId;
+  bool m_domainIdHasBeenSet = false;
   bool m_layoutIdHasBeenSet = false;
 };
 

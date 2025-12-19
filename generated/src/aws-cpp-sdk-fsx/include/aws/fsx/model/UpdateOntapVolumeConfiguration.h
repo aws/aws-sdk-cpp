@@ -212,30 +212,30 @@ class UpdateOntapVolumeConfiguration {
   ///@}
  private:
   Aws::String m_junctionPath;
-  bool m_junctionPathHasBeenSet = false;
 
   SecurityStyle m_securityStyle{SecurityStyle::NOT_SET};
-  bool m_securityStyleHasBeenSet = false;
 
   int m_sizeInMegabytes{0};
-  bool m_sizeInMegabytesHasBeenSet = false;
 
   bool m_storageEfficiencyEnabled{false};
-  bool m_storageEfficiencyEnabledHasBeenSet = false;
 
   TieringPolicy m_tieringPolicy;
-  bool m_tieringPolicyHasBeenSet = false;
 
   Aws::String m_snapshotPolicy;
-  bool m_snapshotPolicyHasBeenSet = false;
 
   bool m_copyTagsToBackups{false};
-  bool m_copyTagsToBackupsHasBeenSet = false;
 
   UpdateSnaplockConfiguration m_snaplockConfiguration;
-  bool m_snaplockConfigurationHasBeenSet = false;
 
   long long m_sizeInBytes{0};
+  bool m_junctionPathHasBeenSet = false;
+  bool m_securityStyleHasBeenSet = false;
+  bool m_sizeInMegabytesHasBeenSet = false;
+  bool m_storageEfficiencyEnabledHasBeenSet = false;
+  bool m_tieringPolicyHasBeenSet = false;
+  bool m_snapshotPolicyHasBeenSet = false;
+  bool m_copyTagsToBackupsHasBeenSet = false;
+  bool m_snaplockConfigurationHasBeenSet = false;
   bool m_sizeInBytesHasBeenSet = false;
 };
 

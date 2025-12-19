@@ -60,9 +60,9 @@ class CreateAndAttachS3AccessPointResult {
   ///@}
  private:
   S3AccessPointAttachment m_s3AccessPointAttachment;
-  bool m_s3AccessPointAttachmentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3AccessPointAttachmentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

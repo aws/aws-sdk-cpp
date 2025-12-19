@@ -89,12 +89,12 @@ class EntityRecognizerMetadataEntityTypesListItem {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   EntityTypesEvaluationMetrics m_evaluationMetrics;
-  bool m_evaluationMetricsHasBeenSet = false;
 
   int m_numberOfTrainMentions{0};
+  bool m_typeHasBeenSet = false;
+  bool m_evaluationMetricsHasBeenSet = false;
   bool m_numberOfTrainMentionsHasBeenSet = false;
 };
 

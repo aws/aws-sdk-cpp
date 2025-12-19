@@ -111,18 +111,18 @@ class GetResourcePolicyResult {
   ///@}
  private:
   Aws::String m_policyInJson;
-  bool m_policyInJsonHasBeenSet = false;
 
   Aws::String m_policyHash;
-  bool m_policyHashHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyInJsonHasBeenSet = false;
+  bool m_policyHashHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

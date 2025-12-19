@@ -60,9 +60,9 @@ class PutResourcePolicyResult {
   ///@}
  private:
   ResourcePolicy m_resourcePolicy;
-  bool m_resourcePolicyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_resourcePolicyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

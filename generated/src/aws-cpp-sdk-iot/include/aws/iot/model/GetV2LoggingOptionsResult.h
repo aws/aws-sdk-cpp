@@ -90,15 +90,15 @@ class GetV2LoggingOptionsResult {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   LogLevel m_defaultLogLevel{LogLevel::NOT_SET};
-  bool m_defaultLogLevelHasBeenSet = false;
 
   bool m_disableAllLogs{false};
-  bool m_disableAllLogsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleArnHasBeenSet = false;
+  bool m_defaultLogLevelHasBeenSet = false;
+  bool m_disableAllLogsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

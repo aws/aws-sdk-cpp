@@ -150,21 +150,21 @@ class NodeInputField {
   ///@}
  private:
   FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
 
   NodeExecutionContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<NodeInputExecutionChainItem> m_executionChain;
-  bool m_executionChainHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   NodeInputSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
+  bool m_categoryHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_executionChainHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

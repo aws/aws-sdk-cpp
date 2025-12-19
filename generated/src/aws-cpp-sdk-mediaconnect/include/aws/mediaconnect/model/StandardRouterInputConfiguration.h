@@ -90,12 +90,12 @@ class StandardRouterInputConfiguration {
   ///@}
  private:
   Aws::String m_networkInterfaceArn;
-  bool m_networkInterfaceArnHasBeenSet = false;
 
   RouterInputProtocolConfiguration m_protocolConfiguration;
-  bool m_protocolConfigurationHasBeenSet = false;
 
   RouterInputProtocol m_protocol{RouterInputProtocol::NOT_SET};
+  bool m_networkInterfaceArnHasBeenSet = false;
+  bool m_protocolConfigurationHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class UpdateStateMachineAliasRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_stateMachineAliasArn;
-  bool m_stateMachineAliasArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<RoutingConfigurationListItem> m_routingConfiguration;
+  bool m_stateMachineAliasArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_routingConfigurationHasBeenSet = false;
 };
 

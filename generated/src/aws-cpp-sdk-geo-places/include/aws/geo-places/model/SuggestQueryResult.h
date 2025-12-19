@@ -75,9 +75,9 @@ class SuggestQueryResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   QueryType m_queryType{QueryType::NOT_SET};
+  bool m_queryIdHasBeenSet = false;
   bool m_queryTypeHasBeenSet = false;
 };
 

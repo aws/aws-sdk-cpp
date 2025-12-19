@@ -85,12 +85,12 @@ class ListMulticastGroupsByFuotaTaskResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MulticastGroupByFuotaTask> m_multicastGroupList;
-  bool m_multicastGroupListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_multicastGroupListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

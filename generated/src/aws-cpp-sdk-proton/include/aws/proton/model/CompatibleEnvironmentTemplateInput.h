@@ -68,9 +68,9 @@ class CompatibleEnvironmentTemplateInput {
   ///@}
  private:
   Aws::String m_majorVersion;
-  bool m_majorVersionHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_majorVersionHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

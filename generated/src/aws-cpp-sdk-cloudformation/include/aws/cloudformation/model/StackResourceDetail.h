@@ -267,39 +267,39 @@ class StackResourceDetail {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_stackId;
-  bool m_stackIdHasBeenSet = false;
 
   Aws::String m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   ResourceStatus m_resourceStatus{ResourceStatus::NOT_SET};
-  bool m_resourceStatusHasBeenSet = false;
 
   Aws::String m_resourceStatusReason;
-  bool m_resourceStatusReasonHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   StackResourceDriftInformation m_driftInformation;
-  bool m_driftInformationHasBeenSet = false;
 
   ModuleInfo m_moduleInfo;
+  bool m_stackNameHasBeenSet = false;
+  bool m_stackIdHasBeenSet = false;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_resourceStatusHasBeenSet = false;
+  bool m_resourceStatusReasonHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_driftInformationHasBeenSet = false;
   bool m_moduleInfoHasBeenSet = false;
 };
 

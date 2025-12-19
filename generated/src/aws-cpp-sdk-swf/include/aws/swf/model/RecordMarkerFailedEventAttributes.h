@@ -93,12 +93,12 @@ class RecordMarkerFailedEventAttributes {
   ///@}
  private:
   Aws::String m_markerName;
-  bool m_markerNameHasBeenSet = false;
 
   RecordMarkerFailedCause m_cause{RecordMarkerFailedCause::NOT_SET};
-  bool m_causeHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_markerNameHasBeenSet = false;
+  bool m_causeHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

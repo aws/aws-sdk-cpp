@@ -60,9 +60,9 @@ class UpdateSessionLoggerResult {
   ///@}
  private:
   SessionLogger m_sessionLogger;
-  bool m_sessionLoggerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionLoggerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

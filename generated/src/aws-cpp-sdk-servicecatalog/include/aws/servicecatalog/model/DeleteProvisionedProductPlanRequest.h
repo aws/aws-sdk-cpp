@@ -85,12 +85,12 @@ class DeleteProvisionedProductPlanRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_planId;
-  bool m_planIdHasBeenSet = false;
 
   bool m_ignoreErrors{false};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_planIdHasBeenSet = false;
   bool m_ignoreErrorsHasBeenSet = false;
 };
 

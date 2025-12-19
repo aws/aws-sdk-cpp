@@ -130,18 +130,18 @@ class FilePath {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   int m_startLine{0};
-  bool m_startLineHasBeenSet = false;
 
   int m_endLine{0};
-  bool m_endLineHasBeenSet = false;
 
   Aws::Vector<CodeLine> m_codeSnippet;
+  bool m_nameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_startLineHasBeenSet = false;
+  bool m_endLineHasBeenSet = false;
   bool m_codeSnippetHasBeenSet = false;
 };
 

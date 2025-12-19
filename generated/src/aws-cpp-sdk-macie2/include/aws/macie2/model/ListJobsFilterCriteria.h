@@ -84,9 +84,9 @@ class ListJobsFilterCriteria {
   ///@}
  private:
   Aws::Vector<ListJobsFilterTerm> m_excludes;
-  bool m_excludesHasBeenSet = false;
 
   Aws::Vector<ListJobsFilterTerm> m_includes;
+  bool m_excludesHasBeenSet = false;
   bool m_includesHasBeenSet = false;
 };
 

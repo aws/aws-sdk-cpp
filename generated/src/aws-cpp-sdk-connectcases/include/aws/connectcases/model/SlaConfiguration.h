@@ -166,24 +166,24 @@ class SlaConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SlaType m_type{SlaType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   SlaStatus m_status{SlaStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::Vector<FieldValueUnion> m_targetFieldValues;
-  bool m_targetFieldValuesHasBeenSet = false;
 
   Aws::Utils::DateTime m_targetTime{};
-  bool m_targetTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_fieldIdHasBeenSet = false;
+  bool m_targetFieldValuesHasBeenSet = false;
+  bool m_targetTimeHasBeenSet = false;
   bool m_completionTimeHasBeenSet = false;
 };
 

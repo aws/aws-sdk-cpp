@@ -145,21 +145,21 @@ class RetrainingSchedulerSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   RetrainingSchedulerStatus m_status{RetrainingSchedulerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_retrainingStartDate{};
-  bool m_retrainingStartDateHasBeenSet = false;
 
   Aws::String m_retrainingFrequency;
-  bool m_retrainingFrequencyHasBeenSet = false;
 
   Aws::String m_lookbackWindow;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_retrainingStartDateHasBeenSet = false;
+  bool m_retrainingFrequencyHasBeenSet = false;
   bool m_lookbackWindowHasBeenSet = false;
 };
 

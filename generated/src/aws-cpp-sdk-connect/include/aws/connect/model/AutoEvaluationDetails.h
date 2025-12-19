@@ -64,9 +64,9 @@ class AutoEvaluationDetails {
   ///@}
  private:
   bool m_autoEvaluationEnabled{false};
-  bool m_autoEvaluationEnabledHasBeenSet = false;
 
   AutoEvaluationStatus m_autoEvaluationStatus{AutoEvaluationStatus::NOT_SET};
+  bool m_autoEvaluationEnabledHasBeenSet = false;
   bool m_autoEvaluationStatusHasBeenSet = false;
 };
 

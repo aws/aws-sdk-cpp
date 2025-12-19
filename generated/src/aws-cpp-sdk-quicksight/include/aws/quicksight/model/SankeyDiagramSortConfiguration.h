@@ -96,12 +96,12 @@ class SankeyDiagramSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_weightSort;
-  bool m_weightSortHasBeenSet = false;
 
   ItemsLimitConfiguration m_sourceItemsLimit;
-  bool m_sourceItemsLimitHasBeenSet = false;
 
   ItemsLimitConfiguration m_destinationItemsLimit;
+  bool m_weightSortHasBeenSet = false;
+  bool m_sourceItemsLimitHasBeenSet = false;
   bool m_destinationItemsLimitHasBeenSet = false;
 };
 

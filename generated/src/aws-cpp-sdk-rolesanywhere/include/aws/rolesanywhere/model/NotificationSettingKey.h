@@ -35,22 +35,6 @@ class NotificationSettingKey {
 
   ///@{
   /**
-   * <p>The specified channel of notification.</p>
-   */
-  inline NotificationChannel GetChannel() const { return m_channel; }
-  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-  inline void SetChannel(NotificationChannel value) {
-    m_channelHasBeenSet = true;
-    m_channel = value;
-  }
-  inline NotificationSettingKey& WithChannel(NotificationChannel value) {
-    SetChannel(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The notification setting event to reset.</p>
    */
   inline NotificationEvent GetEvent() const { return m_event; }
@@ -64,12 +48,28 @@ class NotificationSettingKey {
     return *this;
   }
   ///@}
- private:
-  NotificationChannel m_channel{NotificationChannel::NOT_SET};
-  bool m_channelHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>The specified channel of notification.</p>
+   */
+  inline NotificationChannel GetChannel() const { return m_channel; }
+  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+  inline void SetChannel(NotificationChannel value) {
+    m_channelHasBeenSet = true;
+    m_channel = value;
+  }
+  inline NotificationSettingKey& WithChannel(NotificationChannel value) {
+    SetChannel(value);
+    return *this;
+  }
+  ///@}
+ private:
   NotificationEvent m_event{NotificationEvent::NOT_SET};
+
+  NotificationChannel m_channel{NotificationChannel::NOT_SET};
   bool m_eventHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
 };
 
 }  // namespace Model

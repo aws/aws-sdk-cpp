@@ -236,30 +236,30 @@ class LicenseRecommendation {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   LicenseConfiguration m_currentLicenseConfiguration;
-  bool m_currentLicenseConfigurationHasBeenSet = false;
 
   double m_lookbackPeriodInDays{0.0};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshTimestamp{};
-  bool m_lastRefreshTimestampHasBeenSet = false;
 
   LicenseFinding m_finding{LicenseFinding::NOT_SET};
-  bool m_findingHasBeenSet = false;
 
   Aws::Vector<LicenseFindingReasonCode> m_findingReasonCodes;
-  bool m_findingReasonCodesHasBeenSet = false;
 
   Aws::Vector<LicenseRecommendationOption> m_licenseRecommendationOptions;
-  bool m_licenseRecommendationOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_currentLicenseConfigurationHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
+  bool m_lastRefreshTimestampHasBeenSet = false;
+  bool m_findingHasBeenSet = false;
+  bool m_findingReasonCodesHasBeenSet = false;
+  bool m_licenseRecommendationOptionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

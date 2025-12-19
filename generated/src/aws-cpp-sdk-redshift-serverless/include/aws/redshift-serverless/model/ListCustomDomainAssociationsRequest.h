@@ -104,15 +104,15 @@ class ListCustomDomainAssociationsRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_customDomainCertificateArn;
-  bool m_customDomainCertificateArnHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_customDomainCertificateArnHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

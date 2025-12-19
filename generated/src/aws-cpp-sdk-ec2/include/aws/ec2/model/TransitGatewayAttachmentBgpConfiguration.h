@@ -119,18 +119,18 @@ class TransitGatewayAttachmentBgpConfiguration {
   ///@}
  private:
   long long m_transitGatewayAsn{0};
-  bool m_transitGatewayAsnHasBeenSet = false;
 
   long long m_peerAsn{0};
-  bool m_peerAsnHasBeenSet = false;
 
   Aws::String m_transitGatewayAddress;
-  bool m_transitGatewayAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   BgpStatus m_bgpStatus{BgpStatus::NOT_SET};
+  bool m_transitGatewayAsnHasBeenSet = false;
+  bool m_peerAsnHasBeenSet = false;
+  bool m_transitGatewayAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
   bool m_bgpStatusHasBeenSet = false;
 };
 

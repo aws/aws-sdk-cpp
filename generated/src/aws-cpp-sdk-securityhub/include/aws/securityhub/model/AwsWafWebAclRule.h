@@ -168,21 +168,21 @@ class AwsWafWebAclRule {
   ///@}
  private:
   WafAction m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<WafExcludedRule> m_excludedRules;
-  bool m_excludedRulesHasBeenSet = false;
 
   WafOverrideAction m_overrideAction;
-  bool m_overrideActionHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_actionHasBeenSet = false;
+  bool m_excludedRulesHasBeenSet = false;
+  bool m_overrideActionHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

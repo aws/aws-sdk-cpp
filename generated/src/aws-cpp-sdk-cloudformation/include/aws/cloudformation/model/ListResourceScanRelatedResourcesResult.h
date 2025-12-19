@@ -91,12 +91,12 @@ class ListResourceScanRelatedResourcesResult {
   ///@}
  private:
   Aws::Vector<ScannedResource> m_relatedResources;
-  bool m_relatedResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_relatedResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

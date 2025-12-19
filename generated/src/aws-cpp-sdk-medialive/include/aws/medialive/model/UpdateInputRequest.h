@@ -326,42 +326,42 @@ setting object can only by used by that service.
   ///@}
  private:
   Aws::Vector<InputDestinationRequest> m_destinations;
-  bool m_destinationsHasBeenSet = false;
 
   Aws::Vector<InputDeviceRequest> m_inputDevices;
-  bool m_inputDevicesHasBeenSet = false;
 
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputSecurityGroups;
-  bool m_inputSecurityGroupsHasBeenSet = false;
 
   Aws::Vector<MediaConnectFlowRequest> m_mediaConnectFlows;
-  bool m_mediaConnectFlowsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<InputSourceRequest> m_sources;
-  bool m_sourcesHasBeenSet = false;
 
   SrtSettingsRequest m_srtSettings;
-  bool m_srtSettingsHasBeenSet = false;
 
   MulticastSettingsUpdateRequest m_multicastSettings;
-  bool m_multicastSettingsHasBeenSet = false;
 
   Smpte2110ReceiverGroupSettings m_smpte2110ReceiverGroupSettings;
-  bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sdiSources;
-  bool m_sdiSourcesHasBeenSet = false;
 
   SpecialRouterSettings m_specialRouterSettings;
+  bool m_destinationsHasBeenSet = false;
+  bool m_inputDevicesHasBeenSet = false;
+  bool m_inputIdHasBeenSet = false;
+  bool m_inputSecurityGroupsHasBeenSet = false;
+  bool m_mediaConnectFlowsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_sourcesHasBeenSet = false;
+  bool m_srtSettingsHasBeenSet = false;
+  bool m_multicastSettingsHasBeenSet = false;
+  bool m_smpte2110ReceiverGroupSettingsHasBeenSet = false;
+  bool m_sdiSourcesHasBeenSet = false;
   bool m_specialRouterSettingsHasBeenSet = false;
 };
 

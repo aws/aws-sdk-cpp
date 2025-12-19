@@ -85,9 +85,9 @@ class ContentBody {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::Vector<ImageInput> m_images;
+  bool m_bodyHasBeenSet = false;
   bool m_imagesHasBeenSet = false;
 };
 

@@ -137,21 +137,21 @@ class SupplementalTaxRegistration {
   ///@}
  private:
   Address m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_authorityId;
-  bool m_authorityIdHasBeenSet = false;
 
   Aws::String m_legalName;
-  bool m_legalNameHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   SupplementalTaxRegistrationType m_registrationType{SupplementalTaxRegistrationType::NOT_SET};
-  bool m_registrationTypeHasBeenSet = false;
 
   TaxRegistrationStatus m_status{TaxRegistrationStatus::NOT_SET};
+  bool m_addressHasBeenSet = false;
+  bool m_authorityIdHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_registrationTypeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

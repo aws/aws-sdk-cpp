@@ -88,12 +88,12 @@ class IcebergInput {
   ///@}
  private:
   MetadataOperation m_metadataOperation{MetadataOperation::NOT_SET};
-  bool m_metadataOperationHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   CreateIcebergTableInput m_createIcebergTableInput;
+  bool m_metadataOperationHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_createIcebergTableInputHasBeenSet = false;
 };
 

@@ -124,18 +124,18 @@ class MutualAuthenticationAttributes {
   ///@}
  private:
   Aws::String m_mode;
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   bool m_ignoreClientCertificateExpiry{false};
-  bool m_ignoreClientCertificateExpiryHasBeenSet = false;
 
   TrustStoreAssociationStatusEnum m_trustStoreAssociationStatus{TrustStoreAssociationStatusEnum::NOT_SET};
-  bool m_trustStoreAssociationStatusHasBeenSet = false;
 
   AdvertiseTrustStoreCaNamesEnum m_advertiseTrustStoreCaNames{AdvertiseTrustStoreCaNamesEnum::NOT_SET};
+  bool m_modeHasBeenSet = false;
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_ignoreClientCertificateExpiryHasBeenSet = false;
+  bool m_trustStoreAssociationStatusHasBeenSet = false;
   bool m_advertiseTrustStoreCaNamesHasBeenSet = false;
 };
 

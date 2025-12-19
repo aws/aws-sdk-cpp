@@ -70,9 +70,9 @@ class PreparedStatementSummary {
   ///@}
  private:
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_statementNameHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

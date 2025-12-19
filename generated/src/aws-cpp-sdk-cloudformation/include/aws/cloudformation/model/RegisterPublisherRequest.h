@@ -77,9 +77,9 @@ class RegisterPublisherRequest : public CloudFormationRequest {
   ///@}
  private:
   bool m_acceptTermsAndConditions{false};
-  bool m_acceptTermsAndConditionsHasBeenSet = false;
 
   Aws::String m_connectionArn;
+  bool m_acceptTermsAndConditionsHasBeenSet = false;
   bool m_connectionArnHasBeenSet = false;
 };
 

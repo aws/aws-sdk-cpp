@@ -232,36 +232,36 @@ class GetConfigurationProfileResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Aws::String m_retrievalRoleArn;
-  bool m_retrievalRoleArnHasBeenSet = false;
 
   Aws::Vector<Validator> m_validators;
-  bool m_validatorsHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_retrievalRoleArnHasBeenSet = false;
+  bool m_validatorsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

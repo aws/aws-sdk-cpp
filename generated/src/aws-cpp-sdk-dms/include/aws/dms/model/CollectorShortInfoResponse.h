@@ -68,9 +68,9 @@ class CollectorShortInfoResponse {
   ///@}
  private:
   Aws::String m_collectorReferencedId;
-  bool m_collectorReferencedIdHasBeenSet = false;
 
   Aws::String m_collectorName;
+  bool m_collectorReferencedIdHasBeenSet = false;
   bool m_collectorNameHasBeenSet = false;
 };
 

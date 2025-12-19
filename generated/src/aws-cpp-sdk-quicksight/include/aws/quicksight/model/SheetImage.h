@@ -170,24 +170,24 @@ class SheetImage {
   ///@}
  private:
   Aws::String m_sheetImageId;
-  bool m_sheetImageIdHasBeenSet = false;
 
   SheetImageSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   SheetImageScalingConfiguration m_scaling;
-  bool m_scalingHasBeenSet = false;
 
   SheetImageTooltipConfiguration m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   Aws::String m_imageContentAltText;
-  bool m_imageContentAltTextHasBeenSet = false;
 
   ImageInteractionOptions m_interactions;
-  bool m_interactionsHasBeenSet = false;
 
   Aws::Vector<ImageCustomAction> m_actions;
+  bool m_sheetImageIdHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_scalingHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_imageContentAltTextHasBeenSet = false;
+  bool m_interactionsHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class HybridUpdateActivities {
   ///@}
  private:
   Aws::Vector<HybridUpdateInfoEntry> m_selfManagedInstances;
-  bool m_selfManagedInstancesHasBeenSet = false;
 
   Aws::Vector<HybridUpdateInfoEntry> m_hybridAdministratorAccount;
+  bool m_selfManagedInstancesHasBeenSet = false;
   bool m_hybridAdministratorAccountHasBeenSet = false;
 };
 

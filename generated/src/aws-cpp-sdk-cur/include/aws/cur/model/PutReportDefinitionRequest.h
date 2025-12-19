@@ -79,9 +79,9 @@ class PutReportDefinitionRequest : public CostandUsageReportServiceRequest {
   ///@}
  private:
   ReportDefinition m_reportDefinition;
-  bool m_reportDefinitionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_reportDefinitionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

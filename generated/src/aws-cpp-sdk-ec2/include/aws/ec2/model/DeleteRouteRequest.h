@@ -126,18 +126,18 @@ class DeleteRouteRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_destinationPrefixListId;
-  bool m_destinationPrefixListIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_destinationIpv6CidrBlock;
+  bool m_destinationPrefixListIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
   bool m_destinationIpv6CidrBlockHasBeenSet = false;
 };
 

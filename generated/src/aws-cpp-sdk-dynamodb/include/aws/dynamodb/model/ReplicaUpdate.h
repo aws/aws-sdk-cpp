@@ -73,9 +73,9 @@ class ReplicaUpdate {
   ///@}
  private:
   CreateReplicaAction m_create;
-  bool m_createHasBeenSet = false;
 
   DeleteReplicaAction m_delete;
+  bool m_createHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
 };
 

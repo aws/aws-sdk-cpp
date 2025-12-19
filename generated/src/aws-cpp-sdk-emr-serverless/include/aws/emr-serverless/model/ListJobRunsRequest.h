@@ -166,24 +166,24 @@ class ListJobRunsRequest : public EMRServerlessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAtAfter{};
-  bool m_createdAtAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAtBefore{};
-  bool m_createdAtBeforeHasBeenSet = false;
 
   Aws::Vector<JobRunState> m_states;
-  bool m_statesHasBeenSet = false;
 
   JobRunMode m_mode{JobRunMode::NOT_SET};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_createdAtAfterHasBeenSet = false;
+  bool m_createdAtBeforeHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

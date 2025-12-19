@@ -85,9 +85,9 @@ class BatchPutMessageRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::Vector<Message> m_messages;
+  bool m_channelNameHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
 };
 

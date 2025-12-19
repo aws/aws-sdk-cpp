@@ -92,9 +92,9 @@ class DnsOptions {
   ///@}
  private:
   PrivateDnsPreference m_privateDnsPreference{PrivateDnsPreference::NOT_SET};
-  bool m_privateDnsPreferenceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_privateDnsSpecifiedDomains;
+  bool m_privateDnsPreferenceHasBeenSet = false;
   bool m_privateDnsSpecifiedDomainsHasBeenSet = false;
 };
 

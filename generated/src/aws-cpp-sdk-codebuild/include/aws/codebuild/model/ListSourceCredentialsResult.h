@@ -69,9 +69,9 @@ class ListSourceCredentialsResult {
   ///@}
  private:
   Aws::Vector<SourceCredentialsInfo> m_sourceCredentialsInfos;
-  bool m_sourceCredentialsInfosHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceCredentialsInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -123,15 +123,15 @@ class Notification {
   ///@}
  private:
   Aws::String m_snsTopicARN;
-  bool m_snsTopicARNHasBeenSet = false;
 
   Aws::Vector<JobState> m_jobStatesToNotify;
-  bool m_jobStatesToNotifyHasBeenSet = false;
 
   bool m_notifyAll{false};
-  bool m_notifyAllHasBeenSet = false;
 
   Aws::String m_devicePickupSnsTopicARN;
+  bool m_snsTopicARNHasBeenSet = false;
+  bool m_jobStatesToNotifyHasBeenSet = false;
+  bool m_notifyAllHasBeenSet = false;
   bool m_devicePickupSnsTopicARNHasBeenSet = false;
 };
 

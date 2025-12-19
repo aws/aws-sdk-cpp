@@ -265,11 +265,11 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
    * <p>Specifies configuration information for a DataSync-managed secret, which
    * includes the <code>SecretKey</code> that DataSync uses to access a specific
    * object storage location, with a customer-managed KMS key.</p> <p>When you
-   * include this paramater as part of a <code>CreateLocationObjectStorage</code>
+   * include this parameter as part of a <code>CreateLocationObjectStorage</code>
    * request, you provide only the KMS key ARN. DataSync uses this KMS key together
    * with the value you specify for the <code>SecretKey</code> parameter to create a
    * DataSync-managed secret to store the location access credentials.</p> <p>Make
-   * sure the DataSync has permission to access the KMS key that you specify.</p>
+   * sure that DataSync has permission to access the KMS key that you specify.</p>
    *  <p>You can use either <code>CmkSecretConfig</code> (with
    * <code>SecretKey</code>) or <code>CustomSecretConfig</code> (without
    * <code>SecretKey</code>) to provide credentials for a
@@ -294,9 +294,9 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
   /**
    * <p>Specifies configuration information for a customer-managed Secrets Manager
    * secret where the secret key for a specific object storage location is stored in
-   * plain text. This configuration includes the secret ARN, and the ARN for an IAM
-   * role that provides access to the secret.</p>  <p>You can use either
-   * <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or
+   * plain text, in Secrets Manager. This configuration includes the secret ARN, and
+   * the ARN for an IAM role that provides access to the secret.</p>  <p>You
+   * can use either <code>CmkSecretConfig</code> (with <code>SecretKey</code>) or
    * <code>CustomSecretConfig</code> (without <code>SecretKey</code>) to provide
    * credentials for a <code>CreateLocationObjectStorage</code> request. Do not
    * provide both parameters for the same request.</p>
@@ -316,39 +316,39 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_serverHostname;
-  bool m_serverHostnameHasBeenSet = false;
 
   int m_serverPort{0};
-  bool m_serverPortHasBeenSet = false;
 
   ObjectStorageServerProtocol m_serverProtocol{ObjectStorageServerProtocol::NOT_SET};
-  bool m_serverProtocolHasBeenSet = false;
 
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_accessKey;
-  bool m_accessKeyHasBeenSet = false;
 
   Aws::String m_secretKey;
-  bool m_secretKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_serverCertificate{};
-  bool m_serverCertificateHasBeenSet = false;
 
   CmkSecretConfig m_cmkSecretConfig;
-  bool m_cmkSecretConfigHasBeenSet = false;
 
   CustomSecretConfig m_customSecretConfig;
+  bool m_serverHostnameHasBeenSet = false;
+  bool m_serverPortHasBeenSet = false;
+  bool m_serverProtocolHasBeenSet = false;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_accessKeyHasBeenSet = false;
+  bool m_secretKeyHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_serverCertificateHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
   bool m_customSecretConfigHasBeenSet = false;
 };
 

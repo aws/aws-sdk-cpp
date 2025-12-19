@@ -108,15 +108,15 @@ class KPIConditionalFormattingOption {
   ///@}
  private:
   KPIPrimaryValueConditionalFormatting m_primaryValue;
-  bool m_primaryValueHasBeenSet = false;
 
   KPIProgressBarConditionalFormatting m_progressBar;
-  bool m_progressBarHasBeenSet = false;
 
   KPIActualValueConditionalFormatting m_actualValue;
-  bool m_actualValueHasBeenSet = false;
 
   KPIComparisonValueConditionalFormatting m_comparisonValue;
+  bool m_primaryValueHasBeenSet = false;
+  bool m_progressBarHasBeenSet = false;
+  bool m_actualValueHasBeenSet = false;
   bool m_comparisonValueHasBeenSet = false;
 };
 

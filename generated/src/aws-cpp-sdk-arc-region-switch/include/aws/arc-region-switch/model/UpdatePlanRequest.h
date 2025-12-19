@@ -185,24 +185,24 @@ class UpdatePlanRequest : public ARCRegionswitchRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Workflow> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   int m_recoveryTimeObjectiveMinutes{0};
-  bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
 
   Aws::Map<Aws::String, AssociatedAlarm> m_associatedAlarms;
-  bool m_associatedAlarmsHasBeenSet = false;
 
   Aws::Vector<Trigger> m_triggers;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_workflowsHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
+  bool m_associatedAlarmsHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
 };
 

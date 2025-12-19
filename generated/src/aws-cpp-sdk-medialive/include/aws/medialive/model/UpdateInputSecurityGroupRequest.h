@@ -77,9 +77,9 @@ class UpdateInputSecurityGroupRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_inputSecurityGroupId;
-  bool m_inputSecurityGroupIdHasBeenSet = false;
 
   Aws::Vector<InputWhitelistRuleCidr> m_whitelistRules;
+  bool m_inputSecurityGroupIdHasBeenSet = false;
   bool m_whitelistRulesHasBeenSet = false;
 };
 

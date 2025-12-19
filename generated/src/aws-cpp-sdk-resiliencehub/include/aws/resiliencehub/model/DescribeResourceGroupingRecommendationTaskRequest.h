@@ -71,9 +71,9 @@ class DescribeResourceGroupingRecommendationTaskRequest : public ResilienceHubRe
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_groupingId;
+  bool m_appArnHasBeenSet = false;
   bool m_groupingIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class UpdateCampaignDialerConfigRequest : public ConnectCampaignsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DialerConfig m_dialerConfig;
+  bool m_idHasBeenSet = false;
   bool m_dialerConfigHasBeenSet = false;
 };
 

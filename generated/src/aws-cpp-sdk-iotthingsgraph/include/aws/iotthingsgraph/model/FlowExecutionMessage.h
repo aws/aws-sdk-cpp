@@ -105,15 +105,15 @@ class FlowExecutionMessage {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   FlowExecutionEventType m_eventType{FlowExecutionEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_payload;
+  bool m_messageIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

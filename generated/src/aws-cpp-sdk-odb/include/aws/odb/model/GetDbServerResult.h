@@ -60,9 +60,9 @@ class GetDbServerResult {
   ///@}
  private:
   DbServer m_dbServer;
-  bool m_dbServerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dbServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class CreateControlPanelRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_controlPanelName;
-  bool m_controlPanelNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_controlPanelNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

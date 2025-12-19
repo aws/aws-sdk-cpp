@@ -95,12 +95,12 @@ class StorageType {
   ///@}
  private:
   Aws::String m_storageTypeName;
-  bool m_storageTypeNameHasBeenSet = false;
 
   Aws::String m_storageSubTypeName;
-  bool m_storageSubTypeNameHasBeenSet = false;
 
   Aws::Vector<StorageTypeLimit> m_storageTypeLimits;
+  bool m_storageTypeNameHasBeenSet = false;
+  bool m_storageSubTypeNameHasBeenSet = false;
   bool m_storageTypeLimitsHasBeenSet = false;
 };
 

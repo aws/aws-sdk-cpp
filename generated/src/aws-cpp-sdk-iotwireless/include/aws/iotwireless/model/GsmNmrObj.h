@@ -99,15 +99,15 @@ class GsmNmrObj {
   ///@}
  private:
   int m_bsic{0};
-  bool m_bsicHasBeenSet = false;
 
   int m_bcch{0};
-  bool m_bcchHasBeenSet = false;
 
   int m_rxLevel{0};
-  bool m_rxLevelHasBeenSet = false;
 
   GlobalIdentity m_globalIdentity;
+  bool m_bsicHasBeenSet = false;
+  bool m_bcchHasBeenSet = false;
+  bool m_rxLevelHasBeenSet = false;
   bool m_globalIdentityHasBeenSet = false;
 };
 

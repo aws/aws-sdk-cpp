@@ -58,9 +58,9 @@ class CreateSmsTemplateResult {
   ///@}
  private:
   CreateTemplateMessageBody m_createTemplateMessageBody;
-  bool m_createTemplateMessageBodyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createTemplateMessageBodyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

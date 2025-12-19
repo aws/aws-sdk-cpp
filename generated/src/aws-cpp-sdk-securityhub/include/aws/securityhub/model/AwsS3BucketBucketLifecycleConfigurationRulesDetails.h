@@ -261,36 +261,36 @@ class AwsS3BucketBucketLifecycleConfigurationRulesDetails {
   ///@}
  private:
   AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetails m_abortIncompleteMultipartUpload;
-  bool m_abortIncompleteMultipartUploadHasBeenSet = false;
 
   Aws::String m_expirationDate;
-  bool m_expirationDateHasBeenSet = false;
 
   int m_expirationInDays{0};
-  bool m_expirationInDaysHasBeenSet = false;
 
   bool m_expiredObjectDeleteMarker{false};
-  bool m_expiredObjectDeleteMarkerHasBeenSet = false;
 
   AwsS3BucketBucketLifecycleConfigurationRulesFilterDetails m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_iD;
-  bool m_iDHasBeenSet = false;
 
   int m_noncurrentVersionExpirationInDays{0};
-  bool m_noncurrentVersionExpirationInDaysHasBeenSet = false;
 
   Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails> m_noncurrentVersionTransitions;
-  bool m_noncurrentVersionTransitionsHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails> m_transitions;
+  bool m_abortIncompleteMultipartUploadHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_expirationInDaysHasBeenSet = false;
+  bool m_expiredObjectDeleteMarkerHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_iDHasBeenSet = false;
+  bool m_noncurrentVersionExpirationInDaysHasBeenSet = false;
+  bool m_noncurrentVersionTransitionsHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_transitionsHasBeenSet = false;
 };
 

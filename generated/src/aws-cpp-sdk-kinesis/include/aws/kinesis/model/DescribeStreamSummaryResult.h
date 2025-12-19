@@ -61,9 +61,9 @@ class DescribeStreamSummaryResult {
   ///@}
  private:
   StreamDescriptionSummary m_streamDescriptionSummary;
-  bool m_streamDescriptionSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamDescriptionSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

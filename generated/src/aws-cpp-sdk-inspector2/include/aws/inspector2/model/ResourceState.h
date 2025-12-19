@@ -125,18 +125,18 @@ class ResourceState {
   ///@}
  private:
   State m_ec2;
-  bool m_ec2HasBeenSet = false;
 
   State m_ecr;
-  bool m_ecrHasBeenSet = false;
 
   State m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   State m_lambdaCode;
-  bool m_lambdaCodeHasBeenSet = false;
 
   State m_codeRepository;
+  bool m_ec2HasBeenSet = false;
+  bool m_ecrHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_lambdaCodeHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
 };
 

@@ -357,42 +357,42 @@ class GeocodeParsedQueryAddressComponents {
   ///@}
  private:
   Aws::Vector<ParsedQueryComponent> m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_subRegion;
-  bool m_subRegionHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_locality;
-  bool m_localityHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_district;
-  bool m_districtHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_subDistrict;
-  bool m_subDistrictHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_block;
-  bool m_blockHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_subBlock;
-  bool m_subBlockHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_street;
-  bool m_streetHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_addressNumber;
-  bool m_addressNumberHasBeenSet = false;
 
   Aws::Vector<ParsedQueryComponent> m_building;
-  bool m_buildingHasBeenSet = false;
 
   Aws::Vector<ParsedQuerySecondaryAddressComponent> m_secondaryAddressComponents;
+  bool m_countryHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_subRegionHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_districtHasBeenSet = false;
+  bool m_subDistrictHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_blockHasBeenSet = false;
+  bool m_subBlockHasBeenSet = false;
+  bool m_streetHasBeenSet = false;
+  bool m_addressNumberHasBeenSet = false;
+  bool m_buildingHasBeenSet = false;
   bool m_secondaryAddressComponentsHasBeenSet = false;
 };
 

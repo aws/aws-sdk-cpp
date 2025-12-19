@@ -87,12 +87,12 @@ class ListHostedZoneAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<HostedZoneAssociationSummary> m_hostedZoneAssociations;
-  bool m_hostedZoneAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_hostedZoneAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

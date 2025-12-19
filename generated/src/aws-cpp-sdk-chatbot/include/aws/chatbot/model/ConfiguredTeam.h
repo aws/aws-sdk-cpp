@@ -132,18 +132,18 @@ class ConfiguredTeam {
   ///@}
  private:
   Aws::String m_tenantId;
-  bool m_tenantIdHasBeenSet = false;
 
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_teamName;
-  bool m_teamNameHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
+  bool m_tenantIdHasBeenSet = false;
+  bool m_teamIdHasBeenSet = false;
+  bool m_teamNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_stateReasonHasBeenSet = false;
 };
 

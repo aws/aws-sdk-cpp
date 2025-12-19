@@ -86,12 +86,12 @@ class ActionDefinition {
   ///@}
  private:
   Aws::String m_actionDefinitionId;
-  bool m_actionDefinitionIdHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_actionType;
+  bool m_actionDefinitionIdHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
   bool m_actionTypeHasBeenSet = false;
 };
 

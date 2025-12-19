@@ -105,15 +105,15 @@ class AwsDynamoDbTableRestoreSummary {
   ///@}
  private:
   Aws::String m_sourceBackupArn;
-  bool m_sourceBackupArnHasBeenSet = false;
 
   Aws::String m_sourceTableArn;
-  bool m_sourceTableArnHasBeenSet = false;
 
   Aws::String m_restoreDateTime;
-  bool m_restoreDateTimeHasBeenSet = false;
 
   bool m_restoreInProgress{false};
+  bool m_sourceBackupArnHasBeenSet = false;
+  bool m_sourceTableArnHasBeenSet = false;
+  bool m_restoreDateTimeHasBeenSet = false;
   bool m_restoreInProgressHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class StartThingRegistrationTaskRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_inputFileBucket;
-  bool m_inputFileBucketHasBeenSet = false;
 
   Aws::String m_inputFileKey;
-  bool m_inputFileKeyHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_inputFileBucketHasBeenSet = false;
+  bool m_inputFileKeyHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

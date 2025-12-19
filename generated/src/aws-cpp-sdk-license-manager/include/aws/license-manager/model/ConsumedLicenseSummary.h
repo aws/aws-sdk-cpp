@@ -64,9 +64,9 @@ class ConsumedLicenseSummary {
   ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   long long m_consumedLicenses{0};
+  bool m_resourceTypeHasBeenSet = false;
   bool m_consumedLicensesHasBeenSet = false;
 };
 

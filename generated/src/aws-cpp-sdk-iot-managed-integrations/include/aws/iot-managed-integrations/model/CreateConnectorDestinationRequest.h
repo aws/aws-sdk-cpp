@@ -162,24 +162,24 @@ class CreateConnectorDestinationRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_cloudConnectorId;
-  bool m_cloudConnectorIdHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   AuthConfig m_authConfig;
-  bool m_authConfigHasBeenSet = false;
 
   SecretsManager m_secretsManager;
-  bool m_secretsManagerHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_cloudConnectorIdHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_authConfigHasBeenSet = false;
+  bool m_secretsManagerHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

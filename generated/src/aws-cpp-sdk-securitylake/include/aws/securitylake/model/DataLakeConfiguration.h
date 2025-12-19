@@ -109,15 +109,15 @@ class DataLakeConfiguration {
   ///@}
  private:
   DataLakeEncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   DataLakeLifecycleConfiguration m_lifecycleConfiguration;
-  bool m_lifecycleConfigurationHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   DataLakeReplicationConfiguration m_replicationConfiguration;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_replicationConfigurationHasBeenSet = false;
 };
 

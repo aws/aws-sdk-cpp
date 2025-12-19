@@ -107,15 +107,15 @@ class Schedule {
   ///@}
  private:
   OneTimeSchedule m_oneTime;
-  bool m_oneTimeHasBeenSet = false;
 
   DailySchedule m_daily;
-  bool m_dailyHasBeenSet = false;
 
   WeeklySchedule m_weekly;
-  bool m_weeklyHasBeenSet = false;
 
   MonthlySchedule m_monthly;
+  bool m_oneTimeHasBeenSet = false;
+  bool m_dailyHasBeenSet = false;
+  bool m_weeklyHasBeenSet = false;
   bool m_monthlyHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DeleteUseCaseRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_integrationAssociationId;
-  bool m_integrationAssociationIdHasBeenSet = false;
 
   Aws::String m_useCaseId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_integrationAssociationIdHasBeenSet = false;
   bool m_useCaseIdHasBeenSet = false;
 };
 

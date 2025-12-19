@@ -85,9 +85,9 @@ class CaptureContentTypeHeader {
   ///@}
  private:
   Aws::Vector<Aws::String> m_csvContentTypes;
-  bool m_csvContentTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_jsonContentTypes;
+  bool m_csvContentTypesHasBeenSet = false;
   bool m_jsonContentTypesHasBeenSet = false;
 };
 

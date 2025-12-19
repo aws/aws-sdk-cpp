@@ -88,9 +88,9 @@ class RerankingMetadataSelectiveModeConfiguration {
   ///@}
  private:
   Aws::Vector<FieldForReranking> m_fieldsToExclude;
-  bool m_fieldsToExcludeHasBeenSet = false;
 
   Aws::Vector<FieldForReranking> m_fieldsToInclude;
+  bool m_fieldsToExcludeHasBeenSet = false;
   bool m_fieldsToIncludeHasBeenSet = false;
 };
 

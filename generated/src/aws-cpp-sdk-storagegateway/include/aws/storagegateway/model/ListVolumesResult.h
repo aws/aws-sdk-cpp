@@ -110,15 +110,15 @@ class ListVolumesResult {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<VolumeInfo> m_volumeInfos;
-  bool m_volumeInfosHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_volumeInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class FollowModeScheduleActionStartSettings {
   ///@}
  private:
   FollowPoint m_followPoint{FollowPoint::NOT_SET};
-  bool m_followPointHasBeenSet = false;
 
   Aws::String m_referenceActionName;
+  bool m_followPointHasBeenSet = false;
   bool m_referenceActionNameHasBeenSet = false;
 };
 

@@ -187,24 +187,24 @@ class CreateServiceLevelObjectiveRequest : public ApplicationSignalsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ServiceLevelIndicatorConfig m_sliConfig;
-  bool m_sliConfigHasBeenSet = false;
 
   RequestBasedServiceLevelIndicatorConfig m_requestBasedSliConfig;
-  bool m_requestBasedSliConfigHasBeenSet = false;
 
   Goal m_goal;
-  bool m_goalHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<BurnRateConfiguration> m_burnRateConfigurations;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sliConfigHasBeenSet = false;
+  bool m_requestBasedSliConfigHasBeenSet = false;
+  bool m_goalHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_burnRateConfigurationsHasBeenSet = false;
 };
 

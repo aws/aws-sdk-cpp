@@ -86,12 +86,12 @@ class ListAutomatedReasoningPolicyTestCasesResult {
   ///@}
  private:
   Aws::Vector<AutomatedReasoningPolicyTestCase> m_testCases;
-  bool m_testCasesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testCasesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

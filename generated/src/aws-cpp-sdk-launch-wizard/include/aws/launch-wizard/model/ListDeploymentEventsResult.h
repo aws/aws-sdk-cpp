@@ -85,12 +85,12 @@ class ListDeploymentEventsResult {
   ///@}
  private:
   Aws::Vector<DeploymentEventDataSummary> m_deploymentEvents;
-  bool m_deploymentEventsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentEventsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

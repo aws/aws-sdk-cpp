@@ -85,12 +85,12 @@ class ReplicationInstanceTaskLog {
   ///@}
  private:
   Aws::String m_replicationTaskName;
-  bool m_replicationTaskNameHasBeenSet = false;
 
   Aws::String m_replicationTaskArn;
-  bool m_replicationTaskArnHasBeenSet = false;
 
   long long m_replicationInstanceTaskLogSize{0};
+  bool m_replicationTaskNameHasBeenSet = false;
+  bool m_replicationTaskArnHasBeenSet = false;
   bool m_replicationInstanceTaskLogSizeHasBeenSet = false;
 };
 

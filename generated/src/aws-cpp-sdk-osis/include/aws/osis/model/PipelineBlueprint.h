@@ -141,21 +141,21 @@ class PipelineBlueprint {
   ///@}
  private:
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Aws::String m_pipelineConfigurationBody;
-  bool m_pipelineConfigurationBodyHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_displayDescription;
-  bool m_displayDescriptionHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_useCase;
+  bool m_blueprintNameHasBeenSet = false;
+  bool m_pipelineConfigurationBodyHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_displayDescriptionHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
   bool m_useCaseHasBeenSet = false;
 };
 

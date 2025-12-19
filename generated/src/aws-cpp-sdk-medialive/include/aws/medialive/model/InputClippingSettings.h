@@ -87,12 +87,12 @@ class InputClippingSettings {
   ///@}
  private:
   InputTimecodeSource m_inputTimecodeSource{InputTimecodeSource::NOT_SET};
-  bool m_inputTimecodeSourceHasBeenSet = false;
 
   StartTimecode m_startTimecode;
-  bool m_startTimecodeHasBeenSet = false;
 
   StopTimecode m_stopTimecode;
+  bool m_inputTimecodeSourceHasBeenSet = false;
+  bool m_startTimecodeHasBeenSet = false;
   bool m_stopTimecodeHasBeenSet = false;
 };
 

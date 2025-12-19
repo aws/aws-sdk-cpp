@@ -125,18 +125,18 @@ class TargetAddress {
   ///@}
  private:
   Aws::String m_ip;
-  bool m_ipHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_ipv6;
-  bool m_ipv6HasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_serverNameIndication;
+  bool m_ipHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_ipv6HasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_serverNameIndicationHasBeenSet = false;
 };
 

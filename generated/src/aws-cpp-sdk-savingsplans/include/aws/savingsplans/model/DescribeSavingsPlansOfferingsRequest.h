@@ -323,42 +323,42 @@ class DescribeSavingsPlansOfferingsRequest : public SavingsPlansRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_offeringIds;
-  bool m_offeringIdsHasBeenSet = false;
 
   Aws::Vector<SavingsPlanPaymentOption> m_paymentOptions;
-  bool m_paymentOptionsHasBeenSet = false;
 
   SavingsPlanProductType m_productType{SavingsPlanProductType::NOT_SET};
-  bool m_productTypeHasBeenSet = false;
 
   Aws::Vector<SavingsPlanType> m_planTypes;
-  bool m_planTypesHasBeenSet = false;
 
   Aws::Vector<long long> m_durations;
-  bool m_durationsHasBeenSet = false;
 
   Aws::Vector<CurrencyCode> m_currencies;
-  bool m_currenciesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_descriptions;
-  bool m_descriptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceCodes;
-  bool m_serviceCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_usageTypes;
-  bool m_usageTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   Aws::Vector<SavingsPlanOfferingFilterElement> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_offeringIdsHasBeenSet = false;
+  bool m_paymentOptionsHasBeenSet = false;
+  bool m_productTypeHasBeenSet = false;
+  bool m_planTypesHasBeenSet = false;
+  bool m_durationsHasBeenSet = false;
+  bool m_currenciesHasBeenSet = false;
+  bool m_descriptionsHasBeenSet = false;
+  bool m_serviceCodesHasBeenSet = false;
+  bool m_usageTypesHasBeenSet = false;
+  bool m_operationsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

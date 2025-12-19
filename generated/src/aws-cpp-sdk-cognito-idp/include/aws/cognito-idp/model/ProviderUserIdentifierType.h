@@ -89,12 +89,12 @@ class ProviderUserIdentifierType {
   ///@}
  private:
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::String m_providerAttributeName;
-  bool m_providerAttributeNameHasBeenSet = false;
 
   Aws::String m_providerAttributeValue;
+  bool m_providerNameHasBeenSet = false;
+  bool m_providerAttributeNameHasBeenSet = false;
   bool m_providerAttributeValueHasBeenSet = false;
 };
 

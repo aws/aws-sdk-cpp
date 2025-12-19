@@ -111,12 +111,12 @@ class IPSetForwardedIPConfig {
   ///@}
  private:
   Aws::String m_headerName;
-  bool m_headerNameHasBeenSet = false;
 
   FallbackBehavior m_fallbackBehavior{FallbackBehavior::NOT_SET};
-  bool m_fallbackBehaviorHasBeenSet = false;
 
   ForwardedIPPosition m_position{ForwardedIPPosition::NOT_SET};
+  bool m_headerNameHasBeenSet = false;
+  bool m_fallbackBehaviorHasBeenSet = false;
   bool m_positionHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class OrRuleStatement {
   ///@}
  private:
   Aws::Vector<MatchingRuleStatement> m_matchingRuleStatements;
-  bool m_matchingRuleStatementsHasBeenSet = false;
 
   Aws::Vector<ScriptRuleStatement> m_scriptRuleStatements;
+  bool m_matchingRuleStatementsHasBeenSet = false;
   bool m_scriptRuleStatementsHasBeenSet = false;
 };
 

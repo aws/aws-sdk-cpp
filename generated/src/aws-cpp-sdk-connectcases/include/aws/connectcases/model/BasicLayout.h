@@ -70,9 +70,9 @@ class BasicLayout {
   ///@}
  private:
   LayoutSections m_topPanel;
-  bool m_topPanelHasBeenSet = false;
 
   LayoutSections m_moreInfo;
+  bool m_topPanelHasBeenSet = false;
   bool m_moreInfoHasBeenSet = false;
 };
 

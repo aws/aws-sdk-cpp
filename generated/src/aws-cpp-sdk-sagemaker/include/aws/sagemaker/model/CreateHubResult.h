@@ -59,9 +59,9 @@ class CreateHubResult {
   ///@}
  private:
   Aws::String m_hubArn;
-  bool m_hubArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hubArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

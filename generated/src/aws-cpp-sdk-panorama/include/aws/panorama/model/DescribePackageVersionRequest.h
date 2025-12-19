@@ -106,15 +106,15 @@ class DescribePackageVersionRequest : public PanoramaRequest {
   ///@}
  private:
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_packageId;
-  bool m_packageIdHasBeenSet = false;
 
   Aws::String m_packageVersion;
-  bool m_packageVersionHasBeenSet = false;
 
   Aws::String m_patchVersion;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_packageIdHasBeenSet = false;
+  bool m_packageVersionHasBeenSet = false;
   bool m_patchVersionHasBeenSet = false;
 };
 

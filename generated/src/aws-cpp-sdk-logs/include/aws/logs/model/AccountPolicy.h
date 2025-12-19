@@ -156,24 +156,24 @@ class AccountPolicy {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   long long m_lastUpdatedTime{0};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_selectionCriteria;
-  bool m_selectionCriteriaHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_selectionCriteriaHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

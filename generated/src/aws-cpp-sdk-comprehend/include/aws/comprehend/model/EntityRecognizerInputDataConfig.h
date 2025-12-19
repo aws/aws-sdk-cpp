@@ -183,21 +183,21 @@ class EntityRecognizerInputDataConfig {
   ///@}
  private:
   EntityRecognizerDataFormat m_dataFormat{EntityRecognizerDataFormat::NOT_SET};
-  bool m_dataFormatHasBeenSet = false;
 
   Aws::Vector<EntityTypesListItem> m_entityTypes;
-  bool m_entityTypesHasBeenSet = false;
 
   EntityRecognizerDocuments m_documents;
-  bool m_documentsHasBeenSet = false;
 
   EntityRecognizerAnnotations m_annotations;
-  bool m_annotationsHasBeenSet = false;
 
   EntityRecognizerEntityList m_entityList;
-  bool m_entityListHasBeenSet = false;
 
   Aws::Vector<AugmentedManifestsListItem> m_augmentedManifests;
+  bool m_dataFormatHasBeenSet = false;
+  bool m_entityTypesHasBeenSet = false;
+  bool m_documentsHasBeenSet = false;
+  bool m_annotationsHasBeenSet = false;
+  bool m_entityListHasBeenSet = false;
   bool m_augmentedManifestsHasBeenSet = false;
 };
 

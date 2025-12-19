@@ -92,12 +92,12 @@ class BatchPutAttributesMetadataResult {
   ///@}
  private:
   Aws::Vector<BatchPutAttributeOutput> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<AttributeError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributesHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class DescribeRecoveryInstancesRequestFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_recoveryInstanceIDs;
-  bool m_recoveryInstanceIDsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceServerIDs;
+  bool m_recoveryInstanceIDsHasBeenSet = false;
   bool m_sourceServerIDsHasBeenSet = false;
 };
 

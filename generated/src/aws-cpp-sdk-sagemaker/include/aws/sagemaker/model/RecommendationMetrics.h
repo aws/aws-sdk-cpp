@@ -149,24 +149,24 @@ class RecommendationMetrics {
   ///@}
  private:
   double m_costPerHour{0.0};
-  bool m_costPerHourHasBeenSet = false;
 
   double m_costPerInference{0.0};
-  bool m_costPerInferenceHasBeenSet = false;
 
   int m_maxInvocations{0};
-  bool m_maxInvocationsHasBeenSet = false;
 
   int m_modelLatency{0};
-  bool m_modelLatencyHasBeenSet = false;
 
   double m_cpuUtilization{0.0};
-  bool m_cpuUtilizationHasBeenSet = false;
 
   double m_memoryUtilization{0.0};
-  bool m_memoryUtilizationHasBeenSet = false;
 
   int m_modelSetupTime{0};
+  bool m_costPerHourHasBeenSet = false;
+  bool m_costPerInferenceHasBeenSet = false;
+  bool m_maxInvocationsHasBeenSet = false;
+  bool m_modelLatencyHasBeenSet = false;
+  bool m_cpuUtilizationHasBeenSet = false;
+  bool m_memoryUtilizationHasBeenSet = false;
   bool m_modelSetupTimeHasBeenSet = false;
 };
 

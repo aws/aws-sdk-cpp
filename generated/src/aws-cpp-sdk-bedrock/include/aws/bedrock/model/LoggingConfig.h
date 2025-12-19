@@ -149,24 +149,24 @@ class LoggingConfig {
   ///@}
  private:
   CloudWatchConfig m_cloudWatchConfig;
-  bool m_cloudWatchConfigHasBeenSet = false;
 
   S3Config m_s3Config;
-  bool m_s3ConfigHasBeenSet = false;
 
   bool m_textDataDeliveryEnabled{false};
-  bool m_textDataDeliveryEnabledHasBeenSet = false;
 
   bool m_imageDataDeliveryEnabled{false};
-  bool m_imageDataDeliveryEnabledHasBeenSet = false;
 
   bool m_embeddingDataDeliveryEnabled{false};
-  bool m_embeddingDataDeliveryEnabledHasBeenSet = false;
 
   bool m_videoDataDeliveryEnabled{false};
-  bool m_videoDataDeliveryEnabledHasBeenSet = false;
 
   bool m_audioDataDeliveryEnabled{false};
+  bool m_cloudWatchConfigHasBeenSet = false;
+  bool m_s3ConfigHasBeenSet = false;
+  bool m_textDataDeliveryEnabledHasBeenSet = false;
+  bool m_imageDataDeliveryEnabledHasBeenSet = false;
+  bool m_embeddingDataDeliveryEnabledHasBeenSet = false;
+  bool m_videoDataDeliveryEnabledHasBeenSet = false;
   bool m_audioDataDeliveryEnabledHasBeenSet = false;
 };
 

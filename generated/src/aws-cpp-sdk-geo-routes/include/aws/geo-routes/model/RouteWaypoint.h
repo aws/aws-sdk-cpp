@@ -177,27 +177,27 @@ class RouteWaypoint {
   ///@}
  private:
   long long m_avoidActionsForDistance{0};
-  bool m_avoidActionsForDistanceHasBeenSet = false;
 
   bool m_avoidUTurns{false};
-  bool m_avoidUTurnsHasBeenSet = false;
 
   double m_heading{0.0};
-  bool m_headingHasBeenSet = false;
 
   RouteMatchingOptions m_matching;
-  bool m_matchingHasBeenSet = false;
 
   bool m_passThrough{false};
-  bool m_passThroughHasBeenSet = false;
 
   Aws::Vector<double> m_position;
-  bool m_positionHasBeenSet = false;
 
   RouteSideOfStreetOptions m_sideOfStreet;
-  bool m_sideOfStreetHasBeenSet = false;
 
   long long m_stopDuration{0};
+  bool m_avoidActionsForDistanceHasBeenSet = false;
+  bool m_avoidUTurnsHasBeenSet = false;
+  bool m_headingHasBeenSet = false;
+  bool m_matchingHasBeenSet = false;
+  bool m_passThroughHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_sideOfStreetHasBeenSet = false;
   bool m_stopDurationHasBeenSet = false;
 };
 

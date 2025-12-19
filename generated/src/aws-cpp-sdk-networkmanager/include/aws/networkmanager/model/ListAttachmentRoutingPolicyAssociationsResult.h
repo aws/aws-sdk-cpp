@@ -88,12 +88,12 @@ class ListAttachmentRoutingPolicyAssociationsResult {
   ///@}
  private:
   Aws::Vector<AttachmentRoutingPolicyAssociationSummary> m_attachmentRoutingPolicyAssociations;
-  bool m_attachmentRoutingPolicyAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attachmentRoutingPolicyAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

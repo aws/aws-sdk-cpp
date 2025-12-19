@@ -159,9 +159,9 @@ class SourceKeyword {
   ///@}
  private:
   KeywordInputType m_keywordInputType{KeywordInputType::NOT_SET};
-  bool m_keywordInputTypeHasBeenSet = false;
 
   Aws::String m_keywordValue;
+  bool m_keywordInputTypeHasBeenSet = false;
   bool m_keywordValueHasBeenSet = false;
 };
 

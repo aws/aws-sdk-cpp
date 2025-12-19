@@ -99,12 +99,12 @@ class CreateMonitoringScheduleRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_monitoringScheduleName;
-  bool m_monitoringScheduleNameHasBeenSet = false;
 
   MonitoringScheduleConfig m_monitoringScheduleConfig;
-  bool m_monitoringScheduleConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_monitoringScheduleNameHasBeenSet = false;
+  bool m_monitoringScheduleConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

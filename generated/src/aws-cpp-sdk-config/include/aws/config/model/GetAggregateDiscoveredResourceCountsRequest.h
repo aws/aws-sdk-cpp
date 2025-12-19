@@ -123,18 +123,18 @@ class GetAggregateDiscoveredResourceCountsRequest : public ConfigServiceRequest 
   ///@}
  private:
   Aws::String m_configurationAggregatorName;
-  bool m_configurationAggregatorNameHasBeenSet = false;
 
   ResourceCountFilters m_filters;
-  bool m_filtersHasBeenSet = false;
 
   ResourceCountGroupKey m_groupByKey{ResourceCountGroupKey::NOT_SET};
-  bool m_groupByKeyHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_configurationAggregatorNameHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_groupByKeyHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class EnableClientAuthenticationRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   ClientAuthenticationType m_type{ClientAuthenticationType::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

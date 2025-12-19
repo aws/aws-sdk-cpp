@@ -66,9 +66,9 @@ class ConnectorOperationStep {
   ///@}
  private:
   ConnectorOperationStepType m_stepType{ConnectorOperationStepType::NOT_SET};
-  bool m_stepTypeHasBeenSet = false;
 
   ConnectorOperationStepState m_stepState{ConnectorOperationStepState::NOT_SET};
+  bool m_stepTypeHasBeenSet = false;
   bool m_stepStateHasBeenSet = false;
 };
 

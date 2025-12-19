@@ -128,21 +128,21 @@ class GetEnrollmentStatusResult {
   ///@}
  private:
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   bool m_memberAccountsEnrolled{false};
-  bool m_memberAccountsEnrolledHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
-  bool m_lastUpdatedTimestampHasBeenSet = false;
 
   int m_numberOfMemberAccountsOptedIn{0};
-  bool m_numberOfMemberAccountsOptedInHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_memberAccountsEnrolledHasBeenSet = false;
+  bool m_lastUpdatedTimestampHasBeenSet = false;
+  bool m_numberOfMemberAccountsOptedInHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

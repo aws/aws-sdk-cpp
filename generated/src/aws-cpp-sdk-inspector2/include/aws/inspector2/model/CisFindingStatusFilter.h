@@ -65,9 +65,9 @@ class CisFindingStatusFilter {
   ///@}
  private:
   CisFindingStatusComparison m_comparison{CisFindingStatusComparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   CisFindingStatus m_value{CisFindingStatus::NOT_SET};
+  bool m_comparisonHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class DisassociateSbomFromPackageVersionRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_packageNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

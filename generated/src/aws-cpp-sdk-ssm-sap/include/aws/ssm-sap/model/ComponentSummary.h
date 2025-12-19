@@ -128,18 +128,18 @@ class ComponentSummary {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   ComponentType m_componentType{ComponentType::NOT_SET};
-  bool m_componentTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_componentIdHasBeenSet = false;
+  bool m_componentTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

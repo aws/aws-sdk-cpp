@@ -65,9 +65,9 @@ class GetEnvironmentBlueprintConfigurationRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_environmentBlueprintIdentifier;
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_environmentBlueprintIdentifierHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class BatchUpdateBillScenarioUsageModificationRequest : public BCMPricingCalcula
   ///@}
  private:
   Aws::String m_billScenarioId;
-  bool m_billScenarioIdHasBeenSet = false;
 
   Aws::Vector<BatchUpdateBillScenarioUsageModificationEntry> m_usageModifications;
+  bool m_billScenarioIdHasBeenSet = false;
   bool m_usageModificationsHasBeenSet = false;
 };
 

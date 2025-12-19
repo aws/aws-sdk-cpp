@@ -60,9 +60,9 @@ class TestMappingResult {
   ///@}
  private:
   Aws::String m_mappedFileContent;
-  bool m_mappedFileContentHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mappedFileContentHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class CreateMediaCapturePipelineResult {
   ///@}
  private:
   MediaCapturePipeline m_mediaCapturePipeline;
-  bool m_mediaCapturePipelineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaCapturePipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

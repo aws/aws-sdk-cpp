@@ -61,9 +61,9 @@ class DeleteVpcEndpointResult {
   ///@}
  private:
   VpcEndpointSummary m_vpcEndpointSummary;
-  bool m_vpcEndpointSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpcEndpointSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

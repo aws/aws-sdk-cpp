@@ -143,21 +143,21 @@ class MessageTemplateAttachment {
   ///@}
  private:
   ContentDisposition m_contentDisposition{ContentDisposition::NOT_SET};
-  bool m_contentDispositionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_uploadedTime{};
-  bool m_uploadedTimeHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::Utils::DateTime m_urlExpiry{};
-  bool m_urlExpiryHasBeenSet = false;
 
   Aws::String m_attachmentId;
+  bool m_contentDispositionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_uploadedTimeHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_urlExpiryHasBeenSet = false;
   bool m_attachmentIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class TargetTrackingScalingConfiguration {
   ///@}
  private:
   FleetScalingMetricType m_metricType{FleetScalingMetricType::NOT_SET};
-  bool m_metricTypeHasBeenSet = false;
 
   double m_targetValue{0.0};
+  bool m_metricTypeHasBeenSet = false;
   bool m_targetValueHasBeenSet = false;
 };
 

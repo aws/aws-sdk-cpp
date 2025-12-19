@@ -68,9 +68,9 @@ class RouteAnalysisEndpointOptionsSpecification {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentArn;
-  bool m_transitGatewayAttachmentArnHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_transitGatewayAttachmentArnHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

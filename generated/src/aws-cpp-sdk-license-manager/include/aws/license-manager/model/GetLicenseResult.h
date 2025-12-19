@@ -60,9 +60,9 @@ class GetLicenseResult {
   ///@}
  private:
   License m_license;
-  bool m_licenseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -213,33 +213,33 @@ class DescribeEmailAddressResult {
   ///@}
  private:
   Aws::String m_emailAddressId;
-  bool m_emailAddressIdHasBeenSet = false;
 
   Aws::String m_emailAddressArn;
-  bool m_emailAddressArnHasBeenSet = false;
 
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_createTimestamp;
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::String m_modifiedTimestamp;
-  bool m_modifiedTimestampHasBeenSet = false;
 
   Aws::Vector<AliasConfiguration> m_aliasConfigurations;
-  bool m_aliasConfigurationsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_emailAddressIdHasBeenSet = false;
+  bool m_emailAddressArnHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_modifiedTimestampHasBeenSet = false;
+  bool m_aliasConfigurationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

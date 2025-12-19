@@ -105,12 +105,12 @@ class Capabilities {
   ///@}
  private:
   Aws::Vector<AuthenticationType> m_supportedAuthenticationTypes;
-  bool m_supportedAuthenticationTypesHasBeenSet = false;
 
   Aws::Vector<DataOperation> m_supportedDataOperations;
-  bool m_supportedDataOperationsHasBeenSet = false;
 
   Aws::Vector<ComputeEnvironment> m_supportedComputeEnvironments;
+  bool m_supportedAuthenticationTypesHasBeenSet = false;
+  bool m_supportedDataOperationsHasBeenSet = false;
   bool m_supportedComputeEnvironmentsHasBeenSet = false;
 };
 

@@ -125,21 +125,21 @@ class DeleteVPCConnectionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_vPCConnectionId;
-  bool m_vPCConnectionIdHasBeenSet = false;
 
   VPCConnectionResourceStatus m_deletionStatus{VPCConnectionResourceStatus::NOT_SET};
-  bool m_deletionStatusHasBeenSet = false;
 
   VPCConnectionAvailabilityStatus m_availabilityStatus{VPCConnectionAvailabilityStatus::NOT_SET};
-  bool m_availabilityStatusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_arnHasBeenSet = false;
+  bool m_vPCConnectionIdHasBeenSet = false;
+  bool m_deletionStatusHasBeenSet = false;
+  bool m_availabilityStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

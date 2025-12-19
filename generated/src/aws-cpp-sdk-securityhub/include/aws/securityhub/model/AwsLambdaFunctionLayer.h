@@ -66,9 +66,9 @@ class AwsLambdaFunctionLayer {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_codeSize{0};
+  bool m_arnHasBeenSet = false;
   bool m_codeSizeHasBeenSet = false;
 };
 

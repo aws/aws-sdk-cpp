@@ -72,9 +72,9 @@ class DataIntegrationFlowDedupeStrategy {
   ///@}
  private:
   DataIntegrationFlowDedupeStrategyType m_type{DataIntegrationFlowDedupeStrategyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DataIntegrationFlowFieldPriorityDedupeStrategyConfiguration m_fieldPriority;
+  bool m_typeHasBeenSet = false;
   bool m_fieldPriorityHasBeenSet = false;
 };
 

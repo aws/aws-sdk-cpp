@@ -85,9 +85,9 @@ class DomainSuggestion {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_availability;
+  bool m_domainNameHasBeenSet = false;
   bool m_availabilityHasBeenSet = false;
 };
 

@@ -160,21 +160,21 @@ class AgentDetails {
   ///@}
  private:
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::Vector<int> m_reservedCpuCores;
-  bool m_reservedCpuCoresHasBeenSet = false;
 
   Aws::Vector<int> m_agentCpuCores;
-  bool m_agentCpuCoresHasBeenSet = false;
 
   Aws::Vector<ComponentVersion> m_componentVersions;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_reservedCpuCoresHasBeenSet = false;
+  bool m_agentCpuCoresHasBeenSet = false;
   bool m_componentVersionsHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class Target {
   ///@}
  private:
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_sourceReference;
-  bool m_sourceReferenceHasBeenSet = false;
 
   Aws::String m_destinationReference;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_sourceReferenceHasBeenSet = false;
   bool m_destinationReferenceHasBeenSet = false;
 };
 

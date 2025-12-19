@@ -58,9 +58,9 @@ class StartDBClusterResult {
   ///@}
  private:
   DBCluster m_dBCluster;
-  bool m_dBClusterHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBClusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

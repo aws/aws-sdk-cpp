@@ -84,12 +84,12 @@ class GetAttachmentRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_connectionToken;
-  bool m_connectionTokenHasBeenSet = false;
 
   int m_urlExpiryInSeconds{0};
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_connectionTokenHasBeenSet = false;
   bool m_urlExpiryInSecondsHasBeenSet = false;
 };
 

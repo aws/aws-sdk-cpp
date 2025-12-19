@@ -108,15 +108,15 @@ class AgentKnowledgeBaseSummary {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   KnowledgeBaseState m_knowledgeBaseState{KnowledgeBaseState::NOT_SET};
-  bool m_knowledgeBaseStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_knowledgeBaseStateHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

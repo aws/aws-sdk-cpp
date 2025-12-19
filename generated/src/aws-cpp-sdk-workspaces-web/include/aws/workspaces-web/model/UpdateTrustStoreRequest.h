@@ -121,15 +121,15 @@ class UpdateTrustStoreRequest : public WorkSpacesWebRequest {
   ///@}
  private:
   Aws::String m_trustStoreArn;
-  bool m_trustStoreArnHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::ByteBuffer> m_certificatesToAdd;
-  bool m_certificatesToAddHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_certificatesToDelete;
-  bool m_certificatesToDeleteHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_trustStoreArnHasBeenSet = false;
+  bool m_certificatesToAddHasBeenSet = false;
+  bool m_certificatesToDeleteHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

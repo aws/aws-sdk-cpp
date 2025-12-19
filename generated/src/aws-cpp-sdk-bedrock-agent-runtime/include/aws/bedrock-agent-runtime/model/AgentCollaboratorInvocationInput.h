@@ -87,12 +87,12 @@ class AgentCollaboratorInvocationInput {
   ///@}
  private:
   Aws::String m_agentCollaboratorAliasArn;
-  bool m_agentCollaboratorAliasArnHasBeenSet = false;
 
   Aws::String m_agentCollaboratorName;
-  bool m_agentCollaboratorNameHasBeenSet = false;
 
   AgentCollaboratorInputPayload m_input;
+  bool m_agentCollaboratorAliasArnHasBeenSet = false;
+  bool m_agentCollaboratorNameHasBeenSet = false;
   bool m_inputHasBeenSet = false;
 };
 

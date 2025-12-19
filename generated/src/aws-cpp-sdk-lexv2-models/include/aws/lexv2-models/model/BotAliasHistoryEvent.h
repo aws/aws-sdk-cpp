@@ -88,12 +88,12 @@ class BotAliasHistoryEvent {
   ///@}
  private:
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
+  bool m_botVersionHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_endDateHasBeenSet = false;
 };
 

@@ -212,36 +212,36 @@ class UpdateBillingGroupResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_primaryAccountId;
-  bool m_primaryAccountIdHasBeenSet = false;
 
   Aws::String m_pricingPlanArn;
-  bool m_pricingPlanArnHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   BillingGroupStatus m_status{BillingGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   UpdateBillingGroupAccountGrouping m_accountGrouping;
-  bool m_accountGroupingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_primaryAccountIdHasBeenSet = false;
+  bool m_pricingPlanArnHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_accountGroupingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

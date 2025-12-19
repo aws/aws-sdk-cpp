@@ -68,9 +68,9 @@ class Datatype {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_label;
+  bool m_idHasBeenSet = false;
   bool m_labelHasBeenSet = false;
 };
 

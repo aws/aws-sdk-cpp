@@ -86,12 +86,12 @@ class StartRemoteMoveRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_sourcePath;
-  bool m_sourcePathHasBeenSet = false;
 
   Aws::String m_targetPath;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_sourcePathHasBeenSet = false;
   bool m_targetPathHasBeenSet = false;
 };
 

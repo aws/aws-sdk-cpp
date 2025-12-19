@@ -88,12 +88,12 @@ class DisassociateSecurityGroupVpcRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_groupIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

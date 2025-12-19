@@ -74,9 +74,9 @@ class DeleteGameServerGroupRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   GameServerGroupDeleteOption m_deleteOption{GameServerGroupDeleteOption::NOT_SET};
+  bool m_gameServerGroupNameHasBeenSet = false;
   bool m_deleteOptionHasBeenSet = false;
 };
 

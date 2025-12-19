@@ -70,9 +70,9 @@ class DissociatePackageRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_packageIDHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

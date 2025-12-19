@@ -71,9 +71,9 @@ class SortCondition {
   ///@}
  private:
   ListDomainsAttributeName m_name{ListDomainsAttributeName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

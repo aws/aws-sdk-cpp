@@ -80,12 +80,12 @@ class CreateAccessPolicyResult {
   ///@}
  private:
   Aws::String m_accessPolicyId;
-  bool m_accessPolicyIdHasBeenSet = false;
 
   Aws::String m_accessPolicyArn;
-  bool m_accessPolicyArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessPolicyIdHasBeenSet = false;
+  bool m_accessPolicyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

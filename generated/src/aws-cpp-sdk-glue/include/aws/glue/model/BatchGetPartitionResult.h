@@ -92,12 +92,12 @@ class BatchGetPartitionResult {
   ///@}
  private:
   Aws::Vector<Partition> m_partitions;
-  bool m_partitionsHasBeenSet = false;
 
   Aws::Vector<PartitionValueList> m_unprocessedKeys;
-  bool m_unprocessedKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_partitionsHasBeenSet = false;
+  bool m_unprocessedKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

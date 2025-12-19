@@ -42,6 +42,6 @@ TEST_F(CognitoIdentityProviderSmokeTestSuite, ListUserPoolsSuccess )
     ListUserPoolsRequest input;
     input.SetMaxResults(10);
     auto outcome = clientSp->ListUserPools(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

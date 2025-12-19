@@ -297,42 +297,42 @@ class Association {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_associationVersion;
-  bool m_associationVersionHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastExecutionDate{};
-  bool m_lastExecutionDateHasBeenSet = false;
 
   AssociationOverview m_overview;
-  bool m_overviewHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   Aws::String m_associationName;
-  bool m_associationNameHasBeenSet = false;
 
   int m_scheduleOffset{0};
-  bool m_scheduleOffsetHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
+  bool m_associationVersionHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_lastExecutionDateHasBeenSet = false;
+  bool m_overviewHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_associationNameHasBeenSet = false;
+  bool m_scheduleOffsetHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_targetMapsHasBeenSet = false;
 };
 

@@ -96,12 +96,12 @@ class ApiStage {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::Map<Aws::String, ThrottleSettings> m_throttle;
+  bool m_apiIdHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
   bool m_throttleHasBeenSet = false;
 };
 

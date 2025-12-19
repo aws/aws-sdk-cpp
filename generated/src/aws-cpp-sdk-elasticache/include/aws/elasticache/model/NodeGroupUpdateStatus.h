@@ -79,9 +79,9 @@ class NodeGroupUpdateStatus {
   ///@}
  private:
   Aws::String m_nodeGroupId;
-  bool m_nodeGroupIdHasBeenSet = false;
 
   Aws::Vector<NodeGroupMemberUpdateStatus> m_nodeGroupMemberUpdateStatus;
+  bool m_nodeGroupIdHasBeenSet = false;
   bool m_nodeGroupMemberUpdateStatusHasBeenSet = false;
 };
 

@@ -137,18 +137,18 @@ class ModifyIpamPolicyAllocationRulesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_ipamPolicyId;
-  bool m_ipamPolicyIdHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   IpamPolicyResourceType m_resourceType{IpamPolicyResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<IpamPolicyAllocationRuleRequest> m_allocationRules;
+  bool m_dryRunHasBeenSet = false;
+  bool m_ipamPolicyIdHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_allocationRulesHasBeenSet = false;
 };
 

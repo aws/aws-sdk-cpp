@@ -200,27 +200,27 @@ class CreateTrustRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_remoteDomainName;
-  bool m_remoteDomainNameHasBeenSet = false;
 
   Aws::String m_trustPassword;
-  bool m_trustPasswordHasBeenSet = false;
 
   TrustDirection m_trustDirection{TrustDirection::NOT_SET};
-  bool m_trustDirectionHasBeenSet = false;
 
   TrustType m_trustType{TrustType::NOT_SET};
-  bool m_trustTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_conditionalForwarderIpAddrs;
-  bool m_conditionalForwarderIpAddrsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_conditionalForwarderIpv6Addrs;
-  bool m_conditionalForwarderIpv6AddrsHasBeenSet = false;
 
   SelectiveAuth m_selectiveAuth{SelectiveAuth::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_remoteDomainNameHasBeenSet = false;
+  bool m_trustPasswordHasBeenSet = false;
+  bool m_trustDirectionHasBeenSet = false;
+  bool m_trustTypeHasBeenSet = false;
+  bool m_conditionalForwarderIpAddrsHasBeenSet = false;
+  bool m_conditionalForwarderIpv6AddrsHasBeenSet = false;
   bool m_selectiveAuthHasBeenSet = false;
 };
 

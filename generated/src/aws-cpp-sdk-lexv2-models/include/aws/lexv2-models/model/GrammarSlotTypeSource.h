@@ -87,12 +87,12 @@ class GrammarSlotTypeSource {
   ///@}
  private:
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3ObjectKey;
-  bool m_s3ObjectKeyHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3ObjectKeyHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

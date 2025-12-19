@@ -67,9 +67,9 @@ class DeleteAccessControlRuleRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_organizationIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

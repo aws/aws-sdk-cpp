@@ -120,15 +120,15 @@ class ResponseHeadersPolicyXSSProtection {
   ///@}
  private:
   bool m_override{false};
-  bool m_overrideHasBeenSet = false;
 
   bool m_protection{false};
-  bool m_protectionHasBeenSet = false;
 
   bool m_modeBlock{false};
-  bool m_modeBlockHasBeenSet = false;
 
   Aws::String m_reportUri;
+  bool m_overrideHasBeenSet = false;
+  bool m_protectionHasBeenSet = false;
+  bool m_modeBlockHasBeenSet = false;
   bool m_reportUriHasBeenSet = false;
 };
 

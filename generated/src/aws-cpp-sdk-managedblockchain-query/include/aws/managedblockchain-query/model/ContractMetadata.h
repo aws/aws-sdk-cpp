@@ -84,12 +84,12 @@ class ContractMetadata {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_symbol;
-  bool m_symbolHasBeenSet = false;
 
   int m_decimals{0};
+  bool m_nameHasBeenSet = false;
+  bool m_symbolHasBeenSet = false;
   bool m_decimalsHasBeenSet = false;
 };
 

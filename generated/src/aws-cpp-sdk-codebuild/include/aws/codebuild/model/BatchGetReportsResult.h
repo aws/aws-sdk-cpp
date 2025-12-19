@@ -92,12 +92,12 @@ class BatchGetReportsResult {
   ///@}
  private:
   Aws::Vector<Report> m_reports;
-  bool m_reportsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reportsNotFound;
-  bool m_reportsNotFoundHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reportsHasBeenSet = false;
+  bool m_reportsNotFoundHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

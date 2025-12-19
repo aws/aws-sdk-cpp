@@ -86,12 +86,12 @@ class ListBatchJobDefinitionsResult {
   ///@}
  private:
   Aws::Vector<BatchJobDefinition> m_batchJobDefinitions;
-  bool m_batchJobDefinitionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_batchJobDefinitionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

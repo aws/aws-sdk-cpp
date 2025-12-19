@@ -71,9 +71,9 @@ class NotificationChannel {
   ///@}
  private:
   Aws::String m_sNSTopicArn;
-  bool m_sNSTopicArnHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_sNSTopicArnHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

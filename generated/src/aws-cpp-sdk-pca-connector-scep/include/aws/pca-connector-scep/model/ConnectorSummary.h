@@ -219,33 +219,33 @@ class ConnectorSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   ConnectorType m_type{ConnectorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   MobileDeviceManagement m_mobileDeviceManagement;
-  bool m_mobileDeviceManagementHasBeenSet = false;
 
   OpenIdConfiguration m_openIdConfiguration;
-  bool m_openIdConfigurationHasBeenSet = false;
 
   ConnectorStatus m_status{ConnectorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ConnectorStatusReason m_statusReason{ConnectorStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_arnHasBeenSet = false;
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_mobileDeviceManagementHasBeenSet = false;
+  bool m_openIdConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

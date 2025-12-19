@@ -69,9 +69,9 @@ class ServiceAdditionalInfo {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_valueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

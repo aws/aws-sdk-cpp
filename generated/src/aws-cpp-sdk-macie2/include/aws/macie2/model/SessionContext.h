@@ -73,9 +73,9 @@ class SessionContext {
   ///@}
  private:
   SessionContextAttributes m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   SessionIssuer m_sessionIssuer;
+  bool m_attributesHasBeenSet = false;
   bool m_sessionIssuerHasBeenSet = false;
 };
 

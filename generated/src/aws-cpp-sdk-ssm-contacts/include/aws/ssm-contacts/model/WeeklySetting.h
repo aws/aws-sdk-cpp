@@ -67,9 +67,9 @@ class WeeklySetting {
   ///@}
  private:
   DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
-  bool m_dayOfWeekHasBeenSet = false;
 
   HandOffTime m_handOffTime;
+  bool m_dayOfWeekHasBeenSet = false;
   bool m_handOffTimeHasBeenSet = false;
 };
 

@@ -114,15 +114,15 @@ class AwsEcsServiceServiceRegistriesDetails {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   int m_containerPort{0};
-  bool m_containerPortHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_registryArn;
+  bool m_containerNameHasBeenSet = false;
+  bool m_containerPortHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_registryArnHasBeenSet = false;
 };
 

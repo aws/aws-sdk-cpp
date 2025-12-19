@@ -195,30 +195,30 @@ class SystemInstanceSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   SystemInstanceDeploymentStatus m_status{SystemInstanceDeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DeploymentTarget m_target{DeploymentTarget::NOT_SET};
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_greengrassGroupName;
-  bool m_greengrassGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_greengrassGroupId;
-  bool m_greengrassGroupIdHasBeenSet = false;
 
   Aws::String m_greengrassGroupVersionId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_greengrassGroupNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_greengrassGroupIdHasBeenSet = false;
   bool m_greengrassGroupVersionIdHasBeenSet = false;
 };
 

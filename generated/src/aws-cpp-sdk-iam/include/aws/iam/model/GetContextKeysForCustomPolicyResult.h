@@ -76,9 +76,9 @@ class GetContextKeysForCustomPolicyResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_contextKeyNames;
-  bool m_contextKeyNamesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_contextKeyNamesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

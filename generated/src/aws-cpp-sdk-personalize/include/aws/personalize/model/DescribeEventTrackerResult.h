@@ -60,9 +60,9 @@ class DescribeEventTrackerResult {
   ///@}
  private:
   EventTracker m_eventTracker;
-  bool m_eventTrackerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventTrackerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

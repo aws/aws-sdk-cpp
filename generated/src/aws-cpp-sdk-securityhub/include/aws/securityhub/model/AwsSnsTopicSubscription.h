@@ -69,9 +69,9 @@ class AwsSnsTopicSubscription {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_protocol;
+  bool m_endpointHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

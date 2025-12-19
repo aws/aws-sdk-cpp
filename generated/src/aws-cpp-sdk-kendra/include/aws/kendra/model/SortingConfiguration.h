@@ -80,9 +80,9 @@ class SortingConfiguration {
   ///@}
  private:
   Aws::String m_documentAttributeKey;
-  bool m_documentAttributeKeyHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_documentAttributeKeyHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

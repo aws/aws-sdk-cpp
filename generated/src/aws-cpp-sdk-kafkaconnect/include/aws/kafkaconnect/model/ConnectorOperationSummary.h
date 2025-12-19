@@ -121,18 +121,18 @@ class ConnectorOperationSummary {
   ///@}
  private:
   Aws::String m_connectorOperationArn;
-  bool m_connectorOperationArnHasBeenSet = false;
 
   ConnectorOperationType m_connectorOperationType{ConnectorOperationType::NOT_SET};
-  bool m_connectorOperationTypeHasBeenSet = false;
 
   ConnectorOperationState m_connectorOperationState{ConnectorOperationState::NOT_SET};
-  bool m_connectorOperationStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_connectorOperationArnHasBeenSet = false;
+  bool m_connectorOperationTypeHasBeenSet = false;
+  bool m_connectorOperationStateHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

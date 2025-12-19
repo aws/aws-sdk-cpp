@@ -122,18 +122,18 @@ class StorageLocation {
   ///@}
  private:
   Aws::String m_binaryPrefixLocation;
-  bool m_binaryPrefixLocationHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_generatedPrefixLocation;
-  bool m_generatedPrefixLocationHasBeenSet = false;
 
   Aws::String m_manifestPrefixLocation;
-  bool m_manifestPrefixLocationHasBeenSet = false;
 
   Aws::String m_repoPrefixLocation;
+  bool m_binaryPrefixLocationHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_generatedPrefixLocationHasBeenSet = false;
+  bool m_manifestPrefixLocationHasBeenSet = false;
   bool m_repoPrefixLocationHasBeenSet = false;
 };
 

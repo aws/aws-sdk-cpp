@@ -66,9 +66,9 @@ class StartSoftwareDeploymentToImageBuilderRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_imageBuilderName;
-  bool m_imageBuilderNameHasBeenSet = false;
 
   bool m_retryFailedDeployments{false};
+  bool m_imageBuilderNameHasBeenSet = false;
   bool m_retryFailedDeploymentsHasBeenSet = false;
 };
 

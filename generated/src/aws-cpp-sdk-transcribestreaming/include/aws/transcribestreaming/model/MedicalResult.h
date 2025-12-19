@@ -151,21 +151,21 @@ class MedicalResult {
   ///@}
  private:
   Aws::String m_resultId;
-  bool m_resultIdHasBeenSet = false;
 
   double m_startTime{0.0};
-  bool m_startTimeHasBeenSet = false;
 
   double m_endTime{0.0};
-  bool m_endTimeHasBeenSet = false;
 
   bool m_isPartial{false};
-  bool m_isPartialHasBeenSet = false;
 
   Aws::Vector<MedicalAlternative> m_alternatives;
-  bool m_alternativesHasBeenSet = false;
 
   Aws::String m_channelId;
+  bool m_resultIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_isPartialHasBeenSet = false;
+  bool m_alternativesHasBeenSet = false;
   bool m_channelIdHasBeenSet = false;
 };
 

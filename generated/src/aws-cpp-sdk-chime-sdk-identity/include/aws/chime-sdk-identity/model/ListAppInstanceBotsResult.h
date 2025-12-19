@@ -102,15 +102,15 @@ class ListAppInstanceBotsResult {
   ///@}
  private:
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::Vector<AppInstanceBotSummary> m_appInstanceBots;
-  bool m_appInstanceBotsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceArnHasBeenSet = false;
+  bool m_appInstanceBotsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

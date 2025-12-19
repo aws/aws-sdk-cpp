@@ -72,9 +72,9 @@ class UpdateServiceNetworkVpcAssociationRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceNetworkVpcAssociationIdentifier;
-  bool m_serviceNetworkVpcAssociationIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+  bool m_serviceNetworkVpcAssociationIdentifierHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
 };
 

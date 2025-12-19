@@ -99,12 +99,12 @@ class NdiConfig {
   ///@}
  private:
   NdiState m_ndiState{NdiState::NOT_SET};
-  bool m_ndiStateHasBeenSet = false;
 
   Aws::String m_machineName;
-  bool m_machineNameHasBeenSet = false;
 
   Aws::Vector<NdiDiscoveryServerConfig> m_ndiDiscoveryServers;
+  bool m_ndiStateHasBeenSet = false;
+  bool m_machineNameHasBeenSet = false;
   bool m_ndiDiscoveryServersHasBeenSet = false;
 };
 

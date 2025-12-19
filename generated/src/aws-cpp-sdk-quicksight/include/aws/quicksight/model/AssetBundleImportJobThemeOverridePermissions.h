@@ -78,9 +78,9 @@ class AssetBundleImportJobThemeOverridePermissions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_themeIds;
-  bool m_themeIdsHasBeenSet = false;
 
   AssetBundleResourcePermissions m_permissions;
+  bool m_themeIdsHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

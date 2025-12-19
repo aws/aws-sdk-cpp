@@ -70,9 +70,9 @@ class AssociatedTargetNetwork {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   AssociatedNetworkType m_networkType{AssociatedNetworkType::NOT_SET};
+  bool m_networkIdHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

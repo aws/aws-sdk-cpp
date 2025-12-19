@@ -70,9 +70,9 @@ class DescribeComputationModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_computationModelId;
-  bool m_computationModelIdHasBeenSet = false;
 
   Aws::String m_computationModelVersion;
+  bool m_computationModelIdHasBeenSet = false;
   bool m_computationModelVersionHasBeenSet = false;
 };
 

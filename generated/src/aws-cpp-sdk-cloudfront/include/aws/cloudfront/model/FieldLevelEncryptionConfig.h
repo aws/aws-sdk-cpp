@@ -111,15 +111,15 @@ class FieldLevelEncryptionConfig {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   QueryArgProfileConfig m_queryArgProfileConfig;
-  bool m_queryArgProfileConfigHasBeenSet = false;
 
   ContentTypeProfileConfig m_contentTypeProfileConfig;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_queryArgProfileConfigHasBeenSet = false;
   bool m_contentTypeProfileConfigHasBeenSet = false;
 };
 

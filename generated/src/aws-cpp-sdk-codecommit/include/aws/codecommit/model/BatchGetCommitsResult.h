@@ -95,12 +95,12 @@ class BatchGetCommitsResult {
   ///@}
  private:
   Aws::Vector<Commit> m_commits;
-  bool m_commitsHasBeenSet = false;
 
   Aws::Vector<BatchGetCommitsError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commitsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

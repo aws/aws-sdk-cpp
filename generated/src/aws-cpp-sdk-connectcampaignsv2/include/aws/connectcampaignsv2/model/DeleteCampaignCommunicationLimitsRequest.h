@@ -69,9 +69,9 @@ class DeleteCampaignCommunicationLimitsRequest : public ConnectCampaignsV2Reques
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   CommunicationLimitsConfigType m_config{CommunicationLimitsConfigType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class IotSiteWiseSourceConfigurationFilter {
   ///@}
  private:
   FilterByAssetModel m_filterByAssetModel;
-  bool m_filterByAssetModelHasBeenSet = false;
 
   FilterByAsset m_filterByAsset;
+  bool m_filterByAssetModelHasBeenSet = false;
   bool m_filterByAssetHasBeenSet = false;
 };
 

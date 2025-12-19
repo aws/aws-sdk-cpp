@@ -60,9 +60,9 @@ class GetActionResult {
   ///@}
  private:
   Action m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

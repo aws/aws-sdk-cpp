@@ -152,21 +152,21 @@ class CopyBackupRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_sourceBackupId;
-  bool m_sourceBackupIdHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_sourceBackupIdHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class MemoryStrategyInput {
   ///@}
  private:
   SemanticMemoryStrategyInput m_semanticMemoryStrategy;
-  bool m_semanticMemoryStrategyHasBeenSet = false;
 
   SummaryMemoryStrategyInput m_summaryMemoryStrategy;
-  bool m_summaryMemoryStrategyHasBeenSet = false;
 
   UserPreferenceMemoryStrategyInput m_userPreferenceMemoryStrategy;
-  bool m_userPreferenceMemoryStrategyHasBeenSet = false;
 
   CustomMemoryStrategyInput m_customMemoryStrategy;
-  bool m_customMemoryStrategyHasBeenSet = false;
 
   EpisodicMemoryStrategyInput m_episodicMemoryStrategy;
+  bool m_semanticMemoryStrategyHasBeenSet = false;
+  bool m_summaryMemoryStrategyHasBeenSet = false;
+  bool m_userPreferenceMemoryStrategyHasBeenSet = false;
+  bool m_customMemoryStrategyHasBeenSet = false;
   bool m_episodicMemoryStrategyHasBeenSet = false;
 };
 

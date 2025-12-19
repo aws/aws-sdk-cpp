@@ -80,12 +80,12 @@ class EphemerisTypeDescription {
   ///@}
  private:
   EphemerisDescription m_tle;
-  bool m_tleHasBeenSet = false;
 
   EphemerisDescription m_oem;
-  bool m_oemHasBeenSet = false;
 
   EphemerisDescription m_azEl;
+  bool m_tleHasBeenSet = false;
+  bool m_oemHasBeenSet = false;
   bool m_azElHasBeenSet = false;
 };
 

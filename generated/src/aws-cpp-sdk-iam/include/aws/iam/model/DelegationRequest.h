@@ -216,7 +216,7 @@ class DelegationRequest {
   ///@{
   /**
    * <p>The state of this delegation request.</p> <p>See the <a
-   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html">Understanding
+   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
    * the Request Lifecycle</a> for an explanation of how these states are
    * transitioned.</p>
    */
@@ -228,6 +228,27 @@ class DelegationRequest {
   }
   inline DelegationRequest& WithState(StateType value) {
     SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The expiry time of this delegation request</p> <p>See the <a
+   * href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding
+   * the Request Lifecycle</a> for details on the life time of a delegation request
+   * at each state.</p>
+   */
+  inline const Aws::Utils::DateTime& GetExpirationTime() const { return m_expirationTime; }
+  inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
+  template <typename ExpirationTimeT = Aws::Utils::DateTime>
+  void SetExpirationTime(ExpirationTimeT&& value) {
+    m_expirationTimeHasBeenSet = true;
+    m_expirationTime = std::forward<ExpirationTimeT>(value);
+  }
+  template <typename ExpirationTimeT = Aws::Utils::DateTime>
+  DelegationRequest& WithExpirationTime(ExpirationTimeT&& value) {
+    SetExpirationTime(std::forward<ExpirationTimeT>(value));
     return *this;
   }
   ///@}
@@ -402,60 +423,63 @@ class DelegationRequest {
   ///@}
  private:
   Aws::String m_delegationRequestId;
-  bool m_delegationRequestIdHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_requestMessage;
-  bool m_requestMessageHasBeenSet = false;
 
   DelegationPermission m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_permissionPolicy;
-  bool m_permissionPolicyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rolePermissionRestrictionArns;
-  bool m_rolePermissionRestrictionArnsHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_approverId;
-  bool m_approverIdHasBeenSet = false;
 
   StateType m_state{StateType::NOT_SET};
-  bool m_stateHasBeenSet = false;
+
+  Aws::Utils::DateTime m_expirationTime{};
 
   Aws::String m_requestorId;
-  bool m_requestorIdHasBeenSet = false;
 
   Aws::String m_requestorName;
-  bool m_requestorNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   int m_sessionDuration{0};
-  bool m_sessionDurationHasBeenSet = false;
 
   Aws::String m_redirectUrl;
-  bool m_redirectUrlHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::String m_rejectionReason;
-  bool m_rejectionReasonHasBeenSet = false;
 
   bool m_onlySendByOwner{false};
-  bool m_onlySendByOwnerHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTime{};
+  bool m_delegationRequestIdHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_requestMessageHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_permissionPolicyHasBeenSet = false;
+  bool m_rolePermissionRestrictionArnsHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_approverIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_requestorIdHasBeenSet = false;
+  bool m_requestorNameHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_sessionDurationHasBeenSet = false;
+  bool m_redirectUrlHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_rejectionReasonHasBeenSet = false;
+  bool m_onlySendByOwnerHasBeenSet = false;
   bool m_updatedTimeHasBeenSet = false;
 };
 

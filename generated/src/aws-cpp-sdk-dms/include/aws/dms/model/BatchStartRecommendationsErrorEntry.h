@@ -88,12 +88,12 @@ class BatchStartRecommendationsErrorEntry {
   ///@}
  private:
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_code;
+  bool m_databaseIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

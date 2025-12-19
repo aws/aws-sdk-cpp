@@ -62,9 +62,9 @@ class StreamingDataPreviewOptions {
   ///@}
  private:
   long long m_pollingTime{0};
-  bool m_pollingTimeHasBeenSet = false;
 
   long long m_recordPollingLimit{0};
+  bool m_pollingTimeHasBeenSet = false;
   bool m_recordPollingLimitHasBeenSet = false;
 };
 

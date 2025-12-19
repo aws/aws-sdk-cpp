@@ -106,15 +106,15 @@ class DataQualityRuleRecommendationRunDescription {
   ///@}
  private:
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   TaskStatusType m_status{TaskStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   DataSource m_dataSource;
+  bool m_runIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
 };
 

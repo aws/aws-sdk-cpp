@@ -71,9 +71,9 @@ class ReceiverConfiguration {
   ///@}
  private:
   AnalysisType m_analysisType{AnalysisType::NOT_SET};
-  bool m_analysisTypeHasBeenSet = false;
 
   ConfigurationDetails m_configurationDetails;
+  bool m_analysisTypeHasBeenSet = false;
   bool m_configurationDetailsHasBeenSet = false;
 };
 

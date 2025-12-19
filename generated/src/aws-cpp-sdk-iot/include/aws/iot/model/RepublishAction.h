@@ -107,15 +107,15 @@ class RepublishAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_topic;
-  bool m_topicHasBeenSet = false;
 
   int m_qos{0};
-  bool m_qosHasBeenSet = false;
 
   MqttHeaders m_headers;
+  bool m_roleArnHasBeenSet = false;
+  bool m_topicHasBeenSet = false;
+  bool m_qosHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

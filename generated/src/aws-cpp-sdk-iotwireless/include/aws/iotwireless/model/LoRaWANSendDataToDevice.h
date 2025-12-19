@@ -65,9 +65,9 @@ class LoRaWANSendDataToDevice {
   ///@}
  private:
   int m_fPort{0};
-  bool m_fPortHasBeenSet = false;
 
   ParticipatingGateways m_participatingGateways;
+  bool m_fPortHasBeenSet = false;
   bool m_participatingGatewaysHasBeenSet = false;
 };
 

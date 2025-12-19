@@ -232,36 +232,36 @@ class DescribeModelResult {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   ContainerDefinition m_primaryContainer;
-  bool m_primaryContainerHasBeenSet = false;
 
   Aws::Vector<ContainerDefinition> m_containers;
-  bool m_containersHasBeenSet = false;
 
   InferenceExecutionConfig m_inferenceExecutionConfig;
-  bool m_inferenceExecutionConfigHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   bool m_enableNetworkIsolation{false};
-  bool m_enableNetworkIsolationHasBeenSet = false;
 
   DeploymentRecommendation m_deploymentRecommendation;
-  bool m_deploymentRecommendationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelNameHasBeenSet = false;
+  bool m_primaryContainerHasBeenSet = false;
+  bool m_containersHasBeenSet = false;
+  bool m_inferenceExecutionConfigHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_enableNetworkIsolationHasBeenSet = false;
+  bool m_deploymentRecommendationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

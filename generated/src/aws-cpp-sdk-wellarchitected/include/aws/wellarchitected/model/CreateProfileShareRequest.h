@@ -80,12 +80,12 @@ class CreateProfileShareRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_sharedWith;
-  bool m_sharedWithHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_profileArnHasBeenSet = false;
+  bool m_sharedWithHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

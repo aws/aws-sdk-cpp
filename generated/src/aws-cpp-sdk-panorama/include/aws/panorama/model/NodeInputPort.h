@@ -119,18 +119,18 @@ class NodeInputPort {
   ///@}
  private:
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_maxConnections{0};
-  bool m_maxConnectionsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PortType m_type{PortType::NOT_SET};
+  bool m_defaultValueHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_maxConnectionsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

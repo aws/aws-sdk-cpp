@@ -88,12 +88,12 @@ class AutomationRulesActionV2 {
   ///@}
  private:
   AutomationRulesActionTypeV2 m_type{AutomationRulesActionTypeV2::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AutomationRulesFindingFieldsUpdateV2 m_findingFieldsUpdate;
-  bool m_findingFieldsUpdateHasBeenSet = false;
 
   ExternalIntegrationConfiguration m_externalIntegrationConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_findingFieldsUpdateHasBeenSet = false;
   bool m_externalIntegrationConfigurationHasBeenSet = false;
 };
 

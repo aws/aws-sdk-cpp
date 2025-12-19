@@ -88,12 +88,12 @@ class DeleteNetworkFirewallTransitGatewayAttachmentResult {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   TransitGatewayAttachmentStatus m_transitGatewayAttachmentStatus{TransitGatewayAttachmentStatus::NOT_SET};
-  bool m_transitGatewayAttachmentStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

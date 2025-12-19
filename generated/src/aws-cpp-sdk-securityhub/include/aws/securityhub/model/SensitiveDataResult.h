@@ -95,12 +95,12 @@ class SensitiveDataResult {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Vector<SensitiveDataDetections> m_detections;
-  bool m_detectionsHasBeenSet = false;
 
   long long m_totalCount{0};
+  bool m_categoryHasBeenSet = false;
+  bool m_detectionsHasBeenSet = false;
   bool m_totalCountHasBeenSet = false;
 };
 

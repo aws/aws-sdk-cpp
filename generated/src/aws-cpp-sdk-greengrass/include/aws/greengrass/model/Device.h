@@ -104,15 +104,15 @@ class Device {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   bool m_syncShadow{false};
-  bool m_syncShadowHasBeenSet = false;
 
   Aws::String m_thingArn;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_syncShadowHasBeenSet = false;
   bool m_thingArnHasBeenSet = false;
 };
 

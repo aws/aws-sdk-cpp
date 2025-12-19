@@ -70,9 +70,9 @@ class TargetResource {
   ///@}
  private:
   NLBResource m_nLBResource;
-  bool m_nLBResourceHasBeenSet = false;
 
   R53ResourceRecord m_r53Resource;
+  bool m_nLBResourceHasBeenSet = false;
   bool m_r53ResourceHasBeenSet = false;
 };
 

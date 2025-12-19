@@ -172,24 +172,24 @@ class DefaultFilterControlOptions {
   ///@}
  private:
   DefaultDateTimePickerControlOptions m_defaultDateTimePickerOptions;
-  bool m_defaultDateTimePickerOptionsHasBeenSet = false;
 
   DefaultFilterListControlOptions m_defaultListOptions;
-  bool m_defaultListOptionsHasBeenSet = false;
 
   DefaultFilterDropDownControlOptions m_defaultDropdownOptions;
-  bool m_defaultDropdownOptionsHasBeenSet = false;
 
   DefaultTextFieldControlOptions m_defaultTextFieldOptions;
-  bool m_defaultTextFieldOptionsHasBeenSet = false;
 
   DefaultTextAreaControlOptions m_defaultTextAreaOptions;
-  bool m_defaultTextAreaOptionsHasBeenSet = false;
 
   DefaultSliderControlOptions m_defaultSliderOptions;
-  bool m_defaultSliderOptionsHasBeenSet = false;
 
   DefaultRelativeDateTimeControlOptions m_defaultRelativeDateTimeOptions;
+  bool m_defaultDateTimePickerOptionsHasBeenSet = false;
+  bool m_defaultListOptionsHasBeenSet = false;
+  bool m_defaultDropdownOptionsHasBeenSet = false;
+  bool m_defaultTextFieldOptionsHasBeenSet = false;
+  bool m_defaultTextAreaOptionsHasBeenSet = false;
+  bool m_defaultSliderOptionsHasBeenSet = false;
   bool m_defaultRelativeDateTimeOptionsHasBeenSet = false;
 };
 

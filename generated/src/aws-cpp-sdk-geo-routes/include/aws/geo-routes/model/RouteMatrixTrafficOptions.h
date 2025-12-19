@@ -69,9 +69,9 @@ class RouteMatrixTrafficOptions {
   ///@}
  private:
   long long m_flowEventThresholdOverride{0};
-  bool m_flowEventThresholdOverrideHasBeenSet = false;
 
   TrafficUsage m_usage{TrafficUsage::NOT_SET};
+  bool m_flowEventThresholdOverrideHasBeenSet = false;
   bool m_usageHasBeenSet = false;
 };
 

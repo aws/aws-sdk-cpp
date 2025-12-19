@@ -61,9 +61,9 @@ class AssociateConnectionAliasResult {
   ///@}
  private:
   Aws::String m_connectionIdentifier;
-  bool m_connectionIdentifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionIdentifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

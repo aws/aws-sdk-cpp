@@ -111,15 +111,15 @@ class DescribeChangeSetRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_includePropertyValues{false};
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_includePropertyValuesHasBeenSet = false;
 };
 

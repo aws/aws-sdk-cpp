@@ -86,12 +86,12 @@ class SuperuserParameters {
   ///@}
  private:
   Aws::String m_emailAddress;
-  bool m_emailAddressHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
   bool m_lastNameHasBeenSet = false;
 };
 

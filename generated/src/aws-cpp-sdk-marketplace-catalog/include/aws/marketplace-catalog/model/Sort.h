@@ -74,9 +74,9 @@ class Sort {
   ///@}
  private:
   Aws::String m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

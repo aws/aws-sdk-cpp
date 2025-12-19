@@ -87,9 +87,9 @@ class InvalidationBatch {
   ///@}
  private:
   Paths m_paths;
-  bool m_pathsHasBeenSet = false;
 
   Aws::String m_callerReference;
+  bool m_pathsHasBeenSet = false;
   bool m_callerReferenceHasBeenSet = false;
 };
 

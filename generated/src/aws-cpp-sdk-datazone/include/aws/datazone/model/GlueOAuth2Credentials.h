@@ -104,15 +104,15 @@ class GlueOAuth2Credentials {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_jwtToken;
-  bool m_jwtTokenHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   Aws::String m_userManagedClientApplicationClientSecret;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_jwtTokenHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
   bool m_userManagedClientApplicationClientSecretHasBeenSet = false;
 };
 

@@ -103,15 +103,15 @@ class UpdateWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_metaTemplateId;
-  bool m_metaTemplateIdHasBeenSet = false;
 
   Aws::String m_templateCategory;
-  bool m_templateCategoryHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_templateComponents{};
+  bool m_idHasBeenSet = false;
+  bool m_metaTemplateIdHasBeenSet = false;
+  bool m_templateCategoryHasBeenSet = false;
   bool m_templateComponentsHasBeenSet = false;
 };
 

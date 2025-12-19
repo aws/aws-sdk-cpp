@@ -97,12 +97,12 @@ class Connector {
   ///@}
  private:
   Aws::String m_connectorArn;
-  bool m_connectorArnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_connectorArnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

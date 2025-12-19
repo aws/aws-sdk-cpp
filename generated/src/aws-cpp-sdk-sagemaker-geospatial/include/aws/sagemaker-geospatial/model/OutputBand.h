@@ -67,9 +67,9 @@ class OutputBand {
   ///@}
  private:
   Aws::String m_bandName;
-  bool m_bandNameHasBeenSet = false;
 
   OutputType m_outputDataType{OutputType::NOT_SET};
+  bool m_bandNameHasBeenSet = false;
   bool m_outputDataTypeHasBeenSet = false;
 };
 

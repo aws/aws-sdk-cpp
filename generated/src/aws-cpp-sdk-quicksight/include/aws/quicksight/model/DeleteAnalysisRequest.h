@@ -109,15 +109,15 @@ class DeleteAnalysisRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   long long m_recoveryWindowInDays{0};
-  bool m_recoveryWindowInDaysHasBeenSet = false;
 
   bool m_forceDeleteWithoutRecovery{false};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_recoveryWindowInDaysHasBeenSet = false;
   bool m_forceDeleteWithoutRecoveryHasBeenSet = false;
 };
 

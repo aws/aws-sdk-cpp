@@ -136,21 +136,21 @@ class WordCloudOptions {
   ///@}
  private:
   WordCloudWordOrientation m_wordOrientation{WordCloudWordOrientation::NOT_SET};
-  bool m_wordOrientationHasBeenSet = false;
 
   WordCloudWordScaling m_wordScaling{WordCloudWordScaling::NOT_SET};
-  bool m_wordScalingHasBeenSet = false;
 
   WordCloudCloudLayout m_cloudLayout{WordCloudCloudLayout::NOT_SET};
-  bool m_cloudLayoutHasBeenSet = false;
 
   WordCloudWordCasing m_wordCasing{WordCloudWordCasing::NOT_SET};
-  bool m_wordCasingHasBeenSet = false;
 
   WordCloudWordPadding m_wordPadding{WordCloudWordPadding::NOT_SET};
-  bool m_wordPaddingHasBeenSet = false;
 
   int m_maximumStringLength{0};
+  bool m_wordOrientationHasBeenSet = false;
+  bool m_wordScalingHasBeenSet = false;
+  bool m_cloudLayoutHasBeenSet = false;
+  bool m_wordCasingHasBeenSet = false;
+  bool m_wordPaddingHasBeenSet = false;
   bool m_maximumStringLengthHasBeenSet = false;
 };
 

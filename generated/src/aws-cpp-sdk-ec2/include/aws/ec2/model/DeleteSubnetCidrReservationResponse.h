@@ -60,9 +60,9 @@ class DeleteSubnetCidrReservationResponse {
   ///@}
  private:
   SubnetCidrReservation m_deletedSubnetCidrReservation;
-  bool m_deletedSubnetCidrReservationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_deletedSubnetCidrReservationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

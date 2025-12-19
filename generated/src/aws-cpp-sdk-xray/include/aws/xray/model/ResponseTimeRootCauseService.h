@@ -153,21 +153,21 @@ class ResponseTimeRootCauseService {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<ResponseTimeRootCauseEntity> m_entityPath;
-  bool m_entityPathHasBeenSet = false;
 
   bool m_inferred{false};
+  bool m_nameHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_entityPathHasBeenSet = false;
   bool m_inferredHasBeenSet = false;
 };
 

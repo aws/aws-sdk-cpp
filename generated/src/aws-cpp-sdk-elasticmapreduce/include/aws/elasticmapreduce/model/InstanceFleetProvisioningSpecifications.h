@@ -80,9 +80,9 @@ class InstanceFleetProvisioningSpecifications {
   ///@}
  private:
   SpotProvisioningSpecification m_spotSpecification;
-  bool m_spotSpecificationHasBeenSet = false;
 
   OnDemandProvisioningSpecification m_onDemandSpecification;
+  bool m_spotSpecificationHasBeenSet = false;
   bool m_onDemandSpecificationHasBeenSet = false;
 };
 

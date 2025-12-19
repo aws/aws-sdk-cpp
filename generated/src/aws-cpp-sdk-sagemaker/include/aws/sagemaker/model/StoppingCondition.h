@@ -120,12 +120,12 @@ class StoppingCondition {
   ///@}
  private:
   int m_maxRuntimeInSeconds{0};
-  bool m_maxRuntimeInSecondsHasBeenSet = false;
 
   int m_maxWaitTimeInSeconds{0};
-  bool m_maxWaitTimeInSecondsHasBeenSet = false;
 
   int m_maxPendingTimeInSeconds{0};
+  bool m_maxRuntimeInSecondsHasBeenSet = false;
+  bool m_maxWaitTimeInSecondsHasBeenSet = false;
   bool m_maxPendingTimeInSecondsHasBeenSet = false;
 };
 

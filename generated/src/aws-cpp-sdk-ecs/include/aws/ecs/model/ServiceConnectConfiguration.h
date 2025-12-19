@@ -158,18 +158,18 @@ class ServiceConnectConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<ServiceConnectService> m_services;
-  bool m_servicesHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   ServiceConnectAccessLogConfiguration m_accessLogConfiguration;
+  bool m_enabledHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
   bool m_accessLogConfigurationHasBeenSet = false;
 };
 

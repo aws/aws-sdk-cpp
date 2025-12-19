@@ -89,12 +89,12 @@ class ExecuteProvisionedProductPlanRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_planId;
-  bool m_planIdHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_planIdHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

@@ -64,9 +64,9 @@ class DeleteReportDefinitionResult {
   ///@}
  private:
   Aws::String m_responseMessage;
-  bool m_responseMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responseMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

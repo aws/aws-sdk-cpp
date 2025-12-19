@@ -214,30 +214,30 @@ class CreateScheduledActionRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_namespaceName;
-  bool m_namespaceNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_scheduledActionDescription;
-  bool m_scheduledActionDescriptionHasBeenSet = false;
 
   Aws::String m_scheduledActionName;
-  bool m_scheduledActionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   TargetAction m_targetAction;
+  bool m_enabledHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_namespaceNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_scheduledActionDescriptionHasBeenSet = false;
+  bool m_scheduledActionNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_targetActionHasBeenSet = false;
 };
 

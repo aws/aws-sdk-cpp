@@ -61,9 +61,9 @@ class DescribeFeatureTransformationResult {
   ///@}
  private:
   FeatureTransformation m_featureTransformation;
-  bool m_featureTransformationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_featureTransformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

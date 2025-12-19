@@ -166,24 +166,24 @@ class CreateCollectionRequest : public OpenSearchServerlessRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CollectionType m_type{CollectionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   StandbyReplicas m_standbyReplicas{StandbyReplicas::NOT_SET};
-  bool m_standbyReplicasHasBeenSet = false;
 
   VectorOptions m_vectorOptions;
-  bool m_vectorOptionsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_standbyReplicasHasBeenSet = false;
+  bool m_vectorOptionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

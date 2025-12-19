@@ -92,12 +92,12 @@ class PossibleRemediationAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<RemediationActionWithOrder> m_orderedRemediationActions;
-  bool m_orderedRemediationActionsHasBeenSet = false;
 
   bool m_isDefaultAction{false};
+  bool m_descriptionHasBeenSet = false;
+  bool m_orderedRemediationActionsHasBeenSet = false;
   bool m_isDefaultActionHasBeenSet = false;
 };
 

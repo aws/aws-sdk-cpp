@@ -193,24 +193,24 @@ class Ebs {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   int m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   int m_throughput{0};
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
 };
 

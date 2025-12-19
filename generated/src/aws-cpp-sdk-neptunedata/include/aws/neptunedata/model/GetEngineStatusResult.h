@@ -302,45 +302,45 @@ class GetEngineStatusResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_dbEngineVersion;
-  bool m_dbEngineVersionHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_dfeQueryEngine;
-  bool m_dfeQueryEngineHasBeenSet = false;
 
   QueryLanguageVersion m_gremlin;
-  bool m_gremlinHasBeenSet = false;
 
   QueryLanguageVersion m_sparql;
-  bool m_sparqlHasBeenSet = false;
 
   QueryLanguageVersion m_opencypher;
-  bool m_opencypherHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labMode;
-  bool m_labModeHasBeenSet = false;
 
   int m_rollingBackTrxCount{0};
-  bool m_rollingBackTrxCountHasBeenSet = false;
 
   Aws::String m_rollingBackTrxEarliestStartTime;
-  bool m_rollingBackTrxEarliestStartTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_dbEngineVersionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_dfeQueryEngineHasBeenSet = false;
+  bool m_gremlinHasBeenSet = false;
+  bool m_sparqlHasBeenSet = false;
+  bool m_opencypherHasBeenSet = false;
+  bool m_labModeHasBeenSet = false;
+  bool m_rollingBackTrxCountHasBeenSet = false;
+  bool m_rollingBackTrxEarliestStartTimeHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

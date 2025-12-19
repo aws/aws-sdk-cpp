@@ -86,12 +86,12 @@ class ListDataQualityRulesetEvaluationRunsResult {
   ///@}
  private:
   Aws::Vector<DataQualityRulesetEvaluationRunDescription> m_runs;
-  bool m_runsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,9 +89,9 @@ class EnableKeyRotationRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   int m_rotationPeriodInDays{0};
+  bool m_keyIdHasBeenSet = false;
   bool m_rotationPeriodInDaysHasBeenSet = false;
 };
 

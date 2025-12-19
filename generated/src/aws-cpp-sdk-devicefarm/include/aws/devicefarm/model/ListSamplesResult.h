@@ -92,12 +92,12 @@ class ListSamplesResult {
   ///@}
  private:
   Aws::Vector<Sample> m_samples;
-  bool m_samplesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_samplesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class AutoScalingGroupProviderUpdate {
   ///@}
  private:
   ManagedScaling m_managedScaling;
-  bool m_managedScalingHasBeenSet = false;
 
   ManagedTerminationProtection m_managedTerminationProtection{ManagedTerminationProtection::NOT_SET};
-  bool m_managedTerminationProtectionHasBeenSet = false;
 
   ManagedDraining m_managedDraining{ManagedDraining::NOT_SET};
+  bool m_managedScalingHasBeenSet = false;
+  bool m_managedTerminationProtectionHasBeenSet = false;
   bool m_managedDrainingHasBeenSet = false;
 };
 

@@ -204,21 +204,21 @@ class ListRepositoryAssociationsRequest : public CodeGuruReviewerRequest {
   ///@}
  private:
   Aws::Vector<ProviderType> m_providerTypes;
-  bool m_providerTypesHasBeenSet = false;
 
   Aws::Vector<RepositoryAssociationState> m_states;
-  bool m_statesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_owners;
-  bool m_ownersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_providerTypesHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_ownersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

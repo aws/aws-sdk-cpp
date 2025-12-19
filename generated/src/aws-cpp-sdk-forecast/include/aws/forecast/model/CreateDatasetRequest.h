@@ -212,24 +212,24 @@ class CreateDatasetRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   DatasetType m_datasetType{DatasetType::NOT_SET};
-  bool m_datasetTypeHasBeenSet = false;
 
   Aws::String m_dataFrequency;
-  bool m_dataFrequencyHasBeenSet = false;
 
   Schema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_dataFrequencyHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

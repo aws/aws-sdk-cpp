@@ -84,12 +84,12 @@ class ListSipMediaApplicationsResult {
   ///@}
  private:
   Aws::Vector<SipMediaApplication> m_sipMediaApplications;
-  bool m_sipMediaApplicationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sipMediaApplicationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

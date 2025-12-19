@@ -275,42 +275,42 @@ class Metadata {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_ingressPointId;
-  bool m_ingressPointIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   Aws::String m_ruleSetId;
-  bool m_ruleSetIdHasBeenSet = false;
 
   Aws::String m_senderHostname;
-  bool m_senderHostnameHasBeenSet = false;
 
   Aws::String m_senderIpAddress;
-  bool m_senderIpAddressHasBeenSet = false;
 
   Aws::String m_tlsCipherSuite;
-  bool m_tlsCipherSuiteHasBeenSet = false;
 
   Aws::String m_tlsProtocol;
-  bool m_tlsProtocolHasBeenSet = false;
 
   Aws::String m_sendingMethod;
-  bool m_sendingMethodHasBeenSet = false;
 
   Aws::String m_sourceIdentity;
-  bool m_sourceIdentityHasBeenSet = false;
 
   Aws::String m_sendingPool;
-  bool m_sendingPoolHasBeenSet = false;
 
   Aws::String m_configurationSet;
-  bool m_configurationSetHasBeenSet = false;
 
   Aws::String m_sourceArn;
+  bool m_timestampHasBeenSet = false;
+  bool m_ingressPointIdHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
+  bool m_ruleSetIdHasBeenSet = false;
+  bool m_senderHostnameHasBeenSet = false;
+  bool m_senderIpAddressHasBeenSet = false;
+  bool m_tlsCipherSuiteHasBeenSet = false;
+  bool m_tlsProtocolHasBeenSet = false;
+  bool m_sendingMethodHasBeenSet = false;
+  bool m_sourceIdentityHasBeenSet = false;
+  bool m_sendingPoolHasBeenSet = false;
+  bool m_configurationSetHasBeenSet = false;
   bool m_sourceArnHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DeleteSubnetGroupResult {
   ///@}
  private:
   Aws::String m_deletionMessage;
-  bool m_deletionMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deletionMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class Volume {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   HostPath m_hostPath;
+  bool m_nameHasBeenSet = false;
   bool m_hostPathHasBeenSet = false;
 };
 

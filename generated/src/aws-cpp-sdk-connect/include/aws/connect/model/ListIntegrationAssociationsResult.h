@@ -87,12 +87,12 @@ class ListIntegrationAssociationsResult {
   ///@}
  private:
   Aws::Vector<IntegrationAssociationSummary> m_integrationAssociationSummaryList;
-  bool m_integrationAssociationSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationAssociationSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

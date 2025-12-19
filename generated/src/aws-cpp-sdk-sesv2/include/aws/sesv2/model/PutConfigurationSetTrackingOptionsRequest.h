@@ -84,12 +84,12 @@ class PutConfigurationSetTrackingOptionsRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_customRedirectDomain;
-  bool m_customRedirectDomainHasBeenSet = false;
 
   HttpsPolicy m_httpsPolicy{HttpsPolicy::NOT_SET};
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_customRedirectDomainHasBeenSet = false;
   bool m_httpsPolicyHasBeenSet = false;
 };
 

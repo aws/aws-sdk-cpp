@@ -134,18 +134,18 @@ class PutThirdPartyJobSuccessResultRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   CurrentRevision m_currentRevision;
-  bool m_currentRevisionHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   ExecutionDetails m_executionDetails;
+  bool m_jobIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_currentRevisionHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
   bool m_executionDetailsHasBeenSet = false;
 };
 

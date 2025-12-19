@@ -107,12 +107,12 @@ class ListCisScanConfigurationsFilterCriteria {
   ///@}
  private:
   Aws::Vector<CisStringFilter> m_scanNameFilters;
-  bool m_scanNameFiltersHasBeenSet = false;
 
   Aws::Vector<TagFilter> m_targetResourceTagFilters;
-  bool m_targetResourceTagFiltersHasBeenSet = false;
 
   Aws::Vector<CisStringFilter> m_scanConfigurationArnFilters;
+  bool m_scanNameFiltersHasBeenSet = false;
+  bool m_targetResourceTagFiltersHasBeenSet = false;
   bool m_scanConfigurationArnFiltersHasBeenSet = false;
 };
 

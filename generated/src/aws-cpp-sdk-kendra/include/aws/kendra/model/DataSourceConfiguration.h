@@ -409,54 +409,54 @@ class DataSourceConfiguration {
   ///@}
  private:
   S3DataSourceConfiguration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   SharePointConfiguration m_sharePointConfiguration;
-  bool m_sharePointConfigurationHasBeenSet = false;
 
   DatabaseConfiguration m_databaseConfiguration;
-  bool m_databaseConfigurationHasBeenSet = false;
 
   SalesforceConfiguration m_salesforceConfiguration;
-  bool m_salesforceConfigurationHasBeenSet = false;
 
   OneDriveConfiguration m_oneDriveConfiguration;
-  bool m_oneDriveConfigurationHasBeenSet = false;
 
   ServiceNowConfiguration m_serviceNowConfiguration;
-  bool m_serviceNowConfigurationHasBeenSet = false;
 
   ConfluenceConfiguration m_confluenceConfiguration;
-  bool m_confluenceConfigurationHasBeenSet = false;
 
   GoogleDriveConfiguration m_googleDriveConfiguration;
-  bool m_googleDriveConfigurationHasBeenSet = false;
 
   WebCrawlerConfiguration m_webCrawlerConfiguration;
-  bool m_webCrawlerConfigurationHasBeenSet = false;
 
   WorkDocsConfiguration m_workDocsConfiguration;
-  bool m_workDocsConfigurationHasBeenSet = false;
 
   FsxConfiguration m_fsxConfiguration;
-  bool m_fsxConfigurationHasBeenSet = false;
 
   SlackConfiguration m_slackConfiguration;
-  bool m_slackConfigurationHasBeenSet = false;
 
   BoxConfiguration m_boxConfiguration;
-  bool m_boxConfigurationHasBeenSet = false;
 
   QuipConfiguration m_quipConfiguration;
-  bool m_quipConfigurationHasBeenSet = false;
 
   JiraConfiguration m_jiraConfiguration;
-  bool m_jiraConfigurationHasBeenSet = false;
 
   GitHubConfiguration m_gitHubConfiguration;
-  bool m_gitHubConfigurationHasBeenSet = false;
 
   TemplateConfiguration m_templateConfiguration;
+  bool m_s3ConfigurationHasBeenSet = false;
+  bool m_sharePointConfigurationHasBeenSet = false;
+  bool m_databaseConfigurationHasBeenSet = false;
+  bool m_salesforceConfigurationHasBeenSet = false;
+  bool m_oneDriveConfigurationHasBeenSet = false;
+  bool m_serviceNowConfigurationHasBeenSet = false;
+  bool m_confluenceConfigurationHasBeenSet = false;
+  bool m_googleDriveConfigurationHasBeenSet = false;
+  bool m_webCrawlerConfigurationHasBeenSet = false;
+  bool m_workDocsConfigurationHasBeenSet = false;
+  bool m_fsxConfigurationHasBeenSet = false;
+  bool m_slackConfigurationHasBeenSet = false;
+  bool m_boxConfigurationHasBeenSet = false;
+  bool m_quipConfigurationHasBeenSet = false;
+  bool m_jiraConfigurationHasBeenSet = false;
+  bool m_gitHubConfigurationHasBeenSet = false;
   bool m_templateConfigurationHasBeenSet = false;
 };
 

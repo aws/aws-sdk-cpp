@@ -88,12 +88,12 @@ class DataSource {
   ///@}
  private:
   S3DataSource m_s3DataSource;
-  bool m_s3DataSourceHasBeenSet = false;
 
   FileSystemDataSource m_fileSystemDataSource;
-  bool m_fileSystemDataSourceHasBeenSet = false;
 
   DatasetSource m_datasetSource;
+  bool m_s3DataSourceHasBeenSet = false;
+  bool m_fileSystemDataSourceHasBeenSet = false;
   bool m_datasetSourceHasBeenSet = false;
 };
 

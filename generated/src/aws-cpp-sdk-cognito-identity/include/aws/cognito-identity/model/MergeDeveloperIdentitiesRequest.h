@@ -113,15 +113,15 @@ class MergeDeveloperIdentitiesRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_sourceUserIdentifier;
-  bool m_sourceUserIdentifierHasBeenSet = false;
 
   Aws::String m_destinationUserIdentifier;
-  bool m_destinationUserIdentifierHasBeenSet = false;
 
   Aws::String m_developerProviderName;
-  bool m_developerProviderNameHasBeenSet = false;
 
   Aws::String m_identityPoolId;
+  bool m_sourceUserIdentifierHasBeenSet = false;
+  bool m_destinationUserIdentifierHasBeenSet = false;
+  bool m_developerProviderNameHasBeenSet = false;
   bool m_identityPoolIdHasBeenSet = false;
 };
 

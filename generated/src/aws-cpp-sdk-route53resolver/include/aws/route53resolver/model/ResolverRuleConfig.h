@@ -39,7 +39,9 @@ class ResolverRuleConfig {
   ///@{
   /**
    * <p>The new name for the Resolver rule. The name that you specify appears in the
-   * Resolver dashboard in the Route 53 console. </p>
+   * Resolver dashboard in the Route 53 console. </p> <p>The name can be up to 64
+   * characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-),
+   * underscores (_), and spaces. The name cannot consist of only numbers.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -100,12 +102,12 @@ class ResolverRuleConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<TargetAddress> m_targetIps;
-  bool m_targetIpsHasBeenSet = false;
 
   Aws::String m_resolverEndpointId;
+  bool m_nameHasBeenSet = false;
+  bool m_targetIpsHasBeenSet = false;
   bool m_resolverEndpointIdHasBeenSet = false;
 };
 

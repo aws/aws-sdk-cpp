@@ -68,9 +68,9 @@ class RenewOfferingRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_offeringId;
-  bool m_offeringIdHasBeenSet = false;
 
   int m_quantity{0};
+  bool m_offeringIdHasBeenSet = false;
   bool m_quantityHasBeenSet = false;
 };
 

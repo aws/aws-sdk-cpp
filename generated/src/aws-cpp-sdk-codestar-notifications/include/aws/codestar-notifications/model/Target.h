@@ -75,9 +75,9 @@ class Target {
   ///@}
  private:
   Aws::String m_targetType;
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_targetAddress;
+  bool m_targetTypeHasBeenSet = false;
   bool m_targetAddressHasBeenSet = false;
 };
 

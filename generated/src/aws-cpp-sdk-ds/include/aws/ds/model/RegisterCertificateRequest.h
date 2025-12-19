@@ -106,15 +106,15 @@ class RegisterCertificateRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_certificateData;
-  bool m_certificateDataHasBeenSet = false;
 
   CertificateType m_type{CertificateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ClientCertAuthSettings m_clientCertAuthSettings;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_certificateDataHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_clientCertAuthSettingsHasBeenSet = false;
 };
 

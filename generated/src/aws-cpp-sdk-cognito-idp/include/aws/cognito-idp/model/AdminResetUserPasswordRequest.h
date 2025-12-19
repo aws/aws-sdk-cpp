@@ -121,12 +121,12 @@ class AdminResetUserPasswordRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

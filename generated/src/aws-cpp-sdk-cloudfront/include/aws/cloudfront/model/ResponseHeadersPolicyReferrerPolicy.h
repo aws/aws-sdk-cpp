@@ -79,9 +79,9 @@ class ResponseHeadersPolicyReferrerPolicy {
   ///@}
  private:
   bool m_override{false};
-  bool m_overrideHasBeenSet = false;
 
   ReferrerPolicyList m_referrerPolicy{ReferrerPolicyList::NOT_SET};
+  bool m_overrideHasBeenSet = false;
   bool m_referrerPolicyHasBeenSet = false;
 };
 

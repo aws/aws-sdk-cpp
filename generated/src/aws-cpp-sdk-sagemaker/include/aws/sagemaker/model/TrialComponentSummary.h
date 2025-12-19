@@ -238,36 +238,36 @@ class TrialComponentSummary {
   ///@}
  private:
   Aws::String m_trialComponentName;
-  bool m_trialComponentNameHasBeenSet = false;
 
   Aws::String m_trialComponentArn;
-  bool m_trialComponentArnHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   TrialComponentSource m_trialComponentSource;
-  bool m_trialComponentSourceHasBeenSet = false;
 
   TrialComponentStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   UserContext m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   UserContext m_lastModifiedBy;
+  bool m_trialComponentNameHasBeenSet = false;
+  bool m_trialComponentArnHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_trialComponentSourceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
 };
 

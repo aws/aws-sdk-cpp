@@ -82,9 +82,9 @@ class Rule {
   ///@}
  private:
   AssertionRule m_aSSERTION;
-  bool m_aSSERTIONHasBeenSet = false;
 
   GatingRule m_gATING;
+  bool m_aSSERTIONHasBeenSet = false;
   bool m_gATINGHasBeenSet = false;
 };
 

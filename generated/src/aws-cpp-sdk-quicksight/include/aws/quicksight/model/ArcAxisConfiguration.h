@@ -67,9 +67,9 @@ class ArcAxisConfiguration {
   ///@}
  private:
   ArcAxisDisplayRange m_range;
-  bool m_rangeHasBeenSet = false;
 
   int m_reserveRange{0};
+  bool m_rangeHasBeenSet = false;
   bool m_reserveRangeHasBeenSet = false;
 };
 

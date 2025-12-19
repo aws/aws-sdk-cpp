@@ -49,6 +49,24 @@ class ThrottlingException {
 
   ///@{
   /**
+   * <p>Reached throttling quota exception service code.</p>
+   */
+  inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
+  inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+  template <typename ServiceCodeT = Aws::String>
+  void SetServiceCode(ServiceCodeT&& value) {
+    m_serviceCodeHasBeenSet = true;
+    m_serviceCode = std::forward<ServiceCodeT>(value);
+  }
+  template <typename ServiceCodeT = Aws::String>
+  ThrottlingException& WithServiceCode(ServiceCodeT&& value) {
+    SetServiceCode(std::forward<ServiceCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Reached throttling quota exception.</p>
    */
   inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
@@ -82,36 +100,18 @@ class ThrottlingException {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Reached throttling quota exception service code.</p>
-   */
-  inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
-  inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-  template <typename ServiceCodeT = Aws::String>
-  void SetServiceCode(ServiceCodeT&& value) {
-    m_serviceCodeHasBeenSet = true;
-    m_serviceCode = std::forward<ServiceCodeT>(value);
-  }
-  template <typename ServiceCodeT = Aws::String>
-  ThrottlingException& WithServiceCode(ServiceCodeT&& value) {
-    SetServiceCode(std::forward<ServiceCodeT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
-
-  Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
-
-  Aws::String m_retryAfterSeconds;
-  bool m_retryAfterSecondsHasBeenSet = false;
 
   Aws::String m_serviceCode;
+
+  Aws::String m_quotaCode;
+
+  Aws::String m_retryAfterSeconds;
+  bool m_messageHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
+  bool m_retryAfterSecondsHasBeenSet = false;
 };
 
 }  // namespace Model

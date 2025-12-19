@@ -91,12 +91,12 @@ class CreateCapacityReservationRequest : public AthenaRequest {
   ///@}
  private:
   int m_targetDpus{0};
-  bool m_targetDpusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_targetDpusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

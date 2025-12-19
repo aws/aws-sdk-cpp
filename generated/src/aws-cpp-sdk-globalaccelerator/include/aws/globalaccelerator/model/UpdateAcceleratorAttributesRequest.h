@@ -113,15 +113,15 @@ class UpdateAcceleratorAttributesRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_acceleratorArn;
-  bool m_acceleratorArnHasBeenSet = false;
 
   bool m_flowLogsEnabled{false};
-  bool m_flowLogsEnabledHasBeenSet = false;
 
   Aws::String m_flowLogsS3Bucket;
-  bool m_flowLogsS3BucketHasBeenSet = false;
 
   Aws::String m_flowLogsS3Prefix;
+  bool m_acceleratorArnHasBeenSet = false;
+  bool m_flowLogsEnabledHasBeenSet = false;
+  bool m_flowLogsS3BucketHasBeenSet = false;
   bool m_flowLogsS3PrefixHasBeenSet = false;
 };
 

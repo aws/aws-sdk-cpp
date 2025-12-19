@@ -252,36 +252,36 @@ class CreateImageVersionRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_baseImage;
-  bool m_baseImageHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   VendorGuidance m_vendorGuidance{VendorGuidance::NOT_SET};
-  bool m_vendorGuidanceHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_mLFramework;
-  bool m_mLFrameworkHasBeenSet = false;
 
   Aws::String m_programmingLang;
-  bool m_programmingLangHasBeenSet = false;
 
   Processor m_processor{Processor::NOT_SET};
-  bool m_processorHasBeenSet = false;
 
   bool m_horovod{false};
-  bool m_horovodHasBeenSet = false;
 
   Aws::String m_releaseNotes;
+  bool m_baseImageHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_imageNameHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_vendorGuidanceHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_mLFrameworkHasBeenSet = false;
+  bool m_programmingLangHasBeenSet = false;
+  bool m_processorHasBeenSet = false;
+  bool m_horovodHasBeenSet = false;
   bool m_releaseNotesHasBeenSet = false;
 };
 

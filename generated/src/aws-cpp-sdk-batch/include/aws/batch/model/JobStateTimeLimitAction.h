@@ -107,15 +107,15 @@ class JobStateTimeLimitAction {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   JobStateTimeLimitActionsState m_state{JobStateTimeLimitActionsState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_maxTimeSeconds{0};
-  bool m_maxTimeSecondsHasBeenSet = false;
 
   JobStateTimeLimitActionsAction m_action{JobStateTimeLimitActionsAction::NOT_SET};
+  bool m_reasonHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_maxTimeSecondsHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

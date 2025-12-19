@@ -88,12 +88,12 @@ class CisaData {
   ///@}
  private:
   Aws::Utils::DateTime m_dateAdded{};
-  bool m_dateAddedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateDue{};
-  bool m_dateDueHasBeenSet = false;
 
   Aws::String m_action;
+  bool m_dateAddedHasBeenSet = false;
+  bool m_dateDueHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

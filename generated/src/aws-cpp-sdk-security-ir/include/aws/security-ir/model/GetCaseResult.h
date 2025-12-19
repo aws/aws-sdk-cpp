@@ -439,66 +439,66 @@ class GetCaseResult {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_caseArn;
-  bool m_caseArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CaseStatus m_caseStatus{CaseStatus::NOT_SET};
-  bool m_caseStatusHasBeenSet = false;
 
   EngagementType m_engagementType{EngagementType::NOT_SET};
-  bool m_engagementTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_reportedIncidentStartDate{};
-  bool m_reportedIncidentStartDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_actualIncidentStartDate{};
-  bool m_actualIncidentStartDateHasBeenSet = false;
 
   Aws::Vector<ImpactedAwsRegion> m_impactedAwsRegions;
-  bool m_impactedAwsRegionsHasBeenSet = false;
 
   Aws::Vector<ThreatActorIp> m_threatActorIpAddresses;
-  bool m_threatActorIpAddressesHasBeenSet = false;
 
   PendingAction m_pendingAction{PendingAction::NOT_SET};
-  bool m_pendingActionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedAccounts;
-  bool m_impactedAccountsHasBeenSet = false;
 
   Aws::Vector<Watcher> m_watchers;
-  bool m_watchersHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   ClosureCode m_closureCode{ClosureCode::NOT_SET};
-  bool m_closureCodeHasBeenSet = false;
 
   ResolverType m_resolverType{ResolverType::NOT_SET};
-  bool m_resolverTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_impactedServices;
-  bool m_impactedServicesHasBeenSet = false;
 
   Aws::Vector<CaseAttachmentAttributes> m_caseAttachments;
-  bool m_caseAttachmentsHasBeenSet = false;
 
   Aws::Utils::DateTime m_closedDate{};
-  bool m_closedDateHasBeenSet = false;
 
   Aws::Vector<CaseMetadataEntry> m_caseMetadata;
-  bool m_caseMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_titleHasBeenSet = false;
+  bool m_caseArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_caseStatusHasBeenSet = false;
+  bool m_engagementTypeHasBeenSet = false;
+  bool m_reportedIncidentStartDateHasBeenSet = false;
+  bool m_actualIncidentStartDateHasBeenSet = false;
+  bool m_impactedAwsRegionsHasBeenSet = false;
+  bool m_threatActorIpAddressesHasBeenSet = false;
+  bool m_pendingActionHasBeenSet = false;
+  bool m_impactedAccountsHasBeenSet = false;
+  bool m_watchersHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_closureCodeHasBeenSet = false;
+  bool m_resolverTypeHasBeenSet = false;
+  bool m_impactedServicesHasBeenSet = false;
+  bool m_caseAttachmentsHasBeenSet = false;
+  bool m_closedDateHasBeenSet = false;
+  bool m_caseMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

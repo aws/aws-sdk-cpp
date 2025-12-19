@@ -61,9 +61,9 @@ class GetQualificationScoreResult {
   ///@}
  private:
   Qualification m_qualification;
-  bool m_qualificationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_qualificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

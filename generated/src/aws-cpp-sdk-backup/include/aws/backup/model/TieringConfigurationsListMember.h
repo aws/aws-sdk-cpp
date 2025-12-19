@@ -132,18 +132,18 @@ class TieringConfigurationsListMember {
   ///@}
  private:
   Aws::String m_tieringConfigurationArn;
-  bool m_tieringConfigurationArnHasBeenSet = false;
 
   Aws::String m_tieringConfigurationName;
-  bool m_tieringConfigurationNameHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_tieringConfigurationArnHasBeenSet = false;
+  bool m_tieringConfigurationNameHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

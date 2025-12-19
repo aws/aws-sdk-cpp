@@ -77,9 +77,9 @@ class ContactFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_channel;
-  bool m_channelHasBeenSet = false;
 
   Aws::String m_contactArn;
+  bool m_channelHasBeenSet = false;
   bool m_contactArnHasBeenSet = false;
 };
 

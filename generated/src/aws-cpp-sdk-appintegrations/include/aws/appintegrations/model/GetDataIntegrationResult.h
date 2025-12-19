@@ -233,36 +233,36 @@ class GetDataIntegrationResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_sourceURI;
-  bool m_sourceURIHasBeenSet = false;
 
   ScheduleConfiguration m_scheduleConfiguration;
-  bool m_scheduleConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   FileConfiguration m_fileConfiguration;
-  bool m_fileConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_objectConfiguration;
-  bool m_objectConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
+  bool m_sourceURIHasBeenSet = false;
+  bool m_scheduleConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_fileConfigurationHasBeenSet = false;
+  bool m_objectConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

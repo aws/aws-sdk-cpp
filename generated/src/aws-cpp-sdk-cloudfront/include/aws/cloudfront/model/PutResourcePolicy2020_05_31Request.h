@@ -66,9 +66,9 @@ class PutResourcePolicy2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_policyDocument;
+  bool m_resourceArnHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
 };
 

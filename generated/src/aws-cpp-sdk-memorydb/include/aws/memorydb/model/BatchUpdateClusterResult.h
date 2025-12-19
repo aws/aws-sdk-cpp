@@ -91,12 +91,12 @@ class BatchUpdateClusterResult {
   ///@}
  private:
   Aws::Vector<Cluster> m_processedClusters;
-  bool m_processedClustersHasBeenSet = false;
 
   Aws::Vector<UnprocessedCluster> m_unprocessedClusters;
-  bool m_unprocessedClustersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_processedClustersHasBeenSet = false;
+  bool m_unprocessedClustersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

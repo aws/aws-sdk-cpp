@@ -126,18 +126,18 @@ class UpdateAccessPolicyRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_accessPolicyId;
-  bool m_accessPolicyIdHasBeenSet = false;
 
   Identity m_accessPolicyIdentity;
-  bool m_accessPolicyIdentityHasBeenSet = false;
 
   Resource m_accessPolicyResource;
-  bool m_accessPolicyResourceHasBeenSet = false;
 
   Permission m_accessPolicyPermission{Permission::NOT_SET};
-  bool m_accessPolicyPermissionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_accessPolicyIdHasBeenSet = false;
+  bool m_accessPolicyIdentityHasBeenSet = false;
+  bool m_accessPolicyResourceHasBeenSet = false;
+  bool m_accessPolicyPermissionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

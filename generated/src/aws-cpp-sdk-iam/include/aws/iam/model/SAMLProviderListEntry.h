@@ -90,12 +90,12 @@ class SAMLProviderListEntry {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
+  bool m_arnHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
   bool m_createDateHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class DeleteDomainResult {
   ///@}
  private:
   DomainDescription m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

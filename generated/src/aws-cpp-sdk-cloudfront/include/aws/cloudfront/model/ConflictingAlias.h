@@ -92,12 +92,12 @@ class ConflictingAlias {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_aliasHasBeenSet = false;
+  bool m_distributionIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

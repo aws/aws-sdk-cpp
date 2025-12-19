@@ -118,18 +118,18 @@ class SendDataPoint {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   long long m_deliveryAttempts{0};
-  bool m_deliveryAttemptsHasBeenSet = false;
 
   long long m_bounces{0};
-  bool m_bouncesHasBeenSet = false;
 
   long long m_complaints{0};
-  bool m_complaintsHasBeenSet = false;
 
   long long m_rejects{0};
+  bool m_timestampHasBeenSet = false;
+  bool m_deliveryAttemptsHasBeenSet = false;
+  bool m_bouncesHasBeenSet = false;
+  bool m_complaintsHasBeenSet = false;
   bool m_rejectsHasBeenSet = false;
 };
 

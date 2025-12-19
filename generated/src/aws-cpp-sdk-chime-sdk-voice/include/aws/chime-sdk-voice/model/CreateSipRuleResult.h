@@ -61,9 +61,9 @@ class CreateSipRuleResult {
   ///@}
  private:
   SipRule m_sipRule;
-  bool m_sipRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sipRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

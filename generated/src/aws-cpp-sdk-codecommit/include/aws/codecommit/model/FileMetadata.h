@@ -88,12 +88,12 @@ class FileMetadata {
   ///@}
  private:
   Aws::String m_absolutePath;
-  bool m_absolutePathHasBeenSet = false;
 
   Aws::String m_blobId;
-  bool m_blobIdHasBeenSet = false;
 
   FileModeTypeEnum m_fileMode{FileModeTypeEnum::NOT_SET};
+  bool m_absolutePathHasBeenSet = false;
+  bool m_blobIdHasBeenSet = false;
   bool m_fileModeHasBeenSet = false;
 };
 

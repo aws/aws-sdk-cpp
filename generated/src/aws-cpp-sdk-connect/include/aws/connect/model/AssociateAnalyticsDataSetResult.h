@@ -110,18 +110,18 @@ class AssociateAnalyticsDataSetResult {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_targetAccountId;
-  bool m_targetAccountIdHasBeenSet = false;
 
   Aws::String m_resourceShareId;
-  bool m_resourceShareIdHasBeenSet = false;
 
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_targetAccountIdHasBeenSet = false;
+  bool m_resourceShareIdHasBeenSet = false;
+  bool m_resourceShareArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

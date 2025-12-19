@@ -677,111 +677,111 @@ class DescribeModelVersionResult {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   long long m_modelVersion{0};
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_modelVersionArn;
-  bool m_modelVersionArnHasBeenSet = false;
 
   ModelVersionStatus m_status{ModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ModelVersionSourceType m_sourceType{ModelVersionSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   LabelsInputConfiguration m_labelsInputConfiguration;
-  bool m_labelsInputConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataStartTime{};
-  bool m_trainingDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataEndTime{};
-  bool m_trainingDataEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationDataStartTime{};
-  bool m_evaluationDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationDataEndTime{};
-  bool m_evaluationDataEndTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   DataPreProcessingConfiguration m_dataPreProcessingConfiguration;
-  bool m_dataPreProcessingConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingExecutionStartTime{};
-  bool m_trainingExecutionStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingExecutionEndTime{};
-  bool m_trainingExecutionEndTimeHasBeenSet = false;
 
   Aws::String m_failedReason;
-  bool m_failedReasonHasBeenSet = false;
 
   Aws::String m_modelMetrics;
-  bool m_modelMetricsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   Aws::String m_offCondition;
-  bool m_offConditionHasBeenSet = false;
 
   Aws::String m_sourceModelVersionArn;
-  bool m_sourceModelVersionArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_importJobStartTime{};
-  bool m_importJobStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_importJobEndTime{};
-  bool m_importJobEndTimeHasBeenSet = false;
 
   long long m_importedDataSizeInBytes{0};
-  bool m_importedDataSizeInBytesHasBeenSet = false;
 
   Aws::String m_priorModelMetrics;
-  bool m_priorModelMetricsHasBeenSet = false;
 
   int m_retrainingAvailableDataInDays{0};
-  bool m_retrainingAvailableDataInDaysHasBeenSet = false;
 
   AutoPromotionResult m_autoPromotionResult{AutoPromotionResult::NOT_SET};
-  bool m_autoPromotionResultHasBeenSet = false;
 
   Aws::String m_autoPromotionResultReason;
-  bool m_autoPromotionResultReasonHasBeenSet = false;
 
   ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
-  bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
 
   S3Object m_modelDiagnosticsResultsObject;
-  bool m_modelDiagnosticsResultsObjectHasBeenSet = false;
 
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
-  bool m_modelQualityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_modelVersionArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_labelsInputConfigurationHasBeenSet = false;
+  bool m_trainingDataStartTimeHasBeenSet = false;
+  bool m_trainingDataEndTimeHasBeenSet = false;
+  bool m_evaluationDataStartTimeHasBeenSet = false;
+  bool m_evaluationDataEndTimeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataPreProcessingConfigurationHasBeenSet = false;
+  bool m_trainingExecutionStartTimeHasBeenSet = false;
+  bool m_trainingExecutionEndTimeHasBeenSet = false;
+  bool m_failedReasonHasBeenSet = false;
+  bool m_modelMetricsHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_offConditionHasBeenSet = false;
+  bool m_sourceModelVersionArnHasBeenSet = false;
+  bool m_importJobStartTimeHasBeenSet = false;
+  bool m_importJobEndTimeHasBeenSet = false;
+  bool m_importedDataSizeInBytesHasBeenSet = false;
+  bool m_priorModelMetricsHasBeenSet = false;
+  bool m_retrainingAvailableDataInDaysHasBeenSet = false;
+  bool m_autoPromotionResultHasBeenSet = false;
+  bool m_autoPromotionResultReasonHasBeenSet = false;
+  bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
+  bool m_modelDiagnosticsResultsObjectHasBeenSet = false;
+  bool m_modelQualityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

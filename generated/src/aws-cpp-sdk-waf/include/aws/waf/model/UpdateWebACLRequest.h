@@ -128,15 +128,15 @@ class UpdateWebACLRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_webACLId;
-  bool m_webACLIdHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::Vector<WebACLUpdate> m_updates;
-  bool m_updatesHasBeenSet = false;
 
   WafAction m_defaultAction;
+  bool m_webACLIdHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
+  bool m_updatesHasBeenSet = false;
   bool m_defaultActionHasBeenSet = false;
 };
 

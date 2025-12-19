@@ -76,12 +76,12 @@ class PutResourcePolicyResult {
   ///@}
  private:
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_policyRevisionId;
-  bool m_policyRevisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_policyRevisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

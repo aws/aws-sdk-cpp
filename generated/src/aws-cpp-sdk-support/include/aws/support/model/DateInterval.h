@@ -70,9 +70,9 @@ class DateInterval {
   ///@}
  private:
   Aws::String m_startDateTime;
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::String m_endDateTime;
+  bool m_startDateTimeHasBeenSet = false;
   bool m_endDateTimeHasBeenSet = false;
 };
 

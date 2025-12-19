@@ -85,12 +85,12 @@ class DescribeIpGroupsResult {
   ///@}
  private:
   Aws::Vector<WorkspacesIpGroup> m_result;
-  bool m_resultHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resultHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -127,18 +127,18 @@ class Gateway {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_gatewayDisplayName;
-  bool m_gatewayDisplayNameHasBeenSet = false;
 
   GatewayType m_gatewayType{GatewayType::NOT_SET};
-  bool m_gatewayTypeHasBeenSet = false;
 
   Aws::String m_hypervisorId;
-  bool m_hypervisorIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSeenTime{};
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_gatewayDisplayNameHasBeenSet = false;
+  bool m_gatewayTypeHasBeenSet = false;
+  bool m_hypervisorIdHasBeenSet = false;
   bool m_lastSeenTimeHasBeenSet = false;
 };
 

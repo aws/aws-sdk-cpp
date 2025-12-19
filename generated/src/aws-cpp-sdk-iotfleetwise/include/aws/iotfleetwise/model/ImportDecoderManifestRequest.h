@@ -75,9 +75,9 @@ class ImportDecoderManifestRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NetworkFileDefinition> m_networkFileDefinitions;
+  bool m_nameHasBeenSet = false;
   bool m_networkFileDefinitionsHasBeenSet = false;
 };
 

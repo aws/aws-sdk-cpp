@@ -160,21 +160,21 @@ class NodeGroup {
   ///@}
  private:
   Aws::String m_nodeGroupId;
-  bool m_nodeGroupIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Endpoint m_primaryEndpoint;
-  bool m_primaryEndpointHasBeenSet = false;
 
   Endpoint m_readerEndpoint;
-  bool m_readerEndpointHasBeenSet = false;
 
   Aws::String m_slots;
-  bool m_slotsHasBeenSet = false;
 
   Aws::Vector<NodeGroupMember> m_nodeGroupMembers;
+  bool m_nodeGroupIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_primaryEndpointHasBeenSet = false;
+  bool m_readerEndpointHasBeenSet = false;
+  bool m_slotsHasBeenSet = false;
   bool m_nodeGroupMembersHasBeenSet = false;
 };
 

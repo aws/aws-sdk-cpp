@@ -185,21 +185,21 @@ class MqttHeaders {
   ///@}
  private:
   Aws::String m_payloadFormatIndicator;
-  bool m_payloadFormatIndicatorHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_responseTopic;
-  bool m_responseTopicHasBeenSet = false;
 
   Aws::String m_correlationData;
-  bool m_correlationDataHasBeenSet = false;
 
   Aws::String m_messageExpiry;
-  bool m_messageExpiryHasBeenSet = false;
 
   Aws::Vector<UserProperty> m_userProperties;
+  bool m_payloadFormatIndicatorHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_responseTopicHasBeenSet = false;
+  bool m_correlationDataHasBeenSet = false;
+  bool m_messageExpiryHasBeenSet = false;
   bool m_userPropertiesHasBeenSet = false;
 };
 

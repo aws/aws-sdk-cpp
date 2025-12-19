@@ -124,18 +124,18 @@ class CertificateInfo {
   ///@}
  private:
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   Aws::String m_commonName;
-  bool m_commonNameHasBeenSet = false;
 
   CertificateState m_state{CertificateState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryDateTime{};
-  bool m_expiryDateTimeHasBeenSet = false;
 
   CertificateType m_type{CertificateType::NOT_SET};
+  bool m_certificateIdHasBeenSet = false;
+  bool m_commonNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_expiryDateTimeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class ModifyEventSubscriptionResult {
   ///@}
  private:
   EventSubscription m_eventSubscription;
-  bool m_eventSubscriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventSubscriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

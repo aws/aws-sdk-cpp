@@ -70,9 +70,9 @@ class CapabilityOptions {
   ///@}
  private:
   OutboundEdiOptions m_outboundEdi;
-  bool m_outboundEdiHasBeenSet = false;
 
   InboundEdiOptions m_inboundEdi;
+  bool m_outboundEdiHasBeenSet = false;
   bool m_inboundEdiHasBeenSet = false;
 };
 

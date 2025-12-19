@@ -75,9 +75,9 @@ class GetGeneratedTemplateRequest : public CloudFormationRequest {
   ///@}
  private:
   TemplateFormat m_format{TemplateFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_generatedTemplateName;
+  bool m_formatHasBeenSet = false;
   bool m_generatedTemplateNameHasBeenSet = false;
 };
 

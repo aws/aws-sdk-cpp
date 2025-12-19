@@ -190,27 +190,27 @@ class WorkflowRunSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<WorkflowRunStatusReason> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_idHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_workflowNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

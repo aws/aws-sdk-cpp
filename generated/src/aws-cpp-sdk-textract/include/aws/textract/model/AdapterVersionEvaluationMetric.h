@@ -87,12 +87,12 @@ class AdapterVersionEvaluationMetric {
   ///@}
  private:
   EvaluationMetric m_baseline;
-  bool m_baselineHasBeenSet = false;
 
   EvaluationMetric m_adapterVersion;
-  bool m_adapterVersionHasBeenSet = false;
 
   FeatureType m_featureType{FeatureType::NOT_SET};
+  bool m_baselineHasBeenSet = false;
+  bool m_adapterVersionHasBeenSet = false;
   bool m_featureTypeHasBeenSet = false;
 };
 

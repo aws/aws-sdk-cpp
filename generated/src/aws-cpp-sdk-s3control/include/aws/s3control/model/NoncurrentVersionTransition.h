@@ -70,9 +70,9 @@ class NoncurrentVersionTransition {
   ///@}
  private:
   int m_noncurrentDays{0};
-  bool m_noncurrentDaysHasBeenSet = false;
 
   TransitionStorageClass m_storageClass{TransitionStorageClass::NOT_SET};
+  bool m_noncurrentDaysHasBeenSet = false;
   bool m_storageClassHasBeenSet = false;
 };
 

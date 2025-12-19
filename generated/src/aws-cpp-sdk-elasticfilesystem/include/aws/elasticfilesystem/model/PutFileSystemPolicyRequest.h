@@ -95,12 +95,12 @@ class PutFileSystemPolicyRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   bool m_bypassPolicyLockoutSafetyCheck{false};
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
   bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 };
 

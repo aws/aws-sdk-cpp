@@ -87,12 +87,12 @@ class TaskConfig {
   ///@}
  private:
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   DocumentClassificationConfig m_documentClassificationConfig;
-  bool m_documentClassificationConfigHasBeenSet = false;
 
   EntityRecognitionConfig m_entityRecognitionConfig;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_documentClassificationConfigHasBeenSet = false;
   bool m_entityRecognitionConfigHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class WordCloudSortConfiguration {
   ///@}
  private:
   ItemsLimitConfiguration m_categoryItemsLimit;
-  bool m_categoryItemsLimitHasBeenSet = false;
 
   Aws::Vector<FieldSortOptions> m_categorySort;
+  bool m_categoryItemsLimitHasBeenSet = false;
   bool m_categorySortHasBeenSet = false;
 };
 

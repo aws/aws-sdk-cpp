@@ -85,12 +85,12 @@ class GlobalSecondaryIndexWarmThroughputDescription {
   ///@}
  private:
   long long m_readUnitsPerSecond{0};
-  bool m_readUnitsPerSecondHasBeenSet = false;
 
   long long m_writeUnitsPerSecond{0};
-  bool m_writeUnitsPerSecondHasBeenSet = false;
 
   IndexStatus m_status{IndexStatus::NOT_SET};
+  bool m_readUnitsPerSecondHasBeenSet = false;
+  bool m_writeUnitsPerSecondHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

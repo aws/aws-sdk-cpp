@@ -84,12 +84,12 @@ class GetAutomatedReasoningPolicyTestResultRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   Aws::String m_testCaseId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
   bool m_testCaseIdHasBeenSet = false;
 };
 

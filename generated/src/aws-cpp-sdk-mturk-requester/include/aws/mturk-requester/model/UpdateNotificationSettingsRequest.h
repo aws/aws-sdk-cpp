@@ -88,12 +88,12 @@ class UpdateNotificationSettingsRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_hITTypeId;
-  bool m_hITTypeIdHasBeenSet = false;
 
   NotificationSpecification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   bool m_active{false};
+  bool m_hITTypeIdHasBeenSet = false;
+  bool m_notificationHasBeenSet = false;
   bool m_activeHasBeenSet = false;
 };
 

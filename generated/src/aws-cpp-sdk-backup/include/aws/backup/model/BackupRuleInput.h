@@ -332,42 +332,42 @@ class BackupRuleInput {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_targetBackupVaultName;
-  bool m_targetBackupVaultNameHasBeenSet = false;
 
   Aws::String m_targetLogicallyAirGappedBackupVaultArn;
-  bool m_targetLogicallyAirGappedBackupVaultArnHasBeenSet = false;
 
   Aws::String m_scheduleExpression;
-  bool m_scheduleExpressionHasBeenSet = false;
 
   long long m_startWindowMinutes{0};
-  bool m_startWindowMinutesHasBeenSet = false;
 
   long long m_completionWindowMinutes{0};
-  bool m_completionWindowMinutesHasBeenSet = false;
 
   Lifecycle m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
-  bool m_recoveryPointTagsHasBeenSet = false;
 
   Aws::Vector<CopyAction> m_copyActions;
-  bool m_copyActionsHasBeenSet = false;
 
   bool m_enableContinuousBackup{false};
-  bool m_enableContinuousBackupHasBeenSet = false;
 
   Aws::String m_scheduleExpressionTimezone;
-  bool m_scheduleExpressionTimezoneHasBeenSet = false;
 
   Aws::Vector<IndexAction> m_indexActions;
-  bool m_indexActionsHasBeenSet = false;
 
   Aws::Vector<ScanAction> m_scanActions;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_targetBackupVaultNameHasBeenSet = false;
+  bool m_targetLogicallyAirGappedBackupVaultArnHasBeenSet = false;
+  bool m_scheduleExpressionHasBeenSet = false;
+  bool m_startWindowMinutesHasBeenSet = false;
+  bool m_completionWindowMinutesHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_recoveryPointTagsHasBeenSet = false;
+  bool m_copyActionsHasBeenSet = false;
+  bool m_enableContinuousBackupHasBeenSet = false;
+  bool m_scheduleExpressionTimezoneHasBeenSet = false;
+  bool m_indexActionsHasBeenSet = false;
   bool m_scanActionsHasBeenSet = false;
 };
 

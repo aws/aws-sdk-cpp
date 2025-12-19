@@ -29,7 +29,7 @@ class DeleteCostCategoryDefinitionResult {
 
   ///@{
   /**
-   * <p>The unique identifier for your Cost Category. </p>
+   * <p>The unique identifier for your cost category. </p>
    */
   inline const Aws::String& GetCostCategoryArn() const { return m_costCategoryArn; }
   template <typename CostCategoryArnT = Aws::String>
@@ -46,8 +46,8 @@ class DeleteCostCategoryDefinitionResult {
 
   ///@{
   /**
-   * <p>The effective end date of the Cost Category as a result of deleting it. No
-   * costs after this date is categorized by the deleted Cost Category. </p>
+   * <p>The effective end date of the cost category as a result of deleting it. No
+   * costs after this date is categorized by the deleted cost category. </p>
    */
   inline const Aws::String& GetEffectiveEnd() const { return m_effectiveEnd; }
   template <typename EffectiveEndT = Aws::String>
@@ -78,12 +78,12 @@ class DeleteCostCategoryDefinitionResult {
   ///@}
  private:
   Aws::String m_costCategoryArn;
-  bool m_costCategoryArnHasBeenSet = false;
 
   Aws::String m_effectiveEnd;
-  bool m_effectiveEndHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_costCategoryArnHasBeenSet = false;
+  bool m_effectiveEndHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class CertificateBasedAuthProperties {
   ///@}
  private:
   CertificateBasedAuthStatusEnum m_status{CertificateBasedAuthStatusEnum::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
+  bool m_statusHasBeenSet = false;
   bool m_certificateAuthorityArnHasBeenSet = false;
 };
 

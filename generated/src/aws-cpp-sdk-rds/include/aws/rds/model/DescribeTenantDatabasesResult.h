@@ -89,12 +89,12 @@ class DescribeTenantDatabasesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<TenantDatabase> m_tenantDatabases;
-  bool m_tenantDatabasesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_tenantDatabasesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

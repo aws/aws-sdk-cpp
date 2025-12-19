@@ -77,9 +77,9 @@ class ModifyLoadBalancerAttributesRequest : public ElasticLoadBalancingv2Request
   ///@}
  private:
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   Aws::Vector<LoadBalancerAttribute> m_attributes;
+  bool m_loadBalancerArnHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

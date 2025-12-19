@@ -120,15 +120,15 @@ class DialogAction {
   ///@}
  private:
   DialogActionType m_type{DialogActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_slotToElicit;
-  bool m_slotToElicitHasBeenSet = false;
 
   StyleType m_slotElicitationStyle{StyleType::NOT_SET};
-  bool m_slotElicitationStyleHasBeenSet = false;
 
   ElicitSubSlot m_subSlotToElicit;
+  bool m_typeHasBeenSet = false;
+  bool m_slotToElicitHasBeenSet = false;
+  bool m_slotElicitationStyleHasBeenSet = false;
   bool m_subSlotToElicitHasBeenSet = false;
 };
 

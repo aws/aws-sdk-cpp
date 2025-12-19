@@ -115,15 +115,15 @@ class FlowNodeInput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   FlowNodeInputCategory m_category{FlowNodeInputCategory::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
 };
 

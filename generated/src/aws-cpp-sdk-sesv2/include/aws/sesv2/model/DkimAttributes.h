@@ -127,6 +127,33 @@ class DkimAttributes {
 
   ///@{
   /**
+   * <p>The hosted zone where Amazon SES publishes the DKIM public key TXT records
+   * for this email identity. This value indicates the DNS zone that customers must
+   * reference when configuring their CNAME records for DKIM authentication.</p>
+   * <p>When configuring DKIM for your domain, create CNAME records in your DNS that
+   * point to the selectors in this hosted zone. For example:</p> <p> <code>
+   * selector1._domainkey.yourdomain.com CNAME selector1.&lt;SigningHostedZone&gt;
+   * </code> </p> <p> <code> selector2._domainkey.yourdomain.com CNAME
+   * selector2.&lt;SigningHostedZone&gt; </code> </p> <p> <code>
+   * selector3._domainkey.yourdomain.com CNAME selector3.&lt;SigningHostedZone&gt;
+   * </code> </p>
+   */
+  inline const Aws::String& GetSigningHostedZone() const { return m_signingHostedZone; }
+  inline bool SigningHostedZoneHasBeenSet() const { return m_signingHostedZoneHasBeenSet; }
+  template <typename SigningHostedZoneT = Aws::String>
+  void SetSigningHostedZone(SigningHostedZoneT&& value) {
+    m_signingHostedZoneHasBeenSet = true;
+    m_signingHostedZone = std::forward<SigningHostedZoneT>(value);
+  }
+  template <typename SigningHostedZoneT = Aws::String>
+  DkimAttributes& WithSigningHostedZone(SigningHostedZoneT&& value) {
+    SetSigningHostedZone(std::forward<SigningHostedZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A string that indicates how DKIM was configured for the identity. These are
    * the possible values:</p> <ul> <li> <p> <code>AWS_SES</code> – Indicates that
    * DKIM was configured for the identity by using <a
@@ -279,24 +306,27 @@ class DkimAttributes {
   ///@}
  private:
   bool m_signingEnabled{false};
-  bool m_signingEnabledHasBeenSet = false;
 
   DkimStatus m_status{DkimStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokens;
-  bool m_tokensHasBeenSet = false;
+
+  Aws::String m_signingHostedZone;
 
   DkimSigningAttributesOrigin m_signingAttributesOrigin{DkimSigningAttributesOrigin::NOT_SET};
-  bool m_signingAttributesOriginHasBeenSet = false;
 
   DkimSigningKeyLength m_nextSigningKeyLength{DkimSigningKeyLength::NOT_SET};
-  bool m_nextSigningKeyLengthHasBeenSet = false;
 
   DkimSigningKeyLength m_currentSigningKeyLength{DkimSigningKeyLength::NOT_SET};
-  bool m_currentSigningKeyLengthHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastKeyGenerationTimestamp{};
+  bool m_signingEnabledHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tokensHasBeenSet = false;
+  bool m_signingHostedZoneHasBeenSet = false;
+  bool m_signingAttributesOriginHasBeenSet = false;
+  bool m_nextSigningKeyLengthHasBeenSet = false;
+  bool m_currentSigningKeyLengthHasBeenSet = false;
   bool m_lastKeyGenerationTimestampHasBeenSet = false;
 };
 

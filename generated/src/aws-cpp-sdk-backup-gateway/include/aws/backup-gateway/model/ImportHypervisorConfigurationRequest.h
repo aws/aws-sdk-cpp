@@ -148,21 +148,21 @@ class ImportHypervisorConfigurationRequest : public BackupGatewayRequest {
   ///@}
  private:
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_username;
+  bool m_hostHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_usernameHasBeenSet = false;
 };
 

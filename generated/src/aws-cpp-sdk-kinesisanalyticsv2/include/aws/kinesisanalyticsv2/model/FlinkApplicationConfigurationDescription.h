@@ -124,15 +124,15 @@ class FlinkApplicationConfigurationDescription {
   ///@}
  private:
   CheckpointConfigurationDescription m_checkpointConfigurationDescription;
-  bool m_checkpointConfigurationDescriptionHasBeenSet = false;
 
   MonitoringConfigurationDescription m_monitoringConfigurationDescription;
-  bool m_monitoringConfigurationDescriptionHasBeenSet = false;
 
   ParallelismConfigurationDescription m_parallelismConfigurationDescription;
-  bool m_parallelismConfigurationDescriptionHasBeenSet = false;
 
   Aws::String m_jobPlanDescription;
+  bool m_checkpointConfigurationDescriptionHasBeenSet = false;
+  bool m_monitoringConfigurationDescriptionHasBeenSet = false;
+  bool m_parallelismConfigurationDescriptionHasBeenSet = false;
   bool m_jobPlanDescriptionHasBeenSet = false;
 };
 

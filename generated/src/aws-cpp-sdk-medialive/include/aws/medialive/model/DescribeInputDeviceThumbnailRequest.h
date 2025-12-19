@@ -70,9 +70,9 @@ class DescribeInputDeviceThumbnailRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_inputDeviceId;
-  bool m_inputDeviceIdHasBeenSet = false;
 
   AcceptHeader m_accept{AcceptHeader::NOT_SET};
+  bool m_inputDeviceIdHasBeenSet = false;
   bool m_acceptHasBeenSet = false;
 };
 

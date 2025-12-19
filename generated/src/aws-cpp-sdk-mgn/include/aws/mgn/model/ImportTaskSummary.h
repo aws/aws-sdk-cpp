@@ -35,6 +35,24 @@ class ImportTaskSummary {
 
   ///@{
   /**
+   * <p>Import task summary waves.</p>
+   */
+  inline const ImportTaskSummaryWaves& GetWaves() const { return m_waves; }
+  inline bool WavesHasBeenSet() const { return m_wavesHasBeenSet; }
+  template <typename WavesT = ImportTaskSummaryWaves>
+  void SetWaves(WavesT&& value) {
+    m_wavesHasBeenSet = true;
+    m_waves = std::forward<WavesT>(value);
+  }
+  template <typename WavesT = ImportTaskSummaryWaves>
+  ImportTaskSummary& WithWaves(WavesT&& value) {
+    SetWaves(std::forward<WavesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Import task summary applications.</p>
    */
   inline const ImportTaskSummaryApplications& GetApplications() const { return m_applications; }
@@ -68,33 +86,15 @@ class ImportTaskSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Import task summary waves.</p>
-   */
-  inline const ImportTaskSummaryWaves& GetWaves() const { return m_waves; }
-  inline bool WavesHasBeenSet() const { return m_wavesHasBeenSet; }
-  template <typename WavesT = ImportTaskSummaryWaves>
-  void SetWaves(WavesT&& value) {
-    m_wavesHasBeenSet = true;
-    m_waves = std::forward<WavesT>(value);
-  }
-  template <typename WavesT = ImportTaskSummaryWaves>
-  ImportTaskSummary& WithWaves(WavesT&& value) {
-    SetWaves(std::forward<WavesT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  ImportTaskSummaryWaves m_waves;
+
   ImportTaskSummaryApplications m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   ImportTaskSummaryServers m_servers;
-  bool m_serversHasBeenSet = false;
-
-  ImportTaskSummaryWaves m_waves;
   bool m_wavesHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
+  bool m_serversHasBeenSet = false;
 };
 
 }  // namespace Model

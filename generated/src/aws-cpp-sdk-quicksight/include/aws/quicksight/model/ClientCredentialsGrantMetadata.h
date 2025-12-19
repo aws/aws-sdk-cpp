@@ -89,12 +89,12 @@ class ClientCredentialsGrantMetadata {
   ///@}
  private:
   Aws::String m_baseEndpoint;
-  bool m_baseEndpointHasBeenSet = false;
 
   ClientCredentialsSource m_clientCredentialsSource{ClientCredentialsSource::NOT_SET};
-  bool m_clientCredentialsSourceHasBeenSet = false;
 
   ClientCredentialsDetails m_clientCredentialsDetails;
+  bool m_baseEndpointHasBeenSet = false;
+  bool m_clientCredentialsSourceHasBeenSet = false;
   bool m_clientCredentialsDetailsHasBeenSet = false;
 };
 

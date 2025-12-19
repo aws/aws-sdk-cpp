@@ -59,9 +59,9 @@ class StartTransformerJobResult {
   ///@}
  private:
   Aws::String m_transformerJobId;
-  bool m_transformerJobIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transformerJobIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class S3ContentBaseLocation {
   ///@}
  private:
   Aws::String m_bucketARN;
-  bool m_bucketARNHasBeenSet = false;
 
   Aws::String m_basePath;
+  bool m_bucketARNHasBeenSet = false;
   bool m_basePathHasBeenSet = false;
 };
 

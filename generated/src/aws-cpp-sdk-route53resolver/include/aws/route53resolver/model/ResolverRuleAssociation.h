@@ -82,7 +82,10 @@ class ResolverRuleAssociation {
 
   ///@{
   /**
-   * <p>The name of an association between a Resolver rule and a VPC.</p>
+   * <p>The name of an association between a Resolver rule and a VPC.</p> <p>The name
+   * can be up to 64 characters long and can contain letters (a-z, A-Z), numbers
+   * (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only
+   * numbers.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -153,21 +156,21 @@ class ResolverRuleAssociation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_resolverRuleId;
-  bool m_resolverRuleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_vPCId;
-  bool m_vPCIdHasBeenSet = false;
 
   ResolverRuleAssociationStatus m_status{ResolverRuleAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_idHasBeenSet = false;
+  bool m_resolverRuleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_vPCIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

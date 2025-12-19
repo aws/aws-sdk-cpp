@@ -81,12 +81,12 @@ class ObjectTypes {
   ///@}
  private:
   ObjectTypeEnum m_source{ObjectTypeEnum::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   ObjectTypeEnum m_destination{ObjectTypeEnum::NOT_SET};
-  bool m_destinationHasBeenSet = false;
 
   ObjectTypeEnum m_base{ObjectTypeEnum::NOT_SET};
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
   bool m_baseHasBeenSet = false;
 };
 

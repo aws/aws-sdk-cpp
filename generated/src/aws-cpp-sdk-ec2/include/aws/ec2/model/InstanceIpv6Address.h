@@ -72,9 +72,9 @@ class InstanceIpv6Address {
   ///@}
  private:
   Aws::String m_ipv6Address;
-  bool m_ipv6AddressHasBeenSet = false;
 
   bool m_isPrimaryIpv6{false};
+  bool m_ipv6AddressHasBeenSet = false;
   bool m_isPrimaryIpv6HasBeenSet = false;
 };
 

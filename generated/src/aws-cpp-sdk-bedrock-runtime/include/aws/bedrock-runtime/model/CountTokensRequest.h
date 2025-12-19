@@ -75,9 +75,9 @@ class CountTokensRequest : public BedrockRuntimeRequest {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   CountTokensInput m_input;
+  bool m_modelIdHasBeenSet = false;
   bool m_inputHasBeenSet = false;
 };
 

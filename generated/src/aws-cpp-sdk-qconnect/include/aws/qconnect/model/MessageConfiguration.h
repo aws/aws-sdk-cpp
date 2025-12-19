@@ -63,9 +63,9 @@ class MessageConfiguration {
   ///@}
  private:
   bool m_generateFillerMessage{false};
-  bool m_generateFillerMessageHasBeenSet = false;
 
   bool m_generateChunkedMessage{false};
+  bool m_generateFillerMessageHasBeenSet = false;
   bool m_generateChunkedMessageHasBeenSet = false;
 };
 

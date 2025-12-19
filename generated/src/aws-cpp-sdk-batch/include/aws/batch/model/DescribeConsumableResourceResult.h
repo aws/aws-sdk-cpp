@@ -184,30 +184,30 @@ class DescribeConsumableResourceResult {
   ///@}
  private:
   Aws::String m_consumableResourceName;
-  bool m_consumableResourceNameHasBeenSet = false;
 
   Aws::String m_consumableResourceArn;
-  bool m_consumableResourceArnHasBeenSet = false;
 
   long long m_totalQuantity{0};
-  bool m_totalQuantityHasBeenSet = false;
 
   long long m_inUseQuantity{0};
-  bool m_inUseQuantityHasBeenSet = false;
 
   long long m_availableQuantity{0};
-  bool m_availableQuantityHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   long long m_createdAt{0};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_consumableResourceNameHasBeenSet = false;
+  bool m_consumableResourceArnHasBeenSet = false;
+  bool m_totalQuantityHasBeenSet = false;
+  bool m_inUseQuantityHasBeenSet = false;
+  bool m_availableQuantityHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

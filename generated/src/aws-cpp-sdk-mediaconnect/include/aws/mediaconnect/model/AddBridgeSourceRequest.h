@@ -69,9 +69,9 @@ class AddBridgeSourceRequest {
   ///@}
  private:
   AddBridgeFlowSourceRequest m_flowSource;
-  bool m_flowSourceHasBeenSet = false;
 
   AddBridgeNetworkSourceRequest m_networkSource;
+  bool m_flowSourceHasBeenSet = false;
   bool m_networkSourceHasBeenSet = false;
 };
 

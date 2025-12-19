@@ -70,9 +70,9 @@ class DescribeFleetLocationCapacityRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_fleetIdHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

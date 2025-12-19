@@ -88,12 +88,12 @@ class GetUserProfileRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   UserProfileType m_type{UserProfileType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_userIdentifier;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_userIdentifierHasBeenSet = false;
 };
 

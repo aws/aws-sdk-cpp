@@ -87,9 +87,9 @@ class FirelensConfiguration {
   ///@}
  private:
   FirelensConfigurationType m_type{FirelensConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_options;
+  bool m_typeHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

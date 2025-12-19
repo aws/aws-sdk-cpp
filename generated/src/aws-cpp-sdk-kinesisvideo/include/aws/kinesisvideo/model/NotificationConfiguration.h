@@ -72,9 +72,9 @@ class NotificationConfiguration {
   ///@}
  private:
   ConfigurationStatus m_status{ConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   NotificationDestinationConfig m_destinationConfig;
+  bool m_statusHasBeenSet = false;
   bool m_destinationConfigHasBeenSet = false;
 };
 

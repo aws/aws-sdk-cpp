@@ -87,12 +87,12 @@ class CanaryRunTimeline {
   ///@}
  private:
   Aws::Utils::DateTime m_started{};
-  bool m_startedHasBeenSet = false;
 
   Aws::Utils::DateTime m_completed{};
-  bool m_completedHasBeenSet = false;
 
   Aws::Utils::DateTime m_metricTimestampForRunAndRetries{};
+  bool m_startedHasBeenSet = false;
+  bool m_completedHasBeenSet = false;
   bool m_metricTimestampForRunAndRetriesHasBeenSet = false;
 };
 

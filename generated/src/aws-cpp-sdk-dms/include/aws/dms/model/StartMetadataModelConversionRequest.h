@@ -67,9 +67,9 @@ class StartMetadataModelConversionRequest : public DatabaseMigrationServiceReque
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_selectionRules;
+  bool m_migrationProjectIdentifierHasBeenSet = false;
   bool m_selectionRulesHasBeenSet = false;
 };
 

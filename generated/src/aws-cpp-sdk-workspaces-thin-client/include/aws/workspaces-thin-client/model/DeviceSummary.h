@@ -320,51 +320,51 @@ class DeviceSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   DeviceStatus m_status{DeviceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_currentSoftwareSetId;
-  bool m_currentSoftwareSetIdHasBeenSet = false;
 
   Aws::String m_desiredSoftwareSetId;
-  bool m_desiredSoftwareSetIdHasBeenSet = false;
 
   Aws::String m_pendingSoftwareSetId;
-  bool m_pendingSoftwareSetIdHasBeenSet = false;
 
   SoftwareSetUpdateSchedule m_softwareSetUpdateSchedule{SoftwareSetUpdateSchedule::NOT_SET};
-  bool m_softwareSetUpdateScheduleHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastConnectedAt{};
-  bool m_lastConnectedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastPostureAt{};
-  bool m_lastPostureAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_lastUserId;
+  bool m_idHasBeenSet = false;
+  bool m_serialNumberHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_currentSoftwareSetIdHasBeenSet = false;
+  bool m_desiredSoftwareSetIdHasBeenSet = false;
+  bool m_pendingSoftwareSetIdHasBeenSet = false;
+  bool m_softwareSetUpdateScheduleHasBeenSet = false;
+  bool m_lastConnectedAtHasBeenSet = false;
+  bool m_lastPostureAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_lastUserIdHasBeenSet = false;
 };
 

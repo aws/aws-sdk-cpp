@@ -112,18 +112,18 @@ class DescribeAccountResult {
   ///@}
  private:
   DedicatedTenancySupportResultEnum m_dedicatedTenancySupport{DedicatedTenancySupportResultEnum::NOT_SET};
-  bool m_dedicatedTenancySupportHasBeenSet = false;
 
   Aws::String m_dedicatedTenancyManagementCidrRange;
-  bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
 
   DedicatedTenancyAccountType m_dedicatedTenancyAccountType{DedicatedTenancyAccountType::NOT_SET};
-  bool m_dedicatedTenancyAccountTypeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dedicatedTenancySupportHasBeenSet = false;
+  bool m_dedicatedTenancyManagementCidrRangeHasBeenSet = false;
+  bool m_dedicatedTenancyAccountTypeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

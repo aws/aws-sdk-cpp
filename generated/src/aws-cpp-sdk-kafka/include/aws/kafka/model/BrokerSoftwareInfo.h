@@ -95,12 +95,12 @@ class BrokerSoftwareInfo {
   ///@}
  private:
   Aws::String m_configurationArn;
-  bool m_configurationArnHasBeenSet = false;
 
   long long m_configurationRevision{0};
-  bool m_configurationRevisionHasBeenSet = false;
 
   Aws::String m_kafkaVersion;
+  bool m_configurationArnHasBeenSet = false;
+  bool m_configurationRevisionHasBeenSet = false;
   bool m_kafkaVersionHasBeenSet = false;
 };
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
+#include <smithy/identity/auth/AuthSchemeOption.h>
 
 namespace Aws
 {
@@ -231,6 +232,8 @@ namespace Aws
         RetryContext GetRetryContext() const { return m_retryContext; }
 
         void SetRetryContext(const RetryContext& context) const { m_retryContext = context; }
+
+        virtual Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const { return {}; }
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the

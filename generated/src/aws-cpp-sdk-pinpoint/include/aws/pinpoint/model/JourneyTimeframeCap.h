@@ -65,9 +65,9 @@ class JourneyTimeframeCap {
   ///@}
  private:
   int m_cap{0};
-  bool m_capHasBeenSet = false;
 
   int m_days{0};
+  bool m_capHasBeenSet = false;
   bool m_daysHasBeenSet = false;
 };
 

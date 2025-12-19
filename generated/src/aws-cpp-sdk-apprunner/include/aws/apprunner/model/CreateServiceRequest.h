@@ -223,30 +223,30 @@ class CreateServiceRequest : public AppRunnerRequest {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   SourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   InstanceConfiguration m_instanceConfiguration;
-  bool m_instanceConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   HealthCheckConfiguration m_healthCheckConfiguration;
-  bool m_healthCheckConfigurationHasBeenSet = false;
 
   Aws::String m_autoScalingConfigurationArn;
-  bool m_autoScalingConfigurationArnHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   ServiceObservabilityConfiguration m_observabilityConfiguration;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_sourceConfigurationHasBeenSet = false;
+  bool m_instanceConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_healthCheckConfigurationHasBeenSet = false;
+  bool m_autoScalingConfigurationArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
   bool m_observabilityConfigurationHasBeenSet = false;
 };
 

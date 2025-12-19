@@ -165,27 +165,27 @@ class DescribeAppImageConfigResult {
   ///@}
  private:
   Aws::String m_appImageConfigArn;
-  bool m_appImageConfigArnHasBeenSet = false;
 
   Aws::String m_appImageConfigName;
-  bool m_appImageConfigNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   KernelGatewayImageConfig m_kernelGatewayImageConfig;
-  bool m_kernelGatewayImageConfigHasBeenSet = false;
 
   JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
-  bool m_jupyterLabAppImageConfigHasBeenSet = false;
 
   CodeEditorAppImageConfig m_codeEditorAppImageConfig;
-  bool m_codeEditorAppImageConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appImageConfigArnHasBeenSet = false;
+  bool m_appImageConfigNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_kernelGatewayImageConfigHasBeenSet = false;
+  bool m_jupyterLabAppImageConfigHasBeenSet = false;
+  bool m_codeEditorAppImageConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

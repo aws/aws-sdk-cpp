@@ -81,12 +81,12 @@ class SearchSchemaVersionSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_createdDateHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

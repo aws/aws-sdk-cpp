@@ -175,27 +175,27 @@ class InitiateDocumentVersionUploadRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_contentCreatedTimestamp{};
-  bool m_contentCreatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_contentModifiedTimestamp{};
-  bool m_contentModifiedTimestampHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   long long m_documentSizeInBytes{0};
-  bool m_documentSizeInBytesHasBeenSet = false;
 
   Aws::String m_parentFolderId;
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_contentCreatedTimestampHasBeenSet = false;
+  bool m_contentModifiedTimestampHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_documentSizeInBytesHasBeenSet = false;
   bool m_parentFolderIdHasBeenSet = false;
 };
 

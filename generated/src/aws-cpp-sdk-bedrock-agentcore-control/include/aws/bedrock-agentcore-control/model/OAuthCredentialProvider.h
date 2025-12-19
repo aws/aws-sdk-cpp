@@ -144,18 +144,18 @@ class OAuthCredentialProvider {
   ///@}
  private:
   Aws::String m_providerArn;
-  bool m_providerArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customParameters;
-  bool m_customParametersHasBeenSet = false;
 
   OAuthGrantType m_grantType{OAuthGrantType::NOT_SET};
-  bool m_grantTypeHasBeenSet = false;
 
   Aws::String m_defaultReturnUrl;
+  bool m_providerArnHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
+  bool m_customParametersHasBeenSet = false;
+  bool m_grantTypeHasBeenSet = false;
   bool m_defaultReturnUrlHasBeenSet = false;
 };
 

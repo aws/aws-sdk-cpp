@@ -65,9 +65,9 @@ class GetSuppressedDestinationResult {
   ///@}
  private:
   SuppressedDestination m_suppressedDestination;
-  bool m_suppressedDestinationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suppressedDestinationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

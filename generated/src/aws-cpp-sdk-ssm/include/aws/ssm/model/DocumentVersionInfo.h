@@ -217,33 +217,33 @@ class DocumentVersionInfo {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
-  bool m_isDefaultVersionHasBeenSet = false;
 
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
-  bool m_documentFormatHasBeenSet = false;
 
   DocumentStatus m_status{DocumentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusInformation;
-  bool m_statusInformationHasBeenSet = false;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_isDefaultVersionHasBeenSet = false;
+  bool m_documentFormatHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusInformationHasBeenSet = false;
   bool m_reviewStatusHasBeenSet = false;
 };
 

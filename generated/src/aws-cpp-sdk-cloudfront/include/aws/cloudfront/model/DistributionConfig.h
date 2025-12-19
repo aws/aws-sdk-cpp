@@ -613,75 +613,75 @@ class DistributionConfig {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   Aliases m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Aws::String m_defaultRootObject;
-  bool m_defaultRootObjectHasBeenSet = false;
 
   Origins m_origins;
-  bool m_originsHasBeenSet = false;
 
   OriginGroups m_originGroups;
-  bool m_originGroupsHasBeenSet = false;
 
   DefaultCacheBehavior m_defaultCacheBehavior;
-  bool m_defaultCacheBehaviorHasBeenSet = false;
 
   CacheBehaviors m_cacheBehaviors;
-  bool m_cacheBehaviorsHasBeenSet = false;
 
   CustomErrorResponses m_customErrorResponses;
-  bool m_customErrorResponsesHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   LoggingConfig m_logging;
-  bool m_loggingHasBeenSet = false;
 
   PriceClass m_priceClass{PriceClass::NOT_SET};
-  bool m_priceClassHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   ViewerCertificate m_viewerCertificate;
-  bool m_viewerCertificateHasBeenSet = false;
 
   Restrictions m_restrictions;
-  bool m_restrictionsHasBeenSet = false;
 
   Aws::String m_webACLId;
-  bool m_webACLIdHasBeenSet = false;
 
   HttpVersion m_httpVersion{HttpVersion::NOT_SET};
-  bool m_httpVersionHasBeenSet = false;
 
   bool m_isIPV6Enabled{false};
-  bool m_isIPV6EnabledHasBeenSet = false;
 
   Aws::String m_continuousDeploymentPolicyId;
-  bool m_continuousDeploymentPolicyIdHasBeenSet = false;
 
   bool m_staging{false};
-  bool m_stagingHasBeenSet = false;
 
   Aws::String m_anycastIpListId;
-  bool m_anycastIpListIdHasBeenSet = false;
 
   TenantConfig m_tenantConfig;
-  bool m_tenantConfigHasBeenSet = false;
 
   ConnectionMode m_connectionMode{ConnectionMode::NOT_SET};
-  bool m_connectionModeHasBeenSet = false;
 
   ViewerMtlsConfig m_viewerMtlsConfig;
-  bool m_viewerMtlsConfigHasBeenSet = false;
 
   ConnectionFunctionAssociation m_connectionFunctionAssociation;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_defaultRootObjectHasBeenSet = false;
+  bool m_originsHasBeenSet = false;
+  bool m_originGroupsHasBeenSet = false;
+  bool m_defaultCacheBehaviorHasBeenSet = false;
+  bool m_cacheBehaviorsHasBeenSet = false;
+  bool m_customErrorResponsesHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_priceClassHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_viewerCertificateHasBeenSet = false;
+  bool m_restrictionsHasBeenSet = false;
+  bool m_webACLIdHasBeenSet = false;
+  bool m_httpVersionHasBeenSet = false;
+  bool m_isIPV6EnabledHasBeenSet = false;
+  bool m_continuousDeploymentPolicyIdHasBeenSet = false;
+  bool m_stagingHasBeenSet = false;
+  bool m_anycastIpListIdHasBeenSet = false;
+  bool m_tenantConfigHasBeenSet = false;
+  bool m_connectionModeHasBeenSet = false;
+  bool m_viewerMtlsConfigHasBeenSet = false;
   bool m_connectionFunctionAssociationHasBeenSet = false;
 };
 

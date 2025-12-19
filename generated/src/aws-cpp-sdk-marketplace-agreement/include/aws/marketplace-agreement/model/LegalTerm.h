@@ -78,9 +78,9 @@ class LegalTerm {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<DocumentItem> m_documents;
+  bool m_typeHasBeenSet = false;
   bool m_documentsHasBeenSet = false;
 };
 

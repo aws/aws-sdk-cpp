@@ -59,9 +59,9 @@ class CreateBudgetResult {
   ///@}
  private:
   Aws::String m_budgetId;
-  bool m_budgetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_budgetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

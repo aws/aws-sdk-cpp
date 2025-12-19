@@ -68,9 +68,9 @@ class GetInfrastructureConfigurationResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   InfrastructureConfiguration m_infrastructureConfiguration;
+  bool m_requestIdHasBeenSet = false;
   bool m_infrastructureConfigurationHasBeenSet = false;
 };
 

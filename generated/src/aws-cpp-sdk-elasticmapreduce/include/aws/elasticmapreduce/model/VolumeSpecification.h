@@ -103,15 +103,15 @@ class VolumeSpecification {
   ///@}
  private:
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_sizeInGB{0};
-  bool m_sizeInGBHasBeenSet = false;
 
   int m_throughput{0};
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_sizeInGBHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
 };
 

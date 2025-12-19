@@ -33,6 +33,24 @@ class PutAttributeMappingRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
+   * <p>The unique identifier of the profile.</p>
+   */
+  inline const Aws::String& GetProfileId() const { return m_profileId; }
+  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
+  template <typename ProfileIdT = Aws::String>
+  void SetProfileId(ProfileIdT&& value) {
+    m_profileIdHasBeenSet = true;
+    m_profileId = std::forward<ProfileIdT>(value);
+  }
+  template <typename ProfileIdT = Aws::String>
+  PutAttributeMappingRequest& WithProfileId(ProfileIdT&& value) {
+    SetProfileId(std::forward<ProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
    */
   inline CertificateField GetCertificateField() const { return m_certificateField; }
@@ -70,33 +88,15 @@ class PutAttributeMappingRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the profile.</p>
-   */
-  inline const Aws::String& GetProfileId() const { return m_profileId; }
-  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-  template <typename ProfileIdT = Aws::String>
-  void SetProfileId(ProfileIdT&& value) {
-    m_profileIdHasBeenSet = true;
-    m_profileId = std::forward<ProfileIdT>(value);
-  }
-  template <typename ProfileIdT = Aws::String>
-  PutAttributeMappingRequest& WithProfileId(ProfileIdT&& value) {
-    SetProfileId(std::forward<ProfileIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_profileId;
+
   CertificateField m_certificateField{CertificateField::NOT_SET};
-  bool m_certificateFieldHasBeenSet = false;
 
   Aws::Vector<MappingRule> m_mappingRules;
-  bool m_mappingRulesHasBeenSet = false;
-
-  Aws::String m_profileId;
   bool m_profileIdHasBeenSet = false;
+  bool m_certificateFieldHasBeenSet = false;
+  bool m_mappingRulesHasBeenSet = false;
 };
 
 }  // namespace Model

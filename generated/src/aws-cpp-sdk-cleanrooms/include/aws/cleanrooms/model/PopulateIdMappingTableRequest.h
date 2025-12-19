@@ -95,12 +95,12 @@ class PopulateIdMappingTableRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_idMappingTableIdentifier;
-  bool m_idMappingTableIdentifierHasBeenSet = false;
 
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
+  bool m_idMappingTableIdentifierHasBeenSet = false;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_jobTypeHasBeenSet = false;
 };
 

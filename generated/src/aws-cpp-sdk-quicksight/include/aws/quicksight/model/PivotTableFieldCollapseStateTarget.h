@@ -79,9 +79,9 @@ class PivotTableFieldCollapseStateTarget {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Aws::Vector<DataPathValue> m_fieldDataPathValues;
+  bool m_fieldIdHasBeenSet = false;
   bool m_fieldDataPathValuesHasBeenSet = false;
 };
 

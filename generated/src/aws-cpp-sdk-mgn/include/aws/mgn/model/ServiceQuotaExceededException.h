@@ -34,22 +34,6 @@ class ServiceQuotaExceededException {
 
   ///@{
 
-  inline const Aws::String& GetCode() const { return m_code; }
-  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-  template <typename CodeT = Aws::String>
-  void SetCode(CodeT&& value) {
-    m_codeHasBeenSet = true;
-    m_code = std::forward<CodeT>(value);
-  }
-  template <typename CodeT = Aws::String>
-  ServiceQuotaExceededException& WithCode(CodeT&& value) {
-    SetCode(std::forward<CodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>
@@ -65,35 +49,17 @@ class ServiceQuotaExceededException {
   ///@}
 
   ///@{
-  /**
-   * <p>Exceeded the service quota code.</p>
-   */
-  inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
-  inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-  template <typename QuotaCodeT = Aws::String>
-  void SetQuotaCode(QuotaCodeT&& value) {
-    m_quotaCodeHasBeenSet = true;
-    m_quotaCode = std::forward<QuotaCodeT>(value);
-  }
-  template <typename QuotaCodeT = Aws::String>
-  ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) {
-    SetQuotaCode(std::forward<QuotaCodeT>(value));
-    return *this;
-  }
-  ///@}
 
-  ///@{
-  /**
-   * <p>Exceeded the service quota value.</p>
-   */
-  inline int GetQuotaValue() const { return m_quotaValue; }
-  inline bool QuotaValueHasBeenSet() const { return m_quotaValueHasBeenSet; }
-  inline void SetQuotaValue(int value) {
-    m_quotaValueHasBeenSet = true;
-    m_quotaValue = value;
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
   }
-  inline ServiceQuotaExceededException& WithQuotaValue(int value) {
-    SetQuotaValue(value);
+  template <typename CodeT = Aws::String>
+  ServiceQuotaExceededException& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
     return *this;
   }
   ///@}
@@ -151,27 +117,61 @@ class ServiceQuotaExceededException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Exceeded the service quota code.</p>
+   */
+  inline const Aws::String& GetQuotaCode() const { return m_quotaCode; }
+  inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+  template <typename QuotaCodeT = Aws::String>
+  void SetQuotaCode(QuotaCodeT&& value) {
+    m_quotaCodeHasBeenSet = true;
+    m_quotaCode = std::forward<QuotaCodeT>(value);
+  }
+  template <typename QuotaCodeT = Aws::String>
+  ServiceQuotaExceededException& WithQuotaCode(QuotaCodeT&& value) {
+    SetQuotaCode(std::forward<QuotaCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Exceeded the service quota value.</p>
+   */
+  inline int GetQuotaValue() const { return m_quotaValue; }
+  inline bool QuotaValueHasBeenSet() const { return m_quotaValueHasBeenSet; }
+  inline void SetQuotaValue(int value) {
+    m_quotaValueHasBeenSet = true;
+    m_quotaValue = value;
+  }
+  inline ServiceQuotaExceededException& WithQuotaValue(int value) {
+    SetQuotaValue(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_code;
-  bool m_codeHasBeenSet = false;
-
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
-  Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
-
-  int m_quotaValue{0};
-  bool m_quotaValueHasBeenSet = false;
+  Aws::String m_code;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_serviceCode;
+
+  Aws::String m_quotaCode;
+
+  int m_quotaValue{0};
+  bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
+  bool m_quotaValueHasBeenSet = false;
 };
 
 }  // namespace Model

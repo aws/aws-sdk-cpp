@@ -115,15 +115,15 @@ class UpdateAssistantAIAgentRequest : public QConnectRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
-  bool m_aiAgentTypeHasBeenSet = false;
 
   AIAgentConfigurationData m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_aiAgentTypeHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_orchestratorConfigurationListHasBeenSet = false;
 };
 

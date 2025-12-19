@@ -104,12 +104,12 @@ class CanDbcDefinition {
   ///@}
  private:
   Aws::String m_networkInterface;
-  bool m_networkInterfaceHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::ByteBuffer> m_canDbcFiles;
-  bool m_canDbcFilesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_signalsMap;
+  bool m_networkInterfaceHasBeenSet = false;
+  bool m_canDbcFilesHasBeenSet = false;
   bool m_signalsMapHasBeenSet = false;
 };
 

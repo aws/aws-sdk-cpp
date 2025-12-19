@@ -115,15 +115,15 @@ class SelfServiceAIAgentConfiguration {
   ///@}
  private:
   Aws::String m_selfServicePreProcessingAIPromptId;
-  bool m_selfServicePreProcessingAIPromptIdHasBeenSet = false;
 
   Aws::String m_selfServiceAnswerGenerationAIPromptId;
-  bool m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = false;
 
   Aws::String m_selfServiceAIGuardrailId;
-  bool m_selfServiceAIGuardrailIdHasBeenSet = false;
 
   Aws::Vector<AssociationConfiguration> m_associationConfigurations;
+  bool m_selfServicePreProcessingAIPromptIdHasBeenSet = false;
+  bool m_selfServiceAnswerGenerationAIPromptIdHasBeenSet = false;
+  bool m_selfServiceAIGuardrailIdHasBeenSet = false;
   bool m_associationConfigurationsHasBeenSet = false;
 };
 

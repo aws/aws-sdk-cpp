@@ -88,12 +88,12 @@ class TransitGatewayRegistration {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_transitGatewayArn;
-  bool m_transitGatewayArnHasBeenSet = false;
 
   TransitGatewayRegistrationStateReason m_state;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_transitGatewayArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

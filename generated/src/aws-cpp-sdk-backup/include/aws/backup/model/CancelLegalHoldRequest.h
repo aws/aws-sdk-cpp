@@ -86,12 +86,12 @@ class CancelLegalHoldRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_legalHoldId;
-  bool m_legalHoldIdHasBeenSet = false;
 
   Aws::String m_cancelDescription;
-  bool m_cancelDescriptionHasBeenSet = false;
 
   long long m_retainRecordInDays{0};
+  bool m_legalHoldIdHasBeenSet = false;
+  bool m_cancelDescriptionHasBeenSet = false;
   bool m_retainRecordInDaysHasBeenSet = false;
 };
 

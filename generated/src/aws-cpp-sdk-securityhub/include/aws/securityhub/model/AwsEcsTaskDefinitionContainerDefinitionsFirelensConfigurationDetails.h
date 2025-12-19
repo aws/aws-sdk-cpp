@@ -82,9 +82,9 @@ class AwsEcsTaskDefinitionContainerDefinitionsFirelensConfigurationDetails {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_optionsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

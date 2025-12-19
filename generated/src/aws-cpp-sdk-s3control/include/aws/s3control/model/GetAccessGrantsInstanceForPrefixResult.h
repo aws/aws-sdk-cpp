@@ -97,15 +97,15 @@ class GetAccessGrantsInstanceForPrefixResult {
   ///@}
  private:
   Aws::String m_accessGrantsInstanceArn;
-  bool m_accessGrantsInstanceArnHasBeenSet = false;
 
   Aws::String m_accessGrantsInstanceId;
-  bool m_accessGrantsInstanceIdHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_accessGrantsInstanceArnHasBeenSet = false;
+  bool m_accessGrantsInstanceIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

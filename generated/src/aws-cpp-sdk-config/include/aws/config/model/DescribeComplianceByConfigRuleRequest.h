@@ -102,12 +102,12 @@ class DescribeComplianceByConfigRuleRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configRuleNames;
-  bool m_configRuleNamesHasBeenSet = false;
 
   Aws::Vector<ComplianceType> m_complianceTypes;
-  bool m_complianceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_configRuleNamesHasBeenSet = false;
+  bool m_complianceTypesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

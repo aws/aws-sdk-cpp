@@ -68,9 +68,9 @@ class Bucket {
   ///@}
  private:
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   int m_count{0};
+  bool m_keyValueHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

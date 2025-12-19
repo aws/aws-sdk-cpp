@@ -114,15 +114,15 @@ class EvaluatedModelVersion {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   Aws::String m_modelType;
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::Vector<ModelVersionEvaluation> m_evaluations;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
   bool m_evaluationsHasBeenSet = false;
 };
 

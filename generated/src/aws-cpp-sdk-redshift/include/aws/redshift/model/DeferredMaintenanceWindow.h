@@ -90,12 +90,12 @@ class DeferredMaintenanceWindow {
   ///@}
  private:
   Aws::String m_deferMaintenanceIdentifier;
-  bool m_deferMaintenanceIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_deferMaintenanceStartTime{};
-  bool m_deferMaintenanceStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deferMaintenanceEndTime{};
+  bool m_deferMaintenanceIdentifierHasBeenSet = false;
+  bool m_deferMaintenanceStartTimeHasBeenSet = false;
   bool m_deferMaintenanceEndTimeHasBeenSet = false;
 };
 

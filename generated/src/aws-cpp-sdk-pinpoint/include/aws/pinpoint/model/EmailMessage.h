@@ -179,24 +179,24 @@ class EmailMessage {
   ///@}
  private:
   Aws::String m_body;
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_feedbackForwardingAddress;
-  bool m_feedbackForwardingAddressHasBeenSet = false;
 
   Aws::String m_fromAddress;
-  bool m_fromAddressHasBeenSet = false;
 
   RawEmail m_rawEmail;
-  bool m_rawEmailHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_replyToAddresses;
-  bool m_replyToAddressesHasBeenSet = false;
 
   SimpleEmail m_simpleEmail;
-  bool m_simpleEmailHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
+  bool m_bodyHasBeenSet = false;
+  bool m_feedbackForwardingAddressHasBeenSet = false;
+  bool m_fromAddressHasBeenSet = false;
+  bool m_rawEmailHasBeenSet = false;
+  bool m_replyToAddressesHasBeenSet = false;
+  bool m_simpleEmailHasBeenSet = false;
   bool m_substitutionsHasBeenSet = false;
 };
 

@@ -116,12 +116,12 @@ class StatefulEngineOptions {
   ///@}
  private:
   RuleOrder m_ruleOrder{RuleOrder::NOT_SET};
-  bool m_ruleOrderHasBeenSet = false;
 
   StreamExceptionPolicy m_streamExceptionPolicy{StreamExceptionPolicy::NOT_SET};
-  bool m_streamExceptionPolicyHasBeenSet = false;
 
   FlowTimeouts m_flowTimeouts;
+  bool m_ruleOrderHasBeenSet = false;
+  bool m_streamExceptionPolicyHasBeenSet = false;
   bool m_flowTimeoutsHasBeenSet = false;
 };
 

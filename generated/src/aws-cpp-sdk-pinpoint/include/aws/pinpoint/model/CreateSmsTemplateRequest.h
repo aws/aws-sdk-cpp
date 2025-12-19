@@ -67,9 +67,9 @@ class CreateSmsTemplateRequest : public PinpointRequest {
   ///@}
  private:
   SMSTemplateRequest m_sMSTemplateRequest;
-  bool m_sMSTemplateRequestHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_sMSTemplateRequestHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class ExternalUrlConfig {
   ///@}
  private:
   Aws::String m_accessUrl;
-  bool m_accessUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_approvedOrigins;
+  bool m_accessUrlHasBeenSet = false;
   bool m_approvedOriginsHasBeenSet = false;
 };
 

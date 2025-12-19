@@ -203,27 +203,27 @@ class Edge {
   ///@}
  private:
   int m_referenceId{0};
-  bool m_referenceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   EdgeStatistics m_summaryStatistics;
-  bool m_summaryStatisticsHasBeenSet = false;
 
   Aws::Vector<HistogramEntry> m_responseTimeHistogram;
-  bool m_responseTimeHistogramHasBeenSet = false;
 
   Aws::Vector<Alias> m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Aws::String m_edgeType;
-  bool m_edgeTypeHasBeenSet = false;
 
   Aws::Vector<HistogramEntry> m_receivedEventAgeHistogram;
+  bool m_referenceIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_summaryStatisticsHasBeenSet = false;
+  bool m_responseTimeHistogramHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_edgeTypeHasBeenSet = false;
   bool m_receivedEventAgeHistogramHasBeenSet = false;
 };
 

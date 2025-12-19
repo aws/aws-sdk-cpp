@@ -99,15 +99,15 @@ class BusinessGoals {
   ///@}
  private:
   int m_licenseCostReduction{0};
-  bool m_licenseCostReductionHasBeenSet = false;
 
   int m_modernizeInfrastructureWithCloudNativeTechnologies{0};
-  bool m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet = false;
 
   int m_reduceOperationalOverheadWithManagedServices{0};
-  bool m_reduceOperationalOverheadWithManagedServicesHasBeenSet = false;
 
   int m_speedOfMigration{0};
+  bool m_licenseCostReductionHasBeenSet = false;
+  bool m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet = false;
+  bool m_reduceOperationalOverheadWithManagedServicesHasBeenSet = false;
   bool m_speedOfMigrationHasBeenSet = false;
 };
 

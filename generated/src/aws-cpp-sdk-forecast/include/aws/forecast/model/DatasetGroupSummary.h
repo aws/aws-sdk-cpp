@@ -114,15 +114,15 @@ class DatasetGroupSummary {
   ///@}
  private:
   Aws::String m_datasetGroupArn;
-  bool m_datasetGroupArnHasBeenSet = false;
 
   Aws::String m_datasetGroupName;
-  bool m_datasetGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
+  bool m_datasetGroupArnHasBeenSet = false;
+  bool m_datasetGroupNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModificationTimeHasBeenSet = false;
 };
 

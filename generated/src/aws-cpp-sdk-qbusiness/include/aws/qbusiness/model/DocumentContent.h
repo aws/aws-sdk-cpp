@@ -77,9 +77,9 @@ class DocumentContent {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_blob{};
-  bool m_blobHasBeenSet = false;
 
   S3 m_s3;
+  bool m_blobHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

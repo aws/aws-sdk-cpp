@@ -124,21 +124,21 @@ class CreateThemeResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_versionArn;
-  bool m_versionArnHasBeenSet = false;
 
   Aws::String m_themeId;
-  bool m_themeIdHasBeenSet = false;
 
   ResourceStatus m_creationStatus{ResourceStatus::NOT_SET};
-  bool m_creationStatusHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_versionArnHasBeenSet = false;
+  bool m_themeIdHasBeenSet = false;
+  bool m_creationStatusHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

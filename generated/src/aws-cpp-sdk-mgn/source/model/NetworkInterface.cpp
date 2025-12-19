@@ -18,6 +18,10 @@ namespace Model {
 NetworkInterface::NetworkInterface(JsonView jsonValue) { *this = jsonValue; }
 
 NetworkInterface& NetworkInterface::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("macAddress")) {
+    m_macAddress = jsonValue.GetString("macAddress");
+    m_macAddressHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ips")) {
     Aws::Utils::Array<JsonView> ipsJsonList = jsonValue.GetArray("ips");
     for (unsigned ipsIndex = 0; ipsIndex < ipsJsonList.GetLength(); ++ipsIndex) {
@@ -29,15 +33,15 @@ NetworkInterface& NetworkInterface::operator=(JsonView jsonValue) {
     m_isPrimary = jsonValue.GetBool("isPrimary");
     m_isPrimaryHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("macAddress")) {
-    m_macAddress = jsonValue.GetString("macAddress");
-    m_macAddressHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue NetworkInterface::Jsonize() const {
   JsonValue payload;
+
+  if (m_macAddressHasBeenSet) {
+    payload.WithString("macAddress", m_macAddress);
+  }
 
   if (m_ipsHasBeenSet) {
     Aws::Utils::Array<JsonValue> ipsJsonList(m_ips.size());
@@ -49,10 +53,6 @@ JsonValue NetworkInterface::Jsonize() const {
 
   if (m_isPrimaryHasBeenSet) {
     payload.WithBool("isPrimary", m_isPrimary);
-  }
-
-  if (m_macAddressHasBeenSet) {
-    payload.WithString("macAddress", m_macAddress);
   }
 
   return payload;

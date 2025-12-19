@@ -98,12 +98,12 @@ class TrainedModelsConfigurationPolicy {
   ///@}
  private:
   Aws::Vector<LogsConfigurationPolicy> m_containerLogs;
-  bool m_containerLogsHasBeenSet = false;
 
   MetricsConfigurationPolicy m_containerMetrics;
-  bool m_containerMetricsHasBeenSet = false;
 
   TrainedModelArtifactMaxSize m_maxArtifactSize;
+  bool m_containerLogsHasBeenSet = false;
+  bool m_containerMetricsHasBeenSet = false;
   bool m_maxArtifactSizeHasBeenSet = false;
 };
 

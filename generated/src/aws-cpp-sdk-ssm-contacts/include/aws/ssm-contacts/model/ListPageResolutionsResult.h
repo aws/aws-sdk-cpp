@@ -85,12 +85,12 @@ class ListPageResolutionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ResolutionContact> m_pageResolutions;
-  bool m_pageResolutionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_pageResolutionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

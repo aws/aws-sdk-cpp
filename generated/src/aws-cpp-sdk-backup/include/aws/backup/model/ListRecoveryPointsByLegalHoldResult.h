@@ -84,12 +84,12 @@ class ListRecoveryPointsByLegalHoldResult {
   ///@}
  private:
   Aws::Vector<RecoveryPointMember> m_recoveryPoints;
-  bool m_recoveryPointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recoveryPointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

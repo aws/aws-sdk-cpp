@@ -105,15 +105,15 @@ class BedrockModelSpecification {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   BedrockGuardrailConfiguration m_guardrail;
-  bool m_guardrailHasBeenSet = false;
 
   BedrockTraceStatus m_traceStatus{BedrockTraceStatus::NOT_SET};
-  bool m_traceStatusHasBeenSet = false;
 
   Aws::String m_customPrompt;
+  bool m_modelArnHasBeenSet = false;
+  bool m_guardrailHasBeenSet = false;
+  bool m_traceStatusHasBeenSet = false;
   bool m_customPromptHasBeenSet = false;
 };
 

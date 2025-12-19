@@ -273,39 +273,39 @@ class ContentBlock {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   ImageBlock m_image;
-  bool m_imageHasBeenSet = false;
 
   DocumentBlock m_document;
-  bool m_documentHasBeenSet = false;
 
   VideoBlock m_video;
-  bool m_videoHasBeenSet = false;
 
   AudioBlock m_audio;
-  bool m_audioHasBeenSet = false;
 
   ToolUseBlock m_toolUse;
-  bool m_toolUseHasBeenSet = false;
 
   ToolResultBlock m_toolResult;
-  bool m_toolResultHasBeenSet = false;
 
   GuardrailConverseContentBlock m_guardContent;
-  bool m_guardContentHasBeenSet = false;
 
   CachePointBlock m_cachePoint;
-  bool m_cachePointHasBeenSet = false;
 
   ReasoningContentBlock m_reasoningContent;
-  bool m_reasoningContentHasBeenSet = false;
 
   CitationsContentBlock m_citationsContent;
-  bool m_citationsContentHasBeenSet = false;
 
   SearchResultBlock m_searchResult;
+  bool m_textHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_documentHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_audioHasBeenSet = false;
+  bool m_toolUseHasBeenSet = false;
+  bool m_toolResultHasBeenSet = false;
+  bool m_guardContentHasBeenSet = false;
+  bool m_cachePointHasBeenSet = false;
+  bool m_reasoningContentHasBeenSet = false;
+  bool m_citationsContentHasBeenSet = false;
   bool m_searchResultHasBeenSet = false;
 };
 

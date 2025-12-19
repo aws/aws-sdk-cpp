@@ -78,9 +78,9 @@ class CostEstimate {
   ///@}
  private:
   Aws::String m_usageType;
-  bool m_usageTypeHasBeenSet = false;
 
   Aws::Vector<EstimateByTime> m_resultsByTime;
+  bool m_usageTypeHasBeenSet = false;
   bool m_resultsByTimeHasBeenSet = false;
 };
 

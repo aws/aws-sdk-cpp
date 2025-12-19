@@ -103,15 +103,15 @@ class CreateUploadUrlResult {
   ///@}
  private:
   Aws::String m_s3Url;
-  bool m_s3UrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestHeaders;
-  bool m_requestHeadersHasBeenSet = false;
 
   Aws::String m_codeArtifactId;
-  bool m_codeArtifactIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3UrlHasBeenSet = false;
+  bool m_requestHeadersHasBeenSet = false;
+  bool m_codeArtifactIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

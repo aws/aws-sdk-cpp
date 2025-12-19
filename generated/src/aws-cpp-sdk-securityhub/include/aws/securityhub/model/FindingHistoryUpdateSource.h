@@ -75,9 +75,9 @@ class FindingHistoryUpdateSource {
   ///@}
  private:
   FindingHistoryUpdateSourceType m_type{FindingHistoryUpdateSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_identity;
+  bool m_typeHasBeenSet = false;
   bool m_identityHasBeenSet = false;
 };
 

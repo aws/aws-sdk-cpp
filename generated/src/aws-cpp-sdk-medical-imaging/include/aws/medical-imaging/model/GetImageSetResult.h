@@ -280,48 +280,48 @@ class GetImageSetResult {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   ImageSetState m_imageSetState{ImageSetState::NOT_SET};
-  bool m_imageSetStateHasBeenSet = false;
 
   ImageSetWorkflowStatus m_imageSetWorkflowStatus{ImageSetWorkflowStatus::NOT_SET};
-  bool m_imageSetWorkflowStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_deletedAt{};
-  bool m_deletedAtHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_imageSetArn;
-  bool m_imageSetArnHasBeenSet = false;
 
   Overrides m_overrides;
-  bool m_overridesHasBeenSet = false;
 
   bool m_isPrimary{false};
-  bool m_isPrimaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAccessedAt{};
-  bool m_lastAccessedAtHasBeenSet = false;
 
   StorageTier m_storageTier{StorageTier::NOT_SET};
-  bool m_storageTierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_imageSetIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_imageSetStateHasBeenSet = false;
+  bool m_imageSetWorkflowStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_deletedAtHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_imageSetArnHasBeenSet = false;
+  bool m_overridesHasBeenSet = false;
+  bool m_isPrimaryHasBeenSet = false;
+  bool m_lastAccessedAtHasBeenSet = false;
+  bool m_storageTierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

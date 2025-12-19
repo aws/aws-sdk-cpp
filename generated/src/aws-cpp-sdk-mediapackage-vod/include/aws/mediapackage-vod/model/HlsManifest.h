@@ -159,21 +159,21 @@ it will
   ///@}
  private:
   AdMarkers m_adMarkers{AdMarkers::NOT_SET};
-  bool m_adMarkersHasBeenSet = false;
 
   bool m_includeIframeOnlyStream{false};
-  bool m_includeIframeOnlyStreamHasBeenSet = false;
 
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   int m_programDateTimeIntervalSeconds{0};
-  bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
   bool m_repeatExtXKey{false};
-  bool m_repeatExtXKeyHasBeenSet = false;
 
   StreamSelection m_streamSelection;
+  bool m_adMarkersHasBeenSet = false;
+  bool m_includeIframeOnlyStreamHasBeenSet = false;
+  bool m_manifestNameHasBeenSet = false;
+  bool m_programDateTimeIntervalSecondsHasBeenSet = false;
+  bool m_repeatExtXKeyHasBeenSet = false;
   bool m_streamSelectionHasBeenSet = false;
 };
 

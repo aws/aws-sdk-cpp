@@ -208,33 +208,33 @@ class LteObj {
   ///@}
  private:
   int m_mcc{0};
-  bool m_mccHasBeenSet = false;
 
   int m_mnc{0};
-  bool m_mncHasBeenSet = false;
 
   int m_eutranCid{0};
-  bool m_eutranCidHasBeenSet = false;
 
   int m_tac{0};
-  bool m_tacHasBeenSet = false;
 
   LteLocalId m_lteLocalId;
-  bool m_lteLocalIdHasBeenSet = false;
 
   int m_lteTimingAdvance{0};
-  bool m_lteTimingAdvanceHasBeenSet = false;
 
   int m_rsrp{0};
-  bool m_rsrpHasBeenSet = false;
 
   double m_rsrq{0.0};
-  bool m_rsrqHasBeenSet = false;
 
   bool m_nrCapable{false};
-  bool m_nrCapableHasBeenSet = false;
 
   Aws::Vector<LteNmrObj> m_lteNmr;
+  bool m_mccHasBeenSet = false;
+  bool m_mncHasBeenSet = false;
+  bool m_eutranCidHasBeenSet = false;
+  bool m_tacHasBeenSet = false;
+  bool m_lteLocalIdHasBeenSet = false;
+  bool m_lteTimingAdvanceHasBeenSet = false;
+  bool m_rsrpHasBeenSet = false;
+  bool m_rsrqHasBeenSet = false;
+  bool m_nrCapableHasBeenSet = false;
   bool m_lteNmrHasBeenSet = false;
 };
 

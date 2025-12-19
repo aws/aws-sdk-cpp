@@ -107,12 +107,12 @@ class CreateOrganizationalUnitRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_parentId;
-  bool m_parentIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_parentIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

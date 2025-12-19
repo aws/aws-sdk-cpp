@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String RemoveTemplateActionRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_actionIDHasBeenSet) {
-    payload.WithString("actionID", m_actionID);
-  }
-
   if (m_launchConfigurationTemplateIDHasBeenSet) {
     payload.WithString("launchConfigurationTemplateID", m_launchConfigurationTemplateID);
+  }
+
+  if (m_actionIDHasBeenSet) {
+    payload.WithString("actionID", m_actionID);
   }
 
   return payload.View().WriteReadable();

@@ -79,9 +79,9 @@ class AddTagsRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+  bool m_aRNHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
 };
 

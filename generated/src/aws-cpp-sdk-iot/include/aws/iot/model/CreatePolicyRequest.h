@@ -99,12 +99,12 @@ class CreatePolicyRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

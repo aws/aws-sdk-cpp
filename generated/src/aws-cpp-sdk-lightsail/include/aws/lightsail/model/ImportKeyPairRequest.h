@@ -67,9 +67,9 @@ class ImportKeyPairRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_keyPairName;
-  bool m_keyPairNameHasBeenSet = false;
 
   Aws::String m_publicKeyBase64;
+  bool m_keyPairNameHasBeenSet = false;
   bool m_publicKeyBase64HasBeenSet = false;
 };
 

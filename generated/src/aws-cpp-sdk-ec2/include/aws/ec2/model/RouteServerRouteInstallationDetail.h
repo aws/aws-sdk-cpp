@@ -88,12 +88,12 @@ class RouteServerRouteInstallationDetail {
   ///@}
  private:
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   RouteServerRouteInstallationStatus m_routeInstallationStatus{RouteServerRouteInstallationStatus::NOT_SET};
-  bool m_routeInstallationStatusHasBeenSet = false;
 
   Aws::String m_routeInstallationStatusReason;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_routeInstallationStatusHasBeenSet = false;
   bool m_routeInstallationStatusReasonHasBeenSet = false;
 };
 

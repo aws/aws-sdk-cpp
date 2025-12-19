@@ -498,72 +498,72 @@ class GraphqlApi {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   LogConfig m_logConfig;
-  bool m_logConfigHasBeenSet = false;
 
   UserPoolConfig m_userPoolConfig;
-  bool m_userPoolConfigHasBeenSet = false;
 
   OpenIDConnectConfig m_openIDConnectConfig;
-  bool m_openIDConnectConfigHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_uris;
-  bool m_urisHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
-  bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
   bool m_xrayEnabled{false};
-  bool m_xrayEnabledHasBeenSet = false;
 
   Aws::String m_wafWebAclArn;
-  bool m_wafWebAclArnHasBeenSet = false;
 
   LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
-  bool m_lambdaAuthorizerConfigHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_dns;
-  bool m_dnsHasBeenSet = false;
 
   GraphQLApiVisibility m_visibility{GraphQLApiVisibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   GraphQLApiType m_apiType{GraphQLApiType::NOT_SET};
-  bool m_apiTypeHasBeenSet = false;
 
   Aws::String m_mergedApiExecutionRoleArn;
-  bool m_mergedApiExecutionRoleArnHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_ownerContact;
-  bool m_ownerContactHasBeenSet = false;
 
   GraphQLApiIntrospectionConfig m_introspectionConfig{GraphQLApiIntrospectionConfig::NOT_SET};
-  bool m_introspectionConfigHasBeenSet = false;
 
   int m_queryDepthLimit{0};
-  bool m_queryDepthLimitHasBeenSet = false;
 
   int m_resolverCountLimit{0};
-  bool m_resolverCountLimitHasBeenSet = false;
 
   EnhancedMetricsConfig m_enhancedMetricsConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_apiIdHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_logConfigHasBeenSet = false;
+  bool m_userPoolConfigHasBeenSet = false;
+  bool m_openIDConnectConfigHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_urisHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_additionalAuthenticationProvidersHasBeenSet = false;
+  bool m_xrayEnabledHasBeenSet = false;
+  bool m_wafWebAclArnHasBeenSet = false;
+  bool m_lambdaAuthorizerConfigHasBeenSet = false;
+  bool m_dnsHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_apiTypeHasBeenSet = false;
+  bool m_mergedApiExecutionRoleArnHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_ownerContactHasBeenSet = false;
+  bool m_introspectionConfigHasBeenSet = false;
+  bool m_queryDepthLimitHasBeenSet = false;
+  bool m_resolverCountLimitHasBeenSet = false;
   bool m_enhancedMetricsConfigHasBeenSet = false;
 };
 

@@ -22,8 +22,8 @@ namespace Model {
 
 /**
  * <p>The encryption configuration details that include the status information of
- * the Amazon Web Services Key Management Service (KMS) key and the KMS access
- * role.</p><p><h3>See Also:</h3>   <a
+ * the Key Management Service (KMS) key and the KMS access role.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ConfigurationDetails">AWS
  * API Reference</a></p>
  */
@@ -38,7 +38,7 @@ class ConfigurationDetails {
   /**
    * <p>The health status of KMS key and KMS access role. If either KMS key or KMS
    * access role is <code>UNHEALTHY</code>, the return value will be
-   * <code>UNHEALTHY</code>. To use a customer-managed KMS key, the value of
+   * <code>UNHEALTHY</code>. To use a customer managed KMS key, the value of
    * <code>configurationStatus</code> must be <code>HEALTHY</code>. </p>
    */
   inline ConfigurationStatus GetConfigurationStatus() const { return m_configurationStatus; }
@@ -93,12 +93,12 @@ class ConfigurationDetails {
   ///@}
  private:
   ConfigurationStatus m_configurationStatus{ConfigurationStatus::NOT_SET};
-  bool m_configurationStatusHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_configurationStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

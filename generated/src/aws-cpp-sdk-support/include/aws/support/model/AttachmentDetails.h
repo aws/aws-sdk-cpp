@@ -70,9 +70,9 @@ class AttachmentDetails {
   ///@}
  private:
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_fileName;
+  bool m_attachmentIdHasBeenSet = false;
   bool m_fileNameHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ListModelMetadataRequest : public SageMakerRequest {
   ///@}
  private:
   ModelMetadataSearchExpression m_searchExpression;
-  bool m_searchExpressionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_searchExpressionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class ACMManaged {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_certificateArnHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class EnableImageDeregistrationProtectionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   bool m_withCooldown{false};
-  bool m_withCooldownHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_imageIdHasBeenSet = false;
+  bool m_withCooldownHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

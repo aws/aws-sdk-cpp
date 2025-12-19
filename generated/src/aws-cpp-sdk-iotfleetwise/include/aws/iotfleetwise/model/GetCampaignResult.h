@@ -451,69 +451,69 @@ class GetCampaignResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_signalCatalogArn;
-  bool m_signalCatalogArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   CampaignStatus m_status{CampaignStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiryTime{};
-  bool m_expiryTimeHasBeenSet = false;
 
   long long m_postTriggerCollectionDuration{0};
-  bool m_postTriggerCollectionDurationHasBeenSet = false;
 
   DiagnosticsMode m_diagnosticsMode{DiagnosticsMode::NOT_SET};
-  bool m_diagnosticsModeHasBeenSet = false;
 
   SpoolingMode m_spoolingMode{SpoolingMode::NOT_SET};
-  bool m_spoolingModeHasBeenSet = false;
 
   Compression m_compression{Compression::NOT_SET};
-  bool m_compressionHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Vector<SignalInformation> m_signalsToCollect;
-  bool m_signalsToCollectHasBeenSet = false;
 
   CollectionScheme m_collectionScheme;
-  bool m_collectionSchemeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataExtraDimensions;
-  bool m_dataExtraDimensionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::Vector<DataDestinationConfig> m_dataDestinationConfigs;
-  bool m_dataDestinationConfigsHasBeenSet = false;
 
   Aws::Vector<DataPartition> m_dataPartitions;
-  bool m_dataPartitionsHasBeenSet = false;
 
   Aws::Vector<SignalFetchInformation> m_signalsToFetch;
-  bool m_signalsToFetchHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_signalCatalogArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_expiryTimeHasBeenSet = false;
+  bool m_postTriggerCollectionDurationHasBeenSet = false;
+  bool m_diagnosticsModeHasBeenSet = false;
+  bool m_spoolingModeHasBeenSet = false;
+  bool m_compressionHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_signalsToCollectHasBeenSet = false;
+  bool m_collectionSchemeHasBeenSet = false;
+  bool m_dataExtraDimensionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_dataDestinationConfigsHasBeenSet = false;
+  bool m_dataPartitionsHasBeenSet = false;
+  bool m_signalsToFetchHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

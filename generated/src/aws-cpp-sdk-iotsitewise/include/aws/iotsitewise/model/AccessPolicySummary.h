@@ -145,21 +145,21 @@ class AccessPolicySummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Identity m_identity;
-  bool m_identityHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateDate{};
+  bool m_idHasBeenSet = false;
+  bool m_identityHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
   bool m_lastUpdateDateHasBeenSet = false;
 };
 

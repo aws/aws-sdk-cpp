@@ -86,12 +86,12 @@ class ValidationTokenDetail {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_redirectTo;
-  bool m_redirectToHasBeenSet = false;
 
   Aws::String m_redirectFrom;
+  bool m_domainHasBeenSet = false;
+  bool m_redirectToHasBeenSet = false;
   bool m_redirectFromHasBeenSet = false;
 };
 

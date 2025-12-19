@@ -83,12 +83,12 @@ class Cost {
   ///@}
  private:
   double m_amount{0.0};
-  bool m_amountHasBeenSet = false;
 
   Aws::String m_currency;
-  bool m_currencyHasBeenSet = false;
 
   CostFrequency m_frequency{CostFrequency::NOT_SET};
+  bool m_amountHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
   bool m_frequencyHasBeenSet = false;
 };
 

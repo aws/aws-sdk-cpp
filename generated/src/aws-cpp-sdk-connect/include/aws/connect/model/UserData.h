@@ -232,30 +232,30 @@ class UserData {
   ///@}
  private:
   UserReference m_user;
-  bool m_userHasBeenSet = false;
 
   RoutingProfileReference m_routingProfile;
-  bool m_routingProfileHasBeenSet = false;
 
   HierarchyPathReference m_hierarchyPath;
-  bool m_hierarchyPathHasBeenSet = false;
 
   AgentStatusReference m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Channel, int> m_availableSlotsByChannel;
-  bool m_availableSlotsByChannelHasBeenSet = false;
 
   Aws::Map<Channel, int> m_maxSlotsByChannel;
-  bool m_maxSlotsByChannelHasBeenSet = false;
 
   Aws::Map<Channel, int> m_activeSlotsByChannel;
-  bool m_activeSlotsByChannelHasBeenSet = false;
 
   Aws::Vector<AgentContactReference> m_contacts;
-  bool m_contactsHasBeenSet = false;
 
   Aws::String m_nextStatus;
+  bool m_userHasBeenSet = false;
+  bool m_routingProfileHasBeenSet = false;
+  bool m_hierarchyPathHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_availableSlotsByChannelHasBeenSet = false;
+  bool m_maxSlotsByChannelHasBeenSet = false;
+  bool m_activeSlotsByChannelHasBeenSet = false;
+  bool m_contactsHasBeenSet = false;
   bool m_nextStatusHasBeenSet = false;
 };
 

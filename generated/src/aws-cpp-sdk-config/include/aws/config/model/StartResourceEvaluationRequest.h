@@ -130,18 +130,18 @@ class StartResourceEvaluationRequest : public ConfigServiceRequest {
   ///@}
  private:
   ResourceDetails m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   EvaluationContext m_evaluationContext;
-  bool m_evaluationContextHasBeenSet = false;
 
   EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
-  bool m_evaluationModeHasBeenSet = false;
 
   int m_evaluationTimeout{0};
-  bool m_evaluationTimeoutHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_resourceDetailsHasBeenSet = false;
+  bool m_evaluationContextHasBeenSet = false;
+  bool m_evaluationModeHasBeenSet = false;
+  bool m_evaluationTimeoutHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

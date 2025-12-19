@@ -91,12 +91,12 @@ class DescribeDirectConnectGatewayAssociationProposalsResult {
   ///@}
  private:
   Aws::Vector<DirectConnectGatewayAssociationProposal> m_directConnectGatewayAssociationProposals;
-  bool m_directConnectGatewayAssociationProposalsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directConnectGatewayAssociationProposalsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -22,6 +22,10 @@ CommandParameter& CommandParameter::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = CommandParameterTypeMapper::GetCommandParameterTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("value")) {
     m_value = jsonValue.GetObject("value");
     m_valueHasBeenSet = true;
@@ -29,6 +33,13 @@ CommandParameter& CommandParameter::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("defaultValue")) {
     m_defaultValue = jsonValue.GetObject("defaultValue");
     m_defaultValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("valueConditions")) {
+    Aws::Utils::Array<JsonView> valueConditionsJsonList = jsonValue.GetArray("valueConditions");
+    for (unsigned valueConditionsIndex = 0; valueConditionsIndex < valueConditionsJsonList.GetLength(); ++valueConditionsIndex) {
+      m_valueConditions.push_back(valueConditionsJsonList[valueConditionsIndex].AsObject());
+    }
+    m_valueConditionsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
@@ -44,12 +55,24 @@ JsonValue CommandParameter::Jsonize() const {
     payload.WithString("name", m_name);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", CommandParameterTypeMapper::GetNameForCommandParameterType(m_type));
+  }
+
   if (m_valueHasBeenSet) {
     payload.WithObject("value", m_value.Jsonize());
   }
 
   if (m_defaultValueHasBeenSet) {
     payload.WithObject("defaultValue", m_defaultValue.Jsonize());
+  }
+
+  if (m_valueConditionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> valueConditionsJsonList(m_valueConditions.size());
+    for (unsigned valueConditionsIndex = 0; valueConditionsIndex < valueConditionsJsonList.GetLength(); ++valueConditionsIndex) {
+      valueConditionsJsonList[valueConditionsIndex].AsObject(m_valueConditions[valueConditionsIndex].Jsonize());
+    }
+    payload.WithArray("valueConditions", std::move(valueConditionsJsonList));
   }
 
   if (m_descriptionHasBeenSet) {

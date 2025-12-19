@@ -66,9 +66,9 @@ class UnsubscribeRequest : public CodeStarNotificationsRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_targetAddress;
+  bool m_arnHasBeenSet = false;
   bool m_targetAddressHasBeenSet = false;
 };
 

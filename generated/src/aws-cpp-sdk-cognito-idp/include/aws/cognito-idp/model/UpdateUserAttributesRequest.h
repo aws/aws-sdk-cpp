@@ -134,12 +134,12 @@ class UpdateUserAttributesRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::Vector<AttributeType> m_userAttributes;
-  bool m_userAttributesHasBeenSet = false;
 
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_userAttributesHasBeenSet = false;
+  bool m_accessTokenHasBeenSet = false;
   bool m_clientMetadataHasBeenSet = false;
 };
 

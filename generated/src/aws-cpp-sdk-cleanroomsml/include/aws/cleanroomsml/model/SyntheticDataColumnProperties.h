@@ -88,12 +88,12 @@ class SyntheticDataColumnProperties {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   SyntheticDataColumnType m_columnType{SyntheticDataColumnType::NOT_SET};
-  bool m_columnTypeHasBeenSet = false;
 
   bool m_isPredictiveValue{false};
+  bool m_columnNameHasBeenSet = false;
+  bool m_columnTypeHasBeenSet = false;
   bool m_isPredictiveValueHasBeenSet = false;
 };
 

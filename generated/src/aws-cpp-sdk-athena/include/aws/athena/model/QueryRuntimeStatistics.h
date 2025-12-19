@@ -88,12 +88,12 @@ class QueryRuntimeStatistics {
   ///@}
  private:
   QueryRuntimeStatisticsTimeline m_timeline;
-  bool m_timelineHasBeenSet = false;
 
   QueryRuntimeStatisticsRows m_rows;
-  bool m_rowsHasBeenSet = false;
 
   QueryStage m_outputStage;
+  bool m_timelineHasBeenSet = false;
+  bool m_rowsHasBeenSet = false;
   bool m_outputStageHasBeenSet = false;
 };
 

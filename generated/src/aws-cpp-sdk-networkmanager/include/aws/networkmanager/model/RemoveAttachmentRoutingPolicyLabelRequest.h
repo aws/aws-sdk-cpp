@@ -65,9 +65,9 @@ class RemoveAttachmentRoutingPolicyLabelRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_coreNetworkId;
-  bool m_coreNetworkIdHasBeenSet = false;
 
   Aws::String m_attachmentId;
+  bool m_coreNetworkIdHasBeenSet = false;
   bool m_attachmentIdHasBeenSet = false;
 };
 

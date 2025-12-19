@@ -113,15 +113,15 @@ class Processor {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProcessorConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   int m_executionOrder{0};
-  bool m_executionOrderHasBeenSet = false;
 
   FallbackAction m_fallbackAction{FallbackAction::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_executionOrderHasBeenSet = false;
   bool m_fallbackActionHasBeenSet = false;
 };
 

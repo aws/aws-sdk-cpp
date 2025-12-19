@@ -149,21 +149,21 @@ class DeliverabilityTestReport {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   Aws::String m_reportName;
-  bool m_reportNameHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   DeliverabilityTestStatus m_deliverabilityTestStatus{DeliverabilityTestStatus::NOT_SET};
+  bool m_reportIdHasBeenSet = false;
+  bool m_reportNameHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
   bool m_deliverabilityTestStatusHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteFlowAliasRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::String m_aliasIdentifier;
+  bool m_flowIdentifierHasBeenSet = false;
   bool m_aliasIdentifierHasBeenSet = false;
 };
 

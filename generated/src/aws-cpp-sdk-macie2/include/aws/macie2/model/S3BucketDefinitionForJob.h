@@ -78,9 +78,9 @@ class S3BucketDefinitionForJob {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_buckets;
+  bool m_accountIdHasBeenSet = false;
   bool m_bucketsHasBeenSet = false;
 };
 

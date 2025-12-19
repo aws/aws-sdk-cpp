@@ -130,21 +130,21 @@ class DataQualityAggregatedMetrics {
   ///@}
  private:
   double m_totalRowsProcessed{0.0};
-  bool m_totalRowsProcessedHasBeenSet = false;
 
   double m_totalRowsPassed{0.0};
-  bool m_totalRowsPassedHasBeenSet = false;
 
   double m_totalRowsFailed{0.0};
-  bool m_totalRowsFailedHasBeenSet = false;
 
   double m_totalRulesProcessed{0.0};
-  bool m_totalRulesProcessedHasBeenSet = false;
 
   double m_totalRulesPassed{0.0};
-  bool m_totalRulesPassedHasBeenSet = false;
 
   double m_totalRulesFailed{0.0};
+  bool m_totalRowsProcessedHasBeenSet = false;
+  bool m_totalRowsPassedHasBeenSet = false;
+  bool m_totalRowsFailedHasBeenSet = false;
+  bool m_totalRulesProcessedHasBeenSet = false;
+  bool m_totalRulesPassedHasBeenSet = false;
   bool m_totalRulesFailedHasBeenSet = false;
 };
 

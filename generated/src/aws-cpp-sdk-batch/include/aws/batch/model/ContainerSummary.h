@@ -68,9 +68,9 @@ class ContainerSummary {
   ///@}
  private:
   int m_exitCode{0};
-  bool m_exitCodeHasBeenSet = false;
 
   Aws::String m_reason;
+  bool m_exitCodeHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

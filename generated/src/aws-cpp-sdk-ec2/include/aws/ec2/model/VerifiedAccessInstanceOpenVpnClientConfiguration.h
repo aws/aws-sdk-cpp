@@ -78,9 +78,9 @@ class VerifiedAccessInstanceOpenVpnClientConfiguration {
   ///@}
  private:
   Aws::String m_config;
-  bool m_configHasBeenSet = false;
 
   Aws::Vector<VerifiedAccessInstanceOpenVpnClientConfigurationRoute> m_routes;
+  bool m_configHasBeenSet = false;
   bool m_routesHasBeenSet = false;
 };
 

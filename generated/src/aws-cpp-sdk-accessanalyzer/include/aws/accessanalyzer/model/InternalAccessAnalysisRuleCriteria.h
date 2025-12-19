@@ -118,12 +118,12 @@ class InternalAccessAnalysisRuleCriteria {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<ResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
 };
 

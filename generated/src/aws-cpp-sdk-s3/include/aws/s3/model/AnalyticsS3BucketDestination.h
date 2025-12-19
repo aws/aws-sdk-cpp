@@ -108,15 +108,15 @@ class AnalyticsS3BucketDestination {
   ///@}
  private:
   AnalyticsS3ExportFileFormat m_format{AnalyticsS3ExportFileFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_bucketAccountId;
-  bool m_bucketAccountIdHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_prefix;
+  bool m_formatHasBeenSet = false;
+  bool m_bucketAccountIdHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

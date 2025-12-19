@@ -64,9 +64,9 @@ class UpdateSoftwareSetRequest : public WorkSpacesThinClientRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SoftwareSetValidationStatus m_validationStatus{SoftwareSetValidationStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_validationStatusHasBeenSet = false;
 };
 

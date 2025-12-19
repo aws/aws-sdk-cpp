@@ -140,21 +140,21 @@ class SybaseAseDataProviderSettings {
   ///@}
  private:
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   DmsSslModeValue m_sslMode{DmsSslModeValue::NOT_SET};
-  bool m_sslModeHasBeenSet = false;
 
   bool m_encryptPassword{false};
-  bool m_encryptPasswordHasBeenSet = false;
 
   Aws::String m_certificateArn;
+  bool m_serverNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_sslModeHasBeenSet = false;
+  bool m_encryptPasswordHasBeenSet = false;
   bool m_certificateArnHasBeenSet = false;
 };
 

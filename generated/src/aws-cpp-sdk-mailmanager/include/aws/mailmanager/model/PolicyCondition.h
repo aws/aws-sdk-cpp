@@ -137,18 +137,18 @@ class PolicyCondition {
   ///@}
  private:
   IngressStringExpression m_stringExpression;
-  bool m_stringExpressionHasBeenSet = false;
 
   IngressIpv4Expression m_ipExpression;
-  bool m_ipExpressionHasBeenSet = false;
 
   IngressIpv6Expression m_ipv6Expression;
-  bool m_ipv6ExpressionHasBeenSet = false;
 
   IngressTlsProtocolExpression m_tlsExpression;
-  bool m_tlsExpressionHasBeenSet = false;
 
   IngressBooleanExpression m_booleanExpression;
+  bool m_stringExpressionHasBeenSet = false;
+  bool m_ipExpressionHasBeenSet = false;
+  bool m_ipv6ExpressionHasBeenSet = false;
+  bool m_tlsExpressionHasBeenSet = false;
   bool m_booleanExpressionHasBeenSet = false;
 };
 

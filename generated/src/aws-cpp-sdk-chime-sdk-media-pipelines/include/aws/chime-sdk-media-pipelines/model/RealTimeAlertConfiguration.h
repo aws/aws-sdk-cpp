@@ -75,9 +75,9 @@ class RealTimeAlertConfiguration {
   ///@}
  private:
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::Vector<RealTimeAlertRule> m_rules;
+  bool m_disabledHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

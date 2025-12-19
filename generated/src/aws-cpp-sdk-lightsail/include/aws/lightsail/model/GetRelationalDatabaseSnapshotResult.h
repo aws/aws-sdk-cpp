@@ -60,9 +60,9 @@ class GetRelationalDatabaseSnapshotResult {
   ///@}
  private:
   RelationalDatabaseSnapshot m_relationalDatabaseSnapshot;
-  bool m_relationalDatabaseSnapshotHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relationalDatabaseSnapshotHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

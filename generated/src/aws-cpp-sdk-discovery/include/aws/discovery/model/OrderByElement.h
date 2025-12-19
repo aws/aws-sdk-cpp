@@ -67,9 +67,9 @@ class OrderByElement {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   OrderString m_sortOrder{OrderString::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

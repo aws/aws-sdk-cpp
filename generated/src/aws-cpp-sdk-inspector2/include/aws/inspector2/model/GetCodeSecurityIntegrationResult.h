@@ -203,33 +203,33 @@ class GetCodeSecurityIntegrationResult {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IntegrationType m_type{IntegrationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   IntegrationStatus m_status{IntegrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateOn{};
-  bool m_lastUpdateOnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_authorizationUrl;
-  bool m_authorizationUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastUpdateOnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_authorizationUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

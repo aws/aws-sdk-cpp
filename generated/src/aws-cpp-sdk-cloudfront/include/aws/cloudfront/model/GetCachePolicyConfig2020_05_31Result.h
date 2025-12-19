@@ -78,12 +78,12 @@ class GetCachePolicyConfig2020_05_31Result {
   ///@}
  private:
   CachePolicyConfig m_cachePolicyConfig;
-  bool m_cachePolicyConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cachePolicyConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -274,42 +274,42 @@ class ResourceConfigurationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_resourceGatewayId;
-  bool m_resourceGatewayIdHasBeenSet = false;
 
   Aws::String m_resourceConfigurationGroupId;
-  bool m_resourceConfigurationGroupIdHasBeenSet = false;
 
   ResourceConfigurationType m_type{ResourceConfigurationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ResourceConfigurationStatus m_status{ResourceConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_amazonManaged{false};
-  bool m_amazonManagedHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_domainVerificationId;
-  bool m_domainVerificationIdHasBeenSet = false;
 
   Aws::String m_groupDomain;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceGatewayIdHasBeenSet = false;
+  bool m_resourceConfigurationGroupIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_amazonManagedHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_domainVerificationIdHasBeenSet = false;
   bool m_groupDomainHasBeenSet = false;
 };
 

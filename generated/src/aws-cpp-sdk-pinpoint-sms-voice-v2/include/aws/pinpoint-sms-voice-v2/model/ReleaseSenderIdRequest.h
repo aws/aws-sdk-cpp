@@ -68,9 +68,9 @@ class ReleaseSenderIdRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
+  bool m_senderIdHasBeenSet = false;
   bool m_isoCountryCodeHasBeenSet = false;
 };
 

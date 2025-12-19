@@ -147,21 +147,21 @@ class ControlDomainInsights {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_controlsCountByNoncompliantEvidence{0};
-  bool m_controlsCountByNoncompliantEvidenceHasBeenSet = false;
 
   int m_totalControlsCount{0};
-  bool m_totalControlsCountHasBeenSet = false;
 
   EvidenceInsights m_evidenceInsights;
-  bool m_evidenceInsightsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_controlsCountByNoncompliantEvidenceHasBeenSet = false;
+  bool m_totalControlsCountHasBeenSet = false;
+  bool m_evidenceInsightsHasBeenSet = false;
   bool m_lastUpdatedHasBeenSet = false;
 };
 

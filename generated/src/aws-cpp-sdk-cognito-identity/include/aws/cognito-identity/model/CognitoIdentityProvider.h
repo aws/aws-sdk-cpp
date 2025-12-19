@@ -92,12 +92,12 @@ class CognitoIdentityProvider {
   ///@}
  private:
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   bool m_serverSideTokenCheck{false};
+  bool m_providerNameHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
   bool m_serverSideTokenCheckHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class VpcEndpoint {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   VpcOptions m_vpcOptions;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_vpcOptionsHasBeenSet = false;
 };
 

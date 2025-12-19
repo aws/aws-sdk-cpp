@@ -70,9 +70,9 @@ class BatchPutGeofenceError {
   ///@}
  private:
   Aws::String m_geofenceId;
-  bool m_geofenceIdHasBeenSet = false;
 
   BatchItemError m_error;
+  bool m_geofenceIdHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

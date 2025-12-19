@@ -92,12 +92,12 @@ class BatchDeleteUniqueIdRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::String m_inputSource;
-  bool m_inputSourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_uniqueIds;
+  bool m_workflowNameHasBeenSet = false;
+  bool m_inputSourceHasBeenSet = false;
   bool m_uniqueIdsHasBeenSet = false;
 };
 

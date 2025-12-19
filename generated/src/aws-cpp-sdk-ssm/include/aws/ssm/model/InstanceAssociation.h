@@ -105,15 +105,15 @@ class InstanceAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_associationVersion;
+  bool m_associationIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_associationVersionHasBeenSet = false;
 };
 

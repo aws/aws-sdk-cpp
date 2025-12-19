@@ -189,30 +189,30 @@ class GetFindingRecommendationResult {
   ///@}
  private:
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   RecommendationError m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<RecommendedStep> m_recommendedSteps;
-  bool m_recommendedStepsHasBeenSet = false;
 
   RecommendationType m_recommendationType{RecommendationType::NOT_SET};
-  bool m_recommendationTypeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_startedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_recommendedStepsHasBeenSet = false;
+  bool m_recommendationTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

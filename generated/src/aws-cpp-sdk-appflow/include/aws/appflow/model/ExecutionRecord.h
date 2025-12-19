@@ -190,27 +190,27 @@ class ExecutionRecord {
   ///@}
  private:
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   ExecutionStatus m_executionStatus{ExecutionStatus::NOT_SET};
-  bool m_executionStatusHasBeenSet = false;
 
   ExecutionResult m_executionResult;
-  bool m_executionResultHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataPullStartTime{};
-  bool m_dataPullStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataPullEndTime{};
-  bool m_dataPullEndTimeHasBeenSet = false;
 
   Aws::Vector<MetadataCatalogDetail> m_metadataCatalogDetails;
+  bool m_executionIdHasBeenSet = false;
+  bool m_executionStatusHasBeenSet = false;
+  bool m_executionResultHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_dataPullStartTimeHasBeenSet = false;
+  bool m_dataPullEndTimeHasBeenSet = false;
   bool m_metadataCatalogDetailsHasBeenSet = false;
 };
 

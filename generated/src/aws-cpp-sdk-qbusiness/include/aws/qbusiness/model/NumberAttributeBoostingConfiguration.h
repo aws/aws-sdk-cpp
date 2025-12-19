@@ -79,9 +79,9 @@ class NumberAttributeBoostingConfiguration {
   ///@}
  private:
   DocumentAttributeBoostingLevel m_boostingLevel{DocumentAttributeBoostingLevel::NOT_SET};
-  bool m_boostingLevelHasBeenSet = false;
 
   NumberAttributeBoostingType m_boostingType{NumberAttributeBoostingType::NOT_SET};
+  bool m_boostingLevelHasBeenSet = false;
   bool m_boostingTypeHasBeenSet = false;
 };
 

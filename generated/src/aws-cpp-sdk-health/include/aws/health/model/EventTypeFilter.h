@@ -161,18 +161,18 @@ class EventTypeFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eventTypeCodes;
-  bool m_eventTypeCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_services;
-  bool m_servicesHasBeenSet = false;
 
   Aws::Vector<EventTypeCategory> m_eventTypeCategories;
-  bool m_eventTypeCategoriesHasBeenSet = false;
 
   Aws::Vector<EventTypeActionability> m_actionabilities;
-  bool m_actionabilitiesHasBeenSet = false;
 
   Aws::Vector<EventTypePersona> m_personas;
+  bool m_eventTypeCodesHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
+  bool m_eventTypeCategoriesHasBeenSet = false;
+  bool m_actionabilitiesHasBeenSet = false;
   bool m_personasHasBeenSet = false;
 };
 

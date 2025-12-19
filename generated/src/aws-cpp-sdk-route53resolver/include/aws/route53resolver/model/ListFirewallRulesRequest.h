@@ -137,18 +137,18 @@ class ListFirewallRulesRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_firewallRuleGroupId;
-  bool m_firewallRuleGroupIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Action m_action{Action::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_firewallRuleGroupIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

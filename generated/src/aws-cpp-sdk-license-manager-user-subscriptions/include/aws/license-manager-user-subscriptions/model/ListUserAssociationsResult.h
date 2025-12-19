@@ -88,12 +88,12 @@ class ListUserAssociationsResult {
   ///@}
  private:
   Aws::Vector<InstanceUserSummary> m_instanceUserSummaries;
-  bool m_instanceUserSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceUserSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

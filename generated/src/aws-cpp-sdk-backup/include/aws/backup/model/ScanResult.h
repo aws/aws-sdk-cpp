@@ -113,15 +113,15 @@ class ScanResult {
   ///@}
  private:
   MalwareScanner m_malwareScanner{MalwareScanner::NOT_SET};
-  bool m_malwareScannerHasBeenSet = false;
 
   ScanJobState m_scanJobState{ScanJobState::NOT_SET};
-  bool m_scanJobStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastScanTimestamp{};
-  bool m_lastScanTimestampHasBeenSet = false;
 
   Aws::Vector<ScanFinding> m_findings;
+  bool m_malwareScannerHasBeenSet = false;
+  bool m_scanJobStateHasBeenSet = false;
+  bool m_lastScanTimestampHasBeenSet = false;
   bool m_findingsHasBeenSet = false;
 };
 

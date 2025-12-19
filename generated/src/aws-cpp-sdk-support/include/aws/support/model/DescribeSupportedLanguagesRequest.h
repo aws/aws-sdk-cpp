@@ -90,12 +90,12 @@ class DescribeSupportedLanguagesRequest : public SupportRequest {
   ///@}
  private:
   Aws::String m_issueType;
-  bool m_issueTypeHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_categoryCode;
+  bool m_issueTypeHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
   bool m_categoryCodeHasBeenSet = false;
 };
 

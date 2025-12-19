@@ -102,12 +102,12 @@ class BatchIsAuthorizedRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   EntitiesDefinition m_entities;
-  bool m_entitiesHasBeenSet = false;
 
   Aws::Vector<BatchIsAuthorizedInputItem> m_requests;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_entitiesHasBeenSet = false;
   bool m_requestsHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class ListObjectTypeAttributeItem {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_attributeNameHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

@@ -641,96 +641,96 @@ class AutomationExecutionMetadata {
   ///@}
  private:
   Aws::String m_automationExecutionId;
-  bool m_automationExecutionIdHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   AutomationExecutionStatus m_automationExecutionStatus{AutomationExecutionStatus::NOT_SET};
-  bool m_automationExecutionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionStartTime{};
-  bool m_executionStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionEndTime{};
-  bool m_executionEndTimeHasBeenSet = false;
 
   Aws::String m_executedBy;
-  bool m_executedByHasBeenSet = false;
 
   Aws::String m_logFile;
-  bool m_logFileHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   ExecutionMode m_mode{ExecutionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_parentAutomationExecutionId;
-  bool m_parentAutomationExecutionIdHasBeenSet = false;
 
   Aws::String m_currentStepName;
-  bool m_currentStepNameHasBeenSet = false;
 
   Aws::String m_currentAction;
-  bool m_currentActionHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::String m_targetParameterName;
-  bool m_targetParameterNameHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-  bool m_targetMapsHasBeenSet = false;
 
   ResolvedTargets m_resolvedTargets;
-  bool m_resolvedTargetsHasBeenSet = false;
 
   Aws::String m_maxConcurrency;
-  bool m_maxConcurrencyHasBeenSet = false;
 
   Aws::String m_maxErrors;
-  bool m_maxErrorsHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   AutomationType m_automationType{AutomationType::NOT_SET};
-  bool m_automationTypeHasBeenSet = false;
 
   AlarmConfiguration m_alarmConfiguration;
-  bool m_alarmConfigurationHasBeenSet = false;
 
   Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
-  bool m_triggeredAlarmsHasBeenSet = false;
 
   Aws::String m_targetLocationsURL;
-  bool m_targetLocationsURLHasBeenSet = false;
 
   AutomationSubtype m_automationSubtype{AutomationSubtype::NOT_SET};
-  bool m_automationSubtypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledTime{};
-  bool m_scheduledTimeHasBeenSet = false;
 
   Aws::Vector<Runbook> m_runbooks;
-  bool m_runbooksHasBeenSet = false;
 
   Aws::String m_opsItemId;
-  bool m_opsItemIdHasBeenSet = false;
 
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_changeRequestName;
+  bool m_automationExecutionIdHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_automationExecutionStatusHasBeenSet = false;
+  bool m_executionStartTimeHasBeenSet = false;
+  bool m_executionEndTimeHasBeenSet = false;
+  bool m_executedByHasBeenSet = false;
+  bool m_logFileHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_parentAutomationExecutionIdHasBeenSet = false;
+  bool m_currentStepNameHasBeenSet = false;
+  bool m_currentActionHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_targetParameterNameHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_targetMapsHasBeenSet = false;
+  bool m_resolvedTargetsHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_maxErrorsHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_automationTypeHasBeenSet = false;
+  bool m_alarmConfigurationHasBeenSet = false;
+  bool m_triggeredAlarmsHasBeenSet = false;
+  bool m_targetLocationsURLHasBeenSet = false;
+  bool m_automationSubtypeHasBeenSet = false;
+  bool m_scheduledTimeHasBeenSet = false;
+  bool m_runbooksHasBeenSet = false;
+  bool m_opsItemIdHasBeenSet = false;
+  bool m_associationIdHasBeenSet = false;
   bool m_changeRequestNameHasBeenSet = false;
 };
 

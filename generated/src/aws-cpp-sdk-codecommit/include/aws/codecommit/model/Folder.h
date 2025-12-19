@@ -89,12 +89,12 @@ class Folder {
   ///@}
  private:
   Aws::String m_treeId;
-  bool m_treeIdHasBeenSet = false;
 
   Aws::String m_absolutePath;
-  bool m_absolutePathHasBeenSet = false;
 
   Aws::String m_relativePath;
+  bool m_treeIdHasBeenSet = false;
+  bool m_absolutePathHasBeenSet = false;
   bool m_relativePathHasBeenSet = false;
 };
 

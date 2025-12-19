@@ -76,9 +76,9 @@ class LinkedService {
   ///@}
  private:
   Aws::String m_servicePrincipal;
-  bool m_servicePrincipalHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_servicePrincipalHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

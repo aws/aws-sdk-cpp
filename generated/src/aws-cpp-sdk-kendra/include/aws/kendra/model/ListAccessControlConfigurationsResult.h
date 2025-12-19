@@ -88,12 +88,12 @@ class ListAccessControlConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AccessControlConfigurationSummary> m_accessControlConfigurations;
-  bool m_accessControlConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_accessControlConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

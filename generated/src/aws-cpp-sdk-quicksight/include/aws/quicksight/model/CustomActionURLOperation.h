@@ -72,9 +72,9 @@ class CustomActionURLOperation {
   ///@}
  private:
   Aws::String m_uRLTemplate;
-  bool m_uRLTemplateHasBeenSet = false;
 
   URLTargetConfiguration m_uRLTarget{URLTargetConfiguration::NOT_SET};
+  bool m_uRLTemplateHasBeenSet = false;
   bool m_uRLTargetHasBeenSet = false;
 };
 

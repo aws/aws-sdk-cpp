@@ -89,12 +89,12 @@ class ModelVariantConfig {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   ModelInfrastructureConfig m_infrastructureConfig;
+  bool m_modelNameHasBeenSet = false;
+  bool m_variantNameHasBeenSet = false;
   bool m_infrastructureConfigHasBeenSet = false;
 };
 

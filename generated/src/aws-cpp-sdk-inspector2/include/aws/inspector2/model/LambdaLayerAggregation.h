@@ -142,18 +142,18 @@ class LambdaLayerAggregation {
   ///@}
  private:
   Aws::Vector<StringFilter> m_functionNames;
-  bool m_functionNamesHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_resourceIds;
-  bool m_resourceIdsHasBeenSet = false;
 
   Aws::Vector<StringFilter> m_layerArns;
-  bool m_layerArnsHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   LambdaLayerSortBy m_sortBy{LambdaLayerSortBy::NOT_SET};
+  bool m_functionNamesHasBeenSet = false;
+  bool m_resourceIdsHasBeenSet = false;
+  bool m_layerArnsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

@@ -115,15 +115,15 @@ class AuditorResult {
   ///@}
  private:
   Aws::String m_auditor;
-  bool m_auditorHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_data;
-  bool m_dataHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
+  bool m_auditorHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

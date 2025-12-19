@@ -83,7 +83,9 @@ class ListPoliciesForTargetRequest : public OrganizationsRequest {
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_s3.html">S3_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html">NETWORK_SECURITY_DIRECTOR_POLICY</a>
    * </p> </li> </ul>
    */
   inline PolicyType GetFilter() const { return m_filter; }
@@ -139,15 +141,15 @@ class ListPoliciesForTargetRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   PolicyType m_filter{PolicyType::NOT_SET};
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_targetIdHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class ListConfigurationsRequest : public SSMQuickSetupRequest {
   ///@}
  private:
   Aws::String m_configurationDefinitionId;
-  bool m_configurationDefinitionIdHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_managerArn;
-  bool m_managerArnHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_startingToken;
+  bool m_configurationDefinitionIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_managerArnHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_startingTokenHasBeenSet = false;
 };
 

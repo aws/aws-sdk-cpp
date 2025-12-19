@@ -77,9 +77,9 @@ class AccessScope {
   ///@}
  private:
   AccessScopeType m_type{AccessScopeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
+  bool m_typeHasBeenSet = false;
   bool m_namespacesHasBeenSet = false;
 };
 

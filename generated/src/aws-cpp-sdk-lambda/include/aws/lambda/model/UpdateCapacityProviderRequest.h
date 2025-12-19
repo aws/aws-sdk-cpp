@@ -66,9 +66,9 @@ class UpdateCapacityProviderRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_capacityProviderName;
-  bool m_capacityProviderNameHasBeenSet = false;
 
   CapacityProviderScalingConfig m_capacityProviderScalingConfig;
+  bool m_capacityProviderNameHasBeenSet = false;
   bool m_capacityProviderScalingConfigHasBeenSet = false;
 };
 

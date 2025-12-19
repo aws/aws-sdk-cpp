@@ -98,12 +98,12 @@ class CreateEventBusRequest : public CloudWatchEventsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_eventSourceName;
-  bool m_eventSourceNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_eventSourceNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

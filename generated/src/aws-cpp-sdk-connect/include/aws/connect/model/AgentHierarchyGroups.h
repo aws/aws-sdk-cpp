@@ -157,18 +157,18 @@ class AgentHierarchyGroups {
   ///@}
  private:
   Aws::Vector<Aws::String> m_l1Ids;
-  bool m_l1IdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_l2Ids;
-  bool m_l2IdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_l3Ids;
-  bool m_l3IdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_l4Ids;
-  bool m_l4IdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_l5Ids;
+  bool m_l1IdsHasBeenSet = false;
+  bool m_l2IdsHasBeenSet = false;
+  bool m_l3IdsHasBeenSet = false;
+  bool m_l4IdsHasBeenSet = false;
   bool m_l5IdsHasBeenSet = false;
 };
 

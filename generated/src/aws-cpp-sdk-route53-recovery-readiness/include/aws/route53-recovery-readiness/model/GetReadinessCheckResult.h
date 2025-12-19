@@ -116,18 +116,18 @@ class GetReadinessCheckResult {
   ///@}
  private:
   Aws::String m_readinessCheckArn;
-  bool m_readinessCheckArnHasBeenSet = false;
 
   Aws::String m_readinessCheckName;
-  bool m_readinessCheckNameHasBeenSet = false;
 
   Aws::String m_resourceSet;
-  bool m_resourceSetHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_readinessCheckArnHasBeenSet = false;
+  bool m_readinessCheckNameHasBeenSet = false;
+  bool m_resourceSetHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

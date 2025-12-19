@@ -302,45 +302,45 @@ class Backup {
   ///@}
  private:
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   Aws::String m_backupArn;
-  bool m_backupArnHasBeenSet = false;
 
   BackupState m_backupState{BackupState::NOT_SET};
-  bool m_backupStateHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTimestamp{};
-  bool m_createTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_copyTimestamp{};
-  bool m_copyTimestampHasBeenSet = false;
 
   bool m_neverExpires{false};
-  bool m_neverExpiresHasBeenSet = false;
 
   Aws::String m_sourceRegion;
-  bool m_sourceRegionHasBeenSet = false;
 
   Aws::String m_sourceBackup;
-  bool m_sourceBackupHasBeenSet = false;
 
   Aws::String m_sourceCluster;
-  bool m_sourceClusterHasBeenSet = false;
 
   Aws::Utils::DateTime m_deleteTimestamp{};
-  bool m_deleteTimestampHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
-  bool m_tagListHasBeenSet = false;
 
   Aws::String m_hsmType;
-  bool m_hsmTypeHasBeenSet = false;
 
   ClusterMode m_mode{ClusterMode::NOT_SET};
+  bool m_backupIdHasBeenSet = false;
+  bool m_backupArnHasBeenSet = false;
+  bool m_backupStateHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_createTimestampHasBeenSet = false;
+  bool m_copyTimestampHasBeenSet = false;
+  bool m_neverExpiresHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
+  bool m_sourceBackupHasBeenSet = false;
+  bool m_sourceClusterHasBeenSet = false;
+  bool m_deleteTimestampHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
+  bool m_hsmTypeHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class DeleteFleetsResponse {
   ///@}
  private:
   Aws::Vector<DeleteFleetSuccessItem> m_successfulFleetDeletions;
-  bool m_successfulFleetDeletionsHasBeenSet = false;
 
   Aws::Vector<DeleteFleetErrorItem> m_unsuccessfulFleetDeletions;
-  bool m_unsuccessfulFleetDeletionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulFleetDeletionsHasBeenSet = false;
+  bool m_unsuccessfulFleetDeletionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

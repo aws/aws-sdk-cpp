@@ -355,54 +355,54 @@ class DescribeInferenceExperimentResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InferenceExperimentType m_type{InferenceExperimentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   InferenceExperimentSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   InferenceExperimentStatus m_status{InferenceExperimentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   EndpointMetadata m_endpointMetadata;
-  bool m_endpointMetadataHasBeenSet = false;
 
   Aws::Vector<ModelVariantConfigSummary> m_modelVariants;
-  bool m_modelVariantsHasBeenSet = false;
 
   InferenceExperimentDataStorageConfig m_dataStorageConfig;
-  bool m_dataStorageConfigHasBeenSet = false;
 
   ShadowModeConfig m_shadowModeConfig;
-  bool m_shadowModeConfigHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_endpointMetadataHasBeenSet = false;
+  bool m_modelVariantsHasBeenSet = false;
+  bool m_dataStorageConfigHasBeenSet = false;
+  bool m_shadowModeConfigHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

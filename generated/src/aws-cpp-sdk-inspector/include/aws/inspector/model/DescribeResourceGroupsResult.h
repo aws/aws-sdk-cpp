@@ -93,12 +93,12 @@ class DescribeResourceGroupsResult {
   ///@}
  private:
   Aws::Vector<ResourceGroup> m_resourceGroups;
-  bool m_resourceGroupsHasBeenSet = false;
 
   Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
-  bool m_failedItemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceGroupsHasBeenSet = false;
+  bool m_failedItemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

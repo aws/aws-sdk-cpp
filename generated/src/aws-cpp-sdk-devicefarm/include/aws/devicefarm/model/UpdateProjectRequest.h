@@ -157,21 +157,21 @@ class UpdateProjectRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_defaultJobTimeoutMinutes{0};
-  bool m_defaultJobTimeoutMinutesHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::Vector<EnvironmentVariable> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_defaultJobTimeoutMinutesHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
 };
 

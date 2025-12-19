@@ -106,15 +106,15 @@ class DescribeSoftwareAssociationsResult {
   ///@}
  private:
   Aws::String m_associatedResource;
-  bool m_associatedResourceHasBeenSet = false;
 
   Aws::Vector<SoftwareAssociations> m_softwareAssociations;
-  bool m_softwareAssociationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedResourceHasBeenSet = false;
+  bool m_softwareAssociationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

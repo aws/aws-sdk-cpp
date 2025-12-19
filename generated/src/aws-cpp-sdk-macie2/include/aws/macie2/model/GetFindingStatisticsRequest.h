@@ -106,15 +106,15 @@ class GetFindingStatisticsRequest : public Macie2Request {
   ///@}
  private:
   FindingCriteria m_findingCriteria;
-  bool m_findingCriteriaHasBeenSet = false;
 
   GroupBy m_groupBy{GroupBy::NOT_SET};
-  bool m_groupByHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   FindingStatisticsSortCriteria m_sortCriteria;
+  bool m_findingCriteriaHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
 };
 

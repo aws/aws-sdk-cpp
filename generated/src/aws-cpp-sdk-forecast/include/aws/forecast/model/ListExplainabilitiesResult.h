@@ -86,12 +86,12 @@ class ListExplainabilitiesResult {
   ///@}
  private:
   Aws::Vector<ExplainabilitySummary> m_explainabilities;
-  bool m_explainabilitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_explainabilitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

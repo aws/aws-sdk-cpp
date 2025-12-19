@@ -87,12 +87,12 @@ class WaterfallChartGroupColorConfiguration {
   ///@}
  private:
   Aws::String m_positiveBarColor;
-  bool m_positiveBarColorHasBeenSet = false;
 
   Aws::String m_negativeBarColor;
-  bool m_negativeBarColorHasBeenSet = false;
 
   Aws::String m_totalBarColor;
+  bool m_positiveBarColorHasBeenSet = false;
+  bool m_negativeBarColorHasBeenSet = false;
   bool m_totalBarColorHasBeenSet = false;
 };
 

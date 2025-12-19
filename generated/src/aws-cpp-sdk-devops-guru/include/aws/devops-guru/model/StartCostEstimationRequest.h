@@ -68,9 +68,9 @@ class StartCostEstimationRequest : public DevOpsGuruRequest {
   ///@}
  private:
   CostEstimationResourceCollectionFilter m_resourceCollection;
-  bool m_resourceCollectionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_resourceCollectionHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

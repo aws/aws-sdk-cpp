@@ -85,12 +85,12 @@ class GetDataEndpointRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   APIName m_aPIName{APIName::NOT_SET};
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
   bool m_aPINameHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class LeadInvitationPayload {
   ///@}
  private:
   LeadInvitationCustomer m_customer;
-  bool m_customerHasBeenSet = false;
 
   LeadInvitationInteraction m_interaction;
+  bool m_customerHasBeenSet = false;
   bool m_interactionHasBeenSet = false;
 };
 

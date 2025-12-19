@@ -65,9 +65,9 @@ class AssociateAssessmentReportEvidenceFolderRequest : public AuditManagerReques
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_evidenceFolderId;
+  bool m_assessmentIdHasBeenSet = false;
   bool m_evidenceFolderIdHasBeenSet = false;
 };
 

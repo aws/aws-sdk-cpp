@@ -72,9 +72,9 @@ class WaypointOptimizationClusteringOptions {
   ///@}
  private:
   WaypointOptimizationClusteringAlgorithm m_algorithm{WaypointOptimizationClusteringAlgorithm::NOT_SET};
-  bool m_algorithmHasBeenSet = false;
 
   WaypointOptimizationDrivingDistanceOptions m_drivingDistanceOptions;
+  bool m_algorithmHasBeenSet = false;
   bool m_drivingDistanceOptionsHasBeenSet = false;
 };
 

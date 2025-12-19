@@ -84,12 +84,12 @@ class GetClassifiersResult {
   ///@}
  private:
   Aws::Vector<Classifier> m_classifiers;
-  bool m_classifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_classifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DescribeInstanceInformationResult {
   ///@}
  private:
   Aws::Vector<InstanceInformation> m_instanceInformationList;
-  bool m_instanceInformationListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceInformationListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

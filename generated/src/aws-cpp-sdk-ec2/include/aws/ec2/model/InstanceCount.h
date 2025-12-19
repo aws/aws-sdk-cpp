@@ -67,9 +67,9 @@ class InstanceCount {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   ListingState m_state{ListingState::NOT_SET};
+  bool m_instanceCountHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

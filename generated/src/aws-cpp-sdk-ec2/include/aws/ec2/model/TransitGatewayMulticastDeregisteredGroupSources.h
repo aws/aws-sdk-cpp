@@ -96,12 +96,12 @@ class TransitGatewayMulticastDeregisteredGroupSources {
   ///@}
  private:
   Aws::String m_transitGatewayMulticastDomainId;
-  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deregisteredNetworkInterfaceIds;
-  bool m_deregisteredNetworkInterfaceIdsHasBeenSet = false;
 
   Aws::String m_groupIpAddress;
+  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
+  bool m_deregisteredNetworkInterfaceIdsHasBeenSet = false;
   bool m_groupIpAddressHasBeenSet = false;
 };
 

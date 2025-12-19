@@ -195,27 +195,27 @@ class ModifyManagedPrefixListRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_prefixListId;
-  bool m_prefixListIdHasBeenSet = false;
 
   long long m_currentVersion{0};
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_prefixListName;
-  bool m_prefixListNameHasBeenSet = false;
 
   Aws::Vector<AddPrefixListEntry> m_addEntries;
-  bool m_addEntriesHasBeenSet = false;
 
   Aws::Vector<RemovePrefixListEntry> m_removeEntries;
-  bool m_removeEntriesHasBeenSet = false;
 
   int m_maxEntries{0};
-  bool m_maxEntriesHasBeenSet = false;
 
   bool m_ipamPrefixListResolverSyncEnabled{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_prefixListIdHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
+  bool m_prefixListNameHasBeenSet = false;
+  bool m_addEntriesHasBeenSet = false;
+  bool m_removeEntriesHasBeenSet = false;
+  bool m_maxEntriesHasBeenSet = false;
   bool m_ipamPrefixListResolverSyncEnabledHasBeenSet = false;
 };
 

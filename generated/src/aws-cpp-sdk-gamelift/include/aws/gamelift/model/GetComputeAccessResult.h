@@ -182,27 +182,27 @@ class GetComputeAccessResult {
   ///@}
  private:
   Aws::String m_fleetId;
-  bool m_fleetIdHasBeenSet = false;
 
   Aws::String m_fleetArn;
-  bool m_fleetArnHasBeenSet = false;
 
   Aws::String m_computeName;
-  bool m_computeNameHasBeenSet = false;
 
   Aws::String m_computeArn;
-  bool m_computeArnHasBeenSet = false;
 
   AwsCredentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::Vector<ContainerIdentifier> m_containerIdentifiers;
-  bool m_containerIdentifiersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetIdHasBeenSet = false;
+  bool m_fleetArnHasBeenSet = false;
+  bool m_computeNameHasBeenSet = false;
+  bool m_computeArnHasBeenSet = false;
+  bool m_credentialsHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_containerIdentifiersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

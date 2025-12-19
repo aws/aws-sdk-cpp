@@ -83,9 +83,9 @@ class RuleGroupSourceStatelessRulesAndCustomActionsDetails {
   ///@}
  private:
   Aws::Vector<RuleGroupSourceCustomActionsDetails> m_customActions;
-  bool m_customActionsHasBeenSet = false;
 
   Aws::Vector<RuleGroupSourceStatelessRulesDetails> m_statelessRules;
+  bool m_customActionsHasBeenSet = false;
   bool m_statelessRulesHasBeenSet = false;
 };
 

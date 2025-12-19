@@ -76,9 +76,9 @@ class ProjectContinuousIntegrationScanConfiguration {
   ///@}
  private:
   ContinuousIntegrationScanEvent m_supportedEvent{ContinuousIntegrationScanEvent::NOT_SET};
-  bool m_supportedEventHasBeenSet = false;
 
   Aws::Vector<RuleSetCategory> m_ruleSetCategories;
+  bool m_supportedEventHasBeenSet = false;
   bool m_ruleSetCategoriesHasBeenSet = false;
 };
 

@@ -77,9 +77,9 @@ class DimensionValuesWithAttributes {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_valueHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

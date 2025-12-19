@@ -60,9 +60,9 @@ class GetChallengeMetadataResult {
   ///@}
  private:
   ChallengeMetadata m_challengeMetadata;
-  bool m_challengeMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_challengeMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

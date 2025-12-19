@@ -312,36 +312,36 @@ class AvcIntraSettings {
   ///@}
  private:
   AvcIntraClass m_avcIntraClass{AvcIntraClass::NOT_SET};
-  bool m_avcIntraClassHasBeenSet = false;
 
   AvcIntraUhdSettings m_avcIntraUhdSettings;
-  bool m_avcIntraUhdSettingsHasBeenSet = false;
 
   AvcIntraFramerateControl m_framerateControl{AvcIntraFramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   AvcIntraFramerateConversionAlgorithm m_framerateConversionAlgorithm{AvcIntraFramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   AvcIntraInterlaceMode m_interlaceMode{AvcIntraInterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   AvcIntraScanTypeConversionMode m_scanTypeConversionMode{AvcIntraScanTypeConversionMode::NOT_SET};
-  bool m_scanTypeConversionModeHasBeenSet = false;
 
   AvcIntraSlowPal m_slowPal{AvcIntraSlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   AvcIntraTelecine m_telecine{AvcIntraTelecine::NOT_SET};
+  bool m_avcIntraClassHasBeenSet = false;
+  bool m_avcIntraUhdSettingsHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
+  bool m_scanTypeConversionModeHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
   bool m_telecineHasBeenSet = false;
 };
 

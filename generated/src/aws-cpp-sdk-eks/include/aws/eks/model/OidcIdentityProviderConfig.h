@@ -272,39 +272,39 @@ class OidcIdentityProviderConfig {
   ///@}
  private:
   Aws::String m_identityProviderConfigName;
-  bool m_identityProviderConfigNameHasBeenSet = false;
 
   Aws::String m_identityProviderConfigArn;
-  bool m_identityProviderConfigArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_issuerUrl;
-  bool m_issuerUrlHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_usernameClaim;
-  bool m_usernameClaimHasBeenSet = false;
 
   Aws::String m_usernamePrefix;
-  bool m_usernamePrefixHasBeenSet = false;
 
   Aws::String m_groupsClaim;
-  bool m_groupsClaimHasBeenSet = false;
 
   Aws::String m_groupsPrefix;
-  bool m_groupsPrefixHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requiredClaims;
-  bool m_requiredClaimsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ConfigStatus m_status{ConfigStatus::NOT_SET};
+  bool m_identityProviderConfigNameHasBeenSet = false;
+  bool m_identityProviderConfigArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_issuerUrlHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_usernameClaimHasBeenSet = false;
+  bool m_usernamePrefixHasBeenSet = false;
+  bool m_groupsClaimHasBeenSet = false;
+  bool m_groupsPrefixHasBeenSet = false;
+  bool m_requiredClaimsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

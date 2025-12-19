@@ -250,39 +250,39 @@ class ServiceNetworkVpcAssociationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ServiceNetworkVpcAssociationStatus m_status{ServiceNetworkVpcAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_serviceNetworkId;
-  bool m_serviceNetworkIdHasBeenSet = false;
 
   Aws::String m_serviceNetworkName;
-  bool m_serviceNetworkNameHasBeenSet = false;
 
   Aws::String m_serviceNetworkArn;
-  bool m_serviceNetworkArnHasBeenSet = false;
 
   bool m_privateDnsEnabled{false};
-  bool m_privateDnsEnabledHasBeenSet = false;
 
   DnsOptions m_dnsOptions;
-  bool m_dnsOptionsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_serviceNetworkIdHasBeenSet = false;
+  bool m_serviceNetworkNameHasBeenSet = false;
+  bool m_serviceNetworkArnHasBeenSet = false;
+  bool m_privateDnsEnabledHasBeenSet = false;
+  bool m_dnsOptionsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_lastUpdatedAtHasBeenSet = false;
 };
 

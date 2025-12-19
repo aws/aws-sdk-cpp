@@ -184,27 +184,27 @@ class GetTableObjectsRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryAsOfTime{};
-  bool m_queryAsOfTimeHasBeenSet = false;
 
   Aws::String m_partitionPredicate;
-  bool m_partitionPredicateHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_queryAsOfTimeHasBeenSet = false;
+  bool m_partitionPredicateHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

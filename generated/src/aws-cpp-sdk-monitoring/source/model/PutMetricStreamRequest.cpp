@@ -3,87 +3,115 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/PutMetricStreamRequest.h>
 
+#include <utility>
+
 using namespace Aws::CloudWatch::Model;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PutMetricStreamRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=PutMetricStream&";
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_nameHasBeenSet) {
-    ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+    mapSize++;
+  }
+  if (m_includeFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_excludeFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firehoseArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_roleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_outputFormatHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statisticsConfigurationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_includeLinkedAccountsMetricsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_nameHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_includeFiltersHasBeenSet) {
-    if (m_includeFilters.empty()) {
-      ss << "IncludeFilters=&";
-    } else {
-      unsigned includeFiltersCount = 1;
-      for (auto& item : m_includeFilters) {
-        item.OutputToStream(ss, "IncludeFilters.member.", includeFiltersCount, "");
-        includeFiltersCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IncludeFilters"));
+    encoder.WriteArrayStart(m_includeFilters.size());
+    for (const auto& item_0 : m_includeFilters) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_excludeFiltersHasBeenSet) {
-    if (m_excludeFilters.empty()) {
-      ss << "ExcludeFilters=&";
-    } else {
-      unsigned excludeFiltersCount = 1;
-      for (auto& item : m_excludeFilters) {
-        item.OutputToStream(ss, "ExcludeFilters.member.", excludeFiltersCount, "");
-        excludeFiltersCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ExcludeFilters"));
+    encoder.WriteArrayStart(m_excludeFilters.size());
+    for (const auto& item_0 : m_excludeFilters) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_firehoseArnHasBeenSet) {
-    ss << "FirehoseArn=" << StringUtils::URLEncode(m_firehoseArn.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirehoseArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firehoseArn.c_str()));
   }
 
   if (m_roleArnHasBeenSet) {
-    ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_roleArn.c_str()));
   }
 
   if (m_outputFormatHasBeenSet) {
-    ss << "OutputFormat=" << StringUtils::URLEncode(MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat))
-       << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OutputFormat"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(MetricStreamOutputFormatMapper::GetNameForMetricStreamOutputFormat(m_outputFormat).c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    if (m_tags.empty()) {
-      ss << "Tags=&";
-    } else {
-      unsigned tagsCount = 1;
-      for (auto& item : m_tags) {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-        tagsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_statisticsConfigurationsHasBeenSet) {
-    if (m_statisticsConfigurations.empty()) {
-      ss << "StatisticsConfigurations=&";
-    } else {
-      unsigned statisticsConfigurationsCount = 1;
-      for (auto& item : m_statisticsConfigurations) {
-        item.OutputToStream(ss, "StatisticsConfigurations.member.", statisticsConfigurationsCount, "");
-        statisticsConfigurationsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StatisticsConfigurations"));
+    encoder.WriteArrayStart(m_statisticsConfigurations.size());
+    for (const auto& item_0 : m_statisticsConfigurations) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_includeLinkedAccountsMetricsHasBeenSet) {
-    ss << "IncludeLinkedAccountsMetrics=" << std::boolalpha << m_includeLinkedAccountsMetrics << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IncludeLinkedAccountsMetrics"));
+    encoder.WriteBool(m_includeLinkedAccountsMetrics);
   }
-
-  ss << "Version=2010-08-01";
-  return ss.str();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
-void PutMetricStreamRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+Aws::Http::HeaderValueCollection PutMetricStreamRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  return headers;
+}

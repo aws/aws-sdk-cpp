@@ -96,12 +96,12 @@ class Geometry {
   ///@}
  private:
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   Aws::Vector<Point> m_polygon;
-  bool m_polygonHasBeenSet = false;
 
   double m_rotationAngle{0.0};
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_polygonHasBeenSet = false;
   bool m_rotationAngleHasBeenSet = false;
 };
 

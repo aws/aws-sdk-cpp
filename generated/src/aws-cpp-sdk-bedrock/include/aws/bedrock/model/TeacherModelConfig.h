@@ -68,9 +68,9 @@ class TeacherModelConfig {
   ///@}
  private:
   Aws::String m_teacherModelIdentifier;
-  bool m_teacherModelIdentifierHasBeenSet = false;
 
   int m_maxResponseLengthForInference{0};
+  bool m_teacherModelIdentifierHasBeenSet = false;
   bool m_maxResponseLengthForInferenceHasBeenSet = false;
 };
 

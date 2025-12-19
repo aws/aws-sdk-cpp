@@ -66,9 +66,9 @@ class CreateApiCacheResult {
   ///@}
  private:
   ApiCache m_apiCache;
-  bool m_apiCacheHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_apiCacheHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

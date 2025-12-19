@@ -128,18 +128,18 @@ class RdsFieldMapping {
   ///@}
  private:
   Aws::String m_primaryKeyField;
-  bool m_primaryKeyFieldHasBeenSet = false;
 
   Aws::String m_vectorField;
-  bool m_vectorFieldHasBeenSet = false;
 
   Aws::String m_textField;
-  bool m_textFieldHasBeenSet = false;
 
   Aws::String m_metadataField;
-  bool m_metadataFieldHasBeenSet = false;
 
   Aws::String m_customMetadataField;
+  bool m_primaryKeyFieldHasBeenSet = false;
+  bool m_vectorFieldHasBeenSet = false;
+  bool m_textFieldHasBeenSet = false;
+  bool m_metadataFieldHasBeenSet = false;
   bool m_customMetadataFieldHasBeenSet = false;
 };
 

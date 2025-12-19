@@ -68,9 +68,9 @@ class UpdateRecommenderRequest : public PersonalizeRequest {
   ///@}
  private:
   Aws::String m_recommenderArn;
-  bool m_recommenderArnHasBeenSet = false;
 
   RecommenderConfig m_recommenderConfig;
+  bool m_recommenderArnHasBeenSet = false;
   bool m_recommenderConfigHasBeenSet = false;
 };
 

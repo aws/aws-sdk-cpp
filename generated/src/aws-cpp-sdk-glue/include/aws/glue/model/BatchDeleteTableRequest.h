@@ -112,15 +112,15 @@ class BatchDeleteTableRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tablesToDelete;
-  bool m_tablesToDeleteHasBeenSet = false;
 
   Aws::String m_transactionId;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tablesToDeleteHasBeenSet = false;
   bool m_transactionIdHasBeenSet = false;
 };
 

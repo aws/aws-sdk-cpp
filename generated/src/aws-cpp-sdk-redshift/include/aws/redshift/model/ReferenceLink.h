@@ -71,9 +71,9 @@ class ReferenceLink {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_link;
+  bool m_textHasBeenSet = false;
   bool m_linkHasBeenSet = false;
 };
 

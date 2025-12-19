@@ -132,18 +132,18 @@ class CreateRepositoryLinkRequest : public CodeConnectionsRequest {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

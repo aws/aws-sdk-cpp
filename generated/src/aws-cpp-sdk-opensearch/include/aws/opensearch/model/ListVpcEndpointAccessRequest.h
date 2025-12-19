@@ -74,9 +74,9 @@ class ListVpcEndpointAccessRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_domainNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

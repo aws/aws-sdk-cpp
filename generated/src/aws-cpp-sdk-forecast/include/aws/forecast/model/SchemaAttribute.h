@@ -73,9 +73,9 @@ class SchemaAttribute {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   AttributeType m_attributeType{AttributeType::NOT_SET};
+  bool m_attributeNameHasBeenSet = false;
   bool m_attributeTypeHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListAutoMLJobsResult {
   ///@}
  private:
   Aws::Vector<AutoMLJobSummary> m_autoMLJobSummaries;
-  bool m_autoMLJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_autoMLJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

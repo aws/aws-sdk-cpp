@@ -89,12 +89,12 @@ class CreateS3DataAccessFromS3BucketRequestDetails {
   ///@}
  private:
   S3DataAccessAssetSourceEntry m_assetSource;
-  bool m_assetSourceHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_assetSourceHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

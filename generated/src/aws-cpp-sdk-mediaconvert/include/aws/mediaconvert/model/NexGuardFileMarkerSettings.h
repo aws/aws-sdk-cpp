@@ -117,15 +117,15 @@ class NexGuardFileMarkerSettings {
   ///@}
  private:
   Aws::String m_license;
-  bool m_licenseHasBeenSet = false;
 
   int m_payload{0};
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_preset;
-  bool m_presetHasBeenSet = false;
 
   WatermarkingStrength m_strength{WatermarkingStrength::NOT_SET};
+  bool m_licenseHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_presetHasBeenSet = false;
   bool m_strengthHasBeenSet = false;
 };
 

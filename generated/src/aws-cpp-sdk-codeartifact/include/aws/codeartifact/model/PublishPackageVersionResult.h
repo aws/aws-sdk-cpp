@@ -165,27 +165,27 @@ class PublishPackageVersionResult {
   ///@}
  private:
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_versionRevision;
-  bool m_versionRevisionHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AssetSummary m_asset;
-  bool m_assetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_versionRevisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_assetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

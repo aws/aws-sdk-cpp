@@ -86,9 +86,9 @@ class UpdateRoleMappings {
   ///@}
  private:
   Aws::Vector<ArgoCdRoleMapping> m_addOrUpdateRoleMappings;
-  bool m_addOrUpdateRoleMappingsHasBeenSet = false;
 
   Aws::Vector<ArgoCdRoleMapping> m_removeRoleMappings;
+  bool m_addOrUpdateRoleMappingsHasBeenSet = false;
   bool m_removeRoleMappingsHasBeenSet = false;
 };
 

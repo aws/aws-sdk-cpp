@@ -77,9 +77,9 @@ class LoggingFormat {
   ///@}
  private:
   Aws::Vector<JsonFormatRef> m_json;
-  bool m_jsonHasBeenSet = false;
 
   Aws::String m_text;
+  bool m_jsonHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

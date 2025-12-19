@@ -156,9 +156,9 @@ class PutDraftAppVersionTemplateRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appTemplateBody;
+  bool m_appArnHasBeenSet = false;
   bool m_appTemplateBodyHasBeenSet = false;
 };
 

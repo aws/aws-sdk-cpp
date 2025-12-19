@@ -279,39 +279,39 @@ class StartNotebookExecutionRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_editorId;
-  bool m_editorIdHasBeenSet = false;
 
   Aws::String m_relativePath;
-  bool m_relativePathHasBeenSet = false;
 
   Aws::String m_notebookExecutionName;
-  bool m_notebookExecutionNameHasBeenSet = false;
 
   Aws::String m_notebookParams;
-  bool m_notebookParamsHasBeenSet = false;
 
   ExecutionEngineConfig m_executionEngine;
-  bool m_executionEngineHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   Aws::String m_notebookInstanceSecurityGroupId;
-  bool m_notebookInstanceSecurityGroupIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   NotebookS3LocationFromInput m_notebookS3Location;
-  bool m_notebookS3LocationHasBeenSet = false;
 
   OutputNotebookS3LocationFromInput m_outputNotebookS3Location;
-  bool m_outputNotebookS3LocationHasBeenSet = false;
 
   OutputNotebookFormat m_outputNotebookFormat{OutputNotebookFormat::NOT_SET};
-  bool m_outputNotebookFormatHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
+  bool m_editorIdHasBeenSet = false;
+  bool m_relativePathHasBeenSet = false;
+  bool m_notebookExecutionNameHasBeenSet = false;
+  bool m_notebookParamsHasBeenSet = false;
+  bool m_executionEngineHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_notebookInstanceSecurityGroupIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_notebookS3LocationHasBeenSet = false;
+  bool m_outputNotebookS3LocationHasBeenSet = false;
+  bool m_outputNotebookFormatHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
 };
 

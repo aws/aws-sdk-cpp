@@ -170,24 +170,24 @@ class PatchComplianceData {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_kBId;
-  bool m_kBIdHasBeenSet = false;
 
   Aws::String m_classification;
-  bool m_classificationHasBeenSet = false;
 
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   PatchComplianceDataState m_state{PatchComplianceDataState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_installedTime{};
-  bool m_installedTimeHasBeenSet = false;
 
   Aws::String m_cVEIds;
+  bool m_titleHasBeenSet = false;
+  bool m_kBIdHasBeenSet = false;
+  bool m_classificationHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_installedTimeHasBeenSet = false;
   bool m_cVEIdsHasBeenSet = false;
 };
 

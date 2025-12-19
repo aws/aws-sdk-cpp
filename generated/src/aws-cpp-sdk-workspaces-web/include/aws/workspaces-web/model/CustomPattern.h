@@ -112,15 +112,15 @@ class CustomPattern {
   ///@}
  private:
   Aws::String m_patternName;
-  bool m_patternNameHasBeenSet = false;
 
   Aws::String m_patternRegex;
-  bool m_patternRegexHasBeenSet = false;
 
   Aws::String m_patternDescription;
-  bool m_patternDescriptionHasBeenSet = false;
 
   Aws::String m_keywordRegex;
+  bool m_patternNameHasBeenSet = false;
+  bool m_patternRegexHasBeenSet = false;
+  bool m_patternDescriptionHasBeenSet = false;
   bool m_keywordRegexHasBeenSet = false;
 };
 

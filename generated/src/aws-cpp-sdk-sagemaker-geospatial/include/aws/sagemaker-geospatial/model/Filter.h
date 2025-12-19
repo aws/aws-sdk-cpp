@@ -101,15 +101,15 @@ class Filter {
   ///@}
  private:
   double m_maximum{0.0};
-  bool m_maximumHasBeenSet = false;
 
   double m_minimum{0.0};
-  bool m_minimumHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_maximumHasBeenSet = false;
+  bool m_minimumHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

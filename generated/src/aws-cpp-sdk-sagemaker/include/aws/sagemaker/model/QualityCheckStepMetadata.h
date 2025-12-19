@@ -223,33 +223,33 @@ class QualityCheckStepMetadata {
   ///@}
  private:
   Aws::String m_checkType;
-  bool m_checkTypeHasBeenSet = false;
 
   Aws::String m_baselineUsedForDriftCheckStatistics;
-  bool m_baselineUsedForDriftCheckStatisticsHasBeenSet = false;
 
   Aws::String m_baselineUsedForDriftCheckConstraints;
-  bool m_baselineUsedForDriftCheckConstraintsHasBeenSet = false;
 
   Aws::String m_calculatedBaselineStatistics;
-  bool m_calculatedBaselineStatisticsHasBeenSet = false;
 
   Aws::String m_calculatedBaselineConstraints;
-  bool m_calculatedBaselineConstraintsHasBeenSet = false;
 
   Aws::String m_modelPackageGroupName;
-  bool m_modelPackageGroupNameHasBeenSet = false;
 
   Aws::String m_violationReport;
-  bool m_violationReportHasBeenSet = false;
 
   Aws::String m_checkJobArn;
-  bool m_checkJobArnHasBeenSet = false;
 
   bool m_skipCheck{false};
-  bool m_skipCheckHasBeenSet = false;
 
   bool m_registerNewBaseline{false};
+  bool m_checkTypeHasBeenSet = false;
+  bool m_baselineUsedForDriftCheckStatisticsHasBeenSet = false;
+  bool m_baselineUsedForDriftCheckConstraintsHasBeenSet = false;
+  bool m_calculatedBaselineStatisticsHasBeenSet = false;
+  bool m_calculatedBaselineConstraintsHasBeenSet = false;
+  bool m_modelPackageGroupNameHasBeenSet = false;
+  bool m_violationReportHasBeenSet = false;
+  bool m_checkJobArnHasBeenSet = false;
+  bool m_skipCheckHasBeenSet = false;
   bool m_registerNewBaselineHasBeenSet = false;
 };
 

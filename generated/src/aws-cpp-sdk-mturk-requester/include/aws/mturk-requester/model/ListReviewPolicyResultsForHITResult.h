@@ -147,24 +147,24 @@ class ListReviewPolicyResultsForHITResult {
   ///@}
  private:
   Aws::String m_hITId;
-  bool m_hITIdHasBeenSet = false;
 
   ReviewPolicy m_assignmentReviewPolicy;
-  bool m_assignmentReviewPolicyHasBeenSet = false;
 
   ReviewPolicy m_hITReviewPolicy;
-  bool m_hITReviewPolicyHasBeenSet = false;
 
   ReviewReport m_assignmentReviewReport;
-  bool m_assignmentReviewReportHasBeenSet = false;
 
   ReviewReport m_hITReviewReport;
-  bool m_hITReviewReportHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hITIdHasBeenSet = false;
+  bool m_assignmentReviewPolicyHasBeenSet = false;
+  bool m_hITReviewPolicyHasBeenSet = false;
+  bool m_assignmentReviewReportHasBeenSet = false;
+  bool m_hITReviewReportHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

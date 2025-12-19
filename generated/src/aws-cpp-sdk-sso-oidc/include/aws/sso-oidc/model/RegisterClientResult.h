@@ -144,24 +144,24 @@ class RegisterClientResult {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   long long m_clientIdIssuedAt{0};
-  bool m_clientIdIssuedAtHasBeenSet = false;
 
   long long m_clientSecretExpiresAt{0};
-  bool m_clientSecretExpiresAtHasBeenSet = false;
 
   Aws::String m_authorizationEndpoint;
-  bool m_authorizationEndpointHasBeenSet = false;
 
   Aws::String m_tokenEndpoint;
-  bool m_tokenEndpointHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientIdHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
+  bool m_clientIdIssuedAtHasBeenSet = false;
+  bool m_clientSecretExpiresAtHasBeenSet = false;
+  bool m_authorizationEndpointHasBeenSet = false;
+  bool m_tokenEndpointHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

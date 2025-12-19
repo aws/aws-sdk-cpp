@@ -74,12 +74,12 @@ class UpdatePipelineVersionResult {
   ///@}
  private:
   Aws::String m_pipelineArn;
-  bool m_pipelineArnHasBeenSet = false;
 
   long long m_pipelineVersionId{0};
-  bool m_pipelineVersionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineArnHasBeenSet = false;
+  bool m_pipelineVersionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

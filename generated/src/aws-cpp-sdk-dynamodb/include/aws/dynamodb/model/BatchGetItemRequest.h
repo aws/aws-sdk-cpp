@@ -128,9 +128,9 @@ class BatchGetItemRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Map<Aws::String, KeysAndAttributes> m_requestItems;
-  bool m_requestItemsHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
+  bool m_requestItemsHasBeenSet = false;
   bool m_returnConsumedCapacityHasBeenSet = false;
 };
 

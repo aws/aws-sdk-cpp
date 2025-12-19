@@ -34,22 +34,6 @@ class ListWavesRequestFilters {
 
   ///@{
   /**
-   * <p>Filter waves list by archival status.</p>
-   */
-  inline bool GetIsArchived() const { return m_isArchived; }
-  inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
-  inline void SetIsArchived(bool value) {
-    m_isArchivedHasBeenSet = true;
-    m_isArchived = value;
-  }
-  inline ListWavesRequestFilters& WithIsArchived(bool value) {
-    SetIsArchived(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Filter waves list by wave ID.</p>
    */
   inline const Aws::Vector<Aws::String>& GetWaveIDs() const { return m_waveIDs; }
@@ -71,12 +55,28 @@ class ListWavesRequestFilters {
     return *this;
   }
   ///@}
- private:
-  bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Filter waves list by archival status.</p>
+   */
+  inline bool GetIsArchived() const { return m_isArchived; }
+  inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
+  inline void SetIsArchived(bool value) {
+    m_isArchivedHasBeenSet = true;
+    m_isArchived = value;
+  }
+  inline ListWavesRequestFilters& WithIsArchived(bool value) {
+    SetIsArchived(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<Aws::String> m_waveIDs;
+
+  bool m_isArchived{false};
   bool m_waveIDsHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
 };
 
 }  // namespace Model

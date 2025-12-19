@@ -115,18 +115,18 @@ class CreatePolicyResult {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::String m_policyVersionId;
-  bool m_policyVersionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyNameHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_policyVersionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

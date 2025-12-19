@@ -131,15 +131,15 @@ class CreateNotebookInstanceLifecycleConfigRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_notebookInstanceLifecycleConfigName;
-  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
   Aws::Vector<NotebookInstanceLifecycleHook> m_onCreate;
-  bool m_onCreateHasBeenSet = false;
 
   Aws::Vector<NotebookInstanceLifecycleHook> m_onStart;
-  bool m_onStartHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
+  bool m_onCreateHasBeenSet = false;
+  bool m_onStartHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

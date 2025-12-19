@@ -106,12 +106,12 @@ class IcebergCompactionConfiguration {
   ///@}
  private:
   CompactionStrategy m_strategy{CompactionStrategy::NOT_SET};
-  bool m_strategyHasBeenSet = false;
 
   int m_minInputFiles{0};
-  bool m_minInputFilesHasBeenSet = false;
 
   int m_deleteFileThreshold{0};
+  bool m_strategyHasBeenSet = false;
+  bool m_minInputFilesHasBeenSet = false;
   bool m_deleteFileThresholdHasBeenSet = false;
 };
 

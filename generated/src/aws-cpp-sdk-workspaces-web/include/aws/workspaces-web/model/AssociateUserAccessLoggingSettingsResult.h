@@ -77,12 +77,12 @@ class AssociateUserAccessLoggingSettingsResult {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_userAccessLoggingSettingsArn;
-  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalArnHasBeenSet = false;
+  bool m_userAccessLoggingSettingsArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

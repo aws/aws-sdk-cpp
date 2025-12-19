@@ -109,15 +109,15 @@ class ToolUseBlock {
   ///@}
  private:
   Aws::String m_toolUseId;
-  bool m_toolUseIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::Document m_input;
-  bool m_inputHasBeenSet = false;
 
   ToolUseType m_type{ToolUseType::NOT_SET};
+  bool m_toolUseIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

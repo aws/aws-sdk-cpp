@@ -70,9 +70,9 @@ class ExpenseCurrency {
   ///@}
  private:
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   double m_confidence{0.0};
+  bool m_codeHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
 };
 

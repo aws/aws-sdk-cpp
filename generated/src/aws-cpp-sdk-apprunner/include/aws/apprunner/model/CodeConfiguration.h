@@ -77,9 +77,9 @@ class CodeConfiguration {
   ///@}
  private:
   ConfigurationSource m_configurationSource{ConfigurationSource::NOT_SET};
-  bool m_configurationSourceHasBeenSet = false;
 
   CodeConfigurationValues m_codeConfigurationValues;
+  bool m_configurationSourceHasBeenSet = false;
   bool m_codeConfigurationValuesHasBeenSet = false;
 };
 

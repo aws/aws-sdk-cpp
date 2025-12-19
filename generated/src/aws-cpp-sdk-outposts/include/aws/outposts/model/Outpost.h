@@ -236,39 +236,39 @@ class Outpost {
   ///@}
  private:
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_lifeCycleStatus;
-  bool m_lifeCycleStatusHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_siteArn;
-  bool m_siteArnHasBeenSet = false;
 
   SupportedHardwareType m_supportedHardwareType{SupportedHardwareType::NOT_SET};
+  bool m_outpostIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_siteIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lifeCycleStatusHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_siteArnHasBeenSet = false;
   bool m_supportedHardwareTypeHasBeenSet = false;
 };
 

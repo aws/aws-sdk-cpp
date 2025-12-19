@@ -68,9 +68,9 @@ class GetDomainDeliverabilityCampaignResult {
   ///@}
  private:
   DomainDeliverabilityCampaign m_domainDeliverabilityCampaign;
-  bool m_domainDeliverabilityCampaignHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainDeliverabilityCampaignHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

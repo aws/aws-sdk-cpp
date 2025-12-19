@@ -188,27 +188,27 @@ class ScheduleRunRequest : public DeviceFarmRequest {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_devicePoolArn;
-  bool m_devicePoolArnHasBeenSet = false;
 
   DeviceSelectionConfiguration m_deviceSelectionConfiguration;
-  bool m_deviceSelectionConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ScheduleRunTest m_test;
-  bool m_testHasBeenSet = false;
 
   ScheduleRunConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ExecutionConfiguration m_executionConfiguration;
+  bool m_projectArnHasBeenSet = false;
+  bool m_appArnHasBeenSet = false;
+  bool m_devicePoolArnHasBeenSet = false;
+  bool m_deviceSelectionConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_testHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_executionConfigurationHasBeenSet = false;
 };
 

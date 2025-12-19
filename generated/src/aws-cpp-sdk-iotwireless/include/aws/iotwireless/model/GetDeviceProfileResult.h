@@ -129,21 +129,21 @@ class GetDeviceProfileResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LoRaWANDeviceProfile m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   SidewalkGetDeviceProfile m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_sidewalkHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

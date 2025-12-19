@@ -68,9 +68,9 @@ class Term {
   ///@}
  private:
   Aws::String m_sourceText;
-  bool m_sourceTextHasBeenSet = false;
 
   Aws::String m_targetText;
+  bool m_sourceTextHasBeenSet = false;
   bool m_targetTextHasBeenSet = false;
 };
 

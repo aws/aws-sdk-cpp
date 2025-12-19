@@ -128,18 +128,18 @@ class EnableAwsNetworkPerformanceMetricSubscriptionRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   MetricType m_metric{MetricType::NOT_SET};
-  bool m_metricHasBeenSet = false;
 
   StatisticType m_statistic{StatisticType::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_sourceHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_metricHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

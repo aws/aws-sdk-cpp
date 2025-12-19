@@ -169,24 +169,24 @@ class UpdateApplicationRequest : public ServerlessApplicationRepositoryRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_author;
-  bool m_authorHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_homePageUrl;
-  bool m_homePageUrlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::String m_readmeBody;
-  bool m_readmeBodyHasBeenSet = false;
 
   Aws::String m_readmeUrl;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_authorHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_homePageUrlHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_readmeBodyHasBeenSet = false;
   bool m_readmeUrlHasBeenSet = false;
 };
 

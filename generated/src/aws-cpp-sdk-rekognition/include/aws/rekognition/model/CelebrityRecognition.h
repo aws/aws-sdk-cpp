@@ -70,9 +70,9 @@ class CelebrityRecognition {
   ///@}
  private:
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   CelebrityDetail m_celebrity;
+  bool m_timestampHasBeenSet = false;
   bool m_celebrityHasBeenSet = false;
 };
 

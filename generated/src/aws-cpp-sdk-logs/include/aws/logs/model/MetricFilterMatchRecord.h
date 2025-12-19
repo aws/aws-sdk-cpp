@@ -91,12 +91,12 @@ class MetricFilterMatchRecord {
   ///@}
  private:
   long long m_eventNumber{0};
-  bool m_eventNumberHasBeenSet = false;
 
   Aws::String m_eventMessage;
-  bool m_eventMessageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_extractedValues;
+  bool m_eventNumberHasBeenSet = false;
+  bool m_eventMessageHasBeenSet = false;
   bool m_extractedValuesHasBeenSet = false;
 };
 

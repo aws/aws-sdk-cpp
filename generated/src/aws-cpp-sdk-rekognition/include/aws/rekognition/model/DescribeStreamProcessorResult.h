@@ -302,48 +302,48 @@ class DescribeStreamProcessorResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_streamProcessorArn;
-  bool m_streamProcessorArnHasBeenSet = false;
 
   StreamProcessorStatus m_status{StreamProcessorStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTimestamp{};
-  bool m_lastUpdateTimestampHasBeenSet = false;
 
   StreamProcessorInput m_input;
-  bool m_inputHasBeenSet = false;
 
   StreamProcessorOutput m_output;
-  bool m_outputHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   StreamProcessorSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   StreamProcessorNotificationChannel m_notificationChannel;
-  bool m_notificationChannelHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<RegionOfInterest> m_regionsOfInterest;
-  bool m_regionsOfInterestHasBeenSet = false;
 
   StreamProcessorDataSharingPreference m_dataSharingPreference;
-  bool m_dataSharingPreferenceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_streamProcessorArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_lastUpdateTimestampHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_notificationChannelHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_regionsOfInterestHasBeenSet = false;
+  bool m_dataSharingPreferenceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

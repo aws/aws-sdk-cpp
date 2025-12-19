@@ -200,30 +200,30 @@ class TransitGatewayMeteringPolicyRule {
   ///@}
  private:
   Aws::String m_sourceTransitGatewayAttachmentId;
-  bool m_sourceTransitGatewayAttachmentIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_sourceTransitGatewayAttachmentType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_sourceTransitGatewayAttachmentTypeHasBeenSet = false;
 
   Aws::String m_sourceCidrBlock;
-  bool m_sourceCidrBlockHasBeenSet = false;
 
   Aws::String m_sourcePortRange;
-  bool m_sourcePortRangeHasBeenSet = false;
 
   Aws::String m_destinationTransitGatewayAttachmentId;
-  bool m_destinationTransitGatewayAttachmentIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_destinationTransitGatewayAttachmentType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_destinationTransitGatewayAttachmentTypeHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_destinationPortRange;
-  bool m_destinationPortRangeHasBeenSet = false;
 
   Aws::String m_protocol;
+  bool m_sourceTransitGatewayAttachmentIdHasBeenSet = false;
+  bool m_sourceTransitGatewayAttachmentTypeHasBeenSet = false;
+  bool m_sourceCidrBlockHasBeenSet = false;
+  bool m_sourcePortRangeHasBeenSet = false;
+  bool m_destinationTransitGatewayAttachmentIdHasBeenSet = false;
+  bool m_destinationTransitGatewayAttachmentTypeHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_destinationPortRangeHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

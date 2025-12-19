@@ -93,12 +93,12 @@ class ModifyVerifiedAccessEndpointRdsOptions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_rdsEndpoint;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_portHasBeenSet = false;
   bool m_rdsEndpointHasBeenSet = false;
 };
 

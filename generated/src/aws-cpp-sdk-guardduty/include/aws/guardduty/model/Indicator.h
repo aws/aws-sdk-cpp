@@ -99,12 +99,12 @@ class Indicator {
   ///@}
  private:
   IndicatorType m_key{IndicatorType::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::String m_title;
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_titleHasBeenSet = false;
 };
 

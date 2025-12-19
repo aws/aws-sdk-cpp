@@ -102,15 +102,15 @@ class DescribeApplicationFleetAssociationsRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_fleetName;
-  bool m_fleetNameHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_fleetNameHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

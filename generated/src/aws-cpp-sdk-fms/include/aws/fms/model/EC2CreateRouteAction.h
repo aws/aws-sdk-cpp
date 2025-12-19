@@ -163,24 +163,24 @@ class EC2CreateRouteAction {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_destinationCidrBlock;
-  bool m_destinationCidrBlockHasBeenSet = false;
 
   Aws::String m_destinationPrefixListId;
-  bool m_destinationPrefixListIdHasBeenSet = false;
 
   Aws::String m_destinationIpv6CidrBlock;
-  bool m_destinationIpv6CidrBlockHasBeenSet = false;
 
   ActionTarget m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   ActionTarget m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   ActionTarget m_routeTableId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_destinationCidrBlockHasBeenSet = false;
+  bool m_destinationPrefixListIdHasBeenSet = false;
+  bool m_destinationIpv6CidrBlockHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_gatewayIdHasBeenSet = false;
   bool m_routeTableIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class WebACLHasOutOfScopeResourcesViolation {
   ///@}
  private:
   Aws::String m_webACLArn;
-  bool m_webACLArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outOfScopeResourceList;
+  bool m_webACLArnHasBeenSet = false;
   bool m_outOfScopeResourceListHasBeenSet = false;
 };
 

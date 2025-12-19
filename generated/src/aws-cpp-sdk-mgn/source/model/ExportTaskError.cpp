@@ -18,13 +18,13 @@ namespace Model {
 ExportTaskError::ExportTaskError(JsonView jsonValue) { *this = jsonValue; }
 
 ExportTaskError& ExportTaskError::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorData")) {
-    m_errorData = jsonValue.GetObject("errorData");
-    m_errorDataHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("errorDateTime")) {
     m_errorDateTime = jsonValue.GetString("errorDateTime");
     m_errorDateTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorData")) {
+    m_errorData = jsonValue.GetObject("errorData");
+    m_errorDataHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ ExportTaskError& ExportTaskError::operator=(JsonView jsonValue) {
 JsonValue ExportTaskError::Jsonize() const {
   JsonValue payload;
 
-  if (m_errorDataHasBeenSet) {
-    payload.WithObject("errorData", m_errorData.Jsonize());
-  }
-
   if (m_errorDateTimeHasBeenSet) {
     payload.WithString("errorDateTime", m_errorDateTime);
+  }
+
+  if (m_errorDataHasBeenSet) {
+    payload.WithObject("errorData", m_errorData.Jsonize());
   }
 
   return payload;

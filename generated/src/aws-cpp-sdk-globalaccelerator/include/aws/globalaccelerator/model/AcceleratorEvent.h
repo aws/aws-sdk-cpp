@@ -77,9 +77,9 @@ class AcceleratorEvent {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_messageHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

@@ -257,39 +257,39 @@ class EndpointProperties {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   EndpointStatus m_status{EndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_desiredModelArn;
-  bool m_desiredModelArnHasBeenSet = false;
 
   int m_desiredInferenceUnits{0};
-  bool m_desiredInferenceUnitsHasBeenSet = false;
 
   int m_currentInferenceUnits{0};
-  bool m_currentInferenceUnitsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_desiredDataAccessRoleArn;
-  bool m_desiredDataAccessRoleArnHasBeenSet = false;
 
   Aws::String m_flywheelArn;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_desiredModelArnHasBeenSet = false;
+  bool m_desiredInferenceUnitsHasBeenSet = false;
+  bool m_currentInferenceUnitsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_desiredDataAccessRoleArnHasBeenSet = false;
   bool m_flywheelArnHasBeenSet = false;
 };
 

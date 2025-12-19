@@ -108,15 +108,15 @@ class ListResourceTagsResult {
   ///@}
  private:
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   bool m_truncated{false};
-  bool m_truncatedHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tagsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_truncatedHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

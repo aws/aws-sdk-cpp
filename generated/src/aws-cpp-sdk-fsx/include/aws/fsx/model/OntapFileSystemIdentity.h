@@ -89,12 +89,12 @@ class OntapFileSystemIdentity {
   ///@}
  private:
   OntapFileSystemUserType m_type{OntapFileSystemUserType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   OntapUnixFileSystemUser m_unixUser;
-  bool m_unixUserHasBeenSet = false;
 
   OntapWindowsFileSystemUser m_windowsUser;
+  bool m_typeHasBeenSet = false;
+  bool m_unixUserHasBeenSet = false;
   bool m_windowsUserHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class CreateScalingPlanRequest : public AutoScalingPlansRequest {
   ///@}
  private:
   Aws::String m_scalingPlanName;
-  bool m_scalingPlanNameHasBeenSet = false;
 
   ApplicationSource m_applicationSource;
-  bool m_applicationSourceHasBeenSet = false;
 
   Aws::Vector<ScalingInstruction> m_scalingInstructions;
+  bool m_scalingPlanNameHasBeenSet = false;
+  bool m_applicationSourceHasBeenSet = false;
   bool m_scalingInstructionsHasBeenSet = false;
 };
 

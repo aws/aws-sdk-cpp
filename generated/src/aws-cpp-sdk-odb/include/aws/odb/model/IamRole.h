@@ -36,7 +36,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM service role.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+   * Management (IAM) service role.</p>
    */
   inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
   inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -54,7 +55,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>The current status of the IAM service role.</p>
+   * <p>The current status of the Amazon Web Services Identity and Access Management
+   * (IAM) service role.</p>
    */
   inline IamRoleStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -70,8 +72,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>Additional information about the current status of the IAM service role, if
-   * applicable.</p>
+   * <p>Additional information about the current status of the Amazon Web Services
+   * Identity and Access Management (IAM) service role, if applicable.</p>
    */
   inline const Aws::String& GetStatusReason() const { return m_statusReason; }
   inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
@@ -89,8 +91,8 @@ class IamRole {
 
   ///@{
   /**
-   * <p>The Amazon Web Services integration configuration settings for the IAM
-   * service role.</p>
+   * <p>The Amazon Web Services integration configuration settings for the Amazon Web
+   * Services Identity and Access Management (IAM) service role.</p>
    */
   inline SupportedAwsIntegration GetAwsIntegration() const { return m_awsIntegration; }
   inline bool AwsIntegrationHasBeenSet() const { return m_awsIntegrationHasBeenSet; }
@@ -105,15 +107,15 @@ class IamRole {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   IamRoleStatus m_status{IamRoleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   SupportedAwsIntegration m_awsIntegration{SupportedAwsIntegration::NOT_SET};
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_awsIntegrationHasBeenSet = false;
 };
 

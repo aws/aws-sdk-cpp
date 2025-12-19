@@ -101,15 +101,15 @@ class CreateFieldRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   FieldType m_type{FieldType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_domainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

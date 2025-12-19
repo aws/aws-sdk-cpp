@@ -87,12 +87,12 @@ class SearchTransitGatewayMulticastGroupsResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayMulticastGroup> m_multicastGroups;
-  bool m_multicastGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_multicastGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

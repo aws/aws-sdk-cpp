@@ -87,12 +87,12 @@ class UpdateBackendAuthVerificationMessageConfig {
   ///@}
  private:
   DeliveryMethod m_deliveryMethod{DeliveryMethod::NOT_SET};
-  bool m_deliveryMethodHasBeenSet = false;
 
   EmailSettings m_emailSettings;
-  bool m_emailSettingsHasBeenSet = false;
 
   SmsSettings m_smsSettings;
+  bool m_deliveryMethodHasBeenSet = false;
+  bool m_emailSettingsHasBeenSet = false;
   bool m_smsSettingsHasBeenSet = false;
 };
 

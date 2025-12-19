@@ -101,15 +101,15 @@ class GetConsolidatedReportRequest : public WellArchitectedRequest {
   ///@}
  private:
   ReportFormat m_format{ReportFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   bool m_includeSharedResources{false};
-  bool m_includeSharedResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_formatHasBeenSet = false;
+  bool m_includeSharedResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

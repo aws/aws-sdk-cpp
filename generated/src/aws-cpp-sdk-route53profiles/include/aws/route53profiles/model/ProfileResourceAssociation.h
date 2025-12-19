@@ -236,36 +236,36 @@ class ProfileResourceAssociation {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_modificationTime{};
-  bool m_modificationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceProperties;
-  bool m_resourcePropertiesHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   ProfileStatus m_status{ProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourcePropertiesHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class GetAutomatedReasoningPolicyTestCaseRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_testCaseId;
+  bool m_policyArnHasBeenSet = false;
   bool m_testCaseIdHasBeenSet = false;
 };
 

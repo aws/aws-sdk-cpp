@@ -113,15 +113,15 @@ class SignalInformation {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   long long m_maxSampleCount{0};
-  bool m_maxSampleCountHasBeenSet = false;
 
   long long m_minimumSamplingIntervalMs{0};
-  bool m_minimumSamplingIntervalMsHasBeenSet = false;
 
   Aws::String m_dataPartitionId;
+  bool m_nameHasBeenSet = false;
+  bool m_maxSampleCountHasBeenSet = false;
+  bool m_minimumSamplingIntervalMsHasBeenSet = false;
   bool m_dataPartitionIdHasBeenSet = false;
 };
 

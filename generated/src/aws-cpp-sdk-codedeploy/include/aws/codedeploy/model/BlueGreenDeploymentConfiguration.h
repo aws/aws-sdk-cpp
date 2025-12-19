@@ -94,12 +94,12 @@ class BlueGreenDeploymentConfiguration {
   ///@}
  private:
   BlueInstanceTerminationOption m_terminateBlueInstancesOnDeploymentSuccess;
-  bool m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = false;
 
   DeploymentReadyOption m_deploymentReadyOption;
-  bool m_deploymentReadyOptionHasBeenSet = false;
 
   GreenFleetProvisioningOption m_greenFleetProvisioningOption;
+  bool m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = false;
+  bool m_deploymentReadyOptionHasBeenSet = false;
   bool m_greenFleetProvisioningOptionHasBeenSet = false;
 };
 

@@ -30,23 +30,6 @@ class UpdateConnectorResult {
 
   ///@{
   /**
-   * <p>Connector arn.</p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  UpdateConnectorResult& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Connector ID.</p>
    */
   inline const Aws::String& GetConnectorID() const { return m_connectorID; }
@@ -81,23 +64,6 @@ class UpdateConnectorResult {
 
   ///@{
   /**
-   * <p>Connector SSM command config.</p>
-   */
-  inline const ConnectorSsmCommandConfig& GetSsmCommandConfig() const { return m_ssmCommandConfig; }
-  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
-  void SetSsmCommandConfig(SsmCommandConfigT&& value) {
-    m_ssmCommandConfigHasBeenSet = true;
-    m_ssmCommandConfig = std::forward<SsmCommandConfigT>(value);
-  }
-  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
-  UpdateConnectorResult& WithSsmCommandConfig(SsmCommandConfigT&& value) {
-    SetSsmCommandConfig(std::forward<SsmCommandConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Connector SSM instance ID.</p>
    */
   inline const Aws::String& GetSsmInstanceID() const { return m_ssmInstanceID; }
@@ -109,6 +75,23 @@ class UpdateConnectorResult {
   template <typename SsmInstanceIDT = Aws::String>
   UpdateConnectorResult& WithSsmInstanceID(SsmInstanceIDT&& value) {
     SetSsmInstanceID(std::forward<SsmInstanceIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Connector arn.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  UpdateConnectorResult& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -137,6 +120,23 @@ class UpdateConnectorResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Connector SSM command config.</p>
+   */
+  inline const ConnectorSsmCommandConfig& GetSsmCommandConfig() const { return m_ssmCommandConfig; }
+  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
+  void SetSsmCommandConfig(SsmCommandConfigT&& value) {
+    m_ssmCommandConfigHasBeenSet = true;
+    m_ssmCommandConfig = std::forward<SsmCommandConfigT>(value);
+  }
+  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
+  UpdateConnectorResult& WithSsmCommandConfig(SsmCommandConfigT&& value) {
+    SetSsmCommandConfig(std::forward<SsmCommandConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -151,25 +151,25 @@ class UpdateConnectorResult {
   }
   ///@}
  private:
-  Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
-
   Aws::String m_connectorID;
-  bool m_connectorIDHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
-  ConnectorSsmCommandConfig m_ssmCommandConfig;
-  bool m_ssmCommandConfigHasBeenSet = false;
 
   Aws::String m_ssmInstanceID;
-  bool m_ssmInstanceIDHasBeenSet = false;
+
+  Aws::String m_arn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
+
+  ConnectorSsmCommandConfig m_ssmCommandConfig;
 
   Aws::String m_requestId;
+  bool m_connectorIDHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ssmInstanceIDHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ssmCommandConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

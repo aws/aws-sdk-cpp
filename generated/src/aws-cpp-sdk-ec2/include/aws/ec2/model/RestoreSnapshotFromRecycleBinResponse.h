@@ -228,39 +228,39 @@ class RestoreSnapshotFromRecycleBinResponse {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_progress;
-  bool m_progressHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   SnapshotState m_state{SnapshotState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   int m_volumeSize{0};
-  bool m_volumeSizeHasBeenSet = false;
 
   SSEType m_sseType{SSEType::NOT_SET};
-  bool m_sseTypeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_progressHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_sseTypeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

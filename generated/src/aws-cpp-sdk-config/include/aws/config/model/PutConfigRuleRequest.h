@@ -75,9 +75,9 @@ class PutConfigRuleRequest : public ConfigServiceRequest {
   ///@}
  private:
   ConfigRule m_configRule;
-  bool m_configRuleHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_configRuleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

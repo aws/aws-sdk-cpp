@@ -70,9 +70,9 @@ class SigningConfiguration {
   ///@}
  private:
   EncryptionAlgorithmOptions m_encryptionAlgorithmOptions;
-  bool m_encryptionAlgorithmOptionsHasBeenSet = false;
 
   HashAlgorithmOptions m_hashAlgorithmOptions;
+  bool m_encryptionAlgorithmOptionsHasBeenSet = false;
   bool m_hashAlgorithmOptionsHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class RedshiftProvisionedAuthConfiguration {
   ///@}
  private:
   RedshiftProvisionedAuthType m_type{RedshiftProvisionedAuthType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_databaseUser;
-  bool m_databaseUserHasBeenSet = false;
 
   Aws::String m_usernamePasswordSecretArn;
+  bool m_typeHasBeenSet = false;
+  bool m_databaseUserHasBeenSet = false;
   bool m_usernamePasswordSecretArnHasBeenSet = false;
 };
 

@@ -100,15 +100,15 @@ class ListThemeAliasesResult {
   ///@}
  private:
   Aws::Vector<ThemeAlias> m_themeAliasList;
-  bool m_themeAliasListHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_themeAliasListHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

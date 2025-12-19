@@ -78,9 +78,9 @@ class InboundConnectionStatus {
   ///@}
  private:
   InboundConnectionStatusCode m_statusCode{InboundConnectionStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

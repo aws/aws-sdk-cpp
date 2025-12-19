@@ -93,12 +93,12 @@ class PublishStateMachineVersionRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_stateMachineArn;
-  bool m_stateMachineArnHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_stateMachineArnHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

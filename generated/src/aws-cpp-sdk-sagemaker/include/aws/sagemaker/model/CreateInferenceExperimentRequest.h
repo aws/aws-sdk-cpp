@@ -297,36 +297,36 @@ class CreateInferenceExperimentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InferenceExperimentType m_type{InferenceExperimentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   InferenceExperimentSchedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   Aws::Vector<ModelVariantConfig> m_modelVariants;
-  bool m_modelVariantsHasBeenSet = false;
 
   InferenceExperimentDataStorageConfig m_dataStorageConfig;
-  bool m_dataStorageConfigHasBeenSet = false;
 
   ShadowModeConfig m_shadowModeConfig;
-  bool m_shadowModeConfigHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_modelVariantsHasBeenSet = false;
+  bool m_dataStorageConfigHasBeenSet = false;
+  bool m_shadowModeConfigHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

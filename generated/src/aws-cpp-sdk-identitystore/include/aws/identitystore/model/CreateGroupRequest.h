@@ -88,12 +88,12 @@ class CreateGroupRequest : public IdentityStoreRequest {
   ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

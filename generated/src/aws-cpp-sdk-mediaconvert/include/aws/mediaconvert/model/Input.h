@@ -685,84 +685,84 @@ class Input {
   ///@}
  private:
   AdvancedInputFilter m_advancedInputFilter{AdvancedInputFilter::NOT_SET};
-  bool m_advancedInputFilterHasBeenSet = false;
 
   AdvancedInputFilterSettings m_advancedInputFilterSettings;
-  bool m_advancedInputFilterSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, AudioSelectorGroup> m_audioSelectorGroups;
-  bool m_audioSelectorGroupsHasBeenSet = false;
 
   Aws::Map<Aws::String, AudioSelector> m_audioSelectors;
-  bool m_audioSelectorsHasBeenSet = false;
 
   Aws::Map<Aws::String, CaptionSelector> m_captionSelectors;
-  bool m_captionSelectorsHasBeenSet = false;
 
   Rectangle m_crop;
-  bool m_cropHasBeenSet = false;
 
   InputDeblockFilter m_deblockFilter{InputDeblockFilter::NOT_SET};
-  bool m_deblockFilterHasBeenSet = false;
 
   InputDecryptionSettings m_decryptionSettings;
-  bool m_decryptionSettingsHasBeenSet = false;
 
   InputDenoiseFilter m_denoiseFilter{InputDenoiseFilter::NOT_SET};
-  bool m_denoiseFilterHasBeenSet = false;
 
   Aws::String m_dolbyVisionMetadataXml;
-  bool m_dolbyVisionMetadataXmlHasBeenSet = false;
 
   Aws::Map<Aws::String, DynamicAudioSelector> m_dynamicAudioSelectors;
-  bool m_dynamicAudioSelectorsHasBeenSet = false;
 
   Aws::String m_fileInput;
-  bool m_fileInputHasBeenSet = false;
 
   InputFilterEnable m_filterEnable{InputFilterEnable::NOT_SET};
-  bool m_filterEnableHasBeenSet = false;
 
   int m_filterStrength{0};
-  bool m_filterStrengthHasBeenSet = false;
 
   ImageInserter m_imageInserter;
-  bool m_imageInserterHasBeenSet = false;
 
   Aws::Vector<InputClipping> m_inputClippings;
-  bool m_inputClippingsHasBeenSet = false;
 
   InputScanType m_inputScanType{InputScanType::NOT_SET};
-  bool m_inputScanTypeHasBeenSet = false;
 
   Rectangle m_position;
-  bool m_positionHasBeenSet = false;
 
   int m_programNumber{0};
-  bool m_programNumberHasBeenSet = false;
 
   InputPsiControl m_psiControl{InputPsiControl::NOT_SET};
-  bool m_psiControlHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supplementalImps;
-  bool m_supplementalImpsHasBeenSet = false;
 
   InputTamsSettings m_tamsSettings;
-  bool m_tamsSettingsHasBeenSet = false;
 
   InputTimecodeSource m_timecodeSource{InputTimecodeSource::NOT_SET};
-  bool m_timecodeSourceHasBeenSet = false;
 
   Aws::String m_timecodeStart;
-  bool m_timecodeStartHasBeenSet = false;
 
   InputVideoGenerator m_videoGenerator;
-  bool m_videoGeneratorHasBeenSet = false;
 
   Aws::Vector<VideoOverlay> m_videoOverlays;
-  bool m_videoOverlaysHasBeenSet = false;
 
   VideoSelector m_videoSelector;
+  bool m_advancedInputFilterHasBeenSet = false;
+  bool m_advancedInputFilterSettingsHasBeenSet = false;
+  bool m_audioSelectorGroupsHasBeenSet = false;
+  bool m_audioSelectorsHasBeenSet = false;
+  bool m_captionSelectorsHasBeenSet = false;
+  bool m_cropHasBeenSet = false;
+  bool m_deblockFilterHasBeenSet = false;
+  bool m_decryptionSettingsHasBeenSet = false;
+  bool m_denoiseFilterHasBeenSet = false;
+  bool m_dolbyVisionMetadataXmlHasBeenSet = false;
+  bool m_dynamicAudioSelectorsHasBeenSet = false;
+  bool m_fileInputHasBeenSet = false;
+  bool m_filterEnableHasBeenSet = false;
+  bool m_filterStrengthHasBeenSet = false;
+  bool m_imageInserterHasBeenSet = false;
+  bool m_inputClippingsHasBeenSet = false;
+  bool m_inputScanTypeHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_programNumberHasBeenSet = false;
+  bool m_psiControlHasBeenSet = false;
+  bool m_supplementalImpsHasBeenSet = false;
+  bool m_tamsSettingsHasBeenSet = false;
+  bool m_timecodeSourceHasBeenSet = false;
+  bool m_timecodeStartHasBeenSet = false;
+  bool m_videoGeneratorHasBeenSet = false;
+  bool m_videoOverlaysHasBeenSet = false;
   bool m_videoSelectorHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class TimerCanceledEventAttributes {
   ///@}
  private:
   Aws::String m_timerId;
-  bool m_timerIdHasBeenSet = false;
 
   long long m_startedEventId{0};
-  bool m_startedEventIdHasBeenSet = false;
 
   long long m_decisionTaskCompletedEventId{0};
+  bool m_timerIdHasBeenSet = false;
+  bool m_startedEventIdHasBeenSet = false;
   bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 };
 

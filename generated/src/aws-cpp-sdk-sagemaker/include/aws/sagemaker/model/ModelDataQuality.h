@@ -69,9 +69,9 @@ class ModelDataQuality {
   ///@}
  private:
   MetricsSource m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   MetricsSource m_constraints;
+  bool m_statisticsHasBeenSet = false;
   bool m_constraintsHasBeenSet = false;
 };
 

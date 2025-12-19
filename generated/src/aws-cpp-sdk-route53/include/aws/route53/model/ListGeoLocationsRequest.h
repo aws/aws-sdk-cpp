@@ -132,15 +132,15 @@ class ListGeoLocationsRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_startContinentCode;
-  bool m_startContinentCodeHasBeenSet = false;
 
   Aws::String m_startCountryCode;
-  bool m_startCountryCodeHasBeenSet = false;
 
   Aws::String m_startSubdivisionCode;
-  bool m_startSubdivisionCodeHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_startContinentCodeHasBeenSet = false;
+  bool m_startCountryCodeHasBeenSet = false;
+  bool m_startSubdivisionCodeHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

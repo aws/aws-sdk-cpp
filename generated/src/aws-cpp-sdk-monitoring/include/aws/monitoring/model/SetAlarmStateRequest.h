@@ -29,10 +29,8 @@ class SetAlarmStateRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The name of the alarm.</p>
@@ -107,15 +105,15 @@ class SetAlarmStateRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   StateValue m_stateValue{StateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_stateReasonData;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
   bool m_stateReasonDataHasBeenSet = false;
 };
 

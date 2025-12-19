@@ -66,9 +66,9 @@ class ResourcesStringFilter {
   ///@}
  private:
   ResourcesStringField m_fieldName{ResourcesStringField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   StringFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

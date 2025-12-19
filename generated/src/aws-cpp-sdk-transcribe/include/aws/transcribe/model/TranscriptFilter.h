@@ -168,21 +168,21 @@ class TranscriptFilter {
   ///@}
  private:
   TranscriptFilterType m_transcriptFilterType{TranscriptFilterType::NOT_SET};
-  bool m_transcriptFilterTypeHasBeenSet = false;
 
   AbsoluteTimeRange m_absoluteTimeRange;
-  bool m_absoluteTimeRangeHasBeenSet = false;
 
   RelativeTimeRange m_relativeTimeRange;
-  bool m_relativeTimeRangeHasBeenSet = false;
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
-  bool m_participantRoleHasBeenSet = false;
 
   bool m_negate{false};
-  bool m_negateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targets;
+  bool m_transcriptFilterTypeHasBeenSet = false;
+  bool m_absoluteTimeRangeHasBeenSet = false;
+  bool m_relativeTimeRangeHasBeenSet = false;
+  bool m_participantRoleHasBeenSet = false;
+  bool m_negateHasBeenSet = false;
   bool m_targetsHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class AwsEc2LaunchTemplateDataInstanceMarketOptionsDetails {
   ///@}
  private:
   Aws::String m_marketType;
-  bool m_marketTypeHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetails m_spotOptions;
+  bool m_marketTypeHasBeenSet = false;
   bool m_spotOptionsHasBeenSet = false;
 };
 

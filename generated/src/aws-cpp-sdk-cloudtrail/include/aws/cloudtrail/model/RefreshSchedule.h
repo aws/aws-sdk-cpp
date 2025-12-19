@@ -89,12 +89,12 @@ class RefreshSchedule {
   ///@}
  private:
   RefreshScheduleFrequency m_frequency;
-  bool m_frequencyHasBeenSet = false;
 
   RefreshScheduleStatus m_status{RefreshScheduleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_timeOfDay;
+  bool m_frequencyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_timeOfDayHasBeenSet = false;
 };
 

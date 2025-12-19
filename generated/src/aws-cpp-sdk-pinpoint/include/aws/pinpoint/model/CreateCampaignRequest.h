@@ -65,9 +65,9 @@ class CreateCampaignRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   WriteCampaignRequest m_writeCampaignRequest;
+  bool m_applicationIdHasBeenSet = false;
   bool m_writeCampaignRequestHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class AssociateWebACLRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_webACLArn;
-  bool m_webACLArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_webACLArnHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

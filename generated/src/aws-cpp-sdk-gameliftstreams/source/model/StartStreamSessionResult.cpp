@@ -85,6 +85,10 @@ StartStreamSessionResult& StartStreamSessionResult::operator=(const Aws::AmazonW
     }
     m_additionalEnvironmentVariablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PerformanceStatsConfiguration")) {
+    m_performanceStatsConfiguration = jsonValue.GetObject("PerformanceStatsConfiguration");
+    m_performanceStatsConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("LogFileLocationUri")) {
     m_logFileLocationUri = jsonValue.GetString("LogFileLocationUri");
     m_logFileLocationUriHasBeenSet = true;

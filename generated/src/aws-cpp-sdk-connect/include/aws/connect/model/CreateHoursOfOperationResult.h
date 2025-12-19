@@ -76,12 +76,12 @@ class CreateHoursOfOperationResult {
   ///@}
  private:
   Aws::String m_hoursOfOperationId;
-  bool m_hoursOfOperationIdHasBeenSet = false;
 
   Aws::String m_hoursOfOperationArn;
-  bool m_hoursOfOperationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hoursOfOperationIdHasBeenSet = false;
+  bool m_hoursOfOperationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

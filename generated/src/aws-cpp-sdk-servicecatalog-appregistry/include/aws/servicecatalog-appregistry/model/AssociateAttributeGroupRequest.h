@@ -66,9 +66,9 @@ class AssociateAttributeGroupRequest : public AppRegistryRequest {
   ///@}
  private:
   Aws::String m_application;
-  bool m_applicationHasBeenSet = false;
 
   Aws::String m_attributeGroup;
+  bool m_applicationHasBeenSet = false;
   bool m_attributeGroupHasBeenSet = false;
 };
 

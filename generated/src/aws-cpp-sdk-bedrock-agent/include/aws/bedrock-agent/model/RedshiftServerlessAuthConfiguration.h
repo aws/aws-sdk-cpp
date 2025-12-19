@@ -70,9 +70,9 @@ class RedshiftServerlessAuthConfiguration {
   ///@}
  private:
   RedshiftServerlessAuthType m_type{RedshiftServerlessAuthType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_usernamePasswordSecretArn;
+  bool m_typeHasBeenSet = false;
   bool m_usernamePasswordSecretArnHasBeenSet = false;
 };
 

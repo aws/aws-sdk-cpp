@@ -69,9 +69,9 @@ class StartImageBuilderRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_appstreamAgentVersion;
+  bool m_nameHasBeenSet = false;
   bool m_appstreamAgentVersionHasBeenSet = false;
 };
 

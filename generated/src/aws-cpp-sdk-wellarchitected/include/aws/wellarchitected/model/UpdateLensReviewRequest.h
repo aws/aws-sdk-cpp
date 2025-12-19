@@ -122,18 +122,18 @@ class UpdateLensReviewRequest : public WellArchitectedRequest {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensNotes;
-  bool m_lensNotesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_pillarNotes;
-  bool m_pillarNotesHasBeenSet = false;
 
   JiraSelectedQuestionConfiguration m_jiraConfiguration;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensNotesHasBeenSet = false;
+  bool m_pillarNotesHasBeenSet = false;
   bool m_jiraConfigurationHasBeenSet = false;
 };
 

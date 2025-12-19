@@ -135,18 +135,18 @@ class JourneySMSMessage {
   ///@}
  private:
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   Aws::String m_originationNumber;
-  bool m_originationNumberHasBeenSet = false;
 
   Aws::String m_senderId;
-  bool m_senderIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_templateId;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_originationNumberHasBeenSet = false;
+  bool m_senderIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
   bool m_templateIdHasBeenSet = false;
 };
 

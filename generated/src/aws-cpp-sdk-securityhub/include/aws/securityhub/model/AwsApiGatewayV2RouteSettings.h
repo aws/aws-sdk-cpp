@@ -121,18 +121,18 @@ class AwsApiGatewayV2RouteSettings {
   ///@}
  private:
   bool m_detailedMetricsEnabled{false};
-  bool m_detailedMetricsEnabledHasBeenSet = false;
 
   Aws::String m_loggingLevel;
-  bool m_loggingLevelHasBeenSet = false;
 
   bool m_dataTraceEnabled{false};
-  bool m_dataTraceEnabledHasBeenSet = false;
 
   int m_throttlingBurstLimit{0};
-  bool m_throttlingBurstLimitHasBeenSet = false;
 
   double m_throttlingRateLimit{0.0};
+  bool m_detailedMetricsEnabledHasBeenSet = false;
+  bool m_loggingLevelHasBeenSet = false;
+  bool m_dataTraceEnabledHasBeenSet = false;
+  bool m_throttlingBurstLimitHasBeenSet = false;
   bool m_throttlingRateLimitHasBeenSet = false;
 };
 

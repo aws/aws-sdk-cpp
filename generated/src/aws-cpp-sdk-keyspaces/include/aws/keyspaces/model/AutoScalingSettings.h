@@ -141,15 +141,15 @@ class AutoScalingSettings {
   ///@}
  private:
   bool m_autoScalingDisabled{false};
-  bool m_autoScalingDisabledHasBeenSet = false;
 
   long long m_minimumUnits{0};
-  bool m_minimumUnitsHasBeenSet = false;
 
   long long m_maximumUnits{0};
-  bool m_maximumUnitsHasBeenSet = false;
 
   AutoScalingPolicy m_scalingPolicy;
+  bool m_autoScalingDisabledHasBeenSet = false;
+  bool m_minimumUnitsHasBeenSet = false;
+  bool m_maximumUnitsHasBeenSet = false;
   bool m_scalingPolicyHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class ComputeCapacity {
   ///@}
  private:
   int m_desiredInstances{0};
-  bool m_desiredInstancesHasBeenSet = false;
 
   int m_desiredSessions{0};
+  bool m_desiredInstancesHasBeenSet = false;
   bool m_desiredSessionsHasBeenSet = false;
 };
 

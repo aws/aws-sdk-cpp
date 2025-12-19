@@ -67,9 +67,9 @@ class DeleteCustomDomainAssociationRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_customDomainNameHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

@@ -92,9 +92,9 @@ class ObjectTypeKey {
   ///@}
  private:
   Aws::Vector<StandardIdentifier> m_standardIdentifiers;
-  bool m_standardIdentifiersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_fieldNames;
+  bool m_standardIdentifiersHasBeenSet = false;
   bool m_fieldNamesHasBeenSet = false;
 };
 

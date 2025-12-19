@@ -84,9 +84,9 @@ class FilledMapAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_geospatial;
-  bool m_geospatialHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
+  bool m_geospatialHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

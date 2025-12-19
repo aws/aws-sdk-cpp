@@ -72,9 +72,9 @@ class OptimizationJobModelSource {
   ///@}
  private:
   OptimizationJobModelSourceS3 m_s3;
-  bool m_s3HasBeenSet = false;
 
   OptimizationSageMakerModel m_sageMakerModel;
+  bool m_s3HasBeenSet = false;
   bool m_sageMakerModelHasBeenSet = false;
 };
 

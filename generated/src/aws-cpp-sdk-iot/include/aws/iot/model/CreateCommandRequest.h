@@ -11,6 +11,7 @@
 #include <aws/iot/model/CommandNamespace.h>
 #include <aws/iot/model/CommandParameter.h>
 #include <aws/iot/model/CommandPayload.h>
+#include <aws/iot/model/CommandPreprocessor.h>
 #include <aws/iot/model/Tag.h>
 
 #include <utility>
@@ -108,11 +109,10 @@ class CreateCommandRequest : public IoTRequest {
 
   ///@{
   /**
-   * <p>The payload object for the command. You must specify this information when
-   * using the <code>AWS-IoT</code> namespace.</p> <p>You can upload a static payload
-   * file from your local storage that contains the instructions for the device to
-   * process. The payload file can use any format. To make sure that the device
-   * correctly interprets the payload, we recommend you to specify the payload
+   * <p>The payload object for the static command.</p> <p>You can upload a static
+   * payload file from your local storage that contains the instructions for the
+   * device to process. The payload file can use any format. To make sure that the
+   * device correctly interprets the payload, we recommend you to specify the payload
    * content type.</p>
    */
   inline const CommandPayload& GetPayload() const { return m_payload; }
@@ -131,11 +131,50 @@ class CreateCommandRequest : public IoTRequest {
 
   ///@{
   /**
-   * <p>A list of parameters that are required by the
-   * <code>StartCommandExecution</code> API. These parameters need to be specified
-   * only when using the <code>AWS-IoT-FleetWise</code> namespace. You can either
-   * specify them here or when running the command using the
-   * <code>StartCommandExecution</code> API.</p>
+   * <p>The payload template for the dynamic command.</p>  <p>This parameter is
+   * required for dynamic commands where the command execution placeholders are
+   * supplied either from <code>mandatoryParameters</code> or when
+   * <code>StartCommandExecution</code> is invoked.</p>
+   */
+  inline const Aws::String& GetPayloadTemplate() const { return m_payloadTemplate; }
+  inline bool PayloadTemplateHasBeenSet() const { return m_payloadTemplateHasBeenSet; }
+  template <typename PayloadTemplateT = Aws::String>
+  void SetPayloadTemplate(PayloadTemplateT&& value) {
+    m_payloadTemplateHasBeenSet = true;
+    m_payloadTemplate = std::forward<PayloadTemplateT>(value);
+  }
+  template <typename PayloadTemplateT = Aws::String>
+  CreateCommandRequest& WithPayloadTemplate(PayloadTemplateT&& value) {
+    SetPayloadTemplate(std::forward<PayloadTemplateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration that determines how <code>payloadTemplate</code> is processed
+   * to generate command execution payload.</p>  <p>This parameter is required
+   * for dynamic commands, along with <code>payloadTemplate</code>, and
+   * <code>mandatoryParameters</code>.</p>
+   */
+  inline const CommandPreprocessor& GetPreprocessor() const { return m_preprocessor; }
+  inline bool PreprocessorHasBeenSet() const { return m_preprocessorHasBeenSet; }
+  template <typename PreprocessorT = CommandPreprocessor>
+  void SetPreprocessor(PreprocessorT&& value) {
+    m_preprocessorHasBeenSet = true;
+    m_preprocessor = std::forward<PreprocessorT>(value);
+  }
+  template <typename PreprocessorT = CommandPreprocessor>
+  CreateCommandRequest& WithPreprocessor(PreprocessorT&& value) {
+    SetPreprocessor(std::forward<PreprocessorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of parameters that are used by <code>StartCommandExecution</code> API
+   * for execution payload generation.</p>
    */
   inline const Aws::Vector<CommandParameter>& GetMandatoryParameters() const { return m_mandatoryParameters; }
   inline bool MandatoryParametersHasBeenSet() const { return m_mandatoryParametersHasBeenSet; }
@@ -162,7 +201,7 @@ class CreateCommandRequest : public IoTRequest {
    * <p>The IAM role that you must provide when using the
    * <code>AWS-IoT-FleetWise</code> namespace. The role grants IoT Device Management
    * the permission to access IoT FleetWise resources for generating the payload for
-   * the command. This field is not required when you use the <code>AWS-IoT</code>
+   * the command. This field is not supported when you use the <code>AWS-IoT</code>
    * namespace.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
@@ -204,27 +243,33 @@ class CreateCommandRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   CommandNamespace m_namespace{CommandNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   CommandPayload m_payload;
-  bool m_payloadHasBeenSet = false;
+
+  Aws::String m_payloadTemplate;
+
+  CommandPreprocessor m_preprocessor;
 
   Aws::Vector<CommandParameter> m_mandatoryParameters;
-  bool m_mandatoryParametersHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_commandIdHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_payloadTemplateHasBeenSet = false;
+  bool m_preprocessorHasBeenSet = false;
+  bool m_mandatoryParametersHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

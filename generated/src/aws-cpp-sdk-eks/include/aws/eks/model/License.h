@@ -70,9 +70,9 @@ class License {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_token;
+  bool m_idHasBeenSet = false;
   bool m_tokenHasBeenSet = false;
 };
 

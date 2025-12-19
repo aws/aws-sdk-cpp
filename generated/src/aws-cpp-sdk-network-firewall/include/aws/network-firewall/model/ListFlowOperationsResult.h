@@ -92,12 +92,12 @@ class ListFlowOperationsResult {
   ///@}
  private:
   Aws::Vector<FlowOperationMetadata> m_flowOperations;
-  bool m_flowOperationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_flowOperationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

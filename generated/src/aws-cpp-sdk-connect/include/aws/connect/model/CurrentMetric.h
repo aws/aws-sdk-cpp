@@ -69,9 +69,9 @@ class CurrentMetric {
   ///@}
  private:
   CurrentMetricName m_name{CurrentMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Unit m_unit{Unit::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

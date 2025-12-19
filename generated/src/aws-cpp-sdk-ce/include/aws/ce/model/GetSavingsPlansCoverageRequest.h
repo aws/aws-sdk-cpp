@@ -216,27 +216,27 @@ class GetSavingsPlansCoverageRequest : public CostExplorerRequest {
   ///@}
  private:
   DateInterval m_timePeriod;
-  bool m_timePeriodHasBeenSet = false;
 
   Aws::Vector<GroupDefinition> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Granularity m_granularity{Granularity::NOT_SET};
-  bool m_granularityHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   SortDefinition m_sortBy;
+  bool m_timePeriodHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_granularityHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

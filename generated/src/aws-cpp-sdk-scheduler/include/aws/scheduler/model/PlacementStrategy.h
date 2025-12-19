@@ -80,9 +80,9 @@ class PlacementStrategy {
   ///@}
  private:
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   PlacementStrategyType m_type{PlacementStrategyType::NOT_SET};
+  bool m_fieldHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

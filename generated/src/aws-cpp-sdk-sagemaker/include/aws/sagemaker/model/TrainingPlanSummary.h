@@ -341,51 +341,51 @@ class TrainingPlanSummary {
   ///@}
  private:
   Aws::String m_trainingPlanArn;
-  bool m_trainingPlanArnHasBeenSet = false;
 
   Aws::String m_trainingPlanName;
-  bool m_trainingPlanNameHasBeenSet = false;
 
   TrainingPlanStatus m_status{TrainingPlanStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   long long m_durationHours{0};
-  bool m_durationHoursHasBeenSet = false;
 
   long long m_durationMinutes{0};
-  bool m_durationMinutesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_upfrontFee;
-  bool m_upfrontFeeHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   int m_totalInstanceCount{0};
-  bool m_totalInstanceCountHasBeenSet = false;
 
   int m_availableInstanceCount{0};
-  bool m_availableInstanceCountHasBeenSet = false;
 
   int m_inUseInstanceCount{0};
-  bool m_inUseInstanceCountHasBeenSet = false;
 
   int m_totalUltraServerCount{0};
-  bool m_totalUltraServerCountHasBeenSet = false;
 
   Aws::Vector<SageMakerResourceName> m_targetResources;
-  bool m_targetResourcesHasBeenSet = false;
 
   Aws::Vector<ReservedCapacitySummary> m_reservedCapacitySummaries;
+  bool m_trainingPlanArnHasBeenSet = false;
+  bool m_trainingPlanNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_durationHoursHasBeenSet = false;
+  bool m_durationMinutesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_upfrontFeeHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_totalInstanceCountHasBeenSet = false;
+  bool m_availableInstanceCountHasBeenSet = false;
+  bool m_inUseInstanceCountHasBeenSet = false;
+  bool m_totalUltraServerCountHasBeenSet = false;
+  bool m_targetResourcesHasBeenSet = false;
   bool m_reservedCapacitySummariesHasBeenSet = false;
 };
 

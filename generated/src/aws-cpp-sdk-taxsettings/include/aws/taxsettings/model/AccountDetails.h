@@ -110,15 +110,15 @@ class AccountDetails {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AccountMetaData m_accountMetaData;
-  bool m_accountMetaDataHasBeenSet = false;
 
   TaxInheritanceDetails m_taxInheritanceDetails;
-  bool m_taxInheritanceDetailsHasBeenSet = false;
 
   TaxRegistrationWithJurisdiction m_taxRegistration;
+  bool m_accountIdHasBeenSet = false;
+  bool m_accountMetaDataHasBeenSet = false;
+  bool m_taxInheritanceDetailsHasBeenSet = false;
   bool m_taxRegistrationHasBeenSet = false;
 };
 

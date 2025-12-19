@@ -83,12 +83,12 @@ class ActiveDirectoryError {
   ///@}
  private:
   Aws::String m_activeDirectoryId;
-  bool m_activeDirectoryIdHasBeenSet = false;
 
   ActiveDirectoryErrorType m_type{ActiveDirectoryErrorType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_activeDirectoryIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

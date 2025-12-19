@@ -101,12 +101,12 @@ class Channel {
   ///@}
  private:
   Aws::Vector<EventPublisher> m_eventPublishers;
-  bool m_eventPublishersHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_uri;
+  bool m_eventPublishersHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_uriHasBeenSet = false;
 };
 

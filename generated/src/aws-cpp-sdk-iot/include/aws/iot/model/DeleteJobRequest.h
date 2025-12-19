@@ -103,12 +103,12 @@ class DeleteJobRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   bool m_force{false};
-  bool m_forceHasBeenSet = false;
 
   Aws::String m_namespaceId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_forceHasBeenSet = false;
   bool m_namespaceIdHasBeenSet = false;
 };
 

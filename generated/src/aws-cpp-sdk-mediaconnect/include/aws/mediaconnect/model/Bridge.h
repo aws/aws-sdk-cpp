@@ -241,33 +241,33 @@ class Bridge {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   Aws::Vector<MessageDetail> m_bridgeMessages;
-  bool m_bridgeMessagesHasBeenSet = false;
 
   BridgeState m_bridgeState{BridgeState::NOT_SET};
-  bool m_bridgeStateHasBeenSet = false;
 
   EgressGatewayBridge m_egressGatewayBridge;
-  bool m_egressGatewayBridgeHasBeenSet = false;
 
   IngressGatewayBridge m_ingressGatewayBridge;
-  bool m_ingressGatewayBridgeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<BridgeOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_placementArn;
-  bool m_placementArnHasBeenSet = false;
 
   FailoverConfig m_sourceFailoverConfig;
-  bool m_sourceFailoverConfigHasBeenSet = false;
 
   Aws::Vector<BridgeSource> m_sources;
+  bool m_bridgeArnHasBeenSet = false;
+  bool m_bridgeMessagesHasBeenSet = false;
+  bool m_bridgeStateHasBeenSet = false;
+  bool m_egressGatewayBridgeHasBeenSet = false;
+  bool m_ingressGatewayBridgeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_placementArnHasBeenSet = false;
+  bool m_sourceFailoverConfigHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

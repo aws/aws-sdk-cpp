@@ -78,9 +78,9 @@ class NodeEthereumAttributes {
   ///@}
  private:
   Aws::String m_httpEndpoint;
-  bool m_httpEndpointHasBeenSet = false;
 
   Aws::String m_webSocketEndpoint;
+  bool m_httpEndpointHasBeenSet = false;
   bool m_webSocketEndpointHasBeenSet = false;
 };
 

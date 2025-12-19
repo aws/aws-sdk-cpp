@@ -88,12 +88,12 @@ class ListBackupSelectionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<BackupSelectionsListMember> m_backupSelectionsList;
-  bool m_backupSelectionsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_backupSelectionsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

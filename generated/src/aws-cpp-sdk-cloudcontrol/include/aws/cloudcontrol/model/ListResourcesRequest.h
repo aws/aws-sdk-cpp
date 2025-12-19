@@ -156,21 +156,21 @@ class ListResourcesRequest : public CloudControlApiRequest {
   ///@}
  private:
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeVersionId;
-  bool m_typeVersionIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_resourceModel;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeVersionIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_resourceModelHasBeenSet = false;
 };
 

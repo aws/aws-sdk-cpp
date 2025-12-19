@@ -77,12 +77,12 @@ class DescribeProblemResult {
   ///@}
  private:
   Problem m_problem;
-  bool m_problemHasBeenSet = false;
 
   Aws::String m_sNSNotificationArn;
-  bool m_sNSNotificationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_problemHasBeenSet = false;
+  bool m_sNSNotificationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

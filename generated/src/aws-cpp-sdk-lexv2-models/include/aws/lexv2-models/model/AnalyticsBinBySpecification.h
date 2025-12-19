@@ -85,12 +85,12 @@ class AnalyticsBinBySpecification {
   ///@}
  private:
   AnalyticsBinByName m_name{AnalyticsBinByName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   AnalyticsInterval m_interval{AnalyticsInterval::NOT_SET};
-  bool m_intervalHasBeenSet = false;
 
   AnalyticsSortOrder m_order{AnalyticsSortOrder::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class EvaluationMetric {
   ///@}
  private:
   double m_f1Score{0.0};
-  bool m_f1ScoreHasBeenSet = false;
 
   double m_precision{0.0};
-  bool m_precisionHasBeenSet = false;
 
   double m_recall{0.0};
+  bool m_f1ScoreHasBeenSet = false;
+  bool m_precisionHasBeenSet = false;
   bool m_recallHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class PutLifecyclePolicyRequest : public MediaStoreRequest {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::String m_lifecyclePolicy;
+  bool m_containerNameHasBeenSet = false;
   bool m_lifecyclePolicyHasBeenSet = false;
 };
 

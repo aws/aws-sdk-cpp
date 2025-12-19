@@ -91,12 +91,12 @@ class BatchCreateDelegationByAssessmentError {
   ///@}
  private:
   CreateDelegationRequest m_createDelegationRequest;
-  bool m_createDelegationRequestHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_createDelegationRequestHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

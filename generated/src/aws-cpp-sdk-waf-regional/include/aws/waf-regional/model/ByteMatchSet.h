@@ -121,12 +121,12 @@ class ByteMatchSet {
   ///@}
  private:
   Aws::String m_byteMatchSetId;
-  bool m_byteMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<ByteMatchTuple> m_byteMatchTuples;
+  bool m_byteMatchSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_byteMatchTuplesHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListAutonomousVirtualMachinesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AutonomousVirtualMachineSummary> m_autonomousVirtualMachines;
-  bool m_autonomousVirtualMachinesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_autonomousVirtualMachinesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

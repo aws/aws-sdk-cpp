@@ -134,18 +134,18 @@ class UpdateWorkflowRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, StepInput> m_inputParameters;
-  bool m_inputParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stepTargets;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inputParametersHasBeenSet = false;
   bool m_stepTargetsHasBeenSet = false;
 };
 

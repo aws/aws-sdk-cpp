@@ -86,12 +86,12 @@ class ListLabelingJobsResult {
   ///@}
  private:
   Aws::Vector<LabelingJobSummary> m_labelingJobSummaryList;
-  bool m_labelingJobSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_labelingJobSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

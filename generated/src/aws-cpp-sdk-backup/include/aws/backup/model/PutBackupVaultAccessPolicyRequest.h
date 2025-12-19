@@ -67,9 +67,9 @@ class PutBackupVaultAccessPolicyRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_backupVaultNameHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

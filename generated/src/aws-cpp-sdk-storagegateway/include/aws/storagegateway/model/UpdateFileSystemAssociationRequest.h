@@ -123,18 +123,18 @@ class UpdateFileSystemAssociationRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_fileSystemAssociationARN;
-  bool m_fileSystemAssociationARNHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_auditDestinationARN;
-  bool m_auditDestinationARNHasBeenSet = false;
 
   CacheAttributes m_cacheAttributes;
+  bool m_fileSystemAssociationARNHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_auditDestinationARNHasBeenSet = false;
   bool m_cacheAttributesHasBeenSet = false;
 };
 

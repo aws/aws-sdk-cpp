@@ -37,6 +37,26 @@ namespace Aws
             {
             }
 
+            //= ../specification/s3-encryption/encryption.md#content-encryption
+            //= type=implication
+            //# The client MUST validate that the length of the plaintext bytes does not exceed the algorithm suite's cipher's maximum content length in bytes.
+            // The expectation is that this is handled by the underlying cryptographic provider.
+            // For example, if this is OpenSSL,
+            // See OpenSSL: https://github.com/openssl/openssl/blob/master/crypto/modes/gcm128.c#L784
+            // The relevant line is:
+            // if (mlen > ((U64(1) << 36) - 32) || (sizeof(len) == 8 && mlen < len))
+            //   return -1;  
+
+            //= ../specification/s3-encryption/encryption.md#alg-aes-256-ctr-iv16-tag16-no-kdf
+            //= type=implication
+            //# Attempts to encrypt using AES-CTR MUST fail.
+            // There is no way to attempt to use AES-CTR
+
+            //= ../specification/s3-encryption/encryption.md#alg-aes-256-ctr-hkdf-sha512-commit-key
+            //= type=implication
+            //# Attempts to encrypt using key committing AES-CTR MUST fail.
+            // There is no way to attempt to use key committing AES-CTR
+
             S3EncryptionPutObjectOutcome CryptoModule::PutObjectSecurely(const Aws::S3::Model::PutObjectRequest& request, const PutObjectFunction& putObjectFunction, const Aws::Map<Aws::String, Aws::String>& contextMap)
             {
                 PutObjectRequest copyRequest(request);
@@ -57,7 +77,7 @@ namespace Aws
                     PutObjectRequest instructionFileRequest;
                     instructionFileRequest.WithBucket(copyRequest.GetBucket());
                     instructionFileRequest.WithKey(copyRequest.GetKey());
-                    handler.PopulateRequest(instructionFileRequest, m_contentCryptoMaterial);
+                    handler.PopulateRequest(copyRequest, instructionFileRequest, m_contentCryptoMaterial);
                     PutObjectOutcome instructionOutcome = putObjectFunction(instructionFileRequest);
                     if (!instructionOutcome.IsSuccess())
                     {
@@ -102,7 +122,7 @@ namespace Aws
                     rangeEnd = range.second;
                 }
 
-                InitDecryptionCipher(rangeStart, rangeEnd, tagFromBody);
+                InitDecryptionCipher(rangeStart, rangeEnd, tagFromBody, m_contentCryptoMaterial.GetAAD());
                 auto newRange = AdjustRange(copyRequest, headObjectResult);
                 if (newRange.first > newRange.second)
                 {
@@ -160,6 +180,16 @@ namespace Aws
                 }
 
                 GetObjectResult&& result = outcome.GetResultWithOwnership();
+
+                //= ../specification/s3-encryption/decryption.md#ranged-gets
+                //= type=implication
+                //# If the GetObject response contains a range, but the GetObject request does not contain a range, the S3EC MUST throw an exception.
+                // implication because there's no way to test this
+                if (request.GetRange().empty() && !result.GetContentRange().empty()) {
+                    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3 Response contained a range, but the request did not.");
+                    return S3EncryptionGetObjectOutcome(BuildS3EncryptionError(AWSError<S3Errors>(S3Errors::VALIDATION, "FailedToDecryptContent",
+                            "S3 Response contained a range, but the request did not.", false/*not retryable*/)));
+                }
                 ((SymmetricCryptoStream&)result.GetBody()).Finalize();
 
                 userSuppliedStream->clear();
@@ -241,7 +271,7 @@ namespace Aws
                 m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
             }
 
-            void CryptoModuleEO::InitDecryptionCipher(int64_t, int64_t, const Aws::Utils::CryptoBuffer &)
+            void CryptoModuleEO::InitDecryptionCipher(int64_t, int64_t, const Aws::Utils::CryptoBuffer &, const Aws::Utils::CryptoBuffer &)
             {
                 m_cipher = CreateAES_CBCImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV());
             }
@@ -288,22 +318,51 @@ namespace Aws
             {
                 m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
                 m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BYTES * BITS_IN_BYTE);
-                m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
-                auto aad_raw = GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
+                if (m_cryptoConfig.GetEncryptionAlgorithm() == AlgorithmSuite::AES_GCM_WITH_COMMITMENT) {
+                    m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM_COMMIT);
+                } else {
+                    m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
+                }
+                auto aad_raw = GetNameForContentCryptoScheme(m_contentCryptoMaterial.GetContentCryptoScheme());
                 m_contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad_raw.c_str(), aad_raw.size()));
             }
 
+            //= ../specification/s3-encryption/key-derivation.md#hkdf-operation
+            //= type=implication
+            //# The client MUST initialize the cipher, or call an AES-GCM encryption API, with the derived encryption key, an IV containing only bytes with the value 0x01,
+            //# and the tag length defined in the Algorithm Suite when encrypting or decrypting with ALG_AES_256_GCM_HKDF_SHA512_COMMIT_KEY.
+
+            //= ../specification/s3-encryption/encryption.md#alg-aes-256-gcm-iv12-tag16-no-kdf
+            //= type=implication
+            //# The client MUST initialize the cipher, or call an AES-GCM encryption API, with the plaintext data key, the generated IV, and the tag length defined in the Algorithm Suite when encrypting with ALG_AES_256_GCM_IV12_TAG16_NO_KDF.
+
+            //= ../specification/s3-encryption/encryption.md#alg-aes-256-gcm-iv12-tag16-no-kdf
+            //= type=implication
+            //# The client MUST append the GCM auth tag to the ciphertext if the underlying crypto provider does not do so automatically.
+
+            //= ../specification/s3-encryption/encryption.md#alg-aes-256-gcm-hkdf-sha512-commit-key
+            //= type=implication
+            //# The client MUST append the GCM auth tag to the ciphertext if the underlying crypto provider does not do so automatically.
             void CryptoModuleAE::InitEncryptionCipher()
             {
-                m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(ALLOCATION_TAG, m_contentCryptoMaterial.GetContentEncryptionKey());
-                m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
+                m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(ALLOCATION_TAG, m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), m_contentCryptoMaterial.GetAAD());
+                if (m_contentCryptoMaterial.GetContentCryptoScheme() != ContentCryptoScheme::GCM_COMMIT)
+                    m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
             }
 
-            void CryptoModuleAE::InitDecryptionCipher(int64_t rangeStart, int64_t rangeEnd, const Aws::Utils::CryptoBuffer& tag)
+            void CryptoModuleAE::InitDecryptionCipher(int64_t rangeStart, int64_t rangeEnd, const Aws::Utils::CryptoBuffer& tag, const Aws::Utils::CryptoBuffer& aad)
             {
                 (void)GCM_IV_SIZE; // get ride of unused variable warning
                 if (rangeStart > 0 || rangeEnd > 0)
                 {
+                    //= ../specification/s3-encryption/decryption.md#ranged-gets
+                    //= type=implication
+                    //# If the object was encrypted with ALG_AES_256_GCM_IV12_TAG16_NO_KDF, then ALG_AES_256_CTR_IV16_TAG16_NO_KDF MUST be used to decrypt the range of the object.
+
+                    //= ../specification/s3-encryption/decryption.md#ranged-gets
+                    //= type=implication
+                    //# If the object was encrypted with ALG_AES_256_GCM_HKDF_SHA512_COMMIT_KEY, then ALG_AES_256_CTR_HKDF_SHA512_COMMIT_KEY MUST be used to decrypt the range of the object.
+
                     //See http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf for decrypting a GCM message using CTR mode.
                     assert(m_contentCryptoMaterial.GetIV().GetLength() == GCM_IV_SIZE);
                     CryptoBuffer counter(4);
@@ -316,7 +375,7 @@ namespace Aws
                 }
                 else
                 {
-                    m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
+                    m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag, aad);
                 }
             }
 
@@ -356,6 +415,9 @@ namespace Aws
                 return true;
             }
 
+            //= ../specification/s3-encryption/decryption.md#ranged-gets
+            //= type=implication
+            //# If the S3EC supports Ranged Gets, the S3EC MUST adjust the customer-provided range to include the beginning and end of the cipher blocks for the given range.
             std::pair<int64_t, int64_t> CryptoModuleAE::AdjustRange(Aws::S3::Model::GetObjectRequest& getObjectRequest, const Aws::S3::Model::HeadObjectResult& headObjectResult)
             {
                 Aws::StringStream ss;
@@ -412,25 +474,30 @@ namespace Aws
             {
                 m_contentCryptoMaterial.SetContentEncryptionKey(SymmetricCipher::GenerateKey());
                 m_contentCryptoMaterial.SetCryptoTagLength(TAG_SIZE_BYTES * BITS_IN_BYTE);
-                m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
-                auto aad_raw = GetNameForContentCryptoScheme(ContentCryptoScheme::GCM);
+                if (m_cryptoConfig.GetEncryptionAlgorithm() == AlgorithmSuite::AES_GCM_WITH_COMMITMENT) {
+                    m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM_COMMIT);
+                } else {
+                    m_contentCryptoMaterial.SetContentCryptoScheme(ContentCryptoScheme::GCM);
+                }
+                auto aad_raw = GetNameForContentCryptoScheme(m_contentCryptoMaterial.GetContentCryptoScheme());
                 m_contentCryptoMaterial.SetGCMAAD(CryptoBuffer((const unsigned char*)aad_raw.c_str(), aad_raw.size()));
             }
 
             void CryptoModuleStrictAE::InitEncryptionCipher()
             {
-                m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(ALLOCATION_TAG, m_contentCryptoMaterial.GetContentEncryptionKey());
-                m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
+                m_cipher = Aws::MakeShared<AES_GCM_AppendedTag>(ALLOCATION_TAG, m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), m_contentCryptoMaterial.GetAAD());
+                if (m_contentCryptoMaterial.GetContentCryptoScheme() != ContentCryptoScheme::GCM_COMMIT)
+                    m_contentCryptoMaterial.SetIV(m_cipher->GetIV());
             }
 
-            void CryptoModuleStrictAE::InitDecryptionCipher(int64_t rangeStart, int64_t rangeEnd, const Aws::Utils::CryptoBuffer & tag)
+            void CryptoModuleStrictAE::InitDecryptionCipher(int64_t rangeStart, int64_t rangeEnd, const Aws::Utils::CryptoBuffer & tag, const Aws::Utils::CryptoBuffer & aad)
             {
                 //range gets not allowed in Strict AE.
                 assert(rangeStart == 0);
                 assert(rangeEnd == 0);
                 AWS_UNREFERENCED_PARAM(rangeStart);
                 AWS_UNREFERENCED_PARAM(rangeEnd);
-                m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag);
+                m_cipher = CreateAES_GCMImplementation(m_contentCryptoMaterial.GetContentEncryptionKey(), m_contentCryptoMaterial.GetIV(), tag, aad);
             }
 
             Aws::Utils::CryptoBuffer CryptoModuleStrictAE::GetTag(const Aws::S3::Model::GetObjectRequest & request, const std::function < Aws::S3::Model::GetObjectOutcome(const Aws::S3::Model::GetObjectRequest&) >& getObjectFunction)
@@ -455,7 +522,7 @@ namespace Aws
                     AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Range-Get Operations are not allowed with Strict Authenticated Encryption mode.");
                     return false;
                 }
-                if (m_contentCryptoMaterial.GetContentCryptoScheme() != ContentCryptoScheme::GCM)
+                if (!IsGCM(m_contentCryptoMaterial.GetContentCryptoScheme()))
                 {
                     AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Strict Authentication Encryption only allows decryption of GCM encrypted objects.");
                     return false;
@@ -472,8 +539,8 @@ namespace Aws
 
 
 
-            AES_GCM_AppendedTag::AES_GCM_AppendedTag(const CryptoBuffer& key) : Aws::Utils::Crypto::SymmetricCipher(),
-                m_cipher(CreateAES_GCMImplementation(key))
+            AES_GCM_AppendedTag::AES_GCM_AppendedTag(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& aad) : Aws::Utils::Crypto::SymmetricCipher(),
+                m_cipher(CreateAES_GCMImplementation(key, iv, CryptoBuffer(), aad))
             {
                 m_key = key;
                 m_initializationVector = m_cipher->GetIV();
@@ -506,7 +573,6 @@ namespace Aws
 
             CryptoBuffer AES_GCM_AppendedTag::FinalizeDecryption()
             {
-
                 //don't use this in decryption mode.
                 assert(0);
                 m_failure = true;

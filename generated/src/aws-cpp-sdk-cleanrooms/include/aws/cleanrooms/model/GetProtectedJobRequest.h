@@ -65,9 +65,9 @@ class GetProtectedJobRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_protectedJobIdentifier;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_protectedJobIdentifierHasBeenSet = false;
 };
 

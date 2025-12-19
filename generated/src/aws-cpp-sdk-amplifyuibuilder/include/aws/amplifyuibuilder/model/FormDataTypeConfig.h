@@ -70,9 +70,9 @@ class FormDataTypeConfig {
   ///@}
  private:
   FormDataSourceType m_dataSourceType{FormDataSourceType::NOT_SET};
-  bool m_dataSourceTypeHasBeenSet = false;
 
   Aws::String m_dataTypeName;
+  bool m_dataSourceTypeHasBeenSet = false;
   bool m_dataTypeNameHasBeenSet = false;
 };
 

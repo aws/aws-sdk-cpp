@@ -97,15 +97,15 @@ class UpdateSiteRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_siteId;
-  bool m_siteIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_notes;
+  bool m_siteIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_notesHasBeenSet = false;
 };
 

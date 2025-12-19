@@ -101,15 +101,15 @@ class ListCompositionsRequest : public IvsrealtimeRequest {
   ///@}
  private:
   Aws::String m_filterByStageArn;
-  bool m_filterByStageArnHasBeenSet = false;
 
   Aws::String m_filterByEncoderConfigurationArn;
-  bool m_filterByEncoderConfigurationArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_filterByStageArnHasBeenSet = false;
+  bool m_filterByEncoderConfigurationArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

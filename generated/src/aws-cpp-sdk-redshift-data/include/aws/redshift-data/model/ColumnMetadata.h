@@ -252,42 +252,42 @@ class ColumnMetadata {
   ///@}
  private:
   bool m_isCaseSensitive{false};
-  bool m_isCaseSensitiveHasBeenSet = false;
 
   bool m_isCurrency{false};
-  bool m_isCurrencyHasBeenSet = false;
 
   bool m_isSigned{false};
-  bool m_isSignedHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_nullable{0};
-  bool m_nullableHasBeenSet = false;
 
   int m_precision{0};
-  bool m_precisionHasBeenSet = false;
 
   int m_scale{0};
-  bool m_scaleHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   int m_length{0};
-  bool m_lengthHasBeenSet = false;
 
   Aws::String m_columnDefault;
+  bool m_isCaseSensitiveHasBeenSet = false;
+  bool m_isCurrencyHasBeenSet = false;
+  bool m_isSignedHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nullableHasBeenSet = false;
+  bool m_precisionHasBeenSet = false;
+  bool m_scaleHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_lengthHasBeenSet = false;
   bool m_columnDefaultHasBeenSet = false;
 };
 

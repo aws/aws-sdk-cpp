@@ -75,9 +75,9 @@ class CustomLineItemPercentageChargeDetails {
   ///@}
  private:
   double m_percentageValue{0.0};
-  bool m_percentageValueHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedValues;
+  bool m_percentageValueHasBeenSet = false;
   bool m_associatedValuesHasBeenSet = false;
 };
 

@@ -242,33 +242,33 @@ class FargateProfile {
   ///@}
  private:
   Aws::String m_fargateProfileName;
-  bool m_fargateProfileNameHasBeenSet = false;
 
   Aws::String m_fargateProfileArn;
-  bool m_fargateProfileArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_podExecutionRoleArn;
-  bool m_podExecutionRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<FargateProfileSelector> m_selectors;
-  bool m_selectorsHasBeenSet = false;
 
   FargateProfileStatus m_status{FargateProfileStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   FargateProfileHealth m_health;
+  bool m_fargateProfileNameHasBeenSet = false;
+  bool m_fargateProfileArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_podExecutionRoleArnHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_selectorsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_healthHasBeenSet = false;
 };
 

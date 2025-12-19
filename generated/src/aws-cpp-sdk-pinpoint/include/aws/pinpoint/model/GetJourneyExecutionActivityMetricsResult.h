@@ -61,9 +61,9 @@ class GetJourneyExecutionActivityMetricsResult {
   ///@}
  private:
   JourneyExecutionActivityMetricsResponse m_journeyExecutionActivityMetricsResponse;
-  bool m_journeyExecutionActivityMetricsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_journeyExecutionActivityMetricsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

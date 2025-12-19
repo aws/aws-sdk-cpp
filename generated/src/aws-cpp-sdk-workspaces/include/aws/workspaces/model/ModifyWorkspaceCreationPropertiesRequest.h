@@ -68,9 +68,9 @@ class ModifyWorkspaceCreationPropertiesRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   WorkspaceCreationProperties m_workspaceCreationProperties;
+  bool m_resourceIdHasBeenSet = false;
   bool m_workspaceCreationPropertiesHasBeenSet = false;
 };
 

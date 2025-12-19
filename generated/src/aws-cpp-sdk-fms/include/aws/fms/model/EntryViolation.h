@@ -164,21 +164,21 @@ class EntryViolation {
   ///@}
  private:
   EntryDescription m_expectedEntry;
-  bool m_expectedEntryHasBeenSet = false;
 
   Aws::String m_expectedEvaluationOrder;
-  bool m_expectedEvaluationOrderHasBeenSet = false;
 
   Aws::String m_actualEvaluationOrder;
-  bool m_actualEvaluationOrderHasBeenSet = false;
 
   EntryDescription m_entryAtExpectedEvaluationOrder;
-  bool m_entryAtExpectedEvaluationOrderHasBeenSet = false;
 
   Aws::Vector<EntryDescription> m_entriesWithConflicts;
-  bool m_entriesWithConflictsHasBeenSet = false;
 
   Aws::Vector<EntryViolationReason> m_entryViolationReasons;
+  bool m_expectedEntryHasBeenSet = false;
+  bool m_expectedEvaluationOrderHasBeenSet = false;
+  bool m_actualEvaluationOrderHasBeenSet = false;
+  bool m_entryAtExpectedEvaluationOrderHasBeenSet = false;
+  bool m_entriesWithConflictsHasBeenSet = false;
   bool m_entryViolationReasonsHasBeenSet = false;
 };
 

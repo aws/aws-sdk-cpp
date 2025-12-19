@@ -173,24 +173,24 @@ class DescribeChannelPlacementGroupSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodes;
-  bool m_nodesHasBeenSet = false;
 
   ChannelPlacementGroupState m_state{ChannelPlacementGroupState::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nodesHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

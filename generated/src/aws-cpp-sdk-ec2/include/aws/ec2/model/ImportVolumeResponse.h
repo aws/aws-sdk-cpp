@@ -60,9 +60,9 @@ class ImportVolumeResponse {
   ///@}
  private:
   ConversionTask m_conversionTask;
-  bool m_conversionTaskHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_conversionTaskHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

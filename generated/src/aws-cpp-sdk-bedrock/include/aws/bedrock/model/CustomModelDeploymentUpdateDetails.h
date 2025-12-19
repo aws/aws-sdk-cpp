@@ -69,9 +69,9 @@ class CustomModelDeploymentUpdateDetails {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   CustomModelDeploymentUpdateStatus m_updateStatus{CustomModelDeploymentUpdateStatus::NOT_SET};
+  bool m_modelArnHasBeenSet = false;
   bool m_updateStatusHasBeenSet = false;
 };
 

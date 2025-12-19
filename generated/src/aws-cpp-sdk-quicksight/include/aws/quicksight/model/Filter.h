@@ -195,27 +195,27 @@ class Filter {
   ///@}
  private:
   CategoryFilter m_categoryFilter;
-  bool m_categoryFilterHasBeenSet = false;
 
   NumericRangeFilter m_numericRangeFilter;
-  bool m_numericRangeFilterHasBeenSet = false;
 
   NumericEqualityFilter m_numericEqualityFilter;
-  bool m_numericEqualityFilterHasBeenSet = false;
 
   TimeEqualityFilter m_timeEqualityFilter;
-  bool m_timeEqualityFilterHasBeenSet = false;
 
   TimeRangeFilter m_timeRangeFilter;
-  bool m_timeRangeFilterHasBeenSet = false;
 
   RelativeDatesFilter m_relativeDatesFilter;
-  bool m_relativeDatesFilterHasBeenSet = false;
 
   TopBottomFilter m_topBottomFilter;
-  bool m_topBottomFilterHasBeenSet = false;
 
   NestedFilter m_nestedFilter;
+  bool m_categoryFilterHasBeenSet = false;
+  bool m_numericRangeFilterHasBeenSet = false;
+  bool m_numericEqualityFilterHasBeenSet = false;
+  bool m_timeEqualityFilterHasBeenSet = false;
+  bool m_timeRangeFilterHasBeenSet = false;
+  bool m_relativeDatesFilterHasBeenSet = false;
+  bool m_topBottomFilterHasBeenSet = false;
   bool m_nestedFilterHasBeenSet = false;
 };
 

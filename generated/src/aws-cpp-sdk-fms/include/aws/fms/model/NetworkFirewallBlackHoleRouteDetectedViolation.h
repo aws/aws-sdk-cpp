@@ -114,15 +114,15 @@ class NetworkFirewallBlackHoleRouteDetectedViolation {
   ///@}
  private:
   Aws::String m_violationTarget;
-  bool m_violationTargetHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Route> m_violatingRoutes;
+  bool m_violationTargetHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_violatingRoutesHasBeenSet = false;
 };
 

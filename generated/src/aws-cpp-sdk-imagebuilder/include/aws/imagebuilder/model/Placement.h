@@ -120,15 +120,15 @@ class Placement {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   TenancyType m_tenancy{TenancyType::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   Aws::String m_hostResourceGroupArn;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_hostIdHasBeenSet = false;
   bool m_hostResourceGroupArnHasBeenSet = false;
 };
 

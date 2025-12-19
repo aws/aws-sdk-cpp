@@ -283,48 +283,48 @@ class GetDataSourceRunResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_dataSourceConfigurationSnapshot;
-  bool m_dataSourceConfigurationSnapshotHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   DataSourceErrorMessage m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   DataSourceRunLineageSummary m_lineageSummary;
-  bool m_lineageSummaryHasBeenSet = false;
 
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   RunStatisticsForAssets m_runStatisticsForAssets;
-  bool m_runStatisticsForAssetsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   DataSourceRunStatus m_status{DataSourceRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_stoppedAt{};
-  bool m_stoppedAtHasBeenSet = false;
 
   DataSourceRunType m_type{DataSourceRunType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_dataSourceConfigurationSnapshotHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lineageSummaryHasBeenSet = false;
+  bool m_projectIdHasBeenSet = false;
+  bool m_runStatisticsForAssetsHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_stoppedAtHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

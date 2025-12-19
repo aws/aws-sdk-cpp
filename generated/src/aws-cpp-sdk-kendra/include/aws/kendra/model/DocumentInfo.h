@@ -85,9 +85,9 @@ class DocumentInfo {
   ///@}
  private:
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   Aws::Vector<DocumentAttribute> m_attributes;
+  bool m_documentIdHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

@@ -87,9 +87,9 @@ class JobAlbumArt {
   ///@}
  private:
   Aws::String m_mergePolicy;
-  bool m_mergePolicyHasBeenSet = false;
 
   Aws::Vector<Artwork> m_artwork;
+  bool m_mergePolicyHasBeenSet = false;
   bool m_artworkHasBeenSet = false;
 };
 

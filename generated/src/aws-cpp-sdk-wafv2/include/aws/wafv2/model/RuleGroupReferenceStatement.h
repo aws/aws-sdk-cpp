@@ -122,12 +122,12 @@ class RuleGroupReferenceStatement {
   ///@}
  private:
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::Vector<ExcludedRule> m_excludedRules;
-  bool m_excludedRulesHasBeenSet = false;
 
   Aws::Vector<RuleActionOverride> m_ruleActionOverrides;
+  bool m_aRNHasBeenSet = false;
+  bool m_excludedRulesHasBeenSet = false;
   bool m_ruleActionOverridesHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class UpdateRuleRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_changeToken;
-  bool m_changeTokenHasBeenSet = false;
 
   Aws::Vector<RuleUpdate> m_updates;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_changeTokenHasBeenSet = false;
   bool m_updatesHasBeenSet = false;
 };
 

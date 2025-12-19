@@ -334,51 +334,51 @@ class Disk {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_supportCode;
-  bool m_supportCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ResourceLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AddOn> m_addOns;
-  bool m_addOnsHasBeenSet = false;
 
   int m_sizeInGb{0};
-  bool m_sizeInGbHasBeenSet = false;
 
   bool m_isSystemDisk{false};
-  bool m_isSystemDiskHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   DiskState m_state{DiskState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_attachedTo;
-  bool m_attachedToHasBeenSet = false;
 
   bool m_isAttached{false};
-  bool m_isAttachedHasBeenSet = false;
 
   AutoMountStatus m_autoMountStatus{AutoMountStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_supportCodeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_addOnsHasBeenSet = false;
+  bool m_sizeInGbHasBeenSet = false;
+  bool m_isSystemDiskHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_attachedToHasBeenSet = false;
+  bool m_isAttachedHasBeenSet = false;
   bool m_autoMountStatusHasBeenSet = false;
 };
 

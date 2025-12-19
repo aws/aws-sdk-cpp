@@ -234,36 +234,36 @@ class FolderMetadata {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_creatorId;
-  bool m_creatorIdHasBeenSet = false;
 
   Aws::String m_parentFolderId;
-  bool m_parentFolderIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedTimestamp{};
-  bool m_modifiedTimestampHasBeenSet = false;
 
   ResourceStateType m_resourceState{ResourceStateType::NOT_SET};
-  bool m_resourceStateHasBeenSet = false;
 
   Aws::String m_signature;
-  bool m_signatureHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   long long m_latestVersionSize{0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_creatorIdHasBeenSet = false;
+  bool m_parentFolderIdHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_modifiedTimestampHasBeenSet = false;
+  bool m_resourceStateHasBeenSet = false;
+  bool m_signatureHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_latestVersionSizeHasBeenSet = false;
 };
 

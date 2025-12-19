@@ -69,9 +69,9 @@ class DescribeRuleGroupsNamespaceRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

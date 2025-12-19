@@ -57,7 +57,7 @@ class ListPolicyEnginesResult {
   ///@{
   /**
    * <p>A pagination token that can be used in subsequent <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_ListPolicyEngines.html">ListPolicyEngines</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngines.html">ListPolicyEngines</a>
    * calls to retrieve additional results. This token is only present when there are
    * more results available. </p>
    */
@@ -90,12 +90,12 @@ class ListPolicyEnginesResult {
   ///@}
  private:
   Aws::Vector<PolicyEngine> m_policyEngines;
-  bool m_policyEnginesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyEnginesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

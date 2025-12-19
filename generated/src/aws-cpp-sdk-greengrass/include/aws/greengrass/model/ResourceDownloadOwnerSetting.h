@@ -70,9 +70,9 @@ class ResourceDownloadOwnerSetting {
   ///@}
  private:
   Aws::String m_groupOwner;
-  bool m_groupOwnerHasBeenSet = false;
 
   Permission m_groupPermission{Permission::NOT_SET};
+  bool m_groupOwnerHasBeenSet = false;
   bool m_groupPermissionHasBeenSet = false;
 };
 

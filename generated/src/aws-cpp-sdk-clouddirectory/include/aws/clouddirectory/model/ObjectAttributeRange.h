@@ -69,9 +69,9 @@ class ObjectAttributeRange {
   ///@}
  private:
   AttributeKey m_attributeKey;
-  bool m_attributeKeyHasBeenSet = false;
 
   TypedAttributeValueRange m_range;
+  bool m_attributeKeyHasBeenSet = false;
   bool m_rangeHasBeenSet = false;
 };
 

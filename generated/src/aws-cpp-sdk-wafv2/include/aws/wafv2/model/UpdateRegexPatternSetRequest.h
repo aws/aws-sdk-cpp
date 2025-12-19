@@ -161,21 +161,21 @@ class UpdateRegexPatternSetRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Regex> m_regularExpressionList;
-  bool m_regularExpressionListHasBeenSet = false;
 
   Aws::String m_lockToken;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_regularExpressionListHasBeenSet = false;
   bool m_lockTokenHasBeenSet = false;
 };
 

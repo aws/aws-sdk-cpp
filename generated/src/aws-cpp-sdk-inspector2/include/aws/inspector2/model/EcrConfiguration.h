@@ -83,12 +83,12 @@ class EcrConfiguration {
   ///@}
  private:
   EcrRescanDuration m_rescanDuration{EcrRescanDuration::NOT_SET};
-  bool m_rescanDurationHasBeenSet = false;
 
   EcrPullDateRescanDuration m_pullDateRescanDuration{EcrPullDateRescanDuration::NOT_SET};
-  bool m_pullDateRescanDurationHasBeenSet = false;
 
   EcrPullDateRescanMode m_pullDateRescanMode{EcrPullDateRescanMode::NOT_SET};
+  bool m_rescanDurationHasBeenSet = false;
+  bool m_pullDateRescanDurationHasBeenSet = false;
   bool m_pullDateRescanModeHasBeenSet = false;
 };
 

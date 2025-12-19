@@ -66,9 +66,9 @@ class GenerativeAISettings {
   ///@}
  private:
   RuntimeSettings m_runtimeSettings;
-  bool m_runtimeSettingsHasBeenSet = false;
 
   BuildtimeSettings m_buildtimeSettings;
+  bool m_runtimeSettingsHasBeenSet = false;
   bool m_buildtimeSettingsHasBeenSet = false;
 };
 

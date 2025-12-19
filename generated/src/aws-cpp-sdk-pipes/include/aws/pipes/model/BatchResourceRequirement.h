@@ -147,9 +147,9 @@ class BatchResourceRequirement {
   ///@}
  private:
   BatchResourceRequirementType m_type{BatchResourceRequirementType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

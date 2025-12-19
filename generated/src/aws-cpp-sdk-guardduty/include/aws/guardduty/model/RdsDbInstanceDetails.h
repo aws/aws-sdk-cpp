@@ -129,6 +129,25 @@ class RdsDbInstanceDetails {
 
   ///@{
   /**
+   * <p>The unique ID of the database resource involved in the activity that prompted
+   * GuardDuty to generate the finding.</p>
+   */
+  inline const Aws::String& GetDbiResourceId() const { return m_dbiResourceId; }
+  inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
+  template <typename DbiResourceIdT = Aws::String>
+  void SetDbiResourceId(DbiResourceIdT&& value) {
+    m_dbiResourceIdHasBeenSet = true;
+    m_dbiResourceId = std::forward<DbiResourceIdT>(value);
+  }
+  template <typename DbiResourceIdT = Aws::String>
+  RdsDbInstanceDetails& WithDbiResourceId(DbiResourceIdT&& value) {
+    SetDbiResourceId(std::forward<DbiResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about the tag key-value pairs.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -152,21 +171,24 @@ class RdsDbInstanceDetails {
   ///@}
  private:
   Aws::String m_dbInstanceIdentifier;
-  bool m_dbInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
-  bool m_dbClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dbInstanceArn;
-  bool m_dbInstanceArnHasBeenSet = false;
+
+  Aws::String m_dbiResourceId;
 
   Aws::Vector<Tag> m_tags;
+  bool m_dbInstanceIdentifierHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dbClusterIdentifierHasBeenSet = false;
+  bool m_dbInstanceArnHasBeenSet = false;
+  bool m_dbiResourceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

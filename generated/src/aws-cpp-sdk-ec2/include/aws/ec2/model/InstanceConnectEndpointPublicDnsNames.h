@@ -72,9 +72,9 @@ class InstanceConnectEndpointPublicDnsNames {
   ///@}
  private:
   InstanceConnectEndpointDnsNames m_ipv4;
-  bool m_ipv4HasBeenSet = false;
 
   InstanceConnectEndpointDnsNames m_dualstack;
+  bool m_ipv4HasBeenSet = false;
   bool m_dualstackHasBeenSet = false;
 };
 

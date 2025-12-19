@@ -87,12 +87,12 @@ class ListSourceApiAssociationsResult {
   ///@}
  private:
   Aws::Vector<SourceApiAssociationSummary> m_sourceApiAssociationSummaries;
-  bool m_sourceApiAssociationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceApiAssociationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

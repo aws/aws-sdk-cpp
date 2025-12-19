@@ -89,12 +89,12 @@ class DeleteRuleRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_eventBusName;
-  bool m_eventBusNameHasBeenSet = false;
 
   bool m_force{false};
+  bool m_nameHasBeenSet = false;
+  bool m_eventBusNameHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

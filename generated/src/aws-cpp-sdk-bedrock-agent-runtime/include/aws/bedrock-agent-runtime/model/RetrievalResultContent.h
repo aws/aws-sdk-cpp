@@ -164,21 +164,21 @@ class RetrievalResultContent {
   ///@}
  private:
   AudioSegment m_audio;
-  bool m_audioHasBeenSet = false;
 
   Aws::String m_byteContent;
-  bool m_byteContentHasBeenSet = false;
 
   Aws::Vector<RetrievalResultContentColumn> m_row;
-  bool m_rowHasBeenSet = false;
 
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   RetrievalResultContentType m_type{RetrievalResultContentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   VideoSegment m_video;
+  bool m_audioHasBeenSet = false;
+  bool m_byteContentHasBeenSet = false;
+  bool m_rowHasBeenSet = false;
+  bool m_textHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_videoHasBeenSet = false;
 };
 

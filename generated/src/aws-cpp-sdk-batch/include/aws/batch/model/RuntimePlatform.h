@@ -94,9 +94,9 @@ class RuntimePlatform {
   ///@}
  private:
   Aws::String m_operatingSystemFamily;
-  bool m_operatingSystemFamilyHasBeenSet = false;
 
   Aws::String m_cpuArchitecture;
+  bool m_operatingSystemFamilyHasBeenSet = false;
   bool m_cpuArchitectureHasBeenSet = false;
 };
 

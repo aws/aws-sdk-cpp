@@ -87,12 +87,12 @@ class DescribeProvisionedProductResult {
   ///@}
  private:
   ProvisionedProductDetail m_provisionedProductDetail;
-  bool m_provisionedProductDetailHasBeenSet = false;
 
   Aws::Vector<CloudWatchDashboard> m_cloudWatchDashboards;
-  bool m_cloudWatchDashboardsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisionedProductDetailHasBeenSet = false;
+  bool m_cloudWatchDashboardsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

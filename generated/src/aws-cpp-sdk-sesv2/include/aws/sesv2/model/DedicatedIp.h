@@ -118,15 +118,15 @@ class DedicatedIp {
   ///@}
  private:
   Aws::String m_ip;
-  bool m_ipHasBeenSet = false;
 
   WarmupStatus m_warmupStatus{WarmupStatus::NOT_SET};
-  bool m_warmupStatusHasBeenSet = false;
 
   int m_warmupPercentage{0};
-  bool m_warmupPercentageHasBeenSet = false;
 
   Aws::String m_poolName;
+  bool m_ipHasBeenSet = false;
+  bool m_warmupStatusHasBeenSet = false;
+  bool m_warmupPercentageHasBeenSet = false;
   bool m_poolNameHasBeenSet = false;
 };
 

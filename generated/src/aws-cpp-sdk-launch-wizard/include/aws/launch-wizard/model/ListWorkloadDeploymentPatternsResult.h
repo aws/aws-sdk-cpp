@@ -88,12 +88,12 @@ class ListWorkloadDeploymentPatternsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WorkloadDeploymentPatternDataSummary> m_workloadDeploymentPatterns;
-  bool m_workloadDeploymentPatternsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workloadDeploymentPatternsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

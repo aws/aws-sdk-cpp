@@ -68,9 +68,9 @@ class ListIntegrationsResult {
   ///@}
  private:
   Aws::Vector<IntegrationSummary> m_integrationSummaries;
-  bool m_integrationSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

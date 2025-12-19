@@ -135,18 +135,18 @@ class PivotOperation {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   TransformOperationSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupByColumnNames;
-  bool m_groupByColumnNamesHasBeenSet = false;
 
   ValueColumnConfiguration m_valueColumnConfiguration;
-  bool m_valueColumnConfigurationHasBeenSet = false;
 
   PivotConfiguration m_pivotConfiguration;
+  bool m_aliasHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_groupByColumnNamesHasBeenSet = false;
+  bool m_valueColumnConfigurationHasBeenSet = false;
   bool m_pivotConfigurationHasBeenSet = false;
 };
 

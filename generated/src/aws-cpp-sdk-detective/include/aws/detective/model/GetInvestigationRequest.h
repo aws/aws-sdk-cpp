@@ -65,9 +65,9 @@ class GetInvestigationRequest : public DetectiveRequest {
   ///@}
  private:
   Aws::String m_graphArn;
-  bool m_graphArnHasBeenSet = false;
 
   Aws::String m_investigationId;
+  bool m_graphArnHasBeenSet = false;
   bool m_investigationIdHasBeenSet = false;
 };
 

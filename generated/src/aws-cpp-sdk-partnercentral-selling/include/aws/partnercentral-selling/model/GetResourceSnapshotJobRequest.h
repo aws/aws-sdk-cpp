@@ -71,9 +71,9 @@ class GetResourceSnapshotJobRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_resourceSnapshotJobIdentifier;
+  bool m_catalogHasBeenSet = false;
   bool m_resourceSnapshotJobIdentifierHasBeenSet = false;
 };
 

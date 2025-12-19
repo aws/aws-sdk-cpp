@@ -87,12 +87,12 @@ class CanInterface {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_protocolName;
-  bool m_protocolNameHasBeenSet = false;
 
   Aws::String m_protocolVersion;
+  bool m_nameHasBeenSet = false;
+  bool m_protocolNameHasBeenSet = false;
   bool m_protocolVersionHasBeenSet = false;
 };
 

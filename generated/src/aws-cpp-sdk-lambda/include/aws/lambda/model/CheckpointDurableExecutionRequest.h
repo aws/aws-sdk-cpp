@@ -118,15 +118,15 @@ class CheckpointDurableExecutionRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_durableExecutionArn;
-  bool m_durableExecutionArnHasBeenSet = false;
 
   Aws::String m_checkpointToken;
-  bool m_checkpointTokenHasBeenSet = false;
 
   Aws::Vector<OperationUpdate> m_updates;
-  bool m_updatesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_durableExecutionArnHasBeenSet = false;
+  bool m_checkpointTokenHasBeenSet = false;
+  bool m_updatesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

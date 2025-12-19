@@ -30,6 +30,10 @@ CloudAutonomousVmCluster& CloudAutonomousVmCluster::operator=(JsonView jsonValue
     m_odbNetworkId = jsonValue.GetString("odbNetworkId");
     m_odbNetworkIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("odbNetworkArn")) {
+    m_odbNetworkArn = jsonValue.GetString("odbNetworkArn");
+    m_odbNetworkArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ociResourceAnchorName")) {
     m_ociResourceAnchorName = jsonValue.GetString("ociResourceAnchorName");
     m_ociResourceAnchorNameHasBeenSet = true;
@@ -53,6 +57,10 @@ CloudAutonomousVmCluster& CloudAutonomousVmCluster::operator=(JsonView jsonValue
   if (jsonValue.ValueExists("cloudExadataInfrastructureId")) {
     m_cloudExadataInfrastructureId = jsonValue.GetString("cloudExadataInfrastructureId");
     m_cloudExadataInfrastructureIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudExadataInfrastructureArn")) {
+    m_cloudExadataInfrastructureArn = jsonValue.GetString("cloudExadataInfrastructureArn");
+    m_cloudExadataInfrastructureArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("autonomousDataStoragePercentage")) {
     m_autonomousDataStoragePercentage = jsonValue.GetDouble("autonomousDataStoragePercentage");
@@ -235,6 +243,10 @@ JsonValue CloudAutonomousVmCluster::Jsonize() const {
     payload.WithString("odbNetworkId", m_odbNetworkId);
   }
 
+  if (m_odbNetworkArnHasBeenSet) {
+    payload.WithString("odbNetworkArn", m_odbNetworkArn);
+  }
+
   if (m_ociResourceAnchorNameHasBeenSet) {
     payload.WithString("ociResourceAnchorName", m_ociResourceAnchorName);
   }
@@ -257,6 +269,10 @@ JsonValue CloudAutonomousVmCluster::Jsonize() const {
 
   if (m_cloudExadataInfrastructureIdHasBeenSet) {
     payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
+  }
+
+  if (m_cloudExadataInfrastructureArnHasBeenSet) {
+    payload.WithString("cloudExadataInfrastructureArn", m_cloudExadataInfrastructureArn);
   }
 
   if (m_autonomousDataStoragePercentageHasBeenSet) {

@@ -172,27 +172,27 @@ class GetCisScanResultDetailsRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_scanArn;
-  bool m_scanArnHasBeenSet = false;
 
   Aws::String m_targetResourceId;
-  bool m_targetResourceIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   CisScanResultDetailsFilterCriteria m_filterCriteria;
-  bool m_filterCriteriaHasBeenSet = false;
 
   CisScanResultDetailsSortBy m_sortBy{CisScanResultDetailsSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   CisSortOrder m_sortOrder{CisSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_scanArnHasBeenSet = false;
+  bool m_targetResourceIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

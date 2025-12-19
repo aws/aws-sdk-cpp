@@ -71,9 +71,9 @@ class ComparisonConfiguration {
   ///@}
  private:
   ComparisonMethod m_comparisonMethod{ComparisonMethod::NOT_SET};
-  bool m_comparisonMethodHasBeenSet = false;
 
   ComparisonFormatConfiguration m_comparisonFormat;
+  bool m_comparisonMethodHasBeenSet = false;
   bool m_comparisonFormatHasBeenSet = false;
 };
 

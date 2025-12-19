@@ -30,6 +30,7 @@ static const int BucketKeyStatus_HASH = HashingUtils::HashString("BucketKeyStatu
 static const int ChecksumAlgorithm_HASH = HashingUtils::HashString("ChecksumAlgorithm");
 static const int ObjectAccessControlList_HASH = HashingUtils::HashString("ObjectAccessControlList");
 static const int ObjectOwner_HASH = HashingUtils::HashString("ObjectOwner");
+static const int LifecycleExpirationDate_HASH = HashingUtils::HashString("LifecycleExpirationDate");
 
 InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -63,6 +64,8 @@ InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
     return InventoryOptionalField::ObjectAccessControlList;
   } else if (hashCode == ObjectOwner_HASH) {
     return InventoryOptionalField::ObjectOwner;
+  } else if (hashCode == LifecycleExpirationDate_HASH) {
+    return InventoryOptionalField::LifecycleExpirationDate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -107,6 +110,8 @@ Aws::String GetNameForInventoryOptionalField(InventoryOptionalField enumValue) {
       return "ObjectAccessControlList";
     case InventoryOptionalField::ObjectOwner:
       return "ObjectOwner";
+    case InventoryOptionalField::LifecycleExpirationDate:
+      return "LifecycleExpirationDate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

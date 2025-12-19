@@ -620,96 +620,96 @@ class InstanceTypeInfo {
   ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   bool m_currentGeneration{false};
-  bool m_currentGenerationHasBeenSet = false;
 
   bool m_freeTierEligible{false};
-  bool m_freeTierEligibleHasBeenSet = false;
 
   Aws::Vector<UsageClassType> m_supportedUsageClasses;
-  bool m_supportedUsageClassesHasBeenSet = false;
 
   Aws::Vector<RootDeviceType> m_supportedRootDeviceTypes;
-  bool m_supportedRootDeviceTypesHasBeenSet = false;
 
   Aws::Vector<VirtualizationType> m_supportedVirtualizationTypes;
-  bool m_supportedVirtualizationTypesHasBeenSet = false;
 
   bool m_bareMetal{false};
-  bool m_bareMetalHasBeenSet = false;
 
   InstanceTypeHypervisor m_hypervisor{InstanceTypeHypervisor::NOT_SET};
-  bool m_hypervisorHasBeenSet = false;
 
   ProcessorInfo m_processorInfo;
-  bool m_processorInfoHasBeenSet = false;
 
   VCpuInfo m_vCpuInfo;
-  bool m_vCpuInfoHasBeenSet = false;
 
   MemoryInfo m_memoryInfo;
-  bool m_memoryInfoHasBeenSet = false;
 
   bool m_instanceStorageSupported{false};
-  bool m_instanceStorageSupportedHasBeenSet = false;
 
   InstanceStorageInfo m_instanceStorageInfo;
-  bool m_instanceStorageInfoHasBeenSet = false;
 
   EbsInfo m_ebsInfo;
-  bool m_ebsInfoHasBeenSet = false;
 
   NetworkInfo m_networkInfo;
-  bool m_networkInfoHasBeenSet = false;
 
   GpuInfo m_gpuInfo;
-  bool m_gpuInfoHasBeenSet = false;
 
   FpgaInfo m_fpgaInfo;
-  bool m_fpgaInfoHasBeenSet = false;
 
   PlacementGroupInfo m_placementGroupInfo;
-  bool m_placementGroupInfoHasBeenSet = false;
 
   InferenceAcceleratorInfo m_inferenceAcceleratorInfo;
-  bool m_inferenceAcceleratorInfoHasBeenSet = false;
 
   bool m_hibernationSupported{false};
-  bool m_hibernationSupportedHasBeenSet = false;
 
   bool m_burstablePerformanceSupported{false};
-  bool m_burstablePerformanceSupportedHasBeenSet = false;
 
   bool m_dedicatedHostsSupported{false};
-  bool m_dedicatedHostsSupportedHasBeenSet = false;
 
   bool m_autoRecoverySupported{false};
-  bool m_autoRecoverySupportedHasBeenSet = false;
 
   Aws::Vector<BootModeType> m_supportedBootModes;
-  bool m_supportedBootModesHasBeenSet = false;
 
   NitroEnclavesSupport m_nitroEnclavesSupport{NitroEnclavesSupport::NOT_SET};
-  bool m_nitroEnclavesSupportHasBeenSet = false;
 
   NitroTpmSupport m_nitroTpmSupport{NitroTpmSupport::NOT_SET};
-  bool m_nitroTpmSupportHasBeenSet = false;
 
   NitroTpmInfo m_nitroTpmInfo;
-  bool m_nitroTpmInfoHasBeenSet = false;
 
   MediaAcceleratorInfo m_mediaAcceleratorInfo;
-  bool m_mediaAcceleratorInfoHasBeenSet = false;
 
   NeuronInfo m_neuronInfo;
-  bool m_neuronInfoHasBeenSet = false;
 
   PhcSupport m_phcSupport{PhcSupport::NOT_SET};
-  bool m_phcSupportHasBeenSet = false;
 
   RebootMigrationSupport m_rebootMigrationSupport{RebootMigrationSupport::NOT_SET};
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_currentGenerationHasBeenSet = false;
+  bool m_freeTierEligibleHasBeenSet = false;
+  bool m_supportedUsageClassesHasBeenSet = false;
+  bool m_supportedRootDeviceTypesHasBeenSet = false;
+  bool m_supportedVirtualizationTypesHasBeenSet = false;
+  bool m_bareMetalHasBeenSet = false;
+  bool m_hypervisorHasBeenSet = false;
+  bool m_processorInfoHasBeenSet = false;
+  bool m_vCpuInfoHasBeenSet = false;
+  bool m_memoryInfoHasBeenSet = false;
+  bool m_instanceStorageSupportedHasBeenSet = false;
+  bool m_instanceStorageInfoHasBeenSet = false;
+  bool m_ebsInfoHasBeenSet = false;
+  bool m_networkInfoHasBeenSet = false;
+  bool m_gpuInfoHasBeenSet = false;
+  bool m_fpgaInfoHasBeenSet = false;
+  bool m_placementGroupInfoHasBeenSet = false;
+  bool m_inferenceAcceleratorInfoHasBeenSet = false;
+  bool m_hibernationSupportedHasBeenSet = false;
+  bool m_burstablePerformanceSupportedHasBeenSet = false;
+  bool m_dedicatedHostsSupportedHasBeenSet = false;
+  bool m_autoRecoverySupportedHasBeenSet = false;
+  bool m_supportedBootModesHasBeenSet = false;
+  bool m_nitroEnclavesSupportHasBeenSet = false;
+  bool m_nitroTpmSupportHasBeenSet = false;
+  bool m_nitroTpmInfoHasBeenSet = false;
+  bool m_mediaAcceleratorInfoHasBeenSet = false;
+  bool m_neuronInfoHasBeenSet = false;
+  bool m_phcSupportHasBeenSet = false;
   bool m_rebootMigrationSupportHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetGroupRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_userPoolId;
+  bool m_groupNameHasBeenSet = false;
   bool m_userPoolIdHasBeenSet = false;
 };
 

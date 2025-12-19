@@ -60,9 +60,9 @@ class UpdateTimeToLiveResult {
   ///@}
  private:
   TimeToLiveSpecification m_timeToLiveSpecification;
-  bool m_timeToLiveSpecificationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_timeToLiveSpecificationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

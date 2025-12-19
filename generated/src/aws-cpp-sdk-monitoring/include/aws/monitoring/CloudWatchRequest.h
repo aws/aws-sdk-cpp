@@ -25,8 +25,8 @@ class AWS_CLOUDWATCH_API CloudWatchRequest : public Aws::AmazonSerializableWebSe
     auto headers = GetRequestSpecificHeaders();
 
     if (headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0)) {
-      headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, Aws::FORM_CONTENT_TYPE));
     }
+    headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::X_AMZN_QUERY_MODE, "true"));
     headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "2010-08-01"));
     return headers;
   }

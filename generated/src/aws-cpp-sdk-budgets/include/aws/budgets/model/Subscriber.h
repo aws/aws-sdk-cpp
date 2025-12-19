@@ -74,9 +74,9 @@ class Subscriber {
   ///@}
  private:
   SubscriptionType m_subscriptionType{SubscriptionType::NOT_SET};
-  bool m_subscriptionTypeHasBeenSet = false;
 
   Aws::String m_address;
+  bool m_subscriptionTypeHasBeenSet = false;
   bool m_addressHasBeenSet = false;
 };
 

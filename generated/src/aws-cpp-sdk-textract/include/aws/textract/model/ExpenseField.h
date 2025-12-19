@@ -153,21 +153,21 @@ class ExpenseField {
   ///@}
  private:
   ExpenseType m_type;
-  bool m_typeHasBeenSet = false;
 
   ExpenseDetection m_labelDetection;
-  bool m_labelDetectionHasBeenSet = false;
 
   ExpenseDetection m_valueDetection;
-  bool m_valueDetectionHasBeenSet = false;
 
   int m_pageNumber{0};
-  bool m_pageNumberHasBeenSet = false;
 
   ExpenseCurrency m_currency;
-  bool m_currencyHasBeenSet = false;
 
   Aws::Vector<ExpenseGroupProperty> m_groupProperties;
+  bool m_typeHasBeenSet = false;
+  bool m_labelDetectionHasBeenSet = false;
+  bool m_valueDetectionHasBeenSet = false;
+  bool m_pageNumberHasBeenSet = false;
+  bool m_currencyHasBeenSet = false;
   bool m_groupPropertiesHasBeenSet = false;
 };
 

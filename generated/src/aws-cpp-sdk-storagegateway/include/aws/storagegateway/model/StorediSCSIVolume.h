@@ -321,48 +321,48 @@ class StorediSCSIVolume {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::String m_volumeType;
-  bool m_volumeTypeHasBeenSet = false;
 
   Aws::String m_volumeStatus;
-  bool m_volumeStatusHasBeenSet = false;
 
   Aws::String m_volumeAttachmentStatus;
-  bool m_volumeAttachmentStatusHasBeenSet = false;
 
   long long m_volumeSizeInBytes{0};
-  bool m_volumeSizeInBytesHasBeenSet = false;
 
   double m_volumeProgress{0.0};
-  bool m_volumeProgressHasBeenSet = false;
 
   Aws::String m_volumeDiskId;
-  bool m_volumeDiskIdHasBeenSet = false;
 
   Aws::String m_sourceSnapshotId;
-  bool m_sourceSnapshotIdHasBeenSet = false;
 
   bool m_preservedExistingData{false};
-  bool m_preservedExistingDataHasBeenSet = false;
 
   VolumeiSCSIAttributes m_volumeiSCSIAttributes;
-  bool m_volumeiSCSIAttributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   long long m_volumeUsedInBytes{0};
-  bool m_volumeUsedInBytesHasBeenSet = false;
 
   Aws::String m_kMSKey;
-  bool m_kMSKeyHasBeenSet = false;
 
   Aws::String m_targetName;
+  bool m_volumeARNHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_volumeStatusHasBeenSet = false;
+  bool m_volumeAttachmentStatusHasBeenSet = false;
+  bool m_volumeSizeInBytesHasBeenSet = false;
+  bool m_volumeProgressHasBeenSet = false;
+  bool m_volumeDiskIdHasBeenSet = false;
+  bool m_sourceSnapshotIdHasBeenSet = false;
+  bool m_preservedExistingDataHasBeenSet = false;
+  bool m_volumeiSCSIAttributesHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_volumeUsedInBytesHasBeenSet = false;
+  bool m_kMSKeyHasBeenSet = false;
   bool m_targetNameHasBeenSet = false;
 };
 

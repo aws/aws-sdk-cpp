@@ -279,42 +279,42 @@ class UpdateDataSourceRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DataSourceType m_type{DataSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_serviceRoleArn;
-  bool m_serviceRoleArnHasBeenSet = false;
 
   DynamodbDataSourceConfig m_dynamodbConfig;
-  bool m_dynamodbConfigHasBeenSet = false;
 
   LambdaDataSourceConfig m_lambdaConfig;
-  bool m_lambdaConfigHasBeenSet = false;
 
   ElasticsearchDataSourceConfig m_elasticsearchConfig;
-  bool m_elasticsearchConfigHasBeenSet = false;
 
   OpenSearchServiceDataSourceConfig m_openSearchServiceConfig;
-  bool m_openSearchServiceConfigHasBeenSet = false;
 
   HttpDataSourceConfig m_httpConfig;
-  bool m_httpConfigHasBeenSet = false;
 
   RelationalDatabaseDataSourceConfig m_relationalDatabaseConfig;
-  bool m_relationalDatabaseConfigHasBeenSet = false;
 
   EventBridgeDataSourceConfig m_eventBridgeConfig;
-  bool m_eventBridgeConfigHasBeenSet = false;
 
   DataSourceLevelMetricsConfig m_metricsConfig{DataSourceLevelMetricsConfig::NOT_SET};
+  bool m_apiIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_serviceRoleArnHasBeenSet = false;
+  bool m_dynamodbConfigHasBeenSet = false;
+  bool m_lambdaConfigHasBeenSet = false;
+  bool m_elasticsearchConfigHasBeenSet = false;
+  bool m_openSearchServiceConfigHasBeenSet = false;
+  bool m_httpConfigHasBeenSet = false;
+  bool m_relationalDatabaseConfigHasBeenSet = false;
+  bool m_eventBridgeConfigHasBeenSet = false;
   bool m_metricsConfigHasBeenSet = false;
 };
 

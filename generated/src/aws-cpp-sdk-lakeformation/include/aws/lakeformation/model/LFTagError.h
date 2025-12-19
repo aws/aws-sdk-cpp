@@ -70,9 +70,9 @@ class LFTagError {
   ///@}
  private:
   LFTagPair m_lFTag;
-  bool m_lFTagHasBeenSet = false;
 
   ErrorDetail m_error;
+  bool m_lFTagHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

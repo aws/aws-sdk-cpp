@@ -188,30 +188,30 @@ class GetServiceSettingsResult {
   ///@}
  private:
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   OrganizationConfiguration m_organizationConfiguration;
-  bool m_organizationConfigurationHasBeenSet = false;
 
   bool m_enableCrossAccountsDiscovery{false};
-  bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
 
   Aws::String m_licenseManagerResourceShareArn;
-  bool m_licenseManagerResourceShareArnHasBeenSet = false;
 
   Aws::String m_crossRegionDiscoveryHomeRegion;
-  bool m_crossRegionDiscoveryHomeRegionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_crossRegionDiscoverySourceRegions;
-  bool m_crossRegionDiscoverySourceRegionsHasBeenSet = false;
 
   ServiceStatus m_serviceStatus;
-  bool m_serviceStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_s3BucketArnHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_organizationConfigurationHasBeenSet = false;
+  bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
+  bool m_licenseManagerResourceShareArnHasBeenSet = false;
+  bool m_crossRegionDiscoveryHomeRegionHasBeenSet = false;
+  bool m_crossRegionDiscoverySourceRegionsHasBeenSet = false;
+  bool m_serviceStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

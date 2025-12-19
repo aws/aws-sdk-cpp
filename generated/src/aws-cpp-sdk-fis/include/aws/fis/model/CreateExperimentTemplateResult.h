@@ -60,9 +60,9 @@ class CreateExperimentTemplateResult {
   ///@}
  private:
   ExperimentTemplate m_experimentTemplate;
-  bool m_experimentTemplateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_experimentTemplateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

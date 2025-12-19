@@ -97,12 +97,12 @@ class ToolChoice {
   ///@}
  private:
   AutoToolChoice m_auto;
-  bool m_autoHasBeenSet = false;
 
   AnyToolChoice m_any;
-  bool m_anyHasBeenSet = false;
 
   SpecificToolChoice m_tool;
+  bool m_autoHasBeenSet = false;
+  bool m_anyHasBeenSet = false;
   bool m_toolHasBeenSet = false;
 };
 

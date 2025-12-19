@@ -92,12 +92,12 @@ class ListDistributionsByTrustStore2020_05_31Request : public CloudFrontRequest 
   ///@}
  private:
   Aws::String m_trustStoreIdentifier;
-  bool m_trustStoreIdentifierHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_maxItems;
+  bool m_trustStoreIdentifierHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_maxItemsHasBeenSet = false;
 };
 

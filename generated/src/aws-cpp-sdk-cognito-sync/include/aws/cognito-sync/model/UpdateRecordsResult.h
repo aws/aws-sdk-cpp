@@ -72,9 +72,9 @@ class UpdateRecordsResult {
   ///@}
  private:
   Aws::Vector<Record> m_records;
-  bool m_recordsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recordsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class StartVoiceToneAnalysisTaskRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_transactionId;
-  bool m_transactionIdHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_transactionIdHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

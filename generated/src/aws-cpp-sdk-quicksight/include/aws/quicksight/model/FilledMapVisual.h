@@ -10,6 +10,7 @@
 #include <aws/quicksight/model/ColumnHierarchy.h>
 #include <aws/quicksight/model/FilledMapConditionalFormatting.h>
 #include <aws/quicksight/model/FilledMapConfiguration.h>
+#include <aws/quicksight/model/GeocodePreference.h>
 #include <aws/quicksight/model/VisualCustomAction.h>
 #include <aws/quicksight/model/VisualSubtitleLabelOptions.h>
 #include <aws/quicksight/model/VisualTitleLabelOptions.h>
@@ -198,30 +199,57 @@ class FilledMapVisual {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The geocoding prefences for filled map visual.</p>
+   */
+  inline const Aws::Vector<GeocodePreference>& GetGeocodingPreferences() const { return m_geocodingPreferences; }
+  inline bool GeocodingPreferencesHasBeenSet() const { return m_geocodingPreferencesHasBeenSet; }
+  template <typename GeocodingPreferencesT = Aws::Vector<GeocodePreference>>
+  void SetGeocodingPreferences(GeocodingPreferencesT&& value) {
+    m_geocodingPreferencesHasBeenSet = true;
+    m_geocodingPreferences = std::forward<GeocodingPreferencesT>(value);
+  }
+  template <typename GeocodingPreferencesT = Aws::Vector<GeocodePreference>>
+  FilledMapVisual& WithGeocodingPreferences(GeocodingPreferencesT&& value) {
+    SetGeocodingPreferences(std::forward<GeocodingPreferencesT>(value));
+    return *this;
+  }
+  template <typename GeocodingPreferencesT = GeocodePreference>
+  FilledMapVisual& AddGeocodingPreferences(GeocodingPreferencesT&& value) {
+    m_geocodingPreferencesHasBeenSet = true;
+    m_geocodingPreferences.emplace_back(std::forward<GeocodingPreferencesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_visualId;
-  bool m_visualIdHasBeenSet = false;
 
   VisualTitleLabelOptions m_title;
-  bool m_titleHasBeenSet = false;
 
   VisualSubtitleLabelOptions m_subtitle;
-  bool m_subtitleHasBeenSet = false;
 
   FilledMapConfiguration m_chartConfiguration;
-  bool m_chartConfigurationHasBeenSet = false;
 
   FilledMapConditionalFormatting m_conditionalFormatting;
-  bool m_conditionalFormattingHasBeenSet = false;
 
   Aws::Vector<ColumnHierarchy> m_columnHierarchies;
-  bool m_columnHierarchiesHasBeenSet = false;
 
   Aws::Vector<VisualCustomAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_visualContentAltText;
+
+  Aws::Vector<GeocodePreference> m_geocodingPreferences;
+  bool m_visualIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_subtitleHasBeenSet = false;
+  bool m_chartConfigurationHasBeenSet = false;
+  bool m_conditionalFormattingHasBeenSet = false;
+  bool m_columnHierarchiesHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_visualContentAltTextHasBeenSet = false;
+  bool m_geocodingPreferencesHasBeenSet = false;
 };
 
 }  // namespace Model

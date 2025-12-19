@@ -76,9 +76,9 @@ class DataQuery {
   ///@}
  private:
   Aws::String m_queryStatement;
-  bool m_queryStatementHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_tableConfigurations;
+  bool m_queryStatementHasBeenSet = false;
   bool m_tableConfigurationsHasBeenSet = false;
 };
 

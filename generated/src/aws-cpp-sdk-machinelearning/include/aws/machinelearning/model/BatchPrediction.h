@@ -327,51 +327,51 @@ class BatchPrediction {
   ///@}
  private:
   Aws::String m_batchPredictionId;
-  bool m_batchPredictionIdHasBeenSet = false;
 
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_batchPredictionDataSourceId;
-  bool m_batchPredictionDataSourceIdHasBeenSet = false;
 
   Aws::String m_inputDataLocationS3;
-  bool m_inputDataLocationS3HasBeenSet = false;
 
   Aws::String m_createdByIamUser;
-  bool m_createdByIamUserHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   EntityStatus m_status{EntityStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_outputUri;
-  bool m_outputUriHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   long long m_computeTime{0};
-  bool m_computeTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_finishedAt{};
-  bool m_finishedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_totalRecordCount{0};
-  bool m_totalRecordCountHasBeenSet = false;
 
   long long m_invalidRecordCount{0};
+  bool m_batchPredictionIdHasBeenSet = false;
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_batchPredictionDataSourceIdHasBeenSet = false;
+  bool m_inputDataLocationS3HasBeenSet = false;
+  bool m_createdByIamUserHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_outputUriHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_computeTimeHasBeenSet = false;
+  bool m_finishedAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_totalRecordCountHasBeenSet = false;
   bool m_invalidRecordCountHasBeenSet = false;
 };
 

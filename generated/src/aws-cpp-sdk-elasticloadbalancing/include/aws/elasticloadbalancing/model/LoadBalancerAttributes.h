@@ -154,18 +154,18 @@ class LoadBalancerAttributes {
   ///@}
  private:
   CrossZoneLoadBalancing m_crossZoneLoadBalancing;
-  bool m_crossZoneLoadBalancingHasBeenSet = false;
 
   AccessLog m_accessLog;
-  bool m_accessLogHasBeenSet = false;
 
   ConnectionDraining m_connectionDraining;
-  bool m_connectionDrainingHasBeenSet = false;
 
   ConnectionSettings m_connectionSettings;
-  bool m_connectionSettingsHasBeenSet = false;
 
   Aws::Vector<AdditionalAttribute> m_additionalAttributes;
+  bool m_crossZoneLoadBalancingHasBeenSet = false;
+  bool m_accessLogHasBeenSet = false;
+  bool m_connectionDrainingHasBeenSet = false;
+  bool m_connectionSettingsHasBeenSet = false;
   bool m_additionalAttributesHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class UpdateClusterRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ClusterNetworkSettingsUpdateRequest m_networkSettings;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_networkSettingsHasBeenSet = false;
 };
 

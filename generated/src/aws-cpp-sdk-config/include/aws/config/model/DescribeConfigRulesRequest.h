@@ -102,12 +102,12 @@ class DescribeConfigRulesRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configRuleNames;
-  bool m_configRuleNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   DescribeConfigRulesFilters m_filters;
+  bool m_configRuleNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

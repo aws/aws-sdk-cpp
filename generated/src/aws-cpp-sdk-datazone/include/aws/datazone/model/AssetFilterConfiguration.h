@@ -69,9 +69,9 @@ class AssetFilterConfiguration {
   ///@}
  private:
   ColumnFilterConfiguration m_columnConfiguration;
-  bool m_columnConfigurationHasBeenSet = false;
 
   RowFilterConfiguration m_rowConfiguration;
+  bool m_columnConfigurationHasBeenSet = false;
   bool m_rowConfigurationHasBeenSet = false;
 };
 

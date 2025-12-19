@@ -72,9 +72,9 @@ class SuppressedDestinationAttributes {
   ///@}
  private:
   Aws::String m_messageId;
-  bool m_messageIdHasBeenSet = false;
 
   Aws::String m_feedbackId;
+  bool m_messageIdHasBeenSet = false;
   bool m_feedbackIdHasBeenSet = false;
 };
 

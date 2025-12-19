@@ -174,24 +174,24 @@ class InboundIntegration {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   IntegrationStatus m_status{IntegrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   IntegrationConfig m_integrationConfig;
-  bool m_integrationConfigHasBeenSet = false;
 
   Aws::Vector<IntegrationError> m_errors;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_targetArnHasBeenSet = false;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_integrationConfigHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
 };
 

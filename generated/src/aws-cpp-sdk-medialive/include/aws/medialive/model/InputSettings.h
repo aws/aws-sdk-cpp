@@ -254,36 +254,36 @@ class InputSettings {
   ///@}
  private:
   Aws::Vector<AudioSelector> m_audioSelectors;
-  bool m_audioSelectorsHasBeenSet = false;
 
   Aws::Vector<CaptionSelector> m_captionSelectors;
-  bool m_captionSelectorsHasBeenSet = false;
 
   InputDeblockFilter m_deblockFilter{InputDeblockFilter::NOT_SET};
-  bool m_deblockFilterHasBeenSet = false;
 
   InputDenoiseFilter m_denoiseFilter{InputDenoiseFilter::NOT_SET};
-  bool m_denoiseFilterHasBeenSet = false;
 
   int m_filterStrength{0};
-  bool m_filterStrengthHasBeenSet = false;
 
   InputFilter m_inputFilter{InputFilter::NOT_SET};
-  bool m_inputFilterHasBeenSet = false;
 
   NetworkInputSettings m_networkInputSettings;
-  bool m_networkInputSettingsHasBeenSet = false;
 
   int m_scte35Pid{0};
-  bool m_scte35PidHasBeenSet = false;
 
   Smpte2038DataPreference m_smpte2038DataPreference{Smpte2038DataPreference::NOT_SET};
-  bool m_smpte2038DataPreferenceHasBeenSet = false;
 
   InputSourceEndBehavior m_sourceEndBehavior{InputSourceEndBehavior::NOT_SET};
-  bool m_sourceEndBehaviorHasBeenSet = false;
 
   VideoSelector m_videoSelector;
+  bool m_audioSelectorsHasBeenSet = false;
+  bool m_captionSelectorsHasBeenSet = false;
+  bool m_deblockFilterHasBeenSet = false;
+  bool m_denoiseFilterHasBeenSet = false;
+  bool m_filterStrengthHasBeenSet = false;
+  bool m_inputFilterHasBeenSet = false;
+  bool m_networkInputSettingsHasBeenSet = false;
+  bool m_scte35PidHasBeenSet = false;
+  bool m_smpte2038DataPreferenceHasBeenSet = false;
+  bool m_sourceEndBehaviorHasBeenSet = false;
   bool m_videoSelectorHasBeenSet = false;
 };
 

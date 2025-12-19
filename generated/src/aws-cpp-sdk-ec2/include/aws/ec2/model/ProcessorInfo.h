@@ -122,15 +122,15 @@ class ProcessorInfo {
   ///@}
  private:
   Aws::Vector<ArchitectureType> m_supportedArchitectures;
-  bool m_supportedArchitecturesHasBeenSet = false;
 
   double m_sustainedClockSpeedInGhz{0.0};
-  bool m_sustainedClockSpeedInGhzHasBeenSet = false;
 
   Aws::Vector<SupportedAdditionalProcessorFeature> m_supportedFeatures;
-  bool m_supportedFeaturesHasBeenSet = false;
 
   Aws::String m_manufacturer;
+  bool m_supportedArchitecturesHasBeenSet = false;
+  bool m_sustainedClockSpeedInGhzHasBeenSet = false;
+  bool m_supportedFeaturesHasBeenSet = false;
   bool m_manufacturerHasBeenSet = false;
 };
 

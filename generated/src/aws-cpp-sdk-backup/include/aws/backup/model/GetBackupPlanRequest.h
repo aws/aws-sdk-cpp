@@ -88,12 +88,12 @@ class GetBackupPlanRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupPlanId;
-  bool m_backupPlanIdHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   int m_maxScheduledRunsPreview{0};
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
   bool m_maxScheduledRunsPreviewHasBeenSet = false;
 };
 

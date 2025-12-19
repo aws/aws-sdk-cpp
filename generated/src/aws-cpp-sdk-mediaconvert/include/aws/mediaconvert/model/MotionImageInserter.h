@@ -172,21 +172,21 @@ class MotionImageInserter {
   ///@}
  private:
   MotionImageInsertionFramerate m_framerate;
-  bool m_framerateHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   MotionImageInsertionMode m_insertionMode{MotionImageInsertionMode::NOT_SET};
-  bool m_insertionModeHasBeenSet = false;
 
   MotionImageInsertionOffset m_offset;
-  bool m_offsetHasBeenSet = false;
 
   MotionImagePlayback m_playback{MotionImagePlayback::NOT_SET};
-  bool m_playbackHasBeenSet = false;
 
   Aws::String m_startTime;
+  bool m_framerateHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
+  bool m_insertionModeHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
+  bool m_playbackHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

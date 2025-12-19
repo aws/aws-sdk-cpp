@@ -98,12 +98,12 @@ class RelationalFilterConfiguration {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::Vector<FilterExpression> m_filterExpressions;
-  bool m_filterExpressionsHasBeenSet = false;
 
   Aws::String m_schemaName;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_filterExpressionsHasBeenSet = false;
   bool m_schemaNameHasBeenSet = false;
 };
 

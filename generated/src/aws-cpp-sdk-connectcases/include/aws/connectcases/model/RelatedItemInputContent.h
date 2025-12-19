@@ -146,21 +146,21 @@ class RelatedItemInputContent {
   ///@}
  private:
   Contact m_contact;
-  bool m_contactHasBeenSet = false;
 
   CommentContent m_comment;
-  bool m_commentHasBeenSet = false;
 
   FileContent m_file;
-  bool m_fileHasBeenSet = false;
 
   SlaInputContent m_sla;
-  bool m_slaHasBeenSet = false;
 
   ConnectCaseInputContent m_connectCase;
-  bool m_connectCaseHasBeenSet = false;
 
   CustomInputContent m_custom;
+  bool m_contactHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_fileHasBeenSet = false;
+  bool m_slaHasBeenSet = false;
+  bool m_connectCaseHasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

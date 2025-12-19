@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/workspaces-web/WorkSpacesWebRequest.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/model/BrandingConfigurationCreateInput.h>
 #include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
 #include <aws/workspaces-web/model/Tag.h>
@@ -305,48 +306,71 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The branding configuration input that customizes the appearance of the web
+   * portal for end users. This includes a custom logo, favicon, wallpaper, localized
+   * strings, color theme, and an optional terms of service.</p>
+   */
+  inline const BrandingConfigurationCreateInput& GetBrandingConfigurationInput() const { return m_brandingConfigurationInput; }
+  inline bool BrandingConfigurationInputHasBeenSet() const { return m_brandingConfigurationInputHasBeenSet; }
+  template <typename BrandingConfigurationInputT = BrandingConfigurationCreateInput>
+  void SetBrandingConfigurationInput(BrandingConfigurationInputT&& value) {
+    m_brandingConfigurationInputHasBeenSet = true;
+    m_brandingConfigurationInput = std::forward<BrandingConfigurationInputT>(value);
+  }
+  template <typename BrandingConfigurationInputT = BrandingConfigurationCreateInput>
+  CreateUserSettingsRequest& WithBrandingConfigurationInput(BrandingConfigurationInputT&& value) {
+    SetBrandingConfigurationInput(std::forward<BrandingConfigurationInputT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EnabledType m_copyAllowed{EnabledType::NOT_SET};
-  bool m_copyAllowedHasBeenSet = false;
 
   EnabledType m_pasteAllowed{EnabledType::NOT_SET};
-  bool m_pasteAllowedHasBeenSet = false;
 
   EnabledType m_downloadAllowed{EnabledType::NOT_SET};
-  bool m_downloadAllowedHasBeenSet = false;
 
   EnabledType m_uploadAllowed{EnabledType::NOT_SET};
-  bool m_uploadAllowedHasBeenSet = false;
 
   EnabledType m_printAllowed{EnabledType::NOT_SET};
-  bool m_printAllowedHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_disconnectTimeoutInMinutes{0};
-  bool m_disconnectTimeoutInMinutesHasBeenSet = false;
 
   int m_idleDisconnectTimeoutInMinutes{0};
-  bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   CookieSynchronizationConfiguration m_cookieSynchronizationConfiguration;
-  bool m_cookieSynchronizationConfigurationHasBeenSet = false;
 
   Aws::String m_customerManagedKey;
-  bool m_customerManagedKeyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEncryptionContext;
-  bool m_additionalEncryptionContextHasBeenSet = false;
 
   EnabledType m_deepLinkAllowed{EnabledType::NOT_SET};
-  bool m_deepLinkAllowedHasBeenSet = false;
 
   ToolbarConfiguration m_toolbarConfiguration;
+
+  BrandingConfigurationCreateInput m_brandingConfigurationInput;
+  bool m_copyAllowedHasBeenSet = false;
+  bool m_pasteAllowedHasBeenSet = false;
+  bool m_downloadAllowedHasBeenSet = false;
+  bool m_uploadAllowedHasBeenSet = false;
+  bool m_printAllowedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_disconnectTimeoutInMinutesHasBeenSet = false;
+  bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_cookieSynchronizationConfigurationHasBeenSet = false;
+  bool m_customerManagedKeyHasBeenSet = false;
+  bool m_additionalEncryptionContextHasBeenSet = false;
+  bool m_deepLinkAllowedHasBeenSet = false;
   bool m_toolbarConfigurationHasBeenSet = false;
+  bool m_brandingConfigurationInputHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -71,9 +71,9 @@ class CreateSnapshotRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_directoryIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

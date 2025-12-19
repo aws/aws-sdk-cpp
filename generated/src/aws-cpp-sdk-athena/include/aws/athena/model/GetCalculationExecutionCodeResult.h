@@ -59,9 +59,9 @@ class GetCalculationExecutionCodeResult {
   ///@}
  private:
   Aws::String m_codeBlock;
-  bool m_codeBlockHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeBlockHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

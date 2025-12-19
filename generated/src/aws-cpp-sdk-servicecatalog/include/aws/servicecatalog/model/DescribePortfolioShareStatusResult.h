@@ -130,21 +130,21 @@ class DescribePortfolioShareStatusResult {
   ///@}
  private:
   Aws::String m_portfolioShareToken;
-  bool m_portfolioShareTokenHasBeenSet = false;
 
   Aws::String m_portfolioId;
-  bool m_portfolioIdHasBeenSet = false;
 
   Aws::String m_organizationNodeValue;
-  bool m_organizationNodeValueHasBeenSet = false;
 
   ShareStatus m_status{ShareStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ShareDetails m_shareDetails;
-  bool m_shareDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portfolioShareTokenHasBeenSet = false;
+  bool m_portfolioIdHasBeenSet = false;
+  bool m_organizationNodeValueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_shareDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

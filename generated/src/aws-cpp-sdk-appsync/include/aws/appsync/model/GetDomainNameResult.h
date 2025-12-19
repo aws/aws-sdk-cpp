@@ -60,9 +60,9 @@ class GetDomainNameResult {
   ///@}
  private:
   DomainNameConfig m_domainNameConfig;
-  bool m_domainNameConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -105,9 +105,9 @@ class InputTransformer {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_inputPathsMap;
-  bool m_inputPathsMapHasBeenSet = false;
 
   Aws::String m_inputTemplate;
+  bool m_inputPathsMapHasBeenSet = false;
   bool m_inputTemplateHasBeenSet = false;
 };
 

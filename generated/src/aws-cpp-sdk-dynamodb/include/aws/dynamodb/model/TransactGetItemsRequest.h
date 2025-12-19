@@ -82,9 +82,9 @@ class TransactGetItemsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Vector<TransactGetItem> m_transactItems;
-  bool m_transactItemsHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
+  bool m_transactItemsHasBeenSet = false;
   bool m_returnConsumedCapacityHasBeenSet = false;
 };
 

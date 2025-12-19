@@ -126,18 +126,18 @@ class DescribeGroupsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_authenticationToken;
-  bool m_authenticationTokenHasBeenSet = false;
 
   Aws::String m_searchQuery;
-  bool m_searchQueryHasBeenSet = false;
 
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_authenticationTokenHasBeenSet = false;
+  bool m_searchQueryHasBeenSet = false;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

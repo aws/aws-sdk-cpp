@@ -159,24 +159,24 @@ class AnalysisSummary {
   ///@}
  private:
   Aws::String m_estimatedCompletionTime;
-  bool m_estimatedCompletionTimeHasBeenSet = false;
 
   Aws::String m_analysisCompletionTime;
-  bool m_analysisCompletionTimeHasBeenSet = false;
 
   Aws::String m_analysisStartedTime;
-  bool m_analysisStartedTimeHasBeenSet = false;
 
   AnalysisStatus m_analysisStatus{AnalysisStatus::NOT_SET};
-  bool m_analysisStatusHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   CommitmentPurchaseAnalysisConfiguration m_commitmentPurchaseAnalysisConfiguration;
+  bool m_estimatedCompletionTimeHasBeenSet = false;
+  bool m_analysisCompletionTimeHasBeenSet = false;
+  bool m_analysisStartedTimeHasBeenSet = false;
+  bool m_analysisStatusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
   bool m_commitmentPurchaseAnalysisConfigurationHasBeenSet = false;
 };
 

@@ -90,12 +90,12 @@ class ListBootstrapActionsResult {
   ///@}
  private:
   Aws::Vector<Command> m_bootstrapActions;
-  bool m_bootstrapActionsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bootstrapActionsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

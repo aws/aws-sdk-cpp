@@ -294,9 +294,7 @@ class Options {
   /**
    * <p>Limits the bandwidth used by a DataSync task. For example, if you want
    * DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
-   * (<code>=1024*1024</code>).</p>  <p>Not applicable to <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
-   * mode tasks</a>.</p>
+   * (<code>=1024*1024</code>).</p>
    */
   inline long long GetBytesPerSecond() const { return m_bytesPerSecond; }
   inline bool BytesPerSecondHasBeenSet() const { return m_bytesPerSecondHasBeenSet; }
@@ -440,48 +438,48 @@ class Options {
   ///@}
  private:
   VerifyMode m_verifyMode{VerifyMode::NOT_SET};
-  bool m_verifyModeHasBeenSet = false;
 
   OverwriteMode m_overwriteMode{OverwriteMode::NOT_SET};
-  bool m_overwriteModeHasBeenSet = false;
 
   Atime m_atime{Atime::NOT_SET};
-  bool m_atimeHasBeenSet = false;
 
   Mtime m_mtime{Mtime::NOT_SET};
-  bool m_mtimeHasBeenSet = false;
 
   Uid m_uid{Uid::NOT_SET};
-  bool m_uidHasBeenSet = false;
 
   Gid m_gid{Gid::NOT_SET};
-  bool m_gidHasBeenSet = false;
 
   PreserveDeletedFiles m_preserveDeletedFiles{PreserveDeletedFiles::NOT_SET};
-  bool m_preserveDeletedFilesHasBeenSet = false;
 
   PreserveDevices m_preserveDevices{PreserveDevices::NOT_SET};
-  bool m_preserveDevicesHasBeenSet = false;
 
   PosixPermissions m_posixPermissions{PosixPermissions::NOT_SET};
-  bool m_posixPermissionsHasBeenSet = false;
 
   long long m_bytesPerSecond{0};
-  bool m_bytesPerSecondHasBeenSet = false;
 
   TaskQueueing m_taskQueueing{TaskQueueing::NOT_SET};
-  bool m_taskQueueingHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   TransferMode m_transferMode{TransferMode::NOT_SET};
-  bool m_transferModeHasBeenSet = false;
 
   SmbSecurityDescriptorCopyFlags m_securityDescriptorCopyFlags{SmbSecurityDescriptorCopyFlags::NOT_SET};
-  bool m_securityDescriptorCopyFlagsHasBeenSet = false;
 
   ObjectTags m_objectTags{ObjectTags::NOT_SET};
+  bool m_verifyModeHasBeenSet = false;
+  bool m_overwriteModeHasBeenSet = false;
+  bool m_atimeHasBeenSet = false;
+  bool m_mtimeHasBeenSet = false;
+  bool m_uidHasBeenSet = false;
+  bool m_gidHasBeenSet = false;
+  bool m_preserveDeletedFilesHasBeenSet = false;
+  bool m_preserveDevicesHasBeenSet = false;
+  bool m_posixPermissionsHasBeenSet = false;
+  bool m_bytesPerSecondHasBeenSet = false;
+  bool m_taskQueueingHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
+  bool m_transferModeHasBeenSet = false;
+  bool m_securityDescriptorCopyFlagsHasBeenSet = false;
   bool m_objectTagsHasBeenSet = false;
 };
 

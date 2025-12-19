@@ -91,12 +91,12 @@ class RestoreAnalysisRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   bool m_restoreToFolders{false};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
   bool m_restoreToFoldersHasBeenSet = false;
 };
 

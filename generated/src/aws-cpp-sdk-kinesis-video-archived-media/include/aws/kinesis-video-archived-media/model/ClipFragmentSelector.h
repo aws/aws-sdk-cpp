@@ -74,9 +74,9 @@ class ClipFragmentSelector {
   ///@}
  private:
   ClipFragmentSelectorType m_fragmentSelectorType{ClipFragmentSelectorType::NOT_SET};
-  bool m_fragmentSelectorTypeHasBeenSet = false;
 
   ClipTimestampRange m_timestampRange;
+  bool m_fragmentSelectorTypeHasBeenSet = false;
   bool m_timestampRangeHasBeenSet = false;
 };
 

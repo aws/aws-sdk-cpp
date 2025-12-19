@@ -61,9 +61,9 @@ class DeleteDataProviderResult {
   ///@}
  private:
   DataProvider m_dataProvider;
-  bool m_dataProviderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataProviderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

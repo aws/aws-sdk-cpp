@@ -110,15 +110,15 @@ class AppliedExtension {
   ///@}
  private:
   Aws::String m_extensionId;
-  bool m_extensionIdHasBeenSet = false;
 
   Aws::String m_extensionAssociationId;
-  bool m_extensionAssociationIdHasBeenSet = false;
 
   int m_versionNumber{0};
-  bool m_versionNumberHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_extensionIdHasBeenSet = false;
+  bool m_extensionAssociationIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class GetXssMatchSetResult {
   ///@}
  private:
   XssMatchSet m_xssMatchSet;
-  bool m_xssMatchSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_xssMatchSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class SyncResourceFilter {
   ///@}
  private:
   SyncResourceState m_state{SyncResourceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   SyncResourceType m_resourceType{SyncResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_externalId;
+  bool m_stateHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
 };
 

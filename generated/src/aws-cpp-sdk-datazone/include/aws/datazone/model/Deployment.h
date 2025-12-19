@@ -145,21 +145,21 @@ class Deployment {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
-  bool m_deploymentStatusHasBeenSet = false;
 
   DeploymentType m_deploymentType{DeploymentType::NOT_SET};
-  bool m_deploymentTypeHasBeenSet = false;
 
   EnvironmentError m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   bool m_isDeploymentComplete{false};
-  bool m_isDeploymentCompleteHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_messages;
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentTypeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_isDeploymentCompleteHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
 };
 

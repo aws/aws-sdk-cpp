@@ -84,9 +84,9 @@ class S3DataAccessDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_keyPrefixes;
-  bool m_keyPrefixesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keys;
+  bool m_keyPrefixesHasBeenSet = false;
   bool m_keysHasBeenSet = false;
 };
 

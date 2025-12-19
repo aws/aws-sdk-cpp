@@ -75,9 +75,9 @@ class ResumeGameServerGroupRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameServerGroupName;
-  bool m_gameServerGroupNameHasBeenSet = false;
 
   Aws::Vector<GameServerGroupAction> m_resumeActions;
+  bool m_gameServerGroupNameHasBeenSet = false;
   bool m_resumeActionsHasBeenSet = false;
 };
 

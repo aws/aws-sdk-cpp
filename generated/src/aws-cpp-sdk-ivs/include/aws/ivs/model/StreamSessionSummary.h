@@ -107,15 +107,15 @@ class StreamSessionSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   bool m_hasErrorEvent{false};
-  bool m_hasErrorEventHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_streamId;
+  bool m_endTimeHasBeenSet = false;
+  bool m_hasErrorEventHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
 };
 

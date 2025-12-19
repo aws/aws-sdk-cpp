@@ -78,9 +78,9 @@ class StartTechnicalCueDetectionFilter {
   ///@}
  private:
   double m_minSegmentConfidence{0.0};
-  bool m_minSegmentConfidenceHasBeenSet = false;
 
   BlackFrame m_blackFrame;
+  bool m_minSegmentConfidenceHasBeenSet = false;
   bool m_blackFrameHasBeenSet = false;
 };
 

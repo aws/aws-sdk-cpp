@@ -86,12 +86,12 @@ class InstanceGroupStatus {
   ///@}
  private:
   InstanceGroupState m_state{InstanceGroupState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   InstanceGroupStateChangeReason m_stateChangeReason;
-  bool m_stateChangeReasonHasBeenSet = false;
 
   InstanceGroupTimeline m_timeline;
+  bool m_stateHasBeenSet = false;
+  bool m_stateChangeReasonHasBeenSet = false;
   bool m_timelineHasBeenSet = false;
 };
 

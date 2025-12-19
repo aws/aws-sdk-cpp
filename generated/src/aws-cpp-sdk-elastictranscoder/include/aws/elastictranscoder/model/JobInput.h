@@ -283,33 +283,33 @@ class JobInput {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_frameRate;
-  bool m_frameRateHasBeenSet = false;
 
   Aws::String m_resolution;
-  bool m_resolutionHasBeenSet = false;
 
   Aws::String m_aspectRatio;
-  bool m_aspectRatioHasBeenSet = false;
 
   Aws::String m_interlaced;
-  bool m_interlacedHasBeenSet = false;
 
   Aws::String m_container;
-  bool m_containerHasBeenSet = false;
 
   Encryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   TimeSpan m_timeSpan;
-  bool m_timeSpanHasBeenSet = false;
 
   InputCaptions m_inputCaptions;
-  bool m_inputCaptionsHasBeenSet = false;
 
   DetectedProperties m_detectedProperties;
+  bool m_keyHasBeenSet = false;
+  bool m_frameRateHasBeenSet = false;
+  bool m_resolutionHasBeenSet = false;
+  bool m_aspectRatioHasBeenSet = false;
+  bool m_interlacedHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_timeSpanHasBeenSet = false;
+  bool m_inputCaptionsHasBeenSet = false;
   bool m_detectedPropertiesHasBeenSet = false;
 };
 

@@ -235,24 +235,24 @@ class DecryptRequest : public KMSRequest {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_ciphertextBlob{};
-  bool m_ciphertextBlobHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_encryptionContext;
-  bool m_encryptionContextHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_grantTokens;
-  bool m_grantTokensHasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   EncryptionAlgorithmSpec m_encryptionAlgorithm{EncryptionAlgorithmSpec::NOT_SET};
-  bool m_encryptionAlgorithmHasBeenSet = false;
 
   RecipientInfo m_recipient;
-  bool m_recipientHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_ciphertextBlobHasBeenSet = false;
+  bool m_encryptionContextHasBeenSet = false;
+  bool m_grantTokensHasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_encryptionAlgorithmHasBeenSet = false;
+  bool m_recipientHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class DisassociateAccountsRequest : public ComputeOptimizerAutomationRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_accountIdsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

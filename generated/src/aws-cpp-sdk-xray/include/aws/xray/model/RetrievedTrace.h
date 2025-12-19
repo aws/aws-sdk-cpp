@@ -94,12 +94,12 @@ class RetrievedTrace {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   double m_duration{0.0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<Span> m_spans;
+  bool m_idHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_spansHasBeenSet = false;
 };
 

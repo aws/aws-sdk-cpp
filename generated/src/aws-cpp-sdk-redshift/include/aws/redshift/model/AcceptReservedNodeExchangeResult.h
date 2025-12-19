@@ -60,9 +60,9 @@ class AcceptReservedNodeExchangeResult {
   ///@}
  private:
   ReservedNode m_exchangedReservedNode;
-  bool m_exchangedReservedNodeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_exchangedReservedNodeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

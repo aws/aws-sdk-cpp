@@ -61,9 +61,9 @@ class StartQueryMonitorTopContributorsResult {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_queryIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

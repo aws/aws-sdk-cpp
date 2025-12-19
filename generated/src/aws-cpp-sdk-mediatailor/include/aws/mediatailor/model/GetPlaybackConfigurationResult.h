@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/AdConditioningConfiguration.h>
+#include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
@@ -449,6 +450,25 @@ class GetPlaybackConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The configuration for customizing HTTP requests to the ad decision server
+   * (ADS). This includes settings for request method, headers, body content, and
+   * compression options.</p>
+   */
+  inline const AdDecisionServerConfiguration& GetAdDecisionServerConfiguration() const { return m_adDecisionServerConfiguration; }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  void SetAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    m_adDecisionServerConfigurationHasBeenSet = true;
+    m_adDecisionServerConfiguration = std::forward<AdDecisionServerConfigurationT>(value);
+  }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  GetPlaybackConfigurationResult& WithAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    SetAdDecisionServerConfiguration(std::forward<AdDecisionServerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -464,69 +484,72 @@ class GetPlaybackConfigurationResult {
   ///@}
  private:
   Aws::String m_adDecisionServerUrl;
-  bool m_adDecisionServerUrlHasBeenSet = false;
 
   AvailSuppression m_availSuppression;
-  bool m_availSuppressionHasBeenSet = false;
 
   Bumper m_bumper;
-  bool m_bumperHasBeenSet = false;
 
   CdnConfiguration m_cdnConfiguration;
-  bool m_cdnConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_configurationAliases;
-  bool m_configurationAliasesHasBeenSet = false;
 
   DashConfiguration m_dashConfiguration;
-  bool m_dashConfigurationHasBeenSet = false;
 
   HlsConfiguration m_hlsConfiguration;
-  bool m_hlsConfigurationHasBeenSet = false;
 
   InsertionMode m_insertionMode{InsertionMode::NOT_SET};
-  bool m_insertionModeHasBeenSet = false;
 
   LivePreRollConfiguration m_livePreRollConfiguration;
-  bool m_livePreRollConfigurationHasBeenSet = false;
 
   LogConfiguration m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   ManifestProcessingRules m_manifestProcessingRules;
-  bool m_manifestProcessingRulesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_personalizationThresholdSeconds{0};
-  bool m_personalizationThresholdSecondsHasBeenSet = false;
 
   Aws::String m_playbackConfigurationArn;
-  bool m_playbackConfigurationArnHasBeenSet = false;
 
   Aws::String m_playbackEndpointPrefix;
-  bool m_playbackEndpointPrefixHasBeenSet = false;
 
   Aws::String m_sessionInitializationEndpointPrefix;
-  bool m_sessionInitializationEndpointPrefixHasBeenSet = false;
 
   Aws::String m_slateAdUrl;
-  bool m_slateAdUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_transcodeProfileName;
-  bool m_transcodeProfileNameHasBeenSet = false;
 
   Aws::String m_videoContentSourceUrl;
-  bool m_videoContentSourceUrlHasBeenSet = false;
 
   AdConditioningConfiguration m_adConditioningConfiguration;
-  bool m_adConditioningConfigurationHasBeenSet = false;
+
+  AdDecisionServerConfiguration m_adDecisionServerConfiguration;
 
   Aws::String m_requestId;
+  bool m_adDecisionServerUrlHasBeenSet = false;
+  bool m_availSuppressionHasBeenSet = false;
+  bool m_bumperHasBeenSet = false;
+  bool m_cdnConfigurationHasBeenSet = false;
+  bool m_configurationAliasesHasBeenSet = false;
+  bool m_dashConfigurationHasBeenSet = false;
+  bool m_hlsConfigurationHasBeenSet = false;
+  bool m_insertionModeHasBeenSet = false;
+  bool m_livePreRollConfigurationHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_manifestProcessingRulesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_personalizationThresholdSecondsHasBeenSet = false;
+  bool m_playbackConfigurationArnHasBeenSet = false;
+  bool m_playbackEndpointPrefixHasBeenSet = false;
+  bool m_sessionInitializationEndpointPrefixHasBeenSet = false;
+  bool m_slateAdUrlHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_transcodeProfileNameHasBeenSet = false;
+  bool m_videoContentSourceUrlHasBeenSet = false;
+  bool m_adConditioningConfigurationHasBeenSet = false;
+  bool m_adDecisionServerConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

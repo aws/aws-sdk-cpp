@@ -106,12 +106,12 @@ class ComposeEnvironmentsRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versionLabels;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
   bool m_versionLabelsHasBeenSet = false;
 };
 

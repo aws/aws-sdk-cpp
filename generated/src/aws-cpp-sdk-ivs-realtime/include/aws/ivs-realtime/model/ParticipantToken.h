@@ -99,8 +99,10 @@ class ParticipantToken {
   ///@{
   /**
    * <p>Application-provided attributes to encode into the token and attach to a
-   * stage. <i>This field is exposed to all stage participants and should not be used
-   * for personally identifying, confidential, or sensitive information.</i> </p>
+   * stage. Map keys and values can contain UTF-8 encoded text. The maximum length of
+   * this field is 1 KB total. <i>This field is exposed to all stage participants and
+   * should not be used for personally identifying, confidential, or sensitive
+   * information.</i> </p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
   inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -181,24 +183,24 @@ class ParticipantToken {
   ///@}
  private:
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::Vector<ParticipantTokenCapability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
+  bool m_participantIdHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
   bool m_expirationTimeHasBeenSet = false;
 };
 

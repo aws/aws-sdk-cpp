@@ -74,9 +74,9 @@ class BlockPublicAccessConfigurationMetadata {
   ///@}
  private:
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::String m_createdByArn;
+  bool m_creationDateTimeHasBeenSet = false;
   bool m_createdByArnHasBeenSet = false;
 };
 

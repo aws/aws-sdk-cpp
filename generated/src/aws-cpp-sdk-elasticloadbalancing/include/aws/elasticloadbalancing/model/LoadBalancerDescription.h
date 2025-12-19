@@ -377,51 +377,51 @@ class LoadBalancerDescription {
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   Aws::String m_canonicalHostedZoneName;
-  bool m_canonicalHostedZoneNameHasBeenSet = false;
 
   Aws::String m_canonicalHostedZoneNameID;
-  bool m_canonicalHostedZoneNameIDHasBeenSet = false;
 
   Aws::Vector<ListenerDescription> m_listenerDescriptions;
-  bool m_listenerDescriptionsHasBeenSet = false;
 
   Policies m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::Vector<BackendServerDescription> m_backendServerDescriptions;
-  bool m_backendServerDescriptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::String m_vPCId;
-  bool m_vPCIdHasBeenSet = false;
 
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   HealthCheck m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   SourceSecurityGroup m_sourceSecurityGroup;
-  bool m_sourceSecurityGroupHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_scheme;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_dNSNameHasBeenSet = false;
+  bool m_canonicalHostedZoneNameHasBeenSet = false;
+  bool m_canonicalHostedZoneNameIDHasBeenSet = false;
+  bool m_listenerDescriptionsHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_backendServerDescriptionsHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_vPCIdHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
+  bool m_healthCheckHasBeenSet = false;
+  bool m_sourceSecurityGroupHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_schemeHasBeenSet = false;
 };
 

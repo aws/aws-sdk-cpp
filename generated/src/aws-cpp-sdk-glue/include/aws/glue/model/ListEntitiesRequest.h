@@ -125,18 +125,18 @@ class ListEntitiesRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_parentEntityName;
-  bool m_parentEntityNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_dataStoreApiVersion;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_parentEntityNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_dataStoreApiVersionHasBeenSet = false;
 };
 

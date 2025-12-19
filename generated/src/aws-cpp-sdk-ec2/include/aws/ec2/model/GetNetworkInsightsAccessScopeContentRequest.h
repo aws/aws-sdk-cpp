@@ -70,9 +70,9 @@ class GetNetworkInsightsAccessScopeContentRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_networkInsightsAccessScopeId;
-  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

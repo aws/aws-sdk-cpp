@@ -214,33 +214,33 @@ class Action {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_budgetName;
-  bool m_budgetNameHasBeenSet = false;
 
   NotificationType m_notificationType{NotificationType::NOT_SET};
-  bool m_notificationTypeHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   ActionThreshold m_actionThreshold;
-  bool m_actionThresholdHasBeenSet = false;
 
   Definition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   ApprovalModel m_approvalModel{ApprovalModel::NOT_SET};
-  bool m_approvalModelHasBeenSet = false;
 
   ActionStatus m_status{ActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Subscriber> m_subscribers;
+  bool m_actionIdHasBeenSet = false;
+  bool m_budgetNameHasBeenSet = false;
+  bool m_notificationTypeHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_actionThresholdHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_approvalModelHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_subscribersHasBeenSet = false;
 };
 

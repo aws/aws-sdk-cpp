@@ -89,12 +89,12 @@ class HttpGatewayRouteRewrite {
   ///@}
  private:
   GatewayRouteHostnameRewrite m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   HttpGatewayRoutePathRewrite m_path;
-  bool m_pathHasBeenSet = false;
 
   HttpGatewayRoutePrefixRewrite m_prefix;
+  bool m_hostnameHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
   bool m_prefixHasBeenSet = false;
 };
 

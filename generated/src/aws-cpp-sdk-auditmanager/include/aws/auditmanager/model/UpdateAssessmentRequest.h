@@ -148,21 +148,21 @@ class UpdateAssessmentRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_assessmentName;
-  bool m_assessmentNameHasBeenSet = false;
 
   Aws::String m_assessmentDescription;
-  bool m_assessmentDescriptionHasBeenSet = false;
 
   Scope m_scope;
-  bool m_scopeHasBeenSet = false;
 
   AssessmentReportsDestination m_assessmentReportsDestination;
-  bool m_assessmentReportsDestinationHasBeenSet = false;
 
   Aws::Vector<Role> m_roles;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_assessmentNameHasBeenSet = false;
+  bool m_assessmentDescriptionHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_assessmentReportsDestinationHasBeenSet = false;
   bool m_rolesHasBeenSet = false;
 };
 

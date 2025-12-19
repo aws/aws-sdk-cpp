@@ -69,9 +69,9 @@ class GuardrailConverseImageBlock {
   ///@}
  private:
   GuardrailConverseImageFormat m_format{GuardrailConverseImageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   GuardrailConverseImageSource m_source;
+  bool m_formatHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

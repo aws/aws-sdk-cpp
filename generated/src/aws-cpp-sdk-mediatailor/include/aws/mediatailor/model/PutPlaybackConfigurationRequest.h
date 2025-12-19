@@ -9,6 +9,7 @@
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/AdConditioningConfiguration.h>
+#include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
@@ -375,54 +376,77 @@ class PutPlaybackConfigurationRequest : public MediaTailorRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for customizing HTTP requests to the ad decision server
+   * (ADS). This includes settings for request method, headers, body content, and
+   * compression options.</p>
+   */
+  inline const AdDecisionServerConfiguration& GetAdDecisionServerConfiguration() const { return m_adDecisionServerConfiguration; }
+  inline bool AdDecisionServerConfigurationHasBeenSet() const { return m_adDecisionServerConfigurationHasBeenSet; }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  void SetAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    m_adDecisionServerConfigurationHasBeenSet = true;
+    m_adDecisionServerConfiguration = std::forward<AdDecisionServerConfigurationT>(value);
+  }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  PutPlaybackConfigurationRequest& WithAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    SetAdDecisionServerConfiguration(std::forward<AdDecisionServerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_adDecisionServerUrl;
-  bool m_adDecisionServerUrlHasBeenSet = false;
 
   AvailSuppression m_availSuppression;
-  bool m_availSuppressionHasBeenSet = false;
 
   Bumper m_bumper;
-  bool m_bumperHasBeenSet = false;
 
   CdnConfiguration m_cdnConfiguration;
-  bool m_cdnConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_configurationAliases;
-  bool m_configurationAliasesHasBeenSet = false;
 
   DashConfigurationForPut m_dashConfiguration;
-  bool m_dashConfigurationHasBeenSet = false;
 
   InsertionMode m_insertionMode{InsertionMode::NOT_SET};
-  bool m_insertionModeHasBeenSet = false;
 
   LivePreRollConfiguration m_livePreRollConfiguration;
-  bool m_livePreRollConfigurationHasBeenSet = false;
 
   ManifestProcessingRules m_manifestProcessingRules;
-  bool m_manifestProcessingRulesHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_personalizationThresholdSeconds{0};
-  bool m_personalizationThresholdSecondsHasBeenSet = false;
 
   Aws::String m_slateAdUrl;
-  bool m_slateAdUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_transcodeProfileName;
-  bool m_transcodeProfileNameHasBeenSet = false;
 
   Aws::String m_videoContentSourceUrl;
-  bool m_videoContentSourceUrlHasBeenSet = false;
 
   AdConditioningConfiguration m_adConditioningConfiguration;
+
+  AdDecisionServerConfiguration m_adDecisionServerConfiguration;
+  bool m_adDecisionServerUrlHasBeenSet = false;
+  bool m_availSuppressionHasBeenSet = false;
+  bool m_bumperHasBeenSet = false;
+  bool m_cdnConfigurationHasBeenSet = false;
+  bool m_configurationAliasesHasBeenSet = false;
+  bool m_dashConfigurationHasBeenSet = false;
+  bool m_insertionModeHasBeenSet = false;
+  bool m_livePreRollConfigurationHasBeenSet = false;
+  bool m_manifestProcessingRulesHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_personalizationThresholdSecondsHasBeenSet = false;
+  bool m_slateAdUrlHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_transcodeProfileNameHasBeenSet = false;
+  bool m_videoContentSourceUrlHasBeenSet = false;
   bool m_adConditioningConfigurationHasBeenSet = false;
+  bool m_adDecisionServerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

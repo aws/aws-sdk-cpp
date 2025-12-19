@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String RetryDataReplicationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
-  }
-
   if (m_sourceServerIDHasBeenSet) {
     payload.WithString("sourceServerID", m_sourceServerID);
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

@@ -67,9 +67,9 @@ class CancelTrainedModelInferenceJobRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_trainedModelInferenceJobArn;
+  bool m_membershipIdentifierHasBeenSet = false;
   bool m_trainedModelInferenceJobArnHasBeenSet = false;
 };
 

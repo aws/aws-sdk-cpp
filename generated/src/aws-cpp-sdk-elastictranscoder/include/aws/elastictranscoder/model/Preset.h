@@ -211,30 +211,30 @@ class Preset {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_container;
-  bool m_containerHasBeenSet = false;
 
   AudioParameters m_audio;
-  bool m_audioHasBeenSet = false;
 
   VideoParameters m_video;
-  bool m_videoHasBeenSet = false;
 
   Thumbnails m_thumbnails;
-  bool m_thumbnailsHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_containerHasBeenSet = false;
+  bool m_audioHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_thumbnailsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -13,6 +13,7 @@
 #include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -855,111 +856,140 @@ class RestoreDBClusterToPointInTimeRequest : public RDSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Tags to assign to resources associated with the DB cluster.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>cluster-auto-backup</code> - The DB cluster's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  RestoreDBClusterToPointInTimeRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  RestoreDBClusterToPointInTimeRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   Aws::String m_restoreType;
-  bool m_restoreTypeHasBeenSet = false;
 
   Aws::String m_sourceDBClusterIdentifier;
-  bool m_sourceDBClusterIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreToTime{};
-  bool m_restoreToTimeHasBeenSet = false;
 
   bool m_useLatestRestorableTime{false};
-  bool m_useLatestRestorableTimeHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   long long m_backtrackWindow{0};
-  bool m_backtrackWindowHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
   Aws::String m_dBClusterParameterGroupName;
-  bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainIAMRoleName;
-  bool m_domainIAMRoleNameHasBeenSet = false;
 
   Aws::String m_dBClusterInstanceClass;
-  bool m_dBClusterInstanceClassHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::String m_sourceDbClusterResourceId;
-  bool m_sourceDbClusterResourceIdHasBeenSet = false;
 
   ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
   ScalingConfiguration m_scalingConfiguration;
-  bool m_scalingConfigurationHasBeenSet = false;
 
   Aws::String m_engineMode;
-  bool m_engineModeHasBeenSet = false;
 
   RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
-  bool m_rdsCustomClusterConfigurationHasBeenSet = false;
 
   int m_monitoringInterval{0};
-  bool m_monitoringIntervalHasBeenSet = false;
 
   Aws::String m_monitoringRoleArn;
-  bool m_monitoringRoleArnHasBeenSet = false;
 
   bool m_enablePerformanceInsights{false};
-  bool m_enablePerformanceInsightsHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
-  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
   int m_performanceInsightsRetentionPeriod{0};
-  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
   Aws::String m_engineLifecycleSupport;
+
+  Aws::Vector<TagSpecification> m_tagSpecifications;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_restoreTypeHasBeenSet = false;
+  bool m_sourceDBClusterIdentifierHasBeenSet = false;
+  bool m_restoreToTimeHasBeenSet = false;
+  bool m_useLatestRestorableTimeHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_backtrackWindowHasBeenSet = false;
+  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
+  bool m_dBClusterParameterGroupNameHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_domainIAMRoleNameHasBeenSet = false;
+  bool m_dBClusterInstanceClassHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_sourceDbClusterResourceIdHasBeenSet = false;
+  bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+  bool m_scalingConfigurationHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
+  bool m_rdsCustomClusterConfigurationHasBeenSet = false;
+  bool m_monitoringIntervalHasBeenSet = false;
+  bool m_monitoringRoleArnHasBeenSet = false;
+  bool m_enablePerformanceInsightsHasBeenSet = false;
+  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
+  bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
 };
 
 }  // namespace Model

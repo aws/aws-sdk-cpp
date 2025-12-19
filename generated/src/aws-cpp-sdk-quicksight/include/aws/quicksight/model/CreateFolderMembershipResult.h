@@ -75,12 +75,12 @@ class CreateFolderMembershipResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   FolderMember m_folderMember;
-  bool m_folderMemberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_folderMemberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

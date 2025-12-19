@@ -37,64 +37,18 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Associate public Ip address.</p>
+   * <p>Launch configuration template post launch actions.</p>
    */
-  inline bool GetAssociatePublicIpAddress() const { return m_associatePublicIpAddress; }
-  inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
-  inline void SetAssociatePublicIpAddress(bool value) {
-    m_associatePublicIpAddressHasBeenSet = true;
-    m_associatePublicIpAddress = value;
+  inline const PostLaunchActions& GetPostLaunchActions() const { return m_postLaunchActions; }
+  inline bool PostLaunchActionsHasBeenSet() const { return m_postLaunchActionsHasBeenSet; }
+  template <typename PostLaunchActionsT = PostLaunchActions>
+  void SetPostLaunchActions(PostLaunchActionsT&& value) {
+    m_postLaunchActionsHasBeenSet = true;
+    m_postLaunchActions = std::forward<PostLaunchActionsT>(value);
   }
-  inline CreateLaunchConfigurationTemplateRequest& WithAssociatePublicIpAddress(bool value) {
-    SetAssociatePublicIpAddress(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Launch configuration template boot mode.</p>
-   */
-  inline BootMode GetBootMode() const { return m_bootMode; }
-  inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
-  inline void SetBootMode(BootMode value) {
-    m_bootModeHasBeenSet = true;
-    m_bootMode = value;
-  }
-  inline CreateLaunchConfigurationTemplateRequest& WithBootMode(BootMode value) {
-    SetBootMode(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Copy private Ip.</p>
-   */
-  inline bool GetCopyPrivateIp() const { return m_copyPrivateIp; }
-  inline bool CopyPrivateIpHasBeenSet() const { return m_copyPrivateIpHasBeenSet; }
-  inline void SetCopyPrivateIp(bool value) {
-    m_copyPrivateIpHasBeenSet = true;
-    m_copyPrivateIp = value;
-  }
-  inline CreateLaunchConfigurationTemplateRequest& WithCopyPrivateIp(bool value) {
-    SetCopyPrivateIp(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Copy tags.</p>
-   */
-  inline bool GetCopyTags() const { return m_copyTags; }
-  inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
-  inline void SetCopyTags(bool value) {
-    m_copyTagsHasBeenSet = true;
-    m_copyTags = value;
-  }
-  inline CreateLaunchConfigurationTemplateRequest& WithCopyTags(bool value) {
-    SetCopyTags(value);
+  template <typename PostLaunchActionsT = PostLaunchActions>
+  CreateLaunchConfigurationTemplateRequest& WithPostLaunchActions(PostLaunchActionsT&& value) {
+    SetPostLaunchActions(std::forward<PostLaunchActionsT>(value));
     return *this;
   }
   ///@}
@@ -117,56 +71,6 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Large volume config.</p>
-   */
-  inline const LaunchTemplateDiskConf& GetLargeVolumeConf() const { return m_largeVolumeConf; }
-  inline bool LargeVolumeConfHasBeenSet() const { return m_largeVolumeConfHasBeenSet; }
-  template <typename LargeVolumeConfT = LaunchTemplateDiskConf>
-  void SetLargeVolumeConf(LargeVolumeConfT&& value) {
-    m_largeVolumeConfHasBeenSet = true;
-    m_largeVolumeConf = std::forward<LargeVolumeConfT>(value);
-  }
-  template <typename LargeVolumeConfT = LaunchTemplateDiskConf>
-  CreateLaunchConfigurationTemplateRequest& WithLargeVolumeConf(LargeVolumeConfT&& value) {
-    SetLargeVolumeConf(std::forward<LargeVolumeConfT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Launch disposition.</p>
-   */
-  inline LaunchDisposition GetLaunchDisposition() const { return m_launchDisposition; }
-  inline bool LaunchDispositionHasBeenSet() const { return m_launchDispositionHasBeenSet; }
-  inline void SetLaunchDisposition(LaunchDisposition value) {
-    m_launchDispositionHasBeenSet = true;
-    m_launchDisposition = value;
-  }
-  inline CreateLaunchConfigurationTemplateRequest& WithLaunchDisposition(LaunchDisposition value) {
-    SetLaunchDisposition(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
-  inline const Licensing& GetLicensing() const { return m_licensing; }
-  inline bool LicensingHasBeenSet() const { return m_licensingHasBeenSet; }
-  template <typename LicensingT = Licensing>
-  void SetLicensing(LicensingT&& value) {
-    m_licensingHasBeenSet = true;
-    m_licensing = std::forward<LicensingT>(value);
-  }
-  template <typename LicensingT = Licensing>
-  CreateLaunchConfigurationTemplateRequest& WithLicensing(LicensingT&& value) {
-    SetLicensing(std::forward<LicensingT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Launch configuration template map auto tagging MPE ID.</p>
    */
   inline const Aws::String& GetMapAutoTaggingMpeID() const { return m_mapAutoTaggingMpeID; }
@@ -179,58 +83,6 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
   template <typename MapAutoTaggingMpeIDT = Aws::String>
   CreateLaunchConfigurationTemplateRequest& WithMapAutoTaggingMpeID(MapAutoTaggingMpeIDT&& value) {
     SetMapAutoTaggingMpeID(std::forward<MapAutoTaggingMpeIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Launch configuration template post launch actions.</p>
-   */
-  inline const PostLaunchActions& GetPostLaunchActions() const { return m_postLaunchActions; }
-  inline bool PostLaunchActionsHasBeenSet() const { return m_postLaunchActionsHasBeenSet; }
-  template <typename PostLaunchActionsT = PostLaunchActions>
-  void SetPostLaunchActions(PostLaunchActionsT&& value) {
-    m_postLaunchActionsHasBeenSet = true;
-    m_postLaunchActions = std::forward<PostLaunchActionsT>(value);
-  }
-  template <typename PostLaunchActionsT = PostLaunchActions>
-  CreateLaunchConfigurationTemplateRequest& WithPostLaunchActions(PostLaunchActionsT&& value) {
-    SetPostLaunchActions(std::forward<PostLaunchActionsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Small volume config.</p>
-   */
-  inline const LaunchTemplateDiskConf& GetSmallVolumeConf() const { return m_smallVolumeConf; }
-  inline bool SmallVolumeConfHasBeenSet() const { return m_smallVolumeConfHasBeenSet; }
-  template <typename SmallVolumeConfT = LaunchTemplateDiskConf>
-  void SetSmallVolumeConf(SmallVolumeConfT&& value) {
-    m_smallVolumeConfHasBeenSet = true;
-    m_smallVolumeConf = std::forward<SmallVolumeConfT>(value);
-  }
-  template <typename SmallVolumeConfT = LaunchTemplateDiskConf>
-  CreateLaunchConfigurationTemplateRequest& WithSmallVolumeConf(SmallVolumeConfT&& value) {
-    SetSmallVolumeConf(std::forward<SmallVolumeConfT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Small volume maximum size.</p>
-   */
-  inline long long GetSmallVolumeMaxSize() const { return m_smallVolumeMaxSize; }
-  inline bool SmallVolumeMaxSizeHasBeenSet() const { return m_smallVolumeMaxSizeHasBeenSet; }
-  inline void SetSmallVolumeMaxSize(long long value) {
-    m_smallVolumeMaxSizeHasBeenSet = true;
-    m_smallVolumeMaxSize = value;
-  }
-  inline CreateLaunchConfigurationTemplateRequest& WithSmallVolumeMaxSize(long long value) {
-    SetSmallVolumeMaxSize(value);
     return *this;
   }
   ///@}
@@ -262,6 +114,22 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Launch disposition.</p>
+   */
+  inline LaunchDisposition GetLaunchDisposition() const { return m_launchDisposition; }
+  inline bool LaunchDispositionHasBeenSet() const { return m_launchDispositionHasBeenSet; }
+  inline void SetLaunchDisposition(LaunchDisposition value) {
+    m_launchDispositionHasBeenSet = true;
+    m_launchDisposition = value;
+  }
+  inline CreateLaunchConfigurationTemplateRequest& WithLaunchDisposition(LaunchDisposition value) {
+    SetLaunchDisposition(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Target instance type right-sizing method.</p>
    */
   inline TargetInstanceTypeRightSizingMethod GetTargetInstanceTypeRightSizingMethod() const {
@@ -277,48 +145,220 @@ class CreateLaunchConfigurationTemplateRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Copy private Ip.</p>
+   */
+  inline bool GetCopyPrivateIp() const { return m_copyPrivateIp; }
+  inline bool CopyPrivateIpHasBeenSet() const { return m_copyPrivateIpHasBeenSet; }
+  inline void SetCopyPrivateIp(bool value) {
+    m_copyPrivateIpHasBeenSet = true;
+    m_copyPrivateIp = value;
+  }
+  inline CreateLaunchConfigurationTemplateRequest& WithCopyPrivateIp(bool value) {
+    SetCopyPrivateIp(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Associate public Ip address.</p>
+   */
+  inline bool GetAssociatePublicIpAddress() const { return m_associatePublicIpAddress; }
+  inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
+  inline void SetAssociatePublicIpAddress(bool value) {
+    m_associatePublicIpAddressHasBeenSet = true;
+    m_associatePublicIpAddress = value;
+  }
+  inline CreateLaunchConfigurationTemplateRequest& WithAssociatePublicIpAddress(bool value) {
+    SetAssociatePublicIpAddress(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Copy tags.</p>
+   */
+  inline bool GetCopyTags() const { return m_copyTags; }
+  inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
+  inline void SetCopyTags(bool value) {
+    m_copyTagsHasBeenSet = true;
+    m_copyTags = value;
+  }
+  inline CreateLaunchConfigurationTemplateRequest& WithCopyTags(bool value) {
+    SetCopyTags(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Licensing& GetLicensing() const { return m_licensing; }
+  inline bool LicensingHasBeenSet() const { return m_licensingHasBeenSet; }
+  template <typename LicensingT = Licensing>
+  void SetLicensing(LicensingT&& value) {
+    m_licensingHasBeenSet = true;
+    m_licensing = std::forward<LicensingT>(value);
+  }
+  template <typename LicensingT = Licensing>
+  CreateLaunchConfigurationTemplateRequest& WithLicensing(LicensingT&& value) {
+    SetLicensing(std::forward<LicensingT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Launch configuration template boot mode.</p>
+   */
+  inline BootMode GetBootMode() const { return m_bootMode; }
+  inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+  inline void SetBootMode(BootMode value) {
+    m_bootModeHasBeenSet = true;
+    m_bootMode = value;
+  }
+  inline CreateLaunchConfigurationTemplateRequest& WithBootMode(BootMode value) {
+    SetBootMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Small volume maximum size.</p>
+   */
+  inline long long GetSmallVolumeMaxSize() const { return m_smallVolumeMaxSize; }
+  inline bool SmallVolumeMaxSizeHasBeenSet() const { return m_smallVolumeMaxSizeHasBeenSet; }
+  inline void SetSmallVolumeMaxSize(long long value) {
+    m_smallVolumeMaxSizeHasBeenSet = true;
+    m_smallVolumeMaxSize = value;
+  }
+  inline CreateLaunchConfigurationTemplateRequest& WithSmallVolumeMaxSize(long long value) {
+    SetSmallVolumeMaxSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Small volume config.</p>
+   */
+  inline const LaunchTemplateDiskConf& GetSmallVolumeConf() const { return m_smallVolumeConf; }
+  inline bool SmallVolumeConfHasBeenSet() const { return m_smallVolumeConfHasBeenSet; }
+  template <typename SmallVolumeConfT = LaunchTemplateDiskConf>
+  void SetSmallVolumeConf(SmallVolumeConfT&& value) {
+    m_smallVolumeConfHasBeenSet = true;
+    m_smallVolumeConf = std::forward<SmallVolumeConfT>(value);
+  }
+  template <typename SmallVolumeConfT = LaunchTemplateDiskConf>
+  CreateLaunchConfigurationTemplateRequest& WithSmallVolumeConf(SmallVolumeConfT&& value) {
+    SetSmallVolumeConf(std::forward<SmallVolumeConfT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Large volume config.</p>
+   */
+  inline const LaunchTemplateDiskConf& GetLargeVolumeConf() const { return m_largeVolumeConf; }
+  inline bool LargeVolumeConfHasBeenSet() const { return m_largeVolumeConfHasBeenSet; }
+  template <typename LargeVolumeConfT = LaunchTemplateDiskConf>
+  void SetLargeVolumeConf(LargeVolumeConfT&& value) {
+    m_largeVolumeConfHasBeenSet = true;
+    m_largeVolumeConf = std::forward<LargeVolumeConfT>(value);
+  }
+  template <typename LargeVolumeConfT = LaunchTemplateDiskConf>
+  CreateLaunchConfigurationTemplateRequest& WithLargeVolumeConf(LargeVolumeConfT&& value) {
+    SetLargeVolumeConf(std::forward<LargeVolumeConfT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Enable parameters encryption.</p>
+   */
+  inline bool GetEnableParametersEncryption() const { return m_enableParametersEncryption; }
+  inline bool EnableParametersEncryptionHasBeenSet() const { return m_enableParametersEncryptionHasBeenSet; }
+  inline void SetEnableParametersEncryption(bool value) {
+    m_enableParametersEncryptionHasBeenSet = true;
+    m_enableParametersEncryption = value;
+  }
+  inline CreateLaunchConfigurationTemplateRequest& WithEnableParametersEncryption(bool value) {
+    SetEnableParametersEncryption(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Parameters encryption key.</p>
+   */
+  inline const Aws::String& GetParametersEncryptionKey() const { return m_parametersEncryptionKey; }
+  inline bool ParametersEncryptionKeyHasBeenSet() const { return m_parametersEncryptionKeyHasBeenSet; }
+  template <typename ParametersEncryptionKeyT = Aws::String>
+  void SetParametersEncryptionKey(ParametersEncryptionKeyT&& value) {
+    m_parametersEncryptionKeyHasBeenSet = true;
+    m_parametersEncryptionKey = std::forward<ParametersEncryptionKeyT>(value);
+  }
+  template <typename ParametersEncryptionKeyT = Aws::String>
+  CreateLaunchConfigurationTemplateRequest& WithParametersEncryptionKey(ParametersEncryptionKeyT&& value) {
+    SetParametersEncryptionKey(std::forward<ParametersEncryptionKeyT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
-
-  BootMode m_bootMode{BootMode::NOT_SET};
-  bool m_bootModeHasBeenSet = false;
-
-  bool m_copyPrivateIp{false};
-  bool m_copyPrivateIpHasBeenSet = false;
-
-  bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
+  PostLaunchActions m_postLaunchActions;
 
   bool m_enableMapAutoTagging{false};
-  bool m_enableMapAutoTaggingHasBeenSet = false;
-
-  LaunchTemplateDiskConf m_largeVolumeConf;
-  bool m_largeVolumeConfHasBeenSet = false;
-
-  LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
-  bool m_launchDispositionHasBeenSet = false;
-
-  Licensing m_licensing;
-  bool m_licensingHasBeenSet = false;
 
   Aws::String m_mapAutoTaggingMpeID;
-  bool m_mapAutoTaggingMpeIDHasBeenSet = false;
-
-  PostLaunchActions m_postLaunchActions;
-  bool m_postLaunchActionsHasBeenSet = false;
-
-  LaunchTemplateDiskConf m_smallVolumeConf;
-  bool m_smallVolumeConfHasBeenSet = false;
-
-  long long m_smallVolumeMaxSize{0};
-  bool m_smallVolumeMaxSizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
+
+  LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
 
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
+
+  bool m_copyPrivateIp{false};
+
+  bool m_associatePublicIpAddress{false};
+
+  bool m_copyTags{false};
+
+  Licensing m_licensing;
+
+  BootMode m_bootMode{BootMode::NOT_SET};
+
+  long long m_smallVolumeMaxSize{0};
+
+  LaunchTemplateDiskConf m_smallVolumeConf;
+
+  LaunchTemplateDiskConf m_largeVolumeConf;
+
+  bool m_enableParametersEncryption{false};
+
+  Aws::String m_parametersEncryptionKey;
+  bool m_postLaunchActionsHasBeenSet = false;
+  bool m_enableMapAutoTaggingHasBeenSet = false;
+  bool m_mapAutoTaggingMpeIDHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_launchDispositionHasBeenSet = false;
   bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
+  bool m_copyPrivateIpHasBeenSet = false;
+  bool m_associatePublicIpAddressHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_licensingHasBeenSet = false;
+  bool m_bootModeHasBeenSet = false;
+  bool m_smallVolumeMaxSizeHasBeenSet = false;
+  bool m_smallVolumeConfHasBeenSet = false;
+  bool m_largeVolumeConfHasBeenSet = false;
+  bool m_enableParametersEncryptionHasBeenSet = false;
+  bool m_parametersEncryptionKeyHasBeenSet = false;
 };
 
 }  // namespace Model

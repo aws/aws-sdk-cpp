@@ -69,9 +69,9 @@ class TableFieldURLConfiguration {
   ///@}
  private:
   TableFieldLinkConfiguration m_linkConfiguration;
-  bool m_linkConfigurationHasBeenSet = false;
 
   TableFieldImageConfiguration m_imageConfiguration;
+  bool m_linkConfigurationHasBeenSet = false;
   bool m_imageConfigurationHasBeenSet = false;
 };
 

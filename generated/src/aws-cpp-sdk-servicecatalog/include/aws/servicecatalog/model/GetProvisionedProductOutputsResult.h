@@ -88,12 +88,12 @@ class GetProvisionedProductOutputsResult {
   ///@}
  private:
   Aws::Vector<RecordOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_outputsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

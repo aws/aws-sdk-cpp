@@ -440,54 +440,54 @@ class XavcSettings {
   ///@}
  private:
   XavcAdaptiveQuantization m_adaptiveQuantization{XavcAdaptiveQuantization::NOT_SET};
-  bool m_adaptiveQuantizationHasBeenSet = false;
 
   XavcEntropyEncoding m_entropyEncoding{XavcEntropyEncoding::NOT_SET};
-  bool m_entropyEncodingHasBeenSet = false;
 
   XavcFramerateControl m_framerateControl{XavcFramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   XavcFramerateConversionAlgorithm m_framerateConversionAlgorithm{XavcFramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   XavcProfile m_profile{XavcProfile::NOT_SET};
-  bool m_profileHasBeenSet = false;
 
   XavcSlowPal m_slowPal{XavcSlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   int m_softness{0};
-  bool m_softnessHasBeenSet = false;
 
   XavcSpatialAdaptiveQuantization m_spatialAdaptiveQuantization{XavcSpatialAdaptiveQuantization::NOT_SET};
-  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
   XavcTemporalAdaptiveQuantization m_temporalAdaptiveQuantization{XavcTemporalAdaptiveQuantization::NOT_SET};
-  bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 
   Xavc4kIntraCbgProfileSettings m_xavc4kIntraCbgProfileSettings;
-  bool m_xavc4kIntraCbgProfileSettingsHasBeenSet = false;
 
   Xavc4kIntraVbrProfileSettings m_xavc4kIntraVbrProfileSettings;
-  bool m_xavc4kIntraVbrProfileSettingsHasBeenSet = false;
 
   Xavc4kProfileSettings m_xavc4kProfileSettings;
-  bool m_xavc4kProfileSettingsHasBeenSet = false;
 
   XavcHdIntraCbgProfileSettings m_xavcHdIntraCbgProfileSettings;
-  bool m_xavcHdIntraCbgProfileSettingsHasBeenSet = false;
 
   XavcHdProfileSettings m_xavcHdProfileSettings;
+  bool m_adaptiveQuantizationHasBeenSet = false;
+  bool m_entropyEncodingHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
+  bool m_softnessHasBeenSet = false;
+  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
+  bool m_temporalAdaptiveQuantizationHasBeenSet = false;
+  bool m_xavc4kIntraCbgProfileSettingsHasBeenSet = false;
+  bool m_xavc4kIntraVbrProfileSettingsHasBeenSet = false;
+  bool m_xavc4kProfileSettingsHasBeenSet = false;
+  bool m_xavcHdIntraCbgProfileSettingsHasBeenSet = false;
   bool m_xavcHdProfileSettingsHasBeenSet = false;
 };
 

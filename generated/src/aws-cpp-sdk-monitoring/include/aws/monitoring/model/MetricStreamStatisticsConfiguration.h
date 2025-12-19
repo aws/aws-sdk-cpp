@@ -4,9 +4,9 @@
  */
 
 #pragma once
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/MetricStreamStatisticsMetric.h>
 
@@ -14,9 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -35,11 +35,9 @@ namespace Model {
 class MetricStreamStatisticsConfiguration {
  public:
   AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration() = default;
-  AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -104,9 +102,9 @@ class MetricStreamStatisticsConfiguration {
   ///@}
  private:
   Aws::Vector<MetricStreamStatisticsMetric> m_includeMetrics;
-  bool m_includeMetricsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalStatistics;
+  bool m_includeMetricsHasBeenSet = false;
   bool m_additionalStatisticsHasBeenSet = false;
 };
 

@@ -335,42 +335,42 @@ class CreateTrainedModelRequest : public CleanRoomsMLRequest {
   ///@}
  private:
   Aws::String m_membershipIdentifier;
-  bool m_membershipIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_configuredModelAlgorithmAssociationArn;
-  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hyperparameters;
-  bool m_hyperparametersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environment;
-  bool m_environmentHasBeenSet = false;
 
   ResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   StoppingCondition m_stoppingCondition;
-  bool m_stoppingConditionHasBeenSet = false;
 
   Aws::Vector<IncrementalTrainingDataChannel> m_incrementalTrainingDataChannels;
-  bool m_incrementalTrainingDataChannelsHasBeenSet = false;
 
   Aws::Vector<ModelTrainingDataChannel> m_dataChannels;
-  bool m_dataChannelsHasBeenSet = false;
 
   TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
-  bool m_trainingInputModeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_membershipIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationArnHasBeenSet = false;
+  bool m_hyperparametersHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
+  bool m_stoppingConditionHasBeenSet = false;
+  bool m_incrementalTrainingDataChannelsHasBeenSet = false;
+  bool m_dataChannelsHasBeenSet = false;
+  bool m_trainingInputModeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

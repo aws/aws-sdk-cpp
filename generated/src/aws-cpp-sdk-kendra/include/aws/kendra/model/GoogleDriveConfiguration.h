@@ -221,24 +221,24 @@ class GoogleDriveConfiguration {
   ///@}
  private:
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-  bool m_fieldMappingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeMimeTypes;
-  bool m_excludeMimeTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeUserAccounts;
-  bool m_excludeUserAccountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeSharedDrives;
+  bool m_secretArnHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
+  bool m_fieldMappingsHasBeenSet = false;
+  bool m_excludeMimeTypesHasBeenSet = false;
+  bool m_excludeUserAccountsHasBeenSet = false;
   bool m_excludeSharedDrivesHasBeenSet = false;
 };
 

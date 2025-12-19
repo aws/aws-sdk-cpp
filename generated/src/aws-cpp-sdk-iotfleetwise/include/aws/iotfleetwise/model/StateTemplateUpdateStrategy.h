@@ -72,9 +72,9 @@ class StateTemplateUpdateStrategy {
   ///@}
  private:
   PeriodicStateTemplateUpdateStrategy m_periodic;
-  bool m_periodicHasBeenSet = false;
 
   OnChangeStateTemplateUpdateStrategy m_onChange;
+  bool m_periodicHasBeenSet = false;
   bool m_onChangeHasBeenSet = false;
 };
 

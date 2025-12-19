@@ -65,9 +65,9 @@ class RetryPolicy {
   ///@}
  private:
   int m_maximumRetryAttempts{0};
-  bool m_maximumRetryAttemptsHasBeenSet = false;
 
   int m_maximumEventAgeInSeconds{0};
+  bool m_maximumRetryAttemptsHasBeenSet = false;
   bool m_maximumEventAgeInSecondsHasBeenSet = false;
 };
 

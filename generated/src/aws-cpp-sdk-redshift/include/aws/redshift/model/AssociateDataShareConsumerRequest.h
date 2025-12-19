@@ -123,18 +123,18 @@ class AssociateDataShareConsumerRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_dataShareArn;
-  bool m_dataShareArnHasBeenSet = false;
 
   bool m_associateEntireAccount{false};
-  bool m_associateEntireAccountHasBeenSet = false;
 
   Aws::String m_consumerArn;
-  bool m_consumerArnHasBeenSet = false;
 
   Aws::String m_consumerRegion;
-  bool m_consumerRegionHasBeenSet = false;
 
   bool m_allowWrites{false};
+  bool m_dataShareArnHasBeenSet = false;
+  bool m_associateEntireAccountHasBeenSet = false;
+  bool m_consumerArnHasBeenSet = false;
+  bool m_consumerRegionHasBeenSet = false;
   bool m_allowWritesHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateEventIntegrationResult {
   ///@}
  private:
   Aws::String m_eventIntegrationArn;
-  bool m_eventIntegrationArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventIntegrationArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

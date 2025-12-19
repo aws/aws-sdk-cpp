@@ -110,15 +110,15 @@ class StartReadSetImportJobRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<StartReadSetImportJobSourceItem> m_sources;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
 };
 

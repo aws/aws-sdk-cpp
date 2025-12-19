@@ -62,6 +62,17 @@ ComboChartConfiguration& ComboChartConfiguration::operator=(JsonView jsonValue) 
     m_colorLabelOptions = jsonValue.GetObject("ColorLabelOptions");
     m_colorLabelOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DefaultSeriesSettings")) {
+    m_defaultSeriesSettings = jsonValue.GetObject("DefaultSeriesSettings");
+    m_defaultSeriesSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Series")) {
+    Aws::Utils::Array<JsonView> seriesJsonList = jsonValue.GetArray("Series");
+    for (unsigned seriesIndex = 0; seriesIndex < seriesJsonList.GetLength(); ++seriesIndex) {
+      m_series.push_back(seriesJsonList[seriesIndex].AsObject());
+    }
+    m_seriesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Legend")) {
     m_legend = jsonValue.GetObject("Legend");
     m_legendHasBeenSet = true;
@@ -141,6 +152,18 @@ JsonValue ComboChartConfiguration::Jsonize() const {
 
   if (m_colorLabelOptionsHasBeenSet) {
     payload.WithObject("ColorLabelOptions", m_colorLabelOptions.Jsonize());
+  }
+
+  if (m_defaultSeriesSettingsHasBeenSet) {
+    payload.WithObject("DefaultSeriesSettings", m_defaultSeriesSettings.Jsonize());
+  }
+
+  if (m_seriesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> seriesJsonList(m_series.size());
+    for (unsigned seriesIndex = 0; seriesIndex < seriesJsonList.GetLength(); ++seriesIndex) {
+      seriesJsonList[seriesIndex].AsObject(m_series[seriesIndex].Jsonize());
+    }
+    payload.WithArray("Series", std::move(seriesJsonList));
   }
 
   if (m_legendHasBeenSet) {

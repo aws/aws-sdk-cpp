@@ -63,9 +63,9 @@ class ThrottlingException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_retryAfterSeconds{0};
+  bool m_messageHasBeenSet = false;
   bool m_retryAfterSecondsHasBeenSet = false;
 };
 

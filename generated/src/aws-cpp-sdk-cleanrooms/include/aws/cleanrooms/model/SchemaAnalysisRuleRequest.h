@@ -70,9 +70,9 @@ class SchemaAnalysisRuleRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AnalysisRuleType m_type{AnalysisRuleType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

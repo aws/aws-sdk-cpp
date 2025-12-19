@@ -69,9 +69,9 @@ class DescribeEndpointRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_homeRegion;
+  bool m_nameHasBeenSet = false;
   bool m_homeRegionHasBeenSet = false;
 };
 

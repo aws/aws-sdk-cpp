@@ -107,15 +107,15 @@ class LastDeploymentInfo {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   DeploymentStatus m_status{DeploymentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
+  bool m_deploymentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
 };
 

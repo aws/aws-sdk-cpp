@@ -69,9 +69,9 @@ class CreateTypedLinkFacetRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   TypedLinkFacet m_facet;
+  bool m_schemaArnHasBeenSet = false;
   bool m_facetHasBeenSet = false;
 };
 

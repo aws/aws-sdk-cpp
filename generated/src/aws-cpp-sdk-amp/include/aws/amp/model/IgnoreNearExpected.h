@@ -64,9 +64,9 @@ class IgnoreNearExpected {
   ///@}
  private:
   double m_amount{0.0};
-  bool m_amountHasBeenSet = false;
 
   double m_ratio{0.0};
+  bool m_amountHasBeenSet = false;
   bool m_ratioHasBeenSet = false;
 };
 

@@ -149,21 +149,21 @@ class RedshiftParameters {
   ///@}
  private:
   Aws::String m_host;
-  bool m_hostHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   RedshiftIAMParameters m_iAMParameters;
-  bool m_iAMParametersHasBeenSet = false;
 
   IdentityCenterConfiguration m_identityCenterConfiguration;
+  bool m_hostHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_iAMParametersHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;
 };
 

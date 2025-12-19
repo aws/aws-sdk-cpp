@@ -66,9 +66,9 @@ class MedicalScribeChannelDefinition {
   ///@}
  private:
   int m_channelId{0};
-  bool m_channelIdHasBeenSet = false;
 
   MedicalScribeParticipantRole m_participantRole{MedicalScribeParticipantRole::NOT_SET};
+  bool m_channelIdHasBeenSet = false;
   bool m_participantRoleHasBeenSet = false;
 };
 

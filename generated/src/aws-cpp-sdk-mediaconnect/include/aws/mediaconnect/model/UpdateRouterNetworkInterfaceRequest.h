@@ -86,12 +86,12 @@ class UpdateRouterNetworkInterfaceRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RouterNetworkInterfaceConfiguration m_configuration;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

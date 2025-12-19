@@ -83,12 +83,12 @@ class GetOpenIdTokenResult {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityIdHasBeenSet = false;
+  bool m_tokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

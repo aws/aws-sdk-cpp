@@ -110,18 +110,18 @@ class WcdmaNmrObj {
   ///@}
  private:
   int m_uarfcndl{0};
-  bool m_uarfcndlHasBeenSet = false;
 
   int m_psc{0};
-  bool m_pscHasBeenSet = false;
 
   int m_utranCid{0};
-  bool m_utranCidHasBeenSet = false;
 
   int m_rscp{0};
-  bool m_rscpHasBeenSet = false;
 
   int m_pathLoss{0};
+  bool m_uarfcndlHasBeenSet = false;
+  bool m_pscHasBeenSet = false;
+  bool m_utranCidHasBeenSet = false;
+  bool m_rscpHasBeenSet = false;
   bool m_pathLossHasBeenSet = false;
 };
 

@@ -153,24 +153,24 @@ class GetMLModelTrainingJobResult {
   ///@}
  private:
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MlResourceDefinition m_processingJob;
-  bool m_processingJobHasBeenSet = false;
 
   MlResourceDefinition m_hpoJob;
-  bool m_hpoJobHasBeenSet = false;
 
   MlResourceDefinition m_modelTransformJob;
-  bool m_modelTransformJobHasBeenSet = false;
 
   Aws::Vector<MlConfigDefinition> m_mlModels;
-  bool m_mlModelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_processingJobHasBeenSet = false;
+  bool m_hpoJobHasBeenSet = false;
+  bool m_modelTransformJobHasBeenSet = false;
+  bool m_mlModelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

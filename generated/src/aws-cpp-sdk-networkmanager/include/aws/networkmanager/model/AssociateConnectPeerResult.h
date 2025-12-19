@@ -60,9 +60,9 @@ class AssociateConnectPeerResult {
   ///@}
  private:
   ConnectPeerAssociation m_connectPeerAssociation;
-  bool m_connectPeerAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectPeerAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

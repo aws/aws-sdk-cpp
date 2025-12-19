@@ -71,6 +71,14 @@ Aws::String CreateResolverEndpointRequest::SerializePayload() const {
     payload.WithArray("Protocols", std::move(protocolsJsonList));
   }
 
+  if (m_rniEnhancedMetricsEnabledHasBeenSet) {
+    payload.WithBool("RniEnhancedMetricsEnabled", m_rniEnhancedMetricsEnabled);
+  }
+
+  if (m_targetNameServerMetricsEnabledHasBeenSet) {
+    payload.WithBool("TargetNameServerMetricsEnabled", m_targetNameServerMetricsEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

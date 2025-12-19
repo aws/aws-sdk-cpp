@@ -108,15 +108,15 @@ class PendingCreateStandbyWorkspacesRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   WorkspaceState m_state{WorkspaceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_userNameHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class BatchGetApplicationsResult {
   ///@}
  private:
   Aws::Vector<ApplicationInfo> m_applicationsInfo;
-  bool m_applicationsInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationsInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

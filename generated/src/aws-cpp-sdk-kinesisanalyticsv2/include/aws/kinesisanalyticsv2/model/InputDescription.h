@@ -222,30 +222,30 @@ class InputDescription {
   ///@}
  private:
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   Aws::String m_namePrefix;
-  bool m_namePrefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inAppStreamNames;
-  bool m_inAppStreamNamesHasBeenSet = false;
 
   InputProcessingConfigurationDescription m_inputProcessingConfigurationDescription;
-  bool m_inputProcessingConfigurationDescriptionHasBeenSet = false;
 
   KinesisStreamsInputDescription m_kinesisStreamsInputDescription;
-  bool m_kinesisStreamsInputDescriptionHasBeenSet = false;
 
   KinesisFirehoseInputDescription m_kinesisFirehoseInputDescription;
-  bool m_kinesisFirehoseInputDescriptionHasBeenSet = false;
 
   SourceSchema m_inputSchema;
-  bool m_inputSchemaHasBeenSet = false;
 
   InputParallelism m_inputParallelism;
-  bool m_inputParallelismHasBeenSet = false;
 
   InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
+  bool m_inputIdHasBeenSet = false;
+  bool m_namePrefixHasBeenSet = false;
+  bool m_inAppStreamNamesHasBeenSet = false;
+  bool m_inputProcessingConfigurationDescriptionHasBeenSet = false;
+  bool m_kinesisStreamsInputDescriptionHasBeenSet = false;
+  bool m_kinesisFirehoseInputDescriptionHasBeenSet = false;
+  bool m_inputSchemaHasBeenSet = false;
+  bool m_inputParallelismHasBeenSet = false;
   bool m_inputStartingPositionConfigurationHasBeenSet = false;
 };
 

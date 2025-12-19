@@ -134,18 +134,18 @@ class UpdateFindingsRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_analyzerArn;
-  bool m_analyzerArnHasBeenSet = false;
 
   FindingStatusUpdate m_status{FindingStatusUpdate::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_analyzerArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_idsHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

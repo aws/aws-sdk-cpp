@@ -192,27 +192,27 @@ class CreateAnomalyDetectorRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   int m_evaluationIntervalInSeconds{0};
-  bool m_evaluationIntervalInSecondsHasBeenSet = false;
 
   AnomalyDetectorMissingDataAction m_missingDataAction;
-  bool m_missingDataActionHasBeenSet = false;
 
   AnomalyDetectorConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_evaluationIntervalInSecondsHasBeenSet = false;
+  bool m_missingDataActionHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

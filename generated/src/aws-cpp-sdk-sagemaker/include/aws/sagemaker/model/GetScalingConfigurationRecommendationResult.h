@@ -168,27 +168,27 @@ class GetScalingConfigurationRecommendationResult {
   ///@}
  private:
   Aws::String m_inferenceRecommendationsJobName;
-  bool m_inferenceRecommendationsJobNameHasBeenSet = false;
 
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_endpointName;
-  bool m_endpointNameHasBeenSet = false;
 
   int m_targetCpuUtilizationPerCore{0};
-  bool m_targetCpuUtilizationPerCoreHasBeenSet = false;
 
   ScalingPolicyObjective m_scalingPolicyObjective;
-  bool m_scalingPolicyObjectiveHasBeenSet = false;
 
   ScalingPolicyMetric m_metric;
-  bool m_metricHasBeenSet = false;
 
   DynamicScalingConfiguration m_dynamicScalingConfiguration;
-  bool m_dynamicScalingConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceRecommendationsJobNameHasBeenSet = false;
+  bool m_recommendationIdHasBeenSet = false;
+  bool m_endpointNameHasBeenSet = false;
+  bool m_targetCpuUtilizationPerCoreHasBeenSet = false;
+  bool m_scalingPolicyObjectiveHasBeenSet = false;
+  bool m_metricHasBeenSet = false;
+  bool m_dynamicScalingConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

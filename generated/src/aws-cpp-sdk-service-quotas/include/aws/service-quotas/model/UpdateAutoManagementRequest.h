@@ -99,12 +99,12 @@ class UpdateAutoManagementRequest : public ServiceQuotasRequest {
   ///@}
  private:
   OptInType m_optInType{OptInType::NOT_SET};
-  bool m_optInTypeHasBeenSet = false;
 
   Aws::String m_notificationArn;
-  bool m_notificationArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_exclusionList;
+  bool m_optInTypeHasBeenSet = false;
+  bool m_notificationArnHasBeenSet = false;
   bool m_exclusionListHasBeenSet = false;
 };
 

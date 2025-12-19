@@ -60,9 +60,9 @@ class AssociateRoleToGroupResult {
   ///@}
  private:
   Aws::String m_associatedAt;
-  bool m_associatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

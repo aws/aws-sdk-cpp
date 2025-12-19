@@ -111,15 +111,15 @@ class PutRuleGroupsNamespaceRequest : public PrometheusServiceRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

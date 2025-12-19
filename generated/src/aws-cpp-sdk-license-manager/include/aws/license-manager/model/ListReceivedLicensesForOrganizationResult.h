@@ -85,12 +85,12 @@ class ListReceivedLicensesForOrganizationResult {
   ///@}
  private:
   Aws::Vector<GrantedLicense> m_licenses;
-  bool m_licensesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licensesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

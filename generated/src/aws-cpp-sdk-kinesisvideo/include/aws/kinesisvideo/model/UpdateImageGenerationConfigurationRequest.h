@@ -90,12 +90,12 @@ class UpdateImageGenerationConfigurationRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_streamARN;
-  bool m_streamARNHasBeenSet = false;
 
   ImageGenerationConfiguration m_imageGenerationConfiguration;
+  bool m_streamNameHasBeenSet = false;
+  bool m_streamARNHasBeenSet = false;
   bool m_imageGenerationConfigurationHasBeenSet = false;
 };
 

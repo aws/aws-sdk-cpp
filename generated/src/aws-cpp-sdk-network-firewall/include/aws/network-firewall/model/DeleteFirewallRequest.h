@@ -70,9 +70,9 @@ class DeleteFirewallRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallName;
-  bool m_firewallNameHasBeenSet = false;
 
   Aws::String m_firewallArn;
+  bool m_firewallNameHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
 };
 

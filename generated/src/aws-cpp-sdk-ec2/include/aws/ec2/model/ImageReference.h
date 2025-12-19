@@ -87,12 +87,12 @@ class ImageReference {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   ImageReferenceResourceType m_resourceType{ImageReferenceResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_imageIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class ParameterInlinePolicy {
   ///@}
  private:
   Aws::String m_policyText;
-  bool m_policyTextHasBeenSet = false;
 
   Aws::String m_policyType;
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_policyStatus;
+  bool m_policyTextHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
   bool m_policyStatusHasBeenSet = false;
 };
 

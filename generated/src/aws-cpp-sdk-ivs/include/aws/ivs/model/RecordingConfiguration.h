@@ -197,27 +197,27 @@ class RecordingConfiguration {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DestinationConfiguration m_destinationConfiguration;
-  bool m_destinationConfigurationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_recordingReconnectWindowSeconds{0};
-  bool m_recordingReconnectWindowSecondsHasBeenSet = false;
 
   RenditionConfiguration m_renditionConfiguration;
-  bool m_renditionConfigurationHasBeenSet = false;
 
   RecordingConfigurationState m_state{RecordingConfigurationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ThumbnailConfiguration m_thumbnailConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recordingReconnectWindowSecondsHasBeenSet = false;
+  bool m_renditionConfigurationHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_thumbnailConfigurationHasBeenSet = false;
 };
 

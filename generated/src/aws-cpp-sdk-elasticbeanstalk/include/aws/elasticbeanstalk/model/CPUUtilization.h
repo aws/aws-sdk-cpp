@@ -168,27 +168,27 @@ class CPUUtilization {
   ///@}
  private:
   double m_user{0.0};
-  bool m_userHasBeenSet = false;
 
   double m_nice{0.0};
-  bool m_niceHasBeenSet = false;
 
   double m_system{0.0};
-  bool m_systemHasBeenSet = false;
 
   double m_idle{0.0};
-  bool m_idleHasBeenSet = false;
 
   double m_iOWait{0.0};
-  bool m_iOWaitHasBeenSet = false;
 
   double m_iRQ{0.0};
-  bool m_iRQHasBeenSet = false;
 
   double m_softIRQ{0.0};
-  bool m_softIRQHasBeenSet = false;
 
   double m_privileged{0.0};
+  bool m_userHasBeenSet = false;
+  bool m_niceHasBeenSet = false;
+  bool m_systemHasBeenSet = false;
+  bool m_idleHasBeenSet = false;
+  bool m_iOWaitHasBeenSet = false;
+  bool m_iRQHasBeenSet = false;
+  bool m_softIRQHasBeenSet = false;
   bool m_privilegedHasBeenSet = false;
 };
 

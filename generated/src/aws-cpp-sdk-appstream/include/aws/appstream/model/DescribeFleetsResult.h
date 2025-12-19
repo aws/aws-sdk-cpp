@@ -85,12 +85,12 @@ class DescribeFleetsResult {
   ///@}
  private:
   Aws::Vector<Fleet> m_fleets;
-  bool m_fleetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

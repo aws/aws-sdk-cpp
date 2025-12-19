@@ -77,9 +77,9 @@ class TagCriterionForJob {
   ///@}
  private:
   JobComparator m_comparator{JobComparator::NOT_SET};
-  bool m_comparatorHasBeenSet = false;
 
   Aws::Vector<TagCriterionPairForJob> m_tagValues;
+  bool m_comparatorHasBeenSet = false;
   bool m_tagValuesHasBeenSet = false;
 };
 

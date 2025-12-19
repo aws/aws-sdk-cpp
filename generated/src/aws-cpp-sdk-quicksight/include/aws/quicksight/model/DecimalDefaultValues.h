@@ -76,9 +76,9 @@ class DecimalDefaultValues {
   ///@}
  private:
   DynamicDefaultValue m_dynamicValue;
-  bool m_dynamicValueHasBeenSet = false;
 
   Aws::Vector<double> m_staticValues;
+  bool m_dynamicValueHasBeenSet = false;
   bool m_staticValuesHasBeenSet = false;
 };
 

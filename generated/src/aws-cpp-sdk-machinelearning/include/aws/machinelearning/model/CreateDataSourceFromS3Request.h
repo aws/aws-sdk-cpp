@@ -116,15 +116,15 @@ class CreateDataSourceFromS3Request : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_dataSourceName;
-  bool m_dataSourceNameHasBeenSet = false;
 
   S3DataSpec m_dataSpec;
-  bool m_dataSpecHasBeenSet = false;
 
   bool m_computeStatistics{false};
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_dataSourceNameHasBeenSet = false;
+  bool m_dataSpecHasBeenSet = false;
   bool m_computeStatisticsHasBeenSet = false;
 };
 

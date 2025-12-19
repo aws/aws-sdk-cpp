@@ -84,12 +84,12 @@ class GetDocumentResult {
   ///@}
  private:
   DocumentMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customMetadata;
-  bool m_customMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataHasBeenSet = false;
+  bool m_customMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

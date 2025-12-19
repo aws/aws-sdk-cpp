@@ -58,9 +58,9 @@ class ListTemplateVersionsResult {
   ///@}
  private:
   TemplateVersionsResponse m_templateVersionsResponse;
-  bool m_templateVersionsResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateVersionsResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

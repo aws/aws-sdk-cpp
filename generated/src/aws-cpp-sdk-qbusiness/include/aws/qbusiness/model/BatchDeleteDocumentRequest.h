@@ -111,15 +111,15 @@ class BatchDeleteDocumentRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_indexId;
-  bool m_indexIdHasBeenSet = false;
 
   Aws::Vector<DeleteDocument> m_documents;
-  bool m_documentsHasBeenSet = false;
 
   Aws::String m_dataSourceSyncId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_indexIdHasBeenSet = false;
+  bool m_documentsHasBeenSet = false;
   bool m_dataSourceSyncIdHasBeenSet = false;
 };
 

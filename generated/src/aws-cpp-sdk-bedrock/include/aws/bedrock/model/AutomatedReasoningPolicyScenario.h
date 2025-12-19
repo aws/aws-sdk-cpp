@@ -74,6 +74,23 @@ class AutomatedReasoningPolicyScenario {
 
   ///@{
   /**
+   * <p>The expected outcome when this scenario is evaluated against the policy
+   * (e.g., PASS, FAIL, VIOLATION).</p>
+   */
+  inline AutomatedReasoningCheckResult GetExpectedResult() const { return m_expectedResult; }
+  inline bool ExpectedResultHasBeenSet() const { return m_expectedResultHasBeenSet; }
+  inline void SetExpectedResult(AutomatedReasoningCheckResult value) {
+    m_expectedResultHasBeenSet = true;
+    m_expectedResult = value;
+  }
+  inline AutomatedReasoningPolicyScenario& WithExpectedResult(AutomatedReasoningCheckResult value) {
+    SetExpectedResult(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of rule identifiers that are expected to be triggered or evaluated
    * by this test scenario.</p>
    */
@@ -96,35 +113,18 @@ class AutomatedReasoningPolicyScenario {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The expected outcome when this scenario is evaluated against the policy
-   * (e.g., PASS, FAIL, VIOLATION).</p>
-   */
-  inline AutomatedReasoningCheckResult GetExpectedResult() const { return m_expectedResult; }
-  inline bool ExpectedResultHasBeenSet() const { return m_expectedResultHasBeenSet; }
-  inline void SetExpectedResult(AutomatedReasoningCheckResult value) {
-    m_expectedResultHasBeenSet = true;
-    m_expectedResult = value;
-  }
-  inline AutomatedReasoningPolicyScenario& WithExpectedResult(AutomatedReasoningCheckResult value) {
-    SetExpectedResult(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::String m_alternateExpression;
-  bool m_alternateExpressionHasBeenSet = false;
-
-  Aws::Vector<Aws::String> m_ruleIds;
-  bool m_ruleIdsHasBeenSet = false;
 
   AutomatedReasoningCheckResult m_expectedResult{AutomatedReasoningCheckResult::NOT_SET};
+
+  Aws::Vector<Aws::String> m_ruleIds;
+  bool m_expressionHasBeenSet = false;
+  bool m_alternateExpressionHasBeenSet = false;
   bool m_expectedResultHasBeenSet = false;
+  bool m_ruleIdsHasBeenSet = false;
 };
 
 }  // namespace Model

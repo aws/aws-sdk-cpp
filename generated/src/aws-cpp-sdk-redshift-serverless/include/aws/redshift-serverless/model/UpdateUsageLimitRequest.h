@@ -86,12 +86,12 @@ class UpdateUsageLimitRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   long long m_amount{0};
-  bool m_amountHasBeenSet = false;
 
   UsageLimitBreachAction m_breachAction{UsageLimitBreachAction::NOT_SET};
-  bool m_breachActionHasBeenSet = false;
 
   Aws::String m_usageLimitId;
+  bool m_amountHasBeenSet = false;
+  bool m_breachActionHasBeenSet = false;
   bool m_usageLimitIdHasBeenSet = false;
 };
 

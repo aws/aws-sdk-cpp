@@ -67,9 +67,9 @@ class CreateUserPoolClientResult {
   ///@}
  private:
   UserPoolClientType m_userPoolClient;
-  bool m_userPoolClientHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userPoolClientHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

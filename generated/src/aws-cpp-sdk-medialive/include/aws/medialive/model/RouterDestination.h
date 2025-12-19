@@ -68,9 +68,9 @@ class RouterDestination {
   ///@}
  private:
   Aws::String m_availabilityZoneName;
-  bool m_availabilityZoneNameHasBeenSet = false;
 
   Aws::String m_routerOutputArn;
+  bool m_availabilityZoneNameHasBeenSet = false;
   bool m_routerOutputArnHasBeenSet = false;
 };
 

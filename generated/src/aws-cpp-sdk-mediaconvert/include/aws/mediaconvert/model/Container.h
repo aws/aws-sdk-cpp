@@ -94,12 +94,12 @@ class Container {
   ///@}
  private:
   double m_duration{0.0};
-  bool m_durationHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Vector<Track> m_tracks;
+  bool m_durationHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_tracksHasBeenSet = false;
 };
 

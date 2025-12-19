@@ -76,9 +76,9 @@ class DescribeAccountAttributesRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<AccountAttributeName> m_attributeNames;
+  bool m_dryRunHasBeenSet = false;
   bool m_attributeNamesHasBeenSet = false;
 };
 

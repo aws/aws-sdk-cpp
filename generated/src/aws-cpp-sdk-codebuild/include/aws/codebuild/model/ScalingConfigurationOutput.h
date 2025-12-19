@@ -109,15 +109,15 @@ class ScalingConfigurationOutput {
   ///@}
  private:
   FleetScalingType m_scalingType{FleetScalingType::NOT_SET};
-  bool m_scalingTypeHasBeenSet = false;
 
   Aws::Vector<TargetTrackingScalingConfiguration> m_targetTrackingScalingConfigs;
-  bool m_targetTrackingScalingConfigsHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   int m_desiredCapacity{0};
+  bool m_scalingTypeHasBeenSet = false;
+  bool m_targetTrackingScalingConfigsHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
   bool m_desiredCapacityHasBeenSet = false;
 };
 

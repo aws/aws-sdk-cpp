@@ -60,9 +60,9 @@ class GetIndexResult {
   ///@}
  private:
   Index m_index;
-  bool m_indexHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -36,6 +36,8 @@
 #include <aws/timestream-influxdb/model/ListDbParameterGroupsRequest.h>
 #include <aws/timestream-influxdb/model/ListDbParameterGroupsResult.h>
 #include <aws/timestream-influxdb/model/ListTagsForResourceResult.h>
+#include <aws/timestream-influxdb/model/RebootDbClusterResult.h>
+#include <aws/timestream-influxdb/model/RebootDbInstanceResult.h>
 #include <aws/timestream-influxdb/model/UpdateDbClusterResult.h>
 #include <aws/timestream-influxdb/model/UpdateDbInstanceResult.h>
 /* End of service model headers required in TimestreamInfluxDBClient header */
@@ -84,6 +86,8 @@ class ListDbInstancesRequest;
 class ListDbInstancesForClusterRequest;
 class ListDbParameterGroupsRequest;
 class ListTagsForResourceRequest;
+class RebootDbClusterRequest;
+class RebootDbInstanceRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateDbClusterRequest;
@@ -104,6 +108,8 @@ typedef Aws::Utils::Outcome<ListDbInstancesResult, TimestreamInfluxDBError> List
 typedef Aws::Utils::Outcome<ListDbInstancesForClusterResult, TimestreamInfluxDBError> ListDbInstancesForClusterOutcome;
 typedef Aws::Utils::Outcome<ListDbParameterGroupsResult, TimestreamInfluxDBError> ListDbParameterGroupsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, TimestreamInfluxDBError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<RebootDbClusterResult, TimestreamInfluxDBError> RebootDbClusterOutcome;
+typedef Aws::Utils::Outcome<RebootDbInstanceResult, TimestreamInfluxDBError> RebootDbInstanceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamInfluxDBError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, TimestreamInfluxDBError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateDbClusterResult, TimestreamInfluxDBError> UpdateDbClusterOutcome;
@@ -124,6 +130,8 @@ typedef std::future<ListDbInstancesOutcome> ListDbInstancesOutcomeCallable;
 typedef std::future<ListDbInstancesForClusterOutcome> ListDbInstancesForClusterOutcomeCallable;
 typedef std::future<ListDbParameterGroupsOutcome> ListDbParameterGroupsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<RebootDbClusterOutcome> RebootDbClusterOutcomeCallable;
+typedef std::future<RebootDbInstanceOutcome> RebootDbInstanceOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateDbClusterOutcome> UpdateDbClusterOutcomeCallable;
@@ -173,6 +181,12 @@ typedef std::function<void(const TimestreamInfluxDBClient*, const Model::ListDbP
 typedef std::function<void(const TimestreamInfluxDBClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const TimestreamInfluxDBClient*, const Model::RebootDbClusterRequest&, const Model::RebootDbClusterOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RebootDbClusterResponseReceivedHandler;
+typedef std::function<void(const TimestreamInfluxDBClient*, const Model::RebootDbInstanceRequest&, const Model::RebootDbInstanceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RebootDbInstanceResponseReceivedHandler;
 typedef std::function<void(const TimestreamInfluxDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

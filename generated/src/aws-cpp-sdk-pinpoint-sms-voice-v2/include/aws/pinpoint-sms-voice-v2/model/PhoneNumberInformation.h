@@ -386,60 +386,60 @@ class PhoneNumberInformation {
   ///@}
  private:
   Aws::String m_phoneNumberArn;
-  bool m_phoneNumberArnHasBeenSet = false;
 
   Aws::String m_phoneNumberId;
-  bool m_phoneNumberIdHasBeenSet = false;
 
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   NumberStatus m_status{NumberStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_isoCountryCode;
-  bool m_isoCountryCodeHasBeenSet = false;
 
   MessageType m_messageType{MessageType::NOT_SET};
-  bool m_messageTypeHasBeenSet = false;
 
   Aws::Vector<NumberCapability> m_numberCapabilities;
-  bool m_numberCapabilitiesHasBeenSet = false;
 
   NumberType m_numberType{NumberType::NOT_SET};
-  bool m_numberTypeHasBeenSet = false;
 
   Aws::String m_monthlyLeasingPrice;
-  bool m_monthlyLeasingPriceHasBeenSet = false;
 
   bool m_twoWayEnabled{false};
-  bool m_twoWayEnabledHasBeenSet = false;
 
   Aws::String m_twoWayChannelArn;
-  bool m_twoWayChannelArnHasBeenSet = false;
 
   Aws::String m_twoWayChannelRole;
-  bool m_twoWayChannelRoleHasBeenSet = false;
 
   bool m_selfManagedOptOutsEnabled{false};
-  bool m_selfManagedOptOutsEnabledHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   bool m_internationalSendingEnabled{false};
-  bool m_internationalSendingEnabledHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_phoneNumberArnHasBeenSet = false;
+  bool m_phoneNumberIdHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_isoCountryCodeHasBeenSet = false;
+  bool m_messageTypeHasBeenSet = false;
+  bool m_numberCapabilitiesHasBeenSet = false;
+  bool m_numberTypeHasBeenSet = false;
+  bool m_monthlyLeasingPriceHasBeenSet = false;
+  bool m_twoWayEnabledHasBeenSet = false;
+  bool m_twoWayChannelArnHasBeenSet = false;
+  bool m_twoWayChannelRoleHasBeenSet = false;
+  bool m_selfManagedOptOutsEnabledHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
+  bool m_internationalSendingEnabledHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

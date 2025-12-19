@@ -70,9 +70,9 @@ class ContinueDeploymentRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   DeploymentWaitType m_deploymentWaitType{DeploymentWaitType::NOT_SET};
+  bool m_deploymentIdHasBeenSet = false;
   bool m_deploymentWaitTypeHasBeenSet = false;
 };
 

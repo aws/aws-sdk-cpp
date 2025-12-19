@@ -123,18 +123,18 @@ class NamedEntityDefinition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_propertyName;
-  bool m_propertyNameHasBeenSet = false;
 
   PropertyRole m_propertyRole{PropertyRole::NOT_SET};
-  bool m_propertyRoleHasBeenSet = false;
 
   PropertyUsage m_propertyUsage{PropertyUsage::NOT_SET};
-  bool m_propertyUsageHasBeenSet = false;
 
   NamedEntityDefinitionMetric m_metric;
+  bool m_fieldNameHasBeenSet = false;
+  bool m_propertyNameHasBeenSet = false;
+  bool m_propertyRoleHasBeenSet = false;
+  bool m_propertyUsageHasBeenSet = false;
   bool m_metricHasBeenSet = false;
 };
 

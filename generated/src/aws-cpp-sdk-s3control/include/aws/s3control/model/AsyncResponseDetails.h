@@ -70,9 +70,9 @@ class AsyncResponseDetails {
   ///@}
  private:
   MultiRegionAccessPointsAsyncResponse m_multiRegionAccessPointDetails;
-  bool m_multiRegionAccessPointDetailsHasBeenSet = false;
 
   AsyncErrorDetails m_errorDetails;
+  bool m_multiRegionAccessPointDetailsHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

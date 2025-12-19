@@ -252,42 +252,42 @@ class ShareInvitationSummary {
   ///@}
  private:
   Aws::String m_shareInvitationId;
-  bool m_shareInvitationIdHasBeenSet = false;
 
   Aws::String m_sharedBy;
-  bool m_sharedByHasBeenSet = false;
 
   Aws::String m_sharedWith;
-  bool m_sharedWithHasBeenSet = false;
 
   PermissionType m_permissionType{PermissionType::NOT_SET};
-  bool m_permissionTypeHasBeenSet = false;
 
   ShareResourceType m_shareResourceType{ShareResourceType::NOT_SET};
-  bool m_shareResourceTypeHasBeenSet = false;
 
   Aws::String m_workloadName;
-  bool m_workloadNameHasBeenSet = false;
 
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_lensName;
-  bool m_lensNameHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileArn;
-  bool m_profileArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_templateArn;
+  bool m_shareInvitationIdHasBeenSet = false;
+  bool m_sharedByHasBeenSet = false;
+  bool m_sharedWithHasBeenSet = false;
+  bool m_permissionTypeHasBeenSet = false;
+  bool m_shareResourceTypeHasBeenSet = false;
+  bool m_workloadNameHasBeenSet = false;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_lensNameHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_templateArnHasBeenSet = false;
 };
 

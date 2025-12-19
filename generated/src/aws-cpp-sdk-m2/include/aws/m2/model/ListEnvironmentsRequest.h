@@ -111,15 +111,15 @@ class ListEnvironmentsRequest : public MainframeModernizationRequest {
   ///@}
  private:
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_engineTypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

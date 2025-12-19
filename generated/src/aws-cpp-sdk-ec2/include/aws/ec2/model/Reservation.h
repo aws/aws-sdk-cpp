@@ -158,21 +158,21 @@ class Reservation {
   ///@}
  private:
   Aws::String m_reservationId;
-  bool m_reservationIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_requesterId;
-  bool m_requesterIdHasBeenSet = false;
 
   Aws::Vector<GroupIdentifier> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_reservationIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_requesterIdHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_instancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = true;
 };
 

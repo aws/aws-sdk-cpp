@@ -166,24 +166,24 @@ class SubscribedListing {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SubscribedListingItem m_item;
-  bool m_itemHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_ownerProjectId;
-  bool m_ownerProjectIdHasBeenSet = false;
 
   Aws::String m_ownerProjectName;
-  bool m_ownerProjectNameHasBeenSet = false;
 
   Aws::String m_revision;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_itemHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerProjectIdHasBeenSet = false;
+  bool m_ownerProjectNameHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

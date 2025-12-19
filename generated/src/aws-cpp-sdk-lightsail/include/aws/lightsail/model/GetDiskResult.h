@@ -60,9 +60,9 @@ class GetDiskResult {
   ///@}
  private:
   Disk m_disk;
-  bool m_diskHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_diskHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

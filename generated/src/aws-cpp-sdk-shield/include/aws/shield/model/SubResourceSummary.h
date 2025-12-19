@@ -119,15 +119,15 @@ class SubResourceSummary {
   ///@}
  private:
   SubResourceType m_type{SubResourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<SummarizedAttackVector> m_attackVectors;
-  bool m_attackVectorsHasBeenSet = false;
 
   Aws::Vector<SummarizedCounter> m_counters;
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_attackVectorsHasBeenSet = false;
   bool m_countersHasBeenSet = false;
 };
 

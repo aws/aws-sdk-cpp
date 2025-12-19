@@ -145,21 +145,21 @@ class PercentageDisplayFormatConfiguration {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_suffix;
-  bool m_suffixHasBeenSet = false;
 
   NumericSeparatorConfiguration m_separatorConfiguration;
-  bool m_separatorConfigurationHasBeenSet = false;
 
   DecimalPlacesConfiguration m_decimalPlacesConfiguration;
-  bool m_decimalPlacesConfigurationHasBeenSet = false;
 
   NegativeValueConfiguration m_negativeValueConfiguration;
-  bool m_negativeValueConfigurationHasBeenSet = false;
 
   NullValueFormatConfiguration m_nullValueFormatConfiguration;
+  bool m_prefixHasBeenSet = false;
+  bool m_suffixHasBeenSet = false;
+  bool m_separatorConfigurationHasBeenSet = false;
+  bool m_decimalPlacesConfigurationHasBeenSet = false;
+  bool m_negativeValueConfigurationHasBeenSet = false;
   bool m_nullValueFormatConfigurationHasBeenSet = false;
 };
 

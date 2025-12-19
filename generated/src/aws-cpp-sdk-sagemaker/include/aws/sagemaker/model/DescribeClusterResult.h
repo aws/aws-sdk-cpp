@@ -301,48 +301,48 @@ class DescribeClusterResult {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   ClusterStatus m_clusterStatus{ClusterStatus::NOT_SET};
-  bool m_clusterStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::Vector<ClusterInstanceGroupDetails> m_instanceGroups;
-  bool m_instanceGroupsHasBeenSet = false;
 
   Aws::Vector<ClusterRestrictedInstanceGroupDetails> m_restrictedInstanceGroups;
-  bool m_restrictedInstanceGroupsHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   ClusterOrchestrator m_orchestrator;
-  bool m_orchestratorHasBeenSet = false;
 
   ClusterTieredStorageConfig m_tieredStorageConfig;
-  bool m_tieredStorageConfigHasBeenSet = false;
 
   ClusterNodeRecovery m_nodeRecovery{ClusterNodeRecovery::NOT_SET};
-  bool m_nodeRecoveryHasBeenSet = false;
 
   ClusterNodeProvisioningMode m_nodeProvisioningMode{ClusterNodeProvisioningMode::NOT_SET};
-  bool m_nodeProvisioningModeHasBeenSet = false;
 
   Aws::String m_clusterRole;
-  bool m_clusterRoleHasBeenSet = false;
 
   ClusterAutoScalingConfigOutput m_autoScaling;
-  bool m_autoScalingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_clusterStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_instanceGroupsHasBeenSet = false;
+  bool m_restrictedInstanceGroupsHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_orchestratorHasBeenSet = false;
+  bool m_tieredStorageConfigHasBeenSet = false;
+  bool m_nodeRecoveryHasBeenSet = false;
+  bool m_nodeProvisioningModeHasBeenSet = false;
+  bool m_clusterRoleHasBeenSet = false;
+  bool m_autoScalingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

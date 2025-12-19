@@ -241,33 +241,33 @@ class CreateInferenceSchedulerRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_inferenceSchedulerName;
-  bool m_inferenceSchedulerNameHasBeenSet = false;
 
   long long m_dataDelayOffsetInMinutes{0};
-  bool m_dataDelayOffsetInMinutesHasBeenSet = false;
 
   DataUploadFrequency m_dataUploadFrequency{DataUploadFrequency::NOT_SET};
-  bool m_dataUploadFrequencyHasBeenSet = false;
 
   InferenceInputConfiguration m_dataInputConfiguration;
-  bool m_dataInputConfigurationHasBeenSet = false;
 
   InferenceOutputConfiguration m_dataOutputConfiguration;
-  bool m_dataOutputConfigurationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_modelNameHasBeenSet = false;
+  bool m_inferenceSchedulerNameHasBeenSet = false;
+  bool m_dataDelayOffsetInMinutesHasBeenSet = false;
+  bool m_dataUploadFrequencyHasBeenSet = false;
+  bool m_dataInputConfigurationHasBeenSet = false;
+  bool m_dataOutputConfigurationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -112,9 +112,9 @@ class GrantConstraints {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_encryptionContextSubset;
-  bool m_encryptionContextSubsetHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_encryptionContextEquals;
+  bool m_encryptionContextSubsetHasBeenSet = false;
   bool m_encryptionContextEqualsHasBeenSet = false;
 };
 

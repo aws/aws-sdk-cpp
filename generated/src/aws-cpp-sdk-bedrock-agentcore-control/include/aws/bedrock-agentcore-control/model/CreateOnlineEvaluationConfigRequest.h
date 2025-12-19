@@ -196,27 +196,27 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_onlineEvaluationConfigName;
-  bool m_onlineEvaluationConfigNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Rule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   DataSourceConfig m_dataSourceConfig;
-  bool m_dataSourceConfigHasBeenSet = false;
 
   Aws::Vector<EvaluatorReference> m_evaluators;
-  bool m_evaluatorsHasBeenSet = false;
 
   Aws::String m_evaluationExecutionRoleArn;
-  bool m_evaluationExecutionRoleArnHasBeenSet = false;
 
   bool m_enableOnCreate{false};
+  bool m_clientTokenHasBeenSet = true;
+  bool m_onlineEvaluationConfigNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
+  bool m_dataSourceConfigHasBeenSet = false;
+  bool m_evaluatorsHasBeenSet = false;
+  bool m_evaluationExecutionRoleArnHasBeenSet = false;
   bool m_enableOnCreateHasBeenSet = false;
 };
 

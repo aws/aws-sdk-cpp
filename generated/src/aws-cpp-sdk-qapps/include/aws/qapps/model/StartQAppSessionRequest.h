@@ -153,21 +153,21 @@ class StartQAppSessionRequest : public QAppsRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   int m_appVersion{0};
-  bool m_appVersionHasBeenSet = false;
 
   Aws::Vector<CardValue> m_initialValues;
-  bool m_initialValuesHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_appIdHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_initialValuesHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

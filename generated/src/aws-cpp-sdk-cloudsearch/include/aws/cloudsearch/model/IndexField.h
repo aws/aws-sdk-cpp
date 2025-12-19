@@ -266,42 +266,42 @@ class IndexField {
   ///@}
  private:
   Aws::String m_indexFieldName;
-  bool m_indexFieldNameHasBeenSet = false;
 
   IndexFieldType m_indexFieldType{IndexFieldType::NOT_SET};
-  bool m_indexFieldTypeHasBeenSet = false;
 
   IntOptions m_intOptions;
-  bool m_intOptionsHasBeenSet = false;
 
   DoubleOptions m_doubleOptions;
-  bool m_doubleOptionsHasBeenSet = false;
 
   LiteralOptions m_literalOptions;
-  bool m_literalOptionsHasBeenSet = false;
 
   TextOptions m_textOptions;
-  bool m_textOptionsHasBeenSet = false;
 
   DateOptions m_dateOptions;
-  bool m_dateOptionsHasBeenSet = false;
 
   LatLonOptions m_latLonOptions;
-  bool m_latLonOptionsHasBeenSet = false;
 
   IntArrayOptions m_intArrayOptions;
-  bool m_intArrayOptionsHasBeenSet = false;
 
   DoubleArrayOptions m_doubleArrayOptions;
-  bool m_doubleArrayOptionsHasBeenSet = false;
 
   LiteralArrayOptions m_literalArrayOptions;
-  bool m_literalArrayOptionsHasBeenSet = false;
 
   TextArrayOptions m_textArrayOptions;
-  bool m_textArrayOptionsHasBeenSet = false;
 
   DateArrayOptions m_dateArrayOptions;
+  bool m_indexFieldNameHasBeenSet = false;
+  bool m_indexFieldTypeHasBeenSet = false;
+  bool m_intOptionsHasBeenSet = false;
+  bool m_doubleOptionsHasBeenSet = false;
+  bool m_literalOptionsHasBeenSet = false;
+  bool m_textOptionsHasBeenSet = false;
+  bool m_dateOptionsHasBeenSet = false;
+  bool m_latLonOptionsHasBeenSet = false;
+  bool m_intArrayOptionsHasBeenSet = false;
+  bool m_doubleArrayOptionsHasBeenSet = false;
+  bool m_literalArrayOptionsHasBeenSet = false;
+  bool m_textArrayOptionsHasBeenSet = false;
   bool m_dateArrayOptionsHasBeenSet = false;
 };
 

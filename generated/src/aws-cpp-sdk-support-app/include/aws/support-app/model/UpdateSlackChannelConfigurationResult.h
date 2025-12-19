@@ -182,30 +182,30 @@ class UpdateSlackChannelConfigurationResult {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_channelRoleArn;
-  bool m_channelRoleArnHasBeenSet = false;
 
   bool m_notifyOnAddCorrespondenceToCase{false};
-  bool m_notifyOnAddCorrespondenceToCaseHasBeenSet = false;
 
   NotificationSeverityLevel m_notifyOnCaseSeverity{NotificationSeverityLevel::NOT_SET};
-  bool m_notifyOnCaseSeverityHasBeenSet = false;
 
   bool m_notifyOnCreateOrReopenCase{false};
-  bool m_notifyOnCreateOrReopenCaseHasBeenSet = false;
 
   bool m_notifyOnResolveCase{false};
-  bool m_notifyOnResolveCaseHasBeenSet = false;
 
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelIdHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_channelRoleArnHasBeenSet = false;
+  bool m_notifyOnAddCorrespondenceToCaseHasBeenSet = false;
+  bool m_notifyOnCaseSeverityHasBeenSet = false;
+  bool m_notifyOnCreateOrReopenCaseHasBeenSet = false;
+  bool m_notifyOnResolveCaseHasBeenSet = false;
+  bool m_teamIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

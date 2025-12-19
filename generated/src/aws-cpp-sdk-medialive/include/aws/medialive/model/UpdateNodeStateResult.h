@@ -257,39 +257,39 @@ class UpdateNodeStateResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_channelPlacementGroups;
-  bool m_channelPlacementGroupsHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   NodeConnectionState m_connectionState{NodeConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<NodeInterfaceMapping> m_nodeInterfaceMappings;
-  bool m_nodeInterfaceMappingsHasBeenSet = false;
 
   NodeRole m_role{NodeRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   NodeState m_state{NodeState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<SdiSourceMapping> m_sdiSourceMappings;
-  bool m_sdiSourceMappingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_channelPlacementGroupsHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nodeInterfaceMappingsHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_sdiSourceMappingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

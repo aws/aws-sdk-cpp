@@ -328,51 +328,51 @@ class CreateProjectResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   EnvironmentDeploymentDetails m_environmentDeploymentDetails;
-  bool m_environmentDeploymentDetailsHasBeenSet = false;
 
   Aws::Vector<ProjectDeletionError> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectProfileId;
-  bool m_projectProfileIdHasBeenSet = false;
 
   ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
-  bool m_projectStatusHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
-  bool m_userParametersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_environmentDeploymentDetailsHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectProfileIdHasBeenSet = false;
+  bool m_projectStatusHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_userParametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

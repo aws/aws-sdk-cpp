@@ -68,9 +68,9 @@ class TemplateParameterConfiguration {
   ///@}
  private:
   TemplateParameterDataType m_type{TemplateParameterDataType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_defaultValue;
+  bool m_typeHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
 };
 

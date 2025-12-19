@@ -18,13 +18,13 @@ namespace Model {
 ApplicationAggregatedStatus::ApplicationAggregatedStatus(JsonView jsonValue) { *this = jsonValue; }
 
 ApplicationAggregatedStatus& ApplicationAggregatedStatus::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("healthStatus")) {
-    m_healthStatus = ApplicationHealthStatusMapper::GetApplicationHealthStatusForName(jsonValue.GetString("healthStatus"));
-    m_healthStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lastUpdateDateTime")) {
     m_lastUpdateDateTime = jsonValue.GetString("lastUpdateDateTime");
     m_lastUpdateDateTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("healthStatus")) {
+    m_healthStatus = ApplicationHealthStatusMapper::GetApplicationHealthStatusForName(jsonValue.GetString("healthStatus"));
+    m_healthStatusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("progressStatus")) {
     m_progressStatus = ApplicationProgressStatusMapper::GetApplicationProgressStatusForName(jsonValue.GetString("progressStatus"));
@@ -40,12 +40,12 @@ ApplicationAggregatedStatus& ApplicationAggregatedStatus::operator=(JsonView jso
 JsonValue ApplicationAggregatedStatus::Jsonize() const {
   JsonValue payload;
 
-  if (m_healthStatusHasBeenSet) {
-    payload.WithString("healthStatus", ApplicationHealthStatusMapper::GetNameForApplicationHealthStatus(m_healthStatus));
-  }
-
   if (m_lastUpdateDateTimeHasBeenSet) {
     payload.WithString("lastUpdateDateTime", m_lastUpdateDateTime);
+  }
+
+  if (m_healthStatusHasBeenSet) {
+    payload.WithString("healthStatus", ApplicationHealthStatusMapper::GetNameForApplicationHealthStatus(m_healthStatus));
   }
 
   if (m_progressStatusHasBeenSet) {

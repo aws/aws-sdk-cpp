@@ -263,42 +263,42 @@ class DescribeProgramResult {
   ///@}
  private:
   Aws::Vector<AdBreak> m_adBreaks;
-  bool m_adBreaksHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_liveSourceName;
-  bool m_liveSourceNameHasBeenSet = false;
 
   Aws::String m_programName;
-  bool m_programNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_scheduledStartTime{};
-  bool m_scheduledStartTimeHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::String m_vodSourceName;
-  bool m_vodSourceNameHasBeenSet = false;
 
   ClipRange m_clipRange;
-  bool m_clipRangeHasBeenSet = false;
 
   long long m_durationMillis{0};
-  bool m_durationMillisHasBeenSet = false;
 
   Aws::Vector<AudienceMedia> m_audienceMedia;
-  bool m_audienceMediaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adBreaksHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_liveSourceNameHasBeenSet = false;
+  bool m_programNameHasBeenSet = false;
+  bool m_scheduledStartTimeHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
+  bool m_vodSourceNameHasBeenSet = false;
+  bool m_clipRangeHasBeenSet = false;
+  bool m_durationMillisHasBeenSet = false;
+  bool m_audienceMediaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

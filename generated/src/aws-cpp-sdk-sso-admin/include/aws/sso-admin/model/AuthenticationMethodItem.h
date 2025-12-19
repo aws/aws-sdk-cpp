@@ -69,9 +69,9 @@ class AuthenticationMethodItem {
   ///@}
  private:
   AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
-  bool m_authenticationMethodTypeHasBeenSet = false;
 
   AuthenticationMethod m_authenticationMethod;
+  bool m_authenticationMethodTypeHasBeenSet = false;
   bool m_authenticationMethodHasBeenSet = false;
 };
 

@@ -403,60 +403,60 @@ class App {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   AppAssessmentScheduleType m_assessmentSchedule{AppAssessmentScheduleType::NOT_SET};
-  bool m_assessmentScheduleHasBeenSet = false;
 
   Aws::String m_awsApplicationArn;
-  bool m_awsApplicationArnHasBeenSet = false;
 
   AppComplianceStatusType m_complianceStatus{AppComplianceStatusType::NOT_SET};
-  bool m_complianceStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AppDriftStatusType m_driftStatus{AppDriftStatusType::NOT_SET};
-  bool m_driftStatusHasBeenSet = false;
 
   Aws::Vector<EventSubscription> m_eventSubscriptions;
-  bool m_eventSubscriptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAppComplianceEvaluationTime{};
-  bool m_lastAppComplianceEvaluationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDriftEvaluationTime{};
-  bool m_lastDriftEvaluationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastResiliencyScoreEvaluationTime{};
-  bool m_lastResiliencyScoreEvaluationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PermissionModel m_permissionModel;
-  bool m_permissionModelHasBeenSet = false;
 
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   double m_resiliencyScore{0.0};
-  bool m_resiliencyScoreHasBeenSet = false;
 
   int m_rpoInSecs{0};
-  bool m_rpoInSecsHasBeenSet = false;
 
   int m_rtoInSecs{0};
-  bool m_rtoInSecsHasBeenSet = false;
 
   AppStatusType m_status{AppStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_appArnHasBeenSet = false;
+  bool m_assessmentScheduleHasBeenSet = false;
+  bool m_awsApplicationArnHasBeenSet = false;
+  bool m_complianceStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_driftStatusHasBeenSet = false;
+  bool m_eventSubscriptionsHasBeenSet = false;
+  bool m_lastAppComplianceEvaluationTimeHasBeenSet = false;
+  bool m_lastDriftEvaluationTimeHasBeenSet = false;
+  bool m_lastResiliencyScoreEvaluationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_permissionModelHasBeenSet = false;
+  bool m_policyArnHasBeenSet = false;
+  bool m_resiliencyScoreHasBeenSet = false;
+  bool m_rpoInSecsHasBeenSet = false;
+  bool m_rtoInSecsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -108,15 +108,15 @@ class Setting {
   ///@}
  private:
   SettingName m_name{SettingName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   SettingType m_type{SettingType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_principalArnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

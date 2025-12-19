@@ -66,9 +66,9 @@ class UnregisterConnectorRequest : public AppflowRequest {
   ///@}
  private:
   Aws::String m_connectorLabel;
-  bool m_connectorLabelHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_connectorLabelHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

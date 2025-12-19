@@ -67,9 +67,9 @@ class StopRemoteAccessSessionResult {
   ///@}
  private:
   RemoteAccessSession m_remoteAccessSession;
-  bool m_remoteAccessSessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_remoteAccessSessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

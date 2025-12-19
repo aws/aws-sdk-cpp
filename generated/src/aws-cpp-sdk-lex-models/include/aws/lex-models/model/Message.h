@@ -86,12 +86,12 @@ class Message {
   ///@}
  private:
   ContentType m_contentType{ContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   int m_groupNumber{0};
+  bool m_contentTypeHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_groupNumberHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class UndeprecateActivityTypeRequest : public SWFRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   ActivityType m_activityType;
+  bool m_domainHasBeenSet = false;
   bool m_activityTypeHasBeenSet = false;
 };
 

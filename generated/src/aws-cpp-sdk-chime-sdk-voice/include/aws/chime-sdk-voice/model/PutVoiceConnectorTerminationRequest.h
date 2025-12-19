@@ -66,9 +66,9 @@ class PutVoiceConnectorTerminationRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Termination m_termination;
+  bool m_voiceConnectorIdHasBeenSet = false;
   bool m_terminationHasBeenSet = false;
 };
 

@@ -158,21 +158,21 @@ class ListNotificationConfigurationsRequest : public NotificationsRequest {
   ///@}
  private:
   Aws::String m_eventRuleSource;
-  bool m_eventRuleSourceHasBeenSet = false;
 
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   NotificationConfigurationStatus m_status{NotificationConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   NotificationConfigurationSubtype m_subtype{NotificationConfigurationSubtype::NOT_SET};
-  bool m_subtypeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_eventRuleSourceHasBeenSet = false;
+  bool m_channelArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subtypeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -131,18 +131,18 @@ class ListCommandsRequest : public IoTRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   CommandNamespace m_namespace{CommandNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_commandParameterName;
-  bool m_commandParameterNameHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_commandParameterNameHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

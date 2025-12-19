@@ -353,54 +353,54 @@ class SourceConnectorProperties {
   ///@}
  private:
   AmplitudeSourceProperties m_amplitude;
-  bool m_amplitudeHasBeenSet = false;
 
   DatadogSourceProperties m_datadog;
-  bool m_datadogHasBeenSet = false;
 
   DynatraceSourceProperties m_dynatrace;
-  bool m_dynatraceHasBeenSet = false;
 
   GoogleAnalyticsSourceProperties m_googleAnalytics;
-  bool m_googleAnalyticsHasBeenSet = false;
 
   InforNexusSourceProperties m_inforNexus;
-  bool m_inforNexusHasBeenSet = false;
 
   MarketoSourceProperties m_marketo;
-  bool m_marketoHasBeenSet = false;
 
   S3SourceProperties m_s3;
-  bool m_s3HasBeenSet = false;
 
   SalesforceSourceProperties m_salesforce;
-  bool m_salesforceHasBeenSet = false;
 
   ServiceNowSourceProperties m_serviceNow;
-  bool m_serviceNowHasBeenSet = false;
 
   SingularSourceProperties m_singular;
-  bool m_singularHasBeenSet = false;
 
   SlackSourceProperties m_slack;
-  bool m_slackHasBeenSet = false;
 
   TrendmicroSourceProperties m_trendmicro;
-  bool m_trendmicroHasBeenSet = false;
 
   VeevaSourceProperties m_veeva;
-  bool m_veevaHasBeenSet = false;
 
   ZendeskSourceProperties m_zendesk;
-  bool m_zendeskHasBeenSet = false;
 
   SAPODataSourceProperties m_sAPOData;
-  bool m_sAPODataHasBeenSet = false;
 
   CustomConnectorSourceProperties m_customConnector;
-  bool m_customConnectorHasBeenSet = false;
 
   PardotSourceProperties m_pardot;
+  bool m_amplitudeHasBeenSet = false;
+  bool m_datadogHasBeenSet = false;
+  bool m_dynatraceHasBeenSet = false;
+  bool m_googleAnalyticsHasBeenSet = false;
+  bool m_inforNexusHasBeenSet = false;
+  bool m_marketoHasBeenSet = false;
+  bool m_s3HasBeenSet = false;
+  bool m_salesforceHasBeenSet = false;
+  bool m_serviceNowHasBeenSet = false;
+  bool m_singularHasBeenSet = false;
+  bool m_slackHasBeenSet = false;
+  bool m_trendmicroHasBeenSet = false;
+  bool m_veevaHasBeenSet = false;
+  bool m_zendeskHasBeenSet = false;
+  bool m_sAPODataHasBeenSet = false;
+  bool m_customConnectorHasBeenSet = false;
   bool m_pardotHasBeenSet = false;
 };
 

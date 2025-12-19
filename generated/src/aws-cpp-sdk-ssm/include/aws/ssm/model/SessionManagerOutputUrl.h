@@ -68,9 +68,9 @@ class SessionManagerOutputUrl {
   ///@}
  private:
   Aws::String m_s3OutputUrl;
-  bool m_s3OutputUrlHasBeenSet = false;
 
   Aws::String m_cloudWatchOutputUrl;
+  bool m_s3OutputUrlHasBeenSet = false;
   bool m_cloudWatchOutputUrlHasBeenSet = false;
 };
 

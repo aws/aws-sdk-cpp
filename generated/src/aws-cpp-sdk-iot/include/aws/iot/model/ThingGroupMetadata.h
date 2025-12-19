@@ -95,12 +95,12 @@ class ThingGroupMetadata {
   ///@}
  private:
   Aws::String m_parentGroupName;
-  bool m_parentGroupNameHasBeenSet = false;
 
   Aws::Vector<GroupNameAndArn> m_rootToParentThingGroups;
-  bool m_rootToParentThingGroupsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_parentGroupNameHasBeenSet = false;
+  bool m_rootToParentThingGroupsHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

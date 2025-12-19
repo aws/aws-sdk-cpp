@@ -91,12 +91,12 @@ class ListenerTlsCertificate {
   ///@}
  private:
   ListenerTlsAcmCertificate m_acm;
-  bool m_acmHasBeenSet = false;
 
   ListenerTlsFileCertificate m_file;
-  bool m_fileHasBeenSet = false;
 
   ListenerTlsSdsCertificate m_sds;
+  bool m_acmHasBeenSet = false;
+  bool m_fileHasBeenSet = false;
   bool m_sdsHasBeenSet = false;
 };
 

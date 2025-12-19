@@ -189,24 +189,24 @@ class RouteTable {
   ///@}
  private:
   Aws::Vector<RouteTableAssociation> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::Vector<PropagatingVgw> m_propagatingVgws;
-  bool m_propagatingVgwsHasBeenSet = false;
 
   Aws::String m_routeTableId;
-  bool m_routeTableIdHasBeenSet = false;
 
   Aws::Vector<Route> m_routes;
-  bool m_routesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_ownerId;
+  bool m_associationsHasBeenSet = false;
+  bool m_propagatingVgwsHasBeenSet = false;
+  bool m_routeTableIdHasBeenSet = false;
+  bool m_routesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
 };
 

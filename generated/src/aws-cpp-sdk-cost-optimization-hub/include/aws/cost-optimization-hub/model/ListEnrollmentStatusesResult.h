@@ -102,15 +102,15 @@ class ListEnrollmentStatusesResult {
   ///@}
  private:
   Aws::Vector<AccountEnrollmentStatus> m_items;
-  bool m_itemsHasBeenSet = false;
 
   bool m_includeMemberAccounts{false};
-  bool m_includeMemberAccountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemsHasBeenSet = false;
+  bool m_includeMemberAccountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

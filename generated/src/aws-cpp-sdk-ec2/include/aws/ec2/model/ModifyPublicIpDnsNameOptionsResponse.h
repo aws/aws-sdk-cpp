@@ -57,9 +57,9 @@ class ModifyPublicIpDnsNameOptionsResponse {
   ///@}
  private:
   bool m_successful{false};
-  bool m_successfulHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

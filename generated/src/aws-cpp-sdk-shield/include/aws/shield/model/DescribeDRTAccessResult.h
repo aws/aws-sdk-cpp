@@ -84,12 +84,12 @@ class DescribeDRTAccessResult {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logBucketList;
-  bool m_logBucketListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleArnHasBeenSet = false;
+  bool m_logBucketListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

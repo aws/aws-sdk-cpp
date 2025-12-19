@@ -61,9 +61,9 @@ class GetStaticIpResult {
   ///@}
  private:
   StaticIp m_staticIp;
-  bool m_staticIpHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_staticIpHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

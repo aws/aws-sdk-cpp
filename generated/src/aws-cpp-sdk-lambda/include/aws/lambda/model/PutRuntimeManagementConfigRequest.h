@@ -133,15 +133,15 @@ class PutRuntimeManagementConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   UpdateRuntimeOn m_updateRuntimeOn{UpdateRuntimeOn::NOT_SET};
-  bool m_updateRuntimeOnHasBeenSet = false;
 
   Aws::String m_runtimeVersionArn;
+  bool m_functionNameHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
+  bool m_updateRuntimeOnHasBeenSet = false;
   bool m_runtimeVersionArnHasBeenSet = false;
 };
 

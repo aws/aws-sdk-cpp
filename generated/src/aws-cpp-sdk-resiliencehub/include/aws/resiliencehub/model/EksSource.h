@@ -83,9 +83,9 @@ class EksSource {
   ///@}
  private:
   Aws::String m_eksClusterArn;
-  bool m_eksClusterArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
+  bool m_eksClusterArnHasBeenSet = false;
   bool m_namespacesHasBeenSet = false;
 };
 

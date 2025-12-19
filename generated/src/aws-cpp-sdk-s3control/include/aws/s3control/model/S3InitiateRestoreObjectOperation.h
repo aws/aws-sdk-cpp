@@ -81,9 +81,9 @@ class S3InitiateRestoreObjectOperation {
   ///@}
  private:
   int m_expirationInDays{0};
-  bool m_expirationInDaysHasBeenSet = false;
 
   S3GlacierJobTier m_glacierJobTier{S3GlacierJobTier::NOT_SET};
+  bool m_expirationInDaysHasBeenSet = false;
   bool m_glacierJobTierHasBeenSet = false;
 };
 

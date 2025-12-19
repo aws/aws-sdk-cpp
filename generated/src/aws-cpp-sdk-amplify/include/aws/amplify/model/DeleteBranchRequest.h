@@ -69,9 +69,9 @@ class DeleteBranchRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_branchName;
+  bool m_appIdHasBeenSet = false;
   bool m_branchNameHasBeenSet = false;
 };
 

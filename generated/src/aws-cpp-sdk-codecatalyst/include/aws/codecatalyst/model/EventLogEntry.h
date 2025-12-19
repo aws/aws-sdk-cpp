@@ -309,48 +309,48 @@ class EventLogEntry {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_eventName;
-  bool m_eventNameHasBeenSet = false;
 
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_eventCategory;
-  bool m_eventCategoryHasBeenSet = false;
 
   Aws::String m_eventSource;
-  bool m_eventSourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   OperationType m_operationType{OperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   UserIdentity m_userIdentity;
-  bool m_userIdentityHasBeenSet = false;
 
   ProjectInformation m_projectInformation;
-  bool m_projectInformationHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   EventPayload m_requestPayload;
-  bool m_requestPayloadHasBeenSet = false;
 
   EventPayload m_responsePayload;
-  bool m_responsePayloadHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_sourceIpAddress;
-  bool m_sourceIpAddressHasBeenSet = false;
 
   Aws::String m_userAgent;
+  bool m_idHasBeenSet = false;
+  bool m_eventNameHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_eventCategoryHasBeenSet = false;
+  bool m_eventSourceHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_userIdentityHasBeenSet = false;
+  bool m_projectInformationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_requestPayloadHasBeenSet = false;
+  bool m_responsePayloadHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_sourceIpAddressHasBeenSet = false;
   bool m_userAgentHasBeenSet = false;
 };
 

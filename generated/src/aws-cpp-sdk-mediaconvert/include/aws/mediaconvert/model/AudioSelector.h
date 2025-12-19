@@ -93,9 +93,14 @@ class AudioSelector {
 
   ///@{
   /**
-   * Enable this setting on one audio selector to set it as the default for the job.
-   * The service uses this default for outputs where it can't find the specified
-   * input audio. If you don't set a default, those outputs have no audio.
+   * Specify a fallback audio selector for this input. Use to ensure outputs have
+   * audio even when the audio selector you specify in your output is missing from
+   * the source. DEFAULT (Checked in the MediaConvert console): If your output
+   * settings specify an audio selector that does not exist in this input,
+   * MediaConvert uses this audio selector instead. This is useful when you have
+   * multiple inputs with a different number of audio tracks. NOT_DEFAULT (Unchecked
+   * in the MediaConvert console): MediaConvert will not fallback from any missing
+   * audio selector. Any output specifying a missing audio selector will be silent.
    */
   inline AudioDefaultSelection GetDefaultSelection() const { return m_defaultSelection; }
   inline bool DefaultSelectionHasBeenSet() const { return m_defaultSelectionHasBeenSet; }
@@ -350,42 +355,42 @@ To specify an offset:
   ///@}
  private:
   AudioDurationCorrection m_audioDurationCorrection{AudioDurationCorrection::NOT_SET};
-  bool m_audioDurationCorrectionHasBeenSet = false;
 
   Aws::String m_customLanguageCode;
-  bool m_customLanguageCodeHasBeenSet = false;
 
   AudioDefaultSelection m_defaultSelection{AudioDefaultSelection::NOT_SET};
-  bool m_defaultSelectionHasBeenSet = false;
 
   Aws::String m_externalAudioFileInput;
-  bool m_externalAudioFileInputHasBeenSet = false;
 
   HlsRenditionGroupSettings m_hlsRenditionGroupSettings;
-  bool m_hlsRenditionGroupSettingsHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_offset{0};
-  bool m_offsetHasBeenSet = false;
 
   Aws::Vector<int> m_pids;
-  bool m_pidsHasBeenSet = false;
 
   int m_programSelection{0};
-  bool m_programSelectionHasBeenSet = false;
 
   RemixSettings m_remixSettings;
-  bool m_remixSettingsHasBeenSet = false;
 
   AudioSelectorType m_selectorType{AudioSelectorType::NOT_SET};
-  bool m_selectorTypeHasBeenSet = false;
 
   Aws::Vector<int> m_streams;
-  bool m_streamsHasBeenSet = false;
 
   Aws::Vector<int> m_tracks;
+  bool m_audioDurationCorrectionHasBeenSet = false;
+  bool m_customLanguageCodeHasBeenSet = false;
+  bool m_defaultSelectionHasBeenSet = false;
+  bool m_externalAudioFileInputHasBeenSet = false;
+  bool m_hlsRenditionGroupSettingsHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
+  bool m_pidsHasBeenSet = false;
+  bool m_programSelectionHasBeenSet = false;
+  bool m_remixSettingsHasBeenSet = false;
+  bool m_selectorTypeHasBeenSet = false;
+  bool m_streamsHasBeenSet = false;
   bool m_tracksHasBeenSet = false;
 };
 

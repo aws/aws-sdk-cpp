@@ -141,18 +141,18 @@ class TimestreamAction {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Vector<TimestreamDimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   TimestreamTimestamp m_timestamp;
+  bool m_roleArnHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

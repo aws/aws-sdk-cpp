@@ -68,9 +68,9 @@ class SigningConfigurationOverrides {
   ///@}
  private:
   EncryptionAlgorithm m_encryptionAlgorithm{EncryptionAlgorithm::NOT_SET};
-  bool m_encryptionAlgorithmHasBeenSet = false;
 
   HashAlgorithm m_hashAlgorithm{HashAlgorithm::NOT_SET};
+  bool m_encryptionAlgorithmHasBeenSet = false;
   bool m_hashAlgorithmHasBeenSet = false;
 };
 

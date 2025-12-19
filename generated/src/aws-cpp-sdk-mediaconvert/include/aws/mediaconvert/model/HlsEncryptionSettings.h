@@ -166,24 +166,24 @@ class HlsEncryptionSettings {
   ///@}
  private:
   Aws::String m_constantInitializationVector;
-  bool m_constantInitializationVectorHasBeenSet = false;
 
   HlsEncryptionType m_encryptionMethod{HlsEncryptionType::NOT_SET};
-  bool m_encryptionMethodHasBeenSet = false;
 
   HlsInitializationVectorInManifest m_initializationVectorInManifest{HlsInitializationVectorInManifest::NOT_SET};
-  bool m_initializationVectorInManifestHasBeenSet = false;
 
   HlsOfflineEncrypted m_offlineEncrypted{HlsOfflineEncrypted::NOT_SET};
-  bool m_offlineEncryptedHasBeenSet = false;
 
   SpekeKeyProvider m_spekeKeyProvider;
-  bool m_spekeKeyProviderHasBeenSet = false;
 
   StaticKeyProvider m_staticKeyProvider;
-  bool m_staticKeyProviderHasBeenSet = false;
 
   HlsKeyProviderType m_type{HlsKeyProviderType::NOT_SET};
+  bool m_constantInitializationVectorHasBeenSet = false;
+  bool m_encryptionMethodHasBeenSet = false;
+  bool m_initializationVectorInManifestHasBeenSet = false;
+  bool m_offlineEncryptedHasBeenSet = false;
+  bool m_spekeKeyProviderHasBeenSet = false;
+  bool m_staticKeyProviderHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

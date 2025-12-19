@@ -96,9 +96,9 @@ class Permission {
   ///@}
  private:
   Aws::Vector<Aws::String> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_principal;
+  bool m_actionsHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

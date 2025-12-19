@@ -114,18 +114,18 @@ class StartChatContactResult {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::String m_participantToken;
-  bool m_participantTokenHasBeenSet = false;
 
   Aws::String m_continuedFromContactId;
-  bool m_continuedFromContactIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactIdHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_participantTokenHasBeenSet = false;
+  bool m_continuedFromContactIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -58,7 +58,7 @@ class ListPolicyGenerationAssetsResult {
   ///@{
   /**
    * <p>A pagination token that can be used in subsequent <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a>
    * calls to retrieve additional assets. This token is only present when there are
    * more generated policy assets available beyond the current response.</p>
    */
@@ -91,12 +91,12 @@ class ListPolicyGenerationAssetsResult {
   ///@}
  private:
   Aws::Vector<PolicyGenerationAsset> m_policyGenerationAssets;
-  bool m_policyGenerationAssetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyGenerationAssetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

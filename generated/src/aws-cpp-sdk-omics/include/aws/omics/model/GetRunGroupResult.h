@@ -195,33 +195,33 @@ class GetRunGroupResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_maxCpus{0};
-  bool m_maxCpusHasBeenSet = false;
 
   int m_maxRuns{0};
-  bool m_maxRunsHasBeenSet = false;
 
   int m_maxDuration{0};
-  bool m_maxDurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_maxGpus{0};
-  bool m_maxGpusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_maxCpusHasBeenSet = false;
+  bool m_maxRunsHasBeenSet = false;
+  bool m_maxDurationHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_maxGpusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

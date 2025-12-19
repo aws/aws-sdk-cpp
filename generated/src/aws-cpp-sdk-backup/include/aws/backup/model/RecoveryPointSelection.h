@@ -101,12 +101,12 @@ class RecoveryPointSelection {
   ///@}
  private:
   Aws::Vector<Aws::String> m_vaultNames;
-  bool m_vaultNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIdentifiers;
-  bool m_resourceIdentifiersHasBeenSet = false;
 
   DateRange m_dateRange;
+  bool m_vaultNamesHasBeenSet = false;
+  bool m_resourceIdentifiersHasBeenSet = false;
   bool m_dateRangeHasBeenSet = false;
 };
 

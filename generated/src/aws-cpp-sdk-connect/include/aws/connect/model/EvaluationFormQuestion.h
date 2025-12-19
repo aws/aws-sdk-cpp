@@ -176,27 +176,27 @@ class EvaluationFormQuestion {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_instructions;
-  bool m_instructionsHasBeenSet = false;
 
   Aws::String m_refId;
-  bool m_refIdHasBeenSet = false;
 
   bool m_notApplicableEnabled{false};
-  bool m_notApplicableEnabledHasBeenSet = false;
 
   EvaluationFormQuestionType m_questionType{EvaluationFormQuestionType::NOT_SET};
-  bool m_questionTypeHasBeenSet = false;
 
   EvaluationFormQuestionTypeProperties m_questionTypeProperties;
-  bool m_questionTypePropertiesHasBeenSet = false;
 
   EvaluationFormItemEnablementConfiguration m_enablement;
-  bool m_enablementHasBeenSet = false;
 
   double m_weight{0.0};
+  bool m_titleHasBeenSet = false;
+  bool m_instructionsHasBeenSet = false;
+  bool m_refIdHasBeenSet = false;
+  bool m_notApplicableEnabledHasBeenSet = false;
+  bool m_questionTypeHasBeenSet = false;
+  bool m_questionTypePropertiesHasBeenSet = false;
+  bool m_enablementHasBeenSet = false;
   bool m_weightHasBeenSet = false;
 };
 

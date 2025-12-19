@@ -95,12 +95,12 @@ class StartDomainVerificationRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_domainNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

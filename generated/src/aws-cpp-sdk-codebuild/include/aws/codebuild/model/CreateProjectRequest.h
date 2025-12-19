@@ -506,69 +506,69 @@ class CreateProjectRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProjectSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::Vector<ProjectSource> m_secondarySources;
-  bool m_secondarySourcesHasBeenSet = false;
 
   Aws::String m_sourceVersion;
-  bool m_sourceVersionHasBeenSet = false;
 
   Aws::Vector<ProjectSourceVersion> m_secondarySourceVersions;
-  bool m_secondarySourceVersionsHasBeenSet = false;
 
   ProjectArtifacts m_artifacts;
-  bool m_artifactsHasBeenSet = false;
 
   Aws::Vector<ProjectArtifacts> m_secondaryArtifacts;
-  bool m_secondaryArtifactsHasBeenSet = false;
 
   ProjectCache m_cache;
-  bool m_cacheHasBeenSet = false;
 
   ProjectEnvironment m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   int m_timeoutInMinutes{0};
-  bool m_timeoutInMinutesHasBeenSet = false;
 
   int m_queuedTimeoutInMinutes{0};
-  bool m_queuedTimeoutInMinutesHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   bool m_badgeEnabled{false};
-  bool m_badgeEnabledHasBeenSet = false;
 
   LogsConfig m_logsConfig;
-  bool m_logsConfigHasBeenSet = false;
 
   Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
-  bool m_fileSystemLocationsHasBeenSet = false;
 
   ProjectBuildBatchConfig m_buildBatchConfig;
-  bool m_buildBatchConfigHasBeenSet = false;
 
   int m_concurrentBuildLimit{0};
-  bool m_concurrentBuildLimitHasBeenSet = false;
 
   int m_autoRetryLimit{0};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_secondarySourcesHasBeenSet = false;
+  bool m_sourceVersionHasBeenSet = false;
+  bool m_secondarySourceVersionsHasBeenSet = false;
+  bool m_artifactsHasBeenSet = false;
+  bool m_secondaryArtifactsHasBeenSet = false;
+  bool m_cacheHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_timeoutInMinutesHasBeenSet = false;
+  bool m_queuedTimeoutInMinutesHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_badgeEnabledHasBeenSet = false;
+  bool m_logsConfigHasBeenSet = false;
+  bool m_fileSystemLocationsHasBeenSet = false;
+  bool m_buildBatchConfigHasBeenSet = false;
+  bool m_concurrentBuildLimitHasBeenSet = false;
   bool m_autoRetryLimitHasBeenSet = false;
 };
 

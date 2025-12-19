@@ -89,12 +89,12 @@ class GetRecommendationPreferencesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<RecommendationPreferencesDetail> m_recommendationPreferencesDetails;
-  bool m_recommendationPreferencesDetailsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendationPreferencesDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

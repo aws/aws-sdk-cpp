@@ -147,21 +147,21 @@ class ListGroupMembersRequest : public DirectoryServiceDataRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_memberRealm;
-  bool m_memberRealmHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_realm;
-  bool m_realmHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_memberRealmHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_realmHasBeenSet = false;
   bool m_sAMAccountNameHasBeenSet = false;
 };
 

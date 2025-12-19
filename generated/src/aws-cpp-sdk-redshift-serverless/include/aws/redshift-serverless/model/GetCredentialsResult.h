@@ -117,18 +117,18 @@ class GetCredentialsResult {
   ///@}
  private:
   Aws::String m_dbPassword;
-  bool m_dbPasswordHasBeenSet = false;
 
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
-  bool m_expirationHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextRefreshTime{};
-  bool m_nextRefreshTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dbPasswordHasBeenSet = false;
+  bool m_dbUserHasBeenSet = false;
+  bool m_expirationHasBeenSet = false;
+  bool m_nextRefreshTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

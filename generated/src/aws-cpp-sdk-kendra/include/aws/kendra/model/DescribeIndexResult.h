@@ -353,54 +353,54 @@ class DescribeIndexResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   IndexEdition m_edition{IndexEdition::NOT_SET};
-  bool m_editionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   IndexStatus m_status{IndexStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<DocumentMetadataConfiguration> m_documentMetadataConfigurations;
-  bool m_documentMetadataConfigurationsHasBeenSet = false;
 
   IndexStatistics m_indexStatistics;
-  bool m_indexStatisticsHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   CapacityUnitsConfiguration m_capacityUnits;
-  bool m_capacityUnitsHasBeenSet = false;
 
   Aws::Vector<UserTokenConfiguration> m_userTokenConfigurations;
-  bool m_userTokenConfigurationsHasBeenSet = false;
 
   UserContextPolicy m_userContextPolicy{UserContextPolicy::NOT_SET};
-  bool m_userContextPolicyHasBeenSet = false;
 
   UserGroupResolutionConfiguration m_userGroupResolutionConfiguration;
-  bool m_userGroupResolutionConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_editionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_documentMetadataConfigurationsHasBeenSet = false;
+  bool m_indexStatisticsHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_capacityUnitsHasBeenSet = false;
+  bool m_userTokenConfigurationsHasBeenSet = false;
+  bool m_userContextPolicyHasBeenSet = false;
+  bool m_userGroupResolutionConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

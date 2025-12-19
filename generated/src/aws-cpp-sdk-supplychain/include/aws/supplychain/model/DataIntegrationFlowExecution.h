@@ -196,30 +196,30 @@ class DataIntegrationFlowExecution {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   DataIntegrationFlowExecutionStatus m_status{DataIntegrationFlowExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   DataIntegrationFlowExecutionSourceInfo m_sourceInfo;
-  bool m_sourceInfoHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   DataIntegrationFlowExecutionOutputMetadata m_outputMetadata;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_flowNameHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceInfoHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_outputMetadataHasBeenSet = false;
 };
 

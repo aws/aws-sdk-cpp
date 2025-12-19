@@ -70,9 +70,9 @@ class SubscribedListingItem {
   ///@}
  private:
   SubscribedAssetListing m_assetListing;
-  bool m_assetListingHasBeenSet = false;
 
   SubscribedProductListing m_productListing;
+  bool m_assetListingHasBeenSet = false;
   bool m_productListingHasBeenSet = false;
 };
 

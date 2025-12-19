@@ -67,6 +67,18 @@ DescribeLocationSmbResult& DescribeLocationSmbResult::operator=(const Aws::Amazo
     m_authenticationType = SmbAuthenticationTypeMapper::GetSmbAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedSecretConfig")) {
+    m_managedSecretConfig = jsonValue.GetObject("ManagedSecretConfig");
+    m_managedSecretConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CmkSecretConfig")) {
+    m_cmkSecretConfig = jsonValue.GetObject("CmkSecretConfig");
+    m_cmkSecretConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CustomSecretConfig")) {
+    m_customSecretConfig = jsonValue.GetObject("CustomSecretConfig");
+    m_customSecretConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

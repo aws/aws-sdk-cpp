@@ -67,9 +67,9 @@ class StartWorkspacesResult {
   ///@}
  private:
   Aws::Vector<FailedWorkspaceChangeRequest> m_failedRequests;
-  bool m_failedRequestsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedRequestsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -142,21 +142,21 @@ class TemplateSummary {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_metaTemplateId;
-  bool m_metaTemplateIdHasBeenSet = false;
 
   Aws::String m_templateStatus;
-  bool m_templateStatusHasBeenSet = false;
 
   Aws::String m_templateQualityScore;
-  bool m_templateQualityScoreHasBeenSet = false;
 
   Aws::String m_templateLanguage;
-  bool m_templateLanguageHasBeenSet = false;
 
   Aws::String m_templateCategory;
+  bool m_templateNameHasBeenSet = false;
+  bool m_metaTemplateIdHasBeenSet = false;
+  bool m_templateStatusHasBeenSet = false;
+  bool m_templateQualityScoreHasBeenSet = false;
+  bool m_templateLanguageHasBeenSet = false;
   bool m_templateCategoryHasBeenSet = false;
 };
 

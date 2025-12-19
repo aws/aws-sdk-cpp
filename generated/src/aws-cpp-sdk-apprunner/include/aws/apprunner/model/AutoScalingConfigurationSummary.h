@@ -174,24 +174,24 @@ class AutoScalingConfigurationSummary {
   ///@}
  private:
   Aws::String m_autoScalingConfigurationArn;
-  bool m_autoScalingConfigurationArnHasBeenSet = false;
 
   Aws::String m_autoScalingConfigurationName;
-  bool m_autoScalingConfigurationNameHasBeenSet = false;
 
   int m_autoScalingConfigurationRevision{0};
-  bool m_autoScalingConfigurationRevisionHasBeenSet = false;
 
   AutoScalingConfigurationStatus m_status{AutoScalingConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   bool m_hasAssociatedService{false};
-  bool m_hasAssociatedServiceHasBeenSet = false;
 
   bool m_isDefault{false};
+  bool m_autoScalingConfigurationArnHasBeenSet = false;
+  bool m_autoScalingConfigurationNameHasBeenSet = false;
+  bool m_autoScalingConfigurationRevisionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_hasAssociatedServiceHasBeenSet = false;
   bool m_isDefaultHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class UpdateUserSecurityProfilesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_securityProfileIds;
-  bool m_securityProfileIdsHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_securityProfileIdsHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

@@ -76,9 +76,9 @@ class ScriptBootstrapActionConfig {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_args;
+  bool m_pathHasBeenSet = false;
   bool m_argsHasBeenSet = false;
 };
 

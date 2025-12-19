@@ -70,9 +70,9 @@ class CreateAuthenticationProfileRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_authenticationProfileName;
-  bool m_authenticationProfileNameHasBeenSet = false;
 
   Aws::String m_authenticationProfileContent;
+  bool m_authenticationProfileNameHasBeenSet = false;
   bool m_authenticationProfileContentHasBeenSet = false;
 };
 

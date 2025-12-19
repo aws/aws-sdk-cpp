@@ -61,9 +61,9 @@ class GetVPCEConfigurationResult {
   ///@}
  private:
   VPCEConfiguration m_vpceConfiguration;
-  bool m_vpceConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vpceConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

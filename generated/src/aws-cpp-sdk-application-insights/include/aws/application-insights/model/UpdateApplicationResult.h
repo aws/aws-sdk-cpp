@@ -60,9 +60,9 @@ class UpdateApplicationResult {
   ///@}
  private:
   ApplicationInfo m_applicationInfo;
-  bool m_applicationInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

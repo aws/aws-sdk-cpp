@@ -85,12 +85,12 @@ class CancelDataRepositoryTaskResult {
   ///@}
  private:
   DataRepositoryTaskLifecycle m_lifecycle{DataRepositoryTaskLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_taskIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

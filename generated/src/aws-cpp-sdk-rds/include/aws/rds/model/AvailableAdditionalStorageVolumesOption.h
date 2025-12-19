@@ -241,39 +241,39 @@ class AvailableAdditionalStorageVolumesOption {
   ///@}
  private:
   bool m_supportsStorageAutoscaling{false};
-  bool m_supportsStorageAutoscalingHasBeenSet = false;
 
   bool m_supportsStorageThroughput{false};
-  bool m_supportsStorageThroughputHasBeenSet = false;
 
   bool m_supportsIops{false};
-  bool m_supportsIopsHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   int m_minStorageSize{0};
-  bool m_minStorageSizeHasBeenSet = false;
 
   int m_maxStorageSize{0};
-  bool m_maxStorageSizeHasBeenSet = false;
 
   int m_minIops{0};
-  bool m_minIopsHasBeenSet = false;
 
   int m_maxIops{0};
-  bool m_maxIopsHasBeenSet = false;
 
   double m_minIopsPerGib{0.0};
-  bool m_minIopsPerGibHasBeenSet = false;
 
   double m_maxIopsPerGib{0.0};
-  bool m_maxIopsPerGibHasBeenSet = false;
 
   int m_minStorageThroughput{0};
-  bool m_minStorageThroughputHasBeenSet = false;
 
   int m_maxStorageThroughput{0};
+  bool m_supportsStorageAutoscalingHasBeenSet = false;
+  bool m_supportsStorageThroughputHasBeenSet = false;
+  bool m_supportsIopsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_minStorageSizeHasBeenSet = false;
+  bool m_maxStorageSizeHasBeenSet = false;
+  bool m_minIopsHasBeenSet = false;
+  bool m_maxIopsHasBeenSet = false;
+  bool m_minIopsPerGibHasBeenSet = false;
+  bool m_maxIopsPerGibHasBeenSet = false;
+  bool m_minStorageThroughputHasBeenSet = false;
   bool m_maxStorageThroughputHasBeenSet = false;
 };
 

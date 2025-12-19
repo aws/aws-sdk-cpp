@@ -74,9 +74,9 @@ class Principal {
   ///@}
  private:
   Aws::String m_principalARN;
-  bool m_principalARNHasBeenSet = false;
 
   PrincipalType m_principalType{PrincipalType::NOT_SET};
+  bool m_principalARNHasBeenSet = false;
   bool m_principalTypeHasBeenSet = false;
 };
 

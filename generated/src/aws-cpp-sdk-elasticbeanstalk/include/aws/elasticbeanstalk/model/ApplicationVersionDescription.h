@@ -234,33 +234,33 @@ class ApplicationVersionDescription {
   ///@}
  private:
   Aws::String m_applicationVersionArn;
-  bool m_applicationVersionArnHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   SourceBuildInformation m_sourceBuildInformation;
-  bool m_sourceBuildInformationHasBeenSet = false;
 
   Aws::String m_buildArn;
-  bool m_buildArnHasBeenSet = false;
 
   S3Location m_sourceBundle;
-  bool m_sourceBundleHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateUpdated{};
-  bool m_dateUpdatedHasBeenSet = false;
 
   ApplicationVersionStatus m_status{ApplicationVersionStatus::NOT_SET};
+  bool m_applicationVersionArnHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
+  bool m_sourceBuildInformationHasBeenSet = false;
+  bool m_buildArnHasBeenSet = false;
+  bool m_sourceBundleHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateUpdatedHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

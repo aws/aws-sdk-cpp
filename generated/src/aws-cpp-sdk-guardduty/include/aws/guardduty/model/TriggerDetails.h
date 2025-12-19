@@ -85,12 +85,12 @@ class TriggerDetails {
   ///@}
  private:
   Aws::String m_guardDutyFindingId;
-  bool m_guardDutyFindingIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TriggerType m_triggerType{TriggerType::NOT_SET};
+  bool m_guardDutyFindingIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_triggerTypeHasBeenSet = false;
 };
 

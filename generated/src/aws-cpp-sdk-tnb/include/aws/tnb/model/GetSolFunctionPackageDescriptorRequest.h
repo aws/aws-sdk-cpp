@@ -67,9 +67,9 @@ class GetSolFunctionPackageDescriptorRequest : public TnbRequest {
   ///@}
  private:
   DescriptorContentType m_accept{DescriptorContentType::NOT_SET};
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_vnfPkgId;
+  bool m_acceptHasBeenSet = false;
   bool m_vnfPkgIdHasBeenSet = false;
 };
 

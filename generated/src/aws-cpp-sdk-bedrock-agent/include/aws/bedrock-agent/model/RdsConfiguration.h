@@ -128,18 +128,18 @@ class RdsConfiguration {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_credentialsSecretArn;
-  bool m_credentialsSecretArnHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   RdsFieldMapping m_fieldMapping;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_credentialsSecretArnHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_fieldMappingHasBeenSet = false;
 };
 

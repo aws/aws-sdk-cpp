@@ -87,9 +87,9 @@ class TieringPolicy {
   ///@}
  private:
   int m_coolingPeriod{0};
-  bool m_coolingPeriodHasBeenSet = false;
 
   TieringPolicyName m_name{TieringPolicyName::NOT_SET};
+  bool m_coolingPeriodHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

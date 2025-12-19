@@ -42,7 +42,7 @@ TEST_F(ElasticLoadBalancingSmokeTestSuite, DescribeLoadBalancersSuccess )
     
     DescribeLoadBalancersRequest input;
     auto outcome = clientSp->DescribeLoadBalancers(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 TEST_F(ElasticLoadBalancingSmokeTestSuite, DescribeLoadBalancersFailure )
 {

@@ -120,18 +120,18 @@ class UpdateConnectionRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_globalNetworkId;
-  bool m_globalNetworkIdHasBeenSet = false;
 
   Aws::String m_connectionId;
-  bool m_connectionIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   Aws::String m_connectedLinkId;
-  bool m_connectedLinkIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_globalNetworkIdHasBeenSet = false;
+  bool m_connectionIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
+  bool m_connectedLinkIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

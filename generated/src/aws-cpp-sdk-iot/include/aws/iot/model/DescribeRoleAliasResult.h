@@ -60,9 +60,9 @@ class DescribeRoleAliasResult {
   ///@}
  private:
   RoleAliasDescription m_roleAliasDescription;
-  bool m_roleAliasDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleAliasDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

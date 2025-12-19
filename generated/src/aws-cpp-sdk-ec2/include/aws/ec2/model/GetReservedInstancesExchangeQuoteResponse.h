@@ -218,33 +218,33 @@ class GetReservedInstancesExchangeQuoteResponse {
   ///@}
  private:
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   bool m_isValidExchange{false};
-  bool m_isValidExchangeHasBeenSet = false;
 
   Aws::Utils::DateTime m_outputReservedInstancesWillExpireAt{};
-  bool m_outputReservedInstancesWillExpireAtHasBeenSet = false;
 
   Aws::String m_paymentDue;
-  bool m_paymentDueHasBeenSet = false;
 
   ReservationValue m_reservedInstanceValueRollup;
-  bool m_reservedInstanceValueRollupHasBeenSet = false;
 
   Aws::Vector<ReservedInstanceReservationValue> m_reservedInstanceValueSet;
-  bool m_reservedInstanceValueSetHasBeenSet = false;
 
   ReservationValue m_targetConfigurationValueRollup;
-  bool m_targetConfigurationValueRollupHasBeenSet = false;
 
   Aws::Vector<TargetReservationValue> m_targetConfigurationValueSet;
-  bool m_targetConfigurationValueSetHasBeenSet = false;
 
   Aws::String m_validationFailureReason;
-  bool m_validationFailureReasonHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_isValidExchangeHasBeenSet = false;
+  bool m_outputReservedInstancesWillExpireAtHasBeenSet = false;
+  bool m_paymentDueHasBeenSet = false;
+  bool m_reservedInstanceValueRollupHasBeenSet = false;
+  bool m_reservedInstanceValueSetHasBeenSet = false;
+  bool m_targetConfigurationValueRollupHasBeenSet = false;
+  bool m_targetConfigurationValueSetHasBeenSet = false;
+  bool m_validationFailureReasonHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

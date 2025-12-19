@@ -35,22 +35,6 @@ class WaveAggregatedStatus {
 
   ///@{
   /**
-   * <p>Wave aggregated status health status.</p>
-   */
-  inline WaveHealthStatus GetHealthStatus() const { return m_healthStatus; }
-  inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
-  inline void SetHealthStatus(WaveHealthStatus value) {
-    m_healthStatusHasBeenSet = true;
-    m_healthStatus = value;
-  }
-  inline WaveAggregatedStatus& WithHealthStatus(WaveHealthStatus value) {
-    SetHealthStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Wave aggregated status last update dateTime.</p>
    */
   inline const Aws::String& GetLastUpdateDateTime() const { return m_lastUpdateDateTime; }
@@ -63,22 +47,6 @@ class WaveAggregatedStatus {
   template <typename LastUpdateDateTimeT = Aws::String>
   WaveAggregatedStatus& WithLastUpdateDateTime(LastUpdateDateTimeT&& value) {
     SetLastUpdateDateTime(std::forward<LastUpdateDateTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Wave aggregated status progress status.</p>
-   */
-  inline WaveProgressStatus GetProgressStatus() const { return m_progressStatus; }
-  inline bool ProgressStatusHasBeenSet() const { return m_progressStatusHasBeenSet; }
-  inline void SetProgressStatus(WaveProgressStatus value) {
-    m_progressStatusHasBeenSet = true;
-    m_progressStatus = value;
-  }
-  inline WaveAggregatedStatus& WithProgressStatus(WaveProgressStatus value) {
-    SetProgressStatus(value);
     return *this;
   }
   ///@}
@@ -104,6 +72,38 @@ class WaveAggregatedStatus {
 
   ///@{
   /**
+   * <p>Wave aggregated status health status.</p>
+   */
+  inline WaveHealthStatus GetHealthStatus() const { return m_healthStatus; }
+  inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+  inline void SetHealthStatus(WaveHealthStatus value) {
+    m_healthStatusHasBeenSet = true;
+    m_healthStatus = value;
+  }
+  inline WaveAggregatedStatus& WithHealthStatus(WaveHealthStatus value) {
+    SetHealthStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Wave aggregated status progress status.</p>
+   */
+  inline WaveProgressStatus GetProgressStatus() const { return m_progressStatus; }
+  inline bool ProgressStatusHasBeenSet() const { return m_progressStatusHasBeenSet; }
+  inline void SetProgressStatus(WaveProgressStatus value) {
+    m_progressStatusHasBeenSet = true;
+    m_progressStatus = value;
+  }
+  inline WaveAggregatedStatus& WithProgressStatus(WaveProgressStatus value) {
+    SetProgressStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Wave aggregated status total applications amount.</p>
    */
   inline long long GetTotalApplications() const { return m_totalApplications; }
@@ -118,19 +118,19 @@ class WaveAggregatedStatus {
   }
   ///@}
  private:
-  WaveHealthStatus m_healthStatus{WaveHealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
-
   Aws::String m_lastUpdateDateTime;
-  bool m_lastUpdateDateTimeHasBeenSet = false;
-
-  WaveProgressStatus m_progressStatus{WaveProgressStatus::NOT_SET};
-  bool m_progressStatusHasBeenSet = false;
 
   Aws::String m_replicationStartedDateTime;
-  bool m_replicationStartedDateTimeHasBeenSet = false;
+
+  WaveHealthStatus m_healthStatus{WaveHealthStatus::NOT_SET};
+
+  WaveProgressStatus m_progressStatus{WaveProgressStatus::NOT_SET};
 
   long long m_totalApplications{0};
+  bool m_lastUpdateDateTimeHasBeenSet = false;
+  bool m_replicationStartedDateTimeHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_progressStatusHasBeenSet = false;
   bool m_totalApplicationsHasBeenSet = false;
 };
 

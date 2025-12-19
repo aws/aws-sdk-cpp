@@ -65,9 +65,9 @@ class MediaInsightsPipelineElementStatus {
   ///@}
  private:
   MediaInsightsPipelineConfigurationElementType m_type{MediaInsightsPipelineConfigurationElementType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   MediaPipelineElementStatus m_status{MediaPipelineElementStatus::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

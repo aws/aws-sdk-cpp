@@ -222,30 +222,30 @@ class StackSetSummary {
   ///@}
  private:
   Aws::String m_stackSetName;
-  bool m_stackSetNameHasBeenSet = false;
 
   Aws::String m_stackSetId;
-  bool m_stackSetIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StackSetStatus m_status{StackSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AutoDeployment m_autoDeployment;
-  bool m_autoDeploymentHasBeenSet = false;
 
   PermissionModels m_permissionModel{PermissionModels::NOT_SET};
-  bool m_permissionModelHasBeenSet = false;
 
   StackDriftStatus m_driftStatus{StackDriftStatus::NOT_SET};
-  bool m_driftStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastDriftCheckTimestamp{};
-  bool m_lastDriftCheckTimestampHasBeenSet = false;
 
   ManagedExecution m_managedExecution;
+  bool m_stackSetNameHasBeenSet = false;
+  bool m_stackSetIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_autoDeploymentHasBeenSet = false;
+  bool m_permissionModelHasBeenSet = false;
+  bool m_driftStatusHasBeenSet = false;
+  bool m_lastDriftCheckTimestampHasBeenSet = false;
   bool m_managedExecutionHasBeenSet = false;
 };
 

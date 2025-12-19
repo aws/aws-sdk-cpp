@@ -126,18 +126,18 @@ class EventTopic {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_topicName;
-  bool m_topicNameHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDateTime{};
-  bool m_createdDateTimeHasBeenSet = false;
 
   TopicStatus m_status{TopicStatus::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_topicNameHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
+  bool m_createdDateTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

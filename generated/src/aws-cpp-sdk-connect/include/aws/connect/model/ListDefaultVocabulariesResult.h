@@ -85,12 +85,12 @@ class ListDefaultVocabulariesResult {
   ///@}
  private:
   Aws::Vector<DefaultVocabulary> m_defaultVocabularyList;
-  bool m_defaultVocabularyListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_defaultVocabularyListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class Delete {
   ///@}
  private:
   Aws::Vector<ObjectIdentifier> m_objects;
-  bool m_objectsHasBeenSet = false;
 
   bool m_quiet{false};
+  bool m_objectsHasBeenSet = false;
   bool m_quietHasBeenSet = false;
 };
 

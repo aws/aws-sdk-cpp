@@ -87,12 +87,12 @@ class ListDetectorModelVersionsResult {
   ///@}
  private:
   Aws::Vector<DetectorModelVersionSummary> m_detectorModelVersionSummaries;
-  bool m_detectorModelVersionSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_detectorModelVersionSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

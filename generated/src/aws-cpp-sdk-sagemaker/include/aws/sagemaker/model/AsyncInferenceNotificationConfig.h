@@ -98,12 +98,12 @@ class AsyncInferenceNotificationConfig {
   ///@}
  private:
   Aws::String m_successTopic;
-  bool m_successTopicHasBeenSet = false;
 
   Aws::String m_errorTopic;
-  bool m_errorTopicHasBeenSet = false;
 
   Aws::Vector<AsyncNotificationTopicTypes> m_includeInferenceResponseIn;
+  bool m_successTopicHasBeenSet = false;
+  bool m_errorTopicHasBeenSet = false;
   bool m_includeInferenceResponseInHasBeenSet = false;
 };
 

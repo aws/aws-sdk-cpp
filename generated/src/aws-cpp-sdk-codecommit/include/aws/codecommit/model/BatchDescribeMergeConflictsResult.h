@@ -164,24 +164,24 @@ class BatchDescribeMergeConflictsResult {
   ///@}
  private:
   Aws::Vector<Conflict> m_conflicts;
-  bool m_conflictsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<BatchDescribeMergeConflictsError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_destinationCommitId;
-  bool m_destinationCommitIdHasBeenSet = false;
 
   Aws::String m_sourceCommitId;
-  bool m_sourceCommitIdHasBeenSet = false;
 
   Aws::String m_baseCommitId;
-  bool m_baseCommitIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_conflictsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_destinationCommitIdHasBeenSet = false;
+  bool m_sourceCommitIdHasBeenSet = false;
+  bool m_baseCommitIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

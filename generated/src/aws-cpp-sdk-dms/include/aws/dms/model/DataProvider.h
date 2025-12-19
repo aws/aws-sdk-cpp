@@ -168,24 +168,24 @@ class DataProvider {
   ///@}
  private:
   Aws::String m_dataProviderName;
-  bool m_dataProviderNameHasBeenSet = false;
 
   Aws::String m_dataProviderArn;
-  bool m_dataProviderArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_dataProviderCreationTime{};
-  bool m_dataProviderCreationTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   bool m_virtual{false};
-  bool m_virtualHasBeenSet = false;
 
   DataProviderSettings m_settings;
+  bool m_dataProviderNameHasBeenSet = false;
+  bool m_dataProviderArnHasBeenSet = false;
+  bool m_dataProviderCreationTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_virtualHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

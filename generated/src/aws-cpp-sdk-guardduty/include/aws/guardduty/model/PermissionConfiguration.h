@@ -72,9 +72,9 @@ class PermissionConfiguration {
   ///@}
  private:
   BucketLevelPermissions m_bucketLevelPermissions;
-  bool m_bucketLevelPermissionsHasBeenSet = false;
 
   AccountLevelPermissions m_accountLevelPermissions;
+  bool m_bucketLevelPermissionsHasBeenSet = false;
   bool m_accountLevelPermissionsHasBeenSet = false;
 };
 

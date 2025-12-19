@@ -133,18 +133,18 @@ class S3Storage {
   ///@}
  private:
   Aws::String m_aWSAccessKeyId;
-  bool m_aWSAccessKeyIdHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_uploadPolicy{};
-  bool m_uploadPolicyHasBeenSet = false;
 
   Aws::String m_uploadPolicySignature;
+  bool m_aWSAccessKeyIdHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_uploadPolicyHasBeenSet = false;
   bool m_uploadPolicySignatureHasBeenSet = false;
 };
 

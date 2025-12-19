@@ -59,9 +59,9 @@ class StartSchemaExtensionResult {
   ///@}
  private:
   Aws::String m_schemaExtensionId;
-  bool m_schemaExtensionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaExtensionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

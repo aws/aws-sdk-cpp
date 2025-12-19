@@ -79,12 +79,12 @@ class JobDetails {
   ///@}
  private:
   int m_translatedDocumentsCount{0};
-  bool m_translatedDocumentsCountHasBeenSet = false;
 
   int m_documentsWithErrorsCount{0};
-  bool m_documentsWithErrorsCountHasBeenSet = false;
 
   int m_inputDocumentsCount{0};
+  bool m_translatedDocumentsCountHasBeenSet = false;
+  bool m_documentsWithErrorsCountHasBeenSet = false;
   bool m_inputDocumentsCountHasBeenSet = false;
 };
 

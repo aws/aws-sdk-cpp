@@ -15,7 +15,7 @@ namespace Glacier {
 namespace Model {
 
 /**
- * <p>Provides options for downloading output of an Amazon S3 Glacier
+ * <p>Provides options for downloading output of an Amazon Glacier
  * job.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutputInput">AWS
  * API Reference</a></p>
@@ -38,9 +38,9 @@ class GetJobOutputRequest : public GlacierRequest {
   /**
    * <p>The <code>AccountId</code> value is the AWS account ID of the account that
    * owns the vault. You can either specify an AWS account ID or optionally a single
-   * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-   * ID associated with the credentials used to sign the request. If you use an
-   * account ID, do not include any hyphens ('-') in the ID.</p>
+   * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+   * associated with the credentials used to sign the request. If you use an account
+   * ID, do not include any hyphens ('-') in the ID.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -113,7 +113,7 @@ class GetJobOutputRequest : public GlacierRequest {
    * you have a list of eight checksum values. Compute the tree hash of these values
    * to find the checksum of the entire output. Using the <a>DescribeJob</a> API,
    * obtain job information of the job that provided you the output. The response
-   * includes the checksum of the entire archive stored in Amazon S3 Glacier. You
+   * includes the checksum of the entire archive stored in Amazon Glacier. You
    * compare this value with the checksum you computed to ensure you have downloaded
    * the entire archive content with no errors.</p> <p/> </li> </ol>
    */
@@ -132,15 +132,15 @@ class GetJobOutputRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_range;
+  bool m_accountIdHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
   bool m_rangeHasBeenSet = false;
 };
 

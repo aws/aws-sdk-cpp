@@ -162,21 +162,21 @@ class Ec2NetworkInterface {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   Aws::Vector<PrivateIpAddressDetails> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   Aws::Vector<SecurityGroup> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_subNetId;
-  bool m_subNetIdHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_subNetIdHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

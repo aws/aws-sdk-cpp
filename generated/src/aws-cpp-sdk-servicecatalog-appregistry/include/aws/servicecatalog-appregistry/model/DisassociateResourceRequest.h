@@ -82,12 +82,12 @@ class DisassociateResourceRequest : public AppRegistryRequest {
   ///@}
  private:
   Aws::String m_application;
-  bool m_applicationHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resource;
+  bool m_applicationHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceHasBeenSet = false;
 };
 

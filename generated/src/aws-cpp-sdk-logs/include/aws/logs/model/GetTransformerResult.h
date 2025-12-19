@@ -116,18 +116,18 @@ class GetTransformerResult {
   ///@}
  private:
   Aws::String m_logGroupIdentifier;
-  bool m_logGroupIdentifierHasBeenSet = false;
 
   long long m_creationTime{0};
-  bool m_creationTimeHasBeenSet = false;
 
   long long m_lastModifiedTime{0};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::Vector<Processor> m_transformerConfig;
-  bool m_transformerConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logGroupIdentifierHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_transformerConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

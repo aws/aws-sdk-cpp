@@ -64,9 +64,9 @@ class DisassociateTransitGatewayConnectPeerResult {
   ///@}
  private:
   TransitGatewayConnectPeerAssociation m_transitGatewayConnectPeerAssociation;
-  bool m_transitGatewayConnectPeerAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transitGatewayConnectPeerAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

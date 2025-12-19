@@ -65,9 +65,9 @@ class BulkPublishResult {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityPoolIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

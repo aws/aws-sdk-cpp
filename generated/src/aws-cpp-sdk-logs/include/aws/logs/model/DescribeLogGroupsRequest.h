@@ -224,27 +224,27 @@ class DescribeLogGroupsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIdentifiers;
-  bool m_accountIdentifiersHasBeenSet = false;
 
   Aws::String m_logGroupNamePrefix;
-  bool m_logGroupNamePrefixHasBeenSet = false;
 
   Aws::String m_logGroupNamePattern;
-  bool m_logGroupNamePatternHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   bool m_includeLinkedAccounts{false};
-  bool m_includeLinkedAccountsHasBeenSet = false;
 
   LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
-  bool m_logGroupClassHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupIdentifiers;
+  bool m_accountIdentifiersHasBeenSet = false;
+  bool m_logGroupNamePrefixHasBeenSet = false;
+  bool m_logGroupNamePatternHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_includeLinkedAccountsHasBeenSet = false;
+  bool m_logGroupClassHasBeenSet = false;
   bool m_logGroupIdentifiersHasBeenSet = false;
 };
 

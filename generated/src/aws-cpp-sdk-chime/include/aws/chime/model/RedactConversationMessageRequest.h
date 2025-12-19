@@ -83,12 +83,12 @@ class RedactConversationMessageRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_messageId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_conversationIdHasBeenSet = false;
   bool m_messageIdHasBeenSet = false;
 };
 

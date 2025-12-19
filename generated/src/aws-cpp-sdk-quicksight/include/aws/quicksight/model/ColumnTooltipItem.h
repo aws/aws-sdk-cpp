@@ -123,18 +123,18 @@ class ColumnTooltipItem {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
-  bool m_visibilityHasBeenSet = false;
 
   AggregationFunction m_aggregation;
-  bool m_aggregationHasBeenSet = false;
 
   TooltipTarget m_tooltipTarget{TooltipTarget::NOT_SET};
+  bool m_columnHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_visibilityHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
   bool m_tooltipTargetHasBeenSet = false;
 };
 

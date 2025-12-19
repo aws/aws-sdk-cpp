@@ -125,18 +125,18 @@ class StrategyConfiguration {
   ///@}
  private:
   OverrideType m_type{OverrideType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ExtractionConfiguration m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   ConsolidationConfiguration m_consolidation;
-  bool m_consolidationHasBeenSet = false;
 
   ReflectionConfiguration m_reflection;
-  bool m_reflectionHasBeenSet = false;
 
   SelfManagedConfiguration m_selfManagedConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_extractionHasBeenSet = false;
+  bool m_consolidationHasBeenSet = false;
+  bool m_reflectionHasBeenSet = false;
   bool m_selfManagedConfigurationHasBeenSet = false;
 };
 

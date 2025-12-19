@@ -61,9 +61,9 @@ class ModifyTrafficMirrorFilterRuleResponse {
   ///@}
  private:
   TrafficMirrorFilterRule m_trafficMirrorFilterRule;
-  bool m_trafficMirrorFilterRuleHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficMirrorFilterRuleHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

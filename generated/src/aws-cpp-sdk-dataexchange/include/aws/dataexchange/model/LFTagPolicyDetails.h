@@ -86,12 +86,12 @@ class LFTagPolicyDetails {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   LFResourceType m_resourceType{LFResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   LFResourceDetails m_resourceDetails;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceDetailsHasBeenSet = false;
 };
 

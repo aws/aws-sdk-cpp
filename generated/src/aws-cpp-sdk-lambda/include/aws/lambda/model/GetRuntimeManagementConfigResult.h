@@ -94,15 +94,15 @@ class GetRuntimeManagementConfigResult {
   ///@}
  private:
   UpdateRuntimeOn m_updateRuntimeOn{UpdateRuntimeOn::NOT_SET};
-  bool m_updateRuntimeOnHasBeenSet = false;
 
   Aws::String m_runtimeVersionArn;
-  bool m_runtimeVersionArnHasBeenSet = false;
 
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateRuntimeOnHasBeenSet = false;
+  bool m_runtimeVersionArnHasBeenSet = false;
+  bool m_functionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

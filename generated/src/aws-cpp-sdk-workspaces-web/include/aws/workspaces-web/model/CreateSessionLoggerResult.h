@@ -59,9 +59,9 @@ class CreateSessionLoggerResult {
   ///@}
  private:
   Aws::String m_sessionLoggerArn;
-  bool m_sessionLoggerArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionLoggerArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

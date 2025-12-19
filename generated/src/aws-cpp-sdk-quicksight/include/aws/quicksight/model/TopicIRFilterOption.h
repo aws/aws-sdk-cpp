@@ -375,57 +375,57 @@ class TopicIRFilterOption {
   ///@}
  private:
   TopicIRFilterType m_filterType{TopicIRFilterType::NOT_SET};
-  bool m_filterTypeHasBeenSet = false;
 
   FilterClass m_filterClass{FilterClass::NOT_SET};
-  bool m_filterClassHasBeenSet = false;
 
   Identifier m_operandField;
-  bool m_operandFieldHasBeenSet = false;
 
   TopicIRFilterFunction m_function{TopicIRFilterFunction::NOT_SET};
-  bool m_functionHasBeenSet = false;
 
   TopicConstantValue m_constant;
-  bool m_constantHasBeenSet = false;
 
   bool m_inverse{false};
-  bool m_inverseHasBeenSet = false;
 
   NullFilterOption m_nullFilter{NullFilterOption::NOT_SET};
-  bool m_nullFilterHasBeenSet = false;
 
   AggType m_aggregation{AggType::NOT_SET};
-  bool m_aggregationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_aggregationFunctionParameters;
-  bool m_aggregationFunctionParametersHasBeenSet = false;
 
   Aws::Vector<AggregationPartitionBy> m_aggregationPartitionBy;
-  bool m_aggregationPartitionByHasBeenSet = false;
 
   TopicConstantValue m_range;
-  bool m_rangeHasBeenSet = false;
 
   bool m_inclusive{false};
-  bool m_inclusiveHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   TopicConstantValue m_lastNextOffset;
-  bool m_lastNextOffsetHasBeenSet = false;
 
   Aws::Vector<FilterAggMetrics> m_aggMetrics;
-  bool m_aggMetricsHasBeenSet = false;
 
   TopicConstantValue m_topBottomLimit;
-  bool m_topBottomLimitHasBeenSet = false;
 
   TopicSortDirection m_sortDirection{TopicSortDirection::NOT_SET};
-  bool m_sortDirectionHasBeenSet = false;
 
   Anchor m_anchor;
+  bool m_filterTypeHasBeenSet = false;
+  bool m_filterClassHasBeenSet = false;
+  bool m_operandFieldHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
+  bool m_constantHasBeenSet = false;
+  bool m_inverseHasBeenSet = false;
+  bool m_nullFilterHasBeenSet = false;
+  bool m_aggregationHasBeenSet = false;
+  bool m_aggregationFunctionParametersHasBeenSet = false;
+  bool m_aggregationPartitionByHasBeenSet = false;
+  bool m_rangeHasBeenSet = false;
+  bool m_inclusiveHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
+  bool m_lastNextOffsetHasBeenSet = false;
+  bool m_aggMetricsHasBeenSet = false;
+  bool m_topBottomLimitHasBeenSet = false;
+  bool m_sortDirectionHasBeenSet = false;
   bool m_anchorHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class RestoreTableFromRecoveryPointResult {
   ///@}
  private:
   TableRestoreStatus m_tableRestoreStatus;
-  bool m_tableRestoreStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableRestoreStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

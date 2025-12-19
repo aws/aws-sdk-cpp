@@ -132,18 +132,18 @@ class KerberosAttributes {
   ///@}
  private:
   Aws::String m_realm;
-  bool m_realmHasBeenSet = false;
 
   Aws::String m_kdcAdminPassword;
-  bool m_kdcAdminPasswordHasBeenSet = false;
 
   Aws::String m_crossRealmTrustPrincipalPassword;
-  bool m_crossRealmTrustPrincipalPasswordHasBeenSet = false;
 
   Aws::String m_aDDomainJoinUser;
-  bool m_aDDomainJoinUserHasBeenSet = false;
 
   Aws::String m_aDDomainJoinPassword;
+  bool m_realmHasBeenSet = false;
+  bool m_kdcAdminPasswordHasBeenSet = false;
+  bool m_crossRealmTrustPrincipalPasswordHasBeenSet = false;
+  bool m_aDDomainJoinUserHasBeenSet = false;
   bool m_aDDomainJoinPasswordHasBeenSet = false;
 };
 

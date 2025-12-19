@@ -96,12 +96,12 @@ class DynamoDBELTConnectorSource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DDBELTConnectionOptions m_connectionOptions;
-  bool m_connectionOptionsHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_connectionOptionsHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

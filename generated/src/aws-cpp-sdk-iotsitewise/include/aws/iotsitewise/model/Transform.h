@@ -110,12 +110,12 @@ class Transform {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   Aws::Vector<ExpressionVariable> m_variables;
-  bool m_variablesHasBeenSet = false;
 
   TransformProcessingConfig m_processingConfig;
+  bool m_expressionHasBeenSet = false;
+  bool m_variablesHasBeenSet = false;
   bool m_processingConfigHasBeenSet = false;
 };
 

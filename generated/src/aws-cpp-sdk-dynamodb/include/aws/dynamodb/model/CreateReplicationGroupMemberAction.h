@@ -157,21 +157,21 @@ class CreateReplicationGroupMemberAction {
   ///@}
  private:
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_kMSMasterKeyId;
-  bool m_kMSMasterKeyIdHasBeenSet = false;
 
   ProvisionedThroughputOverride m_provisionedThroughputOverride;
-  bool m_provisionedThroughputOverrideHasBeenSet = false;
 
   OnDemandThroughputOverride m_onDemandThroughputOverride;
-  bool m_onDemandThroughputOverrideHasBeenSet = false;
 
   Aws::Vector<ReplicaGlobalSecondaryIndex> m_globalSecondaryIndexes;
-  bool m_globalSecondaryIndexesHasBeenSet = false;
 
   TableClass m_tableClassOverride{TableClass::NOT_SET};
+  bool m_regionNameHasBeenSet = false;
+  bool m_kMSMasterKeyIdHasBeenSet = false;
+  bool m_provisionedThroughputOverrideHasBeenSet = false;
+  bool m_onDemandThroughputOverrideHasBeenSet = false;
+  bool m_globalSecondaryIndexesHasBeenSet = false;
   bool m_tableClassOverrideHasBeenSet = false;
 };
 

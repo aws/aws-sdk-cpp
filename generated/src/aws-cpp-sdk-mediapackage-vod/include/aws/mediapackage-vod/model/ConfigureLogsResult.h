@@ -164,27 +164,27 @@ class ConfigureLogsResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Authorization m_authorization;
-  bool m_authorizationHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   EgressAccessLogs m_egressAccessLogs;
-  bool m_egressAccessLogsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_authorizationHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_egressAccessLogsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

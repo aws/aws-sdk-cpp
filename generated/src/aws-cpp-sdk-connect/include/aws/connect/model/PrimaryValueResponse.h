@@ -86,12 +86,12 @@ class PrimaryValueResponse {
   ///@}
  private:
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_attributeId;
-  bool m_attributeIdHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_attributeIdHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

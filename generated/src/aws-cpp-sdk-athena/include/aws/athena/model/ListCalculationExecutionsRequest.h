@@ -113,15 +113,15 @@ class ListCalculationExecutionsRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   CalculationExecutionState m_stateFilter{CalculationExecutionState::NOT_SET};
-  bool m_stateFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_stateFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

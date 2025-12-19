@@ -226,30 +226,30 @@ class ImageUsageReport {
   ///@}
  private:
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   Aws::Vector<ImageUsageResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_imageIdHasBeenSet = false;
+  bool m_reportIdHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

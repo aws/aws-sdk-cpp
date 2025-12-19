@@ -85,9 +85,9 @@ class ProjectCodeSecurityScanConfiguration {
   ///@}
  private:
   Aws::Vector<ProjectPeriodicScanConfiguration> m_periodicScanConfigurations;
-  bool m_periodicScanConfigurationsHasBeenSet = false;
 
   Aws::Vector<ProjectContinuousIntegrationScanConfiguration> m_continuousIntegrationScanConfigurations;
+  bool m_periodicScanConfigurationsHasBeenSet = false;
   bool m_continuousIntegrationScanConfigurationsHasBeenSet = false;
 };
 

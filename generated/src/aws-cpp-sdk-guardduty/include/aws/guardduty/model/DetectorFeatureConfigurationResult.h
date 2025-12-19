@@ -116,15 +116,15 @@ class DetectorFeatureConfigurationResult {
   ///@}
  private:
   DetectorFeatureResult m_name{DetectorFeatureResult::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Vector<DetectorAdditionalConfigurationResult> m_additionalConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_additionalConfigurationHasBeenSet = false;
 };
 

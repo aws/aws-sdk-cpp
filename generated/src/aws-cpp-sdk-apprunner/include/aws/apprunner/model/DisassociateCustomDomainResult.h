@@ -121,18 +121,18 @@ class DisassociateCustomDomainResult {
   ///@}
  private:
   Aws::String m_dNSTarget;
-  bool m_dNSTargetHasBeenSet = false;
 
   Aws::String m_serviceArn;
-  bool m_serviceArnHasBeenSet = false;
 
   CustomDomain m_customDomain;
-  bool m_customDomainHasBeenSet = false;
 
   Aws::Vector<VpcDNSTarget> m_vpcDNSTargets;
-  bool m_vpcDNSTargetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dNSTargetHasBeenSet = false;
+  bool m_serviceArnHasBeenSet = false;
+  bool m_customDomainHasBeenSet = false;
+  bool m_vpcDNSTargetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

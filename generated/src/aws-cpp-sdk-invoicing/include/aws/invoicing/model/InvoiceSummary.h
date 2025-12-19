@@ -251,39 +251,39 @@ class InvoiceSummary {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_invoiceId;
-  bool m_invoiceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_issuedDate{};
-  bool m_issuedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_dueDate{};
-  bool m_dueDateHasBeenSet = false;
 
   Entity m_entity;
-  bool m_entityHasBeenSet = false;
 
   BillingPeriod m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
 
   InvoiceType m_invoiceType{InvoiceType::NOT_SET};
-  bool m_invoiceTypeHasBeenSet = false;
 
   Aws::String m_originalInvoiceId;
-  bool m_originalInvoiceIdHasBeenSet = false;
 
   Aws::String m_purchaseOrderNumber;
-  bool m_purchaseOrderNumberHasBeenSet = false;
 
   InvoiceCurrencyAmount m_baseCurrencyAmount;
-  bool m_baseCurrencyAmountHasBeenSet = false;
 
   InvoiceCurrencyAmount m_taxCurrencyAmount;
-  bool m_taxCurrencyAmountHasBeenSet = false;
 
   InvoiceCurrencyAmount m_paymentCurrencyAmount;
+  bool m_accountIdHasBeenSet = false;
+  bool m_invoiceIdHasBeenSet = false;
+  bool m_issuedDateHasBeenSet = false;
+  bool m_dueDateHasBeenSet = false;
+  bool m_entityHasBeenSet = false;
+  bool m_billingPeriodHasBeenSet = false;
+  bool m_invoiceTypeHasBeenSet = false;
+  bool m_originalInvoiceIdHasBeenSet = false;
+  bool m_purchaseOrderNumberHasBeenSet = false;
+  bool m_baseCurrencyAmountHasBeenSet = false;
+  bool m_taxCurrencyAmountHasBeenSet = false;
   bool m_paymentCurrencyAmountHasBeenSet = false;
 };
 

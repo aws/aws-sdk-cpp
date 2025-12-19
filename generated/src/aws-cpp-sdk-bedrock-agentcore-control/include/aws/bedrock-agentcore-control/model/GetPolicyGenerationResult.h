@@ -235,36 +235,36 @@ class GetPolicyGenerationResult {
   ///@}
  private:
   Aws::String m_policyEngineId;
-  bool m_policyEngineIdHasBeenSet = false;
 
   Aws::String m_policyGenerationId;
-  bool m_policyGenerationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_policyGenerationArn;
-  bool m_policyGenerationArnHasBeenSet = false;
 
   Resource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   PolicyGenerationStatus m_status{PolicyGenerationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::String m_findings;
-  bool m_findingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyEngineIdHasBeenSet = false;
+  bool m_policyGenerationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_policyGenerationArnHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
+  bool m_findingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

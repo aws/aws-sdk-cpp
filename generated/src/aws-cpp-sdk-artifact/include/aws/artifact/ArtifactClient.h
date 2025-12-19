@@ -206,6 +206,33 @@ class AWS_ARTIFACT_API ArtifactClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>List available report versions for a given report.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReportVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListReportVersionsOutcome ListReportVersions(const Model::ListReportVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListReportVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListReportVersionsRequestT = Model::ListReportVersionsRequest>
+  Model::ListReportVersionsOutcomeCallable ListReportVersionsCallable(const ListReportVersionsRequestT& request) const {
+    return SubmitCallable(&ArtifactClient::ListReportVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListReportVersions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListReportVersionsRequestT = Model::ListReportVersionsRequest>
+  void ListReportVersionsAsync(const ListReportVersionsRequestT& request, const ListReportVersionsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ArtifactClient::ListReportVersions, request, handler, context);
+  }
+
+  /**
    * <p>List available reports.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/ListReports">AWS
    * API Reference</a></p>

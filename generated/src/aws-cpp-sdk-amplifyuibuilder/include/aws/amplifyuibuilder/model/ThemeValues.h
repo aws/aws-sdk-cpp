@@ -71,9 +71,9 @@ class ThemeValues {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   std::shared_ptr<ThemeValue> m_value;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

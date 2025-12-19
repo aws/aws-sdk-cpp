@@ -126,21 +126,21 @@ class CreateOTAUpdateResult {
   ///@}
  private:
   Aws::String m_otaUpdateId;
-  bool m_otaUpdateIdHasBeenSet = false;
 
   Aws::String m_awsIotJobId;
-  bool m_awsIotJobIdHasBeenSet = false;
 
   Aws::String m_otaUpdateArn;
-  bool m_otaUpdateArnHasBeenSet = false;
 
   Aws::String m_awsIotJobArn;
-  bool m_awsIotJobArnHasBeenSet = false;
 
   OTAUpdateStatus m_otaUpdateStatus{OTAUpdateStatus::NOT_SET};
-  bool m_otaUpdateStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_otaUpdateIdHasBeenSet = false;
+  bool m_awsIotJobIdHasBeenSet = false;
+  bool m_otaUpdateArnHasBeenSet = false;
+  bool m_awsIotJobArnHasBeenSet = false;
+  bool m_otaUpdateStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

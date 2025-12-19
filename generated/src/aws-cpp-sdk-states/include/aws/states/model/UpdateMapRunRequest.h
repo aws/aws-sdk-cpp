@@ -98,15 +98,15 @@ class UpdateMapRunRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_mapRunArn;
-  bool m_mapRunArnHasBeenSet = false;
 
   int m_maxConcurrency{0};
-  bool m_maxConcurrencyHasBeenSet = false;
 
   double m_toleratedFailurePercentage{0.0};
-  bool m_toleratedFailurePercentageHasBeenSet = false;
 
   long long m_toleratedFailureCount{0};
+  bool m_mapRunArnHasBeenSet = false;
+  bool m_maxConcurrencyHasBeenSet = false;
+  bool m_toleratedFailurePercentageHasBeenSet = false;
   bool m_toleratedFailureCountHasBeenSet = false;
 };
 

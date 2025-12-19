@@ -118,15 +118,15 @@ class CreateCustomRoutingEndpointGroupRequest : public GlobalAcceleratorRequest 
   ///@}
  private:
   Aws::String m_listenerArn;
-  bool m_listenerArnHasBeenSet = false;
 
   Aws::String m_endpointGroupRegion;
-  bool m_endpointGroupRegionHasBeenSet = false;
 
   Aws::Vector<CustomRoutingDestinationConfiguration> m_destinationConfigurations;
-  bool m_destinationConfigurationsHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_listenerArnHasBeenSet = false;
+  bool m_endpointGroupRegionHasBeenSet = false;
+  bool m_destinationConfigurationsHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

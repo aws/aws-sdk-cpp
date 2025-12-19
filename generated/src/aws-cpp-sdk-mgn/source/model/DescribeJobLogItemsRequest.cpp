@@ -15,10 +15,6 @@ using namespace Aws::Utils;
 Aws::String DescribeJobLogItemsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
-  }
-
   if (m_jobIDHasBeenSet) {
     payload.WithString("jobID", m_jobID);
   }
@@ -29,6 +25,10 @@ Aws::String DescribeJobLogItemsRequest::SerializePayload() const {
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

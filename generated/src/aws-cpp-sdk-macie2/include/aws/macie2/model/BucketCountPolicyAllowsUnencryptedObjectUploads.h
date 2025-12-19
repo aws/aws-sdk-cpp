@@ -94,12 +94,12 @@ class BucketCountPolicyAllowsUnencryptedObjectUploads {
   ///@}
  private:
   long long m_allowsUnencryptedObjectUploads{0};
-  bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
 
   long long m_deniesUnencryptedObjectUploads{0};
-  bool m_deniesUnencryptedObjectUploadsHasBeenSet = false;
 
   long long m_unknown{0};
+  bool m_allowsUnencryptedObjectUploadsHasBeenSet = false;
+  bool m_deniesUnencryptedObjectUploadsHasBeenSet = false;
   bool m_unknownHasBeenSet = false;
 };
 

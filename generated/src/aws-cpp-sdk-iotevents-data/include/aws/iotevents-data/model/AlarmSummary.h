@@ -158,21 +158,21 @@ class AlarmSummary {
   ///@}
  private:
   Aws::String m_alarmModelName;
-  bool m_alarmModelNameHasBeenSet = false;
 
   Aws::String m_alarmModelVersion;
-  bool m_alarmModelVersionHasBeenSet = false;
 
   Aws::String m_keyValue;
-  bool m_keyValueHasBeenSet = false;
 
   AlarmStateName m_stateName{AlarmStateName::NOT_SET};
-  bool m_stateNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
+  bool m_alarmModelNameHasBeenSet = false;
+  bool m_alarmModelVersionHasBeenSet = false;
+  bool m_keyValueHasBeenSet = false;
+  bool m_stateNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdateTimeHasBeenSet = false;
 };
 

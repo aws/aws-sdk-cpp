@@ -64,9 +64,9 @@ class CoversBodyPart {
   ///@}
  private:
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   bool m_value{false};
+  bool m_confidenceHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

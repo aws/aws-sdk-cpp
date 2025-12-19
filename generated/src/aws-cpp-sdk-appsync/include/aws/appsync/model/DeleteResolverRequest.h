@@ -83,12 +83,12 @@ class DeleteResolverRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_fieldName;
+  bool m_apiIdHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
   bool m_fieldNameHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class UserPreferenceOverrideConfigurationInput {
   ///@}
  private:
   UserPreferenceOverrideExtractionConfigurationInput m_extraction;
-  bool m_extractionHasBeenSet = false;
 
   UserPreferenceOverrideConsolidationConfigurationInput m_consolidation;
+  bool m_extractionHasBeenSet = false;
   bool m_consolidationHasBeenSet = false;
 };
 

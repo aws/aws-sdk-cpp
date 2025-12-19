@@ -56,6 +56,6 @@ TEST_F(EMRSmokeTestSuite, ListClustersSuccess )
     
     ListClustersRequest input;
     auto outcome = clientSp->ListClusters(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

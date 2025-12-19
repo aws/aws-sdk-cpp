@@ -112,15 +112,15 @@ class ExperimentResultsData {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   ExperimentResultResponseType m_resultStat{ExperimentResultResponseType::NOT_SET};
-  bool m_resultStatHasBeenSet = false;
 
   Aws::String m_treatmentName;
-  bool m_treatmentNameHasBeenSet = false;
 
   Aws::Vector<double> m_values;
+  bool m_metricNameHasBeenSet = false;
+  bool m_resultStatHasBeenSet = false;
+  bool m_treatmentNameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

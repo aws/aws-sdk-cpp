@@ -94,12 +94,12 @@ class ListWorkspaceInstancesRequest : public WorkspacesInstancesRequest {
   ///@}
  private:
   Aws::Vector<ProvisionStateEnum> m_provisionStates;
-  bool m_provisionStatesHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_provisionStatesHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

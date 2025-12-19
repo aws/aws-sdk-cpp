@@ -137,21 +137,21 @@ class PricingPlan {
   ///@}
  private:
   long long m_billableEntityCount{0};
-  bool m_billableEntityCountHasBeenSet = false;
 
   BundleInformation m_bundleInformation;
-  bool m_bundleInformationHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveDateTime{};
-  bool m_effectiveDateTimeHasBeenSet = false;
 
   PricingMode m_pricingMode{PricingMode::NOT_SET};
-  bool m_pricingModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateDateTime{};
-  bool m_updateDateTimeHasBeenSet = false;
 
   UpdateReason m_updateReason{UpdateReason::NOT_SET};
+  bool m_billableEntityCountHasBeenSet = false;
+  bool m_bundleInformationHasBeenSet = false;
+  bool m_effectiveDateTimeHasBeenSet = false;
+  bool m_pricingModeHasBeenSet = false;
+  bool m_updateDateTimeHasBeenSet = false;
   bool m_updateReasonHasBeenSet = false;
 };
 

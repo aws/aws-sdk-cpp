@@ -70,9 +70,9 @@ class DmsTransferSettings {
   ///@}
  private:
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   Aws::String m_bucketName;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
   bool m_bucketNameHasBeenSet = false;
 };
 

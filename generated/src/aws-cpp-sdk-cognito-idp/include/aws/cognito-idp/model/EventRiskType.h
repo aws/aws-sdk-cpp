@@ -89,12 +89,12 @@ class EventRiskType {
   ///@}
  private:
   RiskDecisionType m_riskDecision{RiskDecisionType::NOT_SET};
-  bool m_riskDecisionHasBeenSet = false;
 
   RiskLevelType m_riskLevel{RiskLevelType::NOT_SET};
-  bool m_riskLevelHasBeenSet = false;
 
   bool m_compromisedCredentialsDetected{false};
+  bool m_riskDecisionHasBeenSet = false;
+  bool m_riskLevelHasBeenSet = false;
   bool m_compromisedCredentialsDetectedHasBeenSet = false;
 };
 

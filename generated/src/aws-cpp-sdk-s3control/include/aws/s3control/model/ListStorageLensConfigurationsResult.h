@@ -107,15 +107,15 @@ class ListStorageLensConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListStorageLensConfigurationEntry> m_storageLensConfigurationList;
-  bool m_storageLensConfigurationListHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_storageLensConfigurationListHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

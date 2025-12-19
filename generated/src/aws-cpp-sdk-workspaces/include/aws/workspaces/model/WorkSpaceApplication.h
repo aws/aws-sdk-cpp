@@ -206,30 +206,30 @@ class WorkSpaceApplication {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkSpaceApplicationLicenseType m_licenseType{WorkSpaceApplicationLicenseType::NOT_SET};
-  bool m_licenseTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   WorkSpaceApplicationState m_state{WorkSpaceApplicationState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Compute> m_supportedComputeTypeNames;
-  bool m_supportedComputeTypeNamesHasBeenSet = false;
 
   Aws::Vector<OperatingSystemName> m_supportedOperatingSystemNames;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_licenseTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_supportedComputeTypeNamesHasBeenSet = false;
   bool m_supportedOperatingSystemNamesHasBeenSet = false;
 };
 

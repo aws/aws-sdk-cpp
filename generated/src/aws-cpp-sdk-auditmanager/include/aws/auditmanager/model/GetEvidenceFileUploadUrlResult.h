@@ -77,12 +77,12 @@ class GetEvidenceFileUploadUrlResult {
   ///@}
  private:
   Aws::String m_evidenceFileName;
-  bool m_evidenceFileNameHasBeenSet = false;
 
   Aws::String m_uploadUrl;
-  bool m_uploadUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evidenceFileNameHasBeenSet = false;
+  bool m_uploadUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

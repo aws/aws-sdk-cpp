@@ -89,12 +89,12 @@ class RuleStringToEvaluate {
   ///@}
  private:
   RuleStringEmailAttribute m_attribute{RuleStringEmailAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_mimeHeaderAttribute;
-  bool m_mimeHeaderAttributeHasBeenSet = false;
 
   Analysis m_analysis;
+  bool m_attributeHasBeenSet = false;
+  bool m_mimeHeaderAttributeHasBeenSet = false;
   bool m_analysisHasBeenSet = false;
 };
 

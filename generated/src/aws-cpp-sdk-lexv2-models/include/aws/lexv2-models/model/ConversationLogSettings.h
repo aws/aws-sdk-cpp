@@ -83,9 +83,9 @@ class ConversationLogSettings {
   ///@}
  private:
   Aws::Vector<TextLogSetting> m_textLogSettings;
-  bool m_textLogSettingsHasBeenSet = false;
 
   Aws::Vector<AudioLogSetting> m_audioLogSettings;
+  bool m_textLogSettingsHasBeenSet = false;
   bool m_audioLogSettingsHasBeenSet = false;
 };
 

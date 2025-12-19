@@ -110,15 +110,15 @@ class DeltaTarget {
   ///@}
  private:
   Aws::Vector<Aws::String> m_deltaTables;
-  bool m_deltaTablesHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   bool m_writeManifest{false};
-  bool m_writeManifestHasBeenSet = false;
 
   bool m_createNativeDeltaTable{false};
+  bool m_deltaTablesHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_writeManifestHasBeenSet = false;
   bool m_createNativeDeltaTableHasBeenSet = false;
 };
 

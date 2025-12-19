@@ -170,27 +170,27 @@ class GetEventStreamResult {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_eventStreamArn;
-  bool m_eventStreamArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   EventStreamState m_state{EventStreamState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Utils::DateTime m_stoppedSince{};
-  bool m_stoppedSinceHasBeenSet = false;
 
   EventStreamDestinationDetails m_destinationDetails;
-  bool m_destinationDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameHasBeenSet = false;
+  bool m_eventStreamArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stoppedSinceHasBeenSet = false;
+  bool m_destinationDetailsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

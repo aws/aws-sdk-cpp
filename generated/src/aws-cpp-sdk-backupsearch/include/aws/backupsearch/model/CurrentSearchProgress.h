@@ -81,12 +81,12 @@ class CurrentSearchProgress {
   ///@}
  private:
   int m_recoveryPointsScannedCount{0};
-  bool m_recoveryPointsScannedCountHasBeenSet = false;
 
   long long m_itemsScannedCount{0};
-  bool m_itemsScannedCountHasBeenSet = false;
 
   long long m_itemsMatchedCount{0};
+  bool m_recoveryPointsScannedCountHasBeenSet = false;
+  bool m_itemsScannedCountHasBeenSet = false;
   bool m_itemsMatchedCountHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class OnDemandCapacityReservationOptions {
   ///@}
  private:
   OnDemandCapacityReservationUsageStrategy m_usageStrategy{OnDemandCapacityReservationUsageStrategy::NOT_SET};
-  bool m_usageStrategyHasBeenSet = false;
 
   OnDemandCapacityReservationPreference m_capacityReservationPreference{OnDemandCapacityReservationPreference::NOT_SET};
-  bool m_capacityReservationPreferenceHasBeenSet = false;
 
   Aws::String m_capacityReservationResourceGroupArn;
+  bool m_usageStrategyHasBeenSet = false;
+  bool m_capacityReservationPreferenceHasBeenSet = false;
   bool m_capacityReservationResourceGroupArnHasBeenSet = false;
 };
 

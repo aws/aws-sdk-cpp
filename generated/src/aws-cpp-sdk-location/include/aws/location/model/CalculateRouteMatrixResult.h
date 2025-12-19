@@ -147,18 +147,18 @@ class CalculateRouteMatrixResult {
   ///@}
  private:
   Aws::Vector<Aws::Vector<RouteMatrixEntry>> m_routeMatrix;
-  bool m_routeMatrixHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<double>> m_snappedDeparturePositions;
-  bool m_snappedDeparturePositionsHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<double>> m_snappedDestinationPositions;
-  bool m_snappedDestinationPositionsHasBeenSet = false;
 
   CalculateRouteMatrixSummary m_summary;
-  bool m_summaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routeMatrixHasBeenSet = false;
+  bool m_snappedDeparturePositionsHasBeenSet = false;
+  bool m_snappedDestinationPositionsHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

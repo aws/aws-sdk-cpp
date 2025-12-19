@@ -115,15 +115,15 @@ class CreateProxyRuleGroupRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ProxyRulesByRequestPhase m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_proxyRuleGroupNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -128,18 +128,18 @@ class UpdateEntitlementRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AppVisibility m_appVisibility{AppVisibility::NOT_SET};
-  bool m_appVisibilityHasBeenSet = false;
 
   Aws::Vector<EntitlementAttribute> m_attributes;
+  bool m_nameHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_appVisibilityHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

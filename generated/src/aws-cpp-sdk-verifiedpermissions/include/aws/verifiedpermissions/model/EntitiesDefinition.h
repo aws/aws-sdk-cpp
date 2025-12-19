@@ -91,9 +91,9 @@ class EntitiesDefinition {
   ///@}
  private:
   Aws::Vector<EntityItem> m_entityList;
-  bool m_entityListHasBeenSet = false;
 
   Aws::String m_cedarJson;
+  bool m_entityListHasBeenSet = false;
   bool m_cedarJsonHasBeenSet = false;
 };
 

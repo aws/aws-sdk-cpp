@@ -92,12 +92,12 @@ class RegisterAgentRequest : public GroundStationRequest {
   ///@}
  private:
   DiscoveryData m_discoveryData;
-  bool m_discoveryDataHasBeenSet = false;
 
   AgentDetails m_agentDetails;
-  bool m_agentDetailsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_discoveryDataHasBeenSet = false;
+  bool m_agentDetailsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateCustomActionResult {
   ///@}
  private:
   Aws::String m_customActionArn;
-  bool m_customActionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_customActionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

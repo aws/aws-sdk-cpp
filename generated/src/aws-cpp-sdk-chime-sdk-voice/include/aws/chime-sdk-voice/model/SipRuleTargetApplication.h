@@ -86,12 +86,12 @@ class SipRuleTargetApplication {
   ///@}
  private:
   Aws::String m_sipMediaApplicationId;
-  bool m_sipMediaApplicationIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_awsRegion;
+  bool m_sipMediaApplicationIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
   bool m_awsRegionHasBeenSet = false;
 };
 

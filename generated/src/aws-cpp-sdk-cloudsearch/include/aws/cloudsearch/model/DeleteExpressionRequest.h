@@ -72,9 +72,9 @@ class DeleteExpressionRequest : public CloudSearchRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_expressionName;
+  bool m_domainNameHasBeenSet = false;
   bool m_expressionNameHasBeenSet = false;
 };
 

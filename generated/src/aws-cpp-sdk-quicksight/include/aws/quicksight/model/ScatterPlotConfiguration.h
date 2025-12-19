@@ -242,36 +242,36 @@ class ScatterPlotConfiguration {
   ///@}
  private:
   ScatterPlotFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   ScatterPlotSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   ChartAxisLabelOptions m_xAxisLabelOptions;
-  bool m_xAxisLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_xAxisDisplayOptions;
-  bool m_xAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_yAxisLabelOptions;
-  bool m_yAxisLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_yAxisDisplayOptions;
-  bool m_yAxisDisplayOptionsHasBeenSet = false;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_xAxisLabelOptionsHasBeenSet = false;
+  bool m_xAxisDisplayOptionsHasBeenSet = false;
+  bool m_yAxisLabelOptionsHasBeenSet = false;
+  bool m_yAxisDisplayOptionsHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

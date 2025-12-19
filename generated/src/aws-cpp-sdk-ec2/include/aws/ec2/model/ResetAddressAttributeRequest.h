@@ -87,12 +87,12 @@ class ResetAddressAttributeRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   AddressAttributeName m_attribute{AddressAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_allocationIdHasBeenSet = false;
+  bool m_attributeHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

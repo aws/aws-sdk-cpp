@@ -63,9 +63,9 @@ class CreateDBProxyEndpointResult {
   ///@}
  private:
   DBProxyEndpoint m_dBProxyEndpoint;
-  bool m_dBProxyEndpointHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBProxyEndpointHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class SynchronizeGatewayTargetsResult {
   ///@}
  private:
   Aws::Vector<GatewayTarget> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_targetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

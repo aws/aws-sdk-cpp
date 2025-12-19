@@ -141,21 +141,21 @@ class UpdateDirectorySetupRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   UpdateType m_updateType{UpdateType::NOT_SET};
-  bool m_updateTypeHasBeenSet = false;
 
   OSUpdateSettings m_oSUpdateSettings;
-  bool m_oSUpdateSettingsHasBeenSet = false;
 
   DirectorySizeUpdateSettings m_directorySizeUpdateSettings;
-  bool m_directorySizeUpdateSettingsHasBeenSet = false;
 
   NetworkUpdateSettings m_networkUpdateSettings;
-  bool m_networkUpdateSettingsHasBeenSet = false;
 
   bool m_createSnapshotBeforeUpdate{false};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_updateTypeHasBeenSet = false;
+  bool m_oSUpdateSettingsHasBeenSet = false;
+  bool m_directorySizeUpdateSettingsHasBeenSet = false;
+  bool m_networkUpdateSettingsHasBeenSet = false;
   bool m_createSnapshotBeforeUpdateHasBeenSet = false;
 };
 

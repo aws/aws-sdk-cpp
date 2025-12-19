@@ -90,12 +90,12 @@ class GetRepositoryTriggersResult {
   ///@}
  private:
   Aws::String m_configurationId;
-  bool m_configurationIdHasBeenSet = false;
 
   Aws::Vector<RepositoryTrigger> m_triggers;
-  bool m_triggersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationIdHasBeenSet = false;
+  bool m_triggersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

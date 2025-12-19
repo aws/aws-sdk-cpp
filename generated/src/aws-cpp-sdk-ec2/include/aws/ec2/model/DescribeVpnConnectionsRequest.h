@@ -132,12 +132,12 @@ class DescribeVpnConnectionsRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpnConnectionIds;
-  bool m_vpnConnectionIdsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_filtersHasBeenSet = false;
+  bool m_vpnConnectionIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

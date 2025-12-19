@@ -90,12 +90,12 @@ class AssociateTransitGatewayPolicyTableRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayPolicyTableId;
-  bool m_transitGatewayPolicyTableIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayPolicyTableIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

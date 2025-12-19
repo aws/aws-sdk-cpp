@@ -160,24 +160,48 @@ class CreateApplicationRequest : public OpenSearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
+   * application's data at rest. If provided, the application uses your
+   * customer-managed key for encryption. If omitted, the application uses an
+   * AWS-managed key. The KMS key must be in the same region as the application.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  CreateApplicationRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<DataSource> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   IamIdentityCenterOptionsInput m_iamIdentityCenterOptions;
-  bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
   Aws::Vector<AppConfig> m_appConfigs;
-  bool m_appConfigsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagList;
+
+  Aws::String m_kmsKeyArn;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_iamIdentityCenterOptionsHasBeenSet = false;
+  bool m_appConfigsHasBeenSet = false;
   bool m_tagListHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

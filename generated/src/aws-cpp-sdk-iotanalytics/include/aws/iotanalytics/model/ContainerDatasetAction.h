@@ -124,15 +124,15 @@ class ContainerDatasetAction {
   ///@}
  private:
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   ResourceConfiguration m_resourceConfiguration;
-  bool m_resourceConfigurationHasBeenSet = false;
 
   Aws::Vector<Variable> m_variables;
+  bool m_imageHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_resourceConfigurationHasBeenSet = false;
   bool m_variablesHasBeenSet = false;
 };
 

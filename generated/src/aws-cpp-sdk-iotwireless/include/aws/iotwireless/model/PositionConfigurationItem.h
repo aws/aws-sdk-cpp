@@ -106,15 +106,15 @@ class PositionConfigurationItem {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   PositionResourceType m_resourceType{PositionResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   PositionSolverDetails m_solvers;
-  bool m_solversHasBeenSet = false;
 
   Aws::String m_destination;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_solversHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class PlacementConstraint {
   ///@}
  private:
   Aws::String m_expression;
-  bool m_expressionHasBeenSet = false;
 
   PlacementConstraintType m_type{PlacementConstraintType::NOT_SET};
+  bool m_expressionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

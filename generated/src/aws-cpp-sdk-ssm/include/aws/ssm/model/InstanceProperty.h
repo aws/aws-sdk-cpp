@@ -506,81 +506,81 @@ class InstanceProperty {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_instanceRole;
-  bool m_instanceRoleHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_instanceState;
-  bool m_instanceStateHasBeenSet = false;
 
   Aws::String m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::String m_iPAddress;
-  bool m_iPAddressHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   PingStatus m_pingStatus{PingStatus::NOT_SET};
-  bool m_pingStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastPingDateTime{};
-  bool m_lastPingDateTimeHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   PlatformType m_platformType{PlatformType::NOT_SET};
-  bool m_platformTypeHasBeenSet = false;
 
   Aws::String m_platformName;
-  bool m_platformNameHasBeenSet = false;
 
   Aws::String m_platformVersion;
-  bool m_platformVersionHasBeenSet = false;
 
   Aws::String m_activationId;
-  bool m_activationIdHasBeenSet = false;
 
   Aws::String m_iamRole;
-  bool m_iamRoleHasBeenSet = false;
 
   Aws::Utils::DateTime m_registrationDate{};
-  bool m_registrationDateHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_computerName;
-  bool m_computerNameHasBeenSet = false;
 
   Aws::String m_associationStatus;
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAssociationExecutionDate{};
-  bool m_lastAssociationExecutionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulAssociationExecutionDate{};
-  bool m_lastSuccessfulAssociationExecutionDateHasBeenSet = false;
 
   InstanceAggregatedAssociationOverview m_associationOverview;
-  bool m_associationOverviewHasBeenSet = false;
 
   Aws::String m_sourceId;
-  bool m_sourceIdHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_instanceRoleHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_instanceStateHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_iPAddressHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
+  bool m_pingStatusHasBeenSet = false;
+  bool m_lastPingDateTimeHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_platformTypeHasBeenSet = false;
+  bool m_platformNameHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_activationIdHasBeenSet = false;
+  bool m_iamRoleHasBeenSet = false;
+  bool m_registrationDateHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_computerNameHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
+  bool m_lastAssociationExecutionDateHasBeenSet = false;
+  bool m_lastSuccessfulAssociationExecutionDateHasBeenSet = false;
+  bool m_associationOverviewHasBeenSet = false;
+  bool m_sourceIdHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
 };
 

@@ -104,15 +104,15 @@ class PathElement {
   ///@}
  private:
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Substring m_substring;
-  bool m_substringHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_indexHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_substringHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

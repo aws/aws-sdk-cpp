@@ -126,18 +126,18 @@ class AwsDynamoDbTableProvisionedThroughput {
   ///@}
  private:
   Aws::String m_lastDecreaseDateTime;
-  bool m_lastDecreaseDateTimeHasBeenSet = false;
 
   Aws::String m_lastIncreaseDateTime;
-  bool m_lastIncreaseDateTimeHasBeenSet = false;
 
   int m_numberOfDecreasesToday{0};
-  bool m_numberOfDecreasesTodayHasBeenSet = false;
 
   int m_readCapacityUnits{0};
-  bool m_readCapacityUnitsHasBeenSet = false;
 
   int m_writeCapacityUnits{0};
+  bool m_lastDecreaseDateTimeHasBeenSet = false;
+  bool m_lastIncreaseDateTimeHasBeenSet = false;
+  bool m_numberOfDecreasesTodayHasBeenSet = false;
+  bool m_readCapacityUnitsHasBeenSet = false;
   bool m_writeCapacityUnitsHasBeenSet = false;
 };
 

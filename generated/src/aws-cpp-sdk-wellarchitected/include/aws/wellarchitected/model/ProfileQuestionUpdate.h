@@ -73,9 +73,9 @@ class ProfileQuestionUpdate {
   ///@}
  private:
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectedChoiceIds;
+  bool m_questionIdHasBeenSet = false;
   bool m_selectedChoiceIdsHasBeenSet = false;
 };
 

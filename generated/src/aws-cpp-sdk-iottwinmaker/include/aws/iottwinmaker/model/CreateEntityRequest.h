@@ -197,27 +197,27 @@ class CreateEntityRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, ComponentRequest> m_components;
-  bool m_componentsHasBeenSet = false;
 
   Aws::Map<Aws::String, CompositeComponentRequest> m_compositeComponents;
-  bool m_compositeComponentsHasBeenSet = false;
 
   Aws::String m_parentEntityId;
-  bool m_parentEntityIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_workspaceIdHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_componentsHasBeenSet = false;
+  bool m_compositeComponentsHasBeenSet = false;
+  bool m_parentEntityIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

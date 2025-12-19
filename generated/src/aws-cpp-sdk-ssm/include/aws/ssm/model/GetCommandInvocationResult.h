@@ -390,57 +390,57 @@ class GetCommandInvocationResult {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   Aws::String m_pluginName;
-  bool m_pluginNameHasBeenSet = false;
 
   int m_responseCode{0};
-  bool m_responseCodeHasBeenSet = false;
 
   Aws::String m_executionStartDateTime;
-  bool m_executionStartDateTimeHasBeenSet = false;
 
   Aws::String m_executionElapsedTime;
-  bool m_executionElapsedTimeHasBeenSet = false;
 
   Aws::String m_executionEndDateTime;
-  bool m_executionEndDateTimeHasBeenSet = false;
 
   CommandInvocationStatus m_status{CommandInvocationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetails;
-  bool m_statusDetailsHasBeenSet = false;
 
   Aws::String m_standardOutputContent;
-  bool m_standardOutputContentHasBeenSet = false;
 
   Aws::String m_standardOutputUrl;
-  bool m_standardOutputUrlHasBeenSet = false;
 
   Aws::String m_standardErrorContent;
-  bool m_standardErrorContentHasBeenSet = false;
 
   Aws::String m_standardErrorUrl;
-  bool m_standardErrorUrlHasBeenSet = false;
 
   CloudWatchOutputConfig m_cloudWatchOutputConfig;
-  bool m_cloudWatchOutputConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_documentNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_pluginNameHasBeenSet = false;
+  bool m_responseCodeHasBeenSet = false;
+  bool m_executionStartDateTimeHasBeenSet = false;
+  bool m_executionElapsedTimeHasBeenSet = false;
+  bool m_executionEndDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailsHasBeenSet = false;
+  bool m_standardOutputContentHasBeenSet = false;
+  bool m_standardOutputUrlHasBeenSet = false;
+  bool m_standardErrorContentHasBeenSet = false;
+  bool m_standardErrorUrlHasBeenSet = false;
+  bool m_cloudWatchOutputConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

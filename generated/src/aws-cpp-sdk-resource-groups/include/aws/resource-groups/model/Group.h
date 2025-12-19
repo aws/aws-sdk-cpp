@@ -176,24 +176,24 @@ class Group {
   ///@}
  private:
   Aws::String m_groupArn;
-  bool m_groupArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_criticality{0};
-  bool m_criticalityHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_applicationTag;
+  bool m_groupArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_criticalityHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_applicationTagHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DescribeLoadBalancerTargetGroupsResult {
   ///@}
  private:
   Aws::Vector<LoadBalancerTargetGroupState> m_loadBalancerTargetGroups;
-  bool m_loadBalancerTargetGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_loadBalancerTargetGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

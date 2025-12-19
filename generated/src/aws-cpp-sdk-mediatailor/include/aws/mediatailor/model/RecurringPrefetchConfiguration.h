@@ -110,15 +110,15 @@ class RecurringPrefetchConfiguration {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   RecurringConsumption m_recurringConsumption;
-  bool m_recurringConsumptionHasBeenSet = false;
 
   RecurringRetrieval m_recurringRetrieval;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_recurringConsumptionHasBeenSet = false;
   bool m_recurringRetrievalHasBeenSet = false;
 };
 

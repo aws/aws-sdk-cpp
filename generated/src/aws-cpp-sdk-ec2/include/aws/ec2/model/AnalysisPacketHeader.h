@@ -152,18 +152,18 @@ class AnalysisPacketHeader {
   ///@}
  private:
   Aws::Vector<Aws::String> m_destinationAddresses;
-  bool m_destinationAddressesHasBeenSet = false;
 
   Aws::Vector<PortRange> m_destinationPortRanges;
-  bool m_destinationPortRangesHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceAddresses;
-  bool m_sourceAddressesHasBeenSet = false;
 
   Aws::Vector<PortRange> m_sourcePortRanges;
+  bool m_destinationAddressesHasBeenSet = false;
+  bool m_destinationPortRangesHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_sourceAddressesHasBeenSet = false;
   bool m_sourcePortRangesHasBeenSet = false;
 };
 

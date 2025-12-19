@@ -86,12 +86,12 @@ class DescribeOptOutListsResult {
   ///@}
  private:
   Aws::Vector<OptOutListInformation> m_optOutLists;
-  bool m_optOutListsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_optOutListsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

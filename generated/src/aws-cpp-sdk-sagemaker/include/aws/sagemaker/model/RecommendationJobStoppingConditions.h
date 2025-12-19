@@ -97,12 +97,12 @@ class RecommendationJobStoppingConditions {
   ///@}
  private:
   int m_maxInvocations{0};
-  bool m_maxInvocationsHasBeenSet = false;
 
   Aws::Vector<ModelLatencyThreshold> m_modelLatencyThresholds;
-  bool m_modelLatencyThresholdsHasBeenSet = false;
 
   FlatInvocations m_flatInvocations{FlatInvocations::NOT_SET};
+  bool m_maxInvocationsHasBeenSet = false;
+  bool m_modelLatencyThresholdsHasBeenSet = false;
   bool m_flatInvocationsHasBeenSet = false;
 };
 

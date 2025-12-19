@@ -70,9 +70,9 @@ class PredictedAction {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_actionIdHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

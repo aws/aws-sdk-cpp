@@ -151,21 +151,21 @@ class UpdateAnomalyRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_anomalyId;
-  bool m_anomalyIdHasBeenSet = false;
 
   Aws::String m_patternId;
-  bool m_patternIdHasBeenSet = false;
 
   Aws::String m_anomalyDetectorArn;
-  bool m_anomalyDetectorArnHasBeenSet = false;
 
   SuppressionType m_suppressionType{SuppressionType::NOT_SET};
-  bool m_suppressionTypeHasBeenSet = false;
 
   SuppressionPeriod m_suppressionPeriod;
-  bool m_suppressionPeriodHasBeenSet = false;
 
   bool m_baseline{false};
+  bool m_anomalyIdHasBeenSet = false;
+  bool m_patternIdHasBeenSet = false;
+  bool m_anomalyDetectorArnHasBeenSet = false;
+  bool m_suppressionTypeHasBeenSet = false;
+  bool m_suppressionPeriodHasBeenSet = false;
   bool m_baselineHasBeenSet = false;
 };
 

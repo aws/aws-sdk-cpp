@@ -65,9 +65,9 @@ class ApplicationVersionSummary {
   ///@}
  private:
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   ApplicationStatus m_applicationStatus{ApplicationStatus::NOT_SET};
+  bool m_applicationVersionIdHasBeenSet = false;
   bool m_applicationStatusHasBeenSet = false;
 };
 

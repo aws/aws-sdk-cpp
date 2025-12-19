@@ -86,12 +86,12 @@ class DescribeHostsResponse {
   ///@}
  private:
   Aws::Vector<Host> m_hosts;
-  bool m_hostsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_hostsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

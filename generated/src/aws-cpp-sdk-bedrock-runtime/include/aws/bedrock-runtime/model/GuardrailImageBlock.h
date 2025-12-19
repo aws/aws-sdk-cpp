@@ -70,9 +70,9 @@ class GuardrailImageBlock {
   ///@}
  private:
   GuardrailImageFormat m_format{GuardrailImageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   GuardrailImageSource m_source;
+  bool m_formatHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

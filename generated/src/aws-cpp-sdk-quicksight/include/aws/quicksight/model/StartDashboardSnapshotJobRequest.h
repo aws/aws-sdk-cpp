@@ -90,9 +90,12 @@ class StartDashboardSnapshotJobRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p> A structure that contains information about the anonymous users that the
-   * generated snapshot is for. This API will not return information about registered
-   * Amazon Quick Sight.</p>
+   * <p>A structure that contains information about the users that the dashboard
+   * snapshot is generated for. The users can be either anonymous users or registered
+   * users. Anonymous users cannot be used together with registered users.</p>
+   *  <p>When using identity-enhanced session credentials, set the
+   * UserConfiguration request attribute to null. Otherwise, the request will be
+   * invalid.</p>
    */
   inline const SnapshotUserConfiguration& GetUserConfiguration() const { return m_userConfiguration; }
   inline bool UserConfigurationHasBeenSet() const { return m_userConfigurationHasBeenSet; }
@@ -127,18 +130,18 @@ class StartDashboardSnapshotJobRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dashboardId;
-  bool m_dashboardIdHasBeenSet = false;
 
   Aws::String m_snapshotJobId;
-  bool m_snapshotJobIdHasBeenSet = false;
 
   SnapshotUserConfiguration m_userConfiguration;
-  bool m_userConfigurationHasBeenSet = false;
 
   SnapshotConfiguration m_snapshotConfiguration;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dashboardIdHasBeenSet = false;
+  bool m_snapshotJobIdHasBeenSet = false;
+  bool m_userConfigurationHasBeenSet = false;
   bool m_snapshotConfigurationHasBeenSet = false;
 };
 

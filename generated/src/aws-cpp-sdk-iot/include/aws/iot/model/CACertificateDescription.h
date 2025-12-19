@@ -250,39 +250,39 @@ class CACertificateDescription {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_certificateId;
-  bool m_certificateIdHasBeenSet = false;
 
   CACertificateStatus m_status{CACertificateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_certificatePem;
-  bool m_certificatePemHasBeenSet = false;
 
   Aws::String m_ownedBy;
-  bool m_ownedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   AutoRegistrationStatus m_autoRegistrationStatus{AutoRegistrationStatus::NOT_SET};
-  bool m_autoRegistrationStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   int m_customerVersion{0};
-  bool m_customerVersionHasBeenSet = false;
 
   Aws::String m_generationId;
-  bool m_generationIdHasBeenSet = false;
 
   CertificateValidity m_validity;
-  bool m_validityHasBeenSet = false;
 
   CertificateMode m_certificateMode{CertificateMode::NOT_SET};
+  bool m_certificateArnHasBeenSet = false;
+  bool m_certificateIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_certificatePemHasBeenSet = false;
+  bool m_ownedByHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_autoRegistrationStatusHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_customerVersionHasBeenSet = false;
+  bool m_generationIdHasBeenSet = false;
+  bool m_validityHasBeenSet = false;
   bool m_certificateModeHasBeenSet = false;
 };
 

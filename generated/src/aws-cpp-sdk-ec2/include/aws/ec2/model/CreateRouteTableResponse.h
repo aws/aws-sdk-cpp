@@ -79,12 +79,12 @@ class CreateRouteTableResponse {
   ///@}
  private:
   RouteTable m_routeTable;
-  bool m_routeTableHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_routeTableHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class CloudWatchLogsConfig {
   ///@}
  private:
   LogsConfigStatusType m_status{LogsConfigStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_streamName;
+  bool m_statusHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
   bool m_streamNameHasBeenSet = false;
 };
 

@@ -117,18 +117,18 @@ class ListRetrievedTracesResult {
   ///@}
  private:
   RetrievalStatus m_retrievalStatus{RetrievalStatus::NOT_SET};
-  bool m_retrievalStatusHasBeenSet = false;
 
   TraceFormatType m_traceFormat{TraceFormatType::NOT_SET};
-  bool m_traceFormatHasBeenSet = false;
 
   Aws::Vector<RetrievedTrace> m_traces;
-  bool m_tracesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_retrievalStatusHasBeenSet = false;
+  bool m_traceFormatHasBeenSet = false;
+  bool m_tracesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

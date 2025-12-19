@@ -65,9 +65,9 @@ class TimePeriod {
   ///@}
  private:
   TimeUnit m_unit{TimeUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   int m_value{0};
+  bool m_unitHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

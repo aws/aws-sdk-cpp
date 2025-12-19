@@ -93,12 +93,12 @@ class DescribeIpamPoliciesResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<IpamPolicy> m_ipamPolicies;
-  bool m_ipamPoliciesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ipamPoliciesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

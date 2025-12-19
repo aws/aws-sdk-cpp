@@ -426,48 +426,48 @@ class JiraConfiguration {
   ///@}
  private:
   Aws::String m_jiraAccountUrl;
-  bool m_jiraAccountUrlHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   bool m_useChangeLog{false};
-  bool m_useChangeLogHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_issueType;
-  bool m_issueTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<IssueSubEntity> m_issueSubEntityFilter;
-  bool m_issueSubEntityFilterHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_attachmentFieldMappings;
-  bool m_attachmentFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_commentFieldMappings;
-  bool m_commentFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_issueFieldMappings;
-  bool m_issueFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_projectFieldMappings;
-  bool m_projectFieldMappingsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_workLogFieldMappings;
-  bool m_workLogFieldMappingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
+  bool m_jiraAccountUrlHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_useChangeLogHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
+  bool m_issueTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_issueSubEntityFilterHasBeenSet = false;
+  bool m_attachmentFieldMappingsHasBeenSet = false;
+  bool m_commentFieldMappingsHasBeenSet = false;
+  bool m_issueFieldMappingsHasBeenSet = false;
+  bool m_projectFieldMappingsHasBeenSet = false;
+  bool m_workLogFieldMappingsHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

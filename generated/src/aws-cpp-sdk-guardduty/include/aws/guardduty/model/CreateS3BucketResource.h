@@ -77,9 +77,9 @@ class CreateS3BucketResource {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_objectPrefixes;
+  bool m_bucketNameHasBeenSet = false;
   bool m_objectPrefixesHasBeenSet = false;
 };
 

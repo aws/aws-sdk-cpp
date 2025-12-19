@@ -213,24 +213,24 @@ class UpdateSecretRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_secretBinary{};
-  bool m_secretBinaryHasBeenSet = false;
 
   Aws::String m_secretString;
-  bool m_secretStringHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_secretIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_descriptionHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_secretBinaryHasBeenSet = false;
+  bool m_secretStringHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

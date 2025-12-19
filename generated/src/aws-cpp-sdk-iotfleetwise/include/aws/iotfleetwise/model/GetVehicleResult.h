@@ -199,30 +199,30 @@ class GetVehicleResult {
   ///@}
  private:
   Aws::String m_vehicleName;
-  bool m_vehicleNameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_modelManifestArn;
-  bool m_modelManifestArnHasBeenSet = false;
 
   Aws::String m_decoderManifestArn;
-  bool m_decoderManifestArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<StateTemplateAssociation> m_stateTemplates;
-  bool m_stateTemplatesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vehicleNameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_modelManifestArnHasBeenSet = false;
+  bool m_decoderManifestArnHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_stateTemplatesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

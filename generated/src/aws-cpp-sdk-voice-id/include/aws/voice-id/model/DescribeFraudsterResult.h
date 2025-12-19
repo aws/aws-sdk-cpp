@@ -60,9 +60,9 @@ class DescribeFraudsterResult {
   ///@}
  private:
   Fraudster m_fraudster;
-  bool m_fraudsterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fraudsterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

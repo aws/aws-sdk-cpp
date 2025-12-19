@@ -60,9 +60,9 @@ class UpdateAssociationStatusResult {
   ///@}
  private:
   AssociationDescription m_associationDescription;
-  bool m_associationDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associationDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class ListAvailableManagedRuleGroupVersionsRequest : public WAFV2Request {
   ///@}
  private:
   Aws::String m_vendorName;
-  bool m_vendorNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   int m_limit{0};
+  bool m_vendorNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

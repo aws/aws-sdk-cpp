@@ -78,9 +78,9 @@ class SmsMfaConfigType {
   ///@}
  private:
   Aws::String m_smsAuthenticationMessage;
-  bool m_smsAuthenticationMessageHasBeenSet = false;
 
   SmsConfigurationType m_smsConfiguration;
+  bool m_smsAuthenticationMessageHasBeenSet = false;
   bool m_smsConfigurationHasBeenSet = false;
 };
 

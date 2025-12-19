@@ -183,21 +183,21 @@ class RegisteredUserEmbeddingExperienceConfiguration {
   ///@}
  private:
   RegisteredUserDashboardEmbeddingConfiguration m_dashboard;
-  bool m_dashboardHasBeenSet = false;
 
   RegisteredUserQuickSightConsoleEmbeddingConfiguration m_quickSightConsole;
-  bool m_quickSightConsoleHasBeenSet = false;
 
   RegisteredUserQSearchBarEmbeddingConfiguration m_qSearchBar;
-  bool m_qSearchBarHasBeenSet = false;
 
   RegisteredUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
-  bool m_dashboardVisualHasBeenSet = false;
 
   RegisteredUserGenerativeQnAEmbeddingConfiguration m_generativeQnA;
-  bool m_generativeQnAHasBeenSet = false;
 
   RegisteredUserQuickChatEmbeddingConfiguration m_quickChat;
+  bool m_dashboardHasBeenSet = false;
+  bool m_quickSightConsoleHasBeenSet = false;
+  bool m_qSearchBarHasBeenSet = false;
+  bool m_dashboardVisualHasBeenSet = false;
+  bool m_generativeQnAHasBeenSet = false;
   bool m_quickChatHasBeenSet = false;
 };
 

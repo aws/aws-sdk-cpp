@@ -86,12 +86,12 @@ class PrincipalGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ReadAccessType m_access{ReadAccessType::NOT_SET};
-  bool m_accessHasBeenSet = false;
 
   MembershipType m_membershipType{MembershipType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_accessHasBeenSet = false;
   bool m_membershipTypeHasBeenSet = false;
 };
 

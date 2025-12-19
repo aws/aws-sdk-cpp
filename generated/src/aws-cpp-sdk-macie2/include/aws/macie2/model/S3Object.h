@@ -261,39 +261,39 @@ class S3Object {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_extension;
-  bool m_extensionHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   bool m_publicAccess{false};
-  bool m_publicAccessHasBeenSet = false;
 
   ServerSideEncryption m_serverSideEncryption;
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   long long m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   Aws::Vector<KeyValuePair> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_bucketArnHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_extensionHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_publicAccessHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

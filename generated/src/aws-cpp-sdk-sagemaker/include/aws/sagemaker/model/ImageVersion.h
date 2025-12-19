@@ -157,24 +157,24 @@ class ImageVersion {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_imageVersionArn;
-  bool m_imageVersionArnHasBeenSet = false;
 
   ImageVersionStatus m_imageVersionStatus{ImageVersionStatus::NOT_SET};
-  bool m_imageVersionStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   int m_version{0};
+  bool m_creationTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
+  bool m_imageVersionArnHasBeenSet = false;
+  bool m_imageVersionStatusHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

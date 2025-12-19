@@ -112,15 +112,15 @@ class ModifyMemoryStrategyInput {
   ///@}
  private:
   Aws::String m_memoryStrategyId;
-  bool m_memoryStrategyIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_namespaces;
-  bool m_namespacesHasBeenSet = false;
 
   ModifyStrategyConfiguration m_configuration;
+  bool m_memoryStrategyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_namespacesHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
 };
 

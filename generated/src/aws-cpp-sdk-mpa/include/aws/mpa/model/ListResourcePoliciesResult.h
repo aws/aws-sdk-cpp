@@ -88,12 +88,12 @@ class ListResourcePoliciesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListResourcePoliciesResponseResourcePolicy> m_resourcePolicies;
-  bool m_resourcePoliciesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourcePoliciesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class DescribeReservedElasticsearchInstanceOfferingsRequest : public Elasticsear
   ///@}
  private:
   Aws::String m_reservedElasticsearchInstanceOfferingId;
-  bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

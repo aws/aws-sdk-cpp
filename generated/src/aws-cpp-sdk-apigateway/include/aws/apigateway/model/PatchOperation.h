@@ -124,15 +124,15 @@ class PatchOperation {
   ///@}
  private:
   Op m_op{Op::NOT_SET};
-  bool m_opHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_from;
+  bool m_opHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_fromHasBeenSet = false;
 };
 

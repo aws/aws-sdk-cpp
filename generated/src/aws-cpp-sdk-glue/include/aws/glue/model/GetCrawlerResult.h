@@ -60,9 +60,9 @@ class GetCrawlerResult {
   ///@}
  private:
   Crawler m_crawler;
-  bool m_crawlerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_crawlerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

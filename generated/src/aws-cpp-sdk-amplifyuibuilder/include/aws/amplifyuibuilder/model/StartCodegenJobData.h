@@ -131,18 +131,18 @@ class StartCodegenJobData {
   ///@}
  private:
   CodegenJobRenderConfig m_renderConfig;
-  bool m_renderConfigHasBeenSet = false;
 
   CodegenJobGenericDataSchema m_genericDataSchema;
-  bool m_genericDataSchemaHasBeenSet = false;
 
   bool m_autoGenerateForms{false};
-  bool m_autoGenerateFormsHasBeenSet = false;
 
   CodegenFeatureFlags m_features;
-  bool m_featuresHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_renderConfigHasBeenSet = false;
+  bool m_genericDataSchemaHasBeenSet = false;
+  bool m_autoGenerateFormsHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

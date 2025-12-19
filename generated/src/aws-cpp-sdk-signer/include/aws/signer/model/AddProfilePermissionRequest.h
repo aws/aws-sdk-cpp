@@ -69,7 +69,7 @@ class AddProfilePermissionRequest : public SignerRequest {
    * <p>For cross-account signing. Grant a designated account permission to perform
    * one or more of the following actions. Each action is associated with a specific
    * API's operations. For more information about cross-account signing, see <a
-   * href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+   * href="http://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
    * cross-account signing with signing profiles</a> in the <i>AWS Signer Developer
    * Guide</i>.</p> <p>You can designate the following actions to an account.</p>
    * <ul> <li> <p> <code>signer:StartSigningJob</code>. This action isn't supported
@@ -151,21 +151,21 @@ class AddProfilePermissionRequest : public SignerRequest {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileVersion;
-  bool m_profileVersionHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_statementId;
+  bool m_profileNameHasBeenSet = false;
+  bool m_profileVersionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_statementIdHasBeenSet = false;
 };
 

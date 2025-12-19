@@ -68,9 +68,9 @@ class MssManifest {
   ///@}
  private:
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   StreamSelection m_streamSelection;
+  bool m_manifestNameHasBeenSet = false;
   bool m_streamSelectionHasBeenSet = false;
 };
 

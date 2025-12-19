@@ -129,18 +129,18 @@ class SendBonusRequest : public MTurkRequest {
   ///@}
  private:
   Aws::String m_workerId;
-  bool m_workerIdHasBeenSet = false;
 
   Aws::String m_bonusAmount;
-  bool m_bonusAmountHasBeenSet = false;
 
   Aws::String m_assignmentId;
-  bool m_assignmentIdHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_uniqueRequestToken;
+  bool m_workerIdHasBeenSet = false;
+  bool m_bonusAmountHasBeenSet = false;
+  bool m_assignmentIdHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_uniqueRequestTokenHasBeenSet = false;
 };
 

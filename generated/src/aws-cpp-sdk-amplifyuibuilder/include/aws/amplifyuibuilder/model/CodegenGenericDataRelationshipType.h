@@ -204,30 +204,30 @@ class CodegenGenericDataRelationshipType {
   ///@}
  private:
   GenericDataRelationshipType m_type{GenericDataRelationshipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_relatedModelName;
-  bool m_relatedModelNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_relatedModelFields;
-  bool m_relatedModelFieldsHasBeenSet = false;
 
   bool m_canUnlinkAssociatedModel{false};
-  bool m_canUnlinkAssociatedModelHasBeenSet = false;
 
   Aws::String m_relatedJoinFieldName;
-  bool m_relatedJoinFieldNameHasBeenSet = false;
 
   Aws::String m_relatedJoinTableName;
-  bool m_relatedJoinTableNameHasBeenSet = false;
 
   Aws::String m_belongsToFieldOnRelatedModel;
-  bool m_belongsToFieldOnRelatedModelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_associatedFields;
-  bool m_associatedFieldsHasBeenSet = false;
 
   bool m_isHasManyIndex{false};
+  bool m_typeHasBeenSet = false;
+  bool m_relatedModelNameHasBeenSet = false;
+  bool m_relatedModelFieldsHasBeenSet = false;
+  bool m_canUnlinkAssociatedModelHasBeenSet = false;
+  bool m_relatedJoinFieldNameHasBeenSet = false;
+  bool m_relatedJoinTableNameHasBeenSet = false;
+  bool m_belongsToFieldOnRelatedModelHasBeenSet = false;
+  bool m_associatedFieldsHasBeenSet = false;
   bool m_isHasManyIndexHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class InvalidLayerPartException {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_uploadId;
-  bool m_uploadIdHasBeenSet = false;
 
   long long m_lastValidByteReceived{0};
-  bool m_lastValidByteReceivedHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_uploadIdHasBeenSet = false;
+  bool m_lastValidByteReceivedHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

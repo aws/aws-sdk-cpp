@@ -60,9 +60,9 @@ class DescribePromptResult {
   ///@}
  private:
   Prompt m_prompt;
-  bool m_promptHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_promptHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

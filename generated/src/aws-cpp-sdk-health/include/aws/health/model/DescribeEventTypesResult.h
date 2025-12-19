@@ -92,12 +92,12 @@ class DescribeEventTypesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_eventTypes;
-  bool m_eventTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

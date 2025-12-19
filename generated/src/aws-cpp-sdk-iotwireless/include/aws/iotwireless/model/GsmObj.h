@@ -174,27 +174,27 @@ class GsmObj {
   ///@}
  private:
   int m_mcc{0};
-  bool m_mccHasBeenSet = false;
 
   int m_mnc{0};
-  bool m_mncHasBeenSet = false;
 
   int m_lac{0};
-  bool m_lacHasBeenSet = false;
 
   int m_geranCid{0};
-  bool m_geranCidHasBeenSet = false;
 
   GsmLocalId m_gsmLocalId;
-  bool m_gsmLocalIdHasBeenSet = false;
 
   int m_gsmTimingAdvance{0};
-  bool m_gsmTimingAdvanceHasBeenSet = false;
 
   int m_rxLevel{0};
-  bool m_rxLevelHasBeenSet = false;
 
   Aws::Vector<GsmNmrObj> m_gsmNmr;
+  bool m_mccHasBeenSet = false;
+  bool m_mncHasBeenSet = false;
+  bool m_lacHasBeenSet = false;
+  bool m_geranCidHasBeenSet = false;
+  bool m_gsmLocalIdHasBeenSet = false;
+  bool m_gsmTimingAdvanceHasBeenSet = false;
+  bool m_rxLevelHasBeenSet = false;
   bool m_gsmNmrHasBeenSet = false;
 };
 

@@ -135,21 +135,21 @@ class GenerateBotElementResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_intentId;
-  bool m_intentIdHasBeenSet = false;
 
   Aws::Vector<SampleUtterance> m_sampleUtterances;
-  bool m_sampleUtterancesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_intentIdHasBeenSet = false;
+  bool m_sampleUtterancesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

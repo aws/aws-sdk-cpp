@@ -113,15 +113,15 @@ class ReadAuthorizationCodeGrantMetadata {
   ///@}
  private:
   Aws::String m_baseEndpoint;
-  bool m_baseEndpointHasBeenSet = false;
 
   Aws::String m_redirectUrl;
-  bool m_redirectUrlHasBeenSet = false;
 
   ReadAuthorizationCodeGrantCredentialsDetails m_readAuthorizationCodeGrantCredentialsDetails;
-  bool m_readAuthorizationCodeGrantCredentialsDetailsHasBeenSet = false;
 
   AuthorizationCodeGrantCredentialsSource m_authorizationCodeGrantCredentialsSource{AuthorizationCodeGrantCredentialsSource::NOT_SET};
+  bool m_baseEndpointHasBeenSet = false;
+  bool m_redirectUrlHasBeenSet = false;
+  bool m_readAuthorizationCodeGrantCredentialsDetailsHasBeenSet = false;
   bool m_authorizationCodeGrantCredentialsSourceHasBeenSet = false;
 };
 

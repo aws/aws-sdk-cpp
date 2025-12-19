@@ -68,9 +68,9 @@ class HostedZoneConfig {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   bool m_privateZone{false};
+  bool m_commentHasBeenSet = false;
   bool m_privateZoneHasBeenSet = false;
 };
 

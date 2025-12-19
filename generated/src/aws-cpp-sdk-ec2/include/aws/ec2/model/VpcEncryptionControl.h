@@ -173,24 +173,24 @@ class VpcEncryptionControl {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpcEncryptionControlId;
-  bool m_vpcEncryptionControlIdHasBeenSet = false;
 
   VpcEncryptionControlMode m_mode{VpcEncryptionControlMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   VpcEncryptionControlState m_state{VpcEncryptionControlState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   VpcEncryptionControlExclusions m_resourceExclusions;
-  bool m_resourceExclusionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_vpcEncryptionControlIdHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_resourceExclusionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

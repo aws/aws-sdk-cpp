@@ -151,21 +151,21 @@ class UpdateEngagementContextRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_engagementIdentifier;
-  bool m_engagementIdentifierHasBeenSet = false;
 
   Aws::String m_contextIdentifier;
-  bool m_contextIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_engagementLastModifiedAt{};
-  bool m_engagementLastModifiedAtHasBeenSet = false;
 
   EngagementContextType m_type{EngagementContextType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   UpdateEngagementContextPayload m_payload;
+  bool m_catalogHasBeenSet = false;
+  bool m_engagementIdentifierHasBeenSet = false;
+  bool m_contextIdentifierHasBeenSet = false;
+  bool m_engagementLastModifiedAtHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

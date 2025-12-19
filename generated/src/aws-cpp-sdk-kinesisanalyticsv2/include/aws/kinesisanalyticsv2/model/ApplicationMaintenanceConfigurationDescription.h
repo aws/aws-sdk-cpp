@@ -70,9 +70,9 @@ class ApplicationMaintenanceConfigurationDescription {
   ///@}
  private:
   Aws::String m_applicationMaintenanceWindowStartTime;
-  bool m_applicationMaintenanceWindowStartTimeHasBeenSet = false;
 
   Aws::String m_applicationMaintenanceWindowEndTime;
+  bool m_applicationMaintenanceWindowStartTimeHasBeenSet = false;
   bool m_applicationMaintenanceWindowEndTimeHasBeenSet = false;
 };
 

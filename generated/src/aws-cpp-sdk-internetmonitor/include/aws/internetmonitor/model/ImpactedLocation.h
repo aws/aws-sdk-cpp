@@ -322,48 +322,48 @@ class ImpactedLocation {
   ///@}
  private:
   Aws::String m_aSName;
-  bool m_aSNameHasBeenSet = false;
 
   long long m_aSNumber{0};
-  bool m_aSNumberHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_subdivision;
-  bool m_subdivisionHasBeenSet = false;
 
   Aws::String m_metro;
-  bool m_metroHasBeenSet = false;
 
   Aws::String m_city;
-  bool m_cityHasBeenSet = false;
 
   double m_latitude{0.0};
-  bool m_latitudeHasBeenSet = false;
 
   double m_longitude{0.0};
-  bool m_longitudeHasBeenSet = false;
 
   Aws::String m_countryCode;
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::String m_subdivisionCode;
-  bool m_subdivisionCodeHasBeenSet = false;
 
   Aws::String m_serviceLocation;
-  bool m_serviceLocationHasBeenSet = false;
 
   HealthEventStatus m_status{HealthEventStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   NetworkImpairment m_causedBy;
-  bool m_causedByHasBeenSet = false;
 
   InternetHealth m_internetHealth;
-  bool m_internetHealthHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ipv4Prefixes;
+  bool m_aSNameHasBeenSet = false;
+  bool m_aSNumberHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_subdivisionHasBeenSet = false;
+  bool m_metroHasBeenSet = false;
+  bool m_cityHasBeenSet = false;
+  bool m_latitudeHasBeenSet = false;
+  bool m_longitudeHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
+  bool m_subdivisionCodeHasBeenSet = false;
+  bool m_serviceLocationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_causedByHasBeenSet = false;
+  bool m_internetHealthHasBeenSet = false;
   bool m_ipv4PrefixesHasBeenSet = false;
 };
 

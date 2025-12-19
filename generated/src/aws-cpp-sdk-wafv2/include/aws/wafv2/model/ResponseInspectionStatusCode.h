@@ -90,9 +90,9 @@ class ResponseInspectionStatusCode {
   ///@}
  private:
   Aws::Vector<int> m_successCodes;
-  bool m_successCodesHasBeenSet = false;
 
   Aws::Vector<int> m_failureCodes;
+  bool m_successCodesHasBeenSet = false;
   bool m_failureCodesHasBeenSet = false;
 };
 

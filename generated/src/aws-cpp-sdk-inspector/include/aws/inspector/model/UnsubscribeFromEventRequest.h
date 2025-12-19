@@ -85,12 +85,12 @@ class UnsubscribeFromEventRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   InspectorEvent m_event{InspectorEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_topicArn;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
   bool m_topicArnHasBeenSet = false;
 };
 

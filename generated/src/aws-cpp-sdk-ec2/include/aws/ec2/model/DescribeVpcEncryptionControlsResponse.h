@@ -86,12 +86,12 @@ class DescribeVpcEncryptionControlsResponse {
   ///@}
  private:
   Aws::Vector<VpcEncryptionControl> m_vpcEncryptionControls;
-  bool m_vpcEncryptionControlsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpcEncryptionControlsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

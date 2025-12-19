@@ -111,15 +111,15 @@ class ShareDirectoryRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_shareNotes;
-  bool m_shareNotesHasBeenSet = false;
 
   ShareTarget m_shareTarget;
-  bool m_shareTargetHasBeenSet = false;
 
   ShareMethod m_shareMethod{ShareMethod::NOT_SET};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_shareNotesHasBeenSet = false;
+  bool m_shareTargetHasBeenSet = false;
   bool m_shareMethodHasBeenSet = false;
 };
 

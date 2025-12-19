@@ -81,9 +81,9 @@ class BatchStartRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_channelIds;
-  bool m_channelIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_multiplexIds;
+  bool m_channelIdsHasBeenSet = false;
   bool m_multiplexIdsHasBeenSet = false;
 };
 

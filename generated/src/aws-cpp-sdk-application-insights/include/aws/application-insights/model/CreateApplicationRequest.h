@@ -220,33 +220,33 @@ class CreateApplicationRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   bool m_opsCenterEnabled{false};
-  bool m_opsCenterEnabledHasBeenSet = false;
 
   bool m_cWEMonitorEnabled{false};
-  bool m_cWEMonitorEnabledHasBeenSet = false;
 
   Aws::String m_opsItemSNSTopicArn;
-  bool m_opsItemSNSTopicArnHasBeenSet = false;
 
   Aws::String m_sNSNotificationArn;
-  bool m_sNSNotificationArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_autoConfigEnabled{false};
-  bool m_autoConfigEnabledHasBeenSet = false;
 
   bool m_autoCreate{false};
-  bool m_autoCreateHasBeenSet = false;
 
   GroupingType m_groupingType{GroupingType::NOT_SET};
-  bool m_groupingTypeHasBeenSet = false;
 
   bool m_attachMissingPermission{false};
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_opsCenterEnabledHasBeenSet = false;
+  bool m_cWEMonitorEnabledHasBeenSet = false;
+  bool m_opsItemSNSTopicArnHasBeenSet = false;
+  bool m_sNSNotificationArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_autoConfigEnabledHasBeenSet = false;
+  bool m_autoCreateHasBeenSet = false;
+  bool m_groupingTypeHasBeenSet = false;
   bool m_attachMissingPermissionHasBeenSet = false;
 };
 

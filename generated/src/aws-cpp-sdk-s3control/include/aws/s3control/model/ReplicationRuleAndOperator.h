@@ -83,9 +83,9 @@ class ReplicationRuleAndOperator {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::Vector<S3Tag> m_tags;
+  bool m_prefixHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

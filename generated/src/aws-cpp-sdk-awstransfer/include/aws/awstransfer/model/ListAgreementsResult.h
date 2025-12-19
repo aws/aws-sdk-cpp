@@ -85,12 +85,12 @@ class ListAgreementsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ListedAgreement> m_agreements;
-  bool m_agreementsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_agreementsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ThingConnectivity {
   ///@}
  private:
   bool m_connected{false};
-  bool m_connectedHasBeenSet = false;
 
   long long m_timestamp{0};
-  bool m_timestampHasBeenSet = false;
 
   Aws::String m_disconnectReason;
+  bool m_connectedHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_disconnectReasonHasBeenSet = false;
 };
 

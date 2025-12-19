@@ -102,15 +102,15 @@ class RetrievalConfiguration {
   ///@}
  private:
   KnowledgeSource m_knowledgeSource;
-  bool m_knowledgeSourceHasBeenSet = false;
 
   RetrievalFilterConfiguration m_filter;
-  bool m_filterHasBeenSet = false;
 
   int m_numberOfResults{0};
-  bool m_numberOfResultsHasBeenSet = false;
 
   KnowledgeBaseSearchType m_overrideKnowledgeBaseSearchType{KnowledgeBaseSearchType::NOT_SET};
+  bool m_knowledgeSourceHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_numberOfResultsHasBeenSet = false;
   bool m_overrideKnowledgeBaseSearchTypeHasBeenSet = false;
 };
 

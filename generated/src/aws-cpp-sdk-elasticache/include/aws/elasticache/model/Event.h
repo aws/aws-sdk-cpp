@@ -111,15 +111,15 @@ class Event {
   ///@}
  private:
   Aws::String m_sourceIdentifier;
-  bool m_sourceIdentifierHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_date{};
+  bool m_sourceIdentifierHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_dateHasBeenSet = false;
 };
 

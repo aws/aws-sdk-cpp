@@ -58,9 +58,9 @@ class ListTemplatesResult {
   ///@}
  private:
   TemplatesResponse m_templatesResponse;
-  bool m_templatesResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templatesResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -146,15 +146,15 @@ class PerformanceMeasurement {
   ///@}
  private:
   double m_experienceScore{0.0};
-  bool m_experienceScoreHasBeenSet = false;
 
   double m_percentOfTotalTrafficImpacted{0.0};
-  bool m_percentOfTotalTrafficImpactedHasBeenSet = false;
 
   double m_percentOfClientLocationImpacted{0.0};
-  bool m_percentOfClientLocationImpactedHasBeenSet = false;
 
   RoundTripTime m_roundTripTime;
+  bool m_experienceScoreHasBeenSet = false;
+  bool m_percentOfTotalTrafficImpactedHasBeenSet = false;
+  bool m_percentOfClientLocationImpactedHasBeenSet = false;
   bool m_roundTripTimeHasBeenSet = false;
 };
 

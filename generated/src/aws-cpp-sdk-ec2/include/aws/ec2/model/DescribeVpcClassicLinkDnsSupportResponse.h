@@ -86,12 +86,12 @@ class DescribeVpcClassicLinkDnsSupportResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ClassicLinkDnsSupport> m_vpcs;
-  bool m_vpcsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_vpcsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

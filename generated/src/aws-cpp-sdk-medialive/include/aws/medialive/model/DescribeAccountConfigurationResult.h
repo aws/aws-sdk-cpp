@@ -64,9 +64,9 @@ class DescribeAccountConfigurationResult {
   ///@}
  private:
   AccountConfiguration m_accountConfiguration;
-  bool m_accountConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

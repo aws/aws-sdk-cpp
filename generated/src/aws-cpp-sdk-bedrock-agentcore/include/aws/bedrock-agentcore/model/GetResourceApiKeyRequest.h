@@ -67,9 +67,9 @@ class GetResourceApiKeyRequest : public BedrockAgentCoreRequest {
   ///@}
  private:
   Aws::String m_workloadIdentityToken;
-  bool m_workloadIdentityTokenHasBeenSet = false;
 
   Aws::String m_resourceCredentialProviderName;
+  bool m_workloadIdentityTokenHasBeenSet = false;
   bool m_resourceCredentialProviderNameHasBeenSet = false;
 };
 

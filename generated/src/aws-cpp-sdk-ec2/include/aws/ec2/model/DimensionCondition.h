@@ -97,12 +97,12 @@ class DimensionCondition {
   ///@}
  private:
   FilterByDimension m_dimension{FilterByDimension::NOT_SET};
-  bool m_dimensionHasBeenSet = false;
 
   Comparison m_comparison{Comparison::NOT_SET};
-  bool m_comparisonHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_dimensionHasBeenSet = false;
+  bool m_comparisonHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

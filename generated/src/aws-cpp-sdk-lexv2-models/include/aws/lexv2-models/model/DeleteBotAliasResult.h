@@ -95,15 +95,15 @@ class DeleteBotAliasResult {
   ///@}
  private:
   Aws::String m_botAliasId;
-  bool m_botAliasIdHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   BotAliasStatus m_botAliasStatus{BotAliasStatus::NOT_SET};
-  bool m_botAliasStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botAliasIdHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_botAliasStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

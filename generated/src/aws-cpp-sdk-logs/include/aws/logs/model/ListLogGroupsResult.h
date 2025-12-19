@@ -83,12 +83,12 @@ class ListLogGroupsResult {
   ///@}
  private:
   Aws::Vector<LogGroupSummary> m_logGroups;
-  bool m_logGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

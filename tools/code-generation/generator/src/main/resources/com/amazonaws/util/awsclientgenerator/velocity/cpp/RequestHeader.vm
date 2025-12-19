@@ -77,6 +77,9 @@ namespace Model
     ${exportMacro} Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
+#if($serviceModel.useSmithyClient && $operation.auth)
+    ${exportMacro} Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const override;
+#end
 #if($shape.hasEmbeddedErrors())
     ${exportMacro} bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
 #end

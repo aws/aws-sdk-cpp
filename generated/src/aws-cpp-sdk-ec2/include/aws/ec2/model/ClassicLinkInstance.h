@@ -122,15 +122,15 @@ class ClassicLinkInstance {
   ///@}
  private:
   Aws::Vector<GroupIdentifier> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_groupsHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

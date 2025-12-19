@@ -147,21 +147,21 @@ class UpdateFlowAliasRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<FlowAliasRoutingConfigurationListItem> m_routingConfiguration;
-  bool m_routingConfigurationHasBeenSet = false;
 
   FlowAliasConcurrencyConfiguration m_concurrencyConfiguration;
-  bool m_concurrencyConfigurationHasBeenSet = false;
 
   Aws::String m_flowIdentifier;
-  bool m_flowIdentifierHasBeenSet = false;
 
   Aws::String m_aliasIdentifier;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_routingConfigurationHasBeenSet = false;
+  bool m_concurrencyConfigurationHasBeenSet = false;
+  bool m_flowIdentifierHasBeenSet = false;
   bool m_aliasIdentifierHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class CoverageFilterCriterion {
   ///@}
  private:
   CoverageFilterCriterionKey m_criterionKey{CoverageFilterCriterionKey::NOT_SET};
-  bool m_criterionKeyHasBeenSet = false;
 
   CoverageFilterCondition m_filterCondition;
+  bool m_criterionKeyHasBeenSet = false;
   bool m_filterConditionHasBeenSet = false;
 };
 

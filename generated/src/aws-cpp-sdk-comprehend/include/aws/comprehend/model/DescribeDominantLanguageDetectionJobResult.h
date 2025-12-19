@@ -64,9 +64,9 @@ class DescribeDominantLanguageDetectionJobResult {
   ///@}
  private:
   DominantLanguageDetectionJobProperties m_dominantLanguageDetectionJobProperties;
-  bool m_dominantLanguageDetectionJobPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dominantLanguageDetectionJobPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

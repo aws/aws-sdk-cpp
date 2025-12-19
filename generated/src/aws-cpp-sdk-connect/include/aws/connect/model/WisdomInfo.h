@@ -76,9 +76,9 @@ class WisdomInfo {
   ///@}
  private:
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::Vector<AiAgentInfo> m_aiAgents;
+  bool m_sessionArnHasBeenSet = false;
   bool m_aiAgentsHasBeenSet = false;
 };
 

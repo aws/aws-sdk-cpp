@@ -73,9 +73,9 @@ class EndPoint {
   ///@}
  private:
   Aws::String m_streamType;
-  bool m_streamTypeHasBeenSet = false;
 
   KinesisStreamConfig m_kinesisStreamConfig;
+  bool m_streamTypeHasBeenSet = false;
   bool m_kinesisStreamConfigHasBeenSet = false;
 };
 

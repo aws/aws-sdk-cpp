@@ -321,51 +321,51 @@ class CollectionDetail {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CollectionStatus m_status{CollectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   CollectionType m_type{CollectionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   StandbyReplicas m_standbyReplicas{StandbyReplicas::NOT_SET};
-  bool m_standbyReplicasHasBeenSet = false;
 
   VectorOptions m_vectorOptions;
-  bool m_vectorOptionsHasBeenSet = false;
 
   long long m_createdDate{0};
-  bool m_createdDateHasBeenSet = false;
 
   long long m_lastModifiedDate{0};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_collectionEndpoint;
-  bool m_collectionEndpointHasBeenSet = false;
 
   Aws::String m_dashboardEndpoint;
-  bool m_dashboardEndpointHasBeenSet = false;
 
   FipsEndpoints m_fipsEndpoints;
-  bool m_fipsEndpointsHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_standbyReplicasHasBeenSet = false;
+  bool m_vectorOptionsHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_collectionEndpointHasBeenSet = false;
+  bool m_dashboardEndpointHasBeenSet = false;
+  bool m_fipsEndpointsHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

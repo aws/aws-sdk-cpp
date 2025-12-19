@@ -167,27 +167,27 @@ class GetDataAutomationStatusResult {
   ///@}
  private:
   AutomationJobStatus m_status{AutomationJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorType;
-  bool m_errorTypeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   OutputConfiguration m_outputConfiguration;
-  bool m_outputConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobSubmissionTime{};
-  bool m_jobSubmissionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_jobCompletionTime{};
-  bool m_jobCompletionTimeHasBeenSet = false;
 
   int m_jobDurationInSeconds{0};
-  bool m_jobDurationInSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_outputConfigurationHasBeenSet = false;
+  bool m_jobSubmissionTimeHasBeenSet = false;
+  bool m_jobCompletionTimeHasBeenSet = false;
+  bool m_jobDurationInSecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

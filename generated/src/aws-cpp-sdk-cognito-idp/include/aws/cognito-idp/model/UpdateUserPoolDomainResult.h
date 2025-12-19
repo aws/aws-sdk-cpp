@@ -89,12 +89,12 @@ class UpdateUserPoolDomainResult {
   ///@}
  private:
   int m_managedLoginVersion{0};
-  bool m_managedLoginVersionHasBeenSet = false;
 
   Aws::String m_cloudFrontDomain;
-  bool m_cloudFrontDomainHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedLoginVersionHasBeenSet = false;
+  bool m_cloudFrontDomainHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

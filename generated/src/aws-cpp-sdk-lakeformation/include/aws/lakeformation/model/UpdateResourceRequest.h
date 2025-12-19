@@ -99,15 +99,15 @@ class UpdateResourceRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   bool m_withFederation{false};
-  bool m_withFederationHasBeenSet = false;
 
   bool m_hybridAccessEnabled{false};
+  bool m_roleArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_withFederationHasBeenSet = false;
   bool m_hybridAccessEnabledHasBeenSet = false;
 };
 

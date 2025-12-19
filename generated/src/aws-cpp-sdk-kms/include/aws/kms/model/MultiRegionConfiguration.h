@@ -98,12 +98,12 @@ class MultiRegionConfiguration {
   ///@}
  private:
   MultiRegionKeyType m_multiRegionKeyType{MultiRegionKeyType::NOT_SET};
-  bool m_multiRegionKeyTypeHasBeenSet = false;
 
   MultiRegionKey m_primaryKey;
-  bool m_primaryKeyHasBeenSet = false;
 
   Aws::Vector<MultiRegionKey> m_replicaKeys;
+  bool m_multiRegionKeyTypeHasBeenSet = false;
+  bool m_primaryKeyHasBeenSet = false;
   bool m_replicaKeysHasBeenSet = false;
 };
 

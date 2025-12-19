@@ -99,15 +99,15 @@ class AddApplicationInputResult {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::Vector<InputDescription> m_inputDescriptions;
-  bool m_inputDescriptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_inputDescriptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

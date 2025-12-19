@@ -95,12 +95,12 @@ class FSxWindowsFileServerVolumeConfiguration {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_rootDirectory;
-  bool m_rootDirectoryHasBeenSet = false;
 
   FSxWindowsFileServerAuthorizationConfig m_authorizationConfig;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_rootDirectoryHasBeenSet = false;
   bool m_authorizationConfigHasBeenSet = false;
 };
 

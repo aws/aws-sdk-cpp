@@ -121,18 +121,18 @@ class CreateSchemaMappingResult {
   ///@}
  private:
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_schemaArn;
-  bool m_schemaArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<SchemaInputAttribute> m_mappedInputFields;
-  bool m_mappedInputFieldsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaNameHasBeenSet = false;
+  bool m_schemaArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_mappedInputFieldsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -161,27 +161,27 @@ class CodeInterpreterStreamOutput {
   ///@}
  private:
   CodeInterpreterResult m_result;
-  bool m_resultHasBeenSet = false;
 
   BedrockAgentCoreError m_accessDeniedException;
-  bool m_accessDeniedExceptionHasBeenSet = false;
 
   BedrockAgentCoreError m_conflictException;
-  bool m_conflictExceptionHasBeenSet = false;
 
   BedrockAgentCoreError m_internalServerException;
-  bool m_internalServerExceptionHasBeenSet = false;
 
   BedrockAgentCoreError m_resourceNotFoundException;
-  bool m_resourceNotFoundExceptionHasBeenSet = false;
 
   BedrockAgentCoreError m_serviceQuotaExceededException;
-  bool m_serviceQuotaExceededExceptionHasBeenSet = false;
 
   BedrockAgentCoreError m_throttlingException;
-  bool m_throttlingExceptionHasBeenSet = false;
 
   ValidationException m_validationException;
+  bool m_resultHasBeenSet = false;
+  bool m_accessDeniedExceptionHasBeenSet = false;
+  bool m_conflictExceptionHasBeenSet = false;
+  bool m_internalServerExceptionHasBeenSet = false;
+  bool m_resourceNotFoundExceptionHasBeenSet = false;
+  bool m_serviceQuotaExceededExceptionHasBeenSet = false;
+  bool m_throttlingExceptionHasBeenSet = false;
   bool m_validationExceptionHasBeenSet = false;
 };
 

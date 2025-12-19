@@ -67,9 +67,9 @@ class GetContainerServicesResult {
   ///@}
  private:
   Aws::Vector<ContainerService> m_containerServices;
-  bool m_containerServicesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerServicesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

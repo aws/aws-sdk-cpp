@@ -234,39 +234,39 @@ class StartMedicalStreamTranscriptionInitialResponse {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   int m_mediaSampleRateHertz{0};
-  bool m_mediaSampleRateHertzHasBeenSet = false;
 
   MediaEncoding m_mediaEncoding{MediaEncoding::NOT_SET};
-  bool m_mediaEncodingHasBeenSet = false;
 
   Aws::String m_vocabularyName;
-  bool m_vocabularyNameHasBeenSet = false;
 
   Specialty m_specialty{Specialty::NOT_SET};
-  bool m_specialtyHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   bool m_showSpeakerLabel{false};
-  bool m_showSpeakerLabelHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   bool m_enableChannelIdentification{false};
-  bool m_enableChannelIdentificationHasBeenSet = false;
 
   int m_numberOfChannels{0};
-  bool m_numberOfChannelsHasBeenSet = false;
 
   MedicalContentIdentificationType m_contentIdentificationType{MedicalContentIdentificationType::NOT_SET};
+  bool m_requestIdHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_mediaSampleRateHertzHasBeenSet = false;
+  bool m_mediaEncodingHasBeenSet = false;
+  bool m_vocabularyNameHasBeenSet = false;
+  bool m_specialtyHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_showSpeakerLabelHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_enableChannelIdentificationHasBeenSet = false;
+  bool m_numberOfChannelsHasBeenSet = false;
   bool m_contentIdentificationTypeHasBeenSet = false;
 };
 

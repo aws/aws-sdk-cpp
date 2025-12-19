@@ -126,18 +126,18 @@ class DatasetParameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ParameterType m_type{ParameterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   DatetimeOptions m_datetimeOptions;
-  bool m_datetimeOptionsHasBeenSet = false;
 
   bool m_createColumn{false};
-  bool m_createColumnHasBeenSet = false;
 
   FilterExpression m_filter;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_datetimeOptionsHasBeenSet = false;
+  bool m_createColumnHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

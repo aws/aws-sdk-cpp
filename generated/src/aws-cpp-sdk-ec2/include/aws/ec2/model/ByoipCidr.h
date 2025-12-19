@@ -200,24 +200,24 @@ class ByoipCidr {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AsnAssociation> m_asnAssociations;
-  bool m_asnAssociationsHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   ByoipCidrState m_state{ByoipCidrState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
-  bool m_networkBorderGroupHasBeenSet = false;
 
   Aws::String m_advertisementType;
+  bool m_cidrHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_asnAssociationsHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_networkBorderGroupHasBeenSet = false;
   bool m_advertisementTypeHasBeenSet = false;
 };
 

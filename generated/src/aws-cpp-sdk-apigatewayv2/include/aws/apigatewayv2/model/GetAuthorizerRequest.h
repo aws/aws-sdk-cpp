@@ -65,9 +65,9 @@ class GetAuthorizerRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_authorizerId;
+  bool m_apiIdHasBeenSet = false;
   bool m_authorizerIdHasBeenSet = false;
 };
 

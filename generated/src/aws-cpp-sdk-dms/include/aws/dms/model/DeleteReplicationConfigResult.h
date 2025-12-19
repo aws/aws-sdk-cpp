@@ -67,9 +67,9 @@ class DeleteReplicationConfigResult {
   ///@}
  private:
   ReplicationConfig m_replicationConfig;
-  bool m_replicationConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

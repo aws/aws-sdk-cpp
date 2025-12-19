@@ -191,24 +191,24 @@ class LaunchInstancesRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   int m_requestedCapacity{0};
-  bool m_requestedCapacityHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZoneIds;
-  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   RetryStrategy m_retryStrategy{RetryStrategy::NOT_SET};
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_requestedCapacityHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_retryStrategyHasBeenSet = false;
 };
 

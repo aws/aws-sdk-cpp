@@ -78,12 +78,12 @@ class CreateResourceSnapshotResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   int m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

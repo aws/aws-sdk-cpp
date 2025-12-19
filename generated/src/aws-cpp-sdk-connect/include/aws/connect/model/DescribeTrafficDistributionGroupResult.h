@@ -60,9 +60,9 @@ class DescribeTrafficDistributionGroupResult {
   ///@}
  private:
   TrafficDistributionGroup m_trafficDistributionGroup;
-  bool m_trafficDistributionGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficDistributionGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

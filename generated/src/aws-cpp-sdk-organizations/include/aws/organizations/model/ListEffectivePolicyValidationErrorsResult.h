@@ -69,7 +69,9 @@ class ListEffectivePolicyValidationErrorsResult {
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_s3.html">S3_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html">NETWORK_SECURITY_DIRECTOR_POLICY</a>
    * </p> </li> </ul>
    */
   inline EffectivePolicyType GetPolicyType() const { return m_policyType; }
@@ -183,24 +185,24 @@ class ListEffectivePolicyValidationErrorsResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   EffectivePolicyType m_policyType{EffectivePolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationTimestamp{};
-  bool m_evaluationTimestampHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<EffectivePolicyValidationError> m_effectivePolicyValidationErrors;
-  bool m_effectivePolicyValidationErrorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
+  bool m_evaluationTimestampHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_effectivePolicyValidationErrorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class EventLogConfig {
   ///@}
  private:
   EventLogLevel m_logLevel{EventLogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsRoleArn;
+  bool m_logLevelHasBeenSet = false;
   bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 };
 

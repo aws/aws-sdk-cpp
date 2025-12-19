@@ -93,17 +93,20 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * <code>MANIFEST_SERVICE_LOGS</code>, and <code>TRANSCODE_LOGS</code>.</p> </li>
    * <li> <p>For Entity Resolution, the valid value is
    * <code>WORKFLOW_LOGS</code>.</p> </li> <li> <p>For IAM Identity Center, the valid
-   * value is <code>ERROR_LOGS</code>.</p> </li> <li> <p>For Network Load Balancer,
-   * the valid value is <code>NLB_ACCESS_LOGS</code>.</p> </li> <li> <p>For PCS, the
-   * valid values are <code>PCS_SCHEDULER_LOGS</code> and
-   * <code>PCS_JOBCOMP_LOGS</code>.</p> </li> <li> <p>For Amazon Web Services RTB
-   * Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For
-   * Amazon Q, the valid values are <code>EVENT_LOGS</code> and
-   * <code>SYNC_JOB_LOGS</code>.</p> </li> <li> <p>For Amazon SES mail manager, the
-   * valid values are <code>APPLICATION_LOGS</code> and
-   * <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p> </li> <li> <p>For Amazon WorkMail,
-   * the valid values are <code>ACCESS_CONTROL_LOGS</code>,
-   * <code>AUTHENTICATION_LOGS</code>,
+   * value is <code>ERROR_LOGS</code>.</p> </li> <li> <p>For Network Firewall Proxy,
+   * the valid values are <code>ALERT_LOGS</code>, <code>ALLOW_LOGS</code>, and
+   * <code>DENY_LOGS</code>.</p> </li> <li> <p>For Network Load Balancer, the valid
+   * value is <code>NLB_ACCESS_LOGS</code>.</p> </li> <li> <p>For PCS, the valid
+   * values are <code>PCS_SCHEDULER_LOGS</code> and
+   * <code>PCS_JOBCOMP_LOGS</code>.</p> </li> <li> <p>For Quick Suite, the valid
+   * values are <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p> </li> <li>
+   * <p>For Amazon Web Services RTB Fabric, the valid values is
+   * <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For Amazon Q, the valid values
+   * are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p> </li> <li>
+   * <p>For Amazon SES mail manager, the valid values are
+   * <code>APPLICATION_LOGS</code> and <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p>
+   * </li> <li> <p>For Amazon WorkMail, the valid values are
+   * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
    * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>,
    * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>, and
    * <code>WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS</code>.</p> </li> <li> <p>For Amazon
@@ -151,15 +154,15 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_logType;
-  bool m_logTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

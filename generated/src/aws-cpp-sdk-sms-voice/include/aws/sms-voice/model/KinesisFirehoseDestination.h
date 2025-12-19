@@ -71,9 +71,9 @@ class KinesisFirehoseDestination {
   ///@}
  private:
   Aws::String m_deliveryStreamArn;
-  bool m_deliveryStreamArnHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
+  bool m_deliveryStreamArnHasBeenSet = false;
   bool m_iamRoleArnHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class TriggerCondition {
   ///@}
  private:
   Aws::String m_associatedAlarmName;
-  bool m_associatedAlarmNameHasBeenSet = false;
 
   AlarmCondition m_condition{AlarmCondition::NOT_SET};
+  bool m_associatedAlarmNameHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class ResolvedTargets {
   ///@}
  private:
   Aws::Vector<Aws::String> m_parameterValues;
-  bool m_parameterValuesHasBeenSet = false;
 
   bool m_truncated{false};
+  bool m_parameterValuesHasBeenSet = false;
   bool m_truncatedHasBeenSet = false;
 };
 

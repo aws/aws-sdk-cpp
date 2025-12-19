@@ -267,39 +267,39 @@ class UpdateClusterRequest : public DocDBElasticRequest {
   ///@}
  private:
   Aws::String m_adminUserPassword;
-  bool m_adminUserPasswordHasBeenSet = false;
 
   Auth m_authType{Auth::NOT_SET};
-  bool m_authTypeHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_preferredBackupWindow;
-  bool m_preferredBackupWindowHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   int m_shardCapacity{0};
-  bool m_shardCapacityHasBeenSet = false;
 
   int m_shardCount{0};
-  bool m_shardCountHasBeenSet = false;
 
   int m_shardInstanceCount{0};
-  bool m_shardInstanceCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+  bool m_adminUserPasswordHasBeenSet = false;
+  bool m_authTypeHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_shardCapacityHasBeenSet = false;
+  bool m_shardCountHasBeenSet = false;
+  bool m_shardInstanceCountHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
 };
 

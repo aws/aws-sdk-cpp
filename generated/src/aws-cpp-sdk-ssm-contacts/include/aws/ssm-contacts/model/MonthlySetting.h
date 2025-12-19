@@ -67,9 +67,9 @@ class MonthlySetting {
   ///@}
  private:
   int m_dayOfMonth{0};
-  bool m_dayOfMonthHasBeenSet = false;
 
   HandOffTime m_handOffTime;
+  bool m_dayOfMonthHasBeenSet = false;
   bool m_handOffTimeHasBeenSet = false;
 };
 

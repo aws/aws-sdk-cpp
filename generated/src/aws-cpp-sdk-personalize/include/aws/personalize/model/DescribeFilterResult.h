@@ -60,9 +60,9 @@ class DescribeFilterResult {
   ///@}
  private:
   Filter m_filter;
-  bool m_filterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_filterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class FlowDefinitionOutputConfig {
   ///@}
  private:
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_s3OutputPathHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

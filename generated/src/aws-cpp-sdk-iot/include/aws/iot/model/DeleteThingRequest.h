@@ -74,9 +74,9 @@ class DeleteThingRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingName;
-  bool m_thingNameHasBeenSet = false;
 
   long long m_expectedVersion{0};
+  bool m_thingNameHasBeenSet = false;
   bool m_expectedVersionHasBeenSet = false;
 };
 

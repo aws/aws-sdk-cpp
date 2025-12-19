@@ -115,15 +115,15 @@ class MetricBasedObservation {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_statisticId;
-  bool m_statisticIdHasBeenSet = false;
 
   DataQualityMetricValues m_metricValues;
-  bool m_metricValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_newRules;
+  bool m_metricNameHasBeenSet = false;
+  bool m_statisticIdHasBeenSet = false;
+  bool m_metricValuesHasBeenSet = false;
   bool m_newRulesHasBeenSet = false;
 };
 

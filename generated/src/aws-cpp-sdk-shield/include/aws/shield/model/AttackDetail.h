@@ -211,27 +211,27 @@ class AttackDetail {
   ///@}
  private:
   Aws::String m_attackId;
-  bool m_attackIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<SubResourceSummary> m_subResources;
-  bool m_subResourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Vector<SummarizedCounter> m_attackCounters;
-  bool m_attackCountersHasBeenSet = false;
 
   Aws::Vector<AttackProperty> m_attackProperties;
-  bool m_attackPropertiesHasBeenSet = false;
 
   Aws::Vector<Mitigation> m_mitigations;
+  bool m_attackIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_subResourcesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_attackCountersHasBeenSet = false;
+  bool m_attackPropertiesHasBeenSet = false;
   bool m_mitigationsHasBeenSet = false;
 };
 

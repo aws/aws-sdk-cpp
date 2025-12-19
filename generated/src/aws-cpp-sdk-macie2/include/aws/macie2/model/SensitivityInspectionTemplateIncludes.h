@@ -118,12 +118,12 @@ class SensitivityInspectionTemplateIncludes {
   ///@}
  private:
   Aws::Vector<Aws::String> m_allowListIds;
-  bool m_allowListIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customDataIdentifierIds;
-  bool m_customDataIdentifierIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedDataIdentifierIds;
+  bool m_allowListIdsHasBeenSet = false;
+  bool m_customDataIdentifierIdsHasBeenSet = false;
   bool m_managedDataIdentifierIdsHasBeenSet = false;
 };
 

@@ -33,10 +33,8 @@ class DescribeAlarmHistoryRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The name of the alarm.</p>
@@ -206,30 +204,30 @@ class DescribeAlarmHistoryRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmContributorId;
-  bool m_alarmContributorIdHasBeenSet = false;
 
   Aws::Vector<AlarmType> m_alarmTypes;
-  bool m_alarmTypesHasBeenSet = false;
 
   HistoryItemType m_historyItemType{HistoryItemType::NOT_SET};
-  bool m_historyItemTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ScanBy m_scanBy{ScanBy::NOT_SET};
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmContributorIdHasBeenSet = false;
+  bool m_alarmTypesHasBeenSet = false;
+  bool m_historyItemTypeHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_scanByHasBeenSet = false;
 };
 

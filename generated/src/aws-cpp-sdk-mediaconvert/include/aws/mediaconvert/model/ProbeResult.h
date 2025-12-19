@@ -97,12 +97,12 @@ class ProbeResult {
   ///@}
  private:
   Container m_container;
-  bool m_containerHasBeenSet = false;
 
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<TrackMapping> m_trackMappings;
+  bool m_containerHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_trackMappingsHasBeenSet = false;
 };
 

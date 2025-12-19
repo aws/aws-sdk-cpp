@@ -70,9 +70,9 @@ class ArtifactDetail {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   S3Location m_s3location;
+  bool m_nameHasBeenSet = false;
   bool m_s3locationHasBeenSet = false;
 };
 

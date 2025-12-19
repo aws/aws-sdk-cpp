@@ -212,30 +212,30 @@ class HumanLoopConfig {
   ///@}
  private:
   Aws::String m_workteamArn;
-  bool m_workteamArnHasBeenSet = false;
 
   Aws::String m_humanTaskUiArn;
-  bool m_humanTaskUiArnHasBeenSet = false;
 
   Aws::String m_taskTitle;
-  bool m_taskTitleHasBeenSet = false;
 
   Aws::String m_taskDescription;
-  bool m_taskDescriptionHasBeenSet = false;
 
   int m_taskCount{0};
-  bool m_taskCountHasBeenSet = false;
 
   int m_taskAvailabilityLifetimeInSeconds{0};
-  bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
 
   int m_taskTimeLimitInSeconds{0};
-  bool m_taskTimeLimitInSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_taskKeywords;
-  bool m_taskKeywordsHasBeenSet = false;
 
   PublicWorkforceTaskPrice m_publicWorkforceTaskPrice;
+  bool m_workteamArnHasBeenSet = false;
+  bool m_humanTaskUiArnHasBeenSet = false;
+  bool m_taskTitleHasBeenSet = false;
+  bool m_taskDescriptionHasBeenSet = false;
+  bool m_taskCountHasBeenSet = false;
+  bool m_taskAvailabilityLifetimeInSecondsHasBeenSet = false;
+  bool m_taskTimeLimitInSecondsHasBeenSet = false;
+  bool m_taskKeywordsHasBeenSet = false;
   bool m_publicWorkforceTaskPriceHasBeenSet = false;
 };
 

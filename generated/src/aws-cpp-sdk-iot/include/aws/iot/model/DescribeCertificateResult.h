@@ -66,9 +66,9 @@ class DescribeCertificateResult {
   ///@}
  private:
   CertificateDescription m_certificateDescription;
-  bool m_certificateDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

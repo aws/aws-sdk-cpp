@@ -110,15 +110,15 @@ class DescribeBucketsRequest : public Macie2Request {
   ///@}
  private:
   Aws::Map<Aws::String, BucketCriteriaAdditionalProperties> m_criteria;
-  bool m_criteriaHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   BucketSortCriteria m_sortCriteria;
+  bool m_criteriaHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
 };
 

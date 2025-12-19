@@ -188,24 +188,24 @@ class CreateAlgorithmRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_algorithmName;
-  bool m_algorithmNameHasBeenSet = false;
 
   Aws::String m_algorithmDescription;
-  bool m_algorithmDescriptionHasBeenSet = false;
 
   TrainingSpecification m_trainingSpecification;
-  bool m_trainingSpecificationHasBeenSet = false;
 
   InferenceSpecification m_inferenceSpecification;
-  bool m_inferenceSpecificationHasBeenSet = false;
 
   AlgorithmValidationSpecification m_validationSpecification;
-  bool m_validationSpecificationHasBeenSet = false;
 
   bool m_certifyForMarketplace{false};
-  bool m_certifyForMarketplaceHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_algorithmNameHasBeenSet = false;
+  bool m_algorithmDescriptionHasBeenSet = false;
+  bool m_trainingSpecificationHasBeenSet = false;
+  bool m_inferenceSpecificationHasBeenSet = false;
+  bool m_validationSpecificationHasBeenSet = false;
+  bool m_certifyForMarketplaceHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

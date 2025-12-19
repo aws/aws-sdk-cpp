@@ -85,12 +85,12 @@ class ListTableBucketsResult {
   ///@}
  private:
   Aws::Vector<TableBucketSummary> m_tableBuckets;
-  bool m_tableBucketsHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableBucketsHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

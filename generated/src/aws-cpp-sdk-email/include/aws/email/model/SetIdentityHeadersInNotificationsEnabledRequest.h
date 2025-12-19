@@ -99,12 +99,12 @@ class SetIdentityHeadersInNotificationsEnabledRequest : public SESRequest {
   ///@}
  private:
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   NotificationType m_notificationType{NotificationType::NOT_SET};
-  bool m_notificationTypeHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_identityHasBeenSet = false;
+  bool m_notificationTypeHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

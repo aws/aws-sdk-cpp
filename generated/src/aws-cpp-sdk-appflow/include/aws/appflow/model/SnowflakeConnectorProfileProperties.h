@@ -163,24 +163,24 @@ class SnowflakeConnectorProfileProperties {
   ///@}
  private:
   Aws::String m_warehouse;
-  bool m_warehouseHasBeenSet = false;
 
   Aws::String m_stage;
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_bucketPrefix;
-  bool m_bucketPrefixHasBeenSet = false;
 
   Aws::String m_privateLinkServiceName;
-  bool m_privateLinkServiceNameHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_warehouseHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_bucketPrefixHasBeenSet = false;
+  bool m_privateLinkServiceNameHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

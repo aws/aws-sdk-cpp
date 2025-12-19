@@ -86,12 +86,12 @@ class ListNotebookSessionsRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_notebookId;
-  bool m_notebookIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_notebookIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

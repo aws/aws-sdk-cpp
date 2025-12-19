@@ -80,12 +80,12 @@ class QueryStatistics {
   ///@}
  private:
   int m_resultsCount{0};
-  bool m_resultsCountHasBeenSet = false;
 
   int m_totalResultsCount{0};
-  bool m_totalResultsCountHasBeenSet = false;
 
   long long m_bytesScanned{0};
+  bool m_resultsCountHasBeenSet = false;
+  bool m_totalResultsCountHasBeenSet = false;
   bool m_bytesScannedHasBeenSet = false;
 };
 

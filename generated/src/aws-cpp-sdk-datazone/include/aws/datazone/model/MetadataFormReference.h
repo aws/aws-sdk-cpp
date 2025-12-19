@@ -68,9 +68,9 @@ class MetadataFormReference {
   ///@}
  private:
   Aws::String m_typeIdentifier;
-  bool m_typeIdentifierHasBeenSet = false;
 
   Aws::String m_typeRevision;
+  bool m_typeIdentifierHasBeenSet = false;
   bool m_typeRevisionHasBeenSet = false;
 };
 

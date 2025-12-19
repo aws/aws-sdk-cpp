@@ -191,24 +191,24 @@ class DescribeProvisioningParametersResult {
   ///@}
  private:
   Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
-  bool m_provisioningArtifactParametersHasBeenSet = false;
 
   Aws::Vector<ConstraintSummary> m_constraintSummaries;
-  bool m_constraintSummariesHasBeenSet = false;
 
   Aws::Vector<UsageInstruction> m_usageInstructions;
-  bool m_usageInstructionsHasBeenSet = false;
 
   Aws::Vector<TagOptionSummary> m_tagOptions;
-  bool m_tagOptionsHasBeenSet = false;
 
   ProvisioningArtifactPreferences m_provisioningArtifactPreferences;
-  bool m_provisioningArtifactPreferencesHasBeenSet = false;
 
   Aws::Vector<ProvisioningArtifactOutput> m_provisioningArtifactOutputKeys;
-  bool m_provisioningArtifactOutputKeysHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisioningArtifactParametersHasBeenSet = false;
+  bool m_constraintSummariesHasBeenSet = false;
+  bool m_usageInstructionsHasBeenSet = false;
+  bool m_tagOptionsHasBeenSet = false;
+  bool m_provisioningArtifactPreferencesHasBeenSet = false;
+  bool m_provisioningArtifactOutputKeysHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

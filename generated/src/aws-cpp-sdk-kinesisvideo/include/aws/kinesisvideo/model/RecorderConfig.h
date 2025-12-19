@@ -77,9 +77,9 @@ class RecorderConfig {
   ///@}
  private:
   MediaSourceConfig m_mediaSourceConfig;
-  bool m_mediaSourceConfigHasBeenSet = false;
 
   ScheduleConfig m_scheduleConfig;
+  bool m_mediaSourceConfigHasBeenSet = false;
   bool m_scheduleConfigHasBeenSet = false;
 };
 

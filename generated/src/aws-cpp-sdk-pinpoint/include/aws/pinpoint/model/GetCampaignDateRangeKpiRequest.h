@@ -179,24 +179,24 @@ class GetCampaignDateRangeKpiRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_campaignId;
-  bool m_campaignIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_kpiName;
-  bool m_kpiNameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_pageSize;
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_campaignIdHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_kpiNameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

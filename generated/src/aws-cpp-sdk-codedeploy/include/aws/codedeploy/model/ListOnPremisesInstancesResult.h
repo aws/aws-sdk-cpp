@@ -91,12 +91,12 @@ class ListOnPremisesInstancesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceNames;
-  bool m_instanceNamesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceNamesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

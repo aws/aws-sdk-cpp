@@ -196,24 +196,24 @@ class ExportRDSDatabaseRecommendationsRequest : public ComputeOptimizerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<RDSDBRecommendationFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<ExportableRDSDBField> m_fieldsToExport;
-  bool m_fieldsToExportHasBeenSet = false;
 
   S3DestinationConfig m_s3DestinationConfig;
-  bool m_s3DestinationConfigHasBeenSet = false;
 
   FileFormat m_fileFormat{FileFormat::NOT_SET};
-  bool m_fileFormatHasBeenSet = false;
 
   bool m_includeMemberAccounts{false};
-  bool m_includeMemberAccountsHasBeenSet = false;
 
   RecommendationPreferences m_recommendationPreferences;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_fieldsToExportHasBeenSet = false;
+  bool m_s3DestinationConfigHasBeenSet = false;
+  bool m_fileFormatHasBeenSet = false;
+  bool m_includeMemberAccountsHasBeenSet = false;
   bool m_recommendationPreferencesHasBeenSet = false;
 };
 

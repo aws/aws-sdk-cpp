@@ -66,9 +66,9 @@ class GetOnPremisesInstanceResult {
   ///@}
  private:
   InstanceInfo m_instanceInfo;
-  bool m_instanceInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

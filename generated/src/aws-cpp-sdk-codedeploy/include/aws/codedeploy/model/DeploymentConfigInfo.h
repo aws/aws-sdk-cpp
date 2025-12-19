@@ -163,24 +163,24 @@ class DeploymentConfigInfo {
   ///@}
  private:
   Aws::String m_deploymentConfigId;
-  bool m_deploymentConfigIdHasBeenSet = false;
 
   Aws::String m_deploymentConfigName;
-  bool m_deploymentConfigNameHasBeenSet = false;
 
   MinimumHealthyHosts m_minimumHealthyHosts;
-  bool m_minimumHealthyHostsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
-  bool m_computePlatformHasBeenSet = false;
 
   TrafficRoutingConfig m_trafficRoutingConfig;
-  bool m_trafficRoutingConfigHasBeenSet = false;
 
   ZonalConfig m_zonalConfig;
+  bool m_deploymentConfigIdHasBeenSet = false;
+  bool m_deploymentConfigNameHasBeenSet = false;
+  bool m_minimumHealthyHostsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_computePlatformHasBeenSet = false;
+  bool m_trafficRoutingConfigHasBeenSet = false;
   bool m_zonalConfigHasBeenSet = false;
 };
 

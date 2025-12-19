@@ -67,9 +67,9 @@ class StorageConfiguration {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   double m_sizeInGb{0.0};
+  bool m_typeHasBeenSet = false;
   bool m_sizeInGbHasBeenSet = false;
 };
 

@@ -184,21 +184,21 @@ class DeliverySource {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceArns;
-  bool m_resourceArnsHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_logType;
-  bool m_logTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

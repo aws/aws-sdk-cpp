@@ -33,10 +33,8 @@ class GetMetricDataRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
@@ -206,24 +204,24 @@ class GetMetricDataRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::Vector<MetricDataQuery> m_metricDataQueries;
-  bool m_metricDataQueriesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ScanBy m_scanBy{ScanBy::NOT_SET};
-  bool m_scanByHasBeenSet = false;
 
   int m_maxDatapoints{0};
-  bool m_maxDatapointsHasBeenSet = false;
 
   LabelOptions m_labelOptions;
+  bool m_metricDataQueriesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_scanByHasBeenSet = false;
+  bool m_maxDatapointsHasBeenSet = false;
   bool m_labelOptionsHasBeenSet = false;
 };
 

@@ -163,24 +163,24 @@ class CustomProperty {
   ///@}
  private:
   Aws::String m_fullyQualifiedName;
-  bool m_fullyQualifiedNameHasBeenSet = false;
 
   NodeDataType m_dataType{NodeDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   NodeDataEncoding m_dataEncoding{NodeDataEncoding::NOT_SET};
-  bool m_dataEncodingHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_deprecationMessage;
-  bool m_deprecationMessageHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::String m_structFullyQualifiedName;
+  bool m_fullyQualifiedNameHasBeenSet = false;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dataEncodingHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deprecationMessageHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
   bool m_structFullyQualifiedNameHasBeenSet = false;
 };
 

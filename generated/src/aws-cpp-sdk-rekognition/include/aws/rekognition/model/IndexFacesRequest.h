@@ -181,21 +181,21 @@ class IndexFacesRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_externalImageId;
-  bool m_externalImageIdHasBeenSet = false;
 
   Aws::Vector<Attribute> m_detectionAttributes;
-  bool m_detectionAttributesHasBeenSet = false;
 
   int m_maxFaces{0};
-  bool m_maxFacesHasBeenSet = false;
 
   QualityFilter m_qualityFilter{QualityFilter::NOT_SET};
+  bool m_collectionIdHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_externalImageIdHasBeenSet = false;
+  bool m_detectionAttributesHasBeenSet = false;
+  bool m_maxFacesHasBeenSet = false;
   bool m_qualityFilterHasBeenSet = false;
 };
 

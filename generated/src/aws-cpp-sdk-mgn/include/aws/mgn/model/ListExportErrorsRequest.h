@@ -84,12 +84,12 @@ class ListExportErrorsRequest : public MgnRequest {
   ///@}
  private:
   Aws::String m_exportID;
-  bool m_exportIDHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_exportIDHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

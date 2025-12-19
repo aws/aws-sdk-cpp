@@ -182,27 +182,27 @@ class CustomModelSummary {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_baseModelArn;
-  bool m_baseModelArnHasBeenSet = false;
 
   Aws::String m_baseModelName;
-  bool m_baseModelNameHasBeenSet = false;
 
   CustomizationType m_customizationType{CustomizationType::NOT_SET};
-  bool m_customizationTypeHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   ModelStatus m_modelStatus{ModelStatus::NOT_SET};
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_baseModelArnHasBeenSet = false;
+  bool m_baseModelNameHasBeenSet = false;
+  bool m_customizationTypeHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
   bool m_modelStatusHasBeenSet = false;
 };
 

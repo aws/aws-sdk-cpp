@@ -79,9 +79,9 @@ class StatusDetails {
   ///@}
  private:
   std::shared_ptr<Table> m_requestedChange;
-  bool m_requestedChangeHasBeenSet = false;
 
   Aws::Vector<ViewValidation> m_viewValidations;
+  bool m_requestedChangeHasBeenSet = false;
   bool m_viewValidationsHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class S3TablesDestination {
   ///@}
  private:
   Aws::String m_tableBucketArn;
-  bool m_tableBucketArnHasBeenSet = false;
 
   Aws::String m_tableName;
+  bool m_tableBucketArnHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
 };
 

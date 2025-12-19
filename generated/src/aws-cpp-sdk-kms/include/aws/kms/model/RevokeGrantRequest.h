@@ -95,12 +95,12 @@ class RevokeGrantRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_grantId;
-  bool m_grantIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_keyIdHasBeenSet = false;
+  bool m_grantIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

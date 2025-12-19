@@ -71,9 +71,9 @@ class EvaluationFormItem {
   ///@}
  private:
   std::shared_ptr<EvaluationFormSection> m_section;
-  bool m_sectionHasBeenSet = false;
 
   EvaluationFormQuestion m_question;
+  bool m_sectionHasBeenSet = false;
   bool m_questionHasBeenSet = false;
 };
 

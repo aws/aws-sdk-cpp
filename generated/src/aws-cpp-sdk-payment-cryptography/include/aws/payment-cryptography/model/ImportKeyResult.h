@@ -61,9 +61,9 @@ class ImportKeyResult {
   ///@}
  private:
   Key m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_keyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

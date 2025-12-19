@@ -89,12 +89,12 @@ class QueryGenerationColumn {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   IncludeExclude m_inclusion{IncludeExclude::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_inclusionHasBeenSet = false;
 };
 

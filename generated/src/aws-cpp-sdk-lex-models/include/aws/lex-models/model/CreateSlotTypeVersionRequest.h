@@ -71,9 +71,9 @@ class CreateSlotTypeVersionRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_checksum;
+  bool m_nameHasBeenSet = false;
   bool m_checksumHasBeenSet = false;
 };
 

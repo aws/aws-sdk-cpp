@@ -60,9 +60,9 @@ class RejectTransitGatewayVpcAttachmentResponse {
   ///@}
  private:
   TransitGatewayVpcAttachment m_transitGatewayVpcAttachment;
-  bool m_transitGatewayVpcAttachmentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayVpcAttachmentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class TargetTrackingScalingPolicy {
   ///@}
  private:
   CapacityProviderPredefinedMetricType m_predefinedMetricType{CapacityProviderPredefinedMetricType::NOT_SET};
-  bool m_predefinedMetricTypeHasBeenSet = false;
 
   double m_targetValue{0.0};
+  bool m_predefinedMetricTypeHasBeenSet = false;
   bool m_targetValueHasBeenSet = false;
 };
 

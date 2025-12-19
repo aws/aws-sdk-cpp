@@ -69,9 +69,9 @@ class SubscribedUser {
   ///@}
  private:
   UserProfileDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_detailsHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

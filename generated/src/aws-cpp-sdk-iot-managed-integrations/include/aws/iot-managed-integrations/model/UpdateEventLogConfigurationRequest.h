@@ -64,9 +64,9 @@ class UpdateEventLogConfigurationRequest : public IoTManagedIntegrationsRequest 
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   LogLevel m_eventLogLevel{LogLevel::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_eventLogLevelHasBeenSet = false;
 };
 

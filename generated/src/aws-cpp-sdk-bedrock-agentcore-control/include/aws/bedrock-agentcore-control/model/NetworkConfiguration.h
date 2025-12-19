@@ -67,9 +67,9 @@ class NetworkConfiguration {
   ///@}
  private:
   NetworkMode m_networkMode{NetworkMode::NOT_SET};
-  bool m_networkModeHasBeenSet = false;
 
   VpcConfig m_networkModeConfig;
+  bool m_networkModeHasBeenSet = false;
   bool m_networkModeConfigHasBeenSet = false;
 };
 

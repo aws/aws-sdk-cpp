@@ -117,15 +117,15 @@ class DefinitionRepository {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_fullRepositoryId;
-  bool m_fullRepositoryIdHasBeenSet = false;
 
   SourceReference m_sourceReference;
-  bool m_sourceReferenceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludeFilePatterns;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_fullRepositoryIdHasBeenSet = false;
+  bool m_sourceReferenceHasBeenSet = false;
   bool m_excludeFilePatternsHasBeenSet = false;
 };
 

@@ -221,30 +221,30 @@ class ReplicationRule {
   ///@}
  private:
   Aws::String m_iD;
-  bool m_iDHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   ReplicationRuleFilter m_filter;
-  bool m_filterHasBeenSet = false;
 
   ReplicationRuleStatus m_status{ReplicationRuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   SourceSelectionCriteria m_sourceSelectionCriteria;
-  bool m_sourceSelectionCriteriaHasBeenSet = false;
 
   ExistingObjectReplication m_existingObjectReplication;
-  bool m_existingObjectReplicationHasBeenSet = false;
 
   Destination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   DeleteMarkerReplication m_deleteMarkerReplication;
-  bool m_deleteMarkerReplicationHasBeenSet = false;
 
   Aws::String m_bucket;
+  bool m_iDHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_sourceSelectionCriteriaHasBeenSet = false;
+  bool m_existingObjectReplicationHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_deleteMarkerReplicationHasBeenSet = false;
   bool m_bucketHasBeenSet = false;
 };
 

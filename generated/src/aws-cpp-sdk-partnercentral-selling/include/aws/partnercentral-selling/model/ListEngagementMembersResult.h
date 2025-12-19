@@ -88,12 +88,12 @@ class ListEngagementMembersResult {
   ///@}
  private:
   Aws::Vector<EngagementMember> m_engagementMemberList;
-  bool m_engagementMemberListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_engagementMemberListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

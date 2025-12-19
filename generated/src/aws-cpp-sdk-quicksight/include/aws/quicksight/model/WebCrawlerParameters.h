@@ -180,27 +180,27 @@ class WebCrawlerParameters {
   ///@}
  private:
   WebCrawlerAuthType m_webCrawlerAuthType{WebCrawlerAuthType::NOT_SET};
-  bool m_webCrawlerAuthTypeHasBeenSet = false;
 
   Aws::String m_usernameFieldXpath;
-  bool m_usernameFieldXpathHasBeenSet = false;
 
   Aws::String m_passwordFieldXpath;
-  bool m_passwordFieldXpathHasBeenSet = false;
 
   Aws::String m_usernameButtonXpath;
-  bool m_usernameButtonXpathHasBeenSet = false;
 
   Aws::String m_passwordButtonXpath;
-  bool m_passwordButtonXpathHasBeenSet = false;
 
   Aws::String m_loginPageUrl;
-  bool m_loginPageUrlHasBeenSet = false;
 
   Aws::String m_webProxyHostName;
-  bool m_webProxyHostNameHasBeenSet = false;
 
   int m_webProxyPortNumber{0};
+  bool m_webCrawlerAuthTypeHasBeenSet = false;
+  bool m_usernameFieldXpathHasBeenSet = false;
+  bool m_passwordFieldXpathHasBeenSet = false;
+  bool m_usernameButtonXpathHasBeenSet = false;
+  bool m_passwordButtonXpathHasBeenSet = false;
+  bool m_loginPageUrlHasBeenSet = false;
+  bool m_webProxyHostNameHasBeenSet = false;
   bool m_webProxyPortNumberHasBeenSet = false;
 };
 

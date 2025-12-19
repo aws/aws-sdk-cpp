@@ -174,8 +174,8 @@ class ManagedServices {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Security Token Service (STS) access configuration for
-   * managed services.</p>
+   * <p>The Amazon Web Services Security Token Service (STS) access
+   * configuration.</p>
    */
   inline const StsAccess& GetStsAccess() const { return m_stsAccess; }
   inline bool StsAccessHasBeenSet() const { return m_stsAccessHasBeenSet; }
@@ -193,8 +193,8 @@ class ManagedServices {
 
   ///@{
   /**
-   * <p>The Amazon Web Services Key Management Service (KMS) access configuration for
-   * managed services.</p>
+   * <p>The Amazon Web Services Key Management Service (KMS) access
+   * configuration.</p>
    */
   inline const KmsAccess& GetKmsAccess() const { return m_kmsAccess; }
   inline bool KmsAccessHasBeenSet() const { return m_kmsAccessHasBeenSet; }
@@ -238,33 +238,33 @@ class ManagedServices {
   ///@}
  private:
   Aws::String m_serviceNetworkArn;
-  bool m_serviceNetworkArnHasBeenSet = false;
 
   Aws::String m_resourceGatewayArn;
-  bool m_resourceGatewayArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_managedServicesIpv4Cidrs;
-  bool m_managedServicesIpv4CidrsHasBeenSet = false;
 
   ServiceNetworkEndpoint m_serviceNetworkEndpoint;
-  bool m_serviceNetworkEndpointHasBeenSet = false;
 
   ManagedS3BackupAccess m_managedS3BackupAccess;
-  bool m_managedS3BackupAccessHasBeenSet = false;
 
   ZeroEtlAccess m_zeroEtlAccess;
-  bool m_zeroEtlAccessHasBeenSet = false;
 
   S3Access m_s3Access;
-  bool m_s3AccessHasBeenSet = false;
 
   StsAccess m_stsAccess;
-  bool m_stsAccessHasBeenSet = false;
 
   KmsAccess m_kmsAccess;
-  bool m_kmsAccessHasBeenSet = false;
 
   Aws::Vector<CrossRegionS3RestoreSourcesAccess> m_crossRegionS3RestoreSourcesAccess;
+  bool m_serviceNetworkArnHasBeenSet = false;
+  bool m_resourceGatewayArnHasBeenSet = false;
+  bool m_managedServicesIpv4CidrsHasBeenSet = false;
+  bool m_serviceNetworkEndpointHasBeenSet = false;
+  bool m_managedS3BackupAccessHasBeenSet = false;
+  bool m_zeroEtlAccessHasBeenSet = false;
+  bool m_s3AccessHasBeenSet = false;
+  bool m_stsAccessHasBeenSet = false;
+  bool m_kmsAccessHasBeenSet = false;
   bool m_crossRegionS3RestoreSourcesAccessHasBeenSet = false;
 };
 

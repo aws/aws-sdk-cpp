@@ -89,12 +89,12 @@ class AssociateEnclaveCertificateIamRoleRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_certificateArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class DeleteEventStreamResult {
   ///@}
  private:
   EventStream m_eventStream;
-  bool m_eventStreamHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventStreamHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -140,15 +140,15 @@ class Source {
   ///@}
  private:
   Owner m_owner{Owner::NOT_SET};
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_sourceIdentifier;
-  bool m_sourceIdentifierHasBeenSet = false;
 
   Aws::Vector<SourceDetail> m_sourceDetails;
-  bool m_sourceDetailsHasBeenSet = false;
 
   CustomPolicyDetails m_customPolicyDetails;
+  bool m_ownerHasBeenSet = false;
+  bool m_sourceIdentifierHasBeenSet = false;
+  bool m_sourceDetailsHasBeenSet = false;
   bool m_customPolicyDetailsHasBeenSet = false;
 };
 

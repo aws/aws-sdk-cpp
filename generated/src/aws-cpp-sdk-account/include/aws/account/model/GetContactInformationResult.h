@@ -61,9 +61,9 @@ class GetContactInformationResult {
   ///@}
  private:
   ContactInformation m_contactInformation;
-  bool m_contactInformationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contactInformationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

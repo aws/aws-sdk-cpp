@@ -255,30 +255,30 @@ class RuleCondition {
   ///@}
  private:
   Aws::String m_field;
-  bool m_fieldHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   HostHeaderConditionConfig m_hostHeaderConfig;
-  bool m_hostHeaderConfigHasBeenSet = false;
 
   PathPatternConditionConfig m_pathPatternConfig;
-  bool m_pathPatternConfigHasBeenSet = false;
 
   HttpHeaderConditionConfig m_httpHeaderConfig;
-  bool m_httpHeaderConfigHasBeenSet = false;
 
   QueryStringConditionConfig m_queryStringConfig;
-  bool m_queryStringConfigHasBeenSet = false;
 
   HttpRequestMethodConditionConfig m_httpRequestMethodConfig;
-  bool m_httpRequestMethodConfigHasBeenSet = false;
 
   SourceIpConditionConfig m_sourceIpConfig;
-  bool m_sourceIpConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regexValues;
+  bool m_fieldHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_hostHeaderConfigHasBeenSet = false;
+  bool m_pathPatternConfigHasBeenSet = false;
+  bool m_httpHeaderConfigHasBeenSet = false;
+  bool m_queryStringConfigHasBeenSet = false;
+  bool m_httpRequestMethodConfigHasBeenSet = false;
+  bool m_sourceIpConfigHasBeenSet = false;
   bool m_regexValuesHasBeenSet = false;
 };
 

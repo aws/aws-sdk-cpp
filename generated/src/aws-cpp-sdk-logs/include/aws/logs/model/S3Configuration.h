@@ -71,9 +71,9 @@ class S3Configuration {
   ///@}
  private:
   Aws::String m_destinationIdentifier;
-  bool m_destinationIdentifierHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_destinationIdentifierHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

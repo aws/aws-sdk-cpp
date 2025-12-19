@@ -201,30 +201,30 @@ class PostFulfillmentStatusSpecification {
   ///@}
  private:
   ResponseSpecification m_successResponse;
-  bool m_successResponseHasBeenSet = false;
 
   ResponseSpecification m_failureResponse;
-  bool m_failureResponseHasBeenSet = false;
 
   ResponseSpecification m_timeoutResponse;
-  bool m_timeoutResponseHasBeenSet = false;
 
   DialogState m_successNextStep;
-  bool m_successNextStepHasBeenSet = false;
 
   ConditionalSpecification m_successConditional;
-  bool m_successConditionalHasBeenSet = false;
 
   DialogState m_failureNextStep;
-  bool m_failureNextStepHasBeenSet = false;
 
   ConditionalSpecification m_failureConditional;
-  bool m_failureConditionalHasBeenSet = false;
 
   DialogState m_timeoutNextStep;
-  bool m_timeoutNextStepHasBeenSet = false;
 
   ConditionalSpecification m_timeoutConditional;
+  bool m_successResponseHasBeenSet = false;
+  bool m_failureResponseHasBeenSet = false;
+  bool m_timeoutResponseHasBeenSet = false;
+  bool m_successNextStepHasBeenSet = false;
+  bool m_successConditionalHasBeenSet = false;
+  bool m_failureNextStepHasBeenSet = false;
+  bool m_failureConditionalHasBeenSet = false;
+  bool m_timeoutNextStepHasBeenSet = false;
   bool m_timeoutConditionalHasBeenSet = false;
 };
 

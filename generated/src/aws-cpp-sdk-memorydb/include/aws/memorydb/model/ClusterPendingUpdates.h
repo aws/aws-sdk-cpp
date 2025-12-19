@@ -95,12 +95,12 @@ class ClusterPendingUpdates {
   ///@}
  private:
   ReshardingStatus m_resharding;
-  bool m_reshardingHasBeenSet = false;
 
   ACLsUpdateStatus m_aCLs;
-  bool m_aCLsHasBeenSet = false;
 
   Aws::Vector<PendingModifiedServiceUpdate> m_serviceUpdates;
+  bool m_reshardingHasBeenSet = false;
+  bool m_aCLsHasBeenSet = false;
   bool m_serviceUpdatesHasBeenSet = false;
 };
 

@@ -219,30 +219,30 @@ class RecommendationSummary {
   ///@}
  private:
   Aws::Vector<Summary> m_summaries;
-  bool m_summariesHasBeenSet = false;
 
   Aws::Vector<IdleSummary> m_idleSummaries;
-  bool m_idleSummariesHasBeenSet = false;
 
   RecommendationSourceType m_recommendationResourceType{RecommendationSourceType::NOT_SET};
-  bool m_recommendationResourceTypeHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   SavingsOpportunity m_savingsOpportunity;
-  bool m_savingsOpportunityHasBeenSet = false;
 
   SavingsOpportunity m_idleSavingsOpportunity;
-  bool m_idleSavingsOpportunityHasBeenSet = false;
 
   SavingsOpportunity m_aggregatedSavingsOpportunity;
-  bool m_aggregatedSavingsOpportunityHasBeenSet = false;
 
   CurrentPerformanceRiskRatings m_currentPerformanceRiskRatings;
-  bool m_currentPerformanceRiskRatingsHasBeenSet = false;
 
   Aws::Vector<InferredWorkloadSaving> m_inferredWorkloadSavings;
+  bool m_summariesHasBeenSet = false;
+  bool m_idleSummariesHasBeenSet = false;
+  bool m_recommendationResourceTypeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_savingsOpportunityHasBeenSet = false;
+  bool m_idleSavingsOpportunityHasBeenSet = false;
+  bool m_aggregatedSavingsOpportunityHasBeenSet = false;
+  bool m_currentPerformanceRiskRatingsHasBeenSet = false;
   bool m_inferredWorkloadSavingsHasBeenSet = false;
 };
 

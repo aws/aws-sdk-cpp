@@ -90,12 +90,12 @@ class VpcDNSTarget {
   ///@}
  private:
   Aws::String m_vpcIngressConnectionArn;
-  bool m_vpcIngressConnectionArnHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_vpcIngressConnectionArnHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class ListIdentitySourcesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<IdentitySourceForList> m_identitySources;
-  bool m_identitySourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_identitySourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -101,15 +101,15 @@ class GetProductsResult {
   ///@}
  private:
   Aws::String m_formatVersion;
-  bool m_formatVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_priceList;
-  bool m_priceListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_formatVersionHasBeenSet = false;
+  bool m_priceListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

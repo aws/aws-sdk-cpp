@@ -106,12 +106,12 @@ class RetrievedReference {
   ///@}
  private:
   RetrievalResultContent m_content;
-  bool m_contentHasBeenSet = false;
 
   RetrievalResultLocation m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Utils::Document> m_metadata;
+  bool m_contentHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

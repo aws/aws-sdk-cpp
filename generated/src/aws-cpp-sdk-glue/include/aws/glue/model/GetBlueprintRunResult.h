@@ -60,9 +60,9 @@ class GetBlueprintRunResult {
   ///@}
  private:
   BlueprintRun m_blueprintRun;
-  bool m_blueprintRunHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blueprintRunHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -291,39 +291,39 @@ class ClusterOperationInfo {
   ///@}
  private:
   Aws::String m_clientRequestId;
-  bool m_clientRequestIdHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   Aws::String m_operationArn;
-  bool m_operationArnHasBeenSet = false;
 
   Aws::String m_operationState;
-  bool m_operationStateHasBeenSet = false;
 
   Aws::Vector<ClusterOperationStep> m_operationSteps;
-  bool m_operationStepsHasBeenSet = false;
 
   Aws::String m_operationType;
-  bool m_operationTypeHasBeenSet = false;
 
   MutableClusterInfo m_sourceClusterInfo;
-  bool m_sourceClusterInfoHasBeenSet = false;
 
   MutableClusterInfo m_targetClusterInfo;
-  bool m_targetClusterInfoHasBeenSet = false;
 
   VpcConnectionInfo m_vpcConnectionInfo;
+  bool m_clientRequestIdHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
+  bool m_operationArnHasBeenSet = false;
+  bool m_operationStateHasBeenSet = false;
+  bool m_operationStepsHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
+  bool m_sourceClusterInfoHasBeenSet = false;
+  bool m_targetClusterInfoHasBeenSet = false;
   bool m_vpcConnectionInfoHasBeenSet = false;
 };
 

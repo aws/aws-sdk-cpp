@@ -173,24 +173,24 @@ class DescribedHostKey {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_hostKeyId;
-  bool m_hostKeyIdHasBeenSet = false;
 
   Aws::String m_hostKeyFingerprint;
-  bool m_hostKeyFingerprintHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateImported{};
-  bool m_dateImportedHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_hostKeyIdHasBeenSet = false;
+  bool m_hostKeyFingerprintHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_dateImportedHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

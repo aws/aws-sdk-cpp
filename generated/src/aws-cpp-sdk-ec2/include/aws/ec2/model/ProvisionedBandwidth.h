@@ -127,18 +127,18 @@ class ProvisionedBandwidth {
   ///@}
  private:
   Aws::Utils::DateTime m_provisionTime{};
-  bool m_provisionTimeHasBeenSet = false;
 
   Aws::String m_provisioned;
-  bool m_provisionedHasBeenSet = false;
 
   Aws::Utils::DateTime m_requestTime{};
-  bool m_requestTimeHasBeenSet = false;
 
   Aws::String m_requested;
-  bool m_requestedHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_provisionTimeHasBeenSet = false;
+  bool m_provisionedHasBeenSet = false;
+  bool m_requestTimeHasBeenSet = false;
+  bool m_requestedHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

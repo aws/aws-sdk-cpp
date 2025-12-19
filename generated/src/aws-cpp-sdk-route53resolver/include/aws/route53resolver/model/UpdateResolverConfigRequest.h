@@ -78,9 +78,9 @@ class UpdateResolverConfigRequest : public Route53ResolverRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   AutodefinedReverseFlag m_autodefinedReverseFlag{AutodefinedReverseFlag::NOT_SET};
+  bool m_resourceIdHasBeenSet = false;
   bool m_autodefinedReverseFlagHasBeenSet = false;
 };
 

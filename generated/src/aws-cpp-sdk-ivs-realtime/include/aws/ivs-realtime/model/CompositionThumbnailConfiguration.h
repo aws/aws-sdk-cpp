@@ -80,9 +80,9 @@ class CompositionThumbnailConfiguration {
   ///@}
  private:
   int m_targetIntervalSeconds{0};
-  bool m_targetIntervalSecondsHasBeenSet = false;
 
   Aws::Vector<ThumbnailStorageType> m_storage;
+  bool m_targetIntervalSecondsHasBeenSet = false;
   bool m_storageHasBeenSet = false;
 };
 

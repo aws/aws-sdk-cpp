@@ -68,9 +68,9 @@ class GetLogFieldsResult {
   ///@}
  private:
   Aws::Vector<LogFieldsListItem> m_logFields;
-  bool m_logFieldsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logFieldsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -237,39 +237,39 @@ class GetTargetGroupResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   TargetGroupType m_type{TargetGroupType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TargetGroupConfig m_config;
-  bool m_configHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   TargetGroupStatus m_status{TargetGroupStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_serviceArns;
-  bool m_serviceArnsHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::String m_failureCode;
-  bool m_failureCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_configHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_serviceArnsHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
+  bool m_failureCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -75,12 +75,12 @@ class GetVerifiedAccessGroupPolicyResponse {
   ///@}
  private:
   bool m_policyEnabled{false};
-  bool m_policyEnabledHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_policyEnabledHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

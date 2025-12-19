@@ -143,21 +143,21 @@ class SnapToRoadsResult {
   ///@}
  private:
   Aws::Vector<RoadSnapNotice> m_notices;
-  bool m_noticesHasBeenSet = false;
 
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   RoadSnapSnappedGeometry m_snappedGeometry;
-  bool m_snappedGeometryHasBeenSet = false;
 
   GeometryFormat m_snappedGeometryFormat{GeometryFormat::NOT_SET};
-  bool m_snappedGeometryFormatHasBeenSet = false;
 
   Aws::Vector<RoadSnapSnappedTracePoint> m_snappedTracePoints;
-  bool m_snappedTracePointsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_noticesHasBeenSet = false;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_snappedGeometryHasBeenSet = false;
+  bool m_snappedGeometryFormatHasBeenSet = false;
+  bool m_snappedTracePointsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

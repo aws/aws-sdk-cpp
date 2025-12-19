@@ -129,18 +129,18 @@ class PutRegistrationFieldValueRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_fieldPath;
-  bool m_fieldPathHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_selectChoices;
-  bool m_selectChoicesHasBeenSet = false;
 
   Aws::String m_textValue;
-  bool m_textValueHasBeenSet = false;
 
   Aws::String m_registrationAttachmentId;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_fieldPathHasBeenSet = false;
+  bool m_selectChoicesHasBeenSet = false;
+  bool m_textValueHasBeenSet = false;
   bool m_registrationAttachmentIdHasBeenSet = false;
 };
 

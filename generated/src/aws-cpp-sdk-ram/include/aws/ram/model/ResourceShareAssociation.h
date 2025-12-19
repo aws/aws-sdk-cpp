@@ -206,30 +206,30 @@ class ResourceShareAssociation {
   ///@}
  private:
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_resourceShareName;
-  bool m_resourceShareNameHasBeenSet = false;
 
   Aws::String m_associatedEntity;
-  bool m_associatedEntityHasBeenSet = false;
 
   ResourceShareAssociationType m_associationType{ResourceShareAssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   ResourceShareAssociationStatus m_status{ResourceShareAssociationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   bool m_external{false};
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_resourceShareNameHasBeenSet = false;
+  bool m_associatedEntityHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_externalHasBeenSet = false;
 };
 

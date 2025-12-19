@@ -70,9 +70,9 @@ class GetComplianceDetailRequest : public FMSRequest {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_memberAccount;
+  bool m_policyIdHasBeenSet = false;
   bool m_memberAccountHasBeenSet = false;
 };
 

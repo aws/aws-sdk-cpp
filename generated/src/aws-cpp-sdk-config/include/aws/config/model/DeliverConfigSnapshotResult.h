@@ -65,9 +65,9 @@ class DeliverConfigSnapshotResult {
   ///@}
  private:
   Aws::String m_configSnapshotId;
-  bool m_configSnapshotIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configSnapshotIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

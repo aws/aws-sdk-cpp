@@ -50,24 +50,6 @@ class CreateConnectorRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Create Connector request SSM command config.</p>
-   */
-  inline const ConnectorSsmCommandConfig& GetSsmCommandConfig() const { return m_ssmCommandConfig; }
-  inline bool SsmCommandConfigHasBeenSet() const { return m_ssmCommandConfigHasBeenSet; }
-  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
-  void SetSsmCommandConfig(SsmCommandConfigT&& value) {
-    m_ssmCommandConfigHasBeenSet = true;
-    m_ssmCommandConfig = std::forward<SsmCommandConfigT>(value);
-  }
-  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
-  CreateConnectorRequest& WithSsmCommandConfig(SsmCommandConfigT&& value) {
-    SetSsmCommandConfig(std::forward<SsmCommandConfigT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Create Connector request SSM instance ID.</p>
    */
   inline const Aws::String& GetSsmInstanceID() const { return m_ssmInstanceID; }
@@ -107,18 +89,36 @@ class CreateConnectorRequest : public MgnRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Create Connector request SSM command config.</p>
+   */
+  inline const ConnectorSsmCommandConfig& GetSsmCommandConfig() const { return m_ssmCommandConfig; }
+  inline bool SsmCommandConfigHasBeenSet() const { return m_ssmCommandConfigHasBeenSet; }
+  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
+  void SetSsmCommandConfig(SsmCommandConfigT&& value) {
+    m_ssmCommandConfigHasBeenSet = true;
+    m_ssmCommandConfig = std::forward<SsmCommandConfigT>(value);
+  }
+  template <typename SsmCommandConfigT = ConnectorSsmCommandConfig>
+  CreateConnectorRequest& WithSsmCommandConfig(SsmCommandConfigT&& value) {
+    SetSsmCommandConfig(std::forward<SsmCommandConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
-
-  ConnectorSsmCommandConfig m_ssmCommandConfig;
-  bool m_ssmCommandConfigHasBeenSet = false;
 
   Aws::String m_ssmInstanceID;
-  bool m_ssmInstanceIDHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  ConnectorSsmCommandConfig m_ssmCommandConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_ssmInstanceIDHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_ssmCommandConfigHasBeenSet = false;
 };
 
 }  // namespace Model

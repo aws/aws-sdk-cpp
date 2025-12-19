@@ -69,9 +69,9 @@ class DeleteTrustRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_trustId;
-  bool m_trustIdHasBeenSet = false;
 
   bool m_deleteAssociatedConditionalForwarder{false};
+  bool m_trustIdHasBeenSet = false;
   bool m_deleteAssociatedConditionalForwarderHasBeenSet = false;
 };
 

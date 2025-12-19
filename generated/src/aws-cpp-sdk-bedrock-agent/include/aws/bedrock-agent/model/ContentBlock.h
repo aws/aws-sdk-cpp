@@ -72,9 +72,9 @@ class ContentBlock {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   CachePointBlock m_cachePoint;
+  bool m_textHasBeenSet = false;
   bool m_cachePointHasBeenSet = false;
 };
 

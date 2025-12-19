@@ -84,12 +84,12 @@ class ListOTAUpdatesResult {
   ///@}
  private:
   Aws::Vector<OTAUpdateSummary> m_otaUpdates;
-  bool m_otaUpdatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_otaUpdatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

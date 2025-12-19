@@ -123,15 +123,15 @@ class AlarmState {
   ///@}
  private:
   AlarmStateName m_stateName{AlarmStateName::NOT_SET};
-  bool m_stateNameHasBeenSet = false;
 
   RuleEvaluation m_ruleEvaluation;
-  bool m_ruleEvaluationHasBeenSet = false;
 
   CustomerAction m_customerAction;
-  bool m_customerActionHasBeenSet = false;
 
   SystemEvent m_systemEvent;
+  bool m_stateNameHasBeenSet = false;
+  bool m_ruleEvaluationHasBeenSet = false;
+  bool m_customerActionHasBeenSet = false;
   bool m_systemEventHasBeenSet = false;
 };
 

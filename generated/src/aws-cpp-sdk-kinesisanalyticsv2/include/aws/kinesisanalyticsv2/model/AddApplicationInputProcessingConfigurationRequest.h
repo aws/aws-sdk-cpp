@@ -108,15 +108,15 @@ class AddApplicationInputProcessingConfigurationRequest : public KinesisAnalytic
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   long long m_currentApplicationVersionId{0};
-  bool m_currentApplicationVersionIdHasBeenSet = false;
 
   Aws::String m_inputId;
-  bool m_inputIdHasBeenSet = false;
 
   InputProcessingConfiguration m_inputProcessingConfiguration;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_currentApplicationVersionIdHasBeenSet = false;
+  bool m_inputIdHasBeenSet = false;
   bool m_inputProcessingConfigurationHasBeenSet = false;
 };
 

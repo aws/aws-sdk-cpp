@@ -105,15 +105,15 @@ class InvalidNetworkSettings {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_invalidSubnetId;
-  bool m_invalidSubnetIdHasBeenSet = false;
 
   Aws::String m_invalidSecurityGroupId;
-  bool m_invalidSecurityGroupIdHasBeenSet = false;
 
   Aws::String m_invalidRouteTableId;
+  bool m_messageHasBeenSet = false;
+  bool m_invalidSubnetIdHasBeenSet = false;
+  bool m_invalidSecurityGroupIdHasBeenSet = false;
   bool m_invalidRouteTableIdHasBeenSet = false;
 };
 

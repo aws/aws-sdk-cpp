@@ -132,18 +132,18 @@ class RotationShift {
   ///@}
  private:
   Aws::Vector<Aws::String> m_contactIds;
-  bool m_contactIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ShiftType m_type{ShiftType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ShiftDetails m_shiftDetails;
+  bool m_contactIdsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_shiftDetailsHasBeenSet = false;
 };
 

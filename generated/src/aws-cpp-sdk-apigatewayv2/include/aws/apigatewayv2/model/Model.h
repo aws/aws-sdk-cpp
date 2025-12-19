@@ -126,18 +126,18 @@ class Model {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_schema;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_modelIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
 };
 

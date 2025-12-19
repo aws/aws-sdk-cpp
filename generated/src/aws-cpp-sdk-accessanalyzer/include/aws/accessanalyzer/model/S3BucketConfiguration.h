@@ -138,15 +138,15 @@ class S3BucketConfiguration {
   ///@}
  private:
   Aws::String m_bucketPolicy;
-  bool m_bucketPolicyHasBeenSet = false;
 
   Aws::Vector<S3BucketAclGrantConfiguration> m_bucketAclGrants;
-  bool m_bucketAclGrantsHasBeenSet = false;
 
   S3PublicAccessBlockConfiguration m_bucketPublicAccessBlock;
-  bool m_bucketPublicAccessBlockHasBeenSet = false;
 
   Aws::Map<Aws::String, S3AccessPointConfiguration> m_accessPoints;
+  bool m_bucketPolicyHasBeenSet = false;
+  bool m_bucketAclGrantsHasBeenSet = false;
+  bool m_bucketPublicAccessBlockHasBeenSet = false;
   bool m_accessPointsHasBeenSet = false;
 };
 

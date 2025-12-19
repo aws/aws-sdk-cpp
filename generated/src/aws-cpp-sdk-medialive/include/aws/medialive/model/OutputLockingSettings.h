@@ -65,9 +65,9 @@ class OutputLockingSettings {
   ///@}
  private:
   EpochLockingSettings m_epochLockingSettings;
-  bool m_epochLockingSettingsHasBeenSet = false;
 
   PipelineLockingSettings m_pipelineLockingSettings;
+  bool m_epochLockingSettingsHasBeenSet = false;
   bool m_pipelineLockingSettingsHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class DescribeSubnetGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SubnetGroup> m_subnetGroups;
-  bool m_subnetGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_subnetGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

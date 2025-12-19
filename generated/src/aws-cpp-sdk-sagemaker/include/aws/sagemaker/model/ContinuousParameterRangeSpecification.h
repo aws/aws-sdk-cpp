@@ -69,9 +69,9 @@ class ContinuousParameterRangeSpecification {
   ///@}
  private:
   Aws::String m_minValue;
-  bool m_minValueHasBeenSet = false;
 
   Aws::String m_maxValue;
+  bool m_minValueHasBeenSet = false;
   bool m_maxValueHasBeenSet = false;
 };
 

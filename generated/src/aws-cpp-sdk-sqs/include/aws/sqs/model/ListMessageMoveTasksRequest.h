@@ -66,9 +66,9 @@ class ListMessageMoveTasksRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_sourceArnHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

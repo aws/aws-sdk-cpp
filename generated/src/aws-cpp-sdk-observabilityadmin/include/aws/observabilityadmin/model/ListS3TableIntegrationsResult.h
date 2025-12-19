@@ -86,12 +86,12 @@ class ListS3TableIntegrationsResult {
   ///@}
  private:
   Aws::Vector<IntegrationSummary> m_integrationSummaries;
-  bool m_integrationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_integrationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

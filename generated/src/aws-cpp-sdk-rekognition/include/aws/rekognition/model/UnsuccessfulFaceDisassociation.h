@@ -94,12 +94,12 @@ class UnsuccessfulFaceDisassociation {
   ///@}
  private:
   Aws::String m_faceId;
-  bool m_faceIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulFaceDisassociationReason> m_reasons;
+  bool m_faceIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_reasonsHasBeenSet = false;
 };
 

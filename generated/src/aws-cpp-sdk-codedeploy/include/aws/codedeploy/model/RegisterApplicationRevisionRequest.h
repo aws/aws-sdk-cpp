@@ -92,12 +92,12 @@ class RegisterApplicationRevisionRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RevisionLocation m_revision;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_revisionHasBeenSet = false;
 };
 

@@ -431,60 +431,60 @@ class StartRunRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   WorkflowType m_workflowType{WorkflowType::NOT_SET};
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_cacheId;
-  bool m_cacheIdHasBeenSet = false;
 
   CacheBehavior m_cacheBehavior{CacheBehavior::NOT_SET};
-  bool m_cacheBehaviorHasBeenSet = false;
 
   Aws::String m_runGroupId;
-  bool m_runGroupIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Utils::Document m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   Aws::String m_outputUri;
-  bool m_outputUriHasBeenSet = false;
 
   RunLogLevel m_logLevel{RunLogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   RunRetentionMode m_retentionMode{RunRetentionMode::NOT_SET};
-  bool m_retentionModeHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_workflowOwnerId;
-  bool m_workflowOwnerIdHasBeenSet = false;
 
   Aws::String m_workflowVersionName;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_cacheIdHasBeenSet = false;
+  bool m_cacheBehaviorHasBeenSet = false;
+  bool m_runGroupIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_outputUriHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
+  bool m_retentionModeHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_workflowOwnerIdHasBeenSet = false;
   bool m_workflowVersionNameHasBeenSet = false;
 };
 

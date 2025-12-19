@@ -75,9 +75,9 @@ class RewriteConfig {
   ///@}
  private:
   Aws::String m_regex;
-  bool m_regexHasBeenSet = false;
 
   Aws::String m_replace;
+  bool m_regexHasBeenSet = false;
   bool m_replaceHasBeenSet = false;
 };
 

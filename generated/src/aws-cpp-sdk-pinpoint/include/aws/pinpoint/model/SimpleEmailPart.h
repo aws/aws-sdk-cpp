@@ -69,9 +69,9 @@ class SimpleEmailPart {
   ///@}
  private:
   Aws::String m_charset;
-  bool m_charsetHasBeenSet = false;
 
   Aws::String m_data;
+  bool m_charsetHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class GetDataLakeNamespaceRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_instanceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

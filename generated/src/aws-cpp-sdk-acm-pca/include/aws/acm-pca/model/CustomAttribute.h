@@ -70,9 +70,9 @@ class CustomAttribute {
   ///@}
  private:
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_objectIdentifierHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -195,30 +195,30 @@ class WorkspacesPoolSession {
   ///@}
  private:
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   SessionConnectionState m_connectionState{SessionConnectionState::NOT_SET};
-  bool m_connectionStateHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   NetworkAccessConfiguration m_networkAccessConfiguration;
-  bool m_networkAccessConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_userId;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_connectionStateHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_networkAccessConfigurationHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_userIdHasBeenSet = false;
 };
 

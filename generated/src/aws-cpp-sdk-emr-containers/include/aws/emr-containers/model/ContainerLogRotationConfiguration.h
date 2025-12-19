@@ -66,9 +66,9 @@ class ContainerLogRotationConfiguration {
   ///@}
  private:
   Aws::String m_rotationSize;
-  bool m_rotationSizeHasBeenSet = false;
 
   int m_maxFilesToKeep{0};
+  bool m_rotationSizeHasBeenSet = false;
   bool m_maxFilesToKeepHasBeenSet = false;
 };
 

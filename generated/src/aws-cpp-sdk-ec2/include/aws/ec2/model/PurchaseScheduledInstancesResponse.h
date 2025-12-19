@@ -73,9 +73,9 @@ class PurchaseScheduledInstancesResponse {
   ///@}
  private:
   Aws::Vector<ScheduledInstance> m_scheduledInstanceSet;
-  bool m_scheduledInstanceSetHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_scheduledInstanceSetHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

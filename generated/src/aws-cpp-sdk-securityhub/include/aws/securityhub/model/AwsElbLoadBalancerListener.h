@@ -124,18 +124,18 @@ class AwsElbLoadBalancerListener {
   ///@}
  private:
   int m_instancePort{0};
-  bool m_instancePortHasBeenSet = false;
 
   Aws::String m_instanceProtocol;
-  bool m_instanceProtocolHasBeenSet = false;
 
   int m_loadBalancerPort{0};
-  bool m_loadBalancerPortHasBeenSet = false;
 
   Aws::String m_protocol;
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_sslCertificateId;
+  bool m_instancePortHasBeenSet = false;
+  bool m_instanceProtocolHasBeenSet = false;
+  bool m_loadBalancerPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
   bool m_sslCertificateIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ServiceOperationEntity {
   ///@}
  private:
   ServiceEntity m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   Aws::String m_metricType;
+  bool m_serviceHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_metricTypeHasBeenSet = false;
 };
 

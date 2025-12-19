@@ -67,9 +67,9 @@ class EphemerisResponseData {
   ///@}
  private:
   Aws::String m_ephemerisId;
-  bool m_ephemerisIdHasBeenSet = false;
 
   EphemerisType m_ephemerisType{EphemerisType::NOT_SET};
+  bool m_ephemerisIdHasBeenSet = false;
   bool m_ephemerisTypeHasBeenSet = false;
 };
 

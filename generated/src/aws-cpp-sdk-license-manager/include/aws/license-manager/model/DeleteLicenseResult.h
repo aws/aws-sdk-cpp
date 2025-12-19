@@ -75,12 +75,12 @@ class DeleteLicenseResult {
   ///@}
  private:
   LicenseDeletionStatus m_status{LicenseDeletionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_deletionDate;
-  bool m_deletionDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_deletionDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

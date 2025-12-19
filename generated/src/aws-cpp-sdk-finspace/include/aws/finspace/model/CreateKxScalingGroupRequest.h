@@ -162,21 +162,21 @@ class CreateKxScalingGroupRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_scalingGroupName;
-  bool m_scalingGroupNameHasBeenSet = false;
 
   Aws::String m_hostType;
-  bool m_hostTypeHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_scalingGroupNameHasBeenSet = false;
+  bool m_hostTypeHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

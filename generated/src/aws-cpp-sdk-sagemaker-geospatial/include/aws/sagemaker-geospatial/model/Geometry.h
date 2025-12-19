@@ -76,9 +76,9 @@ class Geometry {
   ///@}
  private:
   Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_coordinates;
-  bool m_coordinatesHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_coordinatesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

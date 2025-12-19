@@ -98,12 +98,12 @@ class ApprovalThresholdPolicy {
   ///@}
  private:
   int m_thresholdPercentage{0};
-  bool m_thresholdPercentageHasBeenSet = false;
 
   int m_proposalDurationInHours{0};
-  bool m_proposalDurationInHoursHasBeenSet = false;
 
   ThresholdComparator m_thresholdComparator{ThresholdComparator::NOT_SET};
+  bool m_thresholdPercentageHasBeenSet = false;
+  bool m_proposalDurationInHoursHasBeenSet = false;
   bool m_thresholdComparatorHasBeenSet = false;
 };
 

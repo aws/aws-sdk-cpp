@@ -103,15 +103,15 @@ class Category {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_color;
-  bool m_colorHasBeenSet = false;
 
   int m_appCount{0};
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
   bool m_appCountHasBeenSet = false;
 };
 

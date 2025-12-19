@@ -163,24 +163,24 @@ class TestEnvPreference {
   ///@}
  private:
   BuyerDomain m_buyerDomain{BuyerDomain::NOT_SET};
-  bool m_buyerDomainHasBeenSet = false;
 
   Aws::String m_buyerIdentifier;
-  bool m_buyerIdentifierHasBeenSet = false;
 
   SupplierDomain m_supplierDomain{SupplierDomain::NOT_SET};
-  bool m_supplierDomainHasBeenSet = false;
 
   Aws::String m_supplierIdentifier;
-  bool m_supplierIdentifierHasBeenSet = false;
 
   Aws::String m_procurementPortalSharedSecret;
-  bool m_procurementPortalSharedSecretHasBeenSet = false;
 
   Aws::String m_procurementPortalInstanceEndpoint;
-  bool m_procurementPortalInstanceEndpointHasBeenSet = false;
 
   Aws::String m_purchaseOrderRetrievalEndpoint;
+  bool m_buyerDomainHasBeenSet = false;
+  bool m_buyerIdentifierHasBeenSet = false;
+  bool m_supplierDomainHasBeenSet = false;
+  bool m_supplierIdentifierHasBeenSet = false;
+  bool m_procurementPortalSharedSecretHasBeenSet = false;
+  bool m_procurementPortalInstanceEndpointHasBeenSet = false;
   bool m_purchaseOrderRetrievalEndpointHasBeenSet = false;
 };
 

@@ -31,14 +31,12 @@ class PutMetricDataRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 #ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
   virtual Aws::Client::CompressionAlgorithm GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const override;
 #endif
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
-
- public:
   ///@{
   /**
    * <p>The namespace for the metric data. You can use ASCII characters for the
@@ -157,15 +155,15 @@ class PutMetricDataRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<MetricDatum> m_metricData;
-  bool m_metricDataHasBeenSet = false;
 
   Aws::Vector<EntityMetricData> m_entityMetricData;
-  bool m_entityMetricDataHasBeenSet = false;
 
   bool m_strictEntityValidation{false};
+  bool m_namespaceHasBeenSet = false;
+  bool m_metricDataHasBeenSet = false;
+  bool m_entityMetricDataHasBeenSet = false;
   bool m_strictEntityValidationHasBeenSet = false;
 };
 

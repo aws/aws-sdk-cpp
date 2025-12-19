@@ -283,42 +283,42 @@ class QualificationType {
   ///@}
  private:
   Aws::String m_qualificationTypeId;
-  bool m_qualificationTypeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_keywords;
-  bool m_keywordsHasBeenSet = false;
 
   QualificationTypeStatus m_qualificationTypeStatus{QualificationTypeStatus::NOT_SET};
-  bool m_qualificationTypeStatusHasBeenSet = false;
 
   Aws::String m_test;
-  bool m_testHasBeenSet = false;
 
   long long m_testDurationInSeconds{0};
-  bool m_testDurationInSecondsHasBeenSet = false;
 
   Aws::String m_answerKey;
-  bool m_answerKeyHasBeenSet = false;
 
   long long m_retryDelayInSeconds{0};
-  bool m_retryDelayInSecondsHasBeenSet = false;
 
   bool m_isRequestable{false};
-  bool m_isRequestableHasBeenSet = false;
 
   bool m_autoGranted{false};
-  bool m_autoGrantedHasBeenSet = false;
 
   int m_autoGrantedValue{0};
+  bool m_qualificationTypeIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_keywordsHasBeenSet = false;
+  bool m_qualificationTypeStatusHasBeenSet = false;
+  bool m_testHasBeenSet = false;
+  bool m_testDurationInSecondsHasBeenSet = false;
+  bool m_answerKeyHasBeenSet = false;
+  bool m_retryDelayInSecondsHasBeenSet = false;
+  bool m_isRequestableHasBeenSet = false;
+  bool m_autoGrantedHasBeenSet = false;
   bool m_autoGrantedValueHasBeenSet = false;
 };
 

@@ -132,15 +132,15 @@ class ZonalStatisticsConfigInput {
   ///@}
  private:
   Aws::Vector<ZonalStatistics> m_statistics;
-  bool m_statisticsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetBands;
-  bool m_targetBandsHasBeenSet = false;
 
   Aws::String m_zoneS3Path;
-  bool m_zoneS3PathHasBeenSet = false;
 
   Aws::String m_zoneS3PathKmsKeyId;
+  bool m_statisticsHasBeenSet = false;
+  bool m_targetBandsHasBeenSet = false;
+  bool m_zoneS3PathHasBeenSet = false;
   bool m_zoneS3PathKmsKeyIdHasBeenSet = false;
 };
 

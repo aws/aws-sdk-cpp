@@ -89,12 +89,12 @@ class ReportResult {
   ///@}
  private:
   PhaseStatus m_status{PhaseStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorDetail;
+  bool m_statusHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorDetailHasBeenSet = false;
 };
 

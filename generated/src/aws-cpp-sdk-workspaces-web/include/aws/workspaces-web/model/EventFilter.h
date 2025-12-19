@@ -78,9 +78,9 @@ class EventFilter {
   ///@}
  private:
   Unit m_all;
-  bool m_allHasBeenSet = false;
 
   Aws::Vector<Event> m_include;
+  bool m_allHasBeenSet = false;
   bool m_includeHasBeenSet = false;
 };
 

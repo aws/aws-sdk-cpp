@@ -87,12 +87,12 @@ class DescribeMultiRegionParametersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MultiRegionParameter> m_multiRegionParameters;
-  bool m_multiRegionParametersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_multiRegionParametersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

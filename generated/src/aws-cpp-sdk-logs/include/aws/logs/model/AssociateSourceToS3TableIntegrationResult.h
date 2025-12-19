@@ -61,9 +61,9 @@ class AssociateSourceToS3TableIntegrationResult {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identifierHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

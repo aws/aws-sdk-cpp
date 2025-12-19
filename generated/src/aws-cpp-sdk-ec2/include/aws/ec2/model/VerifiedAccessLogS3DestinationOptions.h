@@ -104,15 +104,15 @@ class VerifiedAccessLogS3DestinationOptions {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_bucketOwner;
+  bool m_enabledHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_bucketOwnerHasBeenSet = false;
 };
 

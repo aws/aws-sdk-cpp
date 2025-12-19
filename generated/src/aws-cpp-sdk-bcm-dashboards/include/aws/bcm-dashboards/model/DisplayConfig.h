@@ -80,9 +80,9 @@ class DisplayConfig {
   ///@}
  private:
   Aws::Map<Aws::String, GraphDisplayConfig> m_graph;
-  bool m_graphHasBeenSet = false;
 
   TableDisplayConfigStruct m_table;
+  bool m_graphHasBeenSet = false;
   bool m_tableHasBeenSet = false;
 };
 

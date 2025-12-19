@@ -146,15 +146,15 @@ class Filters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_invoiceReceivers;
-  bool m_invoiceReceiversHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_billSourceAccounts;
+  bool m_namesHasBeenSet = false;
+  bool m_invoiceReceiversHasBeenSet = false;
+  bool m_accountsHasBeenSet = false;
   bool m_billSourceAccountsHasBeenSet = false;
 };
 

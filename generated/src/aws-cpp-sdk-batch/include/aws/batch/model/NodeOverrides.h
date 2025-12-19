@@ -86,9 +86,9 @@ class NodeOverrides {
   ///@}
  private:
   int m_numNodes{0};
-  bool m_numNodesHasBeenSet = false;
 
   Aws::Vector<NodePropertyOverride> m_nodePropertyOverrides;
+  bool m_numNodesHasBeenSet = false;
   bool m_nodePropertyOverridesHasBeenSet = false;
 };
 

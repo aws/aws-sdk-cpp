@@ -149,24 +149,24 @@ class DescribeImageScanFindingsResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   ImageIdentifier m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   ImageScanStatus m_imageScanStatus;
-  bool m_imageScanStatusHasBeenSet = false;
 
   ImageScanFindings m_imageScanFindings;
-  bool m_imageScanFindingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_imageScanStatusHasBeenSet = false;
+  bool m_imageScanFindingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

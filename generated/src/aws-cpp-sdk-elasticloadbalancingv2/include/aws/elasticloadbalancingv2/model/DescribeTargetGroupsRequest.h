@@ -135,18 +135,18 @@ class DescribeTargetGroupsRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::String m_loadBalancerArn;
-  bool m_loadBalancerArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetGroupArns;
-  bool m_targetGroupArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_loadBalancerArnHasBeenSet = false;
+  bool m_targetGroupArnsHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

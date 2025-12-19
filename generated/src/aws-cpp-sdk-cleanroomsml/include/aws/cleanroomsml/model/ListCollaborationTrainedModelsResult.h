@@ -85,12 +85,12 @@ class ListCollaborationTrainedModelsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<CollaborationTrainedModelSummary> m_collaborationTrainedModels;
-  bool m_collaborationTrainedModelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_collaborationTrainedModelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

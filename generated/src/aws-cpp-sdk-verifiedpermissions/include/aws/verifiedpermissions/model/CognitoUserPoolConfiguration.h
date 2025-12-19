@@ -110,12 +110,12 @@ class CognitoUserPoolConfiguration {
   ///@}
  private:
   Aws::String m_userPoolArn;
-  bool m_userPoolArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientIds;
-  bool m_clientIdsHasBeenSet = false;
 
   CognitoGroupConfiguration m_groupConfiguration;
+  bool m_userPoolArnHasBeenSet = false;
+  bool m_clientIdsHasBeenSet = false;
   bool m_groupConfigurationHasBeenSet = false;
 };
 

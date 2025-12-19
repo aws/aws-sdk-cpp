@@ -119,15 +119,15 @@ class DescribeIntegrationsRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_integrationArn;
-  bool m_integrationArnHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DescribeIntegrationsFilter> m_filters;
+  bool m_integrationArnHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

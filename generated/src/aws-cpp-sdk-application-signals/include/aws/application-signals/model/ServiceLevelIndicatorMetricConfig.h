@@ -219,27 +219,27 @@ class ServiceLevelIndicatorMetricConfig {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
-  bool m_keyAttributesHasBeenSet = false;
 
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   ServiceLevelIndicatorMetricType m_metricType{ServiceLevelIndicatorMetricType::NOT_SET};
-  bool m_metricTypeHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_statistic;
-  bool m_statisticHasBeenSet = false;
 
   int m_periodSeconds{0};
-  bool m_periodSecondsHasBeenSet = false;
 
   Aws::Vector<MetricDataQuery> m_metricDataQueries;
-  bool m_metricDataQueriesHasBeenSet = false;
 
   DependencyConfig m_dependencyConfig;
+  bool m_keyAttributesHasBeenSet = false;
+  bool m_operationNameHasBeenSet = false;
+  bool m_metricTypeHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_periodSecondsHasBeenSet = false;
+  bool m_metricDataQueriesHasBeenSet = false;
   bool m_dependencyConfigHasBeenSet = false;
 };
 

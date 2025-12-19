@@ -75,9 +75,9 @@ class GeoMatchConstraint {
   ///@}
  private:
   GeoMatchConstraintType m_type{GeoMatchConstraintType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GeoMatchConstraintValue m_value{GeoMatchConstraintValue::NOT_SET};
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

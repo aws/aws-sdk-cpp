@@ -237,24 +237,24 @@ class LoggingConfiguration {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logDestinationConfigs;
-  bool m_logDestinationConfigsHasBeenSet = false;
 
   Aws::Vector<FieldToMatch> m_redactedFields;
-  bool m_redactedFieldsHasBeenSet = false;
 
   bool m_managedByFirewallManager{false};
-  bool m_managedByFirewallManagerHasBeenSet = false;
 
   LoggingFilter m_loggingFilter;
-  bool m_loggingFilterHasBeenSet = false;
 
   LogType m_logType{LogType::NOT_SET};
-  bool m_logTypeHasBeenSet = false;
 
   LogScope m_logScope{LogScope::NOT_SET};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_logDestinationConfigsHasBeenSet = false;
+  bool m_redactedFieldsHasBeenSet = false;
+  bool m_managedByFirewallManagerHasBeenSet = false;
+  bool m_loggingFilterHasBeenSet = false;
+  bool m_logTypeHasBeenSet = false;
   bool m_logScopeHasBeenSet = false;
 };
 

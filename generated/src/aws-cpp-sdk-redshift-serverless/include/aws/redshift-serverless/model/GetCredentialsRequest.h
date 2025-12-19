@@ -111,15 +111,15 @@ class GetCredentialsRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_customDomainName;
-  bool m_customDomainNameHasBeenSet = false;
 
   Aws::String m_dbName;
-  bool m_dbNameHasBeenSet = false;
 
   int m_durationSeconds{0};
-  bool m_durationSecondsHasBeenSet = false;
 
   Aws::String m_workgroupName;
+  bool m_customDomainNameHasBeenSet = false;
+  bool m_dbNameHasBeenSet = false;
+  bool m_durationSecondsHasBeenSet = false;
   bool m_workgroupNameHasBeenSet = false;
 };
 

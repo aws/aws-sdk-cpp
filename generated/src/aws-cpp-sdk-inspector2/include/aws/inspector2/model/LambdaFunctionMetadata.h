@@ -119,15 +119,15 @@ class LambdaFunctionMetadata {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_functionTags;
-  bool m_functionTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_layers;
-  bool m_layersHasBeenSet = false;
 
   Aws::String m_functionName;
-  bool m_functionNameHasBeenSet = false;
 
   Runtime m_runtime{Runtime::NOT_SET};
+  bool m_functionTagsHasBeenSet = false;
+  bool m_layersHasBeenSet = false;
+  bool m_functionNameHasBeenSet = false;
   bool m_runtimeHasBeenSet = false;
 };
 

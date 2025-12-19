@@ -103,15 +103,15 @@ class GetReadSetRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_sequenceStoreId;
-  bool m_sequenceStoreIdHasBeenSet = false;
 
   ReadSetFile m_file{ReadSetFile::NOT_SET};
-  bool m_fileHasBeenSet = false;
 
   int m_partNumber{0};
+  bool m_idHasBeenSet = false;
+  bool m_sequenceStoreIdHasBeenSet = false;
+  bool m_fileHasBeenSet = false;
   bool m_partNumberHasBeenSet = false;
 };
 

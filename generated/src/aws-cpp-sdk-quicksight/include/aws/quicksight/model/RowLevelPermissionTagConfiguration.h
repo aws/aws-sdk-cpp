@@ -105,12 +105,12 @@ class RowLevelPermissionTagConfiguration {
   ///@}
  private:
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<RowLevelPermissionTagRule> m_tagRules;
-  bool m_tagRulesHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_tagRuleConfigurations;
+  bool m_statusHasBeenSet = false;
+  bool m_tagRulesHasBeenSet = false;
   bool m_tagRuleConfigurationsHasBeenSet = false;
 };
 

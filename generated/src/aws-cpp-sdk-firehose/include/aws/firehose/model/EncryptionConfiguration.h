@@ -69,9 +69,9 @@ class EncryptionConfiguration {
   ///@}
  private:
   NoEncryptionConfig m_noEncryptionConfig{NoEncryptionConfig::NOT_SET};
-  bool m_noEncryptionConfigHasBeenSet = false;
 
   KMSEncryptionConfig m_kMSEncryptionConfig;
+  bool m_noEncryptionConfigHasBeenSet = false;
   bool m_kMSEncryptionConfigHasBeenSet = false;
 };
 

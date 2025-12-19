@@ -107,15 +107,15 @@ class AttachmentItem {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_attachmentId;
-  bool m_attachmentIdHasBeenSet = false;
 
   Aws::String m_attachmentName;
-  bool m_attachmentNameHasBeenSet = false;
 
   ArtifactStatus m_status{ArtifactStatus::NOT_SET};
+  bool m_contentTypeHasBeenSet = false;
+  bool m_attachmentIdHasBeenSet = false;
+  bool m_attachmentNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

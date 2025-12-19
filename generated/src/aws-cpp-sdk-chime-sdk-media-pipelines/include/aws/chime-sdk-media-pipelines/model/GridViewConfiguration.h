@@ -161,24 +161,24 @@ class GridViewConfiguration {
   ///@}
  private:
   ContentShareLayoutOption m_contentShareLayout{ContentShareLayoutOption::NOT_SET};
-  bool m_contentShareLayoutHasBeenSet = false;
 
   PresenterOnlyConfiguration m_presenterOnlyConfiguration;
-  bool m_presenterOnlyConfigurationHasBeenSet = false;
 
   ActiveSpeakerOnlyConfiguration m_activeSpeakerOnlyConfiguration;
-  bool m_activeSpeakerOnlyConfigurationHasBeenSet = false;
 
   HorizontalLayoutConfiguration m_horizontalLayoutConfiguration;
-  bool m_horizontalLayoutConfigurationHasBeenSet = false;
 
   VerticalLayoutConfiguration m_verticalLayoutConfiguration;
-  bool m_verticalLayoutConfigurationHasBeenSet = false;
 
   VideoAttribute m_videoAttribute;
-  bool m_videoAttributeHasBeenSet = false;
 
   CanvasOrientation m_canvasOrientation{CanvasOrientation::NOT_SET};
+  bool m_contentShareLayoutHasBeenSet = false;
+  bool m_presenterOnlyConfigurationHasBeenSet = false;
+  bool m_activeSpeakerOnlyConfigurationHasBeenSet = false;
+  bool m_horizontalLayoutConfigurationHasBeenSet = false;
+  bool m_verticalLayoutConfigurationHasBeenSet = false;
+  bool m_videoAttributeHasBeenSet = false;
   bool m_canvasOrientationHasBeenSet = false;
 };
 

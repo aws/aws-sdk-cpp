@@ -79,9 +79,9 @@ class PolicyRole {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::String m_roleId;
+  bool m_roleNameHasBeenSet = false;
   bool m_roleIdHasBeenSet = false;
 };
 

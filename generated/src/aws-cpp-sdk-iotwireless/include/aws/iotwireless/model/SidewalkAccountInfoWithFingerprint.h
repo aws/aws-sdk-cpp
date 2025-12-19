@@ -86,12 +86,12 @@ class SidewalkAccountInfoWithFingerprint {
   ///@}
  private:
   Aws::String m_amazonId;
-  bool m_amazonIdHasBeenSet = false;
 
   Aws::String m_fingerprint;
-  bool m_fingerprintHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_amazonIdHasBeenSet = false;
+  bool m_fingerprintHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class InvoiceCurrencyAmount {
   ///@}
  private:
   Aws::String m_totalAmount;
-  bool m_totalAmountHasBeenSet = false;
 
   Aws::String m_totalAmountBeforeTax;
-  bool m_totalAmountBeforeTaxHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   AmountBreakdown m_amountBreakdown;
-  bool m_amountBreakdownHasBeenSet = false;
 
   CurrencyExchangeDetails m_currencyExchangeDetails;
+  bool m_totalAmountHasBeenSet = false;
+  bool m_totalAmountBeforeTaxHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_amountBreakdownHasBeenSet = false;
   bool m_currencyExchangeDetailsHasBeenSet = false;
 };
 

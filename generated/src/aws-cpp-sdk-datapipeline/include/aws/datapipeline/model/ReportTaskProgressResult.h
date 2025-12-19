@@ -63,9 +63,9 @@ class ReportTaskProgressResult {
   ///@}
  private:
   bool m_canceled{false};
-  bool m_canceledHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_canceledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -133,18 +133,18 @@ class RuleSummary {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RetentionPeriod m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   LockState m_lockState{LockState::NOT_SET};
-  bool m_lockStateHasBeenSet = false;
 
   Aws::String m_ruleArn;
+  bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
+  bool m_lockStateHasBeenSet = false;
   bool m_ruleArnHasBeenSet = false;
 };
 

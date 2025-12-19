@@ -88,6 +88,7 @@
 #include <aws/bedrock/model/AutomatedReasoningPolicyMutation.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyPlanning.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyScenario.h>
+#include <aws/bedrock/model/AutomatedReasoningPolicyScenarios.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicySummary.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyTestCase.h>
 #include <aws/bedrock/model/AutomatedReasoningPolicyTestResult.h>

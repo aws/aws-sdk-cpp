@@ -85,12 +85,12 @@ class ListNotificationEventsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<NotificationEventOverview> m_notificationEvents;
-  bool m_notificationEventsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_notificationEventsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

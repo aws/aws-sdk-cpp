@@ -83,12 +83,12 @@ class SearchAvailablePhoneNumbersResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_e164PhoneNumbers;
-  bool m_e164PhoneNumbersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_e164PhoneNumbersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

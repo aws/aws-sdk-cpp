@@ -90,12 +90,12 @@ class NodeAdditionResult {
   ///@}
  private:
   Aws::String m_nodeLogicalId;
-  bool m_nodeLogicalIdHasBeenSet = false;
 
   Aws::String m_instanceGroupName;
-  bool m_instanceGroupNameHasBeenSet = false;
 
   ClusterInstanceStatus m_status{ClusterInstanceStatus::NOT_SET};
+  bool m_nodeLogicalIdHasBeenSet = false;
+  bool m_instanceGroupNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -95,15 +95,15 @@ class Radios {
   ///@}
  private:
   bool m_wifi{false};
-  bool m_wifiHasBeenSet = false;
 
   bool m_bluetooth{false};
-  bool m_bluetoothHasBeenSet = false;
 
   bool m_nfc{false};
-  bool m_nfcHasBeenSet = false;
 
   bool m_gps{false};
+  bool m_wifiHasBeenSet = false;
+  bool m_bluetoothHasBeenSet = false;
+  bool m_nfcHasBeenSet = false;
   bool m_gpsHasBeenSet = false;
 };
 

@@ -161,24 +161,24 @@ class AutomatedReasoningPolicyTestCase {
   ///@}
  private:
   Aws::String m_testCaseId;
-  bool m_testCaseIdHasBeenSet = false;
 
   Aws::String m_guardContent;
-  bool m_guardContentHasBeenSet = false;
 
   Aws::String m_queryContent;
-  bool m_queryContentHasBeenSet = false;
 
   AutomatedReasoningCheckResult m_expectedAggregatedFindingsResult{AutomatedReasoningCheckResult::NOT_SET};
-  bool m_expectedAggregatedFindingsResultHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   double m_confidenceThreshold{0.0};
+  bool m_testCaseIdHasBeenSet = false;
+  bool m_guardContentHasBeenSet = false;
+  bool m_queryContentHasBeenSet = false;
+  bool m_expectedAggregatedFindingsResultHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_confidenceThresholdHasBeenSet = false;
 };
 

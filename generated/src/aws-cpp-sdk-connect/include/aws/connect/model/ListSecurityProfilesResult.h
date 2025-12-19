@@ -85,12 +85,12 @@ class ListSecurityProfilesResult {
   ///@}
  private:
   Aws::Vector<SecurityProfileSummary> m_securityProfileSummaryList;
-  bool m_securityProfileSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityProfileSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

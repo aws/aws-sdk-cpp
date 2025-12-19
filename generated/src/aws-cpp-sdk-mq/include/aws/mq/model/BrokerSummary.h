@@ -177,27 +177,27 @@ class BrokerSummary {
   ///@}
  private:
   Aws::String m_brokerArn;
-  bool m_brokerArnHasBeenSet = false;
 
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   Aws::String m_brokerName;
-  bool m_brokerNameHasBeenSet = false;
 
   BrokerState m_brokerState{BrokerState::NOT_SET};
-  bool m_brokerStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
-  bool m_deploymentModeHasBeenSet = false;
 
   EngineType m_engineType{EngineType::NOT_SET};
-  bool m_engineTypeHasBeenSet = false;
 
   Aws::String m_hostInstanceType;
+  bool m_brokerArnHasBeenSet = false;
+  bool m_brokerIdHasBeenSet = false;
+  bool m_brokerNameHasBeenSet = false;
+  bool m_brokerStateHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_deploymentModeHasBeenSet = false;
+  bool m_engineTypeHasBeenSet = false;
   bool m_hostInstanceTypeHasBeenSet = false;
 };
 

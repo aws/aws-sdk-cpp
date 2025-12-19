@@ -121,18 +121,18 @@ class ListPricingPlansAssociatedWithPricingRuleResult {
   ///@}
  private:
   Aws::String m_billingPeriod;
-  bool m_billingPeriodHasBeenSet = false;
 
   Aws::String m_pricingRuleArn;
-  bool m_pricingRuleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pricingPlanArns;
-  bool m_pricingPlanArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingPeriodHasBeenSet = false;
+  bool m_pricingRuleArnHasBeenSet = false;
+  bool m_pricingPlanArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

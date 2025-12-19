@@ -106,15 +106,15 @@ class UpdateSpendingLimitRequest : public BraketRequest {
   ///@}
  private:
   Aws::String m_spendingLimitArn;
-  bool m_spendingLimitArnHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_spendingLimit;
-  bool m_spendingLimitHasBeenSet = false;
 
   TimePeriod m_timePeriod;
+  bool m_spendingLimitArnHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_spendingLimitHasBeenSet = false;
   bool m_timePeriodHasBeenSet = false;
 };
 

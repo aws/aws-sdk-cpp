@@ -99,12 +99,12 @@ class UpdatePolicyRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   UpdatePolicyDefinition m_definition;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_policyIdHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

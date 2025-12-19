@@ -248,33 +248,33 @@ class CreateStateMachineRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   StateMachineType m_type{StateMachineType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TracingConfiguration m_tracingConfiguration;
-  bool m_tracingConfigurationHasBeenSet = false;
 
   bool m_publish{false};
-  bool m_publishHasBeenSet = false;
 
   Aws::String m_versionDescription;
-  bool m_versionDescriptionHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_tracingConfigurationHasBeenSet = false;
+  bool m_publishHasBeenSet = false;
+  bool m_versionDescriptionHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

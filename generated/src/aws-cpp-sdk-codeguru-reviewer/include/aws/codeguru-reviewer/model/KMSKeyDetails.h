@@ -75,9 +75,9 @@ class KMSKeyDetails {
   ///@}
  private:
   Aws::String m_kMSKeyId;
-  bool m_kMSKeyIdHasBeenSet = false;
 
   EncryptionOption m_encryptionOption{EncryptionOption::NOT_SET};
+  bool m_kMSKeyIdHasBeenSet = false;
   bool m_encryptionOptionHasBeenSet = false;
 };
 

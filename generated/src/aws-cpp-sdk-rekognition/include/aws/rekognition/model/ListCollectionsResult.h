@@ -111,15 +111,15 @@ class ListCollectionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_collectionIds;
-  bool m_collectionIdsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_faceModelVersions;
-  bool m_faceModelVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collectionIdsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_faceModelVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class GetProposalRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_proposalId;
+  bool m_networkIdHasBeenSet = false;
   bool m_proposalIdHasBeenSet = false;
 };
 

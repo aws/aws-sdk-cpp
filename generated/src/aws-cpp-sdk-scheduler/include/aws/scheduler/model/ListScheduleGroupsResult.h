@@ -85,12 +85,12 @@ class ListScheduleGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ScheduleGroupSummary> m_scheduleGroups;
-  bool m_scheduleGroupsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_scheduleGroupsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class OrchestrationAIAgentConfiguration {
   ///@}
  private:
   Aws::String m_orchestrationAIPromptId;
-  bool m_orchestrationAIPromptIdHasBeenSet = false;
 
   Aws::String m_orchestrationAIGuardrailId;
-  bool m_orchestrationAIGuardrailIdHasBeenSet = false;
 
   Aws::Vector<ToolConfiguration> m_toolConfigurations;
-  bool m_toolConfigurationsHasBeenSet = false;
 
   Aws::String m_connectInstanceArn;
-  bool m_connectInstanceArnHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_orchestrationAIPromptIdHasBeenSet = false;
+  bool m_orchestrationAIGuardrailIdHasBeenSet = false;
+  bool m_toolConfigurationsHasBeenSet = false;
+  bool m_connectInstanceArnHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

@@ -3,155 +3,225 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
 
+#include <utility>
+
 using namespace Aws::CloudWatch::Model;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PutMetricAlarmRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=PutMetricAlarm&";
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_alarmNameHasBeenSet) {
-    ss << "AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+    mapSize++;
+  }
+  if (m_alarmDescriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_actionsEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_oKActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_alarmActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_insufficientDataActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_metricNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_namespaceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statisticHasBeenSet) {
+    mapSize++;
+  }
+  if (m_extendedStatisticHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dimensionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_periodHasBeenSet) {
+    mapSize++;
+  }
+  if (m_unitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_evaluationPeriodsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_datapointsToAlarmHasBeenSet) {
+    mapSize++;
+  }
+  if (m_thresholdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_comparisonOperatorHasBeenSet) {
+    mapSize++;
+  }
+  if (m_treatMissingDataHasBeenSet) {
+    mapSize++;
+  }
+  if (m_evaluateLowSampleCountPercentileHasBeenSet) {
+    mapSize++;
+  }
+  if (m_metricsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_thresholdMetricIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_alarmNameHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alarmName.c_str()));
   }
 
   if (m_alarmDescriptionHasBeenSet) {
-    ss << "AlarmDescription=" << StringUtils::URLEncode(m_alarmDescription.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmDescription"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alarmDescription.c_str()));
   }
 
   if (m_actionsEnabledHasBeenSet) {
-    ss << "ActionsEnabled=" << std::boolalpha << m_actionsEnabled << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionsEnabled"));
+    encoder.WriteBool(m_actionsEnabled);
   }
 
   if (m_oKActionsHasBeenSet) {
-    if (m_oKActions.empty()) {
-      ss << "OKActions=&";
-    } else {
-      unsigned oKActionsCount = 1;
-      for (auto& item : m_oKActions) {
-        ss << "OKActions.member." << oKActionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        oKActionsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OKActions"));
+    encoder.WriteArrayStart(m_oKActions.size());
+    for (const auto& item_0 : m_oKActions) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }
 
   if (m_alarmActionsHasBeenSet) {
-    if (m_alarmActions.empty()) {
-      ss << "AlarmActions=&";
-    } else {
-      unsigned alarmActionsCount = 1;
-      for (auto& item : m_alarmActions) {
-        ss << "AlarmActions.member." << alarmActionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        alarmActionsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AlarmActions"));
+    encoder.WriteArrayStart(m_alarmActions.size());
+    for (const auto& item_0 : m_alarmActions) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }
 
   if (m_insufficientDataActionsHasBeenSet) {
-    if (m_insufficientDataActions.empty()) {
-      ss << "InsufficientDataActions=&";
-    } else {
-      unsigned insufficientDataActionsCount = 1;
-      for (auto& item : m_insufficientDataActions) {
-        ss << "InsufficientDataActions.member." << insufficientDataActionsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-        insufficientDataActionsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InsufficientDataActions"));
+    encoder.WriteArrayStart(m_insufficientDataActions.size());
+    for (const auto& item_0 : m_insufficientDataActions) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
   }
 
   if (m_metricNameHasBeenSet) {
-    ss << "MetricName=" << StringUtils::URLEncode(m_metricName.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_metricName.c_str()));
   }
 
   if (m_namespaceHasBeenSet) {
-    ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Namespace"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_namespace.c_str()));
   }
 
   if (m_statisticHasBeenSet) {
-    ss << "Statistic=" << StringUtils::URLEncode(StatisticMapper::GetNameForStatistic(m_statistic)) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Statistic"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StatisticMapper::GetNameForStatistic(m_statistic).c_str()));
   }
 
   if (m_extendedStatisticHasBeenSet) {
-    ss << "ExtendedStatistic=" << StringUtils::URLEncode(m_extendedStatistic.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ExtendedStatistic"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_extendedStatistic.c_str()));
   }
 
   if (m_dimensionsHasBeenSet) {
-    if (m_dimensions.empty()) {
-      ss << "Dimensions=&";
-    } else {
-      unsigned dimensionsCount = 1;
-      for (auto& item : m_dimensions) {
-        item.OutputToStream(ss, "Dimensions.member.", dimensionsCount, "");
-        dimensionsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Dimensions"));
+    encoder.WriteArrayStart(m_dimensions.size());
+    for (const auto& item_0 : m_dimensions) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_periodHasBeenSet) {
-    ss << "Period=" << m_period << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Period"));
+    (m_period >= 0) ? encoder.WriteUInt(m_period) : encoder.WriteNegInt(m_period);
   }
 
   if (m_unitHasBeenSet) {
-    ss << "Unit=" << StringUtils::URLEncode(StandardUnitMapper::GetNameForStandardUnit(m_unit)) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Unit"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StandardUnitMapper::GetNameForStandardUnit(m_unit).c_str()));
   }
 
   if (m_evaluationPeriodsHasBeenSet) {
-    ss << "EvaluationPeriods=" << m_evaluationPeriods << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationPeriods"));
+    (m_evaluationPeriods >= 0) ? encoder.WriteUInt(m_evaluationPeriods) : encoder.WriteNegInt(m_evaluationPeriods);
   }
 
   if (m_datapointsToAlarmHasBeenSet) {
-    ss << "DatapointsToAlarm=" << m_datapointsToAlarm << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DatapointsToAlarm"));
+    (m_datapointsToAlarm >= 0) ? encoder.WriteUInt(m_datapointsToAlarm) : encoder.WriteNegInt(m_datapointsToAlarm);
   }
 
   if (m_thresholdHasBeenSet) {
-    ss << "Threshold=" << StringUtils::URLEncode(m_threshold) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Threshold"));
+    encoder.WriteFloat(m_threshold);
   }
 
   if (m_comparisonOperatorHasBeenSet) {
-    ss << "ComparisonOperator=" << StringUtils::URLEncode(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator))
-       << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ComparisonOperator"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator).c_str()));
   }
 
   if (m_treatMissingDataHasBeenSet) {
-    ss << "TreatMissingData=" << StringUtils::URLEncode(m_treatMissingData.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TreatMissingData"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_treatMissingData.c_str()));
   }
 
   if (m_evaluateLowSampleCountPercentileHasBeenSet) {
-    ss << "EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluateLowSampleCountPercentile"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_evaluateLowSampleCountPercentile.c_str()));
   }
 
   if (m_metricsHasBeenSet) {
-    if (m_metrics.empty()) {
-      ss << "Metrics=&";
-    } else {
-      unsigned metricsCount = 1;
-      for (auto& item : m_metrics) {
-        item.OutputToStream(ss, "Metrics.member.", metricsCount, "");
-        metricsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Metrics"));
+    encoder.WriteArrayStart(m_metrics.size());
+    for (const auto& item_0 : m_metrics) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_tagsHasBeenSet) {
-    if (m_tags.empty()) {
-      ss << "Tags=&";
-    } else {
-      unsigned tagsCount = 1;
-      for (auto& item : m_tags) {
-        item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-        tagsCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_thresholdMetricIdHasBeenSet) {
-    ss << "ThresholdMetricId=" << StringUtils::URLEncode(m_thresholdMetricId.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ThresholdMetricId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_thresholdMetricId.c_str()));
   }
-
-  ss << "Version=2010-08-01";
-  return ss.str();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
-void PutMetricAlarmRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+Aws::Http::HeaderValueCollection PutMetricAlarmRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  return headers;
+}

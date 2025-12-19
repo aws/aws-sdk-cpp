@@ -107,15 +107,15 @@ class ListGroupingStatusesResult {
   ///@}
  private:
   Aws::String m_group;
-  bool m_groupHasBeenSet = false;
 
   Aws::Vector<GroupingStatusesItem> m_groupingStatuses;
-  bool m_groupingStatusesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_groupHasBeenSet = false;
+  bool m_groupingStatusesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

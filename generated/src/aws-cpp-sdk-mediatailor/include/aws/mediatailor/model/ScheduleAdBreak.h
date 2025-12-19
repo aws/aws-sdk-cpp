@@ -104,15 +104,15 @@ class ScheduleAdBreak {
   ///@}
  private:
   long long m_approximateDurationSeconds{0};
-  bool m_approximateDurationSecondsHasBeenSet = false;
 
   Aws::Utils::DateTime m_approximateStartTime{};
-  bool m_approximateStartTimeHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::String m_vodSourceName;
+  bool m_approximateDurationSecondsHasBeenSet = false;
+  bool m_approximateStartTimeHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
   bool m_vodSourceNameHasBeenSet = false;
 };
 

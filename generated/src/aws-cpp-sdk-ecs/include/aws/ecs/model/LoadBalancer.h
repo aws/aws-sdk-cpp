@@ -157,18 +157,18 @@ class LoadBalancer {
   ///@}
  private:
   Aws::String m_targetGroupArn;
-  bool m_targetGroupArnHasBeenSet = false;
 
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   int m_containerPort{0};
-  bool m_containerPortHasBeenSet = false;
 
   AdvancedConfiguration m_advancedConfiguration;
+  bool m_targetGroupArnHasBeenSet = false;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_containerNameHasBeenSet = false;
+  bool m_containerPortHasBeenSet = false;
   bool m_advancedConfigurationHasBeenSet = false;
 };
 

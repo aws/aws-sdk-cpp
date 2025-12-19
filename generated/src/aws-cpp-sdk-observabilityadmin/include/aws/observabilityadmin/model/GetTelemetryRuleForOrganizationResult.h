@@ -125,21 +125,21 @@ class GetTelemetryRuleForOrganizationResult {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   long long m_createdTimeStamp{0};
-  bool m_createdTimeStampHasBeenSet = false;
 
   long long m_lastUpdateTimeStamp{0};
-  bool m_lastUpdateTimeStampHasBeenSet = false;
 
   TelemetryRule m_telemetryRule;
-  bool m_telemetryRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_createdTimeStampHasBeenSet = false;
+  bool m_lastUpdateTimeStampHasBeenSet = false;
+  bool m_telemetryRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

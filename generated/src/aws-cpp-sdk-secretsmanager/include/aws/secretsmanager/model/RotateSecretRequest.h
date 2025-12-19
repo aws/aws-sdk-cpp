@@ -220,24 +220,24 @@ class RotateSecretRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_rotationLambdaARN;
-  bool m_rotationLambdaARNHasBeenSet = false;
 
   RotationRulesType m_rotationRules;
-  bool m_rotationRulesHasBeenSet = false;
 
   Aws::Vector<ExternalSecretRotationMetadataItem> m_externalSecretRotationMetadata;
-  bool m_externalSecretRotationMetadataHasBeenSet = false;
 
   Aws::String m_externalSecretRotationRoleArn;
-  bool m_externalSecretRotationRoleArnHasBeenSet = false;
 
   bool m_rotateImmediately{false};
+  bool m_secretIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_rotationLambdaARNHasBeenSet = false;
+  bool m_rotationRulesHasBeenSet = false;
+  bool m_externalSecretRotationMetadataHasBeenSet = false;
+  bool m_externalSecretRotationRoleArnHasBeenSet = false;
   bool m_rotateImmediatelyHasBeenSet = false;
 };
 

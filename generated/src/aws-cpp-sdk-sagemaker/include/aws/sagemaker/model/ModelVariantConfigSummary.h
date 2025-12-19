@@ -115,15 +115,15 @@ class ModelVariantConfigSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   ModelInfrastructureConfig m_infrastructureConfig;
-  bool m_infrastructureConfigHasBeenSet = false;
 
   ModelVariantStatus m_status{ModelVariantStatus::NOT_SET};
+  bool m_modelNameHasBeenSet = false;
+  bool m_variantNameHasBeenSet = false;
+  bool m_infrastructureConfigHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

@@ -113,15 +113,15 @@ class S3ManifestConfig {
   ///@}
  private:
   Aws::String m_manifestObjectPath;
-  bool m_manifestObjectPathHasBeenSet = false;
 
   Aws::String m_bucketAccessRoleArn;
-  bool m_bucketAccessRoleArnHasBeenSet = false;
 
   Aws::String m_s3BucketArn;
-  bool m_s3BucketArnHasBeenSet = false;
 
   Aws::String m_manifestObjectVersionId;
+  bool m_manifestObjectPathHasBeenSet = false;
+  bool m_bucketAccessRoleArnHasBeenSet = false;
+  bool m_s3BucketArnHasBeenSet = false;
   bool m_manifestObjectVersionIdHasBeenSet = false;
 };
 

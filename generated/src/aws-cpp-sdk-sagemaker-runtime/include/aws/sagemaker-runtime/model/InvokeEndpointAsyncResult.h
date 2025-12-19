@@ -95,15 +95,15 @@ class InvokeEndpointAsyncResult {
   ///@}
  private:
   Aws::String m_inferenceId;
-  bool m_inferenceIdHasBeenSet = false;
 
   Aws::String m_outputLocation;
-  bool m_outputLocationHasBeenSet = false;
 
   Aws::String m_failureLocation;
-  bool m_failureLocationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceIdHasBeenSet = false;
+  bool m_outputLocationHasBeenSet = false;
+  bool m_failureLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

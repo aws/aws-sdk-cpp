@@ -60,9 +60,9 @@ class GetAccessKeyInfoResult {
   ///@}
  private:
   Aws::String m_account;
-  bool m_accountHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_accountHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeSchemaResult {
   ///@}
  private:
   DatasetSchema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_schemaHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

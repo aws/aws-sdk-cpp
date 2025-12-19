@@ -124,18 +124,18 @@ class User {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_credentialUid;
-  bool m_credentialUidHasBeenSet = false;
 
   Account m_account;
+  bool m_nameHasBeenSet = false;
+  bool m_uidHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_credentialUidHasBeenSet = false;
   bool m_accountHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListLicenseAssetGroupsResult {
   ///@}
  private:
   Aws::Vector<LicenseAssetGroup> m_licenseAssetGroups;
-  bool m_licenseAssetGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseAssetGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

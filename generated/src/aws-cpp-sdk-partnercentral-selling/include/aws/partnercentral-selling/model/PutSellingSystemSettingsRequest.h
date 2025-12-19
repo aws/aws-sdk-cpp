@@ -70,9 +70,9 @@ class PutSellingSystemSettingsRequest : public PartnerCentralSellingRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_resourceSnapshotJobRoleIdentifier;
+  bool m_catalogHasBeenSet = false;
   bool m_resourceSnapshotJobRoleIdentifierHasBeenSet = false;
 };
 

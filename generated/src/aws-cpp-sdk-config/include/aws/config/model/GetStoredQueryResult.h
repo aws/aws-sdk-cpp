@@ -60,9 +60,9 @@ class GetStoredQueryResult {
   ///@}
  private:
   StoredQuery m_storedQuery;
-  bool m_storedQueryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storedQueryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

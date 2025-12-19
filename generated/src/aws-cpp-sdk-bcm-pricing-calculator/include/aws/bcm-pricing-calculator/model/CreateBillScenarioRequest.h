@@ -131,18 +131,18 @@ class CreateBillScenarioRequest : public BCMPricingCalculatorRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
-  bool m_groupSharingPreferenceHasBeenSet = false;
 
   Aws::String m_costCategoryGroupSharingPreferenceArn;
+  bool m_nameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
+  bool m_groupSharingPreferenceHasBeenSet = false;
   bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
 };
 

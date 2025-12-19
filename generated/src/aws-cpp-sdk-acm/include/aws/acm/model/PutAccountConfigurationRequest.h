@@ -73,9 +73,9 @@ class PutAccountConfigurationRequest : public ACMRequest {
   ///@}
  private:
   ExpiryEventsConfiguration m_expiryEvents;
-  bool m_expiryEventsHasBeenSet = false;
 
   Aws::String m_idempotencyToken;
+  bool m_expiryEventsHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = false;
 };
 

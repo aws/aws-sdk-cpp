@@ -93,12 +93,12 @@ class ListPolicyVersionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PolicyVersionSummary> m_policyVersions;
-  bool m_policyVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_policyVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

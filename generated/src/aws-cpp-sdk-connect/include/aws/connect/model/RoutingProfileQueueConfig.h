@@ -89,12 +89,12 @@ class RoutingProfileQueueConfig {
   ///@}
  private:
   RoutingProfileQueueReference m_queueReference;
-  bool m_queueReferenceHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   int m_delay{0};
+  bool m_queueReferenceHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
   bool m_delayHasBeenSet = false;
 };
 

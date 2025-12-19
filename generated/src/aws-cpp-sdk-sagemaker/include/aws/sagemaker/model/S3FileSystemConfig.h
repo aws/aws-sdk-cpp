@@ -70,9 +70,9 @@ class S3FileSystemConfig {
   ///@}
  private:
   Aws::String m_mountPath;
-  bool m_mountPathHasBeenSet = false;
 
   Aws::String m_s3Uri;
+  bool m_mountPathHasBeenSet = false;
   bool m_s3UriHasBeenSet = false;
 };
 

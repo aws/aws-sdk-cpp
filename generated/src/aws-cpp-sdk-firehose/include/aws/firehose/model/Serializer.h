@@ -76,9 +76,9 @@ class Serializer {
   ///@}
  private:
   ParquetSerDe m_parquetSerDe;
-  bool m_parquetSerDeHasBeenSet = false;
 
   OrcSerDe m_orcSerDe;
+  bool m_parquetSerDeHasBeenSet = false;
   bool m_orcSerDeHasBeenSet = false;
 };
 

@@ -185,27 +185,27 @@ class ServiceSpecificCredentialMetadata {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_serviceUserName;
-  bool m_serviceUserNameHasBeenSet = false;
 
   Aws::String m_serviceCredentialAlias;
-  bool m_serviceCredentialAliasHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
-  bool m_expirationDateHasBeenSet = false;
 
   Aws::String m_serviceSpecificCredentialId;
-  bool m_serviceSpecificCredentialIdHasBeenSet = false;
 
   Aws::String m_serviceName;
+  bool m_userNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_serviceUserNameHasBeenSet = false;
+  bool m_serviceCredentialAliasHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_expirationDateHasBeenSet = false;
+  bool m_serviceSpecificCredentialIdHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

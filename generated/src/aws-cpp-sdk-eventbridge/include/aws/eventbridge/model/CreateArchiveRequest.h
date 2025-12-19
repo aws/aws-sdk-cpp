@@ -151,21 +151,21 @@ class CreateArchiveRequest : public EventBridgeRequest {
   ///@}
  private:
   Aws::String m_archiveName;
-  bool m_archiveNameHasBeenSet = false;
 
   Aws::String m_eventSourceArn;
-  bool m_eventSourceArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_eventPattern;
-  bool m_eventPatternHasBeenSet = false;
 
   int m_retentionDays{0};
-  bool m_retentionDaysHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
+  bool m_archiveNameHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventPatternHasBeenSet = false;
+  bool m_retentionDaysHasBeenSet = false;
   bool m_kmsKeyIdentifierHasBeenSet = false;
 };
 

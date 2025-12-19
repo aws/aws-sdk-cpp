@@ -157,24 +157,24 @@ class RuleConfigurationProperty {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   bool m_key{false};
-  bool m_keyHasBeenSet = false;
 
   bool m_secret{false};
-  bool m_secretHasBeenSet = false;
 
   bool m_queryable{false};
-  bool m_queryableHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleConfigurationPropertyType m_type{RuleConfigurationPropertyType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_secretHasBeenSet = false;
+  bool m_queryableHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

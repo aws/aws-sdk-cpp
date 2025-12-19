@@ -102,15 +102,15 @@ class CreateSecurityGroupResponse {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_securityGroupArn;
-  bool m_securityGroupArnHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_groupIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_securityGroupArnHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

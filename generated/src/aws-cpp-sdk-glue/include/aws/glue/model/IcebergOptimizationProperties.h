@@ -132,15 +132,15 @@ class IcebergOptimizationProperties {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_compaction;
-  bool m_compactionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_retention;
-  bool m_retentionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_orphanFileDeletion;
+  bool m_roleArnHasBeenSet = false;
+  bool m_compactionHasBeenSet = false;
+  bool m_retentionHasBeenSet = false;
   bool m_orphanFileDeletionHasBeenSet = false;
 };
 

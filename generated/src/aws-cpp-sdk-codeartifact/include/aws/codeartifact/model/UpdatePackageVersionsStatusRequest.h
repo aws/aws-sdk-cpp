@@ -241,33 +241,33 @@ class UpdatePackageVersionsStatusRequest : public CodeArtifactRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainOwner;
-  bool m_domainOwnerHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_versionRevisions;
-  bool m_versionRevisionsHasBeenSet = false;
 
   PackageVersionStatus m_expectedStatus{PackageVersionStatus::NOT_SET};
-  bool m_expectedStatusHasBeenSet = false;
 
   PackageVersionStatus m_targetStatus{PackageVersionStatus::NOT_SET};
+  bool m_domainHasBeenSet = false;
+  bool m_domainOwnerHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
+  bool m_versionRevisionsHasBeenSet = false;
+  bool m_expectedStatusHasBeenSet = false;
   bool m_targetStatusHasBeenSet = false;
 };
 

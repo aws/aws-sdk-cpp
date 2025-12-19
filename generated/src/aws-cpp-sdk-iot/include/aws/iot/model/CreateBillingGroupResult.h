@@ -93,15 +93,15 @@ class CreateBillingGroupResult {
   ///@}
  private:
   Aws::String m_billingGroupName;
-  bool m_billingGroupNameHasBeenSet = false;
 
   Aws::String m_billingGroupArn;
-  bool m_billingGroupArnHasBeenSet = false;
 
   Aws::String m_billingGroupId;
-  bool m_billingGroupIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_billingGroupNameHasBeenSet = false;
+  bool m_billingGroupArnHasBeenSet = false;
+  bool m_billingGroupIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

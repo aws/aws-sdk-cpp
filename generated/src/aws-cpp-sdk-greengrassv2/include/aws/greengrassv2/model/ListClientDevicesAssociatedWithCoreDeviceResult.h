@@ -88,12 +88,12 @@ class ListClientDevicesAssociatedWithCoreDeviceResult {
   ///@}
  private:
   Aws::Vector<AssociatedClientDevice> m_associatedClientDevices;
-  bool m_associatedClientDevicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associatedClientDevicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class GetVerifiedAccessGroupPolicyRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_verifiedAccessGroupId;
-  bool m_verifiedAccessGroupIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_verifiedAccessGroupIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class DeleteGrantRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_grantArn;
-  bool m_grantArnHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_grantArnHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

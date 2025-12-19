@@ -93,9 +93,9 @@ class ComponentConfigurationUpdate {
   ///@}
  private:
   Aws::String m_merge;
-  bool m_mergeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reset;
+  bool m_mergeHasBeenSet = false;
   bool m_resetHasBeenSet = false;
 };
 

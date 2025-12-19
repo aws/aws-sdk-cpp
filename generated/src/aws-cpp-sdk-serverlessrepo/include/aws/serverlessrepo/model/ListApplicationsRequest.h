@@ -68,9 +68,9 @@ class ListApplicationsRequest : public ServerlessApplicationRepositoryRequest {
   ///@}
  private:
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_maxItemsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

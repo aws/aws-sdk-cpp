@@ -84,12 +84,12 @@ class ListMLInputChannelsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MLInputChannelSummary> m_mlInputChannelsList;
-  bool m_mlInputChannelsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_mlInputChannelsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

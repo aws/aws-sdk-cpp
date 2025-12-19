@@ -72,9 +72,9 @@ class DescribedConnectorVpcLatticeEgressConfig {
   ///@}
  private:
   Aws::String m_resourceConfigurationArn;
-  bool m_resourceConfigurationArnHasBeenSet = false;
 
   int m_portNumber{0};
+  bool m_resourceConfigurationArnHasBeenSet = false;
   bool m_portNumberHasBeenSet = false;
 };
 

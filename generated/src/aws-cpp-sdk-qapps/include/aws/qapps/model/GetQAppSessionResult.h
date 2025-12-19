@@ -180,30 +180,30 @@ class GetQAppSessionResult {
   ///@}
  private:
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_sessionArn;
-  bool m_sessionArnHasBeenSet = false;
 
   Aws::String m_sessionName;
-  bool m_sessionNameHasBeenSet = false;
 
   int m_appVersion{0};
-  bool m_appVersionHasBeenSet = false;
 
   int m_latestPublishedAppVersion{0};
-  bool m_latestPublishedAppVersionHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, CardStatus> m_cardStatus;
-  bool m_cardStatusHasBeenSet = false;
 
   bool m_userIsHost{false};
-  bool m_userIsHostHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_sessionArnHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_latestPublishedAppVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_cardStatusHasBeenSet = false;
+  bool m_userIsHostHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/CapacityOptionType.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
 #include <aws/ecs/model/ManagedInstancesMonitoringOptions.h>
 #include <aws/ecs/model/ManagedInstancesNetworkConfiguration.h>
@@ -127,6 +128,32 @@ class InstanceLaunchTemplate {
 
   ///@{
   /**
+   * <p>The capacity option type. This determines whether Amazon ECS launches
+   * On-Demand or Spot Instances for your managed instance capacity provider.</p>
+   * <p>Valid values are:</p> <ul> <li> <p> <code>ON_DEMAND</code> - Launches
+   * standard On-Demand Instances. On-Demand Instances provide predictable pricing
+   * and availability.</p> </li> <li> <p> <code>SPOT</code> - Launches Spot Instances
+   * that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be
+   * interrupted by Amazon EC2 with a two-minute notification when the capacity is
+   * needed back.</p> </li> </ul> <p>The default is On-Demand</p> <p>For more
+   * information about Amazon EC2 capacity options, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance
+   * purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   */
+  inline CapacityOptionType GetCapacityOptionType() const { return m_capacityOptionType; }
+  inline bool CapacityOptionTypeHasBeenSet() const { return m_capacityOptionTypeHasBeenSet; }
+  inline void SetCapacityOptionType(CapacityOptionType value) {
+    m_capacityOptionTypeHasBeenSet = true;
+    m_capacityOptionType = value;
+  }
+  inline InstanceLaunchTemplate& WithCapacityOptionType(CapacityOptionType value) {
+    SetCapacityOptionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The instance requirements. You can specify:</p> <ul> <li> <p>The instance
    * types</p> </li> <li> <p>Instance requirements such as vCPU count, memory,
    * network performance, and accelerator specifications</p> </li> </ul> <p>Amazon
@@ -147,18 +174,21 @@ class InstanceLaunchTemplate {
   ///@}
  private:
   Aws::String m_ec2InstanceProfileArn;
-  bool m_ec2InstanceProfileArnHasBeenSet = false;
 
   ManagedInstancesNetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   ManagedInstancesStorageConfiguration m_storageConfiguration;
-  bool m_storageConfigurationHasBeenSet = false;
 
   ManagedInstancesMonitoringOptions m_monitoring{ManagedInstancesMonitoringOptions::NOT_SET};
-  bool m_monitoringHasBeenSet = false;
+
+  CapacityOptionType m_capacityOptionType{CapacityOptionType::NOT_SET};
 
   InstanceRequirementsRequest m_instanceRequirements;
+  bool m_ec2InstanceProfileArnHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_storageConfigurationHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_capacityOptionTypeHasBeenSet = false;
   bool m_instanceRequirementsHasBeenSet = false;
 };
 

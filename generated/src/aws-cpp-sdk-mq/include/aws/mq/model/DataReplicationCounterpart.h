@@ -68,9 +68,9 @@ class DataReplicationCounterpart {
   ///@}
  private:
   Aws::String m_brokerId;
-  bool m_brokerIdHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_brokerIdHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

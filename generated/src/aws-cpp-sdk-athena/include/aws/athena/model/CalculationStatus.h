@@ -116,15 +116,15 @@ class CalculationStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_submissionDateTime{};
-  bool m_submissionDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDateTime{};
-  bool m_completionDateTimeHasBeenSet = false;
 
   CalculationExecutionState m_state{CalculationExecutionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateChangeReason;
+  bool m_submissionDateTimeHasBeenSet = false;
+  bool m_completionDateTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_stateChangeReasonHasBeenSet = false;
 };
 

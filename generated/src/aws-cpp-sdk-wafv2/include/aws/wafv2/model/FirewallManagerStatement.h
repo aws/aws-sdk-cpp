@@ -75,9 +75,9 @@ class FirewallManagerStatement {
   ///@}
  private:
   ManagedRuleGroupStatement m_managedRuleGroupStatement;
-  bool m_managedRuleGroupStatementHasBeenSet = false;
 
   RuleGroupReferenceStatement m_ruleGroupReferenceStatement;
+  bool m_managedRuleGroupStatementHasBeenSet = false;
   bool m_ruleGroupReferenceStatementHasBeenSet = false;
 };
 

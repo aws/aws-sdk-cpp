@@ -91,12 +91,12 @@ class GetReservedNodeExchangeOfferingsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<ReservedNodeOffering> m_reservedNodeOfferings;
-  bool m_reservedNodeOfferingsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_reservedNodeOfferingsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -80,12 +80,12 @@ class ImportVmImageResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

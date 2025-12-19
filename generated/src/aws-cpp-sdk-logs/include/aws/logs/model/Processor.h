@@ -519,72 +519,72 @@ class Processor {
   ///@}
  private:
   AddKeys m_addKeys;
-  bool m_addKeysHasBeenSet = false;
 
   CopyValue m_copyValue;
-  bool m_copyValueHasBeenSet = false;
 
   CSV m_csv;
-  bool m_csvHasBeenSet = false;
 
   DateTimeConverter m_dateTimeConverter;
-  bool m_dateTimeConverterHasBeenSet = false;
 
   DeleteKeys m_deleteKeys;
-  bool m_deleteKeysHasBeenSet = false;
 
   Grok m_grok;
-  bool m_grokHasBeenSet = false;
 
   ListToMap m_listToMap;
-  bool m_listToMapHasBeenSet = false;
 
   LowerCaseString m_lowerCaseString;
-  bool m_lowerCaseStringHasBeenSet = false;
 
   MoveKeys m_moveKeys;
-  bool m_moveKeysHasBeenSet = false;
 
   ParseCloudfront m_parseCloudfront;
-  bool m_parseCloudfrontHasBeenSet = false;
 
   ParseJSON m_parseJSON;
-  bool m_parseJSONHasBeenSet = false;
 
   ParseKeyValue m_parseKeyValue;
-  bool m_parseKeyValueHasBeenSet = false;
 
   ParseRoute53 m_parseRoute53;
-  bool m_parseRoute53HasBeenSet = false;
 
   ParseToOCSF m_parseToOCSF;
-  bool m_parseToOCSFHasBeenSet = false;
 
   ParsePostgres m_parsePostgres;
-  bool m_parsePostgresHasBeenSet = false;
 
   ParseVPC m_parseVPC;
-  bool m_parseVPCHasBeenSet = false;
 
   ParseWAF m_parseWAF;
-  bool m_parseWAFHasBeenSet = false;
 
   RenameKeys m_renameKeys;
-  bool m_renameKeysHasBeenSet = false;
 
   SplitString m_splitString;
-  bool m_splitStringHasBeenSet = false;
 
   SubstituteString m_substituteString;
-  bool m_substituteStringHasBeenSet = false;
 
   TrimString m_trimString;
-  bool m_trimStringHasBeenSet = false;
 
   TypeConverter m_typeConverter;
-  bool m_typeConverterHasBeenSet = false;
 
   UpperCaseString m_upperCaseString;
+  bool m_addKeysHasBeenSet = false;
+  bool m_copyValueHasBeenSet = false;
+  bool m_csvHasBeenSet = false;
+  bool m_dateTimeConverterHasBeenSet = false;
+  bool m_deleteKeysHasBeenSet = false;
+  bool m_grokHasBeenSet = false;
+  bool m_listToMapHasBeenSet = false;
+  bool m_lowerCaseStringHasBeenSet = false;
+  bool m_moveKeysHasBeenSet = false;
+  bool m_parseCloudfrontHasBeenSet = false;
+  bool m_parseJSONHasBeenSet = false;
+  bool m_parseKeyValueHasBeenSet = false;
+  bool m_parseRoute53HasBeenSet = false;
+  bool m_parseToOCSFHasBeenSet = false;
+  bool m_parsePostgresHasBeenSet = false;
+  bool m_parseVPCHasBeenSet = false;
+  bool m_parseWAFHasBeenSet = false;
+  bool m_renameKeysHasBeenSet = false;
+  bool m_splitStringHasBeenSet = false;
+  bool m_substituteStringHasBeenSet = false;
+  bool m_trimStringHasBeenSet = false;
+  bool m_typeConverterHasBeenSet = false;
   bool m_upperCaseStringHasBeenSet = false;
 };
 

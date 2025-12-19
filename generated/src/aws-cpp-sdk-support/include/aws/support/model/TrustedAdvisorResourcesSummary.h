@@ -99,15 +99,15 @@ class TrustedAdvisorResourcesSummary {
   ///@}
  private:
   long long m_resourcesProcessed{0};
-  bool m_resourcesProcessedHasBeenSet = false;
 
   long long m_resourcesFlagged{0};
-  bool m_resourcesFlaggedHasBeenSet = false;
 
   long long m_resourcesIgnored{0};
-  bool m_resourcesIgnoredHasBeenSet = false;
 
   long long m_resourcesSuppressed{0};
+  bool m_resourcesProcessedHasBeenSet = false;
+  bool m_resourcesFlaggedHasBeenSet = false;
+  bool m_resourcesIgnoredHasBeenSet = false;
   bool m_resourcesSuppressedHasBeenSet = false;
 };
 

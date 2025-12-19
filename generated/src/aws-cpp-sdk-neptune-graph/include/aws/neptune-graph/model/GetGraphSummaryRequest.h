@@ -77,9 +77,9 @@ class GetGraphSummaryRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   GraphSummaryMode m_mode{GraphSummaryMode::NOT_SET};
+  bool m_graphIdentifierHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

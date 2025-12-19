@@ -110,15 +110,15 @@ class ConfirmDeviceRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_deviceKey;
-  bool m_deviceKeyHasBeenSet = false;
 
   DeviceSecretVerifierConfigType m_deviceSecretVerifierConfig;
-  bool m_deviceSecretVerifierConfigHasBeenSet = false;
 
   Aws::String m_deviceName;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_deviceKeyHasBeenSet = false;
+  bool m_deviceSecretVerifierConfigHasBeenSet = false;
   bool m_deviceNameHasBeenSet = false;
 };
 

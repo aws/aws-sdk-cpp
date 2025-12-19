@@ -77,12 +77,12 @@ class UpdateServiceEnvironmentResult {
   ///@}
  private:
   Aws::String m_serviceEnvironmentName;
-  bool m_serviceEnvironmentNameHasBeenSet = false;
 
   Aws::String m_serviceEnvironmentArn;
-  bool m_serviceEnvironmentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceEnvironmentNameHasBeenSet = false;
+  bool m_serviceEnvironmentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

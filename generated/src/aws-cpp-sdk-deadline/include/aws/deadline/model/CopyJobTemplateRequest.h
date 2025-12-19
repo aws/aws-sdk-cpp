@@ -103,15 +103,15 @@ class CopyJobTemplateRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   S3Location m_targetS3Location;
+  bool m_farmIdHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
   bool m_targetS3LocationHasBeenSet = false;
 };
 

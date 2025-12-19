@@ -10,6 +10,7 @@
 #include <aws/service-quotas/model/AppliedLevelEnum.h>
 #include <aws/service-quotas/model/QuotaContextInfo.h>
 #include <aws/service-quotas/model/RequestStatus.h>
+#include <aws/service-quotas/model/RequestType.h>
 
 #include <utility>
 
@@ -49,6 +50,26 @@ class RequestedServiceQuotaChange {
   template <typename IdT = Aws::String>
   RequestedServiceQuotaChange& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of quota increase request. Possible values include:</p> <ul> <li>
+   * <p> <code>AutomaticManagement</code> - The request was automatically created by
+   * Service Quotas Automatic Management when quota utilization approached the
+   * limit.</p> </li> </ul> <p>If this field is not present, the request was manually
+   * created by a user.</p>
+   */
+  inline RequestType GetRequestType() const { return m_requestType; }
+  inline bool RequestTypeHasBeenSet() const { return m_requestTypeHasBeenSet; }
+  inline void SetRequestType(RequestType value) {
+    m_requestTypeHasBeenSet = true;
+    m_requestType = value;
+  }
+  inline RequestedServiceQuotaChange& WithRequestType(RequestType value) {
+    SetRequestType(value);
     return *this;
   }
   ///@}
@@ -337,51 +358,54 @@ class RequestedServiceQuotaChange {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
+
+  RequestType m_requestType{RequestType::NOT_SET};
 
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_quotaName;
-  bool m_quotaNameHasBeenSet = false;
 
   double m_desiredValue{0.0};
-  bool m_desiredValueHasBeenSet = false;
 
   RequestStatus m_status{RequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_requester;
-  bool m_requesterHasBeenSet = false;
 
   Aws::String m_quotaArn;
-  bool m_quotaArnHasBeenSet = false;
 
   bool m_globalQuota{false};
-  bool m_globalQuotaHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   AppliedLevelEnum m_quotaRequestedAtLevel{AppliedLevelEnum::NOT_SET};
-  bool m_quotaRequestedAtLevelHasBeenSet = false;
 
   QuotaContextInfo m_quotaContext;
+  bool m_idHasBeenSet = false;
+  bool m_requestTypeHasBeenSet = false;
+  bool m_caseIdHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
+  bool m_quotaNameHasBeenSet = false;
+  bool m_desiredValueHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_requesterHasBeenSet = false;
+  bool m_quotaArnHasBeenSet = false;
+  bool m_globalQuotaHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_quotaRequestedAtLevelHasBeenSet = false;
   bool m_quotaContextHasBeenSet = false;
 };
 

@@ -18,10 +18,6 @@ namespace Model {
 ListWavesRequestFilters::ListWavesRequestFilters(JsonView jsonValue) { *this = jsonValue; }
 
 ListWavesRequestFilters& ListWavesRequestFilters::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("isArchived")) {
-    m_isArchived = jsonValue.GetBool("isArchived");
-    m_isArchivedHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("waveIDs")) {
     Aws::Utils::Array<JsonView> waveIDsJsonList = jsonValue.GetArray("waveIDs");
     for (unsigned waveIDsIndex = 0; waveIDsIndex < waveIDsJsonList.GetLength(); ++waveIDsIndex) {
@@ -29,15 +25,15 @@ ListWavesRequestFilters& ListWavesRequestFilters::operator=(JsonView jsonValue) 
     }
     m_waveIDsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isArchived")) {
+    m_isArchived = jsonValue.GetBool("isArchived");
+    m_isArchivedHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ListWavesRequestFilters::Jsonize() const {
   JsonValue payload;
-
-  if (m_isArchivedHasBeenSet) {
-    payload.WithBool("isArchived", m_isArchived);
-  }
 
   if (m_waveIDsHasBeenSet) {
     Aws::Utils::Array<JsonValue> waveIDsJsonList(m_waveIDs.size());
@@ -45,6 +41,10 @@ JsonValue ListWavesRequestFilters::Jsonize() const {
       waveIDsJsonList[waveIDsIndex].AsString(m_waveIDs[waveIDsIndex]);
     }
     payload.WithArray("waveIDs", std::move(waveIDsJsonList));
+  }
+
+  if (m_isArchivedHasBeenSet) {
+    payload.WithBool("isArchived", m_isArchived);
   }
 
   return payload;

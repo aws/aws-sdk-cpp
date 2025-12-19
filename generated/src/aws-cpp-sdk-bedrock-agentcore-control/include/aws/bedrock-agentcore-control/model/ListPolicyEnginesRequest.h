@@ -36,7 +36,7 @@ class ListPolicyEnginesRequest : public BedrockAgentCoreControlRequest {
   ///@{
   /**
    * <p>A pagination token returned from a previous <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_ListPolicyEngines.html">ListPolicyEngines</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngines.html">ListPolicyEngines</a>
    * call. Use this token to retrieve the next page of results when the response is
    * paginated.</p>
    */
@@ -73,9 +73,9 @@ class ListPolicyEnginesRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

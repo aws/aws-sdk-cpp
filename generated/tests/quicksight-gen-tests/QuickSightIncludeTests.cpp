@@ -164,10 +164,13 @@
 #include <aws/quicksight/model/AxisTickLabelOptions.h>
 #include <aws/quicksight/model/BarChartAggregatedFieldWells.h>
 #include <aws/quicksight/model/BarChartConfiguration.h>
+#include <aws/quicksight/model/BarChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/BarChartFieldWells.h>
 #include <aws/quicksight/model/BarChartOrientation.h>
+#include <aws/quicksight/model/BarChartSeriesSettings.h>
 #include <aws/quicksight/model/BarChartSortConfiguration.h>
 #include <aws/quicksight/model/BarChartVisual.h>
+#include <aws/quicksight/model/BarSeriesItem.h>
 #include <aws/quicksight/model/BarsArrangement.h>
 #include <aws/quicksight/model/BaseMapStyleType.h>
 #include <aws/quicksight/model/BasicAuthConnectionMetadata.h>
@@ -186,6 +189,7 @@
 #include <aws/quicksight/model/BodySectionRepeatDimensionConfiguration.h>
 #include <aws/quicksight/model/BodySectionRepeatPageBreakConfiguration.h>
 #include <aws/quicksight/model/BookmarksConfigurations.h>
+#include <aws/quicksight/model/BorderSettings.h>
 #include <aws/quicksight/model/BorderStyle.h>
 #include <aws/quicksight/model/BoxPlotAggregatedFieldWells.h>
 #include <aws/quicksight/model/BoxPlotChartConfiguration.h>
@@ -258,9 +262,12 @@
 #include <aws/quicksight/model/ColumnTooltipItem.h>
 #include <aws/quicksight/model/ComboChartAggregatedFieldWells.h>
 #include <aws/quicksight/model/ComboChartConfiguration.h>
+#include <aws/quicksight/model/ComboChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/ComboChartFieldWells.h>
+#include <aws/quicksight/model/ComboChartSeriesSettings.h>
 #include <aws/quicksight/model/ComboChartSortConfiguration.h>
 #include <aws/quicksight/model/ComboChartVisual.h>
+#include <aws/quicksight/model/ComboSeriesItem.h>
 #include <aws/quicksight/model/CommitMode.h>
 #include <aws/quicksight/model/ComparativeOrder.h>
 #include <aws/quicksight/model/ComparisonConfiguration.h>
@@ -290,6 +297,7 @@
 #include <aws/quicksight/model/ContributionAnalysisFactor.h>
 #include <aws/quicksight/model/ContributionAnalysisSortType.h>
 #include <aws/quicksight/model/ContributionAnalysisTimeRanges.h>
+#include <aws/quicksight/model/Coordinate.h>
 #include <aws/quicksight/model/CreateAccountCustomizationRequest.h>
 #include <aws/quicksight/model/CreateAccountCustomizationResult.h>
 #include <aws/quicksight/model/CreateAccountSubscriptionRequest.h>
@@ -366,6 +374,8 @@
 #include <aws/quicksight/model/CustomerManagedKeyUnavailableException.h>
 #include <aws/quicksight/model/Dashboard.h>
 #include <aws/quicksight/model/DashboardBehavior.h>
+#include <aws/quicksight/model/DashboardCustomizationStatus.h>
+#include <aws/quicksight/model/DashboardCustomizationVisualOptions.h>
 #include <aws/quicksight/model/DashboardError.h>
 #include <aws/quicksight/model/DashboardErrorType.h>
 #include <aws/quicksight/model/DashboardFilterAttribute.h>
@@ -385,6 +395,8 @@
 #include <aws/quicksight/model/DataBarsOptions.h>
 #include <aws/quicksight/model/DataColor.h>
 #include <aws/quicksight/model/DataColorPalette.h>
+#include <aws/quicksight/model/DataFieldBarSeriesItem.h>
+#include <aws/quicksight/model/DataFieldComboSeriesItem.h>
 #include <aws/quicksight/model/DataFieldSeriesItem.h>
 #include <aws/quicksight/model/DataLabelContent.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
@@ -466,6 +478,10 @@
 #include <aws/quicksight/model/DateTimeValueWhenUnsetConfiguration.h>
 #include <aws/quicksight/model/DayOfTheWeek.h>
 #include <aws/quicksight/model/DayOfWeek.h>
+#include <aws/quicksight/model/DecalPatternType.h>
+#include <aws/quicksight/model/DecalSettings.h>
+#include <aws/quicksight/model/DecalSettingsConfiguration.h>
+#include <aws/quicksight/model/DecalStyleType.h>
 #include <aws/quicksight/model/DecimalDatasetParameter.h>
 #include <aws/quicksight/model/DecimalDatasetParameterDefaultValues.h>
 #include <aws/quicksight/model/DecimalDefaultValues.h>
@@ -692,7 +708,9 @@
 #include <aws/quicksight/model/ExportToCSVOption.h>
 #include <aws/quicksight/model/ExportWithHiddenFieldsOption.h>
 #include <aws/quicksight/model/FailedKeyRegistrationEntry.h>
+#include <aws/quicksight/model/FieldBarSeriesItem.h>
 #include <aws/quicksight/model/FieldBasedTooltip.h>
+#include <aws/quicksight/model/FieldComboSeriesItem.h>
 #include <aws/quicksight/model/FieldFolder.h>
 #include <aws/quicksight/model/FieldLabelType.h>
 #include <aws/quicksight/model/FieldName.h>
@@ -787,6 +805,9 @@
 #include <aws/quicksight/model/GeoSpatialColumnGroup.h>
 #include <aws/quicksight/model/GeoSpatialCountryCode.h>
 #include <aws/quicksight/model/GeoSpatialDataRole.h>
+#include <aws/quicksight/model/GeocodePreference.h>
+#include <aws/quicksight/model/GeocodePreferenceValue.h>
+#include <aws/quicksight/model/GeocoderHierarchy.h>
 #include <aws/quicksight/model/GeospatialCategoricalColor.h>
 #include <aws/quicksight/model/GeospatialCategoricalDataColor.h>
 #include <aws/quicksight/model/GeospatialCircleRadius.h>
@@ -836,6 +857,8 @@
 #include <aws/quicksight/model/GetFlowMetadataResult.h>
 #include <aws/quicksight/model/GetFlowPermissionsRequest.h>
 #include <aws/quicksight/model/GetFlowPermissionsResult.h>
+#include <aws/quicksight/model/GetIdentityContextRequest.h>
+#include <aws/quicksight/model/GetIdentityContextResult.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlRequest.h>
 #include <aws/quicksight/model/GetSessionEmbedUrlResult.h>
 #include <aws/quicksight/model/GlobalTableBorderOptions.h>
@@ -941,6 +964,7 @@
 #include <aws/quicksight/model/KPIVisualLayoutOptions.h>
 #include <aws/quicksight/model/KPIVisualStandardLayout.h>
 #include <aws/quicksight/model/KPIVisualStandardLayoutType.h>
+#include <aws/quicksight/model/KeyPairCredentials.h>
 #include <aws/quicksight/model/LabelOptions.h>
 #include <aws/quicksight/model/LayerCustomAction.h>
 #include <aws/quicksight/model/LayerCustomActionOperation.h>
@@ -1271,6 +1295,7 @@
 #include <aws/quicksight/model/RegisteredUserQSearchBarEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQuickChatEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQuickSightConsoleEmbeddingConfiguration.h>
+#include <aws/quicksight/model/RegisteredUserSnapshotJobResult.h>
 #include <aws/quicksight/model/RelationalTable.h>
 #include <aws/quicksight/model/RelativeDateTimeControlDisplayOptions.h>
 #include <aws/quicksight/model/RelativeDateType.h>
@@ -1714,6 +1739,7 @@
 #include <aws/quicksight/model/UpdateVPCConnectionResult.h>
 #include <aws/quicksight/model/UploadSettings.h>
 #include <aws/quicksight/model/User.h>
+#include <aws/quicksight/model/UserIdentifier.h>
 #include <aws/quicksight/model/UserRole.h>
 #include <aws/quicksight/model/VPCConnection.h>
 #include <aws/quicksight/model/VPCConnectionAvailabilityStatus.h>
@@ -1732,6 +1758,7 @@
 #include <aws/quicksight/model/VisualCustomActionDefaults.h>
 #include <aws/quicksight/model/VisualCustomActionOperation.h>
 #include <aws/quicksight/model/VisualCustomActionTrigger.h>
+#include <aws/quicksight/model/VisualCustomizationFieldsConfiguration.h>
 #include <aws/quicksight/model/VisualHighlightOperation.h>
 #include <aws/quicksight/model/VisualHighlightTrigger.h>
 #include <aws/quicksight/model/VisualInteractionOptions.h>

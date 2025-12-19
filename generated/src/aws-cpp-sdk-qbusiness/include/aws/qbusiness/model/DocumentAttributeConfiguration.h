@@ -90,12 +90,12 @@ class DocumentAttributeConfiguration {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AttributeType m_type{AttributeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Status m_search{Status::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_searchHasBeenSet = false;
 };
 

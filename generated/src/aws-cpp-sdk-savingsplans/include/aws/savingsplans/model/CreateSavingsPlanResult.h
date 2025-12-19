@@ -59,9 +59,9 @@ class CreateSavingsPlanResult {
   ///@}
  private:
   Aws::String m_savingsPlanId;
-  bool m_savingsPlanIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_savingsPlanIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

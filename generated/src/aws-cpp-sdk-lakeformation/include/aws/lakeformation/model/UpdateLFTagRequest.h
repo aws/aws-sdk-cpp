@@ -117,15 +117,15 @@ class UpdateLFTagRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_tagKey;
-  bool m_tagKeyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagValuesToDelete;
-  bool m_tagValuesToDeleteHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagValuesToAdd;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_tagKeyHasBeenSet = false;
+  bool m_tagValuesToDeleteHasBeenSet = false;
   bool m_tagValuesToAddHasBeenSet = false;
 };
 

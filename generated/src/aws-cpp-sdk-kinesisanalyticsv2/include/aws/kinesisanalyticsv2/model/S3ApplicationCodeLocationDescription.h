@@ -88,12 +88,12 @@ class S3ApplicationCodeLocationDescription {
   ///@}
  private:
   Aws::String m_bucketARN;
-  bool m_bucketARNHasBeenSet = false;
 
   Aws::String m_fileKey;
-  bool m_fileKeyHasBeenSet = false;
 
   Aws::String m_objectVersion;
+  bool m_bucketARNHasBeenSet = false;
+  bool m_fileKeyHasBeenSet = false;
   bool m_objectVersionHasBeenSet = false;
 };
 

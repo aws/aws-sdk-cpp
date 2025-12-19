@@ -93,15 +93,15 @@ class GetRoutingControlStateResult {
   ///@}
  private:
   Aws::String m_routingControlArn;
-  bool m_routingControlArnHasBeenSet = false;
 
   RoutingControlState m_routingControlState{RoutingControlState::NOT_SET};
-  bool m_routingControlStateHasBeenSet = false;
 
   Aws::String m_routingControlName;
-  bool m_routingControlNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_routingControlArnHasBeenSet = false;
+  bool m_routingControlStateHasBeenSet = false;
+  bool m_routingControlNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

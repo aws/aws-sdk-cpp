@@ -82,12 +82,12 @@ class DescribeFileCachesResult {
   ///@}
  private:
   Aws::Vector<FileCache> m_fileCaches;
-  bool m_fileCachesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fileCachesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

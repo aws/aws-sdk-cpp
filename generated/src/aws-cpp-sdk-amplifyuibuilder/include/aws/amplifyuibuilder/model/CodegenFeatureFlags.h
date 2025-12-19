@@ -62,9 +62,9 @@ class CodegenFeatureFlags {
   ///@}
  private:
   bool m_isRelationshipSupported{false};
-  bool m_isRelationshipSupportedHasBeenSet = false;
 
   bool m_isNonModelSupported{false};
+  bool m_isRelationshipSupportedHasBeenSet = false;
   bool m_isNonModelSupportedHasBeenSet = false;
 };
 

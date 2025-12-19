@@ -70,9 +70,9 @@ class RouteFerryArrival {
   ///@}
  private:
   RouteFerryPlace m_place;
-  bool m_placeHasBeenSet = false;
 
   Aws::String m_time;
+  bool m_placeHasBeenSet = false;
   bool m_timeHasBeenSet = false;
 };
 

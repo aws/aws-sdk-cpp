@@ -78,9 +78,9 @@ class InstanceIdentity {
   ///@}
  private:
   Aws::String m_document;
-  bool m_documentHasBeenSet = false;
 
   Aws::String m_signature;
+  bool m_documentHasBeenSet = false;
   bool m_signatureHasBeenSet = false;
 };
 

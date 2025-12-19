@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/BatchConfig.h>
 #include <aws/iot/model/HttpActionHeader.h>
 #include <aws/iot/model/HttpAuthorization.h>
 
@@ -118,18 +119,61 @@ class HttpAction {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether to process the HTTP action messages into a single request. Value can
+   * be true or false.</p>
+   */
+  inline bool GetEnableBatching() const { return m_enableBatching; }
+  inline bool EnableBatchingHasBeenSet() const { return m_enableBatchingHasBeenSet; }
+  inline void SetEnableBatching(bool value) {
+    m_enableBatchingHasBeenSet = true;
+    m_enableBatching = value;
+  }
+  inline HttpAction& WithEnableBatching(bool value) {
+    SetEnableBatching(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configuration settings for batching. For more information, see <a
+   * href="/iot/latest/developerguide/http_batching.html">Batching HTTP action
+   * messages</a>.</p>
+   */
+  inline const BatchConfig& GetBatchConfig() const { return m_batchConfig; }
+  inline bool BatchConfigHasBeenSet() const { return m_batchConfigHasBeenSet; }
+  template <typename BatchConfigT = BatchConfig>
+  void SetBatchConfig(BatchConfigT&& value) {
+    m_batchConfigHasBeenSet = true;
+    m_batchConfig = std::forward<BatchConfigT>(value);
+  }
+  template <typename BatchConfigT = BatchConfig>
+  HttpAction& WithBatchConfig(BatchConfigT&& value) {
+    SetBatchConfig(std::forward<BatchConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_confirmationUrl;
-  bool m_confirmationUrlHasBeenSet = false;
 
   Aws::Vector<HttpActionHeader> m_headers;
-  bool m_headersHasBeenSet = false;
 
   HttpAuthorization m_auth;
+
+  bool m_enableBatching{false};
+
+  BatchConfig m_batchConfig;
+  bool m_urlHasBeenSet = false;
+  bool m_confirmationUrlHasBeenSet = false;
+  bool m_headersHasBeenSet = false;
   bool m_authHasBeenSet = false;
+  bool m_enableBatchingHasBeenSet = false;
+  bool m_batchConfigHasBeenSet = false;
 };
 
 }  // namespace Model

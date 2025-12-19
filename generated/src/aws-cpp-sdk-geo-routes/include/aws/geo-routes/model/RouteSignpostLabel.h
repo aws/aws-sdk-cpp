@@ -69,9 +69,9 @@ class RouteSignpostLabel {
   ///@}
  private:
   RouteNumber m_routeNumber;
-  bool m_routeNumberHasBeenSet = false;
 
   LocalizedString m_text;
+  bool m_routeNumberHasBeenSet = false;
   bool m_textHasBeenSet = false;
 };
 

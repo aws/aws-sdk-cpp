@@ -163,21 +163,21 @@ class CreateWebAppRequest : public TransferRequest {
   ///@}
  private:
   WebAppIdentityProviderDetails m_identityProviderDetails;
-  bool m_identityProviderDetailsHasBeenSet = false;
 
   Aws::String m_accessEndpoint;
-  bool m_accessEndpointHasBeenSet = false;
 
   WebAppUnits m_webAppUnits;
-  bool m_webAppUnitsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   WebAppEndpointPolicy m_webAppEndpointPolicy{WebAppEndpointPolicy::NOT_SET};
-  bool m_webAppEndpointPolicyHasBeenSet = false;
 
   WebAppEndpointDetails m_endpointDetails;
+  bool m_identityProviderDetailsHasBeenSet = false;
+  bool m_accessEndpointHasBeenSet = false;
+  bool m_webAppUnitsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_webAppEndpointPolicyHasBeenSet = false;
   bool m_endpointDetailsHasBeenSet = false;
 };
 

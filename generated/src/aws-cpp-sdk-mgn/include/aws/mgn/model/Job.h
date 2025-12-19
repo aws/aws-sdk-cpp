@@ -39,6 +39,24 @@ class Job {
 
   ///@{
   /**
+   * <p>Job ID.</p>
+   */
+  inline const Aws::String& GetJobID() const { return m_jobID; }
+  inline bool JobIDHasBeenSet() const { return m_jobIDHasBeenSet; }
+  template <typename JobIDT = Aws::String>
+  void SetJobID(JobIDT&& value) {
+    m_jobIDHasBeenSet = true;
+    m_jobID = std::forward<JobIDT>(value);
+  }
+  template <typename JobIDT = Aws::String>
+  Job& WithJobID(JobIDT&& value) {
+    SetJobID(std::forward<JobIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>the ARN of the specific Job.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -51,6 +69,38 @@ class Job {
   template <typename ArnT = Aws::String>
   Job& WithArn(ArnT&& value) {
     SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Job type.</p>
+   */
+  inline JobType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(JobType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline Job& WithType(JobType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Job initiated by field.</p>
+   */
+  inline InitiatedBy GetInitiatedBy() const { return m_initiatedBy; }
+  inline bool InitiatedByHasBeenSet() const { return m_initiatedByHasBeenSet; }
+  inline void SetInitiatedBy(InitiatedBy value) {
+    m_initiatedByHasBeenSet = true;
+    m_initiatedBy = value;
+  }
+  inline Job& WithInitiatedBy(InitiatedBy value) {
+    SetInitiatedBy(value);
     return *this;
   }
   ///@}
@@ -93,34 +143,16 @@ class Job {
 
   ///@{
   /**
-   * <p>Job initiated by field.</p>
+   * <p>Job status.</p>
    */
-  inline InitiatedBy GetInitiatedBy() const { return m_initiatedBy; }
-  inline bool InitiatedByHasBeenSet() const { return m_initiatedByHasBeenSet; }
-  inline void SetInitiatedBy(InitiatedBy value) {
-    m_initiatedByHasBeenSet = true;
-    m_initiatedBy = value;
+  inline JobStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(JobStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  inline Job& WithInitiatedBy(InitiatedBy value) {
-    SetInitiatedBy(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Job ID.</p>
-   */
-  inline const Aws::String& GetJobID() const { return m_jobID; }
-  inline bool JobIDHasBeenSet() const { return m_jobIDHasBeenSet; }
-  template <typename JobIDT = Aws::String>
-  void SetJobID(JobIDT&& value) {
-    m_jobIDHasBeenSet = true;
-    m_jobID = std::forward<JobIDT>(value);
-  }
-  template <typename JobIDT = Aws::String>
-  Job& WithJobID(JobIDT&& value) {
-    SetJobID(std::forward<JobIDT>(value));
+  inline Job& WithStatus(JobStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -151,22 +183,6 @@ class Job {
 
   ///@{
   /**
-   * <p>Job status.</p>
-   */
-  inline JobStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(JobStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline Job& WithStatus(JobStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Tags associated with specific Job.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
@@ -188,49 +204,33 @@ class Job {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Job type.</p>
-   */
-  inline JobType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(JobType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline Job& WithType(JobType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
-
-  Aws::String m_creationDateTime;
-  bool m_creationDateTimeHasBeenSet = false;
-
-  Aws::String m_endDateTime;
-  bool m_endDateTimeHasBeenSet = false;
-
-  InitiatedBy m_initiatedBy{InitiatedBy::NOT_SET};
-  bool m_initiatedByHasBeenSet = false;
-
   Aws::String m_jobID;
-  bool m_jobIDHasBeenSet = false;
 
-  Aws::Vector<ParticipatingServer> m_participatingServers;
-  bool m_participatingServersHasBeenSet = false;
-
-  JobStatus m_status{JobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
-
-  Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
+  Aws::String m_arn;
 
   JobType m_type{JobType::NOT_SET};
+
+  InitiatedBy m_initiatedBy{InitiatedBy::NOT_SET};
+
+  Aws::String m_creationDateTime;
+
+  Aws::String m_endDateTime;
+
+  JobStatus m_status{JobStatus::NOT_SET};
+
+  Aws::Vector<ParticipatingServer> m_participatingServers;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_jobIDHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_initiatedByHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_participatingServersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

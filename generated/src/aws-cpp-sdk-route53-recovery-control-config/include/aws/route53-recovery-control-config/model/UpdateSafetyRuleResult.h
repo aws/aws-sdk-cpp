@@ -79,12 +79,12 @@ class UpdateSafetyRuleResult {
   ///@}
  private:
   AssertionRule m_assertionRule;
-  bool m_assertionRuleHasBeenSet = false;
 
   GatingRule m_gatingRule;
-  bool m_gatingRuleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assertionRuleHasBeenSet = false;
+  bool m_gatingRuleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

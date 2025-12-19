@@ -114,18 +114,18 @@ class WeightPerAxleGroup {
   ///@}
  private:
   long long m_single{0};
-  bool m_singleHasBeenSet = false;
 
   long long m_tandem{0};
-  bool m_tandemHasBeenSet = false;
 
   long long m_triple{0};
-  bool m_tripleHasBeenSet = false;
 
   long long m_quad{0};
-  bool m_quadHasBeenSet = false;
 
   long long m_quint{0};
+  bool m_singleHasBeenSet = false;
+  bool m_tandemHasBeenSet = false;
+  bool m_tripleHasBeenSet = false;
+  bool m_quadHasBeenSet = false;
   bool m_quintHasBeenSet = false;
 };
 

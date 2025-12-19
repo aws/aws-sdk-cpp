@@ -95,12 +95,12 @@ class GetMapSpritesRequest : public LocationServiceRequest {
   ///@}
  private:
   Aws::String m_mapName;
-  bool m_mapNameHasBeenSet = false;
 
   Aws::String m_fileName;
-  bool m_fileNameHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_mapNameHasBeenSet = false;
+  bool m_fileNameHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

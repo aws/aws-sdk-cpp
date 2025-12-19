@@ -64,9 +64,9 @@ class AutoStopConfig {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   int m_idleTimeoutMinutes{0};
+  bool m_enabledHasBeenSet = false;
   bool m_idleTimeoutMinutesHasBeenSet = false;
 };
 

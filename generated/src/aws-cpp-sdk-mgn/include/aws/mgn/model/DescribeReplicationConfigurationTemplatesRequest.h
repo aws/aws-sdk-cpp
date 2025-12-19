@@ -31,6 +31,30 @@ class DescribeReplicationConfigurationTemplatesRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Request to describe Replication Configuration template by template IDs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetReplicationConfigurationTemplateIDs() const { return m_replicationConfigurationTemplateIDs; }
+  inline bool ReplicationConfigurationTemplateIDsHasBeenSet() const { return m_replicationConfigurationTemplateIDsHasBeenSet; }
+  template <typename ReplicationConfigurationTemplateIDsT = Aws::Vector<Aws::String>>
+  void SetReplicationConfigurationTemplateIDs(ReplicationConfigurationTemplateIDsT&& value) {
+    m_replicationConfigurationTemplateIDsHasBeenSet = true;
+    m_replicationConfigurationTemplateIDs = std::forward<ReplicationConfigurationTemplateIDsT>(value);
+  }
+  template <typename ReplicationConfigurationTemplateIDsT = Aws::Vector<Aws::String>>
+  DescribeReplicationConfigurationTemplatesRequest& WithReplicationConfigurationTemplateIDs(ReplicationConfigurationTemplateIDsT&& value) {
+    SetReplicationConfigurationTemplateIDs(std::forward<ReplicationConfigurationTemplateIDsT>(value));
+    return *this;
+  }
+  template <typename ReplicationConfigurationTemplateIDsT = Aws::String>
+  DescribeReplicationConfigurationTemplatesRequest& AddReplicationConfigurationTemplateIDs(ReplicationConfigurationTemplateIDsT&& value) {
+    m_replicationConfigurationTemplateIDsHasBeenSet = true;
+    m_replicationConfigurationTemplateIDs.emplace_back(std::forward<ReplicationConfigurationTemplateIDsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Request to describe Replication Configuration template by max results.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
@@ -62,39 +86,15 @@ class DescribeReplicationConfigurationTemplatesRequest : public MgnRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Request to describe Replication Configuration template by template IDs.</p>
-   */
-  inline const Aws::Vector<Aws::String>& GetReplicationConfigurationTemplateIDs() const { return m_replicationConfigurationTemplateIDs; }
-  inline bool ReplicationConfigurationTemplateIDsHasBeenSet() const { return m_replicationConfigurationTemplateIDsHasBeenSet; }
-  template <typename ReplicationConfigurationTemplateIDsT = Aws::Vector<Aws::String>>
-  void SetReplicationConfigurationTemplateIDs(ReplicationConfigurationTemplateIDsT&& value) {
-    m_replicationConfigurationTemplateIDsHasBeenSet = true;
-    m_replicationConfigurationTemplateIDs = std::forward<ReplicationConfigurationTemplateIDsT>(value);
-  }
-  template <typename ReplicationConfigurationTemplateIDsT = Aws::Vector<Aws::String>>
-  DescribeReplicationConfigurationTemplatesRequest& WithReplicationConfigurationTemplateIDs(ReplicationConfigurationTemplateIDsT&& value) {
-    SetReplicationConfigurationTemplateIDs(std::forward<ReplicationConfigurationTemplateIDsT>(value));
-    return *this;
-  }
-  template <typename ReplicationConfigurationTemplateIDsT = Aws::String>
-  DescribeReplicationConfigurationTemplatesRequest& AddReplicationConfigurationTemplateIDs(ReplicationConfigurationTemplateIDsT&& value) {
-    m_replicationConfigurationTemplateIDsHasBeenSet = true;
-    m_replicationConfigurationTemplateIDs.emplace_back(std::forward<ReplicationConfigurationTemplateIDsT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::Vector<Aws::String> m_replicationConfigurationTemplateIDs;
+
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
-
-  Aws::Vector<Aws::String> m_replicationConfigurationTemplateIDs;
   bool m_replicationConfigurationTemplateIDsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

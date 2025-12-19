@@ -76,12 +76,12 @@ class CreateUserHierarchyGroupResult {
   ///@}
  private:
   Aws::String m_hierarchyGroupId;
-  bool m_hierarchyGroupIdHasBeenSet = false;
 
   Aws::String m_hierarchyGroupArn;
-  bool m_hierarchyGroupArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hierarchyGroupIdHasBeenSet = false;
+  bool m_hierarchyGroupArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

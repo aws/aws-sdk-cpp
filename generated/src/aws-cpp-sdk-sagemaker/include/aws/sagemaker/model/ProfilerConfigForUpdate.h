@@ -120,15 +120,15 @@ class ProfilerConfigForUpdate {
   ///@}
  private:
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   long long m_profilingIntervalInMilliseconds{0};
-  bool m_profilingIntervalInMillisecondsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_profilingParameters;
-  bool m_profilingParametersHasBeenSet = false;
 
   bool m_disableProfiler{false};
+  bool m_s3OutputPathHasBeenSet = false;
+  bool m_profilingIntervalInMillisecondsHasBeenSet = false;
+  bool m_profilingParametersHasBeenSet = false;
   bool m_disableProfilerHasBeenSet = false;
 };
 

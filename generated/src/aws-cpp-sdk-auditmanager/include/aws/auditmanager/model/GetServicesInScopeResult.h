@@ -67,9 +67,9 @@ class GetServicesInScopeResult {
   ///@}
  private:
   Aws::Vector<ServiceMetadata> m_serviceMetadata;
-  bool m_serviceMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

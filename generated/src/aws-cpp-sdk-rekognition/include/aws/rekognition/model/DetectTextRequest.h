@@ -73,9 +73,9 @@ class DetectTextRequest : public RekognitionRequest {
   ///@}
  private:
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   DetectTextFilters m_filters;
+  bool m_imageHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

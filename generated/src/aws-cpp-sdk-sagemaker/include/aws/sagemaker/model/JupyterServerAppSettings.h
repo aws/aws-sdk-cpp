@@ -109,12 +109,12 @@ class JupyterServerAppSettings {
   ///@}
  private:
   ResourceSpec m_defaultResourceSpec;
-  bool m_defaultResourceSpecHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lifecycleConfigArns;
-  bool m_lifecycleConfigArnsHasBeenSet = false;
 
   Aws::Vector<CodeRepository> m_codeRepositories;
+  bool m_defaultResourceSpecHasBeenSet = false;
+  bool m_lifecycleConfigArnsHasBeenSet = false;
   bool m_codeRepositoriesHasBeenSet = false;
 };
 

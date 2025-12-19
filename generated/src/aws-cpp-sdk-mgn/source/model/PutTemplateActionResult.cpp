@@ -29,44 +29,29 @@ PutTemplateActionResult& PutTemplateActionResult::operator=(const Aws::AmazonWeb
     m_actionName = jsonValue.GetString("actionName");
     m_actionNameHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("active")) {
-    m_active = jsonValue.GetBool("active");
-    m_activeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("category")) {
-    m_category = ActionCategoryMapper::GetActionCategoryForName(jsonValue.GetString("category"));
-    m_categoryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("description")) {
-    m_description = jsonValue.GetString("description");
-    m_descriptionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("documentIdentifier")) {
     m_documentIdentifier = jsonValue.GetString("documentIdentifier");
     m_documentIdentifierHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("order")) {
+    m_order = jsonValue.GetInteger("order");
+    m_orderHasBeenSet = true;
   }
   if (jsonValue.ValueExists("documentVersion")) {
     m_documentVersion = jsonValue.GetString("documentVersion");
     m_documentVersionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("externalParameters")) {
-    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
-    for (auto& externalParametersItem : externalParametersJsonMap) {
-      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
-    }
-    m_externalParametersHasBeenSet = true;
+  if (jsonValue.ValueExists("active")) {
+    m_active = jsonValue.GetBool("active");
+    m_activeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("timeoutSeconds")) {
+    m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
+    m_timeoutSecondsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("mustSucceedForCutover")) {
     m_mustSucceedForCutover = jsonValue.GetBool("mustSucceedForCutover");
     m_mustSucceedForCutoverHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("operatingSystem")) {
-    m_operatingSystem = jsonValue.GetString("operatingSystem");
-    m_operatingSystemHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("order")) {
-    m_order = jsonValue.GetInteger("order");
-    m_orderHasBeenSet = true;
   }
   if (jsonValue.ValueExists("parameters")) {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -82,9 +67,24 @@ PutTemplateActionResult& PutTemplateActionResult::operator=(const Aws::AmazonWeb
     }
     m_parametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("timeoutSeconds")) {
-    m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
-    m_timeoutSecondsHasBeenSet = true;
+  if (jsonValue.ValueExists("operatingSystem")) {
+    m_operatingSystem = jsonValue.GetString("operatingSystem");
+    m_operatingSystemHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("externalParameters")) {
+    Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
+    for (auto& externalParametersItem : externalParametersJsonMap) {
+      m_externalParameters[externalParametersItem.first] = externalParametersItem.second.AsObject();
+    }
+    m_externalParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("category")) {
+    m_category = ActionCategoryMapper::GetActionCategoryForName(jsonValue.GetString("category"));
+    m_categoryHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -84,12 +84,12 @@ class GetTableMaintenanceJobStatusResult {
   ///@}
  private:
   Aws::String m_tableARN;
-  bool m_tableARNHasBeenSet = false;
 
   Aws::Map<TableMaintenanceJobType, TableMaintenanceJobStatusValue> m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tableARNHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

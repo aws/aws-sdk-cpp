@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Model {
-enum class ChangeSpecificationType { NOT_SET, MEMBER };
+enum class ChangeSpecificationType { NOT_SET, MEMBER, COLLABORATION };
 
 namespace ChangeSpecificationTypeMapper {
 AWS_CLEANROOMS_API ChangeSpecificationType GetChangeSpecificationTypeForName(const Aws::String& name);

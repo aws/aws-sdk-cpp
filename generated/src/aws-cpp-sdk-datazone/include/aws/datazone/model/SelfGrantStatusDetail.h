@@ -103,15 +103,15 @@ class SelfGrantStatusDetail {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_failureCause;
-  bool m_failureCauseHasBeenSet = false;
 
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   SelfGrantStatus m_status{SelfGrantStatus::NOT_SET};
+  bool m_databaseNameHasBeenSet = false;
+  bool m_failureCauseHasBeenSet = false;
+  bool m_schemaNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

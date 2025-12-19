@@ -58,9 +58,9 @@ class GetChangeTokenStatusResult {
   ///@}
  private:
   ChangeTokenStatus m_changeTokenStatus{ChangeTokenStatus::NOT_SET};
-  bool m_changeTokenStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_changeTokenStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class RelatedItemTypeFilter {
   ///@}
  private:
   ContactFilter m_contact;
-  bool m_contactHasBeenSet = false;
 
   CommentFilter m_comment;
-  bool m_commentHasBeenSet = false;
 
   FileFilter m_file;
-  bool m_fileHasBeenSet = false;
 
   SlaFilter m_sla;
-  bool m_slaHasBeenSet = false;
 
   ConnectCaseFilter m_connectCase;
-  bool m_connectCaseHasBeenSet = false;
 
   CustomFilter m_custom;
+  bool m_contactHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_fileHasBeenSet = false;
+  bool m_slaHasBeenSet = false;
+  bool m_connectCaseHasBeenSet = false;
   bool m_customHasBeenSet = false;
 };
 

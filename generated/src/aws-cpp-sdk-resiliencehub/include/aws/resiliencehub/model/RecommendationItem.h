@@ -175,27 +175,27 @@ class RecommendationItem {
   ///@}
  private:
   bool m_alreadyImplemented{false};
-  bool m_alreadyImplementedHasBeenSet = false;
 
   Alarm m_discoveredAlarm;
-  bool m_discoveredAlarmHasBeenSet = false;
 
   ExcludeRecommendationReason m_excludeReason{ExcludeRecommendationReason::NOT_SET};
-  bool m_excludeReasonHasBeenSet = false;
 
   bool m_excluded{false};
-  bool m_excludedHasBeenSet = false;
 
   Experiment m_latestDiscoveredExperiment;
-  bool m_latestDiscoveredExperimentHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_targetAccountId;
-  bool m_targetAccountIdHasBeenSet = false;
 
   Aws::String m_targetRegion;
+  bool m_alreadyImplementedHasBeenSet = false;
+  bool m_discoveredAlarmHasBeenSet = false;
+  bool m_excludeReasonHasBeenSet = false;
+  bool m_excludedHasBeenSet = false;
+  bool m_latestDiscoveredExperimentHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_targetAccountIdHasBeenSet = false;
   bool m_targetRegionHasBeenSet = false;
 };
 

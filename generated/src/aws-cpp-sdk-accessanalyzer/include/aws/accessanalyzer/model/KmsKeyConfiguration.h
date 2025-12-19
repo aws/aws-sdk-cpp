@@ -100,9 +100,9 @@ class KmsKeyConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyPolicies;
-  bool m_keyPoliciesHasBeenSet = false;
 
   Aws::Vector<KmsGrantConfiguration> m_grants;
+  bool m_keyPoliciesHasBeenSet = false;
   bool m_grantsHasBeenSet = false;
 };
 

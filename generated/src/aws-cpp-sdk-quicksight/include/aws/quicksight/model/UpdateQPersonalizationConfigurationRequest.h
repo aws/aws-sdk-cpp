@@ -67,9 +67,9 @@ class UpdateQPersonalizationConfigurationRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   PersonalizationMode m_personalizationMode{PersonalizationMode::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_personalizationModeHasBeenSet = false;
 };
 

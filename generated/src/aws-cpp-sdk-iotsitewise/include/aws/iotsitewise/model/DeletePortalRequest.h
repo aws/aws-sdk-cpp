@@ -73,9 +73,9 @@ class DeletePortalRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_portalId;
-  bool m_portalIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_portalIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

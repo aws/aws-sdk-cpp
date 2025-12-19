@@ -95,15 +95,15 @@ class GetTokenVaultResult {
   ///@}
  private:
   Aws::String m_tokenVaultId;
-  bool m_tokenVaultIdHasBeenSet = false;
 
   KmsConfiguration m_kmsConfiguration;
-  bool m_kmsConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tokenVaultIdHasBeenSet = false;
+  bool m_kmsConfigurationHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class UntagCertificateAuthorityRequest : public ACMPCARequest {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_certificateAuthorityArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

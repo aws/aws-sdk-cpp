@@ -71,9 +71,9 @@ class DeleteMessageRequest : public SQSRequest {
   ///@}
  private:
   Aws::String m_queueUrl;
-  bool m_queueUrlHasBeenSet = false;
 
   Aws::String m_receiptHandle;
+  bool m_queueUrlHasBeenSet = false;
   bool m_receiptHandleHasBeenSet = false;
 };
 

@@ -105,15 +105,15 @@ class CreateBackendEnvironmentRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_deploymentArtifacts;
+  bool m_appIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
   bool m_deploymentArtifactsHasBeenSet = false;
 };
 

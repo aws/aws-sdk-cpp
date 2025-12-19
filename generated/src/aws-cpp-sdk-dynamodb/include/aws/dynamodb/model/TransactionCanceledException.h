@@ -147,9 +147,9 @@ class TransactionCanceledException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Vector<CancellationReason> m_cancellationReasons;
+  bool m_messageHasBeenSet = false;
   bool m_cancellationReasonsHasBeenSet = false;
 };
 

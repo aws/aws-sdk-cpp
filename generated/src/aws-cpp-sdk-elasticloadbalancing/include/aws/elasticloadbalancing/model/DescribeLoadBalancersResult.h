@@ -93,12 +93,12 @@ class DescribeLoadBalancersResult {
   ///@}
  private:
   Aws::Vector<LoadBalancerDescription> m_loadBalancerDescriptions;
-  bool m_loadBalancerDescriptionsHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_loadBalancerDescriptionsHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

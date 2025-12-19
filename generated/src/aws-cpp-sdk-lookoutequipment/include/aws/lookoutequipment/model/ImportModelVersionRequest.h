@@ -210,30 +210,30 @@ class ImportModelVersionRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_sourceModelVersionArn;
-  bool m_sourceModelVersionArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   LabelsInputConfiguration m_labelsInputConfiguration;
-  bool m_labelsInputConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   InferenceDataImportStrategy m_inferenceDataImportStrategy{InferenceDataImportStrategy::NOT_SET};
+  bool m_sourceModelVersionArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_labelsInputConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_roleArnHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_inferenceDataImportStrategyHasBeenSet = false;
 };
 

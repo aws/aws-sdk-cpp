@@ -73,9 +73,9 @@ class AddBridgeOutputsRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   Aws::Vector<AddBridgeOutputRequest> m_outputs;
+  bool m_bridgeArnHasBeenSet = false;
   bool m_outputsHasBeenSet = false;
 };
 

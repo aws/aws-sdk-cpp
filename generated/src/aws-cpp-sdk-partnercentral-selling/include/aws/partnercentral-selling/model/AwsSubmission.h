@@ -71,9 +71,9 @@ class AwsSubmission {
   ///@}
  private:
   SalesInvolvementType m_involvementType{SalesInvolvementType::NOT_SET};
-  bool m_involvementTypeHasBeenSet = false;
 
   Visibility m_visibility{Visibility::NOT_SET};
+  bool m_involvementTypeHasBeenSet = false;
   bool m_visibilityHasBeenSet = false;
 };
 

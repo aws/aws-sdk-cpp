@@ -65,9 +65,9 @@ class IdleEstimatedMonthlySavings {
   ///@}
  private:
   Currency m_currency{Currency::NOT_SET};
-  bool m_currencyHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_currencyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 
