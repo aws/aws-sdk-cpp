@@ -17,6 +17,7 @@ namespace RCTAppliedForMapper {
 
 static const int REPLICATION_HASH = HashingUtils::HashString("REPLICATION");
 static const int PULL_THROUGH_CACHE_HASH = HashingUtils::HashString("PULL_THROUGH_CACHE");
+static const int CREATE_ON_PUSH_HASH = HashingUtils::HashString("CREATE_ON_PUSH");
 
 RCTAppliedFor GetRCTAppliedForForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ RCTAppliedFor GetRCTAppliedForForName(const Aws::String& name) {
     return RCTAppliedFor::REPLICATION;
   } else if (hashCode == PULL_THROUGH_CACHE_HASH) {
     return RCTAppliedFor::PULL_THROUGH_CACHE;
+  } else if (hashCode == CREATE_ON_PUSH_HASH) {
+    return RCTAppliedFor::CREATE_ON_PUSH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForRCTAppliedFor(RCTAppliedFor enumValue) {
       return "REPLICATION";
     case RCTAppliedFor::PULL_THROUGH_CACHE:
       return "PULL_THROUGH_CACHE";
+    case RCTAppliedFor::CREATE_ON_PUSH:
+      return "CREATE_ON_PUSH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

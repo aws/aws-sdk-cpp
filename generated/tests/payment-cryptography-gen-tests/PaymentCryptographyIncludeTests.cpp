@@ -17,6 +17,7 @@
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsRequest.h>
 #include <aws/payment-cryptography/model/AddKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/Alias.h>
+#include <aws/payment-cryptography/model/As2805KeyVariant.h>
 #include <aws/payment-cryptography/model/CertificateSubjectType.h>
 #include <aws/payment-cryptography/model/CreateAliasRequest.h>
 #include <aws/payment-cryptography/model/CreateAliasResult.h>
@@ -32,6 +33,7 @@
 #include <aws/payment-cryptography/model/DisableDefaultKeyReplicationRegionsResult.h>
 #include <aws/payment-cryptography/model/EnableDefaultKeyReplicationRegionsRequest.h>
 #include <aws/payment-cryptography/model/EnableDefaultKeyReplicationRegionsResult.h>
+#include <aws/payment-cryptography/model/ExportAs2805KeyCryptogram.h>
 #include <aws/payment-cryptography/model/ExportAttributes.h>
 #include <aws/payment-cryptography/model/ExportDiffieHellmanTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ExportDukptInitialKey.h>
@@ -55,6 +57,7 @@
 #include <aws/payment-cryptography/model/GetParametersForImportResult.h>
 #include <aws/payment-cryptography/model/GetPublicKeyCertificateRequest.h>
 #include <aws/payment-cryptography/model/GetPublicKeyCertificateResult.h>
+#include <aws/payment-cryptography/model/ImportAs2805KeyCryptogram.h>
 #include <aws/payment-cryptography/model/ImportDiffieHellmanTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ImportKeyCryptogram.h>
 #include <aws/payment-cryptography/model/ImportKeyMaterial.h>

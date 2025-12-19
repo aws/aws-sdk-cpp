@@ -30,24 +30,6 @@ class DeleteJobRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Request to delete Job from service by Account ID.</p>
-   */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
-  }
-  template <typename AccountIDT = Aws::String>
-  DeleteJobRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Request to delete Job from service by Job ID.</p>
    */
   inline const Aws::String& GetJobID() const { return m_jobID; }
@@ -63,12 +45,30 @@ class DeleteJobRequest : public MgnRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_accountID;
 
+  ///@{
+  /**
+   * <p>Request to delete Job from service by Account ID.</p>
+   */
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
+  }
+  template <typename AccountIDT = Aws::String>
+  DeleteJobRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_jobID;
-  bool m_accountIDHasBeenSet = false;
+
+  Aws::String m_accountID;
   bool m_jobIDHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -33,6 +33,13 @@ LineItemFilter& LineItemFilter::operator=(JsonView jsonValue) {
     }
     m_valuesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AttributeValues")) {
+    Aws::Utils::Array<JsonView> attributeValuesJsonList = jsonValue.GetArray("AttributeValues");
+    for (unsigned attributeValuesIndex = 0; attributeValuesIndex < attributeValuesJsonList.GetLength(); ++attributeValuesIndex) {
+      m_attributeValues.push_back(attributeValuesJsonList[attributeValuesIndex].AsString());
+    }
+    m_attributeValuesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +60,14 @@ JsonValue LineItemFilter::Jsonize() const {
       valuesJsonList[valuesIndex].AsString(LineItemFilterValueMapper::GetNameForLineItemFilterValue(m_values[valuesIndex]));
     }
     payload.WithArray("Values", std::move(valuesJsonList));
+  }
+
+  if (m_attributeValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> attributeValuesJsonList(m_attributeValues.size());
+    for (unsigned attributeValuesIndex = 0; attributeValuesIndex < attributeValuesJsonList.GetLength(); ++attributeValuesIndex) {
+      attributeValuesJsonList[attributeValuesIndex].AsString(m_attributeValues[attributeValuesIndex]);
+    }
+    payload.WithArray("AttributeValues", std::move(attributeValuesJsonList));
   }
 
   return payload;

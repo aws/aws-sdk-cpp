@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/AwsPartition.h>
 #include <aws/partnercentral-selling/model/CompetitorName.h>
 #include <aws/partnercentral-selling/model/DeliveryModel.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
@@ -345,6 +346,24 @@ class Project {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>AWS partition where the opportunity will be deployed. Possible values:
+   * 'aws-eusc' for AWS European Sovereign Cloud, <code>null</code> for all other
+   * partitions</p>
+   */
+  inline AwsPartition GetAwsPartition() const { return m_awsPartition; }
+  inline bool AwsPartitionHasBeenSet() const { return m_awsPartitionHasBeenSet; }
+  inline void SetAwsPartition(AwsPartition value) {
+    m_awsPartitionHasBeenSet = true;
+    m_awsPartition = value;
+  }
+  inline Project& WithAwsPartition(AwsPartition value) {
+    SetAwsPartition(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<DeliveryModel> m_deliveryModels;
 
@@ -369,6 +388,8 @@ class Project {
   Aws::String m_otherSolutionDescription;
 
   Aws::String m_additionalComments;
+
+  AwsPartition m_awsPartition{AwsPartition::NOT_SET};
   bool m_deliveryModelsHasBeenSet = false;
   bool m_expectedCustomerSpendHasBeenSet = false;
   bool m_titleHasBeenSet = false;
@@ -381,6 +402,7 @@ class Project {
   bool m_otherCompetitorNamesHasBeenSet = false;
   bool m_otherSolutionDescriptionHasBeenSet = false;
   bool m_additionalCommentsHasBeenSet = false;
+  bool m_awsPartitionHasBeenSet = false;
 };
 
 }  // namespace Model

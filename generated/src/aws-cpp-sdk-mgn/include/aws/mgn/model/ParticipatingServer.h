@@ -35,6 +35,24 @@ class ParticipatingServer {
 
   ///@{
   /**
+   * <p>Participating server Source Server ID.</p>
+   */
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  }
+  template <typename SourceServerIDT = Aws::String>
+  ParticipatingServer& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Participating server launch status.</p>
    */
   inline LaunchStatus GetLaunchStatus() const { return m_launchStatus; }
@@ -84,36 +102,18 @@ class ParticipatingServer {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Participating server Source Server ID.</p>
-   */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
-  }
-  template <typename SourceServerIDT = Aws::String>
-  ParticipatingServer& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_sourceServerID;
+
   LaunchStatus m_launchStatus{LaunchStatus::NOT_SET};
 
   Aws::String m_launchedEc2InstanceID;
 
   PostLaunchActionsStatus m_postLaunchActionsStatus;
-
-  Aws::String m_sourceServerID;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_launchStatusHasBeenSet = false;
   bool m_launchedEc2InstanceIDHasBeenSet = false;
   bool m_postLaunchActionsStatusHasBeenSet = false;
-  bool m_sourceServerIDHasBeenSet = false;
 };
 
 }  // namespace Model

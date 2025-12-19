@@ -30,36 +30,18 @@ class UpdateWaveRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Account ID.</p>
+   * <p>Wave ID.</p>
    */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
+  inline const Aws::String& GetWaveID() const { return m_waveID; }
+  inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
+  template <typename WaveIDT = Aws::String>
+  void SetWaveID(WaveIDT&& value) {
+    m_waveIDHasBeenSet = true;
+    m_waveID = std::forward<WaveIDT>(value);
   }
-  template <typename AccountIDT = Aws::String>
-  UpdateWaveRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Wave description.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  UpdateWaveRequest& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
+  template <typename WaveIDT = Aws::String>
+  UpdateWaveRequest& WithWaveID(WaveIDT&& value) {
+    SetWaveID(std::forward<WaveIDT>(value));
     return *this;
   }
   ///@}
@@ -84,33 +66,51 @@ class UpdateWaveRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Wave ID.</p>
+   * <p>Wave description.</p>
    */
-  inline const Aws::String& GetWaveID() const { return m_waveID; }
-  inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
-  template <typename WaveIDT = Aws::String>
-  void SetWaveID(WaveIDT&& value) {
-    m_waveIDHasBeenSet = true;
-    m_waveID = std::forward<WaveIDT>(value);
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
   }
-  template <typename WaveIDT = Aws::String>
-  UpdateWaveRequest& WithWaveID(WaveIDT&& value) {
-    SetWaveID(std::forward<WaveIDT>(value));
+  template <typename DescriptionT = Aws::String>
+  UpdateWaveRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Account ID.</p>
+   */
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
+  }
+  template <typename AccountIDT = Aws::String>
+  UpdateWaveRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_accountID;
-
-  Aws::String m_description;
+  Aws::String m_waveID;
 
   Aws::String m_name;
 
-  Aws::String m_waveID;
-  bool m_accountIDHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_nameHasBeenSet = false;
+  Aws::String m_description;
+
+  Aws::String m_accountID;
   bool m_waveIDHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

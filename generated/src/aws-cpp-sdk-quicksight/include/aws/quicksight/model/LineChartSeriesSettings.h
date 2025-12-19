@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/DecalSettings.h>
 #include <aws/quicksight/model/LineChartLineStyleSettings.h>
 #include <aws/quicksight/model/LineChartMarkerStyleSettings.h>
 
@@ -68,12 +69,33 @@ class LineChartSeriesSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Decal settings for a line series in <code>LineChartVisual</code>.</p>
+   */
+  inline const DecalSettings& GetDecalSettings() const { return m_decalSettings; }
+  inline bool DecalSettingsHasBeenSet() const { return m_decalSettingsHasBeenSet; }
+  template <typename DecalSettingsT = DecalSettings>
+  void SetDecalSettings(DecalSettingsT&& value) {
+    m_decalSettingsHasBeenSet = true;
+    m_decalSettings = std::forward<DecalSettingsT>(value);
+  }
+  template <typename DecalSettingsT = DecalSettings>
+  LineChartSeriesSettings& WithDecalSettings(DecalSettingsT&& value) {
+    SetDecalSettings(std::forward<DecalSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LineChartLineStyleSettings m_lineStyleSettings;
 
   LineChartMarkerStyleSettings m_markerStyleSettings;
+
+  DecalSettings m_decalSettings;
   bool m_lineStyleSettingsHasBeenSet = false;
   bool m_markerStyleSettingsHasBeenSet = false;
+  bool m_decalSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

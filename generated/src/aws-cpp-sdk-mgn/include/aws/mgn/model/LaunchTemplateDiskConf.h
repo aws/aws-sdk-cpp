@@ -33,6 +33,22 @@ class LaunchTemplateDiskConf {
 
   ///@{
   /**
+   * <p>Launch template disk volume type configuration.</p>
+   */
+  inline VolumeType GetVolumeType() const { return m_volumeType; }
+  inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
+  inline void SetVolumeType(VolumeType value) {
+    m_volumeTypeHasBeenSet = true;
+    m_volumeType = value;
+  }
+  inline LaunchTemplateDiskConf& WithVolumeType(VolumeType value) {
+    SetVolumeType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Launch template disk iops configuration.</p>
    */
   inline long long GetIops() const { return m_iops; }
@@ -62,31 +78,15 @@ class LaunchTemplateDiskConf {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Launch template disk volume type configuration.</p>
-   */
-  inline VolumeType GetVolumeType() const { return m_volumeType; }
-  inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-  inline void SetVolumeType(VolumeType value) {
-    m_volumeTypeHasBeenSet = true;
-    m_volumeType = value;
-  }
-  inline LaunchTemplateDiskConf& WithVolumeType(VolumeType value) {
-    SetVolumeType(value);
-    return *this;
-  }
-  ///@}
  private:
+  VolumeType m_volumeType{VolumeType::NOT_SET};
+
   long long m_iops{0};
 
   long long m_throughput{0};
-
-  VolumeType m_volumeType{VolumeType::NOT_SET};
+  bool m_volumeTypeHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
   bool m_throughputHasBeenSet = false;
-  bool m_volumeTypeHasBeenSet = false;
 };
 
 }  // namespace Model

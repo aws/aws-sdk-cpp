@@ -36,6 +36,10 @@ PutEmailIdentityDkimSigningAttributesResult& PutEmailIdentityDkimSigningAttribut
     }
     m_dkimTokensHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SigningHostedZone")) {
+    m_signingHostedZone = jsonValue.GetString("SigningHostedZone");
+    m_signingHostedZoneHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

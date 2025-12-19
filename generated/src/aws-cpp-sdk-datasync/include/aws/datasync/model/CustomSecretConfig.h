@@ -21,9 +21,10 @@ namespace Model {
 
 /**
  * <p>Specifies configuration information for a customer-managed Secrets Manager
- * secret where a storage location authentication token or secret key is stored in
- * plain text. This configuration includes the secret ARN, and the ARN for an IAM
- * role that provides access to the secret.</p>  <p>You can use either
+ * secret where a storage location credentials is stored in Secrets Manager as
+ * plain text (for authentication token, secret key, or password) or as binary (for
+ * Kerberos keytab). This configuration includes the secret ARN, and the ARN for an
+ * IAM role that provides access to the secret.</p>  <p>You can use either
  * <code>CmkSecretConfig</code> or <code>CustomSecretConfig</code> to provide
  * credentials for a <code>CreateLocation</code> request. Do not provide both
  * parameters for the same request.</p> <p><h3>See Also:</h3>   <a

@@ -14,6 +14,7 @@
 #include <aws/kafkaconnect/model/KafkaClusterClientAuthentication.h>
 #include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransit.h>
 #include <aws/kafkaconnect/model/LogDelivery.h>
+#include <aws/kafkaconnect/model/NetworkType.h>
 #include <aws/kafkaconnect/model/Plugin.h>
 #include <aws/kafkaconnect/model/WorkerConfiguration.h>
 
@@ -210,12 +211,29 @@ class CreateConnectorRequest : public KafkaConnectRequest {
 
   ///@{
   /**
-   *  <p>Amazon MSK Connect does not currently support specifying multiple
-   * plugins as a list. To use more than one plugin for your connector, you can
-   * create a single custom plugin using a ZIP file that bundles multiple plugins
+   * <p>The network type of the connector. It gives connectors connectivity to either
+   * IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+   */
+  inline NetworkType GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  inline void SetNetworkType(NetworkType value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = value;
+  }
+  inline CreateConnectorRequest& WithNetworkType(NetworkType value) {
+    SetNetworkType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> <p>Amazon MSK Connect does not currently support specifying
+   * multiple plugins as a list. To use more than one plugin for your connector, you
+   * can create a single custom plugin using a ZIP file that bundles multiple plugins
    * together.</p>  <p>Specifies which plugin to use for the connector.
    * You must specify a single-element list containing one <code>customPlugin</code>
-   * object.</p>
+   * object.</p></p>
    */
   inline const Aws::Vector<Plugin>& GetPlugins() const { return m_plugins; }
   inline bool PluginsHasBeenSet() const { return m_pluginsHasBeenSet; }
@@ -319,6 +337,8 @@ class CreateConnectorRequest : public KafkaConnectRequest {
 
   LogDelivery m_logDelivery;
 
+  NetworkType m_networkType{NetworkType::NOT_SET};
+
   Aws::Vector<Plugin> m_plugins;
 
   Aws::String m_serviceExecutionRoleArn;
@@ -335,6 +355,7 @@ class CreateConnectorRequest : public KafkaConnectRequest {
   bool m_kafkaClusterEncryptionInTransitHasBeenSet = false;
   bool m_kafkaConnectVersionHasBeenSet = false;
   bool m_logDeliveryHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_pluginsHasBeenSet = false;
   bool m_serviceExecutionRoleArnHasBeenSet = false;
   bool m_workerConfigurationHasBeenSet = false;

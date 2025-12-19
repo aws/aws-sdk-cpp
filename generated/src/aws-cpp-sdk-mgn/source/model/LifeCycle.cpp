@@ -22,17 +22,13 @@ LifeCycle& LifeCycle::operator=(JsonView jsonValue) {
     m_addedToServiceDateTime = jsonValue.GetString("addedToServiceDateTime");
     m_addedToServiceDateTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("elapsedReplicationDuration")) {
-    m_elapsedReplicationDuration = jsonValue.GetString("elapsedReplicationDuration");
-    m_elapsedReplicationDurationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("firstByteDateTime")) {
     m_firstByteDateTime = jsonValue.GetString("firstByteDateTime");
     m_firstByteDateTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("lastCutover")) {
-    m_lastCutover = jsonValue.GetObject("lastCutover");
-    m_lastCutoverHasBeenSet = true;
+  if (jsonValue.ValueExists("elapsedReplicationDuration")) {
+    m_elapsedReplicationDuration = jsonValue.GetString("elapsedReplicationDuration");
+    m_elapsedReplicationDurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("lastSeenByServiceDateTime")) {
     m_lastSeenByServiceDateTime = jsonValue.GetString("lastSeenByServiceDateTime");
@@ -41,6 +37,10 @@ LifeCycle& LifeCycle::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("lastTest")) {
     m_lastTest = jsonValue.GetObject("lastTest");
     m_lastTestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastCutover")) {
+    m_lastCutover = jsonValue.GetObject("lastCutover");
+    m_lastCutoverHasBeenSet = true;
   }
   if (jsonValue.ValueExists("state")) {
     m_state = LifeCycleStateMapper::GetLifeCycleStateForName(jsonValue.GetString("state"));
@@ -56,16 +56,12 @@ JsonValue LifeCycle::Jsonize() const {
     payload.WithString("addedToServiceDateTime", m_addedToServiceDateTime);
   }
 
-  if (m_elapsedReplicationDurationHasBeenSet) {
-    payload.WithString("elapsedReplicationDuration", m_elapsedReplicationDuration);
-  }
-
   if (m_firstByteDateTimeHasBeenSet) {
     payload.WithString("firstByteDateTime", m_firstByteDateTime);
   }
 
-  if (m_lastCutoverHasBeenSet) {
-    payload.WithObject("lastCutover", m_lastCutover.Jsonize());
+  if (m_elapsedReplicationDurationHasBeenSet) {
+    payload.WithString("elapsedReplicationDuration", m_elapsedReplicationDuration);
   }
 
   if (m_lastSeenByServiceDateTimeHasBeenSet) {
@@ -74,6 +70,10 @@ JsonValue LifeCycle::Jsonize() const {
 
   if (m_lastTestHasBeenSet) {
     payload.WithObject("lastTest", m_lastTest.Jsonize());
+  }
+
+  if (m_lastCutoverHasBeenSet) {
+    payload.WithObject("lastCutover", m_lastCutover.Jsonize());
   }
 
   if (m_stateHasBeenSet) {

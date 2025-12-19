@@ -69,7 +69,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
         {
 #if($serviceModel.metadata.serviceId == "S3")
             [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
-                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig);
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
@@ -82,7 +82,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
             }()
 #else
 #foreach($entry in $AuthSchemeMapEntries)
-            {${entry}{GetServiceName(), clientConfiguration.region}},
+            {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
 #end
 #end
         })
@@ -188,7 +188,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
       Aws::MakeShared<${AuthSchemeResolver}>(ALLOCATION_TAG),
       {
             [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
-                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+                  auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig);
                   return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
@@ -271,7 +271,7 @@ ${className}::${className}(const ${className} &rhs) :
     Aws::Client::ClientWithAsyncTemplateMethods<S3Client>(), AwsSmithyClientT(rhs) {
      m_authSchemes =
           [&]() ->  Aws::UnorderedMap<Aws::String, ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}> > {
-            auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG);
+            auto credsResolver = Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig);
             return {
 #foreach($entry in $AuthSchemeMapEntries)
 #if($AuthSchemes && $AuthSchemes[$foreach.index] == $s3_express_auth)
@@ -304,7 +304,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
 #if($entry.contains("smithy::BearerTokenAuthScheme"))
           {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}},
 #else
-          {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG), GetServiceName(), clientConfiguration.region}},
+          {$entry{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}},
 #end
 #end
       })

@@ -51,5 +51,9 @@ Aws::String TranslatePinDataRequest::SerializePayload() const {
     payload.WithObject("OutgoingWrappedKey", m_outgoingWrappedKey.Jsonize());
   }
 
+  if (m_incomingAs2805AttributesHasBeenSet) {
+    payload.WithObject("IncomingAs2805Attributes", m_incomingAs2805Attributes.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

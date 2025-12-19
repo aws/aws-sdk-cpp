@@ -33,22 +33,6 @@ class Disk {
 
   ///@{
   /**
-   * <p>The amount of storage on the disk in bytes.</p>
-   */
-  inline long long GetBytes() const { return m_bytes; }
-  inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-  inline void SetBytes(long long value) {
-    m_bytesHasBeenSet = true;
-    m_bytes = value;
-  }
-  inline Disk& WithBytes(long long value) {
-    SetBytes(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The disk or device name.</p>
    */
   inline const Aws::String& GetDeviceName() const { return m_deviceName; }
@@ -64,12 +48,28 @@ class Disk {
     return *this;
   }
   ///@}
- private:
-  long long m_bytes{0};
 
+  ///@{
+  /**
+   * <p>The amount of storage on the disk in bytes.</p>
+   */
+  inline long long GetBytes() const { return m_bytes; }
+  inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
+  inline void SetBytes(long long value) {
+    m_bytesHasBeenSet = true;
+    m_bytes = value;
+  }
+  inline Disk& WithBytes(long long value) {
+    SetBytes(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_deviceName;
-  bool m_bytesHasBeenSet = false;
+
+  long long m_bytes{0};
   bool m_deviceNameHasBeenSet = false;
+  bool m_bytesHasBeenSet = false;
 };
 
 }  // namespace Model

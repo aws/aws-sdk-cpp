@@ -109,12 +109,8 @@ class CreateFleetRequest : public AppStreamRequest {
    * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
    * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
    * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
-   * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-   * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
-   * <p>stream.graphics-design.2xlarge</p> </li> <li>
-   * <p>stream.graphics-design.4xlarge</p> </li> <li>
-   * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
-   * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+   * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics.g4dn.xlarge</p>
+   * </li> <li> <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
@@ -444,8 +440,8 @@ class CreateFleetRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for
-   * Elastic fleets. </p>
+   * <p>The fleet platform. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404
+   * are supported for Elastic fleets. </p>
    */
   inline PlatformType GetPlatform() const { return m_platform; }
   inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }

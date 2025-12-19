@@ -49,6 +49,11 @@ namespace Aws
             virtual bool SupportsChunkedTransferEncoding() const { return true; }
 
             /**
+             * Returns true if this is a default AWS SDK HTTP client implementation.
+             */
+            virtual bool IsDefaultAwsHttpClient() const { return false; }
+
+            /**
              * Stops all requests in progress and prevents any others from initiating.
              */
             void DisableRequestProcessing();

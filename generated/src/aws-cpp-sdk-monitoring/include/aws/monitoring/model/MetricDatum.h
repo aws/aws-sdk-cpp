@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/Dimension.h>
 #include <aws/monitoring/model/StandardUnit.h>
@@ -17,9 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -33,11 +33,9 @@ namespace Model {
 class MetricDatum {
  public:
   AWS_CLOUDWATCH_API MetricDatum() = default;
-  AWS_CLOUDWATCH_API MetricDatum(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API MetricDatum& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API MetricDatum(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API MetricDatum& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -226,13 +224,13 @@ class MetricDatum {
    * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
    * optional, if you do not specify it the default of 60 is used.</p>
    */
-  inline int GetStorageResolution() const { return m_storageResolution; }
+  inline int64_t GetStorageResolution() const { return m_storageResolution; }
   inline bool StorageResolutionHasBeenSet() const { return m_storageResolutionHasBeenSet; }
-  inline void SetStorageResolution(int value) {
+  inline void SetStorageResolution(int64_t value) {
     m_storageResolutionHasBeenSet = true;
     m_storageResolution = value;
   }
-  inline MetricDatum& WithStorageResolution(int value) {
+  inline MetricDatum& WithStorageResolution(int64_t value) {
     SetStorageResolution(value);
     return *this;
   }
@@ -254,7 +252,7 @@ class MetricDatum {
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
 
-  int m_storageResolution{0};
+  int64_t m_storageResolution{0};
   bool m_metricNameHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
   bool m_timestampHasBeenSet = false;

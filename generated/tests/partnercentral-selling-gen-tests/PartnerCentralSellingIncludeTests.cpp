@@ -34,6 +34,7 @@
 #include <aws/partnercentral-selling/model/AwsOpportunityProject.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityRelatedEntities.h>
 #include <aws/partnercentral-selling/model/AwsOpportunityStage.h>
+#include <aws/partnercentral-selling/model/AwsPartition.h>
 #include <aws/partnercentral-selling/model/AwsProductDetails.h>
 #include <aws/partnercentral-selling/model/AwsProductInsights.h>
 #include <aws/partnercentral-selling/model/AwsProductInsightsCurrencyCodeEnum.h>

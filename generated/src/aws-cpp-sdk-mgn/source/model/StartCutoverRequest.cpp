@@ -15,10 +15,6 @@ using namespace Aws::Utils;
 Aws::String StartCutoverRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
-  }
-
   if (m_sourceServerIDsHasBeenSet) {
     Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
     for (unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex) {
@@ -33,6 +29,10 @@ Aws::String StartCutoverRequest::SerializePayload() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

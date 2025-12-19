@@ -23,9 +23,9 @@ namespace Model {
 /**
  * <p>An object that can be used to specify Tag conditions inside the
  * <code>SearchFilter</code>. This accepts an <code>OR</code> of <code>AND</code>
- * (List of List) input where: </p> <ul> <li> <p>Top level list specifies
- * conditions that need to be applied with <code>OR</code> operator</p> </li> <li>
- * <p>Inner list specifies conditions that need to be applied with <code>AND</code>
+ * (List of List) input where:</p> <ul> <li> <p>Top level list specifies conditions
+ * that need to be applied with <code>OR</code> operator</p> </li> <li> <p>Inner
+ * list specifies conditions that need to be applied with <code>AND</code>
  * operator.</p> </li> </ul><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ControlPlaneTagFilter">AWS
  * API Reference</a></p>
@@ -40,7 +40,7 @@ class ControlPlaneTagFilter {
   ///@{
   /**
    * <p>A list of conditions which would be applied together with an <code>OR</code>
-   * condition. </p>
+   * condition.</p>
    */
   inline const Aws::Vector<Aws::Vector<TagCondition>>& GetOrConditions() const { return m_orConditions; }
   inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
@@ -89,7 +89,7 @@ class ControlPlaneTagFilter {
 
   ///@{
   /**
-   * <p>A leaf node condition which can be used to specify a tag condition. </p>
+   * <p>A leaf node condition which can be used to specify a tag condition.</p>
    */
   inline const TagCondition& GetTagCondition() const { return m_tagCondition; }
   inline bool TagConditionHasBeenSet() const { return m_tagConditionHasBeenSet; }

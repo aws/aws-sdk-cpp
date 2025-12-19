@@ -15,12 +15,22 @@ using namespace Aws::Utils;
 Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
   }
 
-  if (m_bootModeHasBeenSet) {
-    payload.WithString("bootMode", BootModeMapper::GetNameForBootMode(m_bootMode));
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_launchDispositionHasBeenSet) {
+    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
+  }
+
+  if (m_targetInstanceTypeRightSizingMethodHasBeenSet) {
+    payload.WithString(
+        "targetInstanceTypeRightSizingMethod",
+        TargetInstanceTypeRightSizingMethodMapper::GetNameForTargetInstanceTypeRightSizingMethod(m_targetInstanceTypeRightSizingMethod));
   }
 
   if (m_copyPrivateIpHasBeenSet) {
@@ -31,38 +41,28 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const {
     payload.WithBool("copyTags", m_copyTags);
   }
 
-  if (m_enableMapAutoTaggingHasBeenSet) {
-    payload.WithBool("enableMapAutoTagging", m_enableMapAutoTagging);
-  }
-
-  if (m_launchDispositionHasBeenSet) {
-    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
-  }
-
   if (m_licensingHasBeenSet) {
     payload.WithObject("licensing", m_licensing.Jsonize());
   }
 
-  if (m_mapAutoTaggingMpeIDHasBeenSet) {
-    payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
-  }
-
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_bootModeHasBeenSet) {
+    payload.WithString("bootMode", BootModeMapper::GetNameForBootMode(m_bootMode));
   }
 
   if (m_postLaunchActionsHasBeenSet) {
     payload.WithObject("postLaunchActions", m_postLaunchActions.Jsonize());
   }
 
-  if (m_sourceServerIDHasBeenSet) {
-    payload.WithString("sourceServerID", m_sourceServerID);
+  if (m_enableMapAutoTaggingHasBeenSet) {
+    payload.WithBool("enableMapAutoTagging", m_enableMapAutoTagging);
   }
 
-  if (m_targetInstanceTypeRightSizingMethodHasBeenSet) {
-    payload.WithString(
-        "targetInstanceTypeRightSizingMethod",
-        TargetInstanceTypeRightSizingMethodMapper::GetNameForTargetInstanceTypeRightSizingMethod(m_targetInstanceTypeRightSizingMethod));
+  if (m_mapAutoTaggingMpeIDHasBeenSet) {
+    payload.WithString("mapAutoTaggingMpeID", m_mapAutoTaggingMpeID);
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

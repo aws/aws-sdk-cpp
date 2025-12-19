@@ -52,7 +52,7 @@ class DateTimeCondition {
 
   ///@{
   /**
-   * <p>A minimum value of the property. </p>
+   * <p>A minimum value of the property.</p>
    */
   inline const Aws::String& GetMinValue() const { return m_minValue; }
   inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
@@ -70,7 +70,7 @@ class DateTimeCondition {
 
   ///@{
   /**
-   * <p>A maximum value of the property. </p>
+   * <p>A maximum value of the property.</p>
    */
   inline const Aws::String& GetMaxValue() const { return m_maxValue; }
   inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
@@ -88,7 +88,7 @@ class DateTimeCondition {
 
   ///@{
   /**
-   * <p>Datetime property comparison type. </p>
+   * <p>Datetime property comparison type.</p>
    */
   inline DateTimeComparisonType GetComparisonType() const { return m_comparisonType; }
   inline bool ComparisonTypeHasBeenSet() const { return m_comparisonTypeHasBeenSet; }

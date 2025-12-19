@@ -1523,8 +1523,8 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Starts replication for SNAPSHOT_SHIPPING agents.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Start replication for source server irrespective of its replication
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartReplication">AWS
    * API Reference</a></p>
    */
@@ -1935,7 +1935,8 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient, public Aws::Cli
 
   /**
    * <p>Allows you to change between the AGENT_BASED replication type and the
-   * SNAPSHOT_SHIPPING replication type.</p><p><h3>See Also:</h3>   <a
+   * SNAPSHOT_SHIPPING replication type. </p> <p>SNAPSHOT_SHIPPING should be used for
+   * agentless replication.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServerReplicationType">AWS
    * API Reference</a></p>
    */

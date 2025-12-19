@@ -386,6 +386,45 @@ class ResolverEndpoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether RNI enhanced metrics are enabled for the Resolver endpoint.
+   * When enabled, one-minute granular metrics are published in CloudWatch for each
+   * RNI associated with this endpoint. When disabled, these metrics are not
+   * published.</p>
+   */
+  inline bool GetRniEnhancedMetricsEnabled() const { return m_rniEnhancedMetricsEnabled; }
+  inline bool RniEnhancedMetricsEnabledHasBeenSet() const { return m_rniEnhancedMetricsEnabledHasBeenSet; }
+  inline void SetRniEnhancedMetricsEnabled(bool value) {
+    m_rniEnhancedMetricsEnabledHasBeenSet = true;
+    m_rniEnhancedMetricsEnabled = value;
+  }
+  inline ResolverEndpoint& WithRniEnhancedMetricsEnabled(bool value) {
+    SetRniEnhancedMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether target name server metrics are enabled for the outbound
+   * Resolver endpoint. When enabled, one-minute granular metrics are published in
+   * CloudWatch for each target name server associated with this endpoint. When
+   * disabled, these metrics are not published. This feature is not supported for
+   * inbound Resolver endpoint.</p>
+   */
+  inline bool GetTargetNameServerMetricsEnabled() const { return m_targetNameServerMetricsEnabled; }
+  inline bool TargetNameServerMetricsEnabledHasBeenSet() const { return m_targetNameServerMetricsEnabledHasBeenSet; }
+  inline void SetTargetNameServerMetricsEnabled(bool value) {
+    m_targetNameServerMetricsEnabledHasBeenSet = true;
+    m_targetNameServerMetricsEnabled = value;
+  }
+  inline ResolverEndpoint& WithTargetNameServerMetricsEnabled(bool value) {
+    SetTargetNameServerMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -418,6 +457,10 @@ class ResolverEndpoint {
   ResolverEndpointType m_resolverEndpointType{ResolverEndpointType::NOT_SET};
 
   Aws::Vector<Protocol> m_protocols;
+
+  bool m_rniEnhancedMetricsEnabled{false};
+
+  bool m_targetNameServerMetricsEnabled{false};
   bool m_idHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -434,6 +477,8 @@ class ResolverEndpoint {
   bool m_preferredInstanceTypeHasBeenSet = false;
   bool m_resolverEndpointTypeHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
+  bool m_rniEnhancedMetricsEnabledHasBeenSet = false;
+  bool m_targetNameServerMetricsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

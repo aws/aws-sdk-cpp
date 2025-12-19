@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/GameLiftStreamsRequest.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
+#include <aws/gameliftstreams/model/PerformanceStatsConfiguration.h>
 #include <aws/gameliftstreams/model/Protocol.h>
 
 #include <utility>
@@ -314,6 +315,25 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for sharing the stream session's performance stats
+   * with the client</p>
+   */
+  inline const PerformanceStatsConfiguration& GetPerformanceStatsConfiguration() const { return m_performanceStatsConfiguration; }
+  inline bool PerformanceStatsConfigurationHasBeenSet() const { return m_performanceStatsConfigurationHasBeenSet; }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  void SetPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    m_performanceStatsConfigurationHasBeenSet = true;
+    m_performanceStatsConfiguration = std::forward<PerformanceStatsConfigurationT>(value);
+  }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  StartStreamSessionRequest& WithPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    SetPerformanceStatsConfiguration(std::forward<PerformanceStatsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -338,6 +358,8 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
   Aws::Vector<Aws::String> m_additionalLaunchArgs;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEnvironmentVariables;
+
+  PerformanceStatsConfiguration m_performanceStatsConfiguration;
   bool m_clientTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
@@ -350,6 +372,7 @@ class StartStreamSessionRequest : public GameLiftStreamsRequest {
   bool m_sessionLengthSecondsHasBeenSet = false;
   bool m_additionalLaunchArgsHasBeenSet = false;
   bool m_additionalEnvironmentVariablesHasBeenSet = false;
+  bool m_performanceStatsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

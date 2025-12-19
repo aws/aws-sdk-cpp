@@ -435,6 +435,7 @@
 #include <aws/connect/model/DisassociateWorkspaceRequest.h>
 #include <aws/connect/model/DisassociateWorkspaceResult.h>
 #include <aws/connect/model/DisconnectDetails.h>
+#include <aws/connect/model/DisconnectOnCustomerExitParticipantType.h>
 #include <aws/connect/model/DisconnectReason.h>
 #include <aws/connect/model/DismissUserContactRequest.h>
 #include <aws/connect/model/DismissUserContactResult.h>

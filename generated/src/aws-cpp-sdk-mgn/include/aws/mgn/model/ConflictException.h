@@ -36,46 +36,6 @@ class ConflictException {
 
   ///@{
 
-  inline const Aws::String& GetCode() const { return m_code; }
-  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-  template <typename CodeT = Aws::String>
-  void SetCode(CodeT&& value) {
-    m_codeHasBeenSet = true;
-    m_code = std::forward<CodeT>(value);
-  }
-  template <typename CodeT = Aws::String>
-  ConflictException& WithCode(CodeT&& value) {
-    SetCode(std::forward<CodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Conflict Exception specific errors.</p>
-   */
-  inline const Aws::Vector<ErrorDetails>& GetErrors() const { return m_errors; }
-  inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-  template <typename ErrorsT = Aws::Vector<ErrorDetails>>
-  void SetErrors(ErrorsT&& value) {
-    m_errorsHasBeenSet = true;
-    m_errors = std::forward<ErrorsT>(value);
-  }
-  template <typename ErrorsT = Aws::Vector<ErrorDetails>>
-  ConflictException& WithErrors(ErrorsT&& value) {
-    SetErrors(std::forward<ErrorsT>(value));
-    return *this;
-  }
-  template <typename ErrorsT = ErrorDetails>
-  ConflictException& AddErrors(ErrorsT&& value) {
-    m_errorsHasBeenSet = true;
-    m_errors.emplace_back(std::forward<ErrorsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>
@@ -86,6 +46,22 @@ class ConflictException {
   template <typename MessageT = Aws::String>
   ConflictException& WithMessage(MessageT&& value) {
     SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  ConflictException& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
     return *this;
   }
   ///@}
@@ -125,21 +101,45 @@ class ConflictException {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Conflict Exception specific errors.</p>
+   */
+  inline const Aws::Vector<ErrorDetails>& GetErrors() const { return m_errors; }
+  inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
+  template <typename ErrorsT = Aws::Vector<ErrorDetails>>
+  void SetErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors = std::forward<ErrorsT>(value);
+  }
+  template <typename ErrorsT = Aws::Vector<ErrorDetails>>
+  ConflictException& WithErrors(ErrorsT&& value) {
+    SetErrors(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  template <typename ErrorsT = ErrorDetails>
+  ConflictException& AddErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors.emplace_back(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_code;
-
-  Aws::Vector<ErrorDetails> m_errors;
-
   Aws::String m_message;
+
+  Aws::String m_code;
 
   Aws::String m_resourceId;
 
   Aws::String m_resourceType;
-  bool m_codeHasBeenSet = false;
-  bool m_errorsHasBeenSet = false;
+
+  Aws::Vector<ErrorDetails> m_errors;
   bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
 };
 
 }  // namespace Model

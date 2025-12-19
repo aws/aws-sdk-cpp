@@ -17,9 +17,12 @@ namespace Aws
                 CBC,
                 CTR,
                 GCM,
+                GCM_COMMIT,
                 NONE
             };
-
+            inline bool IsGCM(ContentCryptoScheme scheme) {
+                return scheme == ContentCryptoScheme::GCM || scheme == ContentCryptoScheme::GCM_COMMIT;
+            }
             namespace ContentCryptoSchemeMapper
             {
                 AWS_CORE_API ContentCryptoScheme GetContentCryptoSchemeForName(const Aws::String& name);

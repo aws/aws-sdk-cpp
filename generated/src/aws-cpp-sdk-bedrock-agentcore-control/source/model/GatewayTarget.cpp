@@ -71,6 +71,10 @@ GatewayTarget& GatewayTarget::operator=(JsonView jsonValue) {
     m_lastSynchronizedAt = jsonValue.GetString("lastSynchronizedAt");
     m_lastSynchronizedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadataConfiguration")) {
+    m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
+    m_metadataConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -130,6 +134,10 @@ JsonValue GatewayTarget::Jsonize() const {
 
   if (m_lastSynchronizedAtHasBeenSet) {
     payload.WithString("lastSynchronizedAt", m_lastSynchronizedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_metadataConfigurationHasBeenSet) {
+    payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
   }
 
   return payload;

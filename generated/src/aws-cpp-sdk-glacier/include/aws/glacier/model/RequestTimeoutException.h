@@ -20,7 +20,7 @@ namespace Glacier {
 namespace Model {
 
 /**
- * <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while
+ * <p>Returned if, when uploading an archive, Amazon Glacier times out while
  * receiving the upload.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/RequestTimeoutException">AWS
  * API Reference</a></p>
@@ -70,7 +70,7 @@ class RequestTimeoutException {
 
   ///@{
   /**
-   * <p>Returned if, when uploading an archive, Amazon S3 Glacier times out while
+   * <p>Returned if, when uploading an archive, Amazon Glacier times out while
    * receiving the upload.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }

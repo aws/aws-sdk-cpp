@@ -34,6 +34,14 @@ LocationState& LocationState::operator=(JsonView jsonValue) {
     m_onDemandCapacity = jsonValue.GetInteger("OnDemandCapacity");
     m_onDemandCapacityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetIdleCapacity")) {
+    m_targetIdleCapacity = jsonValue.GetInteger("TargetIdleCapacity");
+    m_targetIdleCapacityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MaximumCapacity")) {
+    m_maximumCapacity = jsonValue.GetInteger("MaximumCapacity");
+    m_maximumCapacityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RequestedCapacity")) {
     m_requestedCapacity = jsonValue.GetInteger("RequestedCapacity");
     m_requestedCapacityHasBeenSet = true;
@@ -66,6 +74,14 @@ JsonValue LocationState::Jsonize() const {
 
   if (m_onDemandCapacityHasBeenSet) {
     payload.WithInteger("OnDemandCapacity", m_onDemandCapacity);
+  }
+
+  if (m_targetIdleCapacityHasBeenSet) {
+    payload.WithInteger("TargetIdleCapacity", m_targetIdleCapacity);
+  }
+
+  if (m_maximumCapacityHasBeenSet) {
+    payload.WithInteger("MaximumCapacity", m_maximumCapacity);
   }
 
   if (m_requestedCapacityHasBeenSet) {

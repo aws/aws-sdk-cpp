@@ -3,53 +3,71 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
 
+#include <utility>
+
 using namespace Aws::CloudWatch::Model;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PutMetricDataRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=PutMetricData&";
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_namespaceHasBeenSet) {
-    ss << "Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
+    mapSize++;
+  }
+  if (m_metricDataHasBeenSet) {
+    mapSize++;
+  }
+  if (m_entityMetricDataHasBeenSet) {
+    mapSize++;
+  }
+  if (m_strictEntityValidationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_namespaceHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Namespace"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_namespace.c_str()));
   }
 
   if (m_metricDataHasBeenSet) {
-    if (m_metricData.empty()) {
-      ss << "MetricData=&";
-    } else {
-      unsigned metricDataCount = 1;
-      for (auto& item : m_metricData) {
-        item.OutputToStream(ss, "MetricData.member.", metricDataCount, "");
-        metricDataCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricData"));
+    encoder.WriteArrayStart(m_metricData.size());
+    for (const auto& item_0 : m_metricData) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_entityMetricDataHasBeenSet) {
-    if (m_entityMetricData.empty()) {
-      ss << "EntityMetricData=&";
-    } else {
-      unsigned entityMetricDataCount = 1;
-      for (auto& item : m_entityMetricData) {
-        item.OutputToStream(ss, "EntityMetricData.member.", entityMetricDataCount, "");
-        entityMetricDataCount++;
-      }
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EntityMetricData"));
+    encoder.WriteArrayStart(m_entityMetricData.size());
+    for (const auto& item_0 : m_entityMetricData) {
+      item_0.CborEncode(encoder);
     }
   }
 
   if (m_strictEntityValidationHasBeenSet) {
-    ss << "StrictEntityValidation=" << std::boolalpha << m_strictEntityValidation << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StrictEntityValidation"));
+    encoder.WriteBool(m_strictEntityValidation);
   }
-
-  ss << "Version=2010-08-01";
-  return ss.str();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
-void PutMetricDataRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+Aws::Http::HeaderValueCollection PutMetricDataRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
+  return headers;
+}
 
 #ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
 Aws::Client::CompressionAlgorithm PutMetricDataRequest::GetSelectedCompressionAlgorithm(

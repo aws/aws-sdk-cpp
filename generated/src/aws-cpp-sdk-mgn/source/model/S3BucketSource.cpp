@@ -22,13 +22,13 @@ S3BucketSource& S3BucketSource::operator=(JsonView jsonValue) {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
     m_s3BucketHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("s3BucketOwner")) {
-    m_s3BucketOwner = jsonValue.GetString("s3BucketOwner");
-    m_s3BucketOwnerHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("s3Key")) {
     m_s3Key = jsonValue.GetString("s3Key");
     m_s3KeyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("s3BucketOwner")) {
+    m_s3BucketOwner = jsonValue.GetString("s3BucketOwner");
+    m_s3BucketOwnerHasBeenSet = true;
   }
   return *this;
 }
@@ -40,12 +40,12 @@ JsonValue S3BucketSource::Jsonize() const {
     payload.WithString("s3Bucket", m_s3Bucket);
   }
 
-  if (m_s3BucketOwnerHasBeenSet) {
-    payload.WithString("s3BucketOwner", m_s3BucketOwner);
-  }
-
   if (m_s3KeyHasBeenSet) {
     payload.WithString("s3Key", m_s3Key);
+  }
+
+  if (m_s3BucketOwnerHasBeenSet) {
+    payload.WithString("s3BucketOwner", m_s3BucketOwner);
   }
 
   return payload;

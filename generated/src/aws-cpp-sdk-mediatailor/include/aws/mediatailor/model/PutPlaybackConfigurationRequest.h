@@ -9,6 +9,7 @@
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/AdConditioningConfiguration.h>
+#include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
 #include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/Bumper.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
@@ -375,6 +376,26 @@ class PutPlaybackConfigurationRequest : public MediaTailorRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for customizing HTTP requests to the ad decision server
+   * (ADS). This includes settings for request method, headers, body content, and
+   * compression options.</p>
+   */
+  inline const AdDecisionServerConfiguration& GetAdDecisionServerConfiguration() const { return m_adDecisionServerConfiguration; }
+  inline bool AdDecisionServerConfigurationHasBeenSet() const { return m_adDecisionServerConfigurationHasBeenSet; }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  void SetAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    m_adDecisionServerConfigurationHasBeenSet = true;
+    m_adDecisionServerConfiguration = std::forward<AdDecisionServerConfigurationT>(value);
+  }
+  template <typename AdDecisionServerConfigurationT = AdDecisionServerConfiguration>
+  PutPlaybackConfigurationRequest& WithAdDecisionServerConfiguration(AdDecisionServerConfigurationT&& value) {
+    SetAdDecisionServerConfiguration(std::forward<AdDecisionServerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_adDecisionServerUrl;
 
@@ -407,6 +428,8 @@ class PutPlaybackConfigurationRequest : public MediaTailorRequest {
   Aws::String m_videoContentSourceUrl;
 
   AdConditioningConfiguration m_adConditioningConfiguration;
+
+  AdDecisionServerConfiguration m_adDecisionServerConfiguration;
   bool m_adDecisionServerUrlHasBeenSet = false;
   bool m_availSuppressionHasBeenSet = false;
   bool m_bumperHasBeenSet = false;
@@ -423,6 +446,7 @@ class PutPlaybackConfigurationRequest : public MediaTailorRequest {
   bool m_transcodeProfileNameHasBeenSet = false;
   bool m_videoContentSourceUrlHasBeenSet = false;
   bool m_adConditioningConfigurationHasBeenSet = false;
+  bool m_adDecisionServerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

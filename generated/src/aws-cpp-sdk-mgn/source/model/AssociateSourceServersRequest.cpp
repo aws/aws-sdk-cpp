@@ -15,10 +15,6 @@ using namespace Aws::Utils;
 Aws::String AssociateSourceServersRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
-  }
-
   if (m_applicationIDHasBeenSet) {
     payload.WithString("applicationID", m_applicationID);
   }
@@ -29,6 +25,10 @@ Aws::String AssociateSourceServersRequest::SerializePayload() const {
       sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);
     }
     payload.WithArray("sourceServerIDs", std::move(sourceServerIDsJsonList));
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

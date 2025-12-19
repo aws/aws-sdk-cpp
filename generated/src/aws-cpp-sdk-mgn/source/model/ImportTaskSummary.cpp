@@ -18,6 +18,10 @@ namespace Model {
 ImportTaskSummary::ImportTaskSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ImportTaskSummary& ImportTaskSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("waves")) {
+    m_waves = jsonValue.GetObject("waves");
+    m_wavesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("applications")) {
     m_applications = jsonValue.GetObject("applications");
     m_applicationsHasBeenSet = true;
@@ -26,15 +30,15 @@ ImportTaskSummary& ImportTaskSummary::operator=(JsonView jsonValue) {
     m_servers = jsonValue.GetObject("servers");
     m_serversHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("waves")) {
-    m_waves = jsonValue.GetObject("waves");
-    m_wavesHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue ImportTaskSummary::Jsonize() const {
   JsonValue payload;
+
+  if (m_wavesHasBeenSet) {
+    payload.WithObject("waves", m_waves.Jsonize());
+  }
 
   if (m_applicationsHasBeenSet) {
     payload.WithObject("applications", m_applications.Jsonize());
@@ -42,10 +46,6 @@ JsonValue ImportTaskSummary::Jsonize() const {
 
   if (m_serversHasBeenSet) {
     payload.WithObject("servers", m_servers.Jsonize());
-  }
-
-  if (m_wavesHasBeenSet) {
-    payload.WithObject("waves", m_waves.Jsonize());
   }
 
   return payload;

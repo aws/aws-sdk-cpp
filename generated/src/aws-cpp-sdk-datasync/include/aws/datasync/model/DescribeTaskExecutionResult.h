@@ -14,6 +14,8 @@
 #include <aws/datasync/model/ReportResult.h>
 #include <aws/datasync/model/TaskExecutionFilesFailedDetail.h>
 #include <aws/datasync/model/TaskExecutionFilesListedDetail.h>
+#include <aws/datasync/model/TaskExecutionFoldersFailedDetail.h>
+#include <aws/datasync/model/TaskExecutionFoldersListedDetail.h>
 #include <aws/datasync/model/TaskExecutionResultDetail.h>
 #include <aws/datasync/model/TaskExecutionStatus.h>
 #include <aws/datasync/model/TaskMode.h>
@@ -211,6 +213,12 @@ class DescribeTaskExecutionResult {
    * is set to <code>REMOVE</code>).</p> </li> </ul> </li> <li> <p>If
    * <code>TranserMode</code> is set to <code>ALL</code> - The calculation is based
    * only on the items that DataSync finds at the source location.</p> </li> </ul>
+   *  <p>For <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>, this counter only includes files or objects. Directories are
+   * counted in <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-EstimatedFoldersToTransfer">EstimatedFoldersToTransfer</a>.
+   * </p>
    */
   inline long long GetEstimatedFilesToTransfer() const { return m_estimatedFilesToTransfer; }
   inline void SetEstimatedFilesToTransfer(long long value) {
@@ -249,6 +257,12 @@ class DescribeTaskExecutionResult {
    * greater than <code>EstimatedFilesToTransfer</code>. This element is
    * implementation-specific for some location types, so don't use it as an exact
    * indication of what's transferring or to monitor your task execution.</p>
+   * <p>For <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>, this counter only includes files or objects. Directories are
+   * counted in <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersTransferred">FoldersTransferred</a>.
+   * </p>
    */
   inline long long GetFilesTransferred() const { return m_filesTransferred; }
   inline void SetFilesTransferred(long long value) {
@@ -357,7 +371,12 @@ class DescribeTaskExecutionResult {
    * in your destination location. If you don't configure your task to <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
    * data in the destination that isn't in the source</a>, the value is always
-   * <code>0</code>.</p>
+   * <code>0</code>.</p>  <p>For <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>, this counter only includes files or objects. Directories are
+   * counted in <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersDeleted">FoldersDeleted</a>.
+   * </p>
    */
   inline long long GetFilesDeleted() const { return m_filesDeleted; }
   inline void SetFilesDeleted(long long value) {
@@ -373,7 +392,12 @@ class DescribeTaskExecutionResult {
   ///@{
   /**
    * <p>The number of files, objects, and directories that DataSync skips during your
-   * transfer.</p>
+   * transfer.</p>  <p>For <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>, this counter only includes files or objects. Directories are
+   * counted in <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersSkipped">FoldersSkipped</a>.
+   * </p>
    */
   inline long long GetFilesSkipped() const { return m_filesSkipped; }
   inline void SetFilesSkipped(long long value) {
@@ -392,7 +416,12 @@ class DescribeTaskExecutionResult {
    * your transfer.</p>  <p>When you configure your task to <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-data-verification-options.html">verify
    * only the data that's transferred</a>, DataSync doesn't verify directories in
-   * some situations or files that fail to transfer.</p>
+   * some situations or files that fail to transfer.</p> <p>For <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>, this counter only includes files or objects. Directories are
+   * counted in <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-FoldersVerified">FoldersVerified</a>.
+   * </p>
    */
   inline long long GetFilesVerified() const { return m_filesVerified; }
   inline void SetFilesVerified(long long value) {
@@ -430,7 +459,12 @@ class DescribeTaskExecutionResult {
    * in your destination location. If you don't configure your task to <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
    * data in the destination that isn't in the source</a>, the value is always
-   * <code>0</code>.</p>
+   * <code>0</code>.</p>  <p>For <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>, this counter only includes files or objects. Directories are
+   * counted in <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-EstimatedFoldersToDelete">EstimatedFoldersToDelete</a>.
+   * </p>
    */
   inline long long GetEstimatedFilesToDelete() const { return m_estimatedFilesToDelete; }
   inline void SetEstimatedFilesToDelete(long long value) {
@@ -462,8 +496,9 @@ class DescribeTaskExecutionResult {
 
   ///@{
   /**
-   * <p>The number of objects that DataSync will attempt to transfer after comparing
-   * your source and destination locations.</p>  <p>Applies only to <a
+   * <p>The number of files or objects that DataSync will attempt to transfer after
+   * comparing your source and destination locations.</p>  <p>Applies only to
+   * <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
    * mode tasks</a>.</p>  <p>This counter isn't applicable if you configure
    * your task to <a
@@ -484,8 +519,8 @@ class DescribeTaskExecutionResult {
 
   ///@{
   /**
-   * <p>The number of objects that DataSync finds at your locations.</p>
-   * <p>Applies only to <a
+   * <p>The number of files or objects that DataSync finds at your locations.</p>
+   *  <p>Applies only to <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
    * mode tasks</a>.</p>
    */
@@ -504,8 +539,8 @@ class DescribeTaskExecutionResult {
 
   ///@{
   /**
-   * <p>The number of objects that DataSync fails to prepare, transfer, verify, and
-   * delete during your task execution.</p>  <p>Applies only to <a
+   * <p>The number of files or objects that DataSync fails to prepare, transfer,
+   * verify, and delete during your task execution.</p>  <p>Applies only to <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
    * mode tasks</a>.</p>
    */
@@ -518,6 +553,203 @@ class DescribeTaskExecutionResult {
   template <typename FilesFailedT = TaskExecutionFilesFailedDetail>
   DescribeTaskExecutionResult& WithFilesFailed(FilesFailedT&& value) {
     SetFilesFailed(std::forward<FilesFailedT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync expects to delete in your destination
+   * location. If you don't configure your task to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+   * data in the destination that isn't in the source</a>, the value is always
+   * <code>0</code>.</p>  <p>Applies only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline long long GetEstimatedFoldersToDelete() const { return m_estimatedFoldersToDelete; }
+  inline void SetEstimatedFoldersToDelete(long long value) {
+    m_estimatedFoldersToDeleteHasBeenSet = true;
+    m_estimatedFoldersToDelete = value;
+  }
+  inline DescribeTaskExecutionResult& WithEstimatedFoldersToDelete(long long value) {
+    SetEstimatedFoldersToDelete(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync expects to transfer over the network.
+   * This value is calculated as DataSync <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">prepares</a>
+   * directories to transfer.</p> <p>How this gets calculated depends primarily on
+   * your task’s <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-TransferMode">transfer
+   * mode</a> configuration:</p> <ul> <li> <p>If <code>TranserMode</code> is set to
+   * <code>CHANGED</code> - The calculation is based on comparing the content of the
+   * source and destination locations and determining the difference that needs to be
+   * transferred. The difference can include:</p> <ul> <li> <p>Anything that's added
+   * or modified at the source location.</p> </li> <li> <p>Anything that's in both
+   * locations and modified at the destination after an initial transfer (unless <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-OverwriteMode">OverwriteMode</a>
+   * is set to <code>NEVER</code>).</p> </li> </ul> </li> <li> <p>If
+   * <code>TranserMode</code> is set to <code>ALL</code> - The calculation is based
+   * only on the items that DataSync finds at the source location.</p> </li> </ul>
+   *  <p>Applies only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline long long GetEstimatedFoldersToTransfer() const { return m_estimatedFoldersToTransfer; }
+  inline void SetEstimatedFoldersToTransfer(long long value) {
+    m_estimatedFoldersToTransferHasBeenSet = true;
+    m_estimatedFoldersToTransfer = value;
+  }
+  inline DescribeTaskExecutionResult& WithEstimatedFoldersToTransfer(long long value) {
+    SetEstimatedFoldersToTransfer(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync skips during your transfer.</p>
+   *  <p>Applies only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline long long GetFoldersSkipped() const { return m_foldersSkipped; }
+  inline void SetFoldersSkipped(long long value) {
+    m_foldersSkippedHasBeenSet = true;
+    m_foldersSkipped = value;
+  }
+  inline DescribeTaskExecutionResult& WithFoldersSkipped(long long value) {
+    SetFoldersSkipped(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync will attempt to transfer after
+   * comparing your source and destination locations.</p>  <p>Applies only to
+   * <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>  <p>This counter isn't applicable if you configure
+   * your task to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-transfer-mode">transfer
+   * all data</a>. In that scenario, DataSync copies everything from the source to
+   * the destination without comparing differences between the locations.</p>
+   */
+  inline long long GetFoldersPrepared() const { return m_foldersPrepared; }
+  inline void SetFoldersPrepared(long long value) {
+    m_foldersPreparedHasBeenSet = true;
+    m_foldersPrepared = value;
+  }
+  inline DescribeTaskExecutionResult& WithFoldersPrepared(long long value) {
+    SetFoldersPrepared(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync actually transfers over the network.
+   * This value is updated periodically during your task execution when something is
+   * read from the source and sent over the network.</p> <p>If DataSync fails to
+   * transfer something, this value can be less than
+   * <code>EstimatedFoldersToTransfer</code>. In some cases, this value can also be
+   * greater than <code>EstimatedFoldersToTransfer</code>. </p>  <p>Applies
+   * only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline long long GetFoldersTransferred() const { return m_foldersTransferred; }
+  inline void SetFoldersTransferred(long long value) {
+    m_foldersTransferredHasBeenSet = true;
+    m_foldersTransferred = value;
+  }
+  inline DescribeTaskExecutionResult& WithFoldersTransferred(long long value) {
+    SetFoldersTransferred(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync verifies during your transfer.</p>
+   *  <p>Applies only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline long long GetFoldersVerified() const { return m_foldersVerified; }
+  inline void SetFoldersVerified(long long value) {
+    m_foldersVerifiedHasBeenSet = true;
+    m_foldersVerified = value;
+  }
+  inline DescribeTaskExecutionResult& WithFoldersVerified(long long value) {
+    SetFoldersVerified(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync actually deletes in your destination
+   * location. If you don't configure your task to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+   * data in the destination that isn't in the source</a>, the value is always
+   * <code>0</code>.</p>  <p>Applies only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline long long GetFoldersDeleted() const { return m_foldersDeleted; }
+  inline void SetFoldersDeleted(long long value) {
+    m_foldersDeletedHasBeenSet = true;
+    m_foldersDeleted = value;
+  }
+  inline DescribeTaskExecutionResult& WithFoldersDeleted(long long value) {
+    SetFoldersDeleted(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync finds at your locations.</p>
+   * <p>Applies only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline const TaskExecutionFoldersListedDetail& GetFoldersListed() const { return m_foldersListed; }
+  template <typename FoldersListedT = TaskExecutionFoldersListedDetail>
+  void SetFoldersListed(FoldersListedT&& value) {
+    m_foldersListedHasBeenSet = true;
+    m_foldersListed = std::forward<FoldersListedT>(value);
+  }
+  template <typename FoldersListedT = TaskExecutionFoldersListedDetail>
+  DescribeTaskExecutionResult& WithFoldersListed(FoldersListedT&& value) {
+    SetFoldersListed(std::forward<FoldersListedT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of directories that DataSync fails to list, prepare, transfer,
+   * verify, and delete during your task execution.</p>  <p>Applies only to <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+   * mode tasks</a>.</p>
+   */
+  inline const TaskExecutionFoldersFailedDetail& GetFoldersFailed() const { return m_foldersFailed; }
+  template <typename FoldersFailedT = TaskExecutionFoldersFailedDetail>
+  void SetFoldersFailed(FoldersFailedT&& value) {
+    m_foldersFailedHasBeenSet = true;
+    m_foldersFailed = std::forward<FoldersFailedT>(value);
+  }
+  template <typename FoldersFailedT = TaskExecutionFoldersFailedDetail>
+  DescribeTaskExecutionResult& WithFoldersFailed(FoldersFailedT&& value) {
+    SetFoldersFailed(std::forward<FoldersFailedT>(value));
     return *this;
   }
   ///@}
@@ -623,6 +855,24 @@ class DescribeTaskExecutionResult {
 
   TaskExecutionFilesFailedDetail m_filesFailed;
 
+  long long m_estimatedFoldersToDelete{0};
+
+  long long m_estimatedFoldersToTransfer{0};
+
+  long long m_foldersSkipped{0};
+
+  long long m_foldersPrepared{0};
+
+  long long m_foldersTransferred{0};
+
+  long long m_foldersVerified{0};
+
+  long long m_foldersDeleted{0};
+
+  TaskExecutionFoldersListedDetail m_foldersListed;
+
+  TaskExecutionFoldersFailedDetail m_foldersFailed;
+
   Aws::Utils::DateTime m_launchTime{};
 
   Aws::Utils::DateTime m_endTime{};
@@ -652,6 +902,15 @@ class DescribeTaskExecutionResult {
   bool m_filesPreparedHasBeenSet = false;
   bool m_filesListedHasBeenSet = false;
   bool m_filesFailedHasBeenSet = false;
+  bool m_estimatedFoldersToDeleteHasBeenSet = false;
+  bool m_estimatedFoldersToTransferHasBeenSet = false;
+  bool m_foldersSkippedHasBeenSet = false;
+  bool m_foldersPreparedHasBeenSet = false;
+  bool m_foldersTransferredHasBeenSet = false;
+  bool m_foldersVerifiedHasBeenSet = false;
+  bool m_foldersDeletedHasBeenSet = false;
+  bool m_foldersListedHasBeenSet = false;
+  bool m_foldersFailedHasBeenSet = false;
   bool m_launchTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

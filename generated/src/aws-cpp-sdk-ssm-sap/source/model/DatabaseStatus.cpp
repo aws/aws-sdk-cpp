@@ -21,6 +21,7 @@ static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
 static const int WARNING_HASH = HashingUtils::HashString("WARNING");
 static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
 static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
 
 DatabaseStatus GetDatabaseStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ DatabaseStatus GetDatabaseStatusForName(const Aws::String& name) {
     return DatabaseStatus::UNKNOWN;
   } else if (hashCode == ERROR__HASH) {
     return DatabaseStatus::ERROR_;
+  } else if (hashCode == STOPPING_HASH) {
+    return DatabaseStatus::STOPPING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForDatabaseStatus(DatabaseStatus enumValue) {
       return "UNKNOWN";
     case DatabaseStatus::ERROR_:
       return "ERROR";
+    case DatabaseStatus::STOPPING:
+      return "STOPPING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/SuppressionListReason.h>
+#include <aws/sesv2/model/SuppressionValidationOptions.h>
 
 #include <utility>
 
@@ -61,9 +62,28 @@ class SuppressionOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const SuppressionValidationOptions& GetValidationOptions() const { return m_validationOptions; }
+  inline bool ValidationOptionsHasBeenSet() const { return m_validationOptionsHasBeenSet; }
+  template <typename ValidationOptionsT = SuppressionValidationOptions>
+  void SetValidationOptions(ValidationOptionsT&& value) {
+    m_validationOptionsHasBeenSet = true;
+    m_validationOptions = std::forward<ValidationOptionsT>(value);
+  }
+  template <typename ValidationOptionsT = SuppressionValidationOptions>
+  SuppressionOptions& WithValidationOptions(ValidationOptionsT&& value) {
+    SetValidationOptions(std::forward<ValidationOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<SuppressionListReason> m_suppressedReasons;
+
+  SuppressionValidationOptions m_validationOptions;
   bool m_suppressedReasonsHasBeenSet = false;
+  bool m_validationOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -25,7 +25,8 @@ enum class CaptionSourceType {
   TELETEXT,
   NULL_SOURCE,
   IMSC,
-  WEBVTT
+  WEBVTT,
+  TT_3GPP
 };
 
 namespace CaptionSourceTypeMapper {

@@ -18,21 +18,21 @@ namespace Model {
 WaveAggregatedStatus::WaveAggregatedStatus(JsonView jsonValue) { *this = jsonValue; }
 
 WaveAggregatedStatus& WaveAggregatedStatus::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("healthStatus")) {
-    m_healthStatus = WaveHealthStatusMapper::GetWaveHealthStatusForName(jsonValue.GetString("healthStatus"));
-    m_healthStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("lastUpdateDateTime")) {
     m_lastUpdateDateTime = jsonValue.GetString("lastUpdateDateTime");
     m_lastUpdateDateTimeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("progressStatus")) {
-    m_progressStatus = WaveProgressStatusMapper::GetWaveProgressStatusForName(jsonValue.GetString("progressStatus"));
-    m_progressStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("replicationStartedDateTime")) {
     m_replicationStartedDateTime = jsonValue.GetString("replicationStartedDateTime");
     m_replicationStartedDateTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("healthStatus")) {
+    m_healthStatus = WaveHealthStatusMapper::GetWaveHealthStatusForName(jsonValue.GetString("healthStatus"));
+    m_healthStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("progressStatus")) {
+    m_progressStatus = WaveProgressStatusMapper::GetWaveProgressStatusForName(jsonValue.GetString("progressStatus"));
+    m_progressStatusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("totalApplications")) {
     m_totalApplications = jsonValue.GetInt64("totalApplications");
@@ -44,20 +44,20 @@ WaveAggregatedStatus& WaveAggregatedStatus::operator=(JsonView jsonValue) {
 JsonValue WaveAggregatedStatus::Jsonize() const {
   JsonValue payload;
 
-  if (m_healthStatusHasBeenSet) {
-    payload.WithString("healthStatus", WaveHealthStatusMapper::GetNameForWaveHealthStatus(m_healthStatus));
-  }
-
   if (m_lastUpdateDateTimeHasBeenSet) {
     payload.WithString("lastUpdateDateTime", m_lastUpdateDateTime);
   }
 
-  if (m_progressStatusHasBeenSet) {
-    payload.WithString("progressStatus", WaveProgressStatusMapper::GetNameForWaveProgressStatus(m_progressStatus));
-  }
-
   if (m_replicationStartedDateTimeHasBeenSet) {
     payload.WithString("replicationStartedDateTime", m_replicationStartedDateTime);
+  }
+
+  if (m_healthStatusHasBeenSet) {
+    payload.WithString("healthStatus", WaveHealthStatusMapper::GetNameForWaveHealthStatus(m_healthStatus));
+  }
+
+  if (m_progressStatusHasBeenSet) {
+    payload.WithString("progressStatus", WaveProgressStatusMapper::GetNameForWaveProgressStatus(m_progressStatus));
   }
 
   if (m_totalApplicationsHasBeenSet) {

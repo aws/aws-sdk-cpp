@@ -94,6 +94,25 @@ class CloudAutonomousVmClusterSummary {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the ODB network associated with this
+   * Autonomous VM cluster.</p>
+   */
+  inline const Aws::String& GetOdbNetworkArn() const { return m_odbNetworkArn; }
+  inline bool OdbNetworkArnHasBeenSet() const { return m_odbNetworkArnHasBeenSet; }
+  template <typename OdbNetworkArnT = Aws::String>
+  void SetOdbNetworkArn(OdbNetworkArnT&& value) {
+    m_odbNetworkArnHasBeenSet = true;
+    m_odbNetworkArn = std::forward<OdbNetworkArnT>(value);
+  }
+  template <typename OdbNetworkArnT = Aws::String>
+  CloudAutonomousVmClusterSummary& WithOdbNetworkArn(OdbNetworkArnT&& value) {
+    SetOdbNetworkArn(std::forward<OdbNetworkArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the OCI resource anchor associated with this Autonomous VM
    * cluster.</p>
    */
@@ -196,6 +215,25 @@ class CloudAutonomousVmClusterSummary {
   template <typename CloudExadataInfrastructureIdT = Aws::String>
   CloudAutonomousVmClusterSummary& WithCloudExadataInfrastructureId(CloudExadataInfrastructureIdT&& value) {
     SetCloudExadataInfrastructureId(std::forward<CloudExadataInfrastructureIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Exadata infrastructure containing this
+   * Autonomous VM cluster.</p>
+   */
+  inline const Aws::String& GetCloudExadataInfrastructureArn() const { return m_cloudExadataInfrastructureArn; }
+  inline bool CloudExadataInfrastructureArnHasBeenSet() const { return m_cloudExadataInfrastructureArnHasBeenSet; }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  void SetCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    m_cloudExadataInfrastructureArnHasBeenSet = true;
+    m_cloudExadataInfrastructureArn = std::forward<CloudExadataInfrastructureArnT>(value);
+  }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  CloudAutonomousVmClusterSummary& WithCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    SetCloudExadataInfrastructureArn(std::forward<CloudExadataInfrastructureArnT>(value));
     return *this;
   }
   ///@}
@@ -893,6 +931,8 @@ class CloudAutonomousVmClusterSummary {
 
   Aws::String m_odbNetworkId;
 
+  Aws::String m_odbNetworkArn;
+
   Aws::String m_ociResourceAnchorName;
 
   double m_percentProgress{0.0};
@@ -904,6 +944,8 @@ class CloudAutonomousVmClusterSummary {
   Aws::String m_statusReason;
 
   Aws::String m_cloudExadataInfrastructureId;
+
+  Aws::String m_cloudExadataInfrastructureArn;
 
   double m_autonomousDataStoragePercentage{0.0};
 
@@ -987,12 +1029,14 @@ class CloudAutonomousVmClusterSummary {
   bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
   bool m_cloudAutonomousVmClusterArnHasBeenSet = false;
   bool m_odbNetworkIdHasBeenSet = false;
+  bool m_odbNetworkArnHasBeenSet = false;
   bool m_ociResourceAnchorNameHasBeenSet = false;
   bool m_percentProgressHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_cloudExadataInfrastructureArnHasBeenSet = false;
   bool m_autonomousDataStoragePercentageHasBeenSet = false;
   bool m_autonomousDataStorageSizeInTBsHasBeenSet = false;
   bool m_availableAutonomousDataStorageSizeInTBsHasBeenSet = false;

@@ -69,56 +69,6 @@ class SourceServerActionDocument {
 
   ///@{
   /**
-   * <p>Source server post migration custom action active status.</p>
-   */
-  inline bool GetActive() const { return m_active; }
-  inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
-  inline void SetActive(bool value) {
-    m_activeHasBeenSet = true;
-    m_active = value;
-  }
-  inline SourceServerActionDocument& WithActive(bool value) {
-    SetActive(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server post migration custom action category.</p>
-   */
-  inline ActionCategory GetCategory() const { return m_category; }
-  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-  inline void SetCategory(ActionCategory value) {
-    m_categoryHasBeenSet = true;
-    m_category = value;
-  }
-  inline SourceServerActionDocument& WithCategory(ActionCategory value) {
-    SetCategory(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server post migration custom action description.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  SourceServerActionDocument& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Source server post migration custom action document identifier.</p>
    */
   inline const Aws::String& GetDocumentIdentifier() const { return m_documentIdentifier; }
@@ -131,6 +81,22 @@ class SourceServerActionDocument {
   template <typename DocumentIdentifierT = Aws::String>
   SourceServerActionDocument& WithDocumentIdentifier(DocumentIdentifierT&& value) {
     SetDocumentIdentifier(std::forward<DocumentIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server post migration custom action order.</p>
+   */
+  inline int GetOrder() const { return m_order; }
+  inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
+  inline void SetOrder(int value) {
+    m_orderHasBeenSet = true;
+    m_order = value;
+  }
+  inline SourceServerActionDocument& WithOrder(int value) {
+    SetOrder(value);
     return *this;
   }
   ///@}
@@ -155,24 +121,32 @@ class SourceServerActionDocument {
 
   ///@{
   /**
-   * <p>Source server post migration custom action external parameters.</p>
+   * <p>Source server post migration custom action active status.</p>
    */
-  inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const { return m_externalParameters; }
-  inline bool ExternalParametersHasBeenSet() const { return m_externalParametersHasBeenSet; }
-  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
-  void SetExternalParameters(ExternalParametersT&& value) {
-    m_externalParametersHasBeenSet = true;
-    m_externalParameters = std::forward<ExternalParametersT>(value);
+  inline bool GetActive() const { return m_active; }
+  inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
+  inline void SetActive(bool value) {
+    m_activeHasBeenSet = true;
+    m_active = value;
   }
-  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
-  SourceServerActionDocument& WithExternalParameters(ExternalParametersT&& value) {
-    SetExternalParameters(std::forward<ExternalParametersT>(value));
+  inline SourceServerActionDocument& WithActive(bool value) {
+    SetActive(value);
     return *this;
   }
-  template <typename ExternalParametersKeyT = Aws::String, typename ExternalParametersValueT = SsmExternalParameter>
-  SourceServerActionDocument& AddExternalParameters(ExternalParametersKeyT&& key, ExternalParametersValueT&& value) {
-    m_externalParametersHasBeenSet = true;
-    m_externalParameters.emplace(std::forward<ExternalParametersKeyT>(key), std::forward<ExternalParametersValueT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server post migration custom action timeout in seconds.</p>
+   */
+  inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
+  inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
+  inline void SetTimeoutSeconds(int value) {
+    m_timeoutSecondsHasBeenSet = true;
+    m_timeoutSeconds = value;
+  }
+  inline SourceServerActionDocument& WithTimeoutSeconds(int value) {
+    SetTimeoutSeconds(value);
     return *this;
   }
   ///@}
@@ -189,22 +163,6 @@ class SourceServerActionDocument {
   }
   inline SourceServerActionDocument& WithMustSucceedForCutover(bool value) {
     SetMustSucceedForCutover(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server post migration custom action order.</p>
-   */
-  inline int GetOrder() const { return m_order; }
-  inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-  inline void SetOrder(int value) {
-    m_orderHasBeenSet = true;
-    m_order = value;
-  }
-  inline SourceServerActionDocument& WithOrder(int value) {
-    SetOrder(value);
     return *this;
   }
   ///@}
@@ -235,16 +193,58 @@ class SourceServerActionDocument {
 
   ///@{
   /**
-   * <p>Source server post migration custom action timeout in seconds.</p>
+   * <p>Source server post migration custom action external parameters.</p>
    */
-  inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
-  inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
-  inline void SetTimeoutSeconds(int value) {
-    m_timeoutSecondsHasBeenSet = true;
-    m_timeoutSeconds = value;
+  inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const { return m_externalParameters; }
+  inline bool ExternalParametersHasBeenSet() const { return m_externalParametersHasBeenSet; }
+  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
+  void SetExternalParameters(ExternalParametersT&& value) {
+    m_externalParametersHasBeenSet = true;
+    m_externalParameters = std::forward<ExternalParametersT>(value);
   }
-  inline SourceServerActionDocument& WithTimeoutSeconds(int value) {
-    SetTimeoutSeconds(value);
+  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
+  SourceServerActionDocument& WithExternalParameters(ExternalParametersT&& value) {
+    SetExternalParameters(std::forward<ExternalParametersT>(value));
+    return *this;
+  }
+  template <typename ExternalParametersKeyT = Aws::String, typename ExternalParametersValueT = SsmExternalParameter>
+  SourceServerActionDocument& AddExternalParameters(ExternalParametersKeyT&& key, ExternalParametersValueT&& value) {
+    m_externalParametersHasBeenSet = true;
+    m_externalParameters.emplace(std::forward<ExternalParametersKeyT>(key), std::forward<ExternalParametersValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server post migration custom action description.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  SourceServerActionDocument& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server post migration custom action category.</p>
+   */
+  inline ActionCategory GetCategory() const { return m_category; }
+  inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+  inline void SetCategory(ActionCategory value) {
+    m_categoryHasBeenSet = true;
+    m_category = value;
+  }
+  inline SourceServerActionDocument& WithCategory(ActionCategory value) {
+    SetCategory(value);
     return *this;
   }
   ///@}
@@ -269,39 +269,39 @@ class SourceServerActionDocument {
 
   Aws::String m_actionName;
 
-  bool m_active{false};
-
-  ActionCategory m_category{ActionCategory::NOT_SET};
-
-  Aws::String m_description;
-
   Aws::String m_documentIdentifier;
-
-  Aws::String m_documentVersion;
-
-  Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
-
-  bool m_mustSucceedForCutover{false};
 
   int m_order{0};
 
-  Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
+  Aws::String m_documentVersion;
+
+  bool m_active{false};
 
   int m_timeoutSeconds{0};
+
+  bool m_mustSucceedForCutover{false};
+
+  Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
+
+  Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
+
+  Aws::String m_description;
+
+  ActionCategory m_category{ActionCategory::NOT_SET};
 
   Aws::String m_requestId;
   bool m_actionIDHasBeenSet = false;
   bool m_actionNameHasBeenSet = false;
-  bool m_activeHasBeenSet = false;
-  bool m_categoryHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
   bool m_documentIdentifierHasBeenSet = false;
-  bool m_documentVersionHasBeenSet = false;
-  bool m_externalParametersHasBeenSet = false;
-  bool m_mustSucceedForCutoverHasBeenSet = false;
   bool m_orderHasBeenSet = false;
-  bool m_parametersHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
   bool m_timeoutSecondsHasBeenSet = false;
+  bool m_mustSucceedForCutoverHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_externalParametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

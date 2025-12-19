@@ -90,9 +90,12 @@ class StartDashboardSnapshotJobRequest : public QuickSightRequest {
 
   ///@{
   /**
-   * <p> A structure that contains information about the anonymous users that the
-   * generated snapshot is for. This API will not return information about registered
-   * Amazon Quick Sight.</p>
+   * <p>A structure that contains information about the users that the dashboard
+   * snapshot is generated for. The users can be either anonymous users or registered
+   * users. Anonymous users cannot be used together with registered users.</p>
+   *  <p>When using identity-enhanced session credentials, set the
+   * UserConfiguration request attribute to null. Otherwise, the request will be
+   * invalid.</p>
    */
   inline const SnapshotUserConfiguration& GetUserConfiguration() const { return m_userConfiguration; }
   inline bool UserConfigurationHasBeenSet() const { return m_userConfigurationHasBeenSet; }

@@ -35,17 +35,17 @@ class UpdateSourceServerResult {
 
   ///@{
   /**
-   * <p>Source server application ID.</p>
+   * <p>Source server ID.</p>
    */
-  inline const Aws::String& GetApplicationID() const { return m_applicationID; }
-  template <typename ApplicationIDT = Aws::String>
-  void SetApplicationID(ApplicationIDT&& value) {
-    m_applicationIDHasBeenSet = true;
-    m_applicationID = std::forward<ApplicationIDT>(value);
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
   }
-  template <typename ApplicationIDT = Aws::String>
-  UpdateSourceServerResult& WithApplicationID(ApplicationIDT&& value) {
-    SetApplicationID(std::forward<ApplicationIDT>(value));
+  template <typename SourceServerIDT = Aws::String>
+  UpdateSourceServerResult& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -69,57 +69,6 @@ class UpdateSourceServerResult {
 
   ///@{
   /**
-   * <p>Source Server connector action.</p>
-   */
-  inline const SourceServerConnectorAction& GetConnectorAction() const { return m_connectorAction; }
-  template <typename ConnectorActionT = SourceServerConnectorAction>
-  void SetConnectorAction(ConnectorActionT&& value) {
-    m_connectorActionHasBeenSet = true;
-    m_connectorAction = std::forward<ConnectorActionT>(value);
-  }
-  template <typename ConnectorActionT = SourceServerConnectorAction>
-  UpdateSourceServerResult& WithConnectorAction(ConnectorActionT&& value) {
-    SetConnectorAction(std::forward<ConnectorActionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server data replication info.</p>
-   */
-  inline const DataReplicationInfo& GetDataReplicationInfo() const { return m_dataReplicationInfo; }
-  template <typename DataReplicationInfoT = DataReplicationInfo>
-  void SetDataReplicationInfo(DataReplicationInfoT&& value) {
-    m_dataReplicationInfoHasBeenSet = true;
-    m_dataReplicationInfo = std::forward<DataReplicationInfoT>(value);
-  }
-  template <typename DataReplicationInfoT = DataReplicationInfo>
-  UpdateSourceServerResult& WithDataReplicationInfo(DataReplicationInfoT&& value) {
-    SetDataReplicationInfo(std::forward<DataReplicationInfoT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server fqdn for action framework.</p>
-   */
-  inline const Aws::String& GetFqdnForActionFramework() const { return m_fqdnForActionFramework; }
-  template <typename FqdnForActionFrameworkT = Aws::String>
-  void SetFqdnForActionFramework(FqdnForActionFrameworkT&& value) {
-    m_fqdnForActionFrameworkHasBeenSet = true;
-    m_fqdnForActionFramework = std::forward<FqdnForActionFrameworkT>(value);
-  }
-  template <typename FqdnForActionFrameworkT = Aws::String>
-  UpdateSourceServerResult& WithFqdnForActionFramework(FqdnForActionFrameworkT&& value) {
-    SetFqdnForActionFramework(std::forward<FqdnForActionFrameworkT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Source server archived status.</p>
    */
   inline bool GetIsArchived() const { return m_isArchived; }
@@ -129,89 +78,6 @@ class UpdateSourceServerResult {
   }
   inline UpdateSourceServerResult& WithIsArchived(bool value) {
     SetIsArchived(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server launched instance.</p>
-   */
-  inline const LaunchedInstance& GetLaunchedInstance() const { return m_launchedInstance; }
-  template <typename LaunchedInstanceT = LaunchedInstance>
-  void SetLaunchedInstance(LaunchedInstanceT&& value) {
-    m_launchedInstanceHasBeenSet = true;
-    m_launchedInstance = std::forward<LaunchedInstanceT>(value);
-  }
-  template <typename LaunchedInstanceT = LaunchedInstance>
-  UpdateSourceServerResult& WithLaunchedInstance(LaunchedInstanceT&& value) {
-    SetLaunchedInstance(std::forward<LaunchedInstanceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server lifecycle state.</p>
-   */
-  inline const LifeCycle& GetLifeCycle() const { return m_lifeCycle; }
-  template <typename LifeCycleT = LifeCycle>
-  void SetLifeCycle(LifeCycleT&& value) {
-    m_lifeCycleHasBeenSet = true;
-    m_lifeCycle = std::forward<LifeCycleT>(value);
-  }
-  template <typename LifeCycleT = LifeCycle>
-  UpdateSourceServerResult& WithLifeCycle(LifeCycleT&& value) {
-    SetLifeCycle(std::forward<LifeCycleT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server replication type.</p>
-   */
-  inline ReplicationType GetReplicationType() const { return m_replicationType; }
-  inline void SetReplicationType(ReplicationType value) {
-    m_replicationTypeHasBeenSet = true;
-    m_replicationType = value;
-  }
-  inline UpdateSourceServerResult& WithReplicationType(ReplicationType value) {
-    SetReplicationType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server properties.</p>
-   */
-  inline const SourceProperties& GetSourceProperties() const { return m_sourceProperties; }
-  template <typename SourcePropertiesT = SourceProperties>
-  void SetSourceProperties(SourcePropertiesT&& value) {
-    m_sourcePropertiesHasBeenSet = true;
-    m_sourceProperties = std::forward<SourcePropertiesT>(value);
-  }
-  template <typename SourcePropertiesT = SourceProperties>
-  UpdateSourceServerResult& WithSourceProperties(SourcePropertiesT&& value) {
-    SetSourceProperties(std::forward<SourcePropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Source server ID.</p>
-   */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
-  }
-  template <typename SourceServerIDT = Aws::String>
-  UpdateSourceServerResult& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -241,17 +107,83 @@ class UpdateSourceServerResult {
 
   ///@{
   /**
-   * <p>Source server user provided ID.</p>
+   * <p>Source server launched instance.</p>
    */
-  inline const Aws::String& GetUserProvidedID() const { return m_userProvidedID; }
-  template <typename UserProvidedIDT = Aws::String>
-  void SetUserProvidedID(UserProvidedIDT&& value) {
-    m_userProvidedIDHasBeenSet = true;
-    m_userProvidedID = std::forward<UserProvidedIDT>(value);
+  inline const LaunchedInstance& GetLaunchedInstance() const { return m_launchedInstance; }
+  template <typename LaunchedInstanceT = LaunchedInstance>
+  void SetLaunchedInstance(LaunchedInstanceT&& value) {
+    m_launchedInstanceHasBeenSet = true;
+    m_launchedInstance = std::forward<LaunchedInstanceT>(value);
   }
-  template <typename UserProvidedIDT = Aws::String>
-  UpdateSourceServerResult& WithUserProvidedID(UserProvidedIDT&& value) {
-    SetUserProvidedID(std::forward<UserProvidedIDT>(value));
+  template <typename LaunchedInstanceT = LaunchedInstance>
+  UpdateSourceServerResult& WithLaunchedInstance(LaunchedInstanceT&& value) {
+    SetLaunchedInstance(std::forward<LaunchedInstanceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server data replication info.</p>
+   */
+  inline const DataReplicationInfo& GetDataReplicationInfo() const { return m_dataReplicationInfo; }
+  template <typename DataReplicationInfoT = DataReplicationInfo>
+  void SetDataReplicationInfo(DataReplicationInfoT&& value) {
+    m_dataReplicationInfoHasBeenSet = true;
+    m_dataReplicationInfo = std::forward<DataReplicationInfoT>(value);
+  }
+  template <typename DataReplicationInfoT = DataReplicationInfo>
+  UpdateSourceServerResult& WithDataReplicationInfo(DataReplicationInfoT&& value) {
+    SetDataReplicationInfo(std::forward<DataReplicationInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server lifecycle state.</p>
+   */
+  inline const LifeCycle& GetLifeCycle() const { return m_lifeCycle; }
+  template <typename LifeCycleT = LifeCycle>
+  void SetLifeCycle(LifeCycleT&& value) {
+    m_lifeCycleHasBeenSet = true;
+    m_lifeCycle = std::forward<LifeCycleT>(value);
+  }
+  template <typename LifeCycleT = LifeCycle>
+  UpdateSourceServerResult& WithLifeCycle(LifeCycleT&& value) {
+    SetLifeCycle(std::forward<LifeCycleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server properties.</p>
+   */
+  inline const SourceProperties& GetSourceProperties() const { return m_sourceProperties; }
+  template <typename SourcePropertiesT = SourceProperties>
+  void SetSourceProperties(SourcePropertiesT&& value) {
+    m_sourcePropertiesHasBeenSet = true;
+    m_sourceProperties = std::forward<SourcePropertiesT>(value);
+  }
+  template <typename SourcePropertiesT = SourceProperties>
+  UpdateSourceServerResult& WithSourceProperties(SourcePropertiesT&& value) {
+    SetSourceProperties(std::forward<SourcePropertiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server replication type.</p>
+   */
+  inline ReplicationType GetReplicationType() const { return m_replicationType; }
+  inline void SetReplicationType(ReplicationType value) {
+    m_replicationTypeHasBeenSet = true;
+    m_replicationType = value;
+  }
+  inline UpdateSourceServerResult& WithReplicationType(ReplicationType value) {
+    SetReplicationType(value);
     return *this;
   }
   ///@}
@@ -274,6 +206,74 @@ class UpdateSourceServerResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Source server application ID.</p>
+   */
+  inline const Aws::String& GetApplicationID() const { return m_applicationID; }
+  template <typename ApplicationIDT = Aws::String>
+  void SetApplicationID(ApplicationIDT&& value) {
+    m_applicationIDHasBeenSet = true;
+    m_applicationID = std::forward<ApplicationIDT>(value);
+  }
+  template <typename ApplicationIDT = Aws::String>
+  UpdateSourceServerResult& WithApplicationID(ApplicationIDT&& value) {
+    SetApplicationID(std::forward<ApplicationIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server user provided ID.</p>
+   */
+  inline const Aws::String& GetUserProvidedID() const { return m_userProvidedID; }
+  template <typename UserProvidedIDT = Aws::String>
+  void SetUserProvidedID(UserProvidedIDT&& value) {
+    m_userProvidedIDHasBeenSet = true;
+    m_userProvidedID = std::forward<UserProvidedIDT>(value);
+  }
+  template <typename UserProvidedIDT = Aws::String>
+  UpdateSourceServerResult& WithUserProvidedID(UserProvidedIDT&& value) {
+    SetUserProvidedID(std::forward<UserProvidedIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source server fqdn for action framework.</p>
+   */
+  inline const Aws::String& GetFqdnForActionFramework() const { return m_fqdnForActionFramework; }
+  template <typename FqdnForActionFrameworkT = Aws::String>
+  void SetFqdnForActionFramework(FqdnForActionFrameworkT&& value) {
+    m_fqdnForActionFrameworkHasBeenSet = true;
+    m_fqdnForActionFramework = std::forward<FqdnForActionFrameworkT>(value);
+  }
+  template <typename FqdnForActionFrameworkT = Aws::String>
+  UpdateSourceServerResult& WithFqdnForActionFramework(FqdnForActionFrameworkT&& value) {
+    SetFqdnForActionFramework(std::forward<FqdnForActionFrameworkT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Source Server connector action.</p>
+   */
+  inline const SourceServerConnectorAction& GetConnectorAction() const { return m_connectorAction; }
+  template <typename ConnectorActionT = SourceServerConnectorAction>
+  void SetConnectorAction(ConnectorActionT&& value) {
+    m_connectorActionHasBeenSet = true;
+    m_connectorAction = std::forward<ConnectorActionT>(value);
+  }
+  template <typename ConnectorActionT = SourceServerConnectorAction>
+  UpdateSourceServerResult& WithConnectorAction(ConnectorActionT&& value) {
+    SetConnectorAction(std::forward<ConnectorActionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -288,49 +288,49 @@ class UpdateSourceServerResult {
   }
   ///@}
  private:
-  Aws::String m_applicationID;
+  Aws::String m_sourceServerID;
 
   Aws::String m_arn;
 
-  SourceServerConnectorAction m_connectorAction;
-
-  DataReplicationInfo m_dataReplicationInfo;
-
-  Aws::String m_fqdnForActionFramework;
-
   bool m_isArchived{false};
-
-  LaunchedInstance m_launchedInstance;
-
-  LifeCycle m_lifeCycle;
-
-  ReplicationType m_replicationType{ReplicationType::NOT_SET};
-
-  SourceProperties m_sourceProperties;
-
-  Aws::String m_sourceServerID;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
-  Aws::String m_userProvidedID;
+  LaunchedInstance m_launchedInstance;
+
+  DataReplicationInfo m_dataReplicationInfo;
+
+  LifeCycle m_lifeCycle;
+
+  SourceProperties m_sourceProperties;
+
+  ReplicationType m_replicationType{ReplicationType::NOT_SET};
 
   Aws::String m_vcenterClientID;
 
+  Aws::String m_applicationID;
+
+  Aws::String m_userProvidedID;
+
+  Aws::String m_fqdnForActionFramework;
+
+  SourceServerConnectorAction m_connectorAction;
+
   Aws::String m_requestId;
-  bool m_applicationIDHasBeenSet = false;
-  bool m_arnHasBeenSet = false;
-  bool m_connectorActionHasBeenSet = false;
-  bool m_dataReplicationInfoHasBeenSet = false;
-  bool m_fqdnForActionFrameworkHasBeenSet = false;
-  bool m_isArchivedHasBeenSet = false;
-  bool m_launchedInstanceHasBeenSet = false;
-  bool m_lifeCycleHasBeenSet = false;
-  bool m_replicationTypeHasBeenSet = false;
-  bool m_sourcePropertiesHasBeenSet = false;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_userProvidedIDHasBeenSet = false;
+  bool m_launchedInstanceHasBeenSet = false;
+  bool m_dataReplicationInfoHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_sourcePropertiesHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
   bool m_vcenterClientIDHasBeenSet = false;
+  bool m_applicationIDHasBeenSet = false;
+  bool m_userProvidedIDHasBeenSet = false;
+  bool m_fqdnForActionFrameworkHasBeenSet = false;
+  bool m_connectorActionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

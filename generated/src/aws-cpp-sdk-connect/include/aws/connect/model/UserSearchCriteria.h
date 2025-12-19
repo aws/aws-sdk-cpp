@@ -66,7 +66,7 @@ class UserSearchCriteria {
   ///@{
   /**
    * <p>A list of conditions which would be applied together with an <code>AND</code>
-   * condition. </p>
+   * condition.</p>
    */
   inline const Aws::Vector<UserSearchCriteria>& GetAndConditions() const { return m_andConditions; }
   inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }

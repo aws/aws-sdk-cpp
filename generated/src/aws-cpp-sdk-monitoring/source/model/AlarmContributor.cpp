@@ -3,108 +3,460 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/AlarmContributor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Xml;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CloudWatch {
 namespace Model {
 
-AlarmContributor::AlarmContributor(const XmlNode& xmlNode) { *this = xmlNode; }
+AlarmContributor::AlarmContributor(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-AlarmContributor& AlarmContributor::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+AlarmContributor& AlarmContributor::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-  if (!resultNode.IsNull()) {
-    XmlNode contributorIdNode = resultNode.FirstChild("ContributorId");
-    if (!contributorIdNode.IsNull()) {
-      m_contributorId = Aws::Utils::Xml::DecodeEscapedXmlText(contributorIdNode.GetText());
-      m_contributorIdHasBeenSet = true;
-    }
-    XmlNode contributorAttributesNode = resultNode.FirstChild("ContributorAttributes");
+              if (initialKeyStr == "ContributorId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_contributorId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_contributorId = ss.str();
+                  }
+                }
+                m_contributorIdHasBeenSet = true;
+              }
 
-    if (!contributorAttributesNode.IsNull()) {
-      XmlNode contributorAttributesEntry = contributorAttributesNode.FirstChild("entry");
-      m_contributorAttributesHasBeenSet = !contributorAttributesEntry.IsNull();
-      while (!contributorAttributesEntry.IsNull()) {
-        XmlNode keyNode = contributorAttributesEntry.FirstChild("key");
-        XmlNode valueNode = contributorAttributesEntry.FirstChild("value");
-        m_contributorAttributes[keyNode.GetText()] = valueNode.GetText();
-        contributorAttributesEntry = contributorAttributesEntry.NextNode("entry");
+              else if (initialKeyStr == "ContributorAttributes") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() && (peekType_0.value() == CborType::MapStart || peekType_0.value() == CborType::IndefMapStart)) {
+                  if (peekType_0.value() == CborType::MapStart) {
+                    auto mapSize_0 = decoder->PopNextMapStart();
+                    if (mapSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < mapSize_0.value(); j_0++) {
+                        auto key_1 = decoder->PopNextTextVal();
+                        if (key_1.has_value()) {
+                          Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                          auto peekType_1 = decoder->PeekType();
+                          if (peekType_1) {
+                            if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                m_contributorAttributes[keyStr_1] =
+                                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            } else {
+                              decoder->ConsumeNextSingleElement();
+                              Aws::StringStream ss_1;
+                              while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                                auto nextType_1 = decoder->PeekType();
+                                if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                  if (nextType_1.has_value()) {
+                                    decoder->ConsumeNextSingleElement();  // consume the Break
+                                  }
+                                  break;
+                                }
+                                auto val = decoder->PopNextTextVal();
+                                if (val.has_value()) {
+                                  ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                                }
+                              }
+                              m_contributorAttributes[keyStr_1] = ss_1.str();
+                              ss_1.clear();
+                            }
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefMapStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto key_1 = decoder->PopNextTextVal();
+                      if (key_1.has_value()) {
+                        Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_contributorAttributes[keyStr_1] =
+                                  Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_contributorAttributes[keyStr_1] = ss_1.str();
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                m_contributorAttributesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StateReason") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_stateReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_stateReason = ss.str();
+                  }
+                }
+                m_stateReasonHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StateTransitionedTimestamp") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_stateTransitionedTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_stateTransitionedTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_stateTransitionedTimestampHasBeenSet = true;
+              }
+
+              else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("AlarmContributor", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ContributorId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_contributorId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_contributorId = ss.str();
+                }
+              }
+              m_contributorIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ContributorAttributes") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() && (peekType_0.value() == CborType::MapStart || peekType_0.value() == CborType::IndefMapStart)) {
+                if (peekType_0.value() == CborType::MapStart) {
+                  auto mapSize_0 = decoder->PopNextMapStart();
+                  if (mapSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < mapSize_0.value(); j_0++) {
+                      auto key_1 = decoder->PopNextTextVal();
+                      if (key_1.has_value()) {
+                        Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_contributorAttributes[keyStr_1] =
+                                  Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_contributorAttributes[keyStr_1] = ss_1.str();
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefMapStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto key_1 = decoder->PopNextTextVal();
+                    if (key_1.has_value()) {
+                      Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_contributorAttributes[keyStr_1] =
+                                Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_contributorAttributes[keyStr_1] = ss_1.str();
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              m_contributorAttributesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StateReason") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_stateReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_stateReason = ss.str();
+                }
+              }
+              m_stateReasonHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StateTransitionedTimestamp") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_stateTransitionedTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_stateTransitionedTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_stateTransitionedTimestampHasBeenSet = true;
+            }
+
+            else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
       }
-
-      m_contributorAttributesHasBeenSet = true;
-    }
-    XmlNode stateReasonNode = resultNode.FirstChild("StateReason");
-    if (!stateReasonNode.IsNull()) {
-      m_stateReason = Aws::Utils::Xml::DecodeEscapedXmlText(stateReasonNode.GetText());
-      m_stateReasonHasBeenSet = true;
-    }
-    XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");
-    if (!stateTransitionedTimestampNode.IsNull()) {
-      m_stateTransitionedTimestamp =
-          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateTransitionedTimestampNode.GetText()).c_str()).c_str(),
-                   Aws::Utils::DateFormat::ISO_8601);
-      m_stateTransitionedTimestampHasBeenSet = true;
     }
   }
 
   return *this;
 }
 
-void AlarmContributor::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+void AlarmContributor::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_contributorIdHasBeenSet) {
-    oStream << location << index << locationValue << ".ContributorId=" << StringUtils::URLEncode(m_contributorId.c_str()) << "&";
+    mapSize++;
+  }
+  if (m_contributorAttributesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stateReasonHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stateTransitionedTimestampHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_contributorIdHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContributorId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_contributorId.c_str()));
   }
 
   if (m_contributorAttributesHasBeenSet) {
-    unsigned contributorAttributesIdx = 1;
-    for (auto& item : m_contributorAttributes) {
-      oStream << location << index << locationValue << ".ContributorAttributes.entry." << contributorAttributesIdx
-              << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
-      oStream << location << index << locationValue << ".ContributorAttributes.entry." << contributorAttributesIdx
-              << ".value=" << StringUtils::URLEncode(item.second.c_str()) << "&";
-      contributorAttributesIdx++;
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContributorAttributes"));
+    encoder.WriteMapStart(m_contributorAttributes.size());
+    for (const auto& item_0 : m_contributorAttributes) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
     }
   }
 
   if (m_stateReasonHasBeenSet) {
-    oStream << location << index << locationValue << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateReason"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_stateReason.c_str()));
   }
 
   if (m_stateTransitionedTimestampHasBeenSet) {
-    oStream << location << index << locationValue << ".StateTransitionedTimestamp="
-            << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-  }
-}
-
-void AlarmContributor::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_contributorIdHasBeenSet) {
-    oStream << location << ".ContributorId=" << StringUtils::URLEncode(m_contributorId.c_str()) << "&";
-  }
-  if (m_contributorAttributesHasBeenSet) {
-    unsigned contributorAttributesIdx = 1;
-    for (auto& item : m_contributorAttributes) {
-      oStream << location << ".ContributorAttributes.entry." << contributorAttributesIdx
-              << ".key=" << StringUtils::URLEncode(item.first.c_str()) << "&";
-      oStream << location << ".ContributorAttributes.entry." << contributorAttributesIdx
-              << ".value=" << StringUtils::URLEncode(item.second.c_str()) << "&";
-      contributorAttributesIdx++;
-    }
-  }
-  if (m_stateReasonHasBeenSet) {
-    oStream << location << ".StateReason=" << StringUtils::URLEncode(m_stateReason.c_str()) << "&";
-  }
-  if (m_stateTransitionedTimestampHasBeenSet) {
-    oStream << location << ".StateTransitionedTimestamp="
-            << StringUtils::URLEncode(m_stateTransitionedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateTransitionedTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_stateTransitionedTimestamp.Seconds());
   }
 }
 

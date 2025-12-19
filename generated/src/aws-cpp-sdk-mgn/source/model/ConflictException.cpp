@@ -18,20 +18,13 @@ namespace Model {
 ConflictException::ConflictException(JsonView jsonValue) { *this = jsonValue; }
 
 ConflictException& ConflictException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("code")) {
-    m_code = jsonValue.GetString("code");
-    m_codeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("errors")) {
-    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
-    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
-      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
-    }
-    m_errorsHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("code")) {
+    m_code = jsonValue.GetString("code");
+    m_codeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("resourceId")) {
     m_resourceId = jsonValue.GetString("resourceId");
@@ -41,26 +34,25 @@ ConflictException& ConflictException::operator=(JsonView jsonValue) {
     m_resourceType = jsonValue.GetString("resourceType");
     m_resourceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errors")) {
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
+    m_errorsHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ConflictException::Jsonize() const {
   JsonValue payload;
 
-  if (m_codeHasBeenSet) {
-    payload.WithString("code", m_code);
-  }
-
-  if (m_errorsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
-    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
-      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
-    }
-    payload.WithArray("errors", std::move(errorsJsonList));
-  }
-
   if (m_messageHasBeenSet) {
     payload.WithString("message", m_message);
+  }
+
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
   if (m_resourceIdHasBeenSet) {
@@ -69,6 +61,14 @@ JsonValue ConflictException::Jsonize() const {
 
   if (m_resourceTypeHasBeenSet) {
     payload.WithString("resourceType", m_resourceType);
+  }
+
+  if (m_errorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
+      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
+    }
+    payload.WithArray("errors", std::move(errorsJsonList));
   }
 
   return payload;

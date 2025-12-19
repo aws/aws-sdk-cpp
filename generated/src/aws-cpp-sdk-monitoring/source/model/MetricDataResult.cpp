@@ -3,148 +3,530 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/model/MetricDataResult.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Xml;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CloudWatch {
 namespace Model {
 
-MetricDataResult::MetricDataResult(const XmlNode& xmlNode) { *this = xmlNode; }
+MetricDataResult::MetricDataResult(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-MetricDataResult& MetricDataResult::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+MetricDataResult& MetricDataResult::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
 
-  if (!resultNode.IsNull()) {
-    XmlNode idNode = resultNode.FirstChild("Id");
-    if (!idNode.IsNull()) {
-      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
-      m_idHasBeenSet = true;
-    }
-    XmlNode labelNode = resultNode.FirstChild("Label");
-    if (!labelNode.IsNull()) {
-      m_label = Aws::Utils::Xml::DecodeEscapedXmlText(labelNode.GetText());
-      m_labelHasBeenSet = true;
-    }
-    XmlNode timestampsNode = resultNode.FirstChild("Timestamps");
-    if (!timestampsNode.IsNull()) {
-      XmlNode timestampsMember = timestampsNode.FirstChild("member");
-      m_timestampsHasBeenSet = !timestampsMember.IsNull();
-      while (!timestampsMember.IsNull()) {
-        m_timestamps.push_back(DateTime(StringUtils::Trim(timestampsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
-        timestampsMember = timestampsMember.NextNode("member");
+              if (initialKeyStr == "Id") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_id = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_id = ss.str();
+                  }
+                }
+                m_idHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Label") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_label = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_label = ss.str();
+                  }
+                }
+                m_labelHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Timestamps") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto tag = decoder->PopNextTagVal();
+                        if (tag.has_value() &&
+                            tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                        {
+                          auto dateType = decoder->PeekType();
+                          if (dateType.has_value()) {
+                            if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                              auto val = decoder->PopNextFloatVal();
+                              if (val.has_value()) {
+                                m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                              }
+                            } else {
+                              auto val = decoder->PopNextUnsignedIntVal();
+                              if (val.has_value()) {
+                                m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto tag = decoder->PopNextTagVal();
+                      if (tag.has_value() &&
+                          tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                      {
+                        auto dateType = decoder->PeekType();
+                        if (dateType.has_value()) {
+                          if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                            auto val = decoder->PopNextFloatVal();
+                            if (val.has_value()) {
+                              m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                            }
+                          } else {
+                            auto val = decoder->PopNextUnsignedIntVal();
+                            if (val.has_value()) {
+                              m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                m_timestampsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Values") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto val = decoder->PopNextFloatVal();
+                        if (val.has_value()) {
+                          m_values.push_back(val.value());
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_values.push_back(val.value());
+                      }
+                    }
+                  }
+                }
+                m_valuesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StatusCode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_statusCode =
+                      StatusCodeMapper::GetStatusCodeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusCodeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Messages") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_messages.push_back(MessageData(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_messages.push_back(MessageData(decoder));
+                    }
+                  }
+                }
+                m_messagesHasBeenSet = true;
+              }
+
+              else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("MetricDataResult", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Id") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_id = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_id = ss.str();
+                }
+              }
+              m_idHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Label") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_label = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_label = ss.str();
+                }
+              }
+              m_labelHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Timestamps") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto tag = decoder->PopNextTagVal();
+                      if (tag.has_value() &&
+                          tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                      {
+                        auto dateType = decoder->PeekType();
+                        if (dateType.has_value()) {
+                          if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                            auto val = decoder->PopNextFloatVal();
+                            if (val.has_value()) {
+                              m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                            }
+                          } else {
+                            auto val = decoder->PopNextUnsignedIntVal();
+                            if (val.has_value()) {
+                              m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto tag = decoder->PopNextTagVal();
+                    if (tag.has_value() &&
+                        tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                    {
+                      auto dateType = decoder->PeekType();
+                      if (dateType.has_value()) {
+                        if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                          auto val = decoder->PopNextFloatVal();
+                          if (val.has_value()) {
+                            m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                          }
+                        } else {
+                          auto val = decoder->PopNextUnsignedIntVal();
+                          if (val.has_value()) {
+                            m_timestamps.push_back(Aws::Utils::DateTime(val.value()));
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              m_timestampsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Values") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_values.push_back(val.value());
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_values.push_back(val.value());
+                    }
+                  }
+                }
+              }
+              m_valuesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StatusCode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_statusCode =
+                    StatusCodeMapper::GetStatusCodeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusCodeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Messages") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_messages.push_back(MessageData(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_messages.push_back(MessageData(decoder));
+                  }
+                }
+              }
+              m_messagesHasBeenSet = true;
+            }
+
+            else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
       }
-
-      m_timestampsHasBeenSet = true;
-    }
-    XmlNode valuesNode = resultNode.FirstChild("Values");
-    if (!valuesNode.IsNull()) {
-      XmlNode valuesMember = valuesNode.FirstChild("member");
-      m_valuesHasBeenSet = !valuesMember.IsNull();
-      while (!valuesMember.IsNull()) {
-        m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));
-        valuesMember = valuesMember.NextNode("member");
-      }
-
-      m_valuesHasBeenSet = true;
-    }
-    XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
-    if (!statusCodeNode.IsNull()) {
-      m_statusCode = StatusCodeMapper::GetStatusCodeForName(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()));
-      m_statusCodeHasBeenSet = true;
-    }
-    XmlNode messagesNode = resultNode.FirstChild("Messages");
-    if (!messagesNode.IsNull()) {
-      XmlNode messagesMember = messagesNode.FirstChild("member");
-      m_messagesHasBeenSet = !messagesMember.IsNull();
-      while (!messagesMember.IsNull()) {
-        m_messages.push_back(messagesMember);
-        messagesMember = messagesMember.NextNode("member");
-      }
-
-      m_messagesHasBeenSet = true;
     }
   }
 
   return *this;
 }
 
-void MetricDataResult::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+void MetricDataResult::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_idHasBeenSet) {
-    oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+    mapSize++;
+  }
+  if (m_labelHasBeenSet) {
+    mapSize++;
+  }
+  if (m_timestampsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_valuesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_messagesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
+
+  if (m_idHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Id"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_id.c_str()));
   }
 
   if (m_labelHasBeenSet) {
-    oStream << location << index << locationValue << ".Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Label"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_label.c_str()));
   }
 
   if (m_timestampsHasBeenSet) {
-    unsigned timestampsIdx = 1;
-    for (auto& item : m_timestamps) {
-      oStream << location << index << locationValue << ".Timestamps.member." << timestampsIdx++ << "="
-              << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Timestamps"));
+    encoder.WriteArrayStart(m_timestamps.size());
+    for (const auto& item_0 : m_timestamps) {
+      encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+      encoder.WriteUInt(item_0.Seconds());
     }
   }
 
   if (m_valuesHasBeenSet) {
-    unsigned valuesIdx = 1;
-    for (auto& item : m_values) {
-      oStream << location << index << locationValue << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Values"));
+    encoder.WriteArrayStart(m_values.size());
+    for (const auto& item_0 : m_values) {
+      encoder.WriteFloat(item_0);
     }
   }
 
   if (m_statusCodeHasBeenSet) {
-    oStream << location << index << locationValue
-            << ".StatusCode=" << StringUtils::URLEncode(StatusCodeMapper::GetNameForStatusCode(m_statusCode)) << "&";
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StatusCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(StatusCodeMapper::GetNameForStatusCode(m_statusCode).c_str()));
   }
 
   if (m_messagesHasBeenSet) {
-    unsigned messagesIdx = 1;
-    for (auto& item : m_messages) {
-      Aws::StringStream messagesSs;
-      messagesSs << location << index << locationValue << ".Messages.member." << messagesIdx++;
-      item.OutputToStream(oStream, messagesSs.str().c_str());
-    }
-  }
-}
-
-void MetricDataResult::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_idHasBeenSet) {
-    oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
-  if (m_labelHasBeenSet) {
-    oStream << location << ".Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
-  }
-  if (m_timestampsHasBeenSet) {
-    unsigned timestampsIdx = 1;
-    for (auto& item : m_timestamps) {
-      oStream << location << ".Timestamps.member." << timestampsIdx++ << "="
-              << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
-    }
-  }
-  if (m_valuesHasBeenSet) {
-    unsigned valuesIdx = 1;
-    for (auto& item : m_values) {
-      oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item) << "&";
-    }
-  }
-  if (m_statusCodeHasBeenSet) {
-    oStream << location << ".StatusCode=" << StringUtils::URLEncode(StatusCodeMapper::GetNameForStatusCode(m_statusCode)) << "&";
-  }
-  if (m_messagesHasBeenSet) {
-    unsigned messagesIdx = 1;
-    for (auto& item : m_messages) {
-      Aws::StringStream messagesSs;
-      messagesSs << location << ".Messages.member." << messagesIdx++;
-      item.OutputToStream(oStream, messagesSs.str().c_str());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Messages"));
+    encoder.WriteArrayStart(m_messages.size());
+    for (const auto& item_0 : m_messages) {
+      item_0.CborEncode(encoder);
     }
   }
 }

@@ -36,7 +36,8 @@ class StsAccess {
 
   ///@{
   /**
-   * <p>The current status of the STS access configuration.</p>
+   * <p>The current status of the Amazon Web Services Security Token Service (STS)
+   * access configuration.</p>
    */
   inline ManagedResourceStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -52,7 +53,8 @@ class StsAccess {
 
   ///@{
   /**
-   * <p>The IPv4 addresses allowed for STS access.</p>
+   * <p>The IPv4 addresses allowed for Amazon Web Services Security Token Service
+   * (STS) access.</p>
    */
   inline const Aws::Vector<Aws::String>& GetIpv4Addresses() const { return m_ipv4Addresses; }
   inline bool Ipv4AddressesHasBeenSet() const { return m_ipv4AddressesHasBeenSet; }
@@ -76,7 +78,8 @@ class StsAccess {
 
   ///@{
   /**
-   * <p>The domain name for STS access configuration.</p>
+   * <p>The domain name for Amazon Web Services Security Token Service (STS) access
+   * configuration.</p>
    */
   inline const Aws::String& GetDomainName() const { return m_domainName; }
   inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
@@ -94,7 +97,8 @@ class StsAccess {
 
   ///@{
   /**
-   * <p>The STS policy document that defines permissions for token service usage.</p>
+   * <p>The Amazon Web Services Security Token Service (STS) policy document that
+   * defines permissions for token service usage.</p>
    */
   inline const Aws::String& GetStsPolicyDocument() const { return m_stsPolicyDocument; }
   inline bool StsPolicyDocumentHasBeenSet() const { return m_stsPolicyDocumentHasBeenSet; }

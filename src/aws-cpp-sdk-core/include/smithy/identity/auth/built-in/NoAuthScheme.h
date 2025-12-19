@@ -51,6 +51,15 @@ namespace smithy {
           assert(m_identityResolver);
         }
 
+        explicit NoAuthScheme(const Aws::String& serviceName, const Aws::String& region,
+                              const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
+            : NoAuthScheme(nullptr, serviceName, region)
+        {
+          AWS_UNREFERENCED_PARAM(config);
+          assert(m_signer);
+          assert(m_identityResolver);
+        }
+
         //legacy constructors
         explicit NoAuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver, const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool urlEscape)
             :  AuthScheme(NOAUTH),

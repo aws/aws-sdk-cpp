@@ -34,6 +34,10 @@ AutomatedReasoningPolicyBuildResultAssets& AutomatedReasoningPolicyBuildResultAs
     m_generatedTestCases = jsonValue.GetObject("generatedTestCases");
     m_generatedTestCasesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policyScenarios")) {
+    m_policyScenarios = jsonValue.GetObject("policyScenarios");
+    m_policyScenariosHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue AutomatedReasoningPolicyBuildResultAssets::Jsonize() const {
 
   if (m_generatedTestCasesHasBeenSet) {
     payload.WithObject("generatedTestCases", m_generatedTestCases.Jsonize());
+  }
+
+  if (m_policyScenariosHasBeenSet) {
+    payload.WithObject("policyScenarios", m_policyScenarios.Jsonize());
   }
 
   return payload;

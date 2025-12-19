@@ -10,6 +10,7 @@
 #include <aws/glacier/model/InvalidParameterValueException.h>
 #include <aws/glacier/model/LimitExceededException.h>
 #include <aws/glacier/model/MissingParameterValueException.h>
+#include <aws/glacier/model/NoLongerSupportedException.h>
 #include <aws/glacier/model/PolicyEnforcedException.h>
 #include <aws/glacier/model/RequestTimeoutException.h>
 #include <aws/glacier/model/ResourceNotFoundException.h>
@@ -26,6 +27,12 @@ template <>
 AWS_GLACIER_API ServiceUnavailableException GlacierError::GetModeledError() {
   assert(this->GetErrorType() == GlacierErrors::SERVICE_UNAVAILABLE);
   return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_GLACIER_API NoLongerSupportedException GlacierError::GetModeledError() {
+  assert(this->GetErrorType() == GlacierErrors::NO_LONGER_SUPPORTED);
+  return NoLongerSupportedException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -72,6 +79,7 @@ AWS_GLACIER_API MissingParameterValueException GlacierError::GetModeledError() {
 
 namespace GlacierErrorMapper {
 
+static const int NO_LONGER_SUPPORTED_HASH = HashingUtils::HashString("NoLongerSupportedException");
 static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacityException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int POLICY_ENFORCED_HASH = HashingUtils::HashString("PolicyEnforcedException");
@@ -80,7 +88,9 @@ static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("Missin
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INSUFFICIENT_CAPACITY_HASH) {
+  if (hashCode == NO_LONGER_SUPPORTED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::NO_LONGER_SUPPORTED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INSUFFICIENT_CAPACITY_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::INSUFFICIENT_CAPACITY), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);

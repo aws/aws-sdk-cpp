@@ -55,7 +55,6 @@
     #set($hasEventStreamInputOperation = true)
 #end
 #end
-const std::chrono::minutes REQUEST_LIFETIME_WAIT_TIMEOUT = std::chrono::minutes(1);
 
 ${className}::${className}(const ${className} &rhs) :
     BASECLASS(rhs.m_clientConfiguration,

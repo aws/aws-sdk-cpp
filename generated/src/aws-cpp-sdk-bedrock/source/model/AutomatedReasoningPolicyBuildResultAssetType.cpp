@@ -19,6 +19,7 @@ static const int BUILD_LOG_HASH = HashingUtils::HashString("BUILD_LOG");
 static const int QUALITY_REPORT_HASH = HashingUtils::HashString("QUALITY_REPORT");
 static const int POLICY_DEFINITION_HASH = HashingUtils::HashString("POLICY_DEFINITION");
 static const int GENERATED_TEST_CASES_HASH = HashingUtils::HashString("GENERATED_TEST_CASES");
+static const int POLICY_SCENARIOS_HASH = HashingUtils::HashString("POLICY_SCENARIOS");
 
 AutomatedReasoningPolicyBuildResultAssetType GetAutomatedReasoningPolicyBuildResultAssetTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ AutomatedReasoningPolicyBuildResultAssetType GetAutomatedReasoningPolicyBuildRes
     return AutomatedReasoningPolicyBuildResultAssetType::POLICY_DEFINITION;
   } else if (hashCode == GENERATED_TEST_CASES_HASH) {
     return AutomatedReasoningPolicyBuildResultAssetType::GENERATED_TEST_CASES;
+  } else if (hashCode == POLICY_SCENARIOS_HASH) {
+    return AutomatedReasoningPolicyBuildResultAssetType::POLICY_SCENARIOS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForAutomatedReasoningPolicyBuildResultAssetType(AutomatedReas
       return "POLICY_DEFINITION";
     case AutomatedReasoningPolicyBuildResultAssetType::GENERATED_TEST_CASES:
       return "GENERATED_TEST_CASES";
+    case AutomatedReasoningPolicyBuildResultAssetType::POLICY_SCENARIOS:
+      return "POLICY_SCENARIOS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

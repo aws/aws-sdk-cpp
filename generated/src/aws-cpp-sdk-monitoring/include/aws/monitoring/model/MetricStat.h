@@ -4,8 +4,8 @@
  */
 
 #pragma once
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/Metric.h>
 #include <aws/monitoring/model/StandardUnit.h>
@@ -14,9 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -30,11 +30,9 @@ namespace Model {
 class MetricStat {
  public:
   AWS_CLOUDWATCH_API MetricStat() = default;
-  AWS_CLOUDWATCH_API MetricStat(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API MetricStat& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API MetricStat(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API MetricStat& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -71,13 +69,13 @@ class MetricStat {
    * seconds (5 minutes).</p> </li> <li> <p>Start time greater than 63 days ago - Use
    * a multiple of 3600 seconds (1 hour).</p> </li> </ul>
    */
-  inline int GetPeriod() const { return m_period; }
+  inline int64_t GetPeriod() const { return m_period; }
   inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-  inline void SetPeriod(int value) {
+  inline void SetPeriod(int64_t value) {
     m_periodHasBeenSet = true;
     m_period = value;
   }
-  inline MetricStat& WithPeriod(int value) {
+  inline MetricStat& WithPeriod(int64_t value) {
     SetPeriod(value);
     return *this;
   }
@@ -127,7 +125,7 @@ class MetricStat {
  private:
   Metric m_metric;
 
-  int m_period{0};
+  int64_t m_period{0};
 
   Aws::String m_stat;
 

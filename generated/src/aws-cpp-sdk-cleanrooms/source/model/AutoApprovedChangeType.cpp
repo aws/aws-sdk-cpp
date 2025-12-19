@@ -16,11 +16,17 @@ namespace Model {
 namespace AutoApprovedChangeTypeMapper {
 
 static const int ADD_MEMBER_HASH = HashingUtils::HashString("ADD_MEMBER");
+static const int GRANT_RECEIVE_RESULTS_ABILITY_HASH = HashingUtils::HashString("GRANT_RECEIVE_RESULTS_ABILITY");
+static const int REVOKE_RECEIVE_RESULTS_ABILITY_HASH = HashingUtils::HashString("REVOKE_RECEIVE_RESULTS_ABILITY");
 
 AutoApprovedChangeType GetAutoApprovedChangeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ADD_MEMBER_HASH) {
     return AutoApprovedChangeType::ADD_MEMBER;
+  } else if (hashCode == GRANT_RECEIVE_RESULTS_ABILITY_HASH) {
+    return AutoApprovedChangeType::GRANT_RECEIVE_RESULTS_ABILITY;
+  } else if (hashCode == REVOKE_RECEIVE_RESULTS_ABILITY_HASH) {
+    return AutoApprovedChangeType::REVOKE_RECEIVE_RESULTS_ABILITY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +43,10 @@ Aws::String GetNameForAutoApprovedChangeType(AutoApprovedChangeType enumValue) {
       return {};
     case AutoApprovedChangeType::ADD_MEMBER:
       return "ADD_MEMBER";
+    case AutoApprovedChangeType::GRANT_RECEIVE_RESULTS_ABILITY:
+      return "GRANT_RECEIVE_RESULTS_ABILITY";
+    case AutoApprovedChangeType::REVOKE_RECEIVE_RESULTS_ABILITY:
+      return "REVOKE_RECEIVE_RESULTS_ABILITY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

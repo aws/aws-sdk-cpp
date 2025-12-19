@@ -221,11 +221,11 @@ class CreateLocationAzureBlobRequest : public DataSyncRequest {
    * <p>Specifies configuration information for a DataSync-managed secret, which
    * includes the authentication token that DataSync uses to access a specific
    * AzureBlob storage location, with a customer-managed KMS key.</p> <p>When you
-   * include this paramater as part of a <code>CreateLocationAzureBlob</code>
+   * include this parameter as part of a <code>CreateLocationAzureBlob</code>
    * request, you provide only the KMS key ARN. DataSync uses this KMS key together
    * with the authentication token you specify for <code>SasConfiguration</code> to
    * create a DataSync-managed secret to store the location access credentials.</p>
-   * <p>Make sure the DataSync has permission to access the KMS key that you
+   * <p>Make sure that DataSync has permission to access the KMS key that you
    * specify.</p>  <p>You can use either <code>CmkSecretConfig</code> (with
    * <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without
    * <code>SasConfiguration</code>) to provide credentials for a
@@ -250,12 +250,13 @@ class CreateLocationAzureBlobRequest : public DataSyncRequest {
   /**
    * <p>Specifies configuration information for a customer-managed Secrets Manager
    * secret where the authentication token for an AzureBlob storage location is
-   * stored in plain text. This configuration includes the secret ARN, and the ARN
-   * for an IAM role that provides access to the secret.</p>  <p>You can use
-   * either <code>CmkSecretConfig</code> (with <code>SasConfiguration</code>) or
-   * <code>CustomSecretConfig</code> (without <code>SasConfiguration</code>) to
-   * provide credentials for a <code>CreateLocationAzureBlob</code> request. Do not
-   * provide both parameters for the same request.</p>
+   * stored in plain text, in Secrets Manager. This configuration includes the secret
+   * ARN, and the ARN for an IAM role that provides access to the secret.</p>
+   * <p>You can use either <code>CmkSecretConfig</code> (with
+   * <code>SasConfiguration</code>) or <code>CustomSecretConfig</code> (without
+   * <code>SasConfiguration</code>) to provide credentials for a
+   * <code>CreateLocationAzureBlob</code> request. Do not provide both parameters for
+   * the same request.</p>
    */
   inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
   inline bool CustomSecretConfigHasBeenSet() const { return m_customSecretConfigHasBeenSet; }

@@ -21,13 +21,17 @@ UnarchiveWaveResult::UnarchiveWaveResult(const Aws::AmazonWebServiceResult<JsonV
 
 UnarchiveWaveResult& UnarchiveWaveResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("waveID")) {
+    m_waveID = jsonValue.GetString("waveID");
+    m_waveIDHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("creationDateTime")) {
-    m_creationDateTime = jsonValue.GetString("creationDateTime");
-    m_creationDateTimeHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
@@ -37,13 +41,17 @@ UnarchiveWaveResult& UnarchiveWaveResult::operator=(const Aws::AmazonWebServiceR
     m_isArchived = jsonValue.GetBool("isArchived");
     m_isArchivedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("waveAggregatedStatus")) {
+    m_waveAggregatedStatus = jsonValue.GetObject("waveAggregatedStatus");
+    m_waveAggregatedStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("creationDateTime")) {
+    m_creationDateTime = jsonValue.GetString("creationDateTime");
+    m_creationDateTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastModifiedDateTime")) {
     m_lastModifiedDateTime = jsonValue.GetString("lastModifiedDateTime");
     m_lastModifiedDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -51,14 +59,6 @@ UnarchiveWaveResult& UnarchiveWaveResult::operator=(const Aws::AmazonWebServiceR
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("waveAggregatedStatus")) {
-    m_waveAggregatedStatus = jsonValue.GetObject("waveAggregatedStatus");
-    m_waveAggregatedStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("waveID")) {
-    m_waveID = jsonValue.GetString("waveID");
-    m_waveIDHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
