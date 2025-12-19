@@ -15,6 +15,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
+#include <aws/crt/checksum/CRC.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
@@ -1280,45 +1281,13 @@ namespace Aws
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
 
-                    // Calculate and validate checksum for this part if validation is enabled
+                    // checksum for this part if validation is enabled
                     if (m_transferConfig.validateChecksums)
                     {
                         auto hash = handle->GetPartChecksum(partState->GetPartId());
                         if (hash && partState->GetDownloadBuffer())
                         {
                             hash->Update(partState->GetDownloadBuffer(), static_cast<size_t>(partState->GetSizeInBytes()));
-                            
-                            // Get expected checksum from response
-                            Aws::String expectedChecksum = GetChecksumFromResult(outcome.GetResult(), m_transferConfig.checksumAlgorithm);
-                            
-                            // Validate part checksum
-                            if (!expectedChecksum.empty())
-                            {
-                                auto calculatedResult = hash->GetHash();
-                                if (calculatedResult.IsSuccess())
-                                {
-                                    Aws::String calculatedChecksum = Utils::HashingUtils::Base64Encode(calculatedResult.GetResult());
-                                    if (calculatedChecksum != expectedChecksum)
-                                    {
-                                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
-                                                << "] Checksum mismatch for part " << partState->GetPartId()
-                                                << ". Expected: " << expectedChecksum << ", Calculated: " << calculatedChecksum);
-                                        Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
-                                                                                       "ChecksumMismatch",
-                                                                                       "Part checksum validation failed",
-                                                                                       false);
-                                        handle->ChangePartToFailed(partState);
-                                        handle->SetError(error);
-                                        TriggerErrorCallback(handle, error);
-                                        if(partState->GetDownloadBuffer())
-                                        {
-                                            m_bufferManager.Release(partState->GetDownloadBuffer());
-                                            partState->SetDownloadBuffer(nullptr);
-                                        }
-                                        return;
-                                    }
-                                }
-                            }
                         }
                     }
 
@@ -1359,7 +1328,67 @@ namespace Aws
             {
                 if (failedParts.size() == 0 && handle->GetBytesTransferred() == handle->GetBytesTotalSize())
                 {
-                    // TODO: Combine part checksums and validate full-object checksum when CRT provides combining utility
+                    // Combine part checksums and validate full-object checksum
+                    if (m_transferConfig.validateChecksums)
+                    {
+                        Aws::String expectedChecksum = GetChecksumFromResult(outcome.GetResult(), m_transferConfig.checksumAlgorithm);
+                        if (!expectedChecksum.empty())
+                        {
+                            auto combinedChecksum = 0ULL;
+                            bool isCRC64 = (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC64NVME);
+                            
+                            for (auto& partChecksum : handle->GetPartChecksums())
+                            {
+                                int partNumber = partChecksum.first;
+                                auto hash = partChecksum.second;
+                                
+                                // Get part size from completed parts
+                                auto partSize = handle->GetCompletedParts()[partNumber]->GetSizeInBytes();
+                                
+                                auto partResult = hash->GetHash();
+                                auto partData = partResult.GetResult();
+                                
+                                auto partCrc = isCRC64 ?
+                                    *reinterpret_cast<const unsigned long long*>(partData.GetUnderlyingData()) :
+                                    *reinterpret_cast<const unsigned int*>(partData.GetUnderlyingData());
+                                
+                                if (combinedChecksum == 0) {
+                                    combinedChecksum = partCrc;
+                                } else {
+                                    if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32(combinedChecksum, partCrc, partSize);
+                                    } else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32C(combinedChecksum, partCrc, partSize);
+                                    } else if (isCRC64) {
+                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC64NVME(combinedChecksum, partCrc, partSize);
+                                    }
+                                }
+                            }
+                            
+                            // Compare with expected checksum
+                            Aws::Utils::ByteBuffer checksumBuffer(isCRC64 ? 8 : 4);
+                            if (isCRC64) {
+                                *reinterpret_cast<unsigned long long*>(checksumBuffer.GetUnderlyingData()) = combinedChecksum;
+                            } else {
+                                *reinterpret_cast<unsigned int*>(checksumBuffer.GetUnderlyingData()) = static_cast<unsigned int>(combinedChecksum);
+                            }
+                            Aws::String calculatedChecksum = Utils::HashingUtils::Base64Encode(checksumBuffer);
+                            
+                            if (calculatedChecksum != expectedChecksum) {
+                                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                        << "] Full-object checksum mismatch. Expected: " << expectedChecksum 
+                                        << ", Calculated: " << calculatedChecksum);
+                                Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
+                                                                               "ChecksumMismatch",
+                                                                               "Full-object checksum validation failed",
+                                                                               false);
+                                handle->SetError(error);
+                                handle->UpdateStatus(TransferStatus::FAILED);
+                                TriggerErrorCallback(handle, error);
+                                return;
+                            }
+                        }
+                    }
                     outcome.GetResult().GetBody().flush();
                     handle->UpdateStatus(TransferStatus::COMPLETED);
                 }

@@ -398,6 +398,7 @@ namespace Aws
                 auto it = m_partChecksums.find(partId);
                 return it != m_partChecksums.end() ? it->second : nullptr;
             }
+            const Aws::Map<int, std::shared_ptr<Aws::Utils::Crypto::Hash>>& GetPartChecksums() const { return m_partChecksums; }
 
            private:
             void CleanupDownloadStream();
