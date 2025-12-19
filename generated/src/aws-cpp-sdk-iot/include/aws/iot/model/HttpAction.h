@@ -140,8 +140,8 @@ class HttpAction {
   ///@{
   /**
    * <p>The configuration settings for batching. For more information, see <a
-   * href="/iot/latest/developerguide/http_batching.html">Batching HTTP action
-   * messages</a>.</p>
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/http_batching.html">
+   * Batching HTTP action messages</a>.</p>
    */
   inline const BatchConfig& GetBatchConfig() const { return m_batchConfig; }
   inline bool BatchConfigHasBeenSet() const { return m_batchConfigHasBeenSet; }

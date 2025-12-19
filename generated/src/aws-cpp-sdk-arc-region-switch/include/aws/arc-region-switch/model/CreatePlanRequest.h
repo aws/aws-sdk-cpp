@@ -8,6 +8,7 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/AssociatedAlarm.h>
 #include <aws/arc-region-switch/model/RecoveryApproach.h>
+#include <aws/arc-region-switch/model/ReportConfiguration.h>
 #include <aws/arc-region-switch/model/Trigger.h>
 #include <aws/arc-region-switch/model/Workflow.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -167,6 +168,22 @@ class CreatePlanRequest : public ARCRegionswitchRequest {
   ///@}
 
   ///@{
+
+  inline const ReportConfiguration& GetReportConfiguration() const { return m_reportConfiguration; }
+  inline bool ReportConfigurationHasBeenSet() const { return m_reportConfigurationHasBeenSet; }
+  template <typename ReportConfigurationT = ReportConfiguration>
+  void SetReportConfiguration(ReportConfigurationT&& value) {
+    m_reportConfigurationHasBeenSet = true;
+    m_reportConfiguration = std::forward<ReportConfigurationT>(value);
+  }
+  template <typename ReportConfigurationT = ReportConfiguration>
+  CreatePlanRequest& WithReportConfiguration(ReportConfigurationT&& value) {
+    SetReportConfiguration(std::forward<ReportConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The name of a Region switch plan.</p>
    */
@@ -281,6 +298,8 @@ class CreatePlanRequest : public ARCRegionswitchRequest {
 
   Aws::Vector<Trigger> m_triggers;
 
+  ReportConfiguration m_reportConfiguration;
+
   Aws::String m_name;
 
   Aws::Vector<Aws::String> m_regions;
@@ -296,6 +315,7 @@ class CreatePlanRequest : public ARCRegionswitchRequest {
   bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
   bool m_associatedAlarmsHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
+  bool m_reportConfigurationHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
   bool m_recoveryApproachHasBeenSet = false;

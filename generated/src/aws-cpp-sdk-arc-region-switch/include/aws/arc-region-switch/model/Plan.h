@@ -7,6 +7,7 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/AssociatedAlarm.h>
 #include <aws/arc-region-switch/model/RecoveryApproach.h>
+#include <aws/arc-region-switch/model/ReportConfiguration.h>
 #include <aws/arc-region-switch/model/Trigger.h>
 #include <aws/arc-region-switch/model/Workflow.h>
 #include <aws/core/utils/DateTime.h>
@@ -184,6 +185,24 @@ class Plan {
 
   ///@{
   /**
+   * <p>The report configuration for a plan.</p>
+   */
+  inline const ReportConfiguration& GetReportConfiguration() const { return m_reportConfiguration; }
+  inline bool ReportConfigurationHasBeenSet() const { return m_reportConfigurationHasBeenSet; }
+  template <typename ReportConfigurationT = ReportConfiguration>
+  void SetReportConfiguration(ReportConfigurationT&& value) {
+    m_reportConfigurationHasBeenSet = true;
+    m_reportConfiguration = std::forward<ReportConfigurationT>(value);
+  }
+  template <typename ReportConfigurationT = ReportConfiguration>
+  Plan& WithReportConfiguration(ReportConfigurationT&& value) {
+    SetReportConfiguration(std::forward<ReportConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name for a plan.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -327,6 +346,8 @@ class Plan {
 
   Aws::Vector<Trigger> m_triggers;
 
+  ReportConfiguration m_reportConfiguration;
+
   Aws::String m_name;
 
   Aws::Vector<Aws::String> m_regions;
@@ -347,6 +368,7 @@ class Plan {
   bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
   bool m_associatedAlarmsHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
+  bool m_reportConfigurationHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
   bool m_recoveryApproachHasBeenSet = false;
