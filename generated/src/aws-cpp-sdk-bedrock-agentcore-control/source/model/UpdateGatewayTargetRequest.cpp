@@ -38,5 +38,9 @@ Aws::String UpdateGatewayTargetRequest::SerializePayload() const {
     payload.WithArray("credentialProviderConfigurations", std::move(credentialProviderConfigurationsJsonList));
   }
 
+  if (m_metadataConfigurationHasBeenSet) {
+    payload.WithObject("metadataConfiguration", m_metadataConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

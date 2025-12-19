@@ -212,8 +212,8 @@ class RepositoryCreationTemplate {
   ///@{
   /**
    * <p>A list of enumerable Strings representing the repository creation scenarios
-   * that this template will apply towards. The two supported scenarios are
-   * PULL_THROUGH_CACHE and REPLICATION</p>
+   * that this template will apply towards. The supported scenarios are
+   * PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH</p>
    */
   inline const Aws::Vector<RCTAppliedFor>& GetAppliedFor() const { return m_appliedFor; }
   inline bool AppliedForHasBeenSet() const { return m_appliedForHasBeenSet; }

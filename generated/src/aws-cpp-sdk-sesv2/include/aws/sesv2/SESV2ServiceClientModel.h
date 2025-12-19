@@ -66,6 +66,7 @@
 #include <aws/sesv2/model/GetDeliverabilityTestReportResult.h>
 #include <aws/sesv2/model/GetDomainDeliverabilityCampaignResult.h>
 #include <aws/sesv2/model/GetDomainStatisticsReportResult.h>
+#include <aws/sesv2/model/GetEmailAddressInsightsResult.h>
 #include <aws/sesv2/model/GetEmailIdentityPoliciesResult.h>
 #include <aws/sesv2/model/GetEmailIdentityResult.h>
 #include <aws/sesv2/model/GetEmailTemplateResult.h>
@@ -225,6 +226,7 @@ class GetDeliverabilityDashboardOptionsRequest;
 class GetDeliverabilityTestReportRequest;
 class GetDomainDeliverabilityCampaignRequest;
 class GetDomainStatisticsReportRequest;
+class GetEmailAddressInsightsRequest;
 class GetEmailIdentityRequest;
 class GetEmailIdentityPoliciesRequest;
 class GetEmailTemplateRequest;
@@ -337,6 +339,7 @@ typedef Aws::Utils::Outcome<GetDeliverabilityDashboardOptionsResult, SESV2Error>
 typedef Aws::Utils::Outcome<GetDeliverabilityTestReportResult, SESV2Error> GetDeliverabilityTestReportOutcome;
 typedef Aws::Utils::Outcome<GetDomainDeliverabilityCampaignResult, SESV2Error> GetDomainDeliverabilityCampaignOutcome;
 typedef Aws::Utils::Outcome<GetDomainStatisticsReportResult, SESV2Error> GetDomainStatisticsReportOutcome;
+typedef Aws::Utils::Outcome<GetEmailAddressInsightsResult, SESV2Error> GetEmailAddressInsightsOutcome;
 typedef Aws::Utils::Outcome<GetEmailIdentityResult, SESV2Error> GetEmailIdentityOutcome;
 typedef Aws::Utils::Outcome<GetEmailIdentityPoliciesResult, SESV2Error> GetEmailIdentityPoliciesOutcome;
 typedef Aws::Utils::Outcome<GetEmailTemplateResult, SESV2Error> GetEmailTemplateOutcome;
@@ -450,6 +453,7 @@ typedef std::future<GetDeliverabilityDashboardOptionsOutcome> GetDeliverabilityD
 typedef std::future<GetDeliverabilityTestReportOutcome> GetDeliverabilityTestReportOutcomeCallable;
 typedef std::future<GetDomainDeliverabilityCampaignOutcome> GetDomainDeliverabilityCampaignOutcomeCallable;
 typedef std::future<GetDomainStatisticsReportOutcome> GetDomainStatisticsReportOutcomeCallable;
+typedef std::future<GetEmailAddressInsightsOutcome> GetEmailAddressInsightsOutcomeCallable;
 typedef std::future<GetEmailIdentityOutcome> GetEmailIdentityOutcomeCallable;
 typedef std::future<GetEmailIdentityPoliciesOutcome> GetEmailIdentityPoliciesOutcomeCallable;
 typedef std::future<GetEmailTemplateOutcome> GetEmailTemplateOutcomeCallable;
@@ -664,6 +668,9 @@ typedef std::function<void(const SESV2Client*, const Model::GetDomainDeliverabil
 typedef std::function<void(const SESV2Client*, const Model::GetDomainStatisticsReportRequest&,
                            const Model::GetDomainStatisticsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDomainStatisticsReportResponseReceivedHandler;
+typedef std::function<void(const SESV2Client*, const Model::GetEmailAddressInsightsRequest&, const Model::GetEmailAddressInsightsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetEmailAddressInsightsResponseReceivedHandler;
 typedef std::function<void(const SESV2Client*, const Model::GetEmailIdentityRequest&, const Model::GetEmailIdentityOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEmailIdentityResponseReceivedHandler;

@@ -121,6 +121,9 @@
 #include <aws/sesv2/model/DomainDeliverabilityCampaign.h>
 #include <aws/sesv2/model/DomainDeliverabilityTrackingOption.h>
 #include <aws/sesv2/model/DomainIspPlacement.h>
+#include <aws/sesv2/model/EmailAddressInsightsConfidenceVerdict.h>
+#include <aws/sesv2/model/EmailAddressInsightsMailboxEvaluations.h>
+#include <aws/sesv2/model/EmailAddressInsightsVerdict.h>
 #include <aws/sesv2/model/EmailContent.h>
 #include <aws/sesv2/model/EmailInsights.h>
 #include <aws/sesv2/model/EmailTemplateContent.h>
@@ -167,6 +170,8 @@
 #include <aws/sesv2/model/GetDomainDeliverabilityCampaignResult.h>
 #include <aws/sesv2/model/GetDomainStatisticsReportRequest.h>
 #include <aws/sesv2/model/GetDomainStatisticsReportResult.h>
+#include <aws/sesv2/model/GetEmailAddressInsightsRequest.h>
+#include <aws/sesv2/model/GetEmailAddressInsightsResult.h>
 #include <aws/sesv2/model/GetEmailIdentityPoliciesRequest.h>
 #include <aws/sesv2/model/GetEmailIdentityPoliciesResult.h>
 #include <aws/sesv2/model/GetEmailIdentityRequest.h>
@@ -246,6 +251,7 @@
 #include <aws/sesv2/model/MailFromAttributes.h>
 #include <aws/sesv2/model/MailFromDomainStatus.h>
 #include <aws/sesv2/model/MailType.h>
+#include <aws/sesv2/model/MailboxValidation.h>
 #include <aws/sesv2/model/Message.h>
 #include <aws/sesv2/model/MessageHeader.h>
 #include <aws/sesv2/model/MessageInsightsDataSource.h>
@@ -343,10 +349,15 @@
 #include <aws/sesv2/model/SuppressedDestinationAttributes.h>
 #include <aws/sesv2/model/SuppressedDestinationSummary.h>
 #include <aws/sesv2/model/SuppressionAttributes.h>
+#include <aws/sesv2/model/SuppressionConditionThreshold.h>
+#include <aws/sesv2/model/SuppressionConfidenceThreshold.h>
+#include <aws/sesv2/model/SuppressionConfidenceVerdictThreshold.h>
 #include <aws/sesv2/model/SuppressionListDestination.h>
 #include <aws/sesv2/model/SuppressionListImportAction.h>
 #include <aws/sesv2/model/SuppressionListReason.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
+#include <aws/sesv2/model/SuppressionValidationAttributes.h>
+#include <aws/sesv2/model/SuppressionValidationOptions.h>
 #include <aws/sesv2/model/Tag.h>
 #include <aws/sesv2/model/TagResourceRequest.h>
 #include <aws/sesv2/model/TagResourceResult.h>

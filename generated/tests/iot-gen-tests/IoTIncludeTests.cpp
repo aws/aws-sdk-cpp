@@ -81,6 +81,7 @@
 #include <aws/iot/model/AwsJobRateIncreaseCriteria.h>
 #include <aws/iot/model/AwsJobTimeoutConfig.h>
 #include <aws/iot/model/AwsJsonSubstitutionCommandPreprocessorConfig.h>
+#include <aws/iot/model/BatchConfig.h>
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/BehaviorCriteria.h>
 #include <aws/iot/model/BehaviorCriteriaType.h>

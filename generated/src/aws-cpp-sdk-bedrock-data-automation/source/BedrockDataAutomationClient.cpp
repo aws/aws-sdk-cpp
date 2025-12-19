@@ -6,13 +6,16 @@
 #include <aws/bedrock-data-automation/BedrockDataAutomationClient.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationEndpointProvider.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationErrorMarshaller.h>
+#include <aws/bedrock-data-automation/model/CopyBlueprintStageRequest.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintVersionRequest.h>
 #include <aws/bedrock-data-automation/model/CreateDataAutomationProjectRequest.h>
 #include <aws/bedrock-data-automation/model/DeleteBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/DeleteDataAutomationProjectRequest.h>
+#include <aws/bedrock-data-automation/model/GetBlueprintOptimizationStatusRequest.h>
 #include <aws/bedrock-data-automation/model/GetBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/GetDataAutomationProjectRequest.h>
+#include <aws/bedrock-data-automation/model/InvokeBlueprintOptimizationAsyncRequest.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsRequest.h>
 #include <aws/bedrock-data-automation/model/ListDataAutomationProjectsRequest.h>
 #include <aws/bedrock-data-automation/model/ListTagsForResourceRequest.h>
@@ -157,6 +160,43 @@ void BedrockDataAutomationClient::OverrideEndpoint(const Aws::String& endpoint) 
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CopyBlueprintStageOutcome BedrockDataAutomationClient::CopyBlueprintStage(const CopyBlueprintStageRequest& request) const {
+  AWS_OPERATION_GUARD(CopyBlueprintStage);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyBlueprintStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BlueprintArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CopyBlueprintStage", "Required field: BlueprintArn, is not set");
+    return CopyBlueprintStageOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BlueprintArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CopyBlueprintStage, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CopyBlueprintStage, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CopyBlueprintStage",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CopyBlueprintStageOutcome>(
+      [&]() -> CopyBlueprintStageOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopyBlueprintStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/blueprints/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBlueprintArn());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/copy-stage");
+        return CopyBlueprintStageOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CreateBlueprintOutcome BedrockDataAutomationClient::CreateBlueprint(const CreateBlueprintRequest& request) const {
@@ -366,6 +406,43 @@ GetBlueprintOutcome BedrockDataAutomationClient::GetBlueprint(const GetBlueprint
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetBlueprintOptimizationStatusOutcome BedrockDataAutomationClient::GetBlueprintOptimizationStatus(
+    const GetBlueprintOptimizationStatusRequest& request) const {
+  AWS_OPERATION_GUARD(GetBlueprintOptimizationStatus);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBlueprintOptimizationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InvocationArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetBlueprintOptimizationStatus", "Required field: InvocationArn, is not set");
+    return GetBlueprintOptimizationStatusOutcome(Aws::Client::AWSError<BedrockDataAutomationErrors>(
+        BedrockDataAutomationErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InvocationArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBlueprintOptimizationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetBlueprintOptimizationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBlueprintOptimizationStatus",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetBlueprintOptimizationStatusOutcome>(
+      [&]() -> GetBlueprintOptimizationStatusOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBlueprintOptimizationStatus, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/getBlueprintOptimizationStatus/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInvocationArn());
+        return GetBlueprintOptimizationStatusOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetDataAutomationProjectOutcome BedrockDataAutomationClient::GetDataAutomationProject(
     const GetDataAutomationProjectRequest& request) const {
   AWS_OPERATION_GUARD(GetDataAutomationProject);
@@ -396,6 +473,37 @@ GetDataAutomationProjectOutcome BedrockDataAutomationClient::GetDataAutomationPr
         endpointResolutionOutcome.GetResult().AddPathSegments("/data-automation-projects/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectArn());
         return GetDataAutomationProjectOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+InvokeBlueprintOptimizationAsyncOutcome BedrockDataAutomationClient::InvokeBlueprintOptimizationAsync(
+    const InvokeBlueprintOptimizationAsyncRequest& request) const {
+  AWS_OPERATION_GUARD(InvokeBlueprintOptimizationAsync);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeBlueprintOptimizationAsync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, InvokeBlueprintOptimizationAsync, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, InvokeBlueprintOptimizationAsync, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InvokeBlueprintOptimizationAsync",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<InvokeBlueprintOptimizationAsyncOutcome>(
+      [&]() -> InvokeBlueprintOptimizationAsyncOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InvokeBlueprintOptimizationAsync, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/invokeBlueprintOptimizationAsync");
+        return InvokeBlueprintOptimizationAsyncOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
