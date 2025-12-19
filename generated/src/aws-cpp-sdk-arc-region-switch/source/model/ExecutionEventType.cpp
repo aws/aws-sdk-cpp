@@ -40,6 +40,7 @@ static const int stepCanceled_HASH = HashingUtils::HashString("stepCanceled");
 static const int stepPendingApproval_HASH = HashingUtils::HashString("stepPendingApproval");
 static const int stepExecutionBehaviorChangedToUngraceful_HASH = HashingUtils::HashString("stepExecutionBehaviorChangedToUngraceful");
 static const int stepPendingApplicationHealthMonitor_HASH = HashingUtils::HashString("stepPendingApplicationHealthMonitor");
+static const int planEvaluationWarning_HASH = HashingUtils::HashString("planEvaluationWarning");
 
 ExecutionEventType GetExecutionEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -93,6 +94,8 @@ ExecutionEventType GetExecutionEventTypeForName(const Aws::String& name) {
     return ExecutionEventType::stepExecutionBehaviorChangedToUngraceful;
   } else if (hashCode == stepPendingApplicationHealthMonitor_HASH) {
     return ExecutionEventType::stepPendingApplicationHealthMonitor;
+  } else if (hashCode == planEvaluationWarning_HASH) {
+    return ExecutionEventType::planEvaluationWarning;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -157,6 +160,8 @@ Aws::String GetNameForExecutionEventType(ExecutionEventType enumValue) {
       return "stepExecutionBehaviorChangedToUngraceful";
     case ExecutionEventType::stepPendingApplicationHealthMonitor:
       return "stepPendingApplicationHealthMonitor";
+    case ExecutionEventType::planEvaluationWarning:
+      return "planEvaluationWarning";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

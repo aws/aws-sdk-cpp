@@ -36,7 +36,8 @@ enum class ExecutionEventType {
   stepCanceled,
   stepPendingApproval,
   stepExecutionBehaviorChangedToUngraceful,
-  stepPendingApplicationHealthMonitor
+  stepPendingApplicationHealthMonitor,
+  planEvaluationWarning
 };
 
 namespace ExecutionEventTypeMapper {

@@ -144,8 +144,8 @@ class Application {
 
   ///@{
   /**
-   * <p>The Amazon QuickSight configuration for an Amazon Q Business application that
-   * uses QuickSight as the identity provider.</p>
+   * <p>The Amazon Quick Suite configuration for an Amazon Q Business application
+   * that uses Quick Suite as the identity provider.</p>
    */
   inline const QuickSightConfiguration& GetQuickSightConfiguration() const { return m_quickSightConfiguration; }
   inline bool QuickSightConfigurationHasBeenSet() const { return m_quickSightConfigurationHasBeenSet; }

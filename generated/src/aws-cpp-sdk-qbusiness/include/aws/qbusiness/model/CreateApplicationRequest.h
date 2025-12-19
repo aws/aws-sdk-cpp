@@ -298,12 +298,12 @@ class CreateApplicationRequest : public QBusinessRequest {
 
   ///@{
   /**
-   * <p>The Amazon QuickSight configuration for an Amazon Q Business application that
-   * uses QuickSight for authentication. This configuration is required if your
-   * application uses QuickSight as the identity provider. For more information, see
+   * <p>The Amazon Quick Suite configuration for an Amazon Q Business application
+   * that uses Quick Suite for authentication. This configuration is required if your
+   * application uses Quick Suite as the identity provider. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
-   * an Amazon QuickSight integrated application</a>.</p>
+   * an Amazon Quick Suite integrated application</a>.</p>
    */
   inline const QuickSightConfiguration& GetQuickSightConfiguration() const { return m_quickSightConfiguration; }
   inline bool QuickSightConfigurationHasBeenSet() const { return m_quickSightConfigurationHasBeenSet; }

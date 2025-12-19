@@ -18,6 +18,7 @@
 #include <aws/emr-serverless/model/ImageConfigurationInput.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/InteractiveConfiguration.h>
+#include <aws/emr-serverless/model/JobLevelCostAllocationConfiguration.h>
 #include <aws/emr-serverless/model/MaximumAllowedResources.h>
 #include <aws/emr-serverless/model/MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
@@ -372,6 +373,26 @@ class UpdateApplicationRequest : public EMRServerlessRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration object that enables job level cost allocation.</p>
+   */
+  inline const JobLevelCostAllocationConfiguration& GetJobLevelCostAllocationConfiguration() const {
+    return m_jobLevelCostAllocationConfiguration;
+  }
+  inline bool JobLevelCostAllocationConfigurationHasBeenSet() const { return m_jobLevelCostAllocationConfigurationHasBeenSet; }
+  template <typename JobLevelCostAllocationConfigurationT = JobLevelCostAllocationConfiguration>
+  void SetJobLevelCostAllocationConfiguration(JobLevelCostAllocationConfigurationT&& value) {
+    m_jobLevelCostAllocationConfigurationHasBeenSet = true;
+    m_jobLevelCostAllocationConfiguration = std::forward<JobLevelCostAllocationConfigurationT>(value);
+  }
+  template <typename JobLevelCostAllocationConfigurationT = JobLevelCostAllocationConfiguration>
+  UpdateApplicationRequest& WithJobLevelCostAllocationConfiguration(JobLevelCostAllocationConfigurationT&& value) {
+    SetJobLevelCostAllocationConfiguration(std::forward<JobLevelCostAllocationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationId;
 
@@ -404,6 +425,8 @@ class UpdateApplicationRequest : public EMRServerlessRequest {
   SchedulerConfiguration m_schedulerConfiguration;
 
   IdentityCenterConfigurationInput m_identityCenterConfiguration;
+
+  JobLevelCostAllocationConfiguration m_jobLevelCostAllocationConfiguration;
   bool m_applicationIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_initialCapacityHasBeenSet = false;
@@ -420,6 +443,7 @@ class UpdateApplicationRequest : public EMRServerlessRequest {
   bool m_monitoringConfigurationHasBeenSet = false;
   bool m_schedulerConfigurationHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;
+  bool m_jobLevelCostAllocationConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

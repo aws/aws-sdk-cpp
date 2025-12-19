@@ -7,6 +7,7 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/ArcRoutingControlConfiguration.h>
 #include <aws/arc-region-switch/model/CustomActionLambdaConfiguration.h>
+#include <aws/arc-region-switch/model/DocumentDbConfiguration.h>
 #include <aws/arc-region-switch/model/Ec2AsgCapacityIncreaseConfiguration.h>
 #include <aws/arc-region-switch/model/EcsCapacityIncreaseConfiguration.h>
 #include <aws/arc-region-switch/model/EksResourceScalingConfiguration.h>
@@ -223,6 +224,22 @@ class ExecutionBlockConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const DocumentDbConfiguration& GetDocumentDbConfig() const { return m_documentDbConfig; }
+  inline bool DocumentDbConfigHasBeenSet() const { return m_documentDbConfigHasBeenSet; }
+  template <typename DocumentDbConfigT = DocumentDbConfiguration>
+  void SetDocumentDbConfig(DocumentDbConfigT&& value) {
+    m_documentDbConfigHasBeenSet = true;
+    m_documentDbConfig = std::forward<DocumentDbConfigT>(value);
+  }
+  template <typename DocumentDbConfigT = DocumentDbConfiguration>
+  ExecutionBlockConfiguration& WithDocumentDbConfig(DocumentDbConfigT&& value) {
+    SetDocumentDbConfig(std::forward<DocumentDbConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomActionLambdaConfiguration m_customActionLambdaConfig;
 
@@ -243,6 +260,8 @@ class ExecutionBlockConfiguration {
   EksResourceScalingConfiguration m_eksResourceScalingConfig;
 
   Route53HealthCheckConfiguration m_route53HealthCheckConfig;
+
+  DocumentDbConfiguration m_documentDbConfig;
   bool m_customActionLambdaConfigHasBeenSet = false;
   bool m_ec2AsgCapacityIncreaseConfigHasBeenSet = false;
   bool m_executionApprovalConfigHasBeenSet = false;
@@ -253,6 +272,7 @@ class ExecutionBlockConfiguration {
   bool m_ecsCapacityIncreaseConfigHasBeenSet = false;
   bool m_eksResourceScalingConfigHasBeenSet = false;
   bool m_route53HealthCheckConfigHasBeenSet = false;
+  bool m_documentDbConfigHasBeenSet = false;
 };
 
 }  // namespace Model

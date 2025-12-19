@@ -20,6 +20,8 @@ static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
 static const int ROUTING_PROFILE_HASH = HashingUtils::HashString("ROUTING_PROFILE");
 static const int ROUTING_STEP_EXPRESSION_HASH = HashingUtils::HashString("ROUTING_STEP_EXPRESSION");
 static const int AGENT_STATUS_HASH = HashingUtils::HashString("AGENT_STATUS");
+static const int SUBTYPE_HASH = HashingUtils::HashString("SUBTYPE");
+static const int VALIDATION_TEST_TYPE_HASH = HashingUtils::HashString("VALIDATION_TEST_TYPE");
 
 Grouping GetGroupingForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ Grouping GetGroupingForName(const Aws::String& name) {
     return Grouping::ROUTING_STEP_EXPRESSION;
   } else if (hashCode == AGENT_STATUS_HASH) {
     return Grouping::AGENT_STATUS;
+  } else if (hashCode == SUBTYPE_HASH) {
+    return Grouping::SUBTYPE;
+  } else if (hashCode == VALIDATION_TEST_TYPE_HASH) {
+    return Grouping::VALIDATION_TEST_TYPE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForGrouping(Grouping enumValue) {
       return "ROUTING_STEP_EXPRESSION";
     case Grouping::AGENT_STATUS:
       return "AGENT_STATUS";
+    case Grouping::SUBTYPE:
+      return "SUBTYPE";
+    case Grouping::VALIDATION_TEST_TYPE:
+      return "VALIDATION_TEST_TYPE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

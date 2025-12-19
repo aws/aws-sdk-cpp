@@ -360,7 +360,7 @@ class GetApplicationResult {
 
   ///@{
   /**
-   * <p>The Amazon QuickSight authentication configuration for the Amazon Q Business
+   * <p>The Amazon Quick Suite authentication configuration for the Amazon Q Business
    * application.</p>
    */
   inline const QuickSightConfiguration& GetQuickSightConfiguration() const { return m_quickSightConfiguration; }

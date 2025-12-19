@@ -8,6 +8,7 @@
 #include <aws/arc-region-switch/model/ExecutionAction.h>
 #include <aws/arc-region-switch/model/ExecutionMode.h>
 #include <aws/arc-region-switch/model/ExecutionState.h>
+#include <aws/arc-region-switch/model/GeneratedReport.h>
 #include <aws/arc-region-switch/model/Plan.h>
 #include <aws/arc-region-switch/model/StepState.h>
 #include <aws/core/utils/DateTime.h>
@@ -281,6 +282,30 @@ class GetPlanExecutionResult {
 
   ///@{
   /**
+   * <p>Information about the location of a generated report, or the cause of its
+   * failure.</p>
+   */
+  inline const Aws::Vector<GeneratedReport>& GetGeneratedReportDetails() const { return m_generatedReportDetails; }
+  template <typename GeneratedReportDetailsT = Aws::Vector<GeneratedReport>>
+  void SetGeneratedReportDetails(GeneratedReportDetailsT&& value) {
+    m_generatedReportDetailsHasBeenSet = true;
+    m_generatedReportDetails = std::forward<GeneratedReportDetailsT>(value);
+  }
+  template <typename GeneratedReportDetailsT = Aws::Vector<GeneratedReport>>
+  GetPlanExecutionResult& WithGeneratedReportDetails(GeneratedReportDetailsT&& value) {
+    SetGeneratedReportDetails(std::forward<GeneratedReportDetailsT>(value));
+    return *this;
+  }
+  template <typename GeneratedReportDetailsT = GeneratedReport>
+  GetPlanExecutionResult& AddGeneratedReportDetails(GeneratedReportDetailsT&& value) {
+    m_generatedReportDetailsHasBeenSet = true;
+    m_generatedReportDetails.emplace_back(std::forward<GeneratedReportDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies that you want to receive the next page of results. Valid only if
    * you received a <code>nextToken</code> response in the previous request. If you
    * did, it indicates that more output is available. Set this parameter to the value
@@ -343,6 +368,8 @@ class GetPlanExecutionResult {
 
   Aws::String m_actualRecoveryTime;
 
+  Aws::Vector<GeneratedReport> m_generatedReportDetails;
+
   Aws::String m_nextToken;
 
   Aws::String m_requestId;
@@ -360,6 +387,7 @@ class GetPlanExecutionResult {
   bool m_stepStatesHasBeenSet = false;
   bool m_planHasBeenSet = false;
   bool m_actualRecoveryTimeHasBeenSet = false;
+  bool m_generatedReportDetailsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

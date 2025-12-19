@@ -20,10 +20,10 @@ namespace QBusiness {
 namespace Model {
 
 /**
- * <p>The Amazon QuickSight configuration for an Amazon Q Business application that
- * uses QuickSight as the identity provider. For more information, see <a
+ * <p>The Amazon Quick Suite configuration for an Amazon Q Business application
+ * that uses Quick Suite as the identity provider. For more information, see <a
  * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
- * an Amazon QuickSight integrated application</a>.</p><p><h3>See Also:</h3>   <a
+ * an Amazon Quick Suite integrated application</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/QuickSightConfiguration">AWS
  * API Reference</a></p>
  */
@@ -36,8 +36,8 @@ class QuickSightConfiguration {
 
   ///@{
   /**
-   * <p>The Amazon QuickSight namespace that is used as the identity provider. For
-   * more information about QuickSight namespaces, see <a
+   * <p>The Amazon Quick Suite namespace that is used as the identity provider. For
+   * more information about Quick Suite namespaces, see <a
    * href="https://docs.aws.amazon.com/quicksight/latest/developerguide/namespace-operations.html">Namespace
    * operations</a>. </p>
    */

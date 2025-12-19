@@ -27,5 +27,14 @@ Aws::String SetV2LoggingOptionsRequest::SerializePayload() const {
     payload.WithBool("disableAllLogs", m_disableAllLogs);
   }
 
+  if (m_eventConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> eventConfigurationsJsonList(m_eventConfigurations.size());
+    for (unsigned eventConfigurationsIndex = 0; eventConfigurationsIndex < eventConfigurationsJsonList.GetLength();
+         ++eventConfigurationsIndex) {
+      eventConfigurationsJsonList[eventConfigurationsIndex].AsObject(m_eventConfigurations[eventConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("eventConfigurations", std::move(eventConfigurationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

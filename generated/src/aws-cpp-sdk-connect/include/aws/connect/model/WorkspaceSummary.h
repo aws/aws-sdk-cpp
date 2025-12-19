@@ -106,7 +106,7 @@ class WorkspaceSummary {
 
   ///@{
   /**
-   * <p>The AWS Region where the workspace was last modified.</p>
+   * <p>The Amazon Web Services Region where the workspace was last modified.</p>
    */
   inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
   inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }

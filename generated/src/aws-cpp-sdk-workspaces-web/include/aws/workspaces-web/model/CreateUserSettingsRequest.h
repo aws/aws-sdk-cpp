@@ -326,6 +326,23 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the user can use WebAuthn redirection for passwordless
+   * login to websites within the streaming session.</p>
+   */
+  inline EnabledType GetWebAuthnAllowed() const { return m_webAuthnAllowed; }
+  inline bool WebAuthnAllowedHasBeenSet() const { return m_webAuthnAllowedHasBeenSet; }
+  inline void SetWebAuthnAllowed(EnabledType value) {
+    m_webAuthnAllowedHasBeenSet = true;
+    m_webAuthnAllowed = value;
+  }
+  inline CreateUserSettingsRequest& WithWebAuthnAllowed(EnabledType value) {
+    SetWebAuthnAllowed(value);
+    return *this;
+  }
+  ///@}
  private:
   EnabledType m_copyAllowed{EnabledType::NOT_SET};
 
@@ -356,6 +373,8 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
   ToolbarConfiguration m_toolbarConfiguration;
 
   BrandingConfigurationCreateInput m_brandingConfigurationInput;
+
+  EnabledType m_webAuthnAllowed{EnabledType::NOT_SET};
   bool m_copyAllowedHasBeenSet = false;
   bool m_pasteAllowedHasBeenSet = false;
   bool m_downloadAllowedHasBeenSet = false;
@@ -371,6 +390,7 @@ class CreateUserSettingsRequest : public WorkSpacesWebRequest {
   bool m_deepLinkAllowedHasBeenSet = false;
   bool m_toolbarConfigurationHasBeenSet = false;
   bool m_brandingConfigurationInputHasBeenSet = false;
+  bool m_webAuthnAllowedHasBeenSet = false;
 };
 
 }  // namespace Model

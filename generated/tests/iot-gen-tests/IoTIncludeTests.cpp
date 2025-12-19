@@ -597,6 +597,7 @@
 #include <aws/iot/model/ListViolationEventsResult.h>
 #include <aws/iot/model/LocationAction.h>
 #include <aws/iot/model/LocationTimestamp.h>
+#include <aws/iot/model/LogEventConfiguration.h>
 #include <aws/iot/model/LogLevel.h>
 #include <aws/iot/model/LogTarget.h>
 #include <aws/iot/model/LogTargetConfiguration.h>

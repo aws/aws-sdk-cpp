@@ -339,11 +339,7 @@ class StartChatContactRequest : public ConnectRequest {
   /**
    * <p>A list of participant types to automatically disconnect when the end customer
    * ends the chat session, allowing them to continue through disconnect flows such
-   * as surveys or feedback forms.</p> <p>Valid value: <code>AGENT</code>.</p>
-   * <p>With the <code>DisconnectOnCustomerExit</code> parameter, you can configure
-   * automatic agent disconnection when end customers end the chat, ensuring that
-   * disconnect flows are triggered consistently regardless of which participant
-   * disconnects first.</p>
+   * as surveys or feedback forms.</p>
    */
   inline const Aws::Vector<DisconnectOnCustomerExitParticipantType>& GetDisconnectOnCustomerExit() const {
     return m_disconnectOnCustomerExit;

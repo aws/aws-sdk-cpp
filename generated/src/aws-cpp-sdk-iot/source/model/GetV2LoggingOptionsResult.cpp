@@ -33,6 +33,14 @@ GetV2LoggingOptionsResult& GetV2LoggingOptionsResult::operator=(const Aws::Amazo
     m_disableAllLogs = jsonValue.GetBool("disableAllLogs");
     m_disableAllLogsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("eventConfigurations")) {
+    Aws::Utils::Array<JsonView> eventConfigurationsJsonList = jsonValue.GetArray("eventConfigurations");
+    for (unsigned eventConfigurationsIndex = 0; eventConfigurationsIndex < eventConfigurationsJsonList.GetLength();
+         ++eventConfigurationsIndex) {
+      m_eventConfigurations.push_back(eventConfigurationsJsonList[eventConfigurationsIndex].AsObject());
+    }
+    m_eventConfigurationsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -43,6 +43,7 @@
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/InteractiveConfiguration.h>
 #include <aws/emr-serverless/model/JobDriver.h>
+#include <aws/emr-serverless/model/JobLevelCostAllocationConfiguration.h>
 #include <aws/emr-serverless/model/JobRun.h>
 #include <aws/emr-serverless/model/JobRunAttemptSummary.h>
 #include <aws/emr-serverless/model/JobRunExecutionIamPolicy.h>

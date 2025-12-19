@@ -32,6 +32,10 @@
 #include <aws/arc-region-switch/model/CustomActionLambdaConfiguration.h>
 #include <aws/arc-region-switch/model/DeletePlanRequest.h>
 #include <aws/arc-region-switch/model/DeletePlanResult.h>
+#include <aws/arc-region-switch/model/DocumentDbConfiguration.h>
+#include <aws/arc-region-switch/model/DocumentDbDefaultBehavior.h>
+#include <aws/arc-region-switch/model/DocumentDbUngraceful.h>
+#include <aws/arc-region-switch/model/DocumentDbUngracefulBehavior.h>
 #include <aws/arc-region-switch/model/Ec2AsgCapacityIncreaseConfiguration.h>
 #include <aws/arc-region-switch/model/Ec2AsgCapacityMonitoringApproach.h>
 #include <aws/arc-region-switch/model/Ec2Ungraceful.h>
@@ -51,6 +55,9 @@
 #include <aws/arc-region-switch/model/ExecutionEventType.h>
 #include <aws/arc-region-switch/model/ExecutionMode.h>
 #include <aws/arc-region-switch/model/ExecutionState.h>
+#include <aws/arc-region-switch/model/FailedReportErrorCode.h>
+#include <aws/arc-region-switch/model/FailedReportOutput.h>
+#include <aws/arc-region-switch/model/GeneratedReport.h>
 #include <aws/arc-region-switch/model/GetPlanEvaluationStatusRequest.h>
 #include <aws/arc-region-switch/model/GetPlanEvaluationStatusResult.h>
 #include <aws/arc-region-switch/model/GetPlanExecutionRequest.h>
@@ -88,6 +95,9 @@
 #include <aws/arc-region-switch/model/RecoveryApproach.h>
 #include <aws/arc-region-switch/model/RegionSwitchPlanConfiguration.h>
 #include <aws/arc-region-switch/model/RegionToRunIn.h>
+#include <aws/arc-region-switch/model/ReportConfiguration.h>
+#include <aws/arc-region-switch/model/ReportOutput.h>
+#include <aws/arc-region-switch/model/ReportOutputConfiguration.h>
 #include <aws/arc-region-switch/model/ResourceWarning.h>
 #include <aws/arc-region-switch/model/ResourceWarningStatus.h>
 #include <aws/arc-region-switch/model/Route53HealthCheck.h>
@@ -95,6 +105,8 @@
 #include <aws/arc-region-switch/model/Route53HealthCheckStatus.h>
 #include <aws/arc-region-switch/model/Route53ResourceRecordSet.h>
 #include <aws/arc-region-switch/model/RoutingControlStateChange.h>
+#include <aws/arc-region-switch/model/S3ReportOutput.h>
+#include <aws/arc-region-switch/model/S3ReportOutputConfiguration.h>
 #include <aws/arc-region-switch/model/Service.h>
 #include <aws/arc-region-switch/model/StartPlanExecutionRequest.h>
 #include <aws/arc-region-switch/model/StartPlanExecutionResult.h>
