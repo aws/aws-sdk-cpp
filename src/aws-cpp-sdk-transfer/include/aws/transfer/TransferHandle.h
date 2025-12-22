@@ -393,12 +393,14 @@ namespace Aws
             Aws::String GetChecksum() const { return m_checksum; }
             void SetChecksum(const Aws::String& checksum) { this->m_checksum = checksum; }
 
-            void SetPartChecksum(int partId, std::shared_ptr<Aws::Utils::Crypto::Hash> hash) { m_partChecksums[partId] = hash; }
-            std::shared_ptr<Aws::Utils::Crypto::Hash> GetPartChecksum(int partId) const { 
-                auto it = m_partChecksums.find(partId);
-                return it != m_partChecksums.end() ? it->second : nullptr;
+            void SetPartChecksum(int partId, const Aws::String& checksum, uint64_t size) {
+                m_partChecksums[partId] = std::make_pair(checksum, size);
             }
-            const Aws::Map<int, std::shared_ptr<Aws::Utils::Crypto::Hash>>& GetPartChecksums() const { return m_partChecksums; }
+            std::pair<Aws::String, uint64_t> GetPartChecksum(int partId) const {
+                auto it = m_partChecksums.find(partId);
+                return it != m_partChecksums.end() ? it->second : std::make_pair("", 0);
+            }
+            const Aws::Map<int, std::pair<Aws::String, uint64_t>>& GetPartChecksums() const { return m_partChecksums; }
 
            private:
             void CleanupDownloadStream();
@@ -442,7 +444,7 @@ namespace Aws
             mutable std::mutex m_getterSetterLock;
             Aws::String m_checksum;
             // Map of part number to Hash instance for multipart download checksum validation
-            Aws::Map<int, std::shared_ptr<Aws::Utils::Crypto::Hash>> m_partChecksums;
+            Aws::Map<int, std::pair<Aws::String, uint64_t>> m_partChecksums;
         };
 
         AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);
