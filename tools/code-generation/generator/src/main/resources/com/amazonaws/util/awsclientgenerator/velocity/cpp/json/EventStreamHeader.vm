@@ -9,6 +9,8 @@
 \#include $header
 #end
 \#include <aws/core/utils/event/EventStream.h>
+\#include <aws/core/utils/event/EventStreamHandler.h>
+\#include <functional>
 #foreach($entry in $shape.members.entrySet())
 #if($entry.value.shape.isEvent())
 #foreach($eventMemberEntry in $entry.value.shape.members.entrySet())
@@ -75,6 +77,11 @@ namespace Model
 #end
 #end
 
+    std::function<void(const Aws::Utils::Event::Message&, const Aws::Utils::Event::InitialResponseType&)>& GetInitialResponseCallbackEx() { return m_initialResponseCallback; }
+    void SetInitialResponseCallbackEx(std::function<void(const Aws::Utils::Event::Message&, const Aws::Utils::Event::InitialResponseType&)> callback) { m_initialResponseCallback = std::move(callback); }
+
+  private:
+    std::function<void(const Aws::Utils::Event::Message&, const Aws::Utils::Event::InitialResponseType&)> m_initialResponseCallback;
   };
 
 } // namespace Model

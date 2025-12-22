@@ -61,9 +61,13 @@ class AWS_CORE_LOCAL BidirectionalEventStreamingTask final {
         AWS_CHECK_PTR(ClientT::GetAllocationTag(), request);
         AWS_CHECK_PTR(ClientT::GetAllocationTag(), response);
 
-        auto& initialResponseHandler = request->GetEventStreamHandler().GetInitialResponseCallbackEx();
+        auto& initialResponseHandler = request->GetEventStreamHandler()->GetInitialResponseCallbackEx();
         if (initialResponseHandler) {
-          initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+          Utils::Event::Message msg;
+          for (const auto& header : response->GetHeaders()) {
+            msg.InsertEventHeader(header.first, header.second);
+          }
+          initialResponseHandler(msg, Utils::Event::InitialResponseType::ON_RESPONSE);
         }
       });
     }

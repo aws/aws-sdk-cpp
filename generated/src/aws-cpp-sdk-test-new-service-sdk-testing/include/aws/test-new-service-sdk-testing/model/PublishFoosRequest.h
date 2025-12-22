@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/test-new-service-sdk-testing/TestNewServiceSDKTestingRequest.h>
 #include <aws/test-new-service-sdk-testing/TestNewServiceSDKTesting_EXPORTS.h>
@@ -20,7 +21,7 @@ namespace Model {
  */
 class PublishFoosRequest : public TestNewServiceSDKTestingRequest {
  public:
-  AWS_TESTNEWSERVICESDKTESTING_API PublishFoosRequest() = default;
+  AWS_TESTNEWSERVICESDKTESTING_API PublishFoosRequest() : m_eventStreamDecoder(nullptr) {}
 
   // Service request name is the Operation name which will send this request out,
   // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,6 +35,17 @@ class PublishFoosRequest : public TestNewServiceSDKTestingRequest {
   AWS_TESTNEWSERVICESDKTESTING_API Aws::String SerializePayload() const override { return {}; }
   AWS_TESTNEWSERVICESDKTESTING_API std::shared_ptr<Aws::IOStream> GetBody() const override;
   AWS_TESTNEWSERVICESDKTESTING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  /**
+   * Underlying Event Stream Handler which is used to define the handlers to process the underlying event-stream
+   */
+  inline std::shared_ptr<PublishEvents> GetEventStreamHandler() const { return m_messages; }
+  inline void SetEventStreamHandler(std::shared_ptr<PublishEvents> value) { m_messages = std::move(value); }
+
+  /**
+   * Event Stream Decoder for processing incoming event stream messages
+   */
+  inline Aws::Utils::Event::EventStreamDecoder& GetEventStreamDecoder() const { return m_eventStreamDecoder; }
 
   ///@{
 
@@ -68,6 +80,8 @@ class PublishFoosRequest : public TestNewServiceSDKTestingRequest {
   Aws::String m_room;
 
   std::shared_ptr<PublishEvents> m_messages;
+  mutable Aws::Utils::Event::EventStreamDecoder m_eventStreamDecoder{nullptr};
+
   bool m_roomHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
 };

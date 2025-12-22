@@ -154,6 +154,10 @@
     Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
 #end
+#if($operation.request.shape.hasEventStreamMembers())
+    mutable Aws::Utils::Event::EventStreamDecoder m_eventStreamDecoder{nullptr};
+
+#end
 #end##if($shape.members.size() > 0)
 #foreach($member in $shape.members.entrySet())
 #if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))

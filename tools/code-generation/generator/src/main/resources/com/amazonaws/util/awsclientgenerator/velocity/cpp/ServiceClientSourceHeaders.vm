@@ -8,10 +8,10 @@
 #set($hasEventStreamRequest = true)
 #end
 #end
-#if($hasEventStreamResult)
 #if($hasEventStreamRequest)
 \#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #end
+#if($hasEventStreamResult)
 \#include <aws/core/utils/event/EventStream.h>
 #end
 #if($arnEndpointSupported || $metadata.hasEndpointDiscoveryTrait)

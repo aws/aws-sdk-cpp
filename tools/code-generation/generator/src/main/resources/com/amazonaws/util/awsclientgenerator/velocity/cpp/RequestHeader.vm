@@ -13,6 +13,7 @@
 #end
 #if($operation.request.shape.hasEventStreamMembers())
 \#include <memory>
+\#include <aws/core/utils/event/EventStreamDecoder.h>
 #end
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
@@ -46,7 +47,11 @@ namespace Model
   class ${typeInfo.className} : public ${typeInfo.baseClass}
   {
   public:
+#if($operation.request.shape.hasEventStreamMembers())
+    ${exportMacro} ${typeInfo.className}() : m_eventStreamDecoder(nullptr) {}
+#else
     ${exportMacro} ${typeInfo.className}() = default;
+#end
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -139,6 +144,29 @@ namespace Model
      * Underlying Event Stream Handler which is used to define callback functions.
      */
     inline ${operation.request.shape.name}& WithEventStreamHandler(const ${operation.name}Handler& value) { SetEventStreamHandler(value); return *this; }
+
+#end
+#if($operation.request.shape.hasEventStreamMembers())
+#set($streamMemberName = "")
+#set($streamMemberType = "")
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.shape.isEventStream())
+#set($streamMemberName = $memberEntry.key)
+#set($streamMemberType = $memberEntry.value.shape.name)
+#break
+#end
+#end
+#set($streamMemberNameCap = $CppViewHelper.capitalizeFirstChar($streamMemberName))
+    /**
+     * Underlying Event Stream Handler which is used to define the handlers to process the underlying event-stream
+     */
+    inline std::shared_ptr<${streamMemberType}> GetEventStreamHandler() const { return m_${streamMemberName}; }
+    inline void SetEventStreamHandler(std::shared_ptr<${streamMemberType}> value) { m_${streamMemberName} = std::move(value); }
+    
+    /**
+     * Event Stream Decoder for processing incoming event stream messages
+     */
+    inline Aws::Utils::Event::EventStreamDecoder& GetEventStreamDecoder() const { return m_eventStreamDecoder; }
 
 #end
 #if($operation.requestCompressionRequired)

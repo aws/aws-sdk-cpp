@@ -5,10 +5,12 @@
 
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/event/EventStreamHandler.h>
 #include <aws/test-new-service-sdk-testing/TestNewServiceSDKTesting_EXPORTS.h>
 #include <aws/test-new-service-sdk-testing/model/LeaveEvent.h>
 #include <aws/test-new-service-sdk-testing/model/Message.h>
 
+#include <functional>
 #include <utility>
 
 namespace Aws {
@@ -34,6 +36,17 @@ class AWS_TESTNEWSERVICESDKTESTING_API PublishEvents : public Aws::Utils::Event:
     WriteEvent(msg);
     return *this;
   }
+
+  std::function<void(const Aws::Utils::Event::Message&, const Aws::Utils::Event::InitialResponseType&)>& GetInitialResponseCallbackEx() {
+    return m_initialResponseCallback;
+  }
+  void SetInitialResponseCallbackEx(
+      std::function<void(const Aws::Utils::Event::Message&, const Aws::Utils::Event::InitialResponseType&)> callback) {
+    m_initialResponseCallback = std::move(callback);
+  }
+
+ private:
+  std::function<void(const Aws::Utils::Event::Message&, const Aws::Utils::Event::InitialResponseType&)> m_initialResponseCallback;
 };
 
 }  // namespace Model
