@@ -97,6 +97,24 @@ class CreatePlacementGroupRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>Reserved for future use.</p>
+   */
+  inline const Aws::String& GetLinkedGroupId() const { return m_linkedGroupId; }
+  inline bool LinkedGroupIdHasBeenSet() const { return m_linkedGroupIdHasBeenSet; }
+  template <typename LinkedGroupIdT = Aws::String>
+  void SetLinkedGroupId(LinkedGroupIdT&& value) {
+    m_linkedGroupIdHasBeenSet = true;
+    m_linkedGroupId = std::forward<LinkedGroupIdT>(value);
+  }
+  template <typename LinkedGroupIdT = Aws::String>
+  CreatePlacementGroupRequest& WithLinkedGroupId(LinkedGroupIdT&& value) {
+    SetLinkedGroupId(std::forward<LinkedGroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -155,6 +173,8 @@ class CreatePlacementGroupRequest : public EC2Request {
 
   SpreadLevel m_spreadLevel{SpreadLevel::NOT_SET};
 
+  Aws::String m_linkedGroupId;
+
   bool m_dryRun{false};
 
   Aws::String m_groupName;
@@ -163,6 +183,7 @@ class CreatePlacementGroupRequest : public EC2Request {
   bool m_partitionCountHasBeenSet = false;
   bool m_tagSpecificationsHasBeenSet = false;
   bool m_spreadLevelHasBeenSet = false;
+  bool m_linkedGroupIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_strategyHasBeenSet = false;

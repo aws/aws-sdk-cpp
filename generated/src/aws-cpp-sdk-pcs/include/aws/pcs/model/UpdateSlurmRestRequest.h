@@ -34,7 +34,7 @@ class UpdateSlurmRestRequest {
 
   ///@{
   /**
-   * <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of
+   * <p>The default value for <code>mode</code> is <code>NONE</code>. A value of
    * <code>STANDARD</code> means the Slurm REST API is enabled.</p>
    */
   inline SlurmRestMode GetMode() const { return m_mode; }

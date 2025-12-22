@@ -73,6 +73,11 @@ PlacementGroup& PlacementGroup::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(spreadLevelNode.GetText()).c_str()));
       m_spreadLevelHasBeenSet = true;
     }
+    XmlNode linkedGroupIdNode = resultNode.FirstChild("linkedGroupId");
+    if (!linkedGroupIdNode.IsNull()) {
+      m_linkedGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(linkedGroupIdNode.GetText());
+      m_linkedGroupIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -118,6 +123,10 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
     oStream << location << index << locationValue
             << ".SpreadLevel=" << StringUtils::URLEncode(SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel)) << "&";
   }
+
+  if (m_linkedGroupIdHasBeenSet) {
+    oStream << location << index << locationValue << ".LinkedGroupId=" << StringUtils::URLEncode(m_linkedGroupId.c_str()) << "&";
+  }
 }
 
 void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -149,6 +158,9 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if (m_spreadLevelHasBeenSet) {
     oStream << location << ".SpreadLevel=" << StringUtils::URLEncode(SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel)) << "&";
+  }
+  if (m_linkedGroupIdHasBeenSet) {
+    oStream << location << ".LinkedGroupId=" << StringUtils::URLEncode(m_linkedGroupId.c_str()) << "&";
   }
 }
 

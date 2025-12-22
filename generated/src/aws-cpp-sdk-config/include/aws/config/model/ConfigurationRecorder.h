@@ -101,10 +101,10 @@ class ConfigurationRecorder {
    * policies when running evaluations. Make sure that the policies in effect align
    * with how you intend to use Config.</p> <p> <b>Keep Minimum Permisions When
    * Reusing an IAM role</b> </p> <p>If you use an Amazon Web Services service that
-   * uses Config, such as Security Hub or Control Tower, and an IAM role has already
-   * been created, make sure that the IAM role that you use when setting up Config
-   * keeps the same minimum permissions as the pre-existing IAM role. You must do
-   * this to ensure that the other Amazon Web Services service continues to run as
+   * uses Config, such as Security Hub CSPM or Control Tower, and an IAM role has
+   * already been created, make sure that the IAM role that you use when setting up
+   * Config keeps the same minimum permissions as the pre-existing IAM role. You must
+   * do this to ensure that the other Amazon Web Services service continues to run as
    * expected. </p> <p>For example, if Control Tower has an IAM role that allows
    * Config to read S3 objects, make sure that the same permissions are granted to
    * the IAM role you use when setting up Config. Otherwise, it may interfere with

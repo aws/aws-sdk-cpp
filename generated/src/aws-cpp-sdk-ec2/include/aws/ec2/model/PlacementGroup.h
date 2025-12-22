@@ -181,6 +181,24 @@ class PlacementGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Reserved for future use.</p>
+   */
+  inline const Aws::String& GetLinkedGroupId() const { return m_linkedGroupId; }
+  inline bool LinkedGroupIdHasBeenSet() const { return m_linkedGroupIdHasBeenSet; }
+  template <typename LinkedGroupIdT = Aws::String>
+  void SetLinkedGroupId(LinkedGroupIdT&& value) {
+    m_linkedGroupIdHasBeenSet = true;
+    m_linkedGroupId = std::forward<LinkedGroupIdT>(value);
+  }
+  template <typename LinkedGroupIdT = Aws::String>
+  PlacementGroup& WithLinkedGroupId(LinkedGroupIdT&& value) {
+    SetLinkedGroupId(std::forward<LinkedGroupIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_groupName;
 
@@ -197,6 +215,8 @@ class PlacementGroup {
   Aws::String m_groupArn;
 
   SpreadLevel m_spreadLevel{SpreadLevel::NOT_SET};
+
+  Aws::String m_linkedGroupId;
   bool m_groupNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_strategyHasBeenSet = false;
@@ -205,6 +225,7 @@ class PlacementGroup {
   bool m_tagsHasBeenSet = false;
   bool m_groupArnHasBeenSet = false;
   bool m_spreadLevelHasBeenSet = false;
+  bool m_linkedGroupIdHasBeenSet = false;
 };
 
 }  // namespace Model
