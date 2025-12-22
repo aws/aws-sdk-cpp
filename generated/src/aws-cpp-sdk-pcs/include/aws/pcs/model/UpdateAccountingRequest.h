@@ -56,7 +56,7 @@ class UpdateAccountingRequest {
 
   ///@{
   /**
-   * <p>The default value for <code>mode</code> is <code>STANDARD</code>. A value of
+   * <p>The default value for <code>mode</code> is <code>NONE</code>. A value of
    * <code>STANDARD</code> means Slurm accounting is enabled.</p>
    */
   inline AccountingMode GetMode() const { return m_mode; }
