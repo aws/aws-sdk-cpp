@@ -1338,18 +1338,21 @@ namespace Aws
                                 auto partResult = hash->GetHash();
                                 auto partData = partResult.GetResult();
                                 
-                                auto partCrc = isCRC64 ?
-                                    *reinterpret_cast<const unsigned long long*>(partData.GetUnderlyingData()) :
-                                    *reinterpret_cast<const unsigned int*>(partData.GetUnderlyingData());
-                                
                                 if (combinedChecksum == 0) {
-                                    combinedChecksum = partCrc;
+                                    if (isCRC64) {
+                                        combinedChecksum = *reinterpret_cast<const unsigned long long*>(partData.GetUnderlyingData());
+                                    } else {
+                                        combinedChecksum = *reinterpret_cast<const unsigned int*>(partData.GetUnderlyingData());
+                                    }
                                 } else {
                                     if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32) {
-                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32(combinedChecksum, partCrc, partSize);
+                                        auto partCrc = *reinterpret_cast<const unsigned int*>(partData.GetUnderlyingData());
+                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32(static_cast<uint32_t>(combinedChecksum), partCrc, partSize);
                                     } else if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
-                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32C(combinedChecksum, partCrc, partSize);
+                                        auto partCrc = *reinterpret_cast<const unsigned int*>(partData.GetUnderlyingData());
+                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32C(static_cast<uint32_t>(combinedChecksum), partCrc, partSize);
                                     } else if (isCRC64) {
+                                        auto partCrc = *reinterpret_cast<const unsigned long long*>(partData.GetUnderlyingData());
                                         combinedChecksum = Aws::Crt::Checksum::CombineCRC64NVME(combinedChecksum, partCrc, partSize);
                                     }
                                 }
