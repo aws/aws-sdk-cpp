@@ -1000,6 +1000,18 @@ namespace Aws
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
                 handle->SetMetadata(headObjectOutcome.GetResult().GetMetadata());
                 handle->SetEtag(headObjectOutcome.GetResult().GetETag());
+                if (headObjectOutcome.GetResult().GetChecksumType() == Aws::S3::Model::ChecksumType::FULL_OBJECT) {
+                  if (!headObjectOutcome.GetResult().GetChecksumCRC32C().empty()) {
+                    handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumCRC32C());
+                    handle->SetChecksumAlgorithm(S3::Model::ChecksumAlgorithm::CRC32C);
+                  } else if (!headObjectOutcome.GetResult().GetChecksumCRC32().empty()) {
+                    handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumCRC32());
+                    handle->SetChecksumAlgorithm(S3::Model::ChecksumAlgorithm::CRC32);
+                  } else if (!headObjectOutcome.GetResult().GetChecksumCRC64NVME().empty()) {
+                    handle->SetChecksum(headObjectOutcome.GetResult().GetChecksumCRC64NVME());
+                    handle->SetChecksumAlgorithm(S3::Model::ChecksumAlgorithm::CRC64NVME);
+                  }
+                }
                 /* When bucket versioning is suspended, head object will return "null" for unversioned object.
                  * Send following GetObject with "null" as versionId will result in 403 access denied error if your IAM role or policy
                  * doesn't have GetObjectVersion permission.
@@ -1147,6 +1159,12 @@ namespace Aws
                 handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 TriggerTransferStatusUpdatedCallback(handle);
             }
+            // TODO: combine and check checksums
+            for (const auto& part : handle->GetCompletedParts()) {
+              // std::map with int index SHOULD BE ordered
+              part.second->GetChecksum();
+              // TODO: combine all checksums from all the parts right here
+            }
         }
 
         void TransferManager::HandleGetObjectResponse(const Aws::S3::S3Client* client,
@@ -1204,7 +1222,20 @@ namespace Aws
 
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
-                        handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+                      partState->SetChecksum([&]() -> Aws::String {
+                        if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+                          return outcome.GetResult().GetChecksumCRC32();
+                        }
+                        if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
+                          return outcome.GetResult().GetChecksumCRC32C();
+                        }
+                        if (m_transferConfig.checksumAlgorithm == S3::Model::ChecksumAlgorithm::CRC64NVME) {
+                          return outcome.GetResult().GetChecksumCRC64NVME();
+                        }
+                        // Return empty checksum for not set.
+                        return "";
+                      }());
+                      handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
                     } else {
                         Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
                                                                        "InternalFailure", errMsg, false);

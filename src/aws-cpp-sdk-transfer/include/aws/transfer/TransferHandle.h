@@ -304,6 +304,12 @@ namespace Aws
             void SetEtag(const Aws::String& etag) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_etag = etag; }
 
             /**
+             * (Download only) Checksum algorithm used for download
+             */
+            Aws::S3::Model::ChecksumAlgorithm GetChecksumAlgorithm() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_checksumAlgorithm; }
+            void SetChecksumAlgorithm (const Aws::S3::Model::ChecksumAlgorithm& checksumAlgorithm) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_checksumAlgorithm = checksumAlgorithm; }
+
+            /**
              * Upload or Download?
              */
             inline TransferDirection GetTransferDirection() const { return m_direction; }
@@ -430,6 +436,7 @@ namespace Aws
             mutable std::condition_variable m_waitUntilFinishedSignal;
             mutable std::mutex m_getterSetterLock;
             Aws::String m_checksum;
+            Aws::S3::Model::ChecksumAlgorithm m_checksumAlgorithm;
         };
 
         AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);
