@@ -233,33 +233,33 @@ class ChangeProgressStatusDetails {
   ///@}
  private:
   Aws::String m_changeId;
-  bool m_changeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   OverallChangeStatus m_status{OverallChangeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pendingProperties;
-  bool m_pendingPropertiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_completedProperties;
-  bool m_completedPropertiesHasBeenSet = false;
 
   int m_totalNumberOfStages{0};
-  bool m_totalNumberOfStagesHasBeenSet = false;
 
   Aws::Vector<ChangeProgressStage> m_changeProgressStages;
-  bool m_changeProgressStagesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   ConfigChangeStatus m_configChangeStatus{ConfigChangeStatus::NOT_SET};
-  bool m_configChangeStatusHasBeenSet = false;
 
   InitiatedBy m_initiatedBy{InitiatedBy::NOT_SET};
+  bool m_changeIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_pendingPropertiesHasBeenSet = false;
+  bool m_completedPropertiesHasBeenSet = false;
+  bool m_totalNumberOfStagesHasBeenSet = false;
+  bool m_changeProgressStagesHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_configChangeStatusHasBeenSet = false;
   bool m_initiatedByHasBeenSet = false;
 };
 

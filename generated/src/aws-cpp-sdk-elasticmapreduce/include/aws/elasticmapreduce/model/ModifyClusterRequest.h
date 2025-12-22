@@ -85,12 +85,12 @@ class ModifyClusterRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   int m_stepConcurrencyLevel{0};
-  bool m_stepConcurrencyLevelHasBeenSet = false;
 
   bool m_extendedSupport{false};
+  bool m_clusterIdHasBeenSet = false;
+  bool m_stepConcurrencyLevelHasBeenSet = false;
   bool m_extendedSupportHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class EfsFileLocation {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_path;
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_pathHasBeenSet = false;
 };
 

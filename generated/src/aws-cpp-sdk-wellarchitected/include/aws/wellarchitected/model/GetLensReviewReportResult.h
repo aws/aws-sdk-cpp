@@ -91,15 +91,15 @@ class GetLensReviewReportResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   int m_milestoneNumber{0};
-  bool m_milestoneNumberHasBeenSet = false;
 
   LensReviewReport m_lensReviewReport;
-  bool m_lensReviewReportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_milestoneNumberHasBeenSet = false;
+  bool m_lensReviewReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

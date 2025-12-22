@@ -163,21 +163,21 @@ class TestDNSAnswerRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_recordName;
-  bool m_recordNameHasBeenSet = false;
 
   RRType m_recordType{RRType::NOT_SET};
-  bool m_recordTypeHasBeenSet = false;
 
   Aws::String m_resolverIP;
-  bool m_resolverIPHasBeenSet = false;
 
   Aws::String m_eDNS0ClientSubnetIP;
-  bool m_eDNS0ClientSubnetIPHasBeenSet = false;
 
   Aws::String m_eDNS0ClientSubnetMask;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_recordNameHasBeenSet = false;
+  bool m_recordTypeHasBeenSet = false;
+  bool m_resolverIPHasBeenSet = false;
+  bool m_eDNS0ClientSubnetIPHasBeenSet = false;
   bool m_eDNS0ClientSubnetMaskHasBeenSet = false;
 };
 

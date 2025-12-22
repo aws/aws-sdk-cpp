@@ -85,12 +85,12 @@ class ListListenersResult {
   ///@}
  private:
   Aws::Vector<Listener> m_listeners;
-  bool m_listenersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_listenersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

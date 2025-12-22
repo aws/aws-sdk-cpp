@@ -214,30 +214,30 @@ class Ec2Instance {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_imageDescription;
-  bool m_imageDescriptionHasBeenSet = false;
 
   Aws::String m_instanceState;
-  bool m_instanceStateHasBeenSet = false;
 
   IamInstanceProfile m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_platform;
-  bool m_platformHasBeenSet = false;
 
   Aws::Vector<ProductCode> m_productCodes;
-  bool m_productCodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ec2NetworkInterfaceUids;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_imageDescriptionHasBeenSet = false;
+  bool m_instanceStateHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_productCodesHasBeenSet = false;
   bool m_ec2NetworkInterfaceUidsHasBeenSet = false;
 };
 

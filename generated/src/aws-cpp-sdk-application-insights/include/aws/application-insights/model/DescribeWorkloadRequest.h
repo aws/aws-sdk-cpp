@@ -103,15 +103,15 @@ class DescribeWorkloadRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_resourceGroupName;
-  bool m_resourceGroupNameHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_resourceGroupNameHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
+  bool m_workloadIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

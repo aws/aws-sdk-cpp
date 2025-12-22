@@ -88,12 +88,12 @@ class ProvisionedCapacityDescription {
   ///@}
  private:
   Aws::String m_capacityId;
-  bool m_capacityIdHasBeenSet = false;
 
   Aws::String m_startDate;
-  bool m_startDateHasBeenSet = false;
 
   Aws::String m_expirationDate;
+  bool m_capacityIdHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
 };
 

@@ -173,27 +173,27 @@ class AssetBundleExportJobSummary {
   ///@}
  private:
   AssetBundleExportJobStatus m_jobStatus{AssetBundleExportJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_assetBundleExportJobId;
-  bool m_assetBundleExportJobIdHasBeenSet = false;
 
   bool m_includeAllDependencies{false};
-  bool m_includeAllDependenciesHasBeenSet = false;
 
   AssetBundleExportFormat m_exportFormat{AssetBundleExportFormat::NOT_SET};
-  bool m_exportFormatHasBeenSet = false;
 
   bool m_includePermissions{false};
-  bool m_includePermissionsHasBeenSet = false;
 
   bool m_includeTags{false};
+  bool m_jobStatusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_assetBundleExportJobIdHasBeenSet = false;
+  bool m_includeAllDependenciesHasBeenSet = false;
+  bool m_exportFormatHasBeenSet = false;
+  bool m_includePermissionsHasBeenSet = false;
   bool m_includeTagsHasBeenSet = false;
 };
 

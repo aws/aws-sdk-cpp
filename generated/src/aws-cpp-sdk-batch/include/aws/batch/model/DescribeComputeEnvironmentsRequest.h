@@ -109,12 +109,12 @@ class DescribeComputeEnvironmentsRequest : public BatchRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_computeEnvironments;
-  bool m_computeEnvironmentsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_computeEnvironmentsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

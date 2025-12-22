@@ -66,7 +66,7 @@ class UserSearchCriteria {
   ///@{
   /**
    * <p>A list of conditions which would be applied together with an <code>AND</code>
-   * condition. </p>
+   * condition.</p>
    */
   inline const Aws::Vector<UserSearchCriteria>& GetAndConditions() const { return m_andConditions; }
   inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
@@ -149,18 +149,18 @@ class UserSearchCriteria {
   ///@}
  private:
   Aws::Vector<UserSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<UserSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
-  bool m_stringConditionHasBeenSet = false;
 
   ListCondition m_listCondition;
-  bool m_listConditionHasBeenSet = false;
 
   HierarchyGroupCondition m_hierarchyGroupCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
+  bool m_stringConditionHasBeenSet = false;
+  bool m_listConditionHasBeenSet = false;
   bool m_hierarchyGroupConditionHasBeenSet = false;
 };
 

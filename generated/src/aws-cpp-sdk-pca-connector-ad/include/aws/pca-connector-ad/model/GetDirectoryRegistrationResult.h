@@ -61,9 +61,9 @@ class GetDirectoryRegistrationResult {
   ///@}
  private:
   DirectoryRegistration m_directoryRegistration;
-  bool m_directoryRegistrationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryRegistrationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

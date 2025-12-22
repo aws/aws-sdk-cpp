@@ -182,27 +182,27 @@ class CollaborationPrivacyBudgetTemplateSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_collaborationArn;
-  bool m_collaborationArnHasBeenSet = false;
 
   Aws::String m_creatorAccountId;
-  bool m_creatorAccountIdHasBeenSet = false;
 
   PrivacyBudgetType m_privacyBudgetType{PrivacyBudgetType::NOT_SET};
-  bool m_privacyBudgetTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_collaborationArnHasBeenSet = false;
+  bool m_creatorAccountIdHasBeenSet = false;
+  bool m_privacyBudgetTypeHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
 };
 

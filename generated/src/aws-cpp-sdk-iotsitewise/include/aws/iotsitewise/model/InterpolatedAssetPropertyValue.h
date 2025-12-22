@@ -66,9 +66,9 @@ class InterpolatedAssetPropertyValue {
   ///@}
  private:
   TimeInNanos m_timestamp;
-  bool m_timestampHasBeenSet = false;
 
   Variant m_value;
+  bool m_timestampHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

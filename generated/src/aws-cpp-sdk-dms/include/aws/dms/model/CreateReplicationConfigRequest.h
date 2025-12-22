@@ -250,33 +250,33 @@ class CreateReplicationConfigRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_replicationConfigIdentifier;
-  bool m_replicationConfigIdentifierHasBeenSet = false;
 
   Aws::String m_sourceEndpointArn;
-  bool m_sourceEndpointArnHasBeenSet = false;
 
   Aws::String m_targetEndpointArn;
-  bool m_targetEndpointArnHasBeenSet = false;
 
   ComputeConfig m_computeConfig;
-  bool m_computeConfigHasBeenSet = false;
 
   MigrationTypeValue m_replicationType{MigrationTypeValue::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
   Aws::String m_tableMappings;
-  bool m_tableMappingsHasBeenSet = false;
 
   Aws::String m_replicationSettings;
-  bool m_replicationSettingsHasBeenSet = false;
 
   Aws::String m_supplementalSettings;
-  bool m_supplementalSettingsHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_replicationConfigIdentifierHasBeenSet = false;
+  bool m_sourceEndpointArnHasBeenSet = false;
+  bool m_targetEndpointArnHasBeenSet = false;
+  bool m_computeConfigHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
+  bool m_tableMappingsHasBeenSet = false;
+  bool m_replicationSettingsHasBeenSet = false;
+  bool m_supplementalSettingsHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

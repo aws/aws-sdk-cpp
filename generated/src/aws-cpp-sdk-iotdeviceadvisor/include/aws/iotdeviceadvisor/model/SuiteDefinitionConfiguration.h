@@ -169,24 +169,24 @@ class SuiteDefinitionConfiguration {
   ///@}
  private:
   Aws::String m_suiteDefinitionName;
-  bool m_suiteDefinitionNameHasBeenSet = false;
 
   Aws::Vector<DeviceUnderTest> m_devices;
-  bool m_devicesHasBeenSet = false;
 
   bool m_intendedForQualification{false};
-  bool m_intendedForQualificationHasBeenSet = false;
 
   bool m_isLongDurationTest{false};
-  bool m_isLongDurationTestHasBeenSet = false;
 
   Aws::String m_rootGroup;
-  bool m_rootGroupHasBeenSet = false;
 
   Aws::String m_devicePermissionRoleArn;
-  bool m_devicePermissionRoleArnHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
+  bool m_suiteDefinitionNameHasBeenSet = false;
+  bool m_devicesHasBeenSet = false;
+  bool m_intendedForQualificationHasBeenSet = false;
+  bool m_isLongDurationTestHasBeenSet = false;
+  bool m_rootGroupHasBeenSet = false;
+  bool m_devicePermissionRoleArnHasBeenSet = false;
   bool m_protocolHasBeenSet = false;
 };
 

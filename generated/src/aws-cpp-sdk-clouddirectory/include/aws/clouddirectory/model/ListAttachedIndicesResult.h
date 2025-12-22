@@ -84,12 +84,12 @@ class ListAttachedIndicesResult {
   ///@}
  private:
   Aws::Vector<IndexAttachment> m_indexAttachments;
-  bool m_indexAttachmentsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_indexAttachmentsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

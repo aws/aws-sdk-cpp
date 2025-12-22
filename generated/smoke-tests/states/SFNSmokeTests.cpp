@@ -41,6 +41,6 @@ TEST_F(SFNSmokeTestSuite, ListActivitiesSuccess )
     
     ListActivitiesRequest input;
     auto outcome = clientSp->ListActivities(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

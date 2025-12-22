@@ -88,12 +88,12 @@ class ProviderIdNameSpaceConfiguration {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::Document m_providerTargetConfigurationDefinition;
-  bool m_providerTargetConfigurationDefinitionHasBeenSet = false;
 
   Aws::Utils::Document m_providerSourceConfigurationDefinition;
+  bool m_descriptionHasBeenSet = false;
+  bool m_providerTargetConfigurationDefinitionHasBeenSet = false;
   bool m_providerSourceConfigurationDefinitionHasBeenSet = false;
 };
 

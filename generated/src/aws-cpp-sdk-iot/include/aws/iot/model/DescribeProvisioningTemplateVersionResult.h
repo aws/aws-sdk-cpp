@@ -107,18 +107,18 @@ class DescribeProvisioningTemplateVersionResult {
   ///@}
  private:
   int m_versionId{0};
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   bool m_isDefaultVersion{false};
-  bool m_isDefaultVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionIdHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_isDefaultVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

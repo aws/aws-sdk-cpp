@@ -78,12 +78,12 @@ class GetMilestoneResult {
   ///@}
  private:
   Aws::String m_workloadId;
-  bool m_workloadIdHasBeenSet = false;
 
   Milestone m_milestone;
-  bool m_milestoneHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workloadIdHasBeenSet = false;
+  bool m_milestoneHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

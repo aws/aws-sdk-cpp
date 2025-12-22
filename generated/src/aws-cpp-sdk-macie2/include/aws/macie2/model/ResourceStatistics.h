@@ -195,30 +195,30 @@ class ResourceStatistics {
   ///@}
  private:
   long long m_totalBytesClassified{0};
-  bool m_totalBytesClassifiedHasBeenSet = false;
 
   long long m_totalDetections{0};
-  bool m_totalDetectionsHasBeenSet = false;
 
   long long m_totalDetectionsSuppressed{0};
-  bool m_totalDetectionsSuppressedHasBeenSet = false;
 
   long long m_totalItemsClassified{0};
-  bool m_totalItemsClassifiedHasBeenSet = false;
 
   long long m_totalItemsSensitive{0};
-  bool m_totalItemsSensitiveHasBeenSet = false;
 
   long long m_totalItemsSkipped{0};
-  bool m_totalItemsSkippedHasBeenSet = false;
 
   long long m_totalItemsSkippedInvalidEncryption{0};
-  bool m_totalItemsSkippedInvalidEncryptionHasBeenSet = false;
 
   long long m_totalItemsSkippedInvalidKms{0};
-  bool m_totalItemsSkippedInvalidKmsHasBeenSet = false;
 
   long long m_totalItemsSkippedPermissionDenied{0};
+  bool m_totalBytesClassifiedHasBeenSet = false;
+  bool m_totalDetectionsHasBeenSet = false;
+  bool m_totalDetectionsSuppressedHasBeenSet = false;
+  bool m_totalItemsClassifiedHasBeenSet = false;
+  bool m_totalItemsSensitiveHasBeenSet = false;
+  bool m_totalItemsSkippedHasBeenSet = false;
+  bool m_totalItemsSkippedInvalidEncryptionHasBeenSet = false;
+  bool m_totalItemsSkippedInvalidKmsHasBeenSet = false;
   bool m_totalItemsSkippedPermissionDeniedHasBeenSet = false;
 };
 

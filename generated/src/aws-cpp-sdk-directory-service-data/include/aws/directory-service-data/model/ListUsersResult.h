@@ -119,18 +119,18 @@ class ListUsersResult {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_realm;
-  bool m_realmHasBeenSet = false;
 
   Aws::Vector<UserSummary> m_users;
-  bool m_usersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_realmHasBeenSet = false;
+  bool m_usersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

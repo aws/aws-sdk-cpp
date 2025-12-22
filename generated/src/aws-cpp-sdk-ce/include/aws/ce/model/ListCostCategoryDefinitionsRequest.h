@@ -7,6 +7,7 @@
 #include <aws/ce/CostExplorerRequest.h>
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -32,7 +33,7 @@ class ListCostCategoryDefinitionsRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>The date when the Cost Category was effective. </p>
+   * <p>The date when the cost category was effective. </p>
    */
   inline const Aws::String& GetEffectiveOn() const { return m_effectiveOn; }
   inline bool EffectiveOnHasBeenSet() const { return m_effectiveOnHasBeenSet; }
@@ -83,15 +84,46 @@ class ListCostCategoryDefinitionsRequest : public CostExplorerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Filter cost category definitions that are supported by given resource types
+   * based on the latest version. If the filter is present, the result only includes
+   * Cost Categories that supports input resource type. If the filter isn't provided,
+   * no filtering is applied. The valid values are
+   * <code>billing:rispgroupsharing</code>. </p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSupportedResourceTypes() const { return m_supportedResourceTypes; }
+  inline bool SupportedResourceTypesHasBeenSet() const { return m_supportedResourceTypesHasBeenSet; }
+  template <typename SupportedResourceTypesT = Aws::Vector<Aws::String>>
+  void SetSupportedResourceTypes(SupportedResourceTypesT&& value) {
+    m_supportedResourceTypesHasBeenSet = true;
+    m_supportedResourceTypes = std::forward<SupportedResourceTypesT>(value);
+  }
+  template <typename SupportedResourceTypesT = Aws::Vector<Aws::String>>
+  ListCostCategoryDefinitionsRequest& WithSupportedResourceTypes(SupportedResourceTypesT&& value) {
+    SetSupportedResourceTypes(std::forward<SupportedResourceTypesT>(value));
+    return *this;
+  }
+  template <typename SupportedResourceTypesT = Aws::String>
+  ListCostCategoryDefinitionsRequest& AddSupportedResourceTypes(SupportedResourceTypesT&& value) {
+    m_supportedResourceTypesHasBeenSet = true;
+    m_supportedResourceTypes.emplace_back(std::forward<SupportedResourceTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_effectiveOn;
-  bool m_effectiveOnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+
+  Aws::Vector<Aws::String> m_supportedResourceTypes;
+  bool m_effectiveOnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_supportedResourceTypesHasBeenSet = false;
 };
 
 }  // namespace Model

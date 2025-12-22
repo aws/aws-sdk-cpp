@@ -379,60 +379,60 @@ class M3u8Settings {
   ///@}
  private:
   int m_audioFramesPerPes{0};
-  bool m_audioFramesPerPesHasBeenSet = false;
 
   Aws::String m_audioPids;
-  bool m_audioPidsHasBeenSet = false;
 
   Aws::String m_ecmPid;
-  bool m_ecmPidHasBeenSet = false;
 
   M3u8NielsenId3Behavior m_nielsenId3Behavior{M3u8NielsenId3Behavior::NOT_SET};
-  bool m_nielsenId3BehaviorHasBeenSet = false;
 
   int m_patInterval{0};
-  bool m_patIntervalHasBeenSet = false;
 
   M3u8PcrControl m_pcrControl{M3u8PcrControl::NOT_SET};
-  bool m_pcrControlHasBeenSet = false;
 
   int m_pcrPeriod{0};
-  bool m_pcrPeriodHasBeenSet = false;
 
   Aws::String m_pcrPid;
-  bool m_pcrPidHasBeenSet = false;
 
   int m_pmtInterval{0};
-  bool m_pmtIntervalHasBeenSet = false;
 
   Aws::String m_pmtPid;
-  bool m_pmtPidHasBeenSet = false;
 
   int m_programNum{0};
-  bool m_programNumHasBeenSet = false;
 
   M3u8Scte35Behavior m_scte35Behavior{M3u8Scte35Behavior::NOT_SET};
-  bool m_scte35BehaviorHasBeenSet = false;
 
   Aws::String m_scte35Pid;
-  bool m_scte35PidHasBeenSet = false;
 
   M3u8TimedMetadataBehavior m_timedMetadataBehavior{M3u8TimedMetadataBehavior::NOT_SET};
-  bool m_timedMetadataBehaviorHasBeenSet = false;
 
   Aws::String m_timedMetadataPid;
-  bool m_timedMetadataPidHasBeenSet = false;
 
   int m_transportStreamId{0};
-  bool m_transportStreamIdHasBeenSet = false;
 
   Aws::String m_videoPid;
-  bool m_videoPidHasBeenSet = false;
 
   M3u8KlvBehavior m_klvBehavior{M3u8KlvBehavior::NOT_SET};
-  bool m_klvBehaviorHasBeenSet = false;
 
   Aws::String m_klvDataPids;
+  bool m_audioFramesPerPesHasBeenSet = false;
+  bool m_audioPidsHasBeenSet = false;
+  bool m_ecmPidHasBeenSet = false;
+  bool m_nielsenId3BehaviorHasBeenSet = false;
+  bool m_patIntervalHasBeenSet = false;
+  bool m_pcrControlHasBeenSet = false;
+  bool m_pcrPeriodHasBeenSet = false;
+  bool m_pcrPidHasBeenSet = false;
+  bool m_pmtIntervalHasBeenSet = false;
+  bool m_pmtPidHasBeenSet = false;
+  bool m_programNumHasBeenSet = false;
+  bool m_scte35BehaviorHasBeenSet = false;
+  bool m_scte35PidHasBeenSet = false;
+  bool m_timedMetadataBehaviorHasBeenSet = false;
+  bool m_timedMetadataPidHasBeenSet = false;
+  bool m_transportStreamIdHasBeenSet = false;
+  bool m_videoPidHasBeenSet = false;
+  bool m_klvBehaviorHasBeenSet = false;
   bool m_klvDataPidsHasBeenSet = false;
 };
 

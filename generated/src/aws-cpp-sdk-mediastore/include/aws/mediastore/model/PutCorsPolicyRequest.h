@@ -75,9 +75,9 @@ class PutCorsPolicyRequest : public MediaStoreRequest {
   ///@}
  private:
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::Vector<CorsRule> m_corsPolicy;
+  bool m_containerNameHasBeenSet = false;
   bool m_corsPolicyHasBeenSet = false;
 };
 

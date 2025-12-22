@@ -102,15 +102,15 @@ class QuerySchemaVersionMetadataResult {
   ///@}
  private:
   Aws::Map<Aws::String, MetadataInfo> m_metadataInfoMap;
-  bool m_metadataInfoMapHasBeenSet = false;
 
   Aws::String m_schemaVersionId;
-  bool m_schemaVersionIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataInfoMapHasBeenSet = false;
+  bool m_schemaVersionIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

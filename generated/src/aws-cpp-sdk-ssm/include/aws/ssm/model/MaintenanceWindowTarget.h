@@ -172,24 +172,24 @@ class MaintenanceWindowTarget {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::String m_windowTargetId;
-  bool m_windowTargetIdHasBeenSet = false;
 
   MaintenanceWindowResourceType m_resourceType{MaintenanceWindowResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::String m_ownerInformation;
-  bool m_ownerInformationHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_windowIdHasBeenSet = false;
+  bool m_windowTargetIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_ownerInformationHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

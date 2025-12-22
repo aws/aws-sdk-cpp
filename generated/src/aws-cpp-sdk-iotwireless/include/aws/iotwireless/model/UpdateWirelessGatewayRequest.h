@@ -145,21 +145,21 @@ class UpdateWirelessGatewayRequest : public IoTWirelessRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_joinEuiFilters;
-  bool m_joinEuiFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_netIdFilters;
-  bool m_netIdFiltersHasBeenSet = false;
 
   double m_maxEirp{0.0};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_joinEuiFiltersHasBeenSet = false;
+  bool m_netIdFiltersHasBeenSet = false;
   bool m_maxEirpHasBeenSet = false;
 };
 

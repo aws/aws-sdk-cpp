@@ -25,6 +25,8 @@
 #include <aws/account/model/GetAlternateContactResult.h>
 #include <aws/account/model/GetContactInformationRequest.h>
 #include <aws/account/model/GetContactInformationResult.h>
+#include <aws/account/model/GetGovCloudAccountInformationRequest.h>
+#include <aws/account/model/GetGovCloudAccountInformationResult.h>
 #include <aws/account/model/GetPrimaryEmailResult.h>
 #include <aws/account/model/GetRegionOptStatusResult.h>
 #include <aws/account/model/ListRegionsRequest.h>
@@ -71,6 +73,7 @@ class EnableRegionRequest;
 class GetAccountInformationRequest;
 class GetAlternateContactRequest;
 class GetContactInformationRequest;
+class GetGovCloudAccountInformationRequest;
 class GetPrimaryEmailRequest;
 class GetRegionOptStatusRequest;
 class ListRegionsRequest;
@@ -88,6 +91,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, AccountError> EnableRegionOutcome;
 typedef Aws::Utils::Outcome<GetAccountInformationResult, AccountError> GetAccountInformationOutcome;
 typedef Aws::Utils::Outcome<GetAlternateContactResult, AccountError> GetAlternateContactOutcome;
 typedef Aws::Utils::Outcome<GetContactInformationResult, AccountError> GetContactInformationOutcome;
+typedef Aws::Utils::Outcome<GetGovCloudAccountInformationResult, AccountError> GetGovCloudAccountInformationOutcome;
 typedef Aws::Utils::Outcome<GetPrimaryEmailResult, AccountError> GetPrimaryEmailOutcome;
 typedef Aws::Utils::Outcome<GetRegionOptStatusResult, AccountError> GetRegionOptStatusOutcome;
 typedef Aws::Utils::Outcome<ListRegionsResult, AccountError> ListRegionsOutcome;
@@ -105,6 +109,7 @@ typedef std::future<EnableRegionOutcome> EnableRegionOutcomeCallable;
 typedef std::future<GetAccountInformationOutcome> GetAccountInformationOutcomeCallable;
 typedef std::future<GetAlternateContactOutcome> GetAlternateContactOutcomeCallable;
 typedef std::future<GetContactInformationOutcome> GetContactInformationOutcomeCallable;
+typedef std::future<GetGovCloudAccountInformationOutcome> GetGovCloudAccountInformationOutcomeCallable;
 typedef std::future<GetPrimaryEmailOutcome> GetPrimaryEmailOutcomeCallable;
 typedef std::future<GetRegionOptStatusOutcome> GetRegionOptStatusOutcomeCallable;
 typedef std::future<ListRegionsOutcome> ListRegionsOutcomeCallable;
@@ -139,6 +144,10 @@ typedef std::function<void(const AccountClient*, const Model::GetAlternateContac
 typedef std::function<void(const AccountClient*, const Model::GetContactInformationRequest&, const Model::GetContactInformationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetContactInformationResponseReceivedHandler;
+typedef std::function<void(const AccountClient*, const Model::GetGovCloudAccountInformationRequest&,
+                           const Model::GetGovCloudAccountInformationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetGovCloudAccountInformationResponseReceivedHandler;
 typedef std::function<void(const AccountClient*, const Model::GetPrimaryEmailRequest&, const Model::GetPrimaryEmailOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPrimaryEmailResponseReceivedHandler;

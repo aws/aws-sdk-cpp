@@ -89,12 +89,12 @@ class JobDetails {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   JobData m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_idHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

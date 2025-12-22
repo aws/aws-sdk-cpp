@@ -127,18 +127,18 @@ class SnapshotRecycleBinInfo {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_recycleBinEnterTime{};
-  bool m_recycleBinEnterTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_recycleBinExitTime{};
-  bool m_recycleBinExitTimeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_volumeId;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_recycleBinEnterTimeHasBeenSet = false;
+  bool m_recycleBinExitTimeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
 };
 

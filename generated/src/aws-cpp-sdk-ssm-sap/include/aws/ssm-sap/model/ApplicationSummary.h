@@ -128,18 +128,18 @@ class ApplicationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ApplicationDiscoveryStatus m_discoveryStatus{ApplicationDiscoveryStatus::NOT_SET};
-  bool m_discoveryStatusHasBeenSet = false;
 
   ApplicationType m_type{ApplicationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_discoveryStatusHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

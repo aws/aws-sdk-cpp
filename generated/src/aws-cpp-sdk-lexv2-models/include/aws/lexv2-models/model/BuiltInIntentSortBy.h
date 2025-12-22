@@ -67,9 +67,9 @@ class BuiltInIntentSortBy {
   ///@}
  private:
   BuiltInIntentSortAttribute m_attribute{BuiltInIntentSortAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   SortOrder m_order{SortOrder::NOT_SET};
+  bool m_attributeHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

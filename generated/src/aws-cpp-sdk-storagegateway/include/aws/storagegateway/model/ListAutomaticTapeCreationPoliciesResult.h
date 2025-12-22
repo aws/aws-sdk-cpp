@@ -72,9 +72,9 @@ class ListAutomaticTapeCreationPoliciesResult {
   ///@}
  private:
   Aws::Vector<AutomaticTapeCreationPolicyInfo> m_automaticTapeCreationPolicyInfos;
-  bool m_automaticTapeCreationPolicyInfosHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_automaticTapeCreationPolicyInfosHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

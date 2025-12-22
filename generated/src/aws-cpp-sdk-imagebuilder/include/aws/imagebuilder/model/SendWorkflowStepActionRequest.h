@@ -125,18 +125,18 @@ class SendWorkflowStepActionRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_stepExecutionId;
-  bool m_stepExecutionIdHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   WorkflowStepActionType m_action{WorkflowStepActionType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_stepExecutionIdHasBeenSet = false;
+  bool m_imageBuildVersionArnHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

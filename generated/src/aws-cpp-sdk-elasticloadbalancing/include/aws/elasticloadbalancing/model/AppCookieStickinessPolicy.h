@@ -73,9 +73,9 @@ class AppCookieStickinessPolicy {
   ///@}
  private:
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   Aws::String m_cookieName;
+  bool m_policyNameHasBeenSet = false;
   bool m_cookieNameHasBeenSet = false;
 };
 

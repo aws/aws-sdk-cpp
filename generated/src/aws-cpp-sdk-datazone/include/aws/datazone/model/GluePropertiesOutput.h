@@ -68,9 +68,9 @@ class GluePropertiesOutput {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
+  bool m_errorMessageHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

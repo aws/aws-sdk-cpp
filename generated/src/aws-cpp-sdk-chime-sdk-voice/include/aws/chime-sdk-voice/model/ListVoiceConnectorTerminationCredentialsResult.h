@@ -68,9 +68,9 @@ class ListVoiceConnectorTerminationCredentialsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_usernames;
-  bool m_usernamesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_usernamesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

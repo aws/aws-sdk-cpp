@@ -92,12 +92,12 @@ class UpdateRebalancingRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Rebalancing m_rebalancing;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_currentVersionHasBeenSet = false;
   bool m_rebalancingHasBeenSet = false;
 };
 

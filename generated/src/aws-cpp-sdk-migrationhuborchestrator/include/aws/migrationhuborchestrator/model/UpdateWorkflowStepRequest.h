@@ -273,39 +273,39 @@ class UpdateWorkflowStepRequest : public MigrationHubOrchestratorRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_stepGroupId;
-  bool m_stepGroupIdHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StepActionType m_stepActionType{StepActionType::NOT_SET};
-  bool m_stepActionTypeHasBeenSet = false;
 
   WorkflowStepAutomationConfiguration m_workflowStepAutomationConfiguration;
-  bool m_workflowStepAutomationConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stepTarget;
-  bool m_stepTargetHasBeenSet = false;
 
   Aws::Vector<WorkflowStepOutput> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_previous;
-  bool m_previousHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_next;
-  bool m_nextHasBeenSet = false;
 
   StepStatus m_status{StepStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_stepGroupIdHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stepActionTypeHasBeenSet = false;
+  bool m_workflowStepAutomationConfigurationHasBeenSet = false;
+  bool m_stepTargetHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_previousHasBeenSet = false;
+  bool m_nextHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

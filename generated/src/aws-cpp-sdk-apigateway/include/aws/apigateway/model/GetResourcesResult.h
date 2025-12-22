@@ -87,12 +87,12 @@ class GetResourcesResult {
   ///@}
  private:
   Aws::String m_position;
-  bool m_positionHasBeenSet = false;
 
   Aws::Vector<Resource> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_positionHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

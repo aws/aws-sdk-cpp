@@ -87,12 +87,12 @@ class DynamicDefaultValue {
   ///@}
  private:
   ColumnIdentifier m_userNameColumn;
-  bool m_userNameColumnHasBeenSet = false;
 
   ColumnIdentifier m_groupNameColumn;
-  bool m_groupNameColumnHasBeenSet = false;
 
   ColumnIdentifier m_defaultValueColumn;
+  bool m_userNameColumnHasBeenSet = false;
+  bool m_groupNameColumnHasBeenSet = false;
   bool m_defaultValueColumnHasBeenSet = false;
 };
 

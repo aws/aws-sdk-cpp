@@ -87,12 +87,12 @@ class CreateFirewallPolicyResult {
   ///@}
  private:
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   FirewallPolicyResponse m_firewallPolicyResponse;
-  bool m_firewallPolicyResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateTokenHasBeenSet = false;
+  bool m_firewallPolicyResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class AssessmentReport {
   ///@}
  private:
   Aws::String m_domainControllerIp;
-  bool m_domainControllerIpHasBeenSet = false;
 
   Aws::Vector<AssessmentValidation> m_validations;
+  bool m_domainControllerIpHasBeenSet = false;
   bool m_validationsHasBeenSet = false;
 };
 

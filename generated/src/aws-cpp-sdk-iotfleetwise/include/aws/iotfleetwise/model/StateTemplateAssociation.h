@@ -74,9 +74,9 @@ class StateTemplateAssociation {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   StateTemplateUpdateStrategy m_stateTemplateUpdateStrategy;
+  bool m_identifierHasBeenSet = false;
   bool m_stateTemplateUpdateStrategyHasBeenSet = false;
 };
 

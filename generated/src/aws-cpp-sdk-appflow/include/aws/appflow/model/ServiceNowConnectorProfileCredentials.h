@@ -88,12 +88,12 @@ class ServiceNowConnectorProfileCredentials {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   OAuth2Credentials m_oAuth2Credentials;
+  bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
   bool m_oAuth2CredentialsHasBeenSet = false;
 };
 

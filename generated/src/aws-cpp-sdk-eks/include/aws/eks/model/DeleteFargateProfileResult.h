@@ -60,9 +60,9 @@ class DeleteFargateProfileResult {
   ///@}
  private:
   FargateProfile m_fargateProfile;
-  bool m_fargateProfileHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fargateProfileHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

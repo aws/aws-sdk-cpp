@@ -69,9 +69,9 @@ class GetGroupVersionRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_groupVersionId;
+  bool m_groupIdHasBeenSet = false;
   bool m_groupVersionIdHasBeenSet = false;
 };
 

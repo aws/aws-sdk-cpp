@@ -71,9 +71,9 @@ class AuthorizationConfiguration {
   ///@}
  private:
   LakeFormationConfiguration m_lakeFormationConfiguration;
-  bool m_lakeFormationConfigurationHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_lakeFormationConfigurationHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

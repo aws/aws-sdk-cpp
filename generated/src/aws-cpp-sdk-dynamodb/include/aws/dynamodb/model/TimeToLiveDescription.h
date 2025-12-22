@@ -68,9 +68,9 @@ class TimeToLiveDescription {
   ///@}
  private:
   TimeToLiveStatus m_timeToLiveStatus{TimeToLiveStatus::NOT_SET};
-  bool m_timeToLiveStatusHasBeenSet = false;
 
   Aws::String m_attributeName;
+  bool m_timeToLiveStatusHasBeenSet = false;
   bool m_attributeNameHasBeenSet = false;
 };
 

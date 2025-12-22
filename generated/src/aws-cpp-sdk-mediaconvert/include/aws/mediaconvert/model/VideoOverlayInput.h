@@ -4,9 +4,11 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AudioSelector.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
 #include <aws/mediaconvert/model/VideoOverlayInputClipping.h>
 
@@ -34,6 +36,38 @@ class VideoOverlayInput {
   AWS_MEDIACONVERT_API VideoOverlayInput(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API VideoOverlayInput& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * Use Audio selectors to specify audio to use during your Video overlay. You can
+   * use multiple Audio selectors per Video overlay. When you include an Audio
+   * selector within a Video overlay, MediaConvert mutes any Audio selectors with the
+   * same name from the underlying input. For example, if your underlying input has
+   * Audio selector 1 and Audio selector 2, and your Video overlay only has Audio
+   * selector 1, then MediaConvert replaces all audio for Audio selector 1 during the
+   * Video overlay. To replace all audio for all Audio selectors from the underlying
+   * input by using a single Audio selector in your overlay, set DefaultSelection to
+   * DEFAULT (Check \"Use as default\" in the MediaConvert console).
+   */
+  inline const Aws::Map<Aws::String, AudioSelector>& GetAudioSelectors() const { return m_audioSelectors; }
+  inline bool AudioSelectorsHasBeenSet() const { return m_audioSelectorsHasBeenSet; }
+  template <typename AudioSelectorsT = Aws::Map<Aws::String, AudioSelector>>
+  void SetAudioSelectors(AudioSelectorsT&& value) {
+    m_audioSelectorsHasBeenSet = true;
+    m_audioSelectors = std::forward<AudioSelectorsT>(value);
+  }
+  template <typename AudioSelectorsT = Aws::Map<Aws::String, AudioSelector>>
+  VideoOverlayInput& WithAudioSelectors(AudioSelectorsT&& value) {
+    SetAudioSelectors(std::forward<AudioSelectorsT>(value));
+    return *this;
+  }
+  template <typename AudioSelectorsKeyT = Aws::String, typename AudioSelectorsValueT = AudioSelector>
+  VideoOverlayInput& AddAudioSelectors(AudioSelectorsKeyT&& key, AudioSelectorsValueT&& value) {
+    m_audioSelectorsHasBeenSet = true;
+    m_audioSelectors.emplace(std::forward<AudioSelectorsKeyT>(key), std::forward<AudioSelectorsValueT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -120,16 +154,19 @@ To specify
   }
   ///@}
  private:
+  Aws::Map<Aws::String, AudioSelector> m_audioSelectors;
+
   Aws::String m_fileInput;
-  bool m_fileInputHasBeenSet = false;
 
   Aws::Vector<VideoOverlayInputClipping> m_inputClippings;
-  bool m_inputClippingsHasBeenSet = false;
 
   InputTimecodeSource m_timecodeSource{InputTimecodeSource::NOT_SET};
-  bool m_timecodeSourceHasBeenSet = false;
 
   Aws::String m_timecodeStart;
+  bool m_audioSelectorsHasBeenSet = false;
+  bool m_fileInputHasBeenSet = false;
+  bool m_inputClippingsHasBeenSet = false;
+  bool m_timecodeSourceHasBeenSet = false;
   bool m_timecodeStartHasBeenSet = false;
 };
 

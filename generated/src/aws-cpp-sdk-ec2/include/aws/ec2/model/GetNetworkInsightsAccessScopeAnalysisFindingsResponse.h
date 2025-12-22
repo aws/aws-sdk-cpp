@@ -122,18 +122,18 @@ class GetNetworkInsightsAccessScopeAnalysisFindingsResponse {
   ///@}
  private:
   Aws::String m_networkInsightsAccessScopeAnalysisId;
-  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
   AnalysisStatus m_analysisStatus{AnalysisStatus::NOT_SET};
-  bool m_analysisStatusHasBeenSet = false;
 
   Aws::Vector<AccessScopeAnalysisFinding> m_analysisFindings;
-  bool m_analysisFindingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
+  bool m_analysisStatusHasBeenSet = false;
+  bool m_analysisFindingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

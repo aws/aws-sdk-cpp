@@ -64,9 +64,9 @@ class OptInFeature {
   ///@}
  private:
   OptInFeatureName m_featureName{OptInFeatureName::NOT_SET};
-  bool m_featureNameHasBeenSet = false;
 
   bool m_isEnabled{false};
+  bool m_featureNameHasBeenSet = false;
   bool m_isEnabledHasBeenSet = false;
 };
 

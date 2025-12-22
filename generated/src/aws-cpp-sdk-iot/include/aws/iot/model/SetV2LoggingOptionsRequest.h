@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/LogEventConfiguration.h>
 #include <aws/iot/model/LogLevel.h>
 
 #include <utility>
@@ -78,15 +80,42 @@ class SetV2LoggingOptionsRequest : public IoTRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The list of event configurations that override account-level logging. </p>
+   */
+  inline const Aws::Vector<LogEventConfiguration>& GetEventConfigurations() const { return m_eventConfigurations; }
+  inline bool EventConfigurationsHasBeenSet() const { return m_eventConfigurationsHasBeenSet; }
+  template <typename EventConfigurationsT = Aws::Vector<LogEventConfiguration>>
+  void SetEventConfigurations(EventConfigurationsT&& value) {
+    m_eventConfigurationsHasBeenSet = true;
+    m_eventConfigurations = std::forward<EventConfigurationsT>(value);
+  }
+  template <typename EventConfigurationsT = Aws::Vector<LogEventConfiguration>>
+  SetV2LoggingOptionsRequest& WithEventConfigurations(EventConfigurationsT&& value) {
+    SetEventConfigurations(std::forward<EventConfigurationsT>(value));
+    return *this;
+  }
+  template <typename EventConfigurationsT = LogEventConfiguration>
+  SetV2LoggingOptionsRequest& AddEventConfigurations(EventConfigurationsT&& value) {
+    m_eventConfigurationsHasBeenSet = true;
+    m_eventConfigurations.emplace_back(std::forward<EventConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   LogLevel m_defaultLogLevel{LogLevel::NOT_SET};
-  bool m_defaultLogLevelHasBeenSet = false;
 
   bool m_disableAllLogs{false};
+
+  Aws::Vector<LogEventConfiguration> m_eventConfigurations;
+  bool m_roleArnHasBeenSet = false;
+  bool m_defaultLogLevelHasBeenSet = false;
   bool m_disableAllLogsHasBeenSet = false;
+  bool m_eventConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

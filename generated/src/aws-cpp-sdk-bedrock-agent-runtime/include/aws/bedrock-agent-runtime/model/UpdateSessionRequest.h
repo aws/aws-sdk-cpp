@@ -75,9 +75,9 @@ class UpdateSessionRequest : public BedrockAgentRuntimeRequest {
   ///@}
  private:
   Aws::String m_sessionIdentifier;
-  bool m_sessionIdentifierHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sessionMetadata;
+  bool m_sessionIdentifierHasBeenSet = false;
   bool m_sessionMetadataHasBeenSet = false;
 };
 

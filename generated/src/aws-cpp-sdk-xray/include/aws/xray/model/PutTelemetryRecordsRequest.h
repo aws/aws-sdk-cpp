@@ -109,15 +109,15 @@ class PutTelemetryRecordsRequest : public XRayRequest {
   ///@}
  private:
   Aws::Vector<TelemetryRecord> m_telemetryRecords;
-  bool m_telemetryRecordsHasBeenSet = false;
 
   Aws::String m_eC2InstanceId;
-  bool m_eC2InstanceIdHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_resourceARN;
+  bool m_telemetryRecordsHasBeenSet = false;
+  bool m_eC2InstanceIdHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
   bool m_resourceARNHasBeenSet = false;
 };
 

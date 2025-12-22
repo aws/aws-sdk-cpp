@@ -148,21 +148,21 @@ class ImportVolumeRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   DiskImageDetail m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   VolumeDetail m_volume;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_volumeHasBeenSet = false;
 };
 

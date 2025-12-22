@@ -70,9 +70,9 @@ class AxisLabelReferenceOptions {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   ColumnIdentifier m_column;
+  bool m_fieldIdHasBeenSet = false;
   bool m_columnHasBeenSet = false;
 };
 

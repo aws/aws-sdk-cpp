@@ -88,12 +88,12 @@ class FlowExecutionError {
   ///@}
  private:
   FlowExecutionErrorType m_error{FlowExecutionErrorType::NOT_SET};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_nodeName;
+  bool m_errorHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_nodeNameHasBeenSet = false;
 };
 

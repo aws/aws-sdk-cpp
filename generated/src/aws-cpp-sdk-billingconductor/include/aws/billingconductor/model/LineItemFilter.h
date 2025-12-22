@@ -8,6 +8,7 @@
 #include <aws/billingconductor/model/LineItemFilterAttributeName.h>
 #include <aws/billingconductor/model/LineItemFilterValue.h>
 #include <aws/billingconductor/model/MatchOption.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -95,15 +96,43 @@ class LineItemFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The values of the line item filter. This specifies the values to filter
+   * on.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAttributeValues() const { return m_attributeValues; }
+  inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
+  template <typename AttributeValuesT = Aws::Vector<Aws::String>>
+  void SetAttributeValues(AttributeValuesT&& value) {
+    m_attributeValuesHasBeenSet = true;
+    m_attributeValues = std::forward<AttributeValuesT>(value);
+  }
+  template <typename AttributeValuesT = Aws::Vector<Aws::String>>
+  LineItemFilter& WithAttributeValues(AttributeValuesT&& value) {
+    SetAttributeValues(std::forward<AttributeValuesT>(value));
+    return *this;
+  }
+  template <typename AttributeValuesT = Aws::String>
+  LineItemFilter& AddAttributeValues(AttributeValuesT&& value) {
+    m_attributeValuesHasBeenSet = true;
+    m_attributeValues.emplace_back(std::forward<AttributeValuesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   LineItemFilterAttributeName m_attribute{LineItemFilterAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   MatchOption m_matchOption{MatchOption::NOT_SET};
-  bool m_matchOptionHasBeenSet = false;
 
   Aws::Vector<LineItemFilterValue> m_values;
+
+  Aws::Vector<Aws::String> m_attributeValues;
+  bool m_attributeHasBeenSet = false;
+  bool m_matchOptionHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
+  bool m_attributeValuesHasBeenSet = false;
 };
 
 }  // namespace Model

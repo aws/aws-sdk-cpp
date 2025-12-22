@@ -126,15 +126,15 @@ class CreateProfileRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_as2Id;
-  bool m_as2IdHasBeenSet = false;
 
   ProfileType m_profileType{ProfileType::NOT_SET};
-  bool m_profileTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_certificateIds;
-  bool m_certificateIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_as2IdHasBeenSet = false;
+  bool m_profileTypeHasBeenSet = false;
+  bool m_certificateIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

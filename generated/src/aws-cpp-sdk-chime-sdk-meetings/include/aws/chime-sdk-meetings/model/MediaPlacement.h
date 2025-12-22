@@ -181,27 +181,27 @@ class MediaPlacement {
   ///@}
  private:
   Aws::String m_audioHostUrl;
-  bool m_audioHostUrlHasBeenSet = false;
 
   Aws::String m_audioFallbackUrl;
-  bool m_audioFallbackUrlHasBeenSet = false;
 
   Aws::String m_signalingUrl;
-  bool m_signalingUrlHasBeenSet = false;
 
   Aws::String m_turnControlUrl;
-  bool m_turnControlUrlHasBeenSet = false;
 
   Aws::String m_screenDataUrl;
-  bool m_screenDataUrlHasBeenSet = false;
 
   Aws::String m_screenViewingUrl;
-  bool m_screenViewingUrlHasBeenSet = false;
 
   Aws::String m_screenSharingUrl;
-  bool m_screenSharingUrlHasBeenSet = false;
 
   Aws::String m_eventIngestionUrl;
+  bool m_audioHostUrlHasBeenSet = false;
+  bool m_audioFallbackUrlHasBeenSet = false;
+  bool m_signalingUrlHasBeenSet = false;
+  bool m_turnControlUrlHasBeenSet = false;
+  bool m_screenDataUrlHasBeenSet = false;
+  bool m_screenViewingUrlHasBeenSet = false;
+  bool m_screenSharingUrlHasBeenSet = false;
   bool m_eventIngestionUrlHasBeenSet = false;
 };
 

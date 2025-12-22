@@ -72,9 +72,9 @@ class AssetPropertyBindingValueFilter {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_propertyId;
+  bool m_assetIdHasBeenSet = false;
   bool m_propertyIdHasBeenSet = false;
 };
 

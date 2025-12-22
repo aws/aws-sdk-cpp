@@ -75,9 +75,9 @@ class Rule {
   ///@}
  private:
   RuleType m_type{RuleType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_typeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

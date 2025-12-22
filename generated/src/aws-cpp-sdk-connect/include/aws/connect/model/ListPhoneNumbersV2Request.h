@@ -61,7 +61,7 @@ class ListPhoneNumbersV2Request : public ConnectRequest {
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
    * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
    * lists numbers claimed to all the Amazon Connect instances belonging to your
-   * account in the same AWS Region as the request.</p>
+   * account in the same Amazon Web Services Region as the request.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
   inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
@@ -178,24 +178,24 @@ class ListPhoneNumbersV2Request : public ConnectRequest {
   ///@}
  private:
   Aws::String m_targetArn;
-  bool m_targetArnHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PhoneNumberCountryCode> m_phoneNumberCountryCodes;
-  bool m_phoneNumberCountryCodesHasBeenSet = false;
 
   Aws::Vector<PhoneNumberType> m_phoneNumberTypes;
-  bool m_phoneNumberTypesHasBeenSet = false;
 
   Aws::String m_phoneNumberPrefix;
+  bool m_targetArnHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_phoneNumberCountryCodesHasBeenSet = false;
+  bool m_phoneNumberTypesHasBeenSet = false;
   bool m_phoneNumberPrefixHasBeenSet = false;
 };
 

@@ -125,18 +125,18 @@ class LifeCycle {
   ///@}
  private:
   Aws::String m_addedToServiceDateTime;
-  bool m_addedToServiceDateTimeHasBeenSet = false;
 
   Aws::String m_elapsedReplicationDuration;
-  bool m_elapsedReplicationDurationHasBeenSet = false;
 
   Aws::String m_firstByteDateTime;
-  bool m_firstByteDateTimeHasBeenSet = false;
 
   LifeCycleLastLaunch m_lastLaunch;
-  bool m_lastLaunchHasBeenSet = false;
 
   Aws::String m_lastSeenByServiceDateTime;
+  bool m_addedToServiceDateTimeHasBeenSet = false;
+  bool m_elapsedReplicationDurationHasBeenSet = false;
+  bool m_firstByteDateTimeHasBeenSet = false;
+  bool m_lastLaunchHasBeenSet = false;
   bool m_lastSeenByServiceDateTimeHasBeenSet = false;
 };
 

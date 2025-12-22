@@ -160,21 +160,21 @@ class ServiceNowConfiguration {
   ///@}
  private:
   Aws::String m_hostUrl;
-  bool m_hostUrlHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   ServiceNowBuildVersionType m_serviceNowBuildVersion{ServiceNowBuildVersionType::NOT_SET};
-  bool m_serviceNowBuildVersionHasBeenSet = false;
 
   ServiceNowKnowledgeArticleConfiguration m_knowledgeArticleConfiguration;
-  bool m_knowledgeArticleConfigurationHasBeenSet = false;
 
   ServiceNowServiceCatalogConfiguration m_serviceCatalogConfiguration;
-  bool m_serviceCatalogConfigurationHasBeenSet = false;
 
   ServiceNowAuthenticationType m_authenticationType{ServiceNowAuthenticationType::NOT_SET};
+  bool m_hostUrlHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_serviceNowBuildVersionHasBeenSet = false;
+  bool m_knowledgeArticleConfigurationHasBeenSet = false;
+  bool m_serviceCatalogConfigurationHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
 };
 

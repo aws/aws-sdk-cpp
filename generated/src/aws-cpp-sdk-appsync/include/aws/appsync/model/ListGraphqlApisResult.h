@@ -85,12 +85,12 @@ class ListGraphqlApisResult {
   ///@}
  private:
   Aws::Vector<GraphqlApi> m_graphqlApis;
-  bool m_graphqlApisHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_graphqlApisHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

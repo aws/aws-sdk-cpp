@@ -117,15 +117,15 @@ class CreateSafetyRuleRequest : public Route53RecoveryControlConfigRequest {
   ///@}
  private:
   NewAssertionRule m_assertionRule;
-  bool m_assertionRuleHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   NewGatingRule m_gatingRule;
-  bool m_gatingRuleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_assertionRuleHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_gatingRuleHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class LogicalTable {
   ///@}
  private:
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::Vector<TransformOperation> m_dataTransforms;
-  bool m_dataTransformsHasBeenSet = false;
 
   LogicalTableSource m_source;
+  bool m_aliasHasBeenSet = false;
+  bool m_dataTransformsHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
 };
 

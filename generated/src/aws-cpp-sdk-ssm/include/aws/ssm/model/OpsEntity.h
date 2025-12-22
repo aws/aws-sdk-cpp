@@ -76,9 +76,9 @@ class OpsEntity {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Map<Aws::String, OpsEntityItem> m_data;
+  bool m_idHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

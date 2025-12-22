@@ -62,9 +62,9 @@ class MemorySizeConfiguration {
   ///@}
  private:
   int m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   int m_memoryReservation{0};
+  bool m_memoryHasBeenSet = false;
   bool m_memoryReservationHasBeenSet = false;
 };
 

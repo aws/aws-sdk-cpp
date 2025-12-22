@@ -60,9 +60,9 @@ class CreateMatchmakingRuleSetResult {
   ///@}
  private:
   MatchmakingRuleSet m_ruleSet;
-  bool m_ruleSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

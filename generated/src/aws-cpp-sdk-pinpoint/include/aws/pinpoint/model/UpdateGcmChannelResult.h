@@ -58,9 +58,9 @@ class UpdateGcmChannelResult {
   ///@}
  private:
   GCMChannelResponse m_gCMChannelResponse;
-  bool m_gCMChannelResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gCMChannelResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

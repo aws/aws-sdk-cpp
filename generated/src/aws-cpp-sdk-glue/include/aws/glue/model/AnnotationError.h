@@ -86,12 +86,12 @@ class AnnotationError {
   ///@}
  private:
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_statisticId;
-  bool m_statisticIdHasBeenSet = false;
 
   Aws::String m_failureReason;
+  bool m_profileIdHasBeenSet = false;
+  bool m_statisticIdHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
 };
 

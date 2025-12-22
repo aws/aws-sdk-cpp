@@ -265,39 +265,39 @@ class TopicFilter {
   ///@}
  private:
   Aws::String m_filterDescription;
-  bool m_filterDescriptionHasBeenSet = false;
 
   FilterClass m_filterClass{FilterClass::NOT_SET};
-  bool m_filterClassHasBeenSet = false;
 
   Aws::String m_filterName;
-  bool m_filterNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_filterSynonyms;
-  bool m_filterSynonymsHasBeenSet = false;
 
   Aws::String m_operandFieldName;
-  bool m_operandFieldNameHasBeenSet = false;
 
   NamedFilterType m_filterType{NamedFilterType::NOT_SET};
-  bool m_filterTypeHasBeenSet = false;
 
   TopicCategoryFilter m_categoryFilter;
-  bool m_categoryFilterHasBeenSet = false;
 
   TopicNumericEqualityFilter m_numericEqualityFilter;
-  bool m_numericEqualityFilterHasBeenSet = false;
 
   TopicNumericRangeFilter m_numericRangeFilter;
-  bool m_numericRangeFilterHasBeenSet = false;
 
   TopicDateRangeFilter m_dateRangeFilter;
-  bool m_dateRangeFilterHasBeenSet = false;
 
   TopicRelativeDateFilter m_relativeDateFilter;
-  bool m_relativeDateFilterHasBeenSet = false;
 
   TopicNullFilter m_nullFilter;
+  bool m_filterDescriptionHasBeenSet = false;
+  bool m_filterClassHasBeenSet = false;
+  bool m_filterNameHasBeenSet = false;
+  bool m_filterSynonymsHasBeenSet = false;
+  bool m_operandFieldNameHasBeenSet = false;
+  bool m_filterTypeHasBeenSet = false;
+  bool m_categoryFilterHasBeenSet = false;
+  bool m_numericEqualityFilterHasBeenSet = false;
+  bool m_numericRangeFilterHasBeenSet = false;
+  bool m_dateRangeFilterHasBeenSet = false;
+  bool m_relativeDateFilterHasBeenSet = false;
   bool m_nullFilterHasBeenSet = false;
 };
 

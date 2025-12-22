@@ -67,9 +67,9 @@ class AddResourcePermissionsResult {
   ///@}
  private:
   Aws::Vector<ShareResult> m_shareResults;
-  bool m_shareResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_shareResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,9 +78,9 @@ class PivotConfiguration {
   ///@}
  private:
   Aws::String m_labelColumnName;
-  bool m_labelColumnNameHasBeenSet = false;
 
   Aws::Vector<PivotedLabel> m_pivotedLabels;
+  bool m_labelColumnNameHasBeenSet = false;
   bool m_pivotedLabelsHasBeenSet = false;
 };
 

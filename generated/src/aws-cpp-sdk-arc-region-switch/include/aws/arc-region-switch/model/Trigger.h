@@ -130,18 +130,18 @@ class Trigger {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_targetRegion;
-  bool m_targetRegionHasBeenSet = false;
 
   WorkflowTargetAction m_action{WorkflowTargetAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<TriggerCondition> m_conditions;
-  bool m_conditionsHasBeenSet = false;
 
   int m_minDelayMinutesBetweenExecutions{0};
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetRegionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_conditionsHasBeenSet = false;
   bool m_minDelayMinutesBetweenExecutionsHasBeenSet = false;
 };
 

@@ -211,33 +211,33 @@ class GetMemberResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_administratorAccountId;
-  bool m_administratorAccountIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_email;
-  bool m_emailHasBeenSet = false;
 
   Aws::Utils::DateTime m_invitedAt{};
-  bool m_invitedAtHasBeenSet = false;
 
   Aws::String m_masterAccountId;
-  bool m_masterAccountIdHasBeenSet = false;
 
   RelationshipStatus m_relationshipStatus{RelationshipStatus::NOT_SET};
-  bool m_relationshipStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_administratorAccountIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_emailHasBeenSet = false;
+  bool m_invitedAtHasBeenSet = false;
+  bool m_masterAccountIdHasBeenSet = false;
+  bool m_relationshipStatusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

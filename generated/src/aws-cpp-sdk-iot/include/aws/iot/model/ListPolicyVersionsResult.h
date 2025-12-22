@@ -73,9 +73,9 @@ class ListPolicyVersionsResult {
   ///@}
  private:
   Aws::Vector<PolicyVersion> m_policyVersions;
-  bool m_policyVersionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyVersionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

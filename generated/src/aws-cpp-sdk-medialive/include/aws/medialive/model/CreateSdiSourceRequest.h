@@ -133,18 +133,18 @@ class CreateSdiSourceRequest : public MediaLiveRequest {
   ///@}
  private:
   SdiSourceMode m_mode{SdiSourceMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   SdiSourceType m_type{SdiSourceType::NOT_SET};
+  bool m_modeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

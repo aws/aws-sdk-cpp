@@ -97,12 +97,12 @@ class Subscription {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_topicArn;
-  bool m_topicArnHasBeenSet = false;
 
   Aws::Vector<EventSubscription> m_eventSubscriptions;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_topicArnHasBeenSet = false;
   bool m_eventSubscriptionsHasBeenSet = false;
 };
 

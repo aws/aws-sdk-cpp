@@ -149,21 +149,21 @@ class EventIntegration {
   ///@}
  private:
   Aws::String m_eventIntegrationArn;
-  bool m_eventIntegrationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EventFilter m_eventFilter;
-  bool m_eventFilterHasBeenSet = false;
 
   Aws::String m_eventBridgeBus;
-  bool m_eventBridgeBusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_eventIntegrationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventFilterHasBeenSet = false;
+  bool m_eventBridgeBusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

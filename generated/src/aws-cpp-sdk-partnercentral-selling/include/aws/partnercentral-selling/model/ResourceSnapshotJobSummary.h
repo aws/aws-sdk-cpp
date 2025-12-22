@@ -108,15 +108,15 @@ class ResourceSnapshotJobSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_engagementId;
-  bool m_engagementIdHasBeenSet = false;
 
   ResourceSnapshotJobStatus m_status{ResourceSnapshotJobStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_engagementIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

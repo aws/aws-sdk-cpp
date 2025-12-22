@@ -131,18 +131,18 @@ class GetIpamPolicyOrganizationTargetsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_ipamPolicyId;
-  bool m_ipamPolicyIdHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
+  bool m_dryRunHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ipamPolicyIdHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

@@ -232,36 +232,36 @@ class LaunchConfigurationTemplate {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_copyPrivateIp{false};
-  bool m_copyPrivateIpHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::String m_exportBucketArn;
-  bool m_exportBucketArnHasBeenSet = false;
 
   Aws::String m_launchConfigurationTemplateID;
-  bool m_launchConfigurationTemplateIDHasBeenSet = false;
 
   LaunchDisposition m_launchDisposition{LaunchDisposition::NOT_SET};
-  bool m_launchDispositionHasBeenSet = false;
 
   bool m_launchIntoSourceInstance{false};
-  bool m_launchIntoSourceInstanceHasBeenSet = false;
 
   Licensing m_licensing;
-  bool m_licensingHasBeenSet = false;
 
   bool m_postLaunchEnabled{false};
-  bool m_postLaunchEnabledHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod{TargetInstanceTypeRightSizingMethod::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_copyPrivateIpHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_exportBucketArnHasBeenSet = false;
+  bool m_launchConfigurationTemplateIDHasBeenSet = false;
+  bool m_launchDispositionHasBeenSet = false;
+  bool m_launchIntoSourceInstanceHasBeenSet = false;
+  bool m_licensingHasBeenSet = false;
+  bool m_postLaunchEnabledHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
 };
 

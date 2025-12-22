@@ -188,30 +188,30 @@ class ReadOptions {
   ///@}
  private:
   Aws::String m_sep;
-  bool m_sepHasBeenSet = false;
 
   Aws::String m_encoding;
-  bool m_encodingHasBeenSet = false;
 
   Aws::String m_quote;
-  bool m_quoteHasBeenSet = false;
 
   bool m_quoteAll{false};
-  bool m_quoteAllHasBeenSet = false;
 
   Aws::String m_escape;
-  bool m_escapeHasBeenSet = false;
 
   bool m_escapeQuotes{false};
-  bool m_escapeQuotesHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   bool m_header{false};
-  bool m_headerHasBeenSet = false;
 
   Aws::String m_lineSep;
+  bool m_sepHasBeenSet = false;
+  bool m_encodingHasBeenSet = false;
+  bool m_quoteHasBeenSet = false;
+  bool m_quoteAllHasBeenSet = false;
+  bool m_escapeHasBeenSet = false;
+  bool m_escapeQuotesHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_headerHasBeenSet = false;
   bool m_lineSepHasBeenSet = false;
 };
 

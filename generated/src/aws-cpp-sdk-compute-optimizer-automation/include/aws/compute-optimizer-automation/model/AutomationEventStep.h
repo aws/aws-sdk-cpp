@@ -175,27 +175,27 @@ class AutomationEventStep {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   StepType m_stepType{StepType::NOT_SET};
-  bool m_stepTypeHasBeenSet = false;
 
   StepStatus m_stepStatus{StepStatus::NOT_SET};
-  bool m_stepStatusHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTimestamp{};
-  bool m_startTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedTimestamp{};
-  bool m_completedTimestampHasBeenSet = false;
 
   EstimatedMonthlySavings m_estimatedMonthlySavings;
+  bool m_eventIdHasBeenSet = false;
+  bool m_stepIdHasBeenSet = false;
+  bool m_stepTypeHasBeenSet = false;
+  bool m_stepStatusHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_startTimestampHasBeenSet = false;
+  bool m_completedTimestampHasBeenSet = false;
   bool m_estimatedMonthlySavingsHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class MonitorDeployment {
   ///@}
  private:
   Aws::String m_detailsUri;
-  bool m_detailsUriHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   SignalMapMonitorDeploymentStatus m_status{SignalMapMonitorDeploymentStatus::NOT_SET};
+  bool m_detailsUriHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

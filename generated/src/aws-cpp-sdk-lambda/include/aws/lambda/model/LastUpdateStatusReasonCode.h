@@ -44,7 +44,8 @@ enum class LastUpdateStatusReasonCode {
   FunctionError_InvalidWorkingDirectory,
   FunctionError_PermissionDenied,
   FunctionError_TooManyExtensions,
-  FunctionError_InitResourceExhausted
+  FunctionError_InitResourceExhausted,
+  DisallowedByVpcEncryptionControl
 };
 
 namespace LastUpdateStatusReasonCodeMapper {

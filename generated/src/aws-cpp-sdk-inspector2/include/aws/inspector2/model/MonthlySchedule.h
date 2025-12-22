@@ -67,9 +67,9 @@ class MonthlySchedule {
   ///@}
  private:
   Time m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Day m_day{Day::NOT_SET};
+  bool m_startTimeHasBeenSet = false;
   bool m_dayHasBeenSet = false;
 };
 

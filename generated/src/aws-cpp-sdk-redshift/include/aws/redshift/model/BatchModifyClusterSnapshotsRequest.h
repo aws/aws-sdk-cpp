@@ -97,12 +97,12 @@ class BatchModifyClusterSnapshotsRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_snapshotIdentifierList;
-  bool m_snapshotIdentifierListHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   bool m_force{false};
+  bool m_snapshotIdentifierListHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

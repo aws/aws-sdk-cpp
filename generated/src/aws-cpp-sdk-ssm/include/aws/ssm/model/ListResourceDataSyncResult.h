@@ -86,12 +86,12 @@ class ListResourceDataSyncResult {
   ///@}
  private:
   Aws::Vector<ResourceDataSyncItem> m_resourceDataSyncItems;
-  bool m_resourceDataSyncItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceDataSyncItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

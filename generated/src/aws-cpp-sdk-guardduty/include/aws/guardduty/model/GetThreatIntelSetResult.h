@@ -153,24 +153,24 @@ class GetThreatIntelSetResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ThreatIntelSetFormat m_format{ThreatIntelSetFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   ThreatIntelSetStatus m_status{ThreatIntelSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

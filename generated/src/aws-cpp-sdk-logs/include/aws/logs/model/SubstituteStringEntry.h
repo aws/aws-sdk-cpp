@@ -92,12 +92,12 @@ class SubstituteStringEntry {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_to;
+  bool m_sourceHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
   bool m_toHasBeenSet = false;
 };
 

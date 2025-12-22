@@ -66,9 +66,9 @@ class MergeRouterInputProtocolConfiguration {
   ///@}
  private:
   RtpRouterInputConfiguration m_rtp;
-  bool m_rtpHasBeenSet = false;
 
   RistRouterInputConfiguration m_rist;
+  bool m_rtpHasBeenSet = false;
   bool m_ristHasBeenSet = false;
 };
 

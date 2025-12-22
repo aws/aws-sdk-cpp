@@ -81,9 +81,9 @@ class AttachPolicyRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_targetId;
+  bool m_policyIdHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class GetSnapshotRequest : public RedshiftServerlessRequest {
   ///@}
  private:
   Aws::String m_ownerAccount;
-  bool m_ownerAccountHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_snapshotName;
+  bool m_ownerAccountHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
   bool m_snapshotNameHasBeenSet = false;
 };
 

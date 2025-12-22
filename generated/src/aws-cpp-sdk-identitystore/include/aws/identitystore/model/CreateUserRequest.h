@@ -4,6 +4,8 @@
  */
 
 #pragma once
+#include <aws/core/utils/Document.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/identitystore/IdentityStoreRequest.h>
@@ -383,57 +385,88 @@ class CreateUserRequest : public IdentityStoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A map with additional attribute extensions for the user. Each map key
+   * corresponds to an extension name, while map values represent extension data in
+   * <code>Document</code> type (not supported by Java V1, Go V1 and older versions
+   * of the CLI). <code>aws:identitystore:enterprise</code> is the only supported
+   * extension name.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+  CreateUserRequest& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsKeyT = Aws::String, typename ExtensionsValueT = Aws::Utils::Document>
+  CreateUserRequest& AddExtensions(ExtensionsKeyT&& key, ExtensionsValueT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace(std::forward<ExtensionsKeyT>(key), std::forward<ExtensionsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identityStoreId;
-  bool m_identityStoreIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Name m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_nickName;
-  bool m_nickNameHasBeenSet = false;
 
   Aws::String m_profileUrl;
-  bool m_profileUrlHasBeenSet = false;
 
   Aws::Vector<Email> m_emails;
-  bool m_emailsHasBeenSet = false;
 
   Aws::Vector<Address> m_addresses;
-  bool m_addressesHasBeenSet = false;
 
   Aws::Vector<PhoneNumber> m_phoneNumbers;
-  bool m_phoneNumbersHasBeenSet = false;
 
   Aws::String m_userType;
-  bool m_userTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_preferredLanguage;
-  bool m_preferredLanguageHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   Aws::String m_timezone;
-  bool m_timezoneHasBeenSet = false;
 
   Aws::Vector<Photo> m_photos;
-  bool m_photosHasBeenSet = false;
 
   Aws::String m_website;
-  bool m_websiteHasBeenSet = false;
 
   Aws::String m_birthdate;
+
+  Aws::Map<Aws::String, Aws::Utils::Document> m_extensions;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_nickNameHasBeenSet = false;
+  bool m_profileUrlHasBeenSet = false;
+  bool m_emailsHasBeenSet = false;
+  bool m_addressesHasBeenSet = false;
+  bool m_phoneNumbersHasBeenSet = false;
+  bool m_userTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_preferredLanguageHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_timezoneHasBeenSet = false;
+  bool m_photosHasBeenSet = false;
+  bool m_websiteHasBeenSet = false;
   bool m_birthdateHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -69,9 +69,9 @@ class SsmControls {
   ///@}
  private:
   int m_concurrentExecutionRatePercentage{0};
-  bool m_concurrentExecutionRatePercentageHasBeenSet = false;
 
   int m_errorPercentage{0};
+  bool m_concurrentExecutionRatePercentageHasBeenSet = false;
   bool m_errorPercentageHasBeenSet = false;
 };
 

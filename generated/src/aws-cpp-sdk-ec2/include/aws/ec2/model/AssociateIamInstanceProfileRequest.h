@@ -70,9 +70,9 @@ class AssociateIamInstanceProfileRequest : public EC2Request {
   ///@}
  private:
   IamInstanceProfileSpecification m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_iamInstanceProfileHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

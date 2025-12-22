@@ -84,12 +84,12 @@ class RevokeRevisionRequest : public DataExchangeRequest {
   ///@}
  private:
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_revocationComment;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_revocationCommentHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class GetInstanceSnapshotsResult {
   ///@}
  private:
   Aws::Vector<InstanceSnapshot> m_instanceSnapshots;
-  bool m_instanceSnapshotsHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceSnapshotsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

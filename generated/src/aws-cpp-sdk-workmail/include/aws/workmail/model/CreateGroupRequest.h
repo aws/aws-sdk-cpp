@@ -84,12 +84,12 @@ class CreateGroupRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_hiddenFromGlobalAddressList{false};
+  bool m_organizationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_hiddenFromGlobalAddressListHasBeenSet = false;
 };
 

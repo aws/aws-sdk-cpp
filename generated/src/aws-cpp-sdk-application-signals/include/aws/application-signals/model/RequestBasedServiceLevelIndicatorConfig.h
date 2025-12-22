@@ -90,12 +90,12 @@ class RequestBasedServiceLevelIndicatorConfig {
   ///@}
  private:
   RequestBasedServiceLevelIndicatorMetricConfig m_requestBasedSliMetricConfig;
-  bool m_requestBasedSliMetricConfigHasBeenSet = false;
 
   double m_metricThreshold{0.0};
-  bool m_metricThresholdHasBeenSet = false;
 
   ServiceLevelIndicatorComparisonOperator m_comparisonOperator{ServiceLevelIndicatorComparisonOperator::NOT_SET};
+  bool m_requestBasedSliMetricConfigHasBeenSet = false;
+  bool m_metricThresholdHasBeenSet = false;
   bool m_comparisonOperatorHasBeenSet = false;
 };
 

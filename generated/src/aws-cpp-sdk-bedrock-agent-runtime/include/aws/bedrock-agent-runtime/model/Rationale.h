@@ -70,9 +70,9 @@ class Rationale {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   Aws::String m_traceId;
+  bool m_textHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
 };
 

@@ -167,24 +167,24 @@ class CreateSiteRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Address m_operatingAddress;
-  bool m_operatingAddressHasBeenSet = false;
 
   Address m_shippingAddress;
-  bool m_shippingAddressHasBeenSet = false;
 
   RackPhysicalProperties m_rackPhysicalProperties;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_operatingAddressHasBeenSet = false;
+  bool m_shippingAddressHasBeenSet = false;
   bool m_rackPhysicalPropertiesHasBeenSet = false;
 };
 

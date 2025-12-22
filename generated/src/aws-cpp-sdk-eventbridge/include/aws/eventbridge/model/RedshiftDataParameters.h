@@ -174,24 +174,24 @@ class RedshiftDataParameters {
   ///@}
  private:
   Aws::String m_secretManagerArn;
-  bool m_secretManagerArnHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::String m_sql;
-  bool m_sqlHasBeenSet = false;
 
   Aws::String m_statementName;
-  bool m_statementNameHasBeenSet = false;
 
   bool m_withEvent{false};
-  bool m_withEventHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sqls;
+  bool m_secretManagerArnHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_dbUserHasBeenSet = false;
+  bool m_sqlHasBeenSet = false;
+  bool m_statementNameHasBeenSet = false;
+  bool m_withEventHasBeenSet = false;
   bool m_sqlsHasBeenSet = false;
 };
 

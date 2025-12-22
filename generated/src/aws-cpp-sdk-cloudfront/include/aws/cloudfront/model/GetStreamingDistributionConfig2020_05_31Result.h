@@ -86,12 +86,12 @@ class GetStreamingDistributionConfig2020_05_31Result {
   ///@}
  private:
   StreamingDistributionConfig m_streamingDistributionConfig;
-  bool m_streamingDistributionConfigHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamingDistributionConfigHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

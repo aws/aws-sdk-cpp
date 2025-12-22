@@ -167,24 +167,24 @@ class RouteLeg {
   ///@}
  private:
   RouteFerryLegDetails m_ferryLegDetails;
-  bool m_ferryLegDetailsHasBeenSet = false;
 
   RouteLegGeometry m_geometry;
-  bool m_geometryHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   RoutePedestrianLegDetails m_pedestrianLegDetails;
-  bool m_pedestrianLegDetailsHasBeenSet = false;
 
   RouteLegTravelMode m_travelMode{RouteLegTravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   RouteLegType m_type{RouteLegType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RouteVehicleLegDetails m_vehicleLegDetails;
+  bool m_ferryLegDetailsHasBeenSet = false;
+  bool m_geometryHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_pedestrianLegDetailsHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_vehicleLegDetailsHasBeenSet = false;
 };
 

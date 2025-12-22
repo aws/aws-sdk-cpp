@@ -220,6 +220,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.writeRateLimiter = nullptr;
     clientConfig.readRateLimiter = nullptr;
     clientConfig.httpLibOverride = Aws::Http::TransferLibType::DEFAULT_CLIENT;
+    clientConfig.httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
     clientConfig.followRedirects = FollowRedirectsPolicy::DEFAULT;
     clientConfig.disableExpectHeader = false;
     clientConfig.enableClockSkewAdjustment = true;

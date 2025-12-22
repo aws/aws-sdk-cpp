@@ -54,9 +54,9 @@ class Limits {
   ///@}
  private:
   int m_maximumReplicationCount{0};
-  bool m_maximumReplicationCountHasBeenSet = false;
 
   int m_maximumPartitionCount{0};
+  bool m_maximumReplicationCountHasBeenSet = false;
   bool m_maximumPartitionCountHasBeenSet = false;
 };
 

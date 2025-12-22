@@ -61,9 +61,9 @@ class GetStudioSessionMappingResult {
   ///@}
  private:
   SessionMappingDetail m_sessionMapping;
-  bool m_sessionMappingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sessionMappingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class VoiceRecordingConfiguration {
   ///@}
  private:
   VoiceRecordingTrack m_voiceRecordingTrack{VoiceRecordingTrack::NOT_SET};
-  bool m_voiceRecordingTrackHasBeenSet = false;
 
   IvrRecordingTrack m_ivrRecordingTrack{IvrRecordingTrack::NOT_SET};
+  bool m_voiceRecordingTrackHasBeenSet = false;
   bool m_ivrRecordingTrackHasBeenSet = false;
 };
 

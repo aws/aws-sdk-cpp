@@ -349,48 +349,48 @@ class WorkGroupConfiguration {
   ///@}
  private:
   ResultConfiguration m_resultConfiguration;
-  bool m_resultConfigurationHasBeenSet = false;
 
   ManagedQueryResultsConfiguration m_managedQueryResultsConfiguration;
-  bool m_managedQueryResultsConfigurationHasBeenSet = false;
 
   bool m_enforceWorkGroupConfiguration{false};
-  bool m_enforceWorkGroupConfigurationHasBeenSet = false;
 
   bool m_publishCloudWatchMetricsEnabled{false};
-  bool m_publishCloudWatchMetricsEnabledHasBeenSet = false;
 
   long long m_bytesScannedCutoffPerQuery{0};
-  bool m_bytesScannedCutoffPerQueryHasBeenSet = false;
 
   bool m_requesterPaysEnabled{false};
-  bool m_requesterPaysEnabledHasBeenSet = false;
 
   EngineVersion m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_additionalConfiguration;
-  bool m_additionalConfigurationHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   MonitoringConfiguration m_monitoringConfiguration;
-  bool m_monitoringConfigurationHasBeenSet = false;
 
   EngineConfiguration m_engineConfiguration;
-  bool m_engineConfigurationHasBeenSet = false;
 
   CustomerContentEncryptionConfiguration m_customerContentEncryptionConfiguration;
-  bool m_customerContentEncryptionConfigurationHasBeenSet = false;
 
   bool m_enableMinimumEncryptionConfiguration{false};
-  bool m_enableMinimumEncryptionConfigurationHasBeenSet = false;
 
   IdentityCenterConfiguration m_identityCenterConfiguration;
-  bool m_identityCenterConfigurationHasBeenSet = false;
 
   QueryResultsS3AccessGrantsConfiguration m_queryResultsS3AccessGrantsConfiguration;
+  bool m_resultConfigurationHasBeenSet = false;
+  bool m_managedQueryResultsConfigurationHasBeenSet = false;
+  bool m_enforceWorkGroupConfigurationHasBeenSet = false;
+  bool m_publishCloudWatchMetricsEnabledHasBeenSet = false;
+  bool m_bytesScannedCutoffPerQueryHasBeenSet = false;
+  bool m_requesterPaysEnabledHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_additionalConfigurationHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_engineConfigurationHasBeenSet = false;
+  bool m_customerContentEncryptionConfigurationHasBeenSet = false;
+  bool m_enableMinimumEncryptionConfigurationHasBeenSet = false;
+  bool m_identityCenterConfigurationHasBeenSet = false;
   bool m_queryResultsS3AccessGrantsConfigurationHasBeenSet = false;
 };
 

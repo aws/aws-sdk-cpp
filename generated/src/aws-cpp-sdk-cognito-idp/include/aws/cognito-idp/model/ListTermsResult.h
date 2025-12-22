@@ -90,12 +90,12 @@ class ListTermsResult {
   ///@}
  private:
   Aws::Vector<TermsDescriptionType> m_terms;
-  bool m_termsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_termsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

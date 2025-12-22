@@ -97,9 +97,9 @@ class ProjectSummary {
   ///@}
  private:
   Aws::Vector<DeliveryModel> m_deliveryModels;
-  bool m_deliveryModelsHasBeenSet = false;
 
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
+  bool m_deliveryModelsHasBeenSet = false;
   bool m_expectedCustomerSpendHasBeenSet = false;
 };
 

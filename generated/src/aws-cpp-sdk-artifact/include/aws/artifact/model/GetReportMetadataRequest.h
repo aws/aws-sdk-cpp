@@ -68,9 +68,9 @@ class GetReportMetadataRequest : public ArtifactRequest {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   long long m_reportVersion{0};
+  bool m_reportIdHasBeenSet = false;
   bool m_reportVersionHasBeenSet = false;
 };
 

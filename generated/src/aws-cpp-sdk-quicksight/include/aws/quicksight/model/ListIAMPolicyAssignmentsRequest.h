@@ -123,18 +123,18 @@ class ListIAMPolicyAssignmentsRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   AssignmentStatus m_assignmentStatus{AssignmentStatus::NOT_SET};
-  bool m_assignmentStatusHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_assignmentStatusHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

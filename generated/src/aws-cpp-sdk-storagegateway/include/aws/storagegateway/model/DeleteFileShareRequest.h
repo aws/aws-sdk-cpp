@@ -73,9 +73,9 @@ class DeleteFileShareRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_fileShareARN;
-  bool m_fileShareARNHasBeenSet = false;
 
   bool m_forceDelete{false};
+  bool m_fileShareARNHasBeenSet = false;
   bool m_forceDeleteHasBeenSet = false;
 };
 

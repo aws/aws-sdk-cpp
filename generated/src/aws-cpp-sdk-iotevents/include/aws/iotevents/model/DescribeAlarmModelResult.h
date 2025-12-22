@@ -314,51 +314,51 @@ class DescribeAlarmModelResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_alarmModelArn;
-  bool m_alarmModelArnHasBeenSet = false;
 
   Aws::String m_alarmModelVersion;
-  bool m_alarmModelVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   AlarmModelVersionStatus m_status{AlarmModelVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_alarmModelName;
-  bool m_alarmModelNameHasBeenSet = false;
 
   Aws::String m_alarmModelDescription;
-  bool m_alarmModelDescriptionHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   int m_severity{0};
-  bool m_severityHasBeenSet = false;
 
   AlarmRule m_alarmRule;
-  bool m_alarmRuleHasBeenSet = false;
 
   AlarmNotification m_alarmNotification;
-  bool m_alarmNotificationHasBeenSet = false;
 
   AlarmEventActions m_alarmEventActions;
-  bool m_alarmEventActionsHasBeenSet = false;
 
   AlarmCapabilities m_alarmCapabilities;
-  bool m_alarmCapabilitiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_alarmModelArnHasBeenSet = false;
+  bool m_alarmModelVersionHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_alarmModelNameHasBeenSet = false;
+  bool m_alarmModelDescriptionHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_severityHasBeenSet = false;
+  bool m_alarmRuleHasBeenSet = false;
+  bool m_alarmNotificationHasBeenSet = false;
+  bool m_alarmEventActionsHasBeenSet = false;
+  bool m_alarmCapabilitiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class DeleteDomainResult {
   ///@}
  private:
   DomainStatus m_domainStatus;
-  bool m_domainStatusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_domainStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

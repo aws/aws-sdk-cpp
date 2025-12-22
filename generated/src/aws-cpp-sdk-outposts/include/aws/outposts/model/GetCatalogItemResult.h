@@ -60,9 +60,9 @@ class GetCatalogItemResult {
   ///@}
  private:
   CatalogItem m_catalogItem;
-  bool m_catalogItemHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_catalogItemHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

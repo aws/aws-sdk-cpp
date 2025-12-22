@@ -83,12 +83,12 @@ class UpdateSegmentRequest : public PinpointRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_segmentId;
-  bool m_segmentIdHasBeenSet = false;
 
   WriteSegmentRequest m_writeSegmentRequest;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_segmentIdHasBeenSet = false;
   bool m_writeSegmentRequestHasBeenSet = false;
 };
 

@@ -96,9 +96,9 @@ class PutLifecycleConfigurationRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::Vector<LifecyclePolicy> m_lifecyclePolicies;
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_lifecyclePoliciesHasBeenSet = false;
 };
 

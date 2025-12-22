@@ -50,6 +50,14 @@ Event& Event::operator=(JsonView jsonValue) {
     m_replica = jsonValue.GetBool("replica");
     m_replicaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("previousToken")) {
+    m_previousToken = jsonValue.GetObject("previousToken");
+    m_previousTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("newToken")) {
+    m_newToken = jsonValue.GetObject("newToken");
+    m_newTokenHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,14 @@ JsonValue Event::Jsonize() const {
 
   if (m_replicaHasBeenSet) {
     payload.WithBool("replica", m_replica);
+  }
+
+  if (m_previousTokenHasBeenSet) {
+    payload.WithObject("previousToken", m_previousToken.Jsonize());
+  }
+
+  if (m_newTokenHasBeenSet) {
+    payload.WithObject("newToken", m_newToken.Jsonize());
   }
 
   return payload;

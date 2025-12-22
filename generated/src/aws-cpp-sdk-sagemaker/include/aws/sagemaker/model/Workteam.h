@@ -255,36 +255,36 @@ class Workteam {
   ///@}
  private:
   Aws::String m_workteamName;
-  bool m_workteamNameHasBeenSet = false;
 
   Aws::Vector<MemberDefinition> m_memberDefinitions;
-  bool m_memberDefinitionsHasBeenSet = false;
 
   Aws::String m_workteamArn;
-  bool m_workteamArnHasBeenSet = false;
 
   Aws::String m_workforceArn;
-  bool m_workforceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_productListingIds;
-  bool m_productListingIdsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_subDomain;
-  bool m_subDomainHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDate{};
-  bool m_lastUpdatedDateHasBeenSet = false;
 
   NotificationConfiguration m_notificationConfiguration;
-  bool m_notificationConfigurationHasBeenSet = false;
 
   WorkerAccessConfiguration m_workerAccessConfiguration;
+  bool m_workteamNameHasBeenSet = false;
+  bool m_memberDefinitionsHasBeenSet = false;
+  bool m_workteamArnHasBeenSet = false;
+  bool m_workforceArnHasBeenSet = false;
+  bool m_productListingIdsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_subDomainHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_lastUpdatedDateHasBeenSet = false;
+  bool m_notificationConfigurationHasBeenSet = false;
   bool m_workerAccessConfigurationHasBeenSet = false;
 };
 

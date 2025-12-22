@@ -86,12 +86,12 @@ class SrtListenerRouterInputConfiguration {
   ///@}
  private:
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   long long m_minimumLatencyMilliseconds{0};
-  bool m_minimumLatencyMillisecondsHasBeenSet = false;
 
   SrtDecryptionConfiguration m_decryptionConfiguration;
+  bool m_portHasBeenSet = false;
+  bool m_minimumLatencyMillisecondsHasBeenSet = false;
   bool m_decryptionConfigurationHasBeenSet = false;
 };
 

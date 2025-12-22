@@ -73,9 +73,9 @@ class GetPipelineDefinitionRequest : public DataPipelineRequest {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::String m_version;
+  bool m_pipelineIdHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

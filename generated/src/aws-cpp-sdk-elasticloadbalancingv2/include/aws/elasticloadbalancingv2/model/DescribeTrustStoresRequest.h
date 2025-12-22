@@ -117,15 +117,15 @@ class DescribeTrustStoresRequest : public ElasticLoadBalancingv2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_trustStoreArns;
-  bool m_trustStoreArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_pageSize{0};
+  bool m_trustStoreArnsHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_pageSizeHasBeenSet = false;
 };
 

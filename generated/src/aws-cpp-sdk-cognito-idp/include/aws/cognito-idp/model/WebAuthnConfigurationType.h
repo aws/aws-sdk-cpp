@@ -84,9 +84,9 @@ class WebAuthnConfigurationType {
   ///@}
  private:
   Aws::String m_relyingPartyId;
-  bool m_relyingPartyIdHasBeenSet = false;
 
   UserVerificationType m_userVerification{UserVerificationType::NOT_SET};
+  bool m_relyingPartyIdHasBeenSet = false;
   bool m_userVerificationHasBeenSet = false;
 };
 

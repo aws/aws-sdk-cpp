@@ -66,9 +66,9 @@ class UpdateCloudExadataInfrastructureRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   MaintenanceWindow m_maintenanceWindow;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
   bool m_maintenanceWindowHasBeenSet = false;
 };
 

@@ -201,30 +201,30 @@ class AutoMLJobSummary {
   ///@}
  private:
   Aws::String m_autoMLJobName;
-  bool m_autoMLJobNameHasBeenSet = false;
 
   Aws::String m_autoMLJobArn;
-  bool m_autoMLJobArnHasBeenSet = false;
 
   AutoMLJobStatus m_autoMLJobStatus{AutoMLJobStatus::NOT_SET};
-  bool m_autoMLJobStatusHasBeenSet = false;
 
   AutoMLJobSecondaryStatus m_autoMLJobSecondaryStatus{AutoMLJobSecondaryStatus::NOT_SET};
-  bool m_autoMLJobSecondaryStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Vector<AutoMLPartialFailureReason> m_partialFailureReasons;
+  bool m_autoMLJobNameHasBeenSet = false;
+  bool m_autoMLJobArnHasBeenSet = false;
+  bool m_autoMLJobStatusHasBeenSet = false;
+  bool m_autoMLJobSecondaryStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_partialFailureReasonsHasBeenSet = false;
 };
 

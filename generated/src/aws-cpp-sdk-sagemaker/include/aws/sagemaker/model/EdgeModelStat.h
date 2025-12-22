@@ -136,21 +136,21 @@ class EdgeModelStat {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelVersion;
-  bool m_modelVersionHasBeenSet = false;
 
   long long m_offlineDeviceCount{0};
-  bool m_offlineDeviceCountHasBeenSet = false;
 
   long long m_connectedDeviceCount{0};
-  bool m_connectedDeviceCountHasBeenSet = false;
 
   long long m_activeDeviceCount{0};
-  bool m_activeDeviceCountHasBeenSet = false;
 
   long long m_samplingDeviceCount{0};
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelVersionHasBeenSet = false;
+  bool m_offlineDeviceCountHasBeenSet = false;
+  bool m_connectedDeviceCountHasBeenSet = false;
+  bool m_activeDeviceCountHasBeenSet = false;
   bool m_samplingDeviceCountHasBeenSet = false;
 };
 

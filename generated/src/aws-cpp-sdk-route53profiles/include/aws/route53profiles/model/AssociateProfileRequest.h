@@ -110,15 +110,15 @@ class AssociateProfileRequest : public Route53ProfilesRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_profileId;
-  bool m_profileIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

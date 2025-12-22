@@ -100,15 +100,15 @@ class CreateRestoreTestingPlanResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_restoreTestingPlanArn;
-  bool m_restoreTestingPlanArnHasBeenSet = false;
 
   Aws::String m_restoreTestingPlanName;
-  bool m_restoreTestingPlanNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_restoreTestingPlanArnHasBeenSet = false;
+  bool m_restoreTestingPlanNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

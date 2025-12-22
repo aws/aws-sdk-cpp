@@ -21,12 +21,12 @@ class JsonValue;
 namespace Glacier {
 namespace Model {
 /**
- * <p>Contains the Amazon S3 Glacier response to your request.</p> <p>For
- * information about the underlying REST API, see <a
+ * <p>Contains the Amazon Glacier response to your request.</p> <p>For information
+ * about the underlying REST API, see <a
  * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
  * Archive</a>. For conceptual information, see <a
  * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
- * with Archives in Amazon S3 Glacier</a>.</p><p><h3>See Also:</h3>   <a
+ * with Archives in Amazon Glacier</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ArchiveCreationOutput">AWS
  * API Reference</a></p>
  */
@@ -55,7 +55,7 @@ class CompleteMultipartUploadResult {
 
   ///@{
   /**
-   * <p>The checksum of the archive computed by Amazon S3 Glacier.</p>
+   * <p>The checksum of the archive computed by Amazon Glacier.</p>
    */
   inline const Aws::String& GetChecksum() const { return m_checksum; }
   template <typename ChecksumT = Aws::String>
@@ -104,15 +104,15 @@ class CompleteMultipartUploadResult {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   Aws::String m_archiveId;
-  bool m_archiveIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_locationHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_archiveIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

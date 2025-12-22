@@ -68,9 +68,9 @@ class Recommendation {
   ///@}
  private:
   CatalogItem m_catalogItem;
-  bool m_catalogItemHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_catalogItemHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

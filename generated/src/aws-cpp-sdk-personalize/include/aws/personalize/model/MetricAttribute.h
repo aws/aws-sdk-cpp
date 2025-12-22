@@ -93,12 +93,12 @@ class MetricAttribute {
   ///@}
  private:
   Aws::String m_eventType;
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_expression;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
   bool m_expressionHasBeenSet = false;
 };
 

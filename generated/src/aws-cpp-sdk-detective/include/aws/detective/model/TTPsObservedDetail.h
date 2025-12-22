@@ -159,24 +159,24 @@ class TTPsObservedDetail {
   ///@}
  private:
   Aws::String m_tactic;
-  bool m_tacticHasBeenSet = false;
 
   Aws::String m_technique;
-  bool m_techniqueHasBeenSet = false;
 
   Aws::String m_procedure;
-  bool m_procedureHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   Aws::String m_aPIName;
-  bool m_aPINameHasBeenSet = false;
 
   long long m_aPISuccessCount{0};
-  bool m_aPISuccessCountHasBeenSet = false;
 
   long long m_aPIFailureCount{0};
+  bool m_tacticHasBeenSet = false;
+  bool m_techniqueHasBeenSet = false;
+  bool m_procedureHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_aPINameHasBeenSet = false;
+  bool m_aPISuccessCountHasBeenSet = false;
   bool m_aPIFailureCountHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class ListResourceEndpointAssociationsRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_resourceConfigurationIdentifier;
-  bool m_resourceConfigurationIdentifierHasBeenSet = false;
 
   Aws::String m_resourceEndpointAssociationIdentifier;
-  bool m_resourceEndpointAssociationIdentifierHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointOwner;
-  bool m_vpcEndpointOwnerHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_resourceConfigurationIdentifierHasBeenSet = false;
+  bool m_resourceEndpointAssociationIdentifierHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcEndpointOwnerHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateBrowserSettingsResult {
   ///@}
  private:
   Aws::String m_browserSettingsArn;
-  bool m_browserSettingsArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_browserSettingsArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

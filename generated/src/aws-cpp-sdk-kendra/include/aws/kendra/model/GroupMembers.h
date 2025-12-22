@@ -115,12 +115,12 @@ class GroupMembers {
   ///@}
  private:
   Aws::Vector<MemberGroup> m_memberGroups;
-  bool m_memberGroupsHasBeenSet = false;
 
   Aws::Vector<MemberUser> m_memberUsers;
-  bool m_memberUsersHasBeenSet = false;
 
   S3Path m_s3PathforGroupMembers;
+  bool m_memberGroupsHasBeenSet = false;
+  bool m_memberUsersHasBeenSet = false;
   bool m_s3PathforGroupMembersHasBeenSet = false;
 };
 

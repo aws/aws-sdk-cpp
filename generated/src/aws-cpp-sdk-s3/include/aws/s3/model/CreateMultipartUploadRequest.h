@@ -916,99 +916,99 @@ class CreateMultipartUploadRequest : public S3Request {
   ///@}
  private:
   ObjectCannedACL m_aCL{ObjectCannedACL::NOT_SET};
-  bool m_aCLHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   Aws::String m_contentDisposition;
-  bool m_contentDispositionHasBeenSet = false;
 
   Aws::String m_contentEncoding;
-  bool m_contentEncodingHasBeenSet = false;
 
   Aws::String m_contentLanguage;
-  bool m_contentLanguageHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_expires{};
-  bool m_expiresHasBeenSet = false;
 
   Aws::String m_grantFullControl;
-  bool m_grantFullControlHasBeenSet = false;
 
   Aws::String m_grantRead;
-  bool m_grantReadHasBeenSet = false;
 
   Aws::String m_grantReadACP;
-  bool m_grantReadACPHasBeenSet = false;
 
   Aws::String m_grantWriteACP;
-  bool m_grantWriteACPHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   ServerSideEncryption m_serverSideEncryption{ServerSideEncryption::NOT_SET};
-  bool m_serverSideEncryptionHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   Aws::String m_websiteRedirectLocation;
-  bool m_websiteRedirectLocationHasBeenSet = false;
 
   Aws::String m_sSECustomerAlgorithm;
-  bool m_sSECustomerAlgorithmHasBeenSet = false;
 
   Aws::String m_sSECustomerKey;
-  bool m_sSECustomerKeyHasBeenSet = false;
 
   Aws::String m_sSECustomerKeyMD5;
-  bool m_sSECustomerKeyMD5HasBeenSet = false;
 
   Aws::String m_sSEKMSKeyId;
-  bool m_sSEKMSKeyIdHasBeenSet = false;
 
   Aws::String m_sSEKMSEncryptionContext;
-  bool m_sSEKMSEncryptionContextHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   RequestPayer m_requestPayer{RequestPayer::NOT_SET};
-  bool m_requestPayerHasBeenSet = false;
 
   Aws::String m_tagging;
-  bool m_taggingHasBeenSet = false;
 
   ObjectLockMode m_objectLockMode{ObjectLockMode::NOT_SET};
-  bool m_objectLockModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_objectLockRetainUntilDate{};
-  bool m_objectLockRetainUntilDateHasBeenSet = false;
 
   ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{ObjectLockLegalHoldStatus::NOT_SET};
-  bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
   Aws::String m_expectedBucketOwner;
-  bool m_expectedBucketOwnerHasBeenSet = false;
 
   ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
-  bool m_checksumAlgorithmHasBeenSet = false;
 
   ChecksumType m_checksumType{ChecksumType::NOT_SET};
-  bool m_checksumTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+  bool m_aCLHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_contentDispositionHasBeenSet = false;
+  bool m_contentEncodingHasBeenSet = false;
+  bool m_contentLanguageHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_expiresHasBeenSet = false;
+  bool m_grantFullControlHasBeenSet = false;
+  bool m_grantReadHasBeenSet = false;
+  bool m_grantReadACPHasBeenSet = false;
+  bool m_grantWriteACPHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_serverSideEncryptionHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_websiteRedirectLocationHasBeenSet = false;
+  bool m_sSECustomerAlgorithmHasBeenSet = false;
+  bool m_sSECustomerKeyHasBeenSet = false;
+  bool m_sSECustomerKeyMD5HasBeenSet = false;
+  bool m_sSEKMSKeyIdHasBeenSet = false;
+  bool m_sSEKMSEncryptionContextHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
+  bool m_requestPayerHasBeenSet = false;
+  bool m_taggingHasBeenSet = false;
+  bool m_objectLockModeHasBeenSet = false;
+  bool m_objectLockRetainUntilDateHasBeenSet = false;
+  bool m_objectLockLegalHoldStatusHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
+  bool m_checksumAlgorithmHasBeenSet = false;
+  bool m_checksumTypeHasBeenSet = false;
   bool m_customizedAccessLogTagHasBeenSet = false;
 };
 

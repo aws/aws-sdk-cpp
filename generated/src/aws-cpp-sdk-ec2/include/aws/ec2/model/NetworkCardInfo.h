@@ -165,27 +165,27 @@ class NetworkCardInfo {
   ///@}
  private:
   int m_networkCardIndex{0};
-  bool m_networkCardIndexHasBeenSet = false;
 
   Aws::String m_networkPerformance;
-  bool m_networkPerformanceHasBeenSet = false;
 
   int m_maximumNetworkInterfaces{0};
-  bool m_maximumNetworkInterfacesHasBeenSet = false;
 
   double m_baselineBandwidthInGbps{0.0};
-  bool m_baselineBandwidthInGbpsHasBeenSet = false;
 
   double m_peakBandwidthInGbps{0.0};
-  bool m_peakBandwidthInGbpsHasBeenSet = false;
 
   int m_defaultEnaQueueCountPerInterface{0};
-  bool m_defaultEnaQueueCountPerInterfaceHasBeenSet = false;
 
   int m_maximumEnaQueueCount{0};
-  bool m_maximumEnaQueueCountHasBeenSet = false;
 
   int m_maximumEnaQueueCountPerInterface{0};
+  bool m_networkCardIndexHasBeenSet = false;
+  bool m_networkPerformanceHasBeenSet = false;
+  bool m_maximumNetworkInterfacesHasBeenSet = false;
+  bool m_baselineBandwidthInGbpsHasBeenSet = false;
+  bool m_peakBandwidthInGbpsHasBeenSet = false;
+  bool m_defaultEnaQueueCountPerInterfaceHasBeenSet = false;
+  bool m_maximumEnaQueueCountHasBeenSet = false;
   bool m_maximumEnaQueueCountPerInterfaceHasBeenSet = false;
 };
 

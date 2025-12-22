@@ -279,39 +279,39 @@ class VpcEndpointConnection {
   ///@}
  private:
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcEndpointOwner;
-  bool m_vpcEndpointOwnerHasBeenSet = false;
 
   State m_vpcEndpointState{State::NOT_SET};
-  bool m_vpcEndpointStateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Vector<DnsEntry> m_dnsEntries;
-  bool m_dnsEntriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkLoadBalancerArns;
-  bool m_networkLoadBalancerArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_gatewayLoadBalancerArns;
-  bool m_gatewayLoadBalancerArnsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   Aws::String m_vpcEndpointConnectionId;
-  bool m_vpcEndpointConnectionIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcEndpointRegion;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcEndpointOwnerHasBeenSet = false;
+  bool m_vpcEndpointStateHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_dnsEntriesHasBeenSet = false;
+  bool m_networkLoadBalancerArnsHasBeenSet = false;
+  bool m_gatewayLoadBalancerArnsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_vpcEndpointConnectionIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcEndpointRegionHasBeenSet = false;
 };
 

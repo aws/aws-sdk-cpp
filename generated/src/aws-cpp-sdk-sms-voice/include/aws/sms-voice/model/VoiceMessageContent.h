@@ -83,12 +83,12 @@ class VoiceMessageContent {
   ///@}
  private:
   CallInstructionsMessageType m_callInstructionsMessage;
-  bool m_callInstructionsMessageHasBeenSet = false;
 
   PlainTextMessageType m_plainTextMessage;
-  bool m_plainTextMessageHasBeenSet = false;
 
   SSMLMessageType m_sSMLMessage;
+  bool m_callInstructionsMessageHasBeenSet = false;
+  bool m_plainTextMessageHasBeenSet = false;
   bool m_sSMLMessageHasBeenSet = false;
 };
 

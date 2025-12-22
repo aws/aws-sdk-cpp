@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
 #include <aws/gameliftstreams/model/ExportFilesMetadata.h>
+#include <aws/gameliftstreams/model/PerformanceStatsConfiguration.h>
 #include <aws/gameliftstreams/model/Protocol.h>
 #include <aws/gameliftstreams/model/StreamSessionStatus.h>
 #include <aws/gameliftstreams/model/StreamSessionStatusReason.h>
@@ -374,6 +375,23 @@ class GetStreamSessionResult {
 
   ///@{
   /**
+   * <p>The performance stats configuration for the stream session</p>
+   */
+  inline const PerformanceStatsConfiguration& GetPerformanceStatsConfiguration() const { return m_performanceStatsConfiguration; }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  void SetPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    m_performanceStatsConfigurationHasBeenSet = true;
+    m_performanceStatsConfiguration = std::forward<PerformanceStatsConfigurationT>(value);
+  }
+  template <typename PerformanceStatsConfigurationT = PerformanceStatsConfiguration>
+  GetStreamSessionResult& WithPerformanceStatsConfiguration(PerformanceStatsConfigurationT&& value) {
+    SetPerformanceStatsConfiguration(std::forward<PerformanceStatsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Access location for log files that your content generates during a stream
    * session. These log files are uploaded to cloud storage location at the end of a
    * stream session. The Amazon GameLift Streams application resource defines which
@@ -503,66 +521,69 @@ class GetStreamSessionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_streamGroupId;
-  bool m_streamGroupIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   StreamSessionStatusReason m_statusReason{StreamSessionStatusReason::NOT_SET};
-  bool m_statusReasonHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_signalRequest;
-  bool m_signalRequestHasBeenSet = false;
 
   Aws::String m_signalResponse;
-  bool m_signalResponseHasBeenSet = false;
 
   int m_connectionTimeoutSeconds{0};
-  bool m_connectionTimeoutSecondsHasBeenSet = false;
 
   int m_sessionLengthSeconds{0};
-  bool m_sessionLengthSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalLaunchArgs;
-  bool m_additionalLaunchArgsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalEnvironmentVariables;
-  bool m_additionalEnvironmentVariablesHasBeenSet = false;
+
+  PerformanceStatsConfiguration m_performanceStatsConfiguration;
 
   Aws::String m_logFileLocationUri;
-  bool m_logFileLocationUriHasBeenSet = false;
 
   Aws::String m_webSdkProtocolUrl;
-  bool m_webSdkProtocolUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   ExportFilesMetadata m_exportFilesMetadata;
-  bool m_exportFilesMetadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_streamGroupIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_signalRequestHasBeenSet = false;
+  bool m_signalResponseHasBeenSet = false;
+  bool m_connectionTimeoutSecondsHasBeenSet = false;
+  bool m_sessionLengthSecondsHasBeenSet = false;
+  bool m_additionalLaunchArgsHasBeenSet = false;
+  bool m_additionalEnvironmentVariablesHasBeenSet = false;
+  bool m_performanceStatsConfigurationHasBeenSet = false;
+  bool m_logFileLocationUriHasBeenSet = false;
+  bool m_webSdkProtocolUrlHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_exportFilesMetadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

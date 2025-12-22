@@ -86,12 +86,12 @@ class ConsumptionConfiguration {
   ///@}
  private:
   RenewType m_renewType{RenewType::NOT_SET};
-  bool m_renewTypeHasBeenSet = false;
 
   ProvisionalConfiguration m_provisionalConfiguration;
-  bool m_provisionalConfigurationHasBeenSet = false;
 
   BorrowConfiguration m_borrowConfiguration;
+  bool m_renewTypeHasBeenSet = false;
+  bool m_provisionalConfigurationHasBeenSet = false;
   bool m_borrowConfigurationHasBeenSet = false;
 };
 

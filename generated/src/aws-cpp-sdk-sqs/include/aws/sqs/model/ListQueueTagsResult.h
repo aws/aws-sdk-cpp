@@ -82,12 +82,12 @@ class ListQueueTagsResult {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tagsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

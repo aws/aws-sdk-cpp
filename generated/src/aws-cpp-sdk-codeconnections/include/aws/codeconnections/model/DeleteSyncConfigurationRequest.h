@@ -67,9 +67,9 @@ class DeleteSyncConfigurationRequest : public CodeConnectionsRequest {
   ///@}
  private:
   SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
-  bool m_syncTypeHasBeenSet = false;
 
   Aws::String m_resourceName;
+  bool m_syncTypeHasBeenSet = false;
   bool m_resourceNameHasBeenSet = false;
 };
 

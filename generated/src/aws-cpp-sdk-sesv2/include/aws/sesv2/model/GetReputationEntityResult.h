@@ -67,9 +67,9 @@ class GetReputationEntityResult {
   ///@}
  private:
   ReputationEntity m_reputationEntity;
-  bool m_reputationEntityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reputationEntityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -216,30 +216,30 @@ class DescribeReservedDBInstancesOfferingsRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_reservedDBInstancesOfferingId;
-  bool m_reservedDBInstancesOfferingIdHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   Aws::String m_duration;
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_productDescription;
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::String m_offeringType;
-  bool m_offeringTypeHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_reservedDBInstancesOfferingIdHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_offeringTypeHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

@@ -111,12 +111,12 @@ class SqlApplicationConfiguration {
   ///@}
  private:
   Aws::Vector<Input> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::Vector<Output> m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::Vector<ReferenceDataSource> m_referenceDataSources;
+  bool m_inputsHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
   bool m_referenceDataSourcesHasBeenSet = false;
 };
 

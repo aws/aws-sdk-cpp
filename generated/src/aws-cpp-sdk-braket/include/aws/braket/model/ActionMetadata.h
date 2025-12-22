@@ -85,12 +85,12 @@ class ActionMetadata {
   ///@}
  private:
   Aws::String m_actionType;
-  bool m_actionTypeHasBeenSet = false;
 
   long long m_programCount{0};
-  bool m_programCountHasBeenSet = false;
 
   long long m_executableCount{0};
+  bool m_actionTypeHasBeenSet = false;
+  bool m_programCountHasBeenSet = false;
   bool m_executableCountHasBeenSet = false;
 };
 

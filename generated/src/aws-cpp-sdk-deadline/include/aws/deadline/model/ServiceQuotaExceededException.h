@@ -164,24 +164,24 @@ class ServiceQuotaExceededException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   ServiceQuotaExceededExceptionReason m_reason{ServiceQuotaExceededExceptionReason::NOT_SET};
-  bool m_reasonHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_serviceCode;
-  bool m_serviceCodeHasBeenSet = false;
 
   Aws::String m_quotaCode;
-  bool m_quotaCodeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
+  bool m_messageHasBeenSet = false;
+  bool m_reasonHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_serviceCodeHasBeenSet = false;
+  bool m_quotaCodeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

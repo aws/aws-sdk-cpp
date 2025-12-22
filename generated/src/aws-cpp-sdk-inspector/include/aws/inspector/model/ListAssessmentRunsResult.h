@@ -87,12 +87,12 @@ class ListAssessmentRunsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_assessmentRunArns;
-  bool m_assessmentRunArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assessmentRunArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -91,12 +91,12 @@ class ListWebhooksResult {
   ///@}
  private:
   Aws::Vector<Webhook> m_webhooks;
-  bool m_webhooksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webhooksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

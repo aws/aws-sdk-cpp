@@ -72,9 +72,9 @@ class StatusDetails {
   ///@}
  private:
   Aws::String m_statusCode;
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_statusCodeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

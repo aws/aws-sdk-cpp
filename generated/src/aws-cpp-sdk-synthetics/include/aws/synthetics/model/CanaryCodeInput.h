@@ -217,24 +217,24 @@ class CanaryCodeInput {
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Key;
-  bool m_s3KeyHasBeenSet = false;
 
   Aws::String m_s3Version;
-  bool m_s3VersionHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_zipFile{};
-  bool m_zipFileHasBeenSet = false;
 
   Aws::String m_handler;
-  bool m_handlerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_blueprintTypes;
-  bool m_blueprintTypesHasBeenSet = false;
 
   Aws::Vector<Dependency> m_dependencies;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_s3KeyHasBeenSet = false;
+  bool m_s3VersionHasBeenSet = false;
+  bool m_zipFileHasBeenSet = false;
+  bool m_handlerHasBeenSet = false;
+  bool m_blueprintTypesHasBeenSet = false;
   bool m_dependenciesHasBeenSet = false;
 };
 

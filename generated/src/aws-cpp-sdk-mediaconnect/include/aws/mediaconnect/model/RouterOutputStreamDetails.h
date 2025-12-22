@@ -84,12 +84,12 @@ class RouterOutputStreamDetails {
   ///@}
  private:
   StandardRouterOutputStreamDetails m_standard;
-  bool m_standardHasBeenSet = false;
 
   MediaConnectFlowRouterOutputStreamDetails m_mediaConnectFlow;
-  bool m_mediaConnectFlowHasBeenSet = false;
 
   MediaLiveInputRouterOutputStreamDetails m_mediaLiveInput;
+  bool m_standardHasBeenSet = false;
+  bool m_mediaConnectFlowHasBeenSet = false;
   bool m_mediaLiveInputHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class UpdateTestSetRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   Aws::String m_testSetName;
-  bool m_testSetNameHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_testSetIdHasBeenSet = false;
+  bool m_testSetNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

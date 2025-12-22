@@ -67,9 +67,9 @@ class SendEmailVerificationCodeRequest : public PartnerCentralAccountRequest {
   ///@}
  private:
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::String m_email;
+  bool m_catalogHasBeenSet = false;
   bool m_emailHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class VirtualServiceProvider {
   ///@}
  private:
   VirtualNodeServiceProvider m_virtualNode;
-  bool m_virtualNodeHasBeenSet = false;
 
   VirtualRouterServiceProvider m_virtualRouter;
+  bool m_virtualNodeHasBeenSet = false;
   bool m_virtualRouterHasBeenSet = false;
 };
 

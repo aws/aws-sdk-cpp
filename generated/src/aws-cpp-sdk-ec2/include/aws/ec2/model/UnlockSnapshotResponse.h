@@ -60,9 +60,9 @@ class UnlockSnapshotResponse {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_snapshotIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

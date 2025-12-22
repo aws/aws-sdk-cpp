@@ -68,9 +68,9 @@ class Annotation {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   bool m_destructiveHint{false};
+  bool m_titleHasBeenSet = false;
   bool m_destructiveHintHasBeenSet = false;
 };
 

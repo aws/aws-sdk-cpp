@@ -69,9 +69,9 @@ class DeleteIPSetRequest : public WAFRequest {
   ///@}
  private:
   Aws::String m_iPSetId;
-  bool m_iPSetIdHasBeenSet = false;
 
   Aws::String m_changeToken;
+  bool m_iPSetIdHasBeenSet = false;
   bool m_changeTokenHasBeenSet = false;
 };
 

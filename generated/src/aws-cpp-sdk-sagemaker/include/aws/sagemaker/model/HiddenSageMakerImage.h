@@ -77,9 +77,9 @@ class HiddenSageMakerImage {
   ///@}
  private:
   SageMakerImageName m_sageMakerImageName{SageMakerImageName::NOT_SET};
-  bool m_sageMakerImageNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versionAliases;
+  bool m_sageMakerImageNameHasBeenSet = false;
   bool m_versionAliasesHasBeenSet = false;
 };
 

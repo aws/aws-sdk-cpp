@@ -82,9 +82,9 @@ class TagRoleRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_roleNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ActiveDirectoryConfig {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_serviceAccountSecretArn;
+  bool m_domainNameHasBeenSet = false;
   bool m_serviceAccountSecretArnHasBeenSet = false;
 };
 

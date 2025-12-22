@@ -23,7 +23,7 @@ class JsonValue;
 namespace Glacier {
 namespace Model {
 /**
- * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
+ * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListJobsOutput">AWS
  * API Reference</a></p>
@@ -95,12 +95,12 @@ class ListJobsResult {
   ///@}
  private:
   Aws::Vector<GlacierJobDescription> m_jobList;
-  bool m_jobListHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobListHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

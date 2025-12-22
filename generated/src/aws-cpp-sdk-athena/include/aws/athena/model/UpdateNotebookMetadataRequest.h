@@ -90,12 +90,12 @@ class UpdateNotebookMetadataRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_notebookId;
-  bool m_notebookIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_notebookIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

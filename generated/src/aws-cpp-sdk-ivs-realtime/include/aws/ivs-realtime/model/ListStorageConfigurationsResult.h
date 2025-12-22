@@ -85,12 +85,12 @@ class ListStorageConfigurationsResult {
   ///@}
  private:
   Aws::Vector<StorageConfigurationSummary> m_storageConfigurations;
-  bool m_storageConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

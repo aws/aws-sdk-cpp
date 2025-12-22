@@ -183,27 +183,27 @@ class AutoScalingGroupConfiguration {
   ///@}
  private:
   int m_desiredCapacity{0};
-  bool m_desiredCapacityHasBeenSet = false;
 
   int m_minSize{0};
-  bool m_minSizeHasBeenSet = false;
 
   int m_maxSize{0};
-  bool m_maxSizeHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   AllocationStrategy m_allocationStrategy{AllocationStrategy::NOT_SET};
-  bool m_allocationStrategyHasBeenSet = false;
 
   double m_estimatedInstanceHourReductionPercentage{0.0};
-  bool m_estimatedInstanceHourReductionPercentageHasBeenSet = false;
 
   AsgType m_type{AsgType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_mixedInstanceTypes;
+  bool m_desiredCapacityHasBeenSet = false;
+  bool m_minSizeHasBeenSet = false;
+  bool m_maxSizeHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_allocationStrategyHasBeenSet = false;
+  bool m_estimatedInstanceHourReductionPercentageHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_mixedInstanceTypesHasBeenSet = false;
 };
 

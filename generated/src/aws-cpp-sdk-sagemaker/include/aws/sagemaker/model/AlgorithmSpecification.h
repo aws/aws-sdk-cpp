@@ -247,27 +247,27 @@ class AlgorithmSpecification {
   ///@}
  private:
   Aws::String m_trainingImage;
-  bool m_trainingImageHasBeenSet = false;
 
   Aws::String m_algorithmName;
-  bool m_algorithmNameHasBeenSet = false;
 
   TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
-  bool m_trainingInputModeHasBeenSet = false;
 
   Aws::Vector<MetricDefinition> m_metricDefinitions;
-  bool m_metricDefinitionsHasBeenSet = false;
 
   bool m_enableSageMakerMetricsTimeSeries{false};
-  bool m_enableSageMakerMetricsTimeSeriesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerEntrypoint;
-  bool m_containerEntrypointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_containerArguments;
-  bool m_containerArgumentsHasBeenSet = false;
 
   TrainingImageConfig m_trainingImageConfig;
+  bool m_trainingImageHasBeenSet = false;
+  bool m_algorithmNameHasBeenSet = false;
+  bool m_trainingInputModeHasBeenSet = false;
+  bool m_metricDefinitionsHasBeenSet = false;
+  bool m_enableSageMakerMetricsTimeSeriesHasBeenSet = false;
+  bool m_containerEntrypointHasBeenSet = false;
+  bool m_containerArgumentsHasBeenSet = false;
   bool m_trainingImageConfigHasBeenSet = false;
 };
 

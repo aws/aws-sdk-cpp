@@ -178,24 +178,24 @@ class TopicRuleDestination {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   TopicRuleDestinationStatus m_status{TopicRuleDestinationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   HttpUrlDestinationProperties m_httpUrlProperties;
-  bool m_httpUrlPropertiesHasBeenSet = false;
 
   VpcDestinationProperties m_vpcProperties;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_httpUrlPropertiesHasBeenSet = false;
   bool m_vpcPropertiesHasBeenSet = false;
 };
 

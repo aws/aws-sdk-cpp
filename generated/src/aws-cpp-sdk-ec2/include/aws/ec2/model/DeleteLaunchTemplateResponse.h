@@ -60,9 +60,9 @@ class DeleteLaunchTemplateResponse {
   ///@}
  private:
   LaunchTemplate m_launchTemplate;
-  bool m_launchTemplateHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_launchTemplateHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

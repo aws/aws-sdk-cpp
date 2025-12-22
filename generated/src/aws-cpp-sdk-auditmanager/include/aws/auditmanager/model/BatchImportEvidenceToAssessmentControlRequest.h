@@ -109,15 +109,15 @@ class BatchImportEvidenceToAssessmentControlRequest : public AuditManagerRequest
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   Aws::String m_controlSetId;
-  bool m_controlSetIdHasBeenSet = false;
 
   Aws::String m_controlId;
-  bool m_controlIdHasBeenSet = false;
 
   Aws::Vector<ManualEvidence> m_manualEvidence;
+  bool m_assessmentIdHasBeenSet = false;
+  bool m_controlSetIdHasBeenSet = false;
+  bool m_controlIdHasBeenSet = false;
   bool m_manualEvidenceHasBeenSet = false;
 };
 

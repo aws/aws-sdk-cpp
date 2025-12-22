@@ -60,9 +60,9 @@ class GetRecommendationResult {
   ///@}
  private:
   Recommendation m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

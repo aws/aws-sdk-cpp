@@ -109,18 +109,18 @@ class RunStatisticsForAssets {
   ///@}
  private:
   int m_added{0};
-  bool m_addedHasBeenSet = false;
 
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_skipped{0};
-  bool m_skippedHasBeenSet = false;
 
   int m_unchanged{0};
-  bool m_unchangedHasBeenSet = false;
 
   int m_updated{0};
+  bool m_addedHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_skippedHasBeenSet = false;
+  bool m_unchangedHasBeenSet = false;
   bool m_updatedHasBeenSet = false;
 };
 

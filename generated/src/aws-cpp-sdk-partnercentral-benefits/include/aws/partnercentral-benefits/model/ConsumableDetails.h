@@ -108,15 +108,15 @@ class ConsumableDetails {
   ///@}
  private:
   MonetaryValue m_allocatedAmount;
-  bool m_allocatedAmountHasBeenSet = false;
 
   MonetaryValue m_remainingAmount;
-  bool m_remainingAmountHasBeenSet = false;
 
   MonetaryValue m_utilizedAmount;
-  bool m_utilizedAmountHasBeenSet = false;
 
   IssuanceDetail m_issuanceDetails;
+  bool m_allocatedAmountHasBeenSet = false;
+  bool m_remainingAmountHasBeenSet = false;
+  bool m_utilizedAmountHasBeenSet = false;
   bool m_issuanceDetailsHasBeenSet = false;
 };
 

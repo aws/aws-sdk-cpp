@@ -191,18 +191,18 @@ class EmailConfigurationType {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_replyToEmailAddress;
-  bool m_replyToEmailAddressHasBeenSet = false;
 
   EmailSendingAccountType m_emailSendingAccount{EmailSendingAccountType::NOT_SET};
-  bool m_emailSendingAccountHasBeenSet = false;
 
   Aws::String m_from;
-  bool m_fromHasBeenSet = false;
 
   Aws::String m_configurationSet;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_replyToEmailAddressHasBeenSet = false;
+  bool m_emailSendingAccountHasBeenSet = false;
+  bool m_fromHasBeenSet = false;
   bool m_configurationSetHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class CreateInvalidation2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_distributionId;
-  bool m_distributionIdHasBeenSet = false;
 
   InvalidationBatch m_invalidationBatch;
+  bool m_distributionIdHasBeenSet = false;
   bool m_invalidationBatchHasBeenSet = false;
 };
 

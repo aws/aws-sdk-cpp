@@ -67,9 +67,9 @@ class DescribeObservationRequest : public ApplicationInsightsRequest {
   ///@}
  private:
   Aws::String m_observationId;
-  bool m_observationIdHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_observationIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

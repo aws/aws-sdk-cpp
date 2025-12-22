@@ -68,9 +68,9 @@ class QuickSetupTypeOutput {
   ///@}
  private:
   Aws::String m_latestVersion;
-  bool m_latestVersionHasBeenSet = false;
 
   Aws::String m_type;
+  bool m_latestVersionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

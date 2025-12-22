@@ -220,30 +220,30 @@ class UpdateExperimentTemplateRequest : public FISRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<UpdateExperimentTemplateStopConditionInput> m_stopConditions;
-  bool m_stopConditionsHasBeenSet = false;
 
   Aws::Map<Aws::String, UpdateExperimentTemplateTargetInput> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Map<Aws::String, UpdateExperimentTemplateActionInputItem> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   UpdateExperimentTemplateLogConfigurationInput m_logConfiguration;
-  bool m_logConfigurationHasBeenSet = false;
 
   UpdateExperimentTemplateExperimentOptionsInput m_experimentOptions;
-  bool m_experimentOptionsHasBeenSet = false;
 
   UpdateExperimentTemplateReportConfigurationInput m_experimentReportConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stopConditionsHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
+  bool m_experimentOptionsHasBeenSet = false;
   bool m_experimentReportConfigurationHasBeenSet = false;
 };
 

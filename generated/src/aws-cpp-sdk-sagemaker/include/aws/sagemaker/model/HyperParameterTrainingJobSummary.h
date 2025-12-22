@@ -274,39 +274,39 @@ class HyperParameterTrainingJobSummary {
   ///@}
  private:
   Aws::String m_trainingJobDefinitionName;
-  bool m_trainingJobDefinitionNameHasBeenSet = false;
 
   Aws::String m_trainingJobName;
-  bool m_trainingJobNameHasBeenSet = false;
 
   Aws::String m_trainingJobArn;
-  bool m_trainingJobArnHasBeenSet = false;
 
   Aws::String m_tuningJobName;
-  bool m_tuningJobNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingStartTime{};
-  bool m_trainingStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingEndTime{};
-  bool m_trainingEndTimeHasBeenSet = false;
 
   TrainingJobStatus m_trainingJobStatus{TrainingJobStatus::NOT_SET};
-  bool m_trainingJobStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tunedHyperParameters;
-  bool m_tunedHyperParametersHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   FinalHyperParameterTuningJobObjectiveMetric m_finalHyperParameterTuningJobObjectiveMetric;
-  bool m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = false;
 
   ObjectiveStatus m_objectiveStatus{ObjectiveStatus::NOT_SET};
+  bool m_trainingJobDefinitionNameHasBeenSet = false;
+  bool m_trainingJobNameHasBeenSet = false;
+  bool m_trainingJobArnHasBeenSet = false;
+  bool m_tuningJobNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_trainingStartTimeHasBeenSet = false;
+  bool m_trainingEndTimeHasBeenSet = false;
+  bool m_trainingJobStatusHasBeenSet = false;
+  bool m_tunedHyperParametersHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet = false;
   bool m_objectiveStatusHasBeenSet = false;
 };
 

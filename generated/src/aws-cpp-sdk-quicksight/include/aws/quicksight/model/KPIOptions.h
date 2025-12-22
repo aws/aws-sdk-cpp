@@ -204,30 +204,30 @@ class KPIOptions {
   ///@}
  private:
   ProgressBarOptions m_progressBar;
-  bool m_progressBarHasBeenSet = false;
 
   TrendArrowOptions m_trendArrows;
-  bool m_trendArrowsHasBeenSet = false;
 
   SecondaryValueOptions m_secondaryValue;
-  bool m_secondaryValueHasBeenSet = false;
 
   ComparisonConfiguration m_comparison;
-  bool m_comparisonHasBeenSet = false;
 
   PrimaryValueDisplayType m_primaryValueDisplayType{PrimaryValueDisplayType::NOT_SET};
-  bool m_primaryValueDisplayTypeHasBeenSet = false;
 
   FontConfiguration m_primaryValueFontConfiguration;
-  bool m_primaryValueFontConfigurationHasBeenSet = false;
 
   FontConfiguration m_secondaryValueFontConfiguration;
-  bool m_secondaryValueFontConfigurationHasBeenSet = false;
 
   KPISparklineOptions m_sparkline;
-  bool m_sparklineHasBeenSet = false;
 
   KPIVisualLayoutOptions m_visualLayoutOptions;
+  bool m_progressBarHasBeenSet = false;
+  bool m_trendArrowsHasBeenSet = false;
+  bool m_secondaryValueHasBeenSet = false;
+  bool m_comparisonHasBeenSet = false;
+  bool m_primaryValueDisplayTypeHasBeenSet = false;
+  bool m_primaryValueFontConfigurationHasBeenSet = false;
+  bool m_secondaryValueFontConfigurationHasBeenSet = false;
+  bool m_sparklineHasBeenSet = false;
   bool m_visualLayoutOptionsHasBeenSet = false;
 };
 

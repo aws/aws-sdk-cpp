@@ -101,15 +101,15 @@ class VerticalLayoutConfiguration {
   ///@}
  private:
   TileOrder m_tileOrder{TileOrder::NOT_SET};
-  bool m_tileOrderHasBeenSet = false;
 
   VerticalTilePosition m_tilePosition{VerticalTilePosition::NOT_SET};
-  bool m_tilePositionHasBeenSet = false;
 
   int m_tileCount{0};
-  bool m_tileCountHasBeenSet = false;
 
   Aws::String m_tileAspectRatio;
+  bool m_tileOrderHasBeenSet = false;
+  bool m_tilePositionHasBeenSet = false;
+  bool m_tileCountHasBeenSet = false;
   bool m_tileAspectRatioHasBeenSet = false;
 };
 

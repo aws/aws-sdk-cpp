@@ -341,51 +341,51 @@ class ContactData {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_missionProfileArn;
-  bool m_missionProfileArnHasBeenSet = false;
 
   Aws::String m_satelliteArn;
-  bool m_satelliteArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_prePassStartTime{};
-  bool m_prePassStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_postPassEndTime{};
-  bool m_postPassEndTimeHasBeenSet = false;
 
   Aws::String m_groundStation;
-  bool m_groundStationHasBeenSet = false;
 
   ContactStatus m_contactStatus{ContactStatus::NOT_SET};
-  bool m_contactStatusHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Elevation m_maximumElevation;
-  bool m_maximumElevationHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_visibilityStartTime{};
-  bool m_visibilityStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_visibilityEndTime{};
-  bool m_visibilityEndTimeHasBeenSet = false;
 
   EphemerisResponseData m_ephemeris;
+  bool m_contactIdHasBeenSet = false;
+  bool m_missionProfileArnHasBeenSet = false;
+  bool m_satelliteArnHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_prePassStartTimeHasBeenSet = false;
+  bool m_postPassEndTimeHasBeenSet = false;
+  bool m_groundStationHasBeenSet = false;
+  bool m_contactStatusHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_maximumElevationHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_visibilityStartTimeHasBeenSet = false;
+  bool m_visibilityEndTimeHasBeenSet = false;
   bool m_ephemerisHasBeenSet = false;
 };
 

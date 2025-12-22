@@ -77,9 +77,9 @@ class RuleCondition {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_condition;
+  bool m_ruleNameHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

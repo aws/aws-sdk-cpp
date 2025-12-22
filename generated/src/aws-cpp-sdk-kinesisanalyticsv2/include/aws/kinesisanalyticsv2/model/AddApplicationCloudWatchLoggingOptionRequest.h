@@ -112,15 +112,15 @@ class AddApplicationCloudWatchLoggingOptionRequest : public KinesisAnalyticsV2Re
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   long long m_currentApplicationVersionId{0};
-  bool m_currentApplicationVersionIdHasBeenSet = false;
 
   CloudWatchLoggingOption m_cloudWatchLoggingOption;
-  bool m_cloudWatchLoggingOptionHasBeenSet = false;
 
   Aws::String m_conditionalToken;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_currentApplicationVersionIdHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionHasBeenSet = false;
   bool m_conditionalTokenHasBeenSet = false;
 };
 

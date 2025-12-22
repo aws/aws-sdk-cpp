@@ -111,15 +111,15 @@ class DocumentClassificationJobFilter {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   JobStatus m_jobStatus{JobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTimeBefore{};
-  bool m_submitTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_submitTimeAfter{};
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_submitTimeBeforeHasBeenSet = false;
   bool m_submitTimeAfterHasBeenSet = false;
 };
 

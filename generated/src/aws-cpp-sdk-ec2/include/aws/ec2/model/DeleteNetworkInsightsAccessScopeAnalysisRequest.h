@@ -70,9 +70,9 @@ class DeleteNetworkInsightsAccessScopeAnalysisRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_networkInsightsAccessScopeAnalysisId;
-  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

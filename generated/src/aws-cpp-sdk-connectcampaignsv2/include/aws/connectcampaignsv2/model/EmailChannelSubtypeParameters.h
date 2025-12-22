@@ -103,15 +103,15 @@ class EmailChannelSubtypeParameters {
   ///@}
  private:
   Aws::String m_destinationEmailAddress;
-  bool m_destinationEmailAddressHasBeenSet = false;
 
   Aws::String m_connectSourceEmailAddress;
-  bool m_connectSourceEmailAddressHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_templateParameters;
+  bool m_destinationEmailAddressHasBeenSet = false;
+  bool m_connectSourceEmailAddressHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
   bool m_templateParametersHasBeenSet = false;
 };
 

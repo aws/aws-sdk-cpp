@@ -127,18 +127,18 @@ class ManagedAction {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_actionDescription;
-  bool m_actionDescriptionHasBeenSet = false;
 
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   ActionStatus m_status{ActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_windowStartTime{};
+  bool m_actionIdHasBeenSet = false;
+  bool m_actionDescriptionHasBeenSet = false;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_windowStartTimeHasBeenSet = false;
 };
 

@@ -21,9 +21,9 @@ namespace IoT {
 namespace Model {
 
 /**
- * <p>The range of possible values that's used to describe a specific command
- * parameter.</p>  <p>The <code>commandParameterValue</code> can only have
- * one of the below fields listed.</p> <p><h3>See Also:</h3>   <a
+ * <p>The value of a command parameter used to create a command execution.</p>
+ *  <p>The <code>commandParameterValue</code> can only have one of the below
+ * fields listed.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CommandParameterValue">AWS
  * API Reference</a></p>
  */
@@ -156,24 +156,24 @@ class CommandParameterValue {
   ///@}
  private:
   Aws::String m_s;
-  bool m_sHasBeenSet = false;
 
   bool m_b{false};
-  bool m_bHasBeenSet = false;
 
   int m_i{0};
-  bool m_iHasBeenSet = false;
 
   long long m_l{0};
-  bool m_lHasBeenSet = false;
 
   double m_d{0.0};
-  bool m_dHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_bIN{};
-  bool m_bINHasBeenSet = false;
 
   Aws::String m_uL;
+  bool m_sHasBeenSet = false;
+  bool m_bHasBeenSet = false;
+  bool m_iHasBeenSet = false;
+  bool m_lHasBeenSet = false;
+  bool m_dHasBeenSet = false;
+  bool m_bINHasBeenSet = false;
   bool m_uLHasBeenSet = false;
 };
 

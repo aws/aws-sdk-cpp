@@ -279,36 +279,36 @@ class CreateWorkflowRequest : public MWAAServerlessRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   DefinitionS3Location m_definitionS3Location;
-  bool m_definitionS3LocationHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   int m_engineVersion{0};
-  bool m_engineVersionHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_triggerMode;
+  bool m_nameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_definitionS3LocationHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_triggerModeHasBeenSet = false;
 };
 

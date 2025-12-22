@@ -86,12 +86,12 @@ class UpdateElasticsearchDomainConfigResult {
   ///@}
  private:
   ElasticsearchDomainConfig m_domainConfig;
-  bool m_domainConfigHasBeenSet = false;
 
   DryRunResults m_dryRunResults;
-  bool m_dryRunResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainConfigHasBeenSet = false;
+  bool m_dryRunResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

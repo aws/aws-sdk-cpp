@@ -89,12 +89,12 @@ class ListPrincipalsResult {
   ///@}
  private:
   Aws::Vector<Principal> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_principalsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

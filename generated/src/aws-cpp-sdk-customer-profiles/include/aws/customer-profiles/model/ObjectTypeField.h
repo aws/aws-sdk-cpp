@@ -89,12 +89,12 @@ class ObjectTypeField {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   FieldContentType m_contentType{FieldContentType::NOT_SET};
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_contentTypeHasBeenSet = false;
 };
 

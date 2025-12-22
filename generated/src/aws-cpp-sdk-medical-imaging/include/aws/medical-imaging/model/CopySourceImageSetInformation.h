@@ -70,9 +70,9 @@ class CopySourceImageSetInformation {
   ///@}
  private:
   Aws::String m_latestVersionId;
-  bool m_latestVersionIdHasBeenSet = false;
 
   MetadataCopies m_dICOMCopies;
+  bool m_latestVersionIdHasBeenSet = false;
   bool m_dICOMCopiesHasBeenSet = false;
 };
 

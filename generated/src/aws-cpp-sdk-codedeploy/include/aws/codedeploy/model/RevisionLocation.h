@@ -133,18 +133,18 @@ class RevisionLocation {
   ///@}
  private:
   RevisionLocationType m_revisionType{RevisionLocationType::NOT_SET};
-  bool m_revisionTypeHasBeenSet = false;
 
   S3Location m_s3Location;
-  bool m_s3LocationHasBeenSet = false;
 
   GitHubLocation m_gitHubLocation;
-  bool m_gitHubLocationHasBeenSet = false;
 
   RawString m_string;
-  bool m_stringHasBeenSet = false;
 
   AppSpecContent m_appSpecContent;
+  bool m_revisionTypeHasBeenSet = false;
+  bool m_s3LocationHasBeenSet = false;
+  bool m_gitHubLocationHasBeenSet = false;
+  bool m_stringHasBeenSet = false;
   bool m_appSpecContentHasBeenSet = false;
 };
 

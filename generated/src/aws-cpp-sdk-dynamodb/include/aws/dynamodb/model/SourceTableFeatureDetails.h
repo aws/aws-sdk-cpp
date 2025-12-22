@@ -145,18 +145,18 @@ class SourceTableFeatureDetails {
   ///@}
  private:
   Aws::Vector<LocalSecondaryIndexInfo> m_localSecondaryIndexes;
-  bool m_localSecondaryIndexesHasBeenSet = false;
 
   Aws::Vector<GlobalSecondaryIndexInfo> m_globalSecondaryIndexes;
-  bool m_globalSecondaryIndexesHasBeenSet = false;
 
   StreamSpecification m_streamDescription;
-  bool m_streamDescriptionHasBeenSet = false;
 
   TimeToLiveDescription m_timeToLiveDescription;
-  bool m_timeToLiveDescriptionHasBeenSet = false;
 
   SSEDescription m_sSEDescription;
+  bool m_localSecondaryIndexesHasBeenSet = false;
+  bool m_globalSecondaryIndexesHasBeenSet = false;
+  bool m_streamDescriptionHasBeenSet = false;
+  bool m_timeToLiveDescriptionHasBeenSet = false;
   bool m_sSEDescriptionHasBeenSet = false;
 };
 

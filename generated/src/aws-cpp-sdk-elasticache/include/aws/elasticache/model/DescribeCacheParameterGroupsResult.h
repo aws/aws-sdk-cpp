@@ -93,12 +93,12 @@ class DescribeCacheParameterGroupsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<CacheParameterGroup> m_cacheParameterGroups;
-  bool m_cacheParameterGroupsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_cacheParameterGroupsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

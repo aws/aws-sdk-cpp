@@ -131,21 +131,21 @@ class ExportVectorEnrichmentJobResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   VectorEnrichmentJobExportStatus m_exportStatus{VectorEnrichmentJobExportStatus::NOT_SET};
-  bool m_exportStatusHasBeenSet = false;
 
   ExportVectorEnrichmentJobOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

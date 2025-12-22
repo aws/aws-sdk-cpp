@@ -75,9 +75,9 @@ class ListOpenIDConnectProvidersResult {
   ///@}
  private:
   Aws::Vector<OpenIDConnectProviderListEntry> m_openIDConnectProviderList;
-  bool m_openIDConnectProviderListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_openIDConnectProviderListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

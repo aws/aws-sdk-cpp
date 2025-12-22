@@ -94,12 +94,12 @@ class BatchGetAssetPropertyValueHistoryRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::Vector<BatchGetAssetPropertyValueHistoryEntry> m_entries;
-  bool m_entriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_entriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

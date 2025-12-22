@@ -209,30 +209,30 @@ class LocalGatewayVirtualInterfaceGroup {
   ///@}
  private:
   Aws::String m_localGatewayVirtualInterfaceGroupId;
-  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_localGatewayVirtualInterfaceIds;
-  bool m_localGatewayVirtualInterfaceIdsHasBeenSet = false;
 
   Aws::String m_localGatewayId;
-  bool m_localGatewayIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   int m_localBgpAsn{0};
-  bool m_localBgpAsnHasBeenSet = false;
 
   long long m_localBgpAsnExtended{0};
-  bool m_localBgpAsnExtendedHasBeenSet = false;
 
   Aws::String m_localGatewayVirtualInterfaceGroupArn;
-  bool m_localGatewayVirtualInterfaceGroupArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LocalGatewayVirtualInterfaceGroupConfigurationState m_configurationState{LocalGatewayVirtualInterfaceGroupConfigurationState::NOT_SET};
+  bool m_localGatewayVirtualInterfaceGroupIdHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceIdsHasBeenSet = false;
+  bool m_localGatewayIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_localBgpAsnHasBeenSet = false;
+  bool m_localBgpAsnExtendedHasBeenSet = false;
+  bool m_localGatewayVirtualInterfaceGroupArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_configurationStateHasBeenSet = false;
 };
 

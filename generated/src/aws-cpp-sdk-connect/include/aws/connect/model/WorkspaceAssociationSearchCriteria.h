@@ -99,12 +99,12 @@ class WorkspaceAssociationSearchCriteria {
   ///@}
  private:
   Aws::Vector<WorkspaceAssociationSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<WorkspaceAssociationSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
   bool m_stringConditionHasBeenSet = false;
 };
 

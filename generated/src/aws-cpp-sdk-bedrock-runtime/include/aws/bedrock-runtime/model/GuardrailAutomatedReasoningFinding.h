@@ -181,24 +181,24 @@ class GuardrailAutomatedReasoningFinding {
   ///@}
  private:
   GuardrailAutomatedReasoningValidFinding m_valid;
-  bool m_validHasBeenSet = false;
 
   GuardrailAutomatedReasoningInvalidFinding m_invalid;
-  bool m_invalidHasBeenSet = false;
 
   GuardrailAutomatedReasoningSatisfiableFinding m_satisfiable;
-  bool m_satisfiableHasBeenSet = false;
 
   GuardrailAutomatedReasoningImpossibleFinding m_impossible;
-  bool m_impossibleHasBeenSet = false;
 
   GuardrailAutomatedReasoningTranslationAmbiguousFinding m_translationAmbiguous;
-  bool m_translationAmbiguousHasBeenSet = false;
 
   GuardrailAutomatedReasoningTooComplexFinding m_tooComplex;
-  bool m_tooComplexHasBeenSet = false;
 
   GuardrailAutomatedReasoningNoTranslationsFinding m_noTranslations;
+  bool m_validHasBeenSet = false;
+  bool m_invalidHasBeenSet = false;
+  bool m_satisfiableHasBeenSet = false;
+  bool m_impossibleHasBeenSet = false;
+  bool m_translationAmbiguousHasBeenSet = false;
+  bool m_tooComplexHasBeenSet = false;
   bool m_noTranslationsHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class ProcessingConfiguration {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<Processor> m_processors;
+  bool m_enabledHasBeenSet = false;
   bool m_processorsHasBeenSet = false;
 };
 

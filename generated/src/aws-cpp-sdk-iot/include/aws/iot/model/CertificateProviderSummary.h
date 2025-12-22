@@ -68,9 +68,9 @@ class CertificateProviderSummary {
   ///@}
  private:
   Aws::String m_certificateProviderName;
-  bool m_certificateProviderNameHasBeenSet = false;
 
   Aws::String m_certificateProviderArn;
+  bool m_certificateProviderNameHasBeenSet = false;
   bool m_certificateProviderArnHasBeenSet = false;
 };
 

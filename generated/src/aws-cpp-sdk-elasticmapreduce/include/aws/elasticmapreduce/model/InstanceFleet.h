@@ -296,39 +296,39 @@ class InstanceFleet {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InstanceFleetStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   InstanceFleetType m_instanceFleetType{InstanceFleetType::NOT_SET};
-  bool m_instanceFleetTypeHasBeenSet = false;
 
   int m_targetOnDemandCapacity{0};
-  bool m_targetOnDemandCapacityHasBeenSet = false;
 
   int m_targetSpotCapacity{0};
-  bool m_targetSpotCapacityHasBeenSet = false;
 
   int m_provisionedOnDemandCapacity{0};
-  bool m_provisionedOnDemandCapacityHasBeenSet = false;
 
   int m_provisionedSpotCapacity{0};
-  bool m_provisionedSpotCapacityHasBeenSet = false;
 
   Aws::Vector<InstanceTypeSpecification> m_instanceTypeSpecifications;
-  bool m_instanceTypeSpecificationsHasBeenSet = false;
 
   InstanceFleetProvisioningSpecifications m_launchSpecifications;
-  bool m_launchSpecificationsHasBeenSet = false;
 
   InstanceFleetResizingSpecifications m_resizeSpecifications;
-  bool m_resizeSpecificationsHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_instanceFleetTypeHasBeenSet = false;
+  bool m_targetOnDemandCapacityHasBeenSet = false;
+  bool m_targetSpotCapacityHasBeenSet = false;
+  bool m_provisionedOnDemandCapacityHasBeenSet = false;
+  bool m_provisionedSpotCapacityHasBeenSet = false;
+  bool m_instanceTypeSpecificationsHasBeenSet = false;
+  bool m_launchSpecificationsHasBeenSet = false;
+  bool m_resizeSpecificationsHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

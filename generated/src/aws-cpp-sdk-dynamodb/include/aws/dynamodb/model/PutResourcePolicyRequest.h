@@ -130,15 +130,15 @@ class PutResourcePolicyRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_expectedRevisionId;
-  bool m_expectedRevisionIdHasBeenSet = false;
 
   bool m_confirmRemoveSelfResourceAccess{false};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_expectedRevisionIdHasBeenSet = false;
   bool m_confirmRemoveSelfResourceAccessHasBeenSet = false;
 };
 

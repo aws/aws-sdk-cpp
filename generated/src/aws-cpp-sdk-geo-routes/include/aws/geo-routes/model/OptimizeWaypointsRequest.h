@@ -339,48 +339,48 @@ class OptimizeWaypointsRequest : public GeoRoutesRequest {
   ///@}
  private:
   WaypointOptimizationAvoidanceOptions m_avoid;
-  bool m_avoidHasBeenSet = false;
 
   WaypointOptimizationClusteringOptions m_clustering;
-  bool m_clusteringHasBeenSet = false;
 
   Aws::String m_departureTime;
-  bool m_departureTimeHasBeenSet = false;
 
   Aws::Vector<double> m_destination;
-  bool m_destinationHasBeenSet = false;
 
   WaypointOptimizationDestinationOptions m_destinationOptions;
-  bool m_destinationOptionsHasBeenSet = false;
 
   WaypointOptimizationDriverOptions m_driver;
-  bool m_driverHasBeenSet = false;
 
   WaypointOptimizationExclusionOptions m_exclude;
-  bool m_excludeHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   WaypointOptimizationSequencingObjective m_optimizeSequencingFor{WaypointOptimizationSequencingObjective::NOT_SET};
-  bool m_optimizeSequencingForHasBeenSet = false;
 
   Aws::Vector<double> m_origin;
-  bool m_originHasBeenSet = false;
 
   WaypointOptimizationOriginOptions m_originOptions;
-  bool m_originOptionsHasBeenSet = false;
 
   WaypointOptimizationTrafficOptions m_traffic;
-  bool m_trafficHasBeenSet = false;
 
   WaypointOptimizationTravelMode m_travelMode{WaypointOptimizationTravelMode::NOT_SET};
-  bool m_travelModeHasBeenSet = false;
 
   WaypointOptimizationTravelModeOptions m_travelModeOptions;
-  bool m_travelModeOptionsHasBeenSet = false;
 
   Aws::Vector<WaypointOptimizationWaypoint> m_waypoints;
+  bool m_avoidHasBeenSet = false;
+  bool m_clusteringHasBeenSet = false;
+  bool m_departureTimeHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationOptionsHasBeenSet = false;
+  bool m_driverHasBeenSet = false;
+  bool m_excludeHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_optimizeSequencingForHasBeenSet = false;
+  bool m_originHasBeenSet = false;
+  bool m_originOptionsHasBeenSet = false;
+  bool m_trafficHasBeenSet = false;
+  bool m_travelModeHasBeenSet = false;
+  bool m_travelModeOptionsHasBeenSet = false;
   bool m_waypointsHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class VerifyDestinationNumberRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_verifiedDestinationNumberId;
-  bool m_verifiedDestinationNumberIdHasBeenSet = false;
 
   Aws::String m_verificationCode;
+  bool m_verifiedDestinationNumberIdHasBeenSet = false;
   bool m_verificationCodeHasBeenSet = false;
 };
 

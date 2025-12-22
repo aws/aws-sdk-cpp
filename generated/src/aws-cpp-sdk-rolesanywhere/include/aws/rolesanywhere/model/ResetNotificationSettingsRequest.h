@@ -32,6 +32,24 @@ class ResetNotificationSettingsRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
+   * <p>The unique identifier of the trust anchor.</p>
+   */
+  inline const Aws::String& GetTrustAnchorId() const { return m_trustAnchorId; }
+  inline bool TrustAnchorIdHasBeenSet() const { return m_trustAnchorIdHasBeenSet; }
+  template <typename TrustAnchorIdT = Aws::String>
+  void SetTrustAnchorId(TrustAnchorIdT&& value) {
+    m_trustAnchorIdHasBeenSet = true;
+    m_trustAnchorId = std::forward<TrustAnchorIdT>(value);
+  }
+  template <typename TrustAnchorIdT = Aws::String>
+  ResetNotificationSettingsRequest& WithTrustAnchorId(TrustAnchorIdT&& value) {
+    SetTrustAnchorId(std::forward<TrustAnchorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of notification setting keys to reset. A notification setting key
    * includes the event and the channel. </p>
    */
@@ -54,30 +72,12 @@ class ResetNotificationSettingsRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the trust anchor.</p>
-   */
-  inline const Aws::String& GetTrustAnchorId() const { return m_trustAnchorId; }
-  inline bool TrustAnchorIdHasBeenSet() const { return m_trustAnchorIdHasBeenSet; }
-  template <typename TrustAnchorIdT = Aws::String>
-  void SetTrustAnchorId(TrustAnchorIdT&& value) {
-    m_trustAnchorIdHasBeenSet = true;
-    m_trustAnchorId = std::forward<TrustAnchorIdT>(value);
-  }
-  template <typename TrustAnchorIdT = Aws::String>
-  ResetNotificationSettingsRequest& WithTrustAnchorId(TrustAnchorIdT&& value) {
-    SetTrustAnchorId(std::forward<TrustAnchorIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Vector<NotificationSettingKey> m_notificationSettingKeys;
-  bool m_notificationSettingKeysHasBeenSet = false;
-
   Aws::String m_trustAnchorId;
+
+  Aws::Vector<NotificationSettingKey> m_notificationSettingKeys;
   bool m_trustAnchorIdHasBeenSet = false;
+  bool m_notificationSettingKeysHasBeenSet = false;
 };
 
 }  // namespace Model

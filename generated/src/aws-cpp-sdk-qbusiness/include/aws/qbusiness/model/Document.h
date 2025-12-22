@@ -192,27 +192,27 @@ class Document {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<DocumentAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   DocumentContent m_content;
-  bool m_contentHasBeenSet = false;
 
   ContentType m_contentType{ContentType::NOT_SET};
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   AccessConfiguration m_accessConfiguration;
-  bool m_accessConfigurationHasBeenSet = false;
 
   DocumentEnrichmentConfiguration m_documentEnrichmentConfiguration;
-  bool m_documentEnrichmentConfigurationHasBeenSet = false;
 
   MediaExtractionConfiguration m_mediaExtractionConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_accessConfigurationHasBeenSet = false;
+  bool m_documentEnrichmentConfigurationHasBeenSet = false;
   bool m_mediaExtractionConfigurationHasBeenSet = false;
 };
 

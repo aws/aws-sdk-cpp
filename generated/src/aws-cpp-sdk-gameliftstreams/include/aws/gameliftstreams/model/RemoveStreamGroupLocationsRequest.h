@@ -88,9 +88,9 @@ class RemoveStreamGroupLocationsRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_locations;
+  bool m_identifierHasBeenSet = false;
   bool m_locationsHasBeenSet = false;
 };
 

@@ -9,8 +9,10 @@
 #include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/BarsArrangement.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
+#include <aws/quicksight/model/ComboChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/ComboChartFieldWells.h>
 #include <aws/quicksight/model/ComboChartSortConfiguration.h>
+#include <aws/quicksight/model/ComboSeriesItem.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/ReferenceLine.h>
@@ -250,6 +252,49 @@ class ComboChartConfiguration {
 
   ///@{
   /**
+   * <p>The options that determine the default presentation of all series in
+   * <code>ComboChartVisual</code>.</p>
+   */
+  inline const ComboChartDefaultSeriesSettings& GetDefaultSeriesSettings() const { return m_defaultSeriesSettings; }
+  inline bool DefaultSeriesSettingsHasBeenSet() const { return m_defaultSeriesSettingsHasBeenSet; }
+  template <typename DefaultSeriesSettingsT = ComboChartDefaultSeriesSettings>
+  void SetDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    m_defaultSeriesSettingsHasBeenSet = true;
+    m_defaultSeriesSettings = std::forward<DefaultSeriesSettingsT>(value);
+  }
+  template <typename DefaultSeriesSettingsT = ComboChartDefaultSeriesSettings>
+  ComboChartConfiguration& WithDefaultSeriesSettings(DefaultSeriesSettingsT&& value) {
+    SetDefaultSeriesSettings(std::forward<DefaultSeriesSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The series item configuration of a <code>ComboChartVisual</code>.</p>
+   */
+  inline const Aws::Vector<ComboSeriesItem>& GetSeries() const { return m_series; }
+  inline bool SeriesHasBeenSet() const { return m_seriesHasBeenSet; }
+  template <typename SeriesT = Aws::Vector<ComboSeriesItem>>
+  void SetSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series = std::forward<SeriesT>(value);
+  }
+  template <typename SeriesT = Aws::Vector<ComboSeriesItem>>
+  ComboChartConfiguration& WithSeries(SeriesT&& value) {
+    SetSeries(std::forward<SeriesT>(value));
+    return *this;
+  }
+  template <typename SeriesT = ComboSeriesItem>
+  ComboChartConfiguration& AddSeries(SeriesT&& value) {
+    m_seriesHasBeenSet = true;
+    m_series.emplace_back(std::forward<SeriesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The legend display setup of the visual.</p>
    */
   inline const LegendOptions& GetLegend() const { return m_legend; }
@@ -383,57 +428,63 @@ class ComboChartConfiguration {
   ///@}
  private:
   ComboChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   ComboChartSortConfiguration m_sortConfiguration;
-  bool m_sortConfigurationHasBeenSet = false;
 
   BarsArrangement m_barsArrangement{BarsArrangement::NOT_SET};
-  bool m_barsArrangementHasBeenSet = false;
 
   AxisDisplayOptions m_categoryAxis;
-  bool m_categoryAxisHasBeenSet = false;
 
   ChartAxisLabelOptions m_categoryLabelOptions;
-  bool m_categoryLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_primaryYAxisDisplayOptions;
-  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_primaryYAxisLabelOptions;
-  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
 
   AxisDisplayOptions m_secondaryYAxisDisplayOptions;
-  bool m_secondaryYAxisDisplayOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_secondaryYAxisLabelOptions;
-  bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
 
   SingleAxisOptions m_singleAxisOptions;
-  bool m_singleAxisOptionsHasBeenSet = false;
 
   ChartAxisLabelOptions m_colorLabelOptions;
-  bool m_colorLabelOptionsHasBeenSet = false;
+
+  ComboChartDefaultSeriesSettings m_defaultSeriesSettings;
+
+  Aws::Vector<ComboSeriesItem> m_series;
 
   LegendOptions m_legend;
-  bool m_legendHasBeenSet = false;
 
   DataLabelOptions m_barDataLabels;
-  bool m_barDataLabelsHasBeenSet = false;
 
   DataLabelOptions m_lineDataLabels;
-  bool m_lineDataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltip;
-  bool m_tooltipHasBeenSet = false;
 
   Aws::Vector<ReferenceLine> m_referenceLines;
-  bool m_referenceLinesHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_sortConfigurationHasBeenSet = false;
+  bool m_barsArrangementHasBeenSet = false;
+  bool m_categoryAxisHasBeenSet = false;
+  bool m_categoryLabelOptionsHasBeenSet = false;
+  bool m_primaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_primaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_secondaryYAxisDisplayOptionsHasBeenSet = false;
+  bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
+  bool m_singleAxisOptionsHasBeenSet = false;
+  bool m_colorLabelOptionsHasBeenSet = false;
+  bool m_defaultSeriesSettingsHasBeenSet = false;
+  bool m_seriesHasBeenSet = false;
+  bool m_legendHasBeenSet = false;
+  bool m_barDataLabelsHasBeenSet = false;
+  bool m_lineDataLabelsHasBeenSet = false;
+  bool m_tooltipHasBeenSet = false;
+  bool m_referenceLinesHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

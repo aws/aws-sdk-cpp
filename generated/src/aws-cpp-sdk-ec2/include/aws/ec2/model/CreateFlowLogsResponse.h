@@ -109,15 +109,15 @@ class CreateFlowLogsResponse {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_flowLogIds;
-  bool m_flowLogIdsHasBeenSet = false;
 
   Aws::Vector<UnsuccessfulItem> m_unsuccessful;
-  bool m_unsuccessfulHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_flowLogIdsHasBeenSet = false;
+  bool m_unsuccessfulHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

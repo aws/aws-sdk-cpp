@@ -547,66 +547,66 @@ class WebACL {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   DefaultAction m_defaultAction;
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   VisibilityConfig m_visibilityConfig;
-  bool m_visibilityConfigHasBeenSet = false;
 
   DataProtectionConfig m_dataProtectionConfig;
-  bool m_dataProtectionConfigHasBeenSet = false;
 
   long long m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::Vector<FirewallManagerRuleGroup> m_preProcessFirewallManagerRuleGroups;
-  bool m_preProcessFirewallManagerRuleGroupsHasBeenSet = false;
 
   Aws::Vector<FirewallManagerRuleGroup> m_postProcessFirewallManagerRuleGroups;
-  bool m_postProcessFirewallManagerRuleGroupsHasBeenSet = false;
 
   bool m_managedByFirewallManager{false};
-  bool m_managedByFirewallManagerHasBeenSet = false;
 
   Aws::String m_labelNamespace;
-  bool m_labelNamespaceHasBeenSet = false;
 
   Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
-  bool m_customResponseBodiesHasBeenSet = false;
 
   CaptchaConfig m_captchaConfig;
-  bool m_captchaConfigHasBeenSet = false;
 
   ChallengeConfig m_challengeConfig;
-  bool m_challengeConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenDomains;
-  bool m_tokenDomainsHasBeenSet = false;
 
   AssociationConfig m_associationConfig;
-  bool m_associationConfigHasBeenSet = false;
 
   bool m_retrofittedByFirewallManager{false};
-  bool m_retrofittedByFirewallManagerHasBeenSet = false;
 
   OnSourceDDoSProtectionConfig m_onSourceDDoSProtectionConfig;
-  bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
 
   ApplicationConfig m_applicationConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_visibilityConfigHasBeenSet = false;
+  bool m_dataProtectionConfigHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_preProcessFirewallManagerRuleGroupsHasBeenSet = false;
+  bool m_postProcessFirewallManagerRuleGroupsHasBeenSet = false;
+  bool m_managedByFirewallManagerHasBeenSet = false;
+  bool m_labelNamespaceHasBeenSet = false;
+  bool m_customResponseBodiesHasBeenSet = false;
+  bool m_captchaConfigHasBeenSet = false;
+  bool m_challengeConfigHasBeenSet = false;
+  bool m_tokenDomainsHasBeenSet = false;
+  bool m_associationConfigHasBeenSet = false;
+  bool m_retrofittedByFirewallManagerHasBeenSet = false;
+  bool m_onSourceDDoSProtectionConfigHasBeenSet = false;
   bool m_applicationConfigHasBeenSet = false;
 };
 

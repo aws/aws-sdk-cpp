@@ -90,12 +90,12 @@ class DiskImage {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   DiskImageDetail m_image;
-  bool m_imageHasBeenSet = false;
 
   VolumeDetail m_volume;
+  bool m_descriptionHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
   bool m_volumeHasBeenSet = false;
 };
 

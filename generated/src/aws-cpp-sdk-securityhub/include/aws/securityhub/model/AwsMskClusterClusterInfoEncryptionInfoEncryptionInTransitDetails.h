@@ -70,9 +70,9 @@ class AwsMskClusterClusterInfoEncryptionInfoEncryptionInTransitDetails {
   ///@}
  private:
   bool m_inCluster{false};
-  bool m_inClusterHasBeenSet = false;
 
   Aws::String m_clientBroker;
+  bool m_inClusterHasBeenSet = false;
   bool m_clientBrokerHasBeenSet = false;
 };
 

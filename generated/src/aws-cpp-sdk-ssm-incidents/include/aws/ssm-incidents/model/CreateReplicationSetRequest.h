@@ -100,12 +100,12 @@ class CreateReplicationSetRequest : public SSMIncidentsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, RegionMapInputValue> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_regionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

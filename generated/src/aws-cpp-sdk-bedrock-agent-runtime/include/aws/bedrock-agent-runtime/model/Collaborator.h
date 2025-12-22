@@ -263,36 +263,36 @@ class Collaborator {
   ///@}
  private:
   Aws::Vector<AgentActionGroup> m_actionGroups;
-  bool m_actionGroupsHasBeenSet = false;
 
   AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
-  bool m_agentCollaborationHasBeenSet = false;
 
   Aws::String m_agentName;
-  bool m_agentNameHasBeenSet = false;
 
   Aws::Vector<CollaboratorConfiguration> m_collaboratorConfigurations;
-  bool m_collaboratorConfigurationsHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyArn;
-  bool m_customerEncryptionKeyArnHasBeenSet = false;
 
   Aws::String m_foundationModel;
-  bool m_foundationModelHasBeenSet = false;
 
   GuardrailConfigurationWithArn m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   int m_idleSessionTTLInSeconds{0};
-  bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
   Aws::String m_instruction;
-  bool m_instructionHasBeenSet = false;
 
   Aws::Vector<KnowledgeBase> m_knowledgeBases;
-  bool m_knowledgeBasesHasBeenSet = false;
 
   PromptOverrideConfiguration m_promptOverrideConfiguration;
+  bool m_actionGroupsHasBeenSet = false;
+  bool m_agentCollaborationHasBeenSet = false;
+  bool m_agentNameHasBeenSet = false;
+  bool m_collaboratorConfigurationsHasBeenSet = false;
+  bool m_customerEncryptionKeyArnHasBeenSet = false;
+  bool m_foundationModelHasBeenSet = false;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_idleSessionTTLInSecondsHasBeenSet = false;
+  bool m_instructionHasBeenSet = false;
+  bool m_knowledgeBasesHasBeenSet = false;
   bool m_promptOverrideConfigurationHasBeenSet = false;
 };
 

@@ -97,15 +97,15 @@ class DataQualityMetricValues {
   ///@}
  private:
   double m_actualValue{0.0};
-  bool m_actualValueHasBeenSet = false;
 
   double m_expectedValue{0.0};
-  bool m_expectedValueHasBeenSet = false;
 
   double m_lowerLimit{0.0};
-  bool m_lowerLimitHasBeenSet = false;
 
   double m_upperLimit{0.0};
+  bool m_actualValueHasBeenSet = false;
+  bool m_expectedValueHasBeenSet = false;
+  bool m_lowerLimitHasBeenSet = false;
   bool m_upperLimitHasBeenSet = false;
 };
 

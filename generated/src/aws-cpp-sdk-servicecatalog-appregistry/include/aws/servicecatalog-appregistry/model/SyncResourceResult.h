@@ -93,15 +93,15 @@ class SyncResourceResult {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   SyncAction m_actionTaken{SyncAction::NOT_SET};
-  bool m_actionTakenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_actionTakenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

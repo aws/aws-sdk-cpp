@@ -82,9 +82,9 @@ class AssetBundleResourcePermissions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_actions;
+  bool m_principalsHasBeenSet = false;
   bool m_actionsHasBeenSet = false;
 };
 

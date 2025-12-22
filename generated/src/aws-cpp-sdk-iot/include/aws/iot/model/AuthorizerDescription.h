@@ -219,33 +219,33 @@ class AuthorizerDescription {
   ///@}
  private:
   Aws::String m_authorizerName;
-  bool m_authorizerNameHasBeenSet = false;
 
   Aws::String m_authorizerArn;
-  bool m_authorizerArnHasBeenSet = false;
 
   Aws::String m_authorizerFunctionArn;
-  bool m_authorizerFunctionArnHasBeenSet = false;
 
   Aws::String m_tokenKeyName;
-  bool m_tokenKeyNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tokenSigningPublicKeys;
-  bool m_tokenSigningPublicKeysHasBeenSet = false;
 
   AuthorizerStatus m_status{AuthorizerStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   bool m_signingDisabled{false};
-  bool m_signingDisabledHasBeenSet = false;
 
   bool m_enableCachingForHttp{false};
+  bool m_authorizerNameHasBeenSet = false;
+  bool m_authorizerArnHasBeenSet = false;
+  bool m_authorizerFunctionArnHasBeenSet = false;
+  bool m_tokenKeyNameHasBeenSet = false;
+  bool m_tokenSigningPublicKeysHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
+  bool m_signingDisabledHasBeenSet = false;
   bool m_enableCachingForHttpHasBeenSet = false;
 };
 

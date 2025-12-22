@@ -91,12 +91,12 @@ class DescribeStacksResult {
   ///@}
  private:
   Aws::Vector<Stack> m_stacks;
-  bool m_stacksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stacksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

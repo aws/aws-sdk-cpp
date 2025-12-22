@@ -210,27 +210,27 @@ class ListEngagementByAcceptingInvitationTasksRequest : public PartnerCentralSel
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ListTasksSortBase m_sort;
-  bool m_sortHasBeenSet = false;
 
   Aws::String m_catalog;
-  bool m_catalogHasBeenSet = false;
 
   Aws::Vector<TaskStatus> m_taskStatus;
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_opportunityIdentifier;
-  bool m_opportunityIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_engagementInvitationIdentifier;
-  bool m_engagementInvitationIdentifierHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_taskIdentifier;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_sortHasBeenSet = false;
+  bool m_catalogHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_opportunityIdentifierHasBeenSet = false;
+  bool m_engagementInvitationIdentifierHasBeenSet = false;
   bool m_taskIdentifierHasBeenSet = false;
 };
 

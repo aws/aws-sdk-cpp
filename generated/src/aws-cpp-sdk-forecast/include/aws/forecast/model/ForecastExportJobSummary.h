@@ -177,24 +177,24 @@ class ForecastExportJobSummary {
   ///@}
  private:
   Aws::String m_forecastExportJobArn;
-  bool m_forecastExportJobArnHasBeenSet = false;
 
   Aws::String m_forecastExportJobName;
-  bool m_forecastExportJobNameHasBeenSet = false;
 
   DataDestination m_destination;
-  bool m_destinationHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
+  bool m_forecastExportJobArnHasBeenSet = false;
+  bool m_forecastExportJobNameHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
   bool m_lastModificationTimeHasBeenSet = false;
 };
 

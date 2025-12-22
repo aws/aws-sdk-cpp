@@ -292,45 +292,45 @@ class GetDocumentResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdDate{};
-  bool m_createdDateHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   DocumentStatus m_status{DocumentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusInformation;
-  bool m_statusInformationHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   DocumentType m_documentType{DocumentType::NOT_SET};
-  bool m_documentTypeHasBeenSet = false;
 
   DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
-  bool m_documentFormatHasBeenSet = false;
 
   Aws::Vector<DocumentRequires> m_requires;
-  bool m_requiresHasBeenSet = false;
 
   Aws::Vector<AttachmentContent> m_attachmentsContent;
-  bool m_attachmentsContentHasBeenSet = false;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
-  bool m_reviewStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_createdDateHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusInformationHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_documentTypeHasBeenSet = false;
+  bool m_documentFormatHasBeenSet = false;
+  bool m_requiresHasBeenSet = false;
+  bool m_attachmentsContentHasBeenSet = false;
+  bool m_reviewStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

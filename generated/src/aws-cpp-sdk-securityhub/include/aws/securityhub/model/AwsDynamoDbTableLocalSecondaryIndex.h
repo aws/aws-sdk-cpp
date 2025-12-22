@@ -116,15 +116,15 @@ class AwsDynamoDbTableLocalSecondaryIndex {
   ///@}
  private:
   Aws::String m_indexArn;
-  bool m_indexArnHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::Vector<AwsDynamoDbTableKeySchema> m_keySchema;
-  bool m_keySchemaHasBeenSet = false;
 
   AwsDynamoDbTableProjection m_projection;
+  bool m_indexArnHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_keySchemaHasBeenSet = false;
   bool m_projectionHasBeenSet = false;
 };
 

@@ -260,39 +260,39 @@ class ServiceLinkVirtualInterface {
   ///@}
  private:
   Aws::String m_serviceLinkVirtualInterfaceId;
-  bool m_serviceLinkVirtualInterfaceIdHasBeenSet = false;
 
   Aws::String m_serviceLinkVirtualInterfaceArn;
-  bool m_serviceLinkVirtualInterfaceArnHasBeenSet = false;
 
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_localAddress;
-  bool m_localAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   long long m_peerBgpAsn{0};
-  bool m_peerBgpAsnHasBeenSet = false;
 
   int m_vlan{0};
-  bool m_vlanHasBeenSet = false;
 
   Aws::String m_outpostLagId;
-  bool m_outpostLagIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ServiceLinkVirtualInterfaceConfigurationState m_configurationState{ServiceLinkVirtualInterfaceConfigurationState::NOT_SET};
+  bool m_serviceLinkVirtualInterfaceIdHasBeenSet = false;
+  bool m_serviceLinkVirtualInterfaceArnHasBeenSet = false;
+  bool m_outpostIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_localAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_peerBgpAsnHasBeenSet = false;
+  bool m_vlanHasBeenSet = false;
+  bool m_outpostLagIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_configurationStateHasBeenSet = false;
 };
 

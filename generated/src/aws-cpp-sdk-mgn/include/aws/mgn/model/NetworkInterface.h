@@ -34,6 +34,24 @@ class NetworkInterface {
 
   ///@{
   /**
+   * <p>Network interface Mac address.</p>
+   */
+  inline const Aws::String& GetMacAddress() const { return m_macAddress; }
+  inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
+  template <typename MacAddressT = Aws::String>
+  void SetMacAddress(MacAddressT&& value) {
+    m_macAddressHasBeenSet = true;
+    m_macAddress = std::forward<MacAddressT>(value);
+  }
+  template <typename MacAddressT = Aws::String>
+  NetworkInterface& WithMacAddress(MacAddressT&& value) {
+    SetMacAddress(std::forward<MacAddressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Network interface IPs.</p>
    */
   inline const Aws::Vector<Aws::String>& GetIps() const { return m_ips; }
@@ -71,33 +89,15 @@ class NetworkInterface {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Network interface Mac address.</p>
-   */
-  inline const Aws::String& GetMacAddress() const { return m_macAddress; }
-  inline bool MacAddressHasBeenSet() const { return m_macAddressHasBeenSet; }
-  template <typename MacAddressT = Aws::String>
-  void SetMacAddress(MacAddressT&& value) {
-    m_macAddressHasBeenSet = true;
-    m_macAddress = std::forward<MacAddressT>(value);
-  }
-  template <typename MacAddressT = Aws::String>
-  NetworkInterface& WithMacAddress(MacAddressT&& value) {
-    SetMacAddress(std::forward<MacAddressT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_macAddress;
+
   Aws::Vector<Aws::String> m_ips;
-  bool m_ipsHasBeenSet = false;
 
   bool m_isPrimary{false};
-  bool m_isPrimaryHasBeenSet = false;
-
-  Aws::String m_macAddress;
   bool m_macAddressHasBeenSet = false;
+  bool m_ipsHasBeenSet = false;
+  bool m_isPrimaryHasBeenSet = false;
 };
 
 }  // namespace Model

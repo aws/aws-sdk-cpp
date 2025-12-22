@@ -142,21 +142,21 @@ class AwsEc2VpnConnectionVgwTelemetryDetails {
   ///@}
  private:
   int m_acceptedRouteCount{0};
-  bool m_acceptedRouteCountHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_lastStatusChange;
-  bool m_lastStatusChangeHasBeenSet = false;
 
   Aws::String m_outsideIpAddress;
-  bool m_outsideIpAddressHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_acceptedRouteCountHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_lastStatusChangeHasBeenSet = false;
+  bool m_outsideIpAddressHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

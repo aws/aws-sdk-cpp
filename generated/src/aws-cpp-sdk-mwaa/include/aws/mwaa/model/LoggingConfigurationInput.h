@@ -123,18 +123,18 @@ class LoggingConfigurationInput {
   ///@}
  private:
   ModuleLoggingConfigurationInput m_dagProcessingLogs;
-  bool m_dagProcessingLogsHasBeenSet = false;
 
   ModuleLoggingConfigurationInput m_schedulerLogs;
-  bool m_schedulerLogsHasBeenSet = false;
 
   ModuleLoggingConfigurationInput m_webserverLogs;
-  bool m_webserverLogsHasBeenSet = false;
 
   ModuleLoggingConfigurationInput m_workerLogs;
-  bool m_workerLogsHasBeenSet = false;
 
   ModuleLoggingConfigurationInput m_taskLogs;
+  bool m_dagProcessingLogsHasBeenSet = false;
+  bool m_schedulerLogsHasBeenSet = false;
+  bool m_webserverLogsHasBeenSet = false;
+  bool m_workerLogsHasBeenSet = false;
   bool m_taskLogsHasBeenSet = false;
 };
 

@@ -205,30 +205,30 @@ class AnycastIpList {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   IpamConfig m_ipamConfig;
-  bool m_ipamConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_anycastIps;
-  bool m_anycastIpsHasBeenSet = false;
 
   int m_ipCount{0};
-  bool m_ipCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_ipamConfigHasBeenSet = false;
+  bool m_anycastIpsHasBeenSet = false;
+  bool m_ipCountHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

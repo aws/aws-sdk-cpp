@@ -71,9 +71,9 @@ class BatchPutMetricsError {
   ///@}
  private:
   PutMetricsErrorCode m_code{PutMetricsErrorCode::NOT_SET};
-  bool m_codeHasBeenSet = false;
 
   int m_metricIndex{0};
+  bool m_codeHasBeenSet = false;
   bool m_metricIndexHasBeenSet = false;
 };
 

@@ -59,9 +59,9 @@ class CreateTrafficPolicyResult {
   ///@}
  private:
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficPolicyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

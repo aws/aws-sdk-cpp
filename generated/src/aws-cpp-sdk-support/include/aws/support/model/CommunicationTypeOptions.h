@@ -115,12 +115,12 @@ class CommunicationTypeOptions {
   ///@}
  private:
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<SupportedHour> m_supportedHours;
-  bool m_supportedHoursHasBeenSet = false;
 
   Aws::Vector<DateInterval> m_datesWithoutSupport;
+  bool m_typeHasBeenSet = false;
+  bool m_supportedHoursHasBeenSet = false;
   bool m_datesWithoutSupportHasBeenSet = false;
 };
 

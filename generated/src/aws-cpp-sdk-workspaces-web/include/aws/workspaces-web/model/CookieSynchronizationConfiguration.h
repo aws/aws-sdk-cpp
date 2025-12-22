@@ -85,9 +85,9 @@ class CookieSynchronizationConfiguration {
   ///@}
  private:
   Aws::Vector<CookieSpecification> m_allowlist;
-  bool m_allowlistHasBeenSet = false;
 
   Aws::Vector<CookieSpecification> m_blocklist;
+  bool m_allowlistHasBeenSet = false;
   bool m_blocklistHasBeenSet = false;
 };
 

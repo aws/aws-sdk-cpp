@@ -81,9 +81,9 @@ class AwsRdsPendingCloudWatchLogsExports {
   ///@}
  private:
   Aws::Vector<Aws::String> m_logTypesToEnable;
-  bool m_logTypesToEnableHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logTypesToDisable;
+  bool m_logTypesToEnableHasBeenSet = false;
   bool m_logTypesToDisableHasBeenSet = false;
 };
 

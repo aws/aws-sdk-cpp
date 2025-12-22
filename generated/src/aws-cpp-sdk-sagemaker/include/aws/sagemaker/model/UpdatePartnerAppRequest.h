@@ -209,30 +209,30 @@ class UpdatePartnerAppRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   PartnerAppMaintenanceConfig m_maintenanceConfig;
-  bool m_maintenanceConfigHasBeenSet = false;
 
   Aws::String m_tier;
-  bool m_tierHasBeenSet = false;
 
   PartnerAppConfig m_applicationConfig;
-  bool m_applicationConfigHasBeenSet = false;
 
   bool m_enableIamSessionBasedIdentity{false};
-  bool m_enableIamSessionBasedIdentityHasBeenSet = false;
 
   bool m_enableAutoMinorVersionUpgrade{false};
-  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_arnHasBeenSet = false;
+  bool m_maintenanceConfigHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_applicationConfigHasBeenSet = false;
+  bool m_enableIamSessionBasedIdentityHasBeenSet = false;
+  bool m_enableAutoMinorVersionUpgradeHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

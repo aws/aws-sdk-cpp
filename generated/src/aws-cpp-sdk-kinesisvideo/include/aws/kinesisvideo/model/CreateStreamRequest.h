@@ -188,24 +188,24 @@ class CreateStreamRequest : public KinesisVideoRequest {
   ///@}
  private:
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_mediaType;
-  bool m_mediaTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   int m_dataRetentionInHours{0};
-  bool m_dataRetentionInHoursHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   StreamStorageConfiguration m_streamStorageConfiguration;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_streamNameHasBeenSet = false;
+  bool m_mediaTypeHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dataRetentionInHoursHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_streamStorageConfigurationHasBeenSet = false;
 };
 

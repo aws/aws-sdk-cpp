@@ -15,26 +15,39 @@ using namespace Aws::Utils;
 Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_replicationConfigurationTemplateIDHasBeenSet) {
+    payload.WithString("replicationConfigurationTemplateID", m_replicationConfigurationTemplateID);
+  }
+
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
+  }
+
+  if (m_stagingAreaSubnetIdHasBeenSet) {
+    payload.WithString("stagingAreaSubnetId", m_stagingAreaSubnetId);
   }
 
   if (m_associateDefaultSecurityGroupHasBeenSet) {
     payload.WithBool("associateDefaultSecurityGroup", m_associateDefaultSecurityGroup);
   }
 
-  if (m_bandwidthThrottlingHasBeenSet) {
-    payload.WithInt64("bandwidthThrottling", m_bandwidthThrottling);
+  if (m_replicationServersSecurityGroupsIDsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> replicationServersSecurityGroupsIDsJsonList(m_replicationServersSecurityGroupsIDs.size());
+    for (unsigned replicationServersSecurityGroupsIDsIndex = 0;
+         replicationServersSecurityGroupsIDsIndex < replicationServersSecurityGroupsIDsJsonList.GetLength();
+         ++replicationServersSecurityGroupsIDsIndex) {
+      replicationServersSecurityGroupsIDsJsonList[replicationServersSecurityGroupsIDsIndex].AsString(
+          m_replicationServersSecurityGroupsIDs[replicationServersSecurityGroupsIDsIndex]);
+    }
+    payload.WithArray("replicationServersSecurityGroupsIDs", std::move(replicationServersSecurityGroupsIDsJsonList));
   }
 
-  if (m_createPublicIPHasBeenSet) {
-    payload.WithBool("createPublicIP", m_createPublicIP);
+  if (m_replicationServerInstanceTypeHasBeenSet) {
+    payload.WithString("replicationServerInstanceType", m_replicationServerInstanceType);
   }
 
-  if (m_dataPlaneRoutingHasBeenSet) {
-    payload.WithString(
-        "dataPlaneRouting",
-        ReplicationConfigurationDataPlaneRoutingMapper::GetNameForReplicationConfigurationDataPlaneRouting(m_dataPlaneRouting));
+  if (m_useDedicatedReplicationServerHasBeenSet) {
+    payload.WithBool("useDedicatedReplicationServer", m_useDedicatedReplicationServer);
   }
 
   if (m_defaultLargeStagingDiskTypeHasBeenSet) {
@@ -53,27 +66,18 @@ Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() co
     payload.WithString("ebsEncryptionKeyArn", m_ebsEncryptionKeyArn);
   }
 
-  if (m_replicationConfigurationTemplateIDHasBeenSet) {
-    payload.WithString("replicationConfigurationTemplateID", m_replicationConfigurationTemplateID);
+  if (m_bandwidthThrottlingHasBeenSet) {
+    payload.WithInt64("bandwidthThrottling", m_bandwidthThrottling);
   }
 
-  if (m_replicationServerInstanceTypeHasBeenSet) {
-    payload.WithString("replicationServerInstanceType", m_replicationServerInstanceType);
+  if (m_dataPlaneRoutingHasBeenSet) {
+    payload.WithString(
+        "dataPlaneRouting",
+        ReplicationConfigurationDataPlaneRoutingMapper::GetNameForReplicationConfigurationDataPlaneRouting(m_dataPlaneRouting));
   }
 
-  if (m_replicationServersSecurityGroupsIDsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> replicationServersSecurityGroupsIDsJsonList(m_replicationServersSecurityGroupsIDs.size());
-    for (unsigned replicationServersSecurityGroupsIDsIndex = 0;
-         replicationServersSecurityGroupsIDsIndex < replicationServersSecurityGroupsIDsJsonList.GetLength();
-         ++replicationServersSecurityGroupsIDsIndex) {
-      replicationServersSecurityGroupsIDsJsonList[replicationServersSecurityGroupsIDsIndex].AsString(
-          m_replicationServersSecurityGroupsIDs[replicationServersSecurityGroupsIDsIndex]);
-    }
-    payload.WithArray("replicationServersSecurityGroupsIDs", std::move(replicationServersSecurityGroupsIDsJsonList));
-  }
-
-  if (m_stagingAreaSubnetIdHasBeenSet) {
-    payload.WithString("stagingAreaSubnetId", m_stagingAreaSubnetId);
+  if (m_createPublicIPHasBeenSet) {
+    payload.WithBool("createPublicIP", m_createPublicIP);
   }
 
   if (m_stagingAreaTagsHasBeenSet) {
@@ -84,12 +88,12 @@ Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() co
     payload.WithObject("stagingAreaTags", std::move(stagingAreaTagsJsonMap));
   }
 
-  if (m_useDedicatedReplicationServerHasBeenSet) {
-    payload.WithBool("useDedicatedReplicationServer", m_useDedicatedReplicationServer);
-  }
-
   if (m_useFipsEndpointHasBeenSet) {
     payload.WithBool("useFipsEndpoint", m_useFipsEndpoint);
+  }
+
+  if (m_internetProtocolHasBeenSet) {
+    payload.WithString("internetProtocol", InternetProtocolMapper::GetNameForInternetProtocol(m_internetProtocol));
   }
 
   return payload.View().WriteReadable();

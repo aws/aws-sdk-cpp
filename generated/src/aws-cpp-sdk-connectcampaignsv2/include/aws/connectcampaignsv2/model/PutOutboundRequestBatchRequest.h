@@ -72,9 +72,9 @@ class PutOutboundRequestBatchRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<OutboundRequest> m_outboundRequests;
+  bool m_idHasBeenSet = false;
   bool m_outboundRequestsHasBeenSet = false;
 };
 

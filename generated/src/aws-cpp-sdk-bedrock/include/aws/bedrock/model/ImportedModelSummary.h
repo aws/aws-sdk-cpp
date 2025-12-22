@@ -121,18 +121,18 @@ class ImportedModelSummary {
   ///@}
  private:
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   bool m_instructSupported{false};
-  bool m_instructSupportedHasBeenSet = false;
 
   Aws::String m_modelArchitecture;
+  bool m_modelArnHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_instructSupportedHasBeenSet = false;
   bool m_modelArchitectureHasBeenSet = false;
 };
 

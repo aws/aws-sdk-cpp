@@ -165,21 +165,21 @@ class CreateComputationModelRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_computationModelName;
-  bool m_computationModelNameHasBeenSet = false;
 
   Aws::String m_computationModelDescription;
-  bool m_computationModelDescriptionHasBeenSet = false;
 
   ComputationModelConfiguration m_computationModelConfiguration;
-  bool m_computationModelConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, ComputationModelDataBindingValue> m_computationModelDataBinding;
-  bool m_computationModelDataBindingHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_computationModelNameHasBeenSet = false;
+  bool m_computationModelDescriptionHasBeenSet = false;
+  bool m_computationModelConfigurationHasBeenSet = false;
+  bool m_computationModelDataBindingHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

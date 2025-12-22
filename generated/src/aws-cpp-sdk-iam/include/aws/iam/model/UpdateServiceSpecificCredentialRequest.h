@@ -95,12 +95,12 @@ class UpdateServiceSpecificCredentialRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_serviceSpecificCredentialId;
-  bool m_serviceSpecificCredentialIdHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
+  bool m_userNameHasBeenSet = false;
+  bool m_serviceSpecificCredentialIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

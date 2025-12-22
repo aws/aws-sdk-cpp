@@ -125,18 +125,18 @@ class CalculateRoutesResult {
   ///@}
  private:
   GeometryFormat m_legGeometryFormat{GeometryFormat::NOT_SET};
-  bool m_legGeometryFormatHasBeenSet = false;
 
   Aws::Vector<RouteResponseNotice> m_notices;
-  bool m_noticesHasBeenSet = false;
 
   Aws::String m_pricingBucket;
-  bool m_pricingBucketHasBeenSet = false;
 
   Aws::Vector<Route> m_routes;
-  bool m_routesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_legGeometryFormatHasBeenSet = false;
+  bool m_noticesHasBeenSet = false;
+  bool m_pricingBucketHasBeenSet = false;
+  bool m_routesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetUserResult {
   ///@}
  private:
   Aws::Vector<UserAlias> m_userAliases;
-  bool m_userAliasesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userAliasesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

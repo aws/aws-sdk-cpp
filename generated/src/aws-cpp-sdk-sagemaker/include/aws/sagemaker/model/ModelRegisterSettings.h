@@ -72,9 +72,9 @@ class ModelRegisterSettings {
   ///@}
  private:
   FeatureStatus m_status{FeatureStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_crossAccountModelRegisterRoleArn;
+  bool m_statusHasBeenSet = false;
   bool m_crossAccountModelRegisterRoleArnHasBeenSet = false;
 };
 

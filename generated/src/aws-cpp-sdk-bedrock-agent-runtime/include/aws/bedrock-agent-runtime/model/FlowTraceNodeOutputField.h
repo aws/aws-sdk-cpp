@@ -116,15 +116,15 @@ class FlowTraceNodeOutputField {
   ///@}
  private:
   FlowTraceNodeOutputContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<FlowTraceNodeOutputNext> m_next;
-  bool m_nextHasBeenSet = false;
 
   Aws::String m_nodeOutputName;
-  bool m_nodeOutputNameHasBeenSet = false;
 
   FlowNodeIODataType m_type{FlowNodeIODataType::NOT_SET};
+  bool m_contentHasBeenSet = false;
+  bool m_nextHasBeenSet = false;
+  bool m_nodeOutputNameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

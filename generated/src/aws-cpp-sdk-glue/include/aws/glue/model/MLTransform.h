@@ -444,60 +444,60 @@ class MLTransform {
   ///@}
  private:
   Aws::String m_transformId;
-  bool m_transformIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TransformStatusType m_status{TransformStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdOn{};
-  bool m_createdOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
-  bool m_lastModifiedOnHasBeenSet = false;
 
   Aws::Vector<GlueTable> m_inputRecordTables;
-  bool m_inputRecordTablesHasBeenSet = false;
 
   TransformParameters m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   EvaluationMetrics m_evaluationMetrics;
-  bool m_evaluationMetricsHasBeenSet = false;
 
   int m_labelCount{0};
-  bool m_labelCountHasBeenSet = false;
 
   Aws::Vector<SchemaColumn> m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_glueVersion;
-  bool m_glueVersionHasBeenSet = false;
 
   double m_maxCapacity{0.0};
-  bool m_maxCapacityHasBeenSet = false;
 
   WorkerType m_workerType{WorkerType::NOT_SET};
-  bool m_workerTypeHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   int m_maxRetries{0};
-  bool m_maxRetriesHasBeenSet = false;
 
   TransformEncryption m_transformEncryption;
+  bool m_transformIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdOnHasBeenSet = false;
+  bool m_lastModifiedOnHasBeenSet = false;
+  bool m_inputRecordTablesHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_evaluationMetricsHasBeenSet = false;
+  bool m_labelCountHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_glueVersionHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_workerTypeHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_maxRetriesHasBeenSet = false;
   bool m_transformEncryptionHasBeenSet = false;
 };
 

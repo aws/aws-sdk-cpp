@@ -75,9 +75,9 @@ class CancelSpotInstanceRequestsResponse {
   ///@}
  private:
   Aws::Vector<CancelledSpotInstanceRequest> m_cancelledSpotInstanceRequests;
-  bool m_cancelledSpotInstanceRequestsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_cancelledSpotInstanceRequestsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

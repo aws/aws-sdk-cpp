@@ -75,9 +75,9 @@ class FlowTemplateFilter {
   ///@}
  private:
   FlowTemplateFilterName m_name{FlowTemplateFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_value;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

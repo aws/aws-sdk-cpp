@@ -229,39 +229,39 @@ class GetImportFileTaskResult {
   ///@}
  private:
   Aws::Utils::DateTime m_completionTime{};
-  bool m_completionTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_importName;
-  bool m_importNameHasBeenSet = false;
 
   Aws::String m_inputS3Bucket;
-  bool m_inputS3BucketHasBeenSet = false;
 
   Aws::String m_inputS3Key;
-  bool m_inputS3KeyHasBeenSet = false;
 
   int m_numberOfRecordsFailed{0};
-  bool m_numberOfRecordsFailedHasBeenSet = false;
 
   int m_numberOfRecordsSuccess{0};
-  bool m_numberOfRecordsSuccessHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   ImportFileTaskStatus m_status{ImportFileTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReportS3Bucket;
-  bool m_statusReportS3BucketHasBeenSet = false;
 
   Aws::String m_statusReportS3Key;
-  bool m_statusReportS3KeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_completionTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_importNameHasBeenSet = false;
+  bool m_inputS3BucketHasBeenSet = false;
+  bool m_inputS3KeyHasBeenSet = false;
+  bool m_numberOfRecordsFailedHasBeenSet = false;
+  bool m_numberOfRecordsSuccessHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReportS3BucketHasBeenSet = false;
+  bool m_statusReportS3KeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class TransferParticipant {
   ///@}
  private:
   Aws::String m_managementAccountId;
-  bool m_managementAccountIdHasBeenSet = false;
 
   Aws::String m_managementAccountEmail;
+  bool m_managementAccountIdHasBeenSet = false;
   bool m_managementAccountEmailHasBeenSet = false;
 };
 

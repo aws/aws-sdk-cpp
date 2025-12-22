@@ -83,12 +83,12 @@ class ListPolicyAttachmentsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_objectIdentifiers;
-  bool m_objectIdentifiersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_objectIdentifiersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

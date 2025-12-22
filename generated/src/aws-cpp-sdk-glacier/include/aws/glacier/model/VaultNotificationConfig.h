@@ -54,7 +54,7 @@ class VaultNotificationConfig {
 
   ///@{
   /**
-   * <p>A list of one or more events for which Amazon S3 Glacier will send a
+   * <p>A list of one or more events for which Amazon Glacier will send a
    * notification to the specified Amazon SNS topic.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEvents() const { return m_events; }
@@ -78,9 +78,9 @@ class VaultNotificationConfig {
   ///@}
  private:
   Aws::String m_sNSTopic;
-  bool m_sNSTopicHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_events;
+  bool m_sNSTopicHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

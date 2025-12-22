@@ -71,9 +71,9 @@ class ParticipantCapabilities {
   ///@}
  private:
   VideoCapability m_video{VideoCapability::NOT_SET};
-  bool m_videoHasBeenSet = false;
 
   ScreenShareCapability m_screenShare{ScreenShareCapability::NOT_SET};
+  bool m_videoHasBeenSet = false;
   bool m_screenShareHasBeenSet = false;
 };
 

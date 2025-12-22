@@ -71,9 +71,9 @@ class AwsBackupRecoveryPointCalculatedLifecycleDetails {
   ///@}
  private:
   Aws::String m_deleteAt;
-  bool m_deleteAtHasBeenSet = false;
 
   Aws::String m_moveToColdStorageAt;
+  bool m_deleteAtHasBeenSet = false;
   bool m_moveToColdStorageAtHasBeenSet = false;
 };
 

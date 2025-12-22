@@ -282,42 +282,42 @@ class JobTemplate {
   ///@}
  private:
   AccelerationSettings m_accelerationSettings;
-  bool m_accelerationSettingsHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<HopDestination> m_hopDestinations;
-  bool m_hopDestinationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdated{};
-  bool m_lastUpdatedHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_queue;
-  bool m_queueHasBeenSet = false;
 
   JobTemplateSettings m_settings;
-  bool m_settingsHasBeenSet = false;
 
   StatusUpdateInterval m_statusUpdateInterval{StatusUpdateInterval::NOT_SET};
-  bool m_statusUpdateIntervalHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
+  bool m_accelerationSettingsHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_hopDestinationsHasBeenSet = false;
+  bool m_lastUpdatedHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_queueHasBeenSet = false;
+  bool m_settingsHasBeenSet = false;
+  bool m_statusUpdateIntervalHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

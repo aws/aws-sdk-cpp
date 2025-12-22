@@ -65,9 +65,9 @@ class AwsBackupBackupPlanLifecycleDetails {
   ///@}
  private:
   long long m_deleteAfterDays{0};
-  bool m_deleteAfterDaysHasBeenSet = false;
 
   long long m_moveToColdStorageAfterDays{0};
+  bool m_deleteAfterDaysHasBeenSet = false;
   bool m_moveToColdStorageAfterDaysHasBeenSet = false;
 };
 

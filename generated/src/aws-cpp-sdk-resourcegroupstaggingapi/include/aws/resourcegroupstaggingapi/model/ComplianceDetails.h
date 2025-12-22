@@ -101,12 +101,12 @@ class ComplianceDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_noncompliantKeys;
-  bool m_noncompliantKeysHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_keysWithNoncompliantValues;
-  bool m_keysWithNoncompliantValuesHasBeenSet = false;
 
   bool m_complianceStatus{false};
+  bool m_noncompliantKeysHasBeenSet = false;
+  bool m_keysWithNoncompliantValuesHasBeenSet = false;
   bool m_complianceStatusHasBeenSet = false;
 };
 

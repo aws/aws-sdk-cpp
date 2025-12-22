@@ -111,15 +111,15 @@ class ImageScanFindingAggregation {
   ///@}
  private:
   AccountAggregation m_accountAggregation;
-  bool m_accountAggregationHasBeenSet = false;
 
   ImageAggregation m_imageAggregation;
-  bool m_imageAggregationHasBeenSet = false;
 
   ImagePipelineAggregation m_imagePipelineAggregation;
-  bool m_imagePipelineAggregationHasBeenSet = false;
 
   VulnerabilityIdAggregation m_vulnerabilityIdAggregation;
+  bool m_accountAggregationHasBeenSet = false;
+  bool m_imageAggregationHasBeenSet = false;
+  bool m_imagePipelineAggregationHasBeenSet = false;
   bool m_vulnerabilityIdAggregationHasBeenSet = false;
 };
 

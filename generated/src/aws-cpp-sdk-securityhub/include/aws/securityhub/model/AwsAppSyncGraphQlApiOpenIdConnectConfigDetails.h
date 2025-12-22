@@ -108,15 +108,15 @@ class AwsAppSyncGraphQlApiOpenIdConnectConfigDetails {
   ///@}
  private:
   long long m_authTtL{0};
-  bool m_authTtLHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   long long m_iatTtL{0};
-  bool m_iatTtLHasBeenSet = false;
 
   Aws::String m_issuer;
+  bool m_authTtLHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_iatTtLHasBeenSet = false;
   bool m_issuerHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class GetDataQualityModelResultResult {
   ///@}
  private:
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   Aws::Vector<StatisticModelResult> m_model;
-  bool m_modelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_completedOnHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

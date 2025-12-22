@@ -294,45 +294,45 @@ class CreateJobRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_template;
-  bool m_templateHasBeenSet = false;
 
   JobTemplateType m_templateType{JobTemplateType::NOT_SET};
-  bool m_templateTypeHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::Map<Aws::String, JobParameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Attachments m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_storageProfileId;
-  bool m_storageProfileIdHasBeenSet = false;
 
   CreateJobTargetTaskRunStatus m_targetTaskRunStatus{CreateJobTargetTaskRunStatus::NOT_SET};
-  bool m_targetTaskRunStatusHasBeenSet = false;
 
   int m_maxFailedTasksCount{0};
-  bool m_maxFailedTasksCountHasBeenSet = false;
 
   int m_maxRetriesPerTask{0};
-  bool m_maxRetriesPerTaskHasBeenSet = false;
 
   int m_maxWorkerCount{0};
-  bool m_maxWorkerCountHasBeenSet = false;
 
   Aws::String m_sourceJobId;
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_templateHasBeenSet = false;
+  bool m_templateTypeHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
+  bool m_storageProfileIdHasBeenSet = false;
+  bool m_targetTaskRunStatusHasBeenSet = false;
+  bool m_maxFailedTasksCountHasBeenSet = false;
+  bool m_maxRetriesPerTaskHasBeenSet = false;
+  bool m_maxWorkerCountHasBeenSet = false;
   bool m_sourceJobIdHasBeenSet = false;
 };
 

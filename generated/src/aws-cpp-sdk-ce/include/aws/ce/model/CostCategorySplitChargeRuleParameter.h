@@ -74,9 +74,9 @@ class CostCategorySplitChargeRuleParameter {
   ///@}
  private:
   CostCategorySplitChargeRuleParameterType m_type{CostCategorySplitChargeRuleParameterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_typeHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -119,15 +119,15 @@ class CreateWhatIfAnalysisRequest : public ForecastServiceRequest {
   ///@}
  private:
   Aws::String m_whatIfAnalysisName;
-  bool m_whatIfAnalysisNameHasBeenSet = false;
 
   Aws::String m_forecastArn;
-  bool m_forecastArnHasBeenSet = false;
 
   TimeSeriesSelector m_timeSeriesSelector;
-  bool m_timeSeriesSelectorHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_whatIfAnalysisNameHasBeenSet = false;
+  bool m_forecastArnHasBeenSet = false;
+  bool m_timeSeriesSelectorHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

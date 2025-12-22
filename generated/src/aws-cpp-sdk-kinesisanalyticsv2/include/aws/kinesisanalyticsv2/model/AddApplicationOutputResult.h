@@ -102,15 +102,15 @@ class AddApplicationOutputResult {
   ///@}
  private:
   Aws::String m_applicationARN;
-  bool m_applicationARNHasBeenSet = false;
 
   long long m_applicationVersionId{0};
-  bool m_applicationVersionIdHasBeenSet = false;
 
   Aws::Vector<OutputDescription> m_outputDescriptions;
-  bool m_outputDescriptionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationARNHasBeenSet = false;
+  bool m_applicationVersionIdHasBeenSet = false;
+  bool m_outputDescriptionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

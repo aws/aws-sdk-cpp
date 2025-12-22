@@ -95,9 +95,9 @@ class ProductionVariantCoreDumpConfig {
   ///@}
  private:
   Aws::String m_destinationS3Uri;
-  bool m_destinationS3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
+  bool m_destinationS3UriHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
 };
 

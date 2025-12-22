@@ -86,12 +86,12 @@ class ResoldEnterprise {
   ///@}
  private:
   Coverage m_coverage{Coverage::NOT_SET};
-  bool m_coverageHasBeenSet = false;
 
   Aws::String m_tamLocation;
-  bool m_tamLocationHasBeenSet = false;
 
   Aws::String m_chargeAccountId;
+  bool m_coverageHasBeenSet = false;
+  bool m_tamLocationHasBeenSet = false;
   bool m_chargeAccountIdHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class RecognizedBotMember {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botName;
+  bool m_botIdHasBeenSet = false;
   bool m_botNameHasBeenSet = false;
 };
 

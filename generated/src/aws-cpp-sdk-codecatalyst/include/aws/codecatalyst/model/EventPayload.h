@@ -69,9 +69,9 @@ class EventPayload {
   ///@}
  private:
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_data;
+  bool m_contentTypeHasBeenSet = false;
   bool m_dataHasBeenSet = false;
 };
 

@@ -139,21 +139,21 @@ class ListRecommendationResourcesRequest : public TrustedAdvisorRequest {
   ///@}
  private:
   ExclusionStatus m_exclusionStatus{ExclusionStatus::NOT_SET};
-  bool m_exclusionStatusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_recommendationIdentifier;
-  bool m_recommendationIdentifierHasBeenSet = false;
 
   Aws::String m_regionCode;
-  bool m_regionCodeHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
+  bool m_exclusionStatusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_recommendationIdentifierHasBeenSet = false;
+  bool m_regionCodeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

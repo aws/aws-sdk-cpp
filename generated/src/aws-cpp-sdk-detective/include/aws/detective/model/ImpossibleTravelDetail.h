@@ -122,18 +122,18 @@ class ImpossibleTravelDetail {
   ///@}
  private:
   Aws::String m_startingIpAddress;
-  bool m_startingIpAddressHasBeenSet = false;
 
   Aws::String m_endingIpAddress;
-  bool m_endingIpAddressHasBeenSet = false;
 
   Aws::String m_startingLocation;
-  bool m_startingLocationHasBeenSet = false;
 
   Aws::String m_endingLocation;
-  bool m_endingLocationHasBeenSet = false;
 
   int m_hourlyTimeDelta{0};
+  bool m_startingIpAddressHasBeenSet = false;
+  bool m_endingIpAddressHasBeenSet = false;
+  bool m_startingLocationHasBeenSet = false;
+  bool m_endingLocationHasBeenSet = false;
   bool m_hourlyTimeDeltaHasBeenSet = false;
 };
 

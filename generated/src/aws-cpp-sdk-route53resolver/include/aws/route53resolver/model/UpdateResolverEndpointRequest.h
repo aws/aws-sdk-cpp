@@ -151,21 +151,74 @@ class UpdateResolverEndpointRequest : public Route53ResolverRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Updates whether RNI enhanced metrics are enabled for the Resolver endpoints.
+   * When set to true, one-minute granular metrics are published in CloudWatch for
+   * each RNI associated with this endpoint. When set to false, metrics are not
+   * published.</p>  <p>Standard CloudWatch pricing and charges are applied for
+   * using the Route 53 Resolver endpoint RNI enhanced metrics. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+   * metrics</a>.</p>
+   */
+  inline bool GetRniEnhancedMetricsEnabled() const { return m_rniEnhancedMetricsEnabled; }
+  inline bool RniEnhancedMetricsEnabledHasBeenSet() const { return m_rniEnhancedMetricsEnabledHasBeenSet; }
+  inline void SetRniEnhancedMetricsEnabled(bool value) {
+    m_rniEnhancedMetricsEnabledHasBeenSet = true;
+    m_rniEnhancedMetricsEnabled = value;
+  }
+  inline UpdateResolverEndpointRequest& WithRniEnhancedMetricsEnabled(bool value) {
+    SetRniEnhancedMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Updates whether target name server metrics are enabled for the outbound
+   * Resolver endpoints. When set to true, one-minute granular metrics are published
+   * in CloudWatch for each target name server associated with this endpoint. When
+   * set to false, metrics are not published. This setting is not supported for
+   * inbound Resolver endpoints.</p>  <p>Standard CloudWatch pricing and
+   * charges are applied for using the Route 53 Resolver endpoint target name server
+   * metrics. For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-resolver-with-cloudwatch.html">Detailed
+   * metrics</a>.</p>
+   */
+  inline bool GetTargetNameServerMetricsEnabled() const { return m_targetNameServerMetricsEnabled; }
+  inline bool TargetNameServerMetricsEnabledHasBeenSet() const { return m_targetNameServerMetricsEnabledHasBeenSet; }
+  inline void SetTargetNameServerMetricsEnabled(bool value) {
+    m_targetNameServerMetricsEnabledHasBeenSet = true;
+    m_targetNameServerMetricsEnabled = value;
+  }
+  inline UpdateResolverEndpointRequest& WithTargetNameServerMetricsEnabled(bool value) {
+    SetTargetNameServerMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resolverEndpointId;
-  bool m_resolverEndpointIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ResolverEndpointType m_resolverEndpointType{ResolverEndpointType::NOT_SET};
-  bool m_resolverEndpointTypeHasBeenSet = false;
 
   Aws::Vector<UpdateIpAddress> m_updateIpAddresses;
-  bool m_updateIpAddressesHasBeenSet = false;
 
   Aws::Vector<Protocol> m_protocols;
+
+  bool m_rniEnhancedMetricsEnabled{false};
+
+  bool m_targetNameServerMetricsEnabled{false};
+  bool m_resolverEndpointIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_resolverEndpointTypeHasBeenSet = false;
+  bool m_updateIpAddressesHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
+  bool m_rniEnhancedMetricsEnabledHasBeenSet = false;
+  bool m_targetNameServerMetricsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

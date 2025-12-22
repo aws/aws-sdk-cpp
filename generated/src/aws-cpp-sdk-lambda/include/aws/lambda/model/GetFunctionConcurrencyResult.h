@@ -57,9 +57,9 @@ class GetFunctionConcurrencyResult {
   ///@}
  private:
   int m_reservedConcurrentExecutions{0};
-  bool m_reservedConcurrentExecutionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reservedConcurrentExecutionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

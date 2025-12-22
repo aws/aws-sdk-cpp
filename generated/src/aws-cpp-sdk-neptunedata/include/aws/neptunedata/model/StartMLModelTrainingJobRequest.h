@@ -382,57 +382,57 @@ class StartMLModelTrainingJobRequest : public NeptunedataRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_previousModelTrainingJobId;
-  bool m_previousModelTrainingJobIdHasBeenSet = false;
 
   Aws::String m_dataProcessingJobId;
-  bool m_dataProcessingJobIdHasBeenSet = false;
 
   Aws::String m_trainModelS3Location;
-  bool m_trainModelS3LocationHasBeenSet = false;
 
   Aws::String m_sagemakerIamRoleArn;
-  bool m_sagemakerIamRoleArnHasBeenSet = false;
 
   Aws::String m_neptuneIamRoleArn;
-  bool m_neptuneIamRoleArnHasBeenSet = false;
 
   Aws::String m_baseProcessingInstanceType;
-  bool m_baseProcessingInstanceTypeHasBeenSet = false;
 
   Aws::String m_trainingInstanceType;
-  bool m_trainingInstanceTypeHasBeenSet = false;
 
   int m_trainingInstanceVolumeSizeInGB{0};
-  bool m_trainingInstanceVolumeSizeInGBHasBeenSet = false;
 
   int m_trainingTimeOutInSeconds{0};
-  bool m_trainingTimeOutInSecondsHasBeenSet = false;
 
   int m_maxHPONumberOfTrainingJobs{0};
-  bool m_maxHPONumberOfTrainingJobsHasBeenSet = false;
 
   int m_maxHPOParallelTrainingJobs{0};
-  bool m_maxHPOParallelTrainingJobsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_volumeEncryptionKMSKey;
-  bool m_volumeEncryptionKMSKeyHasBeenSet = false;
 
   Aws::String m_s3OutputEncryptionKMSKey;
-  bool m_s3OutputEncryptionKMSKeyHasBeenSet = false;
 
   bool m_enableManagedSpotTraining{false};
-  bool m_enableManagedSpotTrainingHasBeenSet = false;
 
   CustomModelTrainingParameters m_customModelTrainingParameters;
+  bool m_idHasBeenSet = false;
+  bool m_previousModelTrainingJobIdHasBeenSet = false;
+  bool m_dataProcessingJobIdHasBeenSet = false;
+  bool m_trainModelS3LocationHasBeenSet = false;
+  bool m_sagemakerIamRoleArnHasBeenSet = false;
+  bool m_neptuneIamRoleArnHasBeenSet = false;
+  bool m_baseProcessingInstanceTypeHasBeenSet = false;
+  bool m_trainingInstanceTypeHasBeenSet = false;
+  bool m_trainingInstanceVolumeSizeInGBHasBeenSet = false;
+  bool m_trainingTimeOutInSecondsHasBeenSet = false;
+  bool m_maxHPONumberOfTrainingJobsHasBeenSet = false;
+  bool m_maxHPOParallelTrainingJobsHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_volumeEncryptionKMSKeyHasBeenSet = false;
+  bool m_s3OutputEncryptionKMSKeyHasBeenSet = false;
+  bool m_enableManagedSpotTrainingHasBeenSet = false;
   bool m_customModelTrainingParametersHasBeenSet = false;
 };
 

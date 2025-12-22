@@ -111,15 +111,15 @@ class CreateCodeSigningConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AllowedPublishers m_allowedPublishers;
-  bool m_allowedPublishersHasBeenSet = false;
 
   CodeSigningPolicies m_codeSigningPolicies;
-  bool m_codeSigningPoliciesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_descriptionHasBeenSet = false;
+  bool m_allowedPublishersHasBeenSet = false;
+  bool m_codeSigningPoliciesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

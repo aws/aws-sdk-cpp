@@ -88,12 +88,12 @@ class ListAccountSettingsResult {
   ///@}
  private:
   Aws::Vector<Setting> m_settings;
-  bool m_settingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_settingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

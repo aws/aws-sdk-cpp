@@ -136,18 +136,18 @@ class AcceptSubscriptionRequestRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::Vector<AssetPermission> m_assetPermissions;
-  bool m_assetPermissionsHasBeenSet = false;
 
   Aws::Vector<AcceptedAssetScope> m_assetScopes;
-  bool m_assetScopesHasBeenSet = false;
 
   Aws::String m_decisionComment;
-  bool m_decisionCommentHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
+  bool m_assetPermissionsHasBeenSet = false;
+  bool m_assetScopesHasBeenSet = false;
+  bool m_decisionCommentHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
 };
 

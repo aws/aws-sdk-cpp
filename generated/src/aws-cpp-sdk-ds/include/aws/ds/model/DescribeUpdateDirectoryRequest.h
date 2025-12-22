@@ -104,15 +104,15 @@ class DescribeUpdateDirectoryRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   UpdateType m_updateType{UpdateType::NOT_SET};
-  bool m_updateTypeHasBeenSet = false;
 
   Aws::String m_regionName;
-  bool m_regionNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_updateTypeHasBeenSet = false;
+  bool m_regionNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

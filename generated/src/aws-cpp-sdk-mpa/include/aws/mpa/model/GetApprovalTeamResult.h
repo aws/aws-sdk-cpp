@@ -324,51 +324,51 @@ class GetApprovalTeamResult {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   ApprovalStrategyResponse m_approvalStrategy;
-  bool m_approvalStrategyHasBeenSet = false;
 
   int m_numberOfApprovers{0};
-  bool m_numberOfApproversHasBeenSet = false;
 
   Aws::Vector<GetApprovalTeamResponseApprover> m_approvers;
-  bool m_approversHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ApprovalTeamStatus m_status{ApprovalTeamStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ApprovalTeamStatusCode m_statusCode{ApprovalTeamStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_updateSessionArn;
-  bool m_updateSessionArnHasBeenSet = false;
 
   Aws::String m_versionId;
-  bool m_versionIdHasBeenSet = false;
 
   Aws::Vector<PolicyReference> m_policies;
-  bool m_policiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   PendingUpdate m_pendingUpdate;
-  bool m_pendingUpdateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_approvalStrategyHasBeenSet = false;
+  bool m_numberOfApproversHasBeenSet = false;
+  bool m_approversHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_updateSessionArnHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_policiesHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_pendingUpdateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

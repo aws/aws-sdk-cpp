@@ -68,9 +68,9 @@ class KGKeyPairIds {
   ///@}
  private:
   Aws::String m_keyGroupId;
-  bool m_keyGroupIdHasBeenSet = false;
 
   KeyPairIds m_keyPairIds;
+  bool m_keyGroupIdHasBeenSet = false;
   bool m_keyPairIdsHasBeenSet = false;
 };
 

@@ -306,45 +306,45 @@ class AwsS3BucketDetails {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ownerName;
-  bool m_ownerNameHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_createdAt;
-  bool m_createdAtHasBeenSet = false;
 
   AwsS3BucketServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
-  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
 
   AwsS3BucketBucketLifecycleConfigurationDetails m_bucketLifecycleConfiguration;
-  bool m_bucketLifecycleConfigurationHasBeenSet = false;
 
   AwsS3AccountPublicAccessBlockDetails m_publicAccessBlockConfiguration;
-  bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
   Aws::String m_accessControlList;
-  bool m_accessControlListHasBeenSet = false;
 
   AwsS3BucketLoggingConfiguration m_bucketLoggingConfiguration;
-  bool m_bucketLoggingConfigurationHasBeenSet = false;
 
   AwsS3BucketWebsiteConfiguration m_bucketWebsiteConfiguration;
-  bool m_bucketWebsiteConfigurationHasBeenSet = false;
 
   AwsS3BucketNotificationConfiguration m_bucketNotificationConfiguration;
-  bool m_bucketNotificationConfigurationHasBeenSet = false;
 
   AwsS3BucketBucketVersioningConfiguration m_bucketVersioningConfiguration;
-  bool m_bucketVersioningConfigurationHasBeenSet = false;
 
   AwsS3BucketObjectLockConfiguration m_objectLockConfiguration;
-  bool m_objectLockConfigurationHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ownerNameHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_serverSideEncryptionConfigurationHasBeenSet = false;
+  bool m_bucketLifecycleConfigurationHasBeenSet = false;
+  bool m_publicAccessBlockConfigurationHasBeenSet = false;
+  bool m_accessControlListHasBeenSet = false;
+  bool m_bucketLoggingConfigurationHasBeenSet = false;
+  bool m_bucketWebsiteConfigurationHasBeenSet = false;
+  bool m_bucketNotificationConfigurationHasBeenSet = false;
+  bool m_bucketVersioningConfigurationHasBeenSet = false;
+  bool m_objectLockConfigurationHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class PutDefaultEncryptionConfigurationRequest : public IoTManagedIntegrationsRe
   ///@}
  private:
   EncryptionType m_encryptionType{EncryptionType::NOT_SET};
-  bool m_encryptionTypeHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
+  bool m_encryptionTypeHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
 };
 

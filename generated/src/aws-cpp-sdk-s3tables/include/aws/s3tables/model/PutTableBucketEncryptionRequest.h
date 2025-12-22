@@ -66,9 +66,9 @@ class PutTableBucketEncryptionRequest : public S3TablesRequest {
   ///@}
  private:
   Aws::String m_tableBucketARN;
-  bool m_tableBucketARNHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_tableBucketARNHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

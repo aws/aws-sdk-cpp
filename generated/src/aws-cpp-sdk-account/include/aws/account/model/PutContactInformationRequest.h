@@ -42,13 +42,13 @@ class PutContactInformationRequest : public AccountRequest {
    * must have <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
    * features enabled</a>, and the organization must have <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">trusted
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-account.html">trusted
    * access</a> enabled for the Account Management service, and optionally a <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#delegated-admin">delegated
-   * admin</a> account assigned.</p>  <p>The management account can't specify
-   * its own <code>AccountId</code>. It must call the operation in standalone context
-   * by not including the <code>AccountId</code> parameter.</p>  <p>To call
-   * this operation on an account that is not a member of an organization, don't
+   * administrator</a> account assigned.</p>  <p>The management account can't
+   * specify its own <code>AccountId</code>. It must call the operation in standalone
+   * context by not including the <code>AccountId</code> parameter.</p>  <p>To
+   * call this operation on an account that is not a member of an organization, don't
    * specify this parameter. Instead, call the operation using an identity belonging
    * to the account whose contacts you wish to retrieve or modify.</p>
    */
@@ -86,9 +86,9 @@ class PutContactInformationRequest : public AccountRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   ContactInformation m_contactInformation;
+  bool m_accountIdHasBeenSet = false;
   bool m_contactInformationHasBeenSet = false;
 };
 

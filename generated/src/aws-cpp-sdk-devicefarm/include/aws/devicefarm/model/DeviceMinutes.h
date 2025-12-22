@@ -82,12 +82,12 @@ class DeviceMinutes {
   ///@}
  private:
   double m_total{0.0};
-  bool m_totalHasBeenSet = false;
 
   double m_metered{0.0};
-  bool m_meteredHasBeenSet = false;
 
   double m_unmetered{0.0};
+  bool m_totalHasBeenSet = false;
+  bool m_meteredHasBeenSet = false;
   bool m_unmeteredHasBeenSet = false;
 };
 

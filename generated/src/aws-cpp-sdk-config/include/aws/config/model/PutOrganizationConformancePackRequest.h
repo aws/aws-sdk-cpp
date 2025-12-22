@@ -184,24 +184,24 @@ class PutOrganizationConformancePackRequest : public ConfigServiceRequest {
   ///@}
  private:
   Aws::String m_organizationConformancePackName;
-  bool m_organizationConformancePackNameHasBeenSet = false;
 
   Aws::String m_templateS3Uri;
-  bool m_templateS3UriHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_deliveryS3Bucket;
-  bool m_deliveryS3BucketHasBeenSet = false;
 
   Aws::String m_deliveryS3KeyPrefix;
-  bool m_deliveryS3KeyPrefixHasBeenSet = false;
 
   Aws::Vector<ConformancePackInputParameter> m_conformancePackInputParameters;
-  bool m_conformancePackInputParametersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_excludedAccounts;
+  bool m_organizationConformancePackNameHasBeenSet = false;
+  bool m_templateS3UriHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_deliveryS3BucketHasBeenSet = false;
+  bool m_deliveryS3KeyPrefixHasBeenSet = false;
+  bool m_conformancePackInputParametersHasBeenSet = false;
   bool m_excludedAccountsHasBeenSet = false;
 };
 

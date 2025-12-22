@@ -88,12 +88,12 @@ class ScheduledWindowExecution {
   ///@}
  private:
   Aws::String m_windowId;
-  bool m_windowIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_executionTime;
+  bool m_windowIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_executionTimeHasBeenSet = false;
 };
 

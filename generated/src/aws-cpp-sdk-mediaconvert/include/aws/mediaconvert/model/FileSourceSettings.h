@@ -210,27 +210,27 @@ class FileSourceSettings {
   ///@}
  private:
   CaptionSourceByteRateLimit m_byteRateLimit{CaptionSourceByteRateLimit::NOT_SET};
-  bool m_byteRateLimitHasBeenSet = false;
 
   FileSourceConvert608To708 m_convert608To708{FileSourceConvert608To708::NOT_SET};
-  bool m_convert608To708HasBeenSet = false;
 
   CaptionSourceConvertPaintOnToPopOn m_convertPaintToPop{CaptionSourceConvertPaintOnToPopOn::NOT_SET};
-  bool m_convertPaintToPopHasBeenSet = false;
 
   CaptionSourceFramerate m_framerate;
-  bool m_framerateHasBeenSet = false;
 
   Aws::String m_sourceFile;
-  bool m_sourceFileHasBeenSet = false;
 
   int m_timeDelta{0};
-  bool m_timeDeltaHasBeenSet = false;
 
   FileSourceTimeDeltaUnits m_timeDeltaUnits{FileSourceTimeDeltaUnits::NOT_SET};
-  bool m_timeDeltaUnitsHasBeenSet = false;
 
   CaptionSourceUpconvertSTLToTeletext m_upconvertSTLToTeletext{CaptionSourceUpconvertSTLToTeletext::NOT_SET};
+  bool m_byteRateLimitHasBeenSet = false;
+  bool m_convert608To708HasBeenSet = false;
+  bool m_convertPaintToPopHasBeenSet = false;
+  bool m_framerateHasBeenSet = false;
+  bool m_sourceFileHasBeenSet = false;
+  bool m_timeDeltaHasBeenSet = false;
+  bool m_timeDeltaUnitsHasBeenSet = false;
   bool m_upconvertSTLToTeletextHasBeenSet = false;
 };
 

@@ -152,21 +152,21 @@ class ListIngestionJobsRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_knowledgeBaseId;
-  bool m_knowledgeBaseIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::Vector<IngestionJobFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   IngestionJobSortBy m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -28,10 +28,8 @@ class DescribeAlarmContributorsRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The name of the alarm for which to retrieve contributor information.</p>
@@ -70,9 +68,9 @@ class DescribeAlarmContributorsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_alarmNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

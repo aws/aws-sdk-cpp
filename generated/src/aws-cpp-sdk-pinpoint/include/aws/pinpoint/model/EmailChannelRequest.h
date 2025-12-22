@@ -148,21 +148,21 @@ class EmailChannelRequest {
   ///@}
  private:
   Aws::String m_configurationSet;
-  bool m_configurationSetHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_fromAddress;
-  bool m_fromAddressHasBeenSet = false;
 
   Aws::String m_identity;
-  bool m_identityHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_orchestrationSendingRoleArn;
+  bool m_configurationSetHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_fromAddressHasBeenSet = false;
+  bool m_identityHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_orchestrationSendingRoleArnHasBeenSet = false;
 };
 

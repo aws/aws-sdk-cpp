@@ -138,18 +138,18 @@ class CreateWirelessGatewayTaskDefinitionRequest : public IoTWirelessRequest {
   ///@}
  private:
   bool m_autoCreateTasks{false};
-  bool m_autoCreateTasksHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   UpdateWirelessGatewayTaskCreate m_update;
-  bool m_updateHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_autoCreateTasksHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_updateHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

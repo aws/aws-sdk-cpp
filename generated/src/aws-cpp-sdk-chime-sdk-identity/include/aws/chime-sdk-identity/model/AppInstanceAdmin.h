@@ -90,12 +90,12 @@ class AppInstanceAdmin {
   ///@}
  private:
   Identity m_admin;
-  bool m_adminHasBeenSet = false;
 
   Aws::String m_appInstanceArn;
-  bool m_appInstanceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
+  bool m_adminHasBeenSet = false;
+  bool m_appInstanceArnHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

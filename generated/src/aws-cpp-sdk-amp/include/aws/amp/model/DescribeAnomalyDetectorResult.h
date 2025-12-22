@@ -61,9 +61,9 @@ class DescribeAnomalyDetectorResult {
   ///@}
  private:
   AnomalyDetectorDescription m_anomalyDetector;
-  bool m_anomalyDetectorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_anomalyDetectorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

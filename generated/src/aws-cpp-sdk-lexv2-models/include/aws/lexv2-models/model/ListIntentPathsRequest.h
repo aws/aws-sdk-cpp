@@ -135,18 +135,18 @@ class ListIntentPathsRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDateTime{};
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::String m_intentPath;
-  bool m_intentPathHasBeenSet = false;
 
   Aws::Vector<AnalyticsPathFilter> m_filters;
+  bool m_botIdHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_intentPathHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
 };
 

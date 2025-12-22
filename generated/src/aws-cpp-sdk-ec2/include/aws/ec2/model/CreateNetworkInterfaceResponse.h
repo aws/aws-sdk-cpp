@@ -79,12 +79,12 @@ class CreateNetworkInterfaceResponse {
   ///@}
  private:
   NetworkInterface m_networkInterface;
-  bool m_networkInterfaceHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInterfaceHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

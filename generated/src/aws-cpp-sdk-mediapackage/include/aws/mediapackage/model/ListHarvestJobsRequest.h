@@ -105,15 +105,15 @@ class ListHarvestJobsRequest : public MediaPackageRequest {
   ///@}
  private:
   Aws::String m_includeChannelId;
-  bool m_includeChannelIdHasBeenSet = false;
 
   Aws::String m_includeStatus;
-  bool m_includeStatusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_includeChannelIdHasBeenSet = false;
+  bool m_includeStatusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

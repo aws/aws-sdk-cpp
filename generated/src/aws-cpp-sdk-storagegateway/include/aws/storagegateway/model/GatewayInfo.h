@@ -244,36 +244,36 @@ class GatewayInfo {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_gatewayType;
-  bool m_gatewayTypeHasBeenSet = false;
 
   Aws::String m_gatewayOperationalState;
-  bool m_gatewayOperationalStateHasBeenSet = false;
 
   Aws::String m_gatewayName;
-  bool m_gatewayNameHasBeenSet = false;
 
   Aws::String m_ec2InstanceId;
-  bool m_ec2InstanceIdHasBeenSet = false;
 
   Aws::String m_ec2InstanceRegion;
-  bool m_ec2InstanceRegionHasBeenSet = false;
 
   HostEnvironment m_hostEnvironment{HostEnvironment::NOT_SET};
-  bool m_hostEnvironmentHasBeenSet = false;
 
   Aws::String m_hostEnvironmentId;
-  bool m_hostEnvironmentIdHasBeenSet = false;
 
   Aws::String m_deprecationDate;
-  bool m_deprecationDateHasBeenSet = false;
 
   Aws::String m_softwareVersion;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_gatewayARNHasBeenSet = false;
+  bool m_gatewayTypeHasBeenSet = false;
+  bool m_gatewayOperationalStateHasBeenSet = false;
+  bool m_gatewayNameHasBeenSet = false;
+  bool m_ec2InstanceIdHasBeenSet = false;
+  bool m_ec2InstanceRegionHasBeenSet = false;
+  bool m_hostEnvironmentHasBeenSet = false;
+  bool m_hostEnvironmentIdHasBeenSet = false;
+  bool m_deprecationDateHasBeenSet = false;
   bool m_softwareVersionHasBeenSet = false;
 };
 

@@ -119,18 +119,18 @@ class GetPrincipalTagAttributeMapResult {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::String m_identityProviderName;
-  bool m_identityProviderNameHasBeenSet = false;
 
   bool m_useDefaults{false};
-  bool m_useDefaultsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_principalTags;
-  bool m_principalTagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_identityProviderNameHasBeenSet = false;
+  bool m_useDefaultsHasBeenSet = false;
+  bool m_principalTagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

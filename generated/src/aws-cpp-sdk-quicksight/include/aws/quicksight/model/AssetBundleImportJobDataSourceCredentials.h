@@ -74,9 +74,9 @@ class AssetBundleImportJobDataSourceCredentials {
   ///@}
  private:
   AssetBundleImportJobDataSourceCredentialPair m_credentialPair;
-  bool m_credentialPairHasBeenSet = false;
 
   Aws::String m_secretArn;
+  bool m_credentialPairHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
 };
 

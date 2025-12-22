@@ -285,39 +285,39 @@ class AacSettings {
   ///@}
  private:
   AacAudioDescriptionBroadcasterMix m_audioDescriptionBroadcasterMix{AacAudioDescriptionBroadcasterMix::NOT_SET};
-  bool m_audioDescriptionBroadcasterMixHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   AacCodecProfile m_codecProfile{AacCodecProfile::NOT_SET};
-  bool m_codecProfileHasBeenSet = false;
 
   AacCodingMode m_codingMode{AacCodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   AacLoudnessMeasurementMode m_loudnessMeasurementMode{AacLoudnessMeasurementMode::NOT_SET};
-  bool m_loudnessMeasurementModeHasBeenSet = false;
 
   int m_rapInterval{0};
-  bool m_rapIntervalHasBeenSet = false;
 
   AacRateControlMode m_rateControlMode{AacRateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   AacRawFormat m_rawFormat{AacRawFormat::NOT_SET};
-  bool m_rawFormatHasBeenSet = false;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   AacSpecification m_specification{AacSpecification::NOT_SET};
-  bool m_specificationHasBeenSet = false;
 
   int m_targetLoudnessRange{0};
-  bool m_targetLoudnessRangeHasBeenSet = false;
 
   AacVbrQuality m_vbrQuality{AacVbrQuality::NOT_SET};
+  bool m_audioDescriptionBroadcasterMixHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_codecProfileHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
+  bool m_loudnessMeasurementModeHasBeenSet = false;
+  bool m_rapIntervalHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_rawFormatHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_specificationHasBeenSet = false;
+  bool m_targetLoudnessRangeHasBeenSet = false;
   bool m_vbrQualityHasBeenSet = false;
 };
 

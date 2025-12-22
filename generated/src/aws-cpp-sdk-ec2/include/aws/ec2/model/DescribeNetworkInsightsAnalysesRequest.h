@@ -197,27 +197,27 @@ class DescribeNetworkInsightsAnalysesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_networkInsightsAnalysisIds;
-  bool m_networkInsightsAnalysisIdsHasBeenSet = false;
 
   Aws::String m_networkInsightsPathId;
-  bool m_networkInsightsPathIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_analysisStartTime{};
-  bool m_analysisStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_analysisEndTime{};
-  bool m_analysisEndTimeHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_networkInsightsAnalysisIdsHasBeenSet = false;
+  bool m_networkInsightsPathIdHasBeenSet = false;
+  bool m_analysisStartTimeHasBeenSet = false;
+  bool m_analysisEndTimeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

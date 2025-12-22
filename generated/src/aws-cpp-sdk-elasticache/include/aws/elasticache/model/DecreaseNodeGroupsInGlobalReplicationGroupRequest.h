@@ -142,18 +142,18 @@ class DecreaseNodeGroupsInGlobalReplicationGroupRequest : public ElastiCacheRequ
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   int m_nodeGroupCount{0};
-  bool m_nodeGroupCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_globalNodeGroupsToRemove;
-  bool m_globalNodeGroupsToRemoveHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_globalNodeGroupsToRetain;
-  bool m_globalNodeGroupsToRetainHasBeenSet = false;
 
   bool m_applyImmediately{false};
+  bool m_globalReplicationGroupIdHasBeenSet = false;
+  bool m_nodeGroupCountHasBeenSet = false;
+  bool m_globalNodeGroupsToRemoveHasBeenSet = false;
+  bool m_globalNodeGroupsToRetainHasBeenSet = false;
   bool m_applyImmediatelyHasBeenSet = false;
 };
 

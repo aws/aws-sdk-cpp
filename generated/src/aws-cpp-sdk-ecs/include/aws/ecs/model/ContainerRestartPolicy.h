@@ -103,12 +103,12 @@ class ContainerRestartPolicy {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<int> m_ignoredExitCodes;
-  bool m_ignoredExitCodesHasBeenSet = false;
 
   int m_restartAttemptPeriod{0};
+  bool m_enabledHasBeenSet = false;
+  bool m_ignoredExitCodesHasBeenSet = false;
   bool m_restartAttemptPeriodHasBeenSet = false;
 };
 

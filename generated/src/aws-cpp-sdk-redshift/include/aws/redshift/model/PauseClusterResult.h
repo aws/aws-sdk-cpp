@@ -58,9 +58,9 @@ class PauseClusterResult {
   ///@}
  private:
   Cluster m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_clusterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

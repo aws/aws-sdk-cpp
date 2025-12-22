@@ -99,15 +99,15 @@ class StartConnectionRequest : public OutpostsRequest {
   ///@}
  private:
   Aws::String m_deviceSerialNumber;
-  bool m_deviceSerialNumberHasBeenSet = false;
 
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_clientPublicKey;
-  bool m_clientPublicKeyHasBeenSet = false;
 
   int m_networkInterfaceDeviceIndex{0};
+  bool m_deviceSerialNumberHasBeenSet = false;
+  bool m_assetIdHasBeenSet = false;
+  bool m_clientPublicKeyHasBeenSet = false;
   bool m_networkInterfaceDeviceIndexHasBeenSet = false;
 };
 

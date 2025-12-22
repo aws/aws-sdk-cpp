@@ -75,9 +75,9 @@ class InvalidChangeBatch {
   ///@}
  private:
   Aws::Vector<Aws::String> m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_messagesHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

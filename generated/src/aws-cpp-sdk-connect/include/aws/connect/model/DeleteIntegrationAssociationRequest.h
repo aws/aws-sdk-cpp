@@ -67,9 +67,9 @@ class DeleteIntegrationAssociationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_integrationAssociationId;
+  bool m_instanceIdHasBeenSet = false;
   bool m_integrationAssociationIdHasBeenSet = false;
 };
 

@@ -91,15 +91,15 @@ class CreateProvisioningTemplateResult {
   ///@}
  private:
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   int m_defaultVersionId{0};
-  bool m_defaultVersionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_defaultVersionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

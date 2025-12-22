@@ -90,12 +90,12 @@ class AttachClusterNodeVolumeRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_volumeId;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
   bool m_volumeIdHasBeenSet = false;
 };
 

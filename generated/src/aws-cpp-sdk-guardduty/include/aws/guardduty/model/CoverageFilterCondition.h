@@ -84,9 +84,9 @@ class CoverageFilterCondition {
   ///@}
  private:
   Aws::Vector<Aws::String> m_equals;
-  bool m_equalsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notEquals;
+  bool m_equalsHasBeenSet = false;
   bool m_notEqualsHasBeenSet = false;
 };
 

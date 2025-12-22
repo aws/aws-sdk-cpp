@@ -106,15 +106,15 @@ class BatchUpdateFindingsV2UnprocessedFinding {
   ///@}
  private:
   OcsfFindingIdentifier m_findingIdentifier;
-  bool m_findingIdentifierHasBeenSet = false;
 
   Aws::String m_metadataUid;
-  bool m_metadataUidHasBeenSet = false;
 
   BatchUpdateFindingsV2UnprocessedFindingErrorCode m_errorCode{BatchUpdateFindingsV2UnprocessedFindingErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_findingIdentifierHasBeenSet = false;
+  bool m_metadataUidHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

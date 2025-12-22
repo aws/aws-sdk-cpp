@@ -105,15 +105,15 @@ class DescribeProvisionedProductPlanResult {
   ///@}
  private:
   ProvisionedProductPlanDetails m_provisionedProductPlanDetails;
-  bool m_provisionedProductPlanDetailsHasBeenSet = false;
 
   Aws::Vector<ResourceChange> m_resourceChanges;
-  bool m_resourceChangesHasBeenSet = false;
 
   Aws::String m_nextPageToken;
-  bool m_nextPageTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_provisionedProductPlanDetailsHasBeenSet = false;
+  bool m_resourceChangesHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

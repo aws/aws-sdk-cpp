@@ -77,12 +77,12 @@ class GetPipelineBlueprintResult {
   ///@}
  private:
   PipelineBlueprint m_blueprint;
-  bool m_blueprintHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_blueprintHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

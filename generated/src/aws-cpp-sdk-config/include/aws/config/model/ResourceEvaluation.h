@@ -86,12 +86,12 @@ class ResourceEvaluation {
   ///@}
  private:
   Aws::String m_resourceEvaluationId;
-  bool m_resourceEvaluationIdHasBeenSet = false;
 
   EvaluationMode m_evaluationMode{EvaluationMode::NOT_SET};
-  bool m_evaluationModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationStartTimestamp{};
+  bool m_resourceEvaluationIdHasBeenSet = false;
+  bool m_evaluationModeHasBeenSet = false;
   bool m_evaluationStartTimestampHasBeenSet = false;
 };
 

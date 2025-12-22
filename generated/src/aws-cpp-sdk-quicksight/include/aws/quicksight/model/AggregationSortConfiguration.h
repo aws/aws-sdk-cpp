@@ -89,12 +89,12 @@ class AggregationSortConfiguration {
   ///@}
  private:
   ColumnIdentifier m_column;
-  bool m_columnHasBeenSet = false;
 
   SortDirection m_sortDirection{SortDirection::NOT_SET};
-  bool m_sortDirectionHasBeenSet = false;
 
   AggregationFunction m_aggregationFunction;
+  bool m_columnHasBeenSet = false;
+  bool m_sortDirectionHasBeenSet = false;
   bool m_aggregationFunctionHasBeenSet = false;
 };
 

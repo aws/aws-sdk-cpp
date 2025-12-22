@@ -143,21 +143,21 @@ class InAppMessageContent {
   ///@}
  private:
   Aws::String m_backgroundColor;
-  bool m_backgroundColorHasBeenSet = false;
 
   InAppMessageBodyConfig m_bodyConfig;
-  bool m_bodyConfigHasBeenSet = false;
 
   InAppMessageHeaderConfig m_headerConfig;
-  bool m_headerConfigHasBeenSet = false;
 
   Aws::String m_imageUrl;
-  bool m_imageUrlHasBeenSet = false;
 
   InAppMessageButton m_primaryBtn;
-  bool m_primaryBtnHasBeenSet = false;
 
   InAppMessageButton m_secondaryBtn;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_bodyConfigHasBeenSet = false;
+  bool m_headerConfigHasBeenSet = false;
+  bool m_imageUrlHasBeenSet = false;
+  bool m_primaryBtnHasBeenSet = false;
   bool m_secondaryBtnHasBeenSet = false;
 };
 

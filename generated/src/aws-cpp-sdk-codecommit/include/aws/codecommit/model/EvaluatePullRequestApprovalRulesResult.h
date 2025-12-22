@@ -64,9 +64,9 @@ class EvaluatePullRequestApprovalRulesResult {
   ///@}
  private:
   Evaluation m_evaluation;
-  bool m_evaluationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_evaluationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

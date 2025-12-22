@@ -103,15 +103,15 @@ class MaintenanceStartTime {
   ///@}
  private:
   int m_dayOfMonth{0};
-  bool m_dayOfMonthHasBeenSet = false;
 
   int m_dayOfWeek{0};
-  bool m_dayOfWeekHasBeenSet = false;
 
   int m_hourOfDay{0};
-  bool m_hourOfDayHasBeenSet = false;
 
   int m_minuteOfHour{0};
+  bool m_dayOfMonthHasBeenSet = false;
+  bool m_dayOfWeekHasBeenSet = false;
+  bool m_hourOfDayHasBeenSet = false;
   bool m_minuteOfHourHasBeenSet = false;
 };
 

@@ -98,12 +98,12 @@ class FieldOptionsCaseRule {
   ///@}
  private:
   Aws::String m_parentFieldId;
-  bool m_parentFieldIdHasBeenSet = false;
 
   Aws::String m_childFieldId;
-  bool m_childFieldIdHasBeenSet = false;
 
   Aws::Vector<ParentChildFieldOptionsMapping> m_parentChildFieldOptionsMappings;
+  bool m_parentFieldIdHasBeenSet = false;
+  bool m_childFieldIdHasBeenSet = false;
   bool m_parentChildFieldOptionsMappingsHasBeenSet = false;
 };
 

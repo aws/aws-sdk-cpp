@@ -82,12 +82,12 @@ class PutResourcePermissionRequest : public SsmSapRequest {
   ///@}
  private:
   PermissionActionType m_actionType{PermissionActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   Aws::String m_sourceResourceArn;
-  bool m_sourceResourceArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_sourceResourceArnHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

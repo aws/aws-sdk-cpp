@@ -92,15 +92,15 @@ class DeleteGrantResult {
   ///@}
  private:
   Aws::String m_grantArn;
-  bool m_grantArnHasBeenSet = false;
 
   GrantStatus m_status{GrantStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_grantArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

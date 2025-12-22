@@ -126,18 +126,18 @@ class QAppSessionData {
   ///@}
  private:
   Aws::String m_cardId;
-  bool m_cardIdHasBeenSet = false;
 
   Aws::Utils::Document m_value;
-  bool m_valueHasBeenSet = false;
 
   User m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_submissionId;
-  bool m_submissionIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_cardIdHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_submissionIdHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

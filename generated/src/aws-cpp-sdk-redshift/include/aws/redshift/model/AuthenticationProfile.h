@@ -71,9 +71,9 @@ class AuthenticationProfile {
   ///@}
  private:
   Aws::String m_authenticationProfileName;
-  bool m_authenticationProfileNameHasBeenSet = false;
 
   Aws::String m_authenticationProfileContent;
+  bool m_authenticationProfileNameHasBeenSet = false;
   bool m_authenticationProfileContentHasBeenSet = false;
 };
 

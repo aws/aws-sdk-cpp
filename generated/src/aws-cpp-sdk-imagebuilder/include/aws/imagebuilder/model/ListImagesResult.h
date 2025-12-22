@@ -94,12 +94,12 @@ class ListImagesResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<ImageVersion> m_imageVersionList;
-  bool m_imageVersionListHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_imageVersionListHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -62,6 +62,14 @@ UserSettingsSummary& UserSettingsSummary::operator=(JsonView jsonValue) {
     m_toolbarConfiguration = jsonValue.GetObject("toolbarConfiguration");
     m_toolbarConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("brandingConfiguration")) {
+    m_brandingConfiguration = jsonValue.GetObject("brandingConfiguration");
+    m_brandingConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("webAuthnAllowed")) {
+    m_webAuthnAllowed = EnabledTypeMapper::GetEnabledTypeForName(jsonValue.GetString("webAuthnAllowed"));
+    m_webAuthnAllowedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +118,14 @@ JsonValue UserSettingsSummary::Jsonize() const {
 
   if (m_toolbarConfigurationHasBeenSet) {
     payload.WithObject("toolbarConfiguration", m_toolbarConfiguration.Jsonize());
+  }
+
+  if (m_brandingConfigurationHasBeenSet) {
+    payload.WithObject("brandingConfiguration", m_brandingConfiguration.Jsonize());
+  }
+
+  if (m_webAuthnAllowedHasBeenSet) {
+    payload.WithString("webAuthnAllowed", EnabledTypeMapper::GetNameForEnabledType(m_webAuthnAllowed));
   }
 
   return payload;

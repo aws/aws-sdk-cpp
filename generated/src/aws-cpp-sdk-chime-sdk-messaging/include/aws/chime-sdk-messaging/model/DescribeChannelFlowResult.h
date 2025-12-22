@@ -60,9 +60,9 @@ class DescribeChannelFlowResult {
   ///@}
  private:
   ChannelFlow m_channelFlow;
-  bool m_channelFlowHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelFlowHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

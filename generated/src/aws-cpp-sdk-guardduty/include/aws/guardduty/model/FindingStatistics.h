@@ -165,18 +165,18 @@ class FindingStatistics {
   ///@}
  private:
   Aws::Vector<AccountStatistics> m_groupedByAccount;
-  bool m_groupedByAccountHasBeenSet = false;
 
   Aws::Vector<DateStatistics> m_groupedByDate;
-  bool m_groupedByDateHasBeenSet = false;
 
   Aws::Vector<FindingTypeStatistics> m_groupedByFindingType;
-  bool m_groupedByFindingTypeHasBeenSet = false;
 
   Aws::Vector<ResourceStatistics> m_groupedByResource;
-  bool m_groupedByResourceHasBeenSet = false;
 
   Aws::Vector<SeverityStatistics> m_groupedBySeverity;
+  bool m_groupedByAccountHasBeenSet = false;
+  bool m_groupedByDateHasBeenSet = false;
+  bool m_groupedByFindingTypeHasBeenSet = false;
+  bool m_groupedByResourceHasBeenSet = false;
   bool m_groupedBySeverityHasBeenSet = false;
 };
 

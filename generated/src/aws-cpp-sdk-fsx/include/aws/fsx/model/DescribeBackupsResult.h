@@ -92,12 +92,12 @@ class DescribeBackupsResult {
   ///@}
  private:
   Aws::Vector<Backup> m_backups;
-  bool m_backupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

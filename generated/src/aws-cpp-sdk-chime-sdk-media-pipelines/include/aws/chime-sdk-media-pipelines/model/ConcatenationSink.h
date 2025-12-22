@@ -67,9 +67,9 @@ class ConcatenationSink {
   ///@}
  private:
   ConcatenationSinkType m_type{ConcatenationSinkType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   S3BucketSinkConfiguration m_s3BucketSinkConfiguration;
+  bool m_typeHasBeenSet = false;
   bool m_s3BucketSinkConfigurationHasBeenSet = false;
 };
 

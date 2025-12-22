@@ -130,18 +130,18 @@ class StepDetailsEntity {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   Aws::String m_schemaVersion;
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::Utils::Document m_template;
-  bool m_templateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dependencies;
+  bool m_jobIdHasBeenSet = false;
+  bool m_stepIdHasBeenSet = false;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_templateHasBeenSet = false;
   bool m_dependenciesHasBeenSet = false;
 };
 

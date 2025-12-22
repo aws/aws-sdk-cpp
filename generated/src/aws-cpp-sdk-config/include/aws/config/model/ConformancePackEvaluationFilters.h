@@ -122,15 +122,15 @@ class ConformancePackEvaluationFilters {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configRuleNames;
-  bool m_configRuleNamesHasBeenSet = false;
 
   ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
-  bool m_complianceTypeHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceIds;
+  bool m_configRuleNamesHasBeenSet = false;
+  bool m_complianceTypeHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_resourceIdsHasBeenSet = false;
 };
 

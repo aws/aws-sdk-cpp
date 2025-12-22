@@ -259,42 +259,42 @@ class UpdateTrailResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_s3BucketName;
-  bool m_s3BucketNameHasBeenSet = false;
 
   Aws::String m_s3KeyPrefix;
-  bool m_s3KeyPrefixHasBeenSet = false;
 
   Aws::String m_snsTopicARN;
-  bool m_snsTopicARNHasBeenSet = false;
 
   bool m_includeGlobalServiceEvents{false};
-  bool m_includeGlobalServiceEventsHasBeenSet = false;
 
   bool m_isMultiRegionTrail{false};
-  bool m_isMultiRegionTrailHasBeenSet = false;
 
   Aws::String m_trailARN;
-  bool m_trailARNHasBeenSet = false;
 
   bool m_logFileValidationEnabled{false};
-  bool m_logFileValidationEnabledHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsLogGroupArn;
-  bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsRoleArn;
-  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   bool m_isOrganizationTrail{false};
-  bool m_isOrganizationTrailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nameHasBeenSet = false;
+  bool m_s3BucketNameHasBeenSet = false;
+  bool m_s3KeyPrefixHasBeenSet = false;
+  bool m_snsTopicARNHasBeenSet = false;
+  bool m_includeGlobalServiceEventsHasBeenSet = false;
+  bool m_isMultiRegionTrailHasBeenSet = false;
+  bool m_trailARNHasBeenSet = false;
+  bool m_logFileValidationEnabledHasBeenSet = false;
+  bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
+  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_isOrganizationTrailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -189,6 +189,17 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator=(const XmlNode& x
       m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
       m_awsBackupRecoveryPointArnHasBeenSet = true;
     }
+    XmlNode tagListNode = resultNode.FirstChild("TagList");
+    if (!tagListNode.IsNull()) {
+      XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
+      while (!tagListMember.IsNull()) {
+        m_tagList.push_back(tagListMember);
+        tagListMember = tagListMember.NextNode("Tag");
+      }
+
+      m_tagListHasBeenSet = true;
+    }
     XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
     if (!dedicatedLogVolumeNode.IsNull()) {
       m_dedicatedLogVolume = StringUtils::ConvertToBool(
@@ -348,6 +359,15 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
             << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
+  if (m_tagListHasBeenSet) {
+    unsigned tagListIdx = 1;
+    for (auto& item : m_tagList) {
+      Aws::StringStream tagListSs;
+      tagListSs << location << index << locationValue << ".TagList.Tag." << tagListIdx++;
+      item.OutputToStream(oStream, tagListSs.str().c_str());
+    }
+  }
+
   if (m_dedicatedLogVolumeHasBeenSet) {
     oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
@@ -464,6 +484,14 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
   }
   if (m_awsBackupRecoveryPointArnHasBeenSet) {
     oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+  if (m_tagListHasBeenSet) {
+    unsigned tagListIdx = 1;
+    for (auto& item : m_tagList) {
+      Aws::StringStream tagListSs;
+      tagListSs << location << ".TagList.Tag." << tagListIdx++;
+      item.OutputToStream(oStream, tagListSs.str().c_str());
+    }
   }
   if (m_dedicatedLogVolumeHasBeenSet) {
     oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";

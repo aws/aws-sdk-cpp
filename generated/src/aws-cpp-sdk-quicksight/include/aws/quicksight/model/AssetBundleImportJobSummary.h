@@ -123,18 +123,18 @@ class AssetBundleImportJobSummary {
   ///@}
  private:
   AssetBundleImportJobStatus m_jobStatus{AssetBundleImportJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_assetBundleImportJobId;
-  bool m_assetBundleImportJobIdHasBeenSet = false;
 
   AssetBundleImportFailureAction m_failureAction{AssetBundleImportFailureAction::NOT_SET};
+  bool m_jobStatusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_assetBundleImportJobIdHasBeenSet = false;
   bool m_failureActionHasBeenSet = false;
 };
 

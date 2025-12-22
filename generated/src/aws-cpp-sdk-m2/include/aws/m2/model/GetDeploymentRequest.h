@@ -65,9 +65,9 @@ class GetDeploymentRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_deploymentId;
+  bool m_applicationIdHasBeenSet = false;
   bool m_deploymentIdHasBeenSet = false;
 };
 

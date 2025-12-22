@@ -137,18 +137,18 @@ class TopicNamedEntity {
   ///@}
  private:
   Aws::String m_entityName;
-  bool m_entityNameHasBeenSet = false;
 
   Aws::String m_entityDescription;
-  bool m_entityDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_entitySynonyms;
-  bool m_entitySynonymsHasBeenSet = false;
 
   SemanticEntityType m_semanticEntityType;
-  bool m_semanticEntityTypeHasBeenSet = false;
 
   Aws::Vector<NamedEntityDefinition> m_definition;
+  bool m_entityNameHasBeenSet = false;
+  bool m_entityDescriptionHasBeenSet = false;
+  bool m_entitySynonymsHasBeenSet = false;
+  bool m_semanticEntityTypeHasBeenSet = false;
   bool m_definitionHasBeenSet = false;
 };
 

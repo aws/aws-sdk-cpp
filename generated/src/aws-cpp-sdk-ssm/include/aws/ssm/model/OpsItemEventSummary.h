@@ -161,24 +161,24 @@ class OpsItemEventSummary {
   ///@}
  private:
   Aws::String m_opsItemId;
-  bool m_opsItemIdHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_detailType;
-  bool m_detailTypeHasBeenSet = false;
 
   Aws::String m_detail;
-  bool m_detailHasBeenSet = false;
 
   OpsItemIdentity m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
+  bool m_opsItemIdHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_detailTypeHasBeenSet = false;
+  bool m_detailHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class UpdateContactRequest : public SSMContactsRequest {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Plan m_plan;
+  bool m_contactIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
   bool m_planHasBeenSet = false;
 };
 

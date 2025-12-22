@@ -121,18 +121,18 @@ class GetMobileDeviceAccessEffectRequest : public WorkMailRequest {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_deviceType;
-  bool m_deviceTypeHasBeenSet = false;
 
   Aws::String m_deviceModel;
-  bool m_deviceModelHasBeenSet = false;
 
   Aws::String m_deviceOperatingSystem;
-  bool m_deviceOperatingSystemHasBeenSet = false;
 
   Aws::String m_deviceUserAgent;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_deviceTypeHasBeenSet = false;
+  bool m_deviceModelHasBeenSet = false;
+  bool m_deviceOperatingSystemHasBeenSet = false;
   bool m_deviceUserAgentHasBeenSet = false;
 };
 

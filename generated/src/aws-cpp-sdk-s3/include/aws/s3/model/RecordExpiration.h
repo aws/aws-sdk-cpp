@@ -70,9 +70,9 @@ class RecordExpiration {
   ///@}
  private:
   ExpirationState m_expiration{ExpirationState::NOT_SET};
-  bool m_expirationHasBeenSet = false;
 
   int m_days{0};
+  bool m_expirationHasBeenSet = false;
   bool m_daysHasBeenSet = false;
 };
 

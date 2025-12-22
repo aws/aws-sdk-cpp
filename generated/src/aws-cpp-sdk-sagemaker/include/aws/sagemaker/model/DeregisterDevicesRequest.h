@@ -74,9 +74,9 @@ class DeregisterDevicesRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_deviceFleetName;
-  bool m_deviceFleetNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceNames;
+  bool m_deviceFleetNameHasBeenSet = false;
   bool m_deviceNamesHasBeenSet = false;
 };
 

@@ -126,15 +126,15 @@ class CreateBucketRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_enableObjectVersioning{false};
+  bool m_bucketNameHasBeenSet = false;
+  bool m_bundleIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_enableObjectVersioningHasBeenSet = false;
 };
 

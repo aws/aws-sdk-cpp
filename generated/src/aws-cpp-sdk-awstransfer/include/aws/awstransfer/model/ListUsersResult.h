@@ -106,15 +106,15 @@ class ListUsersResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::Vector<ListedUser> m_users;
-  bool m_usersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_usersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

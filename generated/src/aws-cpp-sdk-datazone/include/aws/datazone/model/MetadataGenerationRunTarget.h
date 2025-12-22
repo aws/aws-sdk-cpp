@@ -85,12 +85,12 @@ class MetadataGenerationRunTarget {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_revision;
-  bool m_revisionHasBeenSet = false;
 
   MetadataGenerationTargetType m_type{MetadataGenerationTargetType::NOT_SET};
+  bool m_identifierHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

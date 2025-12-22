@@ -123,18 +123,18 @@ class DateTimePickerControlDisplayOptions {
   ///@}
  private:
   LabelOptions m_titleOptions;
-  bool m_titleOptionsHasBeenSet = false;
 
   Aws::String m_dateTimeFormat;
-  bool m_dateTimeFormatHasBeenSet = false;
 
   SheetControlInfoIconLabelOptions m_infoIconLabelOptions;
-  bool m_infoIconLabelOptionsHasBeenSet = false;
 
   Visibility m_helperTextVisibility{Visibility::NOT_SET};
-  bool m_helperTextVisibilityHasBeenSet = false;
 
   Visibility m_dateIconVisibility{Visibility::NOT_SET};
+  bool m_titleOptionsHasBeenSet = false;
+  bool m_dateTimeFormatHasBeenSet = false;
+  bool m_infoIconLabelOptionsHasBeenSet = false;
+  bool m_helperTextVisibilityHasBeenSet = false;
   bool m_dateIconVisibilityHasBeenSet = false;
 };
 

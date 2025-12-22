@@ -78,12 +78,12 @@ class UpdateZonalAutoshiftConfigurationResult {
   ///@}
  private:
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   ZonalAutoshiftStatus m_zonalAutoshiftStatus{ZonalAutoshiftStatus::NOT_SET};
-  bool m_zonalAutoshiftStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_zonalAutoshiftStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -99,12 +99,12 @@ class ComputeQuotaConfig {
   ///@}
  private:
   Aws::Vector<ComputeQuotaResourceConfig> m_computeQuotaResources;
-  bool m_computeQuotaResourcesHasBeenSet = false;
 
   ResourceSharingConfig m_resourceSharingConfig;
-  bool m_resourceSharingConfigHasBeenSet = false;
 
   PreemptTeamTasks m_preemptTeamTasks{PreemptTeamTasks::NOT_SET};
+  bool m_computeQuotaResourcesHasBeenSet = false;
+  bool m_resourceSharingConfigHasBeenSet = false;
   bool m_preemptTeamTasksHasBeenSet = false;
 };
 

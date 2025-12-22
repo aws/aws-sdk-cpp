@@ -267,30 +267,30 @@ class CreateComputeEnvironmentRequest : public BatchRequest {
   ///@}
  private:
   Aws::String m_computeEnvironmentName;
-  bool m_computeEnvironmentNameHasBeenSet = false;
 
   CEType m_type{CEType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CEState m_state{CEState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_unmanagedvCpus{0};
-  bool m_unmanagedvCpusHasBeenSet = false;
 
   ComputeResource m_computeResources;
-  bool m_computeResourcesHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EksConfiguration m_eksConfiguration;
-  bool m_eksConfigurationHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_computeEnvironmentNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_unmanagedvCpusHasBeenSet = false;
+  bool m_computeResourcesHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_eksConfigurationHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

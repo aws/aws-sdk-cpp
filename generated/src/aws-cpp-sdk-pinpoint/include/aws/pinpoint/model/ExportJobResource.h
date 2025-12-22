@@ -115,15 +115,15 @@ class ExportJobResource {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_s3UrlPrefix;
-  bool m_s3UrlPrefixHasBeenSet = false;
 
   Aws::String m_segmentId;
-  bool m_segmentIdHasBeenSet = false;
 
   int m_segmentVersion{0};
+  bool m_roleArnHasBeenSet = false;
+  bool m_s3UrlPrefixHasBeenSet = false;
+  bool m_segmentIdHasBeenSet = false;
   bool m_segmentVersionHasBeenSet = false;
 };
 

@@ -164,24 +164,24 @@ class ConfigurationPolicyAssociationSummary {
   ///@}
  private:
   Aws::String m_configurationPolicyId;
-  bool m_configurationPolicyIdHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   AssociationType m_associationType{AssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   ConfigurationPolicyAssociationStatus m_associationStatus{ConfigurationPolicyAssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   Aws::String m_associationStatusMessage;
+  bool m_configurationPolicyIdHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
   bool m_associationStatusMessageHasBeenSet = false;
 };
 

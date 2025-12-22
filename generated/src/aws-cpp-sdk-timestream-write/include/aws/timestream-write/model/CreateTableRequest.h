@@ -152,21 +152,21 @@ class CreateTableRequest : public TimestreamWriteRequest {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   RetentionProperties m_retentionProperties;
-  bool m_retentionPropertiesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   MagneticStoreWriteProperties m_magneticStoreWriteProperties;
-  bool m_magneticStoreWritePropertiesHasBeenSet = false;
 
   Schema m_schema;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_retentionPropertiesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_magneticStoreWritePropertiesHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
 };
 

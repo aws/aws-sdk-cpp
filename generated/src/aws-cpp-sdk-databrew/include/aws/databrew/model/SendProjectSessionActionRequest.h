@@ -134,21 +134,21 @@ class SendProjectSessionActionRequest : public GlueDataBrewRequest {
   ///@}
  private:
   bool m_preview{false};
-  bool m_previewHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RecipeStep m_recipeStep;
-  bool m_recipeStepHasBeenSet = false;
 
   int m_stepIndex{0};
-  bool m_stepIndexHasBeenSet = false;
 
   Aws::String m_clientSessionId;
-  bool m_clientSessionIdHasBeenSet = false;
 
   ViewFrame m_viewFrame;
+  bool m_previewHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_recipeStepHasBeenSet = false;
+  bool m_stepIndexHasBeenSet = false;
+  bool m_clientSessionIdHasBeenSet = false;
   bool m_viewFrameHasBeenSet = false;
 };
 

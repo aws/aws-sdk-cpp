@@ -79,9 +79,9 @@ class DiskIopsConfiguration {
   ///@}
  private:
   DiskIopsConfigurationMode m_mode{DiskIopsConfigurationMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   long long m_iops{0};
+  bool m_modeHasBeenSet = false;
   bool m_iopsHasBeenSet = false;
 };
 

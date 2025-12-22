@@ -155,24 +155,24 @@ class UpdateAgentCollaboratorRequest : public BedrockAgentRequest {
   ///@}
  private:
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_agentVersion;
-  bool m_agentVersionHasBeenSet = false;
 
   Aws::String m_collaboratorId;
-  bool m_collaboratorIdHasBeenSet = false;
 
   AgentDescriptor m_agentDescriptor;
-  bool m_agentDescriptorHasBeenSet = false;
 
   Aws::String m_collaboratorName;
-  bool m_collaboratorNameHasBeenSet = false;
 
   Aws::String m_collaborationInstruction;
-  bool m_collaborationInstructionHasBeenSet = false;
 
   RelayConversationHistory m_relayConversationHistory{RelayConversationHistory::NOT_SET};
+  bool m_agentIdHasBeenSet = false;
+  bool m_agentVersionHasBeenSet = false;
+  bool m_collaboratorIdHasBeenSet = false;
+  bool m_agentDescriptorHasBeenSet = false;
+  bool m_collaboratorNameHasBeenSet = false;
+  bool m_collaborationInstructionHasBeenSet = false;
   bool m_relayConversationHistoryHasBeenSet = false;
 };
 

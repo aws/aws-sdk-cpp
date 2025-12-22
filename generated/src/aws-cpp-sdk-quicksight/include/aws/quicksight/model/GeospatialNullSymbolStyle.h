@@ -84,12 +84,12 @@ class GeospatialNullSymbolStyle {
   ///@}
  private:
   Aws::String m_fillColor;
-  bool m_fillColorHasBeenSet = false;
 
   Aws::String m_strokeColor;
-  bool m_strokeColorHasBeenSet = false;
 
   double m_strokeWidth{0.0};
+  bool m_fillColorHasBeenSet = false;
+  bool m_strokeColorHasBeenSet = false;
   bool m_strokeWidthHasBeenSet = false;
 };
 

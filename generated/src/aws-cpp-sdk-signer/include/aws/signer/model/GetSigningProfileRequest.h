@@ -70,9 +70,9 @@ class GetSigningProfileRequest : public SignerRequest {
   ///@}
  private:
   Aws::String m_profileName;
-  bool m_profileNameHasBeenSet = false;
 
   Aws::String m_profileOwner;
+  bool m_profileNameHasBeenSet = false;
   bool m_profileOwnerHasBeenSet = false;
 };
 

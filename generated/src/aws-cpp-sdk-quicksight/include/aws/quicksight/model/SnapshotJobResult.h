@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/AnonymousUserSnapshotJobResult.h>
+#include <aws/quicksight/model/RegisteredUserSnapshotJobResult.h>
 
 #include <utility>
 
@@ -59,9 +60,38 @@ class SnapshotJobResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of <code>RegisteredUserSnapshotJobResult</code> objects that contain
+   * information about files that are requested for registered user during a
+   * <code>StartDashboardSnapshotJob</code> API call.</p>
+   */
+  inline const Aws::Vector<RegisteredUserSnapshotJobResult>& GetRegisteredUsers() const { return m_registeredUsers; }
+  inline bool RegisteredUsersHasBeenSet() const { return m_registeredUsersHasBeenSet; }
+  template <typename RegisteredUsersT = Aws::Vector<RegisteredUserSnapshotJobResult>>
+  void SetRegisteredUsers(RegisteredUsersT&& value) {
+    m_registeredUsersHasBeenSet = true;
+    m_registeredUsers = std::forward<RegisteredUsersT>(value);
+  }
+  template <typename RegisteredUsersT = Aws::Vector<RegisteredUserSnapshotJobResult>>
+  SnapshotJobResult& WithRegisteredUsers(RegisteredUsersT&& value) {
+    SetRegisteredUsers(std::forward<RegisteredUsersT>(value));
+    return *this;
+  }
+  template <typename RegisteredUsersT = RegisteredUserSnapshotJobResult>
+  SnapshotJobResult& AddRegisteredUsers(RegisteredUsersT&& value) {
+    m_registeredUsersHasBeenSet = true;
+    m_registeredUsers.emplace_back(std::forward<RegisteredUsersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<AnonymousUserSnapshotJobResult> m_anonymousUsers;
+
+  Aws::Vector<RegisteredUserSnapshotJobResult> m_registeredUsers;
   bool m_anonymousUsersHasBeenSet = false;
+  bool m_registeredUsersHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -64,9 +64,9 @@ class GetBucketMetadataTableConfigurationSdkResult {
   ///@}
  private:
   GetBucketMetadataTableConfigurationResult m_getBucketMetadataTableConfigurationResult;
-  bool m_getBucketMetadataTableConfigurationResultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_getBucketMetadataTableConfigurationResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

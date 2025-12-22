@@ -150,18 +150,18 @@ class AuthConfiguration {
   ///@}
  private:
   Property m_authenticationType;
-  bool m_authenticationTypeHasBeenSet = false;
 
   Property m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_oAuth2Properties;
-  bool m_oAuth2PropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_basicAuthenticationProperties;
-  bool m_basicAuthenticationPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Property> m_customAuthenticationProperties;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_oAuth2PropertiesHasBeenSet = false;
+  bool m_basicAuthenticationPropertiesHasBeenSet = false;
   bool m_customAuthenticationPropertiesHasBeenSet = false;
 };
 

@@ -339,48 +339,48 @@ class AssessmentRun {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_assessmentTemplateArn;
-  bool m_assessmentTemplateArnHasBeenSet = false;
 
   AssessmentRunState m_state{AssessmentRunState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_durationInSeconds{0};
-  bool m_durationInSecondsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_rulesPackageArns;
-  bool m_rulesPackageArnsHasBeenSet = false;
 
   Aws::Vector<Attribute> m_userAttributesForFindings;
-  bool m_userAttributesForFindingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateChangedAt{};
-  bool m_stateChangedAtHasBeenSet = false;
 
   bool m_dataCollected{false};
-  bool m_dataCollectedHasBeenSet = false;
 
   Aws::Vector<AssessmentRunStateChange> m_stateChanges;
-  bool m_stateChangesHasBeenSet = false;
 
   Aws::Vector<AssessmentRunNotification> m_notifications;
-  bool m_notificationsHasBeenSet = false;
 
   Aws::Map<Severity, int> m_findingCounts;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_assessmentTemplateArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_durationInSecondsHasBeenSet = false;
+  bool m_rulesPackageArnsHasBeenSet = false;
+  bool m_userAttributesForFindingsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_stateChangedAtHasBeenSet = false;
+  bool m_dataCollectedHasBeenSet = false;
+  bool m_stateChangesHasBeenSet = false;
+  bool m_notificationsHasBeenSet = false;
   bool m_findingCountsHasBeenSet = false;
 };
 

@@ -204,33 +204,33 @@ class DisruptionCompliance {
   ///@}
  private:
   int m_achievableRpoInSecs{0};
-  bool m_achievableRpoInSecsHasBeenSet = false;
 
   int m_achievableRtoInSecs{0};
-  bool m_achievableRtoInSecsHasBeenSet = false;
 
   ComplianceStatus m_complianceStatus{ComplianceStatus::NOT_SET};
-  bool m_complianceStatusHasBeenSet = false;
 
   int m_currentRpoInSecs{0};
-  bool m_currentRpoInSecsHasBeenSet = false;
 
   int m_currentRtoInSecs{0};
-  bool m_currentRtoInSecsHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_rpoDescription;
-  bool m_rpoDescriptionHasBeenSet = false;
 
   Aws::String m_rpoReferenceId;
-  bool m_rpoReferenceIdHasBeenSet = false;
 
   Aws::String m_rtoDescription;
-  bool m_rtoDescriptionHasBeenSet = false;
 
   Aws::String m_rtoReferenceId;
+  bool m_achievableRpoInSecsHasBeenSet = false;
+  bool m_achievableRtoInSecsHasBeenSet = false;
+  bool m_complianceStatusHasBeenSet = false;
+  bool m_currentRpoInSecsHasBeenSet = false;
+  bool m_currentRtoInSecsHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_rpoDescriptionHasBeenSet = false;
+  bool m_rpoReferenceIdHasBeenSet = false;
+  bool m_rtoDescriptionHasBeenSet = false;
   bool m_rtoReferenceIdHasBeenSet = false;
 };
 

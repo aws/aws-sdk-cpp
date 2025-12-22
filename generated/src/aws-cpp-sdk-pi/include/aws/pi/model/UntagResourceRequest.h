@@ -97,12 +97,12 @@ class UntagResourceRequest : public PIRequest {
   ///@}
  private:
   ServiceType m_serviceType{ServiceType::NOT_SET};
-  bool m_serviceTypeHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeys;
+  bool m_serviceTypeHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagKeysHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class AllowedInputTypes {
   ///@}
  private:
   bool m_allowAudioInput{false};
-  bool m_allowAudioInputHasBeenSet = false;
 
   bool m_allowDTMFInput{false};
+  bool m_allowAudioInputHasBeenSet = false;
   bool m_allowDTMFInputHasBeenSet = false;
 };
 

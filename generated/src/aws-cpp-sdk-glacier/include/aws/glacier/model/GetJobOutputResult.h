@@ -18,7 +18,7 @@ class AmazonWebServiceResult;
 namespace Glacier {
 namespace Model {
 /**
- * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
+ * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/GetJobOutputOutput">AWS
  * API Reference</a></p>
@@ -91,8 +91,8 @@ class GetJobOutputResult {
 
   ///@{
   /**
-   * <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is
-   * downloaded, the response provides the range of bytes Amazon S3 Glacier returned.
+   * <p>The range of bytes returned by Amazon Glacier. If only partial output is
+   * downloaded, the response provides the range of bytes Amazon Glacier returned.
    * For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
    */
   inline const Aws::String& GetContentRange() const { return m_contentRange; }
@@ -180,27 +180,27 @@ class GetJobOutputResult {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_body{};
-  bool m_bodyHasBeenSet = false;
 
   Aws::String m_checksum;
-  bool m_checksumHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_contentRange;
-  bool m_contentRangeHasBeenSet = false;
 
   Aws::String m_acceptRanges;
-  bool m_acceptRangesHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_archiveDescription;
-  bool m_archiveDescriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bodyHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_contentRangeHasBeenSet = false;
+  bool m_acceptRangesHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_archiveDescriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

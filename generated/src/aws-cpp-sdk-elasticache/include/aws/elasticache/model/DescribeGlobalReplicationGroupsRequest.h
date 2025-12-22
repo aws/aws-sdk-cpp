@@ -106,15 +106,15 @@ class DescribeGlobalReplicationGroupsRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_globalReplicationGroupId;
-  bool m_globalReplicationGroupIdHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_showMemberInfo{false};
+  bool m_globalReplicationGroupIdHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_showMemberInfoHasBeenSet = false;
 };
 

@@ -122,18 +122,18 @@ class NetworkInterface {
   ///@}
  private:
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   NetworkInterfaceStatus m_status{NetworkInterfaceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_networkInterfaceIdHasBeenSet = false;
 };
 

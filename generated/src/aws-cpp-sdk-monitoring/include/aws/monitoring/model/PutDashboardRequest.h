@@ -28,10 +28,8 @@ class PutDashboardRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The name of the dashboard. If a dashboard with this name already exists, this
@@ -76,9 +74,9 @@ class PutDashboardRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_dashboardName;
-  bool m_dashboardNameHasBeenSet = false;
 
   Aws::String m_dashboardBody;
+  bool m_dashboardNameHasBeenSet = false;
   bool m_dashboardBodyHasBeenSet = false;
 };
 

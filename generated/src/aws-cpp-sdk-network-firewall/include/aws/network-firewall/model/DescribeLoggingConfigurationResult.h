@@ -94,15 +94,15 @@ class DescribeLoggingConfigurationResult {
   ///@}
  private:
   Aws::String m_firewallArn;
-  bool m_firewallArnHasBeenSet = false;
 
   LoggingConfiguration m_loggingConfiguration;
-  bool m_loggingConfigurationHasBeenSet = false;
 
   bool m_enableMonitoringDashboard{false};
-  bool m_enableMonitoringDashboardHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_firewallArnHasBeenSet = false;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_enableMonitoringDashboardHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

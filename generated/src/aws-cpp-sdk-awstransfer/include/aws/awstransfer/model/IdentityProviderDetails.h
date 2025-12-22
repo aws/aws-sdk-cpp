@@ -136,18 +136,18 @@ class IdentityProviderDetails {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_invocationRole;
-  bool m_invocationRoleHasBeenSet = false;
 
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   SftpAuthenticationMethods m_sftpAuthenticationMethods{SftpAuthenticationMethods::NOT_SET};
+  bool m_urlHasBeenSet = false;
+  bool m_invocationRoleHasBeenSet = false;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
   bool m_sftpAuthenticationMethodsHasBeenSet = false;
 };
 

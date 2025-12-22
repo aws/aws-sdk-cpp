@@ -100,15 +100,15 @@ class ROS2PrimitiveMessageDefinition {
   ///@}
  private:
   ROS2PrimitiveType m_primitiveType{ROS2PrimitiveType::NOT_SET};
-  bool m_primitiveTypeHasBeenSet = false;
 
   double m_offset{0.0};
-  bool m_offsetHasBeenSet = false;
 
   double m_scaling{0.0};
-  bool m_scalingHasBeenSet = false;
 
   long long m_upperBound{0};
+  bool m_primitiveTypeHasBeenSet = false;
+  bool m_offsetHasBeenSet = false;
+  bool m_scalingHasBeenSet = false;
   bool m_upperBoundHasBeenSet = false;
 };
 

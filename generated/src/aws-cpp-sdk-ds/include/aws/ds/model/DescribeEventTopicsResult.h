@@ -73,9 +73,9 @@ class DescribeEventTopicsResult {
   ///@}
  private:
   Aws::Vector<EventTopic> m_eventTopics;
-  bool m_eventTopicsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventTopicsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

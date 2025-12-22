@@ -59,9 +59,9 @@ class RegisterTargetWithMaintenanceWindowResult {
   ///@}
  private:
   Aws::String m_windowTargetId;
-  bool m_windowTargetIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowTargetIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class StartResourceStateUpdateResult {
   ///@}
  private:
   Aws::String m_lifecycleExecutionId;
-  bool m_lifecycleExecutionIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lifecycleExecutionIdHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

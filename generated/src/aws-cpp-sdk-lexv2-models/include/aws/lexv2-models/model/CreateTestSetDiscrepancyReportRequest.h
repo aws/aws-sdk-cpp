@@ -66,9 +66,9 @@ class CreateTestSetDiscrepancyReportRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_testSetId;
-  bool m_testSetIdHasBeenSet = false;
 
   TestSetDiscrepancyReportResourceTarget m_target;
+  bool m_testSetIdHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

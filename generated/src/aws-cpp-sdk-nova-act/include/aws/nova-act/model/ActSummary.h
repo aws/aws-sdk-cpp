@@ -160,24 +160,24 @@ class ActSummary {
   ///@}
  private:
   Aws::String m_workflowRunId;
-  bool m_workflowRunIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_actId;
-  bool m_actIdHasBeenSet = false;
 
   ActStatus m_status{ActStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_endedAt{};
-  bool m_endedAtHasBeenSet = false;
 
   TraceLocation m_traceLocation;
+  bool m_workflowRunIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_actIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_endedAtHasBeenSet = false;
   bool m_traceLocationHasBeenSet = false;
 };
 

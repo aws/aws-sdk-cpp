@@ -71,9 +71,9 @@ class RemoveFromGlobalClusterRequest : public NeptuneRequest {
   ///@}
  private:
   Aws::String m_globalClusterIdentifier;
-  bool m_globalClusterIdentifierHasBeenSet = false;
 
   Aws::String m_dbClusterIdentifier;
+  bool m_globalClusterIdentifierHasBeenSet = false;
   bool m_dbClusterIdentifierHasBeenSet = false;
 };
 

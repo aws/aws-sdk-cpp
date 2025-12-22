@@ -69,9 +69,9 @@ class InternalServerException {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

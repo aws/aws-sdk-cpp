@@ -103,15 +103,15 @@ class UpdateQueueLimitAssociationRequest : public DeadlineRequest {
   ///@}
  private:
   Aws::String m_farmId;
-  bool m_farmIdHasBeenSet = false;
 
   Aws::String m_queueId;
-  bool m_queueIdHasBeenSet = false;
 
   Aws::String m_limitId;
-  bool m_limitIdHasBeenSet = false;
 
   UpdateQueueLimitAssociationStatus m_status{UpdateQueueLimitAssociationStatus::NOT_SET};
+  bool m_farmIdHasBeenSet = false;
+  bool m_queueIdHasBeenSet = false;
+  bool m_limitIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

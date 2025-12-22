@@ -85,9 +85,9 @@ class Grantee {
   ///@}
  private:
   GranteeType m_granteeType{GranteeType::NOT_SET};
-  bool m_granteeTypeHasBeenSet = false;
 
   Aws::String m_granteeIdentifier;
+  bool m_granteeTypeHasBeenSet = false;
   bool m_granteeIdentifierHasBeenSet = false;
 };
 

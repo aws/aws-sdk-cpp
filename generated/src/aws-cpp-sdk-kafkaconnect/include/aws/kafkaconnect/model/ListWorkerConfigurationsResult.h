@@ -86,12 +86,12 @@ class ListWorkerConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WorkerConfigurationSummary> m_workerConfigurations;
-  bool m_workerConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workerConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

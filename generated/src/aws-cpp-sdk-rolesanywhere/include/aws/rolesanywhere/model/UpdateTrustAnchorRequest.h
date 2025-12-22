@@ -31,6 +31,24 @@ class UpdateTrustAnchorRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
+   * <p>The unique identifier of the trust anchor.</p>
+   */
+  inline const Aws::String& GetTrustAnchorId() const { return m_trustAnchorId; }
+  inline bool TrustAnchorIdHasBeenSet() const { return m_trustAnchorIdHasBeenSet; }
+  template <typename TrustAnchorIdT = Aws::String>
+  void SetTrustAnchorId(TrustAnchorIdT&& value) {
+    m_trustAnchorIdHasBeenSet = true;
+    m_trustAnchorId = std::forward<TrustAnchorIdT>(value);
+  }
+  template <typename TrustAnchorIdT = Aws::String>
+  UpdateTrustAnchorRequest& WithTrustAnchorId(TrustAnchorIdT&& value) {
+    SetTrustAnchorId(std::forward<TrustAnchorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the trust anchor.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -64,33 +82,15 @@ class UpdateTrustAnchorRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The unique identifier of the trust anchor.</p>
-   */
-  inline const Aws::String& GetTrustAnchorId() const { return m_trustAnchorId; }
-  inline bool TrustAnchorIdHasBeenSet() const { return m_trustAnchorIdHasBeenSet; }
-  template <typename TrustAnchorIdT = Aws::String>
-  void SetTrustAnchorId(TrustAnchorIdT&& value) {
-    m_trustAnchorIdHasBeenSet = true;
-    m_trustAnchorId = std::forward<TrustAnchorIdT>(value);
-  }
-  template <typename TrustAnchorIdT = Aws::String>
-  UpdateTrustAnchorRequest& WithTrustAnchorId(TrustAnchorIdT&& value) {
-    SetTrustAnchorId(std::forward<TrustAnchorIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_trustAnchorId;
+
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Source m_source;
-  bool m_sourceHasBeenSet = false;
-
-  Aws::String m_trustAnchorId;
   bool m_trustAnchorIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
 };
 
 }  // namespace Model

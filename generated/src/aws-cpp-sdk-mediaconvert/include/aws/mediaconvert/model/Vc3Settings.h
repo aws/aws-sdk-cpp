@@ -239,30 +239,30 @@ class Vc3Settings {
   ///@}
  private:
   Vc3FramerateControl m_framerateControl{Vc3FramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   Vc3FramerateConversionAlgorithm m_framerateConversionAlgorithm{Vc3FramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   Vc3InterlaceMode m_interlaceMode{Vc3InterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   Vc3ScanTypeConversionMode m_scanTypeConversionMode{Vc3ScanTypeConversionMode::NOT_SET};
-  bool m_scanTypeConversionModeHasBeenSet = false;
 
   Vc3SlowPal m_slowPal{Vc3SlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   Vc3Telecine m_telecine{Vc3Telecine::NOT_SET};
-  bool m_telecineHasBeenSet = false;
 
   Vc3Class m_vc3Class{Vc3Class::NOT_SET};
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_scanTypeConversionModeHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
+  bool m_telecineHasBeenSet = false;
   bool m_vc3ClassHasBeenSet = false;
 };
 

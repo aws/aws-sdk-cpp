@@ -86,12 +86,12 @@ class ListScriptsResult {
   ///@}
  private:
   Aws::Vector<Script> m_scripts;
-  bool m_scriptsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scriptsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

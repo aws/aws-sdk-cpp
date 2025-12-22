@@ -66,9 +66,9 @@ class UpdateCaseStatusRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   SelfManagedCaseStatus m_caseStatus{SelfManagedCaseStatus::NOT_SET};
+  bool m_caseIdHasBeenSet = false;
   bool m_caseStatusHasBeenSet = false;
 };
 

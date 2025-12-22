@@ -84,12 +84,12 @@ class ListMetadataTransferJobsResult {
   ///@}
  private:
   Aws::Vector<MetadataTransferJobSummary> m_metadataTransferJobSummaries;
-  bool m_metadataTransferJobSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_metadataTransferJobSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

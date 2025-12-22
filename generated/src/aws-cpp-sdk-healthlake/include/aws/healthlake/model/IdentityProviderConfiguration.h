@@ -127,15 +127,15 @@ class IdentityProviderConfiguration {
   ///@}
  private:
   AuthorizationStrategy m_authorizationStrategy{AuthorizationStrategy::NOT_SET};
-  bool m_authorizationStrategyHasBeenSet = false;
 
   bool m_fineGrainedAuthorizationEnabled{false};
-  bool m_fineGrainedAuthorizationEnabledHasBeenSet = false;
 
   Aws::String m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_idpLambdaArn;
+  bool m_authorizationStrategyHasBeenSet = false;
+  bool m_fineGrainedAuthorizationEnabledHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_idpLambdaArnHasBeenSet = false;
 };
 

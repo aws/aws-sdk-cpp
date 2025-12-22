@@ -111,15 +111,15 @@ class ClientPolicyTls {
   ///@}
  private:
   ClientTlsCertificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   bool m_enforce{false};
-  bool m_enforceHasBeenSet = false;
 
   Aws::Vector<int> m_ports;
-  bool m_portsHasBeenSet = false;
 
   TlsValidationContext m_validation;
+  bool m_certificateHasBeenSet = false;
+  bool m_enforceHasBeenSet = false;
+  bool m_portsHasBeenSet = false;
   bool m_validationHasBeenSet = false;
 };
 

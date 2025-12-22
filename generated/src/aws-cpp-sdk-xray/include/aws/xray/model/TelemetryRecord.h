@@ -133,21 +133,21 @@ class TelemetryRecord {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   int m_segmentsReceivedCount{0};
-  bool m_segmentsReceivedCountHasBeenSet = false;
 
   int m_segmentsSentCount{0};
-  bool m_segmentsSentCountHasBeenSet = false;
 
   int m_segmentsSpilloverCount{0};
-  bool m_segmentsSpilloverCountHasBeenSet = false;
 
   int m_segmentsRejectedCount{0};
-  bool m_segmentsRejectedCountHasBeenSet = false;
 
   BackendConnectionErrors m_backendConnectionErrors;
+  bool m_timestampHasBeenSet = false;
+  bool m_segmentsReceivedCountHasBeenSet = false;
+  bool m_segmentsSentCountHasBeenSet = false;
+  bool m_segmentsSpilloverCountHasBeenSet = false;
+  bool m_segmentsRejectedCountHasBeenSet = false;
   bool m_backendConnectionErrorsHasBeenSet = false;
 };
 

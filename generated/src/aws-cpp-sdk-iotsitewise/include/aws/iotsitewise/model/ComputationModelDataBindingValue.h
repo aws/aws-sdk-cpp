@@ -96,12 +96,12 @@ class ComputationModelDataBindingValue {
   ///@}
  private:
   AssetModelPropertyBindingValue m_assetModelProperty;
-  bool m_assetModelPropertyHasBeenSet = false;
 
   AssetPropertyBindingValue m_assetProperty;
-  bool m_assetPropertyHasBeenSet = false;
 
   Aws::Vector<ComputationModelDataBindingValue> m_list;
+  bool m_assetModelPropertyHasBeenSet = false;
+  bool m_assetPropertyHasBeenSet = false;
   bool m_listHasBeenSet = false;
 };
 

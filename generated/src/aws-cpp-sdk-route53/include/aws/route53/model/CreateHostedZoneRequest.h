@@ -157,18 +157,18 @@ class CreateHostedZoneRequest : public Route53Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   VPC m_vPC;
-  bool m_vPCHasBeenSet = false;
 
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   HostedZoneConfig m_hostedZoneConfig;
-  bool m_hostedZoneConfigHasBeenSet = false;
 
   Aws::String m_delegationSetId;
+  bool m_nameHasBeenSet = false;
+  bool m_vPCHasBeenSet = false;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_hostedZoneConfigHasBeenSet = false;
   bool m_delegationSetIdHasBeenSet = false;
 };
 

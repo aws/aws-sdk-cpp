@@ -112,15 +112,15 @@ class SourceRevision {
   ///@}
  private:
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_revisionSummary;
-  bool m_revisionSummaryHasBeenSet = false;
 
   Aws::String m_revisionUrl;
+  bool m_actionNameHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_revisionSummaryHasBeenSet = false;
   bool m_revisionUrlHasBeenSet = false;
 };
 

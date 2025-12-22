@@ -119,18 +119,18 @@ class ListWorkspaceServiceAccountTokensResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_serviceAccountId;
-  bool m_serviceAccountIdHasBeenSet = false;
 
   Aws::Vector<ServiceAccountTokenSummary> m_serviceAccountTokens;
-  bool m_serviceAccountTokensHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serviceAccountIdHasBeenSet = false;
+  bool m_serviceAccountTokensHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

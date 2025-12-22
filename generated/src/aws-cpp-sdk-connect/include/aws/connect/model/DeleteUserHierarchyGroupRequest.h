@@ -67,9 +67,9 @@ class DeleteUserHierarchyGroupRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_hierarchyGroupId;
-  bool m_hierarchyGroupIdHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_hierarchyGroupIdHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

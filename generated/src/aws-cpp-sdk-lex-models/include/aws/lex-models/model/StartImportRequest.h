@@ -121,15 +121,15 @@ class StartImportRequest : public LexModelBuildingServiceRequest {
   ///@}
  private:
   Aws::Utils::ByteBuffer m_payload{};
-  bool m_payloadHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   MergeStrategy m_mergeStrategy{MergeStrategy::NOT_SET};
-  bool m_mergeStrategyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_payloadHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_mergeStrategyHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

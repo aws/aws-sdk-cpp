@@ -132,18 +132,18 @@ class RunScheduledInstancesRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   ScheduledInstancesLaunchSpecification m_launchSpecification;
-  bool m_launchSpecificationHasBeenSet = false;
 
   Aws::String m_scheduledInstanceId;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_launchSpecificationHasBeenSet = false;
   bool m_scheduledInstanceIdHasBeenSet = false;
 };
 

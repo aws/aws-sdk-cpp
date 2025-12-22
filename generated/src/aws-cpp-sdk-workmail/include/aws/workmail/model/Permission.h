@@ -99,12 +99,12 @@ class Permission {
   ///@}
  private:
   Aws::String m_granteeId;
-  bool m_granteeIdHasBeenSet = false;
 
   MemberType m_granteeType{MemberType::NOT_SET};
-  bool m_granteeTypeHasBeenSet = false;
 
   Aws::Vector<PermissionType> m_permissionValues;
+  bool m_granteeIdHasBeenSet = false;
+  bool m_granteeTypeHasBeenSet = false;
   bool m_permissionValuesHasBeenSet = false;
 };
 

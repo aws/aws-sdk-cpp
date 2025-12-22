@@ -69,9 +69,9 @@ class BatchDescribeModelPackageError {
   ///@}
  private:
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorResponse;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorResponseHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetPermissionResult {
   ///@}
  private:
   ResourceSharePermissionDetail m_permission;
-  bool m_permissionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_permissionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

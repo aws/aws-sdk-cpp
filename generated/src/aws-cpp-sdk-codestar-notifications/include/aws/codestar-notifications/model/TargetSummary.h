@@ -90,12 +90,12 @@ class TargetSummary {
   ///@}
  private:
   Aws::String m_targetAddress;
-  bool m_targetAddressHasBeenSet = false;
 
   Aws::String m_targetType;
-  bool m_targetTypeHasBeenSet = false;
 
   TargetStatus m_targetStatus{TargetStatus::NOT_SET};
+  bool m_targetAddressHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
   bool m_targetStatusHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class DescribeDBClusterSnapshotsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<DBClusterSnapshot> m_dBClusterSnapshots;
-  bool m_dBClusterSnapshotsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_dBClusterSnapshotsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

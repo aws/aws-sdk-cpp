@@ -108,12 +108,12 @@ class WindowsAuditLogConfiguration {
   ///@}
  private:
   WindowsAccessAuditLogLevel m_fileAccessAuditLogLevel{WindowsAccessAuditLogLevel::NOT_SET};
-  bool m_fileAccessAuditLogLevelHasBeenSet = false;
 
   WindowsAccessAuditLogLevel m_fileShareAccessAuditLogLevel{WindowsAccessAuditLogLevel::NOT_SET};
-  bool m_fileShareAccessAuditLogLevelHasBeenSet = false;
 
   Aws::String m_auditLogDestination;
+  bool m_fileAccessAuditLogLevelHasBeenSet = false;
+  bool m_fileShareAccessAuditLogLevelHasBeenSet = false;
   bool m_auditLogDestinationHasBeenSet = false;
 };
 

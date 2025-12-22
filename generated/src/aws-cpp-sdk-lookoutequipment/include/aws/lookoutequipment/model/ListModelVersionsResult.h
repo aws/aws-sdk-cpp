@@ -92,12 +92,12 @@ class ListModelVersionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ModelVersionSummary> m_modelVersionSummaries;
-  bool m_modelVersionSummariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_modelVersionSummariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

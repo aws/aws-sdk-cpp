@@ -60,9 +60,9 @@ class UpdateTrustAnchorResult {
   ///@}
  private:
   TrustAnchorDetail m_trustAnchor;
-  bool m_trustAnchorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustAnchorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

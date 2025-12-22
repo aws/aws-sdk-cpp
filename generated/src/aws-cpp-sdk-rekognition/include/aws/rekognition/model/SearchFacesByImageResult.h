@@ -121,18 +121,18 @@ class SearchFacesByImageResult {
   ///@}
  private:
   BoundingBox m_searchedFaceBoundingBox;
-  bool m_searchedFaceBoundingBoxHasBeenSet = false;
 
   double m_searchedFaceConfidence{0.0};
-  bool m_searchedFaceConfidenceHasBeenSet = false;
 
   Aws::Vector<FaceMatch> m_faceMatches;
-  bool m_faceMatchesHasBeenSet = false;
 
   Aws::String m_faceModelVersion;
-  bool m_faceModelVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_searchedFaceBoundingBoxHasBeenSet = false;
+  bool m_searchedFaceConfidenceHasBeenSet = false;
+  bool m_faceMatchesHasBeenSet = false;
+  bool m_faceModelVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

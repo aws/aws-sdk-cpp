@@ -180,21 +180,21 @@ class RouterOutputFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_regionNames;
-  bool m_regionNamesHasBeenSet = false;
 
   Aws::Vector<RouterOutputType> m_outputTypes;
-  bool m_outputTypesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceArns;
-  bool m_networkInterfaceArnsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routedInputArns;
-  bool m_routedInputArnsHasBeenSet = false;
 
   Aws::Vector<RoutingScope> m_routingScopes;
+  bool m_regionNamesHasBeenSet = false;
+  bool m_outputTypesHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_networkInterfaceArnsHasBeenSet = false;
+  bool m_routedInputArnsHasBeenSet = false;
   bool m_routingScopesHasBeenSet = false;
 };
 

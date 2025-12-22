@@ -125,15 +125,15 @@ class ListStepsRequest : public EMRRequest {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::Vector<StepState> m_stepStates;
-  bool m_stepStatesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_stepIds;
-  bool m_stepIdsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_stepStatesHasBeenSet = false;
+  bool m_stepIdsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

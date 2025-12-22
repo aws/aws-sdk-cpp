@@ -132,18 +132,18 @@ class FieldConfig {
   ///@}
  private:
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   FieldPosition m_position;
-  bool m_positionHasBeenSet = false;
 
   bool m_excluded{false};
-  bool m_excludedHasBeenSet = false;
 
   FieldInputConfig m_inputType;
-  bool m_inputTypeHasBeenSet = false;
 
   Aws::Vector<FieldValidationConfiguration> m_validations;
+  bool m_labelHasBeenSet = false;
+  bool m_positionHasBeenSet = false;
+  bool m_excludedHasBeenSet = false;
+  bool m_inputTypeHasBeenSet = false;
   bool m_validationsHasBeenSet = false;
 };
 

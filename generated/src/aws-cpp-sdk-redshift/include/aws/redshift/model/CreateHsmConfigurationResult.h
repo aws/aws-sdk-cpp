@@ -58,9 +58,9 @@ class CreateHsmConfigurationResult {
   ///@}
  private:
   HsmConfiguration m_hsmConfiguration;
-  bool m_hsmConfigurationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_hsmConfigurationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

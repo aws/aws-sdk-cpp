@@ -91,12 +91,12 @@ class DisableControlRequest : public ControlTowerRequest {
   ///@}
  private:
   Aws::String m_controlIdentifier;
-  bool m_controlIdentifierHasBeenSet = false;
 
   Aws::String m_targetIdentifier;
-  bool m_targetIdentifierHasBeenSet = false;
 
   Aws::String m_enabledControlIdentifier;
+  bool m_controlIdentifierHasBeenSet = false;
+  bool m_targetIdentifierHasBeenSet = false;
   bool m_enabledControlIdentifierHasBeenSet = false;
 };
 

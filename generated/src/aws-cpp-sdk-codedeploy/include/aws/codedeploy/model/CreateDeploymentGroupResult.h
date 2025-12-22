@@ -65,9 +65,9 @@ class CreateDeploymentGroupResult {
   ///@}
  private:
   Aws::String m_deploymentGroupId;
-  bool m_deploymentGroupIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentGroupIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

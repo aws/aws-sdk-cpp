@@ -71,9 +71,9 @@ class EventCondition {
   ///@}
  private:
   EventDimensions m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   Aws::String m_messageActivity;
+  bool m_dimensionsHasBeenSet = false;
   bool m_messageActivityHasBeenSet = false;
 };
 

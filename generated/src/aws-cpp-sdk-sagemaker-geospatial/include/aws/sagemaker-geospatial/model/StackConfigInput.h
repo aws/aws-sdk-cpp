@@ -79,9 +79,9 @@ class StackConfigInput {
   ///@}
  private:
   OutputResolutionStackInput m_outputResolution;
-  bool m_outputResolutionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetBands;
+  bool m_outputResolutionHasBeenSet = false;
   bool m_targetBandsHasBeenSet = false;
 };
 

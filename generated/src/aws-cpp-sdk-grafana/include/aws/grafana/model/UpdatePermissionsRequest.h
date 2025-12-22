@@ -73,9 +73,9 @@ class UpdatePermissionsRequest : public ManagedGrafanaRequest {
   ///@}
  private:
   Aws::Vector<UpdateInstruction> m_updateInstructionBatch;
-  bool m_updateInstructionBatchHasBeenSet = false;
 
   Aws::String m_workspaceId;
+  bool m_updateInstructionBatchHasBeenSet = false;
   bool m_workspaceIdHasBeenSet = false;
 };
 

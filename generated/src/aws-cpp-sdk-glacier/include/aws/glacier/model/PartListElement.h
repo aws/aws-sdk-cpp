@@ -52,8 +52,8 @@ class PartListElement {
 
   ///@{
   /**
-   * <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part.
-   * This field is never <code>null</code>.</p>
+   * <p>The SHA256 tree hash value that Amazon Glacier calculated for the part. This
+   * field is never <code>null</code>.</p>
    */
   inline const Aws::String& GetSHA256TreeHash() const { return m_sHA256TreeHash; }
   inline bool SHA256TreeHashHasBeenSet() const { return m_sHA256TreeHashHasBeenSet; }
@@ -70,9 +70,9 @@ class PartListElement {
   ///@}
  private:
   Aws::String m_rangeInBytes;
-  bool m_rangeInBytesHasBeenSet = false;
 
   Aws::String m_sHA256TreeHash;
+  bool m_rangeInBytesHasBeenSet = false;
   bool m_sHA256TreeHashHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class OutputSource {
   ///@}
  private:
   Aws::String m_outputSourceId;
-  bool m_outputSourceIdHasBeenSet = false;
 
   Aws::String m_outputSourceType;
+  bool m_outputSourceIdHasBeenSet = false;
   bool m_outputSourceTypeHasBeenSet = false;
 };
 

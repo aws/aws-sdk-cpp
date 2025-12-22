@@ -67,9 +67,9 @@ class TimestampedInclusionAnnotation {
   ///@}
  private:
   InclusionAnnotationValue m_value{InclusionAnnotationValue::NOT_SET};
-  bool m_valueHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedOn{};
+  bool m_valueHasBeenSet = false;
   bool m_lastModifiedOnHasBeenSet = false;
 };
 

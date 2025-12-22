@@ -65,9 +65,9 @@ class GetInstanceCommunicationLimitsResult {
   ///@}
  private:
   InstanceCommunicationLimitsConfig m_communicationLimitsConfig;
-  bool m_communicationLimitsConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_communicationLimitsConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

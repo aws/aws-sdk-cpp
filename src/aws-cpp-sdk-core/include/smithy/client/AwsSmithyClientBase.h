@@ -9,6 +9,7 @@
 #include <smithy/tracing/TelemetryProvider.h>
 #include <smithy/interceptor/Interceptor.h>
 #include <smithy/client/features/ChecksumInterceptor.h>
+#include <smithy/client/features/ChunkingInterceptor.h>
 #include <smithy/client/features/UserAgentInterceptor.h>
 
 #include <aws/crt/Variant.h>
@@ -20,6 +21,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/http/HttpClient.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <utility>
@@ -99,8 +101,13 @@ namespace client
           m_serviceUserAgentName(std::move(serviceUserAgentName)),
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
-          m_interceptors{Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig)}
+          m_interceptors({
+              Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
+              Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", 
+                  m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode)
+          })
         {
+            
             baseInit();
         }
 

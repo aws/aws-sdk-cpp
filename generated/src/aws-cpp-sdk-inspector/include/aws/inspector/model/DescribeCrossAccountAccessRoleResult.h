@@ -94,15 +94,15 @@ class DescribeCrossAccountAccessRoleResult {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   bool m_valid{false};
-  bool m_validHasBeenSet = false;
 
   Aws::Utils::DateTime m_registeredAt{};
-  bool m_registeredAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_roleArnHasBeenSet = false;
+  bool m_validHasBeenSet = false;
+  bool m_registeredAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

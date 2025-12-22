@@ -109,15 +109,15 @@ class GetAccountInformationResult {
   ///@}
  private:
   Aws::Utils::DateTime m_accountCreatedDate{};
-  bool m_accountCreatedDateHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_accountName;
-  bool m_accountNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountCreatedDateHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_accountNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

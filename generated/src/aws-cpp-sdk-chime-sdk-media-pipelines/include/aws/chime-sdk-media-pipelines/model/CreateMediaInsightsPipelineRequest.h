@@ -192,24 +192,24 @@ class CreateMediaInsightsPipelineRequest : public ChimeSDKMediaPipelinesRequest 
   ///@}
  private:
   Aws::String m_mediaInsightsPipelineConfigurationArn;
-  bool m_mediaInsightsPipelineConfigurationArnHasBeenSet = false;
 
   KinesisVideoStreamSourceRuntimeConfiguration m_kinesisVideoStreamSourceRuntimeConfiguration;
-  bool m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_mediaInsightsRuntimeMetadata;
-  bool m_mediaInsightsRuntimeMetadataHasBeenSet = false;
 
   KinesisVideoStreamRecordingSourceRuntimeConfiguration m_kinesisVideoStreamRecordingSourceRuntimeConfiguration;
-  bool m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet = false;
 
   S3RecordingSinkRuntimeConfiguration m_s3RecordingSinkRuntimeConfiguration;
-  bool m_s3RecordingSinkRuntimeConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_mediaInsightsPipelineConfigurationArnHasBeenSet = false;
+  bool m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet = false;
+  bool m_mediaInsightsRuntimeMetadataHasBeenSet = false;
+  bool m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet = false;
+  bool m_s3RecordingSinkRuntimeConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

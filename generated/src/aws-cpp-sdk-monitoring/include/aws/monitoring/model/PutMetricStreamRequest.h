@@ -33,10 +33,8 @@ class PutMetricStreamRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>If you are creating a new metric stream, this is the name for the new stream.
@@ -264,30 +262,30 @@ class PutMetricStreamRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<MetricStreamFilter> m_includeFilters;
-  bool m_includeFiltersHasBeenSet = false;
 
   Aws::Vector<MetricStreamFilter> m_excludeFilters;
-  bool m_excludeFiltersHasBeenSet = false;
 
   Aws::String m_firehoseArn;
-  bool m_firehoseArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   MetricStreamOutputFormat m_outputFormat{MetricStreamOutputFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
-  bool m_statisticsConfigurationsHasBeenSet = false;
 
   bool m_includeLinkedAccountsMetrics{false};
+  bool m_nameHasBeenSet = false;
+  bool m_includeFiltersHasBeenSet = false;
+  bool m_excludeFiltersHasBeenSet = false;
+  bool m_firehoseArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_statisticsConfigurationsHasBeenSet = false;
   bool m_includeLinkedAccountsMetricsHasBeenSet = false;
 };
 

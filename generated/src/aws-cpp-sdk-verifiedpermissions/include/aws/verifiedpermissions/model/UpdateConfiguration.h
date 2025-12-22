@@ -73,9 +73,9 @@ class UpdateConfiguration {
   ///@}
  private:
   UpdateCognitoUserPoolConfiguration m_cognitoUserPoolConfiguration;
-  bool m_cognitoUserPoolConfigurationHasBeenSet = false;
 
   UpdateOpenIdConnectConfiguration m_openIdConnectConfiguration;
+  bool m_cognitoUserPoolConfigurationHasBeenSet = false;
   bool m_openIdConnectConfigurationHasBeenSet = false;
 };
 

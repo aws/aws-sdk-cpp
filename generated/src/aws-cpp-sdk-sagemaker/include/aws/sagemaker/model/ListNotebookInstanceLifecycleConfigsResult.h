@@ -89,12 +89,12 @@ class ListNotebookInstanceLifecycleConfigsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<NotebookInstanceLifecycleConfigSummary> m_notebookInstanceLifecycleConfigs;
-  bool m_notebookInstanceLifecycleConfigsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_notebookInstanceLifecycleConfigsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

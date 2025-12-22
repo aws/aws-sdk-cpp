@@ -207,30 +207,30 @@ class ActionReviewPayloadField {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   int m_displayOrder{0};
-  bool m_displayOrderHasBeenSet = false;
 
   Aws::String m_displayDescription;
-  bool m_displayDescriptionHasBeenSet = false;
 
   ActionPayloadFieldType m_type{ActionPayloadFieldType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::Document m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<ActionReviewPayloadFieldAllowedValue> m_allowedValues;
-  bool m_allowedValuesHasBeenSet = false;
 
   Aws::String m_allowedFormat;
-  bool m_allowedFormatHasBeenSet = false;
 
   Aws::Utils::Document m_arrayItemJsonSchema;
-  bool m_arrayItemJsonSchemaHasBeenSet = false;
 
   bool m_required{false};
+  bool m_displayNameHasBeenSet = false;
+  bool m_displayOrderHasBeenSet = false;
+  bool m_displayDescriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_allowedValuesHasBeenSet = false;
+  bool m_allowedFormatHasBeenSet = false;
+  bool m_arrayItemJsonSchemaHasBeenSet = false;
   bool m_requiredHasBeenSet = false;
 };
 

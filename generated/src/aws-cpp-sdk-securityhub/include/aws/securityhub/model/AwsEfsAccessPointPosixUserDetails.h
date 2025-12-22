@@ -97,12 +97,12 @@ class AwsEfsAccessPointPosixUserDetails {
   ///@}
  private:
   Aws::String m_gid;
-  bool m_gidHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_secondaryGids;
-  bool m_secondaryGidsHasBeenSet = false;
 
   Aws::String m_uid;
+  bool m_gidHasBeenSet = false;
+  bool m_secondaryGidsHasBeenSet = false;
   bool m_uidHasBeenSet = false;
 };
 

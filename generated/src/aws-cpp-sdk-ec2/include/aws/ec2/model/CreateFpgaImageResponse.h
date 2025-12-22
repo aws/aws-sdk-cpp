@@ -77,12 +77,12 @@ class CreateFpgaImageResponse {
   ///@}
  private:
   Aws::String m_fpgaImageId;
-  bool m_fpgaImageIdHasBeenSet = false;
 
   Aws::String m_fpgaImageGlobalId;
-  bool m_fpgaImageGlobalIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_fpgaImageIdHasBeenSet = false;
+  bool m_fpgaImageGlobalIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

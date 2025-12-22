@@ -105,15 +105,15 @@ class ListSpeakerEnrollmentJobsRequest : public VoiceIDRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   SpeakerEnrollmentJobStatus m_jobStatus{SpeakerEnrollmentJobStatus::NOT_SET};
-  bool m_jobStatusHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_domainIdHasBeenSet = false;
+  bool m_jobStatusHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

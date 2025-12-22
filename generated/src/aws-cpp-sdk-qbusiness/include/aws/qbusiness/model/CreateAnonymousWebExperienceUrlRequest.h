@@ -83,12 +83,12 @@ class CreateAnonymousWebExperienceUrlRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_webExperienceId;
-  bool m_webExperienceIdHasBeenSet = false;
 
   int m_sessionDurationInMinutes{0};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_webExperienceIdHasBeenSet = false;
   bool m_sessionDurationInMinutesHasBeenSet = false;
 };
 

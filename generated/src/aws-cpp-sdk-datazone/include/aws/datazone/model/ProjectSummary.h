@@ -221,33 +221,33 @@ class ProjectSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   Aws::Vector<ProjectDeletionError> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
-  bool m_projectStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectStatusHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

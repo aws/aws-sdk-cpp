@@ -64,9 +64,9 @@ class BudgetActionToRemove {
   ///@}
  private:
   BudgetActionType m_type{BudgetActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   double m_thresholdPercentage{0.0};
+  bool m_typeHasBeenSet = false;
   bool m_thresholdPercentageHasBeenSet = false;
 };
 

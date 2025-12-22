@@ -60,9 +60,9 @@ class ModifyInstanceEventStartTimeResponse {
   ///@}
  private:
   InstanceStatusEvent m_event;
-  bool m_eventHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_eventHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

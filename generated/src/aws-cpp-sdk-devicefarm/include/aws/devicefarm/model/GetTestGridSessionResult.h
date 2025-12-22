@@ -60,9 +60,9 @@ class GetTestGridSessionResult {
   ///@}
  private:
   TestGridSession m_testGridSession;
-  bool m_testGridSessionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testGridSessionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

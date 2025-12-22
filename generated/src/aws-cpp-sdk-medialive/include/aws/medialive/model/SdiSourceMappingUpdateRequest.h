@@ -89,12 +89,12 @@ class SdiSourceMappingUpdateRequest {
   ///@}
  private:
   int m_cardNumber{0};
-  bool m_cardNumberHasBeenSet = false;
 
   int m_channelNumber{0};
-  bool m_channelNumberHasBeenSet = false;
 
   Aws::String m_sdiSource;
+  bool m_cardNumberHasBeenSet = false;
+  bool m_channelNumberHasBeenSet = false;
   bool m_sdiSourceHasBeenSet = false;
 };
 

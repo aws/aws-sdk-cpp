@@ -85,12 +85,12 @@ class ListCaseRulesResult {
   ///@}
  private:
   Aws::Vector<CaseRuleSummary> m_caseRules;
-  bool m_caseRulesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_caseRulesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

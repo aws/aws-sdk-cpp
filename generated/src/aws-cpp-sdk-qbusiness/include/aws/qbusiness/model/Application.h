@@ -144,8 +144,8 @@ class Application {
 
   ///@{
   /**
-   * <p>The Amazon QuickSight configuration for an Amazon Q Business application that
-   * uses QuickSight as the identity provider.</p>
+   * <p>The Amazon Quick Suite configuration for an Amazon Q Business application
+   * that uses Quick Suite as the identity provider.</p>
    */
   inline const QuickSightConfiguration& GetQuickSightConfiguration() const { return m_quickSightConfiguration; }
   inline bool QuickSightConfigurationHasBeenSet() const { return m_quickSightConfigurationHasBeenSet; }
@@ -162,24 +162,24 @@ class Application {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   QuickSightConfiguration m_quickSightConfiguration;
+  bool m_displayNameHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_identityTypeHasBeenSet = false;
   bool m_quickSightConfigurationHasBeenSet = false;
 };
 

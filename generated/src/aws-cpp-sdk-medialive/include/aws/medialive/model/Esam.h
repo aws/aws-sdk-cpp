@@ -143,21 +143,21 @@ class Esam {
   ///@}
  private:
   Aws::String m_acquisitionPointId;
-  bool m_acquisitionPointIdHasBeenSet = false;
 
   int m_adAvailOffset{0};
-  bool m_adAvailOffsetHasBeenSet = false;
 
   Aws::String m_passwordParam;
-  bool m_passwordParamHasBeenSet = false;
 
   Aws::String m_poisEndpoint;
-  bool m_poisEndpointHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_zoneIdentity;
+  bool m_acquisitionPointIdHasBeenSet = false;
+  bool m_adAvailOffsetHasBeenSet = false;
+  bool m_passwordParamHasBeenSet = false;
+  bool m_poisEndpointHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
   bool m_zoneIdentityHasBeenSet = false;
 };
 

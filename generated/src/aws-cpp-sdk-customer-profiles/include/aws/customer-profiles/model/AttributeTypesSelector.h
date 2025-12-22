@@ -165,15 +165,15 @@ class AttributeTypesSelector {
   ///@}
  private:
   AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
-  bool m_attributeMatchingModelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_emailAddress;
+  bool m_attributeMatchingModelHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
   bool m_emailAddressHasBeenSet = false;
 };
 

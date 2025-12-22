@@ -69,9 +69,9 @@ class S3RecordingDetails {
   ///@}
  private:
   Aws::String m_bucketArn;
-  bool m_bucketArnHasBeenSet = false;
 
   Aws::String m_keyTemplate;
+  bool m_bucketArnHasBeenSet = false;
   bool m_keyTemplateHasBeenSet = false;
 };
 

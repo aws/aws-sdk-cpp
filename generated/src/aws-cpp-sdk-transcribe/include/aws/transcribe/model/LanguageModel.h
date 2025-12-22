@@ -226,30 +226,30 @@ class LanguageModel {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   CLMLanguageCode m_languageCode{CLMLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   BaseModelName m_baseModelName{BaseModelName::NOT_SET};
-  bool m_baseModelNameHasBeenSet = false;
 
   ModelStatus m_modelStatus{ModelStatus::NOT_SET};
-  bool m_modelStatusHasBeenSet = false;
 
   bool m_upgradeAvailability{false};
-  bool m_upgradeAvailabilityHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   InputDataConfig m_inputDataConfig;
+  bool m_modelNameHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_baseModelNameHasBeenSet = false;
+  bool m_modelStatusHasBeenSet = false;
+  bool m_upgradeAvailabilityHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_inputDataConfigHasBeenSet = false;
 };
 

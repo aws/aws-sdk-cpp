@@ -63,9 +63,9 @@ class DetectStackDriftResult {
   ///@}
  private:
   Aws::String m_stackDriftDetectionId;
-  bool m_stackDriftDetectionIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackDriftDetectionIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

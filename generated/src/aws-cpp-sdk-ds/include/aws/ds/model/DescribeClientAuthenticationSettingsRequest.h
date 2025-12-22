@@ -105,15 +105,15 @@ class DescribeClientAuthenticationSettingsRequest : public DirectoryServiceReque
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   ClientAuthenticationType m_type{ClientAuthenticationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
+  bool m_directoryIdHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
 };
 

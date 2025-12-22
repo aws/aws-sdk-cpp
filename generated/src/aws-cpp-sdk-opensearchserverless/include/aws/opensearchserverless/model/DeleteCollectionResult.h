@@ -60,9 +60,9 @@ class DeleteCollectionResult {
   ///@}
  private:
   DeleteCollectionDetail m_deleteCollectionDetail;
-  bool m_deleteCollectionDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deleteCollectionDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class TaskRunSessionActionDefinitionSummary {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_stepId;
-  bool m_stepIdHasBeenSet = false;
 
   Aws::Map<Aws::String, TaskParameterValue> m_parameters;
+  bool m_taskIdHasBeenSet = false;
+  bool m_stepIdHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

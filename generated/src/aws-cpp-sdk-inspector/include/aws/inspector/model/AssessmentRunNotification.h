@@ -139,21 +139,21 @@ class AssessmentRunNotification {
   ///@}
  private:
   Aws::Utils::DateTime m_date{};
-  bool m_dateHasBeenSet = false;
 
   InspectorEvent m_event{InspectorEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   bool m_error{false};
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   AssessmentRunNotificationSnsStatusCode m_snsPublishStatusCode{AssessmentRunNotificationSnsStatusCode::NOT_SET};
+  bool m_dateHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
   bool m_snsPublishStatusCodeHasBeenSet = false;
 };
 

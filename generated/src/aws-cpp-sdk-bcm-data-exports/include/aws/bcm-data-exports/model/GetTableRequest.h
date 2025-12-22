@@ -77,9 +77,9 @@ class GetTableRequest : public BCMDataExportsRequest {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tableProperties;
+  bool m_tableNameHasBeenSet = false;
   bool m_tablePropertiesHasBeenSet = false;
 };
 

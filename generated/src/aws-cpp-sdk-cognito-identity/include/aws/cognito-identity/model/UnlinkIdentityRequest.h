@@ -103,12 +103,12 @@ class UnlinkIdentityRequest : public CognitoIdentityRequest {
   ///@}
  private:
   Aws::String m_identityId;
-  bool m_identityIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_logins;
-  bool m_loginsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_loginsToRemove;
+  bool m_identityIdHasBeenSet = false;
+  bool m_loginsHasBeenSet = false;
   bool m_loginsToRemoveHasBeenSet = false;
 };
 

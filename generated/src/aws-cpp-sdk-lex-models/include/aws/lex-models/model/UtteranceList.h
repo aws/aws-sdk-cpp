@@ -80,9 +80,9 @@ class UtteranceList {
   ///@}
  private:
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::Vector<UtteranceData> m_utterances;
+  bool m_botVersionHasBeenSet = false;
   bool m_utterancesHasBeenSet = false;
 };
 

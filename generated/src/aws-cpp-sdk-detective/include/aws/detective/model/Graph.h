@@ -71,9 +71,9 @@ class Graph {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
+  bool m_arnHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

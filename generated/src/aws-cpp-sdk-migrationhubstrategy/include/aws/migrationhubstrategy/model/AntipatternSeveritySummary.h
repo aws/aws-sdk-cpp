@@ -65,9 +65,9 @@ class AntipatternSeveritySummary {
   ///@}
  private:
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   Severity m_severity{Severity::NOT_SET};
+  bool m_countHasBeenSet = false;
   bool m_severityHasBeenSet = false;
 };
 

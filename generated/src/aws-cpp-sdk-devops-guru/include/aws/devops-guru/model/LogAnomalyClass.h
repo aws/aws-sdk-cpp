@@ -161,24 +161,24 @@ class LogAnomalyClass {
   ///@}
  private:
   Aws::String m_logStreamName;
-  bool m_logStreamNameHasBeenSet = false;
 
   LogAnomalyType m_logAnomalyType{LogAnomalyType::NOT_SET};
-  bool m_logAnomalyTypeHasBeenSet = false;
 
   Aws::String m_logAnomalyToken;
-  bool m_logAnomalyTokenHasBeenSet = false;
 
   Aws::String m_logEventId;
-  bool m_logEventIdHasBeenSet = false;
 
   Aws::String m_explanation;
-  bool m_explanationHasBeenSet = false;
 
   int m_numberOfLogLinesOccurrences{0};
-  bool m_numberOfLogLinesOccurrencesHasBeenSet = false;
 
   Aws::Utils::DateTime m_logEventTimestamp{};
+  bool m_logStreamNameHasBeenSet = false;
+  bool m_logAnomalyTypeHasBeenSet = false;
+  bool m_logAnomalyTokenHasBeenSet = false;
+  bool m_logEventIdHasBeenSet = false;
+  bool m_explanationHasBeenSet = false;
+  bool m_numberOfLogLinesOccurrencesHasBeenSet = false;
   bool m_logEventTimestampHasBeenSet = false;
 };
 

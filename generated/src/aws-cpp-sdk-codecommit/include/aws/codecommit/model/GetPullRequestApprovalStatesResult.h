@@ -67,9 +67,9 @@ class GetPullRequestApprovalStatesResult {
   ///@}
  private:
   Aws::Vector<Approval> m_approvals;
-  bool m_approvalsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_approvalsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

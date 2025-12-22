@@ -92,12 +92,12 @@ class S3Destination {
   ///@}
  private:
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_manifestKey;
-  bool m_manifestKeyHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_manifestKeyHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

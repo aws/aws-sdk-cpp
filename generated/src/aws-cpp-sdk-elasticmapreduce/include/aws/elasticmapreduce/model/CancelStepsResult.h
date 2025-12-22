@@ -74,9 +74,9 @@ class CancelStepsResult {
   ///@}
  private:
   Aws::Vector<CancelStepsInfo> m_cancelStepsInfoList;
-  bool m_cancelStepsInfoListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cancelStepsInfoListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

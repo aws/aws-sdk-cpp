@@ -69,9 +69,9 @@ class ModifyBackupAttributesRequest : public CloudHSMV2Request {
   ///@}
  private:
   Aws::String m_backupId;
-  bool m_backupIdHasBeenSet = false;
 
   bool m_neverExpires{false};
+  bool m_backupIdHasBeenSet = false;
   bool m_neverExpiresHasBeenSet = false;
 };
 

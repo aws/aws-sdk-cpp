@@ -105,12 +105,12 @@ class SwitchoverDetail {
   ///@}
  private:
   Aws::String m_sourceMember;
-  bool m_sourceMemberHasBeenSet = false;
 
   Aws::String m_targetMember;
-  bool m_targetMemberHasBeenSet = false;
 
   Aws::String m_status;
+  bool m_sourceMemberHasBeenSet = false;
+  bool m_targetMemberHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

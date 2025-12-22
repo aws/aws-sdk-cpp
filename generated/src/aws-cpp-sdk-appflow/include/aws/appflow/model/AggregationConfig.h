@@ -69,9 +69,9 @@ class AggregationConfig {
   ///@}
  private:
   AggregationType m_aggregationType{AggregationType::NOT_SET};
-  bool m_aggregationTypeHasBeenSet = false;
 
   long long m_targetFileSize{0};
+  bool m_aggregationTypeHasBeenSet = false;
   bool m_targetFileSizeHasBeenSet = false;
 };
 

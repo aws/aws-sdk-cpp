@@ -147,18 +147,18 @@ class CopyClusterSnapshotRequest : public DocDBElasticRequest {
   ///@}
  private:
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_targetSnapshotName;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_targetSnapshotNameHasBeenSet = false;
 };
 

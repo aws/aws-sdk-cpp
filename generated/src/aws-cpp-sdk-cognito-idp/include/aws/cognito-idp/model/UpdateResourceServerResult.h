@@ -61,9 +61,9 @@ class UpdateResourceServerResult {
   ///@}
  private:
   ResourceServerType m_resourceServer;
-  bool m_resourceServerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

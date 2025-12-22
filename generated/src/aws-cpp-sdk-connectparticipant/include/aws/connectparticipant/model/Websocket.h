@@ -70,9 +70,9 @@ class Websocket {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_connectionExpiry;
+  bool m_urlHasBeenSet = false;
   bool m_connectionExpiryHasBeenSet = false;
 };
 

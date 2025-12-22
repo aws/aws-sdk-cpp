@@ -91,12 +91,12 @@ class AttachVpnGatewayRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpnGatewayId;
-  bool m_vpnGatewayIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_vpcIdHasBeenSet = false;
+  bool m_vpnGatewayIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

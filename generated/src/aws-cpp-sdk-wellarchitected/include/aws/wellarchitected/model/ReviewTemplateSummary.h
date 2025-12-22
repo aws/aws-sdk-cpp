@@ -161,24 +161,24 @@ class ReviewTemplateSummary {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_lenses;
-  bool m_lensesHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_templateArn;
-  bool m_templateArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   ReviewTemplateUpdateStatus m_updateStatus{ReviewTemplateUpdateStatus::NOT_SET};
+  bool m_descriptionHasBeenSet = false;
+  bool m_lensesHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_templateArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_updateStatusHasBeenSet = false;
 };
 

@@ -172,24 +172,24 @@ class CloudWatchMetricsDetail {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<CloudWatchMetricsDimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   CloudWatchMetricsStat m_stat{CloudWatchMetricsStat::NOT_SET};
-  bool m_statHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   CloudWatchMetricsDataSummary m_metricDataSummary;
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_statHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
   bool m_metricDataSummaryHasBeenSet = false;
 };
 

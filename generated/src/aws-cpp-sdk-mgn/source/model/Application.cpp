@@ -19,10 +19,6 @@ namespace Model {
 Application::Application(JsonView jsonValue) { *this = jsonValue; }
 
 Application& Application::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("applicationAggregatedStatus")) {
-    m_applicationAggregatedStatus = jsonValue.GetObject("applicationAggregatedStatus");
-    m_applicationAggregatedStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("applicationID")) {
     m_applicationID = jsonValue.GetString("applicationID");
     m_applicationIDHasBeenSet = true;
@@ -31,9 +27,9 @@ Application& Application::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("creationDateTime")) {
-    m_creationDateTime = jsonValue.GetString("creationDateTime");
-    m_creationDateTimeHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
@@ -43,13 +39,17 @@ Application& Application::operator=(JsonView jsonValue) {
     m_isArchived = jsonValue.GetBool("isArchived");
     m_isArchivedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("applicationAggregatedStatus")) {
+    m_applicationAggregatedStatus = jsonValue.GetObject("applicationAggregatedStatus");
+    m_applicationAggregatedStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("creationDateTime")) {
+    m_creationDateTime = jsonValue.GetString("creationDateTime");
+    m_creationDateTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastModifiedDateTime")) {
     m_lastModifiedDateTime = jsonValue.GetString("lastModifiedDateTime");
     m_lastModifiedDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -68,10 +68,6 @@ Application& Application::operator=(JsonView jsonValue) {
 JsonValue Application::Jsonize() const {
   JsonValue payload;
 
-  if (m_applicationAggregatedStatusHasBeenSet) {
-    payload.WithObject("applicationAggregatedStatus", m_applicationAggregatedStatus.Jsonize());
-  }
-
   if (m_applicationIDHasBeenSet) {
     payload.WithString("applicationID", m_applicationID);
   }
@@ -80,8 +76,8 @@ JsonValue Application::Jsonize() const {
     payload.WithString("arn", m_arn);
   }
 
-  if (m_creationDateTimeHasBeenSet) {
-    payload.WithString("creationDateTime", m_creationDateTime);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_descriptionHasBeenSet) {
@@ -92,12 +88,16 @@ JsonValue Application::Jsonize() const {
     payload.WithBool("isArchived", m_isArchived);
   }
 
-  if (m_lastModifiedDateTimeHasBeenSet) {
-    payload.WithString("lastModifiedDateTime", m_lastModifiedDateTime);
+  if (m_applicationAggregatedStatusHasBeenSet) {
+    payload.WithObject("applicationAggregatedStatus", m_applicationAggregatedStatus.Jsonize());
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+  if (m_creationDateTimeHasBeenSet) {
+    payload.WithString("creationDateTime", m_creationDateTime);
+  }
+
+  if (m_lastModifiedDateTimeHasBeenSet) {
+    payload.WithString("lastModifiedDateTime", m_lastModifiedDateTime);
   }
 
   if (m_tagsHasBeenSet) {

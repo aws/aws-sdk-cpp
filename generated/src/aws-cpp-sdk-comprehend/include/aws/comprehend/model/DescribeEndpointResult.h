@@ -60,9 +60,9 @@ class DescribeEndpointResult {
   ///@}
  private:
   EndpointProperties m_endpointProperties;
-  bool m_endpointPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

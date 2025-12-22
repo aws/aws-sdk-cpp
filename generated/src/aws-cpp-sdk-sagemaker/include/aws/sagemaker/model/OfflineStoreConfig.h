@@ -115,15 +115,15 @@ class OfflineStoreConfig {
   ///@}
  private:
   S3StorageConfig m_s3StorageConfig;
-  bool m_s3StorageConfigHasBeenSet = false;
 
   bool m_disableGlueTableCreation{false};
-  bool m_disableGlueTableCreationHasBeenSet = false;
 
   DataCatalogConfig m_dataCatalogConfig;
-  bool m_dataCatalogConfigHasBeenSet = false;
 
   TableFormat m_tableFormat{TableFormat::NOT_SET};
+  bool m_s3StorageConfigHasBeenSet = false;
+  bool m_disableGlueTableCreationHasBeenSet = false;
+  bool m_dataCatalogConfigHasBeenSet = false;
   bool m_tableFormatHasBeenSet = false;
 };
 

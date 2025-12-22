@@ -169,24 +169,24 @@ class RecordHandlerProgressRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_bearerToken;
-  bool m_bearerTokenHasBeenSet = false;
 
   OperationStatus m_operationStatus{OperationStatus::NOT_SET};
-  bool m_operationStatusHasBeenSet = false;
 
   OperationStatus m_currentOperationStatus{OperationStatus::NOT_SET};
-  bool m_currentOperationStatusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   HandlerErrorCode m_errorCode{HandlerErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_resourceModel;
-  bool m_resourceModelHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_bearerTokenHasBeenSet = false;
+  bool m_operationStatusHasBeenSet = false;
+  bool m_currentOperationStatusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_resourceModelHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

@@ -78,12 +78,12 @@ class CreateEventTrackerResult {
   ///@}
  private:
   Aws::String m_eventTrackerArn;
-  bool m_eventTrackerArnHasBeenSet = false;
 
   Aws::String m_trackingId;
-  bool m_trackingIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventTrackerArnHasBeenSet = false;
+  bool m_trackingIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

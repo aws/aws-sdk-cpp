@@ -207,30 +207,30 @@ class RouteServerEndpoint {
   ///@}
  private:
   Aws::String m_routeServerId;
-  bool m_routeServerIdHasBeenSet = false;
 
   Aws::String m_routeServerEndpointId;
-  bool m_routeServerEndpointIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_eniId;
-  bool m_eniIdHasBeenSet = false;
 
   Aws::String m_eniAddress;
-  bool m_eniAddressHasBeenSet = false;
 
   RouteServerEndpointState m_state{RouteServerEndpointState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_routeServerIdHasBeenSet = false;
+  bool m_routeServerEndpointIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_eniIdHasBeenSet = false;
+  bool m_eniAddressHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

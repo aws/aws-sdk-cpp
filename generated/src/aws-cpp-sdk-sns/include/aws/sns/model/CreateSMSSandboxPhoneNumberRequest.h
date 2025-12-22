@@ -71,9 +71,9 @@ class CreateSMSSandboxPhoneNumberRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   LanguageCodeString m_languageCode{LanguageCodeString::NOT_SET};
+  bool m_phoneNumberHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

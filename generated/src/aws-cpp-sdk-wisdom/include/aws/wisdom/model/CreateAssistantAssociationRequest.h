@@ -132,18 +132,18 @@ class CreateAssistantAssociationRequest : public ConnectWisdomServiceRequest {
   ///@}
  private:
   Aws::String m_assistantId;
-  bool m_assistantIdHasBeenSet = false;
 
   AssistantAssociationInputData m_association;
-  bool m_associationHasBeenSet = false;
 
   AssociationType m_associationType{AssociationType::NOT_SET};
-  bool m_associationTypeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_assistantIdHasBeenSet = false;
+  bool m_associationHasBeenSet = false;
+  bool m_associationTypeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

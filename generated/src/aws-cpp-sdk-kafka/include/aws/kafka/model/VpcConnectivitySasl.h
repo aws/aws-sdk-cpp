@@ -78,9 +78,9 @@ class VpcConnectivitySasl {
   ///@}
  private:
   VpcConnectivityScram m_scram;
-  bool m_scramHasBeenSet = false;
 
   VpcConnectivityIam m_iam;
+  bool m_scramHasBeenSet = false;
   bool m_iamHasBeenSet = false;
 };
 

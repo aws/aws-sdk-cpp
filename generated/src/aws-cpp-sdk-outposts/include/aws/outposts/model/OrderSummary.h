@@ -172,24 +172,24 @@ class OrderSummary {
   ///@}
  private:
   Aws::String m_outpostId;
-  bool m_outpostIdHasBeenSet = false;
 
   Aws::String m_orderId;
-  bool m_orderIdHasBeenSet = false;
 
   OrderType m_orderType{OrderType::NOT_SET};
-  bool m_orderTypeHasBeenSet = false;
 
   OrderStatus m_status{OrderStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<LineItemStatus, int> m_lineItemCountsByStatus;
-  bool m_lineItemCountsByStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_orderSubmissionDate{};
-  bool m_orderSubmissionDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_orderFulfilledDate{};
+  bool m_outpostIdHasBeenSet = false;
+  bool m_orderIdHasBeenSet = false;
+  bool m_orderTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lineItemCountsByStatusHasBeenSet = false;
+  bool m_orderSubmissionDateHasBeenSet = false;
   bool m_orderFulfilledDateHasBeenSet = false;
 };
 

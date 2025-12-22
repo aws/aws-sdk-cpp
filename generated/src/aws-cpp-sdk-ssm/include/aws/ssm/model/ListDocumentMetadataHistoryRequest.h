@@ -122,18 +122,18 @@ class ListDocumentMetadataHistoryRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
 
   DocumentMetadataEnum m_metadata{DocumentMetadataEnum::NOT_SET};
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_nameHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

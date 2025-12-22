@@ -198,27 +198,27 @@ class ModifyCapacityReservationRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_capacityReservationId;
-  bool m_capacityReservationIdHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   EndDateType m_endDateType{EndDateType::NOT_SET};
-  bool m_endDateTypeHasBeenSet = false;
 
   bool m_accept{false};
-  bool m_acceptHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_additionalInfo;
-  bool m_additionalInfoHasBeenSet = false;
 
   InstanceMatchCriteria m_instanceMatchCriteria{InstanceMatchCriteria::NOT_SET};
+  bool m_capacityReservationIdHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_endDateTypeHasBeenSet = false;
+  bool m_acceptHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
   bool m_instanceMatchCriteriaHasBeenSet = false;
 };
 

@@ -119,15 +119,15 @@ class CopyOptionGroupRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_sourceOptionGroupIdentifier;
-  bool m_sourceOptionGroupIdentifierHasBeenSet = false;
 
   Aws::String m_targetOptionGroupIdentifier;
-  bool m_targetOptionGroupIdentifierHasBeenSet = false;
 
   Aws::String m_targetOptionGroupDescription;
-  bool m_targetOptionGroupDescriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_sourceOptionGroupIdentifierHasBeenSet = false;
+  bool m_targetOptionGroupIdentifierHasBeenSet = false;
+  bool m_targetOptionGroupDescriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class GetKxVolumeRequest : public FinspaceRequest {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_volumeName;
+  bool m_environmentIdHasBeenSet = false;
   bool m_volumeNameHasBeenSet = false;
 };
 

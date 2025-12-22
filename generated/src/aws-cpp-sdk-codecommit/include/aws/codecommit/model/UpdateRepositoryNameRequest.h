@@ -71,9 +71,9 @@ class UpdateRepositoryNameRequest : public CodeCommitRequest {
   ///@}
  private:
   Aws::String m_oldName;
-  bool m_oldNameHasBeenSet = false;
 
   Aws::String m_newName;
+  bool m_oldNameHasBeenSet = false;
   bool m_newNameHasBeenSet = false;
 };
 

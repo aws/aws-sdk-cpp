@@ -121,15 +121,15 @@ class CdcSpecification {
   ///@}
  private:
   CdcStatus m_status{CdcStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ViewType m_viewType{ViewType::NOT_SET};
-  bool m_viewTypeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CdcPropagateTags m_propagateTags{CdcPropagateTags::NOT_SET};
+  bool m_statusHasBeenSet = false;
+  bool m_viewTypeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_propagateTagsHasBeenSet = false;
 };
 

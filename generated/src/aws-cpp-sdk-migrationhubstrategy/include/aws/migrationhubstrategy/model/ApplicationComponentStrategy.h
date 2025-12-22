@@ -84,12 +84,12 @@ class ApplicationComponentStrategy {
   ///@}
  private:
   bool m_isPreferred{false};
-  bool m_isPreferredHasBeenSet = false;
 
   RecommendationSet m_recommendation;
-  bool m_recommendationHasBeenSet = false;
 
   StrategyRecommendation m_status{StrategyRecommendation::NOT_SET};
+  bool m_isPreferredHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

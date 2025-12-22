@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces-web/WorkSpacesWeb_EXPORTS.h>
+#include <aws/workspaces-web/model/BrandingConfiguration.h>
 #include <aws/workspaces-web/model/CookieSynchronizationConfiguration.h>
 #include <aws/workspaces-web/model/EnabledType.h>
 #include <aws/workspaces-web/model/ToolbarConfiguration.h>
@@ -230,39 +231,81 @@ class UserSettingsSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The branding configuration output that customizes the appearance of the web
+   * portal for end users.</p>
+   */
+  inline const BrandingConfiguration& GetBrandingConfiguration() const { return m_brandingConfiguration; }
+  inline bool BrandingConfigurationHasBeenSet() const { return m_brandingConfigurationHasBeenSet; }
+  template <typename BrandingConfigurationT = BrandingConfiguration>
+  void SetBrandingConfiguration(BrandingConfigurationT&& value) {
+    m_brandingConfigurationHasBeenSet = true;
+    m_brandingConfiguration = std::forward<BrandingConfigurationT>(value);
+  }
+  template <typename BrandingConfigurationT = BrandingConfiguration>
+  UserSettingsSummary& WithBrandingConfiguration(BrandingConfigurationT&& value) {
+    SetBrandingConfiguration(std::forward<BrandingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the user can use WebAuthn redirection for passwordless
+   * login to websites within the streaming session.</p>
+   */
+  inline EnabledType GetWebAuthnAllowed() const { return m_webAuthnAllowed; }
+  inline bool WebAuthnAllowedHasBeenSet() const { return m_webAuthnAllowedHasBeenSet; }
+  inline void SetWebAuthnAllowed(EnabledType value) {
+    m_webAuthnAllowedHasBeenSet = true;
+    m_webAuthnAllowed = value;
+  }
+  inline UserSettingsSummary& WithWebAuthnAllowed(EnabledType value) {
+    SetWebAuthnAllowed(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userSettingsArn;
-  bool m_userSettingsArnHasBeenSet = false;
 
   EnabledType m_copyAllowed{EnabledType::NOT_SET};
-  bool m_copyAllowedHasBeenSet = false;
 
   EnabledType m_pasteAllowed{EnabledType::NOT_SET};
-  bool m_pasteAllowedHasBeenSet = false;
 
   EnabledType m_downloadAllowed{EnabledType::NOT_SET};
-  bool m_downloadAllowedHasBeenSet = false;
 
   EnabledType m_uploadAllowed{EnabledType::NOT_SET};
-  bool m_uploadAllowedHasBeenSet = false;
 
   EnabledType m_printAllowed{EnabledType::NOT_SET};
-  bool m_printAllowedHasBeenSet = false;
 
   int m_disconnectTimeoutInMinutes{0};
-  bool m_disconnectTimeoutInMinutesHasBeenSet = false;
 
   int m_idleDisconnectTimeoutInMinutes{0};
-  bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
 
   CookieSynchronizationConfiguration m_cookieSynchronizationConfiguration;
-  bool m_cookieSynchronizationConfigurationHasBeenSet = false;
 
   EnabledType m_deepLinkAllowed{EnabledType::NOT_SET};
-  bool m_deepLinkAllowedHasBeenSet = false;
 
   ToolbarConfiguration m_toolbarConfiguration;
+
+  BrandingConfiguration m_brandingConfiguration;
+
+  EnabledType m_webAuthnAllowed{EnabledType::NOT_SET};
+  bool m_userSettingsArnHasBeenSet = false;
+  bool m_copyAllowedHasBeenSet = false;
+  bool m_pasteAllowedHasBeenSet = false;
+  bool m_downloadAllowedHasBeenSet = false;
+  bool m_uploadAllowedHasBeenSet = false;
+  bool m_printAllowedHasBeenSet = false;
+  bool m_disconnectTimeoutInMinutesHasBeenSet = false;
+  bool m_idleDisconnectTimeoutInMinutesHasBeenSet = false;
+  bool m_cookieSynchronizationConfigurationHasBeenSet = false;
+  bool m_deepLinkAllowedHasBeenSet = false;
   bool m_toolbarConfigurationHasBeenSet = false;
+  bool m_brandingConfigurationHasBeenSet = false;
+  bool m_webAuthnAllowedHasBeenSet = false;
 };
 
 }  // namespace Model

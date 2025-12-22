@@ -101,15 +101,15 @@ class GetCelebrityInfoResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_urls;
-  bool m_urlsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   KnownGender m_knownGender;
-  bool m_knownGenderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_urlsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_knownGenderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

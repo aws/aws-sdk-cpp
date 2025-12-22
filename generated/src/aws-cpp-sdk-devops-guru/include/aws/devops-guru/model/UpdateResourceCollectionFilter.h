@@ -105,9 +105,9 @@ class UpdateResourceCollectionFilter {
   ///@}
  private:
   UpdateCloudFormationCollectionFilter m_cloudFormation;
-  bool m_cloudFormationHasBeenSet = false;
 
   Aws::Vector<UpdateTagCollectionFilter> m_tags;
+  bool m_cloudFormationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

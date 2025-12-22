@@ -61,9 +61,9 @@ class GetWhatsAppMessageTemplateResult {
   ///@}
  private:
   Aws::String m_template;
-  bool m_templateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_templateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

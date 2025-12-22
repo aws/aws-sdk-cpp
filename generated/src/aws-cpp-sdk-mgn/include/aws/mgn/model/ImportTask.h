@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/mgn/model/ImportStatus.h>
@@ -33,6 +34,60 @@ class ImportTask {
   AWS_MGN_API ImportTask(Aws::Utils::Json::JsonView jsonValue);
   AWS_MGN_API ImportTask& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Import task id.</p>
+   */
+  inline const Aws::String& GetImportID() const { return m_importID; }
+  inline bool ImportIDHasBeenSet() const { return m_importIDHasBeenSet; }
+  template <typename ImportIDT = Aws::String>
+  void SetImportID(ImportIDT&& value) {
+    m_importIDHasBeenSet = true;
+    m_importID = std::forward<ImportIDT>(value);
+  }
+  template <typename ImportIDT = Aws::String>
+  ImportTask& WithImportID(ImportIDT&& value) {
+    SetImportID(std::forward<ImportIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>ImportTask arn.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  ImportTask& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task s3 bucket source.</p>
+   */
+  inline const S3BucketSource& GetS3BucketSource() const { return m_s3BucketSource; }
+  inline bool S3BucketSourceHasBeenSet() const { return m_s3BucketSourceHasBeenSet; }
+  template <typename S3BucketSourceT = S3BucketSource>
+  void SetS3BucketSource(S3BucketSourceT&& value) {
+    m_s3BucketSourceHasBeenSet = true;
+    m_s3BucketSource = std::forward<S3BucketSourceT>(value);
+  }
+  template <typename S3BucketSourceT = S3BucketSource>
+  ImportTask& WithS3BucketSource(S3BucketSourceT&& value) {
+    SetS3BucketSource(std::forward<S3BucketSourceT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -72,18 +127,16 @@ class ImportTask {
 
   ///@{
   /**
-   * <p>Import task id.</p>
+   * <p>Import task status.</p>
    */
-  inline const Aws::String& GetImportID() const { return m_importID; }
-  inline bool ImportIDHasBeenSet() const { return m_importIDHasBeenSet; }
-  template <typename ImportIDT = Aws::String>
-  void SetImportID(ImportIDT&& value) {
-    m_importIDHasBeenSet = true;
-    m_importID = std::forward<ImportIDT>(value);
+  inline ImportStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ImportStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
   }
-  template <typename ImportIDT = Aws::String>
-  ImportTask& WithImportID(ImportIDT&& value) {
-    SetImportID(std::forward<ImportIDT>(value));
+  inline ImportTask& WithStatus(ImportStatus value) {
+    SetStatus(value);
     return *this;
   }
   ///@}
@@ -106,40 +159,6 @@ class ImportTask {
 
   ///@{
   /**
-   * <p>Import task s3 bucket source.</p>
-   */
-  inline const S3BucketSource& GetS3BucketSource() const { return m_s3BucketSource; }
-  inline bool S3BucketSourceHasBeenSet() const { return m_s3BucketSourceHasBeenSet; }
-  template <typename S3BucketSourceT = S3BucketSource>
-  void SetS3BucketSource(S3BucketSourceT&& value) {
-    m_s3BucketSourceHasBeenSet = true;
-    m_s3BucketSource = std::forward<S3BucketSourceT>(value);
-  }
-  template <typename S3BucketSourceT = S3BucketSource>
-  ImportTask& WithS3BucketSource(S3BucketSourceT&& value) {
-    SetS3BucketSource(std::forward<S3BucketSourceT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Import task status.</p>
-   */
-  inline ImportStatus GetStatus() const { return m_status; }
-  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-  inline void SetStatus(ImportStatus value) {
-    m_statusHasBeenSet = true;
-    m_status = value;
-  }
-  inline ImportTask& WithStatus(ImportStatus value) {
-    SetStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Import task summary.</p>
    */
   inline const ImportTaskSummary& GetSummary() const { return m_summary; }
@@ -155,27 +174,57 @@ class ImportTask {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Import task tags.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  ImportTask& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  ImportTask& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_creationDateTime;
-  bool m_creationDateTimeHasBeenSet = false;
-
-  Aws::String m_endDateTime;
-  bool m_endDateTimeHasBeenSet = false;
-
   Aws::String m_importID;
-  bool m_importIDHasBeenSet = false;
 
-  double m_progressPercentage{0.0};
-  bool m_progressPercentageHasBeenSet = false;
+  Aws::String m_arn;
 
   S3BucketSource m_s3BucketSource;
-  bool m_s3BucketSourceHasBeenSet = false;
+
+  Aws::String m_creationDateTime;
+
+  Aws::String m_endDateTime;
 
   ImportStatus m_status{ImportStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
+
+  double m_progressPercentage{0.0};
 
   ImportTaskSummary m_summary;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_importIDHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_s3BucketSourceHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

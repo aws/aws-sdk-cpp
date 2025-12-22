@@ -60,9 +60,9 @@ class GetActiveVpnTunnelStatusResponse {
   ///@}
  private:
   ActiveVpnTunnelStatus m_activeVpnTunnelStatus;
-  bool m_activeVpnTunnelStatusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_activeVpnTunnelStatusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

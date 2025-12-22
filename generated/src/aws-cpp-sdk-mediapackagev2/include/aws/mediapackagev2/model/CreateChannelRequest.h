@@ -201,27 +201,27 @@ class CreateChannelRequest : public Mediapackagev2Request {
   ///@}
  private:
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   InputType m_inputType{InputType::NOT_SET};
-  bool m_inputTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   InputSwitchConfiguration m_inputSwitchConfiguration;
-  bool m_inputSwitchConfigurationHasBeenSet = false;
 
   OutputHeaderConfiguration m_outputHeaderConfiguration;
-  bool m_outputHeaderConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_inputTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inputSwitchConfigurationHasBeenSet = false;
+  bool m_outputHeaderConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class StopDurableExecutionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_stopTimestamp{};
-  bool m_stopTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_stopTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

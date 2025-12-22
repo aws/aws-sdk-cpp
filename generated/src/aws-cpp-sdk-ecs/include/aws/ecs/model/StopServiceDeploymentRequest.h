@@ -67,9 +67,9 @@ class StopServiceDeploymentRequest : public ECSRequest {
   ///@}
  private:
   Aws::String m_serviceDeploymentArn;
-  bool m_serviceDeploymentArnHasBeenSet = false;
 
   StopServiceDeploymentStopType m_stopType{StopServiceDeploymentStopType::NOT_SET};
+  bool m_serviceDeploymentArnHasBeenSet = false;
   bool m_stopTypeHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeExpressGatewayServiceResult {
   ///@}
  private:
   ECSExpressGatewayService m_service;
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

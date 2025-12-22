@@ -281,39 +281,39 @@ class CreateCloudExadataInfrastructureRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_shape;
-  bool m_shapeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   int m_computeCount{0};
-  bool m_computeCountHasBeenSet = false;
 
   Aws::Vector<CustomerContact> m_customerContactsToSendToOCI;
-  bool m_customerContactsToSendToOCIHasBeenSet = false;
 
   MaintenanceWindow m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   int m_storageCount{0};
-  bool m_storageCountHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_databaseServerType;
-  bool m_databaseServerTypeHasBeenSet = false;
 
   Aws::String m_storageServerType;
+  bool m_displayNameHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_computeCountHasBeenSet = false;
+  bool m_customerContactsToSendToOCIHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_storageCountHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_databaseServerTypeHasBeenSet = false;
   bool m_storageServerTypeHasBeenSet = false;
 };
 

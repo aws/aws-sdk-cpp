@@ -134,18 +134,18 @@ class QuerySessionContext {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_queryStartTime{};
-  bool m_queryStartTimeHasBeenSet = false;
 
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_queryAuthorizationId;
-  bool m_queryAuthorizationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalContext;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryStartTimeHasBeenSet = false;
+  bool m_clusterIdHasBeenSet = false;
+  bool m_queryAuthorizationIdHasBeenSet = false;
   bool m_additionalContextHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class VideoBlackFailoverSettings {
   ///@}
  private:
   double m_blackDetectThreshold{0.0};
-  bool m_blackDetectThresholdHasBeenSet = false;
 
   int m_videoBlackThresholdMsec{0};
+  bool m_blackDetectThresholdHasBeenSet = false;
   bool m_videoBlackThresholdMsecHasBeenSet = false;
 };
 

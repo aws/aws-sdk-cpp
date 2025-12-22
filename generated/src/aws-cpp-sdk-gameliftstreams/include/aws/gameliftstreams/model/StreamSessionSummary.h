@@ -10,6 +10,7 @@
 #include <aws/gameliftstreams/model/ExportFilesMetadata.h>
 #include <aws/gameliftstreams/model/Protocol.h>
 #include <aws/gameliftstreams/model/StreamSessionStatus.h>
+#include <aws/gameliftstreams/model/StreamSessionStatusReason.h>
 
 #include <utility>
 
@@ -116,6 +117,51 @@ class StreamSessionSummary {
   }
   inline StreamSessionSummary& WithStatus(StreamSessionStatus value) {
     SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A short description of the reason the stream session is in <code>ERROR</code>
+   * status or <code>TERMINATED</code> status.</p> <p> <code>ERROR</code> status
+   * reasons:</p> <ul> <li> <p> <code>applicationLogS3DestinationError</code>: Could
+   * not write the application log to the Amazon S3 bucket that is configured for the
+   * streaming application. Make sure the bucket still exists.</p> </li> <li> <p>
+   * <code>internalError</code>: An internal service error occurred. Start a new
+   * stream session to continue streaming.</p> </li> <li> <p>
+   * <code>invalidSignalRequest</code>: The WebRTC signal request that was sent is
+   * not valid. When starting or reconnecting to a stream session, use
+   * <code>generateSignalRequest</code> in the Amazon GameLift Streams Web SDK to
+   * generate a new signal request.</p> </li> <li> <p> <code>placementTimeout</code>:
+   * Amazon GameLift Streams could not find available stream capacity to start a
+   * stream session. Increase the stream capacity in the stream group or wait until
+   * capacity becomes available.</p> </li> </ul> <p> <code>TERMINATED</code> status
+   * reasons:</p> <ul> <li> <p> <code>apiTerminated</code>: The stream session was
+   * terminated by an API call to <a
+   * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.</p>
+   * </li> <li> <p> <code>applicationExit</code>: The streaming application exited or
+   * crashed. The stream session was terminated because the application is no longer
+   * running.</p> </li> <li> <p> <code>connectionTimeout</code>: The stream session
+   * was terminated because the client failed to connect within the connection
+   * timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p> </li>
+   * <li> <p> <code>idleTimeout</code>: The stream session was terminated because it
+   * exceeded the idle timeout period of 60 minutes with no user input activity.</p>
+   * </li> <li> <p> <code>maxSessionLengthTimeout</code>: The stream session was
+   * terminated because it exceeded the maximum session length timeout period
+   * specified by <code>SessionLengthSeconds</code>.</p> </li> <li> <p>
+   * <code>reconnectionTimeout</code>: The stream session was terminated because the
+   * client failed to reconnect within the reconnection timeout period specified by
+   * <code>ConnectionTimeoutSeconds</code> after losing connection.</p> </li> </ul>
+   */
+  inline StreamSessionStatusReason GetStatusReason() const { return m_statusReason; }
+  inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+  inline void SetStatusReason(StreamSessionStatusReason value) {
+    m_statusReasonHasBeenSet = true;
+    m_statusReason = value;
+  }
+  inline StreamSessionSummary& WithStatusReason(StreamSessionStatusReason value) {
+    SetStatusReason(value);
     return *this;
   }
   ///@}
@@ -241,30 +287,33 @@ class StreamSessionSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   StreamSessionStatus m_status{StreamSessionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
+
+  StreamSessionStatusReason m_statusReason{StreamSessionStatusReason::NOT_SET};
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   ExportFilesMetadata m_exportFilesMetadata;
-  bool m_exportFilesMetadataHasBeenSet = false;
 
   Aws::String m_location;
+  bool m_arnHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_exportFilesMetadataHasBeenSet = false;
   bool m_locationHasBeenSet = false;
 };
 

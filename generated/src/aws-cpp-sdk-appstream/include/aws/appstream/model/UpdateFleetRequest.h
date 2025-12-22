@@ -108,12 +108,8 @@ class UpdateFleetRequest : public AppStreamRequest {
    * </li> <li> <p>stream.memory.z1d.xlarge</p> </li> <li>
    * <p>stream.memory.z1d.2xlarge</p> </li> <li> <p>stream.memory.z1d.3xlarge</p>
    * </li> <li> <p>stream.memory.z1d.6xlarge</p> </li> <li>
-   * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics-design.large</p>
-   * </li> <li> <p>stream.graphics-design.xlarge</p> </li> <li>
-   * <p>stream.graphics-design.2xlarge</p> </li> <li>
-   * <p>stream.graphics-design.4xlarge</p> </li> <li>
-   * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
-   * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
+   * <p>stream.memory.z1d.12xlarge</p> </li> <li> <p>stream.graphics.g4dn.xlarge</p>
+   * </li> <li> <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.12xlarge</p> </li> <li>
@@ -411,8 +407,8 @@ class UpdateFleetRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The platform of the fleet. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are
-   * supported for Elastic fleets. </p>
+   * <p>The platform of the fleet. WINDOWS_SERVER_2019, AMAZON_LINUX2 and
+   * UBUNTU_PRO_2404 are supported for Elastic fleets. </p>
    */
   inline PlatformType GetPlatform() const { return m_platform; }
   inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
@@ -524,69 +520,69 @@ class UpdateFleetRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   ComputeCapacity m_computeCapacity;
-  bool m_computeCapacityHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   int m_maxUserDurationInSeconds{0};
-  bool m_maxUserDurationInSecondsHasBeenSet = false;
 
   int m_disconnectTimeoutInSeconds{0};
-  bool m_disconnectTimeoutInSecondsHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   bool m_enableDefaultInternetAccess{false};
-  bool m_enableDefaultInternetAccessHasBeenSet = false;
 
   DomainJoinInfo m_domainJoinInfo;
-  bool m_domainJoinInfoHasBeenSet = false;
 
   int m_idleDisconnectTimeoutInSeconds{0};
-  bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
 
   Aws::Vector<FleetAttribute> m_attributesToDelete;
-  bool m_attributesToDeleteHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   StreamView m_streamView{StreamView::NOT_SET};
-  bool m_streamViewHasBeenSet = false;
 
   PlatformType m_platform{PlatformType::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   int m_maxConcurrentSessions{0};
-  bool m_maxConcurrentSessionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_usbDeviceFilterStrings;
-  bool m_usbDeviceFilterStringsHasBeenSet = false;
 
   S3Location m_sessionScriptS3Location;
-  bool m_sessionScriptS3LocationHasBeenSet = false;
 
   int m_maxSessionsPerInstance{0};
-  bool m_maxSessionsPerInstanceHasBeenSet = false;
 
   VolumeConfig m_rootVolumeConfig;
+  bool m_imageNameHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_computeCapacityHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_maxUserDurationInSecondsHasBeenSet = false;
+  bool m_disconnectTimeoutInSecondsHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_enableDefaultInternetAccessHasBeenSet = false;
+  bool m_domainJoinInfoHasBeenSet = false;
+  bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
+  bool m_attributesToDeleteHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_streamViewHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_maxConcurrentSessionsHasBeenSet = false;
+  bool m_usbDeviceFilterStringsHasBeenSet = false;
+  bool m_sessionScriptS3LocationHasBeenSet = false;
+  bool m_maxSessionsPerInstanceHasBeenSet = false;
   bool m_rootVolumeConfigHasBeenSet = false;
 };
 

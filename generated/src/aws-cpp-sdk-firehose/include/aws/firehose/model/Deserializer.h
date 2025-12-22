@@ -83,9 +83,9 @@ class Deserializer {
   ///@}
  private:
   OpenXJsonSerDe m_openXJsonSerDe;
-  bool m_openXJsonSerDeHasBeenSet = false;
 
   HiveJsonSerDe m_hiveJsonSerDe;
+  bool m_openXJsonSerDeHasBeenSet = false;
   bool m_hiveJsonSerDeHasBeenSet = false;
 };
 

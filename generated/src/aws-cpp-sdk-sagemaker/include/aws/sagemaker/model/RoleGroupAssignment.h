@@ -80,9 +80,9 @@ class RoleGroupAssignment {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupPatterns;
+  bool m_roleNameHasBeenSet = false;
   bool m_groupPatternsHasBeenSet = false;
 };
 

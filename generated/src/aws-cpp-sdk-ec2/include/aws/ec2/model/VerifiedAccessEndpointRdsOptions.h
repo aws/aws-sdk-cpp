@@ -165,24 +165,24 @@ class VerifiedAccessEndpointRdsOptions {
   ///@}
  private:
   VerifiedAccessEndpointProtocol m_protocol{VerifiedAccessEndpointProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_rdsDbInstanceArn;
-  bool m_rdsDbInstanceArnHasBeenSet = false;
 
   Aws::String m_rdsDbClusterArn;
-  bool m_rdsDbClusterArnHasBeenSet = false;
 
   Aws::String m_rdsDbProxyArn;
-  bool m_rdsDbProxyArnHasBeenSet = false;
 
   Aws::String m_rdsEndpoint;
-  bool m_rdsEndpointHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
+  bool m_protocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_rdsDbInstanceArnHasBeenSet = false;
+  bool m_rdsDbClusterArnHasBeenSet = false;
+  bool m_rdsDbProxyArnHasBeenSet = false;
+  bool m_rdsEndpointHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
 };
 

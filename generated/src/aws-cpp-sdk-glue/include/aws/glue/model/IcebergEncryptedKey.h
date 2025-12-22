@@ -122,15 +122,15 @@ class IcebergEncryptedKey {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_encryptedKeyMetadata;
-  bool m_encryptedKeyMetadataHasBeenSet = false;
 
   Aws::String m_encryptedById;
-  bool m_encryptedByIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_properties;
+  bool m_keyIdHasBeenSet = false;
+  bool m_encryptedKeyMetadataHasBeenSet = false;
+  bool m_encryptedByIdHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class CapacityConfiguration {
   ///@}
  private:
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_nodeCount{0};
+  bool m_nodeTypeHasBeenSet = false;
   bool m_nodeCountHasBeenSet = false;
 };
 

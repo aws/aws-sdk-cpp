@@ -401,51 +401,51 @@ class CreateVolumeRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_outpostArn;
-  bool m_outpostArnHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   VolumeType m_volumeType{VolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   bool m_multiAttachEnabled{false};
-  bool m_multiAttachEnabledHasBeenSet = false;
 
   int m_throughput{0};
-  bool m_throughputHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   int m_volumeInitializationRate{0};
-  bool m_volumeInitializationRateHasBeenSet = false;
 
   OperatorRequest m_operator;
-  bool m_operatorHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_outpostArnHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_multiAttachEnabledHasBeenSet = false;
+  bool m_throughputHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_volumeInitializationRateHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

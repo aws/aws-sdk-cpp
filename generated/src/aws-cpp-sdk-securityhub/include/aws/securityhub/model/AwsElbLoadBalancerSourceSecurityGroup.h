@@ -69,9 +69,9 @@ class AwsElbLoadBalancerSourceSecurityGroup {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_ownerAlias;
+  bool m_groupNameHasBeenSet = false;
   bool m_ownerAliasHasBeenSet = false;
 };
 

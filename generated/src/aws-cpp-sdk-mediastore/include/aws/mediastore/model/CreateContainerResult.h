@@ -71,9 +71,9 @@ class CreateContainerResult {
   ///@}
  private:
   Container m_container;
-  bool m_containerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

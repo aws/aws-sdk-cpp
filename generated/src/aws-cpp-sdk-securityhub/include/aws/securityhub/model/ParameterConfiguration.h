@@ -75,9 +75,9 @@ class ParameterConfiguration {
   ///@}
  private:
   ParameterValueType m_valueType{ParameterValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   ParameterValue m_value;
+  bool m_valueTypeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

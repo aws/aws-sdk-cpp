@@ -21,7 +21,7 @@ class JsonValue;
 namespace Glacier {
 namespace Model {
 /**
- * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
+ * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/DescribeVaultOutput">AWS
  * API Reference</a></p>
@@ -87,9 +87,9 @@ class DescribeVaultResult {
 
   ///@{
   /**
-   * <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed
-   * the last vault inventory. This value should be a string in the ISO 8601 date
-   * format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
+   * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+   * last vault inventory. This value should be a string in the ISO 8601 date format,
+   * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
    */
   inline const Aws::String& GetLastInventoryDate() const { return m_lastInventoryDate; }
   template <typename LastInventoryDateT = Aws::String>
@@ -154,24 +154,24 @@ class DescribeVaultResult {
   ///@}
  private:
   Aws::String m_vaultARN;
-  bool m_vaultARNHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_lastInventoryDate;
-  bool m_lastInventoryDateHasBeenSet = false;
 
   long long m_numberOfArchives{0};
-  bool m_numberOfArchivesHasBeenSet = false;
 
   long long m_sizeInBytes{0};
-  bool m_sizeInBytesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_vaultARNHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastInventoryDateHasBeenSet = false;
+  bool m_numberOfArchivesHasBeenSet = false;
+  bool m_sizeInBytesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

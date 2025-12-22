@@ -157,21 +157,21 @@ class CreateFirewallPolicyRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_firewallPolicyName;
-  bool m_firewallPolicyNameHasBeenSet = false;
 
   FirewallPolicy m_firewallPolicy;
-  bool m_firewallPolicyHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
+  bool m_firewallPolicyNameHasBeenSet = false;
+  bool m_firewallPolicyHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

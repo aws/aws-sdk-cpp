@@ -128,18 +128,18 @@ class RevokeClientVpnIngressRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_clientVpnEndpointId;
-  bool m_clientVpnEndpointIdHasBeenSet = false;
 
   Aws::String m_targetNetworkCidr;
-  bool m_targetNetworkCidrHasBeenSet = false;
 
   Aws::String m_accessGroupId;
-  bool m_accessGroupIdHasBeenSet = false;
 
   bool m_revokeAllGroups{false};
-  bool m_revokeAllGroupsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_clientVpnEndpointIdHasBeenSet = false;
+  bool m_targetNetworkCidrHasBeenSet = false;
+  bool m_accessGroupIdHasBeenSet = false;
+  bool m_revokeAllGroupsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

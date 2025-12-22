@@ -85,12 +85,12 @@ class Task {
   ///@}
  private:
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusDetail;
-  bool m_statusDetailHasBeenSet = false;
 
   int m_progressPercent{0};
+  bool m_statusHasBeenSet = false;
+  bool m_statusDetailHasBeenSet = false;
   bool m_progressPercentHasBeenSet = false;
 };
 

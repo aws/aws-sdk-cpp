@@ -68,9 +68,9 @@ class AuthenticationConfiguration {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Connectivity m_connectivity{Connectivity::NOT_SET};
+  bool m_roleARNHasBeenSet = false;
   bool m_connectivityHasBeenSet = false;
 };
 

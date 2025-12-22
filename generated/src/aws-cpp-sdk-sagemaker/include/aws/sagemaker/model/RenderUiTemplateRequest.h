@@ -112,15 +112,15 @@ class RenderUiTemplateRequest : public SageMakerRequest {
   ///@}
  private:
   UiTemplate m_uiTemplate;
-  bool m_uiTemplateHasBeenSet = false;
 
   RenderableTask m_task;
-  bool m_taskHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_humanTaskUiArn;
+  bool m_uiTemplateHasBeenSet = false;
+  bool m_taskHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_humanTaskUiArnHasBeenSet = false;
 };
 

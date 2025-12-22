@@ -149,21 +149,21 @@ class TransitGatewayMulticastDomainAssociations {
   ///@}
  private:
   Aws::String m_transitGatewayMulticastDomainId;
-  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   TransitGatewayAttachmentResourceType m_resourceType{TransitGatewayAttachmentResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceOwnerId;
-  bool m_resourceOwnerIdHasBeenSet = false;
 
   Aws::Vector<SubnetAssociation> m_subnets;
+  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceOwnerIdHasBeenSet = false;
   bool m_subnetsHasBeenSet = false;
 };
 

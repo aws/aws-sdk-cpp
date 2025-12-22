@@ -69,9 +69,9 @@ class TargetConfigurationRequest {
   ///@}
  private:
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   Aws::String m_offeringId;
+  bool m_instanceCountHasBeenSet = false;
   bool m_offeringIdHasBeenSet = false;
 };
 

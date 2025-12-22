@@ -87,12 +87,12 @@ class SendSerialConsoleSSHPublicKeyRequest : public EC2InstanceConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_serialPort{0};
-  bool m_serialPortHasBeenSet = false;
 
   Aws::String m_sSHPublicKey;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_serialPortHasBeenSet = false;
   bool m_sSHPublicKeyHasBeenSet = false;
 };
 

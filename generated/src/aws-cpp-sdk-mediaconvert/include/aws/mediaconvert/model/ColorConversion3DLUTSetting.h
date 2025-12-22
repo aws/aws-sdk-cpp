@@ -123,18 +123,18 @@ class ColorConversion3DLUTSetting {
   ///@}
  private:
   Aws::String m_fileInput;
-  bool m_fileInputHasBeenSet = false;
 
   ColorSpace m_inputColorSpace{ColorSpace::NOT_SET};
-  bool m_inputColorSpaceHasBeenSet = false;
 
   int m_inputMasteringLuminance{0};
-  bool m_inputMasteringLuminanceHasBeenSet = false;
 
   ColorSpace m_outputColorSpace{ColorSpace::NOT_SET};
-  bool m_outputColorSpaceHasBeenSet = false;
 
   int m_outputMasteringLuminance{0};
+  bool m_fileInputHasBeenSet = false;
+  bool m_inputColorSpaceHasBeenSet = false;
+  bool m_inputMasteringLuminanceHasBeenSet = false;
+  bool m_outputColorSpaceHasBeenSet = false;
   bool m_outputMasteringLuminanceHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class PutEmailIdentityFeedbackAttributesRequest : public SESV2Request {
   ///@}
  private:
   Aws::String m_emailIdentity;
-  bool m_emailIdentityHasBeenSet = false;
 
   bool m_emailForwardingEnabled{false};
+  bool m_emailIdentityHasBeenSet = false;
   bool m_emailForwardingEnabledHasBeenSet = false;
 };
 

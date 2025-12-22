@@ -106,12 +106,12 @@ class PatternObjectFilter {
   ///@}
  private:
   Aws::String m_objectType;
-  bool m_objectTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionFilters;
-  bool m_inclusionFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionFilters;
+  bool m_objectTypeHasBeenSet = false;
+  bool m_inclusionFiltersHasBeenSet = false;
   bool m_exclusionFiltersHasBeenSet = false;
 };
 

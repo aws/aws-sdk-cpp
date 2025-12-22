@@ -162,21 +162,21 @@ class GetPlaceRequest : public GeoPlacesRequest {
   ///@}
  private:
   Aws::String m_placeId;
-  bool m_placeIdHasBeenSet = false;
 
   Aws::Vector<GetPlaceAdditionalFeature> m_additionalFeatures;
-  bool m_additionalFeaturesHasBeenSet = false;
 
   Aws::String m_language;
-  bool m_languageHasBeenSet = false;
 
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   GetPlaceIntendedUse m_intendedUse{GetPlaceIntendedUse::NOT_SET};
-  bool m_intendedUseHasBeenSet = false;
 
   Aws::String m_key;
+  bool m_placeIdHasBeenSet = false;
+  bool m_additionalFeaturesHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
+  bool m_politicalViewHasBeenSet = false;
+  bool m_intendedUseHasBeenSet = false;
   bool m_keyHasBeenSet = false;
 };
 

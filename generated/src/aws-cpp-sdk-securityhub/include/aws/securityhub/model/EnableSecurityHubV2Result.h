@@ -59,9 +59,9 @@ class EnableSecurityHubV2Result {
   ///@}
  private:
   Aws::String m_hubV2Arn;
-  bool m_hubV2ArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hubV2ArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

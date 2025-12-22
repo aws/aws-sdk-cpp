@@ -86,12 +86,12 @@ class FieldValidationError {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   FieldValidationCode m_code{FieldValidationCode::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

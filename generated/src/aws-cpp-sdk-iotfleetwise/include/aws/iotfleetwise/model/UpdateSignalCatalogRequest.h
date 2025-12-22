@@ -142,18 +142,18 @@ class UpdateSignalCatalogRequest : public IoTFleetWiseRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Node> m_nodesToAdd;
-  bool m_nodesToAddHasBeenSet = false;
 
   Aws::Vector<Node> m_nodesToUpdate;
-  bool m_nodesToUpdateHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodesToRemove;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nodesToAddHasBeenSet = false;
+  bool m_nodesToUpdateHasBeenSet = false;
   bool m_nodesToRemoveHasBeenSet = false;
 };
 

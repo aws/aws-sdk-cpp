@@ -147,21 +147,21 @@ class ExportApiRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_exportVersion;
-  bool m_exportVersionHasBeenSet = false;
 
   bool m_includeExtensions{false};
-  bool m_includeExtensionsHasBeenSet = false;
 
   Aws::String m_outputType;
-  bool m_outputTypeHasBeenSet = false;
 
   Aws::String m_specification;
-  bool m_specificationHasBeenSet = false;
 
   Aws::String m_stageName;
+  bool m_apiIdHasBeenSet = false;
+  bool m_exportVersionHasBeenSet = false;
+  bool m_includeExtensionsHasBeenSet = false;
+  bool m_outputTypeHasBeenSet = false;
+  bool m_specificationHasBeenSet = false;
   bool m_stageNameHasBeenSet = false;
 };
 

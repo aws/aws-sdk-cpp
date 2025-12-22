@@ -67,9 +67,9 @@ class DependencyRevision {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   long long m_revisionNumber{0};
+  bool m_idHasBeenSet = false;
   bool m_revisionNumberHasBeenSet = false;
 };
 

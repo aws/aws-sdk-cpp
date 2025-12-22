@@ -114,18 +114,18 @@ class GetResourceOauth2TokenResult {
   ///@}
  private:
   Aws::String m_authorizationUrl;
-  bool m_authorizationUrlHasBeenSet = false;
 
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_sessionUri;
-  bool m_sessionUriHasBeenSet = false;
 
   SessionStatus m_sessionStatus{SessionStatus::NOT_SET};
-  bool m_sessionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authorizationUrlHasBeenSet = false;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_sessionUriHasBeenSet = false;
+  bool m_sessionStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

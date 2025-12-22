@@ -150,21 +150,21 @@ class SSHPublicKey {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_sSHPublicKeyId;
-  bool m_sSHPublicKeyIdHasBeenSet = false;
 
   Aws::String m_fingerprint;
-  bool m_fingerprintHasBeenSet = false;
 
   Aws::String m_sSHPublicKeyBody;
-  bool m_sSHPublicKeyBodyHasBeenSet = false;
 
   StatusType m_status{StatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_uploadDate{};
+  bool m_userNameHasBeenSet = false;
+  bool m_sSHPublicKeyIdHasBeenSet = false;
+  bool m_fingerprintHasBeenSet = false;
+  bool m_sSHPublicKeyBodyHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_uploadDateHasBeenSet = false;
 };
 

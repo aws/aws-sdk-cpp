@@ -61,9 +61,9 @@ class RebootReplicationInstanceResult {
   ///@}
  private:
   ReplicationInstance m_replicationInstance;
-  bool m_replicationInstanceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_replicationInstanceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

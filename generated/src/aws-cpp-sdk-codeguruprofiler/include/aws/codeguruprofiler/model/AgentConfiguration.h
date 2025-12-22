@@ -112,12 +112,12 @@ class AgentConfiguration {
   ///@}
  private:
   Aws::Map<AgentParameterField, Aws::String> m_agentParameters;
-  bool m_agentParametersHasBeenSet = false;
 
   int m_periodInSeconds{0};
-  bool m_periodInSecondsHasBeenSet = false;
 
   bool m_shouldProfile{false};
+  bool m_agentParametersHasBeenSet = false;
+  bool m_periodInSecondsHasBeenSet = false;
   bool m_shouldProfileHasBeenSet = false;
 };
 

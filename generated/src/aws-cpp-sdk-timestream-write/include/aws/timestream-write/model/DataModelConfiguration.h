@@ -69,9 +69,9 @@ class DataModelConfiguration {
   ///@}
  private:
   DataModel m_dataModel;
-  bool m_dataModelHasBeenSet = false;
 
   DataModelS3Configuration m_dataModelS3Configuration;
+  bool m_dataModelHasBeenSet = false;
   bool m_dataModelS3ConfigurationHasBeenSet = false;
 };
 

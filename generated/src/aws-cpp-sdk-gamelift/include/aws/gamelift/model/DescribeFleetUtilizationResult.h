@@ -88,12 +88,12 @@ class DescribeFleetUtilizationResult {
   ///@}
  private:
   Aws::Vector<FleetUtilization> m_fleetUtilization;
-  bool m_fleetUtilizationHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_fleetUtilizationHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

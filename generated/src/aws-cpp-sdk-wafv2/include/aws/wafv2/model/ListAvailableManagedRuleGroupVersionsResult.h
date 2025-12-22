@@ -108,15 +108,15 @@ class ListAvailableManagedRuleGroupVersionsResult {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<ManagedRuleGroupVersion> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::String m_currentDefaultVersion;
-  bool m_currentDefaultVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
+  bool m_currentDefaultVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

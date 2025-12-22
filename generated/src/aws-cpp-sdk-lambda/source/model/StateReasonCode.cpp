@@ -52,6 +52,7 @@ static const int FunctionError_InvalidWorkingDirectory_HASH = HashingUtils::Hash
 static const int FunctionError_PermissionDenied_HASH = HashingUtils::HashString("FunctionError.PermissionDenied");
 static const int FunctionError_TooManyExtensions_HASH = HashingUtils::HashString("FunctionError.TooManyExtensions");
 static const int FunctionError_InitResourceExhausted_HASH = HashingUtils::HashString("FunctionError.InitResourceExhausted");
+static const int DisallowedByVpcEncryptionControl_HASH = HashingUtils::HashString("DisallowedByVpcEncryptionControl");
 
 StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -129,6 +130,8 @@ StateReasonCode GetStateReasonCodeForName(const Aws::String& name) {
     return StateReasonCode::FunctionError_TooManyExtensions;
   } else if (hashCode == FunctionError_InitResourceExhausted_HASH) {
     return StateReasonCode::FunctionError_InitResourceExhausted;
+  } else if (hashCode == DisallowedByVpcEncryptionControl_HASH) {
+    return StateReasonCode::DisallowedByVpcEncryptionControl;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -217,6 +220,8 @@ Aws::String GetNameForStateReasonCode(StateReasonCode enumValue) {
       return "FunctionError.TooManyExtensions";
     case StateReasonCode::FunctionError_InitResourceExhausted:
       return "FunctionError.InitResourceExhausted";
+    case StateReasonCode::DisallowedByVpcEncryptionControl:
+      return "DisallowedByVpcEncryptionControl";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -92,12 +92,12 @@ class Event {
   ///@}
  private:
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   EventType m_type{EventType::NOT_SET};
+  bool m_dataHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

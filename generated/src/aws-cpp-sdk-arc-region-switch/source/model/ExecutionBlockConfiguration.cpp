@@ -60,6 +60,10 @@ ExecutionBlockConfiguration& ExecutionBlockConfiguration::operator=(JsonView jso
     m_route53HealthCheckConfig = jsonValue.GetObject("route53HealthCheckConfig");
     m_route53HealthCheckConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("documentDbConfig")) {
+    m_documentDbConfig = jsonValue.GetObject("documentDbConfig");
+    m_documentDbConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -104,6 +108,10 @@ JsonValue ExecutionBlockConfiguration::Jsonize() const {
 
   if (m_route53HealthCheckConfigHasBeenSet) {
     payload.WithObject("route53HealthCheckConfig", m_route53HealthCheckConfig.Jsonize());
+  }
+
+  if (m_documentDbConfigHasBeenSet) {
+    payload.WithObject("documentDbConfig", m_documentDbConfig.Jsonize());
   }
 
   return payload;

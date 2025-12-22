@@ -19,6 +19,7 @@
 #include <aws/mediatailor/model/AdBreak.h>
 #include <aws/mediatailor/model/AdBreakOpportunity.h>
 #include <aws/mediatailor/model/AdConditioningConfiguration.h>
+#include <aws/mediatailor/model/AdDecisionServerConfiguration.h>
 #include <aws/mediatailor/model/AdMarkerPassthrough.h>
 #include <aws/mediatailor/model/AdMarkupType.h>
 #include <aws/mediatailor/model/AdsInteractionExcludeEventType.h>
@@ -35,6 +36,7 @@
 #include <aws/mediatailor/model/Channel.h>
 #include <aws/mediatailor/model/ChannelState.h>
 #include <aws/mediatailor/model/ClipRange.h>
+#include <aws/mediatailor/model/CompressionMethod.h>
 #include <aws/mediatailor/model/ConfigureLogsForChannelRequest.h>
 #include <aws/mediatailor/model/ConfigureLogsForChannelResult.h>
 #include <aws/mediatailor/model/ConfigureLogsForPlaybackConfigurationRequest.h>
@@ -94,6 +96,7 @@
 #include <aws/mediatailor/model/HlsPlaylistSettings.h>
 #include <aws/mediatailor/model/HttpConfiguration.h>
 #include <aws/mediatailor/model/HttpPackageConfiguration.h>
+#include <aws/mediatailor/model/HttpRequest.h>
 #include <aws/mediatailor/model/InsertionMode.h>
 #include <aws/mediatailor/model/KeyValuePair.h>
 #include <aws/mediatailor/model/ListAlertsRequest.h>
@@ -123,6 +126,7 @@
 #include <aws/mediatailor/model/ManifestServiceExcludeEventType.h>
 #include <aws/mediatailor/model/ManifestServiceInteractionLog.h>
 #include <aws/mediatailor/model/MessageType.h>
+#include <aws/mediatailor/model/Method.h>
 #include <aws/mediatailor/model/Mode.h>
 #include <aws/mediatailor/model/Operator.h>
 #include <aws/mediatailor/model/OriginManifestType.h>

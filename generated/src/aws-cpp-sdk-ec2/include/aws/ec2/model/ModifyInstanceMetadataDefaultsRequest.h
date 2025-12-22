@@ -38,7 +38,7 @@ class ModifyInstanceMetadataDefaultsRequest : public EC2Request {
   /**
    * <p>Indicates whether IMDSv2 is required.</p> <ul> <li> <p> <code>optional</code>
    * – IMDSv2 is optional, which means that you can use either IMDSv2 or IMDSv1.</p>
-   * </li> <li> <p> <code>required</code> – IMDSv2 is required, which means that
+   * </li> <li> <p> <code>required</code> �� IMDSv2 is required, which means that
    * IMDSv1 is disabled, and you must use IMDSv2.</p> </li> </ul>
    */
   inline MetadataDefaultHttpTokensState GetHttpTokens() const { return m_httpTokens; }
@@ -129,18 +129,18 @@ class ModifyInstanceMetadataDefaultsRequest : public EC2Request {
   ///@}
  private:
   MetadataDefaultHttpTokensState m_httpTokens{MetadataDefaultHttpTokensState::NOT_SET};
-  bool m_httpTokensHasBeenSet = false;
 
   int m_httpPutResponseHopLimit{0};
-  bool m_httpPutResponseHopLimitHasBeenSet = false;
 
   DefaultInstanceMetadataEndpointState m_httpEndpoint{DefaultInstanceMetadataEndpointState::NOT_SET};
-  bool m_httpEndpointHasBeenSet = false;
 
   DefaultInstanceMetadataTagsState m_instanceMetadataTags{DefaultInstanceMetadataTagsState::NOT_SET};
-  bool m_instanceMetadataTagsHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_httpTokensHasBeenSet = false;
+  bool m_httpPutResponseHopLimitHasBeenSet = false;
+  bool m_httpEndpointHasBeenSet = false;
+  bool m_instanceMetadataTagsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

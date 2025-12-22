@@ -60,9 +60,9 @@ class UpdateAccountResult {
   ///@}
  private:
   Account m_account;
-  bool m_accountHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

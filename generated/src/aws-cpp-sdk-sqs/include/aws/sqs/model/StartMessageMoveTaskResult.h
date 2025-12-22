@@ -77,12 +77,12 @@ class StartMessageMoveTaskResult {
   ///@}
  private:
   Aws::String m_taskHandle;
-  bool m_taskHandleHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_taskHandleHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

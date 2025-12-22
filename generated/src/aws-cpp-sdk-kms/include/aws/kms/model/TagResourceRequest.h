@@ -87,9 +87,9 @@ class TagResourceRequest : public KMSRequest {
   ///@}
  private:
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_keyIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

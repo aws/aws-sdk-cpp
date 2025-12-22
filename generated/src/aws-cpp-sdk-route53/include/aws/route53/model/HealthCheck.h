@@ -151,21 +151,21 @@ class HealthCheck {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   LinkedService m_linkedService;
-  bool m_linkedServiceHasBeenSet = false;
 
   HealthCheckConfig m_healthCheckConfig;
-  bool m_healthCheckConfigHasBeenSet = false;
 
   long long m_healthCheckVersion{0};
-  bool m_healthCheckVersionHasBeenSet = false;
 
   CloudWatchAlarmConfiguration m_cloudWatchAlarmConfiguration;
+  bool m_idHasBeenSet = false;
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_linkedServiceHasBeenSet = false;
+  bool m_healthCheckConfigHasBeenSet = false;
+  bool m_healthCheckVersionHasBeenSet = false;
   bool m_cloudWatchAlarmConfigurationHasBeenSet = false;
 };
 

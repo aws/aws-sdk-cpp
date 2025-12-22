@@ -67,53 +67,6 @@ class PutTemplateActionResult {
 
   ///@{
   /**
-   * <p>Template post migration custom action active status.</p>
-   */
-  inline bool GetActive() const { return m_active; }
-  inline void SetActive(bool value) {
-    m_activeHasBeenSet = true;
-    m_active = value;
-  }
-  inline PutTemplateActionResult& WithActive(bool value) {
-    SetActive(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Template post migration custom action category.</p>
-   */
-  inline ActionCategory GetCategory() const { return m_category; }
-  inline void SetCategory(ActionCategory value) {
-    m_categoryHasBeenSet = true;
-    m_category = value;
-  }
-  inline PutTemplateActionResult& WithCategory(ActionCategory value) {
-    SetCategory(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Template post migration custom action description.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  PutTemplateActionResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Template post migration custom action document identifier.</p>
    */
   inline const Aws::String& GetDocumentIdentifier() const { return m_documentIdentifier; }
@@ -125,6 +78,21 @@ class PutTemplateActionResult {
   template <typename DocumentIdentifierT = Aws::String>
   PutTemplateActionResult& WithDocumentIdentifier(DocumentIdentifierT&& value) {
     SetDocumentIdentifier(std::forward<DocumentIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Template post migration custom action order.</p>
+   */
+  inline int GetOrder() const { return m_order; }
+  inline void SetOrder(int value) {
+    m_orderHasBeenSet = true;
+    m_order = value;
+  }
+  inline PutTemplateActionResult& WithOrder(int value) {
+    SetOrder(value);
     return *this;
   }
   ///@}
@@ -148,23 +116,30 @@ class PutTemplateActionResult {
 
   ///@{
   /**
-   * <p>Template post migration custom action external parameters.</p>
+   * <p>Template post migration custom action active status.</p>
    */
-  inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const { return m_externalParameters; }
-  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
-  void SetExternalParameters(ExternalParametersT&& value) {
-    m_externalParametersHasBeenSet = true;
-    m_externalParameters = std::forward<ExternalParametersT>(value);
+  inline bool GetActive() const { return m_active; }
+  inline void SetActive(bool value) {
+    m_activeHasBeenSet = true;
+    m_active = value;
   }
-  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
-  PutTemplateActionResult& WithExternalParameters(ExternalParametersT&& value) {
-    SetExternalParameters(std::forward<ExternalParametersT>(value));
+  inline PutTemplateActionResult& WithActive(bool value) {
+    SetActive(value);
     return *this;
   }
-  template <typename ExternalParametersKeyT = Aws::String, typename ExternalParametersValueT = SsmExternalParameter>
-  PutTemplateActionResult& AddExternalParameters(ExternalParametersKeyT&& key, ExternalParametersValueT&& value) {
-    m_externalParametersHasBeenSet = true;
-    m_externalParameters.emplace(std::forward<ExternalParametersKeyT>(key), std::forward<ExternalParametersValueT>(value));
+  ///@}
+
+  ///@{
+  /**
+   * <p>Template post migration custom action timeout in seconds.</p>
+   */
+  inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
+  inline void SetTimeoutSeconds(int value) {
+    m_timeoutSecondsHasBeenSet = true;
+    m_timeoutSeconds = value;
+  }
+  inline PutTemplateActionResult& WithTimeoutSeconds(int value) {
+    SetTimeoutSeconds(value);
     return *this;
   }
   ///@}
@@ -180,38 +155,6 @@ class PutTemplateActionResult {
   }
   inline PutTemplateActionResult& WithMustSucceedForCutover(bool value) {
     SetMustSucceedForCutover(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Operating system eligible for this template post migration custom action.</p>
-   */
-  inline const Aws::String& GetOperatingSystem() const { return m_operatingSystem; }
-  template <typename OperatingSystemT = Aws::String>
-  void SetOperatingSystem(OperatingSystemT&& value) {
-    m_operatingSystemHasBeenSet = true;
-    m_operatingSystem = std::forward<OperatingSystemT>(value);
-  }
-  template <typename OperatingSystemT = Aws::String>
-  PutTemplateActionResult& WithOperatingSystem(OperatingSystemT&& value) {
-    SetOperatingSystem(std::forward<OperatingSystemT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Template post migration custom action order.</p>
-   */
-  inline int GetOrder() const { return m_order; }
-  inline void SetOrder(int value) {
-    m_orderHasBeenSet = true;
-    m_order = value;
-  }
-  inline PutTemplateActionResult& WithOrder(int value) {
-    SetOrder(value);
     return *this;
   }
   ///@}
@@ -241,15 +184,72 @@ class PutTemplateActionResult {
 
   ///@{
   /**
-   * <p>Template post migration custom action timeout in seconds.</p>
+   * <p>Operating system eligible for this template post migration custom action.</p>
    */
-  inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
-  inline void SetTimeoutSeconds(int value) {
-    m_timeoutSecondsHasBeenSet = true;
-    m_timeoutSeconds = value;
+  inline const Aws::String& GetOperatingSystem() const { return m_operatingSystem; }
+  template <typename OperatingSystemT = Aws::String>
+  void SetOperatingSystem(OperatingSystemT&& value) {
+    m_operatingSystemHasBeenSet = true;
+    m_operatingSystem = std::forward<OperatingSystemT>(value);
   }
-  inline PutTemplateActionResult& WithTimeoutSeconds(int value) {
-    SetTimeoutSeconds(value);
+  template <typename OperatingSystemT = Aws::String>
+  PutTemplateActionResult& WithOperatingSystem(OperatingSystemT&& value) {
+    SetOperatingSystem(std::forward<OperatingSystemT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Template post migration custom action external parameters.</p>
+   */
+  inline const Aws::Map<Aws::String, SsmExternalParameter>& GetExternalParameters() const { return m_externalParameters; }
+  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
+  void SetExternalParameters(ExternalParametersT&& value) {
+    m_externalParametersHasBeenSet = true;
+    m_externalParameters = std::forward<ExternalParametersT>(value);
+  }
+  template <typename ExternalParametersT = Aws::Map<Aws::String, SsmExternalParameter>>
+  PutTemplateActionResult& WithExternalParameters(ExternalParametersT&& value) {
+    SetExternalParameters(std::forward<ExternalParametersT>(value));
+    return *this;
+  }
+  template <typename ExternalParametersKeyT = Aws::String, typename ExternalParametersValueT = SsmExternalParameter>
+  PutTemplateActionResult& AddExternalParameters(ExternalParametersKeyT&& key, ExternalParametersValueT&& value) {
+    m_externalParametersHasBeenSet = true;
+    m_externalParameters.emplace(std::forward<ExternalParametersKeyT>(key), std::forward<ExternalParametersValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Template post migration custom action description.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  PutTemplateActionResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Template post migration custom action category.</p>
+   */
+  inline ActionCategory GetCategory() const { return m_category; }
+  inline void SetCategory(ActionCategory value) {
+    m_categoryHasBeenSet = true;
+    m_category = value;
+  }
+  inline PutTemplateActionResult& WithCategory(ActionCategory value) {
+    SetCategory(value);
     return *this;
   }
   ///@}
@@ -270,45 +270,45 @@ class PutTemplateActionResult {
   ///@}
  private:
   Aws::String m_actionID;
-  bool m_actionIDHasBeenSet = false;
 
   Aws::String m_actionName;
-  bool m_actionNameHasBeenSet = false;
-
-  bool m_active{false};
-  bool m_activeHasBeenSet = false;
-
-  ActionCategory m_category{ActionCategory::NOT_SET};
-  bool m_categoryHasBeenSet = false;
-
-  Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_documentIdentifier;
-  bool m_documentIdentifierHasBeenSet = false;
-
-  Aws::String m_documentVersion;
-  bool m_documentVersionHasBeenSet = false;
-
-  Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
-  bool m_externalParametersHasBeenSet = false;
-
-  bool m_mustSucceedForCutover{false};
-  bool m_mustSucceedForCutoverHasBeenSet = false;
-
-  Aws::String m_operatingSystem;
-  bool m_operatingSystemHasBeenSet = false;
 
   int m_order{0};
-  bool m_orderHasBeenSet = false;
 
-  Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
-  bool m_parametersHasBeenSet = false;
+  Aws::String m_documentVersion;
+
+  bool m_active{false};
 
   int m_timeoutSeconds{0};
-  bool m_timeoutSecondsHasBeenSet = false;
+
+  bool m_mustSucceedForCutover{false};
+
+  Aws::Map<Aws::String, Aws::Vector<SsmParameterStoreParameter>> m_parameters;
+
+  Aws::String m_operatingSystem;
+
+  Aws::Map<Aws::String, SsmExternalParameter> m_externalParameters;
+
+  Aws::String m_description;
+
+  ActionCategory m_category{ActionCategory::NOT_SET};
 
   Aws::String m_requestId;
+  bool m_actionIDHasBeenSet = false;
+  bool m_actionNameHasBeenSet = false;
+  bool m_documentIdentifierHasBeenSet = false;
+  bool m_orderHasBeenSet = false;
+  bool m_documentVersionHasBeenSet = false;
+  bool m_activeHasBeenSet = false;
+  bool m_timeoutSecondsHasBeenSet = false;
+  bool m_mustSucceedForCutoverHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_externalParametersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

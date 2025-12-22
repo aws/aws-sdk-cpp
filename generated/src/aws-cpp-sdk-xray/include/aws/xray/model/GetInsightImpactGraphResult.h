@@ -170,27 +170,27 @@ class GetInsightImpactGraphResult {
   ///@}
  private:
   Aws::String m_insightId;
-  bool m_insightIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_serviceGraphStartTime{};
-  bool m_serviceGraphStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_serviceGraphEndTime{};
-  bool m_serviceGraphEndTimeHasBeenSet = false;
 
   Aws::Vector<InsightImpactGraphService> m_services;
-  bool m_servicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_insightIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_serviceGraphStartTimeHasBeenSet = false;
+  bool m_serviceGraphEndTimeHasBeenSet = false;
+  bool m_servicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -94,12 +94,12 @@ class BatchReadRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::Vector<BatchReadOperation> m_operations;
-  bool m_operationsHasBeenSet = false;
 
   ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
+  bool m_directoryArnHasBeenSet = false;
+  bool m_operationsHasBeenSet = false;
   bool m_consistencyLevelHasBeenSet = false;
 };
 

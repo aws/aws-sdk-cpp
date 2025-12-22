@@ -60,9 +60,9 @@ class ListFunctions2020_05_31Result {
   ///@}
  private:
   FunctionList m_functionList;
-  bool m_functionListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_functionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

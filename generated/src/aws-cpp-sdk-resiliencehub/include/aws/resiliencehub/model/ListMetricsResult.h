@@ -83,12 +83,12 @@ class ListMetricsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Aws::Vector<Aws::String>> m_rows;
-  bool m_rowsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_rowsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

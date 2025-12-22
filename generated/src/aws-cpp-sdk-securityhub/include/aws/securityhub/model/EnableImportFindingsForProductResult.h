@@ -60,9 +60,9 @@ class EnableImportFindingsForProductResult {
   ///@}
  private:
   Aws::String m_productSubscriptionArn;
-  bool m_productSubscriptionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_productSubscriptionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

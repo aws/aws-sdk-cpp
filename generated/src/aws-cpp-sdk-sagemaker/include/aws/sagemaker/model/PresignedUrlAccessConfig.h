@@ -72,9 +72,9 @@ class PresignedUrlAccessConfig {
   ///@}
  private:
   bool m_acceptEula{false};
-  bool m_acceptEulaHasBeenSet = false;
 
   Aws::String m_expectedS3Url;
+  bool m_acceptEulaHasBeenSet = false;
   bool m_expectedS3UrlHasBeenSet = false;
 };
 

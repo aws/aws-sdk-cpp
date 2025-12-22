@@ -109,15 +109,15 @@ class KxNode {
   ///@}
  private:
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_launchTime{};
-  bool m_launchTimeHasBeenSet = false;
 
   KxNodeStatus m_status{KxNodeStatus::NOT_SET};
+  bool m_nodeIdHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_launchTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

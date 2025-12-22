@@ -87,12 +87,12 @@ class ClosedDaysRule {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_startDateTime;
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::String m_endDateTime;
+  bool m_nameHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
   bool m_endDateTimeHasBeenSet = false;
 };
 

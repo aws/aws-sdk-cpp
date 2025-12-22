@@ -65,9 +65,9 @@ class RemoveBridgeOutputRequest : public MediaConnectRequest {
   ///@}
  private:
   Aws::String m_bridgeArn;
-  bool m_bridgeArnHasBeenSet = false;
 
   Aws::String m_outputName;
+  bool m_bridgeArnHasBeenSet = false;
   bool m_outputNameHasBeenSet = false;
 };
 

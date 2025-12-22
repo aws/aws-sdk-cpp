@@ -128,21 +128,21 @@ class DeleteOptedOutNumberResult {
   ///@}
  private:
   Aws::String m_optOutListArn;
-  bool m_optOutListArnHasBeenSet = false;
 
   Aws::String m_optOutListName;
-  bool m_optOutListNameHasBeenSet = false;
 
   Aws::String m_optedOutNumber;
-  bool m_optedOutNumberHasBeenSet = false;
 
   Aws::Utils::DateTime m_optedOutTimestamp{};
-  bool m_optedOutTimestampHasBeenSet = false;
 
   bool m_endUserOptedOut{false};
-  bool m_endUserOptedOutHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_optOutListArnHasBeenSet = false;
+  bool m_optOutListNameHasBeenSet = false;
+  bool m_optedOutNumberHasBeenSet = false;
+  bool m_optedOutTimestampHasBeenSet = false;
+  bool m_endUserOptedOutHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

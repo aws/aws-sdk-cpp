@@ -238,27 +238,27 @@ class Criteria {
   ///@}
  private:
   Aws::Vector<StringCriteriaCondition> m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<StringCriteriaCondition> m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<StringCriteriaCondition> m_ebsVolumeType;
-  bool m_ebsVolumeTypeHasBeenSet = false;
 
   Aws::Vector<IntegerCriteriaCondition> m_ebsVolumeSizeInGib;
-  bool m_ebsVolumeSizeInGibHasBeenSet = false;
 
   Aws::Vector<DoubleCriteriaCondition> m_estimatedMonthlySavings;
-  bool m_estimatedMonthlySavingsHasBeenSet = false;
 
   Aws::Vector<ResourceTagsCriteriaCondition> m_resourceTag;
-  bool m_resourceTagHasBeenSet = false;
 
   Aws::Vector<IntegerCriteriaCondition> m_lookBackPeriodInDays;
-  bool m_lookBackPeriodInDaysHasBeenSet = false;
 
   Aws::Vector<StringCriteriaCondition> m_restartNeeded;
+  bool m_regionHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_ebsVolumeTypeHasBeenSet = false;
+  bool m_ebsVolumeSizeInGibHasBeenSet = false;
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
+  bool m_resourceTagHasBeenSet = false;
+  bool m_lookBackPeriodInDaysHasBeenSet = false;
   bool m_restartNeededHasBeenSet = false;
 };
 

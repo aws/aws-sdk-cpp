@@ -69,9 +69,9 @@ class QDataKey {
   ///@}
  private:
   Aws::String m_qDataKeyArn;
-  bool m_qDataKeyArnHasBeenSet = false;
 
   QDataKeyType m_qDataKeyType{QDataKeyType::NOT_SET};
+  bool m_qDataKeyArnHasBeenSet = false;
   bool m_qDataKeyTypeHasBeenSet = false;
 };
 

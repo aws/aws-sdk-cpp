@@ -64,9 +64,9 @@ class StartTaskExecutionResult {
   ///@}
  private:
   Aws::String m_taskExecutionArn;
-  bool m_taskExecutionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskExecutionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

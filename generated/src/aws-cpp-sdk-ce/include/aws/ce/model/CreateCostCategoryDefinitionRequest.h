@@ -53,7 +53,7 @@ class CreateCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>The Cost Category's effective start date. It can only be a billing start date
+   * <p>The cost category's effective start date. It can only be a billing start date
    * (first day of the month). If the date isn't provided, it's the first day of the
    * current month. Dates can't be before the previous twelve months, or in the
    * future.</p>
@@ -88,7 +88,7 @@ class CreateCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p>The Cost Category rules used to categorize costs. For more information, see
+   * <p>The cost category rules used to categorize costs. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
    */
@@ -130,8 +130,8 @@ class CreateCostCategoryDefinitionRequest : public CostExplorerRequest {
 
   ///@{
   /**
-   * <p> The split charge rules used to allocate your charges between your Cost
-   * Category values. </p>
+   * <p> The split charge rules used to allocate your charges between your cost
+   * category values. </p>
    */
   inline const Aws::Vector<CostCategorySplitChargeRule>& GetSplitChargeRules() const { return m_splitChargeRules; }
   inline bool SplitChargeRulesHasBeenSet() const { return m_splitChargeRulesHasBeenSet; }
@@ -192,24 +192,24 @@ class CreateCostCategoryDefinitionRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_effectiveStart;
-  bool m_effectiveStartHasBeenSet = false;
 
   CostCategoryRuleVersion m_ruleVersion{CostCategoryRuleVersion::NOT_SET};
-  bool m_ruleVersionHasBeenSet = false;
 
   Aws::Vector<CostCategoryRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::Vector<CostCategorySplitChargeRule> m_splitChargeRules;
-  bool m_splitChargeRulesHasBeenSet = false;
 
   Aws::Vector<ResourceTag> m_resourceTags;
+  bool m_nameHasBeenSet = false;
+  bool m_effectiveStartHasBeenSet = false;
+  bool m_ruleVersionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_splitChargeRulesHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
 };
 

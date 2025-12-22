@@ -176,27 +176,27 @@ class ListAuditFindingsRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   Aws::String m_checkName;
-  bool m_checkNameHasBeenSet = false;
 
   ResourceIdentifier m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   bool m_listSuppressedFindings{false};
+  bool m_taskIdHasBeenSet = false;
+  bool m_checkNameHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_listSuppressedFindingsHasBeenSet = false;
 };
 

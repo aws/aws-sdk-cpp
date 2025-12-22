@@ -87,12 +87,12 @@ class DescribeTrustStoresResult {
   ///@}
  private:
   Aws::Vector<TrustStore> m_trustStores;
-  bool m_trustStoresHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trustStoresHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

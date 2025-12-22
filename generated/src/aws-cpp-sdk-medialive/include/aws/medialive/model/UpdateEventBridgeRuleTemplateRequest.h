@@ -147,21 +147,21 @@ class UpdateEventBridgeRuleTemplateRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<EventBridgeRuleTemplateTarget> m_eventTargets;
-  bool m_eventTargetsHasBeenSet = false;
 
   EventBridgeRuleTemplateEventType m_eventType{EventBridgeRuleTemplateEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_groupIdentifier;
-  bool m_groupIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_descriptionHasBeenSet = false;
+  bool m_eventTargetsHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_groupIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

@@ -220,36 +220,36 @@ class DescribeHubResult {
   ///@}
  private:
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   Aws::String m_hubArn;
-  bool m_hubArnHasBeenSet = false;
 
   Aws::String m_hubDisplayName;
-  bool m_hubDisplayNameHasBeenSet = false;
 
   Aws::String m_hubDescription;
-  bool m_hubDescriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hubSearchKeywords;
-  bool m_hubSearchKeywordsHasBeenSet = false;
 
   HubS3StorageConfig m_s3StorageConfig;
-  bool m_s3StorageConfigHasBeenSet = false;
 
   HubStatus m_hubStatus{HubStatus::NOT_SET};
-  bool m_hubStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hubNameHasBeenSet = false;
+  bool m_hubArnHasBeenSet = false;
+  bool m_hubDisplayNameHasBeenSet = false;
+  bool m_hubDescriptionHasBeenSet = false;
+  bool m_hubSearchKeywordsHasBeenSet = false;
+  bool m_s3StorageConfigHasBeenSet = false;
+  bool m_hubStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

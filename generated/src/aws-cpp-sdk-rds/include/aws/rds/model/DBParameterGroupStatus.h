@@ -85,9 +85,9 @@ class DBParameterGroupStatus {
   ///@}
  private:
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   Aws::String m_parameterApplyStatus;
+  bool m_dBParameterGroupNameHasBeenSet = false;
   bool m_parameterApplyStatusHasBeenSet = false;
 };
 

@@ -80,9 +80,9 @@ class WindowsFsrmConfiguration {
   ///@}
  private:
   bool m_fsrmServiceEnabled{false};
-  bool m_fsrmServiceEnabledHasBeenSet = false;
 
   Aws::String m_eventLogDestination;
+  bool m_fsrmServiceEnabledHasBeenSet = false;
   bool m_eventLogDestinationHasBeenSet = false;
 };
 

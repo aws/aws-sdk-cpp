@@ -78,9 +78,9 @@ class InstanceAttachmentEnaSrdSpecification {
   ///@}
  private:
   bool m_enaSrdEnabled{false};
-  bool m_enaSrdEnabledHasBeenSet = false;
 
   InstanceAttachmentEnaSrdUdpSpecification m_enaSrdUdpSpecification;
+  bool m_enaSrdEnabledHasBeenSet = false;
   bool m_enaSrdUdpSpecificationHasBeenSet = false;
 };
 

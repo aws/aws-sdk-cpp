@@ -281,36 +281,36 @@ class CreateEntityRecognizerRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_recognizerName;
-  bool m_recognizerNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   EntityRecognizerInputDataConfig m_inputDataConfig;
-  bool m_inputDataConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_volumeKmsKeyId;
-  bool m_volumeKmsKeyIdHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_modelKmsKeyId;
-  bool m_modelKmsKeyIdHasBeenSet = false;
 
   Aws::String m_modelPolicy;
+  bool m_recognizerNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_inputDataConfigHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_languageCodeHasBeenSet = false;
+  bool m_volumeKmsKeyIdHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_modelKmsKeyIdHasBeenSet = false;
   bool m_modelPolicyHasBeenSet = false;
 };
 

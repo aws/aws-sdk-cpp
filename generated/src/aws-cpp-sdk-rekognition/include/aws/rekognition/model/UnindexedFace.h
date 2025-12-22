@@ -86,9 +86,9 @@ class UnindexedFace {
   ///@}
  private:
   Aws::Vector<Reason> m_reasons;
-  bool m_reasonsHasBeenSet = false;
 
   FaceDetail m_faceDetail;
+  bool m_reasonsHasBeenSet = false;
   bool m_faceDetailHasBeenSet = false;
 };
 

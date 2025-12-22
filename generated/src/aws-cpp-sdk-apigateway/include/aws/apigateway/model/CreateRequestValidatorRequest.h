@@ -103,15 +103,15 @@ class CreateRequestValidatorRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   bool m_validateRequestBody{false};
-  bool m_validateRequestBodyHasBeenSet = false;
 
   bool m_validateRequestParameters{false};
+  bool m_restApiIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_validateRequestBodyHasBeenSet = false;
   bool m_validateRequestParametersHasBeenSet = false;
 };
 

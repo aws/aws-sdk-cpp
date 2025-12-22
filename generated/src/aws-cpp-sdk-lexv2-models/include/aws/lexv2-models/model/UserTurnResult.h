@@ -192,30 +192,30 @@ class UserTurnResult {
   ///@}
  private:
   UserTurnInputSpecification m_input;
-  bool m_inputHasBeenSet = false;
 
   UserTurnOutputSpecification m_expectedOutput;
-  bool m_expectedOutputHasBeenSet = false;
 
   UserTurnOutputSpecification m_actualOutput;
-  bool m_actualOutputHasBeenSet = false;
 
   ExecutionErrorDetails m_errorDetails;
-  bool m_errorDetailsHasBeenSet = false;
 
   TestResultMatchStatus m_endToEndResult{TestResultMatchStatus::NOT_SET};
-  bool m_endToEndResultHasBeenSet = false;
 
   TestResultMatchStatus m_intentMatchResult{TestResultMatchStatus::NOT_SET};
-  bool m_intentMatchResultHasBeenSet = false;
 
   TestResultMatchStatus m_slotMatchResult{TestResultMatchStatus::NOT_SET};
-  bool m_slotMatchResultHasBeenSet = false;
 
   TestResultMatchStatus m_speechTranscriptionResult{TestResultMatchStatus::NOT_SET};
-  bool m_speechTranscriptionResultHasBeenSet = false;
 
   ConversationLevelResultDetail m_conversationLevelResult;
+  bool m_inputHasBeenSet = false;
+  bool m_expectedOutputHasBeenSet = false;
+  bool m_actualOutputHasBeenSet = false;
+  bool m_errorDetailsHasBeenSet = false;
+  bool m_endToEndResultHasBeenSet = false;
+  bool m_intentMatchResultHasBeenSet = false;
+  bool m_slotMatchResultHasBeenSet = false;
+  bool m_speechTranscriptionResultHasBeenSet = false;
   bool m_conversationLevelResultHasBeenSet = false;
 };
 

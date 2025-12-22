@@ -72,9 +72,9 @@ class ConfigureLogsForChannelRequest : public MediaTailorRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::Vector<LogType> m_logTypes;
+  bool m_channelNameHasBeenSet = false;
   bool m_logTypesHasBeenSet = false;
 };
 

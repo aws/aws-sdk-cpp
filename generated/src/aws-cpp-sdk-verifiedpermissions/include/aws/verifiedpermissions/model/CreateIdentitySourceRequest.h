@@ -121,15 +121,15 @@ class CreateIdentitySourceRequest : public VerifiedPermissionsRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_policyStoreId;
-  bool m_policyStoreIdHasBeenSet = false;
 
   Configuration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   Aws::String m_principalEntityType;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_policyStoreIdHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
   bool m_principalEntityTypeHasBeenSet = false;
 };
 

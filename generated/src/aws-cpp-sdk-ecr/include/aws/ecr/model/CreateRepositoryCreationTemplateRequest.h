@@ -220,8 +220,9 @@ class CreateRepositoryCreationTemplateRequest : public ECRRequest {
   ///@{
   /**
    * <p>A list of enumerable strings representing the Amazon ECR repository creation
-   * scenarios that this template will apply towards. The two supported scenarios are
-   * <code>PULL_THROUGH_CACHE</code> and <code>REPLICATION</code> </p>
+   * scenarios that this template will apply towards. The supported scenarios are
+   * <code>PULL_THROUGH_CACHE</code>, <code>REPLICATION</code>, and
+   * <code>CREATE_ON_PUSH</code> </p>
    */
   inline const Aws::Vector<RCTAppliedFor>& GetAppliedFor() const { return m_appliedFor; }
   inline bool AppliedForHasBeenSet() const { return m_appliedForHasBeenSet; }
@@ -265,33 +266,33 @@ class CreateRepositoryCreationTemplateRequest : public ECRRequest {
   ///@}
  private:
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EncryptionConfigurationForRepositoryCreationTemplate m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   ImageTagMutability m_imageTagMutability{ImageTagMutability::NOT_SET};
-  bool m_imageTagMutabilityHasBeenSet = false;
 
   Aws::Vector<ImageTagMutabilityExclusionFilter> m_imageTagMutabilityExclusionFilters;
-  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
 
   Aws::String m_repositoryPolicy;
-  bool m_repositoryPolicyHasBeenSet = false;
 
   Aws::String m_lifecyclePolicy;
-  bool m_lifecyclePolicyHasBeenSet = false;
 
   Aws::Vector<RCTAppliedFor> m_appliedFor;
-  bool m_appliedForHasBeenSet = false;
 
   Aws::String m_customRoleArn;
+  bool m_prefixHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_imageTagMutabilityHasBeenSet = false;
+  bool m_imageTagMutabilityExclusionFiltersHasBeenSet = false;
+  bool m_repositoryPolicyHasBeenSet = false;
+  bool m_lifecyclePolicyHasBeenSet = false;
+  bool m_appliedForHasBeenSet = false;
   bool m_customRoleArnHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class GetLicenseAssetGroupResult {
   ///@}
  private:
   LicenseAssetGroup m_licenseAssetGroup;
-  bool m_licenseAssetGroupHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseAssetGroupHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

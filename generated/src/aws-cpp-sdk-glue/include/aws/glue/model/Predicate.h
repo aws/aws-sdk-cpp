@@ -76,9 +76,9 @@ class Predicate {
   ///@}
  private:
   Logical m_logical{Logical::NOT_SET};
-  bool m_logicalHasBeenSet = false;
 
   Aws::Vector<Condition> m_conditions;
+  bool m_logicalHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

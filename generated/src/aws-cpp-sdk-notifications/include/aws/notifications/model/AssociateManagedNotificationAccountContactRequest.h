@@ -67,9 +67,9 @@ class AssociateManagedNotificationAccountContactRequest : public NotificationsRe
   ///@}
  private:
   AccountContactType m_contactIdentifier{AccountContactType::NOT_SET};
-  bool m_contactIdentifierHasBeenSet = false;
 
   Aws::String m_managedNotificationConfigurationArn;
+  bool m_contactIdentifierHasBeenSet = false;
   bool m_managedNotificationConfigurationArnHasBeenSet = false;
 };
 

@@ -106,7 +106,7 @@ class WorkspaceSummary {
 
   ///@{
   /**
-   * <p>The AWS Region where the workspace was last modified.</p>
+   * <p>The Amazon Web Services Region where the workspace was last modified.</p>
    */
   inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
   inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
@@ -123,18 +123,18 @@ class WorkspaceSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_lastModifiedRegion;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class BooleanCondition {
   ///@}
  private:
   BooleanOperands m_equalTo;
-  bool m_equalToHasBeenSet = false;
 
   BooleanOperands m_notEqualTo;
+  bool m_equalToHasBeenSet = false;
   bool m_notEqualToHasBeenSet = false;
 };
 

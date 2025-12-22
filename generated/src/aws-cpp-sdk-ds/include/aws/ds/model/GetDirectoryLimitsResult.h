@@ -67,9 +67,9 @@ class GetDirectoryLimitsResult {
   ///@}
  private:
   DirectoryLimits m_directoryLimits;
-  bool m_directoryLimitsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_directoryLimitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

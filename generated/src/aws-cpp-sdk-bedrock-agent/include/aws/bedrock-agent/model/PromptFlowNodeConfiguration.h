@@ -77,9 +77,9 @@ class PromptFlowNodeConfiguration {
   ///@}
  private:
   PromptFlowNodeSourceConfiguration m_sourceConfiguration;
-  bool m_sourceConfigurationHasBeenSet = false;
 
   GuardrailConfiguration m_guardrailConfiguration;
+  bool m_sourceConfigurationHasBeenSet = false;
   bool m_guardrailConfigurationHasBeenSet = false;
 };
 

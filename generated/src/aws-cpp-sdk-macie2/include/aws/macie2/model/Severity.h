@@ -67,9 +67,9 @@ class Severity {
   ///@}
  private:
   SeverityDescription m_description{SeverityDescription::NOT_SET};
-  bool m_descriptionHasBeenSet = false;
 
   long long m_score{0};
+  bool m_descriptionHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

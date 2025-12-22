@@ -186,7 +186,7 @@ public class C2jModelToGeneratorModelTransformer {
         // add protocol check. only for json, query protocols
         final String protocol = serviceModel.getMetadata().findFirstSupportedProtocol();
 
-        if ("json".equals(protocol)) {
+        if ("json".equals(protocol) || "smithy-rpc-v2-cbor".equals(protocol)) {
             serviceModel.getMetadata().setAwsQueryCompatible(
                     c2jServiceModel.getMetadata().getAwsQueryCompatible() != null);
         } else {
@@ -610,6 +610,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         operation.setDocumentation(formatDocumentation(crossLinkedShapeDocs, 9));
         operation.setAuthtype(c2jOperation.getAuthtype());
+        operation.setAuth(c2jOperation.getAuth());
         operation.setAuthorizer(c2jOperation.getAuthorizer());
         if (c2jOperation.getEndpoint() != null) {
             operation.setEndpoint(convertEndpoint(c2jOperation.getEndpoint()));

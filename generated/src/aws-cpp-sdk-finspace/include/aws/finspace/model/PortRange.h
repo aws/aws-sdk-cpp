@@ -61,9 +61,9 @@ class PortRange {
   ///@}
  private:
   int m_from{0};
-  bool m_fromHasBeenSet = false;
 
   int m_to{0};
+  bool m_fromHasBeenSet = false;
   bool m_toHasBeenSet = false;
 };
 

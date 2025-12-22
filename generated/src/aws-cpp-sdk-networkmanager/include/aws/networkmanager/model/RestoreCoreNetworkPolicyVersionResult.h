@@ -61,9 +61,9 @@ class RestoreCoreNetworkPolicyVersionResult {
   ///@}
  private:
   CoreNetworkPolicy m_coreNetworkPolicy;
-  bool m_coreNetworkPolicyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_coreNetworkPolicyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

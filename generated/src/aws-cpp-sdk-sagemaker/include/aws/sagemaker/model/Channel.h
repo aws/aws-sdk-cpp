@@ -191,24 +191,24 @@ class Channel {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   CompressionType m_compressionType{CompressionType::NOT_SET};
-  bool m_compressionTypeHasBeenSet = false;
 
   RecordWrapper m_recordWrapperType{RecordWrapper::NOT_SET};
-  bool m_recordWrapperTypeHasBeenSet = false;
 
   TrainingInputMode m_inputMode{TrainingInputMode::NOT_SET};
-  bool m_inputModeHasBeenSet = false;
 
   ShuffleConfig m_shuffleConfig;
+  bool m_channelNameHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_compressionTypeHasBeenSet = false;
+  bool m_recordWrapperTypeHasBeenSet = false;
+  bool m_inputModeHasBeenSet = false;
   bool m_shuffleConfigHasBeenSet = false;
 };
 

@@ -128,21 +128,21 @@ class GetUserDetailsResult {
   ///@}
  private:
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   EmailAddress m_primaryEmail;
-  bool m_primaryEmailHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userIdHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_primaryEmailHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

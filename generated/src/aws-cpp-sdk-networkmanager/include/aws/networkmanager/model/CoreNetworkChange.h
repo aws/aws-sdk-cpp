@@ -141,21 +141,21 @@ class CoreNetworkChange {
   ///@}
  private:
   ChangeType m_type{ChangeType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   ChangeAction m_action{ChangeAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   CoreNetworkChangeValues m_previousValues;
-  bool m_previousValuesHasBeenSet = false;
 
   CoreNetworkChangeValues m_newValues;
-  bool m_newValuesHasBeenSet = false;
 
   Aws::String m_identifierPath;
+  bool m_typeHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
+  bool m_previousValuesHasBeenSet = false;
+  bool m_newValuesHasBeenSet = false;
   bool m_identifierPathHasBeenSet = false;
 };
 

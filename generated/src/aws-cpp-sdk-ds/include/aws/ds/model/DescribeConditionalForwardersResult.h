@@ -74,9 +74,9 @@ class DescribeConditionalForwardersResult {
   ///@}
  private:
   Aws::Vector<ConditionalForwarder> m_conditionalForwarders;
-  bool m_conditionalForwardersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_conditionalForwardersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

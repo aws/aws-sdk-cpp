@@ -111,18 +111,18 @@ class DescribePublisherResult {
   ///@}
  private:
   Aws::String m_publisherId;
-  bool m_publisherIdHasBeenSet = false;
 
   PublisherStatus m_publisherStatus{PublisherStatus::NOT_SET};
-  bool m_publisherStatusHasBeenSet = false;
 
   IdentityProvider m_identityProvider{IdentityProvider::NOT_SET};
-  bool m_identityProviderHasBeenSet = false;
 
   Aws::String m_publisherProfile;
-  bool m_publisherProfileHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_publisherIdHasBeenSet = false;
+  bool m_publisherStatusHasBeenSet = false;
+  bool m_identityProviderHasBeenSet = false;
+  bool m_publisherProfileHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

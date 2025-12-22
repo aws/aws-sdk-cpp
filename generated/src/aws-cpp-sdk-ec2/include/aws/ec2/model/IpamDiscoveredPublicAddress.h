@@ -390,60 +390,60 @@ class IpamDiscoveredPublicAddress {
   ///@}
  private:
   Aws::String m_ipamResourceDiscoveryId;
-  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
 
   Aws::String m_addressRegion;
-  bool m_addressRegionHasBeenSet = false;
 
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   Aws::String m_addressOwnerId;
-  bool m_addressOwnerIdHasBeenSet = false;
 
   Aws::String m_addressAllocationId;
-  bool m_addressAllocationIdHasBeenSet = false;
 
   IpamPublicAddressAssociationStatus m_associationStatus{IpamPublicAddressAssociationStatus::NOT_SET};
-  bool m_associationStatusHasBeenSet = false;
 
   IpamPublicAddressType m_addressType{IpamPublicAddressType::NOT_SET};
-  bool m_addressTypeHasBeenSet = false;
 
   IpamPublicAddressAwsService m_service{IpamPublicAddressAwsService::NOT_SET};
-  bool m_serviceHasBeenSet = false;
 
   Aws::String m_serviceResource;
-  bool m_serviceResourceHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_publicIpv4PoolId;
-  bool m_publicIpv4PoolIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceDescription;
-  bool m_networkInterfaceDescriptionHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   IpamPublicAddressTags m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
-  bool m_networkBorderGroupHasBeenSet = false;
 
   Aws::Vector<IpamPublicAddressSecurityGroup> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::Utils::DateTime m_sampleTime{};
+  bool m_ipamResourceDiscoveryIdHasBeenSet = false;
+  bool m_addressRegionHasBeenSet = false;
+  bool m_addressHasBeenSet = false;
+  bool m_addressOwnerIdHasBeenSet = false;
+  bool m_addressAllocationIdHasBeenSet = false;
+  bool m_associationStatusHasBeenSet = false;
+  bool m_addressTypeHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_serviceResourceHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_publicIpv4PoolIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_networkInterfaceDescriptionHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_networkBorderGroupHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
   bool m_sampleTimeHasBeenSet = false;
 };
 

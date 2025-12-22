@@ -192,27 +192,27 @@ class ListAppsRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_awsApplicationArn;
-  bool m_awsApplicationArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_fromLastAssessmentTime{};
-  bool m_fromLastAssessmentTimeHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   bool m_reverseOrder{false};
-  bool m_reverseOrderHasBeenSet = false;
 
   Aws::Utils::DateTime m_toLastAssessmentTime{};
+  bool m_appArnHasBeenSet = false;
+  bool m_awsApplicationArnHasBeenSet = false;
+  bool m_fromLastAssessmentTimeHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_reverseOrderHasBeenSet = false;
   bool m_toLastAssessmentTimeHasBeenSet = false;
 };
 

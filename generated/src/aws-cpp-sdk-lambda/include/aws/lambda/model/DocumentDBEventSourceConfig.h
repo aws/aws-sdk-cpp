@@ -90,12 +90,12 @@ class DocumentDBEventSourceConfig {
   ///@}
  private:
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_collectionName;
-  bool m_collectionNameHasBeenSet = false;
 
   FullDocument m_fullDocument{FullDocument::NOT_SET};
+  bool m_databaseNameHasBeenSet = false;
+  bool m_collectionNameHasBeenSet = false;
   bool m_fullDocumentHasBeenSet = false;
 };
 

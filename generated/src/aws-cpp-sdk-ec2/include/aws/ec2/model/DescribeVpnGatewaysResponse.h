@@ -72,9 +72,9 @@ class DescribeVpnGatewaysResponse {
   ///@}
  private:
   Aws::Vector<VpnGateway> m_vpnGateways;
-  bool m_vpnGatewaysHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_vpnGatewaysHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

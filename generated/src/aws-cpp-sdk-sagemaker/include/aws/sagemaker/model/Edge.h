@@ -89,12 +89,12 @@ class Edge {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destinationArn;
-  bool m_destinationArnHasBeenSet = false;
 
   AssociationEdgeType m_associationType{AssociationEdgeType::NOT_SET};
+  bool m_sourceArnHasBeenSet = false;
+  bool m_destinationArnHasBeenSet = false;
   bool m_associationTypeHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class GetWhatsAppMessageTemplateRequest : public SocialMessagingRequest {
   ///@}
  private:
   Aws::String m_metaTemplateId;
-  bool m_metaTemplateIdHasBeenSet = false;
 
   Aws::String m_id;
+  bool m_metaTemplateIdHasBeenSet = false;
   bool m_idHasBeenSet = false;
 };
 

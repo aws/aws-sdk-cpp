@@ -303,48 +303,48 @@ class GetSubscriptionRequestDetailsResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_decisionComment;
-  bool m_decisionCommentHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_existingSubscriptionId;
-  bool m_existingSubscriptionIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<FormOutput> m_metadataForms;
-  bool m_metadataFormsHasBeenSet = false;
 
   Aws::String m_requestReason;
-  bool m_requestReasonHasBeenSet = false;
 
   Aws::String m_reviewerId;
-  bool m_reviewerIdHasBeenSet = false;
 
   SubscriptionRequestStatus m_status{SubscriptionRequestStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<SubscribedListing> m_subscribedListings;
-  bool m_subscribedListingsHasBeenSet = false;
 
   Aws::Vector<SubscribedPrincipal> m_subscribedPrincipals;
-  bool m_subscribedPrincipalsHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_updatedBy;
-  bool m_updatedByHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_decisionCommentHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_existingSubscriptionIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_metadataFormsHasBeenSet = false;
+  bool m_requestReasonHasBeenSet = false;
+  bool m_reviewerIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_subscribedListingsHasBeenSet = false;
+  bool m_subscribedPrincipalsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

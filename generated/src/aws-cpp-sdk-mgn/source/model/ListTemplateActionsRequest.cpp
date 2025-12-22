@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String ListTemplateActionsRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_filtersHasBeenSet) {
-    payload.WithObject("filters", m_filters.Jsonize());
-  }
-
   if (m_launchConfigurationTemplateIDHasBeenSet) {
     payload.WithString("launchConfigurationTemplateID", m_launchConfigurationTemplateID);
+  }
+
+  if (m_filtersHasBeenSet) {
+    payload.WithObject("filters", m_filters.Jsonize());
   }
 
   if (m_maxResultsHasBeenSet) {

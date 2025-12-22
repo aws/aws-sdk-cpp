@@ -150,24 +150,24 @@ class ObdInterface {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_requestMessageId{0};
-  bool m_requestMessageIdHasBeenSet = false;
 
   Aws::String m_obdStandard;
-  bool m_obdStandardHasBeenSet = false;
 
   int m_pidRequestIntervalSeconds{0};
-  bool m_pidRequestIntervalSecondsHasBeenSet = false;
 
   int m_dtcRequestIntervalSeconds{0};
-  bool m_dtcRequestIntervalSecondsHasBeenSet = false;
 
   bool m_useExtendedIds{false};
-  bool m_useExtendedIdsHasBeenSet = false;
 
   bool m_hasTransmissionEcu{false};
+  bool m_nameHasBeenSet = false;
+  bool m_requestMessageIdHasBeenSet = false;
+  bool m_obdStandardHasBeenSet = false;
+  bool m_pidRequestIntervalSecondsHasBeenSet = false;
+  bool m_dtcRequestIntervalSecondsHasBeenSet = false;
+  bool m_useExtendedIdsHasBeenSet = false;
   bool m_hasTransmissionEcuHasBeenSet = false;
 };
 

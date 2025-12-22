@@ -73,9 +73,9 @@ class DescribeSuggestersResult {
   ///@}
  private:
   Aws::Vector<SuggesterStatus> m_suggesters;
-  bool m_suggestersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_suggestersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

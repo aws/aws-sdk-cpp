@@ -59,9 +59,9 @@ class AssociatePermissionResult {
   ///@}
  private:
   Aws::String m_statement;
-  bool m_statementHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statementHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

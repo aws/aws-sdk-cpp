@@ -180,27 +180,27 @@ class ConfiguredAudienceModelSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_audienceModelArn;
-  bool m_audienceModelArnHasBeenSet = false;
 
   ConfiguredAudienceModelOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_configuredAudienceModelArn;
-  bool m_configuredAudienceModelArnHasBeenSet = false;
 
   ConfiguredAudienceModelStatus m_status{ConfiguredAudienceModelStatus::NOT_SET};
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_audienceModelArnHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_configuredAudienceModelArnHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

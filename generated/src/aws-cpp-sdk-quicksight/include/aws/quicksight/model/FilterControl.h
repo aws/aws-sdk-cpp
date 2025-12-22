@@ -189,27 +189,27 @@ class FilterControl {
   ///@}
  private:
   FilterDateTimePickerControl m_dateTimePicker;
-  bool m_dateTimePickerHasBeenSet = false;
 
   FilterListControl m_list;
-  bool m_listHasBeenSet = false;
 
   FilterDropDownControl m_dropdown;
-  bool m_dropdownHasBeenSet = false;
 
   FilterTextFieldControl m_textField;
-  bool m_textFieldHasBeenSet = false;
 
   FilterTextAreaControl m_textArea;
-  bool m_textAreaHasBeenSet = false;
 
   FilterSliderControl m_slider;
-  bool m_sliderHasBeenSet = false;
 
   FilterRelativeDateTimeControl m_relativeDateTime;
-  bool m_relativeDateTimeHasBeenSet = false;
 
   FilterCrossSheetControl m_crossSheet;
+  bool m_dateTimePickerHasBeenSet = false;
+  bool m_listHasBeenSet = false;
+  bool m_dropdownHasBeenSet = false;
+  bool m_textFieldHasBeenSet = false;
+  bool m_textAreaHasBeenSet = false;
+  bool m_sliderHasBeenSet = false;
+  bool m_relativeDateTimeHasBeenSet = false;
   bool m_crossSheetHasBeenSet = false;
 };
 

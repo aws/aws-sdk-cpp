@@ -94,12 +94,12 @@ class AggregationOutput {
   ///@}
  private:
   Aws::String m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_displayValue;
-  bool m_displayValueHasBeenSet = false;
 
   Aws::Vector<AggregationOutputItem> m_items;
+  bool m_attributeHasBeenSet = false;
+  bool m_displayValueHasBeenSet = false;
   bool m_itemsHasBeenSet = false;
 };
 

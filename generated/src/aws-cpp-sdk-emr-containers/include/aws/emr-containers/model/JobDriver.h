@@ -71,9 +71,9 @@ class JobDriver {
   ///@}
  private:
   SparkSubmitJobDriver m_sparkSubmitJobDriver;
-  bool m_sparkSubmitJobDriverHasBeenSet = false;
 
   SparkSqlJobDriver m_sparkSqlJobDriver;
+  bool m_sparkSubmitJobDriverHasBeenSet = false;
   bool m_sparkSqlJobDriverHasBeenSet = false;
 };
 

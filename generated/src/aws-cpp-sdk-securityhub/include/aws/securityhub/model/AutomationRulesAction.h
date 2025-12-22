@@ -70,9 +70,9 @@ class AutomationRulesAction {
   ///@}
  private:
   AutomationRulesActionType m_type{AutomationRulesActionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AutomationRulesFindingFieldsUpdate m_findingFieldsUpdate;
+  bool m_typeHasBeenSet = false;
   bool m_findingFieldsUpdateHasBeenSet = false;
 };
 

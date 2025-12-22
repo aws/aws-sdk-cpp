@@ -86,12 +86,12 @@ class AccountStatistics {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastGeneratedAt{};
-  bool m_lastGeneratedAtHasBeenSet = false;
 
   int m_totalFindings{0};
+  bool m_accountIdHasBeenSet = false;
+  bool m_lastGeneratedAtHasBeenSet = false;
   bool m_totalFindingsHasBeenSet = false;
 };
 

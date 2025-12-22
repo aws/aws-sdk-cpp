@@ -86,12 +86,12 @@ class DescribeSubnetsResponse {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Subnet> m_subnets;
-  bool m_subnetsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_subnetsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

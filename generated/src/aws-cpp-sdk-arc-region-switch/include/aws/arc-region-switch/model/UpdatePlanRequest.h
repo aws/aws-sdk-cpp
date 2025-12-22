@@ -7,6 +7,7 @@
 #include <aws/arc-region-switch/ARCRegionswitchRequest.h>
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/AssociatedAlarm.h>
+#include <aws/arc-region-switch/model/ReportConfiguration.h>
 #include <aws/arc-region-switch/model/Trigger.h>
 #include <aws/arc-region-switch/model/Workflow.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -183,27 +184,48 @@ class UpdatePlanRequest : public ARCRegionswitchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated report configuration for the plan.</p>
+   */
+  inline const ReportConfiguration& GetReportConfiguration() const { return m_reportConfiguration; }
+  inline bool ReportConfigurationHasBeenSet() const { return m_reportConfigurationHasBeenSet; }
+  template <typename ReportConfigurationT = ReportConfiguration>
+  void SetReportConfiguration(ReportConfigurationT&& value) {
+    m_reportConfigurationHasBeenSet = true;
+    m_reportConfiguration = std::forward<ReportConfigurationT>(value);
+  }
+  template <typename ReportConfigurationT = ReportConfiguration>
+  UpdatePlanRequest& WithReportConfiguration(ReportConfigurationT&& value) {
+    SetReportConfiguration(std::forward<ReportConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Workflow> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   int m_recoveryTimeObjectiveMinutes{0};
-  bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
 
   Aws::Map<Aws::String, AssociatedAlarm> m_associatedAlarms;
-  bool m_associatedAlarmsHasBeenSet = false;
 
   Aws::Vector<Trigger> m_triggers;
+
+  ReportConfiguration m_reportConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_workflowsHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_recoveryTimeObjectiveMinutesHasBeenSet = false;
+  bool m_associatedAlarmsHasBeenSet = false;
   bool m_triggersHasBeenSet = false;
+  bool m_reportConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -172,24 +172,24 @@ class ProductV2 {
   ///@}
  private:
   Aws::String m_productV2Name;
-  bool m_productV2NameHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::Vector<IntegrationV2Type> m_integrationV2Types;
-  bool m_integrationV2TypesHasBeenSet = false;
 
   Aws::String m_marketplaceUrl;
-  bool m_marketplaceUrlHasBeenSet = false;
 
   Aws::String m_activationUrl;
+  bool m_productV2NameHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_integrationV2TypesHasBeenSet = false;
+  bool m_marketplaceUrlHasBeenSet = false;
   bool m_activationUrlHasBeenSet = false;
 };
 

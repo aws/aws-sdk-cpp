@@ -65,9 +65,9 @@ class CreateSdiSourceResult {
   ///@}
  private:
   SdiSource m_sdiSource;
-  bool m_sdiSourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sdiSourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

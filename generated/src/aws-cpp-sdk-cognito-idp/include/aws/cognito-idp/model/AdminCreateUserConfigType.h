@@ -98,12 +98,12 @@ class AdminCreateUserConfigType {
   ///@}
  private:
   bool m_allowAdminCreateUserOnly{false};
-  bool m_allowAdminCreateUserOnlyHasBeenSet = false;
 
   int m_unusedAccountValidityDays{0};
-  bool m_unusedAccountValidityDaysHasBeenSet = false;
 
   MessageTemplateType m_inviteMessageTemplate;
+  bool m_allowAdminCreateUserOnlyHasBeenSet = false;
+  bool m_unusedAccountValidityDaysHasBeenSet = false;
   bool m_inviteMessageTemplateHasBeenSet = false;
 };
 

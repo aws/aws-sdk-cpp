@@ -96,12 +96,12 @@ class DeploymentConfiguration {
   ///@}
  private:
   RollingDeploymentPolicy m_rollingUpdatePolicy;
-  bool m_rollingUpdatePolicyHasBeenSet = false;
 
   int m_waitIntervalInSeconds{0};
-  bool m_waitIntervalInSecondsHasBeenSet = false;
 
   Aws::Vector<AlarmDetails> m_autoRollbackConfiguration;
+  bool m_rollingUpdatePolicyHasBeenSet = false;
+  bool m_waitIntervalInSecondsHasBeenSet = false;
   bool m_autoRollbackConfigurationHasBeenSet = false;
 };
 

@@ -96,15 +96,15 @@ class CreateWorkspaceServiceAccountTokenResult {
   ///@}
  private:
   Aws::String m_serviceAccountId;
-  bool m_serviceAccountIdHasBeenSet = false;
 
   ServiceAccountTokenSummaryWithKey m_serviceAccountToken;
-  bool m_serviceAccountTokenHasBeenSet = false;
 
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceAccountIdHasBeenSet = false;
+  bool m_serviceAccountTokenHasBeenSet = false;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

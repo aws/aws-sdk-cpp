@@ -72,9 +72,9 @@ class RecommendedActionSummary {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   RecommendedActionTotal m_total;
+  bool m_keyHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

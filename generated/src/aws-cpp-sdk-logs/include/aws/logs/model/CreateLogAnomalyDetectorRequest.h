@@ -192,24 +192,24 @@ class CreateLogAnomalyDetectorRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_logGroupArnList;
-  bool m_logGroupArnListHasBeenSet = false;
 
   Aws::String m_detectorName;
-  bool m_detectorNameHasBeenSet = false;
 
   EvaluationFrequency m_evaluationFrequency{EvaluationFrequency::NOT_SET};
-  bool m_evaluationFrequencyHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   long long m_anomalyVisibilityTime{0};
-  bool m_anomalyVisibilityTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_logGroupArnListHasBeenSet = false;
+  bool m_detectorNameHasBeenSet = false;
+  bool m_evaluationFrequencyHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_anomalyVisibilityTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

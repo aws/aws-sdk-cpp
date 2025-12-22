@@ -127,18 +127,18 @@ class SageMakerEndpoint {
   ///@}
  private:
   int m_initialInstanceCount{0};
-  bool m_initialInstanceCountHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::String m_kmsEncryptionKey;
-  bool m_kmsEncryptionKeyHasBeenSet = false;
 
   VpcConfig m_vpc;
+  bool m_initialInstanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_kmsEncryptionKeyHasBeenSet = false;
   bool m_vpcHasBeenSet = false;
 };
 

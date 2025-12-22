@@ -100,12 +100,12 @@ class EvaluationFormMultiSelectQuestionAutomation {
   ///@}
  private:
   Aws::Vector<EvaluationFormMultiSelectQuestionAutomationOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_defaultOptionRefIds;
-  bool m_defaultOptionRefIdsHasBeenSet = false;
 
   EvaluationFormQuestionAutomationAnswerSource m_answerSource;
+  bool m_optionsHasBeenSet = false;
+  bool m_defaultOptionRefIdsHasBeenSet = false;
   bool m_answerSourceHasBeenSet = false;
 };
 

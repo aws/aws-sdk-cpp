@@ -92,12 +92,12 @@ class MonitorSummary {
   ///@}
  private:
   Aws::String m_monitorArn;
-  bool m_monitorArnHasBeenSet = false;
 
   Aws::String m_monitorName;
-  bool m_monitorNameHasBeenSet = false;
 
   MonitorStatus m_monitorStatus{MonitorStatus::NOT_SET};
+  bool m_monitorArnHasBeenSet = false;
+  bool m_monitorNameHasBeenSet = false;
   bool m_monitorStatusHasBeenSet = false;
 };
 

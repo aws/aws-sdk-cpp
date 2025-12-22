@@ -105,12 +105,12 @@ class UserHierarchyGroupSearchCriteria {
   ///@}
  private:
   Aws::Vector<UserHierarchyGroupSearchCriteria> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   Aws::Vector<UserHierarchyGroupSearchCriteria> m_andConditions;
-  bool m_andConditionsHasBeenSet = false;
 
   StringCondition m_stringCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionsHasBeenSet = false;
   bool m_stringConditionHasBeenSet = false;
 };
 

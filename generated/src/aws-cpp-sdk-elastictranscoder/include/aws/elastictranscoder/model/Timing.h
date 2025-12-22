@@ -78,12 +78,12 @@ class Timing {
   ///@}
  private:
   long long m_submitTimeMillis{0};
-  bool m_submitTimeMillisHasBeenSet = false;
 
   long long m_startTimeMillis{0};
-  bool m_startTimeMillisHasBeenSet = false;
 
   long long m_finishTimeMillis{0};
+  bool m_submitTimeMillisHasBeenSet = false;
+  bool m_startTimeMillisHasBeenSet = false;
   bool m_finishTimeMillisHasBeenSet = false;
 };
 

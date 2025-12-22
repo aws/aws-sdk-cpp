@@ -99,12 +99,12 @@ class ListAvailableSolutionStacksResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_solutionStacks;
-  bool m_solutionStacksHasBeenSet = false;
 
   Aws::Vector<SolutionStackDescription> m_solutionStackDetails;
-  bool m_solutionStackDetailsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_solutionStacksHasBeenSet = false;
+  bool m_solutionStackDetailsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

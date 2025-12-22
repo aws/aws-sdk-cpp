@@ -163,24 +163,24 @@ class StartDataQualityRuleRecommendationRunRequest : public GlueRequest {
   ///@}
  private:
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   int m_numberOfWorkers{0};
-  bool m_numberOfWorkersHasBeenSet = false;
 
   int m_timeout{0};
-  bool m_timeoutHasBeenSet = false;
 
   Aws::String m_createdRulesetName;
-  bool m_createdRulesetNameHasBeenSet = false;
 
   Aws::String m_dataQualitySecurityConfiguration;
-  bool m_dataQualitySecurityConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_numberOfWorkersHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+  bool m_createdRulesetNameHasBeenSet = false;
+  bool m_dataQualitySecurityConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class AuthRequest {
   ///@}
  private:
   Aws::String m_redirectUri;
-  bool m_redirectUriHasBeenSet = false;
 
   Aws::String m_code;
+  bool m_redirectUriHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

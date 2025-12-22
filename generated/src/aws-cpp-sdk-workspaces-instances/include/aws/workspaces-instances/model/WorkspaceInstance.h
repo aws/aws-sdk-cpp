@@ -86,12 +86,12 @@ class WorkspaceInstance {
   ///@}
  private:
   ProvisionStateEnum m_provisionState{ProvisionStateEnum::NOT_SET};
-  bool m_provisionStateHasBeenSet = false;
 
   Aws::String m_workspaceInstanceId;
-  bool m_workspaceInstanceIdHasBeenSet = false;
 
   EC2ManagedInstance m_eC2ManagedInstance;
+  bool m_provisionStateHasBeenSet = false;
+  bool m_workspaceInstanceIdHasBeenSet = false;
   bool m_eC2ManagedInstanceHasBeenSet = false;
 };
 

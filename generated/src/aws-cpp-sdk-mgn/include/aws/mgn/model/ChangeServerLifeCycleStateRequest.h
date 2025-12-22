@@ -31,18 +31,19 @@ class ChangeServerLifeCycleStateRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>The request to change the source server migration account ID.</p>
+   * <p>The request to change the source server migration lifecycle state by source
+   * server ID.</p>
    */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
   }
-  template <typename AccountIDT = Aws::String>
-  ChangeServerLifeCycleStateRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
+  template <typename SourceServerIDT = Aws::String>
+  ChangeServerLifeCycleStateRequest& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -67,31 +68,30 @@ class ChangeServerLifeCycleStateRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>The request to change the source server migration lifecycle state by source
-   * server ID.</p>
+   * <p>The request to change the source server migration account ID.</p>
    */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
   }
-  template <typename SourceServerIDT = Aws::String>
-  ChangeServerLifeCycleStateRequest& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
+  template <typename AccountIDT = Aws::String>
+  ChangeServerLifeCycleStateRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
+  Aws::String m_sourceServerID;
 
   ChangeServerLifeCycleStateSourceServerLifecycle m_lifeCycle;
-  bool m_lifeCycleHasBeenSet = false;
 
-  Aws::String m_sourceServerID;
+  Aws::String m_accountID;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_lifeCycleHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -85,12 +85,12 @@ class DescribeMaintenanceWindowsResult {
   ///@}
  private:
   Aws::Vector<MaintenanceWindowIdentity> m_windowIdentities;
-  bool m_windowIdentitiesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_windowIdentitiesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class GetOrganizationRecommendationResult {
   ///@}
  private:
   OrganizationRecommendation m_organizationRecommendation;
-  bool m_organizationRecommendationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_organizationRecommendationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

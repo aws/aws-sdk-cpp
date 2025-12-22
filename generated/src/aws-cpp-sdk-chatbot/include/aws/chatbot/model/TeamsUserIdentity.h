@@ -171,24 +171,24 @@ class TeamsUserIdentity {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::String m_chatConfigurationArn;
-  bool m_chatConfigurationArnHasBeenSet = false;
 
   Aws::String m_teamId;
-  bool m_teamIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_awsUserIdentity;
-  bool m_awsUserIdentityHasBeenSet = false;
 
   Aws::String m_teamsChannelId;
-  bool m_teamsChannelIdHasBeenSet = false;
 
   Aws::String m_teamsTenantId;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_chatConfigurationArnHasBeenSet = false;
+  bool m_teamIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_awsUserIdentityHasBeenSet = false;
+  bool m_teamsChannelIdHasBeenSet = false;
   bool m_teamsTenantIdHasBeenSet = false;
 };
 

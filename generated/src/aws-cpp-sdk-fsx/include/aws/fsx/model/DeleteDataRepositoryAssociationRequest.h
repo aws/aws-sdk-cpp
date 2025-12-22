@@ -83,12 +83,12 @@ class DeleteDataRepositoryAssociationRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   bool m_deleteDataInFileSystem{false};
+  bool m_associationIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_deleteDataInFileSystemHasBeenSet = false;
 };
 

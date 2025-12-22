@@ -67,9 +67,9 @@ class UpdateMemberSessionRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MacieStatus m_status{MacieStatus::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

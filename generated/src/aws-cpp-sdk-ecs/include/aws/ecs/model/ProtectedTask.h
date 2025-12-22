@@ -91,12 +91,12 @@ class ProtectedTask {
   ///@}
  private:
   Aws::String m_taskArn;
-  bool m_taskArnHasBeenSet = false;
 
   bool m_protectionEnabled{false};
-  bool m_protectionEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationDate{};
+  bool m_taskArnHasBeenSet = false;
+  bool m_protectionEnabledHasBeenSet = false;
   bool m_expirationDateHasBeenSet = false;
 };
 

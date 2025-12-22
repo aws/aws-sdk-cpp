@@ -205,30 +205,30 @@ class GetLowLatencyHlsManifestConfiguration {
   ///@}
  private:
   Aws::String m_manifestName;
-  bool m_manifestNameHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_childManifestName;
-  bool m_childManifestNameHasBeenSet = false;
 
   int m_manifestWindowSeconds{0};
-  bool m_manifestWindowSecondsHasBeenSet = false;
 
   int m_programDateTimeIntervalSeconds{0};
-  bool m_programDateTimeIntervalSecondsHasBeenSet = false;
 
   ScteHls m_scteHls;
-  bool m_scteHlsHasBeenSet = false;
 
   FilterConfiguration m_filterConfiguration;
-  bool m_filterConfigurationHasBeenSet = false;
 
   StartTag m_startTag;
-  bool m_startTagHasBeenSet = false;
 
   bool m_urlEncodeChildManifest{false};
+  bool m_manifestNameHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_childManifestNameHasBeenSet = false;
+  bool m_manifestWindowSecondsHasBeenSet = false;
+  bool m_programDateTimeIntervalSecondsHasBeenSet = false;
+  bool m_scteHlsHasBeenSet = false;
+  bool m_filterConfigurationHasBeenSet = false;
+  bool m_startTagHasBeenSet = false;
   bool m_urlEncodeChildManifestHasBeenSet = false;
 };
 

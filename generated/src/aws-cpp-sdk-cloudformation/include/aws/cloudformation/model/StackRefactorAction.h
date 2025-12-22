@@ -237,33 +237,33 @@ class StackRefactorAction {
   ///@}
  private:
   StackRefactorActionType m_action{StackRefactorActionType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   StackRefactorActionEntity m_entity{StackRefactorActionEntity::NOT_SET};
-  bool m_entityHasBeenSet = false;
 
   Aws::String m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceIdentifier;
-  bool m_resourceIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   StackRefactorDetection m_detection{StackRefactorDetection::NOT_SET};
-  bool m_detectionHasBeenSet = false;
 
   Aws::String m_detectionReason;
-  bool m_detectionReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tagResources;
-  bool m_tagResourcesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_untagResources;
-  bool m_untagResourcesHasBeenSet = false;
 
   ResourceMapping m_resourceMapping;
+  bool m_actionHasBeenSet = false;
+  bool m_entityHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_detectionHasBeenSet = false;
+  bool m_detectionReasonHasBeenSet = false;
+  bool m_tagResourcesHasBeenSet = false;
+  bool m_untagResourcesHasBeenSet = false;
   bool m_resourceMappingHasBeenSet = false;
 };
 

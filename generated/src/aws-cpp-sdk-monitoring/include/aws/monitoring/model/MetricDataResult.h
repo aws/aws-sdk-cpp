@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/MessageData.h>
 #include <aws/monitoring/model/StatusCode.h>
@@ -16,9 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -34,11 +34,9 @@ namespace Model {
 class MetricDataResult {
  public:
   AWS_CLOUDWATCH_API MetricDataResult() = default;
-  AWS_CLOUDWATCH_API MetricDataResult(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API MetricDataResult& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API MetricDataResult(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API MetricDataResult& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -174,21 +172,21 @@ class MetricDataResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_timestamps;
-  bool m_timestampsHasBeenSet = false;
 
   Aws::Vector<double> m_values;
-  bool m_valuesHasBeenSet = false;
 
   StatusCode m_statusCode{StatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::Vector<MessageData> m_messages;
+  bool m_idHasBeenSet = false;
+  bool m_labelHasBeenSet = false;
+  bool m_timestampsHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_messagesHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class PermissionOutput {
   ///@}
  private:
   PermissionOutputActionEnum m_action{PermissionOutputActionEnum::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   PrincipalOutput m_principal;
+  bool m_actionHasBeenSet = false;
   bool m_principalHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class CreatePortfolioResult {
   ///@}
  private:
   PortfolioDetail m_portfolioDetail;
-  bool m_portfolioDetailHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portfolioDetailHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

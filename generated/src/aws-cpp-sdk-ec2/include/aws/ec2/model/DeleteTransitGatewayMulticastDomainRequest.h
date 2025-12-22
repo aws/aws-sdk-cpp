@@ -70,9 +70,9 @@ class DeleteTransitGatewayMulticastDomainRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayMulticastDomainId;
-  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayMulticastDomainIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

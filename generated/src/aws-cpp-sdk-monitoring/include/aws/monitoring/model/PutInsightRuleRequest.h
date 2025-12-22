@@ -30,10 +30,8 @@ class PutInsightRuleRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>A unique name for the rule.</p>
@@ -154,18 +152,18 @@ class PutInsightRuleRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::String m_ruleState;
-  bool m_ruleStateHasBeenSet = false;
 
   Aws::String m_ruleDefinition;
-  bool m_ruleDefinitionHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_applyOnTransformedLogs{false};
+  bool m_ruleNameHasBeenSet = false;
+  bool m_ruleStateHasBeenSet = false;
+  bool m_ruleDefinitionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_applyOnTransformedLogsHasBeenSet = false;
 };
 

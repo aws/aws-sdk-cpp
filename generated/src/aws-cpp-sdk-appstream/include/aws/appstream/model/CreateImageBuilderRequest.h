@@ -104,11 +104,7 @@ class CreateImageBuilderRequest : public AppStreamRequest {
    * <p>stream.memory.z1d.xlarge</p> </li> <li> <p>stream.memory.z1d.2xlarge</p>
    * </li> <li> <p>stream.memory.z1d.3xlarge</p> </li> <li>
    * <p>stream.memory.z1d.6xlarge</p> </li> <li> <p>stream.memory.z1d.12xlarge</p>
-   * </li> <li> <p>stream.graphics-design.large</p> </li> <li>
-   * <p>stream.graphics-design.xlarge</p> </li> <li>
-   * <p>stream.graphics-design.2xlarge</p> </li> <li>
-   * <p>stream.graphics-design.4xlarge</p> </li> <li>
-   * <p>stream.graphics.g4dn.xlarge</p> </li> <li>
+   * </li> <li> <p>stream.graphics.g4dn.xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.2xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.4xlarge</p> </li> <li>
    * <p>stream.graphics.g4dn.8xlarge</p> </li> <li>
@@ -458,51 +454,51 @@ class CreateImageBuilderRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_imageName;
-  bool m_imageNameHasBeenSet = false;
 
   Aws::String m_imageArn;
-  bool m_imageArnHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   VpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   bool m_enableDefaultInternetAccess{false};
-  bool m_enableDefaultInternetAccessHasBeenSet = false;
 
   DomainJoinInfo m_domainJoinInfo;
-  bool m_domainJoinInfoHasBeenSet = false;
 
   Aws::String m_appstreamAgentVersion;
-  bool m_appstreamAgentVersionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<AccessEndpoint> m_accessEndpoints;
-  bool m_accessEndpointsHasBeenSet = false;
 
   VolumeConfig m_rootVolumeConfig;
-  bool m_rootVolumeConfigHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_softwaresToInstall;
-  bool m_softwaresToInstallHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_softwaresToUninstall;
+  bool m_nameHasBeenSet = false;
+  bool m_imageNameHasBeenSet = false;
+  bool m_imageArnHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_enableDefaultInternetAccessHasBeenSet = false;
+  bool m_domainJoinInfoHasBeenSet = false;
+  bool m_appstreamAgentVersionHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_accessEndpointsHasBeenSet = false;
+  bool m_rootVolumeConfigHasBeenSet = false;
+  bool m_softwaresToInstallHasBeenSet = false;
   bool m_softwaresToUninstallHasBeenSet = false;
 };
 

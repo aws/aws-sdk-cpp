@@ -88,12 +88,12 @@ class IntegrationSummary {
   ///@}
  private:
   Aws::String m_integrationName;
-  bool m_integrationNameHasBeenSet = false;
 
   IntegrationType m_integrationType{IntegrationType::NOT_SET};
-  bool m_integrationTypeHasBeenSet = false;
 
   IntegrationStatus m_integrationStatus{IntegrationStatus::NOT_SET};
+  bool m_integrationNameHasBeenSet = false;
+  bool m_integrationTypeHasBeenSet = false;
   bool m_integrationStatusHasBeenSet = false;
 };
 

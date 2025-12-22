@@ -106,15 +106,15 @@ class ListHostedZonesByVPCResult {
   ///@}
  private:
   Aws::Vector<HostedZoneSummary> m_hostedZoneSummaries;
-  bool m_hostedZoneSummariesHasBeenSet = false;
 
   Aws::String m_maxItems;
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostedZoneSummariesHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

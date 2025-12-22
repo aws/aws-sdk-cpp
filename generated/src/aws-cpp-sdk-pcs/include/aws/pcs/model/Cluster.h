@@ -274,39 +274,39 @@ class Cluster {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ClusterStatus m_status{ClusterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Scheduler m_scheduler;
-  bool m_schedulerHasBeenSet = false;
 
   Size m_size{Size::NOT_SET};
-  bool m_sizeHasBeenSet = false;
 
   ClusterSlurmConfiguration m_slurmConfiguration;
-  bool m_slurmConfigurationHasBeenSet = false;
 
   Networking m_networking;
-  bool m_networkingHasBeenSet = false;
 
   Aws::Vector<Endpoint> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::Vector<ErrorInfo> m_errorInfo;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_schedulerHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
+  bool m_slurmConfigurationHasBeenSet = false;
+  bool m_networkingHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
   bool m_errorInfoHasBeenSet = false;
 };
 

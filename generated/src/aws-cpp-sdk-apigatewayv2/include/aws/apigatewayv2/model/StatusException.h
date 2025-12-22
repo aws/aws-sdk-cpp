@@ -68,9 +68,9 @@ class StatusException {
   ///@}
  private:
   Aws::String m_exception;
-  bool m_exceptionHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_exceptionHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

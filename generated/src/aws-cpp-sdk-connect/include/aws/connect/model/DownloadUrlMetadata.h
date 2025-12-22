@@ -69,9 +69,9 @@ class DownloadUrlMetadata {
   ///@}
  private:
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_urlExpiry;
+  bool m_urlHasBeenSet = false;
   bool m_urlExpiryHasBeenSet = false;
 };
 

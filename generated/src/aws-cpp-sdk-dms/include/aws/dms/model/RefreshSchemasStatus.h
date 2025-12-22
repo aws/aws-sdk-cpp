@@ -125,18 +125,18 @@ class RefreshSchemasStatus {
   ///@}
  private:
   Aws::String m_endpointArn;
-  bool m_endpointArnHasBeenSet = false;
 
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   RefreshSchemasStatusTypeValue m_status{RefreshSchemasStatusTypeValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshDate{};
-  bool m_lastRefreshDateHasBeenSet = false;
 
   Aws::String m_lastFailureMessage;
+  bool m_endpointArnHasBeenSet = false;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastRefreshDateHasBeenSet = false;
   bool m_lastFailureMessageHasBeenSet = false;
 };
 

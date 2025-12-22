@@ -64,9 +64,9 @@ class DisassociateResolverQueryLogConfigResult {
   ///@}
  private:
   ResolverQueryLogConfigAssociation m_resolverQueryLogConfigAssociation;
-  bool m_resolverQueryLogConfigAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverQueryLogConfigAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

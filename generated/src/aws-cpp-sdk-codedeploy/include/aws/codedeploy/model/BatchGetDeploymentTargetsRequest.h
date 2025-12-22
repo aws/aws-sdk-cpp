@@ -87,9 +87,9 @@ class BatchGetDeploymentTargetsRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_deploymentId;
-  bool m_deploymentIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_targetIds;
+  bool m_deploymentIdHasBeenSet = false;
   bool m_targetIdsHasBeenSet = false;
 };
 

@@ -146,21 +146,21 @@ class UpdateProxyRulePrioritiesResult {
   ///@}
  private:
   Aws::String m_proxyRuleGroupName;
-  bool m_proxyRuleGroupNameHasBeenSet = false;
 
   Aws::String m_proxyRuleGroupArn;
-  bool m_proxyRuleGroupArnHasBeenSet = false;
 
   RuleGroupRequestPhase m_ruleGroupRequestPhase{RuleGroupRequestPhase::NOT_SET};
-  bool m_ruleGroupRequestPhaseHasBeenSet = false;
 
   Aws::Vector<ProxyRulePriority> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_proxyRuleGroupNameHasBeenSet = false;
+  bool m_proxyRuleGroupArnHasBeenSet = false;
+  bool m_ruleGroupRequestPhaseHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_updateTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

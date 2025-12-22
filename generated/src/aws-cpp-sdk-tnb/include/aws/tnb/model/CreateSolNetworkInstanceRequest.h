@@ -110,15 +110,15 @@ class CreateSolNetworkInstanceRequest : public TnbRequest {
   ///@}
  private:
   Aws::String m_nsDescription;
-  bool m_nsDescriptionHasBeenSet = false;
 
   Aws::String m_nsName;
-  bool m_nsNameHasBeenSet = false;
 
   Aws::String m_nsdInfoId;
-  bool m_nsdInfoIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nsDescriptionHasBeenSet = false;
+  bool m_nsNameHasBeenSet = false;
+  bool m_nsdInfoIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

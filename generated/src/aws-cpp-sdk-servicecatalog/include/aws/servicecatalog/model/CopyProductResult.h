@@ -59,9 +59,9 @@ class CopyProductResult {
   ///@}
  private:
   Aws::String m_copyProductToken;
-  bool m_copyProductTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_copyProductTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

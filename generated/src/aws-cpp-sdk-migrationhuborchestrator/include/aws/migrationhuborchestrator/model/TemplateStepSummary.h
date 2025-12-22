@@ -205,30 +205,30 @@ class TemplateStepSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_stepGroupId;
-  bool m_stepGroupIdHasBeenSet = false;
 
   Aws::String m_templateId;
-  bool m_templateIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   StepActionType m_stepActionType{StepActionType::NOT_SET};
-  bool m_stepActionTypeHasBeenSet = false;
 
   TargetType m_targetType{TargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Owner m_owner{Owner::NOT_SET};
-  bool m_ownerHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_previous;
-  bool m_previousHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_next;
+  bool m_idHasBeenSet = false;
+  bool m_stepGroupIdHasBeenSet = false;
+  bool m_templateIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stepActionTypeHasBeenSet = false;
+  bool m_targetTypeHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_previousHasBeenSet = false;
   bool m_nextHasBeenSet = false;
 };
 

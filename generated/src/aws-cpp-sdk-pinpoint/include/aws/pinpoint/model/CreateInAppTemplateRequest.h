@@ -67,9 +67,9 @@ class CreateInAppTemplateRequest : public PinpointRequest {
   ///@}
  private:
   InAppTemplateRequest m_inAppTemplateRequest;
-  bool m_inAppTemplateRequestHasBeenSet = false;
 
   Aws::String m_templateName;
+  bool m_inAppTemplateRequestHasBeenSet = false;
   bool m_templateNameHasBeenSet = false;
 };
 

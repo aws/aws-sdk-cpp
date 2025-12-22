@@ -115,15 +115,15 @@ class UpdateMultiplexRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_multiplexId;
-  bool m_multiplexIdHasBeenSet = false;
 
   MultiplexSettings m_multiplexSettings;
-  bool m_multiplexSettingsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, MultiplexProgramPacketIdentifiersMap> m_packetIdentifiersMapping;
+  bool m_multiplexIdHasBeenSet = false;
+  bool m_multiplexSettingsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_packetIdentifiersMappingHasBeenSet = false;
 };
 

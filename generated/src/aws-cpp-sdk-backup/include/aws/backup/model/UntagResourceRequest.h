@@ -77,9 +77,9 @@ class UntagResourceRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagKeyList;
+  bool m_resourceArnHasBeenSet = false;
   bool m_tagKeyListHasBeenSet = false;
 };
 

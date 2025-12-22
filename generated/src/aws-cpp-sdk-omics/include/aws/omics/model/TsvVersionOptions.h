@@ -100,12 +100,12 @@ class TsvVersionOptions {
   ///@}
  private:
   AnnotationType m_annotationType{AnnotationType::NOT_SET};
-  bool m_annotationTypeHasBeenSet = false;
 
   Aws::Map<FormatToHeaderKey, Aws::String> m_formatToHeader;
-  bool m_formatToHeaderHasBeenSet = false;
 
   Aws::Vector<Aws::Map<Aws::String, SchemaValueType>> m_schema;
+  bool m_annotationTypeHasBeenSet = false;
+  bool m_formatToHeaderHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
 };
 

@@ -196,27 +196,27 @@ class StreamingDistributionConfig {
   ///@}
  private:
   Aws::String m_callerReference;
-  bool m_callerReferenceHasBeenSet = false;
 
   S3Origin m_s3Origin;
-  bool m_s3OriginHasBeenSet = false;
 
   Aliases m_aliases;
-  bool m_aliasesHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   StreamingLoggingConfig m_logging;
-  bool m_loggingHasBeenSet = false;
 
   TrustedSigners m_trustedSigners;
-  bool m_trustedSignersHasBeenSet = false;
 
   PriceClass m_priceClass{PriceClass::NOT_SET};
-  bool m_priceClassHasBeenSet = false;
 
   bool m_enabled{false};
+  bool m_callerReferenceHasBeenSet = false;
+  bool m_s3OriginHasBeenSet = false;
+  bool m_aliasesHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_loggingHasBeenSet = false;
+  bool m_trustedSignersHasBeenSet = false;
+  bool m_priceClassHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
 };
 

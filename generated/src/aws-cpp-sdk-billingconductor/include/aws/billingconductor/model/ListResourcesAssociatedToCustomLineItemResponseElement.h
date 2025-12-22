@@ -87,12 +87,12 @@ class ListResourcesAssociatedToCustomLineItemResponseElement {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   CustomLineItemRelationship m_relationship{CustomLineItemRelationship::NOT_SET};
-  bool m_relationshipHasBeenSet = false;
 
   Aws::String m_endBillingPeriod;
+  bool m_arnHasBeenSet = false;
+  bool m_relationshipHasBeenSet = false;
   bool m_endBillingPeriodHasBeenSet = false;
 };
 

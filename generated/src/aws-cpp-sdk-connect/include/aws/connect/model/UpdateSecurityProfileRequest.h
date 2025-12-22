@@ -282,36 +282,36 @@ class UpdateSecurityProfileRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   Aws::String m_securityProfileId;
-  bool m_securityProfileIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_allowedAccessControlTags;
-  bool m_allowedAccessControlTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tagRestrictedResources;
-  bool m_tagRestrictedResourcesHasBeenSet = false;
 
   Aws::Vector<Application> m_applications;
-  bool m_applicationsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hierarchyRestrictedResources;
-  bool m_hierarchyRestrictedResourcesHasBeenSet = false;
 
   Aws::String m_allowedAccessControlHierarchyGroupId;
-  bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
 
   Aws::Vector<FlowModule> m_allowedFlowModules;
-  bool m_allowedFlowModulesHasBeenSet = false;
 
   GranularAccessControlConfiguration m_granularAccessControlConfiguration;
+  bool m_descriptionHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_securityProfileIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_allowedAccessControlTagsHasBeenSet = false;
+  bool m_tagRestrictedResourcesHasBeenSet = false;
+  bool m_applicationsHasBeenSet = false;
+  bool m_hierarchyRestrictedResourcesHasBeenSet = false;
+  bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
+  bool m_allowedFlowModulesHasBeenSet = false;
   bool m_granularAccessControlConfigurationHasBeenSet = false;
 };
 

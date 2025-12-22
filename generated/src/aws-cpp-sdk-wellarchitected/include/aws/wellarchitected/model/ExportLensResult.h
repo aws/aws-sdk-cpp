@@ -59,9 +59,9 @@ class ExportLensResult {
   ///@}
  private:
   Aws::String m_lensJSON;
-  bool m_lensJSONHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lensJSONHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

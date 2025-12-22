@@ -118,15 +118,15 @@ class CreateClusterV2Request : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ProvisionedRequest m_provisioned;
-  bool m_provisionedHasBeenSet = false;
 
   ServerlessRequest m_serverless;
+  bool m_clusterNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_provisionedHasBeenSet = false;
   bool m_serverlessHasBeenSet = false;
 };
 

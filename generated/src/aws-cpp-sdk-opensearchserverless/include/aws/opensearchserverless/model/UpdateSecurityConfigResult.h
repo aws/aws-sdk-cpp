@@ -61,9 +61,9 @@ class UpdateSecurityConfigResult {
   ///@}
  private:
   SecurityConfigDetail m_securityConfigDetail;
-  bool m_securityConfigDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_securityConfigDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

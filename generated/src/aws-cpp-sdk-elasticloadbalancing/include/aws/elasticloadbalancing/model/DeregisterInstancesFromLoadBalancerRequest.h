@@ -81,9 +81,9 @@ class DeregisterInstancesFromLoadBalancerRequest : public ElasticLoadBalancingRe
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Instance> m_instances;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_instancesHasBeenSet = false;
 };
 

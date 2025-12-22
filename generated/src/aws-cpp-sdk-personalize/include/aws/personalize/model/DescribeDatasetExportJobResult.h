@@ -63,9 +63,9 @@ class DescribeDatasetExportJobResult {
   ///@}
  private:
   DatasetExportJob m_datasetExportJob;
-  bool m_datasetExportJobHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetExportJobHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

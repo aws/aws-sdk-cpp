@@ -138,18 +138,18 @@ class KubernetesUserDetails {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sessionName;
-  bool m_sessionNameHasBeenSet = false;
 
   ImpersonatedUser m_impersonatedUser;
+  bool m_usernameHasBeenSet = false;
+  bool m_uidHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
   bool m_impersonatedUserHasBeenSet = false;
 };
 

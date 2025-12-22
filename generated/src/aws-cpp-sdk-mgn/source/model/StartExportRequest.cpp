@@ -19,12 +19,20 @@ Aws::String StartExportRequest::SerializePayload() const {
     payload.WithString("s3Bucket", m_s3Bucket);
   }
 
+  if (m_s3KeyHasBeenSet) {
+    payload.WithString("s3Key", m_s3Key);
+  }
+
   if (m_s3BucketOwnerHasBeenSet) {
     payload.WithString("s3BucketOwner", m_s3BucketOwner);
   }
 
-  if (m_s3KeyHasBeenSet) {
-    payload.WithString("s3Key", m_s3Key);
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
   return payload.View().WriteReadable();

@@ -165,24 +165,24 @@ class Output {
   ///@}
  private:
   CompressionFormat m_compressionFormat{CompressionFormat::NOT_SET};
-  bool m_compressionFormatHasBeenSet = false;
 
   OutputFormat m_format{OutputFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_partitionColumns;
-  bool m_partitionColumnsHasBeenSet = false;
 
   S3Location m_location;
-  bool m_locationHasBeenSet = false;
 
   bool m_overwrite{false};
-  bool m_overwriteHasBeenSet = false;
 
   OutputFormatOptions m_formatOptions;
-  bool m_formatOptionsHasBeenSet = false;
 
   int m_maxOutputFiles{0};
+  bool m_compressionFormatHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_partitionColumnsHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_overwriteHasBeenSet = false;
+  bool m_formatOptionsHasBeenSet = false;
   bool m_maxOutputFilesHasBeenSet = false;
 };
 

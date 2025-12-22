@@ -146,21 +146,21 @@ class DescribeMultiplexProgramResult {
   ///@}
  private:
   Aws::String m_channelId;
-  bool m_channelIdHasBeenSet = false;
 
   MultiplexProgramSettings m_multiplexProgramSettings;
-  bool m_multiplexProgramSettingsHasBeenSet = false;
 
   MultiplexProgramPacketIdentifiersMap m_packetIdentifiersMap;
-  bool m_packetIdentifiersMapHasBeenSet = false;
 
   Aws::Vector<MultiplexProgramPipelineDetail> m_pipelineDetails;
-  bool m_pipelineDetailsHasBeenSet = false;
 
   Aws::String m_programName;
-  bool m_programNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_channelIdHasBeenSet = false;
+  bool m_multiplexProgramSettingsHasBeenSet = false;
+  bool m_packetIdentifiersMapHasBeenSet = false;
+  bool m_pipelineDetailsHasBeenSet = false;
+  bool m_programNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

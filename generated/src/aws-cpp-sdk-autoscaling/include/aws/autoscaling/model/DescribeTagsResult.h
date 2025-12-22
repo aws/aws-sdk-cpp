@@ -88,12 +88,12 @@ class DescribeTagsResult {
   ///@}
  private:
   Aws::Vector<TagDescription> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tagsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

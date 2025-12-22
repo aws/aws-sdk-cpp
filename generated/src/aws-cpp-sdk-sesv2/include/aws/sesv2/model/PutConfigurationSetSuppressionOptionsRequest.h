@@ -9,6 +9,7 @@
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/SuppressionListReason.h>
+#include <aws/sesv2/model/SuppressionValidationOptions.h>
 
 #include <utility>
 
@@ -81,12 +82,35 @@ class PutConfigurationSetSuppressionOptionsRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains information about the email address suppression
+   * preferences for the configuration set in the current Amazon Web Services
+   * Region.</p>
+   */
+  inline const SuppressionValidationOptions& GetValidationOptions() const { return m_validationOptions; }
+  inline bool ValidationOptionsHasBeenSet() const { return m_validationOptionsHasBeenSet; }
+  template <typename ValidationOptionsT = SuppressionValidationOptions>
+  void SetValidationOptions(ValidationOptionsT&& value) {
+    m_validationOptionsHasBeenSet = true;
+    m_validationOptions = std::forward<ValidationOptionsT>(value);
+  }
+  template <typename ValidationOptionsT = SuppressionValidationOptions>
+  PutConfigurationSetSuppressionOptionsRequest& WithValidationOptions(ValidationOptionsT&& value) {
+    SetValidationOptions(std::forward<ValidationOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::Vector<SuppressionListReason> m_suppressedReasons;
+
+  SuppressionValidationOptions m_validationOptions;
+  bool m_configurationSetNameHasBeenSet = false;
   bool m_suppressedReasonsHasBeenSet = false;
+  bool m_validationOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

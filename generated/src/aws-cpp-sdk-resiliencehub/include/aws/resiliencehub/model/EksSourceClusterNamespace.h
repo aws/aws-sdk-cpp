@@ -76,9 +76,9 @@ class EksSourceClusterNamespace {
   ///@}
  private:
   Aws::String m_eksClusterArn;
-  bool m_eksClusterArnHasBeenSet = false;
 
   Aws::String m_namespace;
+  bool m_eksClusterArnHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
 };
 

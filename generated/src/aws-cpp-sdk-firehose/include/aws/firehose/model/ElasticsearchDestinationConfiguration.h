@@ -325,45 +325,45 @@ class ElasticsearchDestinationConfiguration {
   ///@}
  private:
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::String m_domainARN;
-  bool m_domainARNHasBeenSet = false;
 
   Aws::String m_clusterEndpoint;
-  bool m_clusterEndpointHasBeenSet = false;
 
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   ElasticsearchIndexRotationPeriod m_indexRotationPeriod{ElasticsearchIndexRotationPeriod::NOT_SET};
-  bool m_indexRotationPeriodHasBeenSet = false;
 
   ElasticsearchBufferingHints m_bufferingHints;
-  bool m_bufferingHintsHasBeenSet = false;
 
   ElasticsearchRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   ElasticsearchS3BackupMode m_s3BackupMode{ElasticsearchS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationConfiguration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   DocumentIdOptions m_documentIdOptions;
+  bool m_roleARNHasBeenSet = false;
+  bool m_domainARNHasBeenSet = false;
+  bool m_clusterEndpointHasBeenSet = false;
+  bool m_indexNameHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_indexRotationPeriodHasBeenSet = false;
+  bool m_bufferingHintsHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
   bool m_documentIdOptionsHasBeenSet = false;
 };
 

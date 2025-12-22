@@ -208,30 +208,30 @@ class CreateRegistrationResult {
   ///@}
  private:
   Aws::String m_registrationArn;
-  bool m_registrationArnHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   Aws::String m_registrationType;
-  bool m_registrationTypeHasBeenSet = false;
 
   RegistrationStatus m_registrationStatus{RegistrationStatus::NOT_SET};
-  bool m_registrationStatusHasBeenSet = false;
 
   long long m_currentVersionNumber{0};
-  bool m_currentVersionNumberHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalAttributes;
-  bool m_additionalAttributesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationArnHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_registrationTypeHasBeenSet = false;
+  bool m_registrationStatusHasBeenSet = false;
+  bool m_currentVersionNumberHasBeenSet = false;
+  bool m_additionalAttributesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

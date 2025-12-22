@@ -77,9 +77,9 @@ class PivotTableDataPathOption {
   ///@}
  private:
   Aws::Vector<DataPathValue> m_dataPathList;
-  bool m_dataPathListHasBeenSet = false;
 
   Aws::String m_width;
+  bool m_dataPathListHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

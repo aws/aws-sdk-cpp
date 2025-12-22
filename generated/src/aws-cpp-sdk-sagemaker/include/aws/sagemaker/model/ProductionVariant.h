@@ -360,51 +360,51 @@ class ProductionVariant {
   ///@}
  private:
   Aws::String m_variantName;
-  bool m_variantNameHasBeenSet = false;
 
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   int m_initialInstanceCount{0};
-  bool m_initialInstanceCountHasBeenSet = false;
 
   ProductionVariantInstanceType m_instanceType{ProductionVariantInstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   double m_initialVariantWeight{0.0};
-  bool m_initialVariantWeightHasBeenSet = false;
 
   ProductionVariantAcceleratorType m_acceleratorType{ProductionVariantAcceleratorType::NOT_SET};
-  bool m_acceleratorTypeHasBeenSet = false;
 
   ProductionVariantCoreDumpConfig m_coreDumpConfig;
-  bool m_coreDumpConfigHasBeenSet = false;
 
   ProductionVariantServerlessConfig m_serverlessConfig;
-  bool m_serverlessConfigHasBeenSet = false;
 
   int m_volumeSizeInGB{0};
-  bool m_volumeSizeInGBHasBeenSet = false;
 
   int m_modelDataDownloadTimeoutInSeconds{0};
-  bool m_modelDataDownloadTimeoutInSecondsHasBeenSet = false;
 
   int m_containerStartupHealthCheckTimeoutInSeconds{0};
-  bool m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = false;
 
   bool m_enableSSMAccess{false};
-  bool m_enableSSMAccessHasBeenSet = false;
 
   ProductionVariantManagedInstanceScaling m_managedInstanceScaling;
-  bool m_managedInstanceScalingHasBeenSet = false;
 
   ProductionVariantRoutingConfig m_routingConfig;
-  bool m_routingConfigHasBeenSet = false;
 
   ProductionVariantInferenceAmiVersion m_inferenceAmiVersion{ProductionVariantInferenceAmiVersion::NOT_SET};
-  bool m_inferenceAmiVersionHasBeenSet = false;
 
   ProductionVariantCapacityReservationConfig m_capacityReservationConfig;
+  bool m_variantNameHasBeenSet = false;
+  bool m_modelNameHasBeenSet = false;
+  bool m_initialInstanceCountHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_initialVariantWeightHasBeenSet = false;
+  bool m_acceleratorTypeHasBeenSet = false;
+  bool m_coreDumpConfigHasBeenSet = false;
+  bool m_serverlessConfigHasBeenSet = false;
+  bool m_volumeSizeInGBHasBeenSet = false;
+  bool m_modelDataDownloadTimeoutInSecondsHasBeenSet = false;
+  bool m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = false;
+  bool m_enableSSMAccessHasBeenSet = false;
+  bool m_managedInstanceScalingHasBeenSet = false;
+  bool m_routingConfigHasBeenSet = false;
+  bool m_inferenceAmiVersionHasBeenSet = false;
   bool m_capacityReservationConfigHasBeenSet = false;
 };
 

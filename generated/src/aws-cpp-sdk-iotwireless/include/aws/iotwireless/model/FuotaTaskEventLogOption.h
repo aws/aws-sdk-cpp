@@ -63,9 +63,9 @@ class FuotaTaskEventLogOption {
   ///@}
  private:
   FuotaTaskEvent m_event{FuotaTaskEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   LogLevel m_logLevel{LogLevel::NOT_SET};
+  bool m_eventHasBeenSet = false;
   bool m_logLevelHasBeenSet = false;
 };
 

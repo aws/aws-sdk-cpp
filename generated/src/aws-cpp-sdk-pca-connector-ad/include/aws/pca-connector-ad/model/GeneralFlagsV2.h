@@ -65,9 +65,9 @@ class GeneralFlagsV2 {
   ///@}
  private:
   bool m_autoEnrollment{false};
-  bool m_autoEnrollmentHasBeenSet = false;
 
   bool m_machineType{false};
+  bool m_autoEnrollmentHasBeenSet = false;
   bool m_machineTypeHasBeenSet = false;
 };
 

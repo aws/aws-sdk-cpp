@@ -106,15 +106,15 @@ class ListLifecycleExecutionResourcesRequest : public ImagebuilderRequest {
   ///@}
  private:
   Aws::String m_lifecycleExecutionId;
-  bool m_lifecycleExecutionIdHasBeenSet = false;
 
   Aws::String m_parentResourceId;
-  bool m_parentResourceIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_lifecycleExecutionIdHasBeenSet = false;
+  bool m_parentResourceIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

@@ -90,9 +90,9 @@ class OrganizationResourceDetailedStatusFilters {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   OrganizationResourceDetailedStatus m_status{OrganizationResourceDetailedStatus::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

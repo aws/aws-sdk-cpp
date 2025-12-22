@@ -91,12 +91,12 @@ class DescribeContainerInstancesResult {
   ///@}
  private:
   Aws::Vector<ContainerInstance> m_containerInstances;
-  bool m_containerInstancesHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_containerInstancesHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

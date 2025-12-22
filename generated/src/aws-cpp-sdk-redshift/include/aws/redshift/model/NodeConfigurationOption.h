@@ -101,15 +101,15 @@ class NodeConfigurationOption {
   ///@}
  private:
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   double m_estimatedDiskUtilizationPercent{0.0};
-  bool m_estimatedDiskUtilizationPercentHasBeenSet = false;
 
   Mode m_mode{Mode::NOT_SET};
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_estimatedDiskUtilizationPercentHasBeenSet = false;
   bool m_modeHasBeenSet = false;
 };
 

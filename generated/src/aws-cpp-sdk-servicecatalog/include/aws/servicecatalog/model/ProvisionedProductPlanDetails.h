@@ -326,48 +326,48 @@ class ProvisionedProductPlanDetails {
   ///@}
  private:
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_pathId;
-  bool m_pathIdHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_planName;
-  bool m_planNameHasBeenSet = false;
 
   Aws::String m_planId;
-  bool m_planIdHasBeenSet = false;
 
   Aws::String m_provisionProductId;
-  bool m_provisionProductIdHasBeenSet = false;
 
   Aws::String m_provisionProductName;
-  bool m_provisionProductNameHasBeenSet = false;
 
   ProvisionedProductPlanType m_planType{ProvisionedProductPlanType::NOT_SET};
-  bool m_planTypeHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   ProvisionedProductPlanStatus m_status{ProvisionedProductPlanStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTime{};
-  bool m_updatedTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationArns;
-  bool m_notificationArnsHasBeenSet = false;
 
   Aws::Vector<UpdateProvisioningParameter> m_provisioningParameters;
-  bool m_provisioningParametersHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_pathIdHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_planNameHasBeenSet = false;
+  bool m_planIdHasBeenSet = false;
+  bool m_provisionProductIdHasBeenSet = false;
+  bool m_provisionProductNameHasBeenSet = false;
+  bool m_planTypeHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_updatedTimeHasBeenSet = false;
+  bool m_notificationArnsHasBeenSet = false;
+  bool m_provisioningParametersHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class CalendarInterval {
   ///@}
  private:
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   DurationUnit m_durationUnit{DurationUnit::NOT_SET};
-  bool m_durationUnitHasBeenSet = false;
 
   int m_duration{0};
+  bool m_startTimeHasBeenSet = false;
+  bool m_durationUnitHasBeenSet = false;
   bool m_durationHasBeenSet = false;
 };
 

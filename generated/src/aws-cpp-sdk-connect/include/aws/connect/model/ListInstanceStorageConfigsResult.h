@@ -85,12 +85,12 @@ class ListInstanceStorageConfigsResult {
   ///@}
  private:
   Aws::Vector<InstanceStorageConfig> m_storageConfigs;
-  bool m_storageConfigsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageConfigsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

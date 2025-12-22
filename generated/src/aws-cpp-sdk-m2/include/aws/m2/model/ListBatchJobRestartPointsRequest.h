@@ -90,12 +90,12 @@ class ListBatchJobRestartPointsRequest : public MainframeModernizationRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_authSecretsManagerArn;
-  bool m_authSecretsManagerArnHasBeenSet = false;
 
   Aws::String m_executionId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_authSecretsManagerArnHasBeenSet = false;
   bool m_executionIdHasBeenSet = false;
 };
 

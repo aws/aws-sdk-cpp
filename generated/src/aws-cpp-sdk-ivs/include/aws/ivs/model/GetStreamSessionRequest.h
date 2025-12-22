@@ -67,9 +67,9 @@ class GetStreamSessionRequest : public IVSRequest {
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_streamId;
+  bool m_channelArnHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
 };
 

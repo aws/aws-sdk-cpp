@@ -69,9 +69,9 @@ class DataSetColumnIdMapping {
   ///@}
  private:
   Aws::String m_sourceColumnId;
-  bool m_sourceColumnIdHasBeenSet = false;
 
   Aws::String m_targetColumnId;
+  bool m_sourceColumnIdHasBeenSet = false;
   bool m_targetColumnIdHasBeenSet = false;
 };
 

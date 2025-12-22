@@ -87,12 +87,12 @@ class CodeDeliveryDetailsType {
   ///@}
  private:
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   DeliveryMediumType m_deliveryMedium{DeliveryMediumType::NOT_SET};
-  bool m_deliveryMediumHasBeenSet = false;
 
   Aws::String m_attributeName;
+  bool m_destinationHasBeenSet = false;
+  bool m_deliveryMediumHasBeenSet = false;
   bool m_attributeNameHasBeenSet = false;
 };
 

@@ -261,36 +261,36 @@ class ConfigurationOptionDescription {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   Aws::String m_changeSeverity;
-  bool m_changeSeverityHasBeenSet = false;
 
   bool m_userDefined{false};
-  bool m_userDefinedHasBeenSet = false;
 
   ConfigurationOptionValueType m_valueType{ConfigurationOptionValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_valueOptions;
-  bool m_valueOptionsHasBeenSet = false;
 
   int m_minValue{0};
-  bool m_minValueHasBeenSet = false;
 
   int m_maxValue{0};
-  bool m_maxValueHasBeenSet = false;
 
   int m_maxLength{0};
-  bool m_maxLengthHasBeenSet = false;
 
   OptionRestrictionRegex m_regex;
+  bool m_namespaceHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_changeSeverityHasBeenSet = false;
+  bool m_userDefinedHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
+  bool m_valueOptionsHasBeenSet = false;
+  bool m_minValueHasBeenSet = false;
+  bool m_maxValueHasBeenSet = false;
+  bool m_maxLengthHasBeenSet = false;
   bool m_regexHasBeenSet = false;
 };
 

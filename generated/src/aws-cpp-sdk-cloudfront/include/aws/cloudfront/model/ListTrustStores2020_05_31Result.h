@@ -85,12 +85,12 @@ class ListTrustStores2020_05_31Result {
   ///@}
  private:
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::Vector<TrustStoreSummary> m_trustStoreList;
-  bool m_trustStoreListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextMarkerHasBeenSet = false;
+  bool m_trustStoreListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

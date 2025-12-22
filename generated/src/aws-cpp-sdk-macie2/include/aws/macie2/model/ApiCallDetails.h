@@ -110,15 +110,15 @@ class ApiCallDetails {
   ///@}
  private:
   Aws::String m_api;
-  bool m_apiHasBeenSet = false;
 
   Aws::String m_apiServiceName;
-  bool m_apiServiceNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_firstSeen{};
-  bool m_firstSeenHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSeen{};
+  bool m_apiHasBeenSet = false;
+  bool m_apiServiceNameHasBeenSet = false;
+  bool m_firstSeenHasBeenSet = false;
   bool m_lastSeenHasBeenSet = false;
 };
 

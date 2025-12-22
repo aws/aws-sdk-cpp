@@ -157,21 +157,21 @@ class CreateConfigurationSetRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   TrackingOptions m_trackingOptions;
-  bool m_trackingOptionsHasBeenSet = false;
 
   DeliveryOptions m_deliveryOptions;
-  bool m_deliveryOptionsHasBeenSet = false;
 
   ReputationOptions m_reputationOptions;
-  bool m_reputationOptionsHasBeenSet = false;
 
   SendingOptions m_sendingOptions;
-  bool m_sendingOptionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_trackingOptionsHasBeenSet = false;
+  bool m_deliveryOptionsHasBeenSet = false;
+  bool m_reputationOptionsHasBeenSet = false;
+  bool m_sendingOptionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

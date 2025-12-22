@@ -92,12 +92,12 @@ class ListUploadsResult {
   ///@}
  private:
   Aws::Vector<Upload> m_uploads;
-  bool m_uploadsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_uploadsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

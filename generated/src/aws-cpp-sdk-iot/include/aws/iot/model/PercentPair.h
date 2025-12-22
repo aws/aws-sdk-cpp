@@ -61,9 +61,9 @@ class PercentPair {
   ///@}
  private:
   double m_percent{0.0};
-  bool m_percentHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_percentHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

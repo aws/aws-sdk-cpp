@@ -72,9 +72,9 @@ class ContinuousDeploymentSingleHeaderConfig {
   ///@}
  private:
   Aws::String m_header;
-  bool m_headerHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_headerHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -73,9 +73,9 @@ class SetTimerAction {
   ///@}
  private:
   Aws::String m_timerName;
-  bool m_timerNameHasBeenSet = false;
 
   Aws::String m_durationExpression;
+  bool m_timerNameHasBeenSet = false;
   bool m_durationExpressionHasBeenSet = false;
 };
 

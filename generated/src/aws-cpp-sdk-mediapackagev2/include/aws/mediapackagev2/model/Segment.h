@@ -165,24 +165,24 @@ class Segment {
   ///@}
  private:
   int m_segmentDurationSeconds{0};
-  bool m_segmentDurationSecondsHasBeenSet = false;
 
   Aws::String m_segmentName;
-  bool m_segmentNameHasBeenSet = false;
 
   bool m_tsUseAudioRenditionGroup{false};
-  bool m_tsUseAudioRenditionGroupHasBeenSet = false;
 
   bool m_includeIframeOnlyStreams{false};
-  bool m_includeIframeOnlyStreamsHasBeenSet = false;
 
   bool m_tsIncludeDvbSubtitles{false};
-  bool m_tsIncludeDvbSubtitlesHasBeenSet = false;
 
   Scte m_scte;
-  bool m_scteHasBeenSet = false;
 
   Encryption m_encryption;
+  bool m_segmentDurationSecondsHasBeenSet = false;
+  bool m_segmentNameHasBeenSet = false;
+  bool m_tsUseAudioRenditionGroupHasBeenSet = false;
+  bool m_includeIframeOnlyStreamsHasBeenSet = false;
+  bool m_tsIncludeDvbSubtitlesHasBeenSet = false;
+  bool m_scteHasBeenSet = false;
   bool m_encryptionHasBeenSet = false;
 };
 

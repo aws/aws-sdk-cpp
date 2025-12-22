@@ -82,9 +82,9 @@ class UpdatePipelineRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_pipelineName;
-  bool m_pipelineNameHasBeenSet = false;
 
   Aws::Vector<PipelineActivity> m_pipelineActivities;
+  bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineActivitiesHasBeenSet = false;
 };
 

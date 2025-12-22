@@ -165,24 +165,24 @@ class ArtifactsConcatenationConfiguration {
   ///@}
  private:
   AudioConcatenationConfiguration m_audio;
-  bool m_audioHasBeenSet = false;
 
   VideoConcatenationConfiguration m_video;
-  bool m_videoHasBeenSet = false;
 
   ContentConcatenationConfiguration m_content;
-  bool m_contentHasBeenSet = false;
 
   DataChannelConcatenationConfiguration m_dataChannel;
-  bool m_dataChannelHasBeenSet = false;
 
   TranscriptionMessagesConcatenationConfiguration m_transcriptionMessages;
-  bool m_transcriptionMessagesHasBeenSet = false;
 
   MeetingEventsConcatenationConfiguration m_meetingEvents;
-  bool m_meetingEventsHasBeenSet = false;
 
   CompositedVideoConcatenationConfiguration m_compositedVideo;
+  bool m_audioHasBeenSet = false;
+  bool m_videoHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_dataChannelHasBeenSet = false;
+  bool m_transcriptionMessagesHasBeenSet = false;
+  bool m_meetingEventsHasBeenSet = false;
   bool m_compositedVideoHasBeenSet = false;
 };
 

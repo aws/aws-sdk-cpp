@@ -89,12 +89,12 @@ class WarningProperty {
   ///@}
  private:
   Aws::String m_propertyPath;
-  bool m_propertyPathHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_propertyPathHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

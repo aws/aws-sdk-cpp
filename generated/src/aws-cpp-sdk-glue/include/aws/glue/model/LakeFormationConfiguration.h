@@ -69,9 +69,9 @@ class LakeFormationConfiguration {
   ///@}
  private:
   bool m_useLakeFormationCredentials{false};
-  bool m_useLakeFormationCredentialsHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_useLakeFormationCredentialsHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

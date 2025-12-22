@@ -119,15 +119,15 @@ class GetEventPredictionResult {
   ///@}
  private:
   Aws::Vector<ModelScores> m_modelScores;
-  bool m_modelScoresHasBeenSet = false;
 
   Aws::Vector<RuleResult> m_ruleResults;
-  bool m_ruleResultsHasBeenSet = false;
 
   Aws::Vector<ExternalModelOutputs> m_externalModelOutputs;
-  bool m_externalModelOutputsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelScoresHasBeenSet = false;
+  bool m_ruleResultsHasBeenSet = false;
+  bool m_externalModelOutputsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

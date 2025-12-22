@@ -175,24 +175,24 @@ class CreateDomainAssociationRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   bool m_enableAutoSubDomain{false};
-  bool m_enableAutoSubDomainHasBeenSet = false;
 
   Aws::Vector<SubDomainSetting> m_subDomainSettings;
-  bool m_subDomainSettingsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autoSubDomainCreationPatterns;
-  bool m_autoSubDomainCreationPatternsHasBeenSet = false;
 
   Aws::String m_autoSubDomainIAMRole;
-  bool m_autoSubDomainIAMRoleHasBeenSet = false;
 
   CertificateSettings m_certificateSettings;
+  bool m_appIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_enableAutoSubDomainHasBeenSet = false;
+  bool m_subDomainSettingsHasBeenSet = false;
+  bool m_autoSubDomainCreationPatternsHasBeenSet = false;
+  bool m_autoSubDomainIAMRoleHasBeenSet = false;
   bool m_certificateSettingsHasBeenSet = false;
 };
 

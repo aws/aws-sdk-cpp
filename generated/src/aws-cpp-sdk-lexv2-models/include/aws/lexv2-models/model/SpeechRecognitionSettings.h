@@ -68,9 +68,9 @@ class SpeechRecognitionSettings {
   ///@}
  private:
   SpeechModelPreference m_speechModelPreference{SpeechModelPreference::NOT_SET};
-  bool m_speechModelPreferenceHasBeenSet = false;
 
   SpeechModelConfig m_speechModelConfig;
+  bool m_speechModelPreferenceHasBeenSet = false;
   bool m_speechModelConfigHasBeenSet = false;
 };
 

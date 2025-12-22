@@ -60,9 +60,9 @@ class GetCloudExadataInfrastructureResult {
   ///@}
  private:
   CloudExadataInfrastructure m_cloudExadataInfrastructure;
-  bool m_cloudExadataInfrastructureHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudExadataInfrastructureHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

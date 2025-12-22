@@ -34,22 +34,6 @@ class AccessDeniedException {
 
   ///@{
 
-  inline const Aws::String& GetCode() const { return m_code; }
-  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-  template <typename CodeT = Aws::String>
-  void SetCode(CodeT&& value) {
-    m_codeHasBeenSet = true;
-    m_code = std::forward<CodeT>(value);
-  }
-  template <typename CodeT = Aws::String>
-  AccessDeniedException& WithCode(CodeT&& value) {
-    SetCode(std::forward<CodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>
@@ -63,12 +47,28 @@ class AccessDeniedException {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
+  ///@{
+
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  AccessDeniedException& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_message;
+
+  Aws::String m_code;
   bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
 };
 
 }  // namespace Model

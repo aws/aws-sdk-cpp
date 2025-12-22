@@ -311,48 +311,48 @@ class FlowDefinition {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_flowName;
-  bool m_flowNameHasBeenSet = false;
 
   FlowStatus m_flowStatus{FlowStatus::NOT_SET};
-  bool m_flowStatusHasBeenSet = false;
 
   ConnectorType m_sourceConnectorType{ConnectorType::NOT_SET};
-  bool m_sourceConnectorTypeHasBeenSet = false;
 
   Aws::String m_sourceConnectorLabel;
-  bool m_sourceConnectorLabelHasBeenSet = false;
 
   ConnectorType m_destinationConnectorType{ConnectorType::NOT_SET};
-  bool m_destinationConnectorTypeHasBeenSet = false;
 
   Aws::String m_destinationConnectorLabel;
-  bool m_destinationConnectorLabelHasBeenSet = false;
 
   TriggerType m_triggerType{TriggerType::NOT_SET};
-  bool m_triggerTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ExecutionDetails m_lastRunExecutionDetails;
+  bool m_flowArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_flowNameHasBeenSet = false;
+  bool m_flowStatusHasBeenSet = false;
+  bool m_sourceConnectorTypeHasBeenSet = false;
+  bool m_sourceConnectorLabelHasBeenSet = false;
+  bool m_destinationConnectorTypeHasBeenSet = false;
+  bool m_destinationConnectorLabelHasBeenSet = false;
+  bool m_triggerTypeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_lastRunExecutionDetailsHasBeenSet = false;
 };
 

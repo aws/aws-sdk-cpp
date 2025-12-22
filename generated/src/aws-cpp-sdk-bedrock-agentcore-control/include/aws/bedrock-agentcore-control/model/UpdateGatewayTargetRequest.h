@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -144,24 +145,46 @@ class UpdateGatewayTargetRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for HTTP header and query parameter propagation to the gateway
+   * target.</p>
+   */
+  inline const MetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+  inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
+    m_metadataConfigurationHasBeenSet = true;
+    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
+  }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  UpdateGatewayTargetRequest& WithMetadataConfiguration(MetadataConfigurationT&& value) {
+    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayIdentifier;
-  bool m_gatewayIdentifierHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   Aws::Vector<CredentialProviderConfiguration> m_credentialProviderConfigurations;
+
+  MetadataConfiguration m_metadataConfiguration;
+  bool m_gatewayIdentifierHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
   bool m_credentialProviderConfigurationsHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

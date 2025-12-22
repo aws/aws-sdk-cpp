@@ -69,9 +69,9 @@ class UpdateConnectionApiKeyAuthRequestParameters {
   ///@}
  private:
   Aws::String m_apiKeyName;
-  bool m_apiKeyNameHasBeenSet = false;
 
   Aws::String m_apiKeyValue;
+  bool m_apiKeyNameHasBeenSet = false;
   bool m_apiKeyValueHasBeenSet = false;
 };
 

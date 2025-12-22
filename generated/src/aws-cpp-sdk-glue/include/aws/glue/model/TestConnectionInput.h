@@ -105,12 +105,12 @@ class TestConnectionInput {
   ///@}
  private:
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
-  bool m_connectionPropertiesHasBeenSet = false;
 
   AuthenticationConfigurationInput m_authenticationConfiguration;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_connectionPropertiesHasBeenSet = false;
   bool m_authenticationConfigurationHasBeenSet = false;
 };
 

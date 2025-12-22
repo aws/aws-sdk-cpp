@@ -76,9 +76,9 @@ class InputConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
+  bool m_idHasBeenSet = false;
   bool m_inputStartingPositionConfigurationHasBeenSet = false;
 };
 

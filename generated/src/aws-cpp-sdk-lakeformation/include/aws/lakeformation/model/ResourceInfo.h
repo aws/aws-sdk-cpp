@@ -139,21 +139,21 @@ class ResourceInfo {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   bool m_withFederation{false};
-  bool m_withFederationHasBeenSet = false;
 
   bool m_hybridAccessEnabled{false};
-  bool m_hybridAccessEnabledHasBeenSet = false;
 
   bool m_withPrivilegedAccess{false};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_withFederationHasBeenSet = false;
+  bool m_hybridAccessEnabledHasBeenSet = false;
   bool m_withPrivilegedAccessHasBeenSet = false;
 };
 

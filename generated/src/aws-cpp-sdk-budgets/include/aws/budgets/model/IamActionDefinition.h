@@ -124,15 +124,15 @@ class IamActionDefinition {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_roles;
-  bool m_rolesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_users;
+  bool m_policyArnHasBeenSet = false;
+  bool m_rolesHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_usersHasBeenSet = false;
 };
 

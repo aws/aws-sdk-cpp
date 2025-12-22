@@ -149,21 +149,21 @@ class ReviewResultDetail {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   Aws::String m_subjectId;
-  bool m_subjectIdHasBeenSet = false;
 
   Aws::String m_subjectType;
-  bool m_subjectTypeHasBeenSet = false;
 
   Aws::String m_questionId;
-  bool m_questionIdHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_actionIdHasBeenSet = false;
+  bool m_subjectIdHasBeenSet = false;
+  bool m_subjectTypeHasBeenSet = false;
+  bool m_questionIdHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -97,12 +97,12 @@ class RetrieveAndGenerateConfiguration {
   ///@}
  private:
   ExternalSourcesRetrieveAndGenerateConfiguration m_externalSourcesConfiguration;
-  bool m_externalSourcesConfigurationHasBeenSet = false;
 
   KnowledgeBaseRetrieveAndGenerateConfiguration m_knowledgeBaseConfiguration;
-  bool m_knowledgeBaseConfigurationHasBeenSet = false;
 
   RetrieveAndGenerateType m_type{RetrieveAndGenerateType::NOT_SET};
+  bool m_externalSourcesConfigurationHasBeenSet = false;
+  bool m_knowledgeBaseConfigurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

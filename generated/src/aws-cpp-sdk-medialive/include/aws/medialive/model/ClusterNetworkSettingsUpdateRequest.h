@@ -93,9 +93,9 @@ class ClusterNetworkSettingsUpdateRequest {
   ///@}
  private:
   Aws::String m_defaultRoute;
-  bool m_defaultRouteHasBeenSet = false;
 
   Aws::Vector<InterfaceMappingUpdateRequest> m_interfaceMappings;
+  bool m_defaultRouteHasBeenSet = false;
   bool m_interfaceMappingsHasBeenSet = false;
 };
 

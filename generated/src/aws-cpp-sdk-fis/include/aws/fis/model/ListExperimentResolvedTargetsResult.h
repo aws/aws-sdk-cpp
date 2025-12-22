@@ -85,12 +85,12 @@ class ListExperimentResolvedTargetsResult {
   ///@}
  private:
   Aws::Vector<ResolvedTarget> m_resolvedTargets;
-  bool m_resolvedTargetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolvedTargetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

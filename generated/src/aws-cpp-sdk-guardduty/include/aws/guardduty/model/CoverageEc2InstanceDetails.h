@@ -130,18 +130,18 @@ class CoverageEc2InstanceDetails {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   AgentDetails m_agentDetails;
-  bool m_agentDetailsHasBeenSet = false;
 
   ManagementType m_managementType{ManagementType::NOT_SET};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_clusterArnHasBeenSet = false;
+  bool m_agentDetailsHasBeenSet = false;
   bool m_managementTypeHasBeenSet = false;
 };
 

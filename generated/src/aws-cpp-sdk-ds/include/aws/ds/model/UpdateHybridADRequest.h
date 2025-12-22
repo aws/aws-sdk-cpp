@@ -97,12 +97,12 @@ class UpdateHybridADRequest : public DirectoryServiceRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   HybridAdministratorAccountUpdate m_hybridAdministratorAccountUpdate;
-  bool m_hybridAdministratorAccountUpdateHasBeenSet = false;
 
   HybridCustomerInstancesSettings m_selfManagedInstancesSettings;
+  bool m_directoryIdHasBeenSet = false;
+  bool m_hybridAdministratorAccountUpdateHasBeenSet = false;
   bool m_selfManagedInstancesSettingsHasBeenSet = false;
 };
 

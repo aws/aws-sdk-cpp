@@ -24,7 +24,7 @@ namespace Model {
 
 /**
  * <p>Rules are processed in order. If there are multiple rules that match the line
- * item, then the first rule to match is used to determine that Cost Category
+ * item, then the first rule to match is used to determine that cost category
  * value.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryRule">AWS
  * API Reference</a></p>
@@ -61,7 +61,7 @@ class CostCategoryRule {
    * <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
    * <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>,
    * and <code>USAGE_TYPE</code>.</p> <p> <code>RECORD_TYPE</code> is a dimension
-   * used for Cost Explorer APIs, and is also supported for Cost Category
+   * used for Cost Explorer APIs, and is also supported for cost category
    * expressions. This dimension uses different terms, depending on whether you're
    * using the console or API/JSON editor. For a detailed comparison, see <a
    * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
@@ -125,15 +125,15 @@ class CostCategoryRule {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Expression m_rule;
-  bool m_ruleHasBeenSet = false;
 
   CostCategoryInheritedValueDimension m_inheritedValue;
-  bool m_inheritedValueHasBeenSet = false;
 
   CostCategoryRuleType m_type{CostCategoryRuleType::NOT_SET};
+  bool m_valueHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
+  bool m_inheritedValueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

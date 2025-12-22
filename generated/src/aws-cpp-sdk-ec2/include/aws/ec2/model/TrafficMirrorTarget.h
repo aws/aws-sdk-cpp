@@ -185,27 +185,27 @@ class TrafficMirrorTarget {
   ///@}
  private:
   Aws::String m_trafficMirrorTargetId;
-  bool m_trafficMirrorTargetIdHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_networkLoadBalancerArn;
-  bool m_networkLoadBalancerArnHasBeenSet = false;
 
   TrafficMirrorTargetType m_type{TrafficMirrorTargetType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_gatewayLoadBalancerEndpointId;
+  bool m_trafficMirrorTargetIdHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_networkLoadBalancerArnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_gatewayLoadBalancerEndpointIdHasBeenSet = false;
 };
 

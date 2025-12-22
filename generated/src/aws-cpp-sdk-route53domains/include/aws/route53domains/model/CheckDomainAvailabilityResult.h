@@ -82,9 +82,9 @@ class CheckDomainAvailabilityResult {
   ///@}
  private:
   DomainAvailability m_availability{DomainAvailability::NOT_SET};
-  bool m_availabilityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_availabilityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

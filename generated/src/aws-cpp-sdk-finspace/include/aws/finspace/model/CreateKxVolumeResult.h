@@ -250,39 +250,39 @@ class CreateKxVolumeResult {
   ///@}
  private:
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_volumeName;
-  bool m_volumeNameHasBeenSet = false;
 
   KxVolumeType m_volumeType{KxVolumeType::NOT_SET};
-  bool m_volumeTypeHasBeenSet = false;
 
   Aws::String m_volumeArn;
-  bool m_volumeArnHasBeenSet = false;
 
   KxNAS1Configuration m_nas1Configuration;
-  bool m_nas1ConfigurationHasBeenSet = false;
 
   KxVolumeStatus m_status{KxVolumeStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   KxAzMode m_azMode{KxAzMode::NOT_SET};
-  bool m_azModeHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZoneIds;
-  bool m_availabilityZoneIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_volumeNameHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_volumeArnHasBeenSet = false;
+  bool m_nas1ConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_azModeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

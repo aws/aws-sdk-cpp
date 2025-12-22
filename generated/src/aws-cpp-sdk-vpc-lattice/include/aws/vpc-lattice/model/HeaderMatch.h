@@ -87,12 +87,12 @@ class HeaderMatch {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   HeaderMatchType m_match;
-  bool m_matchHasBeenSet = false;
 
   bool m_caseSensitive{false};
+  bool m_nameHasBeenSet = false;
+  bool m_matchHasBeenSet = false;
   bool m_caseSensitiveHasBeenSet = false;
 };
 

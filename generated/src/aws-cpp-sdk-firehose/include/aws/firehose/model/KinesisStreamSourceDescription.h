@@ -95,12 +95,12 @@ class KinesisStreamSourceDescription {
   ///@}
  private:
   Aws::String m_kinesisStreamARN;
-  bool m_kinesisStreamARNHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   Aws::Utils::DateTime m_deliveryStartTimestamp{};
+  bool m_kinesisStreamARNHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
   bool m_deliveryStartTimestampHasBeenSet = false;
 };
 

@@ -199,27 +199,27 @@ class DescribeNetworkInsightsAccessScopeAnalysesRequest : public EC2Request {
   ///@}
  private:
   Aws::Vector<Aws::String> m_networkInsightsAccessScopeAnalysisIds;
-  bool m_networkInsightsAccessScopeAnalysisIdsHasBeenSet = false;
 
   Aws::String m_networkInsightsAccessScopeId;
-  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_analysisStartTimeBegin{};
-  bool m_analysisStartTimeBeginHasBeenSet = false;
 
   Aws::Utils::DateTime m_analysisStartTimeEnd{};
-  bool m_analysisStartTimeEndHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_networkInsightsAccessScopeAnalysisIdsHasBeenSet = false;
+  bool m_networkInsightsAccessScopeIdHasBeenSet = false;
+  bool m_analysisStartTimeBeginHasBeenSet = false;
+  bool m_analysisStartTimeEndHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

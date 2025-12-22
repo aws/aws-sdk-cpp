@@ -108,15 +108,15 @@ class CodeStarParameters {
   ///@}
  private:
   Aws::String m_connectionArn;
-  bool m_connectionArnHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::String m_artifactPath;
+  bool m_connectionArnHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_branchHasBeenSet = false;
   bool m_artifactPathHasBeenSet = false;
 };
 

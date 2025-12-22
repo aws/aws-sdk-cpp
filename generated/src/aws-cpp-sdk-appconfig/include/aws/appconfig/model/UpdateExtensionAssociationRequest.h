@@ -72,9 +72,9 @@ class UpdateExtensionAssociationRequest : public AppConfigRequest {
   ///@}
  private:
   Aws::String m_extensionAssociationId;
-  bool m_extensionAssociationIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_parameters;
+  bool m_extensionAssociationIdHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

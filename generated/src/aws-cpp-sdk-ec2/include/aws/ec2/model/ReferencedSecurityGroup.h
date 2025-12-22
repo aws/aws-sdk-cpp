@@ -125,18 +125,18 @@ class ReferencedSecurityGroup {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_peeringStatus;
-  bool m_peeringStatusHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
+  bool m_groupIdHasBeenSet = false;
+  bool m_peeringStatusHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
   bool m_vpcPeeringConnectionIdHasBeenSet = false;
 };
 

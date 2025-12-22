@@ -100,12 +100,12 @@ class HumanLoopActivationOutput {
   ///@}
  private:
   Aws::String m_humanLoopArn;
-  bool m_humanLoopArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_humanLoopActivationReasons;
-  bool m_humanLoopActivationReasonsHasBeenSet = false;
 
   Aws::String m_humanLoopActivationConditionsEvaluationResults;
+  bool m_humanLoopArnHasBeenSet = false;
+  bool m_humanLoopActivationReasonsHasBeenSet = false;
   bool m_humanLoopActivationConditionsEvaluationResultsHasBeenSet = false;
 };
 

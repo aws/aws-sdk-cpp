@@ -536,78 +536,78 @@ class VpcEndpoint {
   ///@}
  private:
   Aws::String m_vpcEndpointId;
-  bool m_vpcEndpointIdHasBeenSet = false;
 
   VpcEndpointType m_vpcEndpointType{VpcEndpointType::NOT_SET};
-  bool m_vpcEndpointTypeHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   State m_state{State::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_policyDocument;
-  bool m_policyDocumentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routeTableIds;
-  bool m_routeTableIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<SecurityGroupIdentifier> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
-  bool m_ipAddressTypeHasBeenSet = false;
 
   DnsOptions m_dnsOptions;
-  bool m_dnsOptionsHasBeenSet = false;
 
   bool m_privateDnsEnabled{false};
-  bool m_privateDnsEnabledHasBeenSet = false;
 
   bool m_requesterManaged{false};
-  bool m_requesterManagedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceIds;
-  bool m_networkInterfaceIdsHasBeenSet = false;
 
   Aws::Vector<DnsEntry> m_dnsEntries;
-  bool m_dnsEntriesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   LastError m_lastError;
-  bool m_lastErrorHasBeenSet = false;
 
   Aws::Vector<SubnetIpPrefixes> m_ipv4Prefixes;
-  bool m_ipv4PrefixesHasBeenSet = false;
 
   Aws::Vector<SubnetIpPrefixes> m_ipv6Prefixes;
-  bool m_ipv6PrefixesHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::String m_serviceNetworkArn;
-  bool m_serviceNetworkArnHasBeenSet = false;
 
   Aws::String m_resourceConfigurationArn;
-  bool m_resourceConfigurationArnHasBeenSet = false;
 
   Aws::String m_serviceRegion;
+  bool m_vpcEndpointIdHasBeenSet = false;
+  bool m_vpcEndpointTypeHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_policyDocumentHasBeenSet = false;
+  bool m_routeTableIdsHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
+  bool m_dnsOptionsHasBeenSet = false;
+  bool m_privateDnsEnabledHasBeenSet = false;
+  bool m_requesterManagedHasBeenSet = false;
+  bool m_networkInterfaceIdsHasBeenSet = false;
+  bool m_dnsEntriesHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_lastErrorHasBeenSet = false;
+  bool m_ipv4PrefixesHasBeenSet = false;
+  bool m_ipv6PrefixesHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_serviceNetworkArnHasBeenSet = false;
+  bool m_resourceConfigurationArnHasBeenSet = false;
   bool m_serviceRegionHasBeenSet = false;
 };
 

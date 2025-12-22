@@ -127,18 +127,18 @@ class AssociateServiceActionWithProvisioningArtifactRequest : public ServiceCata
   ///@}
  private:
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_provisioningArtifactId;
-  bool m_provisioningArtifactIdHasBeenSet = false;
 
   Aws::String m_serviceActionId;
-  bool m_serviceActionIdHasBeenSet = false;
 
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_productIdHasBeenSet = false;
+  bool m_provisioningArtifactIdHasBeenSet = false;
+  bool m_serviceActionIdHasBeenSet = false;
+  bool m_acceptLanguageHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

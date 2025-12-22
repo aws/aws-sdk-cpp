@@ -21,16 +21,16 @@ ListCrlsResult::ListCrlsResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 ListCrlsResult& ListCrlsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("crls")) {
     Aws::Utils::Array<JsonView> crlsJsonList = jsonValue.GetArray("crls");
     for (unsigned crlsIndex = 0; crlsIndex < crlsJsonList.GetLength(); ++crlsIndex) {
       m_crls.push_back(crlsJsonList[crlsIndex].AsObject());
     }
     m_crlsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

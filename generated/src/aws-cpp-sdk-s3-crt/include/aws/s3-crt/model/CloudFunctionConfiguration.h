@@ -111,15 +111,15 @@ class CloudFunctionConfiguration {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Event> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::String m_cloudFunction;
-  bool m_cloudFunctionHasBeenSet = false;
 
   Aws::String m_invocationRole;
+  bool m_idHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
+  bool m_cloudFunctionHasBeenSet = false;
   bool m_invocationRoleHasBeenSet = false;
 };
 

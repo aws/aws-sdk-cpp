@@ -67,9 +67,9 @@ class DisassociateFleetRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_fleetName;
-  bool m_fleetNameHasBeenSet = false;
 
   Aws::String m_stackName;
+  bool m_fleetNameHasBeenSet = false;
   bool m_stackNameHasBeenSet = false;
 };
 

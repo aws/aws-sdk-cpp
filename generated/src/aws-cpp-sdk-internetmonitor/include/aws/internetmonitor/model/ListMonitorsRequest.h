@@ -114,15 +114,15 @@ class ListMonitorsRequest : public InternetMonitorRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_monitorStatus;
-  bool m_monitorStatusHasBeenSet = false;
 
   bool m_includeLinkedAccounts{false};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_monitorStatusHasBeenSet = false;
   bool m_includeLinkedAccountsHasBeenSet = false;
 };
 

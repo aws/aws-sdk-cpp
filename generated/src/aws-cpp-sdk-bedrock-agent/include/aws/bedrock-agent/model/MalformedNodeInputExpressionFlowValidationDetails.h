@@ -87,12 +87,12 @@ class MalformedNodeInputExpressionFlowValidationDetails {
   ///@}
  private:
   Aws::String m_node;
-  bool m_nodeHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_cause;
+  bool m_nodeHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_causeHasBeenSet = false;
 };
 

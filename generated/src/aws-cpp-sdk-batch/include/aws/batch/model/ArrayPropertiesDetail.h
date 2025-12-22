@@ -92,12 +92,12 @@ class ArrayPropertiesDetail {
   ///@}
  private:
   Aws::Map<Aws::String, int> m_statusSummary;
-  bool m_statusSummaryHasBeenSet = false;
 
   int m_size{0};
-  bool m_sizeHasBeenSet = false;
 
   int m_index{0};
+  bool m_statusSummaryHasBeenSet = false;
+  bool m_sizeHasBeenSet = false;
   bool m_indexHasBeenSet = false;
 };
 

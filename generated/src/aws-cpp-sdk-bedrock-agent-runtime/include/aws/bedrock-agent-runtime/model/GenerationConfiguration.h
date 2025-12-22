@@ -149,18 +149,18 @@ class GenerationConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, Aws::Utils::Document> m_additionalModelRequestFields;
-  bool m_additionalModelRequestFieldsHasBeenSet = false;
 
   GuardrailConfiguration m_guardrailConfiguration;
-  bool m_guardrailConfigurationHasBeenSet = false;
 
   InferenceConfig m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   PerformanceConfiguration m_performanceConfig;
-  bool m_performanceConfigHasBeenSet = false;
 
   PromptTemplate m_promptTemplate;
+  bool m_additionalModelRequestFieldsHasBeenSet = false;
+  bool m_guardrailConfigurationHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
+  bool m_performanceConfigHasBeenSet = false;
   bool m_promptTemplateHasBeenSet = false;
 };
 

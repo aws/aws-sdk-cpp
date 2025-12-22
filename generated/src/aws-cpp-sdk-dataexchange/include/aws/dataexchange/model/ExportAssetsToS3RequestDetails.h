@@ -115,15 +115,15 @@ class ExportAssetsToS3RequestDetails {
   ///@}
  private:
   Aws::Vector<AssetDestinationEntry> m_assetDestinations;
-  bool m_assetDestinationsHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   ExportServerSideEncryption m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_assetDestinationsHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

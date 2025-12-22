@@ -69,9 +69,9 @@ class GetRateBasedRuleManagedKeysRequest : public WAFRegionalRequest {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_nextMarker;
+  bool m_ruleIdHasBeenSet = false;
   bool m_nextMarkerHasBeenSet = false;
 };
 

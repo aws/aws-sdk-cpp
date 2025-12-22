@@ -100,15 +100,15 @@ class VoteOnProposalRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_networkId;
-  bool m_networkIdHasBeenSet = false;
 
   Aws::String m_proposalId;
-  bool m_proposalIdHasBeenSet = false;
 
   Aws::String m_voterMemberId;
-  bool m_voterMemberIdHasBeenSet = false;
 
   VoteValue m_vote{VoteValue::NOT_SET};
+  bool m_networkIdHasBeenSet = false;
+  bool m_proposalIdHasBeenSet = false;
+  bool m_voterMemberIdHasBeenSet = false;
   bool m_voteHasBeenSet = false;
 };
 

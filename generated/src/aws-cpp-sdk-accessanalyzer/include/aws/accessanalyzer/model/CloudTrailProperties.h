@@ -100,12 +100,12 @@ class CloudTrailProperties {
   ///@}
  private:
   Aws::Vector<TrailProperties> m_trailProperties;
-  bool m_trailPropertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
+  bool m_trailPropertiesHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

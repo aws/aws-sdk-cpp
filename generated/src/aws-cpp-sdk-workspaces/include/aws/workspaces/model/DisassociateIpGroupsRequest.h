@@ -74,9 +74,9 @@ class DisassociateIpGroupsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_directoryId;
-  bool m_directoryIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupIds;
+  bool m_directoryIdHasBeenSet = false;
   bool m_groupIdsHasBeenSet = false;
 };
 

@@ -168,27 +168,27 @@ class GetDeviceResult {
   ///@}
  private:
   Aws::String m_deviceArn;
-  bool m_deviceArnHasBeenSet = false;
 
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   DeviceType m_deviceType{DeviceType::NOT_SET};
-  bool m_deviceTypeHasBeenSet = false;
 
   DeviceStatus m_deviceStatus{DeviceStatus::NOT_SET};
-  bool m_deviceStatusHasBeenSet = false;
 
   Aws::String m_deviceCapabilities;
-  bool m_deviceCapabilitiesHasBeenSet = false;
 
   Aws::Vector<DeviceQueueInfo> m_deviceQueueInfo;
-  bool m_deviceQueueInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceArnHasBeenSet = false;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_deviceTypeHasBeenSet = false;
+  bool m_deviceStatusHasBeenSet = false;
+  bool m_deviceCapabilitiesHasBeenSet = false;
+  bool m_deviceQueueInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

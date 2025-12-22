@@ -145,21 +145,21 @@ class IamIdentityCenterConfigOptions {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_applicationDescription;
-  bool m_applicationDescriptionHasBeenSet = false;
 
   IamIdentityCenterUserAttribute m_userAttribute{IamIdentityCenterUserAttribute::NOT_SET};
-  bool m_userAttributeHasBeenSet = false;
 
   IamIdentityCenterGroupAttribute m_groupAttribute{IamIdentityCenterGroupAttribute::NOT_SET};
+  bool m_instanceArnHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_applicationDescriptionHasBeenSet = false;
+  bool m_userAttributeHasBeenSet = false;
   bool m_groupAttributeHasBeenSet = false;
 };
 

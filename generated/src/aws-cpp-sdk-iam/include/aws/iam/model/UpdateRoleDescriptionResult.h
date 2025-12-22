@@ -60,9 +60,9 @@ class UpdateRoleDescriptionResult {
   ///@}
  private:
   Role m_role;
-  bool m_roleHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_roleHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

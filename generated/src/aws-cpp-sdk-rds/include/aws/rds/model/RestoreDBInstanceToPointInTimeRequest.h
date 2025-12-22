@@ -12,6 +12,7 @@
 #include <aws/rds/model/AdditionalStorageVolume.h>
 #include <aws/rds/model/ProcessorFeature.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -1080,6 +1081,32 @@ class RestoreDBInstanceToPointInTimeRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>Tags to assign to resources associated with the DB instance.</p> <p>Valid
+   * Values: </p> <ul> <li> <p> <code>auto-backup</code> - The DB instance's
+   * automated backup.</p> </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  RestoreDBInstanceToPointInTimeRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  RestoreDBInstanceToPointInTimeRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether to manage the master user password with Amazon Web Services
    * Secrets Manager in the restored DB instance.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
@@ -1159,150 +1186,153 @@ class RestoreDBInstanceToPointInTimeRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_sourceDBInstanceIdentifier;
-  bool m_sourceDBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBInstanceIdentifier;
-  bool m_targetDBInstanceIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_restoreTime{};
-  bool m_restoreTimeHasBeenSet = false;
 
   bool m_useLatestRestorableTime{false};
-  bool m_useLatestRestorableTimeHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_dBSubnetGroupName;
-  bool m_dBSubnetGroupNameHasBeenSet = false;
 
   bool m_multiAZ{false};
-  bool m_multiAZHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_dBName;
-  bool m_dBNameHasBeenSet = false;
 
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_storageThroughput{0};
-  bool m_storageThroughputHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_tdeCredentialArn;
-  bool m_tdeCredentialArnHasBeenSet = false;
 
   Aws::String m_tdeCredentialPassword;
-  bool m_tdeCredentialPasswordHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-  bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_domainIAMRoleName;
-  bool m_domainIAMRoleNameHasBeenSet = false;
 
   Aws::String m_domainFqdn;
-  bool m_domainFqdnHasBeenSet = false;
 
   Aws::String m_domainOu;
-  bool m_domainOuHasBeenSet = false;
 
   Aws::String m_domainAuthSecretArn;
-  bool m_domainAuthSecretArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_domainDnsIps;
-  bool m_domainDnsIpsHasBeenSet = false;
 
   bool m_enableIAMDatabaseAuthentication{false};
-  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
   Aws::Vector<ProcessorFeature> m_processorFeatures;
-  bool m_processorFeaturesHasBeenSet = false;
 
   bool m_useDefaultProcessorFeatures{false};
-  bool m_useDefaultProcessorFeaturesHasBeenSet = false;
 
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   bool m_deletionProtection{false};
-  bool m_deletionProtectionHasBeenSet = false;
 
   Aws::String m_sourceDbiResourceId;
-  bool m_sourceDbiResourceIdHasBeenSet = false;
 
   int m_maxAllocatedStorage{0};
-  bool m_maxAllocatedStorageHasBeenSet = false;
 
   bool m_enableCustomerOwnedIp{false};
-  bool m_enableCustomerOwnedIpHasBeenSet = false;
 
   Aws::String m_networkType;
-  bool m_networkTypeHasBeenSet = false;
 
   Aws::String m_sourceDBInstanceAutomatedBackupsArn;
-  bool m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = false;
 
   Aws::String m_backupTarget;
-  bool m_backupTargetHasBeenSet = false;
 
   Aws::String m_customIamInstanceProfile;
-  bool m_customIamInstanceProfileHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   bool m_dedicatedLogVolume{false};
-  bool m_dedicatedLogVolumeHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
 
   Aws::String m_engineLifecycleSupport;
-  bool m_engineLifecycleSupportHasBeenSet = false;
+
+  Aws::Vector<TagSpecification> m_tagSpecifications;
 
   bool m_manageMasterUserPassword{false};
-  bool m_manageMasterUserPasswordHasBeenSet = false;
 
   Aws::String m_masterUserSecretKmsKeyId;
-  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+  bool m_sourceDBInstanceIdentifierHasBeenSet = false;
+  bool m_targetDBInstanceIdentifierHasBeenSet = false;
+  bool m_restoreTimeHasBeenSet = false;
+  bool m_useLatestRestorableTimeHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_dBSubnetGroupNameHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_dBNameHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_storageThroughputHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_tdeCredentialArnHasBeenSet = false;
+  bool m_tdeCredentialPasswordHasBeenSet = false;
+  bool m_vpcSecurityGroupIdsHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_domainIAMRoleNameHasBeenSet = false;
+  bool m_domainFqdnHasBeenSet = false;
+  bool m_domainOuHasBeenSet = false;
+  bool m_domainAuthSecretArnHasBeenSet = false;
+  bool m_domainDnsIpsHasBeenSet = false;
+  bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
+  bool m_enableCloudwatchLogsExportsHasBeenSet = false;
+  bool m_processorFeaturesHasBeenSet = false;
+  bool m_useDefaultProcessorFeaturesHasBeenSet = false;
+  bool m_dBParameterGroupNameHasBeenSet = false;
+  bool m_deletionProtectionHasBeenSet = false;
+  bool m_sourceDbiResourceIdHasBeenSet = false;
+  bool m_maxAllocatedStorageHasBeenSet = false;
+  bool m_enableCustomerOwnedIpHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_sourceDBInstanceAutomatedBackupsArnHasBeenSet = false;
+  bool m_backupTargetHasBeenSet = false;
+  bool m_customIamInstanceProfileHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_dedicatedLogVolumeHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
+  bool m_engineLifecycleSupportHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_manageMasterUserPasswordHasBeenSet = false;
+  bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
 };
 

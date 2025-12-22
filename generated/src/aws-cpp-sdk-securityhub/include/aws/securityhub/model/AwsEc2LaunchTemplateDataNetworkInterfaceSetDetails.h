@@ -419,60 +419,60 @@ class AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails {
   ///@}
  private:
   bool m_associateCarrierIpAddress{false};
-  bool m_associateCarrierIpAddressHasBeenSet = false;
 
   bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
 
   bool m_deleteOnTermination{false};
-  bool m_deleteOnTerminationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_deviceIndex{0};
-  bool m_deviceIndexHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_interfaceType;
-  bool m_interfaceTypeHasBeenSet = false;
 
   int m_ipv4PrefixCount{0};
-  bool m_ipv4PrefixCountHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails> m_ipv4Prefixes;
-  bool m_ipv4PrefixesHasBeenSet = false;
 
   int m_ipv6AddressCount{0};
-  bool m_ipv6AddressCountHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails> m_ipv6Addresses;
-  bool m_ipv6AddressesHasBeenSet = false;
 
   int m_ipv6PrefixCount{0};
-  bool m_ipv6PrefixCountHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails> m_ipv6Prefixes;
-  bool m_ipv6PrefixesHasBeenSet = false;
 
   int m_networkCardIndex{0};
-  bool m_networkCardIndexHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_privateIpAddress;
-  bool m_privateIpAddressHasBeenSet = false;
 
   Aws::Vector<AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails> m_privateIpAddresses;
-  bool m_privateIpAddressesHasBeenSet = false;
 
   int m_secondaryPrivateIpAddressCount{0};
-  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
 
   Aws::String m_subnetId;
+  bool m_associateCarrierIpAddressHasBeenSet = false;
+  bool m_associatePublicIpAddressHasBeenSet = false;
+  bool m_deleteOnTerminationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deviceIndexHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_interfaceTypeHasBeenSet = false;
+  bool m_ipv4PrefixCountHasBeenSet = false;
+  bool m_ipv4PrefixesHasBeenSet = false;
+  bool m_ipv6AddressCountHasBeenSet = false;
+  bool m_ipv6AddressesHasBeenSet = false;
+  bool m_ipv6PrefixCountHasBeenSet = false;
+  bool m_ipv6PrefixesHasBeenSet = false;
+  bool m_networkCardIndexHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_privateIpAddressHasBeenSet = false;
+  bool m_privateIpAddressesHasBeenSet = false;
+  bool m_secondaryPrivateIpAddressCountHasBeenSet = false;
   bool m_subnetIdHasBeenSet = false;
 };
 

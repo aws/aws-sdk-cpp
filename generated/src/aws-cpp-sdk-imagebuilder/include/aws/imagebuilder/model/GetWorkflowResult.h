@@ -79,12 +79,12 @@ class GetWorkflowResult {
   ///@}
  private:
   Workflow m_workflow;
-  bool m_workflowHasBeenSet = false;
 
   LatestVersionReferences m_latestVersionReferences;
-  bool m_latestVersionReferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_workflowHasBeenSet = false;
+  bool m_latestVersionReferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

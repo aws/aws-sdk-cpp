@@ -132,18 +132,18 @@ class UpdateWorkforceRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_workforceName;
-  bool m_workforceNameHasBeenSet = false;
 
   SourceIpConfig m_sourceIpConfig;
-  bool m_sourceIpConfigHasBeenSet = false;
 
   OidcConfig m_oidcConfig;
-  bool m_oidcConfigHasBeenSet = false;
 
   WorkforceVpcConfigRequest m_workforceVpcConfig;
-  bool m_workforceVpcConfigHasBeenSet = false;
 
   WorkforceIpAddressType m_ipAddressType{WorkforceIpAddressType::NOT_SET};
+  bool m_workforceNameHasBeenSet = false;
+  bool m_sourceIpConfigHasBeenSet = false;
+  bool m_oidcConfigHasBeenSet = false;
+  bool m_workforceVpcConfigHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

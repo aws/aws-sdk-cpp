@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -232,6 +233,24 @@ class CreateGatewayTargetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The metadata configuration that was applied to the created gateway
+   * target.</p>
+   */
+  inline const MetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
+    m_metadataConfigurationHasBeenSet = true;
+    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
+  }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  CreateGatewayTargetResult& WithMetadataConfiguration(MetadataConfigurationT&& value) {
+    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -247,39 +266,42 @@ class CreateGatewayTargetResult {
   ///@}
  private:
   Aws::String m_gatewayArn;
-  bool m_gatewayArnHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   TargetStatus m_status{TargetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_statusReasons;
-  bool m_statusReasonsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   TargetConfiguration m_targetConfiguration;
-  bool m_targetConfigurationHasBeenSet = false;
 
   Aws::Vector<CredentialProviderConfiguration> m_credentialProviderConfigurations;
-  bool m_credentialProviderConfigurationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSynchronizedAt{};
-  bool m_lastSynchronizedAtHasBeenSet = false;
+
+  MetadataConfiguration m_metadataConfiguration;
 
   Aws::String m_requestId;
+  bool m_gatewayArnHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_targetConfigurationHasBeenSet = false;
+  bool m_credentialProviderConfigurationsHasBeenSet = false;
+  bool m_lastSynchronizedAtHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

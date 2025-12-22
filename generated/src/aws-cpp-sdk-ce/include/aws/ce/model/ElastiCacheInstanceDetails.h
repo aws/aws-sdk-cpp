@@ -138,21 +138,21 @@ class ElastiCacheInstanceDetails {
   ///@}
  private:
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_productDescription;
-  bool m_productDescriptionHasBeenSet = false;
 
   bool m_currentGeneration{false};
-  bool m_currentGenerationHasBeenSet = false;
 
   bool m_sizeFlexEligible{false};
+  bool m_familyHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_currentGenerationHasBeenSet = false;
   bool m_sizeFlexEligibleHasBeenSet = false;
 };
 

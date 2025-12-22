@@ -5,11 +5,13 @@
 
 #pragma once
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
+#include <aws/bedrock-data-automation/model/BlueprintOptimizationSample.h>
 #include <aws/bedrock-data-automation/model/BlueprintStage.h>
 #include <aws/bedrock-data-automation/model/Type.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -196,36 +198,80 @@ class Blueprint {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Aws::Vector<BlueprintOptimizationSample>& GetOptimizationSamples() const { return m_optimizationSamples; }
+  inline bool OptimizationSamplesHasBeenSet() const { return m_optimizationSamplesHasBeenSet; }
+  template <typename OptimizationSamplesT = Aws::Vector<BlueprintOptimizationSample>>
+  void SetOptimizationSamples(OptimizationSamplesT&& value) {
+    m_optimizationSamplesHasBeenSet = true;
+    m_optimizationSamples = std::forward<OptimizationSamplesT>(value);
+  }
+  template <typename OptimizationSamplesT = Aws::Vector<BlueprintOptimizationSample>>
+  Blueprint& WithOptimizationSamples(OptimizationSamplesT&& value) {
+    SetOptimizationSamples(std::forward<OptimizationSamplesT>(value));
+    return *this;
+  }
+  template <typename OptimizationSamplesT = BlueprintOptimizationSample>
+  Blueprint& AddOptimizationSamples(OptimizationSamplesT&& value) {
+    m_optimizationSamplesHasBeenSet = true;
+    m_optimizationSamples.emplace_back(std::forward<OptimizationSamplesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Utils::DateTime& GetOptimizationTime() const { return m_optimizationTime; }
+  inline bool OptimizationTimeHasBeenSet() const { return m_optimizationTimeHasBeenSet; }
+  template <typename OptimizationTimeT = Aws::Utils::DateTime>
+  void SetOptimizationTime(OptimizationTimeT&& value) {
+    m_optimizationTimeHasBeenSet = true;
+    m_optimizationTime = std::forward<OptimizationTimeT>(value);
+  }
+  template <typename OptimizationTimeT = Aws::Utils::DateTime>
+  Blueprint& WithOptimizationTime(OptimizationTimeT&& value) {
+    SetOptimizationTime(std::forward<OptimizationTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_blueprintArn;
-  bool m_blueprintArnHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Type m_type{Type::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_blueprintName;
-  bool m_blueprintNameHasBeenSet = false;
 
   Aws::String m_blueprintVersion;
-  bool m_blueprintVersionHasBeenSet = false;
 
   BlueprintStage m_blueprintStage{BlueprintStage::NOT_SET};
-  bool m_blueprintStageHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_kmsEncryptionContext;
+
+  Aws::Vector<BlueprintOptimizationSample> m_optimizationSamples;
+
+  Aws::Utils::DateTime m_optimizationTime{};
+  bool m_blueprintArnHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_blueprintNameHasBeenSet = false;
+  bool m_blueprintVersionHasBeenSet = false;
+  bool m_blueprintStageHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
   bool m_kmsEncryptionContextHasBeenSet = false;
+  bool m_optimizationSamplesHasBeenSet = false;
+  bool m_optimizationTimeHasBeenSet = false;
 };
 
 }  // namespace Model

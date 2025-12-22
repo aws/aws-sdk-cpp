@@ -94,12 +94,12 @@ class ProductionVariantStatus {
   ///@}
  private:
   VariantStatus m_status{VariantStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

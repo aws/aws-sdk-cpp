@@ -91,12 +91,12 @@ class PublishBatchResult {
   ///@}
  private:
   Aws::Vector<PublishBatchResultEntry> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<BatchResultErrorEntry> m_failed;
-  bool m_failedHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

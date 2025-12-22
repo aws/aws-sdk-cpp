@@ -68,9 +68,9 @@ class RestApiServerException {
   ///@}
  private:
   int m_restApiStatusCode{0};
-  bool m_restApiStatusCodeHasBeenSet = false;
 
   Aws::Utils::Document m_restApiResponse;
+  bool m_restApiStatusCodeHasBeenSet = false;
   bool m_restApiResponseHasBeenSet = false;
 };
 

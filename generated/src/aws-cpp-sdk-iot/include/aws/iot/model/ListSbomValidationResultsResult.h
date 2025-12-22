@@ -86,12 +86,12 @@ class ListSbomValidationResultsResult {
   ///@}
  private:
   Aws::Vector<SbomValidationResultSummary> m_validationResultSummaries;
-  bool m_validationResultSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_validationResultSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

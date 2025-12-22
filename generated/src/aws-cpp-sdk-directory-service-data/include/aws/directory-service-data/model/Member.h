@@ -86,12 +86,12 @@ class Member {
   ///@}
  private:
   MemberType m_memberType{MemberType::NOT_SET};
-  bool m_memberTypeHasBeenSet = false;
 
   Aws::String m_sAMAccountName;
-  bool m_sAMAccountNameHasBeenSet = false;
 
   Aws::String m_sID;
+  bool m_memberTypeHasBeenSet = false;
+  bool m_sAMAccountNameHasBeenSet = false;
   bool m_sIDHasBeenSet = false;
 };
 

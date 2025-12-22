@@ -86,12 +86,12 @@ class ListInferenceRecommendationsJobsResult {
   ///@}
  private:
   Aws::Vector<InferenceRecommendationsJob> m_inferenceRecommendationsJobs;
-  bool m_inferenceRecommendationsJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inferenceRecommendationsJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

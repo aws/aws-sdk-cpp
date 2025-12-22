@@ -90,12 +90,12 @@ class SuggestRequest : public CloudSearchDomainRequest {
   ///@}
  private:
   Aws::String m_query;
-  bool m_queryHasBeenSet = false;
 
   Aws::String m_suggester;
-  bool m_suggesterHasBeenSet = false;
 
   long long m_size{0};
+  bool m_queryHasBeenSet = false;
+  bool m_suggesterHasBeenSet = false;
   bool m_sizeHasBeenSet = false;
 };
 

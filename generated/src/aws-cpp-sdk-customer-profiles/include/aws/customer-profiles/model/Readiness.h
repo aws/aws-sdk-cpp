@@ -69,9 +69,9 @@ class Readiness {
   ///@}
  private:
   int m_progressPercentage{0};
-  bool m_progressPercentageHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_progressPercentageHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

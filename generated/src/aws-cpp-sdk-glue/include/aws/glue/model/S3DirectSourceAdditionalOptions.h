@@ -101,15 +101,15 @@ class S3DirectSourceAdditionalOptions {
   ///@}
  private:
   long long m_boundedSize{0};
-  bool m_boundedSizeHasBeenSet = false;
 
   long long m_boundedFiles{0};
-  bool m_boundedFilesHasBeenSet = false;
 
   bool m_enableSamplePath{false};
-  bool m_enableSamplePathHasBeenSet = false;
 
   Aws::String m_samplePath;
+  bool m_boundedSizeHasBeenSet = false;
+  bool m_boundedFilesHasBeenSet = false;
+  bool m_enableSamplePathHasBeenSet = false;
   bool m_samplePathHasBeenSet = false;
 };
 

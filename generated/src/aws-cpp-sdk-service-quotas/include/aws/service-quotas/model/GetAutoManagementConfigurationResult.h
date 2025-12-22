@@ -142,21 +142,21 @@ class GetAutoManagementConfigurationResult {
   ///@}
  private:
   OptInLevel m_optInLevel{OptInLevel::NOT_SET};
-  bool m_optInLevelHasBeenSet = false;
 
   OptInType m_optInType{OptInType::NOT_SET};
-  bool m_optInTypeHasBeenSet = false;
 
   Aws::String m_notificationArn;
-  bool m_notificationArnHasBeenSet = false;
 
   OptInStatus m_optInStatus{OptInStatus::NOT_SET};
-  bool m_optInStatusHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<QuotaInfo>> m_exclusionList;
-  bool m_exclusionListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_optInLevelHasBeenSet = false;
+  bool m_optInTypeHasBeenSet = false;
+  bool m_notificationArnHasBeenSet = false;
+  bool m_optInStatusHasBeenSet = false;
+  bool m_exclusionListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

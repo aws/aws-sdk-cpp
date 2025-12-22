@@ -70,9 +70,9 @@ class LinkAttributeUpdate {
   ///@}
  private:
   AttributeKey m_attributeKey;
-  bool m_attributeKeyHasBeenSet = false;
 
   LinkAttributeAction m_attributeAction;
+  bool m_attributeKeyHasBeenSet = false;
   bool m_attributeActionHasBeenSet = false;
 };
 

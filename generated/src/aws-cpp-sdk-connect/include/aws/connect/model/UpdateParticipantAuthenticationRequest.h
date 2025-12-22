@@ -128,18 +128,18 @@ class UpdateParticipantAuthenticationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_code;
-  bool m_codeHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_errorDescription;
+  bool m_stateHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_errorDescriptionHasBeenSet = false;
 };
 

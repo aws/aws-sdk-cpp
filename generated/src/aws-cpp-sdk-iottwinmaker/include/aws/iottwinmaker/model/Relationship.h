@@ -69,9 +69,9 @@ class Relationship {
   ///@}
  private:
   Aws::String m_targetComponentTypeId;
-  bool m_targetComponentTypeIdHasBeenSet = false;
 
   Aws::String m_relationshipType;
+  bool m_targetComponentTypeIdHasBeenSet = false;
   bool m_relationshipTypeHasBeenSet = false;
 };
 

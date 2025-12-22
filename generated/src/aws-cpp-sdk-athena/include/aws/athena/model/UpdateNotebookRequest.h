@@ -127,18 +127,18 @@ class UpdateNotebookRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_notebookId;
-  bool m_notebookIdHasBeenSet = false;
 
   Aws::String m_payload;
-  bool m_payloadHasBeenSet = false;
 
   NotebookType m_type{NotebookType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
+  bool m_notebookIdHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
 };
 

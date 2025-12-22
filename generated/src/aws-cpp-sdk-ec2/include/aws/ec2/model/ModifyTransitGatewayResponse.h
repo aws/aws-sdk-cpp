@@ -60,9 +60,9 @@ class ModifyTransitGatewayResponse {
   ///@}
  private:
   TransitGateway m_transitGateway;
-  bool m_transitGatewayHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

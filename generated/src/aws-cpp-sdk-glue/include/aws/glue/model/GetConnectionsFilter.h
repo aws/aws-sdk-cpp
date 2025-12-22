@@ -92,12 +92,12 @@ class GetConnectionsFilter {
   ///@}
  private:
   Aws::Vector<Aws::String> m_matchCriteria;
-  bool m_matchCriteriaHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   int m_connectionSchemaVersion{0};
+  bool m_matchCriteriaHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
   bool m_connectionSchemaVersionHasBeenSet = false;
 };
 

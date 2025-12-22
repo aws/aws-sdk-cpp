@@ -149,21 +149,21 @@ class UpdateRuleRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_function;
-  bool m_functionHasBeenSet = false;
 
   Aws::Vector<RuleAction> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   RulePublishStatus m_publishStatus{RulePublishStatus::NOT_SET};
+  bool m_ruleIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_functionHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_publishStatusHasBeenSet = false;
 };
 

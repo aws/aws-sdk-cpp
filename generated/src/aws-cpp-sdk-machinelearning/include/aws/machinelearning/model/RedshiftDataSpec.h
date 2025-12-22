@@ -241,24 +241,24 @@ class RedshiftDataSpec {
   ///@}
  private:
   RedshiftDatabase m_databaseInformation;
-  bool m_databaseInformationHasBeenSet = false;
 
   Aws::String m_selectSqlQuery;
-  bool m_selectSqlQueryHasBeenSet = false;
 
   RedshiftDatabaseCredentials m_databaseCredentials;
-  bool m_databaseCredentialsHasBeenSet = false;
 
   Aws::String m_s3StagingLocation;
-  bool m_s3StagingLocationHasBeenSet = false;
 
   Aws::String m_dataRearrangement;
-  bool m_dataRearrangementHasBeenSet = false;
 
   Aws::String m_dataSchema;
-  bool m_dataSchemaHasBeenSet = false;
 
   Aws::String m_dataSchemaUri;
+  bool m_databaseInformationHasBeenSet = false;
+  bool m_selectSqlQueryHasBeenSet = false;
+  bool m_databaseCredentialsHasBeenSet = false;
+  bool m_s3StagingLocationHasBeenSet = false;
+  bool m_dataRearrangementHasBeenSet = false;
+  bool m_dataSchemaHasBeenSet = false;
   bool m_dataSchemaUriHasBeenSet = false;
 };
 

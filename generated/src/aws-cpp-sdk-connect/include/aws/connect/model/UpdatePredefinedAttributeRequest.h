@@ -132,18 +132,18 @@ class UpdatePredefinedAttributeRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PredefinedAttributeValues m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_purposes;
-  bool m_purposesHasBeenSet = false;
 
   InputPredefinedAttributeConfiguration m_attributeConfiguration;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_purposesHasBeenSet = false;
   bool m_attributeConfigurationHasBeenSet = false;
 };
 

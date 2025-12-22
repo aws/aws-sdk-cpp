@@ -183,30 +183,30 @@ class RedshiftDatasetDefinition {
   ///@}
  private:
   Aws::String m_clusterId;
-  bool m_clusterIdHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_dbUser;
-  bool m_dbUserHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   Aws::String m_clusterRoleArn;
-  bool m_clusterRoleArnHasBeenSet = false;
 
   Aws::String m_outputS3Uri;
-  bool m_outputS3UriHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   RedshiftResultFormat m_outputFormat{RedshiftResultFormat::NOT_SET};
-  bool m_outputFormatHasBeenSet = false;
 
   RedshiftResultCompressionType m_outputCompression{RedshiftResultCompressionType::NOT_SET};
+  bool m_clusterIdHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_dbUserHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_clusterRoleArnHasBeenSet = false;
+  bool m_outputS3UriHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_outputFormatHasBeenSet = false;
   bool m_outputCompressionHasBeenSet = false;
 };
 

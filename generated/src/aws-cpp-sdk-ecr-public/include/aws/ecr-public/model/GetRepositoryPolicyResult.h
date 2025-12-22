@@ -94,15 +94,15 @@ class GetRepositoryPolicyResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   Aws::String m_repositoryName;
-  bool m_repositoryNameHasBeenSet = false;
 
   Aws::String m_policyText;
-  bool m_policyTextHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_repositoryNameHasBeenSet = false;
+  bool m_policyTextHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

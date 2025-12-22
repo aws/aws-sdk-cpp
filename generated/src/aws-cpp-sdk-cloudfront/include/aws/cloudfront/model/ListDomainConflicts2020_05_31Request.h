@@ -102,15 +102,15 @@ class ListDomainConflicts2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   DistributionResourceId m_domainControlValidationResource;
-  bool m_domainControlValidationResourceHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_domainHasBeenSet = false;
+  bool m_domainControlValidationResourceHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

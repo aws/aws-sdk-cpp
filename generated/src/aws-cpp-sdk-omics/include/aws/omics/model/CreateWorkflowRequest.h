@@ -453,63 +453,63 @@ class CreateWorkflowRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   WorkflowEngine m_engine{WorkflowEngine::NOT_SET};
-  bool m_engineHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_definitionZip{};
-  bool m_definitionZipHasBeenSet = false;
 
   Aws::String m_definitionUri;
-  bool m_definitionUriHasBeenSet = false;
 
   Aws::String m_main;
-  bool m_mainHasBeenSet = false;
 
   Aws::Map<Aws::String, WorkflowParameter> m_parameterTemplate;
-  bool m_parameterTemplateHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_requestIdHasBeenSet = true;
 
   Accelerators m_accelerators{Accelerators::NOT_SET};
-  bool m_acceleratorsHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   ContainerRegistryMap m_containerRegistryMap;
-  bool m_containerRegistryMapHasBeenSet = false;
 
   Aws::String m_containerRegistryMapUri;
-  bool m_containerRegistryMapUriHasBeenSet = false;
 
   Aws::String m_readmeMarkdown;
-  bool m_readmeMarkdownHasBeenSet = false;
 
   Aws::String m_parameterTemplatePath;
-  bool m_parameterTemplatePathHasBeenSet = false;
 
   Aws::String m_readmePath;
-  bool m_readmePathHasBeenSet = false;
 
   DefinitionRepository m_definitionRepository;
-  bool m_definitionRepositoryHasBeenSet = false;
 
   Aws::String m_workflowBucketOwnerId;
-  bool m_workflowBucketOwnerIdHasBeenSet = false;
 
   Aws::String m_readmeUri;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_engineHasBeenSet = false;
+  bool m_definitionZipHasBeenSet = false;
+  bool m_definitionUriHasBeenSet = false;
+  bool m_mainHasBeenSet = false;
+  bool m_parameterTemplateHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = true;
+  bool m_acceleratorsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_containerRegistryMapHasBeenSet = false;
+  bool m_containerRegistryMapUriHasBeenSet = false;
+  bool m_readmeMarkdownHasBeenSet = false;
+  bool m_parameterTemplatePathHasBeenSet = false;
+  bool m_readmePathHasBeenSet = false;
+  bool m_definitionRepositoryHasBeenSet = false;
+  bool m_workflowBucketOwnerIdHasBeenSet = false;
   bool m_readmeUriHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class AwsRedshiftClusterResizeInfo {
   ///@}
  private:
   bool m_allowCancelResize{false};
-  bool m_allowCancelResizeHasBeenSet = false;
 
   Aws::String m_resizeType;
+  bool m_allowCancelResizeHasBeenSet = false;
   bool m_resizeTypeHasBeenSet = false;
 };
 

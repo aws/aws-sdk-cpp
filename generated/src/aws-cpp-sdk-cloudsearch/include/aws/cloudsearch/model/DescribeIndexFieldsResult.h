@@ -74,9 +74,9 @@ class DescribeIndexFieldsResult {
   ///@}
  private:
   Aws::Vector<IndexFieldStatus> m_indexFields;
-  bool m_indexFieldsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_indexFieldsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

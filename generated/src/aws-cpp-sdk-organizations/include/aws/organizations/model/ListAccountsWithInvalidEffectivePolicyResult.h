@@ -76,7 +76,9 @@ class ListAccountsWithInvalidEffectivePolicyResult {
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_s3.html">S3_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html">NETWORK_SECURITY_DIRECTOR_POLICY</a>
    * </p> </li> </ul>
    */
   inline EffectivePolicyType GetPolicyType() const { return m_policyType; }
@@ -127,15 +129,15 @@ class ListAccountsWithInvalidEffectivePolicyResult {
   ///@}
  private:
   Aws::Vector<Account> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   EffectivePolicyType m_policyType{EffectivePolicyType::NOT_SET};
-  bool m_policyTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountsHasBeenSet = false;
+  bool m_policyTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

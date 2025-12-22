@@ -163,27 +163,27 @@ class CrawlerMetrics {
   ///@}
  private:
   Aws::String m_crawlerName;
-  bool m_crawlerNameHasBeenSet = false;
 
   double m_timeLeftSeconds{0.0};
-  bool m_timeLeftSecondsHasBeenSet = false;
 
   bool m_stillEstimating{false};
-  bool m_stillEstimatingHasBeenSet = false;
 
   double m_lastRuntimeSeconds{0.0};
-  bool m_lastRuntimeSecondsHasBeenSet = false;
 
   double m_medianRuntimeSeconds{0.0};
-  bool m_medianRuntimeSecondsHasBeenSet = false;
 
   int m_tablesCreated{0};
-  bool m_tablesCreatedHasBeenSet = false;
 
   int m_tablesUpdated{0};
-  bool m_tablesUpdatedHasBeenSet = false;
 
   int m_tablesDeleted{0};
+  bool m_crawlerNameHasBeenSet = false;
+  bool m_timeLeftSecondsHasBeenSet = false;
+  bool m_stillEstimatingHasBeenSet = false;
+  bool m_lastRuntimeSecondsHasBeenSet = false;
+  bool m_medianRuntimeSecondsHasBeenSet = false;
+  bool m_tablesCreatedHasBeenSet = false;
+  bool m_tablesUpdatedHasBeenSet = false;
   bool m_tablesDeletedHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class WindowsUser {
   ///@}
  private:
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_passwordArn;
+  bool m_userHasBeenSet = false;
   bool m_passwordArnHasBeenSet = false;
 };
 

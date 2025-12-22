@@ -67,9 +67,9 @@ class ResetServiceSettingResult {
   ///@}
  private:
   ServiceSetting m_serviceSetting;
-  bool m_serviceSettingHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_serviceSettingHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

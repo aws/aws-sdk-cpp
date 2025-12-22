@@ -88,12 +88,12 @@ class DescribeRegistrationTypeDefinitionsResult {
   ///@}
  private:
   Aws::Vector<RegistrationTypeDefinition> m_registrationTypeDefinitions;
-  bool m_registrationTypeDefinitionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registrationTypeDefinitionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

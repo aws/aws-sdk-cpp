@@ -103,15 +103,15 @@ class LicenseServer {
   ///@}
  private:
   LicenseServerEndpointProvisioningStatus m_provisioningStatus{LicenseServerEndpointProvisioningStatus::NOT_SET};
-  bool m_provisioningStatusHasBeenSet = false;
 
   LicenseServerHealthStatus m_healthStatus{LicenseServerHealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   Aws::String m_ipv4Address;
-  bool m_ipv4AddressHasBeenSet = false;
 
   Aws::String m_ipv6Address;
+  bool m_provisioningStatusHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_ipv4AddressHasBeenSet = false;
   bool m_ipv6AddressHasBeenSet = false;
 };
 

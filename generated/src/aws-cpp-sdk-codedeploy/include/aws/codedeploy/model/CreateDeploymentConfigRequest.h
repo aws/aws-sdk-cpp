@@ -145,18 +145,18 @@ class CreateDeploymentConfigRequest : public CodeDeployRequest {
   ///@}
  private:
   Aws::String m_deploymentConfigName;
-  bool m_deploymentConfigNameHasBeenSet = false;
 
   MinimumHealthyHosts m_minimumHealthyHosts;
-  bool m_minimumHealthyHostsHasBeenSet = false;
 
   TrafficRoutingConfig m_trafficRoutingConfig;
-  bool m_trafficRoutingConfigHasBeenSet = false;
 
   ComputePlatform m_computePlatform{ComputePlatform::NOT_SET};
-  bool m_computePlatformHasBeenSet = false;
 
   ZonalConfig m_zonalConfig;
+  bool m_deploymentConfigNameHasBeenSet = false;
+  bool m_minimumHealthyHostsHasBeenSet = false;
+  bool m_trafficRoutingConfigHasBeenSet = false;
+  bool m_computePlatformHasBeenSet = false;
   bool m_zonalConfigHasBeenSet = false;
 };
 

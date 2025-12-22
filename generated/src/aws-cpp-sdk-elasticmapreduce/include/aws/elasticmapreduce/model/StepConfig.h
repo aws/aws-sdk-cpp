@@ -123,15 +123,15 @@ class StepConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ActionOnFailure m_actionOnFailure{ActionOnFailure::NOT_SET};
-  bool m_actionOnFailureHasBeenSet = false;
 
   HadoopJarStepConfig m_hadoopJarStep;
-  bool m_hadoopJarStepHasBeenSet = false;
 
   StepMonitoringConfiguration m_stepMonitoringConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_actionOnFailureHasBeenSet = false;
+  bool m_hadoopJarStepHasBeenSet = false;
   bool m_stepMonitoringConfigurationHasBeenSet = false;
 };
 

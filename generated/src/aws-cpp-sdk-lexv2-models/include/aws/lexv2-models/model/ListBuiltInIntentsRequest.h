@@ -110,15 +110,15 @@ class ListBuiltInIntentsRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   BuiltInIntentSortBy m_sortBy;
-  bool m_sortByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_localeIdHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

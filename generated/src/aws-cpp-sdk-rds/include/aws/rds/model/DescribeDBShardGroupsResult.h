@@ -86,12 +86,12 @@ class DescribeDBShardGroupsResult {
   ///@}
  private:
   Aws::Vector<DBShardGroup> m_dBShardGroups;
-  bool m_dBShardGroupsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBShardGroupsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

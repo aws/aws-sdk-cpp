@@ -62,9 +62,9 @@ class DeleteResolverQueryLogConfigResult {
   ///@}
  private:
   ResolverQueryLogConfig m_resolverQueryLogConfig;
-  bool m_resolverQueryLogConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolverQueryLogConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -426,57 +426,57 @@ class UserSettings {
   ///@}
  private:
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   SharingSettings m_sharingSettings;
-  bool m_sharingSettingsHasBeenSet = false;
 
   JupyterServerAppSettings m_jupyterServerAppSettings;
-  bool m_jupyterServerAppSettingsHasBeenSet = false;
 
   KernelGatewayAppSettings m_kernelGatewayAppSettings;
-  bool m_kernelGatewayAppSettingsHasBeenSet = false;
 
   TensorBoardAppSettings m_tensorBoardAppSettings;
-  bool m_tensorBoardAppSettingsHasBeenSet = false;
 
   RStudioServerProAppSettings m_rStudioServerProAppSettings;
-  bool m_rStudioServerProAppSettingsHasBeenSet = false;
 
   RSessionAppSettings m_rSessionAppSettings;
-  bool m_rSessionAppSettingsHasBeenSet = false;
 
   CanvasAppSettings m_canvasAppSettings;
-  bool m_canvasAppSettingsHasBeenSet = false;
 
   CodeEditorAppSettings m_codeEditorAppSettings;
-  bool m_codeEditorAppSettingsHasBeenSet = false;
 
   JupyterLabAppSettings m_jupyterLabAppSettings;
-  bool m_jupyterLabAppSettingsHasBeenSet = false;
 
   DefaultSpaceStorageSettings m_spaceStorageSettings;
-  bool m_spaceStorageSettingsHasBeenSet = false;
 
   Aws::String m_defaultLandingUri;
-  bool m_defaultLandingUriHasBeenSet = false;
 
   StudioWebPortal m_studioWebPortal{StudioWebPortal::NOT_SET};
-  bool m_studioWebPortalHasBeenSet = false;
 
   CustomPosixUserConfig m_customPosixUserConfig;
-  bool m_customPosixUserConfigHasBeenSet = false;
 
   Aws::Vector<CustomFileSystemConfig> m_customFileSystemConfigs;
-  bool m_customFileSystemConfigsHasBeenSet = false;
 
   StudioWebPortalSettings m_studioWebPortalSettings;
-  bool m_studioWebPortalSettingsHasBeenSet = false;
 
   AutoMountHomeEFS m_autoMountHomeEFS{AutoMountHomeEFS::NOT_SET};
+  bool m_executionRoleHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_sharingSettingsHasBeenSet = false;
+  bool m_jupyterServerAppSettingsHasBeenSet = false;
+  bool m_kernelGatewayAppSettingsHasBeenSet = false;
+  bool m_tensorBoardAppSettingsHasBeenSet = false;
+  bool m_rStudioServerProAppSettingsHasBeenSet = false;
+  bool m_rSessionAppSettingsHasBeenSet = false;
+  bool m_canvasAppSettingsHasBeenSet = false;
+  bool m_codeEditorAppSettingsHasBeenSet = false;
+  bool m_jupyterLabAppSettingsHasBeenSet = false;
+  bool m_spaceStorageSettingsHasBeenSet = false;
+  bool m_defaultLandingUriHasBeenSet = false;
+  bool m_studioWebPortalHasBeenSet = false;
+  bool m_customPosixUserConfigHasBeenSet = false;
+  bool m_customFileSystemConfigsHasBeenSet = false;
+  bool m_studioWebPortalSettingsHasBeenSet = false;
   bool m_autoMountHomeEFSHasBeenSet = false;
 };
 

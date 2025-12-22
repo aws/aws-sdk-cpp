@@ -139,21 +139,21 @@ class ProvisionData {
   ///@}
  private:
   Aws::String m_provisionState;
-  bool m_provisionStateHasBeenSet = false;
 
   int m_provisionedCapacityUnits{0};
-  bool m_provisionedCapacityUnitsHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateProvisioned{};
-  bool m_dateProvisionedHasBeenSet = false;
 
   bool m_isNewProvisioningAvailable{false};
-  bool m_isNewProvisioningAvailableHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateNewProvisioningDataAvailable{};
-  bool m_dateNewProvisioningDataAvailableHasBeenSet = false;
 
   Aws::String m_reasonForNewProvisioningData;
+  bool m_provisionStateHasBeenSet = false;
+  bool m_provisionedCapacityUnitsHasBeenSet = false;
+  bool m_dateProvisionedHasBeenSet = false;
+  bool m_isNewProvisioningAvailableHasBeenSet = false;
+  bool m_dateNewProvisioningDataAvailableHasBeenSet = false;
   bool m_reasonForNewProvisioningDataHasBeenSet = false;
 };
 

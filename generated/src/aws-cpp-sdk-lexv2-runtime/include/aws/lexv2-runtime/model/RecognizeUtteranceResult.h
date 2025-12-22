@@ -244,36 +244,36 @@ class RecognizeUtteranceResult {
   ///@}
  private:
   Aws::String m_inputMode;
-  bool m_inputModeHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_messages;
-  bool m_messagesHasBeenSet = false;
 
   Aws::String m_interpretations;
-  bool m_interpretationsHasBeenSet = false;
 
   Aws::String m_sessionState;
-  bool m_sessionStateHasBeenSet = false;
 
   Aws::String m_requestAttributes;
-  bool m_requestAttributesHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_inputTranscript;
-  bool m_inputTranscriptHasBeenSet = false;
 
   Aws::Utils::Stream::ResponseStream m_audioStream{};
-  bool m_audioStreamHasBeenSet = false;
 
   Aws::String m_recognizedBotMember;
-  bool m_recognizedBotMemberHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_inputModeHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
+  bool m_messagesHasBeenSet = false;
+  bool m_interpretationsHasBeenSet = false;
+  bool m_sessionStateHasBeenSet = false;
+  bool m_requestAttributesHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_inputTranscriptHasBeenSet = false;
+  bool m_audioStreamHasBeenSet = false;
+  bool m_recognizedBotMemberHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

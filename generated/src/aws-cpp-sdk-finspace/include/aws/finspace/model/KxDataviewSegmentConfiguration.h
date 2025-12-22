@@ -101,12 +101,12 @@ class KxDataviewSegmentConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dbPaths;
-  bool m_dbPathsHasBeenSet = false;
 
   Aws::String m_volumeName;
-  bool m_volumeNameHasBeenSet = false;
 
   bool m_onDemand{false};
+  bool m_dbPathsHasBeenSet = false;
+  bool m_volumeNameHasBeenSet = false;
   bool m_onDemandHasBeenSet = false;
 };
 

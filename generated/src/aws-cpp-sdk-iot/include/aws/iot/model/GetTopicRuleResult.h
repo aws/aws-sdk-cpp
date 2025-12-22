@@ -82,12 +82,12 @@ class GetTopicRuleResult {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   TopicRule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleArnHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

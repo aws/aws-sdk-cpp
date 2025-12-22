@@ -72,9 +72,9 @@ class ClusterEndpoint {
   ///@}
  private:
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_endpointHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

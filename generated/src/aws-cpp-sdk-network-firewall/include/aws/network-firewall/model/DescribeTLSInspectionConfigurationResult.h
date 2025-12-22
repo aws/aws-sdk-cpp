@@ -124,15 +124,15 @@ class DescribeTLSInspectionConfigurationResult {
   ///@}
  private:
   Aws::String m_updateToken;
-  bool m_updateTokenHasBeenSet = false;
 
   TLSInspectionConfiguration m_tLSInspectionConfiguration;
-  bool m_tLSInspectionConfigurationHasBeenSet = false;
 
   TLSInspectionConfigurationResponse m_tLSInspectionConfigurationResponse;
-  bool m_tLSInspectionConfigurationResponseHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateTokenHasBeenSet = false;
+  bool m_tLSInspectionConfigurationHasBeenSet = false;
+  bool m_tLSInspectionConfigurationResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

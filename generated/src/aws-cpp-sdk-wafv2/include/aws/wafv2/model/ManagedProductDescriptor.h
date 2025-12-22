@@ -207,30 +207,30 @@ class ManagedProductDescriptor {
   ///@}
  private:
   Aws::String m_vendorName;
-  bool m_vendorNameHasBeenSet = false;
 
   Aws::String m_managedRuleSetName;
-  bool m_managedRuleSetNameHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_productLink;
-  bool m_productLinkHasBeenSet = false;
 
   Aws::String m_productTitle;
-  bool m_productTitleHasBeenSet = false;
 
   Aws::String m_productDescription;
-  bool m_productDescriptionHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   bool m_isVersioningSupported{false};
-  bool m_isVersioningSupportedHasBeenSet = false;
 
   bool m_isAdvancedManagedRuleSet{false};
+  bool m_vendorNameHasBeenSet = false;
+  bool m_managedRuleSetNameHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_productLinkHasBeenSet = false;
+  bool m_productTitleHasBeenSet = false;
+  bool m_productDescriptionHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_isVersioningSupportedHasBeenSet = false;
   bool m_isAdvancedManagedRuleSetHasBeenSet = false;
 };
 

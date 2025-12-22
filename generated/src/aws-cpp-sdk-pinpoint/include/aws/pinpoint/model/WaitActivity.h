@@ -74,9 +74,9 @@ class WaitActivity {
   ///@}
  private:
   Aws::String m_nextActivity;
-  bool m_nextActivityHasBeenSet = false;
 
   WaitTime m_waitTime;
+  bool m_nextActivityHasBeenSet = false;
   bool m_waitTimeHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class CatalogImportStatus {
   ///@}
  private:
   bool m_importCompleted{false};
-  bool m_importCompletedHasBeenSet = false;
 
   Aws::Utils::DateTime m_importTime{};
-  bool m_importTimeHasBeenSet = false;
 
   Aws::String m_importedBy;
+  bool m_importCompletedHasBeenSet = false;
+  bool m_importTimeHasBeenSet = false;
   bool m_importedByHasBeenSet = false;
 };
 

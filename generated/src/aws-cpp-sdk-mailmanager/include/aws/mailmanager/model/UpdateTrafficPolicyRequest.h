@@ -129,18 +129,18 @@ class UpdateTrafficPolicyRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyName;
-  bool m_trafficPolicyNameHasBeenSet = false;
 
   Aws::Vector<PolicyStatement> m_policyStatements;
-  bool m_policyStatementsHasBeenSet = false;
 
   AcceptAction m_defaultAction{AcceptAction::NOT_SET};
-  bool m_defaultActionHasBeenSet = false;
 
   int m_maxMessageSizeBytes{0};
+  bool m_trafficPolicyIdHasBeenSet = false;
+  bool m_trafficPolicyNameHasBeenSet = false;
+  bool m_policyStatementsHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
   bool m_maxMessageSizeBytesHasBeenSet = false;
 };
 

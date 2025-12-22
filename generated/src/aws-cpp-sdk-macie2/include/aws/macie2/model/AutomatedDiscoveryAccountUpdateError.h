@@ -74,9 +74,9 @@ class AutomatedDiscoveryAccountUpdateError {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   AutomatedDiscoveryAccountUpdateErrorCode m_errorCode{AutomatedDiscoveryAccountUpdateErrorCode::NOT_SET};
+  bool m_accountIdHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
 };
 

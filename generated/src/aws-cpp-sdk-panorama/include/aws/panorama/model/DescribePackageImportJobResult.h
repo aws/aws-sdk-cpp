@@ -239,39 +239,39 @@ class DescribePackageImportJobResult {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   PackageImportJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Vector<JobResourceTags> m_jobTags;
-  bool m_jobTagsHasBeenSet = false;
 
   PackageImportJobType m_jobType{PackageImportJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   PackageImportJobOutput m_output;
-  bool m_outputHasBeenSet = false;
 
   PackageImportJobOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   PackageImportJobStatus m_status{PackageImportJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobTagsHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

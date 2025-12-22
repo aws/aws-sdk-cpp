@@ -132,18 +132,18 @@ class IntegerParameterDeclaration {
   ///@}
  private:
   ParameterValueType m_parameterValueType{ParameterValueType::NOT_SET};
-  bool m_parameterValueTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IntegerDefaultValues m_defaultValues;
-  bool m_defaultValuesHasBeenSet = false;
 
   IntegerValueWhenUnsetConfiguration m_valueWhenUnset;
-  bool m_valueWhenUnsetHasBeenSet = false;
 
   Aws::Vector<MappedDataSetParameter> m_mappedDataSetParameters;
+  bool m_parameterValueTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_defaultValuesHasBeenSet = false;
+  bool m_valueWhenUnsetHasBeenSet = false;
   bool m_mappedDataSetParametersHasBeenSet = false;
 };
 

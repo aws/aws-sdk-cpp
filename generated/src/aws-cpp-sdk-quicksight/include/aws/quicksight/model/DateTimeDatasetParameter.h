@@ -123,18 +123,18 @@ class DateTimeDatasetParameter {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   DatasetParameterValueType m_valueType{DatasetParameterValueType::NOT_SET};
-  bool m_valueTypeHasBeenSet = false;
 
   TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
-  bool m_timeGranularityHasBeenSet = false;
 
   DateTimeDatasetParameterDefaultValues m_defaultValues;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_valueTypeHasBeenSet = false;
+  bool m_timeGranularityHasBeenSet = false;
   bool m_defaultValuesHasBeenSet = false;
 };
 

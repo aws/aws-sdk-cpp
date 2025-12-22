@@ -61,9 +61,9 @@ class ModifyTrafficMirrorFilterNetworkServicesResponse {
   ///@}
  private:
   TrafficMirrorFilter m_trafficMirrorFilter;
-  bool m_trafficMirrorFilterHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_trafficMirrorFilterHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

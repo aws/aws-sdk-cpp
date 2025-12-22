@@ -111,15 +111,15 @@ class AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails {
   ///@}
  private:
   Aws::String m_deviceName;
-  bool m_deviceNameHasBeenSet = false;
 
   AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails m_ebs;
-  bool m_ebsHasBeenSet = false;
 
   Aws::String m_noDevice;
-  bool m_noDeviceHasBeenSet = false;
 
   Aws::String m_virtualName;
+  bool m_deviceNameHasBeenSet = false;
+  bool m_ebsHasBeenSet = false;
+  bool m_noDeviceHasBeenSet = false;
   bool m_virtualNameHasBeenSet = false;
 };
 

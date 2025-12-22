@@ -93,12 +93,12 @@ class BatchDisassociateProjectAssetsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_assetIds;
-  bool m_assetIdsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_projectIdHasBeenSet = false;
+  bool m_assetIdsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

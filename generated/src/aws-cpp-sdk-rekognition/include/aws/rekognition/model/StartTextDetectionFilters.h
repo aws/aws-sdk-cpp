@@ -80,9 +80,9 @@ class StartTextDetectionFilters {
   ///@}
  private:
   DetectionFilter m_wordFilter;
-  bool m_wordFilterHasBeenSet = false;
 
   Aws::Vector<RegionOfInterest> m_regionsOfInterest;
+  bool m_wordFilterHasBeenSet = false;
   bool m_regionsOfInterestHasBeenSet = false;
 };
 

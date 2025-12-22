@@ -94,12 +94,12 @@ class GroupResult {
   ///@}
  private:
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::Vector<TestCaseRun> m_tests;
+  bool m_groupIdHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
   bool m_testsHasBeenSet = false;
 };
 

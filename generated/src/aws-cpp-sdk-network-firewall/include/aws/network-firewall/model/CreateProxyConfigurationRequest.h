@@ -164,21 +164,21 @@ class CreateProxyConfigurationRequest : public NetworkFirewallRequest {
   ///@}
  private:
   Aws::String m_proxyConfigurationName;
-  bool m_proxyConfigurationNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ruleGroupNames;
-  bool m_ruleGroupNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ruleGroupArns;
-  bool m_ruleGroupArnsHasBeenSet = false;
 
   ProxyConfigDefaultRulePhaseActionsRequest m_defaultRulePhaseActions;
-  bool m_defaultRulePhaseActionsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_proxyConfigurationNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleGroupNamesHasBeenSet = false;
+  bool m_ruleGroupArnsHasBeenSet = false;
+  bool m_defaultRulePhaseActionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

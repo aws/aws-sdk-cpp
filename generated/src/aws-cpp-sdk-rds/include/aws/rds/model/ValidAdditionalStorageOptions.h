@@ -76,9 +76,9 @@ class ValidAdditionalStorageOptions {
   ///@}
  private:
   bool m_supportsAdditionalStorageVolumes{false};
-  bool m_supportsAdditionalStorageVolumesHasBeenSet = false;
 
   Aws::Vector<ValidVolumeOptions> m_volumes;
+  bool m_supportsAdditionalStorageVolumesHasBeenSet = false;
   bool m_volumesHasBeenSet = false;
 };
 

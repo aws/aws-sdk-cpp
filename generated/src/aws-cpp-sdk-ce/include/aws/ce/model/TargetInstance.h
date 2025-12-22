@@ -168,24 +168,24 @@ class TargetInstance {
   ///@}
  private:
   Aws::String m_estimatedMonthlyCost;
-  bool m_estimatedMonthlyCostHasBeenSet = false;
 
   Aws::String m_estimatedMonthlySavings;
-  bool m_estimatedMonthlySavingsHasBeenSet = false;
 
   Aws::String m_currencyCode;
-  bool m_currencyCodeHasBeenSet = false;
 
   bool m_defaultTargetInstance{false};
-  bool m_defaultTargetInstanceHasBeenSet = false;
 
   ResourceDetails m_resourceDetails;
-  bool m_resourceDetailsHasBeenSet = false;
 
   ResourceUtilization m_expectedResourceUtilization;
-  bool m_expectedResourceUtilizationHasBeenSet = false;
 
   Aws::Vector<PlatformDifference> m_platformDifferences;
+  bool m_estimatedMonthlyCostHasBeenSet = false;
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
+  bool m_currencyCodeHasBeenSet = false;
+  bool m_defaultTargetInstanceHasBeenSet = false;
+  bool m_resourceDetailsHasBeenSet = false;
+  bool m_expectedResourceUtilizationHasBeenSet = false;
   bool m_platformDifferencesHasBeenSet = false;
 };
 

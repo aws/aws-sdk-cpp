@@ -92,12 +92,12 @@ class GetCSVHeaderResult {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_cSVHeader;
-  bool m_cSVHeaderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_cSVHeaderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

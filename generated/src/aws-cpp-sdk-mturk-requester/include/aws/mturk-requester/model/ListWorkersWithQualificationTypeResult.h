@@ -98,15 +98,15 @@ class ListWorkersWithQualificationTypeResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_numResults{0};
-  bool m_numResultsHasBeenSet = false;
 
   Aws::Vector<Qualification> m_qualifications;
-  bool m_qualificationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_numResultsHasBeenSet = false;
+  bool m_qualificationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

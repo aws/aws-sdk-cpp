@@ -104,15 +104,15 @@ class StartDirectoryListingRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_connectorId;
-  bool m_connectorIdHasBeenSet = false;
 
   Aws::String m_remoteDirectoryPath;
-  bool m_remoteDirectoryPathHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_outputDirectoryPath;
+  bool m_connectorIdHasBeenSet = false;
+  bool m_remoteDirectoryPathHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_outputDirectoryPathHasBeenSet = false;
 };
 

@@ -194,27 +194,27 @@ class CreateBackendAuthUserPoolConfig {
   ///@}
  private:
   CreateBackendAuthForgotPasswordConfig m_forgotPassword;
-  bool m_forgotPasswordHasBeenSet = false;
 
   CreateBackendAuthMFAConfig m_mfa;
-  bool m_mfaHasBeenSet = false;
 
   CreateBackendAuthOAuthConfig m_oAuth;
-  bool m_oAuthHasBeenSet = false;
 
   CreateBackendAuthPasswordPolicyConfig m_passwordPolicy;
-  bool m_passwordPolicyHasBeenSet = false;
 
   Aws::Vector<RequiredSignUpAttributesElement> m_requiredSignUpAttributes;
-  bool m_requiredSignUpAttributesHasBeenSet = false;
 
   SignInMethod m_signInMethod{SignInMethod::NOT_SET};
-  bool m_signInMethodHasBeenSet = false;
 
   Aws::String m_userPoolName;
-  bool m_userPoolNameHasBeenSet = false;
 
   CreateBackendAuthVerificationMessageConfig m_verificationMessage;
+  bool m_forgotPasswordHasBeenSet = false;
+  bool m_mfaHasBeenSet = false;
+  bool m_oAuthHasBeenSet = false;
+  bool m_passwordPolicyHasBeenSet = false;
+  bool m_requiredSignUpAttributesHasBeenSet = false;
+  bool m_signInMethodHasBeenSet = false;
+  bool m_userPoolNameHasBeenSet = false;
   bool m_verificationMessageHasBeenSet = false;
 };
 

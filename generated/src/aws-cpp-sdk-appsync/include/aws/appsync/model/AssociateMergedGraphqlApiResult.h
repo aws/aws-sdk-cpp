@@ -60,9 +60,9 @@ class AssociateMergedGraphqlApiResult {
   ///@}
  private:
   SourceApiAssociation m_sourceApiAssociation;
-  bool m_sourceApiAssociationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceApiAssociationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

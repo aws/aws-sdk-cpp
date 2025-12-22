@@ -154,24 +154,24 @@ class PollForActivityTaskResult {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   Aws::String m_activityId;
-  bool m_activityIdHasBeenSet = false;
 
   long long m_startedEventId{0};
-  bool m_startedEventIdHasBeenSet = false;
 
   WorkflowExecution m_workflowExecution;
-  bool m_workflowExecutionHasBeenSet = false;
 
   ActivityType m_activityType;
-  bool m_activityTypeHasBeenSet = false;
 
   Aws::String m_input;
-  bool m_inputHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskTokenHasBeenSet = false;
+  bool m_activityIdHasBeenSet = false;
+  bool m_startedEventIdHasBeenSet = false;
+  bool m_workflowExecutionHasBeenSet = false;
+  bool m_activityTypeHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

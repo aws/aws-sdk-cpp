@@ -78,7 +78,9 @@ class DisablePolicyTypeRequest : public OrganizationsRequest {
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_s3.html">S3_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html">NETWORK_SECURITY_DIRECTOR_POLICY</a>
    * </p> </li> </ul>
    */
   inline PolicyType GetPolicyType() const { return m_policyType; }
@@ -94,9 +96,9 @@ class DisablePolicyTypeRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_rootId;
-  bool m_rootIdHasBeenSet = false;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
+  bool m_rootIdHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

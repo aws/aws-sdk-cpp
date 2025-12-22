@@ -77,9 +77,9 @@ class DateRange {
   ///@}
  private:
   Aws::Utils::DateTime m_fromDate{};
-  bool m_fromDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_toDate{};
+  bool m_fromDateHasBeenSet = false;
   bool m_toDateHasBeenSet = false;
 };
 

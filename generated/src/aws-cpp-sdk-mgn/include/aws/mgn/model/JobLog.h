@@ -35,6 +35,24 @@ class JobLog {
 
   ///@{
   /**
+   * <p>Job log event date and time.</p>
+   */
+  inline const Aws::String& GetLogDateTime() const { return m_logDateTime; }
+  inline bool LogDateTimeHasBeenSet() const { return m_logDateTimeHasBeenSet; }
+  template <typename LogDateTimeT = Aws::String>
+  void SetLogDateTime(LogDateTimeT&& value) {
+    m_logDateTimeHasBeenSet = true;
+    m_logDateTime = std::forward<LogDateTimeT>(value);
+  }
+  template <typename LogDateTimeT = Aws::String>
+  JobLog& WithLogDateTime(LogDateTimeT&& value) {
+    SetLogDateTime(std::forward<LogDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Job log event.</p>
    */
   inline JobLogEvent GetEvent() const { return m_event; }
@@ -66,33 +84,15 @@ class JobLog {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Job log event date and time.</p>
-   */
-  inline const Aws::String& GetLogDateTime() const { return m_logDateTime; }
-  inline bool LogDateTimeHasBeenSet() const { return m_logDateTimeHasBeenSet; }
-  template <typename LogDateTimeT = Aws::String>
-  void SetLogDateTime(LogDateTimeT&& value) {
-    m_logDateTimeHasBeenSet = true;
-    m_logDateTime = std::forward<LogDateTimeT>(value);
-  }
-  template <typename LogDateTimeT = Aws::String>
-  JobLog& WithLogDateTime(LogDateTimeT&& value) {
-    SetLogDateTime(std::forward<LogDateTimeT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_logDateTime;
+
   JobLogEvent m_event{JobLogEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   JobLogEventData m_eventData;
-  bool m_eventDataHasBeenSet = false;
-
-  Aws::String m_logDateTime;
   bool m_logDateTimeHasBeenSet = false;
+  bool m_eventHasBeenSet = false;
+  bool m_eventDataHasBeenSet = false;
 };
 
 }  // namespace Model

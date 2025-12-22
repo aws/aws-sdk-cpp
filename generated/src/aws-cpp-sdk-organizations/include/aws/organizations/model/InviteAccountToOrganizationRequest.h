@@ -118,12 +118,12 @@ class InviteAccountToOrganizationRequest : public OrganizationsRequest {
   ///@}
  private:
   HandshakeParty m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_targetHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

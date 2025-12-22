@@ -70,9 +70,9 @@ class GetTransitGatewayPolicyTableEntriesResponse {
   ///@}
  private:
   Aws::Vector<TransitGatewayPolicyTableEntry> m_transitGatewayPolicyTableEntries;
-  bool m_transitGatewayPolicyTableEntriesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayPolicyTableEntriesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

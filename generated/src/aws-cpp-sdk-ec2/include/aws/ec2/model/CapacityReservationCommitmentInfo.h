@@ -73,9 +73,9 @@ class CapacityReservationCommitmentInfo {
   ///@}
  private:
   int m_committedInstanceCount{0};
-  bool m_committedInstanceCountHasBeenSet = false;
 
   Aws::Utils::DateTime m_commitmentEndDate{};
+  bool m_committedInstanceCountHasBeenSet = false;
   bool m_commitmentEndDateHasBeenSet = false;
 };
 

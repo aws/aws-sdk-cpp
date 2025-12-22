@@ -141,21 +141,21 @@ class EffectiveLifecyclePolicyDetail {
   ///@}
  private:
   LifecyclePolicyType m_type{LifecyclePolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_policyName;
-  bool m_policyNameHasBeenSet = false;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_retentionPeriod;
-  bool m_retentionPeriodHasBeenSet = false;
 
   bool m_noMinRetentionPeriod{false};
+  bool m_typeHasBeenSet = false;
+  bool m_resourceHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_retentionPeriodHasBeenSet = false;
   bool m_noMinRetentionPeriodHasBeenSet = false;
 };
 

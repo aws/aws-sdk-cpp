@@ -196,30 +196,30 @@ Leave set to "normal" when input does not contain pre-mixed
   ///@}
  private:
   double m_bitrate{0.0};
-  bool m_bitrateHasBeenSet = false;
 
   AacCodingMode m_codingMode{AacCodingMode::NOT_SET};
-  bool m_codingModeHasBeenSet = false;
 
   AacInputType m_inputType{AacInputType::NOT_SET};
-  bool m_inputTypeHasBeenSet = false;
 
   AacProfile m_profile{AacProfile::NOT_SET};
-  bool m_profileHasBeenSet = false;
 
   AacRateControlMode m_rateControlMode{AacRateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   AacRawFormat m_rawFormat{AacRawFormat::NOT_SET};
-  bool m_rawFormatHasBeenSet = false;
 
   double m_sampleRate{0.0};
-  bool m_sampleRateHasBeenSet = false;
 
   AacSpec m_spec{AacSpec::NOT_SET};
-  bool m_specHasBeenSet = false;
 
   AacVbrQuality m_vbrQuality{AacVbrQuality::NOT_SET};
+  bool m_bitrateHasBeenSet = false;
+  bool m_codingModeHasBeenSet = false;
+  bool m_inputTypeHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_rawFormatHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_specHasBeenSet = false;
   bool m_vbrQualityHasBeenSet = false;
 };
 

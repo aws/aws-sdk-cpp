@@ -75,9 +75,9 @@ class CreateVpcPeeringAuthorizationRequest : public GameLiftRequest {
   ///@}
  private:
   Aws::String m_gameLiftAwsAccountId;
-  bool m_gameLiftAwsAccountIdHasBeenSet = false;
 
   Aws::String m_peerVpcId;
+  bool m_gameLiftAwsAccountIdHasBeenSet = false;
   bool m_peerVpcIdHasBeenSet = false;
 };
 

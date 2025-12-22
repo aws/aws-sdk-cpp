@@ -88,12 +88,12 @@ class ExportAssetToSignedUrlRequestDetails {
   ///@}
  private:
   Aws::String m_assetId;
-  bool m_assetIdHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_assetIdHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class Name {
   ///@}
  private:
   Aws::String m_formatted;
-  bool m_formattedHasBeenSet = false;
 
   Aws::String m_familyName;
-  bool m_familyNameHasBeenSet = false;
 
   Aws::String m_givenName;
-  bool m_givenNameHasBeenSet = false;
 
   Aws::String m_middleName;
-  bool m_middleNameHasBeenSet = false;
 
   Aws::String m_honorificPrefix;
-  bool m_honorificPrefixHasBeenSet = false;
 
   Aws::String m_honorificSuffix;
+  bool m_formattedHasBeenSet = false;
+  bool m_familyNameHasBeenSet = false;
+  bool m_givenNameHasBeenSet = false;
+  bool m_middleNameHasBeenSet = false;
+  bool m_honorificPrefixHasBeenSet = false;
   bool m_honorificSuffixHasBeenSet = false;
 };
 

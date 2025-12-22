@@ -103,12 +103,12 @@ class DataIntegrationEventDatasetTargetDetails {
   ///@}
  private:
   Aws::String m_datasetIdentifier;
-  bool m_datasetIdentifierHasBeenSet = false;
 
   DataIntegrationEventDatasetOperationType m_operationType{DataIntegrationEventDatasetOperationType::NOT_SET};
-  bool m_operationTypeHasBeenSet = false;
 
   DataIntegrationEventDatasetLoadExecutionDetails m_datasetLoadExecution;
+  bool m_datasetIdentifierHasBeenSet = false;
+  bool m_operationTypeHasBeenSet = false;
   bool m_datasetLoadExecutionHasBeenSet = false;
 };
 

@@ -62,9 +62,9 @@ class GuardrailImageCoverage {
   ///@}
  private:
   int m_guarded{0};
-  bool m_guardedHasBeenSet = false;
 
   int m_total{0};
+  bool m_guardedHasBeenSet = false;
   bool m_totalHasBeenSet = false;
 };
 

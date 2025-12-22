@@ -244,33 +244,33 @@ class CreateUserRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   UserIdentityInfo m_identityInfo;
-  bool m_identityInfoHasBeenSet = false;
 
   UserPhoneConfig m_phoneConfig;
-  bool m_phoneConfigHasBeenSet = false;
 
   Aws::String m_directoryUserId;
-  bool m_directoryUserIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityProfileIds;
-  bool m_securityProfileIdsHasBeenSet = false;
 
   Aws::String m_routingProfileId;
-  bool m_routingProfileIdHasBeenSet = false;
 
   Aws::String m_hierarchyGroupId;
-  bool m_hierarchyGroupIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_identityInfoHasBeenSet = false;
+  bool m_phoneConfigHasBeenSet = false;
+  bool m_directoryUserIdHasBeenSet = false;
+  bool m_securityProfileIdsHasBeenSet = false;
+  bool m_routingProfileIdHasBeenSet = false;
+  bool m_hierarchyGroupIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

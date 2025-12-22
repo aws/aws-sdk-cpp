@@ -241,39 +241,39 @@ class CreateCapacityReservationFleetResponse {
   ///@}
  private:
   Aws::String m_capacityReservationFleetId;
-  bool m_capacityReservationFleetIdHasBeenSet = false;
 
   CapacityReservationFleetState m_state{CapacityReservationFleetState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   int m_totalTargetCapacity{0};
-  bool m_totalTargetCapacityHasBeenSet = false;
 
   double m_totalFulfilledCapacity{0.0};
-  bool m_totalFulfilledCapacityHasBeenSet = false;
 
   FleetInstanceMatchCriteria m_instanceMatchCriteria{FleetInstanceMatchCriteria::NOT_SET};
-  bool m_instanceMatchCriteriaHasBeenSet = false;
 
   Aws::String m_allocationStrategy;
-  bool m_allocationStrategyHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   FleetCapacityReservationTenancy m_tenancy{FleetCapacityReservationTenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Aws::Vector<FleetCapacityReservation> m_fleetCapacityReservations;
-  bool m_fleetCapacityReservationsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_capacityReservationFleetIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_totalTargetCapacityHasBeenSet = false;
+  bool m_totalFulfilledCapacityHasBeenSet = false;
+  bool m_instanceMatchCriteriaHasBeenSet = false;
+  bool m_allocationStrategyHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_fleetCapacityReservationsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

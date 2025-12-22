@@ -609,84 +609,84 @@ class CertificateDetail {
   ///@}
  private:
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subjectAlternativeNames;
-  bool m_subjectAlternativeNamesHasBeenSet = false;
 
   CertificateManagedBy m_managedBy{CertificateManagedBy::NOT_SET};
-  bool m_managedByHasBeenSet = false;
 
   Aws::Vector<DomainValidation> m_domainValidationOptions;
-  bool m_domainValidationOptionsHasBeenSet = false;
 
   Aws::String m_serial;
-  bool m_serialHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_issuedAt{};
-  bool m_issuedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_importedAt{};
-  bool m_importedAtHasBeenSet = false;
 
   CertificateStatus m_status{CertificateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_revokedAt{};
-  bool m_revokedAtHasBeenSet = false;
 
   RevocationReason m_revocationReason{RevocationReason::NOT_SET};
-  bool m_revocationReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_notBefore{};
-  bool m_notBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_notAfter{};
-  bool m_notAfterHasBeenSet = false;
 
   KeyAlgorithm m_keyAlgorithm{KeyAlgorithm::NOT_SET};
-  bool m_keyAlgorithmHasBeenSet = false;
 
   Aws::String m_signatureAlgorithm;
-  bool m_signatureAlgorithmHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inUseBy;
-  bool m_inUseByHasBeenSet = false;
 
   FailureReason m_failureReason{FailureReason::NOT_SET};
-  bool m_failureReasonHasBeenSet = false;
 
   CertificateType m_type{CertificateType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   RenewalSummary m_renewalSummary;
-  bool m_renewalSummaryHasBeenSet = false;
 
   Aws::Vector<KeyUsage> m_keyUsages;
-  bool m_keyUsagesHasBeenSet = false;
 
   Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsages;
-  bool m_extendedKeyUsagesHasBeenSet = false;
 
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   RenewalEligibility m_renewalEligibility{RenewalEligibility::NOT_SET};
-  bool m_renewalEligibilityHasBeenSet = false;
 
   CertificateOptions m_options;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_subjectAlternativeNamesHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
+  bool m_domainValidationOptionsHasBeenSet = false;
+  bool m_serialHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_issuedAtHasBeenSet = false;
+  bool m_importedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_revokedAtHasBeenSet = false;
+  bool m_revocationReasonHasBeenSet = false;
+  bool m_notBeforeHasBeenSet = false;
+  bool m_notAfterHasBeenSet = false;
+  bool m_keyAlgorithmHasBeenSet = false;
+  bool m_signatureAlgorithmHasBeenSet = false;
+  bool m_inUseByHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_renewalSummaryHasBeenSet = false;
+  bool m_keyUsagesHasBeenSet = false;
+  bool m_extendedKeyUsagesHasBeenSet = false;
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_renewalEligibilityHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class CreateACLRequest : public MemoryDBRequest {
   ///@}
  private:
   Aws::String m_aCLName;
-  bool m_aCLNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userNames;
-  bool m_userNamesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_aCLNameHasBeenSet = false;
+  bool m_userNamesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -111,18 +111,18 @@ class GetManagedThingConnectivityDataResult {
   ///@}
  private:
   Aws::String m_managedThingId;
-  bool m_managedThingIdHasBeenSet = false;
 
   bool m_connected{false};
-  bool m_connectedHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   DisconnectReasonValue m_disconnectReason{DisconnectReasonValue::NOT_SET};
-  bool m_disconnectReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_managedThingIdHasBeenSet = false;
+  bool m_connectedHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
+  bool m_disconnectReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

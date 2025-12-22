@@ -16,11 +16,14 @@ namespace Model {
 namespace SsmParameterStoreParameterTypeMapper {
 
 static const int STRING_HASH = HashingUtils::HashString("STRING");
+static const int SECURE_STRING_HASH = HashingUtils::HashString("SECURE_STRING");
 
 SsmParameterStoreParameterType GetSsmParameterStoreParameterTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == STRING_HASH) {
     return SsmParameterStoreParameterType::STRING;
+  } else if (hashCode == SECURE_STRING_HASH) {
+    return SsmParameterStoreParameterType::SECURE_STRING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForSsmParameterStoreParameterType(SsmParameterStoreParameterT
       return {};
     case SsmParameterStoreParameterType::STRING:
       return "STRING";
+    case SsmParameterStoreParameterType::SECURE_STRING:
+      return "SECURE_STRING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

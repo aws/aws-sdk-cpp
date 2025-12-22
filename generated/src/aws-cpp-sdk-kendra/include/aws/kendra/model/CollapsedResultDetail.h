@@ -77,9 +77,9 @@ class CollapsedResultDetail {
   ///@}
  private:
   DocumentAttribute m_documentAttribute;
-  bool m_documentAttributeHasBeenSet = false;
 
   Aws::Vector<ExpandedResultItem> m_expandedResults;
+  bool m_documentAttributeHasBeenSet = false;
   bool m_expandedResultsHasBeenSet = false;
 };
 

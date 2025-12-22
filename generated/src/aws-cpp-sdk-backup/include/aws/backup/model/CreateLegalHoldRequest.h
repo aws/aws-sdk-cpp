@@ -133,18 +133,18 @@ class CreateLegalHoldRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_idempotencyTokenHasBeenSet = true;
 
   RecoveryPointSelection m_recoveryPointSelection;
-  bool m_recoveryPointSelectionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idempotencyTokenHasBeenSet = true;
+  bool m_recoveryPointSelectionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

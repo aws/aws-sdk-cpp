@@ -76,12 +76,12 @@ class CreateTicketV2Result {
   ///@}
  private:
   Aws::String m_ticketId;
-  bool m_ticketIdHasBeenSet = false;
 
   Aws::String m_ticketSrcUrl;
-  bool m_ticketSrcUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ticketIdHasBeenSet = false;
+  bool m_ticketSrcUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

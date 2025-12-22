@@ -173,21 +173,21 @@ class QueryResult {
   ///@}
  private:
   Aws::Vector<Aws::Map<Aws::String, AttributeValue>> m_items;
-  bool m_itemsHasBeenSet = false;
 
   int m_count{0};
-  bool m_countHasBeenSet = false;
 
   int m_scannedCount{0};
-  bool m_scannedCountHasBeenSet = false;
 
   Aws::Map<Aws::String, AttributeValue> m_lastEvaluatedKey;
-  bool m_lastEvaluatedKeyHasBeenSet = false;
 
   ConsumedCapacity m_consumedCapacity;
-  bool m_consumedCapacityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_itemsHasBeenSet = false;
+  bool m_countHasBeenSet = false;
+  bool m_scannedCountHasBeenSet = false;
+  bool m_lastEvaluatedKeyHasBeenSet = false;
+  bool m_consumedCapacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

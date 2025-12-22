@@ -75,9 +75,9 @@ class ColumnSchema {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::Vector<ColumnType> m_columnTypes;
+  bool m_columnNameHasBeenSet = false;
   bool m_columnTypesHasBeenSet = false;
 };
 

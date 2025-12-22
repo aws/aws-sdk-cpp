@@ -63,9 +63,9 @@ class CreateInstanceResult {
   ///@}
  private:
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

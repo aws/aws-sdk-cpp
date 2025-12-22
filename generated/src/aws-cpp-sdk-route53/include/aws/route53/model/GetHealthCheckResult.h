@@ -67,9 +67,9 @@ class GetHealthCheckResult {
   ///@}
  private:
   HealthCheck m_healthCheck;
-  bool m_healthCheckHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_healthCheckHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

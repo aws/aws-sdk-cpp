@@ -67,9 +67,9 @@ class ViewPort {
   ///@}
  private:
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_height{0};
+  bool m_widthHasBeenSet = false;
   bool m_heightHasBeenSet = false;
 };
 

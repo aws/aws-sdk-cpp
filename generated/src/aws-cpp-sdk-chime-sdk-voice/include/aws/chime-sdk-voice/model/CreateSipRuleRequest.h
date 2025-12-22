@@ -133,18 +133,18 @@ class CreateSipRuleRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SipRuleTriggerType m_triggerType{SipRuleTriggerType::NOT_SET};
-  bool m_triggerTypeHasBeenSet = false;
 
   Aws::String m_triggerValue;
-  bool m_triggerValueHasBeenSet = false;
 
   bool m_disabled{false};
-  bool m_disabledHasBeenSet = false;
 
   Aws::Vector<SipRuleTargetApplication> m_targetApplications;
+  bool m_nameHasBeenSet = false;
+  bool m_triggerTypeHasBeenSet = false;
+  bool m_triggerValueHasBeenSet = false;
+  bool m_disabledHasBeenSet = false;
   bool m_targetApplicationsHasBeenSet = false;
 };
 

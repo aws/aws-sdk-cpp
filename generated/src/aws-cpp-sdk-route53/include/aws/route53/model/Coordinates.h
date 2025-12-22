@@ -71,9 +71,9 @@ class Coordinates {
   ///@}
  private:
   Aws::String m_latitude;
-  bool m_latitudeHasBeenSet = false;
 
   Aws::String m_longitude;
+  bool m_latitudeHasBeenSet = false;
   bool m_longitudeHasBeenSet = false;
 };
 

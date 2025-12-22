@@ -238,33 +238,33 @@ class CreateEvaluationJobRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_jobDescription;
-  bool m_jobDescriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_customerEncryptionKeyId;
-  bool m_customerEncryptionKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_jobTags;
-  bool m_jobTagsHasBeenSet = false;
 
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
-  bool m_applicationTypeHasBeenSet = false;
 
   EvaluationConfig m_evaluationConfig;
-  bool m_evaluationConfigHasBeenSet = false;
 
   EvaluationInferenceConfig m_inferenceConfig;
-  bool m_inferenceConfigHasBeenSet = false;
 
   EvaluationOutputDataConfig m_outputDataConfig;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobDescriptionHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_roleArnHasBeenSet = false;
+  bool m_customerEncryptionKeyIdHasBeenSet = false;
+  bool m_jobTagsHasBeenSet = false;
+  bool m_applicationTypeHasBeenSet = false;
+  bool m_evaluationConfigHasBeenSet = false;
+  bool m_inferenceConfigHasBeenSet = false;
   bool m_outputDataConfigHasBeenSet = false;
 };
 

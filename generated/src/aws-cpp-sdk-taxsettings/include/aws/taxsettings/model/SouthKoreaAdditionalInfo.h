@@ -90,12 +90,12 @@ class SouthKoreaAdditionalInfo {
   ///@}
  private:
   Aws::String m_businessRepresentativeName;
-  bool m_businessRepresentativeNameHasBeenSet = false;
 
   Aws::String m_itemOfBusiness;
-  bool m_itemOfBusinessHasBeenSet = false;
 
   Aws::String m_lineOfBusiness;
+  bool m_businessRepresentativeNameHasBeenSet = false;
+  bool m_itemOfBusinessHasBeenSet = false;
   bool m_lineOfBusinessHasBeenSet = false;
 };
 

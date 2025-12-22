@@ -127,21 +127,21 @@ class ProvisionDeviceResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_certificates{};
-  bool m_certificatesHasBeenSet = false;
 
   Aws::String m_deviceId;
-  bool m_deviceIdHasBeenSet = false;
 
   Aws::String m_iotThingName;
-  bool m_iotThingNameHasBeenSet = false;
 
   DeviceStatus m_status{DeviceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
+  bool m_deviceIdHasBeenSet = false;
+  bool m_iotThingNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

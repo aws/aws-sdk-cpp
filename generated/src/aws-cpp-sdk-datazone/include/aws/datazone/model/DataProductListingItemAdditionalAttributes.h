@@ -77,9 +77,9 @@ class DataProductListingItemAdditionalAttributes {
   ///@}
  private:
   Aws::String m_forms;
-  bool m_formsHasBeenSet = false;
 
   Aws::Vector<MatchRationaleItem> m_matchRationale;
+  bool m_formsHasBeenSet = false;
   bool m_matchRationaleHasBeenSet = false;
 };
 

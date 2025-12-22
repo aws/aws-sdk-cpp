@@ -86,12 +86,12 @@ class ListTrafficPoliciesResult {
   ///@}
  private:
   Aws::Vector<TrafficPolicy> m_trafficPolicies;
-  bool m_trafficPoliciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trafficPoliciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

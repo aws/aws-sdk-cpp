@@ -89,12 +89,12 @@ class UpdateMLModelRequest : public MachineLearningRequest {
   ///@}
  private:
   Aws::String m_mLModelId;
-  bool m_mLModelIdHasBeenSet = false;
 
   Aws::String m_mLModelName;
-  bool m_mLModelNameHasBeenSet = false;
 
   double m_scoreThreshold{0.0};
+  bool m_mLModelIdHasBeenSet = false;
+  bool m_mLModelNameHasBeenSet = false;
   bool m_scoreThresholdHasBeenSet = false;
 };
 

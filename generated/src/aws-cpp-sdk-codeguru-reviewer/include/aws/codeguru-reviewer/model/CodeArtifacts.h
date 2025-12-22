@@ -78,9 +78,9 @@ class CodeArtifacts {
   ///@}
  private:
   Aws::String m_sourceCodeArtifactsObjectKey;
-  bool m_sourceCodeArtifactsObjectKeyHasBeenSet = false;
 
   Aws::String m_buildArtifactsObjectKey;
+  bool m_sourceCodeArtifactsObjectKeyHasBeenSet = false;
   bool m_buildArtifactsObjectKeyHasBeenSet = false;
 };
 

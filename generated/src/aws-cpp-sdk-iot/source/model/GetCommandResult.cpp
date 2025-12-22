@@ -53,6 +53,14 @@ GetCommandResult& GetCommandResult::operator=(const Aws::AmazonWebServiceResult<
     m_payload = jsonValue.GetObject("payload");
     m_payloadHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("payloadTemplate")) {
+    m_payloadTemplate = jsonValue.GetString("payloadTemplate");
+    m_payloadTemplateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("preprocessor")) {
+    m_preprocessor = jsonValue.GetObject("preprocessor");
+    m_preprocessorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("roleArn")) {
     m_roleArn = jsonValue.GetString("roleArn");
     m_roleArnHasBeenSet = true;

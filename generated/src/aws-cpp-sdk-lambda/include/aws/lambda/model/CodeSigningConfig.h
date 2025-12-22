@@ -146,21 +146,21 @@ class CodeSigningConfig {
   ///@}
  private:
   Aws::String m_codeSigningConfigId;
-  bool m_codeSigningConfigIdHasBeenSet = false;
 
   Aws::String m_codeSigningConfigArn;
-  bool m_codeSigningConfigArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AllowedPublishers m_allowedPublishers;
-  bool m_allowedPublishersHasBeenSet = false;
 
   CodeSigningPolicies m_codeSigningPolicies;
-  bool m_codeSigningPoliciesHasBeenSet = false;
 
   Aws::String m_lastModified;
+  bool m_codeSigningConfigIdHasBeenSet = false;
+  bool m_codeSigningConfigArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_allowedPublishersHasBeenSet = false;
+  bool m_codeSigningPoliciesHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
 };
 

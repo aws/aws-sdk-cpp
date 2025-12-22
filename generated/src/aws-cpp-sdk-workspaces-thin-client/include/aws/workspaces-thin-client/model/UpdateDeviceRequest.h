@@ -101,15 +101,15 @@ class UpdateDeviceRequest : public WorkSpacesThinClientRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_desiredSoftwareSetId;
-  bool m_desiredSoftwareSetIdHasBeenSet = false;
 
   SoftwareSetUpdateSchedule m_softwareSetUpdateSchedule{SoftwareSetUpdateSchedule::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_desiredSoftwareSetIdHasBeenSet = false;
   bool m_softwareSetUpdateScheduleHasBeenSet = false;
 };
 

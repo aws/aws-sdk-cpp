@@ -139,15 +139,15 @@ class NamespaceRuleBasedProperties {
   ///@}
  private:
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::Vector<IdMappingWorkflowRuleDefinitionType> m_ruleDefinitionTypes;
-  bool m_ruleDefinitionTypesHasBeenSet = false;
 
   AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
-  bool m_attributeMatchingModelHasBeenSet = false;
 
   Aws::Vector<RecordMatchingModel> m_recordMatchingModels;
+  bool m_rulesHasBeenSet = false;
+  bool m_ruleDefinitionTypesHasBeenSet = false;
+  bool m_attributeMatchingModelHasBeenSet = false;
   bool m_recordMatchingModelsHasBeenSet = false;
 };
 

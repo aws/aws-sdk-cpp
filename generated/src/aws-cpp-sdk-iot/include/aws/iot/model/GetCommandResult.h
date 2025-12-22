@@ -11,6 +11,7 @@
 #include <aws/iot/model/CommandNamespace.h>
 #include <aws/iot/model/CommandParameter.h>
 #include <aws/iot/model/CommandPayload.h>
+#include <aws/iot/model/CommandPreprocessor.h>
 
 #include <utility>
 
@@ -158,6 +159,41 @@ class GetCommandResult {
 
   ///@{
   /**
+   * <p>The payload template for the dynamic command.</p>
+   */
+  inline const Aws::String& GetPayloadTemplate() const { return m_payloadTemplate; }
+  template <typename PayloadTemplateT = Aws::String>
+  void SetPayloadTemplate(PayloadTemplateT&& value) {
+    m_payloadTemplateHasBeenSet = true;
+    m_payloadTemplate = std::forward<PayloadTemplateT>(value);
+  }
+  template <typename PayloadTemplateT = Aws::String>
+  GetCommandResult& WithPayloadTemplate(PayloadTemplateT&& value) {
+    SetPayloadTemplate(std::forward<PayloadTemplateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration that determines how <code>payloadTemplate</code> is processed
+   * to generate command execution payload.</p>
+   */
+  inline const CommandPreprocessor& GetPreprocessor() const { return m_preprocessor; }
+  template <typename PreprocessorT = CommandPreprocessor>
+  void SetPreprocessor(PreprocessorT&& value) {
+    m_preprocessorHasBeenSet = true;
+    m_preprocessor = std::forward<PreprocessorT>(value);
+  }
+  template <typename PreprocessorT = CommandPreprocessor>
+  GetCommandResult& WithPreprocessor(PreprocessorT&& value) {
+    SetPreprocessor(std::forward<PreprocessorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The IAM role that you provided when creating the command with
    * <code>AWS-IoT-FleetWise</code> as the namespace.</p>
    */
@@ -254,42 +290,48 @@ class GetCommandResult {
   ///@}
  private:
   Aws::String m_commandId;
-  bool m_commandIdHasBeenSet = false;
 
   Aws::String m_commandArn;
-  bool m_commandArnHasBeenSet = false;
 
   CommandNamespace m_namespace{CommandNamespace::NOT_SET};
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<CommandParameter> m_mandatoryParameters;
-  bool m_mandatoryParametersHasBeenSet = false;
 
   CommandPayload m_payload;
-  bool m_payloadHasBeenSet = false;
+
+  Aws::String m_payloadTemplate;
+
+  CommandPreprocessor m_preprocessor;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   bool m_deprecated{false};
-  bool m_deprecatedHasBeenSet = false;
 
   bool m_pendingDeletion{false};
-  bool m_pendingDeletionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commandIdHasBeenSet = false;
+  bool m_commandArnHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_mandatoryParametersHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_payloadTemplateHasBeenSet = false;
+  bool m_preprocessorHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_deprecatedHasBeenSet = false;
+  bool m_pendingDeletionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

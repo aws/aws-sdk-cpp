@@ -90,12 +90,12 @@ class RuleStatement {
   ///@}
  private:
   LicenseConfigurationRuleStatement m_licenseConfigurationRuleStatement;
-  bool m_licenseConfigurationRuleStatementHasBeenSet = false;
 
   LicenseRuleStatement m_licenseRuleStatement;
-  bool m_licenseRuleStatementHasBeenSet = false;
 
   InstanceRuleStatement m_instanceRuleStatement;
+  bool m_licenseConfigurationRuleStatementHasBeenSet = false;
+  bool m_licenseRuleStatementHasBeenSet = false;
   bool m_instanceRuleStatementHasBeenSet = false;
 };
 

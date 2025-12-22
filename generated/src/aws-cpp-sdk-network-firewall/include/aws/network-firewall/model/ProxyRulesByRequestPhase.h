@@ -107,12 +107,12 @@ class ProxyRulesByRequestPhase {
   ///@}
  private:
   Aws::Vector<ProxyRule> m_preDNS;
-  bool m_preDNSHasBeenSet = false;
 
   Aws::Vector<ProxyRule> m_preREQUEST;
-  bool m_preREQUESTHasBeenSet = false;
 
   Aws::Vector<ProxyRule> m_postRESPONSE;
+  bool m_preDNSHasBeenSet = false;
+  bool m_preREQUESTHasBeenSet = false;
   bool m_postRESPONSEHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class TimestreamResources {
   ///@}
  private:
   Aws::String m_timestreamDatabaseName;
-  bool m_timestreamDatabaseNameHasBeenSet = false;
 
   Aws::String m_timestreamTableName;
+  bool m_timestreamDatabaseNameHasBeenSet = false;
   bool m_timestreamTableNameHasBeenSet = false;
 };
 

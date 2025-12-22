@@ -73,9 +73,9 @@ class DeleteProjectRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_projectIdHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

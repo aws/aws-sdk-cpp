@@ -69,9 +69,9 @@ class BigQueryParameters {
   ///@}
  private:
   Aws::String m_projectId;
-  bool m_projectIdHasBeenSet = false;
 
   Aws::String m_dataSetRegion;
+  bool m_projectIdHasBeenSet = false;
   bool m_dataSetRegionHasBeenSet = false;
 };
 

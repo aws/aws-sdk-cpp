@@ -87,12 +87,12 @@ class DescribeHomeRegionControlsResult {
   ///@}
  private:
   Aws::Vector<HomeRegionControl> m_homeRegionControls;
-  bool m_homeRegionControlsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_homeRegionControlsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

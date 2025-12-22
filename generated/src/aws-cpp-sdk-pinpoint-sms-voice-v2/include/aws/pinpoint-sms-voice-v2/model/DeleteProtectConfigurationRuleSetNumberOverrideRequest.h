@@ -67,9 +67,9 @@ class DeleteProtectConfigurationRuleSetNumberOverrideRequest : public PinpointSM
   ///@}
  private:
   Aws::String m_protectConfigurationId;
-  bool m_protectConfigurationIdHasBeenSet = false;
 
   Aws::String m_destinationPhoneNumber;
+  bool m_protectConfigurationIdHasBeenSet = false;
   bool m_destinationPhoneNumberHasBeenSet = false;
 };
 

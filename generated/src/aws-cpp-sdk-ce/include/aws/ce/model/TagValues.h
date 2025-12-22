@@ -84,8 +84,8 @@ class TagValues {
   ///@{
   /**
    * <p>The match options that you can use to filter your results.
-   * <code>MatchOptions</code> is only applicable for actions related to Cost
-   * Category. The default values for <code>MatchOptions</code> are
+   * <code>MatchOptions</code> is only applicable for actions related to cost
+   * category. The default values for <code>MatchOptions</code> are
    * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
    */
   inline const Aws::Vector<MatchOption>& GetMatchOptions() const { return m_matchOptions; }
@@ -108,12 +108,12 @@ class TagValues {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<MatchOption> m_matchOptions;
+  bool m_keyHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
   bool m_matchOptionsHasBeenSet = false;
 };
 

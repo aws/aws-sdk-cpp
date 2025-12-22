@@ -87,9 +87,9 @@ class ExportFilter {
   ///@}
  private:
   Aws::Map<Aws::String, ExportFilterElement> m_vertexFilter;
-  bool m_vertexFilterHasBeenSet = false;
 
   Aws::Map<Aws::String, ExportFilterElement> m_edgeFilter;
+  bool m_vertexFilterHasBeenSet = false;
   bool m_edgeFilterHasBeenSet = false;
 };
 

@@ -226,33 +226,33 @@ class StandardsControl {
   ///@}
  private:
   Aws::String m_standardsControlArn;
-  bool m_standardsControlArnHasBeenSet = false;
 
   ControlStatus m_controlStatus{ControlStatus::NOT_SET};
-  bool m_controlStatusHasBeenSet = false;
 
   Aws::String m_disabledReason;
-  bool m_disabledReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_controlStatusUpdatedAt{};
-  bool m_controlStatusUpdatedAtHasBeenSet = false;
 
   Aws::String m_controlId;
-  bool m_controlIdHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_remediationUrl;
-  bool m_remediationUrlHasBeenSet = false;
 
   SeverityRating m_severityRating{SeverityRating::NOT_SET};
-  bool m_severityRatingHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_relatedRequirements;
+  bool m_standardsControlArnHasBeenSet = false;
+  bool m_controlStatusHasBeenSet = false;
+  bool m_disabledReasonHasBeenSet = false;
+  bool m_controlStatusUpdatedAtHasBeenSet = false;
+  bool m_controlIdHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_remediationUrlHasBeenSet = false;
+  bool m_severityRatingHasBeenSet = false;
   bool m_relatedRequirementsHasBeenSet = false;
 };
 

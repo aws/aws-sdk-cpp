@@ -33,24 +33,6 @@ class ErrorDetails {
 
   ///@{
   /**
-   * <p>Error details code.</p>
-   */
-  inline const Aws::String& GetCode() const { return m_code; }
-  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-  template <typename CodeT = Aws::String>
-  void SetCode(CodeT&& value) {
-    m_codeHasBeenSet = true;
-    m_code = std::forward<CodeT>(value);
-  }
-  template <typename CodeT = Aws::String>
-  ErrorDetails& WithCode(CodeT&& value) {
-    SetCode(std::forward<CodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Error details message.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
@@ -63,6 +45,24 @@ class ErrorDetails {
   template <typename MessageT = Aws::String>
   ErrorDetails& WithMessage(MessageT&& value) {
     SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Error details code.</p>
+   */
+  inline const Aws::String& GetCode() const { return m_code; }
+  inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+  template <typename CodeT = Aws::String>
+  void SetCode(CodeT&& value) {
+    m_codeHasBeenSet = true;
+    m_code = std::forward<CodeT>(value);
+  }
+  template <typename CodeT = Aws::String>
+  ErrorDetails& WithCode(CodeT&& value) {
+    SetCode(std::forward<CodeT>(value));
     return *this;
   }
   ///@}
@@ -103,16 +103,16 @@ class ErrorDetails {
   }
   ///@}
  private:
-  Aws::String m_code;
-  bool m_codeHasBeenSet = false;
-
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
+
+  Aws::String m_code;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
+  bool m_messageHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
 };
 

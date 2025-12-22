@@ -174,27 +174,27 @@ class WaypointOptimizationAvoidanceOptions {
   ///@}
  private:
   Aws::Vector<WaypointOptimizationAvoidanceArea> m_areas;
-  bool m_areasHasBeenSet = false;
 
   bool m_carShuttleTrains{false};
-  bool m_carShuttleTrainsHasBeenSet = false;
 
   bool m_controlledAccessHighways{false};
-  bool m_controlledAccessHighwaysHasBeenSet = false;
 
   bool m_dirtRoads{false};
-  bool m_dirtRoadsHasBeenSet = false;
 
   bool m_ferries{false};
-  bool m_ferriesHasBeenSet = false;
 
   bool m_tollRoads{false};
-  bool m_tollRoadsHasBeenSet = false;
 
   bool m_tunnels{false};
-  bool m_tunnelsHasBeenSet = false;
 
   bool m_uTurns{false};
+  bool m_areasHasBeenSet = false;
+  bool m_carShuttleTrainsHasBeenSet = false;
+  bool m_controlledAccessHighwaysHasBeenSet = false;
+  bool m_dirtRoadsHasBeenSet = false;
+  bool m_ferriesHasBeenSet = false;
+  bool m_tollRoadsHasBeenSet = false;
+  bool m_tunnelsHasBeenSet = false;
   bool m_uTurnsHasBeenSet = false;
 };
 

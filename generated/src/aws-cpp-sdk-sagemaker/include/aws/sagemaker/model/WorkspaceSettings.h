@@ -73,9 +73,9 @@ class WorkspaceSettings {
   ///@}
  private:
   Aws::String m_s3ArtifactPath;
-  bool m_s3ArtifactPathHasBeenSet = false;
 
   Aws::String m_s3KmsKeyId;
+  bool m_s3ArtifactPathHasBeenSet = false;
   bool m_s3KmsKeyIdHasBeenSet = false;
 };
 

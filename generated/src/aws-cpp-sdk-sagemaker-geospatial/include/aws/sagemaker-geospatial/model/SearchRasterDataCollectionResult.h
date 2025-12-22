@@ -101,15 +101,15 @@ class SearchRasterDataCollectionResult {
   ///@}
  private:
   int m_approximateResultCount{0};
-  bool m_approximateResultCountHasBeenSet = false;
 
   Aws::Vector<ItemSource> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_approximateResultCountHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class SummaryTotals {
   ///@}
  private:
   int m_automationEventCount{0};
-  bool m_automationEventCountHasBeenSet = false;
 
   EstimatedMonthlySavings m_estimatedMonthlySavings;
+  bool m_automationEventCountHasBeenSet = false;
   bool m_estimatedMonthlySavingsHasBeenSet = false;
 };
 

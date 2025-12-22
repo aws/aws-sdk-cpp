@@ -214,6 +214,24 @@ class GetApplicationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
+   * application's data at rest.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  GetApplicationResult& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -229,36 +247,39 @@ class GetApplicationResult {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   ApplicationStatus m_status{ApplicationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   IamIdentityCenterOptions m_iamIdentityCenterOptions;
-  bool m_iamIdentityCenterOptionsHasBeenSet = false;
 
   Aws::Vector<DataSource> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::Vector<AppConfig> m_appConfigs;
-  bool m_appConfigsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
+
+  Aws::String m_kmsKeyArn;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_iamIdentityCenterOptionsHasBeenSet = false;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_appConfigsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

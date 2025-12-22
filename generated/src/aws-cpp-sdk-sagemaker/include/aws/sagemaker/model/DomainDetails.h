@@ -158,24 +158,24 @@ class DomainDetails {
   ///@}
  private:
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   DomainStatus m_status{DomainStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_domainArnHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

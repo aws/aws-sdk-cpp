@@ -9,6 +9,7 @@
 #include <aws/secretsmanager/SecretsManagerRequest.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/secretsmanager/model/Filter.h>
+#include <aws/secretsmanager/model/SortByType.h>
 #include <aws/secretsmanager/model/SortOrderType.h>
 
 #include <utility>
@@ -128,21 +129,40 @@ class ListSecretsRequest : public SecretsManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If not specified, secrets are listed by <code>CreatedDate</code>.</p>
+   */
+  inline SortByType GetSortBy() const { return m_sortBy; }
+  inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+  inline void SetSortBy(SortByType value) {
+    m_sortByHasBeenSet = true;
+    m_sortBy = value;
+  }
+  inline ListSecretsRequest& WithSortBy(SortByType value) {
+    SetSortBy(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_includePlannedDeletion{false};
-  bool m_includePlannedDeletionHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   SortOrderType m_sortOrder{SortOrderType::NOT_SET};
+
+  SortByType m_sortBy{SortByType::NOT_SET};
+  bool m_includePlannedDeletionHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
 };
 
 }  // namespace Model

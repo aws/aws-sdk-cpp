@@ -84,12 +84,12 @@ class PutDataSetRefreshPropertiesRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   DataSetRefreshProperties m_dataSetRefreshProperties;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_dataSetRefreshPropertiesHasBeenSet = false;
 };
 

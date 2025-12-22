@@ -103,15 +103,15 @@ class UpdateCodeSigningConfigRequest : public LambdaRequest {
   ///@}
  private:
   Aws::String m_codeSigningConfigArn;
-  bool m_codeSigningConfigArnHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AllowedPublishers m_allowedPublishers;
-  bool m_allowedPublishersHasBeenSet = false;
 
   CodeSigningPolicies m_codeSigningPolicies;
+  bool m_codeSigningConfigArnHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_allowedPublishersHasBeenSet = false;
   bool m_codeSigningPoliciesHasBeenSet = false;
 };
 

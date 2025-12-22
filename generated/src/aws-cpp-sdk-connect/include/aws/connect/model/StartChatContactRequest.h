@@ -7,6 +7,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/ChatMessage.h>
+#include <aws/connect/model/DisconnectOnCustomerExitParticipantType.h>
 #include <aws/connect/model/ParticipantConfiguration.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/PersistentChat.h>
@@ -333,45 +334,75 @@ class StartChatContactRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of participant types to automatically disconnect when the end customer
+   * ends the chat session, allowing them to continue through disconnect flows such
+   * as surveys or feedback forms.</p>
+   */
+  inline const Aws::Vector<DisconnectOnCustomerExitParticipantType>& GetDisconnectOnCustomerExit() const {
+    return m_disconnectOnCustomerExit;
+  }
+  inline bool DisconnectOnCustomerExitHasBeenSet() const { return m_disconnectOnCustomerExitHasBeenSet; }
+  template <typename DisconnectOnCustomerExitT = Aws::Vector<DisconnectOnCustomerExitParticipantType>>
+  void SetDisconnectOnCustomerExit(DisconnectOnCustomerExitT&& value) {
+    m_disconnectOnCustomerExitHasBeenSet = true;
+    m_disconnectOnCustomerExit = std::forward<DisconnectOnCustomerExitT>(value);
+  }
+  template <typename DisconnectOnCustomerExitT = Aws::Vector<DisconnectOnCustomerExitParticipantType>>
+  StartChatContactRequest& WithDisconnectOnCustomerExit(DisconnectOnCustomerExitT&& value) {
+    SetDisconnectOnCustomerExit(std::forward<DisconnectOnCustomerExitT>(value));
+    return *this;
+  }
+  inline StartChatContactRequest& AddDisconnectOnCustomerExit(DisconnectOnCustomerExitParticipantType value) {
+    m_disconnectOnCustomerExitHasBeenSet = true;
+    m_disconnectOnCustomerExit.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   ParticipantDetails m_participantDetails;
-  bool m_participantDetailsHasBeenSet = false;
 
   ParticipantConfiguration m_participantConfiguration;
-  bool m_participantConfigurationHasBeenSet = false;
 
   ChatMessage m_initialMessage;
-  bool m_initialMessageHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   int m_chatDurationInMinutes{0};
-  bool m_chatDurationInMinutesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
-  bool m_supportedMessagingContentTypesHasBeenSet = false;
 
   PersistentChat m_persistentChat;
-  bool m_persistentChatHasBeenSet = false;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   Aws::String m_customerId;
+
+  Aws::Vector<DisconnectOnCustomerExitParticipantType> m_disconnectOnCustomerExit;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_participantDetailsHasBeenSet = false;
+  bool m_participantConfigurationHasBeenSet = false;
+  bool m_initialMessageHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_chatDurationInMinutesHasBeenSet = false;
+  bool m_supportedMessagingContentTypesHasBeenSet = false;
+  bool m_persistentChatHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
   bool m_customerIdHasBeenSet = false;
+  bool m_disconnectOnCustomerExitHasBeenSet = false;
 };
 
 }  // namespace Model

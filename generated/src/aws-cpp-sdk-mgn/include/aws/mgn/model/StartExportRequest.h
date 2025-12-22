@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mgn/MgnRequest.h>
 #include <aws/mgn/Mgn_EXPORTS.h>
@@ -51,6 +52,24 @@ class StartExportRequest : public MgnRequest {
 
   ///@{
   /**
+   * <p>Start export request s3key.</p>
+   */
+  inline const Aws::String& GetS3Key() const { return m_s3Key; }
+  inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
+  template <typename S3KeyT = Aws::String>
+  void SetS3Key(S3KeyT&& value) {
+    m_s3KeyHasBeenSet = true;
+    m_s3Key = std::forward<S3KeyT>(value);
+  }
+  template <typename S3KeyT = Aws::String>
+  StartExportRequest& WithS3Key(S3KeyT&& value) {
+    SetS3Key(std::forward<S3KeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Start export request s3 bucket owner.</p>
    */
   inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
@@ -69,30 +88,39 @@ class StartExportRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Start export request s3key.</p>
+   * <p>Start import request tags.</p>
    */
-  inline const Aws::String& GetS3Key() const { return m_s3Key; }
-  inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-  template <typename S3KeyT = Aws::String>
-  void SetS3Key(S3KeyT&& value) {
-    m_s3KeyHasBeenSet = true;
-    m_s3Key = std::forward<S3KeyT>(value);
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
   }
-  template <typename S3KeyT = Aws::String>
-  StartExportRequest& WithS3Key(S3KeyT&& value) {
-    SetS3Key(std::forward<S3KeyT>(value));
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  StartExportRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  StartExportRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
     return *this;
   }
   ///@}
  private:
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
-
-  Aws::String m_s3BucketOwner;
-  bool m_s3BucketOwnerHasBeenSet = false;
 
   Aws::String m_s3Key;
+
+  Aws::String m_s3BucketOwner;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_s3BucketHasBeenSet = false;
   bool m_s3KeyHasBeenSet = false;
+  bool m_s3BucketOwnerHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

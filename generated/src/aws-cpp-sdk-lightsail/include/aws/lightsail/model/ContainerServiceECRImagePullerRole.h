@@ -77,9 +77,9 @@ class ContainerServiceECRImagePullerRole {
   ///@}
  private:
   bool m_isActive{false};
-  bool m_isActiveHasBeenSet = false;
 
   Aws::String m_principalArn;
+  bool m_isActiveHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
 };
 

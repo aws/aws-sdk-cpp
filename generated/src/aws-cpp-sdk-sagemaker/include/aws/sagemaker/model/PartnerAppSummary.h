@@ -125,18 +125,18 @@ class PartnerAppSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PartnerAppType m_type{PartnerAppType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   PartnerAppStatus m_status{PartnerAppStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
 };
 

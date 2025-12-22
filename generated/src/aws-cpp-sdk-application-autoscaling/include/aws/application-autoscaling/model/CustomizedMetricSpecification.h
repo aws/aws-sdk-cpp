@@ -183,21 +183,21 @@ class CustomizedMetricSpecification {
   ///@}
  private:
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<MetricDimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   MetricStatistic m_statistic{MetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::String m_unit;
-  bool m_unitHasBeenSet = false;
 
   Aws::Vector<TargetTrackingMetricDataQuery> m_metrics;
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
   bool m_metricsHasBeenSet = false;
 };
 

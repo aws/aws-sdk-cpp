@@ -95,8 +95,13 @@ class PutAccountSettingRequest : public ECSRequest {
    * maintenance, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
    * Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer
-   * Guide</i>.</p> </li> <li> <p> <code>tagResourceAuthorization</code> - Amazon ECS
-   * is introducing tagging authorization for resource creation. Users must have
+   * Guide</i>.</p> </li> <li> <p> <code>fargateEventWindows</code> - When Amazon Web
+   * Services determines that a security or infrastructure update is needed for an
+   * Amazon ECS task hosted on Fargate, the tasks need to be stopped and new tasks
+   * launched to replace them. Use <code>fargateEventWindows</code> to use EC2 Event
+   * Windows associated with Fargate tasks to configure time windows for task
+   * retirement.</p> </li> <li> <p> <code>tagResourceAuthorization</code> - Amazon
+   * ECS is introducing tagging authorization for resource creation. Users must have
    * permissions for actions that create the resource, such as
    * <code>ecsCreateCluster</code>. If tags are specified when you create a resource,
    * Amazon Web Services performs additional authorization to verify if users or
@@ -198,12 +203,12 @@ class PutAccountSettingRequest : public ECSRequest {
   ///@}
  private:
   SettingName m_name{SettingName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_principalArn;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_principalArnHasBeenSet = false;
 };
 

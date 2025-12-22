@@ -86,12 +86,12 @@ class ResourceError {
   ///@}
  private:
   FleetErrorCode m_errorCode{FleetErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_errorTimestamp{};
+  bool m_errorCodeHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorTimestampHasBeenSet = false;
 };
 

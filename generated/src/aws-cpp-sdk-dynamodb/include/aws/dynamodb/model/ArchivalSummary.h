@@ -94,12 +94,12 @@ class ArchivalSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_archivalDateTime{};
-  bool m_archivalDateTimeHasBeenSet = false;
 
   Aws::String m_archivalReason;
-  bool m_archivalReasonHasBeenSet = false;
 
   Aws::String m_archivalBackupArn;
+  bool m_archivalDateTimeHasBeenSet = false;
+  bool m_archivalReasonHasBeenSet = false;
   bool m_archivalBackupArnHasBeenSet = false;
 };
 

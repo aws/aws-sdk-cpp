@@ -93,12 +93,12 @@ class StorageLensDataExport {
   ///@}
  private:
   S3BucketDestination m_s3BucketDestination;
-  bool m_s3BucketDestinationHasBeenSet = false;
 
   CloudWatchMetrics m_cloudWatchMetrics;
-  bool m_cloudWatchMetricsHasBeenSet = false;
 
   StorageLensTableDestination m_storageLensTableDestination;
+  bool m_s3BucketDestinationHasBeenSet = false;
+  bool m_cloudWatchMetricsHasBeenSet = false;
   bool m_storageLensTableDestinationHasBeenSet = false;
 };
 

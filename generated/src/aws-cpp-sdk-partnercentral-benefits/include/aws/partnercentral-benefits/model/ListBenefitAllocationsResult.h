@@ -86,12 +86,12 @@ class ListBenefitAllocationsResult {
   ///@}
  private:
   Aws::Vector<BenefitAllocationSummary> m_benefitAllocationSummaries;
-  bool m_benefitAllocationSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_benefitAllocationSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

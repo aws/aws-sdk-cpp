@@ -501,16 +501,16 @@ void S3CrtClient::CrtClientShutdownCallback(void* data) {
   wrappedData->clientShutdownSem->Release();
 }
 
-void S3CrtClient::CancelCrtRequestAsync(aws_s3_meta_request* meta_request) const {
+void S3CrtClient::CancelCrtRequest(aws_s3_meta_request* meta_request) const {
   assert(meta_request);
-  m_clientConfiguration.executor->Submit([meta_request]() { aws_s3_meta_request_cancel(meta_request); });
+  aws_s3_meta_request_cancel(meta_request);
 }
 
 int S3CrtClient::S3CrtRequestHeadersCallback(struct aws_s3_meta_request* meta_request, const struct aws_http_headers* headers,
                                              int response_status, void* user_data) {
   AWS_UNREFERENCED_PARAM(meta_request);
   auto* userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
-  if (!userData || !userData->response || !userData->originalRequest) {
+  if (!userData || !userData->response || !userData->originalRequest || !headers) {
     return AWS_OP_ERR;
   }
 
@@ -525,7 +525,7 @@ int S3CrtClient::S3CrtRequestHeadersCallback(struct aws_s3_meta_request* meta_re
   auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
   const HttpRequest* httpRequest = userData->request ? userData->request.get() : nullptr;
   if (shouldContinueFn && !shouldContinueFn(httpRequest)) {
-    userData->s3CrtClient->CancelCrtRequestAsync(meta_request);
+    userData->s3CrtClient->CancelCrtRequest(meta_request);
   }
 
   return AWS_OP_SUCCESS;
@@ -558,7 +558,7 @@ int S3CrtClient::S3CrtRequestGetBodyCallback(struct aws_s3_meta_request* meta_re
   auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
   const HttpRequest* httpRequest = userData->request ? userData->request.get() : nullptr;
   if (shouldContinueFn && !shouldContinueFn(httpRequest)) {
-    userData->s3CrtClient->CancelCrtRequestAsync(meta_request);
+    userData->s3CrtClient->CancelCrtRequest(meta_request);
   }
 
   return AWS_OP_SUCCESS;
@@ -580,7 +580,7 @@ void S3CrtClient::S3CrtRequestProgressCallback(struct aws_s3_meta_request* meta_
   auto& shouldContinueFn = userData->originalRequest->GetContinueRequestHandler();
   const HttpRequest* httpRequest = userData->request ? userData->request.get() : nullptr;
   if (shouldContinueFn && !shouldContinueFn(httpRequest)) {
-    userData->s3CrtClient->CancelCrtRequestAsync(meta_request);
+    userData->s3CrtClient->CancelCrtRequest(meta_request);
   }
 
   return;

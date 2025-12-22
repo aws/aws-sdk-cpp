@@ -95,9 +95,9 @@ class WarningDetail {
   ///@}
  private:
   WarningType m_type{WarningType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<WarningProperty> m_properties;
+  bool m_typeHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

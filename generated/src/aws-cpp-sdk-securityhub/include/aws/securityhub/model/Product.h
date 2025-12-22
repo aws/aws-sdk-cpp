@@ -218,30 +218,30 @@ class Product {
   ///@}
  private:
   Aws::String m_productArn;
-  bool m_productArnHasBeenSet = false;
 
   Aws::String m_productName;
-  bool m_productNameHasBeenSet = false;
 
   Aws::String m_companyName;
-  bool m_companyNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_categories;
-  bool m_categoriesHasBeenSet = false;
 
   Aws::Vector<IntegrationType> m_integrationTypes;
-  bool m_integrationTypesHasBeenSet = false;
 
   Aws::String m_marketplaceUrl;
-  bool m_marketplaceUrlHasBeenSet = false;
 
   Aws::String m_activationUrl;
-  bool m_activationUrlHasBeenSet = false;
 
   Aws::String m_productSubscriptionResourcePolicy;
+  bool m_productArnHasBeenSet = false;
+  bool m_productNameHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+  bool m_integrationTypesHasBeenSet = false;
+  bool m_marketplaceUrlHasBeenSet = false;
+  bool m_activationUrlHasBeenSet = false;
   bool m_productSubscriptionResourcePolicyHasBeenSet = false;
 };
 

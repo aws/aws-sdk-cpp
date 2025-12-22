@@ -24,49 +24,17 @@ UpdateSourceServerReplicationTypeResult::UpdateSourceServerReplicationTypeResult
 UpdateSourceServerReplicationTypeResult& UpdateSourceServerReplicationTypeResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("applicationID")) {
-    m_applicationID = jsonValue.GetString("applicationID");
-    m_applicationIDHasBeenSet = true;
+  if (jsonValue.ValueExists("sourceServerID")) {
+    m_sourceServerID = jsonValue.GetString("sourceServerID");
+    m_sourceServerIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("connectorAction")) {
-    m_connectorAction = jsonValue.GetObject("connectorAction");
-    m_connectorActionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dataReplicationInfo")) {
-    m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");
-    m_dataReplicationInfoHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("fqdnForActionFramework")) {
-    m_fqdnForActionFramework = jsonValue.GetString("fqdnForActionFramework");
-    m_fqdnForActionFrameworkHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("isArchived")) {
     m_isArchived = jsonValue.GetBool("isArchived");
     m_isArchivedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("launchedInstance")) {
-    m_launchedInstance = jsonValue.GetObject("launchedInstance");
-    m_launchedInstanceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lifeCycle")) {
-    m_lifeCycle = jsonValue.GetObject("lifeCycle");
-    m_lifeCycleHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("replicationType")) {
-    m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
-    m_replicationTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("sourceProperties")) {
-    m_sourceProperties = jsonValue.GetObject("sourceProperties");
-    m_sourcePropertiesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("sourceServerID")) {
-    m_sourceServerID = jsonValue.GetString("sourceServerID");
-    m_sourceServerIDHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -75,13 +43,45 @@ UpdateSourceServerReplicationTypeResult& UpdateSourceServerReplicationTypeResult
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("userProvidedID")) {
-    m_userProvidedID = jsonValue.GetString("userProvidedID");
-    m_userProvidedIDHasBeenSet = true;
+  if (jsonValue.ValueExists("launchedInstance")) {
+    m_launchedInstance = jsonValue.GetObject("launchedInstance");
+    m_launchedInstanceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("dataReplicationInfo")) {
+    m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");
+    m_dataReplicationInfoHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lifeCycle")) {
+    m_lifeCycle = jsonValue.GetObject("lifeCycle");
+    m_lifeCycleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceProperties")) {
+    m_sourceProperties = jsonValue.GetObject("sourceProperties");
+    m_sourcePropertiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("replicationType")) {
+    m_replicationType = ReplicationTypeMapper::GetReplicationTypeForName(jsonValue.GetString("replicationType"));
+    m_replicationTypeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("vcenterClientID")) {
     m_vcenterClientID = jsonValue.GetString("vcenterClientID");
     m_vcenterClientIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("applicationID")) {
+    m_applicationID = jsonValue.GetString("applicationID");
+    m_applicationIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("userProvidedID")) {
+    m_userProvidedID = jsonValue.GetString("userProvidedID");
+    m_userProvidedIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fqdnForActionFramework")) {
+    m_fqdnForActionFramework = jsonValue.GetString("fqdnForActionFramework");
+    m_fqdnForActionFrameworkHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("connectorAction")) {
+    m_connectorAction = jsonValue.GetObject("connectorAction");
+    m_connectorActionHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

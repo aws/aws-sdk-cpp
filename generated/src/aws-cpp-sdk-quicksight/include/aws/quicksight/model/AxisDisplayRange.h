@@ -71,9 +71,9 @@ class AxisDisplayRange {
   ///@}
  private:
   AxisDisplayMinMaxRange m_minMax;
-  bool m_minMaxHasBeenSet = false;
 
   AxisDisplayDataDrivenRange m_dataDriven;
+  bool m_minMaxHasBeenSet = false;
   bool m_dataDrivenHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetJobBookmarkRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   Aws::String m_runId;
+  bool m_jobNameHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
 };
 

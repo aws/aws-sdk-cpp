@@ -25,6 +25,13 @@ SnapshotJobResult& SnapshotJobResult::operator=(JsonView jsonValue) {
     }
     m_anonymousUsersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RegisteredUsers")) {
+    Aws::Utils::Array<JsonView> registeredUsersJsonList = jsonValue.GetArray("RegisteredUsers");
+    for (unsigned registeredUsersIndex = 0; registeredUsersIndex < registeredUsersJsonList.GetLength(); ++registeredUsersIndex) {
+      m_registeredUsers.push_back(registeredUsersJsonList[registeredUsersIndex].AsObject());
+    }
+    m_registeredUsersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +44,14 @@ JsonValue SnapshotJobResult::Jsonize() const {
       anonymousUsersJsonList[anonymousUsersIndex].AsObject(m_anonymousUsers[anonymousUsersIndex].Jsonize());
     }
     payload.WithArray("AnonymousUsers", std::move(anonymousUsersJsonList));
+  }
+
+  if (m_registeredUsersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> registeredUsersJsonList(m_registeredUsers.size());
+    for (unsigned registeredUsersIndex = 0; registeredUsersIndex < registeredUsersJsonList.GetLength(); ++registeredUsersIndex) {
+      registeredUsersJsonList[registeredUsersIndex].AsObject(m_registeredUsers[registeredUsersIndex].Jsonize());
+    }
+    payload.WithArray("RegisteredUsers", std::move(registeredUsersJsonList));
   }
 
   return payload;

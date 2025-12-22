@@ -103,15 +103,15 @@ class DescribeQueryRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_queryId;
-  bool m_queryIdHasBeenSet = false;
 
   Aws::String m_queryAlias;
-  bool m_queryAliasHasBeenSet = false;
 
   Aws::String m_refreshId;
-  bool m_refreshIdHasBeenSet = false;
 
   Aws::String m_eventDataStoreOwnerAccountId;
+  bool m_queryIdHasBeenSet = false;
+  bool m_queryAliasHasBeenSet = false;
+  bool m_refreshIdHasBeenSet = false;
   bool m_eventDataStoreOwnerAccountIdHasBeenSet = false;
 };
 

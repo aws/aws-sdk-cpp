@@ -70,9 +70,9 @@ class LogPublishingOptions {
   ///@}
  private:
   bool m_isLoggingEnabled{false};
-  bool m_isLoggingEnabledHasBeenSet = false;
 
   CloudWatchLogDestination m_cloudWatchLogDestination;
+  bool m_isLoggingEnabledHasBeenSet = false;
   bool m_cloudWatchLogDestinationHasBeenSet = false;
 };
 

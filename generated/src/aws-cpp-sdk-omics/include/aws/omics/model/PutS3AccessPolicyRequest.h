@@ -65,9 +65,9 @@ class PutS3AccessPolicyRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_s3AccessPointArn;
-  bool m_s3AccessPointArnHasBeenSet = false;
 
   Aws::String m_s3AccessPolicy;
+  bool m_s3AccessPointArnHasBeenSet = false;
   bool m_s3AccessPolicyHasBeenSet = false;
 };
 

@@ -106,15 +106,15 @@ class CreateEmailIdentityResult {
   ///@}
  private:
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   bool m_verifiedForSendingStatus{false};
-  bool m_verifiedForSendingStatusHasBeenSet = false;
 
   DkimAttributes m_dkimAttributes;
-  bool m_dkimAttributesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_verifiedForSendingStatusHasBeenSet = false;
+  bool m_dkimAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

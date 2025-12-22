@@ -91,12 +91,12 @@ class PermissionGroupByUser {
   ///@}
  private:
   Aws::String m_permissionGroupId;
-  bool m_permissionGroupIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PermissionGroupMembershipStatus m_membershipStatus{PermissionGroupMembershipStatus::NOT_SET};
+  bool m_permissionGroupIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_membershipStatusHasBeenSet = false;
 };
 

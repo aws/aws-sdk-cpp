@@ -147,21 +147,21 @@ class UpdateHoursOfOperationRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_hoursOfOperationId;
-  bool m_hoursOfOperationIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   Aws::Vector<HoursOfOperationConfig> m_config;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_hoursOfOperationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
   bool m_configHasBeenSet = false;
 };
 

@@ -223,30 +223,30 @@ class ReportPlan {
   ///@}
  private:
   Aws::String m_reportPlanArn;
-  bool m_reportPlanArnHasBeenSet = false;
 
   Aws::String m_reportPlanName;
-  bool m_reportPlanNameHasBeenSet = false;
 
   Aws::String m_reportPlanDescription;
-  bool m_reportPlanDescriptionHasBeenSet = false;
 
   ReportSetting m_reportSetting;
-  bool m_reportSettingHasBeenSet = false;
 
   ReportDeliveryChannel m_reportDeliveryChannel;
-  bool m_reportDeliveryChannelHasBeenSet = false;
 
   Aws::String m_deploymentStatus;
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAttemptedExecutionTime{};
-  bool m_lastAttemptedExecutionTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSuccessfulExecutionTime{};
+  bool m_reportPlanArnHasBeenSet = false;
+  bool m_reportPlanNameHasBeenSet = false;
+  bool m_reportPlanDescriptionHasBeenSet = false;
+  bool m_reportSettingHasBeenSet = false;
+  bool m_reportDeliveryChannelHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastAttemptedExecutionTimeHasBeenSet = false;
   bool m_lastSuccessfulExecutionTimeHasBeenSet = false;
 };
 

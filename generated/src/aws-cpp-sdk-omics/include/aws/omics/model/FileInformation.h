@@ -98,15 +98,15 @@ class FileInformation {
   ///@}
  private:
   int m_totalParts{0};
-  bool m_totalPartsHasBeenSet = false;
 
   long long m_partSize{0};
-  bool m_partSizeHasBeenSet = false;
 
   long long m_contentLength{0};
-  bool m_contentLengthHasBeenSet = false;
 
   ReadSetS3Access m_s3Access;
+  bool m_totalPartsHasBeenSet = false;
+  bool m_partSizeHasBeenSet = false;
+  bool m_contentLengthHasBeenSet = false;
   bool m_s3AccessHasBeenSet = false;
 };
 

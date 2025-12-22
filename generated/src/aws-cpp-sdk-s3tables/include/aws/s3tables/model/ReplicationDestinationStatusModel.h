@@ -126,18 +126,18 @@ class ReplicationDestinationStatusModel {
   ///@}
  private:
   ReplicationStatus m_replicationStatus{ReplicationStatus::NOT_SET};
-  bool m_replicationStatusHasBeenSet = false;
 
   Aws::String m_destinationTableBucketArn;
-  bool m_destinationTableBucketArnHasBeenSet = false;
 
   Aws::String m_destinationTableArn;
-  bool m_destinationTableArnHasBeenSet = false;
 
   LastSuccessfulReplicatedUpdate m_lastSuccessfulReplicatedUpdate;
-  bool m_lastSuccessfulReplicatedUpdateHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_replicationStatusHasBeenSet = false;
+  bool m_destinationTableBucketArnHasBeenSet = false;
+  bool m_destinationTableArnHasBeenSet = false;
+  bool m_lastSuccessfulReplicatedUpdateHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

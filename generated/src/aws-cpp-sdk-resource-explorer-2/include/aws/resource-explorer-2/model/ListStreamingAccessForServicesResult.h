@@ -90,12 +90,12 @@ class ListStreamingAccessForServicesResult {
   ///@}
  private:
   Aws::Vector<StreamingAccessDetails> m_streamingAccessForServices;
-  bool m_streamingAccessForServicesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamingAccessForServicesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

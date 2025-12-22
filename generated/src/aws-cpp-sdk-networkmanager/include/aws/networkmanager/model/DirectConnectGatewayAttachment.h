@@ -67,9 +67,9 @@ class DirectConnectGatewayAttachment {
   ///@}
  private:
   Attachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   Aws::String m_directConnectGatewayArn;
+  bool m_attachmentHasBeenSet = false;
   bool m_directConnectGatewayArnHasBeenSet = false;
 };
 

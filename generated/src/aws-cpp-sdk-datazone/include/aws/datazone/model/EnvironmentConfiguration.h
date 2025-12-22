@@ -219,33 +219,33 @@ class EnvironmentConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountPools;
-  bool m_accountPoolsHasBeenSet = false;
 
   AwsAccount m_awsAccount;
-  bool m_awsAccountHasBeenSet = false;
 
   Region m_awsRegion;
-  bool m_awsRegionHasBeenSet = false;
 
   EnvironmentConfigurationParametersDetails m_configurationParameters;
-  bool m_configurationParametersHasBeenSet = false;
 
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
-  bool m_deploymentModeHasBeenSet = false;
 
   int m_deploymentOrder{0};
-  bool m_deploymentOrderHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_environmentBlueprintId;
-  bool m_environmentBlueprintIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_accountPoolsHasBeenSet = false;
+  bool m_awsAccountHasBeenSet = false;
+  bool m_awsRegionHasBeenSet = false;
+  bool m_configurationParametersHasBeenSet = false;
+  bool m_deploymentModeHasBeenSet = false;
+  bool m_deploymentOrderHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_environmentBlueprintIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

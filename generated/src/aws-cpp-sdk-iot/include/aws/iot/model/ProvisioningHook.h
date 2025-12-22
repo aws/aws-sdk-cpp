@@ -71,9 +71,9 @@ class ProvisioningHook {
   ///@}
  private:
   Aws::String m_payloadVersion;
-  bool m_payloadVersionHasBeenSet = false;
 
   Aws::String m_targetArn;
+  bool m_payloadVersionHasBeenSet = false;
   bool m_targetArnHasBeenSet = false;
 };
 

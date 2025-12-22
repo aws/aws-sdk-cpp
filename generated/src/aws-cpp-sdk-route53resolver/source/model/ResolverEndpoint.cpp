@@ -88,6 +88,14 @@ ResolverEndpoint& ResolverEndpoint::operator=(JsonView jsonValue) {
     }
     m_protocolsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RniEnhancedMetricsEnabled")) {
+    m_rniEnhancedMetricsEnabled = jsonValue.GetBool("RniEnhancedMetricsEnabled");
+    m_rniEnhancedMetricsEnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TargetNameServerMetricsEnabled")) {
+    m_targetNameServerMetricsEnabled = jsonValue.GetBool("TargetNameServerMetricsEnabled");
+    m_targetNameServerMetricsEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -164,6 +172,14 @@ JsonValue ResolverEndpoint::Jsonize() const {
       protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
     }
     payload.WithArray("Protocols", std::move(protocolsJsonList));
+  }
+
+  if (m_rniEnhancedMetricsEnabledHasBeenSet) {
+    payload.WithBool("RniEnhancedMetricsEnabled", m_rniEnhancedMetricsEnabled);
+  }
+
+  if (m_targetNameServerMetricsEnabledHasBeenSet) {
+    payload.WithBool("TargetNameServerMetricsEnabled", m_targetNameServerMetricsEnabled);
   }
 
   return payload;

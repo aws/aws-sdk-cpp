@@ -381,45 +381,45 @@ class UpdateTableRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Vector<AttributeDefinition> m_attributeDefinitions;
-  bool m_attributeDefinitionsHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   BillingMode m_billingMode{BillingMode::NOT_SET};
-  bool m_billingModeHasBeenSet = false;
 
   ProvisionedThroughput m_provisionedThroughput;
-  bool m_provisionedThroughputHasBeenSet = false;
 
   Aws::Vector<GlobalSecondaryIndexUpdate> m_globalSecondaryIndexUpdates;
-  bool m_globalSecondaryIndexUpdatesHasBeenSet = false;
 
   StreamSpecification m_streamSpecification;
-  bool m_streamSpecificationHasBeenSet = false;
 
   SSESpecification m_sSESpecification;
-  bool m_sSESpecificationHasBeenSet = false;
 
   Aws::Vector<ReplicationGroupUpdate> m_replicaUpdates;
-  bool m_replicaUpdatesHasBeenSet = false;
 
   TableClass m_tableClass{TableClass::NOT_SET};
-  bool m_tableClassHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   MultiRegionConsistency m_multiRegionConsistency{MultiRegionConsistency::NOT_SET};
-  bool m_multiRegionConsistencyHasBeenSet = false;
 
   Aws::Vector<GlobalTableWitnessGroupUpdate> m_globalTableWitnessUpdates;
-  bool m_globalTableWitnessUpdatesHasBeenSet = false;
 
   OnDemandThroughput m_onDemandThroughput;
-  bool m_onDemandThroughputHasBeenSet = false;
 
   WarmThroughput m_warmThroughput;
+  bool m_attributeDefinitionsHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_billingModeHasBeenSet = false;
+  bool m_provisionedThroughputHasBeenSet = false;
+  bool m_globalSecondaryIndexUpdatesHasBeenSet = false;
+  bool m_streamSpecificationHasBeenSet = false;
+  bool m_sSESpecificationHasBeenSet = false;
+  bool m_replicaUpdatesHasBeenSet = false;
+  bool m_tableClassHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_multiRegionConsistencyHasBeenSet = false;
+  bool m_globalTableWitnessUpdatesHasBeenSet = false;
+  bool m_onDemandThroughputHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
 };
 

@@ -121,12 +121,12 @@ class ZonalConfig {
   ///@}
  private:
   long long m_firstZoneMonitorDurationInSeconds{0};
-  bool m_firstZoneMonitorDurationInSecondsHasBeenSet = false;
 
   long long m_monitorDurationInSeconds{0};
-  bool m_monitorDurationInSecondsHasBeenSet = false;
 
   MinimumHealthyHostsPerZone m_minimumHealthyHostsPerZone;
+  bool m_firstZoneMonitorDurationInSecondsHasBeenSet = false;
+  bool m_monitorDurationInSecondsHasBeenSet = false;
   bool m_minimumHealthyHostsPerZoneHasBeenSet = false;
 };
 

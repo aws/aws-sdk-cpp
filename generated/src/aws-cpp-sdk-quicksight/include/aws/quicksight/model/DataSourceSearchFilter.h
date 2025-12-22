@@ -114,12 +114,12 @@ class DataSourceSearchFilter {
   ///@}
  private:
   FilterOperator m_operator{FilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   DataSourceFilterAttribute m_name{DataSourceFilterAttribute::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_operatorHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -65,9 +65,9 @@ class TotalLocalStorageGBRequest {
   ///@}
  private:
   double m_min{0.0};
-  bool m_minHasBeenSet = false;
 
   double m_max{0.0};
+  bool m_minHasBeenSet = false;
   bool m_maxHasBeenSet = false;
 };
 

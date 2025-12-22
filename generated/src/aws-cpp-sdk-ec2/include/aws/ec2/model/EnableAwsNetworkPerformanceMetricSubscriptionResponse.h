@@ -59,9 +59,9 @@ class EnableAwsNetworkPerformanceMetricSubscriptionResponse {
   ///@}
  private:
   bool m_output{false};
-  bool m_outputHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_outputHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

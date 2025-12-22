@@ -96,12 +96,12 @@ class Application {
   ///@}
  private:
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicationPermissions;
-  bool m_applicationPermissionsHasBeenSet = false;
 
   ApplicationType m_type{ApplicationType::NOT_SET};
+  bool m_namespaceHasBeenSet = false;
+  bool m_applicationPermissionsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

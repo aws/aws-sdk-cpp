@@ -129,18 +129,18 @@ class OutboundCrossClusterSearchConnection {
   ///@}
  private:
   DomainInformation m_sourceDomainInfo;
-  bool m_sourceDomainInfoHasBeenSet = false;
 
   DomainInformation m_destinationDomainInfo;
-  bool m_destinationDomainInfoHasBeenSet = false;
 
   Aws::String m_crossClusterSearchConnectionId;
-  bool m_crossClusterSearchConnectionIdHasBeenSet = false;
 
   Aws::String m_connectionAlias;
-  bool m_connectionAliasHasBeenSet = false;
 
   OutboundCrossClusterSearchConnectionStatus m_connectionStatus;
+  bool m_sourceDomainInfoHasBeenSet = false;
+  bool m_destinationDomainInfoHasBeenSet = false;
+  bool m_crossClusterSearchConnectionIdHasBeenSet = false;
+  bool m_connectionAliasHasBeenSet = false;
   bool m_connectionStatusHasBeenSet = false;
 };
 

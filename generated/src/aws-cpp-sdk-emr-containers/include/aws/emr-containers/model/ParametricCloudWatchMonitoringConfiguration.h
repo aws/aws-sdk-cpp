@@ -70,9 +70,9 @@ class ParametricCloudWatchMonitoringConfiguration {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logStreamNamePrefix;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_logStreamNamePrefixHasBeenSet = false;
 };
 

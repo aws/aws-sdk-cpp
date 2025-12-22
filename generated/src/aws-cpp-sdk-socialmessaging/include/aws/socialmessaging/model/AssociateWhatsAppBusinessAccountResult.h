@@ -76,12 +76,12 @@ class AssociateWhatsAppBusinessAccountResult {
   ///@}
  private:
   WhatsAppSignupCallbackResult m_signupCallbackResult;
-  bool m_signupCallbackResultHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_signupCallbackResultHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

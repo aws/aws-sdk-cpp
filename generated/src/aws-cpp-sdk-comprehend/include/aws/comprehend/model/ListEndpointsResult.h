@@ -85,12 +85,12 @@ class ListEndpointsResult {
   ///@}
  private:
   Aws::Vector<EndpointProperties> m_endpointPropertiesList;
-  bool m_endpointPropertiesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointPropertiesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class AnswerMachineDetectionConfig {
   ///@}
  private:
   bool m_enableAnswerMachineDetection{false};
-  bool m_enableAnswerMachineDetectionHasBeenSet = false;
 
   bool m_awaitAnswerMachinePrompt{false};
+  bool m_enableAnswerMachineDetectionHasBeenSet = false;
   bool m_awaitAnswerMachinePromptHasBeenSet = false;
 };
 

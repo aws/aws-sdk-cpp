@@ -124,18 +124,18 @@ class DocumentDetails {
   ///@}
  private:
   Aws::String m_documentId;
-  bool m_documentIdHasBeenSet = false;
 
   DocumentStatus m_status{DocumentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ErrorDetail m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_documentIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class TagUserRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_userNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -140,21 +140,21 @@ class GetBulkPublishDetailsResult {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_bulkPublishStartTime{};
-  bool m_bulkPublishStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_bulkPublishCompleteTime{};
-  bool m_bulkPublishCompleteTimeHasBeenSet = false;
 
   BulkPublishStatus m_bulkPublishStatus{BulkPublishStatus::NOT_SET};
-  bool m_bulkPublishStatusHasBeenSet = false;
 
   Aws::String m_failureMessage;
-  bool m_failureMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_bulkPublishStartTimeHasBeenSet = false;
+  bool m_bulkPublishCompleteTimeHasBeenSet = false;
+  bool m_bulkPublishStatusHasBeenSet = false;
+  bool m_failureMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

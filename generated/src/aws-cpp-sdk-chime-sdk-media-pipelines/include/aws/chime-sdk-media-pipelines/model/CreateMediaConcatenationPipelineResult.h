@@ -64,9 +64,9 @@ class CreateMediaConcatenationPipelineResult {
   ///@}
  private:
   MediaConcatenationPipeline m_mediaConcatenationPipeline;
-  bool m_mediaConcatenationPipelineHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mediaConcatenationPipelineHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

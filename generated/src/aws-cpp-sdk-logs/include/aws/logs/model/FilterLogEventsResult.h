@@ -112,15 +112,15 @@ class FilterLogEventsResult {
   ///@}
  private:
   Aws::Vector<FilteredLogEvent> m_events;
-  bool m_eventsHasBeenSet = false;
 
   Aws::Vector<SearchedLogStream> m_searchedLogStreams;
-  bool m_searchedLogStreamsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventsHasBeenSet = false;
+  bool m_searchedLogStreamsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

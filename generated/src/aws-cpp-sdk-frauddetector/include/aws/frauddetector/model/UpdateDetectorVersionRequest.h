@@ -184,24 +184,24 @@ class UpdateDetectorVersionRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_externalModelEndpoints;
-  bool m_externalModelEndpointsHasBeenSet = false;
 
   Aws::Vector<Rule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<ModelVersion> m_modelVersions;
-  bool m_modelVersionsHasBeenSet = false;
 
   RuleExecutionMode m_ruleExecutionMode{RuleExecutionMode::NOT_SET};
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionIdHasBeenSet = false;
+  bool m_externalModelEndpointsHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_modelVersionsHasBeenSet = false;
   bool m_ruleExecutionModeHasBeenSet = false;
 };
 

@@ -75,9 +75,9 @@ class GetCloudExadataInfrastructureUnallocatedResourcesRequest : public OdbReque
   ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbServers;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
   bool m_dbServersHasBeenSet = false;
 };
 

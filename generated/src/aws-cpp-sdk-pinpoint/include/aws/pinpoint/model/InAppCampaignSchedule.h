@@ -90,12 +90,12 @@ class InAppCampaignSchedule {
   ///@}
  private:
   Aws::String m_endDate;
-  bool m_endDateHasBeenSet = false;
 
   CampaignEventFilter m_eventFilter;
-  bool m_eventFilterHasBeenSet = false;
 
   QuietTime m_quietTime;
+  bool m_endDateHasBeenSet = false;
+  bool m_eventFilterHasBeenSet = false;
   bool m_quietTimeHasBeenSet = false;
 };
 

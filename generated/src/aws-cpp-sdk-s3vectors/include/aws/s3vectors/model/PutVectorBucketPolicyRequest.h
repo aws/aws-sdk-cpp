@@ -86,12 +86,12 @@ class PutVectorBucketPolicyRequest : public S3VectorsRequest {
   ///@}
  private:
   Aws::String m_vectorBucketName;
-  bool m_vectorBucketNameHasBeenSet = false;
 
   Aws::String m_vectorBucketArn;
-  bool m_vectorBucketArnHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_vectorBucketNameHasBeenSet = false;
+  bool m_vectorBucketArnHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

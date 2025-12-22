@@ -108,15 +108,15 @@ class CreateSnapshotRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

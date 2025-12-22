@@ -62,9 +62,9 @@ class ListDistributionsByOriginRequestPolicyId2020_05_31Result {
   ///@}
  private:
   DistributionIdList m_distributionIdList;
-  bool m_distributionIdListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_distributionIdListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

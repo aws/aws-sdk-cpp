@@ -120,18 +120,18 @@ class ExportStatus {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRefreshedAt{};
-  bool m_lastRefreshedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   ExportStatusCode m_statusCode{ExportStatusCode::NOT_SET};
-  bool m_statusCodeHasBeenSet = false;
 
   ExecutionStatusReason m_statusReason{ExecutionStatusReason::NOT_SET};
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastRefreshedAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

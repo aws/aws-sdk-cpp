@@ -485,69 +485,69 @@ class UpdateAppRequest : public AmplifyRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   Aws::String m_computeRoleArn;
-  bool m_computeRoleArnHasBeenSet = false;
 
   Aws::String m_iamServiceRoleArn;
-  bool m_iamServiceRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   bool m_enableBranchAutoBuild{false};
-  bool m_enableBranchAutoBuildHasBeenSet = false;
 
   bool m_enableBranchAutoDeletion{false};
-  bool m_enableBranchAutoDeletionHasBeenSet = false;
 
   bool m_enableBasicAuth{false};
-  bool m_enableBasicAuthHasBeenSet = false;
 
   Aws::String m_basicAuthCredentials;
-  bool m_basicAuthCredentialsHasBeenSet = false;
 
   Aws::Vector<CustomRule> m_customRules;
-  bool m_customRulesHasBeenSet = false;
 
   Aws::String m_buildSpec;
-  bool m_buildSpecHasBeenSet = false;
 
   Aws::String m_customHeaders;
-  bool m_customHeadersHasBeenSet = false;
 
   bool m_enableAutoBranchCreation{false};
-  bool m_enableAutoBranchCreationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autoBranchCreationPatterns;
-  bool m_autoBranchCreationPatternsHasBeenSet = false;
 
   AutoBranchCreationConfig m_autoBranchCreationConfig;
-  bool m_autoBranchCreationConfigHasBeenSet = false;
 
   Aws::String m_repository;
-  bool m_repositoryHasBeenSet = false;
 
   Aws::String m_oauthToken;
-  bool m_oauthTokenHasBeenSet = false;
 
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   JobConfig m_jobConfig;
-  bool m_jobConfigHasBeenSet = false;
 
   CacheConfig m_cacheConfig;
+  bool m_appIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_computeRoleArnHasBeenSet = false;
+  bool m_iamServiceRoleArnHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
+  bool m_enableBranchAutoBuildHasBeenSet = false;
+  bool m_enableBranchAutoDeletionHasBeenSet = false;
+  bool m_enableBasicAuthHasBeenSet = false;
+  bool m_basicAuthCredentialsHasBeenSet = false;
+  bool m_customRulesHasBeenSet = false;
+  bool m_buildSpecHasBeenSet = false;
+  bool m_customHeadersHasBeenSet = false;
+  bool m_enableAutoBranchCreationHasBeenSet = false;
+  bool m_autoBranchCreationPatternsHasBeenSet = false;
+  bool m_autoBranchCreationConfigHasBeenSet = false;
+  bool m_repositoryHasBeenSet = false;
+  bool m_oauthTokenHasBeenSet = false;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_jobConfigHasBeenSet = false;
   bool m_cacheConfigHasBeenSet = false;
 };
 

@@ -154,21 +154,21 @@ class CreateRetrainingSchedulerRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_retrainingStartDate{};
-  bool m_retrainingStartDateHasBeenSet = false;
 
   Aws::String m_retrainingFrequency;
-  bool m_retrainingFrequencyHasBeenSet = false;
 
   Aws::String m_lookbackWindow;
-  bool m_lookbackWindowHasBeenSet = false;
 
   ModelPromoteMode m_promoteMode{ModelPromoteMode::NOT_SET};
-  bool m_promoteModeHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_modelNameHasBeenSet = false;
+  bool m_retrainingStartDateHasBeenSet = false;
+  bool m_retrainingFrequencyHasBeenSet = false;
+  bool m_lookbackWindowHasBeenSet = false;
+  bool m_promoteModeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

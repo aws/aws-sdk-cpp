@@ -60,9 +60,9 @@ class GetPerformanceAnalysisReportResult {
   ///@}
  private:
   AnalysisReport m_analysisReport;
-  bool m_analysisReportHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analysisReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

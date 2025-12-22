@@ -114,15 +114,16 @@ class InvokeAssistantRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_conversationId;
-  bool m_conversationIdHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   bool m_enableTrace{false};
-  bool m_enableTraceHasBeenSet = false;
   InvokeAssistantHandler m_handler;
   Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+  bool m_conversationIdHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_enableTraceHasBeenSet = false;
 };
 
 }  // namespace Model

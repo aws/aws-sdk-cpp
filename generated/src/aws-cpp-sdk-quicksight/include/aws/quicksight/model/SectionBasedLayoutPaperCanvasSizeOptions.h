@@ -88,12 +88,12 @@ class SectionBasedLayoutPaperCanvasSizeOptions {
   ///@}
  private:
   PaperSize m_paperSize{PaperSize::NOT_SET};
-  bool m_paperSizeHasBeenSet = false;
 
   PaperOrientation m_paperOrientation{PaperOrientation::NOT_SET};
-  bool m_paperOrientationHasBeenSet = false;
 
   Spacing m_paperMargin;
+  bool m_paperSizeHasBeenSet = false;
+  bool m_paperOrientationHasBeenSet = false;
   bool m_paperMarginHasBeenSet = false;
 };
 

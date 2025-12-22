@@ -75,9 +75,9 @@ class AddUserToGroupRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_groupNameHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

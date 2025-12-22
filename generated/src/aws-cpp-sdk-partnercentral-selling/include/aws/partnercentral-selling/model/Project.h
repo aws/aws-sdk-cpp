@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+#include <aws/partnercentral-selling/model/AwsPartition.h>
 #include <aws/partnercentral-selling/model/CompetitorName.h>
 #include <aws/partnercentral-selling/model/DeliveryModel.h>
 #include <aws/partnercentral-selling/model/ExpectedCustomerSpend.h>
@@ -345,42 +346,63 @@ class Project {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>AWS partition where the opportunity will be deployed. Possible values:
+   * 'aws-eusc' for AWS European Sovereign Cloud, <code>null</code> for all other
+   * partitions</p>
+   */
+  inline AwsPartition GetAwsPartition() const { return m_awsPartition; }
+  inline bool AwsPartitionHasBeenSet() const { return m_awsPartitionHasBeenSet; }
+  inline void SetAwsPartition(AwsPartition value) {
+    m_awsPartitionHasBeenSet = true;
+    m_awsPartition = value;
+  }
+  inline Project& WithAwsPartition(AwsPartition value) {
+    SetAwsPartition(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<DeliveryModel> m_deliveryModels;
-  bool m_deliveryModelsHasBeenSet = false;
 
   Aws::Vector<ExpectedCustomerSpend> m_expectedCustomerSpend;
-  bool m_expectedCustomerSpendHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_apnPrograms;
-  bool m_apnProgramsHasBeenSet = false;
 
   Aws::String m_customerBusinessProblem;
-  bool m_customerBusinessProblemHasBeenSet = false;
 
   Aws::String m_customerUseCase;
-  bool m_customerUseCaseHasBeenSet = false;
 
   Aws::String m_relatedOpportunityIdentifier;
-  bool m_relatedOpportunityIdentifierHasBeenSet = false;
 
   Aws::Vector<SalesActivity> m_salesActivities;
-  bool m_salesActivitiesHasBeenSet = false;
 
   CompetitorName m_competitorName{CompetitorName::NOT_SET};
-  bool m_competitorNameHasBeenSet = false;
 
   Aws::String m_otherCompetitorNames;
-  bool m_otherCompetitorNamesHasBeenSet = false;
 
   Aws::String m_otherSolutionDescription;
-  bool m_otherSolutionDescriptionHasBeenSet = false;
 
   Aws::String m_additionalComments;
+
+  AwsPartition m_awsPartition{AwsPartition::NOT_SET};
+  bool m_deliveryModelsHasBeenSet = false;
+  bool m_expectedCustomerSpendHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
+  bool m_apnProgramsHasBeenSet = false;
+  bool m_customerBusinessProblemHasBeenSet = false;
+  bool m_customerUseCaseHasBeenSet = false;
+  bool m_relatedOpportunityIdentifierHasBeenSet = false;
+  bool m_salesActivitiesHasBeenSet = false;
+  bool m_competitorNameHasBeenSet = false;
+  bool m_otherCompetitorNamesHasBeenSet = false;
+  bool m_otherSolutionDescriptionHasBeenSet = false;
   bool m_additionalCommentsHasBeenSet = false;
+  bool m_awsPartitionHasBeenSet = false;
 };
 
 }  // namespace Model

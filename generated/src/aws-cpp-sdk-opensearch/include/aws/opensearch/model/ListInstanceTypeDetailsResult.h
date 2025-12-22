@@ -88,12 +88,12 @@ class ListInstanceTypeDetailsResult {
   ///@}
  private:
   Aws::Vector<InstanceTypeDetails> m_instanceTypeDetails;
-  bool m_instanceTypeDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_instanceTypeDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class DescribeApplicationAssociationsRequest : public WorkSpacesRequest {
   ///@}
  private:
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::Vector<ApplicationAssociatedResourceType> m_associatedResourceTypes;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_applicationIdHasBeenSet = false;
   bool m_associatedResourceTypesHasBeenSet = false;
 };
 

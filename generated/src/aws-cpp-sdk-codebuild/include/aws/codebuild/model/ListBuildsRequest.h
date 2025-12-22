@@ -74,9 +74,9 @@ class ListBuildsRequest : public CodeBuildRequest {
   ///@}
  private:
   SortOrderType m_sortOrder{SortOrderType::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_sortOrderHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

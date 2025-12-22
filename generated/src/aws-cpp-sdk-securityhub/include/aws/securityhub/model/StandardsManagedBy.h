@@ -72,9 +72,9 @@ class StandardsManagedBy {
   ///@}
  private:
   Aws::String m_company;
-  bool m_companyHasBeenSet = false;
 
   Aws::String m_product;
+  bool m_companyHasBeenSet = false;
   bool m_productHasBeenSet = false;
 };
 

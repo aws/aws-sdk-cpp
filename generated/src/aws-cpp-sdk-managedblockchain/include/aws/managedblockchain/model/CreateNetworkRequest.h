@@ -216,30 +216,30 @@ class CreateNetworkRequest : public ManagedBlockchainRequest {
   ///@}
  private:
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Framework m_framework{Framework::NOT_SET};
-  bool m_frameworkHasBeenSet = false;
 
   Aws::String m_frameworkVersion;
-  bool m_frameworkVersionHasBeenSet = false;
 
   NetworkFrameworkConfiguration m_frameworkConfiguration;
-  bool m_frameworkConfigurationHasBeenSet = false;
 
   VotingPolicy m_votingPolicy;
-  bool m_votingPolicyHasBeenSet = false;
 
   MemberConfiguration m_memberConfiguration;
-  bool m_memberConfigurationHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_frameworkHasBeenSet = false;
+  bool m_frameworkVersionHasBeenSet = false;
+  bool m_frameworkConfigurationHasBeenSet = false;
+  bool m_votingPolicyHasBeenSet = false;
+  bool m_memberConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

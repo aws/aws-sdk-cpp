@@ -85,12 +85,12 @@ class UpdateDetectorVersionMetadataRequest : public FraudDetectorRequest {
   ///@}
  private:
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

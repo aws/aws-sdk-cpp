@@ -82,9 +82,9 @@ class FargateDetails {
   ///@}
  private:
   Aws::Vector<Aws::String> m_issues;
-  bool m_issuesHasBeenSet = false;
 
   ManagementType m_managementType{ManagementType::NOT_SET};
+  bool m_issuesHasBeenSet = false;
   bool m_managementTypeHasBeenSet = false;
 };
 

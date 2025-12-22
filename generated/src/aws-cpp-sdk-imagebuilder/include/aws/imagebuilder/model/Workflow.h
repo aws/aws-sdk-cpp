@@ -291,42 +291,42 @@ class Workflow {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_changeDescription;
-  bool m_changeDescriptionHasBeenSet = false;
 
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   WorkflowState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<WorkflowParameterDetail> m_parameters;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_changeDescriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

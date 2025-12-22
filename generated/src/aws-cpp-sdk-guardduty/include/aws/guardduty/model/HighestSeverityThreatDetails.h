@@ -86,12 +86,12 @@ class HighestSeverityThreatDetails {
   ///@}
  private:
   Aws::String m_severity;
-  bool m_severityHasBeenSet = false;
 
   Aws::String m_threatName;
-  bool m_threatNameHasBeenSet = false;
 
   int m_count{0};
+  bool m_severityHasBeenSet = false;
+  bool m_threatNameHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

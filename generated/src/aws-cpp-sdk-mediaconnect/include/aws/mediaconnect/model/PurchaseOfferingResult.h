@@ -61,9 +61,9 @@ class PurchaseOfferingResult {
   ///@}
  private:
   Reservation m_reservation;
-  bool m_reservationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_reservationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

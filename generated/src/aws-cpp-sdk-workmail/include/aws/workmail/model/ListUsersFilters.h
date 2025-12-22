@@ -122,18 +122,18 @@ class ListUsersFilters {
   ///@}
  private:
   Aws::String m_usernamePrefix;
-  bool m_usernamePrefixHasBeenSet = false;
 
   Aws::String m_displayNamePrefix;
-  bool m_displayNamePrefixHasBeenSet = false;
 
   Aws::String m_primaryEmailPrefix;
-  bool m_primaryEmailPrefixHasBeenSet = false;
 
   EntityState m_state{EntityState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_identityProviderUserIdPrefix;
+  bool m_usernamePrefixHasBeenSet = false;
+  bool m_displayNamePrefixHasBeenSet = false;
+  bool m_primaryEmailPrefixHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_identityProviderUserIdPrefixHasBeenSet = false;
 };
 

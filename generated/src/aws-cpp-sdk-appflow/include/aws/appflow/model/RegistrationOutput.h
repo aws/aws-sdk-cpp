@@ -92,12 +92,12 @@ class RegistrationOutput {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   ExecutionStatus m_status{ExecutionStatus::NOT_SET};
+  bool m_messageHasBeenSet = false;
+  bool m_resultHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

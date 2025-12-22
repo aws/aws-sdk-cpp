@@ -650,105 +650,105 @@ class SpanAttributes {
   ///@}
  private:
   Aws::String m_operationName;
-  bool m_operationNameHasBeenSet = false;
 
   Aws::String m_providerName;
-  bool m_providerNameHasBeenSet = false;
 
   Aws::String m_errorType;
-  bool m_errorTypeHasBeenSet = false;
 
   Aws::String m_agentId;
-  bool m_agentIdHasBeenSet = false;
 
   Aws::String m_instanceArn;
-  bool m_instanceArnHasBeenSet = false;
 
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   Aws::String m_initialContactId;
-  bool m_initialContactIdHasBeenSet = false;
 
   Aws::String m_sessionName;
-  bool m_sessionNameHasBeenSet = false;
 
   Aws::String m_aiAgentArn;
-  bool m_aiAgentArnHasBeenSet = false;
 
   AIAgentType m_aiAgentType{AIAgentType::NOT_SET};
-  bool m_aiAgentTypeHasBeenSet = false;
 
   Aws::String m_aiAgentName;
-  bool m_aiAgentNameHasBeenSet = false;
 
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   int m_aiAgentVersion{0};
-  bool m_aiAgentVersionHasBeenSet = false;
 
   Aws::String m_aiAgentInvoker;
-  bool m_aiAgentInvokerHasBeenSet = false;
 
   Aws::String m_aiAgentOrchestratorUseCase;
-  bool m_aiAgentOrchestratorUseCaseHasBeenSet = false;
 
   Aws::String m_requestModel;
-  bool m_requestModelHasBeenSet = false;
 
   int m_requestMaxTokens{0};
-  bool m_requestMaxTokensHasBeenSet = false;
 
   double m_temperature{0.0};
-  bool m_temperatureHasBeenSet = false;
 
   double m_topP{0.0};
-  bool m_topPHasBeenSet = false;
 
   Aws::String m_responseModel;
-  bool m_responseModelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_responseFinishReasons;
-  bool m_responseFinishReasonsHasBeenSet = false;
 
   int m_usageInputTokens{0};
-  bool m_usageInputTokensHasBeenSet = false;
 
   int m_usageOutputTokens{0};
-  bool m_usageOutputTokensHasBeenSet = false;
 
   int m_usageTotalTokens{0};
-  bool m_usageTotalTokensHasBeenSet = false;
 
   int m_cacheReadInputTokens{0};
-  bool m_cacheReadInputTokensHasBeenSet = false;
 
   int m_cacheWriteInputTokens{0};
-  bool m_cacheWriteInputTokensHasBeenSet = false;
 
   Aws::Vector<SpanMessage> m_inputMessages;
-  bool m_inputMessagesHasBeenSet = false;
 
   Aws::Vector<SpanMessage> m_outputMessages;
-  bool m_outputMessagesHasBeenSet = false;
 
   Aws::Vector<SpanMessageValue> m_systemInstructions;
-  bool m_systemInstructionsHasBeenSet = false;
 
   Aws::String m_promptArn;
-  bool m_promptArnHasBeenSet = false;
 
   Aws::String m_promptId;
-  bool m_promptIdHasBeenSet = false;
 
   AIPromptType m_promptType{AIPromptType::NOT_SET};
-  bool m_promptTypeHasBeenSet = false;
 
   Aws::String m_promptName;
-  bool m_promptNameHasBeenSet = false;
 
   int m_promptVersion{0};
+  bool m_operationNameHasBeenSet = false;
+  bool m_providerNameHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
+  bool m_agentIdHasBeenSet = false;
+  bool m_instanceArnHasBeenSet = false;
+  bool m_contactIdHasBeenSet = false;
+  bool m_initialContactIdHasBeenSet = false;
+  bool m_sessionNameHasBeenSet = false;
+  bool m_aiAgentArnHasBeenSet = false;
+  bool m_aiAgentTypeHasBeenSet = false;
+  bool m_aiAgentNameHasBeenSet = false;
+  bool m_aiAgentIdHasBeenSet = false;
+  bool m_aiAgentVersionHasBeenSet = false;
+  bool m_aiAgentInvokerHasBeenSet = false;
+  bool m_aiAgentOrchestratorUseCaseHasBeenSet = false;
+  bool m_requestModelHasBeenSet = false;
+  bool m_requestMaxTokensHasBeenSet = false;
+  bool m_temperatureHasBeenSet = false;
+  bool m_topPHasBeenSet = false;
+  bool m_responseModelHasBeenSet = false;
+  bool m_responseFinishReasonsHasBeenSet = false;
+  bool m_usageInputTokensHasBeenSet = false;
+  bool m_usageOutputTokensHasBeenSet = false;
+  bool m_usageTotalTokensHasBeenSet = false;
+  bool m_cacheReadInputTokensHasBeenSet = false;
+  bool m_cacheWriteInputTokensHasBeenSet = false;
+  bool m_inputMessagesHasBeenSet = false;
+  bool m_outputMessagesHasBeenSet = false;
+  bool m_systemInstructionsHasBeenSet = false;
+  bool m_promptArnHasBeenSet = false;
+  bool m_promptIdHasBeenSet = false;
+  bool m_promptTypeHasBeenSet = false;
+  bool m_promptNameHasBeenSet = false;
   bool m_promptVersionHasBeenSet = false;
 };
 

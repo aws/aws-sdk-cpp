@@ -57,9 +57,9 @@ class RunStatementResult {
   ///@}
  private:
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

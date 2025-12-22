@@ -75,9 +75,9 @@ class CachePolicyHeadersConfig {
   ///@}
  private:
   CachePolicyHeaderBehavior m_headerBehavior{CachePolicyHeaderBehavior::NOT_SET};
-  bool m_headerBehaviorHasBeenSet = false;
 
   Headers m_headers;
+  bool m_headerBehaviorHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

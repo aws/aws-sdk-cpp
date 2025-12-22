@@ -159,24 +159,24 @@ class DescribeSessionsRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_fleetName;
-  bool m_fleetNameHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
 
   Aws::String m_instanceId;
+  bool m_stackNameHasBeenSet = false;
+  bool m_fleetNameHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class DisassociateHostedZoneRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_hostedZoneIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

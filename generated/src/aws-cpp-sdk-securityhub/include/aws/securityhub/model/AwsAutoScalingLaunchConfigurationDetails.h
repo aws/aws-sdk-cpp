@@ -407,60 +407,60 @@ class AwsAutoScalingLaunchConfigurationDetails {
   ///@}
  private:
   bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
 
   Aws::Vector<AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   Aws::String m_classicLinkVpcId;
-  bool m_classicLinkVpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_classicLinkVpcSecurityGroups;
-  bool m_classicLinkVpcSecurityGroupsHasBeenSet = false;
 
   Aws::String m_createdTime;
-  bool m_createdTimeHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   Aws::String m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails m_instanceMonitoring;
-  bool m_instanceMonitoringHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   Aws::String m_launchConfigurationName;
-  bool m_launchConfigurationNameHasBeenSet = false;
 
   Aws::String m_placementTenancy;
-  bool m_placementTenancyHasBeenSet = false;
 
   Aws::String m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
-  bool m_securityGroupsHasBeenSet = false;
 
   Aws::String m_spotPrice;
-  bool m_spotPriceHasBeenSet = false;
 
   Aws::String m_userData;
-  bool m_userDataHasBeenSet = false;
 
   AwsAutoScalingLaunchConfigurationMetadataOptions m_metadataOptions;
+  bool m_associatePublicIpAddressHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_classicLinkVpcIdHasBeenSet = false;
+  bool m_classicLinkVpcSecurityGroupsHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceMonitoringHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_launchConfigurationNameHasBeenSet = false;
+  bool m_placementTenancyHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_spotPriceHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
   bool m_metadataOptionsHasBeenSet = false;
 };
 

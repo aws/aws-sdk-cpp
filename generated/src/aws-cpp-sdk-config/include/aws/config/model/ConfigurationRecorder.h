@@ -231,24 +231,24 @@ class ConfigurationRecorder {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   RecordingGroup m_recordingGroup;
-  bool m_recordingGroupHasBeenSet = false;
 
   RecordingMode m_recordingMode;
-  bool m_recordingModeHasBeenSet = false;
 
   RecordingScope m_recordingScope{RecordingScope::NOT_SET};
-  bool m_recordingScopeHasBeenSet = false;
 
   Aws::String m_servicePrincipal;
+  bool m_arnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_recordingGroupHasBeenSet = false;
+  bool m_recordingModeHasBeenSet = false;
+  bool m_recordingScopeHasBeenSet = false;
   bool m_servicePrincipalHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class DescribeDBProxyTargetGroupsResult {
   ///@}
  private:
   Aws::Vector<DBProxyTargetGroup> m_targetGroups;
-  bool m_targetGroupsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_targetGroupsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

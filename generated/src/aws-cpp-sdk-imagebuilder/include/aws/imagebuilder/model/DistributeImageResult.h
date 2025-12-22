@@ -76,12 +76,12 @@ class DistributeImageResult {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_imageBuildVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

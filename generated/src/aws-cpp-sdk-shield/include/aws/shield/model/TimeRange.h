@@ -68,9 +68,9 @@ class TimeRange {
   ///@}
  private:
   Aws::Utils::DateTime m_fromInclusive{};
-  bool m_fromInclusiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_toExclusive{};
+  bool m_fromInclusiveHasBeenSet = false;
   bool m_toExclusiveHasBeenSet = false;
 };
 

@@ -83,12 +83,12 @@ class OpenZFSUserOrGroupQuota {
   ///@}
  private:
   OpenZFSQuotaType m_type{OpenZFSQuotaType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_id{0};
-  bool m_idHasBeenSet = false;
 
   int m_storageCapacityQuotaGiB{0};
+  bool m_typeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_storageCapacityQuotaGiBHasBeenSet = false;
 };
 

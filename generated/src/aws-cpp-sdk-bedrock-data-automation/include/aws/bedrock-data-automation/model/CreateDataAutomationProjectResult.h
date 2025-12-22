@@ -91,15 +91,15 @@ class CreateDataAutomationProjectResult {
   ///@}
  private:
   Aws::String m_projectArn;
-  bool m_projectArnHasBeenSet = false;
 
   DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
-  bool m_projectStageHasBeenSet = false;
 
   DataAutomationProjectStatus m_status{DataAutomationProjectStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_projectArnHasBeenSet = false;
+  bool m_projectStageHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

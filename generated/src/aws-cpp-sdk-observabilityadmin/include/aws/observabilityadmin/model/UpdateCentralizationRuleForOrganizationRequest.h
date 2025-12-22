@@ -69,9 +69,9 @@ class UpdateCentralizationRuleForOrganizationRequest : public ObservabilityAdmin
   ///@}
  private:
   Aws::String m_ruleIdentifier;
-  bool m_ruleIdentifierHasBeenSet = false;
 
   CentralizationRule m_rule;
+  bool m_ruleIdentifierHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

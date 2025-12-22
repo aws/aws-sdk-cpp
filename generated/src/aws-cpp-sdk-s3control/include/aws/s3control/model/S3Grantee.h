@@ -85,12 +85,12 @@ class S3Grantee {
   ///@}
  private:
   S3GranteeTypeIdentifier m_typeIdentifier{S3GranteeTypeIdentifier::NOT_SET};
-  bool m_typeIdentifierHasBeenSet = false;
 
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_displayName;
+  bool m_typeIdentifierHasBeenSet = false;
+  bool m_identifierHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
 };
 

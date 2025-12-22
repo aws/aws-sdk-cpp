@@ -87,12 +87,12 @@ class FileSystemConfig {
   ///@}
  private:
   Aws::String m_mountPath;
-  bool m_mountPathHasBeenSet = false;
 
   int m_defaultUid{0};
-  bool m_defaultUidHasBeenSet = false;
 
   int m_defaultGid{0};
+  bool m_mountPathHasBeenSet = false;
+  bool m_defaultUidHasBeenSet = false;
   bool m_defaultGidHasBeenSet = false;
 };
 

@@ -82,9 +82,9 @@ class StepRequiredCapabilities {
   ///@}
  private:
   Aws::Vector<StepAttributeCapability> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<StepAmountCapability> m_amounts;
+  bool m_attributesHasBeenSet = false;
   bool m_amountsHasBeenSet = false;
 };
 

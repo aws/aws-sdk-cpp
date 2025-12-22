@@ -114,15 +114,15 @@ class Bucket {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_bucketRegion;
-  bool m_bucketRegionHasBeenSet = false;
 
   Aws::String m_bucketArn;
+  bool m_nameHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_bucketRegionHasBeenSet = false;
   bool m_bucketArnHasBeenSet = false;
 };
 

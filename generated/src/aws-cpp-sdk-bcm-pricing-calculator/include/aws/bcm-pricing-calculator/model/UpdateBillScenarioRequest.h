@@ -123,18 +123,18 @@ class UpdateBillScenarioRequest : public BCMPricingCalculatorRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
-  bool m_groupSharingPreferenceHasBeenSet = false;
 
   Aws::String m_costCategoryGroupSharingPreferenceArn;
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_groupSharingPreferenceHasBeenSet = false;
   bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
 };
 

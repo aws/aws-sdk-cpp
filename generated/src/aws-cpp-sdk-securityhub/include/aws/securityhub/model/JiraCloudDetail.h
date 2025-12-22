@@ -122,18 +122,18 @@ class JiraCloudDetail {
   ///@}
  private:
   Aws::String m_cloudId;
-  bool m_cloudIdHasBeenSet = false;
 
   Aws::String m_projectKey;
-  bool m_projectKeyHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_authUrl;
-  bool m_authUrlHasBeenSet = false;
 
   ConnectorAuthStatus m_authStatus{ConnectorAuthStatus::NOT_SET};
+  bool m_cloudIdHasBeenSet = false;
+  bool m_projectKeyHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_authUrlHasBeenSet = false;
   bool m_authStatusHasBeenSet = false;
 };
 

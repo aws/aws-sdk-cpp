@@ -68,9 +68,9 @@ class UpdateClassificationScopeRequest : public Macie2Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   S3ClassificationScopeUpdate m_s3;
+  bool m_idHasBeenSet = false;
   bool m_s3HasBeenSet = false;
 };
 

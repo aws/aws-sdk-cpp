@@ -112,15 +112,15 @@ class Statement {
   ///@}
  private:
   Aws::String m_sourcePolicyId;
-  bool m_sourcePolicyIdHasBeenSet = false;
 
   PolicySourceType m_sourcePolicyType{PolicySourceType::NOT_SET};
-  bool m_sourcePolicyTypeHasBeenSet = false;
 
   Position m_startPosition;
-  bool m_startPositionHasBeenSet = false;
 
   Position m_endPosition;
+  bool m_sourcePolicyIdHasBeenSet = false;
+  bool m_sourcePolicyTypeHasBeenSet = false;
+  bool m_startPositionHasBeenSet = false;
   bool m_endPositionHasBeenSet = false;
 };
 

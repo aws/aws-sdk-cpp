@@ -18,10 +18,6 @@ namespace Model {
 ImportTaskError::ImportTaskError(JsonView jsonValue) { *this = jsonValue; }
 
 ImportTaskError& ImportTaskError::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("errorData")) {
-    m_errorData = jsonValue.GetObject("errorData");
-    m_errorDataHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("errorDateTime")) {
     m_errorDateTime = jsonValue.GetString("errorDateTime");
     m_errorDateTimeHasBeenSet = true;
@@ -30,15 +26,15 @@ ImportTaskError& ImportTaskError::operator=(JsonView jsonValue) {
     m_errorType = ImportErrorTypeMapper::GetImportErrorTypeForName(jsonValue.GetString("errorType"));
     m_errorTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("errorData")) {
+    m_errorData = jsonValue.GetObject("errorData");
+    m_errorDataHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ImportTaskError::Jsonize() const {
   JsonValue payload;
-
-  if (m_errorDataHasBeenSet) {
-    payload.WithObject("errorData", m_errorData.Jsonize());
-  }
 
   if (m_errorDateTimeHasBeenSet) {
     payload.WithString("errorDateTime", m_errorDateTime);
@@ -46,6 +42,10 @@ JsonValue ImportTaskError::Jsonize() const {
 
   if (m_errorTypeHasBeenSet) {
     payload.WithString("errorType", ImportErrorTypeMapper::GetNameForImportErrorType(m_errorType));
+  }
+
+  if (m_errorDataHasBeenSet) {
+    payload.WithObject("errorData", m_errorData.Jsonize());
   }
 
   return payload;

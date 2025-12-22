@@ -107,15 +107,15 @@ class FailedKeyRegistrationEntry {
   ///@}
  private:
   Aws::String m_keyArn;
-  bool m_keyArnHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   int m_statusCode{0};
-  bool m_statusCodeHasBeenSet = false;
 
   bool m_senderFault{false};
+  bool m_keyArnHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_statusCodeHasBeenSet = false;
   bool m_senderFaultHasBeenSet = false;
 };
 

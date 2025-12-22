@@ -114,15 +114,15 @@ class FailoverRouterInputConfiguration {
   ///@}
  private:
   Aws::String m_networkInterfaceArn;
-  bool m_networkInterfaceArnHasBeenSet = false;
 
   Aws::Vector<FailoverRouterInputProtocolConfiguration> m_protocolConfigurations;
-  bool m_protocolConfigurationsHasBeenSet = false;
 
   FailoverInputSourcePriorityMode m_sourcePriorityMode{FailoverInputSourcePriorityMode::NOT_SET};
-  bool m_sourcePriorityModeHasBeenSet = false;
 
   int m_primarySourceIndex{0};
+  bool m_networkInterfaceArnHasBeenSet = false;
+  bool m_protocolConfigurationsHasBeenSet = false;
+  bool m_sourcePriorityModeHasBeenSet = false;
   bool m_primarySourceIndexHasBeenSet = false;
 };
 

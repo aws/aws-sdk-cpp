@@ -82,9 +82,9 @@ class TagOpenIDConnectProviderRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_openIDConnectProviderArn;
-  bool m_openIDConnectProviderArnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_openIDConnectProviderArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

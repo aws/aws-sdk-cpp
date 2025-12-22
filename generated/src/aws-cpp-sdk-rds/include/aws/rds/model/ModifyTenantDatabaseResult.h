@@ -58,9 +58,9 @@ class ModifyTenantDatabaseResult {
   ///@}
  private:
   TenantDatabase m_tenantDatabase;
-  bool m_tenantDatabaseHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tenantDatabaseHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

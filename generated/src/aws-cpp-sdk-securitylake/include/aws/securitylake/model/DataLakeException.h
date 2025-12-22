@@ -107,15 +107,15 @@ class DataLakeException {
   ///@}
  private:
   Aws::String m_exception;
-  bool m_exceptionHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_remediation;
-  bool m_remediationHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_exceptionHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_remediationHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

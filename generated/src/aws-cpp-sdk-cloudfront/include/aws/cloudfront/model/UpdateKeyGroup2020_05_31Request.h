@@ -87,12 +87,12 @@ class UpdateKeyGroup2020_05_31Request : public CloudFrontRequest {
   ///@}
  private:
   KeyGroupConfig m_keyGroupConfig;
-  bool m_keyGroupConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_keyGroupConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

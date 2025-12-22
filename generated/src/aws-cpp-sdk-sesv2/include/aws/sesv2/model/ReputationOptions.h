@@ -72,9 +72,9 @@ class ReputationOptions {
   ///@}
  private:
   bool m_reputationMetricsEnabled{false};
-  bool m_reputationMetricsEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastFreshStart{};
+  bool m_reputationMetricsEnabledHasBeenSet = false;
   bool m_lastFreshStartHasBeenSet = false;
 };
 

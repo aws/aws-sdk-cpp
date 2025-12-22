@@ -100,12 +100,12 @@ class GetReportGroupTrendRequest : public CodeBuildRequest {
   ///@}
  private:
   Aws::String m_reportGroupArn;
-  bool m_reportGroupArnHasBeenSet = false;
 
   int m_numOfReports{0};
-  bool m_numOfReportsHasBeenSet = false;
 
   ReportGroupTrendFieldType m_trendField{ReportGroupTrendFieldType::NOT_SET};
+  bool m_reportGroupArnHasBeenSet = false;
+  bool m_numOfReportsHasBeenSet = false;
   bool m_trendFieldHasBeenSet = false;
 };
 

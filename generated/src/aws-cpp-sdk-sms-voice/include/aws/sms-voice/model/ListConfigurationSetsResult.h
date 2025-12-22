@@ -91,12 +91,12 @@ class ListConfigurationSetsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_configurationSets;
-  bool m_configurationSetsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_configurationSetsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

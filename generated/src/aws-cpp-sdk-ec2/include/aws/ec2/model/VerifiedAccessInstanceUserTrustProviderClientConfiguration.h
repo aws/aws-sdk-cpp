@@ -211,33 +211,33 @@ class VerifiedAccessInstanceUserTrustProviderClientConfiguration {
   ///@}
  private:
   UserTrustProviderType m_type{UserTrustProviderType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_scopes;
-  bool m_scopesHasBeenSet = false;
 
   Aws::String m_issuer;
-  bool m_issuerHasBeenSet = false;
 
   Aws::String m_authorizationEndpoint;
-  bool m_authorizationEndpointHasBeenSet = false;
 
   Aws::String m_publicSigningKeyEndpoint;
-  bool m_publicSigningKeyEndpointHasBeenSet = false;
 
   Aws::String m_tokenEndpoint;
-  bool m_tokenEndpointHasBeenSet = false;
 
   Aws::String m_userInfoEndpoint;
-  bool m_userInfoEndpointHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   bool m_pkceEnabled{false};
+  bool m_typeHasBeenSet = false;
+  bool m_scopesHasBeenSet = false;
+  bool m_issuerHasBeenSet = false;
+  bool m_authorizationEndpointHasBeenSet = false;
+  bool m_publicSigningKeyEndpointHasBeenSet = false;
+  bool m_tokenEndpointHasBeenSet = false;
+  bool m_userInfoEndpointHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
   bool m_pkceEnabledHasBeenSet = false;
 };
 

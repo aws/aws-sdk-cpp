@@ -101,15 +101,15 @@ class StartDataSourceIntrospectionResult {
   ///@}
  private:
   Aws::String m_introspectionId;
-  bool m_introspectionIdHasBeenSet = false;
 
   DataSourceIntrospectionStatus m_introspectionStatus{DataSourceIntrospectionStatus::NOT_SET};
-  bool m_introspectionStatusHasBeenSet = false;
 
   Aws::String m_introspectionStatusDetail;
-  bool m_introspectionStatusDetailHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_introspectionIdHasBeenSet = false;
+  bool m_introspectionStatusHasBeenSet = false;
+  bool m_introspectionStatusDetailHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class Citation {
   ///@}
  private:
   GeneratedResponsePart m_generatedResponsePart;
-  bool m_generatedResponsePartHasBeenSet = false;
 
   Aws::Vector<RetrievedReference> m_retrievedReferences;
+  bool m_generatedResponsePartHasBeenSet = false;
   bool m_retrievedReferencesHasBeenSet = false;
 };
 

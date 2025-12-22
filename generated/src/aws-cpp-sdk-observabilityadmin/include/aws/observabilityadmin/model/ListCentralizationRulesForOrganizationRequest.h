@@ -101,15 +101,15 @@ class ListCentralizationRulesForOrganizationRequest : public ObservabilityAdminR
   ///@}
  private:
   Aws::String m_ruleNamePrefix;
-  bool m_ruleNamePrefixHasBeenSet = false;
 
   bool m_allRegions{false};
-  bool m_allRegionsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_ruleNamePrefixHasBeenSet = false;
+  bool m_allRegionsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

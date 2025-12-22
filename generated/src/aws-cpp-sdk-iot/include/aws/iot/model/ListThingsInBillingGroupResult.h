@@ -84,12 +84,12 @@ class ListThingsInBillingGroupResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_things;
-  bool m_thingsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

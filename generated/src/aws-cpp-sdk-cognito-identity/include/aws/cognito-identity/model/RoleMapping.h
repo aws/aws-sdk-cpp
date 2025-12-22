@@ -92,12 +92,12 @@ class RoleMapping {
   ///@}
  private:
   RoleMappingType m_type{RoleMappingType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   AmbiguousRoleResolutionType m_ambiguousRoleResolution{AmbiguousRoleResolutionType::NOT_SET};
-  bool m_ambiguousRoleResolutionHasBeenSet = false;
 
   RulesConfigurationType m_rulesConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_ambiguousRoleResolutionHasBeenSet = false;
   bool m_rulesConfigurationHasBeenSet = false;
 };
 

@@ -239,30 +239,30 @@ class ListSessionMetricsRequest : public LexModelsV2Request {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDateTime{};
-  bool m_startDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDateTime{};
-  bool m_endDateTimeHasBeenSet = false;
 
   Aws::Vector<AnalyticsSessionMetric> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Vector<AnalyticsBinBySpecification> m_binBy;
-  bool m_binByHasBeenSet = false;
 
   Aws::Vector<AnalyticsSessionGroupBySpecification> m_groupBy;
-  bool m_groupByHasBeenSet = false;
 
   Aws::Vector<AnalyticsSessionFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_botIdHasBeenSet = false;
+  bool m_startDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_binByHasBeenSet = false;
+  bool m_groupByHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

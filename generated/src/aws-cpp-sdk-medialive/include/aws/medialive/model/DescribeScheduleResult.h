@@ -89,12 +89,12 @@ class DescribeScheduleResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ScheduleAction> m_scheduleActions;
-  bool m_scheduleActionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_scheduleActionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,7 +70,8 @@ class TranslateKeyMaterialRequest : public PaymentCryptographyDataRequest {
 
   ///@{
   /**
-   * <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+   * <p>The key check value (KCV) algorithm used for calculating the KCV of the
+   * derived key.</p>
    */
   inline KeyCheckValueAlgorithm GetKeyCheckValueAlgorithm() const { return m_keyCheckValueAlgorithm; }
   inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }
@@ -85,12 +86,12 @@ class TranslateKeyMaterialRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   IncomingKeyMaterial m_incomingKeyMaterial;
-  bool m_incomingKeyMaterialHasBeenSet = false;
 
   OutgoingKeyMaterial m_outgoingKeyMaterial;
-  bool m_outgoingKeyMaterialHasBeenSet = false;
 
   KeyCheckValueAlgorithm m_keyCheckValueAlgorithm{KeyCheckValueAlgorithm::NOT_SET};
+  bool m_incomingKeyMaterialHasBeenSet = false;
+  bool m_outgoingKeyMaterialHasBeenSet = false;
   bool m_keyCheckValueAlgorithmHasBeenSet = false;
 };
 

@@ -109,12 +109,12 @@ class GuardrailContentFilterConfig {
   ///@}
  private:
   GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   GuardrailFilterStrength m_inputStrength{GuardrailFilterStrength::NOT_SET};
-  bool m_inputStrengthHasBeenSet = false;
 
   GuardrailFilterStrength m_outputStrength{GuardrailFilterStrength::NOT_SET};
+  bool m_typeHasBeenSet = false;
+  bool m_inputStrengthHasBeenSet = false;
   bool m_outputStrengthHasBeenSet = false;
 };
 

@@ -442,69 +442,69 @@ class CreateEnvironmentResult {
   ///@}
  private:
   Aws::String m_environmentName;
-  bool m_environmentNameHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_solutionStackName;
-  bool m_solutionStackNameHasBeenSet = false;
 
   Aws::String m_platformArn;
-  bool m_platformArnHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_endpointURL;
-  bool m_endpointURLHasBeenSet = false;
 
   Aws::String m_cNAME;
-  bool m_cNAMEHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateUpdated{};
-  bool m_dateUpdatedHasBeenSet = false;
 
   EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   bool m_abortableOperationInProgress{false};
-  bool m_abortableOperationInProgressHasBeenSet = false;
 
   EnvironmentHealth m_health{EnvironmentHealth::NOT_SET};
-  bool m_healthHasBeenSet = false;
 
   EnvironmentHealthStatus m_healthStatus{EnvironmentHealthStatus::NOT_SET};
-  bool m_healthStatusHasBeenSet = false;
 
   EnvironmentResourcesDescription m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   EnvironmentTier m_tier;
-  bool m_tierHasBeenSet = false;
 
   Aws::Vector<EnvironmentLink> m_environmentLinks;
-  bool m_environmentLinksHasBeenSet = false;
 
   Aws::String m_environmentArn;
-  bool m_environmentArnHasBeenSet = false;
 
   Aws::String m_operationsRole;
-  bool m_operationsRoleHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
+  bool m_solutionStackNameHasBeenSet = false;
+  bool m_platformArnHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_endpointURLHasBeenSet = false;
+  bool m_cNAMEHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateUpdatedHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_abortableOperationInProgressHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
+  bool m_environmentLinksHasBeenSet = false;
+  bool m_environmentArnHasBeenSet = false;
+  bool m_operationsRoleHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

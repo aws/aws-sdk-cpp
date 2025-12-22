@@ -253,36 +253,36 @@ class MatterCapabilityReportCluster {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   int m_revision{0};
-  bool m_revisionHasBeenSet = false;
 
   Aws::String m_publicId;
-  bool m_publicIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_specVersion;
-  bool m_specVersionHasBeenSet = false;
 
   Aws::Vector<MatterCapabilityReportAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_commands;
-  bool m_commandsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_events;
-  bool m_eventsHasBeenSet = false;
 
   long long m_featureMap{0};
-  bool m_featureMapHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_generatedCommands;
-  bool m_generatedCommandsHasBeenSet = false;
 
   int m_fabricIndex{0};
+  bool m_idHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_publicIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_specVersionHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_commandsHasBeenSet = false;
+  bool m_eventsHasBeenSet = false;
+  bool m_featureMapHasBeenSet = false;
+  bool m_generatedCommandsHasBeenSet = false;
   bool m_fabricIndexHasBeenSet = false;
 };
 

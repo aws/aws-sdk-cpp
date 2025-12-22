@@ -93,12 +93,12 @@ class OrganizationAggregationSource {
   ///@}
  private:
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_awsRegions;
-  bool m_awsRegionsHasBeenSet = false;
 
   bool m_allAwsRegions{false};
+  bool m_roleArnHasBeenSet = false;
+  bool m_awsRegionsHasBeenSet = false;
   bool m_allAwsRegionsHasBeenSet = false;
 };
 

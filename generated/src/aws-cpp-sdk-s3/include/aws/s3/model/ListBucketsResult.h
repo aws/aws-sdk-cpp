@@ -125,18 +125,18 @@ class ListBucketsResult {
   ///@}
  private:
   Aws::Vector<Bucket> m_buckets;
-  bool m_bucketsHasBeenSet = false;
 
   Owner m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_continuationToken;
-  bool m_continuationTokenHasBeenSet = false;
 
   Aws::String m_prefix;
-  bool m_prefixHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bucketsHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_continuationTokenHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

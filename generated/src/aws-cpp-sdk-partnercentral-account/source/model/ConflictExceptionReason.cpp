@@ -26,6 +26,8 @@ static const int DUPLICATE_CONNECTION_HASH = HashingUtils::HashString("DUPLICATE
 static const int INCOMPATIBLE_CONNECTION_STATE_HASH = HashingUtils::HashString("INCOMPATIBLE_CONNECTION_STATE");
 static const int INCOMPATIBLE_CONNECTION_PREFERENCES_REVISION_HASH =
     HashingUtils::HashString("INCOMPATIBLE_CONNECTION_PREFERENCES_REVISION");
+static const int ACCOUNT_ALREADY_VERIFIED_HASH = HashingUtils::HashString("ACCOUNT_ALREADY_VERIFIED");
+static const int VERIFICATION_ALREADY_IN_PROGRESS_HASH = HashingUtils::HashString("VERIFICATION_ALREADY_IN_PROGRESS");
 
 ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -49,6 +51,10 @@ ConflictExceptionReason GetConflictExceptionReasonForName(const Aws::String& nam
     return ConflictExceptionReason::INCOMPATIBLE_CONNECTION_STATE;
   } else if (hashCode == INCOMPATIBLE_CONNECTION_PREFERENCES_REVISION_HASH) {
     return ConflictExceptionReason::INCOMPATIBLE_CONNECTION_PREFERENCES_REVISION;
+  } else if (hashCode == ACCOUNT_ALREADY_VERIFIED_HASH) {
+    return ConflictExceptionReason::ACCOUNT_ALREADY_VERIFIED;
+  } else if (hashCode == VERIFICATION_ALREADY_IN_PROGRESS_HASH) {
+    return ConflictExceptionReason::VERIFICATION_ALREADY_IN_PROGRESS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -83,6 +89,10 @@ Aws::String GetNameForConflictExceptionReason(ConflictExceptionReason enumValue)
       return "INCOMPATIBLE_CONNECTION_STATE";
     case ConflictExceptionReason::INCOMPATIBLE_CONNECTION_PREFERENCES_REVISION:
       return "INCOMPATIBLE_CONNECTION_PREFERENCES_REVISION";
+    case ConflictExceptionReason::ACCOUNT_ALREADY_VERIFIED:
+      return "ACCOUNT_ALREADY_VERIFIED";
+    case ConflictExceptionReason::VERIFICATION_ALREADY_IN_PROGRESS:
+      return "VERIFICATION_ALREADY_IN_PROGRESS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -123,18 +123,18 @@ class ListMetadataTransferJobsRequest : public IoTTwinMakerRequest {
   ///@}
  private:
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   DestinationType m_destinationType{DestinationType::NOT_SET};
-  bool m_destinationTypeHasBeenSet = false;
 
   Aws::Vector<ListMetadataTransferJobsFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

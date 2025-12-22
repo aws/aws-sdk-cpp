@@ -105,15 +105,15 @@ class TemplateParameter {
   ///@}
  private:
   Aws::String m_parameterKey;
-  bool m_parameterKeyHasBeenSet = false;
 
   Aws::String m_defaultValue;
-  bool m_defaultValueHasBeenSet = false;
 
   bool m_noEcho{false};
-  bool m_noEchoHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_parameterKeyHasBeenSet = false;
+  bool m_defaultValueHasBeenSet = false;
+  bool m_noEchoHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

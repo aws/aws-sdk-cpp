@@ -345,27 +345,27 @@ class RegisterScalableTargetRequest : public ApplicationAutoScalingRequest {
   ///@}
  private:
   ServiceNamespace m_serviceNamespace{ServiceNamespace::NOT_SET};
-  bool m_serviceNamespaceHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   ScalableDimension m_scalableDimension{ScalableDimension::NOT_SET};
-  bool m_scalableDimensionHasBeenSet = false;
 
   int m_minCapacity{0};
-  bool m_minCapacityHasBeenSet = false;
 
   int m_maxCapacity{0};
-  bool m_maxCapacityHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   SuspendedState m_suspendedState;
-  bool m_suspendedStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_serviceNamespaceHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_scalableDimensionHasBeenSet = false;
+  bool m_minCapacityHasBeenSet = false;
+  bool m_maxCapacityHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_suspendedStateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

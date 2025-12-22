@@ -151,21 +151,21 @@ class ListServersRequest : public MigrationHubStrategyRecommendationsRequest {
   ///@}
  private:
   Aws::String m_filterValue;
-  bool m_filterValueHasBeenSet = false;
 
   Aws::Vector<Group> m_groupIdFilter;
-  bool m_groupIdFilterHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ServerCriteria m_serverCriteria{ServerCriteria::NOT_SET};
-  bool m_serverCriteriaHasBeenSet = false;
 
   SortOrder m_sort{SortOrder::NOT_SET};
+  bool m_filterValueHasBeenSet = false;
+  bool m_groupIdFilterHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_serverCriteriaHasBeenSet = false;
   bool m_sortHasBeenSet = false;
 };
 

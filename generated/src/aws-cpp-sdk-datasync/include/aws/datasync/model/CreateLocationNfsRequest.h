@@ -147,18 +147,18 @@ class CreateLocationNfsRequest : public DataSyncRequest {
   ///@}
  private:
   Aws::String m_subdirectory;
-  bool m_subdirectoryHasBeenSet = false;
 
   Aws::String m_serverHostname;
-  bool m_serverHostnameHasBeenSet = false;
 
   OnPremConfig m_onPremConfig;
-  bool m_onPremConfigHasBeenSet = false;
 
   NfsMountOptions m_mountOptions;
-  bool m_mountOptionsHasBeenSet = false;
 
   Aws::Vector<TagListEntry> m_tags;
+  bool m_subdirectoryHasBeenSet = false;
+  bool m_serverHostnameHasBeenSet = false;
+  bool m_onPremConfigHasBeenSet = false;
+  bool m_mountOptionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

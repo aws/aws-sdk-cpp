@@ -80,12 +80,12 @@ class DeleteExportResult {
   ///@}
  private:
   Aws::String m_exportId;
-  bool m_exportIdHasBeenSet = false;
 
   ExportStatus m_exportStatus{ExportStatus::NOT_SET};
-  bool m_exportStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_exportIdHasBeenSet = false;
+  bool m_exportStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

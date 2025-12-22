@@ -110,15 +110,15 @@ class QueryLineageResult {
   ///@}
  private:
   Aws::Vector<Vertex> m_vertices;
-  bool m_verticesHasBeenSet = false;
 
   Aws::Vector<Edge> m_edges;
-  bool m_edgesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_verticesHasBeenSet = false;
+  bool m_edgesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

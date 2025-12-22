@@ -4,7 +4,10 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -130,6 +133,25 @@ Enter an
 
   ///@{
   /**
+   * Specify the HTTP, HTTPS, or Amazon S3 location of the image that you want to
+   * overlay on the video. Use a PNG or TGA file.
+   */
+  inline const Aws::String& GetImageInput() const { return m_imageInput; }
+  inline bool ImageInputHasBeenSet() const { return m_imageInputHasBeenSet; }
+  template <typename ImageInputT = Aws::String>
+  void SetImageInput(ImageInputT&& value) {
+    m_imageInputHasBeenSet = true;
+    m_imageInput = std::forward<ImageInputT>(value);
+  }
+  template <typename ImageInputT = Aws::String>
+  InputVideoGenerator& WithImageInput(ImageInputT&& value) {
+    SetImageInput(std::forward<ImageInputT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Specify the audio sample rate, in Hz, for the silent audio in your video
    * generator input.
 Enter an integer from 32000 to 48000.
@@ -167,24 +189,27 @@ Enter an integer from 32000 to 48000.
   ///@}
  private:
   int m_channels{0};
-  bool m_channelsHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
+
+  Aws::String m_imageInput;
 
   int m_sampleRate{0};
-  bool m_sampleRateHasBeenSet = false;
 
   int m_width{0};
+  bool m_channelsHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_imageInputHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
   bool m_widthHasBeenSet = false;
 };
 

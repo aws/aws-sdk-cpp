@@ -335,51 +335,51 @@ class GetEventPredictionMetadataResult {
   ///@}
  private:
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::String m_eventTypeName;
-  bool m_eventTypeNameHasBeenSet = false;
 
   Aws::String m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   Aws::String m_entityType;
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_eventTimestamp;
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::String m_detectorId;
-  bool m_detectorIdHasBeenSet = false;
 
   Aws::String m_detectorVersionId;
-  bool m_detectorVersionIdHasBeenSet = false;
 
   Aws::String m_detectorVersionStatus;
-  bool m_detectorVersionStatusHasBeenSet = false;
 
   Aws::Vector<EventVariableSummary> m_eventVariables;
-  bool m_eventVariablesHasBeenSet = false;
 
   Aws::Vector<EvaluatedRule> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   RuleExecutionMode m_ruleExecutionMode{RuleExecutionMode::NOT_SET};
-  bool m_ruleExecutionModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_outcomes;
-  bool m_outcomesHasBeenSet = false;
 
   Aws::Vector<EvaluatedModelVersion> m_evaluatedModelVersions;
-  bool m_evaluatedModelVersionsHasBeenSet = false;
 
   Aws::Vector<EvaluatedExternalModel> m_evaluatedExternalModels;
-  bool m_evaluatedExternalModelsHasBeenSet = false;
 
   Aws::String m_predictionTimestamp;
-  bool m_predictionTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTypeNameHasBeenSet = false;
+  bool m_entityIdHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_detectorIdHasBeenSet = false;
+  bool m_detectorVersionIdHasBeenSet = false;
+  bool m_detectorVersionStatusHasBeenSet = false;
+  bool m_eventVariablesHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_ruleExecutionModeHasBeenSet = false;
+  bool m_outcomesHasBeenSet = false;
+  bool m_evaluatedModelVersionsHasBeenSet = false;
+  bool m_evaluatedExternalModelsHasBeenSet = false;
+  bool m_predictionTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

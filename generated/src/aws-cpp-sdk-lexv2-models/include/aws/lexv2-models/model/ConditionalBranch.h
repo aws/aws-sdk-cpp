@@ -107,15 +107,15 @@ class ConditionalBranch {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Condition m_condition;
-  bool m_conditionHasBeenSet = false;
 
   DialogState m_nextStep;
-  bool m_nextStepHasBeenSet = false;
 
   ResponseSpecification m_response;
+  bool m_nameHasBeenSet = false;
+  bool m_conditionHasBeenSet = false;
+  bool m_nextStepHasBeenSet = false;
   bool m_responseHasBeenSet = false;
 };
 

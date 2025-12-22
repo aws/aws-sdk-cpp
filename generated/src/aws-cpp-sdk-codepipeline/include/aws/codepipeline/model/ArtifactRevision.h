@@ -149,21 +149,21 @@ class ArtifactRevision {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_revisionChangeIdentifier;
-  bool m_revisionChangeIdentifierHasBeenSet = false;
 
   Aws::String m_revisionSummary;
-  bool m_revisionSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_created{};
-  bool m_createdHasBeenSet = false;
 
   Aws::String m_revisionUrl;
+  bool m_nameHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_revisionChangeIdentifierHasBeenSet = false;
+  bool m_revisionSummaryHasBeenSet = false;
+  bool m_createdHasBeenSet = false;
   bool m_revisionUrlHasBeenSet = false;
 };
 

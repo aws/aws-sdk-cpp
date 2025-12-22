@@ -1,0 +1,110 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wickr/Wickr_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Wickr {
+namespace Model {
+class DeleteSecurityGroupResult {
+ public:
+  AWS_WICKR_API DeleteSecurityGroupResult() = default;
+  AWS_WICKR_API DeleteSecurityGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_WICKR_API DeleteSecurityGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A message indicating the result of the security group deletion operation.</p>
+   */
+  inline const Aws::String& GetMessage() const { return m_message; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  DeleteSecurityGroupResult& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the network from which the security group was deleted.</p>
+   */
+  inline const Aws::String& GetNetworkId() const { return m_networkId; }
+  template <typename NetworkIdT = Aws::String>
+  void SetNetworkId(NetworkIdT&& value) {
+    m_networkIdHasBeenSet = true;
+    m_networkId = std::forward<NetworkIdT>(value);
+  }
+  template <typename NetworkIdT = Aws::String>
+  DeleteSecurityGroupResult& WithNetworkId(NetworkIdT&& value) {
+    SetNetworkId(std::forward<NetworkIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the security group that was deleted.</p>
+   */
+  inline const Aws::String& GetGroupId() const { return m_groupId; }
+  template <typename GroupIdT = Aws::String>
+  void SetGroupId(GroupIdT&& value) {
+    m_groupIdHasBeenSet = true;
+    m_groupId = std::forward<GroupIdT>(value);
+  }
+  template <typename GroupIdT = Aws::String>
+  DeleteSecurityGroupResult& WithGroupId(GroupIdT&& value) {
+    SetGroupId(std::forward<GroupIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteSecurityGroupResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_message;
+
+  Aws::String m_networkId;
+
+  Aws::String m_groupId;
+
+  Aws::String m_requestId;
+  bool m_messageHasBeenSet = false;
+  bool m_networkIdHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Wickr
+}  // namespace Aws

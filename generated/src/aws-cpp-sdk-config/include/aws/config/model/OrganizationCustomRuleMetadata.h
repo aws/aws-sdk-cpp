@@ -230,30 +230,30 @@ class OrganizationCustomRuleMetadata {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
-  bool m_lambdaFunctionArnHasBeenSet = false;
 
   Aws::Vector<OrganizationConfigRuleTriggerType> m_organizationConfigRuleTriggerTypes;
-  bool m_organizationConfigRuleTriggerTypesHasBeenSet = false;
 
   Aws::String m_inputParameters;
-  bool m_inputParametersHasBeenSet = false;
 
   MaximumExecutionFrequency m_maximumExecutionFrequency{MaximumExecutionFrequency::NOT_SET};
-  bool m_maximumExecutionFrequencyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypesScope;
-  bool m_resourceTypesScopeHasBeenSet = false;
 
   Aws::String m_resourceIdScope;
-  bool m_resourceIdScopeHasBeenSet = false;
 
   Aws::String m_tagKeyScope;
-  bool m_tagKeyScopeHasBeenSet = false;
 
   Aws::String m_tagValueScope;
+  bool m_descriptionHasBeenSet = false;
+  bool m_lambdaFunctionArnHasBeenSet = false;
+  bool m_organizationConfigRuleTriggerTypesHasBeenSet = false;
+  bool m_inputParametersHasBeenSet = false;
+  bool m_maximumExecutionFrequencyHasBeenSet = false;
+  bool m_resourceTypesScopeHasBeenSet = false;
+  bool m_resourceIdScopeHasBeenSet = false;
+  bool m_tagKeyScopeHasBeenSet = false;
   bool m_tagValueScopeHasBeenSet = false;
 };
 

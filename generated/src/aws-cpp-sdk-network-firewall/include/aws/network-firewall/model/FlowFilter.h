@@ -133,18 +133,18 @@ class FlowFilter {
   ///@}
  private:
   Address m_sourceAddress;
-  bool m_sourceAddressHasBeenSet = false;
 
   Address m_destinationAddress;
-  bool m_destinationAddressHasBeenSet = false;
 
   Aws::String m_sourcePort;
-  bool m_sourcePortHasBeenSet = false;
 
   Aws::String m_destinationPort;
-  bool m_destinationPortHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_protocols;
+  bool m_sourceAddressHasBeenSet = false;
+  bool m_destinationAddressHasBeenSet = false;
+  bool m_sourcePortHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
   bool m_protocolsHasBeenSet = false;
 };
 

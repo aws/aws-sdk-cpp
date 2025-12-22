@@ -60,9 +60,9 @@ class StartReplicationResult {
   ///@}
  private:
   SourceServer m_sourceServer;
-  bool m_sourceServerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sourceServerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

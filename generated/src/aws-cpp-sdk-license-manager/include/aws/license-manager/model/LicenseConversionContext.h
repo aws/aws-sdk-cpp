@@ -81,9 +81,9 @@ class LicenseConversionContext {
   ///@}
  private:
   Aws::String m_usageOperation;
-  bool m_usageOperationHasBeenSet = false;
 
   Aws::Vector<ProductCodeListItem> m_productCodes;
+  bool m_usageOperationHasBeenSet = false;
   bool m_productCodesHasBeenSet = false;
 };
 

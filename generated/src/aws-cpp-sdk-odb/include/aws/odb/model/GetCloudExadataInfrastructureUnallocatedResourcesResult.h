@@ -66,9 +66,9 @@ class GetCloudExadataInfrastructureUnallocatedResourcesResult {
   ///@}
  private:
   CloudExadataInfrastructureUnallocatedResources m_cloudExadataInfrastructureUnallocatedResources;
-  bool m_cloudExadataInfrastructureUnallocatedResourcesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cloudExadataInfrastructureUnallocatedResourcesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

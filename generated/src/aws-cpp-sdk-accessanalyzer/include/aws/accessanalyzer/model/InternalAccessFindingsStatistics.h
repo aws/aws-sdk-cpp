@@ -112,15 +112,15 @@ class InternalAccessFindingsStatistics {
   ///@}
  private:
   Aws::Map<ResourceType, InternalAccessResourceTypeDetails> m_resourceTypeStatistics;
-  bool m_resourceTypeStatisticsHasBeenSet = false;
 
   int m_totalActiveFindings{0};
-  bool m_totalActiveFindingsHasBeenSet = false;
 
   int m_totalArchivedFindings{0};
-  bool m_totalArchivedFindingsHasBeenSet = false;
 
   int m_totalResolvedFindings{0};
+  bool m_resourceTypeStatisticsHasBeenSet = false;
+  bool m_totalActiveFindingsHasBeenSet = false;
+  bool m_totalArchivedFindingsHasBeenSet = false;
   bool m_totalResolvedFindingsHasBeenSet = false;
 };
 

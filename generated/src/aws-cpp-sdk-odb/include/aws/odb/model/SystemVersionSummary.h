@@ -96,12 +96,12 @@ class SystemVersionSummary {
   ///@}
  private:
   Aws::String m_giVersion;
-  bool m_giVersionHasBeenSet = false;
 
   Aws::String m_shape;
-  bool m_shapeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_systemVersions;
+  bool m_giVersionHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
   bool m_systemVersionsHasBeenSet = false;
 };
 

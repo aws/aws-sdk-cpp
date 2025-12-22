@@ -76,12 +76,12 @@ class AssociateSessionLoggerResult {
   ///@}
  private:
   Aws::String m_portalArn;
-  bool m_portalArnHasBeenSet = false;
 
   Aws::String m_sessionLoggerArn;
-  bool m_sessionLoggerArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_portalArnHasBeenSet = false;
+  bool m_sessionLoggerArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -64,9 +64,9 @@ class RouteAllowOptions {
   ///@}
  private:
   bool m_hot{false};
-  bool m_hotHasBeenSet = false;
 
   bool m_hov{false};
+  bool m_hotHasBeenSet = false;
   bool m_hovHasBeenSet = false;
 };
 

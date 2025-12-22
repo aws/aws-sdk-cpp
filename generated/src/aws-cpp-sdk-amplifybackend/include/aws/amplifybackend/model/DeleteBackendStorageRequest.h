@@ -103,15 +103,15 @@ class DeleteBackendStorageRequest : public AmplifyBackendRequest {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
-  bool m_backendEnvironmentNameHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   ServiceName m_serviceName{ServiceName::NOT_SET};
+  bool m_appIdHasBeenSet = false;
+  bool m_backendEnvironmentNameHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
 };
 

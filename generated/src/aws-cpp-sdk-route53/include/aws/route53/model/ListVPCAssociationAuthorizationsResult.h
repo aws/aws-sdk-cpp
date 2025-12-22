@@ -113,15 +113,15 @@ class ListVPCAssociationAuthorizationsResult {
   ///@}
  private:
   Aws::String m_hostedZoneId;
-  bool m_hostedZoneIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VPC> m_vPCs;
-  bool m_vPCsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hostedZoneIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_vPCsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

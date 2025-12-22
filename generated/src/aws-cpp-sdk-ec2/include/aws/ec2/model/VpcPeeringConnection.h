@@ -155,21 +155,21 @@ class VpcPeeringConnection {
   ///@}
  private:
   VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
-  bool m_accepterVpcInfoHasBeenSet = false;
 
   Aws::Utils::DateTime m_expirationTime{};
-  bool m_expirationTimeHasBeenSet = false;
 
   VpcPeeringConnectionVpcInfo m_requesterVpcInfo;
-  bool m_requesterVpcInfoHasBeenSet = false;
 
   VpcPeeringConnectionStateReason m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vpcPeeringConnectionId;
+  bool m_accepterVpcInfoHasBeenSet = false;
+  bool m_expirationTimeHasBeenSet = false;
+  bool m_requesterVpcInfoHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_vpcPeeringConnectionIdHasBeenSet = false;
 };
 

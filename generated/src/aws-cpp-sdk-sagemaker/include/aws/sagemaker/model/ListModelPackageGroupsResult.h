@@ -86,12 +86,12 @@ class ListModelPackageGroupsResult {
   ///@}
  private:
   Aws::Vector<ModelPackageGroupSummary> m_modelPackageGroupSummaryList;
-  bool m_modelPackageGroupSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_modelPackageGroupSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

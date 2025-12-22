@@ -93,12 +93,12 @@ class GeoSpatialColumnGroup {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   GeoSpatialCountryCode m_countryCode{GeoSpatialCountryCode::NOT_SET};
-  bool m_countryCodeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columns;
+  bool m_nameHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
   bool m_columnsHasBeenSet = false;
 };
 

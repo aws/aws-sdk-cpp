@@ -23,7 +23,7 @@ class JsonValue;
 namespace Glacier {
 namespace Model {
 /**
- * <p>Contains the Amazon S3 Glacier response to your request.</p><p><h3>See
+ * <p>Contains the Amazon Glacier response to your request.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ListPartsOutput">AWS
  * API Reference</a></p>
@@ -180,27 +180,27 @@ class ListPartsResult {
   ///@}
  private:
   Aws::String m_multipartUploadId;
-  bool m_multipartUploadIdHasBeenSet = false;
 
   Aws::String m_vaultARN;
-  bool m_vaultARNHasBeenSet = false;
 
   Aws::String m_archiveDescription;
-  bool m_archiveDescriptionHasBeenSet = false;
 
   long long m_partSizeInBytes{0};
-  bool m_partSizeInBytesHasBeenSet = false;
 
   Aws::String m_creationDate;
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Vector<PartListElement> m_parts;
-  bool m_partsHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_multipartUploadIdHasBeenSet = false;
+  bool m_vaultARNHasBeenSet = false;
+  bool m_archiveDescriptionHasBeenSet = false;
+  bool m_partSizeInBytesHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_partsHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

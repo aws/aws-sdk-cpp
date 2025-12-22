@@ -70,9 +70,9 @@ class OAuth2ClientApplication {
   ///@}
  private:
   Aws::String m_userManagedClientApplicationClientId;
-  bool m_userManagedClientApplicationClientIdHasBeenSet = false;
 
   Aws::String m_aWSManagedClientApplicationReference;
+  bool m_userManagedClientApplicationClientIdHasBeenSet = false;
   bool m_aWSManagedClientApplicationReferenceHasBeenSet = false;
 };
 

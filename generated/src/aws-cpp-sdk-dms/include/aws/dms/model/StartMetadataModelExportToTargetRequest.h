@@ -85,12 +85,12 @@ class StartMetadataModelExportToTargetRequest : public DatabaseMigrationServiceR
   ///@}
  private:
   Aws::String m_migrationProjectIdentifier;
-  bool m_migrationProjectIdentifierHasBeenSet = false;
 
   Aws::String m_selectionRules;
-  bool m_selectionRulesHasBeenSet = false;
 
   bool m_overwriteExtensionPack{false};
+  bool m_migrationProjectIdentifierHasBeenSet = false;
+  bool m_selectionRulesHasBeenSet = false;
   bool m_overwriteExtensionPackHasBeenSet = false;
 };
 

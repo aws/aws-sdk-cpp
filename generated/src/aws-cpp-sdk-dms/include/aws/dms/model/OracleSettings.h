@@ -962,135 +962,135 @@ class OracleSettings {
   ///@}
  private:
   bool m_addSupplementalLogging{false};
-  bool m_addSupplementalLoggingHasBeenSet = false;
 
   int m_archivedLogDestId{0};
-  bool m_archivedLogDestIdHasBeenSet = false;
 
   int m_additionalArchivedLogDestId{0};
-  bool m_additionalArchivedLogDestIdHasBeenSet = false;
 
   Aws::Vector<int> m_extraArchivedLogDestIds;
-  bool m_extraArchivedLogDestIdsHasBeenSet = false;
 
   bool m_allowSelectNestedTables{false};
-  bool m_allowSelectNestedTablesHasBeenSet = false;
 
   int m_parallelAsmReadThreads{0};
-  bool m_parallelAsmReadThreadsHasBeenSet = false;
 
   int m_readAheadBlocks{0};
-  bool m_readAheadBlocksHasBeenSet = false;
 
   bool m_accessAlternateDirectly{false};
-  bool m_accessAlternateDirectlyHasBeenSet = false;
 
   bool m_useAlternateFolderForOnline{false};
-  bool m_useAlternateFolderForOnlineHasBeenSet = false;
 
   Aws::String m_oraclePathPrefix;
-  bool m_oraclePathPrefixHasBeenSet = false;
 
   Aws::String m_usePathPrefix;
-  bool m_usePathPrefixHasBeenSet = false;
 
   bool m_replacePathPrefix{false};
-  bool m_replacePathPrefixHasBeenSet = false;
 
   bool m_enableHomogenousTablespace{false};
-  bool m_enableHomogenousTablespaceHasBeenSet = false;
 
   bool m_directPathNoLog{false};
-  bool m_directPathNoLogHasBeenSet = false;
 
   bool m_archivedLogsOnly{false};
-  bool m_archivedLogsOnlyHasBeenSet = false;
 
   Aws::String m_asmPassword;
-  bool m_asmPasswordHasBeenSet = false;
 
   Aws::String m_asmServer;
-  bool m_asmServerHasBeenSet = false;
 
   Aws::String m_asmUser;
-  bool m_asmUserHasBeenSet = false;
 
   CharLengthSemantics m_charLengthSemantics{CharLengthSemantics::NOT_SET};
-  bool m_charLengthSemanticsHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   bool m_directPathParallelLoad{false};
-  bool m_directPathParallelLoadHasBeenSet = false;
 
   bool m_failTasksOnLobTruncation{false};
-  bool m_failTasksOnLobTruncationHasBeenSet = false;
 
   int m_numberDatatypeScale{0};
-  bool m_numberDatatypeScaleHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   bool m_readTableSpaceName{false};
-  bool m_readTableSpaceNameHasBeenSet = false;
 
   int m_retryInterval{0};
-  bool m_retryIntervalHasBeenSet = false;
 
   Aws::String m_securityDbEncryption;
-  bool m_securityDbEncryptionHasBeenSet = false;
 
   Aws::String m_securityDbEncryptionName;
-  bool m_securityDbEncryptionNameHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   Aws::String m_spatialDataOptionToGeoJsonFunctionName;
-  bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = false;
 
   int m_standbyDelayTime{0};
-  bool m_standbyDelayTimeHasBeenSet = false;
 
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   bool m_useBFile{false};
-  bool m_useBFileHasBeenSet = false;
 
   bool m_useDirectPathFullLoad{false};
-  bool m_useDirectPathFullLoadHasBeenSet = false;
 
   bool m_useLogminerReader{false};
-  bool m_useLogminerReaderHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   Aws::String m_secretsManagerOracleAsmAccessRoleArn;
-  bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerOracleAsmSecretId;
-  bool m_secretsManagerOracleAsmSecretIdHasBeenSet = false;
 
   bool m_trimSpaceInChar{false};
-  bool m_trimSpaceInCharHasBeenSet = false;
 
   bool m_convertTimestampWithZoneToUTC{false};
-  bool m_convertTimestampWithZoneToUTCHasBeenSet = false;
 
   int m_openTransactionWindow{0};
-  bool m_openTransactionWindowHasBeenSet = false;
 
   OracleAuthenticationMethod m_authenticationMethod{OracleAuthenticationMethod::NOT_SET};
+  bool m_addSupplementalLoggingHasBeenSet = false;
+  bool m_archivedLogDestIdHasBeenSet = false;
+  bool m_additionalArchivedLogDestIdHasBeenSet = false;
+  bool m_extraArchivedLogDestIdsHasBeenSet = false;
+  bool m_allowSelectNestedTablesHasBeenSet = false;
+  bool m_parallelAsmReadThreadsHasBeenSet = false;
+  bool m_readAheadBlocksHasBeenSet = false;
+  bool m_accessAlternateDirectlyHasBeenSet = false;
+  bool m_useAlternateFolderForOnlineHasBeenSet = false;
+  bool m_oraclePathPrefixHasBeenSet = false;
+  bool m_usePathPrefixHasBeenSet = false;
+  bool m_replacePathPrefixHasBeenSet = false;
+  bool m_enableHomogenousTablespaceHasBeenSet = false;
+  bool m_directPathNoLogHasBeenSet = false;
+  bool m_archivedLogsOnlyHasBeenSet = false;
+  bool m_asmPasswordHasBeenSet = false;
+  bool m_asmServerHasBeenSet = false;
+  bool m_asmUserHasBeenSet = false;
+  bool m_charLengthSemanticsHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_directPathParallelLoadHasBeenSet = false;
+  bool m_failTasksOnLobTruncationHasBeenSet = false;
+  bool m_numberDatatypeScaleHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_readTableSpaceNameHasBeenSet = false;
+  bool m_retryIntervalHasBeenSet = false;
+  bool m_securityDbEncryptionHasBeenSet = false;
+  bool m_securityDbEncryptionNameHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = false;
+  bool m_standbyDelayTimeHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_useBFileHasBeenSet = false;
+  bool m_useDirectPathFullLoadHasBeenSet = false;
+  bool m_useLogminerReaderHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
+  bool m_secretsManagerOracleAsmAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerOracleAsmSecretIdHasBeenSet = false;
+  bool m_trimSpaceInCharHasBeenSet = false;
+  bool m_convertTimestampWithZoneToUTCHasBeenSet = false;
+  bool m_openTransactionWindowHasBeenSet = false;
   bool m_authenticationMethodHasBeenSet = false;
 };
 

@@ -121,18 +121,18 @@ class GetTraceSummariesResult {
   ///@}
  private:
   Aws::Vector<TraceSummary> m_traceSummaries;
-  bool m_traceSummariesHasBeenSet = false;
 
   Aws::Utils::DateTime m_approximateTime{};
-  bool m_approximateTimeHasBeenSet = false;
 
   long long m_tracesProcessedCount{0};
-  bool m_tracesProcessedCountHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_traceSummariesHasBeenSet = false;
+  bool m_approximateTimeHasBeenSet = false;
+  bool m_tracesProcessedCountHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

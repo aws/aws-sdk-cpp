@@ -229,36 +229,36 @@ class JobRunSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   JobRunError m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   JobType m_jobType{JobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   JobRunMode m_runMode{JobRunMode::NOT_SET};
-  bool m_runModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   JobRunStatus m_status{JobRunStatus::NOT_SET};
+  bool m_createdAtHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_runModeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

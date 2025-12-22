@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/model/ActionsSuppressedBy.h>
 #include <aws/monitoring/model/StateValue.h>
@@ -16,9 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Xml {
-class XmlNode;
-}  // namespace Xml
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudWatch {
 namespace Model {
@@ -31,11 +31,9 @@ namespace Model {
 class CompositeAlarm {
  public:
   AWS_CLOUDWATCH_API CompositeAlarm() = default;
-  AWS_CLOUDWATCH_API CompositeAlarm(const Aws::Utils::Xml::XmlNode& xmlNode);
-  AWS_CLOUDWATCH_API CompositeAlarm& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_CLOUDWATCH_API CompositeAlarm(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API CompositeAlarm& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDWATCH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -382,13 +380,13 @@ class CompositeAlarm {
    * <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is
    * specified. </p>
    */
-  inline int GetActionsSuppressorWaitPeriod() const { return m_actionsSuppressorWaitPeriod; }
+  inline int64_t GetActionsSuppressorWaitPeriod() const { return m_actionsSuppressorWaitPeriod; }
   inline bool ActionsSuppressorWaitPeriodHasBeenSet() const { return m_actionsSuppressorWaitPeriodHasBeenSet; }
-  inline void SetActionsSuppressorWaitPeriod(int value) {
+  inline void SetActionsSuppressorWaitPeriod(int64_t value) {
     m_actionsSuppressorWaitPeriodHasBeenSet = true;
     m_actionsSuppressorWaitPeriod = value;
   }
-  inline CompositeAlarm& WithActionsSuppressorWaitPeriod(int value) {
+  inline CompositeAlarm& WithActionsSuppressorWaitPeriod(int64_t value) {
     SetActionsSuppressorWaitPeriod(value);
     return *this;
   }
@@ -402,73 +400,73 @@ class CompositeAlarm {
    * required only when <code>ActionsSuppressor</code> is specified. </p>
    *
    */
-  inline int GetActionsSuppressorExtensionPeriod() const { return m_actionsSuppressorExtensionPeriod; }
+  inline int64_t GetActionsSuppressorExtensionPeriod() const { return m_actionsSuppressorExtensionPeriod; }
   inline bool ActionsSuppressorExtensionPeriodHasBeenSet() const { return m_actionsSuppressorExtensionPeriodHasBeenSet; }
-  inline void SetActionsSuppressorExtensionPeriod(int value) {
+  inline void SetActionsSuppressorExtensionPeriod(int64_t value) {
     m_actionsSuppressorExtensionPeriodHasBeenSet = true;
     m_actionsSuppressorExtensionPeriod = value;
   }
-  inline CompositeAlarm& WithActionsSuppressorExtensionPeriod(int value) {
+  inline CompositeAlarm& WithActionsSuppressorExtensionPeriod(int64_t value) {
     SetActionsSuppressorExtensionPeriod(value);
     return *this;
   }
   ///@}
  private:
   bool m_actionsEnabled{false};
-  bool m_actionsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmActions;
-  bool m_alarmActionsHasBeenSet = false;
 
   Aws::String m_alarmArn;
-  bool m_alarmArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_alarmConfigurationUpdatedTimestamp{};
-  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
 
   Aws::String m_alarmDescription;
-  bool m_alarmDescriptionHasBeenSet = false;
 
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmRule;
-  bool m_alarmRuleHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insufficientDataActions;
-  bool m_insufficientDataActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_oKActions;
-  bool m_oKActionsHasBeenSet = false;
 
   Aws::String m_stateReason;
-  bool m_stateReasonHasBeenSet = false;
 
   Aws::String m_stateReasonData;
-  bool m_stateReasonDataHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateUpdatedTimestamp{};
-  bool m_stateUpdatedTimestampHasBeenSet = false;
 
   StateValue m_stateValue{StateValue::NOT_SET};
-  bool m_stateValueHasBeenSet = false;
 
   Aws::Utils::DateTime m_stateTransitionedTimestamp{};
-  bool m_stateTransitionedTimestampHasBeenSet = false;
 
   ActionsSuppressedBy m_actionsSuppressedBy{ActionsSuppressedBy::NOT_SET};
-  bool m_actionsSuppressedByHasBeenSet = false;
 
   Aws::String m_actionsSuppressedReason;
-  bool m_actionsSuppressedReasonHasBeenSet = false;
 
   Aws::String m_actionsSuppressor;
+
+  int64_t m_actionsSuppressorWaitPeriod{0};
+
+  int64_t m_actionsSuppressorExtensionPeriod{0};
+  bool m_actionsEnabledHasBeenSet = false;
+  bool m_alarmActionsHasBeenSet = false;
+  bool m_alarmArnHasBeenSet = false;
+  bool m_alarmConfigurationUpdatedTimestampHasBeenSet = false;
+  bool m_alarmDescriptionHasBeenSet = false;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmRuleHasBeenSet = false;
+  bool m_insufficientDataActionsHasBeenSet = false;
+  bool m_oKActionsHasBeenSet = false;
+  bool m_stateReasonHasBeenSet = false;
+  bool m_stateReasonDataHasBeenSet = false;
+  bool m_stateUpdatedTimestampHasBeenSet = false;
+  bool m_stateValueHasBeenSet = false;
+  bool m_stateTransitionedTimestampHasBeenSet = false;
+  bool m_actionsSuppressedByHasBeenSet = false;
+  bool m_actionsSuppressedReasonHasBeenSet = false;
   bool m_actionsSuppressorHasBeenSet = false;
-
-  int m_actionsSuppressorWaitPeriod{0};
   bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
-
-  int m_actionsSuppressorExtensionPeriod{0};
   bool m_actionsSuppressorExtensionPeriodHasBeenSet = false;
 };
 

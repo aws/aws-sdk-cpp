@@ -78,12 +78,12 @@ class UpdateComputeEnvironmentResult {
   ///@}
  private:
   Aws::String m_computeEnvironmentName;
-  bool m_computeEnvironmentNameHasBeenSet = false;
 
   Aws::String m_computeEnvironmentArn;
-  bool m_computeEnvironmentArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_computeEnvironmentNameHasBeenSet = false;
+  bool m_computeEnvironmentArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

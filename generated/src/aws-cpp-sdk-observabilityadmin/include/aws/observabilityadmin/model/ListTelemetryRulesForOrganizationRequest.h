@@ -135,18 +135,18 @@ class ListTelemetryRulesForOrganizationRequest : public ObservabilityAdminReques
   ///@}
  private:
   Aws::String m_ruleNamePrefix;
-  bool m_ruleNamePrefixHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceAccountIds;
-  bool m_sourceAccountIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceOrganizationUnitIds;
-  bool m_sourceOrganizationUnitIdsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_ruleNamePrefixHasBeenSet = false;
+  bool m_sourceAccountIdsHasBeenSet = false;
+  bool m_sourceOrganizationUnitIdsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

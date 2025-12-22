@@ -89,12 +89,12 @@ class CreateVpcEndpointRequest : public ElasticsearchServiceRequest {
   ///@}
  private:
   Aws::String m_domainArn;
-  bool m_domainArnHasBeenSet = false;
 
   VPCOptions m_vpcOptions;
-  bool m_vpcOptionsHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_domainArnHasBeenSet = false;
+  bool m_vpcOptionsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

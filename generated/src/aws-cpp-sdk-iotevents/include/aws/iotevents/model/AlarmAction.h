@@ -185,30 +185,30 @@ class AlarmAction {
   ///@}
  private:
   SNSTopicPublishAction m_sns;
-  bool m_snsHasBeenSet = false;
 
   IotTopicPublishAction m_iotTopicPublish;
-  bool m_iotTopicPublishHasBeenSet = false;
 
   LambdaAction m_lambda;
-  bool m_lambdaHasBeenSet = false;
 
   IotEventsAction m_iotEvents;
-  bool m_iotEventsHasBeenSet = false;
 
   SqsAction m_sqs;
-  bool m_sqsHasBeenSet = false;
 
   FirehoseAction m_firehose;
-  bool m_firehoseHasBeenSet = false;
 
   DynamoDBAction m_dynamoDB;
-  bool m_dynamoDBHasBeenSet = false;
 
   DynamoDBv2Action m_dynamoDBv2;
-  bool m_dynamoDBv2HasBeenSet = false;
 
   IotSiteWiseAction m_iotSiteWise;
+  bool m_snsHasBeenSet = false;
+  bool m_iotTopicPublishHasBeenSet = false;
+  bool m_lambdaHasBeenSet = false;
+  bool m_iotEventsHasBeenSet = false;
+  bool m_sqsHasBeenSet = false;
+  bool m_firehoseHasBeenSet = false;
+  bool m_dynamoDBHasBeenSet = false;
+  bool m_dynamoDBv2HasBeenSet = false;
   bool m_iotSiteWiseHasBeenSet = false;
 };
 

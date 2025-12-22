@@ -212,33 +212,33 @@ class GetReservationPurchaseRecommendationRequest : public CostExplorerRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_service;
-  bool m_serviceHasBeenSet = false;
 
   Expression m_filter;
-  bool m_filterHasBeenSet = false;
 
   AccountScope m_accountScope{AccountScope::NOT_SET};
-  bool m_accountScopeHasBeenSet = false;
 
   LookbackPeriodInDays m_lookbackPeriodInDays{LookbackPeriodInDays::NOT_SET};
-  bool m_lookbackPeriodInDaysHasBeenSet = false;
 
   TermInYears m_termInYears{TermInYears::NOT_SET};
-  bool m_termInYearsHasBeenSet = false;
 
   PaymentOption m_paymentOption{PaymentOption::NOT_SET};
-  bool m_paymentOptionHasBeenSet = false;
 
   ServiceSpecification m_serviceSpecification;
-  bool m_serviceSpecificationHasBeenSet = false;
 
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_nextPageToken;
+  bool m_accountIdHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+  bool m_accountScopeHasBeenSet = false;
+  bool m_lookbackPeriodInDaysHasBeenSet = false;
+  bool m_termInYearsHasBeenSet = false;
+  bool m_paymentOptionHasBeenSet = false;
+  bool m_serviceSpecificationHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
   bool m_nextPageTokenHasBeenSet = false;
 };
 

@@ -132,18 +132,18 @@ class ThumbnailDetails {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_thumbnail;
-  bool m_thumbnailHasBeenSet = false;
 
   Aws::Vector<MessageDetail> m_thumbnailMessages;
-  bool m_thumbnailMessagesHasBeenSet = false;
 
   Aws::String m_timecode;
-  bool m_timecodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
+  bool m_flowArnHasBeenSet = false;
+  bool m_thumbnailHasBeenSet = false;
+  bool m_thumbnailMessagesHasBeenSet = false;
+  bool m_timecodeHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class DescribeSolutionResult {
   ///@}
  private:
   Solution m_solution;
-  bool m_solutionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_solutionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

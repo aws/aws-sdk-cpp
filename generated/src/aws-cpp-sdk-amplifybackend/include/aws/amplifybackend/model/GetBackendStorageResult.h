@@ -111,18 +111,18 @@ class GetBackendStorageResult {
   ///@}
  private:
   Aws::String m_appId;
-  bool m_appIdHasBeenSet = false;
 
   Aws::String m_backendEnvironmentName;
-  bool m_backendEnvironmentNameHasBeenSet = false;
 
   GetBackendStorageResourceConfig m_resourceConfig;
-  bool m_resourceConfigHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appIdHasBeenSet = false;
+  bool m_backendEnvironmentNameHasBeenSet = false;
+  bool m_resourceConfigHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

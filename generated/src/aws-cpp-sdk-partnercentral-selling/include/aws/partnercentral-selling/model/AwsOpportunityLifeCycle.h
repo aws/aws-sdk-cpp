@@ -140,18 +140,18 @@ class AwsOpportunityLifeCycle {
   ///@}
  private:
   Aws::String m_targetCloseDate;
-  bool m_targetCloseDateHasBeenSet = false;
 
   AwsClosedLostReason m_closedLostReason{AwsClosedLostReason::NOT_SET};
-  bool m_closedLostReasonHasBeenSet = false;
 
   AwsOpportunityStage m_stage{AwsOpportunityStage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   Aws::String m_nextSteps;
-  bool m_nextStepsHasBeenSet = false;
 
   Aws::Vector<ProfileNextStepsHistory> m_nextStepsHistory;
+  bool m_targetCloseDateHasBeenSet = false;
+  bool m_closedLostReasonHasBeenSet = false;
+  bool m_stageHasBeenSet = false;
+  bool m_nextStepsHasBeenSet = false;
   bool m_nextStepsHistoryHasBeenSet = false;
 };
 

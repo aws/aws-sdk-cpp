@@ -148,21 +148,44 @@ class SpekeKeyProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN for the certificate that you imported to AWS Certificate Manager to
+   * add content key encryption to this endpoint. For this feature to work, your DRM
+   * key provider must support content key encryption.</p>
+   */
+  inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
+  inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+  template <typename CertificateArnT = Aws::String>
+  void SetCertificateArn(CertificateArnT&& value) {
+    m_certificateArnHasBeenSet = true;
+    m_certificateArn = std::forward<CertificateArnT>(value);
+  }
+  template <typename CertificateArnT = Aws::String>
+  SpekeKeyProvider& WithCertificateArn(CertificateArnT&& value) {
+    SetCertificateArn(std::forward<CertificateArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EncryptionContractConfiguration m_encryptionContractConfiguration;
-  bool m_encryptionContractConfigurationHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<DrmSystem> m_drmSystems;
-  bool m_drmSystemsHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_url;
+
+  Aws::String m_certificateArn;
+  bool m_encryptionContractConfigurationHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_drmSystemsHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_urlHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
 };
 
 }  // namespace Model

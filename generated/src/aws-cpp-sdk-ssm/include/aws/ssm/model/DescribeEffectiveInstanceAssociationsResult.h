@@ -86,12 +86,12 @@ class DescribeEffectiveInstanceAssociationsResult {
   ///@}
  private:
   Aws::Vector<InstanceAssociation> m_associations;
-  bool m_associationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_associationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

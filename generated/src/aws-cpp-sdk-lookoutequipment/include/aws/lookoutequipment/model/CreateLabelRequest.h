@@ -185,27 +185,27 @@ class CreateLabelRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_labelGroupName;
-  bool m_labelGroupNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   LabelRating m_rating{LabelRating::NOT_SET};
-  bool m_ratingHasBeenSet = false;
 
   Aws::String m_faultCode;
-  bool m_faultCodeHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::String m_equipment;
-  bool m_equipmentHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_labelGroupNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_ratingHasBeenSet = false;
+  bool m_faultCodeHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_equipmentHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -194,30 +194,30 @@ class ApiGatewayApiAsset {
   ///@}
  private:
   Aws::String m_apiDescription;
-  bool m_apiDescriptionHasBeenSet = false;
 
   Aws::String m_apiEndpoint;
-  bool m_apiEndpointHasBeenSet = false;
 
   Aws::String m_apiId;
-  bool m_apiIdHasBeenSet = false;
 
   Aws::String m_apiKey;
-  bool m_apiKeyHasBeenSet = false;
 
   Aws::String m_apiName;
-  bool m_apiNameHasBeenSet = false;
 
   Aws::String m_apiSpecificationDownloadUrl;
-  bool m_apiSpecificationDownloadUrlHasBeenSet = false;
 
   Aws::Utils::DateTime m_apiSpecificationDownloadUrlExpiresAt{};
-  bool m_apiSpecificationDownloadUrlExpiresAtHasBeenSet = false;
 
   ProtocolType m_protocolType{ProtocolType::NOT_SET};
-  bool m_protocolTypeHasBeenSet = false;
 
   Aws::String m_stage;
+  bool m_apiDescriptionHasBeenSet = false;
+  bool m_apiEndpointHasBeenSet = false;
+  bool m_apiIdHasBeenSet = false;
+  bool m_apiKeyHasBeenSet = false;
+  bool m_apiNameHasBeenSet = false;
+  bool m_apiSpecificationDownloadUrlHasBeenSet = false;
+  bool m_apiSpecificationDownloadUrlExpiresAtHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
   bool m_stageHasBeenSet = false;
 };
 

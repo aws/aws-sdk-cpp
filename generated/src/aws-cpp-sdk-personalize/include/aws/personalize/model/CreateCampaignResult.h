@@ -59,9 +59,9 @@ class CreateCampaignResult {
   ///@}
  private:
   Aws::String m_campaignArn;
-  bool m_campaignArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_campaignArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

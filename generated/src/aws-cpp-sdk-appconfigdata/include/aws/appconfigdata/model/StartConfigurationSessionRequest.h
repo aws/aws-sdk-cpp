@@ -101,15 +101,15 @@ class StartConfigurationSessionRequest : public AppConfigDataRequest {
   ///@}
  private:
   Aws::String m_applicationIdentifier;
-  bool m_applicationIdentifierHasBeenSet = false;
 
   Aws::String m_environmentIdentifier;
-  bool m_environmentIdentifierHasBeenSet = false;
 
   Aws::String m_configurationProfileIdentifier;
-  bool m_configurationProfileIdentifierHasBeenSet = false;
 
   int m_requiredMinimumPollIntervalInSeconds{0};
+  bool m_applicationIdentifierHasBeenSet = false;
+  bool m_environmentIdentifierHasBeenSet = false;
+  bool m_configurationProfileIdentifierHasBeenSet = false;
   bool m_requiredMinimumPollIntervalInSecondsHasBeenSet = false;
 };
 

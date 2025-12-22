@@ -87,12 +87,12 @@ class BatchCreateChannelMembershipError {
   ///@}
  private:
   Aws::String m_memberArn;
-  bool m_memberArnHasBeenSet = false;
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_memberArnHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

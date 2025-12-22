@@ -147,21 +147,21 @@ class ConnectionDetails {
   ///@}
  private:
   Aws::String m_clientPublicKey;
-  bool m_clientPublicKeyHasBeenSet = false;
 
   Aws::String m_serverPublicKey;
-  bool m_serverPublicKeyHasBeenSet = false;
 
   Aws::String m_serverEndpoint;
-  bool m_serverEndpointHasBeenSet = false;
 
   Aws::String m_clientTunnelAddress;
-  bool m_clientTunnelAddressHasBeenSet = false;
 
   Aws::String m_serverTunnelAddress;
-  bool m_serverTunnelAddressHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_allowedIps;
+  bool m_clientPublicKeyHasBeenSet = false;
+  bool m_serverPublicKeyHasBeenSet = false;
+  bool m_serverEndpointHasBeenSet = false;
+  bool m_clientTunnelAddressHasBeenSet = false;
+  bool m_serverTunnelAddressHasBeenSet = false;
   bool m_allowedIpsHasBeenSet = false;
 };
 

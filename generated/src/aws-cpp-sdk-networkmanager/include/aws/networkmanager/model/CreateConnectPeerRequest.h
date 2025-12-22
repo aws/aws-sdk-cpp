@@ -192,27 +192,27 @@ class CreateConnectPeerRequest : public NetworkManagerRequest {
   ///@}
  private:
   Aws::String m_connectAttachmentId;
-  bool m_connectAttachmentIdHasBeenSet = false;
 
   Aws::String m_coreNetworkAddress;
-  bool m_coreNetworkAddressHasBeenSet = false;
 
   Aws::String m_peerAddress;
-  bool m_peerAddressHasBeenSet = false;
 
   BgpOptions m_bgpOptions;
-  bool m_bgpOptionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insideCidrBlocks;
-  bool m_insideCidrBlocksHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_subnetArn;
+  bool m_connectAttachmentIdHasBeenSet = false;
+  bool m_coreNetworkAddressHasBeenSet = false;
+  bool m_peerAddressHasBeenSet = false;
+  bool m_bgpOptionsHasBeenSet = false;
+  bool m_insideCidrBlocksHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_subnetArnHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListLoggerDefinitionsResult {
   ///@}
  private:
   Aws::Vector<DefinitionInformation> m_definitions;
-  bool m_definitionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_definitionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

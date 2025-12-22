@@ -63,9 +63,9 @@ class MatchOffset {
   ///@}
  private:
   int m_endOffset{0};
-  bool m_endOffsetHasBeenSet = false;
 
   int m_startOffset{0};
+  bool m_endOffsetHasBeenSet = false;
   bool m_startOffsetHasBeenSet = false;
 };
 

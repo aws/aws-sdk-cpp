@@ -120,18 +120,18 @@ class ParentStepDetails {
   ///@}
  private:
   Aws::String m_stepExecutionId;
-  bool m_stepExecutionIdHasBeenSet = false;
 
   Aws::String m_stepName;
-  bool m_stepNameHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   int m_iteration{0};
-  bool m_iterationHasBeenSet = false;
 
   Aws::String m_iteratorValue;
+  bool m_stepExecutionIdHasBeenSet = false;
+  bool m_stepNameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_iterationHasBeenSet = false;
   bool m_iteratorValueHasBeenSet = false;
 };
 

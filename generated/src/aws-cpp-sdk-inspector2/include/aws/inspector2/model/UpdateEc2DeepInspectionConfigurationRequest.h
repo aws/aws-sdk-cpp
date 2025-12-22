@@ -75,9 +75,9 @@ class UpdateEc2DeepInspectionConfigurationRequest : public Inspector2Request {
   ///@}
  private:
   bool m_activateDeepInspection{false};
-  bool m_activateDeepInspectionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_packagePaths;
+  bool m_activateDeepInspectionHasBeenSet = false;
   bool m_packagePathsHasBeenSet = false;
 };
 

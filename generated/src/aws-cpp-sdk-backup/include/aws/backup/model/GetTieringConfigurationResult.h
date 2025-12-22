@@ -61,9 +61,9 @@ class GetTieringConfigurationResult {
   ///@}
  private:
   TieringConfiguration m_tieringConfiguration;
-  bool m_tieringConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tieringConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

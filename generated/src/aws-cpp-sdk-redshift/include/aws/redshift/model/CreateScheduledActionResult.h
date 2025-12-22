@@ -232,33 +232,33 @@ class CreateScheduledActionResult {
   ///@}
  private:
   Aws::String m_scheduledActionName;
-  bool m_scheduledActionNameHasBeenSet = false;
 
   ScheduledActionType m_targetAction;
-  bool m_targetActionHasBeenSet = false;
 
   Aws::String m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   Aws::String m_iamRole;
-  bool m_iamRoleHasBeenSet = false;
 
   Aws::String m_scheduledActionDescription;
-  bool m_scheduledActionDescriptionHasBeenSet = false;
 
   ScheduledActionState m_state{ScheduledActionState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
-  bool m_nextInvocationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_scheduledActionNameHasBeenSet = false;
+  bool m_targetActionHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_iamRoleHasBeenSet = false;
+  bool m_scheduledActionDescriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_nextInvocationsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

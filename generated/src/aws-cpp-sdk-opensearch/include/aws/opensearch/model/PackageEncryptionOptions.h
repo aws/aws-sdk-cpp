@@ -66,9 +66,9 @@ class PackageEncryptionOptions {
   ///@}
  private:
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   bool m_encryptionEnabled{false};
+  bool m_kmsKeyIdentifierHasBeenSet = false;
   bool m_encryptionEnabledHasBeenSet = false;
 };
 

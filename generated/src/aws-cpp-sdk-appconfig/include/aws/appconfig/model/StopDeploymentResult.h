@@ -431,72 +431,72 @@ class StopDeploymentResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_environmentId;
-  bool m_environmentIdHasBeenSet = false;
 
   Aws::String m_deploymentStrategyId;
-  bool m_deploymentStrategyIdHasBeenSet = false;
 
   Aws::String m_configurationProfileId;
-  bool m_configurationProfileIdHasBeenSet = false;
 
   int m_deploymentNumber{0};
-  bool m_deploymentNumberHasBeenSet = false;
 
   Aws::String m_configurationName;
-  bool m_configurationNameHasBeenSet = false;
 
   Aws::String m_configurationLocationUri;
-  bool m_configurationLocationUriHasBeenSet = false;
 
   Aws::String m_configurationVersion;
-  bool m_configurationVersionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_deploymentDurationInMinutes{0};
-  bool m_deploymentDurationInMinutesHasBeenSet = false;
 
   GrowthType m_growthType{GrowthType::NOT_SET};
-  bool m_growthTypeHasBeenSet = false;
 
   double m_growthFactor{0.0};
-  bool m_growthFactorHasBeenSet = false;
 
   int m_finalBakeTimeInMinutes{0};
-  bool m_finalBakeTimeInMinutesHasBeenSet = false;
 
   DeploymentState m_state{DeploymentState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<DeploymentEvent> m_eventLog;
-  bool m_eventLogHasBeenSet = false;
 
   double m_percentageComplete{0.0};
-  bool m_percentageCompleteHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedAt{};
-  bool m_completedAtHasBeenSet = false;
 
   Aws::Vector<AppliedExtension> m_appliedExtensions;
-  bool m_appliedExtensionsHasBeenSet = false;
 
   Aws::String m_kmsKeyArn;
-  bool m_kmsKeyArnHasBeenSet = false;
 
   Aws::String m_kmsKeyIdentifier;
-  bool m_kmsKeyIdentifierHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_deploymentStrategyIdHasBeenSet = false;
+  bool m_configurationProfileIdHasBeenSet = false;
+  bool m_deploymentNumberHasBeenSet = false;
+  bool m_configurationNameHasBeenSet = false;
+  bool m_configurationLocationUriHasBeenSet = false;
+  bool m_configurationVersionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deploymentDurationInMinutesHasBeenSet = false;
+  bool m_growthTypeHasBeenSet = false;
+  bool m_growthFactorHasBeenSet = false;
+  bool m_finalBakeTimeInMinutesHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_eventLogHasBeenSet = false;
+  bool m_percentageCompleteHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
+  bool m_completedAtHasBeenSet = false;
+  bool m_appliedExtensionsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
+  bool m_kmsKeyIdentifierHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

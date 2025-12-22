@@ -91,12 +91,12 @@ class GetSolNetworkPackageMetadata {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   NetworkArtifactMeta m_nsd;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_nsdHasBeenSet = false;
 };
 

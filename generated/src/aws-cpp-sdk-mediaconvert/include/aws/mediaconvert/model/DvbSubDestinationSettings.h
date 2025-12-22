@@ -686,96 +686,96 @@ Within your job settings,
   ///@}
  private:
   DvbSubtitleAlignment m_alignment{DvbSubtitleAlignment::NOT_SET};
-  bool m_alignmentHasBeenSet = false;
 
   DvbSubtitleApplyFontColor m_applyFontColor{DvbSubtitleApplyFontColor::NOT_SET};
-  bool m_applyFontColorHasBeenSet = false;
 
   DvbSubtitleBackgroundColor m_backgroundColor{DvbSubtitleBackgroundColor::NOT_SET};
-  bool m_backgroundColorHasBeenSet = false;
 
   int m_backgroundOpacity{0};
-  bool m_backgroundOpacityHasBeenSet = false;
 
   DvbddsHandling m_ddsHandling{DvbddsHandling::NOT_SET};
-  bool m_ddsHandlingHasBeenSet = false;
 
   int m_ddsXCoordinate{0};
-  bool m_ddsXCoordinateHasBeenSet = false;
 
   int m_ddsYCoordinate{0};
-  bool m_ddsYCoordinateHasBeenSet = false;
 
   DvbSubSubtitleFallbackFont m_fallbackFont{DvbSubSubtitleFallbackFont::NOT_SET};
-  bool m_fallbackFontHasBeenSet = false;
 
   DvbSubtitleFontColor m_fontColor{DvbSubtitleFontColor::NOT_SET};
-  bool m_fontColorHasBeenSet = false;
 
   Aws::String m_fontFileBold;
-  bool m_fontFileBoldHasBeenSet = false;
 
   Aws::String m_fontFileBoldItalic;
-  bool m_fontFileBoldItalicHasBeenSet = false;
 
   Aws::String m_fontFileItalic;
-  bool m_fontFileItalicHasBeenSet = false;
 
   Aws::String m_fontFileRegular;
-  bool m_fontFileRegularHasBeenSet = false;
 
   int m_fontOpacity{0};
-  bool m_fontOpacityHasBeenSet = false;
 
   int m_fontResolution{0};
-  bool m_fontResolutionHasBeenSet = false;
 
   FontScript m_fontScript{FontScript::NOT_SET};
-  bool m_fontScriptHasBeenSet = false;
 
   int m_fontSize{0};
-  bool m_fontSizeHasBeenSet = false;
 
   int m_height{0};
-  bool m_heightHasBeenSet = false;
 
   Aws::String m_hexFontColor;
-  bool m_hexFontColorHasBeenSet = false;
 
   DvbSubtitleOutlineColor m_outlineColor{DvbSubtitleOutlineColor::NOT_SET};
-  bool m_outlineColorHasBeenSet = false;
 
   int m_outlineSize{0};
-  bool m_outlineSizeHasBeenSet = false;
 
   DvbSubtitleShadowColor m_shadowColor{DvbSubtitleShadowColor::NOT_SET};
-  bool m_shadowColorHasBeenSet = false;
 
   int m_shadowOpacity{0};
-  bool m_shadowOpacityHasBeenSet = false;
 
   int m_shadowXOffset{0};
-  bool m_shadowXOffsetHasBeenSet = false;
 
   int m_shadowYOffset{0};
-  bool m_shadowYOffsetHasBeenSet = false;
 
   DvbSubtitleStylePassthrough m_stylePassthrough{DvbSubtitleStylePassthrough::NOT_SET};
-  bool m_stylePassthroughHasBeenSet = false;
 
   DvbSubtitlingType m_subtitlingType{DvbSubtitlingType::NOT_SET};
-  bool m_subtitlingTypeHasBeenSet = false;
 
   DvbSubtitleTeletextSpacing m_teletextSpacing{DvbSubtitleTeletextSpacing::NOT_SET};
-  bool m_teletextSpacingHasBeenSet = false;
 
   int m_width{0};
-  bool m_widthHasBeenSet = false;
 
   int m_xPosition{0};
-  bool m_xPositionHasBeenSet = false;
 
   int m_yPosition{0};
+  bool m_alignmentHasBeenSet = false;
+  bool m_applyFontColorHasBeenSet = false;
+  bool m_backgroundColorHasBeenSet = false;
+  bool m_backgroundOpacityHasBeenSet = false;
+  bool m_ddsHandlingHasBeenSet = false;
+  bool m_ddsXCoordinateHasBeenSet = false;
+  bool m_ddsYCoordinateHasBeenSet = false;
+  bool m_fallbackFontHasBeenSet = false;
+  bool m_fontColorHasBeenSet = false;
+  bool m_fontFileBoldHasBeenSet = false;
+  bool m_fontFileBoldItalicHasBeenSet = false;
+  bool m_fontFileItalicHasBeenSet = false;
+  bool m_fontFileRegularHasBeenSet = false;
+  bool m_fontOpacityHasBeenSet = false;
+  bool m_fontResolutionHasBeenSet = false;
+  bool m_fontScriptHasBeenSet = false;
+  bool m_fontSizeHasBeenSet = false;
+  bool m_heightHasBeenSet = false;
+  bool m_hexFontColorHasBeenSet = false;
+  bool m_outlineColorHasBeenSet = false;
+  bool m_outlineSizeHasBeenSet = false;
+  bool m_shadowColorHasBeenSet = false;
+  bool m_shadowOpacityHasBeenSet = false;
+  bool m_shadowXOffsetHasBeenSet = false;
+  bool m_shadowYOffsetHasBeenSet = false;
+  bool m_stylePassthroughHasBeenSet = false;
+  bool m_subtitlingTypeHasBeenSet = false;
+  bool m_teletextSpacingHasBeenSet = false;
+  bool m_widthHasBeenSet = false;
+  bool m_xPositionHasBeenSet = false;
   bool m_yPositionHasBeenSet = false;
 };
 

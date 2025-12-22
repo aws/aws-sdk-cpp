@@ -67,9 +67,9 @@ class PutCaseEventConfigurationRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   EventBridgeConfiguration m_eventBridge;
+  bool m_domainIdHasBeenSet = false;
   bool m_eventBridgeHasBeenSet = false;
 };
 

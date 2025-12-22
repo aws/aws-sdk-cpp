@@ -294,39 +294,39 @@ class ModifyDBInstanceRequest : public DocDBRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dBInstanceClass;
-  bool m_dBInstanceClassHasBeenSet = false;
 
   bool m_applyImmediately{false};
-  bool m_applyImmediatelyHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   Aws::String m_newDBInstanceIdentifier;
-  bool m_newDBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_cACertificateIdentifier;
-  bool m_cACertificateIdentifierHasBeenSet = false;
 
   bool m_copyTagsToSnapshot{false};
-  bool m_copyTagsToSnapshotHasBeenSet = false;
 
   int m_promotionTier{0};
-  bool m_promotionTierHasBeenSet = false;
 
   bool m_enablePerformanceInsights{false};
-  bool m_enablePerformanceInsightsHasBeenSet = false;
 
   Aws::String m_performanceInsightsKMSKeyId;
-  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
   bool m_certificateRotationRestart{false};
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_dBInstanceClassHasBeenSet = false;
+  bool m_applyImmediatelyHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_newDBInstanceIdentifierHasBeenSet = false;
+  bool m_cACertificateIdentifierHasBeenSet = false;
+  bool m_copyTagsToSnapshotHasBeenSet = false;
+  bool m_promotionTierHasBeenSet = false;
+  bool m_enablePerformanceInsightsHasBeenSet = false;
+  bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   bool m_certificateRotationRestartHasBeenSet = false;
 };
 

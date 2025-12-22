@@ -62,9 +62,9 @@ class GetTemplateGroupAccessControlEntryResult {
   ///@}
  private:
   AccessControlEntry m_accessControlEntry;
-  bool m_accessControlEntryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accessControlEntryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

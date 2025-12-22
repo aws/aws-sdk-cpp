@@ -88,12 +88,12 @@ class DescribeAutomationExecutionsResult {
   ///@}
  private:
   Aws::Vector<AutomationExecutionMetadata> m_automationExecutionMetadataList;
-  bool m_automationExecutionMetadataListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_automationExecutionMetadataListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

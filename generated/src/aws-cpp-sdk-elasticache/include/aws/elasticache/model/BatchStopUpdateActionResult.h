@@ -91,12 +91,12 @@ class BatchStopUpdateActionResult {
   ///@}
  private:
   Aws::Vector<ProcessedUpdateAction> m_processedUpdateActions;
-  bool m_processedUpdateActionsHasBeenSet = false;
 
   Aws::Vector<UnprocessedUpdateAction> m_unprocessedUpdateActions;
-  bool m_unprocessedUpdateActionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_processedUpdateActionsHasBeenSet = false;
+  bool m_unprocessedUpdateActionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

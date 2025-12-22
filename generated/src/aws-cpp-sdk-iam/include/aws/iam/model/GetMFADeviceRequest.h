@@ -71,9 +71,9 @@ class GetMFADeviceRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_serialNumber;
-  bool m_serialNumberHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_serialNumberHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

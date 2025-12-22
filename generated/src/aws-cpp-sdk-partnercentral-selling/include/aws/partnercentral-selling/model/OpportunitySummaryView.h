@@ -178,24 +178,24 @@ class OpportunitySummaryView {
   ///@}
  private:
   OpportunityType m_opportunityType{OpportunityType::NOT_SET};
-  bool m_opportunityTypeHasBeenSet = false;
 
   LifeCycleForView m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::Vector<Contact> m_opportunityTeam;
-  bool m_opportunityTeamHasBeenSet = false;
 
   Aws::Vector<PrimaryNeedFromAws> m_primaryNeedsFromAws;
-  bool m_primaryNeedsFromAwsHasBeenSet = false;
 
   Customer m_customer;
-  bool m_customerHasBeenSet = false;
 
   ProjectView m_project;
-  bool m_projectHasBeenSet = false;
 
   RelatedEntityIdentifiers m_relatedEntityIdentifiers;
+  bool m_opportunityTypeHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_opportunityTeamHasBeenSet = false;
+  bool m_primaryNeedsFromAwsHasBeenSet = false;
+  bool m_customerHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
   bool m_relatedEntityIdentifiersHasBeenSet = false;
 };
 

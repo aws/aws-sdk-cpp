@@ -76,12 +76,12 @@ class StartBulkDeploymentResult {
   ///@}
  private:
   Aws::String m_bulkDeploymentArn;
-  bool m_bulkDeploymentArnHasBeenSet = false;
 
   Aws::String m_bulkDeploymentId;
-  bool m_bulkDeploymentIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_bulkDeploymentArnHasBeenSet = false;
+  bool m_bulkDeploymentIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

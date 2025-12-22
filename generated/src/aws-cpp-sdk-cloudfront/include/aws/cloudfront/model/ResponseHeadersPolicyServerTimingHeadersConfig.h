@@ -83,9 +83,9 @@ class ResponseHeadersPolicyServerTimingHeadersConfig {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   double m_samplingRate{0.0};
+  bool m_enabledHasBeenSet = false;
   bool m_samplingRateHasBeenSet = false;
 };
 

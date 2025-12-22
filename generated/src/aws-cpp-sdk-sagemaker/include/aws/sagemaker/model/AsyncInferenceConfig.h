@@ -72,9 +72,9 @@ class AsyncInferenceConfig {
   ///@}
  private:
   AsyncInferenceClientConfig m_clientConfig;
-  bool m_clientConfigHasBeenSet = false;
 
   AsyncInferenceOutputConfig m_outputConfig;
+  bool m_clientConfigHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
 };
 

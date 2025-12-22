@@ -21,7 +21,9 @@ namespace Model {
 
 /**
  * <p>An object that contains information on the error that caused the snapshot job
- * to fail.</p><p><h3>See Also:</h3>   <a
+ * to fail.</p> <p>For more information, see <a
+ * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboardSnapshotJobResult.html">DescribeDashboardSnapshotJobResult
+ * API</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SnapshotJobErrorInfo">AWS
  * API Reference</a></p>
  */
@@ -69,9 +71,9 @@ class SnapshotJobErrorInfo {
   ///@}
  private:
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorType;
+  bool m_errorMessageHasBeenSet = false;
   bool m_errorTypeHasBeenSet = false;
 };
 

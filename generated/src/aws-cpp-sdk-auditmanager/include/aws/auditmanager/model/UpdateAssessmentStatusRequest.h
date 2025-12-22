@@ -64,9 +64,9 @@ class UpdateAssessmentStatusRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_assessmentId;
-  bool m_assessmentIdHasBeenSet = false;
 
   AssessmentStatus m_status{AssessmentStatus::NOT_SET};
+  bool m_assessmentIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

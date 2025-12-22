@@ -296,45 +296,45 @@ class AutomationRule {
   ///@}
  private:
   Aws::String m_ruleArn;
-  bool m_ruleArnHasBeenSet = false;
 
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   RuleType m_ruleType{RuleType::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   long long m_ruleRevision{0};
-  bool m_ruleRevisionHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   OrganizationConfiguration m_organizationConfiguration;
-  bool m_organizationConfigurationHasBeenSet = false;
 
   Aws::String m_priority;
-  bool m_priorityHasBeenSet = false;
 
   Aws::Vector<RecommendedActionType> m_recommendedActionTypes;
-  bool m_recommendedActionTypesHasBeenSet = false;
 
   Schedule m_schedule;
-  bool m_scheduleHasBeenSet = false;
 
   RuleStatus m_status{RuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTimestamp{};
+  bool m_ruleArnHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_ruleRevisionHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_organizationConfigurationHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_recommendedActionTypesHasBeenSet = false;
+  bool m_scheduleHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
   bool m_lastUpdatedTimestampHasBeenSet = false;
 };
 

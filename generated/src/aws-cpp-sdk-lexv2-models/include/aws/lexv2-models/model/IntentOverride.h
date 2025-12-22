@@ -79,9 +79,9 @@ class IntentOverride {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, SlotValueOverride> m_slots;
+  bool m_nameHasBeenSet = false;
   bool m_slotsHasBeenSet = false;
 };
 

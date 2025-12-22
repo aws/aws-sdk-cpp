@@ -88,12 +88,12 @@ class ListConfiguredModelAlgorithmAssociationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ConfiguredModelAlgorithmAssociationSummary> m_configuredModelAlgorithmAssociations;
-  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_configuredModelAlgorithmAssociationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

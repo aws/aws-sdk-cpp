@@ -130,18 +130,18 @@ class RecoverySnapshot {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ebsSnapshots;
-  bool m_ebsSnapshotsHasBeenSet = false;
 
   Aws::String m_expectedTimestamp;
-  bool m_expectedTimestampHasBeenSet = false;
 
   Aws::String m_snapshotID;
-  bool m_snapshotIDHasBeenSet = false;
 
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
 
   Aws::String m_timestamp;
+  bool m_ebsSnapshotsHasBeenSet = false;
+  bool m_expectedTimestampHasBeenSet = false;
+  bool m_snapshotIDHasBeenSet = false;
+  bool m_sourceServerIDHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
 };
 

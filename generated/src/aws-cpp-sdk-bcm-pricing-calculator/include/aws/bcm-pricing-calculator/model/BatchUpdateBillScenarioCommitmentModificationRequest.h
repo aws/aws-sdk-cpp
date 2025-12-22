@@ -78,9 +78,9 @@ class BatchUpdateBillScenarioCommitmentModificationRequest : public BCMPricingCa
   ///@}
  private:
   Aws::String m_billScenarioId;
-  bool m_billScenarioIdHasBeenSet = false;
 
   Aws::Vector<BatchUpdateBillScenarioCommitmentModificationEntry> m_commitmentModifications;
+  bool m_billScenarioIdHasBeenSet = false;
   bool m_commitmentModificationsHasBeenSet = false;
 };
 

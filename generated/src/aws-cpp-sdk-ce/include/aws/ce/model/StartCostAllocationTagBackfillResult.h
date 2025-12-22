@@ -61,9 +61,9 @@ class StartCostAllocationTagBackfillResult {
   ///@}
  private:
   CostAllocationTagBackfillRequest m_backfillRequest;
-  bool m_backfillRequestHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_backfillRequestHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

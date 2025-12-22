@@ -33,8 +33,8 @@ class DisassociateIamRoleFromResourceRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the IAM service role to disassociate from
-   * the resource.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access
+   * Management (IAM) service role to disassociate from the resource.</p>
    */
   inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
   inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
@@ -52,8 +52,8 @@ class DisassociateIamRoleFromResourceRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The Amazon Web Services integration configuration settings for the IAM
-   * service role disassociation.</p>
+   * <p>The Amazon Web Services integration configuration settings for the Amazon Web
+   * Services Identity and Access Management (IAM) service role disassociation.</p>
    */
   inline SupportedAwsIntegration GetAwsIntegration() const { return m_awsIntegration; }
   inline bool AwsIntegrationHasBeenSet() const { return m_awsIntegrationHasBeenSet; }
@@ -70,7 +70,7 @@ class DisassociateIamRoleFromResourceRequest : public OdbRequest {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the target resource to disassociate from
-   * the IAM service role.</p>
+   * the Amazon Web Services Identity and Access Management (IAM) service role.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -87,12 +87,12 @@ class DisassociateIamRoleFromResourceRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   SupportedAwsIntegration m_awsIntegration{SupportedAwsIntegration::NOT_SET};
-  bool m_awsIntegrationHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_awsIntegrationHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

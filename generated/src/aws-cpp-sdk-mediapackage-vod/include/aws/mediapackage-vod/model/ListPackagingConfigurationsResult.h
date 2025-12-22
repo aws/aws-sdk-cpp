@@ -85,12 +85,12 @@ class ListPackagingConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<PackagingConfiguration> m_packagingConfigurations;
-  bool m_packagingConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_packagingConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

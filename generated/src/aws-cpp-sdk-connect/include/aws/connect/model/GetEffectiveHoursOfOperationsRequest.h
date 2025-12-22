@@ -106,15 +106,15 @@ class GetEffectiveHoursOfOperationsRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_hoursOfOperationId;
-  bool m_hoursOfOperationIdHasBeenSet = false;
 
   Aws::String m_fromDate;
-  bool m_fromDateHasBeenSet = false;
 
   Aws::String m_toDate;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_hoursOfOperationIdHasBeenSet = false;
+  bool m_fromDateHasBeenSet = false;
   bool m_toDateHasBeenSet = false;
 };
 

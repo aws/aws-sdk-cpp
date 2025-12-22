@@ -59,9 +59,9 @@ class PurchaseProvisionedCapacityResult {
   ///@}
  private:
   Aws::String m_capacityId;
-  bool m_capacityIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

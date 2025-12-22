@@ -195,27 +195,27 @@ class CreateProjectRequest : public DataZoneRequest {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainIdentifier;
-  bool m_domainIdentifierHasBeenSet = false;
 
   Aws::String m_domainUnitId;
-  bool m_domainUnitIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_glossaryTerms;
-  bool m_glossaryTermsHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_projectProfileId;
-  bool m_projectProfileIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceTags;
-  bool m_resourceTagsHasBeenSet = false;
 
   Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_projectProfileIdHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
   bool m_userParametersHasBeenSet = false;
 };
 

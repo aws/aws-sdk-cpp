@@ -89,12 +89,12 @@ class ListGatewayRoutesResult {
   ///@}
  private:
   Aws::Vector<GatewayRouteRef> m_gatewayRoutes;
-  bool m_gatewayRoutesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayRoutesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

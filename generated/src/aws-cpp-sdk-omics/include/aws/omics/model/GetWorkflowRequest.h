@@ -112,15 +112,15 @@ class GetWorkflowRequest : public OmicsRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   WorkflowType m_type{WorkflowType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<WorkflowExport> m_export;
-  bool m_exportHasBeenSet = false;
 
   Aws::String m_workflowOwnerId;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_exportHasBeenSet = false;
   bool m_workflowOwnerIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class VcfOptions {
   ///@}
  private:
   bool m_ignoreQualField{false};
-  bool m_ignoreQualFieldHasBeenSet = false;
 
   bool m_ignoreFilterField{false};
+  bool m_ignoreQualFieldHasBeenSet = false;
   bool m_ignoreFilterFieldHasBeenSet = false;
 };
 

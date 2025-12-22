@@ -119,18 +119,18 @@ class ListEntitySecurityProfilesRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   EntityType m_entityType{EntityType::NOT_SET};
-  bool m_entityTypeHasBeenSet = false;
 
   Aws::String m_entityArn;
-  bool m_entityArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_entityArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

@@ -79,9 +79,9 @@ class ContactSearchSummarySegmentAttributeValue {
   ///@}
  private:
   Aws::String m_valueString;
-  bool m_valueStringHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_valueMap;
+  bool m_valueStringHasBeenSet = false;
   bool m_valueMapHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class AxisTickLabelOptions {
   ///@}
  private:
   LabelOptions m_labelOptions;
-  bool m_labelOptionsHasBeenSet = false;
 
   double m_rotationAngle{0.0};
+  bool m_labelOptionsHasBeenSet = false;
   bool m_rotationAngleHasBeenSet = false;
 };
 

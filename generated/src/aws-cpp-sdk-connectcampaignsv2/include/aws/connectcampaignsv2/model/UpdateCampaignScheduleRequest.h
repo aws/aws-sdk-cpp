@@ -65,9 +65,9 @@ class UpdateCampaignScheduleRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Schedule m_schedule;
+  bool m_idHasBeenSet = false;
   bool m_scheduleHasBeenSet = false;
 };
 

@@ -180,24 +180,24 @@ class IntentResultEvent {
   ///@}
  private:
   InputMode m_inputMode{InputMode::NOT_SET};
-  bool m_inputModeHasBeenSet = false;
 
   Aws::Vector<Interpretation> m_interpretations;
-  bool m_interpretationsHasBeenSet = false;
 
   SessionState m_sessionState;
-  bool m_sessionStateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_requestAttributes;
-  bool m_requestAttributesHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   RecognizedBotMember m_recognizedBotMember;
+  bool m_inputModeHasBeenSet = false;
+  bool m_interpretationsHasBeenSet = false;
+  bool m_sessionStateHasBeenSet = false;
+  bool m_requestAttributesHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
   bool m_recognizedBotMemberHasBeenSet = false;
 };
 

@@ -110,12 +110,12 @@ class DataPrepConfiguration {
   ///@}
  private:
   Aws::Map<Aws::String, SourceTable> m_sourceTableMap;
-  bool m_sourceTableMapHasBeenSet = false;
 
   Aws::Map<Aws::String, TransformStep> m_transformStepMap;
-  bool m_transformStepMapHasBeenSet = false;
 
   Aws::Map<Aws::String, DestinationTable> m_destinationTableMap;
+  bool m_sourceTableMapHasBeenSet = false;
+  bool m_transformStepMapHasBeenSet = false;
   bool m_destinationTableMapHasBeenSet = false;
 };
 

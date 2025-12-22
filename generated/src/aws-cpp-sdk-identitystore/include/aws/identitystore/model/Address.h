@@ -175,27 +175,27 @@ class Address {
   ///@}
  private:
   Aws::String m_streetAddress;
-  bool m_streetAddressHasBeenSet = false;
 
   Aws::String m_locality;
-  bool m_localityHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_postalCode;
-  bool m_postalCodeHasBeenSet = false;
 
   Aws::String m_country;
-  bool m_countryHasBeenSet = false;
 
   Aws::String m_formatted;
-  bool m_formattedHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   bool m_primary{false};
+  bool m_streetAddressHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_countryHasBeenSet = false;
+  bool m_formattedHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_primaryHasBeenSet = false;
 };
 

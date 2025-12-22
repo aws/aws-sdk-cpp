@@ -32,7 +32,7 @@ class GetPolicyGenerationRequest : public BedrockAgentCoreControlRequest {
   /**
    * <p>The unique identifier of the policy generation request to be retrieved. This
    * must be a valid generation ID from a previous <a
-   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html">StartPolicyGeneration</a>
    * call.</p>
    */
   inline const Aws::String& GetPolicyGenerationId() const { return m_policyGenerationId; }
@@ -70,9 +70,9 @@ class GetPolicyGenerationRequest : public BedrockAgentCoreControlRequest {
   ///@}
  private:
   Aws::String m_policyGenerationId;
-  bool m_policyGenerationIdHasBeenSet = false;
 
   Aws::String m_policyEngineId;
+  bool m_policyGenerationIdHasBeenSet = false;
   bool m_policyEngineIdHasBeenSet = false;
 };
 

@@ -28,10 +28,8 @@ class ListDashboardsRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>If you specify this parameter, only the dashboards with names starting with
@@ -72,9 +70,9 @@ class ListDashboardsRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_dashboardNamePrefix;
-  bool m_dashboardNamePrefixHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_dashboardNamePrefixHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

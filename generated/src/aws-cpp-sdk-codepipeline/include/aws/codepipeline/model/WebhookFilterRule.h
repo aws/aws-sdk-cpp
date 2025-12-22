@@ -83,9 +83,9 @@ class WebhookFilterRule {
   ///@}
  private:
   Aws::String m_jsonPath;
-  bool m_jsonPathHasBeenSet = false;
 
   Aws::String m_matchEquals;
+  bool m_jsonPathHasBeenSet = false;
   bool m_matchEqualsHasBeenSet = false;
 };
 

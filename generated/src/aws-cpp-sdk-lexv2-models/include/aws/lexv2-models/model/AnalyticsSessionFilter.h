@@ -138,12 +138,12 @@ class AnalyticsSessionFilter {
   ///@}
  private:
   AnalyticsSessionFilterName m_name{AnalyticsSessionFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   AnalyticsFilterOperator m_operator{AnalyticsFilterOperator::NOT_SET};
-  bool m_operatorHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

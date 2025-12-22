@@ -139,15 +139,15 @@ class UserContext {
   ///@}
  private:
   Aws::String m_token;
-  bool m_tokenHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::Vector<DataSourceGroup> m_dataSourceGroups;
+  bool m_tokenHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
   bool m_dataSourceGroupsHasBeenSet = false;
 };
 

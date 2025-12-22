@@ -85,12 +85,12 @@ class ListAppAssessmentResourceDriftsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ResourceDrift> m_resourceDrifts;
-  bool m_resourceDriftsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_resourceDriftsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

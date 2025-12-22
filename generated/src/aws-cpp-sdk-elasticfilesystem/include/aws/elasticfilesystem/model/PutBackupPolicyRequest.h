@@ -66,9 +66,9 @@ class PutBackupPolicyRequest : public EFSRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   BackupPolicy m_backupPolicy;
+  bool m_fileSystemIdHasBeenSet = false;
   bool m_backupPolicyHasBeenSet = false;
 };
 

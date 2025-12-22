@@ -80,12 +80,12 @@ class RouteVehicleTravelOnlySummary {
   ///@}
  private:
   long long m_bestCaseDuration{0};
-  bool m_bestCaseDurationHasBeenSet = false;
 
   long long m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   long long m_typicalDuration{0};
+  bool m_bestCaseDurationHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
   bool m_typicalDurationHasBeenSet = false;
 };
 

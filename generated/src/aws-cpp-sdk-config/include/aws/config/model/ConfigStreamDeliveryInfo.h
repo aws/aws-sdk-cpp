@@ -109,15 +109,15 @@ class ConfigStreamDeliveryInfo {
   ///@}
  private:
   DeliveryStatus m_lastStatus{DeliveryStatus::NOT_SET};
-  bool m_lastStatusHasBeenSet = false;
 
   Aws::String m_lastErrorCode;
-  bool m_lastErrorCodeHasBeenSet = false;
 
   Aws::String m_lastErrorMessage;
-  bool m_lastErrorMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastStatusChangeTime{};
+  bool m_lastStatusHasBeenSet = false;
+  bool m_lastErrorCodeHasBeenSet = false;
+  bool m_lastErrorMessageHasBeenSet = false;
   bool m_lastStatusChangeTimeHasBeenSet = false;
 };
 

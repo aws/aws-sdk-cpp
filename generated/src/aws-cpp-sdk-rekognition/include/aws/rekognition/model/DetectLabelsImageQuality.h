@@ -78,12 +78,12 @@ class DetectLabelsImageQuality {
   ///@}
  private:
   double m_brightness{0.0};
-  bool m_brightnessHasBeenSet = false;
 
   double m_sharpness{0.0};
-  bool m_sharpnessHasBeenSet = false;
 
   double m_contrast{0.0};
+  bool m_brightnessHasBeenSet = false;
+  bool m_sharpnessHasBeenSet = false;
   bool m_contrastHasBeenSet = false;
 };
 

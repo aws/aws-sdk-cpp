@@ -125,18 +125,18 @@ class GetCatalogsRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_parentCatalogId;
-  bool m_parentCatalogIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   bool m_recursive{false};
-  bool m_recursiveHasBeenSet = false;
 
   bool m_includeRoot{false};
+  bool m_parentCatalogIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_recursiveHasBeenSet = false;
   bool m_includeRootHasBeenSet = false;
 };
 

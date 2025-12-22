@@ -89,12 +89,12 @@ class Field {
   ///@}
  private:
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_stringValue;
-  bool m_stringValueHasBeenSet = false;
 
   Aws::String m_refValue;
+  bool m_keyHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
   bool m_refValueHasBeenSet = false;
 };
 

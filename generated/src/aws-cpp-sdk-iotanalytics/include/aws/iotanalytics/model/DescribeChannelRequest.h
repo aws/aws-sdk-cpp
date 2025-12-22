@@ -70,9 +70,9 @@ class DescribeChannelRequest : public IoTAnalyticsRequest {
   ///@}
  private:
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   bool m_includeStatistics{false};
+  bool m_channelNameHasBeenSet = false;
   bool m_includeStatisticsHasBeenSet = false;
 };
 

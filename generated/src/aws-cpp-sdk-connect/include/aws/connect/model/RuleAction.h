@@ -244,33 +244,33 @@ class RuleAction {
   ///@}
  private:
   ActionType m_actionType{ActionType::NOT_SET};
-  bool m_actionTypeHasBeenSet = false;
 
   TaskActionDefinition m_taskAction;
-  bool m_taskActionHasBeenSet = false;
 
   EventBridgeActionDefinition m_eventBridgeAction;
-  bool m_eventBridgeActionHasBeenSet = false;
 
   AssignContactCategoryActionDefinition m_assignContactCategoryAction;
-  bool m_assignContactCategoryActionHasBeenSet = false;
 
   SendNotificationActionDefinition m_sendNotificationAction;
-  bool m_sendNotificationActionHasBeenSet = false;
 
   CreateCaseActionDefinition m_createCaseAction;
-  bool m_createCaseActionHasBeenSet = false;
 
   UpdateCaseActionDefinition m_updateCaseAction;
-  bool m_updateCaseActionHasBeenSet = false;
 
   AssignSlaActionDefinition m_assignSlaAction;
-  bool m_assignSlaActionHasBeenSet = false;
 
   EndAssociatedTasksActionDefinition m_endAssociatedTasksAction;
-  bool m_endAssociatedTasksActionHasBeenSet = false;
 
   SubmitAutoEvaluationActionDefinition m_submitAutoEvaluationAction;
+  bool m_actionTypeHasBeenSet = false;
+  bool m_taskActionHasBeenSet = false;
+  bool m_eventBridgeActionHasBeenSet = false;
+  bool m_assignContactCategoryActionHasBeenSet = false;
+  bool m_sendNotificationActionHasBeenSet = false;
+  bool m_createCaseActionHasBeenSet = false;
+  bool m_updateCaseActionHasBeenSet = false;
+  bool m_assignSlaActionHasBeenSet = false;
+  bool m_endAssociatedTasksActionHasBeenSet = false;
   bool m_submitAutoEvaluationActionHasBeenSet = false;
 };
 

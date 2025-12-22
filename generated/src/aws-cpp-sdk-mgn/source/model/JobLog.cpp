@@ -18,6 +18,10 @@ namespace Model {
 JobLog::JobLog(JsonView jsonValue) { *this = jsonValue; }
 
 JobLog& JobLog::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("logDateTime")) {
+    m_logDateTime = jsonValue.GetString("logDateTime");
+    m_logDateTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("event")) {
     m_event = JobLogEventMapper::GetJobLogEventForName(jsonValue.GetString("event"));
     m_eventHasBeenSet = true;
@@ -26,15 +30,15 @@ JobLog& JobLog::operator=(JsonView jsonValue) {
     m_eventData = jsonValue.GetObject("eventData");
     m_eventDataHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("logDateTime")) {
-    m_logDateTime = jsonValue.GetString("logDateTime");
-    m_logDateTimeHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue JobLog::Jsonize() const {
   JsonValue payload;
+
+  if (m_logDateTimeHasBeenSet) {
+    payload.WithString("logDateTime", m_logDateTime);
+  }
 
   if (m_eventHasBeenSet) {
     payload.WithString("event", JobLogEventMapper::GetNameForJobLogEvent(m_event));
@@ -42,10 +46,6 @@ JsonValue JobLog::Jsonize() const {
 
   if (m_eventDataHasBeenSet) {
     payload.WithObject("eventData", m_eventData.Jsonize());
-  }
-
-  if (m_logDateTimeHasBeenSet) {
-    payload.WithString("logDateTime", m_logDateTime);
   }
 
   return payload;

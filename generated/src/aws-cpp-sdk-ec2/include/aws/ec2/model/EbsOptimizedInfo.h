@@ -134,21 +134,21 @@ class EbsOptimizedInfo {
   ///@}
  private:
   int m_baselineBandwidthInMbps{0};
-  bool m_baselineBandwidthInMbpsHasBeenSet = false;
 
   double m_baselineThroughputInMBps{0.0};
-  bool m_baselineThroughputInMBpsHasBeenSet = false;
 
   int m_baselineIops{0};
-  bool m_baselineIopsHasBeenSet = false;
 
   int m_maximumBandwidthInMbps{0};
-  bool m_maximumBandwidthInMbpsHasBeenSet = false;
 
   double m_maximumThroughputInMBps{0.0};
-  bool m_maximumThroughputInMBpsHasBeenSet = false;
 
   int m_maximumIops{0};
+  bool m_baselineBandwidthInMbpsHasBeenSet = false;
+  bool m_baselineThroughputInMBpsHasBeenSet = false;
+  bool m_baselineIopsHasBeenSet = false;
+  bool m_maximumBandwidthInMbpsHasBeenSet = false;
+  bool m_maximumThroughputInMBpsHasBeenSet = false;
   bool m_maximumIopsHasBeenSet = false;
 };
 

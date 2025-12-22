@@ -86,12 +86,12 @@ class ListLexiconsResult {
   ///@}
  private:
   Aws::Vector<LexiconDescription> m_lexicons;
-  bool m_lexiconsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_lexiconsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

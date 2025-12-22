@@ -65,9 +65,9 @@ class CreatePresignedNotebookInstanceUrlRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_notebookInstanceName;
-  bool m_notebookInstanceNameHasBeenSet = false;
 
   int m_sessionExpirationDurationInSeconds{0};
+  bool m_notebookInstanceNameHasBeenSet = false;
   bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
 };
 

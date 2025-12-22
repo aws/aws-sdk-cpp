@@ -101,15 +101,15 @@ class BucketCountByEffectivePermission {
   ///@}
  private:
   long long m_publiclyAccessible{0};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   long long m_publiclyReadable{0};
-  bool m_publiclyReadableHasBeenSet = false;
 
   long long m_publiclyWritable{0};
-  bool m_publiclyWritableHasBeenSet = false;
 
   long long m_unknown{0};
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_publiclyReadableHasBeenSet = false;
+  bool m_publiclyWritableHasBeenSet = false;
   bool m_unknownHasBeenSet = false;
 };
 

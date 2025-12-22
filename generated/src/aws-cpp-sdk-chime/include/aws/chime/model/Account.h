@@ -210,30 +210,30 @@ class Account {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AccountType m_accountType{AccountType::NOT_SET};
-  bool m_accountTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   License m_defaultLicense{License::NOT_SET};
-  bool m_defaultLicenseHasBeenSet = false;
 
   Aws::Vector<License> m_supportedLicenses;
-  bool m_supportedLicensesHasBeenSet = false;
 
   AccountStatus m_accountStatus{AccountStatus::NOT_SET};
-  bool m_accountStatusHasBeenSet = false;
 
   Aws::Vector<SigninDelegateGroup> m_signinDelegateGroups;
+  bool m_awsAccountIdHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_accountTypeHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_defaultLicenseHasBeenSet = false;
+  bool m_supportedLicensesHasBeenSet = false;
+  bool m_accountStatusHasBeenSet = false;
   bool m_signinDelegateGroupsHasBeenSet = false;
 };
 

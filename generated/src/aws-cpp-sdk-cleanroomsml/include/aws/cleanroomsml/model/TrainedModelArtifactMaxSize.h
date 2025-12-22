@@ -70,9 +70,9 @@ class TrainedModelArtifactMaxSize {
   ///@}
  private:
   TrainedModelArtifactMaxSizeUnitType m_unit{TrainedModelArtifactMaxSizeUnitType::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_unitHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

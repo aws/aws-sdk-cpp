@@ -233,21 +233,21 @@ class RequestInspectionACFP {
   ///@}
  private:
   PayloadType m_payloadType{PayloadType::NOT_SET};
-  bool m_payloadTypeHasBeenSet = false;
 
   UsernameField m_usernameField;
-  bool m_usernameFieldHasBeenSet = false;
 
   PasswordField m_passwordField;
-  bool m_passwordFieldHasBeenSet = false;
 
   EmailField m_emailField;
-  bool m_emailFieldHasBeenSet = false;
 
   Aws::Vector<PhoneNumberField> m_phoneNumberFields;
-  bool m_phoneNumberFieldsHasBeenSet = false;
 
   Aws::Vector<AddressField> m_addressFields;
+  bool m_payloadTypeHasBeenSet = false;
+  bool m_usernameFieldHasBeenSet = false;
+  bool m_passwordFieldHasBeenSet = false;
+  bool m_emailFieldHasBeenSet = false;
+  bool m_phoneNumberFieldsHasBeenSet = false;
   bool m_addressFieldsHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class ListWebExperiencesResult {
   ///@}
  private:
   Aws::Vector<WebExperience> m_webExperiences;
-  bool m_webExperiencesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_webExperiencesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

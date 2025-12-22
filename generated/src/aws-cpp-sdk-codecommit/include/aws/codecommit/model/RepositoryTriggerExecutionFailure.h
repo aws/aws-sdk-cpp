@@ -68,9 +68,9 @@ class RepositoryTriggerExecutionFailure {
   ///@}
  private:
   Aws::String m_trigger;
-  bool m_triggerHasBeenSet = false;
 
   Aws::String m_failureMessage;
+  bool m_triggerHasBeenSet = false;
   bool m_failureMessageHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class DescribeConfigurationSettingsRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_environmentName;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_templateNameHasBeenSet = false;
   bool m_environmentNameHasBeenSet = false;
 };
 

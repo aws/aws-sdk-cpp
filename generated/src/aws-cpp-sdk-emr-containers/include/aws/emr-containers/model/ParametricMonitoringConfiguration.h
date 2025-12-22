@@ -91,12 +91,12 @@ class ParametricMonitoringConfiguration {
   ///@}
  private:
   Aws::String m_persistentAppUI;
-  bool m_persistentAppUIHasBeenSet = false;
 
   ParametricCloudWatchMonitoringConfiguration m_cloudWatchMonitoringConfiguration;
-  bool m_cloudWatchMonitoringConfigurationHasBeenSet = false;
 
   ParametricS3MonitoringConfiguration m_s3MonitoringConfiguration;
+  bool m_persistentAppUIHasBeenSet = false;
+  bool m_cloudWatchMonitoringConfigurationHasBeenSet = false;
   bool m_s3MonitoringConfigurationHasBeenSet = false;
 };
 

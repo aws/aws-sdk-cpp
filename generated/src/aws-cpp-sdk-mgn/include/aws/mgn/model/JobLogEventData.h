@@ -33,6 +33,24 @@ class JobLogEventData {
 
   ///@{
   /**
+   * <p>Job Event Source Server ID.</p>
+   */
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  }
+  template <typename SourceServerIDT = Aws::String>
+  JobLogEventData& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Job Event conversion Server ID.</p>
    */
   inline const Aws::String& GetConversionServerID() const { return m_conversionServerID; }
@@ -45,6 +63,24 @@ class JobLogEventData {
   template <typename ConversionServerIDT = Aws::String>
   JobLogEventData& WithConversionServerID(ConversionServerIDT&& value) {
     SetConversionServerID(std::forward<ConversionServerIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Job Event Target instance ID.</p>
+   */
+  inline const Aws::String& GetTargetInstanceID() const { return m_targetInstanceID; }
+  inline bool TargetInstanceIDHasBeenSet() const { return m_targetInstanceIDHasBeenSet; }
+  template <typename TargetInstanceIDT = Aws::String>
+  void SetTargetInstanceID(TargetInstanceIDT&& value) {
+    m_targetInstanceIDHasBeenSet = true;
+    m_targetInstanceID = std::forward<TargetInstanceIDT>(value);
+  }
+  template <typename TargetInstanceIDT = Aws::String>
+  JobLogEventData& WithTargetInstanceID(TargetInstanceIDT&& value) {
+    SetTargetInstanceID(std::forward<TargetInstanceIDT>(value));
     return *this;
   }
   ///@}
@@ -69,51 +105,54 @@ class JobLogEventData {
 
   ///@{
   /**
-   * <p>Job Event Source Server ID.</p>
+   * <p>Retries for this operation.</p>
    */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  inline int GetAttemptCount() const { return m_attemptCount; }
+  inline bool AttemptCountHasBeenSet() const { return m_attemptCountHasBeenSet; }
+  inline void SetAttemptCount(int value) {
+    m_attemptCountHasBeenSet = true;
+    m_attemptCount = value;
   }
-  template <typename SourceServerIDT = Aws::String>
-  JobLogEventData& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
+  inline JobLogEventData& WithAttemptCount(int value) {
+    SetAttemptCount(value);
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>Job Event Target instance ID.</p>
+   * <p>The maximum number of retries that will be attempted if this operation
+   * failed.</p>
    */
-  inline const Aws::String& GetTargetInstanceID() const { return m_targetInstanceID; }
-  inline bool TargetInstanceIDHasBeenSet() const { return m_targetInstanceIDHasBeenSet; }
-  template <typename TargetInstanceIDT = Aws::String>
-  void SetTargetInstanceID(TargetInstanceIDT&& value) {
-    m_targetInstanceIDHasBeenSet = true;
-    m_targetInstanceID = std::forward<TargetInstanceIDT>(value);
+  inline int GetMaxAttemptsCount() const { return m_maxAttemptsCount; }
+  inline bool MaxAttemptsCountHasBeenSet() const { return m_maxAttemptsCountHasBeenSet; }
+  inline void SetMaxAttemptsCount(int value) {
+    m_maxAttemptsCountHasBeenSet = true;
+    m_maxAttemptsCount = value;
   }
-  template <typename TargetInstanceIDT = Aws::String>
-  JobLogEventData& WithTargetInstanceID(TargetInstanceIDT&& value) {
-    SetTargetInstanceID(std::forward<TargetInstanceIDT>(value));
+  inline JobLogEventData& WithMaxAttemptsCount(int value) {
+    SetMaxAttemptsCount(value);
     return *this;
   }
   ///@}
  private:
-  Aws::String m_conversionServerID;
-  bool m_conversionServerIDHasBeenSet = false;
-
-  Aws::String m_rawError;
-  bool m_rawErrorHasBeenSet = false;
-
   Aws::String m_sourceServerID;
-  bool m_sourceServerIDHasBeenSet = false;
+
+  Aws::String m_conversionServerID;
 
   Aws::String m_targetInstanceID;
+
+  Aws::String m_rawError;
+
+  int m_attemptCount{0};
+
+  int m_maxAttemptsCount{0};
+  bool m_sourceServerIDHasBeenSet = false;
+  bool m_conversionServerIDHasBeenSet = false;
   bool m_targetInstanceIDHasBeenSet = false;
+  bool m_rawErrorHasBeenSet = false;
+  bool m_attemptCountHasBeenSet = false;
+  bool m_maxAttemptsCountHasBeenSet = false;
 };
 
 }  // namespace Model

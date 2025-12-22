@@ -164,21 +164,21 @@ class PlayReadyDrm {
   ///@}
  private:
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_key;
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_keyMd5;
-  bool m_keyMd5HasBeenSet = false;
 
   Aws::String m_keyId;
-  bool m_keyIdHasBeenSet = false;
 
   Aws::String m_initializationVector;
-  bool m_initializationVectorHasBeenSet = false;
 
   Aws::String m_licenseAcquisitionUrl;
+  bool m_formatHasBeenSet = false;
+  bool m_keyHasBeenSet = false;
+  bool m_keyMd5HasBeenSet = false;
+  bool m_keyIdHasBeenSet = false;
+  bool m_initializationVectorHasBeenSet = false;
   bool m_licenseAcquisitionUrlHasBeenSet = false;
 };
 

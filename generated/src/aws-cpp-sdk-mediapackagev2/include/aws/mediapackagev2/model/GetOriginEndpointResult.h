@@ -393,60 +393,60 @@ class GetOriginEndpointResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_channelGroupName;
-  bool m_channelGroupNameHasBeenSet = false;
 
   Aws::String m_channelName;
-  bool m_channelNameHasBeenSet = false;
 
   Aws::String m_originEndpointName;
-  bool m_originEndpointNameHasBeenSet = false;
 
   ContainerType m_containerType{ContainerType::NOT_SET};
-  bool m_containerTypeHasBeenSet = false;
 
   Segment m_segment;
-  bool m_segmentHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_resetAt{};
-  bool m_resetAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   int m_startoverWindowSeconds{0};
-  bool m_startoverWindowSecondsHasBeenSet = false;
 
   Aws::Vector<GetHlsManifestConfiguration> m_hlsManifests;
-  bool m_hlsManifestsHasBeenSet = false;
 
   Aws::Vector<GetLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
-  bool m_lowLatencyHlsManifestsHasBeenSet = false;
 
   Aws::Vector<GetDashManifestConfiguration> m_dashManifests;
-  bool m_dashManifestsHasBeenSet = false;
 
   Aws::Vector<GetMssManifestConfiguration> m_mssManifests;
-  bool m_mssManifestsHasBeenSet = false;
 
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
-  bool m_forceEndpointErrorConfigurationHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_channelGroupNameHasBeenSet = false;
+  bool m_channelNameHasBeenSet = false;
+  bool m_originEndpointNameHasBeenSet = false;
+  bool m_containerTypeHasBeenSet = false;
+  bool m_segmentHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_resetAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_startoverWindowSecondsHasBeenSet = false;
+  bool m_hlsManifestsHasBeenSet = false;
+  bool m_lowLatencyHlsManifestsHasBeenSet = false;
+  bool m_dashManifestsHasBeenSet = false;
+  bool m_mssManifestsHasBeenSet = false;
+  bool m_forceEndpointErrorConfigurationHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

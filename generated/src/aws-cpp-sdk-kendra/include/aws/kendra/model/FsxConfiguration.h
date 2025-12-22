@@ -218,24 +218,24 @@ class FsxConfiguration {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   FsxFileSystemType m_fileSystemType{FsxFileSystemType::NOT_SET};
-  bool m_fileSystemTypeHasBeenSet = false;
 
   DataSourceVpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inclusionPatterns;
-  bool m_inclusionPatternsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_exclusionPatterns;
-  bool m_exclusionPatternsHasBeenSet = false;
 
   Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_fileSystemTypeHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_inclusionPatternsHasBeenSet = false;
+  bool m_exclusionPatternsHasBeenSet = false;
   bool m_fieldMappingsHasBeenSet = false;
 };
 

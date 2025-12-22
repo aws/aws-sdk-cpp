@@ -110,15 +110,15 @@ class ScanConfiguration {
   ///@}
  private:
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   TriggerDetails m_triggerDetails;
-  bool m_triggerDetailsHasBeenSet = false;
 
   IncrementalScanDetails m_incrementalScanDetails;
-  bool m_incrementalScanDetailsHasBeenSet = false;
 
   ScanConfigurationRecoveryPoint m_recoveryPoint;
+  bool m_roleHasBeenSet = false;
+  bool m_triggerDetailsHasBeenSet = false;
+  bool m_incrementalScanDetailsHasBeenSet = false;
   bool m_recoveryPointHasBeenSet = false;
 };
 

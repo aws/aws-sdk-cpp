@@ -70,9 +70,9 @@ class LogGroupSummary {
   ///@}
  private:
   Aws::String m_logGroupName;
-  bool m_logGroupNameHasBeenSet = false;
 
   Aws::String m_logType;
+  bool m_logGroupNameHasBeenSet = false;
   bool m_logTypeHasBeenSet = false;
 };
 

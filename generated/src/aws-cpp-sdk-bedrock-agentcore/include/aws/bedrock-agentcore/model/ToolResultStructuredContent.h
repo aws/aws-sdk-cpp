@@ -135,21 +135,21 @@ class ToolResultStructuredContent {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   TaskStatus m_taskStatus{TaskStatus::NOT_SET};
-  bool m_taskStatusHasBeenSet = false;
 
   Aws::String m_stdout;
-  bool m_stdoutHasBeenSet = false;
 
   Aws::String m_stderr;
-  bool m_stderrHasBeenSet = false;
 
   int m_exitCode{0};
-  bool m_exitCodeHasBeenSet = false;
 
   double m_executionTime{0.0};
+  bool m_taskIdHasBeenSet = false;
+  bool m_taskStatusHasBeenSet = false;
+  bool m_stdoutHasBeenSet = false;
+  bool m_stderrHasBeenSet = false;
+  bool m_exitCodeHasBeenSet = false;
   bool m_executionTimeHasBeenSet = false;
 };
 

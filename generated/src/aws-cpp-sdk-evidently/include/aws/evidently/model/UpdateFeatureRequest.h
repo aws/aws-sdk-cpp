@@ -209,27 +209,27 @@ class UpdateFeatureRequest : public CloudWatchEvidentlyRequest {
   ///@}
  private:
   Aws::Vector<VariationConfig> m_addOrUpdateVariations;
-  bool m_addOrUpdateVariationsHasBeenSet = false;
 
   Aws::String m_defaultVariation;
-  bool m_defaultVariationHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_entityOverrides;
-  bool m_entityOverridesHasBeenSet = false;
 
   FeatureEvaluationStrategy m_evaluationStrategy{FeatureEvaluationStrategy::NOT_SET};
-  bool m_evaluationStrategyHasBeenSet = false;
 
   Aws::String m_feature;
-  bool m_featureHasBeenSet = false;
 
   Aws::String m_project;
-  bool m_projectHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeVariations;
+  bool m_addOrUpdateVariationsHasBeenSet = false;
+  bool m_defaultVariationHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_entityOverridesHasBeenSet = false;
+  bool m_evaluationStrategyHasBeenSet = false;
+  bool m_featureHasBeenSet = false;
+  bool m_projectHasBeenSet = false;
   bool m_removeVariationsHasBeenSet = false;
 };
 

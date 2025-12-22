@@ -29,10 +29,8 @@ class DeleteAnomalyDetectorRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>A single metric anomaly detector to be deleted.</p> <p>When using
@@ -86,9 +84,9 @@ class DeleteAnomalyDetectorRequest : public CloudWatchRequest {
   ///@}
  private:
   SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
   MetricMathAnomalyDetector m_metricMathAnomalyDetector;
+  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
   bool m_metricMathAnomalyDetectorHasBeenSet = false;
 };
 

@@ -585,63 +585,63 @@ class CreateChangeSetRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_templateBody;
-  bool m_templateBodyHasBeenSet = false;
 
   Aws::String m_templateURL;
-  bool m_templateURLHasBeenSet = false;
 
   bool m_usePreviousTemplate{false};
-  bool m_usePreviousTemplateHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   RollbackConfiguration m_rollbackConfiguration;
-  bool m_rollbackConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notificationARNs;
-  bool m_notificationARNsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_changeSetName;
-  bool m_changeSetNameHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ChangeSetType m_changeSetType{ChangeSetType::NOT_SET};
-  bool m_changeSetTypeHasBeenSet = false;
 
   Aws::Vector<ResourceToImport> m_resourcesToImport;
-  bool m_resourcesToImportHasBeenSet = false;
 
   bool m_includeNestedStacks{false};
-  bool m_includeNestedStacksHasBeenSet = false;
 
   OnStackFailure m_onStackFailure{OnStackFailure::NOT_SET};
-  bool m_onStackFailureHasBeenSet = false;
 
   bool m_importExistingResources{false};
-  bool m_importExistingResourcesHasBeenSet = false;
 
   DeploymentMode m_deploymentMode{DeploymentMode::NOT_SET};
+  bool m_stackNameHasBeenSet = false;
+  bool m_templateBodyHasBeenSet = false;
+  bool m_templateURLHasBeenSet = false;
+  bool m_usePreviousTemplateHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_rollbackConfigurationHasBeenSet = false;
+  bool m_notificationARNsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_changeSetNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_changeSetTypeHasBeenSet = false;
+  bool m_resourcesToImportHasBeenSet = false;
+  bool m_includeNestedStacksHasBeenSet = false;
+  bool m_onStackFailureHasBeenSet = false;
+  bool m_importExistingResourcesHasBeenSet = false;
   bool m_deploymentModeHasBeenSet = false;
 };
 

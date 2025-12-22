@@ -290,42 +290,42 @@ class ManagedNotificationEvent {
   ///@}
  private:
   SchemaVersion m_schemaVersion{SchemaVersion::NOT_SET};
-  bool m_schemaVersionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   MessageComponents m_messageComponents;
-  bool m_messageComponentsHasBeenSet = false;
 
   Aws::String m_sourceEventDetailUrl;
-  bool m_sourceEventDetailUrlHasBeenSet = false;
 
   Aws::String m_sourceEventDetailUrlDisplayText;
-  bool m_sourceEventDetailUrlDisplayTextHasBeenSet = false;
 
   NotificationType m_notificationType{NotificationType::NOT_SET};
-  bool m_notificationTypeHasBeenSet = false;
 
   EventStatus m_eventStatus{EventStatus::NOT_SET};
-  bool m_eventStatusHasBeenSet = false;
 
   AggregationEventType m_aggregationEventType{AggregationEventType::NOT_SET};
-  bool m_aggregationEventTypeHasBeenSet = false;
 
   AggregationSummary m_aggregationSummary;
-  bool m_aggregationSummaryHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::Map<Aws::String, TextPartValue> m_textParts;
-  bool m_textPartsHasBeenSet = false;
 
   Aws::String m_organizationalUnitId;
+  bool m_schemaVersionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_messageComponentsHasBeenSet = false;
+  bool m_sourceEventDetailUrlHasBeenSet = false;
+  bool m_sourceEventDetailUrlDisplayTextHasBeenSet = false;
+  bool m_notificationTypeHasBeenSet = false;
+  bool m_eventStatusHasBeenSet = false;
+  bool m_aggregationEventTypeHasBeenSet = false;
+  bool m_aggregationSummaryHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_textPartsHasBeenSet = false;
   bool m_organizationalUnitIdHasBeenSet = false;
 };
 

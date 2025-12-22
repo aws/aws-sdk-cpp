@@ -140,21 +140,21 @@ class Ami {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ImageState m_state;
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_accountId;
+  bool m_regionHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
 };
 

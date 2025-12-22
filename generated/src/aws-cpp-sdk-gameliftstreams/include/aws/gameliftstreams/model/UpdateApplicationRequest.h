@@ -127,15 +127,15 @@ class UpdateApplicationRequest : public GameLiftStreamsRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_applicationLogPaths;
-  bool m_applicationLogPathsHasBeenSet = false;
 
   Aws::String m_applicationLogOutputUri;
+  bool m_identifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_applicationLogPathsHasBeenSet = false;
   bool m_applicationLogOutputUriHasBeenSet = false;
 };
 

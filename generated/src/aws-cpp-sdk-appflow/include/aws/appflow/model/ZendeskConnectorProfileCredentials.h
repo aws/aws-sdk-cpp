@@ -108,15 +108,15 @@ class ZendeskConnectorProfileCredentials {
   ///@}
  private:
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_clientSecret;
-  bool m_clientSecretHasBeenSet = false;
 
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   ConnectorOAuthRequest m_oAuthRequest;
+  bool m_clientIdHasBeenSet = false;
+  bool m_clientSecretHasBeenSet = false;
+  bool m_accessTokenHasBeenSet = false;
   bool m_oAuthRequestHasBeenSet = false;
 };
 

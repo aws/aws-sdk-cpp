@@ -95,12 +95,12 @@ class CreateRecoveryGroupRequest : public Route53RecoveryReadinessRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_cells;
-  bool m_cellsHasBeenSet = false;
 
   Aws::String m_recoveryGroupName;
-  bool m_recoveryGroupNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_cellsHasBeenSet = false;
+  bool m_recoveryGroupNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -208,21 +208,21 @@ class PutSecretValueRequest : public SecretsManagerRequest {
   ///@}
  private:
   Aws::String m_secretId;
-  bool m_secretIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Utils::CryptoBuffer m_secretBinary{};
-  bool m_secretBinaryHasBeenSet = false;
 
   Aws::String m_secretString;
-  bool m_secretStringHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versionStages;
-  bool m_versionStagesHasBeenSet = false;
 
   Aws::String m_rotationToken;
+  bool m_secretIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_secretBinaryHasBeenSet = false;
+  bool m_secretStringHasBeenSet = false;
+  bool m_versionStagesHasBeenSet = false;
   bool m_rotationTokenHasBeenSet = false;
 };
 

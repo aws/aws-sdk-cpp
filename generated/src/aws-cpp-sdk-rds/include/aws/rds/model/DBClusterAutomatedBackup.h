@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/RestoreWindow.h>
+#include <aws/rds/model/Tag.h>
 
 #include <utility>
 
@@ -498,81 +499,106 @@ class DBClusterAutomatedBackup {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
+  inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+  template <typename TagListT = Aws::Vector<Tag>>
+  void SetTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList = std::forward<TagListT>(value);
+  }
+  template <typename TagListT = Aws::Vector<Tag>>
+  DBClusterAutomatedBackup& WithTagList(TagListT&& value) {
+    SetTagList(std::forward<TagListT>(value));
+    return *this;
+  }
+  template <typename TagListT = Tag>
+  DBClusterAutomatedBackup& AddTagList(TagListT&& value) {
+    m_tagListHasBeenSet = true;
+    m_tagList.emplace_back(std::forward<TagListT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_engine;
-  bool m_engineHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::String m_dBClusterAutomatedBackupsArn;
-  bool m_dBClusterAutomatedBackupsArnHasBeenSet = false;
 
   Aws::String m_dBClusterIdentifier;
-  bool m_dBClusterIdentifierHasBeenSet = false;
 
   RestoreWindow m_restoreWindow;
-  bool m_restoreWindowHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_dbClusterResourceId;
-  bool m_dbClusterResourceIdHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   bool m_iAMDatabaseAuthenticationEnabled{false};
-  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_clusterCreateTime{};
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   bool m_storageEncrypted{false};
-  bool m_storageEncryptedHasBeenSet = false;
 
   int m_allocatedStorage{0};
-  bool m_allocatedStorageHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   Aws::String m_dBClusterArn;
-  bool m_dBClusterArnHasBeenSet = false;
 
   int m_backupRetentionPeriod{0};
-  bool m_backupRetentionPeriodHasBeenSet = false;
 
   Aws::String m_engineMode;
-  bool m_engineModeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availabilityZones;
-  bool m_availabilityZonesHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_storageType;
-  bool m_storageTypeHasBeenSet = false;
 
   int m_iops{0};
-  bool m_iopsHasBeenSet = false;
 
   int m_storageThroughput{0};
-  bool m_storageThroughputHasBeenSet = false;
 
   Aws::String m_awsBackupRecoveryPointArn;
+
+  Aws::Vector<Tag> m_tagList;
+  bool m_engineHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_dBClusterAutomatedBackupsArnHasBeenSet = false;
+  bool m_dBClusterIdentifierHasBeenSet = false;
+  bool m_restoreWindowHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_dbClusterResourceIdHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_storageEncryptedHasBeenSet = false;
+  bool m_allocatedStorageHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_dBClusterArnHasBeenSet = false;
+  bool m_backupRetentionPeriodHasBeenSet = false;
+  bool m_engineModeHasBeenSet = false;
+  bool m_availabilityZonesHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_iopsHasBeenSet = false;
+  bool m_storageThroughputHasBeenSet = false;
   bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+  bool m_tagListHasBeenSet = false;
 };
 
 }  // namespace Model

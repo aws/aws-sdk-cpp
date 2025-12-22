@@ -128,18 +128,18 @@ class ListLayerVersionsRequest : public LambdaRequest {
   ///@}
  private:
   Runtime m_compatibleRuntime{Runtime::NOT_SET};
-  bool m_compatibleRuntimeHasBeenSet = false;
 
   Aws::String m_layerName;
-  bool m_layerNameHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Architecture m_compatibleArchitecture{Architecture::NOT_SET};
+  bool m_compatibleRuntimeHasBeenSet = false;
+  bool m_layerNameHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
   bool m_compatibleArchitectureHasBeenSet = false;
 };
 

@@ -123,18 +123,18 @@ class UpdateDatasetRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_datasetId;
-  bool m_datasetIdHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetDescription;
-  bool m_datasetDescriptionHasBeenSet = false;
 
   DatasetSource m_datasetSource;
-  bool m_datasetSourceHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_datasetIdHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetDescriptionHasBeenSet = false;
+  bool m_datasetSourceHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

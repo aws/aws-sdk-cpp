@@ -98,12 +98,12 @@ class CodeSecurityScanConfiguration {
   ///@}
  private:
   PeriodicScanConfiguration m_periodicScanConfiguration;
-  bool m_periodicScanConfigurationHasBeenSet = false;
 
   ContinuousIntegrationScanConfiguration m_continuousIntegrationScanConfiguration;
-  bool m_continuousIntegrationScanConfigurationHasBeenSet = false;
 
   Aws::Vector<RuleSetCategory> m_ruleSetCategories;
+  bool m_periodicScanConfigurationHasBeenSet = false;
+  bool m_continuousIntegrationScanConfigurationHasBeenSet = false;
   bool m_ruleSetCategoriesHasBeenSet = false;
 };
 

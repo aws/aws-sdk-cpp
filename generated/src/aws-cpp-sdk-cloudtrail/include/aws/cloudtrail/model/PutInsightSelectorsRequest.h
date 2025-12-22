@@ -130,15 +130,15 @@ class PutInsightSelectorsRequest : public CloudTrailRequest {
   ///@}
  private:
   Aws::String m_trailName;
-  bool m_trailNameHasBeenSet = false;
 
   Aws::Vector<InsightSelector> m_insightSelectors;
-  bool m_insightSelectorsHasBeenSet = false;
 
   Aws::String m_eventDataStore;
-  bool m_eventDataStoreHasBeenSet = false;
 
   Aws::String m_insightsDestination;
+  bool m_trailNameHasBeenSet = false;
+  bool m_insightSelectorsHasBeenSet = false;
+  bool m_eventDataStoreHasBeenSet = false;
   bool m_insightsDestinationHasBeenSet = false;
 };
 

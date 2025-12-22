@@ -69,9 +69,9 @@ class DetectKeyPhrasesRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
+  bool m_textHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
 };
 

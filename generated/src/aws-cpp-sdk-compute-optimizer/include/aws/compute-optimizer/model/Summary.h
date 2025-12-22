@@ -90,12 +90,12 @@ class Summary {
   ///@}
  private:
   Finding m_name{Finding::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<ReasonCodeSummary> m_reasonCodeSummaries;
+  bool m_nameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_reasonCodeSummariesHasBeenSet = false;
 };
 

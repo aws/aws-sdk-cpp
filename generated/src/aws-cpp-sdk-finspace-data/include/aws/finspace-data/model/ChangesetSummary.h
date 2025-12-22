@@ -289,42 +289,42 @@ class ChangesetSummary {
   ///@}
  private:
   Aws::String m_changesetId;
-  bool m_changesetIdHasBeenSet = false;
 
   Aws::String m_changesetArn;
-  bool m_changesetArnHasBeenSet = false;
 
   Aws::String m_datasetId;
-  bool m_datasetIdHasBeenSet = false;
 
   ChangeType m_changeType{ChangeType::NOT_SET};
-  bool m_changeTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sourceParams;
-  bool m_sourceParamsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_formatParams;
-  bool m_formatParamsHasBeenSet = false;
 
   long long m_createTime{0};
-  bool m_createTimeHasBeenSet = false;
 
   IngestionStatus m_status{IngestionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ChangesetErrorInfo m_errorInfo;
-  bool m_errorInfoHasBeenSet = false;
 
   long long m_activeUntilTimestamp{0};
-  bool m_activeUntilTimestampHasBeenSet = false;
 
   long long m_activeFromTimestamp{0};
-  bool m_activeFromTimestampHasBeenSet = false;
 
   Aws::String m_updatesChangesetId;
-  bool m_updatesChangesetIdHasBeenSet = false;
 
   Aws::String m_updatedByChangesetId;
+  bool m_changesetIdHasBeenSet = false;
+  bool m_changesetArnHasBeenSet = false;
+  bool m_datasetIdHasBeenSet = false;
+  bool m_changeTypeHasBeenSet = false;
+  bool m_sourceParamsHasBeenSet = false;
+  bool m_formatParamsHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorInfoHasBeenSet = false;
+  bool m_activeUntilTimestampHasBeenSet = false;
+  bool m_activeFromTimestampHasBeenSet = false;
+  bool m_updatesChangesetIdHasBeenSet = false;
   bool m_updatedByChangesetIdHasBeenSet = false;
 };
 

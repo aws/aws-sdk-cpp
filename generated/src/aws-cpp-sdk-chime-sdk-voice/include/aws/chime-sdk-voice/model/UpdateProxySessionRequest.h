@@ -106,15 +106,15 @@ class UpdateProxySessionRequest : public ChimeSDKVoiceRequest {
   ///@}
  private:
   Aws::String m_voiceConnectorId;
-  bool m_voiceConnectorIdHasBeenSet = false;
 
   Aws::String m_proxySessionId;
-  bool m_proxySessionIdHasBeenSet = false;
 
   Aws::Vector<Capability> m_capabilities;
-  bool m_capabilitiesHasBeenSet = false;
 
   int m_expiryMinutes{0};
+  bool m_voiceConnectorIdHasBeenSet = false;
+  bool m_proxySessionIdHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
   bool m_expiryMinutesHasBeenSet = false;
 };
 

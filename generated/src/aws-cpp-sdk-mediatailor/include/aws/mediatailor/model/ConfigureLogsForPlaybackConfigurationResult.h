@@ -143,21 +143,21 @@ class ConfigureLogsForPlaybackConfigurationResult {
   ///@}
  private:
   int m_percentEnabled{0};
-  bool m_percentEnabledHasBeenSet = false;
 
   Aws::String m_playbackConfigurationName;
-  bool m_playbackConfigurationNameHasBeenSet = false;
 
   Aws::Vector<LoggingStrategy> m_enabledLoggingStrategies;
-  bool m_enabledLoggingStrategiesHasBeenSet = false;
 
   AdsInteractionLog m_adsInteractionLog;
-  bool m_adsInteractionLogHasBeenSet = false;
 
   ManifestServiceInteractionLog m_manifestServiceInteractionLog;
-  bool m_manifestServiceInteractionLogHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_percentEnabledHasBeenSet = false;
+  bool m_playbackConfigurationNameHasBeenSet = false;
+  bool m_enabledLoggingStrategiesHasBeenSet = false;
+  bool m_adsInteractionLogHasBeenSet = false;
+  bool m_manifestServiceInteractionLogHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class DataSetImportItem {
   ///@}
  private:
   DataSet m_dataSet;
-  bool m_dataSetHasBeenSet = false;
 
   ExternalLocation m_externalLocation;
+  bool m_dataSetHasBeenSet = false;
   bool m_externalLocationHasBeenSet = false;
 };
 

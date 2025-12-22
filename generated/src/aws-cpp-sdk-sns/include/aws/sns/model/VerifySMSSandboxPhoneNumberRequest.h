@@ -70,9 +70,9 @@ class VerifySMSSandboxPhoneNumberRequest : public SNSRequest {
   ///@}
  private:
   Aws::String m_phoneNumber;
-  bool m_phoneNumberHasBeenSet = false;
 
   Aws::String m_oneTimePassword;
+  bool m_phoneNumberHasBeenSet = false;
   bool m_oneTimePasswordHasBeenSet = false;
 };
 

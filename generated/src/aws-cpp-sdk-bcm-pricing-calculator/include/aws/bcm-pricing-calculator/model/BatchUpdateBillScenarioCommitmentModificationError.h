@@ -86,12 +86,12 @@ class BatchUpdateBillScenarioCommitmentModificationError {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   BatchUpdateBillScenarioCommitmentModificationErrorCode m_errorCode{BatchUpdateBillScenarioCommitmentModificationErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_errorMessage;
+  bool m_idHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
 };
 

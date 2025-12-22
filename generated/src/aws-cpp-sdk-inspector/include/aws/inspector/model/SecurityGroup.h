@@ -70,9 +70,9 @@ class SecurityGroup {
   ///@}
  private:
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   Aws::String m_groupId;
+  bool m_groupNameHasBeenSet = false;
   bool m_groupIdHasBeenSet = false;
 };
 

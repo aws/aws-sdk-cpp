@@ -39,6 +39,8 @@ namespace Aws
              * Gets log tag for use in logging in the base class.
              */
             const char* GetLogTag() const override { return "WinInetSyncHttpClient"; }
+
+            bool IsDefaultAwsHttpClient() const override { return true; }
         private:
 
             // WinHttp specific implementations

@@ -86,12 +86,12 @@ class ListAppAssessmentComplianceDriftsResult {
   ///@}
  private:
   Aws::Vector<ComplianceDrift> m_complianceDrifts;
-  bool m_complianceDriftsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_complianceDriftsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/CredentialPair.h>
+#include <aws/quicksight/model/KeyPairCredentials.h>
 #include <aws/quicksight/model/WebProxyCredentials.h>
 
 #include <utility>
@@ -97,6 +98,24 @@ class DataSourceCredentials {
 
   ///@{
   /**
+   * <p>The credentials for connecting using key-pair.</p>
+   */
+  inline const KeyPairCredentials& GetKeyPairCredentials() const { return m_keyPairCredentials; }
+  inline bool KeyPairCredentialsHasBeenSet() const { return m_keyPairCredentialsHasBeenSet; }
+  template <typename KeyPairCredentialsT = KeyPairCredentials>
+  void SetKeyPairCredentials(KeyPairCredentialsT&& value) {
+    m_keyPairCredentialsHasBeenSet = true;
+    m_keyPairCredentials = std::forward<KeyPairCredentialsT>(value);
+  }
+  template <typename KeyPairCredentialsT = KeyPairCredentials>
+  DataSourceCredentials& WithKeyPairCredentials(KeyPairCredentialsT&& value) {
+    SetKeyPairCredentials(std::forward<KeyPairCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The credentials for connecting through a web proxy server.</p>
    */
   inline const WebProxyCredentials& GetWebProxyCredentials() const { return m_webProxyCredentials; }
@@ -114,15 +133,18 @@ class DataSourceCredentials {
   ///@}
  private:
   CredentialPair m_credentialPair;
-  bool m_credentialPairHasBeenSet = false;
 
   Aws::String m_copySourceArn;
-  bool m_copySourceArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
+
+  KeyPairCredentials m_keyPairCredentials;
 
   WebProxyCredentials m_webProxyCredentials;
+  bool m_credentialPairHasBeenSet = false;
+  bool m_copySourceArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
+  bool m_keyPairCredentialsHasBeenSet = false;
   bool m_webProxyCredentialsHasBeenSet = false;
 };
 

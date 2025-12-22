@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String DeleteJobRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIDHasBeenSet) {
-    payload.WithString("accountID", m_accountID);
-  }
-
   if (m_jobIDHasBeenSet) {
     payload.WithString("jobID", m_jobID);
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
   }
 
   return payload.View().WriteReadable();

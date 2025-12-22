@@ -88,12 +88,12 @@ class ListExclusionsRequest : public InspectorRequest {
   ///@}
  private:
   Aws::String m_assessmentRunArn;
-  bool m_assessmentRunArnHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_assessmentRunArnHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

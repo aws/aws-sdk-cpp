@@ -81,9 +81,9 @@ class ApplySecurityGroupsToLoadBalancerRequest : public ElasticLoadBalancingRequ
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroups;
+  bool m_loadBalancerNameHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class StartAccessRequestRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_reason;
-  bool m_reasonHasBeenSet = false;
 
   Aws::Vector<Target> m_targets;
-  bool m_targetsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_reasonHasBeenSet = false;
+  bool m_targetsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

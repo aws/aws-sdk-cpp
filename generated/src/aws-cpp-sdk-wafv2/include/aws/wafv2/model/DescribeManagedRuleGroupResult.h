@@ -207,27 +207,27 @@ class DescribeManagedRuleGroupResult {
   ///@}
  private:
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_snsTopicArn;
-  bool m_snsTopicArnHasBeenSet = false;
 
   long long m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::Vector<RuleSummary> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   Aws::String m_labelNamespace;
-  bool m_labelNamespaceHasBeenSet = false;
 
   Aws::Vector<LabelSummary> m_availableLabels;
-  bool m_availableLabelsHasBeenSet = false;
 
   Aws::Vector<LabelSummary> m_consumedLabels;
-  bool m_consumedLabelsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_versionNameHasBeenSet = false;
+  bool m_snsTopicArnHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_labelNamespaceHasBeenSet = false;
+  bool m_availableLabelsHasBeenSet = false;
+  bool m_consumedLabelsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

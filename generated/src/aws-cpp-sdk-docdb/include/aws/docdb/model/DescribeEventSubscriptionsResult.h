@@ -93,12 +93,12 @@ class DescribeEventSubscriptionsResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<EventSubscription> m_eventSubscriptionsList;
-  bool m_eventSubscriptionsListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_eventSubscriptionsListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

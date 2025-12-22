@@ -135,18 +135,18 @@ class AutomaticTapeCreationRule {
   ///@}
  private:
   Aws::String m_tapeBarcodePrefix;
-  bool m_tapeBarcodePrefixHasBeenSet = false;
 
   Aws::String m_poolId;
-  bool m_poolIdHasBeenSet = false;
 
   long long m_tapeSizeInBytes{0};
-  bool m_tapeSizeInBytesHasBeenSet = false;
 
   int m_minimumNumTapes{0};
-  bool m_minimumNumTapesHasBeenSet = false;
 
   bool m_worm{false};
+  bool m_tapeBarcodePrefixHasBeenSet = false;
+  bool m_poolIdHasBeenSet = false;
+  bool m_tapeSizeInBytesHasBeenSet = false;
+  bool m_minimumNumTapesHasBeenSet = false;
   bool m_wormHasBeenSet = false;
 };
 

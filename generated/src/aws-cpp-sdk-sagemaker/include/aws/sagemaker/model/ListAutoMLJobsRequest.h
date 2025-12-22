@@ -209,33 +209,33 @@ class ListAutoMLJobsRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::Utils::DateTime m_creationTimeAfter{};
-  bool m_creationTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimeBefore{};
-  bool m_creationTimeBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeAfter{};
-  bool m_lastModifiedTimeAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTimeBefore{};
-  bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
   Aws::String m_nameContains;
-  bool m_nameContainsHasBeenSet = false;
 
   AutoMLJobStatus m_statusEquals{AutoMLJobStatus::NOT_SET};
-  bool m_statusEqualsHasBeenSet = false;
 
   AutoMLSortOrder m_sortOrder{AutoMLSortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   AutoMLSortBy m_sortBy{AutoMLSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_creationTimeAfterHasBeenSet = false;
+  bool m_creationTimeBeforeHasBeenSet = false;
+  bool m_lastModifiedTimeAfterHasBeenSet = false;
+  bool m_lastModifiedTimeBeforeHasBeenSet = false;
+  bool m_nameContainsHasBeenSet = false;
+  bool m_statusEqualsHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_sortByHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

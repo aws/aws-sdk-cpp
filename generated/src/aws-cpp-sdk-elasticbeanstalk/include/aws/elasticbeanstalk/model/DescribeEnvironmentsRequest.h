@@ -202,27 +202,27 @@ class DescribeEnvironmentsRequest : public ElasticBeanstalkRequest {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_versionLabel;
-  bool m_versionLabelHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_environmentIds;
-  bool m_environmentIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_environmentNames;
-  bool m_environmentNamesHasBeenSet = false;
 
   bool m_includeDeleted{false};
-  bool m_includeDeletedHasBeenSet = false;
 
   Aws::Utils::DateTime m_includedDeletedBackTo{};
-  bool m_includedDeletedBackToHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_versionLabelHasBeenSet = false;
+  bool m_environmentIdsHasBeenSet = false;
+  bool m_environmentNamesHasBeenSet = false;
+  bool m_includeDeletedHasBeenSet = false;
+  bool m_includedDeletedBackToHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

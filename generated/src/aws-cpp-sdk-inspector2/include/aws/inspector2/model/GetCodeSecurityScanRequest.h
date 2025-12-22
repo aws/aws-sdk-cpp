@@ -66,9 +66,9 @@ class GetCodeSecurityScanRequest : public Inspector2Request {
   ///@}
  private:
   CodeSecurityResource m_resource;
-  bool m_resourceHasBeenSet = false;
 
   Aws::String m_scanId;
+  bool m_resourceHasBeenSet = false;
   bool m_scanIdHasBeenSet = false;
 };
 

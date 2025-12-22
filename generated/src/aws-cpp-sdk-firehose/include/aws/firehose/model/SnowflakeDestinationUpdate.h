@@ -404,60 +404,60 @@ class SnowflakeDestinationUpdate {
   ///@}
  private:
   Aws::String m_accountUrl;
-  bool m_accountUrlHasBeenSet = false;
 
   Aws::String m_privateKey;
-  bool m_privateKeyHasBeenSet = false;
 
   Aws::String m_keyPassphrase;
-  bool m_keyPassphraseHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_database;
-  bool m_databaseHasBeenSet = false;
 
   Aws::String m_schema;
-  bool m_schemaHasBeenSet = false;
 
   Aws::String m_table;
-  bool m_tableHasBeenSet = false;
 
   SnowflakeRoleConfiguration m_snowflakeRoleConfiguration;
-  bool m_snowflakeRoleConfigurationHasBeenSet = false;
 
   SnowflakeDataLoadingOption m_dataLoadingOption{SnowflakeDataLoadingOption::NOT_SET};
-  bool m_dataLoadingOptionHasBeenSet = false;
 
   Aws::String m_metaDataColumnName;
-  bool m_metaDataColumnNameHasBeenSet = false;
 
   Aws::String m_contentColumnName;
-  bool m_contentColumnNameHasBeenSet = false;
 
   CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
   ProcessingConfiguration m_processingConfiguration;
-  bool m_processingConfigurationHasBeenSet = false;
 
   Aws::String m_roleARN;
-  bool m_roleARNHasBeenSet = false;
 
   SnowflakeRetryOptions m_retryOptions;
-  bool m_retryOptionsHasBeenSet = false;
 
   SnowflakeS3BackupMode m_s3BackupMode{SnowflakeS3BackupMode::NOT_SET};
-  bool m_s3BackupModeHasBeenSet = false;
 
   S3DestinationUpdate m_s3Update;
-  bool m_s3UpdateHasBeenSet = false;
 
   SecretsManagerConfiguration m_secretsManagerConfiguration;
-  bool m_secretsManagerConfigurationHasBeenSet = false;
 
   SnowflakeBufferingHints m_bufferingHints;
+  bool m_accountUrlHasBeenSet = false;
+  bool m_privateKeyHasBeenSet = false;
+  bool m_keyPassphraseHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_databaseHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_snowflakeRoleConfigurationHasBeenSet = false;
+  bool m_dataLoadingOptionHasBeenSet = false;
+  bool m_metaDataColumnNameHasBeenSet = false;
+  bool m_contentColumnNameHasBeenSet = false;
+  bool m_cloudWatchLoggingOptionsHasBeenSet = false;
+  bool m_processingConfigurationHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_retryOptionsHasBeenSet = false;
+  bool m_s3BackupModeHasBeenSet = false;
+  bool m_s3UpdateHasBeenSet = false;
+  bool m_secretsManagerConfigurationHasBeenSet = false;
   bool m_bufferingHintsHasBeenSet = false;
 };
 

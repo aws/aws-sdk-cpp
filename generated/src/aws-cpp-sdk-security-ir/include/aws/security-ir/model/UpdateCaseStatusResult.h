@@ -59,9 +59,9 @@ class UpdateCaseStatusResult {
   ///@}
  private:
   SelfManagedCaseStatus m_caseStatus{SelfManagedCaseStatus::NOT_SET};
-  bool m_caseStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_caseStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

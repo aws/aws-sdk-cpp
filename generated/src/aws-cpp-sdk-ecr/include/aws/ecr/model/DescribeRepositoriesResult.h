@@ -88,12 +88,12 @@ class DescribeRepositoriesResult {
   ///@}
  private:
   Aws::Vector<Repository> m_repositories;
-  bool m_repositoriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_repositoriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

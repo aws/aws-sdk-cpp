@@ -73,9 +73,9 @@ class ListVerifiedEmailAddressesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_verifiedEmailAddresses;
-  bool m_verifiedEmailAddressesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_verifiedEmailAddressesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeConnectorProfilesResult {
   ///@}
  private:
   Aws::Vector<ConnectorProfile> m_connectorProfileDetails;
-  bool m_connectorProfileDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectorProfileDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

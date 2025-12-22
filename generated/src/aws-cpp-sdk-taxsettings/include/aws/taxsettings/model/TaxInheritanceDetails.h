@@ -69,9 +69,9 @@ class TaxInheritanceDetails {
   ///@}
  private:
   Aws::String m_inheritanceObtainedReason;
-  bool m_inheritanceObtainedReasonHasBeenSet = false;
 
   Aws::String m_parentEntityId;
+  bool m_inheritanceObtainedReasonHasBeenSet = false;
   bool m_parentEntityIdHasBeenSet = false;
 };
 

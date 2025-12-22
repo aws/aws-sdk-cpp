@@ -158,21 +158,21 @@ class CheckoutBorrowLicenseRequest : public LicenseManagerRequest {
   ///@}
  private:
   Aws::String m_licenseArn;
-  bool m_licenseArnHasBeenSet = false;
 
   Aws::Vector<EntitlementData> m_entitlements;
-  bool m_entitlementsHasBeenSet = false;
 
   DigitalSignatureMethod m_digitalSignatureMethod{DigitalSignatureMethod::NOT_SET};
-  bool m_digitalSignatureMethodHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   Aws::Vector<Metadata> m_checkoutMetadata;
-  bool m_checkoutMetadataHasBeenSet = false;
 
   Aws::String m_clientToken;
+  bool m_licenseArnHasBeenSet = false;
+  bool m_entitlementsHasBeenSet = false;
+  bool m_digitalSignatureMethodHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_checkoutMetadataHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

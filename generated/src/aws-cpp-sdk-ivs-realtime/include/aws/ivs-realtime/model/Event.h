@@ -9,6 +9,7 @@
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/model/EventErrorCode.h>
 #include <aws/ivs-realtime/model/EventName.h>
+#include <aws/ivs-realtime/model/ExchangedParticipantToken.h>
 
 #include <utility>
 
@@ -221,30 +222,72 @@ class Event {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Source participant token for <code>TOKEN_EXCHANGED</code> event.</p>
+   */
+  inline const ExchangedParticipantToken& GetPreviousToken() const { return m_previousToken; }
+  inline bool PreviousTokenHasBeenSet() const { return m_previousTokenHasBeenSet; }
+  template <typename PreviousTokenT = ExchangedParticipantToken>
+  void SetPreviousToken(PreviousTokenT&& value) {
+    m_previousTokenHasBeenSet = true;
+    m_previousToken = std::forward<PreviousTokenT>(value);
+  }
+  template <typename PreviousTokenT = ExchangedParticipantToken>
+  Event& WithPreviousToken(PreviousTokenT&& value) {
+    SetPreviousToken(std::forward<PreviousTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Participant token created during <code>TOKEN_EXCHANGED</code> event.</p>
+   */
+  inline const ExchangedParticipantToken& GetNewToken() const { return m_newToken; }
+  inline bool NewTokenHasBeenSet() const { return m_newTokenHasBeenSet; }
+  template <typename NewTokenT = ExchangedParticipantToken>
+  void SetNewToken(NewTokenT&& value) {
+    m_newTokenHasBeenSet = true;
+    m_newToken = std::forward<NewTokenT>(value);
+  }
+  template <typename NewTokenT = ExchangedParticipantToken>
+  Event& WithNewToken(NewTokenT&& value) {
+    SetNewToken(std::forward<NewTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EventName m_name{EventName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_participantId;
-  bool m_participantIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTime{};
-  bool m_eventTimeHasBeenSet = false;
 
   Aws::String m_remoteParticipantId;
-  bool m_remoteParticipantIdHasBeenSet = false;
 
   EventErrorCode m_errorCode{EventErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::String m_destinationStageArn;
-  bool m_destinationStageArnHasBeenSet = false;
 
   Aws::String m_destinationSessionId;
-  bool m_destinationSessionIdHasBeenSet = false;
 
   bool m_replica{false};
+
+  ExchangedParticipantToken m_previousToken;
+
+  ExchangedParticipantToken m_newToken;
+  bool m_nameHasBeenSet = false;
+  bool m_participantIdHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_remoteParticipantIdHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_destinationStageArnHasBeenSet = false;
+  bool m_destinationSessionIdHasBeenSet = false;
   bool m_replicaHasBeenSet = false;
+  bool m_previousTokenHasBeenSet = false;
+  bool m_newTokenHasBeenSet = false;
 };
 
 }  // namespace Model

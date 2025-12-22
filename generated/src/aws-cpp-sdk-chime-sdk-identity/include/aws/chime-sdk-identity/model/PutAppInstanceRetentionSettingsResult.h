@@ -79,12 +79,12 @@ class PutAppInstanceRetentionSettingsResult {
   ///@}
  private:
   AppInstanceRetentionSettings m_appInstanceRetentionSettings;
-  bool m_appInstanceRetentionSettingsHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiateDeletionTimestamp{};
-  bool m_initiateDeletionTimestampHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appInstanceRetentionSettingsHasBeenSet = false;
+  bool m_initiateDeletionTimestampHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

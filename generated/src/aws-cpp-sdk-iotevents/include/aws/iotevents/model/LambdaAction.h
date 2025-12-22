@@ -71,9 +71,9 @@ class LambdaAction {
   ///@}
  private:
   Aws::String m_functionArn;
-  bool m_functionArnHasBeenSet = false;
 
   Payload m_payload;
+  bool m_functionArnHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

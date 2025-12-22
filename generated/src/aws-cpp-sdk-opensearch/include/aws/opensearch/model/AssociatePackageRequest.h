@@ -116,15 +116,15 @@ class AssociatePackageRequest : public OpenSearchServiceRequest {
   ///@}
  private:
   Aws::String m_packageID;
-  bool m_packageIDHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_prerequisitePackageIDList;
-  bool m_prerequisitePackageIDListHasBeenSet = false;
 
   PackageAssociationConfiguration m_associationConfiguration;
+  bool m_packageIDHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_prerequisitePackageIDListHasBeenSet = false;
   bool m_associationConfigurationHasBeenSet = false;
 };
 

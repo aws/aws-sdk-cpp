@@ -21,6 +21,8 @@
 #include <aws/mediaconvert/model/H265GopBReference.h>
 #include <aws/mediaconvert/model/H265GopSizeUnits.h>
 #include <aws/mediaconvert/model/H265InterlaceMode.h>
+#include <aws/mediaconvert/model/H265MvOverPictureBoundaries.h>
+#include <aws/mediaconvert/model/H265MvTemporalPredictor.h>
 #include <aws/mediaconvert/model/H265ParControl.h>
 #include <aws/mediaconvert/model/H265QualityTuningLevel.h>
 #include <aws/mediaconvert/model/H265QvbrSettings.h>
@@ -33,7 +35,9 @@
 #include <aws/mediaconvert/model/H265Telecine.h>
 #include <aws/mediaconvert/model/H265TemporalAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H265TemporalIds.h>
+#include <aws/mediaconvert/model/H265TilePadding.h>
 #include <aws/mediaconvert/model/H265Tiles.h>
+#include <aws/mediaconvert/model/H265TreeBlockSize.h>
 #include <aws/mediaconvert/model/H265UnregisteredSeiTimecode.h>
 #include <aws/mediaconvert/model/H265WriteMp4PackagingType.h>
 
@@ -571,6 +575,40 @@ class H265Settings {
 
   ///@{
   /**
+   * If you are setting up the picture as a tile, you must set this to "disabled". In
+   * all other configurations, you typically enter "enabled".
+   */
+  inline H265MvOverPictureBoundaries GetMvOverPictureBoundaries() const { return m_mvOverPictureBoundaries; }
+  inline bool MvOverPictureBoundariesHasBeenSet() const { return m_mvOverPictureBoundariesHasBeenSet; }
+  inline void SetMvOverPictureBoundaries(H265MvOverPictureBoundaries value) {
+    m_mvOverPictureBoundariesHasBeenSet = true;
+    m_mvOverPictureBoundaries = value;
+  }
+  inline H265Settings& WithMvOverPictureBoundaries(H265MvOverPictureBoundaries value) {
+    SetMvOverPictureBoundaries(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * If you are setting up the picture as a tile, you must set this to "disabled". In
+   * other configurations, you typically enter "enabled".
+   */
+  inline H265MvTemporalPredictor GetMvTemporalPredictor() const { return m_mvTemporalPredictor; }
+  inline bool MvTemporalPredictorHasBeenSet() const { return m_mvTemporalPredictorHasBeenSet; }
+  inline void SetMvTemporalPredictor(H265MvTemporalPredictor value) {
+    m_mvTemporalPredictorHasBeenSet = true;
+    m_mvTemporalPredictor = value;
+  }
+  inline H265Settings& WithMvTemporalPredictor(H265MvTemporalPredictor value) {
+    SetMvTemporalPredictor(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Specify the number of B-frames between reference frames in this output. For the
    * best video quality: Leave blank. MediaConvert automatically determines the
    * number of B-frames to use based on the characteristics of your input video. To
@@ -964,6 +1002,63 @@ class H265Settings {
 
   ///@{
   /**
+   * Set this field to set up the picture as a tile. You must also set TileWidth. The
+   * tile height must result in 22 or fewer rows in the frame. The tile width must
+   * result in 20 or fewer columns in the frame. And finally, the product of the
+   * column count and row count must be 64 or less. If the tile width and height are
+   * specified, MediaConvert will override the video codec slices field with a value
+   * that MediaConvert calculates.
+   */
+  inline int GetTileHeight() const { return m_tileHeight; }
+  inline bool TileHeightHasBeenSet() const { return m_tileHeightHasBeenSet; }
+  inline void SetTileHeight(int value) {
+    m_tileHeightHasBeenSet = true;
+    m_tileHeight = value;
+  }
+  inline H265Settings& WithTileHeight(int value) {
+    SetTileHeight(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Set to "padded" to force MediaConvert to add padding to the frame, to obtain a
+   * frame that is a whole multiple of the tile size. If you are setting up the
+   * picture as a tile, you must enter "padded". In all other configurations, you
+   * typically enter "none".
+   */
+  inline H265TilePadding GetTilePadding() const { return m_tilePadding; }
+  inline bool TilePaddingHasBeenSet() const { return m_tilePaddingHasBeenSet; }
+  inline void SetTilePadding(H265TilePadding value) {
+    m_tilePaddingHasBeenSet = true;
+    m_tilePadding = value;
+  }
+  inline H265Settings& WithTilePadding(H265TilePadding value) {
+    SetTilePadding(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Set this field to set up the picture as a tile. See TileHeight for more
+   * information.
+   */
+  inline int GetTileWidth() const { return m_tileWidth; }
+  inline bool TileWidthHasBeenSet() const { return m_tileWidthHasBeenSet; }
+  inline void SetTileWidth(int value) {
+    m_tileWidthHasBeenSet = true;
+    m_tileWidth = value;
+  }
+  inline H265Settings& WithTileWidth(int value) {
+    SetTileWidth(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Enable use of tiles, allowing horizontal as well as vertical subdivision of the
    * encoded pictures.
    */
@@ -975,6 +1070,24 @@ class H265Settings {
   }
   inline H265Settings& WithTiles(H265Tiles value) {
     SetTiles(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Select the tree block size used for encoding. If you enter "auto", the encoder
+   * will pick the best size. If you are setting up the picture as a tile, you must
+   * set this to 32x32. In all other configurations, you typically enter "auto".
+   */
+  inline H265TreeBlockSize GetTreeBlockSize() const { return m_treeBlockSize; }
+  inline bool TreeBlockSizeHasBeenSet() const { return m_treeBlockSizeHasBeenSet; }
+  inline void SetTreeBlockSize(H265TreeBlockSize value) {
+    m_treeBlockSizeHasBeenSet = true;
+    m_treeBlockSize = value;
+  }
+  inline H265Settings& WithTreeBlockSize(H265TreeBlockSize value) {
+    SetTreeBlockSize(value);
     return *this;
   }
   ///@}
@@ -1021,138 +1134,156 @@ class H265Settings {
   ///@}
  private:
   H265AdaptiveQuantization m_adaptiveQuantization{H265AdaptiveQuantization::NOT_SET};
-  bool m_adaptiveQuantizationHasBeenSet = false;
 
   H265AlternateTransferFunctionSei m_alternateTransferFunctionSei{H265AlternateTransferFunctionSei::NOT_SET};
-  bool m_alternateTransferFunctionSeiHasBeenSet = false;
 
   BandwidthReductionFilter m_bandwidthReductionFilter;
-  bool m_bandwidthReductionFilterHasBeenSet = false;
 
   int m_bitrate{0};
-  bool m_bitrateHasBeenSet = false;
 
   H265CodecLevel m_codecLevel{H265CodecLevel::NOT_SET};
-  bool m_codecLevelHasBeenSet = false;
 
   H265CodecProfile m_codecProfile{H265CodecProfile::NOT_SET};
-  bool m_codecProfileHasBeenSet = false;
 
   H265Deblocking m_deblocking{H265Deblocking::NOT_SET};
-  bool m_deblockingHasBeenSet = false;
 
   H265DynamicSubGop m_dynamicSubGop{H265DynamicSubGop::NOT_SET};
-  bool m_dynamicSubGopHasBeenSet = false;
 
   H265EndOfStreamMarkers m_endOfStreamMarkers{H265EndOfStreamMarkers::NOT_SET};
-  bool m_endOfStreamMarkersHasBeenSet = false;
 
   H265FlickerAdaptiveQuantization m_flickerAdaptiveQuantization{H265FlickerAdaptiveQuantization::NOT_SET};
-  bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
   H265FramerateControl m_framerateControl{H265FramerateControl::NOT_SET};
-  bool m_framerateControlHasBeenSet = false;
 
   H265FramerateConversionAlgorithm m_framerateConversionAlgorithm{H265FramerateConversionAlgorithm::NOT_SET};
-  bool m_framerateConversionAlgorithmHasBeenSet = false;
 
   int m_framerateDenominator{0};
-  bool m_framerateDenominatorHasBeenSet = false;
 
   int m_framerateNumerator{0};
-  bool m_framerateNumeratorHasBeenSet = false;
 
   H265GopBReference m_gopBReference{H265GopBReference::NOT_SET};
-  bool m_gopBReferenceHasBeenSet = false;
 
   int m_gopClosedCadence{0};
-  bool m_gopClosedCadenceHasBeenSet = false;
 
   double m_gopSize{0.0};
-  bool m_gopSizeHasBeenSet = false;
 
   H265GopSizeUnits m_gopSizeUnits{H265GopSizeUnits::NOT_SET};
-  bool m_gopSizeUnitsHasBeenSet = false;
 
   int m_hrdBufferFinalFillPercentage{0};
-  bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
   int m_hrdBufferInitialFillPercentage{0};
-  bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
   int m_hrdBufferSize{0};
-  bool m_hrdBufferSizeHasBeenSet = false;
 
   H265InterlaceMode m_interlaceMode{H265InterlaceMode::NOT_SET};
-  bool m_interlaceModeHasBeenSet = false;
 
   int m_maxBitrate{0};
-  bool m_maxBitrateHasBeenSet = false;
 
   int m_minIInterval{0};
-  bool m_minIIntervalHasBeenSet = false;
+
+  H265MvOverPictureBoundaries m_mvOverPictureBoundaries{H265MvOverPictureBoundaries::NOT_SET};
+
+  H265MvTemporalPredictor m_mvTemporalPredictor{H265MvTemporalPredictor::NOT_SET};
 
   int m_numberBFramesBetweenReferenceFrames{0};
-  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
   int m_numberReferenceFrames{0};
-  bool m_numberReferenceFramesHasBeenSet = false;
 
   H265ParControl m_parControl{H265ParControl::NOT_SET};
-  bool m_parControlHasBeenSet = false;
 
   int m_parDenominator{0};
-  bool m_parDenominatorHasBeenSet = false;
 
   int m_parNumerator{0};
-  bool m_parNumeratorHasBeenSet = false;
 
   Aws::Vector<FrameMetricType> m_perFrameMetrics;
-  bool m_perFrameMetricsHasBeenSet = false;
 
   H265QualityTuningLevel m_qualityTuningLevel{H265QualityTuningLevel::NOT_SET};
-  bool m_qualityTuningLevelHasBeenSet = false;
 
   H265QvbrSettings m_qvbrSettings;
-  bool m_qvbrSettingsHasBeenSet = false;
 
   H265RateControlMode m_rateControlMode{H265RateControlMode::NOT_SET};
-  bool m_rateControlModeHasBeenSet = false;
 
   H265SampleAdaptiveOffsetFilterMode m_sampleAdaptiveOffsetFilterMode{H265SampleAdaptiveOffsetFilterMode::NOT_SET};
-  bool m_sampleAdaptiveOffsetFilterModeHasBeenSet = false;
 
   H265ScanTypeConversionMode m_scanTypeConversionMode{H265ScanTypeConversionMode::NOT_SET};
-  bool m_scanTypeConversionModeHasBeenSet = false;
 
   H265SceneChangeDetect m_sceneChangeDetect{H265SceneChangeDetect::NOT_SET};
-  bool m_sceneChangeDetectHasBeenSet = false;
 
   int m_slices{0};
-  bool m_slicesHasBeenSet = false;
 
   H265SlowPal m_slowPal{H265SlowPal::NOT_SET};
-  bool m_slowPalHasBeenSet = false;
 
   H265SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{H265SpatialAdaptiveQuantization::NOT_SET};
-  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
   H265Telecine m_telecine{H265Telecine::NOT_SET};
-  bool m_telecineHasBeenSet = false;
 
   H265TemporalAdaptiveQuantization m_temporalAdaptiveQuantization{H265TemporalAdaptiveQuantization::NOT_SET};
-  bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 
   H265TemporalIds m_temporalIds{H265TemporalIds::NOT_SET};
-  bool m_temporalIdsHasBeenSet = false;
+
+  int m_tileHeight{0};
+
+  H265TilePadding m_tilePadding{H265TilePadding::NOT_SET};
+
+  int m_tileWidth{0};
 
   H265Tiles m_tiles{H265Tiles::NOT_SET};
-  bool m_tilesHasBeenSet = false;
+
+  H265TreeBlockSize m_treeBlockSize{H265TreeBlockSize::NOT_SET};
 
   H265UnregisteredSeiTimecode m_unregisteredSeiTimecode{H265UnregisteredSeiTimecode::NOT_SET};
-  bool m_unregisteredSeiTimecodeHasBeenSet = false;
 
   H265WriteMp4PackagingType m_writeMp4PackagingType{H265WriteMp4PackagingType::NOT_SET};
+  bool m_adaptiveQuantizationHasBeenSet = false;
+  bool m_alternateTransferFunctionSeiHasBeenSet = false;
+  bool m_bandwidthReductionFilterHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
+  bool m_codecLevelHasBeenSet = false;
+  bool m_codecProfileHasBeenSet = false;
+  bool m_deblockingHasBeenSet = false;
+  bool m_dynamicSubGopHasBeenSet = false;
+  bool m_endOfStreamMarkersHasBeenSet = false;
+  bool m_flickerAdaptiveQuantizationHasBeenSet = false;
+  bool m_framerateControlHasBeenSet = false;
+  bool m_framerateConversionAlgorithmHasBeenSet = false;
+  bool m_framerateDenominatorHasBeenSet = false;
+  bool m_framerateNumeratorHasBeenSet = false;
+  bool m_gopBReferenceHasBeenSet = false;
+  bool m_gopClosedCadenceHasBeenSet = false;
+  bool m_gopSizeHasBeenSet = false;
+  bool m_gopSizeUnitsHasBeenSet = false;
+  bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
+  bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
+  bool m_hrdBufferSizeHasBeenSet = false;
+  bool m_interlaceModeHasBeenSet = false;
+  bool m_maxBitrateHasBeenSet = false;
+  bool m_minIIntervalHasBeenSet = false;
+  bool m_mvOverPictureBoundariesHasBeenSet = false;
+  bool m_mvTemporalPredictorHasBeenSet = false;
+  bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
+  bool m_numberReferenceFramesHasBeenSet = false;
+  bool m_parControlHasBeenSet = false;
+  bool m_parDenominatorHasBeenSet = false;
+  bool m_parNumeratorHasBeenSet = false;
+  bool m_perFrameMetricsHasBeenSet = false;
+  bool m_qualityTuningLevelHasBeenSet = false;
+  bool m_qvbrSettingsHasBeenSet = false;
+  bool m_rateControlModeHasBeenSet = false;
+  bool m_sampleAdaptiveOffsetFilterModeHasBeenSet = false;
+  bool m_scanTypeConversionModeHasBeenSet = false;
+  bool m_sceneChangeDetectHasBeenSet = false;
+  bool m_slicesHasBeenSet = false;
+  bool m_slowPalHasBeenSet = false;
+  bool m_spatialAdaptiveQuantizationHasBeenSet = false;
+  bool m_telecineHasBeenSet = false;
+  bool m_temporalAdaptiveQuantizationHasBeenSet = false;
+  bool m_temporalIdsHasBeenSet = false;
+  bool m_tileHeightHasBeenSet = false;
+  bool m_tilePaddingHasBeenSet = false;
+  bool m_tileWidthHasBeenSet = false;
+  bool m_tilesHasBeenSet = false;
+  bool m_treeBlockSizeHasBeenSet = false;
+  bool m_unregisteredSeiTimecodeHasBeenSet = false;
   bool m_writeMp4PackagingTypeHasBeenSet = false;
 };
 

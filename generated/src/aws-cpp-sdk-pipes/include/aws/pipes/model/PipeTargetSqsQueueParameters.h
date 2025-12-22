@@ -70,9 +70,9 @@ class PipeTargetSqsQueueParameters {
   ///@}
  private:
   Aws::String m_messageGroupId;
-  bool m_messageGroupIdHasBeenSet = false;
 
   Aws::String m_messageDeduplicationId;
+  bool m_messageGroupIdHasBeenSet = false;
   bool m_messageDeduplicationIdHasBeenSet = false;
 };
 

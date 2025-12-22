@@ -86,12 +86,12 @@ class HoneycodeConnectorProfileCredentials {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_refreshToken;
-  bool m_refreshTokenHasBeenSet = false;
 
   ConnectorOAuthRequest m_oAuthRequest;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_refreshTokenHasBeenSet = false;
   bool m_oAuthRequestHasBeenSet = false;
 };
 

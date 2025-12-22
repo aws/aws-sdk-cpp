@@ -173,21 +173,21 @@ class NetworkBinding {
   ///@}
  private:
   Aws::String m_bindIP;
-  bool m_bindIPHasBeenSet = false;
 
   int m_containerPort{0};
-  bool m_containerPortHasBeenSet = false;
 
   int m_hostPort{0};
-  bool m_hostPortHasBeenSet = false;
 
   TransportProtocol m_protocol{TransportProtocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   Aws::String m_containerPortRange;
-  bool m_containerPortRangeHasBeenSet = false;
 
   Aws::String m_hostPortRange;
+  bool m_bindIPHasBeenSet = false;
+  bool m_containerPortHasBeenSet = false;
+  bool m_hostPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_containerPortRangeHasBeenSet = false;
   bool m_hostPortRangeHasBeenSet = false;
 };
 

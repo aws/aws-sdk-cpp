@@ -103,15 +103,15 @@ class TaskRunFilterCriteria {
   ///@}
  private:
   TaskType m_taskRunType{TaskType::NOT_SET};
-  bool m_taskRunTypeHasBeenSet = false;
 
   TaskStatusType m_status{TaskStatusType::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedBefore{};
-  bool m_startedBeforeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAfter{};
+  bool m_taskRunTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedBeforeHasBeenSet = false;
   bool m_startedAfterHasBeenSet = false;
 };
 

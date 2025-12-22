@@ -106,15 +106,15 @@ class InputDeviceMediaConnectSettings {
   ///@}
  private:
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_secretArn;
-  bool m_secretArnHasBeenSet = false;
 
   Aws::String m_sourceName;
+  bool m_flowArnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_secretArnHasBeenSet = false;
   bool m_sourceNameHasBeenSet = false;
 };
 

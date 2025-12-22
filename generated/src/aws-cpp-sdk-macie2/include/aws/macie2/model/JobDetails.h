@@ -133,15 +133,15 @@ class JobDetails {
   ///@}
  private:
   IsDefinedInJob m_isDefinedInJob{IsDefinedInJob::NOT_SET};
-  bool m_isDefinedInJobHasBeenSet = false;
 
   IsMonitoredByJob m_isMonitoredByJob{IsMonitoredByJob::NOT_SET};
-  bool m_isMonitoredByJobHasBeenSet = false;
 
   Aws::String m_lastJobId;
-  bool m_lastJobIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastJobRunTime{};
+  bool m_isDefinedInJobHasBeenSet = false;
+  bool m_isMonitoredByJobHasBeenSet = false;
+  bool m_lastJobIdHasBeenSet = false;
   bool m_lastJobRunTimeHasBeenSet = false;
 };
 

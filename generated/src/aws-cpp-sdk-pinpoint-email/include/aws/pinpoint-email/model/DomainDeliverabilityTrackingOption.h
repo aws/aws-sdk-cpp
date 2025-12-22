@@ -95,12 +95,12 @@ class DomainDeliverabilityTrackingOption {
   ///@}
  private:
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   Aws::Utils::DateTime m_subscriptionStartDate{};
-  bool m_subscriptionStartDateHasBeenSet = false;
 
   InboxPlacementTrackingOption m_inboxPlacementTrackingOption;
+  bool m_domainHasBeenSet = false;
+  bool m_subscriptionStartDateHasBeenSet = false;
   bool m_inboxPlacementTrackingOptionHasBeenSet = false;
 };
 

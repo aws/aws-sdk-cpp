@@ -80,9 +80,9 @@ class VpcEndpointAssociationStatus {
   ///@}
  private:
   FirewallStatusValue m_status{FirewallStatusValue::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Map<Aws::String, AZSyncState> m_associationSyncState;
+  bool m_statusHasBeenSet = false;
   bool m_associationSyncStateHasBeenSet = false;
 };
 

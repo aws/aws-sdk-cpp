@@ -110,15 +110,15 @@ class DescribeDocumentPermissionResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accountIds;
-  bool m_accountIdsHasBeenSet = false;
 
   Aws::Vector<AccountSharingInfo> m_accountSharingInfoList;
-  bool m_accountSharingInfoListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdsHasBeenSet = false;
+  bool m_accountSharingInfoListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

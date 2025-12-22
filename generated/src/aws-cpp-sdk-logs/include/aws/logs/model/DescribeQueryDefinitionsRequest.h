@@ -102,15 +102,15 @@ class DescribeQueryDefinitionsRequest : public CloudWatchLogsRequest {
   ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
-  bool m_queryLanguageHasBeenSet = false;
 
   Aws::String m_queryDefinitionNamePrefix;
-  bool m_queryDefinitionNamePrefixHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_queryLanguageHasBeenSet = false;
+  bool m_queryDefinitionNamePrefixHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

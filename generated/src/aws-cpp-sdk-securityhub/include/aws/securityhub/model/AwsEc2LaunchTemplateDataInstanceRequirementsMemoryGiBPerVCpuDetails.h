@@ -64,9 +64,9 @@ class AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails {
   ///@}
  private:
   double m_max{0.0};
-  bool m_maxHasBeenSet = false;
 
   double m_min{0.0};
+  bool m_maxHasBeenSet = false;
   bool m_minHasBeenSet = false;
 };
 

@@ -63,9 +63,9 @@ class GetMasterAccountResult {
   ///@}
  private:
   Invitation m_master;
-  bool m_masterHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_masterHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

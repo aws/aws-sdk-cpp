@@ -128,18 +128,18 @@ class UpdateClusterRequest : public DSQLRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   bool m_deletionProtectionEnabled{false};
-  bool m_deletionProtectionEnabledHasBeenSet = false;
 
   Aws::String m_kmsEncryptionKey;
-  bool m_kmsEncryptionKeyHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   MultiRegionProperties m_multiRegionProperties;
+  bool m_identifierHasBeenSet = false;
+  bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_kmsEncryptionKeyHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_multiRegionPropertiesHasBeenSet = false;
 };
 

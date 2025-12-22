@@ -68,9 +68,9 @@ class GetDataCatalogRequest : public AthenaRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_workGroup;
+  bool m_nameHasBeenSet = false;
   bool m_workGroupHasBeenSet = false;
 };
 

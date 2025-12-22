@@ -74,9 +74,9 @@ class ListChangeSetsRequest : public CloudFormationRequest {
   ///@}
  private:
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_stackNameHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

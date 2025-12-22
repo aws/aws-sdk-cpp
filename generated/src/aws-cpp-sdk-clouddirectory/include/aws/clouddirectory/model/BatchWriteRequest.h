@@ -76,9 +76,9 @@ class BatchWriteRequest : public CloudDirectoryRequest {
   ///@}
  private:
   Aws::String m_directoryArn;
-  bool m_directoryArnHasBeenSet = false;
 
   Aws::Vector<BatchWriteOperation> m_operations;
+  bool m_directoryArnHasBeenSet = false;
   bool m_operationsHasBeenSet = false;
 };
 

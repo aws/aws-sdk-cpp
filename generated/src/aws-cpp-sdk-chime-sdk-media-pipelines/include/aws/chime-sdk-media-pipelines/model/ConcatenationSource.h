@@ -71,9 +71,9 @@ class ConcatenationSource {
   ///@}
  private:
   ConcatenationSourceType m_type{ConcatenationSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   MediaCapturePipelineSourceConfiguration m_mediaCapturePipelineSourceConfiguration;
+  bool m_typeHasBeenSet = false;
   bool m_mediaCapturePipelineSourceConfigurationHasBeenSet = false;
 };
 

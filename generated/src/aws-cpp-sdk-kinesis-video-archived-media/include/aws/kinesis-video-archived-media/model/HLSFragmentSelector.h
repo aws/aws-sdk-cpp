@@ -91,9 +91,9 @@ class HLSFragmentSelector {
   ///@}
  private:
   HLSFragmentSelectorType m_fragmentSelectorType{HLSFragmentSelectorType::NOT_SET};
-  bool m_fragmentSelectorTypeHasBeenSet = false;
 
   HLSTimestampRange m_timestampRange;
+  bool m_fragmentSelectorTypeHasBeenSet = false;
   bool m_timestampRangeHasBeenSet = false;
 };
 

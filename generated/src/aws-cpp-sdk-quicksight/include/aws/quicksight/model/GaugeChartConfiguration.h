@@ -166,24 +166,24 @@ class GaugeChartConfiguration {
   ///@}
  private:
   GaugeChartFieldWells m_fieldWells;
-  bool m_fieldWellsHasBeenSet = false;
 
   GaugeChartOptions m_gaugeChartOptions;
-  bool m_gaugeChartOptionsHasBeenSet = false;
 
   DataLabelOptions m_dataLabels;
-  bool m_dataLabelsHasBeenSet = false;
 
   TooltipOptions m_tooltipOptions;
-  bool m_tooltipOptionsHasBeenSet = false;
 
   VisualPalette m_visualPalette;
-  bool m_visualPaletteHasBeenSet = false;
 
   GaugeChartColorConfiguration m_colorConfiguration;
-  bool m_colorConfigurationHasBeenSet = false;
 
   VisualInteractionOptions m_interactions;
+  bool m_fieldWellsHasBeenSet = false;
+  bool m_gaugeChartOptionsHasBeenSet = false;
+  bool m_dataLabelsHasBeenSet = false;
+  bool m_tooltipOptionsHasBeenSet = false;
+  bool m_visualPaletteHasBeenSet = false;
+  bool m_colorConfigurationHasBeenSet = false;
   bool m_interactionsHasBeenSet = false;
 };
 

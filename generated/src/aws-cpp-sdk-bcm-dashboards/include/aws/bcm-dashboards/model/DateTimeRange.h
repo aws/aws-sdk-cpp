@@ -69,9 +69,9 @@ class DateTimeRange {
   ///@}
  private:
   DateTimeValue m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   DateTimeValue m_endTime;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

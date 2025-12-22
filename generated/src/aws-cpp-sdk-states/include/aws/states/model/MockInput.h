@@ -95,12 +95,12 @@ class MockInput {
   ///@}
  private:
   Aws::String m_result;
-  bool m_resultHasBeenSet = false;
 
   MockErrorOutput m_errorOutput;
-  bool m_errorOutputHasBeenSet = false;
 
   MockResponseValidationMode m_fieldValidationMode{MockResponseValidationMode::NOT_SET};
+  bool m_resultHasBeenSet = false;
+  bool m_errorOutputHasBeenSet = false;
   bool m_fieldValidationModeHasBeenSet = false;
 };
 

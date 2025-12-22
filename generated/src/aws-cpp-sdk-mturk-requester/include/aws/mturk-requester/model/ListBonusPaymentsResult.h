@@ -99,15 +99,15 @@ class ListBonusPaymentsResult {
   ///@}
  private:
   int m_numResults{0};
-  bool m_numResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<BonusPayment> m_bonusPayments;
-  bool m_bonusPaymentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_numResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_bonusPaymentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class TrainingResult {
   ///@}
  private:
   DataValidationMetrics m_dataValidationMetrics;
-  bool m_dataValidationMetricsHasBeenSet = false;
 
   TrainingMetrics m_trainingMetrics;
-  bool m_trainingMetricsHasBeenSet = false;
 
   VariableImportanceMetrics m_variableImportanceMetrics;
+  bool m_dataValidationMetricsHasBeenSet = false;
+  bool m_trainingMetricsHasBeenSet = false;
   bool m_variableImportanceMetricsHasBeenSet = false;
 };
 

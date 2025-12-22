@@ -84,12 +84,12 @@ class ListCapacityProvidersResult {
   ///@}
  private:
   Aws::Vector<CapacityProvider> m_capacityProviders;
-  bool m_capacityProvidersHasBeenSet = false;
 
   Aws::String m_nextMarker;
-  bool m_nextMarkerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityProvidersHasBeenSet = false;
+  bool m_nextMarkerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

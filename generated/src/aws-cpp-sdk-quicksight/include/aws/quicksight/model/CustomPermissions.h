@@ -87,12 +87,12 @@ class CustomPermissions {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_customPermissionsName;
-  bool m_customPermissionsNameHasBeenSet = false;
 
   Capabilities m_capabilities;
+  bool m_arnHasBeenSet = false;
+  bool m_customPermissionsNameHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

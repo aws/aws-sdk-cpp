@@ -94,12 +94,12 @@ class UpdateModelCardRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_modelCardName;
-  bool m_modelCardNameHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
+  bool m_modelCardNameHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_modelCardStatusHasBeenSet = false;
 };
 

@@ -112,15 +112,15 @@ class Session {
   ///@}
  private:
   Aws::String m_uid;
-  bool m_uidHasBeenSet = false;
 
   MfaStatus m_mfaStatus{MfaStatus::NOT_SET};
-  bool m_mfaStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_issuer;
+  bool m_uidHasBeenSet = false;
+  bool m_mfaStatusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_issuerHasBeenSet = false;
 };
 

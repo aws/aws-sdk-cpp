@@ -77,9 +77,9 @@ class AddThingsToThingGroupParams {
   ///@}
  private:
   Aws::Vector<Aws::String> m_thingGroupNames;
-  bool m_thingGroupNamesHasBeenSet = false;
 
   bool m_overrideDynamicGroups{false};
+  bool m_thingGroupNamesHasBeenSet = false;
   bool m_overrideDynamicGroupsHasBeenSet = false;
 };
 

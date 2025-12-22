@@ -89,12 +89,12 @@ class SendTaskFailureRequest : public SFNRequest {
   ///@}
  private:
   Aws::String m_taskToken;
-  bool m_taskTokenHasBeenSet = false;
 
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   Aws::String m_cause;
+  bool m_taskTokenHasBeenSet = false;
+  bool m_errorHasBeenSet = false;
   bool m_causeHasBeenSet = false;
 };
 

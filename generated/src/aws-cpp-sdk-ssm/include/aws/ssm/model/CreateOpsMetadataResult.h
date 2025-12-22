@@ -60,9 +60,9 @@ class CreateOpsMetadataResult {
   ///@}
  private:
   Aws::String m_opsMetadataArn;
-  bool m_opsMetadataArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_opsMetadataArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

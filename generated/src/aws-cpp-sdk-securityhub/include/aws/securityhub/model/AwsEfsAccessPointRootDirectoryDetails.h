@@ -75,9 +75,9 @@ class AwsEfsAccessPointRootDirectoryDetails {
   ///@}
  private:
   AwsEfsAccessPointRootDirectoryCreationInfoDetails m_creationInfo;
-  bool m_creationInfoHasBeenSet = false;
 
   Aws::String m_path;
+  bool m_creationInfoHasBeenSet = false;
   bool m_pathHasBeenSet = false;
 };
 

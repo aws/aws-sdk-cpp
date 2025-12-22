@@ -14,7 +14,6 @@
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/ratelimiter/RateLimiterInterface.h>
-#include <aws/core/utils/stream/AwsChunkedStream.h>
 #include <aws/core/utils/stream/ConcurrentStreamBuf.h>
 
 #include <algorithm>
@@ -155,21 +154,16 @@ static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
 struct CurlReadCallbackContext
 {
   CurlReadCallbackContext(const CurlHttpClient* client, CURL* curlHandle, HttpRequest* request,
-                          Aws::Utils::RateLimits::RateLimiterInterface* limiter,
-                          std::shared_ptr<AwsChunkedStream<>> chunkedStream = nullptr)
+                          Aws::Utils::RateLimits::RateLimiterInterface* limiter)
       : m_client(client),
         m_curlHandle(curlHandle),
         m_rateLimiter(limiter),
-        m_request(request),
-        m_chunkEnd(false),
-        m_chunkedStream{std::move(chunkedStream)} {}
+        m_request(request) {}
 
   const CurlHttpClient* m_client;
   CURL* m_curlHandle;
   Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
   HttpRequest* m_request;
-  bool m_chunkEnd;
-  std::shared_ptr<Stream::AwsChunkedStream<>> m_chunkedStream;
 };
 
 static int64_t GetContentLengthFromHeader(CURL* connectionHandle,
@@ -315,8 +309,6 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
     const std::shared_ptr<Aws::IOStream>& ioStream = request->GetContentBody();
 
     size_t amountToRead = size * nmemb;
-    bool isAwsChunked = request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
-                        request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER).find(Aws::Http::AWS_CHUNKED_VALUE) != Aws::String::npos;
 
     if (ioStream != nullptr && amountToRead > 0)
     {
@@ -334,8 +326,6 @@ static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata, boo
             return 0;
           }
           amountRead = (size_t)ioStream->readsome(ptr, amountToRead);
-        } else if (isAwsChunked && context->m_chunkedStream != nullptr) {
-          amountRead = context->m_chunkedStream->BufferedRead(ptr, amountToRead);
         } else {
           ioStream->read(ptr, amountToRead);
           amountRead = static_cast<size_t>(ioStream->gcount());
@@ -380,13 +370,14 @@ static size_t SeekBody(void* userdata, curl_off_t offset, int origin)
         return CURL_SEEKFUNC_FAIL;
     }
 
-    // fail seek for aws-chunk encoded body as the length and offset is unknown
+    // Fail seek for aws-chunk encoded body as the length and offset is unknown
     if (context->m_request &&
         context->m_request->HasHeader(Aws::Http::CONTENT_ENCODING_HEADER) &&
         context->m_request->GetHeaderValue(Aws::Http::CONTENT_ENCODING_HEADER).find(Aws::Http::AWS_CHUNKED_VALUE) != Aws::String::npos)
     {
         return CURL_SEEKFUNC_FAIL;
     }
+
 
     HttpRequest* request = context->m_request;
     const std::shared_ptr<Aws::IOStream>& ioStream = request->GetContentBody();
@@ -713,13 +704,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
 
         CurlWriteCallbackContext writeContext(this, connectionHandle ,request.get(), response.get(), readLimiter);
 
-        const auto readContext = [this, &connectionHandle, &request, &writeLimiter]() -> CurlReadCallbackContext {
-          if (request->GetContentBody() != nullptr) {
-            auto chunkedBodyPtr = Aws::MakeShared<AwsChunkedStream<>>(CURL_HTTP_CLIENT_TAG, request.get(), request->GetContentBody());
-            return {this, connectionHandle, request.get(), writeLimiter, std::move(chunkedBodyPtr)};
-          }
-          return {this, connectionHandle, request.get(), writeLimiter};
-        }();
+        CurlReadCallbackContext readContext(this, connectionHandle, request.get(), writeLimiter);
 
         SetOptCodeForHttpMethod(connectionHandle, request);
 

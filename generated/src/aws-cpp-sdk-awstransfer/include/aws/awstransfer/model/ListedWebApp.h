@@ -128,18 +128,18 @@ class ListedWebApp {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_webAppId;
-  bool m_webAppIdHasBeenSet = false;
 
   Aws::String m_accessEndpoint;
-  bool m_accessEndpointHasBeenSet = false;
 
   Aws::String m_webAppEndpoint;
-  bool m_webAppEndpointHasBeenSet = false;
 
   WebAppEndpointType m_endpointType{WebAppEndpointType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_webAppIdHasBeenSet = false;
+  bool m_accessEndpointHasBeenSet = false;
+  bool m_webAppEndpointHasBeenSet = false;
   bool m_endpointTypeHasBeenSet = false;
 };
 

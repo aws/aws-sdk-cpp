@@ -71,9 +71,9 @@ class ExportErrorDetails {
   ///@}
  private:
   ExportErrorDetailsOutput m_exportResults;
-  bool m_exportResultsHasBeenSet = false;
 
   ExportErrorDetailsOutput m_exportSourceImages;
+  bool m_exportResultsHasBeenSet = false;
   bool m_exportSourceImagesHasBeenSet = false;
 };
 

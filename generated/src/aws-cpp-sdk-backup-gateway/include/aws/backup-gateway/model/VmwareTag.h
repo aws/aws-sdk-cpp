@@ -90,12 +90,12 @@ class VmwareTag {
   ///@}
  private:
   Aws::String m_vmwareCategory;
-  bool m_vmwareCategoryHasBeenSet = false;
 
   Aws::String m_vmwareTagDescription;
-  bool m_vmwareTagDescriptionHasBeenSet = false;
 
   Aws::String m_vmwareTagName;
+  bool m_vmwareCategoryHasBeenSet = false;
+  bool m_vmwareTagDescriptionHasBeenSet = false;
   bool m_vmwareTagNameHasBeenSet = false;
 };
 

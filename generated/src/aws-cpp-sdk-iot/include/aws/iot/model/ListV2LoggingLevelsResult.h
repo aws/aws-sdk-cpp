@@ -85,12 +85,12 @@ class ListV2LoggingLevelsResult {
   ///@}
  private:
   Aws::Vector<LogTargetConfiguration> m_logTargetConfigurations;
-  bool m_logTargetConfigurationsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logTargetConfigurationsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

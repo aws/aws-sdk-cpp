@@ -88,12 +88,12 @@ class CreateTemplateMessageBody {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestID;
+  bool m_arnHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIDHasBeenSet = false;
 };
 

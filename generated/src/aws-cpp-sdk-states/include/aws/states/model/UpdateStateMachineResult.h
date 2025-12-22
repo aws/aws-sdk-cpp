@@ -96,15 +96,15 @@ class UpdateStateMachineResult {
   ///@}
  private:
   Aws::Utils::DateTime m_updateDate{};
-  bool m_updateDateHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_stateMachineVersionArn;
-  bool m_stateMachineVersionArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_updateDateHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
+  bool m_stateMachineVersionArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

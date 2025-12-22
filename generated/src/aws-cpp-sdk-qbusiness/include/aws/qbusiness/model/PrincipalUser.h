@@ -86,12 +86,12 @@ class PrincipalUser {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   ReadAccessType m_access{ReadAccessType::NOT_SET};
-  bool m_accessHasBeenSet = false;
 
   MembershipType m_membershipType{MembershipType::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_accessHasBeenSet = false;
   bool m_membershipTypeHasBeenSet = false;
 };
 

@@ -922,135 +922,135 @@ class AwsRedshiftClusterDetails {
   ///@}
  private:
   bool m_allowVersionUpgrade{false};
-  bool m_allowVersionUpgradeHasBeenSet = false;
 
   int m_automatedSnapshotRetentionPeriod{0};
-  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_clusterAvailabilityStatus;
-  bool m_clusterAvailabilityStatusHasBeenSet = false;
 
   Aws::String m_clusterCreateTime;
-  bool m_clusterCreateTimeHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::Vector<AwsRedshiftClusterClusterNode> m_clusterNodes;
-  bool m_clusterNodesHasBeenSet = false;
 
   Aws::Vector<AwsRedshiftClusterClusterParameterGroup> m_clusterParameterGroups;
-  bool m_clusterParameterGroupsHasBeenSet = false;
 
   Aws::String m_clusterPublicKey;
-  bool m_clusterPublicKeyHasBeenSet = false;
 
   Aws::String m_clusterRevisionNumber;
-  bool m_clusterRevisionNumberHasBeenSet = false;
 
   Aws::Vector<AwsRedshiftClusterClusterSecurityGroup> m_clusterSecurityGroups;
-  bool m_clusterSecurityGroupsHasBeenSet = false;
 
   AwsRedshiftClusterClusterSnapshotCopyStatus m_clusterSnapshotCopyStatus;
-  bool m_clusterSnapshotCopyStatusHasBeenSet = false;
 
   Aws::String m_clusterStatus;
-  bool m_clusterStatusHasBeenSet = false;
 
   Aws::String m_clusterSubnetGroupName;
-  bool m_clusterSubnetGroupNameHasBeenSet = false;
 
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   Aws::String m_dBName;
-  bool m_dBNameHasBeenSet = false;
 
   Aws::Vector<AwsRedshiftClusterDeferredMaintenanceWindow> m_deferredMaintenanceWindows;
-  bool m_deferredMaintenanceWindowsHasBeenSet = false;
 
   AwsRedshiftClusterElasticIpStatus m_elasticIpStatus;
-  bool m_elasticIpStatusHasBeenSet = false;
 
   Aws::String m_elasticResizeNumberOfNodeOptions;
-  bool m_elasticResizeNumberOfNodeOptionsHasBeenSet = false;
 
   bool m_encrypted{false};
-  bool m_encryptedHasBeenSet = false;
 
   AwsRedshiftClusterEndpoint m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   bool m_enhancedVpcRouting{false};
-  bool m_enhancedVpcRoutingHasBeenSet = false;
 
   Aws::String m_expectedNextSnapshotScheduleTime;
-  bool m_expectedNextSnapshotScheduleTimeHasBeenSet = false;
 
   Aws::String m_expectedNextSnapshotScheduleTimeStatus;
-  bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = false;
 
   AwsRedshiftClusterHsmStatus m_hsmStatus;
-  bool m_hsmStatusHasBeenSet = false;
 
   Aws::Vector<AwsRedshiftClusterIamRole> m_iamRoles;
-  bool m_iamRolesHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_maintenanceTrackName;
-  bool m_maintenanceTrackNameHasBeenSet = false;
 
   int m_manualSnapshotRetentionPeriod{0};
-  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
   Aws::String m_masterUsername;
-  bool m_masterUsernameHasBeenSet = false;
 
   Aws::String m_nextMaintenanceWindowStartTime;
-  bool m_nextMaintenanceWindowStartTimeHasBeenSet = false;
 
   Aws::String m_nodeType;
-  bool m_nodeTypeHasBeenSet = false;
 
   int m_numberOfNodes{0};
-  bool m_numberOfNodesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_pendingActions;
-  bool m_pendingActionsHasBeenSet = false;
 
   AwsRedshiftClusterPendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   Aws::String m_preferredMaintenanceWindow;
-  bool m_preferredMaintenanceWindowHasBeenSet = false;
 
   bool m_publiclyAccessible{false};
-  bool m_publiclyAccessibleHasBeenSet = false;
 
   AwsRedshiftClusterResizeInfo m_resizeInfo;
-  bool m_resizeInfoHasBeenSet = false;
 
   AwsRedshiftClusterRestoreStatus m_restoreStatus;
-  bool m_restoreStatusHasBeenSet = false;
 
   Aws::String m_snapshotScheduleIdentifier;
-  bool m_snapshotScheduleIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotScheduleState;
-  bool m_snapshotScheduleStateHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<AwsRedshiftClusterVpcSecurityGroup> m_vpcSecurityGroups;
-  bool m_vpcSecurityGroupsHasBeenSet = false;
 
   AwsRedshiftClusterLoggingStatus m_loggingStatus;
+  bool m_allowVersionUpgradeHasBeenSet = false;
+  bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_clusterAvailabilityStatusHasBeenSet = false;
+  bool m_clusterCreateTimeHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_clusterNodesHasBeenSet = false;
+  bool m_clusterParameterGroupsHasBeenSet = false;
+  bool m_clusterPublicKeyHasBeenSet = false;
+  bool m_clusterRevisionNumberHasBeenSet = false;
+  bool m_clusterSecurityGroupsHasBeenSet = false;
+  bool m_clusterSnapshotCopyStatusHasBeenSet = false;
+  bool m_clusterStatusHasBeenSet = false;
+  bool m_clusterSubnetGroupNameHasBeenSet = false;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_dBNameHasBeenSet = false;
+  bool m_deferredMaintenanceWindowsHasBeenSet = false;
+  bool m_elasticIpStatusHasBeenSet = false;
+  bool m_elasticResizeNumberOfNodeOptionsHasBeenSet = false;
+  bool m_encryptedHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_enhancedVpcRoutingHasBeenSet = false;
+  bool m_expectedNextSnapshotScheduleTimeHasBeenSet = false;
+  bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = false;
+  bool m_hsmStatusHasBeenSet = false;
+  bool m_iamRolesHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_maintenanceTrackNameHasBeenSet = false;
+  bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
+  bool m_masterUsernameHasBeenSet = false;
+  bool m_nextMaintenanceWindowStartTimeHasBeenSet = false;
+  bool m_nodeTypeHasBeenSet = false;
+  bool m_numberOfNodesHasBeenSet = false;
+  bool m_pendingActionsHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_preferredMaintenanceWindowHasBeenSet = false;
+  bool m_publiclyAccessibleHasBeenSet = false;
+  bool m_resizeInfoHasBeenSet = false;
+  bool m_restoreStatusHasBeenSet = false;
+  bool m_snapshotScheduleIdentifierHasBeenSet = false;
+  bool m_snapshotScheduleStateHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_vpcSecurityGroupsHasBeenSet = false;
   bool m_loggingStatusHasBeenSet = false;
 };
 

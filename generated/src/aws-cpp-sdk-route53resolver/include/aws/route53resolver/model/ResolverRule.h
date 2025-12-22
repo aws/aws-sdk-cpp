@@ -191,7 +191,9 @@ class ResolverRule {
   ///@{
   /**
    * <p>The name for the Resolver rule, which you specified when you created the
-   * Resolver rule.</p>
+   * Resolver rule.</p> <p>The name can be up to 64 characters long and can contain
+   * letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The
+   * name cannot consist of only numbers.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -346,48 +348,48 @@ class ResolverRule {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   ResolverRuleStatus m_status{ResolverRuleStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   RuleTypeOption m_ruleType{RuleTypeOption::NOT_SET};
-  bool m_ruleTypeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<TargetAddress> m_targetIps;
-  bool m_targetIpsHasBeenSet = false;
 
   Aws::String m_resolverEndpointId;
-  bool m_resolverEndpointIdHasBeenSet = false;
 
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-  bool m_shareStatusHasBeenSet = false;
 
   Aws::String m_creationTime;
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_modificationTime;
-  bool m_modificationTimeHasBeenSet = false;
 
   Aws::String m_delegationRecord;
+  bool m_idHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_ruleTypeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_targetIpsHasBeenSet = false;
+  bool m_resolverEndpointIdHasBeenSet = false;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_shareStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
   bool m_delegationRecordHasBeenSet = false;
 };
 

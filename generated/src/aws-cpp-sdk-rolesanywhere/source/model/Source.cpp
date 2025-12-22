@@ -18,13 +18,13 @@ namespace Model {
 Source::Source(JsonView jsonValue) { *this = jsonValue; }
 
 Source& Source::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("sourceData")) {
-    m_sourceData = jsonValue.GetObject("sourceData");
-    m_sourceDataHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("sourceType")) {
     m_sourceType = TrustAnchorTypeMapper::GetTrustAnchorTypeForName(jsonValue.GetString("sourceType"));
     m_sourceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceData")) {
+    m_sourceData = jsonValue.GetObject("sourceData");
+    m_sourceDataHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Source& Source::operator=(JsonView jsonValue) {
 JsonValue Source::Jsonize() const {
   JsonValue payload;
 
-  if (m_sourceDataHasBeenSet) {
-    payload.WithObject("sourceData", m_sourceData.Jsonize());
-  }
-
   if (m_sourceTypeHasBeenSet) {
     payload.WithString("sourceType", TrustAnchorTypeMapper::GetNameForTrustAnchorType(m_sourceType));
+  }
+
+  if (m_sourceDataHasBeenSet) {
+    payload.WithObject("sourceData", m_sourceData.Jsonize());
   }
 
   return payload;

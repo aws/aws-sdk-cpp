@@ -136,18 +136,18 @@ class GuardrailTrace {
   ///@}
  private:
   GuardrailAction m_action{GuardrailAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::Vector<GuardrailAssessment> m_inputAssessments;
-  bool m_inputAssessmentsHasBeenSet = false;
 
   Metadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<GuardrailAssessment> m_outputAssessments;
-  bool m_outputAssessmentsHasBeenSet = false;
 
   Aws::String m_traceId;
+  bool m_actionHasBeenSet = false;
+  bool m_inputAssessmentsHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_outputAssessmentsHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;
 };
 

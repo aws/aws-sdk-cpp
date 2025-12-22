@@ -181,27 +181,27 @@ class Disk {
   ///@}
  private:
   Aws::String m_diskId;
-  bool m_diskIdHasBeenSet = false;
 
   Aws::String m_diskPath;
-  bool m_diskPathHasBeenSet = false;
 
   Aws::String m_diskNode;
-  bool m_diskNodeHasBeenSet = false;
 
   Aws::String m_diskStatus;
-  bool m_diskStatusHasBeenSet = false;
 
   long long m_diskSizeInBytes{0};
-  bool m_diskSizeInBytesHasBeenSet = false;
 
   Aws::String m_diskAllocationType;
-  bool m_diskAllocationTypeHasBeenSet = false;
 
   Aws::String m_diskAllocationResource;
-  bool m_diskAllocationResourceHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_diskAttributeList;
+  bool m_diskIdHasBeenSet = false;
+  bool m_diskPathHasBeenSet = false;
+  bool m_diskNodeHasBeenSet = false;
+  bool m_diskStatusHasBeenSet = false;
+  bool m_diskSizeInBytesHasBeenSet = false;
+  bool m_diskAllocationTypeHasBeenSet = false;
+  bool m_diskAllocationResourceHasBeenSet = false;
   bool m_diskAttributeListHasBeenSet = false;
 };
 

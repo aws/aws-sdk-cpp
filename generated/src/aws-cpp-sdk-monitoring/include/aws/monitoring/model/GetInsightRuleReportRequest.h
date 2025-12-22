@@ -30,10 +30,8 @@ class GetInsightRuleReportRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The name of the rule that you want to see data from.</p>
@@ -188,24 +186,24 @@ class GetInsightRuleReportRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_ruleName;
-  bool m_ruleNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   int m_maxContributorCount{0};
-  bool m_maxContributorCountHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::String m_orderBy;
+  bool m_ruleNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_maxContributorCountHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
   bool m_orderByHasBeenSet = false;
 };
 

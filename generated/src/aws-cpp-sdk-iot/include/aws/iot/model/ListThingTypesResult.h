@@ -90,12 +90,12 @@ class ListThingTypesResult {
   ///@}
  private:
   Aws::Vector<ThingTypeDefinition> m_thingTypes;
-  bool m_thingTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_thingTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

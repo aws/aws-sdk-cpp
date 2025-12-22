@@ -166,24 +166,24 @@ class UICustomizationType {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   Aws::String m_clientId;
-  bool m_clientIdHasBeenSet = false;
 
   Aws::String m_imageUrl;
-  bool m_imageUrlHasBeenSet = false;
 
   Aws::String m_cSS;
-  bool m_cSSHasBeenSet = false;
 
   Aws::String m_cSSVersion;
-  bool m_cSSVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedDate{};
-  bool m_lastModifiedDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_clientIdHasBeenSet = false;
+  bool m_imageUrlHasBeenSet = false;
+  bool m_cSSHasBeenSet = false;
+  bool m_cSSVersionHasBeenSet = false;
+  bool m_lastModifiedDateHasBeenSet = false;
   bool m_creationDateHasBeenSet = false;
 };
 

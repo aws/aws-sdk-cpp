@@ -85,12 +85,12 @@ class ListResolversResult {
   ///@}
  private:
   Aws::Vector<Resolver> m_resolvers;
-  bool m_resolversHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resolversHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

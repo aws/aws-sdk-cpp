@@ -195,27 +195,27 @@ class ApplicationDescription {
   ///@}
  private:
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateCreated{};
-  bool m_dateCreatedHasBeenSet = false;
 
   Aws::Utils::DateTime m_dateUpdated{};
-  bool m_dateUpdatedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_configurationTemplates;
-  bool m_configurationTemplatesHasBeenSet = false;
 
   ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_dateUpdatedHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
+  bool m_configurationTemplatesHasBeenSet = false;
   bool m_resourceLifecycleConfigHasBeenSet = false;
 };
 

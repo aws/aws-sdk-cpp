@@ -136,15 +136,15 @@ class Conditions {
   ///@}
  private:
   Aws::Vector<ConditionParameter> m_stringEquals;
-  bool m_stringEqualsHasBeenSet = false;
 
   Aws::Vector<ConditionParameter> m_stringNotEquals;
-  bool m_stringNotEqualsHasBeenSet = false;
 
   Aws::Vector<ConditionParameter> m_stringLike;
-  bool m_stringLikeHasBeenSet = false;
 
   Aws::Vector<ConditionParameter> m_stringNotLike;
+  bool m_stringEqualsHasBeenSet = false;
+  bool m_stringNotEqualsHasBeenSet = false;
+  bool m_stringLikeHasBeenSet = false;
   bool m_stringNotLikeHasBeenSet = false;
 };
 

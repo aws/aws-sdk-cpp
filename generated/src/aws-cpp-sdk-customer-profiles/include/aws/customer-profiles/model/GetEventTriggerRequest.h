@@ -65,9 +65,9 @@ class GetEventTriggerRequest : public CustomerProfilesRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_eventTriggerName;
+  bool m_domainNameHasBeenSet = false;
   bool m_eventTriggerNameHasBeenSet = false;
 };
 

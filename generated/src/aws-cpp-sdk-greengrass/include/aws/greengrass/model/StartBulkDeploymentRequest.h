@@ -118,15 +118,15 @@ class StartBulkDeploymentRequest : public GreengrassRequest {
   ///@}
  private:
   Aws::String m_amznClientToken;
-  bool m_amznClientTokenHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   Aws::String m_inputFileUri;
-  bool m_inputFileUriHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_amznClientTokenHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_inputFileUriHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

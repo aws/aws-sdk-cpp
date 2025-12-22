@@ -92,12 +92,12 @@ class FeaturedDocumentWithMetadata {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   Aws::String m_uRI;
+  bool m_idHasBeenSet = false;
+  bool m_titleHasBeenSet = false;
   bool m_uRIHasBeenSet = false;
 };
 

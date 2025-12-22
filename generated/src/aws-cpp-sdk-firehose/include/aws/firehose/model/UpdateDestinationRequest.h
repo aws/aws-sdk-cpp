@@ -268,39 +268,39 @@ class UpdateDestinationRequest : public FirehoseRequest {
   ///@}
  private:
   Aws::String m_deliveryStreamName;
-  bool m_deliveryStreamNameHasBeenSet = false;
 
   Aws::String m_currentDeliveryStreamVersionId;
-  bool m_currentDeliveryStreamVersionIdHasBeenSet = false;
 
   Aws::String m_destinationId;
-  bool m_destinationIdHasBeenSet = false;
 
   ExtendedS3DestinationUpdate m_extendedS3DestinationUpdate;
-  bool m_extendedS3DestinationUpdateHasBeenSet = false;
 
   RedshiftDestinationUpdate m_redshiftDestinationUpdate;
-  bool m_redshiftDestinationUpdateHasBeenSet = false;
 
   ElasticsearchDestinationUpdate m_elasticsearchDestinationUpdate;
-  bool m_elasticsearchDestinationUpdateHasBeenSet = false;
 
   AmazonopensearchserviceDestinationUpdate m_amazonopensearchserviceDestinationUpdate;
-  bool m_amazonopensearchserviceDestinationUpdateHasBeenSet = false;
 
   SplunkDestinationUpdate m_splunkDestinationUpdate;
-  bool m_splunkDestinationUpdateHasBeenSet = false;
 
   HttpEndpointDestinationUpdate m_httpEndpointDestinationUpdate;
-  bool m_httpEndpointDestinationUpdateHasBeenSet = false;
 
   AmazonOpenSearchServerlessDestinationUpdate m_amazonOpenSearchServerlessDestinationUpdate;
-  bool m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = false;
 
   SnowflakeDestinationUpdate m_snowflakeDestinationUpdate;
-  bool m_snowflakeDestinationUpdateHasBeenSet = false;
 
   IcebergDestinationUpdate m_icebergDestinationUpdate;
+  bool m_deliveryStreamNameHasBeenSet = false;
+  bool m_currentDeliveryStreamVersionIdHasBeenSet = false;
+  bool m_destinationIdHasBeenSet = false;
+  bool m_extendedS3DestinationUpdateHasBeenSet = false;
+  bool m_redshiftDestinationUpdateHasBeenSet = false;
+  bool m_elasticsearchDestinationUpdateHasBeenSet = false;
+  bool m_amazonopensearchserviceDestinationUpdateHasBeenSet = false;
+  bool m_splunkDestinationUpdateHasBeenSet = false;
+  bool m_httpEndpointDestinationUpdateHasBeenSet = false;
+  bool m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet = false;
+  bool m_snowflakeDestinationUpdateHasBeenSet = false;
   bool m_icebergDestinationUpdateHasBeenSet = false;
 };
 

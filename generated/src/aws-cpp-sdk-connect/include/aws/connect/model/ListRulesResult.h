@@ -85,12 +85,12 @@ class ListRulesResult {
   ///@}
  private:
   Aws::Vector<RuleSummary> m_ruleSummaryList;
-  bool m_ruleSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_ruleSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

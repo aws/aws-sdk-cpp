@@ -103,15 +103,15 @@ class EventLogConfigurationSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   LogLevel m_eventLogLevel{LogLevel::NOT_SET};
+  bool m_idHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
   bool m_eventLogLevelHasBeenSet = false;
 };
 

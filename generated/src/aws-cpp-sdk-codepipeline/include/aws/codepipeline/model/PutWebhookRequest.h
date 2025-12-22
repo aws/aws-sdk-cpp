@@ -79,9 +79,9 @@ class PutWebhookRequest : public CodePipelineRequest {
   ///@}
  private:
   WebhookDefinition m_webhook;
-  bool m_webhookHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_webhookHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

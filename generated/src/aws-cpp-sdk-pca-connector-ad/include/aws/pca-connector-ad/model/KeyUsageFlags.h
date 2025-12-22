@@ -116,18 +116,18 @@ class KeyUsageFlags {
   ///@}
  private:
   bool m_dataEncipherment{false};
-  bool m_dataEnciphermentHasBeenSet = false;
 
   bool m_digitalSignature{false};
-  bool m_digitalSignatureHasBeenSet = false;
 
   bool m_keyAgreement{false};
-  bool m_keyAgreementHasBeenSet = false;
 
   bool m_keyEncipherment{false};
-  bool m_keyEnciphermentHasBeenSet = false;
 
   bool m_nonRepudiation{false};
+  bool m_dataEnciphermentHasBeenSet = false;
+  bool m_digitalSignatureHasBeenSet = false;
+  bool m_keyAgreementHasBeenSet = false;
+  bool m_keyEnciphermentHasBeenSet = false;
   bool m_nonRepudiationHasBeenSet = false;
 };
 

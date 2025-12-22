@@ -89,12 +89,12 @@ class EgressEndpoint {
   ///@}
  private:
   Aws::String m_packagingConfigurationId;
-  bool m_packagingConfigurationIdHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_url;
+  bool m_packagingConfigurationIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_urlHasBeenSet = false;
 };
 

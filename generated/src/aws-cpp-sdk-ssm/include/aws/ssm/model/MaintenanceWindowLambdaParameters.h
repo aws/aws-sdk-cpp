@@ -110,12 +110,12 @@ class MaintenanceWindowLambdaParameters {
   ///@}
  private:
   Aws::String m_clientContext;
-  bool m_clientContextHasBeenSet = false;
 
   Aws::String m_qualifier;
-  bool m_qualifierHasBeenSet = false;
 
   Aws::Utils::CryptoBuffer m_payload{};
+  bool m_clientContextHasBeenSet = false;
+  bool m_qualifierHasBeenSet = false;
   bool m_payloadHasBeenSet = false;
 };
 

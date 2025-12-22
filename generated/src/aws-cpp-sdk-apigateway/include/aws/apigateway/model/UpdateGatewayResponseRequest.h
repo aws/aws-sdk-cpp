@@ -96,12 +96,12 @@ class UpdateGatewayResponseRequest : public APIGatewayRequest {
   ///@}
  private:
   Aws::String m_restApiId;
-  bool m_restApiIdHasBeenSet = false;
 
   GatewayResponseType m_responseType{GatewayResponseType::NOT_SET};
-  bool m_responseTypeHasBeenSet = false;
 
   Aws::Vector<PatchOperation> m_patchOperations;
+  bool m_restApiIdHasBeenSet = false;
+  bool m_responseTypeHasBeenSet = false;
   bool m_patchOperationsHasBeenSet = false;
 };
 

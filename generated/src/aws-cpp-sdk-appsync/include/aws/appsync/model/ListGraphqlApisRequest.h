@@ -104,15 +104,15 @@ class ListGraphqlApisRequest : public AppSyncRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   GraphQLApiType m_apiType{GraphQLApiType::NOT_SET};
-  bool m_apiTypeHasBeenSet = false;
 
   Ownership m_owner{Ownership::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_apiTypeHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
 };
 

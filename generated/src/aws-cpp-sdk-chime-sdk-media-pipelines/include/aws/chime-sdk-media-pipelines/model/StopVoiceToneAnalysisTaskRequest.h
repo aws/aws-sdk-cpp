@@ -66,9 +66,9 @@ class StopVoiceToneAnalysisTaskRequest : public ChimeSDKMediaPipelinesRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_voiceToneAnalysisTaskId;
+  bool m_identifierHasBeenSet = false;
   bool m_voiceToneAnalysisTaskIdHasBeenSet = false;
 };
 

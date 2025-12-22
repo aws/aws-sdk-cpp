@@ -88,9 +88,9 @@ class IngestConfigurations {
   ///@}
  private:
   Aws::Vector<AudioConfiguration> m_audioConfigurations;
-  bool m_audioConfigurationsHasBeenSet = false;
 
   Aws::Vector<VideoConfiguration> m_videoConfigurations;
+  bool m_audioConfigurationsHasBeenSet = false;
   bool m_videoConfigurationsHasBeenSet = false;
 };
 

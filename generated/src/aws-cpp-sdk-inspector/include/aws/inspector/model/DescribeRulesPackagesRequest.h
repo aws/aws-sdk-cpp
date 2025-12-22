@@ -73,9 +73,9 @@ class DescribeRulesPackagesRequest : public InspectorRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_rulesPackageArns;
-  bool m_rulesPackageArnsHasBeenSet = false;
 
   Locale m_locale{Locale::NOT_SET};
+  bool m_rulesPackageArnsHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

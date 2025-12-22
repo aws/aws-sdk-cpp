@@ -156,21 +156,75 @@ class Filters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of up to 10 subtypes can be provided.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSubtypes() const { return m_subtypes; }
+  inline bool SubtypesHasBeenSet() const { return m_subtypesHasBeenSet; }
+  template <typename SubtypesT = Aws::Vector<Aws::String>>
+  void SetSubtypes(SubtypesT&& value) {
+    m_subtypesHasBeenSet = true;
+    m_subtypes = std::forward<SubtypesT>(value);
+  }
+  template <typename SubtypesT = Aws::Vector<Aws::String>>
+  Filters& WithSubtypes(SubtypesT&& value) {
+    SetSubtypes(std::forward<SubtypesT>(value));
+    return *this;
+  }
+  template <typename SubtypesT = Aws::String>
+  Filters& AddSubtypes(SubtypesT&& value) {
+    m_subtypesHasBeenSet = true;
+    m_subtypes.emplace_back(std::forward<SubtypesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of up to 10 validationTestTypes can be provided.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetValidationTestTypes() const { return m_validationTestTypes; }
+  inline bool ValidationTestTypesHasBeenSet() const { return m_validationTestTypesHasBeenSet; }
+  template <typename ValidationTestTypesT = Aws::Vector<Aws::String>>
+  void SetValidationTestTypes(ValidationTestTypesT&& value) {
+    m_validationTestTypesHasBeenSet = true;
+    m_validationTestTypes = std::forward<ValidationTestTypesT>(value);
+  }
+  template <typename ValidationTestTypesT = Aws::Vector<Aws::String>>
+  Filters& WithValidationTestTypes(ValidationTestTypesT&& value) {
+    SetValidationTestTypes(std::forward<ValidationTestTypesT>(value));
+    return *this;
+  }
+  template <typename ValidationTestTypesT = Aws::String>
+  Filters& AddValidationTestTypes(ValidationTestTypesT&& value) {
+    m_validationTestTypesHasBeenSet = true;
+    m_validationTestTypes.emplace_back(std::forward<ValidationTestTypesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_queues;
-  bool m_queuesHasBeenSet = false;
 
   Aws::Vector<Channel> m_channels;
-  bool m_channelsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routingProfiles;
-  bool m_routingProfilesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_routingStepExpressions;
-  bool m_routingStepExpressionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentStatuses;
+
+  Aws::Vector<Aws::String> m_subtypes;
+
+  Aws::Vector<Aws::String> m_validationTestTypes;
+  bool m_queuesHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
+  bool m_routingProfilesHasBeenSet = false;
+  bool m_routingStepExpressionsHasBeenSet = false;
   bool m_agentStatusesHasBeenSet = false;
+  bool m_subtypesHasBeenSet = false;
+  bool m_validationTestTypesHasBeenSet = false;
 };
 
 }  // namespace Model

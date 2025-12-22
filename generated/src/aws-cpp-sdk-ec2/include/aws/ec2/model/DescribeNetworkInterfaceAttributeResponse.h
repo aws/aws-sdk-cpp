@@ -162,24 +162,24 @@ class DescribeNetworkInterfaceAttributeResponse {
   ///@}
  private:
   NetworkInterfaceAttachment m_attachment;
-  bool m_attachmentHasBeenSet = false;
 
   AttributeValue m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<GroupIdentifier> m_groups;
-  bool m_groupsHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   AttributeBooleanValue m_sourceDestCheck;
-  bool m_sourceDestCheckHasBeenSet = false;
 
   bool m_associatePublicIpAddress{false};
-  bool m_associatePublicIpAddressHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_attachmentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_groupsHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_sourceDestCheckHasBeenSet = false;
+  bool m_associatePublicIpAddressHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

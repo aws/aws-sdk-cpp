@@ -66,9 +66,9 @@ class Endpoint {
   ///@}
  private:
   Aws::String m_address;
-  bool m_addressHasBeenSet = false;
 
   long long m_cachePeriodInMinutes{0};
+  bool m_addressHasBeenSet = false;
   bool m_cachePeriodInMinutesHasBeenSet = false;
 };
 

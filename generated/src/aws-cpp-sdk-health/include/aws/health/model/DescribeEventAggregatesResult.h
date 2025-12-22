@@ -89,12 +89,12 @@ class DescribeEventAggregatesResult {
   ///@}
  private:
   Aws::Vector<EventAggregate> m_eventAggregates;
-  bool m_eventAggregatesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_eventAggregatesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

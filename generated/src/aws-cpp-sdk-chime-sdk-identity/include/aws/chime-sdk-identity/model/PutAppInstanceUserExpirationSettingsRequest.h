@@ -67,9 +67,9 @@ class PutAppInstanceUserExpirationSettingsRequest : public ChimeSDKIdentityReque
   ///@}
  private:
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   ExpirationSettings m_expirationSettings;
+  bool m_appInstanceUserArnHasBeenSet = false;
   bool m_expirationSettingsHasBeenSet = false;
 };
 

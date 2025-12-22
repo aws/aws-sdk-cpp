@@ -207,24 +207,24 @@ class PostContentRequest : public StreamingLexRuntimeServiceRequest {
   ///@}
  private:
   Aws::String m_botName;
-  bool m_botNameHasBeenSet = false;
 
   Aws::String m_botAlias;
-  bool m_botAliasHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_sessionAttributes;
-  bool m_sessionAttributesHasBeenSet = false;
 
   Aws::String m_requestAttributes;
-  bool m_requestAttributesHasBeenSet = false;
 
   Aws::String m_accept;
-  bool m_acceptHasBeenSet = false;
 
   Aws::String m_activeContexts;
+  bool m_botNameHasBeenSet = false;
+  bool m_botAliasHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_sessionAttributesHasBeenSet = false;
+  bool m_requestAttributesHasBeenSet = false;
+  bool m_acceptHasBeenSet = false;
   bool m_activeContextsHasBeenSet = false;
 };
 

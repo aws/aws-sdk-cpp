@@ -54,24 +54,6 @@ class LifeCycle {
 
   ///@{
   /**
-   * <p>Lifecycle elapsed time and duration.</p>
-   */
-  inline const Aws::String& GetElapsedReplicationDuration() const { return m_elapsedReplicationDuration; }
-  inline bool ElapsedReplicationDurationHasBeenSet() const { return m_elapsedReplicationDurationHasBeenSet; }
-  template <typename ElapsedReplicationDurationT = Aws::String>
-  void SetElapsedReplicationDuration(ElapsedReplicationDurationT&& value) {
-    m_elapsedReplicationDurationHasBeenSet = true;
-    m_elapsedReplicationDuration = std::forward<ElapsedReplicationDurationT>(value);
-  }
-  template <typename ElapsedReplicationDurationT = Aws::String>
-  LifeCycle& WithElapsedReplicationDuration(ElapsedReplicationDurationT&& value) {
-    SetElapsedReplicationDuration(std::forward<ElapsedReplicationDurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Lifecycle replication initiation date and time.</p>
    */
   inline const Aws::String& GetFirstByteDateTime() const { return m_firstByteDateTime; }
@@ -90,18 +72,18 @@ class LifeCycle {
 
   ///@{
   /**
-   * <p>Lifecycle last Cutover.</p>
+   * <p>Lifecycle elapsed time and duration.</p>
    */
-  inline const LifeCycleLastCutover& GetLastCutover() const { return m_lastCutover; }
-  inline bool LastCutoverHasBeenSet() const { return m_lastCutoverHasBeenSet; }
-  template <typename LastCutoverT = LifeCycleLastCutover>
-  void SetLastCutover(LastCutoverT&& value) {
-    m_lastCutoverHasBeenSet = true;
-    m_lastCutover = std::forward<LastCutoverT>(value);
+  inline const Aws::String& GetElapsedReplicationDuration() const { return m_elapsedReplicationDuration; }
+  inline bool ElapsedReplicationDurationHasBeenSet() const { return m_elapsedReplicationDurationHasBeenSet; }
+  template <typename ElapsedReplicationDurationT = Aws::String>
+  void SetElapsedReplicationDuration(ElapsedReplicationDurationT&& value) {
+    m_elapsedReplicationDurationHasBeenSet = true;
+    m_elapsedReplicationDuration = std::forward<ElapsedReplicationDurationT>(value);
   }
-  template <typename LastCutoverT = LifeCycleLastCutover>
-  LifeCycle& WithLastCutover(LastCutoverT&& value) {
-    SetLastCutover(std::forward<LastCutoverT>(value));
+  template <typename ElapsedReplicationDurationT = Aws::String>
+  LifeCycle& WithElapsedReplicationDuration(ElapsedReplicationDurationT&& value) {
+    SetElapsedReplicationDuration(std::forward<ElapsedReplicationDurationT>(value));
     return *this;
   }
   ///@}
@@ -144,6 +126,24 @@ class LifeCycle {
 
   ///@{
   /**
+   * <p>Lifecycle last Cutover.</p>
+   */
+  inline const LifeCycleLastCutover& GetLastCutover() const { return m_lastCutover; }
+  inline bool LastCutoverHasBeenSet() const { return m_lastCutoverHasBeenSet; }
+  template <typename LastCutoverT = LifeCycleLastCutover>
+  void SetLastCutover(LastCutoverT&& value) {
+    m_lastCutoverHasBeenSet = true;
+    m_lastCutover = std::forward<LastCutoverT>(value);
+  }
+  template <typename LastCutoverT = LifeCycleLastCutover>
+  LifeCycle& WithLastCutover(LastCutoverT&& value) {
+    SetLastCutover(std::forward<LastCutoverT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Lifecycle state.</p>
    */
   inline LifeCycleState GetState() const { return m_state; }
@@ -159,24 +159,24 @@ class LifeCycle {
   ///@}
  private:
   Aws::String m_addedToServiceDateTime;
-  bool m_addedToServiceDateTimeHasBeenSet = false;
-
-  Aws::String m_elapsedReplicationDuration;
-  bool m_elapsedReplicationDurationHasBeenSet = false;
 
   Aws::String m_firstByteDateTime;
-  bool m_firstByteDateTimeHasBeenSet = false;
 
-  LifeCycleLastCutover m_lastCutover;
-  bool m_lastCutoverHasBeenSet = false;
+  Aws::String m_elapsedReplicationDuration;
 
   Aws::String m_lastSeenByServiceDateTime;
-  bool m_lastSeenByServiceDateTimeHasBeenSet = false;
 
   LifeCycleLastTest m_lastTest;
-  bool m_lastTestHasBeenSet = false;
+
+  LifeCycleLastCutover m_lastCutover;
 
   LifeCycleState m_state{LifeCycleState::NOT_SET};
+  bool m_addedToServiceDateTimeHasBeenSet = false;
+  bool m_firstByteDateTimeHasBeenSet = false;
+  bool m_elapsedReplicationDurationHasBeenSet = false;
+  bool m_lastSeenByServiceDateTimeHasBeenSet = false;
+  bool m_lastTestHasBeenSet = false;
+  bool m_lastCutoverHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

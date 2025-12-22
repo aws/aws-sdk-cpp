@@ -64,9 +64,9 @@ class Hdr10Plus {
   ///@}
  private:
   int m_masteringMonitorNits{0};
-  bool m_masteringMonitorNitsHasBeenSet = false;
 
   int m_targetMonitorNits{0};
+  bool m_masteringMonitorNitsHasBeenSet = false;
   bool m_targetMonitorNitsHasBeenSet = false;
 };
 

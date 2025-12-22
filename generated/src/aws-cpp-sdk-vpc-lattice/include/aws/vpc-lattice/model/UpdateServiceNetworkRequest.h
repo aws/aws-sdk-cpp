@@ -67,9 +67,9 @@ class UpdateServiceNetworkRequest : public VPCLatticeRequest {
   ///@}
  private:
   Aws::String m_serviceNetworkIdentifier;
-  bool m_serviceNetworkIdentifierHasBeenSet = false;
 
   AuthType m_authType{AuthType::NOT_SET};
+  bool m_serviceNetworkIdentifierHasBeenSet = false;
   bool m_authTypeHasBeenSet = false;
 };
 

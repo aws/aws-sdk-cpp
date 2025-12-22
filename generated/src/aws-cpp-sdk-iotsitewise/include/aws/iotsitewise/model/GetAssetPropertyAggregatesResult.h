@@ -85,12 +85,12 @@ class GetAssetPropertyAggregatesResult {
   ///@}
  private:
   Aws::Vector<AggregatedValue> m_aggregatedValues;
-  bool m_aggregatedValuesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_aggregatedValuesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -205,30 +205,30 @@ class DescribeVodSourceResult {
   ///@}
  private:
   Aws::Vector<AdBreakOpportunity> m_adBreakOpportunities;
-  bool m_adBreakOpportunitiesHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<HttpPackageConfiguration> m_httpPackageConfigurations;
-  bool m_httpPackageConfigurationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_sourceLocationName;
-  bool m_sourceLocationNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vodSourceName;
-  bool m_vodSourceNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_adBreakOpportunitiesHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_httpPackageConfigurationsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_sourceLocationNameHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vodSourceNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

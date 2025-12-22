@@ -81,12 +81,12 @@ class ImportTerminologyResult {
   ///@}
  private:
   TerminologyProperties m_terminologyProperties;
-  bool m_terminologyPropertiesHasBeenSet = false;
 
   TerminologyDataLocation m_auxiliaryDataLocation;
-  bool m_auxiliaryDataLocationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_terminologyPropertiesHasBeenSet = false;
+  bool m_auxiliaryDataLocationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

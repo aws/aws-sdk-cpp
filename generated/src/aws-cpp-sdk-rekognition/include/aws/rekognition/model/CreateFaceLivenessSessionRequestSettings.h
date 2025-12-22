@@ -103,12 +103,12 @@ class CreateFaceLivenessSessionRequestSettings {
   ///@}
  private:
   LivenessOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   int m_auditImagesLimit{0};
-  bool m_auditImagesLimitHasBeenSet = false;
 
   Aws::Vector<ChallengePreference> m_challengePreferences;
+  bool m_outputConfigHasBeenSet = false;
+  bool m_auditImagesLimitHasBeenSet = false;
   bool m_challengePreferencesHasBeenSet = false;
 };
 

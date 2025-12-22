@@ -87,12 +87,12 @@ class ModifyVpcTenancyRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   VpcTenancy m_instanceTenancy{VpcTenancy::NOT_SET};
-  bool m_instanceTenancyHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_vpcIdHasBeenSet = false;
+  bool m_instanceTenancyHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

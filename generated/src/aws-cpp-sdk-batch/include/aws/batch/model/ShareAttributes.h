@@ -81,9 +81,9 @@ class ShareAttributes {
   ///@}
  private:
   Aws::String m_shareIdentifier;
-  bool m_shareIdentifierHasBeenSet = false;
 
   double m_weightFactor{0.0};
+  bool m_shareIdentifierHasBeenSet = false;
   bool m_weightFactorHasBeenSet = false;
 };
 

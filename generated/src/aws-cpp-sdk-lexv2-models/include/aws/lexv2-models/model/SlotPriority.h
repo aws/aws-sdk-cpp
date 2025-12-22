@@ -67,9 +67,9 @@ class SlotPriority {
   ///@}
  private:
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_slotId;
+  bool m_priorityHasBeenSet = false;
   bool m_slotIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class DescribeInstanceConnectEndpointsResponse {
   ///@}
  private:
   Aws::Vector<Ec2InstanceConnectEndpoint> m_instanceConnectEndpoints;
-  bool m_instanceConnectEndpointsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instanceConnectEndpointsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

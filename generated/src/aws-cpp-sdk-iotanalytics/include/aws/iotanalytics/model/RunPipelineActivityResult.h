@@ -86,12 +86,12 @@ class RunPipelineActivityResult {
   ///@}
  private:
   Aws::Vector<Aws::Utils::ByteBuffer> m_payloads;
-  bool m_payloadsHasBeenSet = false;
 
   Aws::String m_logResult;
-  bool m_logResultHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_payloadsHasBeenSet = false;
+  bool m_logResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

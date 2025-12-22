@@ -76,9 +76,9 @@ class StorageGatewayError {
   ///@}
  private:
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_errorDetails;
+  bool m_errorCodeHasBeenSet = false;
   bool m_errorDetailsHasBeenSet = false;
 };
 

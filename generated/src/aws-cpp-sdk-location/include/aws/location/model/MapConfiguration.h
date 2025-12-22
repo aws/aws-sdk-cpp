@@ -177,12 +177,12 @@ class MapConfiguration {
   ///@}
  private:
   Aws::String m_style;
-  bool m_styleHasBeenSet = false;
 
   Aws::String m_politicalView;
-  bool m_politicalViewHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_customLayers;
+  bool m_styleHasBeenSet = false;
+  bool m_politicalViewHasBeenSet = false;
   bool m_customLayersHasBeenSet = false;
 };
 

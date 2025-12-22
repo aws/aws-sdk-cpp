@@ -298,12 +298,12 @@ class CreateApplicationRequest : public QBusinessRequest {
 
   ///@{
   /**
-   * <p>The Amazon QuickSight configuration for an Amazon Q Business application that
-   * uses QuickSight for authentication. This configuration is required if your
-   * application uses QuickSight as the identity provider. For more information, see
+   * <p>The Amazon Quick Suite configuration for an Amazon Q Business application
+   * that uses Quick Suite for authentication. This configuration is required if your
+   * application uses Quick Suite as the identity provider. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
-   * an Amazon QuickSight integrated application</a>.</p>
+   * an Amazon Quick Suite integrated application</a>.</p>
    */
   inline const QuickSightConfiguration& GetQuickSightConfiguration() const { return m_quickSightConfiguration; }
   inline bool QuickSightConfigurationHasBeenSet() const { return m_quickSightConfigurationHasBeenSet; }
@@ -320,45 +320,45 @@ class CreateApplicationRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   IdentityType m_identityType{IdentityType::NOT_SET};
-  bool m_identityTypeHasBeenSet = false;
 
   Aws::String m_iamIdentityProviderArn;
-  bool m_iamIdentityProviderArnHasBeenSet = false;
 
   Aws::String m_identityCenterInstanceArn;
-  bool m_identityCenterInstanceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_clientIdsForOIDC;
-  bool m_clientIdsForOIDCHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   EncryptionConfiguration m_encryptionConfiguration;
-  bool m_encryptionConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   AttachmentsConfiguration m_attachmentsConfiguration;
-  bool m_attachmentsConfigurationHasBeenSet = false;
 
   QAppsConfiguration m_qAppsConfiguration;
-  bool m_qAppsConfigurationHasBeenSet = false;
 
   PersonalizationConfiguration m_personalizationConfiguration;
-  bool m_personalizationConfigurationHasBeenSet = false;
 
   QuickSightConfiguration m_quickSightConfiguration;
+  bool m_displayNameHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_identityTypeHasBeenSet = false;
+  bool m_iamIdentityProviderArnHasBeenSet = false;
+  bool m_identityCenterInstanceArnHasBeenSet = false;
+  bool m_clientIdsForOIDCHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_attachmentsConfigurationHasBeenSet = false;
+  bool m_qAppsConfigurationHasBeenSet = false;
+  bool m_personalizationConfigurationHasBeenSet = false;
   bool m_quickSightConfigurationHasBeenSet = false;
 };
 

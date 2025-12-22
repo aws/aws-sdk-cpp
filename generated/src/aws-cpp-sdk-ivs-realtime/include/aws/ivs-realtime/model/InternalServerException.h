@@ -194,30 +194,30 @@ class InternalServerException {
   ///@}
  private:
   Aws::String m_accessControlAllowOrigin;
-  bool m_accessControlAllowOriginHasBeenSet = false;
 
   Aws::String m_accessControlExposeHeaders;
-  bool m_accessControlExposeHeadersHasBeenSet = false;
 
   Aws::String m_cacheControl;
-  bool m_cacheControlHasBeenSet = false;
 
   Aws::String m_contentSecurityPolicy;
-  bool m_contentSecurityPolicyHasBeenSet = false;
 
   Aws::String m_strictTransportSecurity;
-  bool m_strictTransportSecurityHasBeenSet = false;
 
   Aws::String m_xContentTypeOptions;
-  bool m_xContentTypeOptionsHasBeenSet = false;
 
   Aws::String m_xFrameOptions;
-  bool m_xFrameOptionsHasBeenSet = false;
 
   Aws::String m_xAmznErrorType;
-  bool m_xAmznErrorTypeHasBeenSet = false;
 
   Aws::String m_exceptionMessage;
+  bool m_accessControlAllowOriginHasBeenSet = false;
+  bool m_accessControlExposeHeadersHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_contentSecurityPolicyHasBeenSet = false;
+  bool m_strictTransportSecurityHasBeenSet = false;
+  bool m_xContentTypeOptionsHasBeenSet = false;
+  bool m_xFrameOptionsHasBeenSet = false;
+  bool m_xAmznErrorTypeHasBeenSet = false;
   bool m_exceptionMessageHasBeenSet = false;
 };
 

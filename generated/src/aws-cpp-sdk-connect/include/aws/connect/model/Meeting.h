@@ -106,15 +106,15 @@ class Meeting {
   ///@}
  private:
   Aws::String m_mediaRegion;
-  bool m_mediaRegionHasBeenSet = false;
 
   MediaPlacement m_mediaPlacement;
-  bool m_mediaPlacementHasBeenSet = false;
 
   MeetingFeaturesConfiguration m_meetingFeatures;
-  bool m_meetingFeaturesHasBeenSet = false;
 
   Aws::String m_meetingId;
+  bool m_mediaRegionHasBeenSet = false;
+  bool m_mediaPlacementHasBeenSet = false;
+  bool m_meetingFeaturesHasBeenSet = false;
   bool m_meetingIdHasBeenSet = false;
 };
 

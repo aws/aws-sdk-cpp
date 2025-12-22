@@ -70,9 +70,9 @@ class DeleteReplicatorRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_currentVersion;
-  bool m_currentVersionHasBeenSet = false;
 
   Aws::String m_replicatorArn;
+  bool m_currentVersionHasBeenSet = false;
   bool m_replicatorArnHasBeenSet = false;
 };
 

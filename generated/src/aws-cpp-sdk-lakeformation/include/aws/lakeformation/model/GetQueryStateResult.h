@@ -85,12 +85,12 @@ class GetQueryStateResult {
   ///@}
  private:
   Aws::String m_error;
-  bool m_errorHasBeenSet = false;
 
   QueryStateString m_state{QueryStateString::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -189,24 +189,24 @@ class RecipientDsnFields {
   ///@}
  private:
   Aws::String m_finalRecipient;
-  bool m_finalRecipientHasBeenSet = false;
 
   DsnAction m_action{DsnAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_remoteMta;
-  bool m_remoteMtaHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_diagnosticCode;
-  bool m_diagnosticCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastAttemptDate{};
-  bool m_lastAttemptDateHasBeenSet = false;
 
   Aws::Vector<ExtensionField> m_extensionFields;
+  bool m_finalRecipientHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_remoteMtaHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_diagnosticCodeHasBeenSet = false;
+  bool m_lastAttemptDateHasBeenSet = false;
   bool m_extensionFieldsHasBeenSet = false;
 };
 

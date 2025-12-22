@@ -100,15 +100,15 @@ class UpdateEphemerisRequest : public GroundStationRequest {
   ///@}
  private:
   Aws::String m_ephemerisId;
-  bool m_ephemerisIdHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_priority{0};
+  bool m_ephemerisIdHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };
 

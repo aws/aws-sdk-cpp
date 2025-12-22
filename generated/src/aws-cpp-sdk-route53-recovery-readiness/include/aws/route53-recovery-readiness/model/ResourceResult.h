@@ -106,15 +106,15 @@ class ResourceResult {
   ///@}
  private:
   Aws::String m_componentId;
-  bool m_componentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastCheckedTimestamp{};
-  bool m_lastCheckedTimestampHasBeenSet = false;
 
   Readiness m_readiness{Readiness::NOT_SET};
-  bool m_readinessHasBeenSet = false;
 
   Aws::String m_resourceArn;
+  bool m_componentIdHasBeenSet = false;
+  bool m_lastCheckedTimestampHasBeenSet = false;
+  bool m_readinessHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class TaxRegistrationDocument {
   ///@}
  private:
   TaxRegistrationDocFile m_file;
-  bool m_fileHasBeenSet = false;
 
   SourceS3Location m_s3Location;
+  bool m_fileHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

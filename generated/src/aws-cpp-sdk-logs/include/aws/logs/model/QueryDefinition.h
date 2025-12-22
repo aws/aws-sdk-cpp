@@ -151,21 +151,21 @@ class QueryDefinition {
   ///@}
  private:
   QueryLanguage m_queryLanguage{QueryLanguage::NOT_SET};
-  bool m_queryLanguageHasBeenSet = false;
 
   Aws::String m_queryDefinitionId;
-  bool m_queryDefinitionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   long long m_lastModified{0};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_logGroupNames;
+  bool m_queryLanguageHasBeenSet = false;
+  bool m_queryDefinitionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_queryStringHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
   bool m_logGroupNamesHasBeenSet = false;
 };
 

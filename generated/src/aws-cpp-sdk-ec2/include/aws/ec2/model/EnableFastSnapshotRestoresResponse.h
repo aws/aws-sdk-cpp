@@ -93,12 +93,12 @@ class EnableFastSnapshotRestoresResponse {
   ///@}
  private:
   Aws::Vector<EnableFastSnapshotRestoreSuccessItem> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::Vector<EnableFastSnapshotRestoreErrorItem> m_unsuccessful;
-  bool m_unsuccessfulHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successfulHasBeenSet = false;
+  bool m_unsuccessfulHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

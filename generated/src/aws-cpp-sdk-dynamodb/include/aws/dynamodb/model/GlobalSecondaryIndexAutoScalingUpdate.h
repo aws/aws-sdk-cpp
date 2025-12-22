@@ -70,9 +70,9 @@ class GlobalSecondaryIndexAutoScalingUpdate {
   ///@}
  private:
   Aws::String m_indexName;
-  bool m_indexNameHasBeenSet = false;
 
   AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingUpdate;
+  bool m_indexNameHasBeenSet = false;
   bool m_provisionedWriteCapacityAutoScalingUpdateHasBeenSet = false;
 };
 

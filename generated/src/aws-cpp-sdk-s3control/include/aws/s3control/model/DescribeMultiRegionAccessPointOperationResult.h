@@ -80,12 +80,12 @@ class DescribeMultiRegionAccessPointOperationResult {
   ///@}
  private:
   AsyncOperation m_asyncOperation;
-  bool m_asyncOperationHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_asyncOperationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

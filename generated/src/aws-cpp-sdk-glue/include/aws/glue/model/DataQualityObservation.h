@@ -71,9 +71,9 @@ class DataQualityObservation {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   MetricBasedObservation m_metricBasedObservation;
+  bool m_descriptionHasBeenSet = false;
   bool m_metricBasedObservationHasBeenSet = false;
 };
 

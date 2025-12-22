@@ -251,33 +251,33 @@ class UpdateFileSystemRequest : public FSxRequest {
   ///@}
  private:
   Aws::String m_fileSystemId;
-  bool m_fileSystemIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   UpdateFileSystemWindowsConfiguration m_windowsConfiguration;
-  bool m_windowsConfigurationHasBeenSet = false;
 
   UpdateFileSystemLustreConfiguration m_lustreConfiguration;
-  bool m_lustreConfigurationHasBeenSet = false;
 
   UpdateFileSystemOntapConfiguration m_ontapConfiguration;
-  bool m_ontapConfigurationHasBeenSet = false;
 
   UpdateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
-  bool m_openZFSConfigurationHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_fileSystemTypeVersion;
-  bool m_fileSystemTypeVersionHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
+  bool m_fileSystemIdHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_windowsConfigurationHasBeenSet = false;
+  bool m_lustreConfigurationHasBeenSet = false;
+  bool m_ontapConfigurationHasBeenSet = false;
+  bool m_openZFSConfigurationHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_fileSystemTypeVersionHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
 };
 

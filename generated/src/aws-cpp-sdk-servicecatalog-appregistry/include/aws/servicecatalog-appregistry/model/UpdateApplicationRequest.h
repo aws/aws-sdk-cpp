@@ -65,9 +65,9 @@ class UpdateApplicationRequest : public AppRegistryRequest {
   ///@}
  private:
   Aws::String m_application;
-  bool m_applicationHasBeenSet = false;
 
   Aws::String m_description;
+  bool m_applicationHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

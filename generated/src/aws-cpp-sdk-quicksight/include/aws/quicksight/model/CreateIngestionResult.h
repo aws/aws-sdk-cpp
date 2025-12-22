@@ -107,18 +107,18 @@ class CreateIngestionResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_ingestionId;
-  bool m_ingestionIdHasBeenSet = false;
 
   IngestionStatus m_ingestionStatus{IngestionStatus::NOT_SET};
-  bool m_ingestionStatusHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   int m_status{0};
+  bool m_arnHasBeenSet = false;
+  bool m_ingestionIdHasBeenSet = false;
+  bool m_ingestionStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

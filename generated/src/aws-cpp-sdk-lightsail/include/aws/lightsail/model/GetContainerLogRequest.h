@@ -168,21 +168,21 @@ class GetContainerLogRequest : public LightsailRequest {
   ///@}
  private:
   Aws::String m_serviceName;
-  bool m_serviceNameHasBeenSet = false;
 
   Aws::String m_containerName;
-  bool m_containerNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_filterPattern;
-  bool m_filterPatternHasBeenSet = false;
 
   Aws::String m_pageToken;
+  bool m_serviceNameHasBeenSet = false;
+  bool m_containerNameHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_filterPatternHasBeenSet = false;
   bool m_pageTokenHasBeenSet = false;
 };
 

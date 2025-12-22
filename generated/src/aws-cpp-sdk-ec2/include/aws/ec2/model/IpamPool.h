@@ -523,75 +523,75 @@ class IpamPool {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_sourceIpamPoolId;
-  bool m_sourceIpamPoolIdHasBeenSet = false;
 
   Aws::String m_ipamPoolArn;
-  bool m_ipamPoolArnHasBeenSet = false;
 
   Aws::String m_ipamScopeArn;
-  bool m_ipamScopeArnHasBeenSet = false;
 
   IpamScopeType m_ipamScopeType{IpamScopeType::NOT_SET};
-  bool m_ipamScopeTypeHasBeenSet = false;
 
   Aws::String m_ipamArn;
-  bool m_ipamArnHasBeenSet = false;
 
   Aws::String m_ipamRegion;
-  bool m_ipamRegionHasBeenSet = false;
 
   Aws::String m_locale;
-  bool m_localeHasBeenSet = false;
 
   int m_poolDepth{0};
-  bool m_poolDepthHasBeenSet = false;
 
   IpamPoolState m_state{IpamPoolState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_stateMessage;
-  bool m_stateMessageHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   bool m_autoImport{false};
-  bool m_autoImportHasBeenSet = false;
 
   bool m_publiclyAdvertisable{false};
-  bool m_publiclyAdvertisableHasBeenSet = false;
 
   AddressFamily m_addressFamily{AddressFamily::NOT_SET};
-  bool m_addressFamilyHasBeenSet = false;
 
   int m_allocationMinNetmaskLength{0};
-  bool m_allocationMinNetmaskLengthHasBeenSet = false;
 
   int m_allocationMaxNetmaskLength{0};
-  bool m_allocationMaxNetmaskLengthHasBeenSet = false;
 
   int m_allocationDefaultNetmaskLength{0};
-  bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
 
   Aws::Vector<IpamResourceTag> m_allocationResourceTags;
-  bool m_allocationResourceTagsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   IpamPoolAwsService m_awsService{IpamPoolAwsService::NOT_SET};
-  bool m_awsServiceHasBeenSet = false;
 
   IpamPoolPublicIpSource m_publicIpSource{IpamPoolPublicIpSource::NOT_SET};
-  bool m_publicIpSourceHasBeenSet = false;
 
   IpamPoolSourceResource m_sourceResource;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_sourceIpamPoolIdHasBeenSet = false;
+  bool m_ipamPoolArnHasBeenSet = false;
+  bool m_ipamScopeArnHasBeenSet = false;
+  bool m_ipamScopeTypeHasBeenSet = false;
+  bool m_ipamArnHasBeenSet = false;
+  bool m_ipamRegionHasBeenSet = false;
+  bool m_localeHasBeenSet = false;
+  bool m_poolDepthHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_autoImportHasBeenSet = false;
+  bool m_publiclyAdvertisableHasBeenSet = false;
+  bool m_addressFamilyHasBeenSet = false;
+  bool m_allocationMinNetmaskLengthHasBeenSet = false;
+  bool m_allocationMaxNetmaskLengthHasBeenSet = false;
+  bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
+  bool m_allocationResourceTagsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_awsServiceHasBeenSet = false;
+  bool m_publicIpSourceHasBeenSet = false;
   bool m_sourceResourceHasBeenSet = false;
 };
 

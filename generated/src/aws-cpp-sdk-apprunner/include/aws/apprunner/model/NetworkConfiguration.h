@@ -90,12 +90,12 @@ class NetworkConfiguration {
   ///@}
  private:
   EgressConfiguration m_egressConfiguration;
-  bool m_egressConfigurationHasBeenSet = false;
 
   IngressConfiguration m_ingressConfiguration;
-  bool m_ingressConfigurationHasBeenSet = false;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+  bool m_egressConfigurationHasBeenSet = false;
+  bool m_ingressConfigurationHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
 };
 

@@ -103,9 +103,9 @@ class LambdaFunctionRecommendationFilter {
   ///@}
  private:
   LambdaFunctionRecommendationFilterName m_name{LambdaFunctionRecommendationFilterName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_values;
+  bool m_nameHasBeenSet = false;
   bool m_valuesHasBeenSet = false;
 };
 

@@ -270,33 +270,33 @@ class DescribeLaunchTemplateVersionsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_launchTemplateId;
-  bool m_launchTemplateIdHasBeenSet = false;
 
   Aws::String m_launchTemplateName;
-  bool m_launchTemplateNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_versions;
-  bool m_versionsHasBeenSet = false;
 
   Aws::String m_minVersion;
-  bool m_minVersionHasBeenSet = false;
 
   Aws::String m_maxVersion;
-  bool m_maxVersionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   bool m_resolveAlias{false};
+  bool m_dryRunHasBeenSet = false;
+  bool m_launchTemplateIdHasBeenSet = false;
+  bool m_launchTemplateNameHasBeenSet = false;
+  bool m_versionsHasBeenSet = false;
+  bool m_minVersionHasBeenSet = false;
+  bool m_maxVersionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_resolveAliasHasBeenSet = false;
 };
 

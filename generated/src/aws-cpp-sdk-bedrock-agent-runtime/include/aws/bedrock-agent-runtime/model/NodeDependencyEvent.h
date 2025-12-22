@@ -90,12 +90,12 @@ class NodeDependencyEvent {
   ///@}
  private:
   Aws::String m_nodeName;
-  bool m_nodeNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   NodeTraceElements m_traceElements;
+  bool m_nodeNameHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
   bool m_traceElementsHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class InventoryTableConfiguration {
   ///@}
  private:
   InventoryConfigurationState m_configurationState{InventoryConfigurationState::NOT_SET};
-  bool m_configurationStateHasBeenSet = false;
 
   MetadataTableEncryptionConfiguration m_encryptionConfiguration;
+  bool m_configurationStateHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

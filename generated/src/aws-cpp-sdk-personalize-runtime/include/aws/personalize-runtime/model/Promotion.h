@@ -125,15 +125,15 @@ class Promotion {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_percentPromotedItems{0};
-  bool m_percentPromotedItemsHasBeenSet = false;
 
   Aws::String m_filterArn;
-  bool m_filterArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filterValues;
+  bool m_nameHasBeenSet = false;
+  bool m_percentPromotedItemsHasBeenSet = false;
+  bool m_filterArnHasBeenSet = false;
   bool m_filterValuesHasBeenSet = false;
 };
 

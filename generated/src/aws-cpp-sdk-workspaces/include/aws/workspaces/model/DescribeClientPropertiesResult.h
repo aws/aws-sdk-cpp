@@ -67,9 +67,9 @@ class DescribeClientPropertiesResult {
   ///@}
  private:
   Aws::Vector<ClientPropertiesResult> m_clientPropertiesList;
-  bool m_clientPropertiesListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientPropertiesListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

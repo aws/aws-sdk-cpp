@@ -223,33 +223,33 @@ class MemberSummary {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   MemberStatus m_status{MemberStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::Vector<MemberAbility> m_abilities;
-  bool m_abilitiesHasBeenSet = false;
 
   MLMemberAbilities m_mlAbilities;
-  bool m_mlAbilitiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   PaymentConfiguration m_paymentConfiguration;
+  bool m_accountIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_abilitiesHasBeenSet = false;
+  bool m_mlAbilitiesHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
   bool m_paymentConfigurationHasBeenSet = false;
 };
 

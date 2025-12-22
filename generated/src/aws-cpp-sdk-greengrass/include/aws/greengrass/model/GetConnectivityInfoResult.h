@@ -84,12 +84,12 @@ class GetConnectivityInfoResult {
   ///@}
  private:
   Aws::Vector<ConnectivityInfo> m_connectivityInfo;
-  bool m_connectivityInfoHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectivityInfoHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -126,18 +126,18 @@ class ListCloudWatchAlarmTemplatesRequest : public MediaLiveRequest {
   ///@}
  private:
   Aws::String m_groupIdentifier;
-  bool m_groupIdentifierHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_scope;
-  bool m_scopeHasBeenSet = false;
 
   Aws::String m_signalMapIdentifier;
+  bool m_groupIdentifierHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_signalMapIdentifierHasBeenSet = false;
 };
 

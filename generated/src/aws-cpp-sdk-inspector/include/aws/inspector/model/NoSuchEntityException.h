@@ -84,12 +84,12 @@ class NoSuchEntityException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   NoSuchEntityErrorCode m_errorCode{NoSuchEntityErrorCode::NOT_SET};
-  bool m_errorCodeHasBeenSet = false;
 
   bool m_canRetry{false};
+  bool m_messageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
   bool m_canRetryHasBeenSet = false;
 };
 

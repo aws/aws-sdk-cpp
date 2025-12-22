@@ -66,9 +66,9 @@ class MemberAdditionalConfiguration {
   ///@}
  private:
   OrgFeatureAdditionalConfiguration m_name{OrgFeatureAdditionalConfiguration::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   FeatureStatus m_status{FeatureStatus::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
 };
 

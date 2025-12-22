@@ -70,9 +70,9 @@ class ExportVerifiedAccessInstanceClientConfigurationRequest : public EC2Request
   ///@}
  private:
   Aws::String m_verifiedAccessInstanceId;
-  bool m_verifiedAccessInstanceIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_verifiedAccessInstanceIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -141,18 +141,18 @@ class UpdateIdNamespaceRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_idNamespaceName;
-  bool m_idNamespaceNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<IdNamespaceInputSource> m_inputSourceConfig;
-  bool m_inputSourceConfigHasBeenSet = false;
 
   Aws::Vector<IdNamespaceIdMappingWorkflowProperties> m_idMappingWorkflowProperties;
-  bool m_idMappingWorkflowPropertiesHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_idNamespaceNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_inputSourceConfigHasBeenSet = false;
+  bool m_idMappingWorkflowPropertiesHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

@@ -111,18 +111,18 @@ class CreateAccountAssociationResult {
   ///@}
  private:
   Aws::String m_oAuthAuthorizationUrl;
-  bool m_oAuthAuthorizationUrlHasBeenSet = false;
 
   Aws::String m_accountAssociationId;
-  bool m_accountAssociationIdHasBeenSet = false;
 
   AssociationState m_associationState{AssociationState::NOT_SET};
-  bool m_associationStateHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_oAuthAuthorizationUrlHasBeenSet = false;
+  bool m_accountAssociationIdHasBeenSet = false;
+  bool m_associationStateHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

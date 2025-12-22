@@ -211,30 +211,30 @@ class CreateFlywheelRequest : public ComprehendRequest {
   ///@}
  private:
   Aws::String m_flywheelName;
-  bool m_flywheelNameHasBeenSet = false;
 
   Aws::String m_activeModelArn;
-  bool m_activeModelArnHasBeenSet = false;
 
   Aws::String m_dataAccessRoleArn;
-  bool m_dataAccessRoleArnHasBeenSet = false;
 
   TaskConfig m_taskConfig;
-  bool m_taskConfigHasBeenSet = false;
 
   ModelType m_modelType{ModelType::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_dataLakeS3Uri;
-  bool m_dataLakeS3UriHasBeenSet = false;
 
   DataSecurityConfig m_dataSecurityConfig;
-  bool m_dataSecurityConfigHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientRequestTokenHasBeenSet = true;
 
   Aws::Vector<Tag> m_tags;
+  bool m_flywheelNameHasBeenSet = false;
+  bool m_activeModelArnHasBeenSet = false;
+  bool m_dataAccessRoleArnHasBeenSet = false;
+  bool m_taskConfigHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_dataLakeS3UriHasBeenSet = false;
+  bool m_dataSecurityConfigHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

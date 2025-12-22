@@ -75,9 +75,9 @@ class UploadMetadata {
   ///@}
  private:
   Aws::String m_uploadUrl;
-  bool m_uploadUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_signedHeaders;
+  bool m_uploadUrlHasBeenSet = false;
   bool m_signedHeadersHasBeenSet = false;
 };
 

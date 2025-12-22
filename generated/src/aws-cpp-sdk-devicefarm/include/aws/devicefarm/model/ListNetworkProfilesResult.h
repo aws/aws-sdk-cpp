@@ -85,12 +85,12 @@ class ListNetworkProfilesResult {
   ///@}
  private:
   Aws::Vector<NetworkProfile> m_networkProfiles;
-  bool m_networkProfilesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_networkProfilesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

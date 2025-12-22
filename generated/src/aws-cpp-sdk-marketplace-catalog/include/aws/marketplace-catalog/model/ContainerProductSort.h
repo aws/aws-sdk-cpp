@@ -67,9 +67,9 @@ class ContainerProductSort {
   ///@}
  private:
   ContainerProductSortBy m_sortBy{ContainerProductSortBy::NOT_SET};
-  bool m_sortByHasBeenSet = false;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
+  bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

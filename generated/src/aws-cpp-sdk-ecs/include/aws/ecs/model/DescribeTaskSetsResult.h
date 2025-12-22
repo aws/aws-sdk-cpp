@@ -91,12 +91,12 @@ class DescribeTaskSetsResult {
   ///@}
  private:
   Aws::Vector<TaskSet> m_taskSets;
-  bool m_taskSetsHasBeenSet = false;
 
   Aws::Vector<Failure> m_failures;
-  bool m_failuresHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskSetsHasBeenSet = false;
+  bool m_failuresHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

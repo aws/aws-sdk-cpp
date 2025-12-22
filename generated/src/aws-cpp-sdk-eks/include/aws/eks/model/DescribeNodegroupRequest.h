@@ -65,9 +65,9 @@ class DescribeNodegroupRequest : public EKSRequest {
   ///@}
  private:
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   Aws::String m_nodegroupName;
+  bool m_clusterNameHasBeenSet = false;
   bool m_nodegroupNameHasBeenSet = false;
 };
 

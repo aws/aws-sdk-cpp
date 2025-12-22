@@ -67,9 +67,9 @@ class AssociationExecutionTargetsFilter {
   ///@}
  private:
   AssociationExecutionTargetsFilterKey m_key{AssociationExecutionTargetsFilterKey::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

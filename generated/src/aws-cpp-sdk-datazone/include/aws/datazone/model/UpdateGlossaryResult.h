@@ -170,27 +170,27 @@ class UpdateGlossaryResult {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owningProjectId;
-  bool m_owningProjectIdHasBeenSet = false;
 
   GlossaryStatus m_status{GlossaryStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<GlossaryUsageRestriction> m_usageRestrictions;
-  bool m_usageRestrictionsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_owningProjectIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_usageRestrictionsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

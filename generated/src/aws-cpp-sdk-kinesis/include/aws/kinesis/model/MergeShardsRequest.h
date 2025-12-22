@@ -113,15 +113,15 @@ class MergeShardsRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_streamName;
-  bool m_streamNameHasBeenSet = false;
 
   Aws::String m_shardToMerge;
-  bool m_shardToMergeHasBeenSet = false;
 
   Aws::String m_adjacentShardToMerge;
-  bool m_adjacentShardToMergeHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_streamNameHasBeenSet = false;
+  bool m_shardToMergeHasBeenSet = false;
+  bool m_adjacentShardToMergeHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

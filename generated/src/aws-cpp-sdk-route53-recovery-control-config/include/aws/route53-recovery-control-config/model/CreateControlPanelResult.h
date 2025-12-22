@@ -61,9 +61,9 @@ class CreateControlPanelResult {
   ///@}
  private:
   ControlPanel m_controlPanel;
-  bool m_controlPanelHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_controlPanelHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

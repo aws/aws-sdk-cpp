@@ -70,9 +70,9 @@ class StepDetail {
   ///@}
  private:
   StepConfig m_stepConfig;
-  bool m_stepConfigHasBeenSet = false;
 
   StepExecutionStatusDetail m_executionStatusDetail;
+  bool m_stepConfigHasBeenSet = false;
   bool m_executionStatusDetailHasBeenSet = false;
 };
 

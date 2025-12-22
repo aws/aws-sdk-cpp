@@ -85,12 +85,12 @@ class ListDeviceFleetsResult {
   ///@}
  private:
   Aws::Vector<DeviceFleetSummary> m_deviceFleetSummaries;
-  bool m_deviceFleetSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deviceFleetSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

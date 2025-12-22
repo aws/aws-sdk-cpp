@@ -82,12 +82,12 @@ class UpdateAssessmentFrameworkShareRequest : public AuditManagerRequest {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   ShareRequestType m_requestType{ShareRequestType::NOT_SET};
-  bool m_requestTypeHasBeenSet = false;
 
   ShareRequestAction m_action{ShareRequestAction::NOT_SET};
+  bool m_requestIdHasBeenSet = false;
+  bool m_requestTypeHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

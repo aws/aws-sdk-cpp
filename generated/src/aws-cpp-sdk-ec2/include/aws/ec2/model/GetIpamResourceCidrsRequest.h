@@ -223,33 +223,33 @@ class GetIpamResourceCidrsRequest : public EC2Request {
   ///@}
  private:
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<Filter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_ipamScopeId;
-  bool m_ipamScopeIdHasBeenSet = false;
 
   Aws::String m_ipamPoolId;
-  bool m_ipamPoolIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   IpamResourceType m_resourceType{IpamResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   RequestIpamResourceTag m_resourceTag;
-  bool m_resourceTagHasBeenSet = false;
 
   Aws::String m_resourceOwner;
+  bool m_dryRunHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ipamScopeIdHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTagHasBeenSet = false;
   bool m_resourceOwnerHasBeenSet = false;
 };
 

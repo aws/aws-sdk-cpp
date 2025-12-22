@@ -69,9 +69,9 @@ class DashUtcTiming {
   ///@}
  private:
   DashUtcTimingMode m_timingMode{DashUtcTimingMode::NOT_SET};
-  bool m_timingModeHasBeenSet = false;
 
   Aws::String m_timingSource;
+  bool m_timingModeHasBeenSet = false;
   bool m_timingSourceHasBeenSet = false;
 };
 

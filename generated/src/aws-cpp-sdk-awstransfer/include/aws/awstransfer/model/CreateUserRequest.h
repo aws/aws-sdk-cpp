@@ -300,33 +300,33 @@ class CreateUserRequest : public TransferRequest {
   ///@}
  private:
   Aws::String m_homeDirectory;
-  bool m_homeDirectoryHasBeenSet = false;
 
   HomeDirectoryType m_homeDirectoryType{HomeDirectoryType::NOT_SET};
-  bool m_homeDirectoryTypeHasBeenSet = false;
 
   Aws::Vector<HomeDirectoryMapEntry> m_homeDirectoryMappings;
-  bool m_homeDirectoryMappingsHasBeenSet = false;
 
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   PosixProfile m_posixProfile;
-  bool m_posixProfileHasBeenSet = false;
 
   Aws::String m_role;
-  bool m_roleHasBeenSet = false;
 
   Aws::String m_serverId;
-  bool m_serverIdHasBeenSet = false;
 
   Aws::String m_sshPublicKeyBody;
-  bool m_sshPublicKeyBodyHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_userName;
+  bool m_homeDirectoryHasBeenSet = false;
+  bool m_homeDirectoryTypeHasBeenSet = false;
+  bool m_homeDirectoryMappingsHasBeenSet = false;
+  bool m_policyHasBeenSet = false;
+  bool m_posixProfileHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
+  bool m_serverIdHasBeenSet = false;
+  bool m_sshPublicKeyBodyHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
 };
 

@@ -76,12 +76,12 @@ class UpdateMonitoringAlertResult {
   ///@}
  private:
   Aws::String m_monitoringScheduleArn;
-  bool m_monitoringScheduleArnHasBeenSet = false;
 
   Aws::String m_monitoringAlertName;
-  bool m_monitoringAlertNameHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_monitoringScheduleArnHasBeenSet = false;
+  bool m_monitoringAlertNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -61,9 +61,9 @@ class CopyServerlessCacheSnapshotResult {
   ///@}
  private:
   ServerlessCacheSnapshot m_serverlessCacheSnapshot;
-  bool m_serverlessCacheSnapshotHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_serverlessCacheSnapshotHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

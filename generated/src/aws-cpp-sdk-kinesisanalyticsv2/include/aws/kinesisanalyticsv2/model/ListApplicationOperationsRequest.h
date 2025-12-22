@@ -112,18 +112,18 @@ class ListApplicationOperationsRequest : public KinesisAnalyticsV2Request {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_operation;
-  bool m_operationHasBeenSet = false;
 
   OperationStatus m_operationStatus{OperationStatus::NOT_SET};
+  bool m_applicationNameHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_operationHasBeenSet = false;
   bool m_operationStatusHasBeenSet = false;
 };
 

@@ -111,15 +111,15 @@ class S3ExportConfiguration {
   ///@}
  private:
   Aws::String m_roleName;
-  bool m_roleNameHasBeenSet = false;
 
   DiskImageFormat m_diskImageFormat{DiskImageFormat::NOT_SET};
-  bool m_diskImageFormatHasBeenSet = false;
 
   Aws::String m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   Aws::String m_s3Prefix;
+  bool m_roleNameHasBeenSet = false;
+  bool m_diskImageFormatHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
   bool m_s3PrefixHasBeenSet = false;
 };
 

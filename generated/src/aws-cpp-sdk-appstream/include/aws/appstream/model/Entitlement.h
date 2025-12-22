@@ -172,24 +172,24 @@ class Entitlement {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_stackName;
-  bool m_stackNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AppVisibility m_appVisibility{AppVisibility::NOT_SET};
-  bool m_appVisibilityHasBeenSet = false;
 
   Aws::Vector<EntitlementAttribute> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_stackNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_appVisibilityHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

@@ -92,12 +92,12 @@ class PolicyAttachment {
   ///@}
  private:
   Aws::String m_policyId;
-  bool m_policyIdHasBeenSet = false;
 
   Aws::String m_objectIdentifier;
-  bool m_objectIdentifierHasBeenSet = false;
 
   Aws::String m_policyType;
+  bool m_policyIdHasBeenSet = false;
+  bool m_objectIdentifierHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class AssociateWhatsAppBusinessAccountRequest : public SocialMessagingRequest {
   ///@}
  private:
   WhatsAppSignupCallback m_signupCallback;
-  bool m_signupCallbackHasBeenSet = false;
 
   WhatsAppSetupFinalization m_setupFinalization;
+  bool m_signupCallbackHasBeenSet = false;
   bool m_setupFinalizationHasBeenSet = false;
 };
 

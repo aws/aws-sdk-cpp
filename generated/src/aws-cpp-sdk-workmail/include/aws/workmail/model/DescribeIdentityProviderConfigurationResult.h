@@ -95,15 +95,15 @@ class DescribeIdentityProviderConfigurationResult {
   ///@}
  private:
   IdentityProviderAuthenticationMode m_authenticationMode{IdentityProviderAuthenticationMode::NOT_SET};
-  bool m_authenticationModeHasBeenSet = false;
 
   IdentityCenterConfiguration m_identityCenterConfiguration;
-  bool m_identityCenterConfigurationHasBeenSet = false;
 
   PersonalAccessTokenConfiguration m_personalAccessTokenConfiguration;
-  bool m_personalAccessTokenConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_authenticationModeHasBeenSet = false;
+  bool m_identityCenterConfigurationHasBeenSet = false;
+  bool m_personalAccessTokenConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

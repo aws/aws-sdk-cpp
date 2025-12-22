@@ -76,12 +76,12 @@ class GetPolicyResult {
   ///@}
  private:
   Aws::String m_policy;
-  bool m_policyHasBeenSet = false;
 
   Aws::String m_revisionId;
-  bool m_revisionIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyHasBeenSet = false;
+  bool m_revisionIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -35,6 +35,22 @@ class Source {
 
   ///@{
   /**
+   * <p>The type of the trust anchor. </p>
+   */
+  inline TrustAnchorType GetSourceType() const { return m_sourceType; }
+  inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+  inline void SetSourceType(TrustAnchorType value) {
+    m_sourceTypeHasBeenSet = true;
+    m_sourceType = value;
+  }
+  inline Source& WithSourceType(TrustAnchorType value) {
+    SetSourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The data field of the trust anchor depending on its type. </p>
    */
   inline const SourceData& GetSourceData() const { return m_sourceData; }
@@ -50,28 +66,12 @@ class Source {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of the trust anchor. </p>
-   */
-  inline TrustAnchorType GetSourceType() const { return m_sourceType; }
-  inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-  inline void SetSourceType(TrustAnchorType value) {
-    m_sourceTypeHasBeenSet = true;
-    m_sourceType = value;
-  }
-  inline Source& WithSourceType(TrustAnchorType value) {
-    SetSourceType(value);
-    return *this;
-  }
-  ///@}
  private:
-  SourceData m_sourceData;
-  bool m_sourceDataHasBeenSet = false;
-
   TrustAnchorType m_sourceType{TrustAnchorType::NOT_SET};
+
+  SourceData m_sourceData;
   bool m_sourceTypeHasBeenSet = false;
+  bool m_sourceDataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -110,15 +110,15 @@ class UpdateTableStorageOptimizerRequest : public LakeFormationRequest {
   ///@}
  private:
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::Map<OptimizerType, Aws::Map<Aws::String, Aws::String>> m_storageOptimizerConfig;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
   bool m_storageOptimizerConfigHasBeenSet = false;
 };
 

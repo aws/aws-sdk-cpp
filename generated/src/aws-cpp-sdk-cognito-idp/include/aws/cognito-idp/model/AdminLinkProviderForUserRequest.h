@@ -123,12 +123,12 @@ class AdminLinkProviderForUserRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_userPoolId;
-  bool m_userPoolIdHasBeenSet = false;
 
   ProviderUserIdentifierType m_destinationUser;
-  bool m_destinationUserHasBeenSet = false;
 
   ProviderUserIdentifierType m_sourceUser;
+  bool m_userPoolIdHasBeenSet = false;
+  bool m_destinationUserHasBeenSet = false;
   bool m_sourceUserHasBeenSet = false;
 };
 

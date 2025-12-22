@@ -87,12 +87,12 @@ class ListGraphSnapshotsResult {
   ///@}
  private:
   Aws::Vector<GraphSnapshotSummary> m_graphSnapshots;
-  bool m_graphSnapshotsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_graphSnapshotsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

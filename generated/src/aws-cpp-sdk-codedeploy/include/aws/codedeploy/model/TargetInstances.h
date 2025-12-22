@@ -108,12 +108,12 @@ class TargetInstances {
   ///@}
  private:
   Aws::Vector<EC2TagFilter> m_tagFilters;
-  bool m_tagFiltersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_autoScalingGroups;
-  bool m_autoScalingGroupsHasBeenSet = false;
 
   EC2TagSet m_ec2TagSet;
+  bool m_tagFiltersHasBeenSet = false;
+  bool m_autoScalingGroupsHasBeenSet = false;
   bool m_ec2TagSetHasBeenSet = false;
 };
 

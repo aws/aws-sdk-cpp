@@ -118,18 +118,18 @@ class VeevaSourceProperties {
   ///@}
  private:
   Aws::String m_object;
-  bool m_objectHasBeenSet = false;
 
   Aws::String m_documentType;
-  bool m_documentTypeHasBeenSet = false;
 
   bool m_includeSourceFiles{false};
-  bool m_includeSourceFilesHasBeenSet = false;
 
   bool m_includeRenditions{false};
-  bool m_includeRenditionsHasBeenSet = false;
 
   bool m_includeAllVersions{false};
+  bool m_objectHasBeenSet = false;
+  bool m_documentTypeHasBeenSet = false;
+  bool m_includeSourceFilesHasBeenSet = false;
+  bool m_includeRenditionsHasBeenSet = false;
   bool m_includeAllVersionsHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class GetResourcesResult {
   ///@}
  private:
   Aws::String m_paginationToken;
-  bool m_paginationTokenHasBeenSet = false;
 
   Aws::Vector<ResourceTagMapping> m_resourceTagMappingList;
-  bool m_resourceTagMappingListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_paginationTokenHasBeenSet = false;
+  bool m_resourceTagMappingListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

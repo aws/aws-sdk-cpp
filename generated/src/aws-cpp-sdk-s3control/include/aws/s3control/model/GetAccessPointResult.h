@@ -282,45 +282,45 @@ class GetAccessPointResult {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   NetworkOrigin m_networkOrigin{NetworkOrigin::NOT_SET};
-  bool m_networkOriginHasBeenSet = false;
 
   VpcConfiguration m_vpcConfiguration;
-  bool m_vpcConfigurationHasBeenSet = false;
 
   PublicAccessBlockConfiguration m_publicAccessBlockConfiguration;
-  bool m_publicAccessBlockConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   Aws::String m_accessPointArn;
-  bool m_accessPointArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_endpoints;
-  bool m_endpointsHasBeenSet = false;
 
   Aws::String m_bucketAccountId;
-  bool m_bucketAccountIdHasBeenSet = false;
 
   Aws::String m_dataSourceId;
-  bool m_dataSourceIdHasBeenSet = false;
 
   Aws::String m_dataSourceType;
-  bool m_dataSourceTypeHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_nameHasBeenSet = false;
+  bool m_bucketHasBeenSet = false;
+  bool m_networkOriginHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_publicAccessBlockConfigurationHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
+  bool m_accessPointArnHasBeenSet = false;
+  bool m_endpointsHasBeenSet = false;
+  bool m_bucketAccountIdHasBeenSet = false;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_dataSourceTypeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

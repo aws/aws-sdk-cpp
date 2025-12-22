@@ -116,15 +116,15 @@ class AuthorizeSnapshotAccessRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_snapshotIdentifier;
-  bool m_snapshotIdentifierHasBeenSet = false;
 
   Aws::String m_snapshotArn;
-  bool m_snapshotArnHasBeenSet = false;
 
   Aws::String m_snapshotClusterIdentifier;
-  bool m_snapshotClusterIdentifierHasBeenSet = false;
 
   Aws::String m_accountWithRestoreAccess;
+  bool m_snapshotIdentifierHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
+  bool m_snapshotClusterIdentifierHasBeenSet = false;
   bool m_accountWithRestoreAccessHasBeenSet = false;
 };
 

@@ -55,6 +55,7 @@
     #set($hasEventStreamInputOperation = true)
 #end
 #end
+
 ${className}::${className}(const ${className} &rhs) :
     BASECLASS(rhs.m_clientConfiguration,
         Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(ALLOCATION_TAG,

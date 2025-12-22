@@ -36,24 +36,24 @@ class DescribeSourceServersRequestFilters {
 
   ///@{
   /**
-   * <p>Request to filter Source Servers list by application IDs.</p>
+   * <p>Request to filter Source Servers list by Source Server ID.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetApplicationIDs() const { return m_applicationIDs; }
-  inline bool ApplicationIDsHasBeenSet() const { return m_applicationIDsHasBeenSet; }
-  template <typename ApplicationIDsT = Aws::Vector<Aws::String>>
-  void SetApplicationIDs(ApplicationIDsT&& value) {
-    m_applicationIDsHasBeenSet = true;
-    m_applicationIDs = std::forward<ApplicationIDsT>(value);
+  inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const { return m_sourceServerIDs; }
+  inline bool SourceServerIDsHasBeenSet() const { return m_sourceServerIDsHasBeenSet; }
+  template <typename SourceServerIDsT = Aws::Vector<Aws::String>>
+  void SetSourceServerIDs(SourceServerIDsT&& value) {
+    m_sourceServerIDsHasBeenSet = true;
+    m_sourceServerIDs = std::forward<SourceServerIDsT>(value);
   }
-  template <typename ApplicationIDsT = Aws::Vector<Aws::String>>
-  DescribeSourceServersRequestFilters& WithApplicationIDs(ApplicationIDsT&& value) {
-    SetApplicationIDs(std::forward<ApplicationIDsT>(value));
+  template <typename SourceServerIDsT = Aws::Vector<Aws::String>>
+  DescribeSourceServersRequestFilters& WithSourceServerIDs(SourceServerIDsT&& value) {
+    SetSourceServerIDs(std::forward<SourceServerIDsT>(value));
     return *this;
   }
-  template <typename ApplicationIDsT = Aws::String>
-  DescribeSourceServersRequestFilters& AddApplicationIDs(ApplicationIDsT&& value) {
-    m_applicationIDsHasBeenSet = true;
-    m_applicationIDs.emplace_back(std::forward<ApplicationIDsT>(value));
+  template <typename SourceServerIDsT = Aws::String>
+  DescribeSourceServersRequestFilters& AddSourceServerIDs(SourceServerIDsT&& value) {
+    m_sourceServerIDsHasBeenSet = true;
+    m_sourceServerIDs.emplace_back(std::forward<SourceServerIDsT>(value));
     return *this;
   }
   ///@}
@@ -70,29 +70,6 @@ class DescribeSourceServersRequestFilters {
   }
   inline DescribeSourceServersRequestFilters& WithIsArchived(bool value) {
     SetIsArchived(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Request to filter Source Servers list by life cycle states.</p>
-   */
-  inline const Aws::Vector<LifeCycleState>& GetLifeCycleStates() const { return m_lifeCycleStates; }
-  inline bool LifeCycleStatesHasBeenSet() const { return m_lifeCycleStatesHasBeenSet; }
-  template <typename LifeCycleStatesT = Aws::Vector<LifeCycleState>>
-  void SetLifeCycleStates(LifeCycleStatesT&& value) {
-    m_lifeCycleStatesHasBeenSet = true;
-    m_lifeCycleStates = std::forward<LifeCycleStatesT>(value);
-  }
-  template <typename LifeCycleStatesT = Aws::Vector<LifeCycleState>>
-  DescribeSourceServersRequestFilters& WithLifeCycleStates(LifeCycleStatesT&& value) {
-    SetLifeCycleStates(std::forward<LifeCycleStatesT>(value));
-    return *this;
-  }
-  inline DescribeSourceServersRequestFilters& AddLifeCycleStates(LifeCycleState value) {
-    m_lifeCycleStatesHasBeenSet = true;
-    m_lifeCycleStates.push_back(value);
     return *this;
   }
   ///@}
@@ -122,42 +99,65 @@ class DescribeSourceServersRequestFilters {
 
   ///@{
   /**
-   * <p>Request to filter Source Servers list by Source Server ID.</p>
+   * <p>Request to filter Source Servers list by life cycle states.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetSourceServerIDs() const { return m_sourceServerIDs; }
-  inline bool SourceServerIDsHasBeenSet() const { return m_sourceServerIDsHasBeenSet; }
-  template <typename SourceServerIDsT = Aws::Vector<Aws::String>>
-  void SetSourceServerIDs(SourceServerIDsT&& value) {
-    m_sourceServerIDsHasBeenSet = true;
-    m_sourceServerIDs = std::forward<SourceServerIDsT>(value);
+  inline const Aws::Vector<LifeCycleState>& GetLifeCycleStates() const { return m_lifeCycleStates; }
+  inline bool LifeCycleStatesHasBeenSet() const { return m_lifeCycleStatesHasBeenSet; }
+  template <typename LifeCycleStatesT = Aws::Vector<LifeCycleState>>
+  void SetLifeCycleStates(LifeCycleStatesT&& value) {
+    m_lifeCycleStatesHasBeenSet = true;
+    m_lifeCycleStates = std::forward<LifeCycleStatesT>(value);
   }
-  template <typename SourceServerIDsT = Aws::Vector<Aws::String>>
-  DescribeSourceServersRequestFilters& WithSourceServerIDs(SourceServerIDsT&& value) {
-    SetSourceServerIDs(std::forward<SourceServerIDsT>(value));
+  template <typename LifeCycleStatesT = Aws::Vector<LifeCycleState>>
+  DescribeSourceServersRequestFilters& WithLifeCycleStates(LifeCycleStatesT&& value) {
+    SetLifeCycleStates(std::forward<LifeCycleStatesT>(value));
     return *this;
   }
-  template <typename SourceServerIDsT = Aws::String>
-  DescribeSourceServersRequestFilters& AddSourceServerIDs(SourceServerIDsT&& value) {
-    m_sourceServerIDsHasBeenSet = true;
-    m_sourceServerIDs.emplace_back(std::forward<SourceServerIDsT>(value));
+  inline DescribeSourceServersRequestFilters& AddLifeCycleStates(LifeCycleState value) {
+    m_lifeCycleStatesHasBeenSet = true;
+    m_lifeCycleStates.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Request to filter Source Servers list by application IDs.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetApplicationIDs() const { return m_applicationIDs; }
+  inline bool ApplicationIDsHasBeenSet() const { return m_applicationIDsHasBeenSet; }
+  template <typename ApplicationIDsT = Aws::Vector<Aws::String>>
+  void SetApplicationIDs(ApplicationIDsT&& value) {
+    m_applicationIDsHasBeenSet = true;
+    m_applicationIDs = std::forward<ApplicationIDsT>(value);
+  }
+  template <typename ApplicationIDsT = Aws::Vector<Aws::String>>
+  DescribeSourceServersRequestFilters& WithApplicationIDs(ApplicationIDsT&& value) {
+    SetApplicationIDs(std::forward<ApplicationIDsT>(value));
+    return *this;
+  }
+  template <typename ApplicationIDsT = Aws::String>
+  DescribeSourceServersRequestFilters& AddApplicationIDs(ApplicationIDsT&& value) {
+    m_applicationIDsHasBeenSet = true;
+    m_applicationIDs.emplace_back(std::forward<ApplicationIDsT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::Vector<Aws::String> m_applicationIDs;
-  bool m_applicationIDsHasBeenSet = false;
+  Aws::Vector<Aws::String> m_sourceServerIDs;
 
   bool m_isArchived{false};
-  bool m_isArchivedHasBeenSet = false;
-
-  Aws::Vector<LifeCycleState> m_lifeCycleStates;
-  bool m_lifeCycleStatesHasBeenSet = false;
 
   Aws::Vector<ReplicationType> m_replicationTypes;
-  bool m_replicationTypesHasBeenSet = false;
 
-  Aws::Vector<Aws::String> m_sourceServerIDs;
+  Aws::Vector<LifeCycleState> m_lifeCycleStates;
+
+  Aws::Vector<Aws::String> m_applicationIDs;
   bool m_sourceServerIDsHasBeenSet = false;
+  bool m_isArchivedHasBeenSet = false;
+  bool m_replicationTypesHasBeenSet = false;
+  bool m_lifeCycleStatesHasBeenSet = false;
+  bool m_applicationIDsHasBeenSet = false;
 };
 
 }  // namespace Model

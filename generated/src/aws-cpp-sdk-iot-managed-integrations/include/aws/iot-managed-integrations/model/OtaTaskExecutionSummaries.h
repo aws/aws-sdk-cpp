@@ -69,9 +69,9 @@ class OtaTaskExecutionSummaries {
   ///@}
  private:
   OtaTaskExecutionSummary m_taskExecutionSummary;
-  bool m_taskExecutionSummaryHasBeenSet = false;
 
   Aws::String m_managedThingId;
+  bool m_taskExecutionSummaryHasBeenSet = false;
   bool m_managedThingIdHasBeenSet = false;
 };
 

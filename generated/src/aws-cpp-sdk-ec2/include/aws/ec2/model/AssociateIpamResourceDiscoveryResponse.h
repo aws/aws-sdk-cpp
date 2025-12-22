@@ -61,9 +61,9 @@ class AssociateIpamResourceDiscoveryResponse {
   ///@}
  private:
   IpamResourceDiscoveryAssociation m_ipamResourceDiscoveryAssociation;
-  bool m_ipamResourceDiscoveryAssociationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_ipamResourceDiscoveryAssociationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -157,21 +157,21 @@ class ServerCertificateMetadata {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   Aws::String m_serverCertificateName;
-  bool m_serverCertificateNameHasBeenSet = false;
 
   Aws::String m_serverCertificateId;
-  bool m_serverCertificateIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Utils::DateTime m_uploadDate{};
-  bool m_uploadDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiration{};
+  bool m_pathHasBeenSet = false;
+  bool m_serverCertificateNameHasBeenSet = false;
+  bool m_serverCertificateIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_uploadDateHasBeenSet = false;
   bool m_expirationHasBeenSet = false;
 };
 

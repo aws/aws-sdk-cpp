@@ -67,9 +67,9 @@ class UsageAmount {
   ///@}
  private:
   Aws::Utils::DateTime m_startHour{};
-  bool m_startHourHasBeenSet = false;
 
   double m_amount{0.0};
+  bool m_startHourHasBeenSet = false;
   bool m_amountHasBeenSet = false;
 };
 

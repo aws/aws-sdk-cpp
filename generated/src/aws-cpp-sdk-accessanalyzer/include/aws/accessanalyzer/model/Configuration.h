@@ -300,45 +300,45 @@ class Configuration {
   ///@}
  private:
   EbsSnapshotConfiguration m_ebsSnapshot;
-  bool m_ebsSnapshotHasBeenSet = false;
 
   EcrRepositoryConfiguration m_ecrRepository;
-  bool m_ecrRepositoryHasBeenSet = false;
 
   IamRoleConfiguration m_iamRole;
-  bool m_iamRoleHasBeenSet = false;
 
   EfsFileSystemConfiguration m_efsFileSystem;
-  bool m_efsFileSystemHasBeenSet = false;
 
   KmsKeyConfiguration m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   RdsDbClusterSnapshotConfiguration m_rdsDbClusterSnapshot;
-  bool m_rdsDbClusterSnapshotHasBeenSet = false;
 
   RdsDbSnapshotConfiguration m_rdsDbSnapshot;
-  bool m_rdsDbSnapshotHasBeenSet = false;
 
   SecretsManagerSecretConfiguration m_secretsManagerSecret;
-  bool m_secretsManagerSecretHasBeenSet = false;
 
   S3BucketConfiguration m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   SnsTopicConfiguration m_snsTopic;
-  bool m_snsTopicHasBeenSet = false;
 
   SqsQueueConfiguration m_sqsQueue;
-  bool m_sqsQueueHasBeenSet = false;
 
   S3ExpressDirectoryBucketConfiguration m_s3ExpressDirectoryBucket;
-  bool m_s3ExpressDirectoryBucketHasBeenSet = false;
 
   DynamodbStreamConfiguration m_dynamodbStream;
-  bool m_dynamodbStreamHasBeenSet = false;
 
   DynamodbTableConfiguration m_dynamodbTable;
+  bool m_ebsSnapshotHasBeenSet = false;
+  bool m_ecrRepositoryHasBeenSet = false;
+  bool m_iamRoleHasBeenSet = false;
+  bool m_efsFileSystemHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
+  bool m_rdsDbClusterSnapshotHasBeenSet = false;
+  bool m_rdsDbSnapshotHasBeenSet = false;
+  bool m_secretsManagerSecretHasBeenSet = false;
+  bool m_s3BucketHasBeenSet = false;
+  bool m_snsTopicHasBeenSet = false;
+  bool m_sqsQueueHasBeenSet = false;
+  bool m_s3ExpressDirectoryBucketHasBeenSet = false;
+  bool m_dynamodbStreamHasBeenSet = false;
   bool m_dynamodbTableHasBeenSet = false;
 };
 

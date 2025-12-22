@@ -67,9 +67,9 @@ class SearchTrainingPlanOfferingsResult {
   ///@}
  private:
   Aws::Vector<TrainingPlanOffering> m_trainingPlanOfferings;
-  bool m_trainingPlanOfferingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trainingPlanOfferingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

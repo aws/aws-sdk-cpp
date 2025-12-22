@@ -108,15 +108,15 @@ class AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
   ///@}
  private:
   bool m_disableScaleIn{false};
-  bool m_disableScaleInHasBeenSet = false;
 
   int m_scaleInCooldown{0};
-  bool m_scaleInCooldownHasBeenSet = false;
 
   int m_scaleOutCooldown{0};
-  bool m_scaleOutCooldownHasBeenSet = false;
 
   double m_targetValue{0.0};
+  bool m_disableScaleInHasBeenSet = false;
+  bool m_scaleInCooldownHasBeenSet = false;
+  bool m_scaleOutCooldownHasBeenSet = false;
   bool m_targetValueHasBeenSet = false;
 };
 

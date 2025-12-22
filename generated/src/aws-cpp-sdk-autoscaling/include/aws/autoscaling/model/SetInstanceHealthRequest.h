@@ -95,12 +95,12 @@ class SetInstanceHealthRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_healthStatus;
-  bool m_healthStatusHasBeenSet = false;
 
   bool m_shouldRespectGracePeriod{false};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_healthStatusHasBeenSet = false;
   bool m_shouldRespectGracePeriodHasBeenSet = false;
 };
 

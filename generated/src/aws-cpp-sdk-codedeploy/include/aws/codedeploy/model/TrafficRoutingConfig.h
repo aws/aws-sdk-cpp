@@ -96,12 +96,12 @@ class TrafficRoutingConfig {
   ///@}
  private:
   TrafficRoutingType m_type{TrafficRoutingType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   TimeBasedCanary m_timeBasedCanary;
-  bool m_timeBasedCanaryHasBeenSet = false;
 
   TimeBasedLinear m_timeBasedLinear;
+  bool m_typeHasBeenSet = false;
+  bool m_timeBasedCanaryHasBeenSet = false;
   bool m_timeBasedLinearHasBeenSet = false;
 };
 

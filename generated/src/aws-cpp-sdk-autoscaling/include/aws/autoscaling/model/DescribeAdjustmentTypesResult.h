@@ -67,9 +67,9 @@ class DescribeAdjustmentTypesResult {
   ///@}
  private:
   Aws::Vector<AdjustmentType> m_adjustmentTypes;
-  bool m_adjustmentTypesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_adjustmentTypesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

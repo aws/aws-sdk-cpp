@@ -84,12 +84,12 @@ class ListVoiceConnectorGroupsResult {
   ///@}
  private:
   Aws::Vector<VoiceConnectorGroup> m_voiceConnectorGroups;
-  bool m_voiceConnectorGroupsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_voiceConnectorGroupsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

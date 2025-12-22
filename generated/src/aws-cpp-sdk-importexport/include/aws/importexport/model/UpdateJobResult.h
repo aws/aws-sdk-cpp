@@ -99,15 +99,15 @@ class UpdateJobResult {
   ///@}
  private:
   bool m_success{false};
-  bool m_successHasBeenSet = false;
 
   Aws::String m_warningMessage;
-  bool m_warningMessageHasBeenSet = false;
 
   Aws::Vector<Artifact> m_artifactList;
-  bool m_artifactListHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_successHasBeenSet = false;
+  bool m_warningMessageHasBeenSet = false;
+  bool m_artifactListHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

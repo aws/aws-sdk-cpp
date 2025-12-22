@@ -105,15 +105,15 @@ class ClientData {
   ///@}
  private:
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Utils::DateTime m_uploadEnd{};
-  bool m_uploadEndHasBeenSet = false;
 
   double m_uploadSize{0.0};
-  bool m_uploadSizeHasBeenSet = false;
 
   Aws::Utils::DateTime m_uploadStart{};
+  bool m_commentHasBeenSet = false;
+  bool m_uploadEndHasBeenSet = false;
+  bool m_uploadSizeHasBeenSet = false;
   bool m_uploadStartHasBeenSet = false;
 };
 

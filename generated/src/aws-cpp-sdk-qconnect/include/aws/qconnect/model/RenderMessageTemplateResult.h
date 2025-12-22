@@ -126,18 +126,18 @@ class RenderMessageTemplateResult {
   ///@}
  private:
   MessageTemplateContentProvider m_content;
-  bool m_contentHasBeenSet = false;
 
   MessageTemplateSourceConfigurationSummary m_sourceConfigurationSummary;
-  bool m_sourceConfigurationSummaryHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributesNotInterpolated;
-  bool m_attributesNotInterpolatedHasBeenSet = false;
 
   Aws::Vector<MessageTemplateAttachment> m_attachments;
-  bool m_attachmentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_contentHasBeenSet = false;
+  bool m_sourceConfigurationSummaryHasBeenSet = false;
+  bool m_attributesNotInterpolatedHasBeenSet = false;
+  bool m_attachmentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

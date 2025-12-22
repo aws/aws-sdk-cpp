@@ -87,12 +87,12 @@ class ListCollaborationChangeRequestsResult {
   ///@}
  private:
   Aws::Vector<CollaborationChangeRequestSummary> m_collaborationChangeRequestSummaries;
-  bool m_collaborationChangeRequestSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_collaborationChangeRequestSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

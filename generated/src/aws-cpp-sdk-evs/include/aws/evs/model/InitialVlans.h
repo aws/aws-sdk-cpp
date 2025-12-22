@@ -274,39 +274,39 @@ class InitialVlans {
   ///@}
  private:
   InitialVlanInfo m_vmkManagement;
-  bool m_vmkManagementHasBeenSet = false;
 
   InitialVlanInfo m_vmManagement;
-  bool m_vmManagementHasBeenSet = false;
 
   InitialVlanInfo m_vMotion;
-  bool m_vMotionHasBeenSet = false;
 
   InitialVlanInfo m_vSan;
-  bool m_vSanHasBeenSet = false;
 
   InitialVlanInfo m_vTep;
-  bool m_vTepHasBeenSet = false;
 
   InitialVlanInfo m_edgeVTep;
-  bool m_edgeVTepHasBeenSet = false;
 
   InitialVlanInfo m_nsxUplink;
-  bool m_nsxUplinkHasBeenSet = false;
 
   InitialVlanInfo m_hcx;
-  bool m_hcxHasBeenSet = false;
 
   InitialVlanInfo m_expansionVlan1;
-  bool m_expansionVlan1HasBeenSet = false;
 
   InitialVlanInfo m_expansionVlan2;
-  bool m_expansionVlan2HasBeenSet = false;
 
   bool m_isHcxPublic{false};
-  bool m_isHcxPublicHasBeenSet = false;
 
   Aws::String m_hcxNetworkAclId;
+  bool m_vmkManagementHasBeenSet = false;
+  bool m_vmManagementHasBeenSet = false;
+  bool m_vMotionHasBeenSet = false;
+  bool m_vSanHasBeenSet = false;
+  bool m_vTepHasBeenSet = false;
+  bool m_edgeVTepHasBeenSet = false;
+  bool m_nsxUplinkHasBeenSet = false;
+  bool m_hcxHasBeenSet = false;
+  bool m_expansionVlan1HasBeenSet = false;
+  bool m_expansionVlan2HasBeenSet = false;
+  bool m_isHcxPublicHasBeenSet = false;
   bool m_hcxNetworkAclIdHasBeenSet = false;
 };
 

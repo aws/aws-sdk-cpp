@@ -82,12 +82,12 @@ class DescribeDataRepositoryTasksResult {
   ///@}
  private:
   Aws::Vector<DataRepositoryTask> m_dataRepositoryTasks;
-  bool m_dataRepositoryTasksHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dataRepositoryTasksHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

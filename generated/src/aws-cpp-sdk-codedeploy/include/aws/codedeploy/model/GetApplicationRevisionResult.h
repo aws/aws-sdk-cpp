@@ -101,15 +101,15 @@ class GetApplicationRevisionResult {
   ///@}
  private:
   Aws::String m_applicationName;
-  bool m_applicationNameHasBeenSet = false;
 
   RevisionLocation m_revision;
-  bool m_revisionHasBeenSet = false;
 
   GenericRevisionInfo m_revisionInfo;
-  bool m_revisionInfoHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationNameHasBeenSet = false;
+  bool m_revisionHasBeenSet = false;
+  bool m_revisionInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

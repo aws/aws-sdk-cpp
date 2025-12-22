@@ -205,24 +205,24 @@ class ListPrincipalsRequest : public RAMRequest {
   ///@}
  private:
   ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
-  bool m_resourceOwnerHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_principals;
-  bool m_principalsHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resourceShareArns;
-  bool m_resourceShareArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_principalsHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceShareArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

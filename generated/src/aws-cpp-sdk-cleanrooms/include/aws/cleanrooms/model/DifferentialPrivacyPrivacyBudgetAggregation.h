@@ -83,12 +83,12 @@ class DifferentialPrivacyPrivacyBudgetAggregation {
   ///@}
  private:
   DifferentialPrivacyAggregationType m_type{DifferentialPrivacyAggregationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   int m_maxCount{0};
-  bool m_maxCountHasBeenSet = false;
 
   int m_remainingCount{0};
+  bool m_typeHasBeenSet = false;
+  bool m_maxCountHasBeenSet = false;
   bool m_remainingCountHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DescribeLifecycleHooksResult {
   ///@}
  private:
   Aws::Vector<LifecycleHook> m_lifecycleHooks;
-  bool m_lifecycleHooksHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_lifecycleHooksHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

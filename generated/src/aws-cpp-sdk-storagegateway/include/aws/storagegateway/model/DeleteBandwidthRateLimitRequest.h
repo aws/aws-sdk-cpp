@@ -72,9 +72,9 @@ class DeleteBandwidthRateLimitRequest : public StorageGatewayRequest {
   ///@}
  private:
   Aws::String m_gatewayARN;
-  bool m_gatewayARNHasBeenSet = false;
 
   Aws::String m_bandwidthType;
+  bool m_gatewayARNHasBeenSet = false;
   bool m_bandwidthTypeHasBeenSet = false;
 };
 

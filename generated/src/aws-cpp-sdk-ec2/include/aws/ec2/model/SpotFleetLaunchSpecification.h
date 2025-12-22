@@ -449,60 +449,60 @@ class SpotFleetLaunchSpecification {
   ///@}
  private:
   Aws::String m_addressingType;
-  bool m_addressingTypeHasBeenSet = false;
 
   Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-  bool m_blockDeviceMappingsHasBeenSet = false;
 
   bool m_ebsOptimized{false};
-  bool m_ebsOptimizedHasBeenSet = false;
 
   IamInstanceProfileSpecification m_iamInstanceProfile;
-  bool m_iamInstanceProfileHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   InstanceType m_instanceType{InstanceType::NOT_SET};
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_kernelId;
-  bool m_kernelIdHasBeenSet = false;
 
   Aws::String m_keyName;
-  bool m_keyNameHasBeenSet = false;
 
   SpotFleetMonitoring m_monitoring;
-  bool m_monitoringHasBeenSet = false;
 
   Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
-  bool m_networkInterfacesHasBeenSet = false;
 
   SpotPlacement m_placement;
-  bool m_placementHasBeenSet = false;
 
   Aws::String m_ramdiskId;
-  bool m_ramdiskIdHasBeenSet = false;
 
   Aws::String m_spotPrice;
-  bool m_spotPriceHasBeenSet = false;
 
   Aws::String m_subnetId;
-  bool m_subnetIdHasBeenSet = false;
 
   Aws::String m_userData;
-  bool m_userDataHasBeenSet = false;
 
   double m_weightedCapacity{0.0};
-  bool m_weightedCapacityHasBeenSet = false;
 
   Aws::Vector<SpotFleetTagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   InstanceRequirements m_instanceRequirements;
-  bool m_instanceRequirementsHasBeenSet = false;
 
   Aws::Vector<GroupIdentifier> m_securityGroups;
+  bool m_addressingTypeHasBeenSet = false;
+  bool m_blockDeviceMappingsHasBeenSet = false;
+  bool m_ebsOptimizedHasBeenSet = false;
+  bool m_iamInstanceProfileHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_kernelIdHasBeenSet = false;
+  bool m_keyNameHasBeenSet = false;
+  bool m_monitoringHasBeenSet = false;
+  bool m_networkInterfacesHasBeenSet = false;
+  bool m_placementHasBeenSet = false;
+  bool m_ramdiskIdHasBeenSet = false;
+  bool m_spotPriceHasBeenSet = false;
+  bool m_subnetIdHasBeenSet = false;
+  bool m_userDataHasBeenSet = false;
+  bool m_weightedCapacityHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
   bool m_securityGroupsHasBeenSet = false;
 };
 

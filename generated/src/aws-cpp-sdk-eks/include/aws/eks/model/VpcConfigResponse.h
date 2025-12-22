@@ -198,24 +198,24 @@ class VpcConfigResponse {
   ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
-  bool m_securityGroupIdsHasBeenSet = false;
 
   Aws::String m_clusterSecurityGroupId;
-  bool m_clusterSecurityGroupIdHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   bool m_endpointPublicAccess{false};
-  bool m_endpointPublicAccessHasBeenSet = false;
 
   bool m_endpointPrivateAccess{false};
-  bool m_endpointPrivateAccessHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_publicAccessCidrs;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_clusterSecurityGroupIdHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_endpointPublicAccessHasBeenSet = false;
+  bool m_endpointPrivateAccessHasBeenSet = false;
   bool m_publicAccessCidrsHasBeenSet = false;
 };
 

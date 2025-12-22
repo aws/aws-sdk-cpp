@@ -203,30 +203,30 @@ class RedshiftConnectorProfileProperties {
   ///@}
  private:
   Aws::String m_databaseUrl;
-  bool m_databaseUrlHasBeenSet = false;
 
   Aws::String m_bucketName;
-  bool m_bucketNameHasBeenSet = false;
 
   Aws::String m_bucketPrefix;
-  bool m_bucketPrefixHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_dataApiRoleArn;
-  bool m_dataApiRoleArnHasBeenSet = false;
 
   bool m_isRedshiftServerless{false};
-  bool m_isRedshiftServerlessHasBeenSet = false;
 
   Aws::String m_clusterIdentifier;
-  bool m_clusterIdentifierHasBeenSet = false;
 
   Aws::String m_workgroupName;
-  bool m_workgroupNameHasBeenSet = false;
 
   Aws::String m_databaseName;
+  bool m_databaseUrlHasBeenSet = false;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_bucketPrefixHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataApiRoleArnHasBeenSet = false;
+  bool m_isRedshiftServerlessHasBeenSet = false;
+  bool m_clusterIdentifierHasBeenSet = false;
+  bool m_workgroupNameHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
 };
 

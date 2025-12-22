@@ -100,12 +100,12 @@ class CreateCustomRoutingListenerRequest : public GlobalAcceleratorRequest {
   ///@}
  private:
   Aws::String m_acceleratorArn;
-  bool m_acceleratorArnHasBeenSet = false;
 
   Aws::Vector<PortRange> m_portRanges;
-  bool m_portRangesHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_acceleratorArnHasBeenSet = false;
+  bool m_portRangesHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

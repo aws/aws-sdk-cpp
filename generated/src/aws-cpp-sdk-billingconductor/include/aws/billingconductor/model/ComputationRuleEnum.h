@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BillingConductor {
 namespace Model {
-enum class ComputationRuleEnum { NOT_SET, CONSOLIDATED };
+enum class ComputationRuleEnum { NOT_SET, ITEMIZED, CONSOLIDATED };
 
 namespace ComputationRuleEnumMapper {
 AWS_BILLINGCONDUCTOR_API ComputationRuleEnum GetComputationRuleEnumForName(const Aws::String& name);

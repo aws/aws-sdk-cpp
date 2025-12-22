@@ -115,18 +115,18 @@ class TaskStatisticsForAuditCheck {
   ///@}
  private:
   long long m_totalFindingsCount{0};
-  bool m_totalFindingsCountHasBeenSet = false;
 
   long long m_failedFindingsCount{0};
-  bool m_failedFindingsCountHasBeenSet = false;
 
   long long m_succeededFindingsCount{0};
-  bool m_succeededFindingsCountHasBeenSet = false;
 
   long long m_skippedFindingsCount{0};
-  bool m_skippedFindingsCountHasBeenSet = false;
 
   long long m_canceledFindingsCount{0};
+  bool m_totalFindingsCountHasBeenSet = false;
+  bool m_failedFindingsCountHasBeenSet = false;
+  bool m_succeededFindingsCountHasBeenSet = false;
+  bool m_skippedFindingsCountHasBeenSet = false;
   bool m_canceledFindingsCountHasBeenSet = false;
 };
 

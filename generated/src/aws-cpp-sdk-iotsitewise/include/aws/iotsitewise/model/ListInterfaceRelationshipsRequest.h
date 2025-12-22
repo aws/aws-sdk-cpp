@@ -88,12 +88,12 @@ class ListInterfaceRelationshipsRequest : public IoTSiteWiseRequest {
   ///@}
  private:
   Aws::String m_interfaceAssetModelId;
-  bool m_interfaceAssetModelIdHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_interfaceAssetModelIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

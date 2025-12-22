@@ -91,12 +91,12 @@ class KerberosAuthenticationSettings {
   ///@}
  private:
   Aws::String m_keyCacheSecretId;
-  bool m_keyCacheSecretIdHasBeenSet = false;
 
   Aws::String m_keyCacheSecretIamArn;
-  bool m_keyCacheSecretIamArnHasBeenSet = false;
 
   Aws::String m_krb5FileContents;
+  bool m_keyCacheSecretIdHasBeenSet = false;
+  bool m_keyCacheSecretIamArnHasBeenSet = false;
   bool m_krb5FileContentsHasBeenSet = false;
 };
 

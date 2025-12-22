@@ -70,9 +70,9 @@ class VectorEnrichmentJobConfig {
   ///@}
  private:
   MapMatchingConfig m_mapMatchingConfig;
-  bool m_mapMatchingConfigHasBeenSet = false;
 
   ReverseGeocodingConfig m_reverseGeocodingConfig;
+  bool m_mapMatchingConfigHasBeenSet = false;
   bool m_reverseGeocodingConfigHasBeenSet = false;
 };
 

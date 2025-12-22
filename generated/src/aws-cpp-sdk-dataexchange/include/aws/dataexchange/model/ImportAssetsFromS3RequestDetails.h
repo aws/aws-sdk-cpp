@@ -96,12 +96,12 @@ class ImportAssetsFromS3RequestDetails {
   ///@}
  private:
   Aws::Vector<AssetSourceEntry> m_assetSources;
-  bool m_assetSourcesHasBeenSet = false;
 
   Aws::String m_dataSetId;
-  bool m_dataSetIdHasBeenSet = false;
 
   Aws::String m_revisionId;
+  bool m_assetSourcesHasBeenSet = false;
+  bool m_dataSetIdHasBeenSet = false;
   bool m_revisionIdHasBeenSet = false;
 };
 

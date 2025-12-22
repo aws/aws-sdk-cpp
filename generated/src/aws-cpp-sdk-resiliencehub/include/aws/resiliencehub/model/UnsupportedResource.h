@@ -107,15 +107,15 @@ class UnsupportedResource {
   ///@}
  private:
   LogicalResourceId m_logicalResourceId;
-  bool m_logicalResourceIdHasBeenSet = false;
 
   PhysicalResourceId m_physicalResourceId;
-  bool m_physicalResourceIdHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_unsupportedResourceStatus;
+  bool m_logicalResourceIdHasBeenSet = false;
+  bool m_physicalResourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
   bool m_unsupportedResourceStatusHasBeenSet = false;
 };
 

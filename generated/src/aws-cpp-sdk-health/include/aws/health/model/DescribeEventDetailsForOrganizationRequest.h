@@ -77,9 +77,9 @@ class DescribeEventDetailsForOrganizationRequest : public HealthRequest {
   ///@}
  private:
   Aws::Vector<EventAccountFilter> m_organizationEventDetailFilters;
-  bool m_organizationEventDetailFiltersHasBeenSet = false;
 
   Aws::String m_locale;
+  bool m_organizationEventDetailFiltersHasBeenSet = false;
   bool m_localeHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class CreateDeploymentResult {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_fileUploadUrls;
-  bool m_fileUploadUrlsHasBeenSet = false;
 
   Aws::String m_zipUploadUrl;
-  bool m_zipUploadUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_jobIdHasBeenSet = false;
+  bool m_fileUploadUrlsHasBeenSet = false;
+  bool m_zipUploadUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

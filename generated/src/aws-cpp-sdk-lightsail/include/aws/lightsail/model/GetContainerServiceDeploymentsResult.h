@@ -67,9 +67,9 @@ class GetContainerServiceDeploymentsResult {
   ///@}
  private:
   Aws::Vector<ContainerServiceDeployment> m_deployments;
-  bool m_deploymentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deploymentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

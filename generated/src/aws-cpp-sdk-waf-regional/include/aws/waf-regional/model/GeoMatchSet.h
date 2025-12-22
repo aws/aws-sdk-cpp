@@ -111,12 +111,12 @@ class GeoMatchSet {
   ///@}
  private:
   Aws::String m_geoMatchSetId;
-  bool m_geoMatchSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<GeoMatchConstraint> m_geoMatchConstraints;
+  bool m_geoMatchSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_geoMatchConstraintsHasBeenSet = false;
 };
 

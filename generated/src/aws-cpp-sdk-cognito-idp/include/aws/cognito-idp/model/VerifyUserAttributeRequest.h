@@ -92,12 +92,12 @@ class VerifyUserAttributeRequest : public CognitoIdentityProviderRequest {
   ///@}
  private:
   Aws::String m_accessToken;
-  bool m_accessTokenHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_code;
+  bool m_accessTokenHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
   bool m_codeHasBeenSet = false;
 };
 

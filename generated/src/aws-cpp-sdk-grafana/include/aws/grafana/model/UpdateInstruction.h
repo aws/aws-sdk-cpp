@@ -95,12 +95,12 @@ class UpdateInstruction {
   ///@}
  private:
   UpdateAction m_action{UpdateAction::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Role m_role{Role::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::Vector<User> m_users;
+  bool m_actionHasBeenSet = false;
+  bool m_roleHasBeenSet = false;
   bool m_usersHasBeenSet = false;
 };
 

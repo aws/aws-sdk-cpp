@@ -108,15 +108,15 @@ class ListMedicalVocabulariesResult {
   ///@}
  private:
   VocabularyState m_status{VocabularyState::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<VocabularyInfo> m_vocabularies;
-  bool m_vocabulariesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_statusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_vocabulariesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

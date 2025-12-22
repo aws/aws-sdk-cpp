@@ -24,7 +24,7 @@ namespace Model {
 /**
  * <p>An object that can be used to specify Tag conditions inside the
  * <code>SearchFilter</code>. This accepts an <code>OR</code> or <code>AND</code>
- * (List of List) input where: </p> <ul> <li> <p>The top level list specifies
+ * (List of List) input where:</p> <ul> <li> <p>The top level list specifies
  * conditions that need to be applied with <code>OR</code> operator.</p> </li> <li>
  * <p>The inner list specifies conditions that need to be applied with
  * <code>AND</code> operator.</p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -99,12 +99,12 @@ class ControlPlaneAttributeFilter {
   ///@}
  private:
   Aws::Vector<CommonAttributeAndCondition> m_orConditions;
-  bool m_orConditionsHasBeenSet = false;
 
   CommonAttributeAndCondition m_andCondition;
-  bool m_andConditionHasBeenSet = false;
 
   TagCondition m_tagCondition;
+  bool m_orConditionsHasBeenSet = false;
+  bool m_andConditionHasBeenSet = false;
   bool m_tagConditionHasBeenSet = false;
 };
 

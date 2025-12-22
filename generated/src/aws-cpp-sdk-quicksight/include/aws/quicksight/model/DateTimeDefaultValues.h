@@ -98,12 +98,12 @@ class DateTimeDefaultValues {
   ///@}
  private:
   DynamicDefaultValue m_dynamicValue;
-  bool m_dynamicValueHasBeenSet = false;
 
   Aws::Vector<Aws::Utils::DateTime> m_staticValues;
-  bool m_staticValuesHasBeenSet = false;
 
   RollingDateConfiguration m_rollingDate;
+  bool m_dynamicValueHasBeenSet = false;
+  bool m_staticValuesHasBeenSet = false;
   bool m_rollingDateHasBeenSet = false;
 };
 

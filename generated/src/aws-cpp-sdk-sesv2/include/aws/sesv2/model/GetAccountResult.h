@@ -201,30 +201,30 @@ class GetAccountResult {
   ///@}
  private:
   bool m_dedicatedIpAutoWarmupEnabled{false};
-  bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
 
   Aws::String m_enforcementStatus;
-  bool m_enforcementStatusHasBeenSet = false;
 
   bool m_productionAccessEnabled{false};
-  bool m_productionAccessEnabledHasBeenSet = false;
 
   SendQuota m_sendQuota;
-  bool m_sendQuotaHasBeenSet = false;
 
   bool m_sendingEnabled{false};
-  bool m_sendingEnabledHasBeenSet = false;
 
   SuppressionAttributes m_suppressionAttributes;
-  bool m_suppressionAttributesHasBeenSet = false;
 
   AccountDetails m_details;
-  bool m_detailsHasBeenSet = false;
 
   VdmAttributes m_vdmAttributes;
-  bool m_vdmAttributesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dedicatedIpAutoWarmupEnabledHasBeenSet = false;
+  bool m_enforcementStatusHasBeenSet = false;
+  bool m_productionAccessEnabledHasBeenSet = false;
+  bool m_sendQuotaHasBeenSet = false;
+  bool m_sendingEnabledHasBeenSet = false;
+  bool m_suppressionAttributesHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_vdmAttributesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

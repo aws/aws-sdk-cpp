@@ -71,9 +71,9 @@ class SendTestEventNotificationRequest : public MTurkRequest {
   ///@}
  private:
   NotificationSpecification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   EventType m_testEventType{EventType::NOT_SET};
+  bool m_notificationHasBeenSet = false;
   bool m_testEventTypeHasBeenSet = false;
 };
 

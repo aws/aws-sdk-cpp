@@ -107,12 +107,12 @@ class MultiRegionAccessPointRoute {
   ///@}
  private:
   Aws::String m_bucket;
-  bool m_bucketHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   int m_trafficDialPercentage{0};
+  bool m_bucketHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
   bool m_trafficDialPercentageHasBeenSet = false;
 };
 

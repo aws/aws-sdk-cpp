@@ -227,33 +227,33 @@ class AwsWafv2WebAclDetails {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   bool m_managedbyFirewallManager{false};
-  bool m_managedbyFirewallManagerHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   long long m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   AwsWafv2WebAclCaptchaConfigDetails m_captchaConfig;
-  bool m_captchaConfigHasBeenSet = false;
 
   AwsWafv2WebAclActionDetails m_defaultAction;
-  bool m_defaultActionHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<AwsWafv2RulesDetails> m_rules;
-  bool m_rulesHasBeenSet = false;
 
   AwsWafv2VisibilityConfigDetails m_visibilityConfig;
+  bool m_nameHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_managedbyFirewallManagerHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_capacityHasBeenSet = false;
+  bool m_captchaConfigHasBeenSet = false;
+  bool m_defaultActionHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
   bool m_visibilityConfigHasBeenSet = false;
 };
 

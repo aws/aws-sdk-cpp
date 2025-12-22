@@ -86,12 +86,12 @@ class HyperPodPropertiesOutput {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_clusterName;
-  bool m_clusterNameHasBeenSet = false;
 
   HyperPodOrchestrator m_orchestrator{HyperPodOrchestrator::NOT_SET};
+  bool m_clusterArnHasBeenSet = false;
+  bool m_clusterNameHasBeenSet = false;
   bool m_orchestratorHasBeenSet = false;
 };
 

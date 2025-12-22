@@ -195,27 +195,27 @@ class Event {
   ///@}
  private:
   Aws::String m_memoryId;
-  bool m_memoryIdHasBeenSet = false;
 
   Aws::String m_actorId;
-  bool m_actorIdHasBeenSet = false;
 
   Aws::String m_sessionId;
-  bool m_sessionIdHasBeenSet = false;
 
   Aws::String m_eventId;
-  bool m_eventIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_eventTimestamp{};
-  bool m_eventTimestampHasBeenSet = false;
 
   Aws::Vector<PayloadType> m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Branch m_branch;
-  bool m_branchHasBeenSet = false;
 
   Aws::Map<Aws::String, MetadataValue> m_metadata;
+  bool m_memoryIdHasBeenSet = false;
+  bool m_actorIdHasBeenSet = false;
+  bool m_sessionIdHasBeenSet = false;
+  bool m_eventIdHasBeenSet = false;
+  bool m_eventTimestampHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
+  bool m_branchHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };
 

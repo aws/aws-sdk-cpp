@@ -182,27 +182,27 @@ class SpeakerSearchTask {
   ///@}
  private:
   Aws::String m_speakerSearchTaskId;
-  bool m_speakerSearchTaskIdHasBeenSet = false;
 
   Aws::String m_speakerSearchTaskStatus;
-  bool m_speakerSearchTaskStatusHasBeenSet = false;
 
   CallDetails m_callDetails;
-  bool m_callDetailsHasBeenSet = false;
 
   SpeakerSearchDetails m_speakerSearchDetails;
-  bool m_speakerSearchDetailsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTimestamp{};
-  bool m_createdTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedTimestamp{};
-  bool m_updatedTimestampHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedTimestamp{};
-  bool m_startedTimestampHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_speakerSearchTaskIdHasBeenSet = false;
+  bool m_speakerSearchTaskStatusHasBeenSet = false;
+  bool m_callDetailsHasBeenSet = false;
+  bool m_speakerSearchDetailsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_updatedTimestampHasBeenSet = false;
+  bool m_startedTimestampHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

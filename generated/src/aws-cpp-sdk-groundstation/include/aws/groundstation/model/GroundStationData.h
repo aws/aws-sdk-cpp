@@ -86,12 +86,12 @@ class GroundStationData {
   ///@}
  private:
   Aws::String m_groundStationId;
-  bool m_groundStationIdHasBeenSet = false;
 
   Aws::String m_groundStationName;
-  bool m_groundStationNameHasBeenSet = false;
 
   Aws::String m_region;
+  bool m_groundStationIdHasBeenSet = false;
+  bool m_groundStationNameHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

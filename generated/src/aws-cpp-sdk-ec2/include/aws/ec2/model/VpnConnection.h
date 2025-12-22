@@ -368,54 +368,54 @@ class VpnConnection {
   ///@}
  private:
   Aws::String m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::String m_transitGatewayId;
-  bool m_transitGatewayIdHasBeenSet = false;
 
   Aws::String m_vpnConcentratorId;
-  bool m_vpnConcentratorIdHasBeenSet = false;
 
   Aws::String m_coreNetworkArn;
-  bool m_coreNetworkArnHasBeenSet = false;
 
   Aws::String m_coreNetworkAttachmentArn;
-  bool m_coreNetworkAttachmentArnHasBeenSet = false;
 
   GatewayAssociationState m_gatewayAssociationState{GatewayAssociationState::NOT_SET};
-  bool m_gatewayAssociationStateHasBeenSet = false;
 
   VpnConnectionOptions m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::Vector<VpnStaticRoute> m_routes;
-  bool m_routesHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Vector<VgwTelemetry> m_vgwTelemetry;
-  bool m_vgwTelemetryHasBeenSet = false;
 
   Aws::String m_preSharedKeyArn;
-  bool m_preSharedKeyArnHasBeenSet = false;
 
   Aws::String m_vpnConnectionId;
-  bool m_vpnConnectionIdHasBeenSet = false;
 
   VpnState m_state{VpnState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_customerGatewayConfiguration;
-  bool m_customerGatewayConfigurationHasBeenSet = false;
 
   GatewayType m_type{GatewayType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_customerGatewayId;
-  bool m_customerGatewayIdHasBeenSet = false;
 
   Aws::String m_vpnGatewayId;
+  bool m_categoryHasBeenSet = false;
+  bool m_transitGatewayIdHasBeenSet = false;
+  bool m_vpnConcentratorIdHasBeenSet = false;
+  bool m_coreNetworkArnHasBeenSet = false;
+  bool m_coreNetworkAttachmentArnHasBeenSet = false;
+  bool m_gatewayAssociationStateHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+  bool m_routesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vgwTelemetryHasBeenSet = false;
+  bool m_preSharedKeyArnHasBeenSet = false;
+  bool m_vpnConnectionIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_customerGatewayConfigurationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_customerGatewayIdHasBeenSet = false;
   bool m_vpnGatewayIdHasBeenSet = false;
 };
 

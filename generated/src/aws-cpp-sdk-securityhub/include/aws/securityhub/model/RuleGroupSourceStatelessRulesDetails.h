@@ -67,9 +67,9 @@ class RuleGroupSourceStatelessRulesDetails {
   ///@}
  private:
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   RuleGroupSourceStatelessRuleDefinition m_ruleDefinition;
+  bool m_priorityHasBeenSet = false;
   bool m_ruleDefinitionHasBeenSet = false;
 };
 

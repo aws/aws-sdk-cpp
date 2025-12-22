@@ -194,30 +194,30 @@ class DomainDescription {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DomainStatus m_status{DomainStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   int m_repositoryCount{0};
-  bool m_repositoryCountHasBeenSet = false;
 
   long long m_assetSizeBytes{0};
-  bool m_assetSizeBytesHasBeenSet = false;
 
   Aws::String m_s3BucketArn;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_repositoryCountHasBeenSet = false;
+  bool m_assetSizeBytesHasBeenSet = false;
   bool m_s3BucketArnHasBeenSet = false;
 };
 

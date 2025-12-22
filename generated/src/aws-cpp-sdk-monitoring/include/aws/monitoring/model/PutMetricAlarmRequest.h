@@ -35,10 +35,8 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The name for the alarm. This name must be unique within the Region.</p>
@@ -675,69 +673,69 @@ class PutMetricAlarmRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_alarmName;
-  bool m_alarmNameHasBeenSet = false;
 
   Aws::String m_alarmDescription;
-  bool m_alarmDescriptionHasBeenSet = false;
 
   bool m_actionsEnabled{false};
-  bool m_actionsEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_oKActions;
-  bool m_oKActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_alarmActions;
-  bool m_alarmActionsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_insufficientDataActions;
-  bool m_insufficientDataActionsHasBeenSet = false;
 
   Aws::String m_metricName;
-  bool m_metricNameHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Statistic m_statistic{Statistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   Aws::String m_extendedStatistic;
-  bool m_extendedStatisticHasBeenSet = false;
 
   Aws::Vector<Dimension> m_dimensions;
-  bool m_dimensionsHasBeenSet = false;
 
   int m_period{0};
-  bool m_periodHasBeenSet = false;
 
   StandardUnit m_unit{StandardUnit::NOT_SET};
-  bool m_unitHasBeenSet = false;
 
   int m_evaluationPeriods{0};
-  bool m_evaluationPeriodsHasBeenSet = false;
 
   int m_datapointsToAlarm{0};
-  bool m_datapointsToAlarmHasBeenSet = false;
 
   double m_threshold{0.0};
-  bool m_thresholdHasBeenSet = false;
 
   ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
-  bool m_comparisonOperatorHasBeenSet = false;
 
   Aws::String m_treatMissingData;
-  bool m_treatMissingDataHasBeenSet = false;
 
   Aws::String m_evaluateLowSampleCountPercentile;
-  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
 
   Aws::Vector<MetricDataQuery> m_metrics;
-  bool m_metricsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_thresholdMetricId;
+  bool m_alarmNameHasBeenSet = false;
+  bool m_alarmDescriptionHasBeenSet = false;
+  bool m_actionsEnabledHasBeenSet = false;
+  bool m_oKActionsHasBeenSet = false;
+  bool m_alarmActionsHasBeenSet = false;
+  bool m_insufficientDataActionsHasBeenSet = false;
+  bool m_metricNameHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
+  bool m_extendedStatisticHasBeenSet = false;
+  bool m_dimensionsHasBeenSet = false;
+  bool m_periodHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+  bool m_evaluationPeriodsHasBeenSet = false;
+  bool m_datapointsToAlarmHasBeenSet = false;
+  bool m_thresholdHasBeenSet = false;
+  bool m_comparisonOperatorHasBeenSet = false;
+  bool m_treatMissingDataHasBeenSet = false;
+  bool m_evaluateLowSampleCountPercentileHasBeenSet = false;
+  bool m_metricsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_thresholdMetricIdHasBeenSet = false;
 };
 

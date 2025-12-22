@@ -150,21 +150,21 @@ class ProtectedResource {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastBackupTime{};
-  bool m_lastBackupTimeHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   Aws::String m_lastBackupVaultArn;
-  bool m_lastBackupVaultArnHasBeenSet = false;
 
   Aws::String m_lastRecoveryPointArn;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_lastBackupTimeHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_lastBackupVaultArnHasBeenSet = false;
   bool m_lastRecoveryPointArnHasBeenSet = false;
 };
 

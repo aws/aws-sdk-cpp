@@ -199,27 +199,27 @@ class JDBCConnectorTarget {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::String m_connectionName;
-  bool m_connectionNameHasBeenSet = false;
 
   Aws::String m_connectionTable;
-  bool m_connectionTableHasBeenSet = false;
 
   Aws::String m_connectorName;
-  bool m_connectorNameHasBeenSet = false;
 
   Aws::String m_connectionType;
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_additionalOptions;
-  bool m_additionalOptionsHasBeenSet = false;
 
   Aws::Vector<GlueSchema> m_outputSchemas;
+  bool m_nameHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_connectionNameHasBeenSet = false;
+  bool m_connectionTableHasBeenSet = false;
+  bool m_connectorNameHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_additionalOptionsHasBeenSet = false;
   bool m_outputSchemasHasBeenSet = false;
 };
 

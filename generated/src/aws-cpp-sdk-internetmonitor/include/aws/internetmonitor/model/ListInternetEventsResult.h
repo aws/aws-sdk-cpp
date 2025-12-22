@@ -85,12 +85,12 @@ class ListInternetEventsResult {
   ///@}
  private:
   Aws::Vector<InternetEventSummary> m_internetEvents;
-  bool m_internetEventsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_internetEventsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class OpenZFSFileSystemIdentity {
   ///@}
  private:
   OpenZFSFileSystemUserType m_type{OpenZFSFileSystemUserType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   OpenZFSPosixFileSystemUser m_posixUser;
+  bool m_typeHasBeenSet = false;
   bool m_posixUserHasBeenSet = false;
 };
 

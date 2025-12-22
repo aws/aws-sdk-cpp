@@ -77,12 +77,12 @@ class GetRegistryScanningConfigurationResult {
   ///@}
  private:
   Aws::String m_registryId;
-  bool m_registryIdHasBeenSet = false;
 
   RegistryScanningConfiguration m_scanningConfiguration;
-  bool m_scanningConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registryIdHasBeenSet = false;
+  bool m_scanningConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

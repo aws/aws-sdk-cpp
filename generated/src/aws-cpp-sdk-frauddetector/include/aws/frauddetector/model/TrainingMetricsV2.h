@@ -88,12 +88,12 @@ class TrainingMetricsV2 {
   ///@}
  private:
   OFITrainingMetricsValue m_ofi;
-  bool m_ofiHasBeenSet = false;
 
   TFITrainingMetricsValue m_tfi;
-  bool m_tfiHasBeenSet = false;
 
   ATITrainingMetricsValue m_ati;
+  bool m_ofiHasBeenSet = false;
+  bool m_tfiHasBeenSet = false;
   bool m_atiHasBeenSet = false;
 };
 

@@ -84,12 +84,12 @@ class ListWorkflowsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MigrationWorkflowSummary> m_migrationWorkflowSummary;
-  bool m_migrationWorkflowSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_migrationWorkflowSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

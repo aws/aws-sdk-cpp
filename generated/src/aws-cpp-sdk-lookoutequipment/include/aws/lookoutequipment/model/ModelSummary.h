@@ -317,48 +317,48 @@ class ModelSummary {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_modelArn;
-  bool m_modelArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   ModelStatus m_status{ModelStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   long long m_activeModelVersion{0};
-  bool m_activeModelVersionHasBeenSet = false;
 
   Aws::String m_activeModelVersionArn;
-  bool m_activeModelVersionArnHasBeenSet = false;
 
   ModelVersionStatus m_latestScheduledRetrainingStatus{ModelVersionStatus::NOT_SET};
-  bool m_latestScheduledRetrainingStatusHasBeenSet = false;
 
   long long m_latestScheduledRetrainingModelVersion{0};
-  bool m_latestScheduledRetrainingModelVersionHasBeenSet = false;
 
   Aws::Utils::DateTime m_latestScheduledRetrainingStartTime{};
-  bool m_latestScheduledRetrainingStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_nextScheduledRetrainingStartDate{};
-  bool m_nextScheduledRetrainingStartDateHasBeenSet = false;
 
   RetrainingSchedulerStatus m_retrainingSchedulerStatus{RetrainingSchedulerStatus::NOT_SET};
-  bool m_retrainingSchedulerStatusHasBeenSet = false;
 
   ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
-  bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
 
   ModelQuality m_modelQuality{ModelQuality::NOT_SET};
+  bool m_modelNameHasBeenSet = false;
+  bool m_modelArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_activeModelVersionHasBeenSet = false;
+  bool m_activeModelVersionArnHasBeenSet = false;
+  bool m_latestScheduledRetrainingStatusHasBeenSet = false;
+  bool m_latestScheduledRetrainingModelVersionHasBeenSet = false;
+  bool m_latestScheduledRetrainingStartTimeHasBeenSet = false;
+  bool m_nextScheduledRetrainingStartDateHasBeenSet = false;
+  bool m_retrainingSchedulerStatusHasBeenSet = false;
+  bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
   bool m_modelQualityHasBeenSet = false;
 };
 

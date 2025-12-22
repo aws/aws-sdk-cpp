@@ -60,9 +60,9 @@ class GetConnectPeerResult {
   ///@}
  private:
   ConnectPeer m_connectPeer;
-  bool m_connectPeerHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectPeerHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

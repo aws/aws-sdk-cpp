@@ -95,12 +95,12 @@ class BatchGetDocumentStatusResult {
   ///@}
  private:
   Aws::Vector<BatchGetDocumentStatusResponseError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<Status> m_documentStatusList;
-  bool m_documentStatusListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_errorsHasBeenSet = false;
+  bool m_documentStatusListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

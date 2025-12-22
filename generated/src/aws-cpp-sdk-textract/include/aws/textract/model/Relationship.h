@@ -92,9 +92,9 @@ class Relationship {
   ///@}
  private:
   RelationshipType m_type{RelationshipType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_ids;
+  bool m_typeHasBeenSet = false;
   bool m_idsHasBeenSet = false;
 };
 

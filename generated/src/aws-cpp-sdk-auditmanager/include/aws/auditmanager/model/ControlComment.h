@@ -88,12 +88,12 @@ class ControlComment {
   ///@}
  private:
   Aws::String m_authorName;
-  bool m_authorNameHasBeenSet = false;
 
   Aws::String m_commentBody;
-  bool m_commentBodyHasBeenSet = false;
 
   Aws::Utils::DateTime m_postedDate{};
+  bool m_authorNameHasBeenSet = false;
+  bool m_commentBodyHasBeenSet = false;
   bool m_postedDateHasBeenSet = false;
 };
 

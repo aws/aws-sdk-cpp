@@ -153,21 +153,21 @@ class ChangeSetHook {
   ///@}
  private:
   HookInvocationPoint m_invocationPoint{HookInvocationPoint::NOT_SET};
-  bool m_invocationPointHasBeenSet = false;
 
   HookFailureMode m_failureMode{HookFailureMode::NOT_SET};
-  bool m_failureModeHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeVersionId;
-  bool m_typeVersionIdHasBeenSet = false;
 
   Aws::String m_typeConfigurationVersionId;
-  bool m_typeConfigurationVersionIdHasBeenSet = false;
 
   ChangeSetHookTargetDetails m_targetDetails;
+  bool m_invocationPointHasBeenSet = false;
+  bool m_failureModeHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeVersionIdHasBeenSet = false;
+  bool m_typeConfigurationVersionIdHasBeenSet = false;
   bool m_targetDetailsHasBeenSet = false;
 };
 

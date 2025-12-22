@@ -60,9 +60,9 @@ class UpdateBotResult {
   ///@}
  private:
   Bot m_bot;
-  bool m_botHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

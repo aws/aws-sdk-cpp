@@ -105,15 +105,15 @@ class GameServerContainerGroupCounts {
   ///@}
  private:
   int m_pENDING{0};
-  bool m_pENDINGHasBeenSet = false;
 
   int m_aCTIVE{0};
-  bool m_aCTIVEHasBeenSet = false;
 
   int m_iDLE{0};
-  bool m_iDLEHasBeenSet = false;
 
   int m_tERMINATING{0};
+  bool m_pENDINGHasBeenSet = false;
+  bool m_aCTIVEHasBeenSet = false;
+  bool m_iDLEHasBeenSet = false;
   bool m_tERMINATINGHasBeenSet = false;
 };
 

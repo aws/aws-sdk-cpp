@@ -94,12 +94,12 @@ class ContactDetails {
   ///@}
  private:
   Aws::String m_label;
-  bool m_labelHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::Vector<Category> m_categories;
+  bool m_labelHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_categoriesHasBeenSet = false;
 };
 

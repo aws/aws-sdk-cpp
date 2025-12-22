@@ -83,9 +83,9 @@ class LendingDocument {
   ///@}
  private:
   Aws::Vector<LendingField> m_lendingFields;
-  bool m_lendingFieldsHasBeenSet = false;
 
   Aws::Vector<SignatureDetection> m_signatureDetections;
+  bool m_lendingFieldsHasBeenSet = false;
   bool m_signatureDetectionsHasBeenSet = false;
 };
 

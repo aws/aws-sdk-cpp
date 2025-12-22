@@ -79,9 +79,9 @@ class EndpointState {
   ///@}
  private:
   EndpointStatus m_status{EndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   EndpointStatusReason m_statusReason{EndpointStatusReason::NOT_SET};
+  bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
 };
 

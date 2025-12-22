@@ -78,9 +78,9 @@ class NotificationWithSubscribers {
   ///@}
  private:
   Notification m_notification;
-  bool m_notificationHasBeenSet = false;
 
   Aws::Vector<Subscriber> m_subscribers;
+  bool m_notificationHasBeenSet = false;
   bool m_subscribersHasBeenSet = false;
 };
 

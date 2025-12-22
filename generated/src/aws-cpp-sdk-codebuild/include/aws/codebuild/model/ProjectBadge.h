@@ -69,9 +69,9 @@ class ProjectBadge {
   ///@}
  private:
   bool m_badgeEnabled{false};
-  bool m_badgeEnabledHasBeenSet = false;
 
   Aws::String m_badgeRequestUrl;
+  bool m_badgeEnabledHasBeenSet = false;
   bool m_badgeRequestUrlHasBeenSet = false;
 };
 

@@ -134,21 +134,21 @@ class CodegenGenericDataField {
   ///@}
  private:
   CodegenGenericDataFieldDataType m_dataType{CodegenGenericDataFieldDataType::NOT_SET};
-  bool m_dataTypeHasBeenSet = false;
 
   Aws::String m_dataTypeValue;
-  bool m_dataTypeValueHasBeenSet = false;
 
   bool m_required{false};
-  bool m_requiredHasBeenSet = false;
 
   bool m_readOnly{false};
-  bool m_readOnlyHasBeenSet = false;
 
   bool m_isArray{false};
-  bool m_isArrayHasBeenSet = false;
 
   CodegenGenericDataRelationshipType m_relationship;
+  bool m_dataTypeHasBeenSet = false;
+  bool m_dataTypeValueHasBeenSet = false;
+  bool m_requiredHasBeenSet = false;
+  bool m_readOnlyHasBeenSet = false;
+  bool m_isArrayHasBeenSet = false;
   bool m_relationshipHasBeenSet = false;
 };
 

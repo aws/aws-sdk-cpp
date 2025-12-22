@@ -89,12 +89,12 @@ class MasterUserOptions {
   ///@}
  private:
   Aws::String m_masterUserARN;
-  bool m_masterUserARNHasBeenSet = false;
 
   Aws::String m_masterUserName;
-  bool m_masterUserNameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
+  bool m_masterUserARNHasBeenSet = false;
+  bool m_masterUserNameHasBeenSet = false;
   bool m_masterUserPasswordHasBeenSet = false;
 };
 

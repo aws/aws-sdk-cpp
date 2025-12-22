@@ -199,24 +199,24 @@ class ClassifyDocumentResult {
   ///@}
  private:
   Aws::Vector<DocumentClass> m_classes;
-  bool m_classesHasBeenSet = false;
 
   Aws::Vector<DocumentLabel> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   Aws::Vector<DocumentTypeListItem> m_documentType;
-  bool m_documentTypeHasBeenSet = false;
 
   Aws::Vector<ErrorsListItem> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::Vector<WarningsListItem> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_classesHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_documentTypeHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

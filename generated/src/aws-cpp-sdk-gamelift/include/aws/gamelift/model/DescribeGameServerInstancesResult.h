@@ -86,12 +86,12 @@ class DescribeGameServerInstancesResult {
   ///@}
  private:
   Aws::Vector<GameServerInstance> m_gameServerInstances;
-  bool m_gameServerInstancesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gameServerInstancesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DescribeVolumeAttributeRequest : public EC2Request {
   ///@}
  private:
   VolumeAttributeName m_attribute{VolumeAttributeName::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_volumeId;
-  bool m_volumeIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_attributeHasBeenSet = false;
+  bool m_volumeIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

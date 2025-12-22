@@ -87,12 +87,12 @@ class ListServicePrincipalNamesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ServicePrincipalNameSummary> m_servicePrincipalNames;
-  bool m_servicePrincipalNamesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_servicePrincipalNamesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

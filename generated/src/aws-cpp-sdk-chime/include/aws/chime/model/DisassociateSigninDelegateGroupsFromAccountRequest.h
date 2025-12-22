@@ -72,9 +72,9 @@ class DisassociateSigninDelegateGroupsFromAccountRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_groupNames;
+  bool m_accountIdHasBeenSet = false;
   bool m_groupNamesHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class CreateStreamKeyResult {
   ///@}
  private:
   StreamKey m_streamKey;
-  bool m_streamKeyHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_streamKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

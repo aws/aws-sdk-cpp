@@ -88,12 +88,12 @@ class CreateGuardrailVersionRequest : public BedrockRequest {
   ///@}
  private:
   Aws::String m_guardrailIdentifier;
-  bool m_guardrailIdentifierHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_guardrailIdentifierHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

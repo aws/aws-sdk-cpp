@@ -60,9 +60,9 @@ class GetTransactionResult {
   ///@}
  private:
   Transaction m_transaction;
-  bool m_transactionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_transactionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

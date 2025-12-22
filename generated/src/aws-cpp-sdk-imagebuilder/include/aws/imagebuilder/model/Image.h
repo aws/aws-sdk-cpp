@@ -580,84 +580,84 @@ class Image {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   ImageType m_type{ImageType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Platform m_platform{Platform::NOT_SET};
-  bool m_platformHasBeenSet = false;
 
   bool m_enhancedImageMetadataEnabled{false};
-  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
 
   Aws::String m_osVersion;
-  bool m_osVersionHasBeenSet = false;
 
   ImageState m_state;
-  bool m_stateHasBeenSet = false;
 
   ImageRecipe m_imageRecipe;
-  bool m_imageRecipeHasBeenSet = false;
 
   ContainerRecipe m_containerRecipe;
-  bool m_containerRecipeHasBeenSet = false;
 
   Aws::String m_sourcePipelineName;
-  bool m_sourcePipelineNameHasBeenSet = false;
 
   Aws::String m_sourcePipelineArn;
-  bool m_sourcePipelineArnHasBeenSet = false;
 
   InfrastructureConfiguration m_infrastructureConfiguration;
-  bool m_infrastructureConfigurationHasBeenSet = false;
 
   DistributionConfiguration m_distributionConfiguration;
-  bool m_distributionConfigurationHasBeenSet = false;
 
   ImageTestsConfiguration m_imageTestsConfiguration;
-  bool m_imageTestsConfigurationHasBeenSet = false;
 
   Aws::String m_dateCreated;
-  bool m_dateCreatedHasBeenSet = false;
 
   OutputResources m_outputResources;
-  bool m_outputResourcesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   BuildType m_buildType{BuildType::NOT_SET};
-  bool m_buildTypeHasBeenSet = false;
 
   ImageSource m_imageSource{ImageSource::NOT_SET};
-  bool m_imageSourceHasBeenSet = false;
 
   ImageScanState m_scanState;
-  bool m_scanStateHasBeenSet = false;
 
   ImageScanningConfiguration m_imageScanningConfiguration;
-  bool m_imageScanningConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_deprecationTime{};
-  bool m_deprecationTimeHasBeenSet = false;
 
   Aws::String m_lifecycleExecutionId;
-  bool m_lifecycleExecutionIdHasBeenSet = false;
 
   Aws::String m_executionRole;
-  bool m_executionRoleHasBeenSet = false;
 
   Aws::Vector<WorkflowConfiguration> m_workflows;
-  bool m_workflowsHasBeenSet = false;
 
   ImageLoggingConfiguration m_loggingConfiguration;
+  bool m_arnHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_platformHasBeenSet = false;
+  bool m_enhancedImageMetadataEnabledHasBeenSet = false;
+  bool m_osVersionHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_imageRecipeHasBeenSet = false;
+  bool m_containerRecipeHasBeenSet = false;
+  bool m_sourcePipelineNameHasBeenSet = false;
+  bool m_sourcePipelineArnHasBeenSet = false;
+  bool m_infrastructureConfigurationHasBeenSet = false;
+  bool m_distributionConfigurationHasBeenSet = false;
+  bool m_imageTestsConfigurationHasBeenSet = false;
+  bool m_dateCreatedHasBeenSet = false;
+  bool m_outputResourcesHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_buildTypeHasBeenSet = false;
+  bool m_imageSourceHasBeenSet = false;
+  bool m_scanStateHasBeenSet = false;
+  bool m_imageScanningConfigurationHasBeenSet = false;
+  bool m_deprecationTimeHasBeenSet = false;
+  bool m_lifecycleExecutionIdHasBeenSet = false;
+  bool m_executionRoleHasBeenSet = false;
+  bool m_workflowsHasBeenSet = false;
   bool m_loggingConfigurationHasBeenSet = false;
 };
 

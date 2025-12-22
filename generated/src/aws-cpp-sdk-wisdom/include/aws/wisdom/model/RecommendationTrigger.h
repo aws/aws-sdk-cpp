@@ -134,18 +134,18 @@ class RecommendationTrigger {
   ///@}
  private:
   RecommendationTriggerData m_data;
-  bool m_dataHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendationIds;
-  bool m_recommendationIdsHasBeenSet = false;
 
   RecommendationSourceType m_source{RecommendationSourceType::NOT_SET};
-  bool m_sourceHasBeenSet = false;
 
   RecommendationTriggerType m_type{RecommendationTriggerType::NOT_SET};
+  bool m_dataHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_recommendationIdsHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

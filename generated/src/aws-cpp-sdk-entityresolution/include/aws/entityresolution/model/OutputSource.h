@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
+#include <aws/entityresolution/model/CustomerProfilesIntegrationConfig.h>
 #include <aws/entityresolution/model/OutputAttribute.h>
 
 #include <utility>
@@ -38,24 +39,6 @@ class OutputSource {
 
   ///@{
   /**
-   * <p>The S3 path to which Entity Resolution will write the output table.</p>
-   */
-  inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
-  inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
-  template <typename OutputS3PathT = Aws::String>
-  void SetOutputS3Path(OutputS3PathT&& value) {
-    m_outputS3PathHasBeenSet = true;
-    m_outputS3Path = std::forward<OutputS3PathT>(value);
-  }
-  template <typename OutputS3PathT = Aws::String>
-  OutputSource& WithOutputS3Path(OutputS3PathT&& value) {
-    SetOutputS3Path(std::forward<OutputS3PathT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Customer KMS ARN for encryption at rest. If not provided, system will use an
    * Entity Resolution managed KMS key.</p>
    */
@@ -69,6 +52,24 @@ class OutputSource {
   template <typename KMSArnT = Aws::String>
   OutputSource& WithKMSArn(KMSArnT&& value) {
     SetKMSArn(std::forward<KMSArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The S3 path to which Entity Resolution will write the output table.</p>
+   */
+  inline const Aws::String& GetOutputS3Path() const { return m_outputS3Path; }
+  inline bool OutputS3PathHasBeenSet() const { return m_outputS3PathHasBeenSet; }
+  template <typename OutputS3PathT = Aws::String>
+  void SetOutputS3Path(OutputS3PathT&& value) {
+    m_outputS3PathHasBeenSet = true;
+    m_outputS3Path = std::forward<OutputS3PathT>(value);
+  }
+  template <typename OutputS3PathT = Aws::String>
+  OutputSource& WithOutputS3Path(OutputS3PathT&& value) {
+    SetOutputS3Path(std::forward<OutputS3PathT>(value));
     return *this;
   }
   ///@}
@@ -119,18 +120,44 @@ class OutputSource {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_outputS3Path;
-  bool m_outputS3PathHasBeenSet = false;
 
+  ///@{
+  /**
+   * <p>Specifies the Customer Profiles integration configuration for sending matched
+   * output directly to Customer Profiles. When configured, Entity Resolution
+   * automatically creates and updates customer profiles based on match clusters,
+   * eliminating the need for manual Amazon S3 integration setup.</p>
+   */
+  inline const CustomerProfilesIntegrationConfig& GetCustomerProfilesIntegrationConfig() const {
+    return m_customerProfilesIntegrationConfig;
+  }
+  inline bool CustomerProfilesIntegrationConfigHasBeenSet() const { return m_customerProfilesIntegrationConfigHasBeenSet; }
+  template <typename CustomerProfilesIntegrationConfigT = CustomerProfilesIntegrationConfig>
+  void SetCustomerProfilesIntegrationConfig(CustomerProfilesIntegrationConfigT&& value) {
+    m_customerProfilesIntegrationConfigHasBeenSet = true;
+    m_customerProfilesIntegrationConfig = std::forward<CustomerProfilesIntegrationConfigT>(value);
+  }
+  template <typename CustomerProfilesIntegrationConfigT = CustomerProfilesIntegrationConfig>
+  OutputSource& WithCustomerProfilesIntegrationConfig(CustomerProfilesIntegrationConfigT&& value) {
+    SetCustomerProfilesIntegrationConfig(std::forward<CustomerProfilesIntegrationConfigT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_kMSArn;
-  bool m_kMSArnHasBeenSet = false;
+
+  Aws::String m_outputS3Path;
 
   Aws::Vector<OutputAttribute> m_output;
-  bool m_outputHasBeenSet = false;
 
   bool m_applyNormalization{false};
+
+  CustomerProfilesIntegrationConfig m_customerProfilesIntegrationConfig;
+  bool m_kMSArnHasBeenSet = false;
+  bool m_outputS3PathHasBeenSet = false;
+  bool m_outputHasBeenSet = false;
   bool m_applyNormalizationHasBeenSet = false;
+  bool m_customerProfilesIntegrationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

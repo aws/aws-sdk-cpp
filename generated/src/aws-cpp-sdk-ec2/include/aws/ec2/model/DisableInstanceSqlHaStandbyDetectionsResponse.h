@@ -69,9 +69,9 @@ class DisableInstanceSqlHaStandbyDetectionsResponse {
   ///@}
  private:
   Aws::Vector<RegisteredInstance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

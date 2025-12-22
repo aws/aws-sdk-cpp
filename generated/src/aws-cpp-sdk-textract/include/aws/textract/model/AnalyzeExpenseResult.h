@@ -83,12 +83,12 @@ class AnalyzeExpenseResult {
   ///@}
  private:
   DocumentMetadata m_documentMetadata;
-  bool m_documentMetadataHasBeenSet = false;
 
   Aws::Vector<ExpenseDocument> m_expenseDocuments;
-  bool m_expenseDocumentsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentMetadataHasBeenSet = false;
+  bool m_expenseDocumentsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

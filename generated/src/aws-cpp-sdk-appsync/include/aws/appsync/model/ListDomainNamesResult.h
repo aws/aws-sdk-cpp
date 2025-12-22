@@ -85,12 +85,12 @@ class ListDomainNamesResult {
   ///@}
  private:
   Aws::Vector<DomainNameConfig> m_domainNameConfigs;
-  bool m_domainNameConfigsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNameConfigsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

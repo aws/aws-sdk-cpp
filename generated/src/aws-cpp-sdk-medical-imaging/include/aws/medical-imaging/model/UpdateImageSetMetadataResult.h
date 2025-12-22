@@ -177,30 +177,30 @@ class UpdateImageSetMetadataResult {
   ///@}
  private:
   Aws::String m_datastoreId;
-  bool m_datastoreIdHasBeenSet = false;
 
   Aws::String m_imageSetId;
-  bool m_imageSetIdHasBeenSet = false;
 
   Aws::String m_latestVersionId;
-  bool m_latestVersionIdHasBeenSet = false;
 
   ImageSetState m_imageSetState{ImageSetState::NOT_SET};
-  bool m_imageSetStateHasBeenSet = false;
 
   ImageSetWorkflowStatus m_imageSetWorkflowStatus{ImageSetWorkflowStatus::NOT_SET};
-  bool m_imageSetWorkflowStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datastoreIdHasBeenSet = false;
+  bool m_imageSetIdHasBeenSet = false;
+  bool m_latestVersionIdHasBeenSet = false;
+  bool m_imageSetStateHasBeenSet = false;
+  bool m_imageSetWorkflowStatusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class S3AccessPoint {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::String m_alias;
-  bool m_aliasHasBeenSet = false;
 
   S3AccessPointVpcConfiguration m_vpcConfiguration;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_aliasHasBeenSet = false;
   bool m_vpcConfigurationHasBeenSet = false;
 };
 

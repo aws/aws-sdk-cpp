@@ -87,12 +87,12 @@ class ListSnapshotCopyConfigurationsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<SnapshotCopyConfiguration> m_snapshotCopyConfigurations;
-  bool m_snapshotCopyConfigurationsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_snapshotCopyConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

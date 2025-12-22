@@ -168,24 +168,24 @@ class DatabaseResponse {
   ///@}
  private:
   Aws::String m_databaseId;
-  bool m_databaseIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_ipAddress;
-  bool m_ipAddressHasBeenSet = false;
 
   long long m_numberOfSchemas{0};
-  bool m_numberOfSchemasHasBeenSet = false;
 
   ServerShortInfoResponse m_server;
-  bool m_serverHasBeenSet = false;
 
   DatabaseInstanceSoftwareDetailsResponse m_softwareDetails;
-  bool m_softwareDetailsHasBeenSet = false;
 
   Aws::Vector<CollectorShortInfoResponse> m_collectors;
+  bool m_databaseIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_ipAddressHasBeenSet = false;
+  bool m_numberOfSchemasHasBeenSet = false;
+  bool m_serverHasBeenSet = false;
+  bool m_softwareDetailsHasBeenSet = false;
   bool m_collectorsHasBeenSet = false;
 };
 

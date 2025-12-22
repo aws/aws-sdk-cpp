@@ -79,9 +79,9 @@ class TemplateSSMDocumentDetails {
   ///@}
  private:
   Aws::String m_documentName;
-  bool m_documentNameHasBeenSet = false;
 
   Aws::String m_documentVersion;
+  bool m_documentNameHasBeenSet = false;
   bool m_documentVersionHasBeenSet = false;
 };
 

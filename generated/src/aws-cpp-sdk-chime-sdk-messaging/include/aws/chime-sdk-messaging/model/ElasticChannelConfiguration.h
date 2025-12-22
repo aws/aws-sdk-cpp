@@ -82,12 +82,12 @@ class ElasticChannelConfiguration {
   ///@}
  private:
   int m_maximumSubChannels{0};
-  bool m_maximumSubChannelsHasBeenSet = false;
 
   int m_targetMembershipsPerSubChannel{0};
-  bool m_targetMembershipsPerSubChannelHasBeenSet = false;
 
   int m_minimumMembershipPercentage{0};
+  bool m_maximumSubChannelsHasBeenSet = false;
+  bool m_targetMembershipsPerSubChannelHasBeenSet = false;
   bool m_minimumMembershipPercentageHasBeenSet = false;
 };
 

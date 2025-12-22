@@ -166,24 +166,24 @@ class OfferSetFilters {
   ///@}
  private:
   OfferSetEntityIdFilter m_entityId;
-  bool m_entityIdHasBeenSet = false;
 
   OfferSetNameFilter m_name;
-  bool m_nameHasBeenSet = false;
 
   OfferSetStateFilter m_state;
-  bool m_stateHasBeenSet = false;
 
   OfferSetReleaseDateFilter m_releaseDate;
-  bool m_releaseDateHasBeenSet = false;
 
   OfferSetAssociatedOfferIdsFilter m_associatedOfferIds;
-  bool m_associatedOfferIdsHasBeenSet = false;
 
   OfferSetSolutionIdFilter m_solutionId;
-  bool m_solutionIdHasBeenSet = false;
 
   OfferSetLastModifiedDateFilter m_lastModifiedDate;
+  bool m_entityIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_releaseDateHasBeenSet = false;
+  bool m_associatedOfferIdsHasBeenSet = false;
+  bool m_solutionIdHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;
 };
 

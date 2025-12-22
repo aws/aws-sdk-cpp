@@ -66,9 +66,9 @@ class UpdateQuickSightQSearchConfigurationRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   QSearchStatus m_qSearchStatus{QSearchStatus::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_qSearchStatusHasBeenSet = false;
 };
 

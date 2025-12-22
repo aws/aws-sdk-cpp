@@ -115,15 +115,15 @@ class UpdateLandingZoneRequest : public ControlTowerRequest {
   ///@}
  private:
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Vector<RemediationType> m_remediationTypes;
-  bool m_remediationTypesHasBeenSet = false;
 
   Aws::String m_landingZoneIdentifier;
-  bool m_landingZoneIdentifierHasBeenSet = false;
 
   Aws::Utils::Document m_manifest;
+  bool m_versionHasBeenSet = false;
+  bool m_remediationTypesHasBeenSet = false;
+  bool m_landingZoneIdentifierHasBeenSet = false;
   bool m_manifestHasBeenSet = false;
 };
 

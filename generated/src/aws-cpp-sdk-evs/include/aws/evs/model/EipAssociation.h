@@ -87,12 +87,12 @@ class EipAssociation {
   ///@}
  private:
   Aws::String m_associationId;
-  bool m_associationIdHasBeenSet = false;
 
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_ipAddress;
+  bool m_associationIdHasBeenSet = false;
+  bool m_allocationIdHasBeenSet = false;
   bool m_ipAddressHasBeenSet = false;
 };
 

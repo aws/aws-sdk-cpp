@@ -235,36 +235,36 @@ class CreateAccessGrantResult {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_accessGrantId;
-  bool m_accessGrantIdHasBeenSet = false;
 
   Aws::String m_accessGrantArn;
-  bool m_accessGrantArnHasBeenSet = false;
 
   Grantee m_grantee;
-  bool m_granteeHasBeenSet = false;
 
   Aws::String m_accessGrantsLocationId;
-  bool m_accessGrantsLocationIdHasBeenSet = false;
 
   AccessGrantsLocationConfiguration m_accessGrantsLocationConfiguration;
-  bool m_accessGrantsLocationConfigurationHasBeenSet = false;
 
   Permission m_permission{Permission::NOT_SET};
-  bool m_permissionHasBeenSet = false;
 
   Aws::String m_applicationArn;
-  bool m_applicationArnHasBeenSet = false;
 
   Aws::String m_grantScope;
-  bool m_grantScopeHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::String m_hostId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_accessGrantIdHasBeenSet = false;
+  bool m_accessGrantArnHasBeenSet = false;
+  bool m_granteeHasBeenSet = false;
+  bool m_accessGrantsLocationIdHasBeenSet = false;
+  bool m_accessGrantsLocationConfigurationHasBeenSet = false;
+  bool m_permissionHasBeenSet = false;
+  bool m_applicationArnHasBeenSet = false;
+  bool m_grantScopeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
 

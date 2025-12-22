@@ -88,12 +88,12 @@ class UpdateFieldLevelEncryptionConfig2020_05_31Request : public CloudFrontReque
   ///@}
  private:
   FieldLevelEncryptionConfig m_fieldLevelEncryptionConfig;
-  bool m_fieldLevelEncryptionConfigHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_ifMatch;
+  bool m_fieldLevelEncryptionConfigHasBeenSet = false;
+  bool m_idHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
 };
 

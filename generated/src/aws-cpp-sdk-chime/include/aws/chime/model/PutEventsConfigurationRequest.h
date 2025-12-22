@@ -101,15 +101,15 @@ class PutEventsConfigurationRequest : public ChimeRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_outboundEventsHTTPSEndpoint;
-  bool m_outboundEventsHTTPSEndpointHasBeenSet = false;
 
   Aws::String m_lambdaFunctionArn;
+  bool m_accountIdHasBeenSet = false;
+  bool m_botIdHasBeenSet = false;
+  bool m_outboundEventsHTTPSEndpointHasBeenSet = false;
   bool m_lambdaFunctionArnHasBeenSet = false;
 };
 

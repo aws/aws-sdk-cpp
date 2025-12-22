@@ -149,21 +149,21 @@ class ProbeInput {
   ///@}
  private:
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   int m_destinationPort{0};
-  bool m_destinationPortHasBeenSet = false;
 
   Protocol m_protocol{Protocol::NOT_SET};
-  bool m_protocolHasBeenSet = false;
 
   int m_packetSize{0};
-  bool m_packetSizeHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationPortHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_packetSizeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

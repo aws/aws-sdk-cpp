@@ -78,12 +78,12 @@ class ExportNotebookResult {
   ///@}
  private:
   NotebookMetadata m_notebookMetadata;
-  bool m_notebookMetadataHasBeenSet = false;
 
   Aws::String m_payload;
-  bool m_payloadHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_notebookMetadataHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

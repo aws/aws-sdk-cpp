@@ -153,21 +153,21 @@ class DataSourceConfiguration {
   ///@}
  private:
   DataSourceType m_type{DataSourceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   S3DataSourceConfiguration m_s3Configuration;
-  bool m_s3ConfigurationHasBeenSet = false;
 
   WebDataSourceConfiguration m_webConfiguration;
-  bool m_webConfigurationHasBeenSet = false;
 
   ConfluenceDataSourceConfiguration m_confluenceConfiguration;
-  bool m_confluenceConfigurationHasBeenSet = false;
 
   SalesforceDataSourceConfiguration m_salesforceConfiguration;
-  bool m_salesforceConfigurationHasBeenSet = false;
 
   SharePointDataSourceConfiguration m_sharePointConfiguration;
+  bool m_typeHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
+  bool m_webConfigurationHasBeenSet = false;
+  bool m_confluenceConfigurationHasBeenSet = false;
+  bool m_salesforceConfigurationHasBeenSet = false;
   bool m_sharePointConfigurationHasBeenSet = false;
 };
 

@@ -249,33 +249,33 @@ class CapacityProvider {
   ///@}
  private:
   Aws::String m_capacityProviderArn;
-  bool m_capacityProviderArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_cluster;
-  bool m_clusterHasBeenSet = false;
 
   CapacityProviderStatus m_status{CapacityProviderStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   AutoScalingGroupProvider m_autoScalingGroupProvider;
-  bool m_autoScalingGroupProviderHasBeenSet = false;
 
   ManagedInstancesProvider m_managedInstancesProvider;
-  bool m_managedInstancesProviderHasBeenSet = false;
 
   CapacityProviderUpdateStatus m_updateStatus{CapacityProviderUpdateStatus::NOT_SET};
-  bool m_updateStatusHasBeenSet = false;
 
   Aws::String m_updateStatusReason;
-  bool m_updateStatusReasonHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   CapacityProviderType m_type{CapacityProviderType::NOT_SET};
+  bool m_capacityProviderArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_clusterHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_autoScalingGroupProviderHasBeenSet = false;
+  bool m_managedInstancesProviderHasBeenSet = false;
+  bool m_updateStatusHasBeenSet = false;
+  bool m_updateStatusReasonHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

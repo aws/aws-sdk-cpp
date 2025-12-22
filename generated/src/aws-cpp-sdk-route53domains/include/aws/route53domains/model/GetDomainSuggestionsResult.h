@@ -69,9 +69,9 @@ class GetDomainSuggestionsResult {
   ///@}
  private:
   Aws::Vector<DomainSuggestion> m_suggestionsList;
-  bool m_suggestionsListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_suggestionsListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

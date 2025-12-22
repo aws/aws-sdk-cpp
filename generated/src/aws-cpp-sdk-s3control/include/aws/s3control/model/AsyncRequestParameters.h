@@ -101,12 +101,12 @@ class AsyncRequestParameters {
   ///@}
  private:
   CreateMultiRegionAccessPointInput m_createMultiRegionAccessPointRequest;
-  bool m_createMultiRegionAccessPointRequestHasBeenSet = false;
 
   DeleteMultiRegionAccessPointInput m_deleteMultiRegionAccessPointRequest;
-  bool m_deleteMultiRegionAccessPointRequestHasBeenSet = false;
 
   PutMultiRegionAccessPointPolicyInput m_putMultiRegionAccessPointPolicyRequest;
+  bool m_createMultiRegionAccessPointRequestHasBeenSet = false;
+  bool m_deleteMultiRegionAccessPointRequestHasBeenSet = false;
   bool m_putMultiRegionAccessPointPolicyRequestHasBeenSet = false;
 };
 

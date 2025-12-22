@@ -88,12 +88,12 @@ class AssociateDefaultVocabularyRequest : public ConnectRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   VocabularyLanguageCode m_languageCode{VocabularyLanguageCode::NOT_SET};
-  bool m_languageCodeHasBeenSet = false;
 
   Aws::String m_vocabularyId;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_languageCodeHasBeenSet = false;
   bool m_vocabularyIdHasBeenSet = false;
 };
 

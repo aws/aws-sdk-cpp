@@ -66,9 +66,9 @@ class CapacityLimits {
   ///@}
  private:
   int m_maxIndexingCapacityInOCU{0};
-  bool m_maxIndexingCapacityInOCUHasBeenSet = false;
 
   int m_maxSearchCapacityInOCU{0};
+  bool m_maxIndexingCapacityInOCUHasBeenSet = false;
   bool m_maxSearchCapacityInOCUHasBeenSet = false;
 };
 

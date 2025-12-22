@@ -66,9 +66,9 @@ class ScaleConfig {
   ///@}
  private:
   int m_scalePercentage{0};
-  bool m_scalePercentageHasBeenSet = false;
 
   int m_scaleIntervalMinutes{0};
+  bool m_scalePercentageHasBeenSet = false;
   bool m_scaleIntervalMinutesHasBeenSet = false;
 };
 

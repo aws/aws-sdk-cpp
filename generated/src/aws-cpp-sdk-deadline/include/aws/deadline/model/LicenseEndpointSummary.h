@@ -103,15 +103,15 @@ class LicenseEndpointSummary {
   ///@}
  private:
   Aws::String m_licenseEndpointId;
-  bool m_licenseEndpointIdHasBeenSet = false;
 
   LicenseEndpointStatus m_status{LicenseEndpointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_vpcId;
+  bool m_licenseEndpointIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
 };
 

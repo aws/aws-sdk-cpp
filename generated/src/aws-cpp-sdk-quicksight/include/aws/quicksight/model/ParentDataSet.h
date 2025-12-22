@@ -77,9 +77,9 @@ class ParentDataSet {
   ///@}
  private:
   Aws::String m_dataSetArn;
-  bool m_dataSetArnHasBeenSet = false;
 
   Aws::Vector<InputColumn> m_inputColumns;
+  bool m_dataSetArnHasBeenSet = false;
   bool m_inputColumnsHasBeenSet = false;
 };
 

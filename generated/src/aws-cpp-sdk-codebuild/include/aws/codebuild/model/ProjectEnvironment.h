@@ -326,36 +326,36 @@ class ProjectEnvironment {
   ///@}
  private:
   EnvironmentType m_type{EnvironmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_image;
-  bool m_imageHasBeenSet = false;
 
   ComputeType m_computeType{ComputeType::NOT_SET};
-  bool m_computeTypeHasBeenSet = false;
 
   ComputeConfiguration m_computeConfiguration;
-  bool m_computeConfigurationHasBeenSet = false;
 
   ProjectFleet m_fleet;
-  bool m_fleetHasBeenSet = false;
 
   Aws::Vector<EnvironmentVariable> m_environmentVariables;
-  bool m_environmentVariablesHasBeenSet = false;
 
   bool m_privilegedMode{false};
-  bool m_privilegedModeHasBeenSet = false;
 
   Aws::String m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   RegistryCredential m_registryCredential;
-  bool m_registryCredentialHasBeenSet = false;
 
   ImagePullCredentialsType m_imagePullCredentialsType{ImagePullCredentialsType::NOT_SET};
-  bool m_imagePullCredentialsTypeHasBeenSet = false;
 
   DockerServer m_dockerServer;
+  bool m_typeHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_computeConfigurationHasBeenSet = false;
+  bool m_fleetHasBeenSet = false;
+  bool m_environmentVariablesHasBeenSet = false;
+  bool m_privilegedModeHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
+  bool m_registryCredentialHasBeenSet = false;
+  bool m_imagePullCredentialsTypeHasBeenSet = false;
   bool m_dockerServerHasBeenSet = false;
 };
 

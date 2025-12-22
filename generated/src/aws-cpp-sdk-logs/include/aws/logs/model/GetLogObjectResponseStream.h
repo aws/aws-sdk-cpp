@@ -70,9 +70,9 @@ class GetLogObjectResponseStream {
   ///@}
  private:
   FieldsData m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   CloudWatchLogsError m_internalStreamingException;
+  bool m_fieldsHasBeenSet = false;
   bool m_internalStreamingExceptionHasBeenSet = false;
 };
 

@@ -60,9 +60,9 @@ class StartNetworkInsightsAnalysisResponse {
   ///@}
  private:
   NetworkInsightsAnalysis m_networkInsightsAnalysis;
-  bool m_networkInsightsAnalysisHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_networkInsightsAnalysisHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

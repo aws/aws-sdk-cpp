@@ -91,12 +91,12 @@ class BatchUpdateExclusionWindowsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_sloIds;
-  bool m_sloIdsHasBeenSet = false;
 
   Aws::Vector<BatchUpdateExclusionWindowsError> m_errors;
-  bool m_errorsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_sloIdsHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

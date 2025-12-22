@@ -10,6 +10,7 @@
 #include <aws/connect/model/Endpoint.h>
 #include <aws/connect/model/ParticipantDetails.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
+#include <aws/connect/model/TemplatedMessageConfig.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -92,8 +93,8 @@ class StartOutboundChatContactRequest : public ConnectRequest {
    * using an attribute map. The attributes are standard Amazon Connect attributes.
    * They can be accessed in flows.</p> <ul> <li> <p>Attribute keys can include only
    * alphanumeric, <code>-</code>, and <code>_</code>.</p> </li> <li> <p>This field
-   * can be used to show channel subtype, such as <code>connect:Guide</code> and
-   * <code>connect:SMS</code>.</p> </li> </ul>
+   * can be used to show channel subtype, such as <code>connect:SMS</code> and
+   * <code>connect:WhatsApp</code>.</p> </li> </ul>
    */
   inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const { return m_segmentAttributes; }
   inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
@@ -216,6 +217,22 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@}
 
   ///@{
+
+  inline const TemplatedMessageConfig& GetInitialTemplatedSystemMessage() const { return m_initialTemplatedSystemMessage; }
+  inline bool InitialTemplatedSystemMessageHasBeenSet() const { return m_initialTemplatedSystemMessageHasBeenSet; }
+  template <typename InitialTemplatedSystemMessageT = TemplatedMessageConfig>
+  void SetInitialTemplatedSystemMessage(InitialTemplatedSystemMessageT&& value) {
+    m_initialTemplatedSystemMessageHasBeenSet = true;
+    m_initialTemplatedSystemMessage = std::forward<InitialTemplatedSystemMessageT>(value);
+  }
+  template <typename InitialTemplatedSystemMessageT = TemplatedMessageConfig>
+  StartOutboundChatContactRequest& WithInitialTemplatedSystemMessage(InitialTemplatedSystemMessageT&& value) {
+    SetInitialTemplatedSystemMessage(std::forward<InitialTemplatedSystemMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The unique identifier for an Amazon Connect contact. This identifier is
    * related to the contact starting.</p>
@@ -273,8 +290,8 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
-   * idempotency of the request. If not provided, the AWS SDK populates this field.
-   * For more information about idempotency, see <a
+   * idempotency of the request. If not provided, the Amazon Web Services SDK
+   * populates this field. For more information about idempotency, see <a
    * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
    * retries safe with idempotent APIs</a>. The token is valid for 7 days after
    * creation. If a contact is already started, the contact ID is returned.</p>
@@ -294,39 +311,42 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@}
  private:
   Endpoint m_sourceEndpoint;
-  bool m_sourceEndpointHasBeenSet = false;
 
   Endpoint m_destinationEndpoint;
-  bool m_destinationEndpointHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
-  bool m_segmentAttributesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_contactFlowId;
-  bool m_contactFlowIdHasBeenSet = false;
 
   int m_chatDurationInMinutes{0};
-  bool m_chatDurationInMinutesHasBeenSet = false;
 
   ParticipantDetails m_participantDetails;
-  bool m_participantDetailsHasBeenSet = false;
 
   ChatMessage m_initialSystemMessage;
-  bool m_initialSystemMessageHasBeenSet = false;
+
+  TemplatedMessageConfig m_initialTemplatedSystemMessage;
 
   Aws::String m_relatedContactId;
-  bool m_relatedContactIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_supportedMessagingContentTypes;
-  bool m_supportedMessagingContentTypesHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_sourceEndpointHasBeenSet = false;
+  bool m_destinationEndpointHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_segmentAttributesHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_contactFlowIdHasBeenSet = false;
+  bool m_chatDurationInMinutesHasBeenSet = false;
+  bool m_participantDetailsHasBeenSet = false;
+  bool m_initialSystemMessageHasBeenSet = false;
+  bool m_initialTemplatedSystemMessageHasBeenSet = false;
+  bool m_relatedContactIdHasBeenSet = false;
+  bool m_supportedMessagingContentTypesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

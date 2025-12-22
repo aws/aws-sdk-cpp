@@ -404,66 +404,66 @@ class DescribeScanJobResult {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   ScanJobCreator m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   MalwareScanner m_malwareScanner{MalwareScanner::NOT_SET};
-  bool m_malwareScannerHasBeenSet = false;
 
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   ScanResourceType m_resourceType{ScanResourceType::NOT_SET};
-  bool m_resourceTypeHasBeenSet = false;
 
   Aws::String m_scanBaseRecoveryPointArn;
-  bool m_scanBaseRecoveryPointArnHasBeenSet = false;
 
   Aws::String m_scanId;
-  bool m_scanIdHasBeenSet = false;
 
   Aws::String m_scanJobId;
-  bool m_scanJobIdHasBeenSet = false;
 
   ScanMode m_scanMode{ScanMode::NOT_SET};
-  bool m_scanModeHasBeenSet = false;
 
   ScanResultInfo m_scanResult;
-  bool m_scanResultHasBeenSet = false;
 
   Aws::String m_scannerRoleArn;
-  bool m_scannerRoleArnHasBeenSet = false;
 
   ScanState m_state{ScanState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountIdHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_malwareScannerHasBeenSet = false;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_scanBaseRecoveryPointArnHasBeenSet = false;
+  bool m_scanIdHasBeenSet = false;
+  bool m_scanJobIdHasBeenSet = false;
+  bool m_scanModeHasBeenSet = false;
+  bool m_scanResultHasBeenSet = false;
+  bool m_scannerRoleArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

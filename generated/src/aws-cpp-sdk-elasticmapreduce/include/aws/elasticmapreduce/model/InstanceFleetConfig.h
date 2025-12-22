@@ -216,27 +216,27 @@ class InstanceFleetConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   InstanceFleetType m_instanceFleetType{InstanceFleetType::NOT_SET};
-  bool m_instanceFleetTypeHasBeenSet = false;
 
   int m_targetOnDemandCapacity{0};
-  bool m_targetOnDemandCapacityHasBeenSet = false;
 
   int m_targetSpotCapacity{0};
-  bool m_targetSpotCapacityHasBeenSet = false;
 
   Aws::Vector<InstanceTypeConfig> m_instanceTypeConfigs;
-  bool m_instanceTypeConfigsHasBeenSet = false;
 
   InstanceFleetProvisioningSpecifications m_launchSpecifications;
-  bool m_launchSpecificationsHasBeenSet = false;
 
   InstanceFleetResizingSpecifications m_resizeSpecifications;
-  bool m_resizeSpecificationsHasBeenSet = false;
 
   Aws::String m_context;
+  bool m_nameHasBeenSet = false;
+  bool m_instanceFleetTypeHasBeenSet = false;
+  bool m_targetOnDemandCapacityHasBeenSet = false;
+  bool m_targetSpotCapacityHasBeenSet = false;
+  bool m_instanceTypeConfigsHasBeenSet = false;
+  bool m_launchSpecificationsHasBeenSet = false;
+  bool m_resizeSpecificationsHasBeenSet = false;
   bool m_contextHasBeenSet = false;
 };
 

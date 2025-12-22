@@ -67,9 +67,9 @@ class GetSnapshotLimitsResult {
   ///@}
  private:
   SnapshotLimits m_snapshotLimits;
-  bool m_snapshotLimitsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotLimitsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

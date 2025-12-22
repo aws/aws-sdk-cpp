@@ -65,9 +65,9 @@ class ConversationLevelResultDetail {
   ///@}
  private:
   TestResultMatchStatus m_endToEndResult{TestResultMatchStatus::NOT_SET};
-  bool m_endToEndResultHasBeenSet = false;
 
   TestResultMatchStatus m_speechTranscriptionResult{TestResultMatchStatus::NOT_SET};
+  bool m_endToEndResultHasBeenSet = false;
   bool m_speechTranscriptionResultHasBeenSet = false;
 };
 

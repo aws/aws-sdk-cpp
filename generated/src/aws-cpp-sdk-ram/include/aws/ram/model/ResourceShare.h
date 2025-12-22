@@ -241,33 +241,33 @@ class ResourceShare {
   ///@}
  private:
   Aws::String m_resourceShareArn;
-  bool m_resourceShareArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owningAccountId;
-  bool m_owningAccountIdHasBeenSet = false;
 
   bool m_allowExternalPrincipals{false};
-  bool m_allowExternalPrincipalsHasBeenSet = false;
 
   ResourceShareStatus m_status{ResourceShareStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   ResourceShareFeatureSet m_featureSet{ResourceShareFeatureSet::NOT_SET};
+  bool m_resourceShareArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_owningAccountIdHasBeenSet = false;
+  bool m_allowExternalPrincipalsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_featureSetHasBeenSet = false;
 };
 

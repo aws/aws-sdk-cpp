@@ -75,12 +75,12 @@ class DescribeThemeResult {
   ///@}
  private:
   Theme m_theme;
-  bool m_themeHasBeenSet = false;
 
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_themeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

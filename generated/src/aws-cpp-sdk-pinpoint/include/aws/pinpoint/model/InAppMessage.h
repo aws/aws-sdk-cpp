@@ -101,12 +101,12 @@ class InAppMessage {
   ///@}
  private:
   Aws::Vector<InAppMessageContent> m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_customConfig;
-  bool m_customConfigHasBeenSet = false;
 
   Layout m_layout{Layout::NOT_SET};
+  bool m_contentHasBeenSet = false;
+  bool m_customConfigHasBeenSet = false;
   bool m_layoutHasBeenSet = false;
 };
 

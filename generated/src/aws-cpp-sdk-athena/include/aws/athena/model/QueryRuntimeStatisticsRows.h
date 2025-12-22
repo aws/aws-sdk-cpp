@@ -95,15 +95,15 @@ class QueryRuntimeStatisticsRows {
   ///@}
  private:
   long long m_inputRows{0};
-  bool m_inputRowsHasBeenSet = false;
 
   long long m_inputBytes{0};
-  bool m_inputBytesHasBeenSet = false;
 
   long long m_outputBytes{0};
-  bool m_outputBytesHasBeenSet = false;
 
   long long m_outputRows{0};
+  bool m_inputRowsHasBeenSet = false;
+  bool m_inputBytesHasBeenSet = false;
+  bool m_outputBytesHasBeenSet = false;
   bool m_outputRowsHasBeenSet = false;
 };
 

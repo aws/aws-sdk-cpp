@@ -102,15 +102,15 @@ class DeleteAppVersionResourceResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::String m_appVersion;
-  bool m_appVersionHasBeenSet = false;
 
   PhysicalResource m_physicalResource;
-  bool m_physicalResourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appVersionHasBeenSet = false;
+  bool m_physicalResourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

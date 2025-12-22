@@ -93,12 +93,12 @@ class OrganizationFeatureStatistics {
   ///@}
  private:
   OrgFeature m_name{OrgFeature::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   int m_enabledAccountsCount{0};
-  bool m_enabledAccountsCountHasBeenSet = false;
 
   Aws::Vector<OrganizationFeatureStatisticsAdditionalConfiguration> m_additionalConfiguration;
+  bool m_nameHasBeenSet = false;
+  bool m_enabledAccountsCountHasBeenSet = false;
   bool m_additionalConfigurationHasBeenSet = false;
 };
 

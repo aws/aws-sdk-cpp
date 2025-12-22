@@ -131,15 +131,15 @@ class DebugHookConfig {
   ///@}
  private:
   Aws::String m_localPath;
-  bool m_localPathHasBeenSet = false;
 
   Aws::String m_s3OutputPath;
-  bool m_s3OutputPathHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_hookParameters;
-  bool m_hookParametersHasBeenSet = false;
 
   Aws::Vector<CollectionConfiguration> m_collectionConfigurations;
+  bool m_localPathHasBeenSet = false;
+  bool m_s3OutputPathHasBeenSet = false;
+  bool m_hookParametersHasBeenSet = false;
   bool m_collectionConfigurationsHasBeenSet = false;
 };
 

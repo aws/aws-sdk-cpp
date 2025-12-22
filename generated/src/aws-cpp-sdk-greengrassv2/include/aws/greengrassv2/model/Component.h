@@ -89,12 +89,12 @@ class Component {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_componentName;
-  bool m_componentNameHasBeenSet = false;
 
   ComponentLatestVersion m_latestVersion;
+  bool m_arnHasBeenSet = false;
+  bool m_componentNameHasBeenSet = false;
   bool m_latestVersionHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class GetOpsMetadataRequest : public SSMRequest {
   ///@}
  private:
   Aws::String m_opsMetadataArn;
-  bool m_opsMetadataArnHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_opsMetadataArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

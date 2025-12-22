@@ -125,15 +125,15 @@ class CreateDeliverabilityTestReportRequest : public PinpointEmailRequest {
   ///@}
  private:
   Aws::String m_reportName;
-  bool m_reportNameHasBeenSet = false;
 
   Aws::String m_fromEmailAddress;
-  bool m_fromEmailAddressHasBeenSet = false;
 
   EmailContent m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_reportNameHasBeenSet = false;
+  bool m_fromEmailAddressHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

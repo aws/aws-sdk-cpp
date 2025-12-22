@@ -59,9 +59,9 @@ class CreateMLInputChannelResult {
   ///@}
  private:
   Aws::String m_mlInputChannelArn;
-  bool m_mlInputChannelArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_mlInputChannelArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

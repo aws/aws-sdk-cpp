@@ -68,9 +68,9 @@ class LiveConnectorSinkConfiguration {
   ///@}
  private:
   LiveConnectorSinkType m_sinkType{LiveConnectorSinkType::NOT_SET};
-  bool m_sinkTypeHasBeenSet = false;
 
   LiveConnectorRTMPConfiguration m_rTMPConfiguration;
+  bool m_sinkTypeHasBeenSet = false;
   bool m_rTMPConfigurationHasBeenSet = false;
 };
 

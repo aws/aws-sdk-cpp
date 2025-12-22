@@ -66,9 +66,9 @@ class AuditLogProcessingConfiguration {
   ///@}
  private:
   Schema m_schema{Schema::NOT_SET};
-  bool m_schemaHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
+  bool m_schemaHasBeenSet = false;
   bool m_formatHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class DefaultFilterControlConfiguration {
   ///@}
  private:
   Aws::String m_title;
-  bool m_titleHasBeenSet = false;
 
   DefaultFilterControlOptions m_controlOptions;
+  bool m_titleHasBeenSet = false;
   bool m_controlOptionsHasBeenSet = false;
 };
 

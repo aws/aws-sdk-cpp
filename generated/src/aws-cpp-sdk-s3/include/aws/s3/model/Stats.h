@@ -77,12 +77,12 @@ class Stats {
   ///@}
  private:
   long long m_bytesScanned{0};
-  bool m_bytesScannedHasBeenSet = false;
 
   long long m_bytesProcessed{0};
-  bool m_bytesProcessedHasBeenSet = false;
 
   long long m_bytesReturned{0};
+  bool m_bytesScannedHasBeenSet = false;
+  bool m_bytesProcessedHasBeenSet = false;
   bool m_bytesReturnedHasBeenSet = false;
 };
 

@@ -186,21 +186,21 @@ class ResourceSpecificResult {
   ///@}
  private:
   Aws::String m_evalResourceName;
-  bool m_evalResourceNameHasBeenSet = false;
 
   PolicyEvaluationDecisionType m_evalResourceDecision{PolicyEvaluationDecisionType::NOT_SET};
-  bool m_evalResourceDecisionHasBeenSet = false;
 
   Aws::Vector<Statement> m_matchedStatements;
-  bool m_matchedStatementsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_missingContextValues;
-  bool m_missingContextValuesHasBeenSet = false;
 
   Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
-  bool m_evalDecisionDetailsHasBeenSet = false;
 
   PermissionsBoundaryDecisionDetail m_permissionsBoundaryDecisionDetail;
+  bool m_evalResourceNameHasBeenSet = false;
+  bool m_evalResourceDecisionHasBeenSet = false;
+  bool m_matchedStatementsHasBeenSet = false;
+  bool m_missingContextValuesHasBeenSet = false;
+  bool m_evalDecisionDetailsHasBeenSet = false;
   bool m_permissionsBoundaryDecisionDetailHasBeenSet = false;
 };
 

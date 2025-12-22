@@ -161,24 +161,24 @@ class ListedFlow {
   ///@}
  private:
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SourceType m_sourceType{SourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   Status m_status{Status::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Maintenance m_maintenance;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_flowArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_maintenanceHasBeenSet = false;
 };
 

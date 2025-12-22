@@ -198,27 +198,27 @@ class CaptionSourceSettings {
   ///@}
  private:
   AncillarySourceSettings m_ancillarySourceSettings;
-  bool m_ancillarySourceSettingsHasBeenSet = false;
 
   DvbSubSourceSettings m_dvbSubSourceSettings;
-  bool m_dvbSubSourceSettingsHasBeenSet = false;
 
   EmbeddedSourceSettings m_embeddedSourceSettings;
-  bool m_embeddedSourceSettingsHasBeenSet = false;
 
   FileSourceSettings m_fileSourceSettings;
-  bool m_fileSourceSettingsHasBeenSet = false;
 
   CaptionSourceType m_sourceType{CaptionSourceType::NOT_SET};
-  bool m_sourceTypeHasBeenSet = false;
 
   TeletextSourceSettings m_teletextSourceSettings;
-  bool m_teletextSourceSettingsHasBeenSet = false;
 
   TrackSourceSettings m_trackSourceSettings;
-  bool m_trackSourceSettingsHasBeenSet = false;
 
   WebvttHlsSourceSettings m_webvttHlsSourceSettings;
+  bool m_ancillarySourceSettingsHasBeenSet = false;
+  bool m_dvbSubSourceSettingsHasBeenSet = false;
+  bool m_embeddedSourceSettingsHasBeenSet = false;
+  bool m_fileSourceSettingsHasBeenSet = false;
+  bool m_sourceTypeHasBeenSet = false;
+  bool m_teletextSourceSettingsHasBeenSet = false;
+  bool m_trackSourceSettingsHasBeenSet = false;
   bool m_webvttHlsSourceSettingsHasBeenSet = false;
 };
 

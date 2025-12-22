@@ -84,12 +84,12 @@ class DeleteAppInputSourceResult {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   AppInputSource m_appInputSource;
-  bool m_appInputSourceHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appArnHasBeenSet = false;
+  bool m_appInputSourceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

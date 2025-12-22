@@ -85,12 +85,12 @@ class ListTrustStoresResult {
   ///@}
  private:
   Aws::Vector<TrustStoreSummary> m_trustStores;
-  bool m_trustStoresHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_trustStoresHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

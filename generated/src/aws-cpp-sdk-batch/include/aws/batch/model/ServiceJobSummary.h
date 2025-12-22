@@ -228,36 +228,36 @@ class ServiceJobSummary {
   ///@}
  private:
   LatestServiceJobAttempt m_latestAttempt;
-  bool m_latestAttemptHasBeenSet = false;
 
   long long m_createdAt{0};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_jobArn;
-  bool m_jobArnHasBeenSet = false;
 
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   ServiceJobType m_serviceJobType{ServiceJobType::NOT_SET};
-  bool m_serviceJobTypeHasBeenSet = false;
 
   Aws::String m_shareIdentifier;
-  bool m_shareIdentifierHasBeenSet = false;
 
   ServiceJobStatus m_status{ServiceJobStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   long long m_startedAt{0};
-  bool m_startedAtHasBeenSet = false;
 
   long long m_stoppedAt{0};
+  bool m_latestAttemptHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_jobArnHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
+  bool m_serviceJobTypeHasBeenSet = false;
+  bool m_shareIdentifierHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
   bool m_stoppedAtHasBeenSet = false;
 };
 

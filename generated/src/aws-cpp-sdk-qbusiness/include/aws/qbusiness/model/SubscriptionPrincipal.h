@@ -71,9 +71,9 @@ class SubscriptionPrincipal {
   ///@}
  private:
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_group;
+  bool m_userHasBeenSet = false;
   bool m_groupHasBeenSet = false;
 };
 

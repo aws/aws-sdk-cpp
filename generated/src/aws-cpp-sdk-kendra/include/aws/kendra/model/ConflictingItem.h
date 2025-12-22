@@ -91,12 +91,12 @@ class ConflictingItem {
   ///@}
  private:
   Aws::String m_queryText;
-  bool m_queryTextHasBeenSet = false;
 
   Aws::String m_setName;
-  bool m_setNameHasBeenSet = false;
 
   Aws::String m_setId;
+  bool m_queryTextHasBeenSet = false;
+  bool m_setNameHasBeenSet = false;
   bool m_setIdHasBeenSet = false;
 };
 

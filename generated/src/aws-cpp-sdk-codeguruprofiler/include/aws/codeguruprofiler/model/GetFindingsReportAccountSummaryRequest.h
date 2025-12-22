@@ -104,12 +104,12 @@ class GetFindingsReportAccountSummaryRequest : public CodeGuruProfilerRequest {
   ///@}
  private:
   bool m_dailyReportsOnly{false};
-  bool m_dailyReportsOnlyHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_dailyReportsOnlyHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

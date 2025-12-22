@@ -190,21 +190,21 @@ class AssetBundleImportJobOverridePermissions {
   ///@}
  private:
   Aws::Vector<AssetBundleImportJobDataSourceOverridePermissions> m_dataSources;
-  bool m_dataSourcesHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobDataSetOverridePermissions> m_dataSets;
-  bool m_dataSetsHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobThemeOverridePermissions> m_themes;
-  bool m_themesHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobAnalysisOverridePermissions> m_analyses;
-  bool m_analysesHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobDashboardOverridePermissions> m_dashboards;
-  bool m_dashboardsHasBeenSet = false;
 
   Aws::Vector<AssetBundleImportJobFolderOverridePermissions> m_folders;
+  bool m_dataSourcesHasBeenSet = false;
+  bool m_dataSetsHasBeenSet = false;
+  bool m_themesHasBeenSet = false;
+  bool m_analysesHasBeenSet = false;
+  bool m_dashboardsHasBeenSet = false;
   bool m_foldersHasBeenSet = false;
 };
 

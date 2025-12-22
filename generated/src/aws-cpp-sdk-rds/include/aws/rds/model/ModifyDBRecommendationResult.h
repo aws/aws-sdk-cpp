@@ -58,9 +58,9 @@ class ModifyDBRecommendationResult {
   ///@}
  private:
   DBRecommendation m_dBRecommendation;
-  bool m_dBRecommendationHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_dBRecommendationHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

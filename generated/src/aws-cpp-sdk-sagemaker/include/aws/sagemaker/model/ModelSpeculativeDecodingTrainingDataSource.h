@@ -70,9 +70,9 @@ class ModelSpeculativeDecodingTrainingDataSource {
   ///@}
  private:
   Aws::String m_s3Uri;
-  bool m_s3UriHasBeenSet = false;
 
   ModelSpeculativeDecodingS3DataType m_s3DataType{ModelSpeculativeDecodingS3DataType::NOT_SET};
+  bool m_s3UriHasBeenSet = false;
   bool m_s3DataTypeHasBeenSet = false;
 };
 

@@ -68,9 +68,9 @@ class ColumnDescription {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ColumnType m_type{ColumnType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

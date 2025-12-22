@@ -58,6 +58,7 @@
 #include <aws/secretsmanager/model/SecretListEntry.h>
 #include <aws/secretsmanager/model/SecretValueEntry.h>
 #include <aws/secretsmanager/model/SecretVersionsListEntry.h>
+#include <aws/secretsmanager/model/SortByType.h>
 #include <aws/secretsmanager/model/SortOrderType.h>
 #include <aws/secretsmanager/model/StatusType.h>
 #include <aws/secretsmanager/model/StopReplicationToReplicaRequest.h>

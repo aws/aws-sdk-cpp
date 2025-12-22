@@ -175,24 +175,24 @@ class ListWebhookItem {
   ///@}
  private:
   WebhookDefinition m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_url;
-  bool m_urlHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::String m_errorCode;
-  bool m_errorCodeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastTriggered{};
-  bool m_lastTriggeredHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_definitionHasBeenSet = false;
+  bool m_urlHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_errorCodeHasBeenSet = false;
+  bool m_lastTriggeredHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

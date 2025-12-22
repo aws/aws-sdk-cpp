@@ -72,9 +72,9 @@ class AcceptReservedNodeExchangeRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_reservedNodeId;
-  bool m_reservedNodeIdHasBeenSet = false;
 
   Aws::String m_targetReservedNodeOfferingId;
+  bool m_reservedNodeIdHasBeenSet = false;
   bool m_targetReservedNodeOfferingIdHasBeenSet = false;
 };
 

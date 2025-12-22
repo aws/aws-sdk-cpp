@@ -76,12 +76,12 @@ class CreateRelatedItemResult {
   ///@}
  private:
   Aws::String m_relatedItemId;
-  bool m_relatedItemIdHasBeenSet = false;
 
   Aws::String m_relatedItemArn;
-  bool m_relatedItemArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_relatedItemIdHasBeenSet = false;
+  bool m_relatedItemArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

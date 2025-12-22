@@ -68,9 +68,9 @@ class GetStackPolicyResult {
   ///@}
  private:
   Aws::String m_stackPolicyBody;
-  bool m_stackPolicyBodyHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackPolicyBodyHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

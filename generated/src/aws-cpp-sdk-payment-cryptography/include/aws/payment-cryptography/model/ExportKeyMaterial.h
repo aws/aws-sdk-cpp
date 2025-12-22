@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
+#include <aws/payment-cryptography/model/ExportAs2805KeyCryptogram.h>
 #include <aws/payment-cryptography/model/ExportDiffieHellmanTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ExportKeyCryptogram.h>
 #include <aws/payment-cryptography/model/ExportTr31KeyBlock.h>
@@ -111,18 +112,40 @@ class ExportKeyMaterial {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Parameter information for key material export using AS2805 key cryptogram
+   * format.</p>
+   */
+  inline const ExportAs2805KeyCryptogram& GetAs2805KeyCryptogram() const { return m_as2805KeyCryptogram; }
+  inline bool As2805KeyCryptogramHasBeenSet() const { return m_as2805KeyCryptogramHasBeenSet; }
+  template <typename As2805KeyCryptogramT = ExportAs2805KeyCryptogram>
+  void SetAs2805KeyCryptogram(As2805KeyCryptogramT&& value) {
+    m_as2805KeyCryptogramHasBeenSet = true;
+    m_as2805KeyCryptogram = std::forward<As2805KeyCryptogramT>(value);
+  }
+  template <typename As2805KeyCryptogramT = ExportAs2805KeyCryptogram>
+  ExportKeyMaterial& WithAs2805KeyCryptogram(As2805KeyCryptogramT&& value) {
+    SetAs2805KeyCryptogram(std::forward<As2805KeyCryptogramT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ExportTr31KeyBlock m_tr31KeyBlock;
-  bool m_tr31KeyBlockHasBeenSet = false;
 
   ExportTr34KeyBlock m_tr34KeyBlock;
-  bool m_tr34KeyBlockHasBeenSet = false;
 
   ExportKeyCryptogram m_keyCryptogram;
-  bool m_keyCryptogramHasBeenSet = false;
 
   ExportDiffieHellmanTr31KeyBlock m_diffieHellmanTr31KeyBlock;
+
+  ExportAs2805KeyCryptogram m_as2805KeyCryptogram;
+  bool m_tr31KeyBlockHasBeenSet = false;
+  bool m_tr34KeyBlockHasBeenSet = false;
+  bool m_keyCryptogramHasBeenSet = false;
   bool m_diffieHellmanTr31KeyBlockHasBeenSet = false;
+  bool m_as2805KeyCryptogramHasBeenSet = false;
 };
 
 }  // namespace Model

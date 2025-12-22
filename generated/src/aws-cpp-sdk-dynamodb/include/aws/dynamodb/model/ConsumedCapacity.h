@@ -176,24 +176,24 @@ class ConsumedCapacity {
   ///@}
  private:
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   double m_capacityUnits{0.0};
-  bool m_capacityUnitsHasBeenSet = false;
 
   double m_readCapacityUnits{0.0};
-  bool m_readCapacityUnitsHasBeenSet = false;
 
   double m_writeCapacityUnits{0.0};
-  bool m_writeCapacityUnitsHasBeenSet = false;
 
   Capacity m_table;
-  bool m_tableHasBeenSet = false;
 
   Aws::Map<Aws::String, Capacity> m_localSecondaryIndexes;
-  bool m_localSecondaryIndexesHasBeenSet = false;
 
   Aws::Map<Aws::String, Capacity> m_globalSecondaryIndexes;
+  bool m_tableNameHasBeenSet = false;
+  bool m_capacityUnitsHasBeenSet = false;
+  bool m_readCapacityUnitsHasBeenSet = false;
+  bool m_writeCapacityUnitsHasBeenSet = false;
+  bool m_tableHasBeenSet = false;
+  bool m_localSecondaryIndexesHasBeenSet = false;
   bool m_globalSecondaryIndexesHasBeenSet = false;
 };
 

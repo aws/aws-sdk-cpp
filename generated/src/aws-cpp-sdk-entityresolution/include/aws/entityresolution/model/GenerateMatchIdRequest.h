@@ -103,12 +103,12 @@ class GenerateMatchIdRequest : public EntityResolutionRequest {
   ///@}
  private:
   Aws::String m_workflowName;
-  bool m_workflowNameHasBeenSet = false;
 
   Aws::Vector<Record> m_records;
-  bool m_recordsHasBeenSet = false;
 
   ProcessingType m_processingType{ProcessingType::NOT_SET};
+  bool m_workflowNameHasBeenSet = false;
+  bool m_recordsHasBeenSet = false;
   bool m_processingTypeHasBeenSet = false;
 };
 

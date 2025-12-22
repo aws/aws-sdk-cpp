@@ -86,12 +86,12 @@ class DescribeRecommendationExportJobsResult {
   ///@}
  private:
   Aws::Vector<RecommendationExportJob> m_recommendationExportJobs;
-  bool m_recommendationExportJobsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recommendationExportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

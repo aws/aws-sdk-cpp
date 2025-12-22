@@ -71,9 +71,9 @@ class ModelSpeculativeDecodingConfig {
   ///@}
  private:
   ModelSpeculativeDecodingTechnique m_technique{ModelSpeculativeDecodingTechnique::NOT_SET};
-  bool m_techniqueHasBeenSet = false;
 
   ModelSpeculativeDecodingTrainingDataSource m_trainingDataSource;
+  bool m_techniqueHasBeenSet = false;
   bool m_trainingDataSourceHasBeenSet = false;
 };
 

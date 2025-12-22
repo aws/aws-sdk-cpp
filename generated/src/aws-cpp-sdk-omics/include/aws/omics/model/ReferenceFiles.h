@@ -68,9 +68,9 @@ class ReferenceFiles {
   ///@}
  private:
   FileInformation m_source;
-  bool m_sourceHasBeenSet = false;
 
   FileInformation m_index;
+  bool m_sourceHasBeenSet = false;
   bool m_indexHasBeenSet = false;
 };
 

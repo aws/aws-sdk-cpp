@@ -91,12 +91,12 @@ class BatchGetTaxExemptionsResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_failedAccounts;
-  bool m_failedAccountsHasBeenSet = false;
 
   Aws::Map<Aws::String, TaxExemptionDetails> m_taxExemptionDetailsMap;
-  bool m_taxExemptionDetailsMapHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedAccountsHasBeenSet = false;
+  bool m_taxExemptionDetailsMapHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

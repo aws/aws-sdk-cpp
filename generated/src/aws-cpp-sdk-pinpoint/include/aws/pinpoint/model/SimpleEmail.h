@@ -117,15 +117,15 @@ class SimpleEmail {
   ///@}
  private:
   SimpleEmailPart m_htmlPart;
-  bool m_htmlPartHasBeenSet = false;
 
   SimpleEmailPart m_subject;
-  bool m_subjectHasBeenSet = false;
 
   SimpleEmailPart m_textPart;
-  bool m_textPartHasBeenSet = false;
 
   Aws::Vector<MessageHeader> m_headers;
+  bool m_htmlPartHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_textPartHasBeenSet = false;
   bool m_headersHasBeenSet = false;
 };
 

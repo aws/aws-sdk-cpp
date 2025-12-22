@@ -77,9 +77,9 @@ class PlatformApplication {
   ///@}
  private:
   Aws::String m_platformApplicationArn;
-  bool m_platformApplicationArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
+  bool m_platformApplicationArnHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

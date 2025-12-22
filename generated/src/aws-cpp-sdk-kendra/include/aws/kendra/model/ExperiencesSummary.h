@@ -135,18 +135,18 @@ class ExperiencesSummary {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   ExperienceStatus m_status{ExperienceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<ExperienceEndpoint> m_endpoints;
+  bool m_nameHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;
 };
 

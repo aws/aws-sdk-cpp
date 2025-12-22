@@ -175,27 +175,27 @@ class SearchAssociatedTranscriptsResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_botRecommendationId;
-  bool m_botRecommendationIdHasBeenSet = false;
 
   int m_nextIndex{0};
-  bool m_nextIndexHasBeenSet = false;
 
   Aws::Vector<AssociatedTranscript> m_associatedTranscripts;
-  bool m_associatedTranscriptsHasBeenSet = false;
 
   int m_totalResults{0};
-  bool m_totalResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_botRecommendationIdHasBeenSet = false;
+  bool m_nextIndexHasBeenSet = false;
+  bool m_associatedTranscriptsHasBeenSet = false;
+  bool m_totalResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class ListWorkflowStepGroupsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WorkflowStepGroupSummary> m_workflowStepGroupsSummary;
-  bool m_workflowStepGroupsSummaryHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_workflowStepGroupsSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

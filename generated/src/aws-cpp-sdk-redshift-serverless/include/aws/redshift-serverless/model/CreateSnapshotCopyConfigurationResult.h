@@ -61,9 +61,9 @@ class CreateSnapshotCopyConfigurationResult {
   ///@}
  private:
   SnapshotCopyConfiguration m_snapshotCopyConfiguration;
-  bool m_snapshotCopyConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_snapshotCopyConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

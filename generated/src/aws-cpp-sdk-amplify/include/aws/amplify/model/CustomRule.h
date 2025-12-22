@@ -111,15 +111,15 @@ class CustomRule {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_condition;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_conditionHasBeenSet = false;
 };
 

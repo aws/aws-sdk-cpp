@@ -67,9 +67,9 @@ class Sort {
   ///@}
  private:
   Aws::String m_fieldId;
-  bool m_fieldIdHasBeenSet = false;
 
   Order m_sortOrder{Order::NOT_SET};
+  bool m_fieldIdHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
 };
 

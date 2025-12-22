@@ -74,9 +74,9 @@ class ResourceDriftIgnoredAttribute {
   ///@}
  private:
   Aws::String m_path;
-  bool m_pathHasBeenSet = false;
 
   DriftIgnoredReason m_reason{DriftIgnoredReason::NOT_SET};
+  bool m_pathHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

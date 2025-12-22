@@ -118,18 +118,18 @@ class GetMatchesResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_matchGenerationDate{};
-  bool m_matchGenerationDateHasBeenSet = false;
 
   int m_potentialMatches{0};
-  bool m_potentialMatchesHasBeenSet = false;
 
   Aws::Vector<MatchItem> m_matches;
-  bool m_matchesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_matchGenerationDateHasBeenSet = false;
+  bool m_potentialMatchesHasBeenSet = false;
+  bool m_matchesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

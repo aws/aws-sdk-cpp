@@ -67,9 +67,9 @@ class ReportFrequency {
   ///@}
  private:
   int m_value{0};
-  bool m_valueHasBeenSet = false;
 
   ReportFrequencyType m_period{ReportFrequencyType::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_periodHasBeenSet = false;
 };
 

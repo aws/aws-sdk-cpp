@@ -145,21 +145,21 @@ class CreateAssetRequest : public MediaPackageVodRequest {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_packagingGroupId;
-  bool m_packagingGroupIdHasBeenSet = false;
 
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::String m_sourceArn;
-  bool m_sourceArnHasBeenSet = false;
 
   Aws::String m_sourceRoleArn;
-  bool m_sourceRoleArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_packagingGroupIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_sourceArnHasBeenSet = false;
+  bool m_sourceRoleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

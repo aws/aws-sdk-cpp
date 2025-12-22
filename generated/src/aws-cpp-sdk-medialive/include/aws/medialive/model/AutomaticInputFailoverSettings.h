@@ -115,15 +115,15 @@ class AutomaticInputFailoverSettings {
   ///@}
  private:
   int m_errorClearTimeMsec{0};
-  bool m_errorClearTimeMsecHasBeenSet = false;
 
   Aws::Vector<FailoverCondition> m_failoverConditions;
-  bool m_failoverConditionsHasBeenSet = false;
 
   InputPreference m_inputPreference{InputPreference::NOT_SET};
-  bool m_inputPreferenceHasBeenSet = false;
 
   Aws::String m_secondaryInputId;
+  bool m_errorClearTimeMsecHasBeenSet = false;
+  bool m_failoverConditionsHasBeenSet = false;
+  bool m_inputPreferenceHasBeenSet = false;
   bool m_secondaryInputIdHasBeenSet = false;
 };
 

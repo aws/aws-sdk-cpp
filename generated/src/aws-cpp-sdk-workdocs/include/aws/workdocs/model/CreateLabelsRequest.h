@@ -93,12 +93,12 @@ class CreateLabelsRequest : public WorkDocsRequest {
   ///@}
  private:
   Aws::String m_resourceId;
-  bool m_resourceIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_labels;
-  bool m_labelsHasBeenSet = false;
 
   Aws::String m_authenticationToken;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_labelsHasBeenSet = false;
   bool m_authenticationTokenHasBeenSet = false;
 };
 

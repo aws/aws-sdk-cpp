@@ -94,12 +94,12 @@ class GetDedicatedIpsResult {
   ///@}
  private:
   Aws::Vector<DedicatedIp> m_dedicatedIps;
-  bool m_dedicatedIpsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_dedicatedIpsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

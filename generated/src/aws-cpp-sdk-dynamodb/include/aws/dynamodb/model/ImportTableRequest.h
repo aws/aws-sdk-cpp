@@ -157,21 +157,21 @@ class ImportTableRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   S3BucketSource m_s3BucketSource;
-  bool m_s3BucketSourceHasBeenSet = false;
 
   InputFormat m_inputFormat{InputFormat::NOT_SET};
-  bool m_inputFormatHasBeenSet = false;
 
   InputFormatOptions m_inputFormatOptions;
-  bool m_inputFormatOptionsHasBeenSet = false;
 
   InputCompressionType m_inputCompressionType{InputCompressionType::NOT_SET};
-  bool m_inputCompressionTypeHasBeenSet = false;
 
   TableCreationParameters m_tableCreationParameters;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_s3BucketSourceHasBeenSet = false;
+  bool m_inputFormatHasBeenSet = false;
+  bool m_inputFormatOptionsHasBeenSet = false;
+  bool m_inputCompressionTypeHasBeenSet = false;
   bool m_tableCreationParametersHasBeenSet = false;
 };
 

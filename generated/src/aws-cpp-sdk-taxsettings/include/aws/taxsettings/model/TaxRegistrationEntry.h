@@ -193,27 +193,27 @@ class TaxRegistrationEntry {
   ///@}
  private:
   AdditionalInfoRequest m_additionalTaxInformation;
-  bool m_additionalTaxInformationHasBeenSet = false;
 
   Aws::String m_certifiedEmailId;
-  bool m_certifiedEmailIdHasBeenSet = false;
 
   Address m_legalAddress;
-  bool m_legalAddressHasBeenSet = false;
 
   Aws::String m_legalName;
-  bool m_legalNameHasBeenSet = false;
 
   Aws::String m_registrationId;
-  bool m_registrationIdHasBeenSet = false;
 
   TaxRegistrationType m_registrationType{TaxRegistrationType::NOT_SET};
-  bool m_registrationTypeHasBeenSet = false;
 
   Sector m_sector{Sector::NOT_SET};
-  bool m_sectorHasBeenSet = false;
 
   VerificationDetails m_verificationDetails;
+  bool m_additionalTaxInformationHasBeenSet = false;
+  bool m_certifiedEmailIdHasBeenSet = false;
+  bool m_legalAddressHasBeenSet = false;
+  bool m_legalNameHasBeenSet = false;
+  bool m_registrationIdHasBeenSet = false;
+  bool m_registrationTypeHasBeenSet = false;
+  bool m_sectorHasBeenSet = false;
   bool m_verificationDetailsHasBeenSet = false;
 };
 

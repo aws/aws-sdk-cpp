@@ -686,99 +686,99 @@ class ReplicationGroup {
   ///@}
  private:
   Aws::String m_replicationGroupId;
-  bool m_replicationGroupIdHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   GlobalReplicationGroupInfo m_globalReplicationGroupInfo;
-  bool m_globalReplicationGroupInfoHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ReplicationGroupPendingModifiedValues m_pendingModifiedValues;
-  bool m_pendingModifiedValuesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_memberClusters;
-  bool m_memberClustersHasBeenSet = false;
 
   Aws::Vector<NodeGroup> m_nodeGroups;
-  bool m_nodeGroupsHasBeenSet = false;
 
   Aws::String m_snapshottingClusterId;
-  bool m_snapshottingClusterIdHasBeenSet = false;
 
   AutomaticFailoverStatus m_automaticFailover{AutomaticFailoverStatus::NOT_SET};
-  bool m_automaticFailoverHasBeenSet = false;
 
   MultiAZStatus m_multiAZ{MultiAZStatus::NOT_SET};
-  bool m_multiAZHasBeenSet = false;
 
   Endpoint m_configurationEndpoint;
-  bool m_configurationEndpointHasBeenSet = false;
 
   int m_snapshotRetentionLimit{0};
-  bool m_snapshotRetentionLimitHasBeenSet = false;
 
   Aws::String m_snapshotWindow;
-  bool m_snapshotWindowHasBeenSet = false;
 
   bool m_clusterEnabled{false};
-  bool m_clusterEnabledHasBeenSet = false;
 
   Aws::String m_cacheNodeType;
-  bool m_cacheNodeTypeHasBeenSet = false;
 
   bool m_authTokenEnabled{false};
-  bool m_authTokenEnabledHasBeenSet = false;
 
   Aws::Utils::DateTime m_authTokenLastModifiedDate{};
-  bool m_authTokenLastModifiedDateHasBeenSet = false;
 
   bool m_transitEncryptionEnabled{false};
-  bool m_transitEncryptionEnabledHasBeenSet = false;
 
   bool m_atRestEncryptionEnabled{false};
-  bool m_atRestEncryptionEnabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_memberClustersOutpostArns;
-  bool m_memberClustersOutpostArnsHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_aRN;
-  bool m_aRNHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_userGroupIds;
-  bool m_userGroupIdsHasBeenSet = false;
 
   Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
-  bool m_logDeliveryConfigurationsHasBeenSet = false;
 
   Aws::Utils::DateTime m_replicationGroupCreateTime{};
-  bool m_replicationGroupCreateTimeHasBeenSet = false;
 
   DataTieringStatus m_dataTiering{DataTieringStatus::NOT_SET};
-  bool m_dataTieringHasBeenSet = false;
 
   bool m_autoMinorVersionUpgrade{false};
-  bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
   NetworkType m_networkType{NetworkType::NOT_SET};
-  bool m_networkTypeHasBeenSet = false;
 
   IpDiscovery m_ipDiscovery{IpDiscovery::NOT_SET};
-  bool m_ipDiscoveryHasBeenSet = false;
 
   TransitEncryptionMode m_transitEncryptionMode{TransitEncryptionMode::NOT_SET};
-  bool m_transitEncryptionModeHasBeenSet = false;
 
   ClusterMode m_clusterMode{ClusterMode::NOT_SET};
-  bool m_clusterModeHasBeenSet = false;
 
   Aws::String m_engine;
+  bool m_replicationGroupIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_globalReplicationGroupInfoHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_pendingModifiedValuesHasBeenSet = false;
+  bool m_memberClustersHasBeenSet = false;
+  bool m_nodeGroupsHasBeenSet = false;
+  bool m_snapshottingClusterIdHasBeenSet = false;
+  bool m_automaticFailoverHasBeenSet = false;
+  bool m_multiAZHasBeenSet = false;
+  bool m_configurationEndpointHasBeenSet = false;
+  bool m_snapshotRetentionLimitHasBeenSet = false;
+  bool m_snapshotWindowHasBeenSet = false;
+  bool m_clusterEnabledHasBeenSet = false;
+  bool m_cacheNodeTypeHasBeenSet = false;
+  bool m_authTokenEnabledHasBeenSet = false;
+  bool m_authTokenLastModifiedDateHasBeenSet = false;
+  bool m_transitEncryptionEnabledHasBeenSet = false;
+  bool m_atRestEncryptionEnabledHasBeenSet = false;
+  bool m_memberClustersOutpostArnsHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_aRNHasBeenSet = false;
+  bool m_userGroupIdsHasBeenSet = false;
+  bool m_logDeliveryConfigurationsHasBeenSet = false;
+  bool m_replicationGroupCreateTimeHasBeenSet = false;
+  bool m_dataTieringHasBeenSet = false;
+  bool m_autoMinorVersionUpgradeHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
+  bool m_ipDiscoveryHasBeenSet = false;
+  bool m_transitEncryptionModeHasBeenSet = false;
+  bool m_clusterModeHasBeenSet = false;
   bool m_engineHasBeenSet = false;
 };
 

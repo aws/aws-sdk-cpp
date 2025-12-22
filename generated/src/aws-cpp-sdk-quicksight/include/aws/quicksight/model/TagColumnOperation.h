@@ -79,9 +79,9 @@ class TagColumnOperation {
   ///@}
  private:
   Aws::String m_columnName;
-  bool m_columnNameHasBeenSet = false;
 
   Aws::Vector<ColumnTag> m_tags;
+  bool m_columnNameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -88,12 +88,12 @@ class ListAccountAssignmentDeletionStatusResult {
   ///@}
  private:
   Aws::Vector<AccountAssignmentOperationStatusMetadata> m_accountAssignmentsDeletionStatus;
-  bool m_accountAssignmentsDeletionStatusHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountAssignmentsDeletionStatusHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

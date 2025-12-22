@@ -113,12 +113,12 @@ class CustomerArtifactPaths {
   ///@}
  private:
   Aws::Vector<Aws::String> m_iosPaths;
-  bool m_iosPathsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_androidPaths;
-  bool m_androidPathsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_deviceHostPaths;
+  bool m_iosPathsHasBeenSet = false;
+  bool m_androidPathsHasBeenSet = false;
   bool m_deviceHostPathsHasBeenSet = false;
 };
 

@@ -93,9 +93,9 @@ class BlockPublicAccessConfiguration {
   ///@}
  private:
   bool m_blockPublicSecurityGroupRules{false};
-  bool m_blockPublicSecurityGroupRulesHasBeenSet = false;
 
   Aws::Vector<PortRange> m_permittedPublicSecurityGroupRuleRanges;
+  bool m_blockPublicSecurityGroupRulesHasBeenSet = false;
   bool m_permittedPublicSecurityGroupRuleRangesHasBeenSet = false;
 };
 

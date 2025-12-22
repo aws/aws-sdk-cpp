@@ -104,15 +104,15 @@ class HookTarget {
   ///@}
  private:
   HookTargetType m_targetType{HookTargetType::NOT_SET};
-  bool m_targetTypeHasBeenSet = false;
 
   Aws::String m_targetTypeName;
-  bool m_targetTypeNameHasBeenSet = false;
 
   Aws::String m_targetId;
-  bool m_targetIdHasBeenSet = false;
 
   HookTargetAction m_action{HookTargetAction::NOT_SET};
+  bool m_targetTypeHasBeenSet = false;
+  bool m_targetTypeNameHasBeenSet = false;
+  bool m_targetIdHasBeenSet = false;
   bool m_actionHasBeenSet = false;
 };
 

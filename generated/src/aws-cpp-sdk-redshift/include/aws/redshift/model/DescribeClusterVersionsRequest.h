@@ -119,15 +119,15 @@ class DescribeClusterVersionsRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_clusterVersion;
-  bool m_clusterVersionHasBeenSet = false;
 
   Aws::String m_clusterParameterGroupFamily;
-  bool m_clusterParameterGroupFamilyHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_clusterVersionHasBeenSet = false;
+  bool m_clusterParameterGroupFamilyHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

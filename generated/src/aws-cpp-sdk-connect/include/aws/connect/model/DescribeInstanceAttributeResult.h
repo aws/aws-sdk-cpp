@@ -60,9 +60,9 @@ class DescribeInstanceAttributeResult {
   ///@}
  private:
   Attribute m_attribute;
-  bool m_attributeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

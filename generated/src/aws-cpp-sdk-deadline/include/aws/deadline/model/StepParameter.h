@@ -67,9 +67,9 @@ class StepParameter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   StepParameterType m_type{StepParameterType::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class DescribeWorkspaceAssociationsRequest : public WorkSpacesRequest {
   ///@}
  private:
   Aws::String m_workspaceId;
-  bool m_workspaceIdHasBeenSet = false;
 
   Aws::Vector<WorkSpaceAssociatedResourceType> m_associatedResourceTypes;
+  bool m_workspaceIdHasBeenSet = false;
   bool m_associatedResourceTypesHasBeenSet = false;
 };
 

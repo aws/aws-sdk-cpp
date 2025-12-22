@@ -65,9 +65,9 @@ class OrderBy {
   ///@}
  private:
   Dimension m_dimension{Dimension::NOT_SET};
-  bool m_dimensionHasBeenSet = false;
 
   Order m_order{Order::NOT_SET};
+  bool m_dimensionHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

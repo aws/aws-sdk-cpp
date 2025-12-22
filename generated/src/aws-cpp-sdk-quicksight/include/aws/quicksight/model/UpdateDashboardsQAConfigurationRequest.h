@@ -65,9 +65,9 @@ class UpdateDashboardsQAConfigurationRequest : public QuickSightRequest {
   ///@}
  private:
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   DashboardsQAStatus m_dashboardsQAStatus{DashboardsQAStatus::NOT_SET};
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_dashboardsQAStatusHasBeenSet = false;
 };
 

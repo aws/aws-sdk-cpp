@@ -143,18 +143,18 @@ class OriginAccessControlConfig {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   OriginAccessControlSigningProtocols m_signingProtocol{OriginAccessControlSigningProtocols::NOT_SET};
-  bool m_signingProtocolHasBeenSet = false;
 
   OriginAccessControlSigningBehaviors m_signingBehavior{OriginAccessControlSigningBehaviors::NOT_SET};
-  bool m_signingBehaviorHasBeenSet = false;
 
   OriginAccessControlOriginTypes m_originAccessControlOriginType{OriginAccessControlOriginTypes::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_signingProtocolHasBeenSet = false;
+  bool m_signingBehaviorHasBeenSet = false;
   bool m_originAccessControlOriginTypeHasBeenSet = false;
 };
 

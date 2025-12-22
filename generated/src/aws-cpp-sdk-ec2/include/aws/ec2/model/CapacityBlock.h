@@ -238,33 +238,33 @@ class CapacityBlock {
   ///@}
  private:
   Aws::String m_capacityBlockId;
-  bool m_capacityBlockIdHasBeenSet = false;
 
   Aws::String m_ultraserverType;
-  bool m_ultraserverTypeHasBeenSet = false;
 
   Aws::String m_availabilityZone;
-  bool m_availabilityZoneHasBeenSet = false;
 
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_capacityReservationIds;
-  bool m_capacityReservationIdsHasBeenSet = false;
 
   Aws::Utils::DateTime m_startDate{};
-  bool m_startDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_endDate{};
-  bool m_endDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_createDate{};
-  bool m_createDateHasBeenSet = false;
 
   CapacityBlockResourceState m_state{CapacityBlockResourceState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_capacityBlockIdHasBeenSet = false;
+  bool m_ultraserverTypeHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_capacityReservationIdsHasBeenSet = false;
+  bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_createDateHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

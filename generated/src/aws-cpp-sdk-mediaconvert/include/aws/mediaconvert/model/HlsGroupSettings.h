@@ -702,99 +702,99 @@ class HlsGroupSettings {
   ///@}
  private:
   Aws::Vector<HlsAdMarkers> m_adMarkers;
-  bool m_adMarkersHasBeenSet = false;
 
   Aws::Vector<HlsAdditionalManifest> m_additionalManifests;
-  bool m_additionalManifestsHasBeenSet = false;
 
   HlsAudioOnlyHeader m_audioOnlyHeader{HlsAudioOnlyHeader::NOT_SET};
-  bool m_audioOnlyHeaderHasBeenSet = false;
 
   Aws::String m_baseUrl;
-  bool m_baseUrlHasBeenSet = false;
 
   Aws::Vector<HlsCaptionLanguageMapping> m_captionLanguageMappings;
-  bool m_captionLanguageMappingsHasBeenSet = false;
 
   HlsCaptionLanguageSetting m_captionLanguageSetting{HlsCaptionLanguageSetting::NOT_SET};
-  bool m_captionLanguageSettingHasBeenSet = false;
 
   HlsCaptionSegmentLengthControl m_captionSegmentLengthControl{HlsCaptionSegmentLengthControl::NOT_SET};
-  bool m_captionSegmentLengthControlHasBeenSet = false;
 
   HlsClientCache m_clientCache{HlsClientCache::NOT_SET};
-  bool m_clientCacheHasBeenSet = false;
 
   HlsCodecSpecification m_codecSpecification{HlsCodecSpecification::NOT_SET};
-  bool m_codecSpecificationHasBeenSet = false;
 
   Aws::String m_destination;
-  bool m_destinationHasBeenSet = false;
 
   DestinationSettings m_destinationSettings;
-  bool m_destinationSettingsHasBeenSet = false;
 
   HlsDirectoryStructure m_directoryStructure{HlsDirectoryStructure::NOT_SET};
-  bool m_directoryStructureHasBeenSet = false;
 
   HlsEncryptionSettings m_encryption;
-  bool m_encryptionHasBeenSet = false;
 
   HlsImageBasedTrickPlay m_imageBasedTrickPlay{HlsImageBasedTrickPlay::NOT_SET};
-  bool m_imageBasedTrickPlayHasBeenSet = false;
 
   HlsImageBasedTrickPlaySettings m_imageBasedTrickPlaySettings;
-  bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
 
   HlsManifestCompression m_manifestCompression{HlsManifestCompression::NOT_SET};
-  bool m_manifestCompressionHasBeenSet = false;
 
   HlsManifestDurationFormat m_manifestDurationFormat{HlsManifestDurationFormat::NOT_SET};
-  bool m_manifestDurationFormatHasBeenSet = false;
 
   double m_minFinalSegmentLength{0.0};
-  bool m_minFinalSegmentLengthHasBeenSet = false;
 
   int m_minSegmentLength{0};
-  bool m_minSegmentLengthHasBeenSet = false;
 
   HlsOutputSelection m_outputSelection{HlsOutputSelection::NOT_SET};
-  bool m_outputSelectionHasBeenSet = false;
 
   HlsProgramDateTime m_programDateTime{HlsProgramDateTime::NOT_SET};
-  bool m_programDateTimeHasBeenSet = false;
 
   int m_programDateTimePeriod{0};
-  bool m_programDateTimePeriodHasBeenSet = false;
 
   HlsProgressiveWriteHlsManifest m_progressiveWriteHlsManifest{HlsProgressiveWriteHlsManifest::NOT_SET};
-  bool m_progressiveWriteHlsManifestHasBeenSet = false;
 
   HlsSegmentControl m_segmentControl{HlsSegmentControl::NOT_SET};
-  bool m_segmentControlHasBeenSet = false;
 
   int m_segmentLength{0};
-  bool m_segmentLengthHasBeenSet = false;
 
   HlsSegmentLengthControl m_segmentLengthControl{HlsSegmentLengthControl::NOT_SET};
-  bool m_segmentLengthControlHasBeenSet = false;
 
   int m_segmentsPerSubdirectory{0};
-  bool m_segmentsPerSubdirectoryHasBeenSet = false;
 
   HlsStreamInfResolution m_streamInfResolution{HlsStreamInfResolution::NOT_SET};
-  bool m_streamInfResolutionHasBeenSet = false;
 
   HlsTargetDurationCompatibilityMode m_targetDurationCompatibilityMode{HlsTargetDurationCompatibilityMode::NOT_SET};
-  bool m_targetDurationCompatibilityModeHasBeenSet = false;
 
   HlsTimedMetadataId3Frame m_timedMetadataId3Frame{HlsTimedMetadataId3Frame::NOT_SET};
-  bool m_timedMetadataId3FrameHasBeenSet = false;
 
   int m_timedMetadataId3Period{0};
-  bool m_timedMetadataId3PeriodHasBeenSet = false;
 
   int m_timestampDeltaMilliseconds{0};
+  bool m_adMarkersHasBeenSet = false;
+  bool m_additionalManifestsHasBeenSet = false;
+  bool m_audioOnlyHeaderHasBeenSet = false;
+  bool m_baseUrlHasBeenSet = false;
+  bool m_captionLanguageMappingsHasBeenSet = false;
+  bool m_captionLanguageSettingHasBeenSet = false;
+  bool m_captionSegmentLengthControlHasBeenSet = false;
+  bool m_clientCacheHasBeenSet = false;
+  bool m_codecSpecificationHasBeenSet = false;
+  bool m_destinationHasBeenSet = false;
+  bool m_destinationSettingsHasBeenSet = false;
+  bool m_directoryStructureHasBeenSet = false;
+  bool m_encryptionHasBeenSet = false;
+  bool m_imageBasedTrickPlayHasBeenSet = false;
+  bool m_imageBasedTrickPlaySettingsHasBeenSet = false;
+  bool m_manifestCompressionHasBeenSet = false;
+  bool m_manifestDurationFormatHasBeenSet = false;
+  bool m_minFinalSegmentLengthHasBeenSet = false;
+  bool m_minSegmentLengthHasBeenSet = false;
+  bool m_outputSelectionHasBeenSet = false;
+  bool m_programDateTimeHasBeenSet = false;
+  bool m_programDateTimePeriodHasBeenSet = false;
+  bool m_progressiveWriteHlsManifestHasBeenSet = false;
+  bool m_segmentControlHasBeenSet = false;
+  bool m_segmentLengthHasBeenSet = false;
+  bool m_segmentLengthControlHasBeenSet = false;
+  bool m_segmentsPerSubdirectoryHasBeenSet = false;
+  bool m_streamInfResolutionHasBeenSet = false;
+  bool m_targetDurationCompatibilityModeHasBeenSet = false;
+  bool m_timedMetadataId3FrameHasBeenSet = false;
+  bool m_timedMetadataId3PeriodHasBeenSet = false;
   bool m_timestampDeltaMillisecondsHasBeenSet = false;
 };
 

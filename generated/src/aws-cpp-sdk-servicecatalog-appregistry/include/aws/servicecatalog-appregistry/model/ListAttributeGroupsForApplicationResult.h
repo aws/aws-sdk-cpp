@@ -86,12 +86,12 @@ class ListAttributeGroupsForApplicationResult {
   ///@}
  private:
   Aws::Vector<AttributeGroupDetails> m_attributeGroupsDetails;
-  bool m_attributeGroupsDetailsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_attributeGroupsDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

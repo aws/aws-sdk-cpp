@@ -209,33 +209,33 @@ class PasswordPolicy {
   ///@}
  private:
   int m_minimumPasswordLength{0};
-  bool m_minimumPasswordLengthHasBeenSet = false;
 
   bool m_requireSymbols{false};
-  bool m_requireSymbolsHasBeenSet = false;
 
   bool m_requireNumbers{false};
-  bool m_requireNumbersHasBeenSet = false;
 
   bool m_requireUppercaseCharacters{false};
-  bool m_requireUppercaseCharactersHasBeenSet = false;
 
   bool m_requireLowercaseCharacters{false};
-  bool m_requireLowercaseCharactersHasBeenSet = false;
 
   bool m_allowUsersToChangePassword{false};
-  bool m_allowUsersToChangePasswordHasBeenSet = false;
 
   bool m_expirePasswords{false};
-  bool m_expirePasswordsHasBeenSet = false;
 
   int m_maxPasswordAge{0};
-  bool m_maxPasswordAgeHasBeenSet = false;
 
   int m_passwordReusePrevention{0};
-  bool m_passwordReusePreventionHasBeenSet = false;
 
   bool m_hardExpiry{false};
+  bool m_minimumPasswordLengthHasBeenSet = false;
+  bool m_requireSymbolsHasBeenSet = false;
+  bool m_requireNumbersHasBeenSet = false;
+  bool m_requireUppercaseCharactersHasBeenSet = false;
+  bool m_requireLowercaseCharactersHasBeenSet = false;
+  bool m_allowUsersToChangePasswordHasBeenSet = false;
+  bool m_expirePasswordsHasBeenSet = false;
+  bool m_maxPasswordAgeHasBeenSet = false;
+  bool m_passwordReusePreventionHasBeenSet = false;
   bool m_hardExpiryHasBeenSet = false;
 };
 

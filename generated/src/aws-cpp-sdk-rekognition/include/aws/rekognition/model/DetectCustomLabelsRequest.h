@@ -109,15 +109,15 @@ class DetectCustomLabelsRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_projectVersionArn;
-  bool m_projectVersionArnHasBeenSet = false;
 
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   double m_minConfidence{0.0};
+  bool m_projectVersionArnHasBeenSet = false;
+  bool m_imageHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_minConfidenceHasBeenSet = false;
 };
 

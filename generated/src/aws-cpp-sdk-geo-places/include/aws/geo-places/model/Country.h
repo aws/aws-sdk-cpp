@@ -87,12 +87,12 @@ class Country {
   ///@}
  private:
   Aws::String m_code2;
-  bool m_code2HasBeenSet = false;
 
   Aws::String m_code3;
-  bool m_code3HasBeenSet = false;
 
   Aws::String m_name;
+  bool m_code2HasBeenSet = false;
+  bool m_code3HasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

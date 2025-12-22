@@ -68,9 +68,9 @@ class UnauthorizedException {
   ///@}
  private:
   Aws::String m_errorAttribute;
-  bool m_errorAttributeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_errorAttributeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

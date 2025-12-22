@@ -70,9 +70,9 @@ class RevisionInfo {
   ///@}
  private:
   RevisionLocation m_revisionLocation;
-  bool m_revisionLocationHasBeenSet = false;
 
   GenericRevisionInfo m_genericRevisionInfo;
+  bool m_revisionLocationHasBeenSet = false;
   bool m_genericRevisionInfoHasBeenSet = false;
 };
 

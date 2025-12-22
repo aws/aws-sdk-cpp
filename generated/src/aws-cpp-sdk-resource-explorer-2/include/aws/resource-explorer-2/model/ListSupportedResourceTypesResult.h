@@ -89,12 +89,12 @@ class ListSupportedResourceTypesResult {
   ///@}
  private:
   Aws::Vector<SupportedResourceType> m_resourceTypes;
-  bool m_resourceTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_resourceTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

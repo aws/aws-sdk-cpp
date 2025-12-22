@@ -202,33 +202,33 @@ class GenerateMacEmvPinChangeResult {
   ///@}
  private:
   Aws::String m_newPinPekArn;
-  bool m_newPinPekArnHasBeenSet = false;
 
   Aws::String m_secureMessagingIntegrityKeyArn;
-  bool m_secureMessagingIntegrityKeyArnHasBeenSet = false;
 
   Aws::String m_secureMessagingConfidentialityKeyArn;
-  bool m_secureMessagingConfidentialityKeyArnHasBeenSet = false;
 
   Aws::String m_mac;
-  bool m_macHasBeenSet = false;
 
   Aws::String m_encryptedPinBlock;
-  bool m_encryptedPinBlockHasBeenSet = false;
 
   Aws::String m_newPinPekKeyCheckValue;
-  bool m_newPinPekKeyCheckValueHasBeenSet = false;
 
   Aws::String m_secureMessagingIntegrityKeyCheckValue;
-  bool m_secureMessagingIntegrityKeyCheckValueHasBeenSet = false;
 
   Aws::String m_secureMessagingConfidentialityKeyCheckValue;
-  bool m_secureMessagingConfidentialityKeyCheckValueHasBeenSet = false;
 
   VisaAmexDerivationOutputs m_visaAmexDerivationOutputs;
-  bool m_visaAmexDerivationOutputsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_newPinPekArnHasBeenSet = false;
+  bool m_secureMessagingIntegrityKeyArnHasBeenSet = false;
+  bool m_secureMessagingConfidentialityKeyArnHasBeenSet = false;
+  bool m_macHasBeenSet = false;
+  bool m_encryptedPinBlockHasBeenSet = false;
+  bool m_newPinPekKeyCheckValueHasBeenSet = false;
+  bool m_secureMessagingIntegrityKeyCheckValueHasBeenSet = false;
+  bool m_secureMessagingConfidentialityKeyCheckValueHasBeenSet = false;
+  bool m_visaAmexDerivationOutputsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

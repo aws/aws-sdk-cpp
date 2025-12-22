@@ -101,12 +101,12 @@ class ComputeConfigRequest {
   ///@}
  private:
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_nodePools;
-  bool m_nodePoolsHasBeenSet = false;
 
   Aws::String m_nodeRoleArn;
+  bool m_enabledHasBeenSet = false;
+  bool m_nodePoolsHasBeenSet = false;
   bool m_nodeRoleArnHasBeenSet = false;
 };
 

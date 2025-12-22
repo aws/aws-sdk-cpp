@@ -68,9 +68,9 @@ class UpdateDatasetEntriesRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   DatasetChanges m_changes;
+  bool m_datasetArnHasBeenSet = false;
   bool m_changesHasBeenSet = false;
 };
 

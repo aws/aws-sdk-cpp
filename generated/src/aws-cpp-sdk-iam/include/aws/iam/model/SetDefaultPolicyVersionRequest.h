@@ -76,9 +76,9 @@ class SetDefaultPolicyVersionRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_policyArnHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

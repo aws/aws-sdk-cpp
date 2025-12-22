@@ -408,66 +408,66 @@ class DescribeBotLocaleResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_botVersion;
-  bool m_botVersionHasBeenSet = false;
 
   Aws::String m_localeId;
-  bool m_localeIdHasBeenSet = false;
 
   Aws::String m_localeName;
-  bool m_localeNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   double m_nluIntentConfidenceThreshold{0.0};
-  bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
   VoiceSettings m_voiceSettings;
-  bool m_voiceSettingsHasBeenSet = false;
 
   UnifiedSpeechSettings m_unifiedSpeechSettings;
-  bool m_unifiedSpeechSettingsHasBeenSet = false;
 
   SpeechRecognitionSettings m_speechRecognitionSettings;
-  bool m_speechRecognitionSettingsHasBeenSet = false;
 
   int m_intentsCount{0};
-  bool m_intentsCountHasBeenSet = false;
 
   int m_slotTypesCount{0};
-  bool m_slotTypesCountHasBeenSet = false;
 
   BotLocaleStatus m_botLocaleStatus{BotLocaleStatus::NOT_SET};
-  bool m_botLocaleStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_failureReasons;
-  bool m_failureReasonsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDateTime{};
-  bool m_creationDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedDateTime{};
-  bool m_lastUpdatedDateTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastBuildSubmittedDateTime{};
-  bool m_lastBuildSubmittedDateTimeHasBeenSet = false;
 
   Aws::Vector<BotLocaleHistoryEvent> m_botLocaleHistoryEvents;
-  bool m_botLocaleHistoryEventsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_recommendedActions;
-  bool m_recommendedActionsHasBeenSet = false;
 
   GenerativeAISettings m_generativeAISettings;
-  bool m_generativeAISettingsHasBeenSet = false;
 
   SpeechDetectionSensitivity m_speechDetectionSensitivity{SpeechDetectionSensitivity::NOT_SET};
-  bool m_speechDetectionSensitivityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_botVersionHasBeenSet = false;
+  bool m_localeIdHasBeenSet = false;
+  bool m_localeNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nluIntentConfidenceThresholdHasBeenSet = false;
+  bool m_voiceSettingsHasBeenSet = false;
+  bool m_unifiedSpeechSettingsHasBeenSet = false;
+  bool m_speechRecognitionSettingsHasBeenSet = false;
+  bool m_intentsCountHasBeenSet = false;
+  bool m_slotTypesCountHasBeenSet = false;
+  bool m_botLocaleStatusHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_lastUpdatedDateTimeHasBeenSet = false;
+  bool m_lastBuildSubmittedDateTimeHasBeenSet = false;
+  bool m_botLocaleHistoryEventsHasBeenSet = false;
+  bool m_recommendedActionsHasBeenSet = false;
+  bool m_generativeAISettingsHasBeenSet = false;
+  bool m_speechDetectionSensitivityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

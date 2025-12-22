@@ -80,12 +80,12 @@ class GetConnectionRecordingPreferencesResult {
   ///@}
  private:
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   ConnectionRecordingPreferences m_connectionRecordingPreferences;
-  bool m_connectionRecordingPreferencesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_connectionRecordingPreferencesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

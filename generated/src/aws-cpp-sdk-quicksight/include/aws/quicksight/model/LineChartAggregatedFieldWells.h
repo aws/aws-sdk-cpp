@@ -133,15 +133,15 @@ class LineChartAggregatedFieldWells {
   ///@}
  private:
   Aws::Vector<DimensionField> m_category;
-  bool m_categoryHasBeenSet = false;
 
   Aws::Vector<MeasureField> m_values;
-  bool m_valuesHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_colors;
-  bool m_colorsHasBeenSet = false;
 
   Aws::Vector<DimensionField> m_smallMultiples;
+  bool m_categoryHasBeenSet = false;
+  bool m_valuesHasBeenSet = false;
+  bool m_colorsHasBeenSet = false;
   bool m_smallMultiplesHasBeenSet = false;
 };
 

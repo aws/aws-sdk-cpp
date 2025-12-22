@@ -382,57 +382,57 @@ class FileCacheCreating {
   ///@}
  private:
   Aws::String m_ownerId;
-  bool m_ownerIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::String m_fileCacheId;
-  bool m_fileCacheIdHasBeenSet = false;
 
   FileCacheType m_fileCacheType{FileCacheType::NOT_SET};
-  bool m_fileCacheTypeHasBeenSet = false;
 
   Aws::String m_fileCacheTypeVersion;
-  bool m_fileCacheTypeVersionHasBeenSet = false;
 
   FileCacheLifecycle m_lifecycle{FileCacheLifecycle::NOT_SET};
-  bool m_lifecycleHasBeenSet = false;
 
   FileCacheFailureDetails m_failureDetails;
-  bool m_failureDetailsHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   Aws::String m_vpcId;
-  bool m_vpcIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_subnetIds;
-  bool m_subnetIdsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_networkInterfaceIds;
-  bool m_networkInterfaceIdsHasBeenSet = false;
 
   Aws::String m_dNSName;
-  bool m_dNSNameHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_copyTagsToDataRepositoryAssociations{false};
-  bool m_copyTagsToDataRepositoryAssociationsHasBeenSet = false;
 
   FileCacheLustreConfiguration m_lustreConfiguration;
-  bool m_lustreConfigurationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dataRepositoryAssociationIds;
+  bool m_ownerIdHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_fileCacheIdHasBeenSet = false;
+  bool m_fileCacheTypeHasBeenSet = false;
+  bool m_fileCacheTypeVersionHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_failureDetailsHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_vpcIdHasBeenSet = false;
+  bool m_subnetIdsHasBeenSet = false;
+  bool m_networkInterfaceIdsHasBeenSet = false;
+  bool m_dNSNameHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_copyTagsToDataRepositoryAssociationsHasBeenSet = false;
+  bool m_lustreConfigurationHasBeenSet = false;
   bool m_dataRepositoryAssociationIdsHasBeenSet = false;
 };
 

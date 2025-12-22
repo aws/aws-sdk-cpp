@@ -21,16 +21,16 @@ ListSubjectsResult::ListSubjectsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListSubjectsResult& ListSubjectsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("subjects")) {
     Aws::Utils::Array<JsonView> subjectsJsonList = jsonValue.GetArray("subjects");
     for (unsigned subjectsIndex = 0; subjectsIndex < subjectsJsonList.GetLength(); ++subjectsIndex) {
       m_subjects.push_back(subjectsJsonList[subjectsIndex].AsObject());
     }
     m_subjectsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

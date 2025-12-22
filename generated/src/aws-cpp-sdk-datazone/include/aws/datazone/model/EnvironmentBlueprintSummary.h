@@ -161,24 +161,24 @@ class EnvironmentBlueprintSummary {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_provider;
-  bool m_providerHasBeenSet = false;
 
   ProvisioningProperties m_provisioningProperties;
-  bool m_provisioningPropertiesHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_provisioningPropertiesHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

@@ -87,12 +87,12 @@ class DateCondition {
   ///@}
  private:
   Aws::String m_fieldName;
-  bool m_fieldNameHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   DateComparisonType m_comparisonType{DateComparisonType::NOT_SET};
+  bool m_fieldNameHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_comparisonTypeHasBeenSet = false;
 };
 

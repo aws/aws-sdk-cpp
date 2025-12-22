@@ -88,12 +88,12 @@ class ListMigrationTasksResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<MigrationTaskSummary> m_migrationTaskSummaryList;
-  bool m_migrationTaskSummaryListHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_migrationTaskSummaryListHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

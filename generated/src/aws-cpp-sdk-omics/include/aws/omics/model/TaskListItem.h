@@ -241,39 +241,39 @@ class TaskListItem {
   ///@}
  private:
   Aws::String m_taskId;
-  bool m_taskIdHasBeenSet = false;
 
   TaskStatus m_status{TaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_cpus{0};
-  bool m_cpusHasBeenSet = false;
 
   bool m_cacheHit{false};
-  bool m_cacheHitHasBeenSet = false;
 
   Aws::String m_cacheS3Uri;
-  bool m_cacheS3UriHasBeenSet = false;
 
   int m_memory{0};
-  bool m_memoryHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
-  bool m_stopTimeHasBeenSet = false;
 
   int m_gpus{0};
-  bool m_gpusHasBeenSet = false;
 
   Aws::String m_instanceType;
+  bool m_taskIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_cpusHasBeenSet = false;
+  bool m_cacheHitHasBeenSet = false;
+  bool m_cacheS3UriHasBeenSet = false;
+  bool m_memoryHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stopTimeHasBeenSet = false;
+  bool m_gpusHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
 };
 

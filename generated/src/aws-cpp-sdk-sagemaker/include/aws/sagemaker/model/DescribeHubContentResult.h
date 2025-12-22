@@ -397,66 +397,66 @@ class DescribeHubContentResult {
   ///@}
  private:
   Aws::String m_hubContentName;
-  bool m_hubContentNameHasBeenSet = false;
 
   Aws::String m_hubContentArn;
-  bool m_hubContentArnHasBeenSet = false;
 
   Aws::String m_hubContentVersion;
-  bool m_hubContentVersionHasBeenSet = false;
 
   HubContentType m_hubContentType{HubContentType::NOT_SET};
-  bool m_hubContentTypeHasBeenSet = false;
 
   Aws::String m_documentSchemaVersion;
-  bool m_documentSchemaVersionHasBeenSet = false;
 
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   Aws::String m_hubArn;
-  bool m_hubArnHasBeenSet = false;
 
   Aws::String m_hubContentDisplayName;
-  bool m_hubContentDisplayNameHasBeenSet = false;
 
   Aws::String m_hubContentDescription;
-  bool m_hubContentDescriptionHasBeenSet = false;
 
   Aws::String m_hubContentMarkdown;
-  bool m_hubContentMarkdownHasBeenSet = false;
 
   Aws::String m_hubContentDocument;
-  bool m_hubContentDocumentHasBeenSet = false;
 
   Aws::String m_sageMakerPublicHubContentArn;
-  bool m_sageMakerPublicHubContentArnHasBeenSet = false;
 
   Aws::String m_referenceMinVersion;
-  bool m_referenceMinVersionHasBeenSet = false;
 
   HubContentSupportStatus m_supportStatus{HubContentSupportStatus::NOT_SET};
-  bool m_supportStatusHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hubContentSearchKeywords;
-  bool m_hubContentSearchKeywordsHasBeenSet = false;
 
   Aws::Vector<HubContentDependency> m_hubContentDependencies;
-  bool m_hubContentDependenciesHasBeenSet = false;
 
   HubContentStatus m_hubContentStatus{HubContentStatus::NOT_SET};
-  bool m_hubContentStatusHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModifiedTime{};
-  bool m_lastModifiedTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_hubContentNameHasBeenSet = false;
+  bool m_hubContentArnHasBeenSet = false;
+  bool m_hubContentVersionHasBeenSet = false;
+  bool m_hubContentTypeHasBeenSet = false;
+  bool m_documentSchemaVersionHasBeenSet = false;
+  bool m_hubNameHasBeenSet = false;
+  bool m_hubArnHasBeenSet = false;
+  bool m_hubContentDisplayNameHasBeenSet = false;
+  bool m_hubContentDescriptionHasBeenSet = false;
+  bool m_hubContentMarkdownHasBeenSet = false;
+  bool m_hubContentDocumentHasBeenSet = false;
+  bool m_sageMakerPublicHubContentArnHasBeenSet = false;
+  bool m_referenceMinVersionHasBeenSet = false;
+  bool m_supportStatusHasBeenSet = false;
+  bool m_hubContentSearchKeywordsHasBeenSet = false;
+  bool m_hubContentDependenciesHasBeenSet = false;
+  bool m_hubContentStatusHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

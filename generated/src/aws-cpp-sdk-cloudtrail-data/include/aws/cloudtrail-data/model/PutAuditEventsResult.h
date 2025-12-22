@@ -94,12 +94,12 @@ class PutAuditEventsResult {
   ///@}
  private:
   Aws::Vector<ResultErrorEntry> m_failed;
-  bool m_failedHasBeenSet = false;
 
   Aws::Vector<AuditEventResultEntry> m_successful;
-  bool m_successfulHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_failedHasBeenSet = false;
+  bool m_successfulHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

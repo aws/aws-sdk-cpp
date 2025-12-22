@@ -131,21 +131,21 @@ class RegisterAccountResult {
   ///@}
  private:
   RegistrationStatus m_registerAccountStatus{RegistrationStatus::NOT_SET};
-  bool m_registerAccountStatusHasBeenSet = false;
 
   TimestreamResources m_timestreamResources;
-  bool m_timestreamResourcesHasBeenSet = false;
 
   IamResources m_iamResources;
-  bool m_iamResourcesHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_registerAccountStatusHasBeenSet = false;
+  bool m_timestreamResourcesHasBeenSet = false;
+  bool m_iamResourcesHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

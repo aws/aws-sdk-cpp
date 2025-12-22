@@ -39,6 +39,10 @@ Aws::String ListSecretsRequest::SerializePayload() const {
     payload.WithString("SortOrder", SortOrderTypeMapper::GetNameForSortOrderType(m_sortOrder));
   }
 
+  if (m_sortByHasBeenSet) {
+    payload.WithString("SortBy", SortByTypeMapper::GetNameForSortByType(m_sortBy));
+  }
+
   return payload.View().WriteReadable();
 }
 

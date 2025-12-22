@@ -64,9 +64,9 @@ class GetConnectInstanceConfigResult {
   ///@}
  private:
   InstanceConfig m_connectInstanceConfig;
-  bool m_connectInstanceConfigHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectInstanceConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

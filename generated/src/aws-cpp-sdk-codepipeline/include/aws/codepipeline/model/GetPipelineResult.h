@@ -86,12 +86,12 @@ class GetPipelineResult {
   ///@}
  private:
   PipelineDeclaration m_pipeline;
-  bool m_pipelineHasBeenSet = false;
 
   PipelineMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pipelineHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

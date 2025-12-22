@@ -100,12 +100,12 @@ class SlotResolutionTestResultItemCounts {
   ///@}
  private:
   int m_totalResultCount{0};
-  bool m_totalResultCountHasBeenSet = false;
 
   Aws::Map<TestResultMatchStatus, int> m_speechTranscriptionResultCounts;
-  bool m_speechTranscriptionResultCountsHasBeenSet = false;
 
   Aws::Map<TestResultMatchStatus, int> m_slotMatchResultCounts;
+  bool m_totalResultCountHasBeenSet = false;
+  bool m_speechTranscriptionResultCountsHasBeenSet = false;
   bool m_slotMatchResultCountsHasBeenSet = false;
 };
 

@@ -70,9 +70,9 @@ class StopDBInstanceRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_dBSnapshotIdentifier;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
   bool m_dBSnapshotIdentifierHasBeenSet = false;
 };
 

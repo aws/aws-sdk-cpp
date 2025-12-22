@@ -66,9 +66,9 @@ class DeleteOdbNetworkRequest : public OdbRequest {
   ///@}
  private:
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
 
   bool m_deleteAssociatedResources{false};
+  bool m_odbNetworkIdHasBeenSet = false;
   bool m_deleteAssociatedResourcesHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class DeregisterNamespaceResult {
   ///@}
  private:
   NamespaceRegistrationStatus m_status{NamespaceRegistrationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_statusHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

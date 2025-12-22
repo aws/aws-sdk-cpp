@@ -211,24 +211,24 @@ class GetPersonalizedRankingRequest : public PersonalizeRuntimeRequest {
   ///@}
  private:
   Aws::String m_campaignArn;
-  bool m_campaignArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_inputList;
-  bool m_inputListHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_context;
-  bool m_contextHasBeenSet = false;
 
   Aws::String m_filterArn;
-  bool m_filterArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_filterValues;
-  bool m_filterValuesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_metadataColumns;
+  bool m_campaignArnHasBeenSet = false;
+  bool m_inputListHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_contextHasBeenSet = false;
+  bool m_filterArnHasBeenSet = false;
+  bool m_filterValuesHasBeenSet = false;
   bool m_metadataColumnsHasBeenSet = false;
 };
 

@@ -337,48 +337,48 @@ class CreateModelRequest : public LookoutEquipmentRequest {
   ///@}
  private:
   Aws::String m_modelName;
-  bool m_modelNameHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   DatasetSchema m_datasetSchema;
-  bool m_datasetSchemaHasBeenSet = false;
 
   LabelsInputConfiguration m_labelsInputConfiguration;
-  bool m_labelsInputConfigurationHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::Utils::DateTime m_trainingDataStartTime{};
-  bool m_trainingDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_trainingDataEndTime{};
-  bool m_trainingDataEndTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationDataStartTime{};
-  bool m_evaluationDataStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_evaluationDataEndTime{};
-  bool m_evaluationDataEndTimeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   DataPreProcessingConfiguration m_dataPreProcessingConfiguration;
-  bool m_dataPreProcessingConfigurationHasBeenSet = false;
 
   Aws::String m_serverSideKmsKeyId;
-  bool m_serverSideKmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_offCondition;
-  bool m_offConditionHasBeenSet = false;
 
   ModelDiagnosticsOutputConfiguration m_modelDiagnosticsOutputConfiguration;
+  bool m_modelNameHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_datasetSchemaHasBeenSet = false;
+  bool m_labelsInputConfigurationHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_trainingDataStartTimeHasBeenSet = false;
+  bool m_trainingDataEndTimeHasBeenSet = false;
+  bool m_evaluationDataStartTimeHasBeenSet = false;
+  bool m_evaluationDataEndTimeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_dataPreProcessingConfigurationHasBeenSet = false;
+  bool m_serverSideKmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_offConditionHasBeenSet = false;
   bool m_modelDiagnosticsOutputConfigurationHasBeenSet = false;
 };
 

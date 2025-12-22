@@ -61,9 +61,9 @@ class DeclineHandshakeResult {
   ///@}
  private:
   Handshake m_handshake;
-  bool m_handshakeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_handshakeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

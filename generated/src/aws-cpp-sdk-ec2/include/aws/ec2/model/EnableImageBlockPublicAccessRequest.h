@@ -70,9 +70,9 @@ class EnableImageBlockPublicAccessRequest : public EC2Request {
   ///@}
  private:
   ImageBlockPublicAccessEnabledState m_imageBlockPublicAccessState{ImageBlockPublicAccessEnabledState::NOT_SET};
-  bool m_imageBlockPublicAccessStateHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_imageBlockPublicAccessStateHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

@@ -94,15 +94,15 @@ class GetSessionEndpointResult {
   ///@}
  private:
   Aws::String m_endpointUrl;
-  bool m_endpointUrlHasBeenSet = false;
 
   Aws::String m_authToken;
-  bool m_authTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_authTokenExpirationTime{};
-  bool m_authTokenExpirationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_endpointUrlHasBeenSet = false;
+  bool m_authTokenHasBeenSet = false;
+  bool m_authTokenExpirationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

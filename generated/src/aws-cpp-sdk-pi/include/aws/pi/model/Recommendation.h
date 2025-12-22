@@ -70,9 +70,9 @@ class Recommendation {
   ///@}
  private:
   Aws::String m_recommendationId;
-  bool m_recommendationIdHasBeenSet = false;
 
   Aws::String m_recommendationDescription;
+  bool m_recommendationIdHasBeenSet = false;
   bool m_recommendationDescriptionHasBeenSet = false;
 };
 

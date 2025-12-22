@@ -103,12 +103,12 @@ class OrganizationConfiguration {
   ///@}
  private:
   OrganizationConfigurationConfigurationType m_configurationType{OrganizationConfigurationConfigurationType::NOT_SET};
-  bool m_configurationTypeHasBeenSet = false;
 
   OrganizationConfigurationStatus m_status{OrganizationConfigurationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
+  bool m_configurationTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
 };
 

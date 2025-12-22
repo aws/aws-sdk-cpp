@@ -358,57 +358,57 @@ class DescribeDatasetImportJobResult {
   ///@}
  private:
   Aws::String m_datasetImportJobName;
-  bool m_datasetImportJobNameHasBeenSet = false;
 
   Aws::String m_datasetImportJobArn;
-  bool m_datasetImportJobArnHasBeenSet = false;
 
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_timestampFormat;
-  bool m_timestampFormatHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   bool m_useGeolocationForTimeZone{false};
-  bool m_useGeolocationForTimeZoneHasBeenSet = false;
 
   Aws::String m_geolocationFormat;
-  bool m_geolocationFormatHasBeenSet = false;
 
   DataSource m_dataSource;
-  bool m_dataSourceHasBeenSet = false;
 
   long long m_estimatedTimeRemainingInMinutes{0};
-  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
 
   Aws::Map<Aws::String, Statistics> m_fieldStatistics;
-  bool m_fieldStatisticsHasBeenSet = false;
 
   double m_dataSize{0.0};
-  bool m_dataSizeHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_format;
-  bool m_formatHasBeenSet = false;
 
   ImportMode m_importMode{ImportMode::NOT_SET};
-  bool m_importModeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetImportJobNameHasBeenSet = false;
+  bool m_datasetImportJobArnHasBeenSet = false;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_timestampFormatHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
+  bool m_useGeolocationForTimeZoneHasBeenSet = false;
+  bool m_geolocationFormatHasBeenSet = false;
+  bool m_dataSourceHasBeenSet = false;
+  bool m_estimatedTimeRemainingInMinutesHasBeenSet = false;
+  bool m_fieldStatisticsHasBeenSet = false;
+  bool m_dataSizeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
+  bool m_importModeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

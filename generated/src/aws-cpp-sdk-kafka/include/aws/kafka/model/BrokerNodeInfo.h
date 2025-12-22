@@ -163,21 +163,21 @@ class BrokerNodeInfo {
   ///@}
  private:
   Aws::String m_attachedENIId;
-  bool m_attachedENIIdHasBeenSet = false;
 
   double m_brokerId{0.0};
-  bool m_brokerIdHasBeenSet = false;
 
   Aws::String m_clientSubnet;
-  bool m_clientSubnetHasBeenSet = false;
 
   Aws::String m_clientVpcIpAddress;
-  bool m_clientVpcIpAddressHasBeenSet = false;
 
   BrokerSoftwareInfo m_currentBrokerSoftwareInfo;
-  bool m_currentBrokerSoftwareInfoHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_endpoints;
+  bool m_attachedENIIdHasBeenSet = false;
+  bool m_brokerIdHasBeenSet = false;
+  bool m_clientSubnetHasBeenSet = false;
+  bool m_clientVpcIpAddressHasBeenSet = false;
+  bool m_currentBrokerSoftwareInfoHasBeenSet = false;
   bool m_endpointsHasBeenSet = false;
 };
 

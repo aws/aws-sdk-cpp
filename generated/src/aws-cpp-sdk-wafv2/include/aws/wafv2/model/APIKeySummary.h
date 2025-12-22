@@ -118,15 +118,15 @@ class APIKeySummary {
   ///@}
  private:
   Aws::Vector<Aws::String> m_tokenDomains;
-  bool m_tokenDomainsHasBeenSet = false;
 
   Aws::String m_aPIKey;
-  bool m_aPIKeyHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTimestamp{};
-  bool m_creationTimestampHasBeenSet = false;
 
   int m_version{0};
+  bool m_tokenDomainsHasBeenSet = false;
+  bool m_aPIKeyHasBeenSet = false;
+  bool m_creationTimestampHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

@@ -254,39 +254,39 @@ class Instance {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   DirectoryType m_identityManagementType{DirectoryType::NOT_SET};
-  bool m_identityManagementTypeHasBeenSet = false;
 
   Aws::String m_instanceAlias;
-  bool m_instanceAliasHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   InstanceStatus m_instanceStatus{InstanceStatus::NOT_SET};
-  bool m_instanceStatusHasBeenSet = false;
 
   InstanceStatusReason m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   bool m_inboundCallsEnabled{false};
-  bool m_inboundCallsEnabledHasBeenSet = false;
 
   bool m_outboundCallsEnabled{false};
-  bool m_outboundCallsEnabledHasBeenSet = false;
 
   Aws::String m_instanceAccessUrl;
-  bool m_instanceAccessUrlHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_identityManagementTypeHasBeenSet = false;
+  bool m_instanceAliasHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_instanceStatusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_inboundCallsEnabledHasBeenSet = false;
+  bool m_outboundCallsEnabledHasBeenSet = false;
+  bool m_instanceAccessUrlHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

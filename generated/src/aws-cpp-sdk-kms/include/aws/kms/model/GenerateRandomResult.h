@@ -89,12 +89,12 @@ class GenerateRandomResult {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_plaintext{};
-  bool m_plaintextHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_ciphertextForRecipient{};
-  bool m_ciphertextForRecipientHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_plaintextHasBeenSet = false;
+  bool m_ciphertextForRecipientHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class SessionDataSortBy {
   ///@}
  private:
   AnalyticsSessionSortByName m_name{AnalyticsSessionSortByName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   AnalyticsSortOrder m_order{AnalyticsSortOrder::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

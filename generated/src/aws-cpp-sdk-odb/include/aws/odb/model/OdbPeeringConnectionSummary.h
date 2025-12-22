@@ -241,36 +241,36 @@ class OdbPeeringConnectionSummary {
   ///@}
  private:
   Aws::String m_odbPeeringConnectionId;
-  bool m_odbPeeringConnectionIdHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_odbPeeringConnectionArn;
-  bool m_odbPeeringConnectionArnHasBeenSet = false;
 
   Aws::String m_odbNetworkArn;
-  bool m_odbNetworkArnHasBeenSet = false;
 
   Aws::String m_peerNetworkArn;
-  bool m_peerNetworkArnHasBeenSet = false;
 
   Aws::String m_odbPeeringConnectionType;
-  bool m_odbPeeringConnectionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_peerNetworkCidrs;
-  bool m_peerNetworkCidrsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   double m_percentProgress{0.0};
+  bool m_odbPeeringConnectionIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_odbPeeringConnectionArnHasBeenSet = false;
+  bool m_odbNetworkArnHasBeenSet = false;
+  bool m_peerNetworkArnHasBeenSet = false;
+  bool m_odbPeeringConnectionTypeHasBeenSet = false;
+  bool m_peerNetworkCidrsHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_percentProgressHasBeenSet = false;
 };
 

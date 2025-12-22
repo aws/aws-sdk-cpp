@@ -66,9 +66,9 @@ class DeleteVolumeResult {
   ///@}
  private:
   Aws::String m_volumeARN;
-  bool m_volumeARNHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_volumeARNHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

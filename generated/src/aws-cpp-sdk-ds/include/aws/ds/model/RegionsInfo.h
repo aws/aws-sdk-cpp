@@ -78,9 +78,9 @@ class RegionsInfo {
   ///@}
  private:
   Aws::String m_primaryRegion;
-  bool m_primaryRegionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_additionalRegions;
+  bool m_primaryRegionHasBeenSet = false;
   bool m_additionalRegionsHasBeenSet = false;
 };
 

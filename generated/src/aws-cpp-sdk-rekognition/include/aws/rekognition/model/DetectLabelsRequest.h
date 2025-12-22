@@ -147,18 +147,18 @@ class DetectLabelsRequest : public RekognitionRequest {
   ///@}
  private:
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   int m_maxLabels{0};
-  bool m_maxLabelsHasBeenSet = false;
 
   double m_minConfidence{0.0};
-  bool m_minConfidenceHasBeenSet = false;
 
   Aws::Vector<DetectLabelsFeatureName> m_features;
-  bool m_featuresHasBeenSet = false;
 
   DetectLabelsSettings m_settings;
+  bool m_imageHasBeenSet = false;
+  bool m_maxLabelsHasBeenSet = false;
+  bool m_minConfidenceHasBeenSet = false;
+  bool m_featuresHasBeenSet = false;
   bool m_settingsHasBeenSet = false;
 };
 

@@ -137,18 +137,18 @@ class PromptSpecification {
   ///@}
  private:
   Aws::Vector<MessageGroup> m_messageGroups;
-  bool m_messageGroupsHasBeenSet = false;
 
   int m_maxRetries{0};
-  bool m_maxRetriesHasBeenSet = false;
 
   bool m_allowInterrupt{false};
-  bool m_allowInterruptHasBeenSet = false;
 
   MessageSelectionStrategy m_messageSelectionStrategy{MessageSelectionStrategy::NOT_SET};
-  bool m_messageSelectionStrategyHasBeenSet = false;
 
   Aws::Map<PromptAttempt, PromptAttemptSpecification> m_promptAttemptsSpecification;
+  bool m_messageGroupsHasBeenSet = false;
+  bool m_maxRetriesHasBeenSet = false;
+  bool m_allowInterruptHasBeenSet = false;
+  bool m_messageSelectionStrategyHasBeenSet = false;
   bool m_promptAttemptsSpecificationHasBeenSet = false;
 };
 

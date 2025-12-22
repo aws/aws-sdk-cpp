@@ -70,9 +70,9 @@ class SsoIdentity {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   SsoIdentityType m_type{SsoIdentityType::NOT_SET};
+  bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };
 

@@ -21,10 +21,6 @@ ArchiveApplicationResult::ArchiveApplicationResult(const Aws::AmazonWebServiceRe
 
 ArchiveApplicationResult& ArchiveApplicationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("applicationAggregatedStatus")) {
-    m_applicationAggregatedStatus = jsonValue.GetObject("applicationAggregatedStatus");
-    m_applicationAggregatedStatusHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("applicationID")) {
     m_applicationID = jsonValue.GetString("applicationID");
     m_applicationIDHasBeenSet = true;
@@ -33,9 +29,9 @@ ArchiveApplicationResult& ArchiveApplicationResult::operator=(const Aws::AmazonW
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("creationDateTime")) {
-    m_creationDateTime = jsonValue.GetString("creationDateTime");
-    m_creationDateTimeHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("description")) {
     m_description = jsonValue.GetString("description");
@@ -45,13 +41,17 @@ ArchiveApplicationResult& ArchiveApplicationResult::operator=(const Aws::AmazonW
     m_isArchived = jsonValue.GetBool("isArchived");
     m_isArchivedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("applicationAggregatedStatus")) {
+    m_applicationAggregatedStatus = jsonValue.GetObject("applicationAggregatedStatus");
+    m_applicationAggregatedStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("creationDateTime")) {
+    m_creationDateTime = jsonValue.GetString("creationDateTime");
+    m_creationDateTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastModifiedDateTime")) {
     m_lastModifiedDateTime = jsonValue.GetString("lastModifiedDateTime");
     m_lastModifiedDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

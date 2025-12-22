@@ -157,21 +157,21 @@ class AddonVersionInfo {
   ///@}
  private:
   Aws::String m_addonVersion;
-  bool m_addonVersionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_architecture;
-  bool m_architectureHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_computeTypes;
-  bool m_computeTypesHasBeenSet = false;
 
   Aws::Vector<Compatibility> m_compatibilities;
-  bool m_compatibilitiesHasBeenSet = false;
 
   bool m_requiresConfiguration{false};
-  bool m_requiresConfigurationHasBeenSet = false;
 
   bool m_requiresIamPermissions{false};
+  bool m_addonVersionHasBeenSet = false;
+  bool m_architectureHasBeenSet = false;
+  bool m_computeTypesHasBeenSet = false;
+  bool m_compatibilitiesHasBeenSet = false;
+  bool m_requiresConfigurationHasBeenSet = false;
   bool m_requiresIamPermissionsHasBeenSet = false;
 };
 

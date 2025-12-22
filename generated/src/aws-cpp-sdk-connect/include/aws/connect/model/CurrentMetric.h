@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/CurrentMetricName.h>
 #include <aws/connect/model/Unit.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
 
@@ -24,8 +25,9 @@ namespace Model {
  * <p>Contains information about a real-time metric. For a description of each
  * metric, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
- * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p><p><h3>See
- * Also:</h3>   <a
+ * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+ *  <p>Only one of either the Name or MetricId is required.</p>
+ * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CurrentMetric">AWS
  * API Reference</a></p>
  */
@@ -54,6 +56,26 @@ class CurrentMetric {
 
   ///@{
   /**
+   * <p>Out of the box current metrics or custom metrics can be referenced via this
+   * field. This field is a valid AWS Connect Arn or a UUID.</p>
+   */
+  inline const Aws::String& GetMetricId() const { return m_metricId; }
+  inline bool MetricIdHasBeenSet() const { return m_metricIdHasBeenSet; }
+  template <typename MetricIdT = Aws::String>
+  void SetMetricId(MetricIdT&& value) {
+    m_metricIdHasBeenSet = true;
+    m_metricId = std::forward<MetricIdT>(value);
+  }
+  template <typename MetricIdT = Aws::String>
+  CurrentMetric& WithMetricId(MetricIdT&& value) {
+    SetMetricId(std::forward<MetricIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   *  <p>The Unit parameter is not supported for custom metrics.</p>
    * <p>The unit for the metric.</p>
    */
   inline Unit GetUnit() const { return m_unit; }
@@ -69,9 +91,12 @@ class CurrentMetric {
   ///@}
  private:
   CurrentMetricName m_name{CurrentMetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
+
+  Aws::String m_metricId;
 
   Unit m_unit{Unit::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_metricIdHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

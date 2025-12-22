@@ -105,15 +105,15 @@ class EquipmentDetection {
   ///@}
  private:
   BoundingBox m_boundingBox;
-  bool m_boundingBoxHasBeenSet = false;
 
   double m_confidence{0.0};
-  bool m_confidenceHasBeenSet = false;
 
   ProtectiveEquipmentType m_type{ProtectiveEquipmentType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   CoversBodyPart m_coversBodyPart;
+  bool m_boundingBoxHasBeenSet = false;
+  bool m_confidenceHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_coversBodyPartHasBeenSet = false;
 };
 

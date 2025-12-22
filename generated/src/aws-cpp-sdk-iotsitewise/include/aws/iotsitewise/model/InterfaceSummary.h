@@ -70,9 +70,9 @@ class InterfaceSummary {
   ///@}
  private:
   Aws::String m_interfaceAssetModelId;
-  bool m_interfaceAssetModelIdHasBeenSet = false;
 
   Aws::String m_interfaceAssetModelPropertyId;
+  bool m_interfaceAssetModelIdHasBeenSet = false;
   bool m_interfaceAssetModelPropertyIdHasBeenSet = false;
 };
 

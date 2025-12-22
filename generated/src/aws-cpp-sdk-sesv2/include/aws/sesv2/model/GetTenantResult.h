@@ -65,9 +65,9 @@ class GetTenantResult {
   ///@}
  private:
   Tenant m_tenant;
-  bool m_tenantHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_tenantHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

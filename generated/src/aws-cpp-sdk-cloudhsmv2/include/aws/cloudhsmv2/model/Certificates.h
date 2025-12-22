@@ -126,18 +126,18 @@ class Certificates {
   ///@}
  private:
   Aws::String m_clusterCsr;
-  bool m_clusterCsrHasBeenSet = false;
 
   Aws::String m_hsmCertificate;
-  bool m_hsmCertificateHasBeenSet = false;
 
   Aws::String m_awsHardwareCertificate;
-  bool m_awsHardwareCertificateHasBeenSet = false;
 
   Aws::String m_manufacturerHardwareCertificate;
-  bool m_manufacturerHardwareCertificateHasBeenSet = false;
 
   Aws::String m_clusterCertificate;
+  bool m_clusterCsrHasBeenSet = false;
+  bool m_hsmCertificateHasBeenSet = false;
+  bool m_awsHardwareCertificateHasBeenSet = false;
+  bool m_manufacturerHardwareCertificateHasBeenSet = false;
   bool m_clusterCertificateHasBeenSet = false;
 };
 

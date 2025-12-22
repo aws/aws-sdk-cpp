@@ -59,9 +59,9 @@ class CreateLicenseEndpointResult {
   ///@}
  private:
   Aws::String m_licenseEndpointId;
-  bool m_licenseEndpointIdHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_licenseEndpointIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

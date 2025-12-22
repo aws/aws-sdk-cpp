@@ -57,9 +57,9 @@ class GetCardinalityResult {
   ///@}
  private:
   int m_cardinality{0};
-  bool m_cardinalityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_cardinalityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class EntityRecognizerEvaluationMetrics {
   ///@}
  private:
   double m_precision{0.0};
-  bool m_precisionHasBeenSet = false;
 
   double m_recall{0.0};
-  bool m_recallHasBeenSet = false;
 
   double m_f1Score{0.0};
+  bool m_precisionHasBeenSet = false;
+  bool m_recallHasBeenSet = false;
   bool m_f1ScoreHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class PutConnectInstanceIntegrationRequest : public ConnectCampaignsV2Request {
   ///@}
  private:
   Aws::String m_connectInstanceId;
-  bool m_connectInstanceIdHasBeenSet = false;
 
   IntegrationConfig m_integrationConfig;
+  bool m_connectInstanceIdHasBeenSet = false;
   bool m_integrationConfigHasBeenSet = false;
 };
 

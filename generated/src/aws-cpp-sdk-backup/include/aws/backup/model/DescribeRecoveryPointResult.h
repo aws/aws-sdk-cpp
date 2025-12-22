@@ -624,93 +624,93 @@ class DescribeRecoveryPointResult {
   ///@}
  private:
   Aws::String m_recoveryPointArn;
-  bool m_recoveryPointArnHasBeenSet = false;
 
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_backupVaultArn;
-  bool m_backupVaultArnHasBeenSet = false;
 
   Aws::String m_sourceBackupVaultArn;
-  bool m_sourceBackupVaultArnHasBeenSet = false;
 
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   RecoveryPointCreator m_createdBy;
-  bool m_createdByHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   RecoveryPointStatus m_status{RecoveryPointStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationDate{};
-  bool m_creationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_initiationDate{};
-  bool m_initiationDateHasBeenSet = false;
 
   Aws::Utils::DateTime m_completionDate{};
-  bool m_completionDateHasBeenSet = false;
 
   long long m_backupSizeInBytes{0};
-  bool m_backupSizeInBytesHasBeenSet = false;
 
   CalculatedLifecycle m_calculatedLifecycle;
-  bool m_calculatedLifecycleHasBeenSet = false;
 
   Lifecycle m_lifecycle;
-  bool m_lifecycleHasBeenSet = false;
 
   Aws::String m_encryptionKeyArn;
-  bool m_encryptionKeyArnHasBeenSet = false;
 
   bool m_isEncrypted{false};
-  bool m_isEncryptedHasBeenSet = false;
 
   StorageClass m_storageClass{StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastRestoreTime{};
-  bool m_lastRestoreTimeHasBeenSet = false;
 
   Aws::String m_parentRecoveryPointArn;
-  bool m_parentRecoveryPointArnHasBeenSet = false;
 
   Aws::String m_compositeMemberIdentifier;
-  bool m_compositeMemberIdentifierHasBeenSet = false;
 
   bool m_isParent{false};
-  bool m_isParentHasBeenSet = false;
 
   Aws::String m_resourceName;
-  bool m_resourceNameHasBeenSet = false;
 
   VaultType m_vaultType{VaultType::NOT_SET};
-  bool m_vaultTypeHasBeenSet = false;
 
   IndexStatus m_indexStatus{IndexStatus::NOT_SET};
-  bool m_indexStatusHasBeenSet = false;
 
   Aws::String m_indexStatusMessage;
-  bool m_indexStatusMessageHasBeenSet = false;
 
   EncryptionKeyType m_encryptionKeyType{EncryptionKeyType::NOT_SET};
-  bool m_encryptionKeyTypeHasBeenSet = false;
 
   Aws::Vector<ScanResult> m_scanResults;
-  bool m_scanResultsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_recoveryPointArnHasBeenSet = false;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_backupVaultArnHasBeenSet = false;
+  bool m_sourceBackupVaultArnHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_initiationDateHasBeenSet = false;
+  bool m_completionDateHasBeenSet = false;
+  bool m_backupSizeInBytesHasBeenSet = false;
+  bool m_calculatedLifecycleHasBeenSet = false;
+  bool m_lifecycleHasBeenSet = false;
+  bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_isEncryptedHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_lastRestoreTimeHasBeenSet = false;
+  bool m_parentRecoveryPointArnHasBeenSet = false;
+  bool m_compositeMemberIdentifierHasBeenSet = false;
+  bool m_isParentHasBeenSet = false;
+  bool m_resourceNameHasBeenSet = false;
+  bool m_vaultTypeHasBeenSet = false;
+  bool m_indexStatusHasBeenSet = false;
+  bool m_indexStatusMessageHasBeenSet = false;
+  bool m_encryptionKeyTypeHasBeenSet = false;
+  bool m_scanResultsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

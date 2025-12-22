@@ -142,18 +142,18 @@ class DataSourceIntrospectionModel {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<DataSourceIntrospectionModelField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   DataSourceIntrospectionModelIndex m_primaryKey;
-  bool m_primaryKeyHasBeenSet = false;
 
   Aws::Vector<DataSourceIntrospectionModelIndex> m_indexes;
-  bool m_indexesHasBeenSet = false;
 
   Aws::String m_sdl;
+  bool m_nameHasBeenSet = false;
+  bool m_fieldsHasBeenSet = false;
+  bool m_primaryKeyHasBeenSet = false;
+  bool m_indexesHasBeenSet = false;
   bool m_sdlHasBeenSet = false;
 };
 

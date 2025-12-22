@@ -19,7 +19,8 @@ enum class ResourceNotFoundExceptionReason {
   SENDER_PROFILE_NOT_FOUND,
   RECEIVER_PROFILE_NOT_FOUND,
   CONNECTION_INVITATION_NOT_FOUND,
-  CONNECTION_NOT_FOUND
+  CONNECTION_NOT_FOUND,
+  VERIFICATION_NOT_FOUND
 };
 
 namespace ResourceNotFoundExceptionReasonMapper {

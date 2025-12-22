@@ -97,12 +97,12 @@ class DescribeHsmClientCertificatesResult {
   ///@}
  private:
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   Aws::Vector<HsmClientCertificate> m_hsmClientCertificates;
-  bool m_hsmClientCertificatesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_markerHasBeenSet = false;
+  bool m_hsmClientCertificatesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

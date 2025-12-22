@@ -61,9 +61,9 @@ class DescribeDocumentClassifierResult {
   ///@}
  private:
   DocumentClassifierProperties m_documentClassifierProperties;
-  bool m_documentClassifierPropertiesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentClassifierPropertiesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

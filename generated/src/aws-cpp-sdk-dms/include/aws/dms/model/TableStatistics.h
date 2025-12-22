@@ -533,87 +533,87 @@ class TableStatistics {
   ///@}
  private:
   Aws::String m_schemaName;
-  bool m_schemaNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   long long m_inserts{0};
-  bool m_insertsHasBeenSet = false;
 
   long long m_deletes{0};
-  bool m_deletesHasBeenSet = false;
 
   long long m_updates{0};
-  bool m_updatesHasBeenSet = false;
 
   long long m_ddls{0};
-  bool m_ddlsHasBeenSet = false;
 
   long long m_appliedInserts{0};
-  bool m_appliedInsertsHasBeenSet = false;
 
   long long m_appliedDeletes{0};
-  bool m_appliedDeletesHasBeenSet = false;
 
   long long m_appliedUpdates{0};
-  bool m_appliedUpdatesHasBeenSet = false;
 
   long long m_appliedDdls{0};
-  bool m_appliedDdlsHasBeenSet = false;
 
   long long m_fullLoadRows{0};
-  bool m_fullLoadRowsHasBeenSet = false;
 
   long long m_fullLoadCondtnlChkFailedRows{0};
-  bool m_fullLoadCondtnlChkFailedRowsHasBeenSet = false;
 
   long long m_fullLoadErrorRows{0};
-  bool m_fullLoadErrorRowsHasBeenSet = false;
 
   Aws::Utils::DateTime m_fullLoadStartTime{};
-  bool m_fullLoadStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_fullLoadEndTime{};
-  bool m_fullLoadEndTimeHasBeenSet = false;
 
   bool m_fullLoadReloaded{false};
-  bool m_fullLoadReloadedHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdateTime{};
-  bool m_lastUpdateTimeHasBeenSet = false;
 
   Aws::String m_tableState;
-  bool m_tableStateHasBeenSet = false;
 
   long long m_validationPendingRecords{0};
-  bool m_validationPendingRecordsHasBeenSet = false;
 
   long long m_validationFailedRecords{0};
-  bool m_validationFailedRecordsHasBeenSet = false;
 
   long long m_validationSuspendedRecords{0};
-  bool m_validationSuspendedRecordsHasBeenSet = false;
 
   Aws::String m_validationState;
-  bool m_validationStateHasBeenSet = false;
 
   Aws::String m_validationStateDetails;
-  bool m_validationStateDetailsHasBeenSet = false;
 
   Aws::String m_resyncState;
-  bool m_resyncStateHasBeenSet = false;
 
   long long m_resyncRowsAttempted{0};
-  bool m_resyncRowsAttemptedHasBeenSet = false;
 
   long long m_resyncRowsSucceeded{0};
-  bool m_resyncRowsSucceededHasBeenSet = false;
 
   long long m_resyncRowsFailed{0};
-  bool m_resyncRowsFailedHasBeenSet = false;
 
   double m_resyncProgress{0.0};
+  bool m_schemaNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_insertsHasBeenSet = false;
+  bool m_deletesHasBeenSet = false;
+  bool m_updatesHasBeenSet = false;
+  bool m_ddlsHasBeenSet = false;
+  bool m_appliedInsertsHasBeenSet = false;
+  bool m_appliedDeletesHasBeenSet = false;
+  bool m_appliedUpdatesHasBeenSet = false;
+  bool m_appliedDdlsHasBeenSet = false;
+  bool m_fullLoadRowsHasBeenSet = false;
+  bool m_fullLoadCondtnlChkFailedRowsHasBeenSet = false;
+  bool m_fullLoadErrorRowsHasBeenSet = false;
+  bool m_fullLoadStartTimeHasBeenSet = false;
+  bool m_fullLoadEndTimeHasBeenSet = false;
+  bool m_fullLoadReloadedHasBeenSet = false;
+  bool m_lastUpdateTimeHasBeenSet = false;
+  bool m_tableStateHasBeenSet = false;
+  bool m_validationPendingRecordsHasBeenSet = false;
+  bool m_validationFailedRecordsHasBeenSet = false;
+  bool m_validationSuspendedRecordsHasBeenSet = false;
+  bool m_validationStateHasBeenSet = false;
+  bool m_validationStateDetailsHasBeenSet = false;
+  bool m_resyncStateHasBeenSet = false;
+  bool m_resyncRowsAttemptedHasBeenSet = false;
+  bool m_resyncRowsSucceededHasBeenSet = false;
+  bool m_resyncRowsFailedHasBeenSet = false;
   bool m_resyncProgressHasBeenSet = false;
 };
 

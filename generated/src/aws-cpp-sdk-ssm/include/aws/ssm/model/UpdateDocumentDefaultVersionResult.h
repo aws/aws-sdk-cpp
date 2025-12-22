@@ -61,9 +61,9 @@ class UpdateDocumentDefaultVersionResult {
   ///@}
  private:
   DocumentDefaultVersionDescription m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_descriptionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -190,27 +190,27 @@ class DataCellsFilter {
   ///@}
  private:
   Aws::String m_tableCatalogId;
-  bool m_tableCatalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_tableName;
-  bool m_tableNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RowFilter m_rowFilter;
-  bool m_rowFilterHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_columnNames;
-  bool m_columnNamesHasBeenSet = false;
 
   ColumnWildcard m_columnWildcard;
-  bool m_columnWildcardHasBeenSet = false;
 
   Aws::String m_versionId;
+  bool m_tableCatalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_tableNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_rowFilterHasBeenSet = false;
+  bool m_columnNamesHasBeenSet = false;
+  bool m_columnWildcardHasBeenSet = false;
   bool m_versionIdHasBeenSet = false;
 };
 

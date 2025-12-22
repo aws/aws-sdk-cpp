@@ -69,9 +69,9 @@ class SuggestedMessageReference {
   ///@}
  private:
   Aws::String m_aiAgentId;
-  bool m_aiAgentIdHasBeenSet = false;
 
   Aws::String m_aiAgentArn;
+  bool m_aiAgentIdHasBeenSet = false;
   bool m_aiAgentArnHasBeenSet = false;
 };
 

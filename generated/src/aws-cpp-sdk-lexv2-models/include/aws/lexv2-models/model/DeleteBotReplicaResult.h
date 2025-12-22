@@ -92,15 +92,15 @@ class DeleteBotReplicaResult {
   ///@}
  private:
   Aws::String m_botId;
-  bool m_botIdHasBeenSet = false;
 
   Aws::String m_replicaRegion;
-  bool m_replicaRegionHasBeenSet = false;
 
   BotReplicaStatus m_botReplicaStatus{BotReplicaStatus::NOT_SET};
-  bool m_botReplicaStatusHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_botIdHasBeenSet = false;
+  bool m_replicaRegionHasBeenSet = false;
+  bool m_botReplicaStatusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

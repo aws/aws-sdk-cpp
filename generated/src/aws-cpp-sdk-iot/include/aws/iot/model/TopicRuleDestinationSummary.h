@@ -177,24 +177,24 @@ class TopicRuleDestinationSummary {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   TopicRuleDestinationStatus m_status{TopicRuleDestinationStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   HttpUrlDestinationSummary m_httpUrlSummary;
-  bool m_httpUrlSummaryHasBeenSet = false;
 
   VpcDestinationSummary m_vpcDestinationSummary;
+  bool m_arnHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_httpUrlSummaryHasBeenSet = false;
   bool m_vpcDestinationSummaryHasBeenSet = false;
 };
 

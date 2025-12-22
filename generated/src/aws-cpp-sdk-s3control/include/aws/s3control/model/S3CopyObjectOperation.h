@@ -445,57 +445,57 @@ class S3CopyObjectOperation {
   ///@}
  private:
   Aws::String m_targetResource;
-  bool m_targetResourceHasBeenSet = false;
 
   S3CannedAccessControlList m_cannedAccessControlList{S3CannedAccessControlList::NOT_SET};
-  bool m_cannedAccessControlListHasBeenSet = false;
 
   Aws::Vector<S3Grant> m_accessControlGrants;
-  bool m_accessControlGrantsHasBeenSet = false;
 
   S3MetadataDirective m_metadataDirective{S3MetadataDirective::NOT_SET};
-  bool m_metadataDirectiveHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedSinceConstraint{};
-  bool m_modifiedSinceConstraintHasBeenSet = false;
 
   S3ObjectMetadata m_newObjectMetadata;
-  bool m_newObjectMetadataHasBeenSet = false;
 
   Aws::Vector<S3Tag> m_newObjectTagging;
-  bool m_newObjectTaggingHasBeenSet = false;
 
   Aws::String m_redirectLocation;
-  bool m_redirectLocationHasBeenSet = false;
 
   bool m_requesterPays{false};
-  bool m_requesterPaysHasBeenSet = false;
 
   S3StorageClass m_storageClass{S3StorageClass::NOT_SET};
-  bool m_storageClassHasBeenSet = false;
 
   Aws::Utils::DateTime m_unModifiedSinceConstraint{};
-  bool m_unModifiedSinceConstraintHasBeenSet = false;
 
   Aws::String m_sSEAwsKmsKeyId;
-  bool m_sSEAwsKmsKeyIdHasBeenSet = false;
 
   Aws::String m_targetKeyPrefix;
-  bool m_targetKeyPrefixHasBeenSet = false;
 
   S3ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus{S3ObjectLockLegalHoldStatus::NOT_SET};
-  bool m_objectLockLegalHoldStatusHasBeenSet = false;
 
   S3ObjectLockMode m_objectLockMode{S3ObjectLockMode::NOT_SET};
-  bool m_objectLockModeHasBeenSet = false;
 
   Aws::Utils::DateTime m_objectLockRetainUntilDate{};
-  bool m_objectLockRetainUntilDateHasBeenSet = false;
 
   bool m_bucketKeyEnabled{false};
-  bool m_bucketKeyEnabledHasBeenSet = false;
 
   S3ChecksumAlgorithm m_checksumAlgorithm{S3ChecksumAlgorithm::NOT_SET};
+  bool m_targetResourceHasBeenSet = false;
+  bool m_cannedAccessControlListHasBeenSet = false;
+  bool m_accessControlGrantsHasBeenSet = false;
+  bool m_metadataDirectiveHasBeenSet = false;
+  bool m_modifiedSinceConstraintHasBeenSet = false;
+  bool m_newObjectMetadataHasBeenSet = false;
+  bool m_newObjectTaggingHasBeenSet = false;
+  bool m_redirectLocationHasBeenSet = false;
+  bool m_requesterPaysHasBeenSet = false;
+  bool m_storageClassHasBeenSet = false;
+  bool m_unModifiedSinceConstraintHasBeenSet = false;
+  bool m_sSEAwsKmsKeyIdHasBeenSet = false;
+  bool m_targetKeyPrefixHasBeenSet = false;
+  bool m_objectLockLegalHoldStatusHasBeenSet = false;
+  bool m_objectLockModeHasBeenSet = false;
+  bool m_objectLockRetainUntilDateHasBeenSet = false;
+  bool m_bucketKeyEnabledHasBeenSet = false;
   bool m_checksumAlgorithmHasBeenSet = false;
 };
 

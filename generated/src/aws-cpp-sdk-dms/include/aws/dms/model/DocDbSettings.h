@@ -293,42 +293,42 @@ class DocDbSettings {
   ///@}
  private:
   Aws::String m_username;
-  bool m_usernameHasBeenSet = false;
 
   Aws::String m_password;
-  bool m_passwordHasBeenSet = false;
 
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   NestingLevelValue m_nestingLevel{NestingLevelValue::NOT_SET};
-  bool m_nestingLevelHasBeenSet = false;
 
   bool m_extractDocId{false};
-  bool m_extractDocIdHasBeenSet = false;
 
   int m_docsToInvestigate{0};
-  bool m_docsToInvestigateHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::String m_secretsManagerAccessRoleArn;
-  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
 
   Aws::String m_secretsManagerSecretId;
-  bool m_secretsManagerSecretIdHasBeenSet = false;
 
   bool m_useUpdateLookUp{false};
-  bool m_useUpdateLookUpHasBeenSet = false;
 
   bool m_replicateShardCollections{false};
+  bool m_usernameHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_serverNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_nestingLevelHasBeenSet = false;
+  bool m_extractDocIdHasBeenSet = false;
+  bool m_docsToInvestigateHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_secretsManagerAccessRoleArnHasBeenSet = false;
+  bool m_secretsManagerSecretIdHasBeenSet = false;
+  bool m_useUpdateLookUpHasBeenSet = false;
   bool m_replicateShardCollectionsHasBeenSet = false;
 };
 

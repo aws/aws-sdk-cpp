@@ -94,12 +94,12 @@ class LogConfig {
   ///@}
  private:
   FieldLogLevel m_fieldLogLevel{FieldLogLevel::NOT_SET};
-  bool m_fieldLogLevelHasBeenSet = false;
 
   Aws::String m_cloudWatchLogsRoleArn;
-  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
   bool m_excludeVerboseContent{false};
+  bool m_fieldLogLevelHasBeenSet = false;
+  bool m_cloudWatchLogsRoleArnHasBeenSet = false;
   bool m_excludeVerboseContentHasBeenSet = false;
 };
 

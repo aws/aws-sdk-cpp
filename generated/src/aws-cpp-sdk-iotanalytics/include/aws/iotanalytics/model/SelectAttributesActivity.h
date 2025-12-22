@@ -94,12 +94,12 @@ class SelectAttributesActivity {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   Aws::String m_next;
+  bool m_nameHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
   bool m_nextHasBeenSet = false;
 };
 

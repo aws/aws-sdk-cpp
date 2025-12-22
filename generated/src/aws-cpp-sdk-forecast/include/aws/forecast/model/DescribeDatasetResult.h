@@ -238,36 +238,36 @@ class DescribeDatasetResult {
   ///@}
  private:
   Aws::String m_datasetArn;
-  bool m_datasetArnHasBeenSet = false;
 
   Aws::String m_datasetName;
-  bool m_datasetNameHasBeenSet = false;
 
   Domain m_domain{Domain::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   DatasetType m_datasetType{DatasetType::NOT_SET};
-  bool m_datasetTypeHasBeenSet = false;
 
   Aws::String m_dataFrequency;
-  bool m_dataFrequencyHasBeenSet = false;
 
   Schema m_schema;
-  bool m_schemaHasBeenSet = false;
 
   EncryptionConfig m_encryptionConfig;
-  bool m_encryptionConfigHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModificationTime{};
-  bool m_lastModificationTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_datasetArnHasBeenSet = false;
+  bool m_datasetNameHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_datasetTypeHasBeenSet = false;
+  bool m_dataFrequencyHasBeenSet = false;
+  bool m_schemaHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastModificationTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

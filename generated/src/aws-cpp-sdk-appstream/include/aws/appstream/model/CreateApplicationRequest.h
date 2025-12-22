@@ -164,8 +164,8 @@ class CreateApplicationRequest : public AppStreamRequest {
 
   ///@{
   /**
-   * <p>The platforms the application supports. WINDOWS_SERVER_2019 and AMAZON_LINUX2
-   * are supported for Elastic fleets.</p>
+   * <p>The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2
+   * and UBUNTU_PRO_2404 are supported for Elastic fleets.</p>
    */
   inline const Aws::Vector<PlatformType>& GetPlatforms() const { return m_platforms; }
   inline bool PlatformsHasBeenSet() const { return m_platformsHasBeenSet; }
@@ -254,36 +254,36 @@ class CreateApplicationRequest : public AppStreamRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   S3Location m_iconS3Location;
-  bool m_iconS3LocationHasBeenSet = false;
 
   Aws::String m_launchPath;
-  bool m_launchPathHasBeenSet = false;
 
   Aws::String m_workingDirectory;
-  bool m_workingDirectoryHasBeenSet = false;
 
   Aws::String m_launchParameters;
-  bool m_launchParametersHasBeenSet = false;
 
   Aws::Vector<PlatformType> m_platforms;
-  bool m_platformsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_instanceFamilies;
-  bool m_instanceFamiliesHasBeenSet = false;
 
   Aws::String m_appBlockArn;
-  bool m_appBlockArnHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_iconS3LocationHasBeenSet = false;
+  bool m_launchPathHasBeenSet = false;
+  bool m_workingDirectoryHasBeenSet = false;
+  bool m_launchParametersHasBeenSet = false;
+  bool m_platformsHasBeenSet = false;
+  bool m_instanceFamiliesHasBeenSet = false;
+  bool m_appBlockArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

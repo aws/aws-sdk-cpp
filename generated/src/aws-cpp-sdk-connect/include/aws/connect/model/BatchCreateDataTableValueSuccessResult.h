@@ -113,15 +113,15 @@ class BatchCreateDataTableValueSuccessResult {
   ///@}
  private:
   Aws::Vector<PrimaryValue> m_primaryValues;
-  bool m_primaryValuesHasBeenSet = false;
 
   Aws::String m_attributeName;
-  bool m_attributeNameHasBeenSet = false;
 
   Aws::String m_recordId;
-  bool m_recordIdHasBeenSet = false;
 
   DataTableLockVersion m_lockVersion;
+  bool m_primaryValuesHasBeenSet = false;
+  bool m_attributeNameHasBeenSet = false;
+  bool m_recordIdHasBeenSet = false;
   bool m_lockVersionHasBeenSet = false;
 };
 

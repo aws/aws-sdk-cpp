@@ -251,42 +251,42 @@ class DescribePageResult {
   ///@}
  private:
   Aws::String m_pageArn;
-  bool m_pageArnHasBeenSet = false;
 
   Aws::String m_engagementArn;
-  bool m_engagementArnHasBeenSet = false;
 
   Aws::String m_contactArn;
-  bool m_contactArnHasBeenSet = false;
 
   Aws::String m_sender;
-  bool m_senderHasBeenSet = false;
 
   Aws::String m_subject;
-  bool m_subjectHasBeenSet = false;
 
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_publicSubject;
-  bool m_publicSubjectHasBeenSet = false;
 
   Aws::String m_publicContent;
-  bool m_publicContentHasBeenSet = false;
 
   Aws::String m_incidentId;
-  bool m_incidentIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_sentTime{};
-  bool m_sentTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_readTime{};
-  bool m_readTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deliveryTime{};
-  bool m_deliveryTimeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_pageArnHasBeenSet = false;
+  bool m_engagementArnHasBeenSet = false;
+  bool m_contactArnHasBeenSet = false;
+  bool m_senderHasBeenSet = false;
+  bool m_subjectHasBeenSet = false;
+  bool m_contentHasBeenSet = false;
+  bool m_publicSubjectHasBeenSet = false;
+  bool m_publicContentHasBeenSet = false;
+  bool m_incidentIdHasBeenSet = false;
+  bool m_sentTimeHasBeenSet = false;
+  bool m_readTimeHasBeenSet = false;
+  bool m_deliveryTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

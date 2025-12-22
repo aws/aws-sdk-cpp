@@ -67,9 +67,9 @@ class UserMatch {
   ///@}
  private:
   double m_similarity{0.0};
-  bool m_similarityHasBeenSet = false;
 
   MatchedUser m_user;
+  bool m_similarityHasBeenSet = false;
   bool m_userHasBeenSet = false;
 };
 

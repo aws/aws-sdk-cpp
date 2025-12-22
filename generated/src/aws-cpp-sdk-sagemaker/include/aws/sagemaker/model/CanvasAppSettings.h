@@ -193,27 +193,27 @@ class CanvasAppSettings {
   ///@}
  private:
   TimeSeriesForecastingSettings m_timeSeriesForecastingSettings;
-  bool m_timeSeriesForecastingSettingsHasBeenSet = false;
 
   ModelRegisterSettings m_modelRegisterSettings;
-  bool m_modelRegisterSettingsHasBeenSet = false;
 
   WorkspaceSettings m_workspaceSettings;
-  bool m_workspaceSettingsHasBeenSet = false;
 
   Aws::Vector<IdentityProviderOAuthSetting> m_identityProviderOAuthSettings;
-  bool m_identityProviderOAuthSettingsHasBeenSet = false;
 
   DirectDeploySettings m_directDeploySettings;
-  bool m_directDeploySettingsHasBeenSet = false;
 
   KendraSettings m_kendraSettings;
-  bool m_kendraSettingsHasBeenSet = false;
 
   GenerativeAiSettings m_generativeAiSettings;
-  bool m_generativeAiSettingsHasBeenSet = false;
 
   EmrServerlessSettings m_emrServerlessSettings;
+  bool m_timeSeriesForecastingSettingsHasBeenSet = false;
+  bool m_modelRegisterSettingsHasBeenSet = false;
+  bool m_workspaceSettingsHasBeenSet = false;
+  bool m_identityProviderOAuthSettingsHasBeenSet = false;
+  bool m_directDeploySettingsHasBeenSet = false;
+  bool m_kendraSettingsHasBeenSet = false;
+  bool m_generativeAiSettingsHasBeenSet = false;
   bool m_emrServerlessSettingsHasBeenSet = false;
 };
 

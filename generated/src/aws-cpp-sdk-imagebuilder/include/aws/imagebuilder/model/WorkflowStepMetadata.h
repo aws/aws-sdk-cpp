@@ -230,36 +230,36 @@ class WorkflowStepMetadata {
   ///@}
  private:
   Aws::String m_stepExecutionId;
-  bool m_stepExecutionIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_action;
-  bool m_actionHasBeenSet = false;
 
   WorkflowStepExecutionStatus m_status{WorkflowStepExecutionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   WorkflowStepExecutionRollbackStatus m_rollbackStatus{WorkflowStepExecutionRollbackStatus::NOT_SET};
-  bool m_rollbackStatusHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_inputs;
-  bool m_inputsHasBeenSet = false;
 
   Aws::String m_outputs;
-  bool m_outputsHasBeenSet = false;
 
   Aws::String m_startTime;
-  bool m_startTimeHasBeenSet = false;
 
   Aws::String m_endTime;
+  bool m_stepExecutionIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_rollbackStatusHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
+  bool m_inputsHasBeenSet = false;
+  bool m_outputsHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };
 

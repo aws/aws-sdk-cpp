@@ -72,9 +72,9 @@ class DeauthorizeDataShareRequest : public RedshiftRequest {
   ///@}
  private:
   Aws::String m_dataShareArn;
-  bool m_dataShareArnHasBeenSet = false;
 
   Aws::String m_consumerIdentifier;
+  bool m_dataShareArnHasBeenSet = false;
   bool m_consumerIdentifierHasBeenSet = false;
 };
 

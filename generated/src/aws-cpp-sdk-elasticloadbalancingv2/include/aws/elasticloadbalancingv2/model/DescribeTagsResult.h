@@ -67,9 +67,9 @@ class DescribeTagsResult {
   ///@}
  private:
   Aws::Vector<TagDescription> m_tagDescriptions;
-  bool m_tagDescriptionsHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_tagDescriptionsHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

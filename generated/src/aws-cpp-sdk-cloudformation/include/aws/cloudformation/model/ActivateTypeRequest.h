@@ -234,33 +234,33 @@ class ActivateTypeRequest : public CloudFormationRequest {
   ///@}
  private:
   ThirdPartyType m_type{ThirdPartyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_publicTypeArn;
-  bool m_publicTypeArnHasBeenSet = false;
 
   Aws::String m_publisherId;
-  bool m_publisherIdHasBeenSet = false;
 
   Aws::String m_typeName;
-  bool m_typeNameHasBeenSet = false;
 
   Aws::String m_typeNameAlias;
-  bool m_typeNameAliasHasBeenSet = false;
 
   bool m_autoUpdate{false};
-  bool m_autoUpdateHasBeenSet = false;
 
   LoggingConfig m_loggingConfig;
-  bool m_loggingConfigHasBeenSet = false;
 
   Aws::String m_executionRoleArn;
-  bool m_executionRoleArnHasBeenSet = false;
 
   VersionBump m_versionBump{VersionBump::NOT_SET};
-  bool m_versionBumpHasBeenSet = false;
 
   long long m_majorVersion{0};
+  bool m_typeHasBeenSet = false;
+  bool m_publicTypeArnHasBeenSet = false;
+  bool m_publisherIdHasBeenSet = false;
+  bool m_typeNameHasBeenSet = false;
+  bool m_typeNameAliasHasBeenSet = false;
+  bool m_autoUpdateHasBeenSet = false;
+  bool m_loggingConfigHasBeenSet = false;
+  bool m_executionRoleArnHasBeenSet = false;
+  bool m_versionBumpHasBeenSet = false;
   bool m_majorVersionHasBeenSet = false;
 };
 

@@ -101,12 +101,12 @@ class GetBucketMetadataTableConfigurationResult {
   ///@}
  private:
   MetadataTableConfigurationResult m_metadataTableConfigurationResult;
-  bool m_metadataTableConfigurationResultHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   ErrorDetails m_error;
+  bool m_metadataTableConfigurationResultHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_errorHasBeenSet = false;
 };
 

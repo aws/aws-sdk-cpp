@@ -91,15 +91,15 @@ class GetConnectionFunction2020_05_31Result {
   ///@}
  private:
   Aws::Utils::Stream::ResponseStream m_connectionFunctionCode{};
-  bool m_connectionFunctionCodeHasBeenSet = false;
 
   Aws::String m_eTag;
-  bool m_eTagHasBeenSet = false;
 
   Aws::String m_contentType;
-  bool m_contentTypeHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_connectionFunctionCodeHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

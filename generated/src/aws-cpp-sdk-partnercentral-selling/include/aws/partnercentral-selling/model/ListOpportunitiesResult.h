@@ -88,12 +88,12 @@ class ListOpportunitiesResult {
   ///@}
  private:
   Aws::Vector<OpportunitySummary> m_opportunitySummaries;
-  bool m_opportunitySummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_opportunitySummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -7,6 +7,7 @@
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
 #include <aws/arc-region-switch/model/ArcRoutingControlConfiguration.h>
 #include <aws/arc-region-switch/model/CustomActionLambdaConfiguration.h>
+#include <aws/arc-region-switch/model/DocumentDbConfiguration.h>
 #include <aws/arc-region-switch/model/Ec2AsgCapacityIncreaseConfiguration.h>
 #include <aws/arc-region-switch/model/EcsCapacityIncreaseConfiguration.h>
 #include <aws/arc-region-switch/model/EksResourceScalingConfiguration.h>
@@ -223,36 +224,55 @@ class ExecutionBlockConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const DocumentDbConfiguration& GetDocumentDbConfig() const { return m_documentDbConfig; }
+  inline bool DocumentDbConfigHasBeenSet() const { return m_documentDbConfigHasBeenSet; }
+  template <typename DocumentDbConfigT = DocumentDbConfiguration>
+  void SetDocumentDbConfig(DocumentDbConfigT&& value) {
+    m_documentDbConfigHasBeenSet = true;
+    m_documentDbConfig = std::forward<DocumentDbConfigT>(value);
+  }
+  template <typename DocumentDbConfigT = DocumentDbConfiguration>
+  ExecutionBlockConfiguration& WithDocumentDbConfig(DocumentDbConfigT&& value) {
+    SetDocumentDbConfig(std::forward<DocumentDbConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CustomActionLambdaConfiguration m_customActionLambdaConfig;
-  bool m_customActionLambdaConfigHasBeenSet = false;
 
   Ec2AsgCapacityIncreaseConfiguration m_ec2AsgCapacityIncreaseConfig;
-  bool m_ec2AsgCapacityIncreaseConfigHasBeenSet = false;
 
   ExecutionApprovalConfiguration m_executionApprovalConfig;
-  bool m_executionApprovalConfigHasBeenSet = false;
 
   ArcRoutingControlConfiguration m_arcRoutingControlConfig;
-  bool m_arcRoutingControlConfigHasBeenSet = false;
 
   GlobalAuroraConfiguration m_globalAuroraConfig;
-  bool m_globalAuroraConfigHasBeenSet = false;
 
   std::shared_ptr<ParallelExecutionBlockConfiguration> m_parallelConfig;
-  bool m_parallelConfigHasBeenSet = false;
 
   RegionSwitchPlanConfiguration m_regionSwitchPlanConfig;
-  bool m_regionSwitchPlanConfigHasBeenSet = false;
 
   EcsCapacityIncreaseConfiguration m_ecsCapacityIncreaseConfig;
-  bool m_ecsCapacityIncreaseConfigHasBeenSet = false;
 
   EksResourceScalingConfiguration m_eksResourceScalingConfig;
-  bool m_eksResourceScalingConfigHasBeenSet = false;
 
   Route53HealthCheckConfiguration m_route53HealthCheckConfig;
+
+  DocumentDbConfiguration m_documentDbConfig;
+  bool m_customActionLambdaConfigHasBeenSet = false;
+  bool m_ec2AsgCapacityIncreaseConfigHasBeenSet = false;
+  bool m_executionApprovalConfigHasBeenSet = false;
+  bool m_arcRoutingControlConfigHasBeenSet = false;
+  bool m_globalAuroraConfigHasBeenSet = false;
+  bool m_parallelConfigHasBeenSet = false;
+  bool m_regionSwitchPlanConfigHasBeenSet = false;
+  bool m_ecsCapacityIncreaseConfigHasBeenSet = false;
+  bool m_eksResourceScalingConfigHasBeenSet = false;
   bool m_route53HealthCheckConfigHasBeenSet = false;
+  bool m_documentDbConfigHasBeenSet = false;
 };
 
 }  // namespace Model

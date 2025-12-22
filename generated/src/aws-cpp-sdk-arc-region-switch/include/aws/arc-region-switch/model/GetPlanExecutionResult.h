@@ -8,6 +8,7 @@
 #include <aws/arc-region-switch/model/ExecutionAction.h>
 #include <aws/arc-region-switch/model/ExecutionMode.h>
 #include <aws/arc-region-switch/model/ExecutionState.h>
+#include <aws/arc-region-switch/model/GeneratedReport.h>
 #include <aws/arc-region-switch/model/Plan.h>
 #include <aws/arc-region-switch/model/StepState.h>
 #include <aws/core/utils/DateTime.h>
@@ -281,6 +282,30 @@ class GetPlanExecutionResult {
 
   ///@{
   /**
+   * <p>Information about the location of a generated report, or the cause of its
+   * failure.</p>
+   */
+  inline const Aws::Vector<GeneratedReport>& GetGeneratedReportDetails() const { return m_generatedReportDetails; }
+  template <typename GeneratedReportDetailsT = Aws::Vector<GeneratedReport>>
+  void SetGeneratedReportDetails(GeneratedReportDetailsT&& value) {
+    m_generatedReportDetailsHasBeenSet = true;
+    m_generatedReportDetails = std::forward<GeneratedReportDetailsT>(value);
+  }
+  template <typename GeneratedReportDetailsT = Aws::Vector<GeneratedReport>>
+  GetPlanExecutionResult& WithGeneratedReportDetails(GeneratedReportDetailsT&& value) {
+    SetGeneratedReportDetails(std::forward<GeneratedReportDetailsT>(value));
+    return *this;
+  }
+  template <typename GeneratedReportDetailsT = GeneratedReport>
+  GetPlanExecutionResult& AddGeneratedReportDetails(GeneratedReportDetailsT&& value) {
+    m_generatedReportDetailsHasBeenSet = true;
+    m_generatedReportDetails.emplace_back(std::forward<GeneratedReportDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies that you want to receive the next page of results. Valid only if
    * you received a <code>nextToken</code> response in the previous request. If you
    * did, it indicates that more output is available. Set this parameter to the value
@@ -316,51 +341,54 @@ class GetPlanExecutionResult {
   ///@}
  private:
   Aws::String m_planArn;
-  bool m_planArnHasBeenSet = false;
 
   Aws::String m_executionId;
-  bool m_executionIdHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_comment;
-  bool m_commentHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_endTime{};
-  bool m_endTimeHasBeenSet = false;
 
   ExecutionMode m_mode{ExecutionMode::NOT_SET};
-  bool m_modeHasBeenSet = false;
 
   ExecutionState m_executionState{ExecutionState::NOT_SET};
-  bool m_executionStateHasBeenSet = false;
 
   ExecutionAction m_executionAction{ExecutionAction::NOT_SET};
-  bool m_executionActionHasBeenSet = false;
 
   Aws::String m_executionRegion;
-  bool m_executionRegionHasBeenSet = false;
 
   Aws::Vector<StepState> m_stepStates;
-  bool m_stepStatesHasBeenSet = false;
 
   Plan m_plan;
-  bool m_planHasBeenSet = false;
 
   Aws::String m_actualRecoveryTime;
-  bool m_actualRecoveryTimeHasBeenSet = false;
+
+  Aws::Vector<GeneratedReport> m_generatedReportDetails;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_planArnHasBeenSet = false;
+  bool m_executionIdHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_commentHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_endTimeHasBeenSet = false;
+  bool m_modeHasBeenSet = false;
+  bool m_executionStateHasBeenSet = false;
+  bool m_executionActionHasBeenSet = false;
+  bool m_executionRegionHasBeenSet = false;
+  bool m_stepStatesHasBeenSet = false;
+  bool m_planHasBeenSet = false;
+  bool m_actualRecoveryTimeHasBeenSet = false;
+  bool m_generatedReportDetailsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class MetricsConfiguration {
   ///@}
  private:
   bool m_cloudMetricEnabled{false};
-  bool m_cloudMetricEnabledHasBeenSet = false;
 
   Aws::String m_metricRuleRoleArn;
+  bool m_cloudMetricEnabledHasBeenSet = false;
   bool m_metricRuleRoleArnHasBeenSet = false;
 };
 

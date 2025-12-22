@@ -81,9 +81,9 @@ class CertificateOptions {
   ///@}
  private:
   CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference{CertificateTransparencyLoggingPreference::NOT_SET};
-  bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
 
   CertificateExport m_export{CertificateExport::NOT_SET};
+  bool m_certificateTransparencyLoggingPreferenceHasBeenSet = false;
   bool m_exportHasBeenSet = false;
 };
 

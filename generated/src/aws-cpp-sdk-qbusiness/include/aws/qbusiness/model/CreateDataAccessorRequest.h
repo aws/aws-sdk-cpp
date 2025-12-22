@@ -177,24 +177,24 @@ class CreateDataAccessorRequest : public QBusinessRequest {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::Vector<ActionConfiguration> m_actionConfigurations;
-  bool m_actionConfigurationsHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   DataAccessorAuthenticationDetail m_authenticationDetail;
-  bool m_authenticationDetailHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_actionConfigurationsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_displayNameHasBeenSet = false;
+  bool m_authenticationDetailHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

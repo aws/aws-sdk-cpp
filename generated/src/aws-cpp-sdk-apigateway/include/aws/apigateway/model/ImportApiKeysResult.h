@@ -95,12 +95,12 @@ class ImportApiKeysResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_ids;
-  bool m_idsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_warnings;
-  bool m_warningsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_idsHasBeenSet = false;
+  bool m_warningsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

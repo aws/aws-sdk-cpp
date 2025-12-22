@@ -101,12 +101,12 @@ class AttributesResource {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_attributeType;
-  bool m_attributeTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_attributes;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_attributeTypeHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
 };
 

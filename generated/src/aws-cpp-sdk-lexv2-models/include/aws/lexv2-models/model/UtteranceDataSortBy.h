@@ -69,9 +69,9 @@ class UtteranceDataSortBy {
   ///@}
  private:
   AnalyticsUtteranceSortByName m_name{AnalyticsUtteranceSortByName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   AnalyticsSortOrder m_order{AnalyticsSortOrder::NOT_SET};
+  bool m_nameHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };
 

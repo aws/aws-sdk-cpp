@@ -243,33 +243,33 @@ class Placement {
   ///@}
  private:
   Aws::String m_availabilityZoneId;
-  bool m_availabilityZoneIdHasBeenSet = false;
 
   Aws::String m_affinity;
-  bool m_affinityHasBeenSet = false;
 
   Aws::String m_groupName;
-  bool m_groupNameHasBeenSet = false;
 
   int m_partitionNumber{0};
-  bool m_partitionNumberHasBeenSet = false;
 
   Aws::String m_hostId;
-  bool m_hostIdHasBeenSet = false;
 
   Tenancy m_tenancy{Tenancy::NOT_SET};
-  bool m_tenancyHasBeenSet = false;
 
   Aws::String m_spreadDomain;
-  bool m_spreadDomainHasBeenSet = false;
 
   Aws::String m_hostResourceGroupArn;
-  bool m_hostResourceGroupArnHasBeenSet = false;
 
   Aws::String m_groupId;
-  bool m_groupIdHasBeenSet = false;
 
   Aws::String m_availabilityZone;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_affinityHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_partitionNumberHasBeenSet = false;
+  bool m_hostIdHasBeenSet = false;
+  bool m_tenancyHasBeenSet = false;
+  bool m_spreadDomainHasBeenSet = false;
+  bool m_hostResourceGroupArnHasBeenSet = false;
+  bool m_groupIdHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
 };
 

@@ -129,18 +129,18 @@ class SrtCallerSourceRequest {
   ///@}
  private:
   SrtCallerDecryptionRequest m_decryption;
-  bool m_decryptionHasBeenSet = false;
 
   int m_minimumLatency{0};
-  bool m_minimumLatencyHasBeenSet = false;
 
   Aws::String m_srtListenerAddress;
-  bool m_srtListenerAddressHasBeenSet = false;
 
   Aws::String m_srtListenerPort;
-  bool m_srtListenerPortHasBeenSet = false;
 
   Aws::String m_streamId;
+  bool m_decryptionHasBeenSet = false;
+  bool m_minimumLatencyHasBeenSet = false;
+  bool m_srtListenerAddressHasBeenSet = false;
+  bool m_srtListenerPortHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
 };
 

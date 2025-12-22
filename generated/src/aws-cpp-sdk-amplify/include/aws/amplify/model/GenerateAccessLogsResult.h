@@ -65,9 +65,9 @@ class GenerateAccessLogsResult {
   ///@}
  private:
   Aws::String m_logUrl;
-  bool m_logUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_logUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

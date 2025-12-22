@@ -74,9 +74,9 @@ class RepositoryFilter {
   ///@}
  private:
   Aws::String m_filter;
-  bool m_filterHasBeenSet = false;
 
   RepositoryFilterType m_filterType{RepositoryFilterType::NOT_SET};
+  bool m_filterHasBeenSet = false;
   bool m_filterTypeHasBeenSet = false;
 };
 

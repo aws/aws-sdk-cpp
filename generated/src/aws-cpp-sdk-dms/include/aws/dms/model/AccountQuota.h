@@ -83,12 +83,12 @@ class AccountQuota {
   ///@}
  private:
   Aws::String m_accountQuotaName;
-  bool m_accountQuotaNameHasBeenSet = false;
 
   long long m_used{0};
-  bool m_usedHasBeenSet = false;
 
   long long m_max{0};
+  bool m_accountQuotaNameHasBeenSet = false;
+  bool m_usedHasBeenSet = false;
   bool m_maxHasBeenSet = false;
 };
 

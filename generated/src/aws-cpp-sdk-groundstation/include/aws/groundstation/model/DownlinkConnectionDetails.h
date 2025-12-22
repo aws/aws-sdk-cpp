@@ -66,9 +66,9 @@ class DownlinkConnectionDetails {
   ///@}
  private:
   RangedConnectionDetails m_agentIpAndPortAddress;
-  bool m_agentIpAndPortAddressHasBeenSet = false;
 
   ConnectionDetails m_egressAddressAndPort;
+  bool m_agentIpAndPortAddressHasBeenSet = false;
   bool m_egressAddressAndPortHasBeenSet = false;
 };
 

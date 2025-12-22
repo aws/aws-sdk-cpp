@@ -66,9 +66,9 @@ class OcsfDateFilter {
   ///@}
  private:
   OcsfDateField m_fieldName{OcsfDateField::NOT_SET};
-  bool m_fieldNameHasBeenSet = false;
 
   DateFilter m_filter;
+  bool m_fieldNameHasBeenSet = false;
   bool m_filterHasBeenSet = false;
 };
 

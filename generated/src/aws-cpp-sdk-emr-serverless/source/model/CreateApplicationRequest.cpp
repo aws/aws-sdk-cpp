@@ -104,5 +104,9 @@ Aws::String CreateApplicationRequest::SerializePayload() const {
     payload.WithObject("identityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
   }
 
+  if (m_jobLevelCostAllocationConfigurationHasBeenSet) {
+    payload.WithObject("jobLevelCostAllocationConfiguration", m_jobLevelCostAllocationConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

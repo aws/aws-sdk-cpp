@@ -62,9 +62,9 @@ class DescribeCertificateAuthorityResult {
   ///@}
  private:
   CertificateAuthority m_certificateAuthority;
-  bool m_certificateAuthorityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateAuthorityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class CardValue {
   ///@}
  private:
   Aws::String m_cardId;
-  bool m_cardIdHasBeenSet = false;
 
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   SubmissionMutation m_submissionMutation;
+  bool m_cardIdHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_submissionMutationHasBeenSet = false;
 };
 

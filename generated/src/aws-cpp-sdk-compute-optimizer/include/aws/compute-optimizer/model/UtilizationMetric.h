@@ -159,12 +159,12 @@ class UtilizationMetric {
   ///@}
  private:
   MetricName m_name{MetricName::NOT_SET};
-  bool m_nameHasBeenSet = false;
 
   MetricStatistic m_statistic{MetricStatistic::NOT_SET};
-  bool m_statisticHasBeenSet = false;
 
   double m_value{0.0};
+  bool m_nameHasBeenSet = false;
+  bool m_statisticHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

@@ -82,12 +82,12 @@ class AudioOverrideConfiguration {
   ///@}
  private:
   ModalityProcessingConfiguration m_modalityProcessing;
-  bool m_modalityProcessingHasBeenSet = false;
 
   AudioLanguageConfiguration m_languageConfiguration;
-  bool m_languageConfigurationHasBeenSet = false;
 
   SensitiveDataConfiguration m_sensitiveDataConfiguration;
+  bool m_modalityProcessingHasBeenSet = false;
+  bool m_languageConfigurationHasBeenSet = false;
   bool m_sensitiveDataConfigurationHasBeenSet = false;
 };
 

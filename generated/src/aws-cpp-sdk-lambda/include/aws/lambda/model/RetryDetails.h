@@ -62,9 +62,9 @@ class RetryDetails {
   ///@}
  private:
   int m_currentAttempt{0};
-  bool m_currentAttemptHasBeenSet = false;
 
   int m_nextAttemptDelaySeconds{0};
+  bool m_currentAttemptHasBeenSet = false;
   bool m_nextAttemptDelaySecondsHasBeenSet = false;
 };
 

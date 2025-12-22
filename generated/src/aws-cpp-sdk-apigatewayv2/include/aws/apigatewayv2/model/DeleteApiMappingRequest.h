@@ -65,9 +65,9 @@ class DeleteApiMappingRequest : public ApiGatewayV2Request {
   ///@}
  private:
   Aws::String m_apiMappingId;
-  bool m_apiMappingIdHasBeenSet = false;
 
   Aws::String m_domainName;
+  bool m_apiMappingIdHasBeenSet = false;
   bool m_domainNameHasBeenSet = false;
 };
 

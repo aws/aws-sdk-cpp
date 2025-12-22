@@ -73,9 +73,9 @@ class GetCheckerIpRangesResult {
   ///@}
  private:
   Aws::Vector<Aws::String> m_checkerIpRanges;
-  bool m_checkerIpRangesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_checkerIpRangesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -66,9 +66,9 @@ class NetworkResourceCount {
   ///@}
  private:
   Aws::String m_resourceType;
-  bool m_resourceTypeHasBeenSet = false;
 
   int m_count{0};
+  bool m_resourceTypeHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };
 

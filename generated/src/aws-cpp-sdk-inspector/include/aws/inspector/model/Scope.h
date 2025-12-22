@@ -68,9 +68,9 @@ class Scope {
   ///@}
  private:
   ScopeType m_key{ScopeType::NOT_SET};
-  bool m_keyHasBeenSet = false;
 
   Aws::String m_value;
+  bool m_keyHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };
 

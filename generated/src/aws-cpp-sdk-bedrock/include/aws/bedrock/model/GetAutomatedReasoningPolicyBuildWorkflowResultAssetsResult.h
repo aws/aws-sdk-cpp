@@ -98,15 +98,15 @@ class GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResult {
   ///@}
  private:
   Aws::String m_policyArn;
-  bool m_policyArnHasBeenSet = false;
 
   Aws::String m_buildWorkflowId;
-  bool m_buildWorkflowIdHasBeenSet = false;
 
   AutomatedReasoningPolicyBuildResultAssets m_buildWorkflowAssets;
-  bool m_buildWorkflowAssetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_policyArnHasBeenSet = false;
+  bool m_buildWorkflowIdHasBeenSet = false;
+  bool m_buildWorkflowAssetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

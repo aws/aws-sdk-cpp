@@ -193,30 +193,30 @@ class ReadSetFilter {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ReadSetStatus m_status{ReadSetStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_referenceArn;
-  bool m_referenceArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAfter{};
-  bool m_createdAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdBefore{};
-  bool m_createdBeforeHasBeenSet = false;
 
   Aws::String m_sampleId;
-  bool m_sampleIdHasBeenSet = false;
 
   Aws::String m_subjectId;
-  bool m_subjectIdHasBeenSet = false;
 
   Aws::String m_generatedFrom;
-  bool m_generatedFromHasBeenSet = false;
 
   CreationType m_creationType{CreationType::NOT_SET};
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_referenceArnHasBeenSet = false;
+  bool m_createdAfterHasBeenSet = false;
+  bool m_createdBeforeHasBeenSet = false;
+  bool m_sampleIdHasBeenSet = false;
+  bool m_subjectIdHasBeenSet = false;
+  bool m_generatedFromHasBeenSet = false;
   bool m_creationTypeHasBeenSet = false;
 };
 

@@ -84,9 +84,9 @@ class AssetBundleImportJobThemeOverrideTags {
   ///@}
  private:
   Aws::Vector<Aws::String> m_themeIds;
-  bool m_themeIdsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_themeIdsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

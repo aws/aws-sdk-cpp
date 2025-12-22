@@ -106,12 +106,12 @@ class Route {
   ///@}
  private:
   Aws::Vector<RouteLeg> m_legs;
-  bool m_legsHasBeenSet = false;
 
   Aws::Vector<RouteMajorRoadLabel> m_majorRoadLabels;
-  bool m_majorRoadLabelsHasBeenSet = false;
 
   RouteSummary m_summary;
+  bool m_legsHasBeenSet = false;
+  bool m_majorRoadLabelsHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
 };
 

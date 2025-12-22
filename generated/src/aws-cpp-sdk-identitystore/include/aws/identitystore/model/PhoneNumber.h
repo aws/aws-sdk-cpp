@@ -86,12 +86,12 @@ class PhoneNumber {
   ///@}
  private:
   Aws::String m_value;
-  bool m_valueHasBeenSet = false;
 
   Aws::String m_type;
-  bool m_typeHasBeenSet = false;
 
   bool m_primary{false};
+  bool m_valueHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_primaryHasBeenSet = false;
 };
 

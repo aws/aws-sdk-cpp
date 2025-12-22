@@ -87,12 +87,12 @@ class ListDocumentClassifierSummariesResult {
   ///@}
  private:
   Aws::Vector<DocumentClassifierSummary> m_documentClassifierSummariesList;
-  bool m_documentClassifierSummariesListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_documentClassifierSummariesListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

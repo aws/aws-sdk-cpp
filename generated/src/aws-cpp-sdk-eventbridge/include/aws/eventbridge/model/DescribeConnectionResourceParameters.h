@@ -75,9 +75,9 @@ class DescribeConnectionResourceParameters {
   ///@}
  private:
   Aws::String m_resourceConfigurationArn;
-  bool m_resourceConfigurationArnHasBeenSet = false;
 
   Aws::String m_resourceAssociationArn;
+  bool m_resourceConfigurationArnHasBeenSet = false;
   bool m_resourceAssociationArnHasBeenSet = false;
 };
 

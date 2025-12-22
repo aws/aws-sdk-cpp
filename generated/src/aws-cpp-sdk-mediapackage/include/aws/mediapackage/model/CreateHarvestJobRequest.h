@@ -130,18 +130,18 @@ This cannot
   ///@}
  private:
   Aws::String m_endTime;
-  bool m_endTimeHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_originEndpointId;
-  bool m_originEndpointIdHasBeenSet = false;
 
   S3Destination m_s3Destination;
-  bool m_s3DestinationHasBeenSet = false;
 
   Aws::String m_startTime;
+  bool m_endTimeHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_originEndpointIdHasBeenSet = false;
+  bool m_s3DestinationHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
 };
 

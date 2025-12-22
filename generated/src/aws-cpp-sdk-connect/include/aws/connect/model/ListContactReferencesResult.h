@@ -86,12 +86,12 @@ class ListContactReferencesResult {
   ///@}
  private:
   Aws::Vector<ReferenceSummary> m_referenceSummaryList;
-  bool m_referenceSummaryListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_referenceSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

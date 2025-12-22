@@ -173,24 +173,24 @@ class CreateTemplateRequest : public ConnectCasesRequest {
   ///@}
  private:
   Aws::String m_domainId;
-  bool m_domainIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LayoutConfiguration m_layoutConfiguration;
-  bool m_layoutConfigurationHasBeenSet = false;
 
   Aws::Vector<RequiredField> m_requiredFields;
-  bool m_requiredFieldsHasBeenSet = false;
 
   TemplateStatus m_status{TemplateStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<TemplateRule> m_rules;
+  bool m_domainIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_layoutConfigurationHasBeenSet = false;
+  bool m_requiredFieldsHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
 };
 

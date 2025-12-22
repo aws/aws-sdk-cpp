@@ -142,24 +142,24 @@ class NodeCounts {
   ///@}
  private:
   int m_totalNodes{0};
-  bool m_totalNodesHasBeenSet = false;
 
   int m_totalBranches{0};
-  bool m_totalBranchesHasBeenSet = false;
 
   int m_totalSensors{0};
-  bool m_totalSensorsHasBeenSet = false;
 
   int m_totalAttributes{0};
-  bool m_totalAttributesHasBeenSet = false;
 
   int m_totalActuators{0};
-  bool m_totalActuatorsHasBeenSet = false;
 
   int m_totalStructs{0};
-  bool m_totalStructsHasBeenSet = false;
 
   int m_totalProperties{0};
+  bool m_totalNodesHasBeenSet = false;
+  bool m_totalBranchesHasBeenSet = false;
+  bool m_totalSensorsHasBeenSet = false;
+  bool m_totalAttributesHasBeenSet = false;
+  bool m_totalActuatorsHasBeenSet = false;
+  bool m_totalStructsHasBeenSet = false;
   bool m_totalPropertiesHasBeenSet = false;
 };
 

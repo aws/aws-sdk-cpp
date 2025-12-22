@@ -70,9 +70,9 @@ class ResourcesAffected {
   ///@}
  private:
   S3Bucket m_s3Bucket;
-  bool m_s3BucketHasBeenSet = false;
 
   S3Object m_s3Object;
+  bool m_s3BucketHasBeenSet = false;
   bool m_s3ObjectHasBeenSet = false;
 };
 

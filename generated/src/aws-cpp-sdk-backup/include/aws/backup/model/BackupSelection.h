@@ -191,21 +191,21 @@ class BackupSelection {
   ///@}
  private:
   Aws::String m_selectionName;
-  bool m_selectionNameHasBeenSet = false;
 
   Aws::String m_iamRoleArn;
-  bool m_iamRoleArnHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_resources;
-  bool m_resourcesHasBeenSet = false;
 
   Aws::Vector<Condition> m_listOfTags;
-  bool m_listOfTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_notResources;
-  bool m_notResourcesHasBeenSet = false;
 
   Conditions m_conditions;
+  bool m_selectionNameHasBeenSet = false;
+  bool m_iamRoleArnHasBeenSet = false;
+  bool m_resourcesHasBeenSet = false;
+  bool m_listOfTagsHasBeenSet = false;
+  bool m_notResourcesHasBeenSet = false;
   bool m_conditionsHasBeenSet = false;
 };
 

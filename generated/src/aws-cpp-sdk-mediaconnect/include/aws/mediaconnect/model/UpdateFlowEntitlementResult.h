@@ -77,12 +77,12 @@ class UpdateFlowEntitlementResult {
   ///@}
  private:
   Entitlement m_entitlement;
-  bool m_entitlementHasBeenSet = false;
 
   Aws::String m_flowArn;
-  bool m_flowArnHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_entitlementHasBeenSet = false;
+  bool m_flowArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

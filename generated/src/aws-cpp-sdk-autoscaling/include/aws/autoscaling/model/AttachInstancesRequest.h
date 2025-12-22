@@ -76,9 +76,9 @@ class AttachInstancesRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_instanceIds;
-  bool m_instanceIdsHasBeenSet = false;
 
   Aws::String m_autoScalingGroupName;
+  bool m_instanceIdsHasBeenSet = false;
   bool m_autoScalingGroupNameHasBeenSet = false;
 };
 

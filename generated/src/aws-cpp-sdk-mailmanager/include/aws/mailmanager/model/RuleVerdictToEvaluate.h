@@ -69,9 +69,9 @@ class RuleVerdictToEvaluate {
   ///@}
  private:
   RuleVerdictAttribute m_attribute{RuleVerdictAttribute::NOT_SET};
-  bool m_attributeHasBeenSet = false;
 
   Analysis m_analysis;
+  bool m_attributeHasBeenSet = false;
   bool m_analysisHasBeenSet = false;
 };
 

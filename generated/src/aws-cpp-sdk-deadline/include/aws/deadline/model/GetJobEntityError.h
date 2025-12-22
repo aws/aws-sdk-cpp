@@ -107,15 +107,15 @@ class GetJobEntityError {
   ///@}
  private:
   JobDetailsError m_jobDetails;
-  bool m_jobDetailsHasBeenSet = false;
 
   JobAttachmentDetailsError m_jobAttachmentDetails;
-  bool m_jobAttachmentDetailsHasBeenSet = false;
 
   StepDetailsError m_stepDetails;
-  bool m_stepDetailsHasBeenSet = false;
 
   EnvironmentDetailsError m_environmentDetails;
+  bool m_jobDetailsHasBeenSet = false;
+  bool m_jobAttachmentDetailsHasBeenSet = false;
+  bool m_stepDetailsHasBeenSet = false;
   bool m_environmentDetailsHasBeenSet = false;
 };
 

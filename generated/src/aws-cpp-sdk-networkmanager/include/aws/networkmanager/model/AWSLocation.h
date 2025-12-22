@@ -70,9 +70,9 @@ class AWSLocation {
   ///@}
  private:
   Aws::String m_zone;
-  bool m_zoneHasBeenSet = false;
 
   Aws::String m_subnetArn;
+  bool m_zoneHasBeenSet = false;
   bool m_subnetArnHasBeenSet = false;
 };
 

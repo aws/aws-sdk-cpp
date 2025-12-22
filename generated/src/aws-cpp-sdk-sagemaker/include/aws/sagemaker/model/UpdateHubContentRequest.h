@@ -204,30 +204,30 @@ class UpdateHubContentRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_hubName;
-  bool m_hubNameHasBeenSet = false;
 
   Aws::String m_hubContentName;
-  bool m_hubContentNameHasBeenSet = false;
 
   HubContentType m_hubContentType{HubContentType::NOT_SET};
-  bool m_hubContentTypeHasBeenSet = false;
 
   Aws::String m_hubContentVersion;
-  bool m_hubContentVersionHasBeenSet = false;
 
   Aws::String m_hubContentDisplayName;
-  bool m_hubContentDisplayNameHasBeenSet = false;
 
   Aws::String m_hubContentDescription;
-  bool m_hubContentDescriptionHasBeenSet = false;
 
   Aws::String m_hubContentMarkdown;
-  bool m_hubContentMarkdownHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_hubContentSearchKeywords;
-  bool m_hubContentSearchKeywordsHasBeenSet = false;
 
   HubContentSupportStatus m_supportStatus{HubContentSupportStatus::NOT_SET};
+  bool m_hubNameHasBeenSet = false;
+  bool m_hubContentNameHasBeenSet = false;
+  bool m_hubContentTypeHasBeenSet = false;
+  bool m_hubContentVersionHasBeenSet = false;
+  bool m_hubContentDisplayNameHasBeenSet = false;
+  bool m_hubContentDescriptionHasBeenSet = false;
+  bool m_hubContentMarkdownHasBeenSet = false;
+  bool m_hubContentSearchKeywordsHasBeenSet = false;
   bool m_supportStatusHasBeenSet = false;
 };
 

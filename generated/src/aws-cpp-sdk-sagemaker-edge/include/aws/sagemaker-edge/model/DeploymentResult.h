@@ -151,21 +151,21 @@ class DeploymentResult {
   ///@}
  private:
   Aws::String m_deploymentName;
-  bool m_deploymentNameHasBeenSet = false;
 
   Aws::String m_deploymentStatus;
-  bool m_deploymentStatusHasBeenSet = false;
 
   Aws::String m_deploymentStatusMessage;
-  bool m_deploymentStatusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_deploymentStartTime{};
-  bool m_deploymentStartTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_deploymentEndTime{};
-  bool m_deploymentEndTimeHasBeenSet = false;
 
   Aws::Vector<DeploymentModel> m_deploymentModels;
+  bool m_deploymentNameHasBeenSet = false;
+  bool m_deploymentStatusHasBeenSet = false;
+  bool m_deploymentStatusMessageHasBeenSet = false;
+  bool m_deploymentStartTimeHasBeenSet = false;
+  bool m_deploymentEndTimeHasBeenSet = false;
   bool m_deploymentModelsHasBeenSet = false;
 };
 

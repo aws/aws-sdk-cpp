@@ -79,9 +79,9 @@ class AssetBundleImportJobDataSourceOverridePermissions {
   ///@}
  private:
   Aws::Vector<Aws::String> m_dataSourceIds;
-  bool m_dataSourceIdsHasBeenSet = false;
 
   AssetBundleResourcePermissions m_permissions;
+  bool m_dataSourceIdsHasBeenSet = false;
   bool m_permissionsHasBeenSet = false;
 };
 

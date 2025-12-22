@@ -185,27 +185,27 @@ class TransformOperation {
   ///@}
  private:
   ProjectOperation m_projectOperation;
-  bool m_projectOperationHasBeenSet = false;
 
   FilterOperation m_filterOperation;
-  bool m_filterOperationHasBeenSet = false;
 
   CreateColumnsOperation m_createColumnsOperation;
-  bool m_createColumnsOperationHasBeenSet = false;
 
   RenameColumnOperation m_renameColumnOperation;
-  bool m_renameColumnOperationHasBeenSet = false;
 
   CastColumnTypeOperation m_castColumnTypeOperation;
-  bool m_castColumnTypeOperationHasBeenSet = false;
 
   TagColumnOperation m_tagColumnOperation;
-  bool m_tagColumnOperationHasBeenSet = false;
 
   UntagColumnOperation m_untagColumnOperation;
-  bool m_untagColumnOperationHasBeenSet = false;
 
   OverrideDatasetParameterOperation m_overrideDatasetParameterOperation;
+  bool m_projectOperationHasBeenSet = false;
+  bool m_filterOperationHasBeenSet = false;
+  bool m_createColumnsOperationHasBeenSet = false;
+  bool m_renameColumnOperationHasBeenSet = false;
+  bool m_castColumnTypeOperationHasBeenSet = false;
+  bool m_tagColumnOperationHasBeenSet = false;
+  bool m_untagColumnOperationHasBeenSet = false;
   bool m_overrideDatasetParameterOperationHasBeenSet = false;
 };
 

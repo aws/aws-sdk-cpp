@@ -86,9 +86,9 @@ class RuleActionOverride {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   RuleAction m_actionToUse;
+  bool m_nameHasBeenSet = false;
   bool m_actionToUseHasBeenSet = false;
 };
 

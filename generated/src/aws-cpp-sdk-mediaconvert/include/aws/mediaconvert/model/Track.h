@@ -155,24 +155,24 @@ class Track {
   ///@}
  private:
   AudioProperties m_audioProperties;
-  bool m_audioPropertiesHasBeenSet = false;
 
   Codec m_codec{Codec::NOT_SET};
-  bool m_codecHasBeenSet = false;
 
   DataProperties m_dataProperties;
-  bool m_dataPropertiesHasBeenSet = false;
 
   double m_duration{0.0};
-  bool m_durationHasBeenSet = false;
 
   int m_index{0};
-  bool m_indexHasBeenSet = false;
 
   TrackType m_trackType{TrackType::NOT_SET};
-  bool m_trackTypeHasBeenSet = false;
 
   VideoProperties m_videoProperties;
+  bool m_audioPropertiesHasBeenSet = false;
+  bool m_codecHasBeenSet = false;
+  bool m_dataPropertiesHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_indexHasBeenSet = false;
+  bool m_trackTypeHasBeenSet = false;
   bool m_videoPropertiesHasBeenSet = false;
 };
 

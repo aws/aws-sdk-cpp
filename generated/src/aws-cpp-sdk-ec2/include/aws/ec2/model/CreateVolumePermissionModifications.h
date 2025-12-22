@@ -85,9 +85,9 @@ class CreateVolumePermissionModifications {
   ///@}
  private:
   Aws::Vector<CreateVolumePermission> m_add;
-  bool m_addHasBeenSet = false;
 
   Aws::Vector<CreateVolumePermission> m_remove;
+  bool m_addHasBeenSet = false;
   bool m_removeHasBeenSet = false;
 };
 

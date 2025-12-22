@@ -94,15 +94,15 @@ class DeleteCodeInterpreterResult {
   ///@}
  private:
   Aws::String m_codeInterpreterId;
-  bool m_codeInterpreterIdHasBeenSet = false;
 
   CodeInterpreterStatus m_status{CodeInterpreterStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedAt{};
-  bool m_lastUpdatedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_codeInterpreterIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

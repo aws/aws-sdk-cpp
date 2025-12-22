@@ -112,15 +112,15 @@ class AlertManagerDefinitionDescription {
   ///@}
  private:
   AlertManagerDefinitionStatus m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_data{};
-  bool m_dataHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
+  bool m_statusHasBeenSet = false;
+  bool m_dataHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
 };
 

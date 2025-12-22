@@ -88,12 +88,12 @@ class SystemAttributes {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   SystemEndpointAttributes m_customerEndpoint;
-  bool m_customerEndpointHasBeenSet = false;
 
   SystemEndpointAttributes m_systemEndpoint;
+  bool m_nameHasBeenSet = false;
+  bool m_customerEndpointHasBeenSet = false;
   bool m_systemEndpointHasBeenSet = false;
 };
 

@@ -88,9 +88,9 @@ class StatelessRulesAndCustomActions {
   ///@}
  private:
   Aws::Vector<StatelessRule> m_statelessRules;
-  bool m_statelessRulesHasBeenSet = false;
 
   Aws::Vector<CustomAction> m_customActions;
+  bool m_statelessRulesHasBeenSet = false;
   bool m_customActionsHasBeenSet = false;
 };
 

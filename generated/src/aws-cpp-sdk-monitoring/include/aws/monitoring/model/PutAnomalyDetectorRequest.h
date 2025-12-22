@@ -31,10 +31,8 @@ class PutAnomalyDetectorRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The configuration specifies details about how the anomaly detection model is
@@ -129,15 +127,15 @@ class PutAnomalyDetectorRequest : public CloudWatchRequest {
   ///@}
  private:
   AnomalyDetectorConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   MetricCharacteristics m_metricCharacteristics;
-  bool m_metricCharacteristicsHasBeenSet = false;
 
   SingleMetricAnomalyDetector m_singleMetricAnomalyDetector;
-  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
 
   MetricMathAnomalyDetector m_metricMathAnomalyDetector;
+  bool m_configurationHasBeenSet = false;
+  bool m_metricCharacteristicsHasBeenSet = false;
+  bool m_singleMetricAnomalyDetectorHasBeenSet = false;
   bool m_metricMathAnomalyDetectorHasBeenSet = false;
 };
 

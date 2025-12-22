@@ -18,13 +18,13 @@ namespace Model {
 Disk::Disk(JsonView jsonValue) { *this = jsonValue; }
 
 Disk& Disk::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("bytes")) {
-    m_bytes = jsonValue.GetInt64("bytes");
-    m_bytesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("deviceName")) {
     m_deviceName = jsonValue.GetString("deviceName");
     m_deviceNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bytes")) {
+    m_bytes = jsonValue.GetInt64("bytes");
+    m_bytesHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ Disk& Disk::operator=(JsonView jsonValue) {
 JsonValue Disk::Jsonize() const {
   JsonValue payload;
 
-  if (m_bytesHasBeenSet) {
-    payload.WithInt64("bytes", m_bytes);
-  }
-
   if (m_deviceNameHasBeenSet) {
     payload.WithString("deviceName", m_deviceName);
+  }
+
+  if (m_bytesHasBeenSet) {
+    payload.WithInt64("bytes", m_bytes);
   }
 
   return payload;

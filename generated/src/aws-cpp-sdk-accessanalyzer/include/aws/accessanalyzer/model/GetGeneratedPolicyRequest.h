@@ -96,12 +96,12 @@ class GetGeneratedPolicyRequest : public AccessAnalyzerRequest {
   ///@}
  private:
   Aws::String m_jobId;
-  bool m_jobIdHasBeenSet = false;
 
   bool m_includeResourcePlaceholders{false};
-  bool m_includeResourcePlaceholdersHasBeenSet = false;
 
   bool m_includeServiceLevelTemplate{false};
+  bool m_jobIdHasBeenSet = false;
+  bool m_includeResourcePlaceholdersHasBeenSet = false;
   bool m_includeServiceLevelTemplateHasBeenSet = false;
 };
 

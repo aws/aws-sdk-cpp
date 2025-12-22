@@ -61,9 +61,9 @@ class CreateMigrationProjectResult {
   ///@}
  private:
   MigrationProject m_migrationProject;
-  bool m_migrationProjectHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_migrationProjectHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -213,24 +213,24 @@ class LifeCycleSummary {
   ///@}
  private:
   Stage m_stage{Stage::NOT_SET};
-  bool m_stageHasBeenSet = false;
 
   ClosedLostReason m_closedLostReason{ClosedLostReason::NOT_SET};
-  bool m_closedLostReasonHasBeenSet = false;
 
   Aws::String m_nextSteps;
-  bool m_nextStepsHasBeenSet = false;
 
   Aws::String m_targetCloseDate;
-  bool m_targetCloseDateHasBeenSet = false;
 
   ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
-  bool m_reviewStatusHasBeenSet = false;
 
   Aws::String m_reviewComments;
-  bool m_reviewCommentsHasBeenSet = false;
 
   Aws::String m_reviewStatusReason;
+  bool m_stageHasBeenSet = false;
+  bool m_closedLostReasonHasBeenSet = false;
+  bool m_nextStepsHasBeenSet = false;
+  bool m_targetCloseDateHasBeenSet = false;
+  bool m_reviewStatusHasBeenSet = false;
+  bool m_reviewCommentsHasBeenSet = false;
   bool m_reviewStatusReasonHasBeenSet = false;
 };
 

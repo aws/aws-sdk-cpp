@@ -60,9 +60,9 @@ class RedriveExecutionResult {
   ///@}
  private:
   Aws::Utils::DateTime m_redriveDate{};
-  bool m_redriveDateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_redriveDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

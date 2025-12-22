@@ -99,12 +99,12 @@ class EvaluationFormSingleSelectQuestionAutomation {
   ///@}
  private:
   Aws::Vector<EvaluationFormSingleSelectQuestionAutomationOption> m_options;
-  bool m_optionsHasBeenSet = false;
 
   Aws::String m_defaultOptionRefId;
-  bool m_defaultOptionRefIdHasBeenSet = false;
 
   EvaluationFormQuestionAutomationAnswerSource m_answerSource;
+  bool m_optionsHasBeenSet = false;
+  bool m_defaultOptionRefIdHasBeenSet = false;
   bool m_answerSourceHasBeenSet = false;
 };
 

@@ -194,27 +194,27 @@ class ManagedIngressPath {
   ///@}
  private:
   AccessType m_accessType{AccessType::NOT_SET};
-  bool m_accessTypeHasBeenSet = false;
 
   Aws::String m_endpoint;
-  bool m_endpointHasBeenSet = false;
 
   ManagedLoadBalancer m_loadBalancer;
-  bool m_loadBalancerHasBeenSet = false;
 
   Aws::Vector<ManagedSecurityGroup> m_loadBalancerSecurityGroups;
-  bool m_loadBalancerSecurityGroupsHasBeenSet = false;
 
   ManagedCertificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   ManagedListener m_listener;
-  bool m_listenerHasBeenSet = false;
 
   ManagedListenerRule m_rule;
-  bool m_ruleHasBeenSet = false;
 
   Aws::Vector<ManagedTargetGroup> m_targetGroups;
+  bool m_accessTypeHasBeenSet = false;
+  bool m_endpointHasBeenSet = false;
+  bool m_loadBalancerHasBeenSet = false;
+  bool m_loadBalancerSecurityGroupsHasBeenSet = false;
+  bool m_certificateHasBeenSet = false;
+  bool m_listenerHasBeenSet = false;
+  bool m_ruleHasBeenSet = false;
   bool m_targetGroupsHasBeenSet = false;
 };
 

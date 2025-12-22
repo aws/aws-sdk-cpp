@@ -69,9 +69,9 @@ class ToolOutputFilter {
   ///@}
  private:
   Aws::String m_jsonPath;
-  bool m_jsonPathHasBeenSet = false;
 
   ToolOutputConfiguration m_outputConfiguration;
+  bool m_jsonPathHasBeenSet = false;
   bool m_outputConfigurationHasBeenSet = false;
 };
 

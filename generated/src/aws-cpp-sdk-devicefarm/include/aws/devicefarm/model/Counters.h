@@ -141,24 +141,24 @@ class Counters {
   ///@}
  private:
   int m_total{0};
-  bool m_totalHasBeenSet = false;
 
   int m_passed{0};
-  bool m_passedHasBeenSet = false;
 
   int m_failed{0};
-  bool m_failedHasBeenSet = false;
 
   int m_warned{0};
-  bool m_warnedHasBeenSet = false;
 
   int m_errored{0};
-  bool m_erroredHasBeenSet = false;
 
   int m_stopped{0};
-  bool m_stoppedHasBeenSet = false;
 
   int m_skipped{0};
+  bool m_totalHasBeenSet = false;
+  bool m_passedHasBeenSet = false;
+  bool m_failedHasBeenSet = false;
+  bool m_warnedHasBeenSet = false;
+  bool m_erroredHasBeenSet = false;
+  bool m_stoppedHasBeenSet = false;
   bool m_skippedHasBeenSet = false;
 };
 

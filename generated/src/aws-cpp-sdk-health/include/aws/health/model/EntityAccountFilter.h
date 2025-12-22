@@ -101,12 +101,12 @@ class EntityAccountFilter {
   ///@}
  private:
   Aws::String m_eventArn;
-  bool m_eventArnHasBeenSet = false;
 
   Aws::String m_awsAccountId;
-  bool m_awsAccountIdHasBeenSet = false;
 
   Aws::Vector<EntityStatusCode> m_statusCodes;
+  bool m_eventArnHasBeenSet = false;
+  bool m_awsAccountIdHasBeenSet = false;
   bool m_statusCodesHasBeenSet = false;
 };
 

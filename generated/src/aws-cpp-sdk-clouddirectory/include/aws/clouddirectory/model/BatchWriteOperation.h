@@ -326,48 +326,48 @@ class BatchWriteOperation {
   ///@}
  private:
   BatchCreateObject m_createObject;
-  bool m_createObjectHasBeenSet = false;
 
   BatchAttachObject m_attachObject;
-  bool m_attachObjectHasBeenSet = false;
 
   BatchDetachObject m_detachObject;
-  bool m_detachObjectHasBeenSet = false;
 
   BatchUpdateObjectAttributes m_updateObjectAttributes;
-  bool m_updateObjectAttributesHasBeenSet = false;
 
   BatchDeleteObject m_deleteObject;
-  bool m_deleteObjectHasBeenSet = false;
 
   BatchAddFacetToObject m_addFacetToObject;
-  bool m_addFacetToObjectHasBeenSet = false;
 
   BatchRemoveFacetFromObject m_removeFacetFromObject;
-  bool m_removeFacetFromObjectHasBeenSet = false;
 
   BatchAttachPolicy m_attachPolicy;
-  bool m_attachPolicyHasBeenSet = false;
 
   BatchDetachPolicy m_detachPolicy;
-  bool m_detachPolicyHasBeenSet = false;
 
   BatchCreateIndex m_createIndex;
-  bool m_createIndexHasBeenSet = false;
 
   BatchAttachToIndex m_attachToIndex;
-  bool m_attachToIndexHasBeenSet = false;
 
   BatchDetachFromIndex m_detachFromIndex;
-  bool m_detachFromIndexHasBeenSet = false;
 
   BatchAttachTypedLink m_attachTypedLink;
-  bool m_attachTypedLinkHasBeenSet = false;
 
   BatchDetachTypedLink m_detachTypedLink;
-  bool m_detachTypedLinkHasBeenSet = false;
 
   BatchUpdateLinkAttributes m_updateLinkAttributes;
+  bool m_createObjectHasBeenSet = false;
+  bool m_attachObjectHasBeenSet = false;
+  bool m_detachObjectHasBeenSet = false;
+  bool m_updateObjectAttributesHasBeenSet = false;
+  bool m_deleteObjectHasBeenSet = false;
+  bool m_addFacetToObjectHasBeenSet = false;
+  bool m_removeFacetFromObjectHasBeenSet = false;
+  bool m_attachPolicyHasBeenSet = false;
+  bool m_detachPolicyHasBeenSet = false;
+  bool m_createIndexHasBeenSet = false;
+  bool m_attachToIndexHasBeenSet = false;
+  bool m_detachFromIndexHasBeenSet = false;
+  bool m_attachTypedLinkHasBeenSet = false;
+  bool m_detachTypedLinkHasBeenSet = false;
   bool m_updateLinkAttributesHasBeenSet = false;
 };
 

@@ -58,9 +58,9 @@ class StartAppBlockBuilderResult {
   ///@}
  private:
   AppBlockBuilder m_appBlockBuilder;
-  bool m_appBlockBuilderHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_appBlockBuilderHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

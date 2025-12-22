@@ -97,12 +97,12 @@ class SetLoadBalancerPoliciesForBackendServerRequest : public ElasticLoadBalanci
   ///@}
  private:
   Aws::String m_loadBalancerName;
-  bool m_loadBalancerNameHasBeenSet = false;
 
   int m_instancePort{0};
-  bool m_instancePortHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyNames;
+  bool m_loadBalancerNameHasBeenSet = false;
+  bool m_instancePortHasBeenSet = false;
   bool m_policyNamesHasBeenSet = false;
 };
 

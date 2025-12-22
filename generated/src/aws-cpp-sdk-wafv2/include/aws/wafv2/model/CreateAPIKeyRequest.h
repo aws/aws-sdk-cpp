@@ -82,9 +82,9 @@ class CreateAPIKeyRequest : public WAFV2Request {
   ///@}
  private:
   Scope m_scope{Scope::NOT_SET};
-  bool m_scopeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_tokenDomains;
+  bool m_scopeHasBeenSet = false;
   bool m_tokenDomainsHasBeenSet = false;
 };
 

@@ -102,15 +102,15 @@ class OfferingStatus {
   ///@}
  private:
   OfferingTransactionType m_type{OfferingTransactionType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Offering m_offering;
-  bool m_offeringHasBeenSet = false;
 
   int m_quantity{0};
-  bool m_quantityHasBeenSet = false;
 
   Aws::Utils::DateTime m_effectiveOn{};
+  bool m_typeHasBeenSet = false;
+  bool m_offeringHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
   bool m_effectiveOnHasBeenSet = false;
 };
 

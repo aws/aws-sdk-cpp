@@ -119,18 +119,18 @@ class UpdateReportDefinitionRequest : public ApplicationCostProfilerRequest {
   ///@}
  private:
   Aws::String m_reportId;
-  bool m_reportIdHasBeenSet = false;
 
   Aws::String m_reportDescription;
-  bool m_reportDescriptionHasBeenSet = false;
 
   ReportFrequency m_reportFrequency{ReportFrequency::NOT_SET};
-  bool m_reportFrequencyHasBeenSet = false;
 
   Format m_format{Format::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   S3Location m_destinationS3Location;
+  bool m_reportIdHasBeenSet = false;
+  bool m_reportDescriptionHasBeenSet = false;
+  bool m_reportFrequencyHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_destinationS3LocationHasBeenSet = false;
 };
 

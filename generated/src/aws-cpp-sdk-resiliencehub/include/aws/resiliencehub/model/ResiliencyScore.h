@@ -101,12 +101,12 @@ class ResiliencyScore {
   ///@}
  private:
   Aws::Map<ResiliencyScoreType, ScoringComponentResiliencyScore> m_componentScore;
-  bool m_componentScoreHasBeenSet = false;
 
   Aws::Map<DisruptionType, double> m_disruptionScore;
-  bool m_disruptionScoreHasBeenSet = false;
 
   double m_score{0.0};
+  bool m_componentScoreHasBeenSet = false;
+  bool m_disruptionScoreHasBeenSet = false;
   bool m_scoreHasBeenSet = false;
 };
 

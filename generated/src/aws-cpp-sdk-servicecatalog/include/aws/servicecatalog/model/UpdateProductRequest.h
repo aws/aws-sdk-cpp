@@ -268,39 +268,39 @@ class UpdateProductRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_distributor;
-  bool m_distributorHasBeenSet = false;
 
   Aws::String m_supportDescription;
-  bool m_supportDescriptionHasBeenSet = false;
 
   Aws::String m_supportEmail;
-  bool m_supportEmailHasBeenSet = false;
 
   Aws::String m_supportUrl;
-  bool m_supportUrlHasBeenSet = false;
 
   Aws::Vector<Tag> m_addTags;
-  bool m_addTagsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_removeTags;
-  bool m_removeTagsHasBeenSet = false;
 
   SourceConnection m_sourceConnection;
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_distributorHasBeenSet = false;
+  bool m_supportDescriptionHasBeenSet = false;
+  bool m_supportEmailHasBeenSet = false;
+  bool m_supportUrlHasBeenSet = false;
+  bool m_addTagsHasBeenSet = false;
+  bool m_removeTagsHasBeenSet = false;
   bool m_sourceConnectionHasBeenSet = false;
 };
 

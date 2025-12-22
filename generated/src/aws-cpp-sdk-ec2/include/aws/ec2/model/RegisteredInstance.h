@@ -189,24 +189,24 @@ class RegisteredInstance {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   SqlServerLicenseUsage m_sqlServerLicenseUsage{SqlServerLicenseUsage::NOT_SET};
-  bool m_sqlServerLicenseUsageHasBeenSet = false;
 
   HaStatus m_haStatus{HaStatus::NOT_SET};
-  bool m_haStatusHasBeenSet = false;
 
   Aws::String m_processingStatus;
-  bool m_processingStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_sqlServerCredentials;
-  bool m_sqlServerCredentialsHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_sqlServerLicenseUsageHasBeenSet = false;
+  bool m_haStatusHasBeenSet = false;
+  bool m_processingStatusHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_sqlServerCredentialsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

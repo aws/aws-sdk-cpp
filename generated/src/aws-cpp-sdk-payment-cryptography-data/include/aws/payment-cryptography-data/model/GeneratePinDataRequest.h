@@ -134,9 +134,7 @@ class GeneratePinDataRequest : public PaymentCryptographyDataRequest {
    * <code>ISO_Format_3</code> PIN block format is the same as
    * <code>ISO_Format_0</code> except that the fill digits are random values from 10
    * to 15.</p> <p>The <code>ISO_Format_4</code> PIN block format is the only one
-   * supporting AES encryption. It is similar to <code>ISO_Format_3</code> but
-   * doubles the pin block length by padding with fill digit A and random values from
-   * 10 to 15.</p>
+   * supporting AES encryption.</p>
    */
   inline PinBlockFormatForPinData GetPinBlockFormat() const { return m_pinBlockFormat; }
   inline bool PinBlockFormatHasBeenSet() const { return m_pinBlockFormatHasBeenSet; }
@@ -167,24 +165,24 @@ class GeneratePinDataRequest : public PaymentCryptographyDataRequest {
   ///@}
  private:
   Aws::String m_generationKeyIdentifier;
-  bool m_generationKeyIdentifierHasBeenSet = false;
 
   Aws::String m_encryptionKeyIdentifier;
-  bool m_encryptionKeyIdentifierHasBeenSet = false;
 
   PinGenerationAttributes m_generationAttributes;
-  bool m_generationAttributesHasBeenSet = false;
 
   int m_pinDataLength{0};
-  bool m_pinDataLengthHasBeenSet = false;
 
   Aws::String m_primaryAccountNumber;
-  bool m_primaryAccountNumberHasBeenSet = false;
 
   PinBlockFormatForPinData m_pinBlockFormat{PinBlockFormatForPinData::NOT_SET};
-  bool m_pinBlockFormatHasBeenSet = false;
 
   WrappedKey m_encryptionWrappedKey;
+  bool m_generationKeyIdentifierHasBeenSet = false;
+  bool m_encryptionKeyIdentifierHasBeenSet = false;
+  bool m_generationAttributesHasBeenSet = false;
+  bool m_pinDataLengthHasBeenSet = false;
+  bool m_primaryAccountNumberHasBeenSet = false;
+  bool m_pinBlockFormatHasBeenSet = false;
   bool m_encryptionWrappedKeyHasBeenSet = false;
 };
 

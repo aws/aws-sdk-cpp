@@ -68,9 +68,9 @@ class ReEncryptionAttributes {
   ///@}
  private:
   SymmetricEncryptionAttributes m_symmetric;
-  bool m_symmetricHasBeenSet = false;
 
   DukptEncryptionAttributes m_dukpt;
+  bool m_symmetricHasBeenSet = false;
   bool m_dukptHasBeenSet = false;
 };
 

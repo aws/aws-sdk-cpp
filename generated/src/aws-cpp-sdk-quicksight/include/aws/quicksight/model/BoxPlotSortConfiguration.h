@@ -77,9 +77,9 @@ class BoxPlotSortConfiguration {
   ///@}
  private:
   Aws::Vector<FieldSortOptions> m_categorySort;
-  bool m_categorySortHasBeenSet = false;
 
   PaginationConfiguration m_paginationConfiguration;
+  bool m_categorySortHasBeenSet = false;
   bool m_paginationConfigurationHasBeenSet = false;
 };
 

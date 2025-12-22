@@ -108,15 +108,15 @@ class RestoreSnapshotTierRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   int m_temporaryRestoreDays{0};
-  bool m_temporaryRestoreDaysHasBeenSet = false;
 
   bool m_permanentRestore{false};
-  bool m_permanentRestoreHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_temporaryRestoreDaysHasBeenSet = false;
+  bool m_permanentRestoreHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

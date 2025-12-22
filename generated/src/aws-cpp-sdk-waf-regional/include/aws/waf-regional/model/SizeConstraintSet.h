@@ -115,12 +115,12 @@ class SizeConstraintSet {
   ///@}
  private:
   Aws::String m_sizeConstraintSetId;
-  bool m_sizeConstraintSetIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Vector<SizeConstraint> m_sizeConstraints;
+  bool m_sizeConstraintSetIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_sizeConstraintsHasBeenSet = false;
 };
 

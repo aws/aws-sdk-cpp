@@ -84,9 +84,9 @@ class RuleSummary {
   ///@}
  private:
   Aws::String m_ruleId;
-  bool m_ruleIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_ruleIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

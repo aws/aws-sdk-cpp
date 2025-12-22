@@ -87,12 +87,12 @@ class CodeGenEdge {
   ///@}
  private:
   Aws::String m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_target;
-  bool m_targetHasBeenSet = false;
 
   Aws::String m_targetParameter;
+  bool m_sourceHasBeenSet = false;
+  bool m_targetHasBeenSet = false;
   bool m_targetParameterHasBeenSet = false;
 };
 

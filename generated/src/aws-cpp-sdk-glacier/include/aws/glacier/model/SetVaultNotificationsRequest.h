@@ -37,9 +37,9 @@ class SetVaultNotificationsRequest : public GlacierRequest {
   /**
    * <p>The <code>AccountId</code> value is the AWS account ID of the account that
    * owns the vault. You can either specify an AWS account ID or optionally a single
-   * '<code>-</code>' (hyphen), in which case Amazon S3 Glacier uses the AWS account
-   * ID associated with the credentials used to sign the request. If you use an
-   * account ID, do not include any hyphens ('-') in the ID.</p>
+   * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+   * associated with the credentials used to sign the request. If you use an account
+   * ID, do not include any hyphens ('-') in the ID.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
   inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
@@ -92,12 +92,12 @@ class SetVaultNotificationsRequest : public GlacierRequest {
   ///@}
  private:
   Aws::String m_accountId;
-  bool m_accountIdHasBeenSet = false;
 
   Aws::String m_vaultName;
-  bool m_vaultNameHasBeenSet = false;
 
   VaultNotificationConfig m_vaultNotificationConfig;
+  bool m_accountIdHasBeenSet = false;
+  bool m_vaultNameHasBeenSet = false;
   bool m_vaultNotificationConfigHasBeenSet = false;
 };
 

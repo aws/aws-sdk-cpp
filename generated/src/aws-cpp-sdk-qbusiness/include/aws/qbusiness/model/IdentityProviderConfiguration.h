@@ -66,9 +66,9 @@ class IdentityProviderConfiguration {
   ///@}
  private:
   SamlProviderConfiguration m_samlConfiguration;
-  bool m_samlConfigurationHasBeenSet = false;
 
   OpenIDConnectProviderConfiguration m_openIDConnectConfiguration;
+  bool m_samlConfigurationHasBeenSet = false;
   bool m_openIDConnectConfigurationHasBeenSet = false;
 };
 

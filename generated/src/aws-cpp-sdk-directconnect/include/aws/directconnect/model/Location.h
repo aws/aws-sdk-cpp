@@ -160,21 +160,21 @@ class Location {
   ///@}
  private:
   Aws::String m_locationCode;
-  bool m_locationCodeHasBeenSet = false;
 
   Aws::String m_locationName;
-  bool m_locationNameHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availablePortSpeeds;
-  bool m_availablePortSpeedsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availableProviders;
-  bool m_availableProvidersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_availableMacSecPortSpeeds;
+  bool m_locationCodeHasBeenSet = false;
+  bool m_locationNameHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_availablePortSpeedsHasBeenSet = false;
+  bool m_availableProvidersHasBeenSet = false;
   bool m_availableMacSecPortSpeedsHasBeenSet = false;
 };
 

@@ -181,27 +181,27 @@ class DataLakeAccessPropertiesOutput {
   ///@}
  private:
   bool m_dataLakeAccess{false};
-  bool m_dataLakeAccessHasBeenSet = false;
 
   Aws::String m_dataTransferRole;
-  bool m_dataTransferRoleHasBeenSet = false;
 
   Aws::String m_kmsKey;
-  bool m_kmsKeyHasBeenSet = false;
 
   Aws::String m_managedWorkgroupName;
-  bool m_managedWorkgroupNameHasBeenSet = false;
 
   Aws::String m_managedWorkgroupStatus;
-  bool m_managedWorkgroupStatusHasBeenSet = false;
 
   Aws::String m_redshiftDatabaseName;
-  bool m_redshiftDatabaseNameHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::String m_catalogType;
+  bool m_dataLakeAccessHasBeenSet = false;
+  bool m_dataTransferRoleHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
+  bool m_managedWorkgroupNameHasBeenSet = false;
+  bool m_managedWorkgroupStatusHasBeenSet = false;
+  bool m_redshiftDatabaseNameHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_catalogTypeHasBeenSet = false;
 };
 

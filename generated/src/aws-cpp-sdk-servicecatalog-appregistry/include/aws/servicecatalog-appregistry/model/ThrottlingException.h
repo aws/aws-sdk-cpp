@@ -69,9 +69,9 @@ class ThrottlingException {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_serviceCode;
+  bool m_messageHasBeenSet = false;
   bool m_serviceCodeHasBeenSet = false;
 };
 

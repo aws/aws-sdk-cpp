@@ -77,9 +77,9 @@ class ConflictException {
   ///@}
  private:
   ConflictType m_conflictType{ConflictType::NOT_SET};
-  bool m_conflictTypeHasBeenSet = false;
 
   Aws::String m_message;
+  bool m_conflictTypeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
 };
 

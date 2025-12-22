@@ -103,15 +103,15 @@ class ListDeviceDiscoveriesRequest : public IoTManagedIntegrationsRequest {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   DiscoveryType m_typeFilter{DiscoveryType::NOT_SET};
-  bool m_typeFilterHasBeenSet = false;
 
   DeviceDiscoveryStatus m_statusFilter{DeviceDiscoveryStatus::NOT_SET};
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_typeFilterHasBeenSet = false;
   bool m_statusFilterHasBeenSet = false;
 };
 

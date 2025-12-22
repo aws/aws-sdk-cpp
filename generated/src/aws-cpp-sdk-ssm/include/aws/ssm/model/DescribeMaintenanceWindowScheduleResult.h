@@ -86,12 +86,12 @@ class DescribeMaintenanceWindowScheduleResult {
   ///@}
  private:
   Aws::Vector<ScheduledWindowExecution> m_scheduledWindowExecutions;
-  bool m_scheduledWindowExecutionsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_scheduledWindowExecutionsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

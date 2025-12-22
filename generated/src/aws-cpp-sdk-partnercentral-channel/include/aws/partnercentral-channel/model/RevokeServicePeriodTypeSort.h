@@ -66,9 +66,9 @@ class RevokeServicePeriodTypeSort {
   ///@}
  private:
   SortOrder m_sortOrder{SortOrder::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   RevokeServicePeriodTypeSortName m_sortBy{RevokeServicePeriodTypeSortName::NOT_SET};
+  bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class BatchGetWorkflowsRequest : public GlueRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_names;
-  bool m_namesHasBeenSet = false;
 
   bool m_includeGraph{false};
+  bool m_namesHasBeenSet = false;
   bool m_includeGraphHasBeenSet = false;
 };
 

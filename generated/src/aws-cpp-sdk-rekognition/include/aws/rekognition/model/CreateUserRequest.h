@@ -91,12 +91,12 @@ class CreateUserRequest : public RekognitionRequest {
   ///@}
  private:
   Aws::String m_collectionId;
-  bool m_collectionIdHasBeenSet = false;
 
   Aws::String m_userId;
-  bool m_userIdHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_collectionIdHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

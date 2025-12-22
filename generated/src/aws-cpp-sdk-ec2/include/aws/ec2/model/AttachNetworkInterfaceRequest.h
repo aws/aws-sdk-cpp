@@ -162,24 +162,24 @@ class AttachNetworkInterfaceRequest : public EC2Request {
   ///@}
  private:
   int m_networkCardIndex{0};
-  bool m_networkCardIndexHasBeenSet = false;
 
   EnaSrdSpecification m_enaSrdSpecification;
-  bool m_enaSrdSpecificationHasBeenSet = false;
 
   int m_enaQueueCount{0};
-  bool m_enaQueueCountHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_networkInterfaceId;
-  bool m_networkInterfaceIdHasBeenSet = false;
 
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   int m_deviceIndex{0};
+  bool m_networkCardIndexHasBeenSet = false;
+  bool m_enaSrdSpecificationHasBeenSet = false;
+  bool m_enaQueueCountHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_networkInterfaceIdHasBeenSet = false;
+  bool m_instanceIdHasBeenSet = false;
   bool m_deviceIndexHasBeenSet = false;
 };
 

@@ -109,15 +109,15 @@ class ListDataIntegrationEventsRequest : public SupplyChainRequest {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   DataIntegrationEventType m_eventType{DataIntegrationEventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

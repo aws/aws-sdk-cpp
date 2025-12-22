@@ -90,12 +90,12 @@ class MembershipMLPaymentConfig {
   ///@}
  private:
   MembershipModelTrainingPaymentConfig m_modelTraining;
-  bool m_modelTrainingHasBeenSet = false;
 
   MembershipModelInferencePaymentConfig m_modelInference;
-  bool m_modelInferenceHasBeenSet = false;
 
   MembershipSyntheticDataGenerationPaymentConfig m_syntheticDataGeneration;
+  bool m_modelTrainingHasBeenSet = false;
+  bool m_modelInferenceHasBeenSet = false;
   bool m_syntheticDataGenerationHasBeenSet = false;
 };
 

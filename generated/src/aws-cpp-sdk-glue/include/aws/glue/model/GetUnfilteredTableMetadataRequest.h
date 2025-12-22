@@ -274,36 +274,36 @@ class GetUnfilteredTableMetadataRequest : public GlueRequest {
   ///@}
  private:
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_catalogId;
-  bool m_catalogIdHasBeenSet = false;
 
   Aws::String m_databaseName;
-  bool m_databaseNameHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AuditContext m_auditContext;
-  bool m_auditContextHasBeenSet = false;
 
   Aws::Vector<PermissionType> m_supportedPermissionTypes;
-  bool m_supportedPermissionTypesHasBeenSet = false;
 
   Aws::String m_parentResourceArn;
-  bool m_parentResourceArnHasBeenSet = false;
 
   Aws::String m_rootResourceArn;
-  bool m_rootResourceArnHasBeenSet = false;
 
   SupportedDialect m_supportedDialect;
-  bool m_supportedDialectHasBeenSet = false;
 
   Aws::Vector<Permission> m_permissions;
-  bool m_permissionsHasBeenSet = false;
 
   QuerySessionContext m_querySessionContext;
+  bool m_regionHasBeenSet = false;
+  bool m_catalogIdHasBeenSet = false;
+  bool m_databaseNameHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
+  bool m_supportedPermissionTypesHasBeenSet = false;
+  bool m_parentResourceArnHasBeenSet = false;
+  bool m_rootResourceArnHasBeenSet = false;
+  bool m_supportedDialectHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
   bool m_querySessionContextHasBeenSet = false;
 };
 

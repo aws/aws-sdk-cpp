@@ -180,27 +180,27 @@ class User {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::String m_status;
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_firstName;
-  bool m_firstNameHasBeenSet = false;
 
   Aws::String m_lastName;
-  bool m_lastNameHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
+  bool m_arnHasBeenSet = false;
+  bool m_userNameHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_firstNameHasBeenSet = false;
+  bool m_lastNameHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
 };
 

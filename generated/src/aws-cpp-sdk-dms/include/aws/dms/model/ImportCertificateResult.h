@@ -61,9 +61,9 @@ class ImportCertificateResult {
   ///@}
  private:
   Certificate m_certificate;
-  bool m_certificateHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_certificateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

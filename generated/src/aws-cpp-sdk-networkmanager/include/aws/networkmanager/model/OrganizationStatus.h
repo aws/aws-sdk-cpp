@@ -117,15 +117,15 @@ class OrganizationStatus {
   ///@}
  private:
   Aws::String m_organizationId;
-  bool m_organizationIdHasBeenSet = false;
 
   Aws::String m_organizationAwsServiceAccessStatus;
-  bool m_organizationAwsServiceAccessStatusHasBeenSet = false;
 
   Aws::String m_sLRDeploymentStatus;
-  bool m_sLRDeploymentStatusHasBeenSet = false;
 
   Aws::Vector<AccountStatus> m_accountStatusList;
+  bool m_organizationIdHasBeenSet = false;
+  bool m_organizationAwsServiceAccessStatusHasBeenSet = false;
+  bool m_sLRDeploymentStatusHasBeenSet = false;
   bool m_accountStatusListHasBeenSet = false;
 };
 

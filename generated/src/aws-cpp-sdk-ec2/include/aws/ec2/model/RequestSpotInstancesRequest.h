@@ -321,42 +321,42 @@ class RequestSpotInstancesRequest : public EC2Request {
   ///@}
  private:
   RequestSpotLaunchSpecification m_launchSpecification;
-  bool m_launchSpecificationHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   InstanceInterruptionBehavior m_instanceInterruptionBehavior{InstanceInterruptionBehavior::NOT_SET};
-  bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::String m_spotPrice;
-  bool m_spotPriceHasBeenSet = false;
 
   Aws::String m_clientToken;
-  bool m_clientTokenHasBeenSet = false;
 
   int m_instanceCount{0};
-  bool m_instanceCountHasBeenSet = false;
 
   SpotInstanceType m_type{SpotInstanceType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Utils::DateTime m_validFrom{};
-  bool m_validFromHasBeenSet = false;
 
   Aws::Utils::DateTime m_validUntil{};
-  bool m_validUntilHasBeenSet = false;
 
   Aws::String m_launchGroup;
-  bool m_launchGroupHasBeenSet = false;
 
   Aws::String m_availabilityZoneGroup;
-  bool m_availabilityZoneGroupHasBeenSet = false;
 
   int m_blockDurationMinutes{0};
+  bool m_launchSpecificationHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_instanceInterruptionBehaviorHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
+  bool m_spotPriceHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_instanceCountHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_validFromHasBeenSet = false;
+  bool m_validUntilHasBeenSet = false;
+  bool m_launchGroupHasBeenSet = false;
+  bool m_availabilityZoneGroupHasBeenSet = false;
   bool m_blockDurationMinutesHasBeenSet = false;
 };
 

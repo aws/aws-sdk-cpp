@@ -68,9 +68,9 @@ class ArtifactLocation {
   ///@}
  private:
   ArtifactLocationType m_type{ArtifactLocationType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   S3ArtifactLocation m_s3Location;
+  bool m_typeHasBeenSet = false;
   bool m_s3LocationHasBeenSet = false;
 };
 

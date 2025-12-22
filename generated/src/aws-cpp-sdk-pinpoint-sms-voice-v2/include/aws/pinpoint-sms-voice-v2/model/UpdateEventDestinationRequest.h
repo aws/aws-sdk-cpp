@@ -170,24 +170,24 @@ class UpdateEventDestinationRequest : public PinpointSMSVoiceV2Request {
   ///@}
  private:
   Aws::String m_configurationSetName;
-  bool m_configurationSetNameHasBeenSet = false;
 
   Aws::String m_eventDestinationName;
-  bool m_eventDestinationNameHasBeenSet = false;
 
   bool m_enabled{false};
-  bool m_enabledHasBeenSet = false;
 
   Aws::Vector<EventType> m_matchingEventTypes;
-  bool m_matchingEventTypesHasBeenSet = false;
 
   CloudWatchLogsDestination m_cloudWatchLogsDestination;
-  bool m_cloudWatchLogsDestinationHasBeenSet = false;
 
   KinesisFirehoseDestination m_kinesisFirehoseDestination;
-  bool m_kinesisFirehoseDestinationHasBeenSet = false;
 
   SnsDestination m_snsDestination;
+  bool m_configurationSetNameHasBeenSet = false;
+  bool m_eventDestinationNameHasBeenSet = false;
+  bool m_enabledHasBeenSet = false;
+  bool m_matchingEventTypesHasBeenSet = false;
+  bool m_cloudWatchLogsDestinationHasBeenSet = false;
+  bool m_kinesisFirehoseDestinationHasBeenSet = false;
   bool m_snsDestinationHasBeenSet = false;
 };
 

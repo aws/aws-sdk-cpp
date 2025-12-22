@@ -94,12 +94,12 @@ class AnalysisTemplateArtifacts {
   ///@}
  private:
   AnalysisTemplateArtifact m_entryPoint;
-  bool m_entryPointHasBeenSet = false;
 
   Aws::Vector<AnalysisTemplateArtifact> m_additionalArtifacts;
-  bool m_additionalArtifactsHasBeenSet = false;
 
   Aws::String m_roleArn;
+  bool m_entryPointHasBeenSet = false;
+  bool m_additionalArtifactsHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
 };
 

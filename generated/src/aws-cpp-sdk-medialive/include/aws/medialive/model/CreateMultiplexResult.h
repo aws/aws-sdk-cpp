@@ -65,9 +65,9 @@ class CreateMultiplexResult {
   ///@}
  private:
   Multiplex m_multiplex;
-  bool m_multiplexHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_multiplexHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

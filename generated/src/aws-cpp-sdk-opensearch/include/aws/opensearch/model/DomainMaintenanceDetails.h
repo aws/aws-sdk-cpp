@@ -175,27 +175,27 @@ class DomainMaintenanceDetails {
   ///@}
  private:
   Aws::String m_maintenanceId;
-  bool m_maintenanceIdHasBeenSet = false;
 
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   MaintenanceType m_action{MaintenanceType::NOT_SET};
-  bool m_actionHasBeenSet = false;
 
   Aws::String m_nodeId;
-  bool m_nodeIdHasBeenSet = false;
 
   MaintenanceStatus m_status{MaintenanceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
+  bool m_maintenanceIdHasBeenSet = false;
+  bool m_domainNameHasBeenSet = false;
+  bool m_actionHasBeenSet = false;
+  bool m_nodeIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
 

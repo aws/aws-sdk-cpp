@@ -77,9 +77,9 @@ class GpuInfo {
   ///@}
  private:
   Aws::Vector<GpuDeviceInfo> m_gpus;
-  bool m_gpusHasBeenSet = false;
 
   int m_totalGpuMemoryInMiB{0};
+  bool m_gpusHasBeenSet = false;
   bool m_totalGpuMemoryInMiBHasBeenSet = false;
 };
 

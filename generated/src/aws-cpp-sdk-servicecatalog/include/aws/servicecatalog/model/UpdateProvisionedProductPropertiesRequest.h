@@ -136,15 +136,15 @@ class UpdateProvisionedProductPropertiesRequest : public ServiceCatalogRequest {
   ///@}
  private:
   Aws::String m_acceptLanguage;
-  bool m_acceptLanguageHasBeenSet = false;
 
   Aws::String m_provisionedProductId;
-  bool m_provisionedProductIdHasBeenSet = false;
 
   Aws::Map<PropertyKey, Aws::String> m_provisionedProductProperties;
-  bool m_provisionedProductPropertiesHasBeenSet = false;
 
   Aws::String m_idempotencyToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_acceptLanguageHasBeenSet = false;
+  bool m_provisionedProductIdHasBeenSet = false;
+  bool m_provisionedProductPropertiesHasBeenSet = false;
   bool m_idempotencyTokenHasBeenSet = true;
 };
 

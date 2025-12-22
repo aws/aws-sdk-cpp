@@ -122,18 +122,18 @@ class UpdateWorkerScheduleResult {
   ///@}
  private:
   Aws::Map<Aws::String, AssignedSession> m_assignedSessions;
-  bool m_assignedSessionsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_cancelSessionActions;
-  bool m_cancelSessionActionsHasBeenSet = false;
 
   DesiredWorkerStatus m_desiredWorkerStatus{DesiredWorkerStatus::NOT_SET};
-  bool m_desiredWorkerStatusHasBeenSet = false;
 
   int m_updateIntervalSeconds{0};
-  bool m_updateIntervalSecondsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_assignedSessionsHasBeenSet = false;
+  bool m_cancelSessionActionsHasBeenSet = false;
+  bool m_desiredWorkerStatusHasBeenSet = false;
+  bool m_updateIntervalSecondsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

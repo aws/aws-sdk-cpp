@@ -79,12 +79,12 @@ class RegisterPullTimeUpdateExclusionResult {
   ///@}
  private:
   Aws::String m_principalArn;
-  bool m_principalArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_principalArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

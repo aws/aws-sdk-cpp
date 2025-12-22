@@ -69,9 +69,9 @@ class EventSource {
   ///@}
  private:
   EventSourceValues m_type{EventSourceValues::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   EventParameters m_parameters;
+  bool m_typeHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

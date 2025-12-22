@@ -214,27 +214,27 @@ class Output {
   ///@}
  private:
   Aws::Vector<AudioDescription> m_audioDescriptions;
-  bool m_audioDescriptionsHasBeenSet = false;
 
   Aws::Vector<CaptionDescription> m_captionDescriptions;
-  bool m_captionDescriptionsHasBeenSet = false;
 
   ContainerSettings m_containerSettings;
-  bool m_containerSettingsHasBeenSet = false;
 
   Aws::String m_extension;
-  bool m_extensionHasBeenSet = false;
 
   Aws::String m_nameModifier;
-  bool m_nameModifierHasBeenSet = false;
 
   OutputSettings m_outputSettings;
-  bool m_outputSettingsHasBeenSet = false;
 
   Aws::String m_preset;
-  bool m_presetHasBeenSet = false;
 
   VideoDescription m_videoDescription;
+  bool m_audioDescriptionsHasBeenSet = false;
+  bool m_captionDescriptionsHasBeenSet = false;
+  bool m_containerSettingsHasBeenSet = false;
+  bool m_extensionHasBeenSet = false;
+  bool m_nameModifierHasBeenSet = false;
+  bool m_outputSettingsHasBeenSet = false;
+  bool m_presetHasBeenSet = false;
   bool m_videoDescriptionHasBeenSet = false;
 };
 

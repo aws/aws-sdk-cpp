@@ -142,18 +142,18 @@ class AssumeRoleResult {
   ///@}
  private:
   Credentials m_credentials;
-  bool m_credentialsHasBeenSet = false;
 
   AssumedRoleUser m_assumedRoleUser;
-  bool m_assumedRoleUserHasBeenSet = false;
 
   int m_packedPolicySize{0};
-  bool m_packedPolicySizeHasBeenSet = false;
 
   Aws::String m_sourceIdentity;
-  bool m_sourceIdentityHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_credentialsHasBeenSet = false;
+  bool m_assumedRoleUserHasBeenSet = false;
+  bool m_packedPolicySizeHasBeenSet = false;
+  bool m_sourceIdentityHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class GetCaseAttachmentDownloadUrlRequest : public SecurityIRRequest {
   ///@}
  private:
   Aws::String m_caseId;
-  bool m_caseIdHasBeenSet = false;
 
   Aws::String m_attachmentId;
+  bool m_caseIdHasBeenSet = false;
   bool m_attachmentIdHasBeenSet = false;
 };
 

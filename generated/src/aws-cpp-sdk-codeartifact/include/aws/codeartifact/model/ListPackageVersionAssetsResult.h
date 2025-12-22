@@ -181,27 +181,27 @@ class ListPackageVersionAssetsResult {
   ///@}
  private:
   PackageFormat m_format{PackageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Aws::String m_namespace;
-  bool m_namespaceHasBeenSet = false;
 
   Aws::String m_package;
-  bool m_packageHasBeenSet = false;
 
   Aws::String m_version;
-  bool m_versionHasBeenSet = false;
 
   Aws::String m_versionRevision;
-  bool m_versionRevisionHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<AssetSummary> m_assets;
-  bool m_assetsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_formatHasBeenSet = false;
+  bool m_namespaceHasBeenSet = false;
+  bool m_packageHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
+  bool m_versionRevisionHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_assetsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

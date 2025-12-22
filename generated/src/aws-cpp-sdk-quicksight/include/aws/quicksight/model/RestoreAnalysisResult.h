@@ -115,18 +115,18 @@ class RestoreAnalysisResult {
   ///@}
  private:
   int m_status{0};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_analysisId;
-  bool m_analysisIdHasBeenSet = false;
 
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_restorationFailedFolderArns;
+  bool m_statusHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_analysisIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
   bool m_restorationFailedFolderArnsHasBeenSet = false;
 };
 

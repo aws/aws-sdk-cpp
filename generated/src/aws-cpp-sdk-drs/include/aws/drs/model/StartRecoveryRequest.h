@@ -96,12 +96,12 @@ class StartRecoveryRequest : public DrsRequest {
   ///@}
  private:
   bool m_isDrill{false};
-  bool m_isDrillHasBeenSet = false;
 
   Aws::Vector<StartRecoveryRequestSourceServer> m_sourceServers;
-  bool m_sourceServersHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_isDrillHasBeenSet = false;
+  bool m_sourceServersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

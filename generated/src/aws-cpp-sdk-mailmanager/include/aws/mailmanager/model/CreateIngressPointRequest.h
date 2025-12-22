@@ -192,27 +192,27 @@ class CreateIngressPointRequest : public MailManagerRequest {
   ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   Aws::String m_ingressPointName;
-  bool m_ingressPointNameHasBeenSet = false;
 
   IngressPointType m_type{IngressPointType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_ruleSetId;
-  bool m_ruleSetIdHasBeenSet = false;
 
   Aws::String m_trafficPolicyId;
-  bool m_trafficPolicyIdHasBeenSet = false;
 
   IngressPointConfiguration m_ingressPointConfiguration;
-  bool m_ingressPointConfigurationHasBeenSet = false;
 
   NetworkConfiguration m_networkConfiguration;
-  bool m_networkConfigurationHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_ingressPointNameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_ruleSetIdHasBeenSet = false;
+  bool m_trafficPolicyIdHasBeenSet = false;
+  bool m_ingressPointConfigurationHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -156,21 +156,21 @@ class FederationParameters {
   ///@}
  private:
   Aws::String m_samlMetadataDocument;
-  bool m_samlMetadataDocumentHasBeenSet = false;
 
   Aws::String m_samlMetadataURL;
-  bool m_samlMetadataURLHasBeenSet = false;
 
   Aws::String m_applicationCallBackURL;
-  bool m_applicationCallBackURLHasBeenSet = false;
 
   Aws::String m_federationURN;
-  bool m_federationURNHasBeenSet = false;
 
   Aws::String m_federationProviderName;
-  bool m_federationProviderNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributeMap;
+  bool m_samlMetadataDocumentHasBeenSet = false;
+  bool m_samlMetadataURLHasBeenSet = false;
+  bool m_applicationCallBackURLHasBeenSet = false;
+  bool m_federationURNHasBeenSet = false;
+  bool m_federationProviderNameHasBeenSet = false;
   bool m_attributeMapHasBeenSet = false;
 };
 

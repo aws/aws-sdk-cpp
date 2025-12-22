@@ -80,9 +80,9 @@ class ArgoCdRoleMapping {
   ///@}
  private:
   ArgoCdRole m_role{ArgoCdRole::NOT_SET};
-  bool m_roleHasBeenSet = false;
 
   Aws::Vector<SsoIdentity> m_identities;
+  bool m_roleHasBeenSet = false;
   bool m_identitiesHasBeenSet = false;
 };
 

@@ -89,12 +89,12 @@ class ApiConfiguration {
   ///@}
  private:
   GraphQLRenderConfig m_graphQLConfig;
-  bool m_graphQLConfigHasBeenSet = false;
 
   DataStoreRenderConfig m_dataStoreConfig;
-  bool m_dataStoreConfigHasBeenSet = false;
 
   NoApiRenderConfig m_noApiConfig;
+  bool m_graphQLConfigHasBeenSet = false;
+  bool m_dataStoreConfigHasBeenSet = false;
   bool m_noApiConfigHasBeenSet = false;
 };
 

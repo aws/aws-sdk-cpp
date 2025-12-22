@@ -83,12 +83,12 @@ class DescribeDeliveriesResult {
   ///@}
  private:
   Aws::Vector<Delivery> m_deliveries;
-  bool m_deliveriesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_deliveriesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

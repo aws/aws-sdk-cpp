@@ -97,12 +97,12 @@ class ApplyPendingMaintenanceActionRequest : public DatabaseMigrationServiceRequ
   ///@}
  private:
   Aws::String m_replicationInstanceArn;
-  bool m_replicationInstanceArnHasBeenSet = false;
 
   Aws::String m_applyAction;
-  bool m_applyActionHasBeenSet = false;
 
   Aws::String m_optInType;
+  bool m_replicationInstanceArnHasBeenSet = false;
+  bool m_applyActionHasBeenSet = false;
   bool m_optInTypeHasBeenSet = false;
 };
 

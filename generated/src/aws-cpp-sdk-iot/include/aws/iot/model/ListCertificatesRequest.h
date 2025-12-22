@@ -88,12 +88,12 @@ class ListCertificatesRequest : public IoTRequest {
   ///@}
  private:
   int m_pageSize{0};
-  bool m_pageSizeHasBeenSet = false;
 
   Aws::String m_marker;
-  bool m_markerHasBeenSet = false;
 
   bool m_ascendingOrder{false};
+  bool m_pageSizeHasBeenSet = false;
+  bool m_markerHasBeenSet = false;
   bool m_ascendingOrderHasBeenSet = false;
 };
 

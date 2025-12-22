@@ -70,9 +70,9 @@ class CustomerProfilesDestinationProperties {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_objectTypeName;
+  bool m_domainNameHasBeenSet = false;
   bool m_objectTypeNameHasBeenSet = false;
 };
 

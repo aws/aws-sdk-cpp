@@ -252,42 +252,42 @@ class GetSolFunctionInstanceResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   GetSolVnfInfo m_instantiatedVnfInfo;
-  bool m_instantiatedVnfInfoHasBeenSet = false;
 
   VnfInstantiationState m_instantiationState{VnfInstantiationState::NOT_SET};
-  bool m_instantiationStateHasBeenSet = false;
 
   GetSolFunctionInstanceMetadata m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::String m_nsInstanceId;
-  bool m_nsInstanceIdHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Aws::String m_vnfPkgId;
-  bool m_vnfPkgIdHasBeenSet = false;
 
   Aws::String m_vnfProductName;
-  bool m_vnfProductNameHasBeenSet = false;
 
   Aws::String m_vnfProvider;
-  bool m_vnfProviderHasBeenSet = false;
 
   Aws::String m_vnfdId;
-  bool m_vnfdIdHasBeenSet = false;
 
   Aws::String m_vnfdVersion;
-  bool m_vnfdVersionHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_instantiatedVnfInfoHasBeenSet = false;
+  bool m_instantiationStateHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
+  bool m_nsInstanceIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_vnfPkgIdHasBeenSet = false;
+  bool m_vnfProductNameHasBeenSet = false;
+  bool m_vnfProviderHasBeenSet = false;
+  bool m_vnfdIdHasBeenSet = false;
+  bool m_vnfdVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

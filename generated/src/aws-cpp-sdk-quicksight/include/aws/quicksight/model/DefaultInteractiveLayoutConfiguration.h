@@ -72,9 +72,9 @@ class DefaultInteractiveLayoutConfiguration {
   ///@}
  private:
   DefaultGridLayoutConfiguration m_grid;
-  bool m_gridHasBeenSet = false;
 
   DefaultFreeFormLayoutConfiguration m_freeForm;
+  bool m_gridHasBeenSet = false;
   bool m_freeFormHasBeenSet = false;
 };
 

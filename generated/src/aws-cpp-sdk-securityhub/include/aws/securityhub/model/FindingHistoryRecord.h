@@ -167,21 +167,21 @@ class FindingHistoryRecord {
   ///@}
  private:
   AwsSecurityFindingIdentifier m_findingIdentifier;
-  bool m_findingIdentifierHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   bool m_findingCreated{false};
-  bool m_findingCreatedHasBeenSet = false;
 
   FindingHistoryUpdateSource m_updateSource;
-  bool m_updateSourceHasBeenSet = false;
 
   Aws::Vector<FindingHistoryUpdate> m_updates;
-  bool m_updatesHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_findingIdentifierHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_findingCreatedHasBeenSet = false;
+  bool m_updateSourceHasBeenSet = false;
+  bool m_updatesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

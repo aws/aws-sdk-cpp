@@ -60,9 +60,9 @@ class GetTableBucketStorageClassResult {
   ///@}
  private:
   StorageClassConfiguration m_storageClassConfiguration;
-  bool m_storageClassConfigurationHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_storageClassConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

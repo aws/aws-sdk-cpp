@@ -34,6 +34,24 @@ class VcenterClient {
 
   ///@{
   /**
+   * <p>ID of vCenter client.</p>
+   */
+  inline const Aws::String& GetVcenterClientID() const { return m_vcenterClientID; }
+  inline bool VcenterClientIDHasBeenSet() const { return m_vcenterClientIDHasBeenSet; }
+  template <typename VcenterClientIDT = Aws::String>
+  void SetVcenterClientID(VcenterClientIDT&& value) {
+    m_vcenterClientIDHasBeenSet = true;
+    m_vcenterClientID = std::forward<VcenterClientIDT>(value);
+  }
+  template <typename VcenterClientIDT = Aws::String>
+  VcenterClient& WithVcenterClientID(VcenterClientIDT&& value) {
+    SetVcenterClientID(std::forward<VcenterClientIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Arn of vCenter client.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -52,24 +70,6 @@ class VcenterClient {
 
   ///@{
   /**
-   * <p>Datacenter name of vCenter client.</p>
-   */
-  inline const Aws::String& GetDatacenterName() const { return m_datacenterName; }
-  inline bool DatacenterNameHasBeenSet() const { return m_datacenterNameHasBeenSet; }
-  template <typename DatacenterNameT = Aws::String>
-  void SetDatacenterName(DatacenterNameT&& value) {
-    m_datacenterNameHasBeenSet = true;
-    m_datacenterName = std::forward<DatacenterNameT>(value);
-  }
-  template <typename DatacenterNameT = Aws::String>
-  VcenterClient& WithDatacenterName(DatacenterNameT&& value) {
-    SetDatacenterName(std::forward<DatacenterNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Hostname of vCenter client .</p>
    */
   inline const Aws::String& GetHostname() const { return m_hostname; }
@@ -82,6 +82,42 @@ class VcenterClient {
   template <typename HostnameT = Aws::String>
   VcenterClient& WithHostname(HostnameT&& value) {
     SetHostname(std::forward<HostnameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Vcenter UUID of vCenter client.</p>
+   */
+  inline const Aws::String& GetVcenterUUID() const { return m_vcenterUUID; }
+  inline bool VcenterUUIDHasBeenSet() const { return m_vcenterUUIDHasBeenSet; }
+  template <typename VcenterUUIDT = Aws::String>
+  void SetVcenterUUID(VcenterUUIDT&& value) {
+    m_vcenterUUIDHasBeenSet = true;
+    m_vcenterUUID = std::forward<VcenterUUIDT>(value);
+  }
+  template <typename VcenterUUIDT = Aws::String>
+  VcenterClient& WithVcenterUUID(VcenterUUIDT&& value) {
+    SetVcenterUUID(std::forward<VcenterUUIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Datacenter name of vCenter client.</p>
+   */
+  inline const Aws::String& GetDatacenterName() const { return m_datacenterName; }
+  inline bool DatacenterNameHasBeenSet() const { return m_datacenterNameHasBeenSet; }
+  template <typename DatacenterNameT = Aws::String>
+  void SetDatacenterName(DatacenterNameT&& value) {
+    m_datacenterNameHasBeenSet = true;
+    m_datacenterName = std::forward<DatacenterNameT>(value);
+  }
+  template <typename DatacenterNameT = Aws::String>
+  VcenterClient& WithDatacenterName(DatacenterNameT&& value) {
+    SetDatacenterName(std::forward<DatacenterNameT>(value));
     return *this;
   }
   ///@}
@@ -151,66 +187,30 @@ class VcenterClient {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>ID of vCenter client.</p>
-   */
-  inline const Aws::String& GetVcenterClientID() const { return m_vcenterClientID; }
-  inline bool VcenterClientIDHasBeenSet() const { return m_vcenterClientIDHasBeenSet; }
-  template <typename VcenterClientIDT = Aws::String>
-  void SetVcenterClientID(VcenterClientIDT&& value) {
-    m_vcenterClientIDHasBeenSet = true;
-    m_vcenterClientID = std::forward<VcenterClientIDT>(value);
-  }
-  template <typename VcenterClientIDT = Aws::String>
-  VcenterClient& WithVcenterClientID(VcenterClientIDT&& value) {
-    SetVcenterClientID(std::forward<VcenterClientIDT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Vcenter UUID of vCenter client.</p>
-   */
-  inline const Aws::String& GetVcenterUUID() const { return m_vcenterUUID; }
-  inline bool VcenterUUIDHasBeenSet() const { return m_vcenterUUIDHasBeenSet; }
-  template <typename VcenterUUIDT = Aws::String>
-  void SetVcenterUUID(VcenterUUIDT&& value) {
-    m_vcenterUUIDHasBeenSet = true;
-    m_vcenterUUID = std::forward<VcenterUUIDT>(value);
-  }
-  template <typename VcenterUUIDT = Aws::String>
-  VcenterClient& WithVcenterUUID(VcenterUUIDT&& value) {
-    SetVcenterUUID(std::forward<VcenterUUIDT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
+  Aws::String m_vcenterClientID;
 
-  Aws::String m_datacenterName;
-  bool m_datacenterNameHasBeenSet = false;
+  Aws::String m_arn;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
-
-  Aws::String m_lastSeenDatetime;
-  bool m_lastSeenDatetimeHasBeenSet = false;
-
-  Aws::Map<Aws::String, Aws::String> m_sourceServerTags;
-  bool m_sourceServerTagsHasBeenSet = false;
-
-  Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
-
-  Aws::String m_vcenterClientID;
-  bool m_vcenterClientIDHasBeenSet = false;
 
   Aws::String m_vcenterUUID;
+
+  Aws::String m_datacenterName;
+
+  Aws::String m_lastSeenDatetime;
+
+  Aws::Map<Aws::String, Aws::String> m_sourceServerTags;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_vcenterClientIDHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
   bool m_vcenterUUIDHasBeenSet = false;
+  bool m_datacenterNameHasBeenSet = false;
+  bool m_lastSeenDatetimeHasBeenSet = false;
+  bool m_sourceServerTagsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
 };
 
 }  // namespace Model

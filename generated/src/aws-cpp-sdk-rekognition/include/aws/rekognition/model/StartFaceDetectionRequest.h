@@ -135,18 +135,18 @@ class StartFaceDetectionRequest : public RekognitionRequest {
   ///@}
  private:
   Video m_video;
-  bool m_videoHasBeenSet = false;
 
   Aws::String m_clientRequestToken;
-  bool m_clientRequestTokenHasBeenSet = false;
 
   NotificationChannel m_notificationChannel;
-  bool m_notificationChannelHasBeenSet = false;
 
   FaceAttributes m_faceAttributes{FaceAttributes::NOT_SET};
-  bool m_faceAttributesHasBeenSet = false;
 
   Aws::String m_jobTag;
+  bool m_videoHasBeenSet = false;
+  bool m_clientRequestTokenHasBeenSet = false;
+  bool m_notificationChannelHasBeenSet = false;
+  bool m_faceAttributesHasBeenSet = false;
   bool m_jobTagHasBeenSet = false;
 };
 

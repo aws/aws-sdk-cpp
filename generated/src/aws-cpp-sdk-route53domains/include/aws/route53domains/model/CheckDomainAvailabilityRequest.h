@@ -87,9 +87,9 @@ class CheckDomainAvailabilityRequest : public Route53DomainsRequest {
   ///@}
  private:
   Aws::String m_domainName;
-  bool m_domainNameHasBeenSet = false;
 
   Aws::String m_idnLangCode;
+  bool m_domainNameHasBeenSet = false;
   bool m_idnLangCodeHasBeenSet = false;
 };
 

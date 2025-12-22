@@ -98,12 +98,12 @@ class PutBackupVaultNotificationsRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_backupVaultName;
-  bool m_backupVaultNameHasBeenSet = false;
 
   Aws::String m_sNSTopicArn;
-  bool m_sNSTopicArnHasBeenSet = false;
 
   Aws::Vector<BackupVaultEvent> m_backupVaultEvents;
+  bool m_backupVaultNameHasBeenSet = false;
+  bool m_sNSTopicArnHasBeenSet = false;
   bool m_backupVaultEventsHasBeenSet = false;
 };
 

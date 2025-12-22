@@ -102,15 +102,15 @@ class ActionHistory {
   ///@}
  private:
   Aws::Utils::DateTime m_timestamp{};
-  bool m_timestampHasBeenSet = false;
 
   ActionStatus m_status{ActionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   EventType m_eventType{EventType::NOT_SET};
-  bool m_eventTypeHasBeenSet = false;
 
   ActionHistoryDetails m_actionHistoryDetails;
+  bool m_timestampHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_eventTypeHasBeenSet = false;
   bool m_actionHistoryDetailsHasBeenSet = false;
 };
 

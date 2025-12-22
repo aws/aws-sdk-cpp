@@ -77,9 +77,9 @@ class ThumbnailDetail {
   ///@}
  private:
   Aws::String m_pipelineId;
-  bool m_pipelineIdHasBeenSet = false;
 
   Aws::Vector<Thumbnail> m_thumbnails;
+  bool m_pipelineIdHasBeenSet = false;
   bool m_thumbnailsHasBeenSet = false;
 };
 

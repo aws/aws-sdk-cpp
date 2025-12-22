@@ -156,15 +156,15 @@ class AccountLevelBpaSync {
   ///@}
  private:
   AccountLevelBpaSyncStatus m_status{AccountLevelBpaSyncStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastSyncedAt{};
-  bool m_lastSyncedAtHasBeenSet = false;
 
   BPAStatusMessage m_message{BPAStatusMessage::NOT_SET};
-  bool m_messageHasBeenSet = false;
 
   bool m_bpaImpactsLightsail{false};
+  bool m_statusHasBeenSet = false;
+  bool m_lastSyncedAtHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_bpaImpactsLightsailHasBeenSet = false;
 };
 

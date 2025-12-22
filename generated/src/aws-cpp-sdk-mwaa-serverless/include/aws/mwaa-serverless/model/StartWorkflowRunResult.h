@@ -95,15 +95,15 @@ class StartWorkflowRunResult {
   ///@}
  private:
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   WorkflowRunStatus m_status{WorkflowRunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_runIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_startedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -86,12 +86,12 @@ class S3ImportSource {
   ///@}
  private:
   Aws::String m_s3LocationUri;
-  bool m_s3LocationUriHasBeenSet = false;
 
   Aws::String m_s3BucketRegion;
-  bool m_s3BucketRegionHasBeenSet = false;
 
   Aws::String m_s3BucketAccessRoleArn;
+  bool m_s3LocationUriHasBeenSet = false;
+  bool m_s3BucketRegionHasBeenSet = false;
   bool m_s3BucketAccessRoleArnHasBeenSet = false;
 };
 

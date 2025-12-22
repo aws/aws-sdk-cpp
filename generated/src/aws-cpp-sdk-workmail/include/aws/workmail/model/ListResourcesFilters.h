@@ -86,12 +86,12 @@ class ListResourcesFilters {
   ///@}
  private:
   Aws::String m_namePrefix;
-  bool m_namePrefixHasBeenSet = false;
 
   Aws::String m_primaryEmailPrefix;
-  bool m_primaryEmailPrefixHasBeenSet = false;
 
   EntityState m_state{EntityState::NOT_SET};
+  bool m_namePrefixHasBeenSet = false;
+  bool m_primaryEmailPrefixHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

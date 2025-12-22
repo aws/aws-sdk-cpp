@@ -157,24 +157,24 @@ class GetTranscriptRequest : public ConnectParticipantRequest {
   ///@}
  private:
   Aws::String m_contactId;
-  bool m_contactIdHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ScanDirection m_scanDirection{ScanDirection::NOT_SET};
-  bool m_scanDirectionHasBeenSet = false;
 
   SortKey m_sortOrder{SortKey::NOT_SET};
-  bool m_sortOrderHasBeenSet = false;
 
   StartPosition m_startPosition;
-  bool m_startPositionHasBeenSet = false;
 
   Aws::String m_connectionToken;
+  bool m_contactIdHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_scanDirectionHasBeenSet = false;
+  bool m_sortOrderHasBeenSet = false;
+  bool m_startPositionHasBeenSet = false;
   bool m_connectionTokenHasBeenSet = false;
 };
 

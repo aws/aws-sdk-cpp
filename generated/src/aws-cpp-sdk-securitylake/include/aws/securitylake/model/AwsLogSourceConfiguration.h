@@ -119,15 +119,15 @@ class AwsLogSourceConfiguration {
   ///@}
  private:
   Aws::Vector<Aws::String> m_accounts;
-  bool m_accountsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_regions;
-  bool m_regionsHasBeenSet = false;
 
   AwsLogSourceName m_sourceName{AwsLogSourceName::NOT_SET};
-  bool m_sourceNameHasBeenSet = false;
 
   Aws::String m_sourceVersion;
+  bool m_accountsHasBeenSet = false;
+  bool m_regionsHasBeenSet = false;
+  bool m_sourceNameHasBeenSet = false;
   bool m_sourceVersionHasBeenSet = false;
 };
 

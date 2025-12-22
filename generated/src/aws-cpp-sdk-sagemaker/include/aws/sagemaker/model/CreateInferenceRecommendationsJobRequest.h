@@ -201,27 +201,27 @@ class CreateInferenceRecommendationsJobRequest : public SageMakerRequest {
   ///@}
  private:
   Aws::String m_jobName;
-  bool m_jobNameHasBeenSet = false;
 
   RecommendationJobType m_jobType{RecommendationJobType::NOT_SET};
-  bool m_jobTypeHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   RecommendationJobInputConfig m_inputConfig;
-  bool m_inputConfigHasBeenSet = false;
 
   Aws::String m_jobDescription;
-  bool m_jobDescriptionHasBeenSet = false;
 
   RecommendationJobStoppingConditions m_stoppingConditions;
-  bool m_stoppingConditionsHasBeenSet = false;
 
   RecommendationJobOutputConfig m_outputConfig;
-  bool m_outputConfigHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_jobNameHasBeenSet = false;
+  bool m_jobTypeHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_inputConfigHasBeenSet = false;
+  bool m_jobDescriptionHasBeenSet = false;
+  bool m_stoppingConditionsHasBeenSet = false;
+  bool m_outputConfigHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -85,12 +85,12 @@ class NamespaceAlreadyExists {
   ///@}
  private:
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_creatorRequestId;
-  bool m_creatorRequestIdHasBeenSet = false;
 
   Aws::String m_namespaceId;
+  bool m_messageHasBeenSet = false;
+  bool m_creatorRequestIdHasBeenSet = false;
   bool m_namespaceIdHasBeenSet = false;
 };
 

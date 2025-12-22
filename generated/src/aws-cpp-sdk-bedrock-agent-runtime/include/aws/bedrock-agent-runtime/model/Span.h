@@ -68,9 +68,9 @@ class Span {
   ///@}
  private:
   int m_end{0};
-  bool m_endHasBeenSet = false;
 
   int m_start{0};
+  bool m_endHasBeenSet = false;
   bool m_startHasBeenSet = false;
 };
 

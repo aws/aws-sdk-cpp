@@ -74,9 +74,9 @@ class CreateAttendeeRequestItem {
   ///@}
  private:
   Aws::String m_externalUserId;
-  bool m_externalUserIdHasBeenSet = false;
 
   AttendeeCapabilities m_capabilities;
+  bool m_externalUserIdHasBeenSet = false;
   bool m_capabilitiesHasBeenSet = false;
 };
 

@@ -148,24 +148,24 @@ class DescribeActionResult {
   ///@}
  private:
   Aws::String m_actionId;
-  bool m_actionIdHasBeenSet = false;
 
   TargetResource m_targetResource;
-  bool m_targetResourceHasBeenSet = false;
 
   Aws::String m_actionDefinitionId;
-  bool m_actionDefinitionIdHasBeenSet = false;
 
   ActionPayload m_actionPayload;
-  bool m_actionPayloadHasBeenSet = false;
 
   Aws::Utils::DateTime m_executionTime{};
-  bool m_executionTimeHasBeenSet = false;
 
   ResolveTo m_resolveTo;
-  bool m_resolveToHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_actionIdHasBeenSet = false;
+  bool m_targetResourceHasBeenSet = false;
+  bool m_actionDefinitionIdHasBeenSet = false;
+  bool m_actionPayloadHasBeenSet = false;
+  bool m_executionTimeHasBeenSet = false;
+  bool m_resolveToHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

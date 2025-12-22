@@ -278,42 +278,42 @@ class LensReview {
   ///@}
  private:
   Aws::String m_lensAlias;
-  bool m_lensAliasHasBeenSet = false;
 
   Aws::String m_lensArn;
-  bool m_lensArnHasBeenSet = false;
 
   Aws::String m_lensVersion;
-  bool m_lensVersionHasBeenSet = false;
 
   Aws::String m_lensName;
-  bool m_lensNameHasBeenSet = false;
 
   LensStatus m_lensStatus{LensStatus::NOT_SET};
-  bool m_lensStatusHasBeenSet = false;
 
   Aws::Vector<PillarReviewSummary> m_pillarReviewSummaries;
-  bool m_pillarReviewSummariesHasBeenSet = false;
 
   JiraSelectedQuestionConfiguration m_jiraConfiguration;
-  bool m_jiraConfigurationHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::String m_notes;
-  bool m_notesHasBeenSet = false;
 
   Aws::Map<Risk, int> m_riskCounts;
-  bool m_riskCountsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<WorkloadProfile> m_profiles;
-  bool m_profilesHasBeenSet = false;
 
   Aws::Map<Risk, int> m_prioritizedRiskCounts;
+  bool m_lensAliasHasBeenSet = false;
+  bool m_lensArnHasBeenSet = false;
+  bool m_lensVersionHasBeenSet = false;
+  bool m_lensNameHasBeenSet = false;
+  bool m_lensStatusHasBeenSet = false;
+  bool m_pillarReviewSummariesHasBeenSet = false;
+  bool m_jiraConfigurationHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_notesHasBeenSet = false;
+  bool m_riskCountsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_profilesHasBeenSet = false;
   bool m_prioritizedRiskCountsHasBeenSet = false;
 };
 

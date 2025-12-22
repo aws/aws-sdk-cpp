@@ -69,9 +69,9 @@ class PrepareQueryRequest : public TimestreamQueryRequest {
   ///@}
  private:
   Aws::String m_queryString;
-  bool m_queryStringHasBeenSet = false;
 
   bool m_validateOnly{false};
+  bool m_queryStringHasBeenSet = false;
   bool m_validateOnlyHasBeenSet = false;
 };
 

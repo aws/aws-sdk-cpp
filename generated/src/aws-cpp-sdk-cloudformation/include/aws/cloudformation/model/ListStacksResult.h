@@ -92,12 +92,12 @@ class ListStacksResult {
   ///@}
  private:
   Aws::Vector<StackSummary> m_stackSummaries;
-  bool m_stackSummariesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_stackSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

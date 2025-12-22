@@ -91,12 +91,12 @@ class DescribeChannelMembershipForAppInstanceUserRequest : public ChimeSDKMessag
   ///@}
  private:
   Aws::String m_channelArn;
-  bool m_channelArnHasBeenSet = false;
 
   Aws::String m_appInstanceUserArn;
-  bool m_appInstanceUserArnHasBeenSet = false;
 
   Aws::String m_chimeBearer;
+  bool m_channelArnHasBeenSet = false;
+  bool m_appInstanceUserArnHasBeenSet = false;
   bool m_chimeBearerHasBeenSet = false;
 };
 

@@ -194,30 +194,30 @@ class RDSInstanceDetails {
   ///@}
  private:
   Aws::String m_family;
-  bool m_familyHasBeenSet = false;
 
   Aws::String m_instanceType;
-  bool m_instanceTypeHasBeenSet = false;
 
   Aws::String m_region;
-  bool m_regionHasBeenSet = false;
 
   Aws::String m_databaseEngine;
-  bool m_databaseEngineHasBeenSet = false;
 
   Aws::String m_databaseEdition;
-  bool m_databaseEditionHasBeenSet = false;
 
   Aws::String m_deploymentOption;
-  bool m_deploymentOptionHasBeenSet = false;
 
   Aws::String m_licenseModel;
-  bool m_licenseModelHasBeenSet = false;
 
   bool m_currentGeneration{false};
-  bool m_currentGenerationHasBeenSet = false;
 
   bool m_sizeFlexEligible{false};
+  bool m_familyHasBeenSet = false;
+  bool m_instanceTypeHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_databaseEngineHasBeenSet = false;
+  bool m_databaseEditionHasBeenSet = false;
+  bool m_deploymentOptionHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_currentGenerationHasBeenSet = false;
   bool m_sizeFlexEligibleHasBeenSet = false;
 };
 

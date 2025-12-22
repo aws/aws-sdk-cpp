@@ -275,42 +275,42 @@ class IdNamespaceAssociation {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_membershipId;
-  bool m_membershipIdHasBeenSet = false;
 
   Aws::String m_membershipArn;
-  bool m_membershipArnHasBeenSet = false;
 
   Aws::String m_collaborationId;
-  bool m_collaborationIdHasBeenSet = false;
 
   Aws::String m_collaborationArn;
-  bool m_collaborationArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Utils::DateTime m_createTime{};
-  bool m_createTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_updateTime{};
-  bool m_updateTimeHasBeenSet = false;
 
   IdNamespaceAssociationInputReferenceConfig m_inputReferenceConfig;
-  bool m_inputReferenceConfigHasBeenSet = false;
 
   IdNamespaceAssociationInputReferenceProperties m_inputReferenceProperties;
-  bool m_inputReferencePropertiesHasBeenSet = false;
 
   IdMappingConfig m_idMappingConfig;
+  bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_membershipArnHasBeenSet = false;
+  bool m_collaborationIdHasBeenSet = false;
+  bool m_collaborationArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_createTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_inputReferenceConfigHasBeenSet = false;
+  bool m_inputReferencePropertiesHasBeenSet = false;
   bool m_idMappingConfigHasBeenSet = false;
 };
 

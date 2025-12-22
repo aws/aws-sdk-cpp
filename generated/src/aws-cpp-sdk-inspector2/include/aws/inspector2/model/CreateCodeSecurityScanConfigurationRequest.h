@@ -133,18 +133,18 @@ class CreateCodeSecurityScanConfigurationRequest : public Inspector2Request {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   ConfigurationLevel m_level{ConfigurationLevel::NOT_SET};
-  bool m_levelHasBeenSet = false;
 
   CodeSecurityScanConfiguration m_configuration;
-  bool m_configurationHasBeenSet = false;
 
   ScopeSettings m_scopeSettings;
-  bool m_scopeSettingsHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_nameHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+  bool m_scopeSettingsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

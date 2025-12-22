@@ -69,9 +69,9 @@ class ConnectionData {
   ///@}
  private:
   Attendee m_attendee;
-  bool m_attendeeHasBeenSet = false;
 
   Meeting m_meeting;
+  bool m_attendeeHasBeenSet = false;
   bool m_meetingHasBeenSet = false;
 };
 

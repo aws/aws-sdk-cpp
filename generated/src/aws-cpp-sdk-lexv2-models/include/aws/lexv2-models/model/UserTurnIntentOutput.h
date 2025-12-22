@@ -77,9 +77,9 @@ class UserTurnIntentOutput {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Map<Aws::String, UserTurnSlotOutput> m_slots;
+  bool m_nameHasBeenSet = false;
   bool m_slotsHasBeenSet = false;
 };
 

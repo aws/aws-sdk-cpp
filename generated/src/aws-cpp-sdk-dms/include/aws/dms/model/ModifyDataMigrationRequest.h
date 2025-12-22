@@ -207,30 +207,30 @@ class ModifyDataMigrationRequest : public DatabaseMigrationServiceRequest {
   ///@}
  private:
   Aws::String m_dataMigrationIdentifier;
-  bool m_dataMigrationIdentifierHasBeenSet = false;
 
   Aws::String m_dataMigrationName;
-  bool m_dataMigrationNameHasBeenSet = false;
 
   bool m_enableCloudwatchLogs{false};
-  bool m_enableCloudwatchLogsHasBeenSet = false;
 
   Aws::String m_serviceAccessRoleArn;
-  bool m_serviceAccessRoleArnHasBeenSet = false;
 
   MigrationTypeValue m_dataMigrationType{MigrationTypeValue::NOT_SET};
-  bool m_dataMigrationTypeHasBeenSet = false;
 
   Aws::Vector<SourceDataSetting> m_sourceDataSettings;
-  bool m_sourceDataSettingsHasBeenSet = false;
 
   Aws::Vector<TargetDataSetting> m_targetDataSettings;
-  bool m_targetDataSettingsHasBeenSet = false;
 
   int m_numberOfJobs{0};
-  bool m_numberOfJobsHasBeenSet = false;
 
   Aws::String m_selectionRules;
+  bool m_dataMigrationIdentifierHasBeenSet = false;
+  bool m_dataMigrationNameHasBeenSet = false;
+  bool m_enableCloudwatchLogsHasBeenSet = false;
+  bool m_serviceAccessRoleArnHasBeenSet = false;
+  bool m_dataMigrationTypeHasBeenSet = false;
+  bool m_sourceDataSettingsHasBeenSet = false;
+  bool m_targetDataSettingsHasBeenSet = false;
+  bool m_numberOfJobsHasBeenSet = false;
   bool m_selectionRulesHasBeenSet = false;
 };
 

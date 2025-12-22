@@ -83,9 +83,9 @@ class UploadSSHPublicKeyRequest : public IAMRequest {
   ///@}
  private:
   Aws::String m_userName;
-  bool m_userNameHasBeenSet = false;
 
   Aws::String m_sSHPublicKeyBody;
+  bool m_userNameHasBeenSet = false;
   bool m_sSHPublicKeyBodyHasBeenSet = false;
 };
 

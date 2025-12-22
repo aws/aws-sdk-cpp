@@ -88,9 +88,9 @@ class PredefinedLoadMetricSpecification {
   ///@}
  private:
   LoadMetricType m_predefinedLoadMetricType{LoadMetricType::NOT_SET};
-  bool m_predefinedLoadMetricTypeHasBeenSet = false;
 
   Aws::String m_resourceLabel;
+  bool m_predefinedLoadMetricTypeHasBeenSet = false;
   bool m_resourceLabelHasBeenSet = false;
 };
 

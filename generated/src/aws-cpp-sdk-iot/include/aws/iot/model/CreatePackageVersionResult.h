@@ -170,27 +170,27 @@ class CreatePackageVersionResult {
   ///@}
  private:
   Aws::String m_packageVersionArn;
-  bool m_packageVersionArnHasBeenSet = false;
 
   Aws::String m_packageName;
-  bool m_packageNameHasBeenSet = false;
 
   Aws::String m_versionName;
-  bool m_versionNameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_attributes;
-  bool m_attributesHasBeenSet = false;
 
   PackageVersionStatus m_status{PackageVersionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_errorReason;
-  bool m_errorReasonHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_packageVersionArnHasBeenSet = false;
+  bool m_packageNameHasBeenSet = false;
+  bool m_versionNameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_attributesHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_errorReasonHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

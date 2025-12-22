@@ -88,12 +88,12 @@ class InsightResourceDetail {
   ///@}
  private:
   InsightStatus m_insightStatus;
-  bool m_insightStatusHasBeenSet = false;
 
   Aws::String m_kubernetesResourceUri;
-  bool m_kubernetesResourceUriHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_insightStatusHasBeenSet = false;
+  bool m_kubernetesResourceUriHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

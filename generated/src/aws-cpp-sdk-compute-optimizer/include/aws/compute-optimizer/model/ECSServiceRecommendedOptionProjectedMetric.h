@@ -92,12 +92,12 @@ class ECSServiceRecommendedOptionProjectedMetric {
   ///@}
  private:
   int m_recommendedCpuUnits{0};
-  bool m_recommendedCpuUnitsHasBeenSet = false;
 
   int m_recommendedMemorySize{0};
-  bool m_recommendedMemorySizeHasBeenSet = false;
 
   Aws::Vector<ECSServiceProjectedMetric> m_projectedMetrics;
+  bool m_recommendedCpuUnitsHasBeenSet = false;
+  bool m_recommendedMemorySizeHasBeenSet = false;
   bool m_projectedMetricsHasBeenSet = false;
 };
 

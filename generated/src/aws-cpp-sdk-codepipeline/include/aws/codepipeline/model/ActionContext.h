@@ -69,9 +69,9 @@ class ActionContext {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_actionExecutionId;
+  bool m_nameHasBeenSet = false;
   bool m_actionExecutionIdHasBeenSet = false;
 };
 

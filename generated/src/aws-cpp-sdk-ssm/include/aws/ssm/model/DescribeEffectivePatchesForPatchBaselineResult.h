@@ -86,12 +86,12 @@ class DescribeEffectivePatchesForPatchBaselineResult {
   ///@}
  private:
   Aws::Vector<EffectivePatch> m_effectivePatches;
-  bool m_effectivePatchesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_effectivePatchesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

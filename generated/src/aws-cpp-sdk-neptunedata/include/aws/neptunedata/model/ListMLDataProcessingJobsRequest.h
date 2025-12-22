@@ -71,9 +71,9 @@ class ListMLDataProcessingJobsRequest : public NeptunedataRequest {
   ///@}
  private:
   int m_maxItems{0};
-  bool m_maxItemsHasBeenSet = false;
 
   Aws::String m_neptuneIamRoleArn;
+  bool m_maxItemsHasBeenSet = false;
   bool m_neptuneIamRoleArnHasBeenSet = false;
 };
 

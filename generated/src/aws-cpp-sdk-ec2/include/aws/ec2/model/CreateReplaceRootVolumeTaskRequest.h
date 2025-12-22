@@ -214,27 +214,27 @@ class CreateReplaceRootVolumeTaskRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_instanceId;
-  bool m_instanceIdHasBeenSet = false;
 
   Aws::String m_snapshotId;
-  bool m_snapshotIdHasBeenSet = false;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-  bool m_clientTokenHasBeenSet = true;
 
   bool m_dryRun{false};
-  bool m_dryRunHasBeenSet = false;
 
   Aws::Vector<TagSpecification> m_tagSpecifications;
-  bool m_tagSpecificationsHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   bool m_deleteReplacedRootVolume{false};
-  bool m_deleteReplacedRootVolumeHasBeenSet = false;
 
   long long m_volumeInitializationRate{0};
+  bool m_instanceIdHasBeenSet = false;
+  bool m_snapshotIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_dryRunHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_deleteReplacedRootVolumeHasBeenSet = false;
   bool m_volumeInitializationRateHasBeenSet = false;
 };
 

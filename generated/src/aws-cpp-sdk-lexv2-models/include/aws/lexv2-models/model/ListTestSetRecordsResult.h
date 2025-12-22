@@ -87,12 +87,12 @@ class ListTestSetRecordsResult {
   ///@}
  private:
   Aws::Vector<TestSetTurnRecord> m_testSetRecords;
-  bool m_testSetRecordsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_testSetRecordsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

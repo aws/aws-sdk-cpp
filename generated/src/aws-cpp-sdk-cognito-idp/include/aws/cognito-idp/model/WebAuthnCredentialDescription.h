@@ -154,21 +154,21 @@ class WebAuthnCredentialDescription {
   ///@}
  private:
   Aws::String m_credentialId;
-  bool m_credentialIdHasBeenSet = false;
 
   Aws::String m_friendlyCredentialName;
-  bool m_friendlyCredentialNameHasBeenSet = false;
 
   Aws::String m_relyingPartyId;
-  bool m_relyingPartyIdHasBeenSet = false;
 
   Aws::String m_authenticatorAttachment;
-  bool m_authenticatorAttachmentHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_authenticatorTransports;
-  bool m_authenticatorTransportsHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
+  bool m_credentialIdHasBeenSet = false;
+  bool m_friendlyCredentialNameHasBeenSet = false;
+  bool m_relyingPartyIdHasBeenSet = false;
+  bool m_authenticatorAttachmentHasBeenSet = false;
+  bool m_authenticatorTransportsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
 };
 

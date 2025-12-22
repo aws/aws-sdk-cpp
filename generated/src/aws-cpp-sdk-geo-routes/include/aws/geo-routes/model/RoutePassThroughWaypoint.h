@@ -67,9 +67,9 @@ class RoutePassThroughWaypoint {
   ///@}
  private:
   int m_geometryOffset{0};
-  bool m_geometryOffsetHasBeenSet = false;
 
   RoutePassThroughPlace m_place;
+  bool m_geometryOffsetHasBeenSet = false;
   bool m_placeHasBeenSet = false;
 };
 

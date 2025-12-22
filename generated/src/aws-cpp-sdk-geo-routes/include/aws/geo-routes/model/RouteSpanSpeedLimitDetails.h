@@ -62,9 +62,9 @@ class RouteSpanSpeedLimitDetails {
   ///@}
  private:
   double m_maxSpeed{0.0};
-  bool m_maxSpeedHasBeenSet = false;
 
   bool m_unlimited{false};
+  bool m_maxSpeedHasBeenSet = false;
   bool m_unlimitedHasBeenSet = false;
 };
 

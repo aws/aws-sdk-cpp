@@ -70,9 +70,9 @@ class DeleteTransitGatewayVpcAttachmentRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
-  bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_transitGatewayAttachmentIdHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

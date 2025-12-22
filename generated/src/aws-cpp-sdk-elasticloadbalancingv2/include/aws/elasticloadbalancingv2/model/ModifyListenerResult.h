@@ -67,9 +67,9 @@ class ModifyListenerResult {
   ///@}
  private:
   Aws::Vector<Listener> m_listeners;
-  bool m_listenersHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_listenersHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

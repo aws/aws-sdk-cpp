@@ -88,12 +88,12 @@ class UpdatePartnerAccountRequest : public IoTWirelessRequest {
   ///@}
  private:
   SidewalkUpdateAccount m_sidewalk;
-  bool m_sidewalkHasBeenSet = false;
 
   Aws::String m_partnerAccountId;
-  bool m_partnerAccountIdHasBeenSet = false;
 
   PartnerType m_partnerType{PartnerType::NOT_SET};
+  bool m_sidewalkHasBeenSet = false;
+  bool m_partnerAccountIdHasBeenSet = false;
   bool m_partnerTypeHasBeenSet = false;
 };
 

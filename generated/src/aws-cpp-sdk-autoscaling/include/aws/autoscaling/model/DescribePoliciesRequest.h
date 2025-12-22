@@ -141,18 +141,18 @@ class DescribePoliciesRequest : public AutoScalingRequest {
   ///@}
  private:
   Aws::String m_autoScalingGroupName;
-  bool m_autoScalingGroupNameHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyNames;
-  bool m_policyNamesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_policyTypes;
-  bool m_policyTypesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxRecords{0};
+  bool m_autoScalingGroupNameHasBeenSet = false;
+  bool m_policyNamesHasBeenSet = false;
+  bool m_policyTypesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };
 

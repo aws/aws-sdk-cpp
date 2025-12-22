@@ -124,18 +124,18 @@ class ListWorkflowExecutionsResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   Aws::Vector<WorkflowExecutionMetadata> m_workflowExecutions;
-  bool m_workflowExecutionsHasBeenSet = false;
 
   Aws::String m_imageBuildVersionArn;
-  bool m_imageBuildVersionArnHasBeenSet = false;
 
   Aws::String m_message;
-  bool m_messageHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_requestIdHasBeenSet = false;
+  bool m_workflowExecutionsHasBeenSet = false;
+  bool m_imageBuildVersionArnHasBeenSet = false;
+  bool m_messageHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

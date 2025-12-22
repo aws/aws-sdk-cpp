@@ -89,12 +89,12 @@ class DescribeLaunchConfigurationTemplatesRequest : public MgnRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_launchConfigurationTemplateIDs;
-  bool m_launchConfigurationTemplateIDsHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::String m_nextToken;
+  bool m_launchConfigurationTemplateIDsHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };
 

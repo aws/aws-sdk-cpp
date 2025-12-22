@@ -150,18 +150,18 @@ class GetECSServiceRecommendationsRequest : public ComputeOptimizerRequest {
   ///@}
  private:
   Aws::Vector<Aws::String> m_serviceArns;
-  bool m_serviceArnsHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
-  bool m_maxResultsHasBeenSet = false;
 
   Aws::Vector<ECSServiceRecommendationFilter> m_filters;
-  bool m_filtersHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_accountIds;
+  bool m_serviceArnsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
   bool m_accountIdsHasBeenSet = false;
 };
 

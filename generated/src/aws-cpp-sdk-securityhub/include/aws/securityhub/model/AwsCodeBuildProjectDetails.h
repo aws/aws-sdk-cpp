@@ -215,30 +215,30 @@ class AwsCodeBuildProjectDetails {
   ///@}
  private:
   Aws::String m_encryptionKey;
-  bool m_encryptionKeyHasBeenSet = false;
 
   Aws::Vector<AwsCodeBuildProjectArtifactsDetails> m_artifacts;
-  bool m_artifactsHasBeenSet = false;
 
   AwsCodeBuildProjectEnvironment m_environment;
-  bool m_environmentHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   AwsCodeBuildProjectSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   Aws::String m_serviceRole;
-  bool m_serviceRoleHasBeenSet = false;
 
   AwsCodeBuildProjectLogsConfigDetails m_logsConfig;
-  bool m_logsConfigHasBeenSet = false;
 
   AwsCodeBuildProjectVpcConfig m_vpcConfig;
-  bool m_vpcConfigHasBeenSet = false;
 
   Aws::Vector<AwsCodeBuildProjectArtifactsDetails> m_secondaryArtifacts;
+  bool m_encryptionKeyHasBeenSet = false;
+  bool m_artifactsHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
+  bool m_serviceRoleHasBeenSet = false;
+  bool m_logsConfigHasBeenSet = false;
+  bool m_vpcConfigHasBeenSet = false;
   bool m_secondaryArtifactsHasBeenSet = false;
 };
 

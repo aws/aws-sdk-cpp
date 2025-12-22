@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BillingConductor {
 namespace Model {
-enum class MatchOption { NOT_SET, NOT_EQUAL };
+enum class MatchOption { NOT_SET, NOT_EQUAL, EQUAL };
 
 namespace MatchOptionMapper {
 AWS_BILLINGCONDUCTOR_API MatchOption GetMatchOptionForName(const Aws::String& name);

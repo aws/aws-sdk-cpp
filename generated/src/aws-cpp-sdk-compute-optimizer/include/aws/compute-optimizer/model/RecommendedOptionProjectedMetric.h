@@ -104,12 +104,12 @@ class RecommendedOptionProjectedMetric {
   ///@}
  private:
   Aws::String m_recommendedInstanceType;
-  bool m_recommendedInstanceTypeHasBeenSet = false;
 
   int m_rank{0};
-  bool m_rankHasBeenSet = false;
 
   Aws::Vector<ProjectedMetric> m_projectedMetrics;
+  bool m_recommendedInstanceTypeHasBeenSet = false;
+  bool m_rankHasBeenSet = false;
   bool m_projectedMetricsHasBeenSet = false;
 };
 

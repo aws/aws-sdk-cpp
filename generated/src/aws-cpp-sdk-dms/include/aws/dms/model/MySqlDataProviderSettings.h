@@ -141,21 +141,21 @@ class MySqlDataProviderSettings {
   ///@}
  private:
   Aws::String m_serverName;
-  bool m_serverNameHasBeenSet = false;
 
   int m_port{0};
-  bool m_portHasBeenSet = false;
 
   DmsSslModeValue m_sslMode{DmsSslModeValue::NOT_SET};
-  bool m_sslModeHasBeenSet = false;
 
   Aws::String m_certificateArn;
-  bool m_certificateArnHasBeenSet = false;
 
   Aws::String m_s3Path;
-  bool m_s3PathHasBeenSet = false;
 
   Aws::String m_s3AccessRoleArn;
+  bool m_serverNameHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_sslModeHasBeenSet = false;
+  bool m_certificateArnHasBeenSet = false;
+  bool m_s3PathHasBeenSet = false;
   bool m_s3AccessRoleArnHasBeenSet = false;
 };
 

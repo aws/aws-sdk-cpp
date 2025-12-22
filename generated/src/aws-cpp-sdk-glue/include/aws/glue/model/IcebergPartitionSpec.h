@@ -77,9 +77,9 @@ class IcebergPartitionSpec {
   ///@}
  private:
   Aws::Vector<IcebergPartitionField> m_fields;
-  bool m_fieldsHasBeenSet = false;
 
   int m_specId{0};
+  bool m_fieldsHasBeenSet = false;
   bool m_specIdHasBeenSet = false;
 };
 

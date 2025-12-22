@@ -95,12 +95,12 @@ class BatchGetAggregateResourceConfigResult {
   ///@}
  private:
   Aws::Vector<BaseConfigurationItem> m_baseConfigurationItems;
-  bool m_baseConfigurationItemsHasBeenSet = false;
 
   Aws::Vector<AggregateResourceIdentifier> m_unprocessedResourceIdentifiers;
-  bool m_unprocessedResourceIdentifiersHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_baseConfigurationItemsHasBeenSet = false;
+  bool m_unprocessedResourceIdentifiersHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

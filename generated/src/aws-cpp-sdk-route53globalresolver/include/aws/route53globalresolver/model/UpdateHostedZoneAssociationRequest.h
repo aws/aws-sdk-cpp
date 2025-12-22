@@ -65,9 +65,9 @@ class UpdateHostedZoneAssociationRequest : public Route53GlobalResolverRequest {
   ///@}
  private:
   Aws::String m_hostedZoneAssociationId;
-  bool m_hostedZoneAssociationIdHasBeenSet = false;
 
   Aws::String m_name;
+  bool m_hostedZoneAssociationIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };
 

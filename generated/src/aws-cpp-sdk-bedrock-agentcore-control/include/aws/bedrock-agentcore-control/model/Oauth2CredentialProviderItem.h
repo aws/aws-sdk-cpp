@@ -123,18 +123,18 @@ class Oauth2CredentialProviderItem {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   CredentialProviderVendorType m_credentialProviderVendor{CredentialProviderVendorType::NOT_SET};
-  bool m_credentialProviderVendorHasBeenSet = false;
 
   Aws::String m_credentialProviderArn;
-  bool m_credentialProviderArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
+  bool m_nameHasBeenSet = false;
+  bool m_credentialProviderVendorHasBeenSet = false;
+  bool m_credentialProviderArnHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
 };
 

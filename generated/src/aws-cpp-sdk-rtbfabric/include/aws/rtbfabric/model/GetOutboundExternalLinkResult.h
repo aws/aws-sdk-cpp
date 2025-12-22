@@ -185,30 +185,30 @@ class GetOutboundExternalLinkResult {
   ///@}
  private:
   Aws::String m_gatewayId;
-  bool m_gatewayIdHasBeenSet = false;
 
   Aws::String m_linkId;
-  bool m_linkIdHasBeenSet = false;
 
   LinkStatus m_status{LinkStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_publicEndpoint;
-  bool m_publicEndpointHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_updatedAt{};
-  bool m_updatedAtHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   LinkLogSettings m_logSettings;
-  bool m_logSettingsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_gatewayIdHasBeenSet = false;
+  bool m_linkIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_publicEndpointHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_logSettingsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

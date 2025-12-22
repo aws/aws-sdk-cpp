@@ -65,9 +65,9 @@ class Elevation {
   ///@}
  private:
   double m_value{0.0};
-  bool m_valueHasBeenSet = false;
 
   AngleUnits m_unit{AngleUnits::NOT_SET};
+  bool m_valueHasBeenSet = false;
   bool m_unitHasBeenSet = false;
 };
 

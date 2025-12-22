@@ -55,8 +55,8 @@ class ModifyTenantDatabaseRequest : public RDSRequest {
   ///@{
   /**
    * <p>The user-supplied name of the tenant database that you want to modify. This
-   * parameter isn���t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
-   * match the identifier of an existing tenant database.</p> </li> </ul>
+   * parameter isn’t case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match
+   * the identifier of an existing tenant database.</p> </li> </ul>
    */
   inline const Aws::String& GetTenantDBName() const { return m_tenantDBName; }
   inline bool TenantDBNameHasBeenSet() const { return m_tenantDBNameHasBeenSet; }
@@ -212,24 +212,24 @@ class ModifyTenantDatabaseRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBInstanceIdentifier;
-  bool m_dBInstanceIdentifierHasBeenSet = false;
 
   Aws::String m_tenantDBName;
-  bool m_tenantDBNameHasBeenSet = false;
 
   Aws::String m_masterUserPassword;
-  bool m_masterUserPasswordHasBeenSet = false;
 
   Aws::String m_newTenantDBName;
-  bool m_newTenantDBNameHasBeenSet = false;
 
   bool m_manageMasterUserPassword{false};
-  bool m_manageMasterUserPasswordHasBeenSet = false;
 
   bool m_rotateMasterUserPassword{false};
-  bool m_rotateMasterUserPasswordHasBeenSet = false;
 
   Aws::String m_masterUserSecretKmsKeyId;
+  bool m_dBInstanceIdentifierHasBeenSet = false;
+  bool m_tenantDBNameHasBeenSet = false;
+  bool m_masterUserPasswordHasBeenSet = false;
+  bool m_newTenantDBNameHasBeenSet = false;
+  bool m_manageMasterUserPasswordHasBeenSet = false;
+  bool m_rotateMasterUserPasswordHasBeenSet = false;
   bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
 };
 

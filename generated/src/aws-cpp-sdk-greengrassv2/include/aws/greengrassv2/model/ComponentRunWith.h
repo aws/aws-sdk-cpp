@@ -114,12 +114,12 @@ class ComponentRunWith {
   ///@}
  private:
   Aws::String m_posixUser;
-  bool m_posixUserHasBeenSet = false;
 
   SystemResourceLimits m_systemResourceLimits;
-  bool m_systemResourceLimitsHasBeenSet = false;
 
   Aws::String m_windowsUser;
+  bool m_posixUserHasBeenSet = false;
+  bool m_systemResourceLimitsHasBeenSet = false;
   bool m_windowsUserHasBeenSet = false;
 };
 

@@ -69,9 +69,9 @@ class ImageScanningConfiguration {
   ///@}
  private:
   bool m_imageScanningEnabled{false};
-  bool m_imageScanningEnabledHasBeenSet = false;
 
   EcrConfiguration m_ecrConfiguration;
+  bool m_imageScanningEnabledHasBeenSet = false;
   bool m_ecrConfigurationHasBeenSet = false;
 };
 

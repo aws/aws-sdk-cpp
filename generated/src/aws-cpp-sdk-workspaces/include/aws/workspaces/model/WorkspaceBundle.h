@@ -253,39 +253,39 @@ class WorkspaceBundle {
   ///@}
  private:
   Aws::String m_bundleId;
-  bool m_bundleIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_imageId;
-  bool m_imageIdHasBeenSet = false;
 
   RootStorage m_rootStorage;
-  bool m_rootStorageHasBeenSet = false;
 
   UserStorage m_userStorage;
-  bool m_userStorageHasBeenSet = false;
 
   ComputeType m_computeType;
-  bool m_computeTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   WorkspaceBundleState m_state{WorkspaceBundleState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   BundleType m_bundleType{BundleType::NOT_SET};
+  bool m_bundleIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_imageIdHasBeenSet = false;
+  bool m_rootStorageHasBeenSet = false;
+  bool m_userStorageHasBeenSet = false;
+  bool m_computeTypeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
   bool m_bundleTypeHasBeenSet = false;
 };
 

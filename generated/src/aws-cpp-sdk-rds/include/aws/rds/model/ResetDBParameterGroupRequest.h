@@ -113,12 +113,12 @@ class ResetDBParameterGroupRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_dBParameterGroupName;
-  bool m_dBParameterGroupNameHasBeenSet = false;
 
   bool m_resetAllParameters{false};
-  bool m_resetAllParametersHasBeenSet = false;
 
   Aws::Vector<Parameter> m_parameters;
+  bool m_dBParameterGroupNameHasBeenSet = false;
+  bool m_resetAllParametersHasBeenSet = false;
   bool m_parametersHasBeenSet = false;
 };
 

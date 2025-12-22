@@ -161,24 +161,24 @@ class BuildArtifacts {
   ///@}
  private:
   Aws::String m_location;
-  bool m_locationHasBeenSet = false;
 
   Aws::String m_sha256sum;
-  bool m_sha256sumHasBeenSet = false;
 
   Aws::String m_md5sum;
-  bool m_md5sumHasBeenSet = false;
 
   bool m_overrideArtifactName{false};
-  bool m_overrideArtifactNameHasBeenSet = false;
 
   bool m_encryptionDisabled{false};
-  bool m_encryptionDisabledHasBeenSet = false;
 
   Aws::String m_artifactIdentifier;
-  bool m_artifactIdentifierHasBeenSet = false;
 
   BucketOwnerAccess m_bucketOwnerAccess{BucketOwnerAccess::NOT_SET};
+  bool m_locationHasBeenSet = false;
+  bool m_sha256sumHasBeenSet = false;
+  bool m_md5sumHasBeenSet = false;
+  bool m_overrideArtifactNameHasBeenSet = false;
+  bool m_encryptionDisabledHasBeenSet = false;
+  bool m_artifactIdentifierHasBeenSet = false;
   bool m_bucketOwnerAccessHasBeenSet = false;
 };
 

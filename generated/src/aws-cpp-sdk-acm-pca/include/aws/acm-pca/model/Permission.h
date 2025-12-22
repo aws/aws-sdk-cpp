@@ -161,21 +161,21 @@ class Permission {
   ///@}
  private:
   Aws::String m_certificateAuthorityArn;
-  bool m_certificateAuthorityArnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::String m_principal;
-  bool m_principalHasBeenSet = false;
 
   Aws::String m_sourceAccount;
-  bool m_sourceAccountHasBeenSet = false;
 
   Aws::Vector<ActionType> m_actions;
-  bool m_actionsHasBeenSet = false;
 
   Aws::String m_policy;
+  bool m_certificateAuthorityArnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_principalHasBeenSet = false;
+  bool m_sourceAccountHasBeenSet = false;
+  bool m_actionsHasBeenSet = false;
   bool m_policyHasBeenSet = false;
 };
 

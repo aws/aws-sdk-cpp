@@ -127,18 +127,18 @@ class GuardrailWord {
   ///@}
  private:
   Aws::String m_text;
-  bool m_textHasBeenSet = false;
 
   GuardrailWordAction m_inputAction{GuardrailWordAction::NOT_SET};
-  bool m_inputActionHasBeenSet = false;
 
   GuardrailWordAction m_outputAction{GuardrailWordAction::NOT_SET};
-  bool m_outputActionHasBeenSet = false;
 
   bool m_inputEnabled{false};
-  bool m_inputEnabledHasBeenSet = false;
 
   bool m_outputEnabled{false};
+  bool m_textHasBeenSet = false;
+  bool m_inputActionHasBeenSet = false;
+  bool m_outputActionHasBeenSet = false;
+  bool m_inputEnabledHasBeenSet = false;
   bool m_outputEnabledHasBeenSet = false;
 };
 

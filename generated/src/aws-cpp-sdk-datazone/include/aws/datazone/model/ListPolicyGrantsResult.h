@@ -89,12 +89,12 @@ class ListPolicyGrantsResult {
   ///@}
  private:
   Aws::Vector<PolicyGrantMember> m_grantList;
-  bool m_grantListHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_grantListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

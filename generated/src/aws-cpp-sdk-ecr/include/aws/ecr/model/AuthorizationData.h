@@ -95,12 +95,12 @@ class AuthorizationData {
   ///@}
  private:
   Aws::String m_authorizationToken;
-  bool m_authorizationTokenHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
-  bool m_expiresAtHasBeenSet = false;
 
   Aws::String m_proxyEndpoint;
+  bool m_authorizationTokenHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
   bool m_proxyEndpointHasBeenSet = false;
 };
 

@@ -83,9 +83,9 @@ class PartitionObjects {
   ///@}
  private:
   Aws::Vector<Aws::String> m_partitionValues;
-  bool m_partitionValuesHasBeenSet = false;
 
   Aws::Vector<TableObject> m_objects;
+  bool m_partitionValuesHasBeenSet = false;
   bool m_objectsHasBeenSet = false;
 };
 

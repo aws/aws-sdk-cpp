@@ -177,21 +177,21 @@ class RepositoryCatalogDataInput {
   ///@}
  private:
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_architectures;
-  bool m_architecturesHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_operatingSystems;
-  bool m_operatingSystemsHasBeenSet = false;
 
   Aws::Utils::ByteBuffer m_logoImageBlob{};
-  bool m_logoImageBlobHasBeenSet = false;
 
   Aws::String m_aboutText;
-  bool m_aboutTextHasBeenSet = false;
 
   Aws::String m_usageText;
+  bool m_descriptionHasBeenSet = false;
+  bool m_architecturesHasBeenSet = false;
+  bool m_operatingSystemsHasBeenSet = false;
+  bool m_logoImageBlobHasBeenSet = false;
+  bool m_aboutTextHasBeenSet = false;
   bool m_usageTextHasBeenSet = false;
 };
 

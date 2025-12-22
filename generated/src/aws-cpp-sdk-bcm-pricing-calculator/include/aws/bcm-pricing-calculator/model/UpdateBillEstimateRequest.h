@@ -86,12 +86,12 @@ class UpdateBillEstimateRequest : public BCMPricingCalculatorRequest {
   ///@}
  private:
   Aws::String m_identifier;
-  bool m_identifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::Utils::DateTime m_expiresAt{};
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_expiresAtHasBeenSet = false;
 };
 

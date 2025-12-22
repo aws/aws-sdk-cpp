@@ -70,9 +70,9 @@ class EvaluationFormNumericQuestionAutomation {
   ///@}
  private:
   NumericQuestionPropertyValueAutomation m_propertyValue;
-  bool m_propertyValueHasBeenSet = false;
 
   EvaluationFormQuestionAutomationAnswerSource m_answerSource;
+  bool m_propertyValueHasBeenSet = false;
   bool m_answerSourceHasBeenSet = false;
 };
 

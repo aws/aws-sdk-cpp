@@ -28,10 +28,8 @@ class GetMetricWidgetImageRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>A JSON string that defines the bitmap graph to be retrieved. The string
@@ -95,9 +93,9 @@ class GetMetricWidgetImageRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_metricWidget;
-  bool m_metricWidgetHasBeenSet = false;
 
   Aws::String m_outputFormat;
+  bool m_metricWidgetHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
 };
 

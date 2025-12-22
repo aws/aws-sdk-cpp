@@ -16,11 +16,14 @@ namespace Model {
 namespace MatchOptionMapper {
 
 static const int NOT_EQUAL_HASH = HashingUtils::HashString("NOT_EQUAL");
+static const int EQUAL_HASH = HashingUtils::HashString("EQUAL");
 
 MatchOption GetMatchOptionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == NOT_EQUAL_HASH) {
     return MatchOption::NOT_EQUAL;
+  } else if (hashCode == EQUAL_HASH) {
+    return MatchOption::EQUAL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForMatchOption(MatchOption enumValue) {
       return {};
     case MatchOption::NOT_EQUAL:
       return "NOT_EQUAL";
+    case MatchOption::EQUAL:
+      return "EQUAL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

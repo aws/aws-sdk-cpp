@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
+#include <aws/datasync/model/CmkSecretConfig.h>
+#include <aws/datasync/model/CustomSecretConfig.h>
+#include <aws/datasync/model/ManagedSecretConfig.h>
 #include <aws/datasync/model/SmbAuthenticationType.h>
 #include <aws/datasync/model/SmbMountOptions.h>
 
@@ -226,6 +229,64 @@ class DescribeLocationSmbResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Describes configuration information for a DataSync-managed secret, such as a
+   * <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to
+   * access a specific storage location. DataSync uses the default Amazon Web
+   * Services-managed KMS key to encrypt this secret in Secrets Manager.</p>
+   */
+  inline const ManagedSecretConfig& GetManagedSecretConfig() const { return m_managedSecretConfig; }
+  template <typename ManagedSecretConfigT = ManagedSecretConfig>
+  void SetManagedSecretConfig(ManagedSecretConfigT&& value) {
+    m_managedSecretConfigHasBeenSet = true;
+    m_managedSecretConfig = std::forward<ManagedSecretConfigT>(value);
+  }
+  template <typename ManagedSecretConfigT = ManagedSecretConfig>
+  DescribeLocationSmbResult& WithManagedSecretConfig(ManagedSecretConfigT&& value) {
+    SetManagedSecretConfig(std::forward<ManagedSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Describes configuration information for a DataSync-managed secret, such as a
+   * <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to
+   * access a specific storage location, with a customer-managed KMS key.</p>
+   */
+  inline const CmkSecretConfig& GetCmkSecretConfig() const { return m_cmkSecretConfig; }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  void SetCmkSecretConfig(CmkSecretConfigT&& value) {
+    m_cmkSecretConfigHasBeenSet = true;
+    m_cmkSecretConfig = std::forward<CmkSecretConfigT>(value);
+  }
+  template <typename CmkSecretConfigT = CmkSecretConfig>
+  DescribeLocationSmbResult& WithCmkSecretConfig(CmkSecretConfigT&& value) {
+    SetCmkSecretConfig(std::forward<CmkSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Describes configuration information for a customer-managed secret, such as a
+   * <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to
+   * access a specific storage location, with a customer-managed KMS key.</p>
+   */
+  inline const CustomSecretConfig& GetCustomSecretConfig() const { return m_customSecretConfig; }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  void SetCustomSecretConfig(CustomSecretConfigT&& value) {
+    m_customSecretConfigHasBeenSet = true;
+    m_customSecretConfig = std::forward<CustomSecretConfigT>(value);
+  }
+  template <typename CustomSecretConfigT = CustomSecretConfig>
+  DescribeLocationSmbResult& WithCustomSecretConfig(CustomSecretConfigT&& value) {
+    SetCustomSecretConfig(std::forward<CustomSecretConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -241,36 +302,45 @@ class DescribeLocationSmbResult {
   ///@}
  private:
   Aws::String m_locationArn;
-  bool m_locationArnHasBeenSet = false;
 
   Aws::String m_locationUri;
-  bool m_locationUriHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_agentArns;
-  bool m_agentArnsHasBeenSet = false;
 
   Aws::String m_user;
-  bool m_userHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   SmbMountOptions m_mountOptions;
-  bool m_mountOptionsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dnsIpAddresses;
-  bool m_dnsIpAddressesHasBeenSet = false;
 
   Aws::String m_kerberosPrincipal;
-  bool m_kerberosPrincipalHasBeenSet = false;
 
   SmbAuthenticationType m_authenticationType{SmbAuthenticationType::NOT_SET};
-  bool m_authenticationTypeHasBeenSet = false;
+
+  ManagedSecretConfig m_managedSecretConfig;
+
+  CmkSecretConfig m_cmkSecretConfig;
+
+  CustomSecretConfig m_customSecretConfig;
 
   Aws::String m_requestId;
+  bool m_locationArnHasBeenSet = false;
+  bool m_locationUriHasBeenSet = false;
+  bool m_agentArnsHasBeenSet = false;
+  bool m_userHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_mountOptionsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_dnsIpAddressesHasBeenSet = false;
+  bool m_kerberosPrincipalHasBeenSet = false;
+  bool m_authenticationTypeHasBeenSet = false;
+  bool m_managedSecretConfigHasBeenSet = false;
+  bool m_cmkSecretConfigHasBeenSet = false;
+  bool m_customSecretConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

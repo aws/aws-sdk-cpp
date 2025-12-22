@@ -663,114 +663,114 @@ class GetRunResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_cacheId;
-  bool m_cacheIdHasBeenSet = false;
 
   CacheBehavior m_cacheBehavior{CacheBehavior::NOT_SET};
-  bool m_cacheBehaviorHasBeenSet = false;
 
   Aws::String m_engineVersion;
-  bool m_engineVersionHasBeenSet = false;
 
   RunStatus m_status{RunStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_workflowId;
-  bool m_workflowIdHasBeenSet = false;
 
   WorkflowType m_workflowType{WorkflowType::NOT_SET};
-  bool m_workflowTypeHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   Aws::String m_roleArn;
-  bool m_roleArnHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_runGroupId;
-  bool m_runGroupIdHasBeenSet = false;
 
   int m_priority{0};
-  bool m_priorityHasBeenSet = false;
 
   Aws::String m_definition;
-  bool m_definitionHasBeenSet = false;
 
   Aws::String m_digest;
-  bool m_digestHasBeenSet = false;
 
   Aws::Utils::Document m_parameters;
-  bool m_parametersHasBeenSet = false;
 
   int m_storageCapacity{0};
-  bool m_storageCapacityHasBeenSet = false;
 
   Aws::String m_outputUri;
-  bool m_outputUriHasBeenSet = false;
 
   RunLogLevel m_logLevel{RunLogLevel::NOT_SET};
-  bool m_logLevelHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_resourceDigests;
-  bool m_resourceDigestsHasBeenSet = false;
 
   Aws::String m_startedBy;
-  bool m_startedByHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startTime{};
-  bool m_startTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_stopTime{};
-  bool m_stopTimeHasBeenSet = false;
 
   Aws::String m_statusMessage;
-  bool m_statusMessageHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   Accelerators m_accelerators{Accelerators::NOT_SET};
-  bool m_acceleratorsHasBeenSet = false;
 
   RunRetentionMode m_retentionMode{RunRetentionMode::NOT_SET};
-  bool m_retentionModeHasBeenSet = false;
 
   Aws::String m_failureReason;
-  bool m_failureReasonHasBeenSet = false;
 
   RunLogLocation m_logLocation;
-  bool m_logLocationHasBeenSet = false;
 
   Aws::String m_uuid;
-  bool m_uuidHasBeenSet = false;
 
   Aws::String m_runOutputUri;
-  bool m_runOutputUriHasBeenSet = false;
 
   StorageType m_storageType{StorageType::NOT_SET};
-  bool m_storageTypeHasBeenSet = false;
 
   Aws::String m_workflowOwnerId;
-  bool m_workflowOwnerIdHasBeenSet = false;
 
   Aws::String m_workflowVersionName;
-  bool m_workflowVersionNameHasBeenSet = false;
 
   Aws::String m_workflowUuid;
-  bool m_workflowUuidHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_cacheIdHasBeenSet = false;
+  bool m_cacheBehaviorHasBeenSet = false;
+  bool m_engineVersionHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_workflowIdHasBeenSet = false;
+  bool m_workflowTypeHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_runGroupIdHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
+  bool m_definitionHasBeenSet = false;
+  bool m_digestHasBeenSet = false;
+  bool m_parametersHasBeenSet = false;
+  bool m_storageCapacityHasBeenSet = false;
+  bool m_outputUriHasBeenSet = false;
+  bool m_logLevelHasBeenSet = false;
+  bool m_resourceDigestsHasBeenSet = false;
+  bool m_startedByHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
+  bool m_stopTimeHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_acceleratorsHasBeenSet = false;
+  bool m_retentionModeHasBeenSet = false;
+  bool m_failureReasonHasBeenSet = false;
+  bool m_logLocationHasBeenSet = false;
+  bool m_uuidHasBeenSet = false;
+  bool m_runOutputUriHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_workflowOwnerIdHasBeenSet = false;
+  bool m_workflowVersionNameHasBeenSet = false;
+  bool m_workflowUuidHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

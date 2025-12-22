@@ -84,12 +84,12 @@ class ListSyncResourcesResult {
   ///@}
  private:
   Aws::Vector<SyncResourceSummary> m_syncResources;
-  bool m_syncResourcesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_syncResourcesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

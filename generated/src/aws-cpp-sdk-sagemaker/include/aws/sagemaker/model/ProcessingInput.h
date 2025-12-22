@@ -109,15 +109,15 @@ class ProcessingInput {
   ///@}
  private:
   Aws::String m_inputName;
-  bool m_inputNameHasBeenSet = false;
 
   bool m_appManaged{false};
-  bool m_appManagedHasBeenSet = false;
 
   ProcessingS3Input m_s3Input;
-  bool m_s3InputHasBeenSet = false;
 
   DatasetDefinition m_datasetDefinition;
+  bool m_inputNameHasBeenSet = false;
+  bool m_appManagedHasBeenSet = false;
+  bool m_s3InputHasBeenSet = false;
   bool m_datasetDefinitionHasBeenSet = false;
 };
 

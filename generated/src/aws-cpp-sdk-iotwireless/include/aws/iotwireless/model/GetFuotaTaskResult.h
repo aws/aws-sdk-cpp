@@ -232,45 +232,45 @@ class GetFuotaTaskResult {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   FuotaTaskStatus m_status{FuotaTaskStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   LoRaWANFuotaTaskGetInfo m_loRaWAN;
-  bool m_loRaWANHasBeenSet = false;
 
   Aws::String m_firmwareUpdateImage;
-  bool m_firmwareUpdateImageHasBeenSet = false;
 
   Aws::String m_firmwareUpdateRole;
-  bool m_firmwareUpdateRoleHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   int m_redundancyPercent{0};
-  bool m_redundancyPercentHasBeenSet = false;
 
   int m_fragmentSizeBytes{0};
-  bool m_fragmentSizeBytesHasBeenSet = false;
 
   int m_fragmentIntervalMS{0};
-  bool m_fragmentIntervalMSHasBeenSet = false;
 
   Aws::String m_descriptor;
-  bool m_descriptorHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_arnHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_loRaWANHasBeenSet = false;
+  bool m_firmwareUpdateImageHasBeenSet = false;
+  bool m_firmwareUpdateRoleHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_redundancyPercentHasBeenSet = false;
+  bool m_fragmentSizeBytesHasBeenSet = false;
+  bool m_fragmentIntervalMSHasBeenSet = false;
+  bool m_descriptorHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

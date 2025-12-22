@@ -143,21 +143,21 @@ class BillingGroupCostReportElement {
   ///@}
  private:
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_aWSCost;
-  bool m_aWSCostHasBeenSet = false;
 
   Aws::String m_proformaCost;
-  bool m_proformaCostHasBeenSet = false;
 
   Aws::String m_margin;
-  bool m_marginHasBeenSet = false;
 
   Aws::String m_marginPercentage;
-  bool m_marginPercentageHasBeenSet = false;
 
   Aws::String m_currency;
+  bool m_arnHasBeenSet = false;
+  bool m_aWSCostHasBeenSet = false;
+  bool m_proformaCostHasBeenSet = false;
+  bool m_marginHasBeenSet = false;
+  bool m_marginPercentageHasBeenSet = false;
   bool m_currencyHasBeenSet = false;
 };
 

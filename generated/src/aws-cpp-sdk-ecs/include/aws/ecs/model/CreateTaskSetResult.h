@@ -63,9 +63,9 @@ class CreateTaskSetResult {
   ///@}
  private:
   TaskSet m_taskSet;
-  bool m_taskSetHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_taskSetHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -121,7 +121,9 @@ class CreatePolicyRequest : public OrganizationsRequest {
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
    * </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_s3.html">S3_POLICY</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html">NETWORK_SECURITY_DIRECTOR_POLICY</a>
    * </p> </li> </ul>
    */
   inline PolicyType GetType() const { return m_type; }
@@ -169,18 +171,18 @@ class CreatePolicyRequest : public OrganizationsRequest {
   ///@}
  private:
   Aws::String m_content;
-  bool m_contentHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   PolicyType m_type{PolicyType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_contentHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

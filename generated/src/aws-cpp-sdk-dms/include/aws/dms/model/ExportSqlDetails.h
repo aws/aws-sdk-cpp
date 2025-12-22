@@ -70,9 +70,9 @@ class ExportSqlDetails {
   ///@}
  private:
   Aws::String m_s3ObjectKey;
-  bool m_s3ObjectKeyHasBeenSet = false;
 
   Aws::String m_objectURL;
+  bool m_s3ObjectKeyHasBeenSet = false;
   bool m_objectURLHasBeenSet = false;
 };
 

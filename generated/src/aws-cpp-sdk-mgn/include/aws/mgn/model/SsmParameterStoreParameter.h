@@ -34,6 +34,22 @@ class SsmParameterStoreParameter {
 
   ///@{
   /**
+   * <p>AWS Systems Manager Parameter Store parameter type.</p>
+   */
+  inline SsmParameterStoreParameterType GetParameterType() const { return m_parameterType; }
+  inline bool ParameterTypeHasBeenSet() const { return m_parameterTypeHasBeenSet; }
+  inline void SetParameterType(SsmParameterStoreParameterType value) {
+    m_parameterTypeHasBeenSet = true;
+    m_parameterType = value;
+  }
+  inline SsmParameterStoreParameter& WithParameterType(SsmParameterStoreParameterType value) {
+    SetParameterType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>AWS Systems Manager Parameter Store parameter name.</p>
    */
   inline const Aws::String& GetParameterName() const { return m_parameterName; }
@@ -49,28 +65,12 @@ class SsmParameterStoreParameter {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>AWS Systems Manager Parameter Store parameter type.</p>
-   */
-  inline SsmParameterStoreParameterType GetParameterType() const { return m_parameterType; }
-  inline bool ParameterTypeHasBeenSet() const { return m_parameterTypeHasBeenSet; }
-  inline void SetParameterType(SsmParameterStoreParameterType value) {
-    m_parameterTypeHasBeenSet = true;
-    m_parameterType = value;
-  }
-  inline SsmParameterStoreParameter& WithParameterType(SsmParameterStoreParameterType value) {
-    SetParameterType(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_parameterName;
-  bool m_parameterNameHasBeenSet = false;
-
   SsmParameterStoreParameterType m_parameterType{SsmParameterStoreParameterType::NOT_SET};
+
+  Aws::String m_parameterName;
   bool m_parameterTypeHasBeenSet = false;
+  bool m_parameterNameHasBeenSet = false;
 };
 
 }  // namespace Model

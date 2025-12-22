@@ -85,12 +85,12 @@ class ListStreamsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<StreamSummary> m_streams;
-  bool m_streamsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_streamsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

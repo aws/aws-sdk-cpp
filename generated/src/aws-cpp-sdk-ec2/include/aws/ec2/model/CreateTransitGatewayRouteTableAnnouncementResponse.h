@@ -64,9 +64,9 @@ class CreateTransitGatewayRouteTableAnnouncementResponse {
   ///@}
  private:
   TransitGatewayRouteTableAnnouncement m_transitGatewayRouteTableAnnouncement;
-  bool m_transitGatewayRouteTableAnnouncementHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_transitGatewayRouteTableAnnouncementHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

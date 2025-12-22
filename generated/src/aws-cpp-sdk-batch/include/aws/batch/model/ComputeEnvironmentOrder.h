@@ -80,9 +80,9 @@ class ComputeEnvironmentOrder {
   ///@}
  private:
   int m_order{0};
-  bool m_orderHasBeenSet = false;
 
   Aws::String m_computeEnvironment;
+  bool m_orderHasBeenSet = false;
   bool m_computeEnvironmentHasBeenSet = false;
 };
 

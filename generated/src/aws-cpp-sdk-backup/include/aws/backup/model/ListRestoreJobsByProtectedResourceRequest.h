@@ -146,21 +146,21 @@ class ListRestoreJobsByProtectedResourceRequest : public BackupRequest {
   ///@}
  private:
   Aws::String m_resourceArn;
-  bool m_resourceArnHasBeenSet = false;
 
   RestoreJobStatus m_byStatus{RestoreJobStatus::NOT_SET};
-  bool m_byStatusHasBeenSet = false;
 
   Aws::Utils::DateTime m_byRecoveryPointCreationDateAfter{};
-  bool m_byRecoveryPointCreationDateAfterHasBeenSet = false;
 
   Aws::Utils::DateTime m_byRecoveryPointCreationDateBefore{};
-  bool m_byRecoveryPointCreationDateBeforeHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   int m_maxResults{0};
+  bool m_resourceArnHasBeenSet = false;
+  bool m_byStatusHasBeenSet = false;
+  bool m_byRecoveryPointCreationDateAfterHasBeenSet = false;
+  bool m_byRecoveryPointCreationDateBeforeHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };
 

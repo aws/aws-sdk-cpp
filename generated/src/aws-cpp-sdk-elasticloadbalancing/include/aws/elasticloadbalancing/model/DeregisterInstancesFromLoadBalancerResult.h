@@ -75,9 +75,9 @@ class DeregisterInstancesFromLoadBalancerResult {
   ///@}
  private:
   Aws::Vector<Instance> m_instances;
-  bool m_instancesHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_instancesHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

@@ -95,12 +95,12 @@ class GetRecordsRequest : public KinesisRequest {
   ///@}
  private:
   Aws::String m_shardIterator;
-  bool m_shardIteratorHasBeenSet = false;
 
   int m_limit{0};
-  bool m_limitHasBeenSet = false;
 
   Aws::String m_streamARN;
+  bool m_shardIteratorHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
   bool m_streamARNHasBeenSet = false;
 };
 

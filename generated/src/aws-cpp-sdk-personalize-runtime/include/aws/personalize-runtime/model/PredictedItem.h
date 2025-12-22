@@ -150,18 +150,18 @@ class PredictedItem {
   ///@}
  private:
   Aws::String m_itemId;
-  bool m_itemIdHasBeenSet = false;
 
   double m_score{0.0};
-  bool m_scoreHasBeenSet = false;
 
   Aws::String m_promotionName;
-  bool m_promotionNameHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
-  bool m_metadataHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_reason;
+  bool m_itemIdHasBeenSet = false;
+  bool m_scoreHasBeenSet = false;
+  bool m_promotionNameHasBeenSet = false;
+  bool m_metadataHasBeenSet = false;
   bool m_reasonHasBeenSet = false;
 };
 

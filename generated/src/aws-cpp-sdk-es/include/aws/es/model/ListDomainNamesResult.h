@@ -74,9 +74,9 @@ class ListDomainNamesResult {
   ///@}
  private:
   Aws::Vector<DomainInfo> m_domainNames;
-  bool m_domainNamesHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_domainNamesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

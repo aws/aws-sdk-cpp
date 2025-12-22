@@ -110,15 +110,15 @@ class Template {
   ///@}
  private:
   Aws::String m_templateName;
-  bool m_templateNameHasBeenSet = false;
 
   Aws::String m_subjectPart;
-  bool m_subjectPartHasBeenSet = false;
 
   Aws::String m_textPart;
-  bool m_textPartHasBeenSet = false;
 
   Aws::String m_htmlPart;
+  bool m_templateNameHasBeenSet = false;
+  bool m_subjectPartHasBeenSet = false;
+  bool m_textPartHasBeenSet = false;
   bool m_htmlPartHasBeenSet = false;
 };
 

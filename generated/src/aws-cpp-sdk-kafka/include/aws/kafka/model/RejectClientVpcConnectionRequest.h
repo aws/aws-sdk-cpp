@@ -69,9 +69,9 @@ class RejectClientVpcConnectionRequest : public KafkaRequest {
   ///@}
  private:
   Aws::String m_clusterArn;
-  bool m_clusterArnHasBeenSet = false;
 
   Aws::String m_vpcConnectionArn;
+  bool m_clusterArnHasBeenSet = false;
   bool m_vpcConnectionArnHasBeenSet = false;
 };
 

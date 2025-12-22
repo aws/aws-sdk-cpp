@@ -74,9 +74,9 @@ class CentralizationRule {
   ///@}
  private:
   CentralizationRuleSource m_source;
-  bool m_sourceHasBeenSet = false;
 
   CentralizationRuleDestination m_destination;
+  bool m_sourceHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
 };
 

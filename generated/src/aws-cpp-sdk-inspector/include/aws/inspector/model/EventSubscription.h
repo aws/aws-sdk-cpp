@@ -69,9 +69,9 @@ class EventSubscription {
   ///@}
  private:
   InspectorEvent m_event{InspectorEvent::NOT_SET};
-  bool m_eventHasBeenSet = false;
 
   Aws::Utils::DateTime m_subscribedAt{};
+  bool m_eventHasBeenSet = false;
   bool m_subscribedAtHasBeenSet = false;
 };
 

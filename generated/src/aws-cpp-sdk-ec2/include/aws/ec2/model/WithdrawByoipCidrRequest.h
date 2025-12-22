@@ -70,9 +70,9 @@ class WithdrawByoipCidrRequest : public EC2Request {
   ///@}
  private:
   Aws::String m_cidr;
-  bool m_cidrHasBeenSet = false;
 
   bool m_dryRun{false};
+  bool m_cidrHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

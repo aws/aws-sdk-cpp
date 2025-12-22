@@ -349,39 +349,39 @@ class CopyDBSnapshotRequest : public RDSRequest {
   ///@}
  private:
   Aws::String m_sourceDBSnapshotIdentifier;
-  bool m_sourceDBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_targetDBSnapshotIdentifier;
-  bool m_targetDBSnapshotIdentifierHasBeenSet = false;
 
   Aws::String m_kmsKeyId;
-  bool m_kmsKeyIdHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   bool m_copyTags{false};
-  bool m_copyTagsHasBeenSet = false;
 
   Aws::String m_preSignedUrl;
-  bool m_preSignedUrlHasBeenSet = false;
 
   Aws::String m_optionGroupName;
-  bool m_optionGroupNameHasBeenSet = false;
 
   Aws::String m_targetCustomAvailabilityZone;
-  bool m_targetCustomAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_snapshotTarget;
-  bool m_snapshotTargetHasBeenSet = false;
 
   bool m_copyOptionGroup{false};
-  bool m_copyOptionGroupHasBeenSet = false;
 
   Aws::String m_snapshotAvailabilityZone;
-  bool m_snapshotAvailabilityZoneHasBeenSet = false;
 
   Aws::String m_sourceRegion;
+  bool m_sourceDBSnapshotIdentifierHasBeenSet = false;
+  bool m_targetDBSnapshotIdentifierHasBeenSet = false;
+  bool m_kmsKeyIdHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_copyTagsHasBeenSet = false;
+  bool m_preSignedUrlHasBeenSet = false;
+  bool m_optionGroupNameHasBeenSet = false;
+  bool m_targetCustomAvailabilityZoneHasBeenSet = false;
+  bool m_snapshotTargetHasBeenSet = false;
+  bool m_copyOptionGroupHasBeenSet = false;
+  bool m_snapshotAvailabilityZoneHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

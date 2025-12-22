@@ -68,9 +68,9 @@ class NewAsoDetail {
   ///@}
  private:
   Aws::String m_aso;
-  bool m_asoHasBeenSet = false;
 
   bool m_isNewForEntireAccount{false};
+  bool m_asoHasBeenSet = false;
   bool m_isNewForEntireAccountHasBeenSet = false;
 };
 

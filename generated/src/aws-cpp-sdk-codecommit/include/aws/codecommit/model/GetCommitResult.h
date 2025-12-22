@@ -67,9 +67,9 @@ class GetCommitResult {
   ///@}
  private:
   Commit m_commit;
-  bool m_commitHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_commitHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

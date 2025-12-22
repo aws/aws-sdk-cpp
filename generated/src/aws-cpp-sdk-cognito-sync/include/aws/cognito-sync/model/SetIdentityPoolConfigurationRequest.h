@@ -91,12 +91,12 @@ class SetIdentityPoolConfigurationRequest : public CognitoSyncRequest {
   ///@}
  private:
   Aws::String m_identityPoolId;
-  bool m_identityPoolIdHasBeenSet = false;
 
   PushSync m_pushSync;
-  bool m_pushSyncHasBeenSet = false;
 
   CognitoStreams m_cognitoStreams;
+  bool m_identityPoolIdHasBeenSet = false;
+  bool m_pushSyncHasBeenSet = false;
   bool m_cognitoStreamsHasBeenSet = false;
 };
 

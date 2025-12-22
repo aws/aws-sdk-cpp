@@ -265,39 +265,39 @@ class WorkflowRunDetail {
   ///@}
  private:
   Aws::String m_workflowArn;
-  bool m_workflowArnHasBeenSet = false;
 
   Aws::String m_workflowVersion;
-  bool m_workflowVersionHasBeenSet = false;
 
   Aws::String m_runId;
-  bool m_runIdHasBeenSet = false;
 
   RunType m_runType{RunType::NOT_SET};
-  bool m_runTypeHasBeenSet = false;
 
   Aws::Utils::DateTime m_startedOn{};
-  bool m_startedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_completedOn{};
-  bool m_completedOnHasBeenSet = false;
 
   Aws::Utils::DateTime m_modifiedAt{};
-  bool m_modifiedAtHasBeenSet = false;
 
   int m_duration{0};
-  bool m_durationHasBeenSet = false;
 
   Aws::String m_errorMessage;
-  bool m_errorMessageHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_taskInstances;
-  bool m_taskInstancesHasBeenSet = false;
 
   WorkflowRunStatus m_runState{WorkflowRunStatus::NOT_SET};
+  bool m_workflowArnHasBeenSet = false;
+  bool m_workflowVersionHasBeenSet = false;
+  bool m_runIdHasBeenSet = false;
+  bool m_runTypeHasBeenSet = false;
+  bool m_startedOnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_completedOnHasBeenSet = false;
+  bool m_modifiedAtHasBeenSet = false;
+  bool m_durationHasBeenSet = false;
+  bool m_errorMessageHasBeenSet = false;
+  bool m_taskInstancesHasBeenSet = false;
   bool m_runStateHasBeenSet = false;
 };
 

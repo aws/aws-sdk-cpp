@@ -70,9 +70,9 @@ class Sort {
   ///@}
  private:
   bool m_ascending{false};
-  bool m_ascendingHasBeenSet = false;
 
   Aws::String m_field;
+  bool m_ascendingHasBeenSet = false;
   bool m_fieldHasBeenSet = false;
 };
 

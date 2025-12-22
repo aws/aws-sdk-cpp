@@ -67,9 +67,9 @@ class DecodeAuthorizationMessageResult {
   ///@}
  private:
   Aws::String m_decodedMessage;
-  bool m_decodedMessageHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_decodedMessageHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

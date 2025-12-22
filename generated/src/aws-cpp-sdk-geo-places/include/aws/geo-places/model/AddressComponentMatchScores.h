@@ -268,42 +268,42 @@ class AddressComponentMatchScores {
   ///@}
  private:
   double m_country{0.0};
-  bool m_countryHasBeenSet = false;
 
   double m_region{0.0};
-  bool m_regionHasBeenSet = false;
 
   double m_subRegion{0.0};
-  bool m_subRegionHasBeenSet = false;
 
   double m_locality{0.0};
-  bool m_localityHasBeenSet = false;
 
   double m_district{0.0};
-  bool m_districtHasBeenSet = false;
 
   double m_subDistrict{0.0};
-  bool m_subDistrictHasBeenSet = false;
 
   double m_postalCode{0.0};
-  bool m_postalCodeHasBeenSet = false;
 
   double m_block{0.0};
-  bool m_blockHasBeenSet = false;
 
   double m_subBlock{0.0};
-  bool m_subBlockHasBeenSet = false;
 
   Aws::Vector<double> m_intersection;
-  bool m_intersectionHasBeenSet = false;
 
   double m_addressNumber{0.0};
-  bool m_addressNumberHasBeenSet = false;
 
   double m_building{0.0};
-  bool m_buildingHasBeenSet = false;
 
   Aws::Vector<SecondaryAddressComponentMatchScore> m_secondaryAddressComponents;
+  bool m_countryHasBeenSet = false;
+  bool m_regionHasBeenSet = false;
+  bool m_subRegionHasBeenSet = false;
+  bool m_localityHasBeenSet = false;
+  bool m_districtHasBeenSet = false;
+  bool m_subDistrictHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_blockHasBeenSet = false;
+  bool m_subBlockHasBeenSet = false;
+  bool m_intersectionHasBeenSet = false;
+  bool m_addressNumberHasBeenSet = false;
+  bool m_buildingHasBeenSet = false;
   bool m_secondaryAddressComponentsHasBeenSet = false;
 };
 

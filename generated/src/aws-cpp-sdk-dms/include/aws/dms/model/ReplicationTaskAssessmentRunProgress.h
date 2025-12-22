@@ -63,9 +63,9 @@ class ReplicationTaskAssessmentRunProgress {
   ///@}
  private:
   int m_individualAssessmentCount{0};
-  bool m_individualAssessmentCountHasBeenSet = false;
 
   int m_individualAssessmentCompletedCount{0};
+  bool m_individualAssessmentCountHasBeenSet = false;
   bool m_individualAssessmentCompletedCountHasBeenSet = false;
 };
 

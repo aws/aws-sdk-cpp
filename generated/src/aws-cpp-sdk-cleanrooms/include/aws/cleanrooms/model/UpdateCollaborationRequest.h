@@ -102,15 +102,15 @@ class UpdateCollaborationRequest : public CleanRoomsRequest {
   ///@}
  private:
   Aws::String m_collaborationIdentifier;
-  bool m_collaborationIdentifierHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   AnalyticsEngine m_analyticsEngine{AnalyticsEngine::NOT_SET};
+  bool m_collaborationIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
   bool m_analyticsEngineHasBeenSet = false;
 };
 

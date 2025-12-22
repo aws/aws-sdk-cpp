@@ -78,12 +78,12 @@ class DescribeBrandResult {
   ///@}
  private:
   Aws::String m_requestId;
-  bool m_requestIdHasBeenSet = false;
 
   BrandDetail m_brandDetail;
-  bool m_brandDetailHasBeenSet = false;
 
   BrandDefinition m_brandDefinition;
+  bool m_requestIdHasBeenSet = false;
+  bool m_brandDetailHasBeenSet = false;
   bool m_brandDefinitionHasBeenSet = false;
 };
 

@@ -67,9 +67,9 @@ class DeprecateThingTypeRequest : public IoTRequest {
   ///@}
  private:
   Aws::String m_thingTypeName;
-  bool m_thingTypeNameHasBeenSet = false;
 
   bool m_undoDeprecate{false};
+  bool m_thingTypeNameHasBeenSet = false;
   bool m_undoDeprecateHasBeenSet = false;
 };
 

@@ -57,9 +57,9 @@ class CheckCapacityResult {
   ///@}
  private:
   long long m_capacity{0};
-  bool m_capacityHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_capacityHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

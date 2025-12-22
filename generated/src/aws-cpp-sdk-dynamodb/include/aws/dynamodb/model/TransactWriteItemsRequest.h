@@ -136,15 +136,15 @@ class TransactWriteItemsRequest : public DynamoDBRequest {
   ///@}
  private:
   Aws::Vector<TransactWriteItem> m_transactItems;
-  bool m_transactItemsHasBeenSet = false;
 
   ReturnConsumedCapacity m_returnConsumedCapacity{ReturnConsumedCapacity::NOT_SET};
-  bool m_returnConsumedCapacityHasBeenSet = false;
 
   ReturnItemCollectionMetrics m_returnItemCollectionMetrics{ReturnItemCollectionMetrics::NOT_SET};
-  bool m_returnItemCollectionMetricsHasBeenSet = false;
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_transactItemsHasBeenSet = false;
+  bool m_returnConsumedCapacityHasBeenSet = false;
+  bool m_returnItemCollectionMetricsHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
 };
 

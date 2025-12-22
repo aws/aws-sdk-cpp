@@ -66,9 +66,9 @@ class UpdateIndexingRuleRequest : public XRayRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   IndexingRuleValueUpdate m_rule;
+  bool m_nameHasBeenSet = false;
   bool m_ruleHasBeenSet = false;
 };
 

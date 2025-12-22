@@ -147,18 +147,18 @@ class ImportResourcesToDraftAppVersionRequest : public ResilienceHubRequest {
   ///@}
  private:
   Aws::String m_appArn;
-  bool m_appArnHasBeenSet = false;
 
   Aws::Vector<EksSource> m_eksSources;
-  bool m_eksSourcesHasBeenSet = false;
 
   ResourceImportStrategyType m_importStrategy{ResourceImportStrategyType::NOT_SET};
-  bool m_importStrategyHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_sourceArns;
-  bool m_sourceArnsHasBeenSet = false;
 
   Aws::Vector<TerraformSource> m_terraformSources;
+  bool m_appArnHasBeenSet = false;
+  bool m_eksSourcesHasBeenSet = false;
+  bool m_importStrategyHasBeenSet = false;
+  bool m_sourceArnsHasBeenSet = false;
   bool m_terraformSourcesHasBeenSet = false;
 };
 

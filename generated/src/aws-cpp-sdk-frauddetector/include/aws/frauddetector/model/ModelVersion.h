@@ -103,15 +103,15 @@ class ModelVersion {
   ///@}
  private:
   Aws::String m_modelId;
-  bool m_modelIdHasBeenSet = false;
 
   ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
-  bool m_modelTypeHasBeenSet = false;
 
   Aws::String m_modelVersionNumber;
-  bool m_modelVersionNumberHasBeenSet = false;
 
   Aws::String m_arn;
+  bool m_modelIdHasBeenSet = false;
+  bool m_modelTypeHasBeenSet = false;
+  bool m_modelVersionNumberHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };
 

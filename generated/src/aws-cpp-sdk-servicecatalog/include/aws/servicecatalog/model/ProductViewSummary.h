@@ -235,36 +235,36 @@ class ProductViewSummary {
   ///@}
  private:
   Aws::String m_id;
-  bool m_idHasBeenSet = false;
 
   Aws::String m_productId;
-  bool m_productIdHasBeenSet = false;
 
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_owner;
-  bool m_ownerHasBeenSet = false;
 
   Aws::String m_shortDescription;
-  bool m_shortDescriptionHasBeenSet = false;
 
   ProductType m_type{ProductType::NOT_SET};
-  bool m_typeHasBeenSet = false;
 
   Aws::String m_distributor;
-  bool m_distributorHasBeenSet = false;
 
   bool m_hasDefaultPath{false};
-  bool m_hasDefaultPathHasBeenSet = false;
 
   Aws::String m_supportEmail;
-  bool m_supportEmailHasBeenSet = false;
 
   Aws::String m_supportDescription;
-  bool m_supportDescriptionHasBeenSet = false;
 
   Aws::String m_supportUrl;
+  bool m_idHasBeenSet = false;
+  bool m_productIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_shortDescriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_distributorHasBeenSet = false;
+  bool m_hasDefaultPathHasBeenSet = false;
+  bool m_supportEmailHasBeenSet = false;
+  bool m_supportDescriptionHasBeenSet = false;
   bool m_supportUrlHasBeenSet = false;
 };
 

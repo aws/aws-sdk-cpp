@@ -262,42 +262,42 @@ class CreateRouteResult {
   ///@}
  private:
   Aws::String m_applicationId;
-  bool m_applicationIdHasBeenSet = false;
 
   Aws::String m_arn;
-  bool m_arnHasBeenSet = false;
 
   Aws::String m_createdByAccountId;
-  bool m_createdByAccountIdHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdTime{};
-  bool m_createdTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_ownerAccountId;
-  bool m_ownerAccountIdHasBeenSet = false;
 
   Aws::String m_routeId;
-  bool m_routeIdHasBeenSet = false;
 
   RouteType m_routeType{RouteType::NOT_SET};
-  bool m_routeTypeHasBeenSet = false;
 
   Aws::String m_serviceId;
-  bool m_serviceIdHasBeenSet = false;
 
   RouteState m_state{RouteState::NOT_SET};
-  bool m_stateHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_tagsHasBeenSet = false;
 
   UriPathRouteInput m_uriPathRoute;
-  bool m_uriPathRouteHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_applicationIdHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_createdByAccountIdHasBeenSet = false;
+  bool m_createdTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_ownerAccountIdHasBeenSet = false;
+  bool m_routeIdHasBeenSet = false;
+  bool m_routeTypeHasBeenSet = false;
+  bool m_serviceIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_uriPathRouteHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

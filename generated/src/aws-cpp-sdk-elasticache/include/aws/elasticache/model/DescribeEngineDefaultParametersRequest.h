@@ -99,12 +99,12 @@ class DescribeEngineDefaultParametersRequest : public ElastiCacheRequest {
   ///@}
  private:
   Aws::String m_cacheParameterGroupFamily;
-  bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
   int m_maxRecords{0};
-  bool m_maxRecordsHasBeenSet = false;
 
   Aws::String m_marker;
+  bool m_cacheParameterGroupFamilyHasBeenSet = false;
+  bool m_maxRecordsHasBeenSet = false;
   bool m_markerHasBeenSet = false;
 };
 

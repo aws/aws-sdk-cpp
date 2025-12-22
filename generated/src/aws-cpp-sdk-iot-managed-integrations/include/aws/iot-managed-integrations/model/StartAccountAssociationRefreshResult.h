@@ -62,9 +62,9 @@ class StartAccountAssociationRefreshResult {
   ///@}
  private:
   Aws::String m_oAuthAuthorizationUrl;
-  bool m_oAuthAuthorizationUrlHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_oAuthAuthorizationUrlHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

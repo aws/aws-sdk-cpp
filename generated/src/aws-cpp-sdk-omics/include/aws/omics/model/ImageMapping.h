@@ -72,9 +72,9 @@ class ImageMapping {
   ///@}
  private:
   Aws::String m_sourceImage;
-  bool m_sourceImageHasBeenSet = false;
 
   Aws::String m_destinationImage;
+  bool m_sourceImageHasBeenSet = false;
   bool m_destinationImageHasBeenSet = false;
 };
 

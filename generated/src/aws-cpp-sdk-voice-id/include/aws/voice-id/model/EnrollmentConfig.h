@@ -72,9 +72,9 @@ class EnrollmentConfig {
   ///@}
  private:
   ExistingEnrollmentAction m_existingEnrollmentAction{ExistingEnrollmentAction::NOT_SET};
-  bool m_existingEnrollmentActionHasBeenSet = false;
 
   EnrollmentJobFraudDetectionConfig m_fraudDetectionConfig;
+  bool m_existingEnrollmentActionHasBeenSet = false;
   bool m_fraudDetectionConfigHasBeenSet = false;
 };
 

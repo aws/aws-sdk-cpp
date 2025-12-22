@@ -62,9 +62,9 @@ class SecurityPolicyStats {
   ///@}
  private:
   long long m_encryptionPolicyCount{0};
-  bool m_encryptionPolicyCountHasBeenSet = false;
 
   long long m_networkPolicyCount{0};
+  bool m_encryptionPolicyCountHasBeenSet = false;
   bool m_networkPolicyCountHasBeenSet = false;
 };
 

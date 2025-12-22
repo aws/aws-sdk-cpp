@@ -86,12 +86,12 @@ class DescribeAccountPoliciesResult {
   ///@}
  private:
   Aws::Vector<AccountPolicy> m_accountPolicies;
-  bool m_accountPoliciesHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_accountPoliciesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -71,9 +71,9 @@ class GetPipelineRequest : public CodePipelineRequest {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   int m_version{0};
+  bool m_nameHasBeenSet = false;
   bool m_versionHasBeenSet = false;
 };
 

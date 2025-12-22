@@ -139,18 +139,18 @@ class TestResult {
   ///@}
  private:
   FunctionSummary m_functionSummary;
-  bool m_functionSummaryHasBeenSet = false;
 
   Aws::String m_computeUtilization;
-  bool m_computeUtilizationHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_functionExecutionLogs;
-  bool m_functionExecutionLogsHasBeenSet = false;
 
   Aws::String m_functionErrorMessage;
-  bool m_functionErrorMessageHasBeenSet = false;
 
   Aws::String m_functionOutput;
+  bool m_functionSummaryHasBeenSet = false;
+  bool m_computeUtilizationHasBeenSet = false;
+  bool m_functionExecutionLogsHasBeenSet = false;
+  bool m_functionErrorMessageHasBeenSet = false;
   bool m_functionOutputHasBeenSet = false;
 };
 

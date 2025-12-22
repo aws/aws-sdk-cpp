@@ -30,10 +30,8 @@ class TagResourceRequest : public CloudWatchRequest {
 
   AWS_CLOUDWATCH_API Aws::String SerializePayload() const override;
 
- protected:
-  AWS_CLOUDWATCH_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+  AWS_CLOUDWATCH_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
- public:
   ///@{
   /**
    * <p>The ARN of the CloudWatch resource that you're adding tags to.</p> <p>The ARN
@@ -85,9 +83,9 @@ class TagResourceRequest : public CloudWatchRequest {
   ///@}
  private:
   Aws::String m_resourceARN;
-  bool m_resourceARNHasBeenSet = false;
 
   Aws::Vector<Tag> m_tags;
+  bool m_resourceARNHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

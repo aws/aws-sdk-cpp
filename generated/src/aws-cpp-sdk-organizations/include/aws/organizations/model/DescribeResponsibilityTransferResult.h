@@ -62,9 +62,9 @@ class DescribeResponsibilityTransferResult {
   ///@}
  private:
   ResponsibilityTransfer m_responsibilityTransfer;
-  bool m_responsibilityTransferHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_responsibilityTransferHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

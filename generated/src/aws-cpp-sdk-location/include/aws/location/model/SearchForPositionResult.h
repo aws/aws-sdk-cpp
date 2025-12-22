@@ -93,12 +93,12 @@ class SearchForPositionResult {
   ///@}
  private:
   Place m_place;
-  bool m_placeHasBeenSet = false;
 
   double m_distance{0.0};
-  bool m_distanceHasBeenSet = false;
 
   Aws::String m_placeId;
+  bool m_placeHasBeenSet = false;
+  bool m_distanceHasBeenSet = false;
   bool m_placeIdHasBeenSet = false;
 };
 

@@ -72,9 +72,9 @@ class CancelQueryRequest : public NeptuneGraphRequest {
   ///@}
  private:
   Aws::String m_graphIdentifier;
-  bool m_graphIdentifierHasBeenSet = false;
 
   Aws::String m_queryId;
+  bool m_graphIdentifierHasBeenSet = false;
   bool m_queryIdHasBeenSet = false;
 };
 

@@ -95,6 +95,25 @@ class CloudAutonomousVmCluster {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the ODB network associated with this
+   * Autonomous VM cluster.</p>
+   */
+  inline const Aws::String& GetOdbNetworkArn() const { return m_odbNetworkArn; }
+  inline bool OdbNetworkArnHasBeenSet() const { return m_odbNetworkArnHasBeenSet; }
+  template <typename OdbNetworkArnT = Aws::String>
+  void SetOdbNetworkArn(OdbNetworkArnT&& value) {
+    m_odbNetworkArnHasBeenSet = true;
+    m_odbNetworkArn = std::forward<OdbNetworkArnT>(value);
+  }
+  template <typename OdbNetworkArnT = Aws::String>
+  CloudAutonomousVmCluster& WithOdbNetworkArn(OdbNetworkArnT&& value) {
+    SetOdbNetworkArn(std::forward<OdbNetworkArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the OCI resource anchor associated with this Autonomous VM
    * cluster.</p>
    */
@@ -199,6 +218,25 @@ class CloudAutonomousVmCluster {
   template <typename CloudExadataInfrastructureIdT = Aws::String>
   CloudAutonomousVmCluster& WithCloudExadataInfrastructureId(CloudExadataInfrastructureIdT&& value) {
     SetCloudExadataInfrastructureId(std::forward<CloudExadataInfrastructureIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Cloud Exadata Infrastructure containing
+   * this Autonomous VM cluster.</p>
+   */
+  inline const Aws::String& GetCloudExadataInfrastructureArn() const { return m_cloudExadataInfrastructureArn; }
+  inline bool CloudExadataInfrastructureArnHasBeenSet() const { return m_cloudExadataInfrastructureArnHasBeenSet; }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  void SetCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    m_cloudExadataInfrastructureArnHasBeenSet = true;
+    m_cloudExadataInfrastructureArn = std::forward<CloudExadataInfrastructureArnT>(value);
+  }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  CloudAutonomousVmCluster& WithCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    SetCloudExadataInfrastructureArn(std::forward<CloudExadataInfrastructureArnT>(value));
     return *this;
   }
   ///@}
@@ -894,150 +932,156 @@ class CloudAutonomousVmCluster {
   ///@}
  private:
   Aws::String m_cloudAutonomousVmClusterId;
-  bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
 
   Aws::String m_cloudAutonomousVmClusterArn;
-  bool m_cloudAutonomousVmClusterArnHasBeenSet = false;
 
   Aws::String m_odbNetworkId;
-  bool m_odbNetworkIdHasBeenSet = false;
+
+  Aws::String m_odbNetworkArn;
 
   Aws::String m_ociResourceAnchorName;
-  bool m_ociResourceAnchorNameHasBeenSet = false;
 
   double m_percentProgress{0.0};
-  bool m_percentProgressHasBeenSet = false;
 
   Aws::String m_displayName;
-  bool m_displayNameHasBeenSet = false;
 
   ResourceStatus m_status{ResourceStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::String m_cloudExadataInfrastructureId;
-  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+
+  Aws::String m_cloudExadataInfrastructureArn;
 
   double m_autonomousDataStoragePercentage{0.0};
-  bool m_autonomousDataStoragePercentageHasBeenSet = false;
 
   double m_autonomousDataStorageSizeInTBs{0.0};
-  bool m_autonomousDataStorageSizeInTBsHasBeenSet = false;
 
   double m_availableAutonomousDataStorageSizeInTBs{0.0};
-  bool m_availableAutonomousDataStorageSizeInTBsHasBeenSet = false;
 
   int m_availableContainerDatabases{0};
-  bool m_availableContainerDatabasesHasBeenSet = false;
 
   double m_availableCpus{0.0};
-  bool m_availableCpusHasBeenSet = false;
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
-  bool m_computeModelHasBeenSet = false;
 
   int m_cpuCoreCount{0};
-  bool m_cpuCoreCountHasBeenSet = false;
 
   int m_cpuCoreCountPerNode{0};
-  bool m_cpuCoreCountPerNodeHasBeenSet = false;
 
   double m_cpuPercentage{0.0};
-  bool m_cpuPercentageHasBeenSet = false;
 
   double m_dataStorageSizeInGBs{0.0};
-  bool m_dataStorageSizeInGBsHasBeenSet = false;
 
   double m_dataStorageSizeInTBs{0.0};
-  bool m_dataStorageSizeInTBsHasBeenSet = false;
 
   int m_dbNodeStorageSizeInGBs{0};
-  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_dbServers;
-  bool m_dbServersHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   Aws::String m_domain;
-  bool m_domainHasBeenSet = false;
 
   double m_exadataStorageInTBsLowestScaledValue{0.0};
-  bool m_exadataStorageInTBsLowestScaledValueHasBeenSet = false;
 
   Aws::String m_hostname;
-  bool m_hostnameHasBeenSet = false;
 
   Aws::String m_ocid;
-  bool m_ocidHasBeenSet = false;
 
   Aws::String m_ociUrl;
-  bool m_ociUrlHasBeenSet = false;
 
   bool m_isMtlsEnabledVmCluster{false};
-  bool m_isMtlsEnabledVmClusterHasBeenSet = false;
 
   LicenseModel m_licenseModel{LicenseModel::NOT_SET};
-  bool m_licenseModelHasBeenSet = false;
 
   MaintenanceWindow m_maintenanceWindow;
-  bool m_maintenanceWindowHasBeenSet = false;
 
   int m_maxAcdsLowestScaledValue{0};
-  bool m_maxAcdsLowestScaledValueHasBeenSet = false;
 
   int m_memoryPerOracleComputeUnitInGBs{0};
-  bool m_memoryPerOracleComputeUnitInGBsHasBeenSet = false;
 
   int m_memorySizeInGBs{0};
-  bool m_memorySizeInGBsHasBeenSet = false;
 
   int m_nodeCount{0};
-  bool m_nodeCountHasBeenSet = false;
 
   int m_nonProvisionableAutonomousContainerDatabases{0};
-  bool m_nonProvisionableAutonomousContainerDatabasesHasBeenSet = false;
 
   int m_provisionableAutonomousContainerDatabases{0};
-  bool m_provisionableAutonomousContainerDatabasesHasBeenSet = false;
 
   int m_provisionedAutonomousContainerDatabases{0};
-  bool m_provisionedAutonomousContainerDatabasesHasBeenSet = false;
 
   double m_provisionedCpus{0.0};
-  bool m_provisionedCpusHasBeenSet = false;
 
   double m_reclaimableCpus{0.0};
-  bool m_reclaimableCpusHasBeenSet = false;
 
   double m_reservedCpus{0.0};
-  bool m_reservedCpusHasBeenSet = false;
 
   int m_scanListenerPortNonTls{0};
-  bool m_scanListenerPortNonTlsHasBeenSet = false;
 
   int m_scanListenerPortTls{0};
-  bool m_scanListenerPortTlsHasBeenSet = false;
 
   Aws::String m_shape;
-  bool m_shapeHasBeenSet = false;
 
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeDatabaseSslCertificateExpires{};
-  bool m_timeDatabaseSslCertificateExpiresHasBeenSet = false;
 
   Aws::Utils::DateTime m_timeOrdsCertificateExpires{};
-  bool m_timeOrdsCertificateExpiresHasBeenSet = false;
 
   Aws::String m_timeZone;
-  bool m_timeZoneHasBeenSet = false;
 
   int m_totalContainerDatabases{0};
+  bool m_cloudAutonomousVmClusterIdHasBeenSet = false;
+  bool m_cloudAutonomousVmClusterArnHasBeenSet = false;
+  bool m_odbNetworkIdHasBeenSet = false;
+  bool m_odbNetworkArnHasBeenSet = false;
+  bool m_ociResourceAnchorNameHasBeenSet = false;
+  bool m_percentProgressHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_cloudExadataInfrastructureArnHasBeenSet = false;
+  bool m_autonomousDataStoragePercentageHasBeenSet = false;
+  bool m_autonomousDataStorageSizeInTBsHasBeenSet = false;
+  bool m_availableAutonomousDataStorageSizeInTBsHasBeenSet = false;
+  bool m_availableContainerDatabasesHasBeenSet = false;
+  bool m_availableCpusHasBeenSet = false;
+  bool m_computeModelHasBeenSet = false;
+  bool m_cpuCoreCountHasBeenSet = false;
+  bool m_cpuCoreCountPerNodeHasBeenSet = false;
+  bool m_cpuPercentageHasBeenSet = false;
+  bool m_dataStorageSizeInGBsHasBeenSet = false;
+  bool m_dataStorageSizeInTBsHasBeenSet = false;
+  bool m_dbNodeStorageSizeInGBsHasBeenSet = false;
+  bool m_dbServersHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_exadataStorageInTBsLowestScaledValueHasBeenSet = false;
+  bool m_hostnameHasBeenSet = false;
+  bool m_ocidHasBeenSet = false;
+  bool m_ociUrlHasBeenSet = false;
+  bool m_isMtlsEnabledVmClusterHasBeenSet = false;
+  bool m_licenseModelHasBeenSet = false;
+  bool m_maintenanceWindowHasBeenSet = false;
+  bool m_maxAcdsLowestScaledValueHasBeenSet = false;
+  bool m_memoryPerOracleComputeUnitInGBsHasBeenSet = false;
+  bool m_memorySizeInGBsHasBeenSet = false;
+  bool m_nodeCountHasBeenSet = false;
+  bool m_nonProvisionableAutonomousContainerDatabasesHasBeenSet = false;
+  bool m_provisionableAutonomousContainerDatabasesHasBeenSet = false;
+  bool m_provisionedAutonomousContainerDatabasesHasBeenSet = false;
+  bool m_provisionedCpusHasBeenSet = false;
+  bool m_reclaimableCpusHasBeenSet = false;
+  bool m_reservedCpusHasBeenSet = false;
+  bool m_scanListenerPortNonTlsHasBeenSet = false;
+  bool m_scanListenerPortTlsHasBeenSet = false;
+  bool m_shapeHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_timeDatabaseSslCertificateExpiresHasBeenSet = false;
+  bool m_timeOrdsCertificateExpiresHasBeenSet = false;
+  bool m_timeZoneHasBeenSet = false;
   bool m_totalContainerDatabasesHasBeenSet = false;
 };
 

@@ -74,9 +74,9 @@ class RetrieveEnvironmentInfoResult {
   ///@}
  private:
   Aws::Vector<EnvironmentInfoDescription> m_environmentInfo;
-  bool m_environmentInfoHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_environmentInfoHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

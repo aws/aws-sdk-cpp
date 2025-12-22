@@ -89,15 +89,15 @@ class ModalityRoutingConfiguration {
   ///@}
  private:
   DesiredModality m_jpeg{DesiredModality::NOT_SET};
-  bool m_jpegHasBeenSet = false;
 
   DesiredModality m_png{DesiredModality::NOT_SET};
-  bool m_pngHasBeenSet = false;
 
   DesiredModality m_mp4{DesiredModality::NOT_SET};
-  bool m_mp4HasBeenSet = false;
 
   DesiredModality m_mov{DesiredModality::NOT_SET};
+  bool m_jpegHasBeenSet = false;
+  bool m_pngHasBeenSet = false;
+  bool m_mp4HasBeenSet = false;
   bool m_movHasBeenSet = false;
 };
 

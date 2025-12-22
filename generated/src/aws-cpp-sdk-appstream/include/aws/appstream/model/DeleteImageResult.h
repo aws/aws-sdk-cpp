@@ -60,9 +60,9 @@ class DeleteImageResult {
   ///@}
  private:
   Image m_image;
-  bool m_imageHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_imageHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

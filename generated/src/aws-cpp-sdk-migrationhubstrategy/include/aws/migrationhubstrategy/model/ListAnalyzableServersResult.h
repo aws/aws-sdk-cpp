@@ -94,12 +94,12 @@ class ListAnalyzableServersResult {
   ///@}
  private:
   Aws::Vector<AnalyzableServerSummary> m_analyzableServers;
-  bool m_analyzableServersHasBeenSet = false;
 
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_analyzableServersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

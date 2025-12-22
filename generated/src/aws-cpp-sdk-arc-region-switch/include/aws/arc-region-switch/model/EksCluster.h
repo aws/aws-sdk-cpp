@@ -87,12 +87,12 @@ class EksCluster {
   ///@}
  private:
   Aws::String m_crossAccountRole;
-  bool m_crossAccountRoleHasBeenSet = false;
 
   Aws::String m_externalId;
-  bool m_externalIdHasBeenSet = false;
 
   Aws::String m_clusterArn;
+  bool m_crossAccountRoleHasBeenSet = false;
+  bool m_externalIdHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
 };
 

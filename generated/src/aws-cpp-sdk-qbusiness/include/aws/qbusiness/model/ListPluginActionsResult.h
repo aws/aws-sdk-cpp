@@ -85,12 +85,12 @@ class ListPluginActionsResult {
   ///@}
  private:
   Aws::String m_nextToken;
-  bool m_nextTokenHasBeenSet = false;
 
   Aws::Vector<ActionSummary> m_items;
-  bool m_itemsHasBeenSet = false;
 
   Aws::String m_requestId;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_itemsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

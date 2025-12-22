@@ -510,57 +510,57 @@ class Connection {
   ///@}
  private:
   Aws::String m_name;
-  bool m_nameHasBeenSet = false;
 
   Aws::String m_description;
-  bool m_descriptionHasBeenSet = false;
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
-  bool m_connectionTypeHasBeenSet = false;
 
   Aws::Vector<Aws::String> m_matchCriteria;
-  bool m_matchCriteriaHasBeenSet = false;
 
   Aws::Map<ConnectionPropertyKey, Aws::String> m_connectionProperties;
-  bool m_connectionPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_sparkProperties;
-  bool m_sparkPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_athenaProperties;
-  bool m_athenaPropertiesHasBeenSet = false;
 
   Aws::Map<Aws::String, Aws::String> m_pythonProperties;
-  bool m_pythonPropertiesHasBeenSet = false;
 
   PhysicalConnectionRequirements m_physicalConnectionRequirements;
-  bool m_physicalConnectionRequirementsHasBeenSet = false;
 
   Aws::Utils::DateTime m_creationTime{};
-  bool m_creationTimeHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
-  bool m_lastUpdatedTimeHasBeenSet = false;
 
   Aws::String m_lastUpdatedBy;
-  bool m_lastUpdatedByHasBeenSet = false;
 
   ConnectionStatus m_status{ConnectionStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::String m_statusReason;
-  bool m_statusReasonHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastConnectionValidationTime{};
-  bool m_lastConnectionValidationTimeHasBeenSet = false;
 
   AuthenticationConfiguration m_authenticationConfiguration;
-  bool m_authenticationConfigurationHasBeenSet = false;
 
   int m_connectionSchemaVersion{0};
-  bool m_connectionSchemaVersionHasBeenSet = false;
 
   Aws::Vector<ComputeEnvironment> m_compatibleComputeEnvironments;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_connectionTypeHasBeenSet = false;
+  bool m_matchCriteriaHasBeenSet = false;
+  bool m_connectionPropertiesHasBeenSet = false;
+  bool m_sparkPropertiesHasBeenSet = false;
+  bool m_athenaPropertiesHasBeenSet = false;
+  bool m_pythonPropertiesHasBeenSet = false;
+  bool m_physicalConnectionRequirementsHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_lastUpdatedTimeHasBeenSet = false;
+  bool m_lastUpdatedByHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_lastConnectionValidationTimeHasBeenSet = false;
+  bool m_authenticationConfigurationHasBeenSet = false;
+  bool m_connectionSchemaVersionHasBeenSet = false;
   bool m_compatibleComputeEnvironmentsHasBeenSet = false;
 };
 

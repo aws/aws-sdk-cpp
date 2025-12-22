@@ -181,30 +181,30 @@ class AllocateAddressResponse {
   ///@}
  private:
   Aws::String m_allocationId;
-  bool m_allocationIdHasBeenSet = false;
 
   Aws::String m_publicIpv4Pool;
-  bool m_publicIpv4PoolHasBeenSet = false;
 
   Aws::String m_networkBorderGroup;
-  bool m_networkBorderGroupHasBeenSet = false;
 
   DomainType m_domain{DomainType::NOT_SET};
-  bool m_domainHasBeenSet = false;
 
   Aws::String m_customerOwnedIp;
-  bool m_customerOwnedIpHasBeenSet = false;
 
   Aws::String m_customerOwnedIpv4Pool;
-  bool m_customerOwnedIpv4PoolHasBeenSet = false;
 
   Aws::String m_carrierIp;
-  bool m_carrierIpHasBeenSet = false;
 
   Aws::String m_publicIp;
-  bool m_publicIpHasBeenSet = false;
 
   ResponseMetadata m_responseMetadata;
+  bool m_allocationIdHasBeenSet = false;
+  bool m_publicIpv4PoolHasBeenSet = false;
+  bool m_networkBorderGroupHasBeenSet = false;
+  bool m_domainHasBeenSet = false;
+  bool m_customerOwnedIpHasBeenSet = false;
+  bool m_customerOwnedIpv4PoolHasBeenSet = false;
+  bool m_carrierIpHasBeenSet = false;
+  bool m_publicIpHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

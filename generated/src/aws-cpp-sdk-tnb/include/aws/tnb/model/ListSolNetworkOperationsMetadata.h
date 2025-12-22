@@ -109,15 +109,15 @@ class ListSolNetworkOperationsMetadata {
   ///@}
  private:
   Aws::Utils::DateTime m_createdAt{};
-  bool m_createdAtHasBeenSet = false;
 
   Aws::Utils::DateTime m_lastModified{};
-  bool m_lastModifiedHasBeenSet = false;
 
   Aws::String m_nsdInfoId;
-  bool m_nsdInfoIdHasBeenSet = false;
 
   Aws::String m_vnfInstanceId;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
+  bool m_nsdInfoIdHasBeenSet = false;
   bool m_vnfInstanceIdHasBeenSet = false;
 };
 

@@ -100,12 +100,12 @@ class TerminologyData {
   ///@}
  private:
   Aws::Utils::CryptoBuffer m_file{};
-  bool m_fileHasBeenSet = false;
 
   TerminologyDataFormat m_format{TerminologyDataFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   Directionality m_directionality{Directionality::NOT_SET};
+  bool m_fileHasBeenSet = false;
+  bool m_formatHasBeenSet = false;
   bool m_directionalityHasBeenSet = false;
 };
 

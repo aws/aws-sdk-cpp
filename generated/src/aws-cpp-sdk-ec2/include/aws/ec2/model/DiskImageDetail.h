@@ -94,12 +94,12 @@ class DiskImageDetail {
   ///@}
  private:
   DiskImageFormat m_format{DiskImageFormat::NOT_SET};
-  bool m_formatHasBeenSet = false;
 
   long long m_bytes{0};
-  bool m_bytesHasBeenSet = false;
 
   Aws::String m_importManifestUrl;
+  bool m_formatHasBeenSet = false;
+  bool m_bytesHasBeenSet = false;
   bool m_importManifestUrlHasBeenSet = false;
 };
 

@@ -31,18 +31,18 @@ class UpdateSourceServerReplicationTypeRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>Account ID on which to update replication type.</p>
+   * <p>ID of source server on which to update replication type.</p>
    */
-  inline const Aws::String& GetAccountID() const { return m_accountID; }
-  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-  template <typename AccountIDT = Aws::String>
-  void SetAccountID(AccountIDT&& value) {
-    m_accountIDHasBeenSet = true;
-    m_accountID = std::forward<AccountIDT>(value);
+  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
+  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
+  template <typename SourceServerIDT = Aws::String>
+  void SetSourceServerID(SourceServerIDT&& value) {
+    m_sourceServerIDHasBeenSet = true;
+    m_sourceServerID = std::forward<SourceServerIDT>(value);
   }
-  template <typename AccountIDT = Aws::String>
-  UpdateSourceServerReplicationTypeRequest& WithAccountID(AccountIDT&& value) {
-    SetAccountID(std::forward<AccountIDT>(value));
+  template <typename SourceServerIDT = Aws::String>
+  UpdateSourceServerReplicationTypeRequest& WithSourceServerID(SourceServerIDT&& value) {
+    SetSourceServerID(std::forward<SourceServerIDT>(value));
     return *this;
   }
   ///@}
@@ -65,30 +65,30 @@ class UpdateSourceServerReplicationTypeRequest : public MgnRequest {
 
   ///@{
   /**
-   * <p>ID of source server on which to update replication type.</p>
+   * <p>Account ID on which to update replication type.</p>
    */
-  inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
-  inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-  template <typename SourceServerIDT = Aws::String>
-  void SetSourceServerID(SourceServerIDT&& value) {
-    m_sourceServerIDHasBeenSet = true;
-    m_sourceServerID = std::forward<SourceServerIDT>(value);
+  inline const Aws::String& GetAccountID() const { return m_accountID; }
+  inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
+  template <typename AccountIDT = Aws::String>
+  void SetAccountID(AccountIDT&& value) {
+    m_accountIDHasBeenSet = true;
+    m_accountID = std::forward<AccountIDT>(value);
   }
-  template <typename SourceServerIDT = Aws::String>
-  UpdateSourceServerReplicationTypeRequest& WithSourceServerID(SourceServerIDT&& value) {
-    SetSourceServerID(std::forward<SourceServerIDT>(value));
+  template <typename AccountIDT = Aws::String>
+  UpdateSourceServerReplicationTypeRequest& WithAccountID(AccountIDT&& value) {
+    SetAccountID(std::forward<AccountIDT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_accountID;
-  bool m_accountIDHasBeenSet = false;
+  Aws::String m_sourceServerID;
 
   ReplicationType m_replicationType{ReplicationType::NOT_SET};
-  bool m_replicationTypeHasBeenSet = false;
 
-  Aws::String m_sourceServerID;
+  Aws::String m_accountID;
   bool m_sourceServerIDHasBeenSet = false;
+  bool m_replicationTypeHasBeenSet = false;
+  bool m_accountIDHasBeenSet = false;
 };
 
 }  // namespace Model

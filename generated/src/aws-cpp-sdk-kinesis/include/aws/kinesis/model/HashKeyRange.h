@@ -69,9 +69,9 @@ class HashKeyRange {
   ///@}
  private:
   Aws::String m_startingHashKey;
-  bool m_startingHashKeyHasBeenSet = false;
 
   Aws::String m_endingHashKey;
+  bool m_startingHashKeyHasBeenSet = false;
   bool m_endingHashKeyHasBeenSet = false;
 };
 

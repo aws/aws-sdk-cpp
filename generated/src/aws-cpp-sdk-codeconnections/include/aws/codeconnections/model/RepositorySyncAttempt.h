@@ -101,12 +101,12 @@ class RepositorySyncAttempt {
   ///@}
  private:
   Aws::Utils::DateTime m_startedAt{};
-  bool m_startedAtHasBeenSet = false;
 
   RepositorySyncStatus m_status{RepositorySyncStatus::NOT_SET};
-  bool m_statusHasBeenSet = false;
 
   Aws::Vector<RepositorySyncEvent> m_events;
+  bool m_startedAtHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_eventsHasBeenSet = false;
 };
 

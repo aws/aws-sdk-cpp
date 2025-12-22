@@ -76,9 +76,9 @@ class PutAdminAccountRequest : public FMSRequest {
   ///@}
  private:
   Aws::String m_adminAccount;
-  bool m_adminAccountHasBeenSet = false;
 
   AdminScope m_adminScope;
+  bool m_adminAccountHasBeenSet = false;
   bool m_adminScopeHasBeenSet = false;
 };
 
