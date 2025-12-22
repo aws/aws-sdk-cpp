@@ -196,8 +196,9 @@ Aws::Vector<Aws::String> calculateAuthPreferences() {
   Aws::Vector<Aws::String> res;
   auto prefs = Aws::Environment::GetEnv("AWS_AUTH_SCHEME_PREFERENCE");
   Aws::Vector<Aws::String> prefsList  = Aws::Utils::StringUtils::Split(prefs, ',');
+  res.reserve(prefsList.size());  // avoid repeated allocations
   for (auto& pref : prefsList) {
-    res.push_back(Aws::Utils::StringUtils::Trim(pref.c_str()));
+    res.emplace_back(Aws::Utils::StringUtils::Trim(pref.c_str()));
   }
   return res;
 }

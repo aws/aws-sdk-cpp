@@ -93,8 +93,7 @@ namespace Aws
                 for (auto& deviceInfo : driver->EnumerateDevices())
                 {
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Adding device " << deviceInfo.deviceName << " for driver " << driver->GetName());
-                    OutputDevicePair device(deviceInfo, driver);
-                    deviceDriverList.push_back(device);
+                    deviceDriverList.emplace_back(deviceInfo, driver);
                 }
             }
             
@@ -120,9 +119,11 @@ namespace Aws
             auto voicesOutcome = m_pollyClient->DescribeVoices(describeVoices);
             if (voicesOutcome.IsSuccess())
             {
-                for (auto& voice : voicesOutcome.GetResult().GetVoices())
+                auto& voices = voicesOutcome.GetResult().GetVoices();
+                m_voices.reserve(voices.size());
+                for (const auto& voice : voices)
                 {
-                    m_voices.push_back(std::pair<Aws::String, Aws::String>(voice.GetName(), voice.GetLanguageName()));
+                    m_voices.emplace_back(voice.GetName(), voice.GetLanguageName());
                 }
             }
             else
