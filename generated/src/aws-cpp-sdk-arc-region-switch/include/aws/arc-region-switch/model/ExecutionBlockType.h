@@ -21,7 +21,8 @@ enum class ExecutionBlockType {
   Parallel,
   ECSServiceScaling,
   EKSResourceScaling,
-  Route53HealthCheck
+  Route53HealthCheck,
+  DocumentDb
 };
 
 namespace ExecutionBlockTypeMapper {

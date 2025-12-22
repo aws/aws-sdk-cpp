@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class Grouping { NOT_SET, QUEUE, CHANNEL, ROUTING_PROFILE, ROUTING_STEP_EXPRESSION, AGENT_STATUS };
+enum class Grouping { NOT_SET, QUEUE, CHANNEL, ROUTING_PROFILE, ROUTING_STEP_EXPRESSION, AGENT_STATUS, SUBTYPE, VALIDATION_TEST_TYPE };
 
 namespace GroupingMapper {
 AWS_CONNECT_API Grouping GetGroupingForName(const Aws::String& name);

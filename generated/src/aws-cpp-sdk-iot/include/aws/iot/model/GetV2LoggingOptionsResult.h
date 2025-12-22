@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/LogEventConfiguration.h>
 #include <aws/iot/model/LogLevel.h>
 
 #include <utility>
@@ -75,6 +77,29 @@ class GetV2LoggingOptionsResult {
   ///@}
 
   ///@{
+  /**
+   * <p> The list of event configurations that override account-level logging. </p>
+   */
+  inline const Aws::Vector<LogEventConfiguration>& GetEventConfigurations() const { return m_eventConfigurations; }
+  template <typename EventConfigurationsT = Aws::Vector<LogEventConfiguration>>
+  void SetEventConfigurations(EventConfigurationsT&& value) {
+    m_eventConfigurationsHasBeenSet = true;
+    m_eventConfigurations = std::forward<EventConfigurationsT>(value);
+  }
+  template <typename EventConfigurationsT = Aws::Vector<LogEventConfiguration>>
+  GetV2LoggingOptionsResult& WithEventConfigurations(EventConfigurationsT&& value) {
+    SetEventConfigurations(std::forward<EventConfigurationsT>(value));
+    return *this;
+  }
+  template <typename EventConfigurationsT = LogEventConfiguration>
+  GetV2LoggingOptionsResult& AddEventConfigurations(EventConfigurationsT&& value) {
+    m_eventConfigurationsHasBeenSet = true;
+    m_eventConfigurations.emplace_back(std::forward<EventConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -95,10 +120,13 @@ class GetV2LoggingOptionsResult {
 
   bool m_disableAllLogs{false};
 
+  Aws::Vector<LogEventConfiguration> m_eventConfigurations;
+
   Aws::String m_requestId;
   bool m_roleArnHasBeenSet = false;
   bool m_defaultLogLevelHasBeenSet = false;
   bool m_disableAllLogsHasBeenSet = false;
+  bool m_eventConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

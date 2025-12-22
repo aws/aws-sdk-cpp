@@ -123,6 +123,10 @@ Application& Application::operator=(JsonView jsonValue) {
     m_identityCenterConfiguration = jsonValue.GetObject("identityCenterConfiguration");
     m_identityCenterConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobLevelCostAllocationConfiguration")) {
+    m_jobLevelCostAllocationConfiguration = jsonValue.GetObject("jobLevelCostAllocationConfiguration");
+    m_jobLevelCostAllocationConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -236,6 +240,10 @@ JsonValue Application::Jsonize() const {
 
   if (m_identityCenterConfigurationHasBeenSet) {
     payload.WithObject("identityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
+  }
+
+  if (m_jobLevelCostAllocationConfigurationHasBeenSet) {
+    payload.WithObject("jobLevelCostAllocationConfiguration", m_jobLevelCostAllocationConfiguration.Jsonize());
   }
 
   return payload;
