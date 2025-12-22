@@ -74,6 +74,10 @@ CreateGatewayTargetResult& CreateGatewayTargetResult::operator=(const Aws::Amazo
     m_lastSynchronizedAt = jsonValue.GetString("lastSynchronizedAt");
     m_lastSynchronizedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadataConfiguration")) {
+    m_metadataConfiguration = jsonValue.GetObject("metadataConfiguration");
+    m_metadataConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

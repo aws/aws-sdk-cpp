@@ -21,9 +21,9 @@ namespace IoT {
 namespace Model {
 
 /**
- * <p>The range of possible values that's used to describe a specific command
- * parameter.</p>  <p>The <code>commandParameterValue</code> can only have
- * one of the below fields listed.</p> <p><h3>See Also:</h3>   <a
+ * <p>The value of a command parameter used to create a command execution.</p>
+ *  <p>The <code>commandParameterValue</code> can only have one of the below
+ * fields listed.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CommandParameterValue">AWS
  * API Reference</a></p>
  */

@@ -36,9 +36,11 @@ class SpotPlacement {
 
   ///@{
   /**
-   * <p>The Availability Zone.</p> <p>[Spot Fleet only] To specify multiple
-   * Availability Zones, separate them using commas; for example, "us-west-2a,
-   * us-west-2b".</p>
+   * <p>The Availability Zone. For example, <code>us-east-2a</code>.</p> <p>[Spot
+   * Fleet only] To specify multiple Availability Zones, separate them using commas;
+   * for example, "<code>us-east-2a</code>, <code>us-east-2b</code>".</p> <p>Either
+   * <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must be
+   * specified in the request, but not both.</p>
    */
   inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
   inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
@@ -89,15 +91,40 @@ class SpotPlacement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Availability Zone. For example, <code>use2-az1</code>.</p>
+   * <p>[Spot Fleet only] To specify multiple Availability Zones, separate them using
+   * commas; for example, "<code>use2-az1</code>, <code>use2-bz1</code>".</p>
+   * <p>Either <code>AvailabilityZone</code> or <code>AvailabilityZoneId</code> must
+   * be specified in the request, but not both.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  SpotPlacement& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_availabilityZone;
 
   Aws::String m_groupName;
 
   Tenancy m_tenancy{Tenancy::NOT_SET};
+
+  Aws::String m_availabilityZoneId;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
   bool m_tenancyHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -72,5 +72,9 @@ Aws::String StartStreamSessionRequest::SerializePayload() const {
     payload.WithObject("AdditionalEnvironmentVariables", std::move(additionalEnvironmentVariablesJsonMap));
   }
 
+  if (m_performanceStatsConfigurationHasBeenSet) {
+    payload.WithObject("PerformanceStatsConfiguration", m_performanceStatsConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

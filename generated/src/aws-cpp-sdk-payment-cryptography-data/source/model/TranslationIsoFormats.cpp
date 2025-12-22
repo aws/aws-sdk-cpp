@@ -34,6 +34,10 @@ TranslationIsoFormats& TranslationIsoFormats::operator=(JsonView jsonValue) {
     m_isoFormat4 = jsonValue.GetObject("IsoFormat4");
     m_isoFormat4HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("As2805Format0")) {
+    m_as2805Format0 = jsonValue.GetObject("As2805Format0");
+    m_as2805Format0HasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue TranslationIsoFormats::Jsonize() const {
 
   if (m_isoFormat4HasBeenSet) {
     payload.WithObject("IsoFormat4", m_isoFormat4.Jsonize());
+  }
+
+  if (m_as2805Format0HasBeenSet) {
+    payload.WithObject("As2805Format0", m_as2805Format0.Jsonize());
   }
 
   return payload;

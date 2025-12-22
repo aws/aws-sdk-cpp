@@ -5,9 +5,11 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ApprovalStatusDetails.h>
 #include <aws/cleanrooms/model/Change.h>
 #include <aws/cleanrooms/model/ChangeRequestStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -163,6 +165,31 @@ class CollaborationChangeRequestSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Summary of approval statuses from all collaboration members for this change
+   * request.</p>
+   */
+  inline const Aws::Map<Aws::String, ApprovalStatusDetails>& GetApprovals() const { return m_approvals; }
+  inline bool ApprovalsHasBeenSet() const { return m_approvalsHasBeenSet; }
+  template <typename ApprovalsT = Aws::Map<Aws::String, ApprovalStatusDetails>>
+  void SetApprovals(ApprovalsT&& value) {
+    m_approvalsHasBeenSet = true;
+    m_approvals = std::forward<ApprovalsT>(value);
+  }
+  template <typename ApprovalsT = Aws::Map<Aws::String, ApprovalStatusDetails>>
+  CollaborationChangeRequestSummary& WithApprovals(ApprovalsT&& value) {
+    SetApprovals(std::forward<ApprovalsT>(value));
+    return *this;
+  }
+  template <typename ApprovalsKeyT = Aws::String, typename ApprovalsValueT = ApprovalStatusDetails>
+  CollaborationChangeRequestSummary& AddApprovals(ApprovalsKeyT&& key, ApprovalsValueT&& value) {
+    m_approvalsHasBeenSet = true;
+    m_approvals.emplace(std::forward<ApprovalsKeyT>(key), std::forward<ApprovalsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -177,6 +204,8 @@ class CollaborationChangeRequestSummary {
   bool m_isAutoApproved{false};
 
   Aws::Vector<Change> m_changes;
+
+  Aws::Map<Aws::String, ApprovalStatusDetails> m_approvals;
   bool m_idHasBeenSet = false;
   bool m_collaborationIdHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
@@ -184,6 +213,7 @@ class CollaborationChangeRequestSummary {
   bool m_statusHasBeenSet = false;
   bool m_isAutoApprovedHasBeenSet = false;
   bool m_changesHasBeenSet = false;
+  bool m_approvalsHasBeenSet = false;
 };
 
 }  // namespace Model

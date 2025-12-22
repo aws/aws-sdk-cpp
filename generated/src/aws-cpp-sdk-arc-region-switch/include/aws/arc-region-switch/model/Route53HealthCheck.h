@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/arc-region-switch/ARCRegionswitch_EXPORTS.h>
+#include <aws/arc-region-switch/model/Route53HealthCheckStatus.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -87,6 +88,22 @@ class Route53HealthCheck {
 
   ///@{
   /**
+   * <p>The Amazon Route 53 health check status.</p>
+   */
+  inline Route53HealthCheckStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(Route53HealthCheckStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline Route53HealthCheck& WithStatus(Route53HealthCheckStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Route 53 Region.</p>
    */
   inline const Aws::String& GetRegion() const { return m_region; }
@@ -109,10 +126,13 @@ class Route53HealthCheck {
 
   Aws::String m_healthCheckId;
 
+  Route53HealthCheckStatus m_status{Route53HealthCheckStatus::NOT_SET};
+
   Aws::String m_region;
   bool m_hostedZoneIdHasBeenSet = false;
   bool m_recordNameHasBeenSet = false;
   bool m_healthCheckIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_regionHasBeenSet = false;
 };
 

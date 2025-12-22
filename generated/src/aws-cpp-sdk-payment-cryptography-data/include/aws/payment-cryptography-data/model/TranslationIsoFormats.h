@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
+#include <aws/payment-cryptography-data/model/TranslationPinDataAs2805Format0.h>
 #include <aws/payment-cryptography-data/model/TranslationPinDataIsoFormat034.h>
 #include <aws/payment-cryptography-data/model/TranslationPinDataIsoFormat1.h>
 
@@ -35,7 +36,7 @@ class TranslationIsoFormats {
 
   ///@{
   /**
-   * <p>Parameters that are required for ISO9564 PIN format 0 tranlation.</p>
+   * <p>Parameters that are required for ISO9564 PIN format 0 translation.</p>
    */
   inline const TranslationPinDataIsoFormat034& GetIsoFormat0() const { return m_isoFormat0; }
   inline bool IsoFormat0HasBeenSet() const { return m_isoFormat0HasBeenSet; }
@@ -53,7 +54,7 @@ class TranslationIsoFormats {
 
   ///@{
   /**
-   * <p>Parameters that are required for ISO9564 PIN format 1 tranlation.</p>
+   * <p>Parameters that are required for ISO9564 PIN format 1 translation.</p>
    */
   inline const TranslationPinDataIsoFormat1& GetIsoFormat1() const { return m_isoFormat1; }
   inline bool IsoFormat1HasBeenSet() const { return m_isoFormat1HasBeenSet; }
@@ -71,7 +72,7 @@ class TranslationIsoFormats {
 
   ///@{
   /**
-   * <p>Parameters that are required for ISO9564 PIN format 3 tranlation.</p>
+   * <p>Parameters that are required for ISO9564 PIN format 3 translation.</p>
    */
   inline const TranslationPinDataIsoFormat034& GetIsoFormat3() const { return m_isoFormat3; }
   inline bool IsoFormat3HasBeenSet() const { return m_isoFormat3HasBeenSet; }
@@ -89,7 +90,7 @@ class TranslationIsoFormats {
 
   ///@{
   /**
-   * <p>Parameters that are required for ISO9564 PIN format 4 tranlation.</p>
+   * <p>Parameters that are required for ISO9564 PIN format 4 translation.</p>
    */
   inline const TranslationPinDataIsoFormat034& GetIsoFormat4() const { return m_isoFormat4; }
   inline bool IsoFormat4HasBeenSet() const { return m_isoFormat4HasBeenSet; }
@@ -104,6 +105,24 @@ class TranslationIsoFormats {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Parameters that are required for AS2805 PIN format 0 translation.</p>
+   */
+  inline const TranslationPinDataAs2805Format0& GetAs2805Format0() const { return m_as2805Format0; }
+  inline bool As2805Format0HasBeenSet() const { return m_as2805Format0HasBeenSet; }
+  template <typename As2805Format0T = TranslationPinDataAs2805Format0>
+  void SetAs2805Format0(As2805Format0T&& value) {
+    m_as2805Format0HasBeenSet = true;
+    m_as2805Format0 = std::forward<As2805Format0T>(value);
+  }
+  template <typename As2805Format0T = TranslationPinDataAs2805Format0>
+  TranslationIsoFormats& WithAs2805Format0(As2805Format0T&& value) {
+    SetAs2805Format0(std::forward<As2805Format0T>(value));
+    return *this;
+  }
+  ///@}
  private:
   TranslationPinDataIsoFormat034 m_isoFormat0;
 
@@ -112,10 +131,13 @@ class TranslationIsoFormats {
   TranslationPinDataIsoFormat034 m_isoFormat3;
 
   TranslationPinDataIsoFormat034 m_isoFormat4;
+
+  TranslationPinDataAs2805Format0 m_as2805Format0;
   bool m_isoFormat0HasBeenSet = false;
   bool m_isoFormat1HasBeenSet = false;
   bool m_isoFormat3HasBeenSet = false;
   bool m_isoFormat4HasBeenSet = false;
+  bool m_as2805Format0HasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,6 +37,8 @@ public:
         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
         Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
 
+    bool IsDefaultAwsHttpClient() const override { return true; }
+
     static void InitGlobalState();
     static void CleanupGlobalState();
 

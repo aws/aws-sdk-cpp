@@ -61,7 +61,7 @@ class ListPhoneNumbersV2Request : public ConnectRequest {
    * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
    * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
    * lists numbers claimed to all the Amazon Connect instances belonging to your
-   * account in the same AWS Region as the request.</p>
+   * account in the same Amazon Web Services Region as the request.</p>
    */
   inline const Aws::String& GetInstanceId() const { return m_instanceId; }
   inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }

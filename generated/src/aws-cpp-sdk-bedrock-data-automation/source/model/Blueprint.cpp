@@ -61,6 +61,18 @@ Blueprint& Blueprint::operator=(JsonView jsonValue) {
     }
     m_kmsEncryptionContextHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("optimizationSamples")) {
+    Aws::Utils::Array<JsonView> optimizationSamplesJsonList = jsonValue.GetArray("optimizationSamples");
+    for (unsigned optimizationSamplesIndex = 0; optimizationSamplesIndex < optimizationSamplesJsonList.GetLength();
+         ++optimizationSamplesIndex) {
+      m_optimizationSamples.push_back(optimizationSamplesJsonList[optimizationSamplesIndex].AsObject());
+    }
+    m_optimizationSamplesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("optimizationTime")) {
+    m_optimizationTime = jsonValue.GetString("optimizationTime");
+    m_optimizationTimeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -109,6 +121,19 @@ JsonValue Blueprint::Jsonize() const {
       kmsEncryptionContextJsonMap.WithString(kmsEncryptionContextItem.first, kmsEncryptionContextItem.second);
     }
     payload.WithObject("kmsEncryptionContext", std::move(kmsEncryptionContextJsonMap));
+  }
+
+  if (m_optimizationSamplesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> optimizationSamplesJsonList(m_optimizationSamples.size());
+    for (unsigned optimizationSamplesIndex = 0; optimizationSamplesIndex < optimizationSamplesJsonList.GetLength();
+         ++optimizationSamplesIndex) {
+      optimizationSamplesJsonList[optimizationSamplesIndex].AsObject(m_optimizationSamples[optimizationSamplesIndex].Jsonize());
+    }
+    payload.WithArray("optimizationSamples", std::move(optimizationSamplesJsonList));
+  }
+
+  if (m_optimizationTimeHasBeenSet) {
+    payload.WithString("optimizationTime", m_optimizationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

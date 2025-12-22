@@ -18,7 +18,7 @@ namespace Model {
 
 /**
  * <p>Parameters that are required for ISO9564 PIN format 1
- * tranlation.</p><p><h3>See Also:</h3>   <a
+ * translation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslationPinDataIsoFormat1">AWS
  * API Reference</a></p>
  */

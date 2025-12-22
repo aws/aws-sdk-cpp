@@ -225,8 +225,8 @@ class DataTableAttribute {
 
   ///@{
   /**
-   * <p>The AWS region where this attribute was last modified, used for region
-   * replication.</p>
+   * <p>The Amazon Web Services Region where this attribute was last modified, used
+   * for region replication.</p>
    */
   inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
   inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }

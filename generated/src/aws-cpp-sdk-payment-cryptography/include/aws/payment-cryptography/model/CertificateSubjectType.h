@@ -107,7 +107,7 @@ class CertificateSubjectType {
 
   ///@{
   /**
-   * <p>The city you provide to create the certificate signing request.</p>
+   * <p>The country you provide to create the certificate signing request.</p>
    */
   inline const Aws::String& GetCountry() const { return m_country; }
   inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }

@@ -51,6 +51,10 @@ Aws::String CreatePlanRequest::SerializePayload() const {
     payload.WithArray("triggers", std::move(triggersJsonList));
   }
 
+  if (m_reportConfigurationHasBeenSet) {
+    payload.WithObject("reportConfiguration", m_reportConfiguration.Jsonize());
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }

@@ -14,6 +14,7 @@
 #include <aws/kafkaconnect/model/KafkaClusterDescription.h>
 #include <aws/kafkaconnect/model/KafkaClusterEncryptionInTransitDescription.h>
 #include <aws/kafkaconnect/model/LogDeliveryDescription.h>
+#include <aws/kafkaconnect/model/NetworkType.h>
 #include <aws/kafkaconnect/model/PluginDescription.h>
 #include <aws/kafkaconnect/model/WorkerConfigurationDescription.h>
 
@@ -264,6 +265,23 @@ class ConnectorSummary {
 
   ///@{
   /**
+   * <p>The network type of the connector. It gives connectors connectivity to either
+   * IPv4 (IPV4) or IPv4 and IPv6 (DUAL) destinations. Defaults to IPV4.</p>
+   */
+  inline NetworkType GetNetworkType() const { return m_networkType; }
+  inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+  inline void SetNetworkType(NetworkType value) {
+    m_networkTypeHasBeenSet = true;
+    m_networkType = value;
+  }
+  inline ConnectorSummary& WithNetworkType(NetworkType value) {
+    SetNetworkType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies which plugins were used for this connector.</p>
    */
   inline const Aws::Vector<PluginDescription>& GetPlugins() const { return m_plugins; }
@@ -347,6 +365,8 @@ class ConnectorSummary {
 
   LogDeliveryDescription m_logDelivery;
 
+  NetworkType m_networkType{NetworkType::NOT_SET};
+
   Aws::Vector<PluginDescription> m_plugins;
 
   Aws::String m_serviceExecutionRoleArn;
@@ -364,6 +384,7 @@ class ConnectorSummary {
   bool m_kafkaClusterEncryptionInTransitHasBeenSet = false;
   bool m_kafkaConnectVersionHasBeenSet = false;
   bool m_logDeliveryHasBeenSet = false;
+  bool m_networkTypeHasBeenSet = false;
   bool m_pluginsHasBeenSet = false;
   bool m_serviceExecutionRoleArnHasBeenSet = false;
   bool m_workerConfigurationHasBeenSet = false;

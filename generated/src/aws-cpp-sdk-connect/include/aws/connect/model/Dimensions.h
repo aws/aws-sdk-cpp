@@ -121,6 +121,42 @@ class Dimensions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The subtype of the channel used for the contact.</p>
+   */
+  inline const Aws::String& GetSubtype() const { return m_subtype; }
+  inline bool SubtypeHasBeenSet() const { return m_subtypeHasBeenSet; }
+  template <typename SubtypeT = Aws::String>
+  void SetSubtype(SubtypeT&& value) {
+    m_subtypeHasBeenSet = true;
+    m_subtype = std::forward<SubtypeT>(value);
+  }
+  template <typename SubtypeT = Aws::String>
+  Dimensions& WithSubtype(SubtypeT&& value) {
+    SetSubtype(std::forward<SubtypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The testing and simulation type</p>
+   */
+  inline const Aws::String& GetValidationTestType() const { return m_validationTestType; }
+  inline bool ValidationTestTypeHasBeenSet() const { return m_validationTestTypeHasBeenSet; }
+  template <typename ValidationTestTypeT = Aws::String>
+  void SetValidationTestType(ValidationTestTypeT&& value) {
+    m_validationTestTypeHasBeenSet = true;
+    m_validationTestType = std::forward<ValidationTestTypeT>(value);
+  }
+  template <typename ValidationTestTypeT = Aws::String>
+  Dimensions& WithValidationTestType(ValidationTestTypeT&& value) {
+    SetValidationTestType(std::forward<ValidationTestTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   QueueReference m_queue;
 
@@ -131,11 +167,17 @@ class Dimensions {
   Aws::String m_routingStepExpression;
 
   AgentStatusIdentifier m_agentStatus;
+
+  Aws::String m_subtype;
+
+  Aws::String m_validationTestType;
   bool m_queueHasBeenSet = false;
   bool m_channelHasBeenSet = false;
   bool m_routingProfileHasBeenSet = false;
   bool m_routingStepExpressionHasBeenSet = false;
   bool m_agentStatusHasBeenSet = false;
+  bool m_subtypeHasBeenSet = false;
+  bool m_validationTestTypeHasBeenSet = false;
 };
 
 }  // namespace Model

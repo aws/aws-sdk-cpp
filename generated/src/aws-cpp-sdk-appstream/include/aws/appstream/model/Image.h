@@ -384,8 +384,8 @@ class Image {
    * use when the customer launches a fleet or image builder. The following instances
    * families are supported:</p> <ul> <li> <p>General Purpose</p> </li> <li>
    * <p>Compute Optimized</p> </li> <li> <p>Memory Optimized</p> </li> <li>
-   * <p>Graphics</p> </li> <li> <p>Graphics Design</p> </li> <li> <p>Graphics Pro</p>
-   * </li> <li> <p>Graphics G4</p> </li> <li> <p>Graphics G5</p> </li> </ul>
+   * <p>Graphics G4</p> </li> <li> <p>Graphics G5</p> </li> <li> <p>Graphics G6</p>
+   * </li> </ul>
    */
   inline const Aws::Vector<Aws::String>& GetSupportedInstanceFamilies() const { return m_supportedInstanceFamilies; }
   inline bool SupportedInstanceFamiliesHasBeenSet() const { return m_supportedInstanceFamiliesHasBeenSet; }

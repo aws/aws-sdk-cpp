@@ -54,6 +54,21 @@ Filters& Filters::operator=(JsonView jsonValue) {
     }
     m_agentStatusesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Subtypes")) {
+    Aws::Utils::Array<JsonView> subtypesJsonList = jsonValue.GetArray("Subtypes");
+    for (unsigned subtypesIndex = 0; subtypesIndex < subtypesJsonList.GetLength(); ++subtypesIndex) {
+      m_subtypes.push_back(subtypesJsonList[subtypesIndex].AsString());
+    }
+    m_subtypesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ValidationTestTypes")) {
+    Aws::Utils::Array<JsonView> validationTestTypesJsonList = jsonValue.GetArray("ValidationTestTypes");
+    for (unsigned validationTestTypesIndex = 0; validationTestTypesIndex < validationTestTypesJsonList.GetLength();
+         ++validationTestTypesIndex) {
+      m_validationTestTypes.push_back(validationTestTypesJsonList[validationTestTypesIndex].AsString());
+    }
+    m_validationTestTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -99,6 +114,23 @@ JsonValue Filters::Jsonize() const {
       agentStatusesJsonList[agentStatusesIndex].AsString(m_agentStatuses[agentStatusesIndex]);
     }
     payload.WithArray("AgentStatuses", std::move(agentStatusesJsonList));
+  }
+
+  if (m_subtypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subtypesJsonList(m_subtypes.size());
+    for (unsigned subtypesIndex = 0; subtypesIndex < subtypesJsonList.GetLength(); ++subtypesIndex) {
+      subtypesJsonList[subtypesIndex].AsString(m_subtypes[subtypesIndex]);
+    }
+    payload.WithArray("Subtypes", std::move(subtypesJsonList));
+  }
+
+  if (m_validationTestTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> validationTestTypesJsonList(m_validationTestTypes.size());
+    for (unsigned validationTestTypesIndex = 0; validationTestTypesIndex < validationTestTypesJsonList.GetLength();
+         ++validationTestTypesIndex) {
+      validationTestTypesJsonList[validationTestTypesIndex].AsString(m_validationTestTypes[validationTestTypesIndex]);
+    }
+    payload.WithArray("ValidationTestTypes", std::move(validationTestTypesJsonList));
   }
 
   return payload;

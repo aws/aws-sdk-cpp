@@ -25,6 +25,7 @@ static const int Parallel_HASH = HashingUtils::HashString("Parallel");
 static const int ECSServiceScaling_HASH = HashingUtils::HashString("ECSServiceScaling");
 static const int EKSResourceScaling_HASH = HashingUtils::HashString("EKSResourceScaling");
 static const int Route53HealthCheck_HASH = HashingUtils::HashString("Route53HealthCheck");
+static const int DocumentDb_HASH = HashingUtils::HashString("DocumentDb");
 
 ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -48,6 +49,8 @@ ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
     return ExecutionBlockType::EKSResourceScaling;
   } else if (hashCode == Route53HealthCheck_HASH) {
     return ExecutionBlockType::Route53HealthCheck;
+  } else if (hashCode == DocumentDb_HASH) {
+    return ExecutionBlockType::DocumentDb;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -82,6 +85,8 @@ Aws::String GetNameForExecutionBlockType(ExecutionBlockType enumValue) {
       return "EKSResourceScaling";
     case ExecutionBlockType::Route53HealthCheck:
       return "Route53HealthCheck";
+    case ExecutionBlockType::DocumentDb:
+      return "DocumentDb";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

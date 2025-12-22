@@ -80,6 +80,14 @@ GetPlanExecutionResult& GetPlanExecutionResult::operator=(const Aws::AmazonWebSe
     m_actualRecoveryTime = jsonValue.GetString("actualRecoveryTime");
     m_actualRecoveryTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("generatedReportDetails")) {
+    Aws::Utils::Array<JsonView> generatedReportDetailsJsonList = jsonValue.GetArray("generatedReportDetails");
+    for (unsigned generatedReportDetailsIndex = 0; generatedReportDetailsIndex < generatedReportDetailsJsonList.GetLength();
+         ++generatedReportDetailsIndex) {
+      m_generatedReportDetails.push_back(generatedReportDetailsJsonList[generatedReportDetailsIndex].AsObject());
+    }
+    m_generatedReportDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("nextToken")) {
     m_nextToken = jsonValue.GetString("nextToken");
     m_nextTokenHasBeenSet = true;

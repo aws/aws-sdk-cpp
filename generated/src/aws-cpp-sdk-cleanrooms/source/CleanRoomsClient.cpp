@@ -81,6 +81,7 @@
 #include <aws/cleanrooms/model/TagResourceRequest.h>
 #include <aws/cleanrooms/model/UntagResourceRequest.h>
 #include <aws/cleanrooms/model/UpdateAnalysisTemplateRequest.h>
+#include <aws/cleanrooms/model/UpdateCollaborationChangeRequestRequest.h>
 #include <aws/cleanrooms/model/UpdateCollaborationRequest.h>
 #include <aws/cleanrooms/model/UpdateConfiguredAudienceModelAssociationRequest.h>
 #include <aws/cleanrooms/model/UpdateConfiguredTableAnalysisRuleRequest.h>
@@ -3243,6 +3244,50 @@ UpdateCollaborationOutcome CleanRoomsClient::UpdateCollaboration(const UpdateCol
         endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
         endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
         return UpdateCollaborationOutcome(
+            MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+UpdateCollaborationChangeRequestOutcome CleanRoomsClient::UpdateCollaborationChangeRequest(
+    const UpdateCollaborationChangeRequestRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateCollaborationChangeRequest);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCollaborationChangeRequest, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.CollaborationIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCollaborationChangeRequest", "Required field: CollaborationIdentifier, is not set");
+    return UpdateCollaborationChangeRequestOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollaborationIdentifier]", false));
+  }
+  if (!request.ChangeRequestIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateCollaborationChangeRequest", "Required field: ChangeRequestIdentifier, is not set");
+    return UpdateCollaborationChangeRequestOutcome(Aws::Client::AWSError<CleanRoomsErrors>(
+        CleanRoomsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChangeRequestIdentifier]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateCollaborationChangeRequest, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateCollaborationChangeRequest, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateCollaborationChangeRequest",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<UpdateCollaborationChangeRequestOutcome>(
+      [&]() -> UpdateCollaborationChangeRequestOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCollaborationChangeRequest, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/collaborations/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCollaborationIdentifier());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/changeRequests/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(request.GetChangeRequestIdentifier());
+        return UpdateCollaborationChangeRequestOutcome(
             MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,

@@ -427,6 +427,57 @@ class AWS_TIMESTREAMINFLUXDB_API TimestreamInfluxDBClient : public Aws::Client::
   }
 
   /**
+   * <p>Reboots a Timestream for InfluxDB cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbCluster">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RebootDbClusterOutcome RebootDbCluster(const Model::RebootDbClusterRequest& request) const;
+
+  /**
+   * A Callable wrapper for RebootDbCluster that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RebootDbClusterRequestT = Model::RebootDbClusterRequest>
+  Model::RebootDbClusterOutcomeCallable RebootDbClusterCallable(const RebootDbClusterRequestT& request) const {
+    return SubmitCallable(&TimestreamInfluxDBClient::RebootDbCluster, request);
+  }
+
+  /**
+   * An Async wrapper for RebootDbCluster that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RebootDbClusterRequestT = Model::RebootDbClusterRequest>
+  void RebootDbClusterAsync(const RebootDbClusterRequestT& request, const RebootDbClusterResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TimestreamInfluxDBClient::RebootDbCluster, request, handler, context);
+  }
+
+  /**
+   * <p>Reboots a Timestream for InfluxDB instance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RebootDbInstance">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RebootDbInstanceOutcome RebootDbInstance(const Model::RebootDbInstanceRequest& request) const;
+
+  /**
+   * A Callable wrapper for RebootDbInstance that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RebootDbInstanceRequestT = Model::RebootDbInstanceRequest>
+  Model::RebootDbInstanceOutcomeCallable RebootDbInstanceCallable(const RebootDbInstanceRequestT& request) const {
+    return SubmitCallable(&TimestreamInfluxDBClient::RebootDbInstance, request);
+  }
+
+  /**
+   * An Async wrapper for RebootDbInstance that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RebootDbInstanceRequestT = Model::RebootDbInstanceRequest>
+  void RebootDbInstanceAsync(const RebootDbInstanceRequestT& request, const RebootDbInstanceResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&TimestreamInfluxDBClient::RebootDbInstance, request, handler, context);
+  }
+
+  /**
    * <p>Tags are composed of a Key/Value pairs. You can use tags to categorize and
    * track your Timestream for InfluxDB resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/TagResource">AWS

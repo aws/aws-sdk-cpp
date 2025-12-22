@@ -38,9 +38,7 @@ class TestAuthorizationRequest : public IoTRequest {
   ///@{
   /**
    * <p>The principal. Valid principals are CertificateArn
-   * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>),
-   * thingGroupArn
-   * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and
+   * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>) and
    * CognitoId (<i>region</i>:<i>id</i>).</p>
    */
   inline const Aws::String& GetPrincipal() const { return m_principal; }

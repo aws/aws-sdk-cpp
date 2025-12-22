@@ -21,6 +21,13 @@ static const int gen4n_win2022_HASH = HashingUtils::HashString("gen4n_win2022");
 static const int gen5n_high_HASH = HashingUtils::HashString("gen5n_high");
 static const int gen5n_ultra_HASH = HashingUtils::HashString("gen5n_ultra");
 static const int gen5n_win2022_HASH = HashingUtils::HashString("gen5n_win2022");
+static const int gen6n_small_HASH = HashingUtils::HashString("gen6n_small");
+static const int gen6n_medium_HASH = HashingUtils::HashString("gen6n_medium");
+static const int gen6n_high_HASH = HashingUtils::HashString("gen6n_high");
+static const int gen6n_ultra_HASH = HashingUtils::HashString("gen6n_ultra");
+static const int gen6n_ultra_win2022_HASH = HashingUtils::HashString("gen6n_ultra_win2022");
+static const int gen6n_pro_HASH = HashingUtils::HashString("gen6n_pro");
+static const int gen6n_pro_win2022_HASH = HashingUtils::HashString("gen6n_pro_win2022");
 
 StreamClass GetStreamClassForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +43,20 @@ StreamClass GetStreamClassForName(const Aws::String& name) {
     return StreamClass::gen5n_ultra;
   } else if (hashCode == gen5n_win2022_HASH) {
     return StreamClass::gen5n_win2022;
+  } else if (hashCode == gen6n_small_HASH) {
+    return StreamClass::gen6n_small;
+  } else if (hashCode == gen6n_medium_HASH) {
+    return StreamClass::gen6n_medium;
+  } else if (hashCode == gen6n_high_HASH) {
+    return StreamClass::gen6n_high;
+  } else if (hashCode == gen6n_ultra_HASH) {
+    return StreamClass::gen6n_ultra;
+  } else if (hashCode == gen6n_ultra_win2022_HASH) {
+    return StreamClass::gen6n_ultra_win2022;
+  } else if (hashCode == gen6n_pro_HASH) {
+    return StreamClass::gen6n_pro;
+  } else if (hashCode == gen6n_pro_win2022_HASH) {
+    return StreamClass::gen6n_pro_win2022;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +83,20 @@ Aws::String GetNameForStreamClass(StreamClass enumValue) {
       return "gen5n_ultra";
     case StreamClass::gen5n_win2022:
       return "gen5n_win2022";
+    case StreamClass::gen6n_small:
+      return "gen6n_small";
+    case StreamClass::gen6n_medium:
+      return "gen6n_medium";
+    case StreamClass::gen6n_high:
+      return "gen6n_high";
+    case StreamClass::gen6n_ultra:
+      return "gen6n_ultra";
+    case StreamClass::gen6n_ultra_win2022:
+      return "gen6n_ultra_win2022";
+    case StreamClass::gen6n_pro:
+      return "gen6n_pro";
+    case StreamClass::gen6n_pro_win2022:
+      return "gen6n_pro_win2022";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

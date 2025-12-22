@@ -93,8 +93,8 @@ class StartOutboundChatContactRequest : public ConnectRequest {
    * using an attribute map. The attributes are standard Amazon Connect attributes.
    * They can be accessed in flows.</p> <ul> <li> <p>Attribute keys can include only
    * alphanumeric, <code>-</code>, and <code>_</code>.</p> </li> <li> <p>This field
-   * can be used to show channel subtype, such as <code>connect:Guide</code> and
-   * <code>connect:SMS</code>.</p> </li> </ul>
+   * can be used to show channel subtype, such as <code>connect:SMS</code> and
+   * <code>connect:WhatsApp</code>.</p> </li> </ul>
    */
   inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const { return m_segmentAttributes; }
   inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
@@ -290,8 +290,8 @@ class StartOutboundChatContactRequest : public ConnectRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier that you provide to ensure the
-   * idempotency of the request. If not provided, the AWS SDK populates this field.
-   * For more information about idempotency, see <a
+   * idempotency of the request. If not provided, the Amazon Web Services SDK
+   * populates this field. For more information about idempotency, see <a
    * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
    * retries safe with idempotent APIs</a>. The token is valid for 7 days after
    * creation. If a contact is already started, the contact ID is returned.</p>

@@ -8,6 +8,7 @@
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/SuppressionListReason.h>
+#include <aws/sesv2/model/SuppressionValidationAttributes.h>
 
 #include <utility>
 
@@ -61,9 +62,31 @@ class PutAccountSuppressionAttributesRequest : public SESV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains additional suppression attributes for your
+   * account.</p>
+   */
+  inline const SuppressionValidationAttributes& GetValidationAttributes() const { return m_validationAttributes; }
+  inline bool ValidationAttributesHasBeenSet() const { return m_validationAttributesHasBeenSet; }
+  template <typename ValidationAttributesT = SuppressionValidationAttributes>
+  void SetValidationAttributes(ValidationAttributesT&& value) {
+    m_validationAttributesHasBeenSet = true;
+    m_validationAttributes = std::forward<ValidationAttributesT>(value);
+  }
+  template <typename ValidationAttributesT = SuppressionValidationAttributes>
+  PutAccountSuppressionAttributesRequest& WithValidationAttributes(ValidationAttributesT&& value) {
+    SetValidationAttributes(std::forward<ValidationAttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<SuppressionListReason> m_suppressedReasons;
+
+  SuppressionValidationAttributes m_validationAttributes;
   bool m_suppressedReasonsHasBeenSet = false;
+  bool m_validationAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

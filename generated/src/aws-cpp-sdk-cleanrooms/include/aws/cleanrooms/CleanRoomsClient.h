@@ -2229,6 +2229,40 @@ class AWS_CLEANROOMS_API CleanRoomsClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates an existing collaboration change request. This operation allows
+   * approval actions for pending change requests in collaborations (APPROVE, DENY,
+   * CANCEL, COMMIT).</p> <p>For change requests without automatic approval, a member
+   * in the collaboration can manually APPROVE or DENY a change request. The
+   * collaboration owner can manually CANCEL or COMMIT a change
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateCollaborationChangeRequest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCollaborationChangeRequestOutcome UpdateCollaborationChangeRequest(
+      const Model::UpdateCollaborationChangeRequestRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateCollaborationChangeRequest that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateCollaborationChangeRequestRequestT = Model::UpdateCollaborationChangeRequestRequest>
+  Model::UpdateCollaborationChangeRequestOutcomeCallable UpdateCollaborationChangeRequestCallable(
+      const UpdateCollaborationChangeRequestRequestT& request) const {
+    return SubmitCallable(&CleanRoomsClient::UpdateCollaborationChangeRequest, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateCollaborationChangeRequest that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateCollaborationChangeRequestRequestT = Model::UpdateCollaborationChangeRequestRequest>
+  void UpdateCollaborationChangeRequestAsync(const UpdateCollaborationChangeRequestRequestT& request,
+                                             const UpdateCollaborationChangeRequestResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CleanRoomsClient::UpdateCollaborationChangeRequest, request, handler, context);
+  }
+
+  /**
    * <p>Provides the details necessary to update a configured audience model
    * association.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateConfiguredAudienceModelAssociation">AWS

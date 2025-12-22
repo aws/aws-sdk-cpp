@@ -70,7 +70,8 @@ class TranslateKeyMaterialRequest : public PaymentCryptographyDataRequest {
 
   ///@{
   /**
-   * <p>The key check value (KCV) algorithm used for calculating the KCV.</p>
+   * <p>The key check value (KCV) algorithm used for calculating the KCV of the
+   * derived key.</p>
    */
   inline KeyCheckValueAlgorithm GetKeyCheckValueAlgorithm() const { return m_keyCheckValueAlgorithm; }
   inline bool KeyCheckValueAlgorithmHasBeenSet() const { return m_keyCheckValueAlgorithmHasBeenSet; }

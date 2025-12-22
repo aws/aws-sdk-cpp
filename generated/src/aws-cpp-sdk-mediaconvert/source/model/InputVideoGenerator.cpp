@@ -38,6 +38,10 @@ InputVideoGenerator& InputVideoGenerator::operator=(JsonView jsonValue) {
     m_height = jsonValue.GetInteger("height");
     m_heightHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("imageInput")) {
+    m_imageInput = jsonValue.GetString("imageInput");
+    m_imageInputHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sampleRate")) {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
     m_sampleRateHasBeenSet = true;
@@ -70,6 +74,10 @@ JsonValue InputVideoGenerator::Jsonize() const {
 
   if (m_heightHasBeenSet) {
     payload.WithInteger("height", m_height);
+  }
+
+  if (m_imageInputHasBeenSet) {
+    payload.WithString("imageInput", m_imageInput);
   }
 
   if (m_sampleRateHasBeenSet) {

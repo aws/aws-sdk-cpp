@@ -43,7 +43,7 @@ TEST_F(CloudWatchLogsSmokeTestSuite, DescribeLogGroupsSuccess )
     
     DescribeLogGroupsRequest input;
     auto outcome = clientSp->DescribeLogGroups(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 TEST_F(CloudWatchLogsSmokeTestSuite, GetLogEventsFailure )
 {

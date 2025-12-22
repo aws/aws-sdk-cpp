@@ -63,5 +63,9 @@ Aws::String UpdateUserSettingsRequest::SerializePayload() const {
     payload.WithObject("brandingConfigurationInput", m_brandingConfigurationInput.Jsonize());
   }
 
+  if (m_webAuthnAllowedHasBeenSet) {
+    payload.WithString("webAuthnAllowed", EnabledTypeMapper::GetNameForEnabledType(m_webAuthnAllowed));
+  }
+
   return payload.View().WriteReadable();
 }

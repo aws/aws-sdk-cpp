@@ -17,6 +17,8 @@
 #include <aws/payment-cryptography-data/model/AmexAttributes.h>
 #include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion1.h>
 #include <aws/payment-cryptography-data/model/AmexCardSecurityCodeVersion2.h>
+#include <aws/payment-cryptography-data/model/As2805KekValidationType.h>
+#include <aws/payment-cryptography-data/model/As2805PekDerivationAttributes.h>
 #include <aws/payment-cryptography-data/model/AsymmetricEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/CardGenerationAttributes.h>
 #include <aws/payment-cryptography-data/model/CardHolderVerificationValue.h>
@@ -50,6 +52,8 @@
 #include <aws/payment-cryptography-data/model/EncryptDataResult.h>
 #include <aws/payment-cryptography-data/model/EncryptionDecryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/EncryptionMode.h>
+#include <aws/payment-cryptography-data/model/GenerateAs2805KekValidationRequest.h>
+#include <aws/payment-cryptography-data/model/GenerateAs2805KekValidationResult.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataRequest.h>
 #include <aws/payment-cryptography-data/model/GenerateCardValidationDataResult.h>
 #include <aws/payment-cryptography-data/model/GenerateMacEmvPinChangeRequest.h>
@@ -65,6 +69,8 @@
 #include <aws/payment-cryptography-data/model/Ibm3624RandomPin.h>
 #include <aws/payment-cryptography-data/model/IncomingDiffieHellmanTr31KeyBlock.h>
 #include <aws/payment-cryptography-data/model/IncomingKeyMaterial.h>
+#include <aws/payment-cryptography-data/model/KekValidationRequest.h>
+#include <aws/payment-cryptography-data/model/KekValidationResponse.h>
 #include <aws/payment-cryptography-data/model/KeyCheckValueAlgorithm.h>
 #include <aws/payment-cryptography-data/model/KeyDerivationFunction.h>
 #include <aws/payment-cryptography-data/model/KeyDerivationHashAlgorithm.h>
@@ -84,6 +90,7 @@
 #include <aws/payment-cryptography-data/model/PinData.h>
 #include <aws/payment-cryptography-data/model/PinGenerationAttributes.h>
 #include <aws/payment-cryptography-data/model/PinVerificationAttributes.h>
+#include <aws/payment-cryptography-data/model/RandomKeySendVariantMask.h>
 #include <aws/payment-cryptography-data/model/ReEncryptDataRequest.h>
 #include <aws/payment-cryptography-data/model/ReEncryptDataResult.h>
 #include <aws/payment-cryptography-data/model/ReEncryptionAttributes.h>
@@ -103,6 +110,7 @@
 #include <aws/payment-cryptography-data/model/TranslatePinDataRequest.h>
 #include <aws/payment-cryptography-data/model/TranslatePinDataResult.h>
 #include <aws/payment-cryptography-data/model/TranslationIsoFormats.h>
+#include <aws/payment-cryptography-data/model/TranslationPinDataAs2805Format0.h>
 #include <aws/payment-cryptography-data/model/TranslationPinDataIsoFormat034.h>
 #include <aws/payment-cryptography-data/model/TranslationPinDataIsoFormat1.h>
 #include <aws/payment-cryptography-data/model/ValidationException.h>

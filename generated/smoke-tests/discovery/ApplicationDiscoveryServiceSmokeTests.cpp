@@ -41,6 +41,6 @@ TEST_F(ApplicationDiscoveryServiceSmokeTestSuite, DescribeAgentsSuccess )
     
     DescribeAgentsRequest input;
     auto outcome = clientSp->DescribeAgents(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

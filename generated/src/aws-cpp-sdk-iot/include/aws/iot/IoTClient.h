@@ -3153,8 +3153,8 @@ class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * <p>Retrieves the encryption configuration for resources and data of your Amazon
    * Web Services account in Amazon Web Services IoT Core. For more information, see
    * <a
-   * href="https://docs.aws.amazon.com/iot/latest/developerguide/key-management.html">Key
-   * management in IoT</a> from the <i>Amazon Web Services IoT Core Developer
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+   * encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeEncryptionConfiguration">AWS
    * API Reference</a></p>
@@ -7200,25 +7200,26 @@ class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient, public Aws::Cli
    * <p>Transfers the specified certificate to the specified Amazon Web Services
    * account.</p> <p>Requires permission to access the <a
    * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a>
-   * action.</p> <p>You can cancel the transfer until it is acknowledged by the
+   * action.</p> <p>You can cancel the transfer until it is accepted by the
    * recipient.</p> <p>No notification is sent to the transfer destination's account.
-   * It's up to the caller to notify the transfer target.</p> <p>The certificate
-   * being transferred must not be in the <code>ACTIVE</code> state. You can use the
-   * <a>UpdateCertificate</a> action to deactivate it.</p> <p>The certificate must
-   * not have any policies attached to it. You can use the <a>DetachPolicy</a> action
-   * to detach them.</p> <p> <b>Customer managed key behavior:</b> When you use a
-   * customer managed key to secure your data and then transfer the key to a customer
-   * in a different account using the <a>TransferCertificate</a> operation, the
-   * certificates will no longer be protected by their customer managed key
-   * configuration. During the transfer process, certificates are encrypted using IoT
-   * owned keys.</p> <p>While a certificate is in the <b>PENDING_TRANSFER</b> state,
-   * it's always protected by IoT owned keys, regardless of the customer managed key
-   * configuration of either the source or destination account. </p> <p>Once the
-   * transfer is completed through <a>AcceptCertificateTransfer</a>,
+   * The caller is responsible for notifying the transfer target.</p> <p>The
+   * certificate being transferred must not be in the <code>ACTIVE</code> state. You
+   * can use the <a>UpdateCertificate</a> action to deactivate it.</p> <p>The
+   * certificate must not have any policies attached to it. You can use the
+   * <a>DetachPolicy</a> action to detach them.</p> <p> <b>Customer managed key
+   * behavior:</b> When you use a customer managed key to encrypt your data and then
+   * transfer the certificate to a customer in a different account using the
+   * <code>TransferCertificate</code> operation, the certificates will no longer be
+   * encrypted by their customer managed key configuration. During the transfer
+   * process, certificates are encrypted using Amazon Web Services IoT Core owned
+   * keys.</p> <p>While a certificate is in the <b>PENDING_TRANSFER</b> state, it's
+   * always protected by Amazon Web Services IoT Core owned keys, regardless of the
+   * customer managed key configuration of either the source or destination account.
+   * </p> <p>Once the transfer is completed through <a>AcceptCertificateTransfer</a>,
    * <a>RejectCertificateTransfer</a>, or <a>CancelCertificateTransfer</a>, the
    * certificate will be protected by the customer managed key configuration of the
    * account that owns the certificate after the transfer operation:</p> <ul> <li>
-   * <p>If the transfer is accepted: The certificate is protected by the destination
+   * <p>If the transfer is accepted: The certificate is encrypted by the target
    * account's customer managed key configuration.</p> </li> <li> <p>If the transfer
    * is rejected or cancelled: The certificate is protected by the source account's
    * customer managed key configuration.</p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -7629,14 +7630,15 @@ class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient, public Aws::Cli
   }
 
   /**
-   * <p>Updates the encryption configuration. By default, all Amazon Web Services IoT
-   * Core data at rest is encrypted using Amazon Web Services owned keys. Amazon Web
-   * Services IoT Core also supports symmetric customer managed keys from Amazon Web
-   * Services Key Management Service (KMS). With customer managed keys, you create,
-   * own, and manage the KMS keys in your Amazon Web Services account. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/iot/latest/developerguide/data-encryption.html">Data
-   * encryption</a> in the <i>Amazon Web Services IoT Core Developer
+   * <p>Updates the encryption configuration. By default, Amazon Web Services IoT
+   * Core encrypts your data at rest using Amazon Web Services owned keys. Amazon Web
+   * Services IoT Core also supports symmetric customer managed keys from Key
+   * Management Service (KMS). With customer managed keys, you create, own, and
+   * manage the KMS keys in your Amazon Web Services account. </p> <p>Before using
+   * this API, you must set up permissions for Amazon Web Services IoT Core to access
+   * KMS. For more information, see <a
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/encryption-at-rest.html">Data
+   * encryption at rest</a> in the <i>Amazon Web Services IoT Core Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateEncryptionConfiguration">AWS
    * API Reference</a></p>

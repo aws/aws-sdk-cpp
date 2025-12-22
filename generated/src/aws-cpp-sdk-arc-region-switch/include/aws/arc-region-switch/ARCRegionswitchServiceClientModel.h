@@ -33,6 +33,7 @@
 #include <aws/arc-region-switch/model/ListPlansInRegionResult.h>
 #include <aws/arc-region-switch/model/ListPlansRequest.h>
 #include <aws/arc-region-switch/model/ListPlansResult.h>
+#include <aws/arc-region-switch/model/ListRoute53HealthChecksInRegionResult.h>
 #include <aws/arc-region-switch/model/ListRoute53HealthChecksResult.h>
 #include <aws/arc-region-switch/model/ListTagsForResourceResult.h>
 #include <aws/arc-region-switch/model/StartPlanExecutionResult.h>
@@ -87,6 +88,7 @@ class ListPlanExecutionsRequest;
 class ListPlansRequest;
 class ListPlansInRegionRequest;
 class ListRoute53HealthChecksRequest;
+class ListRoute53HealthChecksInRegionRequest;
 class ListTagsForResourceRequest;
 class StartPlanExecutionRequest;
 class TagResourceRequest;
@@ -110,6 +112,7 @@ typedef Aws::Utils::Outcome<ListPlanExecutionsResult, ARCRegionswitchError> List
 typedef Aws::Utils::Outcome<ListPlansResult, ARCRegionswitchError> ListPlansOutcome;
 typedef Aws::Utils::Outcome<ListPlansInRegionResult, ARCRegionswitchError> ListPlansInRegionOutcome;
 typedef Aws::Utils::Outcome<ListRoute53HealthChecksResult, ARCRegionswitchError> ListRoute53HealthChecksOutcome;
+typedef Aws::Utils::Outcome<ListRoute53HealthChecksInRegionResult, ARCRegionswitchError> ListRoute53HealthChecksInRegionOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ARCRegionswitchError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartPlanExecutionResult, ARCRegionswitchError> StartPlanExecutionOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, ARCRegionswitchError> TagResourceOutcome;
@@ -133,6 +136,7 @@ typedef std::future<ListPlanExecutionsOutcome> ListPlanExecutionsOutcomeCallable
 typedef std::future<ListPlansOutcome> ListPlansOutcomeCallable;
 typedef std::future<ListPlansInRegionOutcome> ListPlansInRegionOutcomeCallable;
 typedef std::future<ListRoute53HealthChecksOutcome> ListRoute53HealthChecksOutcomeCallable;
+typedef std::future<ListRoute53HealthChecksInRegionOutcome> ListRoute53HealthChecksInRegionOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartPlanExecutionOutcome> StartPlanExecutionOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -185,6 +189,10 @@ typedef std::function<void(const ARCRegionswitchClient*, const Model::ListPlansI
 typedef std::function<void(const ARCRegionswitchClient*, const Model::ListRoute53HealthChecksRequest&,
                            const Model::ListRoute53HealthChecksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRoute53HealthChecksResponseReceivedHandler;
+typedef std::function<void(const ARCRegionswitchClient*, const Model::ListRoute53HealthChecksInRegionRequest&,
+                           const Model::ListRoute53HealthChecksInRegionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListRoute53HealthChecksInRegionResponseReceivedHandler;
 typedef std::function<void(const ARCRegionswitchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

@@ -119,6 +119,15 @@ static const int MALFORMED_SECRET_ARN_HASH = HashingUtils::HashString("MALFORMED
 static const int SECRET_FROM_DIFFERENT_ACCOUNT_HASH = HashingUtils::HashString("SECRET_FROM_DIFFERENT_ACCOUNT");
 static const int SECRET_FROM_DIFFERENT_REGION_HASH = HashingUtils::HashString("SECRET_FROM_DIFFERENT_REGION");
 static const int INVALID_SECRET_HASH = HashingUtils::HashString("INVALID_SECRET");
+static const int RESOURCE_NOT_IN_SAME_REGION_HASH = HashingUtils::HashString("RESOURCE_NOT_IN_SAME_REGION");
+static const int CERTIFICATE_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("CERTIFICATE_RESOURCE_NOT_FOUND");
+static const int CERTIFICATE_ACCESS_DENIED_HASH = HashingUtils::HashString("CERTIFICATE_ACCESS_DENIED");
+static const int DESCRIBE_CERTIFICATE_FAILED_HASH = HashingUtils::HashString("DESCRIBE_CERTIFICATE_FAILED");
+static const int INVALID_CERTIFICATE_STATUS_HASH = HashingUtils::HashString("INVALID_CERTIFICATE_STATUS");
+static const int INVALID_CERTIFICATE_KEY_ALGORITHM_HASH = HashingUtils::HashString("INVALID_CERTIFICATE_KEY_ALGORITHM");
+static const int INVALID_CERTIFICATE_SIGNATURE_ALGORITHM_HASH = HashingUtils::HashString("INVALID_CERTIFICATE_SIGNATURE_ALGORITHM");
+static const int MISSING_CERTIFICATE_DOMAIN_NAME_HASH = HashingUtils::HashString("MISSING_CERTIFICATE_DOMAIN_NAME");
+static const int INVALID_ARN_HASH = HashingUtils::HashString("INVALID_ARN");
 
 ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -300,6 +309,24 @@ ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& nam
     return ValidationExceptionType::SECRET_FROM_DIFFERENT_REGION;
   } else if (hashCode == INVALID_SECRET_HASH) {
     return ValidationExceptionType::INVALID_SECRET;
+  } else if (hashCode == RESOURCE_NOT_IN_SAME_REGION_HASH) {
+    return ValidationExceptionType::RESOURCE_NOT_IN_SAME_REGION;
+  } else if (hashCode == CERTIFICATE_RESOURCE_NOT_FOUND_HASH) {
+    return ValidationExceptionType::CERTIFICATE_RESOURCE_NOT_FOUND;
+  } else if (hashCode == CERTIFICATE_ACCESS_DENIED_HASH) {
+    return ValidationExceptionType::CERTIFICATE_ACCESS_DENIED;
+  } else if (hashCode == DESCRIBE_CERTIFICATE_FAILED_HASH) {
+    return ValidationExceptionType::DESCRIBE_CERTIFICATE_FAILED;
+  } else if (hashCode == INVALID_CERTIFICATE_STATUS_HASH) {
+    return ValidationExceptionType::INVALID_CERTIFICATE_STATUS;
+  } else if (hashCode == INVALID_CERTIFICATE_KEY_ALGORITHM_HASH) {
+    return ValidationExceptionType::INVALID_CERTIFICATE_KEY_ALGORITHM;
+  } else if (hashCode == INVALID_CERTIFICATE_SIGNATURE_ALGORITHM_HASH) {
+    return ValidationExceptionType::INVALID_CERTIFICATE_SIGNATURE_ALGORITHM;
+  } else if (hashCode == MISSING_CERTIFICATE_DOMAIN_NAME_HASH) {
+    return ValidationExceptionType::MISSING_CERTIFICATE_DOMAIN_NAME;
+  } else if (hashCode == INVALID_ARN_HASH) {
+    return ValidationExceptionType::INVALID_ARN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -492,6 +519,24 @@ Aws::String GetNameForValidationExceptionType(ValidationExceptionType enumValue)
       return "SECRET_FROM_DIFFERENT_REGION";
     case ValidationExceptionType::INVALID_SECRET:
       return "INVALID_SECRET";
+    case ValidationExceptionType::RESOURCE_NOT_IN_SAME_REGION:
+      return "RESOURCE_NOT_IN_SAME_REGION";
+    case ValidationExceptionType::CERTIFICATE_RESOURCE_NOT_FOUND:
+      return "CERTIFICATE_RESOURCE_NOT_FOUND";
+    case ValidationExceptionType::CERTIFICATE_ACCESS_DENIED:
+      return "CERTIFICATE_ACCESS_DENIED";
+    case ValidationExceptionType::DESCRIBE_CERTIFICATE_FAILED:
+      return "DESCRIBE_CERTIFICATE_FAILED";
+    case ValidationExceptionType::INVALID_CERTIFICATE_STATUS:
+      return "INVALID_CERTIFICATE_STATUS";
+    case ValidationExceptionType::INVALID_CERTIFICATE_KEY_ALGORITHM:
+      return "INVALID_CERTIFICATE_KEY_ALGORITHM";
+    case ValidationExceptionType::INVALID_CERTIFICATE_SIGNATURE_ALGORITHM:
+      return "INVALID_CERTIFICATE_SIGNATURE_ALGORITHM";
+    case ValidationExceptionType::MISSING_CERTIFICATE_DOMAIN_NAME:
+      return "MISSING_CERTIFICATE_DOMAIN_NAME";
+    case ValidationExceptionType::INVALID_ARN:
+      return "INVALID_ARN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

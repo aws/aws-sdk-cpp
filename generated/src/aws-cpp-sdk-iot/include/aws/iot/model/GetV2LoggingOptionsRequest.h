@@ -8,6 +8,9 @@
 #include <aws/iot/IoT_EXPORTS.h>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace IoT {
 namespace Model {
 
@@ -24,6 +27,28 @@ class GetV2LoggingOptionsRequest : public IoTRequest {
   inline virtual const char* GetServiceRequestName() const override { return "GetV2LoggingOptions"; }
 
   AWS_IOT_API Aws::String SerializePayload() const override;
+
+  AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
+  /**
+   * <p> The flag is used to get all the event types and their respective
+   * configuration that event-based logging supports. </p>
+   */
+  inline bool GetVerbose() const { return m_verbose; }
+  inline bool VerboseHasBeenSet() const { return m_verboseHasBeenSet; }
+  inline void SetVerbose(bool value) {
+    m_verboseHasBeenSet = true;
+    m_verbose = value;
+  }
+  inline GetV2LoggingOptionsRequest& WithVerbose(bool value) {
+    SetVerbose(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_verbose{false};
+  bool m_verboseHasBeenSet = false;
 };
 
 }  // namespace Model

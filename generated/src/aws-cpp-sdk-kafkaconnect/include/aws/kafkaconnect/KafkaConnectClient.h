@@ -540,7 +540,9 @@ class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates the specified connector.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified connector. For request body, specify only one
+   * parameter: either <code>capacity</code> or
+   * <code>connectorConfiguration</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UpdateConnector">AWS
    * API Reference</a></p>
    */

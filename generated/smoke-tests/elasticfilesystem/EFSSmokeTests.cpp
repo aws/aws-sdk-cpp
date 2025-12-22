@@ -41,6 +41,6 @@ TEST_F(EFSSmokeTestSuite, DescribeFileSystemsSuccess )
     
     DescribeFileSystemsRequest input;
     auto outcome = clientSp->DescribeFileSystems(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

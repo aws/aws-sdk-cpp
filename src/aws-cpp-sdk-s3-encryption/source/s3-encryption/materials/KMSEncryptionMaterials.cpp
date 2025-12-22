@@ -9,6 +9,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/s3-encryption/HKDF.h>
 
 using namespace Aws;
 using namespace Aws::Utils;
@@ -68,13 +69,25 @@ namespace Aws
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
                 contentCryptoMaterial.SetFinalCEK(result.GetCiphertextBlob());
+
+                if (contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM_COMMIT) {
+                    contentCryptoMaterial.SetV3IV();
+                    contentCryptoMaterial.SetMessageID(SymmetricCipher::GenerateIV(MESSAGE_ID_BYTES, false));
+
+                    CryptoBuffer CommitmentKey(COMMITMENT_KEY_BYTES);
+                    Aws::S3Encryption::derive_commitment_key(contentCryptoMaterial.GetContentEncryptionKey(), contentCryptoMaterial.GetMessageID(), CommitmentKey);
+                    contentCryptoMaterial.SetKeyCommitment(CommitmentKey);
+
+                    CryptoBuffer EncryptionKey(ENCRYPTION_KEY_BYTES);
+                    Aws::S3Encryption::derive_encryption_key(contentCryptoMaterial.GetContentEncryptionKey(), contentCryptoMaterial.GetMessageID(), EncryptionKey);
+                    contentCryptoMaterial.SetContentEncryptionKey(EncryptionKey);
+                }
                 return CryptoOutcome(Aws::NoResult());
             }
 
             CryptoOutcome KMSEncryptionMaterialsBase::DecryptCEK(ContentCryptoMaterial &contentCryptoMaterial)
             {
                 auto errorOutcome = CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "DecryptContentEncryptionKeyFailed", "Failed to decrypt content encryption key(CEK)", false/*not retryable*/));
-
                 if (m_customerMasterKeyID.empty() && IsKMSDecryptWithAnyCMKAllowed() == false)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Failed to decrypt content encryption key(CEK): KMS CMK is not provided and CMK Any is not allowed.");
@@ -112,7 +125,20 @@ namespace Aws
                 }
 
                 DecryptResult result = outcome.GetResult();
-                contentCryptoMaterial.SetContentEncryptionKey(CryptoBuffer(result.GetPlaintext()));
+                auto decryptedKey = CryptoBuffer(result.GetPlaintext());
+                if (contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM_COMMIT) {
+                    CryptoBuffer CommitmentKey(COMMITMENT_KEY_BYTES);
+                    derive_commitment_key(decryptedKey, contentCryptoMaterial.GetMessageID(), CommitmentKey);
+                    if (!constant_time_equal(CommitmentKey, contentCryptoMaterial.GetKeyCommitment())) {
+                        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Commitment Key does not match.");
+                        return errorOutcome;
+                    }
+                    CryptoBuffer EncryptionKey(ENCRYPTION_KEY_BYTES);
+                    derive_encryption_key(decryptedKey, contentCryptoMaterial.GetMessageID(), EncryptionKey);
+                    contentCryptoMaterial.SetContentEncryptionKey(EncryptionKey);
+                } else {
+                    contentCryptoMaterial.SetContentEncryptionKey(decryptedKey);
+                }
                 if (contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Content Encryption Key could not be decrypted.");
@@ -159,6 +185,9 @@ namespace Aws
                 // Should be "AES/GCM/NoPadding" by default
                 Aws::String cekAlg = ContentCryptoSchemeMapper::GetNameForContentCryptoScheme(contentCryptoMaterial.GetContentCryptoScheme());
                 contentCryptoMaterial.AddMaterialsDescription(kmsEncryptionContextKey, cekAlg);
+                //= ../specification/s3-encryption/data-format/content-metadata.md#v3-only
+                //= type=implication
+                //# The Encryption Context value MUST be used for wrapping algorithm `kms+context` or `12`.
                 request.SetEncryptionContext(contentCryptoMaterial.GetMaterialsDescription());
                 request.SetKeySpec(DataKeySpec::AES_256);
                 GenerateDataKeyOutcome outcome = m_kmsClient->GenerateDataKey(request);
@@ -175,6 +204,46 @@ namespace Aws
                 contentCryptoMaterial.SetContentEncryptionKey(result.GetPlaintext());
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
                 contentCryptoMaterial.SetFinalCEK(result.GetCiphertextBlob());
+
+                //= ../specification/s3-encryption/decryption.md#decrypting-with-commitment
+                //= type=implication
+                //# When using an algorithm suite which supports key commitment, the client MUST verify that the [derived key commitment](./key-derivation.md#hkdf-operation) contains the same bytes as the stored key commitment retrieved from the stored object's metadata.
+                // All four of these are implications, because there's no reasonable way to test it.
+
+                //= ../specification/s3-encryption/decryption.md#decrypting-with-commitment
+                //= type=implication
+                //# When using an algorithm suite which supports key commitment, the verification of the derived key commitment value MUST be done in constant time.
+
+                //= ../specification/s3-encryption/decryption.md#decrypting-with-commitment
+                //= type=implication
+                //# When using an algorithm suite which supports key commitment, the client MUST throw an exception when the derived key commitment value and stored key commitment value do not match.
+
+                //= ../specification/s3-encryption/decryption.md#decrypting-with-commitment
+                //= type=implication
+                //# When using an algorithm suite which supports key commitment, the client MUST verify the key commitment values match before deriving the [derived encryption key](./key-derivation.md#hkdf-operation).
+                if (contentCryptoMaterial.GetContentCryptoScheme() == ContentCryptoScheme::GCM_COMMIT) {
+
+                    //= ../specification/s3-encryption/encryption.md#content-encryption
+                    //= type=implication
+                    //# The client MUST generate an IV or Message ID using the length of the IV or Message ID defined in the algorithm suite.
+
+                    //= ../specification/s3-encryption/encryption.md#content-encryption
+                    //= type=implication
+                    //# The generated IV or Message ID MUST be set or returned from the encryption process such that it can be included in the content metadata.
+
+                    //= ../specification/s3-encryption/encryption.md#alg-aes-256-gcm-hkdf-sha512-commit-key
+                    //= type=implication
+                    //# The derived key commitment value MUST be set or returned from the encryption process such that it can be included in the content metadata.
+                    contentCryptoMaterial.SetV3IV();
+                    contentCryptoMaterial.SetMessageID(SymmetricCipher::GenerateIV(MESSAGE_ID_BYTES, false));
+                    CryptoBuffer CommitmentKey(COMMITMENT_KEY_BYTES);
+                    derive_commitment_key(contentCryptoMaterial.GetContentEncryptionKey(), contentCryptoMaterial.GetMessageID(), CommitmentKey);
+                    contentCryptoMaterial.SetKeyCommitment(CommitmentKey);
+
+                    CryptoBuffer EncryptionKey(ENCRYPTION_KEY_BYTES);
+                    derive_encryption_key(contentCryptoMaterial.GetContentEncryptionKey(), contentCryptoMaterial.GetMessageID(), EncryptionKey);
+                    contentCryptoMaterial.SetContentEncryptionKey(EncryptionKey);
+                }
                 return CryptoOutcome(Aws::NoResult());
             }
         }//namespace Materials

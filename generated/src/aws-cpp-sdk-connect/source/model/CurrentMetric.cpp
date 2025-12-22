@@ -22,6 +22,10 @@ CurrentMetric& CurrentMetric::operator=(JsonView jsonValue) {
     m_name = CurrentMetricNameMapper::GetCurrentMetricNameForName(jsonValue.GetString("Name"));
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("MetricId")) {
+    m_metricId = jsonValue.GetString("MetricId");
+    m_metricIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Unit")) {
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
     m_unitHasBeenSet = true;
@@ -34,6 +38,10 @@ JsonValue CurrentMetric::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("Name", CurrentMetricNameMapper::GetNameForCurrentMetricName(m_name));
+  }
+
+  if (m_metricIdHasBeenSet) {
+    payload.WithString("MetricId", m_metricId);
   }
 
   if (m_unitHasBeenSet) {

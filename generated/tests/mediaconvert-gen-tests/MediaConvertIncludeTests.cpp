@@ -347,6 +347,8 @@
 #include <aws/mediaconvert/model/H265GopBReference.h>
 #include <aws/mediaconvert/model/H265GopSizeUnits.h>
 #include <aws/mediaconvert/model/H265InterlaceMode.h>
+#include <aws/mediaconvert/model/H265MvOverPictureBoundaries.h>
+#include <aws/mediaconvert/model/H265MvTemporalPredictor.h>
 #include <aws/mediaconvert/model/H265ParControl.h>
 #include <aws/mediaconvert/model/H265QualityTuningLevel.h>
 #include <aws/mediaconvert/model/H265QvbrSettings.h>
@@ -360,7 +362,9 @@
 #include <aws/mediaconvert/model/H265Telecine.h>
 #include <aws/mediaconvert/model/H265TemporalAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H265TemporalIds.h>
+#include <aws/mediaconvert/model/H265TilePadding.h>
 #include <aws/mediaconvert/model/H265Tiles.h>
+#include <aws/mediaconvert/model/H265TreeBlockSize.h>
 #include <aws/mediaconvert/model/H265UnregisteredSeiTimecode.h>
 #include <aws/mediaconvert/model/H265WriteMp4PackagingType.h>
 #include <aws/mediaconvert/model/HDRToSDRToneMapper.h>

@@ -62,10 +62,9 @@ class LocationConfiguration {
 
   ///@{
   /**
-   * <p>The streaming capacity that is allocated and ready to handle stream requests
-   * without delay. You pay for this capacity whether it's in use or not. Best for
-   * quickest time from streaming request to streaming session. Default is 1 (2 for
-   * high stream classes) when creating a stream group or adding a location.</p>
+   * <p>This setting, if non-zero, indicates minimum streaming capacity which is
+   * allocated to you and is never released back to the service. You pay for this
+   * base level of capacity at all times, whether used or idle.</p>
    */
   inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
   inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
@@ -81,20 +80,38 @@ class LocationConfiguration {
 
   ///@{
   /**
-   * <p>The streaming capacity that Amazon GameLift Streams can allocate in response
-   * to stream requests, and then de-allocate when the session has terminated. This
-   * offers a cost control measure at the expense of a greater startup time
-   * (typically under 5 minutes). Default is 0 when creating a stream group or adding
-   * a location.</p>
+   * <p>This indicates idle capacity which the service pre-allocates and holds for
+   * you in anticipation of future activity. This helps to insulate your users from
+   * capacity-allocation delays. You pay for capacity which is held in this
+   * intentional idle state.</p>
    */
-  inline int GetOnDemandCapacity() const { return m_onDemandCapacity; }
-  inline bool OnDemandCapacityHasBeenSet() const { return m_onDemandCapacityHasBeenSet; }
-  inline void SetOnDemandCapacity(int value) {
-    m_onDemandCapacityHasBeenSet = true;
-    m_onDemandCapacity = value;
+  inline int GetTargetIdleCapacity() const { return m_targetIdleCapacity; }
+  inline bool TargetIdleCapacityHasBeenSet() const { return m_targetIdleCapacityHasBeenSet; }
+  inline void SetTargetIdleCapacity(int value) {
+    m_targetIdleCapacityHasBeenSet = true;
+    m_targetIdleCapacity = value;
   }
-  inline LocationConfiguration& WithOnDemandCapacity(int value) {
-    SetOnDemandCapacity(value);
+  inline LocationConfiguration& WithTargetIdleCapacity(int value) {
+    SetTargetIdleCapacity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This indicates the maximum capacity that the service can allocate for you.
+   * Newly created streams may take a few minutes to start. Capacity is released back
+   * to the service when idle. You pay for capacity that is allocated to you until it
+   * is released.</p>
+   */
+  inline int GetMaximumCapacity() const { return m_maximumCapacity; }
+  inline bool MaximumCapacityHasBeenSet() const { return m_maximumCapacityHasBeenSet; }
+  inline void SetMaximumCapacity(int value) {
+    m_maximumCapacityHasBeenSet = true;
+    m_maximumCapacity = value;
+  }
+  inline LocationConfiguration& WithMaximumCapacity(int value) {
+    SetMaximumCapacity(value);
     return *this;
   }
   ///@}
@@ -103,10 +120,13 @@ class LocationConfiguration {
 
   int m_alwaysOnCapacity{0};
 
-  int m_onDemandCapacity{0};
+  int m_targetIdleCapacity{0};
+
+  int m_maximumCapacity{0};
   bool m_locationNameHasBeenSet = false;
   bool m_alwaysOnCapacityHasBeenSet = false;
-  bool m_onDemandCapacityHasBeenSet = false;
+  bool m_targetIdleCapacityHasBeenSet = false;
+  bool m_maximumCapacityHasBeenSet = false;
 };
 
 }  // namespace Model

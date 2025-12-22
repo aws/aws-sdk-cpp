@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
+#include <aws/payment-cryptography/model/ImportAs2805KeyCryptogram.h>
 #include <aws/payment-cryptography/model/ImportDiffieHellmanTr31KeyBlock.h>
 #include <aws/payment-cryptography/model/ImportKeyCryptogram.h>
 #include <aws/payment-cryptography/model/ImportTr31KeyBlock.h>
@@ -149,6 +150,25 @@ class ImportKeyMaterial {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Parameter information for key material import using AS2805 key cryptogram
+   * format.</p>
+   */
+  inline const ImportAs2805KeyCryptogram& GetAs2805KeyCryptogram() const { return m_as2805KeyCryptogram; }
+  inline bool As2805KeyCryptogramHasBeenSet() const { return m_as2805KeyCryptogramHasBeenSet; }
+  template <typename As2805KeyCryptogramT = ImportAs2805KeyCryptogram>
+  void SetAs2805KeyCryptogram(As2805KeyCryptogramT&& value) {
+    m_as2805KeyCryptogramHasBeenSet = true;
+    m_as2805KeyCryptogram = std::forward<As2805KeyCryptogramT>(value);
+  }
+  template <typename As2805KeyCryptogramT = ImportAs2805KeyCryptogram>
+  ImportKeyMaterial& WithAs2805KeyCryptogram(As2805KeyCryptogramT&& value) {
+    SetAs2805KeyCryptogram(std::forward<As2805KeyCryptogramT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RootCertificatePublicKey m_rootCertificatePublicKey;
 
@@ -161,12 +181,15 @@ class ImportKeyMaterial {
   ImportKeyCryptogram m_keyCryptogram;
 
   ImportDiffieHellmanTr31KeyBlock m_diffieHellmanTr31KeyBlock;
+
+  ImportAs2805KeyCryptogram m_as2805KeyCryptogram;
   bool m_rootCertificatePublicKeyHasBeenSet = false;
   bool m_trustedCertificatePublicKeyHasBeenSet = false;
   bool m_tr31KeyBlockHasBeenSet = false;
   bool m_tr34KeyBlockHasBeenSet = false;
   bool m_keyCryptogramHasBeenSet = false;
   bool m_diffieHellmanTr31KeyBlockHasBeenSet = false;
+  bool m_as2805KeyCryptogramHasBeenSet = false;
 };
 
 }  // namespace Model

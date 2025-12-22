@@ -23,6 +23,7 @@ static const int HMAC_SHA224_HASH = HashingUtils::HashString("HMAC_SHA224");
 static const int HMAC_SHA256_HASH = HashingUtils::HashString("HMAC_SHA256");
 static const int HMAC_SHA384_HASH = HashingUtils::HashString("HMAC_SHA384");
 static const int HMAC_SHA512_HASH = HashingUtils::HashString("HMAC_SHA512");
+static const int AS2805_4_1_HASH = HashingUtils::HashString("AS2805_4_1");
 
 MacAlgorithm GetMacAlgorithmForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ MacAlgorithm GetMacAlgorithmForName(const Aws::String& name) {
     return MacAlgorithm::HMAC_SHA384;
   } else if (hashCode == HMAC_SHA512_HASH) {
     return MacAlgorithm::HMAC_SHA512;
+  } else if (hashCode == AS2805_4_1_HASH) {
+    return MacAlgorithm::AS2805_4_1;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForMacAlgorithm(MacAlgorithm enumValue) {
       return "HMAC_SHA384";
     case MacAlgorithm::HMAC_SHA512:
       return "HMAC_SHA512";
+    case MacAlgorithm::AS2805_4_1:
+      return "AS2805_4_1";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

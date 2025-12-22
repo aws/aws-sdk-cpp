@@ -41,6 +41,6 @@ TEST_F(ConfigServiceSmokeTestSuite, DescribeConfigurationRecordersSuccess )
     
     DescribeConfigurationRecordersRequest input;
     auto outcome = clientSp->DescribeConfigurationRecorders(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

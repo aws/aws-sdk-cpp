@@ -27,10 +27,16 @@
 #include <aws/bedrock-data-automation/model/Blueprint.h>
 #include <aws/bedrock-data-automation/model/BlueprintFilter.h>
 #include <aws/bedrock-data-automation/model/BlueprintItem.h>
+#include <aws/bedrock-data-automation/model/BlueprintOptimizationJobStatus.h>
+#include <aws/bedrock-data-automation/model/BlueprintOptimizationObject.h>
+#include <aws/bedrock-data-automation/model/BlueprintOptimizationOutputConfiguration.h>
+#include <aws/bedrock-data-automation/model/BlueprintOptimizationSample.h>
 #include <aws/bedrock-data-automation/model/BlueprintStage.h>
 #include <aws/bedrock-data-automation/model/BlueprintStageFilter.h>
 #include <aws/bedrock-data-automation/model/BlueprintSummary.h>
 #include <aws/bedrock-data-automation/model/ChannelLabelingConfiguration.h>
+#include <aws/bedrock-data-automation/model/CopyBlueprintStageRequest.h>
+#include <aws/bedrock-data-automation/model/CopyBlueprintStageResult.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/CreateBlueprintVersionRequest.h>
@@ -62,6 +68,8 @@
 #include <aws/bedrock-data-automation/model/DocumentStandardGenerativeField.h>
 #include <aws/bedrock-data-automation/model/DocumentStandardOutputConfiguration.h>
 #include <aws/bedrock-data-automation/model/EncryptionConfiguration.h>
+#include <aws/bedrock-data-automation/model/GetBlueprintOptimizationStatusRequest.h>
+#include <aws/bedrock-data-automation/model/GetBlueprintOptimizationStatusResult.h>
 #include <aws/bedrock-data-automation/model/GetBlueprintRequest.h>
 #include <aws/bedrock-data-automation/model/GetBlueprintResult.h>
 #include <aws/bedrock-data-automation/model/GetDataAutomationProjectRequest.h>
@@ -74,6 +82,8 @@
 #include <aws/bedrock-data-automation/model/ImageStandardGenerativeField.h>
 #include <aws/bedrock-data-automation/model/ImageStandardGenerativeFieldType.h>
 #include <aws/bedrock-data-automation/model/ImageStandardOutputConfiguration.h>
+#include <aws/bedrock-data-automation/model/InvokeBlueprintOptimizationAsyncRequest.h>
+#include <aws/bedrock-data-automation/model/InvokeBlueprintOptimizationAsyncResult.h>
 #include <aws/bedrock-data-automation/model/Language.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsRequest.h>
 #include <aws/bedrock-data-automation/model/ListBlueprintsResult.h>
@@ -88,6 +98,7 @@
 #include <aws/bedrock-data-automation/model/PIIEntityType.h>
 #include <aws/bedrock-data-automation/model/PIIRedactionMaskMode.h>
 #include <aws/bedrock-data-automation/model/ResourceOwner.h>
+#include <aws/bedrock-data-automation/model/S3Object.h>
 #include <aws/bedrock-data-automation/model/SensitiveDataConfiguration.h>
 #include <aws/bedrock-data-automation/model/SensitiveDataDetectionMode.h>
 #include <aws/bedrock-data-automation/model/SensitiveDataDetectionScopeType.h>

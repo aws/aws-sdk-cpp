@@ -32,7 +32,8 @@ class ScanSbomRequest : public InspectorscanRequest {
   ///@{
   /**
    * <p>The JSON file for the SBOM you want to scan. The SBOM must be in CycloneDX
-   * 1.5 format.</p>
+   * 1.5 format. This format limits you to passing 2000 components before throwing a
+   * <code>ValidException</code> error.</p>
    */
   inline Aws::Utils::DocumentView GetSbom() const { return m_sbom; }
   inline bool SbomHasBeenSet() const { return m_sbomHasBeenSet; }

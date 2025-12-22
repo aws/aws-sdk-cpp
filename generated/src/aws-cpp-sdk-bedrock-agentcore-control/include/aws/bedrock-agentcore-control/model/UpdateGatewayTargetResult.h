@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CredentialProviderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/core/utils/DateTime.h>
@@ -230,6 +231,23 @@ class UpdateGatewayTargetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The metadata configuration that was applied to the gateway target.</p>
+   */
+  inline const MetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  void SetMetadataConfiguration(MetadataConfigurationT&& value) {
+    m_metadataConfigurationHasBeenSet = true;
+    m_metadataConfiguration = std::forward<MetadataConfigurationT>(value);
+  }
+  template <typename MetadataConfigurationT = MetadataConfiguration>
+  UpdateGatewayTargetResult& WithMetadataConfiguration(MetadataConfigurationT&& value) {
+    SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -266,6 +284,8 @@ class UpdateGatewayTargetResult {
 
   Aws::Utils::DateTime m_lastSynchronizedAt{};
 
+  MetadataConfiguration m_metadataConfiguration;
+
   Aws::String m_requestId;
   bool m_gatewayArnHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
@@ -278,6 +298,7 @@ class UpdateGatewayTargetResult {
   bool m_targetConfigurationHasBeenSet = false;
   bool m_credentialProviderConfigurationsHasBeenSet = false;
   bool m_lastSynchronizedAtHasBeenSet = false;
+  bool m_metadataConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

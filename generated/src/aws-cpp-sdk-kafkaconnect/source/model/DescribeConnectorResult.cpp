@@ -76,6 +76,10 @@ DescribeConnectorResult& DescribeConnectorResult::operator=(const Aws::AmazonWeb
     m_logDelivery = jsonValue.GetObject("logDelivery");
     m_logDeliveryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("networkType")) {
+    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("networkType"));
+    m_networkTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("plugins")) {
     Aws::Utils::Array<JsonView> pluginsJsonList = jsonValue.GetArray("plugins");
     for (unsigned pluginsIndex = 0; pluginsIndex < pluginsJsonList.GetLength(); ++pluginsIndex) {

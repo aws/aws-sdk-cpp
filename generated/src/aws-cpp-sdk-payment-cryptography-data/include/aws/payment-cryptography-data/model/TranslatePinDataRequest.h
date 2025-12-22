@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyDataRequest.h>
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
+#include <aws/payment-cryptography-data/model/As2805PekDerivationAttributes.h>
 #include <aws/payment-cryptography-data/model/DukptDerivationAttributes.h>
 #include <aws/payment-cryptography-data/model/TranslationIsoFormats.h>
 #include <aws/payment-cryptography-data/model/WrappedKey.h>
@@ -204,6 +205,25 @@ class TranslatePinDataRequest : public PaymentCryptographyDataRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The attributes and values to use for incoming AS2805 encryption key for PIN
+   * block translation.</p>
+   */
+  inline const As2805PekDerivationAttributes& GetIncomingAs2805Attributes() const { return m_incomingAs2805Attributes; }
+  inline bool IncomingAs2805AttributesHasBeenSet() const { return m_incomingAs2805AttributesHasBeenSet; }
+  template <typename IncomingAs2805AttributesT = As2805PekDerivationAttributes>
+  void SetIncomingAs2805Attributes(IncomingAs2805AttributesT&& value) {
+    m_incomingAs2805AttributesHasBeenSet = true;
+    m_incomingAs2805Attributes = std::forward<IncomingAs2805AttributesT>(value);
+  }
+  template <typename IncomingAs2805AttributesT = As2805PekDerivationAttributes>
+  TranslatePinDataRequest& WithIncomingAs2805Attributes(IncomingAs2805AttributesT&& value) {
+    SetIncomingAs2805Attributes(std::forward<IncomingAs2805AttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_incomingKeyIdentifier;
 
@@ -222,6 +242,8 @@ class TranslatePinDataRequest : public PaymentCryptographyDataRequest {
   WrappedKey m_incomingWrappedKey;
 
   WrappedKey m_outgoingWrappedKey;
+
+  As2805PekDerivationAttributes m_incomingAs2805Attributes;
   bool m_incomingKeyIdentifierHasBeenSet = false;
   bool m_outgoingKeyIdentifierHasBeenSet = false;
   bool m_incomingTranslationAttributesHasBeenSet = false;
@@ -231,6 +253,7 @@ class TranslatePinDataRequest : public PaymentCryptographyDataRequest {
   bool m_outgoingDukptAttributesHasBeenSet = false;
   bool m_incomingWrappedKeyHasBeenSet = false;
   bool m_outgoingWrappedKeyHasBeenSet = false;
+  bool m_incomingAs2805AttributesHasBeenSet = false;
 };
 
 }  // namespace Model

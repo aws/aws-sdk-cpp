@@ -250,6 +250,23 @@ class UserSettingsSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the user can use WebAuthn redirection for passwordless
+   * login to websites within the streaming session.</p>
+   */
+  inline EnabledType GetWebAuthnAllowed() const { return m_webAuthnAllowed; }
+  inline bool WebAuthnAllowedHasBeenSet() const { return m_webAuthnAllowedHasBeenSet; }
+  inline void SetWebAuthnAllowed(EnabledType value) {
+    m_webAuthnAllowedHasBeenSet = true;
+    m_webAuthnAllowed = value;
+  }
+  inline UserSettingsSummary& WithWebAuthnAllowed(EnabledType value) {
+    SetWebAuthnAllowed(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userSettingsArn;
 
@@ -274,6 +291,8 @@ class UserSettingsSummary {
   ToolbarConfiguration m_toolbarConfiguration;
 
   BrandingConfiguration m_brandingConfiguration;
+
+  EnabledType m_webAuthnAllowed{EnabledType::NOT_SET};
   bool m_userSettingsArnHasBeenSet = false;
   bool m_copyAllowedHasBeenSet = false;
   bool m_pasteAllowedHasBeenSet = false;
@@ -286,6 +305,7 @@ class UserSettingsSummary {
   bool m_deepLinkAllowedHasBeenSet = false;
   bool m_toolbarConfigurationHasBeenSet = false;
   bool m_brandingConfigurationHasBeenSet = false;
+  bool m_webAuthnAllowedHasBeenSet = false;
 };
 
 }  // namespace Model

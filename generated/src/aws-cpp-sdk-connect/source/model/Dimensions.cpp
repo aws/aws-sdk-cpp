@@ -38,6 +38,14 @@ Dimensions& Dimensions::operator=(JsonView jsonValue) {
     m_agentStatus = jsonValue.GetObject("AgentStatus");
     m_agentStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Subtype")) {
+    m_subtype = jsonValue.GetString("Subtype");
+    m_subtypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ValidationTestType")) {
+    m_validationTestType = jsonValue.GetString("ValidationTestType");
+    m_validationTestTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +70,14 @@ JsonValue Dimensions::Jsonize() const {
 
   if (m_agentStatusHasBeenSet) {
     payload.WithObject("AgentStatus", m_agentStatus.Jsonize());
+  }
+
+  if (m_subtypeHasBeenSet) {
+    payload.WithString("Subtype", m_subtype);
+  }
+
+  if (m_validationTestTypeHasBeenSet) {
+    payload.WithString("ValidationTestType", m_validationTestType);
   }
 
   return payload;

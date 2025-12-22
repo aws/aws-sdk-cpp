@@ -36,6 +36,7 @@
 #include <aws/ecs/model/BurstablePerformance.h>
 #include <aws/ecs/model/CPUArchitecture.h>
 #include <aws/ecs/model/CanaryConfiguration.h>
+#include <aws/ecs/model/CapacityOptionType.h>
 #include <aws/ecs/model/CapacityProvider.h>
 #include <aws/ecs/model/CapacityProviderField.h>
 #include <aws/ecs/model/CapacityProviderStatus.h>

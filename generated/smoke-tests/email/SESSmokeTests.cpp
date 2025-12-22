@@ -41,6 +41,6 @@ TEST_F(SESSmokeTestSuite, ListIdentitiesSuccess )
     
     ListIdentitiesRequest input;
     auto outcome = clientSp->ListIdentities(input);
-    EXPECT_TRUE( outcome.IsSuccess());
+    EXPECT_TRUE( outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
 }
 }

@@ -83,6 +83,7 @@
 #include <aws/kafkaconnect/model/ListWorkerConfigurationsResult.h>
 #include <aws/kafkaconnect/model/LogDelivery.h>
 #include <aws/kafkaconnect/model/LogDeliveryDescription.h>
+#include <aws/kafkaconnect/model/NetworkType.h>
 #include <aws/kafkaconnect/model/Plugin.h>
 #include <aws/kafkaconnect/model/PluginDescription.h>
 #include <aws/kafkaconnect/model/ProvisionedCapacity.h>

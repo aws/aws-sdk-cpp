@@ -336,16 +336,16 @@ class DescribeInstancesRequest : public EC2Request {
    * example, shows "User Initiated [date]" when you stop or terminate the instance).
    * Similar to the state-reason-code filter.</p> </li> <li> <p>
    * <code>requester-id</code> - The ID of the entity that launched the instance on
-   * your behalf (for example, Amazon Web Services Management Console, Amazon EC2
-   * Auto Scaling, and so on).</p> </li> <li> <p> <code>reservation-id</code> - The
-   * ID of the instance's reservation. A reservation ID is created any time you
-   * launch an instance. A reservation ID has a one-to-one relationship with an
-   * instance launch request, but can be associated with more than one instance if
-   * you launch multiple instances using the same launch request. For example, if you
-   * launch one instance, you get one reservation ID. If you launch ten instances
-   * using the same launch request, you also get one reservation ID.</p> </li> <li>
-   * <p> <code>root-device-name</code> - The device name of the root device volume
-   * (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
+   * your behalf (for example, Amazon Web Services Management Console, Auto Scaling,
+   * and so on).</p> </li> <li> <p> <code>reservation-id</code> - The ID of the
+   * instance's reservation. A reservation ID is created any time you launch an
+   * instance. A reservation ID has a one-to-one relationship with an instance launch
+   * request, but can be associated with more than one instance if you launch
+   * multiple instances using the same launch request. For example, if you launch one
+   * instance, you get one reservation ID. If you launch ten instances using the same
+   * launch request, you also get one reservation ID.</p> </li> <li> <p>
+   * <code>root-device-name</code> - The device name of the root device volume (for
+   * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
    * <code>root-device-type</code> - The type of the root device volume
    * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
    * <code>source-dest-check</code> - Indicates whether the instance performs

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Model {
-enum class AutoApprovedChangeType { NOT_SET, ADD_MEMBER };
+enum class AutoApprovedChangeType { NOT_SET, ADD_MEMBER, GRANT_RECEIVE_RESULTS_ABILITY, REVOKE_RECEIVE_RESULTS_ABILITY };
 
 namespace AutoApprovedChangeTypeMapper {
 AWS_CLEANROOMS_API AutoApprovedChangeType GetAutoApprovedChangeTypeForName(const Aws::String& name);

@@ -24,5 +24,9 @@ Aws::String PutAccountSuppressionAttributesRequest::SerializePayload() const {
     payload.WithArray("SuppressedReasons", std::move(suppressedReasonsJsonList));
   }
 
+  if (m_validationAttributesHasBeenSet) {
+    payload.WithObject("ValidationAttributes", m_validationAttributes.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -55,6 +55,10 @@ Plan& Plan::operator=(JsonView jsonValue) {
     }
     m_triggersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("reportConfiguration")) {
+    m_reportConfiguration = jsonValue.GetObject("reportConfiguration");
+    m_reportConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -130,6 +134,10 @@ JsonValue Plan::Jsonize() const {
       triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
     }
     payload.WithArray("triggers", std::move(triggersJsonList));
+  }
+
+  if (m_reportConfigurationHasBeenSet) {
+    payload.WithObject("reportConfiguration", m_reportConfiguration.Jsonize());
   }
 
   if (m_nameHasBeenSet) {

@@ -37,6 +37,14 @@ HttpAction& HttpAction::operator=(JsonView jsonValue) {
     m_auth = jsonValue.GetObject("auth");
     m_authHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("enableBatching")) {
+    m_enableBatching = jsonValue.GetBool("enableBatching");
+    m_enableBatchingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("batchConfig")) {
+    m_batchConfig = jsonValue.GetObject("batchConfig");
+    m_batchConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +69,14 @@ JsonValue HttpAction::Jsonize() const {
 
   if (m_authHasBeenSet) {
     payload.WithObject("auth", m_auth.Jsonize());
+  }
+
+  if (m_enableBatchingHasBeenSet) {
+    payload.WithBool("enableBatching", m_enableBatching);
+  }
+
+  if (m_batchConfigHasBeenSet) {
+    payload.WithObject("batchConfig", m_batchConfig.Jsonize());
   }
 
   return payload;

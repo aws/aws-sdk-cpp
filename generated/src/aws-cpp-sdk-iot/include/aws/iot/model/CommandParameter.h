@@ -5,8 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/CommandParameterType.h>
 #include <aws/iot/model/CommandParameterValue.h>
+#include <aws/iot/model/CommandParameterValueCondition.h>
 
 #include <utility>
 
@@ -53,9 +56,23 @@ class CommandParameter {
 
   ///@{
   /**
-   * <p>The value used to describe the command. When you assign a value to a
-   * parameter, it will override any default value that you had already
-   * specified.</p>
+   * <p>The type of the command parameter.</p>
+   */
+  inline CommandParameterType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(CommandParameterType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline CommandParameter& WithType(CommandParameterType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Parameter value that overrides the default value, if set.</p>
    */
   inline const CommandParameterValue& GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
@@ -92,6 +109,31 @@ class CommandParameter {
 
   ///@{
   /**
+   * <p>The list of conditions that a command parameter value must satisfy to create
+   * a command execution.</p>
+   */
+  inline const Aws::Vector<CommandParameterValueCondition>& GetValueConditions() const { return m_valueConditions; }
+  inline bool ValueConditionsHasBeenSet() const { return m_valueConditionsHasBeenSet; }
+  template <typename ValueConditionsT = Aws::Vector<CommandParameterValueCondition>>
+  void SetValueConditions(ValueConditionsT&& value) {
+    m_valueConditionsHasBeenSet = true;
+    m_valueConditions = std::forward<ValueConditionsT>(value);
+  }
+  template <typename ValueConditionsT = Aws::Vector<CommandParameterValueCondition>>
+  CommandParameter& WithValueConditions(ValueConditionsT&& value) {
+    SetValueConditions(std::forward<ValueConditionsT>(value));
+    return *this;
+  }
+  template <typename ValueConditionsT = CommandParameterValueCondition>
+  CommandParameter& AddValueConditions(ValueConditionsT&& value) {
+    m_valueConditionsHasBeenSet = true;
+    m_valueConditions.emplace_back(std::forward<ValueConditionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the command parameter.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -110,14 +152,20 @@ class CommandParameter {
  private:
   Aws::String m_name;
 
+  CommandParameterType m_type{CommandParameterType::NOT_SET};
+
   CommandParameterValue m_value;
 
   CommandParameterValue m_defaultValue;
 
+  Aws::Vector<CommandParameterValueCondition> m_valueConditions;
+
   Aws::String m_description;
   bool m_nameHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
   bool m_defaultValueHasBeenSet = false;
+  bool m_valueConditionsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
 };
 

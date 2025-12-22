@@ -31,6 +31,8 @@
 #include <aws/artifact/model/InternalServerException.h>
 #include <aws/artifact/model/ListCustomerAgreementsRequest.h>
 #include <aws/artifact/model/ListCustomerAgreementsResult.h>
+#include <aws/artifact/model/ListReportVersionsRequest.h>
+#include <aws/artifact/model/ListReportVersionsResult.h>
 #include <aws/artifact/model/ListReportsRequest.h>
 #include <aws/artifact/model/ListReportsResult.h>
 #include <aws/artifact/model/NotificationSubscriptionStatus.h>

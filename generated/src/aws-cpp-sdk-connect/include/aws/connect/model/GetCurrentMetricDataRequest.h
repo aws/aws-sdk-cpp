@@ -59,14 +59,18 @@ class GetCurrentMetricDataRequest : public ConnectRequest {
    * limits:</p> <ul> <li> <p>Queues: 100</p> </li> <li> <p>Routing profiles: 100</p>
    * </li> <li> <p>Channels: 3 (VOICE, CHAT, and TASK channels are supported.)</p>
    * </li> <li> <p>RoutingStepExpressions: 50</p> </li> <li> <p>AgentStatuses: 50</p>
-   * </li> </ul> <p>Metric data is retrieved only for the resources associated with
-   * the queues or routing profiles, and by any channels included in the filter. (You
+   * </li> <li> <p>Subtypes: 10</p> </li> <li> <p>ValidationTestTypes: 10</p> </li>
+   * </ul> <p>Metric data is retrieved only for the resources associated with the
+   * queues or routing profiles, and by any channels included in the filter. (You
    * cannot filter by both queue AND routing profile.) You can include both resource
    * IDs and resource ARNs in the same request.</p> <p>When using
    * <code>AgentStatuses</code> as filter make sure Queues is added as primary
-   * filter.</p> <p>When using the <code>RoutingStepExpression</code> filter, you
-   * need to pass exactly one <code>QueueId</code>. The filter is also case sensitive
-   * so when using the <code>RoutingStepExpression</code> filter, grouping by
+   * filter.</p> <p>When using <code>Subtypes</code> as filter make sure Queues is
+   * added as primary filter.</p> <p>When using <code>ValidationTestTypes</code> as
+   * filter make sure Queues is added as primary filter.</p> <p>When using the
+   * <code>RoutingStepExpression</code> filter, you need to pass exactly one
+   * <code>QueueId</code>. The filter is also case sensitive so when using the
+   * <code>RoutingStepExpression</code> filter, grouping by
    * <code>ROUTING_STEP_EXPRESSION</code> is required.</p> <p>Currently tagging is
    * only supported on the resources that are passed in the filter.</p>
    */
@@ -99,11 +103,13 @@ class GetCurrentMetricDataRequest : public ConnectRequest {
    * the primary grouping and use queue filter. When you group by
    * <code>AGENT_STATUS</code>, the only metric available is the
    * <code>AGENTS_ONLINE</code> metric.</p> </li> <li> <p>If you group by
-   * <code>ROUTING_PROFILE</code>, you must include either a queue or routing profile
-   * filter. In addition, a routing profile filter is required for metrics
-   * <code>CONTACTS_SCHEDULED</code>, <code>CONTACTS_IN_QUEUE</code>, and <code>
-   * OLDEST_CONTACT_AGE</code>.</p> </li> <li> <p>When using the
-   * <code>RoutingStepExpression</code> filter, group by
+   * <code>SUBTYPE</code> or <code>VALIDATION_TEST_TYPE</code> as secondary grouping
+   * then you must include <code>QUEUE</code> as primary grouping and use Queue as
+   * filter</p> </li> <li> <p>If you group by <code>ROUTING_PROFILE</code>, you must
+   * include either a queue or routing profile filter. In addition, a routing profile
+   * filter is required for metrics <code>CONTACTS_SCHEDULED</code>,
+   * <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.</p> </li>
+   * <li> <p>When using the <code>RoutingStepExpression</code> filter, group by
    * <code>ROUTING_STEP_EXPRESSION</code> is required.</p> </li> </ul>
    */
   inline const Aws::Vector<Grouping>& GetGroupings() const { return m_groupings; }
@@ -127,10 +133,13 @@ class GetCurrentMetricDataRequest : public ConnectRequest {
 
   ///@{
   /**
-   * <p>The metrics to retrieve. Specify the name and unit for each metric. The
-   * following metrics are available. For a description of all the metrics, see <a
+   * <p>The metrics to retrieve. Specify the name or metricId, and unit for each
+   * metric. The following metrics are available. For a description of all the
+   * metrics, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-   * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <dl>
+   * definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>  <p>
+   * MetricId should be used to reference custom metrics or out of the box metrics as
+   * Arn. If using MetricId, the limit is 10 MetricId per request.</p>  <dl>
    * <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time
    * metrics report: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aftercallwork-real-time">ACW</a>

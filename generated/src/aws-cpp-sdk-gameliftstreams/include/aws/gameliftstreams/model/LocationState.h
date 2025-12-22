@@ -84,10 +84,9 @@ class LocationState {
 
   ///@{
   /**
-   * <p>The streaming capacity that is allocated and ready to handle stream requests
-   * without delay. You pay for this capacity whether it's in use or not. Best for
-   * quickest time from streaming request to streaming session. Default is 1 (2 for
-   * high stream classes) when creating a stream group or adding a location.</p>
+   * <p>This setting, if non-zero, indicates minimum streaming capacity which is
+   * allocated to you and is never released back to the service. You pay for this
+   * base level of capacity at all times, whether used or idle.</p>
    */
   inline int GetAlwaysOnCapacity() const { return m_alwaysOnCapacity; }
   inline bool AlwaysOnCapacityHasBeenSet() const { return m_alwaysOnCapacityHasBeenSet; }
@@ -123,6 +122,44 @@ class LocationState {
 
   ///@{
   /**
+   * <p>This indicates idle capacity which the service pre-allocates and holds for
+   * you in anticipation of future activity. This helps to insulate your users from
+   * capacity-allocation delays. You pay for capacity which is held in this
+   * intentional idle state.</p>
+   */
+  inline int GetTargetIdleCapacity() const { return m_targetIdleCapacity; }
+  inline bool TargetIdleCapacityHasBeenSet() const { return m_targetIdleCapacityHasBeenSet; }
+  inline void SetTargetIdleCapacity(int value) {
+    m_targetIdleCapacityHasBeenSet = true;
+    m_targetIdleCapacity = value;
+  }
+  inline LocationState& WithTargetIdleCapacity(int value) {
+    SetTargetIdleCapacity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This indicates the maximum capacity that the service can allocate for you.
+   * Newly created streams may take a few minutes to start. Capacity is released back
+   * to the service when idle. You pay for capacity that is allocated to you until it
+   * is released.</p>
+   */
+  inline int GetMaximumCapacity() const { return m_maximumCapacity; }
+  inline bool MaximumCapacityHasBeenSet() const { return m_maximumCapacityHasBeenSet; }
+  inline void SetMaximumCapacity(int value) {
+    m_maximumCapacityHasBeenSet = true;
+    m_maximumCapacity = value;
+  }
+  inline LocationState& WithMaximumCapacity(int value) {
+    SetMaximumCapacity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>This value is the always-on capacity that you most recently requested for a
    * stream group. You request capacity separately for each location in a stream
    * group. In response to an increase in requested capacity, Amazon GameLift Streams
@@ -148,12 +185,14 @@ class LocationState {
    * <p>This value is the stream capacity that Amazon GameLift Streams has
    * provisioned in a stream group that can respond immediately to stream requests.
    * It includes resources that are currently streaming and resources that are idle
-   * and ready to respond to stream requests. You pay for this capacity whether it's
-   * in use or not. After making changes to capacity, it can take a few minutes for
-   * the allocated capacity count to reflect the change while compute resources are
-   * allocated or deallocated. Similarly, when allocated on-demand capacity is no
-   * longer needed, it can take a few minutes for Amazon GameLift Streams to spin
-   * down the allocated capacity.</p>
+   * and ready to respond to stream requests. When target-idle capacity is
+   * configured, the idle resources include the capacity buffer maintained beyond
+   * ongoing sessions. You pay for this capacity whether it's in use or not. After
+   * making changes to capacity, it can take a few minutes for the allocated capacity
+   * count to reflect the change while compute resources are allocated or
+   * deallocated. Similarly, when allocated on-demand capacity is no longer needed,
+   * it can take a few minutes for Amazon GameLift Streams to spin down the allocated
+   * capacity.</p>
    */
   inline int GetAllocatedCapacity() const { return m_allocatedCapacity; }
   inline bool AllocatedCapacityHasBeenSet() const { return m_allocatedCapacityHasBeenSet; }
@@ -193,6 +232,10 @@ class LocationState {
 
   int m_onDemandCapacity{0};
 
+  int m_targetIdleCapacity{0};
+
+  int m_maximumCapacity{0};
+
   int m_requestedCapacity{0};
 
   int m_allocatedCapacity{0};
@@ -202,6 +245,8 @@ class LocationState {
   bool m_statusHasBeenSet = false;
   bool m_alwaysOnCapacityHasBeenSet = false;
   bool m_onDemandCapacityHasBeenSet = false;
+  bool m_targetIdleCapacityHasBeenSet = false;
+  bool m_maximumCapacityHasBeenSet = false;
   bool m_requestedCapacityHasBeenSet = false;
   bool m_allocatedCapacityHasBeenSet = false;
   bool m_idleCapacityHasBeenSet = false;

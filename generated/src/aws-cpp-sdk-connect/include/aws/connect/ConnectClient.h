@@ -1304,7 +1304,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
    * of all table properties except for attributes and values. A table with no
    * attributes and values is a valid state for a table. The number of tables per
    * instance is limited to 100 per instance. Customers can request an increase by
-   * using AWS Service Quotas.</p><p><h3>See Also:</h3>   <a
+   * using Amazon Web Services Service Quotas.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTable">AWS
    * API Reference</a></p>
    */
@@ -4692,7 +4692,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
    * time of access are saved alongside the value to help identify values that are
    * actively in use. The term "Batch" is not included in the operation name since it
    * does not meet all the criteria for a batch operation as specified in Batch
-   * Operations: AWS API Standards.</p><p><h3>See Also:</h3>   <a
+   * Operations: Amazon Web Services API Standards.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EvaluateDataTableValues">AWS
    * API Reference</a></p>
    */
@@ -5621,8 +5621,8 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   /**
    * <p>Returns all attributes for a specified data table. A maximum of 100
    * attributes per data table is allowed. Customers can request an increase by using
-   * AWS Service Quotas. The response can be filtered by specific attribute IDs for
-   * CloudFormation integration.</p><p><h3>See Also:</h3>   <a
+   * Amazon Web Services Service Quotas. The response can be filtered by specific
+   * attribute IDs for CloudFormation integration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableAttributes">AWS
    * API Reference</a></p>
    */
@@ -8283,24 +8283,26 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient, public 
   }
 
   /**
-   * <p>Initiates a new outbound SMS contact to a customer. Response of this API
-   * provides the <code>ContactId</code> of the outbound SMS contact created.</p> <p>
-   * <b>SourceEndpoint</b> only supports Endpoints with
+   * <p>Initiates a new outbound SMS or WhatsApp contact to a customer. Response of
+   * this API provides the <code>ContactId</code> of the outbound SMS or WhatsApp
+   * contact created.</p> <p> <b>SourceEndpoint</b> only supports Endpoints with
    * <code>CONNECT_PHONENUMBER_ARN</code> as Type and <b>DestinationEndpoint</b> only
    * supports Endpoints with <code>TELEPHONE_NUMBER</code> as Type.
-   * <b>ContactFlowId</b> initiates the flow to manage the new SMS contact
-   * created.</p> <p>This API can be used to initiate outbound SMS contacts for an
-   * agent, or it can also deflect an ongoing contact to an outbound SMS contact by
-   * using the <a
+   * <b>ContactFlowId</b> initiates the flow to manage the new contact created.</p>
+   * <p>This API can be used to initiate outbound SMS or WhatsApp contacts for an
+   * agent, or it can also deflect an ongoing contact to an outbound SMS or WhatsApp
+   * contact by using the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
-   * Flow Action.</p> <p>For more information about using SMS in Amazon Connect, see
-   * the following topics in the <i>Amazon Connect Administrator Guide</i>:</p> <ul>
-   * <li> <p> <a
+   * Flow Action.</p> <p>For more information about using SMS or WhatsApp in Amazon
+   * Connect, see the following topics in the <i>Amazon Connect Administrator
+   * Guide</i>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-sms-messaging.html">Set
    * up SMS messaging</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
-   * an SMS-enabled phone number through AWS End User Messaging SMS</a> </p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * an SMS-enabled phone number through Amazon Web Services End User Messaging
+   * SMS</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/whatsapp-integration.html">Set
+   * up WhatsApp Business messaging</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">AWS
    * API Reference</a></p>
    */
