@@ -75,7 +75,7 @@ namespace smithy {
                     auto before = std::chrono::steady_clock::now();
                     auto returnValue = func();
                     auto after = std::chrono::steady_clock::now();
-                    RecordExecutionDuration(before, after, std::move(metricName), meter, std::move(attributes), std::move(description));
+                    RecordExecutionDuration(before, after, metricName, meter, attributes, description);
                     return returnValue;
                 }
 
