@@ -15,7 +15,6 @@
     "elastic-beanstalk": "elasticbeanstalk",
     "elastic-load-balancing": "elasticloadbalancing",
     "elastic-load-balancing-v2": "elasticloadbalancingv2",
-    "elastic-transcoder": "elastictranscoder",
     "global-accelerator": "globalaccelerator",
     "iot-1click-devices-service": "iot1click-devices",
     "iot-1click-projects": "iot1click-projects",
