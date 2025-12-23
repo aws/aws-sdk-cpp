@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
 #include <aws/pinpoint-sms-voice-v2/model/RegistrationDeniedReasonInformation.h>
@@ -121,6 +122,25 @@ class RegistrationVersionInformation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Feedback information provided during the registration review process. This
+   * includes comments, suggestions, or additional requirements.</p>
+   */
+  inline const Aws::String& GetFeedback() const { return m_feedback; }
+  inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }
+  template <typename FeedbackT = Aws::String>
+  void SetFeedback(FeedbackT&& value) {
+    m_feedbackHasBeenSet = true;
+    m_feedback = std::forward<FeedbackT>(value);
+  }
+  template <typename FeedbackT = Aws::String>
+  RegistrationVersionInformation& WithFeedback(FeedbackT&& value) {
+    SetFeedback(std::forward<FeedbackT>(value));
+    return *this;
+  }
+  ///@}
  private:
   long long m_versionNumber{0};
 
@@ -129,10 +149,13 @@ class RegistrationVersionInformation {
   RegistrationVersionStatusHistory m_registrationVersionStatusHistory;
 
   Aws::Vector<RegistrationDeniedReasonInformation> m_deniedReasons;
+
+  Aws::String m_feedback;
   bool m_versionNumberHasBeenSet = false;
   bool m_registrationVersionStatusHasBeenSet = false;
   bool m_registrationVersionStatusHistoryHasBeenSet = false;
   bool m_deniedReasonsHasBeenSet = false;
+  bool m_feedbackHasBeenSet = false;
 };
 
 }  // namespace Model

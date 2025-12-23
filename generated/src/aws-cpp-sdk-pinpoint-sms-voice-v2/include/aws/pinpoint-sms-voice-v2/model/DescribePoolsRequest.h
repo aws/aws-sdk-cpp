@@ -37,7 +37,7 @@ class DescribePoolsRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The unique identifier of pools to find. This is an array of strings that can
    * be either the PoolId or PoolArn.</p>  <p>If you are using a shared
-   * End User MessagingSMS resource then you must use the full Amazon Resource
+   * End User Messaging SMS resource then you must use the full Amazon Resource
    * Name(ARN).</p>
    */
   inline const Aws::Vector<Aws::String>& GetPoolIds() const { return m_poolIds; }

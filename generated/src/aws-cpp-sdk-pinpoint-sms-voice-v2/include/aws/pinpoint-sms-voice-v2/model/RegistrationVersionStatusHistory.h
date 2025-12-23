@@ -72,6 +72,25 @@ class RegistrationVersionStatusHistory {
 
   ///@{
   /**
+   * <p>The time when the registration was in the AWS reviewing state, in <a
+   * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
+   */
+  inline const Aws::Utils::DateTime& GetAwsReviewingTimestamp() const { return m_awsReviewingTimestamp; }
+  inline bool AwsReviewingTimestampHasBeenSet() const { return m_awsReviewingTimestampHasBeenSet; }
+  template <typename AwsReviewingTimestampT = Aws::Utils::DateTime>
+  void SetAwsReviewingTimestamp(AwsReviewingTimestampT&& value) {
+    m_awsReviewingTimestampHasBeenSet = true;
+    m_awsReviewingTimestamp = std::forward<AwsReviewingTimestampT>(value);
+  }
+  template <typename AwsReviewingTimestampT = Aws::Utils::DateTime>
+  RegistrationVersionStatusHistory& WithAwsReviewingTimestamp(AwsReviewingTimestampT&& value) {
+    SetAwsReviewingTimestamp(std::forward<AwsReviewingTimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time when the registration was in the reviewing state, in <a
    * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
    */
@@ -207,6 +226,8 @@ class RegistrationVersionStatusHistory {
 
   Aws::Utils::DateTime m_submittedTimestamp{};
 
+  Aws::Utils::DateTime m_awsReviewingTimestamp{};
+
   Aws::Utils::DateTime m_reviewingTimestamp{};
 
   Aws::Utils::DateTime m_requiresAuthenticationTimestamp{};
@@ -222,6 +243,7 @@ class RegistrationVersionStatusHistory {
   Aws::Utils::DateTime m_archivedTimestamp{};
   bool m_draftTimestampHasBeenSet = false;
   bool m_submittedTimestampHasBeenSet = false;
+  bool m_awsReviewingTimestampHasBeenSet = false;
   bool m_reviewingTimestampHasBeenSet = false;
   bool m_requiresAuthenticationTimestampHasBeenSet = false;
   bool m_approvedTimestampHasBeenSet = false;

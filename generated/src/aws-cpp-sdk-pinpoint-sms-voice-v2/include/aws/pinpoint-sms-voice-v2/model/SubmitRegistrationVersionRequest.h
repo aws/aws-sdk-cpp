@@ -47,9 +47,30 @@ class SubmitRegistrationVersionRequest : public PinpointSMSVoiceV2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Set to true to request AWS review of the registration. When enabled, AWS will
+   * perform additional validation and review of the registration submission before
+   * processing.</p>
+   */
+  inline bool GetAwsReview() const { return m_awsReview; }
+  inline bool AwsReviewHasBeenSet() const { return m_awsReviewHasBeenSet; }
+  inline void SetAwsReview(bool value) {
+    m_awsReviewHasBeenSet = true;
+    m_awsReview = value;
+  }
+  inline SubmitRegistrationVersionRequest& WithAwsReview(bool value) {
+    SetAwsReview(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_registrationId;
+
+  bool m_awsReview{false};
   bool m_registrationIdHasBeenSet = false;
+  bool m_awsReviewHasBeenSet = false;
 };
 
 }  // namespace Model

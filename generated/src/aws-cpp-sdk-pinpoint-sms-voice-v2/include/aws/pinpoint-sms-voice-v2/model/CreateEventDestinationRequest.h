@@ -77,7 +77,7 @@ class CreateEventDestinationRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>An array of event types that determine which events to log. If "ALL" is used,
-   * then End User MessagingSMS logs every event type.</p>  <p>The
+   * then End User Messaging SMS logs every event type.</p>  <p>The
    * <code>TEXT_SENT</code> event type is not supported.</p>
    */
   inline const Aws::Vector<EventType>& GetMatchingEventTypes() const { return m_matchingEventTypes; }

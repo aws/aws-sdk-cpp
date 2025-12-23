@@ -29,8 +29,8 @@ class PutResourcePolicyResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource attached
-   * to the resource-based policy.</p>
+   * <p>The Amazon Resource Name (ARN) of the End User Messaging SMS resource
+   * attached to the resource-based policy.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   template <typename ResourceArnT = Aws::String>

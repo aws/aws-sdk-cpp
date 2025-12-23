@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<S3CrtEndpointProviderEndpointTestCase>> S3CrtEndpointProviderTests::TEST_CASES;
-const size_t S3CrtEndpointProviderTests::TEST_CASES_SZ = 389;
+const size_t S3CrtEndpointProviderTests::TEST_CASES_SZ = 390;
 
 Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::getTestCase() {
 
@@ -2340,27 +2340,34 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
     {{/*No endpoint expected*/}, /*error*/"Expected a endpoint to be specified but no endpoint was found"} // expect
   },
   /*TEST CASE 267*/
+  {"S3 Outposts invalid bucket name", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.amazonaws.com"), EpParam("Bucket", "test-accessp-o0b1de75431d83bebd/8xz5w8ijx1qzlbp3i3kbeta0--op-s3"),
+     EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Outposts Bucket alias - it must be a valid bucket name."} // expect
+  },
+  /*TEST CASE 268*/
   {"S3 Outposts bucketAlias Invalid hardware type", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-h0000075431d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"), EpParam("Region", "us-east-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/R"(Unrecognized hardware type: "Expected hardware type o or e but got h")"} // expect
   },
-  /*TEST CASE 268*/
+  /*TEST CASE 269*/
   {"S3 Outposts bucketAlias Special character in Outpost Arn", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-o00000754%1d83bebde8xz5w8ijx1qzlbp3i3kuse10--op-s3"), EpParam("Region", "us-east-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`."} // expect
   },
-  /*TEST CASE 269*/
+  /*TEST CASE 270*/
   {"S3 Outposts bucketAlias - No endpoint set for beta", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "test-accessp-e0b1d075431d83bebde8xz5w8ijx1qzlbp3i3ebeta0--op-s3"), EpParam("Region", "us-east-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Expected a endpoint to be specified but no endpoint was found"} // expect
   },
-  /*TEST CASE 270*/
+  /*TEST CASE 271*/
   {"S3 Snow with bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "http://10.0.1.12:433"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
@@ -2370,7 +2377,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 271*/
+  /*TEST CASE 272*/
   {"S3 Snow without bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Region", "snow"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
@@ -2379,7 +2386,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 272*/
+  /*TEST CASE 273*/
   {"S3 Snow no port", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "http://10.0.1.12"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
@@ -2389,7 +2396,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 273*/
+  /*TEST CASE 274*/
   {"S3 Snow dns endpoint", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://amazonaws.com"), EpParam("Bucket", "bucketName"), EpParam("Region", "snow"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
@@ -2399,7 +2406,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 274*/
+  /*TEST CASE 275*/
   {"Data Plane with short zone name", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--abcd-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2409,7 +2416,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 275*/
+  /*TEST CASE 276*/
   {"Data Plane with short zone name china region", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--abcd-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2419,7 +2426,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 276*/
+  /*TEST CASE 277*/
   {"Data Plane with short zone name with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--abcd-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2429,7 +2436,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 277*/
+  /*TEST CASE 278*/
   {"Data Plane with short zone name with AP china region", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--abcd-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2439,7 +2446,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 278*/
+  /*TEST CASE 279*/
   {"Data Plane with short zone names (13 chars)", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2449,7 +2456,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 279*/
+  /*TEST CASE 280*/
   {"Data Plane with short zone names (13 chars) with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2459,7 +2466,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 280*/
+  /*TEST CASE 281*/
   {"Data Plane with medium zone names (14 chars)", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2469,7 +2476,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 281*/
+  /*TEST CASE 282*/
   {"Data Plane with medium zone names (14 chars) with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2479,7 +2486,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 282*/
+  /*TEST CASE 283*/
   {"Data Plane with long zone names (20 chars)", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2489,7 +2496,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 283*/
+  /*TEST CASE 284*/
   {"Data Plane with long zone names (20 chars)", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2499,7 +2506,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 284*/
+  /*TEST CASE 285*/
   {"Data Plane with short zone fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2509,14 +2516,14 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 285*/
+  /*TEST CASE 286*/
   {"Data Plane with short zone fips china region", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
-  /*TEST CASE 286*/
+  /*TEST CASE 287*/
   {"Data Plane with short zone fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2526,14 +2533,14 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 287*/
+  /*TEST CASE 288*/
   {"Data Plane with short zone fips with AP china region", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
-  /*TEST CASE 288*/
+  /*TEST CASE 289*/
   {"Data Plane with short zone (13 chars) fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2543,7 +2550,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 289*/
+  /*TEST CASE 290*/
   {"Data Plane with short zone (13 chars) fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2553,7 +2560,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 290*/
+  /*TEST CASE 291*/
   {"Data Plane with medium zone (14 chars) fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2563,7 +2570,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 291*/
+  /*TEST CASE 292*/
   {"Data Plane with medium zone (14 chars) fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2573,7 +2580,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 292*/
+  /*TEST CASE 293*/
   {"Data Plane with long zone (20 chars) fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2583,7 +2590,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 293*/
+  /*TEST CASE 294*/
   {"Data Plane with long zone (20 chars) fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2593,7 +2600,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 294*/
+  /*TEST CASE 295*/
   {"Data Plane with long AZ", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2603,7 +2610,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 295*/
+  /*TEST CASE 296*/
   {"Data Plane with long AZ with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2613,7 +2620,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 296*/
+  /*TEST CASE 297*/
   {"Data Plane with long AZ fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2623,7 +2630,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 297*/
+  /*TEST CASE 298*/
   {"Data Plane with long AZ fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2633,7 +2640,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 298*/
+  /*TEST CASE 299*/
   {"Control plane with short AZ bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", false)}, // params
@@ -2643,7 +2650,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 299*/
+  /*TEST CASE 300*/
   {"Control plane with short AZ bucket china region", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", false)}, // params
@@ -2653,7 +2660,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 300*/
+  /*TEST CASE 301*/
   {"Control plane with short AZ bucket and fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", false)}, // params
@@ -2663,14 +2670,14 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 301*/
+  /*TEST CASE 302*/
   {"Control plane with short AZ bucket and fips china region", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "cn-north-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Partition does not support FIPS"} // expect
   },
-  /*TEST CASE 302*/
+  /*TEST CASE 303*/
   {"Control plane without bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", false)}, // params
@@ -2680,7 +2687,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 303*/
+  /*TEST CASE 304*/
   {"Control plane without bucket and fips", // documentation
     {EpParam("UseFIPS", true), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", false)}, // params
@@ -2690,7 +2697,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 304*/
+  /*TEST CASE 305*/
   {"Data Plane sigv4 auth with short AZ", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2700,7 +2707,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 305*/
+  /*TEST CASE 306*/
   {"Data Plane sigv4 auth with short AZ with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2710,7 +2717,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 306*/
+  /*TEST CASE 307*/
   {"Data Plane sigv4 auth with short zone (13 chars)", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2720,7 +2727,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 307*/
+  /*TEST CASE 308*/
   {"Data Plane sigv4 auth with short zone (13 chars) with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2730,7 +2737,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 308*/
+  /*TEST CASE 309*/
   {"Data Plane sigv4 auth with short AZ fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2740,7 +2747,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 309*/
+  /*TEST CASE 310*/
   {"Data Plane sigv4 auth with short AZ fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2750,7 +2757,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 310*/
+  /*TEST CASE 311*/
   {"Data Plane sigv4 auth with short zone (13 chars) fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2760,7 +2767,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 311*/
+  /*TEST CASE 312*/
   {"Data Plane sigv4 auth with short zone (13 chars) fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2770,7 +2777,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 312*/
+  /*TEST CASE 313*/
   {"Data Plane sigv4 auth with long AZ", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2780,7 +2787,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 313*/
+  /*TEST CASE 314*/
   {"Data Plane sigv4 auth with long AZ with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2790,7 +2797,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 314*/
+  /*TEST CASE 315*/
   {"Data Plane sigv4 auth with medium zone(14 chars)", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2800,7 +2807,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 315*/
+  /*TEST CASE 316*/
   {"Data Plane sigv4 auth with medium zone(14 chars) with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2810,7 +2817,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 316*/
+  /*TEST CASE 317*/
   {"Data Plane sigv4 auth with long zone(20 chars)", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2820,7 +2827,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 317*/
+  /*TEST CASE 318*/
   {"Data Plane sigv4 auth with long zone(20 chars) with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2830,7 +2837,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 318*/
+  /*TEST CASE 319*/
   {"Data Plane sigv4 auth with long AZ fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2840,7 +2847,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 319*/
+  /*TEST CASE 320*/
   {"Data Plane sigv4 auth with long AZ fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2850,7 +2857,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 320*/
+  /*TEST CASE 321*/
   {"Data Plane sigv4 auth with medium zone (14 chars) fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2860,7 +2867,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 321*/
+  /*TEST CASE 322*/
   {"Data Plane sigv4 auth with medium zone (14 chars) fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2870,7 +2877,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 322*/
+  /*TEST CASE 323*/
   {"Data Plane sigv4 auth with long zone (20 chars) fips", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2880,7 +2887,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 323*/
+  /*TEST CASE 324*/
   {"Data Plane sigv4 auth with long zone (20 chars) fips with AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2890,7 +2897,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 324*/
+  /*TEST CASE 325*/
   {"Control Plane host override", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true),
      EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2900,7 +2907,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 325*/
+  /*TEST CASE 326*/
   {"Control Plane host override with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", true),
      EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2910,7 +2917,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 326*/
+  /*TEST CASE 327*/
   {"Control Plane host override no bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2920,7 +2927,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 327*/
+  /*TEST CASE 328*/
   {"Data plane host override non virtual session auth", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.0.1"), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
@@ -2930,7 +2937,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 328*/
+  /*TEST CASE 329*/
   {"Data plane host override non virtual session auth with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.0.1"), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2940,7 +2947,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 329*/
+  /*TEST CASE 330*/
   {"Control Plane host override ip", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.0.1"), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true),
      EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2950,7 +2957,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 330*/
+  /*TEST CASE 331*/
   {"Control Plane host override ip with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.0.1"), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", true),
      EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -2960,7 +2967,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 331*/
+  /*TEST CASE 332*/
   {"Data plane host override", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
@@ -2970,7 +2977,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 332*/
+  /*TEST CASE 333*/
   {"Data plane host override with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
@@ -2980,91 +2987,91 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 333*/
+  /*TEST CASE 334*/
   {"bad format error", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--usaz1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Unrecognized S3Express bucket name format."} // expect
   },
-  /*TEST CASE 334*/
+  /*TEST CASE 335*/
   {"bad AP format error", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--usaz1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Unrecognized S3Express bucket name format."} // expect
   },
-  /*TEST CASE 335*/
+  /*TEST CASE 336*/
   {"bad format error no session auth", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--usaz1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Unrecognized S3Express bucket name format."} // expect
   },
-  /*TEST CASE 336*/
+  /*TEST CASE 337*/
   {"bad AP format error no session auth", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--usaz1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Unrecognized S3Express bucket name format."} // expect
   },
-  /*TEST CASE 337*/
+  /*TEST CASE 338*/
   {"accelerate error", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express does not support S3 Accelerate."} // expect
   },
-  /*TEST CASE 338*/
+  /*TEST CASE 339*/
   {"accelerate error with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express does not support S3 Accelerate."} // expect
   },
-  /*TEST CASE 339*/
+  /*TEST CASE 340*/
   {"Data plane bucket format error", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "my.bucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express bucket name is not a valid virtual hostable name."} // expect
   },
-  /*TEST CASE 340*/
+  /*TEST CASE 341*/
   {"Data plane AP format error", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "my.myaccesspoint--test-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express bucket name is not a valid virtual hostable name."} // expect
   },
-  /*TEST CASE 341*/
+  /*TEST CASE 342*/
   {"host override data plane bucket error session auth", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "my.bucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express bucket name is not a valid virtual hostable name."} // expect
   },
-  /*TEST CASE 342*/
+  /*TEST CASE 343*/
   {"host override data plane AP error session auth", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "my.myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express bucket name is not a valid virtual hostable name."} // expect
   },
-  /*TEST CASE 343*/
+  /*TEST CASE 344*/
   {"host override data plane bucket error", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "my.bucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express bucket name is not a valid virtual hostable name."} // expect
   },
-  /*TEST CASE 344*/
+  /*TEST CASE 345*/
   {"host override data plane AP error", // documentation
     {EpParam("UseFIPS", false), EpParam("Endpoint", "https://custom.com"), EpParam("Bucket", "my.myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", false), EpParam("DisableS3ExpressSessionAuth", true)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"S3Express bucket name is not a valid virtual hostable name."} // expect
   },
-  /*TEST CASE 345*/
+  /*TEST CASE 346*/
   {"Control plane without bucket and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", false)}, // params
@@ -3074,7 +3081,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 346*/
+  /*TEST CASE 347*/
   {"Control plane without bucket, fips and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", false)}, // params
@@ -3084,7 +3091,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 347*/
+  /*TEST CASE 348*/
   {"Data Plane with short AZ and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3094,7 +3101,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 348*/
+  /*TEST CASE 349*/
   {"Data Plane with short AZ and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3104,7 +3111,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 349*/
+  /*TEST CASE 350*/
   {"Data Plane sigv4 auth with short AZ and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3114,7 +3121,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 350*/
+  /*TEST CASE 351*/
   {"Data Plane sigv4 auth with short AZ and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--usw2-az1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3124,7 +3131,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 351*/
+  /*TEST CASE 352*/
   {"Data Plane with zone and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--usw2-az12--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3134,7 +3141,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 352*/
+  /*TEST CASE 353*/
   {"Data Plane with zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--usw2-az12--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3144,7 +3151,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 353*/
+  /*TEST CASE 354*/
   {"Data Plane sigv4 auth with zone and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--usw2-az12--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3154,7 +3161,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 354*/
+  /*TEST CASE 355*/
   {"Data Plane sigv4 auth with 9-char zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--usw2-az12--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3164,7 +3171,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 355*/
+  /*TEST CASE 356*/
   {"Data Plane with 13-char zone and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3174,7 +3181,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 356*/
+  /*TEST CASE 357*/
   {"Data Plane with 13-char zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3184,7 +3191,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 357*/
+  /*TEST CASE 358*/
   {"Data Plane sigv4 auth with 13-char zone and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3194,7 +3201,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 358*/
+  /*TEST CASE 359*/
   {"Data Plane sigv4 auth with 13-char zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3204,7 +3211,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 359*/
+  /*TEST CASE 360*/
   {"Data Plane with 14-char zone and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3214,7 +3221,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 360*/
+  /*TEST CASE 361*/
   {"Data Plane with 14-char zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3224,7 +3231,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 361*/
+  /*TEST CASE 362*/
   {"Data Plane sigv4 auth with 14-char zone and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3234,7 +3241,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 362*/
+  /*TEST CASE 363*/
   {"Data Plane sigv4 auth with 14-char zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3244,7 +3251,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 363*/
+  /*TEST CASE 364*/
   {"Data Plane with long zone (20 cha) and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3254,7 +3261,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 364*/
+  /*TEST CASE 365*/
   {"Data Plane with long zone (20 char) and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3264,7 +3271,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 365*/
+  /*TEST CASE 366*/
   {"Data Plane sigv4 auth with long zone (20 char) and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3274,7 +3281,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 366*/
+  /*TEST CASE 367*/
   {"Data Plane sigv4 auth with long zone (20 char) and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test1-long1-zone-ab1--x-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3284,7 +3291,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 367*/
+  /*TEST CASE 368*/
   {"Control plane and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true)}, // params
@@ -3294,7 +3301,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 368*/
+  /*TEST CASE 369*/
   {"Data plane with zone and dualstack and AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3304,7 +3311,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 369*/
+  /*TEST CASE 370*/
   {"Data plane with zone and FIPS with dualstack and AP", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3314,7 +3321,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 370*/
+  /*TEST CASE 371*/
   {"Data Plane sigv4 auth with zone and dualstack and AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3324,7 +3331,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 371*/
+  /*TEST CASE 372*/
   {"Data Plane AP sigv4 auth with zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--usw2-az1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3334,7 +3341,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 372*/
+  /*TEST CASE 373*/
   {"Data Plane with zone (9 char) and AP with dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--usw2-az12--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3344,7 +3351,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 373*/
+  /*TEST CASE 374*/
   {"Data Plane with zone (9 char) and FIPS with AP and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--usw2-az12--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3354,7 +3361,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 374*/
+  /*TEST CASE 375*/
   {"Data Plane sigv4 auth with (9 char) zone and dualstack with AP", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--usw2-az12--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3364,7 +3371,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 375*/
+  /*TEST CASE 376*/
   {"Access Point sigv4 auth with (9 char) zone and FIPS with dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--usw2-az12--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3374,7 +3381,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 376*/
+  /*TEST CASE 377*/
   {"Data Plane with zone (13 char) and AP with dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3384,7 +3391,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 377*/
+  /*TEST CASE 378*/
   {"Data Plane with zone (13 char) and AP with FIPS and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3394,7 +3401,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 378*/
+  /*TEST CASE 379*/
   {"Data Plane sigv4 auth with (13 char) zone with AP and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3404,7 +3411,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 379*/
+  /*TEST CASE 380*/
   {"Data Plane sigv4 auth with (13 char) zone with AP and FIPS and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3414,7 +3421,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 380*/
+  /*TEST CASE 381*/
   {"Data Plane with (14 char) zone and AP with dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3424,7 +3431,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 381*/
+  /*TEST CASE 382*/
   {"Data Plane with (14 char) zone and AP with FIPS and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3434,7 +3441,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 382*/
+  /*TEST CASE 383*/
   {"Data Plane sigv4 auth with (14 char) zone and AP with dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3444,7 +3451,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 383*/
+  /*TEST CASE 384*/
   {"Data Plane with (14 char) zone and AP with FIPS and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false), EpParam("UseDualStack", true),
      EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3454,7 +3461,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 384*/
+  /*TEST CASE 385*/
   {"Data Plane with (20 char) zone and AP with dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3464,7 +3471,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 385*/
+  /*TEST CASE 386*/
   {"Data Plane with (20 char) zone and AP with FIPS and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("UseS3ExpressControlEndpoint", false), EpParam("Region", "us-west-2"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
@@ -3474,7 +3481,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 386*/
+  /*TEST CASE 387*/
   {"Data plane AP with sigv4 and dualstack", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3484,7 +3491,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 387*/
+  /*TEST CASE 388*/
   {"Data plane AP sigv4 with fips and dualstack", // documentation
     {EpParam("UseFIPS", true), EpParam("Bucket", "myaccesspoint--test1-long1-zone-ab1--xa-s3"), EpParam("Region", "us-west-2"), EpParam("Accelerate", false),
      EpParam("UseDualStack", true), EpParam("DisableS3ExpressSessionAuth", true)}, // params
@@ -3494,7 +3501,7 @@ Aws::Vector<S3CrtEndpointProviderEndpointTestCase> S3CrtEndpointProviderTests::g
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 388*/
+  /*TEST CASE 389*/
   {"Control plane with dualstack and bucket", // documentation
     {EpParam("UseFIPS", false), EpParam("Bucket", "mybucket--test-ab1--x-s3"), EpParam("UseS3ExpressControlEndpoint", true), EpParam("Region", "us-east-1"),
      EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params

@@ -19,6 +19,10 @@ Aws::String SubmitRegistrationVersionRequest::SerializePayload() const {
     payload.WithString("RegistrationId", m_registrationId);
   }
 
+  if (m_awsReviewHasBeenSet) {
+    payload.WithBool("AwsReview", m_awsReview);
+  }
+
   return payload.View().WriteReadable();
 }
 
