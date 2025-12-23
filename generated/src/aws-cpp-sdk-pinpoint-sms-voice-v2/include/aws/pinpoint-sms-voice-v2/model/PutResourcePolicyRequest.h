@@ -32,7 +32,7 @@ class PutResourcePolicyRequest : public PinpointSMSVoiceV2Request {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource to
+   * <p>The Amazon Resource Name (ARN) of the End User Messaging SMS resource to
    * attach the resource-based policy to.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }

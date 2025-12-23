@@ -17,6 +17,7 @@ namespace RegistrationStatusMapper {
 
 static const int CREATED_HASH = HashingUtils::HashString("CREATED");
 static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
+static const int AWS_REVIEWING_HASH = HashingUtils::HashString("AWS_REVIEWING");
 static const int REVIEWING_HASH = HashingUtils::HashString("REVIEWING");
 static const int REQUIRES_AUTHENTICATION_HASH = HashingUtils::HashString("REQUIRES_AUTHENTICATION");
 static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
@@ -31,6 +32,8 @@ RegistrationStatus GetRegistrationStatusForName(const Aws::String& name) {
     return RegistrationStatus::CREATED;
   } else if (hashCode == SUBMITTED_HASH) {
     return RegistrationStatus::SUBMITTED;
+  } else if (hashCode == AWS_REVIEWING_HASH) {
+    return RegistrationStatus::AWS_REVIEWING;
   } else if (hashCode == REVIEWING_HASH) {
     return RegistrationStatus::REVIEWING;
   } else if (hashCode == REQUIRES_AUTHENTICATION_HASH) {
@@ -63,6 +66,8 @@ Aws::String GetNameForRegistrationStatus(RegistrationStatus enumValue) {
       return "CREATED";
     case RegistrationStatus::SUBMITTED:
       return "SUBMITTED";
+    case RegistrationStatus::AWS_REVIEWING:
+      return "AWS_REVIEWING";
     case RegistrationStatus::REVIEWING:
       return "REVIEWING";
     case RegistrationStatus::REQUIRES_AUTHENTICATION:

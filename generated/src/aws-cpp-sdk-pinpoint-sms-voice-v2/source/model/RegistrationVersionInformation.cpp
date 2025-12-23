@@ -38,6 +38,10 @@ RegistrationVersionInformation& RegistrationVersionInformation::operator=(JsonVi
     }
     m_deniedReasonsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Feedback")) {
+    m_feedback = jsonValue.GetString("Feedback");
+    m_feedbackHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -63,6 +67,10 @@ JsonValue RegistrationVersionInformation::Jsonize() const {
       deniedReasonsJsonList[deniedReasonsIndex].AsObject(m_deniedReasons[deniedReasonsIndex].Jsonize());
     }
     payload.WithArray("DeniedReasons", std::move(deniedReasonsJsonList));
+  }
+
+  if (m_feedbackHasBeenSet) {
+    payload.WithString("Feedback", m_feedback);
   }
 
   return payload;

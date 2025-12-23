@@ -244,6 +244,8 @@ class AddressComponentMatchScores {
   ///@{
   /**
    * <p>Match scores for the secondary address components in the result.</p>
+   * <p>Coverage for this functionality is available in the following countries: AUS,
+   * AUT, BRA, CAN, ESP, FRA, GBR, IDN, IND, NZL, TUR, TWN, USA.</p>
    */
   inline const Aws::Vector<SecondaryAddressComponentMatchScore>& GetSecondaryAddressComponents() const {
     return m_secondaryAddressComponents;

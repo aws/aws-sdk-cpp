@@ -47,8 +47,7 @@ class CarrierLookupResult {
 
   ///@{
   /**
-   * <p>The numeric dialing code for the country or region where the phone number was
-   * originally registered.</p>
+   * <p>The country or region numeric dialing code for the phone number.</p>
    */
   inline const Aws::String& GetDialingCountryCode() const { return m_dialingCountryCode; }
   template <typename DialingCountryCodeT = Aws::String>
@@ -65,8 +64,8 @@ class CarrierLookupResult {
 
   ///@{
   /**
-   * <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-   * region where the phone number was originally registered.</p>
+   * <p>The two-character country or region code, in ISO 3166-1 alpha-2 format, for
+   * the phone number.</p>
    */
   inline const Aws::String& GetIsoCountryCode() const { return m_isoCountryCode; }
   template <typename IsoCountryCodeT = Aws::String>
@@ -83,7 +82,7 @@ class CarrierLookupResult {
 
   ///@{
   /**
-   * <p>The name of the country where the phone number was originally registered.</p>
+   * <p>The name of the country or region for the phone number.</p>
    */
   inline const Aws::String& GetCountry() const { return m_country; }
   template <typename CountryT = Aws::String>

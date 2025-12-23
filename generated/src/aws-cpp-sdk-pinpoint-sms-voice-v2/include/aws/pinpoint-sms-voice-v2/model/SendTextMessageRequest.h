@@ -55,8 +55,8 @@ class SendTextMessageRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The origination identity of the message. This can be either the PhoneNumber,
    * PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-   *  <p>If you are using a shared End User MessagingSMS resource then you
-   * must use the full Amazon Resource Name(ARN).</p>
+   *  <p>If you are using a shared End User Messaging SMS resource then
+   * you must use the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetOriginationIdentity() const { return m_originationIdentity; }
   inline bool OriginationIdentityHasBeenSet() const { return m_originationIdentityHasBeenSet; }
@@ -255,7 +255,7 @@ class SendTextMessageRequest : public PinpointSMSVoiceV2Request {
    * your origination identity has a lower MPS limit then the lower MPS limit is
    * used. For more information about MPS limits, see <a
    * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html">Message
-   * Parts per Second (MPS) limits</a> in the <i>End User MessagingSMS User
+   * Parts per Second (MPS) limits</a> in the <i>End User Messaging SMS User
    * Guide</i>..</p>
    */
   inline bool GetDryRun() const { return m_dryRun; }

@@ -34,7 +34,8 @@ class AccessPoint {
 
   ///@{
   /**
-   * <p>The position, in longitude and latitude.</p>
+   * <p>The position in World Geodetic System (WGS 84) format: [longitude,
+   * latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }

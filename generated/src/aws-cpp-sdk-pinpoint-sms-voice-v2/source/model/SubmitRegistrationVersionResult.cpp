@@ -42,6 +42,10 @@ SubmitRegistrationVersionResult& SubmitRegistrationVersionResult::operator=(cons
     m_registrationVersionStatusHistory = jsonValue.GetObject("RegistrationVersionStatusHistory");
     m_registrationVersionStatusHistoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsReview")) {
+    m_awsReview = jsonValue.GetBool("AwsReview");
+    m_awsReviewHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -41,6 +41,10 @@ RegistrationFieldValueInformation& RegistrationFieldValueInformation::operator=(
     m_deniedReason = jsonValue.GetString("DeniedReason");
     m_deniedReasonHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Feedback")) {
+    m_feedback = jsonValue.GetString("Feedback");
+    m_feedbackHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +73,10 @@ JsonValue RegistrationFieldValueInformation::Jsonize() const {
 
   if (m_deniedReasonHasBeenSet) {
     payload.WithString("DeniedReason", m_deniedReason);
+  }
+
+  if (m_feedbackHasBeenSet) {
+    payload.WithString("Feedback", m_feedback);
   }
 
   return payload;

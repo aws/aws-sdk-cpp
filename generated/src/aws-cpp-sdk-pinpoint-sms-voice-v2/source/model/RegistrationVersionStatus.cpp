@@ -17,6 +17,7 @@ namespace RegistrationVersionStatusMapper {
 
 static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
 static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
+static const int AWS_REVIEWING_HASH = HashingUtils::HashString("AWS_REVIEWING");
 static const int REVIEWING_HASH = HashingUtils::HashString("REVIEWING");
 static const int REQUIRES_AUTHENTICATION_HASH = HashingUtils::HashString("REQUIRES_AUTHENTICATION");
 static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
@@ -31,6 +32,8 @@ RegistrationVersionStatus GetRegistrationVersionStatusForName(const Aws::String&
     return RegistrationVersionStatus::DRAFT;
   } else if (hashCode == SUBMITTED_HASH) {
     return RegistrationVersionStatus::SUBMITTED;
+  } else if (hashCode == AWS_REVIEWING_HASH) {
+    return RegistrationVersionStatus::AWS_REVIEWING;
   } else if (hashCode == REVIEWING_HASH) {
     return RegistrationVersionStatus::REVIEWING;
   } else if (hashCode == REQUIRES_AUTHENTICATION_HASH) {
@@ -63,6 +66,8 @@ Aws::String GetNameForRegistrationVersionStatus(RegistrationVersionStatus enumVa
       return "DRAFT";
     case RegistrationVersionStatus::SUBMITTED:
       return "SUBMITTED";
+    case RegistrationVersionStatus::AWS_REVIEWING:
+      return "AWS_REVIEWING";
     case RegistrationVersionStatus::REVIEWING:
       return "REVIEWING";
     case RegistrationVersionStatus::REQUIRES_AUTHENTICATION:

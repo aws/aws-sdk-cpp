@@ -41,7 +41,7 @@ class SuggestRequest : public GeoPlacesRequest {
   /**
    * <p>The free-form text query to match addresses against. This is usually a
    * partially typed address from an end user in an address box or form.</p>
-   * <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually
+   * <p>The fields <code>QueryText</code> and <code>QueryID</code> are mutually
    * exclusive.</p>
    */
   inline const Aws::String& GetQueryText() const { return m_queryText; }
@@ -61,6 +61,7 @@ class SuggestRequest : public GeoPlacesRequest {
   ///@{
   /**
    * <p>An optional limit for the number of results returned in a single call.</p>
+   * <p>Default value: 20</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -95,7 +96,7 @@ class SuggestRequest : public GeoPlacesRequest {
   /**
    * <p>The position, in longitude and latitude, that the results should be close to.
    * Typically, place results returned are ranked higher the closer they are to this
-   * position. Stored in <code>[lng, lat]</code> and in the WSG84 format.</p>
+   * position. Stored in <code>[lng, lat]</code> and in the WGS 84 format.</p>
    * <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and
    * <code>FilterCircle</code> are mutually exclusive.</p>
    */

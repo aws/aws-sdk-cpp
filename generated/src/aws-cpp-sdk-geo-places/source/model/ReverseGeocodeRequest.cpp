@@ -60,6 +60,10 @@ Aws::String ReverseGeocodeRequest::SerializePayload() const {
     payload.WithString("IntendedUse", ReverseGeocodeIntendedUseMapper::GetNameForReverseGeocodeIntendedUse(m_intendedUse));
   }
 
+  if (m_headingHasBeenSet) {
+    payload.WithDouble("Heading", m_heading);
+  }
+
   return payload.View().WriteReadable();
 }
 

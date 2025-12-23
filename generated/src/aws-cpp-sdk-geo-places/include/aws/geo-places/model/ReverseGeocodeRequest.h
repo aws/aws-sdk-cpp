@@ -39,9 +39,9 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>The position, in <code>[lng, lat]</code> for which you are querying nearby
-   * results for. Results closer to the position will be ranked higher then results
-   * further away from the position</p>
+   * <p>The position in World Geodetic System (WGS 84) format: [longitude, latitude]
+   * for which you are querying nearby results for. Results closer to the position
+   * will be ranked higher then results further away from the position</p>
    */
   inline const Aws::Vector<double>& GetQueryPosition() const { return m_queryPosition; }
   inline bool QueryPositionHasBeenSet() const { return m_queryPositionHasBeenSet; }
@@ -82,6 +82,7 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
   ///@{
   /**
    * <p>An optional limit for the number of results returned in a single call.</p>
+   * <p>Default value: 1</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -219,6 +220,25 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The heading in degrees from true north in a navigation context. The heading
+   * is measured as the angle clockwise from the North direction.</p> <p>Example:
+   * North is <code>0</code> degrees, East is <code>90</code> degrees, South is
+   * <code>180</code> degrees, and West is <code>270</code> degrees.</p>
+   */
+  inline double GetHeading() const { return m_heading; }
+  inline bool HeadingHasBeenSet() const { return m_headingHasBeenSet; }
+  inline void SetHeading(double value) {
+    m_headingHasBeenSet = true;
+    m_heading = value;
+  }
+  inline ReverseGeocodeRequest& WithHeading(double value) {
+    SetHeading(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<double> m_queryPosition;
 
@@ -237,6 +257,8 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
   ReverseGeocodeIntendedUse m_intendedUse{ReverseGeocodeIntendedUse::NOT_SET};
 
   Aws::String m_key;
+
+  double m_heading{0.0};
   bool m_queryPositionHasBeenSet = false;
   bool m_queryRadiusHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
@@ -246,6 +268,7 @@ class ReverseGeocodeRequest : public GeoPlacesRequest {
   bool m_politicalViewHasBeenSet = false;
   bool m_intendedUseHasBeenSet = false;
   bool m_keyHasBeenSet = false;
+  bool m_headingHasBeenSet = false;
 };
 
 }  // namespace Model

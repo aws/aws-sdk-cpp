@@ -119,8 +119,8 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The name of the OptOutList to associate with the phone number. You can use
    * the OptOutListName or OptOutListArn.</p>  <p>If you are using a
-   * shared End User MessagingSMS resource then you must use the full Amazon Resource
-   * Name(ARN).</p>
+   * shared End User Messaging SMS resource then you must use the full Amazon
+   * Resource Name(ARN).</p>
    */
   inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }
   inline bool OptOutListNameHasBeenSet() const { return m_optOutListNameHasBeenSet; }
@@ -139,7 +139,7 @@ class RequestPhoneNumberRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The pool to associated with the phone number. You can use the PoolId or
-   * PoolArn. </p>  <p>If you are using a shared End User MessagingSMS
+   * PoolArn. </p>  <p>If you are using a shared End User Messaging SMS
    * resource then you must use the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetPoolId() const { return m_poolId; }

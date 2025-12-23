@@ -61,7 +61,8 @@ class AutocompleteRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>An optional limit for the number of results returned in a single call. </p>
+   * <p>An optional limit for the number of results returned in a single call.</p>
+   * <p>Default value: 5</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -79,7 +80,7 @@ class AutocompleteRequest : public GeoPlacesRequest {
   /**
    * <p>The position in longitude and latitude that the results should be close to.
    * Typically, place results returned are ranked higher the closer they are to this
-   * position. Stored in <code>[lng, lat]</code> and in the WSG84 format.</p>
+   * position. Stored in <code>[lng, lat]</code> and in the WGS 84 format.</p>
    * <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and
    * <code>FilterCircle</code> are mutually exclusive.</p>
    */

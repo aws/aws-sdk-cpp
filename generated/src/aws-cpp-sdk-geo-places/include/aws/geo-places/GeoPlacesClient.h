@@ -88,7 +88,10 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
    * helps you by completing partial queries with valid address completion. Also, the
    * API supports the filtering of results based on geographic location, country, or
    * specific place types, and can be tailored using optional parameters like
-   * language and political views.</p><p><h3>See Also:</h3>   <a
+   * language and political views.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/autocomplete.html">Autocomplete</a>
+   * in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Autocomplete">AWS
    * API Reference</a></p>
    */
@@ -118,7 +121,11 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
    * related information. It supports flexible queries, including free-form text or
    * structured queries with components like street names, postal codes, and regions.
    * The Geocode API can also provide additional features such as time zone
-   * information and the inclusion of political views.</p><p><h3>See Also:</h3>   <a
+   * information and the inclusion of political views.</p> <p>For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/geocode.html">Geocode</a>
+   * in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Geocode">AWS
    * API Reference</a></p>
    */
@@ -145,7 +152,10 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p> <code>GetPlace</code> finds a place by its unique ID. A <code>PlaceId</code>
-   * is returned by other place operations.</p><p><h3>See Also:</h3>   <a
+   * is returned by other place operations.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/get-place.html">GetPlace</a>
+   * in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/GetPlace">AWS
    * API Reference</a></p>
    */
@@ -176,7 +186,10 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
    * Reverse Geocode API supports filtering to on place type so that you can refine
    * result based on your need. Also, The Reverse Geocode API can also provide
    * additional features such as time zone information and the inclusion of political
-   * views.</p><p><h3>See Also:</h3>   <a
+   * views.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/reverse-geocode.html">Reverse
+   * Geocode</a> in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/ReverseGeocode">AWS
    * API Reference</a></p>
    */
@@ -206,7 +219,10 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
    * as categories, business chains, food types and more. The API returns details
    * such as a place name, address, phone, category, food type, contact, opening
    * hours. Also, the API can return phonemes, time zones and more based on requested
-   * parameters.</p><p><h3>See Also:</h3>   <a
+   * parameters.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/search-nearby.html">Search
+   * Nearby</a> in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SearchNearby">AWS
    * API Reference</a></p>
    */
@@ -233,7 +249,10 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
   /**
    * <p> <code>SearchText</code> searches for geocode and place information. You can
    * then complete a follow-up query suggested from the <code>Suggest</code> API via
-   * a query id.</p><p><h3>See Also:</h3>   <a
+   * a query id.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/search-text.html">Search
+   * Text</a> in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SearchText">AWS
    * API Reference</a></p>
    */
@@ -268,8 +287,11 @@ class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
    * select the most appropriate suggestion and use it for further searching. The API
    * provides options for filtering results by location and other attributes, and
    * allows for additional features like phonemes and timezones. The response
-   * includes refined query terms and detailed place information.</p><p><h3>See
-   * Also:</h3>   <a
+   * includes refined query terms and detailed place information.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/suggest.html">Suggest</a>
+   * in the <i>Amazon Location Service Developer Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Suggest">AWS
    * API Reference</a></p>
    */

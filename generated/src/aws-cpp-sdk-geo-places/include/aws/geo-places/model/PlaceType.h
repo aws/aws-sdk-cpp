@@ -26,7 +26,8 @@ enum class PlaceType {
   PointOfInterest,
   PointAddress,
   InterpolatedAddress,
-  SecondaryAddress
+  SecondaryAddress,
+  InferredSecondaryAddress
 };
 
 namespace PlaceTypeMapper {

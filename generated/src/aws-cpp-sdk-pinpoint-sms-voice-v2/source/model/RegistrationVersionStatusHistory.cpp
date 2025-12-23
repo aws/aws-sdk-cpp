@@ -26,6 +26,10 @@ RegistrationVersionStatusHistory& RegistrationVersionStatusHistory::operator=(Js
     m_submittedTimestamp = jsonValue.GetDouble("SubmittedTimestamp");
     m_submittedTimestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AwsReviewingTimestamp")) {
+    m_awsReviewingTimestamp = jsonValue.GetDouble("AwsReviewingTimestamp");
+    m_awsReviewingTimestampHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ReviewingTimestamp")) {
     m_reviewingTimestamp = jsonValue.GetDouble("ReviewingTimestamp");
     m_reviewingTimestampHasBeenSet = true;
@@ -66,6 +70,10 @@ JsonValue RegistrationVersionStatusHistory::Jsonize() const {
 
   if (m_submittedTimestampHasBeenSet) {
     payload.WithDouble("SubmittedTimestamp", m_submittedTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_awsReviewingTimestampHasBeenSet) {
+    payload.WithDouble("AwsReviewingTimestamp", m_awsReviewingTimestamp.SecondsWithMSPrecision());
   }
 
   if (m_reviewingTimestampHasBeenSet) {

@@ -14,6 +14,7 @@ enum class RegistrationVersionStatus {
   NOT_SET,
   DRAFT,
   SUBMITTED,
+  AWS_REVIEWING,
   REVIEWING,
   REQUIRES_AUTHENTICATION,
   APPROVED,

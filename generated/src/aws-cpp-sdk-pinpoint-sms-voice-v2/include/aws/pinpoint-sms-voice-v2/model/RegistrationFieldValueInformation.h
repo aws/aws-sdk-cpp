@@ -128,6 +128,26 @@ class RegistrationFieldValueInformation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Feedback provided for this specific field during the registration review
+   * process. This may include validation errors, suggestions for improvement, or
+   * additional requirements.</p>
+   */
+  inline const Aws::String& GetFeedback() const { return m_feedback; }
+  inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }
+  template <typename FeedbackT = Aws::String>
+  void SetFeedback(FeedbackT&& value) {
+    m_feedbackHasBeenSet = true;
+    m_feedback = std::forward<FeedbackT>(value);
+  }
+  template <typename FeedbackT = Aws::String>
+  RegistrationFieldValueInformation& WithFeedback(FeedbackT&& value) {
+    SetFeedback(std::forward<FeedbackT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_fieldPath;
 
@@ -138,11 +158,14 @@ class RegistrationFieldValueInformation {
   Aws::String m_registrationAttachmentId;
 
   Aws::String m_deniedReason;
+
+  Aws::String m_feedback;
   bool m_fieldPathHasBeenSet = false;
   bool m_selectChoicesHasBeenSet = false;
   bool m_textValueHasBeenSet = false;
   bool m_registrationAttachmentIdHasBeenSet = false;
   bool m_deniedReasonHasBeenSet = false;
+  bool m_feedbackHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -49,9 +49,31 @@ class SecondaryAddressComponent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The designator of the secondary address component.</p> <p>Example:
+   * <code>Apt</code>.</p>
+   */
+  inline const Aws::String& GetDesignator() const { return m_designator; }
+  inline bool DesignatorHasBeenSet() const { return m_designatorHasBeenSet; }
+  template <typename DesignatorT = Aws::String>
+  void SetDesignator(DesignatorT&& value) {
+    m_designatorHasBeenSet = true;
+    m_designator = std::forward<DesignatorT>(value);
+  }
+  template <typename DesignatorT = Aws::String>
+  SecondaryAddressComponent& WithDesignator(DesignatorT&& value) {
+    SetDesignator(std::forward<DesignatorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_number;
+
+  Aws::String m_designator;
   bool m_numberHasBeenSet = false;
+  bool m_designatorHasBeenSet = false;
 };
 
 }  // namespace Model
