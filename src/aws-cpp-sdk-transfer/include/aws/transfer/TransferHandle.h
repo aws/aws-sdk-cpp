@@ -13,6 +13,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/s3/S3Errors.h>
+#include <aws/s3/model/ChecksumAlgorithm.h>
 #include <iostream>
 #include <atomic>
 #include <mutex>
@@ -79,9 +80,6 @@ namespace Aws
 
                 Aws::String GetChecksum() const { return m_checksum; };
                 void SetChecksum(const Aws::String& checksum) { m_checksum = checksum; }
-
-                std::shared_ptr<Aws::Utils::Crypto::Hash> GetChecksumHash() const { return m_checksumHash; }
-                void SetChecksumHash(std::shared_ptr<Aws::Utils::Crypto::Hash> hash) { m_checksumHash = hash; }
             private:
 
                 int m_partId = 0;
@@ -96,7 +94,6 @@ namespace Aws
                 std::atomic<unsigned char*> m_downloadBuffer;
                 bool m_lastPart = false;
                 Aws::String m_checksum;
-                std::shared_ptr<Aws::Utils::Crypto::Hash> m_checksumHash;
         };
 
         using PartPointer = std::shared_ptr< PartState >;
@@ -393,14 +390,8 @@ namespace Aws
             Aws::String GetChecksum() const { return m_checksum; }
             void SetChecksum(const Aws::String& checksum) { this->m_checksum = checksum; }
 
-            void SetPartChecksum(int partId, const Aws::String& checksum, uint64_t size) {
-                m_partChecksums[partId] = std::make_pair(checksum, size);
-            }
-            std::pair<Aws::String, uint64_t> GetPartChecksum(int partId) const {
-                auto it = m_partChecksums.find(partId);
-                return it != m_partChecksums.end() ? it->second : std::make_pair("", 0);
-            }
-            const Aws::Map<int, std::pair<Aws::String, uint64_t>>& GetPartChecksums() const { return m_partChecksums; }
+            Aws::S3::Model::ChecksumAlgorithm GetChecksumAlgorithm() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_checksumAlgorithm; }
+            void SetChecksumAlgorithm (const Aws::S3::Model::ChecksumAlgorithm& checksumAlgorithm) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_checksumAlgorithm = checksumAlgorithm; }
 
            private:
             void CleanupDownloadStream();
@@ -443,8 +434,7 @@ namespace Aws
             mutable std::condition_variable m_waitUntilFinishedSignal;
             mutable std::mutex m_getterSetterLock;
             Aws::String m_checksum;
-            // Map of part number to Hash instance for multipart download checksum validation
-            Aws::Map<int, std::pair<Aws::String, uint64_t>> m_partChecksums;
+            Aws::S3::Model::ChecksumAlgorithm m_checksumAlgorithm;
         };
 
         AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);
