@@ -261,6 +261,7 @@
     "ossl",
     "ccrng",
     "KEYWRAP",
+    "HKDF",
     "NVME",
     // EC2
     "IMDS",
