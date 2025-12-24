@@ -333,7 +333,9 @@ class Address {
   /**
    * <p>Components that correspond to secondary identifiers on an Address. Secondary
    * address components include information such as Suite or Unit Number, Building,
-   * or Floor.</p>
+   * or Floor.</p>  <p>Coverage for
+   * <code>Address.SecondaryAddressComponents</code> is available in the following
+   * countries:</p> <p>AUS, CAN, NZL, USA, PRI</p>
    */
   inline const Aws::Vector<SecondaryAddressComponent>& GetSecondaryAddressComponents() const { return m_secondaryAddressComponents; }
   inline bool SecondaryAddressComponentsHasBeenSet() const { return m_secondaryAddressComponentsHasBeenSet; }

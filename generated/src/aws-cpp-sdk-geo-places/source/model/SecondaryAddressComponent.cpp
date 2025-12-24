@@ -22,6 +22,10 @@ SecondaryAddressComponent& SecondaryAddressComponent::operator=(JsonView jsonVal
     m_number = jsonValue.GetString("Number");
     m_numberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Designator")) {
+    m_designator = jsonValue.GetString("Designator");
+    m_designatorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue SecondaryAddressComponent::Jsonize() const {
 
   if (m_numberHasBeenSet) {
     payload.WithString("Number", m_number);
+  }
+
+  if (m_designatorHasBeenSet) {
+    payload.WithString("Designator", m_designator);
   }
 
   return payload;

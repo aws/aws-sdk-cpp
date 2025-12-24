@@ -23,7 +23,7 @@ namespace Model {
  * <p>Describes the current monthly spend limits for sending voice and text
  * messages. For more information on increasing your monthly spend limit, see <a
  * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/awssupport-spend-threshold.html">
- * Requesting a spending quota increase </a> in the <i>End User MessagingSMS User
+ * Requesting a spending quota increase </a> in the <i>End User Messaging SMS User
  * Guide</i>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SpendLimit">AWS
  * API Reference</a></p>

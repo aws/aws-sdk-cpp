@@ -39,9 +39,9 @@ class SearchNearbyRequest : public GeoPlacesRequest {
 
   ///@{
   /**
-   * <p>The position, in <code>[lng, lat]</code> for which you are querying nearby
-   * results for. Results closer to the position will be ranked higher then results
-   * further away from the position</p>
+   * <p>The position in World Geodetic System (WGS 84) format: [longitude, latitude]
+   * for which you are querying nearby results for. Results closer to the position
+   * will be ranked higher then results further away from the position</p>
    */
   inline const Aws::Vector<double>& GetQueryPosition() const { return m_queryPosition; }
   inline bool QueryPositionHasBeenSet() const { return m_queryPositionHasBeenSet; }
@@ -83,6 +83,7 @@ class SearchNearbyRequest : public GeoPlacesRequest {
   ///@{
   /**
    * <p>An optional limit for the number of results returned in a single call.</p>
+   * <p>Default value: 20</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

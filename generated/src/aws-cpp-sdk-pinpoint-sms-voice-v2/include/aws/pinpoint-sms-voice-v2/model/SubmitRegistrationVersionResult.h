@@ -125,6 +125,22 @@ class SubmitRegistrationVersionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether AWS review was requested for this registration
+   * submission.</p>
+   */
+  inline bool GetAwsReview() const { return m_awsReview; }
+  inline void SetAwsReview(bool value) {
+    m_awsReviewHasBeenSet = true;
+    m_awsReview = value;
+  }
+  inline SubmitRegistrationVersionResult& WithAwsReview(bool value) {
+    SetAwsReview(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -149,12 +165,15 @@ class SubmitRegistrationVersionResult {
 
   RegistrationVersionStatusHistory m_registrationVersionStatusHistory;
 
+  bool m_awsReview{false};
+
   Aws::String m_requestId;
   bool m_registrationArnHasBeenSet = false;
   bool m_registrationIdHasBeenSet = false;
   bool m_versionNumberHasBeenSet = false;
   bool m_registrationVersionStatusHasBeenSet = false;
   bool m_registrationVersionStatusHistoryHasBeenSet = false;
+  bool m_awsReviewHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

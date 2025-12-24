@@ -35,7 +35,7 @@ class ListPoolOriginationIdentitiesRequest : public PinpointSMSVoiceV2Request {
   ///@{
   /**
    * <p>The unique identifier for the pool. This value can be either the PoolId or
-   * PoolArn.</p>  <p>If you are using a shared End User MessagingSMS
+   * PoolArn.</p>  <p>If you are using a shared End User Messaging SMS
    * resource then you must use the full Amazon Resource Name(ARN).</p>
    */
   inline const Aws::String& GetPoolId() const { return m_poolId; }

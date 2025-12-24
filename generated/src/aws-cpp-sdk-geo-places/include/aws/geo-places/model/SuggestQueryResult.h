@@ -38,7 +38,7 @@ class SuggestQueryResult {
    * The QueryId retains context from the original Suggest request such as filters,
    * political view and language. See the SearchText API documentation for more
    * details <a
-   * href="https://docs.aws.amazon.com/latest/APIReference/API_geoplaces_SearchText.html">SearchText
+   * href="https://docs.aws.amazon.com/location/latest/APIReference/API_geoplaces_SearchText.html">SearchText
    * API docs</a>.</p>  <p>The fields <code>QueryText</code>, and
    * <code>QueryID</code> are mutually exclusive.</p>
    */

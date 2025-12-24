@@ -29,8 +29,8 @@ class DeleteResourcePolicyResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the End User MessagingSMS resource that the
-   * resource-based policy was deleted from.</p>
+   * <p>The Amazon Resource Name (ARN) of the End User Messaging SMS resource that
+   * the resource-based policy was deleted from.</p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   template <typename ResourceArnT = Aws::String>

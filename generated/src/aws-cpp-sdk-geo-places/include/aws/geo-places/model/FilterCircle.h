@@ -34,8 +34,8 @@ class FilterCircle {
 
   ///@{
   /**
-   * <p>The center position, in longitude and latitude, of the
-   * <code>FilterCircle</code>.</p>
+   * <p>The center position in World Geodetic System (WGS 84) format: [longitude,
+   * latitude].</p>
    */
   inline const Aws::Vector<double>& GetCenter() const { return m_center; }
   inline bool CenterHasBeenSet() const { return m_centerHasBeenSet; }
