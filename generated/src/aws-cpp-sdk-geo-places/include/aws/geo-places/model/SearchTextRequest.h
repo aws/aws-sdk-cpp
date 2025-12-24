@@ -41,8 +41,8 @@ class SearchTextRequest : public GeoPlacesRequest {
   /**
    * <p>The free-form text query to match addresses against. This is usually a
    * partially typed address from an end user in an address box or form.</p>
-   * <p>The fields <code>QueryText</code>, and <code>QueryID</code> are mutually
-   * exclusive.</p>
+   * <p>Exactly one of the following fields must be set: <code>QueryText</code> or
+   * <code>QueryId</code>.</p>
    */
   inline const Aws::String& GetQueryText() const { return m_queryText; }
   inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
@@ -62,9 +62,9 @@ class SearchTextRequest : public GeoPlacesRequest {
   /**
    * <p>The query Id returned by the suggest API. If passed in the request, the
    * SearchText API will preform a SearchText query with the improved query terms for
-   * the original query made to the suggest API.</p>  <p>The fields
-   * <code>QueryText</code>, and <code>QueryID</code> are mutually exclusive.</p>
-   *
+   * the original query made to the suggest API.</p>  <p>Exactly one of the
+   * following fields must be set: <code>QueryText</code> or
+   * <code>QueryId</code>.</p>
    */
   inline const Aws::String& GetQueryId() const { return m_queryId; }
   inline bool QueryIdHasBeenSet() const { return m_queryIdHasBeenSet; }
@@ -83,6 +83,7 @@ class SearchTextRequest : public GeoPlacesRequest {
   ///@{
   /**
    * <p>An optional limit for the number of results returned in a single call.</p>
+   * <p>Default value: 20</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -100,9 +101,9 @@ class SearchTextRequest : public GeoPlacesRequest {
   /**
    * <p>The position, in longitude and latitude, that the results should be close to.
    * Typically, place results returned are ranked higher the closer they are to this
-   * position. Stored in <code>[lng, lat]</code> and in the WSG84 format.</p>
-   * <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and
-   * <code>FilterCircle</code> are mutually exclusive.</p>
+   * position. Stored in <code>[lng, lat]</code> and in the WGS 84 format.</p>
+   * <p>Exactly one of the following fields must be set: <code>BiasPosition</code>,
+   * <code>Filter.BoundingBox</code>, or <code>Filter.Circle</code>.</p>
    */
   inline const Aws::Vector<double>& GetBiasPosition() const { return m_biasPosition; }
   inline bool BiasPositionHasBeenSet() const { return m_biasPositionHasBeenSet; }

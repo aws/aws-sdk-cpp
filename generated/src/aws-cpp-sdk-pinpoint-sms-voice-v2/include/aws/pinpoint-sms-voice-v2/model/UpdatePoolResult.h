@@ -147,7 +147,7 @@ class UpdatePoolResult {
   ///@{
   /**
    * <p>When set to false and an end recipient sends a message that begins with HELP
-   * or STOP to one of your dedicated numbers, End User MessagingSMS automatically
+   * or STOP to one of your dedicated numbers, End User Messaging SMS automatically
    * replies with a customizable message and adds the end recipient to the
    * OptOutList. When set to true you're responsible for responding to HELP and STOP
    * requests. You're also responsible for tracking and honoring opt-out

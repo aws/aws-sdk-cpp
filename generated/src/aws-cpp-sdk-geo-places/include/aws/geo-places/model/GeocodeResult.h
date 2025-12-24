@@ -30,7 +30,8 @@ class GeocodeResult {
 
   ///@{
   /**
-   * <p>The pricing bucket for which the query is charged at.</p> <p>For more
+   * <p>The pricing bucket for which the query is charged at, or the maximum pricing
+   * bucket when the query is charged per item within the query.</p> <p>For more
    * information on pricing, please visit <a
    * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
    * Pricing</a>.</p>

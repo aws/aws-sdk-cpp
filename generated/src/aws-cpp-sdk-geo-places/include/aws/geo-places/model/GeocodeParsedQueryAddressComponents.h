@@ -333,6 +333,9 @@ class GeocodeParsedQueryAddressComponents {
   ///@{
   /**
    * <p>Parsed secondary address components from the provided query text.</p>
+   * <p>Coverage for <code>ParsedQuery.Address.SecondaryAddressComponents</code> is
+   * available in the following countries:</p> <p>AUS, AUT, BRA, CAN, ESP, FRA, GBR,
+   * HKG, IDN, IND, NZL, TUR, TWN, USA</p>
    */
   inline const Aws::Vector<ParsedQuerySecondaryAddressComponent>& GetSecondaryAddressComponents() const {
     return m_secondaryAddressComponents;

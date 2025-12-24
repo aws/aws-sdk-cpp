@@ -36,8 +36,8 @@ class DescribeOptedOutNumbersRequest : public PinpointSMSVoiceV2Request {
   /**
    * <p>The OptOutListName or OptOutListArn of the OptOutList. You can use
    * <a>DescribeOptOutLists</a> to find the values for OptOutListName and
-   * OptOutListArn.</p>  <p>If you are using a shared End User
-   * MessagingSMS resource then you must use the full Amazon Resource Name(ARN).</p>
+   * OptOutListArn.</p>  <p>If you are using a shared End User Messaging
+   * SMS resource then you must use the full Amazon Resource Name(ARN).</p>
    *
    */
   inline const Aws::String& GetOptOutListName() const { return m_optOutListName; }

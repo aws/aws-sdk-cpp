@@ -29,6 +29,10 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const {
     ss << "SpreadLevel=" << StringUtils::URLEncode(SpreadLevelMapper::GetNameForSpreadLevel(m_spreadLevel)) << "&";
   }
 
+  if (m_linkedGroupIdHasBeenSet) {
+    ss << "LinkedGroupId=" << StringUtils::URLEncode(m_linkedGroupId.c_str()) << "&";
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

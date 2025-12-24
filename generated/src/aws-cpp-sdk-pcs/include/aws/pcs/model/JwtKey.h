@@ -20,7 +20,7 @@ namespace PCS {
 namespace Model {
 
 /**
- * <p>The JWT key stored in AWS Secrets Manager for Slurm REST API
+ * <p>The JWT key stored in Amazon Web Services Secrets Manager for Slurm REST API
  * authentication.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/JwtKey">AWS API
  * Reference</a></p>
@@ -34,8 +34,8 @@ class JwtKey {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager secret containing
-   * the JWT key.</p>
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+   * secret containing the JWT key.</p>
    */
   inline const Aws::String& GetSecretArn() const { return m_secretArn; }
   inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
@@ -53,7 +53,8 @@ class JwtKey {
 
   ///@{
   /**
-   * <p>The version of the AWS Secrets Manager secret containing the JWT key.</p>
+   * <p>The version of the Amazon Web Services Secrets Manager secret containing the
+   * JWT key.</p>
    */
   inline const Aws::String& GetSecretVersion() const { return m_secretVersion; }
   inline bool SecretVersionHasBeenSet() const { return m_secretVersionHasBeenSet; }

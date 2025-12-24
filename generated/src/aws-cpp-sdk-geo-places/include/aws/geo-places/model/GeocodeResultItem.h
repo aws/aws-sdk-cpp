@@ -157,7 +157,8 @@ class GeocodeResultItem {
 
   ///@{
   /**
-   * <p>The position in longitude and latitude.</p>
+   * <p>The position in World Geodetic System (WGS 84) format: [longitude,
+   * latitude].</p>
    */
   inline const Aws::Vector<double>& GetPosition() const { return m_position; }
   inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
@@ -270,7 +271,8 @@ class GeocodeResultItem {
 
   ///@{
   /**
-   * <p>Position of the access point represented by longitude and latitude.</p>
+   * <p>Position of the access point in World Geodetic System (WGS 84) format:
+   * [longitude, latitude].</p>
    */
   inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
   inline bool AccessPointsHasBeenSet() const { return m_accessPointsHasBeenSet; }
@@ -413,7 +415,9 @@ class GeocodeResultItem {
   /**
    * <p>All secondary addresses that are associated with a main address. A secondary
    * address is one that includes secondary designators, such as a Suite or Unit
-   * Number, Building, or Floor information.</p>
+   * Number, Building, or Floor information.</p>  <p>Coverage for this
+   * functionality is available in the following countries: AUS, CAN, NZL, USA,
+   * PRI.</p>
    */
   inline const Aws::Vector<RelatedPlace>& GetSecondaryAddresses() const { return m_secondaryAddresses; }
   inline bool SecondaryAddressesHasBeenSet() const { return m_secondaryAddressesHasBeenSet; }
