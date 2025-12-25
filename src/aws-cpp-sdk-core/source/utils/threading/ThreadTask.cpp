@@ -9,7 +9,11 @@
 using namespace Aws::Utils;
 using namespace Aws::Utils::Threading;
 
-ThreadTask::ThreadTask(PooledThreadExecutor& executor) : m_continue(true), m_executor(executor), m_thread(std::bind(&ThreadTask::MainTaskRunner, this))
+ThreadTask::ThreadTask(PooledThreadExecutor& executor)
+    : m_executor(executor),
+      m_continue(true),
+      m_detached(false),
+      m_thread([this]() { this->MainTaskRunner(); }) // lambda captures this
 {
 }
 
