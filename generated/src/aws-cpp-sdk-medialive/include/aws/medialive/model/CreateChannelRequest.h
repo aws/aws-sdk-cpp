@@ -17,6 +17,7 @@
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LinkedChannelSettings.h>
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/MaintenanceCreateSettings.h>
 #include <aws/medialive/model/OutputDestination.h>
@@ -342,6 +343,24 @@ creating multiple resources.
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * The linked channel settings for the channel.
+   */
+  inline const LinkedChannelSettings& GetLinkedChannelSettings() const { return m_linkedChannelSettings; }
+  inline bool LinkedChannelSettingsHasBeenSet() const { return m_linkedChannelSettingsHasBeenSet; }
+  template <typename LinkedChannelSettingsT = LinkedChannelSettings>
+  void SetLinkedChannelSettings(LinkedChannelSettingsT&& value) {
+    m_linkedChannelSettingsHasBeenSet = true;
+    m_linkedChannelSettings = std::forward<LinkedChannelSettingsT>(value);
+  }
+  template <typename LinkedChannelSettingsT = LinkedChannelSettings>
+  CreateChannelRequest& WithLinkedChannelSettings(LinkedChannelSettingsT&& value) {
+    SetLinkedChannelSettings(std::forward<LinkedChannelSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CdiInputSpecification m_cdiInputSpecification;
 
@@ -374,6 +393,8 @@ creating multiple resources.
   ChannelEngineVersionRequest m_channelEngineVersion;
 
   bool m_dryRun{false};
+
+  LinkedChannelSettings m_linkedChannelSettings;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelClassHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
@@ -390,6 +411,7 @@ creating multiple resources.
   bool m_anywhereSettingsHasBeenSet = false;
   bool m_channelEngineVersionHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
+  bool m_linkedChannelSettingsHasBeenSet = false;
 };
 
 }  // namespace Model
