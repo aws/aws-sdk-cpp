@@ -240,6 +240,7 @@
 #include <aws/medialive/model/DescribeClusterRequest.h>
 #include <aws/medialive/model/DescribeClusterSdkResult.h>
 #include <aws/medialive/model/DescribeClusterSummary.h>
+#include <aws/medialive/model/DescribeFollowerChannelSettings.h>
 #include <aws/medialive/model/DescribeInputDeviceRequest.h>
 #include <aws/medialive/model/DescribeInputDeviceResult.h>
 #include <aws/medialive/model/DescribeInputDeviceThumbnailRequest.h>
@@ -248,6 +249,7 @@
 #include <aws/medialive/model/DescribeInputResult.h>
 #include <aws/medialive/model/DescribeInputSecurityGroupRequest.h>
 #include <aws/medialive/model/DescribeInputSecurityGroupResult.h>
+#include <aws/medialive/model/DescribeLinkedChannelSettings.h>
 #include <aws/medialive/model/DescribeMultiplexProgramRequest.h>
 #include <aws/medialive/model/DescribeMultiplexProgramResult.h>
 #include <aws/medialive/model/DescribeMultiplexRequest.h>
@@ -260,6 +262,7 @@
 #include <aws/medialive/model/DescribeNodeSummary.h>
 #include <aws/medialive/model/DescribeOfferingRequest.h>
 #include <aws/medialive/model/DescribeOfferingResult.h>
+#include <aws/medialive/model/DescribePrimaryChannelSettings.h>
 #include <aws/medialive/model/DescribeReservationRequest.h>
 #include <aws/medialive/model/DescribeReservationResult.h>
 #include <aws/medialive/model/DescribeScheduleRequest.h>
@@ -335,6 +338,7 @@
 #include <aws/medialive/model/Fmp4TimedMetadataBehavior.h>
 #include <aws/medialive/model/FollowModeScheduleActionStartSettings.h>
 #include <aws/medialive/model/FollowPoint.h>
+#include <aws/medialive/model/FollowerChannelSettings.h>
 #include <aws/medialive/model/FrameCaptureCdnSettings.h>
 #include <aws/medialive/model/FrameCaptureGroupSettings.h>
 #include <aws/medialive/model/FrameCaptureHlsSettings.h>
@@ -526,6 +530,8 @@
 #include <aws/medialive/model/IpPoolUpdateRequest.h>
 #include <aws/medialive/model/KeyProviderSettings.h>
 #include <aws/medialive/model/LastFrameClippingBehavior.h>
+#include <aws/medialive/model/LinkedChannelSettings.h>
+#include <aws/medialive/model/LinkedChannelType.h>
 #include <aws/medialive/model/ListAlertsRequest.h>
 #include <aws/medialive/model/ListAlertsResult.h>
 #include <aws/medialive/model/ListChannelPlacementGroupsRequest.h>
@@ -696,9 +702,11 @@
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
 #include <aws/medialive/model/PipelineDetail.h>
 #include <aws/medialive/model/PipelineId.h>
+#include <aws/medialive/model/PipelineLockingMethod.h>
 #include <aws/medialive/model/PipelineLockingSettings.h>
 #include <aws/medialive/model/PipelinePauseStateSettings.h>
 #include <aws/medialive/model/PreferredChannelPipeline.h>
+#include <aws/medialive/model/PrimaryChannelSettings.h>
 #include <aws/medialive/model/PurchaseOfferingRequest.h>
 #include <aws/medialive/model/PurchaseOfferingResult.h>
 #include <aws/medialive/model/RawSettings.h>

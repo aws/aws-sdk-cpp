@@ -14,6 +14,7 @@
 #include <aws/medialive/model/ChannelEngineVersionResponse.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/medialive/model/DescribeAnywhereSettings.h>
+#include <aws/medialive/model/DescribeLinkedChannelSettings.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <aws/medialive/model/InputSpecification.h>
@@ -429,6 +430,24 @@ one destination per
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Linked Channel Settings for this channel.
+   */
+  inline const DescribeLinkedChannelSettings& GetLinkedChannelSettings() const { return m_linkedChannelSettings; }
+  inline bool LinkedChannelSettingsHasBeenSet() const { return m_linkedChannelSettingsHasBeenSet; }
+  template <typename LinkedChannelSettingsT = DescribeLinkedChannelSettings>
+  void SetLinkedChannelSettings(LinkedChannelSettingsT&& value) {
+    m_linkedChannelSettingsHasBeenSet = true;
+    m_linkedChannelSettings = std::forward<LinkedChannelSettingsT>(value);
+  }
+  template <typename LinkedChannelSettingsT = DescribeLinkedChannelSettings>
+  Channel& WithLinkedChannelSettings(LinkedChannelSettingsT&& value) {
+    SetLinkedChannelSettings(std::forward<LinkedChannelSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -469,6 +488,8 @@ one destination per
   DescribeAnywhereSettings m_anywhereSettings;
 
   ChannelEngineVersionResponse m_channelEngineVersion;
+
+  DescribeLinkedChannelSettings m_linkedChannelSettings;
   bool m_arnHasBeenSet = false;
   bool m_cdiInputSpecificationHasBeenSet = false;
   bool m_channelClassHasBeenSet = false;
@@ -489,6 +510,7 @@ one destination per
   bool m_vpcHasBeenSet = false;
   bool m_anywhereSettingsHasBeenSet = false;
   bool m_channelEngineVersionHasBeenSet = false;
+  bool m_linkedChannelSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -113,6 +113,10 @@ Channel& Channel::operator=(JsonView jsonValue) {
     m_channelEngineVersion = jsonValue.GetObject("channelEngineVersion");
     m_channelEngineVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("linkedChannelSettings")) {
+    m_linkedChannelSettings = jsonValue.GetObject("linkedChannelSettings");
+    m_linkedChannelSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -217,6 +221,10 @@ JsonValue Channel::Jsonize() const {
 
   if (m_channelEngineVersionHasBeenSet) {
     payload.WithObject("channelEngineVersion", m_channelEngineVersion.Jsonize());
+  }
+
+  if (m_linkedChannelSettingsHasBeenSet) {
+    payload.WithObject("linkedChannelSettings", m_linkedChannelSettings.Jsonize());
   }
 
   return payload;
