@@ -638,3 +638,61 @@ TEST_F(LoggingTestLogFileRace, testCrtLoggerRaceSingleLogger)
         ASSERT_TRUE(success);
     }
 }
+
+// TEST_F(LoggingTestLogFileRace, testCrtShutdownUseAfterFree)
+// {
+//     /*
+//      * Tests use-after-free during CRT shutdown when threads are actively logging.
+//      * Simulates scenario where logger is shutdown while threads are still using it.
+//      */
+//     static const size_t PARALLEL_COUNT = 8;
+//     std::atomic<bool> keepLogging{true};
+//     std::atomic<bool> startLogging{false};
+//     Aws::Vector<std::future<void>> futures(PARALLEL_COUNT);
+//
+//     {
+//       CRTLogSystemInterface* rawPtr = nullptr;
+//       auto crtLogger = Aws::MakeShared<DefaultCRTLogSystem>(AllocationTag, LogLevel::Info);
+//         rawPtr = crtLogger.get();
+//         InitializeCRTLogging(crtLogger);
+//
+//         // Start threads that will actively log
+//         for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+//         {
+//             futures[i] = std::async(std::launch::async, [&keepLogging, &startLogging, rawPtr, i]() {
+//                 // Wait for signal to start logging
+//                 while (!startLogging.load() && keepLogging.load()) {
+//                     std::this_thread::sleep_for(std::chrono::microseconds(100));
+//                 }
+//
+//                 // Continuously log until told to stop
+//                 while (keepLogging.load()) {
+//                     LogOnCRTLogSystemInterfaceWithoutVaArgs(rawPtr, LogLevel::Info, "CRTShutdownTest", "Active logging from thread %zu", i);
+//                     std::this_thread::sleep_for(std::chrono::microseconds(10));
+//                 }
+//             });
+//         }
+//
+//         // Start active logging
+//         startLogging = true;
+//
+//         // Let threads log for a brief moment
+//         std::this_thread::sleep_for(std::chrono::milliseconds(10));
+//
+//     } // crtLogger goes out of scope here
+//
+//     // Shutdown CRT logging while threads are still active
+//     ShutdownCRTLogging();
+//
+//     // Uncomment this if you want to see the use after free error every single time
+//     //std::this_thread::sleep_for(std::chrono::milliseconds(10));
+//
+//     keepLogging = false;
+//     for(size_t i = 0; i < PARALLEL_COUNT; ++i)
+//     {
+//         futures[i].wait();
+//     }
+//
+//
+//     SUCCEED();
+// }
