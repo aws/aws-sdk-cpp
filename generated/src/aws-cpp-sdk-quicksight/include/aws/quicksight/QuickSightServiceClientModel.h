@@ -121,6 +121,7 @@
 #include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationResult.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleResult.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionResult.h>
+#include <aws/quicksight/model/DescribeSelfUpgradeConfigurationResult.h>
 #include <aws/quicksight/model/DescribeTemplateAliasResult.h>
 #include <aws/quicksight/model/DescribeTemplateDefinitionResult.h>
 #include <aws/quicksight/model/DescribeTemplatePermissionsResult.h>
@@ -165,6 +166,7 @@
 #include <aws/quicksight/model/ListNamespacesResult.h>
 #include <aws/quicksight/model/ListRefreshSchedulesResult.h>
 #include <aws/quicksight/model/ListRoleMembershipsResult.h>
+#include <aws/quicksight/model/ListSelfUpgradesResult.h>
 #include <aws/quicksight/model/ListTagsForResourceResult.h>
 #include <aws/quicksight/model/ListTemplateAliasesResult.h>
 #include <aws/quicksight/model/ListTemplateVersionsResult.h>
@@ -233,6 +235,8 @@
 #include <aws/quicksight/model/UpdateRefreshScheduleResult.h>
 #include <aws/quicksight/model/UpdateRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/UpdateSPICECapacityConfigurationResult.h>
+#include <aws/quicksight/model/UpdateSelfUpgradeConfigurationResult.h>
+#include <aws/quicksight/model/UpdateSelfUpgradeResult.h>
 #include <aws/quicksight/model/UpdateTemplateAliasResult.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsResult.h>
 #include <aws/quicksight/model/UpdateTemplateResult.h>
@@ -380,6 +384,7 @@ class DescribeQPersonalizationConfigurationRequest;
 class DescribeQuickSightQSearchConfigurationRequest;
 class DescribeRefreshScheduleRequest;
 class DescribeRoleCustomPermissionRequest;
+class DescribeSelfUpgradeConfigurationRequest;
 class DescribeTemplateRequest;
 class DescribeTemplateAliasRequest;
 class DescribeTemplateDefinitionRequest;
@@ -424,6 +429,7 @@ class ListIngestionsRequest;
 class ListNamespacesRequest;
 class ListRefreshSchedulesRequest;
 class ListRoleMembershipsRequest;
+class ListSelfUpgradesRequest;
 class ListTagsForResourceRequest;
 class ListTemplateAliasesRequest;
 class ListTemplateVersionsRequest;
@@ -492,6 +498,8 @@ class UpdateQuickSightQSearchConfigurationRequest;
 class UpdateRefreshScheduleRequest;
 class UpdateRoleCustomPermissionRequest;
 class UpdateSPICECapacityConfigurationRequest;
+class UpdateSelfUpgradeRequest;
+class UpdateSelfUpgradeConfigurationRequest;
 class UpdateTemplateRequest;
 class UpdateTemplateAliasRequest;
 class UpdateTemplatePermissionsRequest;
@@ -609,6 +617,7 @@ typedef Aws::Utils::Outcome<DescribeQPersonalizationConfigurationResult, QuickSi
 typedef Aws::Utils::Outcome<DescribeQuickSightQSearchConfigurationResult, QuickSightError> DescribeQuickSightQSearchConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeRefreshScheduleResult, QuickSightError> DescribeRefreshScheduleOutcome;
 typedef Aws::Utils::Outcome<DescribeRoleCustomPermissionResult, QuickSightError> DescribeRoleCustomPermissionOutcome;
+typedef Aws::Utils::Outcome<DescribeSelfUpgradeConfigurationResult, QuickSightError> DescribeSelfUpgradeConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeTemplateResult, QuickSightError> DescribeTemplateOutcome;
 typedef Aws::Utils::Outcome<DescribeTemplateAliasResult, QuickSightError> DescribeTemplateAliasOutcome;
 typedef Aws::Utils::Outcome<DescribeTemplateDefinitionResult, QuickSightError> DescribeTemplateDefinitionOutcome;
@@ -654,6 +663,7 @@ typedef Aws::Utils::Outcome<ListIngestionsResult, QuickSightError> ListIngestion
 typedef Aws::Utils::Outcome<ListNamespacesResult, QuickSightError> ListNamespacesOutcome;
 typedef Aws::Utils::Outcome<ListRefreshSchedulesResult, QuickSightError> ListRefreshSchedulesOutcome;
 typedef Aws::Utils::Outcome<ListRoleMembershipsResult, QuickSightError> ListRoleMembershipsOutcome;
+typedef Aws::Utils::Outcome<ListSelfUpgradesResult, QuickSightError> ListSelfUpgradesOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, QuickSightError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListTemplateAliasesResult, QuickSightError> ListTemplateAliasesOutcome;
 typedef Aws::Utils::Outcome<ListTemplateVersionsResult, QuickSightError> ListTemplateVersionsOutcome;
@@ -722,6 +732,8 @@ typedef Aws::Utils::Outcome<UpdateQuickSightQSearchConfigurationResult, QuickSig
 typedef Aws::Utils::Outcome<UpdateRefreshScheduleResult, QuickSightError> UpdateRefreshScheduleOutcome;
 typedef Aws::Utils::Outcome<UpdateRoleCustomPermissionResult, QuickSightError> UpdateRoleCustomPermissionOutcome;
 typedef Aws::Utils::Outcome<UpdateSPICECapacityConfigurationResult, QuickSightError> UpdateSPICECapacityConfigurationOutcome;
+typedef Aws::Utils::Outcome<UpdateSelfUpgradeResult, QuickSightError> UpdateSelfUpgradeOutcome;
+typedef Aws::Utils::Outcome<UpdateSelfUpgradeConfigurationResult, QuickSightError> UpdateSelfUpgradeConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateTemplateResult, QuickSightError> UpdateTemplateOutcome;
 typedef Aws::Utils::Outcome<UpdateTemplateAliasResult, QuickSightError> UpdateTemplateAliasOutcome;
 typedef Aws::Utils::Outcome<UpdateTemplatePermissionsResult, QuickSightError> UpdateTemplatePermissionsOutcome;
@@ -839,6 +851,7 @@ typedef std::future<DescribeQPersonalizationConfigurationOutcome> DescribeQPerso
 typedef std::future<DescribeQuickSightQSearchConfigurationOutcome> DescribeQuickSightQSearchConfigurationOutcomeCallable;
 typedef std::future<DescribeRefreshScheduleOutcome> DescribeRefreshScheduleOutcomeCallable;
 typedef std::future<DescribeRoleCustomPermissionOutcome> DescribeRoleCustomPermissionOutcomeCallable;
+typedef std::future<DescribeSelfUpgradeConfigurationOutcome> DescribeSelfUpgradeConfigurationOutcomeCallable;
 typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
 typedef std::future<DescribeTemplateAliasOutcome> DescribeTemplateAliasOutcomeCallable;
 typedef std::future<DescribeTemplateDefinitionOutcome> DescribeTemplateDefinitionOutcomeCallable;
@@ -883,6 +896,7 @@ typedef std::future<ListIngestionsOutcome> ListIngestionsOutcomeCallable;
 typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
 typedef std::future<ListRefreshSchedulesOutcome> ListRefreshSchedulesOutcomeCallable;
 typedef std::future<ListRoleMembershipsOutcome> ListRoleMembershipsOutcomeCallable;
+typedef std::future<ListSelfUpgradesOutcome> ListSelfUpgradesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListTemplateAliasesOutcome> ListTemplateAliasesOutcomeCallable;
 typedef std::future<ListTemplateVersionsOutcome> ListTemplateVersionsOutcomeCallable;
@@ -951,6 +965,8 @@ typedef std::future<UpdateQuickSightQSearchConfigurationOutcome> UpdateQuickSigh
 typedef std::future<UpdateRefreshScheduleOutcome> UpdateRefreshScheduleOutcomeCallable;
 typedef std::future<UpdateRoleCustomPermissionOutcome> UpdateRoleCustomPermissionOutcomeCallable;
 typedef std::future<UpdateSPICECapacityConfigurationOutcome> UpdateSPICECapacityConfigurationOutcomeCallable;
+typedef std::future<UpdateSelfUpgradeOutcome> UpdateSelfUpgradeOutcomeCallable;
+typedef std::future<UpdateSelfUpgradeConfigurationOutcome> UpdateSelfUpgradeConfigurationOutcomeCallable;
 typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
 typedef std::future<UpdateTemplateAliasOutcome> UpdateTemplateAliasOutcomeCallable;
 typedef std::future<UpdateTemplatePermissionsOutcome> UpdateTemplatePermissionsOutcomeCallable;
@@ -1298,6 +1314,10 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeRoleCus
                            const Model::DescribeRoleCustomPermissionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeRoleCustomPermissionResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeSelfUpgradeConfigurationRequest&,
+                           const Model::DescribeSelfUpgradeConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSelfUpgradeConfigurationResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateRequest&, const Model::DescribeTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTemplateResponseReceivedHandler;
@@ -1436,6 +1456,9 @@ typedef std::function<void(const QuickSightClient*, const Model::ListRefreshSche
 typedef std::function<void(const QuickSightClient*, const Model::ListRoleMembershipsRequest&, const Model::ListRoleMembershipsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRoleMembershipsResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::ListSelfUpgradesRequest&, const Model::ListSelfUpgradesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSelfUpgradesResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -1651,6 +1674,13 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateSPICECapa
                            const Model::UpdateSPICECapacityConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateSPICECapacityConfigurationResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateSelfUpgradeRequest&, const Model::UpdateSelfUpgradeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSelfUpgradeResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateSelfUpgradeConfigurationRequest&,
+                           const Model::UpdateSelfUpgradeConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSelfUpgradeConfigurationResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateTemplateResponseReceivedHandler;
