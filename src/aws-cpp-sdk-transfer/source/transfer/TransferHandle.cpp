@@ -3,11 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/transfer/TransferHandle.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/SimpleStringStream.h>
+#include <aws/transfer/TransferHandle.h>
 
 #include <cassert>
+
+#include "aws/core/utils/crypto/CRC64.h"
 
 namespace Aws
 {
@@ -421,6 +423,16 @@ namespace Aws
                 return ss.str();
             }
             return "";
+        }
+
+        void TransferHandle::AddChecksumForPart(Aws::IOStream* partStream, const PartPointer& partState) {
+          partStream->seekg(0);
+          if (GetChecksumAlgorithm() == S3::Model::ChecksumAlgorithm::CRC64NVME) {
+            //TODO: fix this
+            partState->SetChecksum(Aws::Utils::Crypto::CRC64::Calculate(partStream->rdbuf()));
+          }
+          partStream->clear();
+          partStream->seekg(0);
         }
 
         void TransferHandle::ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig)

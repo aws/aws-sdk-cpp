@@ -1262,26 +1262,9 @@ namespace Aws
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
 
+                    handle->AddChecksumForPart(bufferStream, partState);
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
-                        partState->SetChecksum([&]() -> Aws::String {
-                        if (!outcome.GetResult().GetChecksumCRC32().empty()) {
-                          return outcome.GetResult().GetChecksumCRC32();
-                        }
-                        if (!outcome.GetResult().GetChecksumCRC32C().empty()) {
-                          return outcome.GetResult().GetChecksumCRC32C();
-                        }
-                        if (!outcome.GetResult().GetChecksumCRC64NVME().empty()) {
-                          return outcome.GetResult().GetChecksumCRC64NVME();
-                        }
-                        if (!outcome.GetResult().GetChecksumSHA1().empty()) {
-                          return outcome.GetResult().GetChecksumSHA1();
-                        }
-                        if (!outcome.GetResult().GetChecksumSHA256().empty()) {
-                          return outcome.GetResult().GetChecksumSHA256();
-                        }
-                        return "";
-                        }());
                         handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
                     } else {
                         Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
