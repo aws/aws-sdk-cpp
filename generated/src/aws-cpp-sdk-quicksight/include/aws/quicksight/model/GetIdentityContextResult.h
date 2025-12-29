@@ -61,7 +61,8 @@ class GetIdentityContextResult {
    * <p>The identity context information for the user. This is an identity token that
    * should be used as the ContextAssertion parameter in the <a
    * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">STS
-   * AssumeRole API</a> call to obtain identity enhanced AWS credentials.</p>
+   * AssumeRole API</a> call to obtain identity enhanced Amazon Web Services
+   * credentials.</p>
    */
   inline const Aws::String& GetContext() const { return m_context; }
   template <typename ContextT = Aws::String>

@@ -654,6 +654,8 @@
 #include <aws/quicksight/model/DescribeRefreshScheduleResult.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionRequest.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionResult.h>
+#include <aws/quicksight/model/DescribeSelfUpgradeConfigurationRequest.h>
+#include <aws/quicksight/model/DescribeSelfUpgradeConfigurationResult.h>
 #include <aws/quicksight/model/DescribeTemplateAliasRequest.h>
 #include <aws/quicksight/model/DescribeTemplateAliasResult.h>
 #include <aws/quicksight/model/DescribeTemplateDefinitionRequest.h>
@@ -937,6 +939,7 @@
 #include <aws/quicksight/model/InternalFailureException.h>
 #include <aws/quicksight/model/InvalidDataSetParameterValueException.h>
 #include <aws/quicksight/model/InvalidNextTokenException.h>
+#include <aws/quicksight/model/InvalidParameterException.h>
 #include <aws/quicksight/model/InvalidParameterValueException.h>
 #include <aws/quicksight/model/InvalidRequestException.h>
 #include <aws/quicksight/model/InvalidTopicReviewedAnswer.h>
@@ -1040,6 +1043,8 @@
 #include <aws/quicksight/model/ListRefreshSchedulesResult.h>
 #include <aws/quicksight/model/ListRoleMembershipsRequest.h>
 #include <aws/quicksight/model/ListRoleMembershipsResult.h>
+#include <aws/quicksight/model/ListSelfUpgradesRequest.h>
+#include <aws/quicksight/model/ListSelfUpgradesResult.h>
 #include <aws/quicksight/model/ListTagsForResourceRequest.h>
 #include <aws/quicksight/model/ListTagsForResourceResult.h>
 #include <aws/quicksight/model/ListTemplateAliasesRequest.h>
@@ -1375,6 +1380,11 @@
 #include <aws/quicksight/model/SelectedFieldOptions.h>
 #include <aws/quicksight/model/SelectedSheetsFilterScopeConfiguration.h>
 #include <aws/quicksight/model/SelectedTooltipType.h>
+#include <aws/quicksight/model/SelfUpgradeAdminAction.h>
+#include <aws/quicksight/model/SelfUpgradeConfiguration.h>
+#include <aws/quicksight/model/SelfUpgradeRequestDetail.h>
+#include <aws/quicksight/model/SelfUpgradeRequestStatus.h>
+#include <aws/quicksight/model/SelfUpgradeStatus.h>
 #include <aws/quicksight/model/SemanticEntityType.h>
 #include <aws/quicksight/model/SemanticModelConfiguration.h>
 #include <aws/quicksight/model/SemanticTable.h>
@@ -1713,6 +1723,10 @@
 #include <aws/quicksight/model/UpdateRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/UpdateSPICECapacityConfigurationRequest.h>
 #include <aws/quicksight/model/UpdateSPICECapacityConfigurationResult.h>
+#include <aws/quicksight/model/UpdateSelfUpgradeConfigurationRequest.h>
+#include <aws/quicksight/model/UpdateSelfUpgradeConfigurationResult.h>
+#include <aws/quicksight/model/UpdateSelfUpgradeRequest.h>
+#include <aws/quicksight/model/UpdateSelfUpgradeResult.h>
 #include <aws/quicksight/model/UpdateTemplateAliasRequest.h>
 #include <aws/quicksight/model/UpdateTemplateAliasResult.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsRequest.h>

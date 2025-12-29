@@ -587,6 +587,7 @@
 #include <aws/connect/model/GetTaskTemplateResult.h>
 #include <aws/connect/model/GetTrafficDistributionRequest.h>
 #include <aws/connect/model/GetTrafficDistributionResult.h>
+#include <aws/connect/model/GlobalResiliencyMetadata.h>
 #include <aws/connect/model/GranularAccessControlConfiguration.h>
 #include <aws/connect/model/Grouping.h>
 #include <aws/connect/model/HierarchyGroup.h>

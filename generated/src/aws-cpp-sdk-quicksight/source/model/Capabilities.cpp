@@ -174,6 +174,10 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_research = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Research"));
     m_researchHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SelfUpgradeUserRole")) {
+    m_selfUpgradeUserRole = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SelfUpgradeUserRole"));
+    m_selfUpgradeUserRoleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -332,6 +336,10 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_researchHasBeenSet) {
     payload.WithString("Research", CapabilityStateMapper::GetNameForCapabilityState(m_research));
+  }
+
+  if (m_selfUpgradeUserRoleHasBeenSet) {
+    payload.WithString("SelfUpgradeUserRole", CapabilityStateMapper::GetNameForCapabilityState(m_selfUpgradeUserRole));
   }
 
   return payload;

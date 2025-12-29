@@ -18,6 +18,7 @@
 #include <aws/connect/model/CustomerVoiceActivity.h>
 #include <aws/connect/model/DisconnectDetails.h>
 #include <aws/connect/model/EndpointInfo.h>
+#include <aws/connect/model/GlobalResiliencyMetadata.h>
 #include <aws/connect/model/NextContactEntry.h>
 #include <aws/connect/model/OutboundStrategy.h>
 #include <aws/connect/model/QualityMetrics.h>
@@ -967,6 +968,25 @@ class Contact {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the global resiliency configuration for the contact,
+   * including traffic distribution details.</p>
+   */
+  inline const GlobalResiliencyMetadata& GetGlobalResiliencyMetadata() const { return m_globalResiliencyMetadata; }
+  inline bool GlobalResiliencyMetadataHasBeenSet() const { return m_globalResiliencyMetadataHasBeenSet; }
+  template <typename GlobalResiliencyMetadataT = GlobalResiliencyMetadata>
+  void SetGlobalResiliencyMetadata(GlobalResiliencyMetadataT&& value) {
+    m_globalResiliencyMetadataHasBeenSet = true;
+    m_globalResiliencyMetadata = std::forward<GlobalResiliencyMetadataT>(value);
+  }
+  template <typename GlobalResiliencyMetadataT = GlobalResiliencyMetadata>
+  Contact& WithGlobalResiliencyMetadata(GlobalResiliencyMetadataT&& value) {
+    SetGlobalResiliencyMetadata(std::forward<GlobalResiliencyMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -1061,6 +1081,8 @@ class Contact {
   Aws::Map<Aws::String, Aws::String> m_attributes;
 
   Aws::Vector<NextContactEntry> m_nextContacts;
+
+  GlobalResiliencyMetadata m_globalResiliencyMetadata;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_initialContactIdHasBeenSet = false;
@@ -1108,6 +1130,7 @@ class Contact {
   bool m_outboundStrategyHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
   bool m_nextContactsHasBeenSet = false;
+  bool m_globalResiliencyMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

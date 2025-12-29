@@ -3131,6 +3131,36 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Describes the self-upgrade configuration for a Quick Suite
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeSelfUpgradeConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSelfUpgradeConfigurationOutcome DescribeSelfUpgradeConfiguration(
+      const Model::DescribeSelfUpgradeConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeSelfUpgradeConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeSelfUpgradeConfigurationRequestT = Model::DescribeSelfUpgradeConfigurationRequest>
+  Model::DescribeSelfUpgradeConfigurationOutcomeCallable DescribeSelfUpgradeConfigurationCallable(
+      const DescribeSelfUpgradeConfigurationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DescribeSelfUpgradeConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSelfUpgradeConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeSelfUpgradeConfigurationRequestT = Model::DescribeSelfUpgradeConfigurationRequest>
+  void DescribeSelfUpgradeConfigurationAsync(const DescribeSelfUpgradeConfigurationRequestT& request,
+                                             const DescribeSelfUpgradeConfigurationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DescribeSelfUpgradeConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Describes a template's metadata.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplate">AWS
    * API Reference</a></p>
@@ -4453,6 +4483,33 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists all self-upgrade requests for a Quick Suite account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListSelfUpgrades">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSelfUpgradesOutcome ListSelfUpgrades(const Model::ListSelfUpgradesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSelfUpgrades that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSelfUpgradesRequestT = Model::ListSelfUpgradesRequest>
+  Model::ListSelfUpgradesOutcomeCallable ListSelfUpgradesCallable(const ListSelfUpgradesRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::ListSelfUpgrades, request);
+  }
+
+  /**
+   * An Async wrapper for ListSelfUpgrades that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListSelfUpgradesRequestT = Model::ListSelfUpgradesRequest>
+  void ListSelfUpgradesAsync(const ListSelfUpgradesRequestT& request, const ListSelfUpgradesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::ListSelfUpgrades, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags assigned to a resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTagsForResource">AWS
    * API Reference</a></p>
@@ -5303,13 +5360,13 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
    * security (RLS), column-level security (CLS), dynamic default parameters and
    * dashboard parameter/filter settings.</p> <p>To generate snapshots for registered
    * Quick Sight users, you need to:</p> <ul> <li> <p>Obtain identity-enhanced IAM
-   * role session credentials from AWS Security Token Service (STS).</p> </li> <li>
-   * <p>Use these credentials to call the Snapshot Job APIs.</p> </li> </ul>
-   * <p>Identity-enhanced credentials are credentials that contain information about
-   * the end user (e.g., registered Quick Sight user).</p> <p>If your Quick Sight
-   * users are backed by <a
-   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS
-   * Identity Center</a>, then you need to set up a <a
+   * role session credentials from Amazon Web Services Security Token Service
+   * (STS).</p> </li> <li> <p>Use these credentials to call the Snapshot Job
+   * APIs.</p> </li> </ul> <p>Identity-enhanced credentials are credentials that
+   * contain information about the end user (e.g., registered Quick Sight user).</p>
+   * <p>If your Quick Sight users are backed by <a
+   * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">Amazon
+   * Web Services Identity Center</a>, then you need to set up a <a
    * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/setuptrustedtokenissuer.html">trusted
    * token issuer</a>. Then, getting identity-enhanced IAM credentials for a Quick
    * Sight user will look like the following:</p> <ul> <li> <p>Authenticate user with
@@ -6525,6 +6582,63 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
                                              const UpdateSPICECapacityConfigurationResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::UpdateSPICECapacityConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a self-upgrade request for a Quick Suite user by approving, denying,
+   * or verifying the request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSelfUpgrade">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSelfUpgradeOutcome UpdateSelfUpgrade(const Model::UpdateSelfUpgradeRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSelfUpgrade that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateSelfUpgradeRequestT = Model::UpdateSelfUpgradeRequest>
+  Model::UpdateSelfUpgradeOutcomeCallable UpdateSelfUpgradeCallable(const UpdateSelfUpgradeRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateSelfUpgrade, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSelfUpgrade that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateSelfUpgradeRequestT = Model::UpdateSelfUpgradeRequest>
+  void UpdateSelfUpgradeAsync(const UpdateSelfUpgradeRequestT& request, const UpdateSelfUpgradeResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateSelfUpgrade, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the self-upgrade configuration for a Quick Suite
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSelfUpgradeConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSelfUpgradeConfigurationOutcome UpdateSelfUpgradeConfiguration(
+      const Model::UpdateSelfUpgradeConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSelfUpgradeConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateSelfUpgradeConfigurationRequestT = Model::UpdateSelfUpgradeConfigurationRequest>
+  Model::UpdateSelfUpgradeConfigurationOutcomeCallable UpdateSelfUpgradeConfigurationCallable(
+      const UpdateSelfUpgradeConfigurationRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateSelfUpgradeConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSelfUpgradeConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateSelfUpgradeConfigurationRequestT = Model::UpdateSelfUpgradeConfigurationRequest>
+  void UpdateSelfUpgradeConfigurationAsync(const UpdateSelfUpgradeConfigurationRequestT& request,
+                                           const UpdateSelfUpgradeConfigurationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateSelfUpgradeConfiguration, request, handler, context);
   }
 
   /**
