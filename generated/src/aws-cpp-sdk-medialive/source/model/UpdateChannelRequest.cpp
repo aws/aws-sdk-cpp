@@ -71,5 +71,9 @@ Aws::String UpdateChannelRequest::SerializePayload() const {
     payload.WithObject("anywhereSettings", m_anywhereSettings.Jsonize());
   }
 
+  if (m_linkedChannelSettingsHasBeenSet) {
+    payload.WithObject("linkedChannelSettings", m_linkedChannelSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

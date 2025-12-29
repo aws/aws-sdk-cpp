@@ -110,6 +110,10 @@ ChannelSummary& ChannelSummary::operator=(JsonView jsonValue) {
     }
     m_usedChannelEngineVersionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("linkedChannelSettings")) {
+    m_linkedChannelSettings = jsonValue.GetObject("linkedChannelSettings");
+    m_linkedChannelSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -212,6 +216,10 @@ JsonValue ChannelSummary::Jsonize() const {
           m_usedChannelEngineVersions[usedChannelEngineVersionsIndex].Jsonize());
     }
     payload.WithArray("usedChannelEngineVersions", std::move(usedChannelEngineVersionsJsonList));
+  }
+
+  if (m_linkedChannelSettingsHasBeenSet) {
+    payload.WithObject("linkedChannelSettings", m_linkedChannelSettings.Jsonize());
   }
 
   return payload;

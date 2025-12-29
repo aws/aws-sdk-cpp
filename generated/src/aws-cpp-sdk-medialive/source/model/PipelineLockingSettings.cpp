@@ -18,12 +18,19 @@ namespace Model {
 PipelineLockingSettings::PipelineLockingSettings(JsonView jsonValue) { *this = jsonValue; }
 
 PipelineLockingSettings& PipelineLockingSettings::operator=(JsonView jsonValue) {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  if (jsonValue.ValueExists("pipelineLockingMethod")) {
+    m_pipelineLockingMethod = PipelineLockingMethodMapper::GetPipelineLockingMethodForName(jsonValue.GetString("pipelineLockingMethod"));
+    m_pipelineLockingMethodHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue PipelineLockingSettings::Jsonize() const {
   JsonValue payload;
+
+  if (m_pipelineLockingMethodHasBeenSet) {
+    payload.WithString("pipelineLockingMethod", PipelineLockingMethodMapper::GetNameForPipelineLockingMethod(m_pipelineLockingMethod));
+  }
 
   return payload;
 }
