@@ -15,6 +15,8 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
+#include <aws/common/byte_order.h>
+#include <cstring>
 #include <aws/crt/checksum/CRC.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
@@ -24,8 +26,6 @@
 #include <aws/s3/model/ListObjectsV2Request.h>
 #include <aws/transfer/TransferManager.h>
 #include <sys/stat.h>
-#include <aws/common/byte_order.h>
-#include <cstring>
 
 #include <algorithm>
 #include <fstream>
@@ -409,11 +409,8 @@ namespace Aws
 
             const auto fullObjectHashCalculator = [](const std::shared_ptr<TransferHandle>& handle, bool isRetry, S3::Model::ChecksumAlgorithm algorithm) -> std::shared_ptr<Aws::Utils::Crypto::Hash> {
                 if (handle->GetChecksum().empty() && !isRetry) {
-                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32) {
+                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32 || algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
                         return Aws::MakeShared<Aws::Utils::Crypto::CRC32>("TransferManager");
-                    }
-                    if (algorithm == S3::Model::ChecksumAlgorithm::CRC32C) {
-                        return Aws::MakeShared<Aws::Utils::Crypto::CRC32C>("TransferManager");
                     }
                     if (algorithm == S3::Model::ChecksumAlgorithm::SHA1) {
                         return Aws::MakeShared<Aws::Utils::Crypto::Sha1>("TransferManager");
@@ -1223,9 +1220,21 @@ namespace Aws
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
 
-                    if (m_transferConfig.validateChecksums) { handle->AddChecksumForPart(bufferStream, partState); }
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
+                        if (!outcome.GetResult().GetChecksumCRC32().empty()) {
+                            partState->SetChecksum(outcome.GetResult().GetChecksumCRC32());
+                        } else if (!outcome.GetResult().GetChecksumCRC32C().empty()) {
+                            partState->SetChecksum(outcome.GetResult().GetChecksumCRC32C());
+                        } else if (!outcome.GetResult().GetChecksumCRC64NVME().empty()) {
+                            partState->SetChecksum(outcome.GetResult().GetChecksumCRC64NVME());
+                        } else if (!outcome.GetResult().GetChecksumSHA1().empty()) {
+                            partState->SetChecksum(outcome.GetResult().GetChecksumSHA1());
+                        } else if (!outcome.GetResult().GetChecksumSHA256().empty()) {
+                            partState->SetChecksum(outcome.GetResult().GetChecksumSHA256());
+                        } else {
+                            if (m_transferConfig.validateChecksums) { handle->AddChecksumForPart(bufferStream, partState); }
+                        }
                         handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
                     } else {
                         Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
