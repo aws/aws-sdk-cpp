@@ -146,9 +146,7 @@ namespace Aws
                     const auto msglen = aws_event_stream_message_total_length(payload);
                     signedMessage.WriteEventPayload(msgbuf, msglen);
                 }
-
-                assert(m_signer);
-                if (m_signer->SignEventMessage(signedMessage, m_signatureSeed))
+                if (m_signingCallback(signedMessage, m_signatureSeed))
                 {
                     aws_array_list headers;
                     EncodeHeaders(signedMessage, &headers);

@@ -12,6 +12,7 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/utils/FutureOutcome.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/event/EventEncoderStream.h>
 
 
 namespace smithy {
@@ -43,10 +44,12 @@ namespace smithy {
         using HttpRequest = Aws::Http::HttpRequest;
         using SigningError = Aws::Client::AWSError<Aws::Client::CoreErrors>;
         using SigningFutureOutcome = Aws::Utils::FutureOutcome<std::shared_ptr<HttpRequest>, SigningError>;
+        using SigningEventOutcome = Aws::Utils::Outcome<Aws::Utils::Event::Message, SigningError>;
 
         // signer may copy the original httpRequest or create a new one
         virtual SigningFutureOutcome sign(std::shared_ptr<HttpRequest> httpRequest, const IdentityT& identity, SigningProperties properties) = 0;
         virtual SigningFutureOutcome presign(std::shared_ptr<HttpRequest> httpRequest, const IdentityT& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds) = 0;
+        virtual SigningEventOutcome sign(Aws::Utils::Event::Message&, Aws::String&, const IdentityT&, SigningProperties) { return SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign with a signer that doesn't support signing event messages", false /*retryable*/); };
 
         virtual ~AwsSignerBase() {};
     };

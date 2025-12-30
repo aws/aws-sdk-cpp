@@ -24,6 +24,7 @@ namespace smithy
             using AwsCoreError = Aws::Client::AWSError<Aws::Client::CoreErrors>;
             using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AwsCoreError>;
             using ResponseHandlerFunc = std::function<void(HttpResponseOutcome&&)>;
+            using AuthResolvedCallback = std::function<void(std::shared_ptr<AwsSmithyClientAsyncRequestContext>)>;
 
             struct RequestInfo
             {
@@ -69,6 +70,7 @@ namespace smithy
             Aws::Vector<void*> m_monitoringContexts;
 
             ResponseHandlerFunc m_responseHandler;
+            AuthResolvedCallback m_authResolvedCallback;
             std::shared_ptr<Aws::Utils::Threading::Executor> m_pExecutor;
             std::shared_ptr<interceptor::InterceptorContext> m_interceptorContext;
             std::shared_ptr<smithy::AwsIdentity> m_awsIdentity;

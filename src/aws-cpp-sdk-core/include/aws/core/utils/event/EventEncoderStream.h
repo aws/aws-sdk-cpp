@@ -9,6 +9,7 @@
 #include <aws/core/utils/event/EventMessage.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/event/EventStreamEncoder.h>
+#include <functional>
 
 namespace Aws
 {
@@ -52,6 +53,11 @@ namespace Aws
                  * Sets the signer implementation used for every event.
                  */
                 void SetSigner(Aws::Client::AWSAuthSigner* signer) { m_encoder.SetSigner(signer); }
+
+                /**
+                 * Sets a custom signing callback for event signing.
+                 */
+                void SetSigningCallback(const EventStreamEncoder::SigningCallback& callback) { m_encoder.SetSigningCallback(callback); }
 
                 /**
                  * Allows a stream writer to communicate the end of the stream to a stream reader.

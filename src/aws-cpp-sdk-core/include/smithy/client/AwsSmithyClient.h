@@ -25,6 +25,13 @@
 #include <smithy/identity/signer/built-in/SignerProperties.h>
 #include <smithy/client/AwsLegacyClient.h>
 
+namespace Aws {
+  namespace Client {
+    template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
+    class SmithyBidirectionalStreamingTask;
+  }
+}
+
 namespace smithy {
 namespace client
 {
@@ -132,6 +139,9 @@ namespace client
         virtual ~AwsSmithyClientT() = default;
 
     protected:
+        template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
+        friend class Aws::Client::SmithyBidirectionalStreamingTask;
+
         void initClient() {
           if (m_endpointProvider && m_authSchemeResolver) {
             m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);
@@ -211,6 +221,11 @@ namespace client
             return AwsClientRequestSigning<AuthSchemesVariantT>::SignRequest(httpRequest, ctx, m_authSchemes);
         }
 
+        SigningEventOutcome SignEventMessage(Aws::Utils::Event::Message& message, Aws::String &seed, const std::shared_ptr<AwsSmithyClientAsyncRequestContext>& ctx) const
+        {
+          return AwsClientRequestSigning<AuthSchemesVariantT>::SignEventMessage(message, seed, ctx, m_authSchemes);
+        }
+
         bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption) const override
         {
             return AwsClientRequestSigning<AuthSchemesVariantT>::AdjustClockSkew(outcome, authSchemeOption, m_authSchemes);
@@ -227,12 +242,13 @@ namespace client
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback) const
+                                     EndpointUpdateCallback&& endpointCallback,
+                                     AuthResolvedCallback&& authCallback = nullptr) const
         {
-            auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
-            return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
+          auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback), std::move(authCallback));
+          return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }
-        
+
         Aws::String GeneratePresignedUrl(
             EndpointUpdateCallback&& endpointCallback,
             Aws::Http::HttpMethod method,

@@ -1,6 +1,9 @@
 #foreach($operation in $serviceModel.operations)
 #set($hasEndPointOverrides = false)
 ## todo: add support for request stream
+#if($operation.request.shape.hasEventStreamMembers())
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyJsonServiceEventStreamOperationsSource.vm")
+#else
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
 #else
@@ -35,4 +38,5 @@ Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${className}::${pr
     Aws::Utils::StringUtils::Replace(url, "http://", "");
     return url;
 }
+#end ## #if($operation.request.shape.hasEventStreamMembers())
 #end
