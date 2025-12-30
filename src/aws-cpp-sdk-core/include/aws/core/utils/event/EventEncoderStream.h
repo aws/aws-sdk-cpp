@@ -57,7 +57,7 @@ namespace Aws
                 /**
                  * Sets a custom signing callback for event signing.
                  */
-                void SetSigningCallback(const EventStreamEncoder::SigningCallback& callback) { m_encoder.SetSigningCallback(callback); }
+                void SetSigningCallback(const Aws::Utils::Event::EventStreamEncoder::SigningCallback& callback) { m_encoder.SetSigningCallback(callback); }
 
                 /**
                  * Allows a stream writer to communicate the end of the stream to a stream reader.
