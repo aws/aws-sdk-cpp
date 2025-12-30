@@ -60,7 +60,7 @@ public:
         
         const uint64_t totalSize = 78643200;
         const uint64_t partSize = 5242880;
-        const std::vector<std::string> checksums = {
+        const std::vector<Aws::String> checksums = {
             "wAQOkgd/LJk=", "zfmsUj6AZfs=", "oyENjcGDHcY=", "wAQOkgd/LJk=", "zfmsUj6AZfs=",
             "oyENjcGDHcY=", "wAQOkgd/LJk=", "zfmsUj6AZfs=", "oyENjcGDHcY=", "wAQOkgd/LJk=",
             "zfmsUj6AZfs=", "oyENjcGDHcY=", "wAQOkgd/LJk=", "zfmsUj6AZfs=", "oyENjcGDHcY="
@@ -73,12 +73,12 @@ public:
             uint64_t end = std::stoull(range.substr(dashPos + 1));
             uint64_t size = end - start + 1;
             
-            int partNum = start / partSize;
+            int partNum = static_cast<int>(start) / partSize;
             if (partNum < 15) {
-                result.SetContentRange("bytes " + std::to_string(start) + "-" + std::to_string(end) + "/" + std::to_string(totalSize));
+                result.SetContentRange(Aws::String("bytes ") + std::to_string(start) + "-" + std::to_string(end) + "/" + std::to_string(totalSize));
                 result.SetChecksumCRC64NVME(checksums[partNum]);
                 result.SetContentLength(size);
-                result.SetETag("\"part-etag-" + std::to_string(partNum) + "\"");
+                result.SetETag(Aws::String("\"part-etag-") + std::to_string(partNum) + "\"");
                 
                 // Call the response stream factory if provided
                 if (request.GetResponseStreamFactory()) {
@@ -161,7 +161,14 @@ TEST_F(TransferUnitTest, MultipartDownloadTest) {
     auto transferManager = TransferManager::Create(config);
     
     // Create a temporary file for download since multipart needs seekable stream
-    std::string tempFile = "/tmp/test_download_" + std::to_string(rand());
+    std::string tempFile;
+#ifdef _WIN32
+    char tempPath[MAX_PATH];
+    GetTempPathA(MAX_PATH, tempPath);
+    tempFile = std::string(tempPath) + "test_download_" + std::to_string(rand());
+#else
+    tempFile = "/tmp/test_download_" + std::to_string(rand());
+#endif
     auto createStreamFn = [tempFile]() -> Aws::IOStream* {
         return Aws::New<Aws::FStream>(ALLOCATION_TAG, tempFile.c_str(), 
                                       std::ios_base::out | std::ios_base::in | 
@@ -192,7 +199,14 @@ TEST_F(TransferUnitTest, MultipartDownloadTest_Fail) {
     auto transferManager = TransferManager::Create(config);
 
     // Create a temporary file for download since multipart needs seekable stream
-    std::string tempFile = "/tmp/test_download_" + std::to_string(rand());
+    std::string tempFile;
+#ifdef _WIN32
+    char tempPath[MAX_PATH];
+    GetTempPathA(MAX_PATH, tempPath);
+    tempFile = std::string(tempPath) + "test_download_" + std::to_string(rand());
+#else
+    tempFile = "/tmp/test_download_" + std::to_string(rand());
+#endif
     auto createStreamFn = [tempFile]() -> Aws::IOStream* {
         return Aws::New<Aws::FStream>(ALLOCATION_TAG, tempFile.c_str(),
                                       std::ios_base::out | std::ios_base::in |

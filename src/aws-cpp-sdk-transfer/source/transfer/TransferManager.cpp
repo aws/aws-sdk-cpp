@@ -1307,9 +1307,9 @@ namespace Aws
                                     std::memcpy(&partCrcBE, raw, sizeof(uint32_t));
                                     const uint32_t partCrc = aws_ntoh32(partCrcBE);
                                     if (handle->GetChecksumAlgorithm() == S3::Model::ChecksumAlgorithm::CRC32) {
-                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32(combinedChecksum, partCrc, partSize);
+                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32(static_cast<uint32_t>(combinedChecksum), partCrc, partSize);
                                     } else {
-                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32C(combinedChecksum, partCrc, partSize);
+                                        combinedChecksum = Aws::Crt::Checksum::CombineCRC32C(static_cast<uint32_t>(combinedChecksum), partCrc, partSize);
                                     }
                                 }
                             }
@@ -1319,7 +1319,7 @@ namespace Aws
                             const uint64_t be = aws_hton64(combinedChecksum);
                             std::memcpy(checksumBuffer.GetUnderlyingData(), &be, sizeof(uint64_t));
                         } else {
-                            const uint32_t be = aws_hton32(combinedChecksum);
+                            const uint32_t be = aws_hton32(static_cast<uint32_t>(combinedChecksum));
                             std::memcpy(checksumBuffer.GetUnderlyingData(), &be, sizeof(uint32_t));
                         }
                         Aws::String combinedChecksumStr = Aws::Utils::HashingUtils::Base64Encode(checksumBuffer);

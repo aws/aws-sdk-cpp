@@ -225,6 +225,10 @@ Contact& Contact::operator=(JsonView jsonValue) {
     }
     m_nextContactsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GlobalResiliencyMetadata")) {
+    m_globalResiliencyMetadata = jsonValue.GetObject("GlobalResiliencyMetadata");
+    m_globalResiliencyMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -442,6 +446,10 @@ JsonValue Contact::Jsonize() const {
       nextContactsJsonList[nextContactsIndex].AsObject(m_nextContacts[nextContactsIndex].Jsonize());
     }
     payload.WithArray("NextContacts", std::move(nextContactsJsonList));
+  }
+
+  if (m_globalResiliencyMetadataHasBeenSet) {
+    payload.WithObject("GlobalResiliencyMetadata", m_globalResiliencyMetadata.Jsonize());
   }
 
   return payload;

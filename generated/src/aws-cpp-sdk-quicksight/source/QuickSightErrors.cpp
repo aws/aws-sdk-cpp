@@ -15,6 +15,7 @@
 #include <aws/quicksight/model/InternalFailureException.h>
 #include <aws/quicksight/model/InvalidDataSetParameterValueException.h>
 #include <aws/quicksight/model/InvalidNextTokenException.h>
+#include <aws/quicksight/model/InvalidParameterException.h>
 #include <aws/quicksight/model/InvalidParameterValueException.h>
 #include <aws/quicksight/model/InvalidRequestException.h>
 #include <aws/quicksight/model/LimitExceededException.h>
@@ -126,6 +127,12 @@ AWS_QUICKSIGHT_API UnsupportedUserEditionException QuickSightError::GetModeledEr
 }
 
 template <>
+AWS_QUICKSIGHT_API InvalidParameterException QuickSightError::GetModeledError() {
+  assert(this->GetErrorType() == QuickSightErrors::INVALID_PARAMETER);
+  return InvalidParameterException(this->GetJsonPayload().View());
+}
+
+template <>
 AWS_QUICKSIGHT_API SessionLifetimeInMinutesInvalidException QuickSightError::GetModeledError() {
   assert(this->GetErrorType() == QuickSightErrors::SESSION_LIFETIME_IN_MINUTES_INVALID);
   return SessionLifetimeInMinutesInvalidException(this->GetJsonPayload().View());
@@ -175,6 +182,7 @@ static const int UNSUPPORTED_PRICING_PLAN_HASH = HashingUtils::HashString("Unsup
 static const int DOMAIN_NOT_WHITELISTED_HASH = HashingUtils::HashString("DomainNotWhitelistedException");
 static const int CUSTOMER_MANAGED_KEY_UNAVAILABLE_HASH = HashingUtils::HashString("CustomerManagedKeyUnavailableException");
 static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("UnsupportedUserEditionException");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int SESSION_LIFETIME_IN_MINUTES_INVALID_HASH = HashingUtils::HashString("SessionLifetimeInMinutesInvalidException");
 static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("PreconditionNotMetException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
@@ -208,6 +216,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CUSTOMER_MANAGED_KEY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == UNSUPPORTED_USER_EDITION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::UNSUPPORTED_USER_EDITION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_PARAMETER_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SESSION_LIFETIME_IN_MINUTES_INVALID_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::SESSION_LIFETIME_IN_MINUTES_INVALID),
                                 RetryableType::NOT_RETRYABLE);
