@@ -4,29 +4,45 @@
  */
 
 #pragma once
+#include <aws/bedrock-runtime/BedrockRuntimeErrorMarshaller.h>
 #include <aws/bedrock-runtime/BedrockRuntimeServiceClientModel.h>
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace BedrockRuntime {
+AWS_BEDROCKRUNTIME_API extern const char SERVICE_NAME[];
 /**
  * <p>Describes the API operations for running inference using Amazon Bedrock
  * models.</p>
  */
-class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<BedrockRuntimeClient> {
+class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
+    : Aws::Client::ClientWithAsyncTemplateMethods<BedrockRuntimeClient>,
+      public smithy::client::AwsSmithyClientT<
+          Aws::BedrockRuntime::SERVICE_NAME, Aws::BedrockRuntime::BedrockRuntimeClientConfiguration, smithy::AuthSchemeResolverBase<>,
+          Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::BearerTokenAuthScheme>, BedrockRuntimeEndpointProviderBase,
+          smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::BedrockRuntimeErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "Bedrock Runtime"; }
 
   typedef BedrockRuntimeClientConfiguration ClientConfigurationType;
   typedef BedrockRuntimeEndpointProvider EndpointProviderType;
 
+  /**
+   * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
+   */
+  BedrockRuntimeClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
+                       std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider = nullptr,
+                       const Aws::BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration =
+                           Aws::BedrockRuntime::BedrockRuntimeClientConfiguration());
   /**
    * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
    * config is not specified, it will be initialized to default values.
@@ -54,6 +70,11 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient : public Aws::Client::AWSJsonC
                            Aws::BedrockRuntime::BedrockRuntimeClientConfiguration());
 
   /* Legacy constructors due deprecation */
+  /**
+   * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
+   */
+  BedrockRuntimeClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
   /**
    * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
    * config is not specified, it will be initialized to default values.
@@ -503,10 +524,6 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient : public Aws::Client::AWSJsonC
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockRuntimeClient>;
-  void init(const BedrockRuntimeClientConfiguration& clientConfiguration);
-
-  BedrockRuntimeClientConfiguration m_clientConfiguration;
-  std::shared_ptr<BedrockRuntimeEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace BedrockRuntime
