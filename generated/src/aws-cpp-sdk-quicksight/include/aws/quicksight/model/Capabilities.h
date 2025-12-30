@@ -627,6 +627,22 @@ class Capabilities {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ability to enable users to upgrade their user role.</p>
+   */
+  inline CapabilityState GetSelfUpgradeUserRole() const { return m_selfUpgradeUserRole; }
+  inline bool SelfUpgradeUserRoleHasBeenSet() const { return m_selfUpgradeUserRoleHasBeenSet; }
+  inline void SetSelfUpgradeUserRole(CapabilityState value) {
+    m_selfUpgradeUserRoleHasBeenSet = true;
+    m_selfUpgradeUserRole = value;
+  }
+  inline Capabilities& WithSelfUpgradeUserRole(CapabilityState value) {
+    SetSelfUpgradeUserRole(value);
+    return *this;
+  }
+  ///@}
  private:
   CapabilityState m_exportToCsv{CapabilityState::NOT_SET};
 
@@ -701,6 +717,8 @@ class Capabilities {
   CapabilityState m_createChatAgents{CapabilityState::NOT_SET};
 
   CapabilityState m_research{CapabilityState::NOT_SET};
+
+  CapabilityState m_selfUpgradeUserRole{CapabilityState::NOT_SET};
   bool m_exportToCsvHasBeenSet = false;
   bool m_exportToExcelHasBeenSet = false;
   bool m_exportToPdfHasBeenSet = false;
@@ -738,6 +756,7 @@ class Capabilities {
   bool m_chatAgentHasBeenSet = false;
   bool m_createChatAgentsHasBeenSet = false;
   bool m_researchHasBeenSet = false;
+  bool m_selfUpgradeUserRoleHasBeenSet = false;
 };
 
 }  // namespace Model

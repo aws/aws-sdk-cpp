@@ -76,6 +76,7 @@ static const int CONDITIONAL_OPERATION_FAILED_HASH = HashingUtils::HashString("C
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int CONTACT_NOT_FOUND_HASH = HashingUtils::HashString("ContactNotFoundException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
+static const int INVALID_ACTIVE_REGION_HASH = HashingUtils::HashString("InvalidActiveRegionException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
@@ -121,6 +122,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::CONTACT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_PARAMETER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_ACTIVE_REGION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::INVALID_ACTIVE_REGION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
