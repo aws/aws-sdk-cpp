@@ -373,6 +373,7 @@ namespace Aws
              * Return empty string on success, string with error message on error.
              */
             Aws::String WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset);
+            void AddChecksumForPart(Aws:: IOStream* partStream, const PartPointer& shared);
 
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 
