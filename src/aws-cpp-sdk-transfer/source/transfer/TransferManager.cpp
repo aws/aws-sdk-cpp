@@ -945,7 +945,6 @@ namespace Aws
                 handle->SetContentType(getObjectOutcome.GetResult().GetContentType());
                 handle->ChangePartToCompleted(partState, getObjectOutcome.GetResult().GetETag());
                 getObjectOutcome.GetResult().GetBody().flush();
-                
                 handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
@@ -1224,7 +1223,7 @@ namespace Aws
                     Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
                     assert(bufferStream);
 
-                    handle->AddChecksumForPart(bufferStream, partState);
+                    if (m_transferConfig.validateChecksums) { handle->AddChecksumForPart(bufferStream, partState); }
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
                         handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());

@@ -376,6 +376,11 @@ namespace Aws
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Restarting transfer.");
             m_cancel.store(false);
             m_lastPart.store(false);
+            
+            // Clear checksum state for retry
+            std::lock_guard<std::mutex> locker(m_getterSetterLock);
+            m_checksum.clear();
+            m_checksumAlgorithm = Aws::S3::Model::ChecksumAlgorithm::NOT_SET;
         }
 
         bool TransferHandle::ShouldContinue() const
