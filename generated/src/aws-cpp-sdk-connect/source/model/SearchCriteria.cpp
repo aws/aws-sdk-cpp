@@ -75,6 +75,13 @@ SearchCriteria& SearchCriteria::operator=(JsonView jsonValue) {
     m_searchableSegmentAttributes = jsonValue.GetObject("SearchableSegmentAttributes");
     m_searchableSegmentAttributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ActiveRegions")) {
+    Aws::Utils::Array<JsonView> activeRegionsJsonList = jsonValue.GetArray("ActiveRegions");
+    for (unsigned activeRegionsIndex = 0; activeRegionsIndex < activeRegionsJsonList.GetLength(); ++activeRegionsIndex) {
+      m_activeRegions.push_back(activeRegionsJsonList[activeRegionsIndex].AsString());
+    }
+    m_activeRegionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -140,6 +147,14 @@ JsonValue SearchCriteria::Jsonize() const {
 
   if (m_searchableSegmentAttributesHasBeenSet) {
     payload.WithObject("SearchableSegmentAttributes", m_searchableSegmentAttributes.Jsonize());
+  }
+
+  if (m_activeRegionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> activeRegionsJsonList(m_activeRegions.size());
+    for (unsigned activeRegionsIndex = 0; activeRegionsIndex < activeRegionsJsonList.GetLength(); ++activeRegionsIndex) {
+      activeRegionsJsonList[activeRegionsIndex].AsString(m_activeRegions[activeRegionsIndex]);
+    }
+    payload.WithArray("ActiveRegions", std::move(activeRegionsJsonList));
   }
 
   return payload;
