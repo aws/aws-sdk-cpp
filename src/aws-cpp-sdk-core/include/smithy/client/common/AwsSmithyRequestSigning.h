@@ -281,7 +281,7 @@ namespace smithy
                                           false/*retryable*/));
               return;
             }
-            result.emplace(signer->sign(m_message, m_seed, *static_cast<IdentityT*>(m_requestContext->m_awsIdentity.get()),
+            result.emplace(signer->signMessage(m_message, m_seed, *static_cast<IdentityT*>(m_requestContext->m_awsIdentity.get()),
                   m_requestContext->m_authSchemeOption.signerProperties()));
           }
       };

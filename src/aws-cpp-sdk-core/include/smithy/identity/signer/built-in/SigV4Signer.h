@@ -95,7 +95,7 @@ namespace smithy {
                                           false /*retryable*/));
         }
 
-        SigningEventOutcome sign(Aws::Utils::Event::Message& msg, Aws::String& seed, const AwsCredentialIdentityBase& identity, SigningProperties properties) override {
+        SigningEventOutcome signMessage(Aws::Utils::Event::Message& msg, Aws::String& seed, const AwsCredentialIdentityBase& identity, SigningProperties properties) override {
           AWS_UNREFERENCED_PARAM(properties);
           const auto legacyCreds = [&identity]() -> Aws::Auth::AWSCredentials {
             if(identity.sessionToken().has_value() && identity.expiration().has_value())
