@@ -77,6 +77,10 @@ ContactSearchSummary& ContactSearchSummary::operator=(JsonView jsonValue) {
     m_routingCriteria = jsonValue.GetObject("RoutingCriteria");
     m_routingCriteriaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GlobalResiliencyMetadata")) {
+    m_globalResiliencyMetadata = jsonValue.GetObject("GlobalResiliencyMetadata");
+    m_globalResiliencyMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -141,6 +145,10 @@ JsonValue ContactSearchSummary::Jsonize() const {
 
   if (m_routingCriteriaHasBeenSet) {
     payload.WithObject("RoutingCriteria", m_routingCriteria.Jsonize());
+  }
+
+  if (m_globalResiliencyMetadataHasBeenSet) {
+    payload.WithObject("GlobalResiliencyMetadata", m_globalResiliencyMetadata.Jsonize());
   }
 
   return payload;

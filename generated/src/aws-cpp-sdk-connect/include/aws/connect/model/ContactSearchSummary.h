@@ -10,6 +10,7 @@
 #include <aws/connect/model/ContactSearchSummaryAgentInfo.h>
 #include <aws/connect/model/ContactSearchSummaryQueueInfo.h>
 #include <aws/connect/model/ContactSearchSummarySegmentAttributeValue.h>
+#include <aws/connect/model/GlobalResiliencyMetadata.h>
 #include <aws/connect/model/RoutingCriteria.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -304,6 +305,24 @@ class ContactSearchSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional routing information for contacts created in ACGR instances.</p>
+   */
+  inline const GlobalResiliencyMetadata& GetGlobalResiliencyMetadata() const { return m_globalResiliencyMetadata; }
+  inline bool GlobalResiliencyMetadataHasBeenSet() const { return m_globalResiliencyMetadataHasBeenSet; }
+  template <typename GlobalResiliencyMetadataT = GlobalResiliencyMetadata>
+  void SetGlobalResiliencyMetadata(GlobalResiliencyMetadataT&& value) {
+    m_globalResiliencyMetadataHasBeenSet = true;
+    m_globalResiliencyMetadata = std::forward<GlobalResiliencyMetadataT>(value);
+  }
+  template <typename GlobalResiliencyMetadataT = GlobalResiliencyMetadata>
+  ContactSearchSummary& WithGlobalResiliencyMetadata(GlobalResiliencyMetadataT&& value) {
+    SetGlobalResiliencyMetadata(std::forward<GlobalResiliencyMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -332,6 +351,8 @@ class ContactSearchSummary {
   Aws::String m_name;
 
   RoutingCriteria m_routingCriteria;
+
+  GlobalResiliencyMetadata m_globalResiliencyMetadata;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_initialContactIdHasBeenSet = false;
@@ -346,6 +367,7 @@ class ContactSearchSummary {
   bool m_segmentAttributesHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_routingCriteriaHasBeenSet = false;
+  bool m_globalResiliencyMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

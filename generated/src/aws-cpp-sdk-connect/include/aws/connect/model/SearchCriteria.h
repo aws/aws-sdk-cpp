@@ -271,6 +271,30 @@ class SearchCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of active regions for contacts in ACGR instances.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetActiveRegions() const { return m_activeRegions; }
+  inline bool ActiveRegionsHasBeenSet() const { return m_activeRegionsHasBeenSet; }
+  template <typename ActiveRegionsT = Aws::Vector<Aws::String>>
+  void SetActiveRegions(ActiveRegionsT&& value) {
+    m_activeRegionsHasBeenSet = true;
+    m_activeRegions = std::forward<ActiveRegionsT>(value);
+  }
+  template <typename ActiveRegionsT = Aws::Vector<Aws::String>>
+  SearchCriteria& WithActiveRegions(ActiveRegionsT&& value) {
+    SetActiveRegions(std::forward<ActiveRegionsT>(value));
+    return *this;
+  }
+  template <typename ActiveRegionsT = Aws::String>
+  SearchCriteria& AddActiveRegions(ActiveRegionsT&& value) {
+    m_activeRegionsHasBeenSet = true;
+    m_activeRegions.emplace_back(std::forward<ActiveRegionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   NameCriteria m_name;
 
@@ -293,6 +317,8 @@ class SearchCriteria {
   SearchableContactAttributes m_searchableContactAttributes;
 
   SearchableSegmentAttributes m_searchableSegmentAttributes;
+
+  Aws::Vector<Aws::String> m_activeRegions;
   bool m_nameHasBeenSet = false;
   bool m_agentIdsHasBeenSet = false;
   bool m_agentHierarchyGroupsHasBeenSet = false;
@@ -304,6 +330,7 @@ class SearchCriteria {
   bool m_additionalTimeRangeHasBeenSet = false;
   bool m_searchableContactAttributesHasBeenSet = false;
   bool m_searchableSegmentAttributesHasBeenSet = false;
+  bool m_activeRegionsHasBeenSet = false;
 };
 
 }  // namespace Model
