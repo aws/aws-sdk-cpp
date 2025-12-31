@@ -1,3 +1,10 @@
+#ifdef _WIN32
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif
+#include <windows.h>
+#endif
+
 #include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/utils/threading/PooledThreadExecutor.h>
