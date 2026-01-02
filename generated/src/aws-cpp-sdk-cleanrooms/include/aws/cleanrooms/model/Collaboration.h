@@ -362,6 +362,24 @@ class Collaboration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An indicator as to whether metrics are enabled for the collaboration.</p>
+   * <p>When <code>true</code>, collaboration members can opt in to Amazon CloudWatch
+   * metrics for their membership queries.</p>
+   */
+  inline bool GetIsMetricsEnabled() const { return m_isMetricsEnabled; }
+  inline bool IsMetricsEnabledHasBeenSet() const { return m_isMetricsEnabledHasBeenSet; }
+  inline void SetIsMetricsEnabled(bool value) {
+    m_isMetricsEnabledHasBeenSet = true;
+    m_isMetricsEnabled = value;
+  }
+  inline Collaboration& WithIsMetricsEnabled(bool value) {
+    SetIsMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -396,6 +414,8 @@ class Collaboration {
   Aws::Vector<AutoApprovedChangeType> m_autoApprovedChangeTypes;
 
   Aws::Vector<SupportedS3Region> m_allowedResultRegions;
+
+  bool m_isMetricsEnabled{false};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -413,6 +433,7 @@ class Collaboration {
   bool m_analyticsEngineHasBeenSet = false;
   bool m_autoApprovedChangeTypesHasBeenSet = false;
   bool m_allowedResultRegionsHasBeenSet = false;
+  bool m_isMetricsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

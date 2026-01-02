@@ -331,6 +331,25 @@ class CreateCollaborationRequest : public CleanRoomsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An indicator as to whether metrics have been enabled or disabled for the
+   * collaboration.</p> <p>When <code>true</code>, collaboration members can opt in
+   * to Amazon CloudWatch metrics for their membership queries. The default value is
+   * <code>false</code>.</p>
+   */
+  inline bool GetIsMetricsEnabled() const { return m_isMetricsEnabled; }
+  inline bool IsMetricsEnabledHasBeenSet() const { return m_isMetricsEnabledHasBeenSet; }
+  inline void SetIsMetricsEnabled(bool value) {
+    m_isMetricsEnabledHasBeenSet = true;
+    m_isMetricsEnabled = value;
+  }
+  inline CreateCollaborationRequest& WithIsMetricsEnabled(bool value) {
+    SetIsMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<MemberSpecification> m_members;
 
@@ -359,6 +378,8 @@ class CreateCollaborationRequest : public CleanRoomsRequest {
   Aws::Vector<AutoApprovedChangeType> m_autoApprovedChangeRequestTypes;
 
   Aws::Vector<SupportedS3Region> m_allowedResultRegions;
+
+  bool m_isMetricsEnabled{false};
   bool m_membersHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -373,6 +394,7 @@ class CreateCollaborationRequest : public CleanRoomsRequest {
   bool m_analyticsEngineHasBeenSet = false;
   bool m_autoApprovedChangeRequestTypesHasBeenSet = false;
   bool m_allowedResultRegionsHasBeenSet = false;
+  bool m_isMetricsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

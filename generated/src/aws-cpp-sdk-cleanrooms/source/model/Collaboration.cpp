@@ -96,6 +96,10 @@ Collaboration& Collaboration::operator=(JsonView jsonValue) {
     }
     m_allowedResultRegionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isMetricsEnabled")) {
+    m_isMetricsEnabled = jsonValue.GetBool("isMetricsEnabled");
+    m_isMetricsEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -180,6 +184,10 @@ JsonValue Collaboration::Jsonize() const {
           SupportedS3RegionMapper::GetNameForSupportedS3Region(m_allowedResultRegions[allowedResultRegionsIndex]));
     }
     payload.WithArray("allowedResultRegions", std::move(allowedResultRegionsJsonList));
+  }
+
+  if (m_isMetricsEnabledHasBeenSet) {
+    payload.WithBool("isMetricsEnabled", m_isMetricsEnabled);
   }
 
   return payload;

@@ -98,5 +98,9 @@ Aws::String CreateCollaborationRequest::SerializePayload() const {
     payload.WithArray("allowedResultRegions", std::move(allowedResultRegionsJsonList));
   }
 
+  if (m_isMetricsEnabledHasBeenSet) {
+    payload.WithBool("isMetricsEnabled", m_isMetricsEnabled);
+  }
+
   return payload.View().WriteReadable();
 }

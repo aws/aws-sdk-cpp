@@ -178,6 +178,28 @@ class CreateMembershipRequest : public CleanRoomsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An indicator as to whether Amazon CloudWatch metrics have been enabled or
+   * disabled for the membership.</p> <p>Amazon CloudWatch metrics are only available
+   * when the collaboration has metrics enabled. This option can be set by
+   * collaboration members who have the ability to run queries (analysis runners) or
+   * by members who are configured as payers.</p> <p>When <code>true</code>, metrics
+   * about query execution are collected in Amazon CloudWatch. The default value is
+   * <code>false</code>.</p>
+   */
+  inline bool GetIsMetricsEnabled() const { return m_isMetricsEnabled; }
+  inline bool IsMetricsEnabledHasBeenSet() const { return m_isMetricsEnabledHasBeenSet; }
+  inline void SetIsMetricsEnabled(bool value) {
+    m_isMetricsEnabledHasBeenSet = true;
+    m_isMetricsEnabled = value;
+  }
+  inline CreateMembershipRequest& WithIsMetricsEnabled(bool value) {
+    SetIsMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_collaborationIdentifier;
 
@@ -192,6 +214,8 @@ class CreateMembershipRequest : public CleanRoomsRequest {
   MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
 
   MembershipPaymentConfiguration m_paymentConfiguration;
+
+  bool m_isMetricsEnabled{false};
   bool m_collaborationIdentifierHasBeenSet = false;
   bool m_queryLogStatusHasBeenSet = false;
   bool m_jobLogStatusHasBeenSet = false;
@@ -199,6 +223,7 @@ class CreateMembershipRequest : public CleanRoomsRequest {
   bool m_defaultResultConfigurationHasBeenSet = false;
   bool m_defaultJobResultConfigurationHasBeenSet = false;
   bool m_paymentConfigurationHasBeenSet = false;
+  bool m_isMetricsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -116,6 +116,13 @@ DescribeUserResult& DescribeUserResult::operator=(const Aws::AmazonWebServiceRes
     m_birthdate = jsonValue.GetString("Birthdate");
     m_birthdateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Roles")) {
+    Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
+      m_roles.push_back(rolesJsonList[rolesIndex].AsObject());
+    }
+    m_rolesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;

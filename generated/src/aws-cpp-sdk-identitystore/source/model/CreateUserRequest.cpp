@@ -99,6 +99,14 @@ Aws::String CreateUserRequest::SerializePayload() const {
     payload.WithString("Birthdate", m_birthdate);
   }
 
+  if (m_rolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
+      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
+    }
+    payload.WithArray("Roles", std::move(rolesJsonList));
+  }
+
   if (m_extensionsHasBeenSet) {
     JsonValue extensionsJsonMap;
     for (auto& extensionsItem : m_extensions) {

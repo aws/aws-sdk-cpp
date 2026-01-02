@@ -356,6 +356,24 @@ class Membership {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An indicator as to whether Amazon CloudWatch metrics are enabled for the
+   * membership.</p> <p>When <code>true</code>, metrics about query execution are
+   * collected in Amazon CloudWatch.</p>
+   */
+  inline bool GetIsMetricsEnabled() const { return m_isMetricsEnabled; }
+  inline bool IsMetricsEnabledHasBeenSet() const { return m_isMetricsEnabledHasBeenSet; }
+  inline void SetIsMetricsEnabled(bool value) {
+    m_isMetricsEnabledHasBeenSet = true;
+    m_isMetricsEnabled = value;
+  }
+  inline Membership& WithIsMetricsEnabled(bool value) {
+    SetIsMetricsEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -390,6 +408,8 @@ class Membership {
   MembershipProtectedJobResultConfiguration m_defaultJobResultConfiguration;
 
   MembershipPaymentConfiguration m_paymentConfiguration;
+
+  bool m_isMetricsEnabled{false};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_collaborationArnHasBeenSet = false;
@@ -407,6 +427,7 @@ class Membership {
   bool m_defaultResultConfigurationHasBeenSet = false;
   bool m_defaultJobResultConfigurationHasBeenSet = false;
   bool m_paymentConfigurationHasBeenSet = false;
+  bool m_isMetricsEnabledHasBeenSet = false;
 };
 
 }  // namespace Model
