@@ -140,9 +140,9 @@ const char SERVICE_NAME[] = "bedrock";
 const char* BedrockClient::GetServiceName() { return SERVICE_NAME; }
 const char* BedrockClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
-BedrockClient::BedrockClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                             std::shared_ptr<BedrockEndpointProviderBase> endpointProvider,
-                             const Bedrock::BedrockClientConfiguration& clientConfiguration)
+BedrockClient::BedrockClient(
+    const Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::BearerTokenAuthScheme>> authSchemeMap,
+    std::shared_ptr<BedrockEndpointProviderBase> endpointProvider, const Bedrock::BedrockClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG),
@@ -150,13 +150,7 @@ BedrockClient::BedrockClient(const Aws::Auth::BearerTokenAuthSignerProvider& bea
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
               ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
                                                                      smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
-              {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
-               smithy::BearerTokenAuthScheme{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider),
-                                             GetServiceName(), clientConfiguration.region}},
-          }) {}
+          authSchemeMap) {}
 
 BedrockClient::BedrockClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
                              const Aws::Client::ClientConfiguration& clientConfiguration)

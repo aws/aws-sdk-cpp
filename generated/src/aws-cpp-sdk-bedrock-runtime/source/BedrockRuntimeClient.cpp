@@ -18,7 +18,6 @@
 #include <aws/bedrock-runtime/model/StartAsyncInvokeRequest.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
-#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
@@ -30,6 +29,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <smithy/client/SmithyEventStreamingAsyncTask.h>
 #include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
 #include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
 #include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
@@ -54,9 +54,10 @@ const char SERVICE_NAME[] = "bedrock";
 const char* BedrockRuntimeClient::GetServiceName() { return SERVICE_NAME; }
 const char* BedrockRuntimeClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
-BedrockRuntimeClient::BedrockRuntimeClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                                           std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider,
-                                           const BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration)
+BedrockRuntimeClient::BedrockRuntimeClient(
+    const Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::BearerTokenAuthScheme>> authSchemeMap,
+    std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider,
+    const BedrockRuntime::BedrockRuntimeClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(
           clientConfiguration, GetServiceName(), "Bedrock Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
           Aws::MakeShared<BedrockRuntimeErrorMarshaller>(ALLOCATION_TAG),
@@ -64,13 +65,7 @@ BedrockRuntimeClient::BedrockRuntimeClient(const Aws::Auth::BearerTokenAuthSigne
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
               ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
                                                                      smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
-              {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
-               smithy::BearerTokenAuthScheme{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider),
-                                             GetServiceName(), clientConfiguration.region}},
-          }) {}
+          authSchemeMap) {}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
                                            const Aws::Client::ClientConfiguration& clientConfiguration)
