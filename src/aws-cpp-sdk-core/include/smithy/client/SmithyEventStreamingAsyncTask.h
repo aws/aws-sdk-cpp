@@ -16,7 +16,7 @@
 
 namespace Aws {
   namespace Client {
-    class AsyncCallerContext;;
+    class AsyncCallerContext;
   }
 }
 
