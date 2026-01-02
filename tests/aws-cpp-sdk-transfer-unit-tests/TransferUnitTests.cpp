@@ -1,10 +1,3 @@
-#ifdef _WIN32
-#ifndef NOMINMAX
-#define NOMINMAX
-#endif
-#include <windows.h>
-#endif
-
 #include <gtest/gtest.h>
 #include <aws/core/Aws.h>
 #include <aws/core/utils/threading/PooledThreadExecutor.h>
@@ -18,6 +11,7 @@
 #include <aws/testing/MemoryTesting.h>
 #include <sstream>
 #include <fstream>
+#include <aws/core/utils/FileSystemUtils.h>
 
 using namespace Aws;
 using namespace Aws::S3;
@@ -48,7 +42,7 @@ public:
 
 class MockMultipartS3Client : public S3Client {
 public:
-    Aws::String FULL_OBJECT_CHECKSUM; //"SBi/K+1ooBg="
+    Aws::String FULL_OBJECT_CHECKSUM;
     MockMultipartS3Client(Aws::String expected_checksum) : S3Client() {
         FULL_OBJECT_CHECKSUM = expected_checksum;
     };
@@ -57,8 +51,8 @@ public:
         HeadObjectResult result;
         result.SetContentLength(78643200);
         result.SetChecksumCRC64NVME(FULL_OBJECT_CHECKSUM);
-        result.SetChecksumType(Aws::S3::Model::ChecksumType::FULL_OBJECT);  // This is key!
-        result.SetETag("\"test-etag-12345\"");  // Add ETag
+        result.SetChecksumType(Aws::S3::Model::ChecksumType::FULL_OBJECT);
+        result.SetETag("\"test-etag-12345\"");
         return HeadObjectOutcome(std::move(result));
     }
 
@@ -67,11 +61,6 @@ public:
 
         const uint64_t totalSize = 78643200;
         const uint64_t partSize = 5242880;
-        const std::vector<Aws::String> checksums = {
-            "wAQOkgd/LJk=", "zfmsUj6AZfs=", "oyENjcGDHcY=", "wAQOkgd/LJk=", "zfmsUj6AZfs=",
-            "oyENjcGDHcY=", "wAQOkgd/LJk=", "zfmsUj6AZfs=", "oyENjcGDHcY=", "wAQOkgd/LJk=",
-            "zfmsUj6AZfs=", "oyENjcGDHcY=", "wAQOkgd/LJk=", "zfmsUj6AZfs=", "oyENjcGDHcY="
-        };
 
         if (request.RangeHasBeenSet()) {
             auto range = request.GetRange();
@@ -83,33 +72,37 @@ public:
             int partNum = static_cast<int>(start) / partSize;
             if (partNum < 15) {
                 result.SetContentRange(Aws::String("bytes ") + Aws::String(std::to_string(start).c_str()) + "-" + Aws::String(std::to_string(end).c_str()) + "/" + Aws::String(std::to_string(totalSize).c_str()));
-                result.SetChecksumCRC64NVME(checksums[partNum]);
                 result.SetContentLength(size);
                 result.SetETag(Aws::String("\"part-etag-") + Aws::String(std::to_string(partNum).c_str()) + "\"");
 
-                // Call the response stream factory if provided
                 if (request.GetResponseStreamFactory()) {
                     auto responseStream = request.GetResponseStreamFactory()();
 
-                    // Write part-specific data to the response stream
-                    char partChar = 'A' + (partNum % 3);
-                    for (uint64_t i = 0; i < size; ++i) {
-                        responseStream->put(partChar);
+                    // Generate the same pattern as BigTest: "S3 MultiPart upload Test File " repeated
+                    const char* testString = "S3 MultiPart upload Test File ";
+                    const uint32_t testStrLen = static_cast<uint32_t>(strlen(testString));
+                    
+                    for (uint64_t i = 0; i < size; i += testStrLen) {
+                        uint64_t writeLen = std::min(testStrLen, static_cast<uint32_t>(size - i));
+                        responseStream->write(testString, writeLen);
                     }
                     responseStream->flush();
 
-                    // Simulate data received callback to track bytes transferred
                     if (request.GetDataReceivedEventHandler()) {
                         request.GetDataReceivedEventHandler()(nullptr, nullptr, size);
                     }
 
                     result.ReplaceBody(responseStream);
                 } else {
-                    // Fallback for non-factory requests
                     auto stream = Aws::New<std::stringstream>(ALLOCATION_TAG);
-                    char partChar = 'A' + (partNum % 3);
-                    for (uint64_t i = 0; i < size; ++i) {
-                        stream->put(partChar);
+                    
+                    // Generate the same pattern as BigTest: "S3 MultiPart upload Test File " repeated
+                    const char* testString = "S3 MultiPart upload Test File ";
+                    const uint32_t testStrLen = static_cast<uint32_t>(strlen(testString));
+                    
+                    for (uint64_t i = 0; i < size; i += testStrLen) {
+                        uint64_t writeLen = std::min(testStrLen, static_cast<uint32_t>(size - i));
+                        stream->write(testString, writeLen);
                     }
                     stream->seekg(0, std::ios::beg);
                     result.ReplaceBody(stream);
@@ -126,7 +119,7 @@ protected:
     void SetUp() override {
         executor = Aws::MakeShared<PooledThreadExecutor>(ALLOCATION_TAG, 1);
         mockS3Client = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG);
-        mockMultipartS3Client = Aws::MakeShared<MockMultipartS3Client>(ALLOCATION_TAG, "SBi/K+1ooBg=");
+        mockMultipartS3Client = Aws::MakeShared<MockMultipartS3Client>(ALLOCATION_TAG, "u5EvMU0xv5s=");
     }
 
     static void SetUpTestSuite() {
@@ -167,35 +160,17 @@ TEST_F(TransferUnitTest, MultipartDownloadTest) {
     config.bufferSize = 5242880;  // 5MB to ensure multipart
     auto transferManager = TransferManager::Create(config);
 
-    // Create a temporary file for download since multipart needs seekable stream
-    std::string tempFile;
-#ifdef _WIN32
-    char tempPath[MAX_PATH];
-    GetTempPathA(MAX_PATH, tempPath);
-    tempFile = std::string(tempPath) + "test_download_" + std::to_string(rand());
-#else
-    tempFile = "/tmp/test_download_" + std::to_string(rand());
-#endif
-    auto createStreamFn = [tempFile]() -> Aws::IOStream* {
-        return Aws::New<Aws::FStream>(ALLOCATION_TAG, tempFile.c_str(),
-                                      std::ios_base::out | std::ios_base::in |
-                                      std::ios_base::binary | std::ios_base::trunc);
-    };
+    Utils::TempFile tempFile(std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
 
-    // Download the full 78MB file
-    auto handle = transferManager->DownloadFile("test-bucket", "test-key", createStreamFn);
+    auto handle = transferManager->DownloadFile("test-bucket", "test-key", tempFile.GetFileName());
     handle->WaitUntilFinished();
 
-    // Test multipart download functionality - should PASS with correct checksum
     EXPECT_TRUE(handle->IsMultipart());
     EXPECT_EQ(78643200u, handle->GetBytesTotalSize());
     EXPECT_EQ(15u, handle->GetCompletedParts().size());
     EXPECT_EQ(0u, handle->GetFailedParts().size());
     EXPECT_EQ(0u, handle->GetPendingParts().size());
-    EXPECT_EQ(TransferStatus::COMPLETED, handle->GetStatus());  // Should PASS
-
-    // Clean up
-    std::remove(tempFile.c_str());
+    EXPECT_EQ(TransferStatus::COMPLETED, handle->GetStatus());
 }
 
 TEST_F(TransferUnitTest, MultipartDownloadTest_Fail) {
@@ -205,34 +180,16 @@ TEST_F(TransferUnitTest, MultipartDownloadTest_Fail) {
     config.bufferSize = 5242880;  // 5MB to ensure multipart
     auto transferManager = TransferManager::Create(config);
 
-    // Create a temporary file for download since multipart needs seekable stream
-    std::string tempFile;
-#ifdef _WIN32
-    char tempPath[MAX_PATH];
-    GetTempPathA(MAX_PATH, tempPath);
-    tempFile = std::string(tempPath) + "test_download_" + std::to_string(rand());
-#else
-    tempFile = "/tmp/test_download_" + std::to_string(rand());
-#endif
-    auto createStreamFn = [tempFile]() -> Aws::IOStream* {
-        return Aws::New<Aws::FStream>(ALLOCATION_TAG, tempFile.c_str(),
-                                      std::ios_base::out | std::ios_base::in |
-                                      std::ios_base::binary | std::ios_base::trunc);
-    };
+    Utils::TempFile tempFile{std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc};
 
-    // Download the full 78MB file
-    auto handle = transferManager->DownloadFile("test-bucket", "test-key", createStreamFn);
+    auto handle = transferManager->DownloadFile("test-bucket", "test-key", tempFile.GetFileName());
     handle->WaitUntilFinished();
 
-    // Test multipart download functionality - should FAIL with wrong checksum
     EXPECT_TRUE(handle->IsMultipart());
     EXPECT_EQ(78643200u, handle->GetBytesTotalSize());
     EXPECT_EQ(15u, handle->GetCompletedParts().size());
     EXPECT_EQ(0u, handle->GetFailedParts().size());
     EXPECT_EQ(0u, handle->GetPendingParts().size());
-    EXPECT_EQ(TransferStatus::FAILED, handle->GetStatus());  // Should FAIL due to wrong checksum
+    EXPECT_EQ(TransferStatus::FAILED, handle->GetStatus());
     EXPECT_EQ("Full-object checksum validation failed", handle->GetLastError().GetMessage());
-
-    // Clean up
-    std::remove(tempFile.c_str());
 }

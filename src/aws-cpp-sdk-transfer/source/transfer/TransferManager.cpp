@@ -1099,7 +1099,6 @@ namespace Aws
                     getObjectRangeRequest.SetRange(FormatRangeSpecifier(rangeStart, rangeEnd));
                     getObjectRangeRequest.SetResponseStreamFactory(responseStreamFunction);
                     getObjectRangeRequest.SetIfMatch(handle->GetEtag());
-                    getObjectRangeRequest.SetChecksumMode(Aws::S3::Model::ChecksumMode::ENABLED);
                     if(handle->GetVersionId().size() > 0)
                     {
                         getObjectRangeRequest.SetVersionId(handle->GetVersionId());
@@ -1222,19 +1221,7 @@ namespace Aws
 
                     Aws::String errMsg{handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin())};
                     if (errMsg.empty()) {
-                        if (!outcome.GetResult().GetChecksumCRC32().empty()) {
-                            partState->SetChecksum(outcome.GetResult().GetChecksumCRC32());
-                        } else if (!outcome.GetResult().GetChecksumCRC32C().empty()) {
-                            partState->SetChecksum(outcome.GetResult().GetChecksumCRC32C());
-                        } else if (!outcome.GetResult().GetChecksumCRC64NVME().empty()) {
-                            partState->SetChecksum(outcome.GetResult().GetChecksumCRC64NVME());
-                        } else if (!outcome.GetResult().GetChecksumSHA1().empty()) {
-                            partState->SetChecksum(outcome.GetResult().GetChecksumSHA1());
-                        } else if (!outcome.GetResult().GetChecksumSHA256().empty()) {
-                            partState->SetChecksum(outcome.GetResult().GetChecksumSHA256());
-                        } else {
-                            if (m_transferConfig.validateChecksums) { handle->AddChecksumForPart(bufferStream, partState); }
-                        }
+                        if (m_transferConfig.validateChecksums) { handle->AddChecksumForPart(bufferStream, partState); }
                         handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
                     } else {
                         Aws::Client::AWSError<Aws::S3::S3Errors> error(Aws::S3::S3Errors::INTERNAL_FAILURE,
@@ -1323,7 +1310,6 @@ namespace Aws
                             std::memcpy(checksumBuffer.GetUnderlyingData(), &be, sizeof(uint32_t));
                         }
                         Aws::String combinedChecksumStr = Aws::Utils::HashingUtils::Base64Encode(checksumBuffer);
-
                         if (combinedChecksumStr != handle->GetChecksum()) {
                             AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
                                     << "] Full-object checksum mismatch. Expected: " << handle->GetChecksum()
