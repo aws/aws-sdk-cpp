@@ -113,6 +113,13 @@ User& User::operator=(JsonView jsonValue) {
     m_birthdate = jsonValue.GetString("Birthdate");
     m_birthdateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Roles")) {
+    Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
+      m_roles.push_back(rolesJsonList[rolesIndex].AsObject());
+    }
+    m_rolesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CreatedAt")) {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
     m_createdAtHasBeenSet = true;
@@ -240,6 +247,14 @@ JsonValue User::Jsonize() const {
 
   if (m_birthdateHasBeenSet) {
     payload.WithString("Birthdate", m_birthdate);
+  }
+
+  if (m_rolesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> rolesJsonList(m_roles.size());
+    for (unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex) {
+      rolesJsonList[rolesIndex].AsObject(m_roles[rolesIndex].Jsonize());
+    }
+    payload.WithArray("Roles", std::move(rolesJsonList));
   }
 
   if (m_createdAtHasBeenSet) {

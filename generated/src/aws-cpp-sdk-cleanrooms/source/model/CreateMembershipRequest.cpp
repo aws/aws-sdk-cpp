@@ -47,5 +47,9 @@ Aws::String CreateMembershipRequest::SerializePayload() const {
     payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
   }
 
+  if (m_isMetricsEnabledHasBeenSet) {
+    payload.WithBool("isMetricsEnabled", m_isMetricsEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
