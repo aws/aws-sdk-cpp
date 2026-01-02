@@ -2,7 +2,7 @@
 #set($s3_express_auth = "sigv4-s3express")
 #if($serviceModel.hasBearerAuth())
 ##BEARER TOKEN AUTH PROVIDER C-TOR
-${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
+${className}::${className}(const Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<${AuthSchemeVariants}>> authSchemeMap,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
                            const ${clientConfiguration}& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
@@ -12,15 +12,7 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
       Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG),
       endpointProvider ? endpointProvider : Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG),
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
-      {
-#foreach($entry in $AuthSchemeMapEntries)
-    #if($entry.contains("smithy::BearerTokenAuthScheme"))
-        {${entry}{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider), GetServiceName(), clientConfiguration.region}},
-    #else
-        {${entry}{GetServiceName(), clientConfiguration.region}},
-    #end
-#end
-      })
+      authSchemeMap)
 {
 }
 

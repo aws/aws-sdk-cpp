@@ -140,7 +140,7 @@ namespace client
 
     protected:
         template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
-        friend class Aws::Client::SmithyBidirectionalStreamingTask;
+        friend class SmithyBidirectionalStreamingTask;
 
         void initClient() {
           if (m_endpointProvider && m_authSchemeResolver) {
