@@ -25,8 +25,8 @@
 #include <smithy/identity/signer/built-in/SignerProperties.h>
 #include <smithy/client/AwsLegacyClient.h>
 
-namespace Aws {
-  namespace Client {
+namespace smithy {
+  namespace client {
     template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
     class SmithyBidirectionalStreamingTask;
   }
