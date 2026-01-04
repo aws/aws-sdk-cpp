@@ -38,7 +38,7 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   requestCopy->Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
   request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
 
-  auto asyncTask = CreateSmithyBidirectionalEventStreamTask<${operation.name}Outcome>(this,
+  auto asyncTask = smithy::client::CreateSmithyBidirectionalEventStreamTask<${operation.name}Outcome>(this,
         requestCopy,
         handler,
         handlerContext,

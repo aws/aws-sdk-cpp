@@ -428,7 +428,7 @@ void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
   requestCopy->SetBody(eventEncoderStream);  // this becomes the body of the request
   request.SetBody(eventEncoderStream);       // this becomes the body of the request
 
-  auto asyncTask = CreateSmithyBidirectionalEventStreamTask<InvokeModelWithBidirectionalStreamOutcome>(
+  auto asyncTask = smithy::client::CreateSmithyBidirectionalEventStreamTask<InvokeModelWithBidirectionalStreamOutcome>(
       this, requestCopy, handler, handlerContext, eventEncoderStream, endpointCallback, authCallback);
   auto sem = asyncTask.GetSemaphore();
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
