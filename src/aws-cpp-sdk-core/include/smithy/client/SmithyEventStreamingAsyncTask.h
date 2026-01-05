@@ -55,7 +55,7 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingTask final {
     std::weak_ptr<RequestT> wRequest = request;
     // Setup InitialResponse handler to use the new actual request object
     if (!request->GetHeadersReceivedEventHandler()) {
-      request->SetHeadersReceivedEventHandler([wRequest](const Http::HttpRequest*, Http::HttpResponse* response) {
+      request->SetHeadersReceivedEventHandler([wRequest](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse* response) {
         auto request = wRequest.lock();
         AWS_CHECK_PTR(ClientT::GetAllocationTag(), request);
         AWS_CHECK_PTR(ClientT::GetAllocationTag(), response);
