@@ -6,6 +6,12 @@
 #include <aws/transfer/TransferHandle.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/SimpleStringStream.h>
+#include <aws/core/utils/crypto/CRC32.h>
+#include <aws/core/utils/crypto/CRC64.h>
+#include <aws/core/utils/crypto/Sha1.h>
+#include <aws/core/utils/crypto/Sha256.h>
+#include <aws/core/utils/crypto/Sha256HMAC.h>
+#include "aws/core/utils/HashingUtils.h"
 
 #include <cassert>
 
@@ -370,6 +376,11 @@ namespace Aws
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Restarting transfer.");
             m_cancel.store(false);
             m_lastPart.store(false);
+            
+            // Clear checksum state for retry
+            std::lock_guard<std::mutex> locker(m_getterSetterLock);
+            m_checksum.clear();
+            m_checksumAlgorithm = Aws::S3::Model::ChecksumAlgorithm::NOT_SET;
         }
 
         bool TransferHandle::ShouldContinue() const
@@ -421,6 +432,25 @@ namespace Aws
                 return ss.str();
             }
             return "";
+        }
+
+        void TransferHandle::AddChecksumForPart(Aws::IOStream *partStream, const PartPointer& partState) {
+            partStream->seekg(0);
+            Aws::String checksum = "";
+            if (GetChecksumAlgorithm()==S3::Model::ChecksumAlgorithm::CRC32) {
+                checksum = Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::Crypto::CRC32().Calculate(*partStream).GetResult());
+            } else if (GetChecksumAlgorithm()==S3::Model::ChecksumAlgorithm::CRC32C) {
+                checksum = Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::Crypto::CRC32C().Calculate(*partStream).GetResult());
+            } else if (GetChecksumAlgorithm()==S3::Model::ChecksumAlgorithm::CRC64NVME) {
+                checksum = Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::Crypto::CRC64().Calculate(*partStream).GetResult());
+            } else if (GetChecksumAlgorithm()==S3::Model::ChecksumAlgorithm::SHA1) {
+                checksum = Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::Crypto::Sha1().Calculate(*partStream).GetResult());
+            } else if (GetChecksumAlgorithm()==S3::Model::ChecksumAlgorithm::SHA256) {
+                checksum = Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::Crypto::Sha256().Calculate(*partStream).GetResult());
+            }
+            partState->SetChecksum(checksum);
+            partStream->clear();
+            partStream->seekg(0);
         }
 
         void TransferHandle::ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig)
