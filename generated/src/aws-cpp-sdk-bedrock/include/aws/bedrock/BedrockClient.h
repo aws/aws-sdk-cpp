@@ -37,7 +37,8 @@ class AWS_BEDROCK_API BedrockClient
   typedef BedrockEndpointProvider EndpointProviderType;
 
   /**
-   * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
+   * Initializes client to use mapped auth providers for different auth schemes, with default http client factory, and optional client
+   * config.
    */
   BedrockClient(
       const Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::BearerTokenAuthScheme>> authSchemeMap,
@@ -66,11 +67,6 @@ class AWS_BEDROCK_API BedrockClient
                 const Aws::Bedrock::BedrockClientConfiguration& clientConfiguration = Aws::Bedrock::BedrockClientConfiguration());
 
   /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
-   */
-  BedrockClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                const Aws::Client::ClientConfiguration& clientConfiguration);
   /**
    * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
    * config is not specified, it will be initialized to default values.

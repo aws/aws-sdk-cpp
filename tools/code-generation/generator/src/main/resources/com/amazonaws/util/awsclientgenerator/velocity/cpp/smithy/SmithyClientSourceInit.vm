@@ -16,6 +16,7 @@ ${className}::${className}(const Aws::UnorderedMap<Aws::String, Aws::Crt::Varian
 {
 }
 
+#if ($serviceModel.shouldCreateLegacyBearerConstructor) ##We don't want this legacy constructor for newly migrated smithy clients
 ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
                            const Aws::Client::ClientConfiguration& clientConfiguration) :
     AwsSmithyClientT(clientConfiguration,
@@ -36,6 +37,7 @@ ${className}::${className}(const Aws::Auth::BearerTokenAuthSignerProvider& beare
       })
 {
 }
+#end
 ## END OF BEARER TOKEN AUTH PROVIDER C-TOR
 
 

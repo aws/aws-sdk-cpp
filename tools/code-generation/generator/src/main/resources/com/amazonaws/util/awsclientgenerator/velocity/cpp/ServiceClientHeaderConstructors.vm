@@ -92,7 +92,7 @@
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
         /**
-        * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
+        * Initializes client to use mapped auth providers for different auth schemes, with default http client factory, and optional client config.
         */
         ${className}(const Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<${AuthSchemeVariants}>> authSchemeMap,
         ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorDummy},

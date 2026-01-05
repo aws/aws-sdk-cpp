@@ -37,7 +37,8 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
   typedef BedrockRuntimeEndpointProvider EndpointProviderType;
 
   /**
-   * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
+   * Initializes client to use mapped auth providers for different auth schemes, with default http client factory, and optional client
+   * config.
    */
   BedrockRuntimeClient(
       const Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<smithy::SigV4AuthScheme, smithy::BearerTokenAuthScheme>> authSchemeMap,
@@ -71,11 +72,6 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
                            Aws::BedrockRuntime::BedrockRuntimeClientConfiguration());
 
   /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
-   */
-  BedrockRuntimeClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                       const Aws::Client::ClientConfiguration& clientConfiguration);
   /**
    * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
    * config is not specified, it will be initialized to default values.

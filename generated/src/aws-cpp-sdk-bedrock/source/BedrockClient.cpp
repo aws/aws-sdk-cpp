@@ -152,22 +152,6 @@ BedrockClient::BedrockClient(
                                                                      smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption})),
           authSchemeMap) {}
 
-BedrockClient::BedrockClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                             const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<BedrockEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
-                                                                     smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region}},
-              {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
-               smithy::BearerTokenAuthScheme{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG, bearerTokenProvider),
-                                             GetServiceName(), clientConfiguration.region}},
-          }) {}
-
 BedrockClient::BedrockClient(const Bedrock::BedrockClientConfiguration& clientConfiguration,
                              std::shared_ptr<BedrockEndpointProviderBase> endpointProvider)
     : AwsSmithyClientT(
