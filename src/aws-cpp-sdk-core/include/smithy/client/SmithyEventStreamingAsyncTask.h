@@ -91,7 +91,7 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingTask final {
                                                    std::move(m_endpointCallback), std::move(m_authCallback));
 
     if (outcome.IsSuccess()) {
-      m_handler(m_client, *m_request, OutcomeT(NoResult()), m_context);
+      m_handler(m_client, *m_request, OutcomeT(Aws::NoResult()), m_context);
     } else {
       if (m_stream) m_stream->Close();
       m_handler(m_client, *m_request, OutcomeT(outcome.GetError()), m_context);
