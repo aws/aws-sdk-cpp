@@ -26,6 +26,10 @@ WorkerComputeConfiguration& WorkerComputeConfiguration::operator=(JsonView jsonV
     m_number = jsonValue.GetInteger("number");
     m_numberHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("properties")) {
+    m_properties = jsonValue.GetObject("properties");
+    m_propertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue WorkerComputeConfiguration::Jsonize() const {
 
   if (m_numberHasBeenSet) {
     payload.WithInteger("number", m_number);
+  }
+
+  if (m_propertiesHasBeenSet) {
+    payload.WithObject("properties", m_properties.Jsonize());
   }
 
   return payload;

@@ -225,6 +225,7 @@
 #include <aws/cleanroomsml/model/UpdateConfiguredAudienceModelRequest.h>
 #include <aws/cleanroomsml/model/UpdateConfiguredAudienceModelResult.h>
 #include <aws/cleanroomsml/model/WorkerComputeConfiguration.h>
+#include <aws/cleanroomsml/model/WorkerComputeConfigurationProperties.h>
 #include <aws/cleanroomsml/model/WorkerComputeType.h>
 
 using CleanRoomsMLIncludeTest = ::testing::Test;
