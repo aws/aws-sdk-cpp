@@ -66,7 +66,10 @@ class ResourceConfig {
 
   ///@{
   /**
-   * <p>The maximum size of the instance that is used to train the model.</p>
+   * <p>The volume size of the instance that is used to train the model. Please see
+   * <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-volumes.html">EC2
+   * volume limit</a> for volume size limitations on different instance types.</p>
    */
   inline int GetVolumeSizeInGB() const { return m_volumeSizeInGB; }
   inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }

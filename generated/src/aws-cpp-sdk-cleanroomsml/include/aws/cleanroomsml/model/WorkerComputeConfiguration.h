@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanroomsml/CleanRoomsML_EXPORTS.h>
+#include <aws/cleanroomsml/model/WorkerComputeConfigurationProperties.h>
 #include <aws/cleanroomsml/model/WorkerComputeType.h>
 
 #include <utility>
@@ -63,12 +64,31 @@ class WorkerComputeConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const WorkerComputeConfigurationProperties& GetProperties() const { return m_properties; }
+  inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+  template <typename PropertiesT = WorkerComputeConfigurationProperties>
+  void SetProperties(PropertiesT&& value) {
+    m_propertiesHasBeenSet = true;
+    m_properties = std::forward<PropertiesT>(value);
+  }
+  template <typename PropertiesT = WorkerComputeConfigurationProperties>
+  WorkerComputeConfiguration& WithProperties(PropertiesT&& value) {
+    SetProperties(std::forward<PropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   WorkerComputeType m_type{WorkerComputeType::NOT_SET};
 
   int m_number{0};
+
+  WorkerComputeConfigurationProperties m_properties;
   bool m_typeHasBeenSet = false;
   bool m_numberHasBeenSet = false;
+  bool m_propertiesHasBeenSet = false;
 };
 
 }  // namespace Model
