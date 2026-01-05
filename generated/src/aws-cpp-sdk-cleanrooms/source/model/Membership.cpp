@@ -89,6 +89,10 @@ Membership& Membership::operator=(JsonView jsonValue) {
     m_paymentConfiguration = jsonValue.GetObject("paymentConfiguration");
     m_paymentConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("isMetricsEnabled")) {
+    m_isMetricsEnabled = jsonValue.GetBool("isMetricsEnabled");
+    m_isMetricsEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -166,6 +170,10 @@ JsonValue Membership::Jsonize() const {
 
   if (m_paymentConfigurationHasBeenSet) {
     payload.WithObject("paymentConfiguration", m_paymentConfiguration.Jsonize());
+  }
+
+  if (m_isMetricsEnabledHasBeenSet) {
+    payload.WithBool("isMetricsEnabled", m_isMetricsEnabled);
   }
 
   return payload;

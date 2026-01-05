@@ -69,6 +69,7 @@
 #include <aws/identitystore/model/ResourceNotFoundException.h>
 #include <aws/identitystore/model/ResourceNotFoundExceptionReason.h>
 #include <aws/identitystore/model/ResourceType.h>
+#include <aws/identitystore/model/Role.h>
 #include <aws/identitystore/model/ServiceQuotaExceededException.h>
 #include <aws/identitystore/model/ThrottlingException.h>
 #include <aws/identitystore/model/ThrottlingExceptionReason.h>

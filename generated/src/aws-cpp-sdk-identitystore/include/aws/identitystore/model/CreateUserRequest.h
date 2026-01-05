@@ -15,6 +15,7 @@
 #include <aws/identitystore/model/Name.h>
 #include <aws/identitystore/model/PhoneNumber.h>
 #include <aws/identitystore/model/Photo.h>
+#include <aws/identitystore/model/Role.h>
 
 #include <utility>
 
@@ -388,6 +389,31 @@ class CreateUserRequest : public IdentityStoreRequest {
 
   ///@{
   /**
+   * <p>A list of <code>Role</code> objects containing roles associated with the
+   * user.</p>
+   */
+  inline const Aws::Vector<Role>& GetRoles() const { return m_roles; }
+  inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
+  template <typename RolesT = Aws::Vector<Role>>
+  void SetRoles(RolesT&& value) {
+    m_rolesHasBeenSet = true;
+    m_roles = std::forward<RolesT>(value);
+  }
+  template <typename RolesT = Aws::Vector<Role>>
+  CreateUserRequest& WithRoles(RolesT&& value) {
+    SetRoles(std::forward<RolesT>(value));
+    return *this;
+  }
+  template <typename RolesT = Role>
+  CreateUserRequest& AddRoles(RolesT&& value) {
+    m_rolesHasBeenSet = true;
+    m_roles.emplace_back(std::forward<RolesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map with additional attribute extensions for the user. Each map key
    * corresponds to an extension name, while map values represent extension data in
    * <code>Document</code> type (not supported by Java V1, Go V1 and older versions
@@ -448,6 +474,8 @@ class CreateUserRequest : public IdentityStoreRequest {
 
   Aws::String m_birthdate;
 
+  Aws::Vector<Role> m_roles;
+
   Aws::Map<Aws::String, Aws::Utils::Document> m_extensions;
   bool m_identityStoreIdHasBeenSet = false;
   bool m_userNameHasBeenSet = false;
@@ -466,6 +494,7 @@ class CreateUserRequest : public IdentityStoreRequest {
   bool m_photosHasBeenSet = false;
   bool m_websiteHasBeenSet = false;
   bool m_birthdateHasBeenSet = false;
+  bool m_rolesHasBeenSet = false;
   bool m_extensionsHasBeenSet = false;
 };
 

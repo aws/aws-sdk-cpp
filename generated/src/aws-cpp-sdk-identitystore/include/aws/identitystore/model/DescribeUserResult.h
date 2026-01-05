@@ -16,6 +16,7 @@
 #include <aws/identitystore/model/Name.h>
 #include <aws/identitystore/model/PhoneNumber.h>
 #include <aws/identitystore/model/Photo.h>
+#include <aws/identitystore/model/Role.h>
 #include <aws/identitystore/model/UserStatus.h>
 
 #include <utility>
@@ -414,6 +415,29 @@ class DescribeUserResult {
 
   ///@{
   /**
+   * <p>The roles of the user.</p>
+   */
+  inline const Aws::Vector<Role>& GetRoles() const { return m_roles; }
+  template <typename RolesT = Aws::Vector<Role>>
+  void SetRoles(RolesT&& value) {
+    m_rolesHasBeenSet = true;
+    m_roles = std::forward<RolesT>(value);
+  }
+  template <typename RolesT = Aws::Vector<Role>>
+  DescribeUserResult& WithRoles(RolesT&& value) {
+    SetRoles(std::forward<RolesT>(value));
+    return *this;
+  }
+  template <typename RolesT = Role>
+  DescribeUserResult& AddRoles(RolesT&& value) {
+    m_rolesHasBeenSet = true;
+    m_roles.emplace_back(std::forward<RolesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the user was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -559,6 +583,8 @@ class DescribeUserResult {
 
   Aws::String m_birthdate;
 
+  Aws::Vector<Role> m_roles;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::String m_createdBy;
@@ -590,6 +616,7 @@ class DescribeUserResult {
   bool m_photosHasBeenSet = false;
   bool m_websiteHasBeenSet = false;
   bool m_birthdateHasBeenSet = false;
+  bool m_rolesHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
