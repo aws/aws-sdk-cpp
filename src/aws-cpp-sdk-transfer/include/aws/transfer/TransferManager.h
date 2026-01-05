@@ -144,13 +144,6 @@ namespace Aws
              * upload. Defaults to CRC64-NVME.
              */
             Aws::S3::Model::ChecksumAlgorithm checksumAlgorithm = S3::Model::ChecksumAlgorithm::CRC64NVME;
-
-            /**
-             * Enable checksum validation for downloads. When enabled, checksums will be
-             * calculated during download and validated against S3 response headers.
-             * Defaults to true.
-             */
-            bool validateChecksums = true;
         };        
 
         /**
