@@ -109,18 +109,6 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingTask final {
   std::shared_ptr<Aws::Utils::Threading::Semaphore> m_sem;
 };
 
-// A helper template factory to avoid providing all typenames for BidirectionalEventStreamingTask in the generated code
-// It looks like a wall of code, you can thank clang-format for this.
-template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
-static BidirectionalEventStreamingTask<OutcomeT, ClientT, AWSEndpointT, RequestT, HandlerT> CreateBidirectionalEventStreamTask(
-    const ClientT* pClientThis, AWSEndpointT&& endpoint, const std::shared_ptr<RequestT>& pRequest, const HandlerT& handler,
-    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext,
-    const std::shared_ptr<Aws::Utils::Event::EventEncoderStream>& stream, const Http::HttpMethod method = Aws::Http::HttpMethod::HTTP_POST,
-    char const* const signerName = Aws::Auth::EVENTSTREAM_SIGV4_SIGNER) {
-  return BidirectionalEventStreamingTask<OutcomeT, ClientT, AWSEndpointT, RequestT, HandlerT>(
-      pClientThis, std::forward<AWSEndpointT>(endpoint), pRequest, handler, handlerContext, stream, method, signerName);
-}
-
 template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
 static SmithyBidirectionalStreamingTask<OutcomeT, ClientT, RequestT, HandlerT> CreateSmithyBidirectionalEventStreamTask(
     const ClientT* client, std::shared_ptr<RequestT> request, const HandlerT& handler,
