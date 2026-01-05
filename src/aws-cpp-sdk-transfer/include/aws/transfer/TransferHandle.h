@@ -13,6 +13,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/s3/S3Errors.h>
+#include <aws/s3/model/ChecksumAlgorithm.h>
 #include <iostream>
 #include <atomic>
 #include <mutex>
@@ -372,6 +373,7 @@ namespace Aws
              * Return empty string on success, string with error message on error.
              */
             Aws::String WritePartToDownloadStream(Aws::IOStream* partStream, uint64_t writeOffset);
+            void AddChecksumForPart(Aws:: IOStream* partStream, const PartPointer& shared);
 
             void ApplyDownloadConfiguration(const DownloadConfiguration& downloadConfig);
 
@@ -388,6 +390,9 @@ namespace Aws
 
             Aws::String GetChecksum() const { return m_checksum; }
             void SetChecksum(const Aws::String& checksum) { this->m_checksum = checksum; }
+
+            Aws::S3::Model::ChecksumAlgorithm GetChecksumAlgorithm() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_checksumAlgorithm; }
+            void SetChecksumAlgorithm (const Aws::S3::Model::ChecksumAlgorithm& checksumAlgorithm) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_checksumAlgorithm = checksumAlgorithm; }
 
            private:
             void CleanupDownloadStream();
@@ -430,6 +435,7 @@ namespace Aws
             mutable std::condition_variable m_waitUntilFinishedSignal;
             mutable std::mutex m_getterSetterLock;
             Aws::String m_checksum;
+            Aws::S3::Model::ChecksumAlgorithm m_checksumAlgorithm;
         };
 
         AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);
