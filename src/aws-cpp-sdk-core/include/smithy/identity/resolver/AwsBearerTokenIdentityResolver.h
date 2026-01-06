@@ -5,6 +5,7 @@
 #pragma once
 
 #include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderBase.h>
+#include <aws/core/auth/bearer-token-provider/DefaultBearerTokenProviderChain.h>
 #include <aws/core/auth/bearer-token-provider/SSOBearerTokenProvider.h>
 #include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
 #include <aws/core/auth/signer/AWSAuthBearerSigner.h>
@@ -106,8 +107,16 @@ class DefaultAwsBearerTokenIdentityResolver
     virtual ~DefaultAwsBearerTokenIdentityResolver() = default;
 
     DefaultAwsBearerTokenIdentityResolver()
-        : AwsBearerTokenIdentityResolver(Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>>{
-              Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider")}){};
+    {
+        auto defaultChain = Aws::MakeShared<Aws::Auth::DefaultBearerTokenProviderChain>("DefaultAwsBearerTokenIdentityResolver");
+        m_providerChainLegacy = defaultChain->GetProviders();
+    };
+
+  DefaultAwsBearerTokenIdentityResolver(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
+  {
+      auto defaultChain = Aws::MakeShared<Aws::Auth::DefaultBearerTokenProviderChain>("DefaultAwsBearerTokenIdentityResolver", config);
+      m_providerChainLegacy = defaultChain->GetProviders();
+  }
 };
 
 } // namespace smithy

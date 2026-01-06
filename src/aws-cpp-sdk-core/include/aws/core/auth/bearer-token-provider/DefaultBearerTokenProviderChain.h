@@ -21,6 +21,7 @@ namespace Aws
         {
         public:
             DefaultBearerTokenProviderChain();
+            DefaultBearerTokenProviderChain(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config);
             virtual ~DefaultBearerTokenProviderChain() = default;
 
             /**
