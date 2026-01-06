@@ -14,7 +14,7 @@ void BedrockClientConfiguration::LoadBedrockSpecificConfig(const Aws::String& in
   const Aws::String& bedrockToken =
       BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK, inputProfileName, AWS_BEARER_TOKEN_BEDROCK, {}, "");
   if (!bedrockToken.empty()) {
-    std::vector<Aws::String>::iterator position = std::find(authPreferences.begin(), authPreferences.end(), "bearer");
+    Aws::Vector<Aws::String>::iterator position = std::find(authPreferences.begin(), authPreferences.end(), "bearer");
     if (position != authPreferences.end()) {
       authPreferences.erase(position);
     }
