@@ -10,7 +10,11 @@
 #end
 #if($hasEventStreamResult)
 #if($hasEventStreamRequest)
+#if($serviceModel.useSmithyClient)
+\#include <smithy/client/SmithyEventStreamingAsyncTask.h>
+#else
 \#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
+#end
 #end
 \#include <aws/core/utils/event/EventStream.h>
 #end

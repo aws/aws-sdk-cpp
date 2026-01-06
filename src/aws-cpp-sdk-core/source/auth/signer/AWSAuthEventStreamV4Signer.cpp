@@ -58,10 +58,13 @@ AWSAuthEventStreamV4Signer::AWSAuthEventStreamV4Signer(const std::shared_ptr<Aut
     m_unsignedHeaders.emplace_back(USER_AGENT_HEADER);
 }
 
-bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool /* signBody */) const
-{
-    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool /* signBody */) const {
+  AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+  return SignRequestWithCreds(request, credentials, region, serviceName, false);
+}
 
+bool AWSAuthEventStreamV4Signer::SignRequestWithCreds(Http::HttpRequest& request, const Auth::AWSCredentials& credentials, const char* region, const char* serviceName, bool) const
+{
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
     {
@@ -158,8 +161,12 @@ static void WriteBigEndian(Aws::String& str, uint64_t n)
     }
 }
 
-bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::String& priorSignature) const
-{
+bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::String& priorSignature) const {
+  AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+  return SignEventMessageWithCreds(message, priorSignature, credentials);
+}
+
+bool AWSAuthEventStreamV4Signer::SignEventMessageWithCreds(Event::Message& message, Aws::String& priorSignature, const AWSCredentials& credentials) const {
     using Event::EventHeaderValue;
 
     Aws::StringStream stringToSign;
@@ -214,13 +221,19 @@ bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::
 
     Aws::String canonicalRequestString = stringToSign.str();
     AWS_LOGSTREAM_TRACE(v4StreamingLogTag, "EventStream Event Canonical Request String: " << canonicalRequestString);
-    Aws::Utils::ByteBuffer finalSignatureDigest = GenerateSignature(m_credentialsProvider->GetAWSCredentials(), canonicalRequestString, simpleDate, m_region, m_serviceName);
+    if (credentials.IsEmpty()) {
+      AWS_LOGSTREAM_TRACE(v4StreamingLogTag, "EventStream Event Signing Event With Empty Credentials");
+    }
+    Aws::Utils::ByteBuffer finalSignatureDigest = GenerateSignature(credentials, canonicalRequestString, simpleDate, m_region, m_serviceName);
     const auto finalSignature = HashingUtils::HexEncode(finalSignatureDigest);
     AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Final computed signing hash: " << finalSignature);
     priorSignature = finalSignature;
 
     message.InsertEventHeader(EVENTSTREAM_DATE_HEADER, EventHeaderValue(now.Millis(), EventHeaderValue::EventHeaderType::TIMESTAMP));
     message.InsertEventHeader(EVENTSTREAM_SIGNATURE_HEADER, std::move(finalSignatureDigest));
+    for (auto&& header : message.GetEventHeaders()) {
+      AWS_LOG_TRACE(v4StreamingLogTag, "AWSAuthEventStreamV4Signer::SignEventMessageWithCreds - Header: %s", header.first.c_str());
+    }
 
     AWS_LOGSTREAM_INFO(v4StreamingLogTag, "Event chunk final signature - " << finalSignature);
     return true;

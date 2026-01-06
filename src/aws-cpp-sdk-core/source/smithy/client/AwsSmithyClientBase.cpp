@@ -253,6 +253,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            Aws::Http::HttpMethod method,
                                            EndpointUpdateCallback&& endpointCallback,
                                            ResponseHandlerFunc&& responseHandler,
+                                           AuthResolvedCallback&& authCallback,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
 {
     if(!responseHandler)
@@ -295,6 +296,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_requestInfo.maxAttempts = 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
     pRequestCtx->m_responseHandler = std::move(responseHandler);
+    pRequestCtx->m_authResolvedCallback = std::move(authCallback);
     AttemptOneRequestAsync(std::move(pRequestCtx));
 }
 
@@ -328,6 +330,7 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
         AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Missing request context!");
     }
     auto& responseHandler = pRequestCtx->m_responseHandler;
+    auto& authCallback = pRequestCtx->m_authResolvedCallback;
     auto pExecutor = pRequestCtx->m_pExecutor;
 
     //This is extracted here so that on retry with correct region, signer region override is honored
@@ -384,7 +387,9 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
           } );
         return;
     };
-
+    if (authCallback) {
+      authCallback(pRequestCtx);
+    }
     SigningOutcome signingOutcome = TracingUtils::MakeCallWithTiming<SigningOutcome>([&]() -> SigningOutcome {
             return this->SignHttpRequest(pRequestCtx->m_httpRequest, *pRequestCtx);
         },
@@ -642,7 +647,8 @@ AwsSmithyClientBase::HttpResponseOutcome
 AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                      const char* requestName,
                                      Aws::Http::HttpMethod method,
-                                     EndpointUpdateCallback&& endpointCallback) const
+                                     EndpointUpdateCallback&& endpointCallback,
+                                     AuthResolvedCallback&& authCallback = nullptr) const
 {
     std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
     assert(pExecutor);
@@ -655,7 +661,7 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
 
     pExecutor->Submit([&]()
     {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), pExecutor);
+        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), std::move(authCallback), pExecutor);
     });
     pExecutor->WaitUntilStopped();
 

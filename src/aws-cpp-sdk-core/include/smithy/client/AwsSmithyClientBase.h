@@ -24,6 +24,7 @@
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/AmazonWebServiceResult.h>
+#include <smithy/identity/identity/AwsIdentity.h>
 #include <utility>
 
 namespace Aws
@@ -81,7 +82,9 @@ namespace client
         using ClientError = AWSCoreError;
         using SigningError = AWSCoreError;
         using SigningOutcome = Aws::Utils::FutureOutcome<std::shared_ptr<Aws::Http::HttpRequest>, SigningError>;
+        using SigningEventOutcome = Aws::Utils::Outcome<Aws::Utils::Event::Message, SigningError>;
         using EndpointUpdateCallback = std::function<void(Aws::Endpoint::AWSEndpoint&)>;
+        using AuthResolvedCallback = std::function<void(std::shared_ptr<AwsSmithyClientAsyncRequestContext>)>;
         using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, AWSCoreError>;
         using ResponseHandlerFunc = std::function<void(HttpResponseOutcome&&)>;
         using SelectAuthSchemeOptionOutcome = Aws::Utils::Outcome<AuthSchemeOption, AWSCoreError>;
@@ -144,12 +147,14 @@ namespace client
                               Aws::Http::HttpMethod method,
                               EndpointUpdateCallback&& endpointCallback,
                               ResponseHandlerFunc&& responseHandler,
+                              AuthResolvedCallback&& authCallback,
                               std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
 
         HttpResponseOutcome MakeRequestSync(Aws::AmazonWebServiceRequest const * const request,
                                             const char* requestName,
                                             Aws::Http::HttpMethod method,
-                                            EndpointUpdateCallback&& endpointCallback) const;
+                                            EndpointUpdateCallback&& endpointCallback,
+                                            AuthResolvedCallback&& authCallback) const;
 
         StreamOutcome MakeRequestWithUnparsedResponse(Aws::AmazonWebServiceRequest const * const request,
                                 const char* requestName,
@@ -159,6 +164,8 @@ namespace client
         void AppendToUserAgent(const Aws::String& valueToAppend);
 
     protected:
+        template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
+        friend class SmithyBidirectionalEventStreamingTask;
         
         //for backwards compatibility
         const std::shared_ptr<Aws::Client::AWSErrorMarshaller>& GetErrorMarshaller() const

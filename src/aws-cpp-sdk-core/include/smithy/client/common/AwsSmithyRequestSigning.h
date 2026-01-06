@@ -18,6 +18,7 @@
 #include <aws/crt/Optional.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
+#include <aws/core/utils/event/EventEncoderStream.h>
 
 #include <cassert>
 
@@ -37,25 +38,23 @@ namespace smithy
         using HttpRequest = Aws::Http::HttpRequest;
         using SigningError = Aws::Client::AWSError<Aws::Client::CoreErrors>;
         using SigningOutcome = Aws::Utils::FutureOutcome<std::shared_ptr<HttpRequest>, SigningError>;
+        using SigningEventOutcome = Aws::Utils::Outcome<Aws::Utils::Event::Message, SigningError>;
+        using ResolveAuthOutcome = Aws::Utils::Outcome<Aws::Crt::Optional<AuthSchemesVariantT>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
+        using ResolveSignerOutcome = Aws::Utils::Outcome<Aws::Client::AWSAuthSigner*, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
         using HttpResponseOutcome = Aws::Utils::Outcome<std::shared_ptr<Aws::Http::HttpResponse>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
         using IdentityOutcome = Aws::Utils::Outcome<std::shared_ptr<smithy::AwsIdentity>, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
         static IdentityOutcome ResolveIdentity(const client::AwsSmithyClientAsyncRequestContext& ctx,
           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
-          auto authSchemeIt = authSchemes.find(ctx.m_authSchemeOption.schemeId);
-          if (authSchemeIt == authSchemes.end())
+          auto authSchemeOutcome = ResolveAuthScheme(ctx.m_authSchemeOption, authSchemes);
+          if (!authSchemeOutcome.IsSuccess())
           {
-            assert(!"Auth scheme has not been found for a given auth option!");
-            return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
-                                 "",
-                                 "Requested AuthSchemeOption was not found within client Auth Schemes",
-                                 false/*retryable*/));
+            return SigningError(authSchemeOutcome.GetError());
           }
 
-          const AuthSchemesVariantT& authScheme = authSchemeIt->second;
           IdentityVisitor visitor(ctx);
-          AuthSchemesVariantT authSchemesVariantCopy(authScheme); // TODO: allow const visiting
+          AuthSchemesVariantT authSchemesVariantCopy(authSchemeOutcome.GetResult().value());
           authSchemesVariantCopy.Visit(visitor);
 
           if (!visitor.result)
@@ -73,19 +72,13 @@ namespace smithy
           const client::AwsSmithyClientAsyncRequestContext& ctx,
           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
         {
-            auto authSchemeIt = authSchemes.find(ctx.m_authSchemeOption.schemeId);
-            if (authSchemeIt == authSchemes.end())
+            auto authSchemeOutcome = ResolveAuthScheme(ctx.m_authSchemeOption, authSchemes);
+            if (!authSchemeOutcome.IsSuccess())
             {
-                assert(!"Auth scheme has not been found for a given auth option!");
-                return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
-                                     "",
-                                     "Requested AuthSchemeOption was not found within client Auth Schemes",
-                                     false/*retryable*/));
+                return SigningError(authSchemeOutcome.GetError());
             }
 
-            const AuthSchemesVariantT& authScheme = authSchemeIt->second;
-
-            return SignWithAuthScheme(std::move(HTTPRequest), authScheme, ctx);
+            return SignWithAuthScheme(std::move(HTTPRequest), authSchemeOutcome.GetResult().value(), ctx);
         }
 
         static SigningOutcome PreSignRequest(std::shared_ptr<HttpRequest> httpRequest,
@@ -95,21 +88,14 @@ namespace smithy
                                   const Aws::String& serviceName,
                                   long long expirationTimeInSeconds)
         {
-
-            auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
-            if (authSchemeIt == authSchemes.end())
+            auto authSchemeOutcome = ResolveAuthScheme(authSchemeOption, authSchemes);
+            if (!authSchemeOutcome.IsSuccess())
             {
-                assert(!"Auth scheme has not been found for a given auth option!");
-                return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
-                                     "",
-                                     "Requested AuthSchemeOption was not found within client Auth Schemes",
-                                     false/*retryable*/));
+                return SigningError(authSchemeOutcome.GetError());
             }
 
-            const AuthSchemesVariantT& authScheme = authSchemeIt->second;
-
             PreSignerVisitor visitor(httpRequest, authSchemeOption, region, serviceName, expirationTimeInSeconds);
-            AuthSchemesVariantT authSchemesVariantCopy(authScheme);
+            AuthSchemesVariantT authSchemesVariantCopy(authSchemeOutcome.GetResult().value());
             authSchemesVariantCopy.Visit(visitor);
 
             if (!visitor.result) {
@@ -118,6 +104,43 @@ namespace smithy
             }
             return std::move(*visitor.result);
         }
+
+        static SigningEventOutcome SignEventMessage(Aws::Utils::Event::Message& message, Aws::String& seed, const std::shared_ptr<client::AwsSmithyClientAsyncRequestContext>& ctx, const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
+        {
+          auto authSchemeOutcome = ResolveAuthScheme(ctx->m_authSchemeOption, authSchemes);
+          if (!authSchemeOutcome.IsSuccess())
+          {
+            return SigningError(authSchemeOutcome.GetError());
+          }
+
+          SignEventMessageVistor visitor(message, seed, ctx);
+          AuthSchemesVariantT authSchemesVariantCopy(authSchemeOutcome.GetResult().value());
+          authSchemesVariantCopy.Visit(visitor);
+
+          if (!visitor.result) {
+            return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign with an unknown error",
+                                false /*retryable*/));
+          }
+          return std::move(*visitor.result);
+        }
+
+        static ResolveAuthOutcome ResolveAuthScheme(const AuthSchemeOption& authSchemeOption,
+                                  const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
+          {
+
+            auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
+            if (authSchemeIt == authSchemes.end())
+            {
+              assert(!"Auth scheme has not been found for a given auth option!");
+              return (SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
+                                   "",
+                                   "Requested AuthSchemeOption was not found within client Auth Schemes",
+                                   false/*retryable*/));
+            }
+
+            const AuthSchemesVariantT& authScheme = authSchemeIt->second;
+            return {authScheme};
+          }
 
         static bool AdjustClockSkew(HttpResponseOutcome& outcome, const AuthSchemeOption& authSchemeOption,
                                     const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
@@ -128,15 +151,14 @@ namespace smithy
             using DateTime = Aws::Utils::DateTime;
             DateTime serverTime = smithy::client::Utils::GetServerTimeFromError(outcome.GetError());
 
-            auto authSchemeIt = authSchemes.find(authSchemeOption.schemeId);
-            if (authSchemeIt == authSchemes.end())
+            auto authSchemeOutcome = ResolveAuthScheme(authSchemeOption, authSchemes);
+            if (!authSchemeOutcome.IsSuccess())
             {
-                assert(!"Auth scheme has not been found for a given auth option!");
                 return false;
             }
-            AuthSchemesVariantT authScheme = authSchemeIt->second;
 
             ClockSkewVisitor visitor(outcome, serverTime, authSchemeOption);
+            AuthSchemesVariantT authScheme = authSchemeOutcome.GetResult().value();
             authScheme.Visit(visitor);
 
             return visitor.m_resultShouldWait;
@@ -227,6 +249,42 @@ namespace smithy
                   m_requestContext.m_authSchemeOption.signerProperties()));
             }
         };
+
+        struct SignEventMessageVistor
+        {
+          SignEventMessageVistor(Aws::Utils::Event::Message& message, Aws::String& seed,
+                          const std::shared_ptr<client::AwsSmithyClientAsyncRequestContext>& ctx)
+              : m_requestContext(ctx), m_message(message), m_seed(seed)
+          {
+          }
+
+          const std::shared_ptr<client::AwsSmithyClientAsyncRequestContext>& m_requestContext;
+          Aws::Utils::Event::Message& m_message;
+          Aws::String& m_seed;
+
+          Aws::Crt::Optional<SigningEventOutcome> result;
+
+          template <typename AuthSchemeAlternativeT>
+          void operator()(AuthSchemeAlternativeT& authScheme)
+          {
+            // Auth Scheme Variant alternative contains the requested auth option
+            assert(strcmp(authScheme.schemeId, m_requestContext->m_authSchemeOption.schemeId) == 0);
+
+            using IdentityT = typename std::remove_reference<decltype(authScheme)>::type::IdentityT;
+            using Signer = AwsSignerBase<IdentityT>;
+
+            std::shared_ptr<Signer> signer = authScheme.signer();
+            if (!signer) {
+              result.emplace(SigningError(Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE,
+                                          "",
+                                          "Auth scheme provided a nullptr signer",
+                                          false/*retryable*/));
+              return;
+            }
+            result.emplace(signer->signMessage(m_message, m_seed, *static_cast<IdentityT*>(m_requestContext->m_awsIdentity.get()),
+                  m_requestContext->m_authSchemeOption.signerProperties()));
+          }
+      };
 
         //for presigning, region and expiration can be passed in runtime
         struct PreSignerVisitor {

@@ -153,7 +153,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
     @Override
     protected SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception {
 
-        if (serviceModel.isUseSmithyClient() && !serviceModel.hasEventStreamingRequestShapes()) {
+        if (serviceModel.isUseSmithyClient()) {
             return generateClientSmithyHeaderFile(serviceModel);
         }
 
@@ -175,7 +175,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
         return serviceModelsIndices.stream().map(index -> 
         {
-            if(serviceModels.get(index).isUseSmithyClient() && !serviceModels.get(index).hasEventStreamingRequestShapes())
+            if(serviceModels.get(index).isUseSmithyClient())
             {
                 return GenerateSmithyClientSourceFile(serviceModels.get(index), index, Optional.empty());
             }

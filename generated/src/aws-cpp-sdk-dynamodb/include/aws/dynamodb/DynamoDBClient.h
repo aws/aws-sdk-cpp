@@ -37,10 +37,10 @@ AWS_DYNAMODB_API extern const char SERVICE_NAME[];
  */
 class AWS_DYNAMODB_API DynamoDBClient
     : Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>,
-      smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME, Aws::DynamoDB::DynamoDBClientConfiguration,
-                                       smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
-                                       DynamoDBEndpointProviderBase, smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome,
-                                       Aws::Client::DynamoDBErrorMarshaller> {
+      public smithy::client::AwsSmithyClientT<Aws::DynamoDB::SERVICE_NAME, Aws::DynamoDB::DynamoDBClientConfiguration,
+                                              smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+                                              DynamoDBEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
+                                              smithy::client::JsonOutcome, Aws::Client::DynamoDBErrorMarshaller> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();
