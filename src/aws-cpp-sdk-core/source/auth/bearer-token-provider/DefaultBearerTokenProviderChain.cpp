@@ -11,7 +11,6 @@
 
 
 static const char SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG[] = "SSOBearerTokenProvider";
-static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
 
 Aws::Auth::AWSBearerToken Aws::Auth::DefaultBearerTokenProviderChain::GetAWSBearerToken()
 {
@@ -34,19 +33,9 @@ Aws::Auth::AWSBearerToken Aws::Auth::DefaultBearerTokenProviderChain::GetAWSBear
 Aws::Auth::DefaultBearerTokenProviderChain::DefaultBearerTokenProviderChain()
 {
     AddProvider(Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG));
-    const Aws::String bedrockToken = Aws::Environment::GetEnv(AWS_BEARER_TOKEN_BEDROCK);
-    if (!bedrockToken.empty())
-    {
-        AddProvider(Aws::MakeShared<Aws::Auth::StaticAWSBearerTokenProvider>(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG, bedrockToken));
-    }
 }
 
 Aws::Auth::DefaultBearerTokenProviderChain::DefaultBearerTokenProviderChain(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
 {
-  AddProvider(Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG, config.profile));
-  const Aws::String bedrockToken = Aws::Environment::GetEnv(AWS_BEARER_TOKEN_BEDROCK);
-  if (!bedrockToken.empty())
-  {
-    AddProvider(Aws::MakeShared<Aws::Auth::StaticAWSBearerTokenProvider>(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG, bedrockToken));
-  }
+    AddProvider(Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG, config.profile));
 }
