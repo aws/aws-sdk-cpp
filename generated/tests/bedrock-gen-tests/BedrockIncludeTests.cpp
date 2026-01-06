@@ -7,6 +7,7 @@
 #include <aws/testing/AwsTestHelpers.h>
 
 #include <aws/bedrock/BedrockClient.h>
+#include <aws/bedrock/BedrockClientConfiguration.h>
 #include <aws/bedrock/BedrockEndpointProvider.h>
 #include <aws/bedrock/BedrockEndpointRules.h>
 #include <aws/bedrock/BedrockErrorMarshaller.h>
