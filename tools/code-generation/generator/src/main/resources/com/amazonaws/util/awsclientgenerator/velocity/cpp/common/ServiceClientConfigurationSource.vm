@@ -135,7 +135,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
     return Client::InitRetryStrategy();
   };
 #end
-## DyanmoDB historically requires 10 retries for backwards compatibility
+## Bedrock API key auth 
 #if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
     const Aws::String& bedrockToken =
     BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK,
