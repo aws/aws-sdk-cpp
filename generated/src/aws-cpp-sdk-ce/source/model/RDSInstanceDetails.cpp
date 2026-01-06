@@ -54,6 +54,10 @@ RDSInstanceDetails& RDSInstanceDetails::operator=(JsonView jsonValue) {
     m_sizeFlexEligible = jsonValue.GetBool("SizeFlexEligible");
     m_sizeFlexEligibleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeploymentModel")) {
+    m_deploymentModel = jsonValue.GetString("DeploymentModel");
+    m_deploymentModelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue RDSInstanceDetails::Jsonize() const {
 
   if (m_sizeFlexEligibleHasBeenSet) {
     payload.WithBool("SizeFlexEligible", m_sizeFlexEligible);
+  }
+
+  if (m_deploymentModelHasBeenSet) {
+    payload.WithString("DeploymentModel", m_deploymentModel);
   }
 
   return payload;

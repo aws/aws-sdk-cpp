@@ -111,6 +111,10 @@ Application& Application::operator=(JsonView jsonValue) {
     m_monitoringConfiguration = jsonValue.GetObject("monitoringConfiguration");
     m_monitoringConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("diskEncryptionConfiguration")) {
+    m_diskEncryptionConfiguration = jsonValue.GetObject("diskEncryptionConfiguration");
+    m_diskEncryptionConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("interactiveConfiguration")) {
     m_interactiveConfiguration = jsonValue.GetObject("interactiveConfiguration");
     m_interactiveConfigurationHasBeenSet = true;
@@ -228,6 +232,10 @@ JsonValue Application::Jsonize() const {
 
   if (m_monitoringConfigurationHasBeenSet) {
     payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
+  }
+
+  if (m_diskEncryptionConfigurationHasBeenSet) {
+    payload.WithObject("diskEncryptionConfiguration", m_diskEncryptionConfiguration.Jsonize());
   }
 
   if (m_interactiveConfigurationHasBeenSet) {

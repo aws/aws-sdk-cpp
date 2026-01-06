@@ -14,6 +14,7 @@
 #include <aws/emr-serverless/model/AutoStartConfig.h>
 #include <aws/emr-serverless/model/AutoStopConfig.h>
 #include <aws/emr-serverless/model/Configuration.h>
+#include <aws/emr-serverless/model/DiskEncryptionConfiguration.h>
 #include <aws/emr-serverless/model/IdentityCenterConfigurationInput.h>
 #include <aws/emr-serverless/model/ImageConfigurationInput.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
@@ -360,6 +361,24 @@ class CreateApplicationRequest : public EMRServerlessRequest {
 
   ///@{
   /**
+   * <p>The configuration object that allows encrypting local disks.</p>
+   */
+  inline const DiskEncryptionConfiguration& GetDiskEncryptionConfiguration() const { return m_diskEncryptionConfiguration; }
+  inline bool DiskEncryptionConfigurationHasBeenSet() const { return m_diskEncryptionConfigurationHasBeenSet; }
+  template <typename DiskEncryptionConfigurationT = DiskEncryptionConfiguration>
+  void SetDiskEncryptionConfiguration(DiskEncryptionConfigurationT&& value) {
+    m_diskEncryptionConfigurationHasBeenSet = true;
+    m_diskEncryptionConfiguration = std::forward<DiskEncryptionConfigurationT>(value);
+  }
+  template <typename DiskEncryptionConfigurationT = DiskEncryptionConfiguration>
+  CreateApplicationRequest& WithDiskEncryptionConfiguration(DiskEncryptionConfigurationT&& value) {
+    SetDiskEncryptionConfiguration(std::forward<DiskEncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The interactive configuration object that enables the interactive use cases
    * to use when running an application.</p>
    */
@@ -467,6 +486,8 @@ class CreateApplicationRequest : public EMRServerlessRequest {
 
   MonitoringConfiguration m_monitoringConfiguration;
 
+  DiskEncryptionConfiguration m_diskEncryptionConfiguration;
+
   InteractiveConfiguration m_interactiveConfiguration;
 
   SchedulerConfiguration m_schedulerConfiguration;
@@ -489,6 +510,7 @@ class CreateApplicationRequest : public EMRServerlessRequest {
   bool m_workerTypeSpecificationsHasBeenSet = false;
   bool m_runtimeConfigurationHasBeenSet = false;
   bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_diskEncryptionConfigurationHasBeenSet = false;
   bool m_interactiveConfigurationHasBeenSet = false;
   bool m_schedulerConfigurationHasBeenSet = false;
   bool m_identityCenterConfigurationHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/emr-serverless/EMRServerless_EXPORTS.h>
 #include <aws/emr-serverless/model/Configuration.h>
+#include <aws/emr-serverless/model/DiskEncryptionConfiguration.h>
 #include <aws/emr-serverless/model/MonitoringConfiguration.h>
 
 #include <utility>
@@ -75,12 +76,33 @@ class ConfigurationOverrides {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The override configuration to encrypt local disks.</p>
+   */
+  inline const DiskEncryptionConfiguration& GetDiskEncryptionConfiguration() const { return m_diskEncryptionConfiguration; }
+  inline bool DiskEncryptionConfigurationHasBeenSet() const { return m_diskEncryptionConfigurationHasBeenSet; }
+  template <typename DiskEncryptionConfigurationT = DiskEncryptionConfiguration>
+  void SetDiskEncryptionConfiguration(DiskEncryptionConfigurationT&& value) {
+    m_diskEncryptionConfigurationHasBeenSet = true;
+    m_diskEncryptionConfiguration = std::forward<DiskEncryptionConfigurationT>(value);
+  }
+  template <typename DiskEncryptionConfigurationT = DiskEncryptionConfiguration>
+  ConfigurationOverrides& WithDiskEncryptionConfiguration(DiskEncryptionConfigurationT&& value) {
+    SetDiskEncryptionConfiguration(std::forward<DiskEncryptionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Configuration> m_applicationConfiguration;
 
   MonitoringConfiguration m_monitoringConfiguration;
+
+  DiskEncryptionConfiguration m_diskEncryptionConfiguration;
   bool m_applicationConfigurationHasBeenSet = false;
   bool m_monitoringConfigurationHasBeenSet = false;
+  bool m_diskEncryptionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model
