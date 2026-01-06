@@ -33,6 +33,7 @@
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
+#if ($serviceModel.shouldCreateLegacyBearerConstructor()) ##We don't want this legacy constructor for newly migrated smithy clients
         /**
         * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
         */
@@ -41,7 +42,7 @@
 
 #foreach($ctorArgument in $bearerAddCtorArgs)
         ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
-
+#end ###if ($serviceModel.shouldCreateLegacyBearerConstructor())
 #end
 #end##if(($serviceModel.hasBearerAuth() && $serviceModel.useSmithyClient) || $serviceModel.hasOnlyBearerAuth())
 #if(!$serviceModel.hasOnlyBearerAuth())

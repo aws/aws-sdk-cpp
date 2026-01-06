@@ -50,6 +50,7 @@ class Executor;
 }  // namespace Utils
 
 namespace Auth {
+class BearerTokenAuthSignerProvider;
 class AWSCredentials;
 class AWSCredentialsProvider;
 }  // namespace Auth

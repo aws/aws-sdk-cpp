@@ -8,6 +8,8 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/event-stream/event_stream.h>
+#include <functional>
+#include <aws/core/auth/AWSAuthSigner.h>
 
 namespace Aws
 {
@@ -28,12 +30,15 @@ namespace Aws
             class AWS_CORE_API EventStreamEncoder
             {
             public:
-                EventStreamEncoder(Aws::Client::AWSAuthSigner* signer = nullptr);
+              using SigningCallback = std::function<bool(Aws::Utils::Event::Message&, Aws::String&)>;
 
+                EventStreamEncoder(Aws::Client::AWSAuthSigner* signer = nullptr);
 
                 void SetSignatureSeed(const Aws::String& seed) { m_signatureSeed = seed; }
 
                 void SetSigner(Aws::Client::AWSAuthSigner* signer) { m_signer = signer; }
+
+                void SetSigningCallback(const SigningCallback& callback) { m_signingCallback = callback; }
 
                 /**
                  * Encodes the input message in the event-stream binary format and signs the resulting bits.
@@ -58,6 +63,11 @@ namespace Aws
 
                 Aws::Client::AWSAuthSigner* m_signer;
                 Aws::String m_signatureSeed;
+
+                SigningCallback m_signingCallback = [this](Aws::Utils::Event::Message& signedMessage, Aws::String& signatureSeed) -> bool {
+                  assert(m_signer);
+                  return m_signer->SignEventMessage(signedMessage, signatureSeed);
+                };
             };
         }
     }

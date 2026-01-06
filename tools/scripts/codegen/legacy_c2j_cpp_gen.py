@@ -22,7 +22,11 @@ from codegen.model_utils import ServiceModel
 
 SMITHY_SUPPORTED_CLIENTS = [
     "dynamodb",
-    #"s3"
+    "bedrock",
+    "bedrock-runtime",
+    "bedrock-agent",
+    "bedrock-agent-runtime",
+    #"s3",
 ]
 
 # Default configuration variables

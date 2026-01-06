@@ -76,6 +76,10 @@ public class ServiceModel {
         return authSchemes.size() == 1 && operations.values().parallelStream().allMatch(operation -> operation.getSignerName().equals("Aws::Auth::BEARER_SIGNER"));
     }
 
+    public boolean shouldCreateLegacyBearerConstructor() {
+        return !metadata.getServiceFullName().toLowerCase().contains("bedrock");
+    }
+
     public boolean hasServiceSpecificClientConfig() {
         return metadata.getServiceId().equalsIgnoreCase("S3") ||
                 metadata.getServiceId().equalsIgnoreCase("S3-CRT") ||

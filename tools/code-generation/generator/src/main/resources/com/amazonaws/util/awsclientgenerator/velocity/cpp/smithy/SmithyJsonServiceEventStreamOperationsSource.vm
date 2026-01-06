@@ -6,24 +6,16 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   AWS_ASYNC_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceClientOperationsEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
-#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())
-  request.SetResponseStreamFactory(
-      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
-  );
-  if (!request.GetHeadersReceivedEventHandler()) {
-    request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
-      AWS_CHECK_PTR("${operation.name}", response);
-      if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
-        initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
-      }
-    });
-  }
+    auto endpointCallback = [ & #if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+    };
 #else
-      JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, 
-      [ & #if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-      })
+    auto endpointCallback = [ & #if($hasEndPointOverrides) , endpointOverrides #end](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
+    #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
+    };
+      JsonOutcome outcome = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method},
+        endpointCallback)
 #end
 
 #set($streamModelName = '')
@@ -36,25 +28,25 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #end
 #set($streamModelNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($streamModelName))
   auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
+  auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
+    eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+      auto outcome = SignEventMessage(message, seed, ctx);
+        return outcome.IsSuccess();
+        });
+    };
+  auto requestCopy = Aws::MakeShared<${operation.request.shape.name}>("${operation.name}", request);
+  requestCopy->Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
   request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
-  auto streamReadySemaphore = Aws::MakeShared<Aws::Utils::Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  m_clientConfiguration.executor->Submit([this, &request, handler, handlerContext, #if($hasEndPointOverrides) endpointOverrides #end, eventEncoderStream, streamReadySemaphore] () mutable {
-  JsonOutcome outcome = MakeEventStreamRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) ->  void {
-#parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyEndpointClosure.vm")
-      },
-      eventEncoderStream
-      );
-      if(outcome.IsSuccess())
-      {
-        handler(this, request, ${operation.name}Outcome(NoResult()), handlerContext);
-      }
-      else
-      {
-        request.Get${streamModelNameWithFirstLetterCapitalized}()->Close();
-        handler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
-      }
-      return ${operation.name}Outcome(NoResult());
-  });
-  streamReadySemaphore->WaitOne();
-  streamReadyHandler(*request.Get${streamModelNameWithFirstLetterCapitalized}());
+
+  auto asyncTask = smithy::client::CreateSmithyBidirectionalEventStreamTask<${operation.name}Outcome>(this,
+        requestCopy,
+        handler,
+        handlerContext,
+        eventEncoderStream,
+        endpointCallback,
+        authCallback);
+    auto sem = asyncTask.GetSemaphore();
+    m_clientConfiguration.executor->Submit(std::move(asyncTask));
+    sem->WaitOne();
+    streamReadyHandler(*eventEncoderStream);
 }

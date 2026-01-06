@@ -49,7 +49,7 @@ namespace ${serviceNamespace}
 #set($finalClass = "")
 #end
   class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : Aws::Client::ClientWithAsyncTemplateMethods<${className}>,
-    smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+    public smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
       ${serviceConfiguration},
       smithy::AuthSchemeResolverBase<>,
       ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,

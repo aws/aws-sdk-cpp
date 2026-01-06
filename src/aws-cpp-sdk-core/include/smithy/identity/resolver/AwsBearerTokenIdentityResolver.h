@@ -30,6 +30,13 @@ class AwsBearerTokenIdentityResolver
     {
     }
 
+    AwsBearerTokenIdentityResolver(
+        const std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>
+            &provider)
+        : m_providerChainLegacy{provider}
+    {
+    }
+
     AwsBearerTokenIdentityResolver(const Aws::Auth::BearerTokenAuthSignerProvider &bearerTokenProvider):
     m_providerChainLegacy{[&](){
         auto signer = bearerTokenProvider.GetSigner(Aws::Auth::BEARER_SIGNER);
