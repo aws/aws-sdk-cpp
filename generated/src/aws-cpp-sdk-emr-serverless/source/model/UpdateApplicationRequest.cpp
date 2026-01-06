@@ -80,6 +80,10 @@ Aws::String UpdateApplicationRequest::SerializePayload() const {
     payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
   }
 
+  if (m_diskEncryptionConfigurationHasBeenSet) {
+    payload.WithObject("diskEncryptionConfiguration", m_diskEncryptionConfiguration.Jsonize());
+  }
+
   if (m_schedulerConfigurationHasBeenSet) {
     payload.WithObject("schedulerConfiguration", m_schedulerConfiguration.Jsonize());
   }

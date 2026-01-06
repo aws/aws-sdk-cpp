@@ -192,6 +192,25 @@ class RDSInstanceDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Determines whether the recommendation is for a reservation for RDS
+   * Custom.</p>
+   */
+  inline const Aws::String& GetDeploymentModel() const { return m_deploymentModel; }
+  inline bool DeploymentModelHasBeenSet() const { return m_deploymentModelHasBeenSet; }
+  template <typename DeploymentModelT = Aws::String>
+  void SetDeploymentModel(DeploymentModelT&& value) {
+    m_deploymentModelHasBeenSet = true;
+    m_deploymentModel = std::forward<DeploymentModelT>(value);
+  }
+  template <typename DeploymentModelT = Aws::String>
+  RDSInstanceDetails& WithDeploymentModel(DeploymentModelT&& value) {
+    SetDeploymentModel(std::forward<DeploymentModelT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_family;
 
@@ -210,6 +229,8 @@ class RDSInstanceDetails {
   bool m_currentGeneration{false};
 
   bool m_sizeFlexEligible{false};
+
+  Aws::String m_deploymentModel;
   bool m_familyHasBeenSet = false;
   bool m_instanceTypeHasBeenSet = false;
   bool m_regionHasBeenSet = false;
@@ -219,6 +240,7 @@ class RDSInstanceDetails {
   bool m_licenseModelHasBeenSet = false;
   bool m_currentGenerationHasBeenSet = false;
   bool m_sizeFlexEligibleHasBeenSet = false;
+  bool m_deploymentModelHasBeenSet = false;
 };
 
 }  // namespace Model

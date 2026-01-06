@@ -92,6 +92,10 @@ Aws::String CreateApplicationRequest::SerializePayload() const {
     payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
   }
 
+  if (m_diskEncryptionConfigurationHasBeenSet) {
+    payload.WithObject("diskEncryptionConfiguration", m_diskEncryptionConfiguration.Jsonize());
+  }
+
   if (m_interactiveConfigurationHasBeenSet) {
     payload.WithObject("interactiveConfiguration", m_interactiveConfiguration.Jsonize());
   }
