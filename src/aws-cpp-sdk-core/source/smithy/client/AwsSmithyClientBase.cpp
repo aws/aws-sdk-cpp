@@ -426,6 +426,19 @@ void AwsSmithyClientBase::AttemptOneRequestAsync(std::shared_ptr<AwsSmithyClient
         HandleAsyncReply(std::move(pRequestCtx), std::move(pResponse));
     };
 
+    for (const auto& interceptor : m_interceptors)
+    {
+      auto modifiedRequest = interceptor->ModifyBeforeTransmit(*pRequestCtx->m_interceptorContext);
+      if (!modifiedRequest.IsSuccess())
+      {
+        pExecutor->Submit([modifiedRequest, responseHandler]() mutable
+          {
+              responseHandler(modifiedRequest.GetError());
+          });
+        return;
+      }
+    }
+
     // TODO: async http client
 #if 0
     AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Request Successfully signed");
