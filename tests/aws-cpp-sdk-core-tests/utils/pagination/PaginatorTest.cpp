@@ -16,7 +16,7 @@ struct TestResult {
     Aws::Vector<Aws::String> items;
     Aws::String outputToken;
     bool moreResults;
-    
+
     const Aws::Vector<Aws::String>& GetItems() const { return items; }
     const Aws::String& GetOutputToken() const { return outputToken; }
     bool GetMoreResults() const { return moreResults; }
@@ -26,7 +26,7 @@ struct TestOutcome {
     bool success;
     Aws::String error;
     TestResult result;
-    
+
     bool IsSuccess() const { return success; }
     const Aws::String& GetError() const { return error; }
     const TestResult& GetResult() const { return result; }
@@ -40,13 +40,13 @@ struct TestRequest {
     const Aws::String& GetInputToken() const { return inputToken; }
 };
 
-class TestClient {
+class PaginatorTestClient {
 private:
     Aws::Vector<Aws::String> allData;
     bool shouldFail = false;
     
 public:
-    TestClient() : allData({"apple", "banana", "cherry", "dragon-fruit", "elderberry", "fig", "grape"}) {}
+    PaginatorTestClient() : allData({"apple", "banana", "cherry", "dragon-fruit", "elderberry", "fig", "grape"}) {}
     
     void SetData(const Aws::Vector<Aws::String>& data) { allData = data; }
     void SetShouldFail(bool fail) { shouldFail = fail; }
@@ -86,7 +86,7 @@ struct ListItemsTraits {
     using OutcomeType = TestOutcome;
     using ResultType = TestResult;
     
-    static OutcomeType Invoke(TestClient& client, const TestRequest& request) {
+    static OutcomeType Invoke(PaginatorTestClient& client, const TestRequest& request) {
         return client.ListItems(request);
     }
     
@@ -112,13 +112,13 @@ protected:
         client.Reset();
     }
     
-    TestClient client;
+    PaginatorTestClient client;
     TestRequest request;
 };
 
 TEST_F(PaginatorTest, TestIteratesThroughAllPages)
 {
-    PagePaginator<TestClient, TestRequest, ListItemsTraits> paginator(&client, request);
+    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     Aws::Vector<Aws::String> allItems;
     int pageCount = 0;
@@ -144,7 +144,7 @@ TEST_F(PaginatorTest, TestIteratesThroughAllPages)
 TEST_F(PaginatorTest, TestHandlesErrorGracefully)
 {
     client.SetShouldFail(true);
-    PagePaginator<TestClient, TestRequest, ListItemsTraits> paginator(&client, request);
+    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     ASSERT_TRUE(it != paginator.end());
@@ -160,7 +160,7 @@ TEST_F(PaginatorTest, TestHandlesErrorGracefully)
 TEST_F(PaginatorTest, TestEmptyResultSet)
 {
     client.SetData({});
-    PagePaginator<TestClient, TestRequest, ListItemsTraits> paginator(&client, request);
+    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     ASSERT_TRUE(it != paginator.end());
@@ -176,7 +176,7 @@ TEST_F(PaginatorTest, TestEmptyResultSet)
 
 TEST_F(PaginatorTest, TestBeginEndIteratorComparison)
 {
-    PagePaginator<TestClient, TestRequest, ListItemsTraits> paginator(&client, request);
+    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto begin = paginator.begin();
     auto end = paginator.end();
