@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/bedrock-runtime/BedrockRuntimeAwsBearerTokenIdentityResolver.h>
 #include <aws/bedrock-runtime/BedrockRuntimeClient.h>
 #include <aws/bedrock-runtime/BedrockRuntimeEndpointProvider.h>
 #include <aws/bedrock-runtime/BedrockRuntimeErrorMarshaller.h>
@@ -80,7 +81,9 @@ BedrockRuntimeClient::BedrockRuntimeClient(const BedrockRuntime::BedrockRuntimeC
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
               {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
-               smithy::BearerTokenAuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+               smithy::BearerTokenAuthScheme{Aws::MakeShared<BedrockRuntimeAwsBearerTokenIdentityResolver>(
+                                                 "BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig),
+                                             GetServiceName(), clientConfiguration.region}},
           }) {}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials,
@@ -93,11 +96,13 @@ BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials,
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
               ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
                                                                      smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
-                                       GetServiceName(), clientConfiguration.region}},
-          }) {}
+          {{smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+            smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
+                                    GetServiceName(), clientConfiguration.region}},
+           {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
+            smithy::BearerTokenAuthScheme{Aws::MakeShared<BedrockRuntimeAwsBearerTokenIdentityResolver>(
+                                              "BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig),
+                                          GetServiceName(), clientConfiguration.region}}}) {}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                            std::shared_ptr<BedrockRuntimeEndpointProviderBase> endpointProvider,
@@ -125,12 +130,11 @@ BedrockRuntimeClient::BedrockRuntimeClient(const Client::ClientConfiguration& cl
                                                                      smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption})),
           {
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(
-                                           ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                                       GetServiceName(), clientConfiguration.region}},
+               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
               {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
-               smithy::BearerTokenAuthScheme{Aws::MakeShared<smithy::AwsBearerTokenIdentityResolver>(ALLOCATION_TAG), GetServiceName(),
-                                             clientConfiguration.region}},
+               smithy::BearerTokenAuthScheme{Aws::MakeShared<BedrockRuntimeAwsBearerTokenIdentityResolver>(
+                                                 "BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig),
+                                             GetServiceName(), clientConfiguration.region}},
           }) {}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
@@ -144,6 +148,11 @@ BedrockRuntimeClient::BedrockRuntimeClient(const AWSCredentials& credentials, co
               {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
                smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
                                        GetServiceName(), clientConfiguration.region}},
+              {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
+               smithy::BearerTokenAuthScheme{Aws::MakeShared<BedrockRuntimeAwsBearerTokenIdentityResolver>(
+                                                 "BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig),
+                                             GetServiceName(), clientConfiguration.region}},
+
           }) {}
 
 BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -154,11 +163,13 @@ BedrockRuntimeClient::BedrockRuntimeClient(const std::shared_ptr<AWSCredentialsP
           Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
               ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption,
                                                                      smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
-                                       GetServiceName(), clientConfiguration.region}},
-          }) {}
+          {{smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+            smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
+                                    GetServiceName(), clientConfiguration.region}},
+           {smithy::BearerTokenAuthSchemeOption::bearerTokenAuthSchemeOption.schemeId,
+            smithy::BearerTokenAuthScheme{Aws::MakeShared<BedrockRuntimeAwsBearerTokenIdentityResolver>(
+                                              "BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig),
+                                          GetServiceName(), clientConfiguration.region}}}) {}
 /* End of legacy constructors due deprecation */
 
 BedrockRuntimeClient::~BedrockRuntimeClient() { ShutdownSdkClient(this, -1); }

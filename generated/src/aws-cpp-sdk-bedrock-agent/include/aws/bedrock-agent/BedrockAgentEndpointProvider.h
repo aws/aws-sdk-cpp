@@ -4,9 +4,9 @@
  */
 
 #pragma once
+#include <aws/bedrock-agent/BedrockAgentClientConfiguration.h>
 #include <aws/bedrock-agent/BedrockAgentEndpointRules.h>
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -15,14 +15,19 @@
 namespace Aws {
 namespace BedrockAgent {
 namespace Endpoint {
+using BedrockAgentClientConfiguration = Aws::BedrockAgent::BedrockAgentClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::DefaultEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using BedrockAgentClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using BedrockAgentClientConfiguration = Aws::Client::GenericClientConfiguration;
-using BedrockAgentBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_BEDROCKAGENT_API BedrockAgentBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~BedrockAgentBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const BedrockAgentClientConfiguration& config);
+};
 
 /**
  * The type for the BedrockAgent Client Endpoint Provider.
@@ -35,6 +40,24 @@ using BedrockAgentEndpointProviderBase =
 using BedrockAgentDefaultEpProviderBase =
     DefaultEndpointProvider<BedrockAgentClientConfiguration, BedrockAgentBuiltInParameters, BedrockAgentClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace BedrockAgent
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_BEDROCKAGENT_EXTERN template class AWS_BEDROCKAGENT_API Aws::Endpoint::EndpointProviderBase<
+    BedrockAgent::Endpoint::BedrockAgentClientConfiguration, BedrockAgent::Endpoint::BedrockAgentBuiltInParameters,
+    BedrockAgent::Endpoint::BedrockAgentClientContextParameters>;
+
+AWS_BEDROCKAGENT_EXTERN template class AWS_BEDROCKAGENT_API Aws::Endpoint::DefaultEndpointProvider<
+    BedrockAgent::Endpoint::BedrockAgentClientConfiguration, BedrockAgent::Endpoint::BedrockAgentBuiltInParameters,
+    BedrockAgent::Endpoint::BedrockAgentClientContextParameters>;
+}  // namespace Endpoint
+
+namespace BedrockAgent {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -55,6 +55,7 @@ static const char* AWS_WEB_IDENTITY_TOKEN_FILE_ENV_VAR = "AWS_WEB_IDENTITY_TOKEN
 static const char* AWS_WEB_IDENTITY_TOKEN_FILE_CONFIG_FILE_OPTION = "web_identity_token_file";
 static const char* AWS_LOGIN_SESSION_FILE_OPTION = "login_session";
 static const char* AWS_LOGIN_CACHE_DIRECTORY_ENV_VAR = "AWS_LOGIN_CACHE_DIRECTORY";
+static const char* AWS_AUTH_SCHEME_PREFERENCE = "AWS_AUTH_SCHEME_PREFERENCE";
 
 using RequestChecksumConfigurationEnumMapping = std::pair<const char*, RequestChecksumCalculation>;
 static const std::array<RequestChecksumConfigurationEnumMapping, 2> REQUEST_CHECKSUM_CONFIG_MAPPING = {{
@@ -192,9 +193,9 @@ Aws::String calculateRegion() {
 
 
 Aws::Vector<Aws::String> calculateAuthPreferences() {
-  // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.
+  // Automatically determine the auth scheme preferences, based on environment vars.
   Aws::Vector<Aws::String> res;
-  auto prefs = Aws::Environment::GetEnv("AWS_AUTH_SCHEME_PREFERENCE");
+  auto prefs = Aws::Environment::GetEnv(AWS_AUTH_SCHEME_PREFERENCE);
   Aws::Vector<Aws::String> prefsList  = Aws::Utils::StringUtils::Split(prefs, ',');
   res.reserve(prefsList.size());  // avoid repeated allocations
   for (auto& pref : prefsList) {

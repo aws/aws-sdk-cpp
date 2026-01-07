@@ -5,11 +5,15 @@
 #pragma once
 
 #include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderBase.h>
+#include <aws/core/auth/bearer-token-provider/DefaultBearerTokenProviderChain.h>
 #include <aws/core/auth/bearer-token-provider/SSOBearerTokenProvider.h>
 #include <aws/core/auth/signer-provider/BearerTokenAuthSignerProvider.h>
 #include <aws/core/auth/signer/AWSAuthBearerSigner.h>
 #include <smithy/identity/identity/AwsBearerTokenIdentity.h>
 #include <smithy/identity/resolver/AwsIdentityResolverBase.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/core/auth/bearer-token-provider/StaticBearerTokenProvider.h>
+
 namespace smithy
 {
 
@@ -52,7 +56,7 @@ class AwsBearerTokenIdentityResolver
     }
 
     ResolveIdentityFutureOutcome
-    getIdentity(const IdentityProperties &identityProperties,
+    virtual getIdentity(const IdentityProperties &identityProperties,
                 const AdditionalParameters &additionalParameters) override
     {
         AWS_UNREFERENCED_PARAM(identityProperties);
@@ -107,7 +111,11 @@ class DefaultAwsBearerTokenIdentityResolver
 
     DefaultAwsBearerTokenIdentityResolver()
         : AwsBearerTokenIdentityResolver(Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>>{
-              Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider")}){};
+            Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider")}){};
+
+    DefaultAwsBearerTokenIdentityResolver(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
+        : AwsBearerTokenIdentityResolver(Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>>{
+            Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider", config.profile)}){};
 };
 
 } // namespace smithy

@@ -83,7 +83,7 @@ namespace ${rootNamespace}
 
   namespace ${metadata.namespace}
   {
-#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control" && !$serviceModel.metadata.hasEndpointDiscoveryTrait)
+#if(!$serviceModel.hasServiceSpecificClientConfig())
     using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration;
 #end
     using ${metadata.classNamePrefix}EndpointProviderBase = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase;

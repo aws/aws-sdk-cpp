@@ -8,10 +8,16 @@
 
 #include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderChainBase.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <memory>
 
 namespace Aws
 {
+    namespace Client
+    {
+        struct ClientConfiguration;
+    }
+
     namespace Auth
     {
         /**
@@ -21,6 +27,7 @@ namespace Aws
         {
         public:
             DefaultBearerTokenProviderChain();
+            DefaultBearerTokenProviderChain(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config);
             virtual ~DefaultBearerTokenProviderChain() = default;
 
             /**

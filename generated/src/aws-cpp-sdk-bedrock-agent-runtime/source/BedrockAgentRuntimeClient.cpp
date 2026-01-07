@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/bedrock-agent-runtime/BedrockAgentRuntimeAwsBearerTokenIdentityResolver.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeClient.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeEndpointProvider.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
@@ -118,17 +119,16 @@ BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const std::shared_ptr<AWSCr
 
 /* Legacy constructors due deprecation */
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
-                       Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
-                       Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
-                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-                       {
-                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-                            smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(
-                                                        ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                                                    GetServiceName(), clientConfiguration.region}},
-                       }) {}
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "Bedrock Agent Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<BedrockAgentRuntimeErrorMarshaller>(ALLOCATION_TAG),
+          Aws::MakeShared<BedrockAgentRuntimeEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+          }) {}
 
 BedrockAgentRuntimeClient::BedrockAgentRuntimeClient(const AWSCredentials& credentials,
                                                      const Client::ClientConfiguration& clientConfiguration)

@@ -6,7 +6,9 @@
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
 
+#include <aws/bedrock-runtime/BedrockRuntimeAwsBearerTokenIdentityResolver.h>
 #include <aws/bedrock-runtime/BedrockRuntimeClient.h>
+#include <aws/bedrock-runtime/BedrockRuntimeClientConfiguration.h>
 #include <aws/bedrock-runtime/BedrockRuntimeEndpointProvider.h>
 #include <aws/bedrock-runtime/BedrockRuntimeEndpointRules.h>
 #include <aws/bedrock-runtime/BedrockRuntimeErrorMarshaller.h>

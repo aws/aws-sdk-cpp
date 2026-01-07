@@ -35,7 +35,7 @@ class BearerTokenAuthScheme : public AuthScheme<AwsBearerTokenIdentityBase>
 
     explicit BearerTokenAuthScheme(const Aws::String &serviceName, const Aws::String &region,
                                    const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
-        : BearerTokenAuthScheme(Aws::MakeShared<DefaultAwsBearerTokenIdentityResolver>("BearerTokenAuthScheme"), serviceName, region) {
+        : BearerTokenAuthScheme(Aws::MakeShared<DefaultAwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", config), serviceName, region) {
       AWS_UNREFERENCED_PARAM(config);
       assert(m_identityResolver);
       assert(m_signer);
