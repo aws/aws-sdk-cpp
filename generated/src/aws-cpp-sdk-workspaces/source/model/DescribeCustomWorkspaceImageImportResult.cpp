@@ -36,6 +36,14 @@ DescribeCustomWorkspaceImageImportResult& DescribeCustomWorkspaceImageImportResu
     m_state = CustomWorkspaceImageImportStateMapper::GetCustomWorkspaceImageImportStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StateMessage")) {
+    m_stateMessage = jsonValue.GetString("StateMessage");
+    m_stateMessageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ProgressPercentage")) {
+    m_progressPercentage = jsonValue.GetInteger("ProgressPercentage");
+    m_progressPercentageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Created")) {
     m_created = jsonValue.GetDouble("Created");
     m_createdHasBeenSet = true;

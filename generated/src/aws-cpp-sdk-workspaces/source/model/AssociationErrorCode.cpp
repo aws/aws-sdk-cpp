@@ -20,6 +20,7 @@ static const int ValidationError_InsufficientMemory_HASH = HashingUtils::HashStr
 static const int ValidationError_UnsupportedOperatingSystem_HASH = HashingUtils::HashString("ValidationError.UnsupportedOperatingSystem");
 static const int DeploymentError_InternalServerError_HASH = HashingUtils::HashString("DeploymentError.InternalServerError");
 static const int DeploymentError_WorkspaceUnreachable_HASH = HashingUtils::HashString("DeploymentError.WorkspaceUnreachable");
+static const int ValidationError_ApplicationOldVersionExists_HASH = HashingUtils::HashString("ValidationError.ApplicationOldVersionExists");
 
 AssociationErrorCode GetAssociationErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ AssociationErrorCode GetAssociationErrorCodeForName(const Aws::String& name) {
     return AssociationErrorCode::DeploymentError_InternalServerError;
   } else if (hashCode == DeploymentError_WorkspaceUnreachable_HASH) {
     return AssociationErrorCode::DeploymentError_WorkspaceUnreachable;
+  } else if (hashCode == ValidationError_ApplicationOldVersionExists_HASH) {
+    return AssociationErrorCode::ValidationError_ApplicationOldVersionExists;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForAssociationErrorCode(AssociationErrorCode enumValue) {
       return "DeploymentError.InternalServerError";
     case AssociationErrorCode::DeploymentError_WorkspaceUnreachable:
       return "DeploymentError.WorkspaceUnreachable";
+    case AssociationErrorCode::ValidationError_ApplicationOldVersionExists:
+      return "ValidationError.ApplicationOldVersionExists";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

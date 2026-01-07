@@ -16,7 +16,8 @@ enum class AssociationErrorCode {
   ValidationError_InsufficientMemory,
   ValidationError_UnsupportedOperatingSystem,
   DeploymentError_InternalServerError,
-  DeploymentError_WorkspaceUnreachable
+  DeploymentError_WorkspaceUnreachable,
+  ValidationError_ApplicationOldVersionExists
 };
 
 namespace AssociationErrorCodeMapper {

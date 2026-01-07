@@ -10,7 +10,23 @@
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
-enum class CustomWorkspaceImageImportState { NOT_SET, PENDING, IN_PROGRESS, COMPLETED, ERROR_ };
+enum class CustomWorkspaceImageImportState {
+  NOT_SET,
+  PENDING,
+  IN_PROGRESS,
+  PROCESSING_SOURCE_IMAGE,
+  IMAGE_TESTING_START,
+  UPDATING_OPERATING_SYSTEM,
+  IMAGE_COMPATIBILITY_CHECKING,
+  IMAGE_TESTING_GENERALIZATION,
+  CREATING_TEST_INSTANCE,
+  INSTALLING_COMPONENTS,
+  GENERALIZING,
+  VALIDATING,
+  PUBLISHING,
+  COMPLETED,
+  ERROR_
+};
 
 namespace CustomWorkspaceImageImportStateMapper {
 AWS_WORKSPACES_API CustomWorkspaceImageImportState GetCustomWorkspaceImageImportStateForName(const Aws::String& name);
