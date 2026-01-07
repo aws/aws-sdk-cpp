@@ -156,38 +156,47 @@ public:
     ~ChunkingInterceptor() override = default;
 
     ModifyRequestOutcome ModifyBeforeSigning(smithy::interceptor::InterceptorContext& context) override {
+      auto request = context.GetTransmitRequest();
+
+      if (!ShouldApplyChunking(request, context)) {
+        return request;
+      }
+
+      const auto& hashPair = request->GetRequestHash();
+      if (hashPair.second != nullptr) {
+        Aws::String checksumHeaderValue = Aws::String(CHECKSUM_HEADER_PREFIX) + hashPair.first;
+        request->DeleteHeader(checksumHeaderValue.c_str());
+        request->SetHeaderValue(Aws::Http::AWS_TRAILER_HEADER, checksumHeaderValue);
+        request->SetTransferEncoding(Aws::Http::CHUNKED_VALUE);
+
+        if (!request->HasContentEncoding()) {
+          request->SetContentEncoding(Aws::Http::AWS_CHUNKED_VALUE);
+        } else {
+          Aws::String currentEncoding = request->GetContentEncoding();
+          if (currentEncoding.find(Aws::Http::AWS_CHUNKED_VALUE) == Aws::String::npos) {
+            request->SetContentEncoding(Aws::String{Aws::Http::AWS_CHUNKED_VALUE} + "," + currentEncoding);
+          }
+        }
+
+        if (request->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER)) {
+          request->SetHeaderValue(Aws::Http::DECODED_CONTENT_LENGTH_HEADER, request->GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER));
+          request->DeleteHeader(Aws::Http::CONTENT_LENGTH_HEADER);
+        }
+      }
+
+      return context.GetTransmitRequest();
+    }
+
+    ModifyRequestOutcome ModifyBeforeTransmit(smithy::interceptor::InterceptorContext& context) override {
         auto request = context.GetTransmitRequest();
 
-        if (!ShouldApplyChunking(request)) {
+        if (!ShouldApplyChunking(request, context)) {
             return request;
         }
 
         auto originalBody = request->GetContentBody();
         if (!originalBody) {
             return request;
-        }
-
-        // Set up chunked encoding headers for checksum calculation
-        const auto& hashPair = request->GetRequestHash();
-        if (hashPair.second != nullptr) {
-            Aws::String checksumHeaderValue = Aws::String(CHECKSUM_HEADER_PREFIX) + hashPair.first;
-            request->DeleteHeader(checksumHeaderValue.c_str());
-            request->SetHeaderValue(Aws::Http::AWS_TRAILER_HEADER, checksumHeaderValue);
-            request->SetTransferEncoding(Aws::Http::CHUNKED_VALUE);
-            
-            if (!request->HasContentEncoding()) {
-                request->SetContentEncoding(Aws::Http::AWS_CHUNKED_VALUE);
-            } else {
-                Aws::String currentEncoding = request->GetContentEncoding();
-                if (currentEncoding.find(Aws::Http::AWS_CHUNKED_VALUE) == Aws::String::npos) {
-                    request->SetContentEncoding(Aws::String{Aws::Http::AWS_CHUNKED_VALUE} + "," + currentEncoding);
-                }
-            }
-
-            if (request->HasHeader(Aws::Http::CONTENT_LENGTH_HEADER)) {
-                request->SetHeaderValue(Aws::Http::DECODED_CONTENT_LENGTH_HEADER, request->GetHeaderValue(Aws::Http::CONTENT_LENGTH_HEADER));
-                request->DeleteHeader(Aws::Http::CONTENT_LENGTH_HEADER);
-            }
         }
 
         auto chunkedBody = Aws::MakeShared<AwsChunkedIOStream>(
@@ -202,7 +211,13 @@ public:
     }
 
 private:
-    bool ShouldApplyChunking(const std::shared_ptr<Aws::Http::HttpRequest>& request) const {
+    bool ShouldApplyChunking(const std::shared_ptr<Aws::Http::HttpRequest>& request,
+                             const smithy::interceptor::InterceptorContext& context) const {
+        //TODO: remove this once we figure out why MRAP cannot trail chunk
+        const auto signerName = context.GetAttribute("signer_name");
+        if (signerName.has_value() && signerName.value() == "AsymmetricSignatureV4") {
+            return false;
+        }
         // Use configuration setting to determine chunking behavior
         if (m_httpClientChunkedMode != Aws::Client::HttpClientChunkedMode::DEFAULT) {
             return false;

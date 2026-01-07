@@ -570,6 +570,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
 
     InterceptorContext context{request};
     context.SetTransmitRequest(httpRequest);
+    context.SetAttribute("signer_name", signerName);
     for (const auto& interceptor : m_interceptors)
     {
         const auto modifiedRequest = interceptor->ModifyBeforeSigning(context);
@@ -595,6 +596,13 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     if (request.GetRequestSignedHandler())
     {
         request.GetRequestSignedHandler()(*httpRequest);
+    }
+
+    for (const auto& interceptor : m_interceptors) {
+      const auto modifiedRequest = interceptor->ModifyBeforeTransmit(context);
+      if (!modifiedRequest.IsSuccess()) {
+        return modifiedRequest.GetError();
+      }
     }
 
     AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request Successfully signed");
