@@ -253,7 +253,7 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
    * Copy a Custom WorkSpaces Image</a>.</p> <p>In the China (Ningxia) Region, you
    * can copy images only within the same Region.</p> <p>In Amazon Web Services
    * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
-   * ServicesSupport.</p>  <p>Before copying a shared image, be sure to
+   * Services Support.</p>  <p>Before copying a shared image, be sure to
    * verify that it has been shared from the correct Amazon Web Services account. To
    * determine if an image has been shared and to see the ID of the Amazon Web
    * Services account that owns an image, use the <a
@@ -2606,14 +2606,14 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Terminates the specified WorkSpaces.</p>  <p>Terminating a
    * WorkSpace is a permanent action and cannot be undone. The user's data is
-   * destroyed. If you need to archive any user data, contact Amazon Web
-   * ServicesSupport before terminating the WorkSpace.</p>  <p>You can
-   * terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.</p>
-   * <p>This operation is asynchronous and returns before the WorkSpaces have been
-   * completely terminated. After a WorkSpace is terminated, the
-   * <code>TERMINATED</code> state is returned only briefly before the WorkSpace
-   * directory metadata is cleaned up, so this state is rarely returned. To confirm
-   * that a WorkSpace is terminated, check for the WorkSpace ID by using <a
+   * destroyed. If you need to archive any user data, contact Amazon Web Services
+   * Support before terminating the WorkSpace.</p>  <p>You can terminate
+   * a WorkSpace that is in any state except <code>SUSPENDED</code>.</p> <p>This
+   * operation is asynchronous and returns before the WorkSpaces have been completely
+   * terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state
+   * is returned only briefly before the WorkSpace directory metadata is cleaned up,
+   * so this state is rarely returned. To confirm that a WorkSpace is terminated,
+   * check for the WorkSpace ID by using <a
    * href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
    * DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace
    * has been successfully terminated.</p>  <p>Simple AD and AD Connector are
@@ -2851,14 +2851,14 @@ class AWS_WORKSPACES_API WorkSpacesClient : public Aws::Client::AWSJsonClient,
    * the image to other Regions as needed.</p> <p>In the China (Ningxia) Region, you
    * can copy images only within the same Region.</p> <p>In Amazon Web Services
    * GovCloud (US), to copy images to and from other Regions, contact Amazon Web
-   * ServicesSupport.</p> <p>For more information about sharing images, see <a
+   * Services Support.</p> <p>For more information about sharing images, see <a
    * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
    * Share or Unshare a Custom WorkSpaces Image</a>.</p>  <ul> <li> <p>To
    * delete an image that has been shared, you must unshare the image before you
    * delete it.</p> </li> <li> <p>Sharing Bring Your Own License (BYOL) images across
    * Amazon Web Services accounts isn't supported at this time in Amazon Web Services
    * GovCloud (US). To share BYOL images across accounts in Amazon Web Services
-   * GovCloud (US), contact Amazon Web ServicesSupport.</p> </li> </ul>
+   * GovCloud (US), contact Amazon Web Services Support.</p> </li> </ul>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">AWS
    * API Reference</a></p>

@@ -84,6 +84,38 @@ class DescribeCustomWorkspaceImageImportResult {
 
   ///@{
   /**
+   * <p>The state message of the WorkSpace image import workflow.</p>
+   */
+  inline const Aws::String& GetStateMessage() const { return m_stateMessage; }
+  template <typename StateMessageT = Aws::String>
+  void SetStateMessage(StateMessageT&& value) {
+    m_stateMessageHasBeenSet = true;
+    m_stateMessage = std::forward<StateMessageT>(value);
+  }
+  template <typename StateMessageT = Aws::String>
+  DescribeCustomWorkspaceImageImportResult& WithStateMessage(StateMessageT&& value) {
+    SetStateMessage(std::forward<StateMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The estimated progress percentage of the WorkSpace image import workflow.</p>
+   */
+  inline int GetProgressPercentage() const { return m_progressPercentage; }
+  inline void SetProgressPercentage(int value) {
+    m_progressPercentageHasBeenSet = true;
+    m_progressPercentage = value;
+  }
+  inline DescribeCustomWorkspaceImageImportResult& WithProgressPercentage(int value) {
+    SetProgressPercentage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the WorkSpace image import was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreated() const { return m_created; }
@@ -195,6 +227,10 @@ class DescribeCustomWorkspaceImageImportResult {
 
   CustomWorkspaceImageImportState m_state{CustomWorkspaceImageImportState::NOT_SET};
 
+  Aws::String m_stateMessage;
+
+  int m_progressPercentage{0};
+
   Aws::Utils::DateTime m_created{};
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
@@ -209,6 +245,8 @@ class DescribeCustomWorkspaceImageImportResult {
   bool m_imageIdHasBeenSet = false;
   bool m_infrastructureConfigurationArnHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_stateMessageHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
   bool m_createdHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_imageSourceHasBeenSet = false;
