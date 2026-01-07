@@ -64,6 +64,9 @@
     "ALLOC",
     "ISOE",
     "isoe",
+    "authscheme",
+    "Vistor",
+    "eventstreaming",
     // AWS general
     "Arns",
     "AMZN",
@@ -77,6 +80,9 @@
     "AWSSTL",
     "reparsed",
     "reparses",
+    "MRAP",
+    "ISOF",
+    "isof",
     // AWS Signature
     "SIGV",
     "AUTHV",

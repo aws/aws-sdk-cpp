@@ -9,6 +9,7 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/crt/Optional.h>
 
 namespace smithy
 {
@@ -53,9 +54,12 @@ namespace smithy
                 m_transmitResponse = transmitResponse;
             }
 
-            Aws::String GetAttribute(const Aws::String& key) const
-            {
-                return m_attributes.at(key);
+            Aws::Crt::Optional<Aws::String> GetAttribute(const Aws::String& key) const {
+              const auto attribute = m_attributes.find(key);
+              if (attribute == m_attributes.end()) {
+                return {};
+              }
+              return attribute->second;
             }
 
             void SetAttribute(const Aws::String& key, const Aws::String& value)
