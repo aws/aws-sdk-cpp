@@ -90,7 +90,7 @@ bool GeneralHTTPCredentialsProvider::ShouldCreateGeneralHTTPProvider(const Aws::
         }
 
         Aws::Http::URI absUri(absoluteUri);
-        const Aws::String& authority = absUri.GetAuthority();
+        const Aws::String& authority = absUri.GetHost();
 
         // Otherwise, implementations MUST fail to resolve when the URI hostname does not satisfy any of the following conditions
         if (IsAllowedIp(authority))
