@@ -16,7 +16,6 @@
 
 namespace smithy
 {
-static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
 
 class AwsBearerTokenIdentityResolver
     : public IdentityResolverBase<AwsBearerTokenIdentityBase>
@@ -57,7 +56,7 @@ class AwsBearerTokenIdentityResolver
     }
 
     ResolveIdentityFutureOutcome
-    getIdentity(const IdentityProperties &identityProperties,
+    virtual getIdentity(const IdentityProperties &identityProperties,
                 const AdditionalParameters &additionalParameters) override
     {
         AWS_UNREFERENCED_PARAM(identityProperties);
@@ -117,34 +116,6 @@ class DefaultAwsBearerTokenIdentityResolver
     DefaultAwsBearerTokenIdentityResolver(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
         : AwsBearerTokenIdentityResolver(Aws::Vector<std::shared_ptr<Aws::Auth::AWSBearerTokenProviderBase>>{
             Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider", config.profile)}){};
-};
-
-class BedrockAwsBearerTokenIdentityResolver
-    : public AwsBearerTokenIdentityResolver
-{
-public:
-  using IdentityT = AwsBearerTokenIdentity;
-  virtual ~BedrockAwsBearerTokenIdentityResolver() = default;
-
-  BedrockAwsBearerTokenIdentityResolver()
-  {
-      m_providerChainLegacy.emplace_back(Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider"));
-      const Aws::String bedrockToken = Aws::Environment::GetEnv(AWS_BEARER_TOKEN_BEDROCK);
-      if (!bedrockToken.empty())
-      {
-          m_providerChainLegacy.emplace_back(Aws::MakeShared<Aws::Auth::StaticAWSBearerTokenProvider>("StaticAWSBearerTokenProvider", bedrockToken));
-      }
-  };
-
-  BedrockAwsBearerTokenIdentityResolver(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
-  {
-      m_providerChainLegacy.emplace_back(Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>("SSOBearerTokenProvider", config.profile));
-      const Aws::String bedrockToken = Aws::Environment::GetEnv(AWS_BEARER_TOKEN_BEDROCK);
-      if (!bedrockToken.empty())
-      {
-        m_providerChainLegacy.emplace_back(Aws::MakeShared<Aws::Auth::StaticAWSBearerTokenProvider>("StaticAWSBearerTokenProvider", bedrockToken));
-      }
-  }
 };
 
 } // namespace smithy
