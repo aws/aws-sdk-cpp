@@ -12,6 +12,11 @@
 
 namespace Aws
 {
+    namespace Client
+    {
+        struct ClientConfiguration;
+    }
+
     namespace Auth
     {
         /**
