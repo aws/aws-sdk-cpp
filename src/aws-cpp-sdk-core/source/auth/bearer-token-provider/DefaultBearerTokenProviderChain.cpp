@@ -6,6 +6,7 @@
 #include <aws/core/auth/bearer-token-provider/DefaultBearerTokenProviderChain.h>
 #include <aws/core/auth/AWSBearerToken.h>
 #include <aws/core/auth/bearer-token-provider/SSOBearerTokenProvider.h>
+#include <aws/core/auth/bearer-token-provider/StaticBearerTokenProvider.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
 
@@ -32,4 +33,9 @@ Aws::Auth::AWSBearerToken Aws::Auth::DefaultBearerTokenProviderChain::GetAWSBear
 Aws::Auth::DefaultBearerTokenProviderChain::DefaultBearerTokenProviderChain()
 {
     AddProvider(Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG));
+}
+
+Aws::Auth::DefaultBearerTokenProviderChain::DefaultBearerTokenProviderChain(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& config)
+{
+    AddProvider(Aws::MakeShared<Aws::Auth::SSOBearerTokenProvider>(SSO_DEFAULT_BEARER_TOKEN_PROVIDER_CHAIN_LOG_TAG, config.profile));
 }

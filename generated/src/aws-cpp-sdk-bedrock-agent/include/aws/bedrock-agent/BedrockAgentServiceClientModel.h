@@ -122,7 +122,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BedrockAgent {
-using BedrockAgentClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BedrockAgentEndpointProviderBase = Aws::BedrockAgent::Endpoint::BedrockAgentEndpointProviderBase;
 using BedrockAgentEndpointProvider = Aws::BedrockAgent::Endpoint::BedrockAgentEndpointProvider;
 

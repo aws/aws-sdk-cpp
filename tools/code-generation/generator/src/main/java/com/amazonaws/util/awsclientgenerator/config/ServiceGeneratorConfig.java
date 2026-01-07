@@ -14,6 +14,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenera
 import com.amazonaws.util.awsclientgenerator.generators.cpp.RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.apigateway.APIGatewayRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.apigatewayv2.APIGatewayV2RestJsonCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.bedrock.BedrockRestJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.docdb.DocDBCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.dynamodb.DynamoDBJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.ec2.Ec2CppClientGenerator;
@@ -75,6 +76,10 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-dsql-rest-json", new DsqlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-monitoring-json", new CloudwatchMonitoringJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-monitoring-smithy-rpc-v2-cbor", new CloudwatchMonitoringCborCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-rest-json", new BedrockRestJsonCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-runtime-rest-json", new BedrockRestJsonCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-agent-rest-json", new BedrockRestJsonCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-agent-runtime-rest-json", new BedrockRestJsonCppClientGenerator());
 
             // protocol tests clients
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2-protocol-ec2", new Ec2CppClientGenerator());

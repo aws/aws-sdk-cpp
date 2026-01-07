@@ -143,16 +143,15 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
 
 /* Legacy constructors due deprecation */
 DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
-                       Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
-                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-                       {
-                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-                            smithy::SigV4AuthScheme{Aws::MakeShared<smithy::DefaultAwsCredentialIdentityResolver>(
-                                                        ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
-                                                    GetServiceName(), clientConfiguration.region}},
-                       }) {}
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "DynamoDB", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
+          }) {}
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration)
     : AwsSmithyClientT(

@@ -13,5 +13,18 @@ namespace smithy {
 
       virtual Aws::Crt::Optional<AwsIdentity::DateTime>
       expiration() const override = 0;
+
+      void AddUserAgentFeature(Aws::Client::UserAgentFeature feature)
+      {
+        m_features.insert(feature);
+      }
+
+      Aws::Set<Aws::Client::UserAgentFeature> GetUserAgentFeatures() const override
+      {
+        return m_features;
+      }
+
+    protected:
+      Aws::Set<Aws::Client::UserAgentFeature> m_features;
     };
 }

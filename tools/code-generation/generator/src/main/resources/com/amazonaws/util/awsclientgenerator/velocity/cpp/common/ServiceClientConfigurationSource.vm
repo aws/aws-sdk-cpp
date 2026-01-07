@@ -28,6 +28,9 @@ static const char S3_DISABLE_EXPRESS_SESSION_CONFIG_FILE_OPTION[] = "s3_disable_
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 #end
+#if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
+static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
+#end
 
 #if($metadata.hasEndpointDiscoveryTrait)
 bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName)
@@ -131,6 +134,22 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
     // return Client::InitRetryStrategy(10);
     return Client::InitRetryStrategy();
   };
+#end
+## Bedrock API key auth 
+#if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
+    const Aws::String& bedrockToken =
+    BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK,
+    inputProfileName,
+    AWS_BEARER_TOKEN_BEDROCK,
+    {},
+    "");
+    if (!bedrockToken.empty()) {
+        Aws::Vector<Aws::String>::iterator position = std::find(authPreferences.begin(), authPreferences.end(), "bearer");
+        if (position != authPreferences.end()) {
+            authPreferences.erase(position);
+        }
+        authPreferences.insert(authPreferences.begin(), "bearer");
+    }
 #end
 }
 

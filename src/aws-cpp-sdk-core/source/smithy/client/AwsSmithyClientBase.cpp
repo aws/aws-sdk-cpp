@@ -207,6 +207,9 @@ bool AwsSmithyClientBase::ResolveIdentityAuth(
       responseHandler(std::move(identityOutcome));
       return false;
     }
+    for (auto feature : identityOutcome.GetResult()->GetUserAgentFeatures()) {
+       pRequestCtx->m_pRequest->AddUserAgentFeature(feature);
+    }
     pRequestCtx->m_awsIdentity = std::move(identityOutcome.GetResultWithOwnership());
 
 
