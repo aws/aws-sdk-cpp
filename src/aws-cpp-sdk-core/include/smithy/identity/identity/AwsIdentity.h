@@ -6,6 +6,7 @@
 
 #include <aws/core/utils/DateTime.h>
 #include <aws/crt/Optional.h>
+#include <aws/core/utils/memory/stl/AWSSet.h>
 
 namespace Aws {
     namespace Client {
