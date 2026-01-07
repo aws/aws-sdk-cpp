@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/bedrock-agent-runtime/BedrockAgentRuntimeAwsBearerTokenIdentityResolver.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeClient.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeEndpointProvider.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeErrorMarshaller.h>
