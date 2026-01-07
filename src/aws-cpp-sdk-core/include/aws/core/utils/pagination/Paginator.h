@@ -22,14 +22,14 @@ public:
     class PageIterator
     {
     public:
-        PageIterator() = default; // end iterator
+        PageIterator() = default;
 
         PageIterator(ServiceClient* client, const OperationRequest& firstReq)
             : m_client(client),
               m_request(firstReq),
               m_atEnd(false)
         {
-            FetchPage(); // load first page eagerly so * is valid after begin()
+            FetchPage();
         }
 
         const OutcomeType& operator*() const { return m_currentOutcome; }

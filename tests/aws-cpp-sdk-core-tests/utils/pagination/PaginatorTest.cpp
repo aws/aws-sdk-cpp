@@ -12,7 +12,6 @@
 using namespace Aws::Utils::Pagination;
 using namespace Aws::Utils;
 
-// Test types for pagination
 struct TestResult {
     Aws::Vector<Aws::String> items;
     Aws::String outputToken;
@@ -153,8 +152,7 @@ TEST_F(PaginatorTest, TestHandlesErrorGracefully)
     const auto& outcome = *it;
     EXPECT_FALSE(outcome.IsSuccess());
     EXPECT_STREQ(outcome.GetError().c_str(), "Request failed");
-    
-    // Iterator should terminate after error
+
     ++it;
     EXPECT_TRUE(it == paginator.end());
 }
@@ -171,8 +169,7 @@ TEST_F(PaginatorTest, TestEmptyResultSet)
     EXPECT_TRUE(outcome.IsSuccess());
     EXPECT_TRUE(outcome.GetResult().GetItems().empty());
     EXPECT_FALSE(outcome.GetResult().GetMoreResults());
-    
-    // Should terminate after first empty page
+
     ++it;
     EXPECT_TRUE(it == paginator.end());
 }
@@ -186,8 +183,7 @@ TEST_F(PaginatorTest, TestBeginEndIteratorComparison)
     
     EXPECT_TRUE(begin != end);
     EXPECT_FALSE(begin == end);
-    
-    // Iterate to end
+
     while (begin != end)
     {
         ++begin;
