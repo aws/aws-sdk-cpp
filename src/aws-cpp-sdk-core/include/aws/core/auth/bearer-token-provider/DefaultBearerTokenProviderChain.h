@@ -8,6 +8,7 @@
 
 #include <aws/core/auth/bearer-token-provider/AWSBearerTokenProviderChainBase.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <memory>
 
 namespace Aws
