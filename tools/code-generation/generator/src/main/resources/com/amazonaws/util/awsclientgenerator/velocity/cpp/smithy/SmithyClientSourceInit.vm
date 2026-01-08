@@ -76,7 +76,7 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
             }()
 #else
 #foreach($entry in $AuthSchemeMapEntries)
-    #if($entry.contains("smithy::BearerTokenAuthScheme") && ($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime"))
+    #if($entry.contains("smithy::BearerTokenAuthScheme") && $serviceModel.metadata.signingName == "bedrock")
         {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}},
     #else
         {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
@@ -123,7 +123,7 @@ ${className}::${className}(const AWSCredentials& credentials,
 #if(!$entry.contains("smithy::BearerTokenAuthScheme"))
             {${entry}{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
 #else
-    #if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
+    #if($serviceModel.metadata.signingName == "bedrock")
             {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}}
     #else
             {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}}
@@ -305,7 +305,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
 #end
       {
 #foreach($entry in $AuthSchemeMapEntries)
-    #if($entry.contains("smithy::BearerTokenAuthScheme") && ($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime"))
+    #if($entry.contains("smithy::BearerTokenAuthScheme") && $serviceModel.metadata.signingName == "bedrock")
         {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}},
     #else
         {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}},
@@ -332,7 +332,7 @@ ${className}::${className}(const AWSCredentials& credentials,
 #if(!$entry.contains("smithy::BearerTokenAuthScheme"))
           {$entry{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials), GetServiceName(), clientConfiguration.region}},
 #else
-    #if($entry.contains("smithy::BearerTokenAuthScheme") && ($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime"))
+    #if($entry.contains("smithy::BearerTokenAuthScheme") && $serviceModel.metadata.signingName == "bedrock")
         {${entry}{Aws::MakeShared<${metadata.classNamePrefix}AwsBearerTokenIdentityResolver>("BearerTokenAuthScheme", clientConfiguration.credentialProviderConfig), GetServiceName(), clientConfiguration.region}},
     #else
         {${entry}{GetServiceName(), clientConfiguration.region, clientConfiguration.credentialProviderConfig}}

@@ -80,6 +80,8 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-runtime-rest-json", new BedrockRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-agent-rest-json", new BedrockRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-agent-runtime-rest-json", new BedrockRestJsonCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-data-automation-rest-json", new BedrockRestJsonCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-bedrock-data-automation-runtime-json", new BedrockRestJsonCppClientGenerator());
 
             // protocol tests clients
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2-protocol-ec2", new Ec2CppClientGenerator());
