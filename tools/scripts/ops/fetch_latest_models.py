@@ -49,6 +49,13 @@ ENDPOINT_TESTS_FILENAME_PATTERN = re.compile(
     ".endpoint-tests.json$"
 )
 
+PAGINATOR_FILENAME_PATTERN = re.compile(
+    "^"
+    "(?P<service>.+)-"                                      # service name
+    "(?P<date>[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])"  # model date
+    ".paginators.json$"
+)
+
 
 def clone_models(temp_dir: tempfile.TemporaryDirectory):
     git_cmd = [shutil.which("git"), "clone", MODELS_SRC_GIT_REPO]
@@ -138,6 +145,13 @@ def copy_partitions(aws_reference_models_dir: str):
         print(f"Error: failed to copy partitions: {exc}")
 
 
+def copy_paginator_models(aws_reference_models_dir: str):
+    try:
+        _copy_models(aws_reference_models_dir, CLIENTS_MODELS_LOCATION, "paginators.json", "paginators-1.json", PAGINATOR_FILENAME_PATTERN)
+    except Exception as exc:
+        print(f"Error: failed to copy paginator models: {exc}")
+
+
 def main():
     temp_dir = tempfile.TemporaryDirectory()
     clone_models(temp_dir)
@@ -145,6 +159,7 @@ def main():
 
     copy_c2j_models(aws_reference_models_dir)
     copy_endpoints20_rules(aws_reference_models_dir)
+    copy_paginator_models(aws_reference_models_dir)
     copy_defaults_configuration(aws_reference_models_dir)
     copy_partitions(aws_reference_models_dir)
 
