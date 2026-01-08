@@ -16,6 +16,7 @@ MODELS_SRC_GIT_REPO = "https://github.com/aws/aws-models"
 CODE_GENERATION_LOCATION = "./tools/code-generation/"
 CLIENTS_MODELS_LOCATION = CODE_GENERATION_LOCATION + "api-descriptions/"
 ENDPOINT_RULES_LOCATION = CODE_GENERATION_LOCATION + "endpoints/"
+PAGINATOR_LOCATION = CODE_GENERATION_LOCATION + "paginators/"
 
 PARTITIONS_FILE_LOCATION = CODE_GENERATION_LOCATION + "partitions/partitions.json"
 DEFAULTS_FILE_LOCATION = CODE_GENERATION_LOCATION + "defaults/sdk-default-configuration.json"
@@ -145,11 +146,13 @@ def copy_partitions(aws_reference_models_dir: str):
         print(f"Error: failed to copy partitions: {exc}")
 
 
-def copy_paginator_models(aws_reference_models_dir: str):
+def copy_paginator(aws_reference_models_dir: str):
     try:
-        _copy_models(aws_reference_models_dir, CLIENTS_MODELS_LOCATION, "paginators.json", "paginators-1.json", PAGINATOR_FILENAME_PATTERN)
+        destination_dir = PAGINATOR_LOCATION.rstrip('/')
+        if not os.path.exists(destination_dir):
+            os.makedirs(destination_dir)
     except Exception as exc:
-        print(f"Error: failed to copy paginator models: {exc}")
+        print(f"Error: failed to copy paginator: {exc}")
 
 
 def main():
@@ -159,7 +162,7 @@ def main():
 
     copy_c2j_models(aws_reference_models_dir)
     copy_endpoints20_rules(aws_reference_models_dir)
-    copy_paginator_models(aws_reference_models_dir)
+    copy_paginator(aws_reference_models_dir)
     copy_defaults_configuration(aws_reference_models_dir)
     copy_partitions(aws_reference_models_dir)
 
