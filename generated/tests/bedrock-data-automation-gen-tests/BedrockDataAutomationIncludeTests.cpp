@@ -6,7 +6,9 @@
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
 
+#include <aws/bedrock-data-automation/BedrockDataAutomationAwsBearerTokenIdentityResolver.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationClient.h>
+#include <aws/bedrock-data-automation/BedrockDataAutomationClientConfiguration.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationEndpointProvider.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationEndpointRules.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationErrorMarshaller.h>

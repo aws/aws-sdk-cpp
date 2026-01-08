@@ -52,7 +52,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BedrockDataAutomationRuntime {
-using BedrockDataAutomationRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BedrockDataAutomationRuntimeEndpointProviderBase =
     Aws::BedrockDataAutomationRuntime::Endpoint::BedrockDataAutomationRuntimeEndpointProviderBase;
 using BedrockDataAutomationRuntimeEndpointProvider =

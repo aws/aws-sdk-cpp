@@ -80,17 +80,17 @@ public class ServiceModel {
         return !(metadata.getServiceId().equalsIgnoreCase("Bedrock") ||
                 metadata.getServiceId().equalsIgnoreCase("Bedrock Runtime") ||
                 metadata.getServiceId().equalsIgnoreCase("Bedrock Agent") ||
-                metadata.getServiceId().equalsIgnoreCase("Bedrock Agent Runtime"));
+                metadata.getServiceId().equalsIgnoreCase("Bedrock Agent Runtime") ||
+                metadata.getServiceId().equalsIgnoreCase("Bedrock Data Automation") ||
+                metadata.getServiceId().equalsIgnoreCase("Bedrock Data Automation Runtime")
+        );
     }
 
     public boolean hasServiceSpecificClientConfig() {
         return metadata.getServiceId().equalsIgnoreCase("S3") ||
                 metadata.getServiceId().equalsIgnoreCase("S3-CRT") ||
                 metadata.getServiceId().equalsIgnoreCase("S3 Control") ||
-                metadata.getServiceId().equalsIgnoreCase("Bedrock") ||
-                metadata.getServiceId().equalsIgnoreCase("Bedrock Runtime") ||
-                metadata.getServiceId().equalsIgnoreCase("Bedrock Agent") ||
-                metadata.getServiceId().equalsIgnoreCase("Bedrock Agent Runtime") ||
+                metadata.getSigningName().equalsIgnoreCase("bedrock") ||
                 metadata.isHasEndpointDiscoveryTrait() ||
                 endpointRuleSetModel.getParameters().containsKey("AccountId") || endpointRuleSetModel.getParameters().containsKey("AccountIdEndpointMode");
     }

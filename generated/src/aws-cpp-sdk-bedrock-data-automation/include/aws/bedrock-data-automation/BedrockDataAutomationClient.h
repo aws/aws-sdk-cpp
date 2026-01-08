@@ -4,25 +4,32 @@
  */
 
 #pragma once
+#include <aws/bedrock-data-automation/BedrockDataAutomationErrorMarshaller.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomationServiceClientModel.h>
 #include <aws/bedrock-data-automation/BedrockDataAutomation_EXPORTS.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace BedrockDataAutomation {
+AWS_BEDROCKDATAAUTOMATION_API extern const char SERVICE_NAME[];
 /**
  * <p>Amazon Bedrock Data Automation BuildTime</p>
  */
 class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationClient> {
+    : Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationClient>,
+      public smithy::client::AwsSmithyClientT<
+          Aws::BedrockDataAutomation::SERVICE_NAME, Aws::BedrockDataAutomation::BedrockDataAutomationClientConfiguration,
+          smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>, BedrockDataAutomationEndpointProviderBase,
+          smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::BedrockDataAutomationErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "Bedrock Data Automation"; }
 
   typedef BedrockDataAutomationClientConfiguration ClientConfigurationType;
   typedef BedrockDataAutomationEndpointProvider EndpointProviderType;
@@ -551,10 +558,6 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationClient>;
-  void init(const BedrockDataAutomationClientConfiguration& clientConfiguration);
-
-  BedrockDataAutomationClientConfiguration m_clientConfiguration;
-  std::shared_ptr<BedrockDataAutomationEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace BedrockDataAutomation

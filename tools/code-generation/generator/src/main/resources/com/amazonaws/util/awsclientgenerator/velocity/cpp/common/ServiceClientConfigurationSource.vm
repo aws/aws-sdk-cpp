@@ -28,7 +28,7 @@ static const char S3_DISABLE_EXPRESS_SESSION_CONFIG_FILE_OPTION[] = "s3_disable_
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 #end
-#if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
+#if($serviceModel.metadata.signingName == "bedrock")
 static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
 #end
 
@@ -136,7 +136,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
   };
 #end
 ## Bedrock API key auth 
-#if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
+#if($serviceModel.metadata.signingName == "bedrock")
     const Aws::String& bedrockToken =
     BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK,
     inputProfileName,
