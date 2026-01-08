@@ -16,6 +16,7 @@ MODELS_SRC_GIT_REPO = "https://github.com/aws/aws-models"
 CODE_GENERATION_LOCATION = "./tools/code-generation/"
 CLIENTS_MODELS_LOCATION = CODE_GENERATION_LOCATION + "api-descriptions/"
 ENDPOINT_RULES_LOCATION = CODE_GENERATION_LOCATION + "endpoints/"
+PAGINATOR_LOCATION = CODE_GENERATION_LOCATION + "paginators/"
 
 PARTITIONS_FILE_LOCATION = CODE_GENERATION_LOCATION + "partitions/partitions.json"
 DEFAULTS_FILE_LOCATION = CODE_GENERATION_LOCATION + "defaults/sdk-default-configuration.json"
@@ -47,6 +48,13 @@ ENDPOINT_TESTS_FILENAME_PATTERN = re.compile(
     "(?P<service>.+)-"                                      # service name
     "(?P<date>[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])"  # model date
     ".endpoint-tests.json$"
+)
+
+PAGINATOR_FILENAME_PATTERN = re.compile(
+    "^"
+    "(?P<service>.+)-"                                      # service name
+    "(?P<date>[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])"  # model date
+    ".paginators.json$"
 )
 
 
@@ -138,6 +146,15 @@ def copy_partitions(aws_reference_models_dir: str):
         print(f"Error: failed to copy partitions: {exc}")
 
 
+def copy_paginator(aws_reference_models_dir: str):
+    try:
+        destination_dir = PAGINATOR_LOCATION.rstrip('/')
+        if not os.path.exists(destination_dir):
+            os.makedirs(destination_dir)
+    except Exception as exc:
+        print(f"Error: failed to copy paginator: {exc}")
+
+
 def main():
     temp_dir = tempfile.TemporaryDirectory()
     clone_models(temp_dir)
@@ -145,6 +162,7 @@ def main():
 
     copy_c2j_models(aws_reference_models_dir)
     copy_endpoints20_rules(aws_reference_models_dir)
+    copy_paginator(aws_reference_models_dir)
     copy_defaults_configuration(aws_reference_models_dir)
     copy_partitions(aws_reference_models_dir)
 
