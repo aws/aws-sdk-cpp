@@ -79,6 +79,6 @@
 
 using namespace Aws::Utils;
 #end
-#if($serviceModel.metadata.serviceId == "Bedrock" || $serviceModel.metadata.serviceId == "Bedrock Runtime" || $serviceModel.metadata.serviceId == "Bedrock Agent" || $serviceModel.metadata.serviceId == "Bedrock Agent Runtime")
+#if($serviceModel.metadata.signingName == "bedrock")
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}AwsBearerTokenIdentityResolver.h>
 #end
