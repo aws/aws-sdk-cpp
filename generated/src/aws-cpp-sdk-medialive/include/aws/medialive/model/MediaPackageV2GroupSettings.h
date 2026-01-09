@@ -13,6 +13,7 @@
 #include <aws/medialive/model/CmafNielsenId3Behavior.h>
 #include <aws/medialive/model/CmafTimedMetadataId3Frame.h>
 #include <aws/medialive/model/CmafTimedMetadataPassthrough.h>
+#include <aws/medialive/model/MediaPackageAdditionalDestinations.h>
 #include <aws/medialive/model/Scte35Type.h>
 
 #include <utility>
@@ -214,6 +215,31 @@ class MediaPackageV2GroupSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Optional an array of additional destinational HTTP destinations for the
+   * OutputGroup outputs
+   */
+  inline const Aws::Vector<MediaPackageAdditionalDestinations>& GetAdditionalDestinations() const { return m_additionalDestinations; }
+  inline bool AdditionalDestinationsHasBeenSet() const { return m_additionalDestinationsHasBeenSet; }
+  template <typename AdditionalDestinationsT = Aws::Vector<MediaPackageAdditionalDestinations>>
+  void SetAdditionalDestinations(AdditionalDestinationsT&& value) {
+    m_additionalDestinationsHasBeenSet = true;
+    m_additionalDestinations = std::forward<AdditionalDestinationsT>(value);
+  }
+  template <typename AdditionalDestinationsT = Aws::Vector<MediaPackageAdditionalDestinations>>
+  MediaPackageV2GroupSettings& WithAdditionalDestinations(AdditionalDestinationsT&& value) {
+    SetAdditionalDestinations(std::forward<AdditionalDestinationsT>(value));
+    return *this;
+  }
+  template <typename AdditionalDestinationsT = MediaPackageAdditionalDestinations>
+  MediaPackageV2GroupSettings& AddAdditionalDestinations(AdditionalDestinationsT&& value) {
+    m_additionalDestinationsHasBeenSet = true;
+    m_additionalDestinations.emplace_back(std::forward<AdditionalDestinationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<CaptionLanguageMapping> m_captionLanguageMappings;
 
@@ -234,6 +260,8 @@ class MediaPackageV2GroupSettings {
   int m_timedMetadataId3Period{0};
 
   CmafTimedMetadataPassthrough m_timedMetadataPassthrough{CmafTimedMetadataPassthrough::NOT_SET};
+
+  Aws::Vector<MediaPackageAdditionalDestinations> m_additionalDestinations;
   bool m_captionLanguageMappingsHasBeenSet = false;
   bool m_id3BehaviorHasBeenSet = false;
   bool m_klvBehaviorHasBeenSet = false;
@@ -244,6 +272,7 @@ class MediaPackageV2GroupSettings {
   bool m_timedMetadataId3FrameHasBeenSet = false;
   bool m_timedMetadataId3PeriodHasBeenSet = false;
   bool m_timedMetadataPassthroughHasBeenSet = false;
+  bool m_additionalDestinationsHasBeenSet = false;
 };
 
 }  // namespace Model

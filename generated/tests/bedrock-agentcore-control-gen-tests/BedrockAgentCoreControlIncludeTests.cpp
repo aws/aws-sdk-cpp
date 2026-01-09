@@ -264,6 +264,7 @@
 #include <aws/bedrock-agentcore-control/model/MemoryStrategyStatus.h>
 #include <aws/bedrock-agentcore-control/model/MemoryStrategyType.h>
 #include <aws/bedrock-agentcore-control/model/MemorySummary.h>
+#include <aws/bedrock-agentcore-control/model/MemoryView.h>
 #include <aws/bedrock-agentcore-control/model/MessageBasedTrigger.h>
 #include <aws/bedrock-agentcore-control/model/MessageBasedTriggerInput.h>
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>

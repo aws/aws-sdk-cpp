@@ -3895,6 +3895,36 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
   }
 
   /**
+   * <p>Get the associated metadata/information for a task run, given a task run
+   * ID.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMaterializedViewRefreshTaskRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMaterializedViewRefreshTaskRunOutcome GetMaterializedViewRefreshTaskRun(
+      const Model::GetMaterializedViewRefreshTaskRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMaterializedViewRefreshTaskRun that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename GetMaterializedViewRefreshTaskRunRequestT = Model::GetMaterializedViewRefreshTaskRunRequest>
+  Model::GetMaterializedViewRefreshTaskRunOutcomeCallable GetMaterializedViewRefreshTaskRunCallable(
+      const GetMaterializedViewRefreshTaskRunRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetMaterializedViewRefreshTaskRun, request);
+  }
+
+  /**
+   * An Async wrapper for GetMaterializedViewRefreshTaskRun that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetMaterializedViewRefreshTaskRunRequestT = Model::GetMaterializedViewRefreshTaskRunRequest>
+  void GetMaterializedViewRefreshTaskRunAsync(const GetMaterializedViewRefreshTaskRunRequestT& request,
+                                              const GetMaterializedViewRefreshTaskRunResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetMaterializedViewRefreshTaskRun, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about a specified partition.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition">AWS
@@ -5330,6 +5360,35 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
   }
 
   /**
+   * <p>List all task runs for a particular account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMaterializedViewRefreshTaskRuns">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMaterializedViewRefreshTaskRunsOutcome ListMaterializedViewRefreshTaskRuns(
+      const Model::ListMaterializedViewRefreshTaskRunsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListMaterializedViewRefreshTaskRuns that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ListMaterializedViewRefreshTaskRunsRequestT = Model::ListMaterializedViewRefreshTaskRunsRequest>
+  Model::ListMaterializedViewRefreshTaskRunsOutcomeCallable ListMaterializedViewRefreshTaskRunsCallable(
+      const ListMaterializedViewRefreshTaskRunsRequestT& request) const {
+    return SubmitCallable(&GlueClient::ListMaterializedViewRefreshTaskRuns, request);
+  }
+
+  /**
+   * An Async wrapper for ListMaterializedViewRefreshTaskRuns that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ListMaterializedViewRefreshTaskRunsRequestT = Model::ListMaterializedViewRefreshTaskRunsRequest>
+  void ListMaterializedViewRefreshTaskRunsAsync(const ListMaterializedViewRefreshTaskRunsRequestT& request,
+                                                const ListMaterializedViewRefreshTaskRunsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::ListMaterializedViewRefreshTaskRuns, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of registries that you have created, with minimal registry
    * information. Registries in the <code>Deleting</code> status will not be included
    * in the results. Empty results will be returned if there are no registries
@@ -6366,6 +6425,36 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
   }
 
   /**
+   * <p>Starts a materialized view refresh task run, for a specified table and
+   * columns.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMaterializedViewRefreshTaskRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartMaterializedViewRefreshTaskRunOutcome StartMaterializedViewRefreshTaskRun(
+      const Model::StartMaterializedViewRefreshTaskRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartMaterializedViewRefreshTaskRun that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename StartMaterializedViewRefreshTaskRunRequestT = Model::StartMaterializedViewRefreshTaskRunRequest>
+  Model::StartMaterializedViewRefreshTaskRunOutcomeCallable StartMaterializedViewRefreshTaskRunCallable(
+      const StartMaterializedViewRefreshTaskRunRequestT& request) const {
+    return SubmitCallable(&GlueClient::StartMaterializedViewRefreshTaskRun, request);
+  }
+
+  /**
+   * An Async wrapper for StartMaterializedViewRefreshTaskRun that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename StartMaterializedViewRefreshTaskRunRequestT = Model::StartMaterializedViewRefreshTaskRunRequest>
+  void StartMaterializedViewRefreshTaskRunAsync(const StartMaterializedViewRefreshTaskRunRequestT& request,
+                                                const StartMaterializedViewRefreshTaskRunResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::StartMaterializedViewRefreshTaskRun, request, handler, context);
+  }
+
+  /**
    * <p>Starts an existing trigger. See <a
    * href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering
    * Jobs</a> for information about how different types of trigger are
@@ -6529,6 +6618,36 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient, public Aws::C
   void StopCrawlerScheduleAsync(const StopCrawlerScheduleRequestT& request, const StopCrawlerScheduleResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::StopCrawlerSchedule, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a materialized view refresh task run, for a specified table and
+   * columns.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopMaterializedViewRefreshTaskRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopMaterializedViewRefreshTaskRunOutcome StopMaterializedViewRefreshTaskRun(
+      const Model::StopMaterializedViewRefreshTaskRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopMaterializedViewRefreshTaskRun that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename StopMaterializedViewRefreshTaskRunRequestT = Model::StopMaterializedViewRefreshTaskRunRequest>
+  Model::StopMaterializedViewRefreshTaskRunOutcomeCallable StopMaterializedViewRefreshTaskRunCallable(
+      const StopMaterializedViewRefreshTaskRunRequestT& request) const {
+    return SubmitCallable(&GlueClient::StopMaterializedViewRefreshTaskRun, request);
+  }
+
+  /**
+   * An Async wrapper for StopMaterializedViewRefreshTaskRun that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename StopMaterializedViewRefreshTaskRunRequestT = Model::StopMaterializedViewRefreshTaskRunRequest>
+  void StopMaterializedViewRefreshTaskRunAsync(const StopMaterializedViewRefreshTaskRunRequestT& request,
+                                               const StopMaterializedViewRefreshTaskRunResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::StopMaterializedViewRefreshTaskRun, request, handler, context);
   }
 
   /**

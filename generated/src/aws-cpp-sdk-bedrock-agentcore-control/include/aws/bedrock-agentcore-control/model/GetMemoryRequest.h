@@ -6,11 +6,15 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/MemoryView.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace BedrockAgentCoreControl {
 namespace Model {
 
@@ -27,6 +31,8 @@ class GetMemoryRequest : public BedrockAgentCoreControlRequest {
   inline virtual const char* GetServiceRequestName() const override { return "GetMemory"; }
 
   AWS_BEDROCKAGENTCORECONTROL_API Aws::String SerializePayload() const override;
+
+  AWS_BEDROCKAGENTCORECONTROL_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -45,9 +51,28 @@ class GetMemoryRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The level of detail to return for the memory.</p>
+   */
+  inline MemoryView GetView() const { return m_view; }
+  inline bool ViewHasBeenSet() const { return m_viewHasBeenSet; }
+  inline void SetView(MemoryView value) {
+    m_viewHasBeenSet = true;
+    m_view = value;
+  }
+  inline GetMemoryRequest& WithView(MemoryView value) {
+    SetView(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryId;
+
+  MemoryView m_view{MemoryView::NOT_SET};
   bool m_memoryIdHasBeenSet = false;
+  bool m_viewHasBeenSet = false;
 };
 
 }  // namespace Model
