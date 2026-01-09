@@ -92,15 +92,61 @@ class MediaPackageOutputDestinationSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Endpoint 1 or 2 of the channel in MediaPackageV2. Only use if you are sending
+   * CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage channel that uses
+   * MediaPackage v2.
+   */
+  inline const Aws::String& GetChannelEndpointId() const { return m_channelEndpointId; }
+  inline bool ChannelEndpointIdHasBeenSet() const { return m_channelEndpointIdHasBeenSet; }
+  template <typename ChannelEndpointIdT = Aws::String>
+  void SetChannelEndpointId(ChannelEndpointIdT&& value) {
+    m_channelEndpointIdHasBeenSet = true;
+    m_channelEndpointId = std::forward<ChannelEndpointIdT>(value);
+  }
+  template <typename ChannelEndpointIdT = Aws::String>
+  MediaPackageOutputDestinationSettings& WithChannelEndpointId(ChannelEndpointIdT&& value) {
+    SetChannelEndpointId(std::forward<ChannelEndpointIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Region the channel group and channel are located in for MediaPackageV2. Only use
+   * if you are sending CMAF Ingest output to a CMAF ingest endpoint on a
+   * MediaPackage channel that uses MediaPackage v2.
+   */
+  inline const Aws::String& GetMediaPackageRegionName() const { return m_mediaPackageRegionName; }
+  inline bool MediaPackageRegionNameHasBeenSet() const { return m_mediaPackageRegionNameHasBeenSet; }
+  template <typename MediaPackageRegionNameT = Aws::String>
+  void SetMediaPackageRegionName(MediaPackageRegionNameT&& value) {
+    m_mediaPackageRegionNameHasBeenSet = true;
+    m_mediaPackageRegionName = std::forward<MediaPackageRegionNameT>(value);
+  }
+  template <typename MediaPackageRegionNameT = Aws::String>
+  MediaPackageOutputDestinationSettings& WithMediaPackageRegionName(MediaPackageRegionNameT&& value) {
+    SetMediaPackageRegionName(std::forward<MediaPackageRegionNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_channelId;
 
   Aws::String m_channelGroup;
 
   Aws::String m_channelName;
+
+  Aws::String m_channelEndpointId;
+
+  Aws::String m_mediaPackageRegionName;
   bool m_channelIdHasBeenSet = false;
   bool m_channelGroupHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
+  bool m_channelEndpointIdHasBeenSet = false;
+  bool m_mediaPackageRegionNameHasBeenSet = false;
 };
 
 }  // namespace Model

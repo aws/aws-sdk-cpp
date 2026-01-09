@@ -172,6 +172,7 @@
 #include <aws/glue/model/GetMLTransformsRequest.h>
 #include <aws/glue/model/GetMLTransformsResult.h>
 #include <aws/glue/model/GetMappingResult.h>
+#include <aws/glue/model/GetMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/GetPartitionIndexesResult.h>
 #include <aws/glue/model/GetPartitionResult.h>
 #include <aws/glue/model/GetPartitionsResult.h>
@@ -245,6 +246,7 @@
 #include <aws/glue/model/ListJobsResult.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
 #include <aws/glue/model/ListMLTransformsResult.h>
+#include <aws/glue/model/ListMaterializedViewRefreshTaskRunsResult.h>
 #include <aws/glue/model/ListRegistriesRequest.h>
 #include <aws/glue/model/ListRegistriesResult.h>
 #include <aws/glue/model/ListSchemaVersionsResult.h>
@@ -287,12 +289,14 @@
 #include <aws/glue/model/StartJobRunResult.h>
 #include <aws/glue/model/StartMLEvaluationTaskRunResult.h>
 #include <aws/glue/model/StartMLLabelingSetGenerationTaskRunResult.h>
+#include <aws/glue/model/StartMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/StartTriggerResult.h>
 #include <aws/glue/model/StartWorkflowRunResult.h>
 #include <aws/glue/model/StopColumnStatisticsTaskRunResult.h>
 #include <aws/glue/model/StopColumnStatisticsTaskRunScheduleResult.h>
 #include <aws/glue/model/StopCrawlerResult.h>
 #include <aws/glue/model/StopCrawlerScheduleResult.h>
+#include <aws/glue/model/StopMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/StopSessionResult.h>
 #include <aws/glue/model/StopTriggerResult.h>
 #include <aws/glue/model/StopWorkflowRunResult.h>
@@ -499,6 +503,7 @@ class GetMLTaskRunsRequest;
 class GetMLTransformRequest;
 class GetMLTransformsRequest;
 class GetMappingRequest;
+class GetMaterializedViewRefreshTaskRunRequest;
 class GetPartitionRequest;
 class GetPartitionIndexesRequest;
 class GetPartitionsRequest;
@@ -550,6 +555,7 @@ class ListEntitiesRequest;
 class ListIntegrationResourcePropertiesRequest;
 class ListJobsRequest;
 class ListMLTransformsRequest;
+class ListMaterializedViewRefreshTaskRunsRequest;
 class ListRegistriesRequest;
 class ListSchemaVersionsRequest;
 class ListSchemasRequest;
@@ -584,12 +590,14 @@ class StartImportLabelsTaskRunRequest;
 class StartJobRunRequest;
 class StartMLEvaluationTaskRunRequest;
 class StartMLLabelingSetGenerationTaskRunRequest;
+class StartMaterializedViewRefreshTaskRunRequest;
 class StartTriggerRequest;
 class StartWorkflowRunRequest;
 class StopColumnStatisticsTaskRunRequest;
 class StopColumnStatisticsTaskRunScheduleRequest;
 class StopCrawlerRequest;
 class StopCrawlerScheduleRequest;
+class StopMaterializedViewRefreshTaskRunRequest;
 class StopSessionRequest;
 class StopTriggerRequest;
 class StopWorkflowRunRequest;
@@ -761,6 +769,7 @@ typedef Aws::Utils::Outcome<GetMLTaskRunsResult, GlueError> GetMLTaskRunsOutcome
 typedef Aws::Utils::Outcome<GetMLTransformResult, GlueError> GetMLTransformOutcome;
 typedef Aws::Utils::Outcome<GetMLTransformsResult, GlueError> GetMLTransformsOutcome;
 typedef Aws::Utils::Outcome<GetMappingResult, GlueError> GetMappingOutcome;
+typedef Aws::Utils::Outcome<GetMaterializedViewRefreshTaskRunResult, GlueError> GetMaterializedViewRefreshTaskRunOutcome;
 typedef Aws::Utils::Outcome<GetPartitionResult, GlueError> GetPartitionOutcome;
 typedef Aws::Utils::Outcome<GetPartitionIndexesResult, GlueError> GetPartitionIndexesOutcome;
 typedef Aws::Utils::Outcome<GetPartitionsResult, GlueError> GetPartitionsOutcome;
@@ -812,6 +821,7 @@ typedef Aws::Utils::Outcome<ListEntitiesResult, GlueError> ListEntitiesOutcome;
 typedef Aws::Utils::Outcome<ListIntegrationResourcePropertiesResult, GlueError> ListIntegrationResourcePropertiesOutcome;
 typedef Aws::Utils::Outcome<ListJobsResult, GlueError> ListJobsOutcome;
 typedef Aws::Utils::Outcome<ListMLTransformsResult, GlueError> ListMLTransformsOutcome;
+typedef Aws::Utils::Outcome<ListMaterializedViewRefreshTaskRunsResult, GlueError> ListMaterializedViewRefreshTaskRunsOutcome;
 typedef Aws::Utils::Outcome<ListRegistriesResult, GlueError> ListRegistriesOutcome;
 typedef Aws::Utils::Outcome<ListSchemaVersionsResult, GlueError> ListSchemaVersionsOutcome;
 typedef Aws::Utils::Outcome<ListSchemasResult, GlueError> ListSchemasOutcome;
@@ -846,12 +856,14 @@ typedef Aws::Utils::Outcome<StartImportLabelsTaskRunResult, GlueError> StartImpo
 typedef Aws::Utils::Outcome<StartJobRunResult, GlueError> StartJobRunOutcome;
 typedef Aws::Utils::Outcome<StartMLEvaluationTaskRunResult, GlueError> StartMLEvaluationTaskRunOutcome;
 typedef Aws::Utils::Outcome<StartMLLabelingSetGenerationTaskRunResult, GlueError> StartMLLabelingSetGenerationTaskRunOutcome;
+typedef Aws::Utils::Outcome<StartMaterializedViewRefreshTaskRunResult, GlueError> StartMaterializedViewRefreshTaskRunOutcome;
 typedef Aws::Utils::Outcome<StartTriggerResult, GlueError> StartTriggerOutcome;
 typedef Aws::Utils::Outcome<StartWorkflowRunResult, GlueError> StartWorkflowRunOutcome;
 typedef Aws::Utils::Outcome<StopColumnStatisticsTaskRunResult, GlueError> StopColumnStatisticsTaskRunOutcome;
 typedef Aws::Utils::Outcome<StopColumnStatisticsTaskRunScheduleResult, GlueError> StopColumnStatisticsTaskRunScheduleOutcome;
 typedef Aws::Utils::Outcome<StopCrawlerResult, GlueError> StopCrawlerOutcome;
 typedef Aws::Utils::Outcome<StopCrawlerScheduleResult, GlueError> StopCrawlerScheduleOutcome;
+typedef Aws::Utils::Outcome<StopMaterializedViewRefreshTaskRunResult, GlueError> StopMaterializedViewRefreshTaskRunOutcome;
 typedef Aws::Utils::Outcome<StopSessionResult, GlueError> StopSessionOutcome;
 typedef Aws::Utils::Outcome<StopTriggerResult, GlueError> StopTriggerOutcome;
 typedef Aws::Utils::Outcome<StopWorkflowRunResult, GlueError> StopWorkflowRunOutcome;
@@ -1023,6 +1035,7 @@ typedef std::future<GetMLTaskRunsOutcome> GetMLTaskRunsOutcomeCallable;
 typedef std::future<GetMLTransformOutcome> GetMLTransformOutcomeCallable;
 typedef std::future<GetMLTransformsOutcome> GetMLTransformsOutcomeCallable;
 typedef std::future<GetMappingOutcome> GetMappingOutcomeCallable;
+typedef std::future<GetMaterializedViewRefreshTaskRunOutcome> GetMaterializedViewRefreshTaskRunOutcomeCallable;
 typedef std::future<GetPartitionOutcome> GetPartitionOutcomeCallable;
 typedef std::future<GetPartitionIndexesOutcome> GetPartitionIndexesOutcomeCallable;
 typedef std::future<GetPartitionsOutcome> GetPartitionsOutcomeCallable;
@@ -1074,6 +1087,7 @@ typedef std::future<ListEntitiesOutcome> ListEntitiesOutcomeCallable;
 typedef std::future<ListIntegrationResourcePropertiesOutcome> ListIntegrationResourcePropertiesOutcomeCallable;
 typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
 typedef std::future<ListMLTransformsOutcome> ListMLTransformsOutcomeCallable;
+typedef std::future<ListMaterializedViewRefreshTaskRunsOutcome> ListMaterializedViewRefreshTaskRunsOutcomeCallable;
 typedef std::future<ListRegistriesOutcome> ListRegistriesOutcomeCallable;
 typedef std::future<ListSchemaVersionsOutcome> ListSchemaVersionsOutcomeCallable;
 typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
@@ -1108,12 +1122,14 @@ typedef std::future<StartImportLabelsTaskRunOutcome> StartImportLabelsTaskRunOut
 typedef std::future<StartJobRunOutcome> StartJobRunOutcomeCallable;
 typedef std::future<StartMLEvaluationTaskRunOutcome> StartMLEvaluationTaskRunOutcomeCallable;
 typedef std::future<StartMLLabelingSetGenerationTaskRunOutcome> StartMLLabelingSetGenerationTaskRunOutcomeCallable;
+typedef std::future<StartMaterializedViewRefreshTaskRunOutcome> StartMaterializedViewRefreshTaskRunOutcomeCallable;
 typedef std::future<StartTriggerOutcome> StartTriggerOutcomeCallable;
 typedef std::future<StartWorkflowRunOutcome> StartWorkflowRunOutcomeCallable;
 typedef std::future<StopColumnStatisticsTaskRunOutcome> StopColumnStatisticsTaskRunOutcomeCallable;
 typedef std::future<StopColumnStatisticsTaskRunScheduleOutcome> StopColumnStatisticsTaskRunScheduleOutcomeCallable;
 typedef std::future<StopCrawlerOutcome> StopCrawlerOutcomeCallable;
 typedef std::future<StopCrawlerScheduleOutcome> StopCrawlerScheduleOutcomeCallable;
+typedef std::future<StopMaterializedViewRefreshTaskRunOutcome> StopMaterializedViewRefreshTaskRunOutcomeCallable;
 typedef std::future<StopSessionOutcome> StopSessionOutcomeCallable;
 typedef std::future<StopTriggerOutcome> StopTriggerOutcomeCallable;
 typedef std::future<StopWorkflowRunOutcome> StopWorkflowRunOutcomeCallable;
@@ -1577,6 +1593,10 @@ typedef std::function<void(const GlueClient*, const Model::GetMLTransformsReques
 typedef std::function<void(const GlueClient*, const Model::GetMappingRequest&, const Model::GetMappingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMappingResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetMaterializedViewRefreshTaskRunRequest&,
+                           const Model::GetMaterializedViewRefreshTaskRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetMaterializedViewRefreshTaskRunResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetPartitionRequest&, const Model::GetPartitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPartitionResponseReceivedHandler;
@@ -1737,6 +1757,10 @@ typedef std::function<void(const GlueClient*, const Model::ListJobsRequest&, con
 typedef std::function<void(const GlueClient*, const Model::ListMLTransformsRequest&, const Model::ListMLTransformsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMLTransformsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListMaterializedViewRefreshTaskRunsRequest&,
+                           const Model::ListMaterializedViewRefreshTaskRunsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListMaterializedViewRefreshTaskRunsResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::ListRegistriesRequest&, const Model::ListRegistriesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRegistriesResponseReceivedHandler;
@@ -1846,6 +1870,10 @@ typedef std::function<void(const GlueClient*, const Model::StartMLLabelingSetGen
                            const Model::StartMLLabelingSetGenerationTaskRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartMLLabelingSetGenerationTaskRunResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::StartMaterializedViewRefreshTaskRunRequest&,
+                           const Model::StartMaterializedViewRefreshTaskRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartMaterializedViewRefreshTaskRunResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::StartTriggerRequest&, const Model::StartTriggerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartTriggerResponseReceivedHandler;
@@ -1865,6 +1893,10 @@ typedef std::function<void(const GlueClient*, const Model::StopCrawlerRequest&, 
 typedef std::function<void(const GlueClient*, const Model::StopCrawlerScheduleRequest&, const Model::StopCrawlerScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopCrawlerScheduleResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::StopMaterializedViewRefreshTaskRunRequest&,
+                           const Model::StopMaterializedViewRefreshTaskRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopMaterializedViewRefreshTaskRunResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::StopSessionRequest&, const Model::StopSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopSessionResponseReceivedHandler;

@@ -75,15 +75,19 @@ static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServi
 static const int FEDERATED_RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("FederatedResourceAlreadyExistsException");
 static const int INTEGRATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("IntegrationQuotaExceededFault");
 static const int ILLEGAL_WORKFLOW_STATE_HASH = HashingUtils::HashString("IllegalWorkflowStateException");
+static const int MATERIALIZED_VIEW_REFRESH_TASK_NOT_RUNNING_HASH =
+    HashingUtils::HashString("MaterializedViewRefreshTaskNotRunningException");
 static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int INTEGRATION_CONFLICT_OPERATION_FAULT_HASH = HashingUtils::HashString("IntegrationConflictOperationFault");
 static const int SCHEDULER_TRANSITIONING_HASH = HashingUtils::HashString("SchedulerTransitioningException");
 static const int CRAWLER_STOPPING_HASH = HashingUtils::HashString("CrawlerStoppingException");
 static const int NO_SCHEDULE_HASH = HashingUtils::HashString("NoScheduleException");
+static const int MATERIALIZED_VIEW_REFRESH_TASK_RUNNING_HASH = HashingUtils::HashString("MaterializedViewRefreshTaskRunningException");
 static const int CONCURRENT_RUNS_EXCEEDED_HASH = HashingUtils::HashString("ConcurrentRunsExceededException");
 static const int ILLEGAL_SESSION_STATE_HASH = HashingUtils::HashString("IllegalSessionStateException");
 static const int FEDERATION_SOURCE_HASH = HashingUtils::HashString("FederationSourceException");
+static const int MATERIALIZED_VIEW_REFRESH_TASK_STOPPING_HASH = HashingUtils::HashString("MaterializedViewRefreshTaskStoppingException");
 static const int TARGET_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("TargetResourceNotFound");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -151,6 +155,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INTEGRATION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ILLEGAL_WORKFLOW_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ILLEGAL_WORKFLOW_STATE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == MATERIALIZED_VIEW_REFRESH_TASK_NOT_RUNNING_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::MATERIALIZED_VIEW_REFRESH_TASK_NOT_RUNNING),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ENTITY_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ENTITY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_STATE_HASH) {
@@ -163,12 +170,16 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CRAWLER_STOPPING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == NO_SCHEDULE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::NO_SCHEDULE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == MATERIALIZED_VIEW_REFRESH_TASK_RUNNING_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::MATERIALIZED_VIEW_REFRESH_TASK_RUNNING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CONCURRENT_RUNS_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::CONCURRENT_RUNS_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ILLEGAL_SESSION_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ILLEGAL_SESSION_STATE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == FEDERATION_SOURCE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::FEDERATION_SOURCE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == MATERIALIZED_VIEW_REFRESH_TASK_STOPPING_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::MATERIALIZED_VIEW_REFRESH_TASK_STOPPING), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TARGET_RESOURCE_NOT_FOUND_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::TARGET_RESOURCE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }

@@ -613,6 +613,7 @@
 #include <aws/medialive/model/MaintenanceUpdateSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
+#include <aws/medialive/model/MediaPackageAdditionalDestinations.h>
 #include <aws/medialive/model/MediaPackageGroupSettings.h>
 #include <aws/medialive/model/MediaPackageOutputDestinationSettings.h>
 #include <aws/medialive/model/MediaPackageOutputSettings.h>

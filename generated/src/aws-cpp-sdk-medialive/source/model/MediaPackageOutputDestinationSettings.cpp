@@ -30,6 +30,14 @@ MediaPackageOutputDestinationSettings& MediaPackageOutputDestinationSettings::op
     m_channelName = jsonValue.GetString("channelName");
     m_channelNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("channelEndpointId")) {
+    m_channelEndpointId = jsonValue.GetString("channelEndpointId");
+    m_channelEndpointIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mediaPackageRegionName")) {
+    m_mediaPackageRegionName = jsonValue.GetString("mediaPackageRegionName");
+    m_mediaPackageRegionNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue MediaPackageOutputDestinationSettings::Jsonize() const {
 
   if (m_channelNameHasBeenSet) {
     payload.WithString("channelName", m_channelName);
+  }
+
+  if (m_channelEndpointIdHasBeenSet) {
+    payload.WithString("channelEndpointId", m_channelEndpointId);
+  }
+
+  if (m_mediaPackageRegionNameHasBeenSet) {
+    payload.WithString("mediaPackageRegionName", m_mediaPackageRegionName);
   }
 
   return payload;

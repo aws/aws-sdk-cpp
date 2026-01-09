@@ -504,6 +504,8 @@
 #include <aws/glue/model/GetMLTransformsResult.h>
 #include <aws/glue/model/GetMappingRequest.h>
 #include <aws/glue/model/GetMappingResult.h>
+#include <aws/glue/model/GetMaterializedViewRefreshTaskRunRequest.h>
+#include <aws/glue/model/GetMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/GetPartitionIndexesRequest.h>
 #include <aws/glue/model/GetPartitionIndexesResult.h>
 #include <aws/glue/model/GetPartitionRequest.h>
@@ -685,6 +687,8 @@
 #include <aws/glue/model/ListJobsResult.h>
 #include <aws/glue/model/ListMLTransformsRequest.h>
 #include <aws/glue/model/ListMLTransformsResult.h>
+#include <aws/glue/model/ListMaterializedViewRefreshTaskRunsRequest.h>
+#include <aws/glue/model/ListMaterializedViewRefreshTaskRunsResult.h>
 #include <aws/glue/model/ListRegistriesRequest.h>
 #include <aws/glue/model/ListRegistriesResult.h>
 #include <aws/glue/model/ListSchemaVersionsRequest.h>
@@ -712,6 +716,9 @@
 #include <aws/glue/model/MLUserDataEncryptionModeString.h>
 #include <aws/glue/model/Mapping.h>
 #include <aws/glue/model/MappingEntry.h>
+#include <aws/glue/model/MaterializedViewRefreshState.h>
+#include <aws/glue/model/MaterializedViewRefreshTaskRun.h>
+#include <aws/glue/model/MaterializedViewRefreshType.h>
 #include <aws/glue/model/Merge.h>
 #include <aws/glue/model/MetadataInfo.h>
 #include <aws/glue/model/MetadataKeyValuePair.h>
@@ -905,6 +912,8 @@
 #include <aws/glue/model/StartMLEvaluationTaskRunResult.h>
 #include <aws/glue/model/StartMLLabelingSetGenerationTaskRunRequest.h>
 #include <aws/glue/model/StartMLLabelingSetGenerationTaskRunResult.h>
+#include <aws/glue/model/StartMaterializedViewRefreshTaskRunRequest.h>
+#include <aws/glue/model/StartMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/StartTriggerRequest.h>
 #include <aws/glue/model/StartTriggerResult.h>
 #include <aws/glue/model/StartWorkflowRunRequest.h>
@@ -928,6 +937,8 @@
 #include <aws/glue/model/StopCrawlerResult.h>
 #include <aws/glue/model/StopCrawlerScheduleRequest.h>
 #include <aws/glue/model/StopCrawlerScheduleResult.h>
+#include <aws/glue/model/StopMaterializedViewRefreshTaskRunRequest.h>
+#include <aws/glue/model/StopMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/StopSessionRequest.h>
 #include <aws/glue/model/StopSessionResult.h>
 #include <aws/glue/model/StopTriggerRequest.h>
