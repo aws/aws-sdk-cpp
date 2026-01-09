@@ -44,21 +44,32 @@ class PaginatorTestClient {
 private:
     Aws::Vector<Aws::String> allData;
     bool shouldFail = false;
+    int failOnPage = -1;
+    int currentPage = 0;
     
 public:
     PaginatorTestClient() : allData({"apple", "banana", "cherry", "dragon-fruit", "elderberry", "fig", "grape"}) {}
     
     void SetData(const Aws::Vector<Aws::String>& data) { allData = data; }
     void SetShouldFail(bool fail) { shouldFail = fail; }
+    void SetFailOnPage(int page) { failOnPage = page; }
     void Reset() {
         allData = {"apple", "banana", "cherry", "dragon-fruit", "elderberry", "fig", "grape"};
         shouldFail = false;
+        failOnPage = -1;
+        currentPage = 0;
     }
     
     TestOutcome ListItems(const TestRequest& request) {
         if (shouldFail) {
             return {false, "Request failed", {}};
         }
+        
+        if (failOnPage >= 0 && currentPage == failOnPage) {
+            currentPage++;
+            return {false, "Page " + StringUtils::to_string(failOnPage) + " failed", {}};
+        }
+        currentPage++;
         
         int startIdx = 0;
         if (!request.GetInputToken().empty()) {
@@ -191,4 +202,29 @@ TEST_F(PaginatorTest, TestBeginEndIteratorComparison)
     
     EXPECT_TRUE(begin == end);
     EXPECT_FALSE(begin != end);
+}
+
+TEST_F(PaginatorTest, TestHandlesErrorOnSecondPage)
+{
+    client.SetFailOnPage(1); // Fail on second page (0-indexed)
+    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
+    
+    auto it = paginator.begin();
+    
+    // First page should succeed
+    ASSERT_TRUE(it != paginator.end());
+    EXPECT_TRUE((*it).IsSuccess());
+    EXPECT_EQ((*it).GetResult().GetItems().size(), 3u);
+    
+    // Move to second page
+    ++it;
+    
+    // Second page should have the error
+    ASSERT_TRUE(it != paginator.end());
+    EXPECT_FALSE((*it).IsSuccess());
+    EXPECT_TRUE((*it).GetError().find("Page 1 failed") != Aws::String::npos);
+    
+    // After error, iteration should end
+    ++it;
+    EXPECT_TRUE(it == paginator.end());
 }

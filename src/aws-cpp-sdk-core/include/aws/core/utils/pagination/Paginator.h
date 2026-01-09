@@ -5,6 +5,9 @@
 
 #pragma once
 
+#include <iterator>
+#include <cstddef>
+
 namespace Aws
 {
 namespace Utils
@@ -22,6 +25,12 @@ public:
     class PageIterator
     {
     public:
+        using iterator_category = std::input_iterator_tag;
+        using value_type = OutcomeType;
+        using difference_type = std::ptrdiff_t;
+        using pointer = const OutcomeType*;
+        using reference = const OutcomeType&;
+
         PageIterator() = default;
 
         PageIterator(ServiceClient* client, const OperationRequest& firstReq)
@@ -55,17 +64,22 @@ public:
             // Mutate iterator-owned request for next page
             OperationTraits::SetNextRequest(m_currentOutcome.GetResult(), m_request);
             FetchPage();
+            
+            // If the fetch we just did failed, don't end iteration yet
+            // Let the customer see the error on the next dereference
+            // The check at the top will end iteration on the next ++
+            
             return *this;
         }
 
-        bool operator!=(const PageIterator& other) const
-        {
-            return !(m_atEnd && other.m_atEnd);
-        }
-        
         bool operator==(const PageIterator& other) const
         {
-            return !(*this != other);
+            return m_atEnd && other.m_atEnd;
+        }
+        
+        bool operator!=(const PageIterator& other) const
+        {
+            return !(*this == other);
         }
 
     private:
