@@ -7,6 +7,7 @@
 
 #include <iterator>
 #include <cstddef>
+#include <memory>
 
 namespace Aws
 {
@@ -22,6 +23,8 @@ public:
     using OutcomeType = typename OperationTraits::OutcomeType;
     using ResultType = typename OperationTraits::ResultType;
 
+    struct EndSentinel {};
+
     class PageIterator
     {
     public:
@@ -31,9 +34,7 @@ public:
         using pointer = const OutcomeType*;
         using reference = const OutcomeType&;
 
-        PageIterator() = default;
-
-        PageIterator(ServiceClient* client, const OperationRequest& firstReq)
+        PageIterator(std::shared_ptr<ServiceClient> client, const OperationRequest& firstReq)
             : m_client(client),
               m_request(firstReq),
               m_atEnd(false)
@@ -65,22 +66,11 @@ public:
             OperationTraits::SetNextRequest(m_currentOutcome.GetResult(), m_request);
             FetchPage();
             
-            // If the fetch we just did failed, don't end iteration yet
-            // Let the customer see the error on the next dereference
-            // The check at the top will end iteration on the next ++
-            
             return *this;
         }
 
-        bool operator==(const PageIterator& other) const
-        {
-            return m_atEnd && other.m_atEnd;
-        }
-        
-        bool operator!=(const PageIterator& other) const
-        {
-            return !(*this == other);
-        }
+        bool operator==(EndSentinel) const { return m_atEnd; }
+        bool operator!=(EndSentinel) const { return !m_atEnd; }
 
     private:
         void FetchPage()
@@ -88,21 +78,21 @@ public:
             m_currentOutcome = OperationTraits::Invoke(*m_client, m_request);
         }
 
-        ServiceClient* m_client{};
+        std::shared_ptr<ServiceClient> m_client;
         OperationRequest m_request{};
         OutcomeType m_currentOutcome{};
         bool m_atEnd{true};
     };
 
-    PagePaginator(ServiceClient* client, const OperationRequest& firstReq)
+    PagePaginator(std::shared_ptr<ServiceClient> client, const OperationRequest& firstReq)
         : m_client(client),
           m_firstRequest(firstReq) {}
 
     PageIterator begin() const { return PageIterator(m_client, m_firstRequest); }
-    PageIterator end() const { return PageIterator(); }
+    EndSentinel end() const { return {}; }
 
 private:
-    ServiceClient* m_client{};
+    std::shared_ptr<ServiceClient> m_client;
     OperationRequest m_firstRequest{};
 };
 
