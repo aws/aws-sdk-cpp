@@ -357,6 +357,7 @@
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/RetryPipelineExecutionResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
+#include <aws/sagemaker/model/SearchTrainingPlanOfferingsRequest.h>
 #include <aws/sagemaker/model/SearchTrainingPlanOfferingsResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepFailureResult.h>
 #include <aws/sagemaker/model/SendPipelineExecutionStepSuccessResult.h>

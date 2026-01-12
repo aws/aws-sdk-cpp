@@ -12,6 +12,7 @@
 #include <aws/iot-managed-integrations/model/CapabilityReport.h>
 #include <aws/iot-managed-integrations/model/CapabilitySchemaItem.h>
 #include <aws/iot-managed-integrations/model/HubNetworkMode.h>
+#include <aws/iot-managed-integrations/model/WiFiSimpleSetupConfiguration.h>
 
 #include <utility>
 
@@ -102,6 +103,25 @@ class UpdateManagedThingRequest : public IoTManagedIntegrationsRequest {
   template <typename SerialNumberT = Aws::String>
   UpdateManagedThingRequest& WithSerialNumber(SerialNumberT&& value) {
     SetSerialNumber(std::forward<SerialNumberT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines
+   * provisioning capabilities and timeout settings.</p>
+   */
+  inline const WiFiSimpleSetupConfiguration& GetWiFiSimpleSetupConfiguration() const { return m_wiFiSimpleSetupConfiguration; }
+  inline bool WiFiSimpleSetupConfigurationHasBeenSet() const { return m_wiFiSimpleSetupConfigurationHasBeenSet; }
+  template <typename WiFiSimpleSetupConfigurationT = WiFiSimpleSetupConfiguration>
+  void SetWiFiSimpleSetupConfiguration(WiFiSimpleSetupConfigurationT&& value) {
+    m_wiFiSimpleSetupConfigurationHasBeenSet = true;
+    m_wiFiSimpleSetupConfiguration = std::forward<WiFiSimpleSetupConfigurationT>(value);
+  }
+  template <typename WiFiSimpleSetupConfigurationT = WiFiSimpleSetupConfiguration>
+  UpdateManagedThingRequest& WithWiFiSimpleSetupConfiguration(WiFiSimpleSetupConfigurationT&& value) {
+    SetWiFiSimpleSetupConfiguration(std::forward<WiFiSimpleSetupConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -287,6 +307,8 @@ class UpdateManagedThingRequest : public IoTManagedIntegrationsRequest {
 
   Aws::String m_serialNumber;
 
+  WiFiSimpleSetupConfiguration m_wiFiSimpleSetupConfiguration;
+
   Aws::String m_brand;
 
   Aws::String m_model;
@@ -308,6 +330,7 @@ class UpdateManagedThingRequest : public IoTManagedIntegrationsRequest {
   bool m_ownerHasBeenSet = false;
   bool m_credentialLockerIdHasBeenSet = false;
   bool m_serialNumberHasBeenSet = false;
+  bool m_wiFiSimpleSetupConfigurationHasBeenSet = false;
   bool m_brandHasBeenSet = false;
   bool m_modelHasBeenSet = false;
   bool m_nameHasBeenSet = false;

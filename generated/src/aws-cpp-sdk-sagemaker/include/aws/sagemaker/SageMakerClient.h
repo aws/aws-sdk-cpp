@@ -9462,7 +9462,7 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
    * API Reference</a></p>
    */
   virtual Model::SearchTrainingPlanOfferingsOutcome SearchTrainingPlanOfferings(
-      const Model::SearchTrainingPlanOfferingsRequest& request) const;
+      const Model::SearchTrainingPlanOfferingsRequest& request = {}) const;
 
   /**
    * A Callable wrapper for SearchTrainingPlanOfferings that returns a future to the operation so that it can be executed in parallel to
@@ -9470,7 +9470,7 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
    */
   template <typename SearchTrainingPlanOfferingsRequestT = Model::SearchTrainingPlanOfferingsRequest>
   Model::SearchTrainingPlanOfferingsOutcomeCallable SearchTrainingPlanOfferingsCallable(
-      const SearchTrainingPlanOfferingsRequestT& request) const {
+      const SearchTrainingPlanOfferingsRequestT& request = {}) const {
     return SubmitCallable(&SageMakerClient::SearchTrainingPlanOfferings, request);
   }
 
@@ -9479,9 +9479,9 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
    * operation has finished.
    */
   template <typename SearchTrainingPlanOfferingsRequestT = Model::SearchTrainingPlanOfferingsRequest>
-  void SearchTrainingPlanOfferingsAsync(const SearchTrainingPlanOfferingsRequestT& request,
-                                        const SearchTrainingPlanOfferingsResponseReceivedHandler& handler,
-                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void SearchTrainingPlanOfferingsAsync(const SearchTrainingPlanOfferingsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                        const SearchTrainingPlanOfferingsRequestT& request = {}) const {
     return SubmitAsync(&SageMakerClient::SearchTrainingPlanOfferings, request, handler, context);
   }
 

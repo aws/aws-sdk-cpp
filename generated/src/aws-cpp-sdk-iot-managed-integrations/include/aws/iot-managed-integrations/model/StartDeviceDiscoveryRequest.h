@@ -10,6 +10,7 @@
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 #include <aws/iot-managed-integrations/model/DiscoveryAuthMaterialType.h>
 #include <aws/iot-managed-integrations/model/DiscoveryType.h>
+#include <aws/iot-managed-integrations/model/ProtocolType.h>
 
 #include <utility>
 
@@ -166,6 +167,44 @@ class StartDeviceDiscoveryRequest : public IoTManagedIntegrationsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The protocol type for capability rediscovery (ZWAVE, ZIGBEE, or CUSTOM).</p>
+   *  <p>This parameter is only available when the discovery type is
+   * CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+   */
+  inline ProtocolType GetProtocol() const { return m_protocol; }
+  inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+  inline void SetProtocol(ProtocolType value) {
+    m_protocolHasBeenSet = true;
+    m_protocol = value;
+  }
+  inline StartDeviceDiscoveryRequest& WithProtocol(ProtocolType value) {
+    SetProtocol(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique id of the end device for capability rediscovery.</p>
+   * <p>This parameter is only available when the discovery type is
+   * CONTROLLER_CAPABILITY_REDISCOVERY.</p>
+   */
+  inline const Aws::String& GetEndDeviceIdentifier() const { return m_endDeviceIdentifier; }
+  inline bool EndDeviceIdentifierHasBeenSet() const { return m_endDeviceIdentifierHasBeenSet; }
+  template <typename EndDeviceIdentifierT = Aws::String>
+  void SetEndDeviceIdentifier(EndDeviceIdentifierT&& value) {
+    m_endDeviceIdentifierHasBeenSet = true;
+    m_endDeviceIdentifier = std::forward<EndDeviceIdentifierT>(value);
+  }
+  template <typename EndDeviceIdentifierT = Aws::String>
+  StartDeviceDiscoveryRequest& WithEndDeviceIdentifier(EndDeviceIdentifierT&& value) {
+    SetEndDeviceIdentifier(std::forward<EndDeviceIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
 
@@ -180,6 +219,10 @@ class StartDeviceDiscoveryRequest : public IoTManagedIntegrationsRequest {
   DiscoveryAuthMaterialType m_authenticationMaterialType{DiscoveryAuthMaterialType::NOT_SET};
 
   Aws::String m_clientToken;
+
+  ProtocolType m_protocol{ProtocolType::NOT_SET};
+
+  Aws::String m_endDeviceIdentifier;
   bool m_discoveryTypeHasBeenSet = false;
   bool m_customProtocolDetailHasBeenSet = false;
   bool m_controllerIdentifierHasBeenSet = false;
@@ -187,6 +230,8 @@ class StartDeviceDiscoveryRequest : public IoTManagedIntegrationsRequest {
   bool m_authenticationMaterialHasBeenSet = false;
   bool m_authenticationMaterialTypeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
+  bool m_protocolHasBeenSet = false;
+  bool m_endDeviceIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

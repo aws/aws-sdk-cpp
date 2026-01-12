@@ -297,7 +297,7 @@ class ModelPackageContainerDefinition {
 
   ///@{
   /**
-   * <p> The checkpoint of the model package. </p>
+   * <p> Specifies whether the model data is a training checkpoint. </p>
    */
   inline bool GetIsCheckpoint() const { return m_isCheckpoint; }
   inline bool IsCheckpointHasBeenSet() const { return m_isCheckpointHasBeenSet; }
@@ -313,7 +313,8 @@ class ModelPackageContainerDefinition {
 
   ///@{
   /**
-   * <p> The base model of the package. </p>
+   * <p> Identifies the foundation model that was used as the starting point for
+   * model customization. </p>
    */
   inline const BaseModel& GetBaseModel() const { return m_baseModel; }
   inline bool BaseModelHasBeenSet() const { return m_baseModelHasBeenSet; }

@@ -165,7 +165,9 @@ class ListManagedThingsRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>Filter on the status of the device.</p>
+   * <p>Filter on the status of the device. For more information, see <a
+   * href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device
+   * Provisioning</a>.</p>
    */
   inline ProvisioningStatus GetProvisioningStatusFilter() const { return m_provisioningStatusFilter; }
   inline bool ProvisioningStatusFilterHasBeenSet() const { return m_provisioningStatusFilterHasBeenSet; }

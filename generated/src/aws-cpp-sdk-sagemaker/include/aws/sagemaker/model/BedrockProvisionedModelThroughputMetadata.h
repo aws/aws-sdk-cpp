@@ -35,7 +35,7 @@ class BedrockProvisionedModelThroughputMetadata {
   ///@{
   /**
    * <p> The Amazon Resource Name (ARN) of the Amazon Bedrock provisioned model
-   * throughput metadata. </p>
+   * throughput. </p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

@@ -188,7 +188,7 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
 
   ///@{
   /**
-   * <p> The MLflow experiment name of the start execution. </p>
+   * <p> The MLflow experiment name of the pipeline execution. </p>
    */
   inline const Aws::String& GetMlflowExperimentName() const { return m_mlflowExperimentName; }
   inline bool MlflowExperimentNameHasBeenSet() const { return m_mlflowExperimentNameHasBeenSet; }

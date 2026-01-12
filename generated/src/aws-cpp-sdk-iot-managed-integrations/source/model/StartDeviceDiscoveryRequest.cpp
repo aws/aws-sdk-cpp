@@ -48,5 +48,13 @@ Aws::String StartDeviceDiscoveryRequest::SerializePayload() const {
     payload.WithString("ClientToken", m_clientToken);
   }
 
+  if (m_protocolHasBeenSet) {
+    payload.WithString("Protocol", ProtocolTypeMapper::GetNameForProtocolType(m_protocol));
+  }
+
+  if (m_endDeviceIdentifierHasBeenSet) {
+    payload.WithString("EndDeviceIdentifier", m_endDeviceIdentifier);
+  }
+
   return payload.View().WriteReadable();
 }

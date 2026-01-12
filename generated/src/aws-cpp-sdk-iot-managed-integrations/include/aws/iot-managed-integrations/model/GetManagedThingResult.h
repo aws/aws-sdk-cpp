@@ -11,6 +11,7 @@
 #include <aws/iot-managed-integrations/model/HubNetworkMode.h>
 #include <aws/iot-managed-integrations/model/ProvisioningStatus.h>
 #include <aws/iot-managed-integrations/model/Role.h>
+#include <aws/iot-managed-integrations/model/WiFiSimpleSetupConfiguration.h>
 
 #include <utility>
 
@@ -136,7 +137,9 @@ class GetManagedThingResult {
   ///@{
   /**
    * <p>The provisioning status of the device in the provisioning workflow for
-   * onboarding to IoT managed integrations.</p>
+   * onboarding to IoT managed integrations. For more information, see <a
+   * href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device
+   * Provisioning</a>.</p>
    */
   inline ProvisioningStatus GetProvisioningStatus() const { return m_provisioningStatus; }
   inline void SetProvisioningStatus(ProvisioningStatus value) {
@@ -473,6 +476,24 @@ class GetManagedThingResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines
+   * provisioning capabilities and timeout settings.</p>
+   */
+  inline const WiFiSimpleSetupConfiguration& GetWiFiSimpleSetupConfiguration() const { return m_wiFiSimpleSetupConfiguration; }
+  template <typename WiFiSimpleSetupConfigurationT = WiFiSimpleSetupConfiguration>
+  void SetWiFiSimpleSetupConfiguration(WiFiSimpleSetupConfigurationT&& value) {
+    m_wiFiSimpleSetupConfigurationHasBeenSet = true;
+    m_wiFiSimpleSetupConfiguration = std::forward<WiFiSimpleSetupConfigurationT>(value);
+  }
+  template <typename WiFiSimpleSetupConfigurationT = WiFiSimpleSetupConfiguration>
+  GetManagedThingResult& WithWiFiSimpleSetupConfiguration(WiFiSimpleSetupConfigurationT&& value) {
+    SetWiFiSimpleSetupConfiguration(std::forward<WiFiSimpleSetupConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -537,6 +558,8 @@ class GetManagedThingResult {
 
   Aws::Map<Aws::String, Aws::String> m_tags;
 
+  WiFiSimpleSetupConfiguration m_wiFiSimpleSetupConfiguration;
+
   Aws::String m_requestId;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -563,6 +586,7 @@ class GetManagedThingResult {
   bool m_hubNetworkModeHasBeenSet = false;
   bool m_metaDataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_wiFiSimpleSetupConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

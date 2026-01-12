@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/billing/Billing_EXPORTS.h>
+#include <aws/billing/model/CostCategoryValues.h>
 #include <aws/billing/model/DimensionValues.h>
 #include <aws/billing/model/TagValues.h>
 #include <aws/billing/model/TimeRange.h>
@@ -24,8 +25,8 @@ namespace Model {
 /**
  * <p> See <a
  * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
- * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
- * </p><p><h3>See Also:</h3>   <a
+ * Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and
+ * <code>CostCategories</code>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/Expression">AWS
  * API Reference</a></p>
  */
@@ -74,6 +75,24 @@ class Expression {
 
   ///@{
   /**
+   * <p> The filter that's based on <code>CostCategory</code> values. </p>
+   */
+  inline const CostCategoryValues& GetCostCategories() const { return m_costCategories; }
+  inline bool CostCategoriesHasBeenSet() const { return m_costCategoriesHasBeenSet; }
+  template <typename CostCategoriesT = CostCategoryValues>
+  void SetCostCategories(CostCategoriesT&& value) {
+    m_costCategoriesHasBeenSet = true;
+    m_costCategories = std::forward<CostCategoriesT>(value);
+  }
+  template <typename CostCategoriesT = CostCategoryValues>
+  Expression& WithCostCategories(CostCategoriesT&& value) {
+    SetCostCategories(std::forward<CostCategoriesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> Specifies a time range filter for the billing view data. </p>
    */
   inline const TimeRange& GetTimeRange() const { return m_timeRange; }
@@ -94,9 +113,12 @@ class Expression {
 
   TagValues m_tags;
 
+  CostCategoryValues m_costCategories;
+
   TimeRange m_timeRange;
   bool m_dimensionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_costCategoriesHasBeenSet = false;
   bool m_timeRangeHasBeenSet = false;
 };
 

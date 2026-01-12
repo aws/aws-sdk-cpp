@@ -24,6 +24,7 @@
 #include <aws/billing/model/BillingViewStatusReason.h>
 #include <aws/billing/model/BillingViewType.h>
 #include <aws/billing/model/ConflictException.h>
+#include <aws/billing/model/CostCategoryValues.h>
 #include <aws/billing/model/CreateBillingViewRequest.h>
 #include <aws/billing/model/CreateBillingViewResult.h>
 #include <aws/billing/model/DeleteBillingViewRequest.h>

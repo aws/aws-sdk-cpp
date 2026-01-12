@@ -22,6 +22,7 @@ static const int DEVICE_EVENT_HASH = HashingUtils::HashString("DEVICE_EVENT");
 static const int DEVICE_LIFE_CYCLE_HASH = HashingUtils::HashString("DEVICE_LIFE_CYCLE");
 static const int DEVICE_STATE_HASH = HashingUtils::HashString("DEVICE_STATE");
 static const int DEVICE_OTA_HASH = HashingUtils::HashString("DEVICE_OTA");
+static const int DEVICE_WSS_HASH = HashingUtils::HashString("DEVICE_WSS");
 static const int CONNECTOR_ASSOCIATION_HASH = HashingUtils::HashString("CONNECTOR_ASSOCIATION");
 static const int ACCOUNT_ASSOCIATION_HASH = HashingUtils::HashString("ACCOUNT_ASSOCIATION");
 static const int CONNECTOR_ERROR_REPORT_HASH = HashingUtils::HashString("CONNECTOR_ERROR_REPORT");
@@ -42,6 +43,8 @@ EventType GetEventTypeForName(const Aws::String& name) {
     return EventType::DEVICE_STATE;
   } else if (hashCode == DEVICE_OTA_HASH) {
     return EventType::DEVICE_OTA;
+  } else if (hashCode == DEVICE_WSS_HASH) {
+    return EventType::DEVICE_WSS;
   } else if (hashCode == CONNECTOR_ASSOCIATION_HASH) {
     return EventType::CONNECTOR_ASSOCIATION;
   } else if (hashCode == ACCOUNT_ASSOCIATION_HASH) {
@@ -76,6 +79,8 @@ Aws::String GetNameForEventType(EventType enumValue) {
       return "DEVICE_STATE";
     case EventType::DEVICE_OTA:
       return "DEVICE_OTA";
+    case EventType::DEVICE_WSS:
+      return "DEVICE_WSS";
     case EventType::CONNECTOR_ASSOCIATION:
       return "CONNECTOR_ASSOCIATION";
     case EventType::ACCOUNT_ASSOCIATION:

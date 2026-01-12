@@ -26,6 +26,10 @@ Expression& Expression::operator=(JsonView jsonValue) {
     m_tags = jsonValue.GetObject("tags");
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("costCategories")) {
+    m_costCategories = jsonValue.GetObject("costCategories");
+    m_costCategoriesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("timeRange")) {
     m_timeRange = jsonValue.GetObject("timeRange");
     m_timeRangeHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue Expression::Jsonize() const {
 
   if (m_tagsHasBeenSet) {
     payload.WithObject("tags", m_tags.Jsonize());
+  }
+
+  if (m_costCategoriesHasBeenSet) {
+    payload.WithObject("costCategories", m_costCategories.Jsonize());
   }
 
   if (m_timeRangeHasBeenSet) {
