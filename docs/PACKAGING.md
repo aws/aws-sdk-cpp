@@ -16,6 +16,115 @@ The AWS SDK for C++ provides CPack-based packaging support for generating DEB an
 - **RPM**: For Red Hat, Fedora, CentOS, Amazon Linux, and other RPM-based distributions
 - **DEB**: For Debian, Ubuntu, and other DEB-based distributions
 
+## Table of Contents
+
+- [Overview](#overview)
+  - [Package Types](#package-types)
+  - [Package Formats](#package-formats)
+- [Packaging Configuration Files](#packaging-configuration-files)
+  - [Core CMake Configuration Files](#core-cmake-configuration-files)
+  - [Package Maintenance Scripts](#package-maintenance-scripts)
+  - [Build and Documentation Files](#build-and-documentation-files)
+  - [Modified Files](#modified-files)
+  - [File Structure](#file-structure)
+- [Service Groups](#service-groups)
+- [Package Naming](#package-naming)
+  - [RPM Packages](#rpm-packages)
+  - [DEB Packages](#deb-packages)
+- [Building Packages](#building-packages)
+  - [Prerequisites](#prerequisites)
+  - [Using the Build Script (Recommended)](#using-the-build-script-recommended)
+  - [Manual Build Process](#manual-build-process)
+- [Installing Packages](#installing-packages)
+  - [RPM Installation](#rpm-installation)
+  - [DEB Installation](#deb-installation)
+- [Using the SDK from Packages](#using-the-sdk-from-packages)
+  - [CMake Integration](#cmake-integration)
+  - [Example Application](#example-application)
+  - [pkg-config Integration](#pkg-config-integration)
+- [Package Dependencies](#package-dependencies)
+  - [Runtime Package Dependencies](#runtime-package-dependencies)
+  - [Development Package Dependencies](#development-package-dependencies)
+- [Uninstalling Packages](#uninstalling-packages)
+  - [RPM Uninstallation](#rpm-uninstallation)
+  - [DEB Uninstallation](#deb-uninstallation)
+- [Troubleshooting](#troubleshooting)
+  - [Missing Dependencies](#missing-dependencies)
+  - [CMake Can't Find Package](#cmake-cant-find-package)
+  - [Library Not Found at Runtime](#library-not-found-at-runtime)
+  - [Package Version Conflicts](#package-version-conflicts)
+- [Advanced Topics](#advanced-topics)
+  - [Building Static Library Packages](#building-static-library-packages)
+  - [Cross-Architecture Builds](#cross-architecture-builds)
+  - [Creating Package Repositories](#creating-package-repositories)
+- [Package Maintainer Information](#package-maintainer-information)
+  - [File Locations](#file-locations)
+  - [Modifying Service Groups](#modifying-service-groups)
+  - [Package Metadata](#package-metadata)
+- [Support and Feedback](#support-and-feedback)
+
+## Packaging Configuration Files
+
+The CPack packaging system is implemented through the following configuration files:
+
+### Core CMake Configuration Files
+
+| File | Purpose |
+|------|---------|
+| `cmake/ServiceGroupMapping.cmake` | Maps individual AWS service libraries to logical package groups (core, storage, compute, etc.) |
+| `cmake/CPackConfig.cmake` | Main CPack configuration - defines package metadata, generators (RPM/DEB), and global settings |
+| `cmake/CPackComponents.cmake` | Defines package components, component groups, and inter-package dependencies for both RPM and DEB |
+
+### Package Maintenance Scripts
+
+| File | Purpose |
+|------|---------|
+| `cmake/rpm-scripts/post.sh` | RPM post-install script - runs `ldconfig` to update shared library cache |
+| `cmake/rpm-scripts/postun.sh` | RPM post-uninstall script - runs `ldconfig` after package removal |
+| `cmake/deb-scripts/postinst` | DEB post-install script - runs `ldconfig` on package configuration |
+| `cmake/deb-scripts/postrm` | DEB post-remove script - runs `ldconfig` after package removal |
+
+### Build and Documentation Files
+
+| File | Purpose |
+|------|---------|
+| `scripts/build-packages.sh` | Automated build script for generating packages with configurable options |
+| `docs/PACKAGING.md` | Comprehensive documentation for building, installing, and using packages |
+
+### Modified Files
+
+| File | Modifications |
+|------|---------------|
+| `CMakeLists.txt` | Added `ENABLE_CPACK_PACKAGING` option and CPack integration (lines 75, 362-366) |
+| `cmake/utilities.cmake` | Modified `setup_install()` and `do_packaging()` macros to add COMPONENT support for CPack |
+| `src/aws-cpp-sdk-core/CMakeLists.txt` | Added COMPONENT parameters to library and header installation commands for packaging |
+
+### File Structure
+
+```
+aws-sdk-cpp/
+├── cmake/
+│   ├── ServiceGroupMapping.cmake      # NEW - Service to group mapping
+│   ├── CPackConfig.cmake              # NEW - Main CPack configuration
+│   ├── CPackComponents.cmake          # NEW - Component definitions
+│   ├── utilities.cmake                # MODIFIED - Added COMPONENT support
+│   ├── rpm-scripts/
+│   │   ├── post.sh                    # NEW - RPM post-install
+│   │   └── postun.sh                  # NEW - RPM post-uninstall
+│   └── deb-scripts/
+│       ├── postinst                   # NEW - DEB post-install
+│       └── postrm                     # NEW - DEB post-remove
+├── scripts/
+│   └── build-packages.sh              # NEW - Build automation script
+├── docs/
+│   └── PACKAGING.md                   # NEW - Packaging documentation
+├── src/aws-cpp-sdk-core/
+│   └── CMakeLists.txt                 # MODIFIED - Added COMPONENT support
+└── CMakeLists.txt                     # MODIFIED - CPack integration
+
+Total: 9 new files, 3 modified files
+```
+
 ## Service Groups
 
 The 418+ AWS services are organized into 19 logical groups to avoid creating hundreds of individual packages:
