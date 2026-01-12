@@ -73,6 +73,7 @@ if (LEGACY_BUILD)
     option(DISABLE_DNS_REQUIRED_TESTS "Disable unit tests that require DNS lookup to succeed, useful when using a http client that does not perform DNS lookup" OFF)
     option(AWS_APPSTORE_SAFE "Remove reference to private Apple APIs for AES GCM in Common Crypto. If set to OFF you application will get rejected from the apple app store." OFF)
     option(AWS_ENABLE_CORE_INTEGRATION_TEST "Enables the core integration tests to be built which contains dependencies on other clients for setup and tear down" OFF)
+    option(ENABLE_CPACK_PACKAGING "Enable CPack for DEB and RPM package generation (Linux only)" OFF)
 
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
@@ -360,6 +361,12 @@ if (LEGACY_BUILD)
     else ()
         ADD_CUSTOM_TARGET(uninstall-awssdk "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake")
     endif ()
+
+    # CPack packaging configuration (DEB and RPM packages)
+    if(ENABLE_CPACK_PACKAGING)
+        include(cmake/ServiceGroupMapping.cmake)
+        include(cmake/CPackConfig.cmake)
+    endif()
 else () #  End of Legacy Build
     # -- Preamble --
     message(STATUS "Building with new CMake scripts.")

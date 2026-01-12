@@ -84,16 +84,33 @@ macro(setup_install)
     if(SIMPLE_INSTALL)
         configure_file("${AWS_NATIVE_SDK_ROOT}/toolchains/pkg-config.pc.in" "${PROJECT_NAME}.pc" @ONLY)
 
+        # Determine the component for this library based on service group mapping
+        if(COMMAND get_service_group_component)
+            get_service_group_component(${PROJECT_NAME} SERVICE_GROUP)
+            if(BUILD_SHARED_LIBS)
+                set(INSTALL_COMPONENT "${SERVICE_GROUP}-runtime")
+            else()
+                set(INSTALL_COMPONENT "${SERVICE_GROUP}-static")
+            endif()
+        else()
+            # Fallback if service group mapping not available
+            set(INSTALL_COMPONENT "Unspecified")
+        endif()
+
         install( TARGETS ${PROJECT_NAME}
                 EXPORT "${PROJECT_NAME}-targets"
                 ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+                    COMPONENT ${INSTALL_COMPONENT}
                 LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
-                RUNTIME DESTINATION ${BINARY_DIRECTORY} )
+                    COMPONENT ${INSTALL_COMPONENT}
+                RUNTIME DESTINATION ${BINARY_DIRECTORY}
+                    COMPONENT ${INSTALL_COMPONENT} )
 
         if (BUILD_SHARED_LIBS)
             install(
                 FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.pc"
-                DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig)
+                DESTINATION ${LIBRARY_DIRECTORY}/pkgconfig
+                COMPONENT ${INSTALL_COMPONENT})
         endif()
     else()
         if(PLATFORM_CUSTOM)
@@ -132,10 +149,20 @@ macro(do_packaging)
             @ONLY)
     endif()
 
+        # Determine the development component for this library
+        if(COMMAND get_service_group_component)
+            get_service_group_component(${PROJECT_NAME} SERVICE_GROUP)
+            set(DEVEL_COMPONENT "${SERVICE_GROUP}-devel")
+        else()
+            # Fallback if service group mapping not available
+            set(DEVEL_COMPONENT "Devel")
+        endif()
+
         set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
         install(EXPORT "${PROJECT_NAME}-targets"
             FILE "${PROJECT_NAME}-targets.cmake"
             DESTINATION ${ConfigPackageLocation}
+            COMPONENT ${DEVEL_COMPONENT}
         )
 
         install(
@@ -145,7 +172,7 @@ macro(do_packaging)
             DESTINATION
             ${ConfigPackageLocation}
             COMPONENT
-            Devel)
+            ${DEVEL_COMPONENT})
     endif()
     if (MSVC AND BUILD_SHARED_LIBS)
         install (FILES $<TARGET_PDB_FILE:${PROJECT_NAME}> DESTINATION ${CMAKE_INSTALL_BINDIR} OPTIONAL)
