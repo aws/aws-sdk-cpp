@@ -6,57 +6,47 @@
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/iot-managed-integrations/model/DiscoveryType.h>
+#include <aws/iot-managed-integrations/model/ProtocolType.h>
 
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace IoTManagedIntegrations {
 namespace Model {
-namespace DiscoveryTypeMapper {
+namespace ProtocolTypeMapper {
 
 static const int ZWAVE_HASH = HashingUtils::HashString("ZWAVE");
 static const int ZIGBEE_HASH = HashingUtils::HashString("ZIGBEE");
-static const int CLOUD_HASH = HashingUtils::HashString("CLOUD");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
-static const int CONTROLLER_CAPABILITY_REDISCOVERY_HASH = HashingUtils::HashString("CONTROLLER_CAPABILITY_REDISCOVERY");
 
-DiscoveryType GetDiscoveryTypeForName(const Aws::String& name) {
+ProtocolType GetProtocolTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ZWAVE_HASH) {
-    return DiscoveryType::ZWAVE;
+    return ProtocolType::ZWAVE;
   } else if (hashCode == ZIGBEE_HASH) {
-    return DiscoveryType::ZIGBEE;
-  } else if (hashCode == CLOUD_HASH) {
-    return DiscoveryType::CLOUD;
+    return ProtocolType::ZIGBEE;
   } else if (hashCode == CUSTOM_HASH) {
-    return DiscoveryType::CUSTOM;
-  } else if (hashCode == CONTROLLER_CAPABILITY_REDISCOVERY_HASH) {
-    return DiscoveryType::CONTROLLER_CAPABILITY_REDISCOVERY;
+    return ProtocolType::CUSTOM;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
     overflowContainer->StoreOverflow(hashCode, name);
-    return static_cast<DiscoveryType>(hashCode);
+    return static_cast<ProtocolType>(hashCode);
   }
 
-  return DiscoveryType::NOT_SET;
+  return ProtocolType::NOT_SET;
 }
 
-Aws::String GetNameForDiscoveryType(DiscoveryType enumValue) {
+Aws::String GetNameForProtocolType(ProtocolType enumValue) {
   switch (enumValue) {
-    case DiscoveryType::NOT_SET:
+    case ProtocolType::NOT_SET:
       return {};
-    case DiscoveryType::ZWAVE:
+    case ProtocolType::ZWAVE:
       return "ZWAVE";
-    case DiscoveryType::ZIGBEE:
+    case ProtocolType::ZIGBEE:
       return "ZIGBEE";
-    case DiscoveryType::CLOUD:
-      return "CLOUD";
-    case DiscoveryType::CUSTOM:
+    case ProtocolType::CUSTOM:
       return "CUSTOM";
-    case DiscoveryType::CONTROLLER_CAPABILITY_REDISCOVERY:
-      return "CONTROLLER_CAPABILITY_REDISCOVERY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
@@ -67,7 +57,7 @@ Aws::String GetNameForDiscoveryType(DiscoveryType enumValue) {
   }
 }
 
-}  // namespace DiscoveryTypeMapper
+}  // namespace ProtocolTypeMapper
 }  // namespace Model
 }  // namespace IoTManagedIntegrations
 }  // namespace Aws

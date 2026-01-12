@@ -1926,8 +1926,8 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Set the runtime log configuration for a specific managed thing or for all
-   * managed things as a group.</p><p><h3>See Also:</h3>   <a
+   * <p>Set the runtime log configuration for a specific managed thing.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/PutRuntimeLogConfiguration">AWS
    * API Reference</a></p>
    */

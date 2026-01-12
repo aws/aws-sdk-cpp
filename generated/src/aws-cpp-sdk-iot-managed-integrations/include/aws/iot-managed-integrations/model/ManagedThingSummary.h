@@ -257,7 +257,9 @@ class ManagedThingSummary {
   ///@{
   /**
    * <p>The provisioning status of the device in the provisioning workflow for
-   * onboarding to IoT managed integrations.</p>
+   * onboarding to IoT managed integrations. For more information, see <a
+   * href="https://docs.aws.amazon.com/iot-mi/latest/devguide/device-provisioning.html">Device
+   * Provisioning</a>.</p>
    */
   inline ProvisioningStatus GetProvisioningStatus() const { return m_provisioningStatus; }
   inline bool ProvisioningStatusHasBeenSet() const { return m_provisioningStatusHasBeenSet; }

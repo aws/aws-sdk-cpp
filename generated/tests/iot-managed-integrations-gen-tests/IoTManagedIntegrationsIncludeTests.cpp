@@ -198,6 +198,7 @@
 #include <aws/iot-managed-integrations/model/OtaTaskTimeoutConfig.h>
 #include <aws/iot-managed-integrations/model/OtaType.h>
 #include <aws/iot-managed-integrations/model/ProactiveRefreshTokenRenewal.h>
+#include <aws/iot-managed-integrations/model/ProtocolType.h>
 #include <aws/iot-managed-integrations/model/ProvisioningProfileSummary.h>
 #include <aws/iot-managed-integrations/model/ProvisioningStatus.h>
 #include <aws/iot-managed-integrations/model/ProvisioningType.h>
@@ -249,6 +250,7 @@
 #include <aws/iot-managed-integrations/model/UpdateManagedThingRequest.h>
 #include <aws/iot-managed-integrations/model/UpdateNotificationConfigurationRequest.h>
 #include <aws/iot-managed-integrations/model/UpdateOtaTaskRequest.h>
+#include <aws/iot-managed-integrations/model/WiFiSimpleSetupConfiguration.h>
 
 using IoTManagedIntegrationsIncludeTest = ::testing::Test;
 

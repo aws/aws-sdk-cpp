@@ -49,9 +49,30 @@ class UltraServerInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the UltraServer.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  UltraServerInfo& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
+
+  Aws::String m_type;
   bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

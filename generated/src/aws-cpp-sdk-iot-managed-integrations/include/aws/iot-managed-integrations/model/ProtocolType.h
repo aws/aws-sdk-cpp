@@ -10,13 +10,13 @@
 namespace Aws {
 namespace IoTManagedIntegrations {
 namespace Model {
-enum class DiscoveryType { NOT_SET, ZWAVE, ZIGBEE, CLOUD, CUSTOM, CONTROLLER_CAPABILITY_REDISCOVERY };
+enum class ProtocolType { NOT_SET, ZWAVE, ZIGBEE, CUSTOM };
 
-namespace DiscoveryTypeMapper {
-AWS_IOTMANAGEDINTEGRATIONS_API DiscoveryType GetDiscoveryTypeForName(const Aws::String& name);
+namespace ProtocolTypeMapper {
+AWS_IOTMANAGEDINTEGRATIONS_API ProtocolType GetProtocolTypeForName(const Aws::String& name);
 
-AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForDiscoveryType(DiscoveryType value);
-}  // namespace DiscoveryTypeMapper
+AWS_IOTMANAGEDINTEGRATIONS_API Aws::String GetNameForProtocolType(ProtocolType value);
+}  // namespace ProtocolTypeMapper
 }  // namespace Model
 }  // namespace IoTManagedIntegrations
 }  // namespace Aws

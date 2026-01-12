@@ -35,6 +35,10 @@ Aws::String CreateManagedThingRequest::SerializePayload() const {
     payload.WithString("AuthenticationMaterialType", AuthMaterialTypeMapper::GetNameForAuthMaterialType(m_authenticationMaterialType));
   }
 
+  if (m_wiFiSimpleSetupConfigurationHasBeenSet) {
+    payload.WithObject("WiFiSimpleSetupConfiguration", m_wiFiSimpleSetupConfiguration.Jsonize());
+  }
+
   if (m_serialNumberHasBeenSet) {
     payload.WithString("SerialNumber", m_serialNumber);
   }

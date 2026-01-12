@@ -22,6 +22,10 @@ UltraServerInfo& UltraServerInfo::operator=(JsonView jsonValue) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = jsonValue.GetString("Type");
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue UltraServerInfo::Jsonize() const {
 
   if (m_idHasBeenSet) {
     payload.WithString("Id", m_id);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", m_type);
   }
 
   return payload;

@@ -14,6 +14,7 @@
 #include <aws/iot-managed-integrations/model/CapabilityReport.h>
 #include <aws/iot-managed-integrations/model/CapabilitySchemaItem.h>
 #include <aws/iot-managed-integrations/model/Role.h>
+#include <aws/iot-managed-integrations/model/WiFiSimpleSetupConfiguration.h>
 
 #include <utility>
 
@@ -121,6 +122,25 @@ class CreateManagedThingRequest : public IoTManagedIntegrationsRequest {
   }
   inline CreateManagedThingRequest& WithAuthenticationMaterialType(AuthMaterialType value) {
     SetAuthenticationMaterialType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Wi-Fi Simple Setup configuration for the managed thing, which defines
+   * provisioning capabilities and timeout settings.</p>
+   */
+  inline const WiFiSimpleSetupConfiguration& GetWiFiSimpleSetupConfiguration() const { return m_wiFiSimpleSetupConfiguration; }
+  inline bool WiFiSimpleSetupConfigurationHasBeenSet() const { return m_wiFiSimpleSetupConfigurationHasBeenSet; }
+  template <typename WiFiSimpleSetupConfigurationT = WiFiSimpleSetupConfiguration>
+  void SetWiFiSimpleSetupConfiguration(WiFiSimpleSetupConfigurationT&& value) {
+    m_wiFiSimpleSetupConfigurationHasBeenSet = true;
+    m_wiFiSimpleSetupConfiguration = std::forward<WiFiSimpleSetupConfigurationT>(value);
+  }
+  template <typename WiFiSimpleSetupConfigurationT = WiFiSimpleSetupConfiguration>
+  CreateManagedThingRequest& WithWiFiSimpleSetupConfiguration(WiFiSimpleSetupConfigurationT&& value) {
+    SetWiFiSimpleSetupConfiguration(std::forward<WiFiSimpleSetupConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -360,6 +380,8 @@ class CreateManagedThingRequest : public IoTManagedIntegrationsRequest {
 
   AuthMaterialType m_authenticationMaterialType{AuthMaterialType::NOT_SET};
 
+  WiFiSimpleSetupConfiguration m_wiFiSimpleSetupConfiguration;
+
   Aws::String m_serialNumber;
 
   Aws::String m_brand;
@@ -386,6 +408,7 @@ class CreateManagedThingRequest : public IoTManagedIntegrationsRequest {
   bool m_credentialLockerIdHasBeenSet = false;
   bool m_authenticationMaterialHasBeenSet = false;
   bool m_authenticationMaterialTypeHasBeenSet = false;
+  bool m_wiFiSimpleSetupConfigurationHasBeenSet = false;
   bool m_serialNumberHasBeenSet = false;
   bool m_brandHasBeenSet = false;
   bool m_modelHasBeenSet = false;

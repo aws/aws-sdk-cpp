@@ -27,6 +27,10 @@ Aws::String UpdateManagedThingRequest::SerializePayload() const {
     payload.WithString("SerialNumber", m_serialNumber);
   }
 
+  if (m_wiFiSimpleSetupConfigurationHasBeenSet) {
+    payload.WithObject("WiFiSimpleSetupConfiguration", m_wiFiSimpleSetupConfiguration.Jsonize());
+  }
+
   if (m_brandHasBeenSet) {
     payload.WithString("Brand", m_brand);
   }

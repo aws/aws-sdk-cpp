@@ -99,8 +99,8 @@ class CreateBillingViewRequest : public BillingRequest {
   /**
    * <p> See <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
-   * Billing view only supports <code>LINKED_ACCOUNT</code> and <code>Tags</code>.
-   * </p>
+   * Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and
+   * <code>CostCategories</code>. </p>
    */
   inline const Expression& GetDataFilterExpression() const { return m_dataFilterExpression; }
   inline bool DataFilterExpressionHasBeenSet() const { return m_dataFilterExpressionHasBeenSet; }

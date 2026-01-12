@@ -37,7 +37,7 @@ class LineageMetadata {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the lineage metadata action. </p>
+   * <p> The Amazon Resource Name (ARN) of the lineage action. </p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetActionArns() const { return m_actionArns; }
   inline bool ActionArnsHasBeenSet() const { return m_actionArnsHasBeenSet; }
@@ -61,7 +61,7 @@ class LineageMetadata {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the lineage metadata artifact. </p>
+   * <p> The Amazon Resource Name (ARN) of the lineage artifact. </p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetArtifactArns() const { return m_artifactArns; }
   inline bool ArtifactArnsHasBeenSet() const { return m_artifactArnsHasBeenSet; }
@@ -85,7 +85,7 @@ class LineageMetadata {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the lineage metadata context. </p>
+   * <p> The Amazon Resource Name (ARN) of the lineage context. </p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetContextArns() const { return m_contextArns; }
   inline bool ContextArnsHasBeenSet() const { return m_contextArnsHasBeenSet; }
@@ -109,7 +109,7 @@ class LineageMetadata {
 
   ///@{
   /**
-   * <p> The lineage metadata associations. </p>
+   * <p> The lineage associations. </p>
    */
   inline const Aws::Vector<AssociationInfo>& GetAssociations() const { return m_associations; }
   inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }

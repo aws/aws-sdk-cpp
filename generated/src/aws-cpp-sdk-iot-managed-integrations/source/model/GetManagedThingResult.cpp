@@ -127,6 +127,10 @@ GetManagedThingResult& GetManagedThingResult::operator=(const Aws::AmazonWebServ
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("WiFiSimpleSetupConfiguration")) {
+    m_wiFiSimpleSetupConfiguration = jsonValue.GetObject("WiFiSimpleSetupConfiguration");
+    m_wiFiSimpleSetupConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

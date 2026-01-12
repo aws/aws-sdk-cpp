@@ -34,8 +34,8 @@ class BedrockCustomModelDeploymentMetadata {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the metadata for the Amazon Bedrock custom
-   * model deployment. </p>
+   * <p> The Amazon Resource Name (ARN) for the Amazon Bedrock custom model
+   * deployment. </p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
