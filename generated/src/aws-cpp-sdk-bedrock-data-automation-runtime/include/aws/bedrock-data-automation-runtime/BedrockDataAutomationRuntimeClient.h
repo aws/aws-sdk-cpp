@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeErrorMarshaller.h>
+#include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimePaginationBase.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntimeServiceClientModel.h>
 #include <aws/bedrock-data-automation-runtime/BedrockDataAutomationRuntime_EXPORTS.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
@@ -26,7 +27,8 @@ class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClient
                                               Aws::BedrockDataAutomationRuntime::BedrockDataAutomationRuntimeClientConfiguration,
                                               smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
                                               BedrockDataAutomationRuntimeEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
-                                              smithy::client::JsonOutcome, Aws::Client::BedrockDataAutomationRuntimeErrorMarshaller> {
+                                              smithy::client::JsonOutcome, Aws::Client::BedrockDataAutomationRuntimeErrorMarshaller>,
+      public BedrockDataAutomationRuntimePaginationBase<BedrockDataAutomationRuntimeClient> {
  public:
   static const char* GetServiceName();
   static const char* GetAllocationTag();

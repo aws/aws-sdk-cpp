@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/pca-connector-ad/PcaConnectorAdPaginationBase.h>
 #include <aws/pca-connector-ad/PcaConnectorAdServiceClientModel.h>
 #include <aws/pca-connector-ad/PcaConnectorAd_EXPORTS.h>
 
@@ -22,7 +23,8 @@ namespace PcaConnectorAd {
  * Web Services Private CA Connector for Active Directory</a>.</p>
  */
 class AWS_PCACONNECTORAD_API PcaConnectorAdClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorAdClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<PcaConnectorAdClient>,
+                                                    public PcaConnectorAdPaginationBase<PcaConnectorAdClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

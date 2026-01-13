@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/meteringmarketplace/MarketplaceMeteringPaginationBase.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringServiceClientModel.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 
@@ -79,9 +80,9 @@ namespace MarketplaceMetering {
  * href="mailto://aws.amazon.com/marketplace/management/contact-us/">Amazon Web
  * Services Marketplace Seller Operations</a>.</p>  </li> </ul>
  */
-class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient> {
+class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client::AWSJsonClient,
+                                                              public Aws::Client::ClientWithAsyncTemplateMethods<MarketplaceMeteringClient>,
+                                                              public MarketplaceMeteringPaginationBase<MarketplaceMeteringClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

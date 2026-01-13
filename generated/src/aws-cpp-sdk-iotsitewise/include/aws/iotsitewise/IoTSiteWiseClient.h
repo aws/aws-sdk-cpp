@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotsitewise/IoTSiteWisePaginationBase.h>
 #include <aws/iotsitewise/IoTSiteWiseServiceClientModel.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace IoTSiteWise {
  * in the <i>IoT SiteWise User Guide</i>.</p>
  */
 class AWS_IOTSITEWISE_API IoTSiteWiseClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<IoTSiteWiseClient>,
+                                              public IoTSiteWisePaginationBase<IoTSiteWiseClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

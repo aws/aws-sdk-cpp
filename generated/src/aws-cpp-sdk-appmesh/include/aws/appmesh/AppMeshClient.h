@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appmesh/AppMeshPaginationBase.h>
 #include <aws/appmesh/AppMeshServiceClientModel.h>
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -31,7 +32,9 @@ namespace AppMesh {
  * href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
  * for Services and Pods</a> in the Kubernetes documentation.</p>
  */
-class AWS_APPMESH_API AppMeshClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppMeshClient> {
+class AWS_APPMESH_API AppMeshClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<AppMeshClient>,
+                                      public AppMeshPaginationBase<AppMeshClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

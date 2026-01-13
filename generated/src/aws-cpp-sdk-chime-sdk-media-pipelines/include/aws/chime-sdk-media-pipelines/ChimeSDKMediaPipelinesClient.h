@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesPaginationBase.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesServiceClientModel.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelines_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -23,7 +24,8 @@ namespace ChimeSDKMediaPipelines {
  */
 class AWS_CHIMESDKMEDIAPIPELINES_API ChimeSDKMediaPipelinesClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKMediaPipelinesClient>,
+      public ChimeSDKMediaPipelinesPaginationBase<ChimeSDKMediaPipelinesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

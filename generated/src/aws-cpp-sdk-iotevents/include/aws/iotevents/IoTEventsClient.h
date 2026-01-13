@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotevents/IoTEventsPaginationBase.h>
 #include <aws/iotevents/IoTEventsServiceClientModel.h>
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 
@@ -20,7 +21,8 @@ namespace IoTEvents {
  * detector models, and to list their versions.</p>
  */
 class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<IoTEventsClient>,
+                                          public IoTEventsPaginationBase<IoTEventsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

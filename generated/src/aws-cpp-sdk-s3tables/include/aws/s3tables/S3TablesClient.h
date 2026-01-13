@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/s3tables/S3TablesPaginationBase.h>
 #include <aws/s3tables/S3TablesServiceClientModel.h>
 #include <aws/s3tables/S3Tables_EXPORTS.h>
 
@@ -32,7 +33,8 @@ namespace S3Tables {
  * S3 table buckets</a>.</p>
  */
 class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<S3TablesClient>,
+                                        public S3TablesPaginationBase<S3TablesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

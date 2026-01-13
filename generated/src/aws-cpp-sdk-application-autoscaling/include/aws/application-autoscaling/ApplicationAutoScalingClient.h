@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/application-autoscaling/ApplicationAutoScalingPaginationBase.h>
 #include <aws/application-autoscaling/ApplicationAutoScalingServiceClientModel.h>
 #include <aws/application-autoscaling/ApplicationAutoScaling_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -50,7 +51,8 @@ namespace ApplicationAutoScaling {
  */
 class AWS_APPLICATIONAUTOSCALING_API ApplicationAutoScalingClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationAutoScalingClient>,
+      public ApplicationAutoScalingPaginationBase<ApplicationAutoScalingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

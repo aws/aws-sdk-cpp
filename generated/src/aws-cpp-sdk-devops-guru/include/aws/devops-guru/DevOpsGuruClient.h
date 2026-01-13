@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devops-guru/DevOpsGuruPaginationBase.h>
 #include <aws/devops-guru/DevOpsGuruServiceClientModel.h>
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 
@@ -34,7 +35,8 @@ namespace DevOpsGuru {
  * in DevOps Guru</a>. </p>
  */
 class AWS_DEVOPSGURU_API DevOpsGuruClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<DevOpsGuruClient>,
+                                            public DevOpsGuruPaginationBase<DevOpsGuruClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

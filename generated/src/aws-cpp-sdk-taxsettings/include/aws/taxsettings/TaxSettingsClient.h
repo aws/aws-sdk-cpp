@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/taxsettings/TaxSettingsPaginationBase.h>
 #include <aws/taxsettings/TaxSettingsServiceClientModel.h>
 #include <aws/taxsettings/TaxSettings_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace TaxSettings {
  * <p>https://tax.us-east-1.amazonaws.com</p> </li> </ul>
  */
 class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<TaxSettingsClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<TaxSettingsClient>,
+                                              public TaxSettingsPaginationBase<TaxSettingsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

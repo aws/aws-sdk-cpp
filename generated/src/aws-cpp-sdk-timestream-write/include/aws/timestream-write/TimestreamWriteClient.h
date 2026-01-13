@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/timestream-write/TimestreamWritePaginationBase.h>
 #include <aws/timestream-write/TimestreamWriteServiceClientModel.h>
 #include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace TimestreamWrite {
  * costs.</p>
  */
 class AWS_TIMESTREAMWRITE_API TimestreamWriteClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<TimestreamWriteClient>,
+                                                      public TimestreamWritePaginationBase<TimestreamWriteClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

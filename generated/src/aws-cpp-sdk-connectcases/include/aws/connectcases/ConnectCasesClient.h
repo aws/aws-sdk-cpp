@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/connectcases/ConnectCasesPaginationBase.h>
 #include <aws/connectcases/ConnectCasesServiceClientModel.h>
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -27,7 +28,8 @@ namespace ConnectCases {
  * Connect Cases</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
  */
 class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>,
+                                                public ConnectCasesPaginationBase<ConnectCasesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

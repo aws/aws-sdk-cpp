@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediapackage-vod/MediaPackageVodPaginationBase.h>
 #include <aws/mediapackage-vod/MediaPackageVodServiceClientModel.h>
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace MediaPackageVod {
  * AWS Elemental MediaPackage VOD
  */
 class AWS_MEDIAPACKAGEVOD_API MediaPackageVodClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<MediaPackageVodClient>,
+                                                      public MediaPackageVodPaginationBase<MediaPackageVodClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

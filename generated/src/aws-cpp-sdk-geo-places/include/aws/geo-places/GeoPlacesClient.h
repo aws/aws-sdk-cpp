@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-places/GeoPlacesPaginationBase.h>
 #include <aws/geo-places/GeoPlacesServiceClientModel.h>
 #include <aws/geo-places/GeoPlaces_EXPORTS.h>
 
@@ -27,7 +28,8 @@ namespace GeoPlaces {
  * relevance</p> </li> </ul>
  */
 class AWS_GEOPLACES_API GeoPlacesClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<GeoPlacesClient>,
+                                          public GeoPlacesPaginationBase<GeoPlacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

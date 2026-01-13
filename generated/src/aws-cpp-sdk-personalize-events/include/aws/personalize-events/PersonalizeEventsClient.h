@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize-events/PersonalizeEventsPaginationBase.h>
 #include <aws/personalize-events/PersonalizeEventsServiceClientModel.h>
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace PersonalizeEvents {
  * item interaction events</a>.</p>
  */
 class AWS_PERSONALIZEEVENTS_API PersonalizeEventsClient : public Aws::Client::AWSJsonClient,
-                                                          public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient> {
+                                                          public Aws::Client::ClientWithAsyncTemplateMethods<PersonalizeEventsClient>,
+                                                          public PersonalizeEventsPaginationBase<PersonalizeEventsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

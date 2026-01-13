@@ -1,0 +1,32 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/macie2/Macie2ServiceClientModel.h>
+#include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/macie2/model/ListResourceProfileArtifactsRequest.h>
+#include <aws/macie2/model/ListResourceProfileArtifactsResult.h>
+
+namespace Aws {
+namespace Macie2 {
+namespace Pagination {
+
+template <typename Client = Macie2Client>
+struct ListResourceProfileArtifactsPaginationTraits {
+  using RequestType = Model::ListResourceProfileArtifactsRequest;
+  using ResultType = Model::ListResourceProfileArtifactsResult;
+  using OutcomeType = Model::ListResourceProfileArtifactsOutcome;
+  using ClientType = Client;
+
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListResourceProfileArtifacts(request); }
+
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
+
+  static void SetNextRequest(const ResultType& result, RequestType& request) { request.SetNextToken(result.GetNextToken()); }
+};
+
+}  // namespace Pagination
+}  // namespace Macie2
+}  // namespace Aws

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-managed-integrations/IoTManagedIntegrationsPaginationBase.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrationsServiceClientModel.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
 
@@ -23,7 +24,8 @@ namespace IoTManagedIntegrations {
  */
 class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<IoTManagedIntegrationsClient>,
+      public IoTManagedIntegrationsPaginationBase<IoTManagedIntegrationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

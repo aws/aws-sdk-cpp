@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ecr/ECRPaginationBase.h>
 #include <aws/ecr/ECRServiceClientModel.h>
 #include <aws/ecr/ECR_EXPORTS.h>
 
@@ -26,7 +27,9 @@ namespace ECR {
  * href="https://docs.aws.amazon.com/general/latest/gr/ecr.html">Amazon ECR
  * endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
  */
-class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECRClient> {
+class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<ECRClient>,
+                              public ECRPaginationBase<ECRClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

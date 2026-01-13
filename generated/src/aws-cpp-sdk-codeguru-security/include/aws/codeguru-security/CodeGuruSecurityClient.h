@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codeguru-security/CodeGuruSecurityPaginationBase.h>
 #include <aws/codeguru-security/CodeGuruSecurityServiceClientModel.h>
 #include <aws/codeguru-security/CodeGuruSecurity_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -30,7 +31,8 @@ namespace CodeGuruSecurity {
  * CodeGuru Security User Guide</a>. </p></p>
  */
 class AWS_CODEGURUSECURITY_API CodeGuruSecurityClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<CodeGuruSecurityClient>,
+                                                        public CodeGuruSecurityPaginationBase<CodeGuruSecurityClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

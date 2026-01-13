@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/detective/DetectivePaginationBase.h>
 #include <aws/detective/DetectiveServiceClientModel.h>
 #include <aws/detective/Detective_EXPORTS.h>
 
@@ -61,7 +62,8 @@ namespace Detective {
  * administrator account manages the accounts in their behavior graph.</p>
  */
 class AWS_DETECTIVE_API DetectiveClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<DetectiveClient>,
+                                          public DetectivePaginationBase<DetectiveClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

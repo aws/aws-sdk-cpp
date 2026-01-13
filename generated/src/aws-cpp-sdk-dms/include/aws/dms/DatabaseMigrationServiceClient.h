@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dms/DatabaseMigrationServicePaginationBase.h>
 #include <aws/dms/DatabaseMigrationServiceServiceClientModel.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace DatabaseMigrationService {
  */
 class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<DatabaseMigrationServiceClient>,
+      public DatabaseMigrationServicePaginationBase<DatabaseMigrationServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

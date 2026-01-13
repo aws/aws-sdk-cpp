@@ -1,0 +1,32 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/ssm-contacts/SSMContactsServiceClientModel.h>
+#include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
+#include <aws/ssm-contacts/model/ListRotationsRequest.h>
+#include <aws/ssm-contacts/model/ListRotationsResult.h>
+
+namespace Aws {
+namespace SSMContacts {
+namespace Pagination {
+
+template <typename Client = SSMContactsClient>
+struct ListRotationsPaginationTraits {
+  using RequestType = Model::ListRotationsRequest;
+  using ResultType = Model::ListRotationsResult;
+  using OutcomeType = Model::ListRotationsOutcome;
+  using ClientType = Client;
+
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListRotations(request); }
+
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
+
+  static void SetNextRequest(const ResultType& result, RequestType& request) { request.SetNextToken(result.GetNextToken()); }
+};
+
+}  // namespace Pagination
+}  // namespace SSMContacts
+}  // namespace Aws

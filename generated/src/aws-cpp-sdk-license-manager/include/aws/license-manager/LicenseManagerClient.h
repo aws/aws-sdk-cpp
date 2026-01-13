@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/LicenseManagerPaginationBase.h>
 #include <aws/license-manager/LicenseManagerServiceClientModel.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 
@@ -18,7 +19,8 @@ namespace LicenseManager {
  * across multiple Amazon Web Services accounts and on-premises servers.</p>
  */
 class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonClient,
-                                                    public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient> {
+                                                    public Aws::Client::ClientWithAsyncTemplateMethods<LicenseManagerClient>,
+                                                    public LicenseManagerPaginationBase<LicenseManagerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

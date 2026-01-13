@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudhsm/CloudHSMPaginationBase.h>
 #include <aws/cloudhsm/CloudHSMServiceClientModel.h>
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -30,7 +31,8 @@ namespace CloudHSM {
  * API Reference</a>.</p>
  */
 class AWS_CLOUDHSM_API CloudHSMClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMClient>,
+                                        public CloudHSMPaginationBase<CloudHSMClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

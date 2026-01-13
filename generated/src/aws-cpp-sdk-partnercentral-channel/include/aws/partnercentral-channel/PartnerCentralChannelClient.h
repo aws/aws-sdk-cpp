@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/partnercentral-channel/PartnerCentralChannelPaginationBase.h>
 #include <aws/partnercentral-channel/PartnerCentralChannelServiceClientModel.h>
 #include <aws/partnercentral-channel/PartnerCentralChannel_EXPORTS.h>
 
@@ -19,7 +20,8 @@ namespace PartnerCentralChannel {
  */
 class AWS_PARTNERCENTRALCHANNEL_API PartnerCentralChannelClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralChannelClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<PartnerCentralChannelClient>,
+      public PartnerCentralChannelPaginationBase<PartnerCentralChannelClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

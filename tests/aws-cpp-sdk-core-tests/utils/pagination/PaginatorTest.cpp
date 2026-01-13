@@ -97,8 +97,8 @@ struct ListItemsTraits {
     using OutcomeType = TestOutcome;
     using ResultType = TestResult;
     
-    static OutcomeType Invoke(PaginatorTestClient& client, const TestRequest& request) {
-        return client.ListItems(request);
+    static OutcomeType Invoke(PaginatorTestClient* client, const TestRequest& request) {
+        return client->ListItems(request);
     }
     
     static bool HasMoreResults(const TestResult& result) {
@@ -129,8 +129,7 @@ protected:
 
 TEST_F(PaginatorTest, TestIteratesThroughAllPages)
 {
-    auto clientPtr = std::make_shared<PaginatorTestClient>(client);
-    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(clientPtr, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     Aws::Vector<Aws::String> allItems;
     int pageCount = 0;
@@ -160,8 +159,7 @@ TEST_F(PaginatorTest, TestIteratesThroughAllPages)
 TEST_F(PaginatorTest, TestHandlesErrorGracefully)
 {
     client.SetShouldFail(true);
-    auto clientPtr = std::make_shared<PaginatorTestClient>(client);
-    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(clientPtr, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     ASSERT_TRUE(it != paginator.end());
@@ -177,8 +175,7 @@ TEST_F(PaginatorTest, TestHandlesErrorGracefully)
 TEST_F(PaginatorTest, TestEmptyResultSet)
 {
     client.SetData({});
-    auto clientPtr = std::make_shared<PaginatorTestClient>(client);
-    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(clientPtr, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     ASSERT_TRUE(it != paginator.end());
@@ -194,8 +191,7 @@ TEST_F(PaginatorTest, TestEmptyResultSet)
 
 TEST_F(PaginatorTest, TestBeginEndIteratorComparison)
 {
-    auto clientPtr = std::make_shared<PaginatorTestClient>(client);
-    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(clientPtr, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto begin = paginator.begin();
     auto end = paginator.end();
@@ -213,8 +209,7 @@ TEST_F(PaginatorTest, TestBeginEndIteratorComparison)
 TEST_F(PaginatorTest, TestHandlesErrorOnSecondPage)
 {
     client.SetFailOnPage(1); // Fail on second page (0-indexed)
-    auto clientPtr = std::make_shared<PaginatorTestClient>(client);
-    PagePaginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(clientPtr, request);
+    Paginator<PaginatorTestClient, TestRequest, ListItemsTraits> paginator(&client, request);
     
     auto it = paginator.begin();
     

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-sap/SsmSapPaginationBase.h>
 #include <aws/ssm-sap/SsmSapServiceClientModel.h>
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 
@@ -18,7 +19,9 @@ namespace SsmSap {
  * each of the actions and data types for AWS Systems Manager for SAP. The topic
  * for each action shows the API request parameters and responses. </p>
  */
-class AWS_SSMSAP_API SsmSapClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient> {
+class AWS_SSMSAP_API SsmSapClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<SsmSapClient>,
+                                    public SsmSapPaginationBase<SsmSapClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

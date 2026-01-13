@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesPaginationBase.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesServiceClientModel.h>
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
 
@@ -30,7 +31,8 @@ namespace MigrationHubRefactorSpaces {
  */
 class AWS_MIGRATIONHUBREFACTORSPACES_API MigrationHubRefactorSpacesClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubRefactorSpacesClient>,
+      public MigrationHubRefactorSpacesPaginationBase<MigrationHubRefactorSpacesClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

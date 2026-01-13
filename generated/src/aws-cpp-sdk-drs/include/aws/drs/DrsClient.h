@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/DrsPaginationBase.h>
 #include <aws/drs/DrsServiceClientModel.h>
 #include <aws/drs/Drs_EXPORTS.h>
 
@@ -16,7 +17,9 @@ namespace drs {
 /**
  * <p>AWS Elastic Disaster Recovery Service.</p>
  */
-class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient> {
+class AWS_DRS_API DrsClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<DrsClient>,
+                              public DrsPaginationBase<DrsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

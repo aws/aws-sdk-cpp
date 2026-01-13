@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks-auth/EKSAuthPaginationBase.h>
 #include <aws/eks-auth/EKSAuthServiceClientModel.h>
 #include <aws/eks-auth/EKSAuth_EXPORTS.h>
 
@@ -17,7 +18,9 @@ namespace EKSAuth {
  * <p>The Amazon EKS Auth API and the <code>AssumeRoleForPodIdentity</code> action
  * are only used by the EKS Pod Identity Agent.</p>
  */
-class AWS_EKSAUTH_API EKSAuthClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<EKSAuthClient> {
+class AWS_EKSAUTH_API EKSAuthClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<EKSAuthClient>,
+                                      public EKSAuthPaginationBase<EKSAuthClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

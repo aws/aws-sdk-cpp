@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codecatalyst/CodeCatalystPaginationBase.h>
 #include <aws/codecatalyst/CodeCatalystServiceClientModel.h>
 #include <aws/codecatalyst/CodeCatalyst_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -83,7 +84,8 @@ namespace CodeCatalyst {
  * your SDK.</p>
  */
 class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>,
+                                                public CodeCatalystPaginationBase<CodeCatalystClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

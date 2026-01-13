@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codedeploy/CodeDeployPaginationBase.h>
 #include <aws/codedeploy/CodeDeployServiceClientModel.h>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -71,7 +72,8 @@ namespace CodeDeploy {
  * Forum</a> </p> </li> </ul>
  */
 class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>,
+                                            public CodeDeployPaginationBase<CodeDeployClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

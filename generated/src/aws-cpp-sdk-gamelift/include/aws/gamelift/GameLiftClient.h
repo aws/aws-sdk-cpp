@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/gamelift/GameLiftPaginationBase.h>
 #include <aws/gamelift/GameLiftServiceClientModel.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
@@ -55,7 +56,8 @@ namespace GameLift {
  * Amazon GameLift Servers tools and resources</a> </p> </li> </ul>
  */
 class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient,
-                                        public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient> {
+                                        public Aws::Client::ClientWithAsyncTemplateMethods<GameLiftClient>,
+                                        public GameLiftPaginationBase<GameLiftClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

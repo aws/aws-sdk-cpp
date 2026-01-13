@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/MediaLivePaginationBase.h>
 #include <aws/medialive/MediaLiveServiceClientModel.h>
 #include <aws/medialive/MediaLive_EXPORTS.h>
 
@@ -17,7 +18,8 @@ namespace MediaLive {
  * API for AWS Elemental MediaLive
  */
 class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<MediaLiveClient>,
+                                          public MediaLivePaginationBase<MediaLiveClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

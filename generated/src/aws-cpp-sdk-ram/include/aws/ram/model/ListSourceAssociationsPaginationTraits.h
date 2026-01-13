@@ -1,0 +1,32 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/ram/RAMServiceClientModel.h>
+#include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/ListSourceAssociationsRequest.h>
+#include <aws/ram/model/ListSourceAssociationsResult.h>
+
+namespace Aws {
+namespace RAM {
+namespace Pagination {
+
+template <typename Client = RAMClient>
+struct ListSourceAssociationsPaginationTraits {
+  using RequestType = Model::ListSourceAssociationsRequest;
+  using ResultType = Model::ListSourceAssociationsResult;
+  using OutcomeType = Model::ListSourceAssociationsOutcome;
+  using ClientType = Client;
+
+  static OutcomeType Invoke(Client* client, const RequestType& request) { return client->ListSourceAssociations(request); }
+
+  static bool HasMoreResults(const ResultType& result) { return !result.GetNextToken().empty(); }
+
+  static void SetNextRequest(const ResultType& result, RequestType& request) { request.SetNextToken(result.GetNextToken()); }
+};
+
+}  // namespace Pagination
+}  // namespace RAM
+}  // namespace Aws

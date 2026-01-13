@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/SecurityLakePaginationBase.h>
 #include <aws/securitylake/SecurityLakeServiceClientModel.h>
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 
@@ -48,7 +49,8 @@ namespace SecurityLake {
  * Security Lake for incident response and security data analytics.</p>
  */
 class AWS_SECURITYLAKE_API SecurityLakeClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<SecurityLakeClient>,
+                                                public SecurityLakePaginationBase<SecurityLakeClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/IoTPaginationBase.h>
 #include <aws/iot/IoTServiceClientModel.h>
 #include <aws/iot/IoT_EXPORTS.h>
 
@@ -35,7 +36,9 @@ namespace IoT {
  * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
  * Direct Calls to Amazon Web Services Services</a>.</p>
  */
-class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTClient> {
+class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<IoTClient>,
+                              public IoTPaginationBase<IoTClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

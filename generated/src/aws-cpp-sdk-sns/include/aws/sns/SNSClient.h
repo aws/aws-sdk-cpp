@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/sns/SNSPaginationBase.h>
 #include <aws/sns/SNSServiceClientModel.h>
 #include <aws/sns/SNS_EXPORTS.h>
 
@@ -34,7 +35,9 @@ namespace SNS {
  * available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon
  * Web Services</a>. </p>
  */
-class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<SNSClient> {
+class AWS_SNS_API SNSClient : public Aws::Client::AWSXMLClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<SNSClient>,
+                              public SNSPaginationBase<SNSClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

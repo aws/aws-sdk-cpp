@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/codecommit/CodeCommitPaginationBase.h>
 #include <aws/codecommit/CodeCommitServiceClientModel.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -178,7 +179,8 @@ namespace CodeCommit {
  * User Guide</a>.</p>
  */
 class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>,
+                                            public CodeCommitPaginationBase<CodeCommitClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

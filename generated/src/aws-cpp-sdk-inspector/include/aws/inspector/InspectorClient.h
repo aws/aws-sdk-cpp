@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/InspectorPaginationBase.h>
 #include <aws/inspector/InspectorServiceClientModel.h>
 #include <aws/inspector/Inspector_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace Inspector {
  * Amazon Inspector User Guide</a>.</p>
  */
 class AWS_INSPECTOR_API InspectorClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<InspectorClient>,
+                                          public InspectorPaginationBase<InspectorClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

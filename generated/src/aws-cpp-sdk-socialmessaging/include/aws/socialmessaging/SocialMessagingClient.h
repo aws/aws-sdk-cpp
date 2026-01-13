@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/socialmessaging/SocialMessagingPaginationBase.h>
 #include <aws/socialmessaging/SocialMessagingServiceClientModel.h>
 #include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
 
@@ -55,7 +56,8 @@ namespace SocialMessaging {
  * Services Global Infrastructure.</a> </p>
  */
 class AWS_SOCIALMESSAGING_API SocialMessagingClient : public Aws::Client::AWSJsonClient,
-                                                      public Aws::Client::ClientWithAsyncTemplateMethods<SocialMessagingClient> {
+                                                      public Aws::Client::ClientWithAsyncTemplateMethods<SocialMessagingClient>,
+                                                      public SocialMessagingPaginationBase<SocialMessagingClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

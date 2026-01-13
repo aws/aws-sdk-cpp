@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/waf-regional/WAFRegionalPaginationBase.h>
 #include <aws/waf-regional/WAFRegionalServiceClientModel.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
@@ -37,7 +38,8 @@ namespace WAFRegional {
  * WAF Classic</a> in the developer guide.</p>
  */
 class AWS_WAFREGIONAL_API WAFRegionalClient : public Aws::Client::AWSJsonClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<WAFRegionalClient>,
+                                              public WAFRegionalPaginationBase<WAFRegionalClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

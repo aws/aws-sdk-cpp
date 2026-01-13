@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis/KinesisPaginationBase.h>
 #include <aws/kinesis/KinesisServiceClientModel.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 
@@ -18,7 +19,9 @@ namespace Kinesis {
  * Kinesis Data Streams is a managed service that scales elastically for real-time
  * processing of streaming big data.</p>
  */
-class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient> {
+class AWS_KINESIS_API KinesisClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<KinesisClient>,
+                                      public KinesisPaginationBase<KinesisClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

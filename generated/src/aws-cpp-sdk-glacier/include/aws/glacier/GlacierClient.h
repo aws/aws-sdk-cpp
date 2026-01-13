@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glacier/GlacierPaginationBase.h>
 #include <aws/glacier/GlacierServiceClientModel.h>
 #include <aws/glacier/Glacier_EXPORTS.h>
 
@@ -40,7 +41,9 @@ namespace Glacier {
  * the process of creating a vault, uploading archives, creating jobs to download
  * archives, retrieving the job output, and deleting archives.</p> </li> </ul>
  */
-class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient> {
+class AWS_GLACIER_API GlacierClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<GlacierClient>,
+                                      public GlacierPaginationBase<GlacierClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

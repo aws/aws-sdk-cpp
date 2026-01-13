@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sqs/SQSPaginationBase.h>
 #include <aws/sqs/SQSServiceClientModel.h>
 #include <aws/sqs/SQS_EXPORTS.h>
 
@@ -40,7 +41,9 @@ namespace SQS {
  * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
  * and Endpoints</a> </p> </li> </ul> </li> </ul>
  */
-class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient> {
+class AWS_SQS_API SQSClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<SQSClient>,
+                              public SQSPaginationBase<SQSClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

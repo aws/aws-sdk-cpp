@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloudsearch/CloudSearchPaginationBase.h>
 #include <aws/cloudsearch/CloudSearchServiceClientModel.h>
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
@@ -28,7 +29,8 @@ namespace CloudSearch {
  * target="_blank">Regions and Endpoints</a>.</p>
  */
 class AWS_CLOUDSEARCH_API CloudSearchClient : public Aws::Client::AWSXMLClient,
-                                              public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchClient> {
+                                              public Aws::Client::ClientWithAsyncTemplateMethods<CloudSearchClient>,
+                                              public CloudSearchPaginationBase<CloudSearchClient> {
  public:
   typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();

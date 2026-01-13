@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/geo-maps/GeoMapsPaginationBase.h>
 #include <aws/geo-maps/GeoMapsServiceClientModel.h>
 #include <aws/geo-maps/GeoMaps_EXPORTS.h>
 
@@ -26,7 +27,9 @@ namespace GeoMaps {
  * <p>Enhancing application performance by reducing client-side rendering</p> </li>
  * </ul> </li> </ul>
  */
-class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient> {
+class AWS_GEOMAPS_API GeoMapsClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<GeoMapsClient>,
+                                      public GeoMapsPaginationBase<GeoMapsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

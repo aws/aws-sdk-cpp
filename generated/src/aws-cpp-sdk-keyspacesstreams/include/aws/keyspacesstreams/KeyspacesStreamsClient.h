@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/keyspacesstreams/KeyspacesStreamsPaginationBase.h>
 #include <aws/keyspacesstreams/KeyspacesStreamsServiceClientModel.h>
 #include <aws/keyspacesstreams/KeyspacesStreams_EXPORTS.h>
 
@@ -36,7 +37,8 @@ namespace KeyspacesStreams {
  * Keyspaces Developer Guide</i>.</p>
  */
 class AWS_KEYSPACESSTREAMS_API KeyspacesStreamsClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesStreamsClient> {
+                                                        public Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesStreamsClient>,
+                                                        public KeyspacesStreamsPaginationBase<KeyspacesStreamsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

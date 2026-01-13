@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dax/DAXPaginationBase.h>
 #include <aws/dax/DAXServiceClientModel.h>
 #include <aws/dax/DAX_EXPORTS.h>
 
@@ -22,7 +23,9 @@ namespace DAX {
  * begin taking advantage of the DAX cluster and realize significant improvements
  * in read performance.</p>
  */
-class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<DAXClient> {
+class AWS_DAX_API DAXClient : public Aws::Client::AWSJsonClient,
+                              public Aws::Client::ClientWithAsyncTemplateMethods<DAXClient>,
+                              public DAXPaginationBase<DAXClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

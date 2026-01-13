@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot-data/IoTDataPlanePaginationBase.h>
 #include <aws/iot-data/IoTDataPlaneServiceClientModel.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
@@ -28,7 +29,8 @@ namespace IoTDataPlane {
  * <i>iotdevicegateway</i>.</p>
  */
 class AWS_IOTDATAPLANE_API IoTDataPlaneClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<IoTDataPlaneClient>,
+                                                public IoTDataPlanePaginationBase<IoTDataPlaneClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

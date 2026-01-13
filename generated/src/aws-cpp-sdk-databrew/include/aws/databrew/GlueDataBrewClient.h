@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/GlueDataBrewPaginationBase.h>
 #include <aws/databrew/GlueDataBrewServiceClientModel.h>
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 
@@ -21,7 +22,8 @@ namespace GlueDataBrew {
  * required.</p>
  */
 class AWS_GLUEDATABREW_API GlueDataBrewClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient> {
+                                                public Aws::Client::ClientWithAsyncTemplateMethods<GlueDataBrewClient>,
+                                                public GlueDataBrewPaginationBase<GlueDataBrewClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

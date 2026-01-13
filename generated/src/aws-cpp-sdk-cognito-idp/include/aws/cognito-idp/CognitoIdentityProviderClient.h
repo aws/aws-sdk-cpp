@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cognito-idp/CognitoIdentityProviderPaginationBase.h>
 #include <aws/cognito-idp/CognitoIdentityProviderServiceClientModel.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -53,7 +54,8 @@ namespace CognitoIdentityProvider {
  */
 class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityProviderClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<CognitoIdentityProviderClient>,
+      public CognitoIdentityProviderPaginationBase<CognitoIdentityProviderClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

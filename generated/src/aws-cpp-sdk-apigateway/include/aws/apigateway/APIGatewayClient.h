@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/apigateway/APIGatewayPaginationBase.h>
 #include <aws/apigateway/APIGatewayServiceClientModel.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -21,7 +22,8 @@ namespace APIGateway {
  * that are hosted outside of AWS.</p>
  */
 class AWS_APIGATEWAY_API APIGatewayClient : public Aws::Client::AWSJsonClient,
-                                            public Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient> {
+                                            public Aws::Client::ClientWithAsyncTemplateMethods<APIGatewayClient>,
+                                            public APIGatewayPaginationBase<APIGatewayClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

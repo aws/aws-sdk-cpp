@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/signer/SignerPaginationBase.h>
 #include <aws/signer/SignerServiceClientModel.h>
 #include <aws/signer/Signer_EXPORTS.h>
 
@@ -42,7 +43,9 @@ namespace signer {
  * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
  * Signer Developer Guide</a>.</p>
  */
-class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SignerClient> {
+class AWS_SIGNER_API SignerClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<SignerClient>,
+                                    public SignerPaginationBase<SignerClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

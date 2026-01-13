@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/KafkaPaginationBase.h>
 #include <aws/kafka/KafkaServiceClientModel.h>
 #include <aws/kafka/Kafka_EXPORTS.h>
 
@@ -19,7 +20,9 @@ namespace Kafka {
 
  *
  */
-class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient> {
+class AWS_KAFKA_API KafkaClient : public Aws::Client::AWSJsonClient,
+                                  public Aws::Client::ClientWithAsyncTemplateMethods<KafkaClient>,
+                                  public KafkaPaginationBase<KafkaClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

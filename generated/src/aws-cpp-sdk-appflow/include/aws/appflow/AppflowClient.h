@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/appflow/AppflowPaginationBase.h>
 #include <aws/appflow/AppflowServiceClientModel.h>
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -42,7 +43,9 @@ namespace Appflow {
  * href="https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm">
  * <i>Authorize Apps with OAuth</i> </a> documentation.</p>
  */
-class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient> {
+class AWS_APPFLOW_API AppflowClient : public Aws::Client::AWSJsonClient,
+                                      public Aws::Client::ClientWithAsyncTemplateMethods<AppflowClient>,
+                                      public AppflowPaginationBase<AppflowClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

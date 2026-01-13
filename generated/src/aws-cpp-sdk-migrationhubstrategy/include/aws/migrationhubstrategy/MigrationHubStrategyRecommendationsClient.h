@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsPaginationBase.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendationsServiceClientModel.h>
 #include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
 
@@ -25,7 +26,8 @@ namespace MigrationHubStrategyRecommendations {
  */
 class AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API MigrationHubStrategyRecommendationsClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<MigrationHubStrategyRecommendationsClient>,
+      public MigrationHubStrategyRecommendationsPaginationBase<MigrationHubStrategyRecommendationsClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

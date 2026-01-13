@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/cloud9/Cloud9PaginationBase.h>
 #include <aws/cloud9/Cloud9ServiceClientModel.h>
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -44,7 +45,9 @@ namespace Cloud9 {
  * Changes the settings of an existing environment member for an environment.</p>
  * </li> </ul>
  */
-class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client> {
+class AWS_CLOUD9_API Cloud9Client : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<Cloud9Client>,
+                                    public Cloud9PaginationBase<Cloud9Client> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

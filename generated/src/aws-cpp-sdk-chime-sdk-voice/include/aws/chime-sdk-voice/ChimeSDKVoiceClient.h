@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/chime-sdk-voice/ChimeSDKVoicePaginationBase.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceServiceClientModel.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/core/client/AWSClient.h>
@@ -21,7 +22,8 @@ namespace ChimeSDKVoice {
  * and run voice analytics.</p>
  */
 class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient> {
+                                                  public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>,
+                                                  public ChimeSDKVoicePaginationBase<ChimeSDKVoiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

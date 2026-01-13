@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/LightsailPaginationBase.h>
 #include <aws/lightsail/LightsailServiceClientModel.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 
@@ -34,7 +35,8 @@ namespace Lightsail {
  * Reference</i>.</p>
  */
 class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
-                                          public Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient> {
+                                          public Aws::Client::ClientWithAsyncTemplateMethods<LightsailClient>,
+                                          public LightsailPaginationBase<LightsailClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

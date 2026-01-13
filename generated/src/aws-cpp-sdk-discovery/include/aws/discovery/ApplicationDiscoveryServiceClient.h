@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/discovery/ApplicationDiscoveryServicePaginationBase.h>
 #include <aws/discovery/ApplicationDiscoveryServiceServiceClientModel.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
@@ -77,7 +78,8 @@ namespace ApplicationDiscoveryService {
  */
 class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<ApplicationDiscoveryServiceClient>,
+      public ApplicationDiscoveryServicePaginationBase<ApplicationDiscoveryServiceClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

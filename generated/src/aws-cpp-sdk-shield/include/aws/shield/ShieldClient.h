@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/shield/ShieldPaginationBase.h>
 #include <aws/shield/ShieldServiceClientModel.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
@@ -22,7 +23,9 @@ namespace Shield {
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF and Shield
  * Developer Guide</a>.</p>
  */
-class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient> {
+class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<ShieldClient>,
+                                    public ShieldPaginationBase<ShieldClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();

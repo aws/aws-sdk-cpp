@@ -8,6 +8,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/directory-service-data/DirectoryServiceDataPaginationBase.h>
 #include <aws/directory-service-data/DirectoryServiceDataServiceClientModel.h>
 #include <aws/directory-service-data/DirectoryServiceData_EXPORTS.h>
 
@@ -66,7 +67,8 @@ namespace DirectoryServiceData {
  */
 class AWS_DIRECTORYSERVICEDATA_API DirectoryServiceDataClient
     : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient> {
+      public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceDataClient>,
+      public DirectoryServiceDataPaginationBase<DirectoryServiceDataClient> {
  public:
   typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
