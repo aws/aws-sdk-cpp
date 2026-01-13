@@ -28,13 +28,15 @@ class PaginationGen(object):
     def generate(self, clients_to_build: set):
         """Generate pagination APIs for SDK clients"""
         smithy_services = [self.c2j_smithy_data.get(service, service) for service in clients_to_build]
-        print(f"Generating pagination for: {','.join(smithy_services)}")
+        if self.debug:
+            print(f"Generating pagination for: {','.join(smithy_services)}")
         
         if self._generate_pagination(smithy_services, json.dumps(self.smithy_c2j_data)):
+            target_dir = os.path.abspath("generated/src")
             self._copy_cpp_codegen_contents(
                 os.path.abspath("tools/code-generation/smithy/codegen"),
                 "cpp-codegen-pagination-plugin",
-                os.path.abspath("generated/src")
+                target_dir
             )
             return 0
         return -1
@@ -59,7 +61,9 @@ class PaginationGen(object):
                 text=True,
                 cwd=SMITHY_GENERATOR_LOCATION
             )
-            print("Pagination codegen successful!\n", process.stdout)
+            print("Pagination codegen successful!")
+            if self.debug:
+                print(process.stdout)
             return True
 
         except subprocess.CalledProcessError as e:
@@ -85,11 +89,13 @@ class PaginationGen(object):
                         shutil.copytree(source_item, target_item, dirs_exist_ok=True)
                     else:
                         shutil.copy2(source_item, target_item)
-                print(f"Copied from '{source_dir}' to '{service_target_dir}'")
+                if self.debug:
+                    print(f"Copied from '{source_dir}' to '{service_target_dir}'")
         
         # Cleanup output directory
         output_dir = os.path.join(top_level_dir, "cpp-pagination/output")
         if os.path.exists(output_dir):
             shutil.rmtree(output_dir)
-            print(f"Cleaned up '{output_dir}'")
+            if self.debug:
+                print(f"Cleaned up '{output_dir}'")
 

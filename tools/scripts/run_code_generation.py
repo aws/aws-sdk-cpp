@@ -14,6 +14,7 @@ from codegen.model_utils import ModelUtils
 from codegen.protocol_tests_gen import ProtocolTestsGen
 from codegen.smoke_tests_gen import SmokeTestsGen
 from codegen.pagination_gen import PaginationGen
+from codegen.format_util import format_directories
 
 
 def parse_arguments() -> dict:
@@ -167,6 +168,13 @@ def main():
         if smoke_tests_gen.generate(clients_to_build) != 0:
             print("ERROR: Failed to generate smoke test(s)!")
             return -1
+
+    # Format all generated C++ code at the end
+    if clients_to_build:
+        client_dirs = [f"{args['output_location']}/src/aws-cpp-sdk-{client}" for client in clients_to_build]
+        existing_dirs = [d for d in client_dirs if os.path.exists(d)]
+        if existing_dirs:
+            format_directories(existing_dirs)
 
     return 0
 
